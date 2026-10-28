@@ -56604,5 +56604,437 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
     "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "AP Art History Area 3A": {
+    "unified_title": "AP Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Art History Area 3B": {
+    "unified_title": "AP Art History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Calculus AB Area 2": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Calculus BC Area 2": {
+    "unified_title": "AP Calculus BC",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Calculus BC/AB Subscore - Area 2": {
+    "unified_title": "AP Calculus BC — AB Subscore",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP European History - Area 3B": {
+    "unified_title": "AP European History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP European History - Area 4": {
+    "unified_title": "AP European History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP French Language and Culture, Score of 3": {
+    "unified_title": "AP French Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP French Language and Culture, Score of 4-5": {
+    "unified_title": "AP French Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Music Theory, Score of 3-4": {
+    "unified_title": "AP Music Theory",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Music Theory, Score of 5": {
+    "unified_title": "AP Music Theory",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Physics C  - Electricity / Magnetism": {
+    "unified_title": "AP Physics C: Electricity and Magnetism",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP PreCalculus - Area 2": {
+    "unified_title": "AP Precalculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Spanish Language and Culture, Score of 3": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Spanish Language and Culture, Score of 4-5": {
+    "unified_title": "AP Spanish Language and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Spanish Literature and Culture, Score of 3": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Spanish Literature and Culture, Score of 4-5": {
+    "unified_title": "AP Spanish Literature and Culture",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Statistics - Area 2": {
+    "unified_title": "AP Statistics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Studio Art: 2D Design": {
+    "unified_title": "AP 2-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Studio Art: 3D Design": {
+    "unified_title": "AP 3-D Art and Design",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP Studio Art: Drawing": {
+    "unified_title": "AP Drawing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP U.S. History,  Area 4": {
+    "unified_title": "AP U.S. History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP U.S. History, Area 3B": {
+    "unified_title": "AP U.S. History",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP World History Modern - Area 3B": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP World History Modern - Area 4": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP World History: Modern, Area 3": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP World History: Modern, Area 4": {
+    "unified_title": "AP World History: Modern",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "AP calculus AB": {
+    "unified_title": "AP Calculus AB",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Biology, Area 5B": {
+    "unified_title": "CLEP Biology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Calculus, Area 2": {
+    "unified_title": "CLEP Calculus",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP French Language: Level II": {
+    "unified_title": "CLEP French Language Level 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP German Language: Level II": {
+    "unified_title": "CLEP German Language Level 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP History, United States I: Early Colonization to 1877": {
+    "unified_title": "CLEP History of the United States 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP History, United States II: 1865 to the Present": {
+    "unified_title": "CLEP History of the United States 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Natural Sciences, Area 5A": {
+    "unified_title": "CLEP Natural Sciences",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Natural Sciences, Area 5B": {
+    "unified_title": "CLEP Natural Sciences",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Principles of Macroeconomics - Area 4": {
+    "unified_title": "CLEP Principles of Macroeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Principles of Microeconomics - Area 4": {
+    "unified_title": "CLEP Principles of Microeconomics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Spanish Language: Level II": {
+    "unified_title": "CLEP Spanish Language Level 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Spanish with Writing: Level II": {
+    "unified_title": "CLEP Spanish with Writing Level II",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-brand-family@bot"
+  },
+  "CLEP Western Civilization I - Area 3B": {
+    "unified_title": "CLEP Western Civilization 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Western Civilization I - Area 4": {
+    "unified_title": "CLEP Western Civilization 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)": {
+    "unified_title": "CLEP Western Civilization 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)": {
+    "unified_title": "CLEP Western Civilization 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "DSST Business 475 Business Ethics and Society": {
+    "unified_title": "DSST Business Ethics and Society",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "DSST Business 532 Principles of Supervision - Business": {
+    "unified_title": "DSST Principles of Supervision",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "DSST Business 532 Principles of Supervision - Management": {
+    "unified_title": "DSST Principles of Supervision",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "DSST Physical Science 508 Health and Human Development": {
+    "unified_title": "DSST Health and Human Development",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IB History HL, any region (Area 3)": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IB History HL, any region (Area 4)": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IB History, any region HL - Area 3B": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IB History, any region HL - Area 4": {
+    "unified_title": "IB History HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IB Mathematics HL: Analysis and Approaches": {
+    "unified_title": "IB Mathematics: Analysis and Approaches HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "IB Mathematics HL: Applications and Interpretation": {
+    "unified_title": "IB Mathematics: Applications and Interpretation HL",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-28",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

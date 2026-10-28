@@ -1,5 +1,5 @@
 {
-  "scraped_at": "2026-10-28T13:02:56.730Z",
+  "scraped_at": "2026-10-28T16:13:53.363Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
@@ -213,32 +213,32 @@
         },
         {
           "college": "Long Beach City College",
-          "students": 826,
-          "units": 5695.5,
-          "avgUnits": 6.895278450363196,
+          "students": 891,
+          "units": 6158.5,
+          "avgUnits": 6.911896745230078,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 3,
-          "militaryStudents": 819,
+          "militaryStudents": 884,
           "nonMilitaryStudents": 7,
           "apprenticeStudents": 0,
-          "savings": 9860135,
-          "yearImpact": 34578866.5,
+          "savings": 10655935,
+          "yearImpact": 37369686.5,
           "transcribedUnits": 0
         },
         {
           "college": "Bakersfield College",
-          "students": 647,
-          "units": 9098,
-          "avgUnits": 14.061823802163833,
+          "students": 648,
+          "units": 9103,
+          "avgUnits": 14.04783950617284,
           "transcriptionRate": 13.2,
-          "avgTranscribed": 1.8601236476043277,
+          "avgTranscribed": 1.8572530864197532,
           "criteriaMetCount": 3,
-          "militaryStudents": 594,
+          "militaryStudents": 595,
           "nonMilitaryStudents": 68,
           "apprenticeStudents": 0,
-          "savings": 16204267.5,
-          "yearImpact": 58272303.5,
+          "savings": 16212917.5,
+          "yearImpact": 58302638.5,
           "transcribedUnits": 1203.5
         },
         {
@@ -622,6 +622,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Cerro Coso Community College",
+          "students": 190,
+          "units": 1038,
+          "avgUnits": 5.463157894736842,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 1,
+          "militaryStudents": 190,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 1795740,
+          "yearImpact": 6297546,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Shasta College",
           "students": 189,
           "units": 1137,
@@ -634,21 +649,6 @@
           "apprenticeStudents": 0,
           "savings": 1956630,
           "yearImpact": 6861777,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Cerro Coso Community College",
-          "students": 185,
-          "units": 1013,
-          "avgUnits": 5.475675675675675,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 1,
-          "militaryStudents": 185,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 1752490,
-          "yearImpact": 6145871,
           "transcribedUnits": 0
         },
         {
@@ -952,6 +952,21 @@
           "transcribedUnits": 0
         },
         {
+          "college": "Grossmont College",
+          "students": 481,
+          "units": 0,
+          "avgUnits": 0,
+          "transcriptionRate": 0,
+          "avgTranscribed": 0,
+          "criteriaMetCount": 0,
+          "militaryStudents": 481,
+          "nonMilitaryStudents": 0,
+          "apprenticeStudents": 0,
+          "savings": 0,
+          "yearImpact": 0,
+          "transcribedUnits": 0
+        },
+        {
           "college": "Santa Rosa Junior College",
           "students": 444,
           "units": 1776,
@@ -979,21 +994,6 @@
           "apprenticeStudents": 0,
           "savings": 2112330,
           "yearImpact": 7407807,
-          "transcribedUnits": 0
-        },
-        {
-          "college": "Grossmont College",
-          "students": 399,
-          "units": 0,
-          "avgUnits": 0,
-          "transcriptionRate": 0,
-          "avgTranscribed": 0,
-          "criteriaMetCount": 0,
-          "militaryStudents": 399,
-          "nonMilitaryStudents": 0,
-          "apprenticeStudents": 0,
-          "savings": 0,
-          "yearImpact": 0,
           "transcribedUnits": 0
         },
         {
@@ -1163,17 +1163,17 @@
         },
         {
           "college": "Allan Hancock College",
-          "students": 143,
-          "units": 572,
+          "students": 145,
+          "units": 580,
           "avgUnits": 4,
           "transcriptionRate": 0,
           "avgTranscribed": 0,
           "criteriaMetCount": 0,
-          "militaryStudents": 143,
+          "militaryStudents": 145,
           "nonMilitaryStudents": 0,
           "apprenticeStudents": 0,
-          "savings": 989560,
-          "yearImpact": 3470324,
+          "savings": 1003400,
+          "yearImpact": 3518860,
           "transcribedUnits": 0
         },
         {
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "58,235",
+      "value": "58,390",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "29,936"
+          "value": "30,091"
         },
         {
           "label": "Workforce/Other",
@@ -1810,7 +1810,7 @@
     {
       "title": "TRANSCRIBED UNITS",
       "value": "84k",
-      "avg": "1.5 avg",
+      "avg": "1.4 avg",
       "breakdowns": [
         {
           "label": "Military",
@@ -1832,7 +1832,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$195M"
+          "value": "$196M"
         },
         {
           "label": "Workforce/Other",
@@ -1846,11 +1846,11 @@
     },
     {
       "title": "20-YEAR IMPACT",
-      "value": "$1.6B",
+      "value": "$1.61B",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$792M"
+          "value": "$795M"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 58235,
-    "Units": 278524.4,
+    "Students": 58390,
+    "Units": 279025.4,
     "TranscribedUnits": 84477.65,
-    "Savings": 394552047.75,
-    "YearImpact": 1602184168.8999999,
-    "MilitaryStudents": 29936,
+    "Savings": 395413587.75,
+    "YearImpact": 1605205534.8999999,
+    "MilitaryStudents": 30091,
     "NonMilitaryStudents": 28394,
     "AprenticeStudents": 953,
-    "AverageUnits": 4.7827663776079685,
-    "TranscribedAverage": 1.4506336395638362
+    "AverageUnits": 4.778650453844837,
+    "TranscribedAverage": 1.4467828395273161
   }
 }
