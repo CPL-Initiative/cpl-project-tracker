@@ -4,6 +4,8 @@ date: 2026-10-27
 session: 495 (SkySalmonberry)
 tags: [handoff, implementation-funding, accessibility, program-requirements-harvest]
 status: current
+superseded: true
+superseded_by: session_505_handoff.md
 ---
 
 # You are Session 496

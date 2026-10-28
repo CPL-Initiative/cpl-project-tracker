@@ -315,3 +315,102 @@ uses verbatim, are here.
 
 
 The funding lane's S303 relocations moved on to the [archive](cpl_funding_lessons_archive.md) at S305.
+
+---
+
+*Moved verbatim from [`cpl_funding_lessons.md`](cpl_funding_lessons.md) at S504 (2026-10-28), so the checkpoint could append.*
+
+## S304 (2026-09-30, SkyHinge): card 7, P3 and P4 as reports
+
+**State.** Sam approved the card 7 mockup (*"go ahead with the card 7 mockup"*, artifact `RRTSSiTW1k6jk6gvxUAQ1D`) and #1771 ported it: a scenario setting, `reportedAsReports`, makes a reported card a report (a Reported word, a description, What is reported, When reading TBA, Where left off the public card until set; no Metric block, no Project allocation, no detail row). Scenario 1 derives its reported cards and keeps the card it had. The Scenario 2 write (`kb/funding_config_edits_out/2026-09-30/`) removes the measured 0%-share Career Attainment card (`prioRemoved` [1] → [1,3]), splits the combined reported card into C and D, and turns the setting on. It is the first plan to add a key: the applier now takes `"create": true` with a null `before`, an undeclared new key still refuses, and rollback removes a created key.
+
+**Lesson.** Card 7 said "a reported card that is also a funding priority still enters every sum"; the live read showed the real shape: Scenario 2 carried a *measured* Career Attainment card at a 0% share beside a *reported* card whose title also said Career Attainment. Read the stored scenario before designing the fix: the answer was to remove a card, not to change the sums.
+
+## S305 (2026-09-30, SkyLatch): card 8's narrated Scenario 2 draft, and the Reporting box through Governance
+
+**State.** Card 7's Scenario 2 write read back live (03:56Z, unchanged since). Card 3's rename landed on the corpus (seven groups *(noncredit)*, three ranges; A30 holds). Card 8: the Scenario 2 narrated draft, variant `n2`, 3:06 (#1774), eight scenes as draft 4 and two of Scenario 2's own, waiting on Sam and unlinked until the Chancellor finalizes Scenario 2. Card 2: `cpl_funding_reports` folds into DR-09, and the mockup ([BV2Xqt49vCYicX5xdEKP5E](https://claude.ai/artifact/BV2Xqt49vCYicX5xdEKP5E)) records quarterly expenditures in NOVA's eight categories (#1773); the build waits on three calls on sheet 5.
+
+**What worked.**
+- **A copied config is safe once its hash matches.** `funding_effective.js` warns against transcribing the config, and the sandbox cannot reach Supabase. The session copied the Scenario 2 block from an MCP read, then compared its md5 with Postgres's `md5(... ::text)` of the same jsonb before the model read it. A match means the copy is byte for byte the stored text, so `T._alloc('Chaffey')` answers for the live config.
+- **Reuse a script and change only what the figures change.** Eight of ten scenes kept draft 4's words because the model gave them the same figures under Scenario 2; the recognizer and the cue pins then only had two new scenes to prove.
+- **Keep the scenario out of the voice.** The picture says Scenario 2; the voice does not, so the read survives the Chancellor's finalizing it.
+
+**What bit.**
+- ⚠️ **A typed figure slipped a decimal.** The Scenario 2 introduction showed 67.1 FTES; the model gives 67.17 (67.2). 44.3 × 50/33 = 67.12 is the likely source: another scenario's rounded figure, scaled. Read every figure from the model.
+- ⚠️ **A helper that builds a filename hides the read from the dependency map.** `narration('s1')` formatting `narration_%s_layout.json` dropped `build.py`'s read from `kb/dependency_map.json`; the literal filename at each call keeps it.
+- ⚠️ **`check_generated.sh` is the last step before a push, after every edit.** #1773's first push ran it before a lane trim changed the `updated:` date, and `lints` failed on the stale catalog.
+
+## S306 (2026-09-30, SkyRivet): P1 on `pa_u`, Refresh everything, and where the units come from
+
+**State.** Sam moved P1 (Access) from `ppa_u` to `pa_u` in both scenarios (his save, 13:41Z) and asked whether Chaffey's Curr CR of 634.0 FTES was a calculation error. It is not: 19,020 applied units ÷ 30 = 634.0, and the priority counts up to its 67.2-FTES target, so Chaffey qualifies for the whole $170,431. The model reproduced his screenshot to the dollar (total $345,220). Under `pa_u`, 49 of 115 colleges reach the P1 target (0 under `ppa_u`); 7 reach P2. His Sierra reading holds: Chaffey's applied units are mostly AP exams (MAPSAS exhibits), a use he called *"valid and useful"*. Shipped in one PR: the drill-in hovers, the frozen header, Refresh everything and its splash, My College following the model, My CPL Funding beside the table on the public renderings, and Unit sources.
+
+**What worked.**
+- **Reproduce the screenshot through the model before judging a figure.** A minimal Scenario 2 config (the dials, not the whole row) reproduced every figure in Sam's screenshot, which is what made "the arithmetic is right" a finding rather than an opinion.
+- **Measure the grain before adding a table's units.** `map_college_cr_unit` sums Chaffey's applied units to 19,405 against the measure's 19,020, so its rows carry each row's own units and add by exhibit and by recommendation. Student counts do not add (a student sits on several rows), so the panel shows units only.
+- **Measure a proxy against the flag it stands in for.** The credit report has no military column. "ACE source or a military course type" agrees with MAP's own MilitaryCredits flag on 99.5% of applied units statewide (1,193 of 238,043 differ), so the split carries its rule in its label.
+
+**What bit.**
+- ⚠️ **Subscribers heard the model before its caches cleared.** `render()` called `notifyModel()` first and cleared the caches only past the mount guard; a subscriber reading `_alloc()` in its handler got the previous model. My College escaped only because `fundingFor()` calls `_model()` first.
+- ⚠️ **My College kept its own copy of the config.** The box read the module on every paint, but its strategies came from the copy read at load and the scenario chosen then; after a publish it showed Scenario 2's funding and dropped every strategy. It now adopts the module's config on every model change, once the module has read the shared one.
+- ⚠️ **A frozen header never froze.** The header was `sticky` since 2026-08-30, inside a wrap whose `overflow-x: auto` made it the scroll container, and a wrap with no height never scrolls up and down. A 75vh cap fixed it; print releases the cap.
+- ⚠️ **A control in a figure cell broke the harness's reading of the figure.** `readCells()` takes the figure as the cell's text less its FTES line; the Unit sources word came after the line. The harness now drops `.cplfund-srclink` before reading.
+- ⚠️ **`:scope > tbody > tr`, not `tbody tr`, inside a nested table.** The outer table's tbody is an ancestor of the inner header row too.
+
+**Sheet 6, answered at 15:26Z (all seven).** Yearly reports, all eight categories, each college sees its own; Scenario 2 final; reword P1; the two My College figures renamed (built). Card 1: Sam rewrites the Scenario 2 script and voices it with ElevenLabs. ⚠️ **A parallel session read the same Chaffey figure from Sierra's side** (#1776): the credit report's applied column equals the articulated units on every row, whatever the plan status (74,697 units statewide at Needs Action), so Unit sources now splits by plan status. Read `main` before pushing: a sibling session can land beside yours on the same question.
+
+**Moved from the funding lane at the S306 checkpoint (verbatim):**
+
+✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 ARE LIVE** (S302–S303, Sam: *"mockup looks good!"*): gray Curr figures until an institution meets all its minimum conditions, showing what its measures compute to; the drill-in in the row's own columns; the coordinator, primary contact and landing page under the met first condition; the veteran count, JST count and percent beside the third. Guards: `tests/cpl_funding_round8.test.js`, `tests/cpl_funding_round9.test.js`; harness `prototype/mockup_harness/`. Detail moved verbatim to the [lessons archive](../../cpl_funding_lessons_archive.md) (S305). ⭐ **Sheet 4 rulings (Sam, 2026-09-29, all nine his own call):** the first condition's check reads **all three parts**, and the Reporting box starts with **spending** (a new write surface: Governance first). ⭐ **Card 2, S305: Governance done, mockup with Sam. NEEDS SAM (sheet 5, cards 2–4).** `cpl_funding_reports` folds into DR-09 beside `cpl_funding_notes` (`kb/governance_surface_map.json` and the register row, 2026-09-30); a report is an institution's dollars with no student record, so the student-detail disclosure boundary does not reach it, and it is reviewer-gated like the note. The mockup ([BV2Xqt49vCYicX5xdEKP5E](https://claude.ai/artifact/BV2Xqt49vCYicX5xdEKP5E), `prototype/cplfund_reporting_box_v1.html`) records a college's reported expenditures per quarter in NOVA's categories (object codes 1000 to 7000 and indirect costs), totals them to date beside the maximum award, keeps who reported and who recorded, and treats a correction as a new report. The build waits on three calls: quarterly or yearly, all eight categories, and whether a college sees its own figures on My College. ✅ **Card 1 built (S303):** `map_coordinator_summary()` answers `has_coordinator`, `has_primary_contact` and `has_landing_page` as booleans, never a name, so the public page and the tab run one check (live 2026-09-29: 49 coordinators, 43 all three); an unmet line names the missing part. Guard: `tests/cpl_funding_first_condition.test.js`.
+
+**Moved from the funding lane at the S306 checkpoint (verbatim):** Moved verbatim to the [lessons](cpl_funding_lessons.md) (S302): the origination cutover's asymmetry and the explainer's title.
+
+## S307 (2026-09-30, SkyGusset): the Reporting box's reviewer half
+
+- **Built on Sam's sheet 6 calls:** `cpl_funding_reports`, INSERT-only, reviewer-gated on read and write, the recorder
+  stamped by trigger from the session (the body's `recorded_by` is overwritten: a reviewer cannot record in another's
+  name). Re-keyed from the mockup's quarters to fiscal years; the window's years plus the close-out year, since funds
+  close out the year after the window.
+- **Reversible without SQL.** INSERT-only rules out an edit, so a mistaken entry needed a way back that a reviewer can
+  take from the tab: **Withdraw** is itself a newer row (`withdrawn`, no figures), after which the year counts as
+  unreported. The table's CHECKs make a withdrawal empty and a report name its reporter.
+- **The repo's Supabase guard blocks any statement containing INSERT,** even in a rolled-back transaction as a role
+  test. The live gate was verified from the catalog instead (`pg_policy` expressions, `has_table_privilege`) and
+  matches `cpl_funding_notes`; the first reviewer save is the live proof, and the tab's re-read confirms it (#598).
+- ⚠️ **Two mutation runs against one file, sharing one backup path, raced.** A foreground run copied the file while a
+  background run held its mutation, and both restored from that copy: the print-clone line vanished from the source
+  and every test still passed. Found by re-grepping the mutated lines after both finished. Give each run its own
+  backup, and never run two against the same file at once.
+- **Open (sheet 7 card 1):** how a college's staff sign in to see their own. MAP lists a CPL coordinator or primary
+  contact address for 105 of 123 colleges (49 and 99); three district staff are listed for three or four colleges.
+- **Sam's Public view asks (same day):** the published scenario opens every visit; *As colleges see it* flips the
+  curator choices off in the Public view; My CPL Funding at the top of both public renderings, by college or district,
+  with Save as PDF through one printer (`printPanel`). The margin audit measured edges in Chromium: the a11y sweep
+  passed every page while the explainer's header ran flush to a phone's edge, because a `padding` shorthand's 0 sides
+  erased the `.wrap` gutter. **A sweep that measures contrast and targets does not measure alignment; probe the edges.**
+- ⚠️ **A district's blocks never named their institution:** `fundingPanel` omits the name because the chooser carries it
+  in the one-college view. Only the screenshot showed it; each member now sits under its name.
+- **The dashed frame around the tab is COBI's placeholder on 18 tab roots:** measure a pattern's reach before calling it
+  one tab's defect.
+
+### Moved from the funding lane at S307 (verbatim)
+
+✅ **S306 (Sam, 2026-09-30):** the drill-in hovers say how each figure is reached (label: goal, measure, share, price; Max: funding × share, target = proportional funding ÷ price; Curr: units ÷ units per FTES, fraction × Max); the college table scrolls inside a 75vh wrap under a frozen header; **Refresh everything** (Internal view) re-reads the saved model here and in every other window of the browser (BroadcastChannel `cpl-funding-model`; a save posts it too) and lists what it reached, what is built when opened, and what is not live; My College adopts the module's config on every model change; **My CPL Funding** sits beside the table on the public renderings (`fundingPanel`, one renderer); **Unit sources** (reviewer, Internal only) reads `map_college_cr_unit`: military (ACE or a military course type, 99.5% agreement with MAP's flag) vs non-military, the exhibits and the recommendations. Guards: `cpl_funding_refresh_sources.test.js`, `college_briefing_funding_sync.test.js`.
+
+⭐ **SCENARIO 2 IS FINAL AND PUBLISHED (Sam, 2026-09-30, sheet 6 card 6; chosen 2026-09-29 after the CO demo):** *"We're going with Scenario 2."* College funding follows P1 and P2 (Year 1: 50% each); *"I will be reporting on P3 Career Attainment together with P4 projects using more qualitative data rather than tying it to FTES."* **Ruled on sheet 4 (cards 5–8):** Year 2 follows P1 and P2 at 50% each (already true: `mirrorYears` gives Year 2 Year 1's priorities, so no write; the stored Year-2 block is inert); both of Scenario 1's phrases carry to Scenario 2 (✅ written 2026-09-29 by `funding-config-edit-apply.yml`; receipt in `kb/funding_config_edits_out/2026-09-29/`); P3 and P4 get a mockup before any port (✅ **approved 2026-09-30**, *"go ahead with the card 7 mockup"*, artifact `RRTSSiTW1k6jk6gvxUAQ1D`: in Scenario 2 the measured 0%-share Career Attainment card leaves, and Career Attainment (C) and Innovation Projects (D) are reported cards that say what is reported, when (TBA) and where, with no target, FTES or funding line; `reportedAsReports` turns the shape on per scenario, so Scenario 1 keeps its card; ✅ written 2026-09-30, receipt in `kb/funding_config_edits_out/2026-09-30/`, the first plan to declare a new key, `"create": true`, and read back live in S305: `prioRemoved` [1,3], `reportedCards` [C,D], the two titles, `reportedAsReports` true); ✅ the Scenario 2 narrated draft is built (card 8, below). Card 1 (Sam, sheet 6): *"I want to rewrite it and then use the ElevenLabs connector to add a natural narration voiceover."* Unlinked until his rewrite is voiced.
+
+## S308 (2026-09-30, SkyBracket, joined with S309 SkyCensus): the Public view reads as text, and the Reporting box's college half
+
+**Sam's four asks, verbatim:** *"1. For all text views possible on this tab eliminate the gray background box to simplify visually 2. Eliminate any unnecessary line breaks or font size changes with text to enhance readability 3. Delete the 2 marked chips 4. Fix the dates so they are appropriately spaced."* Shipped as #1788.
+
+- **The dates were a DOM bug, not a spacing choice.** In public mode `edText()` returns the bare value, and two bare text nodes inside a flex row join into ONE anonymous flex item, so the label and date printed as "Funding Model FinalizedSep 2026" with the row's `justify-content` doing nothing. The curator view never showed it (its inputs are elements). Any public-mode emitter that returns text into a flex row needs its own element.
+- **Box removal went to both views;** the chips left the Public view only (the memo and brief are curator tools). The priority cards kept their boxes (a grid needs edges); sheet 10 card 3 asks.
+- **The size change met a July ruling.** C9e in `cpl_funding_rollup.test.js` pinned the Timeline to the cards' .8rem (Sam, 2026-07-23, when it sat under the cards). CI's shard 4 caught it; the newer ruling governs, the assertion now pins .92rem and says why, and sheet 10 card 2 lets Sam reverse it. ⚠️ A local run of 69 funding suites takes ~50 minutes serially; `xargs -P 4` with a 1-hour background limit finished them.
+- **The Minimum Conditions status runs into its requirement** in the Public view (`reqItem()`), with the deadline read into the text through `partReqText()` ("Local confirmation on file by 2026-11-01.").
+
+**The college half (#1790, Sam's sheet 7 card 1: MAP's two contacts).**
+- **Names meet through `map_colleges`, never through each other.** Reports carry the roster's short name, contacts carry MAP's; both resolve to a `college_id` (canonical first, then a variant, trimmed). 112 of 115 roster names resolve; *LA Swest*, *Mt San Antonio* and *MiraCosta* fail closed until the identity crosswalk carries them.
+- **A contact field is a list.** 26 of 148 filled fields held two or more addresses (comma and newline); each is split before matching. Measured as a caller through `request.jwt.claims`, printing counts only: a four-college address reached 4, an unlisted one 0.
+- **Return one row per listed college even with no report,** or the page cannot tell "none yet" from "not listed".
+- ⚠️ **`revoke ... from public` left `anon=X`.** This project's default privileges grant anon and authenticated by name on every new function; the function stayed callable until the revoke named anon. Rule 10 b2 now says so, and the grants lint's docstring. Exposure check: no rebuild, replace or clear function is anon-callable.
+- **The page never decides who sees what.** My College only asks `cpl_funding_my_reports()` with the person's own token; the team phrase is not a person and gets the sign-in. `markReports()` is the one "newest counts" rule for both views.
+- **The seeded a11y sweep found the Resources links at 15px** (SC 2.5.8); they are 24px now. A section behind the scope question needs its own seeded target, one per state, because the sweep seeds once per width.

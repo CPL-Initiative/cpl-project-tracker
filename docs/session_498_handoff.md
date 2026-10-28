@@ -4,6 +4,8 @@ date: 2026-10-27
 session: 497 (SkyCrowberry)
 tags: [handoff, program-requirements-harvest, library, implementation-funding]
 status: current
+superseded: true
+superseded_by: session_505_handoff.md
 ---
 
 # You are Session 498

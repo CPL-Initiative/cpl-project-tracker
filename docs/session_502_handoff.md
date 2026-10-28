@@ -4,6 +4,8 @@ date: 2026-10-27
 session: 500 (SkyLingonberry, Sam's session beside the queue routine's SkyBlackberry)
 tags: [handoff, sierra-page-redesign, implementation-funding, funding-public]
 status: current
+superseded: true
+superseded_by: session_505_handoff.md
 ---
 
 # You are Session 502

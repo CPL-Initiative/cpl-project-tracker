@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-27T22:35:29Z",
-  "session": 503,
-  "moniker": "SkyElderberry",
+  "written_at": "2026-10-28T01:50:00Z",
+  "session": 504,
+  "moniker": "SkyMulberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_504_handoff.md",
+  "handoff": "docs/session_505_handoff.md",
   "next_step": {
     "title": "The Summit-morning sweep",
-    "text": "On the morning of October 30 the next session re-measures the ten public pages and the narrated film with npm run a11y, then confirms the live film plays the recorded piano."
+    "text": "On the morning of October 30 the next session re-measures the ten public pages and the narrated film with npm run a11y, after confirming the live site serves the narrated Draft 7 and the music cut v13."
   },
   "calls": [
     {
@@ -138,8 +138,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-27T22:33:00Z",
-      "text": "No change to the harvest this run. The funding film's recorded piano and Sierra's deploy shipped in other lanes."
+      "at": "2026-10-28T01:50:00Z",
+      "text": "No change to the harvest this run. The narrated funding film now speaks Sam's own script, in the funding lane."
     }
   ],
   "headline": [
@@ -262,6 +262,12 @@
       "active": 20282,
       "complete": 13191,
       "colleges": 114
+    },
+    {
+      "day": "2026-10-28",
+      "active": 20282,
+      "complete": 13191,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -270,7 +276,7 @@
     "at": "2026-10-28T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-27",
+    "day": "2026-10-28",
     "gaps": 3031,
     "parts": {
       "links": {
