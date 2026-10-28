@@ -102,6 +102,8 @@ covers what only reading can.
    follow the repo's branch policy (merge on a green `test`). If the GitHub PR
    tools are missing from the run, push the branch and stop: the committed
    report is the receipt, and the next interactive session opens the PR.
+   **The CPL queue merges it:** the routine cannot, so the first queue session after a Monday run lands the PR on a
+   green `test` and files step 8's row (S505 found #2257 and #2468 a week and two days old).
 8. **A material event** (a tech giant launched or retired an AI credential, or
    a credential MAP has articulated was renamed or retired) goes at the top of
    the PR body under *For the memory table*. The run holds no Supabase

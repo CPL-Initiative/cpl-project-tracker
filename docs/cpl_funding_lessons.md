@@ -663,3 +663,9 @@ Sam, at S503's sign-off, on the narrated Draft 5: *"The script is an older one. 
 - **The migrate bot's receipt becomes the PR head.** Each `.apply` push adds a `Receipt: supabase migrate` commit whose PR runs wait for approval, so `test` never reports on that head; the next session-authored commit (a real change) is what CI runs. Plan the last push of a PR to come after the bot's.
 
 Shipped: #2524 (the Library record at v12, then v13), #2525 (Draft 7, v13, the memory rows, the Library record). Sam on Draft 7: *"Excellent video! Thanks for hanging with me on this one--it's a biggy for our state!"*
+
+## S505 SkyBoysenberry (2026-10-28): S450's Scenario 4 words, five days late
+
+- **#2379 never merged.** S450 closed at its context emergency line with the PR open and a merge checklist in its body; handoffs 462 to 476 listed it as open and none acted. Its data half (the strategies receipt) had run on 10-23 and read back live; its code half had not. #2527 ported what main still lacked: under the outcomes lane the Noncredit Funding Rules fold is gone (Sam, 10-23: *"we can eliminate the Noncredit Funding Rules section as long as everything has a home in the priority cards"*), and the rule text names his four exhibit bases and the Career Exploration and CPL Portfolio course. Guard D13b. The receipt is committed as record (`kb/receipts/cpl_funding_config_scenario4_strategies_2026-10-23_s450.sql`).
+- **What stayed main's.** The branch's condition words (a coordinator *on the college CPL Strike Team*) predate Sam's 10-25 rulings (the Noncredit CPL Lead, the strike-team condition struck), so main kept its own.
+

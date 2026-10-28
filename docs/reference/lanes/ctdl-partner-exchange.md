@@ -91,6 +91,12 @@ Valley 674, Norco 817), so CE's course competencies there have a second reading 
 6. *as-proposed*: three new decision rights, partner intake (Malone), match confirmation (Sam, until he delegates it to
    a curator) and Registry publishing (Sam).
 
+**Credential CTIDs in the CER (#2528, S505; from #2469, 2026-10-26).** Credential Engine sent Sam its 50 most-referenced
+credentials; `kb/_fetch_ce_top50.py` reads each CTID's CTDL from the Registry into
+`kb/reference/credential_engine_top50.json`, and the IT catalog joins 16 of them (`ctid` plus a `ctdl` block, shown as a
+Registry link on the CER industry record). The other 34 (trades, health, public safety) wait on widening the catalog
+beyond IT, Sam's call.
+
 ## NEXT
 
 - Malone runs the paste in `partners/ctdl-exchange/README.md` (Sam hands it to him; a session cannot create a

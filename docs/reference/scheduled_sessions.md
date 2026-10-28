@@ -72,6 +72,12 @@ is his standing preference there too.
    while main re-voiced the October 2 script, until Sam asked where his script had
    gone (S504, 2026-10-28). Its handoff was a side file the PR body named, never the
    numbered line: read any handoff an open PR names, then merge it, port it, or close it.
+   **Every open PR leaves the start with a disposition: merge it, port it, or close it with a pointer** (S505,
+   2026-10-28). Four drafts sat 2 to 9 days while handoffs 462 to 476 listed them as open: S450's #2379 (its data
+   write had run, its code never merged), the credential watch's #2257 and #2468 (that routine opens a PR and cannot
+   merge it) and #2469 (a side session that stopped before its checks). A fetch of another session's branch stalls
+   here; read the PR's diff through the GitHub tools, take its files from raw.githubusercontent.com at the head and
+   base shas, and `git merge-file` each onto main.
    **So a session Sam opens by hand inside the routine's hours opens a draft PR
    in its first minutes**, before any diagnosis, and pushes to it at least every
    half hour while it works. A firing has no `list_sessions`, so an open PR is the

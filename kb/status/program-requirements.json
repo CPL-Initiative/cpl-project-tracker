@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-28T01:50:00Z",
-  "session": 504,
-  "moniker": "SkyMulberry",
-  "run": "Sam's session",
+  "written_at": "2026-10-28T14:24:00Z",
+  "session": 505,
+  "moniker": "SkyBoysenberry",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_505_handoff.md",
+  "handoff": "docs/session_506_handoff.md",
   "next_step": {
     "title": "The Summit-morning sweep",
     "text": "On the morning of October 30 the next session re-measures the ten public pages and the narrated film with npm run a11y, after confirming the live site serves the narrated Draft 7 and the music cut v13."
@@ -138,8 +138,8 @@
   },
   "changes": [
     {
-      "at": "2026-10-28T01:50:00Z",
-      "text": "No change to the harvest this run. The narrated funding film now speaks Sam's own script, in the funding lane."
+      "at": "2026-10-28T14:24:00Z",
+      "text": "No change to the harvest this run. Four old pull requests were landed or ported: the noncredit funding words of October 23 and the credential catalog."
     }
   ],
   "headline": [
@@ -266,14 +266,14 @@
     {
       "day": "2026-10-28",
       "active": 20282,
-      "complete": 13191,
+      "complete": 13200,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-28T05:12:00Z"
+    "at": "2026-10-29T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-28",
