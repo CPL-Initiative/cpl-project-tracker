@@ -1,0 +1,28 @@
+{
+ "_readme": "S505 SkyBoysenberry, 2026-10-28. Glendale holds 220 records and 65 active programs pass; 114 fail only on arithmetic, read incomplete. Two causes measured live: 74 records name no program total, and 93 placed courses (59 programs) are on the state's list with no units (63 courses, unspaced codes such as BIOL298 and ACCTG101; only 12 have a sibling row with units), so one leaves a whole required block unsummed. The catalog prints no units on its program pages, but its course descriptions do ('ECT 160 ... 3.0 Units', p182 of the capture sample). This read prints three program pages (Sports Coaching p88, 39910; Biotechnology p67, 41767; CNC & CAM Mill Advanced p169, 46050) to see whether and how a program page states its total, and the description pages for BIOL 298 and ENGL 101 to see how a description states units. One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "program_totals": "Whether a Glendale program page prints its total units, and in what words.",
+  "course_units": "How a course description prints its units, and where it sits beside the code."
+ },
+ "keywords": [
+  "SPORTS\\s+COACHING",
+  "BIOTECHNOLOGY",
+  "CNC\\s*&\\s*CAM",
+  "Units?\\s*\\n[^\\n]{0,20}BIOL\\s?2\\s?9\\s?8",
+  "Units?\\s*\\n[^\\n]{0,20}ENGL\\s?1\\s?0\\s?1\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_totals",
+    "course_units"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  60,
+  303
+ ]
+}
