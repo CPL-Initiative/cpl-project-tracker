@@ -1,7 +1,7 @@
 ---
 title: "Program requirements harvest — lane state"
 created: 2026-10-03
-updated: 2026-10-26
+updated: 2026-10-28
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -90,6 +90,13 @@ Music 43887 passes on the `repeat` step (S497): a course the tab says is taken n
 "n semesters of any of" carries `repeats`, and the scorer counts both; 19.5-20 against 19.5, meets (reconcile
 40466933762, reread 40469123943, one row, receipt with before-values). RN 03570 read Fable's way sums to about
 71.5-78.5 against its tab's 60 (S498): the build would trade *incomplete* for *unequal*, so it waits.
+**Glendale 80 of 260 filed records passing (S505; 45 at the session's start):** its 2025-2026 PDF prints old
+prefixes and numbers on program pages (PSYCH, TART, ENGL 101) and the state's in its course descriptions, so its
+reconcile entry files two prefix aliases and three renumbers, each cited from a description; the capture now looks for
+a listed course under an aliased prefix (Theatre moved off the descriptions), and the outcome scorer's no-space reading
+reads its letter-spaced lines and hyphen breaks (outcome failures 54 to 0). **NEXT:** 180 fail arithmetic, most on 63
+courses the state's file lists without units; their units print only in the course descriptions ("3.0 Units"), so a
+step that takes a course's units from its description comes next (lessons S505).
 **San Joaquin Delta 200 of 203 (S500):** Cal-GETC 45621 passes on a `pool_areas` step over Areas 3 and 5 (S499), and
 Architectural Drafting 22244 on a `unit_line` step that adds its printed math line (reconcile 40523400149; lessons
 S500). The three left (07304, 16764, 19752) are extraction misreads, each needing its own page read (lessons S499).
