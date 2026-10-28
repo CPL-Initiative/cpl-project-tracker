@@ -80,10 +80,12 @@ function clickSel(window, doc, sel) {
     !doc.querySelector(".cplfund-sec-sum button") &&
     !!doc.querySelector(".cplfund-sec-body .cplfund-sec-ctl [data-secrename]"));
 
-  // 2/3 — rename the priorities section, whose house title carries a link.
+  // 2/3 — rename the priorities section, whose house title names the Ed. Code section. Its link sits on the
+  // section's first line since 2026-10-28 (Sam, Open Asks Sheet 139 card 1: "move"), out of the <summary>.
   const houseHead = head(doc, "priorities");
-  check("the priorities heading's house title carries a link to the Ed. Code section",
-    !!houseHead && !!houseHead.querySelector("a") && /78093\.2\(d\)\(1\)/.test(houseHead.textContent));
+  const srcLink = () => { const x = sec(doc, "priorities"); return x ? x.querySelector(".cplfund-sec-body > .cplfund-sec-ref a") : null; };
+  check("the priorities heading's house title names the Ed. Code section, its link on the section's first line",
+    !!houseHead && !houseHead.querySelector("a") && /78093\.2\(d\)\(1\)/.test(houseHead.textContent) && !!srcLink());
   clickSel(window, doc, '[data-secrename="priorities"]');
   const input = doc.querySelector('[data-sectitle="priorities"]');
   check("Rename offers the title's WORDS on one line, not its markup",
@@ -104,9 +106,9 @@ function clickSel(window, doc, sel) {
   // Restore returns the house title, link and all.
   clickSel(window, doc, '[data-secrename="priorities"]');
   clickSel(window, doc, '[data-sectitlereset="priorities"]');
-  check("Restore drops the override and the house title returns with its link",
+  check("Restore drops the override and the house title returns, its link on the section's first line",
     !(T._getShared().titles && T._getShared().titles.priorities) &&
-    !!head(doc, "priorities") && !!head(doc, "priorities").querySelector("a"));
+    !!head(doc, "priorities") && /78093\.2\(d\)\(1\)/.test(head(doc, "priorities").textContent) && !!srcLink());
 
   // 4 — retired 2026-10-15 (Sam's call 1): the tab's sections carry no Hide;
   // a curator hides a block on the public page with Edit this page

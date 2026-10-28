@@ -8,8 +8,9 @@
 //   2, 4, 6, 7, 17  his own answers, verbatim (7's "pubic" read "public")
 //   8       left out: "we are no longer linking adoption of statewide exhibits
 //           to the funding outcomes"
-//   9       held: his answer names apportionment, which cpl_funding_calm keeps
-//           for the seed grant; it posts once he answers that
+//   9       his answer as written (Open Asks Sheet 139 card 2: "it is important
+//           to use the term because funding distributed through the
+//           apportionment procedure can get buried at the colleges")
 //
 // This reads the house text itself, so a later edit that drops his wording or
 // brings card 8 back fails here.
@@ -30,7 +31,7 @@ const text = paras.join("\n\n");
 const qs = paras.filter((p) => /^Q: /.test(p)).map((p) => p.slice(3));
 const answer = (q) => { const i = paras.indexOf("Q: " + q); let a = []; for (let j = i + 1; i >= 0 && j < paras.length && !/^Q: /.test(paras[j]); j++) a.push(paras[j]); return a.join("\n\n"); };
 
-check("24 questions: 18 from the sheet and the 6 already on the page", qs.length === 24);
+check("25 questions: 19 from the sheet and the 6 already on the page", qs.length === 25);
 check("the rollout's basics lead: qualify, then confirm",
   qs[0] === "What must an institution do to qualify for funding?" && qs[1] === "How does a college confirm its participation?");
 check("help comes last, with the support address",
@@ -55,7 +56,14 @@ check("card 8 stays out", !/not yet recognize as adopted|does not yet recognize/
 check("card 17: his answer with the percentages",
   /Noncredit is about 6 percent of the institutions' combined FTES, and the Chancellor's Office set noncredit's portion at 15 percent/
     .test(answer("How was the funding divided between credit and noncredit?")));
-check("card 9 waits: no apportionment in the FAQ until he answers", !/apportion/i.test(text));
+const c9 = answer("Where does the CPL funding go, and who receives it?");
+check("card 9: his answer as written, apportionment named twice",
+  /^CPL funding is provided to colleges through the apportionment process/.test(c9) &&
+  /funds are disbursed using the apportionment procedure/.test(c9) &&
+  /ask about the funds and their intended use\.$/.test(c9));
+check("...and apportionment appears nowhere else in the FAQ", (text.match(/apportion/gi) || []).length === 2);
+check("card 9 sits after the timing question", qs.indexOf("Where does the CPL funding go, and who receives it?") ===
+  qs.indexOf("When will institutions receive their funding?") + 1);
 check("the six questions already on the page stay",
   ["Has the Chancellor's Office released guidance for this funding?",
    "What qualifies as a student record in MAP for reporting purposes?",

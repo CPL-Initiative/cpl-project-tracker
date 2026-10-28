@@ -1243,6 +1243,9 @@
     ".cplfund-faq-item > summary { cursor: pointer; font-weight: 600; color: var(--text-strong); }",
     ".cplfund-faq-item > summary:focus-visible { outline: 2px solid var(--focus-ring, currentColor); outline-offset: 2px; }",
     ".cplfund-faq-item > p { margin: 6px 0 0 1.2em; max-width: var(--cpl-measure,none); }",
+    // An answer may carry a long address (the MAP dashboard's is 62 characters): it wraps inside the answer at
+    // 390px rather than pushing the page sideways (S507 sweep: right=483).
+    ".cplfund-faq-item > p { overflow-wrap: anywhere; }",
     ".cplfund-strathandle { cursor: grab; font-size: .72rem; color: var(--text-muted); border: 1px solid var(--border); border-radius: 10px; padding: 2px 8px; min-height: 24px; display: inline-flex; align-items: center; user-select: none; }",
     ".cplfund-reqrow.dragging { opacity: .5; }",
     ".cplfund-reqrow.dropover { outline: 2px dashed var(--focus-ring, currentColor); outline-offset: 2px; }",
@@ -1283,6 +1286,8 @@
     ".cplfund-sec-pvlab { font-size: .72rem; font-weight: 600; letter-spacing: .04em; text-transform: uppercase; color: var(--text-muted); }",
     ".cplfund-pvchip { background: var(--surface-opaque); color: var(--navy-primary); border: 1px solid var(--border-strong); border-radius: 999px; padding: 3px 12px; min-height: 24px; cursor: pointer; font-size: .75rem; font-family: inherit; }",
     ".cplfund-pvchip:focus-visible { outline: 2px solid var(--gold-accent); outline-offset: 1px; }",
+    ".cplfund-sec-ref { margin: 0 0 10px; }",
+    ".cplfund-sec-ref a { color: var(--accent-link, var(--cobalt)); }",
     ".cplfund-sec-stub { display: flex; flex-wrap: wrap; gap: 4px 12px; align-items: center; margin: 0 0 10px; padding: 10px 14px; border: 1px dashed var(--border-strong); border-radius: 10px; background: var(--surface-subtle); }",
     ".cplfund-sec-stub .cplfund-sec-sum { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: baseline; flex: 1 1 240px; }",
     ".cplfund-sec-stub h3 { margin: 0; font-size: 1rem; color: var(--text-muted); }",
@@ -3801,8 +3806,10 @@
   // rollout's questions first, then counting CPL in MAP, then building CPL at the
   // college, help last. His own wording where he wrote it (the card text lives in
   // CPLBrain/decision-sheets/open-asks/2026-10-28-funding-faq-138.json); card 8 left
-  // out at his word; card 9 (where the funding goes) waits on his answer about
-  // "apportionment", which cpl_funding_calm keeps for the seed grant.
+  // out at his word. Card 9 (where the funding goes) is his answer as written (Sheet 139 card 2:
+  // "It arrives through the apportionment funding procedure used by the CO ... it is important to use
+  // the term because funding distributed through the apportionment procedure can get buried at the
+  // colleges"), so cpl_funding_calm allows the word in that answer and the seed grant's sentence.
   var FAQ_DEFAULT_PLAIN = [
     "Q: What must an institution do to qualify for funding?",
     "Meet the three minimum conditions: a CPL Coordinator assigned in MAP, with the college's CPL landing " +
@@ -3853,6 +3860,14 @@
     "Q: When will institutions receive their funding?",
     "The Timeline on this page lists the confirmation deadline, the report deadlines and the disbursement " +
       "dates. Each disbursement reflects the CPL outcomes recorded in MAP by that point.",
+    "Q: Where does the CPL funding go, and who receives it?",
+    "CPL funding is provided to colleges through the apportionment process and routed through the college's " +
+      "Vice President of Business Services or equivalent fiscal office, which is responsible for managing and " +
+      "distributing institutional funds. Because local processes vary, colleges should work with their fiscal " +
+      "and administrative leadership to determine how CPL funds are allocated and used on their campus. Note " +
+      "that since funds are disbursed using the apportionment procedure, local offices may be unaware of the " +
+      "intended use of the funds and which division or department should receive them. It is recommended that " +
+      "those responsible for CPL at the campus ask about the funds and their intended use.",
     "Q: How may a college use its CPL funding?",
     "Each institution decides how to use its funding, and the funding is intended to directly advance the " +
       "priority outcomes: for example, CPL coordination, counseling, faculty review of credit recommendations, " +
@@ -11598,10 +11613,17 @@
     // public page is funding-model/, with its own hidden blocks, and the tab's
     // sections carry no Hide of their own.
     if (publicMode() && secHidden(id)) return "";
+    // A link in a title moves to the section's first line (Sam, Open Asks Sheet 139 card 1, 2026-10-28:
+    // "move"). The <summary> is the control that opens the section, so a link inside it is a control
+    // inside a control (axe nested-interactive); the title keeps its words, and the statute stays one
+    // click away once the section is open.
+    var refs = [];
+    var sumHead = head.replace(/<a\b[^>]*>([\s\S]*?)<\/a>/gi, function (a, words) { refs.push(a); return words; });
+    var refLine = refs.length ? '<p class="cplfund-sec-ref">Source: ' + refs.join(", ") + "</p>" : "";
     return '<details class="cplfund-sec" data-sec="' + esc(id) + '"' + (sectionOpen(id) ? " open" : "") + ">" +
-      '<summary class="cplfund-sec-sum"><h3>' + head + '</h3>' +
+      '<summary class="cplfund-sec-sum"><h3>' + sumHead + '</h3>' +
       '<span class="cplfund-sec-word" aria-hidden="true"></span></summary>' +
-      '<div class="cplfund-sec-body">' + sectionCtlHtml(id) + bodyHtml + "</div></details>";
+      '<div class="cplfund-sec-body">' + sectionCtlHtml(id) + refLine + bodyHtml + "</div></details>";
   }
   // Inline section: explicit title + body.
   function section(id, title, body) { return sectionShell(id, title, body); }
