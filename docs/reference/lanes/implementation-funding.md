@@ -33,7 +33,7 @@ related:
 
 ✅ **2026-10-19:** the memo and report lead with SB 135 (`MEMO_BLOCKS`); the opening follows `x_lede` until saved.
 
-⏳ **NEEDS SAM: the funding FAQ ([Open Asks Sheet 138](https://claude.ai/artifact/RR7mnwWsGuYpRkW7Ti9HnA), S506).** Sam's nine drafts, the help answer and eleven new questions; on his verdicts the set posts as `FAQ_DEFAULT_PLAIN` (no scenario overrides `faq` or `x_faq`), then a KB note and a Library record. Text: `CPLBrain/decision-sheets/open-asks/2026-10-28-funding-faq-138.json`.
+✅ **The funding FAQ as Sam settled it (Open Asks Sheet 138, 2026-10-28, all 21 his own call; S507):** 24 questions in `FAQ_DEFAULT_PLAIN`, which the tab and the public page both show (no `faq` or `x_faq` override). His own words on cards 1 (*the funding procedure*, his correction), 2, 4, 6, 7 and 17; card 8 left out. Guard `cpl_funding_faq_sheet138`. ⚠️ **NEEDS SAM: card 9** (where the funding goes) names apportionment, which `cpl_funding_calm` keeps for the seed grant (Sheet 139 card 2). **NEXT:** a KB note and a Library record. Text: `CPLBrain/decision-sheets/open-asks/2026-10-28-funding-faq-138.json`.
 
 ⏳ **The memo's opening waits on Sam's paste (Sheet 129 card 1; `cpl_memory` `sam-sheet-129-rulings-2026-10-26`).**
 The memo's opening follows the explainer's Overview (`x_lede`) until `memo_lead` is saved, so the Word export printed two

@@ -3797,7 +3797,70 @@
   // opens with "Q:" starts a question, and the paragraphs after it, up to the
   // next "Q:", are its answer. Seeded from Sam's 2026-09-24 reply to a
   // college's questions about MAP student records, with names left out.
+  // The settled set (Sam, Open Asks Sheet 138, 2026-10-28, all 21 his own call): the
+  // rollout's questions first, then counting CPL in MAP, then building CPL at the
+  // college, help last. His own wording where he wrote it (the card text lives in
+  // CPLBrain/decision-sheets/open-asks/2026-10-28-funding-faq-138.json); card 8 left
+  // out at his word; card 9 (where the funding goes) waits on his answer about
+  // "apportionment", which cpl_funding_calm keeps for the seed grant.
   var FAQ_DEFAULT_PLAIN = [
+    "Q: What must an institution do to qualify for funding?",
+    "Meet the three minimum conditions: a CPL Coordinator assigned in MAP, with the college's CPL landing " +
+      "page configured; a local confirmation of participation on file by December 31, 2026; and joint services " +
+      "transcripts (JSTs) uploaded in MAP and processed for CPL for at least 75 percent of enrolled veterans. " +
+      "An institution receives funding once it meets all three, and its CPL outcomes then determine how much of " +
+      "its max award it qualifies for. An institution with a noncredit share also attests each year to a " +
+      "Noncredit CPL Lead, which that share requires. Each institution's row on the Funding Dashboard shows its " +
+      "conditions and which it has met.",
+    "Q: How does a college confirm its participation?",
+    "An administrator of the college (the vice president of academic affairs, the vice president of student " +
+      "services, the president, or another senior administrator) opens the college's row on the Funding " +
+      "Dashboard and selects Confirm by. The form starts with the administrator's college or district email " +
+      "address. CPL Initiative staff review each confirmation, and it shows as complete on the dashboard once " +
+      "they approve it.",
+    "Q: Why was my email address not accepted?",
+    "The confirmation and the attestation accept an address on the college's or its district's email domain, " +
+      "from the contacts MAP holds for the college. A personal address, or one from another college, " +
+      "cannot complete them. If your college or district address is refused, email map@rccd.edu.",
+    "Q: What is the Noncredit CPL Lead attestation?",
+    "An institution with a noncredit share of its award attests once each fiscal year that its Noncredit CPL " +
+      "Lead is assigned, is published on its CPL landing page, and meets regularly with its CPL Coordinator. " +
+      "The two may be the same person. An administrator selects Attest for the noncredit share on the college's " +
+      "row and starts with a college or district email address. The noncredit share counts once CPL Initiative " +
+      "staff approve the attestation.",
+    "Q: What do Max Funds and Curr Funds mean?",
+    "Max Funds is the institution's max award: the potential funding for its credit and noncredit CPL " +
+      "priorities over the two years. Curr Funds (current) is the funding it qualifies for so far from the CPL " +
+      "outcomes recorded in MAP, once it meets all three minimum conditions. Select an institution's row to see " +
+      "each priority's figures.",
+    "Q: What do the priority outcomes measure?",
+    "Two outcomes determine the credit share of each award, half each. Access counts applied (articulated) " +
+      "CPL units available to students in MAP, and Completion counts transcribed CPL units, each measured in " +
+      "FTES. Two outcomes determine the noncredit share, half each: exhibits built or adopted for the noncredit " +
+      "program's learning, and a Noncredit Career Exploration and CPL Portfolio course. Career Attainment and " +
+      "Innovation Projects are reported outcomes and carry no funding of their own.",
+    "Q: How was the funding divided between credit and noncredit?",
+    "Each award divides into a credit share and a noncredit share by the institution's own credit and " +
+      "noncredit FTES. Noncredit is about 6 percent of the institutions' combined FTES, and the Chancellor's " +
+      "Office set noncredit's portion at 15 percent of the funding to institutions. Noncredit programs are " +
+      "generally strained for resources locally, and they hold great opportunity to expand CPL. The model " +
+      "counts each noncredit FTES at the weight that reaches that portion.",
+    "Q: How is the appropriation divided?",
+    "Most of the 2026-27 one-time appropriation is allocated directly to institutions in proportion to their " +
+      "credit and noncredit FTES, each award between a base award and a cap. The remainder funds the statewide " +
+      "CPL projects and innovations that serve every college, and two Chancellor's Office posts supporting the " +
+      "initiative. The Overview on this page shows the current figures.",
+    "Q: When will institutions receive their funding?",
+    "The Timeline on this page lists the confirmation deadline, the report deadlines and the disbursement " +
+      "dates. Each disbursement reflects the CPL outcomes recorded in MAP by that point.",
+    "Q: How may a college use its CPL funding?",
+    "Each institution decides how to use its funding, and the funding is intended to directly advance the " +
+      "priority outcomes: for example, CPL coordination, counseling, faculty review of credit recommendations, " +
+      "and the staff time to evaluate transcripts and record CPL in MAP. The college's designated official " +
+      "reports on how the funding was used by the report deadlines in the Timeline.",
+    "Q: How often do the figures on this page change?",
+    "The figures refresh from MAP data once a day, so a CPL request, an articulation or a transcription " +
+      "recorded in MAP shows here after the next refresh.",
     "Q: Has the Chancellor's Office released guidance for this funding?",
     "The Chancellor's Office will release detailed guidance once the CPL funding procedure is final. " +
       "The outcomes respond to Education Code §78093.2(d), which directs the Chancellor's Office to allocate " +
@@ -3806,12 +3869,23 @@
       "attainment through credit for prior learning; and supporting credit for prior learning through the " +
       "Chancellor's Office pilot projects, such as the MAP platform. Under §78093.2(d)(2), each campus " +
       "demonstrates its implementation through those metrics before it receives an allocation.",
-    "Q: What qualifies as a student record in MAP for reporting purposes?",
-    "A minimally complete student record has the student's name, the college student ID, the CPL exhibit ID, " +
-      "the CPL document (for now, a JST or AFSC, for military credit only), the CPL type or types, the program " +
-      "of study, the transfer destination if known, and the academic year of the request. The academic year of " +
-      "the request is not necessarily the catalog year, which is authoritative only in the college's student " +
-      "information system.",
+    "Q: Do CPL consultations and student referrals count toward a college's funding outcomes?",
+    "CPL consultations and referrals are important components of student identification and access. However, " +
+      "the funding procedure measures outcomes based on CPL units recorded in MAP. Colleges should continue " +
+      "documenting counseling interactions and proactively identifying eligible students while supporting them " +
+      "through the evaluation, awarding, and transcription processes.",
+    "Consultations often result in new CPL articulations or adoption from other colleges and result in more " +
+      "Applied (Articulated) credit available to the student, which is counted in Priority 1. So, by screening " +
+      "incoming students for CPL, colleges will inevitably improve their Priority 1 outcomes and funding.",
+    "Q: How can counselors help colleges meet the CPL funding outcomes?",
+    "Counselors play an important role by proactively identifying students with prior learning, integrating " +
+      "CPL opportunities into educational plans, and connecting students with appropriate evaluation processes. " +
+      "By helping students move from identification to applied (articulated) and transcribed credit, counselors " +
+      "support student completion while contributing to the college's measurable CPL outcomes. In student " +
+      "consultations, counselors can use the Request Quick Adopt function on the MAP Dashboard to initiate new " +
+      "articulations, which once approved by faculty, are counted toward the Access outcome. When they counsel " +
+      "students on which articulated CPL options they should transcribe, they improve the Completion " +
+      "outcome--both resulting in funding.",
     "Q: Should a college record students who receive a CPL consultation but do not submit a petition?",
     // Access counts every request (Sam, 2026-10-01: "P1 no longer requires CPL
     // requests to originate from landing page, portal, or batch upload").
@@ -3828,11 +3902,53 @@
       "toward funding and toward reporting to the Legislature.",
     "To show that units are ready or have been transcribed in the student information system, select Transcribe " +
       "for the student in MAP. Colleges can also batch upload this.",
+    "Q: What qualifies as a student record in MAP for reporting purposes?",
+    "A minimally complete student record has the student's name, the college student ID, the CPL exhibit ID, " +
+      "the CPL document (for now, a JST or AFSC, for military credit only), the CPL type or types, the program " +
+      "of study, the transfer destination if known, and the academic year of the request. The academic year of " +
+      "the request is not necessarily the catalog year, which is authoritative only in the college's student " +
+      "information system.",
     "Q: Will there be guidance on minimum data entry, so colleges report on a consistent basis?",
     "Yes. The Chancellor's Office will release detailed guidance once the CPL funding procedure is final.",
+    "Q: Where can a college get support to make CPL easier for students to find and use?",
+    "Start with the college's CPL landing page in MAP. It tells students what CPL the college offers and whom " +
+      "to contact, and its Request CPL function opens a CPL petition in MAP. A configured landing page is part " +
+      "of the first minimum condition. The MAP team holds office hours listed at " +
+      "https://map.rccd.edu/get-involved/, and the training video on configuring a landing page is linked in " +
+      "this page's Contents. For technical support, email map@rccd.edu.",
+    "Q: How can we institutionalize CPL?",
+    "Make CPL part of the work the college already does: ask about prior learning at enrollment, include CPL " +
+      "in counseling and educational planning, set it out in local policy and procedure, and give it a standing " +
+      "coordinator with leadership support. Direct students to document their experience and see their " +
+      "opportunities as well on the new CPL Portal, Credit for Being You (creditforbeingyou.org) and use the " +
+      "resources provided on the MAP website, https://map.rccd.edu/. More resources are coming soon to the " +
+      "Chancellor's Office Vision Resource Center.",
+    "Q: How can we build administrative support for CPL at our college?",
+    "Show leaders what CPL does for students and for the college. The Funding Dashboard on this page shows " +
+      "the college's max award, its targets in FTES and the funding it qualifies for so far. The MAP dashboard, " +
+      "https://cpldashboardcccco.azurewebsites.net/insights/dashboard, shows the college's CPL students and " +
+      "units and the savings to students. Together with the college's own enrollment and completion data, these " +
+      "figures make the case for CPL in planning and budget discussions.",
+    "Q: What are the benefits and drawbacks of including CPL in the course outline of record?",
+    "While some districts list articulated CPL on course outlines of record (COR), it is not a requirement of " +
+      "regulation and can put undue strain on the Curriculum process and make it difficult to process CPL " +
+      "opportunities for students that have not been previously approved. When considering COR language, " +
+      "institutions should seek an approach that supports quality and compliance while avoiding unnecessary " +
+      "barriers to timely CPL opportunities for students.",
+    "Q: How do statewide credit recommendations become official and appear in MAP?",
+    "A statewide credit recommendation becomes official at a college when its faculty review and adopt it on " +
+      "MAP following their local procedures. MAP has a built in approval process that mirrors the curriculum " +
+      "approval process and requires approvals set by each college. Approved exhibits are automatically " +
+      "displayed on the college's CPL landing page and visible to the public.",
+    "Exhibits based on statewide recommendations are noted on the MAP Dashboard and made available for " +
+      "adoption using the Request Quick Adopt button. ASCCC Pathways to Credit now develops and maintains the " +
+      "statewide credit recommendations and provides faculty leadership for the work. The full list appears on " +
+      "the MAP website, the MAP dashboard and the CPL Fact Sheet. Units applied through an adopted statewide " +
+      "exhibit count toward the Access and Completion outcomes, as units through any faculty-approved exhibit " +
+      "do.",
     "Q: Where can a college get help setting up its MAP records?",
     "The MAP team meets with colleges to set up their records, and holds office hours listed at " +
-      "https://map.rccd.edu/get-involved/."
+      "https://map.rccd.edu/get-involved/. For technical support with MAP or this page, email map@rccd.edu."
   ].join("\n\n");
   // Plain text → question/answer pairs. Text before the first "Q:" becomes an
   // untitled lead paragraph so nothing a curator types is ever dropped.
