@@ -226,9 +226,9 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
 - **Each new open-asks sheet updates the series record** `open-asks-sheets` (version 137 since S503, receipt
   `kb/receipts/cpl_library_s503_2026-10-27.sql`): one guarded UPDATE from the version as read; `made_by` (capped at 300
   characters) is a range each sheet extends.
-- **A film re-render moves its record.** `cpl-funding-in-motion` names Scenario 2 v12 and Sierra's narrated Draft 5, what
-  the public funding page carries, with Scenario 1's approved cuts kept (S504, receipt
-  `kb/receipts/cpl_library_s504_2026-10-27.sql`, links pinned to f513f97c). `noncredit-summit-in-motion` still names v1
+- **A film re-render moves its record.** `cpl-funding-in-motion` names Scenario 2 v13 and Sierra's narrated Draft 7 (Sam's
+  own script), what the public funding page carries, with Scenario 1's approved cuts kept (S504, receipt
+  `kb/receipts/cpl_library_s504_film_v13_2026-10-28.sql`, links pinned to #2525's head 57246801c). `noncredit-summit-in-motion` still names v1
   (ladypatty1): its v3 cuts are not in the repo, so it moves when Sam files the SharePoint copy with the tab's File it.
 - Sam's sheet 47, 48 and 49 calls of 2026-10-07 and 2026-10-08 (the sheets to the vault, one Library record per series,
   the Ironworker film public, the Drive sharing dropped, the SharePoint folder with guests, hand and sync) are recorded in
