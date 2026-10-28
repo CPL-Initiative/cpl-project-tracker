@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 476 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1293** | |
+| Session handoffs | 477 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1294** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-28 (S507 SkyDewberry, Sam's session): the Summit a11y sweep, 125 of 131 targets passing and the one COBI fault moved on Sam's word (#2534, #2536); the funding FAQ posted as he settled it on Sheets 138 and 139 (#2536); two sessions' Sheet 138s reconciled; handoff 508.
 - 2026-10-28 (S506 SkyCloudberry, Sam's session): the funding forms start with the email and acknowledge an allowed address (#2531; the domain gate measured read-only); the Attest word, gray boxes, memo TBA, one curator text section that keeps a deletion; NOCE's nocccd.edu and *Awaiting CPL Initiative Confirmation* (#2533); the FAQ on Open Asks Sheet 138; no handoff file (S507 writes 508).
 - 2026-10-28 (S505 SkyBoysenberry, Sam's session): Glendale 45 to 80 passing on its catalog's own words (#2529: prefix aliases and renumbers, the capture reads an aliased prefix, the outcome scorer reads letter-spaced text; display 41c15eee3f75); MAP links open the Non-Military card and read Request Adopt, Sierra deployed (#2530); handoff 507.
 - 2026-10-28 (S505 SkyBoysenberry): four orphaned PRs resolved: S450's #2379 ported (#2527: the NC rules fold gone under Scenario 4, his outcome words), the credential watch runs of 10-19 and 10-26 and Credential Engine's top 50 with CTID in one rebuild (#2528); Privacy's UI pass; handoff 506.
@@ -130,4 +131,3 @@ Authoritative external sources we've cached:
 - 2026-10-27 (S502 SkyHuckleberry): My Institution hidden (#2513), the PII fix (#2515), the review gate (#2514, in CI), Sierra's deploy held on its A/B; handoff 503.
 - 2026-10-27 (S500 SkyBlackberry): Delta Architectural Drafting 22244 passes on the new `unit_line` reconcile step, 200 of 203 (#2510, reread 40527733110, display build 89a4abee9d1c); the CPL Queue routine beside Sam's S500, whose handoff carries it.
 - 2026-10-27 (S499 SkyCloudberry): Delta Cal-GETC 45621 passes on a `pool_areas` step, 199 of 203 (#2508, reread 40502212690, display build 5dc18d9ea80a); handoff 500.
-- 2026-10-27 (S497 SkyCrowberry): Hartnell Music 43887 passes on the new `repeat` reconcile step, 83 of 94 (#2506, reread 40469123943, display build 8f8a282ca526); handoff 498.

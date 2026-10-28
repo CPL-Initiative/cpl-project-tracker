@@ -735,3 +735,9 @@ The share keeps its FTES sizing and releases on the scenario's own `ncOutcomes` 
 Chaffey's large figure is mostly AP exam exhibits, which Sam called *"valid and useful"*.
 
 The timeline renders in date order (`timingOrder`).
+
+## S507 SkyDewberry (2026-10-28): the Summit sweep, two Sheet 138s, and the FAQ
+
+- **The sweep before the Summit.** All 131 a11y targets on main 157c3b39: 125 passed. The six that failed shared one node, the priorities title's statute link inside its `<summary>`. Sam ruled *move* (Sheet 139 card 1): a title's link now opens the section's body as *Source: …*. A long URL in an FAQ answer then pushed the tab past 390px (right=483); `overflow-wrap: anywhere` on the answers fixed it. Re-measured clean in both themes.
+- **Two live sessions, one sheet number.** S506 and S507 each published a Sheet 138 within minutes on the same lane and builder lines, and S506 set out to write handoff 507, which already existed. One writer per file was agreed by `send_message`: the FAQ kept 138, the statute card took 139, S507 took handoff 508 and the FAQ post. `cpl_memory` `pitfall-two-sessions-one-sheet-number-2026-10-28`.
+- **The FAQ as Sam settled it** (Sheet 138, 21 his own call; #2536): 25 questions, his own words on seven cards, card 8 out. Two of his choices met his own older vocabulary rulings. On "the proposed funding model" he answered in session ("funding procedure is beter"). On apportionment he answered on Sheet 139 card 2 (*written*, with his reason), and `cpl_funding_calm` now lifts out his two phrases and no other. The check was a CI guard and the ruling a doc line, so one card (apportionment) would have failed the build and the other would have passed unnoticed.
