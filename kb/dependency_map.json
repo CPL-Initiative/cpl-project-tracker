@@ -589,7 +589,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 15571,
+     "line": 15589,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -1788,14 +1788,14 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 101
+     "line": 108
     },
     {
      "id": "script:prototype/funding_video/narrate.py",
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 41
+     "line": 43
     },
     {
      "id": "script:prototype/noncredit_video/cues.py",
@@ -5782,7 +5782,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17192,
+     "line": 17210,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -5876,7 +5876,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17119,
+     "line": 17137,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -5927,7 +5927,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17104,
+     "line": 17122,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -17332,7 +17332,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 264
+     "line": 309
     }
    ],
    "served": true,
@@ -17345,21 +17345,21 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 442
+     "line": 489
     },
     {
      "id": "script:prototype/funding_video/cues.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 72
+     "line": 79
     },
     {
      "id": "script:prototype/funding_video/narrate.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 50
+     "line": 52
     }
    ],
    "served": true,
@@ -17398,7 +17398,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 210
+     "line": 220
     }
    ],
    "served": true,
@@ -17411,7 +17411,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 233
+     "line": 243
     }
    ],
    "served": true,

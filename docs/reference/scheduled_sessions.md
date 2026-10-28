@@ -66,6 +66,12 @@ is his standing preference there too.
    as S403, and each wrote a PDF reader; the 08:12Z firing found the two PRs, read
    the writer note in their comments, and merged the work (#2192). A PR updated in
    the last half hour is a live session: end in one line.
+   **Read the open PRs even with `list_sessions` in hand, and an old one closely:**
+   a side session's PR left open is work Sam approved that main never received.
+   #2323 (the narrated funding film in Sam's own script, 2026-10-21) waited a week
+   while main re-voiced the October 2 script, until Sam asked where his script had
+   gone (S504, 2026-10-28). Its handoff was a side file the PR body named, never the
+   numbered line: read any handoff an open PR names, then merge it, port it, or close it.
    **So a session Sam opens by hand inside the routine's hours opens a draft PR
    in its first minutes**, before any diagnosis, and pushes to it at least every
    half hour while it works. A firing has no `list_sessions`, so an open PR is the

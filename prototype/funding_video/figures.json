@@ -1,7 +1,7 @@
 {
- "source": "../../../tmp/claude-0/-home-user/65c92c2c-4aa9-5e23-83ce-c93d85f00633/scratchpad/memo/live.json",
- "config_md5": "439488ec",
- "read_at": "2026-10-26T02:20:01.767Z",
+ "source": "../../../tmp/claude-0/-home-user/2d871b99-df00-5592-a7e0-76e10e1d4e61/scratchpad/live_3176f872.json",
+ "config_md5": "3176f872",
+ "read_at": "2026-10-28T00:22:14.114Z",
  "project": "cpl-implementation",
  "published": "Scenario 4",
  "scenarios": {
@@ -107,7 +107,13 @@
      "date": "",
      "label": "Potential Year 3 Depending on Funding Availability"
     }
-   ]
+   ],
+   "vet": {
+    "met": 64,
+    "of": 118,
+    "threshold": 0.75,
+    "asOf": "2026-10-27"
+   }
   },
   "Scenario 2": {
    "scenario": "Scenario 2",
@@ -208,7 +214,13 @@
      "date": "",
      "label": "Potential Year 3 Depending on Funding Availability"
     }
-   ]
+   ],
+   "vet": {
+    "met": 64,
+    "of": 118,
+    "threshold": 0.75,
+    "asOf": "2026-10-27"
+   }
   },
   "Scenario 3": {
    "scenario": "Scenario 3",
@@ -309,7 +321,13 @@
      "date": "",
      "label": "Potential Year 3 Depending on Funding Availability"
     }
-   ]
+   ],
+   "vet": {
+    "met": 64,
+    "of": 118,
+    "threshold": 0.75,
+    "asOf": "2026-10-27"
+   }
   },
   "Scenario 4": {
    "scenario": "Scenario 4",
@@ -373,14 +391,14 @@
    "ncLane": "outcomes",
    "ncOutcomes": [
     {
-     "label": "NC-1",
+     "label": "Priority 1 (NC)",
      "title": "Exhibits built or adopted",
      "share": 0.5,
      "measure": "nc_exh",
      "funding": 1893023.1000000003
     },
     {
-     "label": "NC-2",
+     "label": "Priority 1 (NC)",
      "title": "Noncredit Career Exploration and CPL Portfolio course",
      "share": 0.5,
      "measure": "nc_course",
@@ -441,7 +459,13 @@
      "date": "",
      "label": "Potential Year 3 Depending on Funding Availability"
     }
-   ]
+   ],
+   "vet": {
+    "met": 64,
+    "of": 118,
+    "threshold": 0.75,
+    "asOf": "2026-10-27"
+   }
   }
  }
 }
