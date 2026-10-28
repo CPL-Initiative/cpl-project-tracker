@@ -669,3 +669,24 @@ Shipped: #2524 (the Library record at v12, then v13), #2525 (Draft 7, v13, the m
 - **#2379 never merged.** S450 closed at its context emergency line with the PR open and a merge checklist in its body; handoffs 462 to 476 listed it as open and none acted. Its data half (the strategies receipt) had run on 10-23 and read back live; its code half had not. #2527 ported what main still lacked: under the outcomes lane the Noncredit Funding Rules fold is gone (Sam, 10-23: *"we can eliminate the Noncredit Funding Rules section as long as everything has a home in the priority cards"*), and the rule text names his four exhibit bases and the Career Exploration and CPL Portfolio course. Guard D13b. The receipt is committed as record (`kb/receipts/cpl_funding_config_scenario4_strategies_2026-10-23_s450.sql`).
 - **What stayed main's.** The branch's condition words (a coordinator *on the college CPL Strike Team*) predate Sam's 10-25 rulings (the Noncredit CPL Lead, the strike-team condition struck), so main kept its own.
 
+## Moved from the lane (S507, 2026-10-28)
+
+Verbatim from `docs/reference/lanes/implementation-funding.md`, to bring it under its 20,000-byte budget (`oversized_doc`). The header's link order predates the version's move left of Resource Links on 2026-10-28; the lane's explainer entry holds the current place.
+
+✅ **My College's funding now lives here (Sam, 2026-10-21: "move funding to Implementation Funding"; S443).** My CPL Funding on My College is a link to the funding page (`?college=<roster key>`, the institution's row while My Institution is hidden; `&view=one` with the switch on; #2316); the college's expenditure reports open at the top of the 2026-28 Funding view (`reportsPanel`, #2320). ✅ **The public page forgets the chosen institution on reload (Sam, Open Asks Sheet 111 card 2, 2026-10-21: "forget", reversing call 9).** The choice lasts the visit (#2327).
+
+The share keeps its FTES sizing and releases on the scenario's own `ncOutcomes` (`unit: "count"`, each a `metric_src`, `target_rule` and share): NC-1 `nc_exh` under `pct_floor_cap` (floor 2, 5% of `nc_cdcp`, cap 10), NC-2 `nc_course` under `fixed` 1; `ncReported` carries the award count, funded by nothing.
+
+**Measured live S506** (read-only; the repo's Supabase guard refuses even a rolled-back write): `cpl_funding_email_domain_ok` passes the right domain in any case and refuses free mail, a sister college's domain, a look-alike and a subdomain; anon holds EXECUTE on both functions; all 115 credit institutions and the four noncredit-only ones have a domain on file, so none falls to "accepts any".
+
+✅ **The recorded piano (Sam, 2026-10-27, Sheet 137 card 1 in chat: *"new soundtrack sounds good. tempos could come up a bit, but I won't be too picky on that"*).** #2521: the Salamander Grand (CC BY 3.0, credited in the closing), open voicings and the pedal, the score at 107 (sections still ahead of their scenes); v12; v13 adds the Veteran Star (S504). ✅ **The narrated cut (1.2.5) speaks Sam's own script:** Draft 7 (S504; his 10-21 markup, *Greetings CPL heroes* to *Our time is now*, with the period and the Noncredit CPL Lead he asked for on 10-27; #2323, which first built it, never merged). It sits in the Contents after the music film, which stays the introduction (`video-narrated-link`; a11y target `funding-film-narrated`); `build.py --check`: n2 matches.
+
+**Resource Links** opens five links, a gray line each (the CPL Library is off this page: *"we'll just use it with our meetings with colleges and agencies"*), then *As of … Ver. N*, PDF, and Collapse all last. Ask Sierra is the lower-right chip.
+
+A list line indented two spaces (a tab, Indent, or Tab on the line) nests under the one above (`indentLines`, `nestedListHtml`; guard `cpl_funding_s506_asks`).
+
+**The reported cards (P3, P4) carry the Serves boxes too** (Sam, 2026-10-25, S480): their own goal stays ticked (the picker moves it), and the others store goal-keyed as `reportedGoals`, a caption and citation only; the project allocation and the designated activities stay on the card's own goal.
+
+⭐ **Each row names its outcomes as chips beside its title** (Sam, 2026-10-25, S480: *"CR Priority 1 [access chip]; NC Priority 1 [access - career attainment chips]"*; `rowNameHtml()`, `.cf-goalchip` in the Base and Cap chips' ink); a title that only repeats its outcome drops, so P1 reads *Priority 1 [Access]*.
+
+`cfp_insert_self` and `cna_insert_self` require an address on the institution's or its district's domain (`cpl_funding_email_domain_ok`, from `map_college_contacts` via `cpl_funding_college_map`; a district domain is one on file for two or more of its colleges; free mail never counts; no address on file accepts any), and the page asks `cpl_funding_email_domains` first.
