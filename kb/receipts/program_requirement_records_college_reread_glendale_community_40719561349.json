@@ -1,0 +1,474 @@
+{
+ "college": "Glendale Community College",
+ "reread_run": "40719561349",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "40707595210",
+ "at": "2026-10-28T15:51:05Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "02570",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02587",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12571",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15584",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19269",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19562",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24010",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30032",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30561",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30813",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31597",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32738",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36155",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36596",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41825",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44774",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45057",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45393",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45394",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45395",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45396",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45397",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45399",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45596",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45681",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45682",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45854",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45996",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46004",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46050",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46051",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46052",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46053",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46054",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "11177"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 1,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Glendale Community College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 40707595210;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 28,
+    "placed": 28,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "equal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "DANCE 100",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "DANCE 102",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 114",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 117",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 122",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 127",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 129",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 135",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "DANCE 136",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 137",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 190",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "DANCE 194",
+          "units": null,
+          "catalog_addition": false
+         }
+        ],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "A minimum of six units from the following courses",
+      "rule": "choose_units",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ART 102",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 125",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ART 130",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DANCE 124",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "DANCE 126",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "DANCE 127",
+        "units": null,
+        "units_max": null,
+        "alternatives": [
+         {
+          "code": "DANCE 128",
+          "units": null,
+          "catalog_addition": true
+         }
+        ],
+        "catalog_addition": false
+       },
+       {
+        "code": "HUMAN 115",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KIN 157",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 135",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 230",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 236",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MUSIC 237",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 101",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 103",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 104",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 109",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 123",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 129",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "T ART 134",
+        "units": null,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       }
+      ],
+      "minimum": 6,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "dancer",
+      "choreographer"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "integrate technical dance skills using correct body alignment and muscle coordination and compare various dance forms in relation to historical and cultural context."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 25,
+      "min": 25
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "CHOREOGRAPHIC STUDIES AND DANCE TECHNIQUE AS DEGREE OR CERTIFICATE",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 25,
+   "total_min": 25,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=70",
+   "catalog_year": "2025-2026",
+   "extracted_run": 40696243319,
+   "program_title": "Choreographic Studies & Dance Technique",
+   "control_number": "11177"
+  }
+ ]
+}
