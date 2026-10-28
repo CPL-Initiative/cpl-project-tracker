@@ -82,15 +82,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "schedule appointments, perform medical office duties, handle financial matters including medical insurance collection, manage electronic health records and other ancillary medical records, and to complete the insurance and reimbursement process."
-   ],
-   "why": [
-    "not in the catalog text as printed: schedule appointments, perform medical office duties, handle financial matters i"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -103,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -229,5 +225,6 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

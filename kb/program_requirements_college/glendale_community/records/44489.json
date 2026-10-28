@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 12891,
-    "output_tokens": 2017,
+    "output_tokens": 1943,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,43 +30,39 @@
     "model": null
    }
   ],
-  "output_tokens": 2017,
+  "output_tokens": 1943,
   "output_tokens_details": {
-   "thinking_tokens": 690
+   "thinking_tokens": 576
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0919,
- "ms": 16013,
- "seconds": 16.5,
+ "cost_usd": 0.09042,
+ "ms": 15714,
+ "seconds": 16.0,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 16,
    "listed": 16,
-   "share": 0.938,
-   "missing": [
-    "THTR101"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 2,
    "codes": [
     "ART130",
-    "ESL156",
-    "TART101"
+    "ESL156"
    ],
    "flagged": [
     "ART130",
-    "ESL156",
-    "TART101"
+    "ESL156"
    ],
    "pass": true
   },
@@ -135,7 +131,7 @@
    "electives_fill_degree": false,
    "outcomes": [
     "use English reading, writing, listening, and speaking skills at an advanced level of academic proficiency",
-    "apply content knowledge of chosen electives in order to select a degree and/or career pathway."
+    "apply content knowledge of chosen electives in order to select a degree and/or career pathway"
    ],
    "careers": []
   },
@@ -293,17 +289,18 @@
   "missing_explained": [
    {
     "code": "THTR 101",
-    "why": "not in the text as printed; catalog lists T ART 101, likely the same course under a different subject code"
+    "why": "not in the text under this code; catalog prints T ART 101 (likely the same Introduction to Theatre course), recorded as a catalog addition"
    }
   ],
   "notes": [
-   "The catalog prints no units beside any course in this section; all course units are null.",
-   "Catalog prints 'ESL 155'; matched to closed-list entry 'ESL155' (spacing difference only).",
-   "ESL 156 and ART 130 are not on the closed list and are recorded as catalog additions.",
-   "'T ART 101' is printed in the catalog (possibly 'TH ART' or a spacing artifact); recorded as a catalog addition. Reviewer should check whether it corresponds to closed-list THTR 101 Introduction To Theatre.",
-   "The program learning outcomes text is identical across all four Advanced ESL pathway certificates on this page; recorded from the Visual & Performing Arts section itself.",
-   "Total stated as 'a minimum of 17 units'; recorded as 17."
+   "The catalog prints no units beside individual courses; all course units are null.",
+   "Catalog prints 'ESL 155'; matched to closed-list entry 'ESL155' (spacing difference only), so catalog_addition is false.",
+   "ESL 156 and ART 130 are printed in the section but are not in the closed list.",
+   "T ART 101 appears in the catalog where the closed list has THTR 101 (Introduction To Theatre); reviewer should confirm they are the same course.",
+   "Total stated as 'a minimum of 17 units'; recorded as 17.",
+   "The same Program Learning Outcomes text is printed for all four Advanced ESL pathway certificates; recorded here as printed in the VPA section.",
+   "Ligature-split words in the PDF text (e.g., 'proﬁ ciency', 'and/ or') were read as 'proficiency' and 'and/or'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40704760867"
 }

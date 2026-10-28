@@ -88,17 +88,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "apply concepts of composition, film language and lighting techniques to support the creative vision of the director",
-    "collaborate effectively as a member of a team to achieve the challenges of technical and conceptual goals of a project from origination to the completion of the high quality final deliverable media production"
-   ],
-   "why": [
-    "not in the catalog text as printed: apply concepts of composition, film language and lighting techniques to support ",
-    "not in the catalog text as printed: collaborate effectively as a member of a team to achieve the challenges of techn"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -432,5 +426,6 @@
    "Required Units for Major: 18 units* — the asterisk's footnote is not in the text provided."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

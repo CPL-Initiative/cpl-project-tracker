@@ -93,15 +93,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "install, configure and maintain an industry standard computer with the Unix/Linux operating system that is connected to the Internet."
-   ],
-   "why": [
-    "not in the catalog text as printed: install, configure and maintain an industry standard computer with the Unix/Linu"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -253,5 +249,6 @@
    "CS/IS 112, 135 and 151 appear in the elective list but are not on the closed list; recorded as catalog additions."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

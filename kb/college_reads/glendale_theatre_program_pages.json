@@ -1,0 +1,19 @@
+{
+ "_readme": "S505 SkyBoysenberry, 2026-10-28. Third Glendale read. The capture (run 40699667880, after the aliased-prefix printing in 4a925a33) still hands Theatre Arts 32707, Theatre Arts: Acting 35473, Technical Theatre 35585 and EnTech Lighting and General 46052/46054 the THTR course descriptions (pages 262-265), and the three CNC & CAM certificates the CAM descriptions (page 169). This read prints the program-section pages (60-160) naming theatre, EnTech or CNC, to see how their program pages print the heading and codes. One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "program_pages": "Where the Theatre, EnTech and CNC & CAM program pages sit, their headings, and how they print their course codes."
+ },
+ "keywords": [
+  "THEATRE",
+  "EnTech|ENTERTAINMENT\\s+TECHNOLOGY",
+  "CNC"
+ ],
+ "pages": [
+  {
+   "answers": ["program_pages"],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [60, 160]
+}

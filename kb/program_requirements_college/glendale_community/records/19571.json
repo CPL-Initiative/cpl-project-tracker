@@ -85,15 +85,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "students will demonstrate the skills required in the field of machine and manufacturing technology, such as computer numerical machining (CNC) for various machine tools; demonstrate the skills required in the field of machine and manufacturing technology, such as use of manual machining equipment; demonstrate the skills required in the field of machine and manufacturing technology, such as metallurgy and heat treating; and demonstrate the skills required in the field of machine and manufacturing technology, such as technical mathematics."
-   ],
-   "why": [
-    "not in the catalog text as printed: students will demonstrate the skills required in the field of machine and manufa"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -201,5 +197,6 @@
    "Closed-list courses ENGR 101 and ENGR 102 do not appear in this catalog section; a reviewer may check whether the certificate requirements are printed elsewhere."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

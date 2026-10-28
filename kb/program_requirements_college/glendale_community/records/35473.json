@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Theatre Arts: Acting",
  "award": "A.A. Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=262",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=88",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12933,
+  "input_tokens": 8674,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12933,
-    "output_tokens": 1240,
+    "input_tokens": 8674,
+    "output_tokens": 3316,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,72 +30,80 @@
     "model": null
    }
   ],
-  "output_tokens": 1240,
+  "output_tokens": 3316,
   "output_tokens_details": {
-   "thinking_tokens": 231
+   "thinking_tokens": 1169
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07653,
- "ms": 11300,
- "seconds": 11.7,
+ "cost_usd": 0.10102,
+ "ms": 25926,
+ "seconds": 26.4,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 21,
    "listed": 24,
-   "share": 0.0,
+   "share": 0.875,
    "missing": [
-    "DANCE125",
-    "DANCE145",
-    "DANCE190",
-    "ENGL125",
-    "HUMAN117",
-    "MUSIC135",
-    "MUSIC170",
-    "THTR101",
-    "THTR102",
-    "THTR103",
-    "THTR106",
-    "THTR107",
-    "THTR109",
     "THTR110",
-    "THTR111",
     "THTR112",
-    "THTR113",
-    "THTR140",
-    "THTR155",
-    "THTR160",
-    "THTR161",
-    "THTR162",
-    "THTR163",
-    "THTR164"
+    "THTR113"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 12,
+   "codes": [
+    "SPCH101",
+    "SPCH105",
+    "SPCH106",
+    "TART104",
+    "TART123",
+    "TART129",
+    "TART171",
+    "TART180",
+    "TART181",
+    "TART182",
+    "TART183",
+    "TART184"
+   ],
+   "flagged": [
+    "SPCH101",
+    "SPCH105",
+    "SPCH106",
+    "TART104",
+    "TART123",
+    "TART129",
+    "TART171",
+    "TART180",
+    "TART181",
+    "TART182",
+    "TART183",
+    "TART184"
+   ],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    13.0,
+    13.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    28.0,
+    38.5
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "a required course in 'Required Courses' has no units"
    ]
   },
   "repeated": {
@@ -103,12 +111,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 1,
    "courses": 0,
-   "count": 0,
+   "count": 1,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -127,11 +135,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "THEATRE ARTS",
+   "section_heading": "THEATRE ARTS AA DEGREE — Option 2: Acting",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 38.5
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -148,114 +156,326 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "apply skills and knowledge of theatre in preparation for transferability or vocation; analyze a play from script to performance; identify theatre terms and occupations; and identify theatre as a collaborative art form."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Courses",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "T ART 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 111",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 129",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Two units from",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "DANCE 125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 145",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "DANCE 190",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Four units from",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "T ART 123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 171",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 182",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 183",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 184",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
+   },
+   {
+    "name": "Four units from",
+    "rule": "choose_units",
+    "minimum": 4,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "T ART 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 162",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 163",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 164",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Three units from",
+    "rule": "choose_units",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ENGL 125",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "HUMAN 117",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 135",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MUSIC 170",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPCH 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPCH 105",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "SPCH 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 102",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "T ART 106",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 140",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 155",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
-    "code": "DANCE 125",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANCE 145",
-    "why": "not in the text"
-   },
-   {
-    "code": "DANCE 190",
-    "why": "not in the text"
-   },
-   {
-    "code": "ENGL 125",
-    "why": "not in the text"
-   },
-   {
-    "code": "HUMAN 117",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUSIC 135",
-    "why": "not in the text"
-   },
-   {
-    "code": "MUSIC 170",
-    "why": "not in the text"
-   },
-   {
-    "code": "THTR 101",
-    "why": "only a course description; no program requirements in text"
-   },
-   {
-    "code": "THTR 102",
-    "why": "only a course description; no program requirements in text"
-   },
-   {
-    "code": "THTR 103",
-    "why": "only a course description and family list; no program requirements in text"
-   },
-   {
-    "code": "THTR 106",
-    "why": "only a course description and family list; no program requirements in text"
-   },
-   {
-    "code": "THTR 107",
-    "why": "only a course description; no program requirements in text"
-   },
-   {
-    "code": "THTR 109",
-    "why": "only a course description and family list; no program requirements in text"
-   },
-   {
     "code": "THTR 110",
-    "why": "only a course description and family list; no program requirements in text"
-   },
-   {
-    "code": "THTR 111",
-    "why": "only a course description and family list; no program requirements in text"
+    "why": "named only in Option 1: General (as T ART 110), not in the Acting option"
    },
    {
     "code": "THTR 112",
-    "why": "only a course description; no program requirements in text"
+    "why": "not in the text"
    },
    {
     "code": "THTR 113",
-    "why": "only a course description; no program requirements in text"
-   },
-   {
-    "code": "THTR 140",
-    "why": "only a course description and family list; no program requirements in text"
-   },
-   {
-    "code": "THTR 155",
-    "why": "only a course description (cut off); no program requirements in text"
-   },
-   {
-    "code": "THTR 160",
-    "why": "named only in the course family list; no program requirements in text"
-   },
-   {
-    "code": "THTR 161",
-    "why": "named only in the course family list; no program requirements in text"
-   },
-   {
-    "code": "THTR 162",
-    "why": "named only in the course family list; no program requirements in text"
-   },
-   {
-    "code": "THTR 163",
-    "why": "named only in the course family list; no program requirements in text"
-   },
-   {
-    "code": "THTR 164",
-    "why": "named only in the course family list; no program requirements in text"
+    "why": "not in the text"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 262-264) is the Theatre Arts course description section, not the Theatre Arts: Acting A.A. Degree program section. No requirements, totals, outcomes or careers for the award are printed, so no blocks were recorded.",
-   "The text is cut off mid-description at THTR 155; the program requirements page is likely elsewhere in the PDF (program sections usually precede course descriptions) and should be located and reviewed.",
-   "The course descriptions mention that THTR 109 and THTR 110 together satisfy the AA-T Theatre Arts degree requirement; that refers to a different award and was not used."
+   "The catalog prints theatre courses with subject 'T ART'; the closed list uses 'THTR'. T ART codes with the same number as a closed-list THTR course were treated as matching (catalog_addition false); T ART 104, 123, 129, 171, 180-184 have no THTR counterpart in the closed list and are marked as catalog additions.",
+   "The catalog prints no units beside individual courses, so all course units are null.",
+   "Theatre Arts AA offers Option 1: General and Option 2: Acting; only Option 2: Acting is recorded here, so option_group is null.",
+   "The program learning outcomes are printed as a single sentence with semicolon-separated clauses; recorded as one entry as printed. The same outcomes text also appears under Option 1: General.",
+   "Total 28-38.5 units is printed as 'a minimum of 28-38.5 units'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40704760867"
 }

@@ -119,17 +119,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "develop a portfolio of their work (this portfolio will show the students best work from different classes within the department, discuss building construction techniques, principles, and building code)",
-    "discuss how design/drawing techniques, application of the International Building Code (IBC), building construction techniques, and other standards affect the design of their structure."
-   ],
-   "why": [
-    "not in the catalog text as printed: develop a portfolio of their work (this portfolio will show the students best wo",
-    "not in the catalog text as printed: discuss how design/drawing techniques, application of the International Building"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 3,
@@ -441,5 +435,6 @@
    "No GE pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

@@ -108,15 +108,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "initiate and respond to correspondence effectively while using the latest automated technology, system software (Windows), and application software (Word, Excel, and Outlook) to perform more advanced skills; become familiar with Global information systems to be able to sign on to an account and use common utilities, including e-mail and Web browsers to search a variety of databases for information; acquire the necessary knowledge and skills of accounting and bookkeeping to be able to use journals and ledgers to prepare balance sheets and income statements and be able to translate accounting records into a basis for sound decision making in a variety of businesses; be able to use a variety of office procedures to perform such tasks as sorting mail, filing and processing documents; develop interpersonal skills to conduct and participate in job interviews, practice effective human relation skills in business, handle telephone conversations with ease, and develop skills to communicate more effectively with customers and other employees verbally; and type by touch at a minimum of thirty (30) words a minute and to create, edit, and format advanced features for any business document including forms, medical and legal forms, resumes, job applications, bibliographies, footnotes/endnotes, newsletters."
-   ],
-   "why": [
-    "not in the catalog text as printed: initiate and respond to correspondence effectively while using the latest automa"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -161,5 +157,6 @@
   "missing_explained": [],
   "notes": []
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

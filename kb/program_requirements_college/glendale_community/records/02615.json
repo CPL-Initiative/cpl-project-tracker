@@ -84,15 +84,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "Upon completion of this program, students will demonstrate skills required to seek and obtain employment as a flight attendant; identify and assess behavior patterns associated with panic; demonstrate knowledge of location and use of aircraft emergency equipment, and demonstrate skills required during emergency evacuation of aircraft."
-   ],
-   "why": [
-    "not in the catalog text as printed: Upon completion of this program, students will demonstrate skills required to se"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 1,
@@ -215,5 +211,6 @@
    "The heading says 'CERTIFICATE NON-DEGREE'; the description calls the program 'Flight Service-Airline and Travel Careers'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

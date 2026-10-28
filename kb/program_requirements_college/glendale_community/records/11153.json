@@ -88,15 +88,11 @@
    "program": 1,
    "courses": 0,
    "count": 1,
-   "not_verbatim": [
-    "use a variety of office procedures to perform such tasks as sorting mail, answering telephones, and filing and processing documents using the latest computer technologies; be able to identify the personal traits that lead to effective human relation skills in business and develop skills to work more effectively with customers and other employees in a business environment; be able to type by touch at a minimum of twenty-five (25) words a minute to produce cohesive, grammatically correct sentences, to create, edit, and format basic business letters, business reports, academic reports, memorandum, envelopes and labels; be able to identify the standard elements on the Windows 7 desktop and demonstrate basic mouse operations; to understand basic computer terminologies; and become familiar with Global information systems to be able to sign on to an account and use common utilities, including e-mail and Web browsers, and searching a variety of databases for information."
-   ],
-   "why": [
-    "not in the catalog text as printed: use a variety of office procedures to perform such tasks as sorting mail, answer"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -215,5 +211,6 @@
    "Section is labeled CERTIFICATE NON-DEGREE while the award is listed as a Certificate of Achievement; reviewer may wish to confirm."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

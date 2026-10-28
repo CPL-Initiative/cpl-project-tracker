@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Theatre Arts",
  "award": "A.A- T Degree",
- "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=263",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=123",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 12962,
+  "input_tokens": 6934,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 12962,
-    "output_tokens": 1473,
+    "input_tokens": 6934,
+    "output_tokens": 3190,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,52 +30,31 @@
     "model": null
    }
   ],
-  "output_tokens": 1473,
+  "output_tokens": 3190,
   "output_tokens_details": {
-   "thinking_tokens": 401
+   "thinking_tokens": 1235
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08131,
- "ms": 13137,
- "seconds": 13.5,
+ "cost_usd": 0.09154,
+ "ms": 26058,
+ "seconds": 26.5,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 21,
    "listed": 22,
-   "share": 0.0,
+   "share": 0.955,
    "missing": [
-    "THTR100",
-    "THTR101",
-    "THTR102",
-    "THTR103",
-    "THTR104",
-    "THTR107",
-    "THTR109",
-    "THTR110",
-    "THTR123",
-    "THTR160",
-    "THTR161",
-    "THTR162",
-    "THTR163",
-    "THTR164",
-    "THTR171",
-    "THTR172",
-    "THTR173",
-    "THTR180",
-    "THTR181",
-    "THTR182",
-    "THTR183",
-    "THTR184"
+    "THTR100"
    ],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -85,15 +64,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    0.0,
-    0.0
+    13.0,
+    17.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 13.0-17.0; the catalog states 18.0-19.0"
    ]
   },
   "repeated": {
@@ -101,12 +83,12 @@
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 3,
    "courses": 0,
-   "count": 0,
+   "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -125,11 +107,11 @@
  },
  "record": {
   "program": {
-   "section_heading": "THEATRE ARTS (course descriptions only; no A.A-T requirements section in the text)",
+   "section_heading": "AA-T — THEATRE ARTS",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 19
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -146,107 +128,266 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
+   "outcomes": [
+    "identify major topics, ideas, debates and issues in theater arts.",
+    "Students will be able to apply their knowledge of key concepts in theatre arts to discuss, analyze, and synthesize a variety of theoretical and practical foci within the discipline.",
+    "Students will be able to gain a global, national, and local perspective on issues pertaining to the theatre arts preparing them for multiple pathways for future study and career opportunities."
+   ],
    "careers": []
   },
-  "blocks": [],
+  "blocks": [
+   {
+    "name": "Required Core",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "T ART 101",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "T ART 102",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 103",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Select one course from the following",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": 3,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "T ART 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 161",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 162",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 163",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 164",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 181",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 182",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 183",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 184",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "List A",
+    "rule": "choose_courses",
+    "minimum": 3,
+    "option_group": null,
+    "stated": {
+     "min": 9,
+     "max": 9
+    },
+    "courses": [
+     {
+      "code": "T ART 104",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 107",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 109",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 110",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 123",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 171",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 172",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 173",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "T ART 160",
+      "units": null,
+      "units_max": null,
+      "alternatives": [
+       {
+        "code": "T ART 161",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 162",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 163",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 164",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 180",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 181",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 182",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 183",
+        "units": null,
+        "catalog_addition": false
+       },
+       {
+        "code": "T ART 184",
+        "units": null,
+        "catalog_addition": false
+       }
+      ],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
   "course_outcomes": [],
   "missing_explained": [
    {
     "code": "THTR 100",
     "why": "not in the text"
-   },
-   {
-    "code": "THTR 101",
-    "why": "named only as recommended preparation in a course description; no requirements list in text"
-   },
-   {
-    "code": "THTR 102",
-    "why": "not in the text"
-   },
-   {
-    "code": "THTR 103",
-    "why": "named only in a course description; no requirements list in text"
-   },
-   {
-    "code": "THTR 104",
-    "why": "course description only; no requirements list in text"
-   },
-   {
-    "code": "THTR 107",
-    "why": "course description only; no requirements list in text"
-   },
-   {
-    "code": "THTR 109",
-    "why": "course description only; it says the AA-T requires THTR 109 and 110 together for 3.0 units, but the degree's requirement list is not in the text"
-   },
-   {
-    "code": "THTR 110",
-    "why": "course description only; same note as THTR 109; degree requirement list not in text"
-   },
-   {
-    "code": "THTR 123",
-    "why": "course description only; no requirements list in text"
-   },
-   {
-    "code": "THTR 160",
-    "why": "course description only; no requirements list in text"
-   },
-   {
-    "code": "THTR 161",
-    "why": "course description only; no requirements list in text"
-   },
-   {
-    "code": "THTR 162",
-    "why": "course description only; no requirements list in text"
-   },
-   {
-    "code": "THTR 163",
-    "why": "course description only; no requirements list in text"
-   },
-   {
-    "code": "THTR 164",
-    "why": "course description only; no requirements list in text"
-   },
-   {
-    "code": "THTR 171",
-    "why": "course description only (cut off); no requirements list in text"
-   },
-   {
-    "code": "THTR 172",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "THTR 173",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "THTR 180",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "THTR 181",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "THTR 182",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "THTR 183",
-    "why": "not in the text (text cut off)"
-   },
-   {
-    "code": "THTR 184",
-    "why": "not in the text (text cut off)"
    }
   ],
   "notes": [
-   "The supplied text (catalog pages 263-265) contains only Theatre Arts course descriptions; the A.A-T in Theatre Arts requirements section, totals, outcomes and careers are not present. The source page anchor likely points past the program section; a reviewer should check earlier pages of the Theatre Arts section.",
-   "Course descriptions for THTR 109 and THTR 110 state: 'The AA-T Theatre Arts Degree requires both THTR 109 and THTR 110 to add up to the 3.0 units.' This suggests the pair counts as one 3-unit choice in the degree, but the block it belongs to is not shown, so it was not placed.",
-   "THTR 160-164 are printed as 2.0 to 4.0 units in the descriptions (state file stores 2).",
-   "The text is cut off mid-description of THTR 171."
+   "The catalog prints the subject as 'T ART' while the closed list uses 'THTR'; course numbers match, so these were treated as the same courses (catalog_addition false). Reviewer should confirm.",
+   "The catalog prints no units beside individual courses, so course units are null.",
+   "Required Core is labeled '(9 units)' but lists only T ART 101 or 102 and T ART 103; the 9 units appear to include the following 'Select one course' (3 units) choice. The select-one courses (160-164, 180-184) are 2 units each in the state file, which does not match the printed 3 units.",
+   "In List A, 'T ART 109 & 110' is printed as a single selection; they are recorded as separate entries but count together as one of the three courses.",
+   "In List A, T ART 160-164 and 180-184 are marked with * 'If not used in Required Core' and are printed as one 'or' choice; recorded as one entry with alternatives.",
+   "The Program Learning Outcomes are printed as running prose; the first outcome's lead-in 'Upon completion of this program, students will be able to' was omitted; the hyphenated line break in 'practi-cal' was read as 'practical'.",
+   "No GE pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40704760867"
 }

@@ -46,32 +46,26 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 10,
+   "placed": 11,
    "listed": 11,
-   "share": 0.909,
-   "missing": [
-    "ENGLC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGL101"
-   ],
-   "flagged": [
-    "ENGL101"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    7.0,
-    9.0
+    25.0,
+    27.0
    ],
    "stated": [
     28.0,
@@ -79,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Courses' has no units"
+    "the blocks sum to 25.0-27.0; the catalog states 28.0-30.0"
    ]
   },
   "repeated": {
@@ -90,15 +84,11 @@
    "program": 4,
    "courses": 0,
    "count": 4,
-   "not_verbatim": [
-    "Fulfill requirements for transfer to a college with a BS in Biotechnology."
-   ],
-   "why": [
-    "not in the catalog text as printed: Fulfill requirements for transfer to a college with a BS in Biotechnology."
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 2,
@@ -276,5 +266,6 @@
    "Outcome 'Fulfill' is printed with a split ligature ('Fulﬁ ll') in the extracted text; rendered as 'Fulfill'. The last outcome has no terminal period as printed."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": 40696243319
 }

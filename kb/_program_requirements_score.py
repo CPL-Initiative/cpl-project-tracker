@@ -397,6 +397,8 @@ _FOLD = str.maketrans({"‘": "'", "’": "'", "“": '"', "”": '"',
 _LIGATURES = {"Ɵ": "ti", "Ʃ": "tt", "Ō": "ft", "ﬁ": "fi", "ﬂ": "fl", "ﬀ": "ff", "ﬃ": "ffi", "ﬄ": "ffl"}
 _LIGATURE = re.compile("[%s]" % "".join(_LIGATURES))
 _UNSPACED = "\x00"   # marks the reading with no spaces
+_SPACED_LETTERS = re.compile(r"(?:\b\w \b){5,}\w\b")   # "T h i s  d e g r e e"
+_SPACED_PUNCT = re.compile(r"\w [;,:](?= |$)")         # "occupations ;"
 _LINE_END_MARKER = re.compile(r"[ \t]+(?:\d{1,2}\.|[a-z]\))[ \t]*(?=\n|$)")
 
 
@@ -418,8 +420,14 @@ def _readings(text: str) -> list[str]:
     # (run 39035226783; page read 39036135577). Which space is the word's own cannot be told ("draŌ  landscape",
     # "aŌ er"), so such text gets one more reading: the ligatures spelled out and every space dropped, which
     # outcomes_check compares with the outcome's own letters, spaces dropped too.
-    if _LIGATURE.search(flat):
-        readings.append(_UNSPACED + re.sub(r"\s", "", _LIGATURE.sub(lambda m: _LIGATURES[m.group(0)], flat)))
+    # Glendale's PDF (S505) breaks a word after a ligature and at a line end in one sentence ("Fulﬁ ll
+    # requirements for transfer to a col-\nlege"), spaces a line letter by letter ("b e  a b l e  t o"),
+    # and spaces a semicolon from its word ("occupations ;"); 54 of its records failed the outcomes check.
+    # The same no-space reading serves all three, and it is read once more with the line-end hyphens joined.
+    if _LIGATURE.search(flat) or _SPACED_LETTERS.search(flat) or _SPACED_PUNCT.search(flat):
+        spelled = _LIGATURE.sub(lambda m: _LIGATURES[m.group(0)], flat)
+        readings.append(_UNSPACED + re.sub(r"\s", "", spelled))
+        readings.append(_UNSPACED + re.sub(r"\s", "", re.sub(r"(\w)- (\w)", r"\1\2", spelled)))
     # Ohlone's PDF prints a numbered outcome's number at the end of its first line ("Demonstrate knowledge
     # of real estate listings, deposit receipts, escrows, 2.\nand financing."); 125 of its 146 records failed
     # the outcomes check on that (run 39061732843; page read 39062425296). One more reading drops a list

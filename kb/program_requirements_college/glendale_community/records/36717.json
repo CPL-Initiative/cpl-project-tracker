@@ -84,7 +84,7 @@
    "count": 3,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": true,
+   "heading_printed": false,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -232,5 +232,6 @@
    "Course codes 'ARMEN 101 or 115, 102 or 116, 117' expanded with subject ARMEN."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

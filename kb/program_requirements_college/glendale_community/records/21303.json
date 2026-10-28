@@ -46,39 +46,29 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 21,
    "listed": 21,
-   "share": 0.857,
-   "missing": [
-    "ENGLC1000",
-    "ENGLC1001",
-    "POLSC1000"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 8,
+   "count": 5,
    "codes": [
     "CABOT206",
     "CABOT208",
     "CS/IS123",
-    "ENGL101",
-    "ENGL104",
     "ENGL128",
-    "MCOMM101",
-    "POLS101"
+    "MCOMM101"
    ],
    "flagged": [
     "CABOT206",
     "CABOT208",
     "CS/IS123",
-    "ENGL101",
-    "ENGL104",
     "ENGL128",
-    "MCOMM101",
-    "POLS101"
+    "MCOMM101"
    ],
    "pass": true
   },
@@ -396,5 +386,6 @@
    "Careers drawn from 'qualified public relations and other communications professionals' in the description."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

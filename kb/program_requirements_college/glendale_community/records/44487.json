@@ -46,11 +46,10 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 18,
+   "placed": 19,
    "listed": 21,
-   "share": 0.857,
+   "share": 0.905,
    "missing": [
-    "POLSC1000",
     "PSYCC1000",
     "PSYCC1000H"
    ],
@@ -59,16 +58,14 @@
    "pass": true
   },
   "invented": {
-   "count": 4,
+   "count": 3,
    "codes": [
     "ESL156",
-    "POLS101",
     "PSYCH101",
     "PSYCH101H"
    ],
    "flagged": [
     "ESL156",
-    "POLS101",
     "PSYCH101",
     "PSYCH101H"
    ],
@@ -345,5 +342,6 @@
    "Ligature artifacts (e.g., 'proﬁ ciency') normalized to plain spelling in outcomes."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11513,
-    "output_tokens": 7174,
+    "output_tokens": 7126,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,25 +30,25 @@
     "model": null
    }
   ],
-  "output_tokens": 7174,
+  "output_tokens": 7126,
   "output_tokens_details": {
-   "thinking_tokens": 1603
+   "thinking_tokens": 1737
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.18953,
- "ms": 50532,
- "seconds": 50.9,
+ "cost_usd": 0.18857,
+ "ms": 50905,
+ "seconds": 52.2,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 59,
+   "placed": 66,
    "listed": 87,
-   "share": 0.678,
+   "share": 0.759,
    "missing": [
     "ANTHR101",
     "CHLDV142",
@@ -68,31 +68,16 @@
     "POLS110",
     "POLS112",
     "PSYC103",
-    "PSYC104",
-    "PSYC105",
-    "PSYC106",
     "PSYC110",
-    "PSYC113",
-    "PSYC115",
-    "PSYC131",
-    "PSYC150",
     "PSYC203",
     "SOC140"
    ],
-   "unexplained": [
-    "PSYC104",
-    "PSYC105",
-    "PSYC106",
-    "PSYC113",
-    "PSYC115",
-    "PSYC131",
-    "PSYC150"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 50,
+   "count": 43,
    "codes": [
     "ANTHR102H",
     "ANTHR114",
@@ -125,14 +110,7 @@
     "POLS170",
     "POLS171",
     "PSYCC1000H",
-    "PSYCH104",
     "PSYCH104H",
-    "PSYCH105",
-    "PSYCH106",
-    "PSYCH113",
-    "PSYCH115",
-    "PSYCH131",
-    "PSYCH150",
     "PSYCH200",
     "SOC101H",
     "SOC108",
@@ -190,7 +168,7 @@
     "SPCH115",
     "SPCH120"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": false,
@@ -258,7 +236,7 @@
    "outcomes": [
     "describe the principles, perspectives, and methods of inquiry used by the social and behavioral sciences.",
     "Analyze how people act and have acted in response to their societies.",
-    "Apply social science research methodology and e ﬀ ectively communicate research results and conclusions."
+    "Apply social science research methodology and effectively communicate research results and conclusions."
    ],
    "careers": []
   },
@@ -1059,11 +1037,11 @@
    },
    {
     "code": "HIST 140",
-    "why": "named only in the Mass Communications AS section"
+    "why": "named only in the Mass Communications AS section, not this award"
    },
    {
     "code": "HIST 141",
-    "why": "named only in the Mass Communications AS section"
+    "why": "named only in the Mass Communications AS section, not this award"
    },
    {
     "code": "PHILO 101",
@@ -1115,15 +1093,13 @@
    }
   ],
   "notes": [
-   "The catalog has no section titled 'Social Science'; this record reads 'Liberal Arts: Social and Behavioral Sciences Emphasis AA Degree', whose course list matches the closed list most closely. Reviewer should confirm this is the intended award.",
-   "The closed list includes PHILO, CHLDV 142/156, GEOG 101/107/111/155, PSYC 103/110/203, POLS 112, POLS110, SOC 140 and ANTHR101, none of which appear in this section; the state file may reflect a different version of the program.",
-   "No units are printed beside any course; units left null.",
-   "The only total is the rule 'Select a minimum of 18 units ... with courses from at least two disciplines'; recorded as the block minimum. No separate major or degree total is printed, so total_units is null.",
-   "Honors versions listed alongside a base course (e.g., ANTHR 102, 102H) recorded as alternatives of the base course.",
-   "Codes printed with variant subject spelling (POLSC1000, PSYCC1000, PSYCH 104 etc., POL S 103) were matched to closed-list POLS C1000, PSYC C1000, PSYC 104 etc., POLS 103 and not marked as additions.",
-   "The catalog prints 'LING 101, 101H, 102; 102H' with a semicolon typo; read as LING 102 and 102H.",
-   "Program learning outcomes are printed as run-in prose; split into three sentences as printed, with the lead-in 'Upon completion of this program, students will be able to' removed from the first. The PDF ligature artifact 'e ﬀ ectively' is kept as printed."
+   "The text contains no section titled 'Social Science'; the closest match is 'Liberal Arts: Social and Behavioral Sciences Emphasis AA Degree', which was read. Reviewer should confirm this is the section for the state's 'Social Science' A.A. program; many closed-list courses (PHILO, several GEOG/PSYC) do not appear in it.",
+   "No units are printed beside any course and no major or degree total is printed; the only figure is the 18-unit minimum of the selection rule, with courses from at least two disciplines.",
+   "Catalog prints PSYCH and POL S/POLSC1000/PSYCC1000 forms; these were matched to closed-list PSYC, POLS and POL S/PSYC C1000 codes as the same courses.",
+   "LING list prints '102; 102H' with a semicolon, read as LING 102 and its honors twin 102H.",
+   "Honors twins (H suffix) recorded as alternatives to their base course.",
+   "Ligature artifact 'e ﬀ ectively' in the third outcome normalized to 'effectively'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40704760867"
 }

@@ -46,12 +46,11 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 13,
+   "placed": 14,
    "listed": 17,
-   "share": 0.765,
+   "share": 0.824,
    "missing": [
     "COMMC1000",
-    "ENGLC1000",
     "ENGLC1000E",
     "ENGLC1000H"
    ],
@@ -60,16 +59,14 @@
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 4,
    "codes": [
-    "ENGL101",
     "ENGL101+",
     "ENGL101H",
     "ESL156",
     "SPCH101"
    ],
    "flagged": [
-    "ENGL101",
     "ENGL101+",
     "ENGL101H",
     "ESL156",
@@ -323,5 +320,6 @@
    "Catalog uses older codes ENGL 101/101+/101H and SPCH 101 where the closed list has ENGL C1000/C1000E/C1000H and COMM C1000; reviewer should confirm equivalence."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

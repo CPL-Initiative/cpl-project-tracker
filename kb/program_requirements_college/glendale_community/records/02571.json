@@ -86,15 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "analyze cultural significance of art objects studied"
-   ],
-   "why": [
-    "not in the catalog text as printed: analyze cultural significance of art objects studied"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -314,5 +310,6 @@
    "No general education pattern or degree total is named in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

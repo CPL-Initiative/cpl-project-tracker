@@ -1,0 +1,396 @@
+{
+ "college": "Glendale Community College",
+ "control_number": "30813",
+ "shape": "adt",
+ "title": "Sociology",
+ "award": "A.A- T Degree",
+ "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=87",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 11351,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 11351,
+    "output_tokens": 2402,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2402,
+  "output_tokens_details": {
+   "thinking_tokens": 165
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.09344,
+ "ms": 20923,
+ "seconds": 21.5,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 0,
+   "listed": 51,
+   "share": 0.0,
+   "missing": [
+    "ANTHR102",
+    "ANTHR102H",
+    "ECON127",
+    "ECON170",
+    "ETHS110",
+    "ETHS120",
+    "ETHS121",
+    "ETHS123",
+    "ETHS125",
+    "ETHS132",
+    "ETHS165",
+    "ETHS166",
+    "GEOG102",
+    "GEOG170",
+    "GEOG171",
+    "HIST111",
+    "HIST111H",
+    "HIST117",
+    "HIST118",
+    "HIST118H",
+    "HIST152",
+    "POLS170",
+    "POLS171",
+    "POLSC1000",
+    "PSYC104H",
+    "PSYC105",
+    "PSYC131",
+    "PSYC200",
+    "PSYCC1000",
+    "PSYCC1000H",
+    "PSYCH104",
+    "SOC101",
+    "SOC101H",
+    "SOC102",
+    "SOC103",
+    "SOC104",
+    "SOC105",
+    "SOC108",
+    "SOC114",
+    "SOC131",
+    "SOC140",
+    "SOC171",
+    "SOC200",
+    "SOCS101",
+    "SOCS105",
+    "SOCS110",
+    "SOCS120",
+    "SOCS130",
+    "STATC1000",
+    "STATC1000E",
+    "STATC1000H"
+   ],
+   "unexplained": [],
+   "none_placed": true,
+   "pass": false
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "incomplete",
+   "computed": [
+    0.0,
+    0.0
+   ],
+   "stated": null,
+   "against": null,
+   "why": [
+    "the record names no total"
+   ]
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 0,
+   "courses": 0,
+   "count": 0,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": true,
+   "pass": true
+  },
+  "careers": {
+   "count": 0,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "major only",
+   "why": [
+    "the record names no degree total and no general education units"
+   ]
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "Not found: the text holds no Sociology A.A-T section",
+   "measure": "units",
+   "total_units": {
+    "min": null,
+    "max": null
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": null,
+   "degree_total": {
+    "min": null,
+    "max": null
+   },
+   "ge_units": {
+    "min": null,
+    "max": null
+   },
+   "electives_fill_degree": false,
+   "outcomes": [],
+   "careers": []
+  },
+  "blocks": [],
+  "course_outcomes": [],
+  "missing_explained": [
+   {
+    "code": "ANTHR 102",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "ANTHR 102H",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "ECON 127",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "ECON 170",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "ETH S 110",
+    "why": "Sociology A.A-T section not in the text; named only in other programs"
+   },
+   {
+    "code": "ETH S 120",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "ETH S 121",
+    "why": "Sociology A.A-T section not in the text; named only in other programs"
+   },
+   {
+    "code": "ETH S 123",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "ETH S 125",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "ETH S 132",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "ETH S 165",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "ETH S 166",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "GEOG 102",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "GEOG 170",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "GEOG171",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "HIST 111",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "HIST 111H",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "HIST 117",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "HIST 118",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "HIST 118H",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "HIST 152",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "POL S 170",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "POLS 171",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "POLS C1000",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "PSYC 104H",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "PSYC 105",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "PSYC 131",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "PSYC 200",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "PSYC C1000",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "PSYC C1000H",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "PSYCH 104",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC 101",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA and Speech/Communication AA"
+   },
+   {
+    "code": "SOC 101H",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "SOC 102",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC 103",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC 104",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC 105",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC 108",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "SOC 114",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "SOC 131",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC 140",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC 171",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "SOC 200",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "SOC S 105",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC S 110",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOC S 120",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "SOC S 130",
+    "why": "Sociology A.A-T section not in the text; named only in Social Sciences AA"
+   },
+   {
+    "code": "SOCS101",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "STAT C1000",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "STAT C1000E",
+    "why": "Sociology A.A-T section not in the text"
+   },
+   {
+    "code": "STAT C1000H",
+    "why": "Sociology A.A-T section not in the text"
+   }
+  ],
+  "notes": [
+   "The supplied text (catalog pages 87-88, printed pages 84-85) covers Nursing advanced placement, Restaurant Management, Social Sciences AA, Speech/Communication AA, Sports Coaching, Theatre Arts, Web Development and Welding. It contains no Sociology A.A-T section.",
+   "Associate Degrees for Transfer are likely printed in a separate part of the catalog. A reviewer should locate the Sociology AA-T page.",
+   "The Social Sciences AA section names several closed-list courses (SOC 101-105, 131, 140; ETH S courses; HIST 111/117/118/152; etc.). That is a different award, so none of its courses were recorded."
+  ]
+ },
+ "extracted_run": "40704760867"
+}

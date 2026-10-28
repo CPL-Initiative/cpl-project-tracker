@@ -78,11 +78,8 @@
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-20.0; the catalog states 18.0-18.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -252,5 +249,6 @@
    "Required course codes printed as 'C S/I S 190, 194, 196, 197' with extraction spacing; read as CS/IS."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

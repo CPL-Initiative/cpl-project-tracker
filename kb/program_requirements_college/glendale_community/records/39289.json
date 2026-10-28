@@ -46,24 +46,18 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 31,
+   "placed": 32,
    "listed": 32,
-   "share": 0.969,
-   "missing": [
-    "ENGLC1001"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 1,
-   "codes": [
-    "ENGL104"
-   ],
-   "flagged": [
-    "ENGL104"
-   ],
+   "count": 0,
+   "codes": [],
+   "flagged": [],
    "pass": true
   },
   "arithmetic": {
@@ -88,15 +82,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Explain the qualities and characteristics of effective human service professionals who view clients as whole persons in the context of their family, culture, and community using a biopsychosocial perspective."
-   ],
-   "why": [
-    "not in the catalog text as printed: Explain the qualities and characteristics of effective human service professiona"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -109,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -389,5 +379,6 @@
    "The list separator in List A ('HIST 117; 118 or 118H') was read as HIST 117 alone and HIST 118 or HIST 118H as one choice."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": 40696243319
 }

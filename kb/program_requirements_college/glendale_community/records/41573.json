@@ -76,11 +76,8 @@
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-20.0; the catalog states 18.0-18.0"
-   ],
-   "meets": true,
-   "rescored": "Open Asks Sheet 120 card 1"
+   "why": [],
+   "meets": true
   },
   "repeated": {
    "codes": [],
@@ -257,5 +254,6 @@
    "The certificate states 'This certificate requires 18 units.'"
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

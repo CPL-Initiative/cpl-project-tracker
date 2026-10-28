@@ -92,15 +92,11 @@
    "program": 2,
    "courses": 0,
    "count": 2,
-   "not_verbatim": [
-    "Upon completion of this program, the student will demonstrate an understanding of computer structure and operations."
-   ],
-   "why": [
-    "not in the catalog text as printed: Upon completion of this program, the student will demonstrate an understanding o"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -231,5 +227,6 @@
    "No careers are named in the Computer Support Technician section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

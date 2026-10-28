@@ -46,43 +46,37 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 20,
+   "placed": 21,
    "listed": 21,
-   "share": 0.952,
-   "missing": [
-    "ENGLC1001"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "ENGL104",
     "MCOMM101"
    ],
    "flagged": [
-    "ENGL104",
     "MCOMM101"
    ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
-    18.0
+    18.5
    ],
    "stated": [
     18.0,
     18.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 18.0-18.5"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -109,7 +103,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -345,5 +339,6 @@
    "No GE pattern, degree total, or careers printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40696243319,
+ "read_run": "39063367252"
 }

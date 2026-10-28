@@ -84,15 +84,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "utilize oral and written communicative skills to produce the target languages"
-   ],
-   "why": [
-    "not in the catalog text as printed: utilize oral and written communicative skills to produce the target languages"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -372,5 +368,6 @@
    "The subsequent sections (Italian, Japanese, Armenian, French and Spanish Language degrees/certificates under 'FOREIGN LANGUAGE AA DEGREE OR CERTIFICATE') belong to separate awards and were not read for this record."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 40711704988,
+ "read_run": "39063367252"
 }

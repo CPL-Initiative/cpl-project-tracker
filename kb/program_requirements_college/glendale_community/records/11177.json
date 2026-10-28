@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 8204,
-    "output_tokens": 2974,
+    "output_tokens": 3456,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,53 +30,36 @@
     "model": null
    }
   ],
-  "output_tokens": 2974,
+  "output_tokens": 3456,
   "output_tokens_details": {
-   "thinking_tokens": 941
+   "thinking_tokens": 1370
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.0923,
- "ms": 23161,
- "seconds": 24.0,
+ "cost_usd": 0.10194,
+ "ms": 28825,
+ "seconds": 29.9,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 23,
+   "placed": 28,
    "listed": 28,
-   "share": 0.821,
-   "missing": [
-    "THTR101",
-    "THTR103",
-    "THTR104",
-    "THTR109",
-    "THTR123"
-   ],
-   "unexplained": [
-    "THTR101",
-    "THTR103",
-    "THTR104",
-    "THTR109",
-    "THTR123"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 10,
+   "count": 5,
    "codes": [
     "ART130",
     "DANCE126",
     "DANCE128",
-    "TART101",
-    "TART103",
-    "TART104",
-    "TART109",
-    "TART123",
     "TART129",
     "TART134"
    ],
@@ -87,7 +70,7 @@
     "TART129",
     "TART134"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -128,7 +111,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -424,14 +407,14 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the 'AS DEGREE OR CERTIFICATE' section; the preceding AA Degree section (DANCE 111, 116, 121, 131, 140, BIOL 115 etc.) was ignored.",
+   "Section read is the AS Degree or Certificate section; the preceding AA degree section (different course list, 24.5-25 units) was ignored.",
+   "Total recorded from 'choose additional courses to total a minimum of 25 units'; printed as a minimum, so min and max are both 25.",
    "The catalog prints no units beside any course; all course units are null.",
-   "Total recorded as 25 from 'choose additional courses to total a minimum of 25 units'; the catalog states it as a minimum.",
-   "Catalog prints theatre courses as 'T ART 101, 103, 104, 109, 123'; these were treated as the closed list's THTR 101, 103, 104, 109, 123 (catalog_addition false). T ART 129 and 134 have no THTR match in the closed list and are marked as additions.",
-   "DANCE 127 appears both as a required course and in the elective list ('DANCE 127 or 128'); a reviewer should check whether the elective entry is meaningful for students who already take DANCE 127 as required.",
-   "The program learning outcome is printed as a single sentence shared by the AA degree, the AS degree and the certificate; recorded once as printed.",
-   "No general education pattern or degree total is printed in this section."
+   "The catalog prints theatre courses as 'T ART 101, 103, 104, 109, 123'; these were treated as the closed list's THTR 101, 103, 104, 109, 123 (same numbers, presumed same courses) and marked catalog_addition false. T ART 129 and 134 have no THTR counterpart in the closed list and are marked as additions. Reviewer should confirm the subject mapping.",
+   "DANCE 127 is listed both as a required course and as an elective option ('DANCE 127 or 128') in the elective list; recorded in both blocks as printed.",
+   "The program learning outcome is shared by the AA degree and AS degree/certificate sections (identical text); recorded as one outcome since it is printed as one sentence.",
+   "Required list formatting 'DANCE 100 or 102; 114, 117, 122, 127, 129, 130, 135 or 136, 137, 190 or 194' read as all DANCE courses with three or-pairs."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40707595210"
 }

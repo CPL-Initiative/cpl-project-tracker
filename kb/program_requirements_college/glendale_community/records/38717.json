@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 10901,
-    "output_tokens": 2509,
+    "output_tokens": 3145,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,32 +30,30 @@
     "model": null
    }
   ],
-  "output_tokens": 2509,
+  "output_tokens": 3145,
   "output_tokens_details": {
-   "thinking_tokens": 1060
+   "thinking_tokens": 1199
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.09378,
- "ms": 19866,
- "seconds": 20.3,
+ "cost_usd": 0.1065,
+ "ms": 23870,
+ "seconds": 24.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 15,
+   "placed": 17,
    "listed": 26,
-   "share": 0.577,
+   "share": 0.654,
    "missing": [
     "COMM115",
     "ECON127",
     "HIST111H",
-    "PSYC105",
     "PSYC131",
-    "PSYC200",
     "SOC108",
     "SOC200",
     "STATC1000",
@@ -67,16 +65,12 @@
    "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "MATH136",
-    "PSYCH105",
-    "PSYCH200"
+    "MATH136"
    ],
    "flagged": [
-    "MATH136",
-    "PSYCH105",
-    "PSYCH200"
+    "MATH136"
    ],
    "pass": true
   },
@@ -85,7 +79,7 @@
    "status": "unequal",
    "computed": [
     18.0,
-    18.0
+    19.0
    ],
    "stated": [
     18.0,
@@ -93,7 +87,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 18.0-20.0"
+    "the blocks sum to 18.0-19.0; the catalog states 18.0-20.0"
    ]
   },
   "repeated": {
@@ -186,7 +180,7 @@
     ]
    },
    {
-    "name": "Select three courses from at least two of the following areas",
+    "name": "Select three courses from at least two of the following areas (Areas 1-5)",
     "rule": "choose_courses",
     "minimum": 3,
     "option_group": null,
@@ -319,15 +313,15 @@
    },
    {
     "code": "PSYC 105",
-    "why": "text prints \"PSYC H105\" in Area 3, recorded as printed; likely this course"
+    "why": "catalog prints 'PSYC H105' in Area 3, likely this course; recorded as printed"
    },
    {
     "code": "PSYC 131",
-    "why": "not in this section"
+    "why": "not in this section (named only in Psychology section as PSYCH 131)"
    },
    {
     "code": "PSYC 200",
-    "why": "text prints \"PSYCH 200\" in Area 4, recorded as printed; likely this course"
+    "why": "catalog prints 'PSYCH 200' in Area 4, likely this course; recorded as printed"
    },
    {
     "code": "SOC 108",
@@ -335,11 +329,11 @@
    },
    {
     "code": "SOC 200",
-    "why": "named only in the Sociology section"
+    "why": "named only in the Sociology AA-T section"
    },
    {
     "code": "STAT C1000",
-    "why": "named only in other programs' sections"
+    "why": "named only in other programs' sections; this section lists MATH 136 in Area 4"
    },
    {
     "code": "STAT C1000E",
@@ -350,7 +344,14 @@
     "why": "named only in other programs' sections"
    }
   ],
-  "notes": []
+  "notes": [
+   "Area choice: select three courses from at least two of Areas 1-5; only one course from Area 4 (PSYCH 200; MATH 136) may be used. Areas: 1 History or Government (HIST 111, 115); 2 Arts and Humanities (ARTH 118, ENGL 111); 3 Social Science (ANTHR 114, ETH S 110, PSYC H105, PSYC 113); 4 Quantitative Reasoning and Research Methods (PSYCH 200, MATH 136); 5 Major Preparation (ETH S 120, 123, 125, 132, HLTH 106). Recorded as one choose_courses block.",
+   "No units printed beside any course.",
+   "'PSYC H105' is likely a typo for PSYC 105 (Human Sexuality) and 'PSYCH 200' likely PSYC 200; both recorded as printed with catalog_addition true. MATH 136 is not in the closed list (likely replaced by STAT C1000).",
+   "Required Core printed as 'ETH S 121; SOC 104: SOC S 130' (colon read as separator).",
+   "Total printed as 'Required units for major: 18 - 20 units*'; asterisk footnote not in the text. No GE pattern or degree total printed in this section.",
+   "The program learning outcome is printed as one sentence; recorded without the lead-in 'Upon completion of this program,'."
+  ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40704760867"
 }

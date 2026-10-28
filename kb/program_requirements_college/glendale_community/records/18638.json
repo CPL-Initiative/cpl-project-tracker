@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 15547,
-    "output_tokens": 8826,
+    "output_tokens": 8124,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,50 +30,37 @@
     "model": null
    }
   ],
-  "output_tokens": 8826,
+  "output_tokens": 8124,
   "output_tokens_details": {
-   "thinking_tokens": 2350
+   "thinking_tokens": 1754
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.23871,
- "ms": 63745,
- "seconds": 64.3,
+ "cost_usd": 0.22467,
+ "ms": 59294,
+ "seconds": 60.3,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 131,
+   "placed": 135,
    "listed": 135,
-   "share": 0.97,
-   "missing": [
-    "THTR101",
-    "THTR102",
-    "THTR107",
-    "THTR113"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
    "none_placed": false,
    "pass": true
   },
   "invented": {
-   "count": 5,
+   "count": 1,
    "codes": [
-    "HUMAN140",
-    "TART101",
-    "TART102",
-    "TART107",
-    "TART113"
+    "HUMAN140"
    ],
    "flagged": [
-    "HUMAN140",
-    "TART101",
-    "TART102",
-    "TART107",
-    "TART113"
+    "HUMAN140"
    ],
    "pass": true
   },
@@ -99,15 +86,11 @@
    "program": 3,
    "courses": 0,
    "count": 3,
-   "not_verbatim": [
-    "Describe the art, literature, ideas, movements, and individuals that have helped to define values, civilizations, and the human condition."
-   ],
-   "why": [
-    "not in the catalog text as printed: Describe the art, literature, ideas, movements, and individuals that have helped"
-   ],
+   "not_verbatim": [],
+   "why": [],
    "heading_printed": true,
    "heading_without_outcomes": false,
-   "pass": false
+   "pass": true
   },
   "careers": {
    "count": 0,
@@ -120,11 +103,11 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "LIBERAL ARTS: ARTS AND HUMANITIES EMPHASIS — AA DEGREE",
+   "section_heading": "LIBERAL ARTS: ARTS AND HUMANITIES EMPHASIS AA DEGREE",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -1113,30 +1096,30 @@
   "missing_explained": [
    {
     "code": "THTR 101",
-    "why": "catalog prints it as T ART 101 (recorded as catalog addition); likely the same course under a different subject code"
+    "why": "catalog prints T ART 101 instead (likely same course under another prefix)"
    },
    {
     "code": "THTR 102",
-    "why": "catalog prints it as T ART 102 (recorded as catalog addition); likely the same course under a different subject code"
+    "why": "catalog prints T ART 102 instead (likely same course under another prefix)"
    },
    {
     "code": "THTR 107",
-    "why": "catalog prints it as T ART 107 (recorded as catalog addition); likely the same course under a different subject code"
+    "why": "catalog prints T ART 107 instead (likely same course under another prefix)"
    },
    {
     "code": "THTR 113",
-    "why": "catalog prints it as T ART 113 (recorded as catalog addition); likely the same course under a different subject code"
+    "why": "catalog prints T ART 113 instead (likely same course under another prefix)"
    }
   ],
   "notes": [
-   "The rule is a single 18-unit minimum drawn from two lists, with at least one course (3 units) from the ARTS list and one course (3 units) from the HUMANITIES list; recorded as one choose_units block. ARTS list: ARTH, DANCE, FTVM, MUSIC and T ART courses; HUMANITIES list: ARMEN, CHIN, ECON, ENGL, FIL, FREN, HIST, HUMAN, ITAL, JAPAN, KOREA, PHILO and SPAN courses.",
-   "The catalog prints no units beside individual courses, so course units are null.",
-   "total_units taken from 'Select a minimum of 18 units'; no degree total or GE pattern is printed in this section.",
-   "Honors twins (ARTH 101H, 102H, MUSIC 120H, HIST 102H, 111H, 118H, 133H, HUMAN 105H, PHILO 101H) recorded as alternatives; SPAN 124H is listed without a non-honors SPAN 124 so it is its own entry.",
-   "Theatre courses are printed as 'T ART 101, 102, 107, 113' while the closed list uses THTR; reviewer should confirm these are the same courses.",
-   "HUMAN 140 is in the catalog list but not in the closed list.",
-   "In the second outcome the PDF text reads 'de ﬁ ne' (ligature extraction artifact); recorded as 'define'."
+   "All courses are in one 18-unit choose_units block. The catalog adds a distribution rule: at least one course (3 units) from the ARTS list (ARTH, DANCE, FTVM, MUSIC, T ART courses) and at least one course (3 units) from the HUMANITIES list (ARMEN through SPAN courses). The rest may come from either list.",
+   "total_units recorded as 18, from 'Select a minimum of 18 units'. No degree total or GE pattern is printed in this section.",
+   "The catalog prints no units beside the courses, so units are null.",
+   "Honors versions (e.g., ARTH 101H, HIST 102H, PHILO 101H) are recorded as alternatives of their base courses.",
+   "T ART 101, 102, 107, 113 are written as printed and are not in the closed list. They likely correspond to the closed list's THTR 101, 102, 107, 113.",
+   "HUMAN 140 appears in the catalog list but not in the closed list.",
+   "In the second outcome, the PDF text 'de fi ne' (ligature/spacing artifact) was read as 'define', and the hyphenated 'civiliza-tions' was joined. The first outcome's lead-in 'Upon completion of this program, students will be able to' was removed."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": "40710163463"
 }

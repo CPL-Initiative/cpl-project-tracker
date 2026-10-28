@@ -983,6 +983,21 @@ check(S.outcomes_check({**marked, "program": {**marked["program"], "outcomes": [
 check(not S.outcomes_check({**marked, "program": {**marked["program"], "outcomes": [
     "Demonstrate knowledge of real estate listings, escrows, and financing."]}}, MARK_TEXT)["pass"],
       "an outcome missing words is still reworded with the marker reading")
+# Glendale (S505): a ligature break and a line-end hyphen in one sentence, a line spaced letter by letter,
+# and a semicolon spaced from its word, all on its 2025-2026 PDF (pages 67, 88 and 114).
+GCC_TEXT = ("Program Learning Outcomes: Upon completion of this program, students will be able to Learn skills necessary\n"
+            "for a lab technician job. Fulﬁ ll requirements for transfer to a col-\nlege with a BS in Biotechnology.\n"
+            "b e  a b l e  t o  E v a l u a t e  c o a c h i n g  p h i l o s o p h i e s ,  l e a d e r s h i p  s t y l e s ,\n"
+            "be able to identify theatre terms and occupations ; and will identify theatre as a collaborative art form.")
+gcc = {**plo, "program": {**plo["program"], "outcomes": [
+    "Fulfill requirements for transfer to a college with a BS in Biotechnology.",
+    "Evaluate coaching philosophies, leadership styles,",
+    "be able to identify theatre terms and occupations; and will identify theatre as a collaborative art form."]}}
+check(S.outcomes_check(gcc, GCC_TEXT)["pass"],
+      "Glendale's ligature-and-hyphen break, letter-spaced line and spaced semicolon read verbatim (S505)")
+check(not S.outcomes_check({**gcc, "program": {**gcc["program"], "outcomes": [
+    "Fulfill requirements for transfer to a university with a BS in Biotechnology."]}}, GCC_TEXT)["pass"],
+      "a changed word still fails under the no-space readings")
 check(not S.outcomes_check({**lig, "program": {**lig["program"], "outcomes": ["Design and draft a landscape plan."]}},
                            LIG_TEXT)["pass"],
       "the ligature reading still refuses a word the text does not print")
@@ -1881,6 +1896,21 @@ check(sorted(found) == ["AGMA11", "AGMA20"],
 DRONE = [{"code": "DRON 10", "printed": RC.course_renumbers("Merced College").get("DRON10")}]
 check(P.coverage(P.find_codes("CPSC-17 Drone Technology I (Total Credits 3.0 - 3.0)", DRONE), DRONE) == 1.0,
       "a printed code the page hyphens (CPSC-17 for DRON 10) is found: %s" % DRONE)
+# Glendale (S505): the program pages print TART 101 and PSYCH 170 where the file lists THTR 101 and PSYC 170;
+# the capture looks for the catalog's prefix too, or the THTR course descriptions win the page.
+import _program_requirements_college as PC
+GCC = [{"closed_list": [{"code": "THTR 101"}, {"code": "PSYC 170"}, {"code": "ENGL C1000"}, {"code": "KIN 157"}]}]
+PC.with_renumbers(GCC, RC.course_renumbers("Glendale Community College"),
+                  RC.load_steps()["Glendale Community College"]["prefix_aliases"])
+GCL = GCC[0]["closed_list"]
+check([c.get("printed") for c in GCL] == ["TART 101", "PSYCH 170", "ENGL 101", None],
+      "an aliased prefix and a renumber each give the code the catalog prints: %s" % GCL)
+check(sorted(P.find_codes("Required Courses: K I N 157; P SYC H 170; TART 1 0 1; ENGL 1 01", GCL))
+      == ["ENGLC1000", "KIN157", "PSYC170", "THTR101"], "the program page names all four listed courses")
+SJ = [{"closed_list": [{"code": "ANTHR 2L"}, {"code": "ARTH 12"}]}]
+PC.with_renumbers(SJ, {}, {"ARTH": "ART", "ANTH": "ANTHR"})
+check([c.get("printed") for c in SJ[0]["closed_list"]] == ["ANTH 2L", None],
+      "a listed prefix that only begins with an alias's (ARTH under ART) is never rewritten")
 # San Joaquin Delta (S422): a noncredit page prints "Total Contact Hours: 288" and "Units: 0" beside each course.
 SJD_NC = ("Core Requirements \u00b7 ESL 9088 Health Careers Reading Units: 0 \u00b7 ESL 9059 Writing Units: 0 \u00b7 "
           "Restrictive Electives \u00b7 Complete 1 course from: \u00b7 ESL 9086 Advanced Reading Units: 0 \u00b7 Total Contact Hours: 288")
