@@ -178,7 +178,7 @@ function setup(opts) {
   w.CPL_FUNDING_TAB.boot();
   const wrap = Array.from(w.document.querySelectorAll("[data-optinwrap]")).find((x) => /Cabrillo/.test(x.getAttribute("data-optinwrap")));
   check("5m: ?college=…&confirm=1 lands on the table with that row's confirmation form open, whatever choice the browser remembers",
-    w.CPL_FUNDING_TAB._state.collegeView === "all" && !!wrap && !!wrap.querySelector('[data-optinfield="name"]'));
+    w.CPL_FUNDING_TAB._state.collegeView === "all" && !!wrap && !!wrap.querySelector('[data-optinfield="email"]'));
 }
 
 let pass = 0;

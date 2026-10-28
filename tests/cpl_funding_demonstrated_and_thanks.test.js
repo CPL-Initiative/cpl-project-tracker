@@ -93,9 +93,15 @@ async function part5() {
   const chip = doc.querySelector("[data-optinjump]");
   const college = chip ? chip.getAttribute("data-optinjump") : "";
   if (chip) click(window, chip);
-  const wrap = Array.from(doc.querySelectorAll("[data-optinwrap]"))
+  const wrapOf = () => Array.from(doc.querySelectorAll("[data-optinwrap]"))
     .filter((w) => w.getAttribute("data-optinwrap") === college)[0];
-  const note = wrap ? Array.from(wrap.querySelectorAll(".cplfund-optin-note")).pop() : null;
+  // Email first (2026-10-28): the address opens the rest of the form.
+  if (wrapOf()) {
+    wrapOf().querySelector('[data-optinfield="email"]').value = "jane@college.edu";
+    click(window, wrapOf().querySelector("[data-optinemailgo]"));
+  }
+  const wrap = wrapOf();
+  const note = wrap ? Array.from(wrap.querySelectorAll(".cplfund-optin-note:not(.cplfund-support)")).pop() : null;
   check("5a: the form's note carries Sam's sentence", !!note && flat(note).indexOf(SAM_NOTE) !== -1);
   check("5b: the form's note promises no acknowledgment", !!note && !/acknowledg/i.test(flat(note)));
   if (!wrap) { check("5c-5e: the form opened for " + college, false); return; }
@@ -117,7 +123,6 @@ async function part5() {
   };
   wrap.querySelector('[data-optinfield="name"]').value = "Jane Admin";
   wrap.querySelector('[data-optinfield="title"]').value = "VPAA";
-  wrap.querySelector('[data-optinfield="email"]').value = "jane@college.edu";
   const submit = Array.from(doc.querySelectorAll("[data-optinsubmit]"))
     .filter((b) => b.getAttribute("data-optinsubmit") === college)[0];
   if (submit) click(window, submit);
@@ -126,9 +131,9 @@ async function part5() {
   const done = doc.querySelector(".cplfund-optin-done");
   check("5c: the submit went out as the live POST",
     calls.some((c) => /^POST .*\/rest\/v1\/cpl_funding_participation$/.test(c)));
-  const head = "Thank you. A member of the MAP team will review the request and send a confirmation to jane@college.edu. ";
-  check("5d: the thank-you says a MAP team reviewer confirms it, to the address given (Sam, 2026-10-27)",
-    !!done && flat(done).indexOf(head) === 0 && / meets this condition once the request is accepted\.$/.test(flat(done)));
+  const head = "Thank you. CPL Initiative staff will review the request and send a confirmation to jane@college.edu. ";
+  check("5d: the thank-you says CPL Initiative staff confirm it, to the address given, and when it shows as complete (Sam, 2026-10-27, 10-28)",
+    !!done && flat(done).indexOf(head) === 0 && / Once they approve it, the confirmation shows as complete on this dashboard\.$/.test(flat(done)));
   check("5e: the thank-you names no Chancellor's Office acknowledgment",
     !!done && !/acknowledg|in the meantime|Chancellor/i.test(flat(done)));
 

@@ -167,6 +167,8 @@ a:hover{text-decoration-thickness:2px}
 .toc{list-style:none; margin:0; padding:0; columns:3; column-gap:28px; max-width:none; font-size:.95rem; line-height:1.3}
 .toc li{break-inside:avoid; margin:0; max-width:none}
 .toc a{display:inline-flex; align-items:center; min-height:24px; padding:1px 0}
+/* A Contents item waiting on its document reads in gray, with no underline (Sam, 2026-10-28). */
+.toc .toc-tba, .toc .toc-tba a{color:var(--text-muted); text-decoration:none; cursor:default}
 .toc-note{margin:.45em 0 0; padding-top:.4em; border-top:1px solid var(--border);
   font-size:.8rem; line-height:1.45; color:var(--text-muted); max-width:none}
 @media (max-width:980px){ .toc{columns:2} }
@@ -380,7 +382,7 @@ footer a{color:var(--foot-fg)}
   @page{size:letter landscape; margin:.45in}   /* landscape (Sam, 2026-10-15) */
   /* the action bar (with Ask Sierra in it) and the Contents are screen
      navigation; the PDF opens every fold instead */
-  .skip, .mh-actions, #contents, #live-status, .cplh-links, .cplh-panel{display:none}
+  .skip, .mh-actions, #contents, #live-status, .cplh-links, .cplh-panel, .cplh-end > .ver{display:none}
   .cplh-in{min-height:0; padding-block:0 4pt}
   .cplh-logo img{height:34pt}
   .head{padding-block:4pt 10pt}
@@ -470,6 +472,11 @@ section[hidden], #contents[hidden]{display:none}
       <img src="../sierra/cpl-initiative-logo-navy.png" alt="California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office" width="1115" height="209">
     </a>
     <div class="cplh-end">
+      <!-- The version (Sam, 2026-10-21: "As of: 10/21/2026 Ver. 3"), the last
+           save's date and the scenario's number, painted from the live config.
+           Left of Resource Links since 2026-10-28 (Sam: "Move the 'As of...'
+           gray label to the left of the Resources Links"). -->
+      <span class="ver">As of: <span id="x-version">8/31/2026</span> <abbr title="Version">Ver.</abbr> <span id="x-scenario-no">1</span></span>
       <nav class="cplh-links" aria-label="Resource links">
         <button type="button" class="btn word" data-cplh-links aria-expanded="false" aria-controls="cplh-panel">Resource Links</button>
         <div class="cplh-panel" id="cplh-panel" hidden>
@@ -488,9 +495,6 @@ section[hidden], #contents[hidden]{display:none}
              "hide or delete the Edit link from the public view") edit_page.js
              shows it only inside COBI's Public page view, which frames this page. -->
         <button type="button" class="btn" id="edit-page-btn" aria-pressed="false" hidden>Edit this page</button>
-        <!-- The version (Sam, 2026-10-21: "As of: 10/21/2026 Ver. 3"), the last
-             save's date and the scenario's number, painted from the live config. -->
-        <span class="ver">As of: <span id="x-version">8/31/2026</span> <abbr title="Version">Ver.</abbr> <span id="x-scenario-no">1</span></span>
         <!-- PDF (Sam, 2026-09-15) prints THIS page: every figure is computed
              live, so a committed PDF would be stale the first time a dial moved.
              The print stylesheet opens every fold and drops the controls. -->
@@ -566,8 +570,13 @@ section[hidden], #contents[hidden]{display:none}
            scenario by memo/; never called a draft on this page. -->
       <!-- Each fixed link's words are the curator's to rename on this page
            (data-plink; Sam, 2026-10-25), stored as pubLinks. -->
-      <li class="toc-tail"><a id="memo-link" data-plink="memo" href="memo/">Read the funding guidance memo</a></li>
-      <li class="toc-tail"><a id="memo-word-link" data-plink="memo_word" href="memo/?download=word">Download the funding guidance memo in Word</a></li>
+      <!-- Since 2026-10-28 (Sam: "Delete the TOC link to Guidance memo in Word and
+           gray the Guidance memo link and add (TBA) to the link text--we will link
+           to the CO memo once it is officially published") the memo's item is a
+           placeholder: an <a> with no href is no link, its words stay the
+           curator's to rename, and (TBA) follows them. Give it the CO memo's
+           address as its href, and drop toc-tba, the day the memo is published. -->
+      <li class="toc-tail toc-tba"><a id="memo-link" data-plink="memo">Read the funding guidance memo</a> (TBA)</li>
       <li class="toc-video toc-tail"><a id="video-link" data-plink="video" href="../prototype/funding_video/funding_in_motion_s2.html">Watch the 100-second introduction</a></li>
       <!-- The narrated cut beside it (Sam, Open Asks Sheet 136 card 1, "reread",
            2026-10-27, on Sheet 133's plan): the music film stays the
@@ -1949,8 +1958,9 @@ window.CPL_SIERRA_SUGGESTED = [
     var ids = T.explainerFigIds(), seeds = {};
     ids.forEach(function (id) { var el = document.getElementById(id); if (el) seeds[id] = el.textContent; });
     Array.prototype.forEach.call(document.querySelectorAll("[data-ftext]"), function (box) {
-      var html = T.explainerTextHtml(box.getAttribute("data-ftext"), seeds);
-      if (html) box.innerHTML = html;
+      // A passage its curator emptied paints empty (2026-10-28), never the typed house words below it.
+      var key = box.getAttribute("data-ftext"), html = T.explainerTextHtml(key, seeds);
+      if (html || (typeof T.textIsBlank === "function" && T.textIsBlank(key))) box.innerHTML = html;
     });
     // The page's own passages that are not explainer passages (2026-10-15,
     // call 3): its Introduction and its Timeline note.
@@ -1983,7 +1993,7 @@ window.CPL_SIERRA_SUGGESTED = [
       // A tabled memo leaves the Contents (its status, set in the tab's Report view).
       var memoLi = document.getElementById("memo-link");
       var tabled = typeof T._docStatus === "function" && T._docStatus("memo") === "tabled";
-      [memoLi, document.getElementById("memo-word-link")].forEach(function (a) { if (a && a.parentNode) a.parentNode.hidden = tabled; });
+      if (memoLi && memoLi.parentNode) memoLi.parentNode.hidden = tabled;
       painted = true;
       if (status) status.textContent = "";
     } catch (e) {
