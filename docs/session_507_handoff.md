@@ -27,7 +27,7 @@ skipped `kb/README.md`, `README.md` and the Pipeline tab, which this run did not
 - **#2530, MAP links.** Every MAP link adds `&View=Non-Military` (Pedro's routing, live on production MAP), so it opens
   the exhibit's own Non-Military card; the adopt link reads **Request Adopt**. COBI, the CPL Opportunity visual and
   workbook, the shared MAP-link line, and Sierra. **Sierra deployed** (run 40733151892, byte-verified; read its smoke
-  job if this handoff does not say it passed).
+  job: item 0 below).
 - **`cpl_memory`**: six rows via `kb/receipts/cpl_memory_s505b_2026-10-28.sql` (supabase-migrate).
 
 ## Decisions Sam made (in `cpl_memory`, verified)
@@ -40,6 +40,13 @@ skipped `kb/README.md`, `README.md` and the Pipeline tab, which this run did not
 
 ## Open work, in order
 
+0. **Read two runs that were still going at sign-off (~18:05Z).** (a) Sierra's deploy smoke (run 40733151892) failed
+   2 of 115 assertions, neither about the MAP links (mode 17 passed with `View=Non-Military`): **7q** summed units for El
+   Camino Welding, a program with no checked record, and **7v** said "COCI". Both are model-wording checks on code
+   #2530 did not touch; the re-check of those two modes alone is run 40738868338. If either fails again it is a real
+   regression: root-cause it in `cpl-chat` (a prompt rule or the smoke's matcher), never call it a flake twice.
+   (b) Glendale's `step=display` run 40730345116 had been applying for over an hour (about 17,500 statements); read
+   its result (statements written, none missing, no errors) and its committed applied record on `main`.
 1. **Friday morning (10-30):** handoff 506 item 2 (`npm run a11y` on the ten public targets plus
    `funding-film-narrated`; re-read that Pages serves the films).
 2. **Glendale's course units (harvest lane NEXT).** 180 records fail arithmetic, most on 63 courses the state's file
@@ -63,5 +70,5 @@ No decision sheet is open.
 
 ## Let go
 
-Subscriptions: none (#2529 and #2530 merged and dropped). Check-ins armed: none after this checkpoint. Artifact
+Subscriptions: none (#2529 and #2530 merged and dropped). Check-ins armed: none. Artifact
 watches: none.
