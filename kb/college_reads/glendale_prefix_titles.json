@@ -1,0 +1,21 @@
+{
+ "_readme": "S505 SkyBoysenberry, 2026-10-28. Second Glendale read. Its program pages print subjects and codes the state's file keeps under another prefix or a new number: PSYCH for PSYC (11 records), TART for THTR (9), ART for ARTH (5), and ENGL 101, ENGL 104 and POL S 101 where the file lists ENGL C1000, ENGL C1001 and POL S C1000. The first read (glendale_program_totals, run 40690480267) printed ENGL C1000's description with '(Previously ENGL 101)'. A prefix alias and a renumber need the title on both sides, so this read prints the course-description pages that name Sports Psychology, Introduction to Theatre, Art History and Critical Thinking and Writing, and the 'Previously' lines for ENGL 104 and POL S 101. One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "prefix_titles": "The code and title each description prints for the four subjects, and the 'Previously' line of each renumbered course."
+ },
+ "keywords": [
+  "SPORTS\\s+PSYCHOLOGY",
+  "INTRODUCTION\\s+TO\\s+THEATRE",
+  "ART\\s+HISTORY",
+  "CRITICAL\\s+THINKING\\s+AND\\s*\\W*\\s*WRITING",
+  "Previously\\s+(ENGL\\s?104|POL\\s?S)"
+ ],
+ "pages": [
+  {
+   "answers": ["prefix_titles"],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [150, 303]
+}
