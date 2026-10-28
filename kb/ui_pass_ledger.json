@@ -38,8 +38,8 @@
    "name": "Privacy",
    "page": "privacy.html",
    "audience": "public",
-   "last": "2026-10-20",
-   "outcome": "Re-passed 2026-10-20: AA clean at nine widths in light and dark, no shared dataset, hex only in token definitions, no controls beyond inline links and the skip link; nothing to fix."
+   "last": "2026-10-28",
+   "outcome": "S505: npm run a11y privacy and privacy-dark pass at 9 widths; tokens only (no raw hex outside :root), the theme's two faces, no glyphs; wiring: reads no dataset. Copy still describes the parked Drive filer accurately (Google's consent screen links it). No fix needed."
   },
   {
    "id": "funding-model",

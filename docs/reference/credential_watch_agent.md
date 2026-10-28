@@ -46,6 +46,7 @@ Routine `trig_019tTcardPfntFz6ctWU9Jg1`, Mondays at 05:51 Pacific, first run
 | `kb/reference/industry_credential_skills.json` | The skills each issuer publishes for a credential: exam domains with weights, "skills measured", the courses inside a certificate | this agent, a batch per run |
 | `kb/reference/cos_certifications.json` | CareerOneStop's national list | `cos-authority-sync.yml`, monthly on a runner (unchanged) |
 | `kb/reference/credential_registry_national_sample.json` | Credential Engine sample, 974 of 6,738 | Sam's 2026-09-16 capture, until the Registry API replaces it |
+| `kb/reference/credential_engine_top50.json` | The 50 credentials in the most Credential Engine Registry collections, with each one's CTID and CTDL terms (class, owner, audience level, SOC occupation, NAICS industry, CIP, duration, prerequisites) | `kb/_fetch_ce_top50.py` from `credential_engine_top50_ctids.json` (Credential Engine's list, Sam, 2026-10-26); never hand-edited |
 | `kb/it_ai_credential_catalog.json` | The joined catalog, with CIP sector and MAP status per row | `kb/_build_it_ai_credential_catalog.py` (derived; never hand-edited) |
 
 **Where it shows:** the Common Exhibit Reference tab reads `kb/it_ai_credential_catalog.json`
@@ -53,6 +54,8 @@ Routine `trig_019tTcardPfntFz6ctWU9Jg1`, Mondays at 05:51 Pacific, first run
 row the catalog joins to (`map.titles`, the CER's KB key) shows the industry record and a
 *Retired by issuer* / *Renamed by issuer* chip. A run that changes the watch file therefore
 reaches curators the day it merges, provided the builder ran (step 5).
+
+The catalog joins the top-50 file by name (plus reviewed aliases in `CE_TOP50_ALIASES`): a matched row carries `ctid` and a `ctdl` block, and the CER's industry record links the CTID to the Registry. Sixteen of the 50 are in the catalog (all IT); the other 34 (trades, health, public safety) sit in the top-50 file until the catalog's scope widens, a call for Sam.
 
 The catalog is a dated snapshot: the CER it joins to (`credential_reference_data.js`)
 is rebuilt every morning, so a committed catalog trails MAP by the days since
@@ -99,6 +102,8 @@ covers what only reading can.
    follow the repo's branch policy (merge on a green `test`). If the GitHub PR
    tools are missing from the run, push the branch and stop: the committed
    report is the receipt, and the next interactive session opens the PR.
+   **The CPL queue merges it:** the routine cannot, so the first queue session after a Monday run lands the PR on a
+   green `test` and files step 8's row (S505 found #2257 and #2468 a week and two days old).
 8. **A material event** (a tech giant launched or retired an AI credential, or
    a credential MAP has articulated was renamed or retired) goes at the top of
    the PR body under *For the memory table*. The run holds no Supabase
