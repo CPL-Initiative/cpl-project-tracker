@@ -40,17 +40,16 @@ handoff 504's queue. This checkpoint is **full** (two lanes moved, three Rule 10
 
 ## Open work, in order
 
-1. **Confirm Pages serves #2525.** `prototype/funding_video/funding_in_motion_n2.html` on the live site must name
-   `..._Narrated_Draft_7.mp4` and `funding_in_motion_s2.html` `..._v13.mp4`, each with *Veteran Star* in its
-   text. Deploy run 40616948597 was still running at sign-off. A stale site: dispatch `pages.yml`, never
-   `rerun_failed_jobs`.
-2. **Friday morning (10-30):** `npm run a11y` on the ten public targets plus `funding-film-narrated`. The two film
-   targets passed on #2525's build; the others passed on 82ea5ce5 (S495).
-3. **The Noncredit Summit film's Library record** (`noncredit-summit-in-motion`) still names v1 (ladypatty1). Its
+1. **Friday morning (10-30):** `npm run a11y` on the ten public targets plus `funding-film-narrated`. The two film
+   targets passed on #2525's build; the others passed on 82ea5ce5 (S495). Pages serves #2525 (read live 01:58Z
+   10-28: `funding_in_motion_n2.html` names `..._Narrated_Draft_7.mp4`, `funding_in_motion_s2.html` names
+   `..._v13.mp4`, both carry the Veteran Star); re-read it that morning, and on a stale site dispatch `pages.yml`,
+   never `rerun_failed_jobs`.
+2. **The Noncredit Summit film's Library record** (`noncredit-summit-in-motion`) still names v1 (ladypatty1). Its
    v3 cuts are deliverables outside the repo: it moves when Sam files the SharePoint copy with the tab's File it.
    S504 sent him the narrated v3 on 10-27.
-4. **The memo's opening** waits on Sam's paste (lane; not a card: Sheet 129 answered it).
-5. **The `utilize` lint** in `docs/t5_55050_amendment_package_draft.md` is proposed regulation text: Sam's wording call.
+3. **The memo's opening** waits on Sam's paste (lane; not a card: Sheet 129 answered it).
+4. **The `utilize` lint** in `docs/t5_55050_amendment_package_draft.md` is proposed regulation text: Sam's wording call.
 
 Known and left: the side session noted a ~1 s blank at 0:51 (Two priorities) in the narrated cut; Sam approved
 Draft 7 as it plays. No decision sheet is open: Sheet 137 is answered and no lane carries an uncovered NEEDS SAM.
