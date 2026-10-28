@@ -745,8 +745,8 @@ var TR=[
   /* 6.0 s sits on the hold at half the target (the fill reaches half at 5.0 and resumes at 6.6) */
   [S5,'A bar fills to its halfway mark and holds, then fills to the target and stops there.',[6.0,END],
     function(o,i){return(i?[]:[txt(o.h),txt(o.l),txt(o.card.firstChild).replace(/ · /g,', ')]).concat([kids(o.row,', '),txt(o.cap)]);}],
-  [S6,'Each condition is marked Met in turn.',[END],
-    function(o){return[txt(o.h)].concat(o.rows.map(function(x){return txt(x.n)+'. '+txt(x.d.children[1])+': '+txt(x.p);}),[txt(o.b)]);}],
+  [S6,CFG.vet?'Each condition is marked Met in turn, and a gold Veteran Star marks the third.':'Each condition is marked Met in turn.',[END],
+    function(o){return[txt(o.h)].concat(o.rows.map(function(x){return txt(x.n)+'. '+txt(x.d.children[1])+': '+txt(x.p);}),o.v?[txt(o.v)]:[],[txt(o.b)]);}],
   [S7,'A timeline draws from left to right, one date at a time.',[END],
     function(o){return[txt(o.h)].concat(o.nodes.map(function(d){return kids(d,': ');}),[txt(o.a),txt(o.b)]);}],
   [S8,'The strategies scroll past one at a time.',[END],
