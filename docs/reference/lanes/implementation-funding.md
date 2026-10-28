@@ -33,6 +33,8 @@ related:
 
 ✅ **2026-10-19:** the memo and report lead with SB 135 (`MEMO_BLOCKS`); the opening follows `x_lede` until saved.
 
+⏳ **NEEDS SAM: the funding FAQ (S506, Open Asks Sheet 138).** Sam sent nine FAQ drafts on 2026-10-28 to check "against what you know", invited more for the rollout, and asked that the settled set post to the funding tab and join the knowledge base and the Library. The sheet carries his nine with a recommended revision each, the help answer with the support address, and eleven new questions (`CPLBrain/decision-sheets/open-asks/2026-10-28-funding-faq-138.json` holds the text). On his verdicts the FAQ posts as the house text, `FAQ_DEFAULT_PLAIN` in `cpl_funding.js` (no scenario holds a `faq` or `x_faq` override, read S506, so the tab and the public page both show it), then a KB note and a Library record.
+
 ⏳ **The memo's opening waits on Sam's paste (Sheet 129 card 1; `cpl_memory` `sam-sheet-129-rulings-2026-10-26`).**
 The memo's opening follows the explainer's Overview (`x_lede`) until `memo_lead` is saved, so the Word export printed two
 passages twice. He chose the proposed opening (`MEMO_LEAD_PROPOSED_128` in
