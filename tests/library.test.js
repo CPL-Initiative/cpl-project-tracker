@@ -706,6 +706,56 @@ block("(14)", function () {
   });
 });
 
+// ── (15) One card per project (Sam, 2026-10-28; mockup Version 20) ───────
+// Pieces sharing `project` draw as one card with a row per piece, each title its link;
+// a project of one keeps the plain card; Edit sets the project; Make a visual files the
+// college's visual and workbook under one project.
+const PROJ_ROWS = [
+  { id: "p1", slug: "ell-iet-cpl-starting-points", title: "ELL IET CPL Starting Points", kind: "visual", project: "ELL IET CPL",
+    occasion: "Prepare to meet with grant recipients on CPL", made_on: "2026-10-23", version: "2", status: "draft", seen_by: "public",
+    home: "web", url: "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet/", public_listed: true,
+    for_kind: "agency", for_name: "EDD ELL IET Fund grantees", summary: "A card per ELL IET Fund project", versions: [] },
+  { id: "p2", slug: "ell-iet-cpl-ideas", title: "ELL IET CPL Ideas", kind: "document", project: "ELL IET CPL",
+    occasion: "Prepare to meet with grant recipients on CPL", made_on: "2026-10-22", status: "draft", seen_by: "public",
+    home: "web", url: "https://claude.ai/artifact/x", public_listed: false, for_kind: "agency", for_name: "EDD ELL IET Fund grantees", versions: [] },
+  { id: "p3", slug: "lone-deck", title: "A lone deck", kind: "deck", project: "Only me",
+    occasion: "Prepare to meet with grant recipients on CPL", made_on: "2026-10-21", status: "draft", seen_by: "team",
+    home: "not_filed", url: null, versions: [] }
+];
+block("(15)", function () {
+  const writes = [];
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method && init.method !== "GET") { writes.push({ url: url, body: JSON.parse(init.body || "{}") }); return response(200, [{}]); }
+    return response(200, PROJ_ROWS);
+  } });
+  const doc = m.w.document, M = m.M;
+  return Promise.resolve(M.activate()).then(settle).then(function () {
+    const cards = m.root.querySelectorAll("#lib-register article");
+    check("(15) two pieces sharing a project draw as one card, a project of one as its own", cards.length === 2, cards.length);
+    const proj = m.root.querySelector("article.lib-proj");
+    check("(15) the project card names the project and counts its pieces", !!proj && /ELL IET CPL/.test(proj.querySelector("h3").textContent) && /2 pieces/.test(proj.textContent) && /Visual and document/.test(proj.textContent), proj && proj.textContent.slice(0, 200));
+    check("(15) the card carries the public-library chip when a piece is listed", /In the public library/.test(proj.querySelector(".lib-body > .lib-chips").textContent));
+    const rows = proj.querySelectorAll("li.lib-piece");
+    check("(15) a row per piece, its title the link", rows.length === 2 && rows[0].querySelector("a#lib-t-p1").getAttribute("href") === PROJ_ROWS[0].url);
+    check("(15) the unlisted piece offers List publicly, the listed one does not", !!rows[1].querySelector("[data-pubtop]") && !rows[0].querySelector("[data-pubtop]"));
+    check("(15) the lone piece keeps the plain card with File it", !doc.getElementById("lib-t-p3").closest("article").classList.contains("lib-proj") && !!doc.getElementById("lib-t-p3").closest("article").querySelector("[data-file]"));
+    click(m.w, rows[1].querySelector("[data-toggle]"));
+    check("(15) Details opens under its own row", !doc.getElementById("lib-d-p2").hidden && doc.getElementById("lib-d-p2").closest("li.lib-piece") !== null);
+    click(m.w, m.root.querySelector('li.lib-piece [data-edittop="p2"]'));
+    const pf = doc.getElementById("le-project");
+    check("(15) Edit offers Project, filled, with the known projects to pick from", !!pf && pf.value === "ELL IET CPL" && /ELL IET CPL/.test((doc.getElementById("lib-projects") || {}).innerHTML || ""));
+    pf.value = "";
+    submit(m, 'form[data-editform="p2"]');
+    return settle();
+  }).then(function () {
+    const e = writes.filter(function (x) { return /id=eq\.p2/.test(x.url); })[0];
+    check("(15) clearing Project saves null", !!e && e.body.project === null, e && JSON.stringify(e.body));
+    const pair = M._collegePair ? M._collegePair("Norco College", "x", "Sam") : null;
+    check("(15) Make a visual files the visual and workbook under one project", !pair || (pair[0].project === "Norco College: CPL Opportunity Analysis" && pair[1].project === pair[0].project));
+    check("(15) the schema adds project, re-runnable and capped", /add column if not exists project\s+text/.test(SQL) && /cpl_library_project_ck/.test(SQL));
+  });
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {

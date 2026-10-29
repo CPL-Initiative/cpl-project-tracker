@@ -264,3 +264,15 @@ alter table public.cpl_library add constraint cpl_library_sources_ck check (
 alter table public.cpl_library drop constraint if exists cpl_library_regen_ck;
 alter table public.cpl_library add constraint cpl_library_regen_ck check (
   regen is null or (jsonb_typeof(regen) = 'object' and regen ? 'requested_at' and octet_length(regen::text) <= 4000));
+
+-- ── One card per project (Sam, 2026-10-28; mockup Version 20, S508; built S509) ──
+-- Sam: one card for a whole project (the ELL IET visual and its document). project names
+-- the project a piece belongs to; pieces that share it draw as one card in the Library tab,
+-- a row per piece. Null = a piece on its own. Make a visual files a college's visual and
+-- workbook under one project. APPLIED 2026-10-29 (MCP, cpl_library_projects_2026_10_29_s509).
+-- Re-runnable; the column rides the table-level grants above,
+-- and the history trigger files it with every prior row.
+alter table public.cpl_library add column if not exists project text;
+alter table public.cpl_library drop constraint if exists cpl_library_project_ck;
+alter table public.cpl_library add constraint cpl_library_project_ck check (
+  project is null or char_length(btrim(project)) between 1 and 200);
