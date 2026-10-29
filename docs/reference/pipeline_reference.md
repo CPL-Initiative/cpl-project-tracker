@@ -999,9 +999,9 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
 #### 8a. The MAP Custom Report load — `map_*` tables (Session 171, 2026-08-19)
 
 **The whole `map_*` family is loaded by ONE nightly transaction.**
-`.github/workflows/map-custom-report-load.yml` fires at **13:40 UTC** (after the
-last dashboard window 12:17 and after `credential-catalog-sync` 13:20, so the
-three do not contend): fetch → staging → `map_promote_custom_reports()` → live.
+`.github/workflows/map-custom-report-load.yml` fires at **04:57 UTC** (9:57 PM
+Pacific in daylight time; Sam, 2026-10-29; until then 13:40 UTC, which GitHub started
+five to six hours late, into midday Pacific): fetch → staging → `map_promote_custom_reports()` → live.
 Runbook: [`docs/map_custom_report_load.md`](../map_custom_report_load.md).
 
 | table | rows | gate | written by |

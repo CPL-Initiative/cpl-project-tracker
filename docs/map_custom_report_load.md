@@ -18,9 +18,10 @@ related:
 # Loading the two new MAP Custom Report views
 
 **This runs itself.** `.github/workflows/map-custom-report-load.yml` fires daily
-at **13:40 UTC** — after the last dashboard window (12:17) and after
-`credential-catalog-sync` (13:20) — and goes fetch → staging → live without
-anyone approving anything.
+at **04:57 UTC** (9:57 PM Pacific in daylight time; Sam, 2026-10-29: *"Maybe 10P PDT"*)
+and goes fetch → staging → live without anyone approving anything. It ran at 13:40 UTC
+until then; GitHub started that schedule five to six hours late, so the promotion
+landed at midday Pacific and stalled Sierra's reads.
 
 > Sam, 2026-08-19: *"This will run in the daily cron so just making sure I don't
 > have to do a staging to live approval every day."*

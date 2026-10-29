@@ -423,7 +423,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 7270
+     "line": 7280
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -21938,7 +21938,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6862
+     "line": 6870
     }
    ],
    "main_committers": []
@@ -22416,7 +22416,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7539
+     "line": 7549
     },
     {
      "id": "module:sierra_training.js",
@@ -22880,7 +22880,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6534
+     "line": 6542
     },
     {
      "id": "module:college_briefing.js",
@@ -25104,7 +25104,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6619
+     "line": 6627
     },
     {
      "id": "module:sierra_training.js",
@@ -26353,7 +26353,7 @@
   "map-custom-report-load.yml": {
    "name": "MAP Custom Report load (staging)",
    "crons": [
-    "40 13 * * *"
+    "57 4 * * *"
    ],
    "scripts": [
     "fetch_custom_report.py",
