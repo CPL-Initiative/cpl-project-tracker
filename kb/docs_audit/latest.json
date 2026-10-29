@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-28",
+  "generated": "2026-10-29",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1307,
-    "bytes": 13280994,
+    "files": 1308,
+    "bytes": 13290540,
     "over_budget": 0,
-    "handoff_max": 508,
+    "handoff_max": 509,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59972,
-    "superseded_files": 0,
-    "superseded_bytes": 0,
+    "superseded_files": 4,
+    "superseded_bytes": 19064,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 135,
-        "bytes": 4085880,
+        "bytes": 4086046,
         "over": 0
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2431254,
+        "bytes": 2434733,
         "over": 0
       },
       "kb_note": {
@@ -46,24 +46,26 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 441328,
+        "bytes": 442195,
         "over": 0
       },
       "handoff": {
-        "files": 477,
-        "bytes": 3467876,
+        "files": 478,
+        "bytes": 3472910,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
+      "superseded_handoff": 4,
       "house_voice": 1,
-      "vault_heavy_path": 70
+      "vault_heavy_path": 70,
+      "esl_monthly_pass_due": 1
     },
     "vault": {
-      "files": 24996,
-      "bytes": 3965943499,
-      "heavy_bytes": 2812052980,
+      "files": 25000,
+      "bytes": 3965969950,
+      "heavy_bytes": 2812056335,
       "heavy_share": 0.709,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -152,6 +154,50 @@
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
     },
     {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 505,
+        "authoritative": 509,
+        "has_frontmatter": true
+      },
+      "message": "handoff 505 is below the authoritative 509 but is not stamped `superseded: true`",
+      "path": "docs/session_505_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 506,
+        "authoritative": 509,
+        "has_frontmatter": true
+      },
+      "message": "handoff 506 is below the authoritative 509 but is not stamped `superseded: true`",
+      "path": "docs/session_506_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 507,
+        "authoritative": 509,
+        "has_frontmatter": true
+      },
+      "message": "handoff 507 is below the authoritative 509 but is not stamped `superseded: true`",
+      "path": "docs/session_507_handoff.md"
+    },
+    {
+      "rule": "superseded_handoff",
+      "fixable": true,
+      "detail": {
+        "session": 508,
+        "authoritative": 509,
+        "has_frontmatter": true
+      },
+      "message": "handoff 508 is below the authoritative 509 but is not stamped `superseded: true`",
+      "path": "docs/session_508_handoff.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -168,10 +214,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1719757124,
+        "bytes": 1719760479,
         "kind": "dir"
       },
-      "message": "directory totals 1,719,757,124 B inside the vault"
+      "message": "directory totals 1,719,760,479 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -862,6 +908,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "esl_monthly_pass_due",
+      "fixable": false,
+      "path": "kb/esl_sheet_out/",
+      "detail": {
+        "last_pass": "2026-09-27",
+        "days": 32,
+        "budget": 31
+      },
+      "message": "The ESL monthly pass is due: the last pass or ESL write was 2026-09-27, 32 days ago (Sam's verdict on item 8 of the ESL merging sheet, 2026-09-26: monthly). Run `python3 kb/_esl_monthly_pass.py --session <N>`, then dispatch `esl-sheet-apply.yml` with the plan dir it names; hand Sam what it lists."
     }
   ]
 }

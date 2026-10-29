@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-477 document(s).
+478 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 509 | [Session 509 handoff: Malone's FAQs, the published scenario first, the map.rccd.edu scans, the Library remediation mockup](../session_509_handoff.md) | 2026-10-29 |
 | 508 | [Session 508 handoff: the Summit sweep passes; the funding FAQ posted as Sam settled it; two Sheet 138s reconciled](../session_508_handoff.md) | 2026-10-28 |
 | 507 | [Session 507 handoff: Glendale on its catalog's own words (45 to 80 passing); MAP links open the Non-Military card; Sierra deployed](../session_507_handoff.md) | 2026-10-28 |
 | 506 | [Session 506 handoff: four orphaned PRs landed or ported; the Summit is Friday](../session_506_handoff.md) | 2026-10-28 |

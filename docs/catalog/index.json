@@ -16210,8 +16210,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 477,
+   "count": 478,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 509,
+     "path": "docs/session_509_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "implementation-funding",
+      "library",
+      "a11y",
+      "map-website",
+      "privacy"
+     ],
+     "title": "Session 509 handoff: Malone's FAQs, the published scenario first, the map.rccd.edu scans, the Library remediation mockup",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-28",
      "governs": [],
@@ -24387,5 +24405,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1294
+ "total": 1295
 }
