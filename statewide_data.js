@@ -12308,8 +12308,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.95,
       "quality_flag": "",
       "raw_titles": [
-        "Intuit QuickBooks Online Certified User",
-        "QuickBooks Certified User Online"
+        "Intuit QuickBooks Online Certified User"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Business and Management",
@@ -12458,7 +12457,7 @@ window.CPL_STATEWIDE = {
         },
         {
           "id": "MAPICI-QCUO-1-001",
-          "title": "QuickBooks Certified User Online",
+          "title": "Intuit QuickBooks Online Certified User",
           "units": 3.0,
           "lines": 1
         }
@@ -34046,6 +34045,230 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 15.0
     },
     {
+      "exhibit_id": "MAPICI-C0-W-1-001|MAPICI-MW(3-1-001|MAPICI-O2(T-1-001|MAPICI-O3(C1-1-001",
+      "exhibit_ids": [
+        "MAPICI-C0-W-1-001",
+        "MAPICI-MW(3-1-001",
+        "MAPICI-O2(T-1-001",
+        "MAPICI-O3(C1-1-001"
+      ],
+      "title": "Microsoft Office Specialist — Word",
+      "unified_title": "Microsoft Office Specialist — Word",
+      "is_classified": true,
+      "issuing_agency": "Microsoft",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 0.8,
+      "quality_flag": "",
+      "raw_titles": [
+        "CIT 021 - Word Processing: Comprehensive Microsoft Word",
+        "MICROSOFT WORD (MICROSOFT 365 APPS)",
+        "OFADM 256 (change to BIT 250)\tIntroduction to Microsoft Word - Industry Certification",
+        "OFADM 330 ( change to BIT 330)\tBeginning Word Processing - Industry Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "11",
+      "top_codes": [
+        "16",
+        "29"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 5,
+      "adopter_names": [
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "San Bernardino Valley College"
+      ],
+      "potential": 100,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 105,
+      "credit_recs": [
+        {
+          "course": "CAT 80",
+          "credit": "3 hours in Word for Windows"
+        },
+        {
+          "course": "BIT 250",
+          "credit": "1 hour in Introduction to Microsoft Word"
+        },
+        {
+          "course": "BIT 330",
+          "credit": "3 hours in Beginning Word Processing"
+        },
+        {
+          "course": "CIT 021",
+          "credit": "4 hours in Word Processing: Comprehensive Microsoft Word"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-C0-W-1-001",
+          "title": "CIT 021 - Word Processing: Comprehensive Microsoft Word",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-MW(3-1-001",
+          "title": "MICROSOFT WORD (MICROSOFT 365 APPS)",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-O2(T-1-001",
+          "title": "OFADM 256 (change to BIT 250)\tIntroduction to Microsoft Word - Industry Certification",
+          "units": 1.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-O3(C1-1-001",
+          "title": "OFADM 330 ( change to BIT 330)\tBeginning Word Processing - Industry Certification",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Modesto Junior College": 4.0,
+        "Moreno Valley College": 3.0,
+        "Norco College": 3.0,
+        "Riverside City College": 3.0,
+        "San Bernardino Valley College": 4.0
+      },
+      "adopter_lines": {
+        "Modesto Junior College": 2,
+        "Moreno Valley College": 1,
+        "Norco College": 1,
+        "Riverside City College": 1,
+        "San Bernardino Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Modesto Junior College": [
+          1,
+          2
+        ],
+        "Moreno Valley College": [
+          0
+        ],
+        "Norco College": [
+          0
+        ],
+        "Riverside City College": [
+          0
+        ],
+        "San Bernardino Valley College": [
+          3
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 11.0
+    },
+    {
       "exhibit_id": "MAPCXI-CA-1-001|MAPCXI-CA1-1-001|MAPCXI-CA2-1-001|MAPCXN-ACP-1-001|MAPCxS-MSTC-1-001",
       "exhibit_ids": [
         "MAPCXI-CA-1-001",
@@ -38751,255 +38974,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 6.0,
       "rec_units_total": 24.0
-    },
-    {
-      "exhibit_id": "MAPICI-C0-W-1-001|MAPICI-MOS(3-1-001|MAPICI-MOS(4-1-001|MAPICI-MW(3-1-001|MAPICI-O2(T-1-001|MAPICI-O3(C1-1-001",
-      "exhibit_ids": [
-        "MAPICI-C0-W-1-001",
-        "MAPICI-MOS(3-1-001",
-        "MAPICI-MOS(4-1-001",
-        "MAPICI-MW(3-1-001",
-        "MAPICI-O2(T-1-001",
-        "MAPICI-O3(C1-1-001"
-      ],
-      "title": "Microsoft Office Specialist — Word",
-      "unified_title": "Microsoft Office Specialist — Word",
-      "is_classified": true,
-      "issuing_agency": "Microsoft",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.8,
-      "quality_flag": "",
-      "raw_titles": [
-        "CIT 021 - Word Processing: Comprehensive Microsoft Word",
-        "MICROSOFT WORD (MICROSOFT 365 APPS)",
-        "Microsoft Office Specialist (MOS): Word Associate (Microsoft 365 Apps)",
-        "Microsoft Office Specialist (MOS): Word Associate (Office 2019)",
-        "OFADM 256 (change to BIT 250)\tIntroduction to Microsoft Word - Industry Certification",
-        "OFADM 330 ( change to BIT 330)\tBeginning Word Processing - Industry Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Business and Management",
-      "sector": "Business & Entrepreneurship",
-      "cip_sector": "11",
-      "top_codes": [
-        "16",
-        "29"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 6,
-      "adopter_names": [
-        "Los Angeles Pierce College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College",
-        "San Bernardino Valley College"
-      ],
-      "potential": 99,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Barstow Community College",
-        "Berkeley City College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 105,
-      "credit_recs": [
-        {
-          "course": "CAT 80",
-          "credit": "3 hours in Word for Windows"
-        },
-        {
-          "course": "BIT 250",
-          "credit": "1 hour in Introduction to Microsoft Word"
-        },
-        {
-          "course": "BIT 330",
-          "credit": "3 hours in Beginning Word Processing"
-        },
-        {
-          "course": "CIT 021",
-          "credit": "4 hours in Word Processing: Comprehensive Microsoft Word"
-        },
-        {
-          "course": "CAOT 039",
-          "credit": "3 hours in Microsoft Word: Basic to Intermediate"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-C0-W-1-001",
-          "title": "CIT 021 - Word Processing: Comprehensive Microsoft Word",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOS(3-1-001",
-          "title": "Microsoft Office Specialist (MOS): Word Associate (Microsoft 365 Apps)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOS(4-1-001",
-          "title": "Microsoft Office Specialist (MOS): Word Associate (Office 2019)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MW(3-1-001",
-          "title": "MICROSOFT WORD (MICROSOFT 365 APPS)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-O2(T-1-001",
-          "title": "OFADM 256 (change to BIT 250)\tIntroduction to Microsoft Word - Industry Certification",
-          "units": 1.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-O3(C1-1-001",
-          "title": "OFADM 330 ( change to BIT 330)\tBeginning Word Processing - Industry Certification",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 3.0,
-        "Modesto Junior College": 4.0,
-        "Moreno Valley College": 3.0,
-        "Norco College": 3.0,
-        "Riverside City College": 3.0,
-        "San Bernardino Valley College": 4.0
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1,
-        "Modesto Junior College": 2,
-        "Moreno Valley College": 1,
-        "Norco College": 1,
-        "Riverside City College": 1,
-        "San Bernardino Valley College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          4
-        ],
-        "Modesto Junior College": [
-          1,
-          2
-        ],
-        "Moreno Valley College": [
-          0
-        ],
-        "Norco College": [
-          0
-        ],
-        "Riverside City College": [
-          0
-        ],
-        "San Bernardino Valley College": [
-          3
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 14.0
     },
     {
       "exhibit_id": "MAPPRS-A12-1-001",
@@ -56403,6 +56377,233 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICI-C1-S-1-001|MAPICI-CMOS-1-001|MAPICI-MOSE-1-001|MAPICI-O2(T1-1-001",
+      "exhibit_ids": [
+        "MAPICI-C1-S-1-001",
+        "MAPICI-CMOS-1-001",
+        "MAPICI-MOSE-1-001",
+        "MAPICI-O2(T1-1-001"
+      ],
+      "title": "Microsoft Office Specialist — Excel",
+      "unified_title": "Microsoft Office Specialist — Excel",
+      "is_classified": true,
+      "issuing_agency": "Microsoft",
+      "training_agency": "U.S. Armed Forces",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.8,
+      "quality_flag": "",
+      "raw_titles": [
+        "CIT 114 - Spreadsheets: Excel (Microsoft Office Specialist Cert)",
+        "Certification: Microsoft Office Specialist (MOS)- Excel",
+        "MICROSOFT OFFICE SPECIALIST EXCEL CERTIFICATION",
+        "OFADM 259 (change to BIT 260)\tIntroduction to Microsoft Excel - Industry Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "16",
+        "32",
+        "394"
+      ],
+      "collaborative_type": "Industry",
+      "adopters": 6,
+      "adopter_names": [
+        "Los Medanos College",
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College",
+        "San Bernardino Valley College"
+      ],
+      "potential": 97,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "College of Alameda",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 103,
+      "credit_recs": [
+        {
+          "course": "CAT 98A",
+          "credit": "1.5 hours in Excel"
+        },
+        {
+          "course": "BIT 260",
+          "credit": "1 hour in Introduction to Microsoft Excel"
+        },
+        {
+          "course": "CIT 114",
+          "credit": "3 hours in Spreadsheets: Excel"
+        },
+        {
+          "course": "BUS 018",
+          "credit": "3 hours in Introducation to Excel"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-C1-S-1-001",
+          "title": "CIT 114 - Spreadsheets: Excel (Microsoft Office Specialist Cert)",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CMOS-1-001",
+          "title": "Certification: Microsoft Office Specialist (MOS)- Excel",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-MOSE-1-001",
+          "title": "MICROSOFT OFFICE SPECIALIST EXCEL CERTIFICATION",
+          "units": 1.5,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-O2(T1-1-001",
+          "title": "OFADM 259 (change to BIT 260)\tIntroduction to Microsoft Excel - Industry Certification",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Medanos College": 3.0,
+        "Modesto Junior College": 1.0,
+        "Moreno Valley College": 1.5,
+        "Norco College": 1.5,
+        "Riverside City College": 1.5,
+        "San Bernardino Valley College": 3.0
+      },
+      "adopter_lines": {
+        "Los Medanos College": 1,
+        "Modesto Junior College": 1,
+        "Moreno Valley College": 1,
+        "Norco College": 1,
+        "Riverside City College": 1,
+        "San Bernardino Valley College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Medanos College": [
+          3
+        ],
+        "Modesto Junior College": [
+          1
+        ],
+        "Moreno Valley College": [
+          0
+        ],
+        "Norco College": [
+          0
+        ],
+        "Riverside City College": [
+          0
+        ],
+        "San Bernardino Valley College": [
+          2
+        ]
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 3.0,
+      "rec_units_total": 8.5
+    },
+    {
       "exhibit_id": "MAPCXS-AJ1C-1-001|MAPCXS-CBE-5-1-001|MAPCXS-CBEF6-1-001|MAPCxS-ITAO1-1-001",
       "exhibit_ids": [
         "MAPCXS-AJ1C-1-001",
@@ -60047,258 +60248,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 36.0
-    },
-    {
-      "exhibit_id": "MAPICI-C1-S-1-001|MAPICI-CMOS-1-001|MAPICI-MOS(8-1-001|MAPICI-MOS(9-1-001|MAPICI-MOSE-1-001|MAPICI-O2(T1-1-001",
-      "exhibit_ids": [
-        "MAPICI-C1-S-1-001",
-        "MAPICI-CMOS-1-001",
-        "MAPICI-MOS(8-1-001",
-        "MAPICI-MOS(9-1-001",
-        "MAPICI-MOSE-1-001",
-        "MAPICI-O2(T1-1-001"
-      ],
-      "title": "Microsoft Office Specialist — Excel",
-      "unified_title": "Microsoft Office Specialist — Excel",
-      "is_classified": true,
-      "issuing_agency": "Microsoft",
-      "training_agency": "U.S. Armed Forces",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.8,
-      "quality_flag": "",
-      "raw_titles": [
-        "CIT 114 - Spreadsheets: Excel (Microsoft Office Specialist Cert)",
-        "Certification: Microsoft Office Specialist (MOS)- Excel",
-        "MICROSOFT OFFICE SPECIALIST EXCEL CERTIFICATION",
-        "Microsoft Office Specialist (MOS): Excel Associate (Microsoft 365 Apps)",
-        "Microsoft Office Specialist (MOS): Excel Associate (Office 2019)",
-        "OFADM 259 (change to BIT 260)\tIntroduction to Microsoft Excel - Industry Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Business and Management",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "11",
-      "top_codes": [
-        "16",
-        "32",
-        "394"
-      ],
-      "collaborative_type": "Industry",
-      "adopters": 7,
-      "adopter_names": [
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College",
-        "San Bernardino Valley College"
-      ],
-      "potential": 96,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coalinga College",
-        "College of Alameda",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Southwest College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego Mesa College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 103,
-      "credit_recs": [
-        {
-          "course": "CAT 98A",
-          "credit": "1.5 hours in Excel"
-        },
-        {
-          "course": "BIT 260",
-          "credit": "1 hour in Introduction to Microsoft Excel"
-        },
-        {
-          "course": "CIT 114",
-          "credit": "3 hours in Spreadsheets: Excel"
-        },
-        {
-          "course": "BUS 018",
-          "credit": "3 hours in Introducation to Excel"
-        },
-        {
-          "course": "CAOT 085",
-          "credit": "3 hours in Microsoft Excel: Spreadsheet"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-C1-S-1-001",
-          "title": "CIT 114 - Spreadsheets: Excel (Microsoft Office Specialist Cert)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CMOS-1-001",
-          "title": "Certification: Microsoft Office Specialist (MOS)- Excel",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOS(8-1-001",
-          "title": "Microsoft Office Specialist (MOS): Excel Associate (Microsoft 365 Apps)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOS(9-1-001",
-          "title": "Microsoft Office Specialist (MOS): Excel Associate (Office 2019)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOSE-1-001",
-          "title": "MICROSOFT OFFICE SPECIALIST EXCEL CERTIFICATION",
-          "units": 1.5,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-O2(T1-1-001",
-          "title": "OFADM 259 (change to BIT 260)\tIntroduction to Microsoft Excel - Industry Certification",
-          "units": 1.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 3.0,
-        "Los Medanos College": 3.0,
-        "Modesto Junior College": 1.0,
-        "Moreno Valley College": 1.5,
-        "Norco College": 1.5,
-        "Riverside City College": 1.5,
-        "San Bernardino Valley College": 3.0
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1,
-        "Los Medanos College": 1,
-        "Modesto Junior College": 1,
-        "Moreno Valley College": 1,
-        "Norco College": 1,
-        "Riverside City College": 1,
-        "San Bernardino Valley College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          4
-        ],
-        "Los Medanos College": [
-          3
-        ],
-        "Modesto Junior College": [
-          1
-        ],
-        "Moreno Valley College": [
-          0
-        ],
-        "Norco College": [
-          0
-        ],
-        "Riverside City College": [
-          0
-        ],
-        "San Bernardino Valley College": [
-          2
-        ]
-      },
-      "peer_units_median": 1.5,
-      "peer_units_max": 3.0,
-      "rec_units_total": 11.5
     },
     {
       "exhibit_id": "MAPCXS-C2IS-1-001",
@@ -82208,6 +82157,385 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 30.0
     },
     {
+      "exhibit_id": "MAPICI-B2ME-1-001|MAPICI-MOSE1-1-001|MAPICI-O2(T2-1-001",
+      "exhibit_ids": [
+        "MAPICI-B2ME-1-001",
+        "MAPICI-MOSE1-1-001",
+        "MAPICI-O2(T2-1-001"
+      ],
+      "title": "Microsoft Office Specialist — Excel Expert",
+      "unified_title": "Microsoft Office Specialist — Excel Expert",
+      "is_classified": true,
+      "issuing_agency": "Microsoft",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.85,
+      "quality_flag": "",
+      "raw_titles": [
+        "BIT 262\tAdvanced Microsoft Excel - Industry Certificate",
+        "MICROSOFT OFFICE SPECIALIST EXCEL EXPERT CERTIFICATION",
+        "OFADM 260 (Change to BIT 261)\tIntermediate Microsoft Excel - Industry Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "11",
+      "top_codes": [
+        "16",
+        "394"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 4,
+      "adopter_names": [
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College"
+      ],
+      "potential": 90,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "College of Alameda",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 94,
+      "credit_recs": [
+        {
+          "course": "CAT 98B",
+          "credit": "1.5 hours in Advanced Excel"
+        },
+        {
+          "course": "BIT 261",
+          "credit": "1 hour in Intermediate Microsoft Excel"
+        },
+        {
+          "course": "BIT 262",
+          "credit": "1 hour in Advanced Microsoft Excel"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-B2ME-1-001",
+          "title": "BIT 262\tAdvanced Microsoft Excel - Industry Certificate",
+          "units": 1.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-MOSE1-1-001",
+          "title": "MICROSOFT OFFICE SPECIALIST EXCEL EXPERT CERTIFICATION",
+          "units": 1.5,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-O2(T2-1-001",
+          "title": "OFADM 260 (Change to BIT 261)\tIntermediate Microsoft Excel - Industry Certification",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Modesto Junior College": 2.0,
+        "Moreno Valley College": 1.5,
+        "Norco College": 1.5,
+        "Riverside City College": 1.5
+      },
+      "adopter_lines": {
+        "Modesto Junior College": 2,
+        "Moreno Valley College": 1,
+        "Norco College": 1,
+        "Riverside City College": 1
+      },
+      "adopter_rec_idx": {
+        "Modesto Junior College": [
+          1,
+          2
+        ],
+        "Moreno Valley College": [
+          0
+        ],
+        "Norco College": [
+          0
+        ],
+        "Riverside City College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.5,
+      "peer_units_max": 2.0,
+      "rec_units_total": 3.5
+    },
+    {
+      "exhibit_id": "MAPICI-MOSO-1-001|MAPICI-O3(T-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOSO-1-001",
+        "MAPICI-O3(T-1-001"
+      ],
+      "title": "Microsoft Office Specialist — Outlook",
+      "unified_title": "Microsoft Office Specialist — Outlook",
+      "is_classified": true,
+      "issuing_agency": "Microsoft",
+      "training_agency": "",
+      "confidence_title": 0.95,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION",
+        "OFADM 316 (Change to BIT 316) \tIntroduction to Microsoft Outlook - Industry Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "11",
+      "top_codes": [
+        "16",
+        "394"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 4,
+      "adopter_names": [
+        "Modesto Junior College",
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College"
+      ],
+      "potential": 90,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Coalinga College",
+        "College of Alameda",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 94,
+      "credit_recs": [
+        {
+          "course": "CAT 90",
+          "credit": "3 hours in Microsoft Outlook"
+        },
+        {
+          "course": "BIT 316",
+          "credit": "1 hour in Introduction to Microsoft Outlook"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOSO-1-001",
+          "title": "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION",
+          "units": 3.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-O3(T-1-001",
+          "title": "OFADM 316 (Change to BIT 316) \tIntroduction to Microsoft Outlook - Industry Certification",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Modesto Junior College": 1.0,
+        "Moreno Valley College": 3.0,
+        "Norco College": 3.0,
+        "Riverside City College": 3.0
+      },
+      "adopter_lines": {
+        "Modesto Junior College": 1,
+        "Moreno Valley College": 1,
+        "Norco College": 1,
+        "Riverside City College": 1
+      },
+      "adopter_rec_idx": {
+        "Modesto Junior College": [
+          1
+        ],
+        "Moreno Valley College": [
+          0
+        ],
+        "Norco College": [
+          0
+        ],
+        "Riverside City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 4.0
+    },
+    {
       "exhibit_id": "MAPCBEN-SF(-1-001|MAPCXI-CS-1-001|MAPCXN-SCP1-1-001|MAPCxS-CSS/-1-001",
       "exhibit_ids": [
         "MAPCBEN-SF(-1-001",
@@ -82927,6 +83255,158 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPCXS-MI4-1-001",
+      "exhibit_ids": [
+        "MAPCXS-MI4-1-001"
+      ],
+      "title": "Musicianship 1",
+      "unified_title": "Musicianship 1",
+      "is_classified": true,
+      "issuing_agency": "California Community Colleges",
+      "training_agency": "",
+      "confidence_title": 0.9,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Musicianship I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "72"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Moorpark College"
+      ],
+      "potential": 90,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 91,
+      "credit_recs": [
+        {
+          "course": "MUS M02AL",
+          "credit": "1 hour in Musicianship I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-MI4-1-001",
+          "title": "Musicianship I",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Moorpark College": 1.0
+      },
+      "adopter_lines": {
+        "Moorpark College": 1
+      },
+      "adopter_rec_idx": {
+        "Moorpark College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
     },
     {
       "exhibit_id": "MAPCXS-CBEK1-1-001",
@@ -85251,419 +85731,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 25.5
     },
     {
-      "exhibit_id": "MAPICI-B2ME-1-001|MAPICI-MOS(10-1-001|MAPICI-MOSE1-1-001|MAPICI-O2(T2-1-001",
-      "exhibit_ids": [
-        "MAPICI-B2ME-1-001",
-        "MAPICI-MOS(10-1-001",
-        "MAPICI-MOSE1-1-001",
-        "MAPICI-O2(T2-1-001"
-      ],
-      "title": "Microsoft Office Specialist — Excel Expert",
-      "unified_title": "Microsoft Office Specialist — Excel Expert",
-      "is_classified": true,
-      "issuing_agency": "Microsoft",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.85,
-      "quality_flag": "",
-      "raw_titles": [
-        "BIT 262\tAdvanced Microsoft Excel - Industry Certificate",
-        "MICROSOFT OFFICE SPECIALIST EXCEL EXPERT CERTIFICATION",
-        "Microsoft Office Specialist (MOS): Excel Expert (Microsoft 365 Apps)",
-        "OFADM 260 (Change to BIT 261)\tIntermediate Microsoft Excel - Industry Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Business and Management",
-      "sector": "Business & Entrepreneurship",
-      "cip_sector": "11",
-      "top_codes": [
-        "16",
-        "394"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 5,
-      "adopter_names": [
-        "Los Angeles Pierce College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College"
-      ],
-      "potential": 89,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "College of Alameda",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 94,
-      "credit_recs": [
-        {
-          "course": "CAT 98B",
-          "credit": "1.5 hours in Advanced Excel"
-        },
-        {
-          "course": "BIT 261",
-          "credit": "1 hour in Intermediate Microsoft Excel"
-        },
-        {
-          "course": "BIT 262",
-          "credit": "1 hour in Advanced Microsoft Excel"
-        },
-        {
-          "course": "CAOT 085",
-          "credit": "3 hours in Microsoft Excel: Spreadsheet"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-B2ME-1-001",
-          "title": "BIT 262\tAdvanced Microsoft Excel - Industry Certificate",
-          "units": 1.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOS(10-1-001",
-          "title": "Microsoft Office Specialist (MOS): Excel Expert (Microsoft 365 Apps)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOSE1-1-001",
-          "title": "MICROSOFT OFFICE SPECIALIST EXCEL EXPERT CERTIFICATION",
-          "units": 1.5,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-O2(T2-1-001",
-          "title": "OFADM 260 (Change to BIT 261)\tIntermediate Microsoft Excel - Industry Certification",
-          "units": 1.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 3.0,
-        "Modesto Junior College": 2.0,
-        "Moreno Valley College": 1.5,
-        "Norco College": 1.5,
-        "Riverside City College": 1.5
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1,
-        "Modesto Junior College": 2,
-        "Moreno Valley College": 1,
-        "Norco College": 1,
-        "Riverside City College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          3
-        ],
-        "Modesto Junior College": [
-          1,
-          2
-        ],
-        "Moreno Valley College": [
-          0
-        ],
-        "Norco College": [
-          0
-        ],
-        "Riverside City College": [
-          0
-        ]
-      },
-      "peer_units_median": 1.5,
-      "peer_units_max": 3.0,
-      "rec_units_total": 6.5
-    },
-    {
-      "exhibit_id": "MAPICI-MOS(5-1-001|MAPICI-MOSO-1-001|MAPICI-O3(T-1-001",
-      "exhibit_ids": [
-        "MAPICI-MOS(5-1-001",
-        "MAPICI-MOSO-1-001",
-        "MAPICI-O3(T-1-001"
-      ],
-      "title": "Microsoft Office Specialist — Outlook",
-      "unified_title": "Microsoft Office Specialist — Outlook",
-      "is_classified": true,
-      "issuing_agency": "Microsoft",
-      "training_agency": "",
-      "confidence_title": 0.95,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION",
-        "Microsoft Office Specialist (MOS): Outlook Associate (Office 2019)",
-        "OFADM 316 (Change to BIT 316) \tIntroduction to Microsoft Outlook - Industry Certification"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Business and Management",
-      "sector": "Business & Entrepreneurship",
-      "cip_sector": "11",
-      "top_codes": [
-        "16",
-        "394"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 5,
-      "adopter_names": [
-        "Los Angeles Pierce College",
-        "Modesto Junior College",
-        "Moreno Valley College",
-        "Norco College",
-        "Riverside City College"
-      ],
-      "potential": 89,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Coalinga College",
-        "College of Alameda",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego City College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 94,
-      "credit_recs": [
-        {
-          "course": "CAT 90",
-          "credit": "3 hours in Microsoft Outlook"
-        },
-        {
-          "course": "BIT 316",
-          "credit": "1 hour in Introduction to Microsoft Outlook"
-        },
-        {
-          "course": "CAOT 067",
-          "credit": "2 hours in Microsoft Outlook for the Office"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-MOS(5-1-001",
-          "title": "Microsoft Office Specialist (MOS): Outlook Associate (Office 2019)",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOSO-1-001",
-          "title": "MICROSOFT OFFICE SPECIALIST OUTLOOK CERTIFICATION",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-O3(T-1-001",
-          "title": "OFADM 316 (Change to BIT 316) \tIntroduction to Microsoft Outlook - Industry Certification",
-          "units": 1.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 2.0,
-        "Modesto Junior College": 1.0,
-        "Moreno Valley College": 3.0,
-        "Norco College": 3.0,
-        "Riverside City College": 3.0
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1,
-        "Modesto Junior College": 1,
-        "Moreno Valley College": 1,
-        "Norco College": 1,
-        "Riverside City College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          2
-        ],
-        "Modesto Junior College": [
-          1
-        ],
-        "Moreno Valley College": [
-          0
-        ],
-        "Norco College": [
-          0
-        ],
-        "Riverside City College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 6.0
-    },
-    {
       "exhibit_id": "MAPICA-MPC-1-001|MAPICA-MPE-1-001",
       "exhibit_ids": [
         "MAPICA-MPC-1-001",
@@ -86278,174 +86345,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 9.0
-    },
-    {
-      "exhibit_id": "MAPCXS-MI-1-001|MAPCXS-MI4-1-001",
-      "exhibit_ids": [
-        "MAPCXS-MI-1-001",
-        "MAPCXS-MI4-1-001"
-      ],
-      "title": "Musicianship 1",
-      "unified_title": "Musicianship 1",
-      "is_classified": true,
-      "issuing_agency": "California Community Colleges",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Musicianship I"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Fine and Applied Arts",
-      "sector": "ICT/Digital Media",
-      "cip_sector": "50",
-      "top_codes": [
-        "72"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Los Angeles Pierce College",
-        "Moorpark College"
-      ],
-      "potential": 89,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Chabot College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Clovis Community College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of San Mateo",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Southwest College",
-        "Los Angeles Valley College",
-        "Los Medanos College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Norco College",
-        "Ohlone College",
-        "Orange Coast College",
-        "Oxnard College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego Mesa College",
-        "San Joaquin Delta College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 91,
-      "credit_recs": [
-        {
-          "course": "MUSIC 217-1",
-          "credit": "1 hour in Musicianship I"
-        },
-        {
-          "course": "MUS M02AL",
-          "credit": "1 hour in Musicianship I"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXS-MI-1-001",
-          "title": "Musicianship I",
-          "units": 1.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPCXS-MI4-1-001",
-          "title": "Musicianship I",
-          "units": 1.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 1.0,
-        "Moorpark College": 1.0
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1,
-        "Moorpark College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          0
-        ],
-        "Moorpark College": [
-          1
-        ]
-      },
-      "peer_units_median": 1.0,
-      "peer_units_max": 1.0,
-      "rec_units_total": 2.0
     },
     {
       "exhibit_id": "MAPPRA-CBPM-1-001",
@@ -88372,6 +88271,156 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "San Diego Mesa College": [
+          0
+        ]
+      },
+      "peer_units_median": 1.0,
+      "peer_units_max": 1.0,
+      "rec_units_total": 1.0
+    },
+    {
+      "exhibit_id": "MAPCXS-MI-1-001",
+      "exhibit_ids": [
+        "MAPCXS-MI-1-001"
+      ],
+      "title": "MUSIC 217-1: Musicianship I",
+      "unified_title": "MUSIC 217-1: Musicianship I",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "MUSIC 217-1: Musicianship I"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Fine and Applied Arts",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "50",
+      "top_codes": [
+        "72"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 88,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Clovis Community College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Los Angeles Valley College",
+        "Los Medanos College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "West Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 89,
+      "credit_recs": [
+        {
+          "course": "MUSIC 217-1",
+          "credit": "1 hour in Musicianship I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-MI-1-001",
+          "title": "MUSIC 217-1: Musicianship I",
+          "units": 1.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 1.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
           0
         ]
       },
@@ -97463,172 +97512,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 1.0,
       "peer_units_max": 1.0,
       "rec_units_total": 2.0
-    },
-    {
-      "exhibit_id": "MAPICI-MOS(11-1-001|MAPICI-MOSA-1-001",
-      "exhibit_ids": [
-        "MAPICI-MOS(11-1-001",
-        "MAPICI-MOSA-1-001"
-      ],
-      "title": "Microsoft Office Specialist — Access Expert",
-      "unified_title": "Microsoft Office Specialist — Access Expert",
-      "is_classified": true,
-      "issuing_agency": "Microsoft",
-      "training_agency": "",
-      "confidence_title": 0.95,
-      "confidence_issuer": 0.95,
-      "quality_flag": "",
-      "raw_titles": [
-        "MICROSOFT OFFICE SPECIALIST ACCESS EXPERT CERTIFICATION",
-        "Microsoft Office Specialist (MOS): Access Expert (Office 2019)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Business and Management",
-      "sector": "Business & Entrepreneurship",
-      "cip_sector": "11",
-      "top_codes": [
-        "16",
-        "33"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 2,
-      "adopter_names": [
-        "Los Angeles Pierce College",
-        "Riverside City College"
-      ],
-      "potential": 85,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cañada College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chaffey College",
-        "Citrus College",
-        "City College of San Francisco",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Sequoias",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Golden West College",
-        "Grossmont College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Lake Tahoe Community College",
-        "Laney College",
-        "Las Positas College",
-        "Lemoore College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Mendocino College",
-        "Merced College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Moreno Valley College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Norco College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Taft College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 87,
-      "credit_recs": [
-        {
-          "course": "CIS 62",
-          "credit": "3 hours in MS Access DBMS: Comprehensive"
-        },
-        {
-          "course": "CAOT 086",
-          "credit": "3 hours in Microsoft Access: Database"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-MOS(11-1-001",
-          "title": "Microsoft Office Specialist (MOS): Access Expert (Office 2019)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-MOSA-1-001",
-          "title": "MICROSOFT OFFICE SPECIALIST ACCESS EXPERT CERTIFICATION",
-          "units": 3.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 3.0,
-        "Riverside City College": 3.0
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1,
-        "Riverside City College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          1
-        ],
-        "Riverside City College": [
-          0
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 6.0
     },
     {
       "exhibit_id": "MAPICI-C–CP-1-001",
@@ -107743,6 +107626,1182 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICI-MOS(3-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOS(3-1-001"
+      ],
+      "title": "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+      "unified_title": "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAOT 039",
+          "credit": "3 hours in Microsoft Word: Basic to Intermediate"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOS(3-1-001",
+          "title": "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-MOS(4-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOS(4-1-001"
+      ],
+      "title": "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+      "unified_title": "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAOT 039",
+          "credit": "3 hours in Microsoft Word: Basic to Intermediate"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOS(4-1-001",
+          "title": "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-MOS(5-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOS(5-1-001"
+      ],
+      "title": "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+      "unified_title": "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAOT 067",
+          "credit": "2 hours in Microsoft Outlook for the Office"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOS(5-1-001",
+          "title": "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+          "units": 2.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 2.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 2.0,
+      "peer_units_max": 2.0,
+      "rec_units_total": 2.0
+    },
+    {
+      "exhibit_id": "MAPICI-MOS(6-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOS(6-1-001"
+      ],
+      "title": "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+      "unified_title": "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAOT 079",
+          "credit": "3 hours in Microsoft Word: Advanced"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOS(6-1-001",
+          "title": "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-MOS(8-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOS(8-1-001"
+      ],
+      "title": "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+      "unified_title": "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAOT 085",
+          "credit": "3 hours in Microsoft Excel: Spreadsheet"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOS(8-1-001",
+          "title": "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-MOS(9-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOS(9-1-001"
+      ],
+      "title": "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+      "unified_title": "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAOT 085",
+          "credit": "3 hours in Microsoft Excel: Spreadsheet"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOS(9-1-001",
+          "title": "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-MOS(10-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOS(10-1-001"
+      ],
+      "title": "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+      "unified_title": "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAOT 085",
+          "credit": "3 hours in Microsoft Excel: Spreadsheet"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOS(10-1-001",
+          "title": "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-MOS(11-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOS(11-1-001"
+      ],
+      "title": "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+      "unified_title": "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 85,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAOT 086",
+          "credit": "3 hours in Microsoft Access: Database"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOS(11-1-001",
+          "title": "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPCXS-KI-C-1-001",
       "exhibit_ids": [
         "MAPCXS-KI-C-1-001"
@@ -111785,6 +112844,163 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 11.35
     },
     {
+      "exhibit_id": "MAPICI-MOSW-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOSW-1-001"
+      ],
+      "title": "Microsoft Office Specialist — Word Expert",
+      "unified_title": "Microsoft Office Specialist — Word Expert",
+      "is_classified": true,
+      "issuing_agency": "Microsoft",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "MICROSOFT OFFICE SPECIALIST WORD EXPERT CERTIFICATION"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "16"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 3,
+      "adopter_names": [
+        "Moreno Valley College",
+        "Norco College",
+        "Riverside City College"
+      ],
+      "potential": 83,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cañada College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Sequoias",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Golden West College",
+        "Grossmont College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Lake Tahoe Community College",
+        "Laney College",
+        "Las Positas College",
+        "Lemoore College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "Los Angeles Valley College",
+        "Madera College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "North Orange Continuing Education",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "West Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 86,
+      "credit_recs": [
+        {
+          "course": "CAT 80",
+          "credit": "3 hours in Word for Windows"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOSW-1-001",
+          "title": "MICROSOFT OFFICE SPECIALIST WORD EXPERT CERTIFICATION",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Moreno Valley College": 3.0,
+        "Norco College": 3.0,
+        "Riverside City College": 3.0
+      },
+      "adopter_lines": {
+        "Moreno Valley College": 1,
+        "Norco College": 1,
+        "Riverside City College": 1
+      },
+      "adopter_rec_idx": {
+        "Moreno Valley College": [
+          0
+        ],
+        "Norco College": [
+          0
+        ],
+        "Riverside City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPICI-ICBP-1-001",
       "exhibit_ids": [
         "MAPICI-ICBP-1-001"
@@ -113691,89 +114907,150 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPICI-MOS(6-1-001|MAPICI-MOS(7-1-001|MAPICI-MOSW-1-001",
+      "exhibit_id": "MAPICI-A1-C-1-001|MAPICI-CP2-1-001|MAPICI-CPAS-1-001|MAPICI-CPBP-1-001|MAPICI-P-BL-1-001|MAPICI-P-PO-1-001|MAPICI-P-PO1-1-001|MAPICI-P-PO2-1-001|MAPICI-PAEF-1-001|MAPICI-PAPF-1-001|MAPICI-PCCP-1-001|MAPICI-POSA-1-001|MAPICI-POSA1-1-001|MAPICI-POST-1-002|MAPICI-POST1-1-001|MAPICI-POST2-1-001",
       "exhibit_ids": [
-        "MAPICI-MOS(6-1-001",
-        "MAPICI-MOS(7-1-001",
-        "MAPICI-MOSW-1-001"
+        "MAPICI-A1-C-1-001",
+        "MAPICI-CP2-1-001",
+        "MAPICI-CPAS-1-001",
+        "MAPICI-CPBP-1-001",
+        "MAPICI-P-BL-1-001",
+        "MAPICI-P-PO-1-001",
+        "MAPICI-P-PO1-1-001",
+        "MAPICI-P-PO2-1-001",
+        "MAPICI-PAEF-1-001",
+        "MAPICI-PAPF-1-001",
+        "MAPICI-PCCP-1-001",
+        "MAPICI-POSA-1-001",
+        "MAPICI-POSA1-1-001",
+        "MAPICI-POST-1-002",
+        "MAPICI-POST1-1-001",
+        "MAPICI-POST2-1-001"
       ],
-      "title": "Microsoft Office Specialist — Word Expert",
-      "unified_title": "Microsoft Office Specialist — Word Expert",
+      "title": "POST Basic Academy",
+      "unified_title": "POST Basic Academy",
       "is_classified": true,
-      "issuing_agency": "Microsoft",
-      "training_agency": "",
+      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+      "training_agency": "varies by academy",
       "confidence_title": 0.97,
-      "confidence_issuer": 0.95,
+      "confidence_issuer": 0.98,
       "quality_flag": "",
       "raw_titles": [
-        "MICROSOFT OFFICE SPECIALIST WORD EXPERT CERTIFICATION",
-        "Microsoft Office Specialist (MOS): Word Expert (Microsoft 365 Apps)",
-        "Microsoft Office Specialist (MOS): Word Expert (Office 2019)"
+        "ADJUS 101 - CA POST Training Record",
+        "CA POST",
+        "CA POST Academy SMCCD",
+        "CA POST BASIC POLICE ACADEMY CERTIFICATE",
+        "POST - Peace Officer Standards and Training",
+        "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+        "POST Academy  effective FALL 2025",
+        "POST Academy prior Fall 2025",
+        "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy",
+        "Peace Officer Standardized Training Academy",
+        "Peace Officer Standards Training (POST) Basic Academy",
+        "Peace Officer Standards and Training (POST) Basic Academy Certificate",
+        "Peace Officer Standards and Training (POST) Basic Certificate",
+        "Peace Officer Standards and Training Basic Academy Certificate (POST)"
       ],
       "cpl_type": "Industry Certification",
-      "discipline": "Business and Management",
-      "sector": "Business & Entrepreneurship",
-      "cip_sector": "52",
+      "discipline": "Public and Protective Services",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "43",
       "top_codes": [
-        "16"
+        "128",
+        "203",
+        "254",
+        "359",
+        "5"
       ],
-      "collaborative_type": "Local",
-      "adopters": 4,
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 33,
       "adopter_names": [
-        "Los Angeles Pierce College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Desert",
+        "Copper Mountain College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Lemoore College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Medanos College",
+        "Mendocino College",
         "Moreno Valley College",
+        "Napa Valley College",
         "Norco College",
-        "Riverside City College"
+        "Reedley College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Shasta College",
+        "Skyline College",
+        "Solano Community College",
+        "Woodland Community College"
       ],
       "potential": 82,
       "potential_names": [
         "Allan Hancock College",
         "American River College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
+        "Antelope Valley College",
+        "Berkeley City College",
         "Cañada College",
         "Cerritos College",
-        "Cerro Coso Community College",
-        "Chaffey College",
         "Citrus College",
-        "City College of San Francisco",
+        "Clovis Community College",
+        "Coalinga College",
+        "Coastline Community College",
+        "College of Alameda",
+        "College of Marin",
         "College of the Canyons",
-        "College of the Desert",
+        "College of the Redwoods",
         "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
         "Contra Costa College",
         "Cosumnes River College",
+        "Crafton Hills College",
         "Cuesta College",
         "Cuyamaca College",
         "Cypress College",
+        "De Anza College",
+        "Diablo Valley College",
         "East Los Angeles College",
         "El Camino College",
         "Evergreen Valley College",
         "Feather River College",
         "Folsom Lake College",
+        "Foothill College",
         "Fresno City College",
-        "Fullerton College",
         "Gavilan College",
-        "Glendale Community College",
         "Golden West College",
-        "Grossmont College",
         "Hartnell College",
         "Imperial Valley College",
         "Irvine Valley College",
-        "Lake Tahoe Community College",
         "Laney College",
-        "Las Positas College",
-        "Lemoore College",
+        "Lassen College",
         "Long Beach City College",
         "Los Angeles City College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
         "Los Angeles Trade Technical College",
         "Los Angeles Valley College",
         "Madera College",
-        "Mendocino College",
         "Merced College",
+        "Merritt College",
         "MiraCosta College",
+        "Mission College",
         "Modesto Junior College",
         "Monterey Peninsula College",
         "Moorpark College",
@@ -113782,95 +115059,1271 @@ window.CPL_STATEWIDE = {
         "North Orange Continuing Education",
         "Ohlone College",
         "Orange Coast College",
+        "Palo Verde College",
         "Palomar College",
         "Pasadena City College",
-        "Reedley College",
+        "Porterville College",
         "Rio Hondo College",
         "Sacramento City College",
         "Saddleback College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
+        "San Diego City College",
+        "San Diego Mesa College",
         "San Jose City College",
         "Santa Ana College",
         "Santa Barbara City College",
         "Santa Monica College",
         "Santa Rosa Junior College",
         "Santiago Canyon College",
-        "Shasta College",
         "Sierra College",
-        "Skyline College",
-        "Solano Community College",
         "Southwestern College",
         "Taft College",
+        "Ventura College",
         "Victor Valley College",
         "West Los Angeles College",
         "West Valley College",
-        "Woodland Community College",
         "Yuba College"
       ],
-      "total_addressable": 86,
+      "total_addressable": 115,
       "credit_recs": [
         {
-          "course": "CAT 80",
-          "credit": "3 hours in Word for Windows"
+          "course": "ADJ 1",
+          "credit": "3.0 hours in Introduction to the Administration of Justice"
         },
         {
-          "course": "CAOT 079",
-          "credit": "3 hours in Microsoft Word: Advanced"
+          "course": "ADJ 13",
+          "credit": "3.0 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADJ 2",
+          "credit": "3.0 hours in Principles and Procedures of the Justice System"
+        },
+        {
+          "course": "ADJ 3",
+          "credit": "3.0 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADJ 4",
+          "credit": "3.0 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "ADJ 5",
+          "credit": "3.0 hours in Community Relations"
+        },
+        {
+          "course": "ADJ 8",
+          "credit": "3.0 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADJ 19",
+          "credit": "3.0 hours in Introduction to Policing"
+        },
+        {
+          "course": "AJ 2",
+          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
+        },
+        {
+          "course": "ADJU 260",
+          "credit": "9 hours in POST Certified Regional Academy"
+        },
+        {
+          "course": "AJ 223 F",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "CJ 006",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 100",
+          "credit": "3 hours in Introduction to Criminal Justice"
+        },
+        {
+          "course": "ADMJ 102",
+          "credit": "3 hours in Criminal Court Process"
+        },
+        {
+          "course": "ADMJ 104",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADMJ 106",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "ADMJ 108",
+          "credit": "3 hours in Community and the Justice System"
+        },
+        {
+          "course": "ADMJ 120",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AOJ 022",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "CJ 051",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 121",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADMJ 124",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 125",
+          "credit": "3 hours in Juvenile Procedures"
+        },
+        {
+          "course": "ADMJ 123",
+          "credit": "3 hours in Concepts of Enforcement"
+        },
+        {
+          "course": "CJ 1",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "CJ 2",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CJ 3",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "CJ 4",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CJ 5",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CJ 51",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 6",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 7",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AJ 100 F",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AJ 110AF",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AJ 140 F",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "AJ 220 F",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "AJ 222 F",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "AJ 252 F",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "AJ 278 F",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CRIM B21",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 001",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "CJ 002",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CJ 003",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CJ 005A",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CJ 010",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 030",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 011",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADJU 1",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADJU 14",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADJU 2",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "ADJU 3",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADJU 4",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADJU 5",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "ADJU 7",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADJU 8",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "ADMJ 52",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADMJ 62",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AOJ 001",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AOJ 010",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "AOJ 016",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AOJ 020",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AOJ 022",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "AOJ 024",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AOJ 032",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 053",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CJ 19",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 3",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CJ 4",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "CJ 6",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "CJ 9",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CJ 5",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ACC 1B",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ACAD C200X",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "ACAD C200X",
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
+        },
+        {
+          "course": "ACAD C201X",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "ADMJ C101",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADMJ C105",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADMJ C121",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CRJ 101",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "CRJ 102",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CRJ 103",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "CRJ 108",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "CRJ 110",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CRJ 112",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 121",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AJ 31",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AJ 10",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AJ 11",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AJ 13",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "AJ 14",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "AJ 15",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AJ 16",
+          "credit": "3 hours in Introduction to Policing (Elective Course)"
+        },
+        {
+          "course": "AJ 19",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AJ 20",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "AJ 40",
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
+        },
+        {
+          "course": "ADMJ C115",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "ADMJ C125",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ C131",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADMJ C151",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 058",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "ADJ 202",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADM JUS 075",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "AOJ 003",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CJ 056",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADJ 1",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AJ 2",
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
+        },
+        {
+          "course": "AOJ 110",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "AOJ 125",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "AOJ 200",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "AOJ 202",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "AOJ 204",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "AOJ 206",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "AOJ 208",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "AOJ 240",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADJUS 110",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADJUS 120",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADJUS 122",
+          "credit": "3 hours in Criminal Procedures"
+        },
+        {
+          "course": "ADJUS 124",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "ADJUS 140",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADJUS 200",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "ADJUS 220",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADMJ 101",
+          "credit": "3 hours in Intro to Administration of Justice"
+        },
+        {
+          "course": "ADMJ 103",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADMJ 116",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 118",
+          "credit": "3 hours in Juvenile Law and Procedures"
+        },
+        {
+          "course": "ADMJ 120",
+          "credit": "3 hours in Criminal Evidence"
+        },
+        {
+          "course": "ADMJ 160",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CJ 5",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "CRIM 1",
+          "credit": "3 hours in Introduction to Criminology"
+        },
+        {
+          "course": "CRIM 11",
+          "credit": "3 hours in Juvenile Delinquency"
+        },
+        {
+          "course": "CRIM 20",
+          "credit": "3 hours in Introduction to Corrections"
+        },
+        {
+          "course": "CRIM 3",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "CRIM 4",
+          "credit": "3 hours in Principles & Procedures of the Justice System"
+        },
+        {
+          "course": "CRIM 5",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CRIM 6",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CRIM 8",
+          "credit": "3 hours in Criminal Investigations"
+        },
+        {
+          "course": "ADJUS 160",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "AJ 25",
+          "credit": "3 hours in Criminal Investigations"
+        },
+        {
+          "course": "CRIM B1",
+          "credit": "3 hours in Introduction to Criminal Justice"
+        },
+        {
+          "course": "CRIM B2",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "CRIM B21",
+          "credit": "3 hours in Introduction to Correctional Administration"
+        },
+        {
+          "course": "CRIM B3",
+          "credit": "3 hours in Introduction to Evidence"
+        },
+        {
+          "course": "CRIM B4",
+          "credit": "3 hours in Constitutional Criminal Procedure"
+        },
+        {
+          "course": "CRIM B5",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "CRIM B8",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "CRIM B9",
+          "credit": "3 hours in The Juvenile Justice System"
+        },
+        {
+          "course": "AOJ 022",
+          "credit": "3 hours in Legal Aspects Of Evidence"
+        },
+        {
+          "course": "ADM JUS 001",
+          "credit": "3 hours in Introduction To Administration Of Justice"
+        },
+        {
+          "course": "ADM JUS 002",
+          "credit": "3 hours in Concepts Of Criminal Law"
+        },
+        {
+          "course": "ADM JUS 003",
+          "credit": "3 hours in Legal Aspects Of Evidence"
+        },
+        {
+          "course": "ADM JUS 006",
+          "credit": "3 hours in Patrol Procedures"
+        },
+        {
+          "course": "ADM JUS 014",
+          "credit": "3 hours in Report Writing For Peace Officers"
+        },
+        {
+          "course": "ADM JUS 160",
+          "credit": "3 hours in Police Organization and Administration"
+        },
+        {
+          "course": "ADM JUS 250",
+          "credit": "4 hours in Forensic Photography"
+        },
+        {
+          "course": "ADJUS 110",
+          "credit": "3 hours in Introduction To Administration Of Justice"
+        },
+        {
+          "course": "ADJUS 101",
+          "credit": "3 hours in Introduction to Administration of Justice"
+        },
+        {
+          "course": "ADMJ 50",
+          "credit": "3 hours in Introduction to the Administration of Justice"
+        },
+        {
+          "course": "ADMJ 60",
+          "credit": "3 hours in Criminal Law"
+        },
+        {
+          "course": "ADMJ 61",
+          "credit": "3 hours in Evidence"
+        },
+        {
+          "course": "ADMJ 63",
+          "credit": "3 hours in Criminal Investigation"
+        },
+        {
+          "course": "ADMJ 70",
+          "credit": "3 hours in Community Relations"
+        },
+        {
+          "course": "ADMJ 80",
+          "credit": "3 hours in Criminal Court Process"
+        },
+        {
+          "course": "AJ 135 F",
+          "credit": "1 hour in Weaponless Defense"
+        },
+        {
+          "course": "ADJU 10",
+          "credit": "3 hours in Introduction to Administration of Justice"
+        },
+        {
+          "course": "ADJU 15",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "ADJU 17",
+          "credit": "3 hours in Principles and Procedures of the Justice System"
+        },
+        {
+          "course": "ADJU 18",
+          "credit": "3 hours in Community Relations & Multicultural Issues for Law Enforcement"
+        },
+        {
+          "course": "ADJU 20",
+          "credit": "3 hours in Principles of Investigation"
+        },
+        {
+          "course": "ADJU 21",
+          "credit": "3 hours in Police Field Operations"
+        },
+        {
+          "course": "ADJU 22",
+          "credit": "3 hours in Juvenile Procedures"
+        },
+        {
+          "course": "ADJU 26",
+          "credit": "3 hours in Courtroom Testimony and Report Writing"
+        },
+        {
+          "course": "CSU GE E",
+          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
+        },
+        {
+          "course": "CJ 002",
+          "credit": "3 hours in Concepts of Criminal Law"
+        },
+        {
+          "course": "CJ 003",
+          "credit": "3 hours in Legal Aspects of Evidence"
+        },
+        {
+          "course": "CJ 004",
+          "credit": "3 hours in Criminal Court Process"
+        },
+        {
+          "course": "CJ 005",
+          "credit": "3 hours in Racial Issues and the Police"
+        },
+        {
+          "course": "CJ 010",
+          "credit": "3 hours in Juvenile Procedures"
+        },
+        {
+          "course": "CJ 001",
+          "credit": "3 hours in Introduction to Criminal Justice"
+        },
+        {
+          "course": "LACCD GE 7",
+          "credit": "3 hours in Lifelong Learning and Self Development"
+        },
+        {
+          "course": "AJ 55",
+          "credit": "3 units in AJ 55 Introduction to Correctional Science"
+        },
+        {
+          "course": "AJ 60",
+          "credit": "3 units in AJ 60 Criminal Law"
+        },
+        {
+          "course": "AJ 61",
+          "credit": "3 units AJ 61 in Evidence"
+        },
+        {
+          "course": "AJ 63",
+          "credit": "3 units in AJ 63 Criminal Investigation"
+        },
+        {
+          "course": "AJ 68",
+          "credit": "3 units in AJ 68 Police Ethics and Leadership"
+        },
+        {
+          "course": "AJ 70",
+          "credit": "3 units in AJ 70 Community Relations"
+        },
+        {
+          "course": "AJ 66",
+          "credit": "3 units in AJ 66 Juvenile Procedures"
         }
       ],
-      "authoritative_recs": [],
+      "authoritative_recs": [
+        {
+          "credit": "3 hours in Intro to Administration of Justice",
+          "cid": "AJ 110"
+        },
+        {
+          "credit": "3 hours in Criminal Law",
+          "cid": "AJ 120"
+        },
+        {
+          "credit": "3 hours in Criminal Procedures",
+          "cid": "AJ 122"
+        },
+        {
+          "credit": "3 hours in Community Relations",
+          "cid": "AJ 160"
+        },
+        {
+          "credit": "3 hours in Criminal Evidence",
+          "cid": "AJ 124"
+        },
+        {
+          "credit": "3 hours in Introduction to Corrections",
+          "cid": "AJ 200"
+        },
+        {
+          "credit": "3 hours in Juvenile Law and Procedures",
+          "cid": "AJ 220"
+        },
+        {
+          "credit": "3 hours in Criminal Investigation",
+          "cid": "AJ 140"
+        },
+        {
+          "credit": "3 hours in Introduction to Policing (Elective Course)",
+          "cid": ""
+        },
+        {
+          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)",
+          "cid": "AJ 110"
+        }
+      ],
       "exhibit_records": [
         {
-          "id": "MAPICI-MOS(6-1-001",
-          "title": "Microsoft Office Specialist (MOS): Word Expert (Microsoft 365 Apps)",
+          "id": "MAPICI-A1-C-1-001",
+          "title": "ADJUS 101 - CA POST Training Record",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPICI-MOS(7-1-001",
-          "title": "Microsoft Office Specialist (MOS): Word Expert (Office 2019)",
+          "id": "MAPICI-CP2-1-001",
+          "title": "CA POST",
+          "units": 27.0,
+          "lines": 9
+        },
+        {
+          "id": "MAPICI-CPAS-1-001",
+          "title": "CA POST Academy SMCCD",
+          "units": 42.0,
+          "lines": 14
+        },
+        {
+          "id": "MAPICI-CPBP-1-001",
+          "title": "CA POST BASIC POLICE ACADEMY CERTIFICATE",
+          "units": 1.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-P-BL-1-001",
+          "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+          "units": 321.0,
+          "lines": 107
+        },
+        {
+          "id": "MAPICI-P-PO-1-001",
+          "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
+          "units": 69.0,
+          "lines": 23
+        },
+        {
+          "id": "MAPICI-P-PO1-1-001",
+          "title": "POST - Peace Officer Standards and Training",
           "units": 3.0,
           "lines": 1
         },
         {
-          "id": "MAPICI-MOSW-1-001",
-          "title": "MICROSOFT OFFICE SPECIALIST WORD EXPERT CERTIFICATION",
+          "id": "MAPICI-P-PO2-1-001",
+          "title": "POST - Peace Officer Standards and Training",
+          "units": 30.0,
+          "lines": 10
+        },
+        {
+          "id": "MAPICI-PAEF-1-001",
+          "title": "POST Academy  effective FALL 2025",
+          "units": 36.0,
+          "lines": 12
+        },
+        {
+          "id": "MAPICI-PAPF-1-001",
+          "title": "POST Academy prior Fall 2025",
+          "units": 45.0,
+          "lines": 15
+        },
+        {
+          "id": "MAPICI-PCCP-1-001",
+          "title": "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy",
+          "units": 9.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-POSA-1-001",
+          "title": "Peace Officer Standards and Training (POST) Basic Academy Certificate",
           "units": 3.0,
           "lines": 1
+        },
+        {
+          "id": "MAPICI-POSA1-1-001",
+          "title": "Peace Officer Standards and Training (POST) Basic Certificate",
+          "units": 21.0,
+          "lines": 7
+        },
+        {
+          "id": "MAPICI-POST-1-002",
+          "title": "Peace Officer Standards Training (POST) Basic Academy",
+          "units": 27.0,
+          "lines": 9
+        },
+        {
+          "id": "MAPICI-POST1-1-001",
+          "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
+          "units": 40.0,
+          "lines": 13
+        },
+        {
+          "id": "MAPICI-POST2-1-001",
+          "title": "Peace Officer Standardized Training Academy",
+          "units": 30.0,
+          "lines": 10
         }
       ],
       "adopter_units": {
-        "Los Angeles Pierce College": 3.0,
-        "Moreno Valley College": 3.0,
-        "Norco College": 3.0,
-        "Riverside City College": 3.0
+        "Bakersfield College": 27.0,
+        "Barstow Community College": 24.0,
+        "Butte College": 6.0,
+        "Cabrillo College": 24.0,
+        "Cerro Coso Community College": 30.0,
+        "Chabot College": 18.0,
+        "Chaffey College": 27.0,
+        "City College of San Francisco": 6.0,
+        "College of San Mateo": 21.0,
+        "College of the Desert": 24.0,
+        "Copper Mountain College": 21.0,
+        "Fullerton College": 25.0,
+        "Glendale Community College": 18.0,
+        "Grossmont College": 24.0,
+        "Lake Tahoe Community College": 18.0,
+        "Las Positas College": 21.0,
+        "Lemoore College": 30.0,
+        "Los Angeles Harbor College": 3.0,
+        "Los Angeles Mission College": 25.0,
+        "Los Medanos College": 27.0,
+        "Mendocino College": 3.0,
+        "Moreno Valley College": 24.0,
+        "Napa Valley College": 9.0,
+        "Norco College": 24.0,
+        "Reedley College": 24.0,
+        "Riverside City College": 24.0,
+        "San Bernardino Valley College": 3.0,
+        "San Diego Miramar College": 9.0,
+        "San Joaquin Delta College": 6.0,
+        "Shasta College": 27.0,
+        "Skyline College": 24.0,
+        "Solano Community College": 21.0,
+        "Woodland Community College": 27.0
       },
       "adopter_lines": {
-        "Los Angeles Pierce College": 1,
-        "Moreno Valley College": 1,
-        "Norco College": 1,
-        "Riverside City College": 1
+        "Bakersfield College": 9,
+        "Barstow Community College": 8,
+        "Butte College": 2,
+        "Cabrillo College": 8,
+        "Cerro Coso Community College": 10,
+        "Chabot College": 6,
+        "Chaffey College": 9,
+        "City College of San Francisco": 2,
+        "College of San Mateo": 7,
+        "College of the Desert": 8,
+        "Copper Mountain College": 7,
+        "Fullerton College": 9,
+        "Glendale Community College": 6,
+        "Grossmont College": 8,
+        "Lake Tahoe Community College": 6,
+        "Las Positas College": 7,
+        "Lemoore College": 10,
+        "Los Angeles Harbor College": 1,
+        "Los Angeles Mission College": 8,
+        "Los Medanos College": 9,
+        "Mendocino College": 1,
+        "Moreno Valley College": 8,
+        "Napa Valley College": 3,
+        "Norco College": 8,
+        "Reedley College": 8,
+        "Riverside City College": 8,
+        "San Bernardino Valley College": 1,
+        "San Diego Miramar College": 1,
+        "San Joaquin Delta College": 2,
+        "Shasta College": 9,
+        "Skyline College": 8,
+        "Solano Community College": 7,
+        "Woodland Community College": 9
       },
       "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          1
+        "Bakersfield College": [
+          39,
+          138,
+          139,
+          140,
+          141,
+          142,
+          143,
+          144,
+          145
+        ],
+        "Barstow Community College": [
+          47,
+          48,
+          49,
+          50,
+          51,
+          52,
+          53,
+          54
+        ],
+        "Butte College": [
+          8,
+          105
+        ],
+        "Cabrillo College": [
+          24,
+          25,
+          65,
+          66,
+          67,
+          68,
+          69,
+          70
+        ],
+        "Cerro Coso Community College": [
+          72,
+          73,
+          74,
+          75,
+          76,
+          77,
+          95,
+          96,
+          97,
+          98
+        ],
+        "Chabot College": [
+          156,
+          157,
+          158,
+          159,
+          160,
+          161
+        ],
+        "Chaffey College": [
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          127
+        ],
+        "City College of San Francisco": [
+          55,
+          56
+        ],
+        "College of San Mateo": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          22
+        ],
+        "College of the Desert": [
+          11,
+          45,
+          172,
+          173,
+          174,
+          175,
+          176,
+          177
+        ],
+        "Copper Mountain College": [
+          11,
+          40,
+          41,
+          42,
+          43,
+          44,
+          45
+        ],
+        "Fullerton College": [
+          10,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38,
+          162
+        ],
+        "Glendale Community College": [
+          121,
+          122,
+          123,
+          124,
+          125,
+          126
+        ],
+        "Grossmont College": [
+          106,
+          107,
+          108,
+          109,
+          110,
+          111,
+          112,
+          113
+        ],
+        "Lake Tahoe Community College": [
+          78,
+          79,
+          80,
+          81,
+          82,
+          83
+        ],
+        "Las Positas College": [
+          179,
+          180,
+          181,
+          182,
+          183,
+          184,
+          185
+        ],
+        "Lemoore College": [
+          18,
+          57,
+          58,
+          59,
+          60,
+          61,
+          62,
+          63,
+          102,
+          146
+        ],
+        "Los Angeles Harbor College": [
+          101
+        ],
+        "Los Angeles Mission College": [
+          147,
+          148,
+          149,
+          150,
+          151,
+          152,
+          153,
+          178
+        ],
+        "Los Medanos College": [
+          114,
+          115,
+          116,
+          117,
+          118,
+          119,
+          120,
+          136,
+          154
+        ],
+        "Mendocino College": [
+          100
         ],
         "Moreno Valley College": [
-          0
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Napa Valley College": [
+          20,
+          21,
+          84
         ],
         "Norco College": [
-          0
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "Reedley College": [
+          128,
+          129,
+          130,
+          131,
+          132,
+          133,
+          134,
+          135
         ],
         "Riverside City College": [
-          0
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "San Bernardino Valley College": [
+          155
+        ],
+        "San Diego Miramar College": [
+          9
+        ],
+        "San Joaquin Delta College": [
+          85,
+          137
+        ],
+        "Shasta College": [
+          163,
+          164,
+          165,
+          166,
+          167,
+          168,
+          169,
+          170,
+          171
+        ],
+        "Skyline College": [
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          22,
+          23
+        ],
+        "Solano Community College": [
+          19,
+          40,
+          41,
+          46,
+          64,
+          99,
+          103
+        ],
+        "Woodland Community College": [
+          86,
+          87,
+          88,
+          89,
+          90,
+          91,
+          92,
+          93,
+          94
         ]
       },
-      "peer_units_median": 3.0,
-      "peer_units_max": 3.0,
-      "rec_units_total": 6.0
+      "peer_units_median": 24.0,
+      "peer_units_max": 30.0,
+      "rec_units_total": 563.0
     },
     {
       "exhibit_id": "MAPCXN-V1TE-1-001",
@@ -115199,1444 +117652,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 2.0,
       "peer_units_max": 2.0,
       "rec_units_total": 2.0
-    },
-    {
-      "exhibit_id": "MAPICI-A1-C-1-001|MAPICI-CP2-1-001|MAPICI-CPAS-1-001|MAPICI-CPBP-1-001|MAPICI-P-BL-1-001|MAPICI-P-PO-1-001|MAPICI-P-PO1-1-001|MAPICI-P-PO2-1-001|MAPICI-PAEF-1-001|MAPICI-PAPF-1-001|MAPICI-PCCP-1-001|MAPICI-POBT-1-001|MAPICI-POSA-1-001|MAPICI-POSA1-1-001|MAPICI-POST-1-002|MAPICI-POST1-1-001|MAPICI-POST2-1-001",
-      "exhibit_ids": [
-        "MAPICI-A1-C-1-001",
-        "MAPICI-CP2-1-001",
-        "MAPICI-CPAS-1-001",
-        "MAPICI-CPBP-1-001",
-        "MAPICI-P-BL-1-001",
-        "MAPICI-P-PO-1-001",
-        "MAPICI-P-PO1-1-001",
-        "MAPICI-P-PO2-1-001",
-        "MAPICI-PAEF-1-001",
-        "MAPICI-PAPF-1-001",
-        "MAPICI-PCCP-1-001",
-        "MAPICI-POBT-1-001",
-        "MAPICI-POSA-1-001",
-        "MAPICI-POSA1-1-001",
-        "MAPICI-POST-1-002",
-        "MAPICI-POST1-1-001",
-        "MAPICI-POST2-1-001"
-      ],
-      "title": "POST Basic Academy",
-      "unified_title": "POST Basic Academy",
-      "is_classified": true,
-      "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
-      "training_agency": "varies by academy",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ADJUS 101 - CA POST Training Record",
-        "CA POST",
-        "CA POST Academy SMCCD",
-        "CA POST BASIC POLICE ACADEMY CERTIFICATE",
-        "POST - Peace Officer Standards and Training",
-        "POST - Peace Officer Standards and Training - Basic Academy Certificate",
-        "POST Academy  effective FALL 2025",
-        "POST Academy prior Fall 2025",
-        "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy",
-        "Peace Officer Basic Training (POST)",
-        "Peace Officer Standardized Training Academy",
-        "Peace Officer Standards Training (POST) Basic Academy",
-        "Peace Officer Standards and Training (POST) Basic Academy Certificate",
-        "Peace Officer Standards and Training (POST) Basic Certificate",
-        "Peace Officer Standards and Training Basic Academy Certificate (POST)"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Interdisciplinary Studies",
-      "sector": "Academic Transfer & General Education",
-      "cip_sector": "43",
-      "top_codes": [
-        "0",
-        "128",
-        "203",
-        "254",
-        "359",
-        "5"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 35,
-      "adopter_names": [
-        "Bakersfield College",
-        "Barstow Community College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of San Mateo",
-        "College of the Desert",
-        "Copper Mountain College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Grossmont College",
-        "Lake Tahoe Community College",
-        "Las Positas College",
-        "Lemoore College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Pierce College",
-        "Los Angeles Southwest College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Moreno Valley College",
-        "Napa Valley College",
-        "Norco College",
-        "Reedley College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "San Joaquin Delta College",
-        "Shasta College",
-        "Skyline College",
-        "Solano Community College",
-        "Woodland Community College"
-      ],
-      "potential": 80,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Berkeley City College",
-        "Cañada College",
-        "Cerritos College",
-        "Citrus College",
-        "Clovis Community College",
-        "Coalinga College",
-        "Coastline Community College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Contra Costa College",
-        "Cosumnes River College",
-        "Crafton Hills College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "De Anza College",
-        "Diablo Valley College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Evergreen Valley College",
-        "Feather River College",
-        "Folsom Lake College",
-        "Foothill College",
-        "Fresno City College",
-        "Gavilan College",
-        "Golden West College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Irvine Valley College",
-        "Laney College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles City College",
-        "Los Angeles Trade Technical College",
-        "Los Angeles Valley College",
-        "Madera College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Mission College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Moorpark College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "North Orange Continuing Education",
-        "Ohlone College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Rio Hondo College",
-        "Sacramento City College",
-        "Saddleback College",
-        "San Diego City College",
-        "San Diego Mesa College",
-        "San Jose City College",
-        "Santa Ana College",
-        "Santa Barbara City College",
-        "Santa Monica College",
-        "Santa Rosa Junior College",
-        "Santiago Canyon College",
-        "Sierra College",
-        "Southwestern College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College",
-        "West Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 115,
-      "credit_recs": [
-        {
-          "course": "ADJ 1",
-          "credit": "3.0 hours in Introduction to the Administration of Justice"
-        },
-        {
-          "course": "ADJ 13",
-          "credit": "3.0 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADJ 2",
-          "credit": "3.0 hours in Principles and Procedures of the Justice System"
-        },
-        {
-          "course": "ADJ 3",
-          "credit": "3.0 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "ADJ 4",
-          "credit": "3.0 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "ADJ 5",
-          "credit": "3.0 hours in Community Relations"
-        },
-        {
-          "course": "ADJ 8",
-          "credit": "3.0 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADJ 19",
-          "credit": "3.0 hours in Introduction to Policing"
-        },
-        {
-          "course": "AJ 2",
-          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
-        },
-        {
-          "course": "ADJU 260",
-          "credit": "9 hours in POST Certified Regional Academy"
-        },
-        {
-          "course": "AJ 223 F",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "CJ 006",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 100",
-          "credit": "3 hours in Introduction to Criminal Justice"
-        },
-        {
-          "course": "ADMJ 102",
-          "credit": "3 hours in Criminal Court Process"
-        },
-        {
-          "course": "ADMJ 104",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "ADMJ 106",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "ADMJ 108",
-          "credit": "3 hours in Community and the Justice System"
-        },
-        {
-          "course": "ADMJ 120",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AOJ 022",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "CJ 051",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 121",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "ADMJ 124",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 125",
-          "credit": "3 hours in Juvenile Procedures"
-        },
-        {
-          "course": "ADMJ 123",
-          "credit": "3 hours in Concepts of Enforcement"
-        },
-        {
-          "course": "CJ 1",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "CJ 2",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CJ 3",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "CJ 4",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CJ 5",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CJ 51",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 6",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 7",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AJ 100 F",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AJ 110AF",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AJ 140 F",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "AJ 220 F",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "AJ 222 F",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "AJ 252 F",
-          "credit": "3 hours in Introduction to Policing (Elective Course)"
-        },
-        {
-          "course": "AJ 278 F",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CRIM B21",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 001",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "CJ 002",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CJ 003",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CJ 005A",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CJ 010",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 030",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 011",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADJU 1",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADJU 14",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADJU 2",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "ADJU 3",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADJU 4",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADJU 5",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "ADJU 7",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "ADJU 8",
-          "credit": "3 hours in Introduction to Policing (Elective Course)"
-        },
-        {
-          "course": "ADMJ 52",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADMJ 62",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AOJ 001",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AOJ 010",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "AOJ 016",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AOJ 020",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AOJ 022",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "AOJ 024",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AOJ 032",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 053",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CJ 19",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 3",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CJ 4",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "CJ 6",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "CJ 9",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CJ 5",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ACC 1B",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ACAD C200X",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "ACAD C200X",
-          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
-        },
-        {
-          "course": "ACAD C201X",
-          "credit": "3 hours in Introduction to Policing (Elective Course)"
-        },
-        {
-          "course": "ADMJ C101",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "ADMJ C105",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADMJ C121",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CRJ 101",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "CRJ 102",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CRJ 103",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "CRJ 108",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "CRJ 110",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CRJ 112",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 121",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AJ 31",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AJ 10",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AJ 11",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AJ 13",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "AJ 14",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "AJ 15",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AJ 16",
-          "credit": "3 hours in Introduction to Policing (Elective Course)"
-        },
-        {
-          "course": "AJ 19",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AJ 20",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "AJ 40",
-          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
-        },
-        {
-          "course": "ADMJ C115",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "ADMJ C125",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ C131",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADMJ C151",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 058",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "ADJ 202",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADM JUS 075",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "AOJ 003",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CJ 056",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADJ 1",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AJ 2",
-          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)"
-        },
-        {
-          "course": "AOJ 110",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "AOJ 125",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "AOJ 200",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "AOJ 202",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "AOJ 204",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "AOJ 206",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "AOJ 208",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "AOJ 240",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADJUS 110",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "ADJUS 120",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADJUS 122",
-          "credit": "3 hours in Criminal Procedures"
-        },
-        {
-          "course": "ADJUS 124",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "ADJUS 140",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADJUS 200",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "ADJUS 220",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADMJ 101",
-          "credit": "3 hours in Intro to Administration of Justice"
-        },
-        {
-          "course": "ADMJ 103",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADMJ 116",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 118",
-          "credit": "3 hours in Juvenile Law and Procedures"
-        },
-        {
-          "course": "ADMJ 120",
-          "credit": "3 hours in Criminal Evidence"
-        },
-        {
-          "course": "ADMJ 160",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CJ 5",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "CRIM 1",
-          "credit": "3 hours in Introduction to Criminology"
-        },
-        {
-          "course": "CRIM 11",
-          "credit": "3 hours in Juvenile Delinquency"
-        },
-        {
-          "course": "CRIM 20",
-          "credit": "3 hours in Introduction to Corrections"
-        },
-        {
-          "course": "CRIM 3",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "CRIM 4",
-          "credit": "3 hours in Principles & Procedures of the Justice System"
-        },
-        {
-          "course": "CRIM 5",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CRIM 6",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CRIM 8",
-          "credit": "3 hours in Criminal Investigations"
-        },
-        {
-          "course": "ADJUS 160",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "AJ 25",
-          "credit": "3 hours in Criminal Investigations"
-        },
-        {
-          "course": "CRIM B1",
-          "credit": "3 hours in Introduction to Criminal Justice"
-        },
-        {
-          "course": "CRIM B2",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "CRIM B21",
-          "credit": "3 hours in Introduction to Correctional Administration"
-        },
-        {
-          "course": "CRIM B3",
-          "credit": "3 hours in Introduction to Evidence"
-        },
-        {
-          "course": "CRIM B4",
-          "credit": "3 hours in Constitutional Criminal Procedure"
-        },
-        {
-          "course": "CRIM B5",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "CRIM B8",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "CRIM B9",
-          "credit": "3 hours in The Juvenile Justice System"
-        },
-        {
-          "course": "AOJ 022",
-          "credit": "3 hours in Legal Aspects Of Evidence"
-        },
-        {
-          "course": "ADM JUS 001",
-          "credit": "3 hours in Introduction To Administration Of Justice"
-        },
-        {
-          "course": "ADM JUS 002",
-          "credit": "3 hours in Concepts Of Criminal Law"
-        },
-        {
-          "course": "ADM JUS 003",
-          "credit": "3 hours in Legal Aspects Of Evidence"
-        },
-        {
-          "course": "ADM JUS 006",
-          "credit": "3 hours in Patrol Procedures"
-        },
-        {
-          "course": "ADM JUS 014",
-          "credit": "3 hours in Report Writing For Peace Officers"
-        },
-        {
-          "course": "ADM JUS 160",
-          "credit": "3 hours in Police Organization and Administration"
-        },
-        {
-          "course": "ADM JUS 250",
-          "credit": "4 hours in Forensic Photography"
-        },
-        {
-          "course": "ADJUS 110",
-          "credit": "3 hours in Introduction To Administration Of Justice"
-        },
-        {
-          "course": "ADJUS 101",
-          "credit": "3 hours in Introduction to Administration of Justice"
-        },
-        {
-          "course": "ADMJ 50",
-          "credit": "3 hours in Introduction to the Administration of Justice"
-        },
-        {
-          "course": "LACCD GE 7",
-          "credit": "3 hours in Lifelong Learning and Self Development"
-        },
-        {
-          "course": "ADMJ 60",
-          "credit": "3 hours in Criminal Law"
-        },
-        {
-          "course": "ADMJ 61",
-          "credit": "3 hours in Evidence"
-        },
-        {
-          "course": "ADMJ 63",
-          "credit": "3 hours in Criminal Investigation"
-        },
-        {
-          "course": "ADMJ 70",
-          "credit": "3 hours in Community Relations"
-        },
-        {
-          "course": "ADMJ 80",
-          "credit": "3 hours in Criminal Court Process"
-        },
-        {
-          "course": "AJ 135 F",
-          "credit": "1 hour in Weaponless Defense"
-        },
-        {
-          "course": "ADJU 10",
-          "credit": "3 hours in Introduction to Administration of Justice"
-        },
-        {
-          "course": "ADJU 15",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "ADJU 17",
-          "credit": "3 hours in Principles and Procedures of the Justice System"
-        },
-        {
-          "course": "ADJU 18",
-          "credit": "3 hours in Community Relations & Multicultural Issues for Law Enforcement"
-        },
-        {
-          "course": "ADJU 20",
-          "credit": "3 hours in Principles of Investigation"
-        },
-        {
-          "course": "ADJU 21",
-          "credit": "3 hours in Police Field Operations"
-        },
-        {
-          "course": "ADJU 22",
-          "credit": "3 hours in Juvenile Procedures"
-        },
-        {
-          "course": "ADJU 26",
-          "credit": "3 hours in Courtroom Testimony and Report Writing"
-        },
-        {
-          "course": "CSU GE E",
-          "credit": "3 hours in CSU GE E – Lifelong Understanding and Self-Development"
-        },
-        {
-          "course": "CJ 002",
-          "credit": "3 hours in Concepts of Criminal Law"
-        },
-        {
-          "course": "CJ 003",
-          "credit": "3 hours in Legal Aspects of Evidence"
-        },
-        {
-          "course": "CJ 004",
-          "credit": "3 hours in Criminal Court Process"
-        },
-        {
-          "course": "CJ 005",
-          "credit": "3 hours in Racial Issues and the Police"
-        },
-        {
-          "course": "CJ 010",
-          "credit": "3 hours in Juvenile Procedures"
-        },
-        {
-          "course": "CJ 001",
-          "credit": "3 hours in Introduction to Criminal Justice"
-        },
-        {
-          "course": "AJ 55",
-          "credit": "3 units in AJ 55 Introduction to Correctional Science"
-        },
-        {
-          "course": "AJ 60",
-          "credit": "3 units in AJ 60 Criminal Law"
-        },
-        {
-          "course": "AJ 61",
-          "credit": "3 units AJ 61 in Evidence"
-        },
-        {
-          "course": "AJ 63",
-          "credit": "3 units in AJ 63 Criminal Investigation"
-        },
-        {
-          "course": "AJ 68",
-          "credit": "3 units in AJ 68 Police Ethics and Leadership"
-        },
-        {
-          "course": "AJ 70",
-          "credit": "3 units in AJ 70 Community Relations"
-        },
-        {
-          "course": "AJ 66",
-          "credit": "3 units in AJ 66 Juvenile Procedures"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 hours in Intro to Administration of Justice",
-          "cid": "AJ 110"
-        },
-        {
-          "credit": "3 hours in Criminal Law",
-          "cid": "AJ 120"
-        },
-        {
-          "credit": "3 hours in Criminal Procedures",
-          "cid": "AJ 122"
-        },
-        {
-          "credit": "3 hours in Community Relations",
-          "cid": "AJ 160"
-        },
-        {
-          "credit": "3 hours in Criminal Evidence",
-          "cid": "AJ 124"
-        },
-        {
-          "credit": "3 hours in Introduction to Corrections",
-          "cid": "AJ 200"
-        },
-        {
-          "credit": "3 hours in Juvenile Law and Procedures",
-          "cid": "AJ 220"
-        },
-        {
-          "credit": "3 hours in Criminal Investigation",
-          "cid": "AJ 140"
-        },
-        {
-          "credit": "3 hours in Introduction to Policing (Elective Course)",
-          "cid": ""
-        },
-        {
-          "credit": "3 hours in Physical Training and Health Education (CSU GE Area E)",
-          "cid": "AJ 110"
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-A1-C-1-001",
-          "title": "ADJUS 101 - CA POST Training Record",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CP2-1-001",
-          "title": "CA POST",
-          "units": 27.0,
-          "lines": 9
-        },
-        {
-          "id": "MAPICI-CPAS-1-001",
-          "title": "CA POST Academy SMCCD",
-          "units": 42.0,
-          "lines": 14
-        },
-        {
-          "id": "MAPICI-CPBP-1-001",
-          "title": "CA POST BASIC POLICE ACADEMY CERTIFICATE",
-          "units": 1.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-P-BL-1-001",
-          "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-          "units": 321.0,
-          "lines": 107
-        },
-        {
-          "id": "MAPICI-P-PO-1-001",
-          "title": "POST - Peace Officer Standards and Training - Basic Academy Certificate",
-          "units": 69.0,
-          "lines": 23
-        },
-        {
-          "id": "MAPICI-P-PO1-1-001",
-          "title": "POST - Peace Officer Standards and Training",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-P-PO2-1-001",
-          "title": "POST - Peace Officer Standards and Training",
-          "units": 30.0,
-          "lines": 10
-        },
-        {
-          "id": "MAPICI-PAEF-1-001",
-          "title": "POST Academy  effective FALL 2025",
-          "units": 36.0,
-          "lines": 12
-        },
-        {
-          "id": "MAPICI-PAPF-1-001",
-          "title": "POST Academy prior Fall 2025",
-          "units": 45.0,
-          "lines": 15
-        },
-        {
-          "id": "MAPICI-PCCP-1-001",
-          "title": "POST Course California Peace Officer Standards and Training (POST) Certified Basic Academy",
-          "units": 9.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-POBT-1-001",
-          "title": "Peace Officer Basic Training (POST)",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-POSA-1-001",
-          "title": "Peace Officer Standards and Training (POST) Basic Academy Certificate",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-POSA1-1-001",
-          "title": "Peace Officer Standards and Training (POST) Basic Certificate",
-          "units": 21.0,
-          "lines": 7
-        },
-        {
-          "id": "MAPICI-POST-1-002",
-          "title": "Peace Officer Standards Training (POST) Basic Academy",
-          "units": 27.0,
-          "lines": 9
-        },
-        {
-          "id": "MAPICI-POST1-1-001",
-          "title": "Peace Officer Standards and Training Basic Academy Certificate (POST)",
-          "units": 40.0,
-          "lines": 13
-        },
-        {
-          "id": "MAPICI-POST2-1-001",
-          "title": "Peace Officer Standardized Training Academy",
-          "units": 30.0,
-          "lines": 10
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 27.0,
-        "Barstow Community College": 24.0,
-        "Butte College": 6.0,
-        "Cabrillo College": 24.0,
-        "Cerro Coso Community College": 30.0,
-        "Chabot College": 18.0,
-        "Chaffey College": 27.0,
-        "City College of San Francisco": 6.0,
-        "College of San Mateo": 21.0,
-        "College of the Desert": 24.0,
-        "Copper Mountain College": 21.0,
-        "Fullerton College": 25.0,
-        "Glendale Community College": 18.0,
-        "Grossmont College": 24.0,
-        "Lake Tahoe Community College": 18.0,
-        "Las Positas College": 21.0,
-        "Lemoore College": 30.0,
-        "Los Angeles Harbor College": 3.0,
-        "Los Angeles Mission College": 25.0,
-        "Los Angeles Pierce College": 3.0,
-        "Los Angeles Southwest College": 3.0,
-        "Los Medanos College": 27.0,
-        "Mendocino College": 3.0,
-        "Moreno Valley College": 24.0,
-        "Napa Valley College": 9.0,
-        "Norco College": 24.0,
-        "Reedley College": 24.0,
-        "Riverside City College": 24.0,
-        "San Bernardino Valley College": 3.0,
-        "San Diego Miramar College": 9.0,
-        "San Joaquin Delta College": 6.0,
-        "Shasta College": 27.0,
-        "Skyline College": 24.0,
-        "Solano Community College": 21.0,
-        "Woodland Community College": 27.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 9,
-        "Barstow Community College": 8,
-        "Butte College": 2,
-        "Cabrillo College": 8,
-        "Cerro Coso Community College": 10,
-        "Chabot College": 6,
-        "Chaffey College": 9,
-        "City College of San Francisco": 2,
-        "College of San Mateo": 7,
-        "College of the Desert": 8,
-        "Copper Mountain College": 7,
-        "Fullerton College": 9,
-        "Glendale Community College": 6,
-        "Grossmont College": 8,
-        "Lake Tahoe Community College": 6,
-        "Las Positas College": 7,
-        "Lemoore College": 10,
-        "Los Angeles Harbor College": 1,
-        "Los Angeles Mission College": 8,
-        "Los Angeles Pierce College": 1,
-        "Los Angeles Southwest College": 1,
-        "Los Medanos College": 9,
-        "Mendocino College": 1,
-        "Moreno Valley College": 8,
-        "Napa Valley College": 3,
-        "Norco College": 8,
-        "Reedley College": 8,
-        "Riverside City College": 8,
-        "San Bernardino Valley College": 1,
-        "San Diego Miramar College": 1,
-        "San Joaquin Delta College": 2,
-        "Shasta College": 9,
-        "Skyline College": 8,
-        "Solano Community College": 7,
-        "Woodland Community College": 9
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          39,
-          138,
-          139,
-          140,
-          141,
-          142,
-          143,
-          144,
-          145
-        ],
-        "Barstow Community College": [
-          47,
-          48,
-          49,
-          50,
-          51,
-          52,
-          53,
-          54
-        ],
-        "Butte College": [
-          8,
-          105
-        ],
-        "Cabrillo College": [
-          24,
-          25,
-          65,
-          66,
-          67,
-          68,
-          69,
-          70
-        ],
-        "Cerro Coso Community College": [
-          72,
-          73,
-          74,
-          75,
-          76,
-          77,
-          95,
-          96,
-          97,
-          98
-        ],
-        "Chabot College": [
-          156,
-          158,
-          159,
-          160,
-          161,
-          162
-        ],
-        "Chaffey College": [
-          24,
-          25,
-          26,
-          27,
-          28,
-          29,
-          30,
-          31,
-          127
-        ],
-        "City College of San Francisco": [
-          55,
-          56
-        ],
-        "College of San Mateo": [
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          22
-        ],
-        "College of the Desert": [
-          11,
-          45,
-          173,
-          174,
-          175,
-          176,
-          177,
-          178
-        ],
-        "Copper Mountain College": [
-          11,
-          40,
-          41,
-          42,
-          43,
-          44,
-          45
-        ],
-        "Fullerton College": [
-          10,
-          32,
-          33,
-          34,
-          35,
-          36,
-          37,
-          38,
-          163
-        ],
-        "Glendale Community College": [
-          121,
-          122,
-          123,
-          124,
-          125,
-          126
-        ],
-        "Grossmont College": [
-          106,
-          107,
-          108,
-          109,
-          110,
-          111,
-          112,
-          113
-        ],
-        "Lake Tahoe Community College": [
-          78,
-          79,
-          80,
-          81,
-          82,
-          83
-        ],
-        "Las Positas College": [
-          179,
-          180,
-          181,
-          182,
-          183,
-          184,
-          185
-        ],
-        "Lemoore College": [
-          18,
-          57,
-          58,
-          59,
-          60,
-          61,
-          62,
-          63,
-          102,
-          146
-        ],
-        "Los Angeles Harbor College": [
-          101
-        ],
-        "Los Angeles Mission College": [
-          147,
-          148,
-          149,
-          150,
-          151,
-          152,
-          153,
-          157
-        ],
-        "Los Angeles Pierce College": [
-          157
-        ],
-        "Los Angeles Southwest College": [
-          157
-        ],
-        "Los Medanos College": [
-          114,
-          115,
-          116,
-          117,
-          118,
-          119,
-          120,
-          136,
-          154
-        ],
-        "Mendocino College": [
-          100
-        ],
-        "Moreno Valley College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ],
-        "Napa Valley College": [
-          20,
-          21,
-          84
-        ],
-        "Norco College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ],
-        "Reedley College": [
-          128,
-          129,
-          130,
-          131,
-          132,
-          133,
-          134,
-          135
-        ],
-        "Riverside City College": [
-          0,
-          1,
-          2,
-          3,
-          4,
-          5,
-          6,
-          7
-        ],
-        "San Bernardino Valley College": [
-          155
-        ],
-        "San Diego Miramar College": [
-          9
-        ],
-        "San Joaquin Delta College": [
-          85,
-          137
-        ],
-        "Shasta College": [
-          164,
-          165,
-          166,
-          167,
-          168,
-          169,
-          170,
-          171,
-          172
-        ],
-        "Skyline College": [
-          12,
-          13,
-          14,
-          15,
-          16,
-          17,
-          22,
-          23
-        ],
-        "Solano Community College": [
-          19,
-          40,
-          41,
-          46,
-          64,
-          99,
-          103
-        ],
-        "Woodland Community College": [
-          86,
-          87,
-          88,
-          89,
-          90,
-          91,
-          92,
-          93,
-          94
-        ]
-      },
-      "peer_units_median": 24.0,
-      "peer_units_max": 30.0,
-      "rec_units_total": 563.0
     },
     {
       "exhibit_id": "CPLPRI-HET+-1-001",
@@ -152193,6 +153208,136 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 31.5,
       "peer_units_max": 31.5,
       "rec_units_total": 31.5
+    },
+    {
+      "exhibit_id": "MAPICI-ASE(40-1-001",
+      "exhibit_ids": [
+        "MAPICI-ASE(40-1-001"
+      ],
+      "title": "Automotive Service Excellence (ASE) ASE A7",
+      "unified_title": "Automotive Service Excellence (ASE) ASE A7",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Automotive Service Excellence (ASE) ASE A7"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 68,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Chaffey College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Columbia College",
+        "Compton College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "De Anza College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Evergreen Valley College",
+        "Fresno City College",
+        "Fullerton College",
+        "Golden West College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 69,
+      "credit_recs": [
+        {
+          "course": "A S T 007",
+          "credit": "3 hours in Air Conditioning"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ASE(40-1-001",
+          "title": "Automotive Service Excellence (ASE) ASE A7",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPICO-IAEI-1-001",
@@ -235219,16 +236364,16 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-HSA--1-001"
       ],
-      "title": "Modern Dance Techniques",
-      "unified_title": "Modern Dance Techniques",
-      "is_classified": true,
-      "issuing_agency": "CHAMPS High School",
-      "training_agency": "CHAMPS High School",
-      "confidence_title": 0.8,
-      "confidence_issuer": 1.0,
+      "title": "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+      "unified_title": "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance techniques"
+        "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
@@ -235308,7 +236453,7 @@ window.CPL_STATEWIDE = {
       "exhibit_records": [
         {
           "id": "MAPCXS-HSA--1-001",
-          "title": "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance techniques",
+          "title": "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
           "units": 1.0,
           "lines": 1
         }
@@ -240266,8 +241411,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPCXS-T3-1-001"
       ],
-      "title": "THEATER 342",
-      "unified_title": "THEATER 342",
+      "title": "THEATER 342: Technical Theater Production",
+      "unified_title": "THEATER 342: Technical Theater Production",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -240275,7 +241420,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "THEATER 342"
+        "THEATER 342: Technical Theater Production"
       ],
       "cpl_type": "Credit By Exam",
       "discipline": "Fine and Applied Arts",
@@ -240354,7 +241499,7 @@ window.CPL_STATEWIDE = {
       "exhibit_records": [
         {
           "id": "MAPCXS-T3-1-001",
-          "title": "THEATER 342",
+          "title": "THEATER 342: Technical Theater Production",
           "units": 2.0,
           "lines": 1
         }
@@ -250158,6 +251303,117 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICI-ACOS1-1-001",
+      "exhibit_ids": [
+        "MAPICI-ACOS1-1-001"
+      ],
+      "title": "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "unified_title": "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Education",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "31",
+      "top_codes": [
+        "41"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 49,
+      "potential_names": [
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "Crafton Hills College",
+        "Cuesta College",
+        "Cypress College",
+        "Diablo Valley College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Merced College",
+        "MiraCosta College",
+        "Mission College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "Saddleback College",
+        "San Bernardino Valley College",
+        "San Diego City College",
+        "San Diego Mesa College",
+        "San Diego Miramar College",
+        "San Joaquin Delta College",
+        "Santa Ana College",
+        "Santa Rosa Junior College",
+        "Sierra College",
+        "Southwestern College",
+        "Victor Valley College",
+        "West Valley College"
+      ],
+      "total_addressable": 50,
+      "credit_recs": [
+        {
+          "course": "KIN MAJ 117",
+          "credit": "3 hours in Personal Trainer Instructor"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-ACOS1-1-001",
+          "title": "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPICI-NAOS-1-001",
       "exhibit_ids": [
         "MAPICI-NAOS-1-001"
@@ -250267,6 +251523,514 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICA-PACT-1-001",
+      "exhibit_ids": [
+        "MAPICA-PACT-1-001"
+      ],
+      "title": "Pre Apprenticeship Construction Trades Noncredit Certificate of Completion",
+      "unified_title": "Pre Apprenticeship Construction Trades Noncredit Certificate of Completion",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Pre Apprenticeship Construction Trades Noncredit Certificate of Completion"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "60",
+        "61"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Cerritos College"
+      ],
+      "potential": 49,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Chabot College",
+        "City College of San Francisco",
+        "College of San Mateo",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Diablo Valley College",
+        "El Camino College",
+        "Foothill College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles Mission College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "San Joaquin Delta College",
+        "San Jose City College",
+        "Santa Ana College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 50,
+      "credit_recs": [
+        {
+          "course": "AED 36.02",
+          "credit": "0 hours in Intro to Construction"
+        },
+        {
+          "course": "AED 36.04",
+          "credit": "0 hours in Math Building Trades Const"
+        },
+        {
+          "course": "AED 80.01",
+          "credit": "0 hours in Introduction to Electrical Trade"
+        },
+        {
+          "course": "AED 36.03",
+          "credit": "0 hours in Basic Reading Skills BTC"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-PACT-1-001",
+          "title": "Pre Apprenticeship Construction Trades Noncredit Certificate of Completion",
+          "units": 0.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Cerritos College": 0.0
+      },
+      "adopter_lines": {
+        "Cerritos College": 4
+      },
+      "adopter_rec_idx": {
+        "Cerritos College": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "peer_units_median": 0.0,
+      "peer_units_max": 0.0,
+      "rec_units_total": 0.0
+    },
+    {
+      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-ASE7-1-001|MAPICI-ASE71-1-001|MAPICI-CCSA-1-001|MAPICI-IFAA6-1-001",
+      "exhibit_ids": [
+        "CPLICI-ASE7-1-001",
+        "MAPICI-AAC-1-001",
+        "MAPICI-AC(A6-1-001",
+        "MAPICI-ASE(34-1-001",
+        "MAPICI-ASE7-1-001",
+        "MAPICI-ASE71-1-001",
+        "MAPICI-CCSA-1-001",
+        "MAPICI-IFAA6-1-001"
+      ],
+      "title": "ASE A7 — Heating and Air Conditioning",
+      "unified_title": "ASE A7 — Heating and Air Conditioning",
+      "is_classified": true,
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "training_agency": "",
+      "confidence_title": 0.97,
+      "confidence_issuer": 0.98,
+      "quality_flag": "",
+      "raw_titles": [
+        "ASE A7 Certificate",
+        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
+        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
+        "Automotive Service Excellence 7 (A7) - Heating & Air Conditioning",
+        "Automotive Services Excellence 7 (A7) Certificate",
+        "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
+        "Climate Control Systems ASE A7",
+        "Industry for AUTO A7"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Transportation & Logistics",
+      "cip_sector": "47",
+      "top_codes": [
+        "58"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 21,
+      "adopter_names": [
+        "Bakersfield College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Copper Mountain College",
+        "De Anza College",
+        "East Los Angeles College",
+        "Evergreen Valley College",
+        "Golden West College",
+        "Las Positas College",
+        "Lassen College",
+        "Los Medanos College",
+        "Mendocino College",
+        "Merced College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego Miramar College",
+        "Santa Ana College"
+      ],
+      "potential": 48,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Butte College",
+        "Cerritos College",
+        "Chabot College",
+        "Citrus College",
+        "College of Alameda",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Cypress College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Trade Technical College",
+        "MiraCosta College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Mt. San Jacinto College",
+        "Oxnard College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Reedley College",
+        "Saddleback College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Barbara City College",
+        "Santa Rosa Junior College",
+        "Shasta College",
+        "Sierra College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "Yuba College"
+      ],
+      "total_addressable": 69,
+      "credit_recs": [
+        {
+          "course": "AUTOTEC 416",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO B49",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 056",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 117",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO A7",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AT 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 44",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 58",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AT 112",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 240",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTOMO 701",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 066.",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUT 146",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUSER 238",
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
+        },
+        {
+          "course": "AUTO 169G",
+          "credit": "2 hours in Climate Control Systems"
+        },
+        {
+          "course": "AUT 50",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUT 7",
+          "credit": "4 hours in Auto Heat & Air"
+        },
+        {
+          "course": "AUTO 004",
+          "credit": "4 hours in Automotive Principles"
+        },
+        {
+          "course": "AUTO 113",
+          "credit": "4 hours in Auto Heat & Air"
+        },
+        {
+          "course": "AUTO 135",
+          "credit": "2 hours in Air Conditioning Systems"
+        },
+        {
+          "course": "AUTO 018",
+          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
+        },
+        {
+          "course": "AUTO G160",
+          "credit": "4 hours in Heating And Air Conditioning"
+        },
+        {
+          "course": "AUTO A7",
+          "credit": "4 units in AUTO A7 Automotive Heating and Air Conditioning"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "CPLICI-ASE7-1-001",
+          "title": "Automotive Services Excellence 7 (A7) Certificate",
+          "units": 42.0,
+          "lines": 14
+        },
+        {
+          "id": "MAPICI-AAC-1-001",
+          "title": "ASE A7 Certificate",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-AC(A6-1-001",
+          "title": "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
+          "units": 16.0,
+          "lines": 4
+        },
+        {
+          "id": "MAPICI-ASE(34-1-001",
+          "title": "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
+          "units": 0,
+          "lines": 0
+        },
+        {
+          "id": "MAPICI-ASE7-1-001",
+          "title": "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-ASE71-1-001",
+          "title": "Automotive Service Excellence 7 (A7) - Heating & Air Conditioning",
+          "units": 4.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-CCSA-1-001",
+          "title": "Climate Control Systems ASE A7",
+          "units": 2.0,
+          "lines": 1
+        },
+        {
+          "id": "MAPICI-IFAA6-1-001",
+          "title": "Industry for AUTO A7",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 3.0,
+        "Chaffey College": 3.0,
+        "City College of San Francisco": 3.0,
+        "College of the Desert": 4.0,
+        "Columbia College": 3.0,
+        "Contra Costa College": 3.0,
+        "Copper Mountain College": 4.0,
+        "De Anza College": 3.0,
+        "East Los Angeles College": 3.0,
+        "Evergreen Valley College": 2.0,
+        "Golden West College": 4.0,
+        "Las Positas College": 7.0,
+        "Lassen College": 3.0,
+        "Los Medanos College": 4.0,
+        "Mendocino College": 3.0,
+        "Merced College": 3.0,
+        "Rio Hondo College": 3.0,
+        "Riverside City College": 8.0,
+        "San Bernardino Valley College": 3.0,
+        "San Diego Miramar College": 2.0,
+        "Santa Ana College": 3.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1,
+        "Chaffey College": 1,
+        "City College of San Francisco": 1,
+        "College of the Desert": 1,
+        "Columbia College": 1,
+        "Contra Costa College": 1,
+        "Copper Mountain College": 1,
+        "De Anza College": 1,
+        "East Los Angeles College": 1,
+        "Evergreen Valley College": 1,
+        "Golden West College": 1,
+        "Las Positas College": 2,
+        "Lassen College": 1,
+        "Los Medanos College": 1,
+        "Mendocino College": 1,
+        "Merced College": 1,
+        "Rio Hondo College": 1,
+        "Riverside City College": 2,
+        "San Bernardino Valley College": 1,
+        "San Diego Miramar College": 1,
+        "Santa Ana College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          1
+        ],
+        "Chaffey College": [
+          0
+        ],
+        "City College of San Francisco": [
+          7
+        ],
+        "College of the Desert": [
+          20
+        ],
+        "Columbia College": [
+          8
+        ],
+        "Contra Costa College": [
+          13
+        ],
+        "Copper Mountain College": [
+          17
+        ],
+        "De Anza College": [
+          11
+        ],
+        "East Los Angeles College": [
+          10
+        ],
+        "Evergreen Valley College": [
+          19
+        ],
+        "Golden West College": [
+          21
+        ],
+        "Las Positas College": [
+          4,
+          22
+        ],
+        "Lassen College": [
+          5
+        ],
+        "Los Medanos College": [
+          18
+        ],
+        "Mendocino College": [
+          12
+        ],
+        "Merced College": [
+          6
+        ],
+        "Rio Hondo College": [
+          9
+        ],
+        "Riverside City College": [
+          15,
+          16
+        ],
+        "San Bernardino Valley College": [
+          2
+        ],
+        "San Diego Miramar College": [
+          14
+        ],
+        "Santa Ana College": [
+          3
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 74.0
     },
     {
       "exhibit_id": "MAPSAS-AAAS-1-001|MAPSAS-AAAS1-1-001|MAPSAS-AAAS3-1-001|MAPSAS-AAAS4-1-001|MAPSAS-AAAS5-1-001|MAPSAS-AAAS6-1-001|MAPSAS-AAAS7-1-001",
@@ -251141,404 +252905,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
-    },
-    {
-      "exhibit_id": "CPLICI-ASE7-1-001|MAPICI-AAC-1-001|MAPICI-AC(A6-1-001|MAPICI-ASE(34-1-001|MAPICI-ASE(40-1-001|MAPICI-ASE7-1-001|MAPICI-ASE71-1-001|MAPICI-CCSA-1-001|MAPICI-IFAA6-1-001",
-      "exhibit_ids": [
-        "CPLICI-ASE7-1-001",
-        "MAPICI-AAC-1-001",
-        "MAPICI-AC(A6-1-001",
-        "MAPICI-ASE(34-1-001",
-        "MAPICI-ASE(40-1-001",
-        "MAPICI-ASE7-1-001",
-        "MAPICI-ASE71-1-001",
-        "MAPICI-CCSA-1-001",
-        "MAPICI-IFAA6-1-001"
-      ],
-      "title": "ASE A7 — Heating and Air Conditioning",
-      "unified_title": "ASE A7 — Heating and Air Conditioning",
-      "is_classified": true,
-      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
-      "training_agency": "",
-      "confidence_title": 0.97,
-      "confidence_issuer": 0.98,
-      "quality_flag": "",
-      "raw_titles": [
-        "ASE A7 Certificate",
-        "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
-        "Auto Service Excellence (ASE) ASE A7",
-        "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
-        "Automotive Service Excellence 7 (A7) - Heating & Air Conditioning",
-        "Automotive Services Excellence 7 (A7) Certificate",
-        "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
-        "Climate Control Systems ASE A7",
-        "Industry for AUTO A7"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Transportation & Logistics",
-      "cip_sector": "47",
-      "top_codes": [
-        "58"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 22,
-      "adopter_names": [
-        "Bakersfield College",
-        "Chaffey College",
-        "City College of San Francisco",
-        "College of the Desert",
-        "Columbia College",
-        "Contra Costa College",
-        "Copper Mountain College",
-        "De Anza College",
-        "East Los Angeles College",
-        "Evergreen Valley College",
-        "Golden West College",
-        "Las Positas College",
-        "Lassen College",
-        "Los Angeles Pierce College",
-        "Los Medanos College",
-        "Mendocino College",
-        "Merced College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego Miramar College",
-        "Santa Ana College"
-      ],
-      "potential": 47,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Barstow Community College",
-        "Butte College",
-        "Cerritos College",
-        "Chabot College",
-        "Citrus College",
-        "College of Alameda",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "Cuyamaca College",
-        "Cypress College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Long Beach City College",
-        "Los Angeles Trade Technical College",
-        "MiraCosta College",
-        "Modesto Junior College",
-        "Monterey Peninsula College",
-        "Mt. San Jacinto College",
-        "Oxnard College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Reedley College",
-        "Saddleback College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Barbara City College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "Yuba College"
-      ],
-      "total_addressable": 69,
-      "credit_recs": [
-        {
-          "course": "AUTOTEC 416",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO B49",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 056",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 117",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO A7",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AT 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 44",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 58",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AT 112",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 240",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTOMO 701",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 066.",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUT 146",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUSER 238",
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning"
-        },
-        {
-          "course": "AUTO 169G",
-          "credit": "2 hours in Climate Control Systems"
-        },
-        {
-          "course": "AUT 50",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUT 7",
-          "credit": "4 hours in Auto Heat & Air"
-        },
-        {
-          "course": "AUTO 004",
-          "credit": "4 hours in Automotive Principles"
-        },
-        {
-          "course": "AUTO 113",
-          "credit": "4 hours in Auto Heat & Air"
-        },
-        {
-          "course": "AUTO 135",
-          "credit": "2 hours in Air Conditioning Systems"
-        },
-        {
-          "course": "AUTO 018",
-          "credit": "4 hours in Automotive Heating, Ventilation & Air Conditioning"
-        },
-        {
-          "course": "A S T 007",
-          "credit": "3 hours in Air Conditioning"
-        },
-        {
-          "course": "AUTO G160",
-          "credit": "4 hours in Heating And Air Conditioning"
-        },
-        {
-          "course": "AUTO A7",
-          "credit": "4 units in AUTO A7 Automotive Heating and Air Conditioning"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3 or 4 hours in Automotive Heating, Ventilation and Air Conditioning",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "CPLICI-ASE7-1-001",
-          "title": "Automotive Services Excellence 7 (A7) Certificate",
-          "units": 42.0,
-          "lines": 14
-        },
-        {
-          "id": "MAPICI-AAC-1-001",
-          "title": "ASE A7 Certificate",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-AC(A6-1-001",
-          "title": "ASE CERTIFICATION (A7) A7 – HEATING & AIR CONDITIONING",
-          "units": 16.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-ASE(34-1-001",
-          "title": "Automotive Service Excellence (ASE) A7 Certificate Heating & Air Conditioning",
-          "units": 0,
-          "lines": 0
-        },
-        {
-          "id": "MAPICI-ASE(40-1-001",
-          "title": "Auto Service Excellence (ASE) ASE A7",
-          "units": 3.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE7-1-001",
-          "title": "Automotive Services Excellence 7 (A7) Certificate + Practical Assessment",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-ASE71-1-001",
-          "title": "Automotive Service Excellence 7 (A7) - Heating & Air Conditioning",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-CCSA-1-001",
-          "title": "Climate Control Systems ASE A7",
-          "units": 2.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-IFAA6-1-001",
-          "title": "Industry for AUTO A7",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Bakersfield College": 3.0,
-        "Chaffey College": 3.0,
-        "City College of San Francisco": 3.0,
-        "College of the Desert": 4.0,
-        "Columbia College": 3.0,
-        "Contra Costa College": 3.0,
-        "Copper Mountain College": 4.0,
-        "De Anza College": 3.0,
-        "East Los Angeles College": 3.0,
-        "Evergreen Valley College": 2.0,
-        "Golden West College": 4.0,
-        "Las Positas College": 7.0,
-        "Lassen College": 3.0,
-        "Los Angeles Pierce College": 3.0,
-        "Los Medanos College": 4.0,
-        "Mendocino College": 3.0,
-        "Merced College": 3.0,
-        "Rio Hondo College": 3.0,
-        "Riverside City College": 8.0,
-        "San Bernardino Valley College": 3.0,
-        "San Diego Miramar College": 2.0,
-        "Santa Ana College": 3.0
-      },
-      "adopter_lines": {
-        "Bakersfield College": 1,
-        "Chaffey College": 1,
-        "City College of San Francisco": 1,
-        "College of the Desert": 1,
-        "Columbia College": 1,
-        "Contra Costa College": 1,
-        "Copper Mountain College": 1,
-        "De Anza College": 1,
-        "East Los Angeles College": 1,
-        "Evergreen Valley College": 1,
-        "Golden West College": 1,
-        "Las Positas College": 2,
-        "Lassen College": 1,
-        "Los Angeles Pierce College": 1,
-        "Los Medanos College": 1,
-        "Mendocino College": 1,
-        "Merced College": 1,
-        "Rio Hondo College": 1,
-        "Riverside City College": 2,
-        "San Bernardino Valley College": 1,
-        "San Diego Miramar College": 1,
-        "Santa Ana College": 1
-      },
-      "adopter_rec_idx": {
-        "Bakersfield College": [
-          1
-        ],
-        "Chaffey College": [
-          0
-        ],
-        "City College of San Francisco": [
-          7
-        ],
-        "College of the Desert": [
-          20
-        ],
-        "Columbia College": [
-          8
-        ],
-        "Contra Costa College": [
-          13
-        ],
-        "Copper Mountain College": [
-          17
-        ],
-        "De Anza College": [
-          11
-        ],
-        "East Los Angeles College": [
-          10
-        ],
-        "Evergreen Valley College": [
-          19
-        ],
-        "Golden West College": [
-          22
-        ],
-        "Las Positas College": [
-          4,
-          23
-        ],
-        "Lassen College": [
-          5
-        ],
-        "Los Angeles Pierce College": [
-          21
-        ],
-        "Los Medanos College": [
-          18
-        ],
-        "Mendocino College": [
-          12
-        ],
-        "Merced College": [
-          6
-        ],
-        "Rio Hondo College": [
-          9
-        ],
-        "Riverside City College": [
-          15,
-          16
-        ],
-        "San Bernardino Valley College": [
-          2
-        ],
-        "San Diego Miramar College": [
-          14
-        ],
-        "Santa Ana College": [
-          3
-        ]
-      },
-      "peer_units_median": 3.0,
-      "peer_units_max": 8.0,
-      "rec_units_total": 77.0
     },
     {
       "exhibit_id": "MAPICA-3A-1-001",
@@ -269811,6 +271177,452 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
+      "exhibit_id": "MAPICA-ETPN-1-001",
+      "exhibit_ids": [
+        "MAPICA-ETPN-1-001"
+      ],
+      "title": "Electrician Trainee Program Non Residential Lighting Technician Journeyperson",
+      "unified_title": "Electrician Trainee Program Non Residential Lighting Technician Journeyperson",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Electrician Trainee Program Non Residential Lighting Technician Journeyperson"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "57",
+        "61"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Cerritos College"
+      ],
+      "potential": 39,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "De Anza College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Bernardino Valley College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 40,
+      "credit_recs": [
+        {
+          "course": "ELAP 90.11",
+          "credit": "2 hours in Introduction to Electrical Vehicles"
+        },
+        {
+          "course": "ELAP 90.01",
+          "credit": "2 hours in Introduction to Energy Surveying"
+        },
+        {
+          "course": "ELAP 90.02",
+          "credit": "2 hours in Basic Electricity and Wiring Fundamentals"
+        },
+        {
+          "course": "ELAP 90.03",
+          "credit": "2 hours in Introduction to Lighting Retrofits"
+        },
+        {
+          "course": "ELAP 90.08",
+          "credit": "3 hours in Solar Energy"
+        },
+        {
+          "course": "ELAP 90.09",
+          "credit": "3 hours in Solar Panel Installation"
+        },
+        {
+          "course": "ELAP 90.10",
+          "credit": "2 hours in Cerritos Student Orientation Motivation Education and Training (COMET)"
+        },
+        {
+          "course": "ELAP 90.22",
+          "credit": "1.5 hours in OSHA-10/30 General Training"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ETPN-1-001",
+          "title": "Electrician Trainee Program Non Residential Lighting Technician Journeyperson",
+          "units": 17.5,
+          "lines": 8
+        }
+      ],
+      "adopter_units": {
+        "Cerritos College": 17.5
+      },
+      "adopter_lines": {
+        "Cerritos College": 8
+      },
+      "adopter_rec_idx": {
+        "Cerritos College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "peer_units_median": 17.5,
+      "peer_units_max": 17.5,
+      "rec_units_total": 17.5
+    },
+    {
+      "exhibit_id": "MAPICA-ETPW-1-001",
+      "exhibit_ids": [
+        "MAPICA-ETPW-1-001"
+      ],
+      "title": "Electrician Trainee Program Whole Residential Electrician Journeyperson",
+      "unified_title": "Electrician Trainee Program Whole Residential Electrician Journeyperson",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Electrician Trainee Program Whole Residential Electrician Journeyperson"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "57",
+        "61"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Cerritos College"
+      ],
+      "potential": 39,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "De Anza College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Bernardino Valley College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 40,
+      "credit_recs": [
+        {
+          "course": "ELAP 90.11",
+          "credit": "2 hours in Introduction to Electrical Vehicles"
+        },
+        {
+          "course": "ELAP 90.18",
+          "credit": "1.5 hours in Motors, Motor Controllers and Process-Controllers"
+        },
+        {
+          "course": "ELAP 90.01",
+          "credit": "2 hours in Introduction to Energy Surveying"
+        },
+        {
+          "course": "ELAP 90.02",
+          "credit": "2 hours in Basic Electricity and Wiring Fundamentals"
+        },
+        {
+          "course": "ELAP 90.03",
+          "credit": "2 hours in Introduction to Lighting Retrofits"
+        },
+        {
+          "course": "ELAP 90.08",
+          "credit": "3 hours in Solar Energy"
+        },
+        {
+          "course": "ELAP 90.09",
+          "credit": "3 hours in Solar Panel Installation"
+        },
+        {
+          "course": "ELAP 90.10",
+          "credit": "2 hours in Cerritos Student Orientation Motivation Education and Training (COMET)"
+        },
+        {
+          "course": "ELAP 90.12",
+          "credit": "1 hour in Electrical Theory"
+        },
+        {
+          "course": "ELAP 90.13",
+          "credit": "0.5 hours in Code Requirements"
+        },
+        {
+          "course": "ELAP 90.14",
+          "credit": "1.5 hours in Conduit, Raceways, Panelboards and Switchboards"
+        },
+        {
+          "course": "ELAP 90.15",
+          "credit": "1 hour in Overcurrent Devices"
+        },
+        {
+          "course": "ELAP 90.16",
+          "credit": "1 hour in Grounding Systems"
+        },
+        {
+          "course": "ELAP 90.17",
+          "credit": "0.5 hours in Prints & Specifications"
+        },
+        {
+          "course": "ELAP 90.19",
+          "credit": "1 hour in Generators and Power Supplies"
+        },
+        {
+          "course": "ELAP 90.20",
+          "credit": "1 hour in Jobsite Management"
+        },
+        {
+          "course": "ELAP 90.21",
+          "credit": "1 hour in Speciality Systems"
+        },
+        {
+          "course": "ELAP 90.22",
+          "credit": "1.5 hours in OSHA-10/30 General Training"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ETPW-1-001",
+          "title": "Electrician Trainee Program Whole Residential Electrician Journeyperson",
+          "units": 27.5,
+          "lines": 18
+        }
+      ],
+      "adopter_units": {
+        "Cerritos College": 27.5
+      },
+      "adopter_lines": {
+        "Cerritos College": 18
+      },
+      "adopter_rec_idx": {
+        "Cerritos College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ]
+      },
+      "peer_units_median": 27.5,
+      "peer_units_max": 27.5,
+      "rec_units_total": 27.5
+    },
+    {
+      "exhibit_id": "MAPICA-ETPC-1-001",
+      "exhibit_ids": [
+        "MAPICA-ETPC-1-001"
+      ],
+      "title": "Electrical Training Program CA Conservation Corps COMET",
+      "unified_title": "Electrical Training Program CA Conservation Corps COMET",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Electrical Training Program CA Conservation Corps COMET"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "57",
+        "61"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Cerritos College"
+      ],
+      "potential": 39,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Cabrillo College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "De Anza College",
+        "Diablo Valley College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Mendocino College",
+        "Merced College",
+        "Modesto Junior College",
+        "Moorpark College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Bernardino Valley College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 40,
+      "credit_recs": [
+        {
+          "course": "ELAP 90.01",
+          "credit": "2 hours in Introduction to Energy Surveying"
+        },
+        {
+          "course": "ELAP 90.02",
+          "credit": "2 hours in Basic Electricity and Wiring Fundamentals"
+        },
+        {
+          "course": "ELAP 90.03",
+          "credit": "2 hours in Introduction to Lighting Retrofits"
+        },
+        {
+          "course": "ELAP 90.08",
+          "credit": "3 hours in Solar Energy"
+        },
+        {
+          "course": "ELAP 90.09",
+          "credit": "3 hours in Solar Panel Installation"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ETPC-1-001",
+          "title": "Electrical Training Program CA Conservation Corps COMET",
+          "units": 12.0,
+          "lines": 5
+        }
+      ],
+      "adopter_units": {
+        "Cerritos College": 12.0
+      },
+      "adopter_lines": {
+        "Cerritos College": 5
+      },
+      "adopter_rec_idx": {
+        "Cerritos College": [
+          0,
+          1,
+          2,
+          3,
+          4
+        ]
+      },
+      "peer_units_median": 12.0,
+      "peer_units_max": 12.0,
+      "rec_units_total": 12.0
+    },
+    {
       "exhibit_id": "MAPCXS-A2HA-1-001|MAPCXS-CBEE9-1-001|MAPCxS-EASL-1-001",
       "exhibit_ids": [
         "MAPCXS-A2HA-1-001",
@@ -284748,111 +286560,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
-      "exhibit_id": "MAPICI-BITC-1-001|MAPICI-BITC1-1-001",
-      "exhibit_ids": [
-        "MAPICI-BITC-1-001",
-        "MAPICI-BITC1-1-001"
-      ],
-      "title": "Biocom Institute Technician Certification (BioTC)",
-      "unified_title": "Biocom Institute Technician Certification (BioTC)",
-      "is_classified": true,
-      "issuing_agency": "Biocom California Institute",
-      "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "Biocom Institute Technician Certification (BioTC)",
-        "Biocom Institute Technician Certification (BioTC) - This certification has no expiration"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Biological Sciences",
-      "sector": "Life Sciences/Biotechnology",
-      "cip_sector": "15",
-      "top_codes": [
-        "185"
-      ],
-      "collaborative_type": "Local",
-      "adopters": 1,
-      "adopter_names": [
-        "Los Angeles Pierce College"
-      ],
-      "potential": 35,
-      "potential_names": [
-        "American River College",
-        "Berkeley City College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Citrus College",
-        "City College of San Francisco",
-        "Compton College",
-        "Contra Costa College",
-        "East Los Angeles College",
-        "El Camino College",
-        "Fullerton College",
-        "Glendale Community College",
-        "Irvine Valley College",
-        "Las Positas College",
-        "Los Angeles Harbor College",
-        "Los Angeles Mission College",
-        "Los Angeles Trade Technical College",
-        "Merced College",
-        "Merritt College",
-        "MiraCosta College",
-        "Moorpark College",
-        "Ohlone College",
-        "Pasadena City College",
-        "Rio Hondo College",
-        "San Diego City College",
-        "San Diego Miramar College",
-        "Santa Ana College",
-        "Santa Monica College",
-        "Santiago Canyon College",
-        "Skyline College",
-        "Solano Community College",
-        "Southwestern College",
-        "Ventura College",
-        "Victor Valley College",
-        "West Los Angeles College"
-      ],
-      "total_addressable": 36,
-      "credit_recs": [
-        {
-          "course": "BIOTECH 002",
-          "credit": "4 hours in Biotechnology I"
-        }
-      ],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-BITC-1-001",
-          "title": "Biocom Institute Technician Certification (BioTC) - This certification has no expiration",
-          "units": 4.0,
-          "lines": 1
-        },
-        {
-          "id": "MAPICI-BITC1-1-001",
-          "title": "Biocom Institute Technician Certification (BioTC)",
-          "units": 4.0,
-          "lines": 1
-        }
-      ],
-      "adopter_units": {
-        "Los Angeles Pierce College": 4.0
-      },
-      "adopter_lines": {
-        "Los Angeles Pierce College": 1
-      },
-      "adopter_rec_idx": {
-        "Los Angeles Pierce College": [
-          0
-        ]
-      },
-      "peer_units_median": 4.0,
-      "peer_units_max": 4.0,
-      "rec_units_total": 4.0
-    },
-    {
       "exhibit_id": "MAPICI-QIAC-1-001",
       "exhibit_ids": [
         "MAPICI-QIAC-1-001"
@@ -285433,6 +287140,103 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPICI-BITC1-1-001",
+      "exhibit_ids": [
+        "MAPICI-BITC1-1-001"
+      ],
+      "title": "Biocom Institute Technician Certification (BioTC)",
+      "unified_title": "Biocom Institute Technician Certification (BioTC)",
+      "is_classified": true,
+      "issuing_agency": "Biocom California Institute",
+      "training_agency": "",
+      "confidence_title": 1.0,
+      "confidence_issuer": 1.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Biocom Institute Technician Certification (BioTC)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "cip_sector": "15",
+      "top_codes": [
+        "185"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Compton College",
+        "Contra Costa College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego City College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "BIOTECH 002",
+          "credit": "4 hours in Biotechnology I"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-BITC1-1-001",
+          "title": "Biocom Institute Technician Certification (BioTC)",
+          "units": 4.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 4.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
     },
     {
       "exhibit_id": "MAPCXS-S0IT-1-001",
@@ -286597,6 +288401,103 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 6.0,
       "peer_units_max": 6.0,
       "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPCXS-B0FO-1-001",
+      "exhibit_ids": [
+        "MAPCXS-B0FO-1-001"
+      ],
+      "title": "BIOTECH 001: Fundamentals of Biotechnology",
+      "unified_title": "BIOTECH 001: Fundamentals of Biotechnology",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "BIOTECH 001: Fundamentals of Biotechnology"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Biological Sciences",
+      "sector": "Life Sciences/Biotechnology",
+      "cip_sector": "15",
+      "top_codes": [
+        "185"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Los Angeles Pierce College"
+      ],
+      "potential": 35,
+      "potential_names": [
+        "American River College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Compton College",
+        "Contra Costa College",
+        "East Los Angeles College",
+        "El Camino College",
+        "Fullerton College",
+        "Glendale Community College",
+        "Irvine Valley College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Mission College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Merritt College",
+        "MiraCosta College",
+        "Moorpark College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "San Diego City College",
+        "San Diego Miramar College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Santiago Canyon College",
+        "Skyline College",
+        "Solano Community College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 36,
+      "credit_recs": [
+        {
+          "course": "BIOTECH 001",
+          "credit": "3 hours in Fundamentals of Biotechnology"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPCXS-B0FO-1-001",
+          "title": "BIOTECH 001: Fundamentals of Biotechnology",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "CPLICI-TC-1-001",
@@ -302660,6 +304561,100 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 8.5
     },
     {
+      "exhibit_id": "MAPICI-SOCE-1-001",
+      "exhibit_ids": [
+        "MAPICI-SOCE-1-001"
+      ],
+      "title": "State or County EMT Certification",
+      "unified_title": "State or County EMT Certification",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "State or County EMT Certification"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Health",
+      "sector": "Health",
+      "cip_sector": "51",
+      "top_codes": [
+        "103"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 32,
+      "potential_names": [
+        "Barstow Community College",
+        "Cabrillo College",
+        "Chabot College",
+        "Chaffey College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of the Desert",
+        "Columbia College",
+        "Contra Costa College",
+        "Cosumnes River College",
+        "East Los Angeles College",
+        "Foothill College",
+        "Las Positas College",
+        "Los Angeles Harbor College",
+        "Los Angeles Southwest College",
+        "Modesto Junior College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Orange Coast College",
+        "Oxnard College",
+        "Pasadena City College",
+        "Rio Hondo College",
+        "Saddleback College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Ventura College",
+        "Victor Valley College",
+        "West Los Angeles College",
+        "Woodland Community College"
+      ],
+      "total_addressable": 33,
+      "credit_recs": [
+        {
+          "course": "EMTC B50",
+          "credit": "9 hours in Emergency Medical Technician"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-SOCE-1-001",
+          "title": "State or County EMT Certification",
+          "units": 9.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 9.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 1
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0
+        ]
+      },
+      "peer_units_median": 9.0,
+      "peer_units_max": 9.0,
+      "rec_units_total": 9.0
+    },
+    {
       "exhibit_id": "MAPSAH-AB(1-1-001|MAPSAH-AB(11-1-001|MAPSAP-B1\tB-1-001|MAPSAS-A:B-1-001|MAPSAS-AB(O-1-001|MAPSAS-AB-1-001|MAPSAS-AB-S-1-001|MAPSAS-AB-S1-1-001|MAPSAS-AB1-1-001|MAPSAS-AB10-1-001|MAPSAS-AB11-1-001|MAPSAS-AB12-1-001|MAPSAS-AB13-1-001|MAPSAS-AB14-1-001|MAPSAS-AB15-1-001|MAPSAS-AB16-1-001|MAPSAS-AB17-1-001|MAPSAS-AB18-1-001|MAPSAS-AB19-1-001|MAPSAS-AB2-1-001|MAPSAS-AB20-1-001|MAPSAS-AB21-1-001|MAPSAS-AB22-1-001|MAPSAS-AB23-1-001|MAPSAS-AB24-1-001|MAPSAS-AB3-1-001|MAPSAS-AB4-1-001|MAPSAS-AB5-1-001|MAPSAS-AB6-1-001|MAPSAS-AB8-1-001|MAPSAS-AB9-1-001|MAPSAS-AEB(-1-001|MAPSAS-AEB-1-001|MAPSAS-AEB1-1-001|MAPSAS-AEB2-1-001|MAPSAS-AEB3-1-001|MAPSAS-APE-2-1-001|MAPSAS-WAEB-1-001",
       "exhibit_ids": [
         "MAPSAH-AB(1-1-001",
@@ -314354,8 +316349,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-CFBC-1-001"
       ],
-      "title": "CHPS Field Botanist Certification",
-      "unified_title": "CHPS Field Botanist Certification",
+      "title": "California Native Plant Society (CNPS) Field Botanist Certification",
+      "unified_title": "California Native Plant Society (CNPS) Field Botanist Certification",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -314363,7 +316358,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "CHPS Field Botanist Certification"
+        "California Native Plant Society (CNPS) Field Botanist Certification"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Not Mapped",
@@ -314430,7 +316425,7 @@ window.CPL_STATEWIDE = {
       "exhibit_records": [
         {
           "id": "MAPICI-CFBC-1-001",
-          "title": "CHPS Field Botanist Certification",
+          "title": "California Native Plant Society (CNPS) Field Botanist Certification",
           "units": 9.0,
           "lines": 3
         }
@@ -319831,16 +321826,16 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-ICA-1-001"
       ],
-      "title": "ISA Certified Arborist",
-      "unified_title": "ISA Certified Arborist",
-      "is_classified": true,
-      "issuing_agency": "International Society of Arboriculture (ISA)",
+      "title": "International Society of Arboriculture (ISA) Certified Arborist",
+      "unified_title": "International Society of Arboriculture (ISA) Certified Arborist",
+      "is_classified": false,
+      "issuing_agency": "",
       "training_agency": "",
-      "confidence_title": 1.0,
-      "confidence_issuer": 1.0,
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "ISA Certified Arborist"
+        "International Society of Arboriculture (ISA) Certified Arborist"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Agriculture and Natural Resources",
@@ -319897,7 +321892,7 @@ window.CPL_STATEWIDE = {
       "exhibit_records": [
         {
           "id": "MAPICI-ICA-1-001",
-          "title": "ISA Certified Arborist",
+          "title": "International Society of Arboriculture (ISA) Certified Arborist",
           "units": 1.0,
           "lines": 1
         }
@@ -329638,8 +331633,8 @@ window.CPL_STATEWIDE = {
       "exhibit_ids": [
         "MAPICI-AC-G1-1-001"
       ],
-      "title": "ASPRS Certification - GEOG 025",
-      "unified_title": "ASPRS Certification - GEOG 025",
+      "title": "ASPRS-GIS Certification - GEOG 025",
+      "unified_title": "ASPRS-GIS Certification - GEOG 025",
       "is_classified": false,
       "issuing_agency": "",
       "training_agency": "",
@@ -329647,7 +331642,7 @@ window.CPL_STATEWIDE = {
       "confidence_issuer": 0.0,
       "quality_flag": "",
       "raw_titles": [
-        "ASPRS Certification - GEOG 025"
+        "ASPRS-GIS Certification - GEOG 025"
       ],
       "cpl_type": "Industry Certification",
       "discipline": "Social Sciences",
@@ -329702,7 +331697,7 @@ window.CPL_STATEWIDE = {
       "exhibit_records": [
         {
           "id": "MAPICI-AC-G1-1-001",
-          "title": "ASPRS Certification - GEOG 025",
+          "title": "ASPRS-GIS Certification - GEOG 025",
           "units": 4.0,
           "lines": 1
         }
@@ -348506,6 +350501,97 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 15.0
     },
     {
+      "exhibit_id": "MAPICA-ETPC1-1-001",
+      "exhibit_ids": [
+        "MAPICA-ETPC1-1-001"
+      ],
+      "title": "Electrical Training Program CA Conservation Corps Electric Vehicle",
+      "unified_title": "Electrical Training Program CA Conservation Corps Electric Vehicle",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Electrical Training Program CA Conservation Corps Electric Vehicle"
+      ],
+      "cpl_type": "Credit By Exam",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "61"
+      ],
+      "collaborative_type": "Apprenticeship",
+      "adopters": 1,
+      "adopter_names": [
+        "Cerritos College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Modesto Junior College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "ELAP 90.11",
+          "credit": "2 hours in Introduction to Electrical Vehicles"
+        },
+        {
+          "course": "ELAP 90.10",
+          "credit": "2 hours in Cerritos Student Orientation Motivation Education and Training (COMET)"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-ETPC1-1-001",
+          "title": "Electrical Training Program CA Conservation Corps Electric Vehicle",
+          "units": 4.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Cerritos College": 4.0
+      },
+      "adopter_lines": {
+        "Cerritos College": 2
+      },
+      "adopter_rec_idx": {
+        "Cerritos College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 4.0,
+      "peer_units_max": 4.0,
+      "rec_units_total": 4.0
+    },
+    {
       "exhibit_id": "MAPCBEN-ITVC-1-001",
       "exhibit_ids": [
         "MAPCBEN-ITVC-1-001"
@@ -360592,6 +362678,86 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 3.0,
       "peer_units_max": 3.0,
       "rec_units_total": 6.0
+    },
+    {
+      "exhibit_id": "MAPICI-MOSA-1-001",
+      "exhibit_ids": [
+        "MAPICI-MOSA-1-001"
+      ],
+      "title": "Microsoft Office Specialist — Access Expert",
+      "unified_title": "Microsoft Office Specialist — Access Expert",
+      "is_classified": true,
+      "issuing_agency": "Microsoft",
+      "training_agency": "",
+      "confidence_title": 0.95,
+      "confidence_issuer": 0.95,
+      "quality_flag": "",
+      "raw_titles": [
+        "MICROSOFT OFFICE SPECIALIST ACCESS EXPERT CERTIFICATION"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Information Technology",
+      "sector": "ICT/Digital Media",
+      "cip_sector": "11",
+      "top_codes": [
+        "33"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Riverside City College"
+      ],
+      "potential": 18,
+      "potential_names": [
+        "American River College",
+        "Cerro Coso Community College",
+        "Citrus College",
+        "City College of San Francisco",
+        "Cosumnes River College",
+        "Cypress College",
+        "De Anza College",
+        "El Camino College",
+        "Glendale Community College",
+        "Laney College",
+        "Long Beach City College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Ohlone College",
+        "Pasadena City College",
+        "Santa Ana College",
+        "Santa Monica College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 19,
+      "credit_recs": [
+        {
+          "course": "CIS 62",
+          "credit": "3 hours in MS Access DBMS: Comprehensive"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-MOSA-1-001",
+          "title": "MICROSOFT OFFICE SPECIALIST ACCESS EXPERT CERTIFICATION",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Riverside City College": 3.0
+      },
+      "adopter_lines": {
+        "Riverside City College": 1
+      },
+      "adopter_rec_idx": {
+        "Riverside City College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
     },
     {
       "exhibit_id": "MAPICI-W0-S-1-001",
@@ -408151,6 +410317,73 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 8.0
     },
     {
+      "exhibit_id": "MAPICI-POBT-1-001",
+      "exhibit_ids": [
+        "MAPICI-POBT-1-001"
+      ],
+      "title": "Peace Officer Standards and Training (POST)",
+      "unified_title": "Peace Officer Standards and Training (POST)",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Peace Officer Standards and Training (POST)"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Interdisciplinary Studies",
+      "sector": "Academic Transfer & General Education",
+      "cip_sector": "24",
+      "top_codes": [
+        "0"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 2,
+      "adopter_names": [
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College"
+      ],
+      "potential": 0,
+      "potential_names": [],
+      "total_addressable": 2,
+      "credit_recs": [
+        {
+          "course": "LACCD GE 7",
+          "credit": "3 hours in Lifelong Learning and Self Development"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-POBT-1-001",
+          "title": "Peace Officer Standards and Training (POST)",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Los Angeles Pierce College": 3.0,
+        "Los Angeles Southwest College": 3.0
+      },
+      "adopter_lines": {
+        "Los Angeles Pierce College": 1,
+        "Los Angeles Southwest College": 1
+      },
+      "adopter_rec_idx": {
+        "Los Angeles Pierce College": [
+          0
+        ],
+        "Los Angeles Southwest College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
       "exhibit_id": "MAPSAS-C:P1-1-001|MAPSAS-CP4-1-001",
       "exhibit_ids": [
         "MAPSAS-C:P1-1-001",
@@ -418395,50 +420628,6 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 0
     },
     {
-      "exhibit_id": "MAPCXN-AJ0--1-001",
-      "exhibit_ids": [
-        "MAPCXN-AJ0--1-001"
-      ],
-      "title": "ADM JUS 067 - Community Relations",
-      "unified_title": "ADM JUS 067 - Community Relations",
-      "is_classified": false,
-      "issuing_agency": "",
-      "training_agency": "",
-      "confidence_title": 0.0,
-      "confidence_issuer": 0.0,
-      "quality_flag": "",
-      "raw_titles": [
-        "ADM JUS 067 - Community Relations"
-      ],
-      "cpl_type": "Credit By Exam",
-      "discipline": "Not Mapped",
-      "sector": "",
-      "cip_sector": "",
-      "top_codes": [],
-      "collaborative_type": "Local",
-      "adopters": 0,
-      "adopter_names": [],
-      "potential": 0,
-      "potential_names": [],
-      "total_addressable": 0,
-      "credit_recs": [],
-      "authoritative_recs": [],
-      "exhibit_records": [
-        {
-          "id": "MAPCXN-AJ0--1-001",
-          "title": "ADM JUS 067 - Community Relations",
-          "units": 0,
-          "lines": 0
-        }
-      ],
-      "adopter_units": {},
-      "adopter_lines": {},
-      "adopter_rec_idx": {},
-      "peer_units_median": 0.0,
-      "peer_units_max": 0.0,
-      "rec_units_total": 0
-    },
-    {
       "exhibit_id": "MAPICI-ACOE-1-001",
       "exhibit_ids": [
         "MAPICI-ACOE-1-001"
@@ -418554,7 +420743,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 1,
         "industry_certs": 509,
-        "pct": 3.6
+        "pct": 3.5
       },
       {
         "college": "Los Angeles Pierce College",
@@ -418562,7 +420751,7 @@ window.CPL_STATEWIDE = {
         "exhibits": 438,
         "disciplines": 15,
         "ccc_collaborative": 13,
-        "industry_certs": 84,
+        "industry_certs": 83,
         "pct": 3.5
       },
       {
@@ -418590,7 +420779,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 18,
         "ccc_collaborative": 80,
         "industry_certs": 152,
-        "pct": 2.8
+        "pct": 2.7
       },
       {
         "college": "Norco College",
@@ -418630,11 +420819,11 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Bakersfield College",
-        "credit_recs": 295,
-        "exhibits": 152,
+        "credit_recs": 296,
+        "exhibits": 153,
         "disciplines": 10,
         "ccc_collaborative": 116,
-        "industry_certs": 190,
+        "industry_certs": 191,
         "pct": 2.0
       },
       {
@@ -418698,7 +420887,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 7,
         "ccc_collaborative": 8,
         "industry_certs": 129,
-        "pct": 1.4
+        "pct": 1.3
       },
       {
         "college": "Clovis Community College",
@@ -418779,7 +420968,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 17,
         "ccc_collaborative": 3,
         "industry_certs": 19,
-        "pct": 1.1
+        "pct": 1.0
       },
       {
         "college": "De Anza College",
@@ -418797,6 +420986,15 @@ window.CPL_STATEWIDE = {
         "disciplines": 11,
         "ccc_collaborative": 12,
         "industry_certs": 22,
+        "pct": 1.0
+      },
+      {
+        "college": "Cerritos College",
+        "credit_recs": 148,
+        "exhibits": 90,
+        "disciplines": 5,
+        "ccc_collaborative": 0,
+        "industry_certs": 65,
         "pct": 1.0
       },
       {
@@ -418950,15 +421148,6 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 33,
         "industry_certs": 34,
-        "pct": 0.8
-      },
-      {
-        "college": "Cerritos College",
-        "credit_recs": 111,
-        "exhibits": 85,
-        "disciplines": 5,
-        "ccc_collaborative": 0,
-        "industry_certs": 30,
         "pct": 0.8
       },
       {
@@ -419130,7 +421319,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 3,
         "ccc_collaborative": 0,
         "industry_certs": 1,
-        "pct": 0.6
+        "pct": 0.5
       },
       {
         "college": "Oxnard College",
@@ -419139,7 +421328,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.6
+        "pct": 0.5
       },
       {
         "college": "Santa Rosa Junior College",
@@ -419148,7 +421337,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 2,
         "ccc_collaborative": 0,
         "industry_certs": 0,
-        "pct": 0.6
+        "pct": 0.5
       },
       {
         "college": "American River College",
@@ -419460,21 +421649,21 @@ window.CPL_STATEWIDE = {
     "by_discipline": [
       {
         "discipline": "Not Mapped",
-        "credit_recs": 6284,
-        "exhibits": 2460,
+        "credit_recs": 6283,
+        "exhibits": 2459,
         "courses": 354,
         "colleges": 88,
         "ccc_collaborative": 32,
-        "pct": 42.7
+        "pct": 42.6
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2489,
-        "exhibits": 1092,
-        "courses": 1223,
+        "credit_recs": 2526,
+        "exhibits": 1097,
+        "courses": 1245,
         "colleges": 58,
         "ccc_collaborative": 595,
-        "pct": 16.9
+        "pct": 17.1
       },
       {
         "discipline": "Public and Protective Services",
@@ -419496,8 +421685,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 506,
-        "exhibits": 311,
+        "credit_recs": 505,
+        "exhibits": 310,
         "courses": 249,
         "colleges": 48,
         "ccc_collaborative": 47,
@@ -419514,8 +421703,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Health",
-        "credit_recs": 483,
-        "exhibits": 250,
+        "credit_recs": 484,
+        "exhibits": 251,
         "courses": 326,
         "colleges": 48,
         "ccc_collaborative": 37,
@@ -419595,8 +421784,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Education",
-        "credit_recs": 100,
-        "exhibits": 42,
+        "credit_recs": 101,
+        "exhibits": 43,
         "courses": 67,
         "colleges": 30,
         "ccc_collaborative": 33,
@@ -419606,7 +421795,7 @@ window.CPL_STATEWIDE = {
         "discipline": "Biological Sciences",
         "credit_recs": 91,
         "exhibits": 80,
-        "courses": 56,
+        "courses": 57,
         "colleges": 33,
         "ccc_collaborative": 0,
         "pct": 0.6
@@ -419672,19 +421861,19 @@ window.CPL_STATEWIDE = {
         "credit_recs": 7737,
         "exhibits": 3043,
         "colleges": 86,
-        "pct": 52.5
+        "pct": 52.4
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 4042,
-        "exhibits": 1298,
+        "credit_recs": 4077,
+        "exhibits": 1302,
         "colleges": 82,
-        "pct": 27.4
+        "pct": 27.6
       },
       {
         "cpl_type": "Credit By Exam",
-        "credit_recs": 2273,
-        "exhibits": 1805,
+        "credit_recs": 2275,
+        "exhibits": 1806,
         "colleges": 62,
         "pct": 15.4
       },
@@ -419713,10 +421902,10 @@ window.CPL_STATEWIDE = {
     "by_mode_of_learning": [
       {
         "mode": "Self-study, exam preparation, other (S)",
-        "credit_recs": 9161,
-        "exhibits": 4154,
+        "credit_recs": 9162,
+        "exhibits": 4155,
         "colleges": 92,
-        "pct": 62.2
+        "pct": 62.1
       },
       {
         "mode": "Industry training (I)",
@@ -419727,10 +421916,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1449,
-        "exhibits": 411,
+        "credit_recs": 1486,
+        "exhibits": 416,
         "colleges": 43,
-        "pct": 9.8
+        "pct": 10.1
       },
       {
         "mode": "High school coursework (H)",
@@ -419741,8 +421930,8 @@ window.CPL_STATEWIDE = {
       },
       {
         "mode": "Noncredit, community education, and contract education coursework (N)",
-        "credit_recs": 261,
-        "exhibits": 226,
+        "credit_recs": 260,
+        "exhibits": 225,
         "colleges": 13,
         "pct": 1.8
       },
@@ -419789,7 +421978,7 @@ window.CPL_STATEWIDE = {
         "exhibits": 6353,
         "colleges": 100,
         "disciplines": 23,
-        "pct": 88.2
+        "pct": 88.0
       },
       {
         "category": "CCC Collaborative",
@@ -419797,15 +421986,15 @@ window.CPL_STATEWIDE = {
         "exhibits": 196,
         "colleges": 68,
         "disciplines": 11,
-        "pct": 10.1
+        "pct": 10.0
       },
       {
         "category": "Industry/Other",
-        "credit_recs": 251,
-        "exhibits": 50,
-        "colleges": 23,
+        "credit_recs": 288,
+        "exhibits": 55,
+        "colleges": 24,
         "disciplines": 11,
-        "pct": 1.7
+        "pct": 2.0
       }
     ],
     "top_exhibits": [
@@ -420211,8 +422400,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-28T18:28:24",
-  "total_credit_recs": 14727,
+  "generated_at": "2026-10-29T13:09:14",
+  "total_credit_recs": 14764,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",
