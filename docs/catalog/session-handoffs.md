@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-481 document(s).
+482 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 513 | [Session 513 handoff: headers, footers and text boxes in a Word document's contrast](../session_513_handoff.md) | 2026-10-29 |
 | 512 | [Session 512 handoff: a Word document's contrast checked in the Library](../session_512_handoff.md) | 2026-10-29 |
 | 511 | [Session 511 handoff: a deck's contrast checked in the Library, the Funding model's UI pass](../session_511_handoff.md) | 2026-10-29 |
 | 510 | [Session 510 handoff: the Library built to Version 20, remediation in the browser, alt text from screenshots](../session_510_handoff.md) | 2026-10-29 |

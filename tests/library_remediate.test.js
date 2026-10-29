@@ -124,7 +124,8 @@ function wordDoc(withHeading) {
 
 // A Word document whose colors come from every place Word keeps them: a character style,
 // a paragraph style's shading, a table cell's shading, a theme color with a tint, a
-// highlight, "auto", a large run, and a text box this page cannot measure.
+// highlight, "auto", a large run, text boxes (no fill, a navy fill, a theme style's fill,
+// with Word's VML copy in mc:Fallback), a header and a footer.
 function contrastWord() {
   const z = new JSZip();
   z.file("docProps/core.xml", CORE("Contrast"));
@@ -138,7 +139,11 @@ function contrastWord() {
     '<w:style w:type="table" w:styleId="GridHeader"><w:tblStylePr w:type="firstRow"><w:tcPr><w:shd w:val="clear" w:fill="4472C4"/></w:tcPr></w:tblStylePr></w:style>' +
     "</w:styles>");
   const r = (pr, t) => "<w:r>" + (pr ? "<w:rPr>" + pr + "</w:rPr>" : "") + "<w:t>" + t + "</w:t></w:r>";
-  z.file("word/document.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document ' + W + ' xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"><w:body>' +
+  const box = (fill, style, body) => '<w:p><w:r><w:drawing><wp:anchor><wp:docPr id="8" name="Text Box" descr="box"/><a:graphic><a:graphicData><wps:wsp><wps:spPr>' + fill + "</wps:spPr>" + style +
+    "<wps:txbx><w:txbxContent><w:p>" + body + "</w:p></w:txbxContent></wps:txbx></wps:wsp></a:graphicData></a:graphic></wp:anchor></w:drawing></w:r></w:p>";
+  z.file("word/header1.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:hdr ' + W + "><w:p>" + r('<w:rStyle w:val="Gold"/>', "CPL Initiative") + "</w:p></w:hdr>");
+  z.file("word/footer2.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:ftr ' + W + "><w:p>" + r('<w:color w:val="595959"/>', "Page 1") + r('<w:color w:val="AAAAAA"/>', "Draft") + "</w:p></w:ftr>");
+  z.file("word/document.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document ' + W + ' xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:v="urn:schemas-microsoft-com:vml"><w:body>' +
     '<w:p><w:pPr><w:pStyle w:val="Banner"/></w:pPr>' + r("", "WHITE ON THE BANNER") + "</w:p>" +
     "<w:p>" + r('<w:rStyle w:val="Gold"/>', "New in 2026") + r('<w:rStyle w:val="Gold"/><w:b/><w:sz w:val="28"/>', "Gold bold heading") + "</w:p>" +
     "<w:p>" + r('<w:color w:val="949494"/><w:sz w:val="56"/>', "Big gray") + r('<w:color w:val="949494"/>', "Small gray") + "</w:p>" +
@@ -147,7 +152,11 @@ function contrastWord() {
     '<w:p><w:pPr><w:shd w:val="clear" w:fill="002F6D"/></w:pPr>' + r('<w:color w:val="auto"/>', "Auto on navy") + "</w:p>" +
     '<w:tbl><w:tr><w:tc><w:tcPr><w:shd w:val="clear" w:fill="002F6D"/></w:tcPr><w:p>' + r('<w:color w:val="1F3A68"/>', "Navy in a navy cell") + "</w:p></w:tc></w:tr></w:tbl>" +
     '<w:tbl><w:tblPr><w:tblStyle w:val="GridHeader"/></w:tblPr><w:tr><w:tc><w:p>' + r('<w:color w:val="FFFFFF"/>', "Styled header") + "</w:p></w:tc></w:tr></w:tbl>" +
-    '<w:p><w:r><w:drawing><wp:anchor><wp:docPr id="7" name="Text Box 6" descr="box"/><a:graphic><a:graphicData><wps:wsp><wps:txbx><w:txbxContent><w:p>' + r('<w:color w:val="FFFFFF"/>', "In a box") + "</w:p></w:txbxContent></wps:txbx></wps:wsp></a:graphicData></a:graphic></wp:anchor></w:drawing></w:r></w:p>" +
+    // A box with no fill, inside a run that has a color of its own, and Word's VML copy of it.
+    '<w:p><mc:AlternateContent><mc:Choice Requires="wps"><w:r><w:rPr><w:color w:val="EEEEEE"/></w:rPr><w:drawing><wp:anchor><wp:docPr id="7" name="Text Box 6" descr="box"/><a:graphic><a:graphicData><wps:wsp><wps:spPr><a:noFill/></wps:spPr><wps:txbx><w:txbxContent><w:p>' + r('<w:color w:val="FFFFFF"/>', "In a box") + "</w:p></w:txbxContent></wps:txbx></wps:wsp></a:graphicData></a:graphic></wp:anchor></w:drawing></w:r></mc:Choice>" +
+    '<mc:Fallback><w:r><w:pict><v:shape><v:textbox><w:txbxContent><w:p>' + r('<w:color w:val="FFFFFF"/>', "In a box") + "</w:p></w:txbxContent></v:textbox></v:shape></w:pict></w:r></mc:Fallback></mc:AlternateContent></w:p>" +
+    box('<a:solidFill><a:srgbClr val="002F6D"/></a:solidFill>', "", r('<w:color w:val="FFFFFF"/>', "White in a navy box")) +
+    box("", '<wps:style><a:fillRef idx="1"><a:schemeClr val="accent1"/></a:fillRef></wps:style>', r('<w:color w:val="FFFFFF"/>', "White in a themed box")) +
     "</w:body></w:document>");
   return z.generateAsync({ type: "nodebuffer" });
 }
@@ -293,14 +302,27 @@ const run = deck().then(function (buf) {
     check("(9) a highlight is what the run sits on", !!has(/White on yellow/) && has(/White on yellow/).bg === "FFFF00");
     check("(9) auto text never fails", !has(/Auto on navy/));
     check("(9) a table cell's shading is what its text sits on", !!has(/navy cell/) && has(/navy cell/).bg === "002F6D");
-    check("(9) text in a text box, or in a table its style shades, is named for a person, not measured", s.report.needs.some(function (n) { return n.id === "cu" && /^Contrast on 2 runs of text in a text box/.test(n.text); }) && !has(/In a box/) && !has(/Styled header/));
+    check("(9) text in a table its style shades, or a box its theme fills, is named for a person, not measured", s.report.needs.some(function (n) { return n.id === "cu" && /^Contrast on 2 runs of text/.test(n.text); }) && !has(/themed box/) && !has(/Styled header/), JSON.stringify(s.report.needs.filter(function (n) { return n.type === "info"; })));
+    const inBox = has(/In a box/);
+    check("(10) a text box with no fill is measured on the page, once though Word keeps a VML copy", !!inBox && inBox.bg === "FFFFFF" && inBox.runs.length === 1, inBox && inBox.text);
+    check("(10) a text box's own fill is what its words sit on", !has(/navy box/));
+    check("(10) a run holding a text box is not read with the box's words", !cs.some(function (n) { return n.fg === "EEEEEE"; }));
+    const hd = has(/CPL Initiative/);
+    check("(10) a header is read: its gold is named, in a header, with the header's part", !!hd && hd.path === "word/header1.xml" && / in a header in #E8A32C/.test(hd.text), hd && hd.text);
+    const ft = cs.filter(function (n) { return n.path === "word/footer2.xml"; });
+    check("(10) a footer is read: the light gray fails, the dark gray passes", ft.length === 1 && / in a footer /.test(ft[0].text) && /Draft/.test(ft[0].text), JSON.stringify(ft.map(function (n) { return n.text; })));
+    check("(10) each item's id is its own across the parts", new Set(cs.map(function (n) { return n.id; })).size === cs.length);
     check("(9) each fix keeps the hue and passes its own bar", cs.every(function (n) { return R._ratio(n.fix, n.bg) >= n.need; }));
     const ans = {}; cs.forEach(function (n) { ans[n.id] = { fix: true }; });
     return R.finish(s, ans, "nodebuffer").then(function (out) {
       check("(9) finish writes the fix onto each run it covers", out.done.colors === cs.reduce(function (a, n) { return a + n.runs.length; }, 0) && out.done.colors >= 6, JSON.stringify(out.done));
-      return JSZip.loadAsync(out.file).then(function (z) { return z.file("word/document.xml").async("string"); }).then(function (xml) {
+      let z;
+      return JSZip.loadAsync(out.file).then(function (zz) { z = zz; return z.file("word/document.xml").async("string"); }).then(function (xml) {
         check("(9) the new color sits before the size, as the schema orders a run's settings", /<w:color w:val="[0-9A-F]{6}"\/><w:sz w:val="28"\/>/.test(xml), xml.slice(0, 0));
-        return R.inspect(out.file, "Contrast.docx", ENV);
+        return z.file("word/header1.xml").async("string").then(function (hx) {
+          check("(10) the fix is written in the header itself", /<w:color w:val="[0-9A-F]{6}"\/>/.test(hx) && !/E8A32C/.test(hx), hx);
+          return R.inspect(out.file, "Contrast.docx", ENV);
+        });
       });
     }).then(function (again) {
       check("(9) the remediated document has no contrast item left", !again.report.needs.some(function (n) { return n.type === "contrast"; }), JSON.stringify(again.report.needs.map(function (n) { return n.text; })));

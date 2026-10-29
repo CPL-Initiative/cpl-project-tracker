@@ -766,3 +766,23 @@ Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money
   would report white on white; the reader names it for a person instead.
 - **A finding can be text nobody sees.** The spring update ends a paragraph with a white run on white ("— Spring 2026"),
   invisible on the page and read aloud by a screen reader. The finding is right; the fix is to delete the run.
+
+## Headers, footers and text boxes in a Word document's contrast (S512 SkyCloudberry, 2026-10-29)
+
+- **A text box is written twice.** Word keeps a VML copy of each DrawingML text box in `mc:Fallback`, with the same
+  words; reading every `w:r` counted each run twice. The reader skips `mc:Fallback`, and the fix lands on the
+  `mc:Choice` copy, which Word 2010 and later draw.
+- **The run that holds a text box holds the box's runs.** `w:r > w:drawing > … > w:txbxContent > w:p > w:r`, so a
+  run's words are only the `w:t` whose nearest run is that run; otherwise the anchor run is read with the box's words
+  and its own color.
+- **What the page shows through:** a box with `a:noFill`, or no fill and no theme `fillRef`, is measured on the page; a
+  `fillRef` with an index (the theme's fill style), a gradient, a picture or a VML-only box is named for a person.
+- **On the team's 84 Word files** the one new finding is the fact sheet's header line, `#888888` on white at 3.5:1
+  (`cpl-fact-sheet-2026-02.docx`), confirmed on a render. None of the 84 holds a text box, so the boxes are proved by
+  the test's fixture alone.
+
+## Moved from the lane (S512)
+
+✅ **④ A deck's contrast is checked (S510).** Each text run's color (its own, else inherited through list style, layout, master and theme) is measured against the fill the words sit on: the shape's own, else the topmost shape drawn before it covering its middle (the layout's and master's own shapes included), else the slide's background through layout and master. Below 4.5:1, or 3:1 for 18pt or 14pt bold, each slide's color pair is one *Needs you* item showing the words both ways, with the nearest passing color of the same hue ticked as the fix; *Remediate and download* writes it onto those runs. Text over a picture, chart, table, gradient or pattern is named for a person (one item). On the five team decks, 6 findings, each confirmed on a render; the first build, against the background alone, reported 72 (`docs/library_lessons.md`, S510). Tests: `library_remediate` (8), `library` (16).
+
+✅ **⑤ A Word document's contrast is checked (S511).** Each run's color (its own `w:color`, its character and paragraph styles through `basedOn`, the defaults; a theme color with its tint or shade) is measured against its highlight or shading, the paragraph's, the table cell's, else the page color. `auto` never fails. Text in a text box, on patterned shading or in a table its style shades is named for a person (one item). One *Needs you* item per color pair, the fix written as the run's `w:color`. On the team's 82 Word files the findings held on renders (white headers on `#8EAADB` in the quarterly reports, small gold on white in the guidance memo, a stray white-on-white run in the spring update). Tests: `library_remediate` (9).
