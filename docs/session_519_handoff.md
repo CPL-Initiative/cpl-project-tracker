@@ -10,7 +10,7 @@ status: current
 
 Your moniker is **SkyCloudberry**. Session 518 (SkyServiceberry) ran with Sam on 2026-10-29, the day before the 7th
 Annual CPL Summit (Friday 2026-10-30). It was a **light** checkpoint, written at context WARN (about 108,000 tokens
-left): no lane changed state and the run wrote no re-mint or data receipt. Skipped: KB notes (nothing crossed the bar),
+left), then amended at CONTEXT EMERGENCY (about 46,000 left) for #2559's red shard: no lane changed state and the run wrote no re-mint or data receipt. Skipped: KB notes (nothing crossed the bar),
 the pipeline tab (it did not move), `kb/README.md` and `README.md` (no structure or surface change they describe).
 
 ## What shipped
@@ -55,7 +55,11 @@ phone's dark mode, his "makes sense"), `sam-funding-faq-groups-and-sierra-2026-1
    Proceed on the recommendations; each is reversible. Run `npm run a11y -- funding-model funding-model-mycpl`
    before shipping (a public view).
 
-1. **#2559:** merge on a green `test`; then wait for Pages to publish
+1. **#2559 is RED, uninvestigated:** `suite (4)` failed on head `b6ca5a7` (the checkpoint commit; job
+   123637356237, run 40927187438). The commit before it (`8ec06f3`, the FAQ code) completed its checks; find the failing
+   test in the job log, root-cause it (likely a docs or generated-file guard the checkpoint's lane moves tripped, or a
+   test reading `docs/session_*` or `faq.json`), fix, push. S518 hit CONTEXT EMERGENCY here and released the PR's
+   subscription and check-in: this session owns #2559 now. Then merge on a green `test`; then wait for Pages to publish
    `https://cpl-initiative.github.io/cpl-project-tracker/funding-model/faq.json`; then dispatch `cpl-chat-deploy.yml`
    (confirm `DEPLOY`, function `cpl-chat`) and ask Sierra one FAQ question (*"How does my college confirm
    participation?"*): she should give the FAQ's answer and link `funding-model/#questions`. A check-in
