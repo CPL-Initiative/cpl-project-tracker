@@ -26,7 +26,8 @@
 // A workbook (lane NEXT, S514): its title, and a header row on each table, a name for
 // each sheet that says what it holds (renamed in every formula, defined name and chart
 // that points at it), alt text on each picture and chart, merged cells, and data laid
-// out with no table, listed for a person.
+// out with no table, listed for a person; and (S515) each cell's font color against its
+// fill, with the nearest passing color offered as the fix.
 //
 // A PDF is read, never written: its tags, title and language come from the program that
 // exported it, so the report names that program and the steps that fix it at its source.
@@ -885,7 +886,10 @@
             var drawing = els(x, NS.s, "drawing").map(function (dr) { return rels[dr.getAttributeNS(NS.r, "id") || dr.getAttribute("r:id")]; })[0];
             return Promise.all(tableIds.map(function (tp) {
               return doc.read(tp).then(function (t) {
-                if (!t || t.documentElement.getAttribute("headerRowCount") !== "0") return;
+                if (!t) return;
+                var tsi = first(t, NS.s, "tableStyleInfo"), tsn = tsi && tsi.getAttribute("name");
+                if (tsn && tsn !== "None") (sh.tables = sh.tables || []).push(rangeOf(t.documentElement.getAttribute("ref")));
+                if (t.documentElement.getAttribute("headerRowCount") !== "0") return;
                 noHeader.push((t.documentElement.getAttribute("displayName") || t.documentElement.getAttribute("name") || "A table") + " on " + sh.name);
               });
             })).then(function () {
@@ -917,9 +921,167 @@
         if (loose.length) report.needs.push({ type: "info", id: "tl", text: "The data on " + sheetList(loose) + " is not in a table, so a screen reader cannot name each cell's column. In Excel, select the data, choose Insert, Table, and tick My table has headers." });
         if (merged.length) report.needs.push({ type: "info", id: "mc", text: "Merged cells on " + sheetList(merged) + ": a screen reader can lose its place in them. Unmerge them (Home, Merge and Center); for a title across columns, use Center Across Selection (Format Cells, Alignment)." });
         report.sheets = sheets.map(function (sh) { return { n: sh.n, name: sh.name }; });
-        return draftCharts(doc, report).then(function () { return fixTitle(doc, titleFromName(name), report); });
+        return contrastXlsx(doc, sheets, ss, report).then(function () { return draftCharts(doc, report); }).then(function () { return fixTitle(doc, titleFromName(name), report); });
       });
     });
+  }
+  // ── a workbook's contrast ───────────────────────────────────────────────────
+  // A cell's words take its font's color (xl/styles.xml: cellXfs -> fonts) and sit on its
+  // fill (cellXfs -> fills: a solid pattern's fgColor), else on white. A color is an ARGB
+  // rgb, a theme index (Excel counts lt1 before dk1, unlike the theme's own order) with a
+  // tint, an index into the old 64-color palette (the workbook's own indexedColors when it
+  // has one), or auto, which never fails. A cell in a styled table, or a fill that is a
+  // pattern or a gradient, is counted for a person; so is a sheet's conditional formatting.
+  // A shared string's own run colors are measured too; a fix writes a new font and cell
+  // format beside the old, so the other cells sharing that format keep theirs.
+  var XL_THEME = ["lt1", "dk1", "lt2", "dk2", "accent1", "accent2", "accent3", "accent4", "accent5", "accent6", "hlink", "folHlink"];
+  var XL_INDEXED = ("000000 FFFFFF FF0000 00FF00 0000FF FFFF00 FF00FF 00FFFF 000000 FFFFFF FF0000 00FF00 0000FF FFFF00 FF00FF 00FFFF " +
+    "800000 008000 000080 808000 800080 008080 C0C0C0 808080 9999FF 993366 FFFFCC CCFFFF 660066 FF8080 0066CC CCCCFF " +
+    "000080 FF00FF FFFF00 00FFFF 800080 800000 008080 0000FF 00CCFF CCFFFF CCFFCC FFFF99 99CCFF FF99CC CC99FF FFCC99 " +
+    "3366FF 33CCCC 99CC00 FFCC00 FF9900 FF6600 666699 969696 003366 339966 003300 333300 993300 993366 333399 333333").split(" ");
+  function xlColor(el, scheme, palette) {
+    if (!el) return null;
+    if (el.getAttribute("auto") === "1" || el.getAttribute("auto") === "true") return "auto";
+    var hex = null, rgb = (el.getAttribute("rgb") || "").toUpperCase(), th = el.getAttribute("theme"), ix = el.getAttribute("indexed");
+    if (/^[0-9A-F]{8}$/.test(rgb)) hex = rgb.slice(2);
+    else if (/^[0-9A-F]{6}$/.test(rgb)) hex = rgb;
+    else if (th != null && th !== "") hex = scheme[XL_THEME[+th]] || null;
+    else if (ix != null && ix !== "") { if (+ix >= 64) return "auto"; hex = palette[+ix] || null; }
+    if (!hex) return null;
+    var tint = +el.getAttribute("tint") || 0;
+    if (tint) { var hsl = toHsl(rgbOf(hex)); hsl[2] = tint < 0 ? hsl[2] * (1 + tint) : hsl[2] + (1 - hsl[2]) * tint; hex = hexOf(fromHsl(hsl)); }
+    return hex;
+  }
+  function colRow(ref) {
+    var m = /^\$?([A-Z]+)\$?(\d+)$/.exec(String(ref || "").toUpperCase());
+    if (!m) return null;
+    var c = 0; for (var i = 0; i < m[1].length; i++) c = c * 26 + m[1].charCodeAt(i) - 64;
+    return [c, +m[2]];
+  }
+  function rangeOf(ref) {
+    var ends = String(ref || "").split(":"), a = colRow(ends[0]), b = colRow(ends[1] || ends[0]);
+    return a && b ? [Math.min(a[0], b[0]), Math.min(a[1], b[1]), Math.max(a[0], b[0]), Math.max(a[1], b[1])] : null;
+  }
+  function inRange(cr, rg) { return !!(cr && rg && cr[0] >= rg[0] && cr[0] <= rg[2] && cr[1] >= rg[1] && cr[1] <= rg[3]); }
+  function contrastXlsx(doc, sheets, ss, report) {
+    return Promise.all([doc.read("xl/styles.xml"), doc.rels("xl/workbook.xml")]).then(function (got) {
+      var st = got[0], themePath = Object.keys(got[1]).map(function (k) { return got[1][k]; }).filter(function (p) { return /theme\d*\.xml$/.test(p); })[0] || "xl/theme/theme1.xml";
+      return doc.read(themePath).then(function (theme) {
+        if (!st) return;
+        var scheme = wordScheme(theme), palette = XL_INDEXED.slice();
+        var ic = first(st, NS.s, "indexedColors");
+        if (ic) els(ic, NS.s, "rgbColor").forEach(function (c, i) { var v = (c.getAttribute("rgb") || "").toUpperCase(); if (/^[0-9A-F]{8}$/.test(v)) palette[i] = v.slice(2); });
+        var fontsEl = first(st, NS.s, "fonts"), fillsEl = first(st, NS.s, "fills"), xfsEl = first(st, NS.s, "cellXfs");
+        var fontOf = function (f) {
+          if (!f) return { fg: null, size: 11, bold: false };
+          var b = child(f, NS.s, "b"), sz = child(f, NS.s, "sz");
+          return { fg: xlColor(child(f, NS.s, "color"), scheme, palette), size: sz ? +sz.getAttribute("val") || 11 : 11,
+            bold: !!b && !/^(0|false)$/.test(b.getAttribute("val") || "") };
+        };
+        var fonts = fontsEl ? els(fontsEl, NS.s, "font").filter(function (f) { return f.parentNode === fontsEl; }).map(fontOf) : [];
+        var fills = fillsEl ? els(fillsEl, NS.s, "fill").map(function (f) {
+          var pf = child(f, NS.s, "patternFill");
+          if (child(f, NS.s, "gradientFill")) return { complex: true };
+          var pt = pf && pf.getAttribute("patternType");
+          if (!pf || !pt || pt === "none") return null;
+          if (pt !== "solid") return { complex: true };
+          var h = xlColor(child(pf, NS.s, "fgColor"), scheme, palette);
+          return h && h !== "auto" ? { hex: h } : { complex: true };
+        }) : [];
+        var xfs = xfsEl ? els(xfsEl, NS.s, "xf").map(function (x) { return { font: +x.getAttribute("fontId") || 0, fill: +x.getAttribute("fillId") || 0 }; }) : [];
+        var sis = ss ? els(ss, NS.s, "si") : [], pairs = {}, order = [], unsure = 0, byHand = {}, cf = [];
+        sheets.forEach(function (sh) {
+          var x = doc.parts[sh.path];
+          if (!x) return;
+          if (els(x, NS.s, "conditionalFormatting").length) cf.push(sh.name);
+          els(x, NS.s, "c").forEach(function (c, ci) {
+            var t = c.getAttribute("t"), v = child(c, NS.s, "v"), is = child(c, NS.s, "is");
+            var si = t === "s" && v ? sis[+v.textContent] : t === "inlineStr" ? is : null;
+            var text = si ? textOf(si, NS.s) : v ? v.textContent : "";
+            if (!String(text).trim()) return;
+            var xi = +c.getAttribute("s") || 0, xf = xfs[xi] || { font: 0, fill: 0 }, font = fonts[xf.font] || fontOf(null), back = fills[xf.fill] || null;
+            var cr = colRow(c.getAttribute("r"));
+            if (!back && (sh.tables || []).some(function (rg) { return inRange(cr, rg); })) back = { complex: true };
+            if (back && back.complex) { unsure++; return; }
+            var bg = back ? back.hex : "FFFFFF";
+            var test = function (fg, size, bold) {
+              if (!fg || fg === "auto") return null;
+              var large = size >= 18 || (bold && size >= 14), need = large ? 3 : 4.5, have = ratio(fg, bg);
+              return have >= need ? null : { fg: fg, need: need, have: have, large: large };
+            };
+            // A shared string's own runs: each run's color, else the cell's.
+            var runs = si ? els(si, NS.s, "r") : [];
+            if (runs.length) runs.forEach(function (r) {
+              var rp = child(r, NS.s, "rPr");
+              if (!rp || !child(rp, NS.s, "color")) return;
+              var rf = fontOf(rp), sz = child(rp, NS.s, "sz") ? rf.size : font.size, bad = test(rf.fg, sz, child(rp, NS.s, "b") ? rf.bold : font.bold);
+              if (bad) (byHand[sh.name] = byHand[sh.name] || []).push(c.getAttribute("r") || "");
+            });
+            var bad = test(font.fg, font.size, font.bold);
+            if (!bad) return;
+            var k = bad.fg + "/" + bg + "/" + bad.need;
+            if (!pairs[k]) { pairs[k] = { fg: bad.fg, bg: bg, need: bad.need, ratio: bad.have, large: bad.large, sample: "", where: [], cells: [] }; order.push(k); }
+            var it = pairs[k];
+            if (!it.sample) it.sample = clip(text, 60);
+            if (it.where.indexOf(sh.name) < 0) it.where.push(sh.name);
+            it.cells.push({ sheet: sh.path, cell: ci, xf: xi });
+          });
+        });
+        order.forEach(function (k, i) {
+          var it = pairs[k], fix = passingColor(it.fg, it.bg, it.need), n = it.cells.length;
+          report.needs.push({ type: "contrast", id: "c" + (i + 1), path: "xl/styles.xml", fg: it.fg, bg: it.bg, need: it.need,
+            ratio: Math.round(it.ratio * 100) / 100, fix: fix, fixRatio: Math.round(ratio(fix, it.bg) * 100) / 100, cells: it.cells,
+            text: (n === 1 ? "A cell" : n + " cells") + " on " + sheetList(it.where) + " in #" + it.fg + " on #" + it.bg +
+              " reads " + (Math.floor(it.ratio * 10) / 10) + ":1; " + (it.large ? "large " : "") + "text needs " + it.need + ":1 (“" + it.sample + "”)" +
+              // Text the color of its fill is often hidden on purpose; a screen reader reads it anyway.
+              (it.ratio < 1.1 ? ". These words cannot be seen, and a screen reader still reads them. If they are hidden on purpose, untick the fix and move them to a hidden column." : "") });
+        });
+        var hand = Object.keys(byHand);
+        if (hand.length) report.needs.push({ type: "info", id: "cr", text: "Words colored within a cell fall below AA contrast on " +
+          sheetList(hand.map(function (h) { return h + " (" + byHand[h].slice(0, 5).join(", ") + (byHand[h].length > 5 ? " and " + (byHand[h].length - 5) + " more" : "") + ")"; })) +
+          ". Select those words in the cell and choose a darker font color." });
+        if (unsure) report.needs.push({ type: "info", id: "cu", text: "Contrast on " + unsure + (unsure === 1 ? " cell" : " cells") +
+          " in a styled table or on a patterned or gradient fill, which this page cannot measure. Check it by eye, or with the Accessibility Checker." });
+        if (cf.length) report.needs.push({ type: "info", id: "cf", text: "Conditional formatting on " + sheetList(cf) +
+          " can change a cell's colors as its value changes. Check each rule's colors (Home, Conditional Formatting, Manage Rules)." });
+      });
+    });
+  }
+  // Writes a contrast item's fix: for each cell format it covers, a copy of the format's
+  // font in the new color and a copy of the format using it, then points its cells there.
+  function applyContrastXlsx(doc, st, n) {
+    var fontsEl = first(st, NS.s, "fonts"), xfsEl = first(st, NS.s, "cellXfs");
+    if (!fontsEl || !xfsEl) return 0;
+    var fontEls = els(fontsEl, NS.s, "font").filter(function (f) { return f.parentNode === fontsEl; }), xfEls = els(xfsEl, NS.s, "xf");
+    var made = {}, count = 0, cache = {};
+    n.cells.forEach(function (loc) {
+      var x = doc.parts[loc.sheet];
+      if (!x) return;
+      var cells = cache[loc.sheet] = cache[loc.sheet] || els(x, NS.s, "c"), c = cells[loc.cell];
+      if (!c) return;
+      if (made[loc.xf] == null) {
+        var xf = xfEls[loc.xf], base = xf ? fontEls[+xf.getAttribute("fontId") || 0] : fontEls[0];
+        var font = base ? base.cloneNode(true) : st.createElementNS(NS.s, "font");
+        var old = child(font, NS.s, "color");
+        if (old) font.removeChild(old);
+        var clr = st.createElementNS(NS.s, "color");
+        clr.setAttribute("rgb", "FF" + n.fix);
+        var at = font.firstChild;
+        while (at && !(at.nodeType === 1 && /^(name|family|charset|scheme)$/.test(at.localName))) at = at.nextSibling;
+        font.insertBefore(clr, at);
+        fontsEl.appendChild(font);
+        var fid = els(fontsEl, NS.s, "font").filter(function (f) { return f.parentNode === fontsEl; }).length - 1;
+        fontsEl.setAttribute("count", String(fid + 1));
+        var nx = xf ? xf.cloneNode(true) : st.createElementNS(NS.s, "xf");
+        nx.setAttribute("fontId", String(fid)); nx.setAttribute("applyFont", "1");
+        xfsEl.appendChild(nx);
+        made[loc.xf] = els(xfsEl, NS.s, "xf").length - 1;
+        xfsEl.setAttribute("count", String(made[loc.xf] + 1));
+      }
+      c.setAttribute("s", String(made[loc.xf]));
+      doc.touch(loc.sheet); count++;
+    });
+    return count;
   }
   // A sheet's new name in every place that points at it: formulas, data validation and
   // conditional formatting on each sheet, the workbook's defined names, each chart's
@@ -1204,7 +1366,7 @@
             renames[sheetKey(n.sheetName)] = nm;
             doc.touch(path); done.sheets++;
           } else if (n.type === "contrast" && ans.fix) {
-            var k = report.ext === "pptx" ? applyContrast(d, n) : applyContrastDocx(d, n);
+            var k = report.ext === "pptx" ? applyContrast(d, n) : report.ext === "xlsx" ? applyContrastXlsx(doc, d, n) : applyContrastDocx(d, n);
             if (k) { doc.touch(path); done.colors += k; }
           }
         });

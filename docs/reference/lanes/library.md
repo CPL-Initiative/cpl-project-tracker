@@ -207,7 +207,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **⑦ A PDF is fixed at its source (S513).** The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S514)*.
 
-✅ **⑧ A workbook is remediated (S514).** Remediate on a dropped .xlsx sets the title and lists a sheet at its default name (renamed everywhere it is referenced), alt text per picture and chart, a table with no header row (listed, never switched on), data with no table, and merged cells. Detail and the six-workbook run: [`docs/library_lessons.md`](../../library_lessons.md), *A workbook in remediation (S514)*. Tests: `library_remediate` (95), `library` block (16).
+✅ **⑧ A workbook is remediated (S514) and ⑨ its contrast is checked (S515):** each cell's font color against its own fill, the fix written as a new font and format so cells sharing the old one keep it; a styled table, a patterned fill, words colored inside a cell and conditional formatting are listed for a person. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A workbook's contrast (S515)*. Tests: `library_remediate` (109).
 
-**NEXT:** a workbook's contrast: each cell's font color against its fill, from `xl/styles.xml`, as the deck and Word checks do. The Chancellor's Office review still certifies.
+**NEXT:** a workbook's conditional-formatting colors (each rule's `dxf` font against its fill), now listed for a person, measured the way cells are. The Chancellor's Office review still certifies.
 

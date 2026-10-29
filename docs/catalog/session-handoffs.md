@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-484 document(s).
+485 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 516 | [Session 516 handoff: a workbook's contrast in the Library's remediation](../session_516_handoff.md) | 2026-10-29 |
 | 515 | [Session 515 handoff: a workbook in the Library's remediation](../session_515_handoff.md) | 2026-10-29 |
 | 514 | [Session 514 handoff: a PDF fixed at its source; the ESL monthly pass](../session_514_handoff.md) | 2026-10-29 |
 | 513 | [Session 513 handoff: headers, footers and text boxes in a Word document's contrast](../session_513_handoff.md) | 2026-10-29 |
