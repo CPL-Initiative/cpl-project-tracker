@@ -113,7 +113,7 @@ check("one line per institution — all 118, no more, no fewer", rows.length ===
 }
 // And by NAME for the rows a reader will actually look up:
 {
-  const mtsa = rowFor(rows, "Mt San Antonio");
+  const mtsa = rowFor(rows, "Mt. San Antonio");   // its display name since 2026-10-29 (the CSM team)
   const a = T._alloc("Mt San Antonio");
   check("the Mt San Antonio row pays what the model pays (at the cap), decomposed by ITS own FTES split",
     !!mtsa && !!a && mtsa.total === Math.round(a.w) &&

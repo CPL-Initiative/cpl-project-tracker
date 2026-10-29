@@ -6434,6 +6434,10 @@ const FAQ_GENERIC = new Set([
   "cpl", "credit", "credits", "prior", "learning", "college", "colleges", "map", "funding",
   "fund", "funds", "institution", "institutions", "student", "students", "community",
   "course", "courses",
+  // "offer" since the apprenticeship question "Our college only offers a few apprenticeship
+  // programs..." (Sam, 2026-10-29): a catalog ask ("What courses does Norco College offer in
+  // welding?") shares only "college" and "offer" with it and is no funding question (S519).
+  "offer",
 ]);
 
 function faqStem(w: string): string {
@@ -6506,6 +6510,7 @@ The CPL knowledge search timed out on this turn, and other reads may have too. A
 const FAQ_RULE = `
 HOW TO USE THE CPL FUNDING FAQ SECTION. The CPL Initiative wrote these answers for the public CPL funding page, so the visitor may read the same words there.
 - When an entry answers the visitor's question, give its answer: keep its conditions, dates, figures, names and steps exactly as it states them, and add nothing that departs from it. Put it in your own sentences only where that makes it plainer.
+- Keep its funding words: a college qualifies for funding and its outcomes count toward it. Never say a college earns funding; a student earns credit.
 - Link the [CPL funding FAQ](${FAQ_PAGE}) once, after the answer, naming the entry's group.
 - When the visitor asked about the FAQ itself, list its groups and their questions and link it.
 - Where no entry fits, answer as you otherwise would, and do not mention the FAQ.`;

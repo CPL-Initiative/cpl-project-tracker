@@ -38,7 +38,7 @@ const qs = paras.filter((p) => /^Q: /.test(p)).map((p) => p.slice(3));
 // An answer runs to the next question or the next group's "## " line (S518).
 const answer = (q) => { const i = paras.indexOf("Q: " + q); let a = []; for (let j = i + 1; i >= 0 && j < paras.length && !/^(Q: |## )/.test(paras[j]); j++) a.push(paras[j]); return a.join("\n\n"); };
 
-check("37 questions: 19 from the sheet, the 6 already on the page, and Malone's 12", qs.length === 37);
+check("45 questions: 19 from the sheet, the 6 already on the page, Malone's 12 and Sam's 8 of 2026-10-29", qs.length === 45);
 check("the rollout's basics lead: qualify, then confirm",
   qs[0] === "What must an institution do to qualify for funding?" && qs[1] === "How does a college confirm its participation?");
 check("help comes last, with the support address",

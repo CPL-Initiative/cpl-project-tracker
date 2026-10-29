@@ -8,12 +8,15 @@
 //      pair and Working adults stay in the Columns menu, hidden by default,
 //      under a NEW store key: Sam's browser held v1 prefs hiding "total", which
 //      would have hidden the new Total Funds on arrival.
-//   2. THE CURR FIGURES ARE THE RELEASED ONES — what an institution meeting all
-//      three minimum conditions receives, $0 for one meeting none — coarse on
-//      the public page, and the Statewide row's detail adds the SAME figure
-//      (methodology-a-summary-must-share-the-unit-of-its-detail: before this
-//      port the statewide tables summed held funding and read $758,725 beneath
-//      a row reading $338).
+//   2. THE FUNDS QUALIFIED SO FAR FIGURES (named "Curr" until 2026-10-29) are
+//      what the measures compute to, gray while an institution has yet to meet
+//      all three minimum conditions (Sam, 2026-09-29), coarse on the public
+//      page; the Statewide row adds every institution's figure, gray included
+//      (the CSM team via Sam, 2026-10-29: "should add everything in curr college
+//      rows"), and its detail adds the SAME figure
+//      (methodology-a-summary-must-share-the-unit-of-its-detail: before 2026-09-28
+//      the statewide tables summed held funding and read $758,725 beneath a row
+//      reading $338; from then to 2026-10-29 both added only the released part).
 //   3. THE CONDITIONS SPEAK ONE LANGUAGE: the pie's slice hovers and the
 //      drill-in's Minimum Conditions line come from one wording, so they cannot
 //      disagree; the noncredit-only institutions name their own third
@@ -127,12 +130,12 @@ function drillSum(doc, id, key) {
   check("1b: the headers read Max CR Funds · Max NC Funds · Max Funds",
     th("cr_award").textContent.trim() === "Max CR Funds" && th("nc_award").textContent.trim() === "Max NC Funds" &&
     th("total").textContent.trim() === "Max Funds");
-  check("1c: a Curr header shows Curr and gives a screen reader the whole word",
-    ["cr_current", "nc_current", "current_total"].every((k) => {
-      const h = th(k);
-      return h && h.querySelector('span[aria-hidden="true"]').textContent === "Curr" &&
-        h.querySelector(".cplfund-sr-only").textContent === "Current";
-    }) && /Curr\s*Current CR Funds/.test(th("cr_current").textContent));
+  // The CSM team's word via Sam (2026-10-29): "Funds Qualified So Far" for "Curr".
+  check("1c: the headers read CR Funds Qualified So Far · NC Funds Qualified So Far · Funds Qualified So Far, Curr nowhere",
+    th("cr_current").textContent.trim() === "CR Funds Qualified So Far" &&
+    th("nc_current").textContent.trim() === "NC Funds Qualified So Far" &&
+    th("current_total").textContent.trim() === "Funds Qualified So Far" &&
+    !/\bCurr\b/.test(doc.querySelector("#cplFundTable thead").textContent));
   check("1d: every header sorts and carries its hover",
     keys.slice(1).every((k) => th(k).getAttribute("tabindex") === "0" && (k === "college" || k === "district" || k === "working_adults" || !!th(k).getAttribute("title"))));
   const style = (doc.querySelector("#cplFundTable style") || {}).textContent || "";
@@ -145,8 +148,8 @@ function drillSum(doc, id, key) {
     /var COLS_STORE = "cplfund_cols_v3"/.test(consumerSrc) && window.localStorage.getItem("cplfund_cols_v1") === null &&
     window.localStorage.getItem("cplfund_cols_v2") === null);
   const items = Array.from(doc.querySelectorAll(".cplfund-colmenu-item")).map((l) => l.textContent.trim());
-  check("1h: the Columns menu names the Curr columns in full",
-    items.indexOf("Current CR Funds") !== -1 && items.indexOf("Current Funds") !== -1 && !items.some((t) => /Curr(?!ent)/.test(t)));
+  check("1h: the Columns menu names the Funds Qualified So Far columns in full",
+    items.indexOf("CR Funds Qualified So Far") !== -1 && items.indexOf("Funds Qualified So Far") !== -1 && !items.some((t) => /\bCurr\b/.test(t)));
   // Hiding a column reaches the colgroup too, so the fixed layout sizes the
   // columns actually shown.
   const cols = () => Array.from(doc.querySelectorAll("#cplFundTable colgroup col")).map((c) => c.getAttribute("data-colw"));
@@ -215,13 +218,19 @@ function drillSum(doc, id, key) {
   check("2l: beside it, the count in words: 1 of " + n + " meet all conditions",
     sys.querySelector(".cf-sys-elig").textContent === "1 of " + n + " meet all conditions" &&
     /minimum condition/.test(sys.querySelector(".cf-sys-elig").getAttribute("title")));
-  check("2m: the Statewide Curr cells add every institution's released figure",
-    cellByKey(doc, sys, "cr_current").textContent.trim() === money(q.earned_cr + h.earned_cr) &&
-    cellByKey(doc, sys, "current_total").textContent.trim() === money(q.earned_total + h.earned_total));
-  // Sorting a Curr column puts the qualifying institution first.
+  check("2m: the Statewide Funds Qualified So Far cells add every institution's figure, gray included",
+    cellByKey(doc, sys, "cr_current").textContent.trim() === money(q.earned_cr + q.held_cr + h.earned_cr + h.held_cr) &&
+    cellByKey(doc, sys, "current_total").textContent.trim() ===
+      money(q.earned_total + q.earned_withheld + h.earned_total + h.earned_withheld));
+  check("2m2: with one institution qualifying the Statewide figure is not gray, and its hover names the gray part",
+    !cellByKey(doc, sys, "current_total").classList.contains("cf-gated") &&
+    /of it is gray: institutions yet to meet all their minimum conditions/.test(cellByKey(doc, sys, "current_total").getAttribute("title")));
+  // Sorting a Funds Qualified So Far column puts the highest figure the cells
+  // show first, a gray one included (curFig, 2026-10-29).
   click(window, doc.querySelector('#cplFundTable th[data-sort="cr_current"]'));
-  check("2n: Curr CR Funds sorts by its figure (highest first)",
-    doc.querySelector("#cplFundTable tr.cplfund-row").getAttribute("data-id") === "c:" + QUAL &&
+  const topId = "c:" + ((q.earned_cr + q.held_cr) >= (h.earned_cr + h.held_cr) ? QUAL : HELD);
+  check("2n: CR Funds Qualified So Far sorts by the figure its cells show (highest first)",
+    doc.querySelector("#cplFundTable tr.cplfund-row").getAttribute("data-id") === topId &&
     doc.querySelector('#cplFundTable th[data-sort="cr_current"]').getAttribute("aria-sort") === "descending");
   click(window, doc.querySelector('#cplFundTable th[data-sort="college"]'));
 
@@ -229,13 +238,13 @@ function drillSum(doc, id, key) {
   const sd = openRow(window, doc, "sys");
   check("2o: the statewide drill-in opens, with no Max Funds summary line",
     !!sd && !sd.querySelector(".cplfund-dtl-sum") && !/Max Funds:/.test(sd.textContent));
-  check("2p: its Curr CR Funds rows add to the Statewide row's Curr CR Funds (released, never held)",
+  check("2p: its CR Funds Qualified So Far rows add to the Statewide row's figure",
     drillSum(doc, "sys", "cr_current") !== null &&
     Math.abs(drillSum(doc, "sys", "cr_current") - num(cellByKey(doc, doc.querySelector("#cplFundTable tr.cplfund-systemrow"), "cr_current").textContent)) <= 3);
-  check("2q: and exclude HELD's measured funding, which the row excludes too",
-    drillSum(doc, "sys", "cr_current") < q.earned_cr + h.earned_withheld - 1);
+  check("2q: and include HELD's gray figure, as the row does",
+    Math.abs(drillSum(doc, "sys", "cr_current") - (q.earned_cr + h.held_cr)) <= 3);
   const ncSum = drillSum(doc, "sys", "nc_current");
-  check("2r: its Curr NC Funds rows add to the Statewide row's Curr NC Funds",
+  check("2r: its NC Funds Qualified So Far rows add to the Statewide row's Curr NC Funds",
     ncSum !== null && Math.abs(ncSum - num(cellByKey(doc, doc.querySelector("#cplFundTable tr.cplfund-systemrow"), "nc_current").textContent)) <= 3);
   // A college's own drill-in adds to its own row, the same unit.
   const qd = openRow(window, doc, "c:" + QUAL);
@@ -273,8 +282,8 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   const csv = T._csv().split("\r\n");
   const head = csv[1].split(",");
   const line = csv.find((l) => l.split(",")[1] === QUAL).split(",");
-  const iCur = head.findIndex((x) => /^Current credit /.test(x));
-  check("3c: the public CSV's Current credit column coarsens the same way",
+  const iCur = head.findIndex((x) => /^Credit funds qualified so far /.test(x));
+  check("3c: the public CSV's Credit funds qualified so far column coarsens the same way",
     iCur > 0 && (line[iCur] === "<1000" || Number(line[iCur]) % 1000 === 0));
 }
 
@@ -499,14 +508,14 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   // The CSV.
   const csv = T._csv().split("\r\n");
   const head = csv[1].split(",");
-  const iCr = head.findIndex((x) => /^Current credit /.test(x));
-  const iNc = head.findIndex((x) => /^Current noncredit /.test(x));
-  const iTot = head.findIndex((x) => /^Current total /.test(x));
-  check("8e: the CSV carries Current credit / noncredit / total beside Max award",
+  const iCr = head.findIndex((x) => /^Credit funds qualified so far /.test(x));
+  const iNc = head.findIndex((x) => /^Noncredit funds qualified so far /.test(x));
+  const iTot = head.findIndex((x) => /^Funds qualified so far (?!as )/.test(x));
+  check("8e: the CSV carries Credit / Noncredit funds qualified so far and Funds qualified so far beside Max award",
     iCr > 0 && iNc === iCr + 1 && iTot === iCr + 2 && /^Max award /.test(head[iCr - 1]));
   const q = T._alloc(QUAL);
   const qLine = csv.find((l) => l.split(",")[1] === QUAL).split(",");
-  check("8f: the curator CSV's Curr twins are the exact released figures",
+  check("8f: the curator CSV's Funds qualified so far twins are exact (a qualifying institution's are its released figures)",
     Number(qLine[iCr]) === Math.round(q.earned_cr) && Number(qLine[iNc]) === Math.round(q.earned_nc) &&
     Number(qLine[iTot]) === Math.round(q.earned_total));
   const sysLine = csv.find((l) => l.split(",")[1] === "Statewide");
@@ -543,10 +552,10 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
     /"  \.cplfund-basis-note code, \.cplfund-earned-line code \{ white-space: normal; overflow-wrap: anywhere; \}"/.test(consumerSrc));
   const reading = doc.querySelector('.cplfund-prose[data-textblock="reading"]');
   check("9e: the reading note describes the Dashboard's columns, not a two-line cell",
-    !!reading && /^The Dashboard sets each max award beside its Curr \(current\) figure, the funding qualifying so far\./.test(reading.textContent.trim()) &&
+    !!reading && /^The Dashboard sets each max award beside its Funds Qualified So Far\./.test(reading.textContent.trim()) &&
     !/on top|beneath it/.test(reading.textContent));
-  check("9f: the allocation sentence names Max Funds and Curr Funds, not a cell's two lines",
-    /the Dashboard&#39;s " \+\s*"Max Funds\./.test(consumerSrc) && /Curr Funds shows the funding qualifying so far/.test(consumerSrc) &&
+  check("9f: the allocation sentence names Max Funds and Funds Qualified So Far, not a cell's two lines",
+    /the Dashboard&#39;s " \+\s*"Max Funds\./.test(consumerSrc) && /Funds Qualified So Far shows where each institution stands to date/.test(consumerSrc) &&
     !/top line of every/.test(consumerSrc) && !/second line of each cell/.test(consumerSrc));
   // TBA wherever a measure has yet to arrive (Sam, 2026-09-28). A source check
   // reaches the branches no fixture here paints (the curator's diagnostic, the
@@ -572,8 +581,8 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   const { T } = setup({ signedIn: true });
   const csv = T._csv().split("\r\n");
   const head = csv[1].split(",");
-  const iTot = head.findIndex((x) => /^Current total /.test(x));
-  const iPct = head.indexOf("Current total as % of max award");
+  const iTot = head.findIndex((x) => /^Funds qualified so far (?!as )/.test(x));
+  const iPct = head.indexOf("Funds qualified so far as % of max award");
   const iDem = head.findIndex((x) => /^Demonstrated /.test(x));
   const iHeld = head.indexOf("Withheld (minimum conditions not met)");
   check("9k: the percentage follows Current total and names it; Demonstrated and Withheld follow",
@@ -599,8 +608,8 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   const { T } = setup({ public: true });
   const csv = T._csv().split("\r\n");
   const head = csv[1].split(",");
-  const iTot = head.findIndex((x) => /^Current total /.test(x));
-  const iPct = head.indexOf("Current total as % of max award");
+  const iTot = head.findIndex((x) => /^Funds qualified so far (?!as )/.test(x));
+  const iPct = head.indexOf("Funds qualified so far as % of max award");
   const q = T._alloc(QUAL);
   const ql = csv.find((l) => l.split(",")[1] === QUAL).split(",");
   const exactPct = Math.round(q.earned_total / q.total * 1000) / 10 + "%";

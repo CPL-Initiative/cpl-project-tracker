@@ -813,3 +813,12 @@ Sam: *"the current mobile view is mostly consumed by the header text."* The intr
 ## Moved from the lane (S518)
 
 **The funding FAQ (S518; Sam, 2026-10-29: *"can you ensure that sierra has access to the FAQs so she could answer consistently?"*, then *"go ahead with the FAQ categories and Sierra"*).** Each turn reads the public funding page's FAQ beside the retrieval batch (`fetchFundingFaq`, cached ten minutes): `funding-model/faq.json` from Pages, filed from `cpl_funding.js` by `scripts/build_funding_faq.js` (checked by `check_generated.sh` and `sierra_funding_faq`), or the published scenario's `text.x_faq` once a curator saves one. `matchFaq` keeps up to four entries a question names; their answers ride whole in the volatile half (`faqContext`) with `FAQ_RULE` (keep the FAQ's conditions, dates and figures, link it once), and an ask for the FAQ lists every question by group. Deployed by `cpl-chat-deploy.yml` after the merge.
+
+## S519 (2026-10-29): a stalled database became a 500, and the smoke's model checks
+
+- **Every read cut at 5 s together means the database, not the question.** Sam's firefighter question at 19:22Z saw sixteen reads cut at the same instant, `sierra_guidance` and `map_colleges` among them. The daily MAP Custom Report load was promoting student credit to live at that minute (its run went 19:11 to 19:26Z). GitHub had started its 13:40 UTC cron five to six hours late every day that week, and the load now runs at 04:57 UTC, 9:57 PM Pacific (Sam: *"Maybe 10P PDT"*; #2561).
+- **A cut request keeps running in Postgres.** The route time limit aborts Sierra's fetch at 5 s, and the statement runs on to the 8 s `statement_timeout`. Consecutive questions stack load. `search_college_programs` (mean about 2 s, peak 7.8 s) and `credential_alignment_for_college` (about 2 s) are the slow reads. Speeding them up is open work.
+- **The knowledge search failed closed; it now fails safe (#2561).** A timed-out `match_document_sections` returned a 500. It now answers from what loaded, and `SEARCH_FAILED_NOTE` tells her to say the data did not load, never that none exists.
+- **The deploy smoke's model checks fail one at a time.** The last three deploys (10-27, 10-28, 10-29) each failed a different model-behavior assertion (7q, 7v COCI, 7v CompTIA). Each time the deploy job itself passed and the function was live.
+- **Sierra's first FAQ answer said a college "earns" its award.** The FAQ rule now keeps the funding words (#2560).
+

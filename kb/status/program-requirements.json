@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-29T18:00:19Z",
-  "session": 518,
-  "moniker": "SkyServiceberry",
+  "written_at": "2026-10-29T19:56:16Z",
+  "session": 519,
+  "moniker": "SkyCloudberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_519_handoff.md",
+  "handoff": "docs/session_520_handoff.md",
   "next_step": {
     "title": "Glendale's course units from its descriptions",
     "text": "180 Glendale records fail arithmetic, most on courses the state's file lists without units; the next session reads each such course's units from the catalog's course descriptions, which print them, and rescores."
@@ -138,6 +138,10 @@
   },
   "changes": [
     {
+      "at": "2026-10-29T19:58:00Z",
+      "text": "No harvest change this run (S519, Sam's session, worked the CSM team's funding fixes, Sam's eight FAQs, and Sierra's timeout); the headline and harvest measures re-read."
+    },
+    {
       "at": "2026-10-29T18:05:00Z",
       "text": "No harvest change this run (S518, Sam's session, worked the Library's remediation, the funding page on a phone and the FAQ for Sierra); the headline and harvest measures re-read."
     },
@@ -148,10 +152,6 @@
     {
       "at": "2026-10-29T12:47:00Z",
       "text": "No harvest change this run (S517 worked the Library's chart contrast); the headline and harvest measures re-read."
-    },
-    {
-      "at": "2026-10-29T08:45:00Z",
-      "text": "No harvest change this run (S513 worked the Library's PDF remediation and the ESL monthly pass); the headline and harvest measures re-read."
     }
   ],
   "headline": [

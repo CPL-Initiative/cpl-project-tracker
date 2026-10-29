@@ -75,8 +75,10 @@ const VALUE = /^["'](earned|earning)["']$/;
  *    students — not the connotation he objected to. */
 const STUDENT_SENSE = "documenting the CPL they earn in the";
 /* 3. A PERSON'S OWN WORDS, by name (Sam, 2026-10-28: "push them as written by
- *    Malone"): Malone's FAQ question goes up as he wrote it. */
-const HUMAN_AUTHORED = ["Does one college earning more funding reduce"];
+ *    Malone"): Malone's FAQ question goes up as he wrote it, and the apprenticeship
+ *    answers Sam brought on 2026-10-29, where a student or worker earns the credit. */
+const HUMAN_AUTHORED = ["Does one college earning more funding reduce",
+  "Traditional apprenticeship college credit is generally earned", "workers who earned industry-recognized credentials"];
 
 /* ── only what is INSIDE a string reaches a reader ─────────────────────────────
  * `earned: 0` is an object key and `function earnedSubHtml(cap, earned, ...)` is

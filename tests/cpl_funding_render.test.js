@@ -249,7 +249,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
       .find(function (d) { return /Show the institutions with Base and Cap funding/.test(d.textContent); });
     check("the bounds fold replaces it: at-cap names, the at-base count, range + average",
       !!fold &&
-      /At the cap:/.test(fold.textContent) && /Mt San Antonio/.test(fold.textContent) &&
+      /At the cap:/.test(fold.textContent) && /Mt\. San Antonio/.test(fold.textContent) &&
       new RegExp("At the base:\\s*" + m0.floorCount + " institutions").test(fold.textContent) &&
       fold.textContent.indexOf("average max award " +
         money(T0._netCollege() / ROSTER_N)) !== -1);
@@ -692,7 +692,7 @@ const money = function (n) { return "$" + Math.round(n).toLocaleString("en-US");
   check("the duplicating NC $ column has not come back", !headers.some((h) => /^NC \$/.test(h)));
   const mtsacA = T._alloc("Mt San Antonio");
   const mtsac = Array.from(doc.querySelectorAll("tr.cplfund-row"))
-    .find((tr) => tr.textContent.indexOf("Mt San Antonio") !== -1);
+    .find((tr) => tr.getAttribute("data-id") === "c:Mt San Antonio");
   // The CR/NC pair, read by class: the Max award cell (cf-max) leads it.
   const cells = Array.from(mtsac.querySelectorAll("td.cf-award:not(.cf-max)")).map((td) => td.textContent);
   const maxCell = mtsac.querySelector("td.cf-award.cf-max");

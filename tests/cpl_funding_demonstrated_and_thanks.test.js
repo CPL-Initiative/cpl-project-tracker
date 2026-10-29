@@ -58,12 +58,12 @@ const LINE = /^Demonstrated: \$[\d,]+ of \$[\d,]+ Total Possible \(\d/;
   // The ruling moved the cards' word only. The Curr columns and the CSV keep
   // Current for the qualifying figure, and the CSV carries both.
   const th = doc.querySelector('th[data-sort="current_total"]');
-  // Curr Funds since 2026-10-25 (Sam: two funding columns).
-  check("4e: the College Dashboard's Curr Funds header keeps Current for the qualifying figure",
-    !!th && /Current Funds/.test(th.textContent));
+  // Curr Funds since 2026-10-25 (Sam: two funding columns), Funds Qualified So Far since 2026-10-29 (the CSM team).
+  check("4e: the College Dashboard's Funds Qualified So Far header names the qualifying figure",
+    !!th && /Funds Qualified So Far/.test(th.textContent));
   const head = T._csv().split("\r\n")[1] || "";
-  check("4f: the CSV keeps both figures: Current total (qualifying) and Demonstrated (the cards')",
-    /(^|,)Current total /.test(head) && /(^|,)Demonstrated /.test(head));
+  check("4f: the CSV keeps both figures: Funds qualified so far and Demonstrated (the cards')",
+    /(^|,)Funds qualified so far (?!as )/.test(head) && /(^|,)Demonstrated /.test(head));
 
   T._setScenario({ disbursement: "frontload" });
   T.render();

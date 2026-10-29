@@ -481,6 +481,7 @@ window.CPL_FUNDING = {
   {
    "order": 83,
    "college": "Reedley College",
+   "display": "Reedley",
    "headcount": 18527,
    "district": "State Center Community College District",
    "county": "Fresno",
@@ -494,7 +495,7 @@ window.CPL_FUNDING = {
   {
    "order": 112,
    "college": "West Hills Coalinga",
-   "display": "Coalinga College",
+   "display": "Coalinga",
    "rural": true,
    "headcount": 6593,
    "district": "West Hills Community College District",
@@ -523,7 +524,7 @@ window.CPL_FUNDING = {
   {
    "order": 44,
    "college": "Imperial",
-   "display": "Imperial Valley College",
+   "display": "Imperial Valley",
    "rural": true,
    "headcount": 11715,
    "district": "Imperial Community College District",
@@ -815,6 +816,7 @@ window.CPL_FUNDING = {
   {
    "order": 70,
    "college": "Mt San Antonio",
+   "display": "Mt. San Antonio",
    "headcount": 83727,
    "district": "Mt. San Antonio Community College District",
    "county": "Los Angeles",
@@ -1154,6 +1156,7 @@ window.CPL_FUNDING = {
   {
    "order": 73,
    "college": "Norco College",
+   "display": "Norco",
    "headcount": 20731,
    "district": "Riverside Community College District",
    "county": "Riverside",
@@ -1470,6 +1473,7 @@ window.CPL_FUNDING = {
   {
    "order": 10,
    "college": "Canada",
+   "display": "Cañada",
    "headcount": 11891,
    "district": "San Mateo County Community College District",
    "county": "San Mateo",
@@ -1819,7 +1823,7 @@ window.CPL_FUNDING = {
  "ftes_label": "2025-2026 CCCCO DataMart Annual FTES (credit); noncredit FTES carried separately and used only for the noncredit-feeder lane",
  "ftes_source": {
   "name": "CCCCO MIS DataMart — Annual FTES Summary",
-  "url": "https://datamart.cccco.edu/Outcomes/FTES_Summary.aspx",
+  "url": "https://datamart.cccco.edu/Students/FTES_Summary.aspx",
   "selection": "Annual 2025-2026, by college",
   "pulled": "2026-09-24"
  },

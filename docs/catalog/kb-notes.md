@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-565 document(s).
+566 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -199,6 +199,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A ruling names a record; the store may count another](../kb-notes/methodology-a-ruling-names-a-record-the-store-may-count-another.md) | methodology | published | 2026-10-19 | 2026-10-19 |
 | [A safe fallback is safe only for the caller it was written for](../kb-notes/methodology-a-safe-fallback-is-caller-specific.md) | methodology | published | 2026-08-11 | 2026-08-11 |
 | [A saved setting is not the effective value — ask the model, not the config](../kb-notes/methodology-a-saved-setting-is-not-the-effective-value.md) | methodology | published | 2026-08-26 | 2026-08-26 |
+| [A scheduled workflow runs when GitHub gets to it, so place it where a late start is harmless](../kb-notes/methodology-a-cron-runs-when-github-gets-to-it.md) | methodology | published | 2026-10-29 | 2026-10-29 |
 | [A scoped question may need a different instrument, not a filter](../kb-notes/methodology-a-scoped-question-may-need-a-different-instrument.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A score measured in one population is not a score in another](../kb-notes/methodology-a-score-measured-in-one-population-is-not-a-score-in-another.md) | methodology | published | 2026-09-17 | 2026-09-17 |
 | [A screen and its export must share a scope, not a shape](../kb-notes/methodology-screen-and-export-share-a-scope-not-a-shape.md) | methodology | published | 2026-08-28 | 2026-08-28 |

@@ -88,10 +88,10 @@ function hiddenKeys(doc) {
   check("1a ⭐ the table shows the institution, Max Funds and Curr Funds; the CR and NC split columns are hidden",
     shown.join(",") === "college,total,current_total" &&
     ["cr_award", "cr_current", "nc_award", "nc_current"].every((k) => hid.indexOf(k) >= 0));
-  check("1b the two headers read Max Funds and Curr Funds (Current Funds to a screen reader)",
-    /^Max Funds/.test(head("total")) && /Curr\s*Current\s*Funds/.test(head("current_total")));
+  check("1b the two headers read Max Funds and Funds Qualified So Far",
+    /^Max Funds/.test(head("total")) && /^Funds Qualified So Far/.test(head("current_total")));
   const menu = Array.from(doc.querySelectorAll(".cplfund-colmenu-item")).map(flat);
-  check("1c the split columns stay in the Columns menu", ["Max CR Funds", "Current CR Funds", "Max NC Funds", "Current NC Funds"]
+  check("1c the split columns stay in the Columns menu", ["Max CR Funds", "CR Funds Qualified So Far", "Max NC Funds", "NC Funds Qualified So Far"]
     .every((w) => menu.indexOf(w) >= 0));
   check("1d a fresh browser starts from the v3 column store, and the v1 and v2 stores are cleared",
     /var COLS_STORE = "cplfund_cols_v3"/.test(consumerSrc) && /COLS_STORE_RETIRED = \["cplfund_cols_v1", "cplfund_cols_v2"\]/.test(consumerSrc));
@@ -113,8 +113,8 @@ function hiddenKeys(doc) {
       const i = colKeys(doc).indexOf("current_total");
       return !!r.cells[i].querySelector(".cplfund-srclink");
     }));
-  check("1i ⭐ the band over the rows reads Max Funds and Curr Funds",
-    d.bandCells && /^Max Funds$/.test(d.bandCells.total.text) && /Funds$/.test(d.bandCells.current_total.text));
+  check("1i ⭐ the band over the rows reads Max Funds and Funds Qualified So Far",
+    d.bandCells && /^Max Funds$/.test(d.bandCells.total.text) && /^Funds Qualified So Far$/.test(d.bandCells.current_total.text));
   check("1j the noncredit lane's reported count left the table (Sam struck the line)",
     !d.all.some((tr) => /Reported, not funded/.test(flat(tr))));
   const foot = flat(doc.querySelector(".cplfund-foot"));
