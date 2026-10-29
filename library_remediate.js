@@ -931,9 +931,15 @@
   // rgb, a theme index (Excel counts lt1 before dk1, unlike the theme's own order) with a
   // tint, an index into the old 64-color palette (the workbook's own indexedColors when it
   // has one), or auto, which never fails. A cell in a styled table, or a fill that is a
-  // pattern or a gradient, is counted for a person; so is a sheet's conditional formatting.
-  // A shared string's own run colors are measured too; a fix writes a new font and cell
-  // format beside the old, so the other cells sharing that format keep theirs.
+  // pattern or a gradient, is counted for a person. A shared string's own run colors are
+  // measured too; a fix writes a new font and cell format beside the old, so the other
+  // cells sharing that format keep theirs.
+  // A conditional-formatting rule paints its differential format (xl/styles.xml: dxfs) over
+  // each cell in its range when the rule holds: its font color, else the cell's, on its
+  // fill, else the cell's. A dxf's solid fill is its bgColor (fgColor when it has none).
+  // Each dxf is one item; its fix is a copy of the dxf in a color that passes on every fill
+  // its failing rules meet, and only those rules point at the copy. A color scale, data bar
+  // or icon set, and an Excel 2010 rule (x14, in the sheet's extLst), are listed for a person.
   var XL_THEME = ["lt1", "dk1", "lt2", "dk2", "accent1", "accent2", "accent3", "accent4", "accent5", "accent6", "hlink", "folHlink"];
   var XL_INDEXED = ("000000 FFFFFF FF0000 00FF00 0000FF FFFF00 FF00FF 00FFFF 000000 FFFFFF FF0000 00FF00 0000FF FFFF00 FF00FF 00FFFF " +
     "800000 008000 000080 808000 800080 008080 C0C0C0 808080 9999FF 993366 FFFFCC CCFFFF 660066 FF8080 0066CC CCCCFF " +
@@ -989,11 +995,50 @@
           return h && h !== "auto" ? { hex: h } : { complex: true };
         }) : [];
         var xfs = xfsEl ? els(xfsEl, NS.s, "xf").map(function (x) { return { font: +x.getAttribute("fontId") || 0, fill: +x.getAttribute("fillId") || 0 }; }) : [];
+        var dxfsEl = first(st, NS.s, "dxfs");
+        var dxfs = dxfsEl ? els(dxfsEl, NS.s, "dxf").map(function (d) {
+          var f = child(d, NS.s, "font"), fl = child(d, NS.s, "fill"), pf = fl && child(fl, NS.s, "patternFill"), b = f && child(f, NS.s, "b"), fill = null;
+          if (fl && child(fl, NS.s, "gradientFill")) fill = { complex: true };
+          else if (pf) {
+            var pt = pf.getAttribute("patternType");
+            if (pt && pt !== "solid" && pt !== "none") fill = { complex: true };
+            else if (pt !== "none") {
+              var h = xlColor(child(pf, NS.s, "bgColor") || child(pf, NS.s, "fgColor"), scheme, palette);
+              fill = h && h !== "auto" ? { hex: h } : h === "auto" ? { complex: true } : null;
+            }
+          }
+          return { fg: f ? xlColor(child(f, NS.s, "color"), scheme, palette) : null, bold: b ? !/^(0|false)$/.test(b.getAttribute("val") || "") : null, fill: fill };
+        }) : [];
         var sis = ss ? els(ss, NS.s, "si") : [], pairs = {}, order = [], unsure = 0, byHand = {}, cf = [];
+        var cfs = {}, cfOrder = [], cfUnsure = 0;
         sheets.forEach(function (sh) {
           var x = doc.parts[sh.path];
           if (!x) return;
-          if (els(x, NS.s, "conditionalFormatting").length) cf.push(sh.name);
+          // Each rule with a dxf, the ranges it covers, and (once the cells are read) every
+          // fill it meets: a range with no written cell meets the sheet's default, on white.
+          var rules = [], byHandCf = false;
+          els(x, NS.s, "cfRule").forEach(function (r, ri) {
+            var d = r.getAttribute("dxfId"), cfEl = r.parentNode;
+            if (d == null || d === "" || !dxfs[+d]) { byHandCf = true; return; }
+            var rgs = String((cfEl && cfEl.getAttribute("sqref")) || "").split(/\s+/).map(rangeOf).filter(Boolean);
+            if (rgs.length) rules.push({ ri: ri, dxf: +d, rgs: rgs, met: 0, sqref: cfEl.getAttribute("sqref") });
+          });
+          if (byHandCf || els(x, "*", "conditionalFormatting").some(function (e) { return e.namespaceURI !== NS.s; })) cf.push(sh.name);
+          var meet = function (rule, fg, bg, size, bold) {
+            var dx = dxfs[rule.dxf], f = dx.fg || fg, b = dx.bold != null ? dx.bold : bold, back = dx.fill || (bg ? { hex: bg } : { complex: true });
+            rule.met++;
+            if (back.complex) { cfUnsure++; return; }
+            if (!f || f === "auto") return;
+            var large = size >= 18 || (b && size >= 14), need = large ? 3 : 4.5, have = ratio(f, back.hex);
+            var it = cfs[rule.dxf] = cfs[rule.dxf] || { dxf: rule.dxf, own: dx.fg, met: [], bad: [], rules: [], where: [] };
+            if (cfOrder.indexOf(rule.dxf) < 0) cfOrder.push(rule.dxf);
+            it.met.push({ bg: back.hex, need: need, rule: sh.path + "#" + rule.ri });
+            if (have >= need) return;
+            it.bad.push({ fg: f, bg: back.hex, need: need, have: have, large: large });
+            if (!it.rules.some(function (q) { return q.sheet === sh.path && q.rule === rule.ri; })) it.rules.push({ sheet: sh.path, rule: rule.ri });
+            var at = sh.name + " " + rule.sqref.replace(/\$/g, "").replace(/\s+/g, ", ");
+            if (it.where.indexOf(at) < 0) it.where.push(at);
+          };
           els(x, NS.s, "c").forEach(function (c, ci) {
             var t = c.getAttribute("t"), v = child(c, NS.s, "v"), is = child(c, NS.s, "is");
             var si = t === "s" && v ? sis[+v.textContent] : t === "inlineStr" ? is : null;
@@ -1002,6 +1047,9 @@
             var xi = +c.getAttribute("s") || 0, xf = xfs[xi] || { font: 0, fill: 0 }, font = fonts[xf.font] || fontOf(null), back = fills[xf.fill] || null;
             var cr = colRow(c.getAttribute("r"));
             if (!back && (sh.tables || []).some(function (rg) { return inRange(cr, rg); })) back = { complex: true };
+            rules.forEach(function (rule) {
+              if (rule.rgs.some(function (rg) { return inRange(cr, rg); })) meet(rule, font.fg, back ? (back.complex ? null : back.hex) : "FFFFFF", font.size, font.bold);
+            });
             if (back && back.complex) { unsure++; return; }
             var bg = back ? back.hex : "FFFFFF";
             var test = function (fg, size, bold) {
@@ -1026,6 +1074,7 @@
             if (it.where.indexOf(sh.name) < 0) it.where.push(sh.name);
             it.cells.push({ sheet: sh.path, cell: ci, xf: xi });
           });
+          rules.forEach(function (rule) { if (!rule.met) { var f0 = fonts[(xfs[0] || { font: 0 }).font] || fontOf(null); meet(rule, f0.fg, "FFFFFF", f0.size, f0.bold); } });
         });
         order.forEach(function (k, i) {
           var it = pairs[k], fix = passingColor(it.fg, it.bg, it.need), n = it.cells.length;
@@ -1036,20 +1085,38 @@
               // Text the color of its fill is often hidden on purpose; a screen reader reads it anyway.
               (it.ratio < 1.1 ? ". These words cannot be seen, and a screen reader still reads them. If they are hidden on purpose, untick the fix and move them to a hidden column." : "") });
         });
+        cfOrder.forEach(function (d, i) {
+          var it = cfs[d];
+          if (!it.bad.length) return;
+          var worst = it.bad.slice().sort(function (a, b) { return a.have / a.need - b.have / b.need; })[0];
+          var need = Math.max.apply(null, it.bad.map(function (b) { return b.need; }));
+          // The fix must pass on every fill the failing rules meet, the passing cells' included.
+          var mine = it.met.filter(function (m) { return it.rules.some(function (q) { return m.rule === q.sheet + "#" + q.rule; }); });
+          var fix = passingColor(it.own || worst.fg, worst.bg, need);
+          var ok = mine.every(function (m) { return ratio(fix, m.bg) >= m.need; });
+          var n = it.rules.length, says = (n === 1 ? "A conditional-formatting rule" : n + " conditional-formatting rules") + " on " + sheetList(it.where) + ", when " + (n === 1 ? "it holds" : "they hold") +
+            ", show" + (n === 1 ? "s" : "") + " words in #" + worst.fg + " on #" + worst.bg + ", which reads " + (Math.floor(worst.have * 10) / 10) + ":1; " + (worst.large ? "large " : "") + "text needs " + worst.need + ":1";
+          if (!ok) { report.needs.push({ type: "info", id: "cfc" + (i + 1), text: says + ". No one color passes on every fill it meets, so change the rule's colors (Home, Conditional Formatting, Manage Rules)." }); return; }
+          report.needs.push({ type: "contrast", id: "cfc" + (i + 1), path: "xl/styles.xml", fg: worst.fg, bg: worst.bg, need: need,
+            ratio: Math.round(worst.have * 100) / 100, fix: fix, fixRatio: Math.round(ratio(fix, worst.bg) * 100) / 100, dxf: it.dxf, rules: it.rules, text: says });
+        });
         var hand = Object.keys(byHand);
         if (hand.length) report.needs.push({ type: "info", id: "cr", text: "Words colored within a cell fall below AA contrast on " +
           sheetList(hand.map(function (h) { return h + " (" + byHand[h].slice(0, 5).join(", ") + (byHand[h].length > 5 ? " and " + (byHand[h].length - 5) + " more" : "") + ")"; })) +
           ". Select those words in the cell and choose a darker font color." });
         if (unsure) report.needs.push({ type: "info", id: "cu", text: "Contrast on " + unsure + (unsure === 1 ? " cell" : " cells") +
           " in a styled table or on a patterned or gradient fill, which this page cannot measure. Check it by eye, or with the Accessibility Checker." });
+        if (cfUnsure) report.needs.push({ type: "info", id: "cfu", text: "Conditional formatting on " + cfUnsure + (cfUnsure === 1 ? " cell" : " cells") +
+          " paints on a styled table, a pattern or a gradient, which this page cannot measure. Check those rules' colors by eye." });
         if (cf.length) report.needs.push({ type: "info", id: "cf", text: "Conditional formatting on " + sheetList(cf) +
-          " can change a cell's colors as its value changes. Check each rule's colors (Home, Conditional Formatting, Manage Rules)." });
+          " uses a color scale, data bar, icon set or a rule this page cannot read. Check each rule's colors (Home, Conditional Formatting, Manage Rules)." });
       });
     });
   }
   // Writes a contrast item's fix: for each cell format it covers, a copy of the format's
   // font in the new color and a copy of the format using it, then points its cells there.
   function applyContrastXlsx(doc, st, n) {
+    if (n.dxf != null) return applyContrastDxf(doc, st, n);
     var fontsEl = first(st, NS.s, "fonts"), xfsEl = first(st, NS.s, "cellXfs");
     if (!fontsEl || !xfsEl) return 0;
     var fontEls = els(fontsEl, NS.s, "font").filter(function (f) { return f.parentNode === fontsEl; }), xfEls = els(xfsEl, NS.s, "xf");
@@ -1080,6 +1147,31 @@
       }
       c.setAttribute("s", String(made[loc.xf]));
       doc.touch(loc.sheet); count++;
+    });
+    return count;
+  }
+  // A conditional format's fix: a copy of its dxf whose font carries the new color (a dxf's
+  // font comes first among its children), and the failing rules pointed at the copy.
+  function applyContrastDxf(doc, st, n) {
+    var dxfsEl = first(st, NS.s, "dxfs"), old = dxfsEl && els(dxfsEl, NS.s, "dxf")[n.dxf];
+    if (!old) return 0;
+    var nd = old.cloneNode(true), font = child(nd, NS.s, "font");
+    if (!font) { font = st.createElementNS(NS.s, "font"); nd.insertBefore(font, nd.firstChild); }
+    var was = child(font, NS.s, "color");
+    if (was) font.removeChild(was);
+    var clr = st.createElementNS(NS.s, "color");
+    clr.setAttribute("rgb", "FF" + n.fix);
+    var at = font.firstChild;
+    while (at && !(at.nodeType === 1 && /^(name|family|charset|scheme)$/.test(at.localName))) at = at.nextSibling;
+    font.insertBefore(clr, at);
+    dxfsEl.appendChild(nd);
+    var id = els(dxfsEl, NS.s, "dxf").length - 1, count = 0;
+    dxfsEl.setAttribute("count", String(id + 1));
+    n.rules.forEach(function (q) {
+      var x = doc.parts[q.sheet], r = x && els(x, NS.s, "cfRule")[q.rule];
+      if (!r) return;
+      r.setAttribute("dxfId", String(id));
+      doc.touch(q.sheet); count++;
     });
     return count;
   }
