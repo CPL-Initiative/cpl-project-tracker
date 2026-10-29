@@ -1167,6 +1167,9 @@
       '<div class="lib-remcols"><div><h4 class="lib-remh">Fixed for you (' + rep.fixed.length + ")</h4>" +
       (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f, i) { return '<li id="lib-remfix-' + i + '" tabindex="-1">' + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
       '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
+      // Keep all (Sam, 2026-10-29: "giving the user the opportunity to edit, redraft, or keep.
+      // Add a Keep All button"): every alt text with words, or marked decorative, kept at once.
+      (needs.some(function (n) { return n.type === "alt"; }) ? '<div class="lib-actions-row"><button type="button" class="lib-remzoom" data-remkeepall="1">Keep all</button></div>' : "") +
       (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
       (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words. Read each one before you keep it.</p>' : "") +
       (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Redraft every picture") + "</button></div>" : "") +
@@ -2155,6 +2158,17 @@
       else if (b.getAttribute("data-remgo")) remGo();
       else if ((v = b.getAttribute("data-remai"))) draftFromPicture(v);
       else if (b.getAttribute("data-remaiall")) draftEveryPicture();
+      else if (b.getAttribute("data-remkeepall") && state.rem && state.rem.report) {
+        var kn = 0, ke = 0;
+        state.rem.report.needs.forEach(function (n) {
+          if (n.type !== "alt") return;
+          var a = state.rem.answers[n.id] || {};
+          if (a.decorative || (a.text || "").trim()) { if (!state.rem.kept[n.id]) kn++; state.rem.kept[n.id] = true; } else ke++;
+        });
+        say("Kept " + kn + (kn === 1 ? " draft" : " drafts") + "." + (ke ? " " + ke + (ke === 1 ? " picture has" : " pictures have") + " no words yet, so " + (ke === 1 ? "it is" : "they are") + " still left." : ""));
+        remRefresh();
+        var kb = root.querySelector("[data-remkeepall]"); if (kb) kb.focus();
+      }
       else if ((v = b.getAttribute("data-remkeep")) && state.rem) { state.rem.kept[v] = !state.rem.kept[v]; paintProgress(); }
       else if (b.getAttribute("data-remshow") && state.rem) { state.rem.drafting = null; remRefresh(); var h1 = document.getElementById("lib-rem-h"); if (h1) h1.focus(); }
       else if ((v = b.getAttribute("data-remzoom")) && state.rem) {

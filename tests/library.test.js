@@ -883,6 +883,11 @@ block("(16)", function () {
     check("(16) the bar's part is a link too, and a fixed check goes to its line in Fixed for you", doc.activeElement && /^lib-remfix-/.test(doc.activeElement.id) && /Language set/.test(doc.activeElement.textContent) && !doc.querySelector("#lib-remprog [data-remgoto=order]"), doc.activeElement && doc.activeElement.id);
     click(m.w, doc.querySelector("[data-remkeep]"));
     check("(16) Keep counts an item, and says Kept", /Alt text \(WCAG 1\.1\.1\): 1 by you, 1 left/.test(prog()) && doc.querySelector("[data-remkeep]").getAttribute("aria-pressed") === "true" && doc.querySelector("[data-remkept]").textContent === "Kept", prog());
+    // Keep all keeps every alt text with words at once.
+    click(m.w, doc.querySelector("[data-remkeepall]"));
+    check("(16) Keep all keeps every draft with words, and says how many", /Alt text \(WCAG 1\.1\.1\): 2 by you, done/.test(prog()) && /Kept 1 draft\./.test(m.root.textContent) &&
+      doc.querySelectorAll("[data-remkept]")[1].textContent === "Kept", prog());
+    click(m.w, doc.querySelectorAll("[data-remkeep]")[1]);
     const qf = doc.querySelectorAll("[data-remtext]")[1];
     qf.value = "QR code to the MAP website, map.rccd.edu"; qf.dispatchEvent(new m.w.Event("input", { bubbles: true }));
     check("(16) an edit counts as kept, and an area with nothing left says done", /^1 slide\. Ready for the Chancellor's Office review; the page fixed 2, you have done 2 and 4 checks pass with nothing to fix\./.test(prog()) && /Alt text \(WCAG 1\.1\.1\): 2 by you, done/.test(prog()) &&
