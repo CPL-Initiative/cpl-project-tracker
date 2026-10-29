@@ -16210,8 +16210,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 479,
+   "count": 480,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 511,
+     "path": "docs/session_511_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "accessibility",
+      "ui-pass"
+     ],
+     "title": "Session 511 handoff: a deck's contrast checked in the Library, the Funding model's UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-29",
      "governs": [],
@@ -24421,5 +24438,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1296
+ "total": 1297
 }

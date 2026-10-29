@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-479 document(s).
+480 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 511 | [Session 511 handoff: a deck's contrast checked in the Library, the Funding model's UI pass](../session_511_handoff.md) | 2026-10-29 |
 | 510 | [Session 510 handoff: the Library built to Version 20, remediation in the browser, alt text from screenshots](../session_510_handoff.md) | 2026-10-29 |
 | 509 | [Session 509 handoff: Malone's FAQs, the published scenario first, the map.rccd.edu scans, the Library remediation mockup](../session_509_handoff.md) | 2026-10-29 |
 | 508 | [Session 508 handoff: the Summit sweep passes; the funding FAQ posted as Sam settled it; two Sheet 138s reconciled](../session_508_handoff.md) | 2026-10-28 |
