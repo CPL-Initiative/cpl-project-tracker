@@ -25,13 +25,14 @@ function finish() {
   process.exit(0);
 }
 
-// (1) The file is the page's FAQ, in its six groups.
-const want = ["Qualifying and confirming", "The funding and its figures", "Counting outcomes in MAP",
-  "Student records in MAP", "Building CPL at your college", "Credit recommendations and exhibits"];
+// (1) The file is the page's FAQ, in its groups: the six Sam took, and since 2026-10-29 the
+// two his new questions opened (Reporting in NOVA, Apprenticeship CPL; S519).
+const want = ["Qualifying and confirming", "The funding and its figures", "Reporting in NOVA", "Counting outcomes in MAP",
+  "Student records in MAP", "Building CPL at your college", "Apprenticeship CPL", "Credit recommendations and exhibits"];
 check("(1) faq.json is current with cpl_funding.js", fs.readFileSync(path.join(ROOT, "funding-model/faq.json"), "utf8") === builder.build());
-check("(1) six groups, as Sam took them, 37 questions in the settled order",
-  FAQ.groups.map((g) => g.name).join("|") === want.join("|") && FAQ.questions === 37 &&
-  FAQ.groups.map((g) => g.items.length).join(",") === "4,11,6,5,4,7" &&
+check("(1) eight groups, 43 questions in the settled order",
+  FAQ.groups.map((g) => g.name).join("|") === want.join("|") && FAQ.questions === 43 &&
+  FAQ.groups.map((g) => g.items.length).join(",") === "4,11,2,6,5,4,4,7" &&
   FAQ.groups[0].items[0].q === "What must an institution do to qualify for funding?", JSON.stringify(FAQ.groups.map((g) => [g.name, g.items.length])));
 check("(1) it links the page's FAQ", FAQ.page === "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/#questions");
 
@@ -52,7 +53,9 @@ const top = (q) => (L.matchFaq(q, groups)[0] || {}).q || "";
 const asks = [
   ["How does my college confirm participation?", "How does a college confirm its participation?"],
   ["Why won't the form accept my email?", "Why was my email address not accepted?"],
-  ["What does Curr Funds mean on the dashboard?", "What do Max Funds and Curr Funds mean?"],
+  ["What does Funds Qualified So Far mean on the dashboard?", "What do Max Funds and Funds Qualified So Far mean?"],
+  ["Is apprenticeship CPL only for registered apprentices?", "Is Apprenticeship CPL available only to registered apprentices?"],
+  ["What goes in our NOVA narrative?", "What information should colleges include in their NOVA narratives?"],
   ["When do colleges receive the funding?", "When will institutions receive their funding?"],
   ["MAP flagged a possible duplicate student. What should I do?", "What should I do when MAP identifies a possible duplicate student?"],
   ["Should we use Quick Adopt or build a new exhibit?", "When should a college use Quick Adopt instead of creating a new exhibit?"],
@@ -84,7 +87,7 @@ for (const ask of ["What courses does Norco College offer in welding?", "Hello S
   check("(6) \"FAQ\" and \"frequently asked\" are asks about the FAQ", L.faqAsk("Can you show me the funding FAQ?") && L.faqAsk("what are the frequently asked questions") && !L.faqAsk("how do I confirm"));
   const ctx = L.buildFaqContext([], groups, true);
   const list = ctx.slice(0, ctx.indexOf("HOW TO USE"));
-  check("(6) the list names every group and all 37 questions", want.every((g) => list.includes(g + ":")) && (list.match(/^- /gm) || []).length === 37, (list.match(/^- /gm) || []).length);
+  check("(6) the list names every group and all 43 questions", want.every((g) => list.includes(g + ":")) && (list.match(/^- /gm) || []).length === 43, (list.match(/^- /gm) || []).length);
 }
 
 // (7) Sierra reads the page's FAQ, preferring a curator's saved edit, and it rides her prompt.

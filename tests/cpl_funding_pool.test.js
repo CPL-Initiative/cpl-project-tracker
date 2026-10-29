@@ -58,37 +58,47 @@ const {
 // Part P — display rename (SkyHighness, 2026-07-29): show the current college
 // names ("Coalinga College", "Imperial Valley College") while keeping the MIS
 // short name as the JOIN KEY (perf actuals / short-name / rural / note lookups).
+// Since 2026-10-29 the table's short names (the CSM team via Sam: "take of College
+// on the following: Coalinga, Norco, Imperial Valley, Reedley"; Cañada with its
+// tilde, Mt. San Antonio with its period).
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const { window } = freshDom();
   const doc = boot(window);
   const T = window.CPL_FUNDING_TAB;
   const D = window.CPL_FUNDING;
-  check("P: data carries display overrides for the 2 renamed colleges",
-    D.colleges.find(function (c) { return c.college === "West Hills Coalinga"; }).display === "Coalinga College" &&
-    D.colleges.find(function (c) { return c.college === "Imperial"; }).display === "Imperial Valley College");
+  const disp = function (k) { return (D.colleges.find(function (c) { return c.college === k; }) || {}).display; };
+  check("P: data carries display overrides for the renamed colleges",
+    disp("West Hills Coalinga") === "Coalinga" && disp("Imperial") === "Imperial Valley" &&
+    disp("Norco College") === "Norco" && disp("Reedley College") === "Reedley" &&
+    disp("Canada") === "Ca\u00f1ada" && disp("Mt San Antonio") === "Mt. San Antonio");
   // The join KEY is unchanged — alloc/perf still resolve by the MIS short name.
   check("P: the join key still resolves (alloc by the MIS short name)",
     T._alloc("West Hills Coalinga").total > 0 && T._alloc("Imperial").total > 0);
   // The rendered table shows the DISPLAY name, not the old short key.
   const rows = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
-  const coRow = rows.find(function (r) { return /Coalinga College/.test(r.textContent); });
-  check("P: the table row shows 'Coalinga College' (display), not 'West Hills Coalinga'",
+  const coRow = rows.find(function (r) { return /Coalinga/.test(r.textContent); });
+  check("P: the table row shows 'Coalinga' (display), not 'West Hills Coalinga'",
     !!coRow && coRow.textContent.indexOf("West Hills Coalinga") === -1);
-  check("P: the table row shows 'Imperial Valley College'",
-    rows.some(function (r) { return /Imperial Valley College/.test(r.textContent); }));
+  check("P: the table row shows 'Imperial Valley'",
+    rows.some(function (r) { return /Imperial Valley/.test(r.textContent); }));
+  check("P: the table row shows 'Cañada', and searching 'Canada' still finds it",
+    rows.some(function (r) { return /Ca\u00f1ada/.test(r.textContent); }));
   // Search matches the display name (haystack includes dispName).
   T._state.q = "Imperial Valley"; T.render();
   const shown = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"));
   check("P: searching the display name ('Imperial Valley') matches exactly that row",
-    shown.length >= 1 && shown.every(function (r) { return /Imperial Valley College/.test(r.textContent); }));
+    shown.length >= 1 && shown.every(function (r) { return /Imperial Valley/.test(r.textContent); }));
+  T._state.q = "Canada"; T.render();
+  check("P: searching 'Canada' (no tilde) finds Cañada",
+    Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row")).some(function (r) { return /Ca\u00f1ada/.test(r.textContent); }));
   T._state.q = ""; T.render();
   // The rural section that used to re-show these display names is retired
   // (2026-08-22). The display-name rename still has to hold everywhere it
   // renders, so assert it against a surface that survived: the CSV export.
   const csvP = T._csv();
   check("P: the display names carry into the CSV export",
-    csvP.indexOf("Coalinga College") !== -1 && csvP.indexOf("Imperial Valley College") !== -1);
+    /(^|\r\n)\d+,Coalinga,/.test(csvP) && /(^|\r\n)\d+,Imperial Valley,/.test(csvP) && /(^|\r\n)\d+,Ca\u00f1ada,/.test(csvP));
   check("P: …and the retired rural section is genuinely gone",
     !doc.querySelector('details.cplfund-sec[data-sec="rural"]'));
 }

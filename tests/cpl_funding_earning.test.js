@@ -189,7 +189,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
     csv[1].indexOf("Earned: measured") === -1 && csv[1].indexOf("Earned: advance") === -1 &&
     csv[1].indexOf("Withheld") !== -1);
   check("E: CSV meta describes max-awards-with-the-Current-Total rather than a basis mode",
-    csv[0].indexOf("the Current Total beside them") !== -1 && csv[0].indexOf("EARNED basis") === -1);
+    csv[0].indexOf("the Funds Qualified So Far beside them") !== -1 && csv[0].indexOf("EARNED basis") === -1);
 }
 {
   // Capped at 100%: an overachiever earns its FULL credit share (never more) —
@@ -228,7 +228,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   const drillE = drillOf(doc, rowById(doc, "c:Laney"));
   check("E: drill-in shows the per-priority earning detail (priority rows under a Curr CR Funds band; the totals ride the row)",
     !!det && drillE.rows.length > 0 && !!drillE.band && !det.querySelector(".cplfund-dtl-sum") &&
-    Array.from(drillE.band.querySelectorAll("th")).some(function (h) { return /^Curr(Current)? CR Funds$/.test(h.textContent.trim()); }));
+    Array.from(drillE.band.querySelectorAll("th")).some(function (h) { return /^CR Funds Qualified So Far$/.test(h.textContent.trim()); }));
 }
 {
   // Feed not loaded → the CREDIT priorities advance at full cap (transient), so
@@ -391,7 +391,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   check("G: the expand renders one priority row per priority", rows.length === NPRIO);
   const band = drill.band ? Array.from(drill.band.querySelectorAll("th")).map(function (h) { return h.textContent.trim(); }) : [];
   check("G: the priority rows sit under the row's own column heads (Max CR · Curr CR · Max NC · Curr NC · Max · Curr)",
-    band.join("|") === "Priority outcomes|Max CR Funds|CurrCurrent CR Funds|Max NC Funds|CurrCurrent NC Funds|Max Funds|CurrCurrent Funds");
+    band.join("|") === "Priority outcomes|Max CR Funds|CR Funds Qualified So Far|Max NC Funds|NC Funds Qualified So Far|Max Funds|Funds Qualified So Far");
   const c0 = drill.cells[0] || {}, c1 = drill.cells[1] || {};
   check("G: the measurable P1 row shows the actual beneath its Curr figure, and the hover the % of Max FTES",
     !!c0.cr_current && c0.cr_current.line.indexOf("200") !== -1 && /% of Max FTES/.test(c0.cr_current.tip));

@@ -207,10 +207,12 @@ function openDetail(window, doc, name) {
   // funding, the viewed year under Annual, 2026-09-27).
   // Round 9 (Sam, 2026-09-29): a gated row's Curr cells read the computed
   // figure, in gray, through GATED_FIELD; the Total Funds cell never does.
-  check("the Curr cells read the figure for the award's span: qualifying, or computed in gray while gated",
-    /fig = figOf\("earned_cr"\)/.test(fnBody("curCellHtml")) &&
-    /fig = figOf\("earned_total"\)/.test(fnBody("curCellHtml")) &&
-    /cellFig\(row, gated \? GATED_FIELD\[field\] : field\)/.test(fnBody("curCellHtml")) &&
+  // Since 2026-10-29 (the CSM team) one rule, curFig, reads a row and a sum alike:
+  // the qualifying part and the gray part together, both for the award's span.
+  check("the Funds Qualified So Far cells read the figure for the award's span: qualifying, or computed in gray while gated",
+    /f = curFig\(row, "earned_cr"\)/.test(fnBody("curCellHtml")) &&
+    /f = curFig\(row, "earned_total"\)/.test(fnBody("curCellHtml")) &&
+    /released = cellFig\(row, field\), held = cellFig\(row, heldF\)/.test(fnBody("curFig")) &&
     fnBody("totalFundsCellHtml").indexOf("earned_withheld") === -1);
   check("and the pair cells repeat no qualifying line or prompt",
     fnBody("crAwardCellHtml") !== "" && fnBody("ncAwardCellHtml") !== "" &&

@@ -730,6 +730,10 @@
     ".cplfund-srclink { display: inline-block; min-height: 24px; line-height: 24px; padding: 0 2px; margin-top: 2px; background: none; border: 0; " +
       "color: var(--accent-link); text-decoration: underline; font: inherit; font-size: .85em; cursor: pointer; }",
     ".cplfund-srclink[aria-expanded=\"true\"] { font-weight: 600; }",
+    // The search box's Clear: an underlined word, 24px tall (the house control).
+    ".cplfund-searchclear { min-height: 24px; line-height: 24px; padding: 0 4px; background: none; border: 0; color: var(--accent-link); " +
+      "text-decoration: underline; font: inherit; font-size: .9rem; cursor: pointer; }",
+    ".cplfund-searchclear[hidden] { display: none; }",
     ".cplfund-table > tbody > tr.cplfund-srcrow > td { white-space: normal; text-align: left; background: var(--surface-opaque); cursor: default; }",
     ".cplfund-srcpanel { padding: 6px 4px 10px 26px; font-size: .95em; }",
     ".cplfund-srchead { margin-bottom: 4px; color: var(--text-strong); }",
@@ -3826,6 +3830,13 @@
   // with negatives as long as it's human authored"), so cpl_funding_calm exempts his sentences by
   // name. His refresh question stays out, since "How often do the figures on this page change?"
   // answers it.
+  // Sam's eight of 2026-10-29 ("Please review these new FAQs and add to funding model"): the NOVA
+  // narrative and activity questions open a Reporting in NOVA group, the four apprenticeship questions
+  // an Apprenticeship CPL group, in their own words but for four edits: the bulleted lists run as
+  // sentences (the house voice keeps bullets out of outward prose), "Absolutely!" reads "Yes.", the MAP
+  // Initiative reads the MAP platform (the naming rule), and "The presentation identifies" reads
+  // "Colleges may describe", since the page has no presentation. His first two (what NOVA asks, and its
+  // three report dates) wait on him: the dates differ from the Timeline's Report Deadlines.
   var FAQ_DEFAULT_PLAIN = [
     "## Qualifying and confirming",
     "Q: What must an institution do to qualify for funding?",
@@ -3853,11 +3864,11 @@
       "row and starts with a college or district email address. The noncredit share counts once CPL Initiative " +
       "staff approve the attestation.",
     "## The funding and its figures",
-    "Q: What do Max Funds and Curr Funds mean?",
+    "Q: What do Max Funds and Funds Qualified So Far mean?",
     "Max Funds is the institution's max award: the potential funding for its credit and noncredit CPL " +
-      "priorities over the two years. Curr Funds (current) is the funding it qualifies for so far from the CPL " +
-      "outcomes recorded in MAP, once it meets all three minimum conditions. Select an institution's row to see " +
-      "each priority's figures.",
+      "priorities over the two years. Funds Qualified So Far is the funding its CPL outcomes recorded in MAP " +
+      "qualify for to date. The figure reads gray until the institution meets all three minimum conditions, " +
+      "and the funding is available once it meets them. Select an institution's row to see each priority's figures.",
     "Q: Does one college earning more funding reduce the amount available to other colleges?",
     "No. Each college has its own maximum award. A college's progress does not take funding away from another " +
       "institution.",
@@ -3908,6 +3919,18 @@
       "attainment through credit for prior learning; and supporting credit for prior learning through the " +
       "Chancellor's Office pilot projects, such as the MAP platform. Under §78093.2(d)(2), each campus " +
       "demonstrates its implementation through those metrics before it receives an allocation.",
+    "## Reporting in NOVA",
+    "Q: What information should colleges include in their NOVA narratives?",
+    "Each narrative should explain the activities the college completed, progress toward the applicable " +
+      "funding outcome, supporting data, and implementation challenges or next steps.",
+    "Colleges should provide specific examples of their work and demonstrate how CPL implementation efforts " +
+      "are expanding opportunities for students.",
+    "Q: What types of activities can colleges describe in their funding narratives?",
+    "Colleges may describe several categories of CPL implementation activities, including staffing and " +
+      "coordination, faculty engagement, policy and procedure development, professional development and " +
+      "training, student outreach, and implementation support.",
+    "Colleges should connect each reported expenditure to the corresponding CPL funding outcome. Allowability " +
+      "of expenditures should be determined using the applicable funding guidance.",
     "## Counting outcomes in MAP",
     "Q: Do CPL consultations and student referrals count toward a college's funding outcomes?",
     "CPL consultations and referrals are important components of student identification and access. However, " +
@@ -3997,6 +4020,41 @@
       "opportunities for students that have not been previously approved. When considering COR language, " +
       "institutions should seek an approach that supports quality and compliance while avoiding unnecessary " +
       "barriers to timely CPL opportunities for students.",
+    "## Apprenticeship CPL",
+    "Q: What is the difference between apprenticeship CPL and traditional apprenticeship college credit?",
+    "Traditional apprenticeship college credit is generally earned through college-approved courses delivered " +
+      "as part of an apprenticeship program. Apprenticeship CPL recognizes college-level learning completed " +
+      "outside those credit-bearing courses.",
+    "For example, a registered apprentice may complete extensive technical instruction through an " +
+      "apprenticeship sponsor. A college may evaluate that training and determine whether it meets the learning " +
+      "outcomes of an existing college course. The distinction is how the learning is evaluated and credit is awarded.",
+    "Q: Is Apprenticeship CPL available only to registered apprentices?",
+    "No. CPL is not limited to individuals participating in registered apprenticeship programs.",
+    "Depending on college policies and available assessment methods, CPL opportunities may also be available " +
+      "to active registered apprentices, apprenticeship program completers and journeypersons, individuals who " +
+      "completed nonregistered apprenticeship training, workers who earned industry-recognized credentials, and " +
+      "experienced workers with documented college-level skills and knowledge.",
+    "Each college determines eligibility and applicable assessment methods consistent with California " +
+      "regulations and local policies.",
+    "Q: How is apprenticeship training evaluated for college credit?",
+    "Discipline faculty evaluate documented apprenticeship competencies and learning outcomes to determine " +
+      "whether they align with college-level courses. The evaluation may include reviewing apprenticeship " +
+      "curriculum and instructional hours, examining occupational competencies and training standards, " +
+      "comparing apprenticeship learning outcomes with college course outlines of record, reviewing industry " +
+      "credentials and completion documentation, and determining appropriate course equivalencies or credit " +
+      "recommendations.",
+    "Final credit decisions follow college-approved processes and applicable regulations.",
+    "Q: Our college only offers a few apprenticeship programs. Is Apprenticeship Credit for Prior Learning (CPL) still relevant to our college?",
+    "Yes. Apprenticeship CPL is relevant to all California Community Colleges, regardless of whether they " +
+      "offer apprenticeship programs or how many they currently support. Students may bring valuable " +
+      "college-level learning from registered apprenticeships, industry training, and work experience " +
+      "completed outside your institution.",
+    "Through the MAP platform, colleges can explore and adopt existing CPL credit recommendations that align " +
+      "with their courses and academic programs, subject to local faculty review and approval. This allows " +
+      "colleges to recognize apprenticeship learning without having to operate an apprenticeship program themselves.",
+    "Apprenticeship CPL creates opportunities to serve working adults, apprentices, and journeypersons while " +
+      "expanding pathways to certificates, associate degrees, and career advancement. Every college has an " +
+      "opportunity to recognize apprenticeship learning, even if it does not offer apprenticeship programs.",
     "## Credit recommendations and exhibits",
     "Q: How do statewide credit recommendations become official and appear in MAP?",
     "A statewide credit recommendation becomes official at a college when its faculty review and adopt it on " +
@@ -4141,10 +4199,10 @@
   // each max figure has its Curr figure in the column beside it. No saved text
   // overrides this block (cpl_funding_config, both scenarios, read 2026-09-29).
   var READING_DEFAULT_HTML =
-    "<p>The Dashboard sets each <strong>max award</strong> beside its <strong>Curr</strong> (current) figure, " +
-    "the funding qualifying so far. Awards are based on outcomes, not " +
+    "<p>The Dashboard sets each <strong>max award</strong> beside its <strong>Funds Qualified So Far</strong>. " +
+    "Awards are based on outcomes, not " +
     "automatically awarded: the CPL an institution actually posts in MAP counts toward its award &mdash; " +
-    "<code>Current Total = cap &times; (actual &divide; target)</code>, capped at 100% (an institution at half its " +
+    "<code>Funds Qualified So Far = cap &times; (actual &divide; target)</code>, capped at 100% (an institution at half its " +
     "target qualifies for half its cap; it never needs the full target to be funded). Remaining funding rolls " +
     "forward. Only the noncredit measures count toward the <strong>noncredit share</strong> of an award.</p>";
   var NC_RULES_DEFAULT_HTML = "<ul>" +
@@ -4179,7 +4237,8 @@
   var COLLEGE_INTRO_DEFAULT_HTML =
     "<p>The Dashboard lists the potential funding and FTES for each institution. Max Funds is its " +
     "<strong>max award</strong>: maximum funding to be awarded based on measurable outcomes, credit and noncredit " +
-    "together. Curr Funds (current) shows the funding qualifying so far. Open an institution to see each priority " +
+    "together. Funds Qualified So Far shows what its CPL outcomes qualify for to date, in gray until it meets all " +
+    "three minimum conditions. Open an institution to see each priority " +
     "and noncredit outcome on its own row. The numbered pie before each name shows which of the three minimum conditions the " +
     "institution meets, and a star marks the third, the Veteran Star.</p>";
   function textDefaultHtml(key) {
@@ -6934,12 +6993,14 @@
       // export never carries a figure the screen withholds.
       return [earnedCsv((row.earned_total || 0) + (row.earned_withheld || 0)), earnedCsv(row.earned_withheld || 0)];
     }
-    // The Curr columns' twins (2026-09-28): what qualifies so far against each
-    // share and against the max award, window figures like every CSV column,
-    // through the same public coarsening as the screen. The percentage names
-    // its figure, since Demonstrated follows it.
-    var curHead = ["Current credit " + windowLabel(), "Current noncredit " + windowLabel(), "Current total " + windowLabel(),
-      "Current total as % of max award"];
+    // The Funds Qualified So Far columns' twins (2026-09-28; named so 2026-10-29,
+    // the CSM team's word via Sam): the figure each screen cell shows, its gray
+    // part included (curFig), against each share and against the max award,
+    // window figures like every CSV column, through the same public coarsening
+    // as the screen. The Withheld column names the gray part.
+    var curHead = ["Credit funds qualified so far " + windowLabel(), "Noncredit funds qualified so far " + windowLabel(),
+      "Funds qualified so far " + windowLabel(), "Funds qualified so far as % of max award"];
+    var curTotal = function (row) { return (row.earned_total || 0) + (row.earned_withheld || 0); };
     // THE PERCENTAGE READS THE FIGURE BESIDE IT (2026-09-29, funding NEXT ⓪f).
     // The max award is exact and public, so a percentage of the EXACT current
     // total hands back what the $1,000 rule withholds: 98.1% of $150,000 sat
@@ -6948,7 +7009,7 @@
     // it reads the floor's own share as an upper bound.
     function curPct(row) {
       if (!(row.total > 0)) return "";
-      var v = row.earned_total || 0;
+      var v = curTotal(row);
       if (publicMode()) {
         var a = Math.abs(v);
         if (a < 0.5) return "0%";
@@ -6958,7 +7019,8 @@
       return Math.round(v / row.total * 1000) / 10 + "%";
     }
     function curCells(row) {
-      return [earnedCsv(row.earned_cr || 0), earnedCsv(row.earned_nc || 0), earnedCsv(row.earned_total || 0), curPct(row)];
+      return [earnedCsv((row.earned_cr || 0) + (row.held_cr || 0)), earnedCsv((row.earned_nc || 0) + (row.held_nc || 0)),
+        earnedCsv(curTotal(row)), curPct(row)];
     }
     var lines = [];
     lines.push(["#", "Institution", "District", "County", "Credit FTES", "Noncredit FTES", "Headcount (context)"]
@@ -7002,7 +7064,7 @@
       curCells(sysc), earnCells(sysc), [""]));
     var meta = ["CPL Implementation Funding (draft of " + base().model_version + ") — " + windowLabel() +
       (frontloaded() ? " · combined (front-loaded) funding" : " · annual funding") +
-      " · max awards with the Current Total beside them (Current Total = cap × actual ÷ target, capped at " +
+      " · max awards with the Funds Qualified So Far beside them (Funds Qualified So Far = cap × actual ÷ target, capped at " +
       "100%; only the noncredit measures count toward the noncredit share)" +
       (isDirty() && !unlocked() ? " · local what-if: " + activeScenario : "")];
     return [meta].concat(lines).map(function (r) { return r.map(csvEscape).join(","); }).join("\r\n");
@@ -7514,7 +7576,7 @@
     var pct = pp.cap > 0 ? pp.earned / pp.cap : 0;
     return '<p class="nums cplfund-earned-line" title="' +
       esc("Demonstrated: what institutions have demonstrated statewide on this priority to date, whether or not " +
-        "each has met its minimum conditions. Curr Funds shows what each qualifies for: $0 until it meets them. " +
+        "each has met its minimum conditions. Funds Qualified So Far shows what each qualifies for, in gray until it meets them. " +
         "Total Possible: the ceiling — " + (ncOutcomesMode()
           ? "the priority's credit share; the noncredit share rides the noncredit outcomes below"
           : "the priority's credit and noncredit shares together" +
@@ -11069,13 +11131,14 @@
   // statewide cap+earned for the priority cards, and the window cap+earned totals
   // (Σ colleges — the real disbursement) for the pool cards. Cached like _alloc.
   var _earnCache = null;
-  // `crReleased` / `ncReleased` add only what an institution RECEIVES — the
-  // same per-priority figure its drill-in prints ($0 while it has yet to meet
-  // its minimum conditions) — so the statewide drill-in sums to the Statewide
-  // row's Curr columns (2026-09-28). `earned` / `ncEarned` stay gate-agnostic:
-  // the priority cards' Progress line reports what the measures demonstrate.
+  // `crReleased` / `ncReleased` add only what an institution RECEIVES ($0 while
+  // it has yet to meet its minimum conditions). `earned` / `ncEarned` / `crEarned`
+  // stay gate-agnostic: the priority cards' Progress line reports what the
+  // measures demonstrate, and since 2026-10-29 the statewide drill-in adds the
+  // same figure each institution's drill-in prints (gray included), so it sums
+  // to the Statewide row's Funds Qualified So Far columns (curFig).
   function emptyPrioFigs() {
-    return { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crReleased: 0, ncReleased: 0,
+    return { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crEarned: 0, crReleased: 0, ncReleased: 0,
       crTarget: 0, ncTarget: 0, statuses: {} };
   }
   // ONE institution's part of each priority's figures, added into `perPrio`.
@@ -11102,6 +11165,7 @@
       perPrio[i].crCap += prioCap(sp.cr, slot, p);
       var fr = earnFraction(col, p);
       perPrio[i].earned += prioCap(sp.cr, slot, p) * fr.f;
+      perPrio[i].crEarned += prioCap(sp.cr, slot, p) * fr.f;
       if (!gateBlocked) perPrio[i].crReleased += prioCap(sp.cr, slot, p) * fr.f;
       // Each lane's statewide target is the SUM of the institutions' lane
       // targets (the statewide drill-in's Max FTES, 2026-09-24); the two
@@ -11481,7 +11545,7 @@
       "Max Funds. An institution qualifies for <code>max award &times; (actual &divide; target)</code>, up to 100%, where each " +
       "priority&#39;s <em>target</em> is its funding &divide; the reimbursement rate and MAP actuals measure progress " +
       "toward it. An institution at half its target qualifies for half its max award, and remaining funding rolls " +
-      "forward. Curr Funds shows the funding qualifying so far.";
+      "forward. Funds Qualified So Far shows where each institution stands to date.";
     // Bulleted, left-justified explainer (Sam, 2026-07-28) — one idea per bullet
     // instead of a single running paragraph. Each variable above is one <li>.
     var trim = function (s) { return String(s).replace(/^\s+/, ""); };
@@ -11562,10 +11626,14 @@
     });
     return out;
   }
-  // "Curr" in a header saves the width; screen readers and the Columns menu
-  // carry the whole word (Sam, 2026-09-28: "Curr" for Current in headers).
+  // FUNDS QUALIFIED SO FAR (the CSM team via Sam, 2026-10-29: "CSM team suggests
+  // changing Curr to 'Funds Qualified So Far' and I think it would avoid
+  // confusion"). It says what the figure is in the funding vocabulary, where an
+  // institution qualifies for its award. From 2026-09-28 the header read "Curr"
+  // for Current to save the width. The word is prose only: keys, classes and
+  // data fields keep `current`.
   function currHeadHtml(rest) {
-    return '<span aria-hidden="true">Curr</span><span class="cplfund-sr-only">Current</span> ' + rest;
+    return rest + " Qualified So Far";
   }
   // THE COLLEGE DASHBOARD'S COLUMNS (Sam's mockup rounds, 2026-09-28; two
   // funding columns since 2026-10-25). Max Funds is the max award, which the
@@ -11599,13 +11667,13 @@
         title: "Annual noncredit FTES (MIS 2025-26) — the institution's noncredit teaching size. It sizes the award WITH the credit FTES, and sets the noncredit share of the award — restricted to noncredit outcomes." },
       { key: "cr_award", label: "Max CR Funds", cls: "c",
         title: "The credit share of the institution's max award " + awardWhen + ". The credit priority measures count toward it." },
-      { key: "cr_current", label: currHeadHtml("CR Funds"), menu: "Current CR Funds", cls: "c",
-        title: "Curr CR Funds (current credit funds): the credit funding the institution qualifies for so far" + yr +
+      { key: "cr_current", label: currHeadHtml("CR Funds"), menu: "CR Funds Qualified So Far", cls: "c",
+        title: "CR Funds Qualified So Far: the credit funding the institution qualifies for so far" + yr +
           ", from the CPL outcomes recorded in MAP. It rises toward Max CR Funds as outcomes are recorded." + counts },
       { key: "nc_award", label: "Max NC Funds", cls: "c",
         title: "The noncredit share of the institution's max award " + awardWhen + ". Only the noncredit measures count toward it." },
-      { key: "nc_current", label: currHeadHtml("NC Funds"), menu: "Current NC Funds", cls: "c",
-        title: "Curr NC Funds (current noncredit funds): the noncredit funding the institution qualifies for so far" + yr +
+      { key: "nc_current", label: currHeadHtml("NC Funds"), menu: "NC Funds Qualified So Far", cls: "c",
+        title: "NC Funds Qualified So Far: the noncredit funding the institution qualifies for so far" + yr +
           ", from the noncredit outcomes recorded in MAP. It rises toward Max NC Funds as outcomes are recorded." + counts },
       // THE COMBINED FIGURE IS ITS OWN COLUMN (Sam, 2026-09-23: "Since Funding
       // Base = 150K and Cap = $400K, take a look at the colleges at Base and
@@ -11622,8 +11690,8 @@
           ", credit and noncredit together. It is the institution's max award, set by its size in full-time " +
           "equivalent students (FTES), and never below the base award or above the cap. On a priority or outcome " +
           "row, the part of the max award that priority carries." },
-      { key: "current_total", label: currHeadHtml("Funds"), menu: "Current Funds", cls: "c",
-        title: "Curr Funds (current funds): the funding the institution qualifies for so far" + yr + ", credit and " +
+      { key: "current_total", label: currHeadHtml("Funds"), menu: "Funds Qualified So Far", cls: "c",
+        title: "Funds Qualified So Far: the funding the institution qualifies for so far" + yr + ", credit and " +
           "noncredit together, from the CPL outcomes recorded in MAP. It rises toward Max Funds as outcomes are " +
           "recorded. On a priority or outcome row, what that row has qualified for so far." + counts },
       { key: "working_adults", label: "Working adults*", cls: "" }
@@ -12203,7 +12271,7 @@
   // subtotal adds them the way it adds the window figures.
   function addYearFigs(dst, src) {
     selectedYears().forEach(function (_, i) {
-      ["ey", "hy", "ecy", "eny"].forEach(function (f) {
+      ["ey", "hy", "ecy", "eny", "hcy", "hny"].forEach(function (f) {
         var k = f + (i + 1);
         dst[k] = (dst[k] || 0) + (src[k] || 0);
       });
@@ -12226,7 +12294,7 @@
     // actuals) — the noncredit-only rows included. The CR/NC decomposition
     // sums feed the ONE SYSTEM row's paired columns.
     var earnTotal = 0;
-    var eMeas = 0, eAdv = 0, eHeld = 0, eCr = 0, eNc = 0;
+    var eMeas = 0, eAdv = 0, eHeld = 0, eCr = 0, eNc = 0, hCr = 0, hNc = 0;
     var crA = 0, ncA = 0, crF = 0, ncF = 0;
     oneRoster().forEach(function (col) {
       var a = collegeAlloc(col);
@@ -12236,6 +12304,8 @@
       eHeld += a.earned_withheld || 0;
       eCr += a.earned_cr || 0;
       eNc += a.earned_nc || 0;
+      hCr += a.held_cr || 0;
+      hNc += a.held_nc || 0;
       addYearFigs(out, a);
       var sp = instSplit(col);
       crA += sp.cr; ncA += sp.nc;
@@ -12247,6 +12317,7 @@
     out.earned_advance = eAdv;
     out.earned_withheld = eHeld;
     out.earned_cr = eCr; out.earned_nc = eNc;
+    out.held_cr = hCr; out.held_nc = hNc;
     out.cr_award = crA; out.nc_award = ncA;
     out.cr_ftes = crF; out.nc_ftes = ncF;
     return out;
@@ -12290,7 +12361,7 @@
       // The Curr columns sort by the figure each cell shows (cellFig, the
       // viewed year under Annual funding), and on the public page by its
       // coarse twin, so the order reveals nothing the figure withholds.
-      if (CURR_FIELD[state.sortKey]) return curSortVal(cellFig(r, CURR_FIELD[state.sortKey]));
+      if (CURR_FIELD[state.sortKey]) return curSortVal(curFig(r, CURR_FIELD[state.sortKey]).fig);
       return r[state.sortKey];
     }
     rows = rows.slice().sort(function (a, b) {
@@ -12429,33 +12500,51 @@
   // round 8 (keep $0, or show the figure): show the figure.
   var GATED_CELL_WORDS = " Gray until the institution meets all its minimum conditions, and available once it meets them.";
   var GATED_FIELD = { earned_cr: "held_cr", earned_nc: "held_nc", earned_total: "earned_withheld" };
+  // THE FIGURE A FUNDS QUALIFIED SO FAR CELL SHOWS, for an institution and for a
+  // sum alike: the funding its measures compute to, the qualifying part and the
+  // gray part together (Sam, 2026-09-29: "it should show the calculated funding
+  // in gray"). `fig` is the whole, `gray` the part still waiting on minimum
+  // conditions. A lane's figure is grayed by that lane's own gate, so the
+  // noncredit cell follows the noncredit share's conditions under the outcomes lane.
+  //
+  // ⚠️ THE STATEWIDE ROW AND THE DISTRICT SUBTOTALS ADD WHAT THE ROWS SHOW (the
+  // CSM team via Sam, 2026-10-29: "Statewide Curr total is 0 but should add
+  // everything in curr college rows"). Until then a sum added only the released
+  // part, and read $0 while every institution row showed its gray figure. A sum
+  // reads gray while none of it qualifies yet; its hover names the gray part.
+  function curFig(row, field) {
+    var heldF = GATED_FIELD[field];
+    var released = cellFig(row, field), held = cellFig(row, heldF);
+    var gated = row.is_sum ? (released < 0.5 && held >= 0.5)
+      : !!(field === "earned_nc" ? row.nc_gate_blocked : row.gate_blocked);
+    return { fig: released + held, gray: held, gated: gated };
+  }
   function curCellHtml(row, lane) {
-    var cap, fig, words;
-    var gated = !!row.gate_blocked;
-    var figOf = function (field) { return cellFig(row, gated ? GATED_FIELD[field] : field); };
+    var cap, f, words;
     if (lane === "nc") {
       cap = (row.nc_award || 0) / awardDivisor();
       if (cap <= 0.5) return '<td class="cf-cur cf-cur-nc dk c" title="Credit only: this institution holds no noncredit share.">&mdash;</td>';
-      fig = figOf("earned_nc");
+      f = curFig(row, "earned_nc");
       words = "Noncredit funding " + qualifyingWords();
     } else if (lane === "cr") {
       cap = (row.cr_award || 0) / awardDivisor();
       if (row.nco) return '<td class="cf-cur cf-cur-cr dk c" title="A noncredit-only institution: its whole award is the noncredit share.">$0</td>';
-      fig = figOf("earned_cr");
+      f = curFig(row, "earned_cr");
       words = "Credit funding " + qualifyingWords();
     } else {
       cap = (row.total || 0) / awardDivisor();
-      fig = figOf("earned_total");
+      f = curFig(row, "earned_total");
       words = "Funding " + qualifyingWords() + ", credit and noncredit together";
     }
-    // Gray while the institution has yet to meet all its minimum conditions
-    // (Sam, 2026-09-29). A district subtotal and the Statewide row carry no
-    // gate of their own, so they never read gray, and they add only the
-    // funding that qualifies: a gray figure never enters a total.
-    return '<td class="cf-cur cf-cur-' + lane + (gated ? " cf-gated" : "") + ' c" title="' +
-      esc(words + ": " + earnedMoney(fig) + " of " + fmtMoney(cap) + (gated ? "." + GATED_CELL_WORDS : "")) + '">' +
-      earnedMoney(fig) + "</td>";
+    var tail = f.gated ? "." + (row.is_sum ? SUM_GRAY_WORDS : GATED_CELL_WORDS)
+      : f.gray >= 0.5 ? ". " + earnedMoney(f.gray) + " of it is gray: " + (row.is_sum
+        ? "institutions yet to meet all their minimum conditions."
+        : "the noncredit share waits on its own minimum conditions.") : "";
+    return '<td class="cf-cur cf-cur-' + lane + (f.gated ? " cf-gated" : "") + ' c" title="' +
+      esc(words + ": " + earnedMoney(f.fig) + " of " + fmtMoney(cap) + tail) + '">' +
+      earnedMoney(f.fig) + "</td>";
   }
+  var SUM_GRAY_WORDS = " It adds every institution's figure, and is gray while no institution in it has met all its minimum conditions.";
   // TOTAL FUNDS — the max award, the combined figure the base and the cap
   // bind, with its Base / Cap chip beside it (Sam, 2026-09-28: "Total Funds +
   // Curr Total Funds on the right. Base/Cap plain chips"). What qualifies
@@ -13155,13 +13244,15 @@
   // target — the same pair the priority card above prints (actualLineHtml), so
   // the expand and the card agree by construction rather than by coincidence.
   //
-  // ⚠️ THE CURR FIGURES ARE WHAT THE INSTITUTIONS RECEIVE (2026-09-28), the
-  // released figure each college's own drill-in prints, summed per priority and
-  // lane (earnAgg's crReleased / ncReleased). The Statewide row's Curr columns
-  // add the same figure, so the row and its detail share one unit
-  // (methodology-a-summary-must-share-the-unit-of-its-detail). Until that date
-  // the detail summed what the measures demonstrate, held funding included,
-  // and read $758,725 beneath a row reading $338.
+  // ⚠️ THE FUNDS QUALIFIED SO FAR FIGURES ADD WHAT EACH COLLEGE'S OWN DRILL-IN
+  // PRINTS (2026-10-29), its gray figure included, summed per priority and lane
+  // (earnAgg's crEarned / ncEarned). The Statewide row's columns add the same
+  // figure (curFig), so the row and its detail share one unit
+  // (methodology-a-summary-must-share-the-unit-of-its-detail). From 2026-09-28
+  // both added only the released figure, and the Statewide row read $0 while
+  // every college row showed its gray figure (the CSM team's test, 2026-10-29);
+  // before that the detail added held funding beneath a row that did not, and
+  // read $758,725 beneath a row reading $338.
   function systemDetailHtml() {
     var slot = state.viewSlot;
     var agg = earnAgg();
@@ -13170,7 +13261,7 @@
       prio = '<div><span class="dk">Year ' + esc(slot) + " is carryover under front-loaded disbursement " +
         "&mdash; the whole window is placed in Year 1 and counts against the Year-1 targets; remaining funding rolls forward.</span></div>";
     } else {
-      var pp0 = { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crReleased: 0, ncReleased: 0, crTarget: 0, ncTarget: 0 };
+      var pp0 = { cap: 0, crCap: 0, ncCap: 0, earned: 0, ncEarned: 0, crEarned: 0, crReleased: 0, ncReleased: 0, crTarget: 0, ncTarget: 0 };
       var ncFunds = 0;
       agg.perPrio.forEach(function (pp) { ncFunds += pp.ncCap; });
       (agg.perNc || []).forEach(function (q) { ncFunds += q.ncCap; });
@@ -13180,20 +13271,21 @@
         head: "Statewide priority outcomes",
         cr: { prios: priorities(slot), figures: function (p, i) {
           var pp = agg.perPrio[i] || pp0;
-          return { maxFtes: pp.crTarget, maxFunds: pp.crCap, fr: earnFraction(null, p), actualFunds: pp.crReleased };
+          return { maxFtes: pp.crTarget, maxFunds: pp.crCap, fr: earnFraction(null, p), actualFunds: pp.crEarned };
         } },
         nc: ncFunds > 0.5 && !outcomes ? { prios: ncPriorities(slot), figures: function (p, i) {
           var pp = agg.perPrio[i] || pp0;
-          return { maxFtes: pp.ncTarget, maxFunds: pp.ncCap, fr: earnFraction(null, p), actualFunds: pp.ncReleased };
+          return { maxFtes: pp.ncTarget, maxFunds: pp.ncCap, fr: earnFraction(null, p), actualFunds: pp.ncEarned };
         } } : null,
         // The outcomes lane (Scenario 4): the statewide figures are the
         // institutions' summed, the target TBA while no denominator has landed.
         ncOut: ncFunds > 0.5 && outcomes ? { prios: agg.ncPs, figures: function (p, i) {
           var q = agg.perNc[i] || pp0;
           return { target: countTargetPending(null, p) ? null : q.ncTarget, fr: earnFraction(null, p),
-            maxFunds: q.ncCap, actualFunds: q.ncReleased };
+            maxFunds: q.ncCap, actualFunds: q.ncEarned };
         } } : null,
-        gated: false,
+        // Gray while no institution qualifies yet, as the Statewide row reads.
+        gated: agg.winEarned < 0.5 && agg.winHeld >= 0.5,
         reported: reportedDetailRows(slot, true)
       });
       // Under the outcomes lane the rows name their outcomes, so the rule line goes (Sam, 2026-10-28, struck on a screenshot).
@@ -13359,8 +13451,8 @@
       if (!by[k]) {
         by[k] = { district: k, n: 0, cr_ftes: 0, nc_ftes: 0, total: 0,
           cr_award: 0, nc_award: 0, earned_cr: 0, earned_nc: 0, earned_total: 0,
-          earned_measured: 0, earned_advance: 0, earned_withheld: 0,
-          gate_blocked: false, nco: false, rows: [] };
+          earned_measured: 0, earned_advance: 0, earned_withheld: 0, held_cr: 0, held_nc: 0,
+          gate_blocked: false, nco: false, is_sum: true, rows: [] };
         order.push(k);
       }
       var g = by[k];
@@ -13376,6 +13468,8 @@
       g.earned_measured += r.earned_measured || 0;
       g.earned_advance += r.earned_advance || 0;
       g.earned_withheld += r.earned_withheld || 0;
+      g.held_cr += r.held_cr || 0;
+      g.held_nc += r.held_nc || 0;
       addYearFigs(g, r);
       g.rows.push(r);
     });
@@ -13416,7 +13510,8 @@
     // ONE SYSTEM row (R6, 2026-08-31) — the statewide CR/NC pair as columns on
     // one sticky line, shaped like an institution row so the award cells render
     // it unchanged.
-    var sysRow = addYearFigs({ college: "SYSTEM", nco: false, gate_blocked: false,
+    var sysRow = addYearFigs({ college: "SYSTEM", nco: false, gate_blocked: false, is_sum: true,
+      held_cr: sys.held_cr, held_nc: sys.held_nc,
       cr_award: sys.cr_award, nc_award: sys.nc_award, total: sys.total,
       cr_ftes: sys.cr_ftes, nc_ftes: sys.nc_ftes,
       earned_cr: sys.earned_cr, earned_nc: sys.earned_nc,
@@ -15363,8 +15458,8 @@
     var n = members.length, word = numWord(n);
     var line = (word === String(n) ? word : word.charAt(0).toUpperCase() + word.slice(1)) + " institutions";
     if (g) {
-      line += ", with a combined max award of " + fmtMoney(g.total || 0) + " and a current total of " +
-        earnedMoney(cellFig(g, "earned_total"));
+      line += ", with a combined max award of " + fmtMoney(g.total || 0) + " and funds qualified so far of " +
+        earnedMoney(curFig(g, "earned_total").fig);
     }
     return '<div class="cplfund-onedist"><h3>' + esc(districtShort(d)) + "</h3>" +
       '<p class="dk">' + line + ". Each institution&#39;s funding follows.</p></div>";
@@ -15965,7 +16060,12 @@
       '<div class="cplfund-toolbar">' +
       segHtml("cplFundGroup", [{ val: "none", label: "Flat list" },
         { val: "district", label: "Group by district" }], state.group) +
-      '<input type="search" id="cplFundSearch" placeholder="Search institution / district / county&hellip;" aria-label="Search institutions">' +
+      '<input type="search" id="cplFundSearch" placeholder="Search institution / district / county&hellip;" aria-label="Search institutions"' +
+        (state.q ? ' value="' + esc(state.q) + '"' : "") + ">" +
+      // A word that clears the search (the CSM team via Sam, 2026-10-29: "When search
+      // used for college, no way to clear it"); shown only while the box holds a search.
+      '<button type="button" class="cplfund-searchclear" id="cplFundSearchClear"' + (state.q ? "" : " hidden") +
+        ' aria-label="Clear the search">Clear</button>' +
       '<span class="cplfund-count" id="cplFundCount"></span>' +
       colMenuHtml() +
       '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as a CSV that opens directly in Excel (the full data, including any hidden columns and the county context)">Download as Excel</button></div>' +
@@ -16080,7 +16180,13 @@
       var m = /^Source:\s*(.+?):\s*(https?:\S+)\s*$/.exec(String(f));
       if (m) parts.push(link(m[2], esc(m[1])));
     });
-    return '<div class="cplfund-foot"><div>Sources: ' + parts.join(" &middot; ") + ".</div></div>";
+    // The public page names its dollar rule too (the CSM team's test, 2026-10-29:
+    // a college's public figure read $149,000 where the curator view read
+    // $149,426). The rule is the ADR's (PUBLIC_MONEY_FLOOR); the line says it.
+    var money = publicMode() ? '<div class="cplfund-foot-money">On this page, Funds Qualified So Far rounds to the nearest ' +
+      fmtMoney(PUBLIC_MONEY_FLOOR) + ", and a figure under " + fmtMoney(PUBLIC_MONEY_FLOOR) + " reads &lt;" + fmtMoney(PUBLIC_MONEY_FLOOR) +
+      ", so no small count of students can be worked out from it. Max awards are exact.</div>" : "";
+    return '<div class="cplfund-foot"><div>Sources: ' + parts.join(" &middot; ") + ".</div>" + money + "</div>";
   }
 
   function updateCount() {
@@ -16771,8 +16877,20 @@
       });
     });
     var input = document.getElementById("cplFundSearch");
+    var clearBtn = document.getElementById("cplFundSearchClear");
     if (input) {
-      input.addEventListener("input", function () { state.q = input.value || ""; refreshTable(); });
+      input.addEventListener("input", function () {
+        state.q = input.value || "";
+        if (clearBtn) clearBtn.hidden = !state.q;
+        refreshTable();
+      });
+    }
+    if (clearBtn && input) {
+      clearBtn.addEventListener("click", function () {
+        input.value = ""; state.q = ""; clearBtn.hidden = true;
+        refreshTable();
+        try { input.focus(); } catch (e) {}
+      });
     }
     function wireSeg(id, apply) {
       var seg = document.getElementById(id);

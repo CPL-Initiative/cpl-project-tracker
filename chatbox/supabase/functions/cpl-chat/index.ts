@@ -6434,6 +6434,10 @@ const FAQ_GENERIC = new Set([
   "cpl", "credit", "credits", "prior", "learning", "college", "colleges", "map", "funding",
   "fund", "funds", "institution", "institutions", "student", "students", "community",
   "course", "courses",
+  // "offer" since the apprenticeship question "Our college only offers a few apprenticeship
+  // programs..." (Sam, 2026-10-29): a catalog ask ("What courses does Norco College offer in
+  // welding?") shares only "college" and "offer" with it and is no funding question (S519).
+  "offer",
 ]);
 
 function faqStem(w: string): string {

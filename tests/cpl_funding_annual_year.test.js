@@ -207,8 +207,8 @@ function rowCell(doc, name, sel) {
     !!cur && /qualifying so far, credit and noncredit together: \$/.test(cur.getAttribute("title") || "") &&
     !/qualifying so far in /.test(cur.getAttribute("title") || ""));
   const th = doc.querySelector('#cplFundTable th[data-sort="current_total"]');
-  check("B2: the Curr Total Funds header keeps the window wording under Combined funding",
-    !!th && /^Curr Funds \(current funds\): the funding the institution qualifies for so far, credit and noncredit together,/
+  check("B2: the Funds Qualified So Far header keeps the window wording under Combined funding",
+    !!th && /^Funds Qualified So Far: the funding the institution qualifies for so far, credit and noncredit together,/
       .test(th.getAttribute("title") || ""));
 }
 

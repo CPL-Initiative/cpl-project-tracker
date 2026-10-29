@@ -432,11 +432,13 @@ function mountWords(doc) {
   // Applicable" is a MAP disposition status and is exempt by name. A person's own
   // words may open on a negative (Sam, 2026-10-28: "It's OK to lead with negatives
   // as long as it's human authored"), so the sentences a person wrote are exempt
-  // by name too: Malone's FAQ answers, posted as he wrote them the same day.
+  // by name too: Malone's FAQ answers, posted as he wrote them the same day, and
+  // the apprenticeship answer Sam brought on 2026-10-29.
   const NEG_START = /(?:^|[.!?]\s+)(No|Nothing|Not|Never|Cannot|None)\b(?! Applicable)/g;
   const HUMAN_NEG = ["No. Each college has its own maximum award.", "No. The dashboard uses cumulative MAP records",
     "No. MAP helps colleges identify CPL opportunities", "No. MAP preserves actions already taken",
-    "No. An exhibit describes the prior learning", "No exact match does not necessarily mean"];
+    "No. An exhibit describes the prior learning", "No exact match does not necessarily mean",
+    "No. CPL is not limited to individuals participating in registered apprenticeship programs."];
   function negStarts(text) {
     const out = []; let m;
     while ((m = NEG_START.exec(text))) {
