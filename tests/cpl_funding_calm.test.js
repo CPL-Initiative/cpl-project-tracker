@@ -417,12 +417,16 @@ function mountWords(doc) {
     // funding distributed through the apportionment procedure can get buried at
     // the colleges"): those two phrases of his are lifted out, and no other.
     // Malone's FAQ question goes up as he wrote it (Sam, 2026-10-28: "push them
-    // as written by Malone"), so its one "earning" is lifted out by name.
+    // as written by Malone"), so its one "earning" is lifted out by name, and
+    // Sam's two apprenticeship sentences of 2026-10-29, where a student or a
+    // worker earns the credit, the same way.
     .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")
       .replace(/received this funding through apportionment/g, "")
       .replace(/provided to colleges through the apportionment process/g, "")
       .replace(/funds are disbursed using the apportionment procedure/g, "")
-      .replace(/Does one college earning more funding reduce/g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
+      .replace(/Does one college earning more funding reduce/g, "")
+      .replace(/college credit is generally earned through/g, "")
+      .replace(/workers who earned industry-recognized credentials/g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
     .filter(Boolean);
   check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' / earn / price in the curate view's rendered text — " +
     (bad.length ? bad.join(" | ") : "clean"), bad.length === 0);

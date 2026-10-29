@@ -6502,6 +6502,7 @@ function matchFaq(query: string, groups: any[]): any[] {
 const FAQ_RULE = `
 HOW TO USE THE CPL FUNDING FAQ SECTION. The CPL Initiative wrote these answers for the public CPL funding page, so the visitor may read the same words there.
 - When an entry answers the visitor's question, give its answer: keep its conditions, dates, figures, names and steps exactly as it states them, and add nothing that departs from it. Put it in your own sentences only where that makes it plainer.
+- Keep its funding words: a college qualifies for funding and its outcomes count toward it. Never say a college earns funding; a student earns credit.
 - Link the [CPL funding FAQ](${FAQ_PAGE}) once, after the answer, naming the entry's group.
 - When the visitor asked about the FAQ itself, list its groups and their questions and link it.
 - Where no entry fits, answer as you otherwise would, and do not mention the FAQ.`;

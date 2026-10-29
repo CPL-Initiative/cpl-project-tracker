@@ -79,6 +79,10 @@ for (const ask of ["What courses does Norco College offer in welding?", "Hello S
   check("(5) the section carries the entry's group, question and whole answer, the link and the rule",
     ctx.includes("Group: Qualifying and confirming") && ctx.includes("Q: " + entry.q) && ctx.includes("A: " + entry.a) &&
     ctx.includes(L.FAQ_PAGE) && ctx.includes("HOW TO USE THE CPL FUNDING FAQ SECTION"), ctx.slice(0, 400));
+  // Sierra's first answer from the FAQ (Sam, 2026-10-29) said a college "earns" its max award;
+  // the FAQ says it qualifies for it, and the funding vocabulary keeps earning for a student's credit.
+  check("(5) the rule keeps the funding words: a college qualifies for funding, never earns it",
+    /a college qualifies for funding/.test(L.FAQ_RULE) && /Never say a college earns funding/.test(L.FAQ_RULE));
   check("(5) the rule keeps the FAQ's terms and links it once", /keep its conditions, dates, figures, names and steps exactly/.test(L.FAQ_RULE) && /Link the \[CPL funding FAQ\]\(/.test(L.FAQ_RULE));
   check("(5) no fit and no ask: no section", L.buildFaqContext([], groups, false) === "");
 }
