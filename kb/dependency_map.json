@@ -4,9 +4,9 @@
   "supabase_tables": 102,
   "rpcs": 43,
   "edge_functions": 9,
-  "file_datasets": 723,
-  "external_services": 185,
-  "consumers": 477,
+  "file_datasets": 725,
+  "external_services": 191,
+  "consumers": 479,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -1791,6 +1791,21 @@
    ],
    "main_committers": []
   },
+  "external:github.com/nodeca/pako": {
+   "consumers": [
+    {
+     "id": "module:jszip.min.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 10,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
   "external:hartnell.catalog.prod.coursedog.com": {
    "consumers": [
     {
@@ -2345,6 +2360,36 @@
    ],
    "main_committers": []
   },
+  "external:purl.org": {
+   "consumers": [
+    {
+     "id": "module:library_remediate.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 34,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:raw.github.com": {
+   "consumers": [
+    {
+     "id": "module:jszip.min.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 7,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
   "external:raw.githubusercontent.com": {
    "consumers": [
     {
@@ -2423,6 +2468,21 @@
    ],
    "main_committers": []
   },
+  "external:schemas.microsoft.com": {
+   "consumers": [
+    {
+     "id": "module:library_remediate.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 37,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
   "external:schemas.openxmlformats.org": {
    "consumers": [
     {
@@ -2434,6 +2494,16 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways"
+     ]
+    },
+    {
+     "id": "module:library_remediate.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 28,
+     "tabs": [
+      "library"
      ]
     },
     {
@@ -2570,6 +2640,21 @@
    ],
    "main_committers": []
   },
+  "external:stuartk.com": {
+   "consumers": [
+    {
+     "id": "module:jszip.min.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 4,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
   "external:studentrcc.sharepoint.com": {
    "consumers": [
     {
@@ -2588,6 +2673,21 @@
      "direction": "read",
      "how": "url",
      "line": 80,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "main_committers": []
+  },
+  "external:stuk.github.io": {
+   "consumers": [
+    {
+     "id": "module:jszip.min.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 13,
      "tabs": [
       "library"
      ]
@@ -7732,6 +7832,22 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:jszip.min.js": {
+   "consumers": [
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1012,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:kb-portal/app.js": {
@@ -16616,6 +16732,22 @@
    "served": true,
    "main_committers": []
   },
+  "file:library_remediate.js": {
+   "consumers": [
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1013,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:live_metrics.json": {
    "consumers": [
     {
@@ -18220,7 +18352,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1705,
+     "line": 1830,
      "tabs": [
       "library"
      ]
@@ -22868,7 +23000,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1313,
+     "line": 1421,
      "tabs": [
       "library"
      ]
@@ -25370,7 +25502,13 @@
   "gr_priorities.js": [
    "gr-priorities"
   ],
+  "jszip.min.js": [
+   "library"
+  ],
   "library.js": [
+   "library"
+  ],
+  "library_remediate.js": [
    "library"
   ],
   "map_cleanup_views.js": [

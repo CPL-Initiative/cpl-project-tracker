@@ -769,6 +769,16 @@ block("(15)", function () {
   });
 });
 
+function remDeck() {
+  const JSZip = require("../jszip.min.js"), z = new JSZip();
+  const ns = 'xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"';
+  z.file("docProps/core.xml", '<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title></dc:title></cp:coreProperties>');
+  z.file("ppt/slides/slide1.xml", '<p:sld ' + ns + '><p:cSld><p:spTree><p:sp><p:nvSpPr><p:cNvPr id="2" name="Title 1"/><p:cNvSpPr/><p:nvPr><p:ph type="title"/></p:nvPr></p:nvSpPr><p:txBody><a:bodyPr/><a:p><a:r><a:rPr/><a:t>Where the funding goes</a:t></a:r></a:p></p:txBody></p:sp>' +
+    '<p:pic><p:nvPicPr><p:cNvPr id="4" name="Picture 3"/><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="rId2"/></p:blipFill><p:spPr/></p:pic></p:spTree></p:cSld></p:sld>');
+  z.file("ppt/slides/_rels/slide1.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId2" Type="image" Target="../media/image1.png"/></Relationships>');
+  z.file("ppt/media/image1.png", "png");
+  return z.generateAsync({ type: "uint8array" }).then(function (u8) { return u8.buffer; });
+}
 // ── (16) Create or Remediate a Document (Sam, 2026-10-28; mockup Version 20) ──
 // One place to add: the three buttons are gone; Start runs the path the choice names.
 block("(16)", function () {
@@ -807,10 +817,35 @@ block("(16)", function () {
     check("(16) background opens the brief with the link as a document to work from",
       !!doc.getElementById("lib-startform") && (m.M._state.src.ls || []).length === 1 && m.M._state.src.ls[0].url === "https://studentrcc.sharepoint.com/sites/x/20261030_Summit_Funding.pptx");
     click(m.w, m.root.querySelector("[data-unpick]"));
-    drop({ name: "Webinar.pptx" });
-    check("(16) a dropped deck offers Remediate, chosen", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked && /Webinar\.pptx: what is it for\?/.test(m.root.textContent));
+    return remDeck();
+  }).then(function (buf) {
+    // The remediation module and its zip reader, as the page loads them on demand.
+    m.w.JSZip = require("../jszip.min.js");
+    m.w.CPL_REMEDIATE = require("../library_remediate.js");
+    drop({ name: "20261030_Webinar.pptx", arrayBuffer: function () { return Promise.resolve(buf); } });
+    check("(16) a dropped deck offers Remediate, chosen", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked && /20261030_Webinar\.pptx: what is it for\?/.test(m.root.textContent));
     click(m.w, doc.getElementById("lib-go"));
-    check("(16) Remediate says it is the next build, and writes nothing", /Remediation in this browser is the next build/.test(m.root.textContent) && writes.length === 0);
+    const ready = function (n) { return doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready(n - 1); }); };
+    return ready(200);
+  }).then(function () {
+    const rem = doc.querySelector(".lib-rem");
+    check("(16) Remediate reads the deck here and reports Fixed for you and Needs you", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Needs you \(\d+\)/.test(rem.textContent) && writes.length === 0, rem && rem.textContent.slice(0, 300));
+    check("(16) the title it set is listed", /Document title set: Where the funding goes/.test(rem.textContent));
+    const alt = doc.querySelector("[data-remtext]");
+    check("(16) the picture's alt text field holds a draft from the slide's title, and offers Decorative", !!alt && alt.value === "Where the funding goes" && !!doc.querySelector("[data-remdec]"));
+    alt.value = "Bar chart: units by college"; alt.dispatchEvent(new m.w.Event("input", { bubbles: true }));
+    let downloaded = null;
+    m.w.URL.createObjectURL = function () { return "blob:remediated"; };
+    m.w.URL.revokeObjectURL = function () {};
+    m.w.HTMLAnchorElement.prototype.click = function () { downloaded = this.download; };
+    click(m.w, rem.querySelector("[data-remgo]"));
+    const until = function (n) { return downloaded || n <= 0 ? Promise.resolve(downloaded) : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return until(n - 1); }); };
+    return until(200);
+  }).then(function (downloaded) {
+    check("(16) Remediate and download hands back the file under the original's name, the date code kept", downloaded === "20261030_Webinar_Remediated.pptx", String(downloaded));
+    check("(16) and says what it wrote", /1 alt text, 0 marked decorative/.test(m.root.textContent), (m.root.querySelector(".lib-msg") || {}).textContent);
+    click(m.w, doc.querySelector("[data-remfile]"));
+    check("(16) File it in the Library opens the filing form, titled from the file's name", !!doc.getElementById("lib-addform") && doc.getElementById("la-title").value === "Webinar" && doc.getElementById("la-kind").value === "deck");
     drop({ name: "Photo.png" });
     check("(16) a picture is not offered Remediate", !doc.getElementById("lc-use-remediate"));
     doc.getElementById("lc-use-asis").checked = true;
@@ -826,6 +861,7 @@ block("(16)", function () {
     const src = m.M._state.src.ls || [];
     check("(16) a text file used as background is read here into the brief's documents", src.length === 1 && src[0].text === "Eight projects funded." && src[0].title === "notes", JSON.stringify(src));
     check("(16) the instructions name the kind", doc.getElementById("ls-kind").value === "visual");
+    m.w.close(); // ends the download's one-minute revoke timer with the window
   });
 });
 

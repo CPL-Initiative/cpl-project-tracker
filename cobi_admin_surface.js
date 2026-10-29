@@ -596,7 +596,9 @@ window.COBI_ADMIN_SURFACE = {
     },
     "library": {
       "modules": [
+        "jszip.min.js",
         "library.js",
+        "library_remediate.js",
         "sierra/sidebar.js"
       ],
       "reads": [

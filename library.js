@@ -122,7 +122,7 @@
     retireAsk: null, start: null, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
     view: "pieces", regen: null, src: {},
-    pick: null, use: null
+    pick: null, use: null, rem: null
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -397,6 +397,17 @@
       R + " .lib-uses legend{font-weight:600;color:var(--text-strong);padding:0 4px;overflow-wrap:anywhere;}",
       R + " .lib-panelfoot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;}",
       R + " .lib-panelfoot .lib-line{flex:1 1 320px;margin:0;}",
+      R + " .lib-rem{display:grid;gap:14px;padding:18px;border:1px solid var(--border);border-radius:8px;background:var(--surface-opaque);}",
+      R + " .lib-remhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;}",
+      R + " .lib-remhead .lib-title{overflow-wrap:anywhere;}",
+      R + " .lib-remcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}",
+      R + " h4.lib-remh{margin:0 0 8px;font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:var(--text-strong);}",
+      R + " .lib-remneeds{list-style:none;margin:0;padding:0;display:grid;gap:12px;}",
+      R + " .lib-remneed{display:flex;gap:12px;align-items:flex-start;}",
+      R + " .lib-remneed .lib-field{flex:1 1 auto;min-width:0;}",
+      R + " .lib-remneed p{margin:0;}",
+      R + " .lib-remthumb{flex:0 0 96px;width:96px;height:64px;object-fit:contain;border-radius:4px;border:1px solid var(--border);background:var(--surface-muted);}",
+      R + " span.lib-remthumb{display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--text-muted);}",
       // One card per project (Sam, 2026-10-28; mockup Version 20): a row per piece, its title the link.
       R + " .lib-proj .lib-tile .big{font-size:1.45rem;}",
       R + " .lib-pieces{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--border);}",
@@ -961,7 +972,7 @@
     pick.kind = pick.link ? (EXT_KIND[ext] || "visual") : (EXT_KIND[ext] || "document");
     state.pick = pick;
     state.use = pick.file && REMEDIABLE[ext] ? "remediate" : pick.link ? "asis" : "background";
-    state.start = null; state.form = null; state.formFor = null; say("");
+    state.start = null; state.form = null; state.formFor = null; state.rem = null; say("");
   }
   function panelHtml() {
     var pk = state.pick;
@@ -984,8 +995,107 @@
       '<div class="lib-field"><label for="lc-instr">Instructions</label><textarea id="lc-instr" rows="4" placeholder="What you need, who it is for, the focus. With no file, say what to make: a visual, deck, document or video."></textarea></div>' +
       '<div class="lib-panelfoot"><p class="lib-line">A deck starts on the Chancellor\'s Office template, with a speaker script in each slide\'s notes for you to edit; a memo or report starts in the Chancellor\'s Office styles. Remediation runs in this browser, and nothing leaves it until you file it.</p>' +
       '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>" +
-      "</div>" + (state.start ? startForm() : "") + (state.form ? addForm() : "") + "</section>";
+      "</div>" + remHtml() + (state.start ? startForm() : "") + (state.form ? addForm() : "") + "</section>";
   }
+  // ── Remediation (lane NEXT ③): the deck or document, read and fixed in this browser ──
+  // library_remediate.js does the work over the file's XML; this draws its report (the
+  // mockup's Fixed for you and Needs you) and hands the remediated file back.
+  function loadScript(src) {
+    return new Promise(function (ok, no) {
+      var s = document.createElement("script"); s.src = src; s.onload = ok;
+      s.onerror = function () { no(new Error("The page could not load " + src + ". Reload and try again.")); };
+      document.head.appendChild(s);
+    });
+  }
+  function loadRemediate() {
+    if (window.CPL_REMEDIATE && window.JSZip) return Promise.resolve(window.CPL_REMEDIATE);
+    return (window.JSZip ? Promise.resolve() : loadScript("jszip.min.js")).then(function () {
+      return window.CPL_REMEDIATE ? null : loadScript("library_remediate.js");
+    }).then(function () { return window.CPL_REMEDIATE; });
+  }
+  function remEnv() { return { JSZip: window.JSZip, DOMParser: window.DOMParser, XMLSerializer: window.XMLSerializer }; }
+  var THUMB_EXT = { png: "image/png", jpg: "image/jpeg", jpeg: "image/jpeg", gif: "image/gif" };
+  function startRemediate(pk) {
+    if (!pk.file || !pk.file.arrayBuffer) { say("Choose the file again; this browser could not read it.", true); render(); return; }
+    state.start = null; state.form = null; state.formFor = null;
+    state.rem = { name: pk.name, reading: true, answers: {}, thumbs: {} };
+    say(""); render();
+    var buf;
+    pk.file.arrayBuffer().then(function (b) { buf = b; return loadRemediate(); }).then(function (R) {
+      return R.inspect(buf, pk.name, remEnv()).then(function (session) {
+        state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, thumbs: {} };
+        session.report.needs.forEach(function (n) { if (n.type === "alt" || n.type === "title") state.rem.answers[n.id] = { text: n.draft || "", decorative: false }; });
+        render();
+        var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus();
+        // A thumbnail of each picture that needs words, so the writer sees what to describe.
+        session.report.needs.forEach(function (n) {
+          var mt = n.media ? THUMB_EXT[extOf(n.media)] : "";
+          var f = mt && session.doc.zip.file(n.media);
+          if (!f || !window.URL || !URL.createObjectURL) return;
+          f.async("uint8array").then(function (u8) {
+            if (!state.rem || state.rem.session !== session) return;
+            state.rem.thumbs[n.id] = URL.createObjectURL(new Blob([u8], { type: mt }));
+            render();
+          });
+        });
+      });
+    }).catch(function (e) { state.rem = null; say(e.message, true); render(); });
+  }
+  function remHtml() {
+    var rm = state.rem;
+    if (!rm) return "";
+    if (rm.reading) return '<section class="lib-rem" aria-labelledby="lib-rem-h"><p class="lib-kicker">Remediation</p><h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line" role="status">Reading the file in this browser&hellip;</p></section>';
+    var rep = rm.report, needs = rep.needs;
+    var line = rep.extent + ". " + rep.fixed.length + (rep.fixed.length === 1 ? " fix" : " fixes") + " made for you, " + needs.length + (needs.length === 1 ? " item needs" : " items need") + " you.";
+    var item = function (n) {
+      var a = rm.answers[n.id] || {};
+      if (n.type === "alt") {
+        var th = rm.thumbs[n.id]
+          ? '<img class="lib-remthumb" src="' + esc(rm.thumbs[n.id]) + '" alt="The ' + (n.chart ? "chart" : "picture") + (n.slide ? " on slide " + n.slide : "") + ' this text describes">'
+          : '<span class="lib-remthumb none" aria-hidden="true">' + esc(n.chart ? "Chart" : n.slide ? "Slide " + n.slide : "Picture") + "</span>";
+        return '<li class="lib-remneed">' + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
+          '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="400" value="' + esc(a.text || "") + '"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' +
+          '<label class="lib-check"><input type="checkbox" data-remdec="' + esc(n.id) + '"' + (a.decorative ? " checked" : "") + "> Decorative (a screen reader skips it)</label></div></li>";
+      }
+      if (n.type === "title") {
+        return '<li class="lib-remneed"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + '; type one a screen reader can announce</label>' +
+          '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="200" value="' + esc(a.text || "") + '"></div></li>';
+      }
+      return '<li class="lib-remneed"><p>' + esc(n.text) + "</p></li>";
+    };
+    return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
+      '<div class="lib-remhead"><div><p class="lib-kicker">Remediation</p><h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line">' + esc(line) + "</p></div>" +
+      '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>' +
+      '<div class="lib-remcols"><div><h4 class="lib-remh">Fixed for you (' + rep.fixed.length + ")</h4>" +
+      (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
+      '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
+      (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
+      (needs.some(function (n) { return n.type === "alt" && n.draft; }) ? '<p class="lib-hint">A draft comes from the slide\'s or section\'s own words. Read each one before you keep it.</p>' : "") +
+      "</div></div>" +
+      '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
+      '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
+      '<p class="lib-hint">Contrast is not checked here: check it with PowerPoint\'s or Word\'s Accessibility Checker. Save the PDF from PowerPoint or Word with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
+      "</section>";
+  }
+  // Writes the answers into a fresh read of the original, so pressing it twice never
+  // writes a title twice, and hands the file back under the original's name.
+  function remGo() {
+    var rm = state.rem;
+    if (!rm || !rm.buf) return;
+    state.busy = true; render();
+    loadRemediate().then(function (R) {
+      return R.inspect(rm.buf, rm.name, remEnv()).then(function (fresh) { return R.finish(fresh, rm.answers, "blob"); }).then(function (out) {
+        state.busy = false;
+        var name = R.outName(rm.name), url = URL.createObjectURL(out.file);
+        var a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+        setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
+        var d = out.done;
+        say("Downloaded " + name + ": " + rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " + d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written. Open it, run the Accessibility Checker, then file it.");
+        render();
+      });
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+
   // Start runs the path the choice names: the brief for something new (with the file or
   // link as a document to work from), the filing form for a piece already made.
   function startPanel() {
@@ -1009,9 +1119,7 @@
       if (!instr) { say("Drop a file, paste a link, or say in Instructions what to make.", true); render(); return; }
       openBrief(null); return;
     }
-    if (state.use === "remediate") {
-      say("Remediation in this browser is the next build. Until then, file it as is or use it as background.", true); render(); return;
-    }
+    if (state.use === "remediate") { startRemediate(pk); return; }
     if (state.use === "asis") {
       state.start = null; state.formFor = null;
       state.form = { url: pk.link || "", title: titleFromName(pk.name), kind: pk.kind };
@@ -1565,6 +1673,10 @@
     wired = true;
     root.addEventListener("input", function (e) {
       if (e.target.id === "lib-q") { state.q = e.target.value; renderList(); }
+      else if (e.target.getAttribute && e.target.getAttribute("data-remtext") && state.rem) {
+        var k0 = e.target.getAttribute("data-remtext");
+        state.rem.answers[k0] = state.rem.answers[k0] || {}; state.rem.answers[k0].text = e.target.value;
+      }
     });
     root.addEventListener("change", function (e) {
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
@@ -1575,6 +1687,11 @@
         if (fl) { setPick({ name: fl.name, file: fl }); render(); var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus(); }
       }
       else if (e.target.name === "lc-use") { state.use = e.target.value; }
+      else if (e.target.getAttribute && e.target.getAttribute("data-remdec") && state.rem) {
+        var k1 = e.target.getAttribute("data-remdec");
+        state.rem.answers[k1] = state.rem.answers[k1] || {}; state.rem.answers[k1].decorative = e.target.checked;
+        render(); var cb = root.querySelector('[data-remdec="' + k1 + '"]'); if (cb) cb.focus();
+      }
       else if (/^(la|ls|le)-forkind$/.test(e.target.id || "")) {
         // The type picked decides which fields follow it; repaint, keeping the caret's owner.
         var pfx = e.target.id.slice(0, 2);
@@ -1614,8 +1731,16 @@
       else if ((v = b.getAttribute("data-madefor"))) { state.madeFor = v; render(); }
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
       else if (b.id === "lib-go") startPanel();
+      else if (b.getAttribute("data-remgo")) remGo();
+      else if (b.getAttribute("data-remclose")) { state.rem = null; render(); var g0 = document.getElementById("lib-go"); if (g0) g0.focus(); }
+      else if (b.getAttribute("data-remfile")) {
+        var rn0 = state.rem ? state.rem.name : "";
+        state.form = { title: titleFromName(rn0), kind: EXT_KIND[extOf(rn0)] || "document" }; state.formFor = null;
+        say("Download the remediated file, put it in the CPLLibrary folder, then paste its link here."); render();
+        var u3 = document.getElementById("la-url"); if (u3) u3.focus();
+      }
       else if (b.getAttribute("data-unpick")) {
-        state.pick = null; state.use = null; say(""); render();
+        state.pick = null; state.use = null; state.rem = null; say(""); render();
         var lk = document.getElementById("lc-link"); if (lk) { lk.value = ""; lk.focus(); }
       }
       else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-go"); if (sb) sb.focus(); }
