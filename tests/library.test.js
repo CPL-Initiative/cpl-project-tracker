@@ -844,6 +844,7 @@ block("(16)", function () {
     drop({ name: "20261030_Webinar.pptx", arrayBuffer: function () { return Promise.resolve(buf); } });
     check("(16) a dropped deck offers Remediate, chosen", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked && /20261030_Webinar\.pptx: what is it for\?/.test(m.root.textContent));
     const auto = doc.getElementById("lc-autodraft");
+    check("(16) the panel says what leaves the browser when drafting is on", /with drafting on, each picture and the words around it go to Claude for its alt text, and nothing else leaves until you file it/.test(m.root.textContent));
     check("(16) Claude drafting every picture is on by default, and says each picture goes to Claude (S517)", !!auto && auto.checked && /Each picture and the words around it go to Claude; turn this off for a file that shows a student's record/.test(auto.parentNode.textContent));
     click(m.w, doc.getElementById("lib-go"));
     const ready = function (n) { return doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready(n - 1); }); };
@@ -906,11 +907,12 @@ block("(16)", function () {
     m.w.URL.createObjectURL = function () { return "blob:remediated"; };
     m.w.URL.revokeObjectURL = function () {};
     m.w.HTMLAnchorElement.prototype.click = function () { downloaded = this.download; };
+    check("(16) the last step says what it does: Download the remediated file", rem.querySelector("[data-remgo]").textContent.trim() === "Download the remediated file");
     click(m.w, rem.querySelector("[data-remgo]"));
     const until = function (n) { return downloaded || n <= 0 ? Promise.resolve(downloaded) : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return until(n - 1); }); };
     return until(200);
   }).then(function (downloaded) {
-    check("(16) Remediate and download hands back the file under the original's name, the date code kept", downloaded === "20261030_Webinar_Remediated.pptx", String(downloaded));
+    check("(16) Download the remediated file hands back the file under the original's name, the date code kept", downloaded === "20261030_Webinar_Remediated.pptx", String(downloaded));
     check("(16) and says what it wrote", /2 alt texts, 0 marked decorative/.test(m.root.textContent), (m.root.querySelector(".lib-msg") || {}).textContent);
     click(m.w, doc.querySelector("[data-remfile]"));
     check("(16) File it in the Library opens the filing form, titled from the file's name", !!doc.getElementById("lib-addform") && doc.getElementById("la-title").value === "Webinar" && doc.getElementById("la-kind").value === "deck");
@@ -977,7 +979,7 @@ block("(16)", function () {
     check("(16) the PDF's report says what it carries in words, and where to fix it", /Needs its source: Not tagged/.test(t) && /It was made from a PowerPoint deck \(Microsoft PowerPoint\)/.test(t) && /Create PDF\/XPS/.test(t), t.slice(0, 400));
     const a = rem && rem.querySelector('a[href="https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/presentations/b.pptx"]');
     check("(16) the Library record whose title matches is named as its likely source", !!a && a.textContent === "Update to the Board of Governors");
-    check("(16) it offers the source .pptx, and no Remediate and download", !!rem.querySelector('label[for="lc-file"]') && /Choose the source \.pptx/.test(t) && !rem.querySelector("[data-remgo]") && writes.length === 0);
+    check("(16) it offers the source .pptx, and no Download the remediated file", !!rem.querySelector('label[for="lc-file"]') && /Choose the source \.pptx/.test(t) && !rem.querySelector("[data-remgo]") && writes.length === 0);
     m.w.close(); // ends the download's one-minute revoke timer with the window
   });
 });

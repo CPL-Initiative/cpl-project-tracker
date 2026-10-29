@@ -1040,7 +1040,7 @@
       '<div class="lib-field"><label for="lc-link">or paste a link</label><input id="lc-link" type="url" placeholder="A SharePoint file, a web page or a Claude page" value="' + esc(pk && pk.link ? pk.link : "") + '"></div>' +
       picked +
       '<div class="lib-field"><label for="lc-instr">Instructions</label><textarea id="lc-instr" rows="4" placeholder="What you need, who it is for, the focus. With no file, say what to make: a visual, deck, document or video."></textarea></div>' +
-      '<div class="lib-panelfoot"><p class="lib-line">A deck starts on the Chancellor\'s Office template, with a speaker script in each slide\'s notes for you to edit; a memo or report starts in the Chancellor\'s Office styles. Remediation runs in this browser, and nothing leaves it until you file it.</p>' +
+      '<div class="lib-panelfoot"><p class="lib-line">A deck starts on the Chancellor\'s Office template, with a speaker script in each slide\'s notes for you to edit; a memo or report starts in the Chancellor\'s Office styles. Remediation runs in this browser; with drafting on, each picture and the words around it go to Claude for its alt text, and nothing else leaves until you file it.</p>' +
       '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>" +
       "</div>" + remHtml() + (state.start ? startForm() : "") + (state.form ? addForm() : "") + "</section>";
   }
@@ -1187,7 +1187,7 @@
       (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Redraft every picture") + "</button></div>" : "") +
       (picNeeds().length ? '<p class="lib-hint">Each draft sends one picture and its ' + remPlace(rm) + "\'s words to Claude; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>" : "") +
       "</div></div>" +
-      '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
+      '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Download the remediated file</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
       '<p class="lib-hint">' + 'Save the PDF from PowerPoint, Word or Excel with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
       "</section>";

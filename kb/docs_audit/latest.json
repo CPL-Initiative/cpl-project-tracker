@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1317,
-    "bytes": 13362323,
+    "bytes": 13362848,
     "over_budget": 0,
     "handoff_max": 518,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2466866,
+        "bytes": 2467391,
         "over": 0
       },
       "kb_note": {
@@ -58,12 +58,11 @@
     "by_rule": {
       "kb_note_dialect": 1,
       "house_voice": 1,
-      "vault_heavy_path": 70,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 70
     },
     "vault": {
       "files": 25023,
-      "bytes": 3974406588,
+      "bytes": 3974407623,
       "heavy_bytes": 2812737378,
       "heavy_share": 0.708,
       "ignore_filters": [
@@ -863,17 +862,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_518_handoff.md",
-      "detail": {
-        "commits_since": 7,
-        "budget": 6,
-        "handoff": "session_518_handoff.md"
-      },
-      "message": "7 commit(s) have landed since `docs/session_518_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

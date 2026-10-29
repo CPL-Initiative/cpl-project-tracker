@@ -923,6 +923,11 @@ Sam's session, the day before the 7th Annual CPL Summit, on his first live run o
 - **Keep all and the next file.** *Keep all* keeps every alt text with words or marked decorative, and says how
   many still have none. *Remediate another file*, beside *Close*, opens the next report in place, and asks first when
   kept or edited answers are not yet in a downloaded file.
+- **A tab keeps the module it loaded.** Sam's first look after the merge (07:03 his time) still drew the old report:
+  the Library loads `library.js` once per page and Pages serves it with a ten-minute cache, so an open COBI tab
+  needs a reload to show a deploy. His second confusion was the button: *Remediate and download* read as the
+  start of the routine, which had already run, so it is now *Download the remediated file*. The panel's line
+  that nothing leaves the browser until filing now names what drafting sends.
 - **A grid item's minimum width is its content's.** A long URL in a hint widened the whole list item past its
   column until the item took `min-width:0` and the hints `overflow-wrap:anywhere`.
 
