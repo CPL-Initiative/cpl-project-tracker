@@ -93,7 +93,8 @@ is his standing preference there too.
 5. Then the ordinary start: the handoff, Rule 8's memory read, and the standing
    decision sheet's replies (Sam may have answered between sessions).
 6. **Requested briefs from the Library.** Anyone on the team can start a piece
-   from the Library tab (*Start a piece*, built 2026-10-06). Read them:
+   from the Library tab (*Create or Remediate a Document*, which saves the brief; built 2026-10-06 as
+   *Start a piece*, one panel since 2026-10-29). Read them:
 
    ```sql
    select slug, title, kind, occasion, seen_by, brief, created_at from cpl_library

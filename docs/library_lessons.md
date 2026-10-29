@@ -705,3 +705,5 @@ From *Regenerate, and the documents a piece is built from*, verbatim:
   made one and deleted it unfired), so he creates it from claude.ai's routines page with the paste in
   [`scheduled_sessions`](../scheduled_sessions.md), *The daytime Library run*. Until then the overnight routine works
   requests (nine firings, 22:12 to 06:12 Pacific).
+
+From *Status*, verbatim (the first mockup, superseded by Version 20): Approved mockup: https://claude.ai/artifact/VPpbDp7DD4acvHErVFkCqH.
