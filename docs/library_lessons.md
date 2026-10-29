@@ -971,6 +971,37 @@ The lane's NEXT after S516: a chart in a deck, a document or a workbook, the one
   advisory, white labels on green named for a person; after the fixes, a second inspect finds the white labels on
   blue at 4:1 fixable, and the file opens in LibreOffice. Tests: `library_remediate` (135, block 15).
 
+## Each slide beside its item, and empty boxes removed (S518 SkyServiceberry, 2026-10-29)
+
+Sam, reading the report's last items on the Summit deck: *"Is it possible to show the slides next to the problem item
+with these notes so the ppt doesn't need to be opened separately?"* and *"another example is the blank title box on
+slide 12 where it would be good to see the slide next to it."* Then: *"often when using ppt master slides a title box or
+text box is auto added and the user adds their own text boxes ... Could you delete blank boxes with no background color
+or outline color as part of the remediation? Sometime users add decorative boxes for formatting purposes but they would
+always have some sort of color added."*
+
+- **Every item that names a slide draws it**, from S517's slide plan (`report.slides[n].plan`): one slide to an item's
+  left with *Larger slide* (a blank title, text below AA, a chart's items, which now carry `slide` and `shapeId`
+  through `onSlide`); several as a strip under its words, a slide's number showing it larger (no title box, a crowded
+  slide, text on a gradient). The blank title box, the runs below AA or the chart are outlined.
+- **A crowded slide is numbered in reading order**: the slide's own shapes in the file's order (groups flattened), a
+  picture marked decorative and a wordless shape skipped. Its box reads *Checked here or in PowerPoint*.
+- **Empty boxes go before any check reads the slide** (`emptyBoxes`): a slide's own top-level `p:sp` with no words, no
+  fill and no outline, its layout's and master's placeholder looked at too, and a placeholder kept when the layout
+  cannot be read. Kept: the title box, a box with a link, alt text or an animation (`p:timing`'s `spTgt`), and any box
+  with color, a theme `fillRef` or `lnRef` counting as color. *Fixed for you* names the count and the slides, under
+  Reading order. On the five team decks in the repos it removes nothing: code made them, and none holds an empty box.
+- **The title box stays (Sam asked "why not just also delete empty title boxes?").** A screen reader finds a slide's
+  title only in its title box, and the Accessibility Checker flags a slide without one, so deleting it would turn a
+  typed title into a PowerPoint fix. Instead `titleDraft` drafts the title from the largest words in the slide's top
+  half, the item offers *Keep* (a draft is left until kept, as alt text is), and *Keep the title box just off the
+  slide* (on when the slide's own words show its title) moves the box just above the slide at download, so nothing
+  shows twice. Sam: *"good! draft title will help."*
+- **Phone width:** the strip is a grid item, so it carries `min-width:0;width:100%` or its fixed-width slides widen
+  the column past the screen (measured 430 at 390 before the fix).
+- `cpl_memory`: `sam-remediation-slides-beside-items-2026-10-29`, `sam-remediation-removes-empty-boxes-2026-10-29`.
+  Tests: `library` (17), `library_remediate` (7, 17).
+
 ## Moved from the lane (S512)
 
 ✅ **④ A deck's contrast is checked (S510).** Each text run's color (its own, else inherited through list style, layout, master and theme) is measured against the fill the words sit on: the shape's own, else the topmost shape drawn before it covering its middle (the layout's and master's own shapes included), else the slide's background through layout and master. Below 4.5:1, or 3:1 for 18pt or 14pt bold, each slide's color pair is one *Needs you* item showing the words both ways, with the nearest passing color of the same hue ticked as the fix; *Remediate and download* writes it onto those runs. Text over a picture, chart, table, gradient or pattern is named for a person (one item). On the five team decks, 6 findings, each confirmed on a render; the first build, against the background alone, reported 72 (`docs/library_lessons.md`, S510). Tests: `library_remediate` (8), `library` (16).
