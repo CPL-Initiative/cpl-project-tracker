@@ -15476,6 +15476,7 @@
         if (savingState === "saving" || saveBusy) { out.config = "busy"; return; }
         adoptConfigRow(row);
         remoteLoaded = true;
+        configHold = false;   // a refresh from another window ends the first-paint hold too
         out.config = "ok"; out.at = CONFIG_AT;
       }).catch(function () { out.config = "failed"; }),
       safe(loadEligibility), safe(loadNotes), safe(loadReports), safe(loadLedger)
