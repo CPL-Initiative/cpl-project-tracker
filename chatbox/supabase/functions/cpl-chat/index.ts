@@ -4894,7 +4894,7 @@ function buildCollegeContext(profile: any, includeContacts: boolean = true): str
      * `updated_at` is 2026-06-25 21:59:58 and NOTHING refreshes it: four things
      * write to this table (the landing-page sync, the identity crosswalk, the
      * scraper, the MAP users sync) and not one of them touches this column,
-     * while map_college_credit_summary rebuilds nightly in the 13:40 promotion.
+     * while map_college_credit_summary rebuilds nightly in the custom report promotion.
      * The two drifted for two months.
      *
      * What that cost: asked what RCCD should do, Sierra reported Moreno Valley
@@ -6495,6 +6495,14 @@ function matchFaq(query: string, groups: any[]): any[] {
   return scored.slice(0, FAQ_MAX_ITEMS);
 }
 
+// What the model is told when the knowledge search did not complete (S519). The other
+// routes fail safe to empty on their own, so a slow database can leave a turn with little
+// loaded; the visitor then hears that the data did not load, never that none exists.
+const SEARCH_FAILED_NOTE = `
+
+--- THE DATA DID NOT FULLY LOAD FOR THIS ANSWER ---
+The CPL knowledge search timed out on this turn, and other reads may have too. Answer from what is above. Where the answer needs data that is not above, say plainly that the data did not load this time and ask the visitor to try again in a minute. Never say a college has no CPL, no courses, no programs or no articulation for something because nothing about it loaded.`;
+
 const FAQ_RULE = `
 HOW TO USE THE CPL FUNDING FAQ SECTION. The CPL Initiative wrote these answers for the public CPL funding page, so the visitor may read the same words there.
 - When an entry answers the visitor's question, give its answer: keep its conditions, dates, figures, names and steps exactly as it states them, and add nothing that departs from it. Put it in your own sentences only where that makes it plainer.
@@ -6878,14 +6886,15 @@ Deno.serve(async (req: Request) => {
     const faqGroups = await faqRead;
     markTiming(timings, "retrieved", Date.now());
 
-    const sections = searchResult.data;
-    if (searchResult.error) {
-      console.error("Search error:", searchResult.error);
-      return new Response(JSON.stringify({ error: "Search failed", details: searchResult.error.message }), {
-        status: 500,
-        headers: { ...headers, "Content-Type": "application/json" },
-      });
-    }
+    // A FAILED KNOWLEDGE SEARCH ANSWERS WITH WHAT LOADED (S519, 2026-10-29). Sam asked
+    // about a firefighter certificate at Bakersfield while the daily MAP Custom Report load
+    // was promoting student credit to live, every read of that turn hit its 5 s route time
+    // limit at once, and this read's timeout returned a 500 ("Sorry, something went
+    // wrong"). It now answers from the routes that did load, and SEARCH_FAILED_NOTE keeps
+    // a missing read from reading as an absence.
+    const searchFailed = !!searchResult.error;
+    const sections = searchFailed ? [] : searchResult.data;
+    if (searchFailed) console.error("Search error (answering with what loaded):", searchResult.error);
 
     // 3. Determine search mode and build context
     let searchMode: "college" | "topic" | "college_topic" | "general" = "general";
@@ -7264,6 +7273,7 @@ Deno.serve(async (req: Request) => {
      * breakpoint and must stay byte-identical for every caller, so forking it
      * to serve one surface would cost every other surface its cache. */
     if (drafting) systemPrompt.volatile += DRAFTING_BLOCK;
+    if (searchFailed) systemPrompt.volatile += SEARCH_FAILED_NOTE;
 
     // 4. Call the model
     markTiming(timings, "model_sent", Date.now());

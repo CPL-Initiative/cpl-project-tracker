@@ -24,12 +24,17 @@ name: MAP Custom Report load (staging)
 #   * Both published aggregates rebuild in the same transaction, so the
 #     published and unsuppressed halves of a figure can never disagree.
 #
-# Runs at 13:40 UTC — after the last dashboard cron window (12:17) and after
-# credential-catalog-sync (13:20), so the three do not contend.
+# Runs at 04:57 UTC, 9:57 PM Pacific in daylight time and 8:57 PM in standard time
+# (Sam, 2026-10-29: "Maybe 10P PDT"). Until then it ran at 13:40 UTC, after the
+# dashboard windows and credential-catalog-sync; GitHub started that schedule five
+# to six hours late each day (16:55 to 19:31 UTC over the week to 10-29), so its
+# promotion landed at midday Pacific, and on 2026-10-29 it stalled every Sierra read
+# of one turn into a 500. Late or not, an evening start lands overnight Pacific,
+# clear of the dashboard's 06:17 window and the people using COBI and Sierra.
 
 on:
   schedule:
-    - cron: "40 13 * * *"
+    - cron: "57 4 * * *"
 
   workflow_dispatch:
     inputs:
