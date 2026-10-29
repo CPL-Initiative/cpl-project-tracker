@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-27
+updated: 2026-10-29
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -143,32 +143,11 @@ Tests: `library` (13, 14, 9), `college_cpl_workbook` (the notes).
 - **The Microsoft 365 connector waits on RCCD's admin approval** (Sam, 2026-10-26: *"We need to hold on the 365
   connector until I can get admin approval from RCCD"*). Until then a session reads a public link or pasted text, and
   the tab's help says so.
-- **Sam's Sheet 131 rulings (14:55-14:56Z, each his own call):** card 1 *two-hours*, a run every two hours on weekdays,
-  7 a.m. to 5 p.m. Pacific, working only Library requests; card 2 *move*. **The college page moved** to
-  `library/cpl-opportunity/` (S490); `cpl-opportunity/` forwards with its `?college=` and `#section`, so every link
-  already sent works, and COBI, My College, CPL Pathways and the Library tab link the new address. The twelve records'
-  links moved there by `kb/receipts/cpl_library_opportunity_urls_library_2026-10-26_s490.sql` after Pages served the
-  page (16:06Z), read back 12 of 12 (#2473).
-  **The daytime run waits on Sam:** a session's `create_trigger` takes no connectors here and attaches no repos (S490
-  made one and deleted it unfired), so he creates it from claude.ai's routines page with the paste in
-  [`scheduled_sessions`](../scheduled_sessions.md), *The daytime Library run*. Until then the overnight routine works
-  requests (nine firings, 22:12 to 06:12 Pacific).
+- **Sam's Sheet 131 rulings:** a Library-only run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific (waits on Sam to create it from claude.ai's routines page, paste in [`scheduled_sessions`](../scheduled_sessions.md)); the college page lives at `library/cpl-opportunity/`. The full text moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
 
 ## The Coordinator Guide is In development (Sam, 2026-10-25; Draft 1 by S480)
 
-Sam: *"For the Library artifact maker, that would be a good place to have the Coordinator Guide we are curating"*, then
-*"go ahead and build a draft incorporating all the analysis you got from the initial run ... I will likely like to add more
-specific MAP procedural docs later and ask for a refresh and keep iterating like that before we publish to the public
-library."* Draft 1 (https://claude.ai/artifact/7HPvgHpX8jnfpCLd7e4Tv1, private) is built from the S479 audit
-(`CPLBrain/04-projects/cpl-initiative/coordinator-guide/20261025_Coordinator_Guide_Audit.md`): every core correction, the
-three local sections as *your college's version*, the Phase 2 workflow starting from identification, and at its top the
-eleven items to confirm before release. Source: `20261025_CPL_Coordinator_Guide.html` beside the audit; a web page so a
-revision keeps its link and the public library and Sierra can read it once listed. Record
-`cpl-coordinator-getting-started-guide` (status draft with a brief, so In development at step 2; the Chaffey draft in the
-Drive folder *CPL Coordinator Getting Started Guides* is its first version), through
-`kb/receipts/cpl_library_coordinator_guide_2026-10-25_s480.sql`, applied by `supabase-migrate.yml` run 40245260779
-(23:34Z) and read back: the record, two `cpl_memory` rows and their two log rows. Each revision comes from **Changes to make**; listing it
-publicly, and anything sent to the Chaffey drafter, are Sam's.
+Draft 1 (https://claude.ai/artifact/7HPvgHpX8jnfpCLd7e4Tv1, private) is record `cpl-coordinator-getting-started-guide`, In development at step 2; each revision comes from **Changes to make**, and listing it publicly is Sam's. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
 
 ## The ELL IET and DSP pages, Version 2 (Sam's S482 asks; built S482 and S483)
 
@@ -220,5 +199,7 @@ Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money
 
 **The mockup as Sam left it, Version 20 (S508, 2026-10-29).** The header reads *every visual, deck, video and document … and how to rebuild or remediate it* (Sam: video, not film; *or remediate* added). One panel, always shown, headed *Create or Remediate a Document*; no *Add to the Library* control anywhere (*"we don't need the Add to the Library link at top--drive everyone to one place"*). Inside one wide drop box: drop or choose a file, or paste a link (a deck, document, PDF, picture, video, a SharePoint file or a web page); once a file is in, *what is it for?* with Remediate this file, Use it as background for something new, or File it as is; an Instructions box, always shown (what they need, the audience, the focus); and one control at the box's foot, *Start*, which runs whichever path the choice names (Sam asked for one word that kicks off the whole process; *Start* over *Go*, which reads as navigation). Defaults: a deck starts on the Chancellor's Office template with a speaker script in each slide's notes; a memo or report starts in the Chancellor's Office styles (the build needs both template files). No sample-deck button and no separate *Write the brief*: the instructions are the brief. Sam on the comment-and-move loop that made it: *"man, I love this process...should have been using it all along!"*
 
-**NEXT (the build):** ① a project link between `cpl_library` records (a column, by receipt) and the register drawn one card per project, each piece a row with Open and Copy link; ② the one *Create or Remediate a Document* panel as Version 20 draws it; ③ remediation in the browser for .pptx and .docx (OOXML through JSZip): fix the title, language, table header rows and decorative marks; ask for alt text (drafted from the slide's words), slide titles, contrast and reading order; hand back the remediated file. PDFs are checked and fixed at their source. The Chancellor's Office review still certifies.
+✅ **① One card per project is built (S509, #2538).** `cpl_library.project` (text, 1 to 200 characters) names a piece's project; pieces that share it draw as one card (the count and kinds in the tile, *Project · Updated*, the project's name, an *In the public library* chip when any piece is listed, who it is for, the lead piece's summary), then a row per piece, its title the link, with its chips and controls. A project of one keeps the plain card. Edit sets the project (the known ones offered), and Make a visual files a college's visual and workbook under one. Edit, Regenerate and Details sit on each piece's row, not the card, because each acts on one record (a departure from the mockup, said to Sam). Receipt `kb/receipts/cpl_library_projects_2026-10-29_s509.sql`, applied through the MCP and read back: 13 projects of 2 pieces (ELL IET and 12 college pairs). Test: `library` block (15).
+
+**NEXT (the build):** ② the one *Create or Remediate a Document* panel as Version 20 draws it; ③ remediation in the browser for .pptx and .docx (OOXML through JSZip): fix the title, language, table header rows and decorative marks; ask for alt text (drafted from the slide's words), slide titles, contrast and reading order; hand back the remediated file. PDFs are checked and fixed at their source. The Chancellor's Office review still certifies.
 

@@ -674,3 +674,34 @@ filed, or the day Edit moves it past Requested; the form names the piece it file
   has no such field; `cpl_funding_nc_attestation` held 0 rows).
 - **The page cap again.** With the contacts the ELL IET page reads 30,975 characters, so this branch's `cpl-chat` reads
   31,000 a page and 37,000 in all, deployed under Sheet 130 (run 40329644423).
+
+## Moved from the lane (S509)
+
+From *The Coordinator Guide is In development (Sam, 2026-10-25; Draft 1 by S480)*, verbatim:
+
+Sam: *"For the Library artifact maker, that would be a good place to have the Coordinator Guide we are curating"*, then
+*"go ahead and build a draft incorporating all the analysis you got from the initial run ... I will likely like to add more
+specific MAP procedural docs later and ask for a refresh and keep iterating like that before we publish to the public
+library."* Draft 1 (https://claude.ai/artifact/7HPvgHpX8jnfpCLd7e4Tv1, private) is built from the S479 audit
+(`CPLBrain/04-projects/cpl-initiative/coordinator-guide/20261025_Coordinator_Guide_Audit.md`): every core correction, the
+three local sections as *your college's version*, the Phase 2 workflow starting from identification, and at its top the
+eleven items to confirm before release. Source: `20261025_CPL_Coordinator_Guide.html` beside the audit; a web page so a
+revision keeps its link and the public library and Sierra can read it once listed. Record
+`cpl-coordinator-getting-started-guide` (status draft with a brief, so In development at step 2; the Chaffey draft in the
+Drive folder *CPL Coordinator Getting Started Guides* is its first version), through
+`kb/receipts/cpl_library_coordinator_guide_2026-10-25_s480.sql`, applied by `supabase-migrate.yml` run 40245260779
+(23:34Z) and read back: the record, two `cpl_memory` rows and their two log rows. Each revision comes from **Changes to make**; listing it
+publicly, and anything sent to the Chaffey drafter, are Sam's.
+
+From *Regenerate, and the documents a piece is built from*, verbatim:
+
+- **Sam's Sheet 131 rulings (14:55-14:56Z, each his own call):** card 1 *two-hours*, a run every two hours on weekdays,
+  7 a.m. to 5 p.m. Pacific, working only Library requests; card 2 *move*. **The college page moved** to
+  `library/cpl-opportunity/` (S490); `cpl-opportunity/` forwards with its `?college=` and `#section`, so every link
+  already sent works, and COBI, My College, CPL Pathways and the Library tab link the new address. The twelve records'
+  links moved there by `kb/receipts/cpl_library_opportunity_urls_library_2026-10-26_s490.sql` after Pages served the
+  page (16:06Z), read back 12 of 12 (#2473).
+  **The daytime run waits on Sam:** a session's `create_trigger` takes no connectors here and attaches no repos (S490
+  made one and deleted it unfired), so he creates it from claude.ai's routines page with the paste in
+  [`scheduled_sessions`](../scheduled_sessions.md), *The daytime Library run*. Until then the overnight routine works
+  requests (nine firings, 22:12 to 06:12 Pacific).
