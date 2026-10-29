@@ -403,16 +403,22 @@
       R + " .lib-remhead .lib-title{overflow-wrap:anywhere;}",
       R + " .lib-remhead > div:first-child{flex:1 1 320px;min-width:0;}",
       R + " .lib-remcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}",
+      // A deck's, document's or workbook's report stacks: Fixed for you is a few lines, so Needs
+      // you takes the whole width (Sam, 2026-10-29: "use the full real estate for the side by
+      // side of the items").
+      R + " .lib-remcols.stack{grid-template-columns:minmax(0,1fr);gap:16px;}",
       R + " h4.lib-remh{margin:0 0 8px;font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:var(--text-strong);}",
       R + " .lib-remchecks{margin:0;padding-left:1.1em;display:grid;gap:6px;}",
       R + " .lib-remneeds{list-style:none;margin:0;padding:0;display:grid;gap:12px;}",
       R + " .lib-remneed{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;min-width:0;}",
       R + " .lib-remneed .lib-hint,.lib-remneed label{overflow-wrap:anywhere;}",
-      R + " .lib-remneed .lib-field{flex:1 1 220px;min-width:0;}",
-      R + " .lib-remneed .lib-field textarea{min-height:3.4em;}",
+      R + " .lib-remneed .lib-field{flex:1 1 320px;min-width:0;}",
+      // The draft shows whole ("fairly large so minimal scrolling is needed"): the box grows
+      // to its words where the browser can, and starts four lines tall where it cannot.
+      R + " .lib-remneed .lib-field textarea{min-height:6.5em;max-height:22em;field-sizing:content;}",
       // The slide a picture sits on, drawn from its plan (S517); its colors are the file's own.
       R + " .lib-remside{flex:0 0 auto;display:grid;gap:4px;justify-items:start;}",
-      R + " .lib-remslide{position:relative;width:200px;max-width:100%;container-type:inline-size;overflow:hidden;border:1px solid var(--border);border-radius:4px;}",
+      R + " .lib-remslide{position:relative;width:280px;max-width:100%;container-type:inline-size;overflow:hidden;border:1px solid var(--border);border-radius:4px;}",
       R + " .lib-rembig{flex:1 1 100%;min-width:0;}",
       R + " .lib-rembig .lib-remslide{width:100%;}",
       R + " .lib-remsh{position:absolute;box-sizing:border-box;overflow:hidden;margin:0;}",
@@ -444,7 +450,7 @@
       R + " .lib-remstd{text-transform:none;letter-spacing:0;font-weight:400;}",
       R + " .lib-remzoom{background:none;border:0;padding:0 2px;min-height:24px;font:inherit;font-size:.9rem;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;}",
       R + " .lib-remneed p{margin:0;}",
-      R + " .lib-remthumb{flex:0 0 96px;width:96px;height:64px;object-fit:contain;border-radius:4px;border:1px solid var(--border);background:var(--surface-muted);}",
+      R + " .lib-remthumb{flex:0 0 140px;width:140px;height:96px;object-fit:contain;border-radius:4px;border:1px solid var(--border);background:var(--surface-muted);}",
       R + " span.lib-remthumb{display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--text-muted);}",
       R + " .lib-remswatches{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0;}",
       R + " .lib-remswatch{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:4px;font-size:.9rem;}",
@@ -1141,7 +1147,7 @@
         return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + side + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
           (n.near ? '<p class="lib-hint">On the slide, ' + esc(n.near.where) + ": “" + esc(n.near.text) + "”</p>" : "") +
           (n.qr ? '<p class="lib-hint">The QR code reads ' + esc(n.qr.length > 160 ? n.qr.slice(0, 159) + "…" : n.qr) + ".</p>" : "") +
-          '<textarea id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" rows="2" maxlength="400"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' + esc(a.text || "") + "</textarea>" +
+          '<textarea id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" rows="4" maxlength="400"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' + esc(a.text || "") + "</textarea>" +
           '<label class="lib-check"><input type="checkbox" data-remdec="' + esc(n.id) + '"' + (a.decorative ? " checked" : "") + "> Decorative (a screen reader skips it)</label>" +
           '<div class="lib-actions-row">' + keepHtml(rm, n) +
           (n.media && THUMB_EXT[extOf(n.media)]
@@ -1176,7 +1182,7 @@
       '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + "</h3></div>" +
       remNextHtml() + "</div>" +
       '<div class="lib-remprog" id="lib-remprog">' + progressInner(rm) + "</div>" +
-      '<div class="lib-remcols"><div><h4 class="lib-remh">Fixed for you (' + rep.fixed.length + ")</h4>" +
+      '<div class="lib-remcols stack"><div><h4 class="lib-remh">Fixed for you (' + rep.fixed.length + ")</h4>" +
       (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f, i) { return '<li id="lib-remfix-' + i + '" tabindex="-1">' + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
       '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
       // Keep all (Sam, 2026-10-29: "giving the user the opportunity to edit, redraft, or keep.
