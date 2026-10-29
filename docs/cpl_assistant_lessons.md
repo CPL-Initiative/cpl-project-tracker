@@ -809,3 +809,7 @@ Sam: *"the current mobile view is mostly consumed by the header text."* The intr
   which proves nothing about the built-in copy; the smoke after the switch-off (run 40396104138) is the proof.
 - **The smoke's catalog modes time out some days** (statement timeout 57014 on `search_college_programs` and
   `college_program_courses`: runs 369, 371, 372, 376). Read which modes failed before calling a smoke red for a change.
+
+## Moved from the lane (S518)
+
+**The funding FAQ (S518; Sam, 2026-10-29: *"can you ensure that sierra has access to the FAQs so she could answer consistently?"*, then *"go ahead with the FAQ categories and Sierra"*).** Each turn reads the public funding page's FAQ beside the retrieval batch (`fetchFundingFaq`, cached ten minutes): `funding-model/faq.json` from Pages, filed from `cpl_funding.js` by `scripts/build_funding_faq.js` (checked by `check_generated.sh` and `sierra_funding_faq`), or the published scenario's `text.x_faq` once a curator saves one. `matchFaq` keeps up to four entries a question names; their answers ride whole in the volatile half (`faqContext`) with `FAQ_RULE` (keep the FAQ's conditions, dates and figures, link it once), and an ask for the FAQ lists every question by group. Deployed by `cpl-chat-deploy.yml` after the merge.

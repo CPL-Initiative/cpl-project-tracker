@@ -16228,8 +16228,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 487,
+   "count": 488,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 519,
+     "path": "docs/session_519_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "funding",
+      "sierra",
+      "faq"
+     ],
+     "title": "Session 519 handoff: the Library's slides beside their items, funding on a phone, the FAQ in groups and Sierra reading it",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-29",
      "governs": [],
@@ -24569,5 +24587,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1305
+ "total": 1306
 }

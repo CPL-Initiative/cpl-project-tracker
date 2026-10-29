@@ -1067,3 +1067,13 @@ the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-depl
 ✅ **⑩ A workbook's conditional formatting is measured (S516):** each rule's colors against every cell in its range, one item per format, fixed by a copy that only the failing rules point at. Detail: [`docs/library_lessons.md`](library_lessons.md), *A workbook's conditional formatting (S516)*. Tests: `library_remediate` (121).
 
 ✅ **③ Remediation in the browser is built (S509).** Remediate on a dropped .pptx or .docx reads it here (`library_remediate.js` over the vendored `jszip.min.js` 3.10.1, MIT, loaded on demand like `docx.min.js`) and reports, as the mockup draws it, *Fixed for you*: the title (from the first slide's title or first heading, a generator's stock title counting as none), the language, table header rows, a picture on most slides (a logo) marked decorative as Office writes it; and *Needs you*: alt text per picture and chart, with its thumbnail and a draft from the slide's or section's words, or Decorative; an empty slide title; slides with no title box (one item); crowded slides' reading order (one item); a document with no headings. *Remediate and download* writes the answers into a fresh read and hands back `<name>_Remediated.<ext>`, the date code kept; *File it in the Library* opens the filing form. A chart's draft comes from its own numbers. *Draft from the picture* (Sam, 2026-10-29: *"We do a lot of MAP screenshots and hoping you can decipher them and at least take a shot at alt text"*) sends that one picture, shrunk to 1568 pixels, to the `alt-text-draft` function (S509, v1; checks the team phrase itself; writes nothing), which asks Claude; *Draft every picture* runs all. Tried on four team files; all reopen. Tests: `library_remediate`, `library` block (16).
+
+## Moved from the lane (S518)
+
+## The Coordinator Guide is In development (Sam, 2026-10-25; Draft 1 by S480)
+
+Draft 1 (https://claude.ai/artifact/7HPvgHpX8jnfpCLd7e4Tv1, private) is record `cpl-coordinator-getting-started-guide`, In development at step 2; each revision comes from **Changes to make**, and listing it publicly is Sam's. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
+
+## The ELL IET and DSP pages, Version 2 (built S482 and S483)
+
+Both are the public copies (Sheet 129). The record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S513)*.

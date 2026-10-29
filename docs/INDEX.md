@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 487 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1305** | |
+| Session handoffs | 488 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1306** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-29 (S518 SkyServiceberry, Sam's session): the Library draws each slide beside its item, removes empty boxes, titles every slide and writes Claude's script into the notes (#2556, #2557); the funding page on a phone (#2558); the FAQ in six groups and Sierra reading it (#2559); handoff 519 (light).
 - 2026-10-29 (S517 SkyPartridgeberry, Sam's session): the Library's remediation draws each picture with its slide, reads QR codes, drafts every picture before the report opens, counts down to the Chancellor's Office review on one bar, and files a file in the Library as it opens (#2552 to #2554); a KB note on alt text a program wrote; handoff 518 updated.
 - 2026-10-29 (S517 SkyPartridgeberry, the CPL Queue routine): the Library measures a chart's contrast in a deck, document or workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on (#2551).
 - 2026-10-29 (S514 SkyMarionberry, the CPL Queue routine): the Library remediates a workbook (.xlsx): sheet names renamed everywhere they are referenced, alt text on charts drafted from their numbers, tables with no header row, data with no table and merged cells listed (#2548); handoff 515.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-29 (S509 SkyElderberry, Sam's session): #2537 merged after S508's floor fix; the Library built to mockup Version 20: one card per project (#2538, `cpl_library.project` by receipt), the one *Create or Remediate a Document* panel (#2540), and in-browser remediation of a .pptx or .docx with chart drafts from their numbers and *Draft from the picture* through the new `alt-text-draft` function (#2541); handoff 510.
 - 2026-10-29 (S508 SkyGooseberry, Sam's session): #2536 and CPLBrain#525 merged; Malone's twelve funding FAQs as he wrote them (#2537); the funding page loses its footer, opens on the published scenario and keeps one link to the public page; the map.rccd.edu privacy edits and security and accessibility scan for Malone; the Library remediation mockup; handoff 509.
 - 2026-10-28 (S507 SkyDewberry, Sam's session): the Summit a11y sweep, 125 of 131 targets passing and the one COBI fault moved on Sam's word (#2534, #2536); the funding FAQ posted as he settled it on Sheets 138 and 139 (#2536); two sessions' Sheet 138s reconciled; handoff 508.
-- 2026-10-28 (S506 SkyCloudberry, Sam's session): the funding forms start with the email and acknowledge an allowed address (#2531; the domain gate measured read-only); the Attest word, gray boxes, memo TBA, one curator text section that keeps a deletion; NOCE's nocccd.edu and *Awaiting CPL Initiative Confirmation* (#2533); the FAQ on Open Asks Sheet 138; no handoff file (S507 writes 508).
