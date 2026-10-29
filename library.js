@@ -384,6 +384,18 @@
       R + " :focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;border-radius:4px;}",
       "@media (max-width:760px){" + R + " .lib-item{grid-template-columns:132px minmax(0,1fr);}" + R + " .lib-thumb{width:132px;}" + R + " .lib-acts{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;}}",
       "@media (max-width:560px){" + R + " .lib-item{grid-template-columns:minmax(0,1fr);}" + R + " .lib-thumb{width:100%;max-width:320px;}" + R + " .lib-details dl{grid-template-columns:minmax(0,1fr);gap:2px 0;}" + R + " .lib-details dd{margin-bottom:8px;}" + R + " .lib-seg{width:100%;}" + R + " .lib-seg button{flex:1 1 auto;}}",
+      // One card per project (Sam, 2026-10-28; mockup Version 20): a row per piece, its title the link.
+      R + " .lib-proj .lib-tile .big{font-size:1.45rem;}",
+      R + " .lib-pieces{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--border);}",
+      R + " .lib-piece{display:grid;gap:4px;padding:10px 0;border-bottom:1px solid var(--border);}",
+      R + " .lib-piecehead{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:baseline;}",
+      R + " .lib-piecename{flex:1 1 240px;min-width:0;overflow-wrap:anywhere;}",
+      R + " .lib-piecename a,.lib-piecename b{font-weight:700;}",
+      R + " .lib-piece .lib-chips{margin:0;flex:1 1 220px;}",
+      R + " .lib-pieceacts{display:flex;flex-wrap:wrap;gap:6px 12px;}",
+      R + " .lib-proj{grid-template-columns:176px minmax(0,1fr);}",
+      "@media (max-width:760px){" + R + " .lib-proj{grid-template-columns:132px minmax(0,1fr);}}",
+      "@media (max-width:560px){" + R + " .lib-proj{grid-template-columns:minmax(0,1fr);}}",
       "@media (prefers-reduced-motion:reduce){" + R + " *{transition:none!important;animation:none!important;}}"
     ].join("\n");
     var st = document.createElement("style");
@@ -471,7 +483,7 @@
     if (state.madeFor !== "all" && (r.for_kind || "unset") !== state.madeFor) return false;
     if (state.forName !== "all" && (r.for_name || "") !== state.forName) return false;
     if (state.q.trim()) {
-      var hay = [r.title, r.occasion, r.file_name, r.summary, KIND[r.kind], r.made_by, r.version, r.for_name, forKindWord(r)].join(" ").toLowerCase();
+      var hay = [r.title, r.project, r.occasion, r.file_name, r.summary, KIND[r.kind], r.made_by, r.version, r.for_name, forKindWord(r)].join(" ").toLowerCase();
       var words = state.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
       for (var i = 0; i < words.length; i++) if (hay.indexOf(words[i]) < 0) return false;
     }
@@ -617,10 +629,16 @@
     if (f.for_kind === "other" && !f.for_category) return "Type the category for Other, so the filter can offer it again.";
     return "";
   }
+  function projectNames() {
+    var seen = {};
+    (state.rows || []).forEach(function (r) { if (r.project) seen[r.project] = true; });
+    return Object.keys(seen).sort();
+  }
   function datalists() {
-    if (!state.names || !state.names.length) return "";
     var list = function (id, names) { return '<datalist id="' + id + '">' + names.map(function (n) { return '<option value="' + esc(n) + '">'; }).join("") + "</datalist>"; };
-    return list("lib-names-colleges", collegeNames()) + list("lib-names-districts", districtNames());
+    var projects = list("lib-projects", projectNames());
+    if (!state.names || !state.names.length) return projects;
+    return projects + list("lib-names-colleges", collegeNames()) + list("lib-names-districts", districtNames());
   }
 
   function editForm(r) {
@@ -633,6 +651,7 @@
       '<div class="lib-field"><label for="le-seen">Seen by</label><select id="le-seen">' +
       opt("", "Not set", r.seen_by || "") + opt("team", "Team", r.seen_by) + opt("colleges", "Colleges", r.seen_by) + opt("public", "Public", r.seen_by) + "</select></div>" +
       forFields("le", r) +
+      '<div class="lib-field wide"><label for="le-project">Project</label><input id="le-project" type="text" list="lib-projects" maxlength="200" value="' + esc(r.project || "") + '" placeholder="ELL IET CPL"><span class="lib-line">Pieces that share a project show as one card: a visual and the document it was built from, a deck and its script.</span></div>' +
       '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://studentrcc.sharepoint.com/..."></div>' +
       '<p class="lib-line wide">What to change, and the documents to work from, go on <b>Regenerate</b> beside Edit.</p>' +
       knowledgeFields("le", r) +
@@ -999,6 +1018,69 @@
       ? rows.length + (rows.length === 1 ? " piece" : " pieces") + " across " + gs.length + (gs.length === 1 ? " occasion" : " occasions")
       : "Showing " + shown.length + " of " + rows.length + " pieces";
   }
+  // Pieces that share a project draw as one card (Sam, 2026-10-28: "one card for a whole
+  // project"), at the place its first piece holds; a project of one keeps the plain card.
+  function units(rows) {
+    var out = [], at = {};
+    rows.forEach(function (r) {
+      var k = r.project ? String(r.project).trim() : "";
+      if (!k) { out.push(r); return; }
+      if (at[k] == null) { at[k] = out.length; out.push({ name: k, rows: [] }); }
+      out[at[k]].rows.push(r);
+    });
+    return out.map(function (u) { return u.rows && u.rows.length === 1 ? u.rows[0] : u; });
+  }
+  function kindsWord(rows) {
+    var ks = [];
+    rows.forEach(function (r) { var w = (KIND[r.kind] || r.kind || "").toLowerCase(); if (w && ks.indexOf(w) < 0) ks.push(w); });
+    if (!ks.length) return "";
+    var s = ks.length === 1 ? ks[0] : ks.slice(0, -1).join(", ") + " and " + ks[ks.length - 1];
+    return s.charAt(0).toUpperCase() + s.slice(1);
+  }
+  function pieceRow(r) {
+    var open = !!state.open[r.id];
+    var fl = flagsOf(r);
+    var meta = [KIND[r.kind] || r.kind];
+    if (r.version) meta.push(/^\d+$/.test(r.version) ? "Version " + r.version : r.version);
+    var name = r.url
+      ? '<a id="lib-t-' + esc(r.id) + '" href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title) + "</a>"
+      : '<b id="lib-t-' + esc(r.id) + '">' + esc(r.title) + "</b>";
+    var chips = chip(r.status ? statusWord(r) : "Status: Not set", !r.status) +
+      (r.public_listed ? chip("In the public library") : "") +
+      chip("Seen by: " + seenWord(r), !r.seen_by) +
+      (r.home === "not_filed" ? "" : chip(homeOf(r).label));
+    var acts = r.url
+      ? '<button type="button" class="lib-btn" data-copy="' + esc(r.id) + '">Copy link</button>'
+      : '<button type="button" class="lib-btn" data-file="' + esc(r.id) + '">File it</button>';
+    if (r.url && !r.public_listed) acts += '<button type="button" class="lib-btn" data-pubtop="' + esc(r.id) + '">List publicly</button>';
+    acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
+    acts += regenBtn(r);
+    if (r.refresh_note || regenState(r)) acts += requestBtn(r);
+    acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
+    return '<li class="lib-piece"><div class="lib-piecehead"><span class="lib-piecename">' + name + " \u00b7 " + esc(meta.filter(Boolean).join(" \u00b7 ")) + "</span>" +
+      '<ul class="lib-chips" aria-label="Record">' + chips + "</ul>" +
+      '<span class="lib-pieceacts">' + acts + '<span class="lib-copyslot" id="lib-c-' + esc(r.id) + '"></span></span></div>' +
+      (fl.length ? '<ul class="lib-flags" aria-label="Needs attention">' + fl.map(function (f) { return "<li>" + esc(flagText(f, r)) + "</li>"; }).join("") + "</ul>" : "") +
+      regenBox(r) + requestBox(r) +
+      '<div class="lib-details" id="lib-d-' + esc(r.id) + '"' + (open ? "" : " hidden") + ">" + (open ? details(r) : "") + "</div></li>";
+  }
+  function projectCard(u) {
+    // The visual leads (the mockup's order): it is what the rest was built for or from.
+    var rows = u.rows.filter(function (r) { return r.kind === "visual"; }).concat(u.rows.filter(function (r) { return r.kind !== "visual"; }));
+    var lead = rows[0];
+    var who = rows.filter(function (r) { return r.for_kind; })[0];
+    var latest = rows.map(function (r) { return r.made_on || ""; }).sort().pop();
+    var id = "lib-p-" + esc(lead.id);
+    var anyPublic = rows.some(function (r) { return r.public_listed; });
+    return '<article class="lib-item lib-proj" aria-labelledby="' + id + '">' +
+      '<div class="lib-thumb"><div class="lib-tile"><span class="big">' + rows.length + ' pieces</span><span class="unit">' + esc(kindsWord(rows)) + "</span></div></div>" +
+      '<div class="lib-body"><p class="lib-kicker">' + esc(["Project", latest ? "Updated " + fmtDate(latest) : ""].filter(Boolean).join(" \u00b7 ")) + "</p>" +
+      '<h3 class="lib-title" id="' + id + '">' + esc(u.name) + "</h3>" +
+      (anyPublic ? '<ul class="lib-chips" aria-label="Project"><li class="lib-chip">In the public library</li></ul>' : "") +
+      (who ? '<p class="lib-for">Made for <b>' + esc(forKindWord(who)) + "</b>" + (who.for_name ? " \u00b7 For <b>" + esc(who.for_name) + "</b>" : "") + "</p>" : "") +
+      (lead.summary ? '<p class="lib-summary">' + esc(lead.summary) + "</p>" : "") +
+      '<ul class="lib-pieces" aria-label="The pieces in ' + esc(u.name) + '">' + rows.map(pieceRow).join("") + "</ul></div></article>";
+  }
   function listHtml(all) {
     var rows = registerRows(all);
     var shown = rows.filter(matches), gs = groups(shown);
@@ -1007,7 +1089,7 @@
     return gs.map(function (g, i) {
       return '<section class="lib-group" aria-labelledby="lib-g-' + i + '"><div class="lib-ghead"><h2 class="lib-h" id="lib-g-' + i + '">' + esc(g.name) +
         '</h2><span class="count">' + g.rows.length + (g.rows.length === 1 ? " piece" : " pieces") + "</span></div>" +
-        '<div class="lib-items">' + g.rows.map(item).join("") + "</div></section>";
+        '<div class="lib-items">' + units(g.rows).map(function (u) { return u.rows ? projectCard(u) : item(u); }).join("") + "</div></section>";
     }).join("");
   }
   // Typing in the search box repaints only the list, so the box keeps its caret.
@@ -1191,6 +1273,7 @@
   function collegePair(name, occasion, by) {
     var base = collegeSlug(name), when = today();
     var made = by + ", from the Library tab's Make a visual, " + when;
+    var project = name + ": CPL Opportunity Analysis";
     return [{
       slug: "cpl-opportunity-" + base + "-visual", title: name + ": CPL Opportunity Analysis", kind: "visual",
       occasion: occasion || null, made_on: when, version: "1", status: "draft", seen_by: "colleges",
@@ -1198,7 +1281,7 @@
       summary: name + "'s COCI programs and courses, its MAP exhibits (AP and IB excluded), and the statewide credit recommendations it could adopt, each with a Request Adopt link to MAP.",
       rebuild_from: "cpl-project-tracker/college_cpl_workbook.js and library/cpl-opportunity/index.html (built in the browser from published data); the MAP team's notes for this college in library/cpl-opportunity/notes/" + base + ".json",
       note: "Live page: it rebuilds from the current data on each visit.",
-      for_kind: "college", for_name: name, made_by: made, added_by: by
+      for_kind: "college", for_name: name, made_by: made, added_by: by, project: project
     }, {
       slug: "cpl-opportunity-" + base + "-workbook", title: name + ": CPL Opportunity Analysis (workbook)", kind: "spreadsheet",
       occasion: occasion || null, made_on: when, version: "1", status: "draft", seen_by: "colleges",
@@ -1206,7 +1289,7 @@
       summary: "The Excel analysis for " + name + ": Download CPL Extract on its CPL Opportunity page, then file the .xlsx here.",
       rebuild_from: "Download CPL Extract on the " + name + " page (cpl-project-tracker/college_cpl_workbook.js)",
       note: "File it once the .xlsx is in SharePoint CPLLibrary.",
-      for_kind: "college", for_name: name, made_by: made, added_by: by
+      for_kind: "college", for_name: name, made_by: made, added_by: by, project: project
     }];
   }
 
@@ -1285,7 +1368,8 @@
     var body = { status: g("le-status") || null, seen_by: g("le-seen") || null,
       url: url || null, home: url ? homeForUrl(url) : "not_filed", updated_by: by,
       for_kind: madeFor.for_kind, for_category: madeFor.for_category, for_name: madeFor.for_name,
-      knowledge: knowledgeValue(g("le-knowledge"), g("le-kbnote")), kb_note: g("le-kbnote") || null };
+      knowledge: knowledgeValue(g("le-knowledge"), g("le-kbnote")), kb_note: g("le-kbnote") || null,
+      project: g("le-project") || null };
     // A piece started as a brief has no date until it is made; one that moves past Requested
     // without one takes today's, so it sorts with its peers rather than last.
     var r = byId(id) || {};
@@ -1560,6 +1644,7 @@
     load: load,
     _state: state,
     _flagsOf: flagsOf,
+    _collegePair: collegePair,
     _isDev: isDev,
     _briefText: briefText,
     _homeForUrl: homeForUrl,
