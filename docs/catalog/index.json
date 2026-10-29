@@ -16210,8 +16210,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 481,
+   "count": 482,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 513,
+     "path": "docs/session_513_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "accessibility"
+     ],
+     "title": "Session 513 handoff: headers, footers and text boxes in a Word document's contrast",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-29",
      "governs": [],
@@ -24454,5 +24470,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1298
+ "total": 1299
 }
