@@ -1011,6 +1011,92 @@ block("(16)", function () {
   });
 });
 
+// ── (17) Each slide an item names, drawn beside it (Sam, 2026-10-29) ─────
+// "Is it possible to show the slides next to the problem item with these notes so the
+// ppt doesn't need to be opened separately?" and "another example is the blank title box
+// on slide 12 where it would be good to see the slide next to it."
+function slidesDeck() {
+  const JSZip = require("../jszip.min.js"), z = new JSZip();
+  const ns = 'xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"';
+  const box = function (id, y, words, rPr) {
+    return '<p:sp><p:nvSpPr><p:cNvPr id="' + id + '" name="TextBox ' + id + '"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="600000" y="' + y + '"/><a:ext cx="4000000" cy="400000"/></a:xfrm></p:spPr>' +
+      '<p:txBody><a:bodyPr/><a:p><a:r><a:rPr sz="1400"' + (rPr || "/>") + '<a:t>' + words + '</a:t></a:r></a:p></p:txBody></p:sp>';
+  };
+  const title = function (words) {
+    return '<p:sp><p:nvSpPr><p:cNvPr id="2" name="Title 1"/><p:cNvSpPr/><p:nvPr><p:ph type="title"/></p:nvPr></p:nvSpPr><p:spPr><a:xfrm><a:off x="600000" y="200000"/><a:ext cx="10000000" cy="900000"/></a:xfrm></p:spPr>' +
+      '<p:txBody><a:bodyPr/>' + (words ? '<a:p><a:r><a:rPr/><a:t>' + words + '</a:t></a:r></a:p>' : '<a:p><a:endParaRPr/></a:p>') + '</p:txBody></p:sp>';
+  };
+  const slide = function (body) { return '<p:sld ' + ns + '><p:cSld><p:spTree>' + body + '</p:spTree></p:cSld></p:sld>'; };
+  z.file("docProps/core.xml", '<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title></dc:title></cp:coreProperties>');
+  // Slide 1: a title and ten text boxes, so its reading order is asked for.
+  let crowd = title("The Summit's agenda");
+  for (let i = 0; i < 10; i++) crowd += box(10 + i, 1200000 + i * 450000, "Item " + (i + 1));
+  z.file("ppt/slides/slide1.xml", slide(crowd));
+  // Slide 2: a title box left blank, and light gray words on white.
+  z.file("ppt/slides/slide2.xml", slide(title("") + box(5, 2000000, "Metric:", '><a:solidFill><a:srgbClr val="CCCCCC"/></a:solidFill></a:rPr>')));
+  // Slide 3: no title box at all.
+  z.file("ppt/slides/slide3.xml", slide(box(5, 2000000, "Questions?")));
+  // A layout, master and theme behind them, so contrast is measured.
+  const rel = function (target) { return '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="x" Target="' + target + '"/></Relationships>'; };
+  [1, 2, 3].forEach(function (k) { z.file("ppt/slides/_rels/slide" + k + ".xml.rels", rel("../slideLayouts/slideLayout1.xml")); });
+  z.file("ppt/slideLayouts/slideLayout1.xml", '<p:sldLayout ' + ns + '><p:cSld><p:spTree/></p:cSld></p:sldLayout>');
+  z.file("ppt/slideLayouts/_rels/slideLayout1.xml.rels", rel("../slideMasters/slideMaster1.xml"));
+  z.file("ppt/slideMasters/slideMaster1.xml", '<p:sldMaster ' + ns + '><p:cSld><p:spTree/></p:cSld><p:clrMap bg1="lt1" tx1="dk1" bg2="lt2" tx2="dk2"/></p:sldMaster>');
+  z.file("ppt/slideMasters/_rels/slideMaster1.xml.rels", rel("../theme/theme1.xml"));
+  z.file("ppt/theme/theme1.xml", '<a:theme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:themeElements><a:clrScheme name="t"><a:dk1><a:srgbClr val="000000"/></a:dk1><a:lt1><a:srgbClr val="FFFFFF"/></a:lt1></a:clrScheme></a:themeElements></a:theme>');
+  return z.generateAsync({ type: "uint8array" }).then(function (u8) { return u8.buffer; });
+}
+block("(17)", function () {
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method && init.method !== "GET") return response(201, [Object.assign({ id: "rem17" }, JSON.parse(init.body || "{}"))]);
+    return response(200, ROWS);
+  } });
+  const doc = m.w.document;
+  return Promise.resolve(m.M.activate()).then(settle).then(slidesDeck).then(function (buf) {
+    m.w.JSZip = require("../jszip.min.js");
+    m.w.CPL_REMEDIATE = require("../library_remediate.js");
+    m.w.URL.createObjectURL = function () { return "blob:pic"; };
+    m.w.URL.revokeObjectURL = function () {};
+    const ev = new m.w.Event("drop", { bubbles: true, cancelable: true });
+    Object.defineProperty(ev, "dataTransfer", { value: { files: [{ name: "20261030_Agenda.pptx", arrayBuffer: function () { return Promise.resolve(buf); } }] } });
+    doc.getElementById("lib-drop").dispatchEvent(ev);
+    click(m.w, doc.getElementById("lib-go"));
+    const ready = function (n) { return doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready(n - 1); }); };
+    return ready(300);
+  }).then(function () {
+    const need = function (id) { return doc.getElementById("lib-remneed-" + id); };
+    const t2 = need("t2"), c2 = need("c2-1"), ro = need("ro"), tp = need("tp");
+    check("(17) the report holds the blank title, the contrast, the reading order and the missing title", !!t2 && !!c2 && !!ro && !!tp, m.M._state.rem && JSON.stringify(m.M._state.rem.report.needs.map(function (n) { return [n.id, n.slide, n.slides, (n.text || n.label || "").slice(0, 60)]; })));
+    if (!t2 || !c2 || !ro || !tp) return;
+    const s2 = t2.querySelector(".lib-remside .lib-remslide");
+    check("(17) a blank title box shows its slide to its left, the empty box outlined", !!s2 && /^Slide 2 as laid out, its empty title box outlined$/.test(s2.getAttribute("aria-label")) &&
+      s2.querySelectorAll(".lib-remhit").length === 1 && s2.parentNode.nextElementSibling.classList.contains("lib-field"), s2 && s2.getAttribute("aria-label"));
+    // The blank title is drafted from the slide's own words, kept off the slide, and left until kept.
+    const tIn = t2.querySelector("[data-remtext]"), tOff = t2.querySelector("[data-remoff]");
+    check("(17) a blank title is drafted from the slide's words, its box kept off the slide, with Keep", !!tIn && tIn.value === "Metric:" && !!tOff && tOff.checked &&
+      !!t2.querySelector("[data-remkeep]") && /Drafted from the largest words in the slide's top half/.test(t2.textContent) && !m.M._state.rem.kept.t2, tIn && tIn.value);
+    tOff.checked = false; tOff.dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    check("(17) the off-the-slide box is the person's to clear", m.M._state.rem.answers.t2.off === false);
+    const sc = c2.querySelector(".lib-remside .lib-remslide");
+    check("(17) text below AA shows its slide, the words outlined, drawn in their own color", !!sc && /the text below AA outlined/.test(sc.getAttribute("aria-label")) && sc.querySelectorAll(".lib-remhit").length === 1 &&
+      Array.prototype.some.call(sc.querySelectorAll("span"), function (x) { return x.textContent === "Metric:" && /color:\s*(#CCCCCC|rgb\(204, 204, 204\))/i.test(x.getAttribute("style")); }));
+    const order = ro.querySelectorAll(".lib-remstrip .lib-remslide");
+    const nums = order.length ? Array.prototype.map.call(order[0].querySelectorAll(".lib-remord"), function (x) { return x.textContent; }).join(",") : "";
+    check("(17) a crowded slide is drawn under its item, each item numbered in the order a screen reader meets it", order.length === 1 && nums === "1,2,3,4,5,6,7,8,9,10,11" &&
+      /each item numbered in the order a screen reader meets it/.test(order[0].getAttribute("aria-label")) && /The numbers on each slide below show the order/.test(ro.textContent), nums);
+    check("(17) its reading order can be checked here", /Checked here or in PowerPoint/.test(ro.textContent));
+    const tps = tp.querySelectorAll(".lib-remstrip .lib-remslide");
+    check("(17) a slide with no title box is drawn under its item, and its box still says PowerPoint", tps.length === 1 && /^Slide 3 as laid out$/.test(tps[0].getAttribute("aria-label")) && /Checked in PowerPoint/.test(tp.textContent) && !/here or/.test(tp.textContent));
+    click(m.w, tp.querySelector('[data-remzoom="tp"][data-remat="3"]'));
+    const tp2 = need("tp");
+    check("(17) a slide's number shows it larger, and again puts it back", !!tp2.querySelector(".lib-rembig .lib-remslide") && tp2.querySelector('[data-remat="3"]').getAttribute("aria-expanded") === "true" && doc.activeElement === tp2.querySelector('[data-remat="3"]'));
+    click(m.w, tp2.querySelector('[data-remat="3"]'));
+    check("(17) Smaller", !need("tp").querySelector(".lib-rembig"));
+    click(m.w, need("t2").querySelector("[data-remzoom]"));
+    check("(17) Larger slide on the blank title draws it across the item", !!need("t2").querySelector(".lib-rembig .lib-remslide") && /Smaller slide/.test(need("t2").querySelector("[data-remzoom]").textContent));
+  });
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {

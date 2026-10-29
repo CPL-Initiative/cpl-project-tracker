@@ -387,6 +387,43 @@
 
   // Every text run on a slide's top-level and grouped shapes, with the color it paints
   // and the fill behind it. A run on a gradient, a picture or a pattern goes in `unsure`.
+  // Empty boxes (Sam, 2026-10-29: "Could you delete blank boxes with no background color or
+  // outline color as part of the remediation? Sometime users add decorative boxes for
+  // formatting purposes but they would always have some sort of color added."). A box a
+  // layout added that was never filled, or a text box left empty, shows nothing on the
+  // slide, yet a screen reader still meets it in the reading order. Removed here: a slide's
+  // own top-level box with no words, no fill and no outline (its layout's and master's
+  // placeholder looked at too). Kept: the title box (the slide's title goes in it), a box
+  // with a link, alt text or an animation, and any box with color.
+  function paintsFill(sp, ctx) {
+    var f = fillOf(child(sp, NS.p, "spPr"), ctx);
+    if (f) return !f.none;
+    var st = child(sp, NS.p, "style"), ref = st && child(st, NS.a, "fillRef");
+    if (ref && +ref.getAttribute("idx") > 0) { var r = ctx && refFill(ref, ctx.fillStyles, 1, ctx); return !(r && r.none); }
+    return false;
+  }
+  function paintsLine(sp, ctx) {
+    var ln = child(child(sp, NS.p, "spPr") || sp, NS.a, "ln");
+    if (ln) { var f = fillOf(ln, ctx); if (f) return !f.none; }
+    var st = child(sp, NS.p, "style"), ref = st && child(st, NS.a, "lnRef");
+    return !!ref && +ref.getAttribute("idx") > 0;
+  }
+  function emptyBoxes(s, ctx) {
+    var tree = first(s.xml, NS.p, "spTree"), out = [], animated = {};
+    els(s.xml, NS.p, "spTgt").forEach(function (t) { animated[t.getAttribute("spid")] = true; });
+    for (var el = tree ? tree.firstChild : null; el; el = el.nextSibling) {
+      if (el.nodeType !== 1 || el.namespaceURI !== NS.p || el.localName !== "sp") continue;
+      var key = placeholderKey(el), pr = first(el, NS.p, "cNvPr");
+      if (!pr || (key && key.type === "title") || textOf(el, NS.a).trim()) continue;
+      if (animated[pr.getAttribute("id")] || first(pr, NS.a, "hlinkClick") || first(pr, NS.a, "hlinkHover") || (pr.getAttribute("descr") || "").trim()) continue;
+      var holders = key ? [findPlaceholder(ctx && ctx.layout, key), findPlaceholder(ctx && ctx.master, key)] : [];
+      // A placeholder on a file whose layout cannot be read stays: its color is unknown.
+      if (key && !ctx) continue;
+      if ([el].concat(holders).some(function (h) { return h && (paintsFill(h, ctx) || paintsLine(h, ctx)); })) continue;
+      out.push(el);
+    }
+    return out;
+  }
   // A shape's box in EMUs, from its own xfrm or, for a placeholder, its layout's or master's.
   function boxOf(el, ctx) {
     var x = first(el, NS.a, "xfrm") || first(el, NS.p, "xfrm");
@@ -789,7 +826,7 @@
       if (!b) return;
       var rec = { kind: "", x: (tf.dx + tf.sx * b.x) / size.w, y: (tf.dy + tf.sy * b.y) / size.h, w: tf.sx * b.w / size.w, h: tf.sy * b.h / size.h };
       var cNvPr = first(el, NS.p, "cNvPr");
-      if (own && cNvPr) rec.id = cNvPr.getAttribute("id");
+      if (own && cNvPr) { rec.id = cNvPr.getAttribute("id"); if (isDecorative(cNvPr)) rec.dec = true; }
       if (el.localName === "pic") {
         var blip = first(el, NS.a, "blip"), t = blip && rels[blip.getAttributeNS(NS.r, "embed")];
         rec.kind = "pic"; rec.media = t && /^ppt\//.test(t) ? t : null; rec.av = isMedia(el);
@@ -813,7 +850,8 @@
             rec.paras.push({ t: words, sz: (look.sz || (rec.title ? 3200 : 1800)) / 100, b: look.b, color: look.color && look.color !== "?" ? look.color : null, algn: algn || "l" });
           });
         }
-        if (!rec.paras.length && !rec.fill) return;
+        // An empty title box stays in the plan, so the page can outline where its title goes.
+        if (!rec.paras.length && !rec.fill && !(own && rec.title)) return;
         rec.kind = rec.paras.length ? "text" : "shape";
         rec.text = rec.paras.map(function (p) { return p.t; }).join(" ");
       }
@@ -880,6 +918,20 @@
     if (rest.length) lines.push("Other words on the slide, top to bottom: " + clip(rest.join(" | "), 900));
     return lines.join("\n");
   }
+  // A blank title box beside the person's own text box (Sam, 2026-10-29): the title is
+  // drafted from the largest words in the slide's top half, and the box is kept off the
+  // slide, so the words do not show twice and a screen reader still finds the title.
+  function titleDraft(n, plan) {
+    var best = null;
+    plan.shapes.forEach(function (r) {
+      if (r.id == null || r.kind !== "text" || r.title || !r.text || r.y > 0.5) return;
+      var sz = r.paras[0] ? r.paras[0].sz : 0;
+      if (!best || sz > best.sz + 0.5 || (Math.abs(sz - best.sz) <= 0.5 && r.y < best.y)) best = { sz: sz, y: r.y, text: r.text };
+    });
+    if (!best) return;
+    n.draft = clip(best.text, 200);
+    n.offSlide = true;
+  }
   function planPptx(doc, slides, report) {
     var cache = {};
     var bare = { scheme: {}, map: {}, layout: null, master: null, bg: { hex: "FFFFFF" } };
@@ -890,6 +942,7 @@
             var plan = slidePlan(s, ctx || bare, size), entry = report.slides[s.n - 1];
             if (entry) entry.plan = plan;
             report.needs.forEach(function (n) {
+              if (n.type === "title" && n.slide === s.n) titleDraft(n, plan);
               if (n.type !== "alt" || n.slide !== s.n) return;
               n.near = n.chart ? null : nearestWords(plan, n.shapeId);
               var extra = [n.name ? "Its name in the file: " + n.name : "", n.av ? "It is the poster frame of a" + (n.av === "audio" ? "n audio clip." : " video.") : ""];
@@ -935,6 +988,23 @@
         });
       });
     }, Promise.resolve()).then(function () {
+      // Empty boxes go first, so the checks after this read the slide as it will be.
+      var cache = {}, cleared = [], removed = 0;
+      return slides.reduce(function (pr, s) {
+        return pr.then(function () {
+          return slideContext(doc, s, cache).then(function (ctx) {
+            var gone = emptyBoxes(s, ctx);
+            gone.forEach(function (el) { el.parentNode.removeChild(el); });
+            if (gone.length) { removed += gone.length; cleared.push(s.n); s.dirty = true; }
+          });
+        });
+      }, Promise.resolve()).then(function () {
+        if (!removed) return;
+        report.fixed.push((removed === 1 ? "An empty box" : removed + " empty boxes") + " removed from " + slideList(cleared).toLowerCase() +
+          ": no words, no fill and no outline, so nothing showed, yet a screen reader met " + (removed === 1 ? "it" : "each one"));
+        report.auto.order = removed; report.fixedAt.order = report.fixed.length - 1;
+      });
+    }).then(function () {
       var langFixed = 0, headers = 0;
       // Which picture files appear on most slides: a logo or a background mark.
       var seen = {};
@@ -961,7 +1031,7 @@
         s.words = s.title;
         if (!s.words) els(s.xml, NS.p, "sp").some(function (sp) { s.words = textOf(sp, NS.a); return !!s.words; });
         if (!s.title) {
-          if (titleSp) report.needs.push({ type: "title", id: "t" + s.n, slide: s.n, path: s.path, text: "Slide " + s.n + " has an empty title" });
+          if (titleSp) report.needs.push({ type: "title", id: "t" + s.n, slide: s.n, path: s.path, shapeId: (first(titleSp, NS.p, "cNvPr") || { getAttribute: function () { return null; } }).getAttribute("id"), text: "Slide " + s.n + " has an empty title" });
           else noPlaceholder.push(s.n);
         }
         // Language on every run that names none.
@@ -983,7 +1053,7 @@
           .forEach(function (shape) {
             var cNvPr = first(shape, NS.p, "cNvPr");
             var isChart = shape.localName === "graphicFrame";
-            if (isChart && cNvPr) (doc.charts = doc.charts || []).push({ part: s.rels[first(shape, NS.c, "chart").getAttributeNS(NS.r, "id")], host: s.path,
+            if (isChart && cNvPr) (doc.charts = doc.charts || []).push({ part: s.rels[first(shape, NS.c, "chart").getAttributeNS(NS.r, "id")], host: s.path, slide: s.n, shapeId: cNvPr.getAttribute("id"),
               label: "Slide " + s.n + ", chart" + (cNvPr.getAttribute("name") ? " (" + cNvPr.getAttribute("name") + ")" : "") });
             var stock = cNvPr && stockAlt(cNvPr.getAttribute("descr"));
             if (!cNvPr || isDecorative(cNvPr) || stock === false) return;
@@ -1003,7 +1073,7 @@
       if (noPlaceholder.length) report.needs.push({ type: "info", id: "tp", slides: noPlaceholder,
         text: slideList(noPlaceholder) + (noPlaceholder.length === 1 ? " has" : " have") + " no title a screen reader can find. In PowerPoint, give " + (noPlaceholder.length === 1 ? "it" : "each") + " a layout with a title (Home, Layout), or put the title in the slide's title box and move it off the slide if it must not show." });
       if (crowded.length) report.needs.push({ type: "order", id: "ro", slides: crowded,
-        text: "Reading order on " + slideList(crowded).toLowerCase() + ": each holds " + CROWDED + " or more items. In PowerPoint, check that a screen reader meets them in the order the slide means (Home, Arrange, Selection Pane, which lists them bottom to top)." });
+        text: "Reading order on " + slideList(crowded).toLowerCase() + ": each holds " + CROWDED + " or more items. The numbers on each slide below show the order a screen reader meets its words and pictures; where that is not the order the slide means, change it in PowerPoint (Home, Arrange, Selection Pane, which lists them bottom to top)." });
       if (langFixed) { report.fixed.push("Language set to English (United States) on " + langFixed + " text runs"); report.auto.lang = 1; report.fixedAt.lang = report.fixed.length - 1; }
       if (headers) { report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); report.auto.tables = headers; report.fixedAt.tables = report.fixed.length - 1; }
       if (markedRepeat) { report.fixed.push("A picture repeated on most slides (a logo) marked decorative, " + markedRepeat + " times"); report.auto.alt = markedRepeat; report.fixedAt.alt = report.fixed.length - 1; }
@@ -1524,6 +1594,11 @@
   function themeCtx(doc, path) {
     return doc.read(path).then(function (theme) { return { scheme: wordScheme(theme), map: CHART_MAP, bg: { hex: "FFFFFF" } }; });
   }
+  // A chart in a deck names its slide and frame, so the page can draw the slide beside it.
+  function onSlide(ch, item) {
+    if (ch.slide) { item.slide = ch.slide; item.shapeId = ch.shapeId; }
+    return item;
+  }
   function contrastCharts(doc, report, hostCtx) {
     var unsure = [], seen = {};
     return (doc.charts || []).reduce(function (pr, ch, ci) {
@@ -1618,8 +1693,8 @@
                   var g = fills[(j + 1) % fills.length];
                   if (f.hex && g.hex && ratio(f.hex, g.hex) < 3) alike.push(ptName(f.pt) + " and " + ptName(g.pt));
                 });
-                if (alike.length) report.needs.push({ type: "info", id: "ks" + (ci + 1) + "-" + (si + 1), text: ch.label + ": side by side, the slices " + alike.join("; ") +
-                  " read less than 3:1 against each other. In the chart's Format pane, give the slices a white border (Format Data Series, Border, Solid line) or colors further apart." });
+                if (alike.length) report.needs.push(onSlide(ch, { type: "info", id: "ks" + (ci + 1) + "-" + (si + 1), text: ch.label + ": side by side, the slices " + alike.join("; ") +
+                  " read less than 3:1 against each other. In the chart's Format pane, give the slices a white border (Format Data Series, Border, Solid line) or colors further apart." }));
               }
               // The data labels, and those that sit inside the bars or slices, whose words a
               // series' new color must keep readable.
@@ -1663,13 +1738,13 @@
             var have = ratio(it.fg, worst), base = ch.label + ": " + it.what + " in #" + it.fg + " on #" + worst + (/labels( of the series .*)?$/.test(it.what) ? " read " : " reads ") +
               (Math.floor(have * 10) / 10) + ":1; " + it.rule;
             if (!fix || !grounds.every(function (g) { return ratio(fix, g) >= it.need; })) {
-              report.needs.push({ type: "info", id: "k" + (ci + 1) + "-" + (i + 1), text: base + (it.keep && it.keep.length ?
+              report.needs.push(onSlide(ch, { type: "info", id: "k" + (ci + 1) + "-" + (i + 1), text: base + (it.keep && it.keep.length ?
                 ". No one color passes on the plot area and keeps the labels on it readable; change it in the chart's Format pane, or give the " + (/slice/.test(it.rule) ? "slices" : "bars") + " a dark outline." :
-                ". No one color passes on every fill it meets; change it in the chart's Format pane.") });
+                ". No one color passes on every fill it meets; change it in the chart's Format pane.") }));
               return;
             }
-            report.needs.push({ type: "contrast", id: "k" + (ci + 1) + "-" + (i + 1), inChart: true, path: ch.part, op: it.op, loc: it.loc, pt: it.pt, line: !!it.line, advisory: !!it.advisory,
-              fg: it.fg, bg: worst, need: it.need, ratio: Math.round(have * 100) / 100, fix: fix, fixRatio: Math.round(ratio(fix, worst) * 100) / 100, text: base });
+            report.needs.push(onSlide(ch, { type: "contrast", id: "k" + (ci + 1) + "-" + (i + 1), inChart: true, path: ch.part, op: it.op, loc: it.loc, pt: it.pt, line: !!it.line, advisory: !!it.advisory,
+              fg: it.fg, bg: worst, need: it.need, ratio: Math.round(have * 100) / 100, fix: fix, fixRatio: Math.round(ratio(fix, worst) * 100) / 100, text: base }));
           });
         });
       });
@@ -1951,6 +2026,22 @@
             run.appendChild(rPr); run.appendChild(t);
             var end = child(para, NS.a, "endParaRPr");
             para.insertBefore(run, end);
+            // Kept off the slide: the box moves just above it, where a screen reader still reads it.
+            var ctx0 = doc.slideCtx && doc.slideCtx[path], bx = ans.off && boxOf(sp, ctx0 || {});
+            if (bx) {
+              var spPr = child(sp, NS.p, "spPr");
+              if (!spPr) { spPr = d.createElementNS(NS.p, "p:spPr"); sp.insertBefore(spPr, body); }
+              var xf = child(spPr, NS.a, "xfrm");
+              if (!xf) {
+                xf = d.createElementNS(NS.a, "a:xfrm");
+                xf.appendChild(d.createElementNS(NS.a, "a:off")); xf.appendChild(d.createElementNS(NS.a, "a:ext"));
+                spPr.insertBefore(xf, spPr.firstChild);
+              }
+              var o = child(xf, NS.a, "off"), x = child(xf, NS.a, "ext");
+              o.setAttribute("x", String(bx.x)); o.setAttribute("y", String(-bx.h - 91440));
+              x.setAttribute("cx", String(bx.w)); x.setAttribute("cy", String(bx.h));
+              done.offSlide = (done.offSlide || 0) + 1;
+            }
             doc.touch(path); done.titles++;
           } else if (n.type === "sheet" && (ans.text || "").trim()) {
             // Excel's rules for a sheet name: 31 characters at most, none of [ ] : * ? / \,

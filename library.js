@@ -441,6 +441,13 @@
       R + " .lib-remtx > span{display:block;}",
       R + " .lib-remobj{display:flex;align-items:center;justify-content:center;background:var(--surface-muted);color:var(--text-muted);font-size:5cqw;}",
       R + " .lib-remhit{border:2px solid var(--surface);outline:3px solid var(--focus-ring);outline-offset:0;}",
+      // The slides an item names, small, under its words (S518); a crowded slide's wider, for its numbers.
+      R + " .lib-remstrip{display:flex;flex-wrap:wrap;gap:10px 12px;list-style:none;margin:8px 0;padding:0;min-width:0;width:100%;}",
+      R + " .lib-remstrip > li{display:grid;gap:2px;justify-items:start;width:200px;max-width:100%;margin:0;}",
+      R + " .lib-remstrip.wide > li{width:360px;}",
+      R + " .lib-remstrip .lib-remslide{width:100%;}",
+      R + " .lib-remstrip .lib-remzoom[aria-expanded=true]{color:var(--text-strong);}",
+      R + " .lib-remord{position:absolute;min-width:16px;height:16px;padding:0 3px;box-sizing:border-box;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);color:var(--text-strong);font:600 11px/14px system-ui,sans-serif;text-align:center;}",
       // Progress by kind of fix (Sam, 2026-10-29: "a simple progress bar at the top that showed
       // the different elements you're remediating"); the count says it in words beside the bar.
       // One bar, an equal part per kind of fix (Sam: "a single bar divided into remediation
@@ -1091,7 +1098,7 @@
         state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, media: {}, big: {}, ai: {}, kept: {}, aiAll: false,
           drafting: state.autoDraft && pk.ext !== "pdf" ? { done: 0, total: 0, failed: 0 } : null };
         session.report.needs.forEach(function (n) {
-          if (n.type === "alt" || n.type === "title" || n.type === "sheet") state.rem.answers[n.id] = { text: n.draft || "", decorative: false };
+          if (n.type === "alt" || n.type === "title" || n.type === "sheet") state.rem.answers[n.id] = { text: n.draft || "", decorative: false, off: !!n.offSlide };
           // An advisory chart item (its values show as labels) waits for a person to tick it.
           if (n.type === "contrast") state.rem.answers[n.id] = { fix: !n.advisory };
         });
@@ -1105,8 +1112,8 @@
         var want = {};
         session.report.needs.forEach(function (n) {
           if (n.media) want[n.media] = true;
-          var pl = n.type === "alt" ? planFor(session.report, n) : null;
-          if (pl) [pl.bgMedia].concat(pl.shapes.map(function (r) { return r.media; })).forEach(function (m) { if (m) want[m] = true; });
+          var pls = n.type === "alt" ? [planFor(session.report, n)] : slidesOf(n).map(function (k) { return planAt(session.report, k); });
+          pls.forEach(function (pl) { if (pl) [pl.bgMedia].concat(pl.shapes.map(function (r) { return r.media; })).forEach(function (m) { if (m) want[m] = true; }); });
         });
         var canUrl = !!(window.URL && URL.createObjectURL);
         Promise.all(Object.keys(canUrl ? want : {}).map(function (path) {
@@ -1154,10 +1161,8 @@
           ? '<img class="lib-remthumb" src="' + esc(src) + '" alt="The ' + (n.chart ? "chart" : "picture") + (n.slide ? " on slide " + n.slide : "") + ' this text describes">'
           : '<span class="lib-remthumb none" aria-hidden="true">' + esc(n.chart ? "Chart" : n.slide ? "Slide " + n.slide : "Picture") + "</span>";
         // The slide it sits on, to its left (S517), with a word to see it larger.
-        var pl = planFor(rm.report, n), big = !!rm.big[n.id];
-        var side = pl ? '<div class="lib-remside">' + (big ? "" : planHtml(pl, n, rm.media)) +
-          '<button type="button" class="lib-remzoom" data-remzoom="' + esc(n.id) + '" aria-expanded="' + big + '">' + (big ? "Smaller slide" : "Larger slide") + "</button></div>" : "";
-        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + side + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
+        var pl = planFor(rm.report, n), sv = pl ? slideSide(rm, n, pl) : { side: "", big: "" };
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + sv.side + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
           (n.near ? '<p class="lib-hint">On the slide, ' + esc(n.near.where) + ": “" + esc(n.near.text) + "”</p>" : "") +
           (n.qr ? '<p class="lib-hint">The QR code reads ' + esc(n.qr.length > 160 ? n.qr.slice(0, 159) + "…" : n.qr) + ".</p>" : "") +
           '<textarea id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" rows="4" maxlength="400"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' + esc(a.text || "") + "</textarea>" +
@@ -1169,12 +1174,21 @@
             : "") + "</div>" +
           (n.fromData ? '<p class="lib-hint">Drafted from the chart\'s own numbers.</p>' : rm.ai[n.id] === "done" ? '<p class="lib-hint">Drafted by Claude from the picture and its slide. Read it before you keep it.</p>' :
             a.fromQr ? '<p class="lib-hint">Drafted from the address the QR code reads and the words beside it.</p>' : "") +
-          "</div>" + (pl && big ? '<div class="lib-rembig">' + planHtml(pl, n, rm.media) + "</div>" : "") + "</li>";
+          "</div>" + sv.big + "</li>";
       }
+      // Any other item on one slide draws that slide to its left; one on several, under its words.
+      var one = rep.ext === "pptx" && !n.slides && n.slide ? planAt(rep, n.slide) : null, sd = one ? slideSide(rm, n, one) : { side: "", big: "" };
+      var strip = rep.ext === "pptx" && n.slides ? slideStrip(rm, n) : "";
       // A slide's empty title, or a sheet left at its default name (a workbook, S514).
+      // A blank title box beside the slide's own words (Sam, 2026-10-29) gets a draft from
+      // them to keep, and goes off the slide so the words do not show twice.
       if (n.type === "title" || n.type === "sheet") {
-        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
-          '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="' + (n.type === "sheet" ? 31 : 200) + '" value="' + esc(a.text || "") + '"></div></li>';
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + sd.side + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
+          '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="' + (n.type === "sheet" ? 31 : 200) + '" value="' + esc(a.text || "") + '">' +
+          (n.type === "title" ? '<label class="lib-check"><input type="checkbox" data-remoff="' + esc(n.id) + '"' + (a.off ? " checked" : "") + "> Keep the title box just off the slide, where a screen reader still reads it" +
+            (n.offSlide ? " (the slide\'s own words show its title)" : "") + "</label>" : "") +
+          (n.type === "title" && n.draft ? '<div class="lib-actions-row">' + keepHtml(rm, n) + '</div><p class="lib-hint">Drafted from the largest words in the slide\'s top half. Read it before you keep it.</p>' : "") +
+          "</div>" + sd.big + "</li>";
       }
       // A contrast item shows its words both ways, on the fill they sit on (the file's own
       // colors, so these are data, not the page's palette), and offers the passing one.
@@ -1182,14 +1196,15 @@
         var swatch = function (fg, label) {
           return '<span class="lib-remswatch" style="color:#' + esc(fg) + ";background:#" + esc(n.bg) + '">' + esc(label) + "</span>";
         };
-        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + sd.side + '<div class="lib-field"><p>' + esc(n.text) + "</p>" +
           '<p class="lib-remswatches">' + swatch(n.fg, "As it is") + swatch(n.fix, "With the fix") + "</p>" +
           '<label class="lib-check"><input type="checkbox" data-remfix="' + esc(n.id) + '"' + (a.fix ? " checked" : "") + "> Use #" + esc(n.fix) +
-          " instead, the nearest color of the same hue that reads " + esc(n.fixRatio) + ":1</label></div></li>";
+          " instead, the nearest color of the same hue that reads " + esc(n.fixRatio) + ":1</label></div>" + sd.big + "</li>";
       }
       // What this page leaves to a person in the program: a box to say it was checked there.
-      return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
-        '<label class="lib-check"><input type="checkbox" data-remcheck="' + esc(n.id) + '"' + (rm.kept[n.id] ? " checked" : "") + "> Checked in " + esc(REM_APP[rep.ext] || "its program") + "</label></div></li>";
+      // A slide's reading order is read here from its numbers (S518), so it can be checked here.
+      return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + sd.side + '<div class="lib-field"><p>' + esc(n.text) + "</p>" + strip +
+        '<label class="lib-check"><input type="checkbox" data-remcheck="' + esc(n.id) + '"' + (rm.kept[n.id] ? " checked" : "") + "> Checked " + (n.type === "order" && strip ? "here or " : "") + "in " + esc(REM_APP[rep.ext] || "its program") + "</label></div>" + sd.big + "</li>";
     };
     return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
       '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + "</h3></div>" +
@@ -1200,7 +1215,7 @@
       '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
       // Keep all (Sam, 2026-10-29: "giving the user the opportunity to edit, redraft, or keep.
       // Add a Keep All button"): every alt text with words, or marked decorative, kept at once.
-      (needs.some(function (n) { return n.type === "alt"; }) ? '<div class="lib-actions-row"><button type="button" class="lib-remzoom" data-remkeepall="1">Keep all</button></div>' : "") +
+      (needs.some(function (n) { return n.type === "alt" || (n.type === "title" && n.draft); }) ? '<div class="lib-actions-row"><button type="button" class="lib-remzoom" data-remkeepall="1">Keep all</button></div>' : "") +
       (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
       (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words. Read each one before you keep it.</p>' : "") +
       (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Redraft every picture") + "</button></div>" : "") +
@@ -1270,6 +1285,7 @@
   function remDone(rm, n) {
     var a = rm.answers[n.id] || {};
     if (n.type === "alt") return !!rm.kept[n.id] && (!!a.decorative || !!(a.text || "").trim());
+    if (n.type === "title" && n.draft) return !!rm.kept[n.id] && !!(a.text || "").trim();
     if (n.type === "title" || n.type === "sheet") return !!(a.text || "").trim();
     return !!rm.kept[n.id];
   }
@@ -1361,8 +1377,25 @@
     // Only a slide the picture is found on: one it has no place on would show nothing.
     return sl && sl.plan && sl.plan.shapes.some(function (r) { return r.id != null && r.id === n.shapeId; }) ? sl.plan : null;
   }
+  // Every slide an item names (Sam, 2026-10-29: "Is it possible to show the slides next to
+  // the problem item with these notes so the ppt doesn't need to be opened separately?"):
+  // a slide's empty title, its text below AA, a chart, a slide with no title, a crowded one.
+  function planAt(rep, k) {
+    var sl = rep && rep.slides && k ? rep.slides[k - 1] : null;
+    return sl && sl.plan ? sl.plan : null;
+  }
+  function slidesOf(n) { return n.slides && n.slides.length ? n.slides : n.slide ? [n.slide] : []; }
+  // What the drawing outlines for an item, and what its label says about it.
+  function slideLook(n) {
+    var ids = n.type === "contrast" && n.runs ? n.runs.map(function (r) { return r.shapeId; }) : n.shapeId ? [n.shapeId] : [];
+    var what = n.type === "alt" ? "the " + (n.chart ? "chart" : n.av || "picture") + " outlined" : n.type === "title" ? "its empty title box outlined" :
+      n.type === "order" ? "each item numbered in the order a screen reader meets it" : n.type === "contrast" && !n.inChart ? "the text below AA outlined" :
+      n.inChart || /chart/i.test(n.text || "") ? "the chart outlined" : "";
+    return { hits: ids, what: what, order: n.type === "order" };
+  }
   var PLAN_ALIGN = { ctr: "center", r: "right", just: "justify", dist: "justify" };
-  function planHtml(pl, n, media) {
+  function planHtml(pl, n, media, slide) {
+    var look = slideLook(n), k = slide || n.slide, num = 0;
     var R = window.CPL_REMEDIATE, ink = function (hex) { return /^[0-9A-F]{6}$/i.test(hex || "") ? "#" + hex : ""; };
     var pct = function (v) { return Math.round(v * 10000) / 100 + "%"; };
     var at = function (r) { return "left:" + pct(r.x) + ";top:" + pct(r.y) + ";width:" + pct(r.w) + ";height:" + pct(r.h) + ";"; };
@@ -1379,9 +1412,31 @@
               (PLAN_ALIGN[p.algn] ? "text-align:" + PLAN_ALIGN[p.algn] + ";" : "") + '">' + esc(p.t) + "</span>";
           }).join("") + "</span>";
       }
-      if (r.id != null && r.id === n.shapeId) hit = '<span class="lib-remsh lib-remhit" style="' + box + '"></span>';
+      if (r.id != null && look.hits.indexOf(r.id) >= 0) hit += '<span class="lib-remsh lib-remhit" style="' + box + '"></span>';
+      // The slide's own words and pictures in the order a screen reader meets them (the
+      // file's order); a picture marked decorative and a shape with no words are skipped.
+      if (look.order && r.id != null && !r.dec && r.kind !== "shape") hit += '<span class="lib-remord" style="left:' + pct(r.x) + ";top:" + pct(r.y) + ';">' + (++num) + "</span>";
     });
-    return '<div class="lib-remslide" role="img" aria-label="Slide ' + esc(n.slide) + " as laid out, the " + (n.chart ? "chart" : n.av || "picture") + ' outlined" style="aspect-ratio:' + pl.w + " / " + pl.h + ";background:" + (ink(pl.bg) || "#" + text) + ';">' + out + hit + "</div>";
+    return '<div class="lib-remslide" role="img" aria-label="Slide ' + esc(k) + " as laid out" + (look.what ? ", " + look.what : "") + '" style="aspect-ratio:' + pl.w + " / " + pl.h + ";background:" + (ink(pl.bg) || "#" + text) + ';">' + out + hit + "</div>";
+  }
+  // The slide beside an item that names one, with a word to see it larger (as a picture's).
+  function slideSide(rm, n, pl) {
+    var big = !!rm.big[n.id];
+    return {
+      side: '<div class="lib-remside">' + (big ? "" : planHtml(pl, n, rm.media)) +
+        '<button type="button" class="lib-remzoom" data-remzoom="' + esc(n.id) + '" aria-expanded="' + big + '">' + (big ? "Smaller slide" : "Larger slide") + "</button></div>",
+      big: big ? '<div class="lib-rembig">' + planHtml(pl, n, rm.media) + "</div>" : ""
+    };
+  }
+  // Each slide an item names, small, under its words; a slide's number shows it larger.
+  function slideStrip(rm, n) {
+    var list = slidesOf(n).filter(function (k) { return planAt(rm.report, k); });
+    if (!list.length) return "";
+    var big = rm.big[n.id];
+    return '<p class="lib-hint">Choose a slide\'s number to see it larger.</p><ul class="lib-remstrip' + (n.type === "order" ? " wide" : "") + '">' + list.map(function (k) {
+      return "<li>" + planHtml(planAt(rm.report, k), n, rm.media, k) +
+        '<button type="button" class="lib-remzoom" data-remzoom="' + esc(n.id) + '" data-remat="' + k + '" aria-expanded="' + (big === k) + '">Slide ' + k + "</button></li>";
+    }).join("") + "</ul>" + (big && planAt(rm.report, big) ? '<div class="lib-rembig">' + planHtml(planAt(rm.report, big), n, rm.media, big) + "</div>" : "");
   }
   // A QR code reads its own address (Sam, 2026-10-29: "or just read the url from it and
   // list that in the alt text"). Each picture that needs words is read here, in this
@@ -2185,7 +2240,7 @@
       else if (e.target.getAttribute && e.target.getAttribute("data-remtext") && state.rem) {
         var k0 = e.target.getAttribute("data-remtext");
         state.rem.answers[k0] = state.rem.answers[k0] || {}; state.rem.answers[k0].text = e.target.value; state.rem.answers[k0].fromQr = false; state.rem.touched = true;
-        if (/^a/.test(k0) && state.rem.kept) state.rem.kept[k0] = true;
+        if (/^(a|t\d)/.test(k0) && state.rem.kept) state.rem.kept[k0] = true;
         paintProgress();
       }
     });
@@ -2207,6 +2262,10 @@
       }
       else if (e.target.name === "lc-use") { state.use = e.target.value; }
       else if (e.target.id === "lc-autodraft") { state.autoDraft = e.target.checked; }
+      else if (e.target.getAttribute && e.target.getAttribute("data-remoff") && state.rem) {
+        var k2 = e.target.getAttribute("data-remoff");
+        state.rem.answers[k2] = state.rem.answers[k2] || {}; state.rem.answers[k2].off = e.target.checked; state.rem.touched = true;
+      }
       else if (e.target.getAttribute && e.target.getAttribute("data-remcheck") && state.rem) { state.rem.kept[e.target.getAttribute("data-remcheck")] = e.target.checked; paintProgress(); }
       else if (e.target.getAttribute && e.target.getAttribute("data-remdec") && state.rem) {
         var k1 = e.target.getAttribute("data-remdec");
@@ -2264,7 +2323,7 @@
       else if (b.getAttribute("data-remkeepall") && state.rem && state.rem.report) {
         var kn = 0, ke = 0;
         state.rem.report.needs.forEach(function (n) {
-          if (n.type !== "alt") return;
+          if (n.type !== "alt" && !(n.type === "title" && n.draft)) return;
           var a = state.rem.answers[n.id] || {};
           if (a.decorative || (a.text || "").trim()) { if (!state.rem.kept[n.id]) kn++; state.rem.kept[n.id] = true; } else ke++;
         });
@@ -2275,8 +2334,9 @@
       else if ((v = b.getAttribute("data-remkeep")) && state.rem) { state.rem.kept[v] = !state.rem.kept[v]; paintProgress(); }
       else if (b.getAttribute("data-remshow") && state.rem) { state.rem.drafting = null; remRefresh(); var h1 = document.getElementById("lib-rem-h"); if (h1) h1.focus(); }
       else if ((v = b.getAttribute("data-remzoom")) && state.rem) {
-        state.rem.big[v] = !state.rem.big[v]; render();
-        var z0 = root.querySelector('[data-remzoom="' + v + '"]'); if (z0) z0.focus();
+        var at0 = +b.getAttribute("data-remat") || 0;
+        state.rem.big[v] = at0 ? (state.rem.big[v] === at0 ? 0 : at0) : !state.rem.big[v]; render();
+        var z0 = root.querySelector('[data-remzoom="' + v + '"]' + (at0 ? '[data-remat="' + at0 + '"]' : "")); if (z0) z0.focus();
       }
       else if (b.getAttribute("data-remclose")) { state.rem = null; render(); var g0 = document.getElementById("lib-go"); if (g0) g0.focus(); }
       else if (b.getAttribute("data-remfile")) {

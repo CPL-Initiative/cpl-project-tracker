@@ -195,7 +195,8 @@ function stockTitled() {
   const z = new JSZip();
   z.file("docProps/core.xml", CORE("PowerPoint Presentation"));
   let many = "";
-  for (let i = 0; i < 9; i++) many += '<p:sp><p:nvSpPr><p:cNvPr id="' + (10 + i) + '" name="Box"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr/></p:sp>';
+  // Each box holds words: an empty one is removed (S518), and would not count.
+  for (let i = 0; i < 9; i++) many += '<p:sp><p:nvSpPr><p:cNvPr id="' + (10 + i) + '" name="Box"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:p><a:r><a:t>Point ' + (i + 1) + '</a:t></a:r></a:p></p:txBody></p:sp>';
   z.file("ppt/slides/slide1.xml", slide(titleSp("Funding") + many));
   for (let n = 2; n <= 12; n++) z.file("ppt/slides/slide" + n + ".xml", slide(""));
   return z.generateAsync({ type: "nodebuffer" });
@@ -434,6 +435,69 @@ const run = deck().then(function (buf) {
     check("(11) Google Docs and a printed web page are named as such",
       R._pdfSource("Google Docs Renderer", "", true).google && R._pdfSource("Google Docs Renderer", "", true).ext === "docx" &&
       R._pdfSource("Chromium", "Skia/PDF m141", true).kind === "web" && R._pdfSource("Adobe InDesign 20.1", "Adobe PDF Library 17.0", true).kind === "layout");
+  });
+}).then(function () {
+  // The page draws the slide beside a chart's items (S518), so each names its slide and
+  // frame: chartDeck's slide on contrastDeck's layout, master and theme, so it is measured.
+  return Promise.all([contrastDeck(), chartDeck()]).then(function (bufs) { return Promise.all(bufs.map(function (b) { return JSZip.loadAsync(b); })); }).then(function (zs) {
+    const za = zs[0], zb = zs[1];
+    return Promise.all([zb.file("ppt/slides/slide1.xml").async("string"), zb.file("ppt/charts/chart1.xml").async("string")]).then(function (xml) {
+      Object.keys(za.files).filter(function (p) { return /^ppt\/slides\//.test(p); }).forEach(function (p) { za.remove(p); });
+      za.file("ppt/slides/slide1.xml", xml[0]);
+      za.file("ppt/slides/_rels/slide1.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="slideLayout" Target="../slideLayouts/slideLayout1.xml"/>' +
+        '<Relationship Id="rId9" Type="chart" Target="../charts/chart1.xml"/></Relationships>');
+      za.file("ppt/charts/chart1.xml", xml[1]);
+      return za.generateAsync({ type: "nodebuffer" });
+    });
+  }).then(function (buf) { return R.inspect(buf, "Chart.pptx", ENV); }).then(function (s) {
+    const ks = s.report.needs.filter(function (n) { return /^k/.test(n.id); });
+    check("(7) a chart's contrast items in a deck name their slide and the chart's frame", ks.length > 0 && ks.every(function (n) { return n.slide === 1 && n.shapeId === "5"; }), JSON.stringify(s.report.needs.map(function (n) { return [n.id, n.slide, n.shapeId]; })));
+  });
+}).then(function () {
+  // (17) Empty boxes (Sam, 2026-10-29): "Could you delete blank boxes with no background
+  // color or outline color as part of the remediation?" A box with no words, no fill and no
+  // outline goes; the title box stays, drafted from the slide's own words and kept off the
+  // slide; a box with color, a link or an animation stays. On contrastDeck's layout and theme.
+  const sp = function (id, inner, nv, spPr) {
+    return '<p:sp><p:nvSpPr><p:cNvPr id="' + id + '" name="Box ' + id + '">' + (nv || "") + '</p:cNvPr><p:cNvSpPr/><p:nvPr>' + (inner || "") + '</p:nvPr></p:nvSpPr><p:spPr>' + (spPr || "") + '</p:spPr><p:txBody><a:bodyPr/><a:p><a:endParaRPr/></a:p></p:txBody></p:sp>';
+  };
+  const xf = '<a:xfrm><a:off x="600000" y="2000000"/><a:ext cx="2000000" cy="1000000"/></a:xfrm>';
+  const body = sp(2, '<p:ph type="title"/>') +
+    '<p:sp><p:nvSpPr><p:cNvPr id="3" name="TextBox 2"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="600000" y="300000"/><a:ext cx="9000000" cy="900000"/></a:xfrm></p:spPr>' +
+    '<p:txBody><a:bodyPr/><a:p><a:r><a:rPr sz="4000"/><a:t>Welcome to the CPL Summit</a:t></a:r></a:p></p:txBody></p:sp>' +
+    '<p:sp><p:nvSpPr><p:cNvPr id="12" name="TextBox 11"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="600000" y="1300000"/><a:ext cx="9000000" cy="400000"/></a:xfrm></p:spPr>' +
+    '<p:txBody><a:bodyPr/><a:p><a:r><a:rPr sz="1800"/><a:t>Friday, October 30</a:t></a:r></a:p></p:txBody></p:sp>' +
+    sp(4, '<p:ph idx="1"/>') + sp(5, "", "", xf) +
+    sp(6, "", "", xf + '<a:solidFill><a:srgbClr val="002F6D"/></a:solidFill>') +
+    sp(7, "", "", xf + '<a:ln><a:solidFill><a:srgbClr val="002F6D"/></a:solidFill></a:ln>') +
+    sp(8, "", "", xf).replace("</p:spPr>", '</p:spPr><p:style><a:lnRef idx="0"><a:schemeClr val="accent1"/></a:lnRef><a:fillRef idx="1"><a:schemeClr val="accent1"/></a:fillRef><a:effectRef idx="0"><a:schemeClr val="accent1"/></a:effectRef><a:fontRef idx="minor"><a:schemeClr val="lt1"/></a:fontRef></p:style>') +
+    sp(9, "", '<a:hlinkClick r:id="rId5"/>', xf) + sp(10, "", "", xf) +
+    sp(11, "", "", xf + '<a:noFill/><a:ln><a:noFill/></a:ln>');
+  const timing = '<p:timing><p:tnLst><p:par><p:cTn id="1"><p:childTnLst><p:set><p:cBhvr><p:cTn id="2"/><p:tgtEl><p:spTgt spid="10"/></p:tgtEl></p:cBhvr></p:set></p:childTnLst></p:cTn></p:par></p:tnLst></p:timing>';
+  return contrastDeck().then(function (b) { return JSZip.loadAsync(b); }).then(function (za) {
+    return za.file("ppt/slides/slide1.xml").async("string").then(function (x) {
+      Object.keys(za.files).filter(function (p) { return /^ppt\/slides\/slide[2-9]/.test(p); }).forEach(function (p) { za.remove(p); });
+      const open = x.slice(0, x.indexOf("<p:spTree>") + "<p:spTree>".length), tree = x.slice(x.indexOf("<p:spTree>") + 10, x.indexOf("</p:spTree>"));
+      const head = (tree.match(/^<p:nvGrpSpPr>[\s\S]*?<\/p:grpSpPr>/) || [""])[0];
+      za.file("ppt/slides/slide1.xml", open + head + body + "</p:spTree></p:cSld>" + timing + "</p:sld>");
+      return za.generateAsync({ type: "nodebuffer" });
+    });
+  }).then(function (buf) { return R.inspect(buf, "Welcome.pptx", ENV); }).then(function (s) {
+    const ids = function (doc) { return Array.prototype.map.call(doc.getElementsByTagNameNS("http://schemas.openxmlformats.org/presentationml/2006/main", "cNvPr"), function (e) { return e.getAttribute("id"); }).join(","); };
+    check("(17) an empty text box, an empty body box and a box with no fill and no line are removed, and the report says so",
+      s.report.fixed.some(function (f) { return /^3 empty boxes removed from slide 1: no words, no fill and no outline, so nothing showed, yet a screen reader met each one$/.test(f); }) && s.report.auto.order === 3, JSON.stringify(s.report.fixed));
+    const t = s.report.needs.filter(function (n) { return n.type === "title"; })[0];
+    check("(17) the blank title box stays, drafted from the slide's largest words at the top, and kept off the slide", !!t && t.draft === "Welcome to the CPL Summit" && t.offSlide === true && t.shapeId === "2", JSON.stringify(t));
+    return R.finish(s, { t1: { text: t ? t.draft : "", off: true } }, "nodebuffer").then(function (out) {
+      return JSZip.loadAsync(out.file).then(function (z) { return z.file("ppt/slides/slide1.xml").async("string"); }).then(function (x) {
+        const d = new win.DOMParser().parseFromString(x, "application/xml");
+        check("(17) the boxes with color, a link or an animation stay, and the title box", ids(d) === "2,3,12,6,7,8,9,10", ids(d));
+        const title = Array.prototype.filter.call(d.getElementsByTagNameNS("http://schemas.openxmlformats.org/presentationml/2006/main", "sp"), function (e) { return /type="title"/.test(new win.XMLSerializer().serializeToString(e)); })[0];
+        const off = title && title.getElementsByTagNameNS("http://schemas.openxmlformats.org/drawingml/2006/main", "off")[0];
+        check("(17) the title goes in its box, and the box sits just above the slide", !!title && /Welcome to the CPL Summit/.test(title.textContent) && !!off && +off.getAttribute("y") < 0 && out.done.offSlide === 1,
+          title && new win.XMLSerializer().serializeToString(title));
+      });
+    });
   });
 }).then(function () {
   check("(7) the remediated file keeps the date code and says so", R.outName("20261030_CPL_Summit_Funding.pptx") === "20261030_CPL_Summit_Funding_Remediated.pptx");
