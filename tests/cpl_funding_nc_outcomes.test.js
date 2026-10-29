@@ -221,9 +221,15 @@ const s1 = sysOut.length ? readCells(keys, sysOut[0]) : null;
 // Since 2026-10-29 (the CSM team via Sam: "Statewide Curr total is 0 but should add everything in curr
 // college rows") the funds add what each institution's own expand shows, a held share's gray figure included.
 const dollars = (t) => Number(String(t || "").replace(/[^0-9.]/g, "")) || 0;
+// Every institution's noncredit figure, qualifying and gray, across the two outcomes.
+const instNc = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-row")).reduce((sum, tr) => {
+  const a = T._alloc(tr.getAttribute("data-id").slice(2)) || {};
+  return sum + (a.earned_nc || 0) + (a.held_nc || 0);
+}, 0);
 check("D8: the Statewide expand sums the institutions: the target 28 exhibits, the actual the feed's statewide figure, the funds what each institution's row shows",
   !!s1 && s1.nc_award.line === "Target 28 exhibits" && s1.nc_current.line === "Actual 12 exhibits" &&
-  Math.abs(dollars(s1.nc_current.fig) - (dollars(c1.nc_current.fig) + dollars(c2.nc_current.fig))) <= 1 &&
+  dollars(s1.nc_current.fig) >= dollars(c1.nc_current.fig) + dollars(c2.nc_current.fig) &&
+  Math.abs(sysOut.reduce((t, r) => t + dollars(readCells(keys, r).nc_current.fig), 0) - instNc) <= 2 &&
   !s1.nc_current.gated);
 const feet = Array.from(doc.querySelectorAll(".cplfund-dtl-foot")).map(flat);
 // Gone under the outcomes lane since 2026-10-28 (Sam struck it on a screenshot): the rows name their outcomes.
