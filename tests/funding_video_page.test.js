@@ -65,20 +65,21 @@ const DIR = "prototype/funding_video";
 const src = fs.readFileSync(path.join(DIR, "funding_in_motion.src.html"), "utf8");
 const explainer = fs.readFileSync("funding-model/index.html", "utf8");
 
-check("a1 the explainer's link says introduction, not guide, and the film's true length",
-  /id="video-link"[^>]*>Watch the 100-second introduction</.test(explainer));
+// Sam, 2026-10-29: "delete video link to version without narration on the public page".
+// The narrated introduction is the page's one video; the music film keeps its address.
+check("a1 the explainer links one video, the narrated introduction, never a guide",
+  !/id="video-link"/.test(explainer) && /id="video-narrated-link"[^>]*>Watch the narrated introduction</.test(explainer) && fs.existsSync(path.join(DIR, "funding_in_motion_s2.html")));
 // Since 2026-10-20 (S439) the link is the published film alone, so no
 // per-scenario label rewrites it.
-check("a2 the link opens the published film and no per-scenario label renames it",
-  /id="video-link" (data-plink="video" )?href="\.\.\/prototype\/funding_video\/funding_in_motion_s2\.html"/.test(explainer) && !/label: "Watch/.test(explainer));
+check("a2 the link opens the published film and no per-scenario label renames it", !/label: "Watch/.test(explainer));
 // Sam, 2026-10-09 (a marked-up screenshot of the explainer): the MP4 download
 // left the Contents. The narrated cut returned beside the introduction on
 // 2026-10-27 (Open Asks Sheet 136 card 1, "reread", on Sheet 133's plan): the
 // music film stays the introduction, the narrated cut its alternative for a
 // listener who cannot see the picture (WCAG 1.2.5), right after it.
-check("a3 the explainer offers the introduction, then its narrated cut, and no MP4 download",
+check("a3 the explainer offers the narrated introduction after the memo, and no MP4 download",
   !/id="video-mp4"/.test(explainer) && !/\.mp4"/.test(explainer) &&
-  /<a id="video-link"[^>]*>[^<]+<\/a><\/li>\s*(<!--[\s\S]*?-->\s*)?<li class="toc-video toc-tail"><a id="video-narrated-link" data-plink="video_narrated" href="\.\.\/prototype\/funding_video\/funding_in_motion_n2\.html">Watch the narrated introduction<\/a>/.test(explainer) &&
+  /<li class="toc-video toc-tail"><a id="video-narrated-link" data-plink="video_narrated" href="\.\.\/prototype\/funding_video\/funding_in_motion_n2\.html\?full=1">Watch the narrated introduction<\/a>/.test(explainer) &&
   !/id="video-narrated-link"[^>]*target=/.test(explainer));
 check("a4 the source never calls itself a guide for colleges", !/guide for colleges|Play the guide/i.test(src));
 // a5 (the MP4 links point at files that exist) retired with the links, 2026-10-09.
@@ -126,6 +127,35 @@ NARRATED.forEach(({ s }) => {
   }
 });
 
+// The published films' one row (Sam, 2026-10-29): "don't need all the option buttons on the
+// video...just the link to get back to the public funding page", "do need a chip to open full
+// screen", "video open full screen does not work" (a phone allows full screen only on a video
+// element, so the player fills the window), "some views open in dark mode and should be light",
+// "delete the script cards below the video".
+function controlRow(w, d, tag) {
+  const row = Array.from(d.querySelectorAll("#player .controls > *")).map((e) => e.textContent.trim());
+  const back = d.getElementById("to-page");
+  check(tag + "k1 the row holds Play, Full screen and the way back, nothing else", row.join(" | ") === "Play | Full screen | Back to the CPL funding page");
+  check(tag + "k2 the way back is the public funding page, never COBI's tab",
+    !!back && /^https:\/\/cpl-initiative\.github\.io\/cpl-project-tracker\/funding-model\/$/.test(back.getAttribute("href")) && !d.querySelector('a[href*="fundview"]'));
+  check(tag + "k3 the page is light whatever the device says", d.documentElement.getAttribute("data-theme") === "light");
+  check(tag + "k4 no Scenes cards", !d.querySelector(".scenes, .chap, #chapters"));
+  // A browser with no full screen for the player (a phone): Full screen fills the window.
+  d.getElementById("fs").click();
+  const filled = d.getElementById("player").classList.contains("max") && d.getElementById("fs").textContent === "Exit full screen";
+  d.getElementById("fs").click();
+  check(tag + "k5 with no full screen to be had, Full screen fills the window, and Exit full screen puts it back",
+    filled && !d.getElementById("player").classList.contains("max") && d.getElementById("fs").textContent === "Full screen");
+  // From the Contents link (?full=1, Sam 2026-10-29): it opens filling the window, Play and the way back in view.
+  const html = fs.readFileSync(path.join(DIR, d.location.pathname.split("/").pop()), "utf8");
+  const wf = new JSDOM(html, { runScripts: "dangerously", pretendToBeVisual: true, url: d.location.href.split("?")[0] + "?full=1",
+    beforeParse(x) { x.matchMedia = () => ({ matches: false, addListener() {}, removeListener() {} }); x.HTMLElement.prototype.scrollIntoView = function () {}; } }).window;
+  const df = wf.document;
+  check(tag + "k6 ?full=1 opens it filling the window, with Play, Exit full screen and the way back",
+    df.getElementById("player").classList.contains("max") && !df.getElementById("bigplay").hidden && df.getElementById("fs").textContent === "Exit full screen" && !!df.querySelector("#player #to-page"));
+  wf.close();
+}
+
 function boot(file, reduced) {
   const html = fs.readFileSync(path.join(DIR, file), "utf8");
   const dom = new JSDOM(html, {
@@ -144,10 +174,16 @@ function boot(file, reduced) {
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   check(tag + "b2 " + file + " carries the current source (the barrier layer)", raw.includes("var ENC=") && raw.includes("Play the introduction"));
   const w = boot(file, false), d = w.document;
-  const dl = d.getElementById("dl");
-  check(tag + "c1 a Download MP4 link with the download attribute", dl && dl.hasAttribute("download") && dl.textContent === "Download MP4");
-  check(tag + "c2 it points at the scenario's MP4, which exists", dl && dl.getAttribute("href") === mp4 && fs.existsSync(path.join(DIR, mp4)));
-  check(tag + "c3 a Full screen control inside the player", !!d.querySelector("#player #fs"));
+  if (tag) {
+    // The published film (Sam, 2026-10-29, on his phone): one row, Play, Full screen and the
+    // way back to the public CPL funding page; light only; no Scenes cards.
+    controlRow(w, d, tag);
+  } else {
+    const dl = d.getElementById("dl");
+    check(tag + "c1 a Download MP4 link with the download attribute", dl && dl.hasAttribute("download") && dl.textContent === "Download MP4");
+    check(tag + "c2 it points at the scenario's MP4, which exists", dl && dl.getAttribute("href") === mp4 && fs.existsSync(path.join(DIR, mp4)));
+    check(tag + "c3 a Full screen control inside the player", !!d.querySelector("#player #fs"));
+  }
   check(tag + "c4 the stage sits first, before the page header",
     d.getElementById("player").compareDocumentPosition(d.querySelector("header")) & w.Node.DOCUMENT_POSITION_FOLLOWING);
   check(tag + "c5 the big button invites the introduction", d.getElementById("bigplay").textContent === "Play the introduction");
@@ -188,9 +224,10 @@ NARRATED.forEach(({ tag, v, s, mp4 }) => {
     N === spansFor(L).length && L.scenes.every((s, i) => s.start < s.speech_start && s.speech_end < s.end
       && (s.pending ? s.speech_end === s.speech_start : s.speech_start < s.speech_end)
       && (i === 0 || Math.abs(s.start - L.scenes[i - 1].end) < 1e-6)) && Math.abs(L.scenes[N - 1].end - L.total) < 1e-6);
-  const tcs = Array.from(d.querySelectorAll(".chap .tc")).map((e) => e.textContent);
-  check(tag + "g3 the scrubber and the chapters follow the narrated clock",
-    Number(d.getElementById("pos").max) === L.total && tcs.length === N && tcs.every((t, i) => t === mmss(L.scenes[i].start)));
+  const old = !!d.getElementById("pos");
+  const tcs = Array.from(d.querySelectorAll(old ? ".chap .tc" : ".tr h3 .tc")).map((e) => e.textContent);
+  check(tag + "g3 the " + (old ? "scrubber and the chapters" : "transcript's scene times") + " follow the narrated clock",
+    (!old || Number(d.getElementById("pos").max) === L.total) && tcs.length === N && tcs.every((t, i) => t === mmss(L.scenes[i].start)));
   const c = L.cues[Math.floor(L.cues.length / 2)];
   w.__film.seek((c.start + c.end) / 2);
   const cc = d.querySelector(".cc");
@@ -198,9 +235,11 @@ NARRATED.forEach(({ tag, v, s, mp4 }) => {
   check(tag + "g5 captions write MAP where the voice reads map",
     L.cues.some((q) => /\bMAP\b/.test(q.text)) && !L.cues.some((q) => /\bmap\b/.test(q.text)));
   const btn = d.getElementById("cc");
-  if (btn) btn.click();
-  check(tag + "g6 the captions control turns them off", !!btn && btn.textContent === "Show captions" && cc.hidden);
-  if (btn) btn.click();
+  if (old) {
+    if (btn) btn.click();
+    check(tag + "g6 the captions control turns them off", !!btn && btn.textContent === "Show captions" && cc.hidden);
+    if (btn) btn.click();
+  } else check(tag + "g6 captions stay on, with no control to hide them (Sam, 2026-10-29)", !btn && !cc.hidden);
   const S2 = L.scenes[2], inv = Array.from(d.querySelectorAll("#fx .inv")), shown = () => inv.some((e) => e.style.visibility === "visible");
   w.__film.seek(w.__film.nt(15.35));  // the first barrier's hit, 0.35 s into the film's third scene
   const atSeam = shown();
@@ -212,8 +251,9 @@ NARRATED.forEach(({ tag, v, s, mp4 }) => {
   check(tag + "g9 the page plays the committed voice track",
     new RegExp('"audio": ?"narration_' + s + '\\.mp3"').test(raw) && fs.existsSync(path.join(DIR, "narration_" + s + ".mp3")));
   const dl = d.getElementById("dl");
-  check(tag + "g10 Download MP4 points at the narrated draft, which exists",
+  if (old) check(tag + "g10 Download MP4 points at the narrated draft, which exists",
     !!dl && dl.getAttribute("href") === mp4 && fs.existsSync(path.join(DIR, dl.getAttribute("href"))));
+  else { check(tag + "g10 no Download MP4 on the published narrated film's page", !dl); controlRow(w, d, tag); }
   check(tag + "b1 " + file + " has no unfilled placeholder", !/__[A-Z0-9]+__/.test(raw));
   w.close();
 });
@@ -272,8 +312,8 @@ NARRATED.forEach(({ tag, v, s }) => {
   const w = boot(file, false), d = w.document, ts = [];
   for (let t = -1; t <= 101; t += 0.25) ts.push(t);
   check(tag + "i1 " + file + " keeps the film's own clock", ts.every((t) => w.__film.ft(t) === t && w.__film.nt(t) === t));
-  check(tag + "i2 its chapters: the 90-second times, the targets slide at 0:46, and the rest 9.6 s later",
-    Array.from(d.querySelectorAll(".chap .tc")).map((e) => e.textContent).join(" ") === "0:00 0:06 0:15 0:25 0:32 0:46 0:55 1:05 1:14 1:24 1:33");
+  check(tag + "i2 its scene times: the 90-second times, the targets slide at 0:46, and the rest 9.6 s later",
+    Array.from(d.querySelectorAll(tag ? ".tr h3 .tc" : ".chap .tc")).map((e) => e.textContent).join(" ") === "0:00 0:06 0:15 0:25 0:32 0:46 0:55 1:05 1:14 1:24 1:33");
   w.close();
 });
 
@@ -296,7 +336,8 @@ NARRATED.forEach(({ tag, v, s }) => {
    ["funding_in_motion_n1.html", "n1 ", "November 1, 2026"], ["funding_in_motion_n2.html", "n2 ", "December 31, 2026"]].forEach(([file, tag, by]) => {
     const w = boot(file, false), d = w.document;
     // every scene's text, its chapter and what the page announces, second by second of the film
-    let shown = d.title + " " + d.getElementById("chapters").textContent;
+    // the scene list where a page keeps one (Scenario 1's), else the transcript (the published films, 2026-10-29)
+    let shown = d.title + " " + (d.getElementById("chapters") || d.getElementById("transcript")).textContent;
     for (let t = 0; t <= 100; t += 1) { w.__film.seek(w.__film.nt(Math.min(t, 99.6))); shown += " " + d.getElementById("stage").textContent; }
     // the narrated cut's own scenes too, by the narrated clock (n2 carries the targets slide)
     if (w.__film.narrated) for (let t = 0; t <= w.__film.dur; t += 1) { w.__film.seek(t); shown += " " + d.getElementById("stage").textContent; }
