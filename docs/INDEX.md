@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 564 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 565 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 94 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 487 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1304** | |
+| **total** | **1305** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-29 (S517 SkyPartridgeberry, Sam's session): the Library's remediation draws each picture with its slide, reads QR codes, drafts every picture before the report opens, counts down to the Chancellor's Office review on one bar, and files a file in the Library as it opens (#2552 to #2554); a KB note on alt text a program wrote; handoff 518 updated.
 - 2026-10-29 (S517 SkyPartridgeberry, the CPL Queue routine): the Library measures a chart's contrast in a deck, document or workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on (#2551).
 - 2026-10-29 (S514 SkyMarionberry, the CPL Queue routine): the Library remediates a workbook (.xlsx): sheet names renamed everywhere they are referenced, alt text on charts drafted from their numbers, tables with no header row, data with no table and merged cells listed (#2548); handoff 515.
 - 2026-10-29 (S510 SkyWineberry, the CPL Queue routine): the night's UI pass (Funding model, clean); the Library checks a deck's contrast against the shape its words sit on and offers the nearest passing color (#2543); the funding Refresh comment and splash; handoff 511.
@@ -129,7 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-29 (S508 SkyGooseberry, Sam's session): #2536 and CPLBrain#525 merged; Malone's twelve funding FAQs as he wrote them (#2537); the funding page loses its footer, opens on the published scenario and keeps one link to the public page; the map.rccd.edu privacy edits and security and accessibility scan for Malone; the Library remediation mockup; handoff 509.
 - 2026-10-28 (S507 SkyDewberry, Sam's session): the Summit a11y sweep, 125 of 131 targets passing and the one COBI fault moved on Sam's word (#2534, #2536); the funding FAQ posted as he settled it on Sheets 138 and 139 (#2536); two sessions' Sheet 138s reconciled; handoff 508.
 - 2026-10-28 (S506 SkyCloudberry, Sam's session): the funding forms start with the email and acknowledge an allowed address (#2531; the domain gate measured read-only); the Attest word, gray boxes, memo TBA, one curator text section that keeps a deletion; NOCE's nocccd.edu and *Awaiting CPL Initiative Confirmation* (#2533); the FAQ on Open Asks Sheet 138; no handoff file (S507 writes 508).
-- 2026-10-28 (S505 SkyBoysenberry, Sam's session): Glendale 45 to 80 passing on its catalog's own words (#2529: prefix aliases and renumbers, the capture reads an aliased prefix, the outcome scorer reads letter-spaced text; display 41c15eee3f75); MAP links open the Non-Military card and read Request Adopt, Sierra deployed (#2530); handoff 507.
-- 2026-10-28 (S505 SkyBoysenberry): four orphaned PRs resolved: S450's #2379 ported (#2527: the NC rules fold gone under Scenario 4, his outcome words), the credential watch runs of 10-19 and 10-26 and Credential Engine's top 50 with CTID in one rebuild (#2528); Privacy's UI pass; handoff 506.
-- 2026-10-28 (S504 SkyMulberry): the narrated funding film speaks Sam's own script, Draft 7 (#2525: #2323's Draft 6 ported, the period and the Noncredit CPL Lead, the Veteran Star at 64, v13); the Library record at v13 (#2524, two receipts); open side-session PRs in `scheduled_sessions`; handoff 505.
-- 2026-10-27 (S503 SkyElderberry): Sierra deployed (run 40573709433; 7v's guard on the negation stripper, #2520); the funding film's recorded piano at 107, v12 and the narrated Draft 5 (#2521, Sheet 137 answered); the funding lane under budget (#2519, #2522); handoff 504.

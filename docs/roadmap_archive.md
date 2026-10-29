@@ -779,3 +779,10 @@ Moved from docs/INDEX.md's update history (S507):
 - 2026-10-27 (S502 SkyHuckleberry): My Institution hidden (#2513), the PII fix (#2515), the review gate (#2514, in CI), Sierra's deploy held on its A/B; handoff 503.
 - 2026-10-27 (S500 SkyBlackberry): Delta Architectural Drafting 22244 passes on the new `unit_line` reconcile step, 200 of 203 (#2510, reread 40527733110, display build 89a4abee9d1c); the CPL Queue routine beside Sam's S500, whose handoff carries it.
 - 2026-10-27 (S499 SkyCloudberry): Delta Cal-GETC 45621 passes on a `pool_areas` step, 199 of 203 (#2508, reread 40502212690, display build 5dc18d9ea80a); handoff 500.
+
+## INDEX update history, moved 2026-10-29 (S517, Sam's session)
+
+- 2026-10-28 (S505 SkyBoysenberry, Sam's session): Glendale 45 to 80 passing on its catalog's own words (#2529: prefix aliases and renumbers, the capture reads an aliased prefix, the outcome scorer reads letter-spaced text; display 41c15eee3f75); MAP links open the Non-Military card and read Request Adopt, Sierra deployed (#2530); handoff 507.
+- 2026-10-28 (S505 SkyBoysenberry): four orphaned PRs resolved: S450's #2379 ported (#2527: the NC rules fold gone under Scenario 4, his outcome words), the credential watch runs of 10-19 and 10-26 and Credential Engine's top 50 with CTID in one rebuild (#2528); Privacy's UI pass; handoff 506.
+- 2026-10-28 (S504 SkyMulberry): the narrated funding film speaks Sam's own script, Draft 7 (#2525: #2323's Draft 6 ported, the period and the Noncredit CPL Lead, the Veteran Star at 64, v13); the Library record at v13 (#2524, two receipts); open side-session PRs in `scheduled_sessions`; handoff 505.
+- 2026-10-27 (S503 SkyElderberry): Sierra deployed (run 40573709433; 7v's guard on the negation stripper, #2520); the funding film's recorded piano at 107, v12 and the narrated Draft 5 (#2521, Sheet 137 answered); the funding lane under budget (#2519, #2522); handoff 504.

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 564,
+   "count": 565,
    "docs": [
     {
      "created": "2026-08-14",
@@ -4944,6 +4944,24 @@
      "title": "Alias maps are permutations, not graphs: resolution semantics for stacked re-keys",
      "type": "methodology",
      "updated": ""
+    },
+    {
+     "created": "2026-10-29",
+     "governs": [
+      "library_remediate.js",
+      "library.js"
+     ],
+     "path": "docs/kb-notes/methodology-alt-text-a-program-wrote-is-no-alt-text.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "accessibility",
+      "alt-text",
+      "remediation"
+     ],
+     "title": "Alt text a program wrote is no alt text",
+     "type": "methodology",
+     "updated": "2026-10-29"
     },
     {
      "created": "2026-09-18",
@@ -16224,7 +16242,7 @@
       "remediation",
       "accessibility"
      ],
-     "title": "Session 518 handoff: a chart's contrast in the Library's remediation",
+     "title": "Session 518 handoff: the Library's remediation, from Sam's live run to a workspace that files as it opens",
      "type": null,
      "updated": ""
     },
@@ -24551,5 +24569,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1304
+ "total": 1305
 }
