@@ -63,7 +63,7 @@ const DASH = "—";
     !!dHeld.band && dHeld.band.cells.length === keys.length);
   check("2c: the band names each figure's column in the row's own words",
     !!dHeld.bandCells && /^Max CR Funds$/.test(dHeld.bandCells.cr_award.text) &&
-    /CR Funds$/.test(dHeld.bandCells.cr_current.text) && /^Max Funds$/.test(dHeld.bandCells.total.text));
+    /^CR Funds Qualified So Far$/.test(dHeld.bandCells.cr_current.text) && /^Max Funds$/.test(dHeld.bandCells.total.text));
   check("2d: a gated institution's drill-in Curr cells read gray, as its row does",
     dHeld.cells.every((c) => CURR.every((k) => c[k] && (c[k].text === DASH || c[k].gated))));
   check("2e: each drill-in Curr figure carries its Actual FTES beneath it",

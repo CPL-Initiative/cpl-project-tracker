@@ -170,8 +170,8 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
     JSON.stringify(names) === JSON.stringify(names.slice().sort((a, b) => a.localeCompare(b))) &&
     Array.from(members).every((m) => m.getAttribute("aria-labelledby") === m.querySelector("h4").id));
   const distLine = (panel.querySelector(".cplfund-onedist") || { textContent: "" }).textContent;
-  check("3h: the district line carries the max award total and the current total",
-    /a combined max award of \$[\d,]+/.test(distLine) && /a current total of (\$|<\$)[\d,]+/.test(distLine));
+  check("3h: the district line carries the max award total and the funds qualified so far",
+    /a combined max award of \$[\d,]+/.test(distLine) && /funds qualified so far of (\$|<\$)[\d,]+/.test(distLine));
   check("3i: with a choice made, Save as PDF is enabled", !!pdf() && !pdf().disabled);
   click(w, pdf());
   const html = printed.length ? printed[printed.length - 1].html : "";

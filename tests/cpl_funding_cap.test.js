@@ -384,7 +384,7 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   // Chips are ghosted WORDS, not glyphs (Sam's reaction round, 2026-08-31):
   // "at cap" replaced the ⬇ — and the glyph must not linger anywhere.
   const row = Array.from(doc.querySelectorAll("#cplFundTable tbody tr.cplfund-row"))
-    .find(function (tr) { return tr.textContent.indexOf("Mt San Antonio") !== -1; });
+    .find(function (tr) { return tr.getAttribute("data-id") === "c:Mt San Antonio"; });
   check("C7: a capped row carries the 'Cap' word-chip beside Total Funds (no ⬇ glyph anywhere)",
     // Beside the award figure since 2026-09-02 (Sam); a plain "Cap" chip in
     // Total Funds since the College Dashboard (2026-09-28).

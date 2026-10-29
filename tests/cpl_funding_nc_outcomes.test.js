@@ -218,8 +218,13 @@ check("D7: a standalone's expand is its noncredit outcomes under a band of their
 const ds = openDrill(win, doc, "sys");
 const sysOut = ds.rows.filter((r) => r.classList.contains("cplfund-ncoutrow"));
 const s1 = sysOut.length ? readCells(keys, sysOut[0]) : null;
-check("D8: the Statewide expand sums the institutions: the target 28 exhibits, the actual the feed's statewide figure, the funds what institutions receive",
-  !!s1 && s1.nc_award.line === "Target 28 exhibits" && s1.nc_current.line === "Actual 12 exhibits" && s1.nc_current.fig === "$26,195");
+// Since 2026-10-29 (the CSM team via Sam: "Statewide Curr total is 0 but should add everything in curr
+// college rows") the funds add what each institution's own expand shows, a held share's gray figure included.
+const dollars = (t) => Number(String(t || "").replace(/[^0-9.]/g, "")) || 0;
+check("D8: the Statewide expand sums the institutions: the target 28 exhibits, the actual the feed's statewide figure, the funds what each institution's row shows",
+  !!s1 && s1.nc_award.line === "Target 28 exhibits" && s1.nc_current.line === "Actual 12 exhibits" &&
+  Math.abs(dollars(s1.nc_current.fig) - (dollars(c1.nc_current.fig) + dollars(c2.nc_current.fig))) <= 1 &&
+  !s1.nc_current.gated);
 const feet = Array.from(doc.querySelectorAll(".cplfund-dtl-foot")).map(flat);
 // Gone under the outcomes lane since 2026-10-28 (Sam struck it on a screenshot): the rows name their outcomes.
 check("D9: the drill-ins carry no closing rule line under the outcomes lane, and never the origination one",
@@ -238,7 +243,7 @@ check("D11: NC-1's card names its target as the institutions' sum and its share 
 check("D12: the credit cards are untouched in number", doc.querySelectorAll("[data-priocard]").length === before.prios.length);
 const csv = T._csv();
 const head = csv.split("\n")[1] || "";
-const line = csv.split("\n").find((l) => /^\d+,Mt San Antonio,/.test(l)) || "";
+const line = csv.split("\n").find((l) => /^\d+,Mt\. San Antonio,/.test(l)) || "";   // its display name since 2026-10-29
 check("D13: the CSV carries a target and an actual per outcome, in the outcome's unit, after the credit priorities' columns",
   /NC-1 target \(exhibits\),NC-1 actual,NC-2 target \(courses\),NC-2 actual/.test(head) && /,10,5,1,0,/.test(line));
 check("D13b: the Noncredit Funding Rules fold is gone under the outcomes lane; the cards carry the rules (Sam, 2026-10-23)",

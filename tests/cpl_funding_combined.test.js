@@ -108,7 +108,7 @@ const TRIO = ["NOCE", "SD Cont. Ed", "Calbright"];
   // the pair must sum to total ÷ years, never to one lane's figure re-printed.
   const crRows = Array.from(table.querySelectorAll("tbody tr.cplfund-row"));
   check("institution rows render, one per institution", crRows.length === 118);
-  const mtRow = crRows.find(function (r) { return /Mt San Antonio/.test(r.textContent); });
+  const mtRow = crRows.find(function (r) { return r.getAttribute("data-id") === "c:Mt San Antonio"; });
   const mtCells = mtRow.querySelectorAll("td.cf-award:not(.cf-max)");
   const mtMax = mtRow.querySelector("td.cf-max");
   const mt = T._alloc("Mt San Antonio");
