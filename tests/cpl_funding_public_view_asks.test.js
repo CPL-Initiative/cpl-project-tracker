@@ -226,7 +226,9 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
 // ─────────────────────────────────────────────────────────────────────────────
 {
   const PUBLIC_VIEW = "https://cpl-initiative.github.io/cpl-project-tracker/?fundview=public#implementation-funding";
-  const pages = ["funding_in_motion.html", "funding_in_motion_s2.html", "funding_in_motion_n1.html", "funding_in_motion_n2.html"];
+  // Scenario 1's pages keep both; the published films lead back to the public CPL funding page
+  // alone (Sam, 2026-10-29: "link from video to public funding goes to the internal page").
+  const pages = ["funding_in_motion.html", "funding_in_motion_n1.html"];
   const ok = pages.every((f) => {
     const html = read("prototype/funding_video/" + f);
     const ctl = html.slice(html.indexOf('<div class="controls">'), html.indexOf("</div>", html.indexOf('id="dl"')));
@@ -234,12 +236,17 @@ const CFG = { projects: { "cpl-implementation": { label: "CPL", area: "cpl", pub
     return !!ex && /\/funding-model\//.test(ex[1]) &&
       ctl.indexOf('<a class="btn" id="to-public" href="' + PUBLIC_VIEW + '">Back to the public view</a>') !== -1;
   });
-  check("5a: every video page carries both ways back in its control row, which stays on screen", ok);
+  const one = ["funding_in_motion_s2.html", "funding_in_motion_n2.html"].every((f) => {
+    const html = read("prototype/funding_video/" + f);
+    return /<a class="btn" id="to-page" href="https:\/\/cpl-initiative\.github\.io\/cpl-project-tracker\/funding-model\/">Back to the CPL funding page<\/a>/.test(html) &&
+      !html.includes(PUBLIC_VIEW) && !/id="to-explainer"/.test(html);
+  });
+  check("5a: Scenario 1's pages carry both ways back; the published films, the one way back to the public page", ok && one);
   // Scenario 2 is the published scenario, so its introduction leads to the bare
   // address, which shows it, and names no scenario (Sam, 2026-10-01), and so does
   // its narrated cut since Sierra re-voiced it over the introduction's picture
   // (2026-10-02); Scenario 1's introduction names its own.
-  const toEx = (f) => (/id="to-explainer" href="([^"]+)"/.exec(read("prototype/funding_video/" + f)) || [])[1] || "";
+  const toEx = (f) => (/id="to-(?:explainer|page)" href="([^"]+)"/.exec(read("prototype/funding_video/" + f)) || [])[1] || "";
   check("5b: each video page leads back to its own scenario's explainer",
     /\/funding-model\/$/.test(toEx("funding_in_motion_s2.html")) &&
     /\?scenario=Scenario%201$/.test(toEx("funding_in_motion.html")) &&

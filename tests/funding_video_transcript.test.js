@@ -44,7 +44,7 @@ function boot(file) {
 const norm = (s) => String(s || "").replace(/\s+/g, " ").trim();
 const money = (v) => "$" + Math.round(v).toLocaleString("en-US");
 
-check("a1 the source opens with <html lang=\"en\">", /^<html lang="en">\s*<title>/.test(src));
+check("a1 the source opens with <html lang=\"en\">, light only (Sam, 2026-10-29)", /^<html lang="en" data-theme="light">\s*(<!--[\s\S]*?-->\s*)?<meta charset="utf-8">\s*(<!--[\s\S]*?-->\s*)?<meta name="viewport" content="width=device-width, initial-scale=1">\s*<title>/.test(src));
 
 // The reader types no figure of its own: every number it prints comes off the scene.
 {
@@ -57,11 +57,13 @@ check("a1 the source opens with <html lang=\"en\">", /^<html lang="en">\s*<title
 [["funding_in_motion_s2.html", "s2 ", false], ["funding_in_motion.html", "s1 ", false],
  ["funding_in_motion_n1.html", "n1 ", true], ["funding_in_motion_n2.html", "n2 ", true]].forEach(([file, tag, narrated]) => {
   const { w, html } = boot(file), d = w.document;
-  check(tag + "b1 " + file + " names its language", /^<html lang="en">/.test(html) && d.documentElement.getAttribute("lang") === "en");
+  check(tag + "b1 " + file + " names its language", /^<html lang="en"[ >]/.test(html) && d.documentElement.getAttribute("lang") === "en");
+  // Scenario 1's pages keep the older row and the scene list; the published films carry one row (2026-10-29).
+  const published = !!d.getElementById("to-page");
   const mains = d.querySelectorAll("main");
   const main = mains[0];
   check(tag + "b2 one main holds the player, its scrubber, Download MP4 and the links back",
-    mains.length === 1 && ["#player", ".scrub", "#dl", "#to-explainer", "#to-public", "header", "#chapters"].every((s) => main.querySelector(s)));
+    mains.length === 1 && (published ? ["#player", "#fs", "#to-page", "header"] : ["#player", ".scrub", "#dl", "#to-explainer", "#to-public", "header", "#chapters"]).every((s) => main.querySelector(s)));
   check(tag + "b3 nothing in the body sits outside main but the script",
     Array.from(d.body.children).every((e) => e === main || e.tagName === "SCRIPT"));
 
@@ -73,8 +75,9 @@ check("a1 the source opens with <html lang=\"en\">", /^<html lang="en">\s*<title
   check(tag + "c2 it opens by saying what the film carries" + (narrated ? " (a narrated cut: the captions carry the voice)" : ": music only, no narration"),
     !!note && (narrated ? /^Narrated, with music; the captions on the player carry the narration\./ : /^Music only, no narration\./).test(note.textContent));
   const chapters = Array.from(d.querySelectorAll("#chapters .chap")).map((b) => norm(b.querySelector(".tc").textContent + " " + b.querySelector(".nm").textContent));
-  check(tag + "c3 one entry per scene, in the film's order, headed as the scene list is (" + items.length + ")",
-    items.length > 9 && items.length === chapters.length && items.every((li, i) => norm(li.querySelector("h3").textContent) === chapters[i]));
+  check(tag + "c3 one entry per scene, in the film's order, " + (published ? "each headed by its time and name" : "headed as the scene list is") + " (" + items.length + ")",
+    items.length > 9 && (published ? items.length === 11 && items.every((li) => /^\d:\d\d \S/.test(norm(li.querySelector("h3").textContent)))
+      : items.length === chapters.length && items.every((li, i) => norm(li.querySelector("h3").textContent) === chapters[i])));
   check(tag + "c4 every scene gives words, and the picture lines say Picture",
     items.every((li) => li.querySelectorAll(":scope > p:not(.tr-pic), :scope > ul").length > 0)
       && Array.from(det.querySelectorAll(".tr-pic")).every((p) => /^Picture: [A-Z]/.test(p.textContent)));

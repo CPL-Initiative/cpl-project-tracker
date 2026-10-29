@@ -120,7 +120,7 @@ a:hover{text-decoration-thickness:2px}
 .cplh-in{position:relative; min-height:76px; padding-block:10px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:10px 32px}
 .cplh-logo{display:inline-flex; min-height:24px}
 .cplh-logo img{display:block; height:54px; width:auto; max-width:100%}
-.cplh-nav a{display:inline-flex; align-items:center; min-height:24px; color:var(--cobalt); font-weight:600; text-underline-offset:3px}
+.cplh-nav a{display:inline-flex; align-items:center; min-height:24px; color:var(--cobalt); font-weight:400; text-underline-offset:3px}
 /* Sam, 2026-10-26, on a screenshot of this page: "put all the links in the header in one
    Resource Links drop down. Collapse all link should be the one furthest right and pdf just to
    the left of it", and the row under the title (Collapse all, PDF, the version) moves up here.
@@ -135,6 +135,14 @@ a:hover{text-decoration-thickness:2px}
 .cplh-nav li:first-child{border-top:0}
 .cplh-desc{color:var(--text-muted); font-size:.9rem}
 @media (max-width:560px){ .cplh-logo img{height:40px} .cplh-nav li{grid-template-columns:minmax(0,1fr)} }
+/* A phone's header (Sam, 2026-10-29: "If you can tighten things up on mobile view so header
+   doesn't take so much real estate"): a smaller lockup and the version and the four words
+   in short rows. The title block's air is halved below, after its own rules. */
+@media (max-width:560px){
+  .cplh-in{min-height:0; padding-block:6px; gap:2px 16px}
+  .cplh-logo img{height:34px}
+  .cplh-end{gap:0 16px}
+}
 
 /* ── masthead: the title over the library's gold rule, the controls beneath ── */
 .masthead{background:transparent}
@@ -151,10 +159,16 @@ a:hover{text-decoration-thickness:2px}
 .mh-actions{display:flex; flex-wrap:wrap; align-items:center; gap:4px 22px}
 .mh-actions .btn, .mh-actions .btn.primary, .cplh-links .btn{
   background:none; border:0; border-radius:2px; padding:2px 0; min-height:24px;
-  color:var(--cobalt); font-size:.95rem; font-weight:600;
+  color:var(--cobalt); font-size:.95rem; font-weight:400;
   text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px}
 .mh-actions .btn:hover, .mh-actions .btn.primary:hover, .cplh-links .btn:hover{
   background:none; color:var(--seal-blue); text-decoration-thickness:2px}
+/* A phone's title block (Sam, 2026-10-29: "tighten things up on mobile view"): its air halved. */
+@media (max-width:560px){
+  .masthead{padding-block:6px}
+  .head{padding-block:10px 4px}
+  .title-accent{margin:10px 0 6px}
+}
 
 /* ── contents (Sam, 2026-10-01: a link to each section that opens it) ─────
    Tight (Sam, 2026-10-25: "tighten up the spacing more on the TOC so it
@@ -572,12 +586,10 @@ section[hidden], #contents[hidden]{display:none}
            curator's to rename, and (TBA) follows them. Give it the CO memo's
            address as its href, and drop toc-tba, the day the memo is published. -->
       <li class="toc-tail toc-tba"><a id="memo-link" data-plink="memo">Read the funding guidance memo</a> (TBA)</li>
-      <li class="toc-video toc-tail"><a id="video-link" data-plink="video" href="../prototype/funding_video/funding_in_motion_s2.html">Watch the 100-second introduction</a></li>
-      <!-- The narrated cut beside it (Sam, Open Asks Sheet 136 card 1, "reread",
-           2026-10-27, on Sheet 133's plan): the music film stays the
-           introduction, and Sierra's narrated cut is its alternative for a
-           listener who cannot see the picture (WCAG 1.2.5). -->
-      <li class="toc-video toc-tail"><a id="video-narrated-link" data-plink="video_narrated" href="../prototype/funding_video/funding_in_motion_n2.html">Watch the narrated introduction</a></li>
+      <!-- The narrated introduction is the page's one video (Sam, 2026-10-29: "delete video
+           link to version without narration on the public page"), reversing Open Asks Sheet
+           136 card 1's pair. The music film's page stays at its address. -->
+      <li class="toc-video toc-tail"><a id="video-narrated-link" data-plink="video_narrated" href="../prototype/funding_video/funding_in_motion_n2.html?full=1">Watch the narrated introduction</a></li>
       <!-- Help, after the video (Sam, 2026-10-20): the MAP team's office hours,
            the chosen college's CPL landing page (its hover recommends office
            hours for configuring one), and the training video on configuring a

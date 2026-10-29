@@ -40,11 +40,12 @@ const dom = new JSDOM(html);
 const tails = Array.from(dom.window.document.querySelectorAll("#toc-list li.toc-tail a")).map((a) => a.getAttribute("href"));
 // The guidance memo leads the tail (Sam, 2026-10-21), a placeholder with no href
 // since 2026-10-28 until the CO publishes it, and its Word file is gone. The
-// narrated cut follows the introduction (Sheet 136 card 1, 2026-10-27).
-check("(d) the memo (TBA, no link), the video, its narrated cut, office hours, landing page, then the training video",
-  tails.length === 6 && tails[0] === null && /funding_in_motion_s2\.html$/.test(tails[1]) &&
-  /funding_in_motion_n2\.html$/.test(tails[2]) && tails[3] === "https://map.rccd.edu/get-involved/" &&
-  tails[4] === "https://map.rccd.edu/cpllandingpages/" && tails[5] === "../prototype/landing_page_video/");
+// narrated cut followed the introduction (Sheet 136 card 1, 2026-10-27) until Sam, 2026-10-29:
+// "delete video link to version without narration on the public page".
+check("(d) the memo (TBA, no link), the narrated video, office hours, landing page, then the training video",
+  tails.length === 5 && tails[0] === null && /funding_in_motion_n2\.html\?full=1$/.test(tails[1]) &&
+  tails[2] === "https://map.rccd.edu/get-involved/" &&
+  tails[3] === "https://map.rccd.edu/cpllandingpages/" && tails[4] === "../prototype/landing_page_video/");
 // The training video plays from this site, so no ads and no suggested videos
 // (Sam, 2026-10-20); the page's video file is in the repo.
 const lp = fs.readFileSync(path.join(ROOT, "prototype/landing_page_video/index.html"), "utf8");
@@ -59,12 +60,13 @@ check("(d4) the player page leads back to the funding page at its top and its fo
 check("(d2) the landing page link's hover recommends office hours",
   /office hours/.test(dom.window.document.getElementById("landing-link").getAttribute("title")));
 
-// The introduction video defaults to the two-priority film, built from the
-// published scenario whatever its name (Sam, 2026-10-20: the page linked the
-// three-priority film once Scenario 3 was published), and nothing switches it.
-check("(e) the video link is the published scenario's film, and nothing switches it to the three-priority film",
-  /funding_in_motion_s2\.html/.test(dom.window.document.getElementById("video-link").getAttribute("href")) &&
-  !/funding_in_motion\.html/.test(html));
+// The introduction video is the published scenario's narrated film, whatever its
+// name (Sam, 2026-10-20: the page linked the three-priority film once Scenario 3 was
+// published; 2026-10-29: "delete video link to version without narration"), and
+// nothing switches it to the three-priority film.
+check("(e) the video link is the published scenario's narrated film, and nothing switches it to the three-priority film",
+  /funding_in_motion_n2\.html/.test(dom.window.document.getElementById("video-narrated-link").getAttribute("href")) &&
+  !dom.window.document.getElementById("video-link") && !/funding_in_motion\.html/.test(html));
 
 console.log("funding_jst_counts_and_help.test.js: " + (fails ? fails + " FAILED" : "all passed"));
 if (fails) process.exit(1);

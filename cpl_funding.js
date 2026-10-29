@@ -1401,6 +1401,9 @@
     // The project/scenario selects carry long option text — stack the strip and
     // let the controls fill the row so a wide <select> can't push the page wider.
     "  .cplfund-strip { flex-direction: column; align-items: stretch; gap: 8px; }",
+    // In the column the scenario's 18rem basis became a height, 288px of air between its
+    // lines (Sam's phone, 2026-10-29); each control takes its content's height.
+    "  .cplfund-ctl-proj, .cplfund-ctl-scen { flex: 0 0 auto; }",
     // A word control keeps its line, so the row wraps instead: the scenario hint drops below its words.
     "  .cplfund-ctl { max-width: 100%; flex-wrap: wrap; }",
     "  .cplfund-strip select, .cplfund-ed-sel, .cplfund-strip input, .cplfund-addproj select, .cplfund-addproj input { max-width: 100%; min-width: 0; }",

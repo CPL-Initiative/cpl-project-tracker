@@ -1,4 +1,10 @@
-<html lang="en">
+<html lang="en" data-theme="light">
+<!-- Light only, as the CPL funding page it belongs to (Sam, 2026-10-25: "Let's just leave it light only";
+     2026-10-29, on his phone: "some views open in dark mode and should be light"). -->
+<meta charset="utf-8">
+<!-- A phone lays the page out at its own width (2026-10-29: without this line iOS laid it out
+     at desktop width and shrank it, Sam's screenshot of the narrated film). -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>__PAGETITLE__</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -27,6 +33,12 @@ body{margin:0;background:var(--page);color:var(--text);font:400 16px/1.55 "Sourc
 .player:fullscreen{width:100vw;height:100vh;padding:0;background:var(--page);display:flex;flex-direction:column;align-items:center;justify-content:center}
 .player:fullscreen .stage{width:min(100vw,calc((100vh - var(--ctl)) * 16 / 9));border:0;border-radius:0;box-shadow:none}
 .player:fullscreen .controls{width:min(100vw,calc((100vh - var(--ctl)) * 16 / 9));margin-top:8px;padding-inline:12px}
+/* Full screen where the browser refuses it (a phone's browser allows only a video
+   element; Sam, 2026-10-29, on his phone: "video open full screen does not work"):
+   the player fills the window instead. */
+.player.max{position:fixed;inset:0;z-index:2147483000;width:100vw;height:100vh;height:100dvh;margin:0;padding:0;background:var(--page);display:flex;flex-direction:column;align-items:center;justify-content:center}
+.player.max .stage{width:min(100vw,calc((100vh - var(--ctl)) * 16 / 9));width:min(100vw,calc((100dvh - var(--ctl)) * 16 / 9));border:0;border-radius:0;box-shadow:none}
+.player.max .controls{width:min(100vw,calc((100dvh - var(--ctl)) * 16 / 9));margin-top:8px;padding-inline:12px}
 .wrap{max-width:1120px;margin:0 auto;padding-inline:clamp(16px,4vw,32px);padding-block:clamp(16px,3vw,28px) 56px}
 .eyebrow{margin:0 0 6px;font-weight:700;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent-text)}
 h1{margin:0;font:700 clamp(1.7rem,1.15rem + 2.2vw,2.7rem)/1.12 "Playfair Display",Georgia,serif;text-wrap:balance}
@@ -85,13 +97,6 @@ h1{margin:0;font:700 clamp(1.7rem,1.15rem + 2.2vw,2.7rem)/1.12 "Playfair Display
 output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 .vh{position:absolute!important;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
-.scenes{margin-top:clamp(28px,5vw,44px)}
-.scenes h2{margin:0 0 12px;font:700 1.35rem/1.2 "Playfair Display",Georgia,serif}
-.chapters{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:10px}
-.chap{width:100%;height:100%;display:grid;gap:4px;align-content:start;padding:12px 14px;text-align:left;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--text);font:inherit;cursor:pointer}
-.chap[aria-current="true"]{border-color:var(--text);box-shadow:inset 0 0 0 1px var(--text)}
-.chap .tc{font-size:.8rem;font-weight:700;letter-spacing:.08em;font-variant-numeric:tabular-nums;color:var(--accent-text)}
-.chap .nm{font-weight:700}.chap .tx{font-size:.95rem;line-height:1.45;color:var(--text-body)}
 /* The transcript (2026-10-26): a fold below the player, closed until opened. The
    summary holds its heading and a Show or Hide word, as the funding page's folds do. */
 .transcript{margin-top:clamp(28px,5vw,44px)}
@@ -110,7 +115,6 @@ output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)
 .tr ul{padding-left:1.4em}
 .tr .tr-pic{font-style:italic;color:var(--text-muted)}
 .tr a{color:var(--focus);font-weight:600}
-@media (max-width:560px){.player{--ctl:112px}}
 </style>
 
 <!-- One main landmark holds the player and the page below it (axe region, 2026-10-26). -->
@@ -123,19 +127,15 @@ output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)
     <div id="fx" aria-hidden="true"></div>
     <button type="button" class="bigplay" id="bigplay">Play the introduction</button>
   </div>
+  <!-- One row (Sam, 2026-10-29: "don't need all the option buttons on the video...just the
+       link to get back to the public funding page"; then "do need a chip to open full
+       screen"): Play or Pause, so a keyboard can stop the film; Full screen, which reads Exit
+       full screen while the film fills the screen; the way back to the public CPL funding
+       page, never COBI's tab. Captions stay on. -->
   <div class="controls">
     <button type="button" class="btn strong" id="play">Play</button>
-    <button type="button" class="btn" id="replay">Replay</button>
-    <div class="scrub"><label for="pos" class="vh">Position in the introduction</label><input type="range" id="pos" min="0" max="90" step="0.05" value="0"></div>
-    <output id="time" for="pos">0:00</output>
-    <button type="button" class="btn" id="sound">Mute</button>
     <button type="button" class="btn" id="fs">Full screen</button>
-    <a class="btn" id="dl" href="__MP4__" download>Download MP4</a>
-    <!-- The way back (Sam, 2026-09-30: "Add a link to get back to the public view and explainer
-         view"). In the control row because the player fills the window: the explainer link
-         below it starts off-screen. -->
-    <a class="btn" id="to-explainer" href="__EXPLAINER__">Back to the explainer</a>
-    <a class="btn" id="to-public" href="__PUBLICVIEW__">Back to the public view</a>
+    <a class="btn" id="to-page" href="__EXPLAINER__">Back to the CPL funding page</a>
   </div>
 </div>
 <div class="wrap">
@@ -151,7 +151,6 @@ output{min-width:7.5ch;font-variant-numeric:tabular-nums;color:var(--text-muted)
       <div id="transcript-body"></div>
     </details>
   </section>
-  <section class="scenes" aria-labelledby="sh"><h2 id="sh">Scenes</h2><ol class="chapters" id="chapters"></ol></section>
 </div>
 </main>
 
@@ -704,8 +703,6 @@ var Music=(function(){
 })();
 /* ---- player ---- */
 function fmt(t){var s=Math.floor(t+1e-6);return Math.floor(s/60)+':'+String(s%60).padStart(2,'0');}
-var chapWrap=$('chapters'),chaps=[];
-S.forEach(function(o){var li=E('li',null,null,chapWrap),b=E('button','chap','<span class="tc">'+fmt(nt(o.t0))+'</span><span class="nm">'+o.name+'</span><span class="tx">'+o.text+'</span>',li);b.type='button';b.addEventListener('click',function(){seek(playing?nt(o.t0):Math.min(DUR,nt(o.t1)-0.6));player.scrollIntoView({behavior:reduced?'auto':'smooth',block:'start'});});chaps.push({b:b,t:nt(o.t0)});});
 /* ---- the transcript (WCAG 1.2.1 and 1.2.3, 2026-10-26). The film carries its
    information as words and figures on screen under music, with no voice, so the
    page gives them as text in a fold below the player. Each scene's lines are READ
@@ -769,22 +766,23 @@ var TR=[
       else if(x.href){var a=E('a',null,null,E('p',null,null,li));a.href=x.href;a.textContent=x.text;}
       else put('p',null,x,li);});
     hits.filter(function(e){return e.t>=mid;}).forEach(shot);});})();
-var btnPlay=$('play'),bigplay=$('bigplay'),pos=$('pos'),time=$('time'),btnSound=$('sound'),btnFs=$('fs');
-pos.max=String(DUR);
+var btnPlay=$('play'),bigplay=$('bigplay'),btnFs=$('fs'),stage=$('stage');
 /* the narrated cut: the voice plays beside the score, held to the player's clock */
 var VO=NARR&&CFG.audio?new Audio(CFG.audio):null;if(VO)VO.preload='auto';
 function voSync(force){if(!VO)return;try{if(!playing||!soundOn){if(!VO.paused)VO.pause();return;}
   if(force||Math.abs(VO.currentTime-T)>0.3)VO.currentTime=Math.min(T,DUR);if(VO.paused){var p=VO.play();if(p&&p.catch)p.catch(function(){});}}catch(x){}}
-var btnCc=null;if(cc){btnCc=E('button','btn','Hide captions',null);btnCc.type='button';btnCc.id='cc';btnFs.parentNode.insertBefore(btnCc,btnFs);
-  btnCc.addEventListener('click',function(){ccOn=!ccOn;btnCc.textContent=ccOn?'Hide captions':'Show captions';cue(T);});}
-/* full screen: the player (stage and controls) takes the whole screen */
-var fsOn=function(){return !!(document.fullscreenElement||document.webkitFullscreenElement);};
-var fsAble=!!(player.requestFullscreen||player.webkitRequestFullscreen);
-function enterFs(){try{var r=(player.requestFullscreen||player.webkitRequestFullscreen).call(player);if(r&&r.catch)r.catch(function(){});}catch(x){}}
-function exitFs(){try{var r=(document.exitFullscreen||document.webkitExitFullscreen).call(document);if(r&&r.catch)r.catch(function(){});}catch(x){}}
-if(!fsAble)btnFs.hidden=true;
-function ui(){btnPlay.textContent=playing?'Pause':'Play';bigplay.hidden=playing||!(T<=0.001||T>=DUR-0.01);bigplay.textContent=T>=DUR-0.01?'Play again':'Play the introduction';time.textContent=fmt(T)+' / '+fmt(DUR);if(!scrubbing)pos.value=T.toFixed(2);pos.setAttribute('aria-valuetext',Math.round(T)+' of '+Math.round(DUR)+' seconds');btnSound.textContent=soundOn?'Mute':'Unmute';btnFs.textContent=fsOn()?'Exit full screen':'Full screen';
-  var c=0;chaps.forEach(function(o,i){if(o.t<=T+1e-6)c=i;});chaps.forEach(function(o,i){if(i===c)o.b.setAttribute('aria-current','true');else o.b.removeAttribute('aria-current');});}
+/* full screen: the player (stage and controls) takes the whole screen. Where the
+   browser has no full screen for it (a phone's allows only a video element), or
+   refuses, the player fills the window instead (.max), and Exit full screen or
+   Esc puts it back. */
+var maxOn=false;
+var nativeOn=function(){return !!(document.fullscreenElement||document.webkitFullscreenElement);};
+var fsOn=function(){return maxOn||nativeOn();};
+var fsNative=!!((document.fullscreenEnabled||document.webkitFullscreenEnabled)&&(player.requestFullscreen||player.webkitRequestFullscreen));
+function setMax(on){maxOn=on;player.classList.toggle('max',on);document.documentElement.style.overflow=on?'hidden':'';measure();render();ui();}
+function enterFs(){if(!fsNative){setMax(true);return;}try{var r=(player.requestFullscreen||player.webkitRequestFullscreen).call(player);if(r&&r.catch)r.catch(function(){setMax(true);});}catch(x){setMax(true);}}
+function exitFs(){if(nativeOn()){try{var r=(document.exitFullscreen||document.webkitExitFullscreen).call(document);if(r&&r.catch)r.catch(function(){});}catch(x){}}if(maxOn)setMax(false);}
+function ui(){btnPlay.textContent=playing?'Pause':'Play';bigplay.hidden=playing;bigplay.textContent=T<=0.001?'Play the introduction':T>=DUR-0.01?'Play again':'Resume';btnFs.textContent=fsOn()?'Exit full screen':'Full screen';}
 function tick(){if(!playing)return;T=base+(performance.now()/1000-t0);if(T>=DUR){T=DUR;playing=false;clearInterval(raf);}render();if(soundOn&&playing)Music.schedule(T);voSync(false);ui();}
 function play(){if(T>=DUR-0.01)seek(0);playing=true;if(soundOn)Music.start(T);base=T;t0=performance.now()/1000;clearInterval(raf);raf=setInterval(tick,33);voSync(true);ui();}
 function pause(){playing=false;clearInterval(raf);Music.pause();voSync(true);ui();}
@@ -792,16 +790,21 @@ function seek(t){T=Math.max(0,Math.min(DUR,t));Music.seek(T);base=T;t0=performan
 btnPlay.addEventListener('click',function(){playing?pause():play();});
 /* the big button opens full screen and plays: the one gesture a browser
    accepts for full screen is the viewer's own click */
-bigplay.addEventListener('click',function(){if(fsAble&&!fsOn()&&T<=0.001)enterFs();play();});
+bigplay.addEventListener('click',function(){if(!nativeOn())enterFs();play();});
 btnFs.addEventListener('click',function(){fsOn()?exitFs():enterFs();});
+/* a tap on the playing picture pauses it, and the big button offers Resume */
+stage.addEventListener('click',function(e){if(playing&&e.target!==bigplay)pause();});
+document.addEventListener('keydown',function(e){if(maxOn&&e.key==='Escape')setMax(false);});
 ['fullscreenchange','webkitfullscreenchange'].forEach(function(n){document.addEventListener(n,function(){measure();render();ui();});});
-$('replay').addEventListener('click',function(){seek(0);play();});
-btnSound.addEventListener('click',function(){soundOn=!soundOn;if(!soundOn)Music.silence();else if(playing)Music.start(T);voSync(true);ui();});
-pos.addEventListener('input',function(){seek(parseFloat(pos.value));});
-pos.addEventListener('pointerdown',function(){scrubbing=true;});window.addEventListener('pointerup',function(){scrubbing=false;});
 document.addEventListener('visibilitychange',function(){if(document.hidden&&playing)pause();});
 var m=/^#t(\d+)$/.exec(location.hash||'');if(m)T=parseFloat(m[1]);
 measure();render();ui();
+/* Opened filling the window (Sam, 2026-10-29: "can we have the video default open in full
+   screen from TOC link and still give a link back to public page?"). A browser enters full
+   screen only on a click on this page, so the Contents link's ?full=1 opens the player over
+   the window, its row and its way back in view; the first Play goes full screen where the
+   browser allows it. */
+if(/[?&]full=1(&|$)/.test(location.search||''))setMax(true);
 window.addEventListener('resize',function(){measure();render();});
 if(document.fonts&&document.fonts.ready)document.fonts.ready.then(function(){measure();render();});
 Music.load();

@@ -134,7 +134,7 @@ CONFIG = {
     's1': {
         'pageTitle': 'CPL Funding in Motion: An Introduction',
         'eyebrow': 'CPL Initiative',
-        'dek': 'A 100-second introduction to CPL funding for colleges, with music. Play opens it full screen; press Esc to leave. Detailed guidance will follow.',
+        'dek': 'A 100-second introduction to CPL funding for colleges, with music. Play opens it full screen, and Exit full screen or Esc leaves it. Detailed guidance will follow.',
         'linkLabel': 'How CPL funding works',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
@@ -164,7 +164,7 @@ CONFIG = {
         # names it (Sam, 2026-10-01); the file names keep it.
         'pageTitle': 'CPL Funding in Motion: An Introduction',
         'eyebrow': 'CPL Initiative',
-        'dek': 'A 100-second introduction to CPL funding for colleges, with music. Play opens it full screen; press Esc to leave. Detailed guidance will follow.',
+        'dek': 'A 100-second introduction to CPL funding for colleges, with music. Play opens it full screen, and Exit full screen or Esc leaves it. Detailed guidance will follow.',
         'linkLabel': 'How CPL funding works',
         'kick': 'An introduction for colleges',
         'titleText': '2026 to 2028 CPL Initiative funding, how it works: an introduction for colleges.',
@@ -205,7 +205,7 @@ CONFIG['n1'] = dict(
     CONFIG['s1'],
     pageTitle='CPL Funding in Motion: Narrated Draft',
     eyebrow='CPL Initiative · draft',
-    dek='A narrated draft of the introduction to CPL funding for colleges, about three minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+    dek='A narrated draft of the introduction to CPL funding for colleges, about three minutes. Play opens it full screen, and Exit full screen or Esc leaves it. Captions are on.',
     mp4='20260926_CPL_Funding_in_Motion_Narrated_Draft_4.mp4',
     split=SPLIT_THREE, ex=SAMPLE, target=SAMPLE_TARGET_S1,
     # The frames the voice was laid out on (narration_s1_layout.json): no targets
@@ -235,7 +235,7 @@ CONFIG['n2'] = dict(
     # no scenario (Sam, 2026-10-01), and the file names keep it.
     pageTitle='CPL Funding in Motion: The Narrated Introduction',
     eyebrow='CPL Initiative',
-    dek='The introduction to CPL funding for colleges, narrated by Sierra, about two and a half minutes. Play opens it full screen; press Esc to leave. Captions are on; the Captions button turns them off.',
+    dek='The introduction to CPL funding for colleges, narrated by Sierra, about two and a half minutes. Play opens it full screen, and Exit full screen or Esc leaves it. Captions are on.',
     mp4='20260930_CPL_Funding_in_Motion_Scenario_2_Narrated_Draft_7.mp4',
     narrator='Narrated by Sierra',
     audio='narration_s2.mp3',
