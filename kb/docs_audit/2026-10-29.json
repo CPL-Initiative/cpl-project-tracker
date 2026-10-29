@@ -10,9 +10,9 @@
     "other": 150000
   },
   "summary": {
-    "files": 1321,
-    "bytes": 13404567,
-    "over_budget": 1,
+    "files": 1322,
+    "bytes": 13409433,
+    "over_budget": 2,
     "handoff_max": 520,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59972,
@@ -25,13 +25,13 @@
         "over": 0
       },
       "other": {
-        "files": 135,
-        "bytes": 4093187,
+        "files": 136,
+        "bytes": 4097738,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9868,
+        "bytes": 9810,
         "over": 0
       },
       "lessons": {
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 443477,
-        "over": 0
+        "bytes": 443850,
+        "over": 1
       },
       "handoff": {
         "files": 489,
@@ -56,14 +56,14 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 1,
+      "oversized_doc": 2,
       "kb_note_dialect": 1,
       "house_voice": 1,
       "vault_heavy_path": 70
     },
     "vault": {
-      "files": 25039,
-      "bytes": 3974713792,
+      "files": 25041,
+      "bytes": 3974724144,
       "heavy_bytes": 2812775115,
       "heavy_share": 0.708,
       "ignore_filters": [
@@ -164,6 +164,19 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20326,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 326,
+        "ratio": 1.02
+      },
+      "message": "20,326 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
       "rule": "house_voice",
