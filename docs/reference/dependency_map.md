@@ -219,6 +219,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `generate-letter` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `letter-curator` | pages: `budget-support/web/curator.html`, `budget-support/web/new-letter.html` | — |
 | `program-requirements-extract` | none found | produced by: `chatbox/supabase/functions/program-requirements-extract/index.ts` |
+| `slide-script-draft` | tabs: `library` | produced by: `chatbox/supabase/functions/slide-script-draft/index.ts` |
 | `workplan-rebuild` | tabs: `workplan-goals` | produced by: `chatbox/supabase/functions/workplan-rebuild/index.ts` |
 
 ## Storage buckets
@@ -1005,7 +1006,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `<host>` | scripts: `kb/_program_requirements_college.py` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api-prod.elumenapp.com` | scripts: `kb/_course_outcomes_read.py`, `kb/_program_requirements_college.py` |
-| `api.anthropic.com` | `edgefn:alt-text-draft`, `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `api.anthropic.com` | `edgefn:alt-text-draft`, `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:slide-script-draft`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
 | `api.gdeltproject.org` | `edgefn:cpl-news-harvest` |
 | `api.github.com/repos/` | modules: `kb-portal/config.js` · `edgefn:workplan-rebuild` |
@@ -1216,5 +1217,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 43 RPCs · 10 edge functions · 726 file
-datasets · 191 external services · 480 consumers · 58 workflows · 38 tabs.
+Coverage: 102 Supabase tables · 43 RPCs · 11 edge functions · 726 file
+datasets · 191 external services · 481 consumers · 58 workflows · 38 tabs.

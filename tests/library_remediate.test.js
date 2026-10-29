@@ -340,21 +340,28 @@ const run = deck().then(function (buf) {
   check("(1) on a slide with no title box the draft comes from its first words", alts[1] && alts[1].draft === "Funding by college", alts[1] && alts[1].draft);
   check("(1) its draft comes from the slide's own title", alts[0] && alts[0].draft === "CPL Implementation Funding");
   check("(1) a picture that already has alt text is left alone", !alts.some(function (n) { return n.slide === 2; }));
-  const titles = rep.needs.filter(function (n) { return n.type === "title"; });
+  const titles = rep.needs.filter(function (n) { return n.type === "title" && !n.missing; }), boxless = rep.needs.filter(function (n) { return n.missing; });
   check("(1) the empty title placeholder asks for a title", titles.length === 1 && titles[0].slide === 2);
-  check("(1) slides with no title box are named in one item, numbered in order (slide10 is the third)",
-    rep.needs.filter(function (n) { return n.type === "info"; }).length === 1 && rep.needs.some(function (n) { return n.id === "tp" && /^Slide 3 has no title a screen reader can find/.test(n.text); }), JSON.stringify(rep.needs));
+  // S518 (Sam: "yes, add the title boxes to slides with none"): a title item of its own, the box added at download.
+  check("(1) a slide with no title box asks for its title, numbered in order (slide10 is the third), its box to go off the slide",
+    boxless.length === 1 && boxless[0].slide === 3 && boxless[0].id === "t3" && boxless[0].text === "Slide 3 has no title box" && boxless[0].offSlide === true &&
+    !rep.needs.some(function (n) { return n.type === "info"; }), JSON.stringify(rep.needs));
   const answers = {};
   answers[alts[0].id] = { text: "Bar chart: transcribed CPL units by college, rising each year" };
   answers[titles[0].id] = { text: "Where the funding goes" };
+  answers.t3 = { text: "Funding by college", off: true };
   return R.finish(s, answers, "nodebuffer");
 }).then(function (out) {
-  check("(2) finish counts what it wrote", out.done.alt === 1 && out.done.titles === 1, JSON.stringify(out.done));
+  check("(2) finish counts what it wrote", out.done.alt === 1 && out.done.titles === 2 && out.done.titleBoxes === 1 && out.done.offSlide === 1, JSON.stringify(out.done));
   return JSZip.loadAsync(out.file);
 }).then(function (z) {
   check("(2) the file that comes back is a zip with the same parts", !!z.file("ppt/slides/slide1.xml") && !!z.file("ppt/slides/slide10.xml") && !!z.file("ppt/media/logo.png"));
-  return Promise.all([z.file("ppt/slides/slide1.xml").async("string"), z.file("ppt/slides/slide2.xml").async("string"), z.file("docProps/core.xml").async("string")]);
+  return Promise.all([z.file("ppt/slides/slide1.xml").async("string"), z.file("ppt/slides/slide2.xml").async("string"), z.file("docProps/core.xml").async("string"), z.file("ppt/slides/slide10.xml").async("string")]);
 }).then(function (x) {
+  const tree = x[3].slice(x[3].indexOf("<p:spTree"));
+  const firstShape = (/^<p:spTree>(?:<p:nvGrpSpPr>[\s\S]*?<\/p:grpSpPr>)?(<p:sp>[\s\S]*?<\/p:sp>)/.exec(tree) || [])[1] || "";
+  check("(2) a slide with no title box gets one, first in its shapes, holding the title, just above the slide",
+    /<p:ph type="title"\/>/.test(firstShape) && /<a:t>Funding by college<\/a:t>/.test(firstShape) && /<a:off x="\d+" y="-\d+"\/>/.test(firstShape), tree.slice(0, 900));
   check("(2) the alt text is in the file", /descr="Bar chart: transcribed CPL units by college, rising each year"/.test(x[0]));
   check("(2) the logo carries Office's decorative mark", /uri="\{C183D7F6-B498-43B3-948B-1728B52AA6E4\}"/.test(x[0]) && /decorative[^>]*val="1"/.test(x[0]));
   check("(2) the table's first row is a header", /<a:tblPr[^>]*firstRow="1"/.test(x[0]));
@@ -400,7 +407,7 @@ const run = deck().then(function (buf) {
   }).then(function (buf) { return R.inspect(buf, "Deck.pptx", ENV); }).then(function (s2) {
     check("(5) a generator's stock title (PowerPoint Presentation) counts as none and is replaced, saying what it read",
       s2.report.fixed.indexOf("Document title set: Funding (it read PowerPoint Presentation)") >= 0, JSON.stringify(s2.report.fixed));
-    check("(5) eleven slides with no title box read as one range", s2.report.needs.some(function (n) { return n.id === "tp" && /^Slides 2 to 12 have no title/.test(n.text); }), JSON.stringify(s2.report.needs.map(function (n) { return n.text; })));
+    check("(5) eleven slides with no title box each ask for a title", s2.report.needs.filter(function (n) { return n.missing; }).map(function (n) { return n.slide; }).join(",") === "2,3,4,5,6,7,8,9,10,11,12", JSON.stringify(s2.report.needs.map(function (n) { return n.text; })));
     check("(5) a slide of ten top-level items asks for its reading order, once", s2.report.needs.filter(function (n) { return n.type === "order"; }).length === 1 && s2.report.needs.some(function (n) { return n.id === "ro" && /slide 1:/.test(n.text); }));
   }).then(function () { return R.inspect(Buffer.from("x"), "Notes.txt", ENV); }).then(function () { check("(6) a text file is refused", false); }, function (e) {
     check("(6) a text file is refused in words that say what it reads", /reads a \.pptx deck, a \.docx document, an \.xlsx workbook or a PDF/.test(e.message), e.message);
@@ -498,6 +505,66 @@ const run = deck().then(function (buf) {
           title && new win.XMLSerializer().serializeToString(title));
       });
     });
+  });
+}).then(function () {
+  // (18) Speaker notes (Sam, 2026-10-29: "ask if they have notes that they want to preserve
+  // and the option for you to add a script below or replacing their notes"). Slide 1 has
+  // notes; slide 2 has no notes page, and gets one on the deck's notes master.
+  const notesDeck = function () {
+    const z = new JSZip(), P = 'xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"';
+    z.file("[Content_Types].xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="xml" ContentType="application/xml"/></Types>');
+    z.file("docProps/core.xml", CORE("Welcome"));
+    z.file("ppt/slides/slide1.xml", slide(titleSp("Welcome")));
+    z.file("ppt/slides/_rels/slide1.xml.rels", slideRels([["rId2", "../notesSlides/notesSlide1.xml"]]));
+    z.file("ppt/slides/slide2.xml", slide(titleSp("Funding")));
+    z.file("ppt/notesSlides/notesSlide1.xml", '<p:notes ' + P + '><p:cSld><p:spTree><p:sp><p:nvSpPr><p:cNvPr id="2" name="Slide Image"/><p:cNvSpPr/><p:nvPr><p:ph type="sldImg"/></p:nvPr></p:nvSpPr><p:spPr/></p:sp>' +
+      '<p:sp><p:nvSpPr><p:cNvPr id="3" name="Notes"/><p:cNvSpPr/><p:nvPr><p:ph type="body" idx="1"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:p><a:r><a:t>My own words</a:t></a:r></a:p></p:txBody></p:sp></p:spTree></p:cSld></p:notes>');
+    z.file("ppt/notesMasters/notesMaster1.xml", '<p:notesMaster ' + P + '><p:cSld><p:spTree/></p:cSld><p:clrMap bg1="lt1" tx1="dk1" bg2="lt2" tx2="dk2" accent1="accent1" accent2="accent2" accent3="accent3" accent4="accent4" accent5="accent5" accent6="accent6" hlink="hlink" folHlink="folHlink"/></p:notesMaster>');
+    return z.generateAsync({ type: "nodebuffer" });
+  };
+  const bodyParas = function (xml) {
+    const d = new win.DOMParser().parseFromString(xml, "application/xml"), P = "http://schemas.openxmlformats.org/presentationml/2006/main", A = "http://schemas.openxmlformats.org/drawingml/2006/main";
+    const body = Array.prototype.filter.call(d.getElementsByTagNameNS(P, "sp"), function (sp) { const ph = sp.getElementsByTagNameNS(P, "ph")[0]; return ph && ph.getAttribute("type") === "body"; })[0];
+    return body ? Array.prototype.map.call(body.getElementsByTagNameNS(A, "p"), function (p) { return p.textContent; }) : null;
+  };
+  let deckBuf;
+  return notesDeck().then(function (buf) { deckBuf = buf; return R.inspect(buf, "Welcome.pptx", ENV); }).then(function (s) {
+    check("(18) each slide's notes are read, and the deck's notes master named", s.report.slides[0].notes === "My own words" && s.report.slides[1].notes === "" && s.report.notesMaster === "ppt/notesMasters/notesMaster1.xml", JSON.stringify(s.report.slides.map(function (x) { return x.notes; })));
+    return R.finish(s, { notes: { mode: "below", slides: { 1: "Script one.", 2: "Script two.\nSecond line." } } }, "nodebuffer");
+  }).then(function (out) {
+    check("(18) a script below the notes goes into both slides, counted", out.done.notes === 2 && out.done.notesSkipped === 0, JSON.stringify(out.done));
+    return JSZip.loadAsync(out.file).then(function (z) {
+      const f = function (p) { return z.file(p) ? z.file(p).async("string") : Promise.resolve(""); };
+      return Promise.all([f("ppt/notesSlides/notesSlide1.xml"), f("ppt/notesSlides/notesSlide2.xml"), f("ppt/notesSlides/_rels/notesSlide2.xml.rels"), f("ppt/slides/_rels/slide2.xml.rels"), f("[Content_Types].xml")]);
+    }).then(function (x) {
+      check("(18) below: the person's notes stay, a blank line, then the script", JSON.stringify(bodyParas(x[0])) === JSON.stringify(["My own words", "", "Script one."]), JSON.stringify(bodyParas(x[0])));
+      check("(18) a slide with no notes page gets one holding the script, a paragraph a line", JSON.stringify(bodyParas(x[1])) === JSON.stringify(["Script two.", "Second line."]), x[1].slice(0, 300));
+      check("(18) the new notes page links its notes master and its slide, and the slide links it back",
+        /Target="\.\.\/notesMasters\/notesMaster1\.xml"/.test(x[2]) && /Target="\.\.\/slides\/slide2\.xml"/.test(x[2]) && /relationships\/notesSlide" Target="\.\.\/notesSlides\/notesSlide2\.xml"/.test(x[3]), x[2] + " / " + x[3]);
+      check("(18) the new notes page has its content type", /PartName="\/ppt\/notesSlides\/notesSlide2\.xml" ContentType="application\/vnd\.openxmlformats-officedocument\.presentationml\.notesSlide\+xml"/.test(x[4]), x[4]);
+      return R.inspect(deckBuf, "Welcome.pptx", ENV);
+    });
+  }).then(function (s) {
+    return R.finish(s, { notes: { mode: "replace", slides: { 1: "New script.", 2: "" } } }, "nodebuffer");
+  }).then(function (out) {
+    return JSZip.loadAsync(out.file).then(function (z) {
+      return Promise.all([z.file("ppt/notesSlides/notesSlide1.xml").async("string"), Promise.resolve(!!z.file("ppt/notesSlides/notesSlide2.xml"))]);
+    }).then(function (x) {
+      check("(18) replace: the script takes the notes' place, and an empty script leaves a slide as it was", JSON.stringify(bodyParas(x[0])) === JSON.stringify(["New script."]) && !x[1] && out.done.notes === 1, JSON.stringify(bodyParas(x[0])));
+    });
+  });
+}).then(function () {
+  // (19) The deck's own order (S518): a slide moved in PowerPoint keeps its file's name, so
+  // the report numbers slides as presentation.xml lists them. Here slide2.xml shows first.
+  const z = new JSZip();
+  z.file("ppt/presentation.xml", '<p:presentation ' + P + '><p:sldIdLst><p:sldId id="256" r:id="rId3"/><p:sldId id="257" r:id="rId2"/></p:sldIdLst><p:sldSz cx="12192000" cy="6858000"/></p:presentation>');
+  z.file("ppt/_rels/presentation.xml.rels", slideRels([["rId2", "slides/slide1.xml"], ["rId3", "slides/slide2.xml"]]));
+  z.file("ppt/slides/slide1.xml", slide(titleSp("Shown second")));
+  z.file("ppt/slides/slide2.xml", slide(titleSp("Shown first")));
+  z.file("ppt/slides/slide3.xml", slide(titleSp("Left out of the deck")));
+  return z.generateAsync({ type: "nodebuffer" }).then(function (buf) { return R.inspect(buf, "Order.pptx", ENV); }).then(function (s) {
+    check("(19) slides are numbered in the deck's order, and a file the deck leaves out is not read",
+      s.report.slides.map(function (x) { return x.n + ":" + x.title; }).join(", ") === "1:Shown first, 2:Shown second" && s.report.extent === "2 slides", JSON.stringify(s.report.slides.map(function (x) { return [x.n, x.title, x.path]; })));
   });
 }).then(function () {
   check("(7) the remediated file keeps the date code and says so", R.outName("20261030_CPL_Summit_Funding.pptx") === "20261030_CPL_Summit_Funding_Remediated.pptx");

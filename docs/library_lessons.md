@@ -1002,6 +1002,36 @@ always have some sort of color added."*
 - `cpl_memory`: `sam-remediation-slides-beside-items-2026-10-29`, `sam-remediation-removes-empty-boxes-2026-10-29`.
   Tests: `library` (17), `library_remediate` (7, 17).
 
+## A title box for every slide, a script in the notes, and the deck's own order (S518, later)
+
+Sam, 2026-10-29, after #2556: *"yes, add the title boxes to slides with none. Also, can you add a prompt once someone
+uploads a ppt for revision or remediation (maybe in the instructions window) to ask if they have notes that they want
+to preserve and the option for you to add a script below or replacing their notes?"*
+
+- **A slide with no title box asks for its title** (`missing: true`), one item a slide in place of the old *no title a
+  screen reader can find* line that sent people to PowerPoint. It is drafted from the slide's largest words in its top
+  half, kept with *Keep*, and at download `addTitleBox` writes a title placeholder first in the slide's shapes, kept
+  just above the slide (the box defaults to off the slide: the design has no title area). A box kept off the slide also
+  moves first, so a screen reader meets the title first. Rendered in LibreOffice, Taco Tuesday's slides are
+  pixel-identical before and after: the six new boxes show nowhere.
+- **Speaker notes.** A dropped .pptx asks *does the deck have notes you want to keep?*: keep them (the default), keep
+  them and add Claude's script below, or replace them with Claude's script. As background, the choice rides in the
+  brief's template line to the session that makes the new deck. To remediate, the page drafts each slide's script
+  through `slide-script-draft` (new, deployed S518, reads no table and writes nothing; the slide's title, its words top
+  to bottom, its pictures' alt text and its notes), four at a time after the pictures' drafts, and shows a *Speaker
+  notes* section, each slide beside its script with *Redraft the script*. At download `writeScripts` puts each script
+  into its notes page's body box, below the notes after one blank line or in their place; a slide with no notes page
+  gets one on the deck's notes master, with its relationships and content type. An empty box leaves a slide's notes as
+  they were.
+- **The deck's own order.** A slide moved in PowerPoint keeps its file's name, and the report numbered slides by file
+  name: in Taco Tuesday the second slide shown is `slide14.xml`, so the report called it Slide 14. `slideOrder` now
+  reads `presentation.xml`'s slide list, and a file the list leaves out is not read. Every report before S518 that came
+  from a reordered deck numbered its slides this way.
+- **Checked on Taco Tuesday:** 6 title boxes added and drafted (5 from the slide's words), 14 scripts written (8 on new
+  notes pages), each script on the slide PowerPoint shows at that number; python-pptx and LibreOffice open the file.
+- Tests: `library_remediate` (1, 2, 5, 18, 19), `library` (17, 18). `cpl_memory`:
+  `sam-remediation-title-boxes-and-notes-2026-10-29`, `pitfall-pptx-slide-order-is-presentation-xml-2026-10-29`.
+
 ## Moved from the lane (S512)
 
 ✅ **④ A deck's contrast is checked (S510).** Each text run's color (its own, else inherited through list style, layout, master and theme) is measured against the fill the words sit on: the shape's own, else the topmost shape drawn before it covering its middle (the layout's and master's own shapes included), else the slide's background through layout and master. Below 4.5:1, or 3:1 for 18pt or 14pt bold, each slide's color pair is one *Needs you* item showing the words both ways, with the nearest passing color of the same hue ticked as the fix; *Remediate and download* writes it onto those runs. Text over a picture, chart, table, gradient or pattern is named for a person (one item). On the five team decks, 6 findings, each confirmed on a render; the first build, against the background alone, reported 72 (`docs/library_lessons.md`, S510). Tests: `library_remediate` (8), `library` (16).
