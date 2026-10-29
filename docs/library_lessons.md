@@ -711,3 +711,33 @@ From *Status*, verbatim (the first mockup, superseded by Version 20): Approved m
 From *Remediation, one place to add, one card per project*, verbatim (built as ① to ③ by S509):
 
 **The mockup as Sam left it, Version 20 (S508, 2026-10-29).** The header reads *every visual, deck, video and document … and how to rebuild or remediate it* (Sam: video, not film; *or remediate* added). One panel, always shown, headed *Create or Remediate a Document*; no *Add to the Library* control anywhere (*"we don't need the Add to the Library link at top--drive everyone to one place"*). Inside one wide drop box: drop or choose a file, or paste a link (a deck, document, PDF, picture, video, a SharePoint file or a web page); once a file is in, *what is it for?* with Remediate this file, Use it as background for something new, or File it as is; an Instructions box, always shown (what they need, the audience, the focus); and one control at the box's foot, *Start*, which runs whichever path the choice names (Sam asked for one word that kicks off the whole process; *Start* over *Go*, which reads as navigation). Defaults: a deck starts on the Chancellor's Office template with a speaker script in each slide's notes; a memo or report starts in the Chancellor's Office styles (the build needs both template files). No sample-deck button and no separate *Write the brief*: the instructions are the brief. Sam on the comment-and-move loop that made it: *"man, I love this process...should have been using it all along!"*
+
+## The build to Version 20, and remediation (S509 SkyElderberry, 2026-10-29)
+
+What shipped, in four merges: #2538 one card per project (`cpl_library.project`, receipt
+`kb/receipts/cpl_library_projects_2026-10-29_s509.sql`, 13 projects of 2 read back); #2540 the one *Create or
+Remediate a Document* panel; #2541 remediation of a .pptx or .docx in the browser, chart drafts from the chart's own
+numbers, and *Draft from the picture* through the new `alt-text-draft` Edge Function (v1, deployed through the MCP).
+
+What we learned:
+
+- **Real files find what fixtures miss.** Run on four team files from the vault, the first build left generator titles
+  (*PowerPoint Presentation*, *PptxGenJS Presentation*) in place, joined a title's lines across `a:br` with no space,
+  listed nineteen *no title* and nineteen *reading order* items for a deck built without placeholders, and counted
+  nested shapes as crowding. Each became a rule and a test. Try a remediation change on `CPLBrain/04-projects/` decks
+  before shipping it.
+- **A picture on two of three slides is not a logo.** The repeated-picture rule needs at least three slides and 80% of
+  them; at 60% a chart reused on two slides was marked decorative.
+- **A stacked chart's labels are its totals.** The IT and AI deck's slide 9 shows 374 where its two series hold 25 and
+  349; a draft from the first series alone read 25. The chart draft sums every series and names them.
+- **Write answers into a fresh read.** Remediate and download re-reads the original before writing, so a second press
+  never writes a slide title twice.
+- **Ask whether a picture may leave the browser before building it.** The first build promised that nothing leaves the
+  browser. Sam asked for screenshot reading (*"We do a lot of MAP screenshots and hoping you can decipher them and at
+  least take a shot at alt text"*), so one picture goes to Claude only when a person presses the button, and the panel
+  says so.
+- **A session's own live test can be impossible.** This sandbox cannot reach `*.supabase.co`, the database has no
+  `pg_net`, and no secret holds the team phrase, so the function's first real call is Sam's. Say so rather than claim
+  it works.
+- **A long-running test needs its window closed.** A 60-second revoke timer kept the jsdom test alive past its checks;
+  `m.w.close()` at the block's end ends it.

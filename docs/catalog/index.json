@@ -16210,8 +16210,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 478,
+   "count": 479,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 510,
+     "path": "docs/session_510_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "accessibility"
+     ],
+     "title": "Session 510 handoff: the Library built to Version 20, remediation in the browser, alt text from screenshots",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-29",
      "governs": [],
@@ -24405,5 +24421,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1295
+ "total": 1296
 }
