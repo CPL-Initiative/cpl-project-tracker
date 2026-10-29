@@ -15,7 +15,7 @@ boot(window);
 const T = window.CPL_FUNDING_TAB;
 const d = window.document;
 
-// The public page's FAQ: h3 groups under the page's h2, eight links, 43 questions in order.
+// The public page's FAQ: h3 groups under the page's h2, eight links, 45 questions in order.
 const box = d.createElement("div");
 box.innerHTML = T.publicFaqHtml();
 d.body.appendChild(box);
@@ -26,8 +26,8 @@ const links = Array.from(box.querySelectorAll("nav.cplfund-faq-jump[aria-label='
 check("a line of links names each group and points at its heading",
   links.length === GROUPS.length && links.every((a, i) => a.textContent === GROUPS[i] && a.getAttribute("href") === "#" + heads[i].id));
 const items = Array.from(box.querySelectorAll(".cplfund-faq-item"));
-check("all 43 questions, each under its group, the first group holding four",
-  items.length === 43 && heads[1].previousElementSibling === items[3] && items[0].querySelector("summary").textContent === "What must an institution do to qualify for funding?");
+check("all 45 questions, each under its group, the first group holding four",
+  items.length === 45 && heads[1].previousElementSibling === items[3] && items[0].querySelector("summary").textContent === "What must an institution do to qualify for funding?");
 check("no group heading leaks into an answer", !items.some((it) => /^##/.test(it.textContent) || /Qualifying and confirming|Student records in MAP/.test(it.textContent)));
 
 // The tab's own FAQ (COBI): h4 groups under its h3 sections. Its group link scrolls to

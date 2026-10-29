@@ -3835,8 +3835,12 @@
   // an Apprenticeship CPL group, in their own words but for four edits: the bulleted lists run as
   // sentences (the house voice keeps bullets out of outward prose), "Absolutely!" reads "Yes.", the MAP
   // Initiative reads the MAP platform (the naming rule), and "The presentation identifies" reads
-  // "Colleges may describe", since the page has no presentation. His first two (what NOVA asks, and its
-  // three report dates) wait on him: the dates differ from the Timeline's Report Deadlines.
+  // "Colleges may describe", since the page has no presentation. His first two waited on Open Asks
+  // Sheet 140 (his dates differed from the Timeline's Report Deadlines) and post on his rulings there
+  // (2026-10-29): the first in the words he gave on card 2 ("the 2025-2026 CPL funding outcomes"); the
+  // second with his dates for the 2025-2026 funding and his card 1 note in a second paragraph ("Nova
+  // reporting is used for the $50k 2025-2026 funding whereas we will do the reporting for the new
+  // funding on the CPL Funding Dashboard and migrate the data to Nova on the back end").
   var FAQ_DEFAULT_PLAIN = [
     "## Qualifying and confirming",
     "Q: What must an institution do to qualify for funding?",
@@ -3920,6 +3924,17 @@
       "Chancellor's Office pilot projects, such as the MAP platform. Under §78093.2(d)(2), each campus " +
       "demonstrates its implementation through those metrics before it receives an allocation.",
     "## Reporting in NOVA",
+    "Q: What are the NOVA reporting requirements for CPL Implementation Funding?",
+    "Colleges receiving CPL Implementation Funding are required to submit progress reports through the NOVA " +
+      "reporting system. These reports document the college's progress toward the 2025-2026 CPL funding outcomes, " +
+      "including Veterans Sprint activities, statewide credit recommendations, student identification and screening " +
+      "procedures, and use of the funding allocation.",
+    "Q: When are the CPL NOVA reports due?",
+    "Colleges must submit three NOVA reports for the 2025-2026 CPL funding. Report 1, the Initial Progress Report, " +
+      "is due December 31, 2026; Report 2, the Second Progress Report, December 31, 2027; and Report 3, the Final " +
+      "Implementation Report, June 30, 2028.",
+    "For the CPL Implementation Funding on this page, colleges report on the CPL Funding Dashboard by the Report " +
+      "Deadlines in the Timeline, and the CPL Initiative migrates that data to NOVA.",
     "Q: What information should colleges include in their NOVA narratives?",
     "Each narrative should explain the activities the college completed, progress toward the applicable " +
       "funding outcome, supporting data, and implementation challenges or next steps.",
@@ -6994,13 +7009,13 @@
       return [earnedCsv((row.earned_total || 0) + (row.earned_withheld || 0)), earnedCsv(row.earned_withheld || 0)];
     }
     // The Funds Qualified So Far columns' twins (2026-09-28; named so 2026-10-29,
-    // the CSM team's word via Sam): the figure each screen cell shows, its gray
-    // part included (curFig), against each share and against the max award,
-    // window figures like every CSV column, through the same public coarsening
-    // as the screen. The Withheld column names the gray part.
+    // the CSM team's word via Sam): what qualifies so far against each share and
+    // against the max award, window figures like every CSV column, through the
+    // same public coarsening as the screen. A spreadsheet has no gray, so these
+    // columns carry the qualifying part alone, and Demonstrated and Withheld beside
+    // them carry the figure a gray cell shows and its gray part.
     var curHead = ["Credit funds qualified so far " + windowLabel(), "Noncredit funds qualified so far " + windowLabel(),
       "Funds qualified so far " + windowLabel(), "Funds qualified so far as % of max award"];
-    var curTotal = function (row) { return (row.earned_total || 0) + (row.earned_withheld || 0); };
     // THE PERCENTAGE READS THE FIGURE BESIDE IT (2026-09-29, funding NEXT ⓪f).
     // The max award is exact and public, so a percentage of the EXACT current
     // total hands back what the $1,000 rule withholds: 98.1% of $150,000 sat
@@ -7009,7 +7024,7 @@
     // it reads the floor's own share as an upper bound.
     function curPct(row) {
       if (!(row.total > 0)) return "";
-      var v = curTotal(row);
+      var v = row.earned_total || 0;
       if (publicMode()) {
         var a = Math.abs(v);
         if (a < 0.5) return "0%";
@@ -7019,8 +7034,7 @@
       return Math.round(v / row.total * 1000) / 10 + "%";
     }
     function curCells(row) {
-      return [earnedCsv((row.earned_cr || 0) + (row.held_cr || 0)), earnedCsv((row.earned_nc || 0) + (row.held_nc || 0)),
-        earnedCsv(curTotal(row)), curPct(row)];
+      return [earnedCsv(row.earned_cr || 0), earnedCsv(row.earned_nc || 0), earnedCsv(row.earned_total || 0), curPct(row)];
     }
     var lines = [];
     lines.push(["#", "Institution", "District", "County", "Credit FTES", "Noncredit FTES", "Headcount (context)"]
