@@ -874,6 +874,58 @@ The lane's NEXT after S515: each conditional-formatting rule measured the way ce
   border-only rules, correctly clean. Given a yellow font in one dxf, the check found it, the fix repointed one
   rule, a second inspect found none, and the file opens in LibreOffice.
 
+## Each picture with its slide (S517, Sam's session, 2026-10-29)
+
+Sam's session, the day before the 7th Annual CPL Summit, on his first live run of remediation (the Summit's
+*0900-0945 Welcome and Introduction* deck: 35 slides, 27 items).
+
+- **A browser cannot paint a slide, but it can draw its plan.** Each shape's box (its own `xfrm`, else its
+  layout's or master's placeholder), its words at their size and alignment, its fill and its picture, the layout's
+  and master's own shapes beneath, and a background picture, drawn at percentages inside a box with the slide's
+  aspect ratio, the text in `cqw` so it scales with the box. A group's children sit in the group's own coordinates
+  (`chOff`, `chExt`) and scale into its box. It is not PowerPoint's rendering (no theme fonts, effects or crops),
+  and it is enough to see what sits under a QR code.
+- **The label nearest a picture is the best context it has.** Below it first (the usual place under a QR code),
+  then above, beside, or laid over it, within reach of the picture's own size; never the title, which goes to
+  Claude on its own line, and never body text over 120 characters.
+- **Read the QR code; do not describe it.** Office's automatic alt text for one is *"A qr code on a white
+  background"*. jsQR reads the address in the browser, and the draft names the label and the address without its
+  scheme: *QR code to MAP Website, map.rccd.edu*. A code drawn on a see-through ground reads only after the canvas
+  is painted white first, as a phone sees it. Claude is not asked about a code the page read: its draft is exact.
+- **Alt text a program wrote is no alt text.** python-pptx writes the picture's file name into `descr`, and Office's
+  own description says it is one (*"Description automatically generated"*, *"AI-generated content may be
+  incorrect."*); both used to pass as described. Now each is listed, Office's words kept as the draft without the
+  notice.
+- **A video's poster frame** is a `p:pic` whose `nvPr` holds `a:videoFile` (or `p14:media`). It is labeled a video
+  and drafted from the name a person gave it in the file.
+- **Claude drafts every picture before the report opens** (Sam: *"Can you have it draft from the picture as a
+  default"*), four at a time, under a line that counts them back and a *Show the report now*. Every picture leaving
+  the browser is now the default, so the box beside Remediate says so and turns it off for a file that shows a
+  student's record. A draft never replaces words a person typed meanwhile.
+- **A draft is not done.** The bar counts an item when a person keeps it (*Keep*, an edit, or Decorative); a
+  contrast fix the page applies counts as fixed while its box stays on. One bar, an equal part per check, each
+  part solid for what the page fixed or found passing, striped for what the person did, gray for what is left, the
+  words under it saying the same, each check named with its WCAG 2.2 criterion: alt text 1.1.1, document title
+  2.4.2, slide titles, headings and sheet names 2.4.6, language 3.1.1, table headers 1.3.1, reading order 1.3.2,
+  color contrast 1.4.3. Its line counts down to *Ready for the Chancellor's Office review*. Sam's purpose for the
+  split: *"we'll use that to work on ways to automate those user inputs that are needed later on."*
+- **The standard is the Chancellor's Office's own.** Its 2025 Certificate of Website Accessibility names WCAG 2.2
+  at level AA and Government Code 7405, 11135 and 11546.7; its accessibility page names WCAG 2.1 AA. 2.2 AA
+  includes 2.1 AA, so the header names both.
+- **Say what the draft reads.** The button is *Draft from the slide*, then *Redraft from the slide* (the section in a
+  Word document, the sheet in a workbook), Sam's naming: *"If we say from the slide, it implies that it's with the
+  context of the slide."* The note under the list says each draft sends one picture and its slide's words, since
+  the words now go too.
+- **One line, said once.** The report's count and the bar's line became one sentence above the bar (Sam: *"make
+  sure none of the information there is redundant"*). Each check's words under the bar are a link to its first
+  item left, or to its line in *Fixed for you*; the bar's part takes a click too, though the words carry the
+  keyboard, since a 10-pixel bar is under WCAG 2.2's 24-pixel target.
+- **Keep all and the next file.** *Keep all* keeps every alt text with words or marked decorative, and says how
+  many still have none. *Remediate another file*, beside *Close*, opens the next report in place, and asks first when
+  kept or edited answers are not yet in a downloaded file.
+- **A grid item's minimum width is its content's.** A long URL in a hint widened the whole list item past its
+  column until the item took `min-width:0` and the hints `overflow-wrap:anywhere`.
+
 ## A chart's contrast (S517 SkyPartridgeberry, 2026-10-29)
 
 The lane's NEXT after S516: a chart in a deck, a document or a workbook, the one part each check still left to a person.
@@ -936,3 +988,5 @@ the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-depl
 ## Moved from the lane (S517)
 
 ✅ **⑩ A workbook's conditional formatting is measured (S516):** each rule's colors against every cell in its range, one item per format, fixed by a copy that only the failing rules point at. Detail: [`docs/library_lessons.md`](library_lessons.md), *A workbook's conditional formatting (S516)*. Tests: `library_remediate` (121).
+
+✅ **③ Remediation in the browser is built (S509).** Remediate on a dropped .pptx or .docx reads it here (`library_remediate.js` over the vendored `jszip.min.js` 3.10.1, MIT, loaded on demand like `docx.min.js`) and reports, as the mockup draws it, *Fixed for you*: the title (from the first slide's title or first heading, a generator's stock title counting as none), the language, table header rows, a picture on most slides (a logo) marked decorative as Office writes it; and *Needs you*: alt text per picture and chart, with its thumbnail and a draft from the slide's or section's words, or Decorative; an empty slide title; slides with no title box (one item); crowded slides' reading order (one item); a document with no headings. *Remediate and download* writes the answers into a fresh read and hands back `<name>_Remediated.<ext>`, the date code kept; *File it in the Library* opens the filing form. A chart's draft comes from its own numbers. *Draft from the picture* (Sam, 2026-10-29: *"We do a lot of MAP screenshots and hoping you can decipher them and at least take a shot at alt text"*) sends that one picture, shrunk to 1568 pixels, to the `alt-text-draft` function (S509, v1; checks the team phrase itself; writes nothing), which asks Claude; *Draft every picture* runs all. Tried on four team files; all reopen. Tests: `library_remediate`, `library` block (16).

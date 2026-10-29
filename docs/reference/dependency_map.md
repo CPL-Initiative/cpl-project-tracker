@@ -443,6 +443,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/ui_pass.py` | scripts: `scripts/library_page.py` · committed by: `daily-dashboard.yml` |
 | `index.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_jev_next_steps.py` | — |
+| `jsqr.min.js` | tabs: `library` | — |
 | `jszip.min.js` | tabs: `library` | — |
 | `kb-portal/app.js` | pages: `kb-portal/index.html` | — |
 | `kb-portal/composer_util.js` | pages: `kb-portal/index.html` | — |
@@ -1215,5 +1216,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 43 RPCs · 10 edge functions · 725 file
+Coverage: 102 Supabase tables · 43 RPCs · 10 edge functions · 726 file
 datasets · 191 external services · 480 consumers · 58 workflows · 38 tabs.

@@ -621,7 +621,129 @@ const run3 = run2.then(function () {
   });
 });
 
-run3.catch(function (e) { check("driver threw: " + (e && e.stack), false); }).then(function () {
+// (16) A deck's slides (S517). Sam, 2026-10-29: "It would be helpful to have a
+// thumbnail of the ppt slide the image came from sitting to the left of the image to
+// remediate ... can you view the image in it's slide context and auto draft more
+// contextualized alt text ... or just read the url from it and list that in the alt
+// text." Guards: each slide's plan (where its shapes sit, a group's children scaled into
+// its box, the slide's own background picture); the words nearest each picture and
+// where they sit, never the title; a draft from them, and a video's from its own name;
+// alt text a program wrote (a file name, Office's own description) listed for a person;
+// what Claude reads beside the picture; and a QR code read by the vendored jsQR and
+// drafted as where it leads.
+const QR_MAP = [ // https://map.rccd.edu/, one character per module
+  "1111111001011000101111111",
+  "1000001001111011001000001",
+  "1011101011011010101011101",
+  "1011101010011110001011101",
+  "1011101011101000001011101",
+  "1000001010111011001000001",
+  "1111111010101010101111111",
+  "0000000011011001100000000",
+  "1011111001100111001111100",
+  "0001010111011010100100010",
+  "1101011000101011101101011",
+  "1011010010111010011110001",
+  "0110011100011101011010111",
+  "1101000011000100110101010",
+  "1011101100111111101111011",
+  "1011000010110010001110001",
+  "1000111111110001111110100",
+  "0000000011101101100011000",
+  "1111111001100110101010111",
+  "1000001011001100100011011",
+  "1011101011101011111110111",
+  "1011101010100001101011111",
+  "1011101011011001000001101",
+  "1000001000010010110111001",
+  "1111111011010000000111111"
+];
+function slidesDeck() {
+  const z = new JSZip();
+  const rel = (rels) => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' +
+    rels.map((r) => '<Relationship Id="' + r[0] + '" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/' + r[1] + '" Target="' + r[2] + '"/>').join("") + "</Relationships>";
+  const xf = (x, y, cx, cy) => '<a:xfrm><a:off x="' + x + '" y="' + y + '"/><a:ext cx="' + cx + '" cy="' + cy + '"/></a:xfrm>';
+  const qr = (id, name, rid, descr, x) => '<p:pic><p:nvPicPr><p:cNvPr id="' + id + '" name="' + name + '"' + (descr != null ? ' descr="' + descr + '"' : "") + '/><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="' + rid + '"/></p:blipFill><p:spPr>' + xf(x, 1828800, 2194560, 2194560) + "</p:spPr></p:pic>";
+  const label = (id, text, x, y, cx, cy) => '<p:sp><p:nvSpPr><p:cNvPr id="' + id + '" name="TextBox ' + id + '"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr><p:spPr>' + xf(x, y, cx, cy) + '<a:noFill/></p:spPr><p:txBody><a:bodyPr/><a:p><a:pPr algn="ctr"/><a:r><a:rPr sz="2000"/><a:t>' + text + "</a:t></a:r></a:p></p:txBody></p:sp>";
+  const title = (text) => '<p:sp><p:nvSpPr><p:cNvPr id="2" name="Title 1"/><p:cNvSpPr/><p:nvPr><p:ph type="title"/></p:nvPr></p:nvSpPr><p:spPr>' + xf(457200, 274320, 8229600, 914400) + '</p:spPr><p:txBody><a:bodyPr anchor="b"/><a:p><a:r><a:rPr sz="4000" b="1"/><a:t>' + text + "</a:t></a:r></a:p></p:txBody></p:sp>";
+  const sld = (bg, body) => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:sld ' + P + '><p:cSld>' + bg + "<p:spTree>" + body + "</p:spTree></p:cSld></p:sld>";
+  z.file("docProps/core.xml", CORE("Summit"));
+  z.file("ppt/presentation.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:presentation ' + P + '><p:sldSz cx="12192000" cy="6858000"/></p:presentation>');
+  ["padlet", "dash", "map", "photo", "group", "poster", "bg"].forEach((m) => z.file("ppt/media/" + m + ".png", "png"));
+  // Slide 1: three QR codes with their labels below, a picture a person described, and a
+  // group (its children in coordinates half its own) holding a picture and the label to its right.
+  const x0 = 1097280, step = 3566160;
+  z.file("ppt/slides/slide1.xml", sld('<p:bg><p:bgPr><a:blipFill><a:blip r:embed="rId9"/></a:blipFill></p:bgPr></p:bg>',
+    title("Stay connected after the Summit") +
+    qr(3, "Picture 2", "rId2", "padlet.png", x0) + label(4, "Summit Padlet", x0 - 274320, 4160520, 2743200, 457200) +
+    qr(5, "Picture 4", "rId3", "A qr code on a white background&#10;&#10;AI-generated content may be incorrect.", x0 + step) + label(6, "MAP Dashboard", x0 + step - 274320, 4160520, 2743200, 457200) +
+    qr(7, "Picture 6", "rId4", null, x0 + 2 * step) + label(8, "MAP Website", x0 + 2 * step - 274320, 4160520, 2743200, 457200) +
+    qr(9, "Photo", "rId5", "Students at a table", 200000) +
+    '<p:grpSp><p:nvGrpSpPr><p:cNvPr id="10" name="Group 9"/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr><a:xfrm><a:off x="6000000" y="5000000"/><a:ext cx="4000000" cy="1000000"/><a:chOff x="0" y="0"/><a:chExt cx="2000000" cy="500000"/></a:xfrm></p:grpSpPr>' +
+    '<p:pic><p:nvPicPr><p:cNvPr id="11" name="Picture 10"/><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="rId6"/></p:blipFill><p:spPr>' + xf(0, 0, 500000, 500000) + "</p:spPr></p:pic>" +
+    label(12, "Scan for the agenda", 600000, 100000, 1000000, 300000) + "</p:grpSp>"));
+  z.file("ppt/slides/_rels/slide1.xml.rels", rel([["rId2", "image", "../media/padlet.png"], ["rId3", "image", "../media/dash.png"], ["rId4", "image", "../media/map.png"],
+    ["rId5", "image", "../media/photo.png"], ["rId6", "image", "../media/group.png"], ["rId9", "image", "../media/bg.png"]]));
+  // Slide 2: a video's poster frame, named by a person, under a title that names the speaker.
+  z.file("ppt/slides/slide2.xml", sld("", title("Chancellor Christian's Address to the 7th Annual CPL Summit") +
+    '<p:pic><p:nvPicPr><p:cNvPr id="3" name="Chancellor Christian\'s Address to 7th Annual CPL Summit"/><p:cNvPicPr/><p:nvPr><a:videoFile r:link="rId3"/></p:nvPr></p:nvPicPr><p:blipFill><a:blip r:embed="rId2"/></p:blipFill><p:spPr>' + xf(2286000, 1645920, 7315200, 4114800) + "</p:spPr></p:pic>"));
+  z.file("ppt/slides/_rels/slide2.xml.rels", rel([["rId2", "image", "../media/poster.png"], ["rId3", "video", "../media/video.mp4"]]));
+  return z.generateAsync({ type: "nodebuffer" });
+}
+const run4 = run3.then(function () {
+  return slidesDeck().then(function (buf) { return R.inspect(buf, "20261030_Summit.pptx", ENV); }).then(function (s) {
+    const rep = s.report, alt = rep.needs.filter(function (n) { return n.type === "alt"; });
+    const by = function (name) { return alt.filter(function (n) { return n.label.indexOf("(" + name + ")") > 0; })[0]; };
+    const padlet = by("Picture 2"), dash = by("Picture 4"), map = by("Picture 6"), grouped = by("Picture 10"), video = alt.filter(function (n) { return n.slide === 2; })[0];
+    check("(16) a picture whose alt text is its file name is listed, and a person's own alt text is left alone", !!padlet && padlet.stock === "file" && !by("Photo"), JSON.stringify(alt.map(function (n) { return n.label; })));
+    check("(16) Office's own description is listed, kept as the draft without its notice", !!dash && dash.stock === "auto" && dash.draft === "A qr code on a white background", dash && dash.draft);
+    check("(16) the words just below a picture are found, and draft it", !!map && map.near && map.near.rel === "below" && map.near.where === "just below it" && map.near.text === "MAP Website" && map.draft === "MAP Website", JSON.stringify(map && map.near));
+    check("(16) each QR code finds its own label, never its neighbor's or the title", padlet.near.text === "Summit Padlet" && dash.near.text === "MAP Dashboard" && padlet.draft === "Summit Padlet");
+    check("(16) a group's picture finds the label to its right, read through the group's coordinates", !!grouped && grouped.near && grouped.near.rel === "right" && grouped.near.text === "Scan for the agenda", JSON.stringify(grouped && grouped.near));
+    const plan = rep.slides[0].plan, sh = function (id) { return plan.shapes.filter(function (r) { return r.id === id; })[0]; };
+    const near = function (a, b) { return Math.abs(a - b) < 1e-6; };
+    check("(16) the slide's plan holds its size, its background picture and each shape where it sits", plan.w === 12192000 && plan.h === 6858000 && plan.bgMedia === "ppt/media/bg.png" &&
+      near(sh("7").x, (1097280 + 2 * 3566160) / 12192000) && near(sh("7").w, 2194560 / 12192000) && sh("7").media === "ppt/media/map.png", JSON.stringify(sh("7")));
+    check("(16) a grouped shape is scaled into its group's box", near(sh("11").x, 6000000 / 12192000) && near(sh("11").w, 1000000 / 12192000) && near(sh("12").y, 5200000 / 6858000) && near(sh("12").h, 600000 / 6858000), JSON.stringify([sh("11"), sh("12")]));
+    check("(16) a text shape carries its words, size, weight, alignment and anchor", sh("2").title === true && sh("2").anchor === "b" && sh("2").paras[0].sz === 40 && sh("2").paras[0].b === true && sh("8").paras[0].algn === "ctr" && sh("8").paras[0].sz === 20, JSON.stringify([sh("2"), sh("8")]));
+    check("(16) Claude reads the slide's title, the nearest words and where they sit, and the rest of the slide's words", map.context.split("\n")[0] === "The slide's title: Stay connected after the Summit" &&
+      map.context.split("\n")[1] === "The words just below it: MAP Website" && /^Other words on the slide, top to bottom: Summit Padlet \| MAP Dashboard \| Scan for the agenda$/.test(map.context.split("\n")[2]), map.context);
+    check("(16) a video's poster frame is named a video, drafted from its own name, and said to be a poster frame", !!video && /^Slide 2, video \(/.test(video.label) && video.av === "video" &&
+      video.draft === "Video: Chancellor Christian's Address to 7th Annual CPL Summit" && /Its name in the file: Chancellor Christian's Address/.test(video.context) && /poster frame of a video/.test(video.context), JSON.stringify(video));
+    check("(16) a QR code drafts as where it leads: the label, then the address without its scheme or slash",
+      R.qrDraft("https://map.rccd.edu/", { text: "MAP Website" }) === "QR code to MAP Website, map.rccd.edu" &&
+      R.qrDraft("https://www.padlet.com/x/summit?utm=qr#top", null) === "QR code to padlet.com/x/summit" &&
+      R.qrDraft("https://map.rccd.edu/", { text: "map.rccd.edu" }) === "QR code to map.rccd.edu" &&
+      R.qrDraft("mailto:map@rccd.edu?subject=CPL", { text: "Email us" }) === "QR code to email map@rccd.edu (Email us)" &&
+      R.qrDraft("BEGIN:VCARD\nFN:Someone\nEND:VCARD", null) === "QR code with contact details" &&
+      R.qrDraft("Room 204", { text: "Breakout" }) === "QR code for Breakout that reads: Room 204", R.qrDraft("https://www.padlet.com/x/summit?utm=qr#top", null));
+    // The vendored reader (jsqr.min.js, the copy the page loads) reads a code drawn 4 pixels a module.
+    const jsQR = require("../jsqr.min.js"), m = 4, q = 4, n = QR_MAP.length, side = (n + 2 * q) * m, px = new Uint8ClampedArray(side * side * 4).fill(255);
+    QR_MAP.forEach(function (row, y) { row.split("").forEach(function (b, x) {
+      if (b !== "1") return;
+      for (let dy = 0; dy < m; dy++) for (let dx = 0; dx < m; dx++) { const i = (((y + q) * m + dy) * side + (x + q) * m + dx) * 4; px[i] = px[i + 1] = px[i + 2] = 0; }
+    }); });
+    const code = jsQR(px, side, side);
+    check("(16) the checks for a deck, each with its WCAG 2.2 criterion", R.checksFor("pptx").map(function (c) { return c.key + " " + c.sc; }).join(", ") ===
+      "alt 1.1.1, title 2.4.2, slides 2.4.6, lang 3.1.1, tables 1.3.1, order 1.3.2, contrast 1.4.3" && R.checksFor("xlsx").length === 5 && R.checksFor("docx").length === 6);
+    check("(16) the vendored jsQR reads a code's address, and the draft names the label beside it", !!code && code.data === "https://map.rccd.edu/" && R.qrDraft(code.data, map.near) === "QR code to MAP Website, map.rccd.edu", code && code.data);
+  });
+});
+
+// Every item each fixture lists belongs to a check of its file's kind, so none falls off the bar.
+const run5 = run4.then(function () {
+  return Promise.all([[deck, "a.pptx"], [contrastDeck, "c.pptx"], [slidesDeck, "s.pptx"], [function () { return wordDoc(false); }, "w.docx"]].map(function (f) {
+    return f[0]().then(function (buf) { return R.inspect(buf, f[1], ENV); }).then(function (s) {
+      var keys = R.checksFor(s.report.ext).map(function (c) { return c.key; });
+      return s.report.needs.filter(function (n) { return keys.indexOf(R.checkOf(n)) < 0; }).map(function (n) { return f[1] + ":" + n.id; });
+    });
+  })).then(function (lost) {
+    lost = [].concat.apply([], lost);
+    check("(16) every listed item belongs to one of its file's checks", !lost.length, lost.join(", "));
+  });
+});
+
+run5.catch(function (e) { check("driver threw: " + (e && e.stack), false); }).then(function () {
   let pass = 0;
   results.forEach(function (r) { console.log((r[1] ? "  ok  " : "  FAIL ") + r[0] + (r[1] || r[2] == null ? "" : "  — " + r[2])); if (r[1]) pass++; });
   console.log("\nlibrary_remediate.test.js: " + pass + "/" + results.length + " checks passed");

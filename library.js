@@ -123,7 +123,7 @@
     retireAsk: null, start: null, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
     view: "pieces", regen: null, src: {},
-    pick: null, use: null, rem: null
+    pick: null, use: null, rem: null, autoDraft: true
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -401,12 +401,48 @@
       R + " .lib-rem{display:grid;gap:14px;padding:18px;border:1px solid var(--border);border-radius:8px;background:var(--surface-opaque);}",
       R + " .lib-remhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;}",
       R + " .lib-remhead .lib-title{overflow-wrap:anywhere;}",
+      R + " .lib-remhead > div:first-child{flex:1 1 320px;min-width:0;}",
       R + " .lib-remcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}",
       R + " h4.lib-remh{margin:0 0 8px;font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:var(--text-strong);}",
       R + " .lib-remchecks{margin:0;padding-left:1.1em;display:grid;gap:6px;}",
       R + " .lib-remneeds{list-style:none;margin:0;padding:0;display:grid;gap:12px;}",
-      R + " .lib-remneed{display:flex;gap:12px;align-items:flex-start;}",
-      R + " .lib-remneed .lib-field{flex:1 1 auto;min-width:0;}",
+      R + " .lib-remneed{display:flex;flex-wrap:wrap;gap:12px;align-items:flex-start;min-width:0;}",
+      R + " .lib-remneed .lib-hint,.lib-remneed label{overflow-wrap:anywhere;}",
+      R + " .lib-remneed .lib-field{flex:1 1 220px;min-width:0;}",
+      R + " .lib-remneed .lib-field textarea{min-height:3.4em;}",
+      // The slide a picture sits on, drawn from its plan (S517); its colors are the file's own.
+      R + " .lib-remside{flex:0 0 auto;display:grid;gap:4px;justify-items:start;}",
+      R + " .lib-remslide{position:relative;width:200px;max-width:100%;container-type:inline-size;overflow:hidden;border:1px solid var(--border);border-radius:4px;}",
+      R + " .lib-rembig{flex:1 1 100%;min-width:0;}",
+      R + " .lib-rembig .lib-remslide{width:100%;}",
+      R + " .lib-remsh{position:absolute;box-sizing:border-box;overflow:hidden;margin:0;}",
+      R + " img.lib-remsh{object-fit:cover;}",
+      R + " .lib-remtx{display:flex;flex-direction:column;padding:.5cqw .9cqw;line-height:1.12;font-family:Calibri,Carlito,'Segoe UI',Arial,sans-serif;overflow-wrap:anywhere;}",
+      R + " .lib-remtx.ctr{justify-content:center;}",
+      R + " .lib-remtx.b{justify-content:flex-end;}",
+      R + " .lib-remtx > span{display:block;}",
+      R + " .lib-remobj{display:flex;align-items:center;justify-content:center;background:var(--surface-muted);color:var(--text-muted);font-size:5cqw;}",
+      R + " .lib-remhit{border:2px solid var(--surface);outline:3px solid var(--focus-ring);outline-offset:0;}",
+      // Progress by kind of fix (Sam, 2026-10-29: "a simple progress bar at the top that showed
+      // the different elements you're remediating"); the count says it in words beside the bar.
+      // One bar, an equal part per kind of fix (Sam: "a single bar divided into remediation
+      // task progress").
+      R + " .lib-remprog{display:grid;gap:4px;}",
+      R + " .lib-remprog p{margin:0;font-size:.9rem;font-weight:600;color:var(--text-strong);}",
+      R + " .lib-remsegs{display:grid;column-gap:3px;row-gap:3px;}",
+      R + " .lib-remprog .bar{grid-row:1;display:flex;height:10px;background:var(--surface-muted);border:1px solid var(--border-strong);overflow:hidden;}",
+      R + " .lib-remprog .bar.first{border-radius:4px 0 0 4px;}",
+      R + " .lib-remprog .bar.last{border-radius:0 4px 4px 0;}",
+      R + " .lib-remprog .n{grid-row:2;justify-self:start;text-align:left;}",
+      R + " .lib-remprog button.n{background:none;border:0;padding:0;min-height:24px;font:inherit;font-size:.8rem;line-height:1.2;color:var(--cobalt);text-decoration:underline;text-underline-offset:2px;cursor:pointer;}",
+      R + " .lib-remprog .bar[data-remgoto]{cursor:pointer;}",
+      "@media (max-width:560px){" + R + " .lib-remprog .n{grid-row:auto;grid-column:1/-1;}}",
+      // Solid: fixed for you; striped: done by you; gray: left for you. The words say it too.
+      R + " .lib-remprog .bar > .auto{display:block;height:100%;background:var(--green-progress);}",
+      R + " .lib-remprog .bar > .you{display:block;height:100%;background:repeating-linear-gradient(135deg,var(--green-progress) 0 3px,var(--surface-opaque) 3px 5px);}",
+      R + " .lib-remprog .n{font-size:.8rem;line-height:1.2;color:var(--text-muted);font-variant-numeric:tabular-nums;}",
+      R + " .lib-remstd{text-transform:none;letter-spacing:0;font-weight:400;}",
+      R + " .lib-remzoom{background:none;border:0;padding:0 2px;min-height:24px;font:inherit;font-size:.9rem;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;}",
       R + " .lib-remneed p{margin:0;}",
       R + " .lib-remthumb{flex:0 0 96px;width:96px;height:64px;object-fit:contain;border-radius:4px;border:1px solid var(--border);background:var(--surface-muted);}",
       R + " span.lib-remthumb{display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--text-muted);}",
@@ -976,6 +1012,7 @@
     pick.kind = pick.link ? (EXT_KIND[ext] || "visual") : (EXT_KIND[ext] || "document");
     state.pick = pick;
     state.use = pick.file && REMEDIABLE[ext] ? "remediate" : pick.link ? "asis" : "background";
+    state.autoDraft = true;
     state.start = null; state.form = null; state.formFor = null; state.rem = null; say("");
   }
   function panelHtml() {
@@ -988,7 +1025,13 @@
         ' <button type="button" class="lib-btn" data-unpick="1">Clear<span class="lib-vh"> ' + esc(pk.name) + "</span></button></p>" +
         '<fieldset class="lib-uses"><legend>' + esc(pk.name) + ": what is it for?</legend>" +
         (pk.file && REMEDIABLE[pk.ext] ? useRow("remediate", "Remediate this file") : "") +
-        useRow("background", "Use it as background for something new") + useRow("asis", "File it as is") + "</fieldset>"
+        useRow("background", "Use it as background for something new") + useRow("asis", "File it as is") + "</fieldset>" +
+        // Claude drafts every picture as the file is read (Sam, 2026-10-29: "Can you have it
+        // draft from the picture as a default in the remediate process before this even opens
+        // up?"), so each picture leaving the browser is said, and can be turned off, here.
+        (pk.file && REMEDIABLE[pk.ext] && pk.ext !== "pdf"
+          ? '<label class="lib-check"><input type="checkbox" id="lc-autodraft"' + (state.autoDraft ? " checked" : "") + "> Draft every picture's alt text with Claude as it reads. Each picture and the words around it go to Claude; turn this off for a file that shows a student's record.</label>"
+          : "")
       : "";
     return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
       '<div class="lib-drop" id="lib-drop">' +
@@ -1022,59 +1065,96 @@
   function startRemediate(pk) {
     if (!pk.file || !pk.file.arrayBuffer) { say("Choose the file again; this browser could not read it.", true); render(); return; }
     state.start = null; state.form = null; state.formFor = null;
-    state.rem = { name: pk.name, reading: true, answers: {}, thumbs: {}, ai: {} };
+    state.rem = { name: pk.name, reading: true, answers: {}, media: {}, big: {}, ai: {}, kept: {} };
     say(""); render();
     var buf;
     pk.file.arrayBuffer().then(function (b) { buf = b; return loadRemediate(); }).then(function (R) {
       return R.inspect(buf, pk.name, remEnv()).then(function (session) {
-        state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, thumbs: {}, ai: {}, aiAll: false };
+        state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, media: {}, big: {}, ai: {}, kept: {}, aiAll: false,
+          drafting: state.autoDraft && pk.ext !== "pdf" ? { done: 0, total: 0, failed: 0 } : null };
         session.report.needs.forEach(function (n) {
           if (n.type === "alt" || n.type === "title" || n.type === "sheet") state.rem.answers[n.id] = { text: n.draft || "", decorative: false };
           // An advisory chart item (its values show as labels) waits for a person to tick it.
           if (n.type === "contrast") state.rem.answers[n.id] = { fix: !n.advisory };
         });
+        if (state.rem.drafting && !picNeeds().length) state.rem.drafting = null;
         render();
         var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus();
-        // A thumbnail of each picture that needs words, so the writer sees what to describe.
+        // A thumbnail of each picture that needs words, so the writer sees what to describe,
+        // and the pictures of the slide it sits on (S517); then its QR code, if it is one;
+        // then Claude's draft of each picture, before the report opens.
+        var want = {};
         session.report.needs.forEach(function (n) {
-          var mt = n.media ? THUMB_EXT[extOf(n.media)] : "";
-          var f = mt && session.doc.zip.file(n.media);
-          if (!f || !window.URL || !URL.createObjectURL) return;
-          f.async("uint8array").then(function (u8) {
-            if (!state.rem || state.rem.session !== session) return;
-            state.rem.thumbs[n.id] = URL.createObjectURL(new Blob([u8], { type: mt }));
-            render();
-          });
+          if (n.media) want[n.media] = true;
+          var pl = n.type === "alt" ? planFor(session.report, n) : null;
+          if (pl) [pl.bgMedia].concat(pl.shapes.map(function (r) { return r.media; })).forEach(function (m) { if (m) want[m] = true; });
+        });
+        var canUrl = !!(window.URL && URL.createObjectURL);
+        Promise.all(Object.keys(canUrl ? want : {}).map(function (path) {
+          var mt = THUMB_EXT[extOf(path)], f = mt && session.doc.zip.file(path);
+          return f ? f.async("uint8array").then(function (u8) {
+            if (state.rem && state.rem.session === session) state.rem.media[path] = URL.createObjectURL(new Blob([u8], { type: mt }));
+          }) : null;
+        })).then(function () {
+          if (!state.rem || state.rem.session !== session) return;
+          if (canUrl) render();
+          return (canUrl ? readQrCodes(session) : Promise.resolve()).then(function () { return draftAll(session); });
         });
       });
     }).catch(function (e) { state.rem = null; say(e.message, true); render(); });
   }
+  // Another file from the report itself (Sam, 2026-10-29: "a selector at the top to go to
+  // another file to remediate without leaving the page"): the chooser beside Close.
+  function remNextHtml() {
+    return '<div class="lib-actions-row"><label class="lib-pick" for="lc-file-next">Remediate another file</label>' +
+      '<input id="lc-file-next" class="lib-vh" type="file" accept=".pptx,.docx,.xlsx,.pdf">' +
+      '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>';
+  }
+  // Answers a person gave that are not yet in a downloaded file.
+  function remUnsaved(rm) {
+    return !!rm && !rm.downloaded && (Object.keys(rm.kept || {}).some(function (k) { return rm.kept[k]; }) || !!rm.touched);
+  }
   function remHtml() {
     var rm = state.rem;
     if (!rm) return "";
-    if (rm.reading) return '<section class="lib-rem" aria-labelledby="lib-rem-h"><p class="lib-kicker">Remediation</p><h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line" role="status">Reading the file in this browser&hellip;</p></section>';
+    if (rm.reading) return '<section class="lib-rem" aria-labelledby="lib-rem-h">' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line" role="status">Reading the file in this browser&hellip;</p></section>';
     if (rm.report.ext === "pdf") return pdfRemHtml(rm);
+    if (rm.drafting) {
+      var dr = rm.drafting;
+      return '<section class="lib-rem" aria-labelledby="lib-rem-h">' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + "</h3>" +
+        '<p class="lib-line" role="status">' + esc(dr.total ? "Claude is drafting alt text from each picture and its slide: " + dr.done + " of " + dr.total + " back." : "Reading the pictures and their QR codes in this browser…") + "</p>" +
+        '<p class="lib-hint">The report opens with every draft in place, for you to read before you keep it.</p>' +
+        '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remshow="1">Show the report now</button></div></section>';
+    }
     var rep = rm.report, needs = rep.needs;
-    var line = rep.extent + ". " + rep.fixed.length + (rep.fixed.length === 1 ? " fix" : " fixes") + " made for you, " + needs.length + (needs.length === 1 ? " item needs" : " items need") + " you.";
     var item = function (n) {
       var a = rm.answers[n.id] || {};
       if (n.type === "alt") {
-        var th = rm.thumbs[n.id]
-          ? '<img class="lib-remthumb" src="' + esc(rm.thumbs[n.id]) + '" alt="The ' + (n.chart ? "chart" : "picture") + (n.slide ? " on slide " + n.slide : "") + ' this text describes">'
+        var src = n.media && rm.media[n.media];
+        var th = src
+          ? '<img class="lib-remthumb" src="' + esc(src) + '" alt="The ' + (n.chart ? "chart" : "picture") + (n.slide ? " on slide " + n.slide : "") + ' this text describes">'
           : '<span class="lib-remthumb none" aria-hidden="true">' + esc(n.chart ? "Chart" : n.slide ? "Slide " + n.slide : "Picture") + "</span>";
-        return '<li class="lib-remneed">' + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
-          '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="400" value="' + esc(a.text || "") + '"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' +
+        // The slide it sits on, to its left (S517), with a word to see it larger.
+        var pl = planFor(rm.report, n), big = !!rm.big[n.id];
+        var side = pl ? '<div class="lib-remside">' + (big ? "" : planHtml(pl, n, rm.media)) +
+          '<button type="button" class="lib-remzoom" data-remzoom="' + esc(n.id) + '" aria-expanded="' + big + '">' + (big ? "Smaller slide" : "Larger slide") + "</button></div>" : "";
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + side + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
+          (n.near ? '<p class="lib-hint">On the slide, ' + esc(n.near.where) + ": “" + esc(n.near.text) + "”</p>" : "") +
+          (n.qr ? '<p class="lib-hint">The QR code reads ' + esc(n.qr.length > 160 ? n.qr.slice(0, 159) + "…" : n.qr) + ".</p>" : "") +
+          '<textarea id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" rows="2" maxlength="400"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' + esc(a.text || "") + "</textarea>" +
           '<label class="lib-check"><input type="checkbox" data-remdec="' + esc(n.id) + '"' + (a.decorative ? " checked" : "") + "> Decorative (a screen reader skips it)</label>" +
+          '<div class="lib-actions-row">' + keepHtml(rm, n) +
           (n.media && THUMB_EXT[extOf(n.media)]
-            ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remai="' + esc(n.id) + '"' + (rm.ai[n.id] === "busy" ? " disabled" : "") + ">" +
-              (rm.ai[n.id] === "busy" ? "Reading the picture&hellip;" : rm.ai[n.id] === "done" ? "Draft again from the picture" : "Draft from the picture") + "</button></div>"
-            : "") +
-          (n.fromData ? '<p class="lib-hint">Drafted from the chart\'s own numbers.</p>' : rm.ai[n.id] === "done" ? '<p class="lib-hint">Drafted by Claude from the picture. Read it before you keep it.</p>' : "") +
-          "</div></li>";
+            ? '<button type="button" class="lib-btn" data-remai="' + esc(n.id) + '"' + (rm.ai[n.id] === "busy" ? " disabled" : "") + ">" +
+              (rm.ai[n.id] === "busy" ? "Reading the picture&hellip;" : (rm.ai[n.id] === "done" ? "Redraft from the " : "Draft from the ") + remPlace(rm)) + "</button>"
+            : "") + "</div>" +
+          (n.fromData ? '<p class="lib-hint">Drafted from the chart\'s own numbers.</p>' : rm.ai[n.id] === "done" ? '<p class="lib-hint">Drafted by Claude from the picture and its slide. Read it before you keep it.</p>' :
+            a.fromQr ? '<p class="lib-hint">Drafted from the address the QR code reads and the words beside it.</p>' : "") +
+          "</div>" + (pl && big ? '<div class="lib-rembig">' + planHtml(pl, n, rm.media) + "</div>" : "") + "</li>";
       }
       // A slide's empty title, or a sheet left at its default name (a workbook, S514).
       if (n.type === "title" || n.type === "sheet") {
-        return '<li class="lib-remneed"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
           '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="' + (n.type === "sheet" ? 31 : 200) + '" value="' + esc(a.text || "") + '"></div></li>';
       }
       // A contrast item shows its words both ways, on the fill they sit on (the file's own
@@ -1083,23 +1163,29 @@
         var swatch = function (fg, label) {
           return '<span class="lib-remswatch" style="color:#' + esc(fg) + ";background:#" + esc(n.bg) + '">' + esc(label) + "</span>";
         };
-        return '<li class="lib-remneed"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
           '<p class="lib-remswatches">' + swatch(n.fg, "As it is") + swatch(n.fix, "With the fix") + "</p>" +
           '<label class="lib-check"><input type="checkbox" data-remfix="' + esc(n.id) + '"' + (a.fix ? " checked" : "") + "> Use #" + esc(n.fix) +
           " instead, the nearest color of the same hue that reads " + esc(n.fixRatio) + ":1</label></div></li>";
       }
-      return '<li class="lib-remneed"><p>' + esc(n.text) + "</p></li>";
+      // What this page leaves to a person in the program: a box to say it was checked there.
+      return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
+        '<label class="lib-check"><input type="checkbox" data-remcheck="' + esc(n.id) + '"' + (rm.kept[n.id] ? " checked" : "") + "> Checked in " + esc(REM_APP[rep.ext] || "its program") + "</label></div></li>";
     };
     return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
-      '<div class="lib-remhead"><div><p class="lib-kicker">Remediation</p><h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line">' + esc(line) + "</p></div>" +
-      '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>' +
+      '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + "</h3></div>" +
+      remNextHtml() + "</div>" +
+      '<div class="lib-remprog" id="lib-remprog">' + progressInner(rm) + "</div>" +
       '<div class="lib-remcols"><div><h4 class="lib-remh">Fixed for you (' + rep.fixed.length + ")</h4>" +
-      (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
+      (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f, i) { return '<li id="lib-remfix-' + i + '" tabindex="-1">' + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
       '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
+      // Keep all (Sam, 2026-10-29: "giving the user the opportunity to edit, redraft, or keep.
+      // Add a Keep All button"): every alt text with words, or marked decorative, kept at once.
+      (needs.some(function (n) { return n.type === "alt"; }) ? '<div class="lib-actions-row"><button type="button" class="lib-remzoom" data-remkeepall="1">Keep all</button></div>' : "") +
       (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
       (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words. Read each one before you keep it.</p>' : "") +
-      (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Draft every picture") + "</button></div>" : "") +
-      (picNeeds().length ? '<p class="lib-hint">Draft from the picture sends that one picture to Claude to read; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>' : "") +
+      (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Redraft every picture") + "</button></div>" : "") +
+      (picNeeds().length ? '<p class="lib-hint">Each draft sends one picture and its ' + remPlace(rm) + "\'s words to Claude; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>" : "") +
       "</div></div>" +
       '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
@@ -1128,8 +1214,8 @@
     var line = rep.extent + ". " + (gaps ? gaps + (gaps === 1 ? " gap" : " gaps") + " to close at its source." : "Its tags, title and language are in place.");
     var kindWord = { deck: "a PowerPoint deck", document: "a Word document", spreadsheet: "an Excel workbook", layout: "a layout program", web: "a web page", scan: "a scan" }[src.kind];
     return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
-      '<div class="lib-remhead"><div><p class="lib-kicker">Remediation</p><h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line">' + esc(line) + "</p></div>" +
-      '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>' +
+      '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line">' + esc(line) + "</p></div>" +
+      remNextHtml() + "</div>" +
       '<div class="lib-remcols"><div><h4 class="lib-remh">What the PDF carries</h4><ul class="lib-remchecks">' +
       pdf.checks.map(function (c) { return "<li><b>" + (c.ok ? "In place" : "Needs its source") + ":</b> " + esc(c.text) + "</li>"; }).join("") + "</ul></div>" +
       '<div><h4 class="lib-remh">Fix it at its source</h4>' +
@@ -1144,6 +1230,180 @@
       "</div></div>" +
       '<p class="lib-hint">This page reads the PDF and changes nothing in it. The Chancellor\'s Office review still decides what is certified.</p>' +
       "</section>";
+  }
+  // Progress toward a file a screen reader can follow (Sam, 2026-10-29: "a single bar
+  // divided into remediation task progress ... indicate how much you've remediated and how
+  // much is left for the user in each of the areas that they have to touch. And then we'll
+  // use that to work on ways to automate those user inputs"). One bar, an equal part per
+  // area; each part shows what the page fixed itself, what the person has done, and what
+  // is left for them. A draft counts as left until a person keeps it (Keep, an edit, or
+  // Decorative); a contrast fix the page applies counts as fixed while its box stays on.
+  var REM_APP = { pptx: "PowerPoint", docx: "Word", xlsx: "Excel" };
+  // What a draft reads beside the picture (Sam, 2026-10-29: "If we say from the slide, it
+  // implies that it's with the context of the slide"): its slide, section or sheet.
+  function remPlace(rm) { return { pptx: "slide", docx: "section", xlsx: "sheet" }[rm && rm.report && rm.report.ext] || "slide"; }
+  // The standards beside the Remediation header (Sam, 2026-10-29: "add next to the
+  // Remediation header at the top the standards we are looking to comply with"): the
+  // Chancellor's Office's 2025 Certificate of Website Accessibility names WCAG 2.2 AA and
+  // these Government Code sections; its accessibility page names WCAG 2.1 AA, which 2.2 AA
+  // includes.
+  var REM_KICKER = '<p class="lib-kicker">Remediation <span class="lib-remstd">designed to meet WCAG 2.2 AA, which includes 2.1 AA, and California Government Code 7405, 11135 and 11546.7</span></p>';
+  function remDone(rm, n) {
+    var a = rm.answers[n.id] || {};
+    if (n.type === "alt") return !!rm.kept[n.id] && (!!a.decorative || !!(a.text || "").trim());
+    if (n.type === "title" || n.type === "sheet") return !!(a.text || "").trim();
+    return !!rm.kept[n.id];
+  }
+  // Every check library_remediate.js runs on this kind of file, with its WCAG 2.2
+  // criterion (Sam, 2026-10-29: "indicate on the bar other things that you've checked for in
+  // remediation to comply with the most current standards"); one with nothing to fix passes.
+  function remAreas(rm) {
+    var R = window.CPL_REMEDIATE, rep = rm.report, auto = rep.auto || {};
+    var list = (R && R.checksFor ? R.checksFor(rep.ext) : []).concat([{ key: "other", name: "Other checks", sc: "", scName: "" }]);
+    return list.map(function (c) {
+      var a = { key: c.key, name: c.name, sc: c.sc, scName: c.scName, auto: auto[c.key] || 0, you: 0, left: 0 };
+      rep.needs.forEach(function (n) {
+        if ((R && R.checkOf ? R.checkOf(n) : "other") !== c.key) return;
+        if (n.type === "contrast") { if ((rm.answers[n.id] || {}).fix) a.auto++; else a.left++; }
+        else if (remDone(rm, n)) a.you++; else a.left++;
+      });
+      a.total = a.auto + a.you + a.left;
+      a.passes = !a.total;
+      return a;
+    }).filter(function (a) { return a.key !== "other" || a.total; });
+  }
+  function areaWords(a) {
+    if (a.passes) return "passes";
+    return [a.auto ? a.auto + " fixed" : "", a.you ? a.you + " by you" : "", a.left ? a.left + " left" : ""].filter(Boolean).join(", ") + (a.left ? "" : ", done");
+  }
+  // One line above the bar says it all once (Sam, 2026-10-29: "make sure none of the
+  // information there is redundant ... maybe just consolidate the two"): the file's size,
+  // what is left before the review, what the page fixed, what the person did, what passes.
+  // Each check's words are a link to its items, and the bar's part goes there too ("make
+  // sure that the bars are clickable"); a passing check has nothing to go to.
+  function progressInner(rm) {
+    var areas = remAreas(rm), all = 0, auto = 0, you = 0, pass = 0;
+    areas.forEach(function (a) { all += a.total; auto += a.auto; you += a.you; if (a.passes) pass++; });
+    var pct = function (k, a) { return a.passes ? (k === "auto" ? "100%" : "0%") : Math.round(10000 * a[k] / a.total) / 100 + "%"; };
+    var name = function (a) { return a.name + (a.sc ? " (WCAG " + a.sc + ")" : ""); };
+    var left = all - auto - you, plural = function (k, one, many) { return k + " " + (k === 1 ? one : many); };
+    var parts = [auto ? "the page fixed " + auto : "", you ? "you have done " + you : "", pass ? plural(pass, "check passes", "checks pass") + " with nothing to fix" : ""].filter(Boolean);
+    var said = parts.length > 1 ? parts.slice(0, -1).join(", ") + " and " + parts[parts.length - 1] : parts[0] || "";
+    var lead = rm.report.extent + ". " + (left ? plural(left, "item is", "items are") + " left for you before the Chancellor's Office review" : "Ready for the Chancellor's Office review") +
+      (said ? "; " + said : "") + ". Solid is fixed or passing, striped is yours, gray is left.";
+    // The bars share row one and their words row two; on a phone the words take a line each.
+    return "<p>" + esc(lead) + "</p>" +
+      '<div class="lib-remsegs" role="group" aria-label="Progress by check" style="grid-template-columns:repeat(' + areas.length + ',minmax(0,1fr))">' +
+      areas.map(function (a, i) {
+        return '<span class="bar' + (i === 0 ? " first" : "") + (i === areas.length - 1 ? " last" : "") + '" aria-hidden="true"' + (a.passes ? "" : ' data-remgoto="' + esc(a.key) + '"') +
+          '><span class="auto" style="width:' + pct("auto", a) + '"></span><span class="you" style="width:' + pct("you", a) + '"></span></span>';
+      }).join("") +
+      areas.map(function (a) {
+        var words = esc(name(a)) + ": " + esc(areaWords(a));
+        return a.passes ? '<span class="n">' + words + "</span>" : '<button type="button" class="n" data-remgoto="' + esc(a.key) + '">' + words + "</button>";
+      }).join("") + "</div>";
+  }
+  // Where a check's link goes: its first item still left, else its first item, else the
+  // line in Fixed for you that says the page fixed it.
+  function remGoto(key) {
+    var rm = state.rem, R = window.CPL_REMEDIATE;
+    if (!rm || !rm.report || !R) return;
+    var mine = rm.report.needs.filter(function (n) { return R.checkOf(n) === key; });
+    var n = mine.filter(function (x) { return x.type === "contrast" ? !(rm.answers[x.id] || {}).fix : !remDone(rm, x); })[0] || mine[0];
+    var at = n ? document.getElementById("lib-remneed-" + n.id) : rm.report.fixedAt && rm.report.fixedAt[key] != null ? document.getElementById("lib-remfix-" + rm.report.fixedAt[key]) : null;
+    if (!at) return;
+    if (at.scrollIntoView) at.scrollIntoView({ block: "center" });
+    var field = n && (at.querySelector("textarea") || at.querySelector("input") || at.querySelector("button"));
+    (field || at).focus();
+  }
+  function keepHtml(rm, n) {
+    return '<button type="button" class="lib-remzoom" data-remkeep="' + esc(n.id) + '" aria-pressed="' + !!rm.kept[n.id] + '">Keep</button>' +
+      '<span class="lib-hint" data-remkept="' + esc(n.id) + '">' + (rm.kept[n.id] ? "Kept" : "") + "</span>";
+  }
+  // Repaints the progress and the Keep words without a render, so typing keeps its place.
+  function paintProgress() {
+    var rm = state.rem, el = document.getElementById("lib-remprog");
+    if (!rm || !rm.report) return;
+    if (el) el.innerHTML = progressInner(rm);
+    Array.prototype.forEach.call(document.querySelectorAll("[data-remkeep]"), function (b) {
+      var id = b.getAttribute("data-remkeep"), w = document.querySelector('[data-remkept="' + id + '"]');
+      b.setAttribute("aria-pressed", String(!!rm.kept[id]));
+      if (w) w.textContent = rm.kept[id] ? "Kept" : "";
+    });
+  }
+  // The slide a picture sits on, drawn from the plan library_remediate.js reads (S517;
+  // Sam, 2026-10-29: "It would be helpful to have a thumbnail of the ppt slide the image
+  // came from sitting to the left of the image to remediate"): each shape where it sits,
+  // its words at their size, its fill and its picture, and this item's picture outlined.
+  // A plan is not PowerPoint's rendering (no theme fonts, effects or crops), and its
+  // colors are the file's own, so they are data, as a contrast item's swatches are.
+  function planFor(rep, n) {
+    var sl = rep && rep.slides && n.slide ? rep.slides[n.slide - 1] : null;
+    // Only a slide the picture is found on: one it has no place on would show nothing.
+    return sl && sl.plan && sl.plan.shapes.some(function (r) { return r.id != null && r.id === n.shapeId; }) ? sl.plan : null;
+  }
+  var PLAN_ALIGN = { ctr: "center", r: "right", just: "justify", dist: "justify" };
+  function planHtml(pl, n, media) {
+    var R = window.CPL_REMEDIATE, ink = function (hex) { return /^[0-9A-F]{6}$/i.test(hex || "") ? "#" + hex : ""; };
+    var pct = function (v) { return Math.round(v * 10000) / 100 + "%"; };
+    var at = function (r) { return "left:" + pct(r.x) + ";top:" + pct(r.y) + ";width:" + pct(r.w) + ";height:" + pct(r.h) + ";"; };
+    var text = R && R._ratio && R._ratio(pl.bg, "000000") < R._ratio(pl.bg, "FFFFFF") ? "FFFFFF" : "000000";
+    var out = pl.bgMedia && media[pl.bgMedia] ? '<img class="lib-remsh" alt="" src="' + esc(media[pl.bgMedia]) + '" style="left:0;top:0;width:100%;height:100%;">' : "", hit = "";
+    pl.shapes.forEach(function (r) {
+      var box = at(r);
+      if (r.kind === "pic") out += media[r.media] ? '<img class="lib-remsh" alt="" src="' + esc(media[r.media]) + '" style="' + box + '">' : '<span class="lib-remsh lib-remobj" style="' + box + '">' + (r.av ? "Video" : "Picture") + "</span>";
+      else if (r.kind !== "text" && r.kind !== "shape") out += '<span class="lib-remsh lib-remobj" style="' + box + '">' + ({ chart: "Chart", table: "Table" }[r.kind] || "Object") + "</span>";
+      else {
+        out += '<span class="lib-remsh lib-remtx' + (r.anchor === "ctr" ? " ctr" : r.anchor === "b" ? " b" : "") + '" style="' + box + (ink(r.fill) ? "background:" + ink(r.fill) + ";" : "") + '">' +
+          (r.paras || []).map(function (p) {
+            return '<span style="font-size:' + Math.round(p.sz / pl.wPt * 10000) / 100 + "cqw;color:" + (ink(p.color) || "#" + text) + ";" + (p.b ? "font-weight:700;" : "") +
+              (PLAN_ALIGN[p.algn] ? "text-align:" + PLAN_ALIGN[p.algn] + ";" : "") + '">' + esc(p.t) + "</span>";
+          }).join("") + "</span>";
+      }
+      if (r.id != null && r.id === n.shapeId) hit = '<span class="lib-remsh lib-remhit" style="' + box + '"></span>';
+    });
+    return '<div class="lib-remslide" role="img" aria-label="Slide ' + esc(n.slide) + " as laid out, the " + (n.chart ? "chart" : n.av || "picture") + ' outlined" style="aspect-ratio:' + pl.w + " / " + pl.h + ";background:" + (ink(pl.bg) || "#" + text) + ';">' + out + hit + "</div>";
+  }
+  // A QR code reads its own address (Sam, 2026-10-29: "or just read the url from it and
+  // list that in the alt text"). Each picture that needs words is read here, in this
+  // browser, by jsQR (jsqr.min.js, Apache 2.0, loaded on demand like jszip.min.js); one
+  // that holds a code gets a draft naming where it leads, unless its words were changed.
+  function pixelsOf(blob, max) {
+    return new Promise(function (ok) {
+      var url = URL.createObjectURL(blob), img = new Image();
+      img.onload = function () {
+        var k = Math.min(1, max / Math.max(img.naturalWidth || 1, img.naturalHeight || 1));
+        var cv = document.createElement("canvas"); cv.width = Math.max(1, Math.round(img.naturalWidth * k)); cv.height = Math.max(1, Math.round(img.naturalHeight * k));
+        var g = cv.getContext("2d");
+        URL.revokeObjectURL(url);
+        if (!g || !g.getImageData) { ok(null); return; }
+        // A code drawn on a see-through ground reads as dark on white, as a phone sees it.
+        g.fillStyle = "white"; g.fillRect(0, 0, cv.width, cv.height);
+        g.drawImage(img, 0, 0, cv.width, cv.height);
+        ok(g.getImageData(0, 0, cv.width, cv.height));
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); ok(null); };
+      img.src = url;
+    });
+  }
+  function readQrCodes(session) {
+    var rm = state.rem, list = picNeeds().filter(function (n) { return !n.chart; }), found = 0;
+    if (!list.length) return Promise.resolve();
+    return (window.jsQR ? Promise.resolve() : loadScript("jsqr.min.js")).then(function () {
+      return list.reduce(function (p, n) {
+        return p.then(function () {
+          var f = session.doc.zip.file(n.media);
+          if (state.rem !== rm || !window.jsQR || !f) return null;
+          return f.async("uint8array").then(function (u8) { return pixelsOf(new Blob([u8], { type: THUMB_EXT[extOf(n.media)] }), 1000); }).then(function (px) {
+            var code = px && window.jsQR(px.data, px.width, px.height);
+            if (!code || !code.data || state.rem !== rm) return;
+            n.qr = String(code.data); found++;
+            var a = rm.answers[n.id] || {};
+            if (!a.decorative && !rm.ai[n.id] && (a.text || "") === (n.draft || "")) rm.answers[n.id] = { text: window.CPL_REMEDIATE.qrDraft(n.qr, n.near), decorative: false, fromQr: true };
+          }).catch(function () {});
+        });
+      }, Promise.resolve());
+    }).catch(function () {}).then(function () { if (found && state.rem === rm) render(); });
   }
   // Draft from the picture (Sam, 2026-10-29: "We do a lot of MAP screenshots and hoping
   // you can decipher them and at least take a shot at alt text"): the one picture, shrunk
@@ -1168,26 +1428,70 @@
       img.src = url;
     });
   }
-  function draftFromPicture(id) {
+  // quiet: drafting every picture as the file opens: no message per picture, and a
+  // person's own words are never replaced. Resolves true when a draft came back.
+  function draftFromPicture(id, quiet) {
     var rm = state.rem, n = rm && rm.report.needs.filter(function (x) { return x.id === id; })[0];
-    if (!n || !n.media) return Promise.resolve();
+    if (!n || !n.media) return Promise.resolve(false);
     var mt = THUMB_EXT[extOf(n.media)], f = rm.session.doc.zip.file(n.media);
-    if (!f || !mt) return Promise.resolve();
-    rm.ai[id] = "busy"; render();
+    if (!f || !mt) return Promise.resolve(false);
+    var before = (rm.answers[id] || {}).text || "";
+    rm.ai[id] = "busy"; if (!quiet) render();
     return f.async("uint8array").then(function (u8) { return shrink(new Blob([u8], { type: mt }), mt); }).then(function (img) {
       var h = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
       var tp = teamPhrase(); if (tp) h["x-team-pass"] = tp;
       var tok = reviewerToken(); if (tok) h.Authorization = "Bearer " + tok;
       return window.fetch(ALT_DRAFT_URL, { method: "POST", headers: h,
-        body: JSON.stringify({ image: img.b64, media_type: img.type, where: n.label, context: n.words || "" }) });
+        body: JSON.stringify({ image: img.b64, media_type: img.type, where: n.label,
+          context: (n.context || n.words || "") + (n.qr ? "\nThe QR code in the picture reads: " + n.qr : "") }) });
     }).then(function (res) {
       return res.json().catch(function () { return {}; }).then(function (j) {
         if (!res.ok) throw new Error(j.error || "The draft did not come back (" + res.status + ").");
-        if (state.rem !== rm) return;
+        if (state.rem !== rm) return false;
+        var now = rm.answers[id] || {};
+        if (quiet && (now.decorative || (now.text || "") !== before)) { delete rm.ai[id]; return false; }
         rm.answers[id] = j.decorative ? { text: "", decorative: true } : { text: j.alt || "", decorative: false };
-        rm.ai[id] = "done"; render();
+        rm.ai[id] = "done"; if (!quiet) render();
+        return true;
       });
-    }).catch(function (e) { if (state.rem === rm) { delete rm.ai[id]; say(e.message, true); render(); } });
+    }).catch(function (e) {
+      if (state.rem === rm) { delete rm.ai[id]; if (quiet) rm.lastError = e.message; else { say(e.message, true); render(); } }
+      return false;
+    });
+  }
+  // Every picture, four at a time, as the file opens (Sam, 2026-10-29: "Can you have it
+  // draft from the picture as a default in the remediate process before this even opens
+  // up? And then the user will be looking at what you've drafted for each of these").
+  // A QR code the page read keeps its own draft, which names the address it reads.
+  function draftAll(session) {
+    var rm = state.rem;
+    if (!rm || rm.session !== session || !rm.drafting) return Promise.resolve();
+    var list = picNeeds().filter(function (n) { return !n.qr; }), next = 0, dr = rm.drafting;
+    dr.total = list.length; remRefresh();
+    var worker = function () {
+      if (state.rem !== rm || next >= list.length) return Promise.resolve();
+      var n = list[next++];
+      return draftFromPicture(n.id, true).then(function (ok) { dr.done++; if (!ok) dr.failed++; if (rm.drafting) remRefresh(); return worker(); });
+    };
+    return Promise.all([worker(), worker(), worker(), worker()]).then(function () {
+      if (state.rem !== rm) return;
+      var opened = !rm.drafting;
+      rm.drafting = null;
+      var got = dr.total - dr.failed;
+      say(dr.total ? (got ? "Claude drafted " + got + (got === 1 ? " picture" : " pictures") + " from the picture and its slide. Read each one before you keep it." : "") +
+        (dr.failed ? " " + dr.failed + (dr.failed === 1 ? " draft" : " drafts") + " did not come back" + (rm.lastError ? " (" + rm.lastError + ")" : "") + "; those keep a draft from the " + remPlace(rm) + "'s words, and Draft from the " + remPlace(rm) + " tries again." : "") : "", !got && dr.failed > 0);
+      remRefresh();
+      if (!opened) { var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus(); }
+    });
+  }
+  // A render that keeps the writer's place: drafts arriving while a person types in a
+  // field leave the cursor where it was.
+  function remRefresh() {
+    var a = document.activeElement, id = a && a.id, s0 = null, s1 = null;
+    try { s0 = a.selectionStart; s1 = a.selectionEnd; } catch (e) { /* not a text field */ }
+    render();
+    var b = id && document.getElementById(id);
+    if (b && b !== document.activeElement && b.focus) { b.focus(); try { if (s0 != null) b.setSelectionRange(s0, s1); } catch (e) { /* not a text field */ } }
   }
   function draftEveryPicture() {
     var rm = state.rem;
@@ -1210,6 +1514,7 @@
         var a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
         setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
         var d = out.done;
+        rm.downloaded = true;
         say("Downloaded " + name + ": " + rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " +
           (rm.report.ext === "xlsx" ? (d.sheets || 0) + (d.sheets === 1 ? " sheet" : " sheets") + " renamed." :
             d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed.") + " Open it, run the Accessibility Checker, then file it.");
@@ -1797,26 +2102,38 @@
       if (e.target.id === "lib-q") { state.q = e.target.value; renderList(); }
       else if (e.target.getAttribute && e.target.getAttribute("data-remtext") && state.rem) {
         var k0 = e.target.getAttribute("data-remtext");
-        state.rem.answers[k0] = state.rem.answers[k0] || {}; state.rem.answers[k0].text = e.target.value;
+        state.rem.answers[k0] = state.rem.answers[k0] || {}; state.rem.answers[k0].text = e.target.value; state.rem.answers[k0].fromQr = false; state.rem.touched = true;
+        if (/^a/.test(k0) && state.rem.kept) state.rem.kept[k0] = true;
+        paintProgress();
       }
     });
     root.addEventListener("change", function (e) {
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
       else if (e.target.id === "lib-status") { state.status = e.target.value; render(); }
       else if (e.target.id === "lib-for") { state.forName = e.target.value; render(); }
+      else if (e.target.id === "lc-file-next") {
+        var nf = e.target.files && e.target.files[0];
+        if (!nf) return;
+        if (!REMEDIABLE[extOf(nf.name)]) { say("Remediation reads a .pptx deck, a .docx document, an .xlsx workbook or a PDF.", true); render(); return; }
+        if (remUnsaved(state.rem) && !window.confirm("Open " + nf.name + "? This report's answers are not in a downloaded file yet, and they will go.")) { e.target.value = ""; return; }
+        setPick({ name: nf.name, file: nf });
+        startRemediate(state.pick);
+      }
       else if (e.target.id === "lc-file") {
         var fl = e.target.files && e.target.files[0];
         if (fl) { setPick({ name: fl.name, file: fl }); render(); var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus(); }
       }
       else if (e.target.name === "lc-use") { state.use = e.target.value; }
+      else if (e.target.id === "lc-autodraft") { state.autoDraft = e.target.checked; }
+      else if (e.target.getAttribute && e.target.getAttribute("data-remcheck") && state.rem) { state.rem.kept[e.target.getAttribute("data-remcheck")] = e.target.checked; paintProgress(); }
       else if (e.target.getAttribute && e.target.getAttribute("data-remdec") && state.rem) {
         var k1 = e.target.getAttribute("data-remdec");
-        state.rem.answers[k1] = state.rem.answers[k1] || {}; state.rem.answers[k1].decorative = e.target.checked;
+        state.rem.answers[k1] = state.rem.answers[k1] || {}; state.rem.answers[k1].decorative = e.target.checked; state.rem.kept[k1] = true;
         render(); var cb = root.querySelector('[data-remdec="' + k1 + '"]'); if (cb) cb.focus();
       }
       else if (e.target.getAttribute && e.target.getAttribute("data-remfix") && state.rem) {
         var k2 = e.target.getAttribute("data-remfix");
-        state.rem.answers[k2] = { fix: e.target.checked };
+        state.rem.answers[k2] = { fix: e.target.checked }; state.rem.touched = true; paintProgress();
       }
       else if (/^(la|ls|le)-forkind$/.test(e.target.id || "")) {
         // The type picked decides which fields follow it; repaint, keeping the caret's owner.
@@ -1850,6 +2167,8 @@
       else if (e.target.getAttribute("data-regenokform")) approveRegen(e.target.getAttribute("data-regenokform"));
     });
     root.addEventListener("click", function (e) {
+      var go = e.target.closest ? e.target.closest("[data-remgoto]") : null;
+      if (go && root.contains(go)) { remGoto(go.getAttribute("data-remgoto")); return; }
       var b = e.target.closest ? e.target.closest("button") : null;
       if (!b || !root.contains(b)) return;
       var v;
@@ -1860,6 +2179,23 @@
       else if (b.getAttribute("data-remgo")) remGo();
       else if ((v = b.getAttribute("data-remai"))) draftFromPicture(v);
       else if (b.getAttribute("data-remaiall")) draftEveryPicture();
+      else if (b.getAttribute("data-remkeepall") && state.rem && state.rem.report) {
+        var kn = 0, ke = 0;
+        state.rem.report.needs.forEach(function (n) {
+          if (n.type !== "alt") return;
+          var a = state.rem.answers[n.id] || {};
+          if (a.decorative || (a.text || "").trim()) { if (!state.rem.kept[n.id]) kn++; state.rem.kept[n.id] = true; } else ke++;
+        });
+        say("Kept " + kn + (kn === 1 ? " draft" : " drafts") + "." + (ke ? " " + ke + (ke === 1 ? " picture has" : " pictures have") + " no words yet, so " + (ke === 1 ? "it is" : "they are") + " still left." : ""));
+        remRefresh();
+        var kb = root.querySelector("[data-remkeepall]"); if (kb) kb.focus();
+      }
+      else if ((v = b.getAttribute("data-remkeep")) && state.rem) { state.rem.kept[v] = !state.rem.kept[v]; paintProgress(); }
+      else if (b.getAttribute("data-remshow") && state.rem) { state.rem.drafting = null; remRefresh(); var h1 = document.getElementById("lib-rem-h"); if (h1) h1.focus(); }
+      else if ((v = b.getAttribute("data-remzoom")) && state.rem) {
+        state.rem.big[v] = !state.rem.big[v]; render();
+        var z0 = root.querySelector('[data-remzoom="' + v + '"]'); if (z0) z0.focus();
+      }
       else if (b.getAttribute("data-remclose")) { state.rem = null; render(); var g0 = document.getElementById("lib-go"); if (g0) g0.focus(); }
       else if (b.getAttribute("data-remfile")) {
         var rn0 = state.rem ? state.rem.name : "";

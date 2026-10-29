@@ -596,6 +596,7 @@ window.COBI_ADMIN_SURFACE = {
     },
     "library": {
       "modules": [
+        "jsqr.min.js",
         "jszip.min.js",
         "library.js",
         "library_remediate.js",

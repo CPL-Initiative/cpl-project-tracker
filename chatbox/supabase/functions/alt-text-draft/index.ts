@@ -7,6 +7,13 @@
 // shrunk to at most 1568 pixels on its long side, with the slide's or section's words.
 // This asks Claude for alt text and returns it. The person reads it before keeping it.
 //
+// Version 2 (S517, 2026-10-29), on Sam's "can you view the image in it's slide context
+// and auto draft more contextualized alt text. Rather than describing the generic QR
+// code, could you look for the slide context for where it likely goes...or just read the
+// url from it": the page now sends the slide's title, the words nearest the picture and
+// where they sit, the picture's own name, whether it is a video's poster frame, the rest
+// of the slide's words, and a QR code's address, which the page reads itself.
+//
 // It READS NO TABLE AND WRITES NOTHING, and keeps nothing: the picture goes to the
 // Anthropic API for the one call and is not logged here. A picture never carries a
 // student's record; the instructions below also forbid copying any person's name,
@@ -17,14 +24,14 @@
 // model budget. Deployed with verify_jwt off, as cer-classify is; the check is here.
 //
 // Source of record is the LIVE function; this file is the in-repo capture.
-// Version 1 (S509, 2026-10-29). Secrets used (already set project-wide):
+// Version 2 (S517, 2026-10-29; v1 S509). Secrets used (already set project-wide):
 // ANTHROPIC_API_KEY, SUPABASE_URL, SUPABASE_ANON_KEY. ALT_TEXT_MODEL overrides the model.
 
 const SUPABASE_URL = Deno.env.get("SUPABASE_URL") || "https://hvuwhnbuahrtptokpqfh.supabase.co";
 const ANON = Deno.env.get("SUPABASE_ANON_KEY") || "";
 const MODEL = Deno.env.get("ALT_TEXT_MODEL") || "claude-sonnet-5";
 const MAX_B64 = 6_000_000;        // about 4.5 MB of picture; the page shrinks it first
-const MAX_CONTEXT = 1500;         // characters of the slide's or section's words
+const MAX_CONTEXT = 2500;         // characters of the slide's or section's words
 const TYPES = ["image/png", "image/jpeg", "image/gif", "image/webp"];
 
 const CORS = {
@@ -58,11 +65,14 @@ async function allowed(req: Request): Promise<boolean> {
 const INSTRUCTIONS = `You write alt text for pictures in the California Community Colleges Chancellor's Office's decks and reports about Credit for Prior Learning (CPL). Many are screenshots of the MAP platform (Mapping Articulated Pathways), its CPL Dashboard, COBI, or Sierra.
 
 Write what a person who cannot see the picture needs in order to follow the slide or section, in one to three plain sentences, at most 300 characters.
+The words around it come from its slide: the label nearest the picture usually names what it is, and the slide's title names its topic. Use them to say what the picture is for on this slide.
 - Say what kind of picture it is only when that matters (a screenshot of a named page, a chart, a photo, a QR code), and never begin with "Image of" or "Picture of".
 - For a screenshot, name the page or view, then the point it makes: the headings, figures or labels that carry it. Read small text only as far as it serves that point; do not list every menu item.
 - For a chart, give its kind, what it measures, and the largest and smallest values or the trend.
-- For a photo of people, describe the scene and what they are doing; never guess anyone's identity.
-- Never copy a person's name, email address, phone number or ID number from the picture. Say "a student's record" or "a staff member" instead.
+- For a QR code, say where it leads, never what its pattern looks like: "QR code to" the label beside it, then the address it reads when that is given, without "https://". With no address, name where the label says it goes.
+- For a video's poster frame, begin "Video:" and say what the video is, from its name in the file or the slide's title.
+- For a photo of people, describe the scene and what they are doing; never guess anyone's identity. A person the slide's own words name (a speaker in its title, a caption beside the photo) may be named as the slide names them.
+- Never copy a person's name, email address, phone number or ID number from the picture itself. Say "a student's record" or "a staff member" instead.
 - Use American spelling and the program's names as written: the CPL Initiative, the MAP platform.
 - If the picture carries no meaning (a border, a background texture, a divider), answer only DECORATIVE.
 Answer with the alt text alone, no quotation marks and no preface.`;

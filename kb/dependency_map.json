@@ -4,7 +4,7 @@
   "supabase_tables": 102,
   "rpcs": 43,
   "edge_functions": 10,
-  "file_datasets": 725,
+  "file_datasets": 726,
   "external_services": 191,
   "consumers": 480,
   "workflows": 58,
@@ -395,7 +395,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 84
+     "line": 94
     },
     {
      "id": "edgefn:cpl-chat",
@@ -2395,7 +2395,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 51,
+     "line": 56,
      "tabs": [
       "library"
      ]
@@ -2503,7 +2503,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 54,
+     "line": 59,
      "tabs": [
       "library"
      ]
@@ -2529,7 +2529,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 45,
+     "line": 50,
      "tabs": [
       "library"
      ]
@@ -7862,6 +7862,22 @@
    "served": false,
    "main_committers": []
   },
+  "file:jsqr.min.js": {
+   "consumers": [
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1392,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:jszip.min.js": {
    "consumers": [
     {
@@ -7869,7 +7885,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1016,
+     "line": 1059,
      "tabs": [
       "library"
      ]
@@ -16767,7 +16783,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1017,
+     "line": 1060,
      "tabs": [
       "library"
      ]
@@ -18380,7 +18396,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1958,
+     "line": 2294,
      "tabs": [
       "library"
      ]
@@ -23028,7 +23044,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1543,
+     "line": 1848,
      "tabs": [
       "library"
      ]
@@ -25529,6 +25545,9 @@
   ],
   "gr_priorities.js": [
    "gr-priorities"
+  ],
+  "jsqr.min.js": [
+   "library"
   ],
   "jszip.min.js": [
    "library"
