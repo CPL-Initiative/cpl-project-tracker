@@ -4,6 +4,8 @@ date: 2026-10-28
 session: 504 (SkyMulberry)
 tags: [handoff, implementation-funding, funding-film, library]
 status: current
+superseded: true
+superseded_by: session_509_handoff.md
 ---
 
 # You are Session 505

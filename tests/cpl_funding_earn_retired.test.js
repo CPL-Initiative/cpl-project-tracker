@@ -74,6 +74,9 @@ const VALUE = /^["'](earned|earning)["']$/;
  *    ordinary academic English and the language the statute and Title 5 use about
  *    students — not the connotation he objected to. */
 const STUDENT_SENSE = "documenting the CPL they earn in the";
+/* 3. A PERSON'S OWN WORDS, by name (Sam, 2026-10-28: "push them as written by
+ *    Malone"): Malone's FAQ question goes up as he wrote it. */
+const HUMAN_AUTHORED = ["Does one college earning more funding reduce"];
 
 /* ── only what is INSIDE a string reaches a reader ─────────────────────────────
  * `earned: 0` is an object key and `function earnedSubHtml(cap, earned, ...)` is
@@ -101,6 +104,7 @@ function quotedSpans(line) {
 const offenders = [];
 CODE.split("\n").forEach((ln, i) => {
   if (ln.indexOf(STUDENT_SENSE) !== -1) return;
+  if (HUMAN_AUTHORED.some((h) => ln.indexOf(h) !== -1)) return;
   quotedSpans(ln).forEach((span) => {
     if (VALUE.test('"' + span + '"')) return;
     WORD.lastIndex = 0;

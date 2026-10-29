@@ -4,6 +4,8 @@ date: 2026-10-28
 session: 507 (SkyDewberry, Sam's session)
 tags: [handoff, a11y, implementation-funding, decision-sheets, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_509_handoff.md
 ---
 
 # You are Session 508

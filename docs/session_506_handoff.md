@@ -4,6 +4,8 @@ date: 2026-10-28
 session: 505 (SkyBoysenberry)
 tags: [handoff, scheduled-sessions, implementation-funding, credential-registry, ctdl-partner-exchange]
 status: current
+superseded: true
+superseded_by: session_509_handoff.md
 ---
 
 # You are Session 506

@@ -4,6 +4,8 @@ date: 2026-10-28
 session: 505 (SkyBoysenberry, Sam's session)
 tags: [handoff, program-requirements-harvest, eacr, map-links, sierra]
 status: current
+superseded: true
+superseded_by: session_509_handoff.md
 ---
 
 # You are Session 507

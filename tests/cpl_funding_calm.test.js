@@ -416,21 +416,34 @@ function mountWords(doc) {
     // (Open Asks Sheet 139 card 2: "it is important to use the term because
     // funding distributed through the apportionment procedure can get buried at
     // the colleges"): those two phrases of his are lifted out, and no other.
+    // Malone's FAQ question goes up as he wrote it (Sam, 2026-10-28: "push them
+    // as written by Malone"), so its one "earning" is lifted out by name.
     .map((re) => { const m = re.exec(t.replace(/Advancing career attainment[^.]*\./g, "")
       .replace(/received this funding through apportionment/g, "")
       .replace(/provided to colleges through the apportionment process/g, "")
-      .replace(/funds are disbursed using the apportionment procedure/g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
+      .replace(/funds are disbursed using the apportionment procedure/g, "")
+      .replace(/Does one college earning more funding reduce/g, "")); return m ? m[0] + " @" + t.slice(Math.max(0, m.index - 40), m.index + 20).replace(/\s+/g, " ") : null; })
     .filter(Boolean);
   check("no 'pool' / 'money' / 'apportion' / 'pot' / advance / 'draw' / 'unspent' / earn / price in the curate view's rendered text — " +
     (bad.length ? bad.join(" | ") : "clean"), bad.length === 0);
   // Sam, 2026-09-13: "revise all text that starts with a negative statement and
   // just start with the positive." Sentence-initial only: a mid-sentence "no"
   // is grammar; an opening one is the rhetorical pattern he named. "Not
-  // Applicable" is a MAP disposition status and is exempt by name.
+  // Applicable" is a MAP disposition status and is exempt by name. A person's own
+  // words may open on a negative (Sam, 2026-10-28: "It's OK to lead with negatives
+  // as long as it's human authored"), so the sentences a person wrote are exempt
+  // by name too: Malone's FAQ answers, posted as he wrote them the same day.
   const NEG_START = /(?:^|[.!?]\s+)(No|Nothing|Not|Never|Cannot|None)\b(?! Applicable)/g;
+  const HUMAN_NEG = ["No. Each college has its own maximum award.", "No. The dashboard uses cumulative MAP records",
+    "No. MAP helps colleges identify CPL opportunities", "No. MAP preserves actions already taken",
+    "No. An exhibit describes the prior learning", "No exact match does not necessarily mean"];
   function negStarts(text) {
     const out = []; let m;
-    while ((m = NEG_START.exec(text))) out.push(text.slice(m.index, m.index + 70).replace(/\s+/g, " ").trim());
+    while ((m = NEG_START.exec(text))) {
+      const at = m.index + m[0].length - m[1].length;
+      if (HUMAN_NEG.some((h) => text.startsWith(h, at))) continue;
+      out.push(text.slice(m.index, m.index + 70).replace(/\s+/g, " ").trim());
+    }
     return out;
   }
   const negs = negStarts(t);

@@ -651,3 +651,26 @@ under *No occasion yet*. The brief's paste promised that File it moves the recor
 link. Now the card carries File it; filing a Requested piece sets `draft`; a record with no `made_on` takes the day it is
 filed, or the day Edit moves it past Requested; the form names the piece it files. Guarded by `tests/library.test.js`
 (9b). The Workplan record itself still has no date until its next Edit save.
+
+## Moved from the lane (S508)
+
+### Links, Ask Sierra and the people on each card (Sam, 2026-10-26; built S483)
+
+- **One Links menu.** The public header (`CPLBrain/04-projects/cpl-initiative/public-header/`) puts its links behind one
+  word, **Links**, each with a gray line saying what it is, CPL and MAP spelled out (*"so new-to-CPL users will not be
+  immediately lost in our acronyms"*). `library/` (its adapted copy), `cpl-opportunity/` and every `library/<slug>/`
+  carry it. Tests: `library_pages` (6), `public_library`.
+- **Ask Sierra on every visual** (*"opens the same way it does in the Public Library"*): `scripts/library_page.py` adds
+  `sierra/sidebar.js` to every `library/<slug>/` copy, its bar on the header's tokens; `cpl-opportunity/` loads it too.
+  Test: `library_pages` (7).
+- **Who is in the conversation.** `agency-visual/build.py` paints a card's `contacts`: name, role, organization, email as
+  a mailto link. Sam ruled everyone may be named publicly, with email (`cpl_memory`
+  `sam-s483-visual-links-sierra-contacts-2026-10-26`); `library_pages` (3) allows an address only there. The two
+  `make_brief.py` read `data/contacts_2026-10-26.json` (Supabase read 11:58Z), at most eight a card. ELL IET: 50 on 8
+  cards (8 project contacts from EDD's July 2023 notice, 19 CPL Coordinators, 19 MAP Faculty Leads standing in where a
+  college records no coordinator, 4 faculty in an example course's subject). DSP: 13 on 4 of 5 cards (2 coordinators,
+  11 Faculty Leads); no vault file names a DDS, Aging or LWDA contact. Three colleges record neither: Butte and Lake
+  Tahoe (ELL), Taft (DSP, so its card names no one). No store records a Noncredit CPL Lead yet (MAP's College Contacts
+  has no such field; `cpl_funding_nc_attestation` held 0 rows).
+- **The page cap again.** With the contacts the ELL IET page reads 30,975 characters, so this branch's `cpl-chat` reads
+  31,000 a page and 37,000 in all, deployed under Sheet 130 (run 40329644423).

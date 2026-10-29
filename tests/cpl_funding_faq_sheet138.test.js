@@ -12,6 +12,12 @@
 //           to use the term because funding distributed through the
 //           apportionment procedure can get buried at the colleges")
 //
+// Malone's twelve (via Sam in session, 2026-10-28: "add them to our funding
+// FAQs") join each group in place, as he wrote them (Sam: "push them as
+// written by Malone"; "It's OK to lead with negatives as long as it's human
+// authored"). His refresh
+// question stays out: the page's own refresh question answers it.
+//
 // This reads the house text itself, so a later edit that drops his wording or
 // brings card 8 back fails here.
 //
@@ -31,7 +37,7 @@ const text = paras.join("\n\n");
 const qs = paras.filter((p) => /^Q: /.test(p)).map((p) => p.slice(3));
 const answer = (q) => { const i = paras.indexOf("Q: " + q); let a = []; for (let j = i + 1; i >= 0 && j < paras.length && !/^Q: /.test(paras[j]); j++) a.push(paras[j]); return a.join("\n\n"); };
 
-check("25 questions: 19 from the sheet and the 6 already on the page", qs.length === 25);
+check("37 questions: 19 from the sheet, the 6 already on the page, and Malone's 12", qs.length === 37);
 check("the rollout's basics lead: qualify, then confirm",
   qs[0] === "What must an institution do to qualify for funding?" && qs[1] === "How does a college confirm its participation?");
 check("help comes last, with the support address",
@@ -70,6 +76,30 @@ check("the six questions already on the page stay",
    "Should a college record students who receive a CPL consultation but do not submit a petition?",
    "How should a college distinguish consultations, submitted petitions, and transcribed CPL units?",
    "Will there be guidance on minimum data entry, so colleges report on a consistent basis?"].every((q) => qs.includes(q)));
+
+const malone = [
+  "Does one college earning more funding reduce the amount available to other colleges?",
+  "Are the CPL Funding Dashboard totals limited to the current academic year?",
+  "Does MAP actually award or transcribe CPL credit?",
+  "What is a MAP CPL plan (petition)?",
+  "How should a college document that a student accepted the credit?",
+  "What should I do when MAP identifies a possible duplicate student?",
+  "Will merging duplicate student records erase or duplicate CPL decisions?",
+  "Who determines whether prior learning is equivalent to a college course?",
+  "When should a college use Quick Adopt instead of creating a new exhibit?",
+  "Does creating an exhibit automatically mean that credit has been approved?",
+  "Why might a certification or experience not appear in a MAP search?",
+  "What should a student do if the Student Portal does not find an exact match?"];
+check("Malone's twelve are all here", malone.every((q) => qs.includes(q)));
+check("Malone: one college's progress takes nothing from another, as he wrote it",
+  /^No\. Each college has its own maximum award\./.test(answer(malone[0])));
+check("Malone: Admissions and Records transcribes, in the student information system",
+  /Admissions and Records team completes the official transcription in its student information system/.test(answer(malone[2])));
+check("Malone: faculty determine equivalency",
+  /^Faculty determine the academic equivalency and appropriate credit\./.test(answer(malone[7])));
+check("Malone's counting questions sit with counting CPL in MAP, before building CPL",
+  qs.indexOf(malone[2]) > qs.indexOf("Will there be guidance on minimum data entry, so colleges report on a consistent basis?") &&
+  qs.indexOf(malone[6]) < qs.indexOf("Where can a college get support to make CPL easier for students to find and use?"));
 
 console.log("\n" + pass + "/" + (pass + fail) + " assertions passed");
 process.exit(fail ? 1 : 0);

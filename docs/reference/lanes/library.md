@@ -178,27 +178,6 @@ the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-depl
 40331201968, run alone, passed). The full record moved verbatim to
 [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S490)*.
 
-## Links, Ask Sierra and the people on each card (Sam, 2026-10-26; built S483)
-
-- **One Links menu.** The public header (`CPLBrain/04-projects/cpl-initiative/public-header/`) puts its links behind one
-  word, **Links**, each with a gray line saying what it is, CPL and MAP spelled out (*"so new-to-CPL users will not be
-  immediately lost in our acronyms"*). `library/` (its adapted copy), `cpl-opportunity/` and every `library/<slug>/`
-  carry it. Tests: `library_pages` (6), `public_library`.
-- **Ask Sierra on every visual** (*"opens the same way it does in the Public Library"*): `scripts/library_page.py` adds
-  `sierra/sidebar.js` to every `library/<slug>/` copy, its bar on the header's tokens; `cpl-opportunity/` loads it too.
-  Test: `library_pages` (7).
-- **Who is in the conversation.** `agency-visual/build.py` paints a card's `contacts`: name, role, organization, email as
-  a mailto link. Sam ruled everyone may be named publicly, with email (`cpl_memory`
-  `sam-s483-visual-links-sierra-contacts-2026-10-26`); `library_pages` (3) allows an address only there. The two
-  `make_brief.py` read `data/contacts_2026-10-26.json` (Supabase read 11:58Z), at most eight a card. ELL IET: 50 on 8
-  cards (8 project contacts from EDD's July 2023 notice, 19 CPL Coordinators, 19 MAP Faculty Leads standing in where a
-  college records no coordinator, 4 faculty in an example course's subject). DSP: 13 on 4 of 5 cards (2 coordinators,
-  11 Faculty Leads); no vault file names a DDS, Aging or LWDA contact. Three colleges record neither: Butte and Lake
-  Tahoe (ELL), Taft (DSP, so its card names no one). No store records a Noncredit CPL Lead yet (MAP's College Contacts
-  has no such field; `cpl_funding_nc_attestation` held 0 rows).
-- **The page cap again.** With the contacts the ELL IET page reads 30,975 characters, so this branch's `cpl-chat` reads
-  31,000 a page and 37,000 in all, deployed under Sheet 130 (run 40329644423).
-
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
 Sam's asks of 2026-10-24 are built: an Ask Sierra side bar any public page loads with one script (`sierra/sidebar.js`,
@@ -234,3 +213,12 @@ the copy is rerun and committed. The full record moved verbatim to [`docs/librar
   the Ironworker film public, the Drive sharing dropped, the SharePoint folder with guests, hand and sync) are recorded in
   `cpl_memory` (`sam-sheet47-rulings-2026-10-07`, `sam-drop-cpllibrary-sharing-2026-10-07`,
   `sam-sheet49-sharepoint-rulings-2026-10-08`) and in `docs/library_lessons.md`, *Moved from the lane (S460)*.
+
+## Remediation, one place to add, one card per project (Sam, 2026-10-28; mockup S508)
+
+Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money paying a service to remediate our decks before we can publish them to the field after a webinar or training. Can you look at the Library and see if you can make it easy for a user to drag and drop their decks (or other docs) into the library and run a remediation process? We have to do this for written reports as well."* And: one button in place of Make a visual, Start a piece and Add to the Library; one card for a whole project (the ELL IET visual and its document). Mockup, Version 10: https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR. His comments on it: *"can you add a Remediate option?"* (added: *Remediate a deck or document* beside *Make something new* and *File something already made*; the card's action reads Remediate), *"This looks good!"* on the project card, and *"Add a Chip if it is published to the public library"* (added under the card's title), and *"Do we need the Add to the Library link? Would it be simpler to put the link on the card title that matches?"* (each piece's title is its link; List publicly sits on the unlisted piece's row; asked whether he meant the top control).
+
+**The mockup as Sam left it, Version 20 (S508, 2026-10-29).** The header reads *every visual, deck, video and document … and how to rebuild or remediate it* (Sam: video, not film; *or remediate* added). One panel, always shown, headed *Create or Remediate a Document*; no *Add to the Library* control anywhere (*"we don't need the Add to the Library link at top--drive everyone to one place"*). Inside one wide drop box: drop or choose a file, or paste a link (a deck, document, PDF, picture, video, a SharePoint file or a web page); once a file is in, *what is it for?* with Remediate this file, Use it as background for something new, or File it as is; an Instructions box, always shown (what they need, the audience, the focus); and one control at the box's foot, *Start*, which runs whichever path the choice names (Sam asked for one word that kicks off the whole process; *Start* over *Go*, which reads as navigation). Defaults: a deck starts on the Chancellor's Office template with a speaker script in each slide's notes; a memo or report starts in the Chancellor's Office styles (the build needs both template files). No sample-deck button and no separate *Write the brief*: the instructions are the brief. Sam on the comment-and-move loop that made it: *"man, I love this process...should have been using it all along!"*
+
+**NEXT (the build):** ① a project link between `cpl_library` records (a column, by receipt) and the register drawn one card per project, each piece a row with Open and Copy link; ② the one *Create or Remediate a Document* panel as Version 20 draws it; ③ remediation in the browser for .pptx and .docx (OOXML through JSZip): fix the title, language, table header rows and decorative marks; ask for alt text (drafted from the slide's words), slide titles, contrast and reading order; hand back the remediated file. PDFs are checked and fixed at their source. The Chancellor's Office review still certifies.
+
