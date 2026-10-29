@@ -27,8 +27,9 @@
 // balance a little better and rot within a week; a hash would scatter the
 // family unevenly. Simulated on the timings above, four round-robin shards
 // hold 777 / 1,000 / 1,021 / 794 s of serial work (±14%), about 4.3 min each
-// at 4-wide; six would hold 502–702 s. Four is the matrix in js-tests.yml,
-// and that list is the one place to change it.
+// at 4-wide; six would hold 502–702 s. Six is the matrix in js-tests.yml
+// since 2026-10-29 (four shards read 13 to 15 min of tests each on #2560's
+// runs, plus 2.5 min of checkout), and that list is the one place to change it.
 //
 // Every shard still runs the check-ledger on its own files. What a shard
 // must NOT do is re-baseline the ledger: writeLedger() replaces the whole
