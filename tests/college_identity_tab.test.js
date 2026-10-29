@@ -375,6 +375,25 @@ block("(6)", function () {
     !!find && /resolves to Cypress College/.test(find.textContent) && !/\u2192/.test(root.textContent));
 });
 
+block("(9) the findings link", function () {
+  // Sam, 2026-10-29: "the link ... (11 names resolve to no identity) takes me to the COBI
+  // dashboard". COBI routes on the address's #, so the link scrolls in place instead.
+  const { w, M, root } = loadModule();
+  M._state.live = COLLEGES; M._state.contacts = ["Nowhere Community College"]; M._state.error = null; M._state.loading = false;
+  w.CPL_COLLEGE_IDENTITY = { generated: "2026-10-29", counts: { entities: 4, with_variants: 2, with_district: 3 }, findings: [] };
+  M._render(root);
+  const a = root.querySelector('a[href="#cid-findings"]');
+  const t = root.querySelector("#cid-findings");
+  let scrolled = false;
+  if (t) t.scrollIntoView = function () { scrolled = true; };
+  const before = w.location.hash;
+  const ev = new w.MouseEvent("click", { bubbles: true, cancelable: true });
+  if (a) a.dispatchEvent(ev);
+  check("(9) ⭐ the findings link scrolls to the findings in place, focuses them and leaves the address alone",
+    !!a && !!t && ev.defaultPrevented && scrolled && w.document.activeElement === t && w.location.hash === before);
+});
+
+
 let pass = 0;
 for (const [name, ok, why] of results) {
   console.log((ok ? "  ok  " : "FAIL  ") + name + (!ok && why ? "\n        > " + why : ""));
