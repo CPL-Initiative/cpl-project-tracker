@@ -793,7 +793,10 @@ block("(16)", function () {
       aiCalls.push({ headers: init.headers, body: JSON.parse(init.body) });
       return new Promise(function (r) { setTimeout(function () { r(response(200, { alt: "Screenshot of the MAP CPL Dashboard's CPL Opportunities view", decorative: false })); }, 40); });
     }
-    if (init && init.method && init.method !== "GET") { writes.push({ url: url, body: JSON.parse(init.body || "{}") }); return response(201, [{}]); }
+    if (init && init.method && init.method !== "GET") {
+      writes.push({ url: url, method: init.method, body: JSON.parse(init.body || "{}") });
+      return response(201, [init.method === "POST" && /cpl_library/.test(url) ? Object.assign({ id: "rem" + writes.length }, JSON.parse(init.body || "{}")) : {}]);
+    }
     return response(200, ROWS);
   } });
   const aiCalls = [];
@@ -855,7 +858,10 @@ block("(16)", function () {
     });
   }).then(function () {
     const rem = doc.querySelector(".lib-rem");
-    check("(16) Remediate reads the deck here and reports Fixed for you and Needs you", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Needs you \(\d+\)/.test(rem.textContent) && writes.length === 0, rem && rem.textContent.slice(0, 300));
+    check("(16) Remediate reads the deck here and reports Fixed for you and Needs you", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Needs you \(\d+\)/.test(rem.textContent), rem && rem.textContent.slice(0, 300));
+    const rec = writes.filter(function (w) { return w.method === "POST" && /cpl_library/.test(w.url); });
+    check("(16) the file is in the Library as soon as it opens: one Draft record, no link yet, named for the file", rec.length === 1 && rec[0].body.status === "draft" && rec[0].body.home === "not_filed" &&
+      rec[0].body.url === null && rec[0].body.file_name === "20261030_Webinar.pptx" && rec[0].body.title === "Webinar" && rec[0].body.kind === "deck" && rec[0].body.remediation === "in_remediation", JSON.stringify(rec));
     check("(16) the title it set is listed", /Document title set: Where the funding goes/.test(rem.textContent));
     check("(16) a deck's contrast is checked here, so the page no longer sends it to the Accessibility Checker", !/contrast is not checked here/i.test(rem.textContent));
     const fields = doc.querySelectorAll("[data-remtext]"), alt0 = fields[0], qrField = fields[1];
@@ -914,8 +920,27 @@ block("(16)", function () {
   }).then(function (downloaded) {
     check("(16) Download the remediated file hands back the file under the original's name, the date code kept", downloaded === "20261030_Webinar_Remediated.pptx", String(downloaded));
     check("(16) and says what it wrote", /2 alt texts, 0 marked decorative/.test(m.root.textContent), (m.root.querySelector(".lib-msg") || {}).textContent);
+    const patch = writes.filter(function (w) { return w.method === "PATCH"; }).pop();
+    check("(16) the download notes the fixes on that record and opens its form for the link", !!patch && /id=eq\.rem\d+/.test(patch.url) && patch.body.file_name === "20261030_Webinar_Remediated.pptx" && patch.body.remediation === "remediated" &&
+      /^Remediated in the Library on \d{4}-\d{2}-\d{2}: /.test(patch.body.note) && !!doc.getElementById("lib-addform") && m.M._state.formFor === patch.url.split("id=eq.")[1] &&
+      /It is in the Library as a Draft, Webinar, with no link yet/.test(m.root.textContent), JSON.stringify(patch));
+    // The main page counts and filters the files in remediation and remediated.
+    // (The stand-in server keeps the record this run wrote; set it aside to count from a known list.)
+    m.M._state.rows = m.M._state.rows.filter(function (r) { return !r.remediation; });
+    const base = m.M._state.rows[0];
+    m.M._state.rows = m.M._state.rows.concat([Object.assign({}, base, { id: "remA", slug: "rem-a", title: "Remediating A", remediation: "in_remediation" }),
+      Object.assign({}, base, { id: "remB", slug: "rem-b", title: "Remediated B", remediation: "remediated" }), Object.assign({}, base, { id: "remC", slug: "rem-c", title: "Remediated C", remediation: "remediated" })]);
+    m.M._state.form = null; m.M._state.formFor = null; m.M.render();
+    const remBox = function (k) { return doc.querySelector('.lib-flag[data-flag="' + k + '"]'); };
+    check("(16) a Remediation group counts the files in remediation and remediated", /^Remediation$/.test(doc.getElementById("lib-remflags-h").textContent) &&
+      remBox("in_remediation").textContent === "1in remediation" && remBox("remediated").textContent === "2remediated", remBox("in_remediation") && remBox("in_remediation").textContent);
+    click(m.w, remBox("remediated"));
+    check("(16) its box filters the list to those files", m.M._state.flag === "remediated" && /Remediated B/.test(m.root.textContent) && /Remediated C/.test(m.root.textContent) && !/Remediating A/.test(m.root.textContent));
+    click(m.w, remBox("remediated"));
+    check("(16) the schema adds remediation, re-runnable and checked", /add column if not exists remediation text/.test(SQL) && /cpl_library_remediation_ck/.test(SQL));
+    m.M._state.formFor = (writes.filter(function (w) { return w.method === "PATCH"; }).pop().url.split("id=eq.")[1]);
     click(m.w, doc.querySelector("[data-remfile]"));
-    check("(16) File it in the Library opens the filing form, titled from the file's name", !!doc.getElementById("lib-addform") && doc.getElementById("la-title").value === "Webinar" && doc.getElementById("la-kind").value === "deck");
+    check("(16) File it in the Library opens that same record's form, for its link", !!doc.getElementById("lib-addform") && !!doc.getElementById("la-url") && /^rem\d+$/.test(m.M._state.formFor || ""), m.M._state.formFor);
     // Turned off, nothing goes to Claude, and each draft comes from the slide's own words.
     return remDeck();
   }).then(function (buf) {
@@ -979,7 +1004,9 @@ block("(16)", function () {
     check("(16) the PDF's report says what it carries in words, and where to fix it", /Needs its source: Not tagged/.test(t) && /It was made from a PowerPoint deck \(Microsoft PowerPoint\)/.test(t) && /Create PDF\/XPS/.test(t), t.slice(0, 400));
     const a = rem && rem.querySelector('a[href="https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/presentations/b.pptx"]');
     check("(16) the Library record whose title matches is named as its likely source", !!a && a.textContent === "Update to the Board of Governors");
-    check("(16) it offers the source .pptx, and no Download the remediated file", !!rem.querySelector('label[for="lc-file"]') && /Choose the source \.pptx/.test(t) && !rem.querySelector("[data-remgo]") && writes.length === 0);
+    check("(16) it offers the source .pptx, and no Download the remediated file", !!rem.querySelector('label[for="lc-file"]') && /Choose the source \.pptx/.test(t) && !rem.querySelector("[data-remgo]"));
+    const pdfRec = writes.filter(function (w) { return w.method === "POST" && w.body.file_name === "20260716_Update_to_the_Board_of_Governors.pdf"; });
+    check("(16) a PDF opened for remediation is in the Library too, as a Draft with no link", pdfRec.length === 1 && pdfRec[0].body.status === "draft" && pdfRec[0].body.home === "not_filed");
     m.w.close(); // ends the download's one-minute revoke timer with the window
   });
 });
