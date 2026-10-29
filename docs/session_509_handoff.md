@@ -30,7 +30,7 @@ sheet were skipped as unmoved (no lane carries a NEEDS SAM).
   [Security and accessibility scan](https://claude.ai/artifact/2pBJ9rNe1cyBfWQQR4W5cp): eight security findings (the
   CleanTalk plugin's files tag 6.7, inside CVE-2024-10542's range, so ITPI checks the installed version first), seven
   accessibility fixes, and what Malone asks ITPI for so a session can make content fixes with his approval.
-- **The Library mockup** (Version 19, his latest): https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR. Sam asked for drag-and-drop
+- **The Library mockup** (Version 20, his latest): https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR. Sam asked for drag-and-drop
   remediation of decks and documents, one place to add (the *Create or Remediate a Document* panel; no Add link), one card per project; his comments added *Remediate* and a
   public-library chip, piece titles as links, the label *Create or Remediate a Document*, and defaults: a deck on the CO template with a speaker script in its notes, a memo or report in the CO styles (the build needs both template files). He approved the project card.
 
@@ -47,7 +47,7 @@ sheet were skipped as unmoved (no lane carries a NEEDS SAM).
 0. **Merge what is open:** #2537, then this checkpoint's PR, each on a green `test`. Then read back the funding page on
    Pages: no footer, one paint on the published scenario.
 1. **The Library build** (lane `library`, NEXT ① to ③): the project link (a `cpl_library` column by receipt), one
-   *Create or Remediate a Document* panel (Version 19; the lane describes it), then in-browser remediation of .pptx and .docx. Start with the column and the card.
+   *Create or Remediate a Document* panel (Version 20; the lane describes it), then in-browser remediation of .pptx and .docx. Start with the column and the card.
 2. **Sam's small asks, waiting on him** (put them on a sheet if they hold): spell out FTES in his `x_table_intro`
    (proposed *full-time equivalent students (FTES)*); *Current* in place of *Curr* after the Summit, measured at 1280 px
    first; a redirect such as map.rccd.edu/cpl-funding (Malone, ITPI) or a custom domain (Sam's call on identity).
