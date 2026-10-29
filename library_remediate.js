@@ -19,7 +19,8 @@
 //                  whose title placeholder is empty, a document with no headings,
 //                  reading order on a crowded slide, and a deck's text that falls below
 //                  AA contrast against the fill behind it, and a Word document's text
-//                  against its shading, highlight, table cell or page color (the nearest
+//                  against its shading, highlight, table cell, text box or page color, in
+//                  the body, the headers and the footers (the nearest
 //                  passing color of the same hue offered as the fix either way).
 //
 // Works in Node too (tests/library_remediate.test.js): pass JSZip, DOMParser and
@@ -37,7 +38,9 @@
     dc: "http://purl.org/dc/elements/1.1/",
     cp: "http://schemas.openxmlformats.org/package/2006/metadata/core-properties",
     rel: "http://schemas.openxmlformats.org/package/2006/relationships",
-    adec: "http://schemas.microsoft.com/office/drawing/2017/decorative"
+    adec: "http://schemas.microsoft.com/office/drawing/2017/decorative",
+    wps: "http://schemas.microsoft.com/office/word/2010/wordprocessingShape",
+    mc: "http://schemas.openxmlformats.org/markup-compatibility/2006"
   };
   var DECORATIVE_URI = "{C183D7F6-B498-43B3-948B-1728B52AA6E4}";
   var LANG = "en-US";
@@ -502,7 +505,9 @@
   // A run's color comes from its own w:color, else its character style, its paragraph's
   // style (each through basedOn), else the document's defaults; "auto" is black or white,
   // whichever reads, so it never fails. What it sits on: the run's shading or highlight,
-  // the paragraph's shading, the table cell's, else the page color, else white.
+  // the paragraph's shading, the table cell's, the text box's fill, else the page color,
+  // else white. The body, every header and every footer are read; a text box's second copy
+  // in mc:Fallback (the old VML drawing Word keeps beside it) is skipped, never counted twice.
   var HIGHLIGHT = { yellow: "FFFF00", green: "00FF00", cyan: "00FFFF", magenta: "FF00FF", blue: "0000FF", red: "FF0000",
     darkBlue: "000080", darkCyan: "008080", darkGreen: "008000", darkMagenta: "800080", darkRed: "800000",
     darkYellow: "808000", darkGray: "808080", lightGray: "C0C0C0", black: "000000", white: "FFFFFF" };
@@ -555,20 +560,40 @@
     var defP = styles ? els(styles, NS.w, "style").filter(function (s) { return wAttr(s, "type") === "paragraph" && /^(1|true)$/.test(wAttr(s, "default")); })[0] : null;
     return { chain: chain, defaults: defs ? child(defs, NS.w, "rPr") : null, defaultPara: defP ? wAttr(defP, "styleId") : "" };
   }
+  var WORD_MAP = { tx1: "dk1", bg1: "lt1", tx2: "dk2", bg2: "lt2" };
+  function within(node, ns, name) {
+    for (var q = node; q; q = q.parentNode) if (q.namespaceURI === ns && q.localName === name) return q;
+    return null;
+  }
+  // A text box's fill: { hex }, { complex } (a gradient, a picture, a theme style's fill, or
+  // a VML box), or null when it has none and the page shows through.
+  function boxFill(box, scheme) {
+    var txbx = box.parentNode;
+    if (!txbx || txbx.namespaceURI !== NS.wps) return { complex: true };
+    var wsp = txbx.parentNode, spPr = wsp && child(wsp, NS.wps, "spPr");
+    var f = spPr && fillOf(spPr, { map: WORD_MAP, scheme: scheme });
+    if (f) return f.none ? null : f;
+    var style = wsp && child(wsp, NS.wps, "style"), ref = style && first(style, NS.a, "fillRef");
+    return ref && +ref.getAttribute("idx") ? { complex: true } : null;
+  }
+  var PART_WHERE = { header: " in a header", footer: " in a footer" };
   function onOff(el) { if (!el) return null; var v = wAttr(el, "val"); return !(v === "0" || v === "false" || v === "off"); }
   function contrastDocx(doc, d, styles, report) {
-    return Promise.all([doc.read("word/theme/theme1.xml"), doc.read("word/settings.xml")]).then(function (got) {
-      var scheme = wordScheme(got[0]), st = wordStyles(styles), pairs = {}, unsure = 0;
+    var extra = Object.keys(doc.zip.files).filter(function (p) { return /^word\/(header|footer)\d*\.xml$/.test(p); }).sort();
+    return Promise.all([doc.read("word/theme/theme1.xml"), doc.read("word/settings.xml")].concat(extra.map(function (p) { return doc.read(p); }))).then(function (got) {
+      var scheme = wordScheme(got[0]), st = wordStyles(styles), pairs = {}, order = [], unsure = 0;
       var bgEl = first(d, NS.w, "background"), page = (bgEl && /^[0-9A-F]{6}$/i.test(wAttr(bgEl, "color"))) ? wAttr(bgEl, "color").toUpperCase() : "FFFFFF";
       var display = got[1] && first(got[1], NS.w, "displayBackgroundShape");
       if (!display) page = "FFFFFF"; // Word paints the page color only when the setting says to
-      els(d, NS.w, "r").forEach(function (r, ri) {
-        var text = els(r, NS.w, "t").map(function (t) { return t.textContent; }).join("");
+      var parts = [{ path: "word/document.xml", xml: d, where: "" }];
+      extra.forEach(function (p, i) { if (got[i + 2]) parts.push({ path: p, xml: got[i + 2], where: PART_WHERE[/header/.test(p) ? "header" : "footer"] }); });
+      parts.forEach(function (part) {
+      els(part.xml, NS.w, "r").forEach(function (r, ri) {
+        // Only this run's own words: a run holding a text box holds the box's runs too.
+        var text = els(r, NS.w, "t").filter(function (t) { return within(t, NS.w, "r") === r; }).map(function (t) { return t.textContent; }).join("");
         if (!text.trim()) return;
-        var p = r.parentNode, inBox = false;
-        while (p && !(p.namespaceURI === NS.w && p.localName === "p")) p = p.parentNode;
-        for (var q = p; q; q = q.parentNode) if (q.namespaceURI === NS.w && q.localName === "txbxContent") { inBox = true; break; }
-        if (inBox) { unsure++; return; }
+        if (within(r, NS.mc, "Fallback")) return;
+        var p = within(r.parentNode, NS.w, "p"), box = within(p, NS.w, "txbxContent");
         var pPr = p && child(p, NS.w, "pPr"), rPr = child(r, NS.w, "rPr");
         var styleIds = st.chain(wAttr(rPr && child(rPr, NS.w, "rStyle"), "val")).concat(st.chain(wAttr(pPr && child(pPr, NS.w, "pStyle"), "val") || st.defaultPara));
         var prs = [rPr].concat(styleIds.map(function (s) { return child(s, NS.w, "rPr"); }), [st.defaults]);
@@ -579,39 +604,42 @@
           if (size == null) { var sz = wAttr(child(pr, NS.w, "sz"), "val"); if (sz) size = +sz / 2; }
           if (bold == null) bold = onOff(child(pr, NS.w, "b"));
         });
-        // What the run sits on: its highlight, its shading, then the paragraph's (own, then style), the cell's.
+        // What the run sits on: its highlight, its shading, then the paragraph's (own, then style), the cell's, the box's.
         var hl = rPr && child(rPr, NS.w, "highlight"), hv = wAttr(hl, "val");
         if (hv && HIGHLIGHT[hv]) back = { hex: HIGHLIGHT[hv] };
         if (!back) back = wordShade(rPr && child(rPr, NS.w, "shd"), scheme);
         if (!back) back = wordShade(pPr && child(pPr, NS.w, "shd"), scheme);
         if (!back) styleIds.some(function (s) { var sp = child(s, NS.w, "pPr"); back = wordShade(sp && child(sp, NS.w, "shd"), scheme); return !!back; });
-        if (!back) for (var tc = p; tc; tc = tc.parentNode) if (tc.namespaceURI === NS.w && tc.localName === "tc") {
+        if (!back) for (var tc = p; tc && tc !== box; tc = tc.parentNode) if (tc.namespaceURI === NS.w && tc.localName === "tc") {
           var tcPr = child(tc, NS.w, "tcPr"); back = wordShade(tcPr && child(tcPr, NS.w, "shd"), scheme);
           // A table style may shade its header row or bands: not measured from here.
           if (!back) { var tbl = tc.parentNode && tc.parentNode.parentNode, tp = tbl && child(tbl, NS.w, "tblPr");
             if (st.chain(wAttr(tp && child(tp, NS.w, "tblStyle"), "val")).some(function (x) { return els(x, NS.w, "shd").some(function (h) { return !!wordShade(h, scheme); }); })) back = { complex: true }; }
           break;
         }
+        if (!back && box) back = boxFill(box, scheme);
         if (back && back.complex) { unsure++; return; }
         if (!fg || fg === "auto") return;
         var bg = back ? back.hex : page;
         size = size || 10;
         var large = size >= 18 || (bold && size >= 14), need = large ? 3 : 4.5, have = ratio(fg, bg);
         if (have >= need) return;
-        var k = fg + "/" + bg + "/" + need;
-        var it = pairs[k] = pairs[k] || { fg: fg, bg: bg, need: need, ratio: have, large: large, sample: "", runs: [] };
+        var k = part.path + "/" + fg + "/" + bg + "/" + need;
+        if (!pairs[k]) { pairs[k] = { path: part.path, where: part.where, fg: fg, bg: bg, need: need, ratio: have, large: large, sample: "", runs: [] }; order.push(k); }
+        var it = pairs[k];
         if (!it.sample) it.sample = clip(text, 60);
         it.runs.push({ run: ri });
       });
-      Object.keys(pairs).forEach(function (k, i) {
+      });
+      order.forEach(function (k, i) {
         var it = pairs[k], fix = passingColor(it.fg, it.bg, it.need);
-        report.needs.push({ type: "contrast", id: "c" + (i + 1), path: "word/document.xml", fg: it.fg, bg: it.bg, need: it.need,
+        report.needs.push({ type: "contrast", id: "c" + (i + 1), path: it.path, fg: it.fg, bg: it.bg, need: it.need,
           ratio: Math.round(it.ratio * 100) / 100, fix: fix, fixRatio: Math.round(ratio(fix, it.bg) * 100) / 100, runs: it.runs,
-          text: (it.runs.length === 1 ? "Text" : it.runs.length + " runs of text") + " in #" + it.fg + " on #" + it.bg +
+          text: (it.runs.length === 1 ? "Text" : it.runs.length + " runs of text") + it.where + " in #" + it.fg + " on #" + it.bg +
             " reads " + (Math.floor(it.ratio * 10) / 10) + ":1; " + (it.large ? "large " : "") + "text needs " + it.need + ":1 (“" + it.sample + "”)" });
       });
       if (unsure) report.needs.push({ type: "info", id: "cu",
-        text: "Contrast on " + unsure + (unsure === 1 ? " run" : " runs") + " of text in a text box, on patterned shading or in a table whose style shades it, which this page cannot measure. Check it by eye, or with the Accessibility Checker." });
+        text: "Contrast on " + unsure + (unsure === 1 ? " run" : " runs") + " of text on a gradient, a picture or patterned shading, in a text box Word draws the old way or fills from its theme, or in a table whose style shades it, which this page cannot measure. Check it by eye, or with the Accessibility Checker." });
     });
   }
   // The run settings that come after w:color, in the schema's order.

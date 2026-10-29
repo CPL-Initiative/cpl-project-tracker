@@ -208,5 +208,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **⑤ A Word document's contrast is checked (S511).** Each run's color (its own `w:color`, its character and paragraph styles through `basedOn`, the defaults; a theme color with its tint or shade) is measured against its highlight or shading, the paragraph's, the table cell's, else the page color. `auto` never fails. Text in a text box, on patterned shading or in a table its style shades is named for a person (one item). One *Needs you* item per color pair, the fix written as the run's `w:color`. On the team's 82 Word files the findings held on renders (white headers on `#8EAADB` in the quarterly reports, small gold on white in the guidance memo, a stray white-on-white run in the spring update). Tests: `library_remediate` (9).
 
-**NEXT:** remediation of a PDF at its source; headers, footers and text boxes in a Word document's contrast. The Chancellor's Office review still certifies.
+✅ **⑥ Headers, footers and text boxes join a Word document's contrast (S512).** Every `word/header*.xml` and `word/footer*.xml` is read beside the body, its item saying *in a header* or *in a footer* and its fix written in that part. A text box's words are measured on its own fill, or on the page when it has none; Word's VML copy in `mc:Fallback` is skipped, so nothing counts twice. A box its theme fills, or a VML-only box, is named for a person. On the team's 84 Word files: one new finding, the fact sheet's gray header line (`#888888`, 3.5:1), held on a render. Test: `library_remediate` (70).
+
+**NEXT:** remediation of a PDF at its source. The Chancellor's Office review still certifies.
 

@@ -766,3 +766,17 @@ Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money
   would report white on white; the reader names it for a person instead.
 - **A finding can be text nobody sees.** The spring update ends a paragraph with a white run on white ("— Spring 2026"),
   invisible on the page and read aloud by a screen reader. The finding is right; the fix is to delete the run.
+
+## Headers, footers and text boxes in a Word document's contrast (S512 SkyCloudberry, 2026-10-29)
+
+- **A text box is written twice.** Word keeps a VML copy of each DrawingML text box in `mc:Fallback`, with the same
+  words; reading every `w:r` counted each run twice. The reader skips `mc:Fallback`, and the fix lands on the
+  `mc:Choice` copy, which Word 2010 and later draw.
+- **The run that holds a text box holds the box's runs.** `w:r > w:drawing > … > w:txbxContent > w:p > w:r`, so a
+  run's words are only the `w:t` whose nearest run is that run; otherwise the anchor run is read with the box's words
+  and its own color.
+- **What the page shows through:** a box with `a:noFill`, or no fill and no theme `fillRef`, is measured on the page; a
+  `fillRef` with an index (the theme's fill style), a gradient, a picture or a VML-only box is named for a person.
+- **On the team's 84 Word files** the one new finding is the fact sheet's header line, `#888888` on white at 3.5:1
+  (`cpl-fact-sheet-2026-02.docx`), confirmed on a render. None of the 84 holds a text box, so the boxes are proved by
+  the test's fixture alone.
