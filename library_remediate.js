@@ -29,6 +29,10 @@
 // out with no table, listed for a person; and (S515) each cell's font color against its
 // fill, with the nearest passing color offered as the fix.
 //
+// A chart in any of the three (S517): each series' bars, slices or line against the plot
+// area, automatic colors measured as Office draws them, and its titles, legend, axis and
+// data labels against what they sit on, with the nearest passing color as the fix.
+//
 // A PDF is read, never written: its tags, title and language come from the program that
 // exported it, so the report names that program and the steps that fix it at its source.
 //
@@ -466,6 +470,7 @@
       return pr.then(function () {
         return slideContext(doc, s, cache).then(function (ctx) {
           if (!ctx) return;
+          (doc.slideCtx = doc.slideCtx || {})[s.path] = ctx;
           var got = slideRuns(s, ctx), pairs = {};
           if (got.unsure) unsure.push(s.n);
           got.runs.forEach(function (r) {
@@ -737,8 +742,10 @@
         els(s.xml, NS.p, "pic").concat(els(s.xml, NS.p, "graphicFrame").filter(function (g) { return !!first(g, NS.c, "chart"); }))
           .forEach(function (shape) {
             var cNvPr = first(shape, NS.p, "cNvPr");
-            if (!cNvPr || isDecorative(cNvPr) || (cNvPr.getAttribute("descr") || "").trim()) return;
             var isChart = shape.localName === "graphicFrame";
+            if (isChart && cNvPr) (doc.charts = doc.charts || []).push({ part: s.rels[first(shape, NS.c, "chart").getAttributeNS(NS.r, "id")], host: s.path,
+              label: "Slide " + s.n + ", chart" + (cNvPr.getAttribute("name") ? " (" + cNvPr.getAttribute("name") + ")" : "") });
+            if (!cNvPr || isDecorative(cNvPr) || (cNvPr.getAttribute("descr") || "").trim()) return;
             var blip = first(shape, NS.a, "blip"), target = blip && s.rels[blip.getAttributeNS(NS.r, "embed")];
             if (target && repeated[target]) { markDecorative(cNvPr); markedRepeat++; s.dirty = true; return; }
             k++;
@@ -761,6 +768,7 @@
       report.slides = slides.map(function (s) { return { n: s.n, title: s.title }; });
       var t1 = slides[0] && slides[0].title;
       return contrastPptx(doc, slides, report).then(function () { return draftCharts(doc, report); })
+        .then(function () { return contrastCharts(doc, report, function (ch) { var c = doc.slideCtx && doc.slideCtx[ch.host]; return c || null; }); })
         .then(function () { return fixTitle(doc, t1 || titleFromName(name), report); });
     });
   }
@@ -813,8 +821,10 @@
       });
       if (headers) { doc.touch(path); report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); }
       // Pictures and charts: wp:docPr carries the alt text.
-      var k = 0;
+      var k = 0, kc = 0;
       els(d, NS.wp, "docPr").forEach(function (pr) {
+        var ce = first(pr.parentNode, NS.c, "chart");
+        if (ce) (doc.charts = doc.charts || []).push({ part: rels[ce.getAttributeNS(NS.r, "id")], label: "Chart " + (++kc) });
         if (isDecorative(pr) || (pr.getAttribute("descr") || "").trim()) return;
         var drawing = pr.parentNode, blip = first(drawing, NS.a, "blip");
         var target = blip ? rels[blip.getAttributeNS(NS.r, "embed")] : null;
@@ -827,7 +837,10 @@
           label: (isChart ? "Chart" : "Picture") + " " + k + (near ? ", under " + clip(near, 60) : ""),
           draft: near ? clip((isChart ? "Chart: " : "") + near, 150) : "" });
       });
+      var theme = Object.keys(rels).map(function (r) { return rels[r]; }).filter(function (t) { return /theme\/[^/]+\.xml$/.test(t); })[0] || "word/theme/theme1.xml";
+      var hostCtx = themeCtx(doc, theme);
       return contrastDocx(doc, d, styles, report).then(function () { return draftCharts(doc, report); })
+        .then(function () { return contrastCharts(doc, report, function () { return hostCtx; }); })
         .then(function () { return fixTitle(doc, firstHeading || titleFromName(name), report); });
     });
   }
@@ -901,6 +914,9 @@
                 els(dx, NS.xdr, "pic").concat(els(dx, NS.xdr, "graphicFrame").filter(function (gf) { return !!first(gf, NS.c, "chart"); }))
                   .forEach(function (shape) {
                     var cNvPr = first(shape, NS.xdr, "cNvPr");
+                    var ce = first(shape, NS.c, "chart");
+                    if (ce && cNvPr) (doc.charts = doc.charts || []).push({ part: drels[ce.getAttributeNS(NS.r, "id")],
+                      label: sh.name + ", chart" + (cNvPr.getAttribute("name") ? " (" + cNvPr.getAttribute("name") + ")" : "") });
                     if (!cNvPr || isDecorative(cNvPr) || (cNvPr.getAttribute("descr") || "").trim()) return;
                     var isChart = shape.localName === "graphicFrame";
                     var blip = first(shape, NS.a, "blip"), target = blip ? drels[blip.getAttributeNS(NS.r, "embed")] : null;
@@ -921,7 +937,10 @@
         if (loose.length) report.needs.push({ type: "info", id: "tl", text: "The data on " + sheetList(loose) + " is not in a table, so a screen reader cannot name each cell's column. In Excel, select the data, choose Insert, Table, and tick My table has headers." });
         if (merged.length) report.needs.push({ type: "info", id: "mc", text: "Merged cells on " + sheetList(merged) + ": a screen reader can lose its place in them. Unmerge them (Home, Merge and Center); for a title across columns, use Center Across Selection (Format Cells, Alignment)." });
         report.sheets = sheets.map(function (sh) { return { n: sh.n, name: sh.name }; });
-        return contrastXlsx(doc, sheets, ss, report).then(function () { return draftCharts(doc, report); }).then(function () { return fixTitle(doc, titleFromName(name), report); });
+        var theme = Object.keys(wbRels).map(function (r) { return wbRels[r]; }).filter(function (t) { return /theme\d*\.xml$/.test(t); })[0] || "xl/theme/theme1.xml";
+        return contrastXlsx(doc, sheets, ss, report).then(function () { return draftCharts(doc, report); })
+          .then(function () { var hc = themeCtx(doc, theme); return contrastCharts(doc, report, function () { return hc; }); })
+          .then(function () { return fixTitle(doc, titleFromName(name), report); });
       });
     });
   }
@@ -1222,6 +1241,245 @@
     }));
   }
 
+  // ── a chart's contrast (lane NEXT, S517) ────────────────────────────────────
+  // WCAG 1.4.11: a series' bars, slices or line need 3:1 against the plot area they sit
+  // on; 1.4.3: chart text with a color of its own (or the chart's) needs 4.5:1, 3:1 when
+  // large, against what it sits on. A series with no color of its own is measured as
+  // Office draws it, the theme's accents in turn (only the first six), and the fix writes
+  // the passing color into the series. A series whose values show as data labels is left
+  // alone: the labels carry what its color does. The plot area's fill, else the chart's,
+  // else the slide's background (a deck) or white (a document or workbook) is what the
+  // series sit on; a data label inside a bar or slice sits on that bar or slice. A gradient
+  // or picture under a chart goes to a person, and so does slice-against-slice contrast.
+  var CHART_MAP = { bg1: "lt1", tx1: "dk1", bg2: "lt2", tx2: "dk2" };
+  var LINE_CHART = /^(lineChart|line3DChart|radarChart|scatterChart)$/;
+  var INSIDE = /^(ctr|inEnd|inBase|bestFit)$/;
+  // Where an element sits in its part, as element-child positions, so a fresh read of the
+  // same part finds it again; locate() reads them back.
+  function locOf(el) {
+    var path = [];
+    for (; el && el.nodeType === 1; el = el.parentNode) {
+      var i = 0;
+      for (var s = el.previousSibling; s; s = s.previousSibling) if (s.nodeType === 1) i++;
+      path.unshift(i);
+    }
+    return path;
+  }
+  function locate(d, path) {
+    var node = d;
+    for (var k = 0; node && k < path.length; k++) {
+      var i = -1, c = node.firstChild;
+      for (; c; c = c.nextSibling) if (c.nodeType === 1 && ++i === path[k]) break;
+      node = c;
+    }
+    return node || null;
+  }
+  function attrOn(node, ns, name) { var el = node && child(node, ns, name); return !!el && /^(1|true)$/.test(el.getAttribute("val") || "1"); }
+  function hexGround(f, fallback) { return !f || f.none ? fallback : f.hex ? f.hex : null; }
+  function themeCtx(doc, path) {
+    return doc.read(path).then(function (theme) { return { scheme: wordScheme(theme), map: CHART_MAP, bg: { hex: "FFFFFF" } }; });
+  }
+  function contrastCharts(doc, report, hostCtx) {
+    var unsure = [], seen = {};
+    return (doc.charts || []).reduce(function (pr, ch, ci) {
+      return pr.then(function () {
+        if (!ch.part || seen[ch.part]) return;
+        seen[ch.part] = true;
+        return Promise.all([doc.read(ch.part), hostCtx(ch)]).then(function (got) {
+          var d = got[0], host = got[1];
+          if (!d || !host) return;
+          var ctx = Object.create(host), ovr = first(d, NS.c, "clrMapOvr");
+          if (ovr) { ctx.map = {}; for (var i = 0; i < ovr.attributes.length; i++) if (!/^xmlns/.test(ovr.attributes[i].name)) ctx.map[ovr.attributes[i].localName] = ovr.attributes[i].value; }
+          var root = d.documentElement, plot = first(d, NS.c, "plotArea");
+          if (!plot) return;
+          var chartBg = hexGround(fillOf(child(root, NS.c, "spPr"), ctx), hexGround(host.bg, null));
+          var plotBg = chartBg && hexGround(fillOf(child(plot, NS.c, "spPr"), ctx), chartBg);
+          if (!chartBg || !plotBg) { unsure.push(ch.label); return; }
+          var accent = function (j) { return j < 6 ? colorOf((function () { var e = d.createElementNS(NS.a, "a:schemeClr"); e.setAttribute("val", "accent" + (j + 1)); return e; })(), ctx) : null; };
+          var items = [], texts = {}, serNo = 0;
+          // A text source: the element whose color the words take, the grounds they sit on.
+          var addText = function (el, fg, size, bold, grounds, what) {
+            var key = locOf(el).join("."), t = texts[key] = texts[key] || { el: el, fg: fg, size: size, bold: bold, grounds: {}, what: what };
+            grounds.forEach(function (g) { if (g) t.grounds[g] = true; });
+            return { fg: fg, need: size >= 18 || (bold && size >= 14) ? 3 : 4.5 };
+          };
+          var rPrColor = function (rPr) { var sf = rPr && child(rPr, NS.a, "solidFill"); return sf ? colorOf(colorChild(sf), ctx) : null; };
+          var spaceDef = (function () { var tx = child(root, NS.c, "txPr"); return tx ? first(tx, NS.a, "defRPr") : null; })();
+          // The words of a title, a legend, an axis or a set of labels: its runs' own colors,
+          // else its own default, else the chart's. Returns each color and the ratio it needs.
+          var textOf2 = function (owner, grounds, what) {
+            var out = [];
+            if (!owner) return out;
+            var own = child(owner, NS.c, "txPr"), def = own ? first(own, NS.a, "defRPr") : null;
+            var rich = first(owner, NS.c, "rich");
+            if (rich && !def) def = first(rich, NS.a, "defRPr");
+            var src = rPrColor(def) ? def : rPrColor(spaceDef) ? spaceDef : null;
+            var sizeOf = function (r) { var s = r && +r.getAttribute("sz"); return s ? s / 100 : 0; };
+            var boldOf = function (r) { return !!r && /^(1|true)$/.test(r.getAttribute("b") || ""); };
+            var base = sizeOf(def) || sizeOf(spaceDef) || 10, bb = boldOf(def) || boldOf(spaceDef);
+            var runs = rich ? els(rich, NS.a, "r") : [], plain = !runs.length;
+            runs.forEach(function (r) {
+              var rp = child(r, NS.a, "rPr");
+              if (rPrColor(rp)) out.push(addText(rp, rPrColor(rp), sizeOf(rp) || base, boldOf(rp) || bb, grounds, what));
+              else plain = true;
+            });
+            if (plain && src) out.push(addText(src, rPrColor(src), base, bb, grounds, what));
+            return out;
+          };
+          var kindName = "";
+          for (var kc = plot.firstChild; kc; kc = kc.nextSibling) {
+            if (kc.nodeType !== 1 || !CHART_KIND[kc.localName]) continue;
+            var kind = kc, line = LINE_CHART.test(kind.localName), sers = els(kind, NS.c, "ser");
+            kindName = kindName || kind.localName;
+            var pie = /^(pie|pie3D|doughnut)Chart$/.test(kind.localName);
+            var vary = sers.length === 1 && (attrOn(kind, NS.c, "varyColors") || (pie && !child(kind, NS.c, "varyColors")));
+            var stacked = /stacked/i.test((child(kind, NS.c, "grouping") || { getAttribute: function () { return ""; } }).getAttribute("val") || "");
+            var kindLbls = child(kind, NS.c, "dLbls");
+            sers.forEach(function (ser) {
+              var si = serNo++, sp = child(ser, NS.c, "spPr");
+              var tx = child(ser, NS.c, "tx"), nm = tx ? (first(tx, NS.c, "v") || { textContent: "" }).textContent : "";
+              nm = nm || "Series " + (si + 1);
+              var lbls = child(ser, NS.c, "dLbls") || kindLbls;
+              var labeled = !!lbls && !attrOn(lbls, NS.c, "delete") && (attrOn(lbls, NS.c, "showVal") || attrOn(lbls, NS.c, "showPercent"));
+              var own = line ? (function () { var ln = sp && child(sp, NS.a, "ln"); return ln ? fillOf(ln, ctx) : null; })() : fillOf(sp, ctx);
+              // Office picks a series' own color by its c:idx, the theme's accents in turn.
+              var sidx = child(ser, NS.c, "idx"), serFill = own ? (own.hex || null) : accent(sidx ? +sidx.getAttribute("val") || 0 : si);
+              var cats = {}, catEl = child(ser, NS.c, "cat") || child(ser, NS.c, "xVal");
+              if (catEl) els(catEl, NS.c, "pt").forEach(function (pt) { var v = first(pt, NS.c, "v"); cats[pt.getAttribute("idx")] = v ? v.textContent : ""; });
+              var dpts = {};
+              els(ser, NS.c, "dPt").forEach(function (p) { var ix = child(p, NS.c, "idx"); if (ix) dpts[ix.getAttribute("val")] = p; });
+              // The fills the series paints: its own (one), or one per point.
+              var fills = [];
+              var nPts = els(child(ser, NS.c, "val") || child(ser, NS.c, "yVal") || ser, NS.c, "pt").length;
+              if (vary && !line) {
+                for (var j = 0; j < nPts; j++) {
+                  var p = dpts[String(j)], pf = p ? fillOf(child(p, NS.c, "spPr"), ctx) : null;
+                  var hex = pf ? pf.hex || null : accent(j);
+                  fills.push({ hex: hex, pt: j, el: p || null, auto: !pf });
+                }
+              } else {
+                fills.push({ hex: serFill, el: ser, auto: !own });
+                Object.keys(dpts).forEach(function (ix) {
+                  var p = dpts[ix], pf = fillOf(line ? (child(child(p, NS.c, "spPr") || p, NS.a, "ln")) : child(p, NS.c, "spPr"), ctx);
+                  if (pf && pf.hex) fills.push({ hex: pf.hex, pt: +ix, el: p });
+                });
+              }
+              var ptName = function (j) { return cats[String(j)] || String(j + 1); };
+              // Slices side by side (the last beside the first) that read alike: a person's
+              // call, often a white border between them rather than a new color.
+              if (vary && pie && fills.length > 2) {
+                var alike = [];
+                fills.forEach(function (f, j) {
+                  var g = fills[(j + 1) % fills.length];
+                  if (f.hex && g.hex && ratio(f.hex, g.hex) < 3) alike.push(ptName(f.pt) + " and " + ptName(g.pt));
+                });
+                if (alike.length) report.needs.push({ type: "info", id: "ks" + (ci + 1) + "-" + (si + 1), text: ch.label + ": side by side, the slices " + alike.join("; ") +
+                  " read less than 3:1 against each other. In the chart's Format pane, give the slices a white border (Format Data Series, Border, Solid line) or colors further apart." });
+              }
+              // The data labels, and those that sit inside the bars or slices, whose words a
+              // series' new color must keep readable.
+              var onFill = [];
+              if (lbls && !attrOn(lbls, NS.c, "delete")) {
+                var pos = child(lbls, NS.c, "dLblPos"), at = pos ? pos.getAttribute("val") : pie ? "bestFit" : stacked ? "ctr" : "outEnd";
+                var lf = fillOf(child(lbls, NS.c, "spPr"), ctx), inside = !(lf && lf.hex) && !line && INSIDE.test(at);
+                var said = textOf2(lbls, lf && lf.hex ? [lf.hex] : inside ? fills.map(function (f) { return f.hex; }) : [plotBg],
+                  "the data labels" + (child(ser, NS.c, "dLbls") ? " of the series " + nm : ""));
+                if (inside) onFill = said;
+              }
+              fills.forEach(function (f) {
+                if (!f.hex || ratio(f.hex, plotBg) >= 3) return;
+                var what = f.pt != null ? (pie ? "the slice " : "the point ") + ptName(f.pt) + (vary ? "" : " of the series " + nm) : "the series " + nm;
+                // Its values show as labels, so the color is not all a reader has: advisory.
+                items.push({ op: f.el ? "fill" : "newpt", loc: locOf(f.el || ser), pt: f.pt, line: line && f.el === ser, fg: f.hex, bg: plotBg, need: 3, what: what, keep: onFill,
+                  advisory: labeled, rule: "a chart's " + (pie ? "slices" : line ? "lines" : "bars") + " need 3:1 against the plot area" +
+                    (labeled ? " (its values show as labels, so this one is yours to weigh)" : "") });
+              });
+            });
+          }
+          if (!kindName) return;
+          textOf2(child(child(root, NS.c, "chart"), NS.c, "title"), [chartBg], "the chart's title");
+          var legend = first(d, NS.c, "legend");
+          if (legend) { var lgf = fillOf(child(legend, NS.c, "spPr"), ctx); textOf2(legend, [lgf && lgf.hex ? lgf.hex : chartBg], "the legend"); }
+          for (var ax = plot.firstChild; ax; ax = ax.nextSibling) {
+            if (ax.nodeType !== 1 || !/Ax$/.test(ax.localName) || attrOn(ax, NS.c, "delete")) continue;
+            textOf2(ax, [chartBg], "the " + (ax.localName === "valAx" ? "value" : "category") + " axis labels");
+            textOf2(child(ax, NS.c, "title"), [chartBg], "the " + (ax.localName === "valAx" ? "value" : "category") + " axis title");
+          }
+          Object.keys(texts).forEach(function (key) {
+            var t = texts[key], need = t.size >= 18 || (t.bold && t.size >= 14) ? 3 : 4.5;
+            var bad = Object.keys(t.grounds).filter(function (g) { return ratio(t.fg, g) < need; });
+            if (!bad.length) return;
+            items.push({ op: "text", loc: locOf(t.el), fg: t.fg, grounds: bad, need: need, what: t.what, rule: (need === 3 ? "large " : "") + "text needs " + need + ":1" });
+          });
+          items.forEach(function (it, i) {
+            var grounds = it.grounds || [it.bg];
+            var worst = grounds.slice().sort(function (a, b) { return ratio(it.fg, a) - ratio(it.fg, b); })[0];
+            var fix = it.keep && it.keep.length ? passingWith(it.fg, worst, it.need, it.keep) : passingColor(it.fg, worst, it.need);
+            var have = ratio(it.fg, worst), base = ch.label + ": " + it.what + " in #" + it.fg + " on #" + worst + (/labels( of the series .*)?$/.test(it.what) ? " read " : " reads ") +
+              (Math.floor(have * 10) / 10) + ":1; " + it.rule;
+            if (!fix || !grounds.every(function (g) { return ratio(fix, g) >= it.need; })) {
+              report.needs.push({ type: "info", id: "k" + (ci + 1) + "-" + (i + 1), text: base + (it.keep && it.keep.length ?
+                ". No one color passes on the plot area and keeps the labels on it readable; change it in the chart's Format pane, or give the " + (/slice/.test(it.rule) ? "slices" : "bars") + " a dark outline." :
+                ". No one color passes on every fill it meets; change it in the chart's Format pane.") });
+              return;
+            }
+            report.needs.push({ type: "contrast", id: "k" + (ci + 1) + "-" + (i + 1), inChart: true, path: ch.part, op: it.op, loc: it.loc, pt: it.pt, line: !!it.line, advisory: !!it.advisory,
+              fg: it.fg, bg: worst, need: it.need, ratio: Math.round(have * 100) / 100, fix: fix, fixRatio: Math.round(ratio(fix, worst) * 100) / 100, text: base });
+          });
+        });
+      });
+    }, Promise.resolve()).then(function () {
+      if (unsure.length) report.needs.push({ type: "info", id: "ku", text: "Contrast in " + (unsure.length === 1 ? "one chart" : unsure.length + " charts") + " (" + unsure.join("; ") +
+        "): the chart sits on a gradient, a picture or a pattern, which this page cannot measure. Check its bars, lines and words by eye, or with the Accessibility Checker." });
+    });
+  }
+  // passingColor, with words that sit on the color (a bar's labels) kept at their own ratio;
+  // null when no lightness of the hue does both.
+  function passingWith(fg, bg, need, keep) {
+    var hsl = toHsl(rgbOf(fg)), dark = luminance(bg) > 0.18, l = hsl[2];
+    for (var i = 0; i <= 100; i++) {
+      var hex = hexOf(fromHsl([hsl[0], hsl[1], l]));
+      if (ratio(hex, bg) >= need + 0.1 && keep.every(function (k) { return ratio(hex, k.fg) >= k.need; })) return hex;
+      l += dark ? -0.01 : 0.01;
+    }
+    return null;
+  }
+  // Puts a solid fill first among a shape's or run's settings' fills, replacing any other.
+  var FILLS = /^(noFill|solidFill|gradFill|blipFill|pattFill|grpFill)$/;
+  function solidInto(d, el, hex, before) {
+    for (var c = el.firstChild; c; ) { var nx = c.nextSibling; if (c.nodeType === 1 && FILLS.test(c.localName)) el.removeChild(c); c = nx; }
+    var sf = d.createElementNS(NS.a, "a:solidFill"), clr = d.createElementNS(NS.a, "a:srgbClr");
+    clr.setAttribute("val", hex); sf.appendChild(clr);
+    var at = el.firstChild;
+    while (at && (at.nodeType !== 1 || !before.test(at.localName))) at = at.nextSibling;
+    el.insertBefore(sf, at);
+  }
+  function insertChild(d, parent, el, before) {
+    var at = parent.firstChild;
+    while (at && (at.nodeType !== 1 || !before.test(at.localName))) at = at.nextSibling;
+    parent.insertBefore(el, at);
+    return el;
+  }
+  // Writes a chart item's fix: a series' or point's fill (or its line), else the color of
+  // the words. A point Office colored by itself gets a data point of its own to hold it.
+  function applyContrastChart(d, n) {
+    var el = n._el || locate(d, n.loc);
+    if (!el) return 0;
+    if (n.op === "text") { solidInto(d, el, n.fix, /^(?!ln$)/); return 1; }
+    if (n.op === "newpt") {
+      var pt = d.createElementNS(NS.c, "c:dPt"), ix = d.createElementNS(NS.c, "c:idx");
+      ix.setAttribute("val", String(n.pt)); pt.appendChild(ix);
+      el = insertChild(d, el, pt, /^(dLbls|trendline|errBars|cat|val|xVal|yVal|smooth|shape|bubbleSize|bubble3D|extLst)$/);
+    }
+    var sp = child(el, NS.c, "spPr");
+    if (!sp) sp = insertChild(d, el, d.createElementNS(NS.c, "c:spPr"), el.localName === "dPt" ? /^(pictureOptions|extLst)$/ : /^(?!(idx|order|tx)$)/);
+    if (n.line) {
+      var ln = child(sp, NS.a, "ln") || insertChild(d, sp, d.createElementNS(NS.a, "a:ln"), /^(effectLst|effectDag|scene3d|sp3d|extLst)$/);
+      solidInto(d, ln, n.fix, /./);
+    } else solidInto(d, sp, n.fix, /^(ln|effectLst|effectDag|scene3d|sp3d|extLst)$/);
+    return 1;
+  }
+
   // Reads the file, fixes what needs no judgment, and returns the report with a session
   // that finish() writes the answers into.
   // ── A PDF is fixed at its source (lane NEXT, S513) ──────────────────────────────
@@ -1418,6 +1676,8 @@
     report.needs.forEach(function (n) { if (n.path) (byPath[n.path] = byPath[n.path] || []).push(n); });
     return Promise.all(Object.keys(byPath).map(function (path) {
       return doc.read(path).then(function (d) {
+        // A chart item finds its element before any fix shifts the part's children.
+        byPath[path].forEach(function (n) { if (n.inChart && n.loc) n._el = locate(d, n.loc); });
         byPath[path].forEach(function (n) {
           var ans = answers[n.id];
           if (!ans) return;
@@ -1458,7 +1718,7 @@
             renames[sheetKey(n.sheetName)] = nm;
             doc.touch(path); done.sheets++;
           } else if (n.type === "contrast" && ans.fix) {
-            var k = report.ext === "pptx" ? applyContrast(d, n) : report.ext === "xlsx" ? applyContrastXlsx(doc, d, n) : applyContrastDocx(d, n);
+            var k = n.inChart ? applyContrastChart(d, n) : report.ext === "pptx" ? applyContrast(d, n) : report.ext === "xlsx" ? applyContrastXlsx(doc, d, n) : applyContrastDocx(d, n);
             if (k) { doc.touch(path); done.colors += k; }
           }
         });
