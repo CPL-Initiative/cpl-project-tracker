@@ -122,6 +122,36 @@ function wordDoc(withHeading) {
   return z.generateAsync({ type: "nodebuffer" });
 }
 
+// A Word document whose colors come from every place Word keeps them: a character style,
+// a paragraph style's shading, a table cell's shading, a theme color with a tint, a
+// highlight, "auto", a large run, and a text box this page cannot measure.
+function contrastWord() {
+  const z = new JSZip();
+  z.file("docProps/core.xml", CORE("Contrast"));
+  z.file("word/theme/theme1.xml", '<a:theme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:themeElements><a:clrScheme name="Office">' +
+    '<a:dk1><a:sysClr val="windowText" lastClr="000000"/></a:dk1><a:lt1><a:sysClr val="window" lastClr="FFFFFF"/></a:lt1>' +
+    '<a:accent1><a:srgbClr val="4472C4"/></a:accent1></a:clrScheme></a:themeElements></a:theme>');
+  z.file("word/styles.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:styles ' + W + ">" +
+    '<w:style w:type="paragraph" w:default="1" w:styleId="Normal"><w:rPr><w:sz w:val="22"/></w:rPr></w:style>' +
+    '<w:style w:type="character" w:styleId="Gold"><w:rPr><w:color w:val="E8A32C"/></w:rPr></w:style>' +
+    '<w:style w:type="paragraph" w:styleId="Banner"><w:basedOn w:val="Normal"/><w:pPr><w:shd w:val="clear" w:color="auto" w:fill="1F3A68"/></w:pPr><w:rPr><w:color w:val="FFFFFF"/></w:rPr></w:style>' +
+    '<w:style w:type="table" w:styleId="GridHeader"><w:tblStylePr w:type="firstRow"><w:tcPr><w:shd w:val="clear" w:fill="4472C4"/></w:tcPr></w:tblStylePr></w:style>' +
+    "</w:styles>");
+  const r = (pr, t) => "<w:r>" + (pr ? "<w:rPr>" + pr + "</w:rPr>" : "") + "<w:t>" + t + "</w:t></w:r>";
+  z.file("word/document.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document ' + W + ' xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape"><w:body>' +
+    '<w:p><w:pPr><w:pStyle w:val="Banner"/></w:pPr>' + r("", "WHITE ON THE BANNER") + "</w:p>" +
+    "<w:p>" + r('<w:rStyle w:val="Gold"/>', "New in 2026") + r('<w:rStyle w:val="Gold"/><w:b/><w:sz w:val="28"/>', "Gold bold heading") + "</w:p>" +
+    "<w:p>" + r('<w:color w:val="949494"/><w:sz w:val="56"/>', "Big gray") + r('<w:color w:val="949494"/>', "Small gray") + "</w:p>" +
+    "<w:p>" + r('<w:color w:themeColor="accent1" w:themeTint="66"/>', "Pale accent") + r('<w:color w:themeColor="accent1"/>', "Full accent") + "</w:p>" +
+    "<w:p>" + r('<w:color w:val="FFFFFF"/><w:highlight w:val="yellow"/>', "White on yellow") + "</w:p>" +
+    '<w:p><w:pPr><w:shd w:val="clear" w:fill="002F6D"/></w:pPr>' + r('<w:color w:val="auto"/>', "Auto on navy") + "</w:p>" +
+    '<w:tbl><w:tr><w:tc><w:tcPr><w:shd w:val="clear" w:fill="002F6D"/></w:tcPr><w:p>' + r('<w:color w:val="1F3A68"/>', "Navy in a navy cell") + "</w:p></w:tc></w:tr></w:tbl>" +
+    '<w:tbl><w:tblPr><w:tblStyle w:val="GridHeader"/></w:tblPr><w:tr><w:tc><w:p>' + r('<w:color w:val="FFFFFF"/>', "Styled header") + "</w:p></w:tc></w:tr></w:tbl>" +
+    '<w:p><w:r><w:drawing><wp:anchor><wp:docPr id="7" name="Text Box 6" descr="box"/><a:graphic><a:graphicData><wps:wsp><wps:txbx><w:txbxContent><w:p>' + r('<w:color w:val="FFFFFF"/>', "In a box") + "</w:p></w:txbxContent></wps:txbx></wps:wsp></a:graphicData></a:graphic></wp:anchor></w:drawing></w:r></w:p>" +
+    "</w:body></w:document>");
+  return z.generateAsync({ type: "nodebuffer" });
+}
+
 // A deck whose one chart carries two series (a stacked bar), its data in the chart part.
 function chartDeck() {
   const z = new JSZip();
@@ -248,6 +278,32 @@ const run = deck().then(function (buf) {
       return R.inspect(got[0], "Contrast.pptx", ENV).then(function (s2) { return R.finish(s2, {}, "nodebuffer"); }).then(function (o2) {
         check("(8) an unticked fix leaves the colors as they were", o2.done.colors === 0);
       });
+    });
+  });
+}).then(function () {
+  return contrastWord().then(function (buf) { return R.inspect(buf, "Contrast.docx", ENV); }).then(function (s) {
+    const cs = s.report.needs.filter(function (n) { return n.type === "contrast"; });
+    const has = function (re) { return cs.filter(function (n) { return re.test(n.text); })[0]; };
+    check("(9) white text in a paragraph style's navy shading is not read as white on white", !has(/BANNER/), JSON.stringify(cs.map(function (n) { return n.text; })));
+    const gold = has(/New in 2026/);
+    check("(9) a character style's gold is measured on white at 4.5:1", !!gold && gold.fg === "E8A32C" && gold.bg === "FFFFFF" && gold.need === 4.5, gold && gold.text);
+    check("(9) 14pt bold gold is large, at 3:1", !!has(/Gold bold heading/) && has(/Gold bold heading/).need === 3);
+    check("(9) 28pt gray passes as large text; the same gray at the default size does not", !has(/Big gray/) && !!has(/Small gray/));
+    check("(9) a theme color with a tint is measured tinted: the pale accent fails, the full one passes", !!has(/Pale accent/) && !has(/Full accent/));
+    check("(9) a highlight is what the run sits on", !!has(/White on yellow/) && has(/White on yellow/).bg === "FFFF00");
+    check("(9) auto text never fails", !has(/Auto on navy/));
+    check("(9) a table cell's shading is what its text sits on", !!has(/navy cell/) && has(/navy cell/).bg === "002F6D");
+    check("(9) text in a text box, or in a table its style shades, is named for a person, not measured", s.report.needs.some(function (n) { return n.id === "cu" && /^Contrast on 2 runs of text in a text box/.test(n.text); }) && !has(/In a box/) && !has(/Styled header/));
+    check("(9) each fix keeps the hue and passes its own bar", cs.every(function (n) { return R._ratio(n.fix, n.bg) >= n.need; }));
+    const ans = {}; cs.forEach(function (n) { ans[n.id] = { fix: true }; });
+    return R.finish(s, ans, "nodebuffer").then(function (out) {
+      check("(9) finish writes the fix onto each run it covers", out.done.colors === cs.reduce(function (a, n) { return a + n.runs.length; }, 0) && out.done.colors >= 6, JSON.stringify(out.done));
+      return JSZip.loadAsync(out.file).then(function (z) { return z.file("word/document.xml").async("string"); }).then(function (xml) {
+        check("(9) the new color sits before the size, as the schema orders a run's settings", /<w:color w:val="[0-9A-F]{6}"\/><w:sz w:val="28"\/>/.test(xml), xml.slice(0, 0));
+        return R.inspect(out.file, "Contrast.docx", ENV);
+      });
+    }).then(function (again) {
+      check("(9) the remediated document has no contrast item left", !again.report.needs.some(function (n) { return n.type === "contrast"; }), JSON.stringify(again.report.needs.map(function (n) { return n.text; })));
     });
   });
 });

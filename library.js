@@ -1099,7 +1099,7 @@
       "</div></div>" +
       '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
-      '<p class="lib-hint">' + (rep.ext === "docx" ? "A Word document\'s contrast is not checked here: check it with Word\'s Accessibility Checker. " : "") + 'Save the PDF from PowerPoint or Word with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
+      '<p class="lib-hint">' + 'Save the PDF from PowerPoint or Word with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
       "</section>";
   }
   // Draft from the picture (Sam, 2026-10-29: "We do a lot of MAP screenshots and hoping
