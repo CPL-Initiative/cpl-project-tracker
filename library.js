@@ -1030,7 +1030,8 @@
         state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, thumbs: {}, ai: {}, aiAll: false };
         session.report.needs.forEach(function (n) {
           if (n.type === "alt" || n.type === "title" || n.type === "sheet") state.rem.answers[n.id] = { text: n.draft || "", decorative: false };
-          if (n.type === "contrast") state.rem.answers[n.id] = { fix: true };
+          // An advisory chart item (its values show as labels) waits for a person to tick it.
+          if (n.type === "contrast") state.rem.answers[n.id] = { fix: !n.advisory };
         });
         render();
         var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus();

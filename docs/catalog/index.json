@@ -16210,8 +16210,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 486,
+   "count": 487,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 518,
+     "path": "docs/session_518_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "accessibility"
+     ],
+     "title": "Session 518 handoff: a chart's contrast in the Library's remediation",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-29",
      "governs": [],
@@ -24535,5 +24551,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1303
+ "total": 1304
 }

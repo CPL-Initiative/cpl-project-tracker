@@ -203,9 +203,9 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 ✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
 
 
-✅ **⑥ Headers, footers and text boxes in a Word document's contrast (S512), ⑦ a PDF fixed at its source (S513), ⑧ a workbook remediated (S514) and ⑨ its contrast (S515).** Each full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane* (S513 to S516).
+✅ **⑥ Headers, footers and text boxes in a Word document's contrast (S512), ⑦ a PDF fixed at its source (S513), ⑧ a workbook remediated (S514), ⑨ its contrast (S515) and ⑩ its conditional formatting (S516).** Each full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane* (S513 to S517).
 
-✅ **⑩ A workbook's conditional formatting is measured (S516):** each rule's colors against every cell in its range, one item per format, fixed by a copy that only the failing rules point at. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A workbook's conditional formatting (S516)*. Tests: `library_remediate` (121).
+✅ **⑪ A chart's contrast is measured (S517)** in a deck, a document or a workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A chart's contrast (S517)*. Tests: `library_remediate` (135).
 
-**NEXT:** Sam's first live try of remediation (no `alt-text-draft` call in the edge logs at 11:22Z, 2026-10-29); then a deck's or document's charts read for contrast, the one file kind each check still leaves to a person. The Chancellor's Office review still certifies.
+**NEXT:** Sam's word on his first live try (six `alt-text-draft` calls at 11:57Z to 11:59Z, 2026-10-29, all 200); then a deck's reading order checked against what sits where (the crowded-slide item is still a person's), or a chart's per-label colors (`c:dLbl`), whichever he asks first. The Chancellor's Office review still certifies.
 
