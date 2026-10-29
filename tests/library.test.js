@@ -925,6 +925,25 @@ block("(16)", function () {
     const ready2 = function (n) { return doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready2(n - 1); }); };
     return ready2(300).then(function () { return new Promise(function (r) { setTimeout(r, 60); }); }).then(function () {
       check("(16) with drafting turned off, no picture goes to Claude, and the draft is the slide's title", aiCalls.length === before && doc.querySelector("[data-remtext]").value === "Where the funding goes", doc.querySelector("[data-remtext]").value);
+      // Remediate another file, from the report itself; it asks first when answers would go.
+      const next = doc.getElementById("lc-file-next");
+      check("(16) the report offers Remediate another file beside Close", !!next && /Remediate another file/.test(doc.querySelector('label[for="lc-file-next"]').textContent) && next.getAttribute("accept") === ".pptx,.docx,.xlsx,.pdf");
+      click(m.w, doc.querySelector("[data-remkeep]"));
+      let asked = 0;
+      m.w.confirm = function () { asked++; return false; };
+      const choose = function (name) {
+        const el = doc.getElementById("lc-file-next");
+        Object.defineProperty(el, "files", { configurable: true, value: [{ name: name, arrayBuffer: function () { return Promise.resolve(buf); } }] });
+        el.dispatchEvent(new m.w.Event("change", { bubbles: true }));
+      };
+      choose("20261029_Other.pptx");
+      check("(16) with a kept answer not yet downloaded, it asks, and No keeps this report", asked === 1 && doc.getElementById("lib-rem-h").textContent === "20261030_Webinar.pptx");
+      m.w.confirm = function () { asked++; return true; };
+      choose("20261029_Other.pptx");
+      const opened = function (n) { return (doc.querySelector("[data-remgo]") && doc.getElementById("lib-rem-h").textContent === "20261029_Other.pptx") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return opened(n - 1); }); };
+      return opened(300).then(function () {
+        check("(16) Yes opens the next file's report in place", asked === 2 && doc.getElementById("lib-rem-h").textContent === "20261029_Other.pptx" && !!doc.querySelector("[data-remgo]"));
+      });
     });
   }).then(function () {
     drop({ name: "20261029_College_Awards.xlsx" });

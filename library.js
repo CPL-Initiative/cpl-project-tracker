@@ -401,6 +401,7 @@
       R + " .lib-rem{display:grid;gap:14px;padding:18px;border:1px solid var(--border);border-radius:8px;background:var(--surface-opaque);}",
       R + " .lib-remhead{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:12px;}",
       R + " .lib-remhead .lib-title{overflow-wrap:anywhere;}",
+      R + " .lib-remhead > div:first-child{flex:1 1 320px;min-width:0;}",
       R + " .lib-remcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}",
       R + " h4.lib-remh{margin:0 0 8px;font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:var(--text-strong);}",
       R + " .lib-remchecks{margin:0;padding-left:1.1em;display:grid;gap:6px;}",
@@ -1102,6 +1103,17 @@
       });
     }).catch(function (e) { state.rem = null; say(e.message, true); render(); });
   }
+  // Another file from the report itself (Sam, 2026-10-29: "a selector at the top to go to
+  // another file to remediate without leaving the page"): the chooser beside Close.
+  function remNextHtml() {
+    return '<div class="lib-actions-row"><label class="lib-pick" for="lc-file-next">Remediate another file</label>' +
+      '<input id="lc-file-next" class="lib-vh" type="file" accept=".pptx,.docx,.xlsx,.pdf">' +
+      '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>';
+  }
+  // Answers a person gave that are not yet in a downloaded file.
+  function remUnsaved(rm) {
+    return !!rm && !rm.downloaded && (Object.keys(rm.kept || {}).some(function (k) { return rm.kept[k]; }) || !!rm.touched);
+  }
   function remHtml() {
     var rm = state.rem;
     if (!rm) return "";
@@ -1162,7 +1174,7 @@
     };
     return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
       '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + "</h3></div>" +
-      '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>' +
+      remNextHtml() + "</div>" +
       '<div class="lib-remprog" id="lib-remprog">' + progressInner(rm) + "</div>" +
       '<div class="lib-remcols"><div><h4 class="lib-remh">Fixed for you (' + rep.fixed.length + ")</h4>" +
       (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f, i) { return '<li id="lib-remfix-' + i + '" tabindex="-1">' + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
@@ -1203,7 +1215,7 @@
     var kindWord = { deck: "a PowerPoint deck", document: "a Word document", spreadsheet: "an Excel workbook", layout: "a layout program", web: "a web page", scan: "a scan" }[src.kind];
     return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
       '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line">' + esc(line) + "</p></div>" +
-      '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>' +
+      remNextHtml() + "</div>" +
       '<div class="lib-remcols"><div><h4 class="lib-remh">What the PDF carries</h4><ul class="lib-remchecks">' +
       pdf.checks.map(function (c) { return "<li><b>" + (c.ok ? "In place" : "Needs its source") + ":</b> " + esc(c.text) + "</li>"; }).join("") + "</ul></div>" +
       '<div><h4 class="lib-remh">Fix it at its source</h4>' +
@@ -1502,6 +1514,7 @@
         var a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
         setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
         var d = out.done;
+        rm.downloaded = true;
         say("Downloaded " + name + ": " + rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " +
           (rm.report.ext === "xlsx" ? (d.sheets || 0) + (d.sheets === 1 ? " sheet" : " sheets") + " renamed." :
             d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed.") + " Open it, run the Accessibility Checker, then file it.");
@@ -2089,7 +2102,7 @@
       if (e.target.id === "lib-q") { state.q = e.target.value; renderList(); }
       else if (e.target.getAttribute && e.target.getAttribute("data-remtext") && state.rem) {
         var k0 = e.target.getAttribute("data-remtext");
-        state.rem.answers[k0] = state.rem.answers[k0] || {}; state.rem.answers[k0].text = e.target.value; state.rem.answers[k0].fromQr = false;
+        state.rem.answers[k0] = state.rem.answers[k0] || {}; state.rem.answers[k0].text = e.target.value; state.rem.answers[k0].fromQr = false; state.rem.touched = true;
         if (/^a/.test(k0) && state.rem.kept) state.rem.kept[k0] = true;
         paintProgress();
       }
@@ -2098,6 +2111,14 @@
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
       else if (e.target.id === "lib-status") { state.status = e.target.value; render(); }
       else if (e.target.id === "lib-for") { state.forName = e.target.value; render(); }
+      else if (e.target.id === "lc-file-next") {
+        var nf = e.target.files && e.target.files[0];
+        if (!nf) return;
+        if (!REMEDIABLE[extOf(nf.name)]) { say("Remediation reads a .pptx deck, a .docx document, an .xlsx workbook or a PDF.", true); render(); return; }
+        if (remUnsaved(state.rem) && !window.confirm("Open " + nf.name + "? This report's answers are not in a downloaded file yet, and they will go.")) { e.target.value = ""; return; }
+        setPick({ name: nf.name, file: nf });
+        startRemediate(state.pick);
+      }
       else if (e.target.id === "lc-file") {
         var fl = e.target.files && e.target.files[0];
         if (fl) { setPick({ name: fl.name, file: fl }); render(); var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus(); }
@@ -2112,7 +2133,7 @@
       }
       else if (e.target.getAttribute && e.target.getAttribute("data-remfix") && state.rem) {
         var k2 = e.target.getAttribute("data-remfix");
-        state.rem.answers[k2] = { fix: e.target.checked }; paintProgress();
+        state.rem.answers[k2] = { fix: e.target.checked }; state.rem.touched = true; paintProgress();
       }
       else if (/^(la|ls|le)-forkind$/.test(e.target.id || "")) {
         // The type picked decides which fields follow it; repaint, keeping the caret's owner.

@@ -920,6 +920,9 @@ Sam's session, the day before the 7th Annual CPL Summit, on his first live run o
   sure none of the information there is redundant"*). Each check's words under the bar are a link to its first
   item left, or to its line in *Fixed for you*; the bar's part takes a click too, though the words carry the
   keyboard, since a 10-pixel bar is under WCAG 2.2's 24-pixel target.
+- **Keep all and the next file.** *Keep all* keeps every alt text with words or marked decorative, and says how
+  many still have none. *Remediate another file*, beside *Close*, opens the next report in place, and asks first when
+  kept or edited answers are not yet in a downloaded file.
 - **A grid item's minimum width is its content's.** A long URL in a hint widened the whole list item past its
   column until the item took `min-width:0` and the hints `overflow-wrap:anywhere`.
 
