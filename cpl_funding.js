@@ -15431,9 +15431,13 @@
   //     BroadcastChannel; each re-reads the saved model and answers with what
   //     it redrew;
   //   built when opened: the draft memo, the Excel download, Save as PDF;
-  //   NOT live: the CPL Funding in Motion videos and the frozen explainer
-  //     snapshot carry typed-in figures, so the splash names them rather than
-  //     let a refresh imply they moved.
+  //   checked, not redrawn: the introduction film's figures, filed beside it
+  //     (checkVideoFigures compares them with the model, since 2026-10-19);
+  //   NOT live: the frozen explainer snapshot carries typed-in figures, so the
+  //     splash names it rather than let a refresh imply it moved;
+  //   read on load: the daily files the nightly run writes (the performance
+  //     measures, ESS 25-82 and the CPL data), which a refresh does not re-read
+  //     by design, so the splash says a reload brings them in.
   // Another person's browser reads the saved model when its page next opens;
   // a save is already the update for them.
   //
@@ -15606,6 +15610,7 @@
     h += "<h4>The introduction film, checked against the model</h4>" + videoSplashHtml();
     h += "<h4>Not live: figures typed in</h4>" + splashListHtml([
       { surface: "The frozen explainer snapshot", detail: "prototype/funding_model_explainer.html, where one was handed out" }]);
+    h += '<p class="dk">The daily figures (the performance measures, ESS 25-82 and the CPL data) come with the nightly run; reload the page to bring in a newer one.</p>';
     h += '<p class="dk">Anyone else reads the saved model the next time a funding page opens in their browser.</p>';
     var warn = [];
     if (hasLocalOnlyEdits()) warn.push("This browser holds what-if changes that are not in the shared model; only this browser shows them.");

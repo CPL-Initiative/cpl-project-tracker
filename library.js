@@ -409,6 +409,8 @@
       R + " .lib-remneed p{margin:0;}",
       R + " .lib-remthumb{flex:0 0 96px;width:96px;height:64px;object-fit:contain;border-radius:4px;border:1px solid var(--border);background:var(--surface-muted);}",
       R + " span.lib-remthumb{display:flex;align-items:center;justify-content:center;font-size:.8rem;color:var(--text-muted);}",
+      R + " .lib-remswatches{display:flex;flex-wrap:wrap;gap:8px;margin:6px 0;}",
+      R + " .lib-remswatch{display:inline-block;padding:4px 10px;border:1px solid var(--border);border-radius:4px;font-size:.9rem;}",
       // One card per project (Sam, 2026-10-28; mockup Version 20): a row per piece, its title the link.
       R + " .lib-proj .lib-tile .big{font-size:1.45rem;}",
       R + " .lib-pieces{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--border);}",
@@ -1025,7 +1027,10 @@
     pk.file.arrayBuffer().then(function (b) { buf = b; return loadRemediate(); }).then(function (R) {
       return R.inspect(buf, pk.name, remEnv()).then(function (session) {
         state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, thumbs: {}, ai: {}, aiAll: false };
-        session.report.needs.forEach(function (n) { if (n.type === "alt" || n.type === "title") state.rem.answers[n.id] = { text: n.draft || "", decorative: false }; });
+        session.report.needs.forEach(function (n) {
+          if (n.type === "alt" || n.type === "title") state.rem.answers[n.id] = { text: n.draft || "", decorative: false };
+          if (n.type === "contrast") state.rem.answers[n.id] = { fix: true };
+        });
         render();
         var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus();
         // A thumbnail of each picture that needs words, so the writer sees what to describe.
@@ -1068,6 +1073,17 @@
         return '<li class="lib-remneed"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + '; type one a screen reader can announce</label>' +
           '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="200" value="' + esc(a.text || "") + '"></div></li>';
       }
+      // A contrast item shows its words both ways, on the fill they sit on (the file's own
+      // colors, so these are data, not the page's palette), and offers the passing one.
+      if (n.type === "contrast") {
+        var swatch = function (fg, label) {
+          return '<span class="lib-remswatch" style="color:#' + esc(fg) + ";background:#" + esc(n.bg) + '">' + esc(label) + "</span>";
+        };
+        return '<li class="lib-remneed"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
+          '<p class="lib-remswatches">' + swatch(n.fg, "As it is") + swatch(n.fix, "With the fix") + "</p>" +
+          '<label class="lib-check"><input type="checkbox" data-remfix="' + esc(n.id) + '"' + (a.fix ? " checked" : "") + "> Use #" + esc(n.fix) +
+          " instead, the nearest color of the same hue that reads " + esc(n.fixRatio) + ":1</label></div></li>";
+      }
       return '<li class="lib-remneed"><p>' + esc(n.text) + "</p></li>";
     };
     return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
@@ -1083,7 +1099,7 @@
       "</div></div>" +
       '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
-      '<p class="lib-hint">Contrast is not checked here: check it with PowerPoint\'s or Word\'s Accessibility Checker. Save the PDF from PowerPoint or Word with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
+      '<p class="lib-hint">' + (rep.ext === "docx" ? "A Word document\'s contrast is not checked here: check it with Word\'s Accessibility Checker. " : "") + 'Save the PDF from PowerPoint or Word with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
       "</section>";
   }
   // Draft from the picture (Sam, 2026-10-29: "We do a lot of MAP screenshots and hoping
@@ -1151,7 +1167,7 @@
         var a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
         setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
         var d = out.done;
-        say("Downloaded " + name + ": " + rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " + d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written. Open it, run the Accessibility Checker, then file it.");
+        say("Downloaded " + name + ": " + rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " + d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed. Open it, run the Accessibility Checker, then file it.");
         render();
       });
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
@@ -1752,6 +1768,10 @@
         var k1 = e.target.getAttribute("data-remdec");
         state.rem.answers[k1] = state.rem.answers[k1] || {}; state.rem.answers[k1].decorative = e.target.checked;
         render(); var cb = root.querySelector('[data-remdec="' + k1 + '"]'); if (cb) cb.focus();
+      }
+      else if (e.target.getAttribute && e.target.getAttribute("data-remfix") && state.rem) {
+        var k2 = e.target.getAttribute("data-remfix");
+        state.rem.answers[k2] = { fix: e.target.checked };
       }
       else if (/^(la|ls|le)-forkind$/.test(e.target.id || "")) {
         // The type picked decides which fields follow it; repaint, keeping the caret's owner.

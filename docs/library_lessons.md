@@ -741,3 +741,19 @@ What we learned:
   it works.
 - **A long-running test needs its window closed.** A 60-second revoke timer kept the jsdom test alive past its checks;
   `m.w.close()` at the block's end ends it.
+
+## Moved from the lane (S510)
+
+Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money paying a service to remediate our decks before we can publish them to the field after a webinar or training. Can you look at the Library and see if you can make it easy for a user to drag and drop their decks (or other docs) into the library and run a remediation process? We have to do this for written reports as well."* And: one button in place of Make a visual, Start a piece and Add to the Library; one card for a whole project (the ELL IET visual and its document). Mockup, Version 10: https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR. His comments on it: *"can you add a Remediate option?"* (added: *Remediate a deck or document* beside *Make something new* and *File something already made*; the card's action reads Remediate), *"This looks good!"* on the project card, and *"Add a Chip if it is published to the public library"* (added under the card's title), and *"Do we need the Add to the Library link? Would it be simpler to put the link on the card title that matches?"* (each piece's title is its link; List publicly sits on the unlisted piece's row; asked whether he meant the top control).
+
+## A deck's contrast (S510 SkyWineberry, 2026-10-29)
+
+- **Measure against what the words sit on, never the slide's background alone.** The first build read each run against
+  its slide's background and reported 72 failures on five team decks, almost all white text "on white". Our generators
+  lay a text box over a separate filled rectangle, and the Taco Tuesday deck's section layout draws a full-slide navy
+  rectangle beneath its placeholders. Reading the topmost shape drawn before the text that covers its middle, the
+  layout's and master's own shapes included, brought it to 6, and each of those held on a LibreOffice render.
+- **Confirm every remaining finding on a render.** `soffice --headless --convert-to pdf` and `pdftoppm` in the sandbox
+  show the slide; a finding that does not hold on the picture is a bug in the reader, not in the deck.
+- **A fix keeps the hue.** The offered color steps the lightness away from the ground until it clears the bar by 0.1,
+  so a gold kicker stays gold (`E8A32C` to `9D6A11`), and it is ticked by default but shown both ways first.
