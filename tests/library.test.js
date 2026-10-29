@@ -844,7 +844,7 @@ block("(16)", function () {
     drop({ name: "20261030_Webinar.pptx", arrayBuffer: function () { return Promise.resolve(buf); } });
     check("(16) a dropped deck offers Remediate, chosen", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked && /20261030_Webinar\.pptx: what is it for\?/.test(m.root.textContent));
     const auto = doc.getElementById("lc-autodraft");
-    check("(16) Claude drafting every picture is on by default, and says each picture goes to Claude (S517)", !!auto && auto.checked && /Each picture goes to Claude; turn this off for a file that shows a student's record/.test(auto.parentNode.textContent));
+    check("(16) Claude drafting every picture is on by default, and says each picture goes to Claude (S517)", !!auto && auto.checked && /Each picture and the words around it go to Claude; turn this off for a file that shows a student's record/.test(auto.parentNode.textContent));
     click(m.w, doc.getElementById("lib-go"));
     const ready = function (n) { return doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready(n - 1); }); };
     const waiting = function (n) { return doc.querySelector("[data-remshow]") || doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 5); }).then(function () { return waiting(n - 1); }); };
@@ -889,10 +889,11 @@ block("(16)", function () {
       doc.querySelector("#lib-remprog .bar[data-remgoto=alt] .you").style.width === "100%", prog());
     // Draft from the picture still drafts one picture again, on a press.
     click(m.w, doc.querySelector("[data-remai]"));
-    const drafted = function (n) { return aiCalls.length > 1 || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return drafted(n - 1); }); };
+    const drafted = function (n) { return (aiCalls.length > 1 && !/Reading the picture/.test(doc.querySelector("[data-remai]").textContent)) || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return drafted(n - 1); }); };
     return drafted(200);
   }).then(function () {
-    check("(16) Draft from the picture asks again for that one picture", aiCalls.length === 2);
+    check("(16) Redraft from the slide asks again for that one picture, and says what goes", aiCalls.length === 2 && /Redraft from the slide/.test(doc.querySelector("[data-remai]").textContent) &&
+      /Each draft sends one picture and its slide's words to Claude/.test(doc.querySelector(".lib-rem").textContent));
     const alt = doc.querySelector("[data-remtext]");
     const rem = doc.querySelector(".lib-rem");
     alt.value = "Bar chart: units by college"; alt.dispatchEvent(new m.w.Event("input", { bubbles: true }));

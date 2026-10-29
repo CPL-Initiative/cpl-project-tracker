@@ -912,6 +912,14 @@ Sam's session, the day before the 7th Annual CPL Summit, on his first live run o
 - **The standard is the Chancellor's Office's own.** Its 2025 Certificate of Website Accessibility names WCAG 2.2
   at level AA and Government Code 7405, 11135 and 11546.7; its accessibility page names WCAG 2.1 AA. 2.2 AA
   includes 2.1 AA, so the header names both.
+- **Say what the draft reads.** The button is *Draft from the slide*, then *Redraft from the slide* (the section in a
+  Word document, the sheet in a workbook), Sam's naming: *"If we say from the slide, it implies that it's with the
+  context of the slide."* The note under the list says each draft sends one picture and its slide's words, since
+  the words now go too.
+- **One line, said once.** The report's count and the bar's line became one sentence above the bar (Sam: *"make
+  sure none of the information there is redundant"*). Each check's words under the bar are a link to its first
+  item left, or to its line in *Fixed for you*; the bar's part takes a click too, though the words carry the
+  keyboard, since a 10-pixel bar is under WCAG 2.2's 24-pixel target.
 - **A grid item's minimum width is its content's.** A long URL in a hint widened the whole list item past its
   column until the item took `min-width:0` and the hints `overflow-wrap:anywhere`.
 

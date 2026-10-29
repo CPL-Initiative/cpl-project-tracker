@@ -1029,7 +1029,7 @@
         // draft from the picture as a default in the remediate process before this even opens
         // up?"), so each picture leaving the browser is said, and can be turned off, here.
         (pk.file && REMEDIABLE[pk.ext] && pk.ext !== "pdf"
-          ? '<label class="lib-check"><input type="checkbox" id="lc-autodraft"' + (state.autoDraft ? " checked" : "") + "> Draft every picture's alt text with Claude as it reads. Each picture goes to Claude; turn this off for a file that shows a student's record.</label>"
+          ? '<label class="lib-check"><input type="checkbox" id="lc-autodraft"' + (state.autoDraft ? " checked" : "") + "> Draft every picture's alt text with Claude as it reads. Each picture and the words around it go to Claude; turn this off for a file that shows a student's record.</label>"
           : "")
       : "";
     return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
@@ -1133,7 +1133,7 @@
           '<div class="lib-actions-row">' + keepHtml(rm, n) +
           (n.media && THUMB_EXT[extOf(n.media)]
             ? '<button type="button" class="lib-btn" data-remai="' + esc(n.id) + '"' + (rm.ai[n.id] === "busy" ? " disabled" : "") + ">" +
-              (rm.ai[n.id] === "busy" ? "Reading the picture&hellip;" : rm.ai[n.id] === "done" ? "Draft again from the picture" : "Draft from the picture") + "</button>"
+              (rm.ai[n.id] === "busy" ? "Reading the picture&hellip;" : (rm.ai[n.id] === "done" ? "Redraft from the " : "Draft from the ") + remPlace(rm)) + "</button>"
             : "") + "</div>" +
           (n.fromData ? '<p class="lib-hint">Drafted from the chart\'s own numbers.</p>' : rm.ai[n.id] === "done" ? '<p class="lib-hint">Drafted by Claude from the picture and its slide. Read it before you keep it.</p>' :
             a.fromQr ? '<p class="lib-hint">Drafted from the address the QR code reads and the words beside it.</p>' : "") +
@@ -1168,8 +1168,8 @@
       '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
       (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
       (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words. Read each one before you keep it.</p>' : "") +
-      (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Draft every picture") + "</button></div>" : "") +
-      (picNeeds().length ? '<p class="lib-hint">Draft from the picture sends that one picture to Claude to read; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>' : "") +
+      (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Redraft every picture") + "</button></div>" : "") +
+      (picNeeds().length ? '<p class="lib-hint">Each draft sends one picture and its ' + remPlace(rm) + "\'s words to Claude; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>" : "") +
       "</div></div>" +
       '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
@@ -1223,6 +1223,9 @@
   // is left for them. A draft counts as left until a person keeps it (Keep, an edit, or
   // Decorative); a contrast fix the page applies counts as fixed while its box stays on.
   var REM_APP = { pptx: "PowerPoint", docx: "Word", xlsx: "Excel" };
+  // What a draft reads beside the picture (Sam, 2026-10-29: "If we say from the slide, it
+  // implies that it's with the context of the slide"): its slide, section or sheet.
+  function remPlace(rm) { return { pptx: "slide", docx: "section", xlsx: "sheet" }[rm && rm.report && rm.report.ext] || "slide"; }
   // The standards beside the Remediation header (Sam, 2026-10-29: "add next to the
   // Remediation header at the top the standards we are looking to comply with"): the
   // Chancellor's Office's 2025 Certificate of Website Accessibility names WCAG 2.2 AA and
@@ -1460,7 +1463,7 @@
       rm.drafting = null;
       var got = dr.total - dr.failed;
       say(dr.total ? (got ? "Claude drafted " + got + (got === 1 ? " picture" : " pictures") + " from the picture and its slide. Read each one before you keep it." : "") +
-        (dr.failed ? " " + dr.failed + (dr.failed === 1 ? " draft" : " drafts") + " did not come back" + (rm.lastError ? " (" + rm.lastError + ")" : "") + "; those keep a draft from the slide's words, and Draft from the picture tries again." : "") : "", !got && dr.failed > 0);
+        (dr.failed ? " " + dr.failed + (dr.failed === 1 ? " draft" : " drafts") + " did not come back" + (rm.lastError ? " (" + rm.lastError + ")" : "") + "; those keep a draft from the " + remPlace(rm) + "'s words, and Draft from the " + remPlace(rm) + " tries again." : "") : "", !got && dr.failed > 0);
       remRefresh();
       if (!opened) { var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus(); }
     });
