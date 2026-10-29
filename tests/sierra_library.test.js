@@ -160,7 +160,7 @@ const slugs = (q, colleges) => L.matchLibrary(q, PIECES, colleges || []).map((p)
   const vol = (FN.match(/const volatilePart = `([\s\S]*?)`;/) || [])[1] || "";
   const stable = (FN.match(/const stable = `([\s\S]*?)`;/) || [])[1] || "";
   check("(7) ⭐ the block lands in the volatile half, never the cached one",
-    /\$\{libraryContext\}/.test(vol) && !/libraryContext/.test(stable) && /statewideCatalogContext, libraryContext\);/.test(FN));
+    /\$\{libraryContext\}/.test(vol) && !/libraryContext/.test(stable) && /statewideCatalogContext, libraryContext(, faqContext)?\);/.test(FN));
   check("(7) the timing log records which pieces an answer was given",
     /library: \{\s*pieces: libraryMatched\.map\(\(p: any\) => p\.slug\)/.test(FN));
   check("(7) the read is cached and fails soft", /const LIBRARY_TTL_MS = 10 \* 60 \* 1000;/.test(FN) &&
