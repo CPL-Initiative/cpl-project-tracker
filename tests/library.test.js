@@ -27,6 +27,7 @@
 // Run from repo root: `npm test` (or `node tests/library.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
+const { makePdf } = require("./pdf_fixture.js");
 
 const results = [];
 function check(name, cond, why) { results.push([name, !!cond, why]); }
@@ -880,6 +881,21 @@ block("(16)", function () {
     const src = m.M._state.src.ls || [];
     check("(16) a text file used as background is read here into the brief's documents", src.length === 1 && src[0].text === "Eight projects funded." && src[0].title === "notes", JSON.stringify(src));
     check("(16) the instructions name the kind", doc.getElementById("ls-kind").value === "visual");
+    // (16) A PDF is fixed at its source (S513): Remediate reads it, names what made it,
+    // the record that may hold its source, and offers the source file, never a download.
+    const pdf = makePdf({ creator: "Microsoft PowerPoint", title: "Update to the Board of Governors" });
+    drop({ name: "20260716_Update_to_the_Board_of_Governors.pdf", arrayBuffer: function () { return Promise.resolve(pdf); } });
+    check("(16) a dropped PDF offers Remediate, chosen", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked);
+    click(m.w, doc.getElementById("lib-go"));
+    const shown = function (n) { return /What the PDF carries/.test((doc.querySelector(".lib-rem") || {}).textContent || "") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return shown(n - 1); }); };
+    return shown(200);
+  }).then(function () {
+    const rem = doc.querySelector(".lib-rem");
+    const t = rem ? rem.textContent : "";
+    check("(16) the PDF's report says what it carries in words, and where to fix it", /Needs its source: Not tagged/.test(t) && /It was made from a PowerPoint deck \(Microsoft PowerPoint\)/.test(t) && /Create PDF\/XPS/.test(t), t.slice(0, 400));
+    const a = rem && rem.querySelector('a[href="https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/presentations/b.pptx"]');
+    check("(16) the Library record whose title matches is named as its likely source", !!a && a.textContent === "Update to the Board of Governors");
+    check("(16) it offers the source .pptx, and no Remediate and download", !!rem.querySelector('label[for="lc-file"]') && /Choose the source \.pptx/.test(t) && !rem.querySelector("[data-remgo]") && writes.length === 0);
     m.w.close(); // ends the download's one-minute revoke timer with the window
   });
 });

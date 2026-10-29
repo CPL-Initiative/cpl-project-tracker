@@ -781,8 +781,37 @@ Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money
   (`cpl-fact-sheet-2026-02.docx`), confirmed on a render. None of the 84 holds a text box, so the boxes are proved by
   the test's fixture alone.
 
+## A PDF is fixed at its source (S513 SkyLingonberry, 2026-10-29)
+
+- **Office keeps a PDF's catalog in a compressed object stream.** The language, the tags and the title display live in
+  the catalog; read without inflating `/Type/ObjStm`, a Word PDF looks untagged with no language. The reader inflates
+  object streams and the XMP metadata only, never page content.
+- **The first `/Title` or `/Lang` in a file is often the wrong one.** A bookmark carries a `/Title` and a span a `/Lang`;
+  read that way the TMC titles came back as their first heading and the TMCs' language as French. Read the Info
+  dictionary the trailer names and the dictionary around `/Type/Catalog`.
+- **Even so, one ASCCC TMC really is French**: `2023_Nov_Law_Public_Policy_and_Society_TMC_r.pdf`'s catalog reads
+  `/Lang(fr)`, so a screen reader voices its English in French. The report names a language other than English as a gap.
+- **On the team's 55 PDFs** the reads agree with `pdfinfo` (creator, producer, title, tagged): 50 from Word (tagged), two
+  from InDesign, a Chromium print, and an untagged macOS Quartz print (the ADT high-unit STEM letter). A Quartz print
+  names no source program, so the report asks for the file it came from.
+- **The report changes nothing in the PDF.** It names what the PDF carries, the program that made it, any Library
+  record whose title or file name matches, and the export steps (PowerPoint's Create PDF/XPS, Word's Save As PDF, each
+  with *Document structure tags for accessibility*), then offers to choose the source .pptx or .docx.
+
 ## Moved from the lane (S512)
 
 ✅ **④ A deck's contrast is checked (S510).** Each text run's color (its own, else inherited through list style, layout, master and theme) is measured against the fill the words sit on: the shape's own, else the topmost shape drawn before it covering its middle (the layout's and master's own shapes included), else the slide's background through layout and master. Below 4.5:1, or 3:1 for 18pt or 14pt bold, each slide's color pair is one *Needs you* item showing the words both ways, with the nearest passing color of the same hue ticked as the fix; *Remediate and download* writes it onto those runs. Text over a picture, chart, table, gradient or pattern is named for a person (one item). On the five team decks, 6 findings, each confirmed on a render; the first build, against the background alone, reported 72 (`docs/library_lessons.md`, S510). Tests: `library_remediate` (8), `library` (16).
 
 ✅ **⑤ A Word document's contrast is checked (S511).** Each run's color (its own `w:color`, its character and paragraph styles through `basedOn`, the defaults; a theme color with its tint or shade) is measured against its highlight or shading, the paragraph's, the table cell's, else the page color. `auto` never fails. Text in a text box, on patterned shading or in a table its style shades is named for a person (one item). One *Needs you* item per color pair, the fix written as the run's `w:color`. On the team's 82 Word files the findings held on renders (white headers on `#8EAADB` in the quarterly reports, small gold on white in the guidance memo, a stray white-on-white run in the spring update). Tests: `library_remediate` (9).
+
+## Moved from the lane (S513)
+
+✅ **⑥ Headers, footers and text boxes join a Word document's contrast (S512).** Every `word/header*.xml` and `word/footer*.xml` is read beside the body, its item saying *in a header* or *in a footer* and its fix written in that part. A text box's words are measured on its own fill, or on the page when it has none; Word's VML copy in `mc:Fallback` is skipped, so nothing counts twice. A box its theme fills, or a VML-only box, is named for a person. On the team's 84 Word files: one new finding, the fact sheet's gray header line (`#888888`, 3.5:1), held on a render. Test: `library_remediate` (70).
+
+### The ELL IET and DSP pages, Version 2 (Sam's S482 asks; built S482 and S483)
+
+Both agency visuals are on the template at Version 2, each card ending in example articulations and the people in the
+conversation, and both are the public copies (Sam, Sheet 129 cards 2 and 3, *replace*, 03:53Z 2026-10-26). Sierra reads
+the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-deploy run 40329644423, 13:21Z; smoke run
+40331201968, run alone, passed). The full record moved verbatim to
+[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S490)*.
