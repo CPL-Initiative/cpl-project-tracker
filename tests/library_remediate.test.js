@@ -14,7 +14,12 @@
 //   - a picture that already has alt text, or is marked decorative, is left alone;
 //   - the answers land in the file that comes back, and the file still opens as a zip
 //     with the same parts;
-//   - a file that is neither .pptx, .docx nor PDF is refused in words;
+//   - a file that is neither .pptx, .docx, .xlsx nor PDF is refused in words;
+//   - a workbook (12): a sheet left at its default name is asked a name, and the new name
+//     reaches every formula, defined name and chart that points at it (string literals and
+//     another workbook's sheets stay); a chart's alt text drafts from its numbers; a table
+//     with no header row, data with no table and merged cells are listed, never changed;
+//     a package whose targets start with a slash (openpyxl's) is read;
 //   - a PDF is read, never written: its own Info and catalog (in Office's compressed
 //     object streams, never a bookmark's title or a span's language), the program that
 //     made it, and the steps that fix it at that source;
@@ -188,6 +193,34 @@ function stockTitled() {
   for (let n = 2; n <= 12; n++) z.file("ppt/slides/slide" + n + ".xml", slide(""));
   return z.generateAsync({ type: "nodebuffer" });
 }
+// A workbook: Sheet1 holds a table with no header row and data that a formula on
+// Summary and a chart read; Summary merges a title; openpyxl-style absolute targets.
+const S = 'xmlns="http://schemas.openxmlformats.org/spreadsheetml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"';
+function workbook() {
+  const z = new JSZip();
+  z.file("docProps/core.xml", CORE(null));
+  z.file("docProps/app.xml", '<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties" xmlns:vt="http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes"><TitlesOfParts><vt:vector size="2" baseType="lpstr"><vt:lpstr>Sheet1</vt:lpstr><vt:lpstr>Summary</vt:lpstr></vt:vector></TitlesOfParts></Properties>');
+  z.file("xl/workbook.xml", '<workbook ' + S + '><sheets><sheet name="Sheet1" sheetId="1" r:id="rId1"/><sheet name="Summary" sheetId="2" r:id="rId2"/></sheets>' +
+    '<definedNames><definedName name="Colleges">Sheet1!$A$2:$A$4</definedName></definedNames></workbook>');
+  z.file("xl/_rels/workbook.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Target="/xl/worksheets/sheet1.xml"/><Relationship Id="rId2" Target="/xl/worksheets/sheet2.xml"/></Relationships>');
+  z.file("xl/sharedStrings.xml", '<sst ' + S + '><si><t>Colleges by awards</t></si><si><t>College</t></si><si><t>Awards</t></si><si><t>Riverside</t></si><si><t>Norco</t></si><si><t>Moreno Valley</t></si></sst>');
+  const row = (r, a, b) => '<row r="' + r + '"><c r="A' + r + '" t="s"><v>' + a + '</v></c>' + (b == null ? "" : '<c r="B' + r + '"><v>' + b + '</v></c>') + "</row>";
+  z.file("xl/worksheets/sheet1.xml", '<worksheet ' + S + '><sheetData>' + row(1, 0) + row(2, 3, 40) + row(3, 4, 25) + row(4, 5, 12) + '</sheetData>' +
+    '<drawing r:id="rId1"/><tableParts count="1"><tablePart r:id="rId2"/></tableParts></worksheet>');
+  z.file("xl/worksheets/_rels/sheet1.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Target="../drawings/drawing1.xml"/><Relationship Id="rId2" Target="../tables/table1.xml"/></Relationships>');
+  z.file("xl/tables/table1.xml", '<table ' + S + ' id="1" name="Table1" displayName="Awards" ref="A2:B4" headerRowCount="0"/>');
+  z.file("xl/worksheets/sheet2.xml", '<worksheet ' + S + '><sheetData><row r="1"><c r="A1" t="inlineStr"><is><t>Total</t></is></c><c r="B1"><f>SUM(Sheet1!B2:B4)&amp;"Sheet1!"&amp;[1]Sheet1!A1</f><v>77</v></c></row></sheetData>' +
+    '<mergeCells count="1"><mergeCell ref="A1:C1"/></mergeCells></worksheet>');
+  z.file("xl/drawings/drawing1.xml", '<xdr:wsDr xmlns:xdr="http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart">' +
+    '<xdr:twoCellAnchor><xdr:graphicFrame><xdr:nvGraphicFramePr><xdr:cNvPr id="2" name="Chart 1"/><xdr:cNvGraphicFramePr/></xdr:nvGraphicFramePr><a:graphic><a:graphicData><c:chart r:id="rId1"/></a:graphicData></a:graphic></xdr:graphicFrame><xdr:clientData/></xdr:twoCellAnchor>' +
+    '<xdr:twoCellAnchor><xdr:pic><xdr:nvPicPr><xdr:cNvPr id="3" name="Logo" descr="CPL Initiative"/><xdr:cNvPicPr/></xdr:nvPicPr><xdr:blipFill><a:blip r:embed="rId2"/></xdr:blipFill></xdr:pic><xdr:clientData/></xdr:twoCellAnchor></xdr:wsDr>');
+  z.file("xl/drawings/_rels/drawing1.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Target="../charts/chart1.xml"/><Relationship Id="rId2" Target="../media/image1.png"/></Relationships>');
+  z.file("xl/charts/chart1.xml", '<c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><c:chart><c:plotArea><c:barChart><c:ser>' +
+    '<c:cat><c:strRef><c:f>Sheet1!$A$2:$A$4</c:f><c:strCache><c:pt idx="0"><c:v>Riverside</c:v></c:pt><c:pt idx="1"><c:v>Norco</c:v></c:pt><c:pt idx="2"><c:v>Moreno Valley</c:v></c:pt></c:strCache></c:strRef></c:cat>' +
+    '<c:val><c:numRef><c:f>Sheet1!$B$2:$B$4</c:f><c:numCache><c:pt idx="0"><c:v>40</c:v></c:pt><c:pt idx="1"><c:v>25</c:v></c:pt><c:pt idx="2"><c:v>12</c:v></c:pt></c:numCache></c:numRef></c:val></c:ser></c:barChart></c:plotArea></c:chart></c:chartSpace>');
+  z.file("xl/media/image1.png", "png");
+  return z.generateAsync({ type: "nodebuffer" });
+}
 const run = deck().then(function (buf) {
   return R.inspect(buf, "20261030_CPL_Summit_Funding.pptx", ENV);
 }).then(function (s) {
@@ -265,7 +298,7 @@ const run = deck().then(function (buf) {
     check("(5) eleven slides with no title box read as one range", s2.report.needs.some(function (n) { return n.id === "tp" && /^Slides 2 to 12 have no title/.test(n.text); }), JSON.stringify(s2.report.needs.map(function (n) { return n.text; })));
     check("(5) a slide of ten top-level items asks for its reading order, once", s2.report.needs.filter(function (n) { return n.type === "order"; }).length === 1 && s2.report.needs.some(function (n) { return n.id === "ro" && /slide 1:/.test(n.text); }));
   }).then(function () { return R.inspect(Buffer.from("x"), "Notes.txt", ENV); }).then(function () { check("(6) a text file is refused", false); }, function (e) {
-    check("(6) a text file is refused in words that say what it reads", /reads a \.pptx deck, a \.docx document or a PDF/.test(e.message), e.message);
+    check("(6) a text file is refused in words that say what it reads", /reads a \.pptx deck, a \.docx document, an \.xlsx workbook or a PDF/.test(e.message), e.message);
   }).then(function () { return R.inspect(Buffer.from("not a pdf"), "Notes.pdf", ENV); }).then(function () { check("(11) a .pdf that is not a PDF is refused", false); }, function (e) {
     check("(11) a .pdf that is not a PDF is refused in words", /does not read as a PDF/.test(e.message), e.message);
   }).then(function () {
@@ -324,6 +357,33 @@ const run = deck().then(function (buf) {
       });
     });
   });
+}).then(function () {
+  return workbook().then(function (buf) { return R.inspect(buf, "20261029_College_Awards.xlsx", ENV); }).then(function (s) {
+    const rep = s.report, need = function (id) { return rep.needs.filter(function (n) { return n.id === id; })[0]; };
+    check("(12) a workbook reports its sheets and takes its title from the file's name", rep.extent === "2 sheets" && rep.fixed.indexOf("Document title set: College Awards") >= 0, JSON.stringify([rep.extent, rep.fixed]));
+    const sh = need("s1");
+    check("(12) a sheet at its default name is asked a name, drafted from its first words; a named one is not", !!sh && sh.type === "sheet" && sh.draft === "Colleges by awards" && !need("s2"), JSON.stringify(rep.needs));
+    const alts = rep.needs.filter(function (n) { return n.type === "alt"; });
+    check("(12) the chart needs alt text, drafted from its numbers; the picture with alt text is left alone", alts.length === 1 && alts[0].chart && alts[0].fromData && /^Bar chart: Colleges by awards\. Riverside 40; Norco 25; Moreno Valley 12\.$/.test(alts[0].draft), JSON.stringify(alts));
+    check("(12) a table with no header row is named, and left as it is", /^Awards on Sheet1 has no header row/.test((need("th") || {}).text || ""));
+    check("(12) merged cells are named with their sheet", /^Merged cells on Summary \(1\)/.test((need("mc") || {}).text || ""));
+    check("(12) data already in a table is not listed as loose", !need("tl"));
+    return R.finish(s, { s1: { text: "Awards: by college?" }, [alts[0].id]: { text: "Bar chart of awards by college." } }, "nodebuffer");
+  }).then(function (out) {
+    check("(12) finish renames the sheet and writes the chart's alt text", out.done.sheets === 1 && out.done.alt === 1, JSON.stringify(out.done));
+    return JSZip.loadAsync(out.file).then(function (z) {
+      return Promise.all(["xl/workbook.xml", "xl/worksheets/sheet2.xml", "xl/charts/chart1.xml", "docProps/app.xml", "xl/drawings/drawing1.xml"].map(function (p) { return z.file(p).async("string"); }));
+    }).then(function (x) {
+      check("(12) the new name drops the characters Excel refuses", /<sheet name="Awards by college" /.test(x[0]), x[0]);
+      check("(12) the defined name follows the sheet", /<definedName name="Colleges">'Awards by college'!\$A\$2:\$A\$4<\/definedName>/.test(x[0]), x[0]);
+      check("(12) the formula follows; its string literal and the other workbook's sheet stay", x[1].indexOf("SUM('Awards by college'!B2:B4)&amp;\"Sheet1!\"&amp;[1]Sheet1!A1") >= 0, x[1]);
+      check("(12) the chart's series follow", (x[2].match(/'Awards by college'!/g) || []).length === 2 && !/Sheet1/.test(x[2]));
+      check("(12) the list of parts follows", /<vt:lpstr>Awards by college<\/vt:lpstr>/.test(x[3]));
+      check("(12) the alt text lands on the chart's frame", /<xdr:cNvPr id="2" name="Chart 1" descr="Bar chart of awards by college\."/.test(x[4]), x[4]);
+    });
+  });
+}).then(function () {
+  check("(12) renameRefs leaves a sheet it was not asked about", R._renameRefs("Other!A1+'Sheet 1'!B2", { "sheet 1": "Data" }) === "Other!A1+'Data'!B2");
 }).then(function () {
   return contrastWord().then(function (buf) { return R.inspect(buf, "Contrast.docx", ENV); }).then(function (s) {
     const cs = s.report.needs.filter(function (n) { return n.type === "contrast"; });

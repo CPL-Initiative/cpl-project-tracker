@@ -1,5 +1,5 @@
-// library_remediate.js — accessibility remediation of a deck (.pptx) or a Word
-// document (.docx), in the browser, for the Library's Create or Remediate a Document.
+// library_remediate.js — accessibility remediation of a deck (.pptx), a Word
+// document (.docx) or an Excel workbook (.xlsx), in the browser, for the Library's Create or Remediate a Document.
 //
 // Sam, 2026-10-28: "PPT accessibility remediation is top of mind as we spend a bunch of
 // money paying a service to remediate our decks before we can publish them to the field
@@ -23,6 +23,11 @@
 //                  the body, the headers and the footers (the nearest
 //                  passing color of the same hue offered as the fix either way).
 //
+// A workbook (lane NEXT, S514): its title, and a header row on each table, a name for
+// each sheet that says what it holds (renamed in every formula, defined name and chart
+// that points at it), alt text on each picture and chart, merged cells, and data laid
+// out with no table, listed for a person.
+//
 // A PDF is read, never written: its tags, title and language come from the program that
 // exported it, so the report names that program and the steps that fix it at its source.
 //
@@ -43,7 +48,10 @@
     rel: "http://schemas.openxmlformats.org/package/2006/relationships",
     adec: "http://schemas.microsoft.com/office/drawing/2017/decorative",
     wps: "http://schemas.microsoft.com/office/word/2010/wordprocessingShape",
-    mc: "http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc: "http://schemas.openxmlformats.org/markup-compatibility/2006",
+    s: "http://schemas.openxmlformats.org/spreadsheetml/2006/main",
+    xdr: "http://schemas.openxmlformats.org/drawingml/2006/spreadsheetDrawing",
+    vt: "http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes"
   };
   var DECORATIVE_URI = "{C183D7F6-B498-43B3-948B-1728B52AA6E4}";
   var LANG = "en-US";
@@ -125,7 +133,8 @@
       var out = {};
       if (!d) return out;
       els(d, NS.rel, "Relationship").forEach(function (r) {
-        var t = r.getAttribute("Target") || "", parts = (dir + t).split("/"), stack = [];
+        // A target starting with a slash is from the package's root (openpyxl writes them so).
+        var t = r.getAttribute("Target") || "", parts = (t.charAt(0) === "/" ? t : dir + t).split("/"), stack = [];
         parts.forEach(function (p) { if (p === "..") stack.pop(); else if (p && p !== ".") stack.push(p); });
         out[r.getAttribute("Id")] = r.getAttribute("TargetMode") === "External" ? t : stack.join("/");
       });
@@ -196,7 +205,7 @@
       if (!rows.length) return "";
       rows.forEach(function (r) { r.total = r.vals.reduce(function (a, b) { return a + (b || 0); }, 0); });
       rows.sort(function (a, b) { return b.total - a.total; });
-      var fmt = function (n) { return Math.abs(n) >= 1000 ? n.toLocaleString("en-US") : String(Math.round(n * 100) / 100); };
+      var fmt = function (n) { return Math.abs(n) >= 1000 ? Math.round(n).toLocaleString("en-US") : String(Math.round(n * 100) / 100); };
       var multi = sers.length > 1;
       var cap = multi ? 4 : 6;
       var shown = rows.slice(0, cap).map(function (r) {
@@ -822,6 +831,137 @@
     });
   }
 
+  // ── an Excel workbook (lane NEXT, S514) ─────────────────────────────────────────
+  // What Excel's own Accessibility Checker asks of a workbook: a name for each sheet,
+  // a header row on each table, alt text on each picture and chart, and no merged cells.
+  // A table's header row is listed, never switched on here: turning it on makes the
+  // table's first row of data its headers. A sheet's new name reaches every formula,
+  // defined name and chart that points at it (renameSheets).
+  var DEFAULT_SHEET = /^(sheet|feuil|hoja|tabelle|blad|foglio|planilha)\s*\d+$/i;
+  function cellText(c, shared) {
+    var t = c.getAttribute("t"), v = child(c, NS.s, "v");
+    if (t === "inlineStr") { var is = child(c, NS.s, "is"); return is ? textOf(is, NS.s) : ""; }
+    if (!v) return "";
+    if (t === "s") return shared[+v.textContent] || "";
+    return v.textContent;
+  }
+  function sheetList(names) {
+    return names.length > 1 ? names.slice(0, -1).join(", ") + " and " + names[names.length - 1] : names[0];
+  }
+  function inspectXlsx(doc, name, report) {
+    var wbPath = "xl/workbook.xml";
+    return Promise.all([doc.read(wbPath), doc.rels(wbPath), doc.read("xl/sharedStrings.xml")]).then(function (got) {
+      var wb = got[0], wbRels = got[1], ss = got[2];
+      if (!wb) throw new Error("This file has no xl/workbook.xml, so it is not an Excel workbook.");
+      var shared = ss ? els(ss, NS.s, "si").map(function (si) { return textOf(si, NS.s); }) : [];
+      var sheets = els(wb, NS.s, "sheet").map(function (el, i) {
+        return { n: i + 1, name: el.getAttribute("name") || "", hidden: /hidden/.test(el.getAttribute("state") || ""),
+          path: wbRels[el.getAttributeNS(NS.r, "id") || el.getAttribute("r:id")] };
+      }).filter(function (sh) { return sh.path && !sh.hidden; });
+      report.extent = sheets.length + (sheets.length === 1 ? " sheet" : " sheets");
+      var noHeader = [], merged = [], loose = [], k = 0;
+      return sheets.reduce(function (pr, sh) {
+        return pr.then(function () {
+          return Promise.all([doc.read(sh.path), doc.rels(sh.path)]).then(function (g) {
+            var x = g[0], rels = g[1];
+            if (!x) return;
+            // The first words on the sheet (often its title), and how much is laid out
+            // as rows of two or more cells: data a table should hold.
+            var words = "", rows = 0;
+            els(x, NS.s, "row").forEach(function (row) {
+              var filled = els(row, NS.s, "c").map(function (c) { return cellText(c, shared); }).filter(function (t) { return String(t).trim(); });
+              if (!words && filled.length) words = String(filled[0]).trim();
+              if (filled.length >= 2) rows++;
+            });
+            sh.words = words;
+            if (DEFAULT_SHEET.test(sh.name.trim()) || !sh.name.trim())
+              report.needs.push({ type: "sheet", id: "s" + sh.n, path: wbPath, sheetName: sh.name,
+                text: "Sheet " + sh.n + " is named " + sh.name, ask: "type a name that says what it holds",
+                draft: words && !/^\d/.test(words) ? clip(words.replace(/[\[\]:*?\/\\]/g, " ").replace(/\s+/g, " ").replace(/^'+|'+$/g, "").trim(), 31).replace(/…$/, "").trim() : "" });
+            var mc = els(x, NS.s, "mergeCell").length;
+            if (mc) merged.push(sh.name + " (" + mc + ")");
+            var tableIds = els(x, NS.s, "tablePart").map(function (t) { return rels[t.getAttributeNS(NS.r, "id") || t.getAttribute("r:id")]; }).filter(Boolean);
+            if (!tableIds.length && rows >= 3) loose.push(sh.name);
+            var drawing = els(x, NS.s, "drawing").map(function (dr) { return rels[dr.getAttributeNS(NS.r, "id") || dr.getAttribute("r:id")]; })[0];
+            return Promise.all(tableIds.map(function (tp) {
+              return doc.read(tp).then(function (t) {
+                if (!t || t.documentElement.getAttribute("headerRowCount") !== "0") return;
+                noHeader.push((t.documentElement.getAttribute("displayName") || t.documentElement.getAttribute("name") || "A table") + " on " + sh.name);
+              });
+            })).then(function () {
+              if (!drawing) return;
+              return Promise.all([doc.read(drawing), doc.rels(drawing)]).then(function (dg) {
+                var dx = dg[0], drels = dg[1];
+                if (!dx) return;
+                var about = DEFAULT_SHEET.test(sh.name) ? words : sh.name;
+                els(dx, NS.xdr, "pic").concat(els(dx, NS.xdr, "graphicFrame").filter(function (gf) { return !!first(gf, NS.c, "chart"); }))
+                  .forEach(function (shape) {
+                    var cNvPr = first(shape, NS.xdr, "cNvPr");
+                    if (!cNvPr || isDecorative(cNvPr) || (cNvPr.getAttribute("descr") || "").trim()) return;
+                    var isChart = shape.localName === "graphicFrame";
+                    var blip = first(shape, NS.a, "blip"), target = blip ? drels[blip.getAttributeNS(NS.r, "embed")] : null;
+                    var chartEl = isChart ? first(shape, NS.c, "chart") : null;
+                    k++;
+                    report.needs.push({ type: "alt", id: "a" + k, path: drawing, shapeId: cNvPr.getAttribute("id"), media: target || null, chart: isChart,
+                      chartPart: chartEl ? drels[chartEl.getAttributeNS(NS.r, "id")] || null : null, words: about || "",
+                      label: sh.name + ", " + (isChart ? "chart" : "picture") + (cNvPr.getAttribute("name") ? " (" + cNvPr.getAttribute("name") + ")" : ""),
+                      draft: about ? clip((isChart ? "Chart: " : "") + about, 150) : "" });
+                  });
+              });
+            });
+          });
+        });
+      }, Promise.resolve()).then(function () {
+        if (noHeader.length) report.needs.push({ type: "info", id: "th", text: sheetList(noHeader) + (noHeader.length === 1 ? " has" : " have") +
+          " no header row. In Excel, click in the table and tick Header Row (Table Design), then type a heading over each column; a screen reader announces them with each cell." });
+        if (loose.length) report.needs.push({ type: "info", id: "tl", text: "The data on " + sheetList(loose) + " is not in a table, so a screen reader cannot name each cell's column. In Excel, select the data, choose Insert, Table, and tick My table has headers." });
+        if (merged.length) report.needs.push({ type: "info", id: "mc", text: "Merged cells on " + sheetList(merged) + ": a screen reader can lose its place in them. Unmerge them (Home, Merge and Center); for a title across columns, use Center Across Selection (Format Cells, Alignment)." });
+        report.sheets = sheets.map(function (sh) { return { n: sh.n, name: sh.name }; });
+        return draftCharts(doc, report).then(function () { return fixTitle(doc, titleFromName(name), report); });
+      });
+    });
+  }
+  // A sheet's new name in every place that points at it: formulas, data validation and
+  // conditional formatting on each sheet, the workbook's defined names, each chart's
+  // series, a pivot cache's source, and the list of parts in docProps/app.xml. A quoted
+  // name is always valid in a formula, so each new reference is quoted. Text in a
+  // formula's string literals and a reference into another workbook ([1]Sheet1!) stay.
+  function sheetKey(n) { return String(n).toLowerCase(); }
+  function renameRefs(f, map) {
+    return f.replace(/("(?:[^"]|"")*")|(\[[^\]]*\])?('(?:[^']|'')+'|[A-Za-z_À-￿][\w.À-￿]*)!/g, function (m, str, ext, nm) {
+      if (str || ext) return m;
+      var bare = nm.charAt(0) === "'" ? nm.slice(1, -1).replace(/''/g, "'") : nm;
+      var to = map[sheetKey(bare)];
+      return to == null ? m : "'" + to.replace(/'/g, "''") + "'!";
+    });
+  }
+  function renameSheets(doc, map) {
+    var paths = Object.keys(doc.zip.files).filter(function (p) {
+      return /^xl\/(workbook\.xml|worksheets\/[^/]+\.xml|charts\/[^/]+\.xml|pivotCache\/[^/]+\.xml)$/.test(p) || p === "docProps/app.xml";
+    });
+    return Promise.all(paths.map(function (path) {
+      return doc.read(path).then(function (d) {
+        if (!d) return;
+        var changed = false;
+        var refs = path === "docProps/app.xml" ? [] : els(d, NS.s, "definedName").concat(els(d, NS.s, "f"), els(d, NS.s, "formula"),
+          els(d, NS.s, "formula1"), els(d, NS.s, "formula2"), els(d, NS.c, "f"), els(d, "http://schemas.microsoft.com/office/excel/2006/main", "f"));
+        refs.forEach(function (el) {
+          var t = el.textContent, nt = renameRefs(t, map);
+          if (nt !== t) { el.textContent = nt; changed = true; }
+        });
+        els(d, NS.s, "worksheetSource").forEach(function (src) {
+          var to = map[sheetKey(src.getAttribute("sheet") || "")];
+          if (to != null) { src.setAttribute("sheet", to); changed = true; }
+        });
+        if (path === "docProps/app.xml") els(d, NS.vt, "lpstr").forEach(function (el) {
+          var to = map[sheetKey(el.textContent)];
+          if (to != null) { el.textContent = to; changed = true; }
+        });
+        if (changed) doc.touch(path);
+      });
+    }));
+  }
+
   function draftCharts(doc, report) {
     return Promise.all(report.needs.filter(function (n) { return n.type === "alt" && n.chartPart; }).map(function (n) {
       return chartDraft(doc, n.chartPart, n.words).then(function (t) { if (t) { n.draft = t; n.fromData = true; } });
@@ -1003,12 +1143,12 @@
     var ext = (/\.([a-z0-9]+)$/i.exec(name || "") || [])[1];
     ext = ext ? ext.toLowerCase() : "";
     if (ext === "pdf") return inspectPdf(buf, name, env);
-    if (ext !== "pptx" && ext !== "docx") return Promise.reject(new Error("Remediation reads a .pptx deck, a .docx document or a PDF. Save the file in one of those and drop it again."));
+    if (ext !== "pptx" && ext !== "docx" && ext !== "xlsx") return Promise.reject(new Error("Remediation reads a .pptx deck, a .docx document, an .xlsx workbook or a PDF. Save the file in one of those and drop it again."));
     if (!env.JSZip) return Promise.reject(new Error("The zip reader did not load. Reload the page and try again."));
     return env.JSZip.loadAsync(buf).then(function (zip) {
       var doc = new Doc(env, zip);
       var report = { name: name, ext: ext, fixed: [], needs: [], extent: "" };
-      return (ext === "pptx" ? inspectPptx : inspectDocx)(doc, name, report).then(function () {
+      return ({ pptx: inspectPptx, docx: inspectDocx, xlsx: inspectXlsx })[ext](doc, name, report).then(function () {
         return { report: report, doc: doc };
       });
     });
@@ -1017,7 +1157,8 @@
   // answers: { [needId]: { text, decorative } }. Writes them, then returns the file.
   // type: "blob" in the browser, "nodebuffer" in Node.
   function finish(session, answers, type) {
-    var doc = session.doc, report = session.report, done = { alt: 0, decorative: 0, titles: 0, colors: 0 };
+    var doc = session.doc, report = session.report, done = { alt: 0, decorative: 0, titles: 0, colors: 0, sheets: 0 };
+    var renames = {};
     answers = answers || {};
     var byPath = {};
     report.needs.forEach(function (n) { if (n.path) (byPath[n.path] = byPath[n.path] || []).push(n); });
@@ -1027,7 +1168,7 @@
           var ans = answers[n.id];
           if (!ans) return;
           if (n.type === "alt") {
-            var tag = report.ext === "pptx" ? els(d, NS.p, "cNvPr") : els(d, NS.wp, "docPr");
+            var tag = report.ext === "pptx" ? els(d, NS.p, "cNvPr") : report.ext === "xlsx" ? els(d, NS.xdr, "cNvPr") : els(d, NS.wp, "docPr");
             var pr = tag.filter(function (x) { return x.getAttribute("id") === n.shapeId; })[0];
             if (!pr) return;
             if (ans.decorative) { markDecorative(pr); done.decorative++; }
@@ -1050,6 +1191,18 @@
             var end = child(para, NS.a, "endParaRPr");
             para.insertBefore(run, end);
             doc.touch(path); done.titles++;
+          } else if (n.type === "sheet" && (ans.text || "").trim()) {
+            // Excel's rules for a sheet name: 31 characters at most, none of [ ] : * ? / \,
+            // no apostrophe at either end, not History, and no two alike.
+            var nm = ans.text.replace(/[\[\]:*?\/\\]/g, " ").replace(/\s+/g, " ").trim().replace(/^'+|'+$/g, "").slice(0, 31).trim();
+            var all = els(d, NS.s, "sheet");
+            var el = all.filter(function (x) { return x.getAttribute("name") === n.sheetName; })[0];
+            var taken = all.some(function (x) { return x !== el && sheetKey(x.getAttribute("name")) === sheetKey(nm); }) ||
+              Object.keys(renames).some(function (o) { return sheetKey(renames[o]) === sheetKey(nm); });
+            if (!el || !nm || nm === n.sheetName || /^history$/i.test(nm) || taken) return;
+            el.setAttribute("name", nm);
+            renames[sheetKey(n.sheetName)] = nm;
+            doc.touch(path); done.sheets++;
           } else if (n.type === "contrast" && ans.fix) {
             var k = report.ext === "pptx" ? applyContrast(d, n) : applyContrastDocx(d, n);
             if (k) { doc.touch(path); done.colors += k; }
@@ -1057,9 +1210,12 @@
         });
       });
     })).then(function () {
+      return Object.keys(renames).length ? renameSheets(doc, renames) : null;
+    }).then(function () {
       doc.flush();
       return doc.zip.generateAsync({ type: type || "blob", compression: "DEFLATE",
         mimeType: report.ext === "pptx" ? "application/vnd.openxmlformats-officedocument.presentationml.presentation"
+          : report.ext === "xlsx" ? "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
           : "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
     }).then(function (file) { return { file: file, done: done }; });
   }
@@ -1068,7 +1224,7 @@
   // keeping its date code (CLAUDE.md: a re-version keeps the date code).
   function outName(name) { return String(name || "file").replace(/(\.[a-z0-9]+)$/i, "_Remediated$1"); }
 
-  var api = { inspect: inspect, finish: finish, outName: outName, _pdfSource: pdfSource, _titleFromName: titleFromName, _ratio: ratio, _passingColor: passingColor };
+  var api = { inspect: inspect, finish: finish, outName: outName, _pdfSource: pdfSource, _titleFromName: titleFromName, _renameRefs: renameRefs, _ratio: ratio, _passingColor: passingColor };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.CPL_REMEDIATE = api;
 })(typeof window !== "undefined" ? window : this);
