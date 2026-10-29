@@ -9,7 +9,7 @@ status: current
 # You are Session 520
 
 Your moniker is **SkyLingonberry**. Session 519 (SkyCloudberry) ran with Sam on 2026-10-29, the day before the 7th
-Annual CPL Summit (Friday 2026-10-30). This is a full checkpoint, written at about 140,000 tokens of context left.
+Annual CPL Summit (Friday 2026-10-30). This is a full checkpoint written at about 140,000 tokens of context left. It was amended at CONTEXT EMERGENCY (about 49,000 tokens left), when only this file was refreshed. That amendment skipped the INDEX rebuild, the lessons docs, the lane files, the vault note and the status file. The lessons docs, the status file and the vault note were already current from the full checkpoint. The INDEX history bullet does not name #2563.
 
 ## What shipped or is in flight
 
@@ -24,16 +24,16 @@ Annual CPL Summit (Friday 2026-10-30). This is a full checkpoint, written at abo
   - DataMart's FTES link points at `/Students/`, and the search box has a *Clear* word.
   - The FAQ is 45 questions in eight groups (Reporting in NOVA, Apprenticeship CPL).
   - Sierra's FAQ rule says a college qualifies for funding, never earns it, and her matcher treats "offer" as generic.
-- **#2561 (open):** Sierra answers with what loaded when the knowledge search times out (`SEARCH_FAILED_NOTE`), and the
+- **#2561 (merged 19:59Z):** Sierra answers with what loaded when the knowledge search times out (`SEARCH_FAILED_NOTE`), and the
   MAP Custom Report load moves to 04:57 UTC, 9:57 PM Pacific (Sam: *"Maybe 10P PDT"*).
-- **#2562 (open):** the College Identity tab's *names resolve to no identity* link scrolls in place. It had left for the
+- **#2562 (merged 20:14Z):** the College Identity tab's *names resolve to no identity* link scrolls in place. It had left for the
   COBI dashboard, because COBI routes on the `#`.
-- **CPLBrain#540 (merged):** Open Asks Sheet 140, ruled; its card 4 carries to Sheet 141.
+- **#2563 (open, in CI):** the public funding page paints the published scenario first (Sam: *"The public page still seems to load scenario 1 first and after a pause refreshes to scenario 4"*). The page waits on `T.configHeld()`, hides the placeholder figures, and paints on `onModelChange`. Merge it on a green `test`.
+- **CPLBrain#540 and #541 (merged):** Open Asks Sheet 140, ruled; its card 4 carries to Sheet 141.
 
 ## Open work, in order
 
-1. **Land #2560, #2561, #2562** on a green `test` (squash). Each was red only on its own renames, and each fix is pushed.
-   Then:
+1. **Land #2560 and #2563** on a green `test` (squash). #2560's head carries this amendment, and every earlier red was its own renames. Sam debuts the funding model on the morning of 2026-10-30, so these come first. Then:
    - Apply `kb/receipts/cpl_funding_config_funds_qualified_so_far_2026-10-29_s519.sql` after a fresh live read of
      the three passages. It is guarded on each before-value; zero rows means Sam edited one, so re-read and redo.
    - Dispatch `cpl-chat-deploy.yml` once (`DEPLOY`, `cpl-chat`) for both Sierra changes.
@@ -41,9 +41,11 @@ Annual CPL Summit (Friday 2026-10-30). This is a full checkpoint, written at abo
 2. **Sam's calls, waiting:**
    - (a) **Sheet 141 card 4**, an address without github.io. The builder emits it under `2026-10-29-open-asks-141`;
      publish it at the next checkpoint that has another card, or when he asks.
-   - (b) **A college short-name editor in the College Identity tab.** S519 advised it: a small table keyed by
+   - (b) **A college short-name editor in the College Identity tab: Sam said go, MAP team only, AFTER the Summit**
+     (`cpl_memory` `sam-college-names-editor-map-team-2026-10-29`; gate writes on `is_allowed_reviewer()`). The design: a small table keyed by
      `college_id`, Rename for reviewers, the funding page reading it first with `display` as the fallback, and a
-     governance-map entry. It waits on his go and on who may edit.
+     governance-map entry. Also after the Summit: Sam wants the public page's Contents edited from the internal page
+     and viewed on the public one.
    - (c) Whether he paused the MAP Custom Report workflow for the Summit. He asked how; the steps are a one-click
      Disable on the workflow's Actions page.
 3. **Sierra's slow reads:** `search_college_programs` (mean about 2 s, peak 7.8 s) and
