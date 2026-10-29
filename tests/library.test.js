@@ -775,9 +775,13 @@ function remDeck() {
   const ns = 'xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:p="http://schemas.openxmlformats.org/presentationml/2006/main"';
   z.file("docProps/core.xml", '<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties" xmlns:dc="http://purl.org/dc/elements/1.1/"><dc:title></dc:title></cp:coreProperties>');
   z.file("ppt/slides/slide1.xml", '<p:sld ' + ns + '><p:cSld><p:spTree><p:sp><p:nvSpPr><p:cNvPr id="2" name="Title 1"/><p:cNvSpPr/><p:nvPr><p:ph type="title"/></p:nvPr></p:nvSpPr><p:txBody><a:bodyPr/><a:p><a:r><a:rPr/><a:t>Where the funding goes</a:t></a:r></a:p></p:txBody></p:sp>' +
-    '<p:pic><p:nvPicPr><p:cNvPr id="4" name="Picture 3"/><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="rId2"/></p:blipFill><p:spPr/></p:pic></p:spTree></p:cSld></p:sld>');
-  z.file("ppt/slides/_rels/slide1.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId2" Type="image" Target="../media/image1.png"/></Relationships>');
+    '<p:pic><p:nvPicPr><p:cNvPr id="4" name="Picture 3"/><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="rId2"/></p:blipFill><p:spPr><a:xfrm><a:off x="600000" y="1500000"/><a:ext cx="5000000" cy="3000000"/></a:xfrm></p:spPr></p:pic>' +
+    // A QR code (S517) with its label just below it.
+    '<p:pic><p:nvPicPr><p:cNvPr id="6" name="Picture 5"/><p:cNvPicPr/><p:nvPr/></p:nvPicPr><p:blipFill><a:blip r:embed="rId3"/></p:blipFill><p:spPr><a:xfrm><a:off x="8000000" y="1500000"/><a:ext cx="2000000" cy="2000000"/></a:xfrm></p:spPr></p:pic>' +
+    '<p:sp><p:nvSpPr><p:cNvPr id="7" name="TextBox 6"/><p:cNvSpPr txBox="1"/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="7800000" y="3600000"/><a:ext cx="2400000" cy="400000"/></a:xfrm></p:spPr><p:txBody><a:bodyPr/><a:p><a:r><a:rPr sz="2000"/><a:t>MAP Website</a:t></a:r></a:p></p:txBody></p:sp></p:spTree></p:cSld></p:sld>');
+  z.file("ppt/slides/_rels/slide1.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId2" Type="image" Target="../media/image1.png"/><Relationship Id="rId3" Type="image" Target="../media/qr.png"/></Relationships>');
   z.file("ppt/media/image1.png", "png");
+  z.file("ppt/media/qr.png", "qr png");
   return z.generateAsync({ type: "uint8array" }).then(function (u8) { return u8.buffer; });
 }
 // ── (16) Create or Remediate a Document (Sam, 2026-10-28; mockup Version 20) ──
@@ -785,7 +789,10 @@ function remDeck() {
 block("(16)", function () {
   const writes = [];
   const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
-    if (/functions\/v1\/alt-text-draft/.test(url)) { aiCalls.push({ headers: init.headers, body: JSON.parse(init.body) }); return response(200, { alt: "Screenshot of the MAP CPL Dashboard's CPL Opportunities view", decorative: false }); }
+    if (/functions\/v1\/alt-text-draft/.test(url)) {
+      aiCalls.push({ headers: init.headers, body: JSON.parse(init.body) });
+      return new Promise(function (r) { setTimeout(function () { r(response(200, { alt: "Screenshot of the MAP CPL Dashboard's CPL Opportunities view", decorative: false })); }, 40); });
+    }
     if (init && init.method && init.method !== "GET") { writes.push({ url: url, body: JSON.parse(init.body || "{}") }); return response(201, [{}]); }
     return response(200, ROWS);
   } });
@@ -825,33 +832,63 @@ block("(16)", function () {
     // The remediation module and its zip reader, as the page loads them on demand.
     m.w.JSZip = require("../jszip.min.js");
     m.w.CPL_REMEDIATE = require("../library_remediate.js");
+    // The browser's image, canvas and QR reader, stood in for jsdom: the second picture
+    // read (the QR code) holds a code; the first does not.
+    m.w.URL.createObjectURL = function () { return "blob:pic"; };
+    m.w.URL.revokeObjectURL = function () {};
+    m.w.Image = function () { const self = this; Object.defineProperty(this, "src", { set: function () { self.naturalWidth = 3136; self.naturalHeight = 1000; setTimeout(function () { self.onload(); }, 0); } }); };
+    m.w.HTMLCanvasElement.prototype.getContext = function () { return { drawImage: function () {}, fillRect: function () {}, getImageData: function (x, y, w, h) { return { data: new Uint8ClampedArray(4), width: w, height: h }; } }; };
+    m.w.HTMLCanvasElement.prototype.toDataURL = function () { return "data:image/png;base64,QUJD"; };
+    let qrReads = 0;
+    m.w.jsQR = function () { qrReads++; return qrReads === 2 ? { data: "https://map.rccd.edu/" } : null; };
     drop({ name: "20261030_Webinar.pptx", arrayBuffer: function () { return Promise.resolve(buf); } });
     check("(16) a dropped deck offers Remediate, chosen", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked && /20261030_Webinar\.pptx: what is it for\?/.test(m.root.textContent));
+    const auto = doc.getElementById("lc-autodraft");
+    check("(16) Claude drafting every picture is on by default, and says each picture goes to Claude (S517)", !!auto && auto.checked && /Each picture goes to Claude; turn this off for a file that shows a student's record/.test(auto.parentNode.textContent));
     click(m.w, doc.getElementById("lib-go"));
     const ready = function (n) { return doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready(n - 1); }); };
-    return ready(200);
+    const waiting = function (n) { return doc.querySelector("[data-remshow]") || doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 5); }).then(function () { return waiting(n - 1); }); };
+    return waiting(400).then(function () {
+      check("(16) the report waits while Claude drafts, and says so", !doc.querySelector("[data-remgo]") && /Reading the pictures|Claude is drafting alt text/.test(doc.querySelector(".lib-rem").textContent) && !!doc.querySelector("[data-remshow]"));
+      return ready(300);
+    });
   }).then(function () {
     const rem = doc.querySelector(".lib-rem");
     check("(16) Remediate reads the deck here and reports Fixed for you and Needs you", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Needs you \(\d+\)/.test(rem.textContent) && writes.length === 0, rem && rem.textContent.slice(0, 300));
     check("(16) the title it set is listed", /Document title set: Where the funding goes/.test(rem.textContent));
     check("(16) a deck's contrast is checked here, so the page no longer sends it to the Accessibility Checker", !/contrast is not checked here/i.test(rem.textContent));
-    const alt0 = doc.querySelector("[data-remtext]");
-    check("(16) the picture's alt text field holds a draft from the slide's title, and offers Decorative", !!alt0 && alt0.value === "Where the funding goes" && !!doc.querySelector("[data-remdec]"));
-    // Draft from the picture: the browser's image and canvas, stood in for jsdom.
-    m.w.URL.createObjectURL = function () { return "blob:pic"; };
-    m.w.URL.revokeObjectURL = function () {};
-    m.w.Image = function () { const self = this; Object.defineProperty(this, "src", { set: function () { self.naturalWidth = 3136; self.naturalHeight = 1000; setTimeout(function () { self.onload(); }, 0); } }); };
-    m.w.HTMLCanvasElement.prototype.getContext = function () { return { drawImage: function () {} }; };
-    m.w.HTMLCanvasElement.prototype.toDataURL = function () { return "data:image/png;base64,QUJD"; };
-    check("(16) a picture offers Draft from the picture, and says it sends only that picture", !!doc.querySelector("[data-remai]") && /sends that one picture to Claude/.test(rem.textContent));
+    const fields = doc.querySelectorAll("[data-remtext]"), alt0 = fields[0], qrField = fields[1];
+    check("(16) the report opens with Claude's draft in place, and says Claude drafted it", alt0.value === "Screenshot of the MAP CPL Dashboard's CPL Opportunities view" && /Drafted by Claude from the picture and its slide/.test(rem.textContent), alt0.value);
+    const c = aiCalls[0] || { headers: {}, body: {} };
+    check("(16) the picture goes to alt-text-draft shrunk to 1568 pixels, with the team phrase and the slide's words", c.body.image === "QUJD" && c.body.media_type === "image/png" && c.headers["x-team-pass"] === "p" &&
+      /^The slide's title: Where the funding goes\nOther words on the slide, top to bottom: MAP Website$/.test(c.body.context), JSON.stringify(c.body).slice(0, 300));
+    check("(16) a QR code the page read keeps its own draft, the address and the label below it, and is not sent to Claude", aiCalls.length === 1 && qrField.value === "QR code to MAP Website, map.rccd.edu" &&
+      /The QR code reads https:\/\/map\.rccd\.edu\/\./.test(rem.textContent) && /On the slide, just below it: “MAP Website”/.test(rem.textContent), qrField.value + " / " + aiCalls.length);
+    const slides = rem.querySelectorAll(".lib-remslide");
+    check("(16) each picture shows its slide to its left, the picture outlined", slides.length === 2 && slides[0].querySelectorAll(".lib-remhit").length === 1 && /Slide 1 as laid out, the picture outlined/.test(slides[0].getAttribute("aria-label")) &&
+      slides[0].parentNode.nextElementSibling.classList.contains("lib-remthumb"));
+    click(m.w, rem.querySelector("[data-remzoom]"));
+    check("(16) Larger slide draws the slide across the item, and Smaller slide puts it back", !!doc.querySelector(".lib-rembig .lib-remslide") && doc.querySelector("[data-remzoom]").getAttribute("aria-expanded") === "true" && /Smaller slide/.test(doc.querySelector("[data-remzoom]").textContent));
+    click(m.w, doc.querySelector("[data-remzoom]"));
+    const prog = function () { return (doc.getElementById("lib-remprog") || {}).textContent || ""; };
+    check("(16) one bar at the top, a part per area, what the page fixed apart from what is left; a draft is left until a person keeps it",
+      /^2 left before it is ready for the Chancellor's Office review\. 2 of 4 done, 2 fixed for you and 0 by you; 4 more checks pass with nothing to fix\./.test(prog()) &&
+      /Remediation designed to meet WCAG 2\.2 AA, which includes 2\.1 AA, and California Government Code 7405, 11135 and 11546\.7/.test(doc.querySelector(".lib-rem .lib-kicker").textContent) && /Alt text \(WCAG 1\.1\.1\): 2 left/.test(prog()) &&
+      /Document title \(WCAG 2\.4\.2\): 1 fixed, done/.test(prog()) && /Language \(WCAG 3\.1\.1\): 1 fixed, done/.test(prog()) && /Reading order \(WCAG 1\.3\.2\): passes/.test(prog()) && /Color contrast \(WCAG 1\.4\.3\): passes/.test(prog()) &&
+      doc.querySelectorAll("#lib-remprog [role=progressbar]").length === 7 && doc.querySelector("#lib-remprog [aria-label='Alt text (WCAG 1.1.1), Non-text Content']").getAttribute("aria-valuetext") === "2 left", prog());
+    click(m.w, doc.querySelector("[data-remkeep]"));
+    check("(16) Keep counts an item, and says Kept", /Alt text \(WCAG 1\.1\.1\): 1 by you, 1 left/.test(prog()) && doc.querySelector("[data-remkeep]").getAttribute("aria-pressed") === "true" && doc.querySelector("[data-remkept]").textContent === "Kept", prog());
+    const qf = doc.querySelectorAll("[data-remtext]")[1];
+    qf.value = "QR code to the MAP website, map.rccd.edu"; qf.dispatchEvent(new m.w.Event("input", { bubbles: true }));
+    check("(16) an edit counts as kept, and an area with nothing left says done", /^Ready for the Chancellor's Office review: every check here is done or passes\. 4 of 4 done, 2 fixed for you and 2 by you/.test(prog()) && /Alt text \(WCAG 1\.1\.1\): 2 by you, done/.test(prog()) &&
+      doc.querySelector("#lib-remprog [aria-label^='Alt text'] .you").style.width === "100%", prog());
+    // Draft from the picture still drafts one picture again, on a press.
     click(m.w, doc.querySelector("[data-remai]"));
-    const drafted = function (n) { return aiCalls.length && doc.querySelector("[data-remtext]").value !== "Where the funding goes" || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return drafted(n - 1); }); };
+    const drafted = function (n) { return aiCalls.length > 1 || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return drafted(n - 1); }); };
     return drafted(200);
   }).then(function () {
-    const c = aiCalls[0] || { headers: {}, body: {} };
-    check("(16) the picture goes to alt-text-draft shrunk to 1568 pixels, with the team phrase and the slide's words", c.body.image === "QUJD" && c.body.media_type === "image/png" && c.headers["x-team-pass"] === "p" && c.body.context === "Where the funding goes", JSON.stringify(c.body).slice(0, 200));
+    check("(16) Draft from the picture asks again for that one picture", aiCalls.length === 2);
     const alt = doc.querySelector("[data-remtext]");
-    check("(16) its draft fills the field and says Claude drafted it", alt.value === "Screenshot of the MAP CPL Dashboard's CPL Opportunities view" && /Drafted by Claude from the picture/.test(doc.querySelector(".lib-rem").textContent));
     const rem = doc.querySelector(".lib-rem");
     alt.value = "Bar chart: units by college"; alt.dispatchEvent(new m.w.Event("input", { bubbles: true }));
     let downloaded = null;
@@ -863,9 +900,22 @@ block("(16)", function () {
     return until(200);
   }).then(function (downloaded) {
     check("(16) Remediate and download hands back the file under the original's name, the date code kept", downloaded === "20261030_Webinar_Remediated.pptx", String(downloaded));
-    check("(16) and says what it wrote", /1 alt text, 0 marked decorative/.test(m.root.textContent), (m.root.querySelector(".lib-msg") || {}).textContent);
+    check("(16) and says what it wrote", /2 alt texts, 0 marked decorative/.test(m.root.textContent), (m.root.querySelector(".lib-msg") || {}).textContent);
     click(m.w, doc.querySelector("[data-remfile]"));
     check("(16) File it in the Library opens the filing form, titled from the file's name", !!doc.getElementById("lib-addform") && doc.getElementById("la-title").value === "Webinar" && doc.getElementById("la-kind").value === "deck");
+    // Turned off, nothing goes to Claude, and each draft comes from the slide's own words.
+    return remDeck();
+  }).then(function (buf) {
+    const before = aiCalls.length;
+    drop({ name: "20261030_Webinar.pptx", arrayBuffer: function () { return Promise.resolve(buf); } });
+    doc.getElementById("lc-autodraft").checked = false;
+    doc.getElementById("lc-autodraft").dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    click(m.w, doc.getElementById("lib-go"));
+    const ready2 = function (n) { return doc.querySelector("[data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready2(n - 1); }); };
+    return ready2(300).then(function () { return new Promise(function (r) { setTimeout(r, 60); }); }).then(function () {
+      check("(16) with drafting turned off, no picture goes to Claude, and the draft is the slide's title", aiCalls.length === before && doc.querySelector("[data-remtext]").value === "Where the funding goes", doc.querySelector("[data-remtext]").value);
+    });
+  }).then(function () {
     drop({ name: "20261029_College_Awards.xlsx" });
     check("(16) a dropped workbook offers Remediate, chosen (S514)", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked);
     drop({ name: "Photo.png" });

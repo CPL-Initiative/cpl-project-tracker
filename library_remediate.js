@@ -29,6 +29,11 @@
 // out with no table, listed for a person; and (S515) each cell's font color against its
 // fill, with the nearest passing color offered as the fix.
 //
+// A deck's slides (S517): each slide's plan (where its shapes sit, with their words, fills
+// and pictures), which the page draws beside each picture that needs words, and the words
+// nearest that picture, which draft its alt text and go to Claude with it; a QR code's
+// alt text says where it leads (qrDraft), once the page has read its address.
+//
 // A PDF is read, never written: its tags, title and language come from the program that
 // exported it, so the report names that program and the steps that fix it at its source.
 //
@@ -156,6 +161,7 @@
       t.textContent = title;
       doc.touch("docProps/core.xml");
       report.fixed.push("Document title set: " + title + (had ? " (it read " + had + ")" : ""));
+      report.auto.title = 1;
     });
   }
 
@@ -318,9 +324,9 @@
     return refFill(child(bg, NS.p, "bgRef"), ctx.bgStyles, 1001, ctx) || { complex: true };
   }
   // The text settings a level carries in a list style (lstStyle, or a master's txStyles).
+  function levelP(list, lvl) { return list ? child(list, NS.a, "lvl" + lvl + "pPr") : null; }
   function levelPr(list, lvl) {
-    if (!list) return null;
-    var l = child(list, NS.a, "lvl" + lvl + "pPr");
+    var l = levelP(list, lvl);
     return l ? child(l, NS.a, "defRPr") : null;
   }
   function placeholderKey(sp) {
@@ -359,7 +365,7 @@
           var map = {}, cm = first(mg[0], NS.p, "clrMap");
           if (cm) for (var i = 0; i < cm.attributes.length; i++) map[cm.attributes[i].localName] = cm.attributes[i].value;
           var ctx = { scheme: scheme, map: map, bgStyles: first(theme, NS.a, "bgFillStyleLst"), fillStyles: first(theme, NS.a, "fillStyleLst"),
-            layout: lg[0], master: mg[0], txStyles: first(mg[0], NS.p, "txStyles") };
+            layout: lg[0], master: mg[0], txStyles: first(mg[0], NS.p, "txStyles"), layoutRels: lg[1], masterRels: mg[1] };
           ctx.layoutBg = bgOf(lg[0], ctx);
           ctx.masterBg = bgOf(mg[0], ctx) || { hex: scheme[map.bg1 || "lt1"] || "FFFFFF" };
           return ctx;
@@ -425,37 +431,46 @@
     els(s.xml, NS.p, "sp").forEach(function (sp) {
       var body = child(sp, NS.p, "txBody");
       if (!body) return;
-      var style = child(sp, NS.p, "style");
-      var fill = groundOf(sp, drawn, ctx);
-      var key = placeholderKey(sp);
-      var lists = [child(body, NS.a, "lstStyle")];
-      var fontRef = style ? colorOf(colorChild(child(style, NS.a, "fontRef")), ctx) : null;
-      if (key) {
-        var lp = findPlaceholder(ctx.layout, key), mp = findPlaceholder(ctx.master, key);
-        [lp, mp].forEach(function (p) { var tb = p && child(p, NS.p, "txBody"); lists.push(tb ? child(tb, NS.a, "lstStyle") : null); });
-        lists.push(ctx.txStyles ? child(ctx.txStyles, NS.p, key.type === "title" ? "titleStyle" : "bodyStyle") : null);
-      } else lists.push(ctx.txStyles ? child(ctx.txStyles, NS.p, "otherStyle") : null);
+      var fill = groundOf(sp, drawn, ctx), st = textStyle(sp, ctx);
       var shapeId = (first(sp, NS.p, "cNvPr") || { getAttribute: function () { return ""; } }).getAttribute("id");
       els(body, NS.a, "r").forEach(function (r, ri) {
         var t = textOf(r, NS.a);
         if (!t) return;
-        var p = r.parentNode, ppr = child(p, NS.a, "pPr"), lvl = (+(ppr && ppr.getAttribute("lvl")) || 0) + 1;
-        var chain = [child(r, NS.a, "rPr")].concat(lists.map(function (l) { return levelPr(l, lvl); }));
-        var color = null, sz = 0, b = null;
-        chain.forEach(function (pr) {
-          if (!pr) return;
-          if (!color) { var f = fillOf(pr, ctx); if (f && f.hex) color = f.hex; else if (f) color = "?"; }
-          if (!sz && pr.getAttribute("sz")) sz = +pr.getAttribute("sz");
-          if (b === null && pr.getAttribute("b")) b = pr.getAttribute("b") === "1" || pr.getAttribute("b") === "true";
-        });
-        var rPr = chain[0];
-        if (!color && rPr && first(rPr, NS.a, "hlinkClick")) color = ctx.scheme[ctx.map.hlink || "hlink"] || null;
-        if (!color) color = fontRef || ctx.scheme[ctx.map.tx1 || "dk1"] || "000000";
-        if (color === "?" || !fill || fill.complex || !fill.hex) { unsure = true; return; }
-        out.push({ fg: color, bg: fill.hex, size: (sz || 1800) / 100, bold: !!b, text: t, shapeId: shapeId, run: ri });
+        var look = runLook(r, st, ctx);
+        if (look.color === "?" || !fill || fill.complex || !fill.hex) { unsure = true; return; }
+        out.push({ fg: look.color, bg: fill.hex, size: (look.sz || 1800) / 100, bold: look.b, text: t, shapeId: shapeId, run: ri });
       });
     });
     return { runs: out, unsure: unsure };
+  }
+  // The list styles a text shape's runs inherit from, nearest first: its own, its
+  // layout's and master's placeholder (a placeholder), then the master's text styles.
+  function textStyle(sp, ctx) {
+    var body = child(sp, NS.p, "txBody"), style = child(sp, NS.p, "style"), key = placeholderKey(sp);
+    var lists = [body ? child(body, NS.a, "lstStyle") : null], holders = [];
+    if (key) {
+      holders = [findPlaceholder(ctx.layout, key), findPlaceholder(ctx.master, key)];
+      holders.forEach(function (p) { var tb = p && child(p, NS.p, "txBody"); lists.push(tb ? child(tb, NS.a, "lstStyle") : null); });
+      lists.push(ctx.txStyles ? child(ctx.txStyles, NS.p, key.type === "title" ? "titleStyle" : "bodyStyle") : null);
+    } else lists.push(ctx.txStyles ? child(ctx.txStyles, NS.p, "otherStyle") : null);
+    return { lists: lists, holders: holders, fontRef: style ? colorOf(colorChild(child(style, NS.a, "fontRef")), ctx) : null };
+  }
+  // A run's color ("?" for a see-through or gradient one), size and weight: its own, else
+  // its paragraph level's in each list, else the shape's font reference or the theme's text.
+  function runLook(r, st, ctx) {
+    var p = r.parentNode, ppr = child(p, NS.a, "pPr"), lvl = (+(ppr && ppr.getAttribute("lvl")) || 0) + 1;
+    var chain = [child(r, NS.a, "rPr")].concat(st.lists.map(function (l) { return levelPr(l, lvl); }));
+    var color = null, sz = 0, b = null;
+    chain.forEach(function (pr) {
+      if (!pr) return;
+      if (!color) { var f = fillOf(pr, ctx); if (f && f.hex) color = f.hex; else if (f) color = "?"; }
+      if (!sz && pr.getAttribute("sz")) sz = +pr.getAttribute("sz");
+      if (b === null && pr.getAttribute("b")) b = pr.getAttribute("b") === "1" || pr.getAttribute("b") === "true";
+    });
+    var rPr = chain[0];
+    if (!color && rPr && first(rPr, NS.a, "hlinkClick")) color = ctx.scheme[ctx.map.hlink || "hlink"] || null;
+    if (!color) color = st.fontRef || ctx.scheme[ctx.map.tx1 || "dk1"] || "000000";
+    return { color: color, sz: sz, b: !!b, lvl: lvl };
   }
 
   // Lists each slide's text that falls below AA, one item per color pair, with the
@@ -677,6 +692,231 @@
     return count;
   }
 
+  // The checks this page runs on each kind of file, each with the WCAG 2.2 success
+  // criterion it serves: the standard the Chancellor's Office certifies its websites to
+  // (its 2025 Certificate of Website Accessibility, which Sam shared on 2026-10-29). The
+  // Library's progress bar shows every one, a check with nothing to fix as passing.
+  // checkOf names the check each listed item belongs to.
+  var CHECKS = {
+    alt: ["Alt text", "1.1.1", "Non-text Content"],
+    title: ["Document title", "2.4.2", "Page Titled"],
+    slides: ["Slide titles", "2.4.6", "Headings and Labels"],
+    headings: ["Headings", "2.4.6", "Headings and Labels"],
+    sheets: ["Sheet names", "2.4.6", "Headings and Labels"],
+    lang: ["Language", "3.1.1", "Language of Page"],
+    tables: ["Table headers", "1.3.1", "Info and Relationships"],
+    order: ["Reading order", "1.3.2", "Meaningful Sequence"],
+    contrast: ["Color contrast", "1.4.3", "Contrast (Minimum)"]
+  };
+  var CHECKS_BY_EXT = { pptx: ["alt", "title", "slides", "lang", "tables", "order", "contrast"], docx: ["alt", "title", "headings", "lang", "tables", "contrast"], xlsx: ["alt", "title", "sheets", "tables", "contrast"] };
+  function checksFor(ext) {
+    return (CHECKS_BY_EXT[ext] || []).map(function (k) { return { key: k, name: CHECKS[k][0], sc: CHECKS[k][1], scName: CHECKS[k][2] }; });
+  }
+  function checkOf(n) {
+    if (n.type === "alt") return "alt";
+    if (n.type === "title" || n.id === "tp") return "slides";
+    if (n.type === "sheet") return "sheets";
+    if (n.type === "order") return "order";
+    if (n.type === "contrast" || /^(cu|cr|cf)/.test(n.id || "")) return "contrast";
+    if (n.id === "h") return "headings";
+    if (n.id === "core") return "title";
+    if (/^(th|tl|mc)$/.test(n.id || "")) return "tables";
+    return "other";
+  }
+
+  // Alt text a program wrote, not a person (S517): a file's name, which python-pptx and
+  // some exports copy in, or Office's own description, which says it is one. Sam,
+  // 2026-10-29, on PowerPoint's for a QR code: "it just gave a generic long, useless
+  // description of the qr code leading to somewhere". Either is listed for a person, the
+  // description kept as the draft without its notice. null: none; false: a person's own.
+  var AUTO_ALT = /\s*(description automatically generated(?: with (?:very high|high|medium|low) confidence)?|ai-generated content may be incorrect)\.?/ig;
+  function stockAlt(descr) {
+    var t = String(descr || "").trim();
+    if (!t) return null;
+    if (/^[^\s\/\\]+\.(png|jpe?g|gif|bmp|svg|emf|wmf|tiff?|webp|heic)$/i.test(t)) return { kind: "file", text: "" };
+    AUTO_ALT.lastIndex = 0;
+    if (AUTO_ALT.test(t)) return { kind: "auto", text: t.replace(AUTO_ALT, " ").replace(/\s+/g, " ").trim() };
+    return false;
+  }
+  function heldBy(n, stock) {
+    if (!stock) return n;
+    n.stock = stock.kind;
+    if (stock.text) n.draft = clip(stock.text, 300);
+    return n;
+  }
+
+  // ── a slide as laid out (S517) ──────────────────────────────────────────────
+  // Sam, 2026-10-29: "It would be helpful to have a thumbnail of the ppt slide the image
+  // came from sitting to the left of the image to remediate. The user could then quickly
+  // see that a QR code is for the MAP website because the label for the QR site is listed
+  // directly below it." A browser cannot paint a slide as PowerPoint does, so this reads
+  // where each shape sits, with its words, fill and picture, and the page draws that plan.
+  // The same plan names the words nearest each picture, for its draft and for Claude.
+  var DEFAULT_NAME = /^(picture|graphic|image|content placeholder|online media|video|media|chart|object|diagram|google shape|shape|rectangle|logo|photo|qr code)\s*\d*$|^screen ?shot\b|\.(png|jpe?g|gif|bmp|svg|emf|wmf|tiff?|webp|mp4|mov)$/i;
+  // A picture's name in the file when a person gave it one ("Chancellor Christian's
+  // Address to 7th Annual CPL Summit"), never the stock "Picture 3" or a file name.
+  function givenName(name) {
+    name = String(name || "").replace(/\s+/g, " ").trim();
+    return name && !DEFAULT_NAME.test(name) && /[a-z]{3}/i.test(name) && name.indexOf(" ") > 0 ? name : "";
+  }
+  function slideSize(doc) {
+    return doc.read("ppt/presentation.xml").then(function (d) {
+      var z = d && first(d, NS.p, "sldSz"), w = z && +z.getAttribute("cx"), h = z && +z.getAttribute("cy");
+      return w && h ? { w: w, h: h } : { w: 12192000, h: 6858000 };
+    });
+  }
+  function isMedia(pic) {
+    var nv = child(pic, NS.p, "nvPicPr"), pr = nv && child(nv, NS.p, "nvPr");
+    var kinds = pr ? els(pr, "*", "*").map(function (e) { return e.localName; }) : [];
+    return kinds.indexOf("videoFile") >= 0 || kinds.indexOf("quickTimeFile") >= 0 ? "video" : kinds.indexOf("audioFile") >= 0 ? "audio" : kinds.indexOf("media") >= 0 ? "video" : "";
+  }
+  // The picture a part's own background paints, when its background is one.
+  function bgPicture(part, rels) {
+    var bg = part && first(part, NS.p, "bg"), blip = bg && first(bg, NS.a, "blip"), id = blip && blip.getAttributeNS(NS.r, "embed");
+    return id && rels && /^ppt\//.test(rels[id] || "") ? rels[id] : null;
+  }
+  function slidePlan(s, ctx, size) {
+    var shapes = [];
+    var bgPart = [[s.xml, s.rels], [ctx.layout, ctx.layoutRels], [ctx.master, ctx.masterRels]].filter(function (x) { return x[0] && first(x[0], NS.p, "bg"); })[0];
+    var plan = { w: size.w, h: size.h, wPt: size.w / 12700, bg: ctx.bg && ctx.bg.hex ? ctx.bg.hex : "FFFFFF", bgMedia: bgPart ? bgPicture(bgPart[0], bgPart[1]) : null, shapes: shapes };
+    var add = function (el, tf, rels, own) {
+      var b = boxOf(el, ctx);
+      if (!b) return;
+      var rec = { kind: "", x: (tf.dx + tf.sx * b.x) / size.w, y: (tf.dy + tf.sy * b.y) / size.h, w: tf.sx * b.w / size.w, h: tf.sy * b.h / size.h };
+      var cNvPr = first(el, NS.p, "cNvPr");
+      if (own && cNvPr) rec.id = cNvPr.getAttribute("id");
+      if (el.localName === "pic") {
+        var blip = first(el, NS.a, "blip"), t = blip && rels[blip.getAttributeNS(NS.r, "embed")];
+        rec.kind = "pic"; rec.media = t && /^ppt\//.test(t) ? t : null; rec.av = isMedia(el);
+      } else if (el.localName === "graphicFrame") {
+        rec.kind = first(el, NS.c, "chart") ? "chart" : first(el, NS.a, "tbl") ? "table" : "object";
+      } else {
+        var body = child(el, NS.p, "txBody"), fill = ownFill(el, ctx), key = placeholderKey(el);
+        if (fill && fill.hex) rec.fill = fill.hex; else if (fill && fill.complex) rec.fill = "?";
+        rec.title = !!key && key.type === "title";
+        rec.paras = [];
+        if (body) {
+          var st = textStyle(el, ctx), bp = child(body, NS.a, "bodyPr"), anchor = bp && bp.getAttribute("anchor");
+          st.holders.some(function (h) { var hb = h && first(h, NS.a, "bodyPr"); anchor = anchor || (hb && hb.getAttribute("anchor")); return !!anchor; });
+          rec.anchor = anchor || "t";
+          els(body, NS.a, "p").forEach(function (p) {
+            var words = textOf(p, NS.a);
+            if (!words) return;
+            var r = els(p, NS.a, "r")[0], look = r ? runLook(r, st, ctx) : { color: null, sz: 0, b: false, lvl: 1 };
+            var ppr = child(p, NS.a, "pPr"), algn = ppr && ppr.getAttribute("algn");
+            st.lists.some(function (l) { var lp = levelP(l, look.lvl); algn = algn || (lp && lp.getAttribute("algn")); return !!algn; });
+            rec.paras.push({ t: words, sz: (look.sz || (rec.title ? 3200 : 1800)) / 100, b: look.b, color: look.color && look.color !== "?" ? look.color : null, algn: algn || "l" });
+          });
+        }
+        if (!rec.paras.length && !rec.fill) return;
+        rec.kind = rec.paras.length ? "text" : "shape";
+        rec.text = rec.paras.map(function (p) { return p.t; }).join(" ");
+      }
+      shapes.push(rec);
+    };
+    var walk = function (parent, tf, rels, own) {
+      for (var el = parent && parent.firstChild; el; el = el.nextSibling) {
+        if (el.nodeType !== 1 || el.namespaceURI !== NS.p) continue;
+        if (el.localName === "grpSp") {
+          // A group's children sit in its own coordinates (chOff, chExt), scaled into its box.
+          var gx = first(child(el, NS.p, "grpSpPr"), NS.a, "xfrm"), off = gx && child(gx, NS.a, "off"), ext = gx && child(gx, NS.a, "ext");
+          var cho = gx && child(gx, NS.a, "chOff"), che = gx && child(gx, NS.a, "chExt"), g = tf;
+          if (off && ext && cho && che && +che.getAttribute("cx") && +che.getAttribute("cy")) {
+            var kx = +ext.getAttribute("cx") / +che.getAttribute("cx"), ky = +ext.getAttribute("cy") / +che.getAttribute("cy");
+            g = { sx: tf.sx * kx, sy: tf.sy * ky, dx: tf.dx + tf.sx * (+off.getAttribute("x") - +cho.getAttribute("x") * kx), dy: tf.dy + tf.sy * (+off.getAttribute("y") - +cho.getAttribute("y") * ky) };
+          }
+          walk(el, g, rels, own);
+        } else if (/^(sp|pic|graphicFrame)$/.test(el.localName) && (own || !first(el, NS.p, "ph"))) add(el, tf, rels, own);
+      }
+    };
+    var one = { sx: 1, sy: 1, dx: 0, dy: 0 }, tree = function (part) { return part && first(part, NS.p, "spTree"); };
+    // The layout's and master's own shapes draw beneath, as slideRuns reads them.
+    var off = function (part) { return part && part.documentElement.getAttribute("showMasterSp") === "0"; };
+    if (!off(s.xml)) {
+      if (!off(ctx.layout)) walk(tree(ctx.master), one, ctx.masterRels || {}, false);
+      walk(tree(ctx.layout), one, ctx.layoutRels || {}, false);
+    }
+    walk(tree(s.xml), one, s.rels, true);
+    return plan;
+  }
+  // The slide's own words nearest a picture: a label just below it (the common case
+  // under a QR code), above it, beside it, or laid over it. Body text and the title are
+  // not labels; the title goes to Claude on its own line.
+  var REL_WORDS = { below: "just below it", above: "just above it", left: "to its left", right: "to its right", on: "on it" };
+  function nearestWords(plan, id) {
+    var T = plan.shapes.filter(function (r) { return r.id === id; })[0];
+    if (!T) return null;
+    var W = plan.w, H = plan.h, tl = T.x * W, tt = T.y * H, tr = tl + T.w * W, tb = tt + T.h * H, best = null;
+    plan.shapes.forEach(function (S) {
+      if (S === T || S.id == null || S.kind !== "text" || S.title || !S.text || S.text.length > 120) return;
+      var sl = S.x * W, st = S.y * H, sr = sl + S.w * W, sb = st + S.h * H;
+      var xo = Math.min(tr, sr) - Math.max(tl, sl), yo = Math.min(tb, sb) - Math.max(tt, st);
+      var cx = (sl + sr) / 2, cy = (st + sb) / 2, rel = null, gap = 0, reach = 0;
+      if (cx > tl && cx < tr && cy > tt && cy < tb) rel = "on";
+      else if (xo > 0.3 * Math.min(tr - tl, sr - sl) && st >= tb - 0.25 * (tb - tt)) { rel = "below"; gap = Math.max(0, st - tb); reach = Math.max(0.6 * (tb - tt), 0.08 * H); }
+      else if (xo > 0.3 * Math.min(tr - tl, sr - sl) && sb <= tt + 0.25 * (tb - tt)) { rel = "above"; gap = Math.max(0, tt - sb); reach = Math.max(0.6 * (tb - tt), 0.08 * H); }
+      else if (yo > 0.3 * Math.min(tb - tt, sb - st) && sl >= tr - 0.25 * (tr - tl)) { rel = "right"; gap = Math.max(0, sl - tr); reach = Math.max(0.4 * (tr - tl), 0.05 * W); }
+      else if (yo > 0.3 * Math.min(tb - tt, sb - st) && sr <= tl + 0.25 * (tr - tl)) { rel = "left"; gap = Math.max(0, tl - sr); reach = Math.max(0.4 * (tr - tl), 0.05 * W); }
+      if (!rel || gap > reach && rel !== "on") return;
+      var score = rel === "below" ? gap * 0.8 : gap;
+      if (!best || score < best.score) best = { text: S.text, rel: rel, score: score };
+    });
+    return best ? { text: best.text, rel: best.rel, where: REL_WORDS[best.rel] } : null;
+  }
+  // What Claude reads beside the picture: the slide's title, the nearest words and where
+  // they sit, the picture's own name, and the rest of the slide's words, top to bottom.
+  function slideWords(plan, title, near, extra) {
+    var lines = [];
+    if (title) lines.push("The slide's title: " + title);
+    if (near) lines.push("The words " + near.where + ": " + near.text);
+    (extra || []).forEach(function (x) { if (x) lines.push(x); });
+    var rest = plan.shapes.filter(function (r) { return r.id != null && r.kind === "text" && !r.title && r.text && (!near || r.text !== near.text); })
+      .sort(function (a, b) { return Math.abs(a.y - b.y) > 0.03 ? a.y - b.y : a.x - b.x; }).map(function (r) { return r.text; });
+    if (rest.length) lines.push("Other words on the slide, top to bottom: " + clip(rest.join(" | "), 900));
+    return lines.join("\n");
+  }
+  function planPptx(doc, slides, report) {
+    var cache = {};
+    var bare = { scheme: {}, map: {}, layout: null, master: null, bg: { hex: "FFFFFF" } };
+    return slideSize(doc).then(function (size) {
+      return slides.reduce(function (pr, s) {
+        return pr.then(function () {
+          return slideContext(doc, s, cache).then(function (ctx) {
+            var plan = slidePlan(s, ctx || bare, size), entry = report.slides[s.n - 1];
+            if (entry) entry.plan = plan;
+            report.needs.forEach(function (n) {
+              if (n.type !== "alt" || n.slide !== s.n) return;
+              n.near = n.chart ? null : nearestWords(plan, n.shapeId);
+              var extra = [n.name ? "Its name in the file: " + n.name : "", n.av ? "It is the poster frame of a" + (n.av === "audio" ? "n audio clip." : " video.") : ""];
+              n.context = slideWords(plan, s.title, n.near, extra);
+              if (n.chart || n.fromData || n.stock === "auto") return;
+              // A draft from the slide: a video's own name, else the words beside the picture.
+              if (n.av && n.name) n.draft = clip((n.av === "audio" ? "Audio: " : "Video: ") + n.name, 150);
+              else if (n.near) n.draft = clip(n.near.text, 150);
+            });
+          });
+        });
+      }, Promise.resolve());
+    });
+  }
+  // A QR code's alt text says where it leads (Sam, 2026-10-29: "just read the url from
+  // it and list that in the alt text"): the words beside it on the slide, then the
+  // address, without its scheme, query or trailing slash.
+  function qrDraft(payload, near) {
+    var t = String(payload || "").replace(/\s+/g, " ").trim(), label = near && near.text && near.text.length <= 80 ? near.text.replace(/[\s.:;,]+$/, "") : "";
+    if (!t) return "";
+    if (/^https?:\/\//i.test(t)) {
+      var url = t.replace(/^https?:\/\//i, "").split(/[?#]/)[0].replace(/^www\./i, "").replace(/\/$/, "");
+      if (label && label.toLowerCase().indexOf(url.split("/")[0].toLowerCase()) >= 0) label = "";
+      return clip("QR code to " + (label ? label + ", " : "") + url, 300);
+    }
+    if (/^mailto:/i.test(t)) return clip("QR code to email " + t.slice(7).split("?")[0] + (label ? " (" + label + ")" : ""), 300);
+    if (/^tel:/i.test(t)) return clip("QR code to call " + t.slice(4) + (label ? " (" + label + ")" : ""), 300);
+    if (/^BEGIN:VCARD/i.test(t)) return "QR code with contact details" + (label ? " for " + label : "");
+    if (/^WIFI:/i.test(t)) return "QR code to join a Wi-Fi network" + (label ? " (" + label + ")" : "");
+    return clip("QR code" + (label ? " for " + label : "") + " that reads: " + t, 300);
+  }
+
   // ── a deck ──────────────────────────────────────────────────────────────────
   function inspectPptx(doc, name, report) {
     var paths = Object.keys(doc.zip.files).filter(function (p) { return /^ppt\/slides\/slide\d+\.xml$/.test(p); })
@@ -737,17 +977,19 @@
         els(s.xml, NS.p, "pic").concat(els(s.xml, NS.p, "graphicFrame").filter(function (g) { return !!first(g, NS.c, "chart"); }))
           .forEach(function (shape) {
             var cNvPr = first(shape, NS.p, "cNvPr");
-            if (!cNvPr || isDecorative(cNvPr) || (cNvPr.getAttribute("descr") || "").trim()) return;
+            var stock = cNvPr && stockAlt(cNvPr.getAttribute("descr"));
+            if (!cNvPr || isDecorative(cNvPr) || stock === false) return;
             var isChart = shape.localName === "graphicFrame";
             var blip = first(shape, NS.a, "blip"), target = blip && s.rels[blip.getAttributeNS(NS.r, "embed")];
             if (target && repeated[target]) { markDecorative(cNvPr); markedRepeat++; s.dirty = true; return; }
             k++;
             var chartEl = isChart ? first(shape, NS.c, "chart") : null;
             var chartPart = chartEl ? s.rels[chartEl.getAttributeNS(NS.r, "id")] : null;
-            report.needs.push({ type: "alt", id: "a" + s.n + "-" + k, slide: s.n, path: s.path, shapeId: cNvPr.getAttribute("id"),
-              media: target || null, chart: isChart, chartPart: chartPart || null, words: s.words || "",
-              label: "Slide " + s.n + ", " + (isChart ? "chart" : "picture") + (cNvPr.getAttribute("name") ? " (" + cNvPr.getAttribute("name") + ")" : ""),
-              draft: s.words ? clip((isChart ? "Chart: " : "") + s.words, 150) : "" });
+            var av = isChart ? "" : isMedia(shape);
+            report.needs.push(heldBy({ type: "alt", id: "a" + s.n + "-" + k, slide: s.n, path: s.path, shapeId: cNvPr.getAttribute("id"),
+              media: target || null, chart: isChart, chartPart: chartPart || null, words: s.words || "", name: givenName(cNvPr.getAttribute("name")), av: av,
+              label: "Slide " + s.n + ", " + (isChart ? "chart" : av || "picture") + (cNvPr.getAttribute("name") ? " (" + cNvPr.getAttribute("name") + ")" : ""),
+              draft: s.words ? clip((isChart ? "Chart: " : "") + s.words, 150) : "" }, stock));
           });
         if (s.dirty) doc.touch(s.path);
       });
@@ -755,12 +997,13 @@
         text: slideList(noPlaceholder) + (noPlaceholder.length === 1 ? " has" : " have") + " no title a screen reader can find. In PowerPoint, give " + (noPlaceholder.length === 1 ? "it" : "each") + " a layout with a title (Home, Layout), or put the title in the slide's title box and move it off the slide if it must not show." });
       if (crowded.length) report.needs.push({ type: "order", id: "ro", slides: crowded,
         text: "Reading order on " + slideList(crowded).toLowerCase() + ": each holds " + CROWDED + " or more items. In PowerPoint, check that a screen reader meets them in the order the slide means (Home, Arrange, Selection Pane, which lists them bottom to top)." });
-      if (langFixed) report.fixed.push("Language set to English (United States) on " + langFixed + " text runs");
-      if (headers) report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables"));
-      if (markedRepeat) report.fixed.push("A picture repeated on most slides (a logo) marked decorative, " + markedRepeat + " times");
+      if (langFixed) { report.fixed.push("Language set to English (United States) on " + langFixed + " text runs"); report.auto.lang = 1; }
+      if (headers) { report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); report.auto.tables = headers; }
+      if (markedRepeat) { report.fixed.push("A picture repeated on most slides (a logo) marked decorative, " + markedRepeat + " times"); report.auto.alt = markedRepeat; }
       report.slides = slides.map(function (s) { return { n: s.n, title: s.title }; });
       var t1 = slides[0] && slides[0].title;
       return contrastPptx(doc, slides, report).then(function () { return draftCharts(doc, report); })
+        .then(function () { return planPptx(doc, slides, report); })
         .then(function () { return fixTitle(doc, t1 || titleFromName(name), report); });
     });
   }
@@ -799,7 +1042,7 @@
           if (!lang) { lang = styles.createElementNS(NS.w, "w:lang"); rpr.appendChild(lang); }
           lang.setAttributeNS(NS.w, "w:val", LANG);
           doc.touch("word/styles.xml");
-          report.fixed.push("Language set to English (United States)");
+          report.fixed.push("Language set to English (United States)"); report.auto.lang = 1;
         }
       }
       // Table header rows: the first row repeats as a header.
@@ -811,21 +1054,22 @@
         if (!trPr) { trPr = d.createElementNS(NS.w, "w:trPr"); tr.insertBefore(trPr, tr.firstChild); }
         if (!child(trPr, NS.w, "tblHeader")) { trPr.appendChild(d.createElementNS(NS.w, "w:tblHeader")); headers++; }
       });
-      if (headers) { doc.touch(path); report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); }
+      if (headers) { doc.touch(path); report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); report.auto.tables = headers; }
       // Pictures and charts: wp:docPr carries the alt text.
       var k = 0;
       els(d, NS.wp, "docPr").forEach(function (pr) {
-        if (isDecorative(pr) || (pr.getAttribute("descr") || "").trim()) return;
+        var stock = stockAlt(pr.getAttribute("descr"));
+        if (isDecorative(pr) || stock === false) return;
         var drawing = pr.parentNode, blip = first(drawing, NS.a, "blip");
         var target = blip ? rels[blip.getAttributeNS(NS.r, "embed")] : null;
         var chartEl = first(drawing, NS.c, "chart"), isChart = !!chartEl;
         var p = pr; while (p && !(p.namespaceURI === NS.w && p.localName === "p")) p = p.parentNode;
         var near = p ? nearest[paras.indexOf(p)] : "";
         k++;
-        report.needs.push({ type: "alt", id: "a" + k, path: path, shapeId: pr.getAttribute("id"), media: target, chart: isChart,
+        report.needs.push(heldBy({ type: "alt", id: "a" + k, path: path, shapeId: pr.getAttribute("id"), media: target, chart: isChart,
           chartPart: chartEl ? rels[chartEl.getAttributeNS(NS.r, "id")] || null : null, words: near || "",
           label: (isChart ? "Chart" : "Picture") + " " + k + (near ? ", under " + clip(near, 60) : ""),
-          draft: near ? clip((isChart ? "Chart: " : "") + near, 150) : "" });
+          draft: near ? clip((isChart ? "Chart: " : "") + near, 150) : "" }, stock));
       });
       return contrastDocx(doc, d, styles, report).then(function () { return draftCharts(doc, report); })
         .then(function () { return fixTitle(doc, firstHeading || titleFromName(name), report); });
@@ -901,15 +1145,16 @@
                 els(dx, NS.xdr, "pic").concat(els(dx, NS.xdr, "graphicFrame").filter(function (gf) { return !!first(gf, NS.c, "chart"); }))
                   .forEach(function (shape) {
                     var cNvPr = first(shape, NS.xdr, "cNvPr");
-                    if (!cNvPr || isDecorative(cNvPr) || (cNvPr.getAttribute("descr") || "").trim()) return;
+                    var stock = cNvPr && stockAlt(cNvPr.getAttribute("descr"));
+                    if (!cNvPr || isDecorative(cNvPr) || stock === false) return;
                     var isChart = shape.localName === "graphicFrame";
                     var blip = first(shape, NS.a, "blip"), target = blip ? drels[blip.getAttributeNS(NS.r, "embed")] : null;
                     var chartEl = isChart ? first(shape, NS.c, "chart") : null;
                     k++;
-                    report.needs.push({ type: "alt", id: "a" + k, path: drawing, shapeId: cNvPr.getAttribute("id"), media: target || null, chart: isChart,
+                    report.needs.push(heldBy({ type: "alt", id: "a" + k, path: drawing, shapeId: cNvPr.getAttribute("id"), media: target || null, chart: isChart,
                       chartPart: chartEl ? drels[chartEl.getAttributeNS(NS.r, "id")] || null : null, words: about || "",
                       label: sh.name + ", " + (isChart ? "chart" : "picture") + (cNvPr.getAttribute("name") ? " (" + cNvPr.getAttribute("name") + ")" : ""),
-                      draft: about ? clip((isChart ? "Chart: " : "") + about, 150) : "" });
+                      draft: about ? clip((isChart ? "Chart: " : "") + about, 150) : "" }, stock));
                   });
               });
             });
@@ -1401,7 +1646,8 @@
     if (!env.JSZip) return Promise.reject(new Error("The zip reader did not load. Reload the page and try again."));
     return env.JSZip.loadAsync(buf).then(function (zip) {
       var doc = new Doc(env, zip);
-      var report = { name: name, ext: ext, fixed: [], needs: [], extent: "" };
+      // auto: what the page fixed with no judgment, counted by kind, for the progress bar.
+      var report = { name: name, ext: ext, fixed: [], needs: [], extent: "", auto: {} };
       return ({ pptx: inspectPptx, docx: inspectDocx, xlsx: inspectXlsx })[ext](doc, name, report).then(function () {
         return { report: report, doc: doc };
       });
@@ -1478,7 +1724,7 @@
   // keeping its date code (CLAUDE.md: a re-version keeps the date code).
   function outName(name) { return String(name || "file").replace(/(\.[a-z0-9]+)$/i, "_Remediated$1"); }
 
-  var api = { inspect: inspect, finish: finish, outName: outName, _pdfSource: pdfSource, _titleFromName: titleFromName, _renameRefs: renameRefs, _ratio: ratio, _passingColor: passingColor };
+  var api = { inspect: inspect, finish: finish, outName: outName, qrDraft: qrDraft, checksFor: checksFor, checkOf: checkOf, _pdfSource: pdfSource, _titleFromName: titleFromName, _renameRefs: renameRefs, _ratio: ratio, _passingColor: passingColor };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.CPL_REMEDIATE = api;
 })(typeof window !== "undefined" ? window : this);
