@@ -46,8 +46,8 @@
    "name": "Funding model",
    "page": "funding-model/index.html",
    "audience": "public",
-   "last": "2026-10-23",
-   "outcome": "S452: npm run a11y funding-model passes at all 9 widths (light-only page by design, so no dark route); wiring reads no shared dataset; First Light: the live-status line painted an undefined --ink-2 token's raw-hex fallback, now var(--text-muted) (6.3:1 on paper). The print rule's #FFFFFF stays."
+   "last": "2026-10-29",
+   "outcome": "S510: npm run a11y passes on all seven funding targets (explainer at 9 widths, Ask Sierra open, How to meet it, the confirmation form, My CPL Funding, the memo, the tab's Public page view); light-only by design; wiring reads no shared dataset. First Light: no raw hex outside :root but the print rule's #FFFFFF (kept, as S452 ruled); one undefined token, --navy-secondary, comes from cpl_funding.js rules for cards, goals and the priority editor, none of which this page draws (probed in Chromium: 0 nodes), so nothing to fix."
   },
   {
    "id": "cobi:dashboard",
