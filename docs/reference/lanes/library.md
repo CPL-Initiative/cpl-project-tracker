@@ -205,7 +205,9 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **⑥ Headers, footers and text boxes join a Word document's contrast (S512).** The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S513)*.
 
-✅ **⑦ A PDF is fixed at its source (S513).** Remediate on a dropped PDF reads its Info, catalog and XMP and changes nothing: what it carries (tags, language, title, text), the program that made it, any Library record that matches, the export steps, and *Choose the source .pptx* or *.docx*. Detail and the 55-file run: [`docs/library_lessons.md`](../../library_lessons.md), *A PDF is fixed at its source (S513)*. Tests: `library_remediate` (81), `library` block (16).
+✅ **⑦ A PDF is fixed at its source (S513).** The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S514)*.
 
-**NEXT:** a workbook (.xlsx) in remediation: sheet names, a header row on each table, alt text on each chart. The Chancellor's Office review still certifies.
+✅ **⑧ A workbook is remediated (S514).** Remediate on a dropped .xlsx sets the title and lists a sheet at its default name (renamed everywhere it is referenced), alt text per picture and chart, a table with no header row (listed, never switched on), data with no table, and merged cells. Detail and the six-workbook run: [`docs/library_lessons.md`](../../library_lessons.md), *A workbook in remediation (S514)*. Tests: `library_remediate` (95), `library` block (16).
+
+**NEXT:** a workbook's contrast: each cell's font color against its fill, from `xl/styles.xml`, as the deck and Word checks do. The Chancellor's Office review still certifies.
 

@@ -866,6 +866,8 @@ block("(16)", function () {
     check("(16) and says what it wrote", /1 alt text, 0 marked decorative/.test(m.root.textContent), (m.root.querySelector(".lib-msg") || {}).textContent);
     click(m.w, doc.querySelector("[data-remfile]"));
     check("(16) File it in the Library opens the filing form, titled from the file's name", !!doc.getElementById("lib-addform") && doc.getElementById("la-title").value === "Webinar" && doc.getElementById("la-kind").value === "deck");
+    drop({ name: "20261029_College_Awards.xlsx" });
+    check("(16) a dropped workbook offers Remediate, chosen (S514)", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked);
     drop({ name: "Photo.png" });
     check("(16) a picture is not offered Remediate", !doc.getElementById("lc-use-remediate"));
     doc.getElementById("lc-use-asis").checked = true;

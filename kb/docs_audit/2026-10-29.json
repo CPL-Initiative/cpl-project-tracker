@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1313,
-    "bytes": 13329731,
+    "bytes": 13332880,
     "over_budget": 0,
     "handoff_max": 514,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2449896,
+        "bytes": 2452721,
         "over": 0
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 442519,
+        "bytes": 442843,
         "over": 0
       },
       "handoff": {
@@ -58,12 +58,11 @@
     "by_rule": {
       "kb_note_dialect": 1,
       "house_voice": 1,
-      "vault_heavy_path": 70,
-      "esl_monthly_pass_due": 1
+      "vault_heavy_path": 70
     },
     "vault": {
-      "files": 25013,
-      "bytes": 3966286395,
+      "files": 25015,
+      "bytes": 3966311521,
       "heavy_bytes": 2812065709,
       "heavy_share": 0.709,
       "ignore_filters": [
@@ -863,17 +862,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "esl_monthly_pass_due",
-      "fixable": false,
-      "path": "kb/esl_sheet_out/",
-      "detail": {
-        "last_pass": "2026-09-27",
-        "days": 32,
-        "budget": 31
-      },
-      "message": "The ESL monthly pass is due: the last pass or ESL write was 2026-09-27, 32 days ago (Sam's verdict on item 8 of the ESL merging sheet, 2026-09-26: monthly). Run `python3 kb/_esl_monthly_pass.py --session <N>`, then dispatch `esl-sheet-apply.yml` with the plan dir it names; hand Sam what it lists."
     }
   ]
 }

@@ -947,7 +947,7 @@
   var EXT_KIND = { pptx: "deck", ppt: "deck", key: "deck", docx: "document", doc: "document", pdf: "document", txt: "document", md: "document", rtf: "document",
     xlsx: "spreadsheet", xls: "spreadsheet", csv: "spreadsheet", mp4: "film", mov: "film", m4v: "film", webm: "film",
     png: "visual", jpg: "visual", jpeg: "visual", gif: "visual", svg: "visual", webp: "visual", html: "visual", htm: "visual" };
-  var REMEDIABLE = { pptx: true, docx: true, pdf: true };
+  var REMEDIABLE = { pptx: true, docx: true, xlsx: true, pdf: true };
   var TEXT_EXT = { txt: true, md: true, csv: true, html: true, htm: true };
   function extOf(name) { var m = /\.([a-z0-9]{1,5})$/i.exec(String(name || "").split(/[?#]/)[0]); return m ? m[1].toLowerCase() : ""; }
   function titleFromName(name) {
@@ -1029,7 +1029,7 @@
       return R.inspect(buf, pk.name, remEnv()).then(function (session) {
         state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, thumbs: {}, ai: {}, aiAll: false };
         session.report.needs.forEach(function (n) {
-          if (n.type === "alt" || n.type === "title") state.rem.answers[n.id] = { text: n.draft || "", decorative: false };
+          if (n.type === "alt" || n.type === "title" || n.type === "sheet") state.rem.answers[n.id] = { text: n.draft || "", decorative: false };
           if (n.type === "contrast") state.rem.answers[n.id] = { fix: true };
         });
         render();
@@ -1071,9 +1071,10 @@
           (n.fromData ? '<p class="lib-hint">Drafted from the chart\'s own numbers.</p>' : rm.ai[n.id] === "done" ? '<p class="lib-hint">Drafted by Claude from the picture. Read it before you keep it.</p>' : "") +
           "</div></li>";
       }
-      if (n.type === "title") {
-        return '<li class="lib-remneed"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + '; type one a screen reader can announce</label>' +
-          '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="200" value="' + esc(a.text || "") + '"></div></li>';
+      // A slide's empty title, or a sheet left at its default name (a workbook, S514).
+      if (n.type === "title" || n.type === "sheet") {
+        return '<li class="lib-remneed"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
+          '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="' + (n.type === "sheet" ? 31 : 200) + '" value="' + esc(a.text || "") + '"></div></li>';
       }
       // A contrast item shows its words both ways, on the fill they sit on (the file's own
       // colors, so these are data, not the page's palette), and offers the passing one.
@@ -1095,13 +1096,13 @@
       (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
       '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
       (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
-      (needs.some(function (n) { return n.type === "alt" && n.draft; }) ? '<p class="lib-hint">A draft comes from the slide\'s or section\'s own words. Read each one before you keep it.</p>' : "") +
+      (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words. Read each one before you keep it.</p>' : "") +
       (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Draft every picture") + "</button></div>" : "") +
       (picNeeds().length ? '<p class="lib-hint">Draft from the picture sends that one picture to Claude to read; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>' : "") +
       "</div></div>" +
       '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
-      '<p class="lib-hint">' + 'Save the PDF from PowerPoint or Word with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
+      '<p class="lib-hint">' + 'Save the PDF from PowerPoint, Word or Excel with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
       "</section>";
   }
   // A PDF is fixed at its source (lane NEXT, S513): its tags, title and language are
@@ -1138,7 +1139,7 @@
         return "<li>" + (r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title || r.slug) + "</a>" : esc(r.title || r.slug)) +
           (r.rebuild_from ? " (rebuilt from " + esc(r.rebuild_from) + ")" : "") + "</li>";
       }).join("") + "</ul>" : "") +
-      (src.ext === "pptx" || src.ext === "docx" ? '<div class="lib-actions-row"><label class="lib-pick" for="lc-file">Choose the source .' + src.ext + "</label></div>" : "") +
+      (REMEDIABLE[src.ext] && src.ext !== "pdf" ? '<div class="lib-actions-row"><label class="lib-pick" for="lc-file">Choose the source .' + src.ext + "</label></div>" : "") +
       "</div></div>" +
       '<p class="lib-hint">This page reads the PDF and changes nothing in it. The Chancellor\'s Office review still decides what is certified.</p>' +
       "</section>";
@@ -1208,7 +1209,9 @@
         var a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
         setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
         var d = out.done;
-        say("Downloaded " + name + ": " + rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " + d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed. Open it, run the Accessibility Checker, then file it.");
+        say("Downloaded " + name + ": " + rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " +
+          (rm.report.ext === "xlsx" ? (d.sheets || 0) + (d.sheets === 1 ? " sheet" : " sheets") + " renamed." :
+            d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed.") + " Open it, run the Accessibility Checker, then file it.");
         render();
       });
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });

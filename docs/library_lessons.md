@@ -798,6 +798,34 @@ Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money
   record whose title or file name matches, and the export steps (PowerPoint's Create PDF/XPS, Word's Save As PDF, each
   with *Document structure tags for accessibility*), then offers to choose the source .pptx or .docx.
 
+## A workbook in remediation (S514 SkyMarionberry, 2026-10-29)
+
+The lane's NEXT after the PDF: an Excel workbook, checked the way Excel's Accessibility Checker checks one.
+
+- **What it does.** The title from the file's name (a workbook has no heading to take it from). A sheet left at
+  its default name (*Sheet1*, and the French, Spanish, German, Dutch, Italian and Portuguese defaults) is a
+  *Needs you* item with a draft from the sheet's first words, cut to Excel's 31 characters and its banned
+  characters. Alt text for each picture and chart in the sheet's drawing; a chart's draft comes from its cached
+  numbers through the same `chartDraft` the decks use. A table with no header row, data on a sheet with no
+  table (three or more rows of two or more cells), and merged cells are each one item, listed for a person.
+- **A header row is listed, never switched on.** Setting `headerRowCount` makes the table's first row of data
+  its headers: a judgment about the data, so it stays a person's.
+- **A rename reaches everything that points at the sheet.** Formulas, data validation and conditional
+  formatting on every sheet, the workbook's defined names, each chart's `c:f`, a pivot cache's
+  `worksheetSource`, and `docProps/app.xml`. Each new reference is quoted (a quoted name is always valid); a
+  formula's string literals and a reference into another workbook (`[1]Sheet1!`) stay. A name Excel would
+  refuse (empty, *History*, a duplicate) is not written.
+- **openpyxl writes relationship targets from the package root** (`/xl/worksheets/sheet1.xml`). The shared
+  `Doc.rels` joined them to the part's folder and found no sheets, so the first run on our own exports
+  reported nothing. It now reads a leading slash from the root, for decks and documents too.
+- **A chart's large values read whole** (`12,702,751`, not `12,702,751.227`): the budget pie in
+  `CPL_Initiative_Project_List_v3.xlsx` showed the old rounding.
+- **The run on team files.** Six workbooks (the project list, the IT and AI credential catalog, the
+  OpenClassrooms crosswalk, the top-50 export, the TOP lookup, the ARC fill-out): two charts drafted from the
+  budget's numbers, data with no table on every one, merged cells on two sheets, no default sheet name. A copy
+  of the crosswalk with its sheet renamed *Sheet1* came back renamed, and both remediated files open in
+  LibreOffice.
+
 ## Moved from the lane (S512)
 
 ✅ **④ A deck's contrast is checked (S510).** Each text run's color (its own, else inherited through list style, layout, master and theme) is measured against the fill the words sit on: the shape's own, else the topmost shape drawn before it covering its middle (the layout's and master's own shapes included), else the slide's background through layout and master. Below 4.5:1, or 3:1 for 18pt or 14pt bold, each slide's color pair is one *Needs you* item showing the words both ways, with the nearest passing color of the same hue ticked as the fix; *Remediate and download* writes it onto those runs. Text over a picture, chart, table, gradient or pattern is named for a person (one item). On the five team decks, 6 findings, each confirmed on a render; the first build, against the background alone, reported 72 (`docs/library_lessons.md`, S510). Tests: `library_remediate` (8), `library` (16).
@@ -815,3 +843,7 @@ conversation, and both are the public copies (Sam, Sheet 129 cards 2 and 3, *rep
 the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-deploy run 40329644423, 13:21Z; smoke run
 40331201968, run alone, passed). The full record moved verbatim to
 [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S490)*.
+
+## Moved from the lane (S514)
+
+✅ **⑦ A PDF is fixed at its source (S513).** Remediate on a dropped PDF reads its Info, catalog and XMP and changes nothing: what it carries (tags, language, title, text), the program that made it, any Library record that matches, the export steps, and *Choose the source .pptx* or *.docx*. Detail and the 55-file run: *A PDF is fixed at its source (S513)*. Tests: `library_remediate` (81), `library` block (16).
