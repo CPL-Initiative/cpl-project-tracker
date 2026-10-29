@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-29T19:56:16Z",
-  "session": 519,
-  "moniker": "SkyCloudberry",
+  "written_at": "2026-10-29T23:06:54Z",
+  "session": 520,
+  "moniker": "SkyLingonberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_520_handoff.md",
+  "handoff": "docs/session_521_handoff.md",
   "next_step": {
     "title": "Glendale's course units from its descriptions",
     "text": "180 Glendale records fail arithmetic, most on courses the state's file lists without units; the next session reads each such course's units from the catalog's course descriptions, which print them, and rescores."
@@ -137,6 +137,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-29T23:06:00Z",
+      "text": "No harvest change this run (S520, Sam's session, put the public funding page in the Share menu, landed the funding fixes and FAQs before the Summit, and sped up the test runs); the headline and harvest measures re-read."
+    },
     {
       "at": "2026-10-29T19:58:00Z",
       "text": "No harvest change this run (S519, Sam's session, worked the CSM team's funding fixes, Sam's eight FAQs, and Sierra's timeout); the headline and harvest measures re-read."

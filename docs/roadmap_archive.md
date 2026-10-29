@@ -791,3 +791,8 @@ Moved from docs/INDEX.md's update history (S507):
 ## INDEX update history moved S518
 
 - 2026-10-28 (S506 SkyCloudberry, Sam's session): the funding forms start with the email and acknowledge an allowed address (#2531; the domain gate measured read-only); the Attest word, gray boxes, memo TBA, one curator text section that keeps a deletion; NOCE's nocccd.edu and *Awaiting CPL Initiative Confirmation* (#2533); the FAQ on Open Asks Sheet 138; no handoff file (S507 writes 508).
+
+## INDEX update history moved S520
+
+- 2026-10-29 (S509 SkyElderberry, Sam's session): #2537 merged after S508's floor fix; the Library built to mockup Version 20: one card per project (#2538, `cpl_library.project` by receipt), the one *Create or Remediate a Document* panel (#2540), and in-browser remediation of a .pptx or .docx with chart drafts from their numbers and *Draft from the picture* through the new `alt-text-draft` function (#2541); handoff 510.
+- 2026-10-29 (S508 SkyGooseberry, Sam's session): #2536 and CPLBrain#525 merged; Malone's twelve funding FAQs as he wrote them (#2537); the funding page loses its footer, opens on the published scenario and keeps one link to the public page; the map.rccd.edu privacy edits and security and accessibility scan for Malone; the Library remediation mockup; handoff 509.

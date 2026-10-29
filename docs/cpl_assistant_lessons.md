@@ -822,3 +822,7 @@ Sam: *"the current mobile view is mostly consumed by the header text."* The intr
 - **The deploy smoke's model checks fail one at a time.** The last three deploys (10-27, 10-28, 10-29) each failed a different model-behavior assertion (7q, 7v COCI, 7v CompTIA). Each time the deploy job itself passed and the function was live.
 - **Sierra's first FAQ answer said a college "earns" its award.** The FAQ rule now keeps the funding words (#2560).
 
+## S520 (2026-10-29): Sierra's deploy, and a smoke failure that was the programs read
+
+- **cpl-chat deployed from main at 22:39Z (run 40967328092) and byte-verified,** carrying #2560's FAQ rule and *offer* as a generic word.
+- **Its smoke failed on 7c, a deterministic check, not a model answer.** `rpc/search_college_programs` with `anchor_county: "Orange"` came back with no rows after about 7.5 s, so the positive control and the Orange-first order check both failed. All 112 other assertions passed, the 7c question to Sierra included. Called through the Supabase MCP afterward, the same call returned 150 rows in 0.59 s. The anon key's `statement_timeout` is 3 s, and `anchor_stat` counts a timeout's error body as zero rows. So this is the slow read of S519's lesson, under load, and a fourth deploy whose smoke failed a different assertion.
