@@ -97,7 +97,9 @@ function boot(window) {
   // funding tab for the Public view"): the title row's link left, and View: Public page frames
   // funding-model/ with the link for the field.
   check("W2b: the private view's title row carries no explainer link",
-    privDoc.getElementById("cplFundTitleLink").innerHTML === "" && !/How this funding model works/.test(privHtml));
+    privDoc.getElementById("cplFundTitleLink").innerHTML === "");
+  check("W2b: ...and the old link's words appear nowhere in the private view",
+    !/How this funding model works/.test(privHtml));
   check("W2b: ...and no republished snapshot is linked anywhere",
     !/claude\.ai\/code\/artifact/.test(privHtml));
   check("W2b: the public college page does NOT expose the explainer link",

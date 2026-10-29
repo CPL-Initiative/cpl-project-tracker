@@ -63,6 +63,9 @@ sheet were skipped as unmoved (no lane carries a NEEDS SAM).
 
 ## Lessons to honor
 
+- **A red shard's log can end mid-run**: `tests/run.js` ends on `process.exit()` with its own stdout a pipe, so
+  on #2537 two shards' logs stopped about 30 files short with no summary line. Look for `✗ FAILED:` inline
+  (`get_job_logs` with a large `tail_lines`); a fix is `process.exitCode` in place of the exit, its own PR.
 - **Run both earn guards** (`cpl_funding_calm`, `cpl_funding_earn_retired`) before pushing funding prose.
 - **A person's words cross a guard by name only** (`HUMAN_NEG`, `HUMAN_AUTHORED`); a session's prose still fails it.
 - **Read curated text before the code** when a reader quotes the page: Scenario 4's `text` holds much of what shows.

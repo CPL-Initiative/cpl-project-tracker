@@ -137,8 +137,9 @@ function rowCell(doc, name, sel) {
     !!cr && (cr.getAttribute("title") || "").indexOf("qualifying so far in 2026-27: $" +
       Math.round(a.ecy1).toLocaleString("en-US")) !== -1);
   const th = doc.querySelector('#cplFundTable th[data-sort="current_total"]');
+  // Natalie's plainer hover (via Sam, 2026-10-28) opens on what the word means; the year rides it.
   check("A5: the Curr Total Funds header says its figure is the viewed year's",
-    !!th && /qualifying so far in 2026-27, credit and noncredit together/.test(th.getAttribute("title") || ""));
+    !!th && /qualifies for so far in 2026-27, credit and noncredit together/.test(th.getAttribute("title") || ""));
 
   // Year 2 on the same control: the cell follows it.
   T._state.viewSlot = "2";
@@ -207,7 +208,8 @@ function rowCell(doc, name, sel) {
     !/qualifying so far in /.test(cur.getAttribute("title") || ""));
   const th = doc.querySelector('#cplFundTable th[data-sort="current_total"]');
   check("B2: the Curr Total Funds header keeps the window wording under Combined funding",
-    !!th && /^Funding qualifying so far, credit and noncredit together\./.test(th.getAttribute("title") || ""));
+    !!th && /^Curr Funds \(current funds\): the funding the institution qualifies for so far, credit and noncredit together,/
+      .test(th.getAttribute("title") || ""));
 }
 
 finish();
