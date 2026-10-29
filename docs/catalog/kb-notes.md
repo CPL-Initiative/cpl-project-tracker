@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-564 document(s).
+565 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -271,6 +271,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Adversarially verify an id crosswalk before a live PK renumber](../kb-notes/methodology-adversarial-verify-crosswalk-before-live-rekey.md) | methodology | published | 2026-07-21 | 2026-07-21 |
 | [Agreement is not corroboration when the behavior is systematic](../kb-notes/methodology-agreement-is-not-corroboration-when-the-behaviour-is-systematic.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [Alias maps are permutations, not graphs: resolution semantics for stacked re-keys](../kb-notes/methodology-alias-map-resolution-semantics.md) | methodology | published | 2026-06-11 |  |
+| [Alt text a program wrote is no alt text](../kb-notes/methodology-alt-text-a-program-wrote-is-no-alt-text.md) | methodology | published | 2026-10-29 | 2026-10-29 |
 | [An absence in the data is a statement about the data — say what the catalog shows, never that the county has none](../kb-notes/methodology-an-absence-in-the-data-is-a-statement-about-the-data.md) | methodology | published | 2026-09-18 | 2026-09-30 |
 | [An accessibility sweep does not measure alignment; probe the edges](../kb-notes/methodology-an-a11y-sweep-does-not-measure-alignment.md) | methodology | published | 2026-09-30 | 2026-09-30 |
 | [An additive sync cannot carry a correction](../kb-notes/methodology-an-additive-sync-cannot-carry-a-correction.md) | methodology | published | 2026-10-05 | 2026-10-05 |
