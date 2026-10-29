@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-488 document(s).
+489 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 520 | [Session 520 handoff: the CSM team's funding fixes, Sam's eight FAQs, and why Sierra choked](../session_520_handoff.md) | 2026-10-29 |
 | 519 | [Session 519 handoff: the Library's slides beside their items, funding on a phone, the FAQ in groups and Sierra reading it](../session_519_handoff.md) | 2026-10-29 |
 | 518 | [Session 518 handoff: the Library's remediation, from Sam's live run to a workspace that files as it opens](../session_518_handoff.md) | 2026-10-29 |
 | 517 | [Session 517 handoff: a workbook's conditional formatting in the Library's remediation](../session_517_handoff.md) | 2026-10-29 |

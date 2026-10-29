@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 565,
+   "count": 566,
    "docs": [
     {
      "created": "2026-08-14",
@@ -3567,6 +3567,25 @@
      "title": "A saved setting is not the effective value \u2014 ask the model, not the config",
      "type": "methodology",
      "updated": "2026-08-26"
+    },
+    {
+     "created": "2026-10-29",
+     "governs": [
+      ".github/workflows/map-custom-report-load.yml",
+      "docs/cpl_assistant_lessons.md"
+     ],
+     "path": "docs/kb-notes/methodology-a-cron-runs-when-github-gets-to-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "github-actions",
+      "scheduling",
+      "sierra",
+      "map-custom-reports"
+     ],
+     "title": "A scheduled workflow runs when GitHub gets to it, so place it where a late start is harmless",
+     "type": "methodology",
+     "updated": "2026-10-29"
     },
     {
      "created": "2026-08-19",
@@ -16228,8 +16247,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 488,
+   "count": 489,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 520,
+     "path": "docs/session_520_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "funding",
+      "faq",
+      "sierra",
+      "map-custom-reports"
+     ],
+     "title": "Session 520 handoff: the CSM team's funding fixes, Sam's eight FAQs, and why Sierra choked",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-29",
      "governs": [],
@@ -24587,5 +24623,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1306
+ "total": 1308
 }
