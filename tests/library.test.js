@@ -16,9 +16,10 @@
 //   - Changes to make (Sam, 2026-10-25): a reader's comments on a piece save on
 //     the record, list it under Needs attention, and Copy the request hands over
 //     the paste that rebuilds it from its source and keeps its link;
-//   - Regenerate (Sam, 2026-10-26): one button on every record saves what to change,
-//     the documents to work from (a link or pasted text) and the request, shows where
-//     the request stands, and holds a public copy until Replace the public copy;
+//   - Regenerate (Sam, 2026-10-26), now Revise and remediate from the one box (Sam,
+//     2026-10-29): every record offers it; the box saves what to change, the documents
+//     to work from (a link, or a file's words read here) and the request, the card shows
+//     where the request stands, and a public copy holds until Replace the public copy;
 //   - File it on a brief's card moves it to Draft and dates it (Sam, 2026-10-27);
 //   - Start a piece saves a Requested record with its brief, In development shows
 //     it at its step and keeps it out of the register and out of Not filed, and
@@ -400,14 +401,14 @@ block("(9b)", function () {
       w0.init.method === "PATCH" && /id=eq\.r1$/.test(w0.url) && w0.body.status === "draft" && w0.body.home === "drive", JSON.stringify(w0.body));
     check("(9b) a record filed without a date takes the day it is filed", day.test(w0.body.made_on || ""), w0.body.made_on);
     check("(9b) and says where it went", /now a Draft, under In development/.test(m.root.textContent));
-    m.M._state.edit = "r2"; m.M.render();
+    click(m.w, m.root.querySelector('[data-edittop="r2"]'));
     m.w.document.getElementById("le-status").value = "approved";
     submit(m, 'form[data-editform="r2"]');
     return settle();
   }).then(function () {
     const e = writes.filter(function (x) { return /id=eq\.r2$/.test(x.url); })[0] || { body: {} };
     check("(9b) Edit moving a dateless brief past Requested gives it today's date", e.body.status === "approved" && day.test(e.body.made_on || ""), JSON.stringify(e.body));
-    m.M._state.edit = "r2"; m.M.render();
+    click(m.w, m.root.querySelector('[data-edittop="r2"]'));
     m.w.document.getElementById("le-status").value = "requested";
     submit(m, 'form[data-editform="r2"]');
     return settle();
@@ -622,8 +623,8 @@ block("(13)", function () {
       /keep its link/.test(t) && /empty Changes to make and clear regen/.test(t) && /committed receipt/.test(t));
     check("(13) it ends with what a good result looks like", /A good result: [^\n]+$/.test(t));
     click(m.w, card("a5").querySelector('[data-edittop="a5"]'));
-    check("(13) Edit no longer holds the comment box; it points to Regenerate",
-      !doc.getElementById("le-refresh") && /go on Regenerate beside Edit/.test(m.root.querySelector('[data-editform="a5"]').textContent));
+    check("(13) Edit opens in the one box, at Change its details, with no comment box of its own",
+      !doc.getElementById("le-refresh") && !!doc.querySelector('#lib-drop [data-editform="a5"]') && doc.getElementById("lc-pu-details").checked);
   });
 });
 
@@ -643,6 +644,11 @@ block("(14)", function () {
     return response(200, rows);
   } });
   const doc = m.w.document, M = m.M;
+  const drop = function (file) {
+    const ev = new m.w.Event("drop", { bubbles: true, cancelable: true });
+    Object.defineProperty(ev, "dataTransfer", { value: { files: [file] } });
+    doc.getElementById("lib-drop").dispatchEvent(ev);
+  };
   check("(14) a request's state reads from the record",
     M._regenState({}) === null && M._regenState({ regen: { requested_at: "x" } }) === "waiting" &&
     M._regenState({ regen: { requested_at: "x", ready_at: "y" } }) === "ready" &&
@@ -653,15 +659,15 @@ block("(14)", function () {
     /cpl_library_sources_ck check \(\s*jsonb_typeof\(sources\) = 'array'/.test(SQL) && /cpl_library_regen_ck check \(\s*regen is null or/.test(SQL));
   return Promise.resolve(M.activate()).then(settle).then(function () {
     const card = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article"); };
-    check("(14) ⭐ every record offers Regenerate", ["a1", "a2", "a3", "a4", "a5"].every(function (id) {
-      return !!card(id).querySelector('[data-regen="' + id + '"]'); }));
+    check("(14) ⭐ every record offers Revise and remediate", ["a1", "a2", "a3", "a4", "a5"].every(function (id) {
+      return /Revise and remediate|Ask for more changes/.test((card(id).querySelector('[data-revise="' + id + '"]') || {}).textContent || ""); }));
     check("(14) a waiting request names who asked and when, in words, and offers Copy the request",
       /Rebuild requested by Ashley, 26 October 2026, 14:10 UTC/.test(card("a4").textContent) && !!card("a4").querySelector('[data-request="a4"]') &&
       /Rebuild requested/.test(card("a4").querySelector(".lib-flags").textContent));
     check("(14) a ready draft links the draft and offers Replace the public copy",
       /Draft ready to review/.test(card("a3").querySelector(".lib-flags").textContent) &&
       !!card("a3").querySelector('a[href="https://claude.ai/artifact/DRAFT1"]') &&
-      !!card("a3").querySelector('[data-regenokform="a3"] button[type="submit"]') && /Ask for more changes/.test(card("a3").querySelector('[data-regen="a3"]').textContent));
+      !!card("a3").querySelector('[data-regenokform="a3"] button[type="submit"]') && /Ask for more changes/.test(card("a3").querySelector('[data-revise="a3"]').textContent));
     click(m.w, card("a3").querySelector('[data-request="a3"]'));
     const t = (doc.getElementById("lib-r-a3") || {}).value || "";
     check("(14) the paste lists the documents and says how to read pasted text",
@@ -669,43 +675,42 @@ block("(14)", function () {
       /select sources from cpl_library where slug = 'cpl-funding-in-motion';/.test(t), t);
     check("(14) the paste for a public piece holds the public copy until someone replaces it",
       /the public copy stays until someone presses Replace the public copy/.test(t), t);
-    click(m.w, card("a5").querySelector('[data-regen="a5"]'));
-    const note = doc.getElementById("rg-note");
-    check("(14) Regenerate opens a labeled form: what to change, the documents, your name",
-      !!note && !!doc.querySelector('label[for="rg-note"]') && /Documents to work from/.test(doc.querySelector(".lib-srcset legend").textContent) &&
-      !!doc.getElementById("rg-stitle") && !!doc.getElementById("rg-surl") && !!doc.getElementById("rg-stext") && !!doc.getElementById("rg-by"));
-    check("(14) a piece off the public library asks no publish question", !doc.getElementById("rg-pub"));
-    check("(14) the help says what a session can read, in words", /cannot open SharePoint until RCCD approves the Microsoft 365 connector/.test(doc.getElementById("rg-stext-h").textContent) &&
-      /Never paste a student/.test(doc.getElementById("rg-stext-h").textContent));
-    note.value = "Add the welding exhibit.";
-    doc.getElementById("rg-surl").value = "https://example.org/guide.pdf";
-    click(m.w, m.root.querySelector('[data-srcadd="rg"]'));
-    check("(14) a document with no title is refused in words, and the note survives the repaint",
-      /Give the document a title/.test(m.root.textContent) && doc.getElementById("rg-note").value === "Add the welding exhibit.");
-    doc.getElementById("rg-stitle").value = "Welding guide";
-    click(m.w, m.root.querySelector('[data-srcadd="rg"]'));
-    check("(14) an added document lists by its link, and the fields clear for the next",
-      !!m.root.querySelector('.lib-srcset a[href="https://example.org/guide.pdf"]') && doc.getElementById("rg-surl").value === "");
-    doc.getElementById("rg-stitle").value = "Meeting notes";
-    doc.getElementById("rg-stext").value = "The college asked about OSHA.";
-    click(m.w, m.root.querySelector('[data-srcadd="rg"]'));
-    doc.getElementById("rg-stitle").value = "Stray";
-    doc.getElementById("rg-surl").value = "https://example.org/stray";
-    click(m.w, m.root.querySelector('[data-srcadd="rg"]'));
-    click(m.w, m.root.querySelector('[data-srcdel="rg:2"]'));
-    check("(14) Remove takes a document off the list", m.root.querySelectorAll(".lib-srcset .lib-srcs li").length === 2);
-    submit({ w: m.w, root: m.root }, '[data-regenform="a5"]');
+    check("(14) ⭐ the paste asks for the draft remediated before it comes back",
+      /Remediate the draft before you hand it over/.test(t) && /npm run a11y/.test(t) && /library_remediate\.js/.test(t), t);
+    click(m.w, card("a5").querySelector('[data-revise="a5"]'));
+    const panel = doc.getElementById("lib-drop");
+    check("(14) Revise and remediate opens the one box with the piece picked, its kind named",
+      /Already in the Library/.test(panel.textContent) && /Update to the Board of Governors \u00b7 Deck/.test(panel.textContent) &&
+      doc.getElementById("lc-pu-revise").checked && /Revise and remediate this piece/.test(panel.textContent), panel.textContent.slice(0, 300));
+    check("(14) the box says what a session can read and what it does, and keeps a student's record out",
+      /cannot open SharePoint until RCCD approves the Microsoft 365 connector/.test(panel.textContent) && /Never add a student's record/.test(panel.textContent) &&
+      /checks its accessibility/.test(panel.textContent));
+    check("(14) a piece off the public library asks no publish question", !panel.querySelector("select") && !/Replace the public copy/.test(panel.textContent));
+    doc.getElementById("lc-instr").value = "Add the welding exhibit.";
+    drop({ name: "Meeting notes.txt", text: function () { return Promise.resolve("The college asked about OSHA."); } });
+    return settle();
+  }).then(function () {
+    check("(14) a file dropped on a picked piece becomes a document to work from, read here, and the instructions survive the repaint",
+      /Meeting notes/.test(doc.querySelector("#lib-drop .lib-srcs").textContent) && doc.getElementById("lc-instr").value === "Add the welding exhibit.");
+    drop({ name: "stray.txt", text: function () { return Promise.resolve("Not this one."); } });
+    return settle();
+  }).then(function () {
+    click(m.w, m.root.querySelector('[data-srcdel="pc:1"]'));
+    check("(14) Remove takes a document off the list", m.root.querySelectorAll("#lib-drop .lib-srcs li").length === 1);
+    doc.getElementById("lc-link").value = "https://example.org/guide.pdf";
+    click(m.w, doc.getElementById("lib-go"));
     return settle();
   }).then(function () {
     const w0 = writes[0] || { body: {}, init: {} };
     const b = w0.body || {};
-    check("(14) ⭐ Regenerate writes the note, the documents and the request, with who asked",
+    check("(14) ⭐ Revise and remediate writes the note, the documents and the request, with who asked",
       w0.init.method === "PATCH" && /id=eq\.a5$/.test(w0.url) && b.refresh_note === "Add the welding exhibit." && b.updated_by === "Sam" &&
       Array.isArray(b.sources) && b.sources.length === 2 &&
-      b.sources[0].title === "Welding guide" && b.sources[0].url === "https://example.org/guide.pdf" && b.sources[0].text === null &&
-      b.sources[1].title === "Meeting notes" && b.sources[1].url === null && b.sources[1].text === "The college asked about OSHA." &&
+      b.sources[0].title === "Meeting notes" && b.sources[0].url === null && b.sources[0].text === "The college asked about OSHA." &&
+      b.sources[1].title === "guide" && b.sources[1].url === "https://example.org/guide.pdf" && b.sources[1].text === null &&
       b.regen && b.regen.requested_by === "Sam" && b.regen.publish === "show" && /^\d{4}-\d{2}-\d{2}T/.test(b.regen.requested_at), JSON.stringify(b));
-    check("(14) and says where the request goes next", /The next scheduled run rebuilds it/.test(m.root.textContent));
+    check("(14) and says what happens next, beside the box, and lets the piece go", /Claude rebuilds Update to the Board of Governors from its source/.test(m.root.textContent) &&
+      /checks its accessibility/.test(m.root.querySelector(".lib-msg").textContent) && !doc.getElementById("lc-pu-revise"));
     const card = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article"); };
     submit({ w: m.w, root: m.root }, '[data-regenokform="a3"]');
     return settle().then(function () {
@@ -807,7 +812,7 @@ block("(16)", function () {
     doc.getElementById("lib-drop").dispatchEvent(ev);
   };
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
-    check("(16) one panel, headed Create or Remediate a Document", /Create or Remediate a Document/.test(doc.getElementById("lib-panel-h").textContent));
+    check("(16) one panel, headed Create, Revise or Remediate a Document", /Create, Revise or Remediate a Document/.test(doc.getElementById("lib-panel-h").textContent));
     check("(16) no Make a visual, Start a piece or Add to the Library button", !doc.getElementById("lib-make") && !doc.getElementById("lib-start") && !doc.getElementById("lib-add"));
     check("(16) one word starts it", doc.getElementById("lib-go").textContent.trim() === "Start");
     click(m.w, doc.getElementById("lib-go"));
@@ -1172,6 +1177,91 @@ block("(18)", function () {
   });
 });
 
+// ── (19) Revise and remediate from the one box (Sam, 2026-10-29; mockup Version 21) ──
+// "could be as simple as choosing an existing item in the drop box". Sam's ELL revision
+// never reached its record: Regenerate's box took 4,000 characters, the column takes 600,
+// and the refusal printed far above the card. The box now finds the piece (picked by a
+// label naming its kind, its link pasted, or a page named for it dropped), keeps long
+// instructions whole as a document, reads a Word file's words, and holds Edit, a new
+// version and background in the same place.
+block("(19)", function () {
+  const writes = [];
+  const rows = JSON.parse(JSON.stringify(PROJ_ROWS));
+  rows[0].sources = [{ title: "ELL IET Ideas", url: "https://claude.ai/artifact/x", text: null, added_by: "Sam", added_on: "2026-10-23" }];
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method && init.method !== "GET") { writes.push({ url: url, body: JSON.parse(init.body || "{}") }); return response(200, [{}]); }
+    return response(200, rows);
+  } });
+  const JSZip = require("../jszip.min.js");
+  m.w.JSZip = JSZip;
+  const doc = m.w.document;
+  const drop = function (file) {
+    const ev = new m.w.Event("drop", { bubbles: true, cancelable: true });
+    Object.defineProperty(ev, "dataTransfer", { value: { files: [file] } });
+    doc.getElementById("lib-drop").dispatchEvent(ev);
+  };
+  const type = function (id, v) { const n = doc.getElementById(id); n.value = v; n.dispatchEvent(new m.w.Event("input", { bubbles: true })); };
+  const choose = function (v) { const n = doc.getElementById("lc-pu-" + v); n.checked = true; n.dispatchEvent(new m.w.Event("change", { bubbles: true })); };
+  const box = function () { return doc.getElementById("lib-drop"); };
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    const opts = Array.prototype.map.call(doc.querySelectorAll("#lib-pieces option"), function (o) { return o.value; });
+    check("(19) ⭐ the picker names each piece's kind, so the visual and its document read apart",
+      opts.indexOf("ELL IET CPL Starting Points (Visual, Version 2)") >= 0 && opts.indexOf("ELL IET CPL Ideas (Document)") >= 0, JSON.stringify(opts));
+    type("lc-piece", "ELL IET CPL Starting Points (Visual, Version 2)");
+    check("(19) choosing one picks it at Revise and remediate, its documents listed, the picker put away",
+      /Already in the Library/.test(box().textContent) && doc.getElementById("lc-pu-revise").checked &&
+      /ELL IET Ideas/.test(box().querySelector(".lib-srcs").textContent) && !doc.getElementById("lc-piece"));
+    check("(19) the box offers four things to do with it", ["revise", "details", "version", "background"].every(function (v) { return !!doc.getElementById("lc-pu-" + v); }));
+    check("(19) a public piece's draft waits for Replace the public copy, and the box asks nothing about it",
+      /the public copy stays until you press Replace the public copy/.test(box().textContent) && !box().querySelector("select"));
+    click(m.w, box().querySelector("[data-unpiece]"));
+    check("(19) Clear lets the piece go and gives the picker back", !doc.getElementById("lc-pu-revise") && !!doc.getElementById("lc-piece"));
+    type("lc-link", "https://cpl-initiative.github.io/cpl-project-tracker/library/ell-iet/");
+    check("(19) pasting a piece's own link picks it, and says so",
+      !!doc.getElementById("lc-pu-revise") && /This is ELL IET CPL Starting Points, already in the Library/.test(m.root.textContent) && doc.getElementById("lc-link").value === "");
+    click(m.w, box().querySelector("[data-unpiece]"));
+    drop({ name: "20261023_ELL_IET_CPL_Starting_Points_2.html", text: function () { return Promise.resolve("<html></html>"); } });
+    check("(19) dropping the page named for a piece picks it, rather than starting a second record",
+      /ELL IET CPL Starting Points/.test((box().querySelector(".lib-piecepick") || {}).textContent || "") && !m.M._state.pick);
+    const z = new JSZip();
+    z.file("word/document.xml", '<w:document xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:body>' +
+      "<w:p><w:r><w:t>Add a table to each grantee card.</w:t></w:r></w:p>" +
+      '<w:p><w:r><w:t xml:space="preserve">Name the </w:t></w:r><w:r><w:t>college courses.</w:t></w:r></w:p></w:body></w:document>');
+    return z.generateAsync({ type: "uint8array" }).then(function (u8) {
+      drop({ name: "ELL revision notes.docx", arrayBuffer: function () { return Promise.resolve(u8.buffer); } });
+      return settle().then(settle);
+    });
+  }).then(function () {
+    const pc = m.M._state.src.pc || [];
+    check("(19) ⭐ a Word file dropped on it is read here into a document to work from",
+      /ELL revision notes/.test(box().querySelector(".lib-srcs").textContent) &&
+      pc.some(function (x) { return x.title === "ELL revision notes" && x.text === "Add a table to each grantee card.\nName the college courses."; }), JSON.stringify(pc));
+    const long = new Array(41).join("Revise each grantee card. ").trim();
+    doc.getElementById("lc-instr").value = long;
+    click(m.w, doc.getElementById("lib-go"));
+    return settle().then(function () { return long; });
+  }).then(function (long) {
+    const w0 = writes[0] || { body: {}, url: "" }, b = w0.body || {};
+    check("(19) ⭐ instructions past the 600-character column are kept whole as a document, and the note points there",
+      /id=eq\.p1$/.test(w0.url) && long.length > 600 && (b.refresh_note || "").length <= 600 &&
+      /The whole instructions are under Documents to work from\.$/.test(b.refresh_note || "") && b.sources.length === 3 &&
+      b.sources.some(function (x) { return /^Instructions from Sam, /.test(x.title) && x.text === long; }) && b.regen.publish === "show", JSON.stringify(b).slice(0, 500));
+    check("(19) the column's cap is the schema's", /coalesce\(char_length\(refresh_note\), 0\) <= 600/.test(SQL));
+    click(m.w, m.root.querySelector('li.lib-piece [data-edittop="p2"]'));
+    check("(19) Edit opens the box at Change its details, with the record's own form and no Start",
+      doc.getElementById("lc-pu-details").checked && !!box().querySelector('form[data-editform="p2"]') && !doc.getElementById("lc-instr") && !doc.getElementById("lib-go"));
+    choose("version");
+    check("(19) File a new version opens the filing form for that same record", !!doc.getElementById("lib-addform") && m.M._state.formFor === "p2" && !doc.getElementById("lib-go"));
+    choose("background");
+    doc.getElementById("lc-instr").value = "A deck for the grantee webinar";
+    click(m.w, doc.getElementById("lib-go"));
+    const ls = m.M._state.src.ls || [];
+    check("(19) Use it as background opens the brief with the piece's own link first",
+      !!doc.getElementById("lib-startform") && ls.length >= 1 && ls[0].url === PROJ_ROWS[1].url && doc.getElementById("ls-kind").value === "deck", JSON.stringify(ls));
+    check("(19) every row says Revise and remediate", rows.every(function (r) { return /Revise and remediate/.test((m.root.querySelector('[data-revise="' + r.id + '"]') || {}).textContent || ""); }));
+  });
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
@@ -1220,7 +1310,8 @@ block("(12)", function () {
     check("(12) a knowledge piece without a note says what to do", /Its substance is knowledge and no KB note links it yet/.test(t("k1")));
     check("(12) a knowledge piece links its note", /KB note/.test(t("k2")) && /methodology\/cpl-opportunity-pages\.md/.test(t("k2")));
     check("(12) a deck, film or data piece needs none", /no KB note needed/.test(t("k3")));
-    M._state.open = { k1: true }; M._state.edit = "k1"; M.render();
+    M._state.open = { k1: true }; M.render();
+    click(w, m.root.querySelector('[data-edittop="k1"]'));
     check("(12) Edit offers Knowledge and KB note", !!doc.getElementById("le-knowledge") && !!doc.getElementById("le-kbnote") && doc.getElementById("le-knowledge").value === "yes");
     doc.getElementById("le-kbnote").value = "reference/dsp-training.md";
     submit(m, 'form[data-editform="k1"]');

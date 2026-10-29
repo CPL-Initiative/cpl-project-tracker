@@ -1077,3 +1077,32 @@ Draft 1 (https://claude.ai/artifact/7HPvgHpX8jnfpCLd7e4Tv1, private) is record `
 ## The ELL IET and DSP pages, Version 2 (built S482 and S483)
 
 Both are the public copies (Sheet 129). The record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S513)*.
+
+## A form's limit must be the column's, and its answer must land where the reader is (S520's side session, 2026-10-29)
+
+Sam: *"I want to revise the ELL visual in the library and added instructions but the regenerate doesn't seem top work."*
+The record showed no write after S509's project receipt. Regenerate's textarea took 4,000 characters (`maxlength`), while
+`cpl_library_text_ck` caps `refresh_note` at 600, so a long note was refused with a 400. The refusal went to `say()`, which
+paints under the panel at the top of the tab, while the form sat on a card far below it. The request failed, and the person
+saw nothing. Two rules came out of it. A field's limit is the column's, or the overflow goes somewhere that holds it:
+instructions past 600 characters now go whole into `sources`, with a pointer in the note. And a form's answer lands beside
+the form: the request is now made in the one box, where the message prints beside Start. Built as Revise and remediate
+from the one box; the lane's ⑪ has the record.
+
+## Moved from the lane (S520's side session)
+
+✅ **⑪ Revise and remediate from the one box (Sam, 2026-10-29; mockup Version 21; built by S520's side session).** Sam's ELL
+revision never reached its record: Regenerate's box took 4,000 characters, `refresh_note` takes 600
+(`cpl_library_text_ck`), and the refusal printed above the panel, far from the card. Sam: *"Seems like we need to
+integrate/consolidate the edit and regenerate function for existing items into the new function"*, *"I really like how
+simple the new function is, so if we can keep the simplicity, all the better"*, *"could be as simple as choosing an existing
+item in the drop box"*, and on Version 21 *"Maybe make Revise 'Revise and Remediate'"*. The panel is now *Create, Revise or
+Remediate a Document*. It finds a piece already here four ways: picked by a label that names its kind (*ELL IET CPL Starting
+Points (Visual, Version 2)*, his ask on seeing two ELL titles), its own link pasted, a page or picture named for it dropped,
+or **Revise and remediate** or **Edit** pressed on its card. It then asks what to do with it: Revise and remediate this
+piece, Change its details (the edit form, now only here), File a new version of it, or Use it as background for something
+new. A dropped Word file's words are read in the browser. Instructions past 600 characters are kept whole as a document to
+work from, with a pointer in the note. The request's paste asks the session to remediate the draft before handing it over
+(a page through `npm run a11y`, a deck, document, workbook or PDF through `library_remediate.js`). The Regenerate form, its
+publish question and its separate document fields are gone. Mockup: https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR
+(Version 21 beside Version 20). Test: `library` block (19), and (13), (14) moved to the box.
