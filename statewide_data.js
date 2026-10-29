@@ -174662,6 +174662,177 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 9.0
     },
     {
+      "exhibit_id": "MAPICI-AWS(6-1-001|MAPICI-DGQW1-1-001",
+      "exhibit_ids": [
+        "MAPICI-AWS(6-1-001",
+        "MAPICI-DGQW1-1-001"
+      ],
+      "title": "AWS D17.1 GTAW Qualified Welder",
+      "unified_title": "AWS D17.1 GTAW Qualified Welder",
+      "is_classified": true,
+      "issuing_agency": "American Welding Society (AWS)",
+      "training_agency": "",
+      "confidence_title": 0.95,
+      "confidence_issuer": 0.9,
+      "quality_flag": "",
+      "raw_titles": [
+        "American Welding Society  D17.1 GTAW Certification",
+        "D17.1 GTAW Qualified Welder"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "15",
+      "top_codes": [
+        "189",
+        "66"
+      ],
+      "collaborative_type": "CCC Collaborative",
+      "adopters": 2,
+      "adopter_names": [
+        "Barstow Community College",
+        "Santa Ana College"
+      ],
+      "potential": 63,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Bakersfield College",
+        "Butte College",
+        "Cabrillo College",
+        "Cerritos College",
+        "Cerro Coso Community College",
+        "Chabot College",
+        "Coalinga College",
+        "College of Marin",
+        "College of the Canyons",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Columbia College",
+        "Compton College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "El Camino College",
+        "Fresno City College",
+        "Fullerton College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Laney College",
+        "Las Positas College",
+        "Lassen College",
+        "Long Beach City College",
+        "Los Angeles Pierce College",
+        "Los Angeles Southwest College",
+        "Los Angeles Trade Technical College",
+        "Los Medanos College",
+        "Madera College",
+        "Merced College",
+        "Modesto Junior College",
+        "Mt. San Antonio College",
+        "Mt. San Jacinto College",
+        "Napa Valley College",
+        "Norco College",
+        "Orange Coast College",
+        "Palo Verde College",
+        "Palomar College",
+        "Pasadena City College",
+        "Porterville College",
+        "Reedley College",
+        "Rio Hondo College",
+        "Riverside City College",
+        "San Bernardino Valley College",
+        "San Diego College of Continuing Education",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Solano Community College",
+        "Taft College",
+        "Ventura College",
+        "Victor Valley College",
+        "Woodland Community College",
+        "Yuba College"
+      ],
+      "total_addressable": 65,
+      "credit_recs": [
+        {
+          "course": "WELD 55A",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 55B",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 232",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "WELD 132",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "CRP 475A",
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
+        },
+        {
+          "course": "CRP 475C",
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
+        }
+      ],
+      "authoritative_recs": [
+        {
+          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        },
+        {
+          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
+          "cid": ""
+        }
+      ],
+      "exhibit_records": [
+        {
+          "id": "MAPICI-AWS(6-1-001",
+          "title": "American Welding Society  D17.1 GTAW Certification",
+          "units": 18.0,
+          "lines": 6
+        },
+        {
+          "id": "MAPICI-DGQW1-1-001",
+          "title": "D17.1 GTAW Qualified Welder",
+          "units": 12.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Barstow Community College": 6.0,
+        "Santa Ana College": 6.0
+      },
+      "adopter_lines": {
+        "Barstow Community College": 2,
+        "Santa Ana College": 2
+      },
+      "adopter_rec_idx": {
+        "Barstow Community College": [
+          0,
+          1
+        ],
+        "Santa Ana College": [
+          2,
+          3
+        ]
+      },
+      "peer_units_median": 6.0,
+      "peer_units_max": 6.0,
+      "rec_units_total": 18.0
+    },
+    {
       "exhibit_id": "MAPICI-MCAF-1-001",
       "exhibit_ids": [
         "MAPICI-MCAF-1-001"
@@ -191573,165 +191744,6 @@ window.CPL_STATEWIDE = {
       "peer_units_median": 0.5,
       "peer_units_max": 0.5,
       "rec_units_total": 1.0
-    },
-    {
-      "exhibit_id": "MAPICI-AWS(6-1-001|MAPICI-DGQW1-1-001",
-      "exhibit_ids": [
-        "MAPICI-AWS(6-1-001",
-        "MAPICI-DGQW1-1-001"
-      ],
-      "title": "AWS D17.1 GTAW Qualified Welder",
-      "unified_title": "AWS D17.1 GTAW Qualified Welder",
-      "is_classified": true,
-      "issuing_agency": "American Welding Society (AWS)",
-      "training_agency": "",
-      "confidence_title": 0.9,
-      "confidence_issuer": 0.9,
-      "quality_flag": "",
-      "raw_titles": [
-        "American Welding Society  D17.1 GTAW Certification",
-        "D17.1 GTAW Qualified Welder"
-      ],
-      "cpl_type": "Industry Certification",
-      "discipline": "Engineering and Industrial Technologies",
-      "sector": "Advanced Manufacturing",
-      "cip_sector": "15",
-      "top_codes": [
-        "66"
-      ],
-      "collaborative_type": "CCC Collaborative",
-      "adopters": 2,
-      "adopter_names": [
-        "Barstow Community College",
-        "Santa Ana College"
-      ],
-      "potential": 60,
-      "potential_names": [
-        "Allan Hancock College",
-        "American River College",
-        "Antelope Valley College",
-        "Bakersfield College",
-        "Butte College",
-        "Cabrillo College",
-        "Cerritos College",
-        "Cerro Coso Community College",
-        "Chabot College",
-        "Coalinga College",
-        "College of Marin",
-        "College of the Canyons",
-        "College of the Desert",
-        "College of the Redwoods",
-        "College of the Sequoias",
-        "College of the Siskiyous",
-        "Columbia College",
-        "Compton College",
-        "Cosumnes River College",
-        "Cuesta College",
-        "El Camino College",
-        "Fresno City College",
-        "Fullerton College",
-        "Gavilan College",
-        "Glendale Community College",
-        "Hartnell College",
-        "Imperial Valley College",
-        "Laney College",
-        "Las Positas College",
-        "Lassen College",
-        "Long Beach City College",
-        "Los Angeles Pierce College",
-        "Los Angeles Trade Technical College",
-        "Los Medanos College",
-        "Madera College",
-        "Merced College",
-        "Modesto Junior College",
-        "Mt. San Antonio College",
-        "Mt. San Jacinto College",
-        "Napa Valley College",
-        "Orange Coast College",
-        "Palo Verde College",
-        "Palomar College",
-        "Pasadena City College",
-        "Porterville College",
-        "Reedley College",
-        "Rio Hondo College",
-        "Riverside City College",
-        "San Bernardino Valley College",
-        "San Diego College of Continuing Education",
-        "San Joaquin Delta College",
-        "Santa Rosa Junior College",
-        "Shasta College",
-        "Sierra College",
-        "Solano Community College",
-        "Taft College",
-        "Ventura College",
-        "Victor Valley College",
-        "Woodland Community College",
-        "Yuba College"
-      ],
-      "total_addressable": 62,
-      "credit_recs": [
-        {
-          "course": "WELD 55A",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 55B",
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 232",
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)"
-        },
-        {
-          "course": "WELD 132",
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)"
-        }
-      ],
-      "authoritative_recs": [
-        {
-          "credit": "3-4 hours in Introduction to Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        },
-        {
-          "credit": "3-4 hours in Advanced Gas Tungsten Arc Welding (GTAW)",
-          "cid": ""
-        }
-      ],
-      "exhibit_records": [
-        {
-          "id": "MAPICI-AWS(6-1-001",
-          "title": "American Welding Society  D17.1 GTAW Certification",
-          "units": 12.0,
-          "lines": 4
-        },
-        {
-          "id": "MAPICI-DGQW1-1-001",
-          "title": "D17.1 GTAW Qualified Welder",
-          "units": 12.0,
-          "lines": 4
-        }
-      ],
-      "adopter_units": {
-        "Barstow Community College": 6.0,
-        "Santa Ana College": 6.0
-      },
-      "adopter_lines": {
-        "Barstow Community College": 2,
-        "Santa Ana College": 2
-      },
-      "adopter_rec_idx": {
-        "Barstow Community College": [
-          0,
-          1
-        ],
-        "Santa Ana College": [
-          2,
-          3
-        ]
-      },
-      "peer_units_median": 6.0,
-      "peer_units_max": 6.0,
-      "rec_units_total": 12.0
     },
     {
       "exhibit_id": "MAPICI-ABSG1-1-001|MAPICI-ABSG2-1-001",
@@ -219109,6 +219121,246 @@ window.CPL_STATEWIDE = {
       },
       "adopter_rec_idx": {
         "Las Positas College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPPRA-POML-1-001",
+      "exhibit_ids": [
+        "MAPPRA-POML-1-001"
+      ],
+      "title": "Principles of Management Leadership-Portfolio",
+      "unified_title": "Principles of Management Leadership-Portfolio",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Principles of Management Leadership-Portfolio"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "4"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Columbia College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Madera College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "BUSAD 40",
+          "credit": "3 hours in Principles of Management Leadership"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-POML-1-001",
+          "title": "Principles of Management Leadership-Portfolio",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Columbia College": 3.0
+      },
+      "adopter_lines": {
+        "Columbia College": 1
+      },
+      "adopter_rec_idx": {
+        "Columbia College": [
+          0
+        ]
+      },
+      "peer_units_median": 3.0,
+      "peer_units_max": 3.0,
+      "rec_units_total": 3.0
+    },
+    {
+      "exhibit_id": "MAPPRA-HRIO-1-001",
+      "exhibit_ids": [
+        "MAPPRA-HRIO-1-001"
+      ],
+      "title": "Human Relations in Organizations-Portfolio",
+      "unified_title": "Human Relations in Organizations-Portfolio",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Human Relations in Organizations-Portfolio"
+      ],
+      "cpl_type": "Portfolio Review",
+      "discipline": "Business and Management",
+      "sector": "Business & Entrepreneurship",
+      "cip_sector": "52",
+      "top_codes": [
+        "4"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Columbia College"
+      ],
+      "potential": 58,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Barstow Community College",
+        "Berkeley City College",
+        "Cabrillo College",
+        "Chabot College",
+        "Citrus College",
+        "City College of San Francisco",
+        "College of Marin",
+        "College of San Mateo",
+        "College of the Desert",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "College of the Siskiyous",
+        "Copper Mountain College",
+        "Cosumnes River College",
+        "Cuesta College",
+        "Cuyamaca College",
+        "Diablo Valley College",
+        "Feather River College",
+        "Folsom Lake College",
+        "Foothill College",
+        "Gavilan College",
+        "Glendale Community College",
+        "Grossmont College",
+        "Lake Tahoe Community College",
+        "Las Positas College",
+        "Long Beach City College",
+        "Los Angeles City College",
+        "Los Angeles Harbor College",
+        "Madera College",
+        "Merced College",
+        "Merritt College",
+        "Mission College",
+        "Monterey Peninsula College",
+        "Moorpark College",
+        "Moreno Valley College",
+        "Mt. San Antonio College",
+        "Norco College",
+        "Ohlone College",
+        "Palomar College",
+        "Porterville College",
+        "Reedley College",
+        "Riverside City College",
+        "Sacramento City College",
+        "Saddleback College",
+        "San Diego Mesa College",
+        "San Joaquin Delta College",
+        "Santa Monica College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Shasta College",
+        "Sierra College",
+        "Southwestern College",
+        "Taft College",
+        "Victor Valley College",
+        "West Los Angeles College"
+      ],
+      "total_addressable": 59,
+      "credit_recs": [
+        {
+          "course": "BUSAD 24",
+          "credit": "3 hours in Human Relations in Organizations"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPPRA-HRIO-1-001",
+          "title": "Human Relations in Organizations-Portfolio",
+          "units": 3.0,
+          "lines": 1
+        }
+      ],
+      "adopter_units": {
+        "Columbia College": 3.0
+      },
+      "adopter_lines": {
+        "Columbia College": 1
+      },
+      "adopter_rec_idx": {
+        "Columbia College": [
           0
         ]
       },
@@ -349437,6 +349689,692 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 4.0
     },
     {
+      "exhibit_id": "MAPICA-IBOE-1-001",
+      "exhibit_ids": [
+        "MAPICA-IBOE-1-001"
+      ],
+      "title": "International Brotherhood of Electrical Workers Year 1",
+      "unified_title": "International Brotherhood of Electrical Workers Year 1",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "International Brotherhood of Electrical Workers Year 1"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "61"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Cerritos College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Modesto Junior College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "APPR B60-1",
+          "credit": "4 hours in Apprentice Inside Wireman 1"
+        },
+        {
+          "course": "APPR B60-2",
+          "credit": "4 hours in Apprentice Inside Wireman 2"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IBOE-1-001",
+          "title": "International Brotherhood of Electrical Workers Year 1",
+          "units": 8.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPICA-IBOE1-1-001",
+      "exhibit_ids": [
+        "MAPICA-IBOE1-1-001"
+      ],
+      "title": "International Brotherhood of Electrical Workers Year 2",
+      "unified_title": "International Brotherhood of Electrical Workers Year 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "International Brotherhood of Electrical Workers Year 2"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "61"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Cerritos College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Modesto Junior College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "APPR B60-1",
+          "credit": "4 hours in Apprentice Inside Wireman 1"
+        },
+        {
+          "course": "APPR B60-2",
+          "credit": "4 hours in Apprentice Inside Wireman 2"
+        },
+        {
+          "course": "APPR B60-3",
+          "credit": "4 hours in Apprentice Inside Wireman 3"
+        },
+        {
+          "course": "APPR B60-4",
+          "credit": "4 hours in Apprentice Inside Wireman 4"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IBOE1-1-001",
+          "title": "International Brotherhood of Electrical Workers Year 2",
+          "units": 16.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 16.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 4
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "peer_units_median": 16.0,
+      "peer_units_max": 16.0,
+      "rec_units_total": 16.0
+    },
+    {
+      "exhibit_id": "MAPICA-IBOE2-1-001",
+      "exhibit_ids": [
+        "MAPICA-IBOE2-1-001"
+      ],
+      "title": "International Brotherhood of Electrical Workers Year 3",
+      "unified_title": "International Brotherhood of Electrical Workers Year 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "International Brotherhood of Electrical Workers Year 3"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "61"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Cerritos College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Modesto Junior College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "APPR B60-1",
+          "credit": "4 hours in Apprentice Inside Wireman 1"
+        },
+        {
+          "course": "APPR B60-2",
+          "credit": "4 hours in Apprentice Inside Wireman 2"
+        },
+        {
+          "course": "APPR B60-3",
+          "credit": "4 hours in Apprentice Inside Wireman 3"
+        },
+        {
+          "course": "APPR B60-4",
+          "credit": "4 hours in Apprentice Inside Wireman 4"
+        },
+        {
+          "course": "APPR B60-5",
+          "credit": "4 hours in Apprentice Inside Wireman 5"
+        },
+        {
+          "course": "APPR B60-6",
+          "credit": "4 hours in Apprentice Inside Wireman 6"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IBOE2-1-001",
+          "title": "International Brotherhood of Electrical Workers Year 3",
+          "units": 24.0,
+          "lines": 6
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 24.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 6
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "peer_units_median": 24.0,
+      "peer_units_max": 24.0,
+      "rec_units_total": 24.0
+    },
+    {
+      "exhibit_id": "MAPICA-IBOE3-1-001",
+      "exhibit_ids": [
+        "MAPICA-IBOE3-1-001"
+      ],
+      "title": "International Brotherhood of Electrical Workers Year 4",
+      "unified_title": "International Brotherhood of Electrical Workers Year 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "International Brotherhood of Electrical Workers Year 4"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "61"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Cerritos College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Modesto Junior College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "APPR B60-1",
+          "credit": "4 hours in Apprentice Inside Wireman 1"
+        },
+        {
+          "course": "APPR B60-2",
+          "credit": "4 hours in Apprentice Inside Wireman 2"
+        },
+        {
+          "course": "APPR B60-3",
+          "credit": "4 hours in Apprentice Inside Wireman 3"
+        },
+        {
+          "course": "APPR B60-4",
+          "credit": "4 hours in Apprentice Inside Wireman 4"
+        },
+        {
+          "course": "APPR B60-5",
+          "credit": "4 hours in Apprentice Inside Wireman 5"
+        },
+        {
+          "course": "APPR B60-6",
+          "credit": "4 hours in Apprentice Inside Wireman 6"
+        },
+        {
+          "course": "APPR B60-7",
+          "credit": "4 hours in Apprentice Inside Wireman 7"
+        },
+        {
+          "course": "APPR B60-8",
+          "credit": "4 hours in Apprentice Inside Wireman 8"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IBOE3-1-001",
+          "title": "International Brotherhood of Electrical Workers Year 4",
+          "units": 32.0,
+          "lines": 8
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 32.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 8
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "peer_units_median": 32.0,
+      "peer_units_max": 32.0,
+      "rec_units_total": 32.0
+    },
+    {
+      "exhibit_id": "MAPICA-IBOE4-1-001",
+      "exhibit_ids": [
+        "MAPICA-IBOE4-1-001"
+      ],
+      "title": "International Brotherhood of Electrical Workers Year 5",
+      "unified_title": "International Brotherhood of Electrical Workers Year 5",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "International Brotherhood of Electrical Workers Year 5"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "61"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Cerritos College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Modesto Junior College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "APPR B60-1",
+          "credit": "4 hours in Apprentice Inside Wireman 1"
+        },
+        {
+          "course": "APPR B60-2",
+          "credit": "4 hours in Apprentice Inside Wireman 2"
+        },
+        {
+          "course": "APPR B60-3",
+          "credit": "4 hours in Apprentice Inside Wireman 3"
+        },
+        {
+          "course": "APPR B60-4",
+          "credit": "4 hours in Apprentice Inside Wireman 4"
+        },
+        {
+          "course": "APPR B60-5",
+          "credit": "4 hours in Apprentice Inside Wireman 5"
+        },
+        {
+          "course": "APPR B60-6",
+          "credit": "4 hours in Apprentice Inside Wireman 6"
+        },
+        {
+          "course": "APPR B60-7",
+          "credit": "4 hours in Apprentice Inside Wireman 7"
+        },
+        {
+          "course": "APPR B60-8",
+          "credit": "4 hours in Apprentice Inside Wireman 8"
+        },
+        {
+          "course": "APPR B60-9",
+          "credit": "4 hours in Apprentice Inside Wireman 9"
+        },
+        {
+          "course": "APPR B6010",
+          "credit": "4 hours in Apprentice Inside Wireman 10"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IBOE4-1-001",
+          "title": "International Brotherhood of Electrical Workers Year 5",
+          "units": 40.0,
+          "lines": 10
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 40.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 10
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "peer_units_median": 40.0,
+      "peer_units_max": 40.0,
+      "rec_units_total": 40.0
+    },
+    {
+      "exhibit_id": "MAPICA-IBOE5-1-001",
+      "exhibit_ids": [
+        "MAPICA-IBOE5-1-001"
+      ],
+      "title": "International Brotherhood of Electrical Workers Journeyperson",
+      "unified_title": "International Brotherhood of Electrical Workers Journeyperson",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "International Brotherhood of Electrical Workers Journeyperson"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Advanced Manufacturing",
+      "cip_sector": "46",
+      "top_codes": [
+        "61"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 24,
+      "potential_names": [
+        "Allan Hancock College",
+        "American River College",
+        "Antelope Valley College",
+        "Cerritos College",
+        "Chabot College",
+        "College of San Mateo",
+        "College of the Redwoods",
+        "College of the Sequoias",
+        "Cuesta College",
+        "Foothill College",
+        "Hartnell College",
+        "Imperial Valley College",
+        "Irvine Valley College",
+        "Los Angeles Trade Technical College",
+        "Merced College",
+        "Modesto Junior College",
+        "Norco College",
+        "North Orange Continuing Education",
+        "Orange Coast College",
+        "Palomar College",
+        "San Joaquin Delta College",
+        "Santa Rosa Junior College",
+        "Santiago Canyon College",
+        "Victor Valley College"
+      ],
+      "total_addressable": 25,
+      "credit_recs": [
+        {
+          "course": "APPR B60-1",
+          "credit": "4 hours in Apprentice Inside Wireman 1"
+        },
+        {
+          "course": "APPR B60-2",
+          "credit": "4 hours in Apprentice Inside Wireman 2"
+        },
+        {
+          "course": "APPR B60-3",
+          "credit": "4 hours in Apprentice Inside Wireman 3"
+        },
+        {
+          "course": "APPR B60-4",
+          "credit": "4 hours in Apprentice Inside Wireman 4"
+        },
+        {
+          "course": "APPR B60-5",
+          "credit": "4 hours in Apprentice Inside Wireman 5"
+        },
+        {
+          "course": "APPR B60-6",
+          "credit": "4 hours in Apprentice Inside Wireman 6"
+        },
+        {
+          "course": "APPR B60-7",
+          "credit": "4 hours in Apprentice Inside Wireman 7"
+        },
+        {
+          "course": "APPR B60-8",
+          "credit": "4 hours in Apprentice Inside Wireman 8"
+        },
+        {
+          "course": "APPR B60-9",
+          "credit": "4 hours in Apprentice Inside Wireman 9"
+        },
+        {
+          "course": "APPR B6010",
+          "credit": "4 hours in Apprentice Inside Wireman 10"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-IBOE5-1-001",
+          "title": "International Brotherhood of Electrical Workers Journeyperson",
+          "units": 40.0,
+          "lines": 10
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 40.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 10
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "peer_units_median": 40.0,
+      "peer_units_max": 40.0,
+      "rec_units_total": 40.0
+    },
+    {
       "exhibit_id": "MAPCBEN-ITVC-1-001",
       "exhibit_ids": [
         "MAPCBEN-ITVC-1-001"
@@ -397210,6 +398148,578 @@ window.CPL_STATEWIDE = {
       "rec_units_total": 3.0
     },
     {
+      "exhibit_id": "MAPICA-SMAS-1-001",
+      "exhibit_ids": [
+        "MAPICA-SMAS-1-001"
+      ],
+      "title": "Sheet Metal Apprenticeship SMART Local 105 Year 1",
+      "unified_title": "Sheet Metal Apprenticeship SMART Local 105 Year 1",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Sheet Metal Apprenticeship SMART Local 105 Year 1"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "384"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 5,
+      "potential_names": [
+        "American River College",
+        "Chabot College",
+        "Foothill College",
+        "Long Beach City College",
+        "Palomar College"
+      ],
+      "total_addressable": 6,
+      "credit_recs": [
+        {
+          "course": "APPR B67-1",
+          "credit": "4 hours in Sheet Metal 1"
+        },
+        {
+          "course": "APPR B67-2",
+          "credit": "4 hours in Sheet Metal 2"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-SMAS-1-001",
+          "title": "Sheet Metal Apprenticeship SMART Local 105 Year 1",
+          "units": 8.0,
+          "lines": 2
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 8.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 2
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1
+        ]
+      },
+      "peer_units_median": 8.0,
+      "peer_units_max": 8.0,
+      "rec_units_total": 8.0
+    },
+    {
+      "exhibit_id": "MAPICA-SMAS1-1-001",
+      "exhibit_ids": [
+        "MAPICA-SMAS1-1-001"
+      ],
+      "title": "Sheet Metal Apprenticeship SMART Local 105 Year 2",
+      "unified_title": "Sheet Metal Apprenticeship SMART Local 105 Year 2",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Sheet Metal Apprenticeship SMART Local 105 Year 2"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "384"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 5,
+      "potential_names": [
+        "American River College",
+        "Chabot College",
+        "Foothill College",
+        "Long Beach City College",
+        "Palomar College"
+      ],
+      "total_addressable": 6,
+      "credit_recs": [
+        {
+          "course": "APPR B67-1",
+          "credit": "4 hours in Sheet Metal 1"
+        },
+        {
+          "course": "APPR B67-2",
+          "credit": "4 hours in Sheet Metal 2"
+        },
+        {
+          "course": "APPR B67-3",
+          "credit": "4 hours in Sheet Metal 3"
+        },
+        {
+          "course": "APPR B67-4",
+          "credit": "4 hours in Sheet Metal 4"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-SMAS1-1-001",
+          "title": "Sheet Metal Apprenticeship SMART Local 105 Year 2",
+          "units": 16.0,
+          "lines": 4
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 16.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 4
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3
+        ]
+      },
+      "peer_units_median": 16.0,
+      "peer_units_max": 16.0,
+      "rec_units_total": 16.0
+    },
+    {
+      "exhibit_id": "MAPICA-SMAS2-1-001",
+      "exhibit_ids": [
+        "MAPICA-SMAS2-1-001"
+      ],
+      "title": "Sheet Metal Apprenticeship SMART Local 105 Year 3",
+      "unified_title": "Sheet Metal Apprenticeship SMART Local 105 Year 3",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Sheet Metal Apprenticeship SMART Local 105 Year 3"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "384"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 5,
+      "potential_names": [
+        "American River College",
+        "Chabot College",
+        "Foothill College",
+        "Long Beach City College",
+        "Palomar College"
+      ],
+      "total_addressable": 6,
+      "credit_recs": [
+        {
+          "course": "APPR B67-1",
+          "credit": "4 hours in Sheet Metal 1"
+        },
+        {
+          "course": "APPR B67-2",
+          "credit": "4 hours in Sheet Metal 2"
+        },
+        {
+          "course": "APPR B67-3",
+          "credit": "4 hours in Sheet Metal 3"
+        },
+        {
+          "course": "APPR B67-4",
+          "credit": "4 hours in Sheet Metal 4"
+        },
+        {
+          "course": "APPR B67-5",
+          "credit": "4 hours in Sheet Metal 5"
+        },
+        {
+          "course": "APPR B67-6",
+          "credit": "4 hours in Sheet Metal 6"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-SMAS2-1-001",
+          "title": "Sheet Metal Apprenticeship SMART Local 105 Year 3",
+          "units": 24.0,
+          "lines": 6
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 24.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 6
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ]
+      },
+      "peer_units_median": 24.0,
+      "peer_units_max": 24.0,
+      "rec_units_total": 24.0
+    },
+    {
+      "exhibit_id": "MAPICA-SMAS3-1-001",
+      "exhibit_ids": [
+        "MAPICA-SMAS3-1-001"
+      ],
+      "title": "Sheet Metal Apprenticeship SMART Local 105 Year 4",
+      "unified_title": "Sheet Metal Apprenticeship SMART Local 105 Year 4",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Sheet Metal Apprenticeship SMART Local 105 Year 4"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "384"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 5,
+      "potential_names": [
+        "American River College",
+        "Chabot College",
+        "Foothill College",
+        "Long Beach City College",
+        "Palomar College"
+      ],
+      "total_addressable": 6,
+      "credit_recs": [
+        {
+          "course": "APPR B67-1",
+          "credit": "4 hours in Sheet Metal 1"
+        },
+        {
+          "course": "APPR B67-2",
+          "credit": "4 hours in Sheet Metal 2"
+        },
+        {
+          "course": "APPR B67-3",
+          "credit": "4 hours in Sheet Metal 3"
+        },
+        {
+          "course": "APPR B67-4",
+          "credit": "4 hours in Sheet Metal 4"
+        },
+        {
+          "course": "APPR B67-5",
+          "credit": "4 hours in Sheet Metal 5"
+        },
+        {
+          "course": "APPR B67-6",
+          "credit": "4 hours in Sheet Metal 6"
+        },
+        {
+          "course": "APPR B67-7",
+          "credit": "4 hours in Sheet Metal 7"
+        },
+        {
+          "course": "APPR B67-8",
+          "credit": "4 hours in Sheet Metal 8"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-SMAS3-1-001",
+          "title": "Sheet Metal Apprenticeship SMART Local 105 Year 4",
+          "units": 32.0,
+          "lines": 8
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 32.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 8
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ]
+      },
+      "peer_units_median": 32.0,
+      "peer_units_max": 32.0,
+      "rec_units_total": 32.0
+    },
+    {
+      "exhibit_id": "MAPICA-SMAS4-1-001",
+      "exhibit_ids": [
+        "MAPICA-SMAS4-1-001"
+      ],
+      "title": "Sheet Metal Apprenticeship SMART Local 105 Year 5",
+      "unified_title": "Sheet Metal Apprenticeship SMART Local 105 Year 5",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Sheet Metal Apprenticeship SMART Local 105 Year 5"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "384"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 5,
+      "potential_names": [
+        "American River College",
+        "Chabot College",
+        "Foothill College",
+        "Long Beach City College",
+        "Palomar College"
+      ],
+      "total_addressable": 6,
+      "credit_recs": [
+        {
+          "course": "APPR B67-1",
+          "credit": "4 hours in Sheet Metal 1"
+        },
+        {
+          "course": "APPR B67-2",
+          "credit": "4 hours in Sheet Metal 2"
+        },
+        {
+          "course": "APPR B67-3",
+          "credit": "4 hours in Sheet Metal 3"
+        },
+        {
+          "course": "APPR B67-4",
+          "credit": "4 hours in Sheet Metal 4"
+        },
+        {
+          "course": "APPR B67-5",
+          "credit": "4 hours in Sheet Metal 5"
+        },
+        {
+          "course": "APPR B67-6",
+          "credit": "4 hours in Sheet Metal 6"
+        },
+        {
+          "course": "APPR B67-7",
+          "credit": "4 hours in Sheet Metal 7"
+        },
+        {
+          "course": "APPR B67-8",
+          "credit": "4 hours in Sheet Metal 8"
+        },
+        {
+          "course": "APPR B67-9",
+          "credit": "4 hours in Sheet Metal 9"
+        },
+        {
+          "course": "APPR B6710",
+          "credit": "4 hours in Sheet Metal 10"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-SMAS4-1-001",
+          "title": "Sheet Metal Apprenticeship SMART Local 105 Year 5",
+          "units": 40.0,
+          "lines": 10
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 40.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 10
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "peer_units_median": 40.0,
+      "peer_units_max": 40.0,
+      "rec_units_total": 40.0
+    },
+    {
+      "exhibit_id": "MAPICA-SMAS5-1-001",
+      "exhibit_ids": [
+        "MAPICA-SMAS5-1-001"
+      ],
+      "title": "Sheet Metal Apprenticeship SMART Local 105 Journeyperson",
+      "unified_title": "Sheet Metal Apprenticeship SMART Local 105 Journeyperson",
+      "is_classified": false,
+      "issuing_agency": "",
+      "training_agency": "",
+      "confidence_title": 0.0,
+      "confidence_issuer": 0.0,
+      "quality_flag": "",
+      "raw_titles": [
+        "Sheet Metal Apprenticeship SMART Local 105 Journeyperson"
+      ],
+      "cpl_type": "Industry Certification",
+      "discipline": "Engineering and Industrial Technologies",
+      "sector": "Energy, Construction & Utilities",
+      "cip_sector": "46",
+      "top_codes": [
+        "384"
+      ],
+      "collaborative_type": "Local",
+      "adopters": 1,
+      "adopter_names": [
+        "Bakersfield College"
+      ],
+      "potential": 5,
+      "potential_names": [
+        "American River College",
+        "Chabot College",
+        "Foothill College",
+        "Long Beach City College",
+        "Palomar College"
+      ],
+      "total_addressable": 6,
+      "credit_recs": [
+        {
+          "course": "APPR B67-1",
+          "credit": "4 hours in Sheet Metal 1"
+        },
+        {
+          "course": "APPR B67-2",
+          "credit": "4 hours in Sheet Metal 2"
+        },
+        {
+          "course": "APPR B67-3",
+          "credit": "4 hours in Sheet Metal 3"
+        },
+        {
+          "course": "APPR B67-4",
+          "credit": "4 hours in Sheet Metal 4"
+        },
+        {
+          "course": "APPR B67-5",
+          "credit": "4 hours in Sheet Metal 5"
+        },
+        {
+          "course": "APPR B67-6",
+          "credit": "4 hours in Sheet Metal 6"
+        },
+        {
+          "course": "APPR B67-7",
+          "credit": "4 hours in Sheet Metal 7"
+        },
+        {
+          "course": "APPR B67-8",
+          "credit": "4 hours in Sheet Metal 8"
+        },
+        {
+          "course": "APPR B67-9",
+          "credit": "4 hours in Sheet Metal 9"
+        },
+        {
+          "course": "APPR B6710",
+          "credit": "4 hours in Sheet Metal 10"
+        }
+      ],
+      "authoritative_recs": [],
+      "exhibit_records": [
+        {
+          "id": "MAPICA-SMAS5-1-001",
+          "title": "Sheet Metal Apprenticeship SMART Local 105 Journeyperson",
+          "units": 40.0,
+          "lines": 10
+        }
+      ],
+      "adopter_units": {
+        "Bakersfield College": 40.0
+      },
+      "adopter_lines": {
+        "Bakersfield College": 10
+      },
+      "adopter_rec_idx": {
+        "Bakersfield College": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ]
+      },
+      "peer_units_median": 40.0,
+      "peer_units_max": 40.0,
+      "rec_units_total": 40.0
+    },
+    {
       "exhibit_id": "MAPPRA-APR–-1-001",
       "exhibit_ids": [
         "MAPPRA-APR–-1-001"
@@ -419556,6 +421066,15 @@ window.CPL_STATEWIDE = {
         "pct": 2.6
       },
       {
+        "college": "Bakersfield College",
+        "credit_recs": 376,
+        "exhibits": 165,
+        "disciplines": 10,
+        "ccc_collaborative": 116,
+        "industry_certs": 271,
+        "pct": 2.5
+      },
+      {
         "college": "San Diego Miramar College",
         "credit_recs": 352,
         "exhibits": 139,
@@ -419581,15 +421100,6 @@ window.CPL_STATEWIDE = {
         "ccc_collaborative": 73,
         "industry_certs": 102,
         "pct": 2.1
-      },
-      {
-        "college": "Bakersfield College",
-        "credit_recs": 296,
-        "exhibits": 153,
-        "disciplines": 10,
-        "ccc_collaborative": 116,
-        "industry_certs": 191,
-        "pct": 2.0
       },
       {
         "college": "Moreno Valley College",
@@ -419796,7 +421306,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 12,
         "ccc_collaborative": 2,
         "industry_certs": 34,
-        "pct": 1.0
+        "pct": 0.9
       },
       {
         "college": "Lake Tahoe Community College",
@@ -419836,9 +421346,9 @@ window.CPL_STATEWIDE = {
       },
       {
         "college": "Columbia College",
-        "credit_recs": 130,
-        "exhibits": 115,
-        "disciplines": 7,
+        "credit_recs": 132,
+        "exhibits": 117,
+        "disciplines": 8,
         "ccc_collaborative": 21,
         "industry_certs": 31,
         "pct": 0.9
@@ -419913,7 +421423,7 @@ window.CPL_STATEWIDE = {
         "disciplines": 4,
         "ccc_collaborative": 33,
         "industry_certs": 34,
-        "pct": 0.8
+        "pct": 0.7
       },
       {
         "college": "College of the Desert",
@@ -420330,21 +421840,21 @@ window.CPL_STATEWIDE = {
         "pct": 0.1
       },
       {
+        "college": "CA MAP INITIATIVE COLLEGE",
+        "credit_recs": 10,
+        "exhibits": 6,
+        "disciplines": 4,
+        "ccc_collaborative": 8,
+        "industry_certs": 10,
+        "pct": 0.1
+      },
+      {
         "college": "Grossmont College",
         "credit_recs": 10,
         "exhibits": 3,
         "disciplines": 2,
         "ccc_collaborative": 10,
         "industry_certs": 10,
-        "pct": 0.1
-      },
-      {
-        "college": "CA MAP INITIATIVE COLLEGE",
-        "credit_recs": 8,
-        "exhibits": 5,
-        "disciplines": 4,
-        "ccc_collaborative": 6,
-        "industry_certs": 8,
         "pct": 0.1
       },
       {
@@ -420419,16 +421929,16 @@ window.CPL_STATEWIDE = {
         "courses": 354,
         "colleges": 88,
         "ccc_collaborative": 32,
-        "pct": 42.6
+        "pct": 42.3
       },
       {
         "discipline": "Engineering and Industrial Technologies",
-        "credit_recs": 2526,
-        "exhibits": 1097,
-        "courses": 1245,
+        "credit_recs": 2608,
+        "exhibits": 1109,
+        "courses": 1265,
         "colleges": 58,
-        "ccc_collaborative": 595,
-        "pct": 17.1
+        "ccc_collaborative": 597,
+        "pct": 17.6
       },
       {
         "discipline": "Public and Protective Services",
@@ -420450,10 +421960,10 @@ window.CPL_STATEWIDE = {
       },
       {
         "discipline": "Business and Management",
-        "credit_recs": 505,
-        "exhibits": 310,
-        "courses": 249,
-        "colleges": 48,
+        "credit_recs": 507,
+        "exhibits": 312,
+        "courses": 251,
+        "colleges": 49,
         "ccc_collaborative": 47,
         "pct": 3.4
       },
@@ -420464,7 +421974,7 @@ window.CPL_STATEWIDE = {
         "courses": 320,
         "colleges": 55,
         "ccc_collaborative": 132,
-        "pct": 3.4
+        "pct": 3.3
       },
       {
         "discipline": "Health",
@@ -420626,26 +422136,26 @@ window.CPL_STATEWIDE = {
         "credit_recs": 7737,
         "exhibits": 3043,
         "colleges": 86,
-        "pct": 52.4
+        "pct": 52.1
       },
       {
         "cpl_type": "Industry Certification",
-        "credit_recs": 4077,
-        "exhibits": 1302,
+        "credit_recs": 4159,
+        "exhibits": 1314,
         "colleges": 82,
-        "pct": 27.6
+        "pct": 28.0
       },
       {
         "cpl_type": "Credit By Exam",
         "credit_recs": 2275,
         "exhibits": 1806,
         "colleges": 62,
-        "pct": 15.4
+        "pct": 15.3
       },
       {
         "cpl_type": "Portfolio Review",
-        "credit_recs": 427,
-        "exhibits": 347,
+        "credit_recs": 429,
+        "exhibits": 349,
         "colleges": 32,
         "pct": 2.9
       },
@@ -420670,21 +422180,21 @@ window.CPL_STATEWIDE = {
         "credit_recs": 9162,
         "exhibits": 4155,
         "colleges": 92,
-        "pct": 62.1
+        "pct": 61.7
       },
       {
         "mode": "Industry training (I)",
-        "credit_recs": 3069,
+        "credit_recs": 3071,
         "exhibits": 1241,
         "colleges": 78,
-        "pct": 20.8
+        "pct": 20.7
       },
       {
         "mode": "Apprenticeships, internships, work-based learning, industry-based experiential learning (A)",
-        "credit_recs": 1486,
-        "exhibits": 416,
+        "credit_recs": 1568,
+        "exhibits": 430,
         "colleges": 43,
-        "pct": 10.1
+        "pct": 10.6
       },
       {
         "mode": "High school coursework (H)",
@@ -420739,15 +422249,15 @@ window.CPL_STATEWIDE = {
     "collaborative_analysis": [
       {
         "category": "Local",
-        "credit_recs": 12995,
-        "exhibits": 6353,
+        "credit_recs": 13077,
+        "exhibits": 6367,
         "colleges": 100,
         "disciplines": 23,
-        "pct": 88.0
+        "pct": 88.1
       },
       {
         "category": "CCC Collaborative",
-        "credit_recs": 1481,
+        "credit_recs": 1483,
         "exhibits": 196,
         "colleges": 68,
         "disciplines": 11,
@@ -420759,7 +422269,7 @@ window.CPL_STATEWIDE = {
         "exhibits": 55,
         "colleges": 24,
         "disciplines": 11,
-        "pct": 2.0
+        "pct": 1.9
       }
     ],
     "top_exhibits": [
@@ -421165,8 +422675,8 @@ window.CPL_STATEWIDE = {
       }
     ]
   },
-  "generated_at": "2026-10-29T16:10:32",
-  "total_credit_recs": 14764,
+  "generated_at": "2026-10-29T18:34:24",
+  "total_credit_recs": 14848,
   "cip_sectors": {
     "01": "Agricultural/Animal/Plant/Veterinary Science and Related Fields",
     "03": "Natural Resources and Conservation",

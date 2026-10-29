@@ -8,22 +8,22 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 50324,
-  "pa": 45592,
+  "pe": 50444,
+  "pa": 45667,
   "ppa": 121,
   "p2": 3610,
-  "p3": 16844,
+  "p3": 16847,
   "pp": 7,
   "ppe": 133,
-  "pac": 5292,
+  "pac": 5295,
   "ptc": 4625,
-  "pe_u": 1560746.2,
-  "pa_u": 278520.9,
+  "pe_u": 1567320.2,
+  "pa_u": 278969.9,
   "ppa_u": 752.5,
   "ppe_u": 7244.5,
-  "pac_u": 37907.7,
+  "pac_u": 37928.7,
   "ptc_u": 31647.45,
-  "p3_u": 84542.15,
+  "p3_u": 84557.15,
   "pp_u": 73.5,
   "nc_exh": 90,
   "nc_course": 0,
@@ -227,8 +227,8 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": 0,
    "ppe_u": 0.0,
-   "pac": 2019,
-   "pac_u": 9369.75,
+   "pac": 2022,
+   "pac_u": 9390.75,
    "ptc": 1810,
    "ptc_u": 7729.5,
    "nc_exh": 37,
@@ -939,8 +939,8 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 66
   },
   "Grossmont": {
-   "pe": 524,
-   "pe_u": 30983.0,
+   "pe": 569,
+   "pe_u": 33963.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -962,10 +962,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 3
   },
   "Hartnell": {
-   "pe": 64,
-   "pe_u": 2559.0,
-   "pa": 63,
-   "pa_u": 189.0,
+   "pe": 80,
+   "pe_u": 3365.0,
+   "pa": 79,
+   "pa_u": 237.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -984,10 +984,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 45
   },
   "Irvine": {
-   "pe": 135,
-   "pe_u": 5948.0,
-   "pa": 134,
-   "pa_u": 402.0,
+   "pe": 136,
+   "pe_u": 6139.0,
+   "pa": 135,
+   "pa_u": 405.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 3.0,
@@ -1486,16 +1486,16 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 27
   },
   "Moreno Valley": {
-   "pe": 2539,
-   "pe_u": 55067.0,
-   "pa": 2210,
-   "pa_u": 13330.0,
+   "pe": 2542,
+   "pe_u": 55136.0,
+   "pa": 2213,
+   "pa_u": 13345.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 53.5,
    "p2": 498,
-   "p3": 2145,
-   "p3_u": 12764.5,
+   "p3": 2148,
+   "p3_u": 12779.5,
    "pp": null,
    "pp_suppressed": true,
    "pp_u": 38.5,
@@ -1579,10 +1579,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 33
   },
   "Norco College": {
-   "pe": 878,
-   "pe_u": 28558.0,
-   "pa": 877,
-   "pa_u": 7933.5,
+   "pe": 879,
+   "pe_u": 28617.0,
+   "pa": 878,
+   "pa_u": 7938.5,
    "ppa": 12,
    "ppa_u": 69.0,
    "p2": 153,
@@ -2165,10 +2165,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 107
   },
   "Santiago Canyon": {
-   "pe": 684,
-   "pe_u": 29134.5,
-   "pa": 682,
-   "pa_u": 15998.5,
+   "pe": 738,
+   "pe_u": 31603.5,
+   "pa": 736,
+   "pa_u": 16376.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 7.0,
@@ -3065,15 +3065,15 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "Military": {
-    "pe": 524,
+    "pe": 569,
     "pa": 0,
     "p3": 0
    }
   },
   "Hartnell": {
    "Military": {
-    "pe": 63,
-    "pa": 63,
+    "pe": 79,
+    "pa": 79,
     "p3": 0
    }
   },
@@ -3086,7 +3086,7 @@ window.CPL_FUNDING_PERF = {
    },
    "Military": {
     "pe": null,
-    "pa": 134,
+    "pa": 135,
     "p3": 0,
     "pe_suppressed": true
    }
@@ -3540,9 +3540,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 1042,
-    "pa": 1042,
-    "p3": 988
+    "pe": 1045,
+    "pa": 1045,
+    "p3": 991
    },
    "Standardized Assessment": {
     "pe": 260,
@@ -3651,8 +3651,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 553,
-    "pa": 553,
+    "pe": 554,
+    "pa": 554,
     "p3": 248
    },
    "Portfolio Review": {
@@ -4373,9 +4373,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 29612,
-   "pa": 26659,
-   "p3": 2654
+   "pe": 29732,
+   "pa": 26734,
+   "p3": 2657
   },
   "Military | Other": {
    "pe": null,
@@ -4430,14 +4430,14 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1560746.2,
-   "pa_u": 278520.9,
-   "p3_u": 84542.15
+   "pe_u": 1567320.2,
+   "pa_u": 278969.9,
+   "p3_u": 84557.15
   },
   "map": {
-   "pe_u": 1567990.7,
-   "pa_u": 279273.4,
-   "p3_u": 84615.65
+   "pe_u": 1574564.7,
+   "pa_u": 279722.4,
+   "p3_u": 84630.65
   },
   "ratio": {
    "pe_u": 1.0046,
@@ -4520,8 +4520,8 @@ window.CPL_FUNDING_PERF = {
   "Foothill": false,
   "West Hills Coalinga": false,
   "Pasadena": false,
+  "Hartnell": true,
   "Redwoods": true,
-  "Hartnell": false,
   "Alameda": true,
   "Columbia": true,
   "Crafton Hills": false,
@@ -4564,7 +4564,7 @@ window.CPL_FUNDING_PERF = {
  },
  "vet_star_as_of": "2026-10-29",
  "vet_star_threshold": 0.75,
- "vet_star_n": 67,
+ "vet_star_n": 68,
  "vet_jst": {
   "LA Pierce": {
    "vets": 296,
@@ -4573,8 +4573,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santiago Canyon": {
    "vets": 288,
-   "jst": 110,
-   "pct": 0.3819
+   "jst": 168,
+   "pct": 0.5833
   },
   "Chaffey": {
    "vets": 182,
@@ -4603,8 +4603,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Moreno Valley": {
    "vets": 916,
-   "jst": 1062,
-   "pct": 1.1594
+   "jst": 1065,
+   "pct": 1.1627
   },
   "Bakersfield": {
    "vets": 416,
@@ -4613,8 +4613,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Norco College": {
    "vets": 831,
-   "jst": 575,
-   "pct": 0.6919
+   "jst": 576,
+   "pct": 0.6931
   },
   "Cabrillo": {
    "vets": 102,
@@ -4883,8 +4883,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Irvine": {
    "vets": 217,
-   "jst": 135,
-   "pct": 0.6221
+   "jst": 136,
+   "pct": 0.6267
   },
   "Merritt": {
    "vets": 82,
@@ -4936,15 +4936,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 141,
    "pct": 0.349
   },
+  "Hartnell": {
+   "vets": 106,
+   "jst": 81,
+   "pct": 0.7642
+  },
   "Redwoods": {
    "vets": 98,
    "jst": 75,
    "pct": 0.7653
-  },
-  "Hartnell": {
-   "vets": 106,
-   "jst": 64,
-   "pct": 0.6038
   },
   "Alameda": {
    "vets": 30,
@@ -5033,8 +5033,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "vets": 415,
-   "jst": 585,
-   "pct": 1.4096
+   "jst": 634,
+   "pct": 1.5277
   },
   "LA City": {
    "vets": 301,

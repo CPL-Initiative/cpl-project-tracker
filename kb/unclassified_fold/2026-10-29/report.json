@@ -1,111 +1,12 @@
 {
-  "_generated_at": "2026-10-29T16:11:35Z",
+  "_generated_at": "2026-10-29T18:35:31Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
     "V3_additive_plus_declared": true
   },
   "apply_safe": true,
-  "clean": [
-    {
-      "raw": "Automotive Service Excellence (ASE) ASE A7",
-      "assigned": "ASE A7 — Heating and Air Conditioning",
-      "issuer": "National Institute for Automotive Service Excellence (ASE)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "BIOTECH 001: Fundamentals of Biotechnology",
-      "assigned": "Fundamentals of Biotechnology",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "California Native Plant Society (CNPS) Field Botanist Certification",
-      "assigned": "CNPS Certified Field Botanist",
-      "issuer": "California Native Plant Society (CNPS)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
-      "assigned": "Modern Dance Techniques",
-      "issuer": "CHAMPS High School",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "International Society of Arboriculture (ISA) Certified Arborist",
-      "assigned": "ISA Certified Arborist",
-      "issuer": "International Society of Arboriculture (ISA)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "MUSIC 217-1: Musicianship I",
-      "assigned": "Musicianship 1",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
-      "assigned": "Microsoft Office Specialist — Word",
-      "issuer": "Microsoft",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
-      "assigned": "Microsoft Office Specialist — Word Expert",
-      "issuer": "Microsoft",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
-      "assigned": "Microsoft Office Specialist — Word",
-      "issuer": "Microsoft",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
-      "assigned": "Microsoft Office Specialist — Excel",
-      "issuer": "Microsoft",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
-      "assigned": "Microsoft Office Specialist — Excel",
-      "issuer": "Microsoft",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
-      "assigned": "Microsoft Office Specialist — Excel Expert",
-      "issuer": "Microsoft",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
-      "assigned": "Microsoft Office Specialist — Outlook",
-      "issuer": "Microsoft",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
-      "assigned": "Microsoft Office Specialist — Access Expert",
-      "issuer": "Microsoft",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    }
-  ],
+  "clean": [],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -4412,6 +4313,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "Automotive Service Excellence (ASE) ASE A7",
+      "assigned": "ASE A7 — Heating and Air Conditioning",
+      "issuer": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication",
       "assigned": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
       "issuer": "",
@@ -4641,6 +4550,14 @@
       "issuer": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "BIOTECH 001: Fundamentals of Biotechnology",
+      "assigned": "Fundamentals of Biotechnology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -7100,6 +7017,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "California Native Plant Society (CNPS) Field Botanist Certification",
+      "assigned": "CNPS Certified Field Botanist",
+      "issuer": "California Native Plant Society (CNPS)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "California Residential Code Certification",
       "assigned": "California Residential Code Certification",
       "issuer": "International Code Council (ICC)",
@@ -9516,6 +9441,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+      "assigned": "Modern Dance Techniques",
+      "issuer": "CHAMPS High School",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "HIST 032: Cultural History of the Chicano",
       "assigned": "Cultural History of the Chicano",
       "issuer": "California Community Colleges",
@@ -10860,6 +10793,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "International Society of Arboriculture (ISA) Certified Arborist",
+      "assigned": "ISA Certified Arborist",
+      "issuer": "International Society of Arboriculture (ISA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "Internetworking and TCP/IP",
       "assigned": "Internetworking and TCP/IP",
       "issuer": "California Community Colleges",
@@ -11548,6 +11489,14 @@
       "why": "already classified to the same target"
     },
     {
+      "raw": "MUSIC 217-1: Musicianship I",
+      "assigned": "Musicianship 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
       "raw": "MUSIC 261 - Electronic Music Workshop",
       "assigned": "Electronic Music Workshop",
       "issuer": "California Community Colleges",
@@ -11649,6 +11598,70 @@
       "issuer": "Microsoft",
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+      "assigned": "Microsoft Office Specialist — Word",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+      "assigned": "Microsoft Office Specialist — Word Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+      "assigned": "Microsoft Office Specialist — Word",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+      "assigned": "Microsoft Office Specialist — Excel",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+      "assigned": "Microsoft Office Specialist — Excel",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+      "assigned": "Microsoft Office Specialist — Excel Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+      "assigned": "Microsoft Office Specialist — Outlook",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "why": "already classified to the same target"
+    },
+    {
+      "raw": "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+      "assigned": "Microsoft Office Specialist — Access Expert",
+      "issuer": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
       "why": "already classified to the same target"
     },
     {
@@ -14723,22 +14736,7 @@
       "why": "human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'"
     }
   ],
-  "credential_adds": [
-    {
-      "raw": "BIOTECH 001: Fundamentals of Biotechnology",
-      "assigned": "Fundamentals of Biotechnology",
-      "issuer": "California Community Colleges",
-      "reviewed_by": "cer-procedure-course-identity@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    },
-    {
-      "raw": "California Native Plant Society (CNPS) Field Botanist Certification",
-      "assigned": "CNPS Certified Field Botanist",
-      "issuer": "California Native Plant Society (CNPS)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-29T14:43:54.312259+00:00"
-    }
-  ],
+  "credential_adds": [],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [],
   "credential_prunes": [],
