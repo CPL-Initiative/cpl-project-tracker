@@ -136,11 +136,13 @@ const ncName = (doc, i) => flat(doc.querySelectorAll("#nc-outcomes .prio .name")
   const subs = Array.from(doc.querySelectorAll("main [data-psub]")).map((h) => h.getAttribute("data-psub"));
   check("3a every sub-heading the engine declares is on the page, and every one on the page is declared",
     T.publicSubheadIds().every((id) => subs.indexOf(id) >= 0) && subs.every((id) => T.publicSubheadIds().indexOf(id) >= 0));
-  // The reported cards carry a curator's title from the tab already, and an
-  // illustration card's h3 is a college's name, not a heading anyone writes.
+  // The reported cards carry a curator's title from the tab already, an
+  // illustration card's h3 is a college's name, not a heading anyone writes, and
+  // an FAQ group's heading is a "## " line of the FAQ's own text (S518).
   check("3b the page's own sub-headings all carry an id, the painted Noncredit outcomes too",
     Array.from(doc.querySelectorAll("main section h3"))
-      .filter((h) => !h.closest("#reported") && !h.closest("#cards") && !h.closest("#cplFundingMount"))
+      .filter((h) => !h.closest("#reported") && !h.closest("#cards") && !h.closest("#cplFundingMount") &&
+        !h.classList.contains("cplfund-faq-group"))
       .every((h) => h.hasAttribute("data-psub")));
   click(w, doc.getElementById("edit-page-btn"));
   const rn = doc.querySelector('[data-pe-subrename="sub_share_target"]');

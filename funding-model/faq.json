@@ -1,0 +1,186 @@
+{
+  "about": "The CPL funding FAQ as the public CPL funding page shows it (the house text in cpl_funding.js). Built by scripts/build_funding_faq.js; Sierra reads it.",
+  "page": "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/#questions",
+  "questions": 37,
+  "plain": "## Qualifying and confirming\n\nQ: What must an institution do to qualify for funding?\n\nMeet the three minimum conditions: a CPL Coordinator assigned in MAP, with the college's CPL landing page configured; a local confirmation of participation on file by December 31, 2026; and joint services transcripts (JSTs) uploaded in MAP and processed for CPL for at least 75 percent of enrolled veterans. An institution receives funding once it meets all three, and its CPL outcomes then determine how much of its max award it qualifies for. An institution with a noncredit share also attests each year to a Noncredit CPL Lead, which that share requires. Each institution's row on the Funding Dashboard shows its conditions and which it has met.\n\nQ: How does a college confirm its participation?\n\nAn administrator of the college (the vice president of academic affairs, the vice president of student services, the president, or another senior administrator) opens the college's row on the Funding Dashboard and selects Confirm by. The form starts with the administrator's college or district email address. CPL Initiative staff review each confirmation, and it shows as complete on the dashboard once they approve it.\n\nQ: Why was my email address not accepted?\n\nThe confirmation and the attestation accept an address on the college's or its district's email domain, from the contacts MAP holds for the college. A personal address, or one from another college, cannot complete them. If your college or district address is refused, email map@rccd.edu.\n\nQ: What is the Noncredit CPL Lead attestation?\n\nAn institution with a noncredit share of its award attests once each fiscal year that its Noncredit CPL Lead is assigned, is published on its CPL landing page, and meets regularly with its CPL Coordinator. The two may be the same person. An administrator selects Attest for the noncredit share on the college's row and starts with a college or district email address. The noncredit share counts once CPL Initiative staff approve the attestation.\n\n## The funding and its figures\n\nQ: What do Max Funds and Curr Funds mean?\n\nMax Funds is the institution's max award: the potential funding for its credit and noncredit CPL priorities over the two years. Curr Funds (current) is the funding it qualifies for so far from the CPL outcomes recorded in MAP, once it meets all three minimum conditions. Select an institution's row to see each priority's figures.\n\nQ: Does one college earning more funding reduce the amount available to other colleges?\n\nNo. Each college has its own maximum award. A college's progress does not take funding away from another institution.\n\nQ: What do the priority outcomes measure?\n\nTwo outcomes determine the credit share of each award, half each. Access counts applied (articulated) CPL units available to students in MAP, and Completion counts transcribed CPL units, each measured in FTES. Two outcomes determine the noncredit share, half each: exhibits built or adopted for the noncredit program's learning, and a Noncredit Career Exploration and CPL Portfolio course. Career Attainment and Innovation Projects are reported outcomes and carry no funding of their own.\n\nQ: How was the funding divided between credit and noncredit?\n\nEach award divides into a credit share and a noncredit share by the institution's own credit and noncredit FTES. Noncredit is about 6 percent of the institutions' combined FTES, and the Chancellor's Office set noncredit's portion at 15 percent of the funding to institutions. Noncredit programs are generally strained for resources locally, and they hold great opportunity to expand CPL. The model counts each noncredit FTES at the weight that reaches that portion.\n\nQ: How is the appropriation divided?\n\nMost of the 2026-27 one-time appropriation is allocated directly to institutions in proportion to their credit and noncredit FTES, each award between a base award and a cap. The remainder funds the statewide CPL projects and innovations that serve every college, and two Chancellor's Office posts supporting the initiative. The Overview on this page shows the current figures.\n\nQ: When will institutions receive their funding?\n\nThe Timeline on this page lists the confirmation deadline, the report deadlines and the disbursement dates. Each disbursement reflects the CPL outcomes recorded in MAP by that point.\n\nQ: Where does the CPL funding go, and who receives it?\n\nCPL funding is provided to colleges through the apportionment process and routed through the college's Vice President of Business Services or equivalent fiscal office, which is responsible for managing and distributing institutional funds. Because local processes vary, colleges should work with their fiscal and administrative leadership to determine how CPL funds are allocated and used on their campus. Note that since funds are disbursed using the apportionment procedure, local offices may be unaware of the intended use of the funds and which division or department should receive them. It is recommended that those responsible for CPL at the campus ask about the funds and their intended use.\n\nQ: How may a college use its CPL funding?\n\nEach institution decides how to use its funding, and the funding is intended to directly advance the priority outcomes: for example, CPL coordination, counseling, faculty review of credit recommendations, and the staff time to evaluate transcripts and record CPL in MAP. The college's designated official reports on how the funding was used by the report deadlines in the Timeline.\n\nQ: How often do the figures on this page change?\n\nThe figures refresh from MAP data once a day, so a CPL request, an articulation or a transcription recorded in MAP shows here after the next refresh.\n\nQ: Are the CPL Funding Dashboard totals limited to the current academic year?\n\nNo. The dashboard uses cumulative MAP records rather than limiting calculations to a single catalog or academic year. However, you can filter by academic year to see filtered results.\n\nQ: Has the Chancellor's Office released guidance for this funding?\n\nThe Chancellor's Office will release detailed guidance once the CPL funding procedure is final. The outcomes respond to Education Code §78093.2(d), which directs the Chancellor's Office to allocate designated funds using four goals: increasing access to credit for prior learning equitably for all eligible students; increasing completion through credit for prior learning awards; advancing career attainment through credit for prior learning; and supporting credit for prior learning through the Chancellor's Office pilot projects, such as the MAP platform. Under §78093.2(d)(2), each campus demonstrates its implementation through those metrics before it receives an allocation.\n\n## Counting outcomes in MAP\n\nQ: Do CPL consultations and student referrals count toward a college's funding outcomes?\n\nCPL consultations and referrals are important components of student identification and access. However, the funding procedure measures outcomes based on CPL units recorded in MAP. Colleges should continue documenting counseling interactions and proactively identifying eligible students while supporting them through the evaluation, awarding, and transcription processes.\n\nConsultations often result in new CPL articulations or adoption from other colleges and result in more Applied (Articulated) credit available to the student, which is counted in Priority 1. So, by screening incoming students for CPL, colleges will inevitably improve their Priority 1 outcomes and funding.\n\nQ: How can counselors help colleges meet the CPL funding outcomes?\n\nCounselors play an important role by proactively identifying students with prior learning, integrating CPL opportunities into educational plans, and connecting students with appropriate evaluation processes. By helping students move from identification to applied (articulated) and transcribed credit, counselors support student completion while contributing to the college's measurable CPL outcomes. In student consultations, counselors can use the Request Quick Adopt function on the MAP Dashboard to initiate new articulations, which once approved by faculty, are counted toward the Access outcome. When they counsel students on which articulated CPL options they should transcribe, they improve the Completion outcome--both resulting in funding.\n\nQ: Should a college record students who receive a CPL consultation but do not submit a petition?\n\nRecord them only when the student qualifies for CPL and declines it, the articulation is denied, or the student appeals under Title 5 §55050. A student who qualifies and does not apply the credit still counts toward funding: the Access priority counts every CPL request with faculty-approved CPL, wherever the request began.\n\nThe Education Code envisions a CPL consultation for every incoming student as part of onboarding, as colleges already provide for AP and IB.\n\nQ: How should a college distinguish consultations, submitted petitions, and transcribed CPL units?\n\nThe simplest method is the Request CPL function on the College Landing Page or the CPL Portal. It creates a MAP record and a CPL petition that the student and the college can process in MAP or locally. The college can then batch upload additional information to MAP in a simple Excel file, so the units count toward funding and toward reporting to the Legislature.\n\nTo show that units are ready or have been transcribed in the student information system, select Transcribe for the student in MAP. Colleges can also batch upload this.\n\nQ: What qualifies as a student record in MAP for reporting purposes?\n\nA minimally complete student record has the student's name, the college student ID, the CPL exhibit ID, the CPL document (for now, a JST or AFSC, for military credit only), the CPL type or types, the program of study, the transfer destination if known, and the academic year of the request. The academic year of the request is not necessarily the catalog year, which is authoritative only in the college's student information system.\n\nQ: Will there be guidance on minimum data entry, so colleges report on a consistent basis?\n\nYes. The Chancellor's Office will release detailed guidance once the CPL funding procedure is final.\n\n## Student records in MAP\n\nQ: Does MAP actually award or transcribe CPL credit?\n\nNo. MAP helps colleges identify CPL opportunities, manage reviews, document decisions, and track progress. The college's Admissions and Records team completes the official transcription in its student information system.\n\nQ: What is a MAP CPL plan (petition)?\n\nA CPL plan summarizes the student's prior-learning evidence, applicable credit recommendations, and matched college courses. It can be printed or emailed to support counseling, student consent, and the handoff to Admissions and Records.\n\nQ: How should a college document that a student accepted the credit?\n\nUntil the automated accept, decline, and appeal feature is available, colleges can use their local consent form or documented email confirmation. The signed documentation can be uploaded to the student's MAP record, and the \"student verified\" step should be completed after the student has been counseled about the implications of accepting the credit.\n\nQ: What should I do when MAP identifies a possible duplicate student?\n\nReview the records and choose whether to merge them, keep them as separate students, or remove the newly uploaded record. If one record is already marked as transcribed, that record remains the primary record during a merge.\n\nQ: Will merging duplicate student records erase or duplicate CPL decisions?\n\nNo. MAP preserves actions already taken on credit recommendations. Existing decisions are not overwritten, and the same credit recommendation is not duplicated when records are merged.\n\n## Building CPL at your college\n\nQ: Where can a college get support to make CPL easier for students to find and use?\n\nStart with the college's CPL landing page in MAP. It tells students what CPL the college offers and whom to contact, and its Request CPL function opens a CPL petition in MAP. A configured landing page is part of the first minimum condition. The MAP team holds office hours listed at https://map.rccd.edu/get-involved/, and the training video on configuring a landing page is linked in this page's Contents. For technical support, email map@rccd.edu.\n\nQ: How can we institutionalize CPL?\n\nMake CPL part of the work the college already does: ask about prior learning at enrollment, include CPL in counseling and educational planning, set it out in local policy and procedure, and give it a standing coordinator with leadership support. Direct students to document their experience and see their opportunities as well on the new CPL Portal, Credit for Being You (creditforbeingyou.org) and use the resources provided on the MAP website, https://map.rccd.edu/. More resources are coming soon to the Chancellor's Office Vision Resource Center.\n\nQ: How can we build administrative support for CPL at our college?\n\nShow leaders what CPL does for students and for the college. The Funding Dashboard on this page shows the college's max award, its targets in FTES and the funding it qualifies for so far. The MAP dashboard, https://cpldashboardcccco.azurewebsites.net/insights/dashboard, shows the college's CPL students and units and the savings to students. Together with the college's own enrollment and completion data, these figures make the case for CPL in planning and budget discussions.\n\nQ: What are the benefits and drawbacks of including CPL in the course outline of record?\n\nWhile some districts list articulated CPL on course outlines of record (COR), it is not a requirement of regulation and can put undue strain on the Curriculum process and make it difficult to process CPL opportunities for students that have not been previously approved. When considering COR language, institutions should seek an approach that supports quality and compliance while avoiding unnecessary barriers to timely CPL opportunities for students.\n\n## Credit recommendations and exhibits\n\nQ: How do statewide credit recommendations become official and appear in MAP?\n\nA statewide credit recommendation becomes official at a college when its faculty review and adopt it on MAP following their local procedures. MAP has a built in approval process that mirrors the curriculum approval process and requires approvals set by each college. Approved exhibits are automatically displayed on the college's CPL landing page and visible to the public.\n\nExhibits based on statewide recommendations are noted on the MAP Dashboard and made available for adoption using the Request Quick Adopt button. ASCCC Pathways to Credit now develops and maintains the statewide credit recommendations and provides faculty leadership for the work. The full list appears on the MAP website, the MAP dashboard and the CPL Fact Sheet. Units applied through an adopted statewide exhibit count toward the Access and Completion outcomes, as units through any faculty-approved exhibit do.\n\nQ: Who determines whether prior learning is equivalent to a college course?\n\nFaculty determine the academic equivalency and appropriate credit. Counselors, CPL coordinators, initiators, and articulation officers may support the workflow, but the exact review and approval process depends on the college's locally approved procedures.\n\nQ: When should a college use Quick Adopt instead of creating a new exhibit?\n\nUse Quick Adopt when a relevant statewide or existing exhibit already describes the prior learning. Create a custom exhibit when the college's opportunity is genuinely different. A common recommended sequence is to adopt statewide opportunities first, bulk upload approved standardized exams and credit-by-exam opportunities, and create custom exhibits only where necessary.\n\nQ: Does creating an exhibit automatically mean that credit has been approved?\n\nNo. An exhibit describes the prior learning, credential, examination, or experience. The corresponding college credit must still be articulated and approved through the institution's workflow. Bulk uploads should only be used for CPL that has already received the required local approval.\n\nQ: Why might a certification or experience not appear in a MAP search?\n\nColleges may use different titles, issuers, abbreviations, or CPL classifications for similar learning. Search using concise keywords from the credential's official name or issuer, and avoid assuming that a missing exact match means no CPL opportunity exists.\n\nQ: What should a student do if the Student Portal does not find an exact match?\n\nThe student can still submit a petition to a college and provide supporting materials such as a résumé, certificate, license, or description of relevant experience. No exact match does not necessarily mean the student is ineligible for CPL.\n\nQ: Where can a college get help setting up its MAP records?\n\nThe MAP team meets with colleges to set up their records, and holds office hours listed at https://map.rccd.edu/get-involved/. For technical support with MAP or this page, email map@rccd.edu.",
+  "groups": [
+    {
+      "name": "Qualifying and confirming",
+      "items": [
+        {
+          "q": "What must an institution do to qualify for funding?",
+          "a": "Meet the three minimum conditions: a CPL Coordinator assigned in MAP, with the college's CPL landing page configured; a local confirmation of participation on file by December 31, 2026; and joint services transcripts (JSTs) uploaded in MAP and processed for CPL for at least 75 percent of enrolled veterans. An institution receives funding once it meets all three, and its CPL outcomes then determine how much of its max award it qualifies for. An institution with a noncredit share also attests each year to a Noncredit CPL Lead, which that share requires. Each institution's row on the Funding Dashboard shows its conditions and which it has met."
+        },
+        {
+          "q": "How does a college confirm its participation?",
+          "a": "An administrator of the college (the vice president of academic affairs, the vice president of student services, the president, or another senior administrator) opens the college's row on the Funding Dashboard and selects Confirm by. The form starts with the administrator's college or district email address. CPL Initiative staff review each confirmation, and it shows as complete on the dashboard once they approve it."
+        },
+        {
+          "q": "Why was my email address not accepted?",
+          "a": "The confirmation and the attestation accept an address on the college's or its district's email domain, from the contacts MAP holds for the college. A personal address, or one from another college, cannot complete them. If your college or district address is refused, email map@rccd.edu."
+        },
+        {
+          "q": "What is the Noncredit CPL Lead attestation?",
+          "a": "An institution with a noncredit share of its award attests once each fiscal year that its Noncredit CPL Lead is assigned, is published on its CPL landing page, and meets regularly with its CPL Coordinator. The two may be the same person. An administrator selects Attest for the noncredit share on the college's row and starts with a college or district email address. The noncredit share counts once CPL Initiative staff approve the attestation."
+        }
+      ]
+    },
+    {
+      "name": "The funding and its figures",
+      "items": [
+        {
+          "q": "What do Max Funds and Curr Funds mean?",
+          "a": "Max Funds is the institution's max award: the potential funding for its credit and noncredit CPL priorities over the two years. Curr Funds (current) is the funding it qualifies for so far from the CPL outcomes recorded in MAP, once it meets all three minimum conditions. Select an institution's row to see each priority's figures."
+        },
+        {
+          "q": "Does one college earning more funding reduce the amount available to other colleges?",
+          "a": "No. Each college has its own maximum award. A college's progress does not take funding away from another institution."
+        },
+        {
+          "q": "What do the priority outcomes measure?",
+          "a": "Two outcomes determine the credit share of each award, half each. Access counts applied (articulated) CPL units available to students in MAP, and Completion counts transcribed CPL units, each measured in FTES. Two outcomes determine the noncredit share, half each: exhibits built or adopted for the noncredit program's learning, and a Noncredit Career Exploration and CPL Portfolio course. Career Attainment and Innovation Projects are reported outcomes and carry no funding of their own."
+        },
+        {
+          "q": "How was the funding divided between credit and noncredit?",
+          "a": "Each award divides into a credit share and a noncredit share by the institution's own credit and noncredit FTES. Noncredit is about 6 percent of the institutions' combined FTES, and the Chancellor's Office set noncredit's portion at 15 percent of the funding to institutions. Noncredit programs are generally strained for resources locally, and they hold great opportunity to expand CPL. The model counts each noncredit FTES at the weight that reaches that portion."
+        },
+        {
+          "q": "How is the appropriation divided?",
+          "a": "Most of the 2026-27 one-time appropriation is allocated directly to institutions in proportion to their credit and noncredit FTES, each award between a base award and a cap. The remainder funds the statewide CPL projects and innovations that serve every college, and two Chancellor's Office posts supporting the initiative. The Overview on this page shows the current figures."
+        },
+        {
+          "q": "When will institutions receive their funding?",
+          "a": "The Timeline on this page lists the confirmation deadline, the report deadlines and the disbursement dates. Each disbursement reflects the CPL outcomes recorded in MAP by that point."
+        },
+        {
+          "q": "Where does the CPL funding go, and who receives it?",
+          "a": "CPL funding is provided to colleges through the apportionment process and routed through the college's Vice President of Business Services or equivalent fiscal office, which is responsible for managing and distributing institutional funds. Because local processes vary, colleges should work with their fiscal and administrative leadership to determine how CPL funds are allocated and used on their campus. Note that since funds are disbursed using the apportionment procedure, local offices may be unaware of the intended use of the funds and which division or department should receive them. It is recommended that those responsible for CPL at the campus ask about the funds and their intended use."
+        },
+        {
+          "q": "How may a college use its CPL funding?",
+          "a": "Each institution decides how to use its funding, and the funding is intended to directly advance the priority outcomes: for example, CPL coordination, counseling, faculty review of credit recommendations, and the staff time to evaluate transcripts and record CPL in MAP. The college's designated official reports on how the funding was used by the report deadlines in the Timeline."
+        },
+        {
+          "q": "How often do the figures on this page change?",
+          "a": "The figures refresh from MAP data once a day, so a CPL request, an articulation or a transcription recorded in MAP shows here after the next refresh."
+        },
+        {
+          "q": "Are the CPL Funding Dashboard totals limited to the current academic year?",
+          "a": "No. The dashboard uses cumulative MAP records rather than limiting calculations to a single catalog or academic year. However, you can filter by academic year to see filtered results."
+        },
+        {
+          "q": "Has the Chancellor's Office released guidance for this funding?",
+          "a": "The Chancellor's Office will release detailed guidance once the CPL funding procedure is final. The outcomes respond to Education Code §78093.2(d), which directs the Chancellor's Office to allocate designated funds using four goals: increasing access to credit for prior learning equitably for all eligible students; increasing completion through credit for prior learning awards; advancing career attainment through credit for prior learning; and supporting credit for prior learning through the Chancellor's Office pilot projects, such as the MAP platform. Under §78093.2(d)(2), each campus demonstrates its implementation through those metrics before it receives an allocation."
+        }
+      ]
+    },
+    {
+      "name": "Counting outcomes in MAP",
+      "items": [
+        {
+          "q": "Do CPL consultations and student referrals count toward a college's funding outcomes?",
+          "a": "CPL consultations and referrals are important components of student identification and access. However, the funding procedure measures outcomes based on CPL units recorded in MAP. Colleges should continue documenting counseling interactions and proactively identifying eligible students while supporting them through the evaluation, awarding, and transcription processes.\n\nConsultations often result in new CPL articulations or adoption from other colleges and result in more Applied (Articulated) credit available to the student, which is counted in Priority 1. So, by screening incoming students for CPL, colleges will inevitably improve their Priority 1 outcomes and funding."
+        },
+        {
+          "q": "How can counselors help colleges meet the CPL funding outcomes?",
+          "a": "Counselors play an important role by proactively identifying students with prior learning, integrating CPL opportunities into educational plans, and connecting students with appropriate evaluation processes. By helping students move from identification to applied (articulated) and transcribed credit, counselors support student completion while contributing to the college's measurable CPL outcomes. In student consultations, counselors can use the Request Quick Adopt function on the MAP Dashboard to initiate new articulations, which once approved by faculty, are counted toward the Access outcome. When they counsel students on which articulated CPL options they should transcribe, they improve the Completion outcome--both resulting in funding."
+        },
+        {
+          "q": "Should a college record students who receive a CPL consultation but do not submit a petition?",
+          "a": "Record them only when the student qualifies for CPL and declines it, the articulation is denied, or the student appeals under Title 5 §55050. A student who qualifies and does not apply the credit still counts toward funding: the Access priority counts every CPL request with faculty-approved CPL, wherever the request began.\n\nThe Education Code envisions a CPL consultation for every incoming student as part of onboarding, as colleges already provide for AP and IB."
+        },
+        {
+          "q": "How should a college distinguish consultations, submitted petitions, and transcribed CPL units?",
+          "a": "The simplest method is the Request CPL function on the College Landing Page or the CPL Portal. It creates a MAP record and a CPL petition that the student and the college can process in MAP or locally. The college can then batch upload additional information to MAP in a simple Excel file, so the units count toward funding and toward reporting to the Legislature.\n\nTo show that units are ready or have been transcribed in the student information system, select Transcribe for the student in MAP. Colleges can also batch upload this."
+        },
+        {
+          "q": "What qualifies as a student record in MAP for reporting purposes?",
+          "a": "A minimally complete student record has the student's name, the college student ID, the CPL exhibit ID, the CPL document (for now, a JST or AFSC, for military credit only), the CPL type or types, the program of study, the transfer destination if known, and the academic year of the request. The academic year of the request is not necessarily the catalog year, which is authoritative only in the college's student information system."
+        },
+        {
+          "q": "Will there be guidance on minimum data entry, so colleges report on a consistent basis?",
+          "a": "Yes. The Chancellor's Office will release detailed guidance once the CPL funding procedure is final."
+        }
+      ]
+    },
+    {
+      "name": "Student records in MAP",
+      "items": [
+        {
+          "q": "Does MAP actually award or transcribe CPL credit?",
+          "a": "No. MAP helps colleges identify CPL opportunities, manage reviews, document decisions, and track progress. The college's Admissions and Records team completes the official transcription in its student information system."
+        },
+        {
+          "q": "What is a MAP CPL plan (petition)?",
+          "a": "A CPL plan summarizes the student's prior-learning evidence, applicable credit recommendations, and matched college courses. It can be printed or emailed to support counseling, student consent, and the handoff to Admissions and Records."
+        },
+        {
+          "q": "How should a college document that a student accepted the credit?",
+          "a": "Until the automated accept, decline, and appeal feature is available, colleges can use their local consent form or documented email confirmation. The signed documentation can be uploaded to the student's MAP record, and the \"student verified\" step should be completed after the student has been counseled about the implications of accepting the credit."
+        },
+        {
+          "q": "What should I do when MAP identifies a possible duplicate student?",
+          "a": "Review the records and choose whether to merge them, keep them as separate students, or remove the newly uploaded record. If one record is already marked as transcribed, that record remains the primary record during a merge."
+        },
+        {
+          "q": "Will merging duplicate student records erase or duplicate CPL decisions?",
+          "a": "No. MAP preserves actions already taken on credit recommendations. Existing decisions are not overwritten, and the same credit recommendation is not duplicated when records are merged."
+        }
+      ]
+    },
+    {
+      "name": "Building CPL at your college",
+      "items": [
+        {
+          "q": "Where can a college get support to make CPL easier for students to find and use?",
+          "a": "Start with the college's CPL landing page in MAP. It tells students what CPL the college offers and whom to contact, and its Request CPL function opens a CPL petition in MAP. A configured landing page is part of the first minimum condition. The MAP team holds office hours listed at https://map.rccd.edu/get-involved/, and the training video on configuring a landing page is linked in this page's Contents. For technical support, email map@rccd.edu."
+        },
+        {
+          "q": "How can we institutionalize CPL?",
+          "a": "Make CPL part of the work the college already does: ask about prior learning at enrollment, include CPL in counseling and educational planning, set it out in local policy and procedure, and give it a standing coordinator with leadership support. Direct students to document their experience and see their opportunities as well on the new CPL Portal, Credit for Being You (creditforbeingyou.org) and use the resources provided on the MAP website, https://map.rccd.edu/. More resources are coming soon to the Chancellor's Office Vision Resource Center."
+        },
+        {
+          "q": "How can we build administrative support for CPL at our college?",
+          "a": "Show leaders what CPL does for students and for the college. The Funding Dashboard on this page shows the college's max award, its targets in FTES and the funding it qualifies for so far. The MAP dashboard, https://cpldashboardcccco.azurewebsites.net/insights/dashboard, shows the college's CPL students and units and the savings to students. Together with the college's own enrollment and completion data, these figures make the case for CPL in planning and budget discussions."
+        },
+        {
+          "q": "What are the benefits and drawbacks of including CPL in the course outline of record?",
+          "a": "While some districts list articulated CPL on course outlines of record (COR), it is not a requirement of regulation and can put undue strain on the Curriculum process and make it difficult to process CPL opportunities for students that have not been previously approved. When considering COR language, institutions should seek an approach that supports quality and compliance while avoiding unnecessary barriers to timely CPL opportunities for students."
+        }
+      ]
+    },
+    {
+      "name": "Credit recommendations and exhibits",
+      "items": [
+        {
+          "q": "How do statewide credit recommendations become official and appear in MAP?",
+          "a": "A statewide credit recommendation becomes official at a college when its faculty review and adopt it on MAP following their local procedures. MAP has a built in approval process that mirrors the curriculum approval process and requires approvals set by each college. Approved exhibits are automatically displayed on the college's CPL landing page and visible to the public.\n\nExhibits based on statewide recommendations are noted on the MAP Dashboard and made available for adoption using the Request Quick Adopt button. ASCCC Pathways to Credit now develops and maintains the statewide credit recommendations and provides faculty leadership for the work. The full list appears on the MAP website, the MAP dashboard and the CPL Fact Sheet. Units applied through an adopted statewide exhibit count toward the Access and Completion outcomes, as units through any faculty-approved exhibit do."
+        },
+        {
+          "q": "Who determines whether prior learning is equivalent to a college course?",
+          "a": "Faculty determine the academic equivalency and appropriate credit. Counselors, CPL coordinators, initiators, and articulation officers may support the workflow, but the exact review and approval process depends on the college's locally approved procedures."
+        },
+        {
+          "q": "When should a college use Quick Adopt instead of creating a new exhibit?",
+          "a": "Use Quick Adopt when a relevant statewide or existing exhibit already describes the prior learning. Create a custom exhibit when the college's opportunity is genuinely different. A common recommended sequence is to adopt statewide opportunities first, bulk upload approved standardized exams and credit-by-exam opportunities, and create custom exhibits only where necessary."
+        },
+        {
+          "q": "Does creating an exhibit automatically mean that credit has been approved?",
+          "a": "No. An exhibit describes the prior learning, credential, examination, or experience. The corresponding college credit must still be articulated and approved through the institution's workflow. Bulk uploads should only be used for CPL that has already received the required local approval."
+        },
+        {
+          "q": "Why might a certification or experience not appear in a MAP search?",
+          "a": "Colleges may use different titles, issuers, abbreviations, or CPL classifications for similar learning. Search using concise keywords from the credential's official name or issuer, and avoid assuming that a missing exact match means no CPL opportunity exists."
+        },
+        {
+          "q": "What should a student do if the Student Portal does not find an exact match?",
+          "a": "The student can still submit a petition to a college and provide supporting materials such as a résumé, certificate, license, or description of relevant experience. No exact match does not necessarily mean the student is ineligible for CPL."
+        },
+        {
+          "q": "Where can a college get help setting up its MAP records?",
+          "a": "The MAP team meets with colleges to set up their records, and holds office hours listed at https://map.rccd.edu/get-involved/. For technical support with MAP or this page, email map@rccd.edu."
+        }
+      ]
+    }
+  ]
+}

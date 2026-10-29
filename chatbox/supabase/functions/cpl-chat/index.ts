@@ -5717,7 +5717,10 @@ function buildSystemPrompt(
   statewideCatalogContext: string = "",
   // The public CPL Library's pieces that fit the question (S469). Carries its own
   // answer rule; see buildLibraryContext.
-  libraryContext: string = ""
+  libraryContext: string = "",
+  // The funding FAQ's entries that fit the question (S518). Carries its own answer
+  // rule; see buildFaqContext.
+  faqContext: string = ""
   // TWO BLOCKS, not one string — `stable` is the cache breakpoint. See the
   // comment above the return for why the order had to change to allow it.
 ): { stable: string; volatile: string } {
@@ -5841,7 +5844,7 @@ ${assembled.alwaysText}`;
 
   const volatilePart = `
 ${hostScopeBlock(hostScope)}
-${context}${metricsContext}${statewideCatalogContext}${libraryContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${prospectiveContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
+${context}${metricsContext}${statewideCatalogContext}${libraryContext}${faqContext}${collegeContext}${topicContext}${offeringsContext}${programsContext}${credentialContext}${volumeContext}${alignmentContext}${prospectiveContext}${creditContext}${assembled.conditionalText}${specialInstruction}${audienceRule}${teamGuidance}`;
 
   return { stable, volatile: volatilePart };
 }
@@ -6403,6 +6406,153 @@ async function fetchLibraryTexts(pieces: any[]): Promise<Map<string, string>> {
   return out;
 }
 
+// ── FUNDING FAQ BLOCK START ──────────────────────────────────────────────────────
+// Sierra answers from the CPL funding FAQ (S518). Sam, 2026-10-29: "can you ensure that
+// sierra has access to the FAQs so she could answer consistently? Was thinking about
+// asking you to categorize the FAQs to make them easier to locate a users question."
+// The FAQ is the public CPL funding page's: six groups and their questions, filed by
+// scripts/build_funding_faq.js as funding-model/faq.json from the house text in
+// cpl_funding.js. A curator's saved edit (the published scenario's text.x_faq in
+// cpl_funding_config) is what the page shows once it exists, so it wins here too.
+// Each turn keeps the entries the question names, best first, and their answers ride
+// whole, so she answers in the FAQ's own terms and links it. A question about the FAQ
+// itself lists every question by group.
+const FAQ_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/#questions";
+const FAQ_MAX_ITEMS = 4;
+const FAQ_STOP = new Set([
+  "what", "where", "which", "when", "how", "does", "have", "about", "their", "they",
+  "with", "from", "that", "this", "there", "here", "could", "would", "should", "will",
+  "been", "being", "your", "some", "more", "most", "other", "than", "then", "can",
+  "get", "for", "the", "and", "are", "was", "were", "has", "had", "not", "but", "all",
+  "any", "who", "its", "you", "into", "also", "just", "very", "one", "our", "out",
+  "way", "ways", "need", "want", "know", "tell", "give", "help", "may", "might", "must",
+  "why", "whether", "if", "is", "it", "of", "to", "in", "on", "or", "an", "a", "be", "do",
+]);
+// Words most entries share, which say little about which one fits: they count, but
+// only as weak hits.
+const FAQ_GENERIC = new Set([
+  "cpl", "credit", "credits", "prior", "learning", "college", "colleges", "map", "funding",
+  "fund", "funds", "institution", "institutions", "student", "students", "community",
+  "course", "courses",
+]);
+
+function faqStem(w: string): string {
+  return w.length > 4 && w.endsWith("ies") ? w.slice(0, -3) + "y"
+    : w.length > 4 && w.endsWith("es") && /(ch|sh|x|ss)es$/.test(w) ? w.slice(0, -2)
+    : w.length > 3 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w;
+}
+function faqWords(text: string): string[] {
+  return String(text || "").toLowerCase().split(/[^a-z0-9]+/)
+    .filter((w) => w.length >= 3 && !FAQ_STOP.has(w)).map(faqStem);
+}
+function faqAsk(q: string): boolean {
+  return /\bFAQs?\b|frequently asked/i.test(String(q || ""));
+}
+
+// The page's own rule (faqPairs in cpl_funding.js): "## " names a group, "Q:" opens a
+// question, and the paragraphs after it are its answer.
+function faqParse(plain: string): any[] {
+  const groups: any[] = [];
+  let grp: any = null, cur: any = null;
+  for (const para of String(plain || "").replace(/\r\n?/g, "\n").split(/\n\s*\n/).map((x) => x.trim()).filter(Boolean)) {
+    if (/^##\s+/.test(para) && para.indexOf("\n") < 0) { grp = { name: para.replace(/^##\s+/, "").trim(), items: [] }; groups.push(grp); cur = null; }
+    else if (/^Q:\s*/i.test(para)) {
+      cur = { q: para.replace(/^Q:\s*/i, ""), a: [] };
+      if (!grp) { grp = { name: "", items: [] }; groups.push(grp); }
+      grp.items.push(cur);
+    } else if (cur) cur.a.push(para);
+  }
+  return groups.filter((g) => g.items.length)
+    .map((g) => ({ name: g.name, items: g.items.map((it: any) => ({ q: it.q, a: it.a.join("\n\n") })) }));
+}
+
+// The entries a question names, best first: a word of the question it asks counts three,
+// a word of its answer one (at most three), a word most entries share half. One strong
+// word and one more, or two of its answer's, make a fit; the same opening word (when,
+// where, who) settles a tie between two that fit.
+const FAQ_LEADS = /^(when|where|who|why|how|what|which|does|do|should|can|will|is|are)\b/;
+function faqLead(text: string): string {
+  const m = FAQ_LEADS.exec(String(text || "").trim().toLowerCase());
+  return m ? m[1] : "";
+}
+function matchFaq(query: string, groups: any[]): any[] {
+  const asked = new Set(faqWords(query)), lead = faqLead(query);
+  if (asked.size === 0) return [];
+  const scored: any[] = [];
+  for (const g of (groups || [])) {
+    for (const it of (g.items || [])) {
+      const qw = new Set(faqWords(it.q)), aw = new Set(faqWords(it.a));
+      let score = 0, answerHits = 0;
+      for (const w of asked) {
+        const weak = FAQ_GENERIC.has(w);
+        if (qw.has(w)) score += weak ? 1 : 3;
+        else if (aw.has(w) && answerHits < 3) { score += weak ? 0.5 : 1; answerHits++; }
+      }
+      if (score >= 4) scored.push({ group: g.name, q: it.q, a: it.a, score: score + (lead && faqLead(it.q) === lead ? 0.5 : 0) });
+    }
+  }
+  scored.sort((x, y) => y.score - x.score);
+  return scored.slice(0, FAQ_MAX_ITEMS);
+}
+
+const FAQ_RULE = `
+HOW TO USE THE CPL FUNDING FAQ SECTION. The CPL Initiative wrote these answers for the public CPL funding page, so the visitor may read the same words there.
+- When an entry answers the visitor's question, give its answer: keep its conditions, dates, figures, names and steps exactly as it states them, and add nothing that departs from it. Put it in your own sentences only where that makes it plainer.
+- Link the [CPL funding FAQ](${FAQ_PAGE}) once, after the answer, naming the entry's group.
+- When the visitor asked about the FAQ itself, list its groups and their questions and link it.
+- Where no entry fits, answer as you otherwise would, and do not mention the FAQ.`;
+
+function buildFaqContext(matched: any[], groups: any[] | null, listAll: boolean): string {
+  const all = listAll && Array.isArray(groups) && groups.length > 0;
+  if ((!matched || matched.length === 0) && !all) return "";
+  let out = `\n\n--- CPL FUNDING FAQ: ENTRIES THAT FIT THIS QUESTION (the FAQ on the public CPL funding page, ${FAQ_PAGE}) ---\n`;
+  for (const m of (matched || [])) out += `Group: ${m.group || "Questions"}\nQ: ${m.q}\nA: ${m.a}\n\n`;
+  if (all) {
+    out += `Every question on the page, by group:\n`;
+    for (const g of (groups || [])) {
+      out += `${g.name || "Questions"}:\n`;
+      for (const it of g.items) out += `- ${it.q}\n`;
+    }
+  }
+  return out + FAQ_RULE + "\n";
+}
+// ── FUNDING FAQ BLOCK END ────────────────────────────────────────────────────────
+
+// The FAQ changes when a curator saves an edit or the house text moves, so the instance
+// keeps it FAQ_TTL_MS. The file is read from GitHub Pages; the config's x_faq, when the
+// published scenario holds one, takes its place ("__blank__" is a FAQ saved empty). A
+// failed read keeps the last good copy, or none; Sierra then answers as before.
+const FAQ_JSON = "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/faq.json";
+const FAQ_TTL_MS = 10 * 60 * 1000;
+let faqCache: { at: number; groups: any[] } | null = null;
+
+async function fetchFundingFaq(sb: any): Promise<any[]> {
+  if (faqCache && Date.now() - faqCache.at < FAQ_TTL_MS) return faqCache.groups;
+  try {
+    let plain = "";
+    try {
+      const { data } = await sb.from("cpl_funding_config").select("config").eq("id", "default").maybeSingle();
+      const projects = (data && data.config && data.config.projects) || {};
+      const proj = projects["cpl-implementation"] || Object.values(projects).find((p: any) => p && p.published) || null;
+      const scen = proj && proj.published && proj.scenarios ? proj.scenarios[proj.published] : null;
+      const saved = scen && scen.text ? scen.text.x_faq : undefined;
+      if (typeof saved === "string" && saved.trim()) plain = saved === "__blank__" ? "\u0000" : saved;
+    } catch { /* the house text below */ }
+    if (plain === "\u0000") { faqCache = { at: Date.now(), groups: [] }; return []; }
+    if (!plain) {
+      const res = await fetch(FAQ_JSON, { signal: AbortSignal.timeout(4000) });
+      const j = res.ok ? await res.json() : null;
+      plain = j && typeof j.plain === "string" ? j.plain : "";
+    }
+    const groups = faqParse(plain);
+    if (!groups.length) return faqCache ? faqCache.groups : [];
+    faqCache = { at: Date.now(), groups };
+    return groups;
+  } catch {
+    return faqCache ? faqCache.groups : [];
+  }
+}
+
 // ── Team guidance layer (v25 — Phase 2 of the Sierra Training scope) ────────
 // The CPL/MAP team authors short response directives in `sierra_guidance`
 // (via the Sierra Training tab; reviewer/team-phrase-gated writes) and this
@@ -6706,6 +6856,8 @@ Deno.serve(async (req: Request) => {
 
     // 2. Vector search + college detection + live metrics + topic search +
     //    course-catalog offerings + team guidance (parallel)
+    // The funding FAQ (S518) is read beside the batch below, so it costs no wall time.
+    const faqRead = fetchFundingFaq(sb);
     const [searchResult, collegeProfile, liveMetrics, topicResults, offeringsResults, programsResults, libraryRows, teamGuidance, creditData, statewideCatalog, viewer] = await Promise.all([
       sb.rpc("match_document_sections", {
         query_embedding: Array.from(queryEmbedding),
@@ -6723,6 +6875,7 @@ Deno.serve(async (req: Request) => {
       catalogAsk ? fetchStatewideCatalog() : Promise.resolve(null), // the Fact Sheet's statewide catalog (S398)
       deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
     ]);
+    const faqGroups = await faqRead;
     markTiming(timings, "retrieved", Date.now());
 
     const sections = searchResult.data;
@@ -7089,6 +7242,10 @@ Deno.serve(async (req: Request) => {
     const libraryTexts = libraryMatched.length > 0 ? await fetchLibraryTexts(libraryMatched) : null;
     const libraryContext = buildLibraryContext(libraryMatched, libraryTexts,
       libraryAsk(trimmedQuery) ? (libraryRows || []) : null);
+    // The funding FAQ (S518): the entries this question names, every question when it asks
+    // for the FAQ. It rides beside the library's section.
+    const faqMatched = matchFaq(searchText, faqGroups || []);
+    const faqContext = buildFaqContext(faqMatched, faqGroups || [], faqAsk(trimmedQuery));
 
     // The curator overlay for the built-in rules. Rides the same turn; null
     // (a failed or empty read) means every rule comes from its code default,
@@ -7100,7 +7257,7 @@ Deno.serve(async (req: Request) => {
       sections || [], liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, programsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
-      prospectiveContext, rulesOverlay, ruleReport, hostScope, statewideCatalogContext, libraryContext);
+      prospectiveContext, rulesOverlay, ruleReport, hostScope, statewideCatalogContext, libraryContext, faqContext);
 
     /* A drafting caller gets the answer doctrine REPLACED — see DRAFTING_BLOCK.
      * Appended to `volatile` on purpose: `stable` is the prompt-cache
@@ -7347,6 +7504,8 @@ Deno.serve(async (req: Request) => {
               chars: statewideCatalogContext.length,
             },
           } : {}),
+          // The funding FAQ entries this answer was given (S518).
+          ...(faqContext ? { faq: { entries: faqMatched.map((m: any) => m.q), chars: faqContext.length } } : {}),
           // The library pieces this answer was given (S469), and the size of the block.
           ...(libraryContext ? {
             library: {

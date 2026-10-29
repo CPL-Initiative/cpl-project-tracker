@@ -1240,6 +1240,11 @@
     ".cplfund-college-intro { margin: 0 0 8px; }",
     ".cplfund-basis .cplfund-prose p { margin: 0; line-height: 1.5; }",
     ".cplfund-faq-item { border-bottom: 1px solid var(--border); padding: 8px 0; }",
+    // The FAQ's groups (Sam, 2026-10-29): a line of links to each, and a heading over each.
+    ".cplfund-faq-jump ul { list-style: none; margin: 0 0 6px; padding: 0; display: flex; flex-wrap: wrap; gap: 2px 18px; }",
+    ".cplfund-faq-jump a { display: inline-flex; align-items: center; min-height: 24px; }",
+    ".cplfund-faq-group { margin: 18px 0 2px; font-size: 1.05rem; color: var(--text-strong); }",
+    ".cplfund-faq-group:focus { outline: none; }",
     ".cplfund-faq-item > summary { cursor: pointer; font-weight: 600; color: var(--text-strong); }",
     ".cplfund-faq-item > summary:focus-visible { outline: 2px solid var(--focus-ring, currentColor); outline-offset: 2px; }",
     ".cplfund-faq-item > p { margin: 6px 0 0 1.2em; max-width: var(--cpl-measure,none); }",
@@ -3803,7 +3808,10 @@
   // One editable prose block, so a curator's edit saves for everyone and
   // Restore brings these back. The format is plain text: a paragraph that
   // opens with "Q:" starts a question, and the paragraphs after it, up to the
-  // next "Q:", are its answer. Seeded from Sam's 2026-09-24 reply to a
+  // next "Q:", are its answer; a paragraph that opens with "## " names the group
+  // the questions after it belong to (Sam, 2026-10-29: "categorize the FAQs to
+  // make them easier to locate a users question", the six groups as proposed,
+  // in the settled order, so no question moved). Seeded from Sam's 2026-09-24 reply to a
   // college's questions about MAP student records, with names left out.
   // The settled set (Sam, Open Asks Sheet 138, 2026-10-28, all 21 his own call): the
   // rollout's questions first, then counting CPL in MAP, then building CPL at the
@@ -3819,6 +3827,7 @@
   // name. His refresh question stays out, since "How often do the figures on this page change?"
   // answers it.
   var FAQ_DEFAULT_PLAIN = [
+    "## Qualifying and confirming",
     "Q: What must an institution do to qualify for funding?",
     "Meet the three minimum conditions: a CPL Coordinator assigned in MAP, with the college's CPL landing " +
       "page configured; a local confirmation of participation on file by December 31, 2026; and joint services " +
@@ -3843,6 +3852,7 @@
       "The two may be the same person. An administrator selects Attest for the noncredit share on the college's " +
       "row and starts with a college or district email address. The noncredit share counts once CPL Initiative " +
       "staff approve the attestation.",
+    "## The funding and its figures",
     "Q: What do Max Funds and Curr Funds mean?",
     "Max Funds is the institution's max award: the potential funding for its credit and noncredit CPL " +
       "priorities over the two years. Curr Funds (current) is the funding it qualifies for so far from the CPL " +
@@ -3898,6 +3908,7 @@
       "attainment through credit for prior learning; and supporting credit for prior learning through the " +
       "Chancellor's Office pilot projects, such as the MAP platform. Under §78093.2(d)(2), each campus " +
       "demonstrates its implementation through those metrics before it receives an allocation.",
+    "## Counting outcomes in MAP",
     "Q: Do CPL consultations and student referrals count toward a college's funding outcomes?",
     "CPL consultations and referrals are important components of student identification and access. However, " +
       "the funding procedure measures outcomes based on CPL units recorded in MAP. Colleges should continue " +
@@ -3939,6 +3950,7 @@
       "information system.",
     "Q: Will there be guidance on minimum data entry, so colleges report on a consistent basis?",
     "Yes. The Chancellor's Office will release detailed guidance once the CPL funding procedure is final.",
+    "## Student records in MAP",
     "Q: Does MAP actually award or transcribe CPL credit?",
     "No. MAP helps colleges identify CPL opportunities, manage reviews, document decisions, and track " +
       "progress. The college's Admissions and Records team completes the official transcription in its student " +
@@ -3959,6 +3971,7 @@
     "Q: Will merging duplicate student records erase or duplicate CPL decisions?",
     "No. MAP preserves actions already taken on credit recommendations. Existing decisions are not " +
       "overwritten, and the same credit recommendation is not duplicated when records are merged.",
+    "## Building CPL at your college",
     "Q: Where can a college get support to make CPL easier for students to find and use?",
     "Start with the college's CPL landing page in MAP. It tells students what CPL the college offers and whom " +
       "to contact, and its Request CPL function opens a CPL petition in MAP. A configured landing page is part " +
@@ -3984,6 +3997,7 @@
       "opportunities for students that have not been previously approved. When considering COR language, " +
       "institutions should seek an approach that supports quality and compliance while avoiding unnecessary " +
       "barriers to timely CPL opportunities for students.",
+    "## Credit recommendations and exhibits",
     "Q: How do statewide credit recommendations become official and appear in MAP?",
     "A statewide credit recommendation becomes official at a college when its faculty review and adopt it on " +
       "MAP following their local procedures. MAP has a built in approval process that mirrors the curriculum " +
@@ -4022,30 +4036,58 @@
   ].join("\n\n");
   // Plain text → question/answer pairs. Text before the first "Q:" becomes an
   // untitled lead paragraph so nothing a curator types is ever dropped.
-  var FAQ_Q = /^Q:\s*/i;
+  var FAQ_Q = /^Q:\s*/i, FAQ_GROUP = /^##\s+/;
   function faqPairs(plain) {
-    var out = [], cur = null, lead = [];
+    var out = [], cur = null, lead = [], groups = [], grp = null;
     plainNormalize(plain).split(/\n\n/).forEach(function (para) {
       if (!para) return;
-      if (FAQ_Q.test(para)) { cur = { q: para.replace(FAQ_Q, ""), a: [] }; out.push(cur); }
+      if (FAQ_GROUP.test(para) && para.indexOf("\n") < 0) { grp = { name: para.replace(FAQ_GROUP, "").trim(), items: [] }; groups.push(grp); cur = null; }
+      else if (FAQ_Q.test(para)) {
+        cur = { q: para.replace(FAQ_Q, ""), a: [] }; out.push(cur);
+        if (!grp) { grp = { name: "", items: [] }; groups.push(grp); }
+        grp.items.push(cur);
+      }
       else if (cur) cur.a.push(para);
       else lead.push(para);
     });
-    return { lead: lead, items: out };
+    return { lead: lead, items: out, groups: groups.filter(function (g) { return g.items.length; }) };
   }
+  function faqSlug(name) { return "faq-g-" + String(name).toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, ""); }
   function linkify(escaped) {
     return escaped.replace(/https?:\/\/[^\s<]+[^\s<.,;)]/g, function (u) {
       return '<a href="' + u + '" target="_blank" rel="noopener">' + u + "</a>";
     });
   }
-  function faqHtml(plain) {
-    var f = faqPairs(plain);
+  // level: the group headings' level, one below the section's (the tab's sections are
+  // h3, the public page's h2). Named groups get a line of links to each, above them.
+  function faqHtml(plain, level) {
+    var f = faqPairs(plain), h = "h" + (level || 4);
     var para = function (t) { return "<p>" + markInline(linkify(esc(t))).replace(/\n/g, "<br>") + "</p>"; };
-    return '<div class="cplfund-faq">' + f.lead.map(para).join("") +
-      f.items.map(function (it) {
-        return '<details class="cplfund-faq-item"><summary>' + markInline(esc(it.q)) + "</summary>" +
-          it.a.map(para).join("") + "</details>";
+    var item = function (it) {
+      return '<details class="cplfund-faq-item"><summary>' + markInline(esc(it.q)) + "</summary>" +
+        it.a.map(para).join("") + "</details>";
+    };
+    var named = f.groups.filter(function (g) { return g.name; });
+    var jump = named.length > 1 ? '<nav class="cplfund-faq-jump" aria-label="Question groups"><ul>' +
+      named.map(function (g) { return '<li><a href="#' + faqSlug(g.name) + '">' + esc(g.name) + "</a></li>"; }).join("") + "</ul></nav>" : "";
+    return '<div class="cplfund-faq">' + f.lead.map(para).join("") + jump +
+      f.groups.map(function (g) {
+        return (g.name ? "<" + h + ' class="cplfund-faq-group" id="' + faqSlug(g.name) + '" tabindex="-1">' + esc(g.name) + "</" + h + ">" : "") +
+          g.items.map(item).join("");
       }).join("") + "</div>";
+  }
+  // A group link scrolls to its group in place. COBI routes on the address's #, so a
+  // plain #faq-g-… link would leave the tab; one listener serves the tab and the page.
+  if (typeof document !== "undefined" && typeof window !== "undefined" && !window.__cplFaqJump) {
+    window.__cplFaqJump = true;
+    document.addEventListener("click", function (e) {
+      var a = e.target && e.target.closest ? e.target.closest(".cplfund-faq-jump a") : null;
+      var t = a && document.getElementById(String(a.getAttribute("href") || "").slice(1));
+      if (!t) return;
+      e.preventDefault();
+      if (t.scrollIntoView) t.scrollIntoView({ block: "start" });
+      if (t.focus) t.focus({ preventScroll: true });
+    });
   }
   // The Timeline's closing note, in Sam's words (2026-09-24, review sheet item
   // 4: "Add to bottom of Timeline"). An editable block like the others, so a
@@ -5124,7 +5166,7 @@
         '<button type="button" class="cplfund-textbtn primary" data-textsave="' + esc(key) + '">Save</button>' +
         '<button type="button" class="cplfund-textbtn" data-textcancel="' + esc(key) + '">Cancel</button>' +
         (custom ? '<button type="button" class="cplfund-textbtn" data-textreset="' + esc(key) + '">Restore the default text</button>' : "") +
-        (key === "faq" ? '<span class="dk">Start each question on its own line with Q: and put its answer in the paragraphs below it.</span>' : "") +
+        (key === "faq" ? '<span class="dk">Start each question on its own line with Q: and put its answer in the paragraphs below it. A line that starts with ## names the group the questions below it belong to.</span>' : "") +
         (TEXT_BLOCKS[key] && TEXT_BLOCKS[key].rich
           ? '<span class="dk">Plain text. Select words and press Bold or Italic, or type **two asterisks** on each side for bold ' +
             'and *one* for italic. A blank line starts a new paragraph; a paragraph whose every line starts with - is a bulleted ' +
@@ -5136,7 +5178,7 @@
             "quotation. Saves for everyone.</span></div>"
           : '<span class="dk">Plain text. A blank line starts a new paragraph; start every line with &gt; to set a passage as a quotation. Saves for everyone.</span></div>');
     } else {
-      html += key === "faq" ? faqHtml(textPlain(key)) : textHtml(key);
+      html += key === "faq" ? faqHtml(textPlain(key), 4) : textHtml(key);
       if (canEdit) {
         html += '<div class="cplfund-prose-ctl">' +
           '<button type="button" class="cplfund-textbtn" data-textedit="' + esc(key) + '">Edit</button>' +
@@ -17806,7 +17848,9 @@
     // editable block (TEXT_BLOCKS.faq), so his edit reaches both pages. The
     // markup is faqHtml()'s, which escapes every question and answer.
     // The page's own copy since call 2 (x_faq), seeded with the tab's house FAQ.
-    publicFaqHtml: function () { return faqHtml(textPlain("x_faq")); },
+    publicFaqHtml: function () { return faqHtml(textPlain("x_faq"), 3); },
+    // The FAQ renderer itself, for tests/cpl_funding_faq_groups.test.js (S518).
+    _faqHtml: faqHtml,
     // The page's own passages that are not explainer passages: its
     // Introduction and its Timeline note (call 3), as the page paints them.
     pageTextHtml: function (key) { return isPageCopy(key) ? textHtml(key) : ""; },

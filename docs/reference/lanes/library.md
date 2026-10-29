@@ -144,13 +144,7 @@ Tests: `library` (13, 14, 9), `college_cpl_workbook` (the notes).
   the tab's help says so.
 - **Sam's Sheet 131 rulings:** a Library-only run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific (waits on Sam to create it from claude.ai's routines page, paste in [`scheduled_sessions`](../scheduled_sessions.md)); the college page lives at `library/cpl-opportunity/`. The full text moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
 
-## The Coordinator Guide is In development (Sam, 2026-10-25; Draft 1 by S480)
-
-Draft 1 (https://claude.ai/artifact/7HPvgHpX8jnfpCLd7e4Tv1, private) is record `cpl-coordinator-getting-started-guide`, In development at step 2; each revision comes from **Changes to make**, and listing it publicly is Sam's. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
-
-## The ELL IET and DSP pages, Version 2 (built S482 and S483)
-
-Both are the public copies (Sheet 129). The record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S513)*.
+The Coordinator Guide (In development, Draft 1) and the ELL IET and DSP pages (Version 2, the public copies): [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S518)*.
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
@@ -209,9 +203,9 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **⑫ Remediation drafts first and files as it opens (S517, Sam's session, #2552 to #2554).** Each picture is drawn with its slide and drafted before the report opens (Claude from the picture and its slide's words, a QR code from the address the page reads, a video from its name); the person keeps, edits or redrafts, or uses *Keep all*. One bar, a part per WCAG 2.2 check, counts down to the Chancellor's Office review, the standards beside the header (the CO's 2025 certificate, which Sam shared). A file is a Draft in the Library the moment it opens (`cpl_library.remediation`), and two boxes count and filter it; the download opens its form for the SharePoint link. Sam: *"the library is functioning as much as a work space for all docs as a repository."* Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Each picture with its slide (S517, Sam's session)*.
 
-✅ **⑬ Each slide beside its item, and empty boxes removed (S518).** Every item that names a slide draws it (one to its left, several as a strip), the trouble outlined and a crowded slide numbered in reading order; a slide's boxes with no words, no fill and no outline are removed before the checks; the empty title box stays, its title drafted from the slide's largest words and the box kept just off the slide. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Each slide beside its item (S518)*.
+✅ **⑬ Each slide beside its item, empty boxes removed (S518, #2556).** Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Each slide beside its item (S518)*.
 
-✅ **⑭ A title box for every slide, a script in the notes, the deck's own order (S518).** A slide with no title box asks for its title, drafted, and gets the box at download, off the slide; a dropped deck asks whether to keep its notes, add Claude's script below them or replace them (`slide-script-draft`, new); slides are numbered as the deck lists them, where before a reordered deck's were numbered by file name. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A title box for every slide (S518, later)*.
+✅ **⑭ A title box for every slide, a script in the notes, the deck's own slide order (S518, #2557; `slide-script-draft` v1).** Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A title box for every slide (S518, later)*.
 
 **NEXT:** the other inputs the bar shows people doing most, in that order (Sam's framing); a chart's per-label colors (`c:dLbl`) when he asks. The Chancellor's Office review still certifies.
 

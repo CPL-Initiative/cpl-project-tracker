@@ -35,7 +35,8 @@ check("FAQ_DEFAULT_PLAIN is found", !!m);
 const paras = m ? vm.runInNewContext(m[1]) : [];
 const text = paras.join("\n\n");
 const qs = paras.filter((p) => /^Q: /.test(p)).map((p) => p.slice(3));
-const answer = (q) => { const i = paras.indexOf("Q: " + q); let a = []; for (let j = i + 1; i >= 0 && j < paras.length && !/^Q: /.test(paras[j]); j++) a.push(paras[j]); return a.join("\n\n"); };
+// An answer runs to the next question or the next group's "## " line (S518).
+const answer = (q) => { const i = paras.indexOf("Q: " + q); let a = []; for (let j = i + 1; i >= 0 && j < paras.length && !/^(Q: |## )/.test(paras[j]); j++) a.push(paras[j]); return a.join("\n\n"); };
 
 check("37 questions: 19 from the sheet, the 6 already on the page, and Malone's 12", qs.length === 37);
 check("the rollout's basics lead: qualify, then confirm",

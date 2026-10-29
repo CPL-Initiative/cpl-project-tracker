@@ -35,6 +35,9 @@ run "dependency map contents" "python3 tests/dependency_map_test.py"
 # script exists to save you.
 run "COBI admin surface"      "python3 kb/_build_cobi_admin_surface.py --check 2>/dev/null || node tests/admin_tab.test.js >/dev/null"
 run "Sierra rule defaults"    "node tests/sierra_rules.test.js >/dev/null 2>&1 || python3 kb/_build_sierra_rule_defaults.py --check"
+# The funding FAQ Sierra reads (S518): funding-model/faq.json is built from the FAQ's
+# house text in cpl_funding.js, so an edit to the FAQ stales it here.
+run "funding FAQ for Sierra"  "node scripts/build_funding_faq.js --check"
 # Sierra's statewide catalog (S398) is built from statewide_data.js,
 # kb/statewide_exhibit_categories.json and fact_sheet_metrics.json. The daily run
 # rebuilds it beside them; an edit to the categories or to the builder stales it here.
