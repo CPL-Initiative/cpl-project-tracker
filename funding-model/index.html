@@ -175,6 +175,8 @@ a:hover{text-decoration-thickness:2px}
    doesn't take up so much of the initial view"): three columns from 980px,
    each link one 24px line (WCAG 2.5.8), the card's padding halved. */
 .toc-wrap{display:block; margin-top:clamp(12px,2vw,18px)}
+/* While the first paint waits for the published scenario (S519), the placeholder figures stay hidden. */
+.cplfund-holding main{visibility:hidden}
 .toc-card{background:var(--surface-opaque); border:1px solid var(--border); border-radius:11px;
   padding:12px clamp(16px,2.4vw,22px)}
 .toc-h{font-size:1.1rem; margin:0 0 .25em}
@@ -1991,8 +1993,10 @@ window.CPL_SIERRA_SUGGESTED = [
       var tabled = typeof T._docStatus === "function" && T._docStatus("memo") === "tabled";
       if (memoLi && memoLi.parentNode) memoLi.parentNode.hidden = tabled;
       painted = true;
+      document.documentElement.classList.remove("cplfund-holding");
       if (status) status.textContent = "";
     } catch (e) {
+      document.documentElement.classList.remove("cplfund-holding");
       // A first paint that throws leaves the page's placeholder numbers on
       // screen, which is the one outcome worse than an error: they would read
       // as current. Say so instead.
@@ -2003,7 +2007,17 @@ window.CPL_SIERRA_SUGGESTED = [
   // again the moment the live shared config lands.
   if (typeof T.onModelChange === "function") T.onModelChange(paint);
   if (typeof T.ensureLoaded === "function") T.ensureLoaded();
-  paint();
+  // THE PUBLISHED SCENARIO PAINTS FIRST HERE TOO (Sam, 2026-10-29: "The public page still seems to
+  // load scenario 1 first and after a pause refreshes to scenario 4"). The page painted at once from
+  // the code's defaults, which read as Scenario 1. While the module holds its first paint for the
+  // shared config, the page waits with it, and onModelChange paints it when the config lands (or
+  // when the hold lets the defaults through after a slow or failed read).
+  // Until then the placeholder figures the markup carries stay out of sight, since they would read
+  // as current, and the status line says the figures are loading.
+  if (typeof T.configHeld === "function" && T.configHeld()) {
+    document.documentElement.classList.add("cplfund-holding");
+    if (status) status.textContent = "Loading the current figures\u2026";
+  } else paint();
   // A deep link (…/funding-model/#requirements) opens its section once the
   // table above it has drawn, so the scroll lands where the section ends up.
   if (window.location.hash) openSection(decodeURIComponent(window.location.hash.slice(1)), false);
