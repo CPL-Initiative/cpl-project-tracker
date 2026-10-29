@@ -14,7 +14,7 @@ related:
 > checkpoint writes 521. This was a **light checkpoint** (no §11 row moved, no re-mint, no Rule 10
 > data write).
 
-You are picking up the **Library** lane after SkyChokeberry, a side session Sam ran on 2026-10-29
+Your moniker is **SkyJuneberry**. You are picking up the **Library** lane after SkyChokeberry, a side session Sam ran on 2026-10-29
 while S519 wrapped up and S520 worked funding. Read in order:
 1. [`docs/reference/lanes/library.md`](reference/lanes/library.md), item ⑪ at the foot.
 2. [`docs/library_lessons.md`](library_lessons.md): *A form's limit must be the column's* and
