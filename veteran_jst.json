@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-10-29T13:10:00.414987+00:00",
+  "scraped_at": "2026-10-29T16:11:18.350537+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 30269,
+    "jst": 30274,
     "star_colleges": 67
   },
   "computed_star_colleges": 67,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
-      "jst": 153,
+      "jst": 155,
       "star": false
     },
     "Santiago Canyon College": {
@@ -315,14 +315,14 @@
       "jst": 83,
       "star": true
     },
+    "Porterville College": {
+      "vets": 52,
+      "jst": 86,
+      "star": true
+    },
     "Lassen College": {
       "vets": 129,
       "jst": 140,
-      "star": true
-    },
-    "Porterville College": {
-      "vets": 52,
-      "jst": 83,
       "star": true
     },
     "Irvine Valley College": {

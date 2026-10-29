@@ -57036,5 +57036,117 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Automotive Service Excellence (ASE) ASE A7": {
+    "unified_title": "ASE A7 — Heating and Air Conditioning",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "BIOTECH 001: Fundamentals of Biotechnology": {
+    "unified_title": "Fundamentals of Biotechnology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-course-identity@bot"
+  },
+  "California Native Plant Society (CNPS) Field Botanist Certification": {
+    "unified_title": "CNPS Certified Field Botanist",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques": {
+    "unified_title": "Modern Dance Techniques",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "International Society of Arboriculture (ISA) Certified Arborist": {
+    "unified_title": "ISA Certified Arborist",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "MUSIC 217-1: Musicianship I": {
+    "unified_title": "Musicianship 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)": {
+    "unified_title": "Microsoft Office Specialist — Word",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)": {
+    "unified_title": "Microsoft Office Specialist — Word Expert",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)": {
+    "unified_title": "Microsoft Office Specialist — Word",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)": {
+    "unified_title": "Microsoft Office Specialist — Excel",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)": {
+    "unified_title": "Microsoft Office Specialist — Excel",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)": {
+    "unified_title": "Microsoft Office Specialist — Excel Expert",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)": {
+    "unified_title": "Microsoft Office Specialist — Outlook",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)": {
+    "unified_title": "Microsoft Office Specialist — Access Expert",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-29",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-10-28T16:14:08Z",
-  "count": 1790,
+  "_synced_at": "2026-10-29T16:11:35Z",
+  "count": 1804,
   "assignments": {
     "A S T 025 - Fundamentals of Auto Mechanics": {
       "unified_title": "Fundamentals of Auto Mechanics",
@@ -3228,6 +3228,12 @@
       "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
       "unified_title": "ASE A8 — Engine Performance"
     },
+    "Automotive Service Excellence (ASE) ASE A7": {
+      "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "ASE A7 — Heating and Air Conditioning"
+    },
     "Automotive Service Excellence (ASE) L3: Light Duty Hybrid/Electric Vehicle Specialist Certiication": {
       "unified_title": "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist",
       "reviewed_by": "map@rccd.edu",
@@ -3404,6 +3410,12 @@
       "reviewed_by": "cer-procedure-course-identity@bot",
       "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
       "unified_title": "Bioscience Practicum Research"
+    },
+    "BIOTECH 001: Fundamentals of Biotechnology": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-course-identity@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Fundamentals of Biotechnology"
     },
     "BIOTECH 002 - Biotechnology I": {
       "issuing_agency": "California Community Colleges",
@@ -5606,6 +5618,12 @@
       "reviewed_at": "2026-07-07T20:45:01.402733+00:00",
       "unified_title": "Emergency Medical Technician"
     },
+    "California Native Plant Society (CNPS) Field Botanist Certification": {
+      "issuing_agency": "California Native Plant Society (CNPS)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "CNPS Certified Field Botanist"
+    },
     "California Residential Code Certification": {
       "issuing_agency": "International Code Council (ICC)",
       "reviewed_by": "map@rccd.edu",
@@ -7471,6 +7489,12 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Personal Health and Wellness"
     },
+    "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques": {
+      "issuing_agency": "CHAMPS High School",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Modern Dance Techniques"
+    },
     "HIST 032: Cultural History of the Chicano": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-course-identity@bot",
@@ -8473,6 +8497,12 @@
       "reviewed_at": "2026-07-08T00:09:21.63317+00:00",
       "unified_title": "Intermediate Wildland Fire Behavior"
     },
+    "International Society of Arboriculture (ISA) Certified Arborist": {
+      "issuing_agency": "International Society of Arboriculture (ISA)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "ISA Certified Arborist"
+    },
     "Internetworking and TCP/IP": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "cer-procedure-classifier@bot",
@@ -8985,6 +9015,12 @@
       "reviewed_by": "map@rccd.edu",
       "reviewed_at": "2026-06-02T18:32:36.011415+00:00"
     },
+    "MUSIC 217-1: Musicianship I": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Musicianship 1"
+    },
     "MUSIC 261 - Electronic Music Workshop": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "map@rccd.edu",
@@ -9106,6 +9142,54 @@
       "reviewed_by": "cer-procedure-classifier@bot",
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Microsoft Certified: Power BI Data Analyst Associate"
+    },
+    "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Microsoft Office Specialist — Word"
+    },
+    "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Microsoft Office Specialist — Word Expert"
+    },
+    "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Microsoft Office Specialist — Word"
+    },
+    "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Microsoft Office Specialist — Excel"
+    },
+    "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Microsoft Office Specialist — Excel"
+    },
+    "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Microsoft Office Specialist — Excel Expert"
+    },
+    "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Microsoft Office Specialist — Outlook"
+    },
+    "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)": {
+      "issuing_agency": "Microsoft",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
+      "unified_title": "Microsoft Office Specialist — Access Expert"
     },
     "Microsoft Office Specialist (MOS) Certification.": {
       "issuing_agency": "Microsoft",

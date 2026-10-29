@@ -8,8 +8,8 @@ window.CPL_FUNDING_PERF = {
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 50319,
-  "pa": 45588,
+  "pe": 50324,
+  "pa": 45592,
   "ppa": 121,
   "p2": 3610,
   "p3": 16844,
@@ -17,8 +17,8 @@ window.CPL_FUNDING_PERF = {
   "ppe": 133,
   "pac": 5292,
   "ptc": 4625,
-  "pe_u": 1560538.2,
-  "pa_u": 278502.9,
+  "pe_u": 1560746.2,
+  "pa_u": 278520.9,
   "ppa_u": 752.5,
   "ppe_u": 7244.5,
   "pac_u": 37907.7,
@@ -1074,10 +1074,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 12
   },
   "LA Pierce": {
-   "pe": 2647,
-   "pe_u": 43192.0,
-   "pa": 2621,
-   "pa_u": 37588.0,
+   "pe": 2649,
+   "pe_u": 43233.0,
+   "pa": 2622,
+   "pa_u": 37591.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 9.0,
@@ -1716,10 +1716,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 156
   },
   "Porterville": {
-   "pe": 82,
-   "pe_u": 3207.0,
-   "pa": 82,
-   "pa_u": 410.0,
+   "pe": 85,
+   "pe_u": 3374.0,
+   "pa": 85,
+   "pa_u": 425.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 5.0,
@@ -3147,8 +3147,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 151,
-    "pa": 125,
+    "pe": 153,
+    "pa": 126,
     "p3": 20
    },
    "Standardized Assessment": {
@@ -3700,8 +3700,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Porterville": {
    "Military": {
-    "pe": 82,
-    "pa": 82,
+    "pe": 85,
+    "pa": 85,
     "p3": 0
    }
   },
@@ -4373,8 +4373,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 29607,
-   "pa": 26655,
+   "pe": 29612,
+   "pa": 26659,
    "p3": 2654
   },
   "Military | Other": {
@@ -4430,13 +4430,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1560538.2,
-   "pa_u": 278502.9,
+   "pe_u": 1560746.2,
+   "pa_u": 278520.9,
    "p3_u": 84542.15
   },
   "map": {
-   "pe_u": 1567782.7,
-   "pa_u": 279255.4,
+   "pe_u": 1567990.7,
+   "pa_u": 279273.4,
    "p3_u": 84615.65
   },
   "ratio": {
@@ -4507,8 +4507,8 @@ window.CPL_FUNDING_PERF = {
   "San Mateo": true,
   "Reedley College": true,
   "Laney": true,
-  "Lassen": true,
   "Porterville": true,
+  "Lassen": true,
   "Irvine": false,
   "Merritt": true,
   "Saddleback": false,
@@ -4568,8 +4568,8 @@ window.CPL_FUNDING_PERF = {
  "vet_jst": {
   "LA Pierce": {
    "vets": 296,
-   "jst": 153,
-   "pct": 0.5169
+   "jst": 155,
+   "pct": 0.5236
   },
   "Santiago Canyon": {
    "vets": 288,
@@ -4871,15 +4871,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 83,
    "pct": 0.8646
   },
+  "Porterville": {
+   "vets": 52,
+   "jst": 86,
+   "pct": 1.6538
+  },
   "Lassen": {
    "vets": 129,
    "jst": 140,
    "pct": 1.0853
-  },
-  "Porterville": {
-   "vets": 52,
-   "jst": 83,
-   "pct": 1.5962
   },
   "Irvine": {
    "vets": 217,

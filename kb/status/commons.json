@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-29T13:14:08Z",
+ "written_at": "2026-10-29T16:16:05Z",
  "rows": [
   {
    "key": "requirements",
@@ -82,9 +82,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 1824,
-     "of": 5010,
-     "words": "titles carry a review stamp (645 a person's, 1,179 a cohort's); 2,462 credentials, 1,867 of 2,686 records stamped",
+     "n": 1838,
+     "of": 5024,
+     "words": "titles carry a review stamp (645 a person's, 1,193 a cohort's); 2,464 credentials, 1,869 of 2,688 records stamped",
      "open": "#credential-reference/progress"
     }
    ],
@@ -94,9 +94,9 @@
    ],
    "issues": [
     {
-     "n": 435,
+     "n": 441,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 384, the classifier's title has a course code left in 23, a merge would join two issuers 15, the classifier's title has a dangling word 11, the classifier's title has a method word left in 2)",
+     "owner": "a curator (the classifier is unsure 392, the classifier's title has a course code left in 23, a merge would join two issuers 13, the classifier's title has a dangling word 11, the classifier's title has a method word left in 2)",
      "open": "#credential-reference/held",
      "error": null
     },
@@ -128,21 +128,21 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-29T13:10:10Z",
+    "at": "2026-10-29T16:11:35Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5010,
-    "stamped": 1824,
+    "titles": 5024,
+    "stamped": 1838,
     "person": 645,
-    "cohort": 1179,
-    "credentials": 2462,
-    "records": 2686,
-    "records_stamped": 1867,
-    "saved_at": "2026-10-28T14:36:41Z",
-    "fold_at": "2026-10-29T13:10:10Z",
+    "cohort": 1193,
+    "credentials": 2464,
+    "records": 2688,
+    "records_stamped": 1869,
+    "saved_at": "2026-10-29T14:43:54Z",
+    "fold_at": "2026-10-29T16:11:35Z",
     "map_titles": 4844,
-    "unclassified": 455,
+    "unclassified": 441,
     "left_map": 621,
     "below_80": 1151,
     "below_60": 245
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-29T13:12:23+00:00",
+    "at": "2026-10-29T16:13:45+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-29T13:10:07Z",
+    "at": "2026-10-29T16:11:33Z",
     "every_hours": 24
    },
    "facts": {
