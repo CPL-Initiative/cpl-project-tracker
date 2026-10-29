@@ -13477,7 +13477,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 94,
+   "count": 95,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14317,6 +14317,21 @@
       "budget-support"
      ],
      "title": "Letter Curator Hand-off Prompt",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "path": "docs/library_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "side-lane"
+     ],
+     "title": "Library \u2014 side-lane handoff (SkyChokeberry, beside S520)",
      "type": null,
      "updated": ""
     },
@@ -24587,5 +24602,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1306
+ "total": 1307
 }
