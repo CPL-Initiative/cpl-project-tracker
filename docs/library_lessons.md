@@ -874,7 +874,7 @@ The lane's NEXT after S515: each conditional-formatting rule measured the way ce
   border-only rules, correctly clean. Given a yellow font in one dxf, the check found it, the fix repointed one
   rule, a second inspect found none, and the file opens in LibreOffice.
 
-## Each picture with its slide (S517 SkyPartridgeberry, 2026-10-29)
+## Each picture with its slide (S517, Sam's session, 2026-10-29)
 
 Sam's session, the day before the 7th Annual CPL Summit, on his first live run of remediation (the Summit's
 *0900-0945 Welcome and Introduction* deck: 35 slides, 27 items).
@@ -923,6 +923,35 @@ Sam's session, the day before the 7th Annual CPL Summit, on his first live run o
 - **A grid item's minimum width is its content's.** A long URL in a hint widened the whole list item past its
   column until the item took `min-width:0` and the hints `overflow-wrap:anywhere`.
 
+## A chart's contrast (S517 SkyPartridgeberry, 2026-10-29)
+
+The lane's NEXT after S516: a chart in a deck, a document or a workbook, the one part each check still left to a person.
+
+- **What is measured.** Each series' bars, slices or line against the plot area (WCAG 1.4.11, 3:1): the plot
+  area's fill, else the chart's, else the slide's background (a deck) or white. Words with a color of their own
+  or the chart's (the title's runs, the legend, each axis, the data labels) against what they sit on, at 4.5:1 or
+  3:1 when large. A label inside a bar or slice (`ctr`, `inEnd`, `inBase`, a pie's `bestFit`, a stacked bar's
+  default) sits on that bar or slice. A gradient or picture under a chart is named for a person.
+- **Office's own colors are measured as drawn** (Fable's advice, taken): a series with no fill of its own takes
+  the theme's accent by its `c:idx`, a pie's slice by its point index, the first six only. Office's 2013 gray
+  (accent3) reads 2.4:1 on white, its orange 2.7:1, its gold 1.6:1, so most default charts raise an item. The fix
+  writes the color into the series' `c:spPr`, or into a `c:dPt` of the slice's own, so it survives a theme change.
+- **A series whose values show as labels is advisory**, not exempt (Fable): the labels carry the numbers, but a
+  low-vision reader still reads the bars. Its item says *yours to weigh* and its box starts unticked.
+- **A bar's new color must keep its own labels readable.** The first build lightened the IT and AI deck's pale blue
+  bar to pass on white, and the navy labels inside it fell to 4.1:1. Now the fix walks the hue until it passes on
+  the plot area and keeps every label on it at its own ratio; that deck's bar has no such blue, so it goes to a
+  person with *give the bars a dark outline*.
+- **Slices side by side** below 3:1 against each other are one item for a person (a white border is the usual
+  fix, not a new color). Fable: adjacency has no WCAG threshold, and a recolor cannot keep the theme.
+- **A chart item finds its element by position** (element-child indices from the part's root), resolved for the
+  whole part before any fix inserts an `spPr` or `dPt` that would shift the rest. Alt-text items already carry a
+  `chart` flag, so these carry `inChart`.
+- **The run on team files.** Three files hold charts. The IT and AI credentials deck: one series at 1.8:1, held for
+  a person as above. The project list workbook's two budget pies (Office 2007 colors, white labels): three slices
+  advisory, white labels on green named for a person; after the fixes, a second inspect finds the white labels on
+  blue at 4:1 fixable, and the file opens in LibreOffice. Tests: `library_remediate` (135, block 15).
+
 ## Moved from the lane (S512)
 
 ✅ **④ A deck's contrast is checked (S510).** Each text run's color (its own, else inherited through list style, layout, master and theme) is measured against the fill the words sit on: the shape's own, else the topmost shape drawn before it covering its middle (the layout's and master's own shapes included), else the slide's background through layout and master. Below 4.5:1, or 3:1 for 18pt or 14pt bold, each slide's color pair is one *Needs you* item showing the words both ways, with the nearest passing color of the same hue ticked as the fix; *Remediate and download* writes it onto those runs. Text over a picture, chart, table, gradient or pattern is named for a person (one item). On the five team decks, 6 findings, each confirmed on a render; the first build, against the background alone, reported 72 (`docs/library_lessons.md`, S510). Tests: `library_remediate` (8), `library` (16).
@@ -954,5 +983,7 @@ the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-depl
 ✅ **⑧ A workbook is remediated (S514) and ⑨ its contrast is checked (S515):** each cell's font color against its own fill, the fix written as a new font and format so cells sharing the old one keep it; a styled table, a patterned fill, words colored inside a cell and conditional formatting are listed for a person. Detail: [`docs/library_lessons.md`](library_lessons.md), *A workbook's contrast (S515)*. Tests: `library_remediate` (109).
 
 ## Moved from the lane (S517)
+
+✅ **⑩ A workbook's conditional formatting is measured (S516):** each rule's colors against every cell in its range, one item per format, fixed by a copy that only the failing rules point at. Detail: [`docs/library_lessons.md`](library_lessons.md), *A workbook's conditional formatting (S516)*. Tests: `library_remediate` (121).
 
 ✅ **③ Remediation in the browser is built (S509).** Remediate on a dropped .pptx or .docx reads it here (`library_remediate.js` over the vendored `jszip.min.js` 3.10.1, MIT, loaded on demand like `docx.min.js`) and reports, as the mockup draws it, *Fixed for you*: the title (from the first slide's title or first heading, a generator's stock title counting as none), the language, table header rows, a picture on most slides (a logo) marked decorative as Office writes it; and *Needs you*: alt text per picture and chart, with its thumbnail and a draft from the slide's or section's words, or Decorative; an empty slide title; slides with no title box (one item); crowded slides' reading order (one item); a document with no headings. *Remediate and download* writes the answers into a fresh read and hands back `<name>_Remediated.<ext>`, the date code kept; *File it in the Library* opens the filing form. A chart's draft comes from its own numbers. *Draft from the picture* (Sam, 2026-10-29: *"We do a lot of MAP screenshots and hoping you can decipher them and at least take a shot at alt text"*) sends that one picture, shrunk to 1568 pixels, to the `alt-text-draft` function (S509, v1; checks the team phrase itself; writes nothing), which asks Claude; *Draft every picture* runs all. Tried on four team files; all reopen. Tests: `library_remediate`, `library` block (16).

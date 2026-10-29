@@ -1073,7 +1073,8 @@
           drafting: state.autoDraft && pk.ext !== "pdf" ? { done: 0, total: 0, failed: 0 } : null };
         session.report.needs.forEach(function (n) {
           if (n.type === "alt" || n.type === "title" || n.type === "sheet") state.rem.answers[n.id] = { text: n.draft || "", decorative: false };
-          if (n.type === "contrast") state.rem.answers[n.id] = { fix: true };
+          // An advisory chart item (its values show as labels) waits for a person to tick it.
+          if (n.type === "contrast") state.rem.answers[n.id] = { fix: !n.advisory };
         });
         if (state.rem.drafting && !picNeeds().length) state.rem.drafting = null;
         render();

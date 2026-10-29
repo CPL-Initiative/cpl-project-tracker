@@ -27,6 +27,9 @@
 //   - a PDF is read, never written: its own Info and catalog (in Office's compressed
 //     object streams, never a bookmark's title or a span's language), the program that
 //     made it, and the steps that fix it at that source;
+//   - a chart's contrast (15): each series against the plot area, Office's own colors as
+//     drawn, its words against what they sit on, slices against each other, and the fix
+//     written into the series or a data point of its own;
 //   - a deck's contrast is measured against the fill the words actually sit on (a shape
 //     drawn before them, the layout's own shapes, then the background), never the slide's
 //     background alone, which read our decks' white-on-navy labels as white on white.
@@ -277,6 +280,51 @@ function cfWorkbook() {
     rule("Z9", cell(2, 8)) + "</worksheet>");
   return z.generateAsync({ type: "nodebuffer" });
 }
+// A Word document with two charts in Office's own theme: a bar chart whose series 2 and 3
+// take Office's own colors by their c:idx (accent2 orange, accent3 gray), gray axis words,
+// a white title; and a pie with value labels whose slices Office colors by itself.
+const C_NS = 'xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"';
+const OFFICE_THEME = '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><a:theme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:themeElements><a:clrScheme name="Office">' +
+  '<a:dk1><a:sysClr val="windowText" lastClr="000000"/></a:dk1><a:lt1><a:sysClr val="window" lastClr="FFFFFF"/></a:lt1><a:dk2><a:srgbClr val="44546A"/></a:dk2><a:lt2><a:srgbClr val="E7E6E6"/></a:lt2>' +
+  '<a:accent1><a:srgbClr val="4472C4"/></a:accent1><a:accent2><a:srgbClr val="ED7D31"/></a:accent2><a:accent3><a:srgbClr val="A5A5A5"/></a:accent3><a:accent4><a:srgbClr val="FFC000"/></a:accent4>' +
+  '<a:accent5><a:srgbClr val="5B9BD5"/></a:accent5><a:accent6><a:srgbClr val="70AD47"/></a:accent6></a:clrScheme></a:themeElements></a:theme>';
+function chartWord() {
+  const z = new JSZip();
+  z.file("docProps/core.xml", CORE("Charts"));
+  z.file("word/styles.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:styles ' + W + "></w:styles>");
+  const frame = (id, rid) => '<w:p><w:r><w:drawing><wp:inline><wp:docPr id="' + id + '" name="Chart ' + id + '" descr="A chart"/><a:graphic><a:graphicData><c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" r:id="' + rid + '"/></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p>';
+  z.file("word/document.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document ' + W + '><w:body><w:p><w:pPr><w:pStyle w:val="Heading1"/></w:pPr><w:r><w:t>Charts</w:t></w:r></w:p>' +
+    frame(1, "rId1") + frame(2, "rId2") + "</w:body></w:document>");
+  z.file("word/_rels/document.xml.rels", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' +
+    '<Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="charts/chart1.xml"/>' +
+    '<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/chart" Target="charts/chart2.xml"/>' +
+    '<Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/theme" Target="theme/theme1.xml"/></Relationships>');
+  z.file("word/theme/theme1.xml", OFFICE_THEME);
+  const cats = '<c:cat><c:strRef><c:strCache><c:pt idx="0"><c:v>Norco</c:v></c:pt><c:pt idx="1"><c:v>Riverside</c:v></c:pt><c:pt idx="2"><c:v>Moreno Valley</c:v></c:pt></c:strCache></c:strRef></c:cat>';
+  const vals = '<c:val><c:numRef><c:numCache><c:pt idx="0"><c:v>3</c:v></c:pt><c:pt idx="1"><c:v>5</c:v></c:pt><c:pt idx="2"><c:v>2</c:v></c:pt></c:numCache></c:numRef></c:val>';
+  // Labels inside the bars, in a color of their own.
+  const inLbls = (hex) => '<c:dLbls><c:txPr><a:bodyPr/><a:p><a:pPr><a:defRPr sz="1000"><a:solidFill><a:srgbClr val="' + hex + '"/></a:solidFill></a:defRPr></a:pPr></a:p></c:txPr>' +
+    '<c:dLblPos val="ctr"/><c:showVal val="0"/></c:dLbls>';
+  const ser = (i, name, sp, lbls) => '<c:ser><c:idx val="' + i + '"/><c:order val="' + i + '"/><c:tx><c:strRef><c:strCache><c:pt idx="0"><c:v>' + name + '</c:v></c:pt></c:strCache></c:strRef></c:tx>' + (sp || "") +
+    '<c:invertIfNegative val="0"/>' + (lbls || "") + cats + vals + "</c:ser>";
+  // Bar: series 0 navy (passes), 1 and 2 Office's orange and gray (fail; the gray holds black
+  // labels a darker gray keeps readable), 3 gold of its own (fails; its navy labels rule out
+  // every gold that passes on white).
+  z.file("word/charts/chart1.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><c:chartSpace ' + C_NS + '><c:chart>' +
+    '<c:title><c:tx><c:rich><a:bodyPr/><a:p><a:r><a:rPr sz="1400" b="0"><a:solidFill><a:srgbClr val="FFFFFF"/></a:solidFill></a:rPr><a:t>Awards</a:t></a:r></a:p></c:rich></c:tx></c:title>' +
+    '<c:plotArea><c:barChart><c:barDir val="col"/><c:grouping val="clustered"/>' +
+    ser(0, "Fall", '<c:spPr><a:solidFill><a:srgbClr val="002F6D"/></a:solidFill></c:spPr>') + ser(1, "Winter") + ser(2, "Spring", "", inLbls("000000")) +
+    ser(3, "Summer", '<c:spPr><a:solidFill><a:schemeClr val="accent4"/></a:solidFill><a:ln><a:noFill/></a:ln></c:spPr>', inLbls("002F6D")) +
+    '</c:barChart><c:catAx><c:axId val="1"/><c:delete val="0"/><c:txPr><a:bodyPr/><a:p><a:pPr><a:defRPr sz="900"><a:solidFill><a:srgbClr val="A6A6A6"/></a:solidFill></a:defRPr></a:pPr></a:p></c:txPr></c:catAx>' +
+    '<c:valAx><c:axId val="2"/><c:delete val="1"/></c:valAx></c:plotArea></c:chart>' +
+    '<c:spPr><a:solidFill><a:schemeClr val="bg1"/></a:solidFill></c:spPr></c:chartSpace>');
+  // Pie: one series, value labels, slices in Office's own colors (blue passes; orange and gray fail on white and against each other).
+  z.file("word/charts/chart2.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><c:chartSpace ' + C_NS + '><c:chart><c:plotArea><c:pieChart><c:varyColors val="1"/>' +
+    '<c:ser><c:idx val="0"/><c:order val="0"/><c:tx><c:strRef><c:strCache><c:pt idx="0"><c:v>Awards</c:v></c:pt></c:strCache></c:strRef></c:tx>' +
+    '<c:dLbls><c:showLegendKey val="0"/><c:showVal val="1"/></c:dLbls>' + cats + vals + '</c:ser></c:pieChart></c:plotArea></c:chart></c:chartSpace>');
+  return z.generateAsync({ type: "nodebuffer" });
+}
+
 const run = deck().then(function (buf) {
   return R.inspect(buf, "20261030_CPL_Summit_Funding.pptx", ENV);
 }).then(function (s) {
@@ -538,10 +586,42 @@ const run3 = run2.then(function () {
     }).then(function (again) {
       check("(14) the remediated workbook has no rule contrast item left", !again.report.needs.some(function (n) { return n.type === "contrast"; }), JSON.stringify(again.report.needs.map(function (n) { return n.text; })));
     });
+
+  }).then(function () {
+    // (15) A chart's contrast (S517): series against the plot area, Office's own colors
+    // measured as drawn, words against what they sit on, slices against each other.
+    return chartWord().then(function (buf) { return R.inspect(buf, "Charts.docx", ENV); }).then(function (s) {
+      const needs = s.report.needs, k = needs.filter(function (n) { return n.inChart; });
+      const what = function (re) { return k.filter(function (n) { return re.test(n.text); })[0]; };
+      const gold = needs.filter(function (n) { return /the series Summer in #FFC000/.test(n.text); })[0];
+      const gray = what(/the series Spring in #A5A5A5 on #FFFFFF/), axis = what(/category axis labels in #A6A6A6/), title = what(/the chart's title in #FFFFFF/);
+      check("(15) a series in Office's own color is measured as drawn (accent3, gray) and fails 3:1", !!gray && gray.need === 3 && gray.op === "fill" && !gray.advisory, JSON.stringify(needs.map(function (n) { return n.text; })));
+      check("(15) navy passes and is not listed; Office's orange for series 1 fails", !what(/series Fall/) && !!what(/the series Winter in #ED7D31/));
+      check("(15) a gold of the series' own whose navy labels no passing gold keeps readable goes to a person", !!gold && gold.type === "info" && /keeps the labels on it readable/.test(gold.text), gold && gold.text);
+      check("(15) a gray darkened for the plot area keeps its black labels at 4.5:1", !!gray && R._ratio(gray.fix, "000000") >= 4.5 && R._ratio(gray.fix, "FFFFFF") >= 3, gray && gray.fix);
+      check("(15) small gray axis words need 4.5:1", !!axis && axis.need === 4.5 && /Chart 1: the category axis labels in #A6A6A6 on #FFFFFF read 2/.test(axis.text), axis && axis.text);
+      check("(15) a deleted axis is not read; a white title run on white fails", !what(/value axis/) && !!title && title.op === "text");
+      const slices = k.filter(function (n) { return /Chart 2: the slice/.test(n.text); });
+      check("(15) a labeled pie's failing slices are listed as advisory, named by category", slices.length === 2 && slices.every(function (n) { return n.advisory && n.op === "newpt"; }) && /the slice Riverside in #ED7D31/.test(slices[0].text) && /yours to weigh/.test(slices[0].text), JSON.stringify(slices.map(function (n) { return n.text; })));
+      check("(15) slices that read alike side by side go to a person", needs.some(function (n) { return n.type === "info" && /^Chart 2: side by side, the slices Norco and Riverside; Riverside and Moreno Valley; Moreno Valley and Norco read less than 3:1/.test(n.text); }), JSON.stringify(needs.map(function (n) { return n.text; })));
+      check("(15) each chart fix passes its own bar", k.every(function (n) { return R._ratio(n.fix, n.bg) >= n.need; }));
+      const ans = {}; k.forEach(function (n) { ans[n.id] = { fix: true }; });
+      return R.finish(s, ans, "nodebuffer").then(function (out) {
+        check("(15) finish writes every chart fix", out.done.colors === k.length, JSON.stringify(out.done) + " of " + k.length);
+        return JSZip.loadAsync(out.file).then(function (z) { return Promise.all(["word/charts/chart1.xml", "word/charts/chart2.xml"].map(function (p) { return z.file(p).async("string"); })); }).then(function (x) {
+          check("(15) a series with no spPr gets one after its name, before invertIfNegative", /<c:v>Spring<\/c:v><\/c:pt><\/c:strCache><\/c:strRef><\/c:tx><c:spPr><a:solidFill><a:srgbClr val="[0-9A-F]{6}"\/><\/a:solidFill><\/c:spPr><c:invertIfNegative/.test(x[0]), x[0]);
+          check("(15) a series held for a person keeps its own fill", /<a:schemeClr val="accent4"\/><\/a:solidFill><a:ln><a:noFill\/><\/a:ln>/.test(x[0]));
+          check("(15) Office's slices get data points of their own, before the labels", /<c:dPt><c:idx val="1"\/><c:spPr><a:solidFill>[\s\S]*<c:dPt><c:idx val="2"\/><c:spPr>[\s\S]*<c:dLbls>/.test(x[1]), x[1]);
+          return R.inspect(out.file, "Charts.docx", ENV);
+        });
+      }).then(function (again) {
+        check("(15) the remediated document has no chart contrast item left, and the fixes broke no labels", !again.report.needs.some(function (n) { return n.inChart || /^Chart \d: the data labels/.test(n.text); }), JSON.stringify(again.report.needs.map(function (n) { return n.text; })));
+      });
+    });
   });
 });
 
-// (15) A deck's slides (S517). Sam, 2026-10-29: "It would be helpful to have a
+// (16) A deck's slides (S517). Sam, 2026-10-29: "It would be helpful to have a
 // thumbnail of the ppt slide the image came from sitting to the left of the image to
 // remediate ... can you view the image in it's slide context and auto draft more
 // contextualized alt text ... or just read the url from it and list that in the alt
@@ -615,22 +695,22 @@ const run4 = run3.then(function () {
     const rep = s.report, alt = rep.needs.filter(function (n) { return n.type === "alt"; });
     const by = function (name) { return alt.filter(function (n) { return n.label.indexOf("(" + name + ")") > 0; })[0]; };
     const padlet = by("Picture 2"), dash = by("Picture 4"), map = by("Picture 6"), grouped = by("Picture 10"), video = alt.filter(function (n) { return n.slide === 2; })[0];
-    check("(15) a picture whose alt text is its file name is listed, and a person's own alt text is left alone", !!padlet && padlet.stock === "file" && !by("Photo"), JSON.stringify(alt.map(function (n) { return n.label; })));
-    check("(15) Office's own description is listed, kept as the draft without its notice", !!dash && dash.stock === "auto" && dash.draft === "A qr code on a white background", dash && dash.draft);
-    check("(15) the words just below a picture are found, and draft it", !!map && map.near && map.near.rel === "below" && map.near.where === "just below it" && map.near.text === "MAP Website" && map.draft === "MAP Website", JSON.stringify(map && map.near));
-    check("(15) each QR code finds its own label, never its neighbor's or the title", padlet.near.text === "Summit Padlet" && dash.near.text === "MAP Dashboard" && padlet.draft === "Summit Padlet");
-    check("(15) a group's picture finds the label to its right, read through the group's coordinates", !!grouped && grouped.near && grouped.near.rel === "right" && grouped.near.text === "Scan for the agenda", JSON.stringify(grouped && grouped.near));
+    check("(16) a picture whose alt text is its file name is listed, and a person's own alt text is left alone", !!padlet && padlet.stock === "file" && !by("Photo"), JSON.stringify(alt.map(function (n) { return n.label; })));
+    check("(16) Office's own description is listed, kept as the draft without its notice", !!dash && dash.stock === "auto" && dash.draft === "A qr code on a white background", dash && dash.draft);
+    check("(16) the words just below a picture are found, and draft it", !!map && map.near && map.near.rel === "below" && map.near.where === "just below it" && map.near.text === "MAP Website" && map.draft === "MAP Website", JSON.stringify(map && map.near));
+    check("(16) each QR code finds its own label, never its neighbor's or the title", padlet.near.text === "Summit Padlet" && dash.near.text === "MAP Dashboard" && padlet.draft === "Summit Padlet");
+    check("(16) a group's picture finds the label to its right, read through the group's coordinates", !!grouped && grouped.near && grouped.near.rel === "right" && grouped.near.text === "Scan for the agenda", JSON.stringify(grouped && grouped.near));
     const plan = rep.slides[0].plan, sh = function (id) { return plan.shapes.filter(function (r) { return r.id === id; })[0]; };
     const near = function (a, b) { return Math.abs(a - b) < 1e-6; };
-    check("(15) the slide's plan holds its size, its background picture and each shape where it sits", plan.w === 12192000 && plan.h === 6858000 && plan.bgMedia === "ppt/media/bg.png" &&
+    check("(16) the slide's plan holds its size, its background picture and each shape where it sits", plan.w === 12192000 && plan.h === 6858000 && plan.bgMedia === "ppt/media/bg.png" &&
       near(sh("7").x, (1097280 + 2 * 3566160) / 12192000) && near(sh("7").w, 2194560 / 12192000) && sh("7").media === "ppt/media/map.png", JSON.stringify(sh("7")));
-    check("(15) a grouped shape is scaled into its group's box", near(sh("11").x, 6000000 / 12192000) && near(sh("11").w, 1000000 / 12192000) && near(sh("12").y, 5200000 / 6858000) && near(sh("12").h, 600000 / 6858000), JSON.stringify([sh("11"), sh("12")]));
-    check("(15) a text shape carries its words, size, weight, alignment and anchor", sh("2").title === true && sh("2").anchor === "b" && sh("2").paras[0].sz === 40 && sh("2").paras[0].b === true && sh("8").paras[0].algn === "ctr" && sh("8").paras[0].sz === 20, JSON.stringify([sh("2"), sh("8")]));
-    check("(15) Claude reads the slide's title, the nearest words and where they sit, and the rest of the slide's words", map.context.split("\n")[0] === "The slide's title: Stay connected after the Summit" &&
+    check("(16) a grouped shape is scaled into its group's box", near(sh("11").x, 6000000 / 12192000) && near(sh("11").w, 1000000 / 12192000) && near(sh("12").y, 5200000 / 6858000) && near(sh("12").h, 600000 / 6858000), JSON.stringify([sh("11"), sh("12")]));
+    check("(16) a text shape carries its words, size, weight, alignment and anchor", sh("2").title === true && sh("2").anchor === "b" && sh("2").paras[0].sz === 40 && sh("2").paras[0].b === true && sh("8").paras[0].algn === "ctr" && sh("8").paras[0].sz === 20, JSON.stringify([sh("2"), sh("8")]));
+    check("(16) Claude reads the slide's title, the nearest words and where they sit, and the rest of the slide's words", map.context.split("\n")[0] === "The slide's title: Stay connected after the Summit" &&
       map.context.split("\n")[1] === "The words just below it: MAP Website" && /^Other words on the slide, top to bottom: Summit Padlet \| MAP Dashboard \| Scan for the agenda$/.test(map.context.split("\n")[2]), map.context);
-    check("(15) a video's poster frame is named a video, drafted from its own name, and said to be a poster frame", !!video && /^Slide 2, video \(/.test(video.label) && video.av === "video" &&
+    check("(16) a video's poster frame is named a video, drafted from its own name, and said to be a poster frame", !!video && /^Slide 2, video \(/.test(video.label) && video.av === "video" &&
       video.draft === "Video: Chancellor Christian's Address to 7th Annual CPL Summit" && /Its name in the file: Chancellor Christian's Address/.test(video.context) && /poster frame of a video/.test(video.context), JSON.stringify(video));
-    check("(15) a QR code drafts as where it leads: the label, then the address without its scheme or slash",
+    check("(16) a QR code drafts as where it leads: the label, then the address without its scheme or slash",
       R.qrDraft("https://map.rccd.edu/", { text: "MAP Website" }) === "QR code to MAP Website, map.rccd.edu" &&
       R.qrDraft("https://www.padlet.com/x/summit?utm=qr#top", null) === "QR code to padlet.com/x/summit" &&
       R.qrDraft("https://map.rccd.edu/", { text: "map.rccd.edu" }) === "QR code to map.rccd.edu" &&
@@ -644,9 +724,9 @@ const run4 = run3.then(function () {
       for (let dy = 0; dy < m; dy++) for (let dx = 0; dx < m; dx++) { const i = (((y + q) * m + dy) * side + (x + q) * m + dx) * 4; px[i] = px[i + 1] = px[i + 2] = 0; }
     }); });
     const code = jsQR(px, side, side);
-    check("(15) the checks for a deck, each with its WCAG 2.2 criterion", R.checksFor("pptx").map(function (c) { return c.key + " " + c.sc; }).join(", ") ===
+    check("(16) the checks for a deck, each with its WCAG 2.2 criterion", R.checksFor("pptx").map(function (c) { return c.key + " " + c.sc; }).join(", ") ===
       "alt 1.1.1, title 2.4.2, slides 2.4.6, lang 3.1.1, tables 1.3.1, order 1.3.2, contrast 1.4.3" && R.checksFor("xlsx").length === 5 && R.checksFor("docx").length === 6);
-    check("(15) the vendored jsQR reads a code's address, and the draft names the label beside it", !!code && code.data === "https://map.rccd.edu/" && R.qrDraft(code.data, map.near) === "QR code to MAP Website, map.rccd.edu", code && code.data);
+    check("(16) the vendored jsQR reads a code's address, and the draft names the label beside it", !!code && code.data === "https://map.rccd.edu/" && R.qrDraft(code.data, map.near) === "QR code to MAP Website, map.rccd.edu", code && code.data);
   });
 });
 
@@ -659,7 +739,7 @@ const run5 = run4.then(function () {
     });
   })).then(function (lost) {
     lost = [].concat.apply([], lost);
-    check("(15) every listed item belongs to one of its file's checks", !lost.length, lost.join(", "));
+    check("(16) every listed item belongs to one of its file's checks", !lost.length, lost.join(", "));
   });
 });
 

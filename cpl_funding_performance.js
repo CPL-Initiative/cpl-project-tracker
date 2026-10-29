@@ -4,26 +4,26 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-10-28",
+ "as_of": "2026-10-29",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 50220,
-  "pa": 45519,
-  "ppa": 123,
-  "p2": 3611,
-  "p3": 16813,
+  "pe": 50319,
+  "pa": 45588,
+  "ppa": 121,
+  "p2": 3610,
+  "p3": 16844,
   "pp": 7,
-  "ppe": 134,
+  "ppe": 133,
   "pac": 5292,
-  "ptc": 4626,
-  "pe_u": 1557087.2,
-  "pa_u": 278273.9,
-  "ppa_u": 760.5,
-  "ppe_u": 7264.5,
+  "ptc": 4625,
+  "pe_u": 1560538.2,
+  "pa_u": 278502.9,
+  "ppa_u": 752.5,
+  "ppe_u": 7244.5,
   "pac_u": 37907.7,
-  "ptc_u": 31659.45,
-  "p3_u": 84404.15,
+  "ptc_u": 31647.45,
+  "p3_u": 84542.15,
   "pp_u": 73.5,
   "nc_exh": 90,
   "nc_course": 0,
@@ -122,15 +122,15 @@ window.CPL_FUNDING_PERF = {
   },
   "Bakersfield": {
    "pe": 629,
-   "pe_u": 27142.0,
+   "pe_u": 27151.0,
    "pa": 621,
    "pa_u": 9031.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 72.0,
-   "p2": 65,
-   "p3": 66,
-   "p3_u": 1203.5,
+   "p2": 64,
+   "p3": 65,
+   "p3_u": 1191.5,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
@@ -138,8 +138,8 @@ window.CPL_FUNDING_PERF = {
    "ppe_u": 208.0,
    "pac": 209,
    "pac_u": 2908.5,
-   "ptc": 66,
-   "ptc_u": 1203.5,
+   "ptc": 65,
+   "ptc_u": 1191.5,
    "nc_exh": 0,
    "nc_course": 0,
    "nc_cdcp": 134
@@ -350,13 +350,13 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 76
   },
   "Chaffey": {
-   "pe": 1568,
-   "pe_u": 34975.0,
+   "pe": 1569,
+   "pe_u": 34995.0,
    "pa": 1564,
-   "pa_u": 19953.5,
+   "pa_u": 19944.5,
    "ppa": null,
    "ppa_suppressed": true,
-   "ppa_u": 15.0,
+   "ppa_u": 12.0,
    "p2": 24,
    "p3": 52,
    "p3_u": 395.0,
@@ -364,7 +364,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 111.0,
+   "ppe_u": 91.0,
    "pac": 37,
    "pac_u": 270.5,
    "ptc": 34,
@@ -444,10 +444,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 90
   },
   "Columbia": {
-   "pe": 24,
-   "pe_u": 1415.0,
-   "pa": 24,
-   "pa_u": 119.0,
+   "pe": 25,
+   "pe_u": 1433.0,
+   "pa": 25,
+   "pa_u": 173.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -535,10 +535,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 46
   },
   "Crafton Hills": {
-   "pe": 21,
-   "pe_u": 1045.0,
-   "pa": 20,
-   "pa_u": 140.0,
+   "pe": 23,
+   "pe_u": 1154.0,
+   "pa": 23,
+   "pa_u": 161.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -939,8 +939,8 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 66
   },
   "Grossmont": {
-   "pe": 495,
-   "pe_u": 29569.0,
+   "pe": 524,
+   "pe_u": 30983.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -1030,10 +1030,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 161
   },
   "LA Harbor": {
-   "pe": 140,
-   "pe_u": 5412.0,
-   "pa": 140,
-   "pa_u": 420.0,
+   "pe": 205,
+   "pe_u": 7296.0,
+   "pa": 205,
+   "pa_u": 615.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1146,10 +1146,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 111
   },
   "Laney": {
-   "pe": 81,
-   "pe_u": 3417.0,
-   "pa": 81,
-   "pa_u": 486.0,
+   "pe": 82,
+   "pe_u": 3439.0,
+   "pa": 82,
+   "pa_u": 492.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1389,10 +1389,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 39
   },
   "Mission": {
-   "pe": 172,
-   "pe_u": 8010.0,
-   "pa": 172,
-   "pa_u": 1032.0,
+   "pe": 173,
+   "pe_u": 8031.0,
+   "pa": 173,
+   "pa_u": 1038.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": null,
@@ -1809,16 +1809,15 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 85
   },
   "Riverside": {
-   "pe": 899,
-   "pe_u": 39328.0,
-   "pa": 884,
-   "pa_u": 4396.0,
-   "ppa": null,
-   "ppa_suppressed": true,
-   "ppa_u": 5.0,
+   "pe": 898,
+   "pe_u": 39282.0,
+   "pa": 882,
+   "pa_u": 4352.0,
+   "ppa": 0,
+   "ppa_u": 0.0,
    "p2": 20,
-   "p3": 849,
-   "p3_u": 4197.0,
+   "p3": 881,
+   "p3_u": 4347.0,
    "pp": 0,
    "pp_u": 0.0,
    "ppe": null,
@@ -2629,15 +2628,15 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Industry Certification | Military": {
-    "pe": 12,
-    "pa": 12,
+    "pe": 13,
+    "pa": 13,
     "p3": null,
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 578,
-    "pa": 574,
-    "p3": 39
+    "pe": 577,
+    "pa": 573,
+    "p3": 38
    }
   },
   "Barstow": {
@@ -2792,7 +2791,7 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 387,
+    "pe": 388,
     "pa": 385,
     "p3": 18
    },
@@ -2834,8 +2833,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Columbia": {
    "Military": {
-    "pe": 24,
-    "pa": 24,
+    "pe": 25,
+    "pa": 25,
     "p3": 0
    }
   },
@@ -2869,17 +2868,10 @@ window.CPL_FUNDING_PERF = {
    }
   },
   "Crafton Hills": {
-   "Industry Certification": {
-    "pe": null,
-    "pe_suppressed": true,
-    "pa": 0,
-    "p3": 0
-   },
    "Military": {
-    "pe": null,
-    "pa": 20,
-    "p3": 0,
-    "pe_suppressed": true
+    "pe": 23,
+    "pa": 23,
+    "p3": 0
    }
   },
   "Cuesta": {
@@ -3073,7 +3065,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "Military": {
-    "pe": 495,
+    "pe": 524,
     "pa": 0,
     "p3": 0
    }
@@ -3115,8 +3107,8 @@ window.CPL_FUNDING_PERF = {
   },
   "LA Harbor": {
    "Military": {
-    "pe": 140,
-    "pa": 140,
+    "pe": 205,
+    "pa": 205,
     "p3": 0
    }
   },
@@ -3188,8 +3180,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "Military": {
-    "pe": 81,
-    "pa": 81,
+    "pe": 82,
+    "pa": 82,
     "p3": 0
    }
   },
@@ -3341,8 +3333,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Mission": {
    "Military": {
-    "pe": 172,
-    "pa": 172,
+    "pe": 173,
+    "pa": 173,
     "p3": null,
     "p3_suppressed": true
    }
@@ -3775,9 +3767,9 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 879,
-    "pa": 864,
-    "p3": 829
+    "pe": 878,
+    "pa": 862,
+    "p3": 861
    }
   },
   "Sacramento City": {
@@ -4334,13 +4326,13 @@ window.CPL_FUNDING_PERF = {
    "p3": 46
   },
   "Industry Certification": {
-   "pe": 1449,
+   "pe": 1448,
    "pa": 1427,
    "p3": 1203
   },
   "Industry Certification | Military": {
-   "pe": 56,
-   "pa": 55,
+   "pe": 57,
+   "pa": 56,
    "p3": 32
   },
   "Industry Certification | Military | Portfolio Review": {
@@ -4381,9 +4373,9 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 29508,
-   "pa": 26587,
-   "p3": 2623
+   "pe": 29607,
+   "pa": 26655,
+   "p3": 2654
   },
   "Military | Other": {
    "pe": null,
@@ -4438,17 +4430,17 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1557087.2,
-   "pa_u": 278273.9,
-   "p3_u": 84404.15
+   "pe_u": 1560538.2,
+   "pa_u": 278502.9,
+   "p3_u": 84542.15
   },
   "map": {
-   "pe_u": 1564351.7,
-   "pa_u": 279034.4,
-   "p3_u": 84477.65
+   "pe_u": 1567782.7,
+   "pa_u": 279255.4,
+   "p3_u": 84615.65
   },
   "ratio": {
-   "pe_u": 1.0047,
+   "pe_u": 1.0046,
    "pa_u": 1.0027,
    "p3_u": 1.0009
   }
@@ -4507,6 +4499,7 @@ window.CPL_FUNDING_PERF = {
   "East LA": false,
   "San Jose City": true,
   "Oxnard": true,
+  "LA Harbor": true,
   "Golden West": false,
   "Allan Hancock": false,
   "Cerritos": true,
@@ -4514,7 +4507,6 @@ window.CPL_FUNDING_PERF = {
   "San Mateo": true,
   "Reedley College": true,
   "Laney": true,
-  "LA Harbor": true,
   "Lassen": true,
   "Porterville": true,
   "Irvine": false,
@@ -4531,10 +4523,10 @@ window.CPL_FUNDING_PERF = {
   "Redwoods": true,
   "Hartnell": false,
   "Alameda": true,
+  "Columbia": true,
   "Crafton Hills": false,
   "American River": false,
   "Madera": true,
-  "Columbia": false,
   "Las Positas": false,
   "Los Medanos": true,
   "Compton": false,
@@ -4570,9 +4562,9 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-10-28",
+ "vet_star_as_of": "2026-10-29",
  "vet_star_threshold": 0.75,
- "vet_star_n": 66,
+ "vet_star_n": 67,
  "vet_jst": {
   "LA Pierce": {
    "vets": 296,
@@ -4641,8 +4633,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Long Beach": {
    "vets": 307,
-   "jst": 884,
-   "pct": 2.8795
+   "jst": 883,
+   "pct": 2.8762
   },
   "De Anza": {
    "vets": 903,
@@ -4651,8 +4643,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Riverside": {
    "vets": 1508,
-   "jst": 882,
-   "pct": 0.5849
+   "jst": 881,
+   "pct": 0.5842
   },
   "El Camino": {
    "vets": 327,
@@ -4776,8 +4768,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Mission": {
    "vets": 158,
-   "jst": 172,
-   "pct": 1.0886
+   "jst": 173,
+   "pct": 1.0949
   },
   "Victor Valley": {
    "vets": 97,
@@ -4839,6 +4831,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 162,
    "pct": 1.3729
   },
+  "LA Harbor": {
+   "vets": 109,
+   "jst": 206,
+   "pct": 1.8899
+  },
   "Golden West": {
    "vets": 219,
    "jst": 100,
@@ -4871,13 +4868,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Laney": {
    "vets": 96,
-   "jst": 82,
-   "pct": 0.8542
-  },
-  "LA Harbor": {
-   "vets": 109,
-   "jst": 140,
-   "pct": 1.2844
+   "jst": 83,
+   "pct": 0.8646
   },
   "Lassen": {
    "vets": 129,
@@ -4959,10 +4951,15 @@ window.CPL_FUNDING_PERF = {
    "jst": 30,
    "pct": 1.0
   },
+  "Columbia": {
+   "vets": 33,
+   "jst": 25,
+   "pct": 0.7576
+  },
   "Crafton Hills": {
    "vets": 577,
-   "jst": 20,
-   "pct": 0.0347
+   "jst": 23,
+   "pct": 0.0399
   },
   "American River": {
    "vets": 312,
@@ -4973,11 +4970,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 43,
    "jst": 50,
    "pct": 1.1628
-  },
-  "Columbia": {
-   "vets": 33,
-   "jst": 24,
-   "pct": 0.7273
   },
   "Las Positas": {
    "vets": 233,
@@ -5041,8 +5033,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "vets": 415,
-   "jst": 556,
-   "pct": 1.3398
+   "jst": 585,
+   "pct": 1.4096
   },
   "LA City": {
    "vets": 301,

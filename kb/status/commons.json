@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-28T18:33:20Z",
+ "written_at": "2026-10-29T13:14:08Z",
  "rows": [
   {
    "key": "requirements",
@@ -108,7 +108,7 @@
      "error": null
     },
     {
-     "n": 606,
+     "n": 621,
      "words": "titles in the reference that have left MAP",
      "owner": "a curator (retire or keep)",
      "open": "#credential-reference/all",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-28T18:29:19Z",
+    "at": "2026-10-29T13:10:10Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,10 +140,10 @@
     "records": 2686,
     "records_stamped": 1867,
     "saved_at": "2026-10-28T14:36:41Z",
-    "fold_at": "2026-10-28T18:29:19Z",
-    "map_titles": 4839,
-    "unclassified": 435,
-    "left_map": 606,
+    "fold_at": "2026-10-29T13:10:10Z",
+    "map_titles": 4844,
+    "unclassified": 455,
+    "left_map": 621,
     "below_80": 1151,
     "below_60": 245
    },
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-28T18:31:32+00:00",
+    "at": "2026-10-29T13:12:23+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-28T18:29:18Z",
+    "at": "2026-10-29T13:10:07Z",
     "every_hours": 24
    },
    "facts": {
@@ -414,7 +414,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-10-28",
+    "scanned_at": "2026-10-29",
     "procedures_on": 6
    },
    "sources": [

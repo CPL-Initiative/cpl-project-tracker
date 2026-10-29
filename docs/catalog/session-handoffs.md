@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-486 document(s).
+487 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 518 | [Session 518 handoff: a chart's contrast in the Library's remediation](../session_518_handoff.md) | 2026-10-29 |
 | 517 | [Session 517 handoff: a workbook's conditional formatting in the Library's remediation](../session_517_handoff.md) | 2026-10-29 |
 | 516 | [Session 516 handoff: a workbook's contrast in the Library's remediation](../session_516_handoff.md) | 2026-10-29 |
 | 515 | [Session 515 handoff: a workbook in the Library's remediation](../session_515_handoff.md) | 2026-10-29 |

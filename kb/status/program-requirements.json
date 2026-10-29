@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-29T11:29:56Z",
-  "session": 516,
-  "moniker": "SkyBoysenberry",
+  "written_at": "2026-10-29T12:47:56Z",
+  "session": 517,
+  "moniker": "SkyPartridgeberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_517_handoff.md",
+  "handoff": "docs/session_518_handoff.md",
   "next_step": {
     "title": "Glendale's course units from its descriptions",
     "text": "180 Glendale records fail arithmetic, most on courses the state's file lists without units; the next session reads each such course's units from the catalog's course descriptions, which print them, and rescores."
@@ -137,6 +137,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-29T12:47:00Z",
+      "text": "No harvest change this run (S517 worked the Library's chart contrast); the headline and harvest measures re-read."
+    },
     {
       "at": "2026-10-29T08:45:00Z",
       "text": "No harvest change this run (S513 worked the Library's PDF remediation and the ESL monthly pass); the headline and harvest measures re-read."
@@ -283,7 +287,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-29T10:12:00Z"
+    "at": "2026-10-29T13:12:00Z"
   },
   "harvest": {
     "day": "2026-10-29",

@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-28T18:29:11.725459+00:00",
+  "scraped_at": "2026-10-29T13:10:00.414987+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 30170,
-    "star_colleges": 66
+    "jst": 30269,
+    "star_colleges": 67
   },
-  "computed_star_colleges": 66,
+  "computed_star_colleges": 67,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -77,7 +77,7 @@
     },
     "Long Beach City College": {
       "vets": 307,
-      "jst": 884,
+      "jst": 883,
       "star": true
     },
     "De Anza College": {
@@ -87,7 +87,7 @@
     },
     "Riverside City College": {
       "vets": 1508,
-      "jst": 882,
+      "jst": 881,
       "star": false
     },
     "El Camino College": {
@@ -212,7 +212,7 @@
     },
     "Mission College": {
       "vets": 158,
-      "jst": 172,
+      "jst": 173,
       "star": true
     },
     "Victor Valley College": {
@@ -275,6 +275,11 @@
       "jst": 162,
       "star": true
     },
+    "Los Angeles Harbor College": {
+      "vets": 109,
+      "jst": 206,
+      "star": true
+    },
     "Golden West College": {
       "vets": 219,
       "jst": 100,
@@ -307,12 +312,7 @@
     },
     "Laney College": {
       "vets": 96,
-      "jst": 82,
-      "star": true
-    },
-    "Los Angeles Harbor College": {
-      "vets": 109,
-      "jst": 140,
+      "jst": 83,
       "star": true
     },
     "Lassen College": {
@@ -395,9 +395,14 @@
       "jst": 30,
       "star": true
     },
+    "Columbia College": {
+      "vets": 33,
+      "jst": 25,
+      "star": true
+    },
     "Crafton Hills College": {
       "vets": 577,
-      "jst": 20,
+      "jst": 23,
       "star": false
     },
     "American River College": {
@@ -409,11 +414,6 @@
       "vets": 43,
       "jst": 50,
       "star": true
-    },
-    "Columbia College": {
-      "vets": 33,
-      "jst": 24,
-      "star": false
     },
     "Las Positas College": {
       "vets": 233,
@@ -477,7 +477,7 @@
     },
     "Grossmont College": {
       "vets": 415,
-      "jst": 556,
+      "jst": 585,
       "star": true
     },
     "Los Angeles City College": {
