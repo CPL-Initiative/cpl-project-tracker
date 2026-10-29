@@ -18,8 +18,9 @@
 //                  section's own words, to read before keeping), a title for each slide
 //                  whose title placeholder is empty, a document with no headings,
 //                  reading order on a crowded slide, and a deck's text that falls below
-//                  AA contrast against the fill behind it (the nearest passing color of
-//                  the same hue offered as the fix).
+//                  AA contrast against the fill behind it, and a Word document's text
+//                  against its shading, highlight, table cell or page color (the nearest
+//                  passing color of the same hue offered as the fix either way).
 //
 // Works in Node too (tests/library_remediate.test.js): pass JSZip, DOMParser and
 // XMLSerializer in `env`; in the browser they default to the window's.
@@ -497,6 +498,143 @@
     return count;
   }
 
+  // ── a Word document's contrast ──────────────────────────────────────────────
+  // A run's color comes from its own w:color, else its character style, its paragraph's
+  // style (each through basedOn), else the document's defaults; "auto" is black or white,
+  // whichever reads, so it never fails. What it sits on: the run's shading or highlight,
+  // the paragraph's shading, the table cell's, else the page color, else white.
+  var HIGHLIGHT = { yellow: "FFFF00", green: "00FF00", cyan: "00FFFF", magenta: "FF00FF", blue: "0000FF", red: "FF0000",
+    darkBlue: "000080", darkCyan: "008080", darkGreen: "008000", darkMagenta: "800080", darkRed: "800000",
+    darkYellow: "808000", darkGray: "808080", lightGray: "C0C0C0", black: "000000", white: "FFFFFF" };
+  var WORD_THEME = { text1: "dk1", dark1: "dk1", background1: "lt1", light1: "lt1", text2: "dk2", dark2: "dk2", background2: "lt2", light2: "lt2",
+    hyperlink: "hlink", followedHyperlink: "folHlink" };
+  function wAttr(el, name) { return el ? el.getAttributeNS(NS.w, name) || el.getAttribute("w:" + name) || "" : ""; }
+  function wordScheme(theme) {
+    var scheme = {}, cs = theme && first(theme, NS.a, "clrScheme");
+    for (var c = cs && cs.firstChild; c; c = c.nextSibling) {
+      if (c.nodeType !== 1) continue;
+      var h = colorOf(colorChild(c), { map: {}, scheme: {} });
+      if (h) scheme[c.localName] = h;
+    }
+    return scheme;
+  }
+  // w:color to a hex, "auto", or null when it names none. Word writes the resolved hex in
+  // val beside a themeColor, so val wins when it is one.
+  function wordColor(el, scheme) {
+    if (!el) return null;
+    var v = wAttr(el, "val").toUpperCase();
+    if (/^[0-9A-F]{6}$/.test(v)) return v;
+    var t = wAttr(el, "themeColor"), hex = t && scheme[WORD_THEME[t] || t];
+    if (!hex) return v === "AUTO" ? "auto" : null;
+    var rgb = rgbOf(hex), tint = wAttr(el, "themeTint"), shade = wAttr(el, "themeShade");
+    if (tint) rgb = rgb.map(function (c) { return c + (255 - c) * (1 - parseInt(tint, 16) / 255); });
+    if (shade) rgb = rgb.map(function (c) { return c * parseInt(shade, 16) / 255; });
+    return hexOf(rgb);
+  }
+  // w:shd to { hex }, { complex } for a pattern, or null when it fills nothing.
+  function wordShade(el, scheme) {
+    if (!el) return null;
+    var val = wAttr(el, "val"), fill = wAttr(el, "fill").toUpperCase();
+    if (val === "solid") { var c = wAttr(el, "color").toUpperCase(); return /^[0-9A-F]{6}$/.test(c) ? { hex: c } : { complex: true }; }
+    if (val && val !== "clear" && val !== "nil") return { complex: true };
+    if (val === "nil") return null;
+    if (/^[0-9A-F]{6}$/.test(fill)) return { hex: fill };
+    var t = wAttr(el, "themeFill");
+    if (t && scheme[WORD_THEME[t] || t]) return { hex: scheme[WORD_THEME[t] || t] };
+    return null;
+  }
+  function wordStyles(styles) {
+    var byId = {};
+    if (styles) els(styles, NS.w, "style").forEach(function (s) { byId[wAttr(s, "styleId")] = s; });
+    var chain = function (id) {
+      var out = [], seen = {};
+      while (id && byId[id] && !seen[id]) { seen[id] = true; out.push(byId[id]); id = wAttr(child(byId[id], NS.w, "basedOn"), "val"); }
+      return out;
+    };
+    var defs = styles && first(styles, NS.w, "rPrDefault");
+    var defP = styles ? els(styles, NS.w, "style").filter(function (s) { return wAttr(s, "type") === "paragraph" && /^(1|true)$/.test(wAttr(s, "default")); })[0] : null;
+    return { chain: chain, defaults: defs ? child(defs, NS.w, "rPr") : null, defaultPara: defP ? wAttr(defP, "styleId") : "" };
+  }
+  function onOff(el) { if (!el) return null; var v = wAttr(el, "val"); return !(v === "0" || v === "false" || v === "off"); }
+  function contrastDocx(doc, d, styles, report) {
+    return Promise.all([doc.read("word/theme/theme1.xml"), doc.read("word/settings.xml")]).then(function (got) {
+      var scheme = wordScheme(got[0]), st = wordStyles(styles), pairs = {}, unsure = 0;
+      var bgEl = first(d, NS.w, "background"), page = (bgEl && /^[0-9A-F]{6}$/i.test(wAttr(bgEl, "color"))) ? wAttr(bgEl, "color").toUpperCase() : "FFFFFF";
+      var display = got[1] && first(got[1], NS.w, "displayBackgroundShape");
+      if (!display) page = "FFFFFF"; // Word paints the page color only when the setting says to
+      els(d, NS.w, "r").forEach(function (r, ri) {
+        var text = els(r, NS.w, "t").map(function (t) { return t.textContent; }).join("");
+        if (!text.trim()) return;
+        var p = r.parentNode, inBox = false;
+        while (p && !(p.namespaceURI === NS.w && p.localName === "p")) p = p.parentNode;
+        for (var q = p; q; q = q.parentNode) if (q.namespaceURI === NS.w && q.localName === "txbxContent") { inBox = true; break; }
+        if (inBox) { unsure++; return; }
+        var pPr = p && child(p, NS.w, "pPr"), rPr = child(r, NS.w, "rPr");
+        var styleIds = st.chain(wAttr(rPr && child(rPr, NS.w, "rStyle"), "val")).concat(st.chain(wAttr(pPr && child(pPr, NS.w, "pStyle"), "val") || st.defaultPara));
+        var prs = [rPr].concat(styleIds.map(function (s) { return child(s, NS.w, "rPr"); }), [st.defaults]);
+        var fg = null, size = null, bold = null, back = null;
+        prs.forEach(function (pr) {
+          if (!pr) return;
+          if (fg == null) fg = wordColor(child(pr, NS.w, "color"), scheme);
+          if (size == null) { var sz = wAttr(child(pr, NS.w, "sz"), "val"); if (sz) size = +sz / 2; }
+          if (bold == null) bold = onOff(child(pr, NS.w, "b"));
+        });
+        // What the run sits on: its highlight, its shading, then the paragraph's (own, then style), the cell's.
+        var hl = rPr && child(rPr, NS.w, "highlight"), hv = wAttr(hl, "val");
+        if (hv && HIGHLIGHT[hv]) back = { hex: HIGHLIGHT[hv] };
+        if (!back) back = wordShade(rPr && child(rPr, NS.w, "shd"), scheme);
+        if (!back) back = wordShade(pPr && child(pPr, NS.w, "shd"), scheme);
+        if (!back) styleIds.some(function (s) { var sp = child(s, NS.w, "pPr"); back = wordShade(sp && child(sp, NS.w, "shd"), scheme); return !!back; });
+        if (!back) for (var tc = p; tc; tc = tc.parentNode) if (tc.namespaceURI === NS.w && tc.localName === "tc") {
+          var tcPr = child(tc, NS.w, "tcPr"); back = wordShade(tcPr && child(tcPr, NS.w, "shd"), scheme);
+          // A table style may shade its header row or bands: not measured from here.
+          if (!back) { var tbl = tc.parentNode && tc.parentNode.parentNode, tp = tbl && child(tbl, NS.w, "tblPr");
+            if (st.chain(wAttr(tp && child(tp, NS.w, "tblStyle"), "val")).some(function (x) { return els(x, NS.w, "shd").some(function (h) { return !!wordShade(h, scheme); }); })) back = { complex: true }; }
+          break;
+        }
+        if (back && back.complex) { unsure++; return; }
+        if (!fg || fg === "auto") return;
+        var bg = back ? back.hex : page;
+        size = size || 10;
+        var large = size >= 18 || (bold && size >= 14), need = large ? 3 : 4.5, have = ratio(fg, bg);
+        if (have >= need) return;
+        var k = fg + "/" + bg + "/" + need;
+        var it = pairs[k] = pairs[k] || { fg: fg, bg: bg, need: need, ratio: have, large: large, sample: "", runs: [] };
+        if (!it.sample) it.sample = clip(text, 60);
+        it.runs.push({ run: ri });
+      });
+      Object.keys(pairs).forEach(function (k, i) {
+        var it = pairs[k], fix = passingColor(it.fg, it.bg, it.need);
+        report.needs.push({ type: "contrast", id: "c" + (i + 1), path: "word/document.xml", fg: it.fg, bg: it.bg, need: it.need,
+          ratio: Math.round(it.ratio * 100) / 100, fix: fix, fixRatio: Math.round(ratio(fix, it.bg) * 100) / 100, runs: it.runs,
+          text: (it.runs.length === 1 ? "Text" : it.runs.length + " runs of text") + " in #" + it.fg + " on #" + it.bg +
+            " reads " + (Math.floor(it.ratio * 10) / 10) + ":1; " + (it.large ? "large " : "") + "text needs " + it.need + ":1 (“" + it.sample + "”)" });
+      });
+      if (unsure) report.needs.push({ type: "info", id: "cu",
+        text: "Contrast on " + unsure + (unsure === 1 ? " run" : " runs") + " of text in a text box, on patterned shading or in a table whose style shades it, which this page cannot measure. Check it by eye, or with the Accessibility Checker." });
+    });
+  }
+  // The run settings that come after w:color, in the schema's order.
+  var AFTER_COLOR = /^(spacing|w|kern|position|sz|szCs|highlight|u|effect|bdr|shd|fitText|vertAlign|rtl|cs|em|lang|eastAsianLayout|specVanish|oMath)$/;
+  function applyContrastDocx(d, n) {
+    var runs = els(d, NS.w, "r"), count = 0;
+    n.runs.forEach(function (loc) {
+      var r = runs[loc.run];
+      if (!r) return;
+      var rPr = child(r, NS.w, "rPr");
+      if (!rPr) { rPr = d.createElementNS(NS.w, "w:rPr"); r.insertBefore(rPr, r.firstChild); }
+      var old = child(rPr, NS.w, "color");
+      if (old) rPr.removeChild(old);
+      var clr = d.createElementNS(NS.w, "w:color");
+      clr.setAttributeNS(NS.w, "w:val", n.fix);
+      var at = rPr.firstChild;
+      while (at && !(at.nodeType === 1 && AFTER_COLOR.test(at.localName))) at = at.nextSibling;
+      rPr.insertBefore(clr, at);
+      count++;
+    });
+    return count;
+  }
+
   // ── a deck ──────────────────────────────────────────────────────────────────
   function inspectPptx(doc, name, report) {
     var paths = Object.keys(doc.zip.files).filter(function (p) { return /^ppt\/slides\/slide\d+\.xml$/.test(p); })
@@ -647,7 +785,8 @@
           label: (isChart ? "Chart" : "Picture") + " " + k + (near ? ", under " + clip(near, 60) : ""),
           draft: near ? clip((isChart ? "Chart: " : "") + near, 150) : "" });
       });
-      return draftCharts(doc, report).then(function () { return fixTitle(doc, firstHeading || titleFromName(name), report); });
+      return contrastDocx(doc, d, styles, report).then(function () { return draftCharts(doc, report); })
+        .then(function () { return fixTitle(doc, firstHeading || titleFromName(name), report); });
     });
   }
 
@@ -711,7 +850,7 @@
             para.insertBefore(run, end);
             doc.touch(path); done.titles++;
           } else if (n.type === "contrast" && ans.fix) {
-            var k = applyContrast(d, n);
+            var k = report.ext === "pptx" ? applyContrast(d, n) : applyContrastDocx(d, n);
             if (k) { doc.touch(path); done.colors += k; }
           }
         });
