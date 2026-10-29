@@ -3,10 +3,10 @@
  "stats": {
   "supabase_tables": 102,
   "rpcs": 43,
-  "edge_functions": 10,
+  "edge_functions": 11,
   "file_datasets": 726,
   "external_services": 191,
-  "consumers": 480,
+  "consumers": 481,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -192,6 +192,27 @@
    "producers": [
     {
      "by": "file:chatbox/supabase/functions/program-requirements-extract/index.ts",
+     "how": "source"
+    }
+   ],
+   "main_committers": []
+  },
+  "edgefn:slide-script-draft": {
+   "consumers": [
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 74,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "producers": [
+    {
+     "by": "file:chatbox/supabase/functions/slide-script-draft/index.ts",
      "how": "source"
     }
    ],
@@ -410,6 +431,13 @@
      "direction": "read",
      "how": "url",
      "line": 440
+    },
+    {
+     "id": "edgefn:slide-script-draft",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 105
     },
     {
      "id": "worker:cloudflare-worker-proxy.js",
@@ -960,7 +988,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 75,
+     "line": 76,
      "tabs": [
       "library"
      ]
@@ -2700,7 +2728,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 81,
+     "line": 82,
      "tabs": [
       "library"
      ]
@@ -7869,7 +7897,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1466,
+     "line": 1487,
      "tabs": [
       "library"
      ]
@@ -7885,7 +7913,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1084,
+     "line": 1104,
      "tabs": [
       "library"
      ]
@@ -16783,7 +16811,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1085,
+     "line": 1105,
      "tabs": [
       "library"
      ]
@@ -18396,7 +18424,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2436,
+     "line": 2534,
      "tabs": [
       "library"
      ]
@@ -21703,7 +21731,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 74,
+     "line": 75,
      "tabs": [
       "library"
      ]
@@ -23044,7 +23072,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1620,
+     "line": 1713,
      "tabs": [
       "library"
      ]
@@ -24343,7 +24371,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 89,
+     "line": 90,
      "tabs": [
       "library"
      ]

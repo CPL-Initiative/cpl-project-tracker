@@ -211,5 +211,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **⑬ Each slide beside its item, and empty boxes removed (S518).** Every item that names a slide draws it (one to its left, several as a strip), the trouble outlined and a crowded slide numbered in reading order; a slide's boxes with no words, no fill and no outline are removed before the checks; the empty title box stays, its title drafted from the slide's largest words and the box kept just off the slide. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Each slide beside its item (S518)*.
 
-**NEXT:** a slide with no title box gets one, drafted and off the slide as a blank title is (it is the item a generated deck raises on every slide, and the one that still sends a person to PowerPoint); then the other inputs the bar shows people doing most, in that order (Sam's framing); a chart's per-label colors (`c:dLbl`) when he asks. The Chancellor's Office review still certifies.
+✅ **⑭ A title box for every slide, a script in the notes, the deck's own order (S518).** A slide with no title box asks for its title, drafted, and gets the box at download, off the slide; a dropped deck asks whether to keep its notes, add Claude's script below them or replace them (`slide-script-draft`, new); slides are numbered as the deck lists them, where before a reordered deck's were numbered by file name. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A title box for every slide (S518, later)*.
+
+**NEXT:** the other inputs the bar shows people doing most, in that order (Sam's framing); a chart's per-label colors (`c:dLbl`) when he asks. The Chancellor's Office review still certifies.
 

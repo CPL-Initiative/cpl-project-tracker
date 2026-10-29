@@ -1065,7 +1065,7 @@ block("(17)", function () {
     return ready(300);
   }).then(function () {
     const need = function (id) { return doc.getElementById("lib-remneed-" + id); };
-    const t2 = need("t2"), c2 = need("c2-1"), ro = need("ro"), tp = need("tp");
+    const t2 = need("t2"), c2 = need("c2-1"), ro = need("ro"), tp = need("t3");
     check("(17) the report holds the blank title, the contrast, the reading order and the missing title", !!t2 && !!c2 && !!ro && !!tp, m.M._state.rem && JSON.stringify(m.M._state.rem.report.needs.map(function (n) { return [n.id, n.slide, n.slides, (n.text || n.label || "").slice(0, 60)]; })));
     if (!t2 || !c2 || !ro || !tp) return;
     const s2 = t2.querySelector(".lib-remside .lib-remslide");
@@ -1085,15 +1085,90 @@ block("(17)", function () {
     check("(17) a crowded slide is drawn under its item, each item numbered in the order a screen reader meets it", order.length === 1 && nums === "1,2,3,4,5,6,7,8,9,10,11" &&
       /each item numbered in the order a screen reader meets it/.test(order[0].getAttribute("aria-label")) && /The numbers on each slide below show the order/.test(ro.textContent), nums);
     check("(17) its reading order can be checked here", /Checked here or in PowerPoint/.test(ro.textContent));
-    const tps = tp.querySelectorAll(".lib-remstrip .lib-remslide");
-    check("(17) a slide with no title box is drawn under its item, and its box still says PowerPoint", tps.length === 1 && /^Slide 3 as laid out$/.test(tps[0].getAttribute("aria-label")) && /Checked in PowerPoint/.test(tp.textContent) && !/here or/.test(tp.textContent));
-    click(m.w, tp.querySelector('[data-remzoom="tp"][data-remat="3"]'));
-    const tp2 = need("tp");
-    check("(17) a slide's number shows it larger, and again puts it back", !!tp2.querySelector(".lib-rembig .lib-remslide") && tp2.querySelector('[data-remat="3"]').getAttribute("aria-expanded") === "true" && doc.activeElement === tp2.querySelector('[data-remat="3"]'));
-    click(m.w, tp2.querySelector('[data-remat="3"]'));
-    check("(17) Smaller", !need("tp").querySelector(".lib-rembig"));
+    // A slide with no title box (Sam: "yes, add the title boxes to slides with none") asks for its title here.
+    const tps = tp.querySelector(".lib-remside .lib-remslide"), tpIn = tp.querySelector("[data-remtext]"), tpOff = tp.querySelector("[data-remoff]");
+    check("(17) a slide with no title box shows its slide, drafts its title, and keeps the new box off the slide", !!tps && /^Slide 3 as laid out$/.test(tps.getAttribute("aria-label")) &&
+      /Slide 3 has no title box; the page adds one with the title you keep here/.test(tp.textContent) && !!tpIn && tpIn.value === "Questions?" && !!tpOff && tpOff.checked && !/PowerPoint/.test(tp.textContent), tp.textContent.slice(0, 300));
+    click(m.w, ro.querySelector('[data-remzoom="ro"][data-remat="1"]'));
+    const ro2 = need("ro");
+    check("(17) a slide's number shows it larger, and again puts it back", !!ro2.querySelector(".lib-rembig .lib-remslide") && ro2.querySelector('[data-remat="1"]').getAttribute("aria-expanded") === "true" && doc.activeElement === ro2.querySelector('[data-remat="1"]'));
+    click(m.w, ro2.querySelector('[data-remat="1"]'));
+    check("(17) Smaller", !need("ro").querySelector(".lib-rembig"));
     click(m.w, need("t2").querySelector("[data-remzoom]"));
     check("(17) Larger slide on the blank title draws it across the item", !!need("t2").querySelector(".lib-rembig .lib-remslide") && /Smaller slide/.test(need("t2").querySelector("[data-remzoom]").textContent));
+  });
+});
+
+// ── (18) Speaker notes: keep them, a script below, or a script in their place (Sam, 2026-10-29) ──
+// "can you add a prompt once someone uploads a ppt for revision or remediation (maybe in the
+// instructions window) to ask if they have notes that they want to preserve and the option for
+// you to add a script below or replacing their notes?"
+block("(18)", function () {
+  const scriptCalls = [];
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (/functions\/v1\/slide-script-draft/.test(url)) {
+      const b = JSON.parse(init.body); scriptCalls.push({ headers: init.headers, body: b });
+      return response(200, { script: "On slide " + b.slide + " we cover " + (b.title || "the agenda") + "." });
+    }
+    if (init && init.method && init.method !== "GET") return response(201, [Object.assign({ id: "rem18" }, JSON.parse(init.body || "{}"))]);
+    return response(200, ROWS);
+  } });
+  const doc = m.w.document;
+  const drop = function (name, buf) {
+    const ev = new m.w.Event("drop", { bubbles: true, cancelable: true });
+    Object.defineProperty(ev, "dataTransfer", { value: { files: [{ name: name, arrayBuffer: function () { return Promise.resolve(buf); } }] } });
+    doc.getElementById("lib-drop").dispatchEvent(ev);
+  };
+  let deck;
+  return Promise.resolve(m.M.activate()).then(settle).then(slidesDeck).then(function (buf) {
+    deck = buf;
+    m.w.JSZip = require("../jszip.min.js");
+    m.w.CPL_REMEDIATE = require("../library_remediate.js");
+    m.w.URL.createObjectURL = function () { return "blob:pic"; };
+    m.w.URL.revokeObjectURL = function () {};
+    drop("20261030_Agenda.pptx", deck);
+    const ask = doc.getElementById("lc-notes");
+    check("(18) a dropped deck asks about its speaker notes, keeping them by default", !!ask && /does the deck have notes you want to keep/.test(ask.textContent) &&
+      doc.getElementById("lc-notes-keep").checked && /Keep my notes and add Claude's script below them/.test(ask.textContent) && /Replace my notes with Claude's script/.test(ask.textContent) &&
+      /never ask for one on a deck that shows a student's record/.test(ask.textContent));
+    // As background, the choice rides in the brief to the session that makes the new deck.
+    doc.getElementById("lc-notes-replace").checked = true;
+    doc.getElementById("lc-notes-replace").dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    doc.getElementById("lc-use-background").checked = true;
+    doc.getElementById("lc-use-background").dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    doc.getElementById("lc-instr").value = "A deck for the webinar from this one";
+    click(m.w, doc.getElementById("lib-go"));
+    check("(18) as background, the brief says what to do with the source deck's notes", !!doc.getElementById("ls-shape") &&
+      doc.getElementById("ls-shape").value === "The Chancellor's Office template, with a speaker script in each slide's notes in place of the source deck's notes", doc.getElementById("ls-shape") && doc.getElementById("ls-shape").value);
+    click(m.w, m.root.querySelector("[data-startcancel]"));
+    // A document is asked nothing about notes.
+    drop("20261030_Memo.docx", deck);
+    check("(18) a document is not asked about speaker notes", !doc.getElementById("lc-notes"));
+    // Remediate with a script below the notes.
+    drop("20261030_Agenda.pptx", deck);
+    doc.getElementById("lc-autodraft").checked = false;
+    doc.getElementById("lc-autodraft").dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    doc.getElementById("lc-notes-below").checked = true;
+    doc.getElementById("lc-notes-below").dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    click(m.w, doc.getElementById("lib-go"));
+    const ready = function (n) { return scriptCalls.length >= 3 && doc.querySelector('[data-remscript="3"]') && doc.querySelector('[data-remscript="3"]').value || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return ready(n - 1); }); };
+    return ready(300);
+  }).then(function () {
+    const sec = doc.querySelector(".lib-remnotes");
+    check("(18) the report holds a script for each slide, said to go below the notes", !!sec && /Speaker notes: Claude's script below your notes \(3\)/.test(sec.textContent) && sec.querySelectorAll("[data-remscript]").length === 3, sec && sec.textContent.slice(0, 200));
+    if (!sec) return;
+    const c3 = scriptCalls.filter(function (c) { return c.body.slide === 3; })[0] || { body: {}, headers: {} };
+    check("(18) each slide goes to slide-script-draft with the team phrase, its number, its words and the mode", scriptCalls.length === 3 && c3.headers["x-team-pass"] === "p" && c3.body.of === 3 &&
+      c3.body.words === "Questions?" && c3.body.mode === "below" && c3.body.deck === "Agenda" && c3.body.title === "Questions?", JSON.stringify(c3.body));
+    check("(18) each script lands in its box, its slide drawn beside it", doc.querySelector('[data-remscript="1"]').value === "On slide 1 we cover The Summit's agenda." &&
+      !!doc.querySelector("#lib-remnote-1 .lib-remside .lib-remslide") && /Redraft the script/.test(doc.querySelector("#lib-remnote-1").textContent));
+    const box = doc.querySelector('[data-remscript="2"]');
+    box.value = "My own script."; box.dispatchEvent(new m.w.Event("input", { bubbles: true }));
+    check("(18) a person's edit is the script the download writes", m.M._state.rem.scripts[2] === "My own script." && m.M._state.rem.touched === true);
+    click(m.w, doc.querySelector('[data-remscriptai="2"]'));
+    return settle().then(settle).then(function () {
+      check("(18) Redraft asks Claude again for that slide, with the title drafted for its blank title box", scriptCalls.length === 4 && scriptCalls[3].body.slide === 2 && doc.querySelector('[data-remscript="2"]').value === "On slide 2 we cover Metric:." && scriptCalls[3].body.title === "Metric:", doc.querySelector('[data-remscript="2"]').value);
+    });
   });
 });
 

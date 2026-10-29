@@ -918,11 +918,122 @@
     if (rest.length) lines.push("Other words on the slide, top to bottom: " + clip(rest.join(" | "), 900));
     return lines.join("\n");
   }
+  // The box a slide with none gets (S518): a title placeholder, first in the slide's shapes
+  // so a screen reader meets it first, its size and place inherited from the layout's or
+  // master's title unless the person keeps it off the slide.
+  var TITLE_BOX = { x: 457200, y: 0, w: 8229600, h: 1143000 };
+  function shapesOf(tree) {
+    var out = [];
+    for (var c = tree ? tree.firstChild : null; c; c = c.nextSibling) if (c.nodeType === 1 && c.namespaceURI === NS.p && /^(sp|pic|graphicFrame|grpSp|cxnSp|contentPart)$/.test(c.localName)) out.push(c);
+    return out;
+  }
+  function addTitleBox(d) {
+    var tree = first(d, NS.p, "spTree");
+    if (!tree) return null;
+    var id = els(d, NS.p, "cNvPr").reduce(function (m, c) { return Math.max(m, +c.getAttribute("id") || 0); }, 1) + 1;
+    var mk = function (ns, tag, attrs, kids) {
+      var e = d.createElementNS(ns, tag);
+      Object.keys(attrs || {}).forEach(function (k) { e.setAttribute(k, attrs[k]); });
+      (kids || []).forEach(function (k) { e.appendChild(k); });
+      return e;
+    };
+    var sp = mk(NS.p, "p:sp", {}, [
+      mk(NS.p, "p:nvSpPr", {}, [mk(NS.p, "p:cNvPr", { id: String(id), name: "Title " + id }), mk(NS.p, "p:cNvSpPr", {}, [mk(NS.a, "a:spLocks", { noGrp: "1" })]),
+        mk(NS.p, "p:nvPr", {}, [mk(NS.p, "p:ph", { type: "title" })])]),
+      mk(NS.p, "p:spPr"),
+      mk(NS.p, "p:txBody", {}, [mk(NS.a, "a:bodyPr"), mk(NS.a, "a:lstStyle"), mk(NS.a, "a:p")])]);
+    var lead = shapesOf(tree)[0];
+    if (lead) tree.insertBefore(sp, lead); else tree.appendChild(sp);
+    return sp;
+  }
+
+  // ── speaker notes (S518) ────────────────────────────────────────────────────
+  // Sam, 2026-10-29: "ask if they have notes that they want to preserve and the option for
+  // you to add a script below or replacing their notes." A slide's notes are the words in its
+  // notes page's body box; a script goes below them or in their place. A slide with no notes
+  // page gets one, on the deck's notes master; a deck with no notes master keeps its notes.
+  var NOTES_REL = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesSlide";
+  var CT = "http://schemas.openxmlformats.org/package/2006/content-types";
+  function notesPathOf(rels) {
+    return Object.keys(rels || {}).map(function (k) { return rels[k]; }).filter(function (t) { return /^ppt\/notesSlides\/notesSlide\d+\.xml$/.test(t); })[0] || null;
+  }
+  function notesBody(d) {
+    return els(d, NS.p, "sp").filter(function (sp) { var k = placeholderKey(sp); return k && k.raw === "body"; })[0] || null;
+  }
+  function notesText(d) {
+    var body = notesBody(d), tx = body && child(body, NS.p, "txBody");
+    return tx ? els(tx, NS.a, "p").map(function (p) { return textOf(p, NS.a); }).filter(Boolean).join("\n") : "";
+  }
+  // A notes page for a slide that has none, with its relationships and content type.
+  function newNotes(doc, report, path) {
+    if (!report.notesMaster) return Promise.resolve(null);
+    var taken = Object.keys(doc.zip.files).concat(Object.keys(doc.parts)).map(function (p) { var m = /^ppt\/notesSlides\/notesSlide(\d+)\.xml$/.exec(p); return m ? +m[1] : 0; });
+    var k = Math.max.apply(null, [0].concat(taken)) + 1, np = "ppt/notesSlides/notesSlide" + k + ".xml";
+    var ns = 'xmlns:a="' + NS.a + '" xmlns:r="' + NS.r + '" xmlns:p="' + NS.p + '"';
+    var xml = '<p:notes ' + ns + '><p:cSld><p:spTree><p:nvGrpSpPr><p:cNvPr id="1" name=""/><p:cNvGrpSpPr/><p:nvPr/></p:nvGrpSpPr><p:grpSpPr/>' +
+      '<p:sp><p:nvSpPr><p:cNvPr id="2" name="Slide Image Placeholder 1"/><p:cNvSpPr><a:spLocks noGrp="1" noRot="1" noChangeAspect="1"/></p:cNvSpPr><p:nvPr><p:ph type="sldImg"/></p:nvPr></p:nvSpPr><p:spPr/></p:sp>' +
+      '<p:sp><p:nvSpPr><p:cNvPr id="3" name="Notes Placeholder 2"/><p:cNvSpPr><a:spLocks noGrp="1"/></p:cNvSpPr><p:nvPr><p:ph type="body" idx="1"/></p:nvPr></p:nvSpPr><p:spPr/>' +
+      '<p:txBody><a:bodyPr/><a:lstStyle/><a:p/></p:txBody></p:sp></p:spTree></p:cSld><p:clrMapOvr><a:masterClrMapping/></p:clrMapOvr></p:notes>';
+    var rels = '<Relationships xmlns="' + NS.rel + '"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/notesMaster" Target="../' + report.notesMaster.slice(4) + '"/>' +
+      '<Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/slide" Target="../' + path.slice(4) + '"/></Relationships>';
+    var P = doc.env.DOMParser;
+    doc.parts[np] = new P().parseFromString(xml, "application/xml"); doc.touch(np);
+    var nr = "ppt/notesSlides/_rels/notesSlide" + k + ".xml.rels";
+    doc.parts[nr] = new P().parseFromString(rels, "application/xml"); doc.touch(nr);
+    var sr = path.replace(/[^/]*$/, "") + "_rels/" + path.split("/").pop() + ".rels";
+    return Promise.all([doc.read(sr), doc.read("[Content_Types].xml")]).then(function (got) {
+      var rd = got[0], ct = got[1];
+      if (!rd) { rd = new P().parseFromString('<Relationships xmlns="' + NS.rel + '"/>', "application/xml"); doc.parts[sr] = rd; }
+      var ids = els(rd, NS.rel, "Relationship").map(function (r) { return r.getAttribute("Id"); }), n = 1;
+      while (ids.indexOf("rId" + n) >= 0) n++;
+      var r = rd.createElementNS(NS.rel, "Relationship");
+      r.setAttribute("Id", "rId" + n); r.setAttribute("Type", NOTES_REL); r.setAttribute("Target", "../notesSlides/notesSlide" + k + ".xml");
+      rd.documentElement.appendChild(r); doc.touch(sr);
+      if (ct) {
+        var o = ct.createElementNS(CT, "Override");
+        o.setAttribute("PartName", "/" + np); o.setAttribute("ContentType", "application/vnd.openxmlformats-officedocument.presentationml.notesSlide+xml");
+        ct.documentElement.appendChild(o); doc.touch("[Content_Types].xml");
+      }
+      return { path: np, d: doc.parts[np] };
+    });
+  }
+  // answers.notes = { mode: "below" | "replace", slides: { [n]: script } }.
+  function writeScripts(doc, report, answers, done) {
+    var plan = answers.notes, mode = plan && plan.mode;
+    if (!plan || (mode !== "below" && mode !== "replace")) return Promise.resolve();
+    done.notes = 0; done.notesSkipped = 0;
+    return Object.keys(plan.slides || {}).reduce(function (pr, key) {
+      var text = String(plan.slides[key] || "").trim(), sl = report.slides[+key - 1];
+      if (!text || !sl) return pr;
+      return pr.then(function () {
+        return doc.rels(sl.path).then(function (rels) {
+          var np = notesPathOf(rels);
+          return np ? doc.read(np).then(function (d) { return d ? { path: np, d: d } : null; }) : newNotes(doc, report, sl.path);
+        }).then(function (got) {
+          var body = got && notesBody(got.d), tx = body && child(body, NS.p, "txBody");
+          if (!tx) { done.notesSkipped++; return; }
+          var d = got.d, had = els(tx, NS.a, "p");
+          // Below: the notes' own trailing blank lines go, then one blank line, then the script.
+          if (mode !== "replace") while (had.length && !textOf(had[had.length - 1], NS.a)) tx.removeChild(had.pop());
+          if (mode === "replace") had.forEach(function (p) { tx.removeChild(p); });
+          else if (had.length) tx.appendChild(d.createElementNS(NS.a, "a:p"));
+          text.split(/\n+/).map(function (line) { return line.trim(); }).filter(Boolean).forEach(function (line) {
+            var p = d.createElementNS(NS.a, "a:p"), r = d.createElementNS(NS.a, "a:r"), rPr = d.createElementNS(NS.a, "a:rPr"), t = d.createElementNS(NS.a, "a:t");
+            rPr.setAttribute("lang", LANG); t.textContent = line;
+            r.appendChild(rPr); r.appendChild(t); p.appendChild(r); tx.appendChild(p);
+          });
+          doc.touch(got.path); done.notes++;
+        });
+      });
+    }, Promise.resolve());
+  }
+
   // A blank title box beside the person's own text box (Sam, 2026-10-29): the title is
   // drafted from the largest words in the slide's top half, and the box is kept off the
   // slide, so the words do not show twice and a screen reader still finds the title.
   function titleDraft(n, plan) {
     var best = null;
+    if (n.missing) n.offSlide = true;
     plan.shapes.forEach(function (r) {
       if (r.id == null || r.kind !== "text" || r.title || !r.text || r.y > 0.5) return;
       var sz = r.paras[0] ? r.paras[0].sz : 0;
@@ -976,15 +1087,32 @@
   }
 
   // ── a deck ──────────────────────────────────────────────────────────────────
-  function inspectPptx(doc, name, report) {
-    var paths = Object.keys(doc.zip.files).filter(function (p) { return /^ppt\/slides\/slide\d+\.xml$/.test(p); })
+  // The deck's own order (S518): presentation.xml lists its slides, and a slide moved in
+  // PowerPoint keeps its file's name, so slide14.xml can be the second slide a person sees.
+  // A slide file the list leaves out is not in the deck. With no list, the files' numbers.
+  function slideOrder(doc) {
+    var files = Object.keys(doc.zip.files).filter(function (p) { return /^ppt\/slides\/slide\d+\.xml$/.test(p); })
       .sort(function (x, y) { return slideNum(x) - slideNum(y); });
-    report.extent = paths.length + (paths.length === 1 ? " slide" : " slides");
+    return Promise.all([doc.read("ppt/presentation.xml"), doc.rels("ppt/presentation.xml")]).then(function (got) {
+      var listed = [];
+      if (got[0]) els(got[0], NS.p, "sldId").forEach(function (e) {
+        var t = got[1][e.getAttributeNS(NS.r, "id")];
+        if (t && files.indexOf(t) >= 0 && listed.indexOf(t) < 0) listed.push(t);
+      });
+      return listed.length ? listed : files;
+    });
+  }
+  function inspectPptx(doc, name, report) {
     var slides = [];
+    return slideOrder(doc).then(function (paths) {
+    report.extent = paths.length + (paths.length === 1 ? " slide" : " slides");
     return paths.reduce(function (pr, path, i) {
       return pr.then(function () {
         return Promise.all([doc.read(path), doc.rels(path)]).then(function (got) {
-          slides.push({ n: i + 1, path: path, xml: got[0], rels: got[1] });
+          var s = { n: i + 1, path: path, xml: got[0], rels: got[1] };
+          slides.push(s);
+          var np = notesPathOf(s.rels);
+          return np ? doc.read(np).then(function (nd) { s.notes = nd ? notesText(nd) : ""; }) : null;
         });
       });
     }, Promise.resolve()).then(function () {
@@ -1018,7 +1146,7 @@
       });
       var repeated = {};
       Object.keys(seen).forEach(function (t) { if (seen[t] >= Math.max(3, Math.ceil(slides.length * 0.8))) repeated[t] = true; });
-      var markedRepeat = 0, noPlaceholder = [], crowded = [];
+      var markedRepeat = 0, crowded = [];
 
       slides.forEach(function (s) {
         var titleSp = null;
@@ -1032,7 +1160,10 @@
         if (!s.words) els(s.xml, NS.p, "sp").some(function (sp) { s.words = textOf(sp, NS.a); return !!s.words; });
         if (!s.title) {
           if (titleSp) report.needs.push({ type: "title", id: "t" + s.n, slide: s.n, path: s.path, shapeId: (first(titleSp, NS.p, "cNvPr") || { getAttribute: function () { return null; } }).getAttribute("id"), text: "Slide " + s.n + " has an empty title" });
-          else noPlaceholder.push(s.n);
+          // No title box at all (Sam, 2026-10-29: "yes, add the title boxes to slides with
+          // none"): the page adds one at download, drafted and kept off the slide as a blank one is.
+          else report.needs.push({ type: "title", id: "t" + s.n, slide: s.n, path: s.path, missing: true, text: "Slide " + s.n + " has no title box",
+            ask: "the page adds one with the title you keep here" });
         }
         // Language on every run that names none.
         ["rPr", "endParaRPr", "defRPr"].forEach(function (tag) {
@@ -1070,19 +1201,19 @@
           });
         if (s.dirty) doc.touch(s.path);
       });
-      if (noPlaceholder.length) report.needs.push({ type: "info", id: "tp", slides: noPlaceholder,
-        text: slideList(noPlaceholder) + (noPlaceholder.length === 1 ? " has" : " have") + " no title a screen reader can find. In PowerPoint, give " + (noPlaceholder.length === 1 ? "it" : "each") + " a layout with a title (Home, Layout), or put the title in the slide's title box and move it off the slide if it must not show." });
       if (crowded.length) report.needs.push({ type: "order", id: "ro", slides: crowded,
         text: "Reading order on " + slideList(crowded).toLowerCase() + ": each holds " + CROWDED + " or more items. The numbers on each slide below show the order a screen reader meets its words and pictures; where that is not the order the slide means, change it in PowerPoint (Home, Arrange, Selection Pane, which lists them bottom to top)." });
       if (langFixed) { report.fixed.push("Language set to English (United States) on " + langFixed + " text runs"); report.auto.lang = 1; report.fixedAt.lang = report.fixed.length - 1; }
       if (headers) { report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); report.auto.tables = headers; report.fixedAt.tables = report.fixed.length - 1; }
       if (markedRepeat) { report.fixed.push("A picture repeated on most slides (a logo) marked decorative, " + markedRepeat + " times"); report.auto.alt = markedRepeat; report.fixedAt.alt = report.fixed.length - 1; }
-      report.slides = slides.map(function (s) { return { n: s.n, title: s.title }; });
+      report.slides = slides.map(function (s) { return { n: s.n, title: s.title, path: s.path, notes: s.notes || "" }; });
+      report.notesMaster = Object.keys(doc.zip.files).filter(function (p) { return /^ppt\/notesMasters\/notesMaster\d+\.xml$/.test(p); })[0] || null;
       var t1 = slides[0] && slides[0].title;
       return contrastPptx(doc, slides, report).then(function () { return draftCharts(doc, report); })
         .then(function () { return planPptx(doc, slides, report); })
         .then(function () { return contrastCharts(doc, report, function (ch) { var c = doc.slideCtx && doc.slideCtx[ch.host]; return c || null; }); })
         .then(function () { return fixTitle(doc, t1 || titleFromName(name), report); });
+    });
     });
   }
 
@@ -2015,7 +2146,7 @@
             var sp = els(d, NS.p, "sp").filter(function (s) {
               var ph = first(s, NS.p, "ph"), t = ph && ph.getAttribute("type");
               return t === "title" || t === "ctrTitle";
-            })[0];
+            })[0] || (n.missing ? addTitleBox(d) : null);
             if (!sp) return;
             var body = first(sp, NS.p, "txBody");
             if (!body) return;
@@ -2027,7 +2158,7 @@
             var end = child(para, NS.a, "endParaRPr");
             para.insertBefore(run, end);
             // Kept off the slide: the box moves just above it, where a screen reader still reads it.
-            var ctx0 = doc.slideCtx && doc.slideCtx[path], bx = ans.off && boxOf(sp, ctx0 || {});
+            var ctx0 = doc.slideCtx && doc.slideCtx[path], bx = ans.off && (boxOf(sp, ctx0 || {}) || TITLE_BOX);
             if (bx) {
               var spPr = child(sp, NS.p, "spPr");
               if (!spPr) { spPr = d.createElementNS(NS.p, "p:spPr"); sp.insertBefore(spPr, body); }
@@ -2040,9 +2171,13 @@
               var o = child(xf, NS.a, "off"), x = child(xf, NS.a, "ext");
               o.setAttribute("x", String(bx.x)); o.setAttribute("y", String(-bx.h - 91440));
               x.setAttribute("cx", String(bx.w)); x.setAttribute("cy", String(bx.h));
+              // Off the slide, the title is the first thing a screen reader meets.
+              var tree0 = sp.parentNode, lead = shapesOf(tree0)[0];
+              if (lead && lead !== sp) tree0.insertBefore(sp, lead);
               done.offSlide = (done.offSlide || 0) + 1;
             }
             doc.touch(path); done.titles++;
+            if (n.missing) done.titleBoxes = (done.titleBoxes || 0) + 1;
           } else if (n.type === "sheet" && (ans.text || "").trim()) {
             // Excel's rules for a sheet name: 31 characters at most, none of [ ] : * ? / \,
             // no apostrophe at either end, not History, and no two alike.
@@ -2062,6 +2197,8 @@
         });
       });
     })).then(function () {
+      return report.ext === "pptx" ? writeScripts(doc, report, answers, done) : null;
+    }).then(function () {
       return Object.keys(renames).length ? renameSheets(doc, renames) : null;
     }).then(function () {
       doc.flush();

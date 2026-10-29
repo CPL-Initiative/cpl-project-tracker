@@ -23,6 +23,7 @@ private: `CPLBrain/07-session-notes/2026-10-27-api-spend-trace.md`.
 | `program-requirements-extract` | `claude-opus-5-5` | The same Supabase secret | The harvest's extract step: a dispatch with extract=1 or an `[extract]` push. About $0.06 a program, and a re-read pays only for pages that changed |
 | `cer-classify` | `claude-opus-5-5` | The same Supabase secret | `cer-procedures.yml` |
 | `alt-text-draft` | `claude-sonnet-5`; the `ALT_TEXT_MODEL` secret overrides | The same Supabase secret | Remediate on the Library tab, behind the team phrase: since S517 every picture in the file as it opens (on by default, four at a time, never a QR code the page read), and *Draft from the picture* on a press; one call per picture, under 400 output tokens |
+| `slide-script-draft` | `claude-sonnet-5`; the `SCRIPT_MODEL` secret, else `ALT_TEXT_MODEL`, overrides | The same Supabase secret | Remediate on the Library tab, behind the team phrase, only when the person asks for Claude's script below or in place of a deck's notes (S518): one call per slide as the report opens, four at a time, and *Redraft the script* on a press; under 700 output tokens each |
 | `cpl-news-harvest` | `claude-sonnet-4-6` | The same Supabase secret | `cpl-news.yml` |
 | Jev (TypeSafe) | Jev | Repo secret `TYPESAFE_API_KEY` | `typesafe-smoke.yml`, dispatch only |
 | Grok (the second reader) | xAI | `XAI_API_KEY` | `second-reader.yml`, `xai-smoke.yml`, dispatch only |

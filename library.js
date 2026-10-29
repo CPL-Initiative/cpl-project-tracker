@@ -71,6 +71,7 @@
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var TABLE_URL = SUPABASE_URL + "/rest/v1/cpl_library";
   var ALT_DRAFT_URL = SUPABASE_URL + "/functions/v1/alt-text-draft";
+  var SCRIPT_DRAFT_URL = SUPABASE_URL + "/functions/v1/slide-script-draft";
   var SET_PUBLIC_URL = SUPABASE_URL + "/rest/v1/rpc/cpl_library_set_public";
   var PUBLIC_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
   var TEAM_KEY = "cpl_team_pass";
@@ -1038,7 +1039,26 @@
     state.pick = pick;
     state.use = pick.file && REMEDIABLE[ext] ? "remediate" : pick.link ? "asis" : "background";
     state.autoDraft = true;
+    state.notesMode = "keep";
     state.start = null; state.form = null; state.formFor = null; state.rem = null; say("");
+  }
+  // A deck's speaker notes (Sam, 2026-10-29: "add a prompt once someone uploads a ppt for
+  // revision or remediation ... to ask if they have notes that they want to preserve and
+  // the option for you to add a script below or replacing their notes"). Remediation writes
+  // Claude's script into each slide's notes; a brief carries the choice to the session.
+  var NOTES_CHOICES = [["keep", "Keep my notes as they are"], ["below", "Keep my notes and add Claude's script below them"], ["replace", "Replace my notes with Claude's script"]];
+  var NOTES_BRIEF = {
+    keep: "The Chancellor's Office template, with the source deck's speaker notes carried over as they are",
+    below: "The Chancellor's Office template, with the source deck's speaker notes kept and a speaker script added below them in each slide's notes",
+    replace: "The Chancellor's Office template, with a speaker script in each slide's notes in place of the source deck's notes"
+  };
+  function notesAskHtml(pk) {
+    if (!pk || pk.ext !== "pptx") return "";
+    return '<fieldset class="lib-uses" id="lc-notes"><legend>Speaker notes: does the deck have notes you want to keep?</legend>' +
+      NOTES_CHOICES.map(function (c) {
+        return '<label class="lib-check"><input type="radio" name="lc-notes" id="lc-notes-' + c[0] + '" value="' + c[0] + '"' + ((state.notesMode || "keep") === c[0] ? " checked" : "") + "> " + esc(c[1]) + "</label>";
+      }).join("") +
+      '<p class="lib-hint">To remediate, Claude drafts each slide\'s script from its words and pictures, and you read each one before you download; a script sends the slide\'s words and notes to Claude, so never ask for one on a deck that shows a student\'s record. As background, the brief carries your choice to the session that makes the new deck.</p></fieldset>';
   }
   function panelHtml() {
     var pk = state.pick;
@@ -1056,7 +1076,7 @@
         // up?"), so each picture leaving the browser is said, and can be turned off, here.
         (pk.file && REMEDIABLE[pk.ext] && pk.ext !== "pdf"
           ? '<label class="lib-check"><input type="checkbox" id="lc-autodraft"' + (state.autoDraft ? " checked" : "") + "> Draft every picture's alt text with Claude as it reads. Each picture and the words around it go to Claude; turn this off for a file that shows a student's record.</label>"
-          : "")
+          : "") + notesAskHtml(pk)
       : "";
     return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
       '<div class="lib-drop" id="lib-drop">' +
@@ -1096,6 +1116,7 @@
     pk.file.arrayBuffer().then(function (b) { buf = b; return loadRemediate(); }).then(function (R) {
       return R.inspect(buf, pk.name, remEnv()).then(function (session) {
         state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, media: {}, big: {}, ai: {}, kept: {}, aiAll: false,
+          notesMode: pk.ext === "pptx" && state.notesMode !== "keep" ? state.notesMode : null, scripts: {}, scriptAi: {},
           drafting: state.autoDraft && pk.ext !== "pdf" ? { done: 0, total: 0, failed: 0 } : null };
         session.report.needs.forEach(function (n) {
           if (n.type === "alt" || n.type === "title" || n.type === "sheet") state.rem.answers[n.id] = { text: n.draft || "", decorative: false, off: !!n.offSlide };
@@ -1124,7 +1145,7 @@
         })).then(function () {
           if (!state.rem || state.rem.session !== session) return;
           if (canUrl) render();
-          return (canUrl ? readQrCodes(session) : Promise.resolve()).then(function () { return draftAll(session); });
+          return (canUrl ? readQrCodes(session) : Promise.resolve()).then(function () { return draftAll(session); }).then(function () { return draftScripts(session); });
         });
       });
     }).catch(function (e) { state.rem = null; say(e.message, true); render(); });
@@ -1185,8 +1206,8 @@
       if (n.type === "title" || n.type === "sheet") {
         return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + sd.side + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
           '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="' + (n.type === "sheet" ? 31 : 200) + '" value="' + esc(a.text || "") + '">' +
-          (n.type === "title" ? '<label class="lib-check"><input type="checkbox" data-remoff="' + esc(n.id) + '"' + (a.off ? " checked" : "") + "> Keep the title box just off the slide, where a screen reader still reads it" +
-            (n.offSlide ? " (the slide\'s own words show its title)" : "") + "</label>" : "") +
+          (n.type === "title" ? '<label class="lib-check"><input type="checkbox" data-remoff="' + esc(n.id) + '"' + (a.off ? " checked" : "") + "> Keep the " + (n.missing ? "new " : "") + "title box just off the slide, where a screen reader still reads it" +
+            (n.draft ? " (the slide\'s own words show its title)" : "") + "</label>" : "") +
           (n.type === "title" && n.draft ? '<div class="lib-actions-row">' + keepHtml(rm, n) + '</div><p class="lib-hint">Drafted from the largest words in the slide\'s top half. Read it before you keep it.</p>' : "") +
           "</div>" + sd.big + "</li>";
       }
@@ -1220,7 +1241,7 @@
       (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words. Read each one before you keep it.</p>' : "") +
       (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Redraft every picture") + "</button></div>" : "") +
       (picNeeds().length ? '<p class="lib-hint">Each draft sends one picture and its ' + remPlace(rm) + "\'s words to Claude; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>" : "") +
-      "</div></div>" +
+      "</div></div>" + notesHtml(rm) +
       '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Download the remediated file</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
       '<p class="lib-hint">' + 'Save the PDF from PowerPoint, Word or Excel with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
@@ -1388,7 +1409,7 @@
   // What the drawing outlines for an item, and what its label says about it.
   function slideLook(n) {
     var ids = n.type === "contrast" && n.runs ? n.runs.map(function (r) { return r.shapeId; }) : n.shapeId ? [n.shapeId] : [];
-    var what = n.type === "alt" ? "the " + (n.chart ? "chart" : n.av || "picture") + " outlined" : n.type === "title" ? "its empty title box outlined" :
+    var what = n.type === "alt" ? "the " + (n.chart ? "chart" : n.av || "picture") + " outlined" : n.type === "title" && !n.missing ? "its empty title box outlined" : n.type === "title" || n.type === "script" ? "" :
       n.type === "order" ? "each item numbered in the order a screen reader meets it" : n.type === "contrast" && !n.inChart ? "the text below AA outlined" :
       n.inChart || /chart/i.test(n.text || "") ? "the chart outlined" : "";
     return { hits: ids, what: what, order: n.type === "order" };
@@ -1575,6 +1596,76 @@
       .then(function () { if (state.rem === rm) { rm.aiAll = false; say("Drafted. Read each one before you keep it."); render(); } });
   }
 
+  // ── Speaker notes: Claude's script for each slide (S518) ───────────────────────
+  // A slide's words, top to bottom, from its plan; its pictures as their alt text says.
+  function slideText(rep, k) {
+    var pl = planAt(rep, k);
+    return pl ? pl.shapes.filter(function (r) { return r.id != null && r.kind === "text" && r.text; })
+      .sort(function (a, b) { return Math.abs(a.y - b.y) > 0.03 ? a.y - b.y : a.x - b.x; }).map(function (r) { return r.text; }).join("\n") : "";
+  }
+  function draftScript(k, quiet) {
+    var rm = state.rem;
+    if (!rm || !rm.notesMode) return Promise.resolve(false);
+    var rep = rm.report, sl = rep.slides[k - 1], before = rm.scripts[k] || "";
+    var title = (rm.answers["t" + k] || {}).text || (sl && sl.title) || "";
+    var pics = rep.needs.filter(function (n) { return n.type === "alt" && n.slide === k; }).map(function (n) { var a = rm.answers[n.id] || {}; return a.decorative ? "" : a.text || ""; }).filter(Boolean);
+    rm.scriptAi[k] = "busy"; if (!quiet) remRefresh();
+    var h = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+    var tp = teamPhrase(); if (tp) h["x-team-pass"] = tp;
+    var tok = reviewerToken(); if (tok) h.Authorization = "Bearer " + tok;
+    return window.fetch(SCRIPT_DRAFT_URL, { method: "POST", headers: h, body: JSON.stringify({ deck: titleFromName(rm.name), slide: k, of: rep.slides.length, title: title,
+      words: slideText(rep, k), pictures: pics, notes: sl ? sl.notes : "", mode: rm.notesMode }) }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (j) {
+        if (!res.ok) throw new Error(j.error || "The script did not come back (" + res.status + ").");
+        if (state.rem !== rm) return false;
+        // A person's own words are never replaced by a draft arriving behind them.
+        if (quiet && (rm.scripts[k] || "") !== before) { rm.scriptAi[k] = "done"; return false; }
+        rm.scripts[k] = j.script || ""; rm.scriptAi[k] = "done";
+        remRefresh();
+        return true;
+      });
+    }).catch(function (e) {
+      if (state.rem === rm) { rm.scriptAi[k] = "failed"; rm.lastScriptError = e.message; if (!quiet) say(e.message, true); remRefresh(); }
+      return false;
+    });
+  }
+  // Every slide, four at a time, once the pictures' drafts are in (they describe the pictures).
+  function draftScripts(session) {
+    var rm = state.rem;
+    if (!rm || rm.session !== session || !rm.notesMode) return Promise.resolve();
+    var list = rm.report.slides.map(function (s) { return s.n; }), next = 0;
+    var worker = function () {
+      if (state.rem !== rm || next >= list.length) return Promise.resolve();
+      return draftScript(list[next++], true).then(worker);
+    };
+    return Promise.all([worker(), worker(), worker(), worker()]).then(function () {
+      if (state.rem !== rm) return;
+      var failed = list.filter(function (k) { return rm.scriptAi[k] === "failed"; }).length;
+      say(failed ? failed + (failed === 1 ? " slide's script" : " slides' scripts") + " did not come back" + (rm.lastScriptError ? " (" + rm.lastScriptError + ")" : "") + "; Draft the script tries again." :
+        "Claude drafted each slide's script. Read each one before you download.", failed > 0);
+      remRefresh();
+    });
+  }
+  function notesHtml(rm) {
+    if (!rm.notesMode) return "";
+    var rep = rm.report, below = rm.notesMode === "below";
+    var clipped = function (t) { return t.length > 300 ? t.slice(0, 299) + "…" : t; };
+    return '<div class="lib-remnotes"><h4 class="lib-remh">Speaker notes: Claude\'s script ' + (below ? "below your notes" : "in place of your notes") + " (" + rep.slides.length + ")</h4>" +
+      '<p class="lib-hint">At download each script goes into its slide\'s notes, ' + (below ? "below the notes already there" : "replacing the notes there") + ". Read each one; clear a box to leave that slide\'s notes as they are." +
+      (rep.notesMaster ? "" : " This deck has no notes page layout, so a slide with no notes yet keeps none; add a note to it in PowerPoint first.") + "</p>" +
+      '<ul class="lib-remneeds">' + rep.slides.map(function (sl) {
+        var k = sl.n, n = { id: "n" + k, slide: k, type: "script" }, pl = planAt(rep, k), sd = pl ? slideSide(rm, n, pl) : { side: "", big: "" };
+        var st = rm.scriptAi[k];
+        return '<li class="lib-remneed" id="lib-remnote-' + k + '" tabindex="-1">' + sd.side + '<div class="lib-field"><label for="rs-' + k + '">Slide ' + k + (sl.title ? ", " + esc(sl.title) : "") + ": its script</label>" +
+          (sl.notes ? '<p class="lib-hint">' + (below ? "Its notes now" : "The notes it replaces") + ": “" + esc(clipped(sl.notes)) + "”</p>" : "") +
+          '<textarea id="rs-' + k + '" data-remscript="' + k + '" rows="5" maxlength="3000" placeholder="' + (st === "busy" || !st ? "Claude is drafting this slide\'s script…" : "Type a script, or leave it empty to keep the notes as they are") + '">' + esc(rm.scripts[k] || "") + "</textarea>" +
+          '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remscriptai="' + k + '"' + (st === "busy" ? " disabled" : "") + ">" +
+          (st === "busy" ? "Drafting&hellip;" : st === "done" ? "Redraft the script" : "Draft the script") + "</button></div>" +
+          (st === "failed" ? '<p class="lib-hint">The draft did not come back. Draft the script tries again.</p>' : "") +
+          "</div>" + sd.big + "</li>";
+      }).join("") + "</ul></div>";
+  }
+
   // Writes the answers into a fresh read of the original, so pressing it twice never
   // writes a title twice, and hands the file back under the original's name.
   function remGo() {
@@ -1582,7 +1673,8 @@
     if (!rm || !rm.buf) return;
     state.busy = true; render();
     loadRemediate().then(function (R) {
-      return R.inspect(rm.buf, rm.name, remEnv()).then(function (fresh) { return R.finish(fresh, rm.answers, "blob"); }).then(function (out) {
+      var answers = rm.notesMode ? Object.assign({}, rm.answers, { notes: { mode: rm.notesMode, slides: rm.scripts } }) : rm.answers;
+      return R.inspect(rm.buf, rm.name, remEnv()).then(function (fresh) { return R.finish(fresh, answers, "blob"); }).then(function (out) {
         state.busy = false;
         var name = R.outName(rm.name), url = URL.createObjectURL(out.file);
         var a = document.createElement("a"); a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
@@ -1591,7 +1683,8 @@
         rm.downloaded = true;
         var summary = rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " +
           (rm.report.ext === "xlsx" ? (d.sheets || 0) + (d.sheets === 1 ? " sheet" : " sheets") + " renamed." :
-            d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed.");
+            d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed" +
+            (d.notes ? ", " + d.notes + (d.notes === 1 ? " slide's notes" : " slides' notes") + " given a script" : "") + ".");
         return fileRemediated(rm, name, summary);
       });
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
@@ -1668,7 +1761,7 @@
     var openBrief = function (src) {
       var kind = instr ? kindFromWords(instr) : (pk ? pk.kind : "visual");
       state.src.ls = src ? [src] : [];
-      state.start = { kind: kind, say: instr, shape: defaultShape(kind) };
+      state.start = { kind: kind, say: instr, shape: pk && pk.ext === "pptx" && kind === "deck" ? NOTES_BRIEF[state.notesMode || "keep"] : defaultShape(kind) };
       state.form = null; state.formFor = null;
       say(src ? "The brief carries " + src.title + " as a document to work from. Name the piece and save it." : "");
       render();
@@ -2237,6 +2330,9 @@
     wired = true;
     root.addEventListener("input", function (e) {
       if (e.target.id === "lib-q") { state.q = e.target.value; renderList(); }
+      else if (e.target.getAttribute && e.target.getAttribute("data-remscript") && state.rem) {
+        state.rem.scripts[e.target.getAttribute("data-remscript")] = e.target.value; state.rem.touched = true;
+      }
       else if (e.target.getAttribute && e.target.getAttribute("data-remtext") && state.rem) {
         var k0 = e.target.getAttribute("data-remtext");
         state.rem.answers[k0] = state.rem.answers[k0] || {}; state.rem.answers[k0].text = e.target.value; state.rem.answers[k0].fromQr = false; state.rem.touched = true;
@@ -2261,6 +2357,7 @@
         if (fl) { setPick({ name: fl.name, file: fl }); render(); var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus(); }
       }
       else if (e.target.name === "lc-use") { state.use = e.target.value; }
+      else if (e.target.name === "lc-notes") { state.notesMode = e.target.value; }
       else if (e.target.id === "lc-autodraft") { state.autoDraft = e.target.checked; }
       else if (e.target.getAttribute && e.target.getAttribute("data-remoff") && state.rem) {
         var k2 = e.target.getAttribute("data-remoff");
@@ -2318,6 +2415,7 @@
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
       else if (b.id === "lib-go") startPanel();
       else if (b.getAttribute("data-remgo")) remGo();
+      else if ((v = b.getAttribute("data-remscriptai")) && state.rem) draftScript(+v, false);
       else if ((v = b.getAttribute("data-remai"))) draftFromPicture(v);
       else if (b.getAttribute("data-remaiall")) draftEveryPicture();
       else if (b.getAttribute("data-remkeepall") && state.rem && state.rem.report) {
