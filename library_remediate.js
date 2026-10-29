@@ -161,7 +161,7 @@
       t.textContent = title;
       doc.touch("docProps/core.xml");
       report.fixed.push("Document title set: " + title + (had ? " (it read " + had + ")" : ""));
-      report.auto.title = 1;
+      report.auto.title = 1; report.fixedAt.title = report.fixed.length - 1;
     });
   }
 
@@ -997,9 +997,9 @@
         text: slideList(noPlaceholder) + (noPlaceholder.length === 1 ? " has" : " have") + " no title a screen reader can find. In PowerPoint, give " + (noPlaceholder.length === 1 ? "it" : "each") + " a layout with a title (Home, Layout), or put the title in the slide's title box and move it off the slide if it must not show." });
       if (crowded.length) report.needs.push({ type: "order", id: "ro", slides: crowded,
         text: "Reading order on " + slideList(crowded).toLowerCase() + ": each holds " + CROWDED + " or more items. In PowerPoint, check that a screen reader meets them in the order the slide means (Home, Arrange, Selection Pane, which lists them bottom to top)." });
-      if (langFixed) { report.fixed.push("Language set to English (United States) on " + langFixed + " text runs"); report.auto.lang = 1; }
-      if (headers) { report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); report.auto.tables = headers; }
-      if (markedRepeat) { report.fixed.push("A picture repeated on most slides (a logo) marked decorative, " + markedRepeat + " times"); report.auto.alt = markedRepeat; }
+      if (langFixed) { report.fixed.push("Language set to English (United States) on " + langFixed + " text runs"); report.auto.lang = 1; report.fixedAt.lang = report.fixed.length - 1; }
+      if (headers) { report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); report.auto.tables = headers; report.fixedAt.tables = report.fixed.length - 1; }
+      if (markedRepeat) { report.fixed.push("A picture repeated on most slides (a logo) marked decorative, " + markedRepeat + " times"); report.auto.alt = markedRepeat; report.fixedAt.alt = report.fixed.length - 1; }
       report.slides = slides.map(function (s) { return { n: s.n, title: s.title }; });
       var t1 = slides[0] && slides[0].title;
       return contrastPptx(doc, slides, report).then(function () { return draftCharts(doc, report); })
@@ -1042,7 +1042,7 @@
           if (!lang) { lang = styles.createElementNS(NS.w, "w:lang"); rpr.appendChild(lang); }
           lang.setAttributeNS(NS.w, "w:val", LANG);
           doc.touch("word/styles.xml");
-          report.fixed.push("Language set to English (United States)"); report.auto.lang = 1;
+          report.fixed.push("Language set to English (United States)"); report.auto.lang = 1; report.fixedAt.lang = report.fixed.length - 1;
         }
       }
       // Table header rows: the first row repeats as a header.
@@ -1054,7 +1054,7 @@
         if (!trPr) { trPr = d.createElementNS(NS.w, "w:trPr"); tr.insertBefore(trPr, tr.firstChild); }
         if (!child(trPr, NS.w, "tblHeader")) { trPr.appendChild(d.createElementNS(NS.w, "w:tblHeader")); headers++; }
       });
-      if (headers) { doc.touch(path); report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); report.auto.tables = headers; }
+      if (headers) { doc.touch(path); report.fixed.push("Header rows marked on " + headers + (headers === 1 ? " table" : " tables")); report.auto.tables = headers; report.fixedAt.tables = report.fixed.length - 1; }
       // Pictures and charts: wp:docPr carries the alt text.
       var k = 0;
       els(d, NS.wp, "docPr").forEach(function (pr) {
@@ -1646,8 +1646,9 @@
     if (!env.JSZip) return Promise.reject(new Error("The zip reader did not load. Reload the page and try again."));
     return env.JSZip.loadAsync(buf).then(function (zip) {
       var doc = new Doc(env, zip);
-      // auto: what the page fixed with no judgment, counted by kind, for the progress bar.
-      var report = { name: name, ext: ext, fixed: [], needs: [], extent: "", auto: {} };
+      // auto: what the page fixed with no judgment, counted by check, for the progress bar;
+      // fixedAt: which line of fixed says so, for the bar's link to it.
+      var report = { name: name, ext: ext, fixed: [], needs: [], extent: "", auto: {}, fixedAt: {} };
       return ({ pptx: inspectPptx, docx: inspectDocx, xlsx: inspectXlsx })[ext](doc, name, report).then(function () {
         return { report: report, doc: doc };
       });

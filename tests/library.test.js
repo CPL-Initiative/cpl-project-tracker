@@ -872,16 +872,21 @@ block("(16)", function () {
     click(m.w, doc.querySelector("[data-remzoom]"));
     const prog = function () { return (doc.getElementById("lib-remprog") || {}).textContent || ""; };
     check("(16) one bar at the top, a part per area, what the page fixed apart from what is left; a draft is left until a person keeps it",
-      /^2 left before it is ready for the Chancellor's Office review\. 2 of 4 done, 2 fixed for you and 0 by you; 4 more checks pass with nothing to fix\./.test(prog()) &&
+      /^1 slide\. 2 items are left for you before the Chancellor's Office review; the page fixed 2 and 4 checks pass with nothing to fix\. Solid is fixed or passing, striped is yours, gray is left\./.test(prog()) &&
       /Remediation designed to meet WCAG 2\.2 AA, which includes 2\.1 AA, and California Government Code 7405, 11135 and 11546\.7/.test(doc.querySelector(".lib-rem .lib-kicker").textContent) && /Alt text \(WCAG 1\.1\.1\): 2 left/.test(prog()) &&
       /Document title \(WCAG 2\.4\.2\): 1 fixed, done/.test(prog()) && /Language \(WCAG 3\.1\.1\): 1 fixed, done/.test(prog()) && /Reading order \(WCAG 1\.3\.2\): passes/.test(prog()) && /Color contrast \(WCAG 1\.4\.3\): passes/.test(prog()) &&
-      doc.querySelectorAll("#lib-remprog [role=progressbar]").length === 7 && doc.querySelector("#lib-remprog [aria-label='Alt text (WCAG 1.1.1), Non-text Content']").getAttribute("aria-valuetext") === "2 left", prog());
+      doc.querySelectorAll("#lib-remprog .bar").length === 7 && !doc.querySelector(".lib-rem .lib-remhead .lib-line"), prog());
+    // Each check's words go to its first item left; a check the page fixed goes to its line in Fixed for you.
+    click(m.w, doc.querySelector("#lib-remprog button[data-remgoto=alt]"));
+    check("(16) a check's words link to its first item left, its field focused", doc.activeElement === doc.querySelector("[data-remtext]") && doc.querySelectorAll("#lib-remprog button.n").length === 3 && /^Alt text \(WCAG 1\.1\.1\): 2 left$/.test(doc.querySelector("#lib-remprog button[data-remgoto=alt]").textContent));
+    click(m.w, doc.querySelector("#lib-remprog .bar[data-remgoto=lang]"));
+    check("(16) the bar's part is a link too, and a fixed check goes to its line in Fixed for you", doc.activeElement && /^lib-remfix-/.test(doc.activeElement.id) && /Language set/.test(doc.activeElement.textContent) && !doc.querySelector("#lib-remprog [data-remgoto=order]"), doc.activeElement && doc.activeElement.id);
     click(m.w, doc.querySelector("[data-remkeep]"));
     check("(16) Keep counts an item, and says Kept", /Alt text \(WCAG 1\.1\.1\): 1 by you, 1 left/.test(prog()) && doc.querySelector("[data-remkeep]").getAttribute("aria-pressed") === "true" && doc.querySelector("[data-remkept]").textContent === "Kept", prog());
     const qf = doc.querySelectorAll("[data-remtext]")[1];
     qf.value = "QR code to the MAP website, map.rccd.edu"; qf.dispatchEvent(new m.w.Event("input", { bubbles: true }));
-    check("(16) an edit counts as kept, and an area with nothing left says done", /^Ready for the Chancellor's Office review: every check here is done or passes\. 4 of 4 done, 2 fixed for you and 2 by you/.test(prog()) && /Alt text \(WCAG 1\.1\.1\): 2 by you, done/.test(prog()) &&
-      doc.querySelector("#lib-remprog [aria-label^='Alt text'] .you").style.width === "100%", prog());
+    check("(16) an edit counts as kept, and an area with nothing left says done", /^1 slide\. Ready for the Chancellor's Office review; the page fixed 2, you have done 2 and 4 checks pass with nothing to fix\./.test(prog()) && /Alt text \(WCAG 1\.1\.1\): 2 by you, done/.test(prog()) &&
+      doc.querySelector("#lib-remprog .bar[data-remgoto=alt] .you").style.width === "100%", prog());
     // Draft from the picture still drafts one picture again, on a press.
     click(m.w, doc.querySelector("[data-remai]"));
     const drafted = function (n) { return aiCalls.length > 1 || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return drafted(n - 1); }); };

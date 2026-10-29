@@ -432,7 +432,9 @@
       R + " .lib-remprog .bar{grid-row:1;display:flex;height:10px;background:var(--surface-muted);border:1px solid var(--border-strong);overflow:hidden;}",
       R + " .lib-remprog .bar.first{border-radius:4px 0 0 4px;}",
       R + " .lib-remprog .bar.last{border-radius:0 4px 4px 0;}",
-      R + " .lib-remprog .n{grid-row:2;}",
+      R + " .lib-remprog .n{grid-row:2;justify-self:start;text-align:left;}",
+      R + " .lib-remprog button.n{background:none;border:0;padding:0;min-height:24px;font:inherit;font-size:.8rem;line-height:1.2;color:var(--cobalt);text-decoration:underline;text-underline-offset:2px;cursor:pointer;}",
+      R + " .lib-remprog .bar[data-remgoto]{cursor:pointer;}",
       "@media (max-width:560px){" + R + " .lib-remprog .n{grid-row:auto;grid-column:1/-1;}}",
       // Solid: fixed for you; striped: done by you; gray: left for you. The words say it too.
       R + " .lib-remprog .bar > .auto{display:block;height:100%;background:var(--green-progress);}",
@@ -1112,7 +1114,6 @@
         '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remshow="1">Show the report now</button></div></section>';
     }
     var rep = rm.report, needs = rep.needs;
-    var line = rep.extent + ". " + rep.fixed.length + (rep.fixed.length === 1 ? " fix" : " fixes") + " made for you, " + needs.length + (needs.length === 1 ? " item needs" : " items need") + " you.";
     var item = function (n) {
       var a = rm.answers[n.id] || {};
       if (n.type === "alt") {
@@ -1124,7 +1125,7 @@
         var pl = planFor(rm.report, n), big = !!rm.big[n.id];
         var side = pl ? '<div class="lib-remside">' + (big ? "" : planHtml(pl, n, rm.media)) +
           '<button type="button" class="lib-remzoom" data-remzoom="' + esc(n.id) + '" aria-expanded="' + big + '">' + (big ? "Smaller slide" : "Larger slide") + "</button></div>" : "";
-        return '<li class="lib-remneed">' + side + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + side + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
           (n.near ? '<p class="lib-hint">On the slide, ' + esc(n.near.where) + ": “" + esc(n.near.text) + "”</p>" : "") +
           (n.qr ? '<p class="lib-hint">The QR code reads ' + esc(n.qr.length > 160 ? n.qr.slice(0, 159) + "…" : n.qr) + ".</p>" : "") +
           '<textarea id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" rows="2" maxlength="400"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' + esc(a.text || "") + "</textarea>" +
@@ -1140,7 +1141,7 @@
       }
       // A slide's empty title, or a sheet left at its default name (a workbook, S514).
       if (n.type === "title" || n.type === "sheet") {
-        return '<li class="lib-remneed"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
           '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="' + (n.type === "sheet" ? 31 : 200) + '" value="' + esc(a.text || "") + '"></div></li>';
       }
       // A contrast item shows its words both ways, on the fill they sit on (the file's own
@@ -1149,21 +1150,21 @@
         var swatch = function (fg, label) {
           return '<span class="lib-remswatch" style="color:#' + esc(fg) + ";background:#" + esc(n.bg) + '">' + esc(label) + "</span>";
         };
-        return '<li class="lib-remneed"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
           '<p class="lib-remswatches">' + swatch(n.fg, "As it is") + swatch(n.fix, "With the fix") + "</p>" +
           '<label class="lib-check"><input type="checkbox" data-remfix="' + esc(n.id) + '"' + (a.fix ? " checked" : "") + "> Use #" + esc(n.fix) +
           " instead, the nearest color of the same hue that reads " + esc(n.fixRatio) + ":1</label></div></li>";
       }
       // What this page leaves to a person in the program: a box to say it was checked there.
-      return '<li class="lib-remneed"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
+      return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
         '<label class="lib-check"><input type="checkbox" data-remcheck="' + esc(n.id) + '"' + (rm.kept[n.id] ? " checked" : "") + "> Checked in " + esc(REM_APP[rep.ext] || "its program") + "</label></div></li>";
     };
     return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
-      '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line">' + esc(line) + "</p></div>" +
+      '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + "</h3></div>" +
       '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>' +
-      (needs.length ? '<div class="lib-remprog" id="lib-remprog">' + progressInner(rm) + "</div>" : "") +
+      '<div class="lib-remprog" id="lib-remprog">' + progressInner(rm) + "</div>" +
       '<div class="lib-remcols"><div><h4 class="lib-remh">Fixed for you (' + rep.fixed.length + ")</h4>" +
-      (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f) { return "<li>" + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
+      (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f, i) { return '<li id="lib-remfix-' + i + '" tabindex="-1">' + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
       '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
       (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
       (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words. Read each one before you keep it.</p>' : "") +
@@ -1256,26 +1257,45 @@
     if (a.passes) return "passes";
     return [a.auto ? a.auto + " fixed" : "", a.you ? a.you + " by you" : "", a.left ? a.left + " left" : ""].filter(Boolean).join(", ") + (a.left ? "" : ", done");
   }
+  // One line above the bar says it all once (Sam, 2026-10-29: "make sure none of the
+  // information there is redundant ... maybe just consolidate the two"): the file's size,
+  // what is left before the review, what the page fixed, what the person did, what passes.
+  // Each check's words are a link to its items, and the bar's part goes there too ("make
+  // sure that the bars are clickable"); a passing check has nothing to go to.
   function progressInner(rm) {
     var areas = remAreas(rm), all = 0, auto = 0, you = 0, pass = 0;
     areas.forEach(function (a) { all += a.total; auto += a.auto; you += a.you; if (a.passes) pass++; });
     var pct = function (k, a) { return a.passes ? (k === "auto" ? "100%" : "0%") : Math.round(10000 * a[k] / a.total) / 100 + "%"; };
     var name = function (a) { return a.name + (a.sc ? " (WCAG " + a.sc + ")" : ""); };
+    var left = all - auto - you, plural = function (k, one, many) { return k + " " + (k === 1 ? one : many); };
+    var parts = [auto ? "the page fixed " + auto : "", you ? "you have done " + you : "", pass ? plural(pass, "check passes", "checks pass") + " with nothing to fix" : ""].filter(Boolean);
+    var said = parts.length > 1 ? parts.slice(0, -1).join(", ") + " and " + parts[parts.length - 1] : parts[0] || "";
+    var lead = rm.report.extent + ". " + (left ? plural(left, "item is", "items are") + " left for you before the Chancellor's Office review" : "Ready for the Chancellor's Office review") +
+      (said ? "; " + said : "") + ". Solid is fixed or passing, striped is yours, gray is left.";
     // The bars share row one and their words row two; on a phone the words take a line each.
-    // Toward the certification review (Sam: "it's almost like for the status bar, I want it to
-    // point toward that certification ... so that it's queued up for the user").
-    var left = all - auto - you;
-    return "<p>" + (left ? left + " left before it is ready for the Chancellor's Office review. " : "Ready for the Chancellor's Office review: every check here is done or passes. ") +
-      (auto + you) + " of " + all + " done, " + auto + " fixed for you and " + you + " by you" +
-      (pass ? "; " + pass + (pass === 1 ? " more check passes" : " more checks pass") + " with nothing to fix" : "") +
-      ". Solid: fixed for you or passing; striped: by you; gray: left for you.</p>" +
+    return "<p>" + esc(lead) + "</p>" +
       '<div class="lib-remsegs" role="group" aria-label="Progress by check" style="grid-template-columns:repeat(' + areas.length + ',minmax(0,1fr))">' +
       areas.map(function (a, i) {
-        return '<span class="bar' + (i === 0 ? " first" : "") + (i === areas.length - 1 ? " last" : "") + '" role="progressbar" aria-label="' + esc(name(a) + (a.scName ? ", " + a.scName : "")) +
-          '" aria-valuemin="0" aria-valuemax="' + (a.total || 1) + '" aria-valuenow="' + (a.passes ? 1 : a.auto + a.you) + '" aria-valuetext="' + esc(areaWords(a)) + '"><span class="auto" style="width:' + pct("auto", a) +
-          '"></span><span class="you" style="width:' + pct("you", a) + '"></span></span>';
+        return '<span class="bar' + (i === 0 ? " first" : "") + (i === areas.length - 1 ? " last" : "") + '" aria-hidden="true"' + (a.passes ? "" : ' data-remgoto="' + esc(a.key) + '"') +
+          '><span class="auto" style="width:' + pct("auto", a) + '"></span><span class="you" style="width:' + pct("you", a) + '"></span></span>';
       }).join("") +
-      areas.map(function (a) { return '<span class="n" aria-hidden="true">' + esc(name(a)) + ": " + esc(areaWords(a)) + "</span>"; }).join("") + "</div>";
+      areas.map(function (a) {
+        var words = esc(name(a)) + ": " + esc(areaWords(a));
+        return a.passes ? '<span class="n">' + words + "</span>" : '<button type="button" class="n" data-remgoto="' + esc(a.key) + '">' + words + "</button>";
+      }).join("") + "</div>";
+  }
+  // Where a check's link goes: its first item still left, else its first item, else the
+  // line in Fixed for you that says the page fixed it.
+  function remGoto(key) {
+    var rm = state.rem, R = window.CPL_REMEDIATE;
+    if (!rm || !rm.report || !R) return;
+    var mine = rm.report.needs.filter(function (n) { return R.checkOf(n) === key; });
+    var n = mine.filter(function (x) { return x.type === "contrast" ? !(rm.answers[x.id] || {}).fix : !remDone(rm, x); })[0] || mine[0];
+    var at = n ? document.getElementById("lib-remneed-" + n.id) : rm.report.fixedAt && rm.report.fixedAt[key] != null ? document.getElementById("lib-remfix-" + rm.report.fixedAt[key]) : null;
+    if (!at) return;
+    if (at.scrollIntoView) at.scrollIntoView({ block: "center" });
+    var field = n && (at.querySelector("textarea") || at.querySelector("input") || at.querySelector("button"));
+    (field || at).focus();
   }
   function keepHtml(rm, n) {
     return '<button type="button" class="lib-remzoom" data-remkeep="' + esc(n.id) + '" aria-pressed="' + !!rm.kept[n.id] + '">Keep</button>' +
@@ -2119,6 +2139,8 @@
       else if (e.target.getAttribute("data-regenokform")) approveRegen(e.target.getAttribute("data-regenokform"));
     });
     root.addEventListener("click", function (e) {
+      var go = e.target.closest ? e.target.closest("[data-remgoto]") : null;
+      if (go && root.contains(go)) { remGoto(go.getAttribute("data-remgoto")); return; }
       var b = e.target.closest ? e.target.closest("button") : null;
       if (!b || !root.contains(b)) return;
       var v;
