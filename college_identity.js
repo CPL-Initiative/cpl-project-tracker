@@ -332,7 +332,7 @@
     }
 
 
-    fh += '<div class="cid-sec" id="cid-findings"><h3 class="cid-h">Names that resolve to no identity ('
+    fh += '<div class="cid-sec" id="cid-findings" tabindex="-1"><h3 class="cid-h">Names that resolve to no identity ('
       + (findings.length ? findings.length : "0") + ")</h3>";
     fh += '<p class="cid-note">'
       + (state.contacts
@@ -485,6 +485,21 @@
     h += fh;
 
     root.innerHTML = h;
+
+    /* ⚠ COBI ROUTES ON THE ADDRESS'S #, so a plain #cid-findings link left the tab for
+     * the COBI dashboard (Sam, 2026-10-29: "the link ... (11 names resolve to no
+     * identity) takes me to the COBI dashboard"). The link scrolls to the findings in
+     * place and moves focus there, leaving the address alone; the href stays for a
+     * reader who opens it in a new tab. */
+    Array.prototype.forEach.call(root.querySelectorAll('a[href="#cid-findings"]'), function (a) {
+      a.addEventListener("click", function (e) {
+        var t = root.querySelector("#cid-findings");
+        if (!t) return;
+        e.preventDefault();
+        if (t.scrollIntoView) t.scrollIntoView({ block: "start" });
+        if (t.focus) t.focus({ preventScroll: true });
+      });
+    });
 
     var slot = root.querySelector("#cid-unlock");
     if (slot && window.CPL_TEAM_PHRASE && typeof window.CPL_TEAM_PHRASE.unlockRow === "function") {

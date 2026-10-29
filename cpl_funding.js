@@ -18148,6 +18148,9 @@
     // splash: a function returning { surface, detail } (or null when it shows
     // nothing right now). A surface that names itself is one the splash can
     // list by name rather than guess at.
+    // True while the first paint waits for the shared config (holdForConfig), so a page
+    // that paints from this module waits with it and paints on the model-change event.
+    configHeld: function () { return configHold; },
     onModelChange: function (fn, describe) {
       if (typeof fn !== "function") return function () {};
       _subs.push(fn);
