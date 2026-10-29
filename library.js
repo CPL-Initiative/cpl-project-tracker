@@ -109,8 +109,13 @@
     refresh: { word: "Changes to make", count: "with changes to make" },
     regen: { word: "Rebuild requested", count: "waiting on a rebuild" },
     ready: { word: "Draft ready to review", count: "with a draft to review" },
-    kb_note: { word: "No KB note yet", count: "knowledge pieces with no KB note" }
+    kb_note: { word: "No KB note yet", count: "knowledge pieces with no KB note" },
+    // Where a file stands in the Library's remediation (S517; Sam, 2026-10-29: "a box to
+    // count and filter for the files in remediation or remediated").
+    in_remediation: { word: "In remediation", count: "in remediation" },
+    remediated: { word: "Remediated", count: "remediated" }
   };
+  var REM_FLAG_ORDER = ["in_remediation", "remediated"];
   var FLAG_ORDER = ["not_filed", "public_unset", "ready", "regen", "refresh", "kb_note"];
   // A document's pasted text, and the whole list, stay under cpl_library_sources_ck.
   var SRC_TEXT_MAX = 60000, SRC_MAX = 20, SRC_BYTES_MAX = 380000;
@@ -197,6 +202,7 @@
     else if (rs) f.push("regen");
     else if (r.refresh_note) f.push("refresh");
     if (r.knowledge === true && !r.kb_note) f.push("kb_note");
+    if (r.remediation === "in_remediation" || r.remediation === "remediated") f.push(r.remediation);
     return f;
   }
   // Where a Regenerate request stands: null when none is open; "waiting" until a
@@ -285,13 +291,19 @@
       R + " .lib-views button[aria-pressed='true']{color:var(--text-strong);text-decoration-thickness:2px;}",
       R + " h2.lib-h.lib-top{font-size:clamp(1.5rem,3vw,1.9rem);margin:0 0 6px;}",
       R + " h2.lib-h{font-family:'Playfair Display',Georgia,serif;font-weight:700;color:var(--text-strong);font-size:1.25rem;line-height:1.25;margin:0;text-wrap:balance;}",
-      R + " .lib-attention{display:grid;gap:10px;margin:0 0 20px;}",
-      R + " .lib-flagrow{display:flex;flex-wrap:wrap;gap:10px;}",
-      R + " .lib-flag{display:grid;gap:2px;text-align:left;min-height:44px;padding:10px 14px;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface-opaque);color:var(--text-body);font:inherit;cursor:pointer;flex:1 1 220px;min-width:0;}",
+      // Compact count boxes (Sam, 2026-10-29: "you can shrink these metric boxes to save real
+      // estate"): the count and its words on one line, two groups side by side.
+      R + " .lib-attention{display:flex;flex-wrap:wrap;gap:8px 28px;margin:0 0 16px;}",
+      R + " .lib-flaggroup{display:grid;gap:6px;min-width:0;}",
+      R + " .lib-flaggroup h2.lib-h{font-size:1rem;}",
+      R + " .lib-flagrow{display:flex;flex-wrap:wrap;gap:6px;}",
+      R + " .lib-flag{display:inline-flex;align-items:baseline;gap:6px;text-align:left;min-height:32px;padding:4px 10px;border:1px solid var(--border-strong);border-radius:6px;background:var(--surface-opaque);color:var(--text-body);font:inherit;cursor:pointer;flex:0 1 auto;min-width:0;}",
+      R + " .lib-flag[disabled]{cursor:default;opacity:1;color:var(--text-muted);}",
       R + " .lib-flag:hover{background:var(--surface-subtle);}",
       R + " .lib-flag[aria-pressed=\"true\"]{border-color:var(--cobalt);box-shadow:inset 0 0 0 1px var(--cobalt);}",
-      R + " .lib-flag .n{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.55rem;line-height:1;color:var(--crimson);font-variant-numeric:tabular-nums;}",
-      R + " .lib-flag .w{font-size:.92rem;}",
+      R + " .lib-flag .n{font-family:'Playfair Display',Georgia,serif;font-weight:700;font-size:1.1rem;line-height:1;color:var(--crimson);font-variant-numeric:tabular-nums;}",
+      R + " .lib-flag.rem .n{color:var(--text-strong);}",
+      R + " .lib-flag .w{font-size:.88rem;}",
       R + " .lib-clear{color:var(--text-muted);margin:0;font-size:.95rem;}",
       R + " .lib-controls{display:flex;flex-wrap:wrap;align-items:end;gap:12px 16px;padding:14px 0 16px;border-top:1px solid var(--border);border-bottom:1px solid var(--border);}",
       R + " .lib-field{display:grid;gap:4px;min-width:0;}",
@@ -1545,11 +1557,18 @@
     if (!rm || rm.recordId || !teamPhrase()) return Promise.resolve();
     var name = rm.name, done = window.CPL_REMEDIATE && window.CPL_REMEDIATE.outName ? window.CPL_REMEDIATE.outName(name) : name;
     var have = (state.rows || []).filter(function (r) { return !r.retired_at && (r.file_name === name || r.file_name === done); })[0];
-    if (have) { rm.recordId = have.id; rm.recordTitle = have.title; return Promise.resolve(); }
+    if (have) {
+      rm.recordId = have.id; rm.recordTitle = have.title;
+      if (have.remediation) return Promise.resolve();
+      // A piece already in the Library, opened for remediation for the first time.
+      have.remediation = "in_remediation";
+      return window.fetch(TABLE_URL + "?id=eq." + encodeURIComponent(have.id), { method: "PATCH", headers: headers({ "Content-Type": "application/json", Prefer: "return=minimal" }),
+        body: JSON.stringify({ remediation: "in_remediation", updated_by: storedAuthor() || null }) }).catch(function () {});
+    }
     var title = titleFromName(name);
     return window.fetch(TABLE_URL, { method: "POST", headers: headers({ "Content-Type": "application/json", Prefer: "return=representation" }), body: JSON.stringify({
       slug: slugFor(title), title: title, kind: remKind(name), status: "draft", seen_by: "team", home: "not_filed", url: null,
-      made_on: today(), file_name: name, added_by: storedAuthor() || null,
+      made_on: today(), file_name: name, added_by: storedAuthor() || null, remediation: "in_remediation",
       note: "Remediation started in the Library on " + today() + ". Its link comes when the remediated file is in the CPLLibrary folder."
     }) }).then(function (res) {
       if (!res.ok) throw new Error("the Library record was not written (" + res.status + ")");
@@ -1571,7 +1590,7 @@
     return remRecord(rm).then(function () {
       if (!rm.recordId) { done("The Library record was not written" + (rm.recordError ? " (" + rm.recordError + ")" : "") + "; file it here once the file is in the CPLLibrary folder.", true); return; }
       return write(TABLE_URL + "?id=eq." + encodeURIComponent(rm.recordId), { method: "PATCH", body: {
-        file_name: name, updated_by: storedAuthor() || null,
+        file_name: name, updated_by: storedAuthor() || null, remediation: "remediated",
         note: ("Remediated in the Library on " + today() + ": " + summary + " Its link comes when the file is in the CPLLibrary folder.").slice(0, 2000)
       } }).then(function () {
         return load();
@@ -1823,13 +1842,18 @@
 
     var rows = registerRows(state.rows);
     var counts = {};
-    FLAG_ORDER.forEach(function (k) { counts[k] = rows.filter(function (r) { return flagsOf(r).indexOf(k) >= 0; }).length; });
+    FLAG_ORDER.concat(REM_FLAG_ORDER).forEach(function (k) { counts[k] = rows.filter(function (r) { return flagsOf(r).indexOf(k) >= 0; }).length; });
     var flagBtns = FLAG_ORDER.filter(function (k) { return counts[k] > 0; }).map(function (k) {
       return '<button type="button" class="lib-flag" data-flag="' + k + '" aria-pressed="' + (state.flag === k) + '"><span class="n">' +
         counts[k] + '</span><span class="w">' + esc(FLAGS[k].count) + "</span></button>";
     }).join("");
-    var attention = '<section class="lib-attention" aria-labelledby="lib-att-h"><h2 class="lib-h" id="lib-att-h">Needs attention</h2>' +
-      (flagBtns ? '<div class="lib-flagrow">' + flagBtns + "</div>" : '<p class="lib-clear">Nothing. Every piece is filed and has an audience.</p>') + "</section>";
+    var remBtns = REM_FLAG_ORDER.map(function (k) {
+      return '<button type="button" class="lib-flag rem" data-flag="' + k + '" aria-pressed="' + (state.flag === k) + '"' + (counts[k] ? "" : " disabled") + '><span class="n">' +
+        counts[k] + '</span><span class="w">' + esc(FLAGS[k].count) + "</span></button>";
+    }).join("");
+    var attention = '<div class="lib-attention"><section class="lib-flaggroup" aria-labelledby="lib-att-h"><h2 class="lib-h" id="lib-att-h">Needs attention</h2>' +
+      (flagBtns ? '<div class="lib-flagrow">' + flagBtns + "</div>" : '<p class="lib-clear">Nothing. Every piece is filed and has an audience.</p>') + "</section>" +
+      '<section class="lib-flaggroup" aria-labelledby="lib-remflags-h"><h2 class="lib-h" id="lib-remflags-h">Remediation</h2><div class="lib-flagrow">' + remBtns + "</div></section></div>";
 
     var segBtn = function (k, label) { return '<button type="button" data-kind="' + k + '" aria-pressed="' + (state.kind === k) + '">' + label + "</button>"; };
     var forBtn = function (k, label) { return '<button type="button" data-madefor="' + k + '" aria-pressed="' + (state.madeFor === k) + '">' + esc(label) + "</button>"; };

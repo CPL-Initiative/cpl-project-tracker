@@ -934,6 +934,11 @@ Sam's session, the day before the 7th Annual CPL Summit, on his first live run o
   link, `home` not filed, `file_name` the file's), the same file opened again finds it by that name, and the
   download notes what it fixed there and opens the record's form for the SharePoint link, the one step a browser
   cannot take.
+- **The Library counts its remediation.** A record's `remediation` (new, nullable: `in_remediation` as the file
+  opens, `remediated` at its download; applied by MCP, `cpl_library_remediation_2026_10_29_s517`) feeds two boxes
+  beside *Needs attention*, each a filter (Sam: *"a box to count and filter for the files in remediation or
+  remediated"*). The count boxes shrank to one line each (*"you can shrink these metric boxes to save real
+  estate"*).
 - **A grid item's minimum width is its content's.** A long URL in a hint widened the whole list item past its
   column until the item took `min-width:0` and the hints `overflow-wrap:anywhere`.
 

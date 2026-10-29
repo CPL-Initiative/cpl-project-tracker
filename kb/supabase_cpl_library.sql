@@ -276,3 +276,16 @@ alter table public.cpl_library add column if not exists project text;
 alter table public.cpl_library drop constraint if exists cpl_library_project_ck;
 alter table public.cpl_library add constraint cpl_library_project_ck check (
   project is null or char_length(btrim(project)) between 1 and 200);
+
+-- ── Where a file stands in the Library's remediation (S517, Sam's session) ──────────
+-- Sam, 2026-10-29: "there's really no reason to start a file without having it in the
+-- library regardless of it's state of remediation or revision", and "a box to count and
+-- filter for the files in remediation or remediated". Remediate writes in_remediation as
+-- the file opens and remediated at its download; the Library's Remediation boxes count and
+-- filter on it. Null: never remediated here. APPLIED 2026-10-29 (MCP,
+-- cpl_library_remediation_2026_10_29_s517). Re-runnable; the column rides the table-level
+-- grants above, and the history trigger files it with every prior row.
+alter table public.cpl_library add column if not exists remediation text;
+alter table public.cpl_library drop constraint if exists cpl_library_remediation_ck;
+alter table public.cpl_library add constraint cpl_library_remediation_ck check (
+  remediation is null or remediation in ('in_remediation', 'remediated'));
