@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-28T22:24:15Z",
-  "session": 507,
-  "moniker": "SkyDewberry",
+  "written_at": "2026-10-29T03:54:18Z",
+  "session": 509,
+  "moniker": "SkyElderberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_508_handoff.md",
+  "handoff": "docs/session_510_handoff.md",
   "next_step": {
     "title": "Glendale's course units from its descriptions",
     "text": "180 Glendale records fail arithmetic, most on courses the state's file lists without units; the next session reads each such course's units from the catalog's course descriptions, which print them, and rescores."
@@ -263,6 +263,12 @@
       "active": 20282,
       "complete": 13201,
       "colleges": 114
+    },
+    {
+      "day": "2026-10-29",
+      "active": 20282,
+      "complete": 13201,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -271,7 +277,7 @@
     "at": "2026-10-29T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-28",
+    "day": "2026-10-29",
     "gaps": 3029,
     "parts": {
       "links": {

@@ -426,6 +426,8 @@ data refresh are captured atomically.
 ├── report_generator.js                ← Custom Report (Claude API via proxy)
 ├── college_report_generator.js        ← per-college .docx generator
 ├── docx.min.js                        ← local docx@8.0.4 UMD build (do NOT switch to CDN)
+├── jszip.min.js                       ← local JSZip 3.10.1 (MIT), loaded on demand by the Library's remediation (do NOT switch to CDN)
+├── library_remediate.js               ← the Library tab's in-browser remediation of a .pptx or .docx (S509)
 ├── cloudflare-worker-proxy.js         ← dual-purpose worker (scrape + Anthropic proxy)
 ├── live_metrics.json                  ← latest scrape
 ├── kpi_history.json                   ← daily KPI snapshots (must have no date gaps)

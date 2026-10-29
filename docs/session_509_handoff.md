@@ -4,6 +4,8 @@ date: 2026-10-29
 session: 508 (SkyGooseberry, Sam's session)
 tags: [handoff, implementation-funding, library, a11y, map-website, privacy]
 status: current
+superseded: true
+superseded_by: session_510_handoff.md
 ---
 
 # You are Session 509
