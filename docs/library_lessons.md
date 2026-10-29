@@ -757,3 +757,12 @@ Sam: *"PPT accessibility remediation is top of mind as we spend a bunch of money
   show the slide; a finding that does not hold on the picture is a bug in the reader, not in the deck.
 - **A fix keeps the hue.** The offered color steps the lightness away from the ground until it clears the bar by 0.1,
   so a gold kicker stays gold (`E8A32C` to `9D6A11`), and it is ticked by default but shown both ways first.
+
+## A Word document's contrast (S511 SkyBilberry, 2026-10-29)
+
+- **Word writes the resolved hex in `w:color`'s `val` beside a `themeColor`**, so `val` wins when it is a hex; the theme
+  and its tint or shade are the fallback for files a generator wrote.
+- **A table style can shade a header row the cell itself never names.** Measuring such a cell's text against the page
+  would report white on white; the reader names it for a person instead.
+- **A finding can be text nobody sees.** The spring update ends a paragraph with a white run on white ("— Spring 2026"),
+  invisible on the page and read aloud by a screen reader. The finding is right; the fix is to delete the run.
