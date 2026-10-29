@@ -148,13 +148,9 @@ Tests: `library` (13, 14, 9), `college_cpl_workbook` (the notes).
 
 Draft 1 (https://claude.ai/artifact/7HPvgHpX8jnfpCLd7e4Tv1, private) is record `cpl-coordinator-getting-started-guide`, In development at step 2; each revision comes from **Changes to make**, and listing it publicly is Sam's. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
 
-## The ELL IET and DSP pages, Version 2 (Sam's S482 asks; built S482 and S483)
+## The ELL IET and DSP pages, Version 2 (built S482 and S483)
 
-Both agency visuals are on the template at Version 2, each card ending in example articulations and the people in the
-conversation, and both are the public copies (Sam, Sheet 129 cards 2 and 3, *replace*, 03:53Z 2026-10-26). Sierra reads
-the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-deploy run 40329644423, 13:21Z; smoke run
-40331201968, run alone, passed). The full record moved verbatim to
-[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S490)*.
+Both are the public copies (Sheet 129). The record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S513)*.
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
@@ -207,7 +203,9 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 ✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
 
 
-✅ **⑥ Headers, footers and text boxes join a Word document's contrast (S512).** Every `word/header*.xml` and `word/footer*.xml` is read beside the body, its item saying *in a header* or *in a footer* and its fix written in that part. A text box's words are measured on its own fill, or on the page when it has none; Word's VML copy in `mc:Fallback` is skipped, so nothing counts twice. A box its theme fills, or a VML-only box, is named for a person. On the team's 84 Word files: one new finding, the fact sheet's gray header line (`#888888`, 3.5:1), held on a render. Test: `library_remediate` (70).
+✅ **⑥ Headers, footers and text boxes join a Word document's contrast (S512).** The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S513)*.
 
-**NEXT:** remediation of a PDF at its source. The Chancellor's Office review still certifies.
+✅ **⑦ A PDF is fixed at its source (S513).** Remediate on a dropped PDF reads its Info, catalog and XMP and changes nothing: what it carries (tags, language, title, text), the program that made it, any Library record that matches, the export steps, and *Choose the source .pptx* or *.docx*. Detail and the 55-file run: [`docs/library_lessons.md`](../../library_lessons.md), *A PDF is fixed at its source (S513)*. Tests: `library_remediate` (81), `library` block (16).
+
+**NEXT:** a workbook (.xlsx) in remediation: sheet names, a header row on each table, alt text on each chart. The Chancellor's Office review still certifies.
 

@@ -403,6 +403,7 @@
       R + " .lib-remhead .lib-title{overflow-wrap:anywhere;}",
       R + " .lib-remcols{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;}",
       R + " h4.lib-remh{margin:0 0 8px;font-family:'Playfair Display',Georgia,serif;font-size:1.05rem;color:var(--text-strong);}",
+      R + " .lib-remchecks{margin:0;padding-left:1.1em;display:grid;gap:6px;}",
       R + " .lib-remneeds{list-style:none;margin:0;padding:0;display:grid;gap:12px;}",
       R + " .lib-remneed{display:flex;gap:12px;align-items:flex-start;}",
       R + " .lib-remneed .lib-field{flex:1 1 auto;min-width:0;}",
@@ -946,7 +947,7 @@
   var EXT_KIND = { pptx: "deck", ppt: "deck", key: "deck", docx: "document", doc: "document", pdf: "document", txt: "document", md: "document", rtf: "document",
     xlsx: "spreadsheet", xls: "spreadsheet", csv: "spreadsheet", mp4: "film", mov: "film", m4v: "film", webm: "film",
     png: "visual", jpg: "visual", jpeg: "visual", gif: "visual", svg: "visual", webp: "visual", html: "visual", htm: "visual" };
-  var REMEDIABLE = { pptx: true, docx: true };
+  var REMEDIABLE = { pptx: true, docx: true, pdf: true };
   var TEXT_EXT = { txt: true, md: true, csv: true, html: true, htm: true };
   function extOf(name) { var m = /\.([a-z0-9]{1,5})$/i.exec(String(name || "").split(/[?#]/)[0]); return m ? m[1].toLowerCase() : ""; }
   function titleFromName(name) {
@@ -1051,6 +1052,7 @@
     var rm = state.rem;
     if (!rm) return "";
     if (rm.reading) return '<section class="lib-rem" aria-labelledby="lib-rem-h"><p class="lib-kicker">Remediation</p><h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line" role="status">Reading the file in this browser&hellip;</p></section>';
+    if (rm.report.ext === "pdf") return pdfRemHtml(rm);
     var rep = rm.report, needs = rep.needs;
     var line = rep.extent + ". " + rep.fixed.length + (rep.fixed.length === 1 ? " fix" : " fixes") + " made for you, " + needs.length + (needs.length === 1 ? " item needs" : " items need") + " you.";
     var item = function (n) {
@@ -1100,6 +1102,45 @@
       '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
       '<p class="lib-hint">' + 'Save the PDF from PowerPoint or Word with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
+      "</section>";
+  }
+  // A PDF is fixed at its source (lane NEXT, S513): its tags, title and language are
+  // written when PowerPoint or Word exports it, so the report names what it carries, the
+  // program that made it, the Library record that may hold its source, and the steps.
+  function stemOf(s) {
+    return String(s || "").split(/[?#]/)[0].split("/").pop().replace(/\.[a-z0-9]{1,5}$/i, "")
+      .replace(/^\d{8}[_-]?/, "").replace(/_Remediated$/i, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  }
+  function pdfSources(rep) {
+    var want = [stemOf(rep.name), stemOf(rep.pdf.title)].filter(function (x) { return x.length > 3; });
+    if (!want.length) return [];
+    return (state.rows || []).filter(function (r) {
+      if (r.retired_at) return false;
+      var have = [stemOf(r.title), stemOf(r.url)].filter(Boolean);
+      return have.some(function (h) { return want.indexOf(h) >= 0; });
+    }).slice(0, 3);
+  }
+  function pdfRemHtml(rm) {
+    var rep = rm.report, pdf = rep.pdf, src = pdf.source, recs = pdfSources(rep);
+    var gaps = pdf.checks.filter(function (c) { return !c.ok; }).length;
+    var line = rep.extent + ". " + (gaps ? gaps + (gaps === 1 ? " gap" : " gaps") + " to close at its source." : "Its tags, title and language are in place.");
+    var kindWord = { deck: "a PowerPoint deck", document: "a Word document", spreadsheet: "an Excel workbook", layout: "a layout program", web: "a web page", scan: "a scan" }[src.kind];
+    return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
+      '<div class="lib-remhead"><div><p class="lib-kicker">Remediation</p><h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line">' + esc(line) + "</p></div>" +
+      '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>' +
+      '<div class="lib-remcols"><div><h4 class="lib-remh">What the PDF carries</h4><ul class="lib-remchecks">' +
+      pdf.checks.map(function (c) { return "<li><b>" + (c.ok ? "In place" : "Needs its source") + ":</b> " + esc(c.text) + "</li>"; }).join("") + "</ul></div>" +
+      '<div><h4 class="lib-remh">Fix it at its source</h4>' +
+      '<p class="lib-line">' + esc(kindWord ? "It was made from " + kindWord + (src.app ? " (" + src.app + ")" : "") + "." : src.app ? "It was made with " + src.app + "." : "It does not say what made it.") +
+      " A PDF keeps what its source gave it at export, so the fix that lasts is in that file.</p>" +
+      '<p class="lib-line">' + esc(pdf.steps) + "</p>" +
+      (recs.length ? '<p class="lib-line">In the Library, the record that may hold its source:</p><ul>' + recs.map(function (r) {
+        return "<li>" + (r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title || r.slug) + "</a>" : esc(r.title || r.slug)) +
+          (r.rebuild_from ? " (rebuilt from " + esc(r.rebuild_from) + ")" : "") + "</li>";
+      }).join("") + "</ul>" : "") +
+      (src.ext === "pptx" || src.ext === "docx" ? '<div class="lib-actions-row"><label class="lib-pick" for="lc-file">Choose the source .' + src.ext + "</label></div>" : "") +
+      "</div></div>" +
+      '<p class="lib-hint">This page reads the PDF and changes nothing in it. The Chancellor\'s Office review still decides what is certified.</p>' +
       "</section>";
   }
   // Draft from the picture (Sam, 2026-10-29: "We do a lot of MAP screenshots and hoping

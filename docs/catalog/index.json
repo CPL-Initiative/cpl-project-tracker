@@ -16210,8 +16210,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 482,
+   "count": 483,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 514,
+     "path": "docs/session_514_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "accessibility",
+      "esl"
+     ],
+     "title": "Session 514 handoff: a PDF fixed at its source; the ESL monthly pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-29",
      "governs": [],
@@ -24470,5 +24487,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1299
+ "total": 1300
 }

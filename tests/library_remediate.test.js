@@ -14,7 +14,10 @@
 //   - a picture that already has alt text, or is marked decorative, is left alone;
 //   - the answers land in the file that comes back, and the file still opens as a zip
 //     with the same parts;
-//   - a file that is neither .pptx nor .docx is refused in words;
+//   - a file that is neither .pptx, .docx nor PDF is refused in words;
+//   - a PDF is read, never written: its own Info and catalog (in Office's compressed
+//     object streams, never a bookmark's title or a span's language), the program that
+//     made it, and the steps that fix it at that source;
 //   - a deck's contrast is measured against the fill the words actually sit on (a shape
 //     drawn before them, the layout's own shapes, then the background), never the slide's
 //     background alone, which read our decks' white-on-navy labels as white on white.
@@ -23,6 +26,7 @@
 const JSZip = require("../jszip.min.js");
 const { JSDOM } = require("jsdom");
 const R = require("../library_remediate.js");
+const { makePdf } = require("./pdf_fixture.js");
 
 const win = new JSDOM("").window;
 const ENV = { JSZip: JSZip, DOMParser: win.DOMParser, XMLSerializer: win.XMLSerializer };
@@ -260,8 +264,39 @@ const run = deck().then(function (buf) {
       s2.report.fixed.indexOf("Document title set: Funding (it read PowerPoint Presentation)") >= 0, JSON.stringify(s2.report.fixed));
     check("(5) eleven slides with no title box read as one range", s2.report.needs.some(function (n) { return n.id === "tp" && /^Slides 2 to 12 have no title/.test(n.text); }), JSON.stringify(s2.report.needs.map(function (n) { return n.text; })));
     check("(5) a slide of ten top-level items asks for its reading order, once", s2.report.needs.filter(function (n) { return n.type === "order"; }).length === 1 && s2.report.needs.some(function (n) { return n.id === "ro" && /slide 1:/.test(n.text); }));
-  }).then(function () { return R.inspect(Buffer.from("x"), "Notes.pdf", ENV); }).then(function () { check("(6) a PDF is refused", false); }, function (e) {
-    check("(6) a PDF is refused in words that say what it reads", /reads a \.pptx deck or a \.docx document/.test(e.message), e.message);
+  }).then(function () { return R.inspect(Buffer.from("x"), "Notes.txt", ENV); }).then(function () { check("(6) a text file is refused", false); }, function (e) {
+    check("(6) a text file is refused in words that say what it reads", /reads a \.pptx deck, a \.docx document or a PDF/.test(e.message), e.message);
+  }).then(function () { return R.inspect(Buffer.from("not a pdf"), "Notes.pdf", ENV); }).then(function () { check("(11) a .pdf that is not a PDF is refused", false); }, function (e) {
+    check("(11) a .pdf that is not a PDF is refused in words", /does not read as a PDF/.test(e.message), e.message);
+  }).then(function () {
+    // (11) A PDF is fixed at its source (S513): read, named, and left as it is.
+    const word = makePdf({ objstm: true, creator: "Microsoft\xAE Word for Microsoft 365", producer: "Microsoft\xAE Word for Microsoft 365",
+      title: "TMC Template for Music", titleHex: true, lang: "en-US", spanLang: "fr", tagged: true, showTitle: true });
+    return R.inspect(word, "2023_Nov_Music_TMC_r.pdf", ENV);
+  }).then(function (s) {
+    const p = s.report.pdf;
+    check("(11) a Word PDF reads its catalog from Office's compressed object stream: tagged, its language, title shown",
+      p.tagged && p.lang === "en-US" && p.titleShown && s.report.ext === "pdf", JSON.stringify(p));
+    check("(11) the title is the Info dictionary's (UTF-16), never a bookmark's /Title", p.title === "TMC Template for Music", p.title);
+    check("(11) a span's /Lang is not the document's", p.lang === "en-US", p.lang);
+    check("(11) its source is a Word document, and the steps say how to export it tagged",
+      p.source.kind === "document" && p.source.ext === "docx" && /Document structure tags for accessibility/.test(p.steps) && /Word/.test(p.steps), JSON.stringify(p.source));
+    check("(11) every check passes, and nothing is offered to write into the PDF", p.checks.every(function (c) { return c.ok; }) && s.doc === null && s.report.needs.length === 0);
+    check("(11) the extent names the pages and the program", s.report.extent === "1 page, made with Microsoft\xAE Word for Microsoft 365", s.report.extent);
+    return R.inspect(makePdf({ creator: "Microsoft PowerPoint", title: "PowerPoint Presentation", lang: "fr" }), "Webinar.pdf", ENV);
+  }).then(function (s) {
+    const p = s.report.pdf, gaps = p.checks.filter(function (c) { return !c.ok; }).map(function (c) { return c.text; });
+    check("(11) an untagged deck's PDF names PowerPoint and its export steps", p.source.kind === "deck" && p.source.ext === "pptx" && /PowerPoint choose File, Export/.test(p.steps));
+    check("(11) the gaps are said in words: not tagged, a language other than English, a stock title as none",
+      gaps.length === 3 && /^Not tagged/.test(gaps[0]) && /set to fr, not English/.test(gaps[1]) && /no title/.test(gaps[2]), JSON.stringify(gaps));
+    return R.inspect(makePdf({ producer: "Canon iR-ADV C5535 PDF", fonts: false }), "Scan.pdf", ENV);
+  }).then(function (s) {
+    const p = s.report.pdf;
+    check("(11) a PDF with no fonts reads as a scan, and the steps send it to its original or to OCR",
+      p.source.kind === "scan" && !p.hasText && /Scan and OCR/.test(p.steps) && p.checks.some(function (c) { return !c.ok && /no text/.test(c.text); }));
+    check("(11) Google Docs and a printed web page are named as such",
+      R._pdfSource("Google Docs Renderer", "", true).google && R._pdfSource("Google Docs Renderer", "", true).ext === "docx" &&
+      R._pdfSource("Chromium", "Skia/PDF m141", true).kind === "web" && R._pdfSource("Adobe InDesign 20.1", "Adobe PDF Library 17.0", true).kind === "layout");
   });
 }).then(function () {
   check("(7) the remediated file keeps the date code and says so", R.outName("20261030_CPL_Summit_Funding.pptx") === "20261030_CPL_Summit_Funding_Remediated.pptx");
