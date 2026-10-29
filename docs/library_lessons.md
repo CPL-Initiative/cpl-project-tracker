@@ -826,6 +826,31 @@ The lane's NEXT after the PDF: an Excel workbook, checked the way Excel's Access
   of the crosswalk with its sheet renamed *Sheet1* came back renamed, and both remediated files open in
   LibreOffice.
 
+## A workbook's contrast (S515 SkyRaspberry, 2026-10-29)
+
+The lane's NEXT after S514: each cell's words against what they sit on, as the deck and Word checks do.
+
+- **Where the colors live.** A cell's `s` indexes `cellXfs`; its `fontId` gives the font's `color` and size, its
+  `fillId` the fill. A solid `patternFill` paints its `fgColor`; no pattern shows white. A gradient or any other
+  pattern (*gray125*, *darkGrid*) is counted for a person.
+- **Excel counts theme colors lt1 first.** `theme="0"` is Background 1 (lt1) and `theme="1"` Text 1 (dk1), the
+  reverse of the theme file's own `dk1, lt1` order. A `tint` moves the HSL lightness: toward black by
+  `L*(1+tint)` when negative, toward white by `L+(1-L)*tint` when positive. `indexed` reads the old 64-color
+  palette (a workbook's own `indexedColors` replaces it); 64 and up, and `auto`, mean the system color, which
+  never fails.
+- **A styled table paints its own header and bands**, so a cell inside one with no fill of its own is counted,
+  never measured. A cell's own fill still wins there and is measured.
+- **The fix never edits a shared format.** For each cell format a failing item covers, the fix copies the
+  format's font with the new color and copies the format to use it, then points those cells at the copy. Other
+  cells on the old format keep theirs.
+- **Words colored inside a cell** (a shared string's runs) are named with their cells for a person: a shared
+  string can sit in cells with different fills, so one new color would not serve them all.
+- **The run on team files.** Six workbooks. The project list's budget sheet carries six cells in Background 1
+  on white (Cambria 10, likely hidden on purpose) and fourteen in gray 808080 at 3.9:1; one link in 4A90D9 on
+  the project list reads 3.3:1. All 22 were fixed and a second inspect found none; the file opens in
+  LibreOffice. The CEO lookup's conditional formatting is listed. Hidden text gets its own sentence: a screen
+  reader still reads it, so the fix stays offered and the item says how to keep it hidden instead.
+
 ## Moved from the lane (S512)
 
 ✅ **④ A deck's contrast is checked (S510).** Each text run's color (its own, else inherited through list style, layout, master and theme) is measured against the fill the words sit on: the shape's own, else the topmost shape drawn before it covering its middle (the layout's and master's own shapes included), else the slide's background through layout and master. Below 4.5:1, or 3:1 for 18pt or 14pt bold, each slide's color pair is one *Needs you* item showing the words both ways, with the nearest passing color of the same hue ticked as the fix; *Remediate and download* writes it onto those runs. Text over a picture, chart, table, gradient or pattern is named for a person (one item). On the five team decks, 6 findings, each confirmed on a render; the first build, against the background alone, reported 72 (`docs/library_lessons.md`, S510). Tests: `library_remediate` (8), `library` (16).
@@ -847,3 +872,7 @@ the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-depl
 ## Moved from the lane (S514)
 
 ✅ **⑦ A PDF is fixed at its source (S513).** Remediate on a dropped PDF reads its Info, catalog and XMP and changes nothing: what it carries (tags, language, title, text), the program that made it, any Library record that matches, the export steps, and *Choose the source .pptx* or *.docx*. Detail and the 55-file run: *A PDF is fixed at its source (S513)*. Tests: `library_remediate` (81), `library` block (16).
+
+## Moved from the lane (S515)
+
+✅ **⑧ A workbook is remediated (S514).** Remediate on a dropped .xlsx sets the title and lists a sheet at its default name (renamed everywhere it is referenced), alt text per picture and chart, a table with no header row (listed, never switched on), data with no table, and merged cells. Detail and the six-workbook run: [`docs/library_lessons.md`](../../library_lessons.md), *A workbook in remediation (S514)*. Tests: `library_remediate` (95), `library` block (16).

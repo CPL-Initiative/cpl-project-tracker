@@ -20,6 +20,10 @@
 //     another workbook's sheets stay); a chart's alt text drafts from its numbers; a table
 //     with no header row, data with no table and merged cells are listed, never changed;
 //     a package whose targets start with a slash (openpyxl's) is read;
+//   - a workbook's colors (13): each cell's font color against its fill, theme colors in
+//     Excel's own order with their tints, the old indexed palette, a styled table and a
+//     run colored inside a cell named for a person, and a fix that adds a font and a
+//     format so the other cells sharing the old one keep it;
 //   - a PDF is read, never written: its own Info and catalog (in Office's compressed
 //     object streams, never a bookmark's title or a span's language), the program that
 //     made it, and the steps that fix it at that source;
@@ -219,6 +223,33 @@ function workbook() {
     '<c:cat><c:strRef><c:f>Sheet1!$A$2:$A$4</c:f><c:strCache><c:pt idx="0"><c:v>Riverside</c:v></c:pt><c:pt idx="1"><c:v>Norco</c:v></c:pt><c:pt idx="2"><c:v>Moreno Valley</c:v></c:pt></c:strCache></c:strRef></c:cat>' +
     '<c:val><c:numRef><c:f>Sheet1!$B$2:$B$4</c:f><c:numCache><c:pt idx="0"><c:v>40</c:v></c:pt><c:pt idx="1"><c:v>25</c:v></c:pt><c:pt idx="2"><c:v>12</c:v></c:pt></c:numCache></c:numRef></c:val></c:ser></c:barChart></c:plotArea></c:chart></c:chartSpace>');
   z.file("xl/media/image1.png", "png");
+  return z.generateAsync({ type: "nodebuffer" });
+}
+// A workbook's colors (13): gold on white, white on navy, white bold 14pt on yellow, the
+// theme's Text 1 and Background 1 (Excel counts lt1 first), a pale tinted accent, a
+// styled table, a run colored inside a cell, and conditional formatting.
+function colorWorkbook() {
+  const z = new JSZip();
+  z.file("docProps/core.xml", CORE("Colors"));
+  z.file("xl/workbook.xml", '<workbook ' + S + '><sheets><sheet name="Colors" sheetId="1" r:id="rId1"/><sheet name="Table" sheetId="2" r:id="rId2"/></sheets></workbook>');
+  z.file("xl/_rels/workbook.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Target="worksheets/sheet1.xml"/><Relationship Id="rId2" Target="worksheets/sheet2.xml"/><Relationship Id="rId3" Target="theme/theme1.xml"/><Relationship Id="rId4" Target="styles.xml"/></Relationships>');
+  z.file("xl/theme/theme1.xml", '<a:theme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:themeElements><a:clrScheme name="T"><a:dk1><a:sysClr val="windowText" lastClr="000000"/></a:dk1><a:lt1><a:sysClr val="window" lastClr="FFFFFF"/></a:lt1>' +
+    '<a:dk2><a:srgbClr val="44546A"/></a:dk2><a:lt2><a:srgbClr val="E7E6E6"/></a:lt2><a:accent1><a:srgbClr val="4472C4"/></a:accent1></a:clrScheme></a:themeElements></a:theme>');
+  const font = (inner) => "<font>" + inner + '<name val="Calibri"/><family val="2"/></font>';
+  z.file("xl/styles.xml", '<styleSheet ' + S + '><fonts count="6">' + font('<sz val="11"/><color theme="1"/>') + font('<sz val="11"/><color rgb="FFE8A32C"/>') +
+    font('<sz val="11"/><color rgb="FFFFFFFF"/>') + font('<b/><sz val="14"/><color rgb="FFFFFFFF"/>') + font('<sz val="11"/><color theme="0"/>') + font('<sz val="11"/><color theme="4" tint="0.59999389629810485"/>') + "</fonts>" +
+    '<fills count="4"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF002F6D"/><bgColor indexed="64"/></patternFill></fill>' +
+    '<fill><patternFill patternType="solid"><fgColor indexed="5"/></patternFill></fill></fills>' +
+    '<cellXfs count="6"><xf fontId="0" fillId="0"/><xf fontId="1" fillId="0" applyFont="1"/><xf fontId="2" fillId="2" applyFont="1"/><xf fontId="3" fillId="3" applyFont="1"/><xf fontId="4" fillId="0"/><xf fontId="5" fillId="0"/></cellXfs></styleSheet>');
+  z.file("xl/sharedStrings.xml", '<sst ' + S + '><si><t>Gold note</t></si><si><r><t>Plain and </t></r><r><rPr><sz val="11"/><color rgb="FFFFD966"/></rPr><t>pale yellow</t></r></si></sst>');
+  const c = (r, s, text) => '<c r="' + r + '" s="' + s + '" t="inlineStr"><is><t>' + text + "</t></is></c>";
+  z.file("xl/worksheets/sheet1.xml", '<worksheet ' + S + '><sheetData><row r="1"><c r="A1" s="1" t="s"><v>0</v></c>' + c("B1", 1, "Gold again") + c("C1", 2, "White on navy") + c("D1", 3, "Banner on yellow") + "</row>" +
+    '<row r="2">' + c("A2", 0, "Text one") + c("B2", 4, "Background one") + c("C2", 5, "Pale accent") + '<c r="D2" t="s"><v>1</v></c><c r="E2" s="1"/></row></sheetData>' +
+    '<conditionalFormatting sqref="A1:A2"><cfRule type="cellIs" dxfId="0" priority="1" operator="greaterThan"><formula>0</formula></cfRule></conditionalFormatting></worksheet>');
+  z.file("xl/worksheets/sheet2.xml", '<worksheet ' + S + '><sheetData><row r="1">' + c("A1", 2, "Header") + c("B1", 1, "Gold heading") + '</row><row r="2">' + c("A2", 1, "Gold in band") + c("B2", 0, "Plain") + "</row></sheetData>" +
+    '<tableParts count="1"><tablePart r:id="rId1"/></tableParts></worksheet>');
+  z.file("xl/worksheets/_rels/sheet2.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Target="../tables/table1.xml"/></Relationships>');
+  z.file("xl/tables/table1.xml", '<table ' + S + ' id="1" name="T1" displayName="Banded" ref="A1:B2"><tableStyleInfo name="TableStyleMedium2" showRowStripes="1"/></table>');
   return z.generateAsync({ type: "nodebuffer" });
 }
 const run = deck().then(function (buf) {
@@ -425,7 +456,40 @@ const run = deck().then(function (buf) {
   });
 });
 
-run.catch(function (e) { check("driver threw: " + (e && e.stack), false); }).then(function () {
+const run2 = run.then(function () {
+  return colorWorkbook().then(function (buf) { return R.inspect(buf, "Colors.xlsx", ENV); }).then(function (s) {
+    const cs = s.report.needs.filter(function (n) { return n.type === "contrast"; }), need = function (id) { return s.report.needs.filter(function (n) { return n.id === id; })[0]; };
+    const has = function (re) { return cs.filter(function (n) { return re.test(n.text); })[0]; };
+    const gold = cs.filter(function (n) { return n.fg === "E8A32C"; })[0];
+    check("(13) gold on white is one item for both cells, a shared string and an inline one; the empty cell is not counted", !!gold && gold.bg === "FFFFFF" && gold.need === 4.5 && gold.cells.length === 2 && /^2 cells on Colors /.test(gold.text), JSON.stringify(cs.map(function (n) { return n.text; })));
+    check("(13) white on a navy fill passes", !cs.some(function (n) { return n.bg === "002F6D"; }));
+    const ban = cs.filter(function (n) { return n.bg === "FFFF00"; })[0];
+    check("(13) 14pt bold white on an indexed yellow fill fails as large text, at 3:1", !!ban && ban.need === 3 && /large text/.test(ban.text), ban && ban.text);
+    check("(13) theme 1 is Text 1 (black, passes) and theme 0 Background 1 (white, fails): Excel counts lt1 first", !has(/Text one/) && !!has(/Background one/) && has(/Background one/).fg === "FFFFFF");
+    check("(13) a tinted accent is measured tinted, and fails", !!has(/Pale accent/));
+    check("(13) words the color of their fill are called hidden; colors that merely fall short are not", /cannot be seen/.test(has(/Background one/).text) && !/cannot be seen/.test(gold.text));
+    check("(13) a run colored inside a cell is named with its cell, for a person", /on Colors \(D2\)/.test((need("cr") || {}).text || ""), JSON.stringify(need("cr")));
+    check("(13) cells in a styled table with no fill of their own are counted, not measured; its navy header still is",
+      /^Contrast on 3 cells in a styled table/.test((need("cu") || {}).text || "") && !cs.some(function (n) { return /on Table /.test(n.text); }), JSON.stringify(need("cu")));
+    check("(13) conditional formatting is named with its sheet", /^Conditional formatting on Colors /.test((need("cf") || {}).text || ""));
+    check("(13) each fix passes its own bar", cs.every(function (n) { return R._ratio(n.fix, n.bg) >= n.need; }));
+    const ans = {}; cs.forEach(function (n) { ans[n.id] = { fix: true }; });
+    return R.finish(s, ans, "nodebuffer").then(function (out) {
+      check("(13) finish recolors every cell it listed", out.done.colors === cs.reduce(function (a, n) { return a + n.cells.length; }, 0) && out.done.colors === 5, JSON.stringify(out.done));
+      return JSZip.loadAsync(out.file).then(function (z) {
+        return Promise.all(["xl/styles.xml", "xl/worksheets/sheet1.xml", "xl/worksheets/sheet2.xml"].map(function (p) { return z.file(p).async("string"); }));
+      }).then(function (x) {
+        check("(13) the old formats stay; new fonts and formats are added, counted, the color before the name", /<cellXfs count="10">/.test(x[0]) && /<fonts count="10">/.test(x[0]) && /<xf fontId="1" fillId="0" applyFont="1"\/>/.test(x[0]) && /<color rgb="FF[0-9A-F]{6}"\/><name val="Calibri"\/>/.test(x[0]), x[0]);
+        check("(13) the gold cells point at one new format; the gold in the table keeps its own", /<c r="A1" s="6"/.test(x[1]) && /<c r="B1" s="6"/.test(x[1]) && /<c r="E2" s="1"/.test(x[1]) && /<c r="B1" s="1"/.test(x[2]), x[1] + x[2]);
+        return R.inspect(out.file, "Colors.xlsx", ENV);
+      });
+    }).then(function (again) {
+      check("(13) the remediated workbook has no contrast item left", !again.report.needs.some(function (n) { return n.type === "contrast"; }), JSON.stringify(again.report.needs.map(function (n) { return n.text; })));
+    });
+  });
+});
+
+run2.catch(function (e) { check("driver threw: " + (e && e.stack), false); }).then(function () {
   let pass = 0;
   results.forEach(function (r) { console.log((r[1] ? "  ok  " : "  FAIL ") + r[0] + (r[1] || r[2] == null ? "" : "  — " + r[2])); if (r[1]) pass++; });
   console.log("\nlibrary_remediate.test.js: " + pass + "/" + results.length + " checks passed");

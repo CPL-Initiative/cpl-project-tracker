@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-29T09:28:20Z",
-  "session": 514,
-  "moniker": "SkyMarionberry",
+  "written_at": "2026-10-29T10:40:00Z",
+  "session": 515,
+  "moniker": "SkyRaspberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_515_handoff.md",
+  "handoff": "docs/session_516_handoff.md",
   "next_step": {
     "title": "Glendale's course units from its descriptions",
     "text": "180 Glendale records fail arithmetic, most on courses the state's file lists without units; the next session reads each such course's units from the catalog's course descriptions, which print them, and rescores."
