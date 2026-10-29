@@ -77,7 +77,16 @@ jobs:
     outputs:
       decision: ${{ steps.gate.outputs.decision }}
     steps:
+      # The gate reads two trees and runs one script, so it checks out only
+      # scripts/ and fetches no other file contents (Sam, 2026-10-29: "our shard
+      # tests always take a long time"). A full checkout is 3.8 GB and took
+      # 2 min 12 s of this job on 10-29; --no-renames below keeps the diff from
+      # fetching contents to pair renames, and lists a rename as its old path
+      # and its new one, so the skip-list only ever sees more paths, never fewer.
       - uses: actions/checkout@v7
+        with:
+          filter: blob:none
+          sparse-checkout: scripts
       # The E gate (Sam, 2026-08-29: "option 2!"): skip the jsdom suite alone
       # when the whole diff is docs-shaped. The decision is a SKIP-LIST, not a
       # run-list — measured 2026-08-30, the suite reads .js/.html/.json/.css/
@@ -95,7 +104,7 @@ jobs:
             decision=run
           else
             git fetch --no-tags --depth=1 origin "$BASE_SHA"
-            files=$(git diff --name-only "$BASE_SHA" HEAD)
+            files=$(git diff --name-only --no-renames "$BASE_SHA" HEAD)
             decision=$(printf '%s\n' "$files" | scripts/js_suite_gate.sh)
           fi
           echo "JS suite decision: $decision"
@@ -113,9 +122,22 @@ jobs:
       # the first shard's.
       fail-fast: false
       matrix:
-        shard: [1, 2, 3, 4]
+        shard: [1, 2, 3, 4, 5, 6]
     steps:
+      # Everything but kb/receipts/ (1.6 GB of the 3.8 GB tree, measured
+      # 2026-10-29), which only two suites read, one file each: they are named
+      # back in below. The full checkout took 2 min 33 s of every shard on 10-29.
+      # A suite that starts reading another receipt fails here on ENOENT, so
+      # name its file on a line of its own.
       - uses: actions/checkout@v7
+        with:
+          filter: blob:none
+          sparse-checkout-cone-mode: false
+          sparse-checkout: |
+            /*
+            !/kb/receipts/*
+            /kb/receipts/program_requirement_records_load_2026-10-04.sql
+            /kb/receipts/search_college_programs_stored_vectors_2026-09-30.sql
       - uses: actions/setup-node@v7
         with:
           node-version: '20'
