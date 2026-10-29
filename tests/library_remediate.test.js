@@ -76,6 +76,20 @@ function wordDoc(withHeading) {
   return z.generateAsync({ type: "nodebuffer" });
 }
 
+// A deck whose one chart carries two series (a stacked bar), its data in the chart part.
+function chartDeck() {
+  const z = new JSZip();
+  z.file("docProps/core.xml", CORE("Credentials"));
+  z.file("ppt/slides/slide1.xml", slide(titleSp("What issuers offer") +
+    '<p:graphicFrame><p:nvGraphicFramePr><p:cNvPr id="5" name="Chart 4"/><p:cNvGraphicFramePr/><p:nvPr/></p:nvGraphicFramePr><p:xfrm/><a:graphic><a:graphicData><c:chart xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" r:id="rId9"/></a:graphicData></a:graphic></p:graphicFrame>'));
+  z.file("ppt/slides/_rels/slide1.xml.rels", slideRels([["rId9", "../charts/chart1.xml"]]));
+  const ser = (name, vals) => '<c:ser><c:tx><c:strRef><c:strCache><c:pt idx="0"><c:v>' + name + '</c:v></c:pt></c:strCache></c:strRef></c:tx>' +
+    '<c:cat><c:strRef><c:strCache><c:pt idx="0"><c:v>Cloud</c:v></c:pt><c:pt idx="1"><c:v>Cybersecurity</c:v></c:pt></c:strCache></c:strRef></c:cat>' +
+    '<c:val><c:numRef><c:numCache><c:pt idx="0"><c:v>' + vals[0] + '</c:v></c:pt><c:pt idx="1"><c:v>' + vals[1] + '</c:v></c:pt></c:numCache></c:numRef></c:val></c:ser>';
+  z.file("ppt/charts/chart1.xml", '<c:chartSpace xmlns:c="http://schemas.openxmlformats.org/drawingml/2006/chart" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><c:chart><c:plotArea><c:barChart>' +
+    ser("Articulated in MAP", [25, 5]) + ser("Not yet in MAP", [349, 233]) + "</c:barChart></c:plotArea></c:chart></c:chartSpace>");
+  return z.generateAsync({ type: "nodebuffer" });
+}
 function stockTitled() {
   const z = new JSZip();
   z.file("docProps/core.xml", CORE("PowerPoint Presentation"));
@@ -151,7 +165,12 @@ const run = deck().then(function (buf) {
 }).then(function (s) {
   check("(5) a document with no headings is told so, with how to fix it", s.report.needs.some(function (n) { return n.id === "h" && /Heading 1/.test(n.text); }));
   check("(5) with no heading the title falls back to the file's name, less its date code", s.report.fixed.indexOf("Document title set: CPL Report") >= 0, JSON.stringify(s.report.fixed));
-  return stockTitled().then(function (buf) { return R.inspect(buf, "Deck.pptx", ENV); }).then(function (s2) {
+  return chartDeck().then(function (buf) { return R.inspect(buf, "Deck.pptx", ENV); }).then(function (s3) {
+    const c = s3.report.needs.filter(function (n) { return n.type === "alt" && n.chart; })[0];
+    check("(5) a chart's draft comes from its own data: kind, subject, the series, rows by total",
+      !!c && c.fromData && c.draft === "Bar chart: What issuers offer, each bar split into Articulated in MAP and Not yet in MAP. Cloud 374 (25 Articulated in MAP, 349 Not yet in MAP); Cybersecurity 238 (5 Articulated in MAP, 233 Not yet in MAP).", c && c.draft);
+    return stockTitled();
+  }).then(function (buf) { return R.inspect(buf, "Deck.pptx", ENV); }).then(function (s2) {
     check("(5) a generator's stock title (PowerPoint Presentation) counts as none and is replaced, saying what it read",
       s2.report.fixed.indexOf("Document title set: Funding (it read PowerPoint Presentation)") >= 0, JSON.stringify(s2.report.fixed));
     check("(5) eleven slides with no title box read as one range", s2.report.needs.some(function (n) { return n.id === "tp" && /^Slides 2 to 12 have no title/.test(n.text); }), JSON.stringify(s2.report.needs.map(function (n) { return n.text; })));

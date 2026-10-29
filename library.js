@@ -70,6 +70,7 @@
   var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
   var SUPABASE_ANON = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh2dXdobmJ1YWhydHB0b2twcWZoIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU1NzI0ODEsImV4cCI6MjA5MTE0ODQ4MX0.p0q-93iTM0GkF2z8_q7Vvl1tsX9SFGMM-W7Wdx7WfmM";
   var TABLE_URL = SUPABASE_URL + "/rest/v1/cpl_library";
+  var ALT_DRAFT_URL = SUPABASE_URL + "/functions/v1/alt-text-draft";
   var SET_PUBLIC_URL = SUPABASE_URL + "/rest/v1/rpc/cpl_library_set_public";
   var PUBLIC_PAGE = "https://cpl-initiative.github.io/cpl-project-tracker/library/";
   var TEAM_KEY = "cpl_team_pass";
@@ -1018,12 +1019,12 @@
   function startRemediate(pk) {
     if (!pk.file || !pk.file.arrayBuffer) { say("Choose the file again; this browser could not read it.", true); render(); return; }
     state.start = null; state.form = null; state.formFor = null;
-    state.rem = { name: pk.name, reading: true, answers: {}, thumbs: {} };
+    state.rem = { name: pk.name, reading: true, answers: {}, thumbs: {}, ai: {} };
     say(""); render();
     var buf;
     pk.file.arrayBuffer().then(function (b) { buf = b; return loadRemediate(); }).then(function (R) {
       return R.inspect(buf, pk.name, remEnv()).then(function (session) {
-        state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, thumbs: {} };
+        state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, thumbs: {}, ai: {}, aiAll: false };
         session.report.needs.forEach(function (n) { if (n.type === "alt" || n.type === "title") state.rem.answers[n.id] = { text: n.draft || "", decorative: false }; });
         render();
         var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus();
@@ -1055,7 +1056,13 @@
           : '<span class="lib-remthumb none" aria-hidden="true">' + esc(n.chart ? "Chart" : n.slide ? "Slide " + n.slide : "Picture") + "</span>";
         return '<li class="lib-remneed">' + th + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.label) + '</label>' +
           '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="400" value="' + esc(a.text || "") + '"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' +
-          '<label class="lib-check"><input type="checkbox" data-remdec="' + esc(n.id) + '"' + (a.decorative ? " checked" : "") + "> Decorative (a screen reader skips it)</label></div></li>";
+          '<label class="lib-check"><input type="checkbox" data-remdec="' + esc(n.id) + '"' + (a.decorative ? " checked" : "") + "> Decorative (a screen reader skips it)</label>" +
+          (n.media && THUMB_EXT[extOf(n.media)]
+            ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remai="' + esc(n.id) + '"' + (rm.ai[n.id] === "busy" ? " disabled" : "") + ">" +
+              (rm.ai[n.id] === "busy" ? "Reading the picture&hellip;" : rm.ai[n.id] === "done" ? "Draft again from the picture" : "Draft from the picture") + "</button></div>"
+            : "") +
+          (n.fromData ? '<p class="lib-hint">Drafted from the chart\'s own numbers.</p>' : rm.ai[n.id] === "done" ? '<p class="lib-hint">Drafted by Claude from the picture. Read it before you keep it.</p>' : "") +
+          "</div></li>";
       }
       if (n.type === "title") {
         return '<li class="lib-remneed"><div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + '; type one a screen reader can announce</label>' +
@@ -1071,12 +1078,66 @@
       '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
       (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
       (needs.some(function (n) { return n.type === "alt" && n.draft; }) ? '<p class="lib-hint">A draft comes from the slide\'s or section\'s own words. Read each one before you keep it.</p>' : "") +
+      (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Draft every picture") + "</button></div>" : "") +
+      (picNeeds().length ? '<p class="lib-hint">Draft from the picture sends that one picture to Claude to read; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>' : "") +
       "</div></div>" +
       '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Remediate and download</button>" +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
       '<p class="lib-hint">Contrast is not checked here: check it with PowerPoint\'s or Word\'s Accessibility Checker. Save the PDF from PowerPoint or Word with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
       "</section>";
   }
+  // Draft from the picture (Sam, 2026-10-29: "We do a lot of MAP screenshots and hoping
+  // you can decipher them and at least take a shot at alt text"): the one picture, shrunk
+  // to at most 1568 pixels on its long side, goes to alt-text-draft, which asks Claude.
+  function picNeeds() {
+    var rm = state.rem;
+    return rm && rm.report ? rm.report.needs.filter(function (n) { return n.type === "alt" && n.media && THUMB_EXT[extOf(n.media)]; }) : [];
+  }
+  function shrink(blob, type) {
+    return new Promise(function (ok, no) {
+      var url = URL.createObjectURL(blob), img = new Image();
+      img.onload = function () {
+        var max = 1568, w = img.naturalWidth, h = img.naturalHeight, k = Math.min(1, max / Math.max(w, h));
+        var cv = document.createElement("canvas"); cv.width = Math.round(w * k); cv.height = Math.round(h * k);
+        cv.getContext("2d").drawImage(img, 0, 0, cv.width, cv.height);
+        URL.revokeObjectURL(url);
+        var out = type === "image/jpeg" ? "image/jpeg" : "image/png";
+        var data = cv.toDataURL(out, 0.9);
+        ok({ type: out, b64: data.slice(data.indexOf(",") + 1) });
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); no(new Error("This browser could not open the picture.")); };
+      img.src = url;
+    });
+  }
+  function draftFromPicture(id) {
+    var rm = state.rem, n = rm && rm.report.needs.filter(function (x) { return x.id === id; })[0];
+    if (!n || !n.media) return Promise.resolve();
+    var mt = THUMB_EXT[extOf(n.media)], f = rm.session.doc.zip.file(n.media);
+    if (!f || !mt) return Promise.resolve();
+    rm.ai[id] = "busy"; render();
+    return f.async("uint8array").then(function (u8) { return shrink(new Blob([u8], { type: mt }), mt); }).then(function (img) {
+      var h = { "Content-Type": "application/json", apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON };
+      var tp = teamPhrase(); if (tp) h["x-team-pass"] = tp;
+      var tok = reviewerToken(); if (tok) h.Authorization = "Bearer " + tok;
+      return window.fetch(ALT_DRAFT_URL, { method: "POST", headers: h,
+        body: JSON.stringify({ image: img.b64, media_type: img.type, where: n.label, context: n.words || "" }) });
+    }).then(function (res) {
+      return res.json().catch(function () { return {}; }).then(function (j) {
+        if (!res.ok) throw new Error(j.error || "The draft did not come back (" + res.status + ").");
+        if (state.rem !== rm) return;
+        rm.answers[id] = j.decorative ? { text: "", decorative: true } : { text: j.alt || "", decorative: false };
+        rm.ai[id] = "done"; render();
+      });
+    }).catch(function (e) { if (state.rem === rm) { delete rm.ai[id]; say(e.message, true); render(); } });
+  }
+  function draftEveryPicture() {
+    var rm = state.rem;
+    if (!rm || rm.aiAll) return;
+    rm.aiAll = true; render();
+    picNeeds().reduce(function (p, n) { return p.then(function () { return draftFromPicture(n.id); }); }, Promise.resolve())
+      .then(function () { if (state.rem === rm) { rm.aiAll = false; say("Drafted. Read each one before you keep it."); render(); } });
+  }
+
   // Writes the answers into a fresh read of the original, so pressing it twice never
   // writes a title twice, and hands the file back under the original's name.
   function remGo() {
@@ -1732,6 +1793,8 @@
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
       else if (b.id === "lib-go") startPanel();
       else if (b.getAttribute("data-remgo")) remGo();
+      else if ((v = b.getAttribute("data-remai"))) draftFromPicture(v);
+      else if (b.getAttribute("data-remaiall")) draftEveryPicture();
       else if (b.getAttribute("data-remclose")) { state.rem = null; render(); var g0 = document.getElementById("lib-go"); if (g0) g0.focus(); }
       else if (b.getAttribute("data-remfile")) {
         var rn0 = state.rem ? state.rem.name : "";

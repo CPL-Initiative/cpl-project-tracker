@@ -3,10 +3,10 @@
  "stats": {
   "supabase_tables": 102,
   "rpcs": 43,
-  "edge_functions": 9,
+  "edge_functions": 10,
   "file_datasets": 725,
   "external_services": 191,
-  "consumers": 479,
+  "consumers": 480,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -18,6 +18,27 @@
     {
      "by": "workflow:cpl-chat-deploy.yml",
      "how": "deploy"
+    }
+   ],
+   "main_committers": []
+  },
+  "edgefn:alt-text-draft": {
+   "consumers": [
+    {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 73,
+     "tabs": [
+      "library"
+     ]
+    }
+   ],
+   "producers": [
+    {
+     "by": "file:chatbox/supabase/functions/alt-text-draft/index.ts",
+     "how": "source"
     }
    ],
    "main_committers": []
@@ -369,6 +390,13 @@
   },
   "external:api.anthropic.com": {
    "consumers": [
+    {
+     "id": "edgefn:alt-text-draft",
+     "kind": "edgefn",
+     "direction": "read",
+     "how": "url",
+     "line": 84
+    },
     {
      "id": "edgefn:cpl-chat",
      "kind": "edgefn",
@@ -932,7 +960,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 74,
+     "line": 75,
      "tabs": [
       "library"
      ]
@@ -2672,7 +2700,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 80,
+     "line": 81,
      "tabs": [
       "library"
      ]
@@ -7841,7 +7869,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1012,
+     "line": 1013,
      "tabs": [
       "library"
      ]
@@ -16739,7 +16767,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1013,
+     "line": 1014,
      "tabs": [
       "library"
      ]
@@ -18352,7 +18380,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1830,
+     "line": 1893,
      "tabs": [
       "library"
      ]
@@ -21659,7 +21687,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 73,
+     "line": 74,
      "tabs": [
       "library"
      ]
@@ -23000,7 +23028,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1421,
+     "line": 1482,
      "tabs": [
       "library"
      ]
@@ -24299,7 +24327,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 88,
+     "line": 89,
      "tabs": [
       "library"
      ]

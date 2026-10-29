@@ -156,6 +156,48 @@
     ext.appendChild(dec); lst.appendChild(ext);
   }
 
+  // A chart's alt text drafted from its own data: its kind, what it shows, and its
+  // values from largest to smallest (the first six), read from the chart part.
+  var CHART_KIND = { barChart: "Bar chart", bar3DChart: "Bar chart", lineChart: "Line chart", line3DChart: "Line chart", pieChart: "Pie chart",
+    pie3DChart: "Pie chart", doughnutChart: "Doughnut chart", areaChart: "Area chart", scatterChart: "Scatter chart", radarChart: "Radar chart" };
+  function chartDraft(doc, path, words) {
+    return doc.read(path).then(function (d) {
+      if (!d) return "";
+      var kind = "", plot = first(d, NS.c, "plotArea");
+      if (!plot) return "";
+      for (var c = plot.firstChild; c; c = c.nextSibling) if (c.nodeType === 1 && CHART_KIND[c.localName]) { kind = CHART_KIND[c.localName]; break; }
+      var titleEl = first(d, NS.c, "title"), title = titleEl ? textOf(titleEl, NS.a) : "";
+      var sers = els(plot, NS.c, "ser");
+      if (!sers.length) return "";
+      var pts = function (el) {
+        if (!el) return [];
+        return els(el, NS.c, "pt").map(function (pt) { var v = first(pt, NS.c, "v"); return { i: +pt.getAttribute("idx"), v: v ? v.textContent : "" }; });
+      };
+      // Categories from the first series; each series adds its values (a stacked or
+      // clustered chart), and the rows sort by their total.
+      var byIdx = {}, names = [];
+      pts(child(sers[0], NS.c, "cat")).forEach(function (x) { byIdx[x.i] = { name: x.v, vals: [] }; });
+      sers.forEach(function (ser, si) {
+        var tx = child(ser, NS.c, "tx"), nm = tx ? (first(tx, NS.c, "v") || { textContent: "" }).textContent || textOf(tx, NS.a) : "";
+        names.push(nm || "Series " + (si + 1));
+        pts(child(ser, NS.c, "val")).forEach(function (x) { if (byIdx[x.i] && x.v !== "" && !isNaN(+x.v)) byIdx[x.i].vals[si] = +x.v; });
+      });
+      var rows = Object.keys(byIdx).map(function (k) { return byIdx[k]; }).filter(function (r) { return r.name && r.vals.length; });
+      if (!rows.length) return "";
+      rows.forEach(function (r) { r.total = r.vals.reduce(function (a, b) { return a + (b || 0); }, 0); });
+      rows.sort(function (a, b) { return b.total - a.total; });
+      var fmt = function (n) { return Math.abs(n) >= 1000 ? n.toLocaleString("en-US") : String(Math.round(n * 100) / 100); };
+      var multi = sers.length > 1;
+      var cap = multi ? 4 : 6;
+      var shown = rows.slice(0, cap).map(function (r) {
+        return r.name + " " + fmt(r.total) + (multi ? " (" + r.vals.map(function (v, si) { return fmt(v || 0) + " " + names[si]; }).join(", ") + ")" : "");
+      });
+      var about = title || words || "";
+      return clip((kind || "Chart") + (about ? ": " + about : "") + (multi ? ", each bar split into " + names.join(" and ") : "") + ". " +
+        shown.join("; ") + (rows.length > cap ? "; and " + (rows.length - cap) + " more" : "") + ".", 600);
+    });
+  }
+
   // ── a deck ──────────────────────────────────────────────────────────────────
   function inspectPptx(doc, name, report) {
     var paths = Object.keys(doc.zip.files).filter(function (p) { return /^ppt\/slides\/slide\d+\.xml$/.test(p); })
@@ -221,8 +263,10 @@
             var blip = first(shape, NS.a, "blip"), target = blip && s.rels[blip.getAttributeNS(NS.r, "embed")];
             if (target && repeated[target]) { markDecorative(cNvPr); markedRepeat++; s.dirty = true; return; }
             k++;
+            var chartEl = isChart ? first(shape, NS.c, "chart") : null;
+            var chartPart = chartEl ? s.rels[chartEl.getAttributeNS(NS.r, "id")] : null;
             report.needs.push({ type: "alt", id: "a" + s.n + "-" + k, slide: s.n, path: s.path, shapeId: cNvPr.getAttribute("id"),
-              media: target || null, chart: isChart,
+              media: target || null, chart: isChart, chartPart: chartPart || null, words: s.words || "",
               label: "Slide " + s.n + ", " + (isChart ? "chart" : "picture") + (cNvPr.getAttribute("name") ? " (" + cNvPr.getAttribute("name") + ")" : ""),
               draft: s.words ? clip((isChart ? "Chart: " : "") + s.words, 150) : "" });
           });
@@ -237,7 +281,7 @@
       if (markedRepeat) report.fixed.push("A picture repeated on most slides (a logo) marked decorative, " + markedRepeat + " times");
       report.slides = slides.map(function (s) { return { n: s.n, title: s.title }; });
       var t1 = slides[0] && slides[0].title;
-      return fixTitle(doc, t1 || titleFromName(name), report);
+      return draftCharts(doc, report).then(function () { return fixTitle(doc, t1 || titleFromName(name), report); });
     });
   }
 
@@ -294,16 +338,23 @@
         if (isDecorative(pr) || (pr.getAttribute("descr") || "").trim()) return;
         var drawing = pr.parentNode, blip = first(drawing, NS.a, "blip");
         var target = blip ? rels[blip.getAttributeNS(NS.r, "embed")] : null;
-        var isChart = !!first(drawing, NS.c, "chart");
+        var chartEl = first(drawing, NS.c, "chart"), isChart = !!chartEl;
         var p = pr; while (p && !(p.namespaceURI === NS.w && p.localName === "p")) p = p.parentNode;
         var near = p ? nearest[paras.indexOf(p)] : "";
         k++;
         report.needs.push({ type: "alt", id: "a" + k, path: path, shapeId: pr.getAttribute("id"), media: target, chart: isChart,
+          chartPart: chartEl ? rels[chartEl.getAttributeNS(NS.r, "id")] || null : null, words: near || "",
           label: (isChart ? "Chart" : "Picture") + " " + k + (near ? ", under " + clip(near, 60) : ""),
           draft: near ? clip((isChart ? "Chart: " : "") + near, 150) : "" });
       });
-      return fixTitle(doc, firstHeading || titleFromName(name), report);
+      return draftCharts(doc, report).then(function () { return fixTitle(doc, firstHeading || titleFromName(name), report); });
     });
+  }
+
+  function draftCharts(doc, report) {
+    return Promise.all(report.needs.filter(function (n) { return n.type === "alt" && n.chartPart; }).map(function (n) {
+      return chartDraft(doc, n.chartPart, n.words).then(function (t) { if (t) { n.draft = t; n.fromData = true; } });
+    }));
   }
 
   // Reads the file, fixes what needs no judgment, and returns the report with a session

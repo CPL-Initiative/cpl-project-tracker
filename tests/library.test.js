@@ -784,9 +784,11 @@ function remDeck() {
 block("(16)", function () {
   const writes = [];
   const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (/functions\/v1\/alt-text-draft/.test(url)) { aiCalls.push({ headers: init.headers, body: JSON.parse(init.body) }); return response(200, { alt: "Screenshot of the MAP CPL Dashboard's CPL Opportunities view", decorative: false }); }
     if (init && init.method && init.method !== "GET") { writes.push({ url: url, body: JSON.parse(init.body || "{}") }); return response(201, [{}]); }
     return response(200, ROWS);
   } });
+  const aiCalls = [];
   const doc = m.w.document;
   const drop = function (file) {
     const ev = new m.w.Event("drop", { bubbles: true, cancelable: true });
@@ -831,8 +833,24 @@ block("(16)", function () {
     const rem = doc.querySelector(".lib-rem");
     check("(16) Remediate reads the deck here and reports Fixed for you and Needs you", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Needs you \(\d+\)/.test(rem.textContent) && writes.length === 0, rem && rem.textContent.slice(0, 300));
     check("(16) the title it set is listed", /Document title set: Where the funding goes/.test(rem.textContent));
+    const alt0 = doc.querySelector("[data-remtext]");
+    check("(16) the picture's alt text field holds a draft from the slide's title, and offers Decorative", !!alt0 && alt0.value === "Where the funding goes" && !!doc.querySelector("[data-remdec]"));
+    // Draft from the picture: the browser's image and canvas, stood in for jsdom.
+    m.w.URL.createObjectURL = function () { return "blob:pic"; };
+    m.w.URL.revokeObjectURL = function () {};
+    m.w.Image = function () { const self = this; Object.defineProperty(this, "src", { set: function () { self.naturalWidth = 3136; self.naturalHeight = 1000; setTimeout(function () { self.onload(); }, 0); } }); };
+    m.w.HTMLCanvasElement.prototype.getContext = function () { return { drawImage: function () {} }; };
+    m.w.HTMLCanvasElement.prototype.toDataURL = function () { return "data:image/png;base64,QUJD"; };
+    check("(16) a picture offers Draft from the picture, and says it sends only that picture", !!doc.querySelector("[data-remai]") && /sends that one picture to Claude/.test(rem.textContent));
+    click(m.w, doc.querySelector("[data-remai]"));
+    const drafted = function (n) { return aiCalls.length && doc.querySelector("[data-remtext]").value !== "Where the funding goes" || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return drafted(n - 1); }); };
+    return drafted(200);
+  }).then(function () {
+    const c = aiCalls[0] || { headers: {}, body: {} };
+    check("(16) the picture goes to alt-text-draft shrunk to 1568 pixels, with the team phrase and the slide's words", c.body.image === "QUJD" && c.body.media_type === "image/png" && c.headers["x-team-pass"] === "p" && c.body.context === "Where the funding goes", JSON.stringify(c.body).slice(0, 200));
     const alt = doc.querySelector("[data-remtext]");
-    check("(16) the picture's alt text field holds a draft from the slide's title, and offers Decorative", !!alt && alt.value === "Where the funding goes" && !!doc.querySelector("[data-remdec]"));
+    check("(16) its draft fills the field and says Claude drafted it", alt.value === "Screenshot of the MAP CPL Dashboard's CPL Opportunities view" && /Drafted by Claude from the picture/.test(doc.querySelector(".lib-rem").textContent));
+    const rem = doc.querySelector(".lib-rem");
     alt.value = "Bar chart: units by college"; alt.dispatchEvent(new m.w.Event("input", { bubbles: true }));
     let downloaded = null;
     m.w.URL.createObjectURL = function () { return "blob:remediated"; };
