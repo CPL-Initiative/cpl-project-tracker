@@ -211,6 +211,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | Dataset | Read by | Written by |
 |---|---|---|
 | `FN` | none found | produced by: `cpl-chat-deploy.yml` |
+| `alt-text-draft` | tabs: `library` | produced by: `chatbox/supabase/functions/alt-text-draft/index.ts` |
 | `cer-classify` | none found | produced by: `chatbox/supabase/functions/cer-classify/index.ts` |
 | `cpl-chat` | tabs: `college-briefing`, `gr-priorities`, `memory`, `sierra-training` · modules: `prototype/ccr_universe.js`, `prototype/check_skyview_sweep.js` · pages: `prototype/skyview.html`, `sierra/index.html` | produced by: `chatbox/supabase/functions/cpl-chat/index.ts` |
 | `cpl-chat-preview` | none found | produced by: `cpl-chat-preview-ab.yml` |
@@ -442,6 +443,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/ui_pass.py` | scripts: `scripts/library_page.py` · committed by: `daily-dashboard.yml` |
 | `index.json` | pages: `tools/first_light_gallery/gallery.html` | — |
 | `jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_jev_next_steps.py` | — |
+| `jszip.min.js` | tabs: `library` | — |
 | `kb-portal/app.js` | pages: `kb-portal/index.html` | — |
 | `kb-portal/composer_util.js` | pages: `kb-portal/index.html` | — |
 | `kb/README.md` | scripts: `kb/_build_docs_index.py` | — |
@@ -762,6 +764,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `library.js` | pages: `CPL_Dashboard.html` | — |
 | `library/cpl-opportunity/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `library/public_library.js` | pages: `library/index.html` | — |
+| `library_remediate.js` | tabs: `library` | — |
 | `live_metrics.json` | tabs: `college-briefing`, `cpl-pathways` · pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
 | `live_metrics_new.json` | workflows: `daily-dashboard.yml` | — |
 | `map/probe_users_schema.py` | workflows: `map-users-schema-probe.yml` | — |
@@ -1001,7 +1004,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `<host>` | scripts: `kb/_program_requirements_college.py` |
 | `alameda.edu` | tabs: `map-queue`, `map-users` |
 | `api-prod.elumenapp.com` | scripts: `kb/_course_outcomes_read.py`, `kb/_program_requirements_college.py` |
-| `api.anthropic.com` | `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `api.anthropic.com` | `edgefn:alt-text-draft`, `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `api.careeronestop.org` | scripts: `kb/_sync_cos_certifications.py`, `kb/_sync_moc_crosswalk.py` |
 | `api.gdeltproject.org` | `edgefn:cpl-news-harvest` |
 | `api.github.com/repos/` | modules: `kb-portal/config.js` · `edgefn:workplan-rebuild` |
@@ -1054,6 +1057,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `github.com/CPL-Initiative/cpl-project-tracker)` | scripts: `kb/_csr_quarterly_probe.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
+| `github.com/nodeca/pako` | tabs: `library` |
 | `hartnell.catalog.prod.coursedog.com` | scripts: `kb/_course_outline_census.py` |
 | `huggingface.co` | scripts: `prototype/funding_video/cues.py`, `prototype/funding_video/narrate.py`, `prototype/noncredit_video/cues.py` |
 | `icangotocollege.com` | tabs: `cpl-pathways` |
@@ -1083,12 +1087,15 @@ collapse to one `<date>` family so writer and reader edges join.
 | `programmap.sdmiramar.edu` | scripts: `kb/_program_requirements_pilot.py` |
 | `programmapper.sdmiramar.edu` | scripts: `kb/_program_requirements_pilot.py` |
 | `public.api.bsky.app` | `edgefn:cpl-news-harvest` |
+| `purl.org` | tabs: `library` |
+| `raw.github.com` | tabs: `library` |
 | `raw.githubusercontent.com` | modules: `kb-portal/config.js` |
 | `raw.githubusercontent.com/CPL-Initiative/cpl-project-tracker` | `edgefn:cpl-chat` |
 | `raw.githubusercontent.com/{CPL_KB_REPO}/{CPL_KB_BRANCH}` | scripts: `excel_to_dashboard.py` |
 | `rccd.curriqunet.com` | scripts: `kb/_course_outline_census.py`, `kb/_course_outline_index.py`, `kb/_program_requirements_college.py` |
 | `scc.losrios.edu` | tabs: `map-queue`, `map-users` |
-| `schemas.openxmlformats.org` | tabs: `college-briefing`, `cpl-pathways` · scripts: `kb/_build_55050_redline_docx.py` |
+| `schemas.microsoft.com` | tabs: `library` |
+| `schemas.openxmlformats.org` | tabs: `college-briefing`, `cpl-pathways`, `library` · scripts: `kb/_build_55050_redline_docx.py` |
 | `sdccd.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
 | `sdcce.edu` | tabs: `map-queue`, `map-users` |
 | `sdmiramar.edu` | scripts: `kb/_program_sequence_ppm.py` |
@@ -1098,7 +1105,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `solano.edu` | tabs: `map-queue`, `map-users` |
 | `solano.elumenapp.com` | scripts: `kb/_course_outline_census.py` |
 | `ss.marin.edu` | tabs: `map-queue`, `map-users` |
+| `stuartk.com` | tabs: `library` |
 | `studentrcc.sharepoint.com` | tabs: `library` · pages: `CPL_Dashboard.html` |
+| `stuk.github.io` | tabs: `library` |
 | `westhillscollege.com` | tabs: `map-queue`, `map-users` |
 | `westvalley.elumenapp.com` | scripts: `kb/_course_outline_census.py` |
 | `www.apprenticeship4you.com` | modules: `unified_courses_details.js` |
@@ -1206,5 +1215,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 43 RPCs · 9 edge functions · 723 file
-datasets · 185 external services · 477 consumers · 58 workflows · 38 tabs.
+Coverage: 102 Supabase tables · 43 RPCs · 10 edge functions · 725 file
+datasets · 191 external services · 480 consumers · 58 workflows · 38 tabs.
