@@ -14,7 +14,10 @@
 //   - a picture that already has alt text, or is marked decorative, is left alone;
 //   - the answers land in the file that comes back, and the file still opens as a zip
 //     with the same parts;
-//   - a file that is neither .pptx nor .docx is refused in words.
+//   - a file that is neither .pptx nor .docx is refused in words;
+//   - a deck's contrast is measured against the fill the words actually sit on (a shape
+//     drawn before them, the layout's own shapes, then the background), never the slide's
+//     background alone, which read our decks' white-on-navy labels as white on white.
 //
 // Run from repo root: `npm test` (or `node tests/library_remediate.test.js`).
 const JSZip = require("../jszip.min.js");
@@ -62,6 +65,49 @@ function deck() {
 }
 
 const W = 'xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"';
+// A deck with a theme, a master and a layout, for contrast: the layout draws a navy
+// rectangle under its title (a text box over a colored shape is how our generators build
+// a slide), the master paints white.
+function contrastDeck() {
+  const z = new JSZip();
+  const rel = (rels) => '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">' +
+    rels.map((r) => '<Relationship Id="' + r[0] + '" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/' + r[1] + '" Target="' + r[2] + '"/>').join("") + "</Relationships>";
+  const box = (id, x, y, cx, cy, fill, runs) => '<p:sp><p:nvSpPr><p:cNvPr id="' + id + '" name="Shape ' + id + '"/><p:cNvSpPr/><p:nvPr/></p:nvSpPr><p:spPr><a:xfrm><a:off x="' + x + '" y="' + y + '"/><a:ext cx="' + cx + '" cy="' + cy + '"/></a:xfrm>' +
+    (fill ? "<a:solidFill>" + fill + "</a:solidFill>" : "<a:noFill/>") + "</p:spPr>" +
+    (runs ? "<p:txBody><a:bodyPr/><a:p>" + runs + "</a:p></p:txBody>" : "") + "</p:sp>";
+  const run = (t, clr, sz, b) => '<a:r><a:rPr' + (sz ? ' sz="' + sz + '"' : "") + (b ? ' b="1"' : "") + ">" + (clr ? "<a:solidFill>" + clr + "</a:solidFill>" : "") + "</a:rPr><a:t>" + t + "</a:t></a:r>";
+  z.file("docProps/core.xml", CORE("Contrast"));
+  z.file("ppt/theme/theme1.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><a:theme ' + P + '><a:themeElements><a:clrScheme name="CO"><a:dk1><a:sysClr val="windowText" lastClr="000000"/></a:dk1><a:lt1><a:sysClr val="window" lastClr="FFFFFF"/></a:lt1>' +
+    '<a:dk2><a:srgbClr val="002F6D"/></a:dk2><a:lt2><a:srgbClr val="E8EFF8"/></a:lt2><a:accent1><a:srgbClr val="E8A32C"/></a:accent1></a:clrScheme><a:fmtScheme><a:fillStyleLst><a:solidFill><a:schemeClr val="phClr"/></a:solidFill></a:fillStyleLst>' +
+    '<a:bgFillStyleLst><a:solidFill><a:schemeClr val="phClr"/></a:solidFill><a:gradFill/></a:bgFillStyleLst></a:fmtScheme></a:themeElements></a:theme>');
+  z.file("ppt/slideMasters/slideMaster1.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:sldMaster ' + P + '><p:cSld><p:bg><p:bgRef idx="1001"><a:schemeClr val="bg1"/></p:bgRef></p:bg><p:spTree/></p:cSld>' +
+    '<p:clrMap bg1="lt1" tx1="dk1" bg2="lt2" tx2="dk2" accent1="accent1" hlink="dk2" folHlink="dk2"/><p:txStyles><p:titleStyle><a:lvl1pPr><a:defRPr sz="4000"><a:solidFill><a:schemeClr val="bg1"/></a:solidFill></a:defRPr></a:lvl1pPr></p:titleStyle><p:bodyStyle/><p:otherStyle/></p:txStyles></p:sldMaster>');
+  z.file("ppt/slideMasters/_rels/slideMaster1.xml.rels", rel([["rId1", "theme", "../theme/theme1.xml"]]));
+  // The layout: a navy band across the top, and the title placeholder over it.
+  z.file("ppt/slideLayouts/slideLayout1.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:sldLayout ' + P + '><p:cSld><p:spTree>' +
+    box(2, 0, 0, 12192000, 1500000, '<a:schemeClr val="tx2"/>') +
+    '<p:sp><p:nvSpPr><p:cNvPr id="3" name="Title"/><p:cNvSpPr/><p:nvPr><p:ph type="title"/></p:nvPr></p:nvSpPr><p:spPr><a:xfrm><a:off x="400000" y="300000"/><a:ext cx="11000000" cy="900000"/></a:xfrm></p:spPr></p:sp>' +
+    "</p:spTree></p:cSld></p:sldLayout>");
+  z.file("ppt/slideLayouts/_rels/slideLayout1.xml.rels", rel([["rId1", "slideMaster", "../slideMasters/slideMaster1.xml"]]));
+  // Slide 1: the title (white, from the master) over the layout's navy band: it passes.
+  // A white label on a navy box of its own drawing: passes. Gold 12pt text on the white
+  // ground: fails at 4.5:1. Gold 24pt text: large, fails at 3:1. The same gold, 14pt bold,
+  // is large too, so one item covers both large runs. A 75%-darkened gold (lumMod) passes.
+  z.file("ppt/slides/slide1.xml", slide(
+    '<p:sp><p:nvSpPr><p:cNvPr id="2" name="Title 1"/><p:cNvSpPr/><p:nvPr><p:ph type="title"/></p:nvPr></p:nvSpPr><p:spPr/><p:txBody><a:bodyPr/><a:p>' + run("Funding by college") + "</a:p></p:txBody></p:sp>" +
+    box(4, 600000, 2000000, 3000000, 1000000, '<a:schemeClr val="tx2"/>') +
+    box(5, 700000, 2100000, 2800000, 800000, null, run("PRIORITY 1", '<a:schemeClr val="bg1"/>', 1400)) +
+    box(6, 600000, 3500000, 6000000, 500000, null, run("NEW IN 2026", '<a:schemeClr val="accent1"/>', 1200)) +
+    box(7, 600000, 4200000, 6000000, 600000, null, run("$7M", '<a:schemeClr val="accent1"/>', 2400) + run("ongoing", '<a:schemeClr val="accent1"/>', 1400, true)) +
+    box(8, 600000, 5000000, 6000000, 500000, null, run("Darker gold", '<a:schemeClr val="accent1"><a:lumMod val="50000"/></a:schemeClr>', 1200))));
+  z.file("ppt/slides/_rels/slide1.xml.rels", rel([["rId1", "slideLayout", "../slideLayouts/slideLayout1.xml"]]));
+  // Slide 2: a gradient background (the theme's second background style): unmeasured.
+  z.file("ppt/slides/slide2.xml", '<?xml version="1.0" encoding="UTF-8" standalone="yes"?><p:sld ' + P + '><p:cSld><p:bg><p:bgRef idx="1002"><a:schemeClr val="bg2"/></p:bgRef></p:bg><p:spTree>' +
+    box(3, 600000, 3000000, 6000000, 600000, null, run("On a gradient", '<a:srgbClr val="CCCCCC"/>', 1200)) + "</p:spTree></p:cSld></p:sld>");
+  z.file("ppt/slides/_rels/slide2.xml.rels", rel([["rId1", "slideLayout", "../slideLayouts/slideLayout1.xml"]]));
+  return z.generateAsync({ type: "nodebuffer" });
+}
+
 function wordDoc(withHeading) {
   const z = new JSZip();
   z.file("docProps/core.xml", CORE(null));
@@ -180,6 +226,30 @@ const run = deck().then(function (buf) {
   });
 }).then(function () {
   check("(7) the remediated file keeps the date code and says so", R.outName("20261030_CPL_Summit_Funding.pptx") === "20261030_CPL_Summit_Funding_Remediated.pptx");
+  check("(8) the contrast ratio is WCAG's: black on white is 21:1, gold #E8A32C on white 2.16:1",
+    Math.round(R._ratio("000000", "FFFFFF")) === 21 && Math.abs(R._ratio("E8A32C", "FFFFFF") - 2.16) < 0.01, R._ratio("E8A32C", "FFFFFF"));
+  return contrastDeck().then(function (buf) { return R.inspect(buf, "Contrast.pptx", ENV).then(function (s) { return [buf, s]; }); }).then(function (got) {
+    const s = got[1], cs = s.report.needs.filter(function (n) { return n.type === "contrast"; });
+    check("(8) a title over the layout's navy band is not read as white on white", !cs.some(function (n) { return n.fg === "FFFFFF"; }), JSON.stringify(cs.map(function (n) { return n.text; })));
+    check("(8) a text box over a colored shape drawn before it reads that shape's fill", !cs.some(function (n) { return /PRIORITY/.test(n.text); }));
+    check("(8) small gold text on white is one item, at 4.5:1", cs.filter(function (n) { return n.need === 4.5; }).length === 1 && cs.some(function (n) { return n.need === 4.5 && n.fg === "E8A32C" && n.bg === "FFFFFF" && /NEW IN 2026/.test(n.text); }), JSON.stringify(cs));
+    const big = cs.filter(function (n) { return n.need === 3; })[0];
+    check("(8) 24pt and 14pt bold count as large: one item at 3:1 holding both runs", !!big && big.runs.length === 2 && /2 runs of text/.test(big.text) && /large text needs 3:1/.test(big.text), big && big.text);
+    check("(8) a color darkened with lumMod is measured darkened, and passes", !cs.some(function (n) { return /Darker gold/.test(n.text); }));
+    check("(8) each fix keeps the hue and passes its own bar", cs.every(function (n) { return R._ratio(n.fix, n.bg) >= n.need && n.fixRatio >= n.need; }), JSON.stringify(cs.map(function (n) { return [n.fix, n.fixRatio]; })));
+    check("(8) text on a gradient background is named for a person, not measured", s.report.needs.some(function (n) { return n.id === "cu" && /slide 2: some text sits on a gradient/.test(n.text); }) && !cs.some(function (n) { return n.slide === 2; }));
+    const ans = {}; cs.forEach(function (n) { ans[n.id] = { fix: true }; });
+    return R.finish(s, ans, "nodebuffer").then(function (out) {
+      check("(8) finish writes the fix onto each run it covers", out.done.colors === 3, JSON.stringify(out.done));
+      return R.inspect(out.file, "Contrast.pptx", ENV);
+    }).then(function (again) {
+      check("(8) the remediated deck has no contrast item left", !again.report.needs.some(function (n) { return n.type === "contrast"; }));
+      // Left unticked, nothing changes.
+      return R.inspect(got[0], "Contrast.pptx", ENV).then(function (s2) { return R.finish(s2, {}, "nodebuffer"); }).then(function (o2) {
+        check("(8) an unticked fix leaves the colors as they were", o2.done.colors === 0);
+      });
+    });
+  });
 });
 
 run.catch(function (e) { check("driver threw: " + (e && e.stack), false); }).then(function () {

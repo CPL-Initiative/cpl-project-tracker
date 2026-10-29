@@ -833,6 +833,7 @@ block("(16)", function () {
     const rem = doc.querySelector(".lib-rem");
     check("(16) Remediate reads the deck here and reports Fixed for you and Needs you", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Needs you \(\d+\)/.test(rem.textContent) && writes.length === 0, rem && rem.textContent.slice(0, 300));
     check("(16) the title it set is listed", /Document title set: Where the funding goes/.test(rem.textContent));
+    check("(16) a deck's contrast is checked here, so the page no longer sends it to the Accessibility Checker", !/contrast is not checked here/i.test(rem.textContent));
     const alt0 = doc.querySelector("[data-remtext]");
     check("(16) the picture's alt text field holds a draft from the slide's title, and offers Decorative", !!alt0 && alt0.value === "Where the funding goes" && !!doc.querySelector("[data-remdec]"));
     // Draft from the picture: the browser's image and canvas, stood in for jsdom.

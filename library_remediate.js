@@ -16,8 +16,10 @@
 //                  and a picture repeated on most slides (a logo) marked decorative.
 // Needs you:       alt text for each picture and chart (a draft from the slide's or
 //                  section's own words, to read before keeping), a title for each slide
-//                  whose title placeholder is empty, a document with no headings, and
-//                  reading order on a crowded slide.
+//                  whose title placeholder is empty, a document with no headings,
+//                  reading order on a crowded slide, and a deck's text that falls below
+//                  AA contrast against the fill behind it (the nearest passing color of
+//                  the same hue offered as the fix).
 //
 // Works in Node too (tests/library_remediate.test.js): pass JSZip, DOMParser and
 // XMLSerializer in `env`; in the browser they default to the window's.
@@ -198,6 +200,303 @@
     });
   }
 
+  // ── contrast ────────────────────────────────────────────────────────────────
+  // WCAG 2's contrast ratio: 4.5:1 for text, 3:1 for large text (18pt, or 14pt bold).
+  function rgbOf(hex) { var n = parseInt(hex, 16); return [(n >> 16) & 255, (n >> 8) & 255, n & 255]; }
+  function hexOf(rgb) { return rgb.map(function (v) { v = Math.max(0, Math.min(255, Math.round(v))); return (v < 16 ? "0" : "") + v.toString(16); }).join("").toUpperCase(); }
+  function luminance(hex) {
+    var c = rgbOf(hex).map(function (v) { v /= 255; return v <= 0.04045 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4); });
+    return 0.2126 * c[0] + 0.7152 * c[1] + 0.0722 * c[2];
+  }
+  function ratio(a, b) { var x = luminance(a), y = luminance(b); return (Math.max(x, y) + 0.05) / (Math.min(x, y) + 0.05); }
+  function toHsl(rgb) {
+    var r = rgb[0] / 255, g = rgb[1] / 255, b = rgb[2] / 255, mx = Math.max(r, g, b), mn = Math.min(r, g, b), l = (mx + mn) / 2, h = 0, s = 0, d = mx - mn;
+    if (d) {
+      s = l > 0.5 ? d / (2 - mx - mn) : d / (mx + mn);
+      h = mx === r ? (g - b) / d + (g < b ? 6 : 0) : mx === g ? (b - r) / d + 2 : (r - g) / d + 4;
+      h /= 6;
+    }
+    return [h, s, l];
+  }
+  function fromHsl(hsl) {
+    var h = hsl[0], s = hsl[1], l = Math.max(0, Math.min(1, hsl[2]));
+    if (!s) return [l * 255, l * 255, l * 255];
+    var q = l < 0.5 ? l * (1 + s) : l + s - l * s, p = 2 * l - q;
+    var f = function (t) { t = (t + 1) % 1; return 255 * (t < 1 / 6 ? p + (q - p) * 6 * t : t < 0.5 ? q : t < 2 / 3 ? p + (q - p) * (2 / 3 - t) * 6 : p); };
+    return [f(h + 1 / 3), f(h), f(h - 1 / 3)];
+  }
+  // The nearest color of the same hue that meets the ratio: darker on a light ground,
+  // lighter on a dark one.
+  function passingColor(fg, bg, need) {
+    var hsl = toHsl(rgbOf(fg)), dark = luminance(bg) > 0.18, l = hsl[2];
+    for (var i = 0; i <= 100; i++) {
+      var hex = hexOf(fromHsl([hsl[0], hsl[1], l]));
+      if (ratio(hex, bg) >= need + 0.1) return hex;
+      l += dark ? -0.01 : 0.01;
+    }
+    return dark ? "000000" : "FFFFFF";
+  }
+  var PRESET = { black: "000000", white: "FFFFFF", red: "FF0000", green: "008000", blue: "0000FF", yellow: "FFFF00", gray: "808080" };
+  // A DrawingML color element (srgbClr, schemeClr, sysClr, prstClr) to a hex, with its
+  // lumMod, lumOff, tint and shade applied; null when it cannot be told (phClr with no
+  // placeholder color, or a see-through color).
+  function colorOf(el, ctx, ph) {
+    if (!el) return null;
+    var hex = null, ln = el.localName;
+    if (ln === "srgbClr") hex = (el.getAttribute("val") || "").toUpperCase();
+    else if (ln === "sysClr") hex = (el.getAttribute("lastClr") || (el.getAttribute("val") === "window" ? "FFFFFF" : "000000")).toUpperCase();
+    else if (ln === "prstClr") hex = PRESET[el.getAttribute("val")] || null;
+    else if (ln === "schemeClr") {
+      var v = el.getAttribute("val");
+      if (v === "phClr") hex = ph || null;
+      else { v = ctx.map[v] || v; hex = ctx.scheme[v] || null; }
+    }
+    if (!hex || !/^[0-9A-F]{6}$/.test(hex)) return null;
+    var hsl = null, rgb = rgbOf(hex);
+    for (var m = el.firstChild; m; m = m.nextSibling) {
+      if (m.nodeType !== 1) continue;
+      var k = (+m.getAttribute("val") || 0) / 100000;
+      if (m.localName === "alpha" && k < 0.9) return null;
+      if (m.localName === "lumMod" || m.localName === "lumOff") { hsl = hsl || toHsl(rgb); hsl[2] = m.localName === "lumMod" ? hsl[2] * k : hsl[2] + k; rgb = fromHsl(hsl); }
+      else if (m.localName === "tint") { hsl = null; rgb = rgb.map(function (c) { return c + (255 - c) * (1 - k); }); }
+      else if (m.localName === "shade") { hsl = null; rgb = rgb.map(function (c) { return c * k; }); }
+    }
+    return hexOf(rgb);
+  }
+  function colorChild(node) {
+    for (var c = node && node.firstChild; c; c = c.nextSibling) if (c.nodeType === 1 && /^(srgbClr|schemeClr|sysClr|prstClr)$/.test(c.localName)) return c;
+    return null;
+  }
+  // A fill: { hex } for a solid one, { none: true } for none, { complex: true } for a
+  // gradient, picture or pattern, or null when the node names no fill.
+  function fillOf(node, ctx, ph) {
+    for (var c = node && node.firstChild; c; c = c.nextSibling) {
+      if (c.nodeType !== 1 || c.namespaceURI !== NS.a) continue;
+      if (c.localName === "solidFill") { var h = colorOf(colorChild(c), ctx, ph); return h ? { hex: h } : { complex: true }; }
+      if (c.localName === "noFill") return { none: true };
+      if (/^(gradFill|blipFill|pattFill|grpFill)$/.test(c.localName)) return { complex: true };
+    }
+    return null;
+  }
+  // A fill named by a style reference (bgRef, fillRef) into the theme's format scheme.
+  function refFill(ref, list, base, ctx) {
+    var idx = +(ref && ref.getAttribute("idx")) || 0;
+    if (!ref || !idx || !list) return null;
+    var styles = [];
+    for (var c = list.firstChild; c; c = c.nextSibling) if (c.nodeType === 1) styles.push(c);
+    var st = styles[idx - base];
+    if (!st) return null;
+    var ph = colorOf(colorChild(ref), ctx);
+    if (st.localName === "solidFill") { var h = colorOf(colorChild(st), ctx, ph); return h ? { hex: h } : { complex: true }; }
+    if (st.localName === "noFill") return { none: true };
+    return { complex: true };
+  }
+  // A slide's, layout's or master's own background, or null when it names none.
+  function bgOf(part, ctx) {
+    var bg = part && first(part, NS.p, "bg");
+    if (!bg) return null;
+    var pr = child(bg, NS.p, "bgPr");
+    if (pr) return fillOf(pr, ctx) || { complex: true };
+    return refFill(child(bg, NS.p, "bgRef"), ctx.bgStyles, 1001, ctx) || { complex: true };
+  }
+  // The text settings a level carries in a list style (lstStyle, or a master's txStyles).
+  function levelPr(list, lvl) {
+    if (!list) return null;
+    var l = child(list, NS.a, "lvl" + lvl + "pPr");
+    return l ? child(l, NS.a, "defRPr") : null;
+  }
+  function placeholderKey(sp) {
+    var ph = first(sp, NS.p, "ph");
+    if (!ph) return null;
+    var type = ph.getAttribute("type") || "body";
+    return { type: type === "ctrTitle" ? "title" : type === "subTitle" ? "body" : type, raw: type, idx: ph.getAttribute("idx") };
+  }
+  function findPlaceholder(part, key) {
+    if (!part || !key) return null;
+    var hits = els(part, NS.p, "sp").filter(function (sp) {
+      var k = placeholderKey(sp);
+      return k && (key.idx && k.idx === key.idx || k.raw === key.raw || k.type === key.type);
+    });
+    return hits[0] || null;
+  }
+
+  // The theme, color map and background behind a slide, read through its layout and master.
+  function slideContext(doc, s, cache) {
+    var layoutPath = Object.keys(s.rels).map(function (k) { return s.rels[k]; }).filter(function (t) { return /slideLayouts\/[^/]+\.xml$/.test(t); })[0];
+    if (!layoutPath) return Promise.resolve(null);
+    if (cache[layoutPath]) return cache[layoutPath].then(function (base) { return base && withSlide(base, s); });
+    cache[layoutPath] = Promise.all([doc.read(layoutPath), doc.rels(layoutPath)]).then(function (lg) {
+      var masterPath = Object.keys(lg[1]).map(function (k) { return lg[1][k]; }).filter(function (t) { return /slideMasters\/[^/]+\.xml$/.test(t); })[0];
+      if (!lg[0] || !masterPath) return null;
+      return Promise.all([doc.read(masterPath), doc.rels(masterPath)]).then(function (mg) {
+        var themePath = Object.keys(mg[1]).map(function (k) { return mg[1][k]; }).filter(function (t) { return /theme\/[^/]+\.xml$/.test(t); })[0];
+        return doc.read(themePath || "").then(function (theme) {
+          if (!mg[0] || !theme) return null;
+          var scheme = {}, cs = first(theme, NS.a, "clrScheme");
+          for (var c = cs ? cs.firstChild : null; c; c = c.nextSibling) {
+            if (c.nodeType !== 1) continue;
+            var h = colorOf(colorChild(c), { map: {}, scheme: {} });
+            if (h) scheme[c.localName] = h;
+          }
+          var map = {}, cm = first(mg[0], NS.p, "clrMap");
+          if (cm) for (var i = 0; i < cm.attributes.length; i++) map[cm.attributes[i].localName] = cm.attributes[i].value;
+          var ctx = { scheme: scheme, map: map, bgStyles: first(theme, NS.a, "bgFillStyleLst"), fillStyles: first(theme, NS.a, "fillStyleLst"),
+            layout: lg[0], master: mg[0], txStyles: first(mg[0], NS.p, "txStyles") };
+          ctx.layoutBg = bgOf(lg[0], ctx);
+          ctx.masterBg = bgOf(mg[0], ctx) || { hex: scheme[map.bg1 || "lt1"] || "FFFFFF" };
+          return ctx;
+        });
+      });
+    });
+    return cache[layoutPath].then(function (base) { return base && withSlide(base, s); });
+  }
+  function withSlide(base, s) {
+    var ctx = Object.create(base), ovr = first(s.xml, NS.a, "overrideClrMapping");
+    if (ovr) { ctx.map = {}; for (var i = 0; i < ovr.attributes.length; i++) ctx.map[ovr.attributes[i].localName] = ovr.attributes[i].value; }
+    ctx.bg = bgOf(s.xml, ctx) || base.layoutBg || base.masterBg;
+    return ctx;
+  }
+
+  // Every text run on a slide's top-level and grouped shapes, with the color it paints
+  // and the fill behind it. A run on a gradient, a picture or a pattern goes in `unsure`.
+  // A shape's box in EMUs, from its own xfrm or, for a placeholder, its layout's or master's.
+  function boxOf(el, ctx) {
+    var x = first(el, NS.a, "xfrm") || first(el, NS.p, "xfrm");
+    if (!x && el.localName === "sp") {
+      var key = placeholderKey(el);
+      [findPlaceholder(ctx.layout, key), findPlaceholder(ctx.master, key)].some(function (p) { x = p && first(p, NS.a, "xfrm"); return !!x; });
+    }
+    var off = x && child(x, NS.a, "off"), ext = x && child(x, NS.a, "ext");
+    if (!off || !ext) return null;
+    var b = { x: +off.getAttribute("x") || 0, y: +off.getAttribute("y") || 0, w: +ext.getAttribute("cx") || 0, h: +ext.getAttribute("cy") || 0 };
+    return b.w && b.h ? b : null;
+  }
+  function ownFill(sp, ctx) {
+    var fill = fillOf(child(sp, NS.p, "spPr"), ctx), style = child(sp, NS.p, "style");
+    if (!fill && style) fill = refFill(child(style, NS.a, "fillRef"), ctx.fillStyles, 1, ctx);
+    return fill;
+  }
+  // The fill a text shape's words sit on: its own, else the topmost shape drawn before it
+  // that covers its middle (a text box laid over a colored rectangle is the common case),
+  // else the slide's background. A picture, chart or table beneath it cannot be measured.
+  function groundOf(sp, drawn, ctx) {
+    var own = ownFill(sp, ctx);
+    if (own && !own.none) return own;
+    var box = boxOf(sp, ctx);
+    if (!box) return ctx.bg;
+    var cx = box.x + box.w / 2, cy = box.y + box.h / 2;
+    for (var i = drawn.indexOf(sp) - 1; i >= 0; i--) {
+      var el = drawn[i], b = boxOf(el, ctx);
+      if (!b || cx < b.x || cx > b.x + b.w || cy < b.y || cy > b.y + b.h) continue;
+      if (el.localName !== "sp") return { complex: true };
+      var f = ownFill(el, ctx);
+      if (f && !f.none) return f;
+    }
+    return ctx.bg;
+  }
+  function slideRuns(s, ctx) {
+    var out = [], unsure = false;
+    // The layout's and master's own shapes (never their placeholders) draw beneath the
+    // slide's, unless the slide or layout turns them off (showMasterSp="0").
+    var shapes = function (part) {
+      return els(part, "*", "*").filter(function (el) { return el.namespaceURI === NS.p && /^(sp|pic|graphicFrame)$/.test(el.localName) && !first(el, NS.p, "ph"); });
+    };
+    var off = function (part) { return part && part.documentElement.getAttribute("showMasterSp") === "0"; };
+    var under = off(s.xml) ? [] : (off(ctx.layout) ? [] : shapes(ctx.master)).concat(shapes(ctx.layout));
+    var drawn = under.concat(els(s.xml, "*", "*").filter(function (el) { return el.namespaceURI === NS.p && /^(sp|pic|graphicFrame)$/.test(el.localName); }));
+    els(s.xml, NS.p, "sp").forEach(function (sp) {
+      var body = child(sp, NS.p, "txBody");
+      if (!body) return;
+      var style = child(sp, NS.p, "style");
+      var fill = groundOf(sp, drawn, ctx);
+      var key = placeholderKey(sp);
+      var lists = [child(body, NS.a, "lstStyle")];
+      var fontRef = style ? colorOf(colorChild(child(style, NS.a, "fontRef")), ctx) : null;
+      if (key) {
+        var lp = findPlaceholder(ctx.layout, key), mp = findPlaceholder(ctx.master, key);
+        [lp, mp].forEach(function (p) { var tb = p && child(p, NS.p, "txBody"); lists.push(tb ? child(tb, NS.a, "lstStyle") : null); });
+        lists.push(ctx.txStyles ? child(ctx.txStyles, NS.p, key.type === "title" ? "titleStyle" : "bodyStyle") : null);
+      } else lists.push(ctx.txStyles ? child(ctx.txStyles, NS.p, "otherStyle") : null);
+      var shapeId = (first(sp, NS.p, "cNvPr") || { getAttribute: function () { return ""; } }).getAttribute("id");
+      els(body, NS.a, "r").forEach(function (r, ri) {
+        var t = textOf(r, NS.a);
+        if (!t) return;
+        var p = r.parentNode, ppr = child(p, NS.a, "pPr"), lvl = (+(ppr && ppr.getAttribute("lvl")) || 0) + 1;
+        var chain = [child(r, NS.a, "rPr")].concat(lists.map(function (l) { return levelPr(l, lvl); }));
+        var color = null, sz = 0, b = null;
+        chain.forEach(function (pr) {
+          if (!pr) return;
+          if (!color) { var f = fillOf(pr, ctx); if (f && f.hex) color = f.hex; else if (f) color = "?"; }
+          if (!sz && pr.getAttribute("sz")) sz = +pr.getAttribute("sz");
+          if (b === null && pr.getAttribute("b")) b = pr.getAttribute("b") === "1" || pr.getAttribute("b") === "true";
+        });
+        var rPr = chain[0];
+        if (!color && rPr && first(rPr, NS.a, "hlinkClick")) color = ctx.scheme[ctx.map.hlink || "hlink"] || null;
+        if (!color) color = fontRef || ctx.scheme[ctx.map.tx1 || "dk1"] || "000000";
+        if (color === "?" || !fill || fill.complex || !fill.hex) { unsure = true; return; }
+        out.push({ fg: color, bg: fill.hex, size: (sz || 1800) / 100, bold: !!b, text: t, shapeId: shapeId, run: ri });
+      });
+    });
+    return { runs: out, unsure: unsure };
+  }
+
+  // Lists each slide's text that falls below AA, one item per color pair, with the
+  // nearest passing color offered as the fix.
+  function contrastPptx(doc, slides, report) {
+    var cache = {}, unsure = [];
+    return slides.reduce(function (pr, s) {
+      return pr.then(function () {
+        return slideContext(doc, s, cache).then(function (ctx) {
+          if (!ctx) return;
+          var got = slideRuns(s, ctx), pairs = {};
+          if (got.unsure) unsure.push(s.n);
+          got.runs.forEach(function (r) {
+            var large = r.size >= 18 || (r.bold && r.size >= 14), need = large ? 3 : 4.5, have = ratio(r.fg, r.bg);
+            if (have >= need) return;
+            var k = r.fg + "/" + r.bg + "/" + need;
+            var it = pairs[k] = pairs[k] || { fg: r.fg, bg: r.bg, need: need, ratio: have, large: large, sample: "", runs: [] };
+            if (!it.sample) it.sample = clip(r.text, 60);
+            it.runs.push({ shapeId: r.shapeId, run: r.run });
+          });
+          Object.keys(pairs).forEach(function (k, i) {
+            var it = pairs[k], fix = passingColor(it.fg, it.bg, it.need);
+            report.needs.push({ type: "contrast", id: "c" + s.n + "-" + (i + 1), slide: s.n, path: s.path, fg: it.fg, bg: it.bg, need: it.need,
+              ratio: Math.round(it.ratio * 100) / 100, fix: fix, fixRatio: Math.round(ratio(fix, it.bg) * 100) / 100, runs: it.runs,
+              text: "Slide " + s.n + ": " + (it.runs.length === 1 ? "text" : it.runs.length + " runs of text") + " in #" + it.fg + " on #" + it.bg +
+                " reads " + (Math.floor(it.ratio * 10) / 10) + ":1; " + (it.large ? "large " : "") + "text needs " + it.need + ":1 (“" + it.sample + "”)" });
+          });
+        });
+      });
+    }, Promise.resolve()).then(function () {
+      if (unsure.length) report.needs.push({ type: "info", id: "cu", slides: unsure,
+        text: "Contrast on " + slideList(unsure).toLowerCase() + ": some text sits on a gradient, a picture or a pattern, which this page cannot measure. Check it by eye, or with the Accessibility Checker." });
+    });
+  }
+  // Writes a contrast item's fix onto each of its runs as the run's own color.
+  function applyContrast(d, n) {
+    var count = 0;
+    n.runs.forEach(function (loc) {
+      var sp = els(d, NS.p, "sp").filter(function (x) { var c = first(x, NS.p, "cNvPr"); return c && c.getAttribute("id") === loc.shapeId; })[0];
+      var body = sp && child(sp, NS.p, "txBody"), r = body && els(body, NS.a, "r")[loc.run];
+      if (!r) return;
+      var rPr = child(r, NS.a, "rPr");
+      if (!rPr) { rPr = d.createElementNS(NS.a, "a:rPr"); rPr.setAttribute("lang", LANG); r.insertBefore(rPr, r.firstChild); }
+      for (var c = rPr.firstChild; c; ) {
+        var nx = c.nextSibling;
+        if (c.nodeType === 1 && /^(noFill|solidFill|gradFill|blipFill|pattFill|grpFill)$/.test(c.localName)) rPr.removeChild(c);
+        c = nx;
+      }
+      var sf = d.createElementNS(NS.a, "a:solidFill"), clr = d.createElementNS(NS.a, "a:srgbClr");
+      clr.setAttribute("val", n.fix); sf.appendChild(clr);
+      // A fill comes after the outline (ln) and before everything else in a run's settings.
+      var at = rPr.firstChild;
+      while (at && (at.nodeType !== 1 || at.localName === "ln")) at = at.nextSibling;
+      rPr.insertBefore(sf, at);
+      count++;
+    });
+    return count;
+  }
+
   // ── a deck ──────────────────────────────────────────────────────────────────
   function inspectPptx(doc, name, report) {
     var paths = Object.keys(doc.zip.files).filter(function (p) { return /^ppt\/slides\/slide\d+\.xml$/.test(p); })
@@ -281,7 +580,8 @@
       if (markedRepeat) report.fixed.push("A picture repeated on most slides (a logo) marked decorative, " + markedRepeat + " times");
       report.slides = slides.map(function (s) { return { n: s.n, title: s.title }; });
       var t1 = slides[0] && slides[0].title;
-      return draftCharts(doc, report).then(function () { return fixTitle(doc, t1 || titleFromName(name), report); });
+      return contrastPptx(doc, slides, report).then(function () { return draftCharts(doc, report); })
+        .then(function () { return fixTitle(doc, t1 || titleFromName(name), report); });
     });
   }
 
@@ -377,7 +677,7 @@
   // answers: { [needId]: { text, decorative } }. Writes them, then returns the file.
   // type: "blob" in the browser, "nodebuffer" in Node.
   function finish(session, answers, type) {
-    var doc = session.doc, report = session.report, done = { alt: 0, decorative: 0, titles: 0 };
+    var doc = session.doc, report = session.report, done = { alt: 0, decorative: 0, titles: 0, colors: 0 };
     answers = answers || {};
     var byPath = {};
     report.needs.forEach(function (n) { if (n.path) (byPath[n.path] = byPath[n.path] || []).push(n); });
@@ -410,6 +710,9 @@
             var end = child(para, NS.a, "endParaRPr");
             para.insertBefore(run, end);
             doc.touch(path); done.titles++;
+          } else if (n.type === "contrast" && ans.fix) {
+            var k = applyContrast(d, n);
+            if (k) { doc.touch(path); done.colors += k; }
           }
         });
       });
@@ -425,7 +728,7 @@
   // keeping its date code (CLAUDE.md: a re-version keeps the date code).
   function outName(name) { return String(name || "file").replace(/(\.[a-z0-9]+)$/i, "_Remediated$1"); }
 
-  var api = { inspect: inspect, finish: finish, outName: outName, _titleFromName: titleFromName };
+  var api = { inspect: inspect, finish: finish, outName: outName, _titleFromName: titleFromName, _ratio: ratio, _passingColor: passingColor };
   if (typeof module !== "undefined" && module.exports) module.exports = api;
   else root.CPL_REMEDIATE = api;
 })(typeof window !== "undefined" ? window : this);
