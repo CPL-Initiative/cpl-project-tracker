@@ -252,6 +252,31 @@ function colorWorkbook() {
   z.file("xl/tables/table1.xml", '<table ' + S + ' id="1" name="T1" displayName="Banded" ref="A1:B2"><tableStyleInfo name="TableStyleMedium2" showRowStripes="1"/></table>');
   return z.generateAsync({ type: "nodebuffer" });
 }
+function cfWorkbook() {
+  const z = new JSZip();
+  z.file("docProps/core.xml", CORE("Rules"));
+  z.file("xl/workbook.xml", '<workbook ' + S + '><sheets><sheet name="Rules" sheetId="1" r:id="rId1"/></sheets></workbook>');
+  z.file("xl/_rels/workbook.xml.rels", '<Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Target="worksheets/sheet1.xml"/><Relationship Id="rId3" Target="theme/theme1.xml"/></Relationships>');
+  z.file("xl/theme/theme1.xml", '<a:theme xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main"><a:themeElements><a:clrScheme name="T"><a:dk1><a:sysClr val="windowText" lastClr="000000"/></a:dk1><a:lt1><a:sysClr val="window" lastClr="FFFFFF"/></a:lt1></a:clrScheme></a:themeElements></a:theme>');
+  const font = (inner) => "<font>" + inner + '<name val="Calibri"/></font>';
+  // dxf 0: Excel's dark red on light red (passes) · 1: yellow words, no fill · 2: a navy fill, no font color ·
+  // 3: red words, no fill · 4: a gray125 pattern.
+  z.file("xl/styles.xml", '<styleSheet ' + S + '><fonts count="2">' + font('<sz val="11"/><color theme="1"/>') + font('<sz val="11"/><color rgb="FFFFFFFF"/>') + "</fonts>" +
+    '<fills count="3"><fill><patternFill patternType="none"/></fill><fill><patternFill patternType="gray125"/></fill><fill><patternFill patternType="solid"><fgColor rgb="FF002F6D"/></patternFill></fill></fills>' +
+    '<cellXfs count="2"><xf fontId="0" fillId="0"/><xf fontId="1" fillId="2" applyFont="1"/></cellXfs>' +
+    '<dxfs count="5"><dxf><font><color rgb="FF9C0006"/></font><fill><patternFill><bgColor rgb="FFFFC7CE"/></patternFill></fill></dxf>' +
+    '<dxf><font><b/><color rgb="FFFFFF00"/></font></dxf><dxf><fill><patternFill><bgColor rgb="FF002F6D"/></patternFill></fill></dxf>' +
+    '<dxf><font><color rgb="FFFF0000"/></font></dxf><dxf><fill><patternFill patternType="gray125"><bgColor rgb="FFFF0000"/></patternFill></fill></dxf></dxfs></styleSheet>');
+  const c = (r, s, text) => '<c r="' + r + '" s="' + s + '" t="inlineStr"><is><t>' + text + "</t></is></c>";
+  const rule = (sqref, inner) => '<conditionalFormatting sqref="' + sqref + '">' + inner + "</conditionalFormatting>";
+  const cell = (d, p) => '<cfRule type="cellIs" dxfId="' + d + '" priority="' + p + '" operator="greaterThan"><formula>0</formula></cfRule>';
+  z.file("xl/worksheets/sheet1.xml", '<worksheet ' + S + '><sheetData><row r="1">' + c("A1", 0, "Overdue") + c("B1", 0, "Red alert") + c("C1", 1, "Yellow on navy") + c("D1", 0, "Plain") + "</row>" +
+    '<row r="2">' + c("A2", 0, "Late") + c("B2", 1, "Red on navy") + "</row></sheetData>" +
+    rule("A1:A3", cell(1, 1)) + rule("C1", cell(1, 2)) + rule("D1", cell(0, 3)) + rule("A1:A3", cell(2, 4)) + rule("B1:B2", cell(3, 5)) + rule("D1", cell(4, 6)) +
+    rule("A1:A3", '<cfRule type="colorScale" priority="7"><colorScale><cfvo type="min"/><cfvo type="max"/><color rgb="FFF8696B"/><color rgb="FF63BE7B"/></colorScale></cfRule>') +
+    rule("Z9", cell(2, 8)) + "</worksheet>");
+  return z.generateAsync({ type: "nodebuffer" });
+}
 const run = deck().then(function (buf) {
   return R.inspect(buf, "20261030_CPL_Summit_Funding.pptx", ENV);
 }).then(function (s) {
@@ -489,7 +514,34 @@ const run2 = run.then(function () {
   });
 });
 
-run2.catch(function (e) { check("driver threw: " + (e && e.stack), false); }).then(function () {
+const run3 = run2.then(function () {
+  return cfWorkbook().then(function (buf) { return R.inspect(buf, "Rules.xlsx", ENV); }).then(function (s) {
+    const needs = s.report.needs, by = function (d) { return needs.filter(function (n) { return n.dxf === d; })[0]; }, id = function (x) { return needs.filter(function (n) { return n.id === x; })[0] || {}; };
+    const yel = by(1), navy = by(2);
+    check("(14) yellow words from a rule fail on white and are one item, its passing rule on navy left out", !!yel && yel.type === "contrast" && yel.bg === "FFFFFF" && yel.rules.length === 1 && yel.rules[0].rule === 0, JSON.stringify(needs));
+    check("(14) a rule that paints only a fill is measured against the cell's own words, including a range with no cell (the sheet's default)", !!navy && navy.fg === "000000" && navy.bg === "002F6D" && navy.rules.length === 2, JSON.stringify(navy));
+    check("(14) Excel's dark red on light red passes", !by(0));
+    check("(14) a rule meeting white and navy with no one passing color is listed for a person", !needs.some(function (n) { return n.dxf === 3; }) && needs.some(function (n) { return n.type === "info" && /^A conditional-formatting rule on Rules B1:B2, when it holds, shows words in #FF0000 .*No one color passes/.test(n.text); }), JSON.stringify(needs.map(function (n) { return n.text; })));
+    check("(14) a patterned rule fill is counted, not measured", /^Conditional formatting on 1 cell paints on/.test(id("cfu").text || ""), id("cfu").text);
+    check("(14) a color scale is named with its sheet", /^Conditional formatting on Rules uses a color scale/.test(id("cf").text || ""), id("cf").text);
+    check("(14) a rule item names its sheet and ranges, both rules of one dxf", /^2 conditional-formatting rules on Rules A1:A3 and Rules Z9, when they hold, show words in #000000 on #002F6D/.test(navy.text), navy.text);
+    check("(14) each rule fix passes its own bar", R._ratio(yel.fix, yel.bg) >= yel.need && R._ratio(navy.fix, navy.bg) >= navy.need);
+    const ans = {}; [yel, navy].forEach(function (n) { ans[n.id] = { fix: true }; });
+    return R.finish(s, ans, "nodebuffer").then(function (out) {
+      check("(14) finish repoints three rules", out.done.colors === 3, JSON.stringify(out.done));
+      return JSZip.loadAsync(out.file).then(function (z) { return Promise.all(["xl/styles.xml", "xl/worksheets/sheet1.xml"].map(function (p) { return z.file(p).async("string"); })); }).then(function (x) {
+        check("(14) the old dxfs stay; two copies are added and counted, the new color in the font", /<dxfs count="7">/.test(x[0]) && /<dxf><font><b\/><color rgb="FFFFFF00"\/><\/font><\/dxf>/.test(x[0]) && /<dxf><font><color rgb="FF[0-9A-F]{6}"\/><\/font><fill>/.test(x[0]), x[0]);
+        const ids = (x[1].match(/dxfId="\d+"/g) || []).join(" ");
+        check("(14) only the failing rules point at the copies; the passing yellow rule keeps its dxf", ids === 'dxfId="5" dxfId="1" dxfId="0" dxfId="6" dxfId="3" dxfId="4" dxfId="6"', ids);
+        return R.inspect(out.file, "Rules.xlsx", ENV);
+      });
+    }).then(function (again) {
+      check("(14) the remediated workbook has no rule contrast item left", !again.report.needs.some(function (n) { return n.type === "contrast"; }), JSON.stringify(again.report.needs.map(function (n) { return n.text; })));
+    });
+  });
+});
+
+run3.catch(function (e) { check("driver threw: " + (e && e.stack), false); }).then(function () {
   let pass = 0;
   results.forEach(function (r) { console.log((r[1] ? "  ok  " : "  FAIL ") + r[0] + (r[1] || r[2] == null ? "" : "  — " + r[2])); if (r[1]) pass++; });
   console.log("\nlibrary_remediate.test.js: " + pass + "/" + results.length + " checks passed");

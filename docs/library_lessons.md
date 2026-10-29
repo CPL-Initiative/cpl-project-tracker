@@ -851,6 +851,29 @@ The lane's NEXT after S514: each cell's words against what they sit on, as the d
   LibreOffice. The CEO lookup's conditional formatting is listed. Hidden text gets its own sentence: a screen
   reader still reads it, so the fix stays offered and the item says how to keep it hidden instead.
 
+## A workbook's conditional formatting (S516 SkyBoysenberry, 2026-10-29)
+
+The lane's NEXT after S515: each conditional-formatting rule measured the way cells are.
+
+- **Where the colors live.** A `cfRule`'s `dxfId` indexes `dxfs` in `xl/styles.xml`. A dxf carries only what it
+  changes: a font color, a bold, a fill. What it leaves out comes from the cell, so a fill-only rule is measured
+  against the cell's own words and a font-only rule against the cell's own fill.
+- **A dxf's solid fill is its `bgColor`**, the reverse of a cell fill (which paints `fgColor`); read `fgColor`
+  only when no `bgColor` is written. A dxf `patternFill` often names no `patternType`, which means solid.
+- **One item per dxf, and the fix has to pass everywhere the failing rules reach.** One dxf can serve rules on
+  white cells and on navy ones. The fix is a copy of the dxf with the new font color; only the failing rules point
+  at it, and when no single color passes on every fill those rules meet (red on white and on navy) the item goes to
+  a person.
+- **A range with no written cell** still holds the rule; it is measured against the sheet's default (format 0, on
+  white).
+- **Name the rule's range, not a sample cell.** The first cell in the range need not be one the rule fires on (the
+  CEO lookup's *Interim* rule spans a column of titles), so a sample there would mislead.
+- **Excel's three highlight presets pass:** dark red on light red 5.9:1, dark yellow on yellow 4.7:1, dark green
+  on green 6.1:1, so the common case raises nothing.
+- **The run on team files.** Of the repos' workbooks one carries conditional formatting, the CEO lookup: three
+  border-only rules, correctly clean. Given a yellow font in one dxf, the check found it, the fix repointed one
+  rule, a second inspect found none, and the file opens in LibreOffice.
+
 ## Moved from the lane (S512)
 
 ✅ **④ A deck's contrast is checked (S510).** Each text run's color (its own, else inherited through list style, layout, master and theme) is measured against the fill the words sit on: the shape's own, else the topmost shape drawn before it covering its middle (the layout's and master's own shapes included), else the slide's background through layout and master. Below 4.5:1, or 3:1 for 18pt or 14pt bold, each slide's color pair is one *Needs you* item showing the words both ways, with the nearest passing color of the same hue ticked as the fix; *Remediate and download* writes it onto those runs. Text over a picture, chart, table, gradient or pattern is named for a person (one item). On the five team decks, 6 findings, each confirmed on a render; the first build, against the background alone, reported 72 (`docs/library_lessons.md`, S510). Tests: `library_remediate` (8), `library` (16).
@@ -876,3 +899,7 @@ the ELL IET page whole: production reads 31,000 characters a page (cpl-chat-depl
 ## Moved from the lane (S515)
 
 ✅ **⑧ A workbook is remediated (S514).** Remediate on a dropped .xlsx sets the title and lists a sheet at its default name (renamed everywhere it is referenced), alt text per picture and chart, a table with no header row (listed, never switched on), data with no table, and merged cells. Detail and the six-workbook run: [`docs/library_lessons.md`](../../library_lessons.md), *A workbook in remediation (S514)*. Tests: `library_remediate` (95), `library` block (16).
+
+## Moved from the lane (S516)
+
+✅ **⑧ A workbook is remediated (S514) and ⑨ its contrast is checked (S515):** each cell's font color against its own fill, the fix written as a new font and format so cells sharing the old one keep it; a styled table, a patterned fill, words colored inside a cell and conditional formatting are listed for a person. Detail: [`docs/library_lessons.md`](library_lessons.md), *A workbook's contrast (S515)*. Tests: `library_remediate` (109).

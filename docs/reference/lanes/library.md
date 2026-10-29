@@ -203,11 +203,9 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 ✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
 
 
-✅ **⑥ Headers, footers and text boxes join a Word document's contrast (S512).** The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S513)*.
+✅ **⑥ Headers, footers and text boxes in a Word document's contrast (S512), ⑦ a PDF fixed at its source (S513), ⑧ a workbook remediated (S514) and ⑨ its contrast (S515).** Each full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane* (S513 to S516).
 
-✅ **⑦ A PDF is fixed at its source (S513).** The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S514)*.
+✅ **⑩ A workbook's conditional formatting is measured (S516):** each rule's colors against every cell in its range, one item per format, fixed by a copy that only the failing rules point at. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A workbook's conditional formatting (S516)*. Tests: `library_remediate` (121).
 
-✅ **⑧ A workbook is remediated (S514) and ⑨ its contrast is checked (S515):** each cell's font color against its own fill, the fix written as a new font and format so cells sharing the old one keep it; a styled table, a patterned fill, words colored inside a cell and conditional formatting are listed for a person. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A workbook's contrast (S515)*. Tests: `library_remediate` (109).
-
-**NEXT:** a workbook's conditional-formatting colors (each rule's `dxf` font against its fill), now listed for a person, measured the way cells are. The Chancellor's Office review still certifies.
+**NEXT:** Sam's first live try of remediation (no `alt-text-draft` call in the edge logs at 11:22Z, 2026-10-29); then a deck's or document's charts read for contrast, the one file kind each check still leaves to a person. The Chancellor's Office review still certifies.
 
