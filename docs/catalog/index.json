@@ -12017,7 +12017,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 workstream lessons",
      "type": null,
-     "updated": "2026-10-28"
+     "updated": "2026-10-29"
     },
     {
      "created": "2026-06-21",
@@ -13951,7 +13951,7 @@
      ],
      "title": "CPL Implementation Funding tab \u2014 archived lessons, part 4 (2026-09-22 onward)",
      "type": null,
-     "updated": "2026-10-25"
+     "updated": "2026-10-29"
     },
     {
      "created": "2026-06-11",
@@ -16262,8 +16262,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 489,
+   "count": 490,
    "docs": [
+    {
+     "created": "2026-10-29",
+     "governs": [],
+     "n": 521,
+     "path": "docs/session_521_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "funding",
+      "share-menu",
+      "ci",
+      "sierra"
+     ],
+     "title": "Session 521 handoff: the public funding page in the Share menu, the funding fixes landed, and faster tests",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-29",
      "governs": [],
@@ -24638,5 +24655,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1309
+ "total": 1310
 }

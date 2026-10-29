@@ -1,7 +1,7 @@
 ---
 title: "CPL Implementation Funding tab — archived lessons, part 4 (2026-09-22 onward)"
 date: 2026-10-24
-updated: 2026-10-25
+updated: 2026-10-29
 tags: [lessons, archive, funding, implementation-funding, dashboard-tab]
 related:
   - "[[cpl_funding_lessons]]"
@@ -414,3 +414,100 @@ The funding lane's S303 relocations moved on to the [archive](cpl_funding_lesson
 - ⚠️ **`revoke ... from public` left `anon=X`.** This project's default privileges grant anon and authenticated by name on every new function; the function stayed callable until the revoke named anon. Rule 10 b2 now says so, and the grants lint's docstring. Exposure check: no rebuild, replace or clear function is anon-callable.
 - **The page never decides who sees what.** My College only asks `cpl_funding_my_reports()` with the person's own token; the team phrase is not a person and gets the sign-in. `markReports()` is the one "newest counts" rule for both views.
 - **The seeded a11y sweep found the Resources links at 15px** (SC 2.5.8); they are 24px now. A section behind the scope question needs its own seeded target, one per state, because the sweep seeds once per width.
+
+## S310 (2026-10-01, SkyTandem): My CPL Funding in Sam's words
+
+**Sam's ask, verbatim:** *"See screenshot for My CPL Funding view and make a mockup with revised language that follows the norms and examples in our rules and memory. Show me in the mockup your revisions before we make any changes to prod."* Round 1 #1797 (artifact C5crxcr1KY7t1JgX3HTXMx, 16 cards); the port #1798.
+
+- **The Today half came from the product.** `prototype/mockup_harness/capture_mycpl.mjs` renders the Public view with the tab's own scripts and answers Supabase from a fixture whose config is md5-checked against Postgres; the same harness verified the port (Coastline read as approved).
+- **His replies were the spec.** A note-only reply stores `v: ""` and the note is the verdict; his Follow up flags (cards 1, 2, 4, 7, 8, 12, 14) meant "use my wording". He wrote eight of the sixteen sentences himself.
+- **The mockup found a dead line.** Do this next never showed the implementation step: `topStrategy()` read `pr.strategies`, `buildBriefing()` carries `pr.items`, and the test fed it the config's field name ([note](kb-notes/methodology-a-guard-that-supplies-its-own-input-tests-only-half.md)).
+- **The conditions list reads the module's own list.** `_conditions()` builds on `eligReqList`, so the block, the pie and the drill-in agree.
+- ⚠️ **Six tests pinned the retired sentences, and the local run missed one.** CI's shard 2 caught `cpl_funding_refresh_sources`. Before pushing a wording change, grep `tests/` for a fragment of every sentence it retires.
+- **Rulings (verbatim in `cpl_memory`):** no "funding model" in college-facing text (*"as it's finalized, it's no longer a model but now a procedure"*), extended the same day to the explainer and the tab's public text (*"Yes replace model on other surfaces as well"*); "through apportionment" for the seed grant only; the 84 are CER credentials, and MAP's statewide set is 134 exhibits with 354 recommendations; the seed grant's expend-by date stays off (*"Leave this off"*).
+
+## 2026-10-01 — S312 (SkyLantern): the explainer takes the Fact Sheet's layout, and the average replaces the typical
+
+**What Sam asked.** The explainer, "likely the main view for the colleges," in the Fact Sheet's layout (a link per section that opens it), Ask Sierra, projects and staff in one box, and "the average funding rather than typical" in the explainer and the video. Shipped as #1806; the sheet 14 rulings followed the same evening (#1807 ports the "model" sweep).
+
+**What we learned.**
+- **A token the page adds can switch on a rule the embedded tab wrote.** Defining `--seal-blue` on the explainer's `:root` painted the institution table's header navy behind body text (1.13:1); `cpl_funding.js` reads it with a fallback the page relied on. Scope page tokens to the page's chrome (`.actionbar, .masthead, .fs-sra-drawer`). The mirror of the 2026-09-29 lesson (a token the page lacks paints nothing).
+- **The average splits by averaging each institution's own shares** (`avgCr = avg − avgNc`, so the pair sums to the printed average): $213,901 = $198,542 + $15,359 under config md5 `e21658f9`. The median stays in one sentence, because most institutions sit below the average.
+- **The video's preview font is narrower than the render's.** "The average allocation splits in two" fit the Playwright preview and wrapped into the figures in the MP4 (fontsource Playfair 900). Check a heading change on `build.py <v> --render` before a five-minute render.
+- **Keep a voiced draft frame-identical by config, not by leaving it alone.** `SAMPLE` / `SPLIT_THREE` keep the narrated drafts on Sample College while the introductions show the average; a rebuild proves it (same frames at every sampled time, seek order held constant).
+- **A sheet's "port" answer can be a page change, not a link.** Card 6 ("bring the progress over") replaced giving colleges a second page; the FAQ already came over in #1806 through `T.publicFaqHtml()`.
+- **`pkill -f` on a pattern your own command line contains kills your shell** (exit 144, twice). Match with a bracketed first character.
+
+**Open.** Card 6's port (statewide progress per priority and the condition counts on the explainer); the video round (Sam's four asks of 2026-10-01 evening, in the S313 handoff); the confirmation deadline (Timeline Dec 30, 2026 against `participationDeadline` 2026-11-01).
+
+## 2026-10-01 — S313 (SkyReel): the video round, and the explainer carries the Public view's progress
+
+**Sam's asks** (the S312 evening round, sheet 14 card 6 "port", sweep card 25), shipped in #1809.
+
+**What we learned.**
+- **A film's figures come from the engine over a hashed config, and the hash is the proof of the copy.** The sandbox cannot reach Supabase's REST endpoint, so the stored config came through the MCP and was transcribed to a file; a jsonb-order encoder reproduced Postgres's `md5(config::text)` exactly (`e21658f9`, 23,594 characters), which proves every character. The copy is committed as `tests/fixtures/cpl_funding_config_e21658f9.json`; booting the tab over it with `T._setConfig()` and reading the Public view's own cards gave every figure the slide prints.
+- **The statewide division is exact; the per-institution one is not.** $12,620,154 ÷ $2,824.82 = 4,467.6 FTES statewide. An institution's target rides its size while its award is clamped between base and cap, so the average target (34.49) is not the average funding over the price (35.14), and the 118 targets sum to 4,366.66. The slide and the explainer state only the statewide division (`cpl_memory` `statewide-target-exceeds-institution-sum-2026-10-01`).
+- **A new scene shifts the clock, and a shift function named `L` was shadowed.** `buildK` declares its own `var L`; inside it, `L(48.2)` threw in Chromium (a blank film), and a missed `.map(L)` silenced the score. jsdom never runs `buildK`'s measured path (zero-width stage) or the offline score, so test `m0` reads the source; `render.mjs` now stops on a score with no length rather than capture five minutes of frames over an empty WAV.
+- **Prove "frame-identical" with the DOM, not screenshots.** `main`'s build against itself differed at 11 of 41 JPEG frames; the stage's `outerHTML` after each seek matched 82 of 82, and the one real difference it found (a `white-space:nowrap` the narrated kick did not need) was made conditional.
+- **Check a layout change on the render page with the render fonts**, every scenario: Scenario 1's third box and its slide's two-line closing sentence overflowed where Scenario 2's fit.
+- **`earnAgg()` caches per render.** An API read between a config change and the render that clears the cache returns the old model; `_publicProgress()` clears all three caches first.
+- **Student headcount is never a metric** (Sam, 2026-09-15): the baked defaults still carry legacy headcount priorities, so the explainer prints a target only for an FTES priority with a target above zero.
+
+**Rulings (Sam).** The video round's asks are verbatim in the S312 chat and the S313 handoff; card 6's "port"; card 25's wording, adapted to the film's true length (100 seconds, since the slide took it past 90).
+
+**Open.** The confirmation deadline (sheet 15) re-renders the Timing and conditions scenes; Sam's Scenario 2 script for the ElevenLabs voice; the 2.3% gap between the statewide target and the institutions' sum.
+
+## 2026-10-02 — S314 (SkyVerdict): Dec 30 is the confirmation deadline
+
+**Sam's rulings (sheet 16, 00:36Z).** Card 4: **Dec 30, 2026** is the right confirmation deadline (the Timeline's date, over `participationDeadline`'s 2026-11-01). Card 5: keep **$9,759,692** in the video's reported box. Card 3: *"I don't know what cards 23 and 24 are. Advise"* (sheet 17 now shows today's text beside each revision).
+
+**What we did and learned.**
+- **The ruling was the authority for the write.** The question was "which date is right"; the config held the date he ruled wrong. `funding-config-edit-apply.yml` wrote Scenario 2's `participationDeadline` from a committed plan (`kb/funding_config_edits_out/2026-10-02`): dry run (1 at before), then commit at 01:46Z under `implementation-funding-s314@bot`, receipt on `main`. The config md5 moved from `e21658f9` to `7e59830b`; the film's money figures are untouched by a date. Moving the date later only softens `partDeadlinePassed()`.
+- **A longer date wrapped the conditions heading.** "December 30, 2026" is one character past what the 3.9cqw heading holds; the first `_v6` render put the year on its own line. The heading now shrinks for a date over 16 characters (`3.9 × 16 / length`), so Scenario 1 and the narrated drafts render byte-identical. Caught on the MP4's stills, as the S312 memory row on render fonts says to.
+- **Scenario 2's introduction is `_Scenario_2_v7.mp4`** (100.6 s, S316: the target slide prints the institutions' summed target, 4,366.7, and says FTES reimbursement rate); `_v6` left the repo; the explainer links `_v7` and its choices-table fallback reads 30 Dec 2026.
+
+**Open.** Cards 23–24 (sheet 17 card 2: apply, or he types them); card 11's measure texts and card 7's two lines, still his on the tab; the Scenario 2 narration script for the ElevenLabs voice.
+
+## 2026-10-02 — S315 (SkyLedger): the last "model" in the saved text, and where the 2.3% gap comes from
+
+**Sam's rulings (sheet 17, 04:18Z, through 2, both his own call).** Card 2: *"Apply them"*, the model sweep's cards 23-24. Card 1: "Done" (the CER entry; see `docs/partner_crosswalk_lessons.md`).
+
+**What we did and learned.**
+- **Cards 23-24 are written.** `funding-config-edit-apply.yml` wrote six paths at 04:52Z (#1815, plan `kb/funding_config_edits_out/2026-10-02-2/`): in both scenarios the Introduction's last paragraph now reads "The Chancellor's Office measures outcomes..." and "CPL funding relies on data in the MAP platform...", and the Timeline reads "CPL Funding Procedure Finalized" and "Guidance Memo Release". Config md5 `7e59830b` → `764fd264`, read back at after. No saved text in either scenario says "model".
+- **One plan per directory, so the workflow takes a suffix.** The `2026-10-02` directory already held the deadline plan and its receipt, and rollback reads every receipt in a directory, so a second plan there would have tied the two writes together. The workflow now accepts `<date>-2` to `-9`.
+- **`about` is one string, so its before-value is the whole field.** The plan rebuilt the 1,600-character field from the live read and hashed it locally; the md5 matched the live field in both scenarios (`48e7e484`) before the plan was committed, and the dry run read 6 at before.
+- **The 2.3% gap is the maximum award.** The engine over the `e21658f9` fixture: with the $400,000 maximum the 118 institutions' Access targets sum to 4,366.66 FTES; with it lifted they sum to 4,467.60, the statewide division, exactly. `prioEntitlement` scales a capped institution's target by `capScale()`, so the seven at the maximum each carry 78.8 FTES (Mt. San Antonio −62.0 of the 100.9); no other target moves. The Access card prints the division and the Statewide row's detail prints the sum, so which one the state publishes is sheet 19 card 2.
+- **The built-in `DEFAULT_TIMING` and introduction in `cpl_funding.js` still say "model"** (and "Undispersed ... Rolled"). They render only for a scenario with no saved text, and both scenarios have it; left as inert fallbacks.
+
+**Open.** Sheet 19 card 2 (the sum or the division; "sum" re-renders the film); card 11's measure texts and card 7's two lines, still his on the tab; the Scenario 2 narration script for the ElevenLabs voice.
+
+**Ruled later the same day (sheet 19 card 2, 11:52Z): "sum".** The card, the explainer and the Scenario 2 film print the institutions' summed Access target (4,366.7 FTES on the fixture), the figure at which every institution qualifies for its full award. Built in S316: re-measure over the live config first; the card reads `prioTarget(null, p)` today and the detail sums `earnAgg()`'s `crTarget + ncTarget`.
+
+## 2026-10-02 — S316 (SkyTally): the statewide target is the sum, and the FTES reimbursement rate
+
+**Sam's rulings.** Sheet 19 card 2 (11:52Z): *"sum"*. In session: *"I'll go with you recommendation on script revisions. Stay away from commercial terms like 'price'"*, then *"instead of price per FTES, it should be 'FTES reimbursement rate'"* (`cpl_memory` `sam-no-price-on-funding-surfaces-2026-10-02`, `sam-ftes-reimbursement-rate-term-2026-10-02`).
+
+**What we did and learned.**
+- **The live config was rebuilt, not transcribed.** The `e21658f9` fixture plus the two committed edit plans (`2026-10-02`, `2026-10-02-2`) hashed to `764fd264`, the live `md5(config::text)`, once serialized the way `jsonb` prints itself ([methodology note](kb-notes/methodology-rebuild-a-jsonb-from-receipts-and-check-its-md5.md)). The S315 figures held: 4,366.66 summed, 4,467.60 divided.
+- **`sysTarget(p, slot)` is the published target** (#1821): each institution's credit target plus its noncredit twin, the terms `earnAgg()` adds for the Statewide detail. The card, the Statewide CSV row and `_publicProgress()` read it; `prioTarget(null, p)` stays where the division is meant. Completion takes it too: same share, same factor, same gap.
+- **The sum breaks an identity a test pinned.** Target times rate no longer equals the Total Possible ($12,335,010 against $12,620,154), so p5 now checks "at most", and the explainer's target line says why in one sentence from the payload's `atMax`.
+- **The slide carries the difference as arithmetic**: funding ÷ rate − 100.9 = 4,366.7, so every printed figure checks. A fourth row and the longer term overflowed 1920×1080; a screenshot of the render page with the render's own fonts caught it before a 25-minute render. Four rows now set a step smaller; Scenario 1 keeps three.
+- **Three traps.** A rendered-text scan must drop `<script>` first (p3c matched `pr.price`). The explainer's `word()` is assigned later in the same painter, so the target line uses its own list. Killing `render.sh` leaves Chrome on port 9333; kill it before the next render.
+
+**Open.** The Scenario 2 script for the ElevenLabs voice (sheet 6 card 1); card 11's measure texts, still Sam's on the tab; Scenario 1's unpublished v4 still says "price per CPL FTES" on its slide (re-render on request).
+
+## 2026-10-02 — S317 (SkyCompass): Sierra narrates Scenario 2
+
+Sam asked for "a script for the scenario 2 video for an ElevenLabs narrator... very simple and focused... a female voice model... the name Sierra on the video", with the music at background level. The script runs 329 words, one or two sentences a scene, over the introduction's own picture (draft 1 had read 430 over Sample College's frames). Sierra is ElevenLabs' premade Bella, read one scene at a time; the clips live in `prototype/funding_video/voice_s2/` (#1823, then this run's PR).
+
+- **An outside service can stop mid-batch.** ElevenLabs disabled the account's free tier after ten reads ("unusual activity... a proxy or VPN"): ten parallel calls from a cloud container. The narration carried the eleventh scene as `pending` with that reason, so the sample shipped with one silent scene and a test that requires the reason. Sam moved the account to a paid plan the same day, which also carries a commercial license; the free tier excludes commercial use.
+- **A clip read outside the repo is tied to its text by hash.** `read.text_sha1` makes `narrate.py` refuse a clip whose scene text changed after its read.
+- **The background bed, measured on the mix:** her voice about 16.5 dB over the score; -17.4 LUFS integrated.
+- **Two fixed checks rested on the old draft.** Check 5b expected the old `?scenario=Scenario%202` address "until it is re-voiced", and a2 matched a one-line label. Each was updated with the change it described.
+- **Sam's rulings:** "Narration sounds good to start with"; the explainer's Scenario 2 view links the cut (`_Draft_3`, 2:37). `cpl_memory` `sam-sierra-narration-approved-2026-10-02`.
+
+## Moved from the lane (S328, 2026-10-04)
+
+The lane passed its 20 KB budget; this closed ruling moved here verbatim.
+
+✅ **Kept (Sam, sheet 11 cards 2-4, 2026-09-30):** the Timeline at the prose size; the priority cards keep their boxes; the sign-in form shows to every reader of a college's *Reported expenditures*.
