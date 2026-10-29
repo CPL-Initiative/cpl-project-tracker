@@ -29,7 +29,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 73,
+     "line": 82,
      "tabs": [
       "library"
      ]
@@ -204,7 +204,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 74,
+     "line": 83,
      "tabs": [
       "library"
      ]
@@ -988,7 +988,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 76,
+     "line": 85,
      "tabs": [
       "library"
      ]
@@ -2560,6 +2560,16 @@
      ]
     },
     {
+     "id": "module:library.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 1156,
+     "tabs": [
+      "library"
+     ]
+    },
+    {
      "id": "module:library_remediate.js",
      "kind": "module",
      "direction": "read",
@@ -2735,7 +2745,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 82,
+     "line": 91,
      "tabs": [
       "library"
      ]
@@ -7904,7 +7914,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1487,
+     "line": 1639,
      "tabs": [
       "library"
      ]
@@ -7920,7 +7930,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1104,
+     "line": 1149,
      "tabs": [
       "library"
      ]
@@ -16818,7 +16828,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1105,
+     "line": 1257,
      "tabs": [
       "library"
      ]
@@ -18444,7 +18454,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2534,
+     "line": 2724,
      "tabs": [
       "library"
      ]
@@ -21751,7 +21761,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 75,
+     "line": 84,
      "tabs": [
       "library"
      ]
@@ -23089,7 +23099,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 72,
+     "line": 81,
      "tabs": [
       "library"
      ]
@@ -23099,7 +23109,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1713,
+     "line": 1865,
      "tabs": [
       "library"
      ]
@@ -24398,7 +24408,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 90,
+     "line": 99,
      "tabs": [
       "library"
      ]

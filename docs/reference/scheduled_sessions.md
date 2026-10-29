@@ -109,11 +109,13 @@ is his standing preference there too.
    moves to Draft ([`lanes/library.md`](lanes/library.md)). A draft is never
    outward, so it needs no hold; approving it is Sam's.
 
-   **Regenerate requests** are queue items too (Sam, 2026-10-26, S490; they replace the
-   Edit form's Changes to make box of S480). Anyone presses *Regenerate* on a record: it
-   saves what to change (`refresh_note`), the documents to work from (`sources`, each a
-   link or pasted text) and the request (`regen`). A note left by the older box, with no
-   `regen`, is still a request.
+   **Revise and remediate requests** are queue items too (Sam, 2026-10-26, S490, as
+   Regenerate; moved into the one box 2026-10-29). Anyone picks a piece in the tab's
+   *Create, Revise or Remediate a Document* box, or presses *Revise and remediate* on its
+   card: it saves what to change (`refresh_note`; instructions past its 600 characters go
+   whole into `sources` as *Instructions from …*), the documents to work from (`sources`,
+   each a link or a file's words read in the browser) and the request (`regen`). A note
+   left by the older box, with no `regen`, is still a request.
 
    ```sql
    select slug, title, kind, for_kind, for_name, url, public_listed, rebuild_from, refresh_note,
@@ -134,6 +136,12 @@ is his standing preference there too.
      Library's `collegeSlug`; the format is in `college_cpl_workbook.js`, `notesHtml`). A
      change every college needs goes to the template instead, and says so.
    - **Anything else:** rebuild from `rebuild_from`, keeping its link.
+
+   **Remediate before you hand it over** (Sam, 2026-10-29: *"Maybe make Revise 'Revise and
+   Remediate'"*). A page goes through `npm run a11y` against its target (add one in
+   `a11y.config.js` when it has none); a deck, document, workbook or PDF through
+   `library_remediate.js`'s `inspect` and `finish`, required in Node as `tests/library.test.js`
+   does. Answer what it lists, and say in the version you add what it fixed.
 
    **Publishing.** A piece off the public library republishes at its own link and is done.
    A piece on the public library with `regen.publish` = `show` gets its draft at a separate

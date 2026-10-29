@@ -62,6 +62,15 @@
 // Start a piece takes documents too. The Microsoft 365 connector waits on RCCD's
 // admin approval (Sam, 2026-10-26), so a session reads a public link or pasted text.
 //
+// Revise from the one box (Sam, 2026-10-29, mockup Version 21: "could be as simple as
+// choosing an existing item in the drop box"). The panel finds a piece already here: picked
+// by title (each label names its kind), its link pasted, a file named for it dropped, or
+// Revise or Edit pressed on its card. Then it asks what to do with it: Revise this piece (the
+// instructions become its changes to make, a dropped file or link a document to work from),
+// Change its details (the edit form), File a new version of it, or Use it as background for
+// something new. Instructions past refresh_note's 600-character cap are kept whole as a
+// document to work from. Every rebuild is checked for accessibility before it comes back.
+//
 // STATIC module, lazy-loaded on first #library open (both HTMLs, Rule 4). It
 // injects its own CSS (the ensureCerScopeCss pattern). Tests: tests/library.test.js
 (function () {
@@ -120,6 +129,8 @@
   var FLAG_ORDER = ["not_filed", "public_unset", "ready", "regen", "refresh", "kb_note"];
   // A document's pasted text, and the whole list, stay under cpl_library_sources_ck.
   var SRC_TEXT_MAX = 60000, SRC_MAX = 20, SRC_BYTES_MAX = 380000;
+  // refresh_note's cap in cpl_library_text_ck; longer instructions go whole into the documents.
+  var NOTE_MAX = 600;
   var PUBLISH = { show: "Show me the draft first; the public copy stays until I replace it", replace: "Replace the public copy as soon as it is rebuilt" };
 
   var state = {
@@ -128,8 +139,9 @@
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
     retireAsk: null, start: null, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
-    view: "pieces", regen: null, src: {},
-    pick: null, use: null, rem: null, autoDraft: true
+    view: "pieces", src: {},
+    pick: null, use: null, rem: null, autoDraft: true,
+    piece: null, pieceUse: null
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -406,7 +418,9 @@
       R + " .lib-dropline{margin:0;font-weight:600;color:var(--text-strong);}",
       R + " .lib-pick{justify-self:start;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px;}",
       R + " #lc-file:focus-visible + *, .lib-pick:focus-within{outline:2px solid var(--cobalt);outline-offset:2px;}",
-      R + " .lib-drop textarea,.lib-drop input[type=url]{width:100%;box-sizing:border-box;}",
+      R + " .lib-drop textarea,.lib-drop input[type=url],.lib-drop input[list]{width:100%;box-sizing:border-box;}",
+      R + " .lib-piecepick{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:6px 16px;padding-bottom:10px;border-bottom:1px solid var(--border);}",
+      R + " .lib-piecepick p{margin:0;}",
       R + " .lib-uses{display:grid;gap:6px;margin:0;padding:10px 14px;border:1px solid var(--border);border-radius:8px;}",
       R + " .lib-uses legend{font-weight:600;color:var(--text-strong);padding:0 4px;overflow-wrap:anywhere;}",
       R + " .lib-panelfoot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;}",
@@ -645,7 +659,6 @@
         }).join("") + "</tbody></table></div></dd>";
     }
     html += "</dl>";
-    if (state.edit === r.id) html += editForm(r);
     return html;
   }
 
@@ -743,7 +756,6 @@
       forFields("le", r) +
       '<div class="lib-field wide"><label for="le-project">Project</label><input id="le-project" type="text" list="lib-projects" maxlength="200" value="' + esc(r.project || "") + '" placeholder="ELL IET CPL"><span class="lib-line">Pieces that share a project show as one card: a visual and the document it was built from, a deck and its script.</span></div>' +
       '<div class="lib-field wide"><label for="le-url">Link to the file</label><input id="le-url" type="url" value="' + esc(r.url || "") + '" placeholder="https://studentrcc.sharepoint.com/..."></div>' +
-      '<p class="lib-line wide">What to change, and the documents to work from, go on <b>Regenerate</b> beside Edit.</p>' +
       knowledgeFields("le", r) +
       '<div class="lib-field"><label for="le-by">Your name</label><input id="le-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
       "</div>" +
@@ -767,7 +779,7 @@
     // Edit and the public switch sit on the card itself (Sam, 2026-10-20: "move the
     // Edit button onto the top layer of the card"); each opens its form below.
     acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
-    acts += regenBtn(r);
+    acts += reviseBtn(r);
     if (r.refresh_note || regenState(r)) acts += requestBtn(r);
     if (r.url && !r.public_listed) acts += '<button type="button" class="lib-btn" data-pubtop="' + esc(r.id) + '">List publicly</button>';
     acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
@@ -867,7 +879,11 @@
               ? "The requester asked that it replace the public copy at once: publish the draft, rerun scripts/library_page.py so the Pages copy follows, add the version, empty Changes to make and clear regen. "
               : "It is on the public library, so publish the draft at its own link and put that link on the record (regen.ready_at and regen.draft_url); the public copy stays until someone presses Replace the public copy. ")
             : "Republish a Claude page to the same artifact, add the version to the record, empty Changes to make and clear regen. ") +
-          "Record writes go through a committed receipt (Rule 10).\n") +
+          "Record writes go through a committed receipt (Rule 10).\n" +
+          // Revise and remediate (Sam, 2026-10-29): every rebuild comes back accessible.
+          "Remediate the draft before you hand it over: a page against npm run a11y (add its target to a11y.config.js if it has none); " +
+          "a deck, document, workbook or PDF through library_remediate.js's inspect and finish (require it in Node, as tests/library.test.js does), " +
+          "answering what it lists (alt text, slide titles, contrast, reading order). Say in the version you add what it fixed.\n") +
       "A good result: the card shows the revision (or its draft, with Replace the public copy), and no longer lists a rebuild as requested.";
   }
 
@@ -884,11 +900,12 @@
       (pasted ? "Read the pasted text with: select sources from cpl_library where slug = '" + r.slug + "';\n" : "");
   }
 
-  // ── Regenerate ──────────────────────────────────────────────────────────────
-  function regenBtn(r) {
-    var open = state.regen === r.id;
-    return '<button type="button" class="lib-btn' + (regenState(r) ? "" : " primary") + '" data-regen="' + esc(r.id) + '" aria-expanded="' + open + '">' +
-      (regenState(r) === "ready" ? "Ask for more changes" : "Regenerate") + "</button>";
+  // ── Revise ──────────────────────────────────────────────────────────────────
+  // The card's Revise and remediate (Sam, 2026-10-29: "Maybe make Revise 'Revise and
+  // Remediate'") opens the one box with this piece picked; its form lives there.
+  function reviseBtn(r) {
+    return '<button type="button" class="lib-btn' + (regenState(r) ? "" : " primary") + '" data-revise="' + esc(r.id) + '">' +
+      (regenState(r) === "ready" ? "Ask for more changes" : "Revise and remediate") + '<span class="lib-vh"> ' + esc(r.title) + "</span></button>";
   }
   function srcWords(x) {
     return x.url
@@ -903,7 +920,7 @@
     var g = r.regen || {}, rs = regenState(r);
     if (rs === "waiting") {
       return esc("Rebuild requested by " + (g.requested_by || "the team") + ", " + stamp(g.requested_at) + ". The next scheduled run rebuilds it from its source" +
-        (sourceList(r).length ? " and the documents" : "") + "; Copy the request starts it in a session now.");
+        (sourceList(r).length ? " and the documents" : "") + " and remediates it; Copy the request starts it in a session now.");
     }
     if (rs === "ready") {
       return "A draft is ready" + (g.ready_at ? " (" + esc(stamp(g.ready_at)) + ")" : "") + ": " +
@@ -916,8 +933,7 @@
     }
     return "";
   }
-  // Under the card: the request's state, Replace the public copy on a ready draft,
-  // and the form itself when Regenerate is open.
+  // Under the card: the request's state, and Replace the public copy on a ready draft.
   function regenBox(r) {
     var rs = regenState(r), html = "";
     if (rs) {
@@ -929,28 +945,10 @@
       }
       html += "</div>";
     }
-    if (state.regen === r.id) html += regenForm(r);
     return html;
   }
-  function regenForm(r) {
-    var cur = (r.regen && r.regen.publish) || "show";
-    return '<form class="lib-form" data-regenform="' + esc(r.id) + '"><h3 class="lib-title">Regenerate this piece</h3>' +
-      "<p>Say what to change, add any document to work from, and press Regenerate. A session rebuilds the piece from its source, keeps its link, and puts the draft on this card.</p>" +
-      '<div class="lib-grid">' +
-      '<div class="lib-field wide"><label for="rg-note">What to change</label><textarea id="rg-note" rows="4" maxlength="4000" placeholder="The wording, the figures, the layout, what to add or cut. Leave it empty to rebuild from the documents and the current data.">' +
-      esc(r.refresh_note || "") + "</textarea></div>" +
-      sourcesFields("rg") +
-      (r.public_listed
-        ? '<div class="lib-field wide"><label for="rg-pub">When the draft is ready</label><select id="rg-pub">' + opt("show", PUBLISH.show, cur) + opt("replace", PUBLISH.replace, cur) + "</select></div>"
-        : "") +
-      '<div class="lib-field"><label for="rg-by">Your name</label><input id="rg-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
-      "</div>" +
-      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">Regenerate</button>" +
-      '<button type="button" class="lib-btn" data-regencancel="1">Cancel</button></div></form>';
-  }
-
-  // The documents fields, shared by Regenerate (rg) and Start a piece (ls). The list
-  // being edited lives in state.src[p] until the form saves.
+  // The documents fields of Start a piece (ls). The list being edited lives in
+  // state.src[p] until the form saves; the box's own list (pc) has no fields of its own.
   function sourcesFields(p) {
     var list = state.src[p] || [];
     var rows = list.length
@@ -995,7 +993,7 @@
     var err = takeSource(p, byNode ? byNode.value.trim() : "");
     if (!err && !srcTyped(p).title && !srcTyped(p).url && !srcTyped(p).text) err = "Type a title and a link, or paste the document's text, then press Add this document.";
     if (err) { say(err, true); render(); return; }
-    say("Added. It saves with the " + (p === "rg" ? "request" : "brief") + ".");
+    say("Added. It saves with the brief.");
     render(); clearSrcFields(p);
     var t = document.getElementById(p + "-stitle"); if (t) t.focus();
   }
@@ -1041,6 +1039,7 @@
     state.autoDraft = true;
     state.notesMode = "keep";
     state.start = null; state.form = null; state.formFor = null; state.rem = null; say("");
+    state.piece = null; state.pieceUse = null; state.edit = null; state.retireAsk = null;
   }
   // A deck's speaker notes (Sam, 2026-10-29: "add a prompt once someone uploads a ppt for
   // revision or remediation ... to ask if they have notes that they want to preserve and
@@ -1060,12 +1059,148 @@
       }).join("") +
       '<p class="lib-hint">To remediate, Claude drafts each slide\'s script from its words and pictures, and you read each one before you download; a script sends the slide\'s words and notes to Claude, so never ask for one on a deck that shows a student\'s record. As background, the brief carries your choice to the session that makes the new deck.</p></fieldset>';
   }
+  // ── A piece already in the Library, picked in the box (Sam, 2026-10-29) ─────
+  // Each label names its kind, so a visual and the document it was built from read apart
+  // (Sam on Version 21: "I don't know from the title whether it's the visual or whether
+  // it's the document").
+  function versionWord(r) { return r.version ? (/^\d+$/.test(r.version) ? "Version " + r.version : r.version) : ""; }
+  function pieceLabel(r) {
+    return r.title + " (" + [KIND[r.kind] || r.kind, versionWord(r)].filter(Boolean).join(", ") + ")";
+  }
+  function pieceLabels() {
+    var seen = {};
+    return (state.rows || []).filter(function (r) { return !r.retired_at; }).map(function (r) {
+      var l = pieceLabel(r);
+      if (seen[l]) l = l.slice(0, -1) + ", " + fmtDate(r.made_on || r.created_at) + ")";
+      seen[l] = true;
+      return { id: r.id, label: l };
+    });
+  }
+  function pieceByLabel(v) {
+    v = String(v || "").trim().toLowerCase();
+    if (!v) return null;
+    var hit = pieceLabels().filter(function (x) { return x.label.toLowerCase() === v; })[0];
+    if (hit) return byId(hit.id);
+    var byTitle = (state.rows || []).filter(function (r) { return !r.retired_at && String(r.title || "").toLowerCase() === v; });
+    return byTitle.length === 1 ? byTitle[0] : null;
+  }
+  // A pasted link that is a piece's own link (its Pages copy included) picks that piece.
+  function normLink(u) { return String(u || "").trim().replace(/[?#].*$/, "").replace(/\/index\.html?$/i, "").replace(/\/+$/, "").toLowerCase(); }
+  function pieceByLink(link) {
+    var n = normLink(link);
+    if (!n) return null;
+    var slug = (n.match(/\/library\/([a-z0-9-]+)$/) || [])[1];
+    return (state.rows || []).filter(function (r) { return !r.retired_at && ((r.url && normLink(r.url) === n) || (slug && r.slug === slug)); })[0] || null;
+  }
+  // A dropped page or picture named for a piece (20261023_ELL_IET_CPL_Starting_Points_2.html)
+  // picks it; a deck, document, workbook or PDF goes to remediation, which finds its record itself.
+  function normTitle(t) { return String(t || "").toLowerCase().replace(/[^a-z0-9]+/g, " ").trim().replace(/\s+(v|version)?\s?\d+$/, ""); }
+  function pieceByFileName(name) {
+    var t = normTitle(titleFromName(name));
+    var hits = (state.rows || []).filter(function (r) { return !r.retired_at && (r.file_name === name || (t && normTitle(r.title) === t)); });
+    return hits.length === 1 ? hits[0] : null;
+  }
+  function setPieceUse(use) {
+    var r = byId(state.piece);
+    state.pieceUse = use; state.retireAsk = null;
+    state.edit = use === "details" ? state.piece : null;
+    if (use === "version" && r) { state.form = { title: r.title }; state.formFor = r.id; }
+    else if (state.formFor && state.formFor === state.piece) { state.form = null; state.formFor = null; }
+  }
+  function setPiece(id, use) {
+    var r = byId(id);
+    if (!r) return;
+    state.pick = null; state.use = null; state.rem = null; state.start = null; state.form = null; state.formFor = null;
+    state.piece = id; state.src.pc = sourceList(r).slice();
+    setPieceUse(use || (r.status === "requested" ? "details" : "revise"));
+  }
+  function clearPiece() {
+    if (state.formFor && state.formFor === state.piece) { state.form = null; state.formFor = null; }
+    if (state.edit && state.edit === state.piece) { state.edit = null; state.retireAsk = null; }
+    state.piece = null; state.pieceUse = null; state.src.pc = [];
+  }
+  function pieceFound(r) {
+    say("This is " + r.title + ", already in the Library. Say what to do with it, then press Start.");
+  }
+  function pieceMeta(r) {
+    return [KIND[r.kind] || r.kind, versionWord(r), r.status ? statusWord(r) : "", r.public_listed ? "In the public library" : ""].filter(Boolean).join(" · ");
+  }
+  function pieceHtml(r) {
+    var row = function (v, label) {
+      return '<label class="lib-check"><input type="radio" name="lc-piece-use" id="lc-pu-' + v + '" value="' + v + '"' + (state.pieceUse === v ? " checked" : "") + "> " + esc(label) + "</label>";
+    };
+    return '<div class="lib-piecepick"><div><p class="lib-kicker">Already in the Library</p><p><b>' + esc(r.title) + "</b> · " + esc(pieceMeta(r)) + "</p></div>" +
+      '<button type="button" class="lib-btn" data-unpiece="1">Clear<span class="lib-vh"> ' + esc(r.title) + "</span></button></div>" +
+      '<fieldset class="lib-uses"><legend>What do you want to do with it?</legend>' +
+      (r.status === "requested" ? "" : row("revise", "Revise and remediate this piece")) +
+      row("details", "Change its details: status, who sees it, who it is for, project, link") +
+      row("version", "File a new version of it") +
+      row("background", "Use it as background for something new") + "</fieldset>";
+  }
+  function pieceDocsHtml() {
+    var list = state.src.pc || [];
+    return '<div class="lib-field"><p class="lib-line"><b>Documents to work from</b></p>' + (list.length
+      ? '<ul class="lib-srcs">' + list.map(function (x, i) {
+          return "<li>" + srcWords(x) + ' <button type="button" class="lib-btn" data-srcdel="pc:' + i + '">Remove<span class="lib-vh"> ' + esc(x.title) + "</span></button></li>";
+        }).join("") + "</ul>"
+      : '<p class="lib-hint">None yet. Drop a file or paste a link above.</p>') + "</div>";
+  }
+  // A Word file's words, read here, so a dropped document of instructions reaches the session.
+  function loadZip() { return window.JSZip ? Promise.resolve(window.JSZip) : loadScript("jszip.min.js").then(function () { return window.JSZip; }); }
+  function readDocxText(file) {
+    return loadZip().then(function (JSZip) { return file.arrayBuffer().then(function (b) { return JSZip.loadAsync(b); }); }).then(function (z) {
+      var f = z.file("word/document.xml");
+      return f ? f.async("string") : "";
+    }).then(function (xml) {
+      if (!xml) return "";
+      var W = "http://schemas.openxmlformats.org/wordprocessingml/2006/main";
+      var d = new DOMParser().parseFromString(xml, "application/xml");
+      return Array.prototype.map.call(d.getElementsByTagNameNS(W, "p"), function (p) {
+        var out = "";
+        Array.prototype.forEach.call(p.getElementsByTagNameNS(W, "*"), function (n) {
+          if (n.localName === "t") out += n.textContent;
+          else if (n.localName === "tab") out += "\t";
+          else if (n.localName === "br") out += "\n";
+        });
+        return out;
+      }).join("\n").replace(/\n{3,}/g, "\n\n").trim();
+    });
+  }
+  // A file dropped while a piece is picked becomes a document to work from.
+  function addPieceFile(file) {
+    var name = file.name, ext = extOf(name);
+    if (state.pieceUse === "version") { say("Put " + name + " in the CPLLibrary folder, or its Drafts folder, then paste its link below."); render(); return; }
+    var fail = function () { say("A session cannot open " + name + " from here. Put it in SharePoint and paste its link, or paste its words into Instructions.", true); render(); };
+    var take = function (text) {
+      if (!String(text || "").trim()) { fail(); return; }
+      var list = (state.src.pc || []).slice();
+      if (list.length >= SRC_MAX) { say("A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+      list.push({ title: (titleFromName(name) || name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
+      if (JSON.stringify(list).length > SRC_BYTES_MAX) { say("The documents together run past what a record holds. Remove one, or paste the part the piece needs into Instructions.", true); render(); return; }
+      state.src.pc = list;
+      say("Added " + name + " as a document to work from. It saves when you press Start.");
+      render();
+    };
+    if (ext === "docx" && file.arrayBuffer) readDocxText(file).then(take, fail);
+    else if (TEXT_EXT[ext] && file.text) file.text().then(take, fail);
+    else fail();
+  }
+  // A file dropped or chosen: a document for the picked piece, the piece itself when it is
+  // named for one, or a new file to remediate, build from or file.
+  function takeFile(fl) {
+    if (state.piece) { addPieceFile(fl); return; }
+    var known = !REMEDIABLE[extOf(fl.name)] && pieceByFileName(fl.name);
+    if (known) { setPiece(known.id, "revise"); pieceFound(known); render(); var i0 = document.getElementById("lc-instr"); if (i0) i0.focus(); return; }
+    setPick({ name: fl.name, file: fl }); render();
+    var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus();
+  }
+
   function panelHtml() {
-    var pk = state.pick;
+    var pk = state.pick, pr = state.piece ? byId(state.piece) : null, pu = pr ? state.pieceUse : null;
     var useRow = function (v, label) {
       return '<label class="lib-check"><input type="radio" name="lc-use" id="lc-use-' + v + '" value="' + v + '"' + (state.use === v ? " checked" : "") + "> " + esc(label) + "</label>";
     };
-    var picked = pk
+    var picked = pk && !pr
       ? '<p class="lib-line" id="lc-picked">' + (pk.file ? "File: " : "Link: ") + "<b>" + esc(pk.name) + "</b>" +
         ' <button type="button" class="lib-btn" data-unpick="1">Clear<span class="lib-vh"> ' + esc(pk.name) + "</span></button></p>" +
         '<fieldset class="lib-uses"><legend>' + esc(pk.name) + ": what is it for?</legend>" +
@@ -1078,15 +1213,32 @@
           ? '<label class="lib-check"><input type="checkbox" id="lc-autodraft"' + (state.autoDraft ? " checked" : "") + "> Draft every picture's alt text with Claude as it reads. Each picture and the words around it go to Claude; turn this off for a file that shows a student's record.</label>"
           : "") + notesAskHtml(pk)
       : "";
-    return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
+    var takesDocs = !pr || pu === "revise" || pu === "background";
+    var inputs = takesDocs
+      ? '<p class="lib-dropline">' + (pr ? "Add a document to work from (optional): drop it here" : "Drop a file here: a deck, document, PDF, picture or video") + "</p>" +
+        '<label class="lib-pick" for="lc-file">or choose a file</label><input id="lc-file" class="lib-vh" type="file">' +
+        '<div class="lib-field"><label for="lc-link">or paste a link</label><input id="lc-link" type="url" placeholder="A SharePoint file, a web page or a Claude page" value="' + esc(pk && pk.link && !pr ? pk.link : "") + '"></div>'
+      : "";
+    var chooser = pr ? "" : '<div class="lib-field"><label for="lc-piece">or choose a piece already in the Library</label><input id="lc-piece" type="text" list="lib-pieces" autocomplete="off" placeholder="Type part of its title"></div>' +
+      '<datalist id="lib-pieces">' + pieceLabels().map(function (x) { return '<option value="' + esc(x.label) + '">'; }).join("") + "</datalist>";
+    var hint = pu === "revise" ? "What to change: the wording, the figures, the layout, what to add or cut. Leave it empty to rebuild from its source, the documents and the current data."
+      : pu === "background" ? "What the new piece is for, who it is for, the focus."
+      : "What you need, who it is for, the focus. With no file, say what to make: a visual, deck, document or video.";
+    var foot = pu === "revise"
+      ? "Claude rebuilds it from its source, your instructions and the documents, checks its accessibility, keeps its link, and puts the draft on its card" +
+        (pr.public_listed ? "; the public copy stays until you press Replace the public copy" : "") +
+        ". A session reads a public link or a file's words read here, and cannot open SharePoint until RCCD approves the Microsoft 365 connector. Never add a student's record."
+      : pu === "background" ? "The brief opens with this piece as a document to work from."
+      : "A deck starts on the Chancellor's Office template, with a speaker script in each slide's notes for you to edit; a memo or report starts in the Chancellor's Office styles. Remediation runs in this browser; with drafting on, each picture and the words around it go to Claude for its alt text, and nothing else leaves until you file it.";
+    var asks = pu === "details" ? editForm(pr) : pu === "version" ? "" :
+      (pr ? pieceDocsHtml() : "") +
+      '<div class="lib-field"><label for="lc-instr">Instructions</label><textarea id="lc-instr" rows="4" placeholder="' + esc(hint) + '"></textarea></div>' +
+      (pu === "revise" && !storedAuthor() ? '<div class="lib-field"><label for="lc-by">Your name</label><input id="lc-by" type="text" required></div>' : "") +
+      '<div class="lib-panelfoot"><p class="lib-line">' + esc(foot) + "</p>" +
+      '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>";
+    return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create, Revise or Remediate a Document</h2>' +
       '<div class="lib-drop" id="lib-drop">' +
-      '<p class="lib-dropline">Drop a file here: a deck, document, PDF, picture or video</p>' +
-      '<label class="lib-pick" for="lc-file">or choose a file</label><input id="lc-file" class="lib-vh" type="file">' +
-      '<div class="lib-field"><label for="lc-link">or paste a link</label><input id="lc-link" type="url" placeholder="A SharePoint file, a web page or a Claude page" value="' + esc(pk && pk.link ? pk.link : "") + '"></div>' +
-      picked +
-      '<div class="lib-field"><label for="lc-instr">Instructions</label><textarea id="lc-instr" rows="4" placeholder="What you need, who it is for, the focus. With no file, say what to make: a visual, deck, document or video."></textarea></div>' +
-      '<div class="lib-panelfoot"><p class="lib-line">A deck starts on the Chancellor\'s Office template, with a speaker script in each slide\'s notes for you to edit; a memo or report starts in the Chancellor\'s Office styles. Remediation runs in this browser; with drafting on, each picture and the words around it go to Claude for its alt text, and nothing else leaves until you file it.</p>' +
-      '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>" +
+      (pr ? pieceHtml(pr) : "") + inputs + chooser + picked + asks +
       "</div>" + remHtml() + (state.start ? startForm() : "") + (state.form ? addForm() : "") + "</section>";
   }
   // ── Remediation (lane NEXT ③): the deck or document, read and fixed in this browser ──
@@ -1751,10 +1903,13 @@
   // Start runs the path the choice names: the brief for something new (with the file or
   // link as a document to work from), the filing form for a piece already made.
   function startPanel() {
+    if (state.piece) { pieceStart(); return; }
     var n = document.getElementById("lc-instr"), instr = n ? n.value.trim() : "";
     var ln = document.getElementById("lc-link"), link = ln ? ln.value.trim() : "";
     if (link && (!state.pick || state.pick.link !== link)) {
       if (!/^https:\/\//.test(link)) { say("The link must start with https://.", true); render(); return; }
+      var known = pieceByLink(link);
+      if (known) { ln.value = ""; setPiece(known.id, "revise"); pieceFound(known); render(); var i1 = document.getElementById("lc-instr"); if (i1) i1.focus(); return; }
       setPick({ name: link, link: link });
     }
     var pk = state.pick;
@@ -1781,8 +1936,8 @@
       return;
     }
     if (pk.link) { openBrief({ title: titleFromName(pk.name) || pk.name.slice(0, 200), url: pk.link, text: null, added_by: storedAuthor() || null, added_on: today() }); return; }
-    if (TEXT_EXT[pk.ext] && pk.file && pk.file.text) {
-      pk.file.text().then(function (text) {
+    if ((TEXT_EXT[pk.ext] || pk.ext === "docx") && pk.file && (pk.ext === "docx" ? pk.file.arrayBuffer : pk.file.text)) {
+      (pk.ext === "docx" ? readDocxText(pk.file) : pk.file.text()).then(function (text) {
         openBrief({ title: (titleFromName(pk.name) || pk.name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
       }, function () { say("This browser could not read " + pk.name + ". Paste its text under Documents to work from.", true); openBrief(null); });
       return;
@@ -1790,6 +1945,48 @@
     openBrief(null);
     say("A session cannot open " + pk.name + " from here. Paste its text under Documents to work from, or put it in SharePoint and paste the link.");
     render();
+  }
+
+  // Start on a picked piece. Revise and remediate saves the request on the record: the
+  // instructions as its changes to make (whole, as a document, when they run past the column's
+  // cap), the documents, and who asked. Background opens the brief with the piece as a source.
+  function pieceStart() {
+    var r = byId(state.piece);
+    if (!r) { clearPiece(); render(); return; }
+    var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
+    var instr = g("lc-instr"), link = g("lc-link"), by = storedAuthor() || g("lc-by"), on = today();
+    if (link && !/^https:\/\//.test(link)) { say("The link must start with https://.", true); render(); return; }
+    var list = (state.src.pc || []).slice();
+    if (link) list.push({ title: (titleFromName(link) || link).slice(0, 200), url: link, text: null, added_by: by || null, added_on: on });
+    if (state.pieceUse === "background") {
+      var kind = instr ? kindFromWords(instr) : (r.kind || "visual");
+      var own = r.url ? [{ title: r.title.slice(0, 200), url: r.url, text: null, added_by: by || null, added_on: on }] : [];
+      var title = r.title;
+      clearPiece();
+      state.src.ls = own.concat(list).slice(0, SRC_MAX);
+      state.start = { kind: kind, say: instr, shape: defaultShape(kind) };
+      say("The brief carries " + title + " as a document to work from. Name the new piece and save it.");
+      render();
+      var t = document.getElementById("ls-title"); if (t) t.focus();
+      return;
+    }
+    if (!by) { say("Add your name, so the request says who asked.", true); render(); var bn = document.getElementById("lc-by"); if (bn) bn.focus(); return; }
+    var note = instr;
+    if (note.length > NOTE_MAX) {
+      list.push({ title: "Instructions from " + by + ", " + fmtDate(on), url: null, text: note.slice(0, SRC_TEXT_MAX), added_by: by, added_on: on });
+      note = note.slice(0, NOTE_MAX - 80).replace(/\s+\S*$/, "") + "\u2026 The whole instructions are under Documents to work from.";
+    }
+    if (list.length > SRC_MAX) { say("A record holds up to " + SRC_MAX + " documents. Remove one first.", true); render(); return; }
+    if (JSON.stringify(list).length > SRC_BYTES_MAX) { say("The documents together run past what a record holds. Remove one, or paste the part the piece needs into Instructions.", true); render(); return; }
+    rememberAuthor(by);
+    var id = r.id, name = r.title;
+    var body = { refresh_note: note || null, sources: list, regen: { requested_at: new Date().toISOString(), requested_by: by, publish: "show" }, updated_by: by };
+    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
+      say("Requested. Claude rebuilds " + name + " from its source, your instructions and the documents, checks its accessibility, and puts the draft on its card. Copy the request on the card starts it in a session now.");
+      clearPiece();
+      ["lc-instr", "lc-link"].forEach(function (x) { var n = document.getElementById(x); if (n) n.value = ""; });
+      return load();
+    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
 
   function startForm() {
@@ -1842,8 +2039,8 @@
     // File it is the step the brief's paste names: it links the draft and moves the piece to Draft.
     acts += r.url ? '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open the draft</a>'
       : '<button type="button" class="lib-btn" data-file="' + esc(r.id) + '">File it</button>';
-    acts += '<button type="button" class="lib-btn" data-edit="' + esc(r.id) + '">Edit record</button>';
-    if (r.status !== "requested") acts += regenBtn(r);
+    acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit record</button>';
+    if (r.status !== "requested") acts += reviseBtn(r);
     if (r.refresh_note || regenState(r)) acts += requestBtn(r);
     return '<article class="lib-devitem" aria-labelledby="lib-t-' + esc(r.id) + '"><div>' +
       '<p class="lib-kicker">' + esc(kicker.join(" · ")) + "</p>" +
@@ -1856,7 +2053,7 @@
       (sourceList(r).length ? '<div class="lib-line"><b>Documents to work from:</b> ' + srcListHtml(sourceList(r)) + "</div>" : "") +
       regenBox(r) + requestBox(r) +
       '</div><div class="lib-acts">' + acts + "</div>" +
-      (state.edit === r.id ? '<div class="lib-details">' + editForm(r) + "</div>" : "") + "</article>";
+      "</article>";
   }
 
   function devHtml(rows) {
@@ -1911,7 +2108,7 @@
       : '<button type="button" class="lib-btn" data-file="' + esc(r.id) + '">File it</button>';
     if (r.url && !r.public_listed) acts += '<button type="button" class="lib-btn" data-pubtop="' + esc(r.id) + '">List publicly</button>';
     acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
-    acts += regenBtn(r);
+    acts += reviseBtn(r);
     if (r.refresh_note || regenState(r)) acts += requestBtn(r);
     acts += '<button type="button" class="lib-btn" data-toggle="' + esc(r.id) + '" aria-expanded="' + open + '" aria-controls="lib-d-' + esc(r.id) + '">' + (open ? "Hide details" : "Details") + "</button>";
     return '<li class="lib-piece"><div class="lib-piecehead"><span class="lib-piecename">' + name + " \u00b7 " + esc(meta.filter(Boolean).join(" \u00b7 ")) + "</span>" +
@@ -1941,7 +2138,7 @@
   function listHtml(all) {
     var rows = registerRows(all);
     var shown = rows.filter(matches), gs = groups(shown);
-    if (!rows.length) return '<p class="lib-empty">The Library is empty. Add the first piece under Create or Remediate a Document.</p>';
+    if (!rows.length) return '<p class="lib-empty">The Library is empty. Add the first piece under Create, Revise or Remediate a Document.</p>';
     if (!shown.length) return '<p class="lib-empty">Nothing matches these filters. Clear the search or choose All.</p>';
     return gs.map(function (g, i) {
       return '<section class="lib-group" aria-labelledby="lib-g-' + i + '"><div class="lib-ghead"><h2 class="lib-h" id="lib-g-' + i + '">' + esc(g.name) +
@@ -2030,7 +2227,7 @@
       "<p>The Library keeps one record per piece, and the file lives on the MAP team's SharePoint site: approved pieces in the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, drafts in its Drafts folder. ' +
       "The repos keep only the source that rebuilds each piece.</p>" +
-      "<p>Create or Remediate a Document saves a brief as a Requested record. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
+      "<p>Create, Revise or Remediate a Document saves a brief as a Requested record. Choose a piece already here, or press Revise on its card, and the same box asks for its changes; a session rebuilds it, checks its accessibility, and puts the draft on its card. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
       "<p>Claude hands each new piece over the day it makes it, and a session on Sam's computer saves it straight into the synced folder. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
       "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p>" +
       "<p>A piece whose substance is knowledge (a training-facts page, a guide, an explainer's argument) gets a note in the public CPL Knowledge Base through its curation pipeline, and the record links it; a deck, a film or a data piece does not. Needs attention names a knowledge piece without a note. The Knowledge Base view above is the team's reading portal over that repo.</p></footer>";
@@ -2039,17 +2236,16 @@
     // typed into an open form. Restore only into the SAME form: the edit ids are
     // shared by every record, so a value typed for one must not land in another.
     var typed = {};
-    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],textarea[id^='ls-'],input[id^='lc-link'],textarea[id^='lc-'],input[id^='rg-'],select[id^='rg-'],textarea[id^='rg-'],input[id^='ro-']"), function (n) { typed[n.id] = n.value; });
+    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],textarea[id^='ls-'],input[id^='lc-link'],input[id^='lc-by'],textarea[id^='lc-'],input[id^='ro-']"), function (n) { typed[n.id] = n.value; });
     var sameAdd = painted.formFor === state.formFor && painted.form === !!state.form;
     var sameEdit = painted.edit === state.edit;
     var focusId = document.activeElement && document.activeElement.id;
     root.innerHTML = head + attention + controls + list + how;
     Object.keys(typed).forEach(function (id) {
-      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start) ||
-        (id.indexOf("rg-") === 0 && (!state.regen || painted.regen !== state.regen))) return;
+      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start)) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
     });
-    painted = { form: !!state.form, formFor: state.formFor, edit: state.edit, regen: state.regen };
+    painted = { form: !!state.form, formFor: state.formFor, edit: state.edit };
     if (focusId) { var again = document.getElementById(focusId); if (again && again.focus) again.focus(); }
   }
 
@@ -2091,6 +2287,7 @@
     p.then(function () {
       say(!filing ? "Added to the Library." : drafted ? "Filed. The record links to the file and is now a Draft, under In development."
         : "Filed. The record now links to the file.");
+      if (state.piece) clearPiece();
       state.form = null; state.formFor = null; delete state.forPick.la;
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
@@ -2223,25 +2420,7 @@
     if (!r.made_on && body.status && body.status !== "requested") body.made_on = today();
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
       say("Saved. The earlier version is in the history.");
-      state.edit = null; state.retireAsk = null; delete state.forPick.le;
-      return load();
-    }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
-  }
-
-  function submitRegen(id) {
-    var r = byId(id);
-    if (!r) return;
-    var g = function (x) { var n = document.getElementById(x); return n ? n.value.trim() : ""; };
-    var by = g("rg-by");
-    if (!by) { say("Add your name, so the request says who asked.", true); render(); return; }
-    var srcErr = takeSource("rg", by);
-    if (srcErr) { say(srcErr, true); render(); return; }
-    rememberAuthor(by);
-    var regen = { requested_at: new Date().toISOString(), requested_by: by, publish: r.public_listed && g("rg-pub") === "replace" ? "replace" : "show" };
-    var body = { refresh_note: g("rg-note") || null, sources: state.src.rg || [], regen: regen, updated_by: by };
-    write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
-      say("Requested. The next scheduled run rebuilds it and puts the draft on the card; Copy the request starts it in a session now.");
-      state.regen = null; state.src.rg = [];
+      state.edit = null; state.retireAsk = null; delete state.forPick.le; clearPiece();
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -2302,7 +2481,7 @@
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH",
       body: { retired_at: new Date().toISOString(), updated_by: by } }).then(function () {
       say("Retired. The record left the list, and the history keeps it.");
-      state.edit = null; state.retireAsk = null; state.open[id] = false;
+      state.edit = null; state.retireAsk = null; state.open[id] = false; clearPiece();
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -2323,13 +2502,21 @@
     } catch (e) { fallback(); }
   }
 
-  var painted = { form: false, formFor: null, edit: null, regen: null };
+  var painted = { form: false, formFor: null, edit: null };
   var wired = false;
   function wire(root) {
     if (wired) return;
     wired = true;
     root.addEventListener("input", function (e) {
       if (e.target.id === "lib-q") { state.q = e.target.value; renderList(); }
+      else if (e.target.id === "lc-piece") {
+        var pr0 = pieceByLabel(e.target.value);
+        if (pr0) { setPiece(pr0.id); say(""); render(); var pi = document.getElementById(state.pieceUse === "details" ? "le-status" : "lc-instr"); if (pi) pi.focus(); }
+      }
+      else if (e.target.id === "lc-link" && !state.piece) {
+        var pl = pieceByLink(e.target.value);
+        if (pl) { e.target.value = ""; setPiece(pl.id, "revise"); pieceFound(pl); render(); var pli = document.getElementById("lc-instr"); if (pli) pli.focus(); }
+      }
       else if (e.target.getAttribute && e.target.getAttribute("data-remscript") && state.rem) {
         state.rem.scripts[e.target.getAttribute("data-remscript")] = e.target.value; state.rem.touched = true;
       }
@@ -2354,7 +2541,11 @@
       }
       else if (e.target.id === "lc-file") {
         var fl = e.target.files && e.target.files[0];
-        if (fl) { setPick({ name: fl.name, file: fl }); render(); var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus(); }
+        if (fl) takeFile(fl);
+      }
+      else if (e.target.name === "lc-piece-use") {
+        setPieceUse(e.target.value); render();
+        var pu0 = document.getElementById("lc-pu-" + e.target.value); if (pu0) pu0.focus();
       }
       else if (e.target.name === "lc-use") { state.use = e.target.value; }
       else if (e.target.name === "lc-notes") { state.notesMode = e.target.value; }
@@ -2393,7 +2584,7 @@
       if (!d) return;
       e.preventDefault(); d.classList.remove("over");
       var fl = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
-      if (fl) { setPick({ name: fl.name, file: fl }); render(); var u1 = document.getElementById("lc-use-" + state.use); if (u1) u1.focus(); }
+      if (fl) takeFile(fl);
     });
     root.addEventListener("submit", function (e) {
       e.preventDefault();
@@ -2401,7 +2592,6 @@
       else if (e.target.id === "lib-startform") submitStart();
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
       else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
-      else if (e.target.getAttribute("data-regenform")) submitRegen(e.target.getAttribute("data-regenform"));
       else if (e.target.getAttribute("data-regenokform")) approveRegen(e.target.getAttribute("data-regenokform"));
     });
     root.addEventListener("click", function (e) {
@@ -2450,16 +2640,13 @@
       else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-go"); if (sb) sb.focus(); }
       else if ((v = b.getAttribute("data-brief"))) copyBrief(v);
       else if ((v = b.getAttribute("data-request"))) copyRequest(v);
-      else if ((v = b.getAttribute("data-regen"))) {
-        var rr = byId(v), opening2 = state.regen !== v;
-        state.regen = opening2 ? v : null; state.src.rg = opening2 && rr ? sourceList(rr).slice() : [];
-        say(""); render();
-        var rn = document.getElementById(opening2 ? "rg-note" : ""); if (rn) rn.focus();
-        else { var rb = root.querySelector('[data-regen="' + v + '"]'); if (rb) rb.focus(); }
+      else if ((v = b.getAttribute("data-revise"))) {
+        setPiece(v, "revise"); say(""); render();
+        var ri = document.getElementById("lc-instr"); if (ri) ri.focus();
       }
-      else if (b.getAttribute("data-regencancel")) {
-        var was = state.regen; state.regen = null; state.src.rg = []; render();
-        var rb2 = was && root.querySelector('[data-regen="' + was + '"]'); if (rb2) rb2.focus();
+      else if (b.getAttribute("data-unpiece")) {
+        clearPiece(); say(""); render();
+        var cp = document.getElementById("lc-piece"); if (cp) cp.focus();
       }
       else if ((v = b.getAttribute("data-srcadd"))) addSource(v);
       else if ((v = b.getAttribute("data-srcdel"))) {
@@ -2467,9 +2654,10 @@
         lst.splice(+parts[1], 1); state.src[parts[0]] = lst; say("Removed. The record keeps it until the form saves."); render();
         var st2 = document.getElementById(parts[0] + "-stitle"); if (st2) st2.focus();
       }
-      else if (b.getAttribute("data-formcancel")) { state.form = null; state.formFor = null; render(); var a = document.getElementById("lib-go"); if (a) a.focus(); }
+      else if (b.getAttribute("data-formcancel")) { if (state.piece) clearPiece(); state.form = null; state.formFor = null; render(); var a = document.getElementById("lib-go"); if (a) a.focus(); }
       else if ((v = b.getAttribute("data-file"))) {
         var r = byId(v);
+        clearPiece();
         state.form = { title: r ? r.title : "" }; state.formFor = v; say(""); render();
         var u2 = document.getElementById("la-url"); if (u2) u2.focus();
       }
@@ -2478,17 +2666,19 @@
         var t = root.querySelector('[data-toggle="' + v + '"]'); if (t) t.focus();
       }
       else if ((v = b.getAttribute("data-copy"))) copyLink(b, v);
-      else if ((v = b.getAttribute("data-edit"))) { state.edit = state.edit === v ? null : v; state.retireAsk = null; render(); }
       else if ((v = b.getAttribute("data-edittop"))) {
-        var opening = state.edit !== v;
-        state.edit = opening ? v : null; state.retireAsk = null; if (opening) state.open[v] = true; render();
-        var es = document.getElementById("le-status"); if (opening && es) es.focus();
+        // Edit opens the box with the piece picked at Change its details.
+        setPiece(v, "details"); say(""); render();
+        var es = document.getElementById("le-status"); if (es) es.focus();
       }
       else if ((v = b.getAttribute("data-pubtop"))) {
         state.pub = v; state.open[v] = true; say(""); render();
         var ps2 = document.getElementById("lp-sum"); if (ps2) ps2.focus();
       }
-      else if (b.getAttribute("data-editcancel")) { state.edit = null; state.retireAsk = null; render(); }
+      else if (b.getAttribute("data-editcancel")) {
+        state.edit = null; state.retireAsk = null; clearPiece(); render();
+        var ec = document.getElementById("lc-piece"); if (ec) ec.focus();
+      }
       else if ((v = b.getAttribute("data-retire"))) { state.retireAsk = v; render(); }
       else if (b.getAttribute("data-retireno")) { state.retireAsk = null; render(); }
       else if ((v = b.getAttribute("data-retireyes"))) retire(v);

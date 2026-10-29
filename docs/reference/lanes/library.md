@@ -128,16 +128,14 @@ photos, the IT and AI deck unlisted) are carried out; their text moved verbatim 
 
 Sam: *"I want to make sure I can Regenerate a visual when I either add a document or note to it ... Also, when I want
 to generate a new visual based on a document I upload. Seems like perhaps we should consolidate the Library and CPL
-Opportunity Analysis procedures and sites."* One procedure now serves both. **Regenerate** sits on every record: what
-to change (`refresh_note`, which moved out of Edit), the documents to work from (`sources`: a link, or the document's
-text pasted in) and, for a piece on the public library, whether the draft replaces the public copy at once or waits for
-**Replace the public copy** on the card (`regen`). **Start a piece** (and Make a visual for anyone but a college) takes
+Opportunity Analysis procedures and sites."* One procedure now serves both: **Revise and remediate** on every record opens the one box with that piece picked (⑪
+below), saving `refresh_note`, `sources` and `regen`; a public piece's draft waits for **Replace the public copy**. **Start a piece** (and Make a visual for anyone but a college) takes
 documents too, so a new visual can start from a document. A session does the rebuild: the scheduled runs read the
 requests (step 6 of [`scheduled_sessions`](../scheduled_sessions.md), which says how each kind of piece is rebuilt), and
 *Copy the request* hands the same paste to a session. A college's CPL Opportunity page gained a notes layer: what a note or
 document asks for goes to `library/cpl-opportunity/notes/<slug>.json`, shown under At a glance, with a draft at
 `<slug>.draft.json` read at `?college=<name>&draft=1`. Schema: `kb/supabase_cpl_library.sql` (sources, regen, two checks).
-Tests: `library` (13, 14, 9), `college_cpl_workbook` (the notes).
+Tests: `library` (13, 14, 9, 19), `college_cpl_workbook` (the notes).
 
 - **The Microsoft 365 connector waits on RCCD's admin approval** (Sam, 2026-10-26: *"We need to hold on the 365
   connector until I can get admin approval from RCCD"*). Until then a session reads a public link or pasted text, and
@@ -209,3 +207,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 **NEXT:** the other inputs the bar shows people doing most, in that order (Sam's framing); a chart's per-label colors (`c:dLbl`) when he asks. The Chancellor's Office review still certifies.
 
+✅ **⑪ Revise and remediate from the one box (Sam, 2026-10-29; built by S520's side session).** The box finds a piece
+already here (by a label naming its kind, its link, a file named for it, or the card's Revise and remediate or Edit) and asks
+what to do with it; long instructions go whole into `sources`, and every rebuild is remediated. The record moved verbatim to
+[`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S520's side session)*.
