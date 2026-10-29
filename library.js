@@ -1084,6 +1084,7 @@
           if (n.type === "contrast") state.rem.answers[n.id] = { fix: !n.advisory };
         });
         if (state.rem.drafting && !picNeeds().length) state.rem.drafting = null;
+        remRecord(state.rem);
         render();
         var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus();
         // A thumbnail of each picture that needs words, so the writer sees what to describe,
@@ -1521,12 +1522,63 @@
         setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
         var d = out.done;
         rm.downloaded = true;
-        say("Downloaded " + name + ": " + rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " +
+        var summary = rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " +
           (rm.report.ext === "xlsx" ? (d.sheets || 0) + (d.sheets === 1 ? " sheet" : " sheets") + " renamed." :
-            d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed.") + " Open it, run the Accessibility Checker, then file it.");
-        render();
+            d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed.");
+        return fileRemediated(rm, name, summary);
       });
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
+  }
+
+  // In the Library from the start (Sam, 2026-10-29: "better would be to just file it in the
+  // Library by default ... there's really no reason to start a file without having it in the
+  // library regardless of it's state of remediation or revision"). Remediate writes a Draft
+  // record as the file opens, with no link yet (a record holds a link, and this page cannot
+  // put the file in SharePoint); the same file opened again finds that record. The download
+  // notes what it fixed on the record and opens the record's form for the link.
+  function remKind(name) { return EXT_KIND[extOf(name)] || "document"; }
+  function remFormFor(rm) {
+    state.form = { title: titleFromName(rm.name), kind: remKind(rm.name) };
+    state.formFor = rm.recordId || null;
+  }
+  function remRecord(rm) {
+    if (!rm || rm.recordId || !teamPhrase()) return Promise.resolve();
+    var name = rm.name, done = window.CPL_REMEDIATE && window.CPL_REMEDIATE.outName ? window.CPL_REMEDIATE.outName(name) : name;
+    var have = (state.rows || []).filter(function (r) { return !r.retired_at && (r.file_name === name || r.file_name === done); })[0];
+    if (have) { rm.recordId = have.id; rm.recordTitle = have.title; return Promise.resolve(); }
+    var title = titleFromName(name);
+    return window.fetch(TABLE_URL, { method: "POST", headers: headers({ "Content-Type": "application/json", Prefer: "return=representation" }), body: JSON.stringify({
+      slug: slugFor(title), title: title, kind: remKind(name), status: "draft", seen_by: "team", home: "not_filed", url: null,
+      made_on: today(), file_name: name, added_by: storedAuthor() || null,
+      note: "Remediation started in the Library on " + today() + ". Its link comes when the remediated file is in the CPLLibrary folder."
+    }) }).then(function (res) {
+      if (!res.ok) throw new Error("the Library record was not written (" + res.status + ")");
+      return res.json();
+    }).then(function (saved) {
+      var row = Array.isArray(saved) ? saved[0] : saved;
+      if (state.rem !== rm) return;
+      rm.recordId = row && row.id ? row.id : null; rm.recordTitle = title;
+      if (row && row.id) (state.rows = state.rows || []).push(row);
+    }).catch(function (e) { if (state.rem === rm) rm.recordError = e.message; });
+  }
+  function fileRemediated(rm, name, summary) {
+    var done = function (text, err) {
+      remFormFor(rm);
+      say("Downloaded " + name + ": " + summary + " " + text, !!err);
+      render();
+      var u = document.getElementById("la-url"); if (u) u.focus();
+    };
+    return remRecord(rm).then(function () {
+      if (!rm.recordId) { done("The Library record was not written" + (rm.recordError ? " (" + rm.recordError + ")" : "") + "; file it here once the file is in the CPLLibrary folder.", true); return; }
+      return write(TABLE_URL + "?id=eq." + encodeURIComponent(rm.recordId), { method: "PATCH", body: {
+        file_name: name, updated_by: storedAuthor() || null,
+        note: ("Remediated in the Library on " + today() + ": " + summary + " Its link comes when the file is in the CPLLibrary folder.").slice(0, 2000)
+      } }).then(function () {
+        return load();
+      }).then(function () {
+        done("It is in the Library as a Draft, " + (rm.recordTitle || titleFromName(rm.name)) + ", with no link yet. Put the file in the CPLLibrary folder, then paste its link here.");
+      }).catch(function (e) { done("The Library record was not updated (" + e.message + ").", true); });
+    });
   }
 
   // Start runs the path the choice names: the brief for something new (with the file or
@@ -2205,7 +2257,7 @@
       else if (b.getAttribute("data-remclose")) { state.rem = null; render(); var g0 = document.getElementById("lib-go"); if (g0) g0.focus(); }
       else if (b.getAttribute("data-remfile")) {
         var rn0 = state.rem ? state.rem.name : "";
-        state.form = { title: titleFromName(rn0), kind: EXT_KIND[extOf(rn0)] || "document" }; state.formFor = null;
+        state.form = { title: titleFromName(rn0), kind: EXT_KIND[extOf(rn0)] || "document" }; state.formFor = (state.rem && state.rem.recordId) || null;
         say("Download the remediated file, put it in the CPLLibrary folder, then paste its link here."); render();
         var u3 = document.getElementById("la-url"); if (u3) u3.focus();
       }

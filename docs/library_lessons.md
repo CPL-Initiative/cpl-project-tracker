@@ -928,6 +928,12 @@ Sam's session, the day before the 7th Annual CPL Summit, on his first live run o
   needs a reload to show a deploy. His second confusion was the button: *Remediate and download* read as the
   start of the routine, which had already run, so it is now *Download the remediated file*. The panel's line
   that nothing leaves the browser until filing now names what drafting sends.
+- **A file is in the Library from the moment it opens.** Sam: *"there's really no reason to start a file without
+  having it in the library regardless of it's state of remediation or revision"*, and *"the library is functioning
+  as much as a work space for all docs as a repository."* Remediate writes a Draft record as the file opens (no
+  link, `home` not filed, `file_name` the file's), the same file opened again finds it by that name, and the
+  download notes what it fixed there and opens the record's form for the SharePoint link, the one step a browser
+  cannot take.
 - **A grid item's minimum width is its content's.** A long URL in a hint widened the whole list item past its
   column until the item took `min-width:0` and the hints `overflow-wrap:anywhere`.
 
