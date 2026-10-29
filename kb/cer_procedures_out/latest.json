@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-28T14:36:40Z",
+ "_generated_at": "2026-10-29T14:43:53Z",
  "procedures_hash": "575c290d755b",
- "queue": 489,
+ "queue": 455,
  "saved_not_folded": 0,
- "waiting": 489,
- "proposed": 453,
- "needs_you_count": 453,
+ "waiting": 455,
+ "proposed": 419,
+ "needs_you_count": 459,
  "not_yet_asked": 0,
  "fold_held": 18,
  "procedures": [
@@ -21,30 +21,9 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 54,
-   "held": 99,
-   "sample": [
-    [
-     "AP calculus AB",
-     "AP Calculus AB"
-    ],
-    [
-     "CLEP French Language: Level II",
-     "CLEP French Language Level 2"
-    ],
-    [
-     "CLEP German Language: Level II",
-     "CLEP German Language Level 2"
-    ],
-    [
-     "CLEP Spanish Language: Level II",
-     "CLEP Spanish Language Level 2"
-    ],
-    [
-     "CLEP Spanish with Writing: Level II",
-     "CLEP Spanish with Writing Level II"
-    ]
-   ]
+   "settled": 12,
+   "held": 100,
+   "sample": []
   },
   {
    "id": "statewide-catalog",
@@ -132,9 +111,14 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 0,
-   "held": 180,
-   "sample": []
+   "settled": 2,
+   "held": 179,
+   "sample": [
+    [
+     "BIOTECH 001: Fundamentals of Biotechnology",
+     "Fundamentals of Biotechnology"
+    ]
+   ]
   },
   {
    "id": "issuer-issues-the-card",
@@ -149,7 +133,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 51,
+   "held": 54,
    "sample": []
   },
   {
@@ -163,8 +147,8 @@
     "words": "strip the school, make it the agency",
     "skill": "Rule 5f"
    },
-   "settled": 0,
-   "held": 121,
+   "settled": 1,
+   "held": 122,
    "sample": []
   },
   {
@@ -194,7 +178,7 @@
     "skill": "Rule 8c"
    },
    "settled": 0,
-   "held": 54,
+   "held": 55,
    "sample": []
   },
   {
@@ -209,7 +193,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 93,
+   "held": 95,
    "sample": []
   },
   {
@@ -222,37 +206,37 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 49,
-   "held": 435,
+   "settled": 13,
+   "held": 441,
    "sample": [
     [
-     "AP Art History Area 3A",
-     "AP Art History"
+     "Automotive Service Excellence (ASE) ASE A7",
+     "ASE A7 — Heating and Air Conditioning"
     ],
     [
-     "AP Art History Area 3B",
-     "AP Art History"
+     "California Native Plant Society (CNPS) Field Botanist Certification",
+     "CNPS Certified Field Botanist"
     ],
     [
-     "AP Calculus AB Area 2",
-     "AP Calculus AB"
+     "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+     "Modern Dance Techniques"
     ],
     [
-     "AP Calculus BC Area 2",
-     "AP Calculus BC"
+     "International Society of Arboriculture (ISA) Certified Arborist",
+     "ISA Certified Arborist"
     ],
     [
-     "AP Calculus BC/AB Subscore - Area 2",
-     "AP Calculus BC — AB Subscore"
+     "MUSIC 217-1: Musicianship I",
+     "Musicianship 1"
     ]
    ]
   }
  ],
  "classifier_run": {
-  "calls": 4,
-  "answered": 4,
+  "calls": 2,
+  "answered": 2,
   "errors": [],
-  "cost_usd": 1.91
+  "cost_usd": 1.01
  },
  "needs_you": [
   {
@@ -328,19 +312,6 @@
     "issuer": "California Community Colleges",
     "confidence": 0.9,
     "note": "Course code stripped from the cx hint. Joins the existing house family by title. The issuer is CCC for credit by exam."
-   },
-   "colleges": [
-    "Los Angeles Pierce College"
-   ]
-  },
-  {
-   "raw_title": "ADM JUS 067 - Community Relations",
-   "why": "a merge would join two issuers (California Community Colleges; the reference has California Commission on Peace Officer Standards and Training (POST))",
-   "proposal": {
-    "title": "Community Relations",
-    "issuer": "California Community Colleges",
-    "confidence": 0.88,
-    "note": "The cx hint was mended by stripping the course code ADM JUS 067. The title joins the existing Community Relations family. The issuer is CCC because this is a Credit By Exam row."
    },
    "colleges": [
     "Los Angeles Pierce College"
@@ -789,19 +760,6 @@
    ]
   },
   {
-   "raw_title": "ASPRS Certification - GEOG 025",
-   "why": "the classifier is unsure (0.70)",
-   "proposal": {
-    "title": "ASPRS Certification",
-    "issuer": "American Society for Photogrammetry and Remote Sensing (ASPRS)",
-    "confidence": 0.7,
-    "note": "The specific ASPRS certification (e.g. GIS/LIS Technologist) is not named. The course code is stripped; GEOG 025 and GIS 025 are cross-listed variants at Pierce."
-   },
-   "colleges": [
-    "Los Angeles Pierce College"
-   ]
-  },
-  {
    "raw_title": "ASPRS Certification - GIS 025",
    "why": "the classifier is unsure (0.70)",
    "proposal": {
@@ -809,6 +767,19 @@
     "issuer": "American Society for Photogrammetry and Remote Sensing (ASPRS)",
     "confidence": 0.7,
     "note": "This is the cross-listed twin of the GEOG 025 row and gets the same unified title. The specific ASPRS certification level is not named."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
+   "raw_title": "ASPRS-GIS Certification - GEOG 025",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "ASPRS GIS Certification",
+    "issuer": "American Society for Photogrammetry and Remote Sensing (ASPRS)",
+    "confidence": 0.75,
+    "note": "No house family exists. GEOG 025 is the articulated course and was stripped. The exact ASPRS credential name (e.g. GIS/LIS Technologist) is unconfirmed."
    },
    "colleges": [
     "Los Angeles Pierce College"
@@ -916,6 +887,19 @@
    },
    "colleges": [
     "Cerro Coso Community College"
+   ]
+  },
+  {
+   "raw_title": "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Personal Training Certification",
+    "issuer": "American College of Sports Medicine (ACSM)",
+    "confidence": 0.8,
+    "note": "Joined the multi-issuer personal-trainer family (ACE/NASM), with ACSM as the issuer discriminator; faculty may split it out as ACSM-CPT."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
    ]
   },
   {
@@ -1566,19 +1550,6 @@
    },
    "colleges": [
     "Cabrillo College"
-   ]
-  },
-  {
-   "raw_title": "CHPS Field Botanist Certification",
-   "why": "the classifier is unsure (0.50)",
-   "proposal": {
-    "title": "Field Botanist Certification",
-    "issuer": "California Native Plant Society (CNPS)",
-    "confidence": 0.5,
-    "note": "The acronym CHPS is unclear. The field botanist certification in California is run by CNPS, so the issuer is a guess pending review."
-   },
-   "colleges": [
-    "Los Angeles Pierce College"
    ]
   },
   {
@@ -2931,6 +2902,58 @@
    },
    "colleges": [
     "Los Angeles Pierce College"
+   ]
+  },
+  {
+   "raw_title": "Electrical Training Program CA Conservation Corps COMET",
+   "why": "the classifier is unsure (0.55)",
+   "proposal": {
+    "title": "Electrical Training Program — COMET",
+    "issuer": "California Conservation Corps",
+    "confidence": 0.55,
+    "note": "COMET is an unexplained program token, so the competency is unclear. The Conservation Corps is assumed to be the attesting body; needs review."
+   },
+   "colleges": [
+    "Cerritos College"
+   ]
+  },
+  {
+   "raw_title": "Electrical Training Program CA Conservation Corps Electric Vehicle",
+   "why": "the classifier is unsure (0.60)",
+   "proposal": {
+    "title": "Electric Vehicle Electrical Training",
+    "issuer": "California Conservation Corps",
+    "confidence": 0.6,
+    "note": "Set aside the cx hint, which kept the provider name in the title and used the CCC issuer. The named Conservation Corps trainer becomes issuer and trainer per Rule 5f. The title wording is a guess."
+   },
+   "colleges": [
+    "Cerritos College"
+   ]
+  },
+  {
+   "raw_title": "Electrician Trainee Program Non Residential Lighting Technician Journeyperson",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Non-Residential Lighting Technician Certification",
+    "issuer": "California Department of Industrial Relations (DIR)",
+    "confidence": 0.75,
+    "note": "Read as the DIR electrician certification category NLLT/NRLT reached via the Electrician Trainee program. The issuer is inferred and needs review."
+   },
+   "colleges": [
+    "Cerritos College"
+   ]
+  },
+  {
+   "raw_title": "Electrician Trainee Program Whole Residential Electrician Journeyperson",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "Residential Electrician Certification",
+    "issuer": "California Department of Industrial Relations (DIR)",
+    "confidence": 0.75,
+    "note": "Read as the DIR Residential Electrician certification. It is kept apart from General Electrician Certification because it has a narrower scope."
+   },
+   "colleges": [
+    "Cerritos College"
    ]
   },
   {
@@ -5118,6 +5141,19 @@
    ]
   },
   {
+   "raw_title": "Peace Officer Standards and Training (POST)",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "POST Basic Academy",
+    "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+    "confidence": 0.75,
+    "note": "The title names only the commission. The Basic Academy is the most likely POST credential, but the row could mean another POST certificate. The academy is not named."
+   },
+   "colleges": [
+    "Los Angeles Pierce College"
+   ]
+  },
+  {
    "raw_title": "Personal Money Management High School to College Articulation",
    "why": "the classifier is unsure (0.75)",
    "proposal": {
@@ -5232,6 +5268,19 @@
    },
    "colleges": [
     "College of the Canyons"
+   ]
+  },
+  {
+   "raw_title": "Pre Apprenticeship Construction Trades Noncredit Certificate of Completion",
+   "why": "the classifier is unsure (0.70)",
+   "proposal": {
+    "title": "Construction Trades Pre-Apprenticeship",
+    "issuer": "",
+    "confidence": 0.7,
+    "note": "This looks like Cerritos College's own noncredit certificate, so it is a local credential and the issuer stays null under Rule 6. It does not name MC3 or NABTU, so it was not joined to the MC3 family."
+   },
+   "colleges": [
+    "Cerritos College"
    ]
   },
   {
@@ -5716,6 +5765,19 @@
    ]
   },
   {
+   "raw_title": "State or County EMT Certification",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "EMT Certification",
+    "issuer": "California Emergency Medical Services Authority (EMSA)",
+    "confidence": 0.72,
+    "note": "EMT certification is issued by county local EMS agencies under EMSA standards. EMSA is used as the state-level issuer; a county agency may be the actual issuer."
+   },
+   "colleges": [
+    "Bakersfield College"
+   ]
+  },
+  {
    "raw_title": "Surface Rescue Boat Technician",
    "why": "the classifier is unsure (0.50)",
    "proposal": {
@@ -5742,13 +5804,13 @@
    ]
   },
   {
-   "raw_title": "THEATER 342",
-   "why": "a merge would join two issuers (California Community Colleges; the reference has Birmingham Community Charter High School)",
+   "raw_title": "THEATER 342: Technical Theater Production",
+   "why": "the classifier is unsure (0.75)",
    "proposal": {
     "title": "Technical Stage Production",
     "issuer": "California Community Colleges",
-    "confidence": 0.85,
-    "note": "The raw title is code-only; the course-identity lookup resolved it to Pierce's 342 course, Technical Stage Production."
+    "confidence": 0.75,
+    "note": "The course-identity lookup on Pierce THEATER 342 gave 'Technical Stage Production', which was preferred over the hs-lane hint. The same title exists for Birmingham HS; the issuer tells the two apart. Confirm against the Pierce catalog."
    },
    "colleges": [
     "Los Angeles Pierce College"
@@ -5922,7 +5984,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -5937,7 +5999,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -5952,7 +6014,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -5967,7 +6029,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -5982,7 +6044,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -5997,7 +6059,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6012,7 +6074,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6027,7 +6089,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6042,7 +6104,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6057,7 +6119,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6072,7 +6134,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6087,7 +6149,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6102,7 +6164,7 @@
     "McDonald's Business Leadership Practices"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6117,7 +6179,7 @@
     "McDonald's Mid-Management Foundations Curriculum"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6132,7 +6194,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6147,7 +6209,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6162,7 +6224,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   },
   {
@@ -6177,7 +6239,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-28",
+   "fold_report": "2026-10-29",
    "colleges": []
   }
  ]

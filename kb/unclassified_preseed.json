@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-28T14:36:40Z",
- "_queue_count": 489,
+ "_generated_at": "2026-10-29T14:43:53Z",
+ "_queue_count": 455,
  "_counts": {
-  "staged": 453,
-  "needs_you": 453,
+  "staged": 419,
+  "needs_you": 459,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -86,19 +86,6 @@
     "Rule 5c"
    ]
   },
-  "ADM JUS 067 - Community Relations": {
-   "title": "Community Relations",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "The cx hint was mended by stripping the course code ADM JUS 067. The title joins the existing Community Relations family. The issuer is CCC because this is a Credit By Exam row.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "brand-family",
-    "Rule 5c"
-   ]
-  },
   "ADM JUS 067 - Community Relations I": {
    "title": "Community Relations",
    "issuer": "California Community Colleges",
@@ -150,32 +137,6 @@
     "Rule 5c"
    ]
   },
-  "AP Art History Area 3A": {
-   "title": "AP Art History",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Articulation-area suffix 'Area 3A' stripped; joins AP Art History family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Art History Area 3B": {
-   "title": "AP Art History",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Articulation-area suffix 'Area 3B' stripped; joins AP Art History family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
   "AP Art History HS-LEUSD": {
    "title": "AP Art History",
    "issuer": "College Board",
@@ -190,45 +151,6 @@
     "join-when-likely-one"
    ],
    "trainer": "Lake Elsinore Unified School District (LEUSD)"
-  },
-  "AP Calculus AB Area 2": {
-   "title": "AP Calculus AB",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Calculus BC Area 2": {
-   "title": "AP Calculus BC",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Calculus BC/AB Subscore - Area 2": {
-   "title": "AP Calculus BC — AB Subscore",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "Area suffix stripped; joins existing AB-subscore family rather than full BC.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
   },
   "AP Calculus: PreCalculus": {
    "title": "AP Precalculus",
@@ -325,58 +247,6 @@
     "Rule 1"
    ]
   },
-  "AP European History - Area 3B": {
-   "title": "AP European History",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP European History - Area 4": {
-   "title": "AP European History",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP French Language and Culture, Score of 3": {
-   "title": "AP French Language and Culture",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Score band stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP French Language and Culture, Score of 4-5": {
-   "title": "AP French Language and Culture",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Score band stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
   "AP History – World History (Area A-3)": {
    "title": "AP World History: Modern",
    "issuer": "College Board",
@@ -420,32 +290,6 @@
     "join-when-likely-one"
    ]
   },
-  "AP Music Theory, Score of 3-4": {
-   "title": "AP Music Theory",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Score band stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Music Theory, Score of 5": {
-   "title": "AP Music Theory",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Score band stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
   "AP Physics 1 & 2": {
    "title": "AP Physics",
    "issuer": "College Board",
@@ -457,162 +301,6 @@
     "brand-family",
     "Rule 5d",
     "Rule 4"
-   ]
-  },
-  "AP Physics C  - Electricity / Magnetism": {
-   "title": "AP Physics C: Electricity and Magnetism",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.96,
-   "note": "Whitespace/slash noise normalized to house family name.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP PreCalculus - Area 2": {
-   "title": "AP Precalculus",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped; casing normalized to house family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Spanish Language and Culture, Score of 3": {
-   "title": "AP Spanish Language and Culture",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Score band stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Spanish Language and Culture, Score of 4-5": {
-   "title": "AP Spanish Language and Culture",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Score band stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Spanish Literature and Culture, Score of 3": {
-   "title": "AP Spanish Literature and Culture",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Spanish Literature and Culture, Score of 4-5": {
-   "title": "AP Spanish Literature and Culture",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Statistics - Area 2": {
-   "title": "AP Statistics",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.98,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP Studio Art: 2D Design": {
-   "title": "AP 2-D Art and Design",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.9,
-   "note": "AP Studio Art: 2-D Design is the pre-2019 name of AP 2-D Art and Design; joined as a version variant.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3",
-    "Rule 5d"
-   ]
-  },
-  "AP Studio Art: 3D Design": {
-   "title": "AP 3-D Art and Design",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.9,
-   "note": "AP Studio Art: 3-D Design is the pre-2019 name of AP 3-D Art and Design; joined as a version variant.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3",
-    "Rule 5d"
-   ]
-  },
-  "AP Studio Art: Drawing": {
-   "title": "AP Drawing",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "AP Studio Art: Drawing is the pre-2019 name of AP Drawing.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3",
-    "Rule 5d"
-   ]
-  },
-  "AP U.S. History,  Area 4": {
-   "title": "AP U.S. History",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP U.S. History, Area 3B": {
-   "title": "AP U.S. History",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
    ]
   },
   "AP World History Exam": {
@@ -627,32 +315,6 @@
     "Rule 5d",
     "Rule 3",
     "join-when-likely-one"
-   ]
-  },
-  "AP World History Modern - Area 3B": {
-   "title": "AP World History: Modern",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP World History Modern - Area 4": {
-   "title": "AP World History: Modern",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
    ]
   },
   "AP World History, Area 3B": {
@@ -682,40 +344,6 @@
     "join-when-likely-one",
     "Rule 5d"
    ]
-  },
-  "AP World History: Modern, Area 3": {
-   "title": "AP World History: Modern",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.98,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP World History: Modern, Area 4": {
-   "title": "AP World History: Modern",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.98,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "AP calculus AB": {
-   "title": "AP Calculus AB",
-   "issuer": "College Board",
-   "via": "family",
-   "confidence": 0.8,
-   "note": "Matched the existing house family 'AP Calculus AB'; issuer from the curated credential KB.",
-   "procedure": "brand-family"
   },
   "AR-1728-0135 Basic Military Police (STO2)": {
    "title": "Basic Military Police",
@@ -793,19 +421,6 @@
     "Rule 5c"
    ]
   },
-  "ASPRS Certification - GEOG 025": {
-   "title": "ASPRS Certification",
-   "issuer": "American Society for Photogrammetry and Remote Sensing (ASPRS)",
-   "via": "classifier",
-   "confidence": 0.7,
-   "note": "The specific ASPRS certification (e.g. GIS/LIS Technologist) is not named. The course code is stripped; GEOG 025 and GIS 025 are cross-listed variants at Pierce.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 6",
-    "issuer-issues-the-card"
-   ]
-  },
   "ASPRS Certification - GIS 025": {
    "title": "ASPRS Certification",
    "issuer": "American Society for Photogrammetry and Remote Sensing (ASPRS)",
@@ -818,6 +433,19 @@
     "Rule 6",
     "issuer-issues-the-card",
     "join-when-likely-one"
+   ]
+  },
+  "ASPRS-GIS Certification - GEOG 025": {
+   "title": "ASPRS GIS Certification",
+   "issuer": "American Society for Photogrammetry and Remote Sensing (ASPRS)",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "No house family exists. GEOG 025 is the articulated course and was stripped. The exact ASPRS credential name (e.g. GIS/LIS Technologist) is unconfirmed.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "Rule 6",
+    "issuer-issues-the-card"
    ]
   },
   "Accounting 1- HS CE(MVUSD)": {
@@ -926,6 +554,19 @@
     "Rule 8b",
     "brand-family",
     "issuer-issues-the-card"
+   ]
+  },
+  "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)": {
+   "title": "Personal Training Certification",
+   "issuer": "American College of Sports Medicine (ACSM)",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Joined the multi-issuer personal-trainer family (ACE/NASM), with ACSM as the issuer discriminator; faculty may split it out as ACSM-CPT.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 4",
+    "Rule 6",
+    "join-when-likely-one"
    ]
   },
   "American Council on Exercise (ACE) Personal Trainer Certification": {
@@ -1206,6 +847,19 @@
     "Rule 6"
    ]
   },
+  "Automotive Service Excellence (ASE) ASE A7": {
+   "title": "ASE A7 — Heating and Air Conditioning",
+   "issuer": "National Institute for Automotive Service Excellence (ASE)",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ]
+  },
   "Automotive Service Excellence MIL3 - Drive Train": {
    "title": "ASE MIL3 — Drive Train",
    "issuer": "National Institute for Automotive Service Excellence (ASE)",
@@ -1284,6 +938,14 @@
     "course-identity"
    ],
    "trainer": "Moreno Valley Unified School District"
+  },
+  "BIOTECH 001: Fundamentals of Biotechnology": {
+   "title": "Fundamentals of Biotechnology",
+   "issuer": "California Community Colleges",
+   "via": "identity",
+   "confidence": 0.8,
+   "note": "Rule 5c: the college's own title for BIOTECH 1; issuer = CCC.",
+   "procedure": "course-identity"
   },
   "Basic Automotive Painting - Refinishing - Credit by Exam (ACRP 2A )": {
    "title": "Basic Automotive Painting and Refinishing",
@@ -1565,18 +1227,6 @@
     "Rule 5c"
    ]
   },
-  "CHPS Field Botanist Certification": {
-   "title": "Field Botanist Certification",
-   "issuer": "California Native Plant Society (CNPS)",
-   "via": "classifier",
-   "confidence": 0.5,
-   "note": "The acronym CHPS is unclear. The field botanist certification in California is run by CNPS, so the issuer is a guess pending review.",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 9"
-   ]
-  },
   "CISCYBR 1 Introduction to Systems & Network Cybersecurity (HSA)": {
    "title": "Introduction to Systems and Network Cybersecurity",
    "issuer": "Local High School",
@@ -1590,48 +1240,6 @@
     "Rule 5f",
     "Rule 1"
    ]
-  },
-  "CLEP Biology, Area 5B": {
-   "title": "CLEP Biology",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.98,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Calculus, Area 2": {
-   "title": "CLEP Calculus",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Articulation-area suffix stripped; joins house CLEP family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP French Language: Level II": {
-   "title": "CLEP French Language Level 2",
-   "issuer": "College Board",
-   "via": "family",
-   "confidence": 0.8,
-   "note": "Matched the existing house family 'CLEP French Language Level 2'; issuer from the curated credential KB.",
-   "procedure": "brand-family"
-  },
-  "CLEP German Language: Level II": {
-   "title": "CLEP German Language Level 2",
-   "issuer": "College Board",
-   "via": "family",
-   "confidence": 0.8,
-   "note": "Matched the existing house family 'CLEP German Language Level 2'; issuer from the curated credential KB.",
-   "procedure": "brand-family"
   },
   "CLEP History I": {
    "title": "CLEP History of the United States 1",
@@ -1659,92 +1267,6 @@
     "Rule 8"
    ]
   },
-  "CLEP History, United States I: Early Colonization to 1877": {
-   "title": "CLEP History of the United States 1",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.96,
-   "note": "Exam subtitle stripped; joins house family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP History, United States II: 1865 to the Present": {
-   "title": "CLEP History of the United States 2",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.96,
-   "note": "Exam subtitle stripped; joins house family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Natural Sciences, Area 5A": {
-   "title": "CLEP Natural Sciences",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Natural Sciences, Area 5B": {
-   "title": "CLEP Natural Sciences",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Principles of Macroeconomics - Area 4": {
-   "title": "CLEP Principles of Macroeconomics",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Principles of Microeconomics - Area 4": {
-   "title": "CLEP Principles of Microeconomics",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Spanish Language: Level II": {
-   "title": "CLEP Spanish Language Level 2",
-   "issuer": "College Board",
-   "via": "family",
-   "confidence": 0.8,
-   "note": "Matched the existing house family 'CLEP Spanish Language Level 2'; issuer from the curated credential KB.",
-   "procedure": "brand-family"
-  },
   "CLEP Spanish Language: Levels 1 and 2": {
    "title": "CLEP Spanish Language Levels 1 and 2",
    "issuer": "College Board",
@@ -1759,14 +1281,6 @@
     "Rule 9"
    ]
   },
-  "CLEP Spanish with Writing: Level II": {
-   "title": "CLEP Spanish with Writing Level II",
-   "issuer": "College Board",
-   "via": "family",
-   "confidence": 0.8,
-   "note": "Matched the existing house family 'CLEP Spanish with Writing Level II'; issuer from the curated credential KB.",
-   "procedure": "brand-family"
-  },
   "CLEP Spanish with Writing: Levels 1 and 2": {
    "title": "CLEP Spanish with Writing 2",
    "issuer": "College Board",
@@ -1778,58 +1292,6 @@
     "brand-family",
     "Rule 5d",
     "join-when-likely-one"
-   ]
-  },
-  "CLEP Western Civilization I - Area 3B": {
-   "title": "CLEP Western Civilization 1",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Western Civilization I - Area 4": {
-   "title": "CLEP Western Civilization 1",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Western Civilization I: Ancient Near East to 1648 (Area 3)": {
-   "title": "CLEP Western Civilization 1",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Subtitle and area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "CLEP Western Civilization I: Ancient Near East to 1648 (Area 4)": {
-   "title": "CLEP Western Civilization 1",
-   "issuer": "College Board",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "Subtitle and area suffix stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
    ]
   },
   "CSTI Certified FRA & FRO Instructor": {
@@ -2025,6 +1487,18 @@
     "brand-family",
     "join-when-likely-one",
     "Rule 4"
+   ]
+  },
+  "California Native Plant Society (CNPS) Field Botanist Certification": {
+   "title": "CNPS Certified Field Botanist",
+   "issuer": "California Native Plant Society (CNPS)",
+   "via": "classifier",
+   "confidence": 0.85,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "Rule 6"
    ]
   },
   "California State Water Resources Control Board D3, D4, or D5 certification": {
@@ -2738,56 +2212,6 @@
     "Rule 1"
    ]
   },
-  "DSST Business 475 Business Ethics and Society": {
-   "title": "DSST Business Ethics and Society",
-   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "Exam category/number stripped; joins house DSST family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1"
-   ]
-  },
-  "DSST Business 532 Principles of Supervision - Business": {
-   "title": "DSST Principles of Supervision",
-   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "Articulation-area suffix (Business) stripped; same exam as Management variant.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 2"
-   ]
-  },
-  "DSST Business 532 Principles of Supervision - Management": {
-   "title": "DSST Principles of Supervision",
-   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "Articulation-area suffix (Management) stripped; same exam as Business variant.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 2"
-   ]
-  },
-  "DSST Physical Science 508 Health and Human Development": {
-   "title": "DSST Health and Human Development",
-   "issuer": "Defense Activity for Non-Traditional Education Support (DANTES)",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "Exam category/number stripped; joins house DSST family.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1"
-   ]
-  },
   "Dance Rehearsal & Performance I": {
    "title": "Dance Rehearsal and Performance",
    "issuer": "California Community Colleges",
@@ -3071,6 +2495,58 @@
     "Rule 1",
     "join-when-likely-one",
     "Rule 6"
+   ]
+  },
+  "Electrical Training Program CA Conservation Corps COMET": {
+   "title": "Electrical Training Program — COMET",
+   "issuer": "California Conservation Corps",
+   "via": "classifier",
+   "confidence": 0.55,
+   "note": "COMET is an unexplained program token, so the competency is unclear. The Conservation Corps is assumed to be the attesting body; needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "issuer-issues-the-card",
+    "Rule 9"
+   ]
+  },
+  "Electrical Training Program CA Conservation Corps Electric Vehicle": {
+   "title": "Electric Vehicle Electrical Training",
+   "issuer": "California Conservation Corps",
+   "via": "classifier",
+   "confidence": 0.6,
+   "note": "Set aside the cx hint, which kept the provider name in the title and used the CCC issuer. The named Conservation Corps trainer becomes issuer and trainer per Rule 5f. The title wording is a guess.",
+   "procedure": "classifier",
+   "rests_on": [
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 1"
+   ],
+   "trainer": "California Conservation Corps"
+  },
+  "Electrician Trainee Program Non Residential Lighting Technician Journeyperson": {
+   "title": "Non-Residential Lighting Technician Certification",
+   "issuer": "California Department of Industrial Relations (DIR)",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "Read as the DIR electrician certification category NLLT/NRLT reached via the Electrician Trainee program. The issuer is inferred and needs review.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "issuer-issues-the-card"
+   ]
+  },
+  "Electrician Trainee Program Whole Residential Electrician Journeyperson": {
+   "title": "Residential Electrician Certification",
+   "issuer": "California Department of Industrial Relations (DIR)",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "Read as the DIR Residential Electrician certification. It is kept apart from General Electrician Certification because it has a narrower scope.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "Rule 4",
+    "issuer-issues-the-card"
    ]
   },
   "Elem Spanish I High School Articulation": {
@@ -3505,6 +2981,20 @@
     "join-when-likely-one"
    ]
   },
+  "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques": {
+   "title": "Modern Dance Techniques",
+   "issuer": "CHAMPS High School",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "brand-family"
+   ],
+   "trainer": "CHAMPS High School"
+  },
   "HVACR DAS Journeyman": {
    "title": "HVACR Apprenticeship Journeyman Certificate",
    "issuer": "California Division of Apprenticeship Standards (DAS)",
@@ -3647,58 +3137,6 @@
     "Rule 1"
    ]
   },
-  "IB History HL, any region (Area 3)": {
-   "title": "IB History HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "Joined the IB History HL house family; the region and articulation-area suffixes were stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "IB History HL, any region (Area 4)": {
-   "title": "IB History HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "Joined the IB History HL house family; the region and articulation-area suffixes were stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "IB History, any region HL - Area 3B": {
-   "title": "IB History HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "Joined the IB History HL house family; the region and area suffixes were stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
-  "IB History, any region HL - Area 4": {
-   "title": "IB History HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "Joined the IB History HL house family; the region and area suffixes were stripped.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 1",
-    "Rule 5d"
-   ]
-  },
   "IB Language A - any language except English HL": {
    "title": "IB Language A: Literature HL (Non-English)",
    "issuer": "International Baccalaureate Organization (IBO)",
@@ -3723,30 +3161,6 @@
    "rests_on": [
     "brand-family",
     "join-when-likely-one",
-    "Rule 5d"
-   ]
-  },
-  "IB Mathematics HL: Analysis and Approaches": {
-   "title": "IB Mathematics: Analysis and Approaches HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "Joined the house family as written; the source only reorders the HL marker.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 5d"
-   ]
-  },
-  "IB Mathematics HL: Applications and Interpretation": {
-   "title": "IB Mathematics: Applications and Interpretation HL",
-   "issuer": "International Baccalaureate Organization (IBO)",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "Joined the house family as written; the source only reorders the HL marker.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
     "Rule 5d"
    ]
   },
@@ -4131,6 +3545,18 @@
    ],
    "trainer": "Moreno Valley Unified School District"
   },
+  "International Society of Arboriculture (ISA) Certified Arborist": {
+   "title": "ISA Certified Arborist",
+   "issuer": "International Society of Arboriculture (ISA)",
+   "via": "classifier",
+   "confidence": 0.97,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 6"
+   ]
+  },
   "Intro Appetizers High School Articulation": {
    "title": "Introduction to Appetizers",
    "issuer": "Local High School",
@@ -4487,6 +3913,19 @@
    ],
    "trainer": "U.S. Army"
   },
+  "MUSIC 217-1: Musicianship I": {
+   "title": "Musicianship 1",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.88,
+   "note": "Mended the hs hint to the existing house spelling, Musicianship 1.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ]
+  },
   "Manufacturer/Vendor Specific Building Automation System (BAS) Certification": {
    "title": "Building Automation System (BAS) Manufacturer Certification",
    "issuer": "",
@@ -4579,6 +4018,110 @@
     "Rule 8b",
     "Rule 4",
     "Rule 9"
+   ]
+  },
+  "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)": {
+   "title": "Microsoft Office Specialist — Word",
+   "issuer": "Microsoft",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mended the cos hint to the house family. The version and Associate level collapse; Expert stays separate.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 4"
+   ]
+  },
+  "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)": {
+   "title": "Microsoft Office Specialist — Word Expert",
+   "issuer": "Microsoft",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 4"
+   ]
+  },
+  "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)": {
+   "title": "Microsoft Office Specialist — Word",
+   "issuer": "Microsoft",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Mended the cos hint to the house family. The Microsoft 365 version variant unifies with MO-100.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3"
+   ]
+  },
+  "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)": {
+   "title": "Microsoft Office Specialist — Excel",
+   "issuer": "Microsoft",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Mended the cos hint to the house family, with Microsoft spelled the house way.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 4"
+   ]
+  },
+  "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)": {
+   "title": "Microsoft Office Specialist — Excel",
+   "issuer": "Microsoft",
+   "via": "classifier",
+   "confidence": 0.92,
+   "note": "Joined the existing MOS Excel (Associate) house family instead of the COS hint wording; dropped the exam code and the version note. Kept separate from Excel Expert.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 4",
+    "Rule 1"
+   ]
+  },
+  "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)": {
+   "title": "Microsoft Office Specialist — Excel Expert",
+   "issuer": "Microsoft",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 4",
+    "Rule 1"
+   ]
+  },
+  "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)": {
+   "title": "Microsoft Office Specialist — Outlook",
+   "issuer": "Microsoft",
+   "via": "classifier",
+   "confidence": 0.94,
+   "note": "Joined the house family; the COS hint title and the 'Microsoft Corporation' issuer spelling were set aside.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 3",
+    "Rule 1"
+   ]
+  },
+  "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)": {
+   "title": "Microsoft Office Specialist — Access Expert",
+   "issuer": "Microsoft",
+   "via": "classifier",
+   "confidence": 0.95,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 4",
+    "Rule 1"
    ]
   },
   "Music Production I High School Articulation": {
@@ -5229,6 +4772,20 @@
     "issuer-issues-the-card"
    ]
   },
+  "Peace Officer Standards and Training (POST)": {
+   "title": "POST Basic Academy",
+   "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+   "via": "classifier",
+   "confidence": 0.75,
+   "note": "The title names only the commission. The Basic Academy is the most likely POST credential, but the row could mean another POST certificate. The academy is not named.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7",
+    "Rule 8"
+   ],
+   "trainer": "varies by academy"
+  },
   "Personal Money Management High School to College Articulation": {
    "title": "Personal Money Management",
    "issuer": "Local High School",
@@ -5304,6 +4861,19 @@
     "course-identity",
     "join-when-likely-one",
     "Rule 5c"
+   ]
+  },
+  "Pre Apprenticeship Construction Trades Noncredit Certificate of Completion": {
+   "title": "Construction Trades Pre-Apprenticeship",
+   "issuer": "",
+   "via": "classifier",
+   "confidence": 0.7,
+   "note": "This looks like Cerritos College's own noncredit certificate, so it is a local credential and the issuer stays null under Rule 6. It does not name MC3 or NABTU, so it was not joined to the MC3 family.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 1",
+    "Rule 6",
+    "join-when-likely-one"
    ]
   },
   "Principles of Emergency Services Safety and Survival": {
@@ -5794,6 +5364,19 @@
     "Rule 1"
    ]
   },
+  "State or County EMT Certification": {
+   "title": "EMT Certification",
+   "issuer": "California Emergency Medical Services Authority (EMSA)",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "EMT certification is issued by county local EMS agencies under EMSA standards. EMSA is used as the state-level issuer; a county agency may be the actual issuer.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 4",
+    "Rule 5b"
+   ]
+  },
   "Surface Rescue Boat Technician": {
    "title": "Surface Rescue Boat Technician",
    "issuer": "California State Fire Training (SFT)",
@@ -5818,16 +5401,17 @@
     "Rule 5c"
    ]
   },
-  "THEATER 342": {
+  "THEATER 342: Technical Theater Production": {
    "title": "Technical Stage Production",
    "issuer": "California Community Colleges",
    "via": "classifier",
-   "confidence": 0.85,
-   "note": "The raw title is code-only; the course-identity lookup resolved it to Pierce's 342 course, Technical Stage Production.",
+   "confidence": 0.75,
+   "note": "The course-identity lookup on Pierce THEATER 342 gave 'Technical Stage Production', which was preferred over the hs-lane hint. The same title exists for Birmingham HS; the issuer tells the two apart. Confirm against the Pierce catalog.",
    "procedure": "classifier",
    "rests_on": [
     "course-identity",
-    "Rule 5c"
+    "Rule 5c",
+    "mechanism-collapses"
    ]
   },
   "Video Editing High School Articulation": {

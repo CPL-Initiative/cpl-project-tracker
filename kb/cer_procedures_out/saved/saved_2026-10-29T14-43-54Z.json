@@ -1,0 +1,411 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-10-29T14-43-54Z",
+ "run_id": "40893751445",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "575c290d755b",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) ASE A7",
+   "field": "unified_title_assignment",
+   "value": "ASE A7 — Heating and Air Conditioning",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) ASE A7",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOTECH 001: Fundamentals of Biotechnology",
+   "field": "unified_title_assignment",
+   "value": "Fundamentals of Biotechnology",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOTECH 001: Fundamentals of Biotechnology",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California Native Plant Society (CNPS) Field Botanist Certification",
+   "field": "unified_title_assignment",
+   "value": "CNPS Certified Field Botanist",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California Native Plant Society (CNPS) Field Botanist Certification",
+   "field": "issuing_agency_assignment",
+   "value": "California Native Plant Society (CNPS)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+   "field": "unified_title_assignment",
+   "value": "Modern Dance Techniques",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+   "field": "issuing_agency_assignment",
+   "value": "CHAMPS High School",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Society of Arboriculture (ISA) Certified Arborist",
+   "field": "unified_title_assignment",
+   "value": "ISA Certified Arborist",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Society of Arboriculture (ISA) Certified Arborist",
+   "field": "issuing_agency_assignment",
+   "value": "International Society of Arboriculture (ISA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MUSIC 217-1: Musicianship I",
+   "field": "unified_title_assignment",
+   "value": "Musicianship 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MUSIC 217-1: Musicianship I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Word",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Word Expert",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Word",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Excel",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Excel",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Excel Expert",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Outlook",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Access Expert",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) ASE A7",
+   "field": "unified_title_assignment",
+   "value": "ASE A7 — Heating and Air Conditioning",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) ASE A7",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOTECH 001: Fundamentals of Biotechnology",
+   "field": "unified_title_assignment",
+   "value": "Fundamentals of Biotechnology",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::BIOTECH 001: Fundamentals of Biotechnology",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California Native Plant Society (CNPS) Field Botanist Certification",
+   "field": "unified_title_assignment",
+   "value": "CNPS Certified Field Botanist",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California Native Plant Society (CNPS) Field Botanist Certification",
+   "field": "issuing_agency_assignment",
+   "value": "California Native Plant Society (CNPS)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+   "field": "unified_title_assignment",
+   "value": "Modern Dance Techniques",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+   "field": "issuing_agency_assignment",
+   "value": "CHAMPS High School",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Society of Arboriculture (ISA) Certified Arborist",
+   "field": "unified_title_assignment",
+   "value": "ISA Certified Arborist",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Society of Arboriculture (ISA) Certified Arborist",
+   "field": "issuing_agency_assignment",
+   "value": "International Society of Arboriculture (ISA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MUSIC 217-1: Musicianship I",
+   "field": "unified_title_assignment",
+   "value": "Musicianship 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MUSIC 217-1: Musicianship I",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Word",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Word Expert",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Word",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Excel",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Excel",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Excel Expert",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Outlook",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+   "field": "unified_title_assignment",
+   "value": "Microsoft Office Specialist — Access Expert",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+   "field": "issuing_agency_assignment",
+   "value": "Microsoft",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}

@@ -6158,6 +6158,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "ASPRS-GIS Certification - GEOG 025": {
+   "raw_title": "ASPRS-GIS Certification - GEOG 025",
+   "unified_title": "ASPRS GIS Certification",
+   "issuing_agency": "American Society for Photogrammetry and Remote Sensing (ASPRS)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.85,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "Rule 1",
+    "Rule 6",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "No house family exists. GEOG 025 is the articulated course and was stripped. The exact ASPRS credential name (e.g. GIS/LIS Technologist) is unconfirmed.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
   "Academic Reading and Writing ENGL C1000": {
    "raw_title": "Academic Reading and Writing ENGL C1000",
    "unified_title": "Academic Reading and Writing",
@@ -6418,6 +6436,24 @@
    "rules": "575c290d755b",
    "hints": "2ed0f74427",
    "asked": "2026-10-18"
+  },
+  "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)": {
+   "raw_title": "American College of Sports Medicine Personal Trainer Certificate (ACSM-CPT)",
+   "unified_title": "Personal Training Certification",
+   "issuing_agency": "American College of Sports Medicine (ACSM)",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "Rule 4",
+    "Rule 6",
+    "join-when-likely-one"
+   ],
+   "_notes": "Joined the multi-issuer personal-trainer family (ACE/NASM), with ACSM as the issuer discriminator; faculty may split it out as ACSM-CPT.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
   },
   "American Council on Exercise (ACE) Personal Trainer Certification": {
    "raw_title": "American Council on Exercise (ACE) Personal Trainer Certification",
@@ -7102,6 +7138,24 @@
    "rules": "575c290d755b",
    "hints": "4f53cda18c",
    "asked": "2026-10-23"
+  },
+  "Automotive Service Excellence (ASE) ASE A7": {
+   "raw_title": "Automotive Service Excellence (ASE) ASE A7",
+   "unified_title": "ASE A7 — Heating and Air Conditioning",
+   "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.97,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 8b",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
   },
   "Automotive Service Excellence 1 (A1) - Engine Repair": {
    "raw_title": "Automotive Service Excellence 1 (A1) - Engine Repair",
@@ -9874,6 +9928,23 @@
    "_notes": "California food manager certification requires passing an ANSI-accredited Food Protection Manager exam, so this joins that house family. ServSafe is an alternate family if curators prefer the vendor.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "California Native Plant Society (CNPS) Field Botanist Certification": {
+   "raw_title": "California Native Plant Society (CNPS) Field Botanist Certification",
+   "unified_title": "CNPS Certified Field Botanist",
+   "issuing_agency": "California Native Plant Society (CNPS)",
+   "training_agency": null,
+   "confidence_title": 0.85,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "Rule 1",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
   },
   "California State Water Resources Control Board D3, D4, or D5 certification": {
    "raw_title": "California State Water Resources Control Board D3, D4, or D5 certification",
@@ -12665,6 +12736,77 @@
    "hints": "cf93c27acc",
    "asked": "2026-10-18"
   },
+  "Electrical Training Program CA Conservation Corps COMET": {
+   "raw_title": "Electrical Training Program CA Conservation Corps COMET",
+   "unified_title": "Electrical Training Program — COMET",
+   "issuing_agency": "California Conservation Corps",
+   "training_agency": null,
+   "confidence_title": 0.55,
+   "confidence_issuer": 0.65,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "Rule 1",
+    "issuer-issues-the-card",
+    "Rule 9"
+   ],
+   "_notes": "COMET is an unexplained program token, so the competency is unclear. The Conservation Corps is assumed to be the attesting body; needs review.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
+  "Electrical Training Program CA Conservation Corps Electric Vehicle": {
+   "raw_title": "Electrical Training Program CA Conservation Corps Electric Vehicle",
+   "unified_title": "Electric Vehicle Electrical Training",
+   "issuing_agency": "California Conservation Corps",
+   "training_agency": "California Conservation Corps",
+   "confidence_title": 0.6,
+   "confidence_issuer": 0.7,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "Rule 1"
+   ],
+   "_notes": "Set aside the cx hint, which kept the provider name in the title and used the CCC issuer. The named Conservation Corps trainer becomes issuer and trainer per Rule 5f. The title wording is a guess.",
+   "rules": "575c290d755b",
+   "hints": "0e6c9064c8",
+   "asked": "2026-10-29"
+  },
+  "Electrician Trainee Program Non Residential Lighting Technician Journeyperson": {
+   "raw_title": "Electrician Trainee Program Non Residential Lighting Technician Journeyperson",
+   "unified_title": "Non-Residential Lighting Technician Certification",
+   "issuing_agency": "California Department of Industrial Relations (DIR)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "Rule 1",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "Read as the DIR electrician certification category NLLT/NRLT reached via the Electrician Trainee program. The issuer is inferred and needs review.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
+  "Electrician Trainee Program Whole Residential Electrician Journeyperson": {
+   "raw_title": "Electrician Trainee Program Whole Residential Electrician Journeyperson",
+   "unified_title": "Residential Electrician Certification",
+   "issuing_agency": "California Department of Industrial Relations (DIR)",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.75,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "Rule 1",
+    "Rule 4",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "Read as the DIR Residential Electrician certification. It is kept apart from General Electrician Certification because it has a narrower scope.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
   "Elem Spanish I High School Articulation": {
    "raw_title": "Elem Spanish I High School Articulation",
    "unified_title": "Elementary Spanish 1",
@@ -13922,6 +14064,24 @@
    "_notes": "The raw title does not say whether this is initial or refresher training. It most likely means the initial 40-hour course, so I joined the house HAZWOPER Initial family.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques": {
+   "raw_title": "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
+   "unified_title": "Modern Dance Techniques",
+   "issuing_agency": "CHAMPS High School",
+   "training_agency": "CHAMPS High School",
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "local-trainer-is-agency",
+    "Rule 5f",
+    "brand-family"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "723532cdd1",
+   "asked": "2026-10-29"
   },
   "HIST 035: History of African Americans in the United States": {
    "raw_title": "HIST 035: History of African Americans in the United States",
@@ -16471,6 +16631,23 @@
    "hints": "3c2b9e0094",
    "asked": "2026-10-18"
   },
+  "International Society of Arboriculture (ISA) Certified Arborist": {
+   "raw_title": "International Society of Arboriculture (ISA) Certified Arborist",
+   "unified_title": "ISA Certified Arborist",
+   "issuing_agency": "International Society of Arboriculture (ISA)",
+   "training_agency": null,
+   "confidence_title": 0.97,
+   "confidence_issuer": 0.97,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 6"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
   "Internetworking and TCP/IP": {
    "raw_title": "Internetworking and TCP/IP",
    "unified_title": "Internetworking and TCP/IP",
@@ -17425,6 +17602,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "MUSIC 217-1: Musicianship I": {
+   "raw_title": "MUSIC 217-1: Musicianship I",
+   "unified_title": "Musicianship 1",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.88,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "brand-family"
+   ],
+   "_notes": "Mended the hs hint to the existing house spelling, Musicianship 1.",
+   "rules": "575c290d755b",
+   "hints": "3efe336d69",
+   "asked": "2026-10-29"
+  },
   "Machine Shop Calculations - Credit by Exam (MTT 40 )": {
    "raw_title": "Machine Shop Calculations - Credit by Exam (MTT 40 )",
    "unified_title": "Machine Shop Calculations",
@@ -17700,6 +17895,150 @@
    "_notes": "The row bundles two distinct Microsoft exams: MS-102 (Microsoft 365 Administrator) and MD-102 (Endpoint Administrator). It is not folded into the MD-102-only house family because it requires both.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)": {
+   "raw_title": "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)",
+   "unified_title": "Microsoft Office Specialist — Word",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 4"
+   ],
+   "_notes": "Mended the cos hint to the house family. The version and Associate level collapse; Expert stays separate.",
+   "rules": "575c290d755b",
+   "hints": "7c2182e8db",
+   "asked": "2026-10-29"
+  },
+  "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)": {
+   "raw_title": "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)",
+   "unified_title": "Microsoft Office Specialist — Word Expert",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 4"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
+  "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)": {
+   "raw_title": "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)",
+   "unified_title": "Microsoft Office Specialist — Word",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 3"
+   ],
+   "_notes": "Mended the cos hint to the house family. The Microsoft 365 version variant unifies with MO-100.",
+   "rules": "575c290d755b",
+   "hints": "7c2182e8db",
+   "asked": "2026-10-29"
+  },
+  "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)": {
+   "raw_title": "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)",
+   "unified_title": "Microsoft Office Specialist — Excel",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 4"
+   ],
+   "_notes": "Mended the cos hint to the house family, with Microsoft spelled the house way.",
+   "rules": "575c290d755b",
+   "hints": "79d045be0c",
+   "asked": "2026-10-29"
+  },
+  "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)": {
+   "raw_title": "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)",
+   "unified_title": "Microsoft Office Specialist — Excel",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.97,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 4",
+    "Rule 1"
+   ],
+   "_notes": "Joined the existing MOS Excel (Associate) house family instead of the COS hint wording; dropped the exam code and the version note. Kept separate from Excel Expert.",
+   "rules": "575c290d755b",
+   "hints": "79d045be0c",
+   "asked": "2026-10-29"
+  },
+  "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)": {
+   "raw_title": "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)",
+   "unified_title": "Microsoft Office Specialist — Excel Expert",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.97,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 4",
+    "Rule 1"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
+  "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)": {
+   "raw_title": "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)",
+   "unified_title": "Microsoft Office Specialist — Outlook",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.94,
+   "confidence_issuer": 0.97,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 3",
+    "Rule 1"
+   ],
+   "_notes": "Joined the house family; the COS hint title and the 'Microsoft Corporation' issuer spelling were set aside.",
+   "rules": "575c290d755b",
+   "hints": "f0e744adbd",
+   "asked": "2026-10-29"
+  },
+  "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)": {
+   "raw_title": "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)",
+   "unified_title": "Microsoft Office Specialist — Access Expert",
+   "issuing_agency": "Microsoft",
+   "training_agency": null,
+   "confidence_title": 0.95,
+   "confidence_issuer": 0.97,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "brand-family",
+    "Rule 4",
+    "Rule 1"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
   },
   "Microsoft Office Specialist (MOS): Access Expert (Office 2019)": {
    "raw_title": "Microsoft Office Specialist (MOS): Access Expert (Office 2019)",
@@ -19308,6 +19647,24 @@
    "hints": "4f53cda18c",
    "asked": "2026-10-21"
   },
+  "Peace Officer Standards and Training (POST)": {
+   "raw_title": "Peace Officer Standards and Training (POST)",
+   "unified_title": "POST Basic Academy",
+   "issuing_agency": "California Commission on Peace Officer Standards and Training (POST)",
+   "training_agency": "varies by academy",
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.95,
+   "confidence_trainer": 0.6,
+   "procedures": [
+    "brand-family",
+    "Rule 7",
+    "Rule 8"
+   ],
+   "_notes": "The title names only the commission. The Basic Academy is the most likely POST credential, but the row could mean another POST certificate. The academy is not named.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
   "Peace Officer Standards and Training (POST) Basic Certificate": {
    "raw_title": "Peace Officer Standards and Training (POST) Basic Certificate",
    "unified_title": "POST Basic Academy",
@@ -19807,6 +20164,24 @@
    "_notes": "The cx hint was a dangling fragment, so it was set aside. The title describes portfolio evidence of mapping/GIS mastery at College of the Canyons, so it is joined to the GIS intro family as a best guess; verify the target course.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Pre Apprenticeship Construction Trades Noncredit Certificate of Completion": {
+   "raw_title": "Pre Apprenticeship Construction Trades Noncredit Certificate of Completion",
+   "unified_title": "Construction Trades Pre-Apprenticeship",
+   "issuing_agency": null,
+   "training_agency": null,
+   "confidence_title": 0.7,
+   "confidence_issuer": 0.55,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 1",
+    "Rule 6",
+    "join-when-likely-one"
+   ],
+   "_notes": "This looks like Cerritos College's own noncredit certificate, so it is a local credential and the issuer stays null under Rule 6. It does not name MC3 or NABTU, so it was not joined to the MC3 family.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
   },
   "Preproduction for Video, Photography, and Media": {
    "raw_title": "Preproduction for Video, Photography, and Media",
@@ -20714,6 +21089,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "State or County EMT Certification": {
+   "raw_title": "State or County EMT Certification",
+   "unified_title": "EMT Certification",
+   "issuing_agency": "California Emergency Medical Services Authority (EMSA)",
+   "training_agency": null,
+   "confidence_title": 0.92,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.8,
+   "procedures": [
+    "brand-family",
+    "Rule 4",
+    "Rule 5b"
+   ],
+   "_notes": "EMT certification is issued by county local EMS agencies under EMSA standards. EMSA is used as the state-level issuer; a county agency may be the actual issuer.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-29"
+  },
   "Structures Analysis - Timber - Credit by Exam (ARCH 258 )": {
    "raw_title": "Structures Analysis - Timber - Credit by Exam (ARCH 258 )",
    "unified_title": "Structures Analysis - Timber",
@@ -20817,6 +21210,24 @@
    "rules": "575c290d755b",
    "hints": "8d2c653f7a",
    "asked": "2026-10-23"
+  },
+  "THEATER 342: Technical Theater Production": {
+   "raw_title": "THEATER 342: Technical Theater Production",
+   "unified_title": "Technical Stage Production",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "mechanism-collapses"
+   ],
+   "_notes": "The course-identity lookup on Pierce THEATER 342 gave 'Technical Stage Production', which was preferred over the hs-lane hint. The same title exists for Birmingham HS; the issuer tells the two apart. Confirm against the Pierce catalog.",
+   "rules": "575c290d755b",
+   "hints": "378da90f70",
+   "asked": "2026-10-29"
   },
   "TIG Welding (GTAW)-Credit by Exam": {
    "raw_title": "TIG Welding (GTAW)-Credit by Exam",
