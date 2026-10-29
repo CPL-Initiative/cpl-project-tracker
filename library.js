@@ -82,7 +82,6 @@
   var KIND = { visual: "Visual", deck: "Deck", film: "Film", document: "Document", spreadsheet: "Spreadsheet" };
   var FOR_KIND = { college: "College", district: "District", agency: "Agency", vendor: "Vendor", co: "Chancellor's Office", other: "Other" };
   var FOR_PLURAL = { college: "Colleges", district: "Districts", agency: "Agencies", vendor: "Vendors", co: "Chancellor's Office", other: "Other" };
-  var MAKE_WORDS = { college: "A college", district: "A district", agency: "An agency", vendor: "A vendor", co: "The Chancellor's Office", other: "Other" };
   var FOR_ORDER = ["college", "district", "agency", "vendor", "co", "other"];
   // MAP's list of colleges (map_colleges, the college and district identity lane): the
   // For picker offers these names, so a piece's college matches the CPL Pathways pick.
@@ -122,7 +121,8 @@
     open: {}, edit: null, form: null, formFor: null, message: "", msgErr: false, busy: false,
     retireAsk: null, start: null, briefShown: {}, requestShown: {}, pub: null,
     madeFor: "all", forName: "all", make: null, names: null, namesLoading: false, forPick: {},
-    view: "pieces", regen: null, src: {}
+    view: "pieces", regen: null, src: {},
+    pick: null, use: null
   };
 
   // ── storage + headers ───────────────────────────────────────────────────────
@@ -384,6 +384,19 @@
       R + " :focus-visible{outline:2px solid var(--focus-ring,var(--cobalt));outline-offset:2px;border-radius:4px;}",
       "@media (max-width:760px){" + R + " .lib-item{grid-template-columns:132px minmax(0,1fr);}" + R + " .lib-thumb{width:132px;}" + R + " .lib-acts{grid-column:1/-1;flex-direction:row;flex-wrap:wrap;}}",
       "@media (max-width:560px){" + R + " .lib-item{grid-template-columns:minmax(0,1fr);}" + R + " .lib-thumb{width:100%;max-width:320px;}" + R + " .lib-details dl{grid-template-columns:minmax(0,1fr);gap:2px 0;}" + R + " .lib-details dd{margin-bottom:8px;}" + R + " .lib-seg{width:100%;}" + R + " .lib-seg button{flex:1 1 auto;}}",
+      // Create or Remediate a Document (Sam, 2026-10-28; mockup Version 20).
+      R + " .lib-panel{display:grid;gap:12px;margin:16px 0 4px;padding:18px;background:var(--surface-opaque);border:1px solid var(--border);border-radius:8px;}",
+      R + " .lib-panel h2.lib-h{margin:0;}",
+      R + " .lib-drop{display:grid;gap:12px;padding:18px;border:2px dashed var(--border-strong);border-radius:8px;background:var(--surface-subtle);}",
+      R + " .lib-drop.over{border-color:var(--cobalt);}",
+      R + " .lib-dropline{margin:0;font-weight:600;color:var(--text-strong);}",
+      R + " .lib-pick{justify-self:start;font-weight:600;color:var(--cobalt);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px;}",
+      R + " #lc-file:focus-visible + *, .lib-pick:focus-within{outline:2px solid var(--cobalt);outline-offset:2px;}",
+      R + " .lib-drop textarea,.lib-drop input[type=url]{width:100%;box-sizing:border-box;}",
+      R + " .lib-uses{display:grid;gap:6px;margin:0;padding:10px 14px;border:1px solid var(--border);border-radius:8px;}",
+      R + " .lib-uses legend{font-weight:600;color:var(--text-strong);padding:0 4px;overflow-wrap:anywhere;}",
+      R + " .lib-panelfoot{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;}",
+      R + " .lib-panelfoot .lib-line{flex:1 1 320px;margin:0;}",
       // One card per project (Sam, 2026-10-28; mockup Version 20): a row per piece, its title the link.
       R + " .lib-proj .lib-tile .big{font-size:1.45rem;}",
       R + " .lib-pieces{list-style:none;margin:6px 0 0;padding:0;border-top:1px solid var(--border);}",
@@ -702,7 +715,7 @@
   function addForm() {
     var f = state.form || {};
     var filing = !!state.formFor;
-    return '<form class="lib-form" id="lib-addform"><h2 class="lib-h">' + (filing ? "File " + (f.title ? esc(f.title) : "this piece") : "Add to the Library") + "</h2>" +
+    return '<form class="lib-form" id="lib-addform"><h2 class="lib-h">' + (filing ? "File " + (f.title ? esc(f.title) : "this piece") : "File a piece already made") + "</h2>" +
       "<p>" + (filing ? "" : "The Library keeps the record and links to the file. ") +
       "Put the file in the team's SharePoint folder first: an approved piece in the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, a draft in its Drafts folder. ' +
@@ -910,36 +923,120 @@
     var t = document.getElementById(p + "-stitle"); if (t) t.focus();
   }
 
-    // Make a visual (Sam, Sheet 120 cards 1 and 4): for a college the record pair is
-  // written now; for any other entity the brief is written with the entity set.
-  function makeForm() {
-    var f = state.make || {};
-    var kind = f.for_kind || "college", college = kind === "college";
-    var names = college ? collegeNames() : kind === "district" ? districtNames() : [];
-    var seg = FOR_ORDER.map(function (k) {
-      return '<button type="button" data-makefor="' + k + '" aria-pressed="' + (kind === k) + '">' + esc(MAKE_WORDS[k]) + "</button>";
-    }).join("");
-    return '<form class="lib-form" id="lib-makeform"><h2 class="lib-h">Make a visual</h2>' +
-      "<p>" + (college
-        ? "For a college the record pair is written as you press Make: the live CPL Opportunity page and its workbook, Made for College. List the page publicly when it is ready; the public link is the college's."
-        : "For a district, an agency, a vendor or the Chancellor's Office, a brief: name the meeting, say what the visual must show, and link what you uploaded. The brief files as Requested with the entity set, and Copy the brief starts the session that builds the page on the agency template and files it here.") + "</p>" +
-      '<div class="lib-grid">' +
-      '<div class="lib-field wide"><span class="lib-seglabel" id="lm-for-l">Made for</span><div class="lib-seg" role="group" aria-labelledby="lm-for-l">' + seg + "</div></div>" +
-      (kind === "other" ? '<div class="lib-field"><label for="lm-forcat">Other: the category</label><input id="lm-forcat" type="text" required maxlength="80" value="' + esc(f.for_category || "") + '" placeholder="Foundation, union, school district"></div>' : "") +
-      '<div class="lib-field wide"><label for="lm-forname">For</label><input id="lm-forname" type="text" required maxlength="200"' +
-      (names.length ? ' list="lib-names-' + (college ? "colleges" : "districts") + '"' : "") + ' value="' + esc(f.for_name || "") + '" placeholder="' + (college ? "Start typing the college\'s name" : "The entity\'s name") + '"></div>' +
-      '<div class="lib-field wide"><label for="lm-occasion">Occasion</label><input id="lm-occasion" type="text" value="' + esc(f.occasion || "") + '" placeholder="CSM meeting, 2026-10-28"></div>' +
-      '<div class="lib-field"><label for="lm-by">Your name</label><input id="lm-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
-      "</div>" +
-      (college ? '<p class="lib-line">A college\'s name comes from MAP\'s list, so the filter matches the CPL Pathways pick.' + (state.names === null ? " Loading the list\u2026" : "") + "</p>" : "") +
-      '<div class="lib-actions-row"><button type="submit" class="lib-btn primary"' + (state.busy ? " disabled" : "") + ">" + (college ? "Make the pair" : "Write the brief") + "</button>" +
-      '<button type="button" class="lib-btn" data-makecancel="1">Cancel</button></div></form>';
+  // ── Create or Remediate a Document (Sam, 2026-10-28; mockup Version 20) ─────
+  // One place to add, in place of Make a visual, Start a piece and Add to the Library:
+  // "we don't need the Add to the Library link at top--drive everyone to one place".
+  // Drop or choose a file, or paste a link; say what it is for; write the instructions;
+  // Start runs the path the choice names. A record holds a link, never the bytes, so a
+  // dropped file is read here in the browser and nothing leaves it until it is filed.
+  var EXT_KIND = { pptx: "deck", ppt: "deck", key: "deck", docx: "document", doc: "document", pdf: "document", txt: "document", md: "document", rtf: "document",
+    xlsx: "spreadsheet", xls: "spreadsheet", csv: "spreadsheet", mp4: "film", mov: "film", m4v: "film", webm: "film",
+    png: "visual", jpg: "visual", jpeg: "visual", gif: "visual", svg: "visual", webp: "visual", html: "visual", htm: "visual" };
+  var REMEDIABLE = { pptx: true, docx: true };
+  var TEXT_EXT = { txt: true, md: true, csv: true, html: true, htm: true };
+  function extOf(name) { var m = /\.([a-z0-9]{1,5})$/i.exec(String(name || "").split(/[?#]/)[0]); return m ? m[1].toLowerCase() : ""; }
+  function titleFromName(name) {
+    var base = String(name || "").split(/[?#]/)[0].replace(/\/+$/, "").split("/").pop() || "";
+    base = decodeURIComponent(base).replace(/\.[a-z0-9]{1,5}$/i, "").replace(/^\d{8}[_-]?/, "").replace(/[_-]+/g, " ").trim();
+    return base.length > 2 ? base : "";
+  }
+  // What the instructions ask to make, read from their words; a visual when they name none.
+  function kindFromWords(t) {
+    t = String(t || "").toLowerCase();
+    if (/\b(deck|slides?|presentation|powerpoint|webinar)\b/.test(t)) return "deck";
+    if (/\b(video|film|recording)\b/.test(t)) return "film";
+    if (/\b(spreadsheet|workbook|excel)\b/.test(t)) return "spreadsheet";
+    if (/\b(memo|report|document|letter|guide|brief|word)\b/.test(t)) return "document";
+    return "visual";
+  }
+  // The defaults Sam set (2026-10-28): a deck on the CO template with a speaker script in
+  // each slide's notes; a memo or report in the CO styles.
+  function defaultShape(kind) {
+    return kind === "deck" ? "The Chancellor's Office template, with a speaker script in each slide's notes"
+      : kind === "document" ? "The Chancellor's Office styles" : "";
+  }
+  function setPick(pick) {
+    var ext = extOf(pick.name);
+    pick.ext = ext;
+    pick.kind = pick.link ? (EXT_KIND[ext] || "visual") : (EXT_KIND[ext] || "document");
+    state.pick = pick;
+    state.use = pick.file && REMEDIABLE[ext] ? "remediate" : pick.link ? "asis" : "background";
+    state.start = null; state.form = null; state.formFor = null; say("");
+  }
+  function panelHtml() {
+    var pk = state.pick;
+    var useRow = function (v, label) {
+      return '<label class="lib-check"><input type="radio" name="lc-use" id="lc-use-' + v + '" value="' + v + '"' + (state.use === v ? " checked" : "") + "> " + esc(label) + "</label>";
+    };
+    var picked = pk
+      ? '<p class="lib-line" id="lc-picked">' + (pk.file ? "File: " : "Link: ") + "<b>" + esc(pk.name) + "</b>" +
+        ' <button type="button" class="lib-btn" data-unpick="1">Clear<span class="lib-vh"> ' + esc(pk.name) + "</span></button></p>" +
+        '<fieldset class="lib-uses"><legend>' + esc(pk.name) + ": what is it for?</legend>" +
+        (pk.file && REMEDIABLE[pk.ext] ? useRow("remediate", "Remediate this file") : "") +
+        useRow("background", "Use it as background for something new") + useRow("asis", "File it as is") + "</fieldset>"
+      : "";
+    return '<section class="lib-panel" aria-labelledby="lib-panel-h"><h2 class="lib-h" id="lib-panel-h">Create or Remediate a Document</h2>' +
+      '<div class="lib-drop" id="lib-drop">' +
+      '<p class="lib-dropline">Drop a file here: a deck, document, PDF, picture or video</p>' +
+      '<label class="lib-pick" for="lc-file">or choose a file</label><input id="lc-file" class="lib-vh" type="file">' +
+      '<div class="lib-field"><label for="lc-link">or paste a link</label><input id="lc-link" type="url" placeholder="A SharePoint file, a web page or a Claude page" value="' + esc(pk && pk.link ? pk.link : "") + '"></div>' +
+      picked +
+      '<div class="lib-field"><label for="lc-instr">Instructions</label><textarea id="lc-instr" rows="4" placeholder="What you need, who it is for, the focus. With no file, say what to make: a visual, deck, document or video."></textarea></div>' +
+      '<div class="lib-panelfoot"><p class="lib-line">A deck starts on the Chancellor\'s Office template, with a speaker script in each slide\'s notes for you to edit; a memo or report starts in the Chancellor\'s Office styles. Remediation runs in this browser, and nothing leaves it until you file it.</p>' +
+      '<button type="button" class="lib-btn primary" id="lib-go"' + (state.busy ? " disabled" : "") + ">Start</button></div>" +
+      "</div>" + (state.start ? startForm() : "") + (state.form ? addForm() : "") + "</section>";
+  }
+  // Start runs the path the choice names: the brief for something new (with the file or
+  // link as a document to work from), the filing form for a piece already made.
+  function startPanel() {
+    var n = document.getElementById("lc-instr"), instr = n ? n.value.trim() : "";
+    var ln = document.getElementById("lc-link"), link = ln ? ln.value.trim() : "";
+    if (link && (!state.pick || state.pick.link !== link)) {
+      if (!/^https:\/\//.test(link)) { say("The link must start with https://.", true); render(); return; }
+      setPick({ name: link, link: link });
+    }
+    var pk = state.pick;
+    var openBrief = function (src) {
+      var kind = instr ? kindFromWords(instr) : (pk ? pk.kind : "visual");
+      state.src.ls = src ? [src] : [];
+      state.start = { kind: kind, say: instr, shape: defaultShape(kind) };
+      state.form = null; state.formFor = null;
+      say(src ? "The brief carries " + src.title + " as a document to work from. Name the piece and save it." : "");
+      render();
+      var t = document.getElementById("ls-title"); if (t) t.focus();
+    };
+    if (!pk) {
+      if (!instr) { say("Drop a file, paste a link, or say in Instructions what to make.", true); render(); return; }
+      openBrief(null); return;
+    }
+    if (state.use === "remediate") {
+      say("Remediation in this browser is the next build. Until then, file it as is or use it as background.", true); render(); return;
+    }
+    if (state.use === "asis") {
+      state.start = null; state.formFor = null;
+      state.form = { url: pk.link || "", title: titleFromName(pk.name), kind: pk.kind };
+      say(pk.file ? "A record links to its file. Put " + pk.name + " in the CPLLibrary folder, or its Drafts folder, then paste its link here." : "");
+      render();
+      var u = document.getElementById(pk.link ? "la-title" : "la-url"); if (u) u.focus();
+      return;
+    }
+    if (pk.link) { openBrief({ title: titleFromName(pk.name) || pk.name.slice(0, 200), url: pk.link, text: null, added_by: storedAuthor() || null, added_on: today() }); return; }
+    if (TEXT_EXT[pk.ext] && pk.file && pk.file.text) {
+      pk.file.text().then(function (text) {
+        openBrief({ title: (titleFromName(pk.name) || pk.name).slice(0, 200), url: null, text: String(text).slice(0, SRC_TEXT_MAX), added_by: storedAuthor() || null, added_on: today() });
+      }, function () { say("This browser could not read " + pk.name + ". Paste its text under Documents to work from.", true); openBrief(null); });
+      return;
+    }
+    openBrief(null);
+    say("A session cannot open " + pk.name + " from here. Paste its text under Documents to work from, or put it in SharePoint and paste the link.");
+    render();
   }
 
   function startForm() {
     var f = state.start || {};
-    return '<form class="lib-form" id="lib-startform"><h2 class="lib-h">Start a piece</h2>' +
+    return '<form class="lib-form" id="lib-startform"><h2 class="lib-h">The brief</h2>' +
       "<p>Say what the piece is for and what it must say. The Library keeps the brief as a Requested record. " +
+      "A visual made for a college writes its CPL Opportunity page and workbook at once instead. " +
       "Claude starts the draft from it, in a new session you paste the brief into or in the next scheduled run, and hands each draft over for the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>\'s Drafts folder.</p>' +
       '<div class="lib-grid">' +
@@ -950,9 +1047,9 @@
       forFields("ls", f) +
       '<div class="lib-field"><label for="ls-due">Needed by</label><input id="ls-due" type="text" placeholder="The week of the summit"></div>' +
       '<div class="lib-field"><label for="ls-seen">For</label><select id="ls-seen">' + opt("team", "Team", f.seen_by) + opt("colleges", "Colleges", f.seen_by) + opt("public", "Public", f.seen_by) + "</select></div>" +
-      '<div class="lib-field wide"><label for="ls-say">What it must say</label><input id="ls-say" type="text" required placeholder="Three points, in the order the audience needs them"></div>' +
+      '<div class="lib-field wide"><label for="ls-say">What it must say</label><textarea id="ls-say" rows="3" required placeholder="Three points, in the order the audience needs them">' + esc(f.say || "") + "</textarea></div>" +
       '<div class="lib-field wide"><label for="ls-sources">Data and sources</label><input id="ls-sources" type="text" placeholder="live_metrics.json, the funding model, last year\'s deck"></div>' +
-      '<div class="lib-field wide"><label for="ls-shape">Length, template or style</label><input id="ls-shape" type="text" placeholder="Five slides on the CO template; or 100 seconds with music and Sierra\'s voice"></div>' +
+      '<div class="lib-field wide"><label for="ls-shape">Length, template or style</label><input id="ls-shape" type="text" placeholder="Five slides on the CO template; or 100 seconds with music and Sierra\'s voice" value="' + esc(f.shape || "") + '"></div>' +
       sourcesFields("ls") +
       '<div class="lib-field"><label for="ls-by">Your name</label><input id="ls-by" type="text" required value="' + esc(storedAuthor()) + '"></div>' +
       "</div>" +
@@ -1084,7 +1181,7 @@
   function listHtml(all) {
     var rows = registerRows(all);
     var shown = rows.filter(matches), gs = groups(shown);
-    if (!rows.length) return '<p class="lib-empty">The Library is empty. Add the first piece with Add to the Library.</p>';
+    if (!rows.length) return '<p class="lib-empty">The Library is empty. Add the first piece under Create or Remediate a Document.</p>';
     if (!shown.length) return '<p class="lib-empty">Nothing matches these filters. Clear the search or choose All.</p>';
     return gs.map(function (g, i) {
       return '<section class="lib-group" aria-labelledby="lib-g-' + i + '"><div class="lib-ghead"><h2 class="lib-h" id="lib-g-' + i + '">' + esc(g.name) +
@@ -1105,7 +1202,7 @@
     if (!root) return;
     ensureCss();
     root.style.cssText = "";
-    var head = '<h2 class="lib-h lib-top">Library</h2><p class="lib-lede">Every visual, deck, film and document the CPL Initiative has made: what it is, who it is made for, where the file lives, who may see it, and how to rebuild it.</p>';
+    var head = '<h2 class="lib-h lib-top">Library</h2><p class="lib-lede">Every visual, deck, video and document the CPL Initiative has made: what it is, who it is made for, where the file lives, who may see it, and how to rebuild or remediate it.</p>';
     // Two views (Sam, Open Asks Sheet 121 card 1, 2026-10-23): the pieces, and the Knowledge
     // Base reading portal, which keeps its own sign-in and so opens without the team phrase.
     head += '<div class="lib-views" role="group" aria-label="Library views">' +
@@ -1157,10 +1254,7 @@
       opt("colleges", "Colleges", state.seen) + opt("public", "Public", state.seen) + opt("unset", "Not set", state.seen) + "</select></div>" +
       '<div class="lib-field"><label for="lib-status">Status</label><select id="lib-status">' + opt("all", "Any", state.status) + opt("draft", "Draft", state.status) +
       opt("approved", "Approved", state.status) + opt("presented", "Presented", state.status) + opt("unset", "Not set", state.status) + "</select></div>" +
-      '<button type="button" class="lib-btn primary" id="lib-make" aria-expanded="' + (state.make ? "true" : "false") + '">Make a visual</button>' +
-      '<button type="button" class="lib-btn" id="lib-start" aria-expanded="' + (state.start ? "true" : "false") + '">Start a piece</button>' +
-      '<button type="button" class="lib-btn" id="lib-add" aria-expanded="' + (state.form ? "true" : "false") + '">Add to the Library</button>' +
-      "</div>" + datalists() + (state.make ? makeForm() : "") + (state.start ? startForm() : "") + (state.form ? addForm() : "") +
+      "</div>" + datalists() + panelHtml() +
       (state.message ? '<p class="lib-msg' + (state.msgErr ? " err" : "") + '" role="status">' + esc(state.message) + "</p>" : "");
 
     controls += '<p class="lib-line" role="status" id="lib-count">' + countLine(state.rows) + "</p></section>";
@@ -1171,7 +1265,7 @@
       "<p>The Library keeps one record per piece, and the file lives on the MAP team's SharePoint site: approved pieces in the " +
       '<a href="' + LIBRARY_FOLDER + '" target="_blank" rel="noopener">CPLLibrary folder</a>, drafts in its Drafts folder. ' +
       "The repos keep only the source that rebuilds each piece.</p>" +
-      "<p>Start a piece saves a brief as a Requested record. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
+      "<p>Create or Remediate a Document saves a brief as a Requested record. Claude drafts it, in a new session you paste the brief into or in the next scheduled run, hands each draft over for the Drafts folder, and moves the record along: Requested, Draft, Approved, Presented. Each new version is its own file, and the earlier ones stay.</p>" +
       "<p>Claude hands each new piece over the day it makes it, and a session on Sam's computer saves it straight into the synced folder. Anyone on the team files one by pasting a link. A film a public page plays stays where that page serves it.</p>" +
       "<p>Who can open a file is read from where it lives, so a file in the public repo that Sam has not cleared for an audience shows under Needs attention.</p>" +
       "<p>A piece whose substance is knowledge (a training-facts page, a guide, an explainer's argument) gets a note in the public CPL Knowledge Base through its curation pipeline, and the record links it; a deck, a film or a data piece does not. Needs attention names a knowledge piece without a note. The Knowledge Base view above is the team's reading portal over that repo.</p></footer>";
@@ -1180,13 +1274,13 @@
     // typed into an open form. Restore only into the SAME form: the edit ids are
     // shared by every record, so a value typed for one must not land in another.
     var typed = {};
-    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],textarea[id^='ls-'],input[id^='lm-'],select[id^='lm-'],input[id^='rg-'],select[id^='rg-'],textarea[id^='rg-'],input[id^='ro-']"), function (n) { typed[n.id] = n.value; });
+    Array.prototype.forEach.call(root.querySelectorAll("input[id^='la-'],select[id^='la-'],input[id^='le-'],select[id^='le-'],textarea[id^='le-'],input[id^='ls-'],select[id^='ls-'],textarea[id^='ls-'],input[id^='lc-link'],textarea[id^='lc-'],input[id^='rg-'],select[id^='rg-'],textarea[id^='rg-'],input[id^='ro-']"), function (n) { typed[n.id] = n.value; });
     var sameAdd = painted.formFor === state.formFor && painted.form === !!state.form;
     var sameEdit = painted.edit === state.edit;
     var focusId = document.activeElement && document.activeElement.id;
     root.innerHTML = head + attention + controls + list + how;
     Object.keys(typed).forEach(function (id) {
-      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start) || (id.indexOf("lm-") === 0 && !state.make) ||
+      if ((id.indexOf("la-") === 0 && !sameAdd) || (id.indexOf("le-") === 0 && !sameEdit) || (id.indexOf("ls-") === 0 && !state.start) ||
         (id.indexOf("rg-") === 0 && (!state.regen || painted.regen !== state.regen))) return;
       var n = document.getElementById(id); if (n) n.value = typed[id];
     });
@@ -1241,11 +1335,14 @@
     var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
     var f = { kind: g("ls-kind"), title: g("ls-title"), occasion: g("ls-occasion"), due: g("ls-due"), seen_by: g("ls-seen"),
       say: g("ls-say"), sources: g("ls-sources"), shape: g("ls-shape"), by: g("ls-by") };
-    if (!f.title) { say("Add a working title.", true); render(); return; }
-    if (!f.say) { say("Say what the piece must say.", true); render(); return; }
     if (!f.by) { say("Add your name, so the brief says who asked for it.", true); render(); return; }
     var madeFor = readFor("ls"), fp = forProblem(madeFor);
     if (fp) { say(fp, true); render(); return; }
+    if (!(f.kind === "visual" && madeFor.for_kind === "college")) {
+      if (!f.title) { say("Add a working title.", true); render(); return; }
+      if (!f.say) { say("Say what the piece must say.", true); render(); return; }
+    }
+    if (f.kind === "visual" && madeFor.for_kind === "college") { rememberAuthor(f.by); makePair(madeFor.for_name, f.occasion, f.by); return; }
     var srcErr = takeSource("ls", f.by);
     if (srcErr) { say(srcErr, true); render(); return; }
     rememberAuthor(f.by);
@@ -1272,7 +1369,7 @@
   // Download CPL Extract makes, which is filed once the .xlsx is in SharePoint.
   function collegePair(name, occasion, by) {
     var base = collegeSlug(name), when = today();
-    var made = by + ", from the Library tab's Make a visual, " + when;
+    var made = by + ", from the Library tab, " + when;
     var project = name + ": CPL Opportunity Analysis";
     return [{
       slug: "cpl-opportunity-" + base + "-visual", title: name + ": CPL Opportunity Analysis", kind: "visual",
@@ -1293,24 +1390,9 @@
     }];
   }
 
-  function submitMake() {
-    var g = function (id) { var n = document.getElementById(id); return n ? n.value.trim() : ""; };
-    var f = state.make || {}, kind = f.for_kind || "college";
-    var name = g("lm-forname"), cat = kind === "other" ? g("lm-forcat") : "", occasion = g("lm-occasion"), by = g("lm-by");
-    state.make = { for_kind: kind, for_name: name, for_category: cat, occasion: occasion };
-    if (!name) { say("Name who the visual is for.", true); render(); return; }
-    if (kind === "other" && !cat) { say("Type the category for Other, so the filter can offer it again.", true); render(); return; }
-    if (!by) { say("Add your name, so the record says who made it.", true); render(); return; }
-    rememberAuthor(by);
-    if (kind !== "college") {
-      // Not a college: the brief, with the entity set, so Copy the brief hands the paste over.
-      state.forPick.ls = kind; state.src.ls = [];
-      state.start = { kind: "visual", for_kind: kind, for_category: cat || null, for_name: name, occasion: occasion,
-        title: name + ": CPL " + (kind === "co" ? "visual" : "opportunities") };
-      state.make = null; say(""); render();
-      var st = document.getElementById("ls-say"); if (st) st.focus();
-      return;
-    }
+  // A college's visual (Sam, Sheet 120 cards 1 and 4): its record pair is written at once.
+  function makePair(name, occasion, by) {
+    if (!name) { say("Name the college the visual is for.", true); render(); return; }
     var college = state.names && state.names.length ? mapCollege(name) : name;
     if (!college) { say("Pick the college from MAP's list (start typing its name), so the filter matches the CPL Pathways pick.", true); render(); return; }
     var pair = collegePair(college, occasion, by);
@@ -1320,7 +1402,7 @@
       return write(TABLE_URL, { method: "POST", body: pair[1] });
     }).then(function () {
       say("Made. " + college + "'s CPL Opportunity page and its workbook are in the Library, Made for College. List the page publicly when it is ready.");
-      state.make = null;
+      state.start = null; delete state.forPick.ls; state.src.ls = [];
       return load();
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
@@ -1488,6 +1570,11 @@
       if (e.target.id === "lib-seen") { state.seen = e.target.value; render(); }
       else if (e.target.id === "lib-status") { state.status = e.target.value; render(); }
       else if (e.target.id === "lib-for") { state.forName = e.target.value; render(); }
+      else if (e.target.id === "lc-file") {
+        var fl = e.target.files && e.target.files[0];
+        if (fl) { setPick({ name: fl.name, file: fl }); render(); var u0 = document.getElementById("lc-use-" + state.use); if (u0) u0.focus(); }
+      }
+      else if (e.target.name === "lc-use") { state.use = e.target.value; }
       else if (/^(la|ls|le)-forkind$/.test(e.target.id || "")) {
         // The type picked decides which fields follow it; repaint, keeping the caret's owner.
         var pfx = e.target.id.slice(0, 2);
@@ -1497,10 +1584,22 @@
         var again = document.getElementById(pfx + "-forkind"); if (again) again.focus();
       }
     });
+    root.addEventListener("dragover", function (e) {
+      if (e.target.closest && e.target.closest("#lib-drop")) { e.preventDefault(); e.target.closest("#lib-drop").classList.add("over"); }
+    });
+    root.addEventListener("dragleave", function (e) {
+      var d = e.target.closest && e.target.closest("#lib-drop"); if (d) d.classList.remove("over");
+    });
+    root.addEventListener("drop", function (e) {
+      var d = e.target.closest && e.target.closest("#lib-drop");
+      if (!d) return;
+      e.preventDefault(); d.classList.remove("over");
+      var fl = e.dataTransfer && e.dataTransfer.files && e.dataTransfer.files[0];
+      if (fl) { setPick({ name: fl.name, file: fl }); render(); var u1 = document.getElementById("lc-use-" + state.use); if (u1) u1.focus(); }
+    });
     root.addEventListener("submit", function (e) {
       e.preventDefault();
       if (e.target.id === "lib-addform") submitAdd();
-      else if (e.target.id === "lib-makeform") submitMake();
       else if (e.target.id === "lib-startform") submitStart();
       else if (e.target.getAttribute("data-editform")) submitEdit(e.target.getAttribute("data-editform"));
       else if (e.target.getAttribute("data-pubform")) setPublic(e.target.getAttribute("data-pubform"), true);
@@ -1514,24 +1613,12 @@
       if ((v = b.getAttribute("data-kind"))) { state.kind = v; render(); }
       else if ((v = b.getAttribute("data-madefor"))) { state.madeFor = v; render(); }
       else if ((v = b.getAttribute("data-flag"))) { state.flag = state.flag === v ? null : v; render(); }
-      else if (b.id === "lib-make") {
-        state.make = state.make ? null : { for_kind: "college" }; state.start = null; state.form = null; state.formFor = null;
-        say(""); render();
-        if (state.make) { loadNames(); var mn = document.getElementById("lm-forname"); if (mn) mn.focus(); }
+      else if (b.id === "lib-go") startPanel();
+      else if (b.getAttribute("data-unpick")) {
+        state.pick = null; state.use = null; say(""); render();
+        var lk = document.getElementById("lc-link"); if (lk) { lk.value = ""; lk.focus(); }
       }
-      else if ((v = b.getAttribute("data-makefor"))) {
-        state.make = state.make || {}; state.make.for_kind = v;
-        if (v === "college" || v === "district") loadNames();
-        render();
-        var mb = root.querySelector('[data-makefor="' + v + '"]'); if (mb) mb.focus();
-      }
-      else if (b.getAttribute("data-makecancel")) { state.make = null; render(); var mk = document.getElementById("lib-make"); if (mk) mk.focus(); }
-      else if (b.id === "lib-start") {
-        state.start = state.start ? null : {}; state.form = null; state.formFor = null; state.make = null; delete state.forPick.ls; state.src.ls = [];
-        say(""); render();
-        var st = document.getElementById("ls-title"); if (st) st.focus();
-      }
-      else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-start"); if (sb) sb.focus(); }
+      else if (b.getAttribute("data-startcancel")) { state.start = null; render(); var sb = document.getElementById("lib-go"); if (sb) sb.focus(); }
       else if ((v = b.getAttribute("data-brief"))) copyBrief(v);
       else if ((v = b.getAttribute("data-request"))) copyRequest(v);
       else if ((v = b.getAttribute("data-regen"))) {
@@ -1551,13 +1638,7 @@
         lst.splice(+parts[1], 1); state.src[parts[0]] = lst; say("Removed. The record keeps it until the form saves."); render();
         var st2 = document.getElementById(parts[0] + "-stitle"); if (st2) st2.focus();
       }
-      else if (b.id === "lib-add") {
-        state.start = null; state.make = null; delete state.forPick.la;
-        if (state.form && !state.formFor) { state.form = null; } else { state.form = {}; state.formFor = null; }
-        say(""); render();
-        var u = document.getElementById("la-url"); if (u) u.focus();
-      }
-      else if (b.getAttribute("data-formcancel")) { state.form = null; state.formFor = null; render(); var a = document.getElementById("lib-add"); if (a) a.focus(); }
+      else if (b.getAttribute("data-formcancel")) { state.form = null; state.formFor = null; render(); var a = document.getElementById("lib-go"); if (a) a.focus(); }
       else if ((v = b.getAttribute("data-file"))) {
         var r = byId(v);
         state.form = { title: r ? r.title : "" }; state.formFor = v; say(""); render();

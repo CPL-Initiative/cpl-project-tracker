@@ -103,6 +103,16 @@ function loadModule(opts) {
 }
 function settle() { return new Promise(function (r) { setTimeout(r, 0); }).then(function () { return new Promise(function (r) { setTimeout(r, 0); }); }); }
 function click(w, el) { el.dispatchEvent(new w.MouseEvent("click", { bubbles: true })); }
+// The one panel (Create or Remediate a Document) opens the filing form for a pasted link
+// and the brief for instructions with nothing dropped.
+function openAdd(m, url) {
+  const d = m.w.document; d.getElementById("lc-link").value = url || "https://example.org/a-piece";
+  click(m.w, d.getElementById("lib-go"));
+}
+function openStart(m, instr) {
+  const d = m.w.document; d.getElementById("lc-instr").value = instr || "A visual";
+  click(m.w, d.getElementById("lib-go"));
+}
 
 // ── (1) Wiring, Rule 4, the schema's posture ─────────────────────────────
 block("(1)", function () {
@@ -195,7 +205,7 @@ block("(6)", function () {
     return response(200, ROWS);
   } });
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
-    click(m.w, m.root.querySelector("#lib-add"));
+    openAdd(m);
     const doc = m.w.document;
     doc.getElementById("la-url").value = "https://drive.google.com/file/d/xyz/view";
     doc.getElementById("la-title").value = "Summit deck, version 2";
@@ -324,9 +334,10 @@ block("(9)", function () {
     click(m.w, m.root.querySelector('[data-toggle="a2"]'));
     const vt = (m.w.document.getElementById("lib-d-a2") || {}).textContent || "";
     check("(9) a filed version shows the time it was filed (Sam's call 8)", /5 October 2026, 18:42 UTC/.test(vt), vt.slice(0, 400));
-    click(m.w, m.root.querySelector("#lib-start"));
+    openStart(m, "A table of awards");
     const doc = m.w.document;
-    check("(9) Start a piece opens its form", !!doc.getElementById("lib-startform"));
+    check("(9) the panel's Start opens the brief, the instructions in What it must say", !!doc.getElementById("lib-startform") && doc.getElementById("ls-say").value === "A table of awards");
+    doc.getElementById("ls-say").value = "";
     doc.getElementById("ls-kind").value = "spreadsheet";
     doc.getElementById("ls-title").value = "Summit table";
     doc.getElementById("lib-startform").dispatchEvent(new m.w.Event("submit", { bubbles: true, cancelable: true }));
@@ -473,16 +484,17 @@ block("(11)", function () {
     const q = doc.getElementById("lib-q"); q.value = "ironworkers local"; q.dispatchEvent(new m.w.Event("input", { bubbles: true }));
     check("(11) search finds a piece by the entity's name", m.root.querySelectorAll(".lib-item").length === 1);
     q.value = ""; q.dispatchEvent(new m.w.Event("input", { bubbles: true }));
-    click(m.w, m.root.querySelector("#lib-make"));
+    openStart(m, "A visual for the college's CSM meeting");
+    change(m, "ls-forkind", "college");
     return settle();
   }).then(function () {
-    check("(11) Make a visual reads MAP's college list, with the phrase, once it opens",
+    check("(11) a brief made for a college reads MAP's college list, with the phrase, once it opens",
       m.calls.some(function (c) { return /map_colleges\?select=college_name/.test(c.url) && c.init.headers["x-team-pass"] === "p"; }));
     check("(11) and offers the names as a datalist on the For field",
-      !!doc.querySelector('#lib-names-colleges option[value="Riverside City College"]') && doc.getElementById("lm-forname").getAttribute("list") === "lib-names-colleges");
-    doc.getElementById("lm-forname").value = "riverside city college";
-    doc.getElementById("lm-occasion").value = "CSM meeting, 2026-10-28";
-    submit(m, "#lib-makeform");
+      !!doc.querySelector('#lib-names-colleges option[value="Riverside City College"]') && doc.getElementById("ls-forname").getAttribute("list") === "lib-names-colleges" && doc.getElementById("ls-kind").value === "visual");
+    doc.getElementById("ls-forname").value = "riverside city college";
+    doc.getElementById("ls-occasion").value = "CSM meeting, 2026-10-28";
+    submit(m, "#lib-startform");
     return settle();
   }).then(settle).then(function () {
     const w = m.writes;
@@ -501,26 +513,27 @@ block("(11)", function () {
 block("(11b)", function () {
   const m = loadFor("Ashley"), doc = m.w.document;
   return Promise.resolve(m.M.activate()).then(settle).then(function () {
-    click(m.w, m.root.querySelector("#lib-make"));
+    openStart(m, "A visual");
+    change(m, "ls-forkind", "college");
     return settle();
   }).then(function () {
-    doc.getElementById("lm-forname").value = "Bakersfield College";
-    submit(m, "#lib-makeform");
+    doc.getElementById("ls-forname").value = "Bakersfield College";
+    submit(m, "#lib-startform");
     return settle();
   }).then(function () {
     check("(11b) a college whose pair exists is refused, and nothing is written", m.writes.length === 0 && /Bakersfield College's pair is already in the Library/.test(m.root.textContent));
-    doc.getElementById("lm-forname").value = "Nowhere College";
-    submit(m, "#lib-makeform");
+    doc.getElementById("ls-forname").value = "Nowhere College";
+    submit(m, "#lib-startform");
     return settle();
   }).then(function () {
     check("(11b) a name MAP does not list is refused", m.writes.length === 0 && /Pick the college from MAP's list/.test(m.root.textContent));
-    click(m.w, m.root.querySelector('[data-makefor="agency"]'));
-    doc.getElementById("lm-forname").value = "EDD ELL IET Fund grantees";
-    doc.getElementById("lm-occasion").value = "Grantees meeting";
-    submit(m, "#lib-makeform");
+    change(m, "ls-forkind", "agency");
+    doc.getElementById("ls-forname").value = "EDD ELL IET Fund grantees";
+    doc.getElementById("ls-occasion").value = "Grantees meeting";
+    doc.getElementById("ls-title").value = "ELL IET grantees";
     return settle();
   }).then(function () {
-    check("(11b) for an agency, Make opens Start a piece with kind Visual and the entity set",
+    check("(11b) for an agency the brief stays a brief, kind Visual and the entity set",
       !!doc.getElementById("lib-startform") && doc.getElementById("ls-kind").value === "visual" && doc.getElementById("ls-forkind").value === "agency" &&
       doc.getElementById("ls-forname").value === "EDD ELL IET Fund grantees" && doc.getElementById("ls-occasion").value === "Grantees meeting");
     doc.getElementById("ls-say").value = "What the grantees' training could earn as credit";
@@ -551,7 +564,7 @@ block("(11c)", function () {
   }).then(function () {
     const b = m.writes[0] ? m.writes[0].body : {};
     check("(11c) Save PATCHes the type, the category and the name", m.writes[0] && m.writes[0].init.method === "PATCH" && b.for_kind === "other" && b.for_category === "Union" && b.for_name === "Ironworkers Local 433", JSON.stringify(b));
-    click(m.w, m.root.querySelector("#lib-add"));
+    openAdd(m);
     check("(11c) Add offers Visual first among the kinds", doc.getElementById("la-kind").options[0].value === "visual");
     doc.getElementById("la-url").value = "https://claude.ai/artifact/abc";
     doc.getElementById("la-title").value = "Ventura visual";
@@ -756,6 +769,66 @@ block("(15)", function () {
   });
 });
 
+// ── (16) Create or Remediate a Document (Sam, 2026-10-28; mockup Version 20) ──
+// One place to add: the three buttons are gone; Start runs the path the choice names.
+block("(16)", function () {
+  const writes = [];
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method && init.method !== "GET") { writes.push({ url: url, body: JSON.parse(init.body || "{}") }); return response(201, [{}]); }
+    return response(200, ROWS);
+  } });
+  const doc = m.w.document;
+  const drop = function (file) {
+    const ev = new m.w.Event("drop", { bubbles: true, cancelable: true });
+    Object.defineProperty(ev, "dataTransfer", { value: { files: [file] } });
+    doc.getElementById("lib-drop").dispatchEvent(ev);
+  };
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    check("(16) one panel, headed Create or Remediate a Document", /Create or Remediate a Document/.test(doc.getElementById("lib-panel-h").textContent));
+    check("(16) no Make a visual, Start a piece or Add to the Library button", !doc.getElementById("lib-make") && !doc.getElementById("lib-start") && !doc.getElementById("lib-add"));
+    check("(16) one word starts it", doc.getElementById("lib-go").textContent.trim() === "Start");
+    click(m.w, doc.getElementById("lib-go"));
+    check("(16) Start with nothing says what to do, and opens no form", /Drop a file, paste a link, or say in Instructions what to make/.test(m.root.textContent) && !doc.getElementById("lib-startform") && !doc.getElementById("lib-addform"));
+    openStart(m, "A deck for the webinar on the funding");
+    check("(16) instructions that name a deck open the brief as a deck on the CO template with a script in the notes",
+      doc.getElementById("ls-kind").value === "deck" && /Chancellor's Office template, with a speaker script in each slide's notes/.test(doc.getElementById("ls-shape").value));
+    click(m.w, m.root.querySelector("[data-startcancel]"));
+    openStart(m, "A memo to the CIOs");
+    check("(16) a memo starts in the CO styles", doc.getElementById("ls-kind").value === "document" && doc.getElementById("ls-shape").value === "The Chancellor's Office styles");
+    click(m.w, m.root.querySelector("[data-startcancel]"));
+    openAdd(m, "https://studentrcc.sharepoint.com/sites/x/20261030_Summit_Funding.pptx");
+    check("(16) a pasted link files as is by default, the link and a title from its name filled in",
+      !!doc.getElementById("lib-addform") && doc.getElementById("la-url").value === "https://studentrcc.sharepoint.com/sites/x/20261030_Summit_Funding.pptx" &&
+      doc.getElementById("la-title").value === "Summit Funding" && doc.getElementById("la-kind").value === "deck");
+    doc.getElementById("lc-use-background").checked = true;
+    doc.getElementById("lc-use-background").dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    doc.getElementById("lc-instr").value = "A one-page visual from this deck";
+    click(m.w, doc.getElementById("lib-go"));
+    check("(16) background opens the brief with the link as a document to work from",
+      !!doc.getElementById("lib-startform") && (m.M._state.src.ls || []).length === 1 && m.M._state.src.ls[0].url === "https://studentrcc.sharepoint.com/sites/x/20261030_Summit_Funding.pptx");
+    click(m.w, m.root.querySelector("[data-unpick]"));
+    drop({ name: "Webinar.pptx" });
+    check("(16) a dropped deck offers Remediate, chosen", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked && /Webinar\.pptx: what is it for\?/.test(m.root.textContent));
+    click(m.w, doc.getElementById("lib-go"));
+    check("(16) Remediate says it is the next build, and writes nothing", /Remediation in this browser is the next build/.test(m.root.textContent) && writes.length === 0);
+    drop({ name: "Photo.png" });
+    check("(16) a picture is not offered Remediate", !doc.getElementById("lc-use-remediate"));
+    doc.getElementById("lc-use-asis").checked = true;
+    doc.getElementById("lc-use-asis").dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    click(m.w, doc.getElementById("lib-go"));
+    check("(16) a dropped file to file as is asks for its SharePoint link (a record holds a link, never bytes)",
+      !!doc.getElementById("lib-addform") && /Put Photo\.png in the CPLLibrary folder/.test(m.root.textContent) && doc.getElementById("la-title").value === "Photo");
+    drop({ name: "notes.txt", text: function () { return Promise.resolve("Eight projects funded."); } });
+    doc.getElementById("lc-instr").value = "A visual of the eight projects";
+    click(m.w, doc.getElementById("lib-go"));
+    return settle();
+  }).then(function () {
+    const src = m.M._state.src.ls || [];
+    check("(16) a text file used as background is read here into the brief's documents", src.length === 1 && src[0].text === "Eight projects funded." && src[0].title === "notes", JSON.stringify(src));
+    check("(16) the instructions name the kind", doc.getElementById("ls-kind").value === "visual");
+  });
+});
+
 Promise.all(pending).then(function () {
   let pass = 0;
   for (const [name, ok, why] of results) {
@@ -812,7 +885,7 @@ block("(12)", function () {
   }).then(function () {
     const e = writes.filter(function (x) { return /id=eq\.k1/.test(x.url); })[0];
     check("(12) Save writes the note and knowledge true", !!e && e.body.kb_note === "reference/dsp-training.md" && e.body.knowledge === true, e && JSON.stringify(e.body));
-    click(w, doc.getElementById("lib-add"));
+    openAdd(m);
     doc.getElementById("la-url").value = "https://studentrcc.sharepoint.com/x/deck.pptx";
     doc.getElementById("la-title").value = "A deck";
     doc.getElementById("la-knowledge").value = "no";
