@@ -399,9 +399,10 @@ function shareSumAll(T) {
     !/CPL_Data\.js|dashboard_filters\.js|cobi_orgs\.js/.test(exp));
   check("U8: it mounts where the consumer looks (#cplFundingMount)", /id="cplFundingMount"/.test(exp));
   // The masthead's "Draft — not adopted policy" tag left on 2026-10-09 (Sam's
-  // marked-up screenshot); the footer's sentence still says so.
-  check("U8: it states plainly that this is a draft, not adopted policy (the model sweep, 2026-10-01)",
-    /working draft for discussion, not adopted policy/.test(exp));
+  // marked-up screenshot), and the footer that still said so on 2026-10-28 (Sam:
+  // "you can remove the footer and its language from the public funding page").
+  check("U8: the footer and its draft sentence are gone (Sam, 2026-10-28)",
+    !/<footer\b/.test(exp) && !/working draft for discussion, not adopted policy/.test(exp));
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

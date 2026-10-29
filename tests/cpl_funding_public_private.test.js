@@ -93,13 +93,13 @@ function boot(window) {
   // the href rather than the old host is the point: an artifact URL reappearing
   // here would mean the tab is pointing at a snapshot again.
   const HREF = /href="funding-model\/"/;
-  check("W2b: the private view links the funding-model explainer",
-    HREF.test(privHtml) && /How this funding model works/.test(privHtml));
-  check("W2b: ...and it is the LIVE page, not a republished snapshot",
+  // One way to the public page since 2026-10-28 (Sam: "We also don't need both links on the
+  // funding tab for the Public view"): the title row's link left, and View: Public page frames
+  // funding-model/ with the link for the field.
+  check("W2b: the private view's title row carries no explainer link",
+    privDoc.getElementById("cplFundTitleLink").innerHTML === "" && !/How this funding model works/.test(privHtml));
+  check("W2b: ...and no republished snapshot is linked anywhere",
     !/claude\.ai\/code\/artifact/.test(privHtml));
-  check("W2b: the explainer link is in the TITLE ROW, not inside the mount",
-    HREF.test(privDoc.getElementById("cplFundTitleLink").innerHTML) &&
-    !HREF.test(privDoc.getElementById("cplFundingMount").innerHTML));
   check("W2b: the public college page does NOT expose the explainer link",
     !HREF.test(pubHtml) && !/How this funding model works/.test(pubHtml));
   check("W2b: the public page is blank because publicMode() blanks it, not for want of a slot",

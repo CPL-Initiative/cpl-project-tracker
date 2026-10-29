@@ -426,13 +426,12 @@ check("data: the maximum sits above the minimum (a ceiling under the floor is a 
   const { window } = freshDom();
   const doc = boot(window);
   const slot = doc.getElementById("cplFundTitleLink");
-  check("C8: the explainer link is painted into the title-row slot",
-    !!slot && /How this funding model works/.test(slot.textContent));
-  check("C8: …and no longer sits inside the mount as a full-width strip",
+  // One way to the public page (Sam, 2026-10-28: "We also don't need both links on the funding
+  // tab for the Public view"): the title row's link left; View: Public page is the way.
+  check("C8: the title-row slot carries no link to the explainer",
+    !!slot && slot.innerHTML === "");
+  check("C8: …and none sits inside the mount either",
     doc.getElementById("cplFundingMount").innerHTML.indexOf("How this funding model works") === -1);
-  check("C8: the walk-through blurb survives as the link's title, not a second row",
-    !!slot.querySelector("a[title]") &&
-    /plain-language walk-through/.test(slot.querySelector("a").getAttribute("title")));
   check("C8: a missing slot is a no-op, never a crash",
     (function () {
       slot.parentNode.removeChild(slot);

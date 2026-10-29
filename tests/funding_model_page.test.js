@@ -795,9 +795,10 @@ check("the status line is empty on a successful paint",
   check("every section carries a data-fsec id, in page order",
     secs.length === IDS.length &&
     secs.every((s2, i2) => s2.getAttribute("data-fsec") === IDS[i2]));
-  check("the footer is deliberately NOT curatable — it carries the draft disclaimer",
-    !doc.querySelector("footer[data-fsec]") &&
-    /working draft for discussion, not adopted policy/.test(doc.querySelector("footer").textContent));
+  // Sam, 2026-10-28: "you can remove the footer and its language from the public funding page."
+  check("the footer and its language are gone (Sam, 2026-10-28)",
+    !doc.querySelector("footer") &&
+    !/working draft for discussion|Where these numbers come from/.test(doc.body.textContent));
 
   // ⚠️ AN EXPLAINER SECTION MAY NOT SHARE AN ID WITH A TAB SECTION. This is
   // not tidiness — curation is id-keyed, so

@@ -5241,13 +5241,32 @@
     CONFIG_AT = (row && row.updated_at) || "";
     syncActive();
   }
+  // THE PUBLISHED SCENARIO PAINTS FIRST (Sam, 2026-10-28: "If there is a way you can have the
+  // funding tab open with the current published scenario first, it would load faster. Now it needs
+  // to cycle through them starting with Scenario 1"). boot() drew the code's defaults, which read as
+  // Scenario 1, and drew everything again as each of its seven loads landed. Until the shared config
+  // lands, render() draws one quiet line instead, and the loads that land first join the one first
+  // paint. A config that is slow or fails lets the defaults paint after CONFIG_HOLD_MS, as before.
+  var configHold = false, CONFIG_HOLD_MS = 4000;
+  function holdForConfig() {
+    if (!remoteEnabled() || remoteLoaded || configHold) return;
+    configHold = true;
+    setTimeout(releaseConfigHold, CONFIG_HOLD_MS);
+  }
+  function releaseConfigHold() { if (configHold) { configHold = false; render(); } }
+  function paintConfigHold() {
+    var mount = document.getElementById("cplFundingMount");
+    if (mount && !mount.querySelector("[data-config-hold]"))
+      mount.innerHTML = '<p class="dk" data-config-hold role="status">Loading the funding figures\u2026</p>';
+  }
   function loadShared() {
     if (!remoteEnabled()) { remoteLoaded = true; return; }
     fetchConfigRow().then(function (row) {
       adoptConfigRow(row);
       remoteLoaded = true;
+      configHold = false;
       render();
-    }).catch(function () { remoteLoaded = true; /* keep the default config */ });
+    }).catch(function () { remoteLoaded = true; /* keep the default config */ releaseConfigHold(); });
   }
   var savingState = "";      // "", "saving", "saved", "err", "stale" (a newer row; see saveShared)
   var pendingPromotion = false;  // a local what-if is being promoted into SHARED on unlock
@@ -7201,27 +7220,13 @@
   // The retired artifact (e3a3ccf1-581c-42cf-b622-56fd7caf7221) is frozen at the
   // 2026-08-23 figures — anyone still holding that link is reading a snapshot.
   var SANITY_URL = "funding-model/";
-  // MOVED TO THE TAB TITLE ROW (Sam, 2026-08-22). It was a full-width strip
-  // above the first section, and it describes the WHOLE model — so it belongs
-  // beside the tab's own name, not stacked in front of the content it explains.
-  // The walk-through sentence it used to print inline becomes the link's title,
-  // which is what a one-line affordance can carry without a second row.
-  //
-  // No glyph: the link's own name says what it is (Sam's 2026-08-14 rule —
-  // decorative glyphs go, state-bearing ones stay).
-  var SANITY_BLURB = "A plain-language walk-through of the whole model: what comes off the top, " +
-    "how each college's share is set, what a college has to do to qualify, and how outcomes count " +
-    "toward the funding. Opens in a new tab.";
+  // ONE WAY TO THE PUBLIC PAGE (Sam, 2026-10-28: "We also don't need both links on the funding tab
+  // for the Public view. We have How this Works... and Public View, which is the only one we need. I
+  // want to be sure the link I share with the field is the one that opens in a separate tab"). The
+  // title row's link left; View: Public page frames funding-model/, opens it in its own window, and
+  // carries the link for the field (pagePreviewChromeHtml).
   function sanityLinkHtml() {
-    if (publicMode()) return "";
-    var pub = realPublishedScenario();
-    var link = '<a class="cplfund-sanity" href="' + SANITY_URL + '" target="_blank" rel="noopener" title="' +
-      esc(SANITY_BLURB) + '">How this funding model works</a>';
-    if (activeScenario === pub) return link;
-    return link + ' <a class="cplfund-sanity" href="' + SANITY_URL + (SANITY_URL.indexOf("?") >= 0 ? "&" : "?") +
-      "scenario=" + encodeURIComponent(activeScenario) + '" target="_blank" rel="noopener" title="' +
-      esc("The explainer page drawn from " + activeScenario + ", which is not published. Opens in a new tab.") +
-      '">Preview the explainer with ' + esc(activeScenario) + "</a>";
+    return "";
   }
   // The title row lives in the tab SHELL, outside this module's mount, so the
   // link is painted into a slot the shell provides in both mirrored HTMLs
@@ -11537,7 +11542,7 @@
   function COLS_COLLEGE() {
     var win = frontloaded();
     var awardWhen = win ? "for the " + windowLabel() + " window" : "per year (Annual funding)";
-    var q = qualifyingWords();
+    var yr = frontloaded() ? "" : " in " + viewYearName();
     var counts = GRAY_WORDS;
     return [
       { key: "order", label: "#", cls: "" },
@@ -11550,11 +11555,13 @@
       { key: "cr_award", label: "Max CR Funds", cls: "c",
         title: "The credit share of the institution's max award " + awardWhen + ". The credit priority measures count toward it." },
       { key: "cr_current", label: currHeadHtml("CR Funds"), menu: "Current CR Funds", cls: "c",
-        title: "Credit funding " + q + "." + counts },
+        title: "Curr CR Funds (current credit funds): the credit funding the institution qualifies for so far" + yr +
+          ", from the CPL outcomes recorded in MAP. It rises toward Max CR Funds as outcomes are recorded." + counts },
       { key: "nc_award", label: "Max NC Funds", cls: "c",
         title: "The noncredit share of the institution's max award " + awardWhen + ". Only the noncredit measures count toward it." },
       { key: "nc_current", label: currHeadHtml("NC Funds"), menu: "Current NC Funds", cls: "c",
-        title: "Noncredit funding " + q + "." + counts },
+        title: "Curr NC Funds (current noncredit funds): the noncredit funding the institution qualifies for so far" + yr +
+          ", from the noncredit outcomes recorded in MAP. It rises toward Max NC Funds as outcomes are recorded." + counts },
       // THE COMBINED FIGURE IS ITS OWN COLUMN (Sam, 2026-09-23: "Since Funding
       // Base = 150K and Cap = $400K, take a look at the colleges at Base and
       // notice that most approx 149k"). The base and the cap bind the COMBINED
@@ -11566,10 +11573,14 @@
       // row carries one lane, so the split columns repeat the total; they stay
       // in the Columns menu, hidden by default, and the export keeps them.
       { key: "total", label: "Max Funds", menu: "Max Funds", cls: "c",
-        title: "The institution's max award " + awardWhen + ", credit and noncredit together. The base and the cap apply to this figure. " +
-          "On a priority or outcome row, that row's share of it." },
+        title: "Max Funds (maximum funds): the most funding the institution can qualify for " + awardWhen +
+          ", credit and noncredit together. It is the institution's max award, set by its size in full-time " +
+          "equivalent students (FTES), and never below the base award or above the cap. On a priority or outcome " +
+          "row, the part of the max award that priority carries." },
       { key: "current_total", label: currHeadHtml("Funds"), menu: "Current Funds", cls: "c",
-        title: "Funding " + q + ", credit and noncredit together. On a priority or outcome row, what that row has qualified for." + counts },
+        title: "Curr Funds (current funds): the funding the institution qualifies for so far" + yr + ", credit and " +
+          "noncredit together, from the CPL outcomes recorded in MAP. It rises toward Max Funds as outcomes are " +
+          "recorded. On a priority or outcome row, what that row has qualified for so far." + counts },
       { key: "working_adults", label: "Working adults*", cls: "" }
     ];
   }
@@ -12427,12 +12438,16 @@
     if (!c.floored && !c.capped) return "";
     var m = allocModel();
     var share = fmtMoney((c.size_pct || 0) * m.net);
+    // Natalie (CSM lead, via Sam, 2026-10-28): the hovers "didn't really clarify the terms", so each
+    // now opens on what the word means before the arithmetic behind it.
     if (c.floored) return ' <span class="cplfund-chip cplfund-bound cf-boundchip" title="' +
-      esc("This institution's share of the funding by size is " + share + " for the window, below the " +
+      esc("Base: this institution's max award is the base award of " + fmtMoney(m.floor) + ". " +
+        "Its share of the funding by size is " + share + " for the window, below the " +
         fmtMoney(m.floor) + " base award, so the Chancellor's Office brings it up to the base from within the same total.") +
       '">Base</span>';
     return ' <span class="cplfund-chip cplfund-bound cf-boundchip" title="' +
-      esc("This institution's share of the funding by size is " + share + " for the window, above the " +
+      esc("Cap: this institution's max award is held at the cap of " + fmtMoney(m.cap) + ". " +
+        "Its share of the funding by size is " + share + " for the window, above the " +
         fmtMoney(m.cap) + " cap, so the Chancellor's Office holds it at the cap and redirects the difference to the other institutions.") +
       '">Cap</span>';
   }
@@ -15683,11 +15698,20 @@
     return "funding-model/" + (activeScenario && activeScenario !== pub
       ? "?scenario=" + encodeURIComponent(activeScenario) : "");
   }
+  // The link for the field: the published page's own address, absolute, never COBI's.
+  function fieldLinkUrl() {
+    try { return new URL(SANITY_URL, window.location.href).href; } catch (e) { return SANITY_URL; }
+  }
   function pagePreviewChromeHtml() {
+    var field = fieldLinkUrl();
     return controlStripHtml() +
       '<div class="cplfund-actions" role="toolbar" aria-label="Page actions">' + viewControlHtml() +
       '<a class="cplfund-optbtn cplfund-pv-open" href="' + esc(pageFrameSrc()) + '" target="_blank" rel="noopener">' +
       "Open the page in its own window</a></div>" +
+      (activeScenario === publishedScenario()
+        ? '<p class="cplfund-pv-note">The link for the field: <a href="' + esc(field) + '" target="_blank" rel="noopener">' +
+          esc(field) + '</a> <button type="button" class="cplfund-optbtn" id="cplFundCopyFieldLink">Copy the link</button></p>'
+        : "") +
       '<p class="cplfund-pv-note">The page colleges read' + (activeScenario !== publishedScenario()
         ? ", for " + esc(activeScenario) + ", which is not yet published" : "") +
       ". Signed in, Edit this page at its top arranges its blocks and edits its text.</p>";
@@ -15795,6 +15819,7 @@
   function render() {
     if (press.open) { press.held = true; return; }
     press.held = false;
+    if (configHold) { paintConfigHold(); return; }   // the published scenario paints first (loadShared)
     // ⚠️ THE CACHES CLEAR BEFORE THE SUBSCRIBERS HEAR (2026-09-30). They cleared
     // only further down, past the mount guard, so a subscriber that asked
     // _alloc() inside its handler read the allocation of the model BEFORE the
@@ -16832,6 +16857,14 @@
       if (publicMode()) return;   // belt-and-braces: the button never renders public
       if (state.subview !== "report") { state.subview = "report"; render(); }
     });
+    var fieldBtn = document.getElementById("cplFundCopyFieldLink");
+    if (fieldBtn) fieldBtn.addEventListener("click", function () {
+      var text = fieldLinkUrl();
+      var done = function () { fieldBtn.textContent = "Copied"; setTimeout(function () { fieldBtn.textContent = "Copy the link"; }, 1500); };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done, function () { fallbackCopy(text); done(); });
+      } else { fallbackCopy(text); done(); }
+    });
     var xallBtn = document.getElementById("cplFundXall");
     if (xallBtn) xallBtn.addEventListener("click", function () {
       var secs = document.querySelectorAll("#cplFundingMount details.cplfund-sec");
@@ -17656,13 +17689,13 @@
     loadScenario();
     if (window.CPL_FUNDING) applyCollegeDeepLink();
     function loadRemotes() { loadShared(); loadPerf(); loadEss(); loadEligibility(); loadNotes(); loadReports(); loadLedger(); }
-    if (window.CPL_FUNDING) { render(); loadRemotes(); return; }
+    if (window.CPL_FUNDING) { holdForConfig(); render(); loadRemotes(); return; }
     if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
-      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { applyCollegeDeepLink(); render(); loadRemotes(); });
+      window.CPL_TABS.loadScript("cpl_funding_data.js", "CPL_FUNDING", function () { applyCollegeDeepLink(); holdForConfig(); render(); loadRemotes(); });
     } else {
       var s = document.createElement("script");
       s.src = "cpl_funding_data.js";
-      s.onload = function () { applyCollegeDeepLink(); render(); loadRemotes(); };
+      s.onload = function () { applyCollegeDeepLink(); holdForConfig(); render(); loadRemotes(); };
       s.onerror = render;
       document.head.appendChild(s);
     }
