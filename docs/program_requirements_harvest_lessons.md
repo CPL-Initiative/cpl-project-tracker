@@ -923,6 +923,24 @@ S445 SkyCurrant (a shared page per heading, MiraCosta's degree lists, Palomar's 
 lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`, and S446 SkyMadrone
 (a degree-and-certificate address, 91 records) since the S523 compaction.
 
+## S527 SkyLoganberry (2026-10-30, the CPL Queue routine): the state's C-numbers name no code in their body
+
+- **Glendale's C-numbered descriptions print no code after the units.** "C1000 · INTRODUCTION TO STATISTICS · 4.0 Units ·
+  (Previously MATH 136) · This course is an introduction ..." gives the parser no code to key or guard on, and its
+  number pattern took three digits at most. The unpriced-codes query (S526's lesson) put them first: STAT C1000 on 15
+  records, ENGL 101 on 13, PSYC C1000 on 11, ENGL 104 on 11.
+- **A page read's " · " is the reader folding short lines.** The first read (41047695384) keyed on "C1000 · " and matched no
+  page; the PDF text has a line break there. The second (41048183449) matched the number alone on its line.
+- **Let the runner parse its own read.** A plan with `"parse_units": true` makes `college-page-read.yml` run
+  `kb/_description_units.py` over the read and print the result, with each C-numbered description it cannot key
+  (`unkeyed`: page, number, title, units, the old number its note prints, the footer naming the department). Run
+  41048730638 printed all eleven in eleven lines, where the log was 900. The session keyed each under the prefix the
+  department and the records give (COMM, ENGL, POLS, PSYC, STAT) and aliased each old number to it (MATH 136+ takes
+  STAT C1000E's 5.0, ENGL 101 takes ENGL C1000's 4.0), with the words in the units file.
+- **Result:** reconcile 41049220135 (free) filled 118 course units on 47 records and changed nothing else (checked field
+  by field); five records passed and none lost a pass. Reread 41050126747 replaced the 47 rows (receipt
+  `kb/receipts/program_requirement_records_college_reread_glendale_community_41050126747.json`, read back live). Glendale live: **115 equal (from 110), 65 incomplete, 46 unequal**.
+
 ## S526 SkyJostaberry (2026-10-30, the CPL Queue routine): the description parser missed 70 courses; IT Technician's totals are the catalog's
 
 - **IT Technician II and III are faithful records of a catalog whose totals run one unit high.** Page read 41025920825

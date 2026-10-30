@@ -2054,6 +2054,17 @@ check({k: v[:2] for k, v in got.items()} == {"FTVM132": [3.0, 3.0], "ART130": [3
       "description units: a (Previously ...) note, a digit-led title, C/C++ and a curly apostrophe parse; a "
       "lower-case title does not (got %s)" % sorted(got))
 
+# S527: a C-numbered description names no code in its body, so descs() keys none of them and unkeyed() returns
+# each with the old number its note prints and the page footer naming the department.
+with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as fh:
+    fh.write("[pdf page 258]\nSTATISTICS · C1000 · INTRODUCTION TO STATISTICS · 4.0 Units · (Previously MATH 136)\n"
+             "This course is an introduction · C1000H · INTRODUCTION TO STATISTICS - · HONORS · 4.0 Units · "
+             "(Previously MATH 136H) · This is an honors course. · STATISTICS 255\n")
+got = DU.descs(fh.name)
+unk = [(u["num"], u["units"], u["previously"]) for u in DU.unkeyed(fh.name)]
+check(got == {} and unk == [("C1000", "4.0", "MATH 136"), ("C1000H", "4.0", "MATH 136H")],
+      "description units: C-numbered descriptions come back unkeyed with their old number (got %s, %s)" % (sorted(got), unk))
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

@@ -223,7 +223,7 @@
      },
      {
       "code": "COMM C1000",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -243,26 +243,14 @@
    "The page also prints the Marketing II, Mass Communications and Medical Office certificates. They were not read for this record."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 41009271854,
+ "extracted_run": 41049220135,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "BUSAD 101": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 110": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 141": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 152": [
+    "COMM C1000": [
      3.0,
      3.0
     ]

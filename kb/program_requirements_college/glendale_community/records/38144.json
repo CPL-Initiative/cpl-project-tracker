@@ -158,7 +158,7 @@
      },
      {
       "code": "ENGL 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -274,58 +274,14 @@
    "Outcomes are printed as one semicolon-separated sentence; split at the semicolons. 'writt en' is copied as printed (PDF ligature artifact for 'written')."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40696243319,
+ "extracted_run": 41049220135,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "ENGL 102": [
-     3.0,
-     3.0
-    ],
-    "ENGL 103": [
-     3.0,
-     3.0
-    ],
-    "ENGL 105": [
-     3.0,
-     3.0
-    ],
-    "ENGL 106": [
-     3.0,
-     3.0
-    ],
-    "ENGL 110": [
-     3.0,
-     3.0
-    ],
-    "ENGL 123": [
-     3.0,
-     3.0
-    ],
-    "ENGL 112": [
-     3.0,
-     3.0
-    ],
-    "ENGL 114": [
-     3.0,
-     3.0
-    ],
-    "ENGL 115": [
-     3.0,
-     3.0
-    ],
-    "ENGL 118": [
-     3.0,
-     3.0
-    ],
-    "HUMAN 105": [
-     3.0,
-     3.0
-    ],
-    "HUMAN 105H": [
+    "ENGL 104": [
      3.0,
      3.0
     ]

@@ -5,7 +5,7 @@
  "catalog_year": "2025-2026",
  "programs": 317,
  "with_closed_list": 267,
- "started": "2026-10-30T10:28:13Z",
+ "started": "2026-10-30T11:38:11Z",
  "pdf": {
   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
   "access": "ok",
@@ -3329,7 +3329,7 @@
   "unproven": []
  },
  "loads": 1,
- "seconds": 127.9,
+ "seconds": 118.5,
  "found": 260,
  "by_method": {
   "no_closed_list": 50,
@@ -3769,5 +3769,5 @@
   "programs": 0,
   "list": []
  },
- "run": "41040709338"
+ "run": "41049220135"
 }

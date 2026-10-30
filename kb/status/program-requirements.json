@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T10:40:00Z",
-  "session": 526,
-  "moniker": "SkyJostaberry",
+  "written_at": "2026-10-30T11:48:49Z",
+  "session": 527,
+  "moniker": "SkyLoganberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_527_handoff.md",
+  "handoff": "docs/session_528_handoff.md",
   "next_step": {
-    "title": "Land #2577, then Glendale's 49 unequal sums",
-    "text": "Merge #2577 once test passes on its newest head. Then list Glendale's still-unpriced placed courses live and its unequal records, and read one program's page before any step: the IT Technician pair and Unix-Linux are settled as the catalog prints them."
+    "title": "Glendale's 46 unequal sums",
+    "text": "Merge #2578 once test passes on its newest head. Then read one of Glendale's unequal records against its own page before any step, and list the still-unpriced codes again (the plus-suffixed MATH codes, CABOT 208, ACCTG 110)."
   },
   "calls": [
     {
@@ -137,6 +137,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-30T11:58:00Z",
+      "text": "Glendale: the eleven C-numbered courses (STAT C1000, PSYC C1000, ENGL C1000 and others), which print no code in their descriptions, are priced from the catalog, and the old numbers their notes print with them (reconcile 41049220135, reread 41050126747, receipt committed). Live: 115 equal (from 110), 65 incomplete, 46 unequal; none lost a pass."
+    },
     {
       "at": "2026-10-30T10:34:00Z",
       "text": "Glendale: the description parser now reads renumbered and punctuated course titles, pricing 70 more courses (reconcile 41040709338, reread 41041428504, receipt committed). Live: 110 equal (from 105), 67 incomplete, 49 unequal; none lost a pass."
@@ -290,14 +294,14 @@
     {
       "day": "2026-10-30",
       "active": 20282,
-      "complete": 13223,
+      "complete": 13233,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-30T11:12:00Z"
+    "at": "2026-10-30T12:12:00Z"
   },
   "harvest": {
     "day": "2026-10-30",

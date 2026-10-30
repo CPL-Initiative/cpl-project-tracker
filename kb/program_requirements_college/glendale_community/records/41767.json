@@ -171,7 +171,7 @@
      },
      {
       "code": "ENGL 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -269,46 +269,14 @@
    "Outcomes were run together in the PDF text; split at sentence boundaries, with ligature 'Fulﬁ ll' read as 'Fulfill' and the line-break hyphen in 'col-lege' read as 'college'."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 41009271854,
+ "extracted_run": 41049220135,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "BIOL 142": [
-     4.0,
-     4.0
-    ],
-    "BIOL 50": [
-     1.0,
-     4.0
-    ],
-    "CHEM 110": [
-     5.0,
-     5.0
-    ],
-    "MATH 100": [
-     4.0,
-     4.0
-    ],
-    "BIOL 101": [
-     4.0,
-     4.0
-    ],
-    "BIOL 112": [
-     5.0,
-     5.0
-    ],
-    "BIOL 122": [
-     4.0,
-     4.0
-    ],
-    "BIOL 140": [
-     4.0,
-     4.0
-    ],
-    "BIOL 141": [
+    "ENGL 101": [
      4.0,
      4.0
     ]

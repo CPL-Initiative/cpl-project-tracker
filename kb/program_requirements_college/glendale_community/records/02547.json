@@ -96,7 +96,7 @@
    "status": "unequal",
    "computed": [
     43.0,
-    43.0
+    44.0
    ],
    "stated": [
     42.0,
@@ -104,7 +104,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 43.0-43.0; the catalog states 42.0-46.0"
+    "the blocks sum to 43.0-44.0; the catalog states 42.0-46.0"
    ]
   },
   "repeated": {
@@ -323,7 +323,7 @@
      },
      {
       "code": "SPCH 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -356,7 +356,7 @@
      },
      {
       "code": "ENGL 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -370,7 +370,7 @@
      },
      {
       "code": "ENGL 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -431,14 +431,22 @@
    "No GE pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": 41040709338,
- "read_run": 41012563119,
+ "extracted_run": 41049220135,
+ "read_run": 41040709338,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "ART 130": [
+    "SPCH 101": [
+     3.0,
+     3.0
+    ],
+    "ENGL 101": [
+     4.0,
+     4.0
+    ],
+    "ENGL 104": [
      3.0,
      3.0
     ]

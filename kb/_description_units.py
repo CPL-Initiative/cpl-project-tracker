@@ -21,7 +21,9 @@ def descs(path):
     out = {}
     for m in re.finditer(r"· ([\d.]+(?: to [\d.]+)?) Units?\b", body):
         before = body[max(0, m.start() - 160):m.start()]
-        hs = list(re.finditer(r"(?:^|[·\s])(C?\d{1,3}[A-Z]?) · (?=[A-Z0-9])", before))
+        # The state's common numbers run four digits after a C ("C1000 · INTRODUCTION TO STATISTICS",
+        # S527: STAT C1000 sat unpriced on 15 records).
+        hs = list(re.finditer(r"(?:^|[·\s])(C?\d{1,4}[A-Z]?) · (?=[A-Z0-9])", before))
         if not hs:
             continue
         h = hs[-1]
@@ -48,6 +50,25 @@ def descs(path):
     return out
 
 
+def unkeyed(path):
+    """The state's C-numbered descriptions, whose body names no code (S527, Glendale: "C1000 · INTRODUCTION
+    TO STATISTICS · 4.0 Units · (Previously MATH 136) · This course is ..."). descs() cannot key them, so
+    each comes back with its page, the old code its note prints and the page's last words (the footer
+    names the department), for a session to key against the catalog's own words."""
+    txt = open(path).read()
+    body = " ".join(re.sub(r"\d{4}-\d\d-\d\dT[\d:.]+Z ", "", txt[txt.find("[pdf page"):]).split())
+    pages = re.split(r"\[pdf page (\d+)\]", body)
+    out = []
+    for n, pg in zip(pages[1::2], pages[2::2]):
+        for m in re.finditer(r"(?:^|[·\s])(C\d{4}[A-Z]?) · ([^a-z]{3,80}?) · ([\d.]+(?: to [\d.]+)?) Units?\b", pg):
+            after = pg[m.end():m.end() + 60].lstrip(" ·")
+            prev = re.match(r"\(Previously ([^)]{1,40})\)", after)
+            out.append({"page": int(n), "num": m.group(1), "title": " ".join(m.group(2).replace("·", " ").split()),
+                        "units": m.group(3), "previously": prev.group(1) if prev else None,
+                        "footer": pg.split("===")[0][-30:].strip()})
+    return out
+
+
 if __name__ == "__main__":
     d = {}
     for p in sys.argv[2:]:
@@ -55,3 +76,7 @@ if __name__ == "__main__":
             d.setdefault(k, v)
     json.dump(d, open(sys.argv[1], "w"), indent=0)
     print(len(d))
+    # A read run with its plan's "parse_units" prints these too (college-page-read.yml).
+    for p in sys.argv[2:]:
+        for u in unkeyed(p):
+            print("unkeyed:", json.dumps(u, ensure_ascii=False))
