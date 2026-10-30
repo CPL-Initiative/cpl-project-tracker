@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T01:39:57Z",
-  "session": 521,
-  "moniker": "SkyBearberry",
+  "written_at": "2026-10-30T02:30:06Z",
+  "session": 522,
+  "moniker": "SkyCrowberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_522_handoff.md",
+  "handoff": "docs/session_523_handoff.md",
   "next_step": {
-    "title": "Land the two S521 PRs, then the smoke's first live run",
-    "text": "Merge #2570 (the program search fix, already live) once test passes, and #2571 (the smoke reads retry, wording checks report); apply the cpl_memory receipt on Sam's go; then Glendale's course units, the harvest's NEXT."
+    "title": "Land #2570, then Glendale's course units",
+    "text": "Merge #2570 (the program search fix, live since 01:03Z) once test passes on its newest head; then Glendale's course units, the harvest's NEXT. Sierra's Quick Adopt ask waits until after the Summit."
   },
   "calls": [
     {
@@ -138,8 +138,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-30T01:03:24Z",
-      "text": "Sierra's program search (search_college_programs) reads its table directly and groups DF by ordinal: no temp files, 149 ms warm. The harvest tables are unchanged."
+      "at": "2026-10-30T02:20:14Z",
+      "text": "S521's four memory rows applied by run 40990743558 and read back. The harvest tables are unchanged."
+    },
+    {
+      "at": "2026-10-30T02:17:00Z",
+      "text": "The test runner names a failing shard's file, and a Library test stopped racing its unzip (#2572). The harvest tables are unchanged."
     }
   ],
   "headline": [

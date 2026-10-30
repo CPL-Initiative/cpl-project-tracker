@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 95 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 491 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1311** | |
+| Session handoffs | 492 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1312** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,7 +122,8 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- **2026-10-30 (S521 SkyBearberry):** Sierra's program search fixed live (no temp files; s521 and s521b, Sheet 142 card 1), the deploy smoke retries a read and reports a wording (#2571, card 2), handoff 522.
+- **2026-10-30 (S522 SkyCrowberry, light):** a failing shard names its file and `library.test.js` stops racing JSZip (#2572), so #2570's shard 3 passes; #2571 merged; S521's memory rows applied; handoff 523.
+- 2026-10-30 (S521 SkyBearberry): Sierra's program search fixed live (no temp files; s521 and s521b, Sheet 142 card 1), the deploy smoke retries a read and reports a wording (#2571, card 2), handoff 522.
 - 2026-10-29 (S520 SkyLingonberry, Sam's session): the public funding page in COBI's Share menu (#2565); #2563 and #2560 landed before the Summit, #2560 after two merges of main; Sierra deployed; the tests check out less and run on six shards (#2567); handoff 521.
 - 2026-10-29 (SkyChokeberry, Sam's Library side session beside S520): Revise and remediate from the one box, Edit moved into it, long instructions kept whole (#2564); side-lane handoff `docs/library_handoff.md` (light).
 - 2026-10-29 (S519 SkyCloudberry, Sam's session): the CSM team's funding fixes and Sam's eight FAQs (#2560); Sierra answers with what loaded when a read times out, and the MAP Custom Report load moves to 10 PM Pacific (#2561); the College Identity findings link scrolls in place (#2562); Open Asks Sheet 140, ruled; a KB note on cron drift; handoff 520.

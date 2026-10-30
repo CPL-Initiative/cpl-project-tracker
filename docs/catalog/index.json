@@ -13237,7 +13237,7 @@
      ],
      "title": "Test suite speed \u2014 lessons",
      "type": null,
-     "updated": "2026-08-29"
+     "updated": "2026-10-30"
     },
     {
      "created": "2026-10-09",
@@ -16262,8 +16262,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 491,
+   "count": 492,
    "docs": [
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "n": 523,
+     "path": "docs/session_523_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "ci",
+      "tests",
+      "sierra",
+      "memory"
+     ],
+     "title": "Session 523 handoff: shard failures name their file, the Library test race fixed, S521's memory applied",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24672,5 +24689,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1311
+ "total": 1312
 }
