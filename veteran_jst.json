@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-30T13:02:46.630435+00:00",
+  "scraped_at": "2026-10-30T16:58:06.773292+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 30750,
+    "jst": 30754,
     "star_colleges": 70
   },
   "computed_star_colleges": 70,
@@ -230,15 +230,15 @@
       "jst": 140,
       "star": true
     },
+    "Solano Community College": {
+      "vets": 278,
+      "jst": 136,
+      "star": false
+    },
     "Los Angeles Mission College": {
       "vets": 112,
       "jst": 152,
       "star": true
-    },
-    "Solano Community College": {
-      "vets": 278,
-      "jst": 133,
-      "star": false
     },
     "Napa Valley College": {
       "vets": 38,
@@ -407,7 +407,7 @@
     },
     "Crafton Hills College": {
       "vets": 577,
-      "jst": 23,
+      "jst": 24,
       "star": false
     },
     "American River College": {

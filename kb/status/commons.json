@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-30T13:06:53Z",
+ "written_at": "2026-10-30T17:01:50Z",
  "rows": [
   {
    "key": "requirements",
@@ -50,7 +50,7 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-30T11:38:11Z",
+    "at": "2026-10-30T12:31:04Z",
     "every_hours": null
    },
    "facts": {
@@ -82,9 +82,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 1838,
-     "of": 5024,
-     "words": "titles carry a review stamp (645 a person's, 1,193 a cohort's); 2,464 credentials, 1,869 of 2,688 records stamped",
+     "n": 1844,
+     "of": 5030,
+     "words": "titles carry a review stamp (645 a person's, 1,199 a cohort's); 2,465 credentials, 1,870 of 2,689 records stamped",
      "open": "#credential-reference/progress"
     }
    ],
@@ -94,9 +94,9 @@
    ],
    "issues": [
     {
-     "n": 441,
+     "n": 450,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 392, the classifier's title has a course code left in 23, a merge would join two issuers 13, the classifier's title has a dangling word 11, the classifier's title has a method word left in 2)",
+     "owner": "a curator (the classifier is unsure 401, the classifier's title has a course code left in 23, a merge would join two issuers 13, the classifier's title has a dangling word 11, the classifier's title has a method word left in 2)",
      "open": "#credential-reference/held",
      "error": null
     },
@@ -128,21 +128,21 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-30T13:02:53Z",
+    "at": "2026-10-30T16:58:18Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5024,
-    "stamped": 1838,
+    "titles": 5030,
+    "stamped": 1844,
     "person": 645,
-    "cohort": 1193,
-    "credentials": 2464,
-    "records": 2688,
-    "records_stamped": 1869,
-    "saved_at": "2026-10-29T14:43:54Z",
-    "fold_at": "2026-10-30T13:02:53Z",
+    "cohort": 1199,
+    "credentials": 2465,
+    "records": 2689,
+    "records_stamped": 1870,
+    "saved_at": "2026-10-30T14:35:41Z",
+    "fold_at": "2026-10-30T16:58:18Z",
     "map_titles": 4859,
-    "unclassified": 456,
+    "unclassified": 450,
     "left_map": 621,
     "below_80": 1151,
     "below_60": 245
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-30T13:05:07+00:00",
+    "at": "2026-10-30T17:00:02+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -269,7 +269,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 37,
+     "n": 38,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "open": "#cr-reference/names"
@@ -328,12 +328,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 37,
+    "names_to_check": 38,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 296
+    "named_official": 295
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-30T13:02:52Z",
+    "at": "2026-10-30T16:58:17Z",
     "every_hours": 24
    },
    "facts": {

@@ -57148,5 +57148,53 @@
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-10-29T14:43:54.312259+00:00",
     "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "Human Relations in Organizations-Portfolio": {
+    "unified_title": "Human Relations in Organizations",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-30",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-30T14:35:41.360297+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "International Brotherhood of Electrical Workers Year 1": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-30",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-30T14:35:41.360297+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "International Brotherhood of Electrical Workers Year 2": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-30",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-30T14:35:41.360297+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "International Brotherhood of Electrical Workers Year 3": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 3",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-30",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-30T14:35:41.360297+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "International Brotherhood of Electrical Workers Year 4": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 4",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-30",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-30T14:35:41.360297+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+  },
+  "International Brotherhood of Electrical Workers Year 5": {
+    "unified_title": "IBEW Electrician Apprenticeship — Year 5",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-30",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-30T14:35:41.360297+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
   }
 }

@@ -1,12 +1,55 @@
 {
-  "_generated_at": "2026-10-30T13:02:53Z",
+  "_generated_at": "2026-10-30T16:58:18Z",
   "mode": "apply",
   "gates": {
     "V2_target_credential": true,
     "V3_additive_plus_declared": true
   },
   "apply_safe": true,
-  "clean": [],
+  "clean": [
+    {
+      "raw": "Human Relations in Organizations-Portfolio",
+      "assigned": "Human Relations in Organizations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-30T14:35:41.360297+00:00"
+    },
+    {
+      "raw": "International Brotherhood of Electrical Workers Year 1",
+      "assigned": "IBEW Electrician Apprenticeship — Year 1",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-30T14:35:41.360297+00:00"
+    },
+    {
+      "raw": "International Brotherhood of Electrical Workers Year 2",
+      "assigned": "IBEW Electrician Apprenticeship — Year 2",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-30T14:35:41.360297+00:00"
+    },
+    {
+      "raw": "International Brotherhood of Electrical Workers Year 3",
+      "assigned": "IBEW Electrician Apprenticeship — Year 3",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-30T14:35:41.360297+00:00"
+    },
+    {
+      "raw": "International Brotherhood of Electrical Workers Year 4",
+      "assigned": "IBEW Electrician Apprenticeship — Year 4",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-30T14:35:41.360297+00:00"
+    },
+    {
+      "raw": "International Brotherhood of Electrical Workers Year 5",
+      "assigned": "IBEW Electrician Apprenticeship — Year 5",
+      "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-30T14:35:41.360297+00:00"
+    }
+  ],
   "skip": [
     {
       "raw": "A S T 025 - Fundamentals of Auto Mechanics",
@@ -14736,7 +14779,15 @@
       "why": "human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'"
     }
   ],
-  "credential_adds": [],
+  "credential_adds": [
+    {
+      "raw": "Human Relations in Organizations-Portfolio",
+      "assigned": "Human Relations in Organizations",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "cer-procedure-classifier@bot",
+      "reviewed_at": "2026-10-30T14:35:41.360297+00:00"
+    }
+  ],
   "credential_issuer_fills": [],
   "credential_issuer_adds": [],
   "credential_prunes": [],
