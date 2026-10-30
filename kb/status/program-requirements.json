@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T21:04:43Z",
-  "session": 530,
-  "moniker": "SkyBuffaloberry",
+  "written_at": "2026-10-30T23:35:13Z",
+  "session": 531,
+  "moniker": "SkyOlallieberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_531_handoff.md",
+  "handoff": "docs/session_532_handoff.md",
   "next_step": {
-    "title": "The display build, then Los Angeles Valley's lost pages",
-    "text": "The floor update is live (Sam pasted it, Sheet 146 card 2) and Los Angeles Valley's rereads moved 95 rows, so the display build comes first for CPL Pathways and Sierra. Then the capture's page finder for the 26 Los Angeles Valley records it lost or never found, the Media Arts family first."
+    "title": "Read back the display applies, then Los Angeles Valley's Engineering family",
+    "text": "Los Angeles Valley reads 186 of 215 passing live (#2596). Its display build f8c94ef23142 applies on main behind the earlier build; read both back. Then read the Engineering and Manufacturing family's ten coverage failures against their own pages."
   },
   "calls": [
     {
@@ -161,6 +161,22 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-30T23:35:00Z",
+      "text": "The page finder change merged (#2596) and display build f8c94ef23142's apply was dispatched on main, queued behind 956fee0d62bc's."
+    },
+    {
+      "at": "2026-10-30T23:14:00Z",
+      "text": "Los Angeles Valley 167 of 204 to 186 of 215 passing live. Its headings print State Code and the control number; the page finder now reads it, so each certificate reads its own page. A reread replaced 62 rows and a load inserted 11, both with receipts."
+    },
+    {
+      "at": "2026-10-30T23:05:00Z",
+      "text": "An extraction of the 78 Los Angeles Valley programs whose page moved cost 5.37 dollars: 19 failing records pass, twelve of them Media Arts. Three passing records that came back worse kept their earlier files."
+    },
+    {
+      "at": "2026-10-30T22:30:00Z",
+      "text": "Display build 956fee0d62bc merged and its apply dispatched on main: the floor update and Los Angeles Valley's earlier rereads reach CPL Pathways and Sierra."
+    },
     {
       "at": "2026-10-30T20:35:00Z",
       "text": "Sam pasted the floor update (Sheet 146 card 2): 204 rows moved, Los Angeles Valley's reread had moved the other two; all 206 read back at the floor reading."
@@ -338,7 +354,7 @@
     {
       "day": "2026-10-30",
       "active": 20282,
-      "complete": 13438,
+      "complete": 13454,
       "colleges": 114
     }
   ],
@@ -370,7 +386,7 @@
         20282
       ],
       "coci": [
-        16123,
+        16132,
         20282
       ],
       "outcomes": {
@@ -379,12 +395,12 @@
           89192
         ],
         "plo": [
-          16123,
+          16132,
           20282
         ]
       },
       "careers": [
-        15087,
+        15096,
         20282
       ]
     }
