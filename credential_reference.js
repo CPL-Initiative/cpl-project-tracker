@@ -5200,7 +5200,7 @@
       tr.appendChild(el("td", { class: "cr-ind-status cr-ind-st-" + (c.status || "none") },
         [IND_STATUS[c.status] || "Registry only"]));
       tr.appendChild(el("td", { class: "cr-ind-field" },
-        [c.cip ? c.cip.code + " " + c.cip.title : ""]));
+        [c.cip && c.cip.code ? c.cip.code + " " + c.cip.title : (c.cip ? "Not yet assigned" : "")]));
       var mapTd = el("td", { class: "cr-ind-map" }, [industryMapWord(c)]);
       if (c.map && c.map.titles && c.map.titles.length) {
         var go = el("button", { type: "button", class: "cr-ind-open",
@@ -5252,7 +5252,9 @@
       div.appendChild(el("p", null, ["Formerly: " + c.formerly.join("; ")]));
     }
     if (c.notes) div.appendChild(el("p", { class: "cr-ind-notes" }, [c.notes]));
-    if (c.cip) {
+    if (c.cip && !c.cip.code) {
+      div.appendChild(el("p", null, ["CIP: not yet assigned. No Registry program type, occupation group or name rule places this credential."]));
+    } else if (c.cip) {
       div.appendChild(el("p", null, ["CIP " + c.cip.code + " " + c.cip.title
         + " (sector " + c.cip.sector + ", " + c.cip.sector_title + "; assigned by "
         + (c.cip.source || "rule") + ")"]));

@@ -1,7 +1,7 @@
 ---
 title: "The industry-credential watch agent"
 created: 2026-09-30
-updated: 2026-09-30
+updated: 2026-10-30
 tags: [reference, credential-registry, partner-crosswalks, watch-agent, routine]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference
@@ -55,7 +55,22 @@ row the catalog joins to (`map.titles`, the CER's KB key) shows the industry rec
 *Retired by issuer* / *Renamed by issuer* chip. A run that changes the watch file therefore
 reaches curators the day it merges, provided the builder ran (step 5).
 
-The catalog joins the top-50 file by name (plus reviewed aliases in `CE_TOP50_ALIASES`): a matched row carries `ctid` and a `ctdl` block, and the CER's industry record links the CTID to the Registry. Sixteen of the 50 are in the catalog (all IT); the other 34 (trades, health, public safety) sit in the top-50 file until the catalog's scope widens, a call for Sam.
+**Scope: any field (Sam, 2026-10-30: *"widen the process to any industry, sector, professional licensure"*).** The catalog
+keeps its file name (`it_ai_credential_catalog.json`) and now holds every field. The IT rows still come from the issuers
+above and the watch file. The other fields come whole from four sources: Credential Engine's top 50, the 369 California
+occupational and professional licenses, CareerOneStop's list, and the Credential Engine national sample. One row per
+(issuer, core name). A non-IT row takes its CIP from the Registry's own `instructionalProgramType` when the record
+carries one, then the name rules, then the issuer-name rules, then the SOC major group of its CTDL occupation
+(`field_cip` in the builder); one none of them places reads *Not yet assigned* with no code, and the build never
+guesses. The *Field* filter on the Industry credentials lane is the CIP sector for these rows. The sector is a filter and
+a first sort; the rules are heuristics, so a curator confirms a code before a college relies on it.
+
+The catalog joins the top-50 file by name (plus reviewed aliases in `CE_TOP50_ALIASES`): a matched row carries `ctid` and a
+`ctdl` block, and the CER's industry record links the CTID to the Registry. All 50 are catalog rows. A row from the open-ended
+sources carries a CTID only when its issuer is the Registry record's owner.
+
+The weekly run still reads the issuers in `_issuers_watched` for changes. A licensing board or a non-IT issuer joins that
+list when Sam names it; the run does not guess which of the 1,500 issuers matter.
 
 The catalog is a dated snapshot: the CER it joins to (`credential_reference_data.js`)
 is rebuilt every morning, so a committed catalog trails MAP by the days since

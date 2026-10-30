@@ -4,7 +4,7 @@
   "supabase_tables": 102,
   "rpcs": 43,
   "edge_functions": 11,
-  "file_datasets": 728,
+  "file_datasets": 729,
   "external_services": 191,
   "consumers": 482,
   "workflows": 58,
@@ -1391,7 +1391,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 5265,
+     "line": 5267,
      "tabs": [
       "credential-reference"
      ]
@@ -5736,7 +5736,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5627,
+     "line": 5629,
      "tabs": [
       "credential-reference"
      ]
@@ -6516,7 +6516,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5739,
+     "line": 5741,
      "tabs": [
       "credential-reference"
      ]
@@ -7278,7 +7278,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5628,
+     "line": 5630,
      "tabs": [
       "credential-reference"
      ]
@@ -9338,7 +9338,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5366,
+     "line": 5368,
      "tabs": [
       "credential-reference"
      ]
@@ -14346,6 +14346,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/reference/california_occupational_licenses.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 563
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/reference/cb_course_basic_fall2025.csv": {
    "consumers": [
     {
@@ -14995,7 +15008,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 442
+     "line": 561
     },
     {
      "id": "script:kb/_fetch_ce_top50.py",
