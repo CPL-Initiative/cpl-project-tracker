@@ -2077,6 +2077,11 @@ check(got and got["pages"][0] == 2 and got["control_number_printed"]
 check(C.pdf_control_number("Plan E013344D", "13343") == -1 and C.pdf_control_number("call 133430", "13343") == -1
       and C.pdf_control_number("(Academic Plan E013343D)", "13343") > 0,
       "a control number matches whole, never inside another number")
+check(C.pdf_control_number("MEDIA ARTS: CINEMATOGRAPHY · Certificate of Achievement (CA) · (Program Code 061220, State Code 45216)", "45216") > 0
+      and C.pdf_control_number("(Program Code 061220, State Code 02951)", "02951") > 0
+      and C.pdf_control_number("(Program Code 061220, State Code 45256)", "45216") == -1
+      and C.pdf_control_number("(Program Code 045216, State Code 45256)", "45216") == -1,
+      "Los Angeles Valley's \"State Code\" heading prints the control number; its Program Code never stands in for it (S531)")
 long_head = "Medical Assistant, Associate in Science Degree (Academic Plan X) A medical assistant interacts with " \
             "doctors, nurses and technicians in a long run-on line as pypdf prints it\nACCT 101 ACCT 102"
 check(C.pdf_heading(long_head, {"title": "Medical Assistant", "award": "A.S. Degree"})[:2] == (1.0, True),

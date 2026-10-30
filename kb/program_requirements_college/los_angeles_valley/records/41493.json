@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "STEM Foundation",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=151",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9080,
+  "input_tokens": 6808,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9080,
-    "output_tokens": 1834,
+    "input_tokens": 6808,
+    "output_tokens": 1733,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1834,
+  "output_tokens": 1733,
   "output_tokens_details": {
-   "thinking_tokens": 503
+   "thinking_tokens": 494
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.073,
- "ms": 15016,
- "seconds": 15.3,
+ "cost_usd": 0.06189,
+ "ms": 14005,
+ "seconds": 14.5,
  "parts": null,
  "error": null,
  "score": {
@@ -110,7 +110,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "CERTIFICATE OF ACHIEVEMENT: STEM FOUNDATION",
+   "section_heading": "STEM Foundation",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -270,12 +270,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read the Certificate of Achievement section on page 151; the AS degree section on page 150 prints the same requirements and the same outcomes (Major Units 18-21, Total Minimum Units 60).",
-   "The outcomes list is printed identically for the AS and the certificate; recorded here as printed in the certificate section.",
-   "LIST B states 'Any course not used in LIST A.' so List A courses not used there (BIOLOGY 007, CHEM 060, CS 101) also count toward List B; they are listed only once, in List A.",
-   "GEOLOGY 002 and GEOLOGY 007 are joined by a brace in the catalog, which likely means they are taken together as a lecture/lab pair; recorded as separate entries.",
-   "Catalog prints codes with leading zeros (BIOLOGY 007, CHEM 060, PHYSICS 037 etc.), matched to closed-list BIOLOGY 7, CHEM 60, PHYSICS 37 etc."
+   "The excerpt prints no program heading above the program text (it begins with the program code line); section_heading uses the program title.",
+   "The first block 'COMPLETE 4-5 UNITS' effectively means one of MATH 247 (4) or MATH 261 (5).",
+   "List B states 'Any course not used in LIST A', so List A courses (BIOLOGY 007, CHEM 060, CS 101) not used for List A may also count toward List B; they are recorded only in List A.",
+   "GEOLOGY 002 and GEOLOGY 007 are joined by a bracket in List B, suggesting they are taken together as a pair (4 units).",
+   "The outcomes are printed as Program Student Learning Outcomes for this certificate.",
+   "Total: 18-21 recorded as total_units."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": "41141747238"
 }

@@ -4,12 +4,12 @@
  "shape": "degree",
  "title": "Art History",
  "award": "A.A. Degree",
- "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11066,
+  "input_tokens": 11453,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11066,
-    "output_tokens": 1930,
+    "input_tokens": 11453,
+    "output_tokens": 2733,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1930,
+  "output_tokens": 2733,
   "output_tokens_details": {
-   "thinking_tokens": 588
+   "thinking_tokens": 1189
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08286,
- "ms": 15562,
- "seconds": 15.9,
+ "cost_usd": 0.10047,
+ "ms": 22309,
+ "seconds": 22.8,
  "parts": null,
  "error": null,
  "score": {
@@ -123,7 +123,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "ASSOCIATE DEGREE: ART HISTORY Associate of Arts Degree (AA)",
+   "section_heading": "ASSOCIATE DEGREE: ART HISTORY Associate of Arts Degree (AA) (Program Code 100200, State Code 02961)",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -134,7 +134,7 @@
     "min": null,
     "max": null
    },
-   "ge_pattern": null,
+   "ge_pattern": "Any GE (LACCD GE Plan or Cal-GETC)",
    "degree_total": {
     "min": 60,
     "max": 60
@@ -280,14 +280,17 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "List B ends with 'Or any course not used in List A', so a student may also fill List B with an unused List A course (ARTH C1100, ARTH C1200, ART 115).",
-   "The description strongly recommends ART 201 for UC Berkeley/UC Merced transfer and ART 103 for elementary education; both are already List B options, so no separate recommended block was created.",
-   "Catalog prints ART 093/ART 094; closed list stores ART 93/ART 94, treated as the same courses. ARTH C1100/C1200 match closed-list ARTHC1100/ARTHC1200.",
-   "degree_total 60 taken from the section's own line 'Major Units: 18 Total Minimum Units: 60'; no GE pattern or GE units are printed for this AA.",
-   "Career entry 'art history' taken from 'entry level careers in art history and related industries'."
+   "Read the AA section (State Code 02961) on page 52, not the AA-T (State Code 32117) on page 51.",
+   "List B ends with 'Or any course not used in List A.' — any unused List A course (ARTH C1100, ARTH C1200, ART 115) may also count toward List B.",
+   "Catalog prints ART 093 / ART 094 and ARTH C1100 / ARTH C1200; matched to closed-list ART 93 / ART 94 and ARTHC1100 / ARTHC1200.",
+   "Description says ART 201 is strongly recommended for students transferring to UC Berkeley or UC Merced, and ART 103 for students who want to teach at the elementary education level; both already appear in List B, so no separate recommended block was created.",
+   "'Total Minimum Units: 60' printed in the section recorded as degree_total; Major Units 18 as total_units. GE units not printed in the section.",
+   "ge_pattern taken from the program table on page 51 ('Any GE^': LACCD GE Plan or Cal-GETC), not from the AA section itself.",
+   "Careers: description mentions 'entry level careers in art history and related industries'; recorded 'art history' only. It also mentions students who want to teach at the elementary education level.",
+   "The AA heading prints Program Code 100200, the same code as the Studio Arts AA-T; reviewer may verify."
   ]
  },
- "extracted_run": 41117814733,
+ "extracted_run": "41141747238",
  "reconciled": [
   {
    "field": "ge_units",
@@ -307,6 +310,5 @@
    "now": true,
    "words": "Total Minimum Units: 60"
   }
- ],
- "read_run": "39006418426"
+ ]
 }

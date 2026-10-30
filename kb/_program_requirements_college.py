@@ -2218,10 +2218,14 @@ def pdf_heading(text: str, program: dict) -> tuple[float, bool, int]:
 def pdf_control_number(text: str, cn: str | None) -> int:
     """Where the page prints the program's state control number, or -1. East LA
     heads each program "Basic Police Academy Preparation (Academic Plan E013343D)"
-    for control number 13343, and no other page names that plan."""
+    for control number 13343, and no other page names that plan. Los Angeles Valley
+    heads each one "(Program Code 061220, State Code 45216)" (page read 41140057846,
+    S531): its Media Arts certificates went to their degrees' pages, whose heading
+    names the same title, and extracted no course."""
     if not cn or not text:
         return -1
-    m = re.search(r"(?:\b[A-Z]0*|plan\W{0,3}0*|control (?:number|no\.?)\W{0,3}0*)" + re.escape(cn.lstrip("0"))
+    m = re.search(r"(?:\b[A-Z]0*|plan\W{0,3}0*|control (?:number|no\.?)\W{0,3}0*|state code\W{0,3}0*)"
+                  + re.escape(cn.lstrip("0"))
                   + r"(?:[A-Z]\b|(?![0-9A-Za-z]))", text, re.I)
     return m.start() if m else -1
 
