@@ -835,6 +835,8 @@ Verbatim from `docs/reference/lanes/sierra-retrieval-corpus.md`, moved to bring 
 
 ⚠️ A/B doctrine: read the grid AND the candidate's answer, never the run's conclusion; the push-triggered smoke tests PRODUCTION with the branch's assertions, so it is red until the deploy; never two suites at once.
 
+**Live on production (S418): #2230 merged and deployed from main at 17:53Z 2026-10-18 (run 39151585102); the production smoke passed every mode (run 39151861384, 18:07Z).**
+
 ## S521 (2026-10-30): the program search's slowness was a temp-file copy
 
 - **Slow under load and fast warm meant disk, and EXPLAIN's `temp read/written` said so.** `search_college_programs` copied all 22,335 programs, their four stored vectors and two concatenations, into a MATERIALIZED CTE; at work_mem 2 MB the copy went to temp files and each pass read it back (9,051 pages written, 18,106 read on the Orange County question; 35,703 and 88,246 on 30 terms). Warm and alone it read 555 ms; cold, 2,842 ms with the same buffers. The 09-30 receipt measured the copy at 14 MB uncontended and kept it; the measurement that matters is under load.
