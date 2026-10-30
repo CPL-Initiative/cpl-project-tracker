@@ -138,8 +138,16 @@ Western Civilization 1) and then *and N more*. Links only for IDs `kb/reference/
 lists (6,418 of 6,418, 2026-10-26); no file, no links. Guard `tests/eacr_map_links.test.js`.
 Since 2026-10-28 every link adds `View=Non-Military` (Pedro's routing), so MAP opens on the exhibit's own
 Non-Military card, and the workbook and visual's link reads **Request Adopt** (Sam). Sierra carries the same link
-(#2530). **NEXT (Sam, 2026-10-28):** sweep the public views that suggest an adoption but carry no MAP link and add it
-where feasible, the Fact Sheet's statewide exhibits first.
+(#2530). **The Fact Sheet's statewide recommendations carry it (S529; Sam, 2026-10-30, 14:25Z):** each credit
+recommendation under a statewide exhibit reads **Request Quick Adopt**, opening the card of the exhibit that publishes
+it. *"There are two ways to adopt on the MAP Dashboard, Request Quick Adopt, which does not require a MAP sign-in and
+Quick Adopt, which does require sign-in because it initiates the actual adopting approval queue rather than just
+requesting a college initiator to adopt. We want the link to go to Request Quick Adopt."* The generator records each
+authoritative rec's exhibits (`eids`), `fact-sheet/_build_statewide_recs.py` keeps the first one the verified file
+lists, and the renderer takes the address from `map_links.js` (`CPL_MAP_LINKS.url`, the one builder). Until the
+daily run carries `eids`, only credentials with one exhibit link (277 of 419 recs). The workbook and Sierra's words
+now say Request Quick Adopt needs no sign-in. **NEXT:** the rest of the sweep of public views with no MAP link
+(Sam, 2026-10-28); `college_cpl_workbook.js` and `statewide_interactive.js` still build the address themselves.
 
 **Standing rulings that survive:** brown is the PEER BENCHMARK, never
 `rec_units_total` · columns open on COLLEGES · brown on CREDIBLE cells only ·
