@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-10-29T14:43:53Z",
+ "_generated_at": "2026-10-30T14:35:39Z",
  "procedures_hash": "575c290d755b",
- "queue": 455,
+ "queue": 456,
  "saved_not_folded": 0,
- "waiting": 455,
- "proposed": 419,
- "needs_you_count": 459,
+ "waiting": 456,
+ "proposed": 420,
+ "needs_you_count": 468,
  "not_yet_asked": 0,
  "fold_held": 18,
  "procedures": [
@@ -21,8 +21,8 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 12,
-   "held": 100,
+   "settled": 5,
+   "held": 101,
    "sample": []
   },
   {
@@ -111,14 +111,9 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 2,
-   "held": 179,
-   "sample": [
-    [
-     "BIOTECH 001: Fundamentals of Biotechnology",
-     "Fundamentals of Biotechnology"
-    ]
-   ]
+   "settled": 1,
+   "held": 181,
+   "sample": []
   },
   {
    "id": "issuer-issues-the-card",
@@ -133,7 +128,7 @@
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
    "settled": 0,
-   "held": 54,
+   "held": 60,
    "sample": []
   },
   {
@@ -147,7 +142,7 @@
     "words": "strip the school, make it the agency",
     "skill": "Rule 5f"
    },
-   "settled": 1,
+   "settled": 0,
    "held": 122,
    "sample": []
   },
@@ -177,8 +172,8 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 0,
-   "held": 55,
+   "settled": 1,
+   "held": 56,
    "sample": []
   },
   {
@@ -206,37 +201,37 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 13,
-   "held": 441,
+   "settled": 6,
+   "held": 450,
    "sample": [
     [
-     "Automotive Service Excellence (ASE) ASE A7",
-     "ASE A7 — Heating and Air Conditioning"
+     "Human Relations in Organizations-Portfolio",
+     "Human Relations in Organizations"
     ],
     [
-     "California Native Plant Society (CNPS) Field Botanist Certification",
-     "CNPS Certified Field Botanist"
+     "International Brotherhood of Electrical Workers Year 1",
+     "IBEW Electrician Apprenticeship — Year 1"
     ],
     [
-     "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques",
-     "Modern Dance Techniques"
+     "International Brotherhood of Electrical Workers Year 2",
+     "IBEW Electrician Apprenticeship — Year 2"
     ],
     [
-     "International Society of Arboriculture (ISA) Certified Arborist",
-     "ISA Certified Arborist"
+     "International Brotherhood of Electrical Workers Year 3",
+     "IBEW Electrician Apprenticeship — Year 3"
     ],
     [
-     "MUSIC 217-1: Musicianship I",
-     "Musicianship 1"
+     "International Brotherhood of Electrical Workers Year 4",
+     "IBEW Electrician Apprenticeship — Year 4"
     ]
    ]
   }
  ],
  "classifier_run": {
-  "calls": 2,
-  "answered": 2,
+  "calls": 1,
+  "answered": 1,
   "errors": [],
-  "cost_usd": 1.01
+  "cost_usd": 0.53
  },
  "needs_you": [
   {
@@ -3295,6 +3290,19 @@
    ]
   },
   {
+   "raw_title": "Foundations of Photography NC",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "Foundations of Photography",
+    "issuer": "California Community Colleges",
+    "confidence": 0.8,
+    "note": "Hint mended: trailing 'NC' (noncredit marker) stripped as course-code noise; no CCN/C-ID verified, so this is the plain course title."
+   },
+   "colleges": [
+    "Cabrillo College"
+   ]
+  },
+  {
    "raw_title": "G Skin & Beauty Institute",
    "why": "the classifier is unsure (0.40)",
    "proposal": {
@@ -3942,6 +3950,19 @@
    },
    "colleges": [
     "Moreno Valley College"
+   ]
+  },
+  {
+   "raw_title": "International Brotherhood of Electrical Workers Journeyperson",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "IBEW Electrician Apprenticeship — Journeyperson",
+    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+    "confidence": 0.8,
+    "note": "No house Journeyperson title for the IBEW electrician family; new title in the family's shape (Bakersfield's Year 1-5 ladder matches the inside-wireman program, not lineman). JATC trainer per Rule 7, unverified."
+   },
+   "colleges": [
+    "Bakersfield College"
    ]
   },
   {
@@ -5310,6 +5331,19 @@
    ]
   },
   {
+   "raw_title": "Principles of Management Leadership-Portfolio",
+   "why": "the classifier is unsure (0.78)",
+   "proposal": {
+    "title": "Principles of Management Leadership",
+    "issuer": "California Community Colleges",
+    "confidence": 0.78,
+    "note": "Portfolio mechanism stripped; kept Columbia's course title rather than folding into house 'Principles of Management' since leadership scope may differ — curator may join."
+   },
+   "colleges": [
+    "Columbia College"
+   ]
+  },
+  {
    "raw_title": "Professional Certifications",
    "why": "the classifier is unsure (0.40)",
    "proposal": {
@@ -5687,6 +5721,84 @@
    ]
   },
   {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Journeyperson",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Journeyperson",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS."
+   },
+   "colleges": [
+    "Bakersfield College"
+   ]
+  },
+  {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 1",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 1",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS."
+   },
+   "colleges": [
+    "Bakersfield College"
+   ]
+  },
+  {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 2",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 2",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS."
+   },
+   "colleges": [
+    "Bakersfield College"
+   ]
+  },
+  {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 3",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 3",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS."
+   },
+   "colleges": [
+    "Bakersfield College"
+   ]
+  },
+  {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 4",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 4",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS."
+   },
+   "colleges": [
+    "Bakersfield College"
+   ]
+  },
+  {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 5",
+   "why": "the classifier is unsure (0.72)",
+   "proposal": {
+    "title": "SMART Sheet Metal Apprenticeship — Year 5",
+    "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+    "confidence": 0.72,
+    "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS."
+   },
+   "colleges": [
+    "Bakersfield College"
+   ]
+  },
+  {
    "raw_title": "Smog Check License",
    "why": "the classifier is unsure (0.65)",
    "proposal": {
@@ -5984,7 +6096,7 @@
     "Juvenile Law and Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -5999,7 +6111,7 @@
     "Automotive Technology Maintenance and Light Repair (MLR)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6014,7 +6126,7 @@
     "Business Management and Entrepreneurship"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6029,7 +6141,7 @@
     "Center for Financial Training (CFT) — Human Resources Management"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6044,7 +6156,7 @@
     "Anatomy and Physiology Honors"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6059,7 +6171,7 @@
     "History of Architecture 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6074,7 +6186,7 @@
     "Modern Dance Techniques 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6089,7 +6201,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6104,7 +6216,7 @@
     "Introduction to Geographic Information Systems and Laboratory"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6119,7 +6231,7 @@
     "Construction Inspection: Uniform Plumbing Code (UPC) Advanced"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6134,7 +6246,7 @@
     "Medical Assisting Clinical Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6149,7 +6261,7 @@
     "Medical Assisting Laboratory Procedures"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6164,7 +6276,7 @@
     "McDonald's Business Leadership Practices"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6179,7 +6291,7 @@
     "McDonald's Mid-Management Foundations Curriculum"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6194,7 +6306,7 @@
     "Music Skills 2"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6209,7 +6321,7 @@
     "Pharmacology"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6224,7 +6336,7 @@
     "Landscape Installation and Maintenance 1"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   },
   {
@@ -6239,7 +6351,7 @@
     "Sustainable Gardening for Landscapes (Horticulture)"
    ],
    "kind": "conflict",
-   "fold_report": "2026-10-29",
+   "fold_report": "2026-10-30",
    "colleges": []
   }
  ]

@@ -1,0 +1,186 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-10-30T14-35-41Z",
+ "run_id": "41072340450",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "575c290d755b",
+ "cohorts": [
+  "cer-procedure-classifier@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::Human Relations in Organizations-Portfolio",
+   "field": "unified_title_assignment",
+   "value": "Human Relations in Organizations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Human Relations in Organizations-Portfolio",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 1",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 1",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 2",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 2",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 3",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 3",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 3",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 4",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 4",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 4",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 5",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 5",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 5",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::Human Relations in Organizations-Portfolio",
+   "field": "unified_title_assignment",
+   "value": "Human Relations in Organizations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Human Relations in Organizations-Portfolio",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 1",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 1",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 2",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 2",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 3",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 3",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 3",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 4",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 4",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 4",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 5",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 5",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::International Brotherhood of Electrical Workers Year 5",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}
