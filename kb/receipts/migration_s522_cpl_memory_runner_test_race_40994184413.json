@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s522_2026-10-30.sql",
+ "name": "s522_cpl_memory_runner_test_race",
+ "version": "20261030025555",
+ "sha256": "e7ccadb9f53799b88ec34b99ed5a49391525691d045d6479d4c518a4fc39c7e4",
+ "run": "40994184413",
+ "status": 201,
+ "response": "[{\"slug\":\"fact-run-js-names-failing-shard-file-2026-10-30\",\"status\":\"proposed\"},{\"slug\":\"pitfall-test-wait-without-margin-2026-10-30\",\"status\":\"proposed\"},{\"slug\":\"pitfall-migrate-receipt-commit-starts-no-ci-2026-10-30\",\"status\":\"proposed\"},{\"slug\":\"pitfall-run-js-summary-lost-2026-10-30\",\"status\":\"superseded\"},{\"slug\":\"pitfall-run-js-summary-lost-on-ci-shard-2026-10-25\",\"status\":\"superseded\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

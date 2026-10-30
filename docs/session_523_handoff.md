@@ -21,14 +21,14 @@ Your moniker is **SkyBarberry**. Session 522 (SkyCrowberry) ran with Sam late on
 ## Open work, in order
 
 1. **Land cpl-project-tracker#2570** (the program search fix, live since 01:03Z; S521's and this checkpoint ride it). It carries main (#2571, #2572), both test fixes and this checkpoint. Shard 3 ran 85/85 locally on it. Wait for `test` on the newest head, then squash-merge. If the migrate runner's receipt commit is the head, it has no checks: push the next real change rather than an empty commit.
-2. **Apply `kb/receipts/cpl_memory_s522_2026-10-30.sql`** (three INSERT-only rows and a guarded supersede of the two run.js pitfall rows; rollback in its header). The push to `kb/migrations/.apply` needs Sam's words in chat, as before.
+2. **Done in S522: S522's memory receipt applied** (Sam: *"Yes, push the .apply for the S522 receipt"*), run 40994184413, #2573. Read back at 03:00Z: three rows `proposed`, and both run.js pitfall rows superseded by `fact-run-js-names-failing-shard-file-2026-10-30`. Nothing to do here.
 3. **Sam's Quick Adopt ask (NEXT, Sierra lane):** *"Would have been perfect if it gave the request quick adopt links for courses not yet approved"*. Links render only for an unadopted credential. A Sierra deploy, so after the Summit unless he says sooner.
 4. **Glendale's course units** (the harvest's NEXT).
 5. **Carryover:** Sierra's first text took 22 s on Sam's Bakersfield turn (16 s of prep, a 175,000-character prompt); `credential_alignment_for_college` (~2 s, CPU, no temp) is the next slow read; the college short-name editor and the public page's Contents (after the Summit); the lints' checkout read 1 min 50 s on one run (watch one more).
 
 ## Sam's decisions this run
 
-- *"Yes, push the .apply for the memory receipt"* (S521's receipt). An approval for that push, not a standing rule: ask again for S522's receipt.
+- *"Yes, push the .apply for the memory receipt"* (S521's receipt) and *"Yes, push the .apply for the S522 receipt"*. Each approved one push, not a standing rule: ask again for the next receipt.
 
 ## Read first
 
