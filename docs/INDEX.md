@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-29
+updated: 2026-10-30
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 95 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 490 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1310** | |
+| Session handoffs | 491 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1311** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- **2026-10-30 (S521 SkyBearberry):** Sierra's program search fixed live (no temp files; s521 and s521b, Sheet 142 card 1), the deploy smoke retries a read and reports a wording (#2571, card 2), handoff 522.
 - 2026-10-29 (S520 SkyLingonberry, Sam's session): the public funding page in COBI's Share menu (#2565); #2563 and #2560 landed before the Summit, #2560 after two merges of main; Sierra deployed; the tests check out less and run on six shards (#2567); handoff 521.
 - 2026-10-29 (SkyChokeberry, Sam's Library side session beside S520): Revise and remediate from the one box, Edit moved into it, long instructions kept whole (#2564); side-lane handoff `docs/library_handoff.md` (light).
 - 2026-10-29 (S519 SkyCloudberry, Sam's session): the CSM team's funding fixes and Sam's eight FAQs (#2560); Sierra answers with what loaded when a read times out, and the MAP Custom Report load moves to 10 PM Pacific (#2561); the College Identity findings link scrolls in place (#2562); Open Asks Sheet 140, ruled; a KB note on cron drift; handoff 520.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-29 (S517 SkyPartridgeberry, Sam's session): the Library's remediation draws each picture with its slide, reads QR codes, drafts every picture before the report opens, counts down to the Chancellor's Office review on one bar, and files a file in the Library as it opens (#2552 to #2554); a KB note on alt text a program wrote; handoff 518 updated.
 - 2026-10-29 (S517 SkyPartridgeberry, the CPL Queue routine): the Library measures a chart's contrast in a deck, document or workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on (#2551).
 - 2026-10-29 (S514 SkyMarionberry, the CPL Queue routine): the Library remediates a workbook (.xlsx): sheet names renamed everywhere they are referenced, alt text on charts drafted from their numbers, tables with no header row, data with no table and merged cells listed (#2548); handoff 515.
-- 2026-10-29 (S510 SkyWineberry, the CPL Queue routine): the night's UI pass (Funding model, clean); the Library checks a deck's contrast against the shape its words sit on and offers the nearest passing color (#2543); the funding Refresh comment and splash; handoff 511.

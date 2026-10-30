@@ -4,6 +4,8 @@ date: 2026-10-29
 session: 518 (SkyServiceberry, Sam's session)
 tags: [handoff, library, remediation, funding, sierra, faq]
 status: current
+superseded: true
+superseded_by: session_522_handoff.md
 ---
 
 # You are Session 519

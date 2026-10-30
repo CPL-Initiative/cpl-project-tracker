@@ -4,6 +4,8 @@ date: 2026-10-29
 session: 510 (SkyWineberry, the CPL Queue routine)
 tags: [handoff, library, remediation, accessibility, ui-pass]
 status: current
+superseded: true
+superseded_by: session_522_handoff.md
 ---
 
 # You are Session 511

@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1323,
-    "bytes": 13420560,
+    "files": 1324,
+    "bytes": 13427914,
     "over_budget": 1,
-    "handoff_max": 521,
+    "handoff_max": 522,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60011,
+    "always_loaded_bytes": 60007,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60011,
+        "bytes": 60007,
         "over": 1
       },
       "other": {
         "files": 136,
-        "bytes": 4115062,
+        "bytes": 4115557,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9285,
+        "bytes": 9221,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2474919,
+        "bytes": 2476046,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 443452,
+        "bytes": 443453,
         "over": 0
       },
       "handoff": {
-        "files": 490,
-        "bytes": 3527875,
+        "files": 491,
+        "bytes": 3533674,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 70
     },
     "vault": {
-      "files": 25048,
-      "bytes": 3974817453,
-      "heavy_bytes": 2812787370,
+      "files": 25051,
+      "bytes": 3974830331,
+      "heavy_bytes": 2812793266,
       "heavy_share": 0.708,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -145,13 +145,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60011,
+        "bytes": 60007,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 11,
+        "over_by": 7,
         "ratio": 1.0
       },
-      "message": "60,011 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,007 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -182,10 +182,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1719788803,
+        "bytes": 1719794699,
         "kind": "dir"
       },
-      "message": "directory totals 1,719,788,803 B inside the vault"
+      "message": "directory totals 1,719,794,699 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

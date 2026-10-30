@@ -4,6 +4,8 @@ date: 2026-10-29
 session: 520 (SkyLingonberry, Sam's session)
 tags: [handoff, funding, share-menu, ci, sierra]
 status: current
+superseded: true
+superseded_by: session_522_handoff.md
 ---
 
 # You are Session 521
