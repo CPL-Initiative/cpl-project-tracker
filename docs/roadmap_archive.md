@@ -420,6 +420,7 @@ Moved verbatim from `docs/INDEX.md` when its list passed ~8 bullets.
 ## INDEX update history (archived from docs/INDEX.md)
 
 Older bullets from the `## Update history` section of `docs/INDEX.md`, moved verbatim when the list passed eight (the checkpoint command's step 6).
+- 2026-10-29 (SkyChokeberry, Sam's Library side session beside S520): Revise and remediate from the one box, Edit moved into it, long instructions kept whole (#2564); side-lane handoff `docs/library_handoff.md` (light).
 - 2026-10-28 (S507 SkyDewberry, Sam's session): the Summit a11y sweep, 125 of 131 targets passing and the one COBI fault moved on Sam's word (#2534, #2536); the funding FAQ posted as he settled it on Sheets 138 and 139 (#2536); two sessions' Sheet 138s reconciled; handoff 508.
 - 2026-10-25 S479 SkyMilkmaids (opened by hand): the Coordinator Guide audit ran from the Drive (#2448, CPLBrain#479); Sam's Sheet 127 *twelve*: twelve NC-1 crosswalk rows confirmed (#2449, CPLBrain#480); light checkpoint, handoff 480.
 - 2026-10-25 S478 SkyTidyTips (opened by hand): Sam's funding page asks, two funding columns, the Noncredit CPL Lead, the Report fold, Sierra light, the library look (#2446); light checkpoint, handoff 479.
