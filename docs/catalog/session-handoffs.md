@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-495 document(s).
+496 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 527 | [Session 527 handoff: Glendale's description parser reads 70 more courses; 110 of 226 pass](../session_527_handoff.md) | 2026-10-30 |
 | 526 | [Session 526 handoff: S524's Glendale prose totals were borrowed; rolled back, and the fill starts at the heading](../session_526_handoff.md) | 2026-10-30 |
 | 525 | [Session 525 handoff: Glendale's prose totals, 8 records now name their total; 105 still pass](../session_525_handoff.md) | 2026-10-30 |
 | 524 | [Session 524 handoff: Glendale 80 to 105 passing, every course priced from its own description; Sierra's UI pass clean](../session_524_handoff.md) | 2026-10-30 |

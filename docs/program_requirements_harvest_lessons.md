@@ -76,105 +76,9 @@ Verbatim in [`program_requirements_harvest_lessons_archive_3.md`](program_requir
 
 A run of numbers after one subject, a list marker at a line's end, the eight-college wave, and the lane text S408 retired: verbatim in [`program_requirements_harvest_lessons_archive_3.md`](program_requirements_harvest_lessons_archive_3.md).
 
-## S411 SkySotol (2026-10-18): Hartnell by its code headings, the reconcile trap, Merced and SmartCatalog mapped
+## S409-S411: moved to the archive (S526 compaction)
 
-- **`d6cc1fde7ea3` applied:** 15,647 written (run 39084444048, its applied record on `main`).
-- **Coursedog's PDF heads each program "Title - CODE"** (`Biology - AS.BIO`; a hyphen form, `AAT-SOC`; a code on the
-  next line, `- \nAST.ADJ`; two headings run into one line by pypdf, `... - NCCT.BCL Workforce and Academic Readiness -
-  NCCT.WAR`). The prefix names the award (AA, AS, AAT, AST, CT, NCCT, BS). `pdf_code_assign()` reads them where a
-  catalog heads half its listed programs so, gives each code to the programs whose title it names most fully
-  (`page_winners()`'s rule: ties share, Communication Studies and Communication Studies 2.0 both A.A.-T; Public Health
-  Science loses Public Health's), and leaves a program no heading names unread. The headings' titles drop "for
-  transfer" before matching, or every A.A.-T reads at half its own words. `LEVEL` reads "Level -1".
-- **Hartnell, measured on the PDF locally** (the vendor's S3 bucket answers the session; `app.coursedog.com` does not):
-  of the 33 left out, 8 read from their own heading and 24 from none. **The PDF does not print 31 of Hartnell's 105
-  listed programs** (Kinesiology, Addiction Studies, the General Studies emphases, Agriculture Production, Small Farm,
-  CalGETC, and others). Among the 68 loaded, 14 moved from a sibling award's page to their own (Digital Arts CoA had
-  read the A.A.'s page; the two Early Childhood Education degrees were swapped). The runner's capture matched to the
-  program (run 39089852947: 74 by code, 23 to extract). Extraction run 39090050931, $2.05; load 39090337524 (8
-  inserted), reread 39090450992 (14 replaced). Network and Security A.S. stays out: the catalog renumbered CIS 50-55
-  as CSS50-55, and COCI still lists CIS.
-- **Four loaded rows read another program's page and no heading names them** (Psychology A.A. and Spanish A.A. from
-  their A.A.-T's page; IGETC from the Cal-GETC lists; Public Health Science from Public Health's). Spanish A.A.'s own
-  section prints no requirements, so its new record places none. Removed under a receipt holding each row whole
-  (Sheet 68's procedure; Sam's "remove" rulings on wrong-page rows and his 2026-10-17 go), through
-  `supabase-migrate.yml` (run 39090450880, 4 removed): the repo's guard holds a delete sent by `execute_sql`.
-- **The reconcile trap.** A reconcile run files its fresh `sources.json` beside the records it did not move, so a later
-  extraction read compared the moved pages with themselves and kept the old records: 127 filed records stood on another
-  page than their source names (Los Angeles City 69, Pierce 43, Santa Rosa 11). `filed_from()` keeps a record only when
-  it was extracted from the page its source reads. **Test a reader change with a capture-only read** (`extract=0`):
-  its preview's `would_extract` names each moved program, and it replaces nothing.
-- **Build `182e810e207d`: 15,651 programs at 111 colleges.** Every filed registry row equal to live.
-- **Merced (Coursedog on catalog.mccd.edu).** A page read may keep a named vendor host's data calls (`network_hosts`):
-  the program search names the school `merced_colleague_ethos`, catalogId `QTM2GIg9kimBOfyC8Dbb`, 191 programs coded
-  by TOP and award (`05000.AA`, Accounting (AA)). The vendor's `pdf-reports/catalogs/<catalogId>` answers 404: no
-  whole-catalog PDF. No sitemap. A program page opens on its overview tab; its Requisites tab
-  (`/programs/05000.AA/requisites-ojrrt`) prints the list whole, with credits (`ACTG04A Financial Accounting (Total
-  Credits 4.0 - 4.0)`), and each page offers its own PDF.
-- **SmartCatalog (Crafton Hills, Taft): index, then a subject or group page, then the program.** Crafton's Credit
-  Programs lists 41 subjects (`accounting-acct`); each subject lists its programs under "In this section"; the program
-  page prints its required courses, units and total (`BUSAD 053 Business Computations 3.00 ... Total Credit Hours:
-  21.00`). Taft's Degrees and Certificates lists each program as "Title: Award"; an entry may be a group (Welding
-  Technology lists its A.S. and five certificates) or the program itself. A page read skips a page it already read, so a
-  plan never names a page another page's follow reaches.
-
-## Moved from the lane (S411 compaction)
-
-From the Records view paragraph, verbatim:
-
-**The index reads stored columns (S405; Sam, 2026-10-17: *"Prog Req tab in COBI loads very slow--we need to find a way to optimize it as we continue to grow it to the full CCC catalog"*).** Each Range page is an OFFSET, which evaluates every skipped row; three paths into `display` and the signed-in `requirements_fp` made the last public page of 11,969 take 9.4 s (anon's limit 3 s) and a signed-in pass 16 s more, growing with the square of the table. Four STORED generated columns (`idx_fp`, `idx_display_arithmetic`, `idx_display_reviewer`, `idx_display_here`; `chatbox/supabase_program_requirement_records_index_columns_2026_10_17_s405.sql`) take the same page to 22 ms, and the index reads 1,000-row pages four at a time. Guard: `tests/program_requirements.test.js` (6e).
-
-## S410 SkyYucca (2026-10-18): Cañada by its hand-filed copy, Hartnell through a file step, build d6cc1fde7ea3
-
-- **`ffd6929a4f90` applied:** 15,517 written (run 39078224767, its applied record on `main`).
-- **Cañada (hand-filed):** Sam posted the 2026-2027 Catalog Rights edition and the 10/12/26 addendum to `catalog-files`
-  (Sheet 92 card 1). `kb/hand_filed_catalogs/ca_ada.json` cites the college's own addresses from page read 39075421421;
-  the pin step fixed both hashes (run 39080648854). `slug_of()` keeps ASCII letters only, so Cañada's slug is `ca_ada`.
-  73 of 75 found, $5.34, 47 passing; **62 loaded** (run 39082147619). The 11 left out are mostly business certificates
-  on the shared pages 148-154 and two picks on the course availability table (pages 121, 127).
-- **Hartnell (Coursedog PDF):** the catalog page fetches its PDF by script and links none, so a step that follows a
-  link had nothing to follow. #2213: a PDF step may name its `file`; the read loads no page for it. The code finder
-  already read the unspaced codes (`ABT90`, `STATC1000`); a test pins it. Procedure record v2 (execute_sql through
-  `program_source_procedure_set`, receipt in `kb/receipts/`). 101 of 105 found in one load, $8.03, 8 passing (the lists
-  print no units, so 88 are arithmetic incomplete); **68 loaded** (run 39082687082). The 33 left out: the picker took
-  the course-set reference pages at the back (413-424) or a sibling option's page; several Computer Science and
-  Information Systems options share one COCI title, and the extractor rightly refused. Coursedog prints each program's
-  code (`AS.CISC`) in its heading: a pick by that code is the fix.
-- **Dated reads:** a registry row's md5 is over the ten columns in their fixed order. Filed rows keep the order they
-  were written in, and some put `catalog_url` before `catalog_year`, so a hash in file order reads 23 rows as drifted
-  that are equal to live. All 111 equal in column order. **Build `d6cc1fde7ea3`: 15,647 programs at 111 colleges.**
-- **A record file keeps its insertion order.** Re-dumping `registry_read.json` sorted turned a two-college addition
-  into a 22,000-line diff; load, append and dump with the file's own indent.
-
-## S409 SkyOcotillo (2026-10-17): Cuesta's wave, Cañada's robots-refused PDF, the Coursedog and SmartCatalog hosts
-
-- **`f949e7c0ea35` applied:** 15,336 written (run 39066977901, its applied record on `main`).
-- **Cuesta (#2210): 181 loaded unchecked** (run 39074969343; 183 of 198 found and extracted for $10.93, 161 passing, 2
-  placing no listed course). Dated reads: registry md5 34bf89f9; MAP's 17 course codes by counts 8dd02db8 and titles
-  7185f52a, in SQL and over the filed rows. Every other registry row re-read and equal live (108 of 108), so S408's
-  drift check found nothing new. The read's SQL had stopped naming S408's five colleges; it names them and Cuesta now.
-  **Build `ffd6929a4f90`, 15,517 programs at 109 colleges**, apply run 39078224767 dispatched from `main` at 23:14Z.
-- **Cañada's 2026-2027 catalog sits behind the refusal.** Three free page reads (39066951859, 39075017243,
-  39075421421) walked canadacollege.edu: the schedule page, the Catalog Archives (each recent year is a Catalog Rights
-  page), and the Catalog Rights page, which links the 2026-2027 Catalog Rights PDF and the 10/12/26 addendum at
-  `catalog.canadacollege.edu/current/_pdf-books/`. `/current/` is the path robots.txt refuses, so no procedure step can
-  follow it. Sheet 92 card 1 asks Sam for `catalog-files` copies.
-- **Coursedog (Hartnell, run 39077713662; Merced, 39077970234).** The catalog page's scripts fetch the program list
-  from `app.coursedog.com/api/v1/cm/<school>/programs/search/$filters?catalogId=...` (Hartnell 100 programs, codes such
-  as `AA.ADD`, `AST.AGR`) and a **whole-catalog PDF** from `pdf-reports/catalogs/<catalogId>`, stored on the vendor's
-  public bucket (`coursedog-pdfs-public-prod.s3...`; Hartnell's 427 pages, generated 2026-08-21). The PDF prints each
-  program as "Title - CODE", its type and degree, outcomes, "Complete ALL of the following Courses:" and "Complete at
-  least 3 of the following courses:" with "• ABT90 - Soil Science" lines, and "Total Required Credits · 60". Course
-  codes print **unspaced** (`ABT90`, `STATC1000`, `ART12A`) and the lists print no units, so the code finder needs that
-  form and the units come from COCI. Merced (`catalog.mccd.edu`, 191 programs at `/programs/<code>`) is a custom domain:
-  the page read's network capture keeps only the page's own registrable domain, so it showed none of the
-  `app.coursedog.com` calls. Its PDF needs a read that prints vendor calls too.
-- **SmartCatalog (Crafton Hills, run 39077713662).** The catalog front page links Credit Programs and Noncredit
-  Certificates; Credit Programs lists one page per subject ("Accounting (ACCT)", 40 of them). No sitemap (404).
-  Run 39077970234 followed two subject pages and read Taft's front page, but `get_job_logs` returns only a log's tail and
-  the proxy refuses the log archive host: re-read those with a plan of their own.
-- **The Exhibit Adoption UI pass (#2211)** shipped; its record is in the UI ledger. A `transition: all` on a control
-  hid a focus ring that existed (noted in `/a11y-pass`).
+Hartnell by its code headings, Cañada by its hand-filed copy, Cuesta's wave: [archive 3](program_requirements_harvest_lessons_archive_3.md).
 
 ## 2026-10-18 — Session 412 (SkyJoshua)
 
@@ -1018,6 +922,32 @@ side session (Scenario 4) ran beside it, one writer per file.
 S445 SkyCurrant (a shared page per heading, MiraCosta's degree lists, Palomar's "Cert. Achievement") and the S445
 lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`, and S446 SkyMadrone
 (a degree-and-certificate address, 91 records) since the S523 compaction.
+
+## S526 SkyJostaberry (2026-10-30, the CPL Queue routine): the description parser missed 70 courses; IT Technician's totals are the catalog's
+
+- **IT Technician II and III are faithful records of a catalog whose totals run one unit high.** Page read 41025920825
+  prints II's ten courses "to a total of 32" and III's thirteen "to a total of 42"; each course's own description, and
+  the state's file, give BUSAD 204 1.0 units, so II sums 31. III sums 38 plus CS/IS 187, which the catalog prints no
+  description for (page read 41039652111) and the state's file prices at 3.0: 41. Both stay *unequal*, and the gap is
+  the catalog's own arithmetic. No step should close it.
+- **Unix-Linux 19366 prints no total** (page 114: three required courses, then "select one or more" of six), so it
+  stays incomplete by the catalog's own words.
+- **The S523 description parser missed 70 codes in four shapes.** A renumbered course prints its old number between
+  the units and its code ("3.0 Units · (Previously MEDIA 103) · F T V M 1 3 2"); a title starting with a digit
+  ("2-D FOUNDATIONS", "4TH AXIS MACHINING"); a title carrying "+", a curly apostrophe or an accented letter ("PROGRAMMING
+  IN C/C++", "CHILDREN'S LITERATURE", "(ANTIQUITY - 1750)"). `kb/_description_units.py` now steps over the note and
+  takes any title without a lower-case letter; the code the body names after the units still guards each match.
+  A reparse of S523's nine logs plus run 41039652111 priced 59 more codes and changed none of the 1,278; the 11 old
+  numbers the notes print (MEDIA 101, 103, 107, 110, 112, 213; STV 61-64, 66) take the new code's units, since records
+  still place them. Guard: `program_requirements_pilot_test`.
+- **Result:** reconcile 41040709338 (free) filled 114 course units on 57 records and changed nothing else (checked
+  record by record); reread 41041428504 replaced the 57 rows (receipt
+  `kb/receipts/program_requirement_records_college_reread_glendale_community_41041428504.json`, read back live: 57
+  rows on run 41040709338). Glendale live: **110 equal (from 105), 67 incomplete, 49 unequal**; five passed from
+  incomplete, two moved incomplete to unequal, none lost a pass.
+- **Lesson: a parser's misses show as the unpriced codes in the live records, not in its own count.** S523's 1,278
+  looked complete; a query of the courses still carrying no units named ART 130 on 15 records, and each miss pointed at
+  a shape. Run that query after any units step.
 
 ## S525 SkyTayberry (2026-10-30, the CPL Queue routine): S524's prose totals were borrowed; the scope starts at the heading
 

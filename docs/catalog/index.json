@@ -14614,7 +14614,7 @@
      ],
      "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S407)",
      "type": null,
-     "updated": "2026-10-26"
+     "updated": "2026-10-30"
     },
     {
      "created": "2026-07-16",
@@ -16262,8 +16262,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 495,
+   "count": 496,
    "docs": [
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "n": 527,
+     "path": "docs/session_527_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "glendale"
+     ],
+     "title": "Session 527 handoff: Glendale's description parser reads 70 more courses; 110 of 226 pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24736,5 +24751,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1315
+ "total": 1316
 }
