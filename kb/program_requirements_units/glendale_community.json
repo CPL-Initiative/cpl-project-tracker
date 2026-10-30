@@ -1,5 +1,5 @@
 {
-"_readme": "S523 SkyBarberry, 2026-10-30. The units each course description prints in Glendale's 2025-2026 catalog PDF (descriptions run pages 128-301), parsed by kb/_description_units.py from the college-page-read logs of the plans glendale_course_units_* and glendale_course_desc_* (runs listed). Keyed by the code each description's body names, in norm_code form. 'aliased' names the codes added under the reconcile entry's prefix_aliases and course_renumbers (PSYCH 101 takes PSYC 101's units). The course_units step of Glendale's reconcile entry reads this file. S526 SkyJostaberry: the parser now steps over a '(Previously MEDIA 103)' note ahead of the code and takes any all-capitals title ('2-D FOUNDATIONS', 'PROGRAMMING IN C/C++', 'CHILDREN’S LITERATURE'); a reparse of the same logs plus run 41039652111 priced 59 more codes, changed none, and the old numbers those notes print are aliased to the new code (MEDIA 103 takes FTVM 132's units).",
+"_readme": "S523 SkyBarberry, 2026-10-30. The units each course description prints in Glendale's 2025-2026 catalog PDF (descriptions run pages 128-301), parsed by kb/_description_units.py from the college-page-read logs of the plans glendale_course_units_* and glendale_course_desc_* (runs listed). Keyed by the code each description's body names, in norm_code form. 'aliased' names the codes added under the reconcile entry's prefix_aliases and course_renumbers (PSYCH 101 takes PSYC 101's units). The course_units step of Glendale's reconcile entry reads this file. S526 SkyJostaberry: the parser now steps over a '(Previously MEDIA 103)' note ahead of the code and takes any all-capitals title ('2-D FOUNDATIONS', 'PROGRAMMING IN C/C++', 'CHILDREN’S LITERATURE'); a reparse of the same logs plus run 41039652111 priced 59 more codes, changed none, and the old numbers those notes print are aliased to the new code (MEDIA 103 takes FTVM 132's units). S527 SkyLoganberry: the state's C-numbered descriptions (C1000 · INTRODUCTION TO STATISTICS · 4.0 Units · (Previously MATH 136)) name no code in their body, so the parser cannot key them; read 41048730638 printed all eleven (kb/_description_units.py unkeyed), each keyed here under the prefix its department's pages and the records give (COMM, ENGL, POLS, PSYC, STAT), and each old number its note prints aliased to it.",
 "college": "Glendale Community College",
 "catalog": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
 "runs": [
@@ -12,7 +12,8 @@
 "41011004508",
 "41011433297",
 "41011482188",
-"41039652111"
+"41039652111",
+"41048730638"
 ],
 "units": {
 "ABSE10": [
@@ -5406,6 +5407,94 @@
 "MEDIA103": [
 3.0,
 3.0
+],
+"COMMC1000": [
+3.0,
+3.0
+],
+"SPCH101": [
+3.0,
+3.0
+],
+"ENGLC1000": [
+4.0,
+4.0
+],
+"ENGL101": [
+4.0,
+4.0
+],
+"ENGLC1000E": [
+4.5,
+4.5
+],
+"ENGL101+": [
+4.5,
+4.5
+],
+"ENGLC1000H": [
+4.0,
+4.0
+],
+"ENGL101H": [
+4.0,
+4.0
+],
+"ENGLC1001": [
+3.0,
+3.0
+],
+"ENGL104": [
+3.0,
+3.0
+],
+"POLSC1000": [
+3.0,
+3.0
+],
+"POLS101": [
+3.0,
+3.0
+],
+"PSYCC1000": [
+3.0,
+3.0
+],
+"PSYCH101": [
+3.0,
+3.0
+],
+"PSYCC1000H": [
+3.0,
+3.0
+],
+"PSYCH101H": [
+3.0,
+3.0
+],
+"STATC1000": [
+4.0,
+4.0
+],
+"MATH136": [
+4.0,
+4.0
+],
+"STATC1000E": [
+5.0,
+5.0
+],
+"MATH136+": [
+5.0,
+5.0
+],
+"STATC1000H": [
+4.0,
+4.0
+],
+"MATH136H": [
+4.0,
+4.0
 ]
 },
 "aliased": {
@@ -5463,7 +5552,18 @@
 "STV63": "STV215",
 "STV66": "STV220",
 "MEDIA101": "FTVM131",
-"MEDIA103": "FTVM132"
+"MEDIA103": "FTVM132",
+"SPCH101": "COMMC1000",
+"ENGL101": "ENGLC1000",
+"ENGL101+": "ENGLC1000E",
+"ENGL101H": "ENGLC1000H",
+"ENGL104": "ENGLC1001",
+"POLS101": "POLSC1000",
+"PSYCH101": "PSYCC1000",
+"PSYCH101H": "PSYCC1000H",
+"MATH136": "STATC1000",
+"MATH136+": "STATC1000E",
+"MATH136H": "STATC1000H"
 },
 "words": {
 "ABSE10": " 10 · BASIC ENGLISH · 0 Units · ABSE 10 is a beginning comp",
@@ -6758,6 +6858,17 @@
 "STV212": " 212 · ADMINISTRATIVE MEDICAL · ASSISTING I · 0 Units · (Previously STV 61) · STV 2",
 "STV215": " 215 · MEDICAL CLINICAL ASSISTING · 0 Units · (Previously STV 63) · STV 2",
 "STV220": " 220 · CERTIFIED NURSING AIDE - · THEORY · 0 Units · (Previously STV 66) · STV 2",
-"STV40": " 40 · 21ST CENTURY EMPLOYMENT · STRATEGIES · 0 Units · STV 40 prepares students fo"
+"STV40": " 40 · 21ST CENTURY EMPLOYMENT · STRATEGIES · 0 Units · STV 40 prepares students fo",
+"COMMC1000": "pdf page 167: C1000 · INTRODUCTION TO PUBLIC SPEAKING · 3.0 Units · (Previously SPCH 101)",
+"ENGLC1000": "pdf page 188: C1000 · ACADEMIC READING AND WRITING · 4.0 Units · (Previously ENGL 101)",
+"ENGLC1000E": "pdf page 188: C1000E · ACADEMIC READING AND WRITING · 4.5 Units · (Previously ENGL 101+)",
+"ENGLC1000H": "pdf page 188: C1000H · ACADEMIC READING AND WRITING - HONORS · 4.0 Units · (Previously ENGL 101H)",
+"ENGLC1001": "pdf page 189: C1001 · CRITICAL THINKING AND WRITING · 3.0 Units · (Previously ENGL 104)",
+"POLSC1000": "pdf page 249: C1000 · AMERICAN GOVERNMENT AND POLITICS · 3.0 Units · (Previously POL S 101)",
+"PSYCC1000": "pdf page 250: C1000 · INTRODUCTION TO PSYCHOLOGY · 3.0 Units · (Previously PSYCH 101)",
+"PSYCC1000H": "pdf page 251: C1000H · INTRODUCTION TO PSYCHOLOGY - HONORS · 3.0 Units · (Previously PSYCH 101H)",
+"STATC1000": "pdf page 258: C1000 · INTRODUCTION TO STATISTICS · 4.0 Units · (Previously MATH 136)",
+"STATC1000E": "pdf page 258: C1000E · INTRODUCTION TO STATISTICS · 5.0 Units · (Previously MATH 136+)",
+"STATC1000H": "pdf page 258: C1000H · INTRODUCTION TO STATISTICS - HONORS · 4.0 Units · (Previously MATH 136H)"
 }
 }
