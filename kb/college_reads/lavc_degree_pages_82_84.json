@@ -1,0 +1,23 @@
+{
+ "_readme": "S530 SkyBuffaloberry, 2026-10-30. Every one of Los Angeles Valley's 67 failing degree records adds its major up equal; each fails at the degree level. 38 name no GE pattern and sum the major alone against the 60 the page prints (unequal); 29 name 'Any GE (LACCD GE Plan or Cal-GETC)' and no units for it (incomplete). This read prints three degree pages in the catalog's own words: Accounting A.A. 02942 (p82, incomplete), and Banking and Finance 02943, Management 02945 and Marketing 02947 (p84, unequal), so the college's reconcile step reads the degree wording the page prints. One load of the 2026-2027 PDF, no model call.",
+ "college": "Los Angeles Valley College",
+ "questions": {
+  "degree_wording": "What each degree page prints about the 60 units: the GE pattern, its units, and whether electives fill the rest."
+ },
+ "keywords": [
+  "Units",
+  "units"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "degree_wording"
+   ],
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  82,
+  84
+ ]
+}
