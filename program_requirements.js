@@ -205,6 +205,107 @@
     }
     return out.length ? el("p", { cls: "prh-pg-links" }, out) : null;
   }
+  /* ── a to-do Sam marks done ──
+   * Sam, 2026-10-30, in S527: "Add a to do list on Catalog common that shows on Sam's To do. Give me
+   * instructions on what you need to turn the process for the college back on. When I complete a to do
+   * on the commons, it should alert the cpl queue schedule task." A call carrying `todo_id` is such a
+   * to-do: its card offers Mark done, with a note, to a signed-in reviewer, and the one write
+   * (rpc/queue_todo_done_add, chatbox/supabase_queue_todo_done.sql) is what the scheduled session reads
+   * at its start (docs/reference/scheduled_sessions.md). The newest row for a to-do wins; Reopen adds one. */
+  var TODO_PROJECT = "program-requirements";
+  var TODO_RPC = "/rpc/queue_todo_done_add";
+  function getTodoMarks() {
+    return fetch(REST + "/queue_todo_done?select=todo_id,note,reopen,by_email,at&project=eq." + TODO_PROJECT + "&order=id.desc",
+      { headers: sessionHeaders() }).then(function (r) {
+        if (!r.ok) throw new Error("queue_todo_done answered " + r.status);
+        return r.json();
+      });
+  }
+  /* The latest mark on a to-do, when it says done; null when open, reopened or unread. */
+  function todoMark(c) {
+    var id = c && c.todo_id, marks = state.review && state.review.todos;
+    if (!id || !Array.isArray(marks)) return null;
+    for (var i = 0; i < marks.length; i++) if (marks[i].todo_id === id) return marks[i].reopen ? null : marks[i];
+    return null;
+  }
+  function postTodoMark(c, note, reopen) {
+    return fresh().then(function () {
+      return fetch(REST + TODO_RPC, {
+        method: "POST",
+        headers: sessionHeaders({ "Content-Type": "application/json" }),
+        body: JSON.stringify({ p_project: TODO_PROJECT, p_todo_id: c.todo_id, p_note: note || null, p_reopen: !!reopen })
+      });
+    }).then(function (r) {
+      return r.text().then(function (t) {
+        var j = null;
+        try { j = t ? JSON.parse(t) : null; } catch (e) { j = null; }
+        if (!r.ok) {
+          var err = new Error((j && j.message) || "the save answered " + r.status);
+          err.status = r.status; err.code = j && j.code;
+          throw err;
+        }
+        return j || {};
+      });
+    });
+  }
+  function todoError(e) {
+    var st = e && e.status, code = e && e.code;
+    if (st === 401 || st === 403 || code === "42501")
+      return "Not saved. Your account is not on the reviewer list, or the session expired; sign in again.";
+    var m = String((e && e.message) || "the save failed").replace(/^queue_todo_done_add:\s*/, "");
+    return "Not saved: " + m.charAt(0).toLowerCase() + m.slice(1) + (/[.;]$/.test(m) ? "" : ".");
+  }
+  /* The card's line: who marked it done and what they wrote, with Reopen; else the note box and Mark done;
+     signed out, where to sign in. Redrawn in place after a save. */
+  function callDone(c) {
+    if (!c || !c.todo_id) return null;
+    var box = el("div", { cls: "prh-todo-mark", "data-todo": c.todo_id });
+    drawTodoMark(box, c);
+    return box;
+  }
+  function drawTodoMark(box, c) {
+    box.textContent = "";
+    var m = todoMark(c), id = "prh-todo-" + c.todo_id;
+    var status = el("p", { cls: "prh-small", role: "status", id: id + "-status" });
+    if (m) {
+      var who = String(m.by_email || "").toLowerCase() === (state.review && state.review.email) ? "you" : m.by_email;
+      box.appendChild(el("p", { cls: "prh-pg-foot" }, [doneMark(), "Marked done by " + who + ", " + monthDay(m.at) +
+        (m.note ? ": " + m.note : "") + ". The next scheduled session takes it first."]));
+      var re = el("button", { cls: "prh-word", type: "button", text: "Reopen" });
+      re.addEventListener("click", function () { saveTodo(box, c, null, true, re, status); });
+      box.appendChild(el("p", null, [re]));
+      box.appendChild(status);
+      return;
+    }
+    if (!(state.review && state.review.email)) {
+      box.appendChild(el("p", { cls: "prh-small", text: "Sign in as a reviewer to mark this done." }));
+      return;
+    }
+    var note = el("textarea", { id: id + "-note", rows: "3", maxlength: "2000", cls: "prh-draft-text" });
+    var go = el("button", { cls: "prh-word", type: "button", text: "Mark done" });
+    go.addEventListener("click", function () { saveTodo(box, c, note.value, false, go, status); });
+    box.appendChild(el("label", { "for": id + "-note", cls: "prh-small" }, [el("b", { text: "What you did." }),
+      " Optional: a contact, a file's link, or what changed. The queue reads it."]));
+    box.appendChild(note);
+    box.appendChild(el("p", null, [go]));
+    box.appendChild(status);
+  }
+  function saveTodo(box, c, note, reopen, btn, status) {
+    btn.disabled = true;
+    status.textContent = "Saving…";
+    return postTodoMark(c, note, reopen).then(function (row) {
+      if (state.review) {
+        if (!Array.isArray(state.review.todos)) state.review.todos = [];
+        state.review.todos.unshift({ todo_id: c.todo_id, note: row.note === undefined ? (note || null) : row.note,
+          reopen: !!reopen, by_email: row.by_email || state.review.email, at: row.at || new Date().toISOString() });
+      }
+      drawTodoMark(box, c);
+      refreshCalls();
+    }, function (e) {
+      btn.disabled = false;
+      status.textContent = todoError(e);
+    });
+  }
   /* A call that names records lists them on its card, each with Confirm and Needs a fix
      (Sam, 2026-10-09, on his phone at this card: "can we add a way to respond on the sheet
      that you could read?"). The answer is the verdict the Records view writes, through the
@@ -224,6 +325,7 @@
   function refAnswered(ref) { var p = recordFor(ref); return !!p && !stateLine(p).waiting; }
   function callAnswered(c) {
     if (c && c.answer && c.answer.words) return true;   /* answered on its sheet (commons_progress.js answeredBy) */
+    if (todoMark(c)) return true;                       /* marked done on its card (queue_todo_done) */
     var refs = callRefs(c); return refs.length > 0 && refs.every(refAnswered);
   }
   /* The check Sam asked for on a finished call (2026-10-10: "it would be nice to have a check
@@ -795,11 +897,11 @@
     return fresh().then(function (s) {
       if (!s || !s.email) { state.review = null; return; }
       var email = String(s.email).toLowerCase();
-      return Promise.all([readIndex(sessionHeaders(), true), getVerdicts()]).then(function (got) {
-        state.review = { email: email, records: [], verdicts: got[1] || [], error: null };
+      return Promise.all([readIndex(sessionHeaders(), true), getVerdicts(), getTodoMarks().catch(function () { return []; })]).then(function (got) {
+        state.review = { email: email, records: [], verdicts: got[1] || [], todos: got[2] || [], error: null };
         absorbIndex(got[0] || []);
       }, function (e) {
-        state.review = { email: email, records: null, verdicts: [], error: msg(e) };
+        state.review = { email: email, records: null, verdicts: [], todos: [], error: msg(e) };
       });
     });
   }
@@ -2949,7 +3051,7 @@
       notCounted: "The whole harvest: not counted yet; the next checkpoint stamps the counts.",
       foot: "The five parts count equally. The confirm step is left out: it becomes an optional college confirm once the reading procedures prove stable." }
   };
-  var HOST = { section: section, goControl: goControl, callAnswered: callAnswered, callRecords: callRecords, callLinks: callLinks, goToCall: goToCall };
+  var HOST = { section: section, goControl: goControl, callAnswered: callAnswered, callRecords: callRecords, callLinks: callLinks, callDone: callDone, goToCall: goToCall };
   function viewProgress() { return CP.render(PROGRESS, progressContext(new Date()), state.progress || {}, HOST); }
 
   /* ── Sam's to-dos ──
@@ -2964,6 +3066,7 @@
     var open = 0, first = -1;
     calls.forEach(function (c, i) {
       if (c && c.answer && c.answer.words) return;   /* answered on its sheet */
+      if (todoMark(c)) return;                       /* marked done on its card */
       var refs = callRefs(c), n = 0;
       if (!refs.length) n = 1;
       refs.forEach(function (ref) { if (!refAnswered(ref)) n++; });
