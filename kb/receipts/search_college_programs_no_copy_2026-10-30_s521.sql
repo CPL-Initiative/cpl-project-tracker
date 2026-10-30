@@ -144,3 +144,11 @@
 -- NOT YET APPLIED: a fresh read at 00:45:38Z read e803674b (s521 live); the session's permission check
 -- denied the push that points kb/migrations/.apply at s521b, so it waits on Sam (fix forward or roll back).
 -- Sam, in session ~00:59Z: "Push the fix". A fresh read at 00:59:20Z read e803674b; .apply names s521b.
+-- APPLIED (s521b): ~01:03Z 2026-10-30, supabase-migrate (the runner's receipt is
+-- kb/receipts/migration_s521b_search_college_programs_df_by_ord_40983125508.json, run 40983125508).
+-- AFTER-READ (01:06Z):
+--   1. md5(prosrc) 28516b079c2deec32f8e60fd962e91d5, 11,396 chars; 1 signature; acl as BEFORE. PASS
+--   2. all 13 md5_keyseq equal BEFORE. PASS
+--   3. every md5_set equals BEFORE; set 11 reads 77daadc0, its documented second value. PASS
+--   4. no temp pages. Set 11: 1,986 ms on the first call after the apply (cold), 149 ms warm (555
+--      before S521). Set 05: 733 ms (3,570 before S521; 6,805 under s521). PASS
