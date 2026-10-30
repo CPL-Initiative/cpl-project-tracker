@@ -18,7 +18,7 @@ Your moniker is **SkyCrowberry**. Session 521 (SkyBearberry) ran with Sam on the
   - Smoke `modes=7c,7p` green: the LVN question 0.22 s through anon.
   - Receipt: `kb/receipts/search_college_programs_no_copy_2026-10-30_s521.sql`. Rollback: `kb/migrations/2026-10-30_s521_search_college_programs_no_copy_rollback.sql`.
 - **[Open Asks Sheet 142](https://claude.ai/artifact/VeK9VxyrH4EdXFUKZzhfY2)** answered at 00:21Z, all his own call: tonight, retry-report, later. Never republish onto 142. Sheet 143 (the address card alone) is built in the vault and not published; publish it with the next new card.
-- **CPLBrain#545 merged** (Sheets 142 and 143 in the builder).
+- **samueltlee/CPLBrain#545 merged** (Sheets 142 and 143 in the builder). **samueltlee/CPLBrain#546** (S521's session note) is open: squash-merge it on a green `coverage`.
 
 ## Open work, in order
 
@@ -46,4 +46,4 @@ Your moniker is **SkyCrowberry**. Session 521 (SkyBearberry) ran with Sam on the
 
 ## Let go
 
-Before signing off, S521 dropped its subscriptions to cpl-project-tracker#2570 and #2571 and named them here; the next session re-subscribes. No check-in is pending. The CPL Queue routine (`trig_01L8K64ZKYb5eALdT4HW6NAV`) next fires at 05:12Z.
+Before signing off, S521 dropped its subscriptions to cpl-project-tracker#2570 and #2571 and samueltlee/CPLBrain#546, and stopped its watch on Sheet 142; the next session re-subscribes. No check-in is pending. The CPL Queue routine (`trig_01L8K64ZKYb5eALdT4HW6NAV`) next fires at 05:12Z.
