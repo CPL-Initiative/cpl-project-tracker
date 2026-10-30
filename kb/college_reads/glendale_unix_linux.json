@@ -1,0 +1,23 @@
+{
+ "_readme": "S526 SkyJostaberry, 2026-10-30. Unix-Linux System Administrator 19366 places 6 of the 9 courses its record lists and names no total. S525's read keyed on 'UNIX-LINUX SYSTEM' and missed the page, which prints the heading as 'UNIX/LINUX'. This read prints page 114 and its neighbors under that heading, to see the list and any total in the catalog's own words. One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "unequal_sums": "Unix-Linux System Administrator's course list and any total it states."
+ },
+ "keywords": [
+  "UNIX\\s*/\\s*LINUX",
+  "U\\s*N\\s*I\\s*X\\s*/\\s*L\\s*I\\s*N\\s*U\\s*X"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "unequal_sums"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  110,
+  118
+ ]
+}
