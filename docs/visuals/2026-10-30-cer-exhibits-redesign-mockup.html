@@ -131,6 +131,10 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .saved { font-size: 13px; color: var(--text-muted); }
 .chiprow { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
 .canon { display: grid; gap: 6px; }
+.inbox { display: flex; align-items: center; gap: 6px; background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 8px; min-width: 0; }
+.inbox .pre { font-size: 14px; color: var(--text-muted); white-space: nowrap; }
+.inbox input { flex: 1 1 auto; min-width: 0; border: 0; background: transparent; font: inherit; font-size: 14px; color: var(--text-body); padding: 2px 0; }
+.inbox:focus-within { outline: 2px solid var(--cobalt); outline-offset: 1px; }
 .canon-title { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; color: var(--seal-blue-text); }
 .collegechips { display: grid; gap: 8px; }
 .ccrow { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr); gap: 4px 12px; align-items: start; }
@@ -259,7 +263,8 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
             <div class="canon">
               <label class="small muted" for="proposed-title" id="rc-from"></label>
               <input class="edit canon-title" id="proposed-title" type="text">
-              <div class="fieldrow"><label for="proposed-issuer">Issuer</label><input class="edit-sm" id="proposed-issuer" type="text"><label for="proposed-trainer">Training site</label><input class="edit-sm" id="proposed-trainer" type="text" placeholder="None named"></div>
+              <label class="inbox" for="proposed-issuer"><span class="pre">Issuer:</span><input id="proposed-issuer" type="text"></label>
+              <label class="inbox" for="proposed-trainer"><span class="pre">Training site:</span><input id="proposed-trainer" type="text" placeholder="None named"></label>
             </div>
             <div class="typedlist">
               <span class="cl">Local titles</span>
@@ -322,7 +327,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
                   <dt><label for="sp-issuer">Issuer</label></dt><dd><input class="edit-sm" id="sp-issuer" type="text" value="CompTIA"></dd>
                   <dt>Training sites</dt><dd><div class="sites" id="sp-sites"></div><div class="panelacts"><button class="w" type="button" data-addsite="sp-sites">Add a training site</button><button class="w" type="button" data-save="sp-saved">Save</button><span class="saved" id="sp-saved" aria-live="polite"></span></div></dd>
                   <dt>Registry</dt><dd><a href="https://credentialengineregistry.org/resources/ce-f89c44b1-b408-4805-8653-8c92da175e31">CTID</a>, Credential Engine top 50 rank 2</dd>
-                  <dt>Local titles</dt><dd>CompTIA Security+ Certification · Security Fund. (Security+) · CompTIA S+ for CIS 060 · <a href="#cobi-credentials">See all local titles (8)</a></dd>
+                  <dt>Local titles</dt><dd>CompTIA Security+ Certification · Security Fund. (Security+) · CompTIA S+ for CIS 060 · <a href="#cobi-credentials">and 5 more</a></dd>
                 </dl>
               </div>
               <div class="block">
@@ -581,7 +586,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
         if (open) list.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; box.appendChild(li); });
         var li = document.createElement("li"), b = document.createElement("button");
         b.type = "button"; b.className = "w small";
-        b.textContent = open ? "Hide local titles" : "See all local titles (" + list.length + ")";
+        b.textContent = open ? "Show fewer" : "and " + list.length + " more";
         b.addEventListener("click", function () { open = !open; draw(); });
         li.appendChild(b); box.appendChild(li);
       }
