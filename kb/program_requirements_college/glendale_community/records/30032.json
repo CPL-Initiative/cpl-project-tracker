@@ -68,15 +68,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     0.0,
     0.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 0.0-0.0; the catalog states 28.0-28.0"
    ]
   },
   "repeated": {
@@ -108,8 +111,8 @@
    "section_heading": "Not found: the provided text has no Dental Front Office / Billing and Coding section",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 28
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -155,5 +158,20 @@
   ],
   "notes": []
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41020193189,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 28,
+    "max": 28
+   },
+   "words": "for a \ntotal of 28 units"
+  }
+ ],
+ "read_run": "39063367252"
 }

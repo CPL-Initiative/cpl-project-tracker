@@ -67,15 +67,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     0.0,
     0.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 0.0-0.0; the catalog states 18.0-20.0"
    ]
   },
   "repeated": {
@@ -107,8 +110,8 @@
    "section_heading": "",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 20
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -155,5 +158,20 @@
    "No outcomes or careers were recorded, because the named award's section is not in the text."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41020193189,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 18,
+    "max": 20
+   },
+   "words": "for a minimum of 18-20 units"
+  }
+ ],
+ "read_run": "39063367252"
 }

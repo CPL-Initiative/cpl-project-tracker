@@ -78,15 +78,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     0.0,
     0.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 0.0-0.0; the catalog states 18.0-18.0"
    ]
   },
   "repeated": {
@@ -121,8 +124,8 @@
    "section_heading": "",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 18,
+    "max": 18
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -213,5 +216,20 @@
    "The English A.A. section is probably on page 74 or an adjacent page of the 2025-2026 catalog. Check there."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41020193189,
+ "reconciled": [
+  {
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 18,
+    "max": 18
+   },
+   "words": "for a minimum of 18 units"
+  }
+ ],
+ "read_run": "39063367252"
 }
