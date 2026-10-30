@@ -72,6 +72,10 @@ const catalog = {
                   { domain: "Security Operations", weight: 28 }] },
       map: { titles: ["CompTIA Security+"], colleges: ["D College"], colleges_n: 1 } }),
     // Emerging, not in MAP.
+    // Outside IT, no field assigned yet (the CIP is null, never a guess).
+    cat("ITC5", { issuer: "National Registry of Example Professionals", name: "Certified Example Technician",
+      kind: "license", domain: "Not yet assigned", sources: ["CareerOneStop"], status: null,
+      cip: { code: null, title: null, sector: null, sector_title: "Not yet assigned", source: null } }),
     cat("ITC4", { issuer: "CompTIA", name: "CompTIA SecOT+", code: "SOT-001", status: "new",
       emerging: true, domain: "Cybersecurity", sources: ["issuer site"] }),
   ],
@@ -123,7 +127,7 @@ const gridRow = (doc, name) => Array.from(doc.querySelectorAll("tr"))
     log.urls.filter((u) => u.indexOf("it_ai_credential_catalog.json") >= 0).length === 1);
   const indLane = lane(doc, /Industry credentials/);
   check("lane: Industry credentials chip carries the catalog count",
-    !!indLane && /\(134\)/.test(txt(indLane)));
+    !!indLane && /\(135\)/.test(txt(indLane)));
 
   // ── 2. The join on a CER row: chips on the collapsed row ──
   const sysops = gridRow(doc, "AWS Certified SysOps Administrator - Associate");
@@ -170,7 +174,7 @@ const gridRow = (doc, name) => Array.from(doc.querySelectorAll("tr"))
     /Department of Labor/.test(txt(doc.getElementById("cr-summary"))));
   doc.querySelector("button.cr-ind-more").click();
   await sleep(30);
-  check("lane: Show more reveals the rest", rows().length === 134);
+  check("lane: Show more reveals the rest", rows().length === 135);
 
   // Filters: status, emerging, and the toolbar search.
   const st = doc.getElementById("cr-ind-status");
@@ -208,6 +212,20 @@ const gridRow = (doc, name) => Array.from(doc.querySelectorAll("tr"))
     && /Certification/.test(txt(ctdlRec)) && /rank 2 of 50/.test(txt(ctdlRec))
     && /Occupation 15-1122\.00 Information Security Analysts/.test(txt(ctdlRec))
     && /Industry \(NAICS\) 541519/.test(txt(ctdlRec)));
+
+  // A credential outside IT with no field assigned says so in words, not a blank code.
+  const search2 = doc.getElementById("cr-search");
+  search2.value = "example technician"; search2.oninput();
+  await sleep(30);
+  const unassigned = rows().find((tr) => /Certified Example Technician/.test(txt(tr)));
+  check("lane: an unassigned field is a word, not a blank CIP code",
+    !!unassigned && /Not yet assigned/.test(txt(unassigned)) && !/null|undefined/.test(txt(unassigned)));
+  unassigned.querySelector(".cr-title-toggle").click();
+  await sleep(30);
+  check("detail: an unassigned CIP is explained in words",
+    /CIP: not yet assigned/.test(txt(doc.querySelector(".cr-ind-record"))));
+  search2.value = ""; search2.oninput();
+  await sleep(30);
 
   // Open in the reference: back to the grid, on that row, expanded.
   rows().find((tr) => /CompTIA Security\+/.test(txt(tr))).querySelector("button.cr-ind-open").click();

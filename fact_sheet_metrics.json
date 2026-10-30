@@ -1,30 +1,30 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-10-29T18:35:11.246Z",
+ "_as_of": "2026-10-30T12:48:16.392Z",
  "credit_recommendations": {
-  "total": "14,848",
-  "ccc": "1,483",
+  "total": "14,840",
+  "ccc": "1,475",
   "local": "13,365",
   "by_type": [
    "Standardized Assessment: 7,737",
-   "Industry Certification: 4,159",
-   "Credit By Exam: 2,275",
+   "Industry Certification: 4,150",
+   "Credit By Exam: 2,276",
    "Portfolio Review: 429",
    "Military: 153"
   ]
  },
  "map_exhibits": {
-  "total": "2,645",
+  "total": "2,646",
   "ccc": "164",
-  "local": "2,481",
+  "local": "2,482",
   "originating_colleges": "89"
  },
  "statewide_exhibits": {
   "total": "164",
   "program_areas": "12",
-  "distinct_credit_recs": "1,279",
-  "adoptions": "1,470",
-  "adopting_colleges": "67",
+  "distinct_credit_recs": "1,272",
+  "adoptions": "1,462",
+  "adopting_colleges": "66",
   "by_sector": [
    {
     "sector": "Construction Technology",
@@ -36,8 +36,8 @@
    {
     "sector": "Welding",
     "exhibits": 25,
-    "credit_recs": 215,
-    "adoptions": 270,
+    "credit_recs": 213,
+    "adoptions": 268,
     "could_adopt": 27
    },
    {
@@ -50,15 +50,15 @@
    {
     "sector": "Computer Information Systems",
     "exhibits": 14,
-    "credit_recs": 125,
-    "adoptions": 129,
+    "credit_recs": 123,
+    "adoptions": 127,
     "could_adopt": 74
    },
    {
     "sector": "Automotive Technology",
     "exhibits": 11,
-    "credit_recs": 144,
-    "adoptions": 144,
+    "credit_recs": 143,
+    "adoptions": 143,
     "could_adopt": 65
    },
    {
@@ -79,7 +79,7 @@
     "sector": "Corrections",
     "exhibits": 2,
     "credit_recs": 28,
-    "adoptions": 45,
+    "adoptions": 44,
     "could_adopt": 2
    },
    {
@@ -99,8 +99,8 @@
    {
     "sector": "Administration of Justice",
     "exhibits": 1,
-    "credit_recs": 107,
-    "adoptions": 110,
+    "credit_recs": 105,
+    "adoptions": 108,
     "could_adopt": 55
    },
    {
@@ -126,10 +126,10 @@
  "articulating_colleges": {
   "total": "103",
   "originating": "89",
-  "adopting_ccc": "67"
+  "adopting_ccc": "66"
  },
  "veteran_sprint": {
-  "star_colleges": "68",
+  "star_colleges": "70",
   "basic_training_colleges": "91 Colleges"
  }
 }

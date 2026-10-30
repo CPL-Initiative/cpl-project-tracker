@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-29T18:40:02Z",
+ "written_at": "2026-10-30T12:52:49Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13211,
+     "n": 13243,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,7 +26,7 @@
    ],
    "issues": [
     {
-     "n": 3716,
+     "n": 3684,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
@@ -50,13 +50,13 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-28T15:04:02Z",
+    "at": "2026-10-30T11:38:11Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13211,
-    "failing": 3716,
+    "complete": 13243,
+    "failing": 3684,
     "unread": 3355,
     "records": 18552,
     "colleges": 114,
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-29T18:35:31Z",
+    "at": "2026-10-30T12:48:30Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,9 +140,9 @@
     "records": 2688,
     "records_stamped": 1869,
     "saved_at": "2026-10-29T14:43:54Z",
-    "fold_at": "2026-10-29T18:35:31Z",
-    "map_titles": 4858,
-    "unclassified": 455,
+    "fold_at": "2026-10-30T12:48:30Z",
+    "map_titles": 4859,
+    "unclassified": 456,
     "left_map": 621,
     "below_80": 1151,
     "below_60": 245
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-29T18:37:42+00:00",
+    "at": "2026-10-30T12:50:44+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-29T18:35:28Z",
+    "at": "2026-10-30T12:48:28Z",
     "every_hours": 24
    },
    "facts": {
@@ -414,7 +414,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-10-29",
+    "scanned_at": "2026-10-30",
     "procedures_on": 6
    },
    "sources": [

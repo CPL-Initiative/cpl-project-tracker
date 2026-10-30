@@ -4,24 +4,24 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-10-29",
+ "as_of": "2026-10-30",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
-  "pe": 50444,
-  "pa": 45667,
-  "ppa": 121,
+  "pe": 50780,
+  "pa": 45995,
+  "ppa": 122,
   "p2": 3610,
   "p3": 16847,
   "pp": 7,
-  "ppe": 133,
-  "pac": 5295,
+  "ppe": 135,
+  "pac": 5296,
   "ptc": 4625,
-  "pe_u": 1567320.2,
-  "pa_u": 278969.9,
-  "ppa_u": 752.5,
-  "ppe_u": 7244.5,
-  "pac_u": 37928.7,
+  "pe_u": 1581616.2,
+  "pa_u": 281393.9,
+  "ppa_u": 757.5,
+  "ppe_u": 7285.5,
+  "pac_u": 37933.7,
   "ptc_u": 31647.45,
   "p3_u": 84557.15,
   "pp_u": 73.5,
@@ -124,7 +124,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 629,
    "pe_u": 27151.0,
    "pa": 621,
-   "pa_u": 9031.0,
+   "pa_u": 9028.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 72.0,
@@ -136,8 +136,8 @@ window.CPL_FUNDING_PERF = {
    "ppe": null,
    "ppe_suppressed": true,
    "ppe_u": 208.0,
-   "pac": 209,
-   "pac_u": 2908.5,
+   "pac": 210,
+   "pac_u": 2913.5,
    "ptc": 65,
    "ptc_u": 1191.5,
    "nc_exh": 0,
@@ -214,10 +214,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 17
   },
   "Cabrillo": {
-   "pe": 2186,
-   "pe_u": 18104.0,
-   "pa": 2181,
-   "pa_u": 10404.25,
+   "pe": 2187,
+   "pe_u": 18153.0,
+   "pa": 2182,
+   "pa_u": 10417.25,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 351,
@@ -706,10 +706,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 42
   },
   "East LA": {
-   "pe": 236,
-   "pe_u": 9383.0,
-   "pa": 235,
-   "pa_u": 705.0,
+   "pe": 235,
+   "pe_u": 9347.0,
+   "pa": 234,
+   "pa_u": 702.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 3.0,
@@ -939,8 +939,8 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 66
   },
   "Grossmont": {
-   "pe": 569,
-   "pe_u": 33963.0,
+   "pe": 576,
+   "pe_u": 34696.0,
    "pa": 0,
    "pa_u": 0.0,
    "ppa": 0,
@@ -1266,8 +1266,8 @@ window.CPL_FUNDING_PERF = {
   "Madera": {
    "pe": 49,
    "pe_u": 1990.25,
-   "pa": 49,
-   "pa_u": 125.0,
+   "pa": 48,
+   "pa_u": 123.0,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 5.0,
@@ -1392,7 +1392,7 @@ window.CPL_FUNDING_PERF = {
    "pe": 173,
    "pe_u": 8031.0,
    "pa": 173,
-   "pa_u": 1038.0,
+   "pa_u": 1272.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": null,
@@ -1785,12 +1785,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 73
   },
   "Rio Hondo": {
-   "pe": null,
-   "pe_suppressed": true,
-   "pe_u": 68.0,
-   "pa": null,
-   "pa_suppressed": true,
-   "pa_u": 12.0,
+   "pe": 127,
+   "pe_u": 5132.0,
+   "pa": 127,
+   "pa_u": 762.0,
    "ppa": 0,
    "ppa_u": 0.0,
    "p2": 0,
@@ -1845,7 +1843,7 @@ window.CPL_FUNDING_PERF = {
    "pp_u": 0.0,
    "ppe": null,
    "ppe_suppressed": true,
-   "ppe_u": 148.0,
+   "ppe_u": 166.0,
    "pac": 0,
    "pac_u": 0.0,
    "ptc": 0,
@@ -2165,10 +2163,10 @@ window.CPL_FUNDING_PERF = {
    "nc_cdcp": 107
   },
   "Santiago Canyon": {
-   "pe": 738,
-   "pe_u": 31603.5,
-   "pa": 736,
-   "pa_u": 16376.5,
+   "pe": 942,
+   "pe_u": 40089.5,
+   "pa": 940,
+   "pa_u": 17811.5,
    "ppa": null,
    "ppa_suppressed": true,
    "ppa_u": 7.0,
@@ -2239,15 +2237,17 @@ window.CPL_FUNDING_PERF = {
    "pe_u": 11379.0,
    "pa": 329,
    "pa_u": 1645.0,
-   "ppa": 0,
-   "ppa_u": 0.0,
+   "ppa": null,
+   "ppa_suppressed": true,
+   "ppa_u": 5.0,
    "p2": 0,
    "p3": 0,
    "p3_u": 0.0,
    "pp": 0,
    "pp_u": 0.0,
-   "ppe": 0,
-   "ppe_u": 0.0,
+   "ppe": null,
+   "ppe_suppressed": true,
+   "ppe_u": 23.0,
    "pac": 0,
    "pac_u": 0.0,
    "ptc": 0,
@@ -2715,8 +2715,8 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
-    "pe": 180,
-    "pa": 175,
+    "pe": 181,
+    "pa": 176,
     "p3": 0
    },
    "Portfolio Review": {
@@ -2993,8 +2993,8 @@ window.CPL_FUNDING_PERF = {
   },
   "East LA": {
    "Military": {
-    "pe": 236,
-    "pa": 235,
+    "pe": 235,
+    "pa": 234,
     "p3": 26
    }
   },
@@ -3065,7 +3065,7 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "Military": {
-    "pe": 569,
+    "pe": 576,
     "pa": 0,
     "p3": 0
    }
@@ -3226,7 +3226,7 @@ window.CPL_FUNDING_PERF = {
   "Madera": {
    "Military": {
     "pe": 49,
-    "pa": 49,
+    "pa": 48,
     "p3": null,
     "p3_suppressed": true
    }
@@ -3742,10 +3742,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Rio Hondo": {
    "Military": {
-    "pe": null,
-    "pe_suppressed": true,
-    "pa": null,
-    "pa_suppressed": true,
+    "pe": 127,
+    "pa": 127,
     "p3": 0
    }
   },
@@ -4083,15 +4081,20 @@ window.CPL_FUNDING_PERF = {
     "p3_suppressed": true
    },
    "Military": {
+    "pe": 367,
+    "pa": 367,
+    "p3": 0
+   },
+   "Military | Portfolio Review": {
     "pe": null,
-    "pa": null,
-    "p3": 0,
     "pe_suppressed": true,
-    "pa_suppressed": true
+    "pa": null,
+    "pa_suppressed": true,
+    "p3": 0
    },
    "Portfolio Review": {
-    "pe": 307,
-    "pa": 306,
+    "pe": 306,
+    "pa": 305,
     "p3": 0
    }
   },
@@ -4373,8 +4376,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Military": {
-   "pe": 29732,
-   "pa": 26734,
+   "pe": 30068,
+   "pa": 27062,
    "p3": 2657
   },
   "Military | Other": {
@@ -4407,8 +4410,8 @@ window.CPL_FUNDING_PERF = {
    "p3_suppressed": true
   },
   "Portfolio Review": {
-   "pe": 581,
-   "pa": 575,
+   "pe": 580,
+   "pa": 574,
    "p3": 116
   },
   "Portfolio Review | Standardized Assessment": {
@@ -4430,13 +4433,13 @@ window.CPL_FUNDING_PERF = {
   "source": "View_CreditDistributionByCollege_APIDataset",
   "note": "MAP's own per-college totals, which include Test/Potential rows we exclude — so a small positive gap is expected. A ratio near 2.0 would mean our per-student rows are partitions, not repeats, and the first-seen reducer is dropping units.",
   "ours": {
-   "pe_u": 1567320.2,
-   "pa_u": 278969.9,
+   "pe_u": 1581616.2,
+   "pa_u": 281393.9,
    "p3_u": 84557.15
   },
   "map": {
-   "pe_u": 1574564.7,
-   "pa_u": 279722.4,
+   "pe_u": 1588901.7,
+   "pa_u": 282151.4,
    "p3_u": 84630.65
   },
   "ratio": {
@@ -4447,7 +4450,7 @@ window.CPL_FUNDING_PERF = {
  },
  "vet_star": {
   "LA Pierce": false,
-  "Santiago Canyon": false,
+  "Santiago Canyon": true,
   "Chaffey": true,
   "San Francisco": true,
   "San Diego Mesa": true,
@@ -4480,13 +4483,13 @@ window.CPL_FUNDING_PERF = {
   "Canyons": true,
   "San Joaquin Delta": true,
   "Glendale": true,
+  "Mission": true,
   "LA Trade": true,
   "Clovis": true,
   "Antelope Valley": true,
   "Shasta": false,
   "Fullerton": true,
   "Cerro Coso": true,
-  "Mission": true,
   "Victor Valley": true,
   "Ventura": true,
   "Evergreen Valley": true,
@@ -4495,6 +4498,7 @@ window.CPL_FUNDING_PERF = {
   "Napa": true,
   "Sequoias": false,
   "Citrus": true,
+  "Rio Hondo": true,
   "West Hills Lemoore": false,
   "East LA": false,
   "San Jose City": true,
@@ -4535,7 +4539,6 @@ window.CPL_FUNDING_PERF = {
   "Santa Monica": false,
   "Mendocino": false,
   "Woodland": false,
-  "Rio Hondo": false,
   "Moorpark": true,
   "Monterey": false,
   "MiraCosta": false,
@@ -4562,9 +4565,9 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-10-29",
+ "vet_star_as_of": "2026-10-30",
  "vet_star_threshold": 0.75,
- "vet_star_n": 68,
+ "vet_star_n": 70,
  "vet_jst": {
   "LA Pierce": {
    "vets": 296,
@@ -4573,8 +4576,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Santiago Canyon": {
    "vets": 288,
-   "jst": 168,
-   "pct": 0.5833
+   "jst": 374,
+   "pct": 1.2986
   },
   "Chaffey": {
    "vets": 182,
@@ -4618,8 +4621,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Cabrillo": {
    "vets": 102,
-   "jst": 185,
-   "pct": 1.8137
+   "jst": 186,
+   "pct": 1.8235
   },
   "Merced": {
    "vets": 142,
@@ -4713,8 +4716,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Sierra": {
    "vets": 326,
-   "jst": 329,
-   "pct": 1.0092
+   "jst": 330,
+   "pct": 1.0123
   },
   "Mt. San Jacinto": {
    "vets": 168,
@@ -4735,6 +4738,11 @@ window.CPL_FUNDING_PERF = {
    "vets": 196,
    "jst": 227,
    "pct": 1.1582
+  },
+  "Mission": {
+   "vets": 158,
+   "jst": 173,
+   "pct": 1.0949
   },
   "LA Trade": {
    "vets": 318,
@@ -4765,11 +4773,6 @@ window.CPL_FUNDING_PERF = {
    "vets": 115,
    "jst": 190,
    "pct": 1.6522
-  },
-  "Mission": {
-   "vets": 158,
-   "jst": 173,
-   "pct": 1.0949
   },
   "Victor Valley": {
    "vets": 97,
@@ -4811,6 +4814,11 @@ window.CPL_FUNDING_PERF = {
    "jst": 220,
    "pct": 1.2155
   },
+  "Rio Hondo": {
+   "vets": 172,
+   "jst": 130,
+   "pct": 0.7558
+  },
   "West Hills Lemoore": {
    "vets": 61,
    "jst": 20,
@@ -4818,8 +4826,8 @@ window.CPL_FUNDING_PERF = {
   },
   "East LA": {
    "vets": 637,
-   "jst": 237,
-   "pct": 0.3721
+   "jst": 236,
+   "pct": 0.3705
   },
   "San Jose City": {
    "vets": 148,
@@ -5011,11 +5019,6 @@ window.CPL_FUNDING_PERF = {
    "jst": null,
    "jst_suppressed": true
   },
-  "Rio Hondo": {
-   "vets": 172,
-   "jst": null,
-   "jst_suppressed": true
-  },
   "Moorpark": {
    "vets": 179,
    "jst": 237,
@@ -5033,8 +5036,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Grossmont": {
    "vets": 415,
-   "jst": 634,
-   "pct": 1.5277
+   "jst": 645,
+   "pct": 1.5542
   },
   "LA City": {
    "vets": 301,
@@ -5053,8 +5056,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Sacramento City": {
    "vets": 203,
-   "jst": 118,
-   "pct": 0.5813
+   "jst": 119,
+   "pct": 0.5862
   },
   "Cuyamaca": {
    "vets": 130,

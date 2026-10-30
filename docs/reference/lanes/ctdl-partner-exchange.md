@@ -93,9 +93,10 @@ Valley 674, Norco 817), so CE's course competencies there have a second reading 
 
 **Credential CTIDs in the CER (#2528, S505; from #2469, 2026-10-26).** Credential Engine sent Sam its 50 most-referenced
 credentials; `kb/_fetch_ce_top50.py` reads each CTID's CTDL from the Registry into
-`kb/reference/credential_engine_top50.json`, and the IT catalog joins 16 of them (`ctid` plus a `ctdl` block, shown as a
-Registry link on the CER industry record). The other 34 (trades, health, public safety) wait on widening the catalog
-beyond IT, Sam's call.
+`kb/reference/credential_engine_top50.json`, and the catalog joins all 50 (`ctid` plus a `ctdl` block, shown as a
+Registry link on the CER industry record). Sam widened the catalog to any field on 2026-10-30: the licenses, the national
+sample and CareerOneStop's list come in whole, with a CIP sector from the Registry, the name or the issuer, or *Not yet
+assigned* ([`credential_watch_agent`](../credential_watch_agent.md)).
 
 ## NEXT
 
