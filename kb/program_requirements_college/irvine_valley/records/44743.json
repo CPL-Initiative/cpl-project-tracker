@@ -62,19 +62,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    11.0,
-    13.0
+    15.0,
+    21.0
    ],
    "stated": [
     18.0,
     24.0
    ],
    "against": "program",
-   "why": [
-    "'Complete four performance courses.' chooses 4 courses but 3 carry units"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],

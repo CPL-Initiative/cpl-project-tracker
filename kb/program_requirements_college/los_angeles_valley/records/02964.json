@@ -86,21 +86,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    3.0,
-    3.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "'Semester 4 or higher in a primary language' chooses 1 courses but 0 carry units",
-    "'Two classes in a sequence in a secondary language' chooses 2 courses but 0 carry units"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -124,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

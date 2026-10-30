@@ -61,20 +61,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    9.0,
-    10.0
+    18.0,
+    28.0
    ],
    "stated": [
     18.0,
     28.0
    ],
    "against": "program",
-   "why": [
-    "'Electives: 4 additional honors courses in a minimum of 3 disciplines with a grade of \"C\" or better' chooses 4 courses but 0 carry units"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -98,7 +97,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

@@ -69,19 +69,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    15.0,
-    17.0
+    18.0,
+    20.0
    ],
    "stated": [
     18.0,
     20.0
    ],
-   "why": [
-    "'List C - Any one Art History course (ARTH) not already taken.' chooses 1 courses but 0 carry units"
-   ]
+   "against": "program",
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -102,7 +102,7 @@
    "not_verbatim": [],
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

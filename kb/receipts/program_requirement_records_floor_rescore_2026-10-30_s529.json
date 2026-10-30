@@ -1,0 +1,3324 @@
+{
+ "rule": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30",
+ "at": "2026-10-30T17:52:49Z",
+ "moved": 206,
+ "by_move": {
+  "equal->unequal": 12,
+  "incomplete->equal": 28,
+  "incomplete->unequal": 5,
+  "unequal->equal": 161
+ },
+ "records": [
+  {
+   "college": "Antelope Valley College",
+   "control_number": "32859",
+   "extracted_run": "38979725726",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    24.0,
+    30.0
+   ],
+   "stated": [
+    24.0,
+    30.0
+   ],
+   "path": "kb/program_requirements_college/antelope_valley/records/32859.json"
+  },
+  {
+   "college": "Antelope Valley College",
+   "control_number": "43419",
+   "extracted_run": "38979725726",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    36.0,
+    108.0
+   ],
+   "stated": [
+    36.0,
+    108.0
+   ],
+   "path": "kb/program_requirements_college/antelope_valley/records/43419.json"
+  },
+  {
+   "college": "Antelope Valley College",
+   "control_number": "43845",
+   "extracted_run": "38979725726",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    36.0,
+    54.0
+   ],
+   "stated": [
+    36.0,
+    54.0
+   ],
+   "path": "kb/program_requirements_college/antelope_valley/records/43845.json"
+  },
+  {
+   "college": "Antelope Valley College",
+   "control_number": "45885",
+   "extracted_run": "38979725726",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    108.0,
+    216.0
+   ],
+   "stated": [
+    108.0,
+    216.0
+   ],
+   "path": "kb/program_requirements_college/antelope_valley/records/45885.json"
+  },
+  {
+   "college": "Bakersfield College",
+   "control_number": "32797",
+   "extracted_run": "38414480070",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/bakersfield/records/32797.json"
+  },
+  {
+   "college": "Barstow Community College",
+   "control_number": "33066",
+   "extracted_run": "39006332820",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/barstow_community/records/33066.json"
+  },
+  {
+   "college": "Barstow Community College",
+   "control_number": "39436",
+   "extracted_run": "39006332820",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    23.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/barstow_community/records/39436.json"
+  },
+  {
+   "college": "Barstow Community College",
+   "control_number": "41033",
+   "extracted_run": "39006332820",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    24.0,
+    26.0
+   ],
+   "stated": [
+    24.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/barstow_community/records/41033.json"
+  },
+  {
+   "college": "Berkeley City College",
+   "control_number": "46177",
+   "extracted_run": "39891604919",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.0,
+    25.0
+   ],
+   "stated": [
+    23.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/berkeley_city/records/46177.json"
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "02248",
+   "extracted_run": 38656800189,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    20.5
+   ],
+   "stated": [
+    19.0,
+    19.5
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/02248.json"
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "02249",
+   "extracted_run": "37961137169",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/02249.json"
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "11396",
+   "extracted_run": 38656800189,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    36.0,
+    37.5
+   ],
+   "stated": [
+    36.0,
+    36.5
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/11396.json"
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "30550",
+   "extracted_run": 38656800189,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    36.0,
+    38.5
+   ],
+   "stated": [
+    36.0,
+    38.5
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/30550.json"
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "35166",
+   "extracted_run": 38656800189,
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/35166.json"
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "36260",
+   "extracted_run": "37961137169",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    27.0,
+    35.5
+   ],
+   "stated": [
+    27.0,
+    35.5
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/36260.json"
+  },
+  {
+   "college": "Cerritos College",
+   "control_number": "43486",
+   "extracted_run": "37961137169",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/cerritos/records/43486.json"
+  },
+  {
+   "college": "Chabot College",
+   "control_number": "09803",
+   "extracted_run": "38843479215",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/chabot/records/09803.json"
+  },
+  {
+   "college": "Chabot College",
+   "control_number": "30828",
+   "extracted_run": "38843479215",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    40.0,
+    40.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/chabot/records/30828.json"
+  },
+  {
+   "college": "Chabot College",
+   "control_number": "32061",
+   "extracted_run": "38843479215",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.0,
+    29.0
+   ],
+   "stated": [
+    23.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/chabot/records/32061.json"
+  },
+  {
+   "college": "Chabot College",
+   "control_number": "32736",
+   "extracted_run": "38843479215",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    22.0,
+    25.0
+   ],
+   "stated": [
+    22.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/chabot/records/32736.json"
+  },
+  {
+   "college": "Chabot College",
+   "control_number": "40554",
+   "extracted_run": "38843479215",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    63.0,
+    144.0
+   ],
+   "stated": [
+    63.0,
+    144.0
+   ],
+   "path": "kb/program_requirements_college/chabot/records/40554.json"
+  },
+  {
+   "college": "Chaffey College",
+   "control_number": "31891",
+   "extracted_run": "38242003226",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    78.0,
+    78.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/chaffey/records/31891.json"
+  },
+  {
+   "college": "Chaffey College",
+   "control_number": "32166",
+   "extracted_run": "38242003226",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    21.0
+   ],
+   "stated": [
+    20.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/chaffey/records/32166.json"
+  },
+  {
+   "college": "Chaffey College",
+   "control_number": "32344",
+   "extracted_run": "38242003226",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/chaffey/records/32344.json"
+  },
+  {
+   "college": "Citrus College",
+   "control_number": "40436",
+   "extracted_run": "38675245799",
+   "from": "incomplete",
+   "to": "unequal",
+   "computed": [
+    12.0,
+    23.0
+   ],
+   "stated": [
+    21.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/citrus/records/40436.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "36368",
+   "extracted_run": "39047128472",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    700.0,
+    700.0
+   ],
+   "stated": [
+    700.0,
+    700.0
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/36368.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "38448",
+   "extracted_run": "39047128472",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/38448.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "39335",
+   "extracted_run": "39056434592",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    29.0
+   ],
+   "stated": [
+    20.0,
+    28.0
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/39335.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "40074",
+   "extracted_run": "39047128472",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    28.0,
+    33.0
+   ],
+   "stated": [
+    28.0,
+    33.0
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/40074.json"
+  },
+  {
+   "college": "City College of San Francisco",
+   "control_number": "41048",
+   "extracted_run": "39056434592",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    21.0,
+    23.0
+   ],
+   "stated": [
+    21.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/city_of_san_francisco/records/41048.json"
+  },
+  {
+   "college": "College of Marin",
+   "control_number": "03389",
+   "extracted_run": "38984695817",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.5,
+    29.5
+   ],
+   "stated": [
+    20.5,
+    29.5
+   ],
+   "path": "kb/program_requirements_college/college_of_marin/records/03389.json"
+  },
+  {
+   "college": "College of Marin",
+   "control_number": "07647",
+   "extracted_run": "38984695817",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/college_of_marin/records/07647.json"
+  },
+  {
+   "college": "College of Marin",
+   "control_number": "30893",
+   "extracted_run": "38984695817",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/college_of_marin/records/30893.json"
+  },
+  {
+   "college": "College of Marin",
+   "control_number": "42125",
+   "extracted_run": "38984695817",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    43.5,
+    45.5
+   ],
+   "stated": [
+    43.5,
+    45.5
+   ],
+   "path": "kb/program_requirements_college/college_of_marin/records/42125.json"
+  },
+  {
+   "college": "College of Marin",
+   "control_number": "42136",
+   "extracted_run": "38984695817",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    52.5,
+    54.5
+   ],
+   "stated": [
+    52.5,
+    54.5
+   ],
+   "path": "kb/program_requirements_college/college_of_marin/records/42136.json"
+  },
+  {
+   "college": "College of Marin",
+   "control_number": "43473",
+   "extracted_run": "38984695817",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    32.0,
+    34.0
+   ],
+   "stated": [
+    32.0,
+    34.0
+   ],
+   "path": "kb/program_requirements_college/college_of_marin/records/43473.json"
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "36570",
+   "extracted_run": "39006378829",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    29.0,
+    32.0
+   ],
+   "stated": [
+    29.0,
+    32.0
+   ],
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/36570.json"
+  },
+  {
+   "college": "College of the Canyons",
+   "control_number": "45268",
+   "extracted_run": "39006378829",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    16.0,
+    19.0
+   ],
+   "stated": [
+    16.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/college_of_the_canyons/records/45268.json"
+  },
+  {
+   "college": "College of the Desert",
+   "control_number": "44563",
+   "extracted_run": "39056007346",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    31.0,
+    35.0
+   ],
+   "stated": [
+    31.0,
+    35.0
+   ],
+   "path": "kb/program_requirements_college/college_of_the_desert/records/44563.json"
+  },
+  {
+   "college": "Compton College",
+   "control_number": "38424",
+   "extracted_run": "39006336111",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    32.0,
+    34.0
+   ],
+   "stated": [
+    32.0,
+    34.0
+   ],
+   "path": "kb/program_requirements_college/compton/records/38424.json"
+  },
+  {
+   "college": "Contra Costa College",
+   "control_number": "45537",
+   "extracted_run": "38979730323",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/contra_costa/records/45537.json"
+  },
+  {
+   "college": "Cuesta College",
+   "control_number": "31885",
+   "extracted_run": "39063368678",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/cuesta/records/31885.json"
+  },
+  {
+   "college": "Cuesta College",
+   "control_number": "33910",
+   "extracted_run": "39063368678",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    29.0,
+    32.0
+   ],
+   "stated": [
+    29.0,
+    32.0
+   ],
+   "path": "kb/program_requirements_college/cuesta/records/33910.json"
+  },
+  {
+   "college": "Cuesta College",
+   "control_number": "36261",
+   "extracted_run": "39063368678",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/cuesta/records/36261.json"
+  },
+  {
+   "college": "Cuesta College",
+   "control_number": "36271",
+   "extracted_run": "39063368678",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    21.0,
+    25.0
+   ],
+   "stated": [
+    21.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/cuesta/records/36271.json"
+  },
+  {
+   "college": "Cuesta College",
+   "control_number": "36738",
+   "extracted_run": "39063368678",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    53.0,
+    56.0
+   ],
+   "stated": [
+    53.0,
+    56.0
+   ],
+   "path": "kb/program_requirements_college/cuesta/records/36738.json"
+  },
+  {
+   "college": "Cypress College",
+   "control_number": "31002",
+   "extracted_run": "38748866826",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/cypress/records/31002.json"
+  },
+  {
+   "college": "Cypress College",
+   "control_number": "32187",
+   "extracted_run": "38748866826",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/cypress/records/32187.json"
+  },
+  {
+   "college": "Cypress College",
+   "control_number": "35020",
+   "extracted_run": "38748866826",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    29.0,
+    31.0
+   ],
+   "stated": [
+    29.0,
+    31.0
+   ],
+   "path": "kb/program_requirements_college/cypress/records/35020.json"
+  },
+  {
+   "college": "Cypress College",
+   "control_number": "43849",
+   "extracted_run": "38748866826",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/cypress/records/43849.json"
+  },
+  {
+   "college": "East Los Angeles College",
+   "control_number": "45987",
+   "extracted_run": "39063389278",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    28.0,
+    28.0
+   ],
+   "stated": [
+    28.0,
+    28.0
+   ],
+   "path": "kb/program_requirements_college/east_los_angeles/records/45987.json"
+  },
+  {
+   "college": "Fresno City College",
+   "control_number": "35170",
+   "extracted_run": "38563582873",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    26.5,
+    32.5
+   ],
+   "stated": [
+    26.5,
+    32.5
+   ],
+   "path": "kb/program_requirements_college/fresno_city/records/35170.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "03816",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/03816.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "03826",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    19.5
+   ],
+   "stated": [
+    18.0,
+    19.5
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/03826.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "03847",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/03847.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "03850",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    21.5,
+    32.0
+   ],
+   "stated": [
+    21.5,
+    32.0
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/03850.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "03882",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    25.0
+   ],
+   "stated": [
+    20.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/03882.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "10616",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    13.0,
+    15.0
+   ],
+   "stated": [
+    13.0,
+    15.0
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/10616.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "21260",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.5
+   ],
+   "stated": [
+    18.0,
+    19.5
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/21260.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "36961",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    25.0
+   ],
+   "stated": [
+    20.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/36961.json"
+  },
+  {
+   "college": "Fullerton College",
+   "control_number": "44959",
+   "extracted_run": "38675136988",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.5,
+    34.5
+   ],
+   "stated": [
+    23.5,
+    34.5
+   ],
+   "path": "kb/program_requirements_college/fullerton/records/44959.json"
+  },
+  {
+   "college": "Gavilan College",
+   "control_number": "17724",
+   "extracted_run": "38948144064",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    12.0,
+    12.0
+   ],
+   "stated": [
+    12.0,
+    12.0
+   ],
+   "path": "kb/program_requirements_college/gavilan/records/17724.json"
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "02572",
+   "extracted_run": 41040709338,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "path": "kb/program_requirements_college/glendale_community/records/02572.json"
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "21315",
+   "extracted_run": 41040709338,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    22.0,
+    22.0
+   ],
+   "stated": [
+    22.0,
+    22.0
+   ],
+   "path": "kb/program_requirements_college/glendale_community/records/21315.json"
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "32178",
+   "extracted_run": 41012563119,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/glendale_community/records/32178.json"
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "32707",
+   "extracted_run": 41012563119,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/glendale_community/records/32707.json"
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "36270",
+   "extracted_run": 41040709338,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/glendale_community/records/36270.json"
+  },
+  {
+   "college": "Glendale Community College",
+   "control_number": "39406",
+   "extracted_run": "41055650373",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/glendale_community/records/39406.json"
+  },
+  {
+   "college": "Golden West College",
+   "control_number": "11434",
+   "extracted_run": "39688079435",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/golden_west/records/11434.json"
+  },
+  {
+   "college": "Golden West College",
+   "control_number": "32145",
+   "extracted_run": "38748828247",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/golden_west/records/32145.json"
+  },
+  {
+   "college": "Golden West College",
+   "control_number": "37636",
+   "extracted_run": "38748828247",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    22.0
+   ],
+   "path": "kb/program_requirements_college/golden_west/records/37636.json"
+  },
+  {
+   "college": "Imperial Valley College",
+   "control_number": "32596",
+   "extracted_run": "38935136329",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    20.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/imperial_valley/records/32596.json"
+  },
+  {
+   "college": "Irvine Valley College",
+   "control_number": "30627",
+   "extracted_run": "39539599944",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/irvine_valley/records/30627.json"
+  },
+  {
+   "college": "Irvine Valley College",
+   "control_number": "32116",
+   "extracted_run": "39539599944",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    22.0
+   ],
+   "path": "kb/program_requirements_college/irvine_valley/records/32116.json"
+  },
+  {
+   "college": "Irvine Valley College",
+   "control_number": "32875",
+   "extracted_run": "39539599944",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/irvine_valley/records/32875.json"
+  },
+  {
+   "college": "Irvine Valley College",
+   "control_number": "36638",
+   "extracted_run": "39539599944",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    21.0,
+    31.0
+   ],
+   "stated": [
+    21.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/irvine_valley/records/36638.json"
+  },
+  {
+   "college": "Irvine Valley College",
+   "control_number": "43027",
+   "extracted_run": "39539599944",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/irvine_valley/records/43027.json"
+  },
+  {
+   "college": "Irvine Valley College",
+   "control_number": "44743",
+   "extracted_run": "39539599944",
+   "from": "incomplete",
+   "to": "unequal",
+   "computed": [
+    15.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/irvine_valley/records/44743.json"
+  },
+  {
+   "college": "Irvine Valley College",
+   "control_number": "45863",
+   "extracted_run": "39539599944",
+   "from": "incomplete",
+   "to": "unequal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/irvine_valley/records/45863.json"
+  },
+  {
+   "college": "Laney College",
+   "control_number": "01182",
+   "extracted_run": "38935141023",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/laney/records/01182.json"
+  },
+  {
+   "college": "Laney College",
+   "control_number": "09031",
+   "extracted_run": "38935141023",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    30.0,
+    33.0
+   ],
+   "stated": [
+    30.0,
+    33.0
+   ],
+   "path": "kb/program_requirements_college/laney/records/09031.json"
+  },
+  {
+   "college": "Laney College",
+   "control_number": "35121",
+   "extracted_run": "38935141023",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    22.0,
+    30.0
+   ],
+   "stated": [
+    22.0,
+    30.0
+   ],
+   "path": "kb/program_requirements_college/laney/records/35121.json"
+  },
+  {
+   "college": "Las Positas College",
+   "control_number": "32508",
+   "extracted_run": "38984747530",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    25.0
+   ],
+   "stated": [
+    18.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/las_positas/records/32508.json"
+  },
+  {
+   "college": "Las Positas College",
+   "control_number": "37486",
+   "extracted_run": "38984747530",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    162.0,
+    243.0
+   ],
+   "stated": [
+    162.0,
+    243.0
+   ],
+   "path": "kb/program_requirements_college/las_positas/records/37486.json"
+  },
+  {
+   "college": "Las Positas College",
+   "control_number": "37487",
+   "extracted_run": "38984747530",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    66.0,
+    228.0
+   ],
+   "stated": [
+    66.0,
+    228.0
+   ],
+   "path": "kb/program_requirements_college/las_positas/records/37487.json"
+  },
+  {
+   "college": "Las Positas College",
+   "control_number": "37504",
+   "extracted_run": "38984747530",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    252.0,
+    504.0
+   ],
+   "stated": [
+    252.0,
+    504.0
+   ],
+   "path": "kb/program_requirements_college/las_positas/records/37504.json"
+  },
+  {
+   "college": "Las Positas College",
+   "control_number": "37506",
+   "extracted_run": "38984747530",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    108.0,
+    216.0
+   ],
+   "stated": [
+    108.0,
+    216.0
+   ],
+   "path": "kb/program_requirements_college/las_positas/records/37506.json"
+  },
+  {
+   "college": "Las Positas College",
+   "control_number": "37530",
+   "extracted_run": "38984747530",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    27.5,
+    28.5
+   ],
+   "stated": [
+    27.5,
+    28.5
+   ],
+   "path": "kb/program_requirements_college/las_positas/records/37530.json"
+  },
+  {
+   "college": "Las Positas College",
+   "control_number": "43735",
+   "extracted_run": "38984747530",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    108.0,
+    162.0
+   ],
+   "stated": [
+    108.0,
+    162.0
+   ],
+   "path": "kb/program_requirements_college/las_positas/records/43735.json"
+  },
+  {
+   "college": "Las Positas College",
+   "control_number": "45954",
+   "extracted_run": "38984747530",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    16.0,
+    26.0
+   ],
+   "stated": [
+    16.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/las_positas/records/45954.json"
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "31665",
+   "extracted_run": "38152016534",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    22.0,
+    26.0
+   ],
+   "stated": [
+    22.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/long_beach_city/records/31665.json"
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "33390",
+   "extracted_run": "38185403454",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/long_beach_city/records/33390.json"
+  },
+  {
+   "college": "Long Beach City College",
+   "control_number": "33668",
+   "extracted_run": "38152016534",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    24.0,
+    25.0
+   ],
+   "stated": [
+    24.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/long_beach_city/records/33668.json"
+  },
+  {
+   "college": "Los Angeles Harbor College",
+   "control_number": "45733",
+   "extracted_run": "39006381839",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_harbor/records/45733.json"
+  },
+  {
+   "college": "Los Angeles Mission College",
+   "control_number": "33215",
+   "extracted_run": "39054675770",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_mission/records/33215.json"
+  },
+  {
+   "college": "Los Angeles Pierce College",
+   "control_number": "33088",
+   "extracted_run": 39018421038,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    23.0
+   ],
+   "stated": [
+    20.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_pierce/records/33088.json"
+  },
+  {
+   "college": "Los Angeles Pierce College",
+   "control_number": "33110",
+   "extracted_run": "39006383070",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    22.0,
+    25.0
+   ],
+   "stated": [
+    22.0,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_pierce/records/33110.json"
+  },
+  {
+   "college": "Los Angeles Pierce College",
+   "control_number": "35196",
+   "extracted_run": 39018421038,
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_pierce/records/35196.json"
+  },
+  {
+   "college": "Los Angeles Pierce College",
+   "control_number": "35462",
+   "extracted_run": 39018421038,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_pierce/records/35462.json"
+  },
+  {
+   "college": "Los Angeles Pierce College",
+   "control_number": "35975",
+   "extracted_run": "39006383070",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_pierce/records/35975.json"
+  },
+  {
+   "college": "Los Angeles Valley College",
+   "control_number": "02964",
+   "extracted_run": "39006418426",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_valley/records/02964.json"
+  },
+  {
+   "college": "Los Angeles Valley College",
+   "control_number": "33615",
+   "extracted_run": "39006418426",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    21.0,
+    23.0
+   ],
+   "stated": [
+    21.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/los_angeles_valley/records/33615.json"
+  },
+  {
+   "college": "Los Medanos College",
+   "control_number": "42681",
+   "extracted_run": "39001267800",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/los_medanos/records/42681.json"
+  },
+  {
+   "college": "Madera College",
+   "control_number": "39528",
+   "extracted_run": "38935148408",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    21.0
+   ],
+   "stated": [
+    20.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/madera/records/39528.json"
+  },
+  {
+   "college": "Madera College",
+   "control_number": "39771",
+   "extracted_run": "38935148408",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    25.0,
+    28.0
+   ],
+   "stated": [
+    25.0,
+    28.0
+   ],
+   "path": "kb/program_requirements_college/madera/records/39771.json"
+  },
+  {
+   "college": "Merced College",
+   "control_number": "33207",
+   "extracted_run": "39117489616",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    29.0,
+    29.0
+   ],
+   "stated": [
+    29.0,
+    29.0
+   ],
+   "path": "kb/program_requirements_college/merced/records/33207.json"
+  },
+  {
+   "college": "Merced College",
+   "control_number": "35569",
+   "extracted_run": "39117489616",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    34.0,
+    36.0
+   ],
+   "stated": [
+    34.0,
+    36.0
+   ],
+   "path": "kb/program_requirements_college/merced/records/35569.json"
+  },
+  {
+   "college": "Merced College",
+   "control_number": "45001",
+   "extracted_run": "39117489616",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.0,
+    54.0
+   ],
+   "stated": [
+    23.0,
+    54.0
+   ],
+   "path": "kb/program_requirements_college/merced/records/45001.json"
+  },
+  {
+   "college": "Merritt College",
+   "control_number": "22011",
+   "extracted_run": "38935152199",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    46.0,
+    47.0
+   ],
+   "stated": [
+    43.0,
+    44.0
+   ],
+   "path": "kb/program_requirements_college/merritt/records/22011.json"
+  },
+  {
+   "college": "Merritt College",
+   "control_number": "33357",
+   "extracted_run": "38935152199",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    27.0,
+    30.0
+   ],
+   "stated": [
+    27.0,
+    30.0
+   ],
+   "path": "kb/program_requirements_college/merritt/records/33357.json"
+  },
+  {
+   "college": "Merritt College",
+   "control_number": "33675",
+   "extracted_run": "38935152199",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    27.0,
+    30.0
+   ],
+   "stated": [
+    27.0,
+    30.0
+   ],
+   "path": "kb/program_requirements_college/merritt/records/33675.json"
+  },
+  {
+   "college": "Mission College",
+   "control_number": "36280",
+   "extracted_run": "39000023893",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    96.12,
+    420.12
+   ],
+   "stated": [
+    96.12,
+    420.12
+   ],
+   "path": "kb/program_requirements_college/mission/records/36280.json"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "32433",
+   "extracted_run": "38477845911",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/modesto_junior/records/32433.json"
+  },
+  {
+   "college": "Modesto Junior College",
+   "control_number": "42664",
+   "extracted_run": "38477845911",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    30.0,
+    35.0
+   ],
+   "stated": [
+    30.0,
+    35.0
+   ],
+   "path": "kb/program_requirements_college/modesto_junior/records/42664.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "22103",
+   "extracted_run": "38748862351",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/22103.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "31141",
+   "extracted_run": "38748862351",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    26.0
+   ],
+   "stated": [
+    20.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/31141.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "31617",
+   "extracted_run": "38748862351",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    24.0,
+    26.0
+   ],
+   "stated": [
+    24.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/31617.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "32056",
+   "extracted_run": "39600815599",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/32056.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "33650",
+   "extracted_run": "38748862351",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    27.0,
+    31.0
+   ],
+   "stated": [
+    27.0,
+    31.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/33650.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "33710",
+   "extracted_run": "39600815599",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/33710.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "36068",
+   "extracted_run": "38748862351",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    42.0,
+    46.0
+   ],
+   "stated": [
+    42.0,
+    42.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/36068.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "40816",
+   "extracted_run": "38748862351",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    26.0,
+    28.0
+   ],
+   "stated": [
+    26.0,
+    28.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/40816.json"
+  },
+  {
+   "college": "Moorpark College",
+   "control_number": "45616",
+   "extracted_run": "38748862351",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    24.0,
+    26.0
+   ],
+   "stated": [
+    24.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/moorpark/records/45616.json"
+  },
+  {
+   "college": "Moreno Valley College",
+   "control_number": "46200",
+   "extracted_run": "38085493318",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    27.0,
+    31.0
+   ],
+   "stated": [
+    27.0,
+    31.0
+   ],
+   "path": "kb/program_requirements_college/moreno_valley/records/46200.json"
+  },
+  {
+   "college": "Mt. San Antonio College",
+   "control_number": "18239",
+   "extracted_run": "38059865531",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    19.0,
+    22.0
+   ],
+   "stated": [
+    19.0,
+    22.0
+   ],
+   "path": "kb/program_requirements_college/mt_san_antonio/records/18239.json"
+  },
+  {
+   "college": "Mt. San Jacinto College",
+   "control_number": "39080",
+   "extracted_run": "39779328144",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    28.0
+   ],
+   "stated": [
+    18.0,
+    28.0
+   ],
+   "path": "kb/program_requirements_college/mt_san_jacinto/records/39080.json"
+  },
+  {
+   "college": "Napa Valley College",
+   "control_number": "38071",
+   "extracted_run": "38748853261",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/napa_valley/records/38071.json"
+  },
+  {
+   "college": "Norco College",
+   "control_number": "33090",
+   "extracted_run": "38085495452",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/norco/records/33090.json"
+  },
+  {
+   "college": "Norco College",
+   "control_number": "35853",
+   "extracted_run": "38085495452",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/norco/records/35853.json"
+  },
+  {
+   "college": "Ohlone College",
+   "control_number": "44254",
+   "extracted_run": 39063337090,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    33.0,
+    36.0
+   ],
+   "stated": [
+    33.0,
+    36.0
+   ],
+   "path": "kb/program_requirements_college/ohlone/records/44254.json"
+  },
+  {
+   "college": "Oxnard College",
+   "control_number": "18406",
+   "extracted_run": "38842203500",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    26.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/oxnard/records/18406.json"
+  },
+  {
+   "college": "Oxnard College",
+   "control_number": "18408",
+   "extracted_run": "38842203500",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/oxnard/records/18408.json"
+  },
+  {
+   "college": "Palomar College",
+   "control_number": "05156",
+   "extracted_run": "38843467865",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/palomar/records/05156.json"
+  },
+  {
+   "college": "Palomar College",
+   "control_number": "05162",
+   "extracted_run": "38843467865",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    35.0,
+    35.0
+   ],
+   "stated": [
+    32.0,
+    32.0
+   ],
+   "path": "kb/program_requirements_college/palomar/records/05162.json"
+  },
+  {
+   "college": "Palomar College",
+   "control_number": "19783",
+   "extracted_run": "38843467865",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/palomar/records/19783.json"
+  },
+  {
+   "college": "Palomar College",
+   "control_number": "22503",
+   "extracted_run": "38843467865",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/palomar/records/22503.json"
+  },
+  {
+   "college": "Palomar College",
+   "control_number": "33884",
+   "extracted_run": "38843467865",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    23.0,
+    33.0
+   ],
+   "stated": [
+    22.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/palomar/records/33884.json"
+  },
+  {
+   "college": "Palomar College",
+   "control_number": "37197",
+   "extracted_run": "38843467865",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/palomar/records/37197.json"
+  },
+  {
+   "college": "Palomar College",
+   "control_number": "44461",
+   "extracted_run": "38843467865",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    28.0,
+    33.0
+   ],
+   "stated": [
+    28.0,
+    33.0
+   ],
+   "path": "kb/program_requirements_college/palomar/records/44461.json"
+  },
+  {
+   "college": "Pasadena City College",
+   "control_number": "37425",
+   "extracted_run": "39061730187",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/pasadena_city/records/37425.json"
+  },
+  {
+   "college": "Porterville College",
+   "control_number": "45313",
+   "extracted_run": "39046786897",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    25.0
+   ],
+   "stated": [
+    19.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/porterville/records/45313.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "09436",
+   "extracted_run": "38843477136",
+   "from": "incomplete",
+   "to": "unequal",
+   "computed": [
+    29.0,
+    35.0
+   ],
+   "stated": [
+    32.0,
+    44.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/09436.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "15572",
+   "extracted_run": "39616074283",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/15572.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "30831",
+   "extracted_run": "39616074283",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    22.0
+   ],
+   "stated": [
+    20.0,
+    22.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/30831.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "33596",
+   "extracted_run": "39616074283",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    31.0
+   ],
+   "stated": [
+    20.0,
+    31.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/33596.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "40758",
+   "extracted_run": "39616074283",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    24.0,
+    24.0
+   ],
+   "stated": [
+    24.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/40758.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "41848",
+   "extracted_run": "38843477136",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    41.0,
+    45.0
+   ],
+   "stated": [
+    41.0,
+    45.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/41848.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "41849",
+   "extracted_run": "38843477136",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    41.0,
+    45.0
+   ],
+   "stated": [
+    41.0,
+    45.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/41849.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "41854",
+   "extracted_run": "38843477136",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    42.0,
+    45.0
+   ],
+   "stated": [
+    42.0,
+    45.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/41854.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "41856",
+   "extracted_run": "38843477136",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    42.0,
+    45.0
+   ],
+   "stated": [
+    42.0,
+    45.0
+   ],
+   "path": "kb/program_requirements_college/reedley/records/41856.json"
+  },
+  {
+   "college": "Reedley College",
+   "control_number": "42456",
+   "extracted_run": "38843477136",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    548.3,
+    548.3
+   ],
+   "stated": [
+    548.3,
+    548.3
+   ],
+   "path": "kb/program_requirements_college/reedley/records/42456.json"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "03211",
+   "extracted_run": "38843465712",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    31.0,
+    35.0
+   ],
+   "stated": [
+    31.0,
+    35.0
+   ],
+   "path": "kb/program_requirements_college/rio_hondo/records/03211.json"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "15148",
+   "extracted_run": "38843465712",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.0,
+    24.0
+   ],
+   "stated": [
+    23.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/rio_hondo/records/15148.json"
+  },
+  {
+   "college": "Rio Hondo College",
+   "control_number": "37056",
+   "extracted_run": "38843465712",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    21.0
+   ],
+   "stated": [
+    20.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/rio_hondo/records/37056.json"
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "09826",
+   "extracted_run": "38843470509",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/saddleback/records/09826.json"
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "30712",
+   "extracted_run": "38843470509",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    21.0
+   ],
+   "stated": [
+    19.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/saddleback/records/30712.json"
+  },
+  {
+   "college": "Saddleback College",
+   "control_number": "32167",
+   "extracted_run": "38843470509",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    22.0
+   ],
+   "stated": [
+    19.0,
+    22.0
+   ],
+   "path": "kb/program_requirements_college/saddleback/records/32167.json"
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "31886",
+   "extracted_run": "38748858322",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    21.0,
+    23.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/31886.json"
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "control_number": "43049",
+   "extracted_run": "38748858322",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    21.0,
+    23.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/san_bernardino_valley/records/43049.json"
+  },
+  {
+   "college": "San Diego City College",
+   "control_number": "31972",
+   "extracted_run": "38252422845",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    25.5
+   ],
+   "stated": [
+    20.0,
+    24.5
+   ],
+   "path": "kb/program_requirements_college/san_diego_city/records/31972.json"
+  },
+  {
+   "college": "San Diego City College",
+   "control_number": "36118",
+   "extracted_run": "38252422845",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    23.0
+   ],
+   "stated": [
+    18.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/san_diego_city/records/36118.json"
+  },
+  {
+   "college": "San Diego City College",
+   "control_number": "43836",
+   "extracted_run": "38252422845",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    26.0,
+    30.0
+   ],
+   "stated": [
+    26.0,
+    30.0
+   ],
+   "path": "kb/program_requirements_college/san_diego_city/records/43836.json"
+  },
+  {
+   "college": "San Diego Mesa College",
+   "control_number": "31843",
+   "extracted_run": "38282023973",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    25.5
+   ],
+   "stated": [
+    20.0,
+    24.5
+   ],
+   "path": "kb/program_requirements_college/san_diego_mesa/records/31843.json"
+  },
+  {
+   "college": "San Diego Mesa College",
+   "control_number": "35656",
+   "extracted_run": "38282023973",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    26.0,
+    30.0
+   ],
+   "stated": [
+    26.0,
+    30.0
+   ],
+   "path": "kb/program_requirements_college/san_diego_mesa/records/35656.json"
+  },
+  {
+   "college": "San Diego Miramar College",
+   "control_number": "31926",
+   "extracted_run": "38275241459",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    22.0,
+    24.0
+   ],
+   "stated": [
+    22.0,
+    24.0
+   ],
+   "path": "kb/program_requirements_college/san_diego_miramar/records/31926.json"
+  },
+  {
+   "college": "San Diego Miramar College",
+   "control_number": "35571",
+   "extracted_run": "38275241459",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    26.0,
+    28.0
+   ],
+   "stated": [
+    26.0,
+    28.0
+   ],
+   "path": "kb/program_requirements_college/san_diego_miramar/records/35571.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "04236",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    29.5,
+    34.0
+   ],
+   "stated": [
+    29.5,
+    34.0
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/04236.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "04260",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    21.0
+   ],
+   "stated": [
+    18.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/04260.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "08709",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.5,
+    26.0
+   ],
+   "stated": [
+    23.5,
+    25.0
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/08709.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "32148",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    22.5
+   ],
+   "stated": [
+    19.0,
+    22.5
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/32148.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "32255",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.5
+   ],
+   "stated": [
+    18.0,
+    20.5
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/32255.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "33057",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    24.5
+   ],
+   "stated": [
+    18.0,
+    24.5
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/33057.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "33169",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    15.0,
+    16.0
+   ],
+   "stated": [
+    15.0,
+    16.0
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/33169.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "33220",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    19.0,
+    22.0
+   ],
+   "stated": [
+    19.0,
+    22.0
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/33220.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "35698",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/35698.json"
+  },
+  {
+   "college": "Santa Ana College",
+   "control_number": "39987",
+   "extracted_run": "38843461766",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    32.0,
+    35.5
+   ],
+   "stated": [
+    32.0,
+    33.5
+   ],
+   "path": "kb/program_requirements_college/santa_ana/records/39987.json"
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "30719",
+   "extracted_run": "38670933359",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    20.0,
+    26.0
+   ],
+   "stated": [
+    20.0,
+    26.0
+   ],
+   "path": "kb/program_requirements_college/santa_barbara_city/records/30719.json"
+  },
+  {
+   "college": "Santa Barbara City College",
+   "control_number": "31283",
+   "extracted_run": "38670933359",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    20.0,
+    30.0
+   ],
+   "stated": [
+    20.0,
+    28.5
+   ],
+   "path": "kb/program_requirements_college/santa_barbara_city/records/31283.json"
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "03273",
+   "extracted_run": "39567439681",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.0,
+    26.0
+   ],
+   "stated": [
+    23.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/santa_monica/records/03273.json"
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "33270",
+   "extracted_run": "39567439681",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    19.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/santa_monica/records/33270.json"
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "37452",
+   "extracted_run": "39567439681",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    21.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/santa_monica/records/37452.json"
+  },
+  {
+   "college": "Santa Monica College",
+   "control_number": "42454",
+   "extracted_run": "39567439681",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/santa_monica/records/42454.json"
+  },
+  {
+   "college": "Shasta College",
+   "control_number": "31988",
+   "extracted_run": "39006384701",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    22.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/shasta/records/31988.json"
+  },
+  {
+   "college": "Shasta College",
+   "control_number": "32162",
+   "extracted_run": "39006384701",
+   "from": "equal",
+   "to": "unequal",
+   "computed": [
+    23.0,
+    27.0
+   ],
+   "stated": [
+    22.0,
+    27.0
+   ],
+   "path": "kb/program_requirements_college/shasta/records/32162.json"
+  },
+  {
+   "college": "Shasta College",
+   "control_number": "32755",
+   "extracted_run": "39006384701",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/shasta/records/32755.json"
+  },
+  {
+   "college": "Shasta College",
+   "control_number": "35606",
+   "extracted_run": "39006384701",
+   "from": "incomplete",
+   "to": "unequal",
+   "computed": [
+    36.0,
+    41.0
+   ],
+   "stated": [
+    28.0,
+    33.0
+   ],
+   "path": "kb/program_requirements_college/shasta/records/35606.json"
+  },
+  {
+   "college": "Skyline College",
+   "control_number": "39394",
+   "extracted_run": "39035209486",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/skyline/records/39394.json"
+  },
+  {
+   "college": "Skyline College",
+   "control_number": "44453",
+   "extracted_run": "39035209486",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/skyline/records/44453.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "06535",
+   "extracted_run": 39037377728,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    30.0,
+    32.0
+   ],
+   "stated": [
+    30.0,
+    32.0
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/06535.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "06547",
+   "extracted_run": 39037377728,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    34.0,
+    37.0
+   ],
+   "stated": [
+    34.0,
+    37.0
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/06547.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "06548",
+   "extracted_run": 39037377728,
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    26.0,
+    30.0
+   ],
+   "stated": [
+    26.0,
+    30.0
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/06548.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "31659",
+   "extracted_run": 39037377728,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/31659.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "32992",
+   "extracted_run": 39037377728,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    19.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/32992.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "33378",
+   "extracted_run": 39037377728,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    20.0
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/33378.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "36249",
+   "extracted_run": 39037377728,
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    30.0,
+    31.5
+   ],
+   "stated": [
+    30.0,
+    31.5
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/36249.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "42947",
+   "extracted_run": 39037377728,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    34.0,
+    37.0
+   ],
+   "stated": [
+    34.0,
+    37.0
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/42947.json"
+  },
+  {
+   "college": "Solano Community College",
+   "control_number": "43145",
+   "extracted_run": 39037377728,
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    20.0
+   ],
+   "stated": [
+    18.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/solano_community/records/43145.json"
+  },
+  {
+   "college": "Southwestern College",
+   "control_number": "17514",
+   "extracted_run": "38563578596",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    29.0,
+    66.0
+   ],
+   "stated": [
+    29.0,
+    66.0
+   ],
+   "path": "kb/program_requirements_college/southwestern/records/17514.json"
+  },
+  {
+   "college": "Southwestern College",
+   "control_number": "17894",
+   "extracted_run": "38563578596",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    36.0,
+    49.0
+   ],
+   "stated": [
+    36.0,
+    49.0
+   ],
+   "path": "kb/program_requirements_college/southwestern/records/17894.json"
+  },
+  {
+   "college": "Southwestern College",
+   "control_number": "38297",
+   "extracted_run": "38563578596",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    30.0,
+    36.0
+   ],
+   "stated": [
+    30.0,
+    36.0
+   ],
+   "path": "kb/program_requirements_college/southwestern/records/38297.json"
+  },
+  {
+   "college": "Taft College",
+   "control_number": "32259",
+   "extracted_run": 39126711681,
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    19.0,
+    21.0
+   ],
+   "stated": [
+    19.0,
+    21.0
+   ],
+   "path": "kb/program_requirements_college/taft/records/32259.json"
+  },
+  {
+   "college": "West Los Angeles College",
+   "control_number": "33024",
+   "extracted_run": "39536207109",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    18.0,
+    18.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "path": "kb/program_requirements_college/west_los_angeles/records/33024.json"
+  },
+  {
+   "college": "West Valley College",
+   "control_number": "06243",
+   "extracted_run": "39035604333",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    23.0,
+    30.0
+   ],
+   "stated": [
+    23.0,
+    30.0
+   ],
+   "path": "kb/program_requirements_college/west_valley/records/06243.json"
+  },
+  {
+   "college": "West Valley College",
+   "control_number": "43766",
+   "extracted_run": "39035604333",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    18.0,
+    23.0
+   ],
+   "stated": [
+    18.0,
+    23.0
+   ],
+   "path": "kb/program_requirements_college/west_valley/records/43766.json"
+  },
+  {
+   "college": "Woodland Community College",
+   "control_number": "32340",
+   "extracted_run": "39006340803",
+   "from": "incomplete",
+   "to": "equal",
+   "computed": [
+    19.0,
+    19.0
+   ],
+   "stated": [
+    19.0,
+    19.0
+   ],
+   "path": "kb/program_requirements_college/woodland_community/records/32340.json"
+  },
+  {
+   "college": "Yuba College",
+   "control_number": "32888",
+   "extracted_run": "39006517642",
+   "from": "unequal",
+   "to": "equal",
+   "computed": [
+    22.5,
+    24.5
+   ],
+   "stated": [
+    22.5,
+    24.5
+   ],
+   "path": "kb/program_requirements_college/yuba/records/32888.json"
+  }
+ ],
+ "apply": [
+  "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"unequal\"')\n  from (values\n  ('Chabot College', '09803', 38843479215),\n  ('Chabot College', '30828', 38843479215),\n  ('Chaffey College', '31891', 38242003226),\n  ('Long Beach City College', '33390', 38185403454),\n  ('Merritt College', '22011', 38935152199),\n  ('Palomar College', '05162', 38843467865),\n  ('Palomar College', '33884', 38843467865),\n  ('San Bernardino Valley College', '31886', 38748858322),\n  ('San Bernardino Valley College', '43049', 38748858322),\n  ('Santa Monica College', '33270', 39567439681),\n  ('Santa Monica College', '37452', 39567439681),\n  ('Shasta College', '32162', 39006384701)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'\nreturning r.college, r.control_number;",
+  "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"equal\"')\n  from (values\n  ('Bakersfield College', '32797', 38414480070),\n  ('Cerritos College', '35166', 38656800189),\n  ('Chaffey College', '32344', 38242003226),\n  ('College of Marin', '30893', 38984695817),\n  ('College of the Desert', '44563', 39056007346),\n  ('Cuesta College', '31885', 39063368678),\n  ('Irvine Valley College', '32116', 39539599944),\n  ('Irvine Valley College', '32875', 39539599944),\n  ('Las Positas College', '45954', 38984747530),\n  ('Los Angeles Mission College', '33215', 39054675770),\n  ('Los Angeles Pierce College', '35196', 39018421038),\n  ('Los Angeles Pierce College', '35975', 39006383070),\n  ('Los Angeles Valley College', '02964', 39006418426),\n  ('Moorpark College', '32056', 39600815599),\n  ('Mt. San Antonio College', '18239', 38059865531),\n  ('Mt. San Jacinto College', '39080', 39779328144),\n  ('Napa Valley College', '38071', 38748853261),\n  ('Pasadena City College', '37425', 39061730187),\n  ('Santa Barbara City College', '30719', 38670933359),\n  ('Shasta College', '32755', 39006384701),\n  ('Solano Community College', '06548', 39037377728),\n  ('Solano Community College', '36249', 39037377728),\n  ('Southwestern College', '17514', 38563578596),\n  ('Southwestern College', '17894', 38563578596),\n  ('Southwestern College', '38297', 38563578596),\n  ('Taft College', '32259', 39126711681),\n  ('West Los Angeles College', '33024', 39536207109),\n  ('Woodland Community College', '32340', 39006340803)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'incomplete'\nreturning r.college, r.control_number;",
+  "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"unequal\"')\n  from (values\n  ('Citrus College', '40436', 38675245799),\n  ('Irvine Valley College', '44743', 39539599944),\n  ('Irvine Valley College', '45863', 39539599944),\n  ('Reedley College', '09436', 38843477136),\n  ('Shasta College', '35606', 39006384701)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'incomplete'\nreturning r.college, r.control_number;",
+  "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"equal\"')\n  from (values\n  ('Antelope Valley College', '32859', 38979725726),\n  ('Antelope Valley College', '43419', 38979725726),\n  ('Antelope Valley College', '43845', 38979725726),\n  ('Antelope Valley College', '45885', 38979725726),\n  ('Barstow Community College', '33066', 39006332820),\n  ('Barstow Community College', '39436', 39006332820),\n  ('Barstow Community College', '41033', 39006332820),\n  ('Berkeley City College', '46177', 39891604919),\n  ('Cerritos College', '02248', 38656800189),\n  ('Cerritos College', '02249', 37961137169),\n  ('Cerritos College', '11396', 38656800189),\n  ('Cerritos College', '30550', 38656800189),\n  ('Cerritos College', '36260', 37961137169),\n  ('Cerritos College', '43486', 37961137169),\n  ('Chabot College', '32061', 38843479215),\n  ('Chabot College', '32736', 38843479215),\n  ('Chabot College', '40554', 38843479215),\n  ('Chaffey College', '32166', 38242003226),\n  ('City College of San Francisco', '36368', 39047128472),\n  ('City College of San Francisco', '38448', 39047128472),\n  ('City College of San Francisco', '39335', 39056434592),\n  ('City College of San Francisco', '40074', 39047128472),\n  ('City College of San Francisco', '41048', 39056434592),\n  ('College of Marin', '03389', 38984695817),\n  ('College of Marin', '07647', 38984695817),\n  ('College of Marin', '42125', 38984695817),\n  ('College of Marin', '42136', 38984695817),\n  ('College of Marin', '43473', 38984695817),\n  ('College of the Canyons', '36570', 39006378829),\n  ('College of the Canyons', '45268', 39006378829),\n  ('Compton College', '38424', 39006336111),\n  ('Contra Costa College', '45537', 38979730323),\n  ('Cuesta College', '33910', 39063368678),\n  ('Cuesta College', '36261', 39063368678),\n  ('Cuesta College', '36271', 39063368678),\n  ('Cuesta College', '36738', 39063368678),\n  ('Cypress College', '31002', 38748866826),\n  ('Cypress College', '32187', 38748866826),\n  ('Cypress College', '35020', 38748866826),\n  ('Cypress College', '43849', 38748866826),\n  ('East Los Angeles College', '45987', 39063389278),\n  ('Fresno City College', '35170', 38563582873),\n  ('Fullerton College', '03816', 38675136988),\n  ('Fullerton College', '03826', 38675136988),\n  ('Fullerton College', '03847', 38675136988),\n  ('Fullerton College', '03850', 38675136988),\n  ('Fullerton College', '03882', 38675136988),\n  ('Fullerton College', '10616', 38675136988),\n  ('Fullerton College', '21260', 38675136988),\n  ('Fullerton College', '36961', 38675136988),\n  ('Fullerton College', '44959', 38675136988),\n  ('Gavilan College', '17724', 38948144064),\n  ('Glendale Community College', '02572', 41040709338),\n  ('Glendale Community College', '21315', 41040709338),\n  ('Glendale Community College', '32178', 41012563119),\n  ('Glendale Community College', '32707', 41012563119),\n  ('Glendale Community College', '36270', 41040709338),\n  ('Glendale Community College', '39406', 41055650373),\n  ('Golden West College', '11434', 39688079435),\n  ('Golden West College', '32145', 38748828247),\n  ('Golden West College', '37636', 38748828247),\n  ('Imperial Valley College', '32596', 38935136329),\n  ('Irvine Valley College', '30627', 39539599944),\n  ('Irvine Valley College', '36638', 39539599944),\n  ('Irvine Valley College', '43027', 39539599944),\n  ('Laney College', '01182', 38935141023),\n  ('Laney College', '09031', 38935141023),\n  ('Laney College', '35121', 38935141023),\n  ('Las Positas College', '32508', 38984747530),\n  ('Las Positas College', '37486', 38984747530),\n  ('Las Positas College', '37487', 38984747530),\n  ('Las Positas College', '37504', 38984747530),\n  ('Las Positas College', '37506', 38984747530),\n  ('Las Positas College', '37530', 38984747530),\n  ('Las Positas College', '43735', 38984747530),\n  ('Long Beach City College', '31665', 38152016534),\n  ('Long Beach City College', '33668', 38152016534),\n  ('Los Angeles Harbor College', '45733', 39006381839),\n  ('Los Angeles Pierce College', '33088', 39018421038),\n  ('Los Angeles Pierce College', '33110', 39006383070),\n  ('Los Angeles Pierce College', '35462', 39018421038),\n  ('Los Angeles Valley College', '33615', 39006418426),\n  ('Los Medanos College', '42681', 39001267800),\n  ('Madera College', '39528', 38935148408),\n  ('Madera College', '39771', 38935148408),\n  ('Merced College', '33207', 39117489616),\n  ('Merced College', '35569', 39117489616),\n  ('Merced College', '45001', 39117489616),\n  ('Merritt College', '33357', 38935152199),\n  ('Merritt College', '33675', 38935152199),\n  ('Mission College', '36280', 39000023893),\n  ('Modesto Junior College', '32433', 38477845911),\n  ('Modesto Junior College', '42664', 38477845911),\n  ('Moorpark College', '22103', 38748862351),\n  ('Moorpark College', '31141', 38748862351),\n  ('Moorpark College', '31617', 38748862351),\n  ('Moorpark College', '33650', 38748862351),\n  ('Moorpark College', '33710', 39600815599),\n  ('Moorpark College', '36068', 38748862351),\n  ('Moorpark College', '40816', 38748862351),\n  ('Moorpark College', '45616', 38748862351),\n  ('Moreno Valley College', '46200', 38085493318),\n  ('Norco College', '33090', 38085495452),\n  ('Norco College', '35853', 38085495452),\n  ('Ohlone College', '44254', 39063337090),\n  ('Oxnard College', '18406', 38842203500),\n  ('Oxnard College', '18408', 38842203500),\n  ('Palomar College', '05156', 38843467865),\n  ('Palomar College', '19783', 38843467865),\n  ('Palomar College', '22503', 38843467865),\n  ('Palomar College', '37197', 38843467865),\n  ('Palomar College', '44461', 38843467865),\n  ('Porterville College', '45313', 39046786897),\n  ('Reedley College', '15572', 39616074283),\n  ('Reedley College', '30831', 39616074283),\n  ('Reedley College', '33596', 39616074283),\n  ('Reedley College', '40758', 39616074283),\n  ('Reedley College', '41848', 38843477136),\n  ('Reedley College', '41849', 38843477136),\n  ('Reedley College', '41854', 38843477136),\n  ('Reedley College', '41856', 38843477136),\n  ('Reedley College', '42456', 38843477136),\n  ('Rio Hondo College', '03211', 38843465712),\n  ('Rio Hondo College', '15148', 38843465712),\n  ('Rio Hondo College', '37056', 38843465712),\n  ('Saddleback College', '09826', 38843470509),\n  ('Saddleback College', '30712', 38843470509),\n  ('Saddleback College', '32167', 38843470509),\n  ('San Diego City College', '31972', 38252422845),\n  ('San Diego City College', '36118', 38252422845),\n  ('San Diego City College', '43836', 38252422845),\n  ('San Diego Mesa College', '31843', 38282023973),\n  ('San Diego Mesa College', '35656', 38282023973),\n  ('San Diego Miramar College', '31926', 38275241459),\n  ('San Diego Miramar College', '35571', 38275241459),\n  ('Santa Ana College', '04236', 38843461766),\n  ('Santa Ana College', '04260', 38843461766),\n  ('Santa Ana College', '08709', 38843461766),\n  ('Santa Ana College', '32148', 38843461766),\n  ('Santa Ana College', '32255', 38843461766),\n  ('Santa Ana College', '33057', 38843461766),\n  ('Santa Ana College', '33169', 38843461766),\n  ('Santa Ana College', '33220', 38843461766),\n  ('Santa Ana College', '35698', 38843461766),\n  ('Santa Ana College', '39987', 38843461766),\n  ('Santa Barbara City College', '31283', 38670933359),\n  ('Santa Monica College', '03273', 39567439681),\n  ('Santa Monica College', '42454', 39567439681),\n  ('Shasta College', '31988', 39006384701),\n  ('Skyline College', '39394', 39035209486),\n  ('Skyline College', '44453', 39035209486),\n  ('Solano Community College', '06535', 39037377728),\n  ('Solano Community College', '06547', 39037377728),\n  ('Solano Community College', '31659', 39037377728),\n  ('Solano Community College', '32992', 39037377728),\n  ('Solano Community College', '33378', 39037377728),\n  ('Solano Community College', '42947', 39037377728),\n  ('Solano Community College', '43145', 39037377728),\n  ('West Valley College', '06243', 39035604333),\n  ('West Valley College', '43766', 39035604333),\n  ('Yuba College', '32888', 39006517642)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'\nreturning r.college, r.control_number;"
+ ],
+ "rollback": [
+  "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"equal\"')\n  from (values\n  ('Chabot College', '09803', 38843479215),\n  ('Chabot College', '30828', 38843479215),\n  ('Chaffey College', '31891', 38242003226),\n  ('Long Beach City College', '33390', 38185403454),\n  ('Merritt College', '22011', 38935152199),\n  ('Palomar College', '05162', 38843467865),\n  ('Palomar College', '33884', 38843467865),\n  ('San Bernardino Valley College', '31886', 38748858322),\n  ('San Bernardino Valley College', '43049', 38748858322),\n  ('Santa Monica College', '33270', 39567439681),\n  ('Santa Monica College', '37452', 39567439681),\n  ('Shasta College', '32162', 39006384701)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'\nreturning r.college, r.control_number;",
+  "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"incomplete\"')\n  from (values\n  ('Bakersfield College', '32797', 38414480070),\n  ('Cerritos College', '35166', 38656800189),\n  ('Chaffey College', '32344', 38242003226),\n  ('College of Marin', '30893', 38984695817),\n  ('College of the Desert', '44563', 39056007346),\n  ('Cuesta College', '31885', 39063368678),\n  ('Irvine Valley College', '32116', 39539599944),\n  ('Irvine Valley College', '32875', 39539599944),\n  ('Las Positas College', '45954', 38984747530),\n  ('Los Angeles Mission College', '33215', 39054675770),\n  ('Los Angeles Pierce College', '35196', 39018421038),\n  ('Los Angeles Pierce College', '35975', 39006383070),\n  ('Los Angeles Valley College', '02964', 39006418426),\n  ('Moorpark College', '32056', 39600815599),\n  ('Mt. San Antonio College', '18239', 38059865531),\n  ('Mt. San Jacinto College', '39080', 39779328144),\n  ('Napa Valley College', '38071', 38748853261),\n  ('Pasadena City College', '37425', 39061730187),\n  ('Santa Barbara City College', '30719', 38670933359),\n  ('Shasta College', '32755', 39006384701),\n  ('Solano Community College', '06548', 39037377728),\n  ('Solano Community College', '36249', 39037377728),\n  ('Southwestern College', '17514', 38563578596),\n  ('Southwestern College', '17894', 38563578596),\n  ('Southwestern College', '38297', 38563578596),\n  ('Taft College', '32259', 39126711681),\n  ('West Los Angeles College', '33024', 39536207109),\n  ('Woodland Community College', '32340', 39006340803)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'\nreturning r.college, r.control_number;",
+  "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"incomplete\"')\n  from (values\n  ('Citrus College', '40436', 38675245799),\n  ('Irvine Valley College', '44743', 39539599944),\n  ('Irvine Valley College', '45863', 39539599944),\n  ('Reedley College', '09436', 38843477136),\n  ('Shasta College', '35606', 39006384701)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'unequal'\nreturning r.college, r.control_number;",
+  "update public.program_requirement_records r\n   set checks = jsonb_set(r.checks, '{arithmetic}', '\"unequal\"')\n  from (values\n  ('Antelope Valley College', '32859', 38979725726),\n  ('Antelope Valley College', '43419', 38979725726),\n  ('Antelope Valley College', '43845', 38979725726),\n  ('Antelope Valley College', '45885', 38979725726),\n  ('Barstow Community College', '33066', 39006332820),\n  ('Barstow Community College', '39436', 39006332820),\n  ('Barstow Community College', '41033', 39006332820),\n  ('Berkeley City College', '46177', 39891604919),\n  ('Cerritos College', '02248', 38656800189),\n  ('Cerritos College', '02249', 37961137169),\n  ('Cerritos College', '11396', 38656800189),\n  ('Cerritos College', '30550', 38656800189),\n  ('Cerritos College', '36260', 37961137169),\n  ('Cerritos College', '43486', 37961137169),\n  ('Chabot College', '32061', 38843479215),\n  ('Chabot College', '32736', 38843479215),\n  ('Chabot College', '40554', 38843479215),\n  ('Chaffey College', '32166', 38242003226),\n  ('City College of San Francisco', '36368', 39047128472),\n  ('City College of San Francisco', '38448', 39047128472),\n  ('City College of San Francisco', '39335', 39056434592),\n  ('City College of San Francisco', '40074', 39047128472),\n  ('City College of San Francisco', '41048', 39056434592),\n  ('College of Marin', '03389', 38984695817),\n  ('College of Marin', '07647', 38984695817),\n  ('College of Marin', '42125', 38984695817),\n  ('College of Marin', '42136', 38984695817),\n  ('College of Marin', '43473', 38984695817),\n  ('College of the Canyons', '36570', 39006378829),\n  ('College of the Canyons', '45268', 39006378829),\n  ('Compton College', '38424', 39006336111),\n  ('Contra Costa College', '45537', 38979730323),\n  ('Cuesta College', '33910', 39063368678),\n  ('Cuesta College', '36261', 39063368678),\n  ('Cuesta College', '36271', 39063368678),\n  ('Cuesta College', '36738', 39063368678),\n  ('Cypress College', '31002', 38748866826),\n  ('Cypress College', '32187', 38748866826),\n  ('Cypress College', '35020', 38748866826),\n  ('Cypress College', '43849', 38748866826),\n  ('East Los Angeles College', '45987', 39063389278),\n  ('Fresno City College', '35170', 38563582873),\n  ('Fullerton College', '03816', 38675136988),\n  ('Fullerton College', '03826', 38675136988),\n  ('Fullerton College', '03847', 38675136988),\n  ('Fullerton College', '03850', 38675136988),\n  ('Fullerton College', '03882', 38675136988),\n  ('Fullerton College', '10616', 38675136988),\n  ('Fullerton College', '21260', 38675136988),\n  ('Fullerton College', '36961', 38675136988),\n  ('Fullerton College', '44959', 38675136988),\n  ('Gavilan College', '17724', 38948144064),\n  ('Glendale Community College', '02572', 41040709338),\n  ('Glendale Community College', '21315', 41040709338),\n  ('Glendale Community College', '32178', 41012563119),\n  ('Glendale Community College', '32707', 41012563119),\n  ('Glendale Community College', '36270', 41040709338),\n  ('Glendale Community College', '39406', 41055650373),\n  ('Golden West College', '11434', 39688079435),\n  ('Golden West College', '32145', 38748828247),\n  ('Golden West College', '37636', 38748828247),\n  ('Imperial Valley College', '32596', 38935136329),\n  ('Irvine Valley College', '30627', 39539599944),\n  ('Irvine Valley College', '36638', 39539599944),\n  ('Irvine Valley College', '43027', 39539599944),\n  ('Laney College', '01182', 38935141023),\n  ('Laney College', '09031', 38935141023),\n  ('Laney College', '35121', 38935141023),\n  ('Las Positas College', '32508', 38984747530),\n  ('Las Positas College', '37486', 38984747530),\n  ('Las Positas College', '37487', 38984747530),\n  ('Las Positas College', '37504', 38984747530),\n  ('Las Positas College', '37506', 38984747530),\n  ('Las Positas College', '37530', 38984747530),\n  ('Las Positas College', '43735', 38984747530),\n  ('Long Beach City College', '31665', 38152016534),\n  ('Long Beach City College', '33668', 38152016534),\n  ('Los Angeles Harbor College', '45733', 39006381839),\n  ('Los Angeles Pierce College', '33088', 39018421038),\n  ('Los Angeles Pierce College', '33110', 39006383070),\n  ('Los Angeles Pierce College', '35462', 39018421038),\n  ('Los Angeles Valley College', '33615', 39006418426),\n  ('Los Medanos College', '42681', 39001267800),\n  ('Madera College', '39528', 38935148408),\n  ('Madera College', '39771', 38935148408),\n  ('Merced College', '33207', 39117489616),\n  ('Merced College', '35569', 39117489616),\n  ('Merced College', '45001', 39117489616),\n  ('Merritt College', '33357', 38935152199),\n  ('Merritt College', '33675', 38935152199),\n  ('Mission College', '36280', 39000023893),\n  ('Modesto Junior College', '32433', 38477845911),\n  ('Modesto Junior College', '42664', 38477845911),\n  ('Moorpark College', '22103', 38748862351),\n  ('Moorpark College', '31141', 38748862351),\n  ('Moorpark College', '31617', 38748862351),\n  ('Moorpark College', '33650', 38748862351),\n  ('Moorpark College', '33710', 39600815599),\n  ('Moorpark College', '36068', 38748862351),\n  ('Moorpark College', '40816', 38748862351),\n  ('Moorpark College', '45616', 38748862351),\n  ('Moreno Valley College', '46200', 38085493318),\n  ('Norco College', '33090', 38085495452),\n  ('Norco College', '35853', 38085495452),\n  ('Ohlone College', '44254', 39063337090),\n  ('Oxnard College', '18406', 38842203500),\n  ('Oxnard College', '18408', 38842203500),\n  ('Palomar College', '05156', 38843467865),\n  ('Palomar College', '19783', 38843467865),\n  ('Palomar College', '22503', 38843467865),\n  ('Palomar College', '37197', 38843467865),\n  ('Palomar College', '44461', 38843467865),\n  ('Porterville College', '45313', 39046786897),\n  ('Reedley College', '15572', 39616074283),\n  ('Reedley College', '30831', 39616074283),\n  ('Reedley College', '33596', 39616074283),\n  ('Reedley College', '40758', 39616074283),\n  ('Reedley College', '41848', 38843477136),\n  ('Reedley College', '41849', 38843477136),\n  ('Reedley College', '41854', 38843477136),\n  ('Reedley College', '41856', 38843477136),\n  ('Reedley College', '42456', 38843477136),\n  ('Rio Hondo College', '03211', 38843465712),\n  ('Rio Hondo College', '15148', 38843465712),\n  ('Rio Hondo College', '37056', 38843465712),\n  ('Saddleback College', '09826', 38843470509),\n  ('Saddleback College', '30712', 38843470509),\n  ('Saddleback College', '32167', 38843470509),\n  ('San Diego City College', '31972', 38252422845),\n  ('San Diego City College', '36118', 38252422845),\n  ('San Diego City College', '43836', 38252422845),\n  ('San Diego Mesa College', '31843', 38282023973),\n  ('San Diego Mesa College', '35656', 38282023973),\n  ('San Diego Miramar College', '31926', 38275241459),\n  ('San Diego Miramar College', '35571', 38275241459),\n  ('Santa Ana College', '04236', 38843461766),\n  ('Santa Ana College', '04260', 38843461766),\n  ('Santa Ana College', '08709', 38843461766),\n  ('Santa Ana College', '32148', 38843461766),\n  ('Santa Ana College', '32255', 38843461766),\n  ('Santa Ana College', '33057', 38843461766),\n  ('Santa Ana College', '33169', 38843461766),\n  ('Santa Ana College', '33220', 38843461766),\n  ('Santa Ana College', '35698', 38843461766),\n  ('Santa Ana College', '39987', 38843461766),\n  ('Santa Barbara City College', '31283', 38670933359),\n  ('Santa Monica College', '03273', 39567439681),\n  ('Santa Monica College', '42454', 39567439681),\n  ('Shasta College', '31988', 39006384701),\n  ('Skyline College', '39394', 39035209486),\n  ('Skyline College', '44453', 39035209486),\n  ('Solano Community College', '06535', 39037377728),\n  ('Solano Community College', '06547', 39037377728),\n  ('Solano Community College', '31659', 39037377728),\n  ('Solano Community College', '32992', 39037377728),\n  ('Solano Community College', '33378', 39037377728),\n  ('Solano Community College', '42947', 39037377728),\n  ('Solano Community College', '43145', 39037377728),\n  ('West Valley College', '06243', 39035604333),\n  ('West Valley College', '43766', 39035604333),\n  ('Yuba College', '32888', 39006517642)) as v(college, control_number, extracted_run)\n where r.college = v.college and r.control_number = v.control_number\n   and r.extracted_run = v.extracted_run and r.checks->>'arithmetic' = 'equal'\nreturning r.college, r.control_number;"
+ ],
+ "apply_one": "with u0 as (update public.program_requirement_records r set checks = jsonb_set(r.checks,'{arithmetic}','\"unequal\"') from (values ('Chabot College','09803',38843479215),('Chabot College','30828',38843479215),('Chaffey College','31891',38242003226),('Long Beach City College','33390',38185403454),('Merritt College','22011',38935152199),('Palomar College','05162',38843467865),('Palomar College','33884',38843467865),('San Bernardino Valley College','31886',38748858322),('San Bernardino Valley College','43049',38748858322),('Santa Monica College','33270',39567439681),('Santa Monica College','37452',39567439681),('Shasta College','32162',39006384701)) as v(college,control_number,extracted_run) where r.college=v.college and r.control_number=v.control_number and r.extracted_run=v.extracted_run and r.checks->>'arithmetic'='equal' returning 1),\nu1 as (update public.program_requirement_records r set checks = jsonb_set(r.checks,'{arithmetic}','\"equal\"') from (values ('Bakersfield College','32797',38414480070),('Cerritos College','35166',38656800189),('Chaffey College','32344',38242003226),('College of Marin','30893',38984695817),('College of the Desert','44563',39056007346),('Cuesta College','31885',39063368678),('Irvine Valley College','32116',39539599944),('Irvine Valley College','32875',39539599944),('Las Positas College','45954',38984747530),('Los Angeles Mission College','33215',39054675770),('Los Angeles Pierce College','35196',39018421038),('Los Angeles Pierce College','35975',39006383070),('Los Angeles Valley College','02964',39006418426),('Moorpark College','32056',39600815599),('Mt. San Antonio College','18239',38059865531),('Mt. San Jacinto College','39080',39779328144),('Napa Valley College','38071',38748853261),('Pasadena City College','37425',39061730187),('Santa Barbara City College','30719',38670933359),('Shasta College','32755',39006384701),('Solano Community College','06548',39037377728),('Solano Community College','36249',39037377728),('Southwestern College','17514',38563578596),('Southwestern College','17894',38563578596),('Southwestern College','38297',38563578596),('Taft College','32259',39126711681),('West Los Angeles College','33024',39536207109),('Woodland Community College','32340',39006340803)) as v(college,control_number,extracted_run) where r.college=v.college and r.control_number=v.control_number and r.extracted_run=v.extracted_run and r.checks->>'arithmetic'='incomplete' returning 1),\nu2 as (update public.program_requirement_records r set checks = jsonb_set(r.checks,'{arithmetic}','\"unequal\"') from (values ('Citrus College','40436',38675245799),('Irvine Valley College','44743',39539599944),('Irvine Valley College','45863',39539599944),('Reedley College','09436',38843477136),('Shasta College','35606',39006384701)) as v(college,control_number,extracted_run) where r.college=v.college and r.control_number=v.control_number and r.extracted_run=v.extracted_run and r.checks->>'arithmetic'='incomplete' returning 1),\nu3 as (update public.program_requirement_records r set checks = jsonb_set(r.checks,'{arithmetic}','\"equal\"') from (values ('Antelope Valley College','32859',38979725726),('Antelope Valley College','43419',38979725726),('Antelope Valley College','43845',38979725726),('Antelope Valley College','45885',38979725726),('Barstow Community College','33066',39006332820),('Barstow Community College','39436',39006332820),('Barstow Community College','41033',39006332820),('Berkeley City College','46177',39891604919),('Cerritos College','02248',38656800189),('Cerritos College','02249',37961137169),('Cerritos College','11396',38656800189),('Cerritos College','30550',38656800189),('Cerritos College','36260',37961137169),('Cerritos College','43486',37961137169),('Chabot College','32061',38843479215),('Chabot College','32736',38843479215),('Chabot College','40554',38843479215),('Chaffey College','32166',38242003226),('City College of San Francisco','36368',39047128472),('City College of San Francisco','38448',39047128472),('City College of San Francisco','39335',39056434592),('City College of San Francisco','40074',39047128472),('City College of San Francisco','41048',39056434592),('College of Marin','03389',38984695817),('College of Marin','07647',38984695817),('College of Marin','42125',38984695817),('College of Marin','42136',38984695817),('College of Marin','43473',38984695817),('College of the Canyons','36570',39006378829),('College of the Canyons','45268',39006378829),('Compton College','38424',39006336111),('Contra Costa College','45537',38979730323),('Cuesta College','33910',39063368678),('Cuesta College','36261',39063368678),('Cuesta College','36271',39063368678),('Cuesta College','36738',39063368678),('Cypress College','31002',38748866826),('Cypress College','32187',38748866826),('Cypress College','35020',38748866826),('Cypress College','43849',38748866826),('East Los Angeles College','45987',39063389278),('Fresno City College','35170',38563582873),('Fullerton College','03816',38675136988),('Fullerton College','03826',38675136988),('Fullerton College','03847',38675136988),('Fullerton College','03850',38675136988),('Fullerton College','03882',38675136988),('Fullerton College','10616',38675136988),('Fullerton College','21260',38675136988),('Fullerton College','36961',38675136988),('Fullerton College','44959',38675136988),('Gavilan College','17724',38948144064),('Glendale Community College','02572',41040709338),('Glendale Community College','21315',41040709338),('Glendale Community College','32178',41012563119),('Glendale Community College','32707',41012563119),('Glendale Community College','36270',41040709338),('Glendale Community College','39406',41055650373),('Golden West College','11434',39688079435),('Golden West College','32145',38748828247),('Golden West College','37636',38748828247),('Imperial Valley College','32596',38935136329),('Irvine Valley College','30627',39539599944),('Irvine Valley College','36638',39539599944),('Irvine Valley College','43027',39539599944),('Laney College','01182',38935141023),('Laney College','09031',38935141023),('Laney College','35121',38935141023),('Las Positas College','32508',38984747530),('Las Positas College','37486',38984747530),('Las Positas College','37487',38984747530),('Las Positas College','37504',38984747530),('Las Positas College','37506',38984747530),('Las Positas College','37530',38984747530),('Las Positas College','43735',38984747530),('Long Beach City College','31665',38152016534),('Long Beach City College','33668',38152016534),('Los Angeles Harbor College','45733',39006381839),('Los Angeles Pierce College','33088',39018421038),('Los Angeles Pierce College','33110',39006383070),('Los Angeles Pierce College','35462',39018421038),('Los Angeles Valley College','33615',39006418426),('Los Medanos College','42681',39001267800),('Madera College','39528',38935148408),('Madera College','39771',38935148408),('Merced College','33207',39117489616),('Merced College','35569',39117489616),('Merced College','45001',39117489616),('Merritt College','33357',38935152199),('Merritt College','33675',38935152199),('Mission College','36280',39000023893),('Modesto Junior College','32433',38477845911),('Modesto Junior College','42664',38477845911),('Moorpark College','22103',38748862351),('Moorpark College','31141',38748862351),('Moorpark College','31617',38748862351),('Moorpark College','33650',38748862351),('Moorpark College','33710',39600815599),('Moorpark College','36068',38748862351),('Moorpark College','40816',38748862351),('Moorpark College','45616',38748862351),('Moreno Valley College','46200',38085493318),('Norco College','33090',38085495452),('Norco College','35853',38085495452),('Ohlone College','44254',39063337090),('Oxnard College','18406',38842203500),('Oxnard College','18408',38842203500),('Palomar College','05156',38843467865),('Palomar College','19783',38843467865),('Palomar College','22503',38843467865),('Palomar College','37197',38843467865),('Palomar College','44461',38843467865),('Porterville College','45313',39046786897),('Reedley College','15572',39616074283),('Reedley College','30831',39616074283),('Reedley College','33596',39616074283),('Reedley College','40758',39616074283),('Reedley College','41848',38843477136),('Reedley College','41849',38843477136),('Reedley College','41854',38843477136),('Reedley College','41856',38843477136),('Reedley College','42456',38843477136),('Rio Hondo College','03211',38843465712),('Rio Hondo College','15148',38843465712),('Rio Hondo College','37056',38843465712),('Saddleback College','09826',38843470509),('Saddleback College','30712',38843470509),('Saddleback College','32167',38843470509),('San Diego City College','31972',38252422845),('San Diego City College','36118',38252422845),('San Diego City College','43836',38252422845),('San Diego Mesa College','31843',38282023973),('San Diego Mesa College','35656',38282023973),('San Diego Miramar College','31926',38275241459),('San Diego Miramar College','35571',38275241459),('Santa Ana College','04236',38843461766),('Santa Ana College','04260',38843461766),('Santa Ana College','08709',38843461766),('Santa Ana College','32148',38843461766),('Santa Ana College','32255',38843461766),('Santa Ana College','33057',38843461766),('Santa Ana College','33169',38843461766),('Santa Ana College','33220',38843461766),('Santa Ana College','35698',38843461766),('Santa Ana College','39987',38843461766),('Santa Barbara City College','31283',38670933359),('Santa Monica College','03273',39567439681),('Santa Monica College','42454',39567439681),('Shasta College','31988',39006384701),('Skyline College','39394',39035209486),('Skyline College','44453',39035209486),('Solano Community College','06535',39037377728),('Solano Community College','06547',39037377728),('Solano Community College','31659',39037377728),('Solano Community College','32992',39037377728),('Solano Community College','33378',39037377728),('Solano Community College','42947',39037377728),('Solano Community College','43145',39037377728),('West Valley College','06243',39035604333),('West Valley College','43766',39035604333),('Yuba College','32888',39006517642)) as v(college,control_number,extracted_run) where r.college=v.college and r.control_number=v.control_number and r.extracted_run=v.extracted_run and r.checks->>'arithmetic'='unequal' returning 1)\nselect (select count(*) from u0) as \"equal->unequal\", (select count(*) from u1) as \"incomplete->equal\", (select count(*) from u2) as \"incomplete->unequal\", (select count(*) from u3) as \"unequal->equal\";",
+ "rollback_one": "with u0 as (update public.program_requirement_records r set checks = jsonb_set(r.checks,'{arithmetic}','\"equal\"') from (values ('Chabot College','09803',38843479215),('Chabot College','30828',38843479215),('Chaffey College','31891',38242003226),('Long Beach City College','33390',38185403454),('Merritt College','22011',38935152199),('Palomar College','05162',38843467865),('Palomar College','33884',38843467865),('San Bernardino Valley College','31886',38748858322),('San Bernardino Valley College','43049',38748858322),('Santa Monica College','33270',39567439681),('Santa Monica College','37452',39567439681),('Shasta College','32162',39006384701)) as v(college,control_number,extracted_run) where r.college=v.college and r.control_number=v.control_number and r.extracted_run=v.extracted_run and r.checks->>'arithmetic'='unequal' returning 1),\nu1 as (update public.program_requirement_records r set checks = jsonb_set(r.checks,'{arithmetic}','\"incomplete\"') from (values ('Bakersfield College','32797',38414480070),('Cerritos College','35166',38656800189),('Chaffey College','32344',38242003226),('College of Marin','30893',38984695817),('College of the Desert','44563',39056007346),('Cuesta College','31885',39063368678),('Irvine Valley College','32116',39539599944),('Irvine Valley College','32875',39539599944),('Las Positas College','45954',38984747530),('Los Angeles Mission College','33215',39054675770),('Los Angeles Pierce College','35196',39018421038),('Los Angeles Pierce College','35975',39006383070),('Los Angeles Valley College','02964',39006418426),('Moorpark College','32056',39600815599),('Mt. San Antonio College','18239',38059865531),('Mt. San Jacinto College','39080',39779328144),('Napa Valley College','38071',38748853261),('Pasadena City College','37425',39061730187),('Santa Barbara City College','30719',38670933359),('Shasta College','32755',39006384701),('Solano Community College','06548',39037377728),('Solano Community College','36249',39037377728),('Southwestern College','17514',38563578596),('Southwestern College','17894',38563578596),('Southwestern College','38297',38563578596),('Taft College','32259',39126711681),('West Los Angeles College','33024',39536207109),('Woodland Community College','32340',39006340803)) as v(college,control_number,extracted_run) where r.college=v.college and r.control_number=v.control_number and r.extracted_run=v.extracted_run and r.checks->>'arithmetic'='equal' returning 1),\nu2 as (update public.program_requirement_records r set checks = jsonb_set(r.checks,'{arithmetic}','\"incomplete\"') from (values ('Citrus College','40436',38675245799),('Irvine Valley College','44743',39539599944),('Irvine Valley College','45863',39539599944),('Reedley College','09436',38843477136),('Shasta College','35606',39006384701)) as v(college,control_number,extracted_run) where r.college=v.college and r.control_number=v.control_number and r.extracted_run=v.extracted_run and r.checks->>'arithmetic'='unequal' returning 1),\nu3 as (update public.program_requirement_records r set checks = jsonb_set(r.checks,'{arithmetic}','\"unequal\"') from (values ('Antelope Valley College','32859',38979725726),('Antelope Valley College','43419',38979725726),('Antelope Valley College','43845',38979725726),('Antelope Valley College','45885',38979725726),('Barstow Community College','33066',39006332820),('Barstow Community College','39436',39006332820),('Barstow Community College','41033',39006332820),('Berkeley City College','46177',39891604919),('Cerritos College','02248',38656800189),('Cerritos College','02249',37961137169),('Cerritos College','11396',38656800189),('Cerritos College','30550',38656800189),('Cerritos College','36260',37961137169),('Cerritos College','43486',37961137169),('Chabot College','32061',38843479215),('Chabot College','32736',38843479215),('Chabot College','40554',38843479215),('Chaffey College','32166',38242003226),('City College of San Francisco','36368',39047128472),('City College of San Francisco','38448',39047128472),('City College of San Francisco','39335',39056434592),('City College of San Francisco','40074',39047128472),('City College of San Francisco','41048',39056434592),('College of Marin','03389',38984695817),('College of Marin','07647',38984695817),('College of Marin','42125',38984695817),('College of Marin','42136',38984695817),('College of Marin','43473',38984695817),('College of the Canyons','36570',39006378829),('College of the Canyons','45268',39006378829),('Compton College','38424',39006336111),('Contra Costa College','45537',38979730323),('Cuesta College','33910',39063368678),('Cuesta College','36261',39063368678),('Cuesta College','36271',39063368678),('Cuesta College','36738',39063368678),('Cypress College','31002',38748866826),('Cypress College','32187',38748866826),('Cypress College','35020',38748866826),('Cypress College','43849',38748866826),('East Los Angeles College','45987',39063389278),('Fresno City College','35170',38563582873),('Fullerton College','03816',38675136988),('Fullerton College','03826',38675136988),('Fullerton College','03847',38675136988),('Fullerton College','03850',38675136988),('Fullerton College','03882',38675136988),('Fullerton College','10616',38675136988),('Fullerton College','21260',38675136988),('Fullerton College','36961',38675136988),('Fullerton College','44959',38675136988),('Gavilan College','17724',38948144064),('Glendale Community College','02572',41040709338),('Glendale Community College','21315',41040709338),('Glendale Community College','32178',41012563119),('Glendale Community College','32707',41012563119),('Glendale Community College','36270',41040709338),('Glendale Community College','39406',41055650373),('Golden West College','11434',39688079435),('Golden West College','32145',38748828247),('Golden West College','37636',38748828247),('Imperial Valley College','32596',38935136329),('Irvine Valley College','30627',39539599944),('Irvine Valley College','36638',39539599944),('Irvine Valley College','43027',39539599944),('Laney College','01182',38935141023),('Laney College','09031',38935141023),('Laney College','35121',38935141023),('Las Positas College','32508',38984747530),('Las Positas College','37486',38984747530),('Las Positas College','37487',38984747530),('Las Positas College','37504',38984747530),('Las Positas College','37506',38984747530),('Las Positas College','37530',38984747530),('Las Positas College','43735',38984747530),('Long Beach City College','31665',38152016534),('Long Beach City College','33668',38152016534),('Los Angeles Harbor College','45733',39006381839),('Los Angeles Pierce College','33088',39018421038),('Los Angeles Pierce College','33110',39006383070),('Los Angeles Pierce College','35462',39018421038),('Los Angeles Valley College','33615',39006418426),('Los Medanos College','42681',39001267800),('Madera College','39528',38935148408),('Madera College','39771',38935148408),('Merced College','33207',39117489616),('Merced College','35569',39117489616),('Merced College','45001',39117489616),('Merritt College','33357',38935152199),('Merritt College','33675',38935152199),('Mission College','36280',39000023893),('Modesto Junior College','32433',38477845911),('Modesto Junior College','42664',38477845911),('Moorpark College','22103',38748862351),('Moorpark College','31141',38748862351),('Moorpark College','31617',38748862351),('Moorpark College','33650',38748862351),('Moorpark College','33710',39600815599),('Moorpark College','36068',38748862351),('Moorpark College','40816',38748862351),('Moorpark College','45616',38748862351),('Moreno Valley College','46200',38085493318),('Norco College','33090',38085495452),('Norco College','35853',38085495452),('Ohlone College','44254',39063337090),('Oxnard College','18406',38842203500),('Oxnard College','18408',38842203500),('Palomar College','05156',38843467865),('Palomar College','19783',38843467865),('Palomar College','22503',38843467865),('Palomar College','37197',38843467865),('Palomar College','44461',38843467865),('Porterville College','45313',39046786897),('Reedley College','15572',39616074283),('Reedley College','30831',39616074283),('Reedley College','33596',39616074283),('Reedley College','40758',39616074283),('Reedley College','41848',38843477136),('Reedley College','41849',38843477136),('Reedley College','41854',38843477136),('Reedley College','41856',38843477136),('Reedley College','42456',38843477136),('Rio Hondo College','03211',38843465712),('Rio Hondo College','15148',38843465712),('Rio Hondo College','37056',38843465712),('Saddleback College','09826',38843470509),('Saddleback College','30712',38843470509),('Saddleback College','32167',38843470509),('San Diego City College','31972',38252422845),('San Diego City College','36118',38252422845),('San Diego City College','43836',38252422845),('San Diego Mesa College','31843',38282023973),('San Diego Mesa College','35656',38282023973),('San Diego Miramar College','31926',38275241459),('San Diego Miramar College','35571',38275241459),('Santa Ana College','04236',38843461766),('Santa Ana College','04260',38843461766),('Santa Ana College','08709',38843461766),('Santa Ana College','32148',38843461766),('Santa Ana College','32255',38843461766),('Santa Ana College','33057',38843461766),('Santa Ana College','33169',38843461766),('Santa Ana College','33220',38843461766),('Santa Ana College','35698',38843461766),('Santa Ana College','39987',38843461766),('Santa Barbara City College','31283',38670933359),('Santa Monica College','03273',39567439681),('Santa Monica College','42454',39567439681),('Shasta College','31988',39006384701),('Skyline College','39394',39035209486),('Skyline College','44453',39035209486),('Solano Community College','06535',39037377728),('Solano Community College','06547',39037377728),('Solano Community College','31659',39037377728),('Solano Community College','32992',39037377728),('Solano Community College','33378',39037377728),('Solano Community College','42947',39037377728),('Solano Community College','43145',39037377728),('West Valley College','06243',39035604333),('West Valley College','43766',39035604333),('Yuba College','32888',39006517642)) as v(college,control_number,extracted_run) where r.college=v.college and r.control_number=v.control_number and r.extracted_run=v.extracted_run and r.checks->>'arithmetic'='equal' returning 1)\nselect (select count(*) from u0) as \"unequal->equal\", (select count(*) from u1) as \"equal->incomplete\", (select count(*) from u2) as \"unequal->incomplete\", (select count(*) from u3) as \"equal->unequal\";",
+ "applied": null
+}

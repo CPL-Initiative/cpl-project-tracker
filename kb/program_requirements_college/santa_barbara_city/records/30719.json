@@ -60,20 +60,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    17.0,
-    21.0
+    20.0,
+    26.0
    ],
    "stated": [
     20.0,
     26.0
    ],
    "against": "program",
-   "why": [
-    "'List C - Complete one course from List A or List B not already used.' chooses 1 courses but 0 carry units"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -100,7 +99,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

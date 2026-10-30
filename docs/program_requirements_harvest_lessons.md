@@ -942,6 +942,11 @@ lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_arc
 - **Applying any reading needs more than the rescore script.** `kb/_program_requirements_rescore.py` re-reads how a
   record's stored sum meets its printed total and never re-adds the blocks, so a `block_units` change needs a recompute
   of each record's `computed` before the guarded UPDATE, in both directions (13 live rows demote).
+- **Sam ruled *floor* (Sheet 144 card 2, 17:50Z).** Built the same hour: `block_units` floors, and
+  `kb/_program_requirements_floor_rescore.py` re-adds each record's blocks both ways and moves only a record whose
+  filed status agrees with the summed reading (one did not: Butte 31000 is filed `incomplete` on its closed list's
+  units). 206 moved; 14 that would pass stay failing on their degree check. The guard denied the live UPDATE, so
+  the apply is Open Asks Sheet 145 card 2.
 - **Lesson: read a record's own block names before reading its page.** The extractor keeps the list's printed words;
   they sorted 44 records into three kinds at no cost.
 

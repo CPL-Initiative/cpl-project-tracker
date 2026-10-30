@@ -68,19 +68,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    13.0,
-    15.0
+    19.0,
+    22.0
    ],
    "stated": [
     19.0,
     22.0
    ],
-   "why": [
-    "'Plus two courses (6-7 units) from any of the above areas not already taken' chooses 2 courses but 0 carry units"
-   ]
+   "against": "program",
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -96,7 +96,7 @@
    "heading_without_outcomes": false,
    "pass": true
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
