@@ -1623,16 +1623,29 @@ glen_live = {"program": {}, "blocks": [{"name": "R", "rule": "all", "courses": [
 new, notes = RC.reconcile(glen_live, "CABOT 102", "Glendale Community College", "A.S. Degree")
 check(new["blocks"][0]["courses"][0]["units"] == 4.0 and notes and "program_requirements_units" in notes[0]["words"],
       "Glendale's units_file prices CABOT 102 from its description: %s" % json.dumps(notes)[:300])
-# Glendale's program total is prose ahead of the list (S524): read only the words before the program's first
-# list, so a program printing none never takes the next program's figure from the same page.
-empty_total = {"program": {"total_units": {"min": None, "max": None}},
-               "blocks": [{"name": "R", "rule": "all", "courses": [{"code": "BIOL 142", "units": 4, "alternatives": []}]}]}
-got = [RC.reconcile(empty_total, t, "Glendale Community College", "Certificate of Achievement")[0]["program"]["total_units"]
-       for t in ("BIOTECH\nmust complete all required core courses for a total of 19 - 21\nunits.\nRequired  Courses : BIOL 142",
-                 "The student must complete all CORE\ncourses totaling 17-18 units.\nRequired Courses: ACCTG 101",
-                 "RESTAURANT MANAGEMENT\nRequired Courses: CULIN 111\nSOCIAL MEDIA\nfor a minimum of 9 units.\nRequired Courses: BUSAD")]
-check(got == [{"min": 19, "max": 21}, {"min": 17, "max": 18}, {"min": None, "max": None}],
-      "Glendale's prose total fills from the words before the first list, never the next program's: %s" % got)
+# Glendale's program total is prose ahead of the list (S524): read only the words from the program's own
+# heading (S525) to its first list, so a program printing none never takes a neighbor's figure from the page.
+def _glen_total(heading, t):
+    rec = {"program": {"total_units": {"min": None, "max": None}, "section_heading": heading},
+           "blocks": [{"name": "R", "rule": "all", "courses": [{"code": "BIOL 142", "units": 4, "alternatives": []}]}]}
+    return RC.reconcile(rec, t, "Glendale Community College", "Certificate of Achievement")[0]["program"]["total_units"]
+got = [_glen_total(h, t) for h, t in (
+    ("BIOTECH", "BIOTECH\nmust complete all required core courses for a total of 19 - 21\nunits.\nRequired  Courses : BIOL 142"),
+    ("TAX PREPARER", "TAX PREPARER\nThe student must complete all CORE\ncourses totaling 17-18 units.\nRequired Courses: ACCTG 101"),
+    ("RESTAURANT MANAGEMENT", "RESTAURANT MANAGEMENT\nRequired Courses: CULIN 111\nSOCIAL MEDIA\nfor a minimum of 9 units.\nRequired Courses: BUSAD"),
+    # Page 97 (page read 41025920825): IT Technician II prints its 32 above Computer Support Technician,
+    # which prints none; S524's step gave Computer Support Technician the 32.
+    ("COMPUTER SUPPORT TECHNICIAN CERTIFICATE NON-DEGREE",
+     "IT TECHNICIAN II\nStudents must complete all core courses to a total of 32 units.\nRequired Courses: CS/IS 101. "
+     "· COMPUTER SUPPORT TECHNICIAN · CERTIFICATE NON-DEGREE\nProgram Learning Outcomes: ...\nRequired Courses: CABOT 102"),
+    # The PDF letter-spaces a heading; the description's mixed-case title is not the heading.
+    ("ADVANCED ESL: VISUAL & PERFORMING ARTS PATHWAY",
+     "The Advanced ESL: Visual & Performing Arts Pathway for a total of 40 units. Required Courses: X\n"
+     "ADVA NC ED ESL: VISUAL & PERFORMING ARTS · PAT H WAY\nfor a minimum of 17 units. · Required Courses: ESL 151"),
+    ("NOT ON THIS PAGE", "OTHER\nfor a total of 28 units.\nRequired Courses: X"))]
+check(got == [{"min": 19, "max": 21}, {"min": 17, "max": 18}, {"min": None, "max": None}, {"min": None, "max": None},
+              {"min": 17, "max": 17}, {"min": None, "max": None}],
+      "Glendale's prose total fills only from its own heading to its first list, never a neighbor's: %s" % got)
 check(RC.reconcile({"program": {"total_units": {"min": None, "max": None}}, "blocks": []},
                    "for a total of 28 units.\nRequired Courses: X", "Glendale Community College", "Certificate")[1] == [],
       "a record placing no course (another program's page) takes no prose total")

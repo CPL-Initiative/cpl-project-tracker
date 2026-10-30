@@ -74,6 +74,18 @@ def _empty(v) -> bool:
     return v is None or v == 0
 
 
+def _heading_end(text, heading):
+    """Where the program's heading ends on the page, or None. Letters and digits only, case kept: the PDF
+    prints 'COMPUTER SUPPORT TECHNICIAN · CERTIFICATE NON-DEGREE' and 'ADV ANCED ESL: ... PAT H WAY' for
+    headings the reading gives plainly, and a description's mixed-case 'The Advanced ESL' is not one."""
+    want = "".join(ch for ch in (heading or "") if ch.isalnum())
+    if not want or not text:
+        return None
+    pos = [i for i, ch in enumerate(text) if ch.isalnum()]
+    at = "".join(text[i] for i in pos).find(want)
+    return None if at < 0 else pos[at + len(want) - 1] + 1
+
+
 def _span_of(v):
     if isinstance(v, dict):
         return (v.get("min"), v.get("max") if v.get("max") is not None else v.get("min"))
@@ -302,14 +314,20 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
         if st.get("before"):
             # Only the words ahead of the program's first list (Glendale's PDF, S524): a page that
             # prints no total of its own runs on into the next program's paragraph, which does.
-            bm = re.search(st["before"], text)
-            if not bm:
-                continue
             # A record placing no course read another program's page (the not-found records): the
             # words ahead of that page's first list are someone else's.
             if not any(b.get("courses") for b in out.get("blocks") or []):
                 continue
-            scope = text[:bm.start()]
+            # And only from the program's own heading (S525): the page's first list belongs to the first
+            # program on it, so a program further down took that one's total (Computer Support Technician
+            # read IT Technician II's 32). A heading the page does not print fills nothing.
+            start = _heading_end(text, prog.get("section_heading"))
+            if start is None:
+                continue
+            bm = re.compile(st["before"]).search(text, start)
+            if not bm:
+                continue
+            scope = text[start:bm.start()]
         m = re.search(st["pattern"], scope)
         if not m:
             continue

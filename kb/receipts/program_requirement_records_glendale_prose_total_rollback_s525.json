@@ -1,0 +1,20 @@
+{
+ "session": "S525 SkyTayberry, 2026-10-30",
+ "what": "Guarded UPDATE of 8 Glendale rows in program_requirement_records back to their values before S524's reread 41021975265 (that receipt's own rollback and before-values).",
+ "why": "S524's prose-total fill read from the top of the page, so each record took the first program's total on its page. Page read 41025920825 shows Computer Support Technician (p97), Advanced ESL Business and Health (p101) and Grip and Lighting (p106) print no total of their own; Grip and Lighting's award is 8 to fewer than 16 units, its filled total 18-20.",
+ "sql": "kb/receipts/program_requirement_records_glendale_prose_total_rollback_s525.sql",
+ "guard": "college = 'Glendale Community College' and checked = false and extracted_run = 41021155698",
+ "before": {
+  "02551": {"total": [28, 30], "extracted_run": 41021155698},
+  "11143": {"total": [28, 30], "extracted_run": 41021155698},
+  "11163": {"total": [32, 32], "extracted_run": 41021155698},
+  "19366": {"total": [20, 20], "extracted_run": 41021155698},
+  "19555": {"total": [28, 30], "extracted_run": 41021155698},
+  "44360": {"total": [21, 21], "extracted_run": 41021155698},
+  "44484": {"total": [21, 21], "extracted_run": 41021155698},
+  "44572": {"total": [18, 20], "extracted_run": 41021155698}
+ },
+ "before_rows": "the full rows are the filed records at commit 90c50413 (kb/program_requirements_college/glendale_community/records/<cn>.json), which match the live rows read 2026-10-30 08:4xZ",
+ "after": "total null, extracted_run 41012563119, the filed records restored from 59938a29",
+ "reverse": "rerun the S524 reread: dispatch step=reread for Glendale with force=41021155698 after restoring the 8 record files from 90c50413"
+}
