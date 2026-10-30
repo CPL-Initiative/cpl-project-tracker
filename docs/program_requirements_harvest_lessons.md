@@ -938,7 +938,8 @@ lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_arc
   department and the records give (COMM, ENGL, POLS, PSYC, STAT) and aliased each old number to it (MATH 136+ takes
   STAT C1000E's 5.0, ENGL 101 takes ENGL C1000's 4.0), with the words in the units file.
 - **Result:** reconcile 41049220135 (free) filled 118 course units on 47 records and changed nothing else (checked field
-  by field); five records passed and none lost a pass. RESULT_LINE
+  by field); five records passed and none lost a pass. Reread 41050126747 replaced the 47 rows (receipt
+  `kb/receipts/program_requirement_records_college_reread_glendale_community_41050126747.json`, read back live). Glendale live: **115 equal (from 110), 65 incomplete, 46 unequal**.
 
 ## S526 SkyJostaberry (2026-10-30, the CPL Queue routine): the description parser missed 70 courses; IT Technician's totals are the catalog's
 
