@@ -19,6 +19,8 @@ Your moniker is **SkyKiwiberry**. Session 528 (SkyMulberry) was a session Sam op
 
 ## Open work, in order
 
+**C. Sierra still misses one college's funding section (S528, 14:46Z, run 41074231655 of `sierra-ask.yml`).** Asked about Cabrillo, she found Mt. San Jacinto, Pasadena and Skyline: the note's 118 sections reached the index (#2583, funding-note run 41069706371), but a similarity search does not pick one college among 118 alike sections, and each heading names the short form ("Cabrillo"), never "Cabrillo College". Fix it deterministically: when a question names a college, cpl-chat reads that institution's section by name (as `collegeContext` does for MAP data), and the headings carry the full name. Re-ask with `sierra-ask.yml` to prove it. Cabrillo's truth today: coordinator and landing page met, participation not yet confirmed (funding held), JSTs 186 for 102 veterans met, Noncredit CPL Lead not yet.
+
 **Sam's two asks for this session (2026-10-30, 14:20Z, at the Summit):**
 
 - **A. Edit the CPL Fact Sheet's content and its Contents labels, never the section headings or the links.** The page already has a Curate editor for a signed-in reviewer (`fact-sheet/factsheet_edit.js`: every box keyed by `data-fsk`, saved to `factsheet_overrides`; MOVE_ONLY_SECTIONS hold some boxes back from text edits). Find what it does not let him edit yet (the Contents labels in `nav.toc`, and any prose box the move-only list or the heading rule excludes), extend it there, keep each `href` and each `h2` out of reach, and guard both with a jsdom test. Read `tests/factsheet_edit*.test.js` first.
