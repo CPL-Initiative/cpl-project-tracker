@@ -100,6 +100,12 @@
   function wirePrint() {
     var btn = $('#btn-print');
     if (btn) btn.addEventListener('click', function () { window.print(); });
+    // The Print or save menu shuts once a choice is made, so the page prints
+    // and the next visit to the header finds it closed.
+    var menu = $('.save-menu');
+    if (menu) menu.addEventListener('click', function (e) {
+      if (e.target.closest && e.target.closest('.save-menu-list button')) menu.open = false;
+    });
   }
 
   function num(n) { var v = Number(n); return isNaN(v) ? String(n) : v.toLocaleString('en-US'); }

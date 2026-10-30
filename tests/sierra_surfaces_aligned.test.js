@@ -185,8 +185,11 @@ block("replacement words", function () {
   check("the side bar: its chip and its title say Ask Sierra, and its controls are words",
     /chip\.textContent = 'Ask Sierra';/.test(BAR) && /title\.textContent = 'Ask Sierra';/.test(BAR) &&
     /closeBtn\.textContent = 'Close';/.test(BAR) && /sizeButton\('Narrower'/.test(BAR) && /sizeButton\('Wider'/.test(BAR));
-  check("the Fact Sheet: its own word still says Ask Sierra; the funding page leaves her to the chip (Sam, 2026-10-26)",
-    /<button[^>]*data-sierra-open[^>]*>Ask Sierra<\/button>/.test(fs.readFileSync("fact-sheet/index.html", "utf8")) &&
+  // Sam, 2026-10-30 (the Summit header): "move Sierra link to a chip in lower corner like other public
+  // views". The Fact Sheet now leaves her to the side bar's chip, as the funding page did since 10-26.
+  check("the Fact Sheet and the funding page leave Sierra to the side bar's chip (Sam, 2026-10-26 and 2026-10-30)",
+    !/data-sierra-open/.test(fs.readFileSync("fact-sheet/index.html", "utf8")) &&
+    /sierra\/sidebar\.js/.test(fs.readFileSync("fact-sheet/index.html", "utf8")) &&
     !/data-sierra-open/.test(fs.readFileSync("funding-model/index.html", "utf8")));
   check("standalone page: the footer keeps the beta notice", /<footer class="s-foot">[\s\S]*?Sierra is in beta/.test(PAGE_HTML));
 });

@@ -42,7 +42,7 @@ const h = out.html;
 check("doc carries the mso Word namespace", /urn:schemas-microsoft-com:office:word/.test(h));
 check("doc declares a WordSection1 @page", /@page WordSection1/.test(h));
 check("doc starts with a UTF-8 BOM", h.charCodeAt(0) === 0xFEFF);
-check("doc carries a synthesized masthead title", /Credit for Prior Learning \(CPL\) Fact Sheet/.test(h));
+check("doc carries a synthesized masthead title", /Credit for Prior Learning \(CPL\) Initiative Fact Sheet/.test(h));
 check("doc includes real content (Executive summary)", /Executive summary/.test(h));
 
 // (c) chrome + hidden boxes stripped

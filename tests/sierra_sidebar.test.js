@@ -411,8 +411,9 @@ async function main() {
     check("(13e) ⭐ the Fact Sheet and the funding page load the bar, deferred, and no drawer remains",
       [FACT, FUND].every((p) => /<script src="\.\.\/sierra\/sidebar\.js" defer><\/script>/.test(p) && !/factsheet_sierra/.test(p)) &&
       !fs.existsSync("fact-sheet/factsheet_sierra.js"));
-    check("(13f) ⭐ the Fact Sheet opens her from its own word, just ahead of its PDF control; the funding page from the chip (no word of its own; Sam, 2026-10-26); both name her surface",
-      /data-sierra-open[^>]*>Ask Sierra<\/button>\s*<button class="btn btn-primary" id="btn-print"/.test(FACT) &&
+    // Sam, 2026-10-30: the Fact Sheet's header loses its own Ask Sierra word; she opens from the chip there too.
+    check("(13f) ⭐ both pages open her from the chip, with no word of their own (Sam, 2026-10-26 and 2026-10-30); both name her surface",
+      !/data-sierra-open/.test(FACT) &&
       !/data-sierra-open/.test(FUND) &&
       [FACT, FUND].every((p) => /window\.CPL_SIERRA_SURFACE = "fact-sheet";/.test(p)) &&
       /window\.CPL_SIERRA_SUGGESTED = \[/.test(FACT) && /window\.CPL_SIERRA_SUGGESTED = \[/.test(FUND));
