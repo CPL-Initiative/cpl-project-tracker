@@ -15,6 +15,14 @@
    queue. The address comes from map_links.js (CPL_MAP_LINKS.url), the one
    builder; without it, no link.
 
+   Each program area's list comes from the daily statewide catalog
+   (fact-sheet/statewide_catalog.json, built from MAP's data by
+   _build_statewide_catalog.py) and shows only the exhibits that carry at least
+   one credit recommendation (Sam, 2026-10-30: "Exhibits need at least one credit
+   recommendation to show here"); the area's Exhibits figure and the total follow
+   the list. The list typed into index.html stands in until the catalog loads, and
+   stays when it cannot.
+
    Self-contained, READ-ONLY (no Supabase, no auth), escapes all text, idempotent
    (re-running never double-appends). The Curate overlay (factsheet_edit.js)
    edits only this section's own prose, never the exhibit lists, so this never
@@ -120,6 +128,46 @@
     document.head.appendChild(st);
   }
 
+  // Rebuild each program area's list from the catalog: the exhibits with at least
+  // one recommendation line, in the catalog's order. An area the catalog omits, or
+  // one where none carries a line, keeps its baked list. Returns the areas rebuilt.
+  function applyCatalog(cat) {
+    var section = document.getElementById('statewide-exhibits');
+    if (!section || !cat || !Array.isArray(cat.sectors)) return 0;
+    var by = {};
+    cat.sectors.forEach(function (sec) { if (sec && sec.sector) by[sec.sector] = sec; });
+    var dets = section.querySelectorAll('details[data-sector]'), done = 0, total = 0;
+    Array.prototype.forEach.call(dets, function (det) {
+      var sec = by[det.getAttribute('data-sector')], ul = det.querySelector('ul.sw-list');
+      var items = sec ? (sec.items || []).filter(function (it) { return it && it.title && (it.lines || []).length; }) : [];
+      if (!ul || !items.length) {
+        total += ul ? ul.children.length : 0;
+        return;
+      }
+      ul.innerHTML = items.map(function (it) { return '<li>' + esc(it.title) + '</li>'; }).join('');
+      det.setAttribute('data-listed', String(items.length));
+      var col = det.querySelector('summary .sw-col[data-col="ex"]');
+      if (col) col.textContent = String(items.length);
+      var sum = det.querySelector('summary');
+      var lab = sum && sum.getAttribute('aria-label');
+      if (lab) sum.setAttribute('aria-label', lab.replace(/: [\d,]+ statewide exhibits/, ': ' + items.length + ' statewide exhibits'));
+      total += items.length;
+      done++;
+    });
+    var tot = section.querySelector('.sw-total');
+    var tcol = tot && tot.querySelector('.sw-col[data-tcol="ex"]');
+    if (done && tcol) { tcol.textContent = total.toLocaleString('en-US'); tot.setAttribute('data-listed', String(total)); }
+    return done;
+  }
+
+  function loadCatalog() {
+    if (typeof fetch !== 'function') return;
+    fetch('./statewide_catalog.json')
+      .then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (cat) { if (applyCatalog(cat)) render(); })
+      .catch(function () {});
+  }
+
   function render() {
     var idx = buildIndex(window.CPL_STATEWIDE_RECS);
     var section = document.getElementById('statewide-exhibits');
@@ -153,12 +201,13 @@
     });
   }
 
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', render);
-  else render();
+  function boot() { render(); loadCatalog(); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot);
+  else boot();
 
   // Test / inspection surface.
   window.CPL_STATEWIDE_RECS_RENDER = {
-    render: render, _buildIndex: buildIndex, _dedupe: dedupe, _adoptLinkHtml: adoptLinkHtml,
+    render: render, applyCatalog: applyCatalog, _buildIndex: buildIndex, _dedupe: dedupe, _adoptLinkHtml: adoptLinkHtml,
     _norm: norm, _esc: esc, _unitLabel: unitLabel
   };
 })();

@@ -425,7 +425,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `fact-sheet/factsheet_edit.js` | pages: `fact-sheet/index.html` | — |
 | `fact-sheet/factsheet_word.js` | pages: `fact-sheet/index.html` | — |
 | `fact-sheet/index.html` | scripts: `scripts/ui_pass.py` | — |
-| `fact-sheet/statewide_catalog.json` | scripts: `fact-sheet/_build_statewide_catalog.py` · `edgefn:cpl-chat` | scripts: `fact-sheet/_build_statewide_catalog.py` · committed by: `daily-dashboard.yml` |
+| `fact-sheet/statewide_catalog.json` | pages: `fact-sheet/index.html` · scripts: `fact-sheet/_build_statewide_catalog.py` · `edgefn:cpl-chat` | scripts: `fact-sheet/_build_statewide_catalog.py` · committed by: `daily-dashboard.yml` |
 | `fact-sheet/statewide_recs_render.js` | pages: `fact-sheet/index.html` | — |
 | `fact_sheet_metrics.json` | pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `fact-sheet/_build_statewide_catalog.py` | committed by: `daily-dashboard.yml` |
 | `fetch_custom_report.py` | workflows: `daily-dashboard.yml`, `map-custom-report-load.yml` | — |

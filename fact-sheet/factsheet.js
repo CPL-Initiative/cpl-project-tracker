@@ -177,11 +177,16 @@
           for (var j = 0; j < dets.length; j++) {
             var s2 = bySec[dets[j].getAttribute('data-sector')];
             if (!s2) continue;
-            setCol(dets[j], 'ex', s2.exhibits); setCol(dets[j], 'rec', s2.credit_recs);
+            // An area whose list the catalog drew keeps its own count (statewide_recs_render.js).
+            if (!dets[j].hasAttribute('data-listed')) setCol(dets[j], 'ex', s2.exhibits);
+            setCol(dets[j], 'rec', s2.credit_recs);
             setCol(dets[j], 'adopt', s2.adoptions); setCol(dets[j], 'could', s2.could_adopt);
           }
           var tot = $('.sw-total');
-          if (tot) { setTCol(tot, 'ex', te); setTCol(tot, 'rec', tr); setTCol(tot, 'adopt', ta); }
+          if (tot) {
+            if (!tot.hasAttribute('data-listed')) setTCol(tot, 'ex', te);
+            setTCol(tot, 'rec', tr); setTCol(tot, 'adopt', ta);
+          }
           labelSectors();   // refresh the per-sector screen-reader labels with live values
         }
       })
