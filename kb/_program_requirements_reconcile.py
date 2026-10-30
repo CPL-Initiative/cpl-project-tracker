@@ -298,7 +298,15 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 block["minimum"], block["repeats"] = int(n), True
             continue
         field = st["field"]
-        m = re.search(st["pattern"], text)
+        scope = text
+        if st.get("before"):
+            # Only the words ahead of the program's first list (Glendale's PDF, S524): a page that
+            # prints no total of its own runs on into the next program's paragraph, which does.
+            bm = re.search(st["before"], text)
+            if not bm:
+                continue
+            scope = text[:bm.start()]
+        m = re.search(st["pattern"], scope)
         if not m:
             continue
         if st["kind"] == "pool_lists":

@@ -1623,6 +1623,15 @@ glen_live = {"program": {}, "blocks": [{"name": "R", "rule": "all", "courses": [
 new, notes = RC.reconcile(glen_live, "CABOT 102", "Glendale Community College", "A.S. Degree")
 check(new["blocks"][0]["courses"][0]["units"] == 4.0 and notes and "program_requirements_units" in notes[0]["words"],
       "Glendale's units_file prices CABOT 102 from its description: %s" % json.dumps(notes)[:300])
+# Glendale's program total is prose ahead of the list (S524): read only the words before the program's first
+# list, so a program printing none never takes the next program's figure from the same page.
+empty_total = {"program": {"total_units": {"min": None, "max": None}}, "blocks": []}
+got = [RC.reconcile(empty_total, t, "Glendale Community College", "Certificate of Achievement")[0]["program"]["total_units"]
+       for t in ("BIOTECH\nmust complete all required core courses for a total of 19 - 21\nunits.\nRequired  Courses : BIOL 142",
+                 "The student must complete all CORE\ncourses totaling 17-18 units.\nRequired Courses: ACCTG 101",
+                 "RESTAURANT MANAGEMENT\nRequired Courses: CULIN 111\nSOCIAL MEDIA\nfor a minimum of 9 units.\nRequired Courses: BUSAD")]
+check(got == [{"min": 19, "max": 21}, {"min": 17, "max": 18}, {"min": None, "max": None}],
+      "Glendale's prose total fills from the words before the first list, never the next program's: %s" % got)
 nc = {"program": {"measure": "hours"}, "blocks": [{"name": "Required", "rule": "all",
       "courses": [{"code": "BUS650", "units": None, "alternatives": []}]}]}
 zero = {"program": {"measure": "units"}, "blocks": [{"name": "Required", "rule": "all",
