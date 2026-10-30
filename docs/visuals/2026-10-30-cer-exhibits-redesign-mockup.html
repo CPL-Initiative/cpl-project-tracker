@@ -130,6 +130,15 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .panelacts { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; margin-top: 4px; font-size: 14px; }
 .saved { font-size: 13px; color: var(--text-muted); }
 .chiprow { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.canon { display: grid; gap: 6px; }
+.canon-title { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; color: var(--seal-blue-text); }
+.collegechips { display: grid; gap: 8px; }
+.ccrow { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr); gap: 4px 12px; align-items: start; }
+@media (max-width: 560px) { .ccrow { grid-template-columns: 1fr; } }
+.cl { font-size: 13px; color: var(--text-muted); padding-top: 3px; }
+.cchips { display: flex; flex-wrap: wrap; gap: 4px 6px; min-width: 0; }
+.cchip { font-size: 13px; color: var(--text-body); border: 1px solid var(--border); border-radius: 999px; padding: 1px 9px; background: var(--surface-subtle); white-space: nowrap; }
+.typed { font-size: 15px; overflow-wrap: anywhere; border-top: 1px solid var(--border); padding-top: 10px; }
 .why { font-size: 15px; color: var(--text-muted); border-left: 2px solid var(--border-strong); padding-left: 10px; }
 .acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
 .acts .w { font-weight: 600; }
@@ -243,19 +252,16 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
 
           <div class="card" aria-label="Review one title" id="review-card">
             <div class="chiprow"><span class="chip" id="rc-step" tabindex="0"></span><span class="small muted" id="rc-saved"></span></div>
-            <div class="pair">
-              <div>
-                <span class="small muted" id="rc-who"></span>
-                <span class="big" id="rc-current"></span>
-                <span class="small muted" id="rc-course"></span>
-              </div>
-              <span class="to" aria-hidden="true">to</span>
-              <div>
-                <label class="small muted" for="proposed-title" id="rc-from"></label>
-                <input class="edit" id="proposed-title" type="text">
-                <div class="fieldrow"><label for="proposed-issuer">Issuer</label><input class="edit-sm" id="proposed-issuer" type="text"><label for="proposed-trainer">Training site</label><input class="edit-sm" id="proposed-trainer" type="text" placeholder="None named"></div>
-              </div>
+            <div class="canon">
+              <label class="small muted" for="proposed-title" id="rc-from"></label>
+              <input class="edit canon-title" id="proposed-title" type="text">
+              <div class="fieldrow"><label for="proposed-issuer">Issuer</label><input class="edit-sm" id="proposed-issuer" type="text"><label for="proposed-trainer">Training site</label><input class="edit-sm" id="proposed-trainer" type="text" placeholder="None named"></div>
             </div>
+            <div class="collegechips">
+              <div class="ccrow"><span class="cl" id="rc-art-label">Articulated at</span><span class="cchips" id="rc-art"></span></div>
+              <div class="ccrow"><span class="cl" id="rc-could-label">Could adopt</span><span class="cchips" id="rc-could"></span></div>
+            </div>
+            <p class="typed"><span class="muted" id="rc-who"></span> <span id="rc-current"></span> <span class="muted" id="rc-course"></span></p>
             <p class="why" id="rc-why"></p>
             <p class="small">Source: <a id="rc-source" href="#cobi-review"></a></p>
             <div class="acts">
@@ -487,6 +493,8 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
   window.addEventListener("hashchange", show);
   show();
 
+  /* Colleges per sample: who articulates the canonical title, and who could adopt it (same-identity course, else EACR's list). */
+  var CH = {"MAPCXH-ITDM-1-001": {"art": ["Cabrillo College", "Modesto Junior College"], "could": ["Allan Hancock College", "American River College", "Bakersfield College", "Berkeley City College", "Butte College", "Cañada College", "Chabot College", "Chaffey College", "Clovis Community College", "Coastline Community College", "College of Marin", "College of San Mateo", "College of the Desert", "College of the Redwoods", "College of the Sequoias", "Columbia College", "Compton College", "Contra Costa College", "Copper Mountain College", "Cosumnes River College", "Cuesta College", "Cuyamaca College", "Cypress College ", "De Anza College", "Diablo Valley College", "East Los Angeles College", "Evergreen Valley College", "Foothill College", "Fresno City College", "Fullerton College", "Golden West College", "Grossmont College", "Hartnell College", "Imperial Valley College", "Irvine Valley College", "Lake Tahoe Community College", "Laney College", "Las Positas College", "Lassen College", "Lemoore College", "Long Beach City College", "Los Angeles City College", "Los Angeles Harbor College", "Los Angeles Mission College", "Los Angeles Pierce College", "Los Angeles Valley College", "Los Medanos College", "Madera College", "Mendocino College", "Merced College", "MiraCosta College", "Mission College", "Monterey Peninsula College", "Moorpark College", "Moreno Valley College", "Mt. San Antonio College", "Mt. San Jacinto College", "Napa Valley College", "Norco College", "Ohlone College", "Orange Coast College", "Oxnard College", "Pasadena City College", "Porterville College", "Rio Hondo College", "Riverside City College", "Sacramento City College", "Saddleback College", "San Bernardino Valley College", "San Diego City College", "San Diego Mesa College", "San Jose City College ", "Santa Ana College", "Santa Rosa Junior College", "Santiago Canyon College", "Shasta College", "Sierra College", "Skyline College", "Solano Community College", "Southwestern College", "Taft College", "Ventura College", "West Los Angeles College", "West Valley College"], "basis": "ARTS 250"}, "MAPSAS-ACSA20-1-001": {"art": ["Barstow Community College", "California State University Los Angeles", "Chaffey College", "Clovis Community College", "Coastline Community College", "College of the Canyons", "Foothill College", "Glendale Community College", "Las Positas College", "Los Angeles Pierce College", "Mission College", "Modesto Junior College", "Saddleback College", "San Bernardino Valley College", "San Jose City College", "Santa Ana College", "Yuba College"], "could": ["Allan Hancock College", "American River College", "Antelope Valley College", "Bakersfield College", "Berkeley City College", "Butte College", "Cabrillo College", "Calbright College Non-Credit", "Cañada College", "Cerritos College", "Cerro Coso Community College", "Chabot College", "Citrus College", "City College of San Francisco", "Coalinga College", "College of Alameda", "College of Marin", "College of San Mateo", "College of the Desert", "College of the Redwoods", "College of the Sequoias", "College of the Siskiyous", "Columbia College", "Compton College", "Contra Costa College", "Copper Mountain College", "Cosumnes River College", "Crafton Hills College", "Cuesta College", "Cuyamaca College", "Cypress College", "De Anza College", "Diablo Valley College", "East Los Angeles College", "El Camino College", "Evergreen Valley College", "Folsom Lake College", "Fresno City College", "Fullerton College", "Gavilan College", "Golden West College", "Grossmont College", "Hartnell College", "Imperial Valley College", "Irvine Valley College", "Lake Tahoe Community College", "Laney College", "Lassen College", "Lemoore College", "Long Beach City College", "Los Angeles City College", "Los Angeles Harbor College", "Los Angeles Mission College", "Los Angeles Southwest College", "Los Angeles Trade Technical College", "Los Angeles Valley College", "Los Medanos College", "Madera College", "Mendocino College", "Merced College", "Merritt College", "MiraCosta College", "Monterey Peninsula College", "Moorpark College", "Moreno Valley College", "Mt. San Antonio College", "Mt. San Jacinto College", "Napa Valley College", "Norco College", "North Orange Continuing Education", "Ohlone College", "Orange Coast College", "Oxnard College", "Palo Verde College", "Palomar College", "Pasadena City College", "Porterville College", "Reedley College", "Rio Hondo College", "Riverside City College", "Sacramento City College", "San Diego City College", "San Diego College of Continuing Education", "San Diego Mesa College", "San Diego Miramar College", "San Joaquin Delta College", "Santa Barbara City College", "Santa Monica College", "Santa Rosa Junior College", "Santiago Canyon College", "Shasta College", "Sierra College", "Skyline College", "Solano Community College", "Southwestern College", "Taft College", "Ventura College", "Victor Valley College", "West Los Angeles College", "West Valley College", "Woodland Community College"], "basis": ""}, "MAPCXH-ITDP-1-001": {"art": ["Cabrillo College", "San Diego City College"], "could": ["Berkeley City College", "Cañada College", "Cerritos College", "College of Marin", "Columbia College", "Cypress College ", "De Anza College", "Diablo Valley College", "East Los Angeles College", "Las Positas College", "Long Beach City College", "Los Medanos College", "Moreno Valley College", "Norco College", "Orange Coast College", "Oxnard College", "Rio Hondo College", "Riverside City College", "San Joaquin Delta College", "Santiago Canyon College", "Yuba College"], "basis": "ARTS M1351"}, "MAPCXH-RC1-1-001": {"art": ["Cabrillo College"], "could": [], "basis": "HVAC M10AE"}, "MAPCXH-RC2-1-001": {"art": ["Cabrillo College"], "could": ["Bakersfield College"], "basis": "CNST M1130"}, "MAPICI-1RO&-1-001": {"art": ["Palo Verde College"], "could": [], "basis": "ESCI M10HI"}, "MAPCxH-3DMH-1-001": {"art": ["Norco College"], "could": ["Mt. San Jacinto College"], "basis": "MULT M1019"}, "MAPCXS-A2-J-1-001": {"art": ["Copper Mountain College", "Modesto Junior College", "Norco College"], "could": ["Allan Hancock College", "American River College", "Antelope Valley College", "Bakersfield College", "Barstow Community College", "Butte College", "Cabrillo College", "Cerritos College", "Cerro Coso Community College", "Chabot College", "Chaffey College", "Citrus College", "City College of San Francisco", "Clovis Community College", "Coalinga College", "College of Marin", "College of San Mateo", "College of the Desert", "College of the Redwoods", "College of the Sequoias", "Compton College", "Contra Costa College", "De Anza College", "Diablo Valley College", "East Los Angeles College", "El Camino College", "Evergreen Valley College", "Feather River College", "Fresno City College", "Fullerton College", "Gavilan College", "Glendale Community College", "Golden West College", "Grossmont College", "Hartnell College", "Imperial Valley College", "Irvine Valley College", "Lake Tahoe Community College", "Las Positas College", "Lassen College", "Lemoore College", "Long Beach City College", "Los Angeles City College", "Los Angeles Harbor College", "Los Angeles Mission College", "Los Angeles Pierce College", "Los Angeles Southwest College", "Los Angeles Trade Technical College", "Los Angeles Valley College", "Los Medanos College", "Madera College", "Mendocino College", "Merced College", "Merritt College", "MiraCosta College", "Monterey Peninsula College", "Moorpark College", "Moreno Valley College", "Mt. San Jacinto College", "Napa Valley College", "Ohlone College", "Palomar College", "Porterville College", "Reedley College", "Rio Hondo College", "Riverside City College", "Sacramento City College", "Saddleback College", "San Bernardino Valley College", "San Diego Miramar College", "San Joaquin Delta College", "San Jose City College ", "Santa Ana College", "Santa Monica College", "Santa Rosa Junior College", "Santiago Canyon College", "Shasta College", "Sierra College", "Skyline College", "Solano Community College", "Southwestern College", "Taft College", "Ventura College", "Victor Valley College", "West Los Angeles College", "West Valley College", "Woodland Community College", "Yuba College"], "basis": "AJ 220"}, "MAPCXH-ATMI-1-001": {"art": ["Santa Ana College"], "could": ["Las Positas College"], "basis": "AUTO M9040"}, "MAPCXS-A2PA-1-001": {"art": ["Merritt College", "Modesto Junior College"], "could": ["Allan Hancock College", "American River College", "Bakersfield College", "Barstow Community College", "Butte College", "Cabrillo College", "Cerritos College", "Cerro Coso Community College", "Chabot College", "Chaffey College", "Citrus College", "City College of San Francisco", "Clovis Community College", "Coalinga College", "Coastline Community College", "College of Marin", "College of San Mateo", "College of the Canyons", "College of the Desert", "College of the Redwoods", "College of the Sequoias", "College of the Siskiyous", "Compton College", "Contra Costa College", "Copper Mountain College", "Cuesta College", "Cypress College", "De Anza College", "Diablo Valley College", "East Los Angeles College", "El Camino College", "Evergreen Valley College", "Feather River College", "Folsom Lake College", "Fresno City College", "Fullerton College", "Gavilan College", "Glendale Community College", "Golden West College", "Grossmont College", "Hartnell College", "Imperial Valley College", "Irvine Valley College", "Lake Tahoe Community College", "Las Positas College", "Lassen College", "Lemoore College", "Long Beach City College", "Los Angeles City College", "Los Angeles Harbor College", "Los Angeles Mission College", "Los Angeles Pierce College", "Los Angeles Southwest College", "Los Angeles Trade Technical College", "Los Angeles Valley College", "Los Medanos College", "Madera College", "Mendocino College", "Merced College", "MiraCosta College", "Mission College", "Monterey Peninsula College", "Moorpark College", "Moreno Valley College", "Mt. San Antonio College", "Mt. San Jacinto College", "Napa Valley College", "Norco College", "Ohlone College", "Palo Verde College", "Palomar College", "Pasadena City College", "Porterville College", "Reedley College", "Rio Hondo College", "Riverside City College", "Sacramento City College", "Saddleback College", "San Bernardino Valley College", "San Diego Miramar College", "San Joaquin Delta College", "San Jose City College", "Santa Ana College", "Santa Barbara City College", "Santa Monica College", "Santa Rosa Junior College", "Shasta College", "Sierra College", "Skyline College", "Solano Community College", "Southwestern College", "Taft College", "Ventura College", "Victor Valley College", "West Los Angeles College", "West Valley College", "Woodland Community College", "Yuba College"], "basis": ""}};
   /* Held exhibits, most students first (a sample of the 468, real rows of 2026-10-30). */
   var HELD = [
     { id: "MAPCXH-ITDM-1-001", college: "Cabrillo College", typed: "Introduction to Digital Media High School Articulation", course: "DM 1", ident: "C-ID ARTS 250", title: "Introduction to Digital Art", issuer: "Local High School", students: "442 students have credit on this exhibit", why: "the classifier alone was unsure (0.80)", step: "Proposed" },
@@ -514,6 +522,22 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
   var cur = 0, filter = "";
   var COUNTS = { "": 468, "Proposed": 401, "Wording check": 36, "Two issuers": 13, "Conflict with the reference": 18, "Saved, not folded": 0 };
   function $(id) { return document.getElementById(id); }
+  function chips(id, names) {
+    var box = $(id); box.innerHTML = "";
+    var MAXC = 10, all = false;
+    function draw() {
+      box.innerHTML = "";
+      if (!names.length) { var none = document.createElement("span"); none.className = "small muted"; none.textContent = "None yet"; box.appendChild(none); return; }
+      (all ? names : names.slice(0, MAXC)).forEach(function (n) { var c = document.createElement("span"); c.className = "cchip"; c.textContent = n; box.appendChild(c); });
+      if (names.length > MAXC) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "w small";
+        b.textContent = all ? "Show fewer" : "and " + (names.length - MAXC) + " more";
+        b.addEventListener("click", function () { all = !all; draw(); });
+        box.appendChild(b);
+      }
+    }
+    draw();
+  }
   function shown() { return HELD.filter(function (h) { return !filter || h.step === filter; }); }
   function load(i) {
     var list = shown();
@@ -524,10 +548,14 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
     $("rc-step").setAttribute("data-tip", TIPS[h.step] || "");
     $("rc-step").setAttribute("aria-label", "CER step: " + h.step + ". " + (TIPS[h.step] || ""));
     $("rc-saved").textContent = h.saved || "";
-    $("rc-who").textContent = "Current title, as " + h.college + " typed it";
+    $("rc-who").textContent = "Typed by " + h.college + ":";
     $("rc-current").textContent = h.typed;
-    $("rc-course").textContent = h.course ? "Articulated to " + h.course : "";
-    $("rc-from").textContent = "Proposed title, from " + (h.ident || "the classifier") + " (edit it here)";
+    $("rc-course").textContent = h.course ? "\u00b7 articulated to " + h.course : "";
+    $("rc-from").textContent = "Canonical title, from " + (h.ident || "the classifier") + " (edit it here)";
+    var c = CH[h.id] || { art: [], could: [], basis: "" };
+    $("rc-art-label").textContent = "Articulated at (" + c.art.length + ")";
+    $("rc-could-label").textContent = "Could adopt (" + c.could.length + ")" + (c.basis ? ", same course as " + c.basis : ", from EACR");
+    chips("rc-art", c.art); chips("rc-could", c.could);
     $("proposed-title").value = h.title;
     $("proposed-issuer").value = h.issuer;
     $("proposed-trainer").value = h.trainer || "";
