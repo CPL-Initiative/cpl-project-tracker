@@ -1,0 +1,34 @@
+{
+ "_readme": "S523 SkyBarberry, 2026-10-30. Glendale course units, part b of 3. 180 filed Glendale records fail arithmetic, most on courses the state's file (coci_program_courses, read 2026-10-30) lists with no units: 51 credit courses (the noncredit ABSE, ESL 1-50 and STV courses are left out: a program measured in hours never takes a unit figure). Their units print only in the course descriptions ('170 · SPORTS PSYCHOLOGY · 3.0 Units', read 40692306069). This read prints the description pages naming each course's number and title for ESL146 ESL155 FTVM46 GEOG171 HLTH128 HUMAN140 MACH102 MACH104 MATH102 MATH111 MATH134 MCOMM101 NS213. One load of the 2025-2026 PDF, no model call. The 14-page print cap is why the read is three plans.",
+ "college": "Glendale Community College",
+ "questions": {
+  "course_units": "The units each course description prints for ESL146, ESL155, FTVM46, GEOG171, HLTH128, HUMAN140, MACH102, MACH104, MATH102, MATH111, MATH134, MCOMM101, NS213."
+ },
+ "keywords": [
+  "(?<![\\d.])146\\s*\\W?\\s*READING",
+  "(?<![\\d.])155\\s*\\W?\\s*Oral\\s+Communication",
+  "(?<![\\d.])46\\s*\\W?\\s*Field\\s+Studies",
+  "(?<![\\d.])171\\s*\\W?\\s*Global\\s+Issues",
+  "(?<![\\d.])128\\s*\\W?\\s*Nutrition",
+  "(?<![\\d.])140\\s*\\W?\\s*Armenian",
+  "(?<![\\d.])102\\s*\\W?\\s*Machine\\s+Technology",
+  "(?<![\\d.])104\\s*\\W?\\s*Machine\\s+Technology",
+  "(?<![\\d.])102\\s*\\W?\\s*Trigonometry",
+  "(?<![\\d.])111\\s*\\W?\\s*College\\s+Algebra",
+  "(?<![\\d.])134\\s*\\W?\\s*Decision\\s+Mathematics",
+  "(?<![\\d.])101\\s*\\W?\\s*Introduction\\s+to",
+  "(?<![\\d.])213\\s*\\W?\\s*Medical"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_units"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  150,
+  303
+ ]
+}
