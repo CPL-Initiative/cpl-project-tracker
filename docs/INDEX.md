@@ -68,10 +68,10 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 566 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
-| Workstream docs | 95 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
+| Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 500 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1320** | |
+| **total** | **1321** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-30 (CER redesign side session): the Exhibits mock-up (`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html`), the CER and college-identity lanes, `docs/cer_v2_redesign_lessons.md` (2026-10-30), the handoff `docs/cer_redesign_handoff.md`.
 - **2026-10-30 (S530 SkyBuffaloberry):** Los Angeles Valley 114 to 167 of 204 passing through its degree steps and a moved-page guard that reads the record's heading; the funding rows show a waiting request with a reviewer's Accept; MAP links from `map_links.js` on two more surfaces (#2588); Sheet 146; handoff 531.
 - 2026-10-30 (S527 SkyLoganberry): Glendale's eleven C-numbered courses priced from the catalog through a read that parses itself on the runner (`parse_units`); 115 of 226 pass (#2578); handoff 528.
 - 2026-10-30 (S525 SkyTayberry): S524's 8 Glendale prose totals were the first program's on each page; rolled back by receipt, and the fill now reads from the program's own heading (#2576); handoff 526.

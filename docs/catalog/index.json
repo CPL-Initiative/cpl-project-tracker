@@ -13496,7 +13496,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 95,
+   "count": 96,
    "docs": [
     {
      "created": "2026-05-30",
@@ -13679,6 +13679,24 @@
       "design"
      ],
      "title": "CER exhibit model \u2014 multi-issuer + aligned-assessment pathways (design note)",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "path": "docs/cer_redesign_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "cer",
+      "eacr",
+      "catalog-commons",
+      "admin",
+      "college-identity",
+      "cpl-ai"
+     ],
+     "title": "CER redesign handoff: the Exhibits mock-up, the Admin Save, college short names",
      "type": null,
      "updated": ""
     },
@@ -15412,7 +15430,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-10-18"
+     "updated": "2026-10-30"
     },
     {
      "created": "2026-09-08",
@@ -15440,7 +15458,7 @@
      ],
      "title": "College & district identity \u2014 lane state",
      "type": null,
-     "updated": "2026-08-28"
+     "updated": "2026-10-30"
     },
     {
      "created": "2026-08-28",
@@ -24818,5 +24836,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1320
+ "total": 1321
 }
