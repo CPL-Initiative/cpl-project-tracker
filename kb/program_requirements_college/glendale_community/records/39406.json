@@ -19,7 +19,7 @@
   "iterations": [
    {
     "input_tokens": 11002,
-    "output_tokens": 2820,
+    "output_tokens": 4111,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 2820,
+  "output_tokens": 4111,
   "output_tokens_details": {
-   "thinking_tokens": 858
+   "thinking_tokens": 860
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.10041,
- "ms": 22082,
- "seconds": 22.6,
+ "cost_usd": 0.12623,
+ "ms": 36023,
+ "seconds": 37.2,
  "parts": null,
  "error": null,
  "score": {
@@ -105,7 +105,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "Foreign Languages",
+   "section_heading": "Foreign Languages (heading not in the extracted text; section begins \"The AA Degree in Foreign Languages provides...\")",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -129,227 +129,449 @@
    "outcomes": [
     "demonstrate increased reading and listening comprehension of the target languages",
     "utilize oral and written communicative skills to produce the target languages",
-    "demonstrate increased knowledge of the target languages’ cultures."
+    "demonstrate increased knowledge of the target languages’ cultures"
    ],
    "careers": []
   },
   "blocks": [
    {
-    "name": "Required Courses",
+    "name": "Required Courses: 2 courses from one language",
     "rule": "choose_courses",
-    "minimum": 4,
+    "minimum": 2,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 10,
+     "max": 10
     },
     "courses": [
      {
       "code": "ARMEN 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARMEN 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARMEN 115",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARMEN 116",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARMEN 117",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARMEN 125",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARMEN 126",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARMEN 127",
-      "units": 3.0,
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHIN 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHIN 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FREN 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FREN 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FREN 103",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FREN 104",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ITAL 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ITAL 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ITAL 103",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ITAL 104",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "JAPAN 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "JAPAN 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "JAPAN 103",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "JAPAN 104",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "KOREA 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "KOREA 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 101",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 102",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 103",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 104",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 115",
-      "units": 5.0,
+      "units": 5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 131",
-      "units": 3.0,
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Required Courses: 2 or more courses from a different language",
+    "rule": "choose_courses",
+    "minimum": 2,
+    "option_group": null,
+    "stated": {
+     "min": 8,
+     "max": 10
+    },
+    "courses": [
+     {
+      "code": "ARMEN 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARMEN 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARMEN 115",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARMEN 116",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARMEN 117",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARMEN 125",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARMEN 126",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ARMEN 127",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIN 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CHIN 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "FREN 104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ITAL 104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "JAPAN 104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREA 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "KOREA 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 101",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 102",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 103",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 104",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 115",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "SPAN 131",
+      "units": 3,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -360,27 +582,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The section heading is not printed in the extracted text for page 76 (the section begins with 'The AA Degree in Foreign Languages...'); 'Foreign Languages' is inferred from the program description. The heading may be on the preceding page.",
-   "The catalog rule reads: 'Select 2 courses from one language ten (10) units and 2 or more courses from a different language (8-10) units.' It is recorded as one choose_courses block with minimum 4. The constraint is two courses (10 units) from one language plus two or more courses (8-10 units) from a second, different language. No single block total is printed; the program minimum is 18-20 units.",
-   "The catalog prints no units beside the course codes, so course units are null. The state file stores 5 units for most of these courses and 3 for ARMEN 125/126/127 and SPAN 131.",
-   "The program learning outcomes are printed as one sentence with three semicolon-separated clauses; they are recorded as three outcomes. 'writt en' (a PDF ligature artifact) is rendered as 'written'.",
-   "The description mentions entering 'the job market in fields that require knowledge of a foreign language' but names no specific career, so careers is empty.",
-   "The subsequent sections (Italian, Japanese, Armenian, French and Spanish Language degrees/certificates under 'FOREIGN LANGUAGE AA DEGREE OR CERTIFICATE') belong to separate awards and were not read for this record."
+   "The section heading for the Foreign Languages AA degree is not in the extracted text (page 76 begins mid-section); the heading recorded is descriptive. Reviewer should check page 75 for the printed heading.",
+   "The catalog prints a single course list with the rule 'Select 2 courses from one language ten (10) units and 2 or more courses from a different language (8-10) units.' Recorded as two choose_courses blocks over the same list; the two languages must differ. The second block says '2 or more' courses.",
+   "The catalog prints no units beside courses; units are taken from the closed list. The 'ten (10) units' for the first language implies two 5-unit courses, though ARMEN 125-127 and SPAN 131 are 3 units.",
+   "Outcomes printed as one sentence joined by semicolons; split into three entries. PDF extraction artifacts ('writt en', 'communica-tive') rendered as 'written', 'communicative'.",
+   "Units pages 77-78 cover separate Italian, Japanese, Armenian, French and Spanish Language degrees/certificates and other programs; they were not used for this award.",
+   "No careers or job titles are named; the description mentions only the job market in fields requiring knowledge of a foreign language."
   ]
  },
- "extracted_run": 41040709338,
- "read_run": 41012563119,
- "reconciled": [
-  {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "ARMEN 127": [
-     3.0,
-     3.0
-    ]
-   },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
-  }
- ]
+ "extracted_run": "41055650373"
 }
