@@ -1,0 +1,62 @@
+name: Ask Sierra
+
+# Ask the live Sierra (the cpl-chat Edge Function) one question and print her
+# answer in the run log and its summary (S528, 2026-10-30: Sam asked a session
+# to "ask Sierra about Cabrillo again to test", and a session cannot reach the
+# function from its sandbox). One question is one billed Sierra answer. The
+# address and the public anon key are read from chatbox/health_check.sh, the
+# probe that already calls her, so this file holds no copy of either.
+#
+# A push that changes this file asks its default question once, so the change
+# that adds or edits it shows it working.
+
+on:
+  workflow_dispatch:
+    inputs:
+      question:
+        description: "The question to ask Sierra"
+        required: true
+        default: "Has Cabrillo College met the CPL funding conditions, and is it at 75 percent on veteran JSTs?"
+  push:
+    branches: ['claude/**']
+    paths:
+      - .github/workflows/sierra-ask.yml
+
+permissions:
+  contents: read
+
+jobs:
+  ask:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+      - name: Ask
+        env:
+          QUESTION: ${{ inputs.question || 'Has Cabrillo College met the CPL funding conditions, and is it at 75 percent on veteran JSTs?' }}
+        run: |
+          set -euo pipefail
+          URL=$(grep -oE 'https://[a-z0-9]+\.supabase\.co/functions/v1/cpl-chat' chatbox/health_check.sh | head -1)
+          ANON=$(grep -oE 'eyJ[A-Za-z0-9_.-]+' chatbox/health_check.sh | head -1)
+          BODY=$(python3 -c 'import json,os;print(json.dumps({"query":os.environ["QUESTION"],"session_id":"sierra-ask-workflow"}))')
+          raw=$(curl -sS -N --max-time 120 -X POST "$URL" -H 'Content-Type: application/json' \
+            -H "apikey: $ANON" -H "Authorization: Bearer $ANON" -d "$BODY")
+          answer=$(printf '%s' "$raw" | python3 -c '
+          import sys, json
+          out = []
+          for blk in sys.stdin.read().split("\n\n"):
+              ev = None; data = ""
+              for line in blk.split("\n"):
+                  if line.startswith("event:"): ev = line[6:].strip()
+                  elif line.startswith("data:"): data += line[5:].strip()
+              if ev == "text":
+                  try:
+                      d = json.loads(data)
+                      if isinstance(d, dict) and isinstance(d.get("text"), str): out.append(d["text"])
+                  except Exception:
+                      pass
+          sys.stdout.write("".join(out))
+          ')
+          if [ -z "${answer// /}" ]; then echo "No answer text. First 400 bytes: ${raw:0:400}"; exit 1; fi
+          echo "=== QUESTION ==="; echo "$QUESTION"; echo "=== SIERRA ==="; echo "$answer"
+          { echo "### Question"; echo; echo "$QUESTION"; echo; echo "### Sierra"; echo; echo "$answer"; } >> "$GITHUB_STEP_SUMMARY"
