@@ -13,8 +13,11 @@
 //   1. The function body holds no MATERIALIZED CTE and concatenates no vector.
 //   2. Both passes read public.coci_college_programs directly, and the DF pass
 //      tests both halves of a surface where the copy tested their concatenation.
-//   3. The migration's function block is the source file's, character for
-//      character; the rollback's is the copy version it replaces.
+//   3. The newest migration's function block is the source file's, character
+//      for character; the rollback's is the copy version S521 replaced.
+//   4. The DF pass groups by the term's ordinal alone. The first apply grouped
+//      by the tsquery too, and the sort that forced spilled more than the copy
+//      had (52,999 temp pages, 6.8 s on 30 terms).
 //
 // Run from repo root: `npm test` (or `node tests/sierra_program_search_no_copy.test.js`).
 const fs = require("fs");
@@ -22,7 +25,8 @@ const path = require("path");
 
 const read = (p) => fs.readFileSync(path.join(__dirname, "..", p), "utf8");
 const SRC = read("chatbox/supabase_search_college_programs.sql");
-const MIG = read("kb/migrations/2026-10-30_s521_search_college_programs_no_copy.sql");
+// The newest migration of the function; s521 (no copy) was followed by s521b (DF grouped by ord).
+const MIG = read("kb/migrations/2026-10-30_s521b_search_college_programs_df_by_ord.sql");
 const RB = read("kb/migrations/2026-10-30_s521_search_college_programs_no_copy_rollback.sql");
 
 const results = [];
@@ -59,6 +63,10 @@ check("(2) a non-phrase term counts on the title surface when either title vecto
   squash(body).includes("else p.tsv_title_en @@ tm.q or p.tsv_title_simple @@ tm.q end) as df_t"));
 check("(2) …and on the code surface when either code vector matches",
   squash(body).includes("else p.tsv_code_en @@ tm.q or p.tsv_code_simple @@ tm.q end) as df_c"));
+check("(2) ⚠ the DF pass groups by the term's ordinal alone (a tsquery has no hash opclass: grouping by q sorts every term-row pair and spills)",
+  /group by tm\.ord\s*\)/.test(body) && !/group by tm\.ord\s*,/.test(body));
+check("(2) sel takes q and kind back from terms by ordinal",
+  /from df join terms tm on tm\.ord = df\.ord/.test(body));
 check("(2) a phrase still counts on the english vectors alone",
   squash(body).includes("case when tm.kind = 'phrase' then p.tsv_title_en @@ tm.q")
   && squash(body).includes("case when tm.kind = 'phrase' then p.tsv_code_en @@ tm.q"));

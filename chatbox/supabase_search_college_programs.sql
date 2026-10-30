@@ -323,6 +323,11 @@ alter table public.coci_college_programs
 -- connections on this instance. Read straight from the table, which sits in
 -- shared buffers, the passes write nothing to temp: the Orange County question
 -- 555 → ~175 ms warm, the 30-term DF pass 622 ms (the whole call read 3,570 ms).
+-- The DF pass groups by the term's ordinal alone. The first no-copy apply
+-- (00:38Z 2026-10-30) kept `group by tm.ord, tm.q, tm.kind`; a tsquery has
+-- no hash opclass, so that sorted every term-row pair with its vectors and
+-- spilled more than the copy had (set 05: 52,999 pages, 6.8 s). By ordinal
+-- the DF pass is a 24 kB hash aggregate: 161 ms for six terms.
 -- `tb @@ q` on the concatenation became `te @@ q or ts @@ q`; for the
 -- single-lexeme queries the 'eng' and 'sim' kinds produce they are the same
 -- test. Equivalence and the after-read:
@@ -431,22 +436,26 @@ begin
       select u.ord, u.q::tsquery as q, u.kind
       from unnest(qs, kinds) with ordinality as u(q, kind, ord)
     ),
+    -- Grouped by ord alone, which is unique per term: a tsquery has no hash
+    -- opclass, so grouping by q as well forced a sort of every term-row pair
+    -- with its vectors (11,719 temp pages for the six-term question, 52,999
+    -- for 30 terms).
     df as (
-      select tm.ord, tm.q, tm.kind,
+      select tm.ord,
              count(*) filter (where case when tm.kind = 'phrase' then p.tsv_title_en @@ tm.q
                                           else p.tsv_title_en @@ tm.q or p.tsv_title_simple @@ tm.q end) as df_t,
              count(*) filter (where case when tm.kind = 'phrase' then p.tsv_code_en @@ tm.q
                                           else p.tsv_code_en @@ tm.q or p.tsv_code_simple @@ tm.q end) as df_c
       from terms tm cross join public.coci_college_programs p
-      group by tm.ord, tm.q, tm.kind
+      group by tm.ord
     ),
     sel as (
-      select df.ord, df.q, df.kind,
+      select tm.ord, tm.q, tm.kind,
              (df.df_t <= corpus_n * generic_pct)
                or not bool_or(df.df_t <= corpus_n * generic_pct) over () as use_t,
              (df.df_c <= corpus_n * generic_pct)
                or not bool_or(df.df_c <= corpus_n * generic_pct) over () as use_c
-      from df
+      from df join terms tm on tm.ord = df.ord
     ),
     q4 as (
       select

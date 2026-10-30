@@ -122,8 +122,24 @@
 -- verbatim), confirm md5(prosrc) reads ff716ac2b17267d8154dfce76a627d68 again, and git revert
 -- the source-file change. No data moves either way.
 --
--- APPLIED: not yet. A fresh live read at 00:29:44Z still read the BEFORE md5(prosrc)
--- ff716ac2b17267d8154dfce76a627d68. The session's permission check denied the push that changes
--- kb/migrations/.apply (a production deploy). Sam, in session, ~00:33Z: "Push it". A fresh live read
--- at 00:34:05Z still read ff716ac2...; .apply now names this migration. The runner's receipt and the
--- after-read follow.
+-- APPLIED (s521): 00:38Z 2026-10-30, supabase-migrate run 40980527319 (Sam, in session ~00:33Z:
+-- "Push it"); the runner's receipt is kb/receipts/migration_s521_search_college_programs_no_copy_40980527319.json.
+-- AFTER-READ (00:41Z):
+--   1. md5(prosrc) e803674b239fcdd4675bbdff8898e0b2, 11,139 chars; 1 signature; acl as BEFORE. PASS
+--   2. all 13 md5_keyseq equal BEFORE. PASS
+--   3. every md5_set equals BEFORE; set 11 reads 77daadc07e0080847fee072b435b9b70, the other of its
+--      two 09-30 values. PASS
+--   4. FAIL. Set 11 wrote 11,719 temp pages (823 ms); set 05 wrote 52,999 (6,805 ms, against 3,570
+--      before). The DF pass still grouped by `tm.ord, tm.q, tm.kind`; a tsquery has no hash opclass,
+--      so Postgres sorted every term-row pair with its four vectors (external merge, 25 MB a worker
+--      for six terms). Grouped by `tm.ord` alone the same pass is a 24 kB hash aggregate: 161 ms
+--      against 1,203. The pre-apply timing above had grouped by ord, so it measured a shape the
+--      function did not have.
+--   Not run: 5, the smoke, held for the fix.
+--
+-- FIX FORWARD (s521b): kb/migrations/2026-10-30_s521b_search_college_programs_df_by_ord.sql. DF
+-- groups by `tm.ord`; `sel` joins q and kind back from `terms`. Same groups, so the same rows. The
+-- whole 30-term pass as a plain query: 858 ms, no temp pages. AFTER md5(prosrc)
+-- 28516b079c2deec32f8e60fd962e91d5 (11,396 chars). Its after-read repeats 1 to 5 above with that md5.
+-- NOT YET APPLIED: a fresh read at 00:45:38Z read e803674b (s521 live); the session's permission check
+-- denied the push that points kb/migrations/.apply at s521b, so it waits on Sam (fix forward or roll back).
