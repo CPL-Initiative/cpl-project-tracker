@@ -551,7 +551,11 @@ reuse, so keep it self-contained behind its CONFIG block.
   1. **One run per deploy.** `cpl-chat-deploy.yml` calls the smoke after it deploys
      cpl-chat. The smoke has no push trigger: it asks the live function, and a push
      to a branch changes nothing live. Read the deploy run's smoke job; dispatch no
-     second full run.
+     second full run. Since Sheet 142 card 2 (Sam, 2026-10-30, *retry-report*) a
+     database read there retries once, and a missed check on an answer's wording is a
+     `::warning::` counted in the summary while the run stays green; a rule guard (the
+     opener, COCI, 7z's naming rule) and a failed read still fail it. Read the warnings.
+     The preview A/B runs the script directly and still fails on a missed answer.
   2. **Re-check only what failed.** Dispatch `cpl-chat-smoke.yml` with `modes=`
      naming the failed modes by the first word of their label (`7x`, or `7x,9`): one
      or two answers. Re-check after a change that could move the answer, and give a
