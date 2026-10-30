@@ -982,7 +982,7 @@
     h += "<div class=\"adm-audnote\">This <b>takes the item off the menu</b> for the people it excludes. "
       + "If you only want to note that a team phrase is needed to make changes, leave this on "
       + "<b>Everyone</b> — the page says so itself when they open it, and it stays findable meanwhile.</div>";
-    h += '<button class="adm-btn" data-editdone>Done</button>';
+    h += '<button class="adm-btn" data-editdone>Save</button>';
 
     // Placed on the control, because narrowing the audience of a tab whose data
     // anyone can read is the moment someone comes to believe they protected it.
@@ -1026,7 +1026,7 @@
       h += '<div class="adm-audnote">Who sees this in the menu is set with the <b>Seen by: ' + esc(rung.short)
         + "</b> button on the row — it is <b>" + esc(rung.label) + "</b> right now.</div>";
     }
-    h += '<button class="adm-btn" data-editdone>Done</button>';
+    h += '<button class="adm-btn" data-editdone>Save</button>';
     h += "</div>";
     return h;
   }
@@ -1090,7 +1090,7 @@
       if (state.editKey === "group:" + c.id) {
         h += '<div class="adm-editrow"><input type="text" data-glabel-for="' + esc(c.id) + '" maxlength="60" '
           + 'value="' + esc(c.label) + '" aria-label="Group name">'
-          + '<button class="adm-btn" data-editdone>Done</button></div>';
+          + '<button class="adm-btn" data-editdone>Save</button></div>';
       }
       h += '<div class="adm-col-body' + (c.hidden ? " hid" : "") + '">';
       if (!c.tabs.length) {
@@ -1935,8 +1935,18 @@
     root.querySelectorAll("[data-edit]").forEach(function (b) {
       b.addEventListener("click", function () { state.editKey = b.getAttribute("data-edit"); render(root); });
     });
+    /* The editor's own button SAVES. It read "Done" and only closed the
+     * editor, leaving the change in the draft until "Save the menu" further
+     * down; Sam pressed Done on four tabs over two days (2026-10-28 and -29),
+     * and the server logs hold no write after any of them: a reload threw each
+     * change away (Sam, 2026-10-30: "The way I save is by clicking Done, which
+     * should be labeled save"). With nothing changed it closes. */
     var done = root.querySelector("[data-editdone]");
-    if (done) done.addEventListener("click", function () { state.editKey = null; render(root); });
+    if (done) done.addEventListener("click", function () {
+      state.editKey = null;
+      if (state.dirty) saveDraft(root);
+      else render(root);
+    });
 
     var lbl = root.querySelector("[data-label-for]");
     if (lbl) lbl.addEventListener("input", function () {
