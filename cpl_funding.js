@@ -204,6 +204,10 @@
     // the table"), whatever the length of the name before it.
     // In the row's own type size (Sam, 2026-10-28: "the same font size as other row data").
     ".cplfund-table td.cf-inst .cplfund-optin-jump { float: right; margin-left: 12px; font-size: inherit; }",
+    // The submitted words and a reviewer's Accept (S530) hold the Confirm word's place at the cell's right edge.
+    ".cplfund-table td.cf-inst .cf-waits { float: right; margin-left: 12px; display: inline-flex; flex-wrap: wrap; " +
+      "justify-content: flex-end; align-items: center; gap: 2px 12px; }",
+    ".cplfund-table td.cf-inst .cf-waits .cplfund-optbtn { margin-left: 0; font-size: inherit; }",
     // The same net for a header and for Total Funds' chip: at the table's
     // minimum width both fit on one line, and a wider font wraps rather than
     // painting over the next column.
@@ -12633,6 +12637,32 @@
           ". Opens " + dispName(c.college) + "'s short attestation form for CPL Implementation Funding.") + '">' +
         (now ? "Confirm now" : "Confirm by " + esc(deadlineMdy(true))) + "</button>";
     }
+    // A request on file waits for the MAP team (Sam, 2026-10-30: "a chip to the college rows showing
+    // that a confirmation has been submitted and a way for the MAP team to respond easily with an
+    // acceptance--same thing needed for the NC Lead attestation"). The word stands where the Confirm
+    // word stood, for every viewer; a signed-in reviewer's row also carries Accept, the drill-in's own
+    // (acceptOptIn, acceptNcAttest): it confirms the request and opens the email to the requester.
+    var waits = "", reviewer = unlocked() && !publicMode(), nm = dispName(c.college);
+    function waitWord(word, tip) {
+      return '<span class="cplfund-chip cf-waitchip" title="' + esc(tip) + '">' + word + "</span>";
+    }
+    function acceptWord(attr, what) {
+      return '<button type="button" class="cplfund-optbtn cf-rowaccept" ' + attr + '="' + esc(c.college) +
+        '" aria-label="' + esc("Accept " + what + " for " + nm) + '">Accept</button>';
+    }
+    function sentOn(at) { return at ? " on " + isoMdy(at) : ""; }
+    if (partShown() && optinPending(c.college)) {
+      waits += waitWord("Confirmation submitted", "Participation confirmation submitted" +
+        sentOn((ELIG.optinRow[c.college] || {}).requested_at) + ". Awaiting CPL Initiative Confirmation.") +
+        (reviewer ? acceptWord("data-optinaccept", "the participation confirmation") : "");
+    }
+    var att = ncAttestShown(c) ? ncAttestOf(c.college) : null;
+    if (att && ncAttestPending(att)) {
+      waits += waitWord("NC Lead attestation submitted", "Noncredit CPL Lead attestation submitted" + sentOn(att.requested_at) +
+        (att.fiscal_year ? " for " + att.fiscal_year : "") + ". Awaiting CPL Initiative Confirmation.") +
+        (reviewer ? acceptWord("data-ncattestaccept", "the Noncredit CPL Lead attestation") : "");
+    }
+    if (waits) chips += ' <span class="cf-waits">' + waits + "</span>";
     return chips;
   }
   // ★ Veteran Star beside the name (Sam, 2026-09-24: "Add a veteran star icon on

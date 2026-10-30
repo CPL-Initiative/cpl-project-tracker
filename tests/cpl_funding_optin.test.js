@@ -435,6 +435,46 @@ function reviewerSession() {
     !wrap.querySelector('[data-optinfield="name"]'));
 }
 
+{
+  // R1-R3 (S530; Sam, 2026-10-30: "a chip to the college rows showing that a confirmation has been submitted and
+  // a way for the MAP team to respond easily with an acceptance"). The word holds the Confirm word's place.
+  const priv = freshDom();
+  priv.window.CPL_SESSION = reviewerSession();
+  const doc = boot(priv.window);
+  const P = priv.window.CPL_FUNDING_TAB;
+  const selfRow = {}; selfRow[COL] = { college: COL, status: "self_attested", source: "self", requested_at: "2026-10-30T17:00:00Z" };
+  P._setElig({ coordOk: true, coord: {}, optinRow: selfRow, optinReview: [
+    { college: COL, name: "Jane Admin", title: "VPAA", email: "jane@college.edu",
+      status: "self_attested", requested_at: "2026-10-30T17:00:00Z" }
+  ] });
+  P.render();
+  const mails = [];
+  priv.window.CPL_FUNDING_OPEN_MAIL = function (href) { mails.push(href); };
+  const rowOf = () => doc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + COL + '"]');
+  const word = rowOf().querySelector("td.cf-inst .cf-waitchip");
+  const acc = rowOf().querySelector("td.cf-inst [data-optinaccept]");
+  check("R1: a waiting request's row says Confirmation submitted, dated in the hover, and offers a reviewer Accept",
+    !!word && word.textContent === "Confirmation submitted" && /submitted on 10-30-2026\. Awaiting CPL Initiative Confirmation\./.test(word.getAttribute("title")) &&
+    !!acc && acc.textContent === "Accept" && /^Accept the participation confirmation for /.test(acc.getAttribute("aria-label")) &&
+    !rowOf().querySelector("[data-optinjump]"));
+  if (acc) click(priv.window, acc);
+  check("R2: the row's Accept confirms the request without opening the drill-in, and opens the email to the requester",
+    P._optinActive(COL) === true && P._optinPending(COL) === false && mails.length === 1 &&
+    mails[0].indexOf("mailto:jane%40college.edu?") === 0 && !rowOf().querySelector(".cf-waitchip") &&
+    !doc.querySelector("#cplFundTable tr.cplfund-detail"));
+  const pub = freshDom();
+  pub.window.CPL_FUNDING_PUBLIC = true;
+  const pdoc = boot(pub.window);
+  const Q = pub.window.CPL_FUNDING_TAB;
+  const pRow = {}; pRow[COL] = { college: COL, status: "self_attested", source: "self" };
+  Q._setElig({ coordOk: true, coord: {}, optinRow: pRow });
+  Q.render();
+  const ptr = pdoc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + COL + '"]');
+  check("R3: the public row shows Confirmation submitted and no Accept",
+    !!ptr && !!ptr.querySelector(".cf-waitchip") && ptr.querySelector(".cf-waitchip").textContent === "Confirmation submitted" &&
+    !ptr.querySelector("[data-optinaccept]"));
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
