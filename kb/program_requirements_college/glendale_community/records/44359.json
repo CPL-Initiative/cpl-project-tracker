@@ -61,20 +61,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    30.5,
-    30.5
+    31.5,
+    31.5
    ],
    "stated": [
     31.5,
     31.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 30.5-30.5; the catalog states 31.5-31.5"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -98,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -143,63 +141,63 @@
     "courses": [
      {
       "code": "EMS 240",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMS 242",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMS 244",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMS 246",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMS 248",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMS 250",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMS 252",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMS 260",
-      "units": null,
+      "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "EMS 261",
-      "units": null,
+      "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -217,6 +215,51 @@
    "Career entry 'paramedic profession' is taken from the description ('knowledge of the paramedic profession'); work settings (emergency rooms, labor and delivery, fire departments) were not recorded as careers."
   ]
  },
- "extracted_run": 40711704988,
- "read_run": "39063367252"
+ "extracted_run": 41012563119,
+ "read_run": 40711704988,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "EMS 240": [
+     3.5,
+     3.5
+    ],
+    "EMS 242": [
+     3.5,
+     3.5
+    ],
+    "EMS 244": [
+     3.5,
+     3.5
+    ],
+    "EMS 246": [
+     4.0,
+     4.0
+    ],
+    "EMS 248": [
+     3.5,
+     3.5
+    ],
+    "EMS 250": [
+     3.5,
+     3.5
+    ],
+    "EMS 252": [
+     1.0,
+     1.0
+    ],
+    "EMS 260": [
+     4.5,
+     4.5
+    ],
+    "EMS 261": [
+     4.5,
+     4.5
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ]
 }

@@ -154,14 +154,14 @@
      },
      {
       "code": "ART 150",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 152",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -180,28 +180,28 @@
     "courses": [
      {
       "code": "ART 201",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 205",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 209",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 210",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -220,14 +220,14 @@
     "courses": [
      {
       "code": "ART 231",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ART 232",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -267,7 +267,7 @@
      },
      {
       "code": "ART 234",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -293,5 +293,51 @@
    "The outcome text was extracted with spurious spacing (e.g. 'd esi gns , sto ryboards'); the words were rejoined without other changes. The second outcome is read as a separate sentence after the shared lead-in."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ART 150": [
+     3.0,
+     3.0
+    ],
+    "ART 152": [
+     3.0,
+     3.0
+    ],
+    "ART 201": [
+     3.0,
+     3.0
+    ],
+    "ART 205": [
+     3.0,
+     3.0
+    ],
+    "ART 209": [
+     3.0,
+     3.0
+    ],
+    "ART 210": [
+     3.0,
+     3.0
+    ],
+    "ART 231": [
+     3.0,
+     3.0
+    ],
+    "ART 232": [
+     3.0,
+     3.0
+    ],
+    "ART 234": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

@@ -156,12 +156,12 @@
     "courses": [
      {
       "code": "BUSAD 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "BUSAD 152",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -169,35 +169,35 @@
      },
      {
       "code": "CABOT 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CABOT 102",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CABOT 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 104",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 205",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -211,14 +211,14 @@
      },
      {
       "code": "CABOT 265",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 270",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -244,28 +244,28 @@
      },
      {
       "code": "BUSAD 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CABOT 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 266",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CABOT 285",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -284,6 +284,67 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": 40711704988,
- "read_run": "39063367252"
+ "extracted_run": 41012563119,
+ "read_run": 40711704988,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "BUSAD 106": [
+     3.0,
+     3.0
+    ],
+    "BUSAD 152": [
+     3.0,
+     3.0
+    ],
+    "CABOT 101": [
+     3.0,
+     3.0
+    ],
+    "CABOT 102": [
+     4.0,
+     4.0
+    ],
+    "CABOT 103": [
+     3.0,
+     3.0
+    ],
+    "CABOT 104": [
+     1.0,
+     1.0
+    ],
+    "CABOT 205": [
+     3.0,
+     3.0
+    ],
+    "CABOT 265": [
+     3.0,
+     3.0
+    ],
+    "CABOT 270": [
+     3.0,
+     3.0
+    ],
+    "BUSAD 110": [
+     3.0,
+     3.0
+    ],
+    "CABOT 110": [
+     3.0,
+     3.0
+    ],
+    "CABOT 266": [
+     3.0,
+     3.0
+    ],
+    "CABOT 285": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ]
 }

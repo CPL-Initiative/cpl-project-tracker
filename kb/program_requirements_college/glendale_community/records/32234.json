@@ -149,12 +149,12 @@
      },
      {
       "code": "ENGL 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGL 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -174,42 +174,42 @@
     "courses": [
      {
       "code": "ENGL 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 109",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 122",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 123",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -228,28 +228,28 @@
     "courses": [
      {
       "code": "ENGL 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 111",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 117",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 125",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -275,203 +275,203 @@
     "courses": [
      {
       "code": "ENGL 112",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 114",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 118",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 130",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 212",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ARMEN 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHIN 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FREN 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FREN 103",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FREN 104",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ITAL 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ITAL 103",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ITAL 104",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "JAPAN 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "JAPAN 103",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "JAPAN 104",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "KOREA 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 103",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 104",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 115",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 124H",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "JOURN 102",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HUMAN 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "THTR 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -490,5 +490,179 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ENGL 102": [
+     3.0,
+     3.0
+    ],
+    "ENGL 102H": [
+     3.0,
+     3.0
+    ],
+    "ENGL 105": [
+     3.0,
+     3.0
+    ],
+    "ENGL 106": [
+     3.0,
+     3.0
+    ],
+    "ENGL 109": [
+     3.0,
+     3.0
+    ],
+    "ENGL 110": [
+     3.0,
+     3.0
+    ],
+    "ENGL 122": [
+     3.0,
+     3.0
+    ],
+    "ENGL 123": [
+     3.0,
+     3.0
+    ],
+    "ENGL 103": [
+     3.0,
+     3.0
+    ],
+    "ENGL 111": [
+     3.0,
+     3.0
+    ],
+    "ENGL 117": [
+     3.0,
+     3.0
+    ],
+    "ENGL 125": [
+     3.0,
+     3.0
+    ],
+    "ENGL 112": [
+     3.0,
+     3.0
+    ],
+    "ENGL 114": [
+     3.0,
+     3.0
+    ],
+    "ENGL 115": [
+     3.0,
+     3.0
+    ],
+    "ENGL 118": [
+     3.0,
+     3.0
+    ],
+    "ENGL 130": [
+     3.0,
+     3.0
+    ],
+    "ENGL 212": [
+     3.0,
+     3.0
+    ],
+    "ARMEN 102": [
+     5.0,
+     5.0
+    ],
+    "CHIN 102": [
+     5.0,
+     5.0
+    ],
+    "FREN 102": [
+     5.0,
+     5.0
+    ],
+    "FREN 103": [
+     5.0,
+     5.0
+    ],
+    "FREN 104": [
+     5.0,
+     5.0
+    ],
+    "ITAL 102": [
+     5.0,
+     5.0
+    ],
+    "ITAL 103": [
+     5.0,
+     5.0
+    ],
+    "ITAL 104": [
+     5.0,
+     5.0
+    ],
+    "JAPAN 102": [
+     5.0,
+     5.0
+    ],
+    "JAPAN 103": [
+     5.0,
+     5.0
+    ],
+    "JAPAN 104": [
+     5.0,
+     5.0
+    ],
+    "KOREA 102": [
+     5.0,
+     5.0
+    ],
+    "SPAN 102": [
+     5.0,
+     5.0
+    ],
+    "SPAN 103": [
+     5.0,
+     5.0
+    ],
+    "SPAN 104": [
+     5.0,
+     5.0
+    ],
+    "SPAN 115": [
+     5.0,
+     5.0
+    ],
+    "SPAN 124H": [
+     3.0,
+     3.0
+    ],
+    "JOURN 102": [
+     3.5,
+     3.5
+    ],
+    "BUSAD 106": [
+     3.0,
+     3.0
+    ],
+    "COMM 106": [
+     3.0,
+     3.0
+    ],
+    "HUMAN 115": [
+     3.0,
+     3.0
+    ],
+    "THTR 101": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 105": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

@@ -67,20 +67,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    20.0,
-    20.0
+    37.0,
+    37.0
    ],
    "stated": [
     37.0,
     37.0
    ],
    "against": "program",
-   "why": [
-    "a required course in 'Required Courses' has no units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -107,7 +105,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -150,35 +148,35 @@
     "courses": [
      {
       "code": "CS/IS 165",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 166",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CS/IS 211",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 212",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 280",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -197,28 +195,28 @@
     "courses": [
      {
       "code": "CS/IS 101",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 112",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 125",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 130",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -239,56 +237,56 @@
      },
      {
       "code": "CS/IS 139",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 172",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 174",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 190",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 103E",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 104E",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 107",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 101",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -308,6 +306,83 @@
    "No general education pattern, degree total, or careers are named in this section."
   ]
  },
- "extracted_run": 39114562289,
- "read_run": "39063367252"
+ "extracted_run": 41012563119,
+ "read_run": 39114562289,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "CS/IS 165": [
+     4.0,
+     4.0
+    ],
+    "CS/IS 166": [
+     3.0,
+     3.0
+    ],
+    "CS/IS 211": [
+     4.0,
+     4.0
+    ],
+    "CS/IS 212": [
+     3.0,
+     3.0
+    ],
+    "CS/IS 280": [
+     3.0,
+     3.0
+    ],
+    "CS/IS 101": [
+     5.0,
+     5.0
+    ],
+    "CS/IS 112": [
+     3.0,
+     3.0
+    ],
+    "CS/IS 125": [
+     4.0,
+     4.0
+    ],
+    "CS/IS 130": [
+     3.0,
+     3.0
+    ],
+    "CS/IS 139": [
+     3.0,
+     3.0
+    ],
+    "CS/IS 172": [
+     4.0,
+     4.0
+    ],
+    "CS/IS 174": [
+     4.0,
+     4.0
+    ],
+    "CS/IS 190": [
+     3.0,
+     3.0
+    ],
+    "MATH 103E": [
+     5.0,
+     5.0
+    ],
+    "MATH 104E": [
+     5.0,
+     5.0
+    ],
+    "MATH 107": [
+     5.0,
+     5.0
+    ],
+    "PHY 101": [
+     5.0,
+     5.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ]
 }

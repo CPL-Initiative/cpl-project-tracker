@@ -159,12 +159,12 @@
     "courses": [
      {
       "code": "ANTHR 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ANTHR 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -172,61 +172,61 @@
      },
      {
       "code": "ANTHR 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 114",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 150",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 135",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECON 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECON 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ECON 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -234,7 +234,7 @@
      },
      {
       "code": "ECON 111",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -248,98 +248,98 @@
      },
      {
       "code": "ETH S 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 123",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 125",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 132",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 164",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 165",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 166",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 170",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -353,7 +353,7 @@
      },
      {
       "code": "HLTH 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -367,33 +367,33 @@
      },
      {
       "code": "HLTH 107",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HLTH 108",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIST 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -401,40 +401,40 @@
      },
      {
       "code": "HIST 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 111",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIST 111H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -442,40 +442,40 @@
      },
      {
       "code": "HIST 113",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 116",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 117",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 118",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIST 118H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -483,54 +483,54 @@
      },
      {
       "code": "HIST 119",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 122",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 131",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 132",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 133",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIST 133H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -538,14 +538,14 @@
      },
      {
       "code": "HIST 135",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 136",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -559,26 +559,26 @@
      },
      {
       "code": "HIST 170",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 180",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "LING 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "LING 101H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -586,12 +586,12 @@
      },
      {
       "code": "LING 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "LING 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -599,12 +599,12 @@
      },
      {
       "code": "LING 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "LING 103H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -626,49 +626,49 @@
      },
      {
       "code": "POL S 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL S 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL S 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL S 108",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL S 111",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL S 114",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "POL S 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -682,7 +682,7 @@
      },
      {
       "code": "POL S 171",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -702,12 +702,12 @@
      },
      {
       "code": "PSYCH 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "PSYCH 104H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -715,28 +715,28 @@
      },
      {
       "code": "PSYCH 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCH 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCH 113",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCH 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -750,14 +750,14 @@
      },
      {
       "code": "PSYCH 150",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCH 200",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -771,54 +771,54 @@
      },
      {
       "code": "SOC S 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC S 107",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC S 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC S 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC S 127",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC S 130",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "SOC 101H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -826,63 +826,63 @@
      },
      {
       "code": "SOC 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 108",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 114",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 131",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 171",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 200",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -937,35 +937,395 @@
    "No general education pattern, degree total, or careers are named in this section."
   ]
  },
- "extracted_run": 41009271854,
+ "extracted_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "ECON 170": [
+    "ANTHR 102": [
      3.0,
      3.0
     ],
-    "GEOG 171": [
+    "ANTHR 102H": [
      3.0,
      3.0
     ],
-    "MCOMM 101": [
+    "ANTHR 103": [
      3.0,
      3.0
     ],
-    "POL S 170": [
+    "ANTHR 104": [
      3.0,
      3.0
     ],
-    "SOC S 101": [
+    "ANTHR 105": [
      3.0,
      3.0
+    ],
+    "ANTHR 114": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 150": [
+     3.0,
+     3.0
+    ],
+    "CHLDV 135": [
+     3.0,
+     3.0
+    ],
+    "ECON 101": [
+     3.0,
+     3.0
+    ],
+    "ECON 102": [
+     3.0,
+     3.0
+    ],
+    "ECON 102H": [
+     3.0,
+     3.0
+    ],
+    "ECON 111": [
+     3.0,
+     3.0
+    ],
+    "ETH S 110": [
+     3.0,
+     3.0
+    ],
+    "ETH S 120": [
+     3.0,
+     3.0
+    ],
+    "ETH S 121": [
+     3.0,
+     3.0
+    ],
+    "ETH S 123": [
+     3.0,
+     3.0
+    ],
+    "ETH S 125": [
+     3.0,
+     3.0
+    ],
+    "ETH S 132": [
+     3.0,
+     3.0
+    ],
+    "ETH S 164": [
+     3.0,
+     3.0
+    ],
+    "ETH S 165": [
+     3.0,
+     3.0
+    ],
+    "ETH S 166": [
+     3.0,
+     3.0
+    ],
+    "GEOG 102": [
+     3.0,
+     3.0
+    ],
+    "GEOG 103": [
+     3.0,
+     3.0
+    ],
+    "GEOG 106": [
+     3.0,
+     3.0
+    ],
+    "GEOG 110": [
+     3.0,
+     3.0
+    ],
+    "GEOG 170": [
+     3.0,
+     3.0
+    ],
+    "HLTH 105": [
+     3.0,
+     3.0
+    ],
+    "HLTH 107": [
+     3.0,
+     3.0
+    ],
+    "HLTH 108": [
+     3.0,
+     3.0
+    ],
+    "HIST 101": [
+     3.0,
+     3.0
+    ],
+    "HIST 102": [
+     3.0,
+     3.0
+    ],
+    "HIST 102H": [
+     3.0,
+     3.0
+    ],
+    "HIST 103": [
+     3.0,
+     3.0
+    ],
+    "HIST 104": [
+     3.0,
+     3.0
+    ],
+    "HIST 105": [
+     3.0,
+     3.0
+    ],
+    "HIST 106": [
+     3.0,
+     3.0
+    ],
+    "HIST 111": [
+     3.0,
+     3.0
+    ],
+    "HIST 111H": [
+     3.0,
+     3.0
+    ],
+    "HIST 113": [
+     3.0,
+     3.0
+    ],
+    "HIST 115": [
+     3.0,
+     3.0
+    ],
+    "HIST 116": [
+     3.0,
+     3.0
+    ],
+    "HIST 117": [
+     3.0,
+     3.0
+    ],
+    "HIST 118": [
+     3.0,
+     3.0
+    ],
+    "HIST 118H": [
+     3.0,
+     3.0
+    ],
+    "HIST 119": [
+     3.0,
+     3.0
+    ],
+    "HIST 120": [
+     3.0,
+     3.0
+    ],
+    "HIST 121": [
+     3.0,
+     3.0
+    ],
+    "HIST 122": [
+     3.0,
+     3.0
+    ],
+    "HIST 131": [
+     3.0,
+     3.0
+    ],
+    "HIST 132": [
+     3.0,
+     3.0
+    ],
+    "HIST 133": [
+     3.0,
+     3.0
+    ],
+    "HIST 133H": [
+     3.0,
+     3.0
+    ],
+    "HIST 135": [
+     3.0,
+     3.0
+    ],
+    "HIST 136": [
+     3.0,
+     3.0
+    ],
+    "HIST 170": [
+     3.0,
+     3.0
+    ],
+    "HIST 180": [
+     3.0,
+     3.0
+    ],
+    "LING 101": [
+     3.0,
+     3.0
+    ],
+    "LING 101H": [
+     3.0,
+     3.0
+    ],
+    "LING 102": [
+     3.0,
+     3.0
+    ],
+    "LING 102H": [
+     3.0,
+     3.0
+    ],
+    "LING 103": [
+     3.0,
+     3.0
+    ],
+    "LING 103H": [
+     3.0,
+     3.0
+    ],
+    "POL S 102": [
+     3.0,
+     3.0
+    ],
+    "POL S 103": [
+     3.0,
+     3.0
+    ],
+    "POL S 104": [
+     3.0,
+     3.0
+    ],
+    "POL S 108": [
+     3.0,
+     3.0
+    ],
+    "POL S 111": [
+     3.0,
+     3.0
+    ],
+    "POL S 114": [
+     3.0,
+     3.0
+    ],
+    "POL S 115": [
+     3.0,
+     3.0
+    ],
+    "POL S 171": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 104": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 104H": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 105": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 106": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 113": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 115": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 150": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 200": [
+     4.0,
+     4.0
+    ],
+    "SOC S 105": [
+     3.0,
+     3.0
+    ],
+    "SOC S 107": [
+     3.0,
+     3.0
+    ],
+    "SOC S 110": [
+     3.0,
+     3.0
+    ],
+    "SOC S 120": [
+     3.0,
+     3.0
+    ],
+    "SOC S 127": [
+     3.0,
+     3.0
+    ],
+    "SOC S 130": [
+     3.0,
+     3.0
+    ],
+    "SOC 101": [
+     3.0,
+     3.0
+    ],
+    "SOC 101H": [
+     3.0,
+     3.0
+    ],
+    "SOC 102": [
+     3.0,
+     3.0
+    ],
+    "SOC 103": [
+     3.0,
+     3.0
+    ],
+    "SOC 104": [
+     3.0,
+     3.0
+    ],
+    "SOC 105": [
+     3.0,
+     3.0
+    ],
+    "SOC 108": [
+     3.0,
+     3.0
+    ],
+    "SOC 114": [
+     3.0,
+     3.0
+    ],
+    "SOC 131": [
+     3.0,
+     3.0
+    ],
+    "SOC 171": [
+     3.0,
+     3.0
+    ],
+    "SOC 200": [
+     3.5,
+     3.5
     ]
    },
-   "words": "college-page-read 41007920360, 41007934919, 41008605528, 41008701146 (kb/college_reads/glendale_course_units_{a,c,a2,b}) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
   }
  ],
- "read_run": "40704760867"
+ "read_run": 41009271854
 }

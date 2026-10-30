@@ -144,40 +144,40 @@
     "courses": [
      {
       "code": "ENGR 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WELD 122",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WELD 123",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WELD 124",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WELD 125",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "WELD 126",
-        "units": null,
+        "units": 1.0,
         "catalog_addition": false
        }
       ],
@@ -185,7 +185,7 @@
      },
      {
       "code": "MTLGY 150",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -204,14 +204,14 @@
     "courses": [
      {
       "code": "WELD 117",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "WELD 118",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -230,7 +230,7 @@
     "courses": [
      {
       "code": "WELD 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -249,5 +249,55 @@
    "The page prints no degree total and no general education pattern for this award."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ENGR 102": [
+     3.0,
+     3.0
+    ],
+    "WELD 122": [
+     3.0,
+     3.0
+    ],
+    "WELD 123": [
+     3.0,
+     3.0
+    ],
+    "WELD 124": [
+     3.0,
+     3.0
+    ],
+    "WELD 125": [
+     1.0,
+     1.0
+    ],
+    "WELD 126": [
+     1.0,
+     1.0
+    ],
+    "MTLGY 150": [
+     3.0,
+     3.0
+    ],
+    "WELD 117": [
+     2.0,
+     2.0
+    ],
+    "WELD 118": [
+     2.0,
+     2.0
+    ],
+    "WELD 121": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

@@ -184,14 +184,14 @@
     "courses": [
      {
       "code": "MUSIC 201",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 211",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -210,21 +210,21 @@
     "courses": [
      {
       "code": "MUSIC 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 122",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -238,14 +238,14 @@
      },
      {
       "code": "MUSIC 126",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 127",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -264,7 +264,7 @@
     "courses": [
      {
       "code": "MUSIC 140",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -283,14 +283,14 @@
     "courses": [
      {
       "code": "MUSIC 135",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 136",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -309,49 +309,49 @@
     "courses": [
      {
       "code": "MUSIC 160",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 161",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 162",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 163",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 164",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 165",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 166",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -370,119 +370,119 @@
     "courses": [
      {
       "code": "MUSIC 143",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 144",
-      "units": null,
-      "units_max": null,
+      "units": 0.5,
+      "units_max": 1.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 145",
-      "units": null,
-      "units_max": null,
+      "units": 0.5,
+      "units_max": 1.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 146",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 147",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 148",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 152",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 230",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 231",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 232",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 233",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 235",
-      "units": null,
-      "units_max": null,
+      "units": 0.5,
+      "units_max": 1.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 236",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 237",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 240",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 241",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 242",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -501,140 +501,140 @@
     "courses": [
      {
       "code": "MUSIC 103",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 113",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 122",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 127",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 150",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 153",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 154",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 155",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 156",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 157",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 158",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 171",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 176",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 177",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 178",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 179",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 181",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 184",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MUSIC 187",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -655,5 +655,219 @@
    "'music industry' recorded as a career field from 'entering the music industry'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "MUSIC 201": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 211": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 120": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 121": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 122": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 126": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 127": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 140": [
+     0.5,
+     0.5
+    ],
+    "MUSIC 135": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 136": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 160": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 161": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 162": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 163": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 164": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 165": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 166": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 143": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 144": [
+     0.5,
+     1.0
+    ],
+    "MUSIC 145": [
+     0.5,
+     1.0
+    ],
+    "MUSIC 146": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 147": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 148": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 152": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 230": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 231": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 232": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 233": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 235": [
+     0.5,
+     1.0
+    ],
+    "MUSIC 236": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 237": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 240": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 241": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 242": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 103": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 113": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 150": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 153": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 154": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 155": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 156": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 157": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 158": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 171": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 176": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 177": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 178": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 179": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 181": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 184": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 187": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

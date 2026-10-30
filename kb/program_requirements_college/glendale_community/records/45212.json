@@ -140,7 +140,7 @@
     "courses": [
      {
       "code": "MUSIC 127",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -159,7 +159,7 @@
     "courses": [
      {
       "code": "MUSIC 148",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -178,7 +178,7 @@
     "courses": [
      {
       "code": "MUSIC 140",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -197,12 +197,12 @@
     "courses": [
      {
       "code": "MUSIC 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "MUSIC 120H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -210,14 +210,14 @@
      },
      {
       "code": "MUSIC 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 122",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -235,5 +235,43 @@
    "The text marks the program '**Financial Aid Ineligible'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "MUSIC 127": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 148": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 140": [
+     0.5,
+     0.5
+    ],
+    "MUSIC 120": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 120H": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 121": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 122": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

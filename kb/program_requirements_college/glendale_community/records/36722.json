@@ -74,13 +74,12 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    22.0,
+    22.0
    ],
    "stated": null,
    "against": null,
    "why": [
-    "a required course in 'Required Courses' has no units",
     "the record names no total"
    ]
   },
@@ -154,26 +153,26 @@
     "courses": [
      {
       "code": "PHY 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "CHEM 110",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "OCEAN 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "GEOL 101",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -181,12 +180,12 @@
      },
      {
       "code": "ASTRO 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ASTRO 120",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -194,14 +193,14 @@
      },
      {
       "code": "PHY 105",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 106",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -240,5 +239,47 @@
    "ASTRO 120 is printed as 'ASTRO 110 or 120'; subject applied to 120."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "PHY 110": [
+     3.0,
+     3.0
+    ],
+    "CHEM 110": [
+     5.0,
+     5.0
+    ],
+    "OCEAN 115": [
+     3.0,
+     3.0
+    ],
+    "GEOL 101": [
+     3.0,
+     3.0
+    ],
+    "ASTRO 110": [
+     3.0,
+     3.0
+    ],
+    "ASTRO 120": [
+     3.0,
+     3.0
+    ],
+    "PHY 105": [
+     4.0,
+     4.0
+    ],
+    "PHY 106": [
+     4.0,
+     4.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

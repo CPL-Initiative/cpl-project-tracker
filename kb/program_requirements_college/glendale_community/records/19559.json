@@ -157,21 +157,21 @@
      },
      {
       "code": "BUSAD 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BUSAD 141",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -216,7 +216,7 @@
     "courses": [
      {
       "code": "BUSAD 152",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -243,19 +243,31 @@
    "The page also prints the Marketing II, Mass Communications and Medical Office certificates. They were not read for this record."
   ]
  },
- "extracted_run": 41009271854,
- "read_run": 40711704988,
+ "extracted_run": 41012563119,
+ "read_run": 41009271854,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "ACCTG 101": [
-     5.0,
-     5.0
+    "BUSAD 101": [
+     3.0,
+     3.0
+    ],
+    "BUSAD 110": [
+     3.0,
+     3.0
+    ],
+    "BUSAD 141": [
+     3.0,
+     3.0
+    ],
+    "BUSAD 152": [
+     3.0,
+     3.0
     ]
    },
-   "words": "college-page-read 41007920360, 41007934919, 41008605528, 41008701146 (kb/college_reads/glendale_course_units_{a,c,a2,b}) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
   }
  ]
 }

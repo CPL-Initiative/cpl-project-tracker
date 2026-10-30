@@ -86,8 +86,8 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    0.0,
-    0.0
+    20.5,
+    40.0
    ],
    "stated": [
     48.5,
@@ -95,9 +95,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required prerequisite courses (Generic ADN)' has no units",
-    "a required course in 'Generic ADN: Coursework required for certificate/licensure' has no units",
-    "a required course in 'Advanced Placement Career Ladder (Plan A): Coursework required for certificate/licensure' has no units"
+    "a required course in 'Required prerequisite courses (Generic ADN)' has no units"
    ]
   },
   "repeated": {
@@ -172,21 +170,21 @@
     "courses": [
      {
       "code": "BIOL 112",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BIOL 120",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "BIOL 121",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -233,91 +231,91 @@
     "courses": [
      {
       "code": "NS 200",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 201",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 205",
-      "units": null,
+      "units": 0.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 208",
-      "units": null,
+      "units": 2.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 210",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 211",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 212",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 213",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 214",
-      "units": null,
+      "units": 6.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 215",
-      "units": null,
+      "units": 2.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 216",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 222",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 223",
-      "units": null,
+      "units": 5.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -336,49 +334,49 @@
     "courses": [
      {
       "code": "NS 213",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 214",
-      "units": null,
+      "units": 6.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 215",
-      "units": null,
+      "units": 2.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 216",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NS 217",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NS 218",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "NS 222",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -411,5 +409,87 @@
    "Graduation requirements: 'GCC Associate of Arts/Associate of Science or Cal-GETC'; no GE unit total or degree total is printed."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "BIOL 112": [
+     5.0,
+     5.0
+    ],
+    "BIOL 120": [
+     5.0,
+     5.0
+    ],
+    "BIOL 121": [
+     4.0,
+     4.0
+    ],
+    "NS 200": [
+     1.5,
+     1.5
+    ],
+    "NS 201": [
+     1.0,
+     1.0
+    ],
+    "NS 205": [
+     0.5,
+     0.5
+    ],
+    "NS 208": [
+     2.5,
+     2.5
+    ],
+    "NS 210": [
+     3.5,
+     3.5
+    ],
+    "NS 211": [
+     3.5,
+     3.5
+    ],
+    "NS 212": [
+     4.0,
+     4.0
+    ],
+    "NS 213": [
+     4.0,
+     4.0
+    ],
+    "NS 214": [
+     6.0,
+     6.0
+    ],
+    "NS 215": [
+     2.5,
+     2.5
+    ],
+    "NS 216": [
+     2.0,
+     2.0
+    ],
+    "NS 222": [
+     3.5,
+     3.5
+    ],
+    "NS 223": [
+     5.5,
+     5.5
+    ],
+    "NS 217": [
+     1.0,
+     1.0
+    ],
+    "NS 218": [
+     1.5,
+     1.5
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

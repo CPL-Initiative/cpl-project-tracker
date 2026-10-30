@@ -151,7 +151,7 @@
     "courses": [
      {
       "code": "PSYCH 200",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -173,7 +173,7 @@
        },
        {
         "code": "ECON 127",
-        "units": null,
+        "units": 4.0,
         "catalog_addition": false
        }
       ],
@@ -206,21 +206,21 @@
     "courses": [
      {
       "code": "BIOL 115",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 122",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYC 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -239,12 +239,12 @@
     "courses": [
      {
       "code": "PSYC 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "PSYC 104H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -252,7 +252,7 @@
      },
      {
       "code": "PSYC 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -271,12 +271,12 @@
     "courses": [
      {
       "code": "ANTHR 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ANTHR 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -284,40 +284,40 @@
      },
      {
       "code": "BIOL 120",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 101",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 110",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHILO 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "PHILO 101H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -325,49 +325,49 @@
      },
      {
       "code": "PHILO 116",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHILO 119",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHILO 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCH 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PSYCH 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PSYCH 113",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "PSYCH 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -381,12 +381,12 @@
      },
      {
       "code": "SOC 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "SOC 101H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -436,5 +436,115 @@
    "Outcomes text had ligature/spacing artifacts ('aﬀ ect', 'speciﬁ c') normalized to 'affect' and 'specific'."
   ]
  },
- "extracted_run": "40704760867"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "PSYCH 200": [
+     4.0,
+     4.0
+    ],
+    "ECON 127": [
+     4.0,
+     4.0
+    ],
+    "BIOL 115": [
+     4.0,
+     4.0
+    ],
+    "BIOL 122": [
+     4.0,
+     4.0
+    ],
+    "PSYC 103": [
+     3.0,
+     3.0
+    ],
+    "PSYC 104": [
+     3.0,
+     3.0
+    ],
+    "PSYC 104H": [
+     3.0,
+     3.0
+    ],
+    "PSYC 106": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 102": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 102H": [
+     3.0,
+     3.0
+    ],
+    "BIOL 120": [
+     5.0,
+     5.0
+    ],
+    "CHEM 101": [
+     5.0,
+     5.0
+    ],
+    "CHEM 110": [
+     5.0,
+     5.0
+    ],
+    "PHY 110": [
+     3.0,
+     3.0
+    ],
+    "PHILO 101": [
+     3.0,
+     3.0
+    ],
+    "PHILO 101H": [
+     3.0,
+     3.0
+    ],
+    "PHILO 116": [
+     3.0,
+     3.0
+    ],
+    "PHILO 119": [
+     3.0,
+     3.0
+    ],
+    "PHILO 120": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 105": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 110": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 113": [
+     3.0,
+     3.0
+    ],
+    "PSYCH 115": [
+     3.0,
+     3.0
+    ],
+    "SOC 101": [
+     3.0,
+     3.0
+    ],
+    "SOC 101H": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "40704760867"
 }
