@@ -300,7 +300,8 @@ if (UPDATE) {
   console.log("  " + floored + " of " + files.length + " file(s) floored; " +
     (files.length - floored) + " print no readable count.");
   console.log("  Review the diff before committing — a LOWER floor is a check that stopped running.");
-  process.exit(failed === 0 ? 0 : 1);
+  process.exitCode = failed === 0 ? 0 : 1;
+  return;
 }
 
 cleanupTmp();
@@ -326,7 +327,14 @@ if (unparsed.length) {
     "NOT protected against silently disappearing. Printing a final " +
     "`N/M checks passed` line brings a file under the floor.");
 }
-process.exit(failed === 0 ? 0 : 1);
+// ⚠️ Set the exit code and RETURN; never `process.exit()` here (S522).
+// This parent writes to a pipe on CI, and a pipe write in Node is
+// asynchronous: by the summary, megabytes of child output can still sit in
+// stdout's buffer, and `process.exit()` discards them, the summary first. On
+// #2446 and #2570 a failing shard's log ended mid-file with no FAILED list, so
+// the failure had no name. Returning lets Node drain stdout before it exits.
+// tests/runner_capture.test.js reproduces it through a slow pipe.
+process.exitCode = failed === 0 ? 0 : 1;
 
 }
 
