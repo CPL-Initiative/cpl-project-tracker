@@ -6637,7 +6637,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 289
+     "line": 295
     },
     {
      "id": "script:kb/_sync_credential_catalog.py",
@@ -18793,7 +18793,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 289
+     "line": 295
     },
     {
      "id": "script:kb/_seed_statewide_categories.py",
@@ -20917,7 +20917,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 273
+     "line": 279
     }
    ],
    "producers": [
