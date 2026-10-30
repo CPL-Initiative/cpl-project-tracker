@@ -1053,6 +1053,28 @@ side session (Scenario 4) ran beside it, one writer per file.
 S445 SkyCurrant (a shared page per heading, MiraCosta's degree lists, Palomar's "Cert. Achievement") and the S445
 lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`.
 
+## S523 SkyBarberry (2026-10-30, the CPL Queue routine): Glendale 80 to 105 passing, every course priced from its own description
+
+- **The state's file was never the whole list.** It leaves 51 Glendale credit courses unpriced, but the filed records
+  place 738 more codes it does not list for their program at all (CABOT 102, ART 130, ESL 151, NS 214). Pricing only the
+  51 lifted 80 to 91 (reconcile 41009271854). Pricing every description lifted it to 105 (reconcile 41012563119).
+- **Read the whole description section in windows, then parse it locally.** The page read prints at most 14 PDF pages
+  whole, so fifteen plans (`kb/college_reads/glendale_course_desc_01..15`, keyword `Units`) cover pages 98-307, three per
+  push (about 3,500 log lines a job, inside get_job_logs' 5,000). Descriptions start at page 128; windows 1-2 held
+  program pages. `kb/_description_units.py` parses the saved logs: a description prints "NUM · TITLE · N Units", then a
+  body naming the course, sometimes letter-spaced ("B I O L 2 9 8"), and the body's code is the key (ACCTG 121's title
+  changed; its code did not). 1,234 codes, plus 44 under the entry's prefix aliases and renumbers.
+- **Anchor a log parser on the fixed token and look backward.** A title pattern with nested quantifiers hung for minutes
+  on a 370,000-character log; matching each "· N Units" and reading the 160 characters before it runs in under a second.
+- **A plan file under `kb/college_reads/` is a read.** A push reads every plan its last commit adds, so a derived map
+  kept there would run as one. The map lives at `kb/program_requirements_units/glendale_community.json`; the step names it
+  as `units_file` (#2574). Only one run waits per concurrency group: a second push while one waits cancels the first, so
+  push the next batch only after the waiting run has started (part b's first push was cancelled this way).
+- **Left at Glendale (155 failing arithmetic):** 71 records name no program total, the largest cause now; 48 sum unequal
+  to the printed total (36 before: pricing exposed sums that were hidden as incomplete); about 34 still lack a course's
+  units (13 of the original 51, ART 144-255, AT 138, NS 213, PE 217, POLS 110, THTR 192-193 and others, print no
+  description in this catalog). No model call this session.
+
 ## S505 SkyBoysenberry (2026-10-28): Glendale 45 to 80 passing of its filed records, on its catalog's own words
 
 - **List the thin colleges live first (S442), and it named Glendale:** 220 loaded, 65 of 296 active programs passing,
