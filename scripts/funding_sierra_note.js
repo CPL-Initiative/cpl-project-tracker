@@ -13,7 +13,7 @@
 // noncredit shares. The vault's funding-note workflow runs it daily, commits
 // the note when it changed and indexes it for Sierra.
 //
-//   node scripts/funding_sierra_note.js --config live.json --out note.md
+//   node scripts/funding_sierra_note.js --config live.json --out note.md   [--no-public]
 //
 // live.json is the cpl_funding_config row (config and updated_at) as the
 // public REST read returns it, an array of one row, or the bare config.
@@ -40,18 +40,43 @@ function loadConfig(file) {
 
 // The funding page, painted in jsdom with the given config in place of the
 // remote read (the page's own scripts run, so its words are the reader's).
-function renderPage(cfg) {
+// pub (optional): the public rows the page reads on load, as fetchPublic()
+// returns them. Without it every institution's conditions read as not yet loaded.
+function renderPage(cfg, pub) {
   const html = read("funding-model/index.html");
   const dom = new JSDOM(html, { runScripts: "outside-only", url: PAGE_URL });
   const w = dom.window;
   w.scrollTo = function () {};
   w.CPL_FUNDING_NO_REMOTE = true;
   w.print = function () {};
-  ["cpl_funding_data.js", "funding_model_payload.js", "college_short_names.js", "cpl_funding.js"]
+  // The page loads its outcome figures (cpl_funding_performance.js) after boot;
+  // here they load first, so every institution's row carries them (S528).
+  ["cpl_funding_data.js", "funding_model_payload.js", "college_short_names.js", "cpl_funding_performance.js", "cpl_funding.js"]
     .forEach((f) => w.eval(read(f)));
   w.CPL_FUNDING_TAB._setConfig(cfg);
+  if (pub) w.CPL_FUNDING_TAB._ingestElig([pub.coord, pub.part, null, pub.contacts, pub.attest, null]);
   Array.from(w.document.querySelectorAll("script:not([src])")).forEach((s) => w.eval(s.textContent));
   return w;
+}
+
+// The public reads the page makes on load (cpl_funding.js loadEligibility),
+// with the page's own address and anon key, so the note holds what any visitor
+// sees and nothing a reviewer alone sees: the coordinator summary (yes or no per
+// college), participation status, the published contacts, and the noncredit
+// attestations' published view. A failed read is null, as on the page.
+async function fetchPublic() {
+  const src = read("cpl_funding.js");
+  const url = /var SUPABASE_URL = "([^"]+)"/.exec(src)[1], anon = /var SUPABASE_ANON = "([^"]+)"/.exec(src)[1];
+  const h = { apikey: anon, Authorization: "Bearer " + anon, "Content-Type": "application/json" };
+  const get = (u, o) => fetch(url + u, Object.assign({ headers: h }, o || {}))
+    .then((r) => (r.ok ? r.json() : null)).catch(() => null);
+  const [coord, part, contacts, attest] = await Promise.all([
+    get("/rest/v1/rpc/map_coordinator_summary", { method: "POST", body: "{}" }),
+    get("/rest/v1/cpl_funding_participation?select=college,status,source,requested_at,noted_by,confirmed_at,revoked_at"),
+    get("/rest/v1/map_college_contacts_pub?select=college,cpl_coordinator,landing_page_url"),
+    get("/rest/v1/cpl_funding_nc_attestation_pub?select=college,fiscal_year,status,coordinator_name,coordinator_title,requested_at,revoked_at&order=fiscal_year.asc,requested_at.desc")
+  ]);
+  return { coord, part, contacts, attest };
 }
 
 const clean = (s) => String(s || "").replace(/\s+/g, " ").trim();
@@ -124,8 +149,47 @@ function pacificDay(ts) {
   return d.toLocaleDateString("en-US", { timeZone: "America/Los_Angeles", year: "numeric", month: "long", day: "numeric" });
 }
 
-function buildNote(cfg, savedAt) {
-  const w = renderPage(cfg);
+const COND_WORDS = {
+  coord: "A CPL Coordinator assigned in MAP, with the college's CPL landing page configured",
+  part: "A local confirmation of participation on file",
+  vetstar: "Joint services transcripts processed in MAP for at least 75 percent of enrolled veterans",
+  exhibits: "Noncredit certificates posted as exhibits in MAP",
+  nc_coord: "A Noncredit CPL Lead attested for this fiscal year",
+  nc_team: "A noncredit CPL strike team"
+};
+const state = (r) => (r.pending ? "not yet known" : (r.met ? "met" : "not yet met"));
+
+// One institution's standing, as its row and drill-in show it: the conditions,
+// the JST counts, and every figure of its row in the page's own export.
+function standing(w, row) {
+  const T = w.CPL_FUNDING_TAB, name = row.Institution;
+  const out = ["", "### " + name + ": CPL funding standing", ""];
+  out.push("- Institution: " + name + (row.District ? " (" + row.District + ")" : ""));
+  const c = T._conditions(name);
+  if (c) {
+    c.items.forEach((r) => out.push("- Minimum condition, " + (COND_WORDS[r.kind] || r.kind) + ": " + state(r) +
+      (r.counts ? ". " + r.counts : "")));
+    (c.ncItems || []).forEach((r) => out.push("- Noncredit share condition, " + (COND_WORDS[r.kind] || r.kind) + ": " + state(r)));
+    out.push("- Funding status: " + (c.blocked ? "held until the minimum conditions are met" :
+      (c.pending ? "conditions not yet all known" : "the minimum conditions are met, so its outcomes count toward its award")));
+  }
+  const pf = w.CPL_FUNDING_PERF, vj = pf && pf.vet_jst && pf.vet_jst[name];
+  if (vj && vj.vets && !vj.vets_suppressed && !vj.jst_suppressed)
+    out.push("- Veteran JSTs: " + vj.jst + " JSTs in MAP for " + vj.vets + " enrolled veterans (" +
+      Math.round(vj.jst / vj.vets * 100) + " percent; the condition asks 75 percent)");
+  Object.keys(row).forEach((k) => {
+    if (k === "#" || k === "Institution" || k === "District") return;
+    const v = String(row[k] == null ? "" : row[k]).trim();
+    if (!v) return;
+    const isMoney = /share|award|qualified so far(?! as)|Demonstrated|Withheld/i.test(k) && /^-?\d+(\.\d+)?$/.test(v);
+    const num = /^-?\d+\.\d{2,}$/.test(v) ? String(Math.round(Number(v) * 10) / 10) : v;
+    out.push("- " + k + ": " + (isMoney ? money(v) : num));
+  });
+  return out;
+}
+
+function buildNote(cfg, savedAt, pub) {
+  const w = renderPage(cfg, pub);
   const T = w.CPL_FUNDING_TAB, doc = w.document;
   const scen = T._scenario().name;
   const asOf = pacificDay(savedAt);
@@ -166,26 +230,25 @@ function buildNote(cfg, savedAt) {
     parts.push("Statewide, the " + rows.length + " max awards total " + money(pick(total, /^Max award/)) + ": " +
       money(pick(total, /^Credit share/)) + " credit and " + money(pick(total, /^Noncredit share/)) + " noncredit.");
   }
-  // Ten institutions to a heading that names them: the vault's indexer splits a
-  // note at headings and blank lines only, so one 118-row table would be one
-  // chunk no single college's question could find.
-  const GROUP = 10;
-  for (let g = 0; g < rows.length; g += GROUP) {
-    const part = rows.slice(g, g + GROUP);
-    parts.push("");
-    parts.push("### Max awards: " + part.map((r) => r.Institution).join(", "));
-    parts.push("");
-    parts.push("| Institution | District | Max award | Credit share | Noncredit share |");
-    parts.push("| --- | --- | --- | --- | --- |");
-    part.forEach((r) => {
-      parts.push("| " + [r.Institution, r.District, money(pick(r, /^Max award/)), money(pick(r, /^Credit share/)),
-        money(pick(r, /^Noncredit share/))].map((c) => String(c || "").replace(/\|/g, "/")).join(" | ") + " |");
-    });
-  }
+  // One heading per institution (S528; Sam, 2026-10-30: "she should have access
+  // to all the data and text info on the page"). The vault's indexer splits a
+  // note at headings, so a question naming one college finds its own section:
+  // max award and shares, each condition, the JST counts, Funds Qualified So
+  // Far and every priority figure the page's export carries.
+  parts.push("");
+  parts.push("Each institution's section below gives its max award and shares, each minimum condition and whether it is met, " +
+    "its veteran JST counts, its Funds Qualified So Far and its priority outcome figures, as its row on the public funding page shows them" +
+    (pub ? "" : " (conditions were not read for this build)") + ".");
+  parts.push("");
+  parts.push("In each section, P1 is Access (applied CPL units available to students in MAP) and P2 is Completion " +
+    "(transcribed CPL units), each in FTES; the noncredit P1 counts exhibits built or adopted for the noncredit program's " +
+    "learning and the noncredit P2 a Noncredit Career Exploration and CPL Portfolio course. A target is what the share " +
+    "asks and an actual is what MAP shows today.");
+  rows.forEach((r) => { parts.push.apply(parts, standing(w, r)); });
   return parts.join("\n").replace(/\n{3,}/g, "\n\n") + "\n";
 }
 
-module.exports = { buildNote, csvRows, sectionText, loadConfig };
+module.exports = { buildNote, csvRows, sectionText, loadConfig, fetchPublic };
 
 if (require.main === module) {
   const argv = process.argv.slice(2);
@@ -193,7 +256,10 @@ if (require.main === module) {
   const cfgPath = flag("--config"), outPath = flag("--out");
   if (!cfgPath) { console.error("usage: node scripts/funding_sierra_note.js --config live.json [--out note.md]"); process.exit(2); }
   const c = loadConfig(cfgPath);
-  const note = buildNote(c.cfg, c.savedAt);
-  if (outPath) { fs.writeFileSync(outPath, note); console.log("wrote " + outPath + " (" + note.length + " chars)"); }
-  else process.stdout.write(note);
+  // --no-public builds offline (the tests); the workflow reads the public rows.
+  (argv.includes("--no-public") ? Promise.resolve(null) : fetchPublic()).then((pub) => {
+    const note = buildNote(c.cfg, c.savedAt, pub);
+    if (outPath) { fs.writeFileSync(outPath, note); console.log("wrote " + outPath + " (" + note.length + " chars)"); }
+    else process.stdout.write(note);
+  });
 }

@@ -645,7 +645,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 16147,
+     "line": 16154,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -976,7 +976,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 13824,
+     "line": 13831,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -4304,7 +4304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 8761,
+     "line": 8768,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -5977,7 +5977,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17877,
+     "line": 17884,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6071,7 +6071,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17804,
+     "line": 17811,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -6122,12 +6122,19 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 17789,
+     "line": 17796,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "module:scripts/funding_sierra_note.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 176
     },
     {
      "id": "script:funding/_build_funding_performance.py",
@@ -7361,7 +7368,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 8885,
+     "line": 8892,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -18345,7 +18352,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 48
+     "line": 50
     }
    ],
    "served": true,
@@ -21678,7 +21685,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 6079,
+     "line": 6086,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -21923,6 +21930,13 @@
       "map-queue",
       "map-users"
      ]
+    },
+    {
+     "id": "module:scripts/funding_sierra_note.js",
+     "kind": "module",
+     "direction": "call",
+     "how": "literal",
+     "line": 74
     }
    ],
    "main_committers": []
@@ -22982,7 +22996,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6272,
+     "line": 6279,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -23017,6 +23031,13 @@
       "cpl-pathways",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "module:scripts/funding_sierra_note.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "main_committers": []
@@ -23028,7 +23049,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 6703,
+     "line": 6710,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -23040,7 +23061,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6728,
+     "line": 6735,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -23075,6 +23096,13 @@
       "cpl-pathways",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "module:scripts/funding_sierra_note.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 75
     }
    ],
    "main_committers": []
@@ -23086,7 +23114,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 6763,
+     "line": 6770,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -23098,7 +23126,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6884,
+     "line": 6891,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -23960,7 +23988,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12964,
+     "line": 12971,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24084,6 +24112,13 @@
      ]
     },
     {
+     "id": "module:scripts/funding_sierra_note.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 76
+    },
+    {
      "id": "script:kb/_publish_college_briefing.py",
      "kind": "script",
      "direction": "read",
@@ -24111,7 +24146,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12940,
+     "line": 12947,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
@@ -24422,7 +24457,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 12919,
+     "line": 12926,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
