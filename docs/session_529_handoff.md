@@ -19,6 +19,12 @@ Your moniker is **SkyKiwiberry**. Session 528 (SkyMulberry) was a session Sam op
 
 ## Open work, in order
 
+**Sam's two asks for this session (2026-10-30, 14:20Z, at the Summit):**
+
+- **A. Edit the CPL Fact Sheet's content and its Contents labels, never the section headings or the links.** The page already has a Curate editor for a signed-in reviewer (`fact-sheet/factsheet_edit.js`: every box keyed by `data-fsk`, saved to `factsheet_overrides`; MOVE_ONLY_SECTIONS hold some boxes back from text edits). Find what it does not let him edit yet (the Contents labels in `nav.toc`, and any prose box the move-only list or the heading rule excludes), extend it there, keep each `href` and each `h2` out of reach, and guard both with a jsdom test. Read `tests/factsheet_edit*.test.js` first.
+- **B. "Request Adopt" links on the CRs listed under each statewide exhibit on the Fact Sheet.** The link already exists in `college_cpl_workbook.js` (`ADOPT_TEXT = "Request Adopt"`: MAP's CPL Opportunities page searched for the Statewide Credit Recommendation ID; it needs a MAP sign-in) and in Sierra (lane `eacr-exhibit-cr-adoption`, line ~140). The Fact Sheet's exhibit rows are drawn by `fact-sheet/statewide_recs_render.js`; reuse the one link builder, never a copy, and show it on every CR that carries an ID.
+
+
 0. **If you are the night's first firing, dispatch the dashboard run** (scheduled_sessions step 0). Then **read `queue_todo_done`** (step 5): a to-do Sam marked done is your first item.
 1. **Sam ruled Sheet 143 at 12:58Z, both his own call:** card 2 *printed* (a choose-courses list's printed units count, statewide), card 1 *later* (carried to Sheet 144, built, not published). Carry out card 2 as proposed: read the 44 records that would stop passing (`python3 kb/_block_total_reading_measure.py` names them) against their pages, then change `block_units` in `kb/_program_requirements_score.py` with a guard test, rescore, and apply with a receipt. Land #2579, CPLBrain#554 (after it) and #2582 (the Fact Sheet) if still open: `test` green on the newest head, then squash-merge.
 2. **Glendale is parked** (Sam's stopping rule, S527, #2581): its to-do `glendale-parked-2026-10-30` names what restarts it. Do no Glendale work unless that to-do is marked done; S528's reads of its unequal pages (lessons *S528*) stand ready for that day.
