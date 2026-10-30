@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11789,
+  "input_tokens": 11359,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11789,
-    "output_tokens": 1543,
+    "input_tokens": 11359,
+    "output_tokens": 1770,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1543,
+  "output_tokens": 1770,
   "output_tokens_details": {
-   "thinking_tokens": 419
+   "thinking_tokens": 536
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07802,
- "ms": 12113,
- "seconds": 12.5,
+ "cost_usd": 0.08084,
+ "ms": 14886,
+ "seconds": 15.3,
  "parts": null,
  "error": null,
  "score": {
@@ -259,13 +259,13 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read the A.S. section on page 134 only; the Metal Machining Certificate of Achievement (State Code 21897) on page 136 is a separate award and was not used.",
-   "Catalog codes ELECTRN 002, NUM CON 021/022/023 and T & M 027/030/031/032 were matched to closed-list ELECTRN 2, NUM CON 21/22/23 and TM027/TM030/TM031/TM032 (same courses, different zero-padding/subject formatting).",
-   "'Major Units: 33' recorded as total_units; 'Total Minimum Units: 60', printed in this award's section, recorded as degree_total. No GE pattern or GE units are named in the section.",
-   "The A.S. section names no specific careers; the career titles (Mill operator, Numerical Control Machinist, etc.) appear only in the separate Certificate of Achievement section and were not recorded."
+   "The excerpt for page 134 begins mid-section: the program title and award line ('MANUFACTURING TECHNOLOGY: METAL MACHINING / Associate of Science Degree (AS)') are not in the text; the section was identified by Program Code 095630, State Code 02960, its description, and its exact match with the closed list. The section_heading was reconstructed from the parallel headings; reviewer should verify against the previous page.",
+   "'Major Units: 33' recorded as total_units; 'Total Minimum Units: 60' printed for this award recorded as degree_total. No GE pattern or GE units are named in the section.",
+   "Catalog codes printed with leading zeros (ELECTRN 002, NUM CON 021-023) and as 'T & M 027/030/031/032' were matched to closed-list ELECTRN 2, NUM CON 21-23 and TM027/TM030/TM031/TM032; not treated as catalog additions.",
+   "The separate Metal Machining Certificate of Achievement (State Code 21897) on page 136 lists careers (Mill operator, Numerical Control Machinist, Lathe Operator, Numerical Control Operator); these were not recorded because the A.S. section itself names no careers."
   ]
  },
- "extracted_run": 41117814733,
+ "extracted_run": "41141747238",
  "reconciled": [
   {
    "field": "ge_units",
@@ -285,6 +285,5 @@
    "now": true,
    "words": "Total Minimum Units: 60"
   }
- ],
- "read_run": "39006418426"
+ ]
 }

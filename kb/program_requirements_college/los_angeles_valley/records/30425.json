@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Computer Science Programming",
  "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
- "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11383,
+  "input_tokens": 9448,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11383,
-    "output_tokens": 1343,
+    "input_tokens": 9448,
+    "output_tokens": 1584,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1343,
+  "output_tokens": 1584,
   "output_tokens_details": {
-   "thinking_tokens": 232
+   "thinking_tokens": 414
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.07239,
- "ms": 11462,
- "seconds": 11.7,
+ "cost_usd": 0.06947,
+ "ms": 13378,
+ "seconds": 14.0,
  "parts": null,
  "error": null,
  "score": {
@@ -104,7 +104,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "COMPUTER SCIENCE PROGRAMMING Certificate of Achievement (CA)",
+   "section_heading": "Computer Science Programming (printed heading not in extracted text; section begins '(Program Code 070710, State Code 30425)')",
    "measure": "units",
    "total_units": {
     "min": 30,
@@ -256,11 +256,12 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read only the Computer Science Programming Certificate of Achievement section on page 142 (State Code 30425); the AS-T, AS, Cloud Computing and other certificate sections were ignored.",
-   "CS 101 is required in the catalog but is not in the closed list; recorded as a catalog addition.",
-   "Printed total is 'Total: 30', which matches 7 required courses (21 units) plus 9 elective units.",
-   "The outcomes printed for this certificate are identical to those printed for the Computer Science AS degree."
+   "The extracted text begins on page 142 mid-section; the program heading and award line (presumably 'Computer Science Programming, Certificate of Achievement') are on the preceding page and not in the text. The section was identified by Program Code 070710 / State Code 30425 and the closed-list match.",
+   "Reviewer should confirm the preceding page does not print additional requirements or description (e.g., careers) for this certificate.",
+   "CS 101 is required in the catalog but not in the closed list; recorded as catalog addition.",
+   "Total: 30 printed; 7 required courses (21 units) plus 9 elective units matches.",
+   "Courses in the elective block print units in parentheses '(3)'."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": "41141747238"
 }

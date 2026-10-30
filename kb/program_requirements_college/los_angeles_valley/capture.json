@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 237,
  "with_closed_list": 232,
- "started": "2026-10-30T19:47:37Z",
+ "started": "2026-10-30T23:03:18Z",
  "pdf": {
   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
   "access": "ok",
@@ -54,23 +54,21 @@
    {
     "control_number": "02943",
     "pages": [
-     83,
      84,
      85,
-     86
+     86,
+     87
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 83] AA V002943C Any GE^ 37 Y Management AA V002945C Any GE^ 38-40 Y Marketing AA V002947C Any GE^ 38 Y Banking and Finance CA V008530D n/a 19-20 Y Business Essentials CA V041005D n/a 16-17 Y Business Management "
+    "opens": "[page 84] Program Code 050400, State Code 02943) This degree provides an in-depth understanding of the operations of money and capital markets, institutions and management. Students will be prepared for employment in s"
    },
    {
     "control_number": "02944",
     "pages": [
-     83,
-     84,
      85,
      86
     ],
@@ -79,37 +77,37 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 83] CA V002944D n/a 20 Y Human Resource Management CA V045136D n/a 18 Y Marketing CA V021876D n/a 18 Y Property Management CA V021411D n/a 18-20 Y Retail Management CA V033859D n/a 24 N FA = Financial Aid Eligib"
+    "opens": "[page 85] (Program Code 050600, State Code 02944) This certificate prepares students for first-level management and supervisory jobs, as well as support posts in human resources, and positions them for success in team-"
    },
    {
     "control_number": "02945",
     "pages": [
-     83,
      84,
      85,
-     86
-    ],
-    "named": true,
-    "code": null,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 83] Management AA V002945C Any GE^ 38-40 Y Marketing AA V002947C Any GE^ 38 Y Banking and Finance CA V008530D n/a 19-20 Y Business Essentials CA V041005D n/a 16-17 Y Business Management CA V002944D n/a 20 Y Huma"
-   },
-   {
-    "control_number": "02947",
-    "pages": [
-     83,
-     84,
-     85,
-     86
+     86,
+     87
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 83] Marketing AA V002947C Any GE^ 38 Y Banking and Finance CA V008530D n/a 19-20 Y Business Essentials CA V041005D n/a 16-17 Y Business Management CA V002944D n/a 20 Y Human Resource Management CA V045136D n/a "
+    "opens": "[page 84] (Program Code 050630, State Code 02945) This degree serves as the basis for further undergraduate education in management and prepares students for first-level management and supervisory positions, support po"
+   },
+   {
+    "control_number": "02947",
+    "pages": [
+     84,
+     85,
+     86,
+     87
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 84] (Program Code 050900, State Code 02947) This degree serves as the basis for further undergraduate education in marketing and prepares students for positions in sales, the retail industry, and entry-level mark"
    },
    {
     "control_number": "02948",
@@ -126,7 +124,6 @@
    {
     "control_number": "02950",
     "pages": [
-     122,
      123
     ],
     "named": false,
@@ -134,7 +131,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 122] AA V002950C Any GE^ 19 Y Journalism: Magazine CA V021884D n/a 18 Y Journalism: Newspaper CA V021885D n/a 21 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is app"
+    "opens": "[page 123] (Program Code 060200, State Code 02950) Program Student Learning Outcomes: 1. Construct, evaluate, and critique journalistic work, including print and digital media for publication. 2. Correctly employ proper"
    },
    {
     "control_number": "02951",
@@ -160,10 +157,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 141] Students completing the Associate in Science in Computer Science for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determined by California St"
+    "opens": "[page 141] (Program Code 070600, State Code 02952) This degree can serve as a basis for further undergraduate education in computer science. Program Student Learning Outcomes: 1. Develop and test programming instruction"
    },
    {
     "control_number": "02954",
@@ -206,8 +203,6 @@
    {
     "control_number": "02958",
     "pages": [
-     133,
-     134,
      135,
      136
     ],
@@ -216,7 +211,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.75,
-    "opens": "[page 133] AS V002958C Any GE^ 27 Y Engineering Technology: Industrial/ Manufacturing CA V021895D n/a 25 Y Engineering Technology: Mechanical Engineering CA V021896D n/a 21 Y Manufacturing Technology: Metal Machi"
+    "opens": "[page 135] (Program Code 095340, State Code 02958) This degree is designed for the student who wishes to enter the workforce after graduation as a mechanical or civil engineering drafter, with strong coursework in Auto"
    },
    {
     "control_number": "02959",
@@ -236,7 +231,6 @@
    {
     "control_number": "02960",
     "pages": [
-     133,
      134,
      135,
      136
@@ -246,7 +240,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.636,
-    "opens": "[page 133] AS V002960C Any GE^ 33 Y Manufacturing Technology: Numerical Control AS V008542C Any GE^ 33 Y Mechanical Drafting/ Design AS V002958C Any GE^ 27 Y Engineering Technology: Industrial/ Manufacturing CA V0"
+    "opens": "[page 134] (Program Code 095630, State Code 02960) This degree is designed for the student who wishes to enter the workforce after graduation with a strong background in both traditional machining and in numerical cont"
    },
    {
     "control_number": "02961",
@@ -271,10 +265,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 71] Students earning the Commercial Music AA degree have obtained skills for entry-level employment in the music industry or for career advancement. Music 101 is not part of the degree but is a prerequisite for "
+    "opens": "[page 71] (Program Code 100400, State Code 02962) The Music AA degree can serve as the basis for further undergraduate education in music. Music 200 is not part of the degree but is a prerequisite for courses in the de"
    },
    {
     "control_number": "02963",
@@ -308,21 +302,6 @@
    {
     "control_number": "02965",
     "pages": [
-     126,
-     127,
-     128
-    ],
-    "named": true,
-    "code": null,
-    "cn_printed": true,
-    "titled": true,
-    "coverage": 1.0,
-    "opens": "[page 126] French AA V002965C Any GE^ 18-21 Y German AA V008555C Any GE^ 18-19 Y Italian AA V002966C Any GE^ 18 Y Spanish Language SC V110500J n/a 13-15 N FA = Financial Aid Eligible. ^The associate-level general educa"
-   },
-   {
-    "control_number": "02966",
-    "pages": [
-     126,
      127,
      128
     ],
@@ -331,7 +310,19 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 126] Italian AA V002966C Any GE^ 18 Y Spanish Language SC V110500J n/a 13-15 N FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to ear"
+    "opens": "[page 127] (Program Code 110200, State Code 02965) This degree provides a solid foundation in the study of French and will enable students to demonstrate effective skills in the four major areas of language study (read"
+   },
+   {
+    "control_number": "02966",
+    "pages": [
+     128
+    ],
+    "named": false,
+    "code": null,
+    "cn_printed": true,
+    "titled": true,
+    "coverage": 1.0,
+    "opens": "[page 128] (Program Code 110400, State Code 02966) This degree provides solid foundation in the study of Italian for those wishing to continue their education in languages. Students will be able to demonstrate effectiv"
    },
    {
     "control_number": "02967",
@@ -356,10 +347,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 0.875,
-    "opens": "[page 108] ACCREDITED ASSOCIATE OF SCIENCE IN RESPIRATORY THERAPY (61 UNITS) LOWER DIVISION GENERAL EDUCATION REQUIREMENTS (39 UNITS, INCLUDING 9 UNITS DOUBLE COUNTED) COMPLETION OF UPPER-DIVISION MAJOR COURSEWORK (31 "
+    "opens": "[page 108] (Program Code 121000, State Code 02970) RESPIRATORY THERAPY PROGRAM The LAVC Respiratory Therapy Program (COARC # 200210) is accredited by the Commission on Accreditation for Respiratory Care. Respiratory Ca"
    },
    {
     "control_number": "02974",
@@ -376,7 +367,6 @@
    {
     "control_number": "02976",
     "pages": [
-     149,
      150,
      151
     ],
@@ -385,7 +375,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 149] Physics AS V002976C Any GE^ 36-38 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan "
+    "opens": "[page 150] (Program Code 190200, State Code 02976) Students will learn about the major topics in classical physics including: mechanics; electricity and magnetism; thermodynamics; and wave theory. They will also be int"
    },
    {
     "control_number": "02977",
@@ -404,17 +394,16 @@
    {
     "control_number": "02980",
     "pages": [
-     98,
      99,
      100,
      101
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 98] 96 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE ASSOCIATE DEGREE FOR TRANSFER: EARLY CHILDHOOD EDUCATION Associate in Science for Transfer Degree (AS-T) (Program Code 1305"
+    "opens": "[page 99] (Program Code 130500, State Code 02980) Program Student Learning Outcomes: 1. Observe and assess children's cognitive, socio-emotional and physical skills. 2. Develop, implement and evaluate developmentally ap"
    },
    {
     "control_number": "02981",
@@ -497,10 +486,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 163] Students completing the Associate in Arts in Sociology for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar majors as determined by California State Univers"
+    "opens": "[page 163] (Program Code 220800, State Code 02988) Program Student Learning Outcomes: 1. Explore theoretical frameworks through which they can examine and analyze human social relationships and interactions. 2. Build sk"
    },
    {
     "control_number": "02989",
@@ -530,17 +519,15 @@
    {
     "control_number": "08530",
     "pages": [
-     83,
-     84,
      85,
      86
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 83] CA V008530D n/a 19-20 Y Business Essentials CA V041005D n/a 16-17 Y Business Management CA V002944D n/a 20 Y Human Resource Management CA V045136D n/a 18 Y Marketing CA V021876D n/a 18 Y Property Management"
+    "opens": "[page 85] (Program Code 050404, State Code 08530) This certificate prepares students for basic entry-level positions in the financial services industry, including banking, insurance, brokerage and real estate. Estimated"
    },
    {
     "control_number": "08531",
@@ -575,7 +562,6 @@
    {
     "control_number": "08533",
     "pages": [
-     122,
      123
     ],
     "named": false,
@@ -583,12 +569,11 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 122] AA V008533C Any GE^ 19 Y Journalism: Newspaper AA V002950C Any GE^ 19 Y Journalism: Magazine CA V021884D n/a 18 Y Journalism: Newspaper CA V021885D n/a 21 Y FA = Financial Aid Eligible. ^The associate-leve"
+    "opens": "[page 123] (Program Code 060200, State Code 08533) Program Student Learning Outcomes: 1. Write simple and complex/long form articles using the inverted pyramid structure and other story structure formats. 2. Edit your o"
    },
    {
     "control_number": "08535",
     "pages": [
-     55,
      56,
      57
     ],
@@ -597,12 +582,11 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 55] AA V008535C Any GE^ 32 Y Broadcasting: Performance CA V021887D n/a 25 Y Broadcasting: Podcasting and Radio CA V021888D n/a 25 Y Broadcasting: Streaming and Television CA V021889D n/a 25 Y FA = Financial Ai"
+    "opens": "[page 56] (Program Code 060420, State Code 08535) The Broadcasting: Streaming and Television associate degree helps students to gain valuable skills and creative techniques in the highly competitive and challenging wor"
    },
    {
     "control_number": "08536",
     "pages": [
-     55,
      56,
      57
     ],
@@ -611,7 +595,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 55] AA V008536C Any GE^ 32 Y Broadcasting: Streaming and Television AA V008535C Any GE^ 32 Y Broadcasting: Performance CA V021887D n/a 25 Y Broadcasting: Podcasting and Radio CA V021888D n/a 25 Y Broadcasting:"
+    "opens": "[page 56] (Program Code 060410, State Code 08536) The Broadcasting: Podcasting and Radio associate degree helps students develop skills for working in radio, TV, and voice-over. It prepares students to create content f"
    },
    {
     "control_number": "08537",
@@ -630,7 +614,6 @@
    {
     "control_number": "08541",
     "pages": [
-     133,
      134,
      135,
      136
@@ -640,12 +623,11 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.818,
-    "opens": "[page 133] AS V008541C Any GE^ 33 Y Manufacturing Technology: Metal Machining AS V002960C Any GE^ 33 Y Manufacturing Technology: Numerical Control AS V008542C Any GE^ 33 Y Mechanical Drafting/ Design AS V002958C A"
+    "opens": "[page 134] (Program Code 095600, State Code 08541) This degree is designed for the student who wishes to enter the workforce after graduation with a strong background in AutoCAD drafting, blueprint reading, numerical c"
    },
    {
     "control_number": "08542",
     "pages": [
-     133,
      134,
      135,
      136
@@ -655,22 +637,20 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.6,
-    "opens": "[page 133] AS V008542C Any GE^ 33 Y Mechanical Drafting/ Design AS V002958C Any GE^ 27 Y Engineering Technology: Industrial/ Manufacturing CA V021895D n/a 25 Y Engineering Technology: Mechanical Engineering CA V02"
+    "opens": "[page 134] (Program Code 095630, State Code 08542) This degree is designed for the student who wishes to enter the workforce after graduation with a strong background in all aspects of numerical control. Program Studen"
    },
    {
     "control_number": "08543",
     "pages": [
-     51,
-     52,
      53,
      54
     ],
-    "named": true,
+    "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 51] Art: Studio AA V008543C Any GE^ 36-37 Y Art: Graphic Design CA V008554D n/a 29 Y Ceramic Production and Design CA V046705D n/a 18 Y FA = Financial Aid Eligible. ^The associate-level general education plan ("
+    "opens": "[page 53] (Program Code 100200, State Code 08543) The AA in Art: Studio is designed to provide art students greater breadth and depth than the AA-T in Studio Arts. It is designed to provide students instruction to ref"
    },
    {
     "control_number": "08545",
@@ -680,10 +660,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 71] Students earning the Commercial Music AA degree have obtained skills for entry-level employment in the music industry or for career advancement. Music 101 is not part of the degree but is a prerequisite for "
+    "opens": "[page 71] (Program Code 100500, State Code 08545) Students earning the Commercial Music AA degree have obtained skills for entry-level employment in the music industry or for career advancement. Music 101 is not part o"
    },
    {
     "control_number": "08546",
@@ -692,10 +672,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 72] The Music Technology certificate provides the student with career preparation for entry-level positions in the growing field of music technology. Students benefit from the hands-on approach offered by Comme"
+    "opens": "[page 72] (Program Code 100502, State Code 08546) The Music Technology certificate provides the student with career preparation for entry-level positions in the growing field of music technology. Students benefit from"
    },
    {
     "control_number": "08548",
@@ -705,10 +685,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 76] 74 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN THEATER ARTS: TECHNICAL Associate of Arts Degree (AA) (Program Code 100600, State Code 08548) Program Student Learning Outco"
+    "opens": "[page 76] (Program Code 100600, State Code 08548) Program Student Learning Outcomes: 1. Analyze live performance and break down scripts to uncover design opportunities against a background of political, sociological, h"
    },
    {
     "control_number": "08549",
@@ -733,10 +713,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 75] Los Angeles Valley College | General Catalog | 2026-2027 73 PROGRAM REQUIREMENTS THEATER ARTS: ACTING Associate of Arts Degree (AA) (Program Code 100701, State Code 10760) Program Student Learning Outcome"
+    "opens": "[page 75] (Program Code 100703, State Code 08550) Program Student Learning Outcomes: 1. Identify and apply techniques of textual analysis and contextural research to create the director’s vision. 2. Utilize learned thea"
    },
    {
     "control_number": "08551",
@@ -746,16 +726,14 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 76] CERTIFICATE OF ACHIEVEMENT: THEATER PRODUCTION Certificate of Achievement (CA) (Program Code 100702, State Code 08551) Students earning this certificate have obtained skills for entry-level employment in the"
+    "opens": "[page 76] (Program Code 100702, State Code 08551) Students earning this certificate have obtained skills for entry-level employment in the theater. Estimated time to complete: 2 years. Program Student Learning Outcomes:"
    },
    {
     "control_number": "08553",
     "pages": [
-     51,
-     52,
      53,
      54
     ],
@@ -764,7 +742,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 51] AA V008553C Any GE^ 35 Y Art: Studio AA V008543C Any GE^ 36-37 Y Art: Graphic Design CA V008554D n/a 29 Y Ceramic Production and Design CA V046705D n/a 18 Y FA = Financial Aid Eligible. ^The associate-level"
+    "opens": "[page 53] (Program Code 101300, State Code 08553) The Art: Graphic Design degree is structured to prepare students for positions in the industry. Specially structured courses in applied design and computer skills devel"
    },
    {
     "control_number": "08554",
@@ -773,16 +751,14 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 54] CERTIFICATE OF ACHIEVEMENT: ART: GRAPHIC DESIGN Certificate of Achievement (CA) (Program Code 103000, State Code 08554) The Certificate of Achievement in Graphic Design is structured to prepare students for po"
+    "opens": "[page 54] (Program Code 103000, State Code 08554) The Certificate of Achievement in Graphic Design is structured to prepare students for positions in the industry. Specially structured courses in applied design and com"
    },
    {
     "control_number": "08555",
     "pages": [
-     126,
-     127,
      128
     ],
     "named": false,
@@ -790,7 +766,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 126] German AA V008555C Any GE^ 18-19 Y Italian AA V002966C Any GE^ 18 Y Spanish Language SC V110500J n/a 13-15 N FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appro"
+    "opens": "[page 128] (Program Code 110300, State Code 08555) This degree provides solid foundation in the study of German for those wishing to continue their education in languages. Students will be able to demonstrate effective"
    },
    {
     "control_number": "08558",
@@ -801,10 +777,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 99] Los Angeles Valley College | General Catalog | 2026-2027 97 PROGRAM REQUIREMENTS CHILD DEVELOPMENT: EARLY CHILDHOOD EDUCATION Associate of Arts Degree (AA) (Program Code 130500, State Code 02980) Program"
+    "opens": "[page 99] (Program Code 130520, State Code 08558) Program Student Learning Outcomes: 1. Students will be able to identify special needs students of all ages. 2. Students will be able to observe and record the behavior to"
    },
    {
     "control_number": "08559",
@@ -816,10 +792,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 98] 96 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE ASSOCIATE DEGREE FOR TRANSFER: EARLY CHILDHOOD EDUCATION Associate in Science for Transfer Degree (AS-T) (Program Code 1305"
+    "opens": "[page 98] (Program Code 130500, State Code 08559) This degree prepares students for employment in professions in early childhood education programs that require only an AA degree. Students must participate in two semes"
    },
    {
     "control_number": "08560",
@@ -866,28 +842,26 @@
    {
     "control_number": "10757",
     "pages": [
-     131,
      132
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 131] CA V010757D n/a 19 Y A+/Net+ Certification Preparation SC V070800J n/a 11 N FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to "
+    "opens": "[page 132] (Program Code 093400, State Code 10757) The Electronics Technology Certificate can lead to positions such as: Entry-level Electronics Technician; Electronics Assembler Technician; Electronics Supply Salesper"
    },
    {
     "control_number": "10758",
     "pages": [
-     131,
      132
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 131] CA V010758D n/a 33-34 Y Electronics Technology CA V010757D n/a 19 Y A+/Net+ Certification Preparation SC V070800J n/a 11 N FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE"
+    "opens": "[page 132] (Program Code 093400, State Code 10758) This certificate leads to positions such as: Electronics Technician; Field Service Technician; Field Service Engineer; Test Technician; Flight- line Technician; Broadca"
    },
    {
     "control_number": "10759",
@@ -911,10 +885,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 75] Los Angeles Valley College | General Catalog | 2026-2027 73 PROGRAM REQUIREMENTS THEATER ARTS: ACTING Associate of Arts Degree (AA) (Program Code 100701, State Code 10760) Program Student Learning Outcome"
+    "opens": "[page 75] (Program Code 100701, State Code 10760) Program Student Learning Outcomes: 1. Identify techniques of textual analysis and the core principles of the Stanislavski system of character development and apply those"
    },
    {
     "control_number": "10761",
@@ -923,10 +897,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 101] Los Angeles Valley College | General Catalog | 2026-2027 99 PROGRAM REQUIREMENTS CHILD DEVELOPMENT: TEACHER Certificate of Achievement (CA) (Program Code 130500, State Code 10761) With additional general"
+    "opens": "[page 101] (Program Code 130500, State Code 10761) With additional general education units and required experience, students will be eligible for Child Development Teacher Permit as defined under Title 5. This permit i"
    },
    {
     "control_number": "10762",
@@ -937,10 +911,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 99] Los Angeles Valley College | General Catalog | 2026-2027 97 PROGRAM REQUIREMENTS CHILD DEVELOPMENT: EARLY CHILDHOOD EDUCATION Associate of Arts Degree (AA) (Program Code 130500, State Code 02980) Program"
+    "opens": "[page 99] (Program Code 130540, State Code 10762) Completion of 12 units meets the minimum education requirements for associate teacher position in private early childhood education programs. These courses may also mee"
    },
    {
     "control_number": "10763",
@@ -950,10 +924,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 100] 98 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE CHILD DEVELOPMENT: DIRECTOR, PRESCHOOL (B) Certificate of Achievement (CA) (Program Code 130580, State Code 10763) Compl"
+    "opens": "[page 100] (Program Code 130580, State Code 10763) Completion of 15 units meets the minimum education requirements for position of director in private early childhood education programs. Estimated time to complete: 1 ye"
    },
    {
     "control_number": "10764",
@@ -963,10 +937,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 100] 98 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE CHILD DEVELOPMENT: DIRECTOR, PRESCHOOL (B) Certificate of Achievement (CA) (Program Code 130580, State Code 10763) Compl"
+    "opens": "[page 100] (Program Code 130550, State Code 10764) Completion of 15 units meets the minimum education requirements for position of teacher in private programs for school-age care, such as before or after school program"
    },
    {
     "control_number": "10765",
@@ -976,10 +950,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 100] 98 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE CHILD DEVELOPMENT: DIRECTOR, PRESCHOOL (B) Certificate of Achievement (CA) (Program Code 130580, State Code 10763) Compl"
+    "opens": "[page 100] (Program Code 130590, State Code 10765) Completion of 15 units meets the minimum education requirements for position of infant or toddler care teacher in private programs. Estimated time to complete: 1 year. "
    },
    {
     "control_number": "10768",
@@ -988,10 +962,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 164] 162 Los Angeles Valley College | General Catalog | 2026-2027 SOCIAL AND BEHAVIORAL SCIENCES SOCIOLOGY: SOCIAL WELFARE Associate of Arts Degree (AA) (Program Code 220800, State Code 10768) Program Student Lea"
+    "opens": "[page 164] (Program Code 220800, State Code 10768) Program Student Learning Outcomes: 1. Examine theoretical and practical frameworks that focus on combating social disadvantage in our society. 2. Identify organized net"
    },
    {
     "control_number": "11546",
@@ -1009,14 +983,17 @@
    {
     "control_number": "17624",
     "pages": [
-     62
+     64,
+     65,
+     66,
+     67
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.667,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 0.889,
+    "opens": "[page 64] (Program Code 061220, State Code 17624) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "17625",
@@ -1036,14 +1013,17 @@
    {
     "control_number": "17626",
     "pages": [
-     62
+     65,
+     66,
+     67,
+     68
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.714,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 65] (Program Code 061220, State Code 17626) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "17627",
@@ -1076,7 +1056,7 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
     "opens": "[page 112] 11 0 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE Program Student Learning Outcomes: 1. Identify and explain basic approaches and methods in the arts, humanities, social"
@@ -1108,9 +1088,6 @@
    {
     "control_number": "21411",
     "pages": [
-     83,
-     84,
-     85,
      86
     ],
     "named": false,
@@ -1118,7 +1095,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 83] CA V021411D n/a 18-20 Y Retail Management CA V033859D n/a 24 N FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associa"
+    "opens": "[page 86] (Program Code 051100, State Code 21411) This certificate is designed for students and investors to provide skills needed to become manager of investment property or property management such as a homeowner ass"
    },
    {
     "control_number": "21874",
@@ -1165,17 +1142,17 @@
    {
     "control_number": "21878",
     "pages": [
-     87,
      88,
      89,
-     90
+     90,
+     91
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 87] CA V021878D n/a 30 Y CAOT: Computer Applications Specialist CA V021879D n/a 34 Y CAOT: General Office Assistant CA V030499D n/a 22-23 Y Computerized Bookkeeping CA V039152D n/a 18 Y Website Software Specia"
+    "opens": "[page 88] (Program Code 051400, State Code 21878) Students will be prepared for employment using automated systems and procedures. Emphasis is placed on the development of language skills, records management, and the u"
    },
    {
     "control_number": "21879",
@@ -1195,14 +1172,16 @@
    {
     "control_number": "21880",
     "pages": [
-     62
+     67,
+     68,
+     69
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.667,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 0.889,
+    "opens": "[page 67] (Program Code 060101, State Code 21880) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this certificate will give students a thorough background in th"
    },
    {
     "control_number": "21881",
@@ -1222,14 +1201,15 @@
    {
     "control_number": "21882",
     "pages": [
-     62
+     68,
+     69
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.714,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 68] (Program Code 060103, State Code 21882) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "21883",
@@ -1246,85 +1226,78 @@
    {
     "control_number": "21884",
     "pages": [
-     122,
      123
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 122] CA V021884D n/a 18 Y Journalism: Newspaper CA V021885D n/a 21 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an assoc"
+    "opens": "[page 123] (Program Code 060200, State Code 21884) A Certificate of Achievement in Journalism: Magazine provides a foundation for students who wish to seek positions such as: article writer, magazine editor, speech wri"
    },
    {
     "control_number": "21885",
     "pages": [
-     122,
      123
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 122] CA V021885D n/a 21 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan to transfer to "
+    "opens": "[page 123] (Program Code 060200, State Code 21885) A Certificate of Achievement in Journalism: Newspaper, provides a foundation for students who wish to seek positions such as: newspaper reporter, newspaper editor, pub"
    },
    {
     "control_number": "21887",
     "pages": [
-     55,
      56,
      57
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 55] CA V021887D n/a 25 Y Broadcasting: Podcasting and Radio CA V021888D n/a 25 Y Broadcasting: Streaming and Television CA V021889D n/a 25 Y FA = Financial Aid Eligible. ^The associate-level general education "
+    "opens": "[page 56] (Program Code 060400, State Code 21887) The Broadcasting: Performance certificate helps students build performance skills in radio and television for platforms like online streaming, cable, and live broadcast"
    },
    {
     "control_number": "21888",
     "pages": [
-     55,
-     56,
      57
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 55] CA V021888D n/a 25 Y Broadcasting: Streaming and Television CA V021889D n/a 25 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning"
+    "opens": "[page 57] (Program Code 060410, State Code 21888) The Broadcasting: Podcasting and Radio certificate helps students develop skills for working in radio, TV, and voice-over. It prepares students to create content for th"
    },
    {
     "control_number": "21889",
     "pages": [
-     55,
-     56,
      57
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 55] CA V021889D n/a 25 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan to transfer to a"
+    "opens": "[page 57] (Program Code 060420, State Code 21889) The Broadcasting: Streaming and Television certificate helps students to gain valuable skills and creative techniques in the highly competitive and challenging world of"
    },
    {
     "control_number": "21890",
     "pages": [
-     58,
      59,
      60,
-     61
+     61,
+     62
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 58] Cinema Production CA V021890D n/a 30 Y Cinema Theory & Criticism CA V031905D n/a 21 N FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students plan"
+    "opens": "[page 59] (Program Code 061220, State Code 21890) The successful completion of this certificate of achievement will give students a thorough background in the aesthetics and history of cinema, experience in cinema pict"
    },
    {
     "control_number": "21893",
@@ -1342,9 +1315,6 @@
    {
     "control_number": "21894",
     "pages": [
-     133,
-     134,
-     135,
      136
     ],
     "named": false,
@@ -1352,13 +1322,11 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.8,
-    "opens": "[page 133] CA V021894D n/a 18 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan to transfer to "
+    "opens": "[page 136] (Program Code 095340, State Code 21894) This certificate is designed for the student who wishes to enter the workforce in positions such as Drafter Tracer; Detailer Engineering Aid; Drafter; and Computer-Aid"
    },
    {
     "control_number": "21895",
     "pages": [
-     133,
-     134,
      135,
      136
     ],
@@ -1367,13 +1335,11 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.75,
-    "opens": "[page 133] CA V021895D n/a 25 Y Engineering Technology: Mechanical Engineering CA V021896D n/a 21 Y Manufacturing Technology: Metal Machining CA V021897D n/a 21 Y Manufacturing Technology: Numerical Control CA V02"
+    "opens": "[page 135] (Program Code 095600, State Code 21895) The Industrial Technology/Manufacturing Certificate can lead to positions such as: Drafter; Drill Press Operator; Engineering Liaison; Quality Controller; Grinder; Man"
    },
    {
     "control_number": "21896",
     "pages": [
-     133,
-     134,
      135,
      136
     ],
@@ -1382,14 +1348,11 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.714,
-    "opens": "[page 133] CA V021896D n/a 21 Y Manufacturing Technology: Metal Machining CA V021897D n/a 21 Y Manufacturing Technology: Numerical Control CA V021898D n/a 27 Y Mechanical Drafting/ Design CA V021894D n/a 18 Y FA = Fi"
+    "opens": "[page 135] (Program Code 095600, State Code 21896) This certificate can lead to positions such as: Research Aide; Production Aide; Design Aide; Construction Aide; Maintenance Aide; Salesperson; Detail Drafter; and Engi"
    },
    {
     "control_number": "21897",
     "pages": [
-     133,
-     134,
-     135,
      136
     ],
     "named": false,
@@ -1397,14 +1360,11 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.571,
-    "opens": "[page 133] CA V021897D n/a 21 Y Manufacturing Technology: Numerical Control CA V021898D n/a 27 Y Mechanical Drafting/ Design CA V021894D n/a 18 Y FA = Financial Aid Eligible. ^The associate-level general education pla"
+    "opens": "[page 136] (Program Code 095630, State Code 21897) This certificate is designed for the student who wishes to enter the workforce in positions such as: Mill operator; Numerical Control Machinist; Lathe Operator; and Nu"
    },
    {
     "control_number": "21898",
     "pages": [
-     133,
-     134,
-     135,
      136
     ],
     "named": false,
@@ -1412,7 +1372,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.778,
-    "opens": "[page 133] CA V021898D n/a 27 Y Mechanical Drafting/ Design CA V021894D n/a 18 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an "
+    "opens": "[page 136] (Program Code 095630, State Code 21898) This certificate is designed for the student who wishes to enter the workforce in positions such as: Numerical Control Programmer; Numerical Control Machinist; and Num"
    },
    {
     "control_number": "21899",
@@ -1430,15 +1390,14 @@
    {
     "control_number": "21900",
     "pages": [
-     95,
      96
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 95] CA V021900D n/a 16 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan to transfer to a"
+    "opens": "[page 96] (Program Code 210500, State Code 21900) Students obtaining an Administration of Justice Certificate will be better qualify for entry-level positions in the fields of Law, Law Enforcement, Correctional Science"
    },
    {
     "control_number": "21901",
@@ -1507,24 +1466,23 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 120] 118 Los Angeles Valley College | General Catalog | 2026-2027 HUMANITIES AND COMMUNICATION ENGLISH AS A SECOND LANGUAGE - SPEECH Certificate of Completion (Noncredit) (Program Code 493087, State Code 24464) Pr"
+    "opens": "[page 120] (Program Code 493087, State Code 24464) Program Student Learning Outcomes: 1. Students will be able to distinguish short and long vowel sounds and patterns. 2. Students will be able to use accurate rhythm and"
    },
    {
     "control_number": "30425",
     "pages": [
-     141,
      142,
      143
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 141] Los Angeles Valley College | General Catalog | 2026-2027 1 39 PROGRAM REQUIREMENTS ASSOCIATE DEGREE FOR TRANSFER: COMPUTER SCIENCE Associate in Science for Transfer Degree (AS-T) (Program Code: 070600, St"
+    "opens": "[page 142] (Program Code 070710, State Code 30425) This certificate is designed for students pursuing a Programmer/Analyst position using the C++ programming language, and for employed professionals upgrading their C++"
    },
    {
     "control_number": "30499",
@@ -1591,10 +1549,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 72] Estimated time to complete: 1- 2 years depending on certificate. COMMERCIAL MUSIC: MUSIC NOTATION Certificate of Achievement (CA) (Program Code 100505, State Code 31399) Music Notation provides the student wit"
+    "opens": "[page 72] (Program Code 100505, State Code 31399) Music Notation provides the student with career preparation for entry- level positions in the burgeoning fields of music notation and publishing. The student will learn"
    },
    {
     "control_number": "31765",
@@ -1612,7 +1570,6 @@
    {
     "control_number": "31905",
     "pages": [
-     58,
      59
     ],
     "named": false,
@@ -1620,7 +1577,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 58] CA V031905D n/a 21 N FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan to transfer to a"
+    "opens": "[page 59] (Program Code 061200, State Code 31905) The successful completion of this certificate will give students with the interest of pursuing film criticism a thorough understanding of, and the ability to write and "
    },
    {
     "control_number": "32117",
@@ -1640,7 +1597,6 @@
    {
     "control_number": "32212",
     "pages": [
-     51,
      52,
      53,
      54
@@ -1650,7 +1606,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 51] Studio Arts AA-T V032212G CalGETC 24 Y Art History AA V002961C Any GE^ 18 Y Art: Graphic Design AA V008553C Any GE^ 35 Y Art: Studio AA V008543C Any GE^ 36-37 Y Art: Graphic Design CA V008554D n/a 29 Y Cerami"
+    "opens": "[page 52] (Program Code 100200, State Code 32212) Students completing the Associate in Arts in Studio Arts for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar majors "
    },
    {
     "control_number": "32368",
@@ -1692,15 +1648,16 @@
    {
     "control_number": "32740",
     "pages": [
-     48,
-     49
+     149,
+     150,
+     151
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 48] Physics 2.0 AS-T 147 Physics AS 14 8 Political Science AA-T 15 8 Political Science AA 15 8 Property Management CA 84 Psychology AA-T 15 9 Radio/Audio Industry CN 78 Real Estate AA 89 Real Estate CA 89 Registere"
+    "opens": "[page 149] (Program Code 190200, State Code 32740) Students completing the Associate in Science in Physics 2.0 for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in similar maj"
    },
    {
     "control_number": "32741",
@@ -1712,10 +1669,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 98] ASSOCIATE DEGREE FOR TRANSFER: EARLY CHILDHOOD EDUCATION Associate in Science for Transfer Degree (AS-T) (Program Code 130500, State Code 32741) Students completing the Associate in Science in Early Childhood "
+    "opens": "[page 98] (Program Code 130500, State Code 32741) Students completing the Associate in Science in Early Childhood education for Transfer will have satisfied the lower division major preparation for bachelor’s degrees i"
    },
    {
     "control_number": "32849",
@@ -1879,17 +1836,17 @@
    {
     "control_number": "33859",
     "pages": [
-     84,
-     85,
      86,
-     87
+     87,
+     88,
+     89
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 84] 82 Los Angeles Valley College | General Catalog | 2026-2027 BUSINESS, ENTREPRENEURSHIP, AND LAW ASSOCIATE DEGREE: BANKING AND FINANCE Associate of Arts Degree (AA) Program Code 050400, State Code 02943) This "
+    "opens": "[page 86] (Program Code 050650, State Code 33859) This Certificate prepares students for career opportunities and advancement in the retail industry. Retail managers work in many settings, including grocery, fashion, s"
    },
    {
     "control_number": "35201",
@@ -1957,7 +1914,6 @@
    {
     "control_number": "37295",
     "pages": [
-     58,
      59
     ],
     "named": false,
@@ -1965,43 +1921,48 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 58] AA V037295C Any GE^ 21 Y Cinema Production CA V021890D n/a 30 Y Cinema Theory & Criticism CA V031905D n/a 21 N FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is app"
+    "opens": "[page 59] (Program Code 061210, State Code 37295 ) The successful completion of this degree will give students with the interest of pursuing film criticism a thorough understanding of, and the ability to write and spea"
    },
    {
     "control_number": "37296",
     "pages": [
-     62
+     66,
+     67,
+     68,
+     69
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.667,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 66] (Program Code 061220, State Code 37296) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "37297",
     "pages": [
-     62
+     67,
+     68,
+     69
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.6,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 67] (Program Code 061210, State Code 37297) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a basic foundation in the aesthe"
    },
    {
     "control_number": "37298",
     "pages": [
-     62
+     69
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.667,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 69] (Program Code 061220, State Code 37298) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "38959",
@@ -2130,10 +2091,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 79] Los Angeles Valley College | General Catalog | 2026-2027 77 PROGRAM REQUIREMENTS GIG ECONOMY CAREERS IN ENTERTAINMENT Certificate of Completion (Noncredit) (Program Code 060100, State Code 39765) Successf"
+    "opens": "[page 79] (Program Code 060100, State Code 39765) Successfully passing all four Gig Economy Careers in Entertainment courses will provide students with a Certificate of Completion. By combining the skills gained and sp"
    },
    {
     "control_number": "40533",
@@ -2143,23 +2104,22 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 142] CERTIFICATE OF ACHIEVEMENT: CLOUD COMPUTING Certificate of Achievement (CA) (Program Code 070710, State Code 40533) The Cloud Computing program prepares students to design solutions for infrastructure as a S"
+    "opens": "[page 142] (Program Code 070710, State Code 40533) The Cloud Computing program prepares students to design solutions for infrastructure as a Service (IaaS) architectures by provisioning computing instances, establishin"
    },
    {
     "control_number": "40662",
     "pages": [
-     72,
      73
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 72] Photography CA V040662D n/a 19-21 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan t"
+    "opens": "[page 73] (Program Code 101200, State Code 40662) The successful completion of this certificate will give students a thorough background in the aesthetics of analog and digital photography, and experience in creating p"
    },
    {
     "control_number": "40793",
@@ -2190,7 +2150,6 @@
    {
     "control_number": "40871",
     "pages": [
-     60,
      61
     ],
     "named": false,
@@ -2198,7 +2157,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
-    "opens": "[page 60] CA V040871D n/a 24 Y FA = Financial Aid Eligible. CERTIFICATE OF ACHIEVEMENT: Please also see the Humanities and Communication and STEM CAPs for more certificate options. ADVANCED ESL MILESTONE - PATHWAY "
+    "opens": "[page 61] (Program Code 493087, State Code 40871) The Advanced ESL Milestone - Pathway to Music program prepares English Language learners (ELLs) for the academic rigors of degree- applicable coursework and enables stud"
    },
    {
     "control_number": "40988",
@@ -2215,8 +2174,6 @@
    {
     "control_number": "41005",
     "pages": [
-     83,
-     84,
      85,
      86
     ],
@@ -2225,7 +2182,7 @@
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 83] CA V041005D n/a 16-17 Y Business Management CA V002944D n/a 20 Y Human Resource Management CA V045136D n/a 18 Y Marketing CA V021876D n/a 18 Y Property Management CA V021411D n/a 18-20 Y Retail Management C"
+    "opens": "[page 85] (Program Code 050640, State Code 41005) This certificate will prepare students for first-level management and supervisory jobs, as well as, support positions and qualify for small business jobs and careers in"
    },
    {
     "control_number": "41008",
@@ -2256,15 +2213,14 @@
    {
     "control_number": "41493",
     "pages": [
-     150,
      151
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 150] CA V041493D n/a 18-21 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan to transfer "
+    "opens": "[page 151] (Program Code 490200, State Code 41493) Many STEM majors share foundational prerequisite coursework. This certificate contains some of the classes that will help students prepare for a more specific STEM maj"
    },
    {
     "control_number": "41578",
@@ -2282,15 +2238,14 @@
    {
     "control_number": "41579",
     "pages": [
-     96,
      97
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 96] CA V041579D n/a 24-25 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan to transfer t"
+    "opens": "[page 97] (Program Code 490200, State Code 41579) This certificate is for students interested in careers in health care, such as nursing, respiratory therapy, and allied fields in health care. In completing this certif"
    },
    {
     "control_number": "42328",
@@ -2299,10 +2254,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 79] Los Angeles Valley College | General Catalog | 2026-2027 77 PROGRAM REQUIREMENTS GIG ECONOMY CAREERS IN ENTERTAINMENT Certificate of Completion (Noncredit) (Program Code 060100, State Code 39765) Successf"
+    "opens": "[page 79] (Program Code 061220, State Code 42328) The successful completion of this certificate will indicate that students understand the basic skills required in key roles in the camera department of contemporary, di"
    },
    {
     "control_number": "42380",
@@ -2311,10 +2266,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 78] 76 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN NONCREDIT CERTIFICATE: BUSINESS OF ENTERTAINMENT Certificate of Completion (Noncredit) (Program Code 069900, State Code 418"
+    "opens": "[page 78] (Program Code 061220, State Code 42380) The successful completion of this certificate will give students thorough experience in the application of digital editing, visual effects, color grading/correction, us"
    },
    {
     "control_number": "42382",
@@ -2323,10 +2278,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 0.875,
-    "opens": "[page 114] 112 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE CERTIFIED NURSING ASSISTANT Certificate of Completion (noncredit) (Program Code 123030, State Code: 45201) This certifica"
+    "opens": "[page 114] (Program Code 126100, State Code 42382) The Community Health Worker Program trains community members and certifies students to work as a CHW in their respective communities. Community Health Workers are trus"
    },
    {
     "control_number": "43336",
@@ -2335,10 +2290,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 81] Los Angeles Valley College | General Catalog | 2026-2027 79 PROGRAM REQUIREMENTS THE MASS MEDIA AND THE LAW Certificate of Completion (Noncredit) (Program Code 060200, State Code 43345) The successful com"
+    "opens": "[page 81] (Program Code 060420, State Code 43336) The successful completion of this certificate will give students thorough experience in the application of TV/Video and Social Media Content Creation digital production"
    },
    {
     "control_number": "43337",
@@ -2347,10 +2302,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 81] Los Angeles Valley College | General Catalog | 2026-2027 79 PROGRAM REQUIREMENTS THE MASS MEDIA AND THE LAW Certificate of Completion (Noncredit) (Program Code 060200, State Code 43345) The successful com"
+    "opens": "[page 81] (Program Code 061220, State Code 43337) The successful completion of this certificate will help prepare students for employment in casting and directing actors for motion picture and episodic projects. Progra"
    },
    {
     "control_number": "43338",
@@ -2359,10 +2314,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 78] 76 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN NONCREDIT CERTIFICATE: BUSINESS OF ENTERTAINMENT Certificate of Completion (Noncredit) (Program Code 069900, State Code 418"
+    "opens": "[page 78] (Program Code 061220, State Code 43338) The successful completion of this certificate will give students thorough experience in the postproduction process, postproduction workflows, editing, and transcoding v"
    },
    {
     "control_number": "43339",
@@ -2371,10 +2326,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 78] 76 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN NONCREDIT CERTIFICATE: BUSINESS OF ENTERTAINMENT Certificate of Completion (Noncredit) (Program Code 069900, State Code 418"
+    "opens": "[page 78] (Program Code 061220, State Code 43339) The successful completion of this certificate will give students thorough experience in the supporting roles as an executive assistant at a studio, production company, "
    },
    {
     "control_number": "43340",
@@ -2383,10 +2338,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 79] Los Angeles Valley College | General Catalog | 2026-2027 77 PROGRAM REQUIREMENTS GIG ECONOMY CAREERS IN ENTERTAINMENT Certificate of Completion (Noncredit) (Program Code 060100, State Code 39765) Successf"
+    "opens": "[page 79] (Program Code 061220, State Code 43340) The successful completion of this certificate will give students thorough experience in the setting up of a production company, scheduling a production, and budgeting a"
    },
    {
     "control_number": "43341",
@@ -2395,10 +2350,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 79] Los Angeles Valley College | General Catalog | 2026-2027 77 PROGRAM REQUIREMENTS GIG ECONOMY CAREERS IN ENTERTAINMENT Certificate of Completion (Noncredit) (Program Code 060100, State Code 39765) Successf"
+    "opens": "[page 79] (Program Code 061220, State Code 43341) The successful completion of this certificate will give students thorough experience in the roles as a grip and electric on a set for motion picture and episodic projec"
    },
    {
     "control_number": "43342",
@@ -2407,10 +2362,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 79] Los Angeles Valley College | General Catalog | 2026-2027 77 PROGRAM REQUIREMENTS GIG ECONOMY CAREERS IN ENTERTAINMENT Certificate of Completion (Noncredit) (Program Code 060100, State Code 39765) Successf"
+    "opens": "[page 79] (Program Code 061220, State Code 43342) The successful completion of this certificate will give students thorough experience in production sound recording and postproduction sound editing and mixing for motio"
    },
    {
     "control_number": "43343",
@@ -2419,10 +2374,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 80] 78 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN PHOTOGRAPHY: AERIAL DRONE PHOTOGRAPHY AND BASIC SPATIAL PHOTOGRAMMETRY Certificate of Completion (Noncredit) (Program Code"
+    "opens": "[page 80] (Program Code 101200, State Code 43343) The successful completion of this certificate will give students a basic background in the camera and lighting functions for photography, and experience in creating pho"
    },
    {
     "control_number": "43344",
@@ -2431,10 +2386,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 80] 78 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN PHOTOGRAPHY: AERIAL DRONE PHOTOGRAPHY AND BASIC SPATIAL PHOTOGRAMMETRY Certificate of Completion (Noncredit) (Program Code"
+    "opens": "[page 80] (Program Code 061220, State Code 43344) The successful completion of this certificate will give students thorough experience in the application of screenwriting, both feature film and episodic content using t"
    },
    {
     "control_number": "43345",
@@ -2443,10 +2398,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 81] Los Angeles Valley College | General Catalog | 2026-2027 79 PROGRAM REQUIREMENTS THE MASS MEDIA AND THE LAW Certificate of Completion (Noncredit) (Program Code 060200, State Code 43345) The successful com"
+    "opens": "[page 81] (Program Code 060200, State Code 43345) The successful completion of this certificate will give students thorough experience in the application of the law and how it applies to media: radio, film, television,"
    },
    {
     "control_number": "43454",
@@ -2455,10 +2410,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 80] 78 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN PHOTOGRAPHY: AERIAL DRONE PHOTOGRAPHY AND BASIC SPATIAL PHOTOGRAMMETRY Certificate of Completion (Noncredit) (Program Code"
+    "opens": "[page 80] (Program Code 060420, State Code 43454) The successful completion of this certificate will give students thorough experience in the application of audio, radio, and podcasting digital production including rec"
    },
    {
     "control_number": "43579",
@@ -2467,10 +2422,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 120] 118 Los Angeles Valley College | General Catalog | 2026-2027 HUMANITIES AND COMMUNICATION ENGLISH AS A SECOND LANGUAGE - SPEECH Certificate of Completion (Noncredit) (Program Code 493087, State Code 24464) Pr"
+    "opens": "[page 120] (Program Code 493087, State Code 43579) This English as a Second Language communication competency program is designed to strengthen students’ listening comprehension and speaking skills. Listening skills to"
    },
    {
     "control_number": "43774",
@@ -2493,10 +2448,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 143] Los Angeles Valley College | General Catalog | 2026-2027 1 41 PROGRAM REQUIREMENTS DATA SCIENCE AND ANALYTICS Certificate of Achievement (CA) (Program Code 070200, State Code 43994) The goal of the Certif"
+    "opens": "[page 143] (Program Code 070200, State Code 43994) The goal of the Certificate of Achievement in Data Science and Analytics is to prepare the student to work in the fields of Data Analytics and Data Science. The studen"
    },
    {
     "control_number": "43998",
@@ -2519,10 +2474,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 120] 118 Los Angeles Valley College | General Catalog | 2026-2027 HUMANITIES AND COMMUNICATION ENGLISH AS A SECOND LANGUAGE - SPEECH Certificate of Completion (Noncredit) (Program Code 493087, State Code 24464) Pr"
+    "opens": "[page 120] (Program Code 493087, State Code 44162) This is an intermediate program in English as a Second Language. It emphasizes the development of writing, reading, and grammar for interpersonal communication. Course"
    },
    {
     "control_number": "44265",
@@ -2554,26 +2509,29 @@
    {
     "control_number": "44379",
     "pages": [
-     62
+     69
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 69] (Program Code 061220, State Code 44379) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this certificate will give students a thorough background in th"
    },
    {
     "control_number": "44391",
     "pages": [
-     62
+     66,
+     67,
+     68,
+     69
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 66] (Program Code 061220, State Code 44391) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "44481",
@@ -2611,25 +2569,23 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 141] ASSOCIATE DEGREE FOR TRANSFER: COMPUTER SCIENCE Associate in Science for Transfer Degree (AS-T) (Program Code: 070600, State Code: 44542) Students completing the Associate in Science in Computer Science for T"
+    "opens": "[page 141] (Program Code: 070600, State Code: 44542) Students completing the Associate in Science in Computer Science for Transfer will have satisfied the lower division major preparation for bachelor’s degrees in simi"
    },
    {
     "control_number": "45136",
     "pages": [
-     83,
-     84,
      85,
      86
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
-    "titled": true,
+    "titled": false,
     "coverage": 1.0,
-    "opens": "[page 83] CA V045136D n/a 18 Y Marketing CA V021876D n/a 18 Y Property Management CA V021411D n/a 18-20 Y Retail Management CA V033859D n/a 24 N FA = Financial Aid Eligible. ^The associate-level general education plan"
+    "opens": "[page 85] (Program Code 050600, State Code 45136) This certificate prepares students for careers and advancement in the human resources management field. Human resources specialists work in business and industry, gover"
    },
    {
     "control_number": "45137",
@@ -2675,10 +2631,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 114] 112 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE CERTIFIED NURSING ASSISTANT Certificate of Completion (noncredit) (Program Code 123030, State Code: 45201) This certifica"
+    "opens": "[page 114] (Program Code 130500, State Code: 45161) This nanny certification program is designed to equip aspiring nannies with the essential knowledge, skills, and competencies required to provide high-quality childca"
    },
    {
     "control_number": "45174",
@@ -2700,10 +2656,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 114] 112 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE CERTIFIED NURSING ASSISTANT Certificate of Completion (noncredit) (Program Code 123030, State Code: 45201) This certifica"
+    "opens": "[page 114] (Program Code: 050600, State Code: 45178) The Introduction to Nonprofit Certificate Program provides you with a strong foundation for a successful career in the nonprofit sector. You will learn effective fun"
    },
    {
     "control_number": "45179",
@@ -2712,10 +2668,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 115] Los Angeles Valley College | General Catalog | 2026-2027 1 1 3 PROGRAM REQUIREMENTS JEWISH NON-PROFIT WORK Certificate of Completion (noncredit) (Program Code 050640, State Code 42327) Successfully comple"
+    "opens": "[page 115] (Program Code: 050600, State Code: 45179) This comprehensive program is designed to equip individuals with the tools they need to launch and manage successful nonprofit organizations.This Nonprofit Managemen"
    },
    {
     "control_number": "45192",
@@ -2725,10 +2681,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 93] The Banquet and Restaurant Server certificate of completion is designed to provide knowledge and practical skills training for students preparing for employment in the hospitality food service industry. Cour"
+    "opens": "[page 93] (Program Code 130700, State Code 45192) The Banquet and Restaurant Server certificate of completion is designed to provide knowledge and practical skills training for students preparing for employment in the "
    },
    {
     "control_number": "45201",
@@ -2737,10 +2693,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 114] 112 Los Angeles Valley College | General Catalog | 2026-2027 HEALTH AND PUBLIC SERVICE CERTIFIED NURSING ASSISTANT Certificate of Completion (noncredit) (Program Code 123030, State Code: 45201) This certifica"
+    "opens": "[page 114] (Program Code 123030, State Code: 45201) This certificate prepares students for a career in an area with a high demand for employment. Students will learn to become nursing assistants in long-term care facil"
    },
    {
     "control_number": "45202",
@@ -2749,73 +2705,82 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 114] The In-Home Supportive Services Skills certificate of completion is designed for students to provide in-home care to patients, assist with activities of daily living, and provide care in the areas of comfort"
+    "opens": "[page 114] (Program Code: 123080, State Code: 45202) The In-Home Supportive Services Skills certificate of completion is designed for students to provide in-home care to patients, assist with activities of daily living"
    },
    {
     "control_number": "45216",
     "pages": [
-     62
+     66,
+     67,
+     68,
+     69
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.556,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 66] (Program Code 061220, State Code 45216) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this certificate will give students a thorough background in th"
    },
    {
     "control_number": "45217",
     "pages": [
-     65,
-     66,
-     67,
-     68
+     68,
+     69
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 65] Los Angeles Valley College | General Catalog | 2026-2027 63 PROGRAM REQUIREMENTS MEDIA ARTS: PRODUCING Associate of Arts Degree (AA) (Program Code 061220, State Code 17626) *Please see departmental flow c"
+    "opens": "[page 68] (Program Code 061220, State Code 45217) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this certificate will give students a thorough background in th"
    },
    {
     "control_number": "45218",
     "pages": [
-     62
+     67,
+     68,
+     69
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 67] (Program Code 061220, State Code 45218) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "45256",
     "pages": [
-     62
+     64,
+     65,
+     66,
+     67
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.556,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 64] (Program Code 061220, State Code 45256) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "45257",
     "pages": [
-     62
+     64,
+     65,
+     66,
+     67
     ],
     "named": false,
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.5,
-    "opens": "[page 62] 60 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN LIST A, VIDEO OR FILM: SELECT 1 COURSE FROM THE FOLLOWING: BRDCSTG 046 ...... Fundamentals of Broadcast Studio Production .."
+    "coverage": 1.0,
+    "opens": "[page 64] (Program Code 061220, State Code 45257) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "45258",
@@ -2827,10 +2792,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 65] Los Angeles Valley College | General Catalog | 2026-2027 63 PROGRAM REQUIREMENTS MEDIA ARTS: PRODUCING Associate of Arts Degree (AA) (Program Code 061220, State Code 17626) *Please see departmental flow c"
+    "opens": "[page 65] (Program Code 061220, State Code 45258) *Please see departmental flow chart for guidance on sequence of coursework. The successful completion of this degree will give students a thorough background in the aes"
    },
    {
     "control_number": "46196",
@@ -2880,10 +2845,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 93] Los Angeles Valley College | General Catalog | 2026-2027 9 1 PROGRAM REQUIREMENTS 21ST CENTURY EMPLOYABILITY SKILLS - BASIC Certificate of Completion (Noncredit) (Program Code 493012, State Code 39619) C"
+    "opens": "[page 93] (Program Code 050600, State Code 46277) The Artificial Intelligence for Business vocational certificate program is designed to equip students with the foundational knowledge and practical skills necessary to "
    },
    {
     "control_number": "46280",
@@ -2892,10 +2857,10 @@
     ],
     "named": true,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 115] The Tutor Training Certificate of Completion is designed to prepare students for effective, ethical, and inclusive peer-to-peer academic support roles in community college and related educational settings. "
+    "opens": "[page 115] (Program Code 080200, State Code 46280) The Tutor Training Certificate of Completion is designed to prepare students for effective, ethical, and inclusive peer-to-peer academic support roles in community col"
    },
    {
     "control_number": "46281",
@@ -2904,10 +2869,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 80] 78 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN PHOTOGRAPHY: AERIAL DRONE PHOTOGRAPHY AND BASIC SPATIAL PHOTOGRAMMETRY Certificate of Completion (Noncredit) (Program Code"
+    "opens": "[page 80] (Program Code 101200, State Code 46281) This noncredit vocational certificate in Aerial Drone Imaging and Spatial Photogrammetry guides students from beginner drone operation to advanced aerial imaging and sp"
    },
    {
     "control_number": "46282",
@@ -2916,23 +2881,22 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 80] 78 Los Angeles Valley College | General Catalog | 2026-2027 ARTS, MEDIA, AND DESIGN PHOTOGRAPHY: AERIAL DRONE PHOTOGRAPHY AND BASIC SPATIAL PHOTOGRAMMETRY Certificate of Completion (Noncredit) (Program Code"
+    "opens": "[page 80] (Program Code 101200, State Code 46282) The successful completion of this certificate provides students with fundamental, survey-level training in camera operation, lighting techniques, and digital imaging wo"
    },
    {
     "control_number": "46333",
     "pages": [
-     110,
      111
     ],
-    "named": false,
+    "named": true,
     "code": null,
     "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 110] CA V046333D N/A 16 Y FA = Financial Aid Eligible. ^The associate-level general education plan (LACCD GE Plan) is appropriate for students planning to earn an associate degree who do not plan to transfer to "
+    "opens": "[page 111] (Program Code 083510, State Code 46333) The Physical Fitness and Body Movement certificate program broadens the student's scope of knowledge in the field of physical fitness while also preparing students for"
    },
    {
     "control_number": "46437",
@@ -2941,10 +2905,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 0.833,
-    "opens": "[page 142] 14 0 Los Angeles Valley College | General Catalog | 2026-2027 SCIENCE, TECHNOLOGY, ENGINEERING, AND MATH CERTIFICATE OF ACHIEVEMENT: CLOUD COMPUTING Certificate of Achievement (CA) (Program Code 070710, Stat"
+    "opens": "[page 142] (Program Code 070200, State Code 46437) The Cybersecurity and Networking Support program prepares students for entry-level roles safeguarding digital systems and organizational networks. Students learn found"
    },
    {
     "control_number": "46442",
@@ -2953,10 +2917,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 153] Los Angeles Valley College | General Catalog | 2026-2027 1 5 1 PROGRAM REQUIREMENTS PALO ALTO NETWORKS CYBERSECURITY FUNDAMENTALS Certificate of Completion (Noncredit) (Program Code 070800, State Code 46"
+    "opens": "[page 153] (Program Code 070800, State Code 46442) The Palo Alto Networks Cybersecurity Fundamentals program prepares students to build practical skills in three critical domains of modern cybersecurity: network securi"
    },
    {
     "control_number": "46443",
@@ -2965,10 +2929,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 153] Los Angeles Valley College | General Catalog | 2026-2027 1 5 1 PROGRAM REQUIREMENTS PALO ALTO NETWORKS CYBERSECURITY FUNDAMENTALS Certificate of Completion (Noncredit) (Program Code 070800, State Code 46"
+    "opens": "[page 153] (Program Code 070800, State Code 46443) The Palo Alto Networks Security Operations & Automation Specialist program prepares students with hands-on skills in firewall management, cloud security automation, an"
    },
    {
     "control_number": "46444",
@@ -2977,10 +2941,10 @@
     ],
     "named": false,
     "code": null,
-    "cn_printed": false,
+    "cn_printed": true,
     "titled": true,
     "coverage": 1.0,
-    "opens": "[page 153] Los Angeles Valley College | General Catalog | 2026-2027 1 5 1 PROGRAM REQUIREMENTS PALO ALTO NETWORKS CYBERSECURITY FUNDAMENTALS Certificate of Completion (Noncredit) (Program Code 070800, State Code 46"
+    "opens": "[page 153] (Program Code 070730, State Code 46444) The Splunk Security Operations Analyst program prepares students for entry-level positions in Security Operations Centers (SOCs), including roles such as Cybersecurity"
    },
    {
     "control_number": "46445",
@@ -3001,7 +2965,7 @@
   ]
  },
  "loads": 1,
- "seconds": 161.8,
+ "seconds": 112.2,
  "found": 223,
  "by_method": {
   "no_closed_list": 5,
@@ -3017,14 +2981,14 @@
    "02942",
    "21874"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84": [
    "02943",
-   "02944",
    "02945",
-   "02947",
+   "02947"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85": [
+   "02944",
    "08530",
-   "21411",
-   "21876",
    "41005",
    "45136"
   ],
@@ -3032,51 +2996,39 @@
    "02948",
    "21877"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123": [
    "02950",
    "08533",
    "21884",
-   "21885",
-   "33572"
+   "21885"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58": [
    "02951",
    "17625",
-   "21881",
-   "21890",
-   "31905",
-   "37295"
+   "21881"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141": [
    "02952",
-   "30425",
    "44542"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131": [
    "02955",
    "02957",
-   "10757",
-   "10758",
    "21893"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135": [
    "02958",
-   "02959",
+   "21895",
+   "21896"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134": [
    "02960",
    "08541",
-   "08542",
-   "21894",
-   "21895",
-   "21896",
-   "21897",
-   "21898"
+   "08542"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51": [
    "02961",
-   "08543",
-   "08553",
-   "32117",
-   "32212"
+   "32117"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71": [
    "02962",
@@ -3084,33 +3036,35 @@
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73": [
    "02963",
-   "32852"
+   "32852",
+   "40662"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126": [
    "02964",
-   "02965",
-   "02966",
    "02967",
-   "08555",
    "32853"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128": [
+   "02966",
+   "08555"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=124": [
    "02974",
    "32379"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150": [
    "02976",
-   "46270"
+   "41492"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=139": [
    "02977",
    "43998",
    "44483"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99": [
    "02980",
-   "08559",
-   "32741"
+   "08558",
+   "10762"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=102": [
    "02981",
@@ -3143,24 +3097,26 @@
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87": [
    "08531",
    "08532",
-   "21878",
    "21879",
    "30499",
    "39152"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56": [
    "08535",
    "08536",
+   "21887"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55": [
    "08537",
-   "08549",
-   "21887",
-   "21888",
-   "21889"
+   "08549"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53": [
+   "08543",
+   "08553"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72": [
    "08546",
    "31399",
-   "40662",
    "41008"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=76": [
@@ -3171,9 +3127,9 @@
    "08550",
    "10760"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99": [
-   "08558",
-   "10762"
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98": [
+   "08559",
+   "32741"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=147": [
    "08560",
@@ -3184,6 +3140,10 @@
    "30799",
    "38959"
   ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132": [
+   "10757",
+   "10758"
+  ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100": [
    "10763",
    "10764",
@@ -3193,30 +3153,53 @@
    "10768",
    "44265"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64": [
    "17624",
-   "17626",
-   "17627",
-   "21880",
-   "21882",
-   "21883",
-   "37296",
-   "37297",
-   "37298",
-   "44379",
-   "44391",
-   "45216",
-   "45218",
    "45256",
    "45257"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65": [
+   "17626",
+   "45258"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62": [
+   "17627",
+   "21883"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=130": [
    "21326",
    "21327"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95": [
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86": [
+   "21411",
+   "33859"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67": [
+   "21880",
+   "37297",
+   "45218"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=68": [
+   "21882",
+   "45217"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=57": [
+   "21888",
+   "21889"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59": [
+   "21890",
+   "31905",
+   "37295"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136": [
+   "21894",
+   "21897",
+   "21898"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96": [
    "21900",
-   "33386"
+   "41578"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148": [
    "24103",
@@ -3233,13 +3216,35 @@
    "43579",
    "44162"
   ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142": [
+   "30425",
+   "40533",
+   "46437"
+  ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=116": [
    "30699",
    "43774"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110": [
-   "32854",
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149": [
+   "32740",
+   "46270"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111": [
+   "33593",
    "46333"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61": [
+   "33629",
+   "40871"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66": [
+   "37296",
+   "44391",
+   "45216"
+  ],
+  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=69": [
+   "37298",
+   "44379"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=118": [
    "39583",
@@ -3259,22 +3264,9 @@
    "43341",
    "43342"
   ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142": [
-   "40533",
-   "46437"
-  ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60": [
    "40793",
-   "40794",
-   "40871"
-  ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150": [
-   "41492",
-   "41493"
-  ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96": [
-   "41578",
-   "41579"
+   "40794"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78": [
    "42380",
@@ -3316,10 +3308,6 @@
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=93": [
    "45192",
    "46277"
-  ],
-  "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65": [
-   "45217",
-   "45258"
   ],
   "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153": [
    "46442",
@@ -3420,20 +3408,20 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 25,
-  "0.8-1.0": 15,
-  "1.0": 183
+  "0.5-0.8": 12,
+  "0.8-1.0": 17,
+  "1.0": 194
  },
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_valley",
-  "kept": 160,
-  "programs": 63,
+  "kept": 147,
+  "programs": 76,
   "list": [
    {
     "control_number": "02943",
     "title": "Banking and Finance",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
@@ -3443,7 +3431,7 @@
     "control_number": "02944",
     "title": "Business Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
@@ -3453,7 +3441,7 @@
     "control_number": "02945",
     "title": "Management",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
@@ -3463,7 +3451,7 @@
     "control_number": "02947",
     "title": "Marketing",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
@@ -3473,7 +3461,7 @@
     "control_number": "02950",
     "title": "Journalism: Newspaper",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
     "was_coverage": 1.0,
@@ -3483,7 +3471,7 @@
     "control_number": "02958",
     "title": "Mechanical Drafting/Design",
     "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
     "coverage": 0.75,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.75,
@@ -3493,7 +3481,7 @@
     "control_number": "02960",
     "title": "Manufacturing Technology: Metal Machining",
     "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
     "coverage": 0.636,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.636,
@@ -3523,7 +3511,7 @@
     "control_number": "02965",
     "title": "French",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=127",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
     "was_coverage": 1.0,
@@ -3533,7 +3521,7 @@
     "control_number": "02966",
     "title": "Italian",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
     "was_coverage": 1.0,
@@ -3553,9 +3541,19 @@
     "control_number": "02976",
     "title": "Physics",
     "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02980",
+    "title": "Child Development: Early Childhood Education",
+    "award": "A.A. Degree",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3563,7 +3561,7 @@
     "control_number": "08530",
     "title": "Banking and Finance",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
@@ -3573,7 +3571,7 @@
     "control_number": "08533",
     "title": "Journalism: Magazine",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
     "was_coverage": 1.0,
@@ -3583,7 +3581,7 @@
     "control_number": "08535",
     "title": "Broadcasting: Television",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "was_coverage": 1.0,
@@ -3593,7 +3591,7 @@
     "control_number": "08536",
     "title": "Broadcasting: Radio",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "was_coverage": 1.0,
@@ -3603,7 +3601,7 @@
     "control_number": "08541",
     "title": "Engineering Technology: Mechanical Engineering",
     "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
     "coverage": 0.818,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.818,
@@ -3613,7 +3611,7 @@
     "control_number": "08542",
     "title": "Manufacturing Technology: Numerical Control",
     "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
     "coverage": 0.6,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.6,
@@ -3623,7 +3621,7 @@
     "control_number": "08543",
     "title": "Art: Studio",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "was_coverage": 1.0,
@@ -3633,7 +3631,7 @@
     "control_number": "08553",
     "title": "Art: Graphic Design",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "was_coverage": 1.0,
@@ -3653,9 +3651,19 @@
     "control_number": "08555",
     "title": "German",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "10757",
+    "title": "Electronics Technology",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3663,7 +3671,7 @@
     "control_number": "10758",
     "title": "Electronics Technician",
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
     "was_coverage": 1.0,
@@ -3683,8 +3691,8 @@
     "control_number": "17624",
     "title": "Media Arts: Directing",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.667,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+    "coverage": 0.889,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.667,
     "was_method": "pdf_pages"
@@ -3693,8 +3701,8 @@
     "control_number": "17626",
     "title": "Media Arts - Producing",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.714,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.714,
     "was_method": "pdf_pages"
@@ -3703,7 +3711,7 @@
     "control_number": "21411",
     "title": "Property Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
@@ -3720,11 +3728,21 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "21878",
+    "title": "CAOT: Administrative Assistant",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=88",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "21880",
     "title": "Media Arts: Directing",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.667,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
+    "coverage": 0.889,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.667,
     "was_method": "pdf_pages"
@@ -3733,8 +3751,8 @@
     "control_number": "21882",
     "title": "Media Arts - Producing",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.714,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=68",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.714,
     "was_method": "pdf_pages"
@@ -3743,9 +3761,29 @@
     "control_number": "21884",
     "title": "Journalism: Magazine",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21885",
+    "title": "Journalism: Newspaper",
+    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21887",
+    "title": "Broadcasting: Performance",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3753,7 +3791,7 @@
     "control_number": "21888",
     "title": "Broadcasting: Radio",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=57",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "was_coverage": 1.0,
@@ -3763,9 +3801,19 @@
     "control_number": "21889",
     "title": "Broadcasting: Television",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=57",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "21890",
+    "title": "Cinema Production",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3773,7 +3821,7 @@
     "control_number": "21894",
     "title": "Mechanical Drafting/Design",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
     "coverage": 0.8,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.8,
@@ -3783,7 +3831,7 @@
     "control_number": "21895",
     "title": "Engineering Technology: Industrial/Manufacturing",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
     "coverage": 0.75,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.75,
@@ -3793,7 +3841,7 @@
     "control_number": "21896",
     "title": "Engineering Technology: Mechanical Engineering",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
     "coverage": 0.714,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.714,
@@ -3803,7 +3851,7 @@
     "control_number": "21897",
     "title": "Manufacturing Technology: Metal Machining",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
     "coverage": 0.571,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.571,
@@ -3813,7 +3861,7 @@
     "control_number": "21898",
     "title": "Manufacturing Technology: Numerical Control",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
     "coverage": 0.778,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.778,
@@ -3823,9 +3871,19 @@
     "control_number": "21900",
     "title": "Administration of Justice",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "30425",
+    "title": "Computer Science Programming",
+    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3863,7 +3921,7 @@
     "control_number": "31905",
     "title": "Cinema Theory & Criticism",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
     "was_coverage": 1.0,
@@ -3873,7 +3931,7 @@
     "control_number": "32212",
     "title": "Studio Arts",
     "award": "A.A- T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "was_coverage": 1.0,
@@ -3883,7 +3941,7 @@
     "control_number": "32740",
     "title": "Physics",
     "award": "A.S. T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=48",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=48",
     "was_coverage": 1.0,
@@ -3920,10 +3978,20 @@
     "was_method": "pdf_pages"
    },
    {
+    "control_number": "33859",
+    "title": "Retail Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
     "control_number": "37295",
     "title": "Cinema Theory & Criticism",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
     "was_coverage": 1.0,
@@ -3933,8 +4001,8 @@
     "control_number": "37296",
     "title": "Media Arts: Visual Effects",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.667,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.667,
     "was_method": "pdf_pages"
@@ -3943,8 +4011,8 @@
     "control_number": "37297",
     "title": "Media Arts: Core Studies",
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.6,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.6,
     "was_method": "pdf_pages"
@@ -3953,17 +4021,27 @@
     "control_number": "37298",
     "title": "Media Arts: Visual Effects",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.667,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=69",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.667,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "40662",
+    "title": "Photography",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "40871",
     "title": "Advanced ESL Milestone - Pathway to Music",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
     "coverage": 0.833,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
     "was_coverage": 0.833,
@@ -3973,9 +4051,29 @@
     "control_number": "41005",
     "title": "Business Essentials",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41493",
+    "title": "STEM Foundation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=151",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
+    "was_coverage": 1.0,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "41579",
+    "title": "Allied Health Preparation",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=97",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3993,8 +4091,8 @@
     "control_number": "44379",
     "title": "Media Arts: Virtual Production, Motion Capture, and Advanced Visual Effects",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.5,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=69",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.5,
     "was_method": "pdf_pages"
@@ -4003,28 +4101,48 @@
     "control_number": "44391",
     "title": "Media Arts: Virtual Production, Motion Capture, and Advanced Visual Effects",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.5,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.5,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45136",
+    "title": "Human Resource Management",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "45216",
     "title": "Media Arts: Cinematography",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.556,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.556,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "45217",
+    "title": "Media Arts: Sound Design",
+    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=68",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
     "control_number": "45218",
     "title": "Media Arts: Editing and Color Grading",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.5,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.5,
     "was_method": "pdf_pages"
@@ -4033,8 +4151,8 @@
     "control_number": "45256",
     "title": "Media Arts: Cinematography",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.556,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.556,
     "was_method": "pdf_pages"
@@ -4043,8 +4161,8 @@
     "control_number": "45257",
     "title": "Media Arts: Editing and Color Grading",
     "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "coverage": 0.5,
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+    "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "was_coverage": 0.5,
     "was_method": "pdf_pages"
@@ -4053,7 +4171,7 @@
     "control_number": "46333",
     "title": "Physical Fitness and Body Movement",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
     "coverage": 1.0,
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
     "was_coverage": 1.0,
@@ -4061,5 +4179,5 @@
    }
   ]
  },
- "run": "41117814733"
+ "run": "41141747238"
 }

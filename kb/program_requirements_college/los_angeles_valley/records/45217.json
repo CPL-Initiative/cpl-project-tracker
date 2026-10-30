@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Media Arts: Sound Design",
  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
- "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=68",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11661,
+  "input_tokens": 8171,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11661,
-    "output_tokens": 1029,
+    "input_tokens": 8171,
+    "output_tokens": 1550,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,39 +30,29 @@
     "model": null
    }
   ],
-  "output_tokens": 1029,
+  "output_tokens": 1550,
   "output_tokens_details": {
-   "thinking_tokens": 506
+   "thinking_tokens": 364
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06722,
- "ms": 12011,
- "seconds": 12.4,
+ "cost_usd": 0.06368,
+ "ms": 18043,
+ "seconds": 18.6,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 9,
    "listed": 9,
-   "share": 0.0,
-   "missing": [
-    "CINEMA101",
-    "CINEMA105",
-    "CINEMA107",
-    "CINEMA110",
-    "MEDIART100",
-    "MEDIART101",
-    "MEDIART110",
-    "MEDIART112",
-    "MEDIART116"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
    "count": 0,
@@ -71,49 +61,50 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    21.0,
+    21.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    21.0,
+    21.0
+   ],
+   "against": "program",
+   "why": []
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 4,
    "courses": 0,
-   "count": 0,
+   "count": 4,
    "not_verbatim": [],
    "why": [],
    "heading_printed": true,
-   "heading_without_outcomes": true,
+   "heading_without_outcomes": false,
    "pass": true
   },
   "careers": {
-   "count": 0,
+   "count": 2,
    "not_verbatim": [],
    "pass": true
   },
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "MEDIA ARTS: SOUND DESIGN",
+   "section_heading": "Media Arts: Sound Design (Program Code 061220, State Code 45217)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 21,
+    "max": 21
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -130,50 +121,126 @@
     "max": null
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Students will be able to use their thorough background in the aesthetics of film and media in order to apply them to productions.",
+    "Students will be able to experience with various on-set sound recording techniques and styles to effectively tell a story.",
+    "Students will be able to experience working with sound editing and mixing techniques to elicit emotion and assist in storytelling.",
+    "Students will be able to build a reel (digital resume) with their own footage in order to better position themselves for transfer and/or gainful employment in the entertainment industry."
+   ],
+   "careers": [
+    "sound production",
+    "post production"
+   ]
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "CINEMA 101",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
+    "name": "COMPLETE THE FOLLOWING 5 REQUIRED COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 105",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "CINEMA 107",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDIART 100",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDIART 116",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDIART 112",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CINEMA 105",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
+    "name": "LIST A: COMPLETE 1 COURSE FROM THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDIART 101",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "CINEMA 107",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
-   },
-   {
-    "code": "CINEMA 110",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
-   },
-   {
-    "code": "MEDIART 100",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
-   },
-   {
-    "code": "MEDIART 101",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
-   },
-   {
-    "code": "MEDIART 110",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
-   },
-   {
-    "code": "MEDIART 112",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
-   },
-   {
-    "code": "MEDIART 116",
-    "why": "named only in the A.A. Sound Design section; certificate section not in the text"
+    "name": "LIST B: COMPLETE 1 COURSE FROM THE FOLLOWING",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CINEMA 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "MEDIART 110",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    }
   ],
-  "notes": []
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "The excerpt for page 68 begins mid-section with '(Program Code 061220, State Code 45217)'; the program heading itself (likely 'MEDIA ARTS: SOUND DESIGN', Certificate of Achievement) is not in the provided text, presumably printed at the bottom of the preceding page. Section identified by its sound-focused description and courses; reviewer should confirm.",
+   "Asterisks after course codes (e.g., MEDIART 112*) mark prerequisite/corequisite and were dropped from codes.",
+   "Careers are read from 'preparing students to work in sound production and post production'; the outcome's mention of 'the entertainment industry' was not recorded as a career.",
+   "Page 69 sections (Virtual Production/Motion Capture; Visual Effects) belong to other certificates and were ignored."
+  ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": "41141747238"
 }
