@@ -1,0 +1,26 @@
+{
+ "_readme": "S528 SkyMulberry, 2026-10-30. The second page read of Glendale's fully priced unequal records: Biotechnology and its Lab Technician (p67), Biotechnology and Lab Assistant (p92), Civil Engineering (p100), Advanced ESL (p102), and the transfer degrees in Anthropology (p116), Film, Television and Electronic Media (p118), Geography and Journalism (p119), Kinesiology and Music (p120) and Theatre Arts (p123). One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "unequal_sums": "For each named program, every course its page lists and the total it states, so the record's gap can be named: a missed or extra course, a conditional block, or the catalog's own arithmetic."
+ },
+ "keywords": [
+  "BIOTECHNOLOGY",
+  "CIVIL\\s+ENGINEERING",
+  "ADVANCED\\s+ESL",
+  "ANTHROPOLOGY",
+  "FILM,\\s+TELEVISION",
+  "GEOGRAPHY",
+  "JOURNALISM",
+  "KINESIOLOGY",
+  "MUSIC",
+  "THEATRE\\s+ARTS"
+ ],
+ "pages": [
+  {
+   "answers": ["unequal_sums"],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [67, 123]
+}
