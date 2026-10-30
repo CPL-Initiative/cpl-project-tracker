@@ -143,3 +143,4 @@
 -- 28516b079c2deec32f8e60fd962e91d5 (11,396 chars). Its after-read repeats 1 to 5 above with that md5.
 -- NOT YET APPLIED: a fresh read at 00:45:38Z read e803674b (s521 live); the session's permission check
 -- denied the push that points kb/migrations/.apply at s521b, so it waits on Sam (fix forward or roll back).
+-- Sam, in session ~00:59Z: "Push the fix". A fresh read at 00:59:20Z read e803674b; .apply names s521b.

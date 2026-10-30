@@ -1,2 +1,2 @@
-file=kb/migrations/2026-10-30_s521_search_college_programs_no_copy.sql
-name=s521_search_college_programs_no_copy
+file=kb/migrations/2026-10-30_s521b_search_college_programs_df_by_ord.sql
+name=s521b_search_college_programs_df_by_ord
