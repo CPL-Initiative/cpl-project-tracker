@@ -24,8 +24,13 @@ const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 
 const at = SMOKE.indexOf("answer_must_not_claim_absence() {");
-const fn = at === -1 ? "" : SMOKE.slice(at, SMOKE.indexOf("\n}\n", at) + 3);
+// The helper reports a miss through report_answer_miss (Sheet 142 card 2, S521); in the
+// default mode, fail, that sets fail=1 as before.
+const rAt = SMOKE.indexOf("report_answer_miss() {");
+const reporter = rAt === -1 ? "" : 'SMOKE_ANSWER_CHECKS=fail\n' + SMOKE.slice(rAt, SMOKE.indexOf("\n}\n", rAt) + 3);
+const fn = at === -1 ? "" : reporter + SMOKE.slice(at, SMOKE.indexOf("\n}\n", at) + 3);
 check("the helper is in the smoke script", !!fn);
+check("…with the reporter it fails through", !!reporter);
 function pattern(labelStart) {
   const line = SMOKE.split("\n").find((l) => l.startsWith("answer_must_not_claim_absence -i ") && l.includes(labelStart));
   const m = line && /^answer_must_not_claim_absence -i "(.*)" "(.*)"$/.exec(line);
