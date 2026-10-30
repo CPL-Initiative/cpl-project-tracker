@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1325,
-    "bytes": 13436000,
-    "over_budget": 0,
+    "bytes": 13438397,
+    "over_budget": 2,
     "handoff_max": 523,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59998,
@@ -36,8 +36,8 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2478598,
-        "over": 0
+        "bytes": 2480904,
+        "over": 1
       },
       "kb_note": {
         "files": 568,
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 443451,
-        "over": 0
+        "bytes": 443542,
+        "over": 1
       },
       "handoff": {
         "files": 492,
@@ -57,13 +57,16 @@
     },
     "by_rule": {
       "kb_note_dialect": 1,
+      "oversized_doc": 2,
+      "american_spelling": 1,
       "house_voice": 1,
-      "vault_heavy_path": 70
+      "vault_heavy_path": 70,
+      "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25059,
-      "bytes": 3974868719,
-      "heavy_bytes": 2812800029,
+      "files": 25078,
+      "bytes": 3976318159,
+      "heavy_bytes": 2814075411,
       "heavy_share": 0.708,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -152,6 +155,47 @@
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 120523,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 523,
+        "ratio": 1.0
+      },
+      "message": "120,523 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/program_requirements_harvest_lessons.md"
+    },
+    {
+      "rule": "american_spelling",
+      "fixable": false,
+      "detail": {
+        "total": 1,
+        "forms": {
+          "cancelled": {
+            "n": 1,
+            "prefer": "canceled"
+          }
+        }
+      },
+      "message": "1 British form — cancelled→canceled",
+      "path": "docs/program_requirements_harvest_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20088,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 88,
+        "ratio": 1.0
+      },
+      "message": "20,088 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/program-requirements-harvest.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -168,20 +212,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1719801462,
+        "bytes": 1720812001,
         "kind": "dir"
       },
-      "message": "directory totals 1,719,801,462 B inside the vault"
+      "message": "directory totals 1,720,812,001 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146118787,
+        "bytes": 146383630,
         "kind": "dir"
       },
-      "message": "directory totals 146,118,787 B inside the vault"
+      "message": "directory totals 146,383,630 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -862,6 +906,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_523_handoff.md",
+      "detail": {
+        "commits_since": 20,
+        "budget": 6,
+        "handoff": "session_523_handoff.md"
+      },
+      "message": "20 commit(s) have landed since `docs/session_523_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

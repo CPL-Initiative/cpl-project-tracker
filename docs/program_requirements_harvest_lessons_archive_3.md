@@ -529,3 +529,40 @@ Verbatim from `docs/reference/lanes/program-requirements-harvest.md`, 2026-10-27
 
 **S444:** Golden West (79) and Imperial Valley (42) loaded; department pages are candidates, a section heading may span two lines (Sierra 35 → 81 found, MiraCosta 29 → 68, its discipline pages still lose siblings); 37 Program Mapper hosts recorded (#2330).
 
+
+## Moved from the main lessons (S523 compaction)
+
+## S446 SkyMadrone (2026-10-22, the CPL Queue routine): a degree-and-certificate address, 91 records, the page-claimed that remain
+
+- **A degree-and-certificate address names both awards (#2345).** Grossmont addresses a degree and its certificate
+  on one page (`law-enforcement-as-certificate-achievement`, `arabic-aa-certificate-achievement`). The capture view
+  (page read 39750446541) shows one list under "Associate Degree Major Requirements", then "Certificate of
+  Achievement" and "Any student who chooses to complete only the courses required for the above major qualifies for a
+  Certificate of Achievement". `SLUG_AWARD` read the certificate alone, so the A.S. scored no award on its own page
+  and lost it. `SLUG_DEGREE_CERT` and `slug_awards()` read both awards. Grossmont's free capture went from 139 found
+  and 15 page-claimed to 144 and 10. Main's captures held the shape at two colleges: Grossmont 9 and Pasadena City 7.
+- **Palomar's 45 that remain have no catalog entry of their own.** Its curriQunet catalog lists 235 entries for 342
+  programs in the state file. The pages they lost belong to siblings, and the titles drifted ("Web Design and
+  Development" is now Web Front End Design; "Fashion: Buying and Management" sits under Fashion Merchandising), or
+  the program is no longer listed. Reading no page is right for them, and no reader change applies.
+- **The new rules did not move three of the four colleges named next.** Free captures under #2337 and #2339:
+  Mt. San Jacinto 99 to 100 found and 25 to 24 page-claimed (its losers fall back to the general education or C-ID
+  chart page because their own page was never found, 28 not found); Santa Barbara City 249 to 248 and 20 to 21 (its
+  Administration of Justice pages were never captured). Neither is a sharing fault. Saddleback's capture was still
+  running at the checkpoint.
+- **Loads and rereads.** Palomar 282 found (from 224), 254 passing (from 196), $18.76; 62 inserted, 1 replaced by
+  the reread. MiraCosta 142 (from 119), 98 passing (from 80), $11.96; 21 inserted, the reread replaced none (the
+  extraction re-wrote only its 21 new records). Grossmont 144 (from 139), 97 passing (from 93), $10.61; 5 inserted.
+  Pasadena City, the other college main's captures named with the shape: 296 to 297 found, 238 to 242 passing,
+  $20.91; eight programs moved to their own degree-and-certificate page (Dental Assisting A.S. had read a sibling's),
+  3 inserted, 5 replaced by the reread. Build 1b3616641146 (the first three, 17,390 rows) applied on the wave branch
+  (run 39757574337); build 0ad3c75bfa19 (17,393 rows) supersedes it and applies on `main` after #2346 merges.
+  Receipts are under `kb/receipts/`.
+- **A display job's Applied record cannot carry a PR to merge.** The bot's commit becomes the head, and its test run
+  stops at `action_required`, so no test has run on that head. Run `step=display` on `main` after the merge (the
+  S420 order) whenever main has not moved, rather than holding the PR for a base merge that is not there.
+- **A capture-only run's push can lag the run's "completed" state by a minute.** Read the branch head again before
+  concluding that a run filed nothing.
+- **The UI pass, CPL opportunity visual (#2344):** the page painted no `h1` until a college loaded, and at 360px the
+  picker's longest college name widened `main`'s grid track past the viewport (`minmax(0, 1fr)` now). A dark target
+  joined `a11y.config.js`.
