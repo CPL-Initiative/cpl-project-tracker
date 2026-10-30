@@ -7503,6 +7503,16 @@
      "line": 0
     },
     {
+     "id": "module:fact-sheet/statewide_recs_render.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 165,
+     "pages": [
+      "fact-sheet/index.html"
+     ]
+    },
+    {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
      "kind": "script",
      "direction": "read",

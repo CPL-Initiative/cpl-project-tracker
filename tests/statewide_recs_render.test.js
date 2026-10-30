@@ -156,6 +156,49 @@ function liByText(w, text) {
       a5.getAttribute("href").indexOf("Exhibit=%22%3E%3Cb%3Ez%3C%2Fb%3E") !== -1);
   }
 
+  // ── (i) each program area's list comes from the catalog: only exhibits with a recommendation (Sam, 2026-10-30) ──
+  {
+    const CAT = { sectors: [
+      { sector: "Construction Technology", items: [
+        { title: "Building Plans Examiner", lines: [{ t: "International Building Code I Structural", u: "3", cid: "" }] },
+        { title: "Carpenters Apprenticeship — Acoustical Installer", lines: [{ t: "Acoustical Ceilings", u: "1", cid: "" }] },
+        { title: "Mechanical Plans Examiner", lines: [] },
+      ] },
+    ] };
+    const RR = { "Building Plans Examiner": [{ t: "International Building Code I Structural", u: "3", cid: "" }],
+      "Carpenters Apprenticeship — Acoustical Installer": [{ t: "Acoustical Ceilings", u: "1", cid: "" }] };
+    const { w: w6, API: A6 } = load(RR);
+    const det = w6.document.querySelector('#statewide-exhibits details[data-sector="Construction Technology"]');
+    const other = w6.document.querySelector('#statewide-exhibits details[data-sector]:not([data-sector="Construction Technology"])');
+    const otherBefore = other.querySelector("ul.sw-list").innerHTML;
+    check("applyCatalog rebuilds the areas the catalog carries", A6.applyCatalog(CAT) === 1);
+    A6.render();
+    const titles = Array.prototype.map.call(det.querySelectorAll("ul.sw-list > li"), (li) => li.childNodes[0].textContent.trim());
+    check("the area lists only exhibits that carry a recommendation, under MAP's titles",
+      titles.join("|") === "Building Plans Examiner|Carpenters Apprenticeship — Acoustical Installer");
+    check("an exhibit with no recommendation leaves the list", titles.indexOf("Mechanical Plans Examiner") === -1 &&
+      titles.indexOf("Acoustical Installer Apprenticeship") === -1);
+    check("every listed exhibit gets its recommendations", det.querySelectorAll("ul.sw-list > li .sw-rec").length === 2);
+    check("the area's Exhibits figure follows its list", det.querySelector('summary .sw-col[data-col="ex"]').textContent === "2" &&
+      det.getAttribute("data-listed") === "2");
+    check("an area the catalog omits keeps its list", other.querySelector("ul.sw-list").innerHTML === otherBefore);
+    const tcol = w6.document.querySelector('#statewide-exhibits .sw-total .sw-col[data-tcol="ex"]');
+    const expect = Array.prototype.reduce.call(w6.document.querySelectorAll("#statewide-exhibits ul.sw-list"), (n, ul) => n + ul.children.length, 0);
+    check("the total row counts the lists shown", tcol && Number(tcol.textContent.replace(/,/g, "")) === expect);
+    check("a missing or empty catalog changes nothing", A6.applyCatalog(null) === 0 && A6.applyCatalog({ sectors: [] }) === 0);
+    const FS = fs.readFileSync("fact-sheet/factsheet.js", "utf8");
+    check("the live snapshot leaves a drawn list's count alone",
+      /if \(!dets\[j\]\.hasAttribute\('data-listed'\)\) setCol\(dets\[j\], 'ex'/.test(FS) && /if \(!tot\.hasAttribute\('data-listed'\)\) setTCol\(tot, 'ex'/.test(FS));
+    check("the renderer reads the daily catalog beside the page", /fetch\('\.\/statewide_catalog\.json'\)/.test(SRC));
+    const real = JSON.parse(fs.readFileSync("fact-sheet/statewide_catalog.json", "utf8"));
+    const { w: w7, API: A7 } = load({});
+    A7.applyCatalog(real);
+    const shown = w7.document.querySelectorAll("#statewide-exhibits ul.sw-list > li").length;
+    const withLines = real.sectors.reduce((n, s) => n + s.items.filter((i) => (i.lines || []).length).length, 0);
+    check("on today's catalog the lists show every exhibit with a recommendation, and no other", shown === withLines && shown < real.exhibits,
+      shown + " of " + real.exhibits);
+  }
+
   let failed = 0;
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0]); if (!r[1]) failed++; });
   console.log("\n" + (failed ? failed + " FAILED" : "All " + results.length + " checks passed"));
