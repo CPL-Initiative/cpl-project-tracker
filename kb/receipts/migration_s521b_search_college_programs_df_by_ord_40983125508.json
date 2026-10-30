@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-10-30_s521b_search_college_programs_df_by_ord.sql",
+ "name": "s521b_search_college_programs_df_by_ord",
+ "version": "20261030010324",
+ "sha256": "894b19a234ebfcb04f753408cf31b7302991d445ec878269c373c7262b830bf8",
+ "run": "40983125508",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

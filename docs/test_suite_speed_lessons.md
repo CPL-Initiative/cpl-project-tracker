@@ -1,7 +1,7 @@
 ---
 title: Test suite speed — lessons
 created: 2026-08-29
-updated: 2026-08-29
+updated: 2026-10-30
 tags: [lessons, testing, ci, performance, runner]
 artifacts:
   - tests/run.js
@@ -98,3 +98,11 @@ rest of the family it alone forces the conservative cap; splitting it would let
 the width rise on every machine. The repo has precedent — `cpl_funding.test.js`
 was split into nine suites for memory, peak 8,642 → 2,393 MB. Secondary: seven
 files still print no readable check count and are unprotected by the ledger.
+
+## 2026-10-30 — Session 522 (SkyCrowberry): a lost summary, then a wait with no margin
+
+- **A pipe write in the PARENT is as asynchronous as one in a child.** S206 moved the children to files for exactly this reason; the runner's own summary still went to the CI pipe and ended in `process.exit(1)`, which discarded megabytes of child output and the summary behind them. Reproduced through a pipe: 146 KB of 3.3 MB, no summary, read promptly or slowly. Setting `process.exitCode` and returning lets Node drain stdout. `tests/runner_capture.test.js` now runs a copy of the real runner through a pipe (11 checks; 4 fail against the old runner). #2572.
+- **A check that passes alone and fails on its shard is a wait with no margin.** `library.test.js` (19) drops a Word file and waited two settles for JSZip; locally the read lands after exactly two, so any slower turn misses it. Poll for the condition, bounded, as the file's other async blocks already did. To prove it, delay the async step (300 ms on `JSZip.loadAsync`) and watch the old check fail CI's two checks while the new one passes.
+- **CPU spinners did not reproduce it; a delayed step did.** Six busy loops on four cores left it green. Slowing the one async call the check waits on reproduced CI's exact pair of failures, which is the cheaper and surer test.
+- **Adding a test file reshuffles every shard.** A file's neighbors change with any PR that adds or removes a test, so a load-sensitive check surfaces on an unrelated PR. Read the named file before blaming the diff.
+

@@ -11,8 +11,11 @@
 //
 //  (1) The canonical file's fallback has one branch per scope, and the
 //      college-scoped branch filters by equality alone.
-//  (2) The migration file carries the canonical function, byte for byte, so the
-//      file that was applied and the file that documents it cannot part.
+//  (2) The migration file carries the canonical fallback, byte for byte, so the
+//      file that was applied and the file that documents it cannot part. Only
+//      the fallback: a later migration may change the passes above it (S521's
+//      no-copy change did), and tests/sierra_program_search_no_copy.test.js pins
+//      the newest migration to the whole canonical function.
 //  (3) The smoke's negative control still runs, so a regression shows in CI.
 //
 // Run from repo root: `npm test` (or `node tests/sierra_program_search_fallback.test.js`).
@@ -53,7 +56,10 @@ check("(1) both branches keep the same similarity filter and ordering",
   sim(scopedBlock) + " / " + sim(code.slice(statewide)));
 
 // ── (2) the applied file is the documented one ──
-check("(2) ⭐ the migration carries the canonical function byte for byte", fn && fnOf(MIG) === fn);
+// From the fallback's first branch to the end of the function.
+const fallbackOf = (f) => { const i = f.indexOf("if not found and college_filter is not null then"); return i < 0 ? "" : f.slice(i); };
+check("(2) ⭐ the migration carries the canonical fallback byte for byte",
+  fallbackOf(fn).length > 1000 && fallbackOf(fnOf(MIG)) === fallbackOf(fn));
 check("(2) the migration re-runs nothing else (no drop, no grant, no other function)",
   !/\bdrop\b|\bgrant\b|\brevoke\b/i.test(MIG.replace(/--[^\n]*/g, ""))
     && (MIG.match(/create or replace function/gi) || []).length === 1);

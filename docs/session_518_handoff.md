@@ -4,6 +4,8 @@ date: 2026-10-29
 session: 517 (SkyPartridgeberry twice: the CPL Queue routine, and Sam's session beside it)
 tags: [handoff, library, remediation, accessibility]
 status: current
+superseded: true
+superseded_by: session_522_handoff.md
 ---
 
 # You are Session 518

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-29T23:06:54Z",
-  "session": 520,
-  "moniker": "SkyLingonberry",
+  "written_at": "2026-10-30T02:30:06Z",
+  "session": 522,
+  "moniker": "SkyCrowberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_521_handoff.md",
+  "handoff": "docs/session_523_handoff.md",
   "next_step": {
-    "title": "Glendale's course units from its descriptions",
-    "text": "180 Glendale records fail arithmetic, most on courses the state's file lists without units; the next session reads each such course's units from the catalog's course descriptions, which print them, and rescores."
+    "title": "Land #2570, then Glendale's course units",
+    "text": "Merge #2570 (the program search fix, live since 01:03Z) once test passes on its newest head; then Glendale's course units, the harvest's NEXT. Sierra's Quick Adopt ask waits until after the Summit."
   },
   "calls": [
     {
@@ -138,24 +138,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-29T23:06:00Z",
-      "text": "No harvest change this run (S520, Sam's session, put the public funding page in the Share menu, landed the funding fixes and FAQs before the Summit, and sped up the test runs); the headline and harvest measures re-read."
+      "at": "2026-10-30T02:20:14Z",
+      "text": "S521's four memory rows applied by run 40990743558 and read back. The harvest tables are unchanged."
     },
     {
-      "at": "2026-10-29T19:58:00Z",
-      "text": "No harvest change this run (S519, Sam's session, worked the CSM team's funding fixes, Sam's eight FAQs, and Sierra's timeout); the headline and harvest measures re-read."
-    },
-    {
-      "at": "2026-10-29T18:05:00Z",
-      "text": "No harvest change this run (S518, Sam's session, worked the Library's remediation, the funding page on a phone and the FAQ for Sierra); the headline and harvest measures re-read."
-    },
-    {
-      "at": "2026-10-29T15:20:00Z",
-      "text": "No harvest change this run (S517, Sam's session, worked the Library's remediation); the headline and harvest measures re-read."
-    },
-    {
-      "at": "2026-10-29T12:47:00Z",
-      "text": "No harvest change this run (S517 worked the Library's chart contrast); the headline and harvest measures re-read."
+      "at": "2026-10-30T02:17:00Z",
+      "text": "The test runner names a failing shard's file, and a Library test stopped racing its unzip (#2572). The harvest tables are unchanged."
     }
   ],
   "headline": [
@@ -290,6 +278,12 @@
       "active": 20282,
       "complete": 13201,
       "colleges": 114
+    },
+    {
+      "day": "2026-10-30",
+      "active": 20282,
+      "complete": 13201,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -298,7 +292,7 @@
     "at": "2026-10-30T05:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-29",
+    "day": "2026-10-30",
     "gaps": 3029,
     "parts": {
       "links": {

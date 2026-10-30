@@ -826,3 +826,34 @@ Sam: *"the current mobile view is mostly consumed by the header text."* The intr
 
 - **cpl-chat deployed from main at 22:39Z (run 40967328092) and byte-verified,** carrying #2560's FAQ rule and *offer* as a generic word.
 - **Its smoke failed on 7c, a deterministic check, not a model answer.** `rpc/search_college_programs` with `anchor_county: "Orange"` came back with no rows after about 7.5 s, so the positive control and the Orange-first order check both failed. All 112 other assertions passed, the 7c question to Sierra included. Called through the Supabase MCP afterward, the same call returned 150 rows in 0.59 s. The anon key's `statement_timeout` is 3 s, and `anchor_stat` counts a timeout's error body as zero rows. So this is the slow read of S519's lesson, under load, and a fourth deploy whose smoke failed a different assertion.
+
+## Moved from the lane (S521, 2026-10-30)
+
+Verbatim from `docs/reference/lanes/sierra-retrieval-corpus.md`, moved to bring the lane under its size budget.
+
+⚠️ **`cpl_course_title_norm` EXPANDS `cna`/`lvn` and folds `aide`→`assistant`, in ONE FLAT EXPRESSION — no CTE, no dedupe, no sort.** `typicalFoldKey()` already sorts the stems and unions the colleges downstream, so canonicalizing the key here buys NOTHING and costs real time (3,463→5,426 ms over 141,696 titles) against the anon role's **3 s** `statement_timeout` — the CTE version made the smoke's probe read rows=0 every run while the answers stayed correct. A sorted key breaks that probe too: it reads `norm` as a string.
+
+⚠️ A/B doctrine: read the grid AND the candidate's answer, never the run's conclusion; the push-triggered smoke tests PRODUCTION with the branch's assertions, so it is red until the deploy; never two suites at once.
+
+**Live on production (S418): #2230 merged and deployed from main at 17:53Z 2026-10-18 (run 39151585102); the production smoke passed every mode (run 39151861384, 18:07Z).**
+
+## S521 (2026-10-30): the program search's slowness was a temp-file copy
+
+- **Slow under load and fast warm meant disk, and EXPLAIN's `temp read/written` said so.** `search_college_programs` copied all 22,335 programs, their four stored vectors and two concatenations, into a MATERIALIZED CTE; at work_mem 2 MB the copy went to temp files and each pass read it back (9,051 pages written, 18,106 read on the Orange County question; 35,703 and 88,246 on 30 terms). Warm and alone it read 555 ms; cold, 2,842 ms with the same buffers. The 09-30 receipt measured the copy at 14 MB uncontended and kept it; the measurement that matters is under load.
+- **More work_mem is not the lever on this instance.** 12 MB still spilled (and ran slower, 900 ms); 32 MB a call does not fit beside 60 connections on 224 MB of shared buffers. Reading the table, which sits in shared buffers, wrote nothing: ~175 ms.
+- **The repo's Supabase guard refuses `create` even for `pg_temp`.** Test a candidate function as a plain query with its parse materialized once (`as materialized`), or the planner inlines the parse into every row's filter (4.7 s instead of 0.2).
+- **An md5 of a row set at a limit is not stable across plans.** Two rows tied on rank, college and title (an A.S. and a certificate) can trade the last place; compare key sequences, then list the rows at the cut.
+- **One fix covered two RPCs:** `college_program_courses` calls `search_college_programs`, so its 9,281 temp pages a call were the same copy.
+- **A plain-query stand-in must keep the function's GROUP BY, or it times another query.** The first apply (s521, 00:38Z) still grouped DF by `tm.ord, tm.q, tm.kind`; a tsquery has no hash opclass, so Postgres sorted every term-row pair with its four vectors (external merge) and set 05 read 6.8 s, worse than before. The pre-apply timing had grouped by ord alone. s521b grouped by ord (unique per term) and joined q and kind back: 149 ms warm, 733 ms on 30 terms, no temp. The after-read's temp check caught it within minutes; keep that check.
+- **The permission check calls a push that changes `kb/migrations/.apply` a production deploy.** It denied two pushes until Sam said "Push it" and "Push the fix" in session; a ruling on a sheet card alone did not carry it. Ask in chat with the push named.
+- **`tests/run.js` loses its own summary on a failing shard.** It prints the summary with `console.log` to a pipe and calls `process.exit(1)`, which discards the buffer, so a red shard's log ends mid-stream with no failing file named (#2570, shard 3, twice). Fix: write the summary with `fs.writeSync(1, ...)`. Not yet built.
+
+
+## Moved from the lane (S522, 2026-10-30)
+
+From the Status paragraph's v73 heading, moved to keep the lane under its budget: **v73 live 2026-09-18 23:01Z (#1624; A/B clean — 0 regressions, 5 fixes):**
+
+## S522 (2026-10-30): #2570's shard 3 was a test race, not the program search
+
+- **The runner's own summary was lost to the pipe; once fixed, it named `library.test.js`.** Three red shard-3 runs on #2570 had no file named. With `tests/run.js` setting `process.exitCode` (#2572), the same shard printed `1 of 85 test file(s) FAILED: library.test.js`. Sierra's change was never in question; the PR adds a test file, which reshuffles every shard. Lessons: `docs/test_suite_speed_lessons.md`, *S522*.
+- **Sam cleared the memory receipt's `.apply` push in chat** ("Yes, push the .apply for the memory receipt"), as S521's lesson asked. Run 40990743558 landed the four rows (read back, 02:25Z). The runner's receipt commit, pushed by the bot token, starts no CI, so the next session push is what tests that head.

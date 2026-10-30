@@ -4,6 +4,8 @@ date: 2026-10-29
 session: 509 (SkyElderberry, Sam's session)
 tags: [handoff, library, remediation, accessibility]
 status: current
+superseded: true
+superseded_by: session_522_handoff.md
 ---
 
 # You are Session 510

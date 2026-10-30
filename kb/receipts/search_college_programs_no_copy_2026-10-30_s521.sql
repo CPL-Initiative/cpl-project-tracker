@@ -1,0 +1,157 @@
+-- RECEIPT — search_college_programs() reads the table, not a materialized copy of it.
+-- 2026-10-30, S521 (SkyBearberry). Handoff 521 item 2: "Find what is slow under load, but hold
+-- any index or function change until after the Summit, and route it through a migration."
+-- Migration: kb/migrations/2026-10-30_s521_search_college_programs_no_copy.sql. Sam, Open Asks
+-- Sheet 142 card 1, 00:21Z 2026-10-30: "tonight" (his own call). Source:
+-- chatbox/supabase_search_college_programs.sql, its NO COPY note.
+--
+-- WHY. Smoke 7c (the Orange County CNA-to-LVN call with the anon key, 3 s statement_timeout)
+-- returned nothing after ~7.5 s on the 2026-10-29 deploy; the same call through the MCP answered
+-- in 0.59 s. Read 2026-10-30 ~00:05Z from pg_stat_statements (reset 2026-10-26 13:08Z):
+--   search_college_programs ... 862 calls, mean 2,014 ms, max 7,782, 1,736 s total, 10,078 temp
+--                               pages written a call; the database's largest consumer
+--   college_program_courses ... 183 + 127 calls, mean 1,340 / 1,013 ms, 9,281 / 7,329 temp pages
+--                               a call (it calls search_college_programs)
+-- The function copied every row of coci_college_programs (22,335), its four stored vectors and two
+-- concatenations of them, into a MATERIALIZED CTE. work_mem is 2,184 kB, so the copy went to temp
+-- files and each pass read it back. EXPLAIN (ANALYZE, BUFFERS), direct, as postgres:
+--   OC question (6 terms) ...... temp written 9,051, read 18,106; 2,842 ms cold, 555 ms warm
+--   30-term call (verify D1) ... temp written 35,703, read 88,246; 3,570 ms (1,943 on 2026-09-30)
+--   OC question, work_mem 12 MB  temp written 1,816, read 10,896; 900 ms
+--   OC question, work_mem 32 MB  no temp; 557 ms
+-- The 09-30 receipt measured the copy at 14 MB and 177 vs 190 ms uncontended, and kept it. Under
+-- load the temp traffic is the cost. More work_mem is not the fix: 12 MB still spills, and 32 MB a
+-- call does not fit beside max_connections 60 on this instance (shared_buffers 224 MB).
+--
+-- WHAT CHANGES LIVE. One CREATE OR REPLACE, same signature, same grants. The `tv` CTE goes. The
+-- DF pass reads coci_college_programs directly (`tv.te` -> `p.tsv_title_en`, and `tv.tb @@ q` ->
+-- `p.tsv_title_en @@ q or p.tsv_title_simple @@ q`, the code surface likewise), and the hits pass
+-- reads it directly. For the single-lexeme queries the 'eng' and 'sim' kinds produce (one
+-- alphanumeric token, stemmed or not), a match on a concatenation is a match on either half. The
+-- parse loop, the DF rule, the phrase handling, the ranking, the order and both fuzzy branches
+-- are unchanged. No table, index or row changes.
+--
+-- EQUIVALENCE, measured before the change. The guard refused a pg_temp copy of the function
+-- ("contains create"), so the new passes ran as one plain query over the 13 term sets of the
+-- 09-30 receipt, with the parse materialized once the way the plpgsql loop computes it.
+--   live, read 2026-10-30 ~00:10Z: all 13 md5_keyseq and md5_set equal the 09-30 receipt's
+--     values (set 11 reads eceec649..., one of its two)
+--   candidate: all 13 md5_keyseq equal. md5_set equal on 10; on 02, 03 and 04 the row at the
+--     limit differs, and each is a tie the order cannot break (same rank, college and title,
+--     another award):
+--       02 lvn4 #150   Cerro Coso, Vocational Nursing: Certificate (live) / A.S. Degree (candidate)
+--       03 emt6 #150   Moreno Valley, Emergency Management and Homeland Security: Certificate
+--                      (live) / A.S. Degree (candidate)
+--       04 fire12      equal on the second run: the tie fell the other way
+--     The 09-30 receipt names this tie ("two rows with the same college and title ... may swap
+--     between calls"). matched_via, membership and order agree everywhere else.
+--   timings, direct, warm: OC question ~175 ms (DF 132 + ranked match 43) vs 555; 30-term DF pass
+--     622 ms vs a 3,570 ms call. No temp pages written in either.
+--
+-- BEFORE — search_college_programs(text[], text, integer, numeric, real, text, text), live, read
+-- 2026-10-30 00:13:45Z.
+--   md5(pg_get_functiondef) = 07614890acf4bd40b0726540d360627a
+--   md5(prosrc)             = ff716ac2b17267d8154dfce76a627d68 (11,183 chars), equal to the body of
+--                             chatbox/supabase_search_college_programs.sql at 72ff7a94
+--   signatures 1; acl {=X/postgres,postgres=X/postgres,anon=X/postgres,authenticated=X/postgres,
+--                      service_role=X/postgres}
+--   set            n    md5_keyseq                        md5_set
+--   01 lvn3      117    822b6a52195e5bee90d4a8833d0a75ed  c0eba93622f2216134578fdcf762d97e
+--   02 lvn4      150    5a9619d5e6a6ffdde2e03f4f4a22bfdf  42a1b79fa6d31d6fbbb7ad163f5db698
+--   03 emt6      150    8cc759195fad55ab2ad1e4b8765faac2  e5a2b48456f771991ba58a14ef2f93ef
+--   04 fire12    150    24dce229812fcb339df3f32569b27f76  4341d0f8f54d4f90feda9a089a582ed9
+--   05 bgc30     150    e393b69c44c3622c0fc8058ee57c9bcd  d6ef5ba9a5b6b832d1cba336c0c89cfa
+--   06 chabot      2    a7d1b67c1f08bdc218c2f1c9e7a99f61  133802880cc4c7640d5773089a5e8e21
+--   07 technology 300   afed12292e3d696141d366f76b30b7d0  544a3ef553f5203a84952c60b2ecce96
+--   08 nonsense    0    d41d8cd98f00b204e9800998ecf8427e  d41d8cd98f00b204e9800998ecf8427e
+--   09 fuzzy       7    63666cf3c5f0e59a4126dab641de855e  b349ddc4b1cc8eda8d45072211c8a487
+--   10 phrase     78    2a2dc3d2e4ece5dc442d81ba614b4e3c  fa412ee41d1a7c8d0397c4c0194567c5
+--   11 oc anchor 150    746889cf4a9d9111d696c509cdde8b35  eceec649229cf3928507ef6861c00ad3
+--   12 practical 102    96b7a13d6fead24d2d0e67b2ff406b37  8eb8cfe26c113e3f9dac9d493fc217ee
+--   13 oc all    162    b67dc670a8653ac5b7e8c6da5eaaa7bc  5072837b6e66ad57bcc204bf80ba4221
+--
+-- AFTER-READ. Run once the migration applies; it passes when:
+--   1. md5(prosrc) = e803674b239fcdd4675bbdff8898e0b2 (11,139 chars), one signature, acl as BEFORE;
+--   2. all 13 md5_keyseq equal the BEFORE column;
+--   3. every md5_set equals BEFORE, or the set's only differing rows are a tie at its limit (same
+--      college and title, another award): check with the diff query further below;
+--   4. EXPLAIN (ANALYZE, BUFFERS) of set 11 and set 05 reports no temp pages;
+--   5. smoke 7c and 7p's RPC calls answer inside 3 s with the anon key (dispatch
+--      cpl-chat-smoke.yml with modes=7c,7p, two billed answers).
+--
+--   select md5(p.prosrc), length(p.prosrc), p.proacl::text,
+--          (select count(*) from pg_proc where proname = 'search_college_programs')
+--   from pg_proc p
+--   where p.oid = 'public.search_college_programs(text[],text,integer,numeric,real,text,text)'::regprocedure;
+--
+--   with sets(k, terms, cf, lim, ac, ar) as (values
+--     ('01 lvn3', array['lvn','practical nursing','vocational nursing'], null::text, 600, null::text, null::text),
+--     ('02 lvn4', array['lvn','licensed vocational nurse','vocational nursing','nursing'], null, 150, null, null),
+--     ('03 emt6', array['emt','emergency medical technician','paramedic','ambulance','first responder','emergency'], null, 150, null, null),
+--     ('04 fire12', array['firefighter','fire','fire science','fire technology','fire academy','emt','wildland','hazmat','rescue','fire protection','firefighting','cal fire'], null, 150, null, null),
+--     ('05 bgc30', array['boys','girls','club','near','san','pedro','nccer','carpentry','electrician','plumbing','welding','osha','teens','nearby','them','construction','carpenter','woodworking','electrical','ibew','apprentice','wiring','pipefitting','plumber','weld','welder','fabrication','smaw','fcaw','occupational'], null, 150, null, null),
+--     ('06 chabot', array['nursing'], 'Chabot College', 200, null, null),
+--     ('07 technology', array['technology'], null, 300, null, null),
+--     ('08 nonsense', array['zzqqxxjjwwvv'], null, 50, null, null),
+--     ('09 fuzzy', array['excellance'], null, 150, null, null),
+--     ('10 phrase', array['vocational nursing'], null, 300, null, null),
+--     ('11 oc anchor', array['cna','lvn','nurse assistant','certified nurse assistant','practical nursing','vocational nursing'], null, 150, 'Orange', 'Orange County'),
+--     ('12 practical', array['practical'], null, 200, null, null),
+--     ('13 oc all', array['cna','lvn','nurse assistant','certified nurse assistant','practical nursing','vocational nursing'], null, 1000, 'Orange', 'Orange County')
+--   ), res as (
+--     select s.k, r.o, concat_ws('|', r.college, r.program_title) as key2,
+--            concat_ws('|', r.college, r.program_title, r.award, r.status, r.top_code, r.top_title,
+--                      r.cip_code, r.cip_title, r.matched_via, r.region, r.county, r.landing_page_url) as full_row
+--     from sets s cross join lateral public.search_college_programs(s.terms, s.cf, s.lim, 0.15, 0.6, s.ac, s.ar)
+--       with ordinality r(college, program_title, award, status, top_code, top_title, cip_code, cip_title,
+--                         matched_via, region, county, landing_page_url, o))
+--   select s.k, count(res.o) as n,
+--          md5(coalesce(string_agg(res.key2, E'\n' order by res.o), '')) as md5_keyseq,
+--          md5(coalesce(string_agg(res.full_row, E'\n' order by res.full_row), '')) as md5_set
+--   from sets s left join res on res.k = s.k group by s.k order by s.k;
+--
+--   A set whose md5_set differs: list the rows on each side at a larger limit, and confirm the
+--   only difference is the last position and a row sharing its college and title:
+--   select o, college, program_title, award from public.search_college_programs(<terms>, null, <lim + 5>)
+--     with ordinality r(college, program_title, award, status, top_code, top_title, cip_code,
+--                       cip_title, matched_via, region, county, landing_page_url, o)
+--   where o between <lim - 2> and <lim + 5>;
+--
+-- ROLLBACK. Point kb/migrations/.apply at
+-- kb/migrations/2026-10-30_s521_search_college_programs_no_copy_rollback.sql (the BEFORE block,
+-- verbatim), confirm md5(prosrc) reads ff716ac2b17267d8154dfce76a627d68 again, and git revert
+-- the source-file change. No data moves either way.
+--
+-- APPLIED (s521): 00:38Z 2026-10-30, supabase-migrate run 40980527319 (Sam, in session ~00:33Z:
+-- "Push it"); the runner's receipt is kb/receipts/migration_s521_search_college_programs_no_copy_40980527319.json.
+-- AFTER-READ (00:41Z):
+--   1. md5(prosrc) e803674b239fcdd4675bbdff8898e0b2, 11,139 chars; 1 signature; acl as BEFORE. PASS
+--   2. all 13 md5_keyseq equal BEFORE. PASS
+--   3. every md5_set equals BEFORE; set 11 reads 77daadc07e0080847fee072b435b9b70, the other of its
+--      two 09-30 values. PASS
+--   4. FAIL. Set 11 wrote 11,719 temp pages (823 ms); set 05 wrote 52,999 (6,805 ms, against 3,570
+--      before). The DF pass still grouped by `tm.ord, tm.q, tm.kind`; a tsquery has no hash opclass,
+--      so Postgres sorted every term-row pair with its four vectors (external merge, 25 MB a worker
+--      for six terms). Grouped by `tm.ord` alone the same pass is a 24 kB hash aggregate: 161 ms
+--      against 1,203. The pre-apply timing above had grouped by ord, so it measured a shape the
+--      function did not have.
+--   Not run: 5, the smoke, held for the fix.
+--
+-- FIX FORWARD (s521b): kb/migrations/2026-10-30_s521b_search_college_programs_df_by_ord.sql. DF
+-- groups by `tm.ord`; `sel` joins q and kind back from `terms`. Same groups, so the same rows. The
+-- whole 30-term pass as a plain query: 858 ms, no temp pages. AFTER md5(prosrc)
+-- 28516b079c2deec32f8e60fd962e91d5 (11,396 chars). Its after-read repeats 1 to 5 above with that md5.
+-- NOT YET APPLIED: a fresh read at 00:45:38Z read e803674b (s521 live); the session's permission check
+-- denied the push that points kb/migrations/.apply at s521b, so it waits on Sam (fix forward or roll back).
+-- Sam, in session ~00:59Z: "Push the fix". A fresh read at 00:59:20Z read e803674b; .apply names s521b.
+-- APPLIED (s521b): ~01:03Z 2026-10-30, supabase-migrate (the runner's receipt is
+-- kb/receipts/migration_s521b_search_college_programs_df_by_ord_40983125508.json, run 40983125508).
+-- AFTER-READ (01:06Z):
+--   1. md5(prosrc) 28516b079c2deec32f8e60fd962e91d5, 11,396 chars; 1 signature; acl as BEFORE. PASS
+--   2. all 13 md5_keyseq equal BEFORE. PASS
+--   3. every md5_set equals BEFORE; set 11 reads 77daadc0, its documented second value. PASS
+--   4. no temp pages. Set 11: 1,986 ms on the first call after the apply (cold), 149 ms warm (555
+--      before S521). Set 05: 733 ms (3,570 before S521; 6,805 under s521). PASS
+--   5. smoke modes=7c,7p (run 40983866065, 01:08Z, one billed answer): ALL MODES OK. The anon key's
+--      LVN question 0.220 s (1.2 s measured before); 7c both anchored RPCs lead with Orange County
+--      (16 and 6 contiguous rows); 7l college_program_courses 0.228 s (0.33 s measured). PASS

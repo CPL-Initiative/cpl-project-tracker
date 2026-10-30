@@ -15,10 +15,12 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-490 document(s).
+492 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 523 | [Session 523 handoff: shard failures name their file, the Library test race fixed, S521's memory applied](../session_523_handoff.md) | 2026-10-30 |
+| 522 | [Session 522 handoff: Sierra's program search fixed live, the smoke retries and reports, Sheet 142 answered](../session_522_handoff.md) | 2026-10-30 |
 | 521 | [Session 521 handoff: the public funding page in the Share menu, the funding fixes landed, and faster tests](../session_521_handoff.md) | 2026-10-29 |
 | 520 | [Session 520 handoff: the CSM team's funding fixes, Sam's eight FAQs, and why Sierra choked](../session_520_handoff.md) | 2026-10-29 |
 | 519 | [Session 519 handoff: the Library's slides beside their items, funding on a phone, the FAQ in groups and Sierra reading it](../session_519_handoff.md) | 2026-10-29 |

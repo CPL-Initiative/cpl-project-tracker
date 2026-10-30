@@ -251,10 +251,9 @@ revoke all on function public.college_geo_replace(jsonb) from public, anon, auth
 --
 -- Measured 2026-09-30, direct and uncontended, before → after: a 4-term call
 -- 1,473 → 415 ms; the LVN question 896 → 355–749 ms; the 30-term call 2,724 →
--- 1,943 ms. What remains is the per-term document-frequency count (~60 ms a
--- term, the slope in the ONE PASS note below), which is the design. The `tv`
--- CTE still copies the rows and spills ~14 MB to temp per call; dropping the
--- copy measured 177 vs 190 ms, so it stays. Output identical on 13 term sets
+-- 1,943 ms. What remains is the per-term document-frequency count (~20 ms a
+-- term since the copy went, NO COPY below), which is the design. Output
+-- identical on 13 term sets
 -- (kb/receipts/search_college_programs_stored_vectors_2026-09-30.sql).
 alter table public.coci_college_programs
   add column if not exists tsv_title_en tsvector generated always as
@@ -302,13 +301,37 @@ alter table public.coci_college_programs
 -- section silently — the answer reads fluent and complete.
 --
 -- The fix is structural, not an index (see the NO INDEXES note above — three
--- GIN indexes broke the loader for a measured 4 ms). The four tsvectors are
--- computed ONCE per call into a materialized CTE, every term's document
--- frequency is counted in one pass over that CTE, and the ranked match reads
--- the same CTE. Semantics are unchanged — the same per-surface DF rule, the
--- same keep-all-if-all-generic rule, the same english/simple split, the same
--- phrase handling, the same ranking. chatbox/verify_search_college_programs.sql
+-- GIN indexes broke the loader for a measured 4 ms). Every term's document
+-- frequency is counted in one pass over the table, and the ranked match reads
+-- the table once more. Semantics are unchanged — the same per-surface DF rule,
+-- the same keep-all-if-all-generic rule, the same english/simple split, the
+-- same phrase handling, the same ranking. chatbox/verify_search_college_programs.sql
 -- Part D pins the cost so the per-term scan cannot come back unnoticed.
+--
+-- ⚠️ NO COPY OF THE TABLE (2026-10-30, S521). Both passes read
+-- coci_college_programs itself. Until S521 they read a MATERIALIZED CTE (`tv`)
+-- holding every row, its four stored vectors and two concatenations of them.
+-- That copy did not fit in work_mem (2 MB here), so it went to temp files and
+-- was read back once per pass: 9,051 pages written and 18,106 read (~70 MB and
+-- ~140 MB) for the six-term Orange County question, 35,703 and 88,246 for the
+-- 30-term call. Uncontended that cost little (the 09-30 measurement read 177 vs
+-- 190 ms at 14 MB). Under load it was the cost: since 2026-10-26 the route was
+-- the database's largest consumer, 862 calls at a mean of 2,014 ms and a max of
+-- 7,782, with college_program_courses (which calls it) at 9,281 temp pages a
+-- call, and smoke 7c timed out at ~7.5 s on 2026-10-29. Raising work_mem is not
+-- the fix: 12 MB still spilled, and 32 MB a call does not fit beside 60
+-- connections on this instance. Read straight from the table, which sits in
+-- shared buffers, the passes write nothing to temp: the Orange County question
+-- 555 → ~175 ms warm, the 30-term DF pass 622 ms (the whole call read 3,570 ms).
+-- The DF pass groups by the term's ordinal alone. The first no-copy apply
+-- (00:38Z 2026-10-30) kept `group by tm.ord, tm.q, tm.kind`; a tsquery has
+-- no hash opclass, so that sorted every term-row pair with its vectors and
+-- spilled more than the copy had (set 05: 52,999 pages, 6.8 s). By ordinal
+-- the DF pass is a 24 kB hash aggregate: 161 ms for six terms.
+-- `tb @@ q` on the concatenation became `te @@ q or ts @@ q`; for the
+-- single-lexeme queries the 'eng' and 'sim' kinds produce they are the same
+-- test. Equivalence and the after-read:
+-- kb/receipts/search_college_programs_no_copy_2026-10-30_s521.sql.
 -- ⚠️ SIGNATURE CHANGE (2026-09-18): two anchor parameters. Per the OVERLOAD
 -- TRAP note above, the superseded signature is dropped first, in the same
 -- transaction, so PostgREST never sees two candidates. The grants the drop
@@ -406,35 +429,33 @@ begin
   -- can still be the discriminating word in a freehand program title. If EVERY
   -- term looks generic on a surface, that surface keeps them all, so a broad
   -- question still answers rather than returning nothing.
+  -- Both passes read the table itself, never a copy of it (NO COPY above).
   if array_length(qs, 1) is not null then
     return query
-    with tv as materialized (
-      select p.college, p.program_title, p.award, p.status,
-             p.top_code, p.top_title, p.cip_code, p.cip_title,
-             p.tsv_title_en as te, p.tsv_title_simple as ts,
-             p.tsv_code_en as ce, p.tsv_code_simple as cs,
-             p.tsv_title_en || p.tsv_title_simple as tb,
-             p.tsv_code_en || p.tsv_code_simple as cb
-      from public.coci_college_programs p
-    ),
-    terms as (
+    with terms as (
       select u.ord, u.q::tsquery as q, u.kind
       from unnest(qs, kinds) with ordinality as u(q, kind, ord)
     ),
+    -- Grouped by ord alone, which is unique per term: a tsquery has no hash
+    -- opclass, so grouping by q as well forced a sort of every term-row pair
+    -- with its vectors (11,719 temp pages for the six-term question, 52,999
+    -- for 30 terms).
     df as (
-      select tm.ord, tm.q, tm.kind,
-             count(*) filter (where case when tm.kind = 'phrase' then tv.te @@ tm.q else tv.tb @@ tm.q end) as df_t,
-             count(*) filter (where case when tm.kind = 'phrase' then tv.ce @@ tm.q else tv.cb @@ tm.q end) as df_c
-      from terms tm cross join tv
-      group by tm.ord, tm.q, tm.kind
+      select tm.ord,
+             count(*) filter (where case when tm.kind = 'phrase' then p.tsv_title_en @@ tm.q
+                                          else p.tsv_title_en @@ tm.q or p.tsv_title_simple @@ tm.q end) as df_t,
+             count(*) filter (where case when tm.kind = 'phrase' then p.tsv_code_en @@ tm.q
+                                          else p.tsv_code_en @@ tm.q or p.tsv_code_simple @@ tm.q end) as df_c
+      from terms tm cross join public.coci_college_programs p
+      group by tm.ord
     ),
     sel as (
-      select df.ord, df.q, df.kind,
+      select tm.ord, tm.q, tm.kind,
              (df.df_t <= corpus_n * generic_pct)
                or not bool_or(df.df_t <= corpus_n * generic_pct) over () as use_t,
              (df.df_c <= corpus_n * generic_pct)
                or not bool_or(df.df_c <= corpus_n * generic_pct) over () as use_c
-      from df
+      from df join terms tm on tm.ord = df.ord
     ),
     q4 as (
       select
@@ -451,22 +472,22 @@ begin
       from sel
     ),
     hits as (
-      select tv.college, tv.program_title, tv.award, tv.status,
-             tv.top_code, tv.top_title, tv.cip_code, tv.cip_title,
-             (   (q4.qt_eng is not null and tv.te @@ q4.qt_eng)
-              or (q4.qt_sim is not null and tv.ts @@ q4.qt_sim)
+      select p.college, p.program_title, p.award, p.status,
+             p.top_code, p.top_title, p.cip_code, p.cip_title,
+             (   (q4.qt_eng is not null and p.tsv_title_en @@ q4.qt_eng)
+              or (q4.qt_sim is not null and p.tsv_title_simple @@ q4.qt_sim)
              ) as title_hit,
-             (   (q4.qc_eng is not null and tv.ce @@ q4.qc_eng)
-              or (q4.qc_sim is not null and tv.cs @@ q4.qc_sim)
+             (   (q4.qc_eng is not null and p.tsv_code_en @@ q4.qc_eng)
+              or (q4.qc_sim is not null and p.tsv_code_simple @@ q4.qc_sim)
              ) as code_hit,
              greatest(
-               case when q4.qt_eng is null then 0 else ts_rank_cd(setweight(tv.te, 'A'), q4.qt_eng) end,
-               case when q4.qt_sim is null then 0 else ts_rank_cd(setweight(tv.ts, 'A'), q4.qt_sim) end,
-               case when q4.qc_eng is null then 0 else ts_rank_cd(setweight(tv.ce, 'B'), q4.qc_eng) end,
-               case when q4.qc_sim is null then 0 else ts_rank_cd(setweight(tv.cs, 'B'), q4.qc_sim) end
+               case when q4.qt_eng is null then 0 else ts_rank_cd(setweight(p.tsv_title_en, 'A'), q4.qt_eng) end,
+               case when q4.qt_sim is null then 0 else ts_rank_cd(setweight(p.tsv_title_simple, 'A'), q4.qt_sim) end,
+               case when q4.qc_eng is null then 0 else ts_rank_cd(setweight(p.tsv_code_en, 'B'), q4.qc_eng) end,
+               case when q4.qc_sim is null then 0 else ts_rank_cd(setweight(p.tsv_code_simple, 'B'), q4.qc_sim) end
              ) as rank
-      from tv cross join q4
-      where (college_filter is null or tv.college = college_filter)
+      from public.coci_college_programs p cross join q4
+      where (college_filter is null or p.college = college_filter)
     )
     select h.college, h.program_title, h.award, h.status,
            h.top_code, h.top_title, h.cip_code, h.cip_title,

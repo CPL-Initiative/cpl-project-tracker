@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/cpl_memory_s521_2026-10-30.sql",
+ "name": "s521_cpl_memory_sheet142_quick_adopt",
+ "version": "20261030022014",
+ "sha256": "3b9fca0e7657f596ffc3c204d393f344eba53af184f5bfa5fe897bd555941753",
+ "run": "40990743558",
+ "status": 201,
+ "response": "[{\"slug\":\"sam-sheet-142-rulings-2026-10-30\",\"status\":\"verified\"},{\"slug\":\"sam-quick-adopt-partly-adopted-2026-10-30\",\"status\":\"verified\"},{\"slug\":\"fact-search-college-programs-no-temp-2026-10-30\",\"status\":\"proposed\"},{\"slug\":\"pitfall-run-js-summary-lost-2026-10-30\",\"status\":\"proposed\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

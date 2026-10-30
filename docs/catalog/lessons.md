@@ -99,7 +99,7 @@ Workstream scratchpads. A dated section is appended at every checkpoint.
 | [SUBJ4 Canonicalization Re-Mint — Decisions & Lessons (Phase 1e)](../subj4_canonicalization_remint_lessons.md) | `subj4_canonicalization_remint_lessons.md` | 2026-05-23 |  |
 | [Subject/discipline cleanup lessons — mis-mint detection + blank-discipline pre-seed](../subject_discipline_cleanup_lessons.md) | `subject_discipline_cleanup_lessons.md` | 2026-07-13 |  |
 | [Team phrase & site access — workstream lessons](../team_phrase_lessons.md) | `team_phrase_lessons.md` | 2026-08-12 | 2026-08-12 |
-| [Test suite speed — lessons](../test_suite_speed_lessons.md) | `test_suite_speed_lessons.md` | 2026-08-29 | 2026-08-29 |
+| [Test suite speed — lessons](../test_suite_speed_lessons.md) | `test_suite_speed_lessons.md` | 2026-08-29 | 2026-10-30 |
 | [The checkpoint's UI pass — lessons](../ui_pass_lessons.md) | `ui_pass_lessons.md` | 2026-10-09 |  |
 | [The Commons — lessons](../commons_lessons.md) | `commons_lessons.md` | 2026-10-18 | 2026-10-20 |
 | [The communications register and the writer module — lessons](../communications_lessons.md) | `communications_lessons.md` | 2026-10-24 |  |

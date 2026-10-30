@@ -4,6 +4,8 @@ date: 2026-10-29
 session: 519 (SkyCloudberry, Sam's session)
 tags: [handoff, funding, faq, sierra, map-custom-reports]
 status: current
+superseded: true
+superseded_by: session_522_handoff.md
 ---
 
 # You are Session 520

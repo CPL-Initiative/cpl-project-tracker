@@ -58,7 +58,7 @@ const body = b1 === -1 ? "" : PROG.slice(b0 + 13, b1);
 check("(2) the function body is found", body.length > 1000);
 check("(2) ⚠ the function builds no tsvector (to_tsvector would put the per-call cost back)",
   body && !/to_tsvector\s*\(/.test(body));
-check("(2) its tv CTE reads all four stored columns",
+check("(2) its body reads all four stored columns",
   COLS.every((c) => new RegExp("\\bp\\." + c + "\\b").test(body)));
 check("(2) the columns are added before the function that reads them",
   PROG.indexOf("add column if not exists tsv_title_en") !== -1
