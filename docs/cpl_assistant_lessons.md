@@ -826,3 +826,20 @@ Sam: *"the current mobile view is mostly consumed by the header text."* The intr
 
 - **cpl-chat deployed from main at 22:39Z (run 40967328092) and byte-verified,** carrying #2560's FAQ rule and *offer* as a generic word.
 - **Its smoke failed on 7c, a deterministic check, not a model answer.** `rpc/search_college_programs` with `anchor_county: "Orange"` came back with no rows after about 7.5 s, so the positive control and the Orange-first order check both failed. All 112 other assertions passed, the 7c question to Sierra included. Called through the Supabase MCP afterward, the same call returned 150 rows in 0.59 s. The anon key's `statement_timeout` is 3 s, and `anchor_stat` counts a timeout's error body as zero rows. So this is the slow read of S519's lesson, under load, and a fourth deploy whose smoke failed a different assertion.
+
+## Moved from the lane (S521, 2026-10-30)
+
+Verbatim from `docs/reference/lanes/sierra-retrieval-corpus.md`, moved to bring the lane under its size budget.
+
+⚠️ **`cpl_course_title_norm` EXPANDS `cna`/`lvn` and folds `aide`→`assistant`, in ONE FLAT EXPRESSION — no CTE, no dedupe, no sort.** `typicalFoldKey()` already sorts the stems and unions the colleges downstream, so canonicalizing the key here buys NOTHING and costs real time (3,463→5,426 ms over 141,696 titles) against the anon role's **3 s** `statement_timeout` — the CTE version made the smoke's probe read rows=0 every run while the answers stayed correct. A sorted key breaks that probe too: it reads `norm` as a string.
+
+⚠️ A/B doctrine: read the grid AND the candidate's answer, never the run's conclusion; the push-triggered smoke tests PRODUCTION with the branch's assertions, so it is red until the deploy; never two suites at once.
+
+## S521 (2026-10-30): the program search's slowness was a temp-file copy
+
+- **Slow under load and fast warm meant disk, and EXPLAIN's `temp read/written` said so.** `search_college_programs` copied all 22,335 programs, their four stored vectors and two concatenations, into a MATERIALIZED CTE; at work_mem 2 MB the copy went to temp files and each pass read it back (9,051 pages written, 18,106 read on the Orange County question; 35,703 and 88,246 on 30 terms). Warm and alone it read 555 ms; cold, 2,842 ms with the same buffers. The 09-30 receipt measured the copy at 14 MB uncontended and kept it; the measurement that matters is under load.
+- **More work_mem is not the lever on this instance.** 12 MB still spilled (and ran slower, 900 ms); 32 MB a call does not fit beside 60 connections on 224 MB of shared buffers. Reading the table, which sits in shared buffers, wrote nothing: ~175 ms.
+- **The repo's Supabase guard refuses `create` even for `pg_temp`.** Test a candidate function as a plain query with its parse materialized once (`as materialized`), or the planner inlines the parse into every row's filter (4.7 s instead of 0.2).
+- **An md5 of a row set at a limit is not stable across plans.** Two rows tied on rank, college and title (an A.S. and a certificate) can trade the last place; compare key sequences, then list the rows at the cut.
+- **One fix covered two RPCs:** `college_program_courses` calls `search_college_programs`, so its 9,281 temp pages a call were the same copy.
+
