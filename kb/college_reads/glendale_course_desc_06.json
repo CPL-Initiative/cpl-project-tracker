@@ -1,0 +1,22 @@
+{
+ "_readme": "S523 SkyBarberry, 2026-10-30. Glendale course descriptions, window 6 of 15 (pages 168-181). Glendale's filed records name courses the state's file does not list for that program (CABOT 102, ART 130, ESL 151, NS 214), so the step that prices a course from its description needs every description, not only the 51 the file leaves unpriced (reads 41007920360-41008701146). Every page in the window prints whole; the session parses each description's number, title, units and the code its body names. One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "course_units": "Each course description on pages 168-181: its number, title and units."
+ },
+ "keywords": [
+  "\\bUnits?\\b"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_units"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  168,
+  181
+ ]
+}
