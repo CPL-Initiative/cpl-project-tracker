@@ -13824,6 +13824,24 @@
    "rules": "575c290d755b",
    "asked": "2026-10-18"
   },
+  "Foundations of Photography NC": {
+   "raw_title": "Foundations of Photography NC",
+   "unified_title": "Foundations of Photography",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ],
+   "_notes": "Hint mended: trailing 'NC' (noncredit marker) stripped as course-code noise; no CCN/C-ID verified, so this is the plain course title.",
+   "rules": "575c290d755b",
+   "hints": "e89bcdccd6",
+   "asked": "2026-10-30"
+  },
   "Fundamentals in Drawing": {
    "raw_title": "Fundamentals in Drawing",
    "unified_title": "Fundamentals of Drawing",
@@ -14351,6 +14369,24 @@
    "_notes": "No house family for NWCG L-180; new title keeps the issuer course code, following the S-190 house shape.",
    "rules": "575c290d755b",
    "asked": "2026-10-18"
+  },
+  "Human Relations in Organizations-Portfolio": {
+   "raw_title": "Human Relations in Organizations-Portfolio",
+   "unified_title": "Human Relations in Organizations",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": null,
+   "rules": "575c290d755b",
+   "hints": "de8982e47b",
+   "asked": "2026-10-30"
   },
   "IB Biology (HL)": {
    "raw_title": "IB Biology (HL)",
@@ -16630,6 +16666,109 @@
    "rules": "575c290d755b",
    "hints": "3c2b9e0094",
    "asked": "2026-10-18"
+  },
+  "International Brotherhood of Electrical Workers Journeyperson": {
+   "raw_title": "International Brotherhood of Electrical Workers Journeyperson",
+   "unified_title": "IBEW Electrician Apprenticeship — Journeyperson",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "Rule 6",
+    "Rule 7"
+   ],
+   "_notes": "No house Journeyperson title for the IBEW electrician family; new title in the family's shape (Bakersfield's Year 1-5 ladder matches the inside-wireman program, not lineman). JATC trainer per Rule 7, unverified.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "International Brotherhood of Electrical Workers Year 1": {
+   "raw_title": "International Brotherhood of Electrical Workers Year 1",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 1",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "International Brotherhood of Electrical Workers Year 2": {
+   "raw_title": "International Brotherhood of Electrical Workers Year 2",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 2",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "International Brotherhood of Electrical Workers Year 3": {
+   "raw_title": "International Brotherhood of Electrical Workers Year 3",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 3",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "International Brotherhood of Electrical Workers Year 4": {
+   "raw_title": "International Brotherhood of Electrical Workers Year 4",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 4",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "International Brotherhood of Electrical Workers Year 5": {
+   "raw_title": "International Brotherhood of Electrical Workers Year 5",
+   "unified_title": "IBEW Electrician Apprenticeship — Year 5",
+   "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",
+   "training_agency": "Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.9,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.65,
+   "procedures": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "_notes": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
   },
   "International Society of Arboriculture (ISA) Certified Arborist": {
    "raw_title": "International Society of Arboriculture (ISA) Certified Arborist",
@@ -20251,6 +20390,24 @@
    "hints": "52737b1d78",
    "asked": "2026-10-18"
   },
+  "Principles of Management Leadership-Portfolio": {
+   "raw_title": "Principles of Management Leadership-Portfolio",
+   "unified_title": "Principles of Management Leadership",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.78,
+   "confidence_issuer": 0.92,
+   "confidence_trainer": 0.9,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ],
+   "_notes": "Portfolio mechanism stripped; kept Columbia's course title rather than folding into house 'Principles of Management' since leadership scope may differ — curator may join.",
+   "rules": "575c290d755b",
+   "hints": "0cc91628d6",
+   "asked": "2026-10-30"
+  },
   "Professional Certifications": {
    "raw_title": "Professional Certifications",
    "unified_title": "Generic Professional Certifications — College of the Canyons",
@@ -20939,6 +21096,114 @@
    "rules": "575c290d755b",
    "hints": "a594ff3bf3",
    "asked": "2026-10-18"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Journeyperson": {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Journeyperson",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Journeyperson",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.8,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 1": {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 1",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 1",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 2": {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 2",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 2",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 3": {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 3",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 3",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 4": {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 4",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 4",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 5": {
+   "raw_title": "Sheet Metal Apprenticeship SMART Local 105 Year 5",
+   "unified_title": "SMART Sheet Metal Apprenticeship — Year 5",
+   "issuing_agency": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "training_agency": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)",
+   "confidence_title": 0.82,
+   "confidence_issuer": 0.72,
+   "confidence_trainer": 0.7,
+   "procedures": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "_notes": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "rules": "575c290d755b",
+   "hints": "4f53cda18c",
+   "asked": "2026-10-30"
   },
   "Smog Check Inspector and Smog Check Repair Technician": {
    "raw_title": "Smog Check Inspector and Smog Check Repair Technician",

@@ -1,10 +1,10 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-10-29T14:43:53Z",
- "_queue_count": 455,
+ "_generated_at": "2026-10-30T14:35:39Z",
+ "_queue_count": 456,
  "_counts": {
-  "staged": 419,
-  "needs_you": 459,
+  "staged": 420,
+  "needs_you": 468,
   "not_yet_asked": 0
  },
  "_residual": [],
@@ -847,19 +847,6 @@
     "Rule 6"
    ]
   },
-  "Automotive Service Excellence (ASE) ASE A7": {
-   "title": "ASE A7 — Heating and Air Conditioning",
-   "issuer": "National Institute for Automotive Service Excellence (ASE)",
-   "via": "classifier",
-   "confidence": 0.97,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 8b",
-    "Rule 6"
-   ]
-  },
   "Automotive Service Excellence MIL3 - Drive Train": {
    "title": "ASE MIL3 — Drive Train",
    "issuer": "National Institute for Automotive Service Excellence (ASE)",
@@ -938,14 +925,6 @@
     "course-identity"
    ],
    "trainer": "Moreno Valley Unified School District"
-  },
-  "BIOTECH 001: Fundamentals of Biotechnology": {
-   "title": "Fundamentals of Biotechnology",
-   "issuer": "California Community Colleges",
-   "via": "identity",
-   "confidence": 0.8,
-   "note": "Rule 5c: the college's own title for BIOTECH 1; issuer = CCC.",
-   "procedure": "course-identity"
   },
   "Basic Automotive Painting - Refinishing - Credit by Exam (ACRP 2A )": {
    "title": "Basic Automotive Painting and Refinishing",
@@ -1487,18 +1466,6 @@
     "brand-family",
     "join-when-likely-one",
     "Rule 4"
-   ]
-  },
-  "California Native Plant Society (CNPS) Field Botanist Certification": {
-   "title": "CNPS Certified Field Botanist",
-   "issuer": "California Native Plant Society (CNPS)",
-   "via": "classifier",
-   "confidence": 0.85,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "Rule 1",
-    "Rule 6"
    ]
   },
   "California State Water Resources Control Board D3, D4, or D5 certification": {
@@ -2887,6 +2854,19 @@
    ],
    "trainer": "U.S. Armed Forces"
   },
+  "Foundations of Photography NC": {
+   "title": "Foundations of Photography",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.8,
+   "note": "Hint mended: trailing 'NC' (noncredit marker) stripped as course-code noise; no CCN/C-ID verified, so this is the plain course title.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "Rule 5c",
+    "Rule 1"
+   ]
+  },
   "G Skin & Beauty Institute": {
    "title": "Esthetician License",
    "issuer": "California Board of Barbering and Cosmetology",
@@ -2980,20 +2960,6 @@
     "issuer-issues-the-card",
     "join-when-likely-one"
    ]
-  },
-  "HIGH SCHOOL ARTICULATION - CHAMPS HIGH SCHOOL: DANCETQ 141 Modern Dance Techniques": {
-   "title": "Modern Dance Techniques",
-   "issuer": "CHAMPS High School",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "local-trainer-is-agency",
-    "Rule 5f",
-    "brand-family"
-   ],
-   "trainer": "CHAMPS High School"
   },
   "HVACR DAS Journeyman": {
    "title": "HVACR Apprenticeship Journeyman Certificate",
@@ -3097,6 +3063,19 @@
     "Rule 5f"
    ],
    "trainer": "Corona-Norco Unified School District"
+  },
+  "Human Relations in Organizations-Portfolio": {
+   "title": "Human Relations in Organizations",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ]
   },
   "IB English B HL (Minimum Passing Score of 4)": {
    "title": "IB Language B: English HL",
@@ -3545,17 +3524,84 @@
    ],
    "trainer": "Moreno Valley Unified School District"
   },
-  "International Society of Arboriculture (ISA) Certified Arborist": {
-   "title": "ISA Certified Arborist",
-   "issuer": "International Society of Arboriculture (ISA)",
+  "International Brotherhood of Electrical Workers Journeyperson": {
+   "title": "IBEW Electrician Apprenticeship — Journeyperson",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
    "via": "classifier",
-   "confidence": 0.97,
-   "note": "",
+   "confidence": 0.8,
+   "note": "No house Journeyperson title for the IBEW electrician family; new title in the family's shape (Bakersfield's Year 1-5 ladder matches the inside-wireman program, not lineman). JATC trainer per Rule 7, unverified.",
    "procedure": "classifier",
    "rests_on": [
     "brand-family",
-    "Rule 6"
-   ]
+    "Rule 6",
+    "Rule 7"
+   ],
+   "trainer": "Joint Apprenticeship Training Committee (JATC)"
+  },
+  "International Brotherhood of Electrical Workers Year 1": {
+   "title": "IBEW Electrician Apprenticeship — Year 1",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Joint Apprenticeship Training Committee (JATC)"
+  },
+  "International Brotherhood of Electrical Workers Year 2": {
+   "title": "IBEW Electrician Apprenticeship — Year 2",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Joint Apprenticeship Training Committee (JATC)"
+  },
+  "International Brotherhood of Electrical Workers Year 3": {
+   "title": "IBEW Electrician Apprenticeship — Year 3",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Joint Apprenticeship Training Committee (JATC)"
+  },
+  "International Brotherhood of Electrical Workers Year 4": {
+   "title": "IBEW Electrician Apprenticeship — Year 4",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Joint Apprenticeship Training Committee (JATC)"
+  },
+  "International Brotherhood of Electrical Workers Year 5": {
+   "title": "IBEW Electrician Apprenticeship — Year 5",
+   "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+   "via": "classifier",
+   "confidence": 0.9,
+   "note": "Joins house IBEW electrician year family; JATC trainer per Rule 7, unverified for Bakersfield.",
+   "procedure": "classifier",
+   "rests_on": [
+    "brand-family",
+    "Rule 7"
+   ],
+   "trainer": "Joint Apprenticeship Training Committee (JATC)"
   },
   "Intro Appetizers High School Articulation": {
    "title": "Introduction to Appetizers",
@@ -3913,19 +3959,6 @@
    ],
    "trainer": "U.S. Army"
   },
-  "MUSIC 217-1: Musicianship I": {
-   "title": "Musicianship 1",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.88,
-   "note": "Mended the hs hint to the existing house spelling, Musicianship 1.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "Rule 5c",
-    "brand-family"
-   ]
-  },
   "Manufacturer/Vendor Specific Building Automation System (BAS) Certification": {
    "title": "Building Automation System (BAS) Manufacturer Certification",
    "issuer": "",
@@ -4018,110 +4051,6 @@
     "Rule 8b",
     "Rule 4",
     "Rule 9"
-   ]
-  },
-  "Microsoft Office Specialist (MO-100): Word Associate (Office 2019)": {
-   "title": "Microsoft Office Specialist — Word",
-   "issuer": "Microsoft",
-   "via": "classifier",
-   "confidence": 0.9,
-   "note": "Mended the cos hint to the house family. The version and Associate level collapse; Expert stays separate.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3",
-    "Rule 4"
-   ]
-  },
-  "Microsoft Office Specialist (MO-101): Word Expert (Microsoft 365 Apps)": {
-   "title": "Microsoft Office Specialist — Word Expert",
-   "issuer": "Microsoft",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3",
-    "Rule 4"
-   ]
-  },
-  "Microsoft Office Specialist (MO-110): Word Associate (Microsoft 365 Apps)": {
-   "title": "Microsoft Office Specialist — Word",
-   "issuer": "Microsoft",
-   "via": "classifier",
-   "confidence": 0.9,
-   "note": "Mended the cos hint to the house family. The Microsoft 365 version variant unifies with MO-100.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3"
-   ]
-  },
-  "Microsoft Office Specialist (MO-200): Excel Associate (Office 2019)": {
-   "title": "Microsoft Office Specialist — Excel",
-   "issuer": "Microsoft",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "Mended the cos hint to the house family, with Microsoft spelled the house way.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3",
-    "Rule 4"
-   ]
-  },
-  "Microsoft Office Specialist (MO-210): Excel Associate (Microsoft 365 Apps)": {
-   "title": "Microsoft Office Specialist — Excel",
-   "issuer": "Microsoft",
-   "via": "classifier",
-   "confidence": 0.92,
-   "note": "Joined the existing MOS Excel (Associate) house family instead of the COS hint wording; dropped the exam code and the version note. Kept separate from Excel Expert.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3",
-    "Rule 4",
-    "Rule 1"
-   ]
-  },
-  "Microsoft Office Specialist (MO-211): Excel Expert (Microsoft 365 Apps)": {
-   "title": "Microsoft Office Specialist — Excel Expert",
-   "issuer": "Microsoft",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 4",
-    "Rule 1"
-   ]
-  },
-  "Microsoft Office Specialist (MO-400): Outlook Associate (Office 2019)": {
-   "title": "Microsoft Office Specialist — Outlook",
-   "issuer": "Microsoft",
-   "via": "classifier",
-   "confidence": 0.94,
-   "note": "Joined the house family; the COS hint title and the 'Microsoft Corporation' issuer spelling were set aside.",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 3",
-    "Rule 1"
-   ]
-  },
-  "Microsoft Office Specialist (MO-500): Access Expert (Office 2019)": {
-   "title": "Microsoft Office Specialist — Access Expert",
-   "issuer": "Microsoft",
-   "via": "classifier",
-   "confidence": 0.95,
-   "note": "",
-   "procedure": "classifier",
-   "rests_on": [
-    "brand-family",
-    "Rule 4",
-    "Rule 1"
    ]
   },
   "Music Production I High School Articulation": {
@@ -4903,6 +4832,19 @@
    ],
    "trainer": "Riverside Unified School District"
   },
+  "Principles of Management Leadership-Portfolio": {
+   "title": "Principles of Management Leadership",
+   "issuer": "California Community Colleges",
+   "via": "classifier",
+   "confidence": 0.78,
+   "note": "Portfolio mechanism stripped; kept Columbia's course title rather than folding into house 'Principles of Management' since leadership scope may differ — curator may join.",
+   "procedure": "classifier",
+   "rests_on": [
+    "course-identity",
+    "mechanism-collapses",
+    "Rule 5c"
+   ]
+  },
   "Professional Certifications": {
    "title": "Generic Professional Certifications — College of the Canyons",
    "issuer": "",
@@ -5289,6 +5231,90 @@
     "issuer-issues-the-card"
    ],
    "trainer": "SANS Institute"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Journeyperson": {
+   "title": "SMART Sheet Metal Apprenticeship — Journeyperson",
+   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "trainer": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 1": {
+   "title": "SMART Sheet Metal Apprenticeship — Year 1",
+   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "trainer": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 2": {
+   "title": "SMART Sheet Metal Apprenticeship — Year 2",
+   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "trainer": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 3": {
+   "title": "SMART Sheet Metal Apprenticeship — Year 3",
+   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "trainer": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 4": {
+   "title": "SMART Sheet Metal Apprenticeship — Year 4",
+   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "trainer": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)"
+  },
+  "Sheet Metal Apprenticeship SMART Local 105 Year 5": {
+   "title": "SMART Sheet Metal Apprenticeship — Year 5",
+   "issuer": "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
+   "via": "classifier",
+   "confidence": 0.72,
+   "note": "New family shaped like the IBEW apprenticeship ladder; issuer could instead be the DAS-registered Local 105 JATC sponsor — verify via DAS.",
+   "procedure": "classifier",
+   "rests_on": [
+    "Rule 6",
+    "Rule 7",
+    "issuer-issues-the-card"
+   ],
+   "trainer": "SMART Local 105 Joint Apprenticeship Training Committee (JATC)"
   },
   "Smog Check License": {
    "title": "California BAR Smog Check Inspector and Repair Technician License",
