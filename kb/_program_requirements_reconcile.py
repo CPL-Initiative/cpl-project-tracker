@@ -181,7 +181,12 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             # A catalog that prints each course's units only in its course descriptions (Glendale's
             # 2025-2026 PDF, S523) carries them in the step itself ("units", from a committed page read
             # its source_words name); the page's own call, where there is one, wins a code both give.
-            units = {k: v for k, v in (st.get("units") or {}).items() if v}
+            given = dict(st.get("units") or {})
+            if st.get("units_file"):
+                # A catalog-wide map is its own committed file beside the reads it came from (S523).
+                with open(os.path.join(HERE, st["units_file"])) as fh:
+                    given.update(json.load(fh).get("units") or {})
+            units = {k: v for k, v in given.items() if v}
             units.update({k: v for k, v in ((course_units or {}).get("units") or {}).items() if v})
             filled = fill_course_units(out, units) if units else {}
             if filled:
