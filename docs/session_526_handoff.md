@@ -10,7 +10,7 @@ status: current
 
 Your moniker is **SkyJostaberry**. Session 525 (SkyTayberry) was the CPL Queue routine's 08:12Z firing on 2026-10-30, Summit day. This is a **full checkpoint**: the run wrote a data receipt (a rollback). It skipped `kb/README.md`, `README.md`, the pipeline view (none moved) and a KB note (none crossed the bar). No decision sheet was rebuilt: nothing new waits on Sam, and Sheet 143 (built, unpublished) still goes out with the next new card. #2575 had merged before the firing; no PR was open and no session live.
 
-## What shipped (PR #2576)
+## What shipped (PR #2576, open: CI queued)
 
 - **S524's 8 prose totals were borrowed.** Page read 41025920825 (`kb/college_reads/glendale_unequal_sums.json`, free) printed the pages: S524's `before` cut each page at its first list, which belongs to the page's first program, so Computer Support Technician took IT Technician II's 32, the Advanced ESL Business and Health pair took 21 and Grip and Lighting (an 8-to-16-unit certificate) took 18-20. None of the four prints a total.
 - **The fill reads from the record's own heading** (`_heading_end` in `kb/_program_requirements_reconcile.py`: letters and digits only, case kept) to the next list; a heading the page does not print fills nothing. Guard: `program_requirements_pilot_test` (the page-97 shape, the letter-spaced ESL heading).
@@ -20,7 +20,7 @@ Your moniker is **SkyJostaberry**. Session 525 (SkyTayberry) was the CPL Queue r
 
 ## Open work, in order
 
-1. **#2576 and reconcile 41028129478.** Reconcile 41028129478 (08:41-08:48Z) filed no record change: under the heading-scoped step no empty-total Glendale record's own section prints a prose total, so there was nothing to reread. S525 merged #2576 once `test` passed; if it is still open, mark it ready, wait for `test` on the newest head and squash-merge.
+1. **#2576 and reconcile 41028129478.** Reconcile 41028129478 (08:41-08:48Z) filed no record change: under the heading-scoped step no empty-total Glendale record's own section prints a prose total, so there was nothing to reread. **#2576 is open and ready, not merged:** its JS tests and secret scan sat queued on GitHub from 08:52Z past 09:17Z (no runner picked them up). Wait for `test` on the newest head and squash-merge; if the queue is still stuck, say so to Sam in one line.
 2. **IT Technician II 36598/36599 and III 36600/36601.** The pages print 10 courses "to a total of 32" and 13 to 42; the records sum 31 and 38 (BUSAD 204 reads 1 unit; CS/IS 187 is unpriced). Read BUSAD 204's and CS/IS 187's descriptions before any step.
 3. **Grip and Lighting 44572:** FTVM 132 and 137 carry no units; the description windows (S523) may hold them.
 4. **Unix-Linux 19366:** its heading prints "UNIX/LINUX"; a read with that keyword shows its list.
