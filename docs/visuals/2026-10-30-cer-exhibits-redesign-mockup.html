@@ -98,6 +98,9 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .pair .big { font-size: clamp(19px, 2.2vw, 23px); color: var(--text-strong); font-weight: 600; overflow-wrap: anywhere; }
 .pair .to { color: var(--text-muted); padding-top: 22px; }
 @media (max-width: 640px) { .pair { grid-template-columns: 1fr; } .pair .to { padding-top: 0; } }
+.edit { font: inherit; font-size: clamp(19px, 2.2vw, 23px); font-weight: 600; color: var(--text-strong); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; width: 100%; min-width: 0; }
+.edit-sm { font: inherit; font-size: 14px; color: var(--text-body); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 8px; width: 100%; min-width: 0; }
+.fieldrow { display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: center; font-size: 14px; color: var(--text-muted); }
 .why { font-size: 15px; color: var(--text-muted); border-left: 2px solid var(--border-strong); padding-left: 10px; }
 .acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
 .acts .w { font-weight: 600; }
@@ -150,6 +153,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
             <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Reviewed</span><span class="tn"><b>1,844</b> of 5,030</span><span class="bar" role="img" aria-label="37 percent"><i style="width:36.7%"></i></span><span class="tt">titles with a person's or a rule's stamp</span><span class="ts">See the unstamped</span></a>
             <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Issuers</span><span class="tn"><b>2,455</b> of 2,456</span><span class="bar" role="img" aria-label="nearly 100 percent"><i style="width:99.9%"></i></span><span class="tt">credentials naming an issuing agency</span><span class="ts">1,258 are college exams</span></a>
             <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Registry</span><span class="tn"><b>11</b> of 89</span><span class="bar" role="img" aria-label="12 percent"><i style="width:12.4%"></i></span><span class="tt">industry credentials in MAP with a Credential Engine CTID</span><span class="ts">78 to link</span></a>
+            <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Aligned course</span><span class="tn"><b>394</b> of 468</span><span class="bar" role="img" aria-label="84 percent"><i style="width:84.2%"></i></span><span class="tt">held titles articulated to a course with a CCN, C-ID or M-ID</span><span class="ts">Let the course name them</span></a>
             <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Students waiting</span><span class="tn"><b>3,000</b></span><span class="tt">students hold credit on titles still held</span><span class="ts">Start with them</span></a>
           </div>
         </div>
@@ -185,7 +189,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
               <colgroup><col style="width:52%"><col style="width:30%"><col style="width:18%"></colgroup>
               <thead><tr><th scope="col">Group</th><th scope="col">How</th><th scope="col" class="r">Titles</th></tr></thead>
               <tbody>
-                <tr><td><a href="#cobi-review">High school and ROP courses</a></td><td>One rule</td><td class="r">96</td></tr>
+                <tr><td><a href="#cobi-review">High school and ROP courses</a><br><span class="small muted">93 named by an aligned course</span></td><td>One rule</td><td class="r">96</td></tr>
                 <tr><td><a href="#cobi-review">Titles that share a proposal</a></td><td>Accept as a group</td><td class="r">69</td></tr>
                 <tr><td><a href="#cobi-review">Near-sure, 0.70 to 0.85</a></td><td>25 at a time</td><td class="r">183</td></tr>
                 <tr><td><a href="#cobi-review">Unsure, a course code, two issuers</a></td><td>One at a time</td><td class="r">120</td></tr>
@@ -196,21 +200,22 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
           <div class="card" aria-label="Review one title">
             <div class="pair">
               <div>
-                <span class="small muted">Cabrillo College typed</span>
+                <span class="small muted">Current title, as Cabrillo College typed it</span>
                 <span class="big">Introduction to Digital Media High School Articulation</span>
+                <span class="small muted">Articulated to DM 1, Introduction to Digital Media</span>
               </div>
               <span class="to" aria-hidden="true">to</span>
               <div>
-                <span class="small muted">The classifier proposes</span>
-                <span class="big">Introduction to Digital Media</span>
-                <span class="small muted">Issuer: Local High School</span>
+                <label class="small muted" for="proposed-title">Proposed title, from C-ID ARTS 250 (edit it here)</label>
+                <input class="edit" id="proposed-title" type="text" value="Introduction to Digital Art">
+                <div class="fieldrow"><label for="proposed-issuer">Issuer</label><input class="edit-sm" id="proposed-issuer" type="text" value="Local High School"></div>
               </div>
             </div>
-            <p class="why">Unsure (0.80) · 442 students have credit on this exhibit</p>
+            <p class="why">442 students have credit on this exhibit · the classifier alone was unsure (0.80)</p>
             <p class="small">Source: <a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-ITDM-1-001&amp;View=Non-Military">MAPCXH-ITDM-1-001 in MAP</a></p>
             <div class="acts">
-              <button class="w" type="button">Accept</button>
-              <button class="w" type="button">Change the title</button>
+              <button class="w" type="button">Keep Current Title</button>
+              <button class="w" type="button">Change to Proposed Title</button>
               <button class="w" type="button">Teach a rule</button>
               <button class="w" type="button">Skip</button>
             </div>
@@ -282,7 +287,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
               <colgroup><col style="width:44%"><col style="width:24%"><col style="width:12%"><col style="width:20%"></colgroup>
               <thead><tr><th scope="col">Rule</th><th scope="col">Set by</th><th scope="col" class="r">Held tonight</th><th scope="col">Action</th></tr></thead>
               <tbody>
-                <tr><td>A course names its own exam</td><td>Sam, 2026-07-07</td><td class="r">181</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>A course names its own exam<br><span class="small muted">CCN, then C-ID, then M-ID, then the college's title; AP and brand credentials keep their names</span></td><td>Sam, 2026-07-07; M-ID added 2026-10-30</td><td class="r">181</td><td><a href="#cobi-rules">See what it did</a></td></tr>
                 <tr><td>A named school is the agency</td><td>Sam, 2026-07-08</td><td class="r">122</td><td><a href="#cobi-rules">Make it a rule</a></td></tr>
                 <tr><td>Brand families join the family</td><td>Sam, 2026-07-07</td><td class="r">101</td><td><a href="#cobi-rules">See what it did</a></td></tr>
                 <tr><td>Join, and let faculty pull out</td><td>Sam, 2026-09-20</td><td class="r">95</td><td><a href="#cobi-rules">See what it did</a></td></tr>
