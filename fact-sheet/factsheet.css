@@ -136,22 +136,22 @@ a:hover { text-decoration-thickness: 2px; }
 
 .wrap { max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
 
-/* ── Sticky action bar (screen only) ───────────────────────────────────── */
-.actionbar {
-  position: sticky; top: 0; z-index: 20;
-  background: var(--bar-bg);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--border);
+/* ── The tools under the title (screen only) ───────────────────────────
+   Sam, 2026-10-30: the sticky bar above the masthead is gone; its tools sit in
+   one row under the title. Ask Sierra is the chip in the lower right
+   (../sierra/sidebar.js), and Save as Word joined Print / Save PDF in the
+   Print or save menu. */
+.mh-tools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 10px; }
+.save-menu { position: relative; }
+.save-menu > summary { list-style: none; }
+.save-menu > summary::-webkit-details-marker { display: none; }
+.save-menu-list {
+  position: absolute; z-index: 30; top: calc(100% + 6px); left: 0;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 6px;
+  background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-sm);
+  padding: 10px 14px; white-space: nowrap;
 }
-.actionbar .wrap {
-  display: flex; flex-wrap: wrap; align-items: center; gap: 10px 20px;
-  min-height: 54px; padding-top: 8px; padding-bottom: 8px;
-}
-.actionbar .ab-title { font-weight: 700; color: var(--seal-blue-text); font-size: 1rem; margin-right:auto; }
-/* On a phone the bar wraps to three rows, 200px of an 844px screen (measured
-   S350 at 390px), and a sticky bar that size hides a quarter of every screen
-   the reader scrolls. Below 561px it sits at the top and scrolls away. */
-@media (max-width: 560px) { .actionbar { position: static; } }
+@media (max-width: 560px) { .save-menu-list { position: static; border: 0; padding: 6px 0 0; } }
 .live-chip {
   display: inline-flex; align-items: center; gap: 7px;
   font-size: .82rem; font-weight: 600; color: var(--hunter);
@@ -231,7 +231,7 @@ main:focus { outline: none; }
 /* Visible keyboard focus on all interactive controls (WCAG 2.4.7 AA). The
    action-bar buttons + the statewide <summary> rows + the TOC links previously
    relied on the (often-suppressed) UA ring. */
-.btn:focus-visible, .sw-grid summary:focus-visible, .toc a:focus-visible,
+.btn:focus-visible, .save-menu > summary:focus-visible, .sw-grid summary:focus-visible, .toc a:focus-visible,
 a:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; border-radius: 4px; }
 
 /* ── Masthead ──────────────────────────────────────────────────────────── */
@@ -239,7 +239,6 @@ a:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; border-
 .masthead .wrap { padding-top: 26px; padding-bottom: 24px; display: flex; gap: 22px; align-items: center; flex-wrap: wrap; }
 .masthead img.logo { height: 58px; width: auto; background: var(--logo-plate); padding: var(--logo-pad); border-radius: var(--radius-sm); box-sizing: content-box; }
 .masthead .mh-text { min-width: 240px; flex: 1; }
-.masthead .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: .8rem; font-weight: 700; color: var(--mustard-text); }
 .masthead h1 { margin: 4px 0 2px; font-size: 1.9rem; line-height: 1.15; color: var(--seal-blue-text); }
 .masthead .sub { color: var(--muted); font-size: 1rem; }
 
@@ -473,7 +472,7 @@ footer.foot strong { color: var(--ink); }
   .masthead h1, section > h2, h2.h-card, h3:not(.h-sub) { font-weight: 700; }
   .kpi .kpi-value, .stat .big { font-family: var(--font-data); font-weight: 800; }
   body { background: var(--surface); font-size: 10.5pt; line-height: 1.4; }
-  .actionbar, .no-print, .skip-link { display: none !important; }
+  .no-print, .skip-link { display: none !important; }
   .wrap { max-width: none; padding: 0; }
   a { color: var(--seal-blue); text-decoration: none; }
   /* Reveal the URL after links in the reference-list contexts so a printed/PDF

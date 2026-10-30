@@ -65,7 +65,7 @@ check("the skip target is <main>", target && target.tagName === "MAIN");
 check("CSS: skip link is off-screen until focused",
   /\.skip-link\s*\{[^}]*top:\s*-/.test(CSS) && /\.skip-link:focus\s*\{[^}]*top:\s*\d/.test(CSS));
 check("CSS: the skip link never prints", /\.skip-link\s*\{\s*display:\s*none/.test(CSS.slice(CSS.indexOf("@media print"))) ||
-  /\.actionbar,\s*\.no-print,\s*\.skip-link\s*\{\s*display:\s*none/.test(CSS));
+  /\.no-print,\s*\.skip-link\s*\{\s*display:\s*none/.test(CSS));
 
 // ── (b) scrolling region ──
 check("factsheet.js wires .tbl-wrap as a focusable region", /function setupScrollRegions/.test(JS));
@@ -233,11 +233,11 @@ check("resource titles reach 24px", /\.res a\.res-title \{[^}]*min-height: 24px/
 check("team emails reach 24px", /\.person \.pe a \{[^}]*min-height: 24px/.test(CSS));
 check("links in running text get a 24px pressable box without moving the line",
   /\.mh-text \.sub a, \.note a, figure figcaption a, h3\.h-sub a \{ padding-block: 5px; \}/.test(CSS));
-check("the action bar scrolls away on a phone instead of pinning 200px",
-  /@media \(max-width: 560px\) \{ \.actionbar \{ position: static; \} \}/.test(CSS));
+check("the Print or save menu lies flat on a phone instead of floating over the page",
+  /@media \(max-width: 560px\) \{ \.save-menu-list \{ position: static;/.test(CSS));
 const GLYPH = /[\u{1F300}-\u{1FAFF}\u2190-\u21FF\u2300-\u23FF\u2600-\u27BF\u2B00-\u2BFF\u229E-\u22A1]/u;
 check("the toolbar's controls are words (the Curate pencil is one of the 26 Sam kept)",
-  [...d.querySelectorAll(".actionbar button")].filter((b) => b.id !== "btn-curate")
+  [...d.querySelectorAll(".mh-tools button, .mh-tools summary")].filter((b) => b.id !== "btn-curate")
     .every((b) => !GLYPH.test(b.textContent)) &&
   /btn\.textContent = anyOpen \? 'Expand all' : 'Collapse all';/.test(JS));
 
@@ -384,14 +384,25 @@ check("the program reads CPL Initiative, outside Sam's title",
   check("(i3) the stories grid is a named region", g && g.getAttribute("role") === "region" && !!(g.getAttribute("aria-label") || "").trim());
 }
 
-//  (i4) THE ACTION BAR'S TITLE SITS IN A LANDMARK (axe region). It cannot join
-//       the masthead's <header>: a sticky box sticks only inside its parent.
+//  (i4) ONE HEADER ROW (Sam, 2026-10-30). The sticky bar above the masthead is
+//       gone: the title carries "Fact Sheet", the tools sit under it in a named
+//       group, Save as Word lives in the Print or save menu beside Print / Save
+//       PDF, and Ask Sierra is the side bar's chip (no button of the page's own).
 {
-  const t = d.querySelector(".ab-title");
-  const lm = t && t.closest('header, main, footer, nav, aside, [role="region"][aria-label], [role="banner"]');
-  check("(i4) the action bar's title sits inside a named landmark", !!lm);
-  check("(i4) the action bar stays a direct child of <body>, so it still sticks",
-    !!d.querySelector("body > .actionbar"));
+  check("(i4) no action bar above the masthead", !d.querySelector(".actionbar") && !d.querySelector(".ab-title"));
+  check("(i4) the title names the fact sheet, with no eyebrow over it",
+    /Credit for Prior Learning \(CPL\) Initiative Fact Sheet/.test(d.querySelector(".masthead h1").textContent) &&
+    !d.querySelector(".masthead .eyebrow"));
+  const tools = d.querySelector(".masthead .mh-tools");
+  check("(i4) the tools sit under the title in a named group",
+    !!tools && tools.getAttribute("role") === "group" && !!tools.getAttribute("aria-label") &&
+    !!tools.querySelector("#live-chip") && !!tools.querySelector("#btn-collapse-all"));
+  const menu = tools && tools.querySelector("details.save-menu");
+  check("(i4) Print / Save PDF and Save as Word share one Print or save menu",
+    !!menu && /Print or save/.test(menu.querySelector("summary").textContent) &&
+    !!menu.querySelector("#btn-print") && !!menu.querySelector("#btn-word"));
+  check("(i4) Ask Sierra is the side bar's chip, not a button of the page's own",
+    !d.getElementById("btn-sierra") && /sierra\/sidebar\.js/.test(HTML));
 }
 
 // ── report ──
