@@ -108,6 +108,8 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .results .rt { color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
 .results .rm { font-size: 13px; color: var(--text-muted); }
 .results .none { padding: 8px 12px; font-size: 14px; color: var(--text-muted); }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 999px; padding: 1px 9px; background: var(--surface-subtle); white-space: nowrap; }
+.chiprow { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
 .why { font-size: 15px; color: var(--text-muted); border-left: 2px solid var(--border-strong); padding-left: 10px; }
 .acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
 .acts .w { font-weight: 600; }
@@ -211,6 +213,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
           </div>
 
           <div class="card" aria-label="Review one title" id="review-card">
+            <div class="chiprow"><span class="chip" id="rc-step"></span><span class="small muted" id="rc-saved"></span></div>
             <div class="pair">
               <div>
                 <span class="small muted" id="rc-who"></span>
@@ -263,6 +266,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
             </div>
             <aside class="card panel" aria-label="CompTIA Security+">
               <h3>CompTIA Security+</h3>
+              <div class="chiprow"><span class="chip">CER step: In the reference</span></div>
               <div class="block">
                 <h4 class="q">What is it called?</h4>
                 <dl class="tags">
@@ -423,19 +427,23 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
 
   /* Held exhibits, most students first (a sample of the 468, real rows of 2026-10-30). */
   var HELD = [
-    { id: "MAPCXH-ITDM-1-001", college: "Cabrillo College", typed: "Introduction to Digital Media High School Articulation", course: "DM 1", ident: "C-ID ARTS 250", title: "Introduction to Digital Art", issuer: "Local High School", students: "442 students have credit on this exhibit", why: "the classifier alone was unsure (0.80)" },
-    { id: "MAPSAS-ACSA20-1-001", college: "Los Angeles Pierce College", typed: "AP Computer Science A - Score of 3 or higher - HISTORICAL Type 1", course: "", ident: "", title: "AP Computer Science A", issuer: "College Board", students: "398 students have credit on this exhibit", why: "an AP exam keeps its own name" },
-    { id: "MAPCXH-ITDP-1-001", college: "Cabrillo College", typed: "Intro to Digital Photography High School Articulation", course: "AP 6", ident: "M-ID ARTS M1351", title: "Introduction to Digital Photography", issuer: "Local High School", students: "316 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)" },
-    { id: "MAPCXH-RC1-1-001", college: "Cabrillo College", typed: "Residential Construction 1 High School Articulation", course: "CEM 178A", ident: "M-ID HVAC M10AE", title: "Residential Construction Skills 1: \"Front End\"", issuer: "Local High School", students: "160 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)" },
-    { id: "MAPCXH-RC2-1-001", college: "Cabrillo College", typed: "Residential Construction 2 High School Articulation", course: "CEM 178B", ident: "M-ID CNST M1130", title: "Residential Construction Skills 2: \"Finish End\"", issuer: "Local High School", students: "158 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)" },
-    { id: "MAPICI-1RO&-1-001", college: "Palo Verde College", typed: "1st Receiver Ops & Decon", course: "FST 121", ident: "M-ID ESCI M10HI", title: "First Receiver Operations & Decontamination for Healthcare", issuer: "", students: "Too few students to show", why: "the classifier alone was unsure (0.75); no issuer yet" },
-    { id: "MAPCxH-3DMH-1-001", college: "Norco College", typed: "3D Digital Modeling HS-CNUSD", course: "GAM 6A", ident: "M-ID MULT M1019", title: "3D Digital Modeling", issuer: "Corona-Norco Unified School District", students: "No students with credit yet", why: "the classifier alone was unsure (0.75)" }
+    { id: "MAPCXH-ITDM-1-001", college: "Cabrillo College", typed: "Introduction to Digital Media High School Articulation", course: "DM 1", ident: "C-ID ARTS 250", title: "Introduction to Digital Art", issuer: "Local High School", students: "442 students have credit on this exhibit", why: "the classifier alone was unsure (0.80)", step: "Proposed" },
+    { id: "MAPSAS-ACSA20-1-001", college: "Los Angeles Pierce College", typed: "AP Computer Science A - Score of 3 or higher - HISTORICAL Type 1", course: "", ident: "", title: "AP Computer Science A", issuer: "College Board", students: "398 students have credit on this exhibit", why: "an AP exam keeps its own name; held for a word left in the title", step: "Wording check" },
+    { id: "MAPCXH-ITDP-1-001", college: "Cabrillo College", typed: "Intro to Digital Photography High School Articulation", course: "AP 6", ident: "M-ID ARTS M1351", title: "Introduction to Digital Photography", issuer: "Local High School", students: "316 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
+    { id: "MAPCXH-RC1-1-001", college: "Cabrillo College", typed: "Residential Construction 1 High School Articulation", course: "CEM 178A", ident: "M-ID HVAC M10AE", title: "Residential Construction Skills 1: \"Front End\"", issuer: "Local High School", students: "160 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
+    { id: "MAPCXH-RC2-1-001", college: "Cabrillo College", typed: "Residential Construction 2 High School Articulation", course: "CEM 178B", ident: "M-ID CNST M1130", title: "Residential Construction Skills 2: \"Finish End\"", issuer: "Local High School", students: "158 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
+    { id: "MAPICI-1RO&-1-001", college: "Palo Verde College", typed: "1st Receiver Ops & Decon", course: "FST 121", ident: "M-ID ESCI M10HI", title: "First Receiver Operations & Decontamination for Healthcare", issuer: "", students: "Too few students to show", why: "the classifier alone was unsure (0.75); no issuer yet", step: "Proposed" },
+    { id: "MAPCxH-3DMH-1-001", college: "Norco College", typed: "3D Digital Modeling HS-CNUSD", course: "GAM 6A", ident: "M-ID MULT M1019", title: "3D Digital Modeling", issuer: "Corona-Norco Unified School District", students: "No students with credit yet", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
+    { id: "MAPCXS-A2-J-1-001", college: "Copper Mountain College, Modesto Junior College and Norco College", typed: "ADJU 232 - Juvenile Justice Procedures - Credit by Exam", course: "ADJ 8 (C-ID AJ 220, Juvenile Procedures)", ident: "the reference, reviewed by a person", title: "Juvenile Law and Procedures", issuer: "California Community Colleges", students: "Too few students to show", why: "the saved title disagrees with the reference", step: "Conflict with the reference", saved: "Saved by map@rccd.edu, 2026-06-02, as Juvenile Justice Procedures" },
+    { id: "MAPCXH-ATMI-1-001", college: "Santa Ana College", typed: "Automotive Technology MLR I & II - Irvine High School", course: "AUTO 102 (M-ID AUTO M9040, Introduction to Automotive)", ident: "the reference, reviewed by a person", title: "Automotive Technology Maintenance and Light Repair (MLR)", issuer: "Irvine High School", students: "No students with credit yet", why: "the saved title disagrees with the reference", step: "Conflict with the reference", saved: "Saved by map@rccd.edu, 2026-06-02, as Automotive Technology MLR I and II \u2014 Irvine High School" }
   ];
   var MAP = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?View=Non-Military&Exhibit=";
   var cur = 0;
   function $(id) { return document.getElementById(id); }
   function load(i) {
     cur = i; var h = HELD[i];
+    $("rc-step").textContent = "CER step: " + h.step;
+    $("rc-saved").textContent = h.saved || "";
     $("rc-who").textContent = "Current title, as " + h.college + " typed it";
     $("rc-current").textContent = h.typed;
     $("rc-course").textContent = h.course ? "Articulated to " + h.course : "";
@@ -466,7 +474,9 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
       b.type = "button"; b.setAttribute("role", "option");
       var t = document.createElement("span"); t.className = "rt"; t.textContent = h.typed;
       var m = document.createElement("span"); m.className = "rm"; m.textContent = h.college + " · " + h.id + (h.course ? " · " + h.course : "");
-      b.appendChild(t); b.appendChild(m);
+      var c = document.createElement("span"); c.className = "chip"; c.textContent = h.step;
+      var row = document.createElement("span"); row.className = "chiprow"; row.appendChild(m); row.appendChild(c);
+      b.appendChild(t); b.appendChild(row);
       b.addEventListener("click", function () { load(p[1]); $("find-exhibit").value = ""; list.hidden = true; $("proposed-title").focus(); });
       li.appendChild(b); list.appendChild(li);
     });
