@@ -140,6 +140,20 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
 .tobuild { font-size: 14px; color: var(--text-muted); font-style: italic; }
 .secthead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; }
 
+/* Status bar: one tile per component, the Commons pattern (a pair, a meter, the test behind it, one action) */
+.dash { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+@media (max-width: 860px) { .dash { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.tile { display: grid; gap: 4px; align-content: start; padding: 12px 14px; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; color: var(--text-body); text-decoration: none; min-width: 0; }
+.tile:hover { border-color: var(--border-strong); }
+.tile .tl { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+.tile .tn { font-size: 15px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.tile .tn b { font-size: 22px; color: var(--text-strong); font-weight: 600; }
+.tile .bar { height: 6px; background: var(--meter-track); border-radius: 3px; overflow: hidden; }
+.tile .bar i { display: block; height: 100%; background: var(--meter-fill); }
+.tile .tt { font-size: 13px; color: var(--text-muted); line-height: 1.35; }
+.tile .ts { font-size: 14px; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; }
+.stamps { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 4px 16px; font-size: 13px; color: var(--text-muted); }
+
 /* Advice + asks */
 .advice { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
 .advice div { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 18px; display: grid; gap: 6px; align-content: start; }
@@ -208,12 +222,19 @@ ol.asks b { color: var(--text-strong); }
         <h2>Exhibits</h2>
         <span class="crumb">Nightly run 2026-10-30 · <a href="#h-a">Rules that settled the rest</a></span>
       </div>
-      <div class="meter">
-        <div class="bar" role="img" aria-label="1,844 of 5,030 titles stamped, 37 percent"><i style="width:36.7%"></i></div>
-        <p><b class="num">1,844</b> of <span class="num">5,030</span> titles in the reference carry a review stamp. <b class="num">450</b> wait for you. The rules and the classifier settled what they could.</p>
+      <div class="dash" role="list" aria-label="Exhibits status, one tile per component">
+        <a class="tile" role="listitem" href="#h-a"><span class="tl">Names</span><span class="tn"><b>4,409</b> of 4,859</span><span class="bar" role="img" aria-label="91 percent"><i style="width:90.7%"></i></span><span class="tt">MAP titles under a canonical credential</span><span class="ts">450 wait for you</span></a>
+        <a class="tile" role="listitem" href="#h-a"><span class="tl">Reviewed</span><span class="tn"><b>1,844</b> of 5,030</span><span class="bar" role="img" aria-label="37 percent"><i style="width:36.7%"></i></span><span class="tt">titles with a person's or a rule's stamp</span><span class="ts">See the unstamped</span></a>
+        <a class="tile" role="listitem" href="#h-a2"><span class="tl">Issuers</span><span class="tn"><b>2,455</b> of 2,456</span><span class="bar" role="img" aria-label="nearly 100 percent"><i style="width:99.9%"></i></span><span class="tt">credentials naming an issuing agency</span><span class="ts">1,258 are college exams</span></a>
+        <a class="tile" role="listitem" href="#h-a2"><span class="tl">Field</span><span class="tn"><b>2,626</b> of 2,641</span><span class="bar" role="img" aria-label="99 percent"><i style="width:99.4%"></i></span><span class="tt">credentials with a CIP sector</span><span class="ts">15 without</span></a>
+        <a class="tile" role="listitem" href="#h-a2"><span class="tl">Registry</span><span class="tn"><b>11</b> of 89</span><span class="bar" role="img" aria-label="12 percent"><i style="width:12.4%"></i></span><span class="tt">industry credentials in MAP with a Credential Engine CTID</span><span class="ts">78 to link</span></a>
+        <a class="tile" role="listitem" href="#h-b"><span class="tl">Adoptable</span><span class="tn"><b>2,620</b> of 2,641</span><span class="bar" role="img" aria-label="99 percent"><i style="width:99.2%"></i></span><span class="tt">credentials with an exhibit to Request Quick Adopt from</span><span class="ts">21 without</span></a>
+        <a class="tile" role="listitem" href="#h-ai"><span class="tl">Course matches</span><span class="tn"><b>31</b> of 115</span><span class="bar" role="img" aria-label="27 percent"><i style="width:27%"></i></span><span class="tt">CPL-AI certifications joined to a MAP exhibit</span><span class="ts">84 to join</span></a>
+        <a class="tile" role="listitem" href="#h-a"><span class="tl">Students waiting</span><span class="tn"><b>3,000</b></span><span class="tt">students hold credit on titles still held; 40 titles carry 84%</span><span class="ts">Start with them</span></a>
       </div>
+      <div class="stamps"><span>Machine: the saving run 14:35Z and the fold 16:58Z, 2026-10-30 (daily)</span><span>The three credential totals (2,456, 2,465, 2,641) come from three builds today and become one when the tabs merge.</span></div>
       <nav class="views" aria-label="Views">
-        <a class="w on" href="#h-a">Review <span class="n">450</span></a>
+        <a class="w on" href="#h-a">Review <span class="n">468</span></a>
         <a class="w" href="#h-a2">Credentials <span class="n">2,465</span></a>
         <a class="w" href="#h-a">Rules <span class="n">12</span></a>
       </nav>
@@ -273,7 +294,7 @@ ol.asks b { color: var(--text-strong); }
     <div class="chrome"><span>COBI › Catalog Commons › Exhibits › Credentials</span><span>Signed in as a reviewer</span></div>
     <div class="pane">
       <nav class="views" aria-label="Views">
-        <a class="w" href="#h-a">Review <span class="n">450</span></a>
+        <a class="w" href="#h-a">Review <span class="n">468</span></a>
         <a class="w on" href="#h-a2">Credentials <span class="n">2,465</span></a>
         <a class="w" href="#h-a">Rules <span class="n">12</span></a>
       </nav>
