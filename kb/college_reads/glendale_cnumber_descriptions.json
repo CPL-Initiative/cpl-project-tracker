@@ -1,11 +1,11 @@
 {
- "_readme": "S527 SkyLoganberry, 2026-10-30. The courses Glendale's live records place without units lead with the state's C-numbers (STAT C1000 on 15 records, PSYC C1000 on 11, COMM C1000, POLS C1000, ENGL C1000) and the old numbers the entry renumbers to them (ENGL 101, ENGL 104, POL S 101). kb/_description_units.py read each description's number as C?\\d{1,3}, so a four-digit C-number never matched and none of these is in the units file. This read prints the description pages (128-301) whose header carries a four-digit C-number, so the parser can be fixed against the catalog's own words. One load of the 2025-2026 PDF, no model call.",
+ "_readme": "S527 SkyLoganberry, 2026-10-30. The courses Glendale's live records place without units lead with the state's C-numbers (STAT C1000 on 15 records, PSYC C1000 on 11, COMM C1000, POLS C1000, ENGL C1000) and the old numbers the entry renumbers to them (ENGL 101, ENGL 104, POL S 101). kb/_description_units.py read each description's number as C?\\d{1,3}, so a four-digit C-number never matched and none of these is in the units file. This read prints the description pages (128-301) whose header carries a four-digit C-number, so the parser can be fixed against the catalog's own words. One load of the 2025-2026 PDF, no model call. The first push (run 41047695384) matched no page: the ' · ' in a log is the reader folding short lines, so the keyword now matches a C-number standing alone on its line.",
  "college": "Glendale Community College",
  "questions": {
   "course_units": "Each course description numbered C followed by four digits: its number, title, units and the code its body names."
  },
  "keywords": [
-  "\\bC\\s*\\d\\s*\\d\\s*\\d\\s*\\d\\s*[EH]?\\s*·\\s*[A-Z(]"
+  "(?:^|\\n)[ \\t]*C[ \\t]?\\d{4}[EH]?[ \\t]*(?:\\n|$)"
  ],
  "pages": [
   {
