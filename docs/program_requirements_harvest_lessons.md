@@ -1019,6 +1019,25 @@ S445 SkyCurrant (a shared page per heading, MiraCosta's degree lists, Palomar's 
 lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`, and S446 SkyMadrone
 (a degree-and-certificate address, 91 records) since the S523 compaction.
 
+## S525 SkyTayberry (2026-10-30, the CPL Queue routine): S524's prose totals were borrowed; the scope starts at the heading
+
+- **All 8 of S524's prose totals were the first program's on the page.** Page read 41025920825 (`glendale_unequal_sums`,
+  pages 79-114, free) printed the pages: Computer Support Technician (p97) prints no total and took IT Technician II's
+  32; the Advanced ESL Business and Health pair (p101) print none and took 21; Grip and Lighting (p106), an 8-to-16-unit
+  certificate, took 18-20. S524's `before` cut the page at its first list, which belongs to the page's first program.
+- **The fix:** the fill reads from the record's own `section_heading` (letters and digits only, case kept, so the PDF's
+  letter-spaced "ADV ANCED ESL ... PAT H WAY" matches and a description's mixed-case title does not) to the first list
+  after it; a heading the page does not print fills nothing. Guard: `program_requirements_pilot_test` (the page-97 shape).
+- **The rollback:** the 8 filed records restored from 59938a29; the live rows through `supabase-migrate.yml` running
+  S524's own receipt rollback (receipt `program_requirement_records_glendale_prose_total_rollback_s525`). Back to
+  incomplete with no total, which is the truth for the four read.
+- **The read also names real gaps, for a later reconcile or re-extraction:** IT Technician II prints 10 courses "to a
+  total of 32" and the record sums 31 (BUSAD 204 reads 1 unit); IT Technician III prints 13 courses to 42, the record
+  sums 38 with CS/IS 187 unpriced. Grip and Lighting's FTVM 132 and 137 carry no units. Unix-Linux's heading prints as
+  "UNIX/LINUX", which the plan's keyword missed.
+- **Lesson: verify a fill's figures against the page before the reread, not the count.** S524 checked which records
+  changed; none of the 8 was compared with its own page, and a borrowed figure looks like a found one.
+
 ## S524 SkyCranberry (2026-10-30, the CPL Queue routine): Glendale's prose totals, 8 records from incomplete to unequal
 
 - **Glendale prints a program's total as prose ahead of its list:** "must complete all required core courses for a
