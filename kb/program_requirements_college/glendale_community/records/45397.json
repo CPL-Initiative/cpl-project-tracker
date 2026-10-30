@@ -69,18 +69,15 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     0.0,
     0.0
    ],
-   "stated": [
-    28.0,
-    30.0
-   ],
-   "against": "program",
+   "stated": null,
+   "against": null,
    "why": [
-    "the blocks sum to 0.0-0.0; the catalog states 28.0-30.0"
+    "the record names no total"
    ]
   },
   "repeated": {
@@ -112,8 +109,8 @@
    "section_heading": "FINANCIAL PLANNING AND INVESTMENT",
    "measure": "units",
    "total_units": {
-    "min": 28,
-    "max": 30
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -163,20 +160,5 @@
   ],
   "notes": []
  },
- "extracted_run": 41020193189,
- "reconciled": [
-  {
-   "field": "total_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 28,
-    "max": 30
-   },
-   "words": "for a total \nof 28-30 units"
-  }
- ],
- "read_run": "39063367252"
+ "extracted_run": "39063367252"
 }

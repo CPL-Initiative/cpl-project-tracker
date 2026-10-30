@@ -72,18 +72,15 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "unequal",
+   "status": "incomplete",
    "computed": [
     22.0,
     22.0
    ],
-   "stated": [
-    32.0,
-    32.0
-   ],
-   "against": "program",
+   "stated": null,
+   "against": null,
    "why": [
-    "the blocks sum to 22.0-22.0; the catalog states 32.0-32.0"
+    "the record names no total"
    ]
   },
   "repeated": {
@@ -115,8 +112,8 @@
    "section_heading": "COMPUTER SUPPORT TECHNICIAN CERTIFICATE NON-DEGREE",
    "measure": "units",
    "total_units": {
-    "min": 32,
-    "max": 32
+    "min": null,
+    "max": null
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -229,20 +226,39 @@
    "No careers are named in the Computer Support Technician section."
   ]
  },
- "extracted_run": 41020193189,
- "read_run": 41012563119,
+ "extracted_run": 41012563119,
+ "read_run": 40711704988,
  "reconciled": [
   {
-   "field": "total_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "course_units",
+   "was": null,
    "now": {
-    "min": 32,
-    "max": 32
+    "CABOT 102": [
+     4.0,
+     4.0
+    ],
+    "BUSAD 110": [
+     3.0,
+     3.0
+    ],
+    "CS/IS 101": [
+     5.0,
+     5.0
+    ],
+    "CS/IS 112": [
+     3.0,
+     3.0
+    ],
+    "CS/IS 172": [
+     4.0,
+     4.0
+    ],
+    "CS/IS 190": [
+     3.0,
+     3.0
+    ]
    },
-   "words": "for a total of 32 units"
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
   }
  ]
 }
