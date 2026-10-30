@@ -14612,7 +14612,7 @@
       "program-requirements",
       "catalog-harvest"
      ],
-     "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S407)",
+     "title": "Program requirements harvest lessons \u2014 archive 3 (S399-S415)",
      "type": null,
      "updated": "2026-10-30"
     },
@@ -15619,7 +15619,7 @@
      ],
      "title": "Implementation Funding tab / the $35M model \u2014 lane state",
      "type": null,
-     "updated": "2026-10-28"
+     "updated": "2026-10-30"
     },
     {
      "created": "2026-10-23",
@@ -15794,7 +15794,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-28"
+     "updated": "2026-10-30"
     },
     {
      "created": "2026-08-28",
@@ -16262,8 +16262,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 499,
+   "count": 500,
    "docs": [
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "n": 531,
+     "path": "docs/session_531_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "los-angeles-valley",
+      "reconcile",
+      "implementation-funding",
+      "decision-sheet"
+     ],
+     "title": "Session 531 handoff: Los Angeles Valley 114 to 167 passing, the reconcile's moved-page guard reads the heading, the funding rows show a waiting request with Accept, Sheet 146",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24800,5 +24818,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1319
+ "total": 1320
 }

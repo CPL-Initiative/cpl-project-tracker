@@ -61,34 +61,37 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     35.0,
     35.0
    ],
    "stated": [
-    60.0,
-    60.0
+    35.0,
+    35.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the blocks and general education sum to 35.0-35.0; the catalog prints 60.0-60.0 for the degree"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     35.0,
-     35.0
+     62.0,
+     69.0
     ],
     "stated": [
-     35.0,
-     35.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -113,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -134,8 +137,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -150,7 +153,8 @@
     "Pre-Press Production",
     "Illustrator",
     "Digital Designer"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -332,5 +336,26 @@
    "The Certificate of Achievement in Art: Graphic Design (Total: 29, adds ART 606 as required) on the next page is a separate award and was not used."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41117814733,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 27,
+    "max": 34
+   },
+   "words": "Total Minimum Units: 60 (https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32: Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen.)"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

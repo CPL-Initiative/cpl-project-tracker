@@ -147,7 +147,8 @@
     "Use calculus to solve problems in mechanics, electricity and magnetism.",
     "Analyze and solve problems in thermodynamics, wave mechanics, quantum mechanics, and special relativity."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -276,5 +277,14 @@
    "The Physics AS section on the following page (different award) was not read for this record."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

@@ -1754,6 +1754,79 @@ check(RC.reconcile(cer_bio, CER_BIO.replace("(2) the General Education requireme
                    "Cerritos College", "A.A. Degree")[0]["program"].get("ge_units") is None,
       "the GE step needs the page's own words for the local pattern")
 
+# Los Angeles Valley (S530): every degree page's foot prints "Major Units: 34 Total Minimum Units: 60", and the
+# catalog's Associate Degree Programs page prints the GE: LACCD GE Plan 27, Cal-GETC 34, "60, regardless of which GE
+# Plan is chosen" (college-page-read 41113266504). A continuation page (Banking and Finance, p82) prints no GE footnote.
+LAVC_ACCTG = ("PROGRAMS OFFERED:\nAccounting AA V002942C Any\nGE^\n34 Y\n^The associate-level general education plan "
+              "(LACCD GE Plan) is\nappropriate for students planning to earn an associate degree\nCOMPLETE THE FOLLOWING 7 "
+              "REQUIRED COURSES:\nACCTG 001 ...........  Introductory Accounting I.... 5\nMajor Units: 34 Total Minimum Units: 60\n"
+              "CERTIFICATE OF ACHIEVEMENT:\nACCOUNTING\nTotal: 22")
+LAVC_BANK = "ASSOCIATE DEGREE:\nBANKING AND FINANCE\nCOMPLETE THE FOLLOWING 8 REQUIRED COURSES:\nMajor Units: 37 Total Minimum Units: 60"
+lavc_acctg = {"program": {"total_units": {"min": 34, "max": 34}, "degree_total": {"min": 60, "max": 60},
+                          "ge_pattern": "Any GE (LACCD GE Plan or Cal-GETC)", "ge_units": {"min": None, "max": None}}, "blocks": []}
+check(S.degree_check(lavc_acctg["program"], (60.0, 60.0), 34.0, 34.0, [], LAVC_ACCTG, "A.A. Degree")["status"] == "incomplete",
+      "LA Valley Accounting as read: Any GE and no units for it")
+new, notes = RC.reconcile(lavc_acctg, LAVC_ACCTG, "Los Angeles Valley College", "A.A. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 34.0, 34.0, [], LAVC_ACCTG, "A.A. Degree")
+check([n["field"] for n in notes] == ["ge_units", "degree_total_minimum"] and new["program"]["ge_units"] == {"min": 27, "max": 34}
+      and "page=32" in notes[0]["words"] and "Total Minimum Units: 60" in notes[0]["words"]
+      and deg["pass"] and deg.get("minimum") and deg["computed"] == [61.0, 68.0],
+      "LA Valley Accounting reconciled: GE 27-34 from the catalog's GE page, the 60 a floor the 34-unit major and GE "
+      "meet: %s %s" % (json.dumps(notes), json.dumps(deg)))
+lavc_bank = {"program": {"total_units": {"min": 37, "max": 37}, "degree_total": {"min": 60, "max": 60}}, "blocks": []}
+check(not S.degree_check(lavc_bank["program"], (60.0, 60.0), 37.0, 37.0, [], LAVC_BANK, "A.A. Degree")["pass"],
+      "LA Valley Banking and Finance as read: the major alone against 60")
+new, notes = RC.reconcile(lavc_bank, LAVC_BANK, "Los Angeles Valley College", "A.A. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 37.0, 37.0, [], LAVC_BANK, "A.A. Degree")
+check(new["program"]["ge_units"] == {"min": 27, "max": 34} and deg["pass"] and deg.get("minimum"),
+      "LA Valley Banking and Finance, on a page with no GE footnote: its Total Minimum Units line carries the steps: %s"
+      % json.dumps(deg))
+new, notes = RC.reconcile({"program": {}, "blocks": []}, LAVC_ACCTG, "Los Angeles Valley College", "A.S. T Degree")
+check(new["program"]["ge_units"] == {"min": 34, "max": 34} and new["program"].get("degree_total_minimum"),
+      "an LA Valley transfer degree takes Cal-GETC's 34, never the LACCD plan's 27")
+check(RC.reconcile({"program": {}, "blocks": []}, LAVC_ACCTG, "Los Angeles Valley College",
+                   "Certificate of Achievement requiring 18S/27Q to fewer than 30S/45Q units")[1] == []
+      and RC.reconcile({"program": {}, "blocks": []}, "Major Units: 34 Total: 22", "Los Angeles Valley College", "A.A. Degree")[1] == [],
+      "LA Valley's steps read degrees only, and only a page printing the degree's Total Minimum Units")
+
+# S530: LA Valley's capture now starts a degree one page early, on the Programs Offered table naming it. The
+# moved-page guard (S403) still holds a record out of the reconcile unless the fresh text, from the same file,
+# prints the record's own heading and the record places a course (own_heading_kept).
+import _program_requirements_college as PC_OWN  # noqa: E402
+_lavc_pdf = "https://www.lavc.edu/catalog.pdf"
+_bank_rec = {"program": {"section_heading": "BANKING AND FINANCE Associate of Arts Degree (AA)",
+                         "total_units": {"min": 6, "max": 6}, "degree_total": {"min": 60, "max": 60}},
+             "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "FINANCE 002", "units": 3},
+                                                                      {"code": "LAW 001", "units": 3}]}]}
+_bank_filed = {"control_number": "02943", "award": "A.A. Degree", "source_url": _lavc_pdf + "#page=84",
+               "extracted_run": 39006418426, "record": _bank_rec}
+_bank_text = ("PROGRAMS OFFERED: Banking and Finance AA V002943C Any GE^ 37\nASSOCIATE DEGREE:\nBANKING AND FINANCE\n"
+              "Associate of Arts Degree (AA)\nFINANCE 002 .... 3\nLAW 001 .... 3\nMajor Units: 6 Total Minimum Units: 60")
+_bank_src = {"control_number": "02943", "text": _bank_text, "source": {"url": _lavc_pdf + "#page=83"},
+             "closed_list": [{"code": "FINANCE 002", "units": 3}, {"code": "LAW 001", "units": 3}]}
+check(PC_OWN.own_heading_kept(_bank_src, _bank_filed)
+      and not PC_OWN.own_heading_kept({**_bank_src, "text": "MANAGEMENT Associate of Arts Degree (AA) Total Minimum Units: 60"},
+                                      _bank_filed)
+      and not PC_OWN.own_heading_kept({**_bank_src, "source": {"url": "https://www.lavc.edu/addendum.pdf#page=3"}}, _bank_filed)
+      and not PC_OWN.own_heading_kept(_bank_src, {**_bank_filed, "record": {**_bank_rec, "blocks": []}}),
+      "a moved record is kept only on the same file, with its own heading printed and a course placed")
+_tmp = tempfile.mkdtemp()
+os.makedirs(os.path.join(_tmp, "out", "sources")); os.makedirs(os.path.join(_tmp, "kept", "records"))
+json.dump(_bank_src, open(os.path.join(_tmp, "out", "sources", "02943.json"), "w"))
+json.dump(_bank_filed, open(os.path.join(_tmp, "kept", "records", "02943.json"), "w"))
+PC_OWN.reconcile_filed("Los Angeles Valley College", os.path.join(_tmp, "out"), "41114987325", os.path.join(_tmp, "kept"))
+_bank_out = json.load(open(os.path.join(_tmp, "out", "records", "02943.json")))
+check(_bank_out["extracted_run"] == 41114987325 and _bank_out["record"]["program"]["ge_units"] == {"min": 27, "max": 34}
+      and _bank_out["record"]["program"].get("degree_total_minimum") and _bank_out["score"]["arithmetic"]["status"] == "equal",
+      "LA Valley Banking and Finance, captured a page early, reconciles and passes: %s"
+      % json.dumps(_bank_out.get("score", {}).get("arithmetic")))
+json.dump({**_bank_src, "text": "MANAGEMENT\nMajor Units: 38 Total Minimum Units: 60"},
+          open(os.path.join(_tmp, "out", "sources", "02943.json"), "w"))
+PC_OWN.reconcile_filed("Los Angeles Valley College", os.path.join(_tmp, "out"), "41114987325", os.path.join(_tmp, "kept"))
+check(json.load(open(os.path.join(_tmp, "out", "records", "02943.json")))["extracted_run"] == 39006418426,
+      "a moved record whose heading the fresh text does not print stays as filed (S403's guard)")
+shutil.rmtree(_tmp)
+
 # Taft (S415): a transfer degree names Cal-GETC and prints no units for it; its own Cal-GETC page prints none
 # (college-page-read 39122581817). The step sets the statewide 34; transferable electives make up the 60.
 TAFT_ECE = ("ECEF 1601\tDiversity in Early Care, Education and Family Studies\n3.00 Credits(s) \u00b7 Total Credit Hours: 24 "

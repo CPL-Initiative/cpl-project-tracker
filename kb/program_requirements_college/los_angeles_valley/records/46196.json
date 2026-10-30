@@ -94,7 +94,11 @@
      34.0
     ],
     "why": [],
-    "within": true
+    "minimum": true,
+    "fill": [
+     0.0,
+     2.0
+    ]
    }
   },
   "repeated": {
@@ -149,7 +153,8 @@
     "Use an interdisciplinary approach to understand historical and contemporary issues.",
     "Apply an interdisciplinary approach to explaining the diversity of the human condition."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -244,5 +249,14 @@
    "The 18-unit minimum for Major/Area of Emphasis is a general ADT rule and not used as the award total."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

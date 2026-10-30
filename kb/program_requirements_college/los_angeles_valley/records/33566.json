@@ -90,7 +90,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      7.0,
      7.0
@@ -149,7 +149,8 @@
     "Distinguish various biological systems that are fundamental to behavior and experience.",
     "Apply the logic of hypothesis testing in science to everyday life."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -334,5 +335,14 @@
    "The Program Student Learning Outcomes are printed once for the program; the AA-T is the only award in this section."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

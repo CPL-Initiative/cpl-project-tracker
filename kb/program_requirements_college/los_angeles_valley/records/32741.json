@@ -94,7 +94,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      1.0,
      1.0
@@ -153,7 +153,8 @@
     "Develop, implement and evaluate developmentally appropriate curriculum activities in an early childhood inclusive classroom environment that supports high quality education.",
     "Identify and apply professional behaviors and ethical standards when working with children, families, staff, colleagues, and communities."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -235,5 +236,14 @@
    "The 'A minimum of 18 semester units' major requirement sentence is generic ADT language and not used as the total."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

@@ -270,6 +270,31 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "conf
     mails.length === 1 && mails[0].indexOf("mailto:ben%40mtsac.edu?") === 0 &&
     decodeURIComponent(mails[0]).indexOf("If you did not send this request, please reply to this email.") >= 0);
 }
+// D0r (S530; Sam, 2026-10-30: "a chip to the college rows showing that a confirmation has been submitted and a
+// way for the MAP team to respond easily with an acceptance--same thing needed for the NC Lead attestation").
+{
+  const waiting = JSON.parse(JSON.stringify(STANDING)); waiting[COLLEGE].status = "self_attested";
+  const rev = JSON.parse(JSON.stringify(REVIEW)); rev[0].status = "self_attested";
+  const { window, doc, T } = setup({ signedIn: true, elig: { ncAttestOk: true, ncAttest: waiting, ncAttestReview: rev } });
+  const mails = [];
+  window.CPL_FUNDING_OPEN_MAIL = function (href) { mails.push(href); };
+  const tr = rowOf(doc, COLLEGE);
+  const word = tr && Array.from(tr.querySelectorAll("td.cf-inst .cf-waitchip")).find((s) => s.textContent === "NC Lead attestation submitted");
+  const acc = tr && tr.querySelector("td.cf-inst [data-ncattestaccept]");
+  check("D0r: the row says the Lead attestation was submitted and offers a reviewer Accept there",
+    !!word && /Awaiting CPL Initiative Confirmation/.test(word.getAttribute("title")) &&
+    !!acc && acc.textContent === "Accept" && /^Accept the Noncredit CPL Lead attestation for /.test(acc.getAttribute("aria-label")));
+  if (acc) click(window, acc);
+  check("D0s: the row's Accept confirms it and opens the email to the attestor; the row's word leaves",
+    T._ncAttest(COLLEGE).status === "confirmed" && mails.length === 1 && mails[0].indexOf("mailto:ben%40mtsac.edu?") === 0 &&
+    !rowOf(doc, COLLEGE).querySelector(".cf-waitchip"));
+  const waiting2 = JSON.parse(JSON.stringify(STANDING)); waiting2[COLLEGE].status = "self_attested";
+  const pub = setup({ public: true, elig: { ncAttestOk: true, ncAttest: waiting2 } });
+  const ptr = rowOf(pub.doc, COLLEGE);
+  check("D0t: the public row shows the submitted word and no Accept",
+    !!ptr && Array.from(ptr.querySelectorAll(".cf-waitchip")).some((s) => s.textContent === "NC Lead attestation submitted") &&
+    !ptr.querySelector("[data-ncattestaccept]"));
+}
 {
   const waiting = JSON.parse(JSON.stringify(STANDING)); waiting[COLLEGE].status = "self_attested";
   const { window, doc, T } = setup({ signedIn: true, elig: { ncAttestOk: true, ncAttest: waiting, ncAttestReview: REVIEW } });

@@ -90,7 +90,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      8.0,
      8.0
@@ -149,7 +149,8 @@
     "Be able to critically assess the strength of arguments in the fields of morality, politics, and everyday life.",
     "Determine whether a given argument is valid or invalid."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -276,5 +277,14 @@
    "The PHILOS 006 course appears only in the AA section and is not part of this award."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

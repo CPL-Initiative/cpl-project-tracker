@@ -1,7 +1,7 @@
 ---
 title: "Implementation Funding tab / the $35M model — lane state"
 created: 2026-08-28
-updated: 2026-10-28
+updated: 2026-10-30
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -25,7 +25,7 @@ related:
 
 ✅ **THE INTRODUCTION VIDEO: CPL Funding in Motion** ([README](../../../prototype/funding_video/README.md)): ⭐ the introduction link is always the published film; its figures script and Scenario 4 words lessons, *Moved from the lane (S480)*.
 
-✅ **Sam's phone asks of 2026-10-29 (S518, #2558):** one narrated video from the Contents (`n2.html?full=1`, opening filling the window), its row Play, Full screen and the way back to the public page, the film pages Light; the header lighter on a phone. Detail: [the film's README](../../../prototype/funding_video/README.md), *The page on a phone (S518)*. **Open, Sam's call:** an address without github.io (handoff 509 item 2).
+✅ **Sam's phone asks of 2026-10-29 (S518, #2558):** lessons, *Moved from the lane (S530)*.
 
 ✅ **THE TAB:** introduction first (`ABOUT_DEFAULT_HTML` is **Sam's own approved introduction**), then the institution table; sections build into an id-keyed map joined in a stored order (`secOrder`; the public page's `pubSecOrder`). ⭐ **ID-KEYED, NEVER POSITIONAL** (an unknown id is ignored, an unnamed one appends). A card's goal derives from its metric's milestone by default (`prioGoals()`). Prose blocks edit in curate (`TEXT_BLOCKS`); one curator section holds the explainer's and My CPL Funding's passages, an emptied passage stays empty (`TEXT_BLANK`) and bullets nest (lessons, *S506*). ⚠️ **A REPORTED CARD IS NEVER AN ENTRY IN `priorities(slot)`**: share 0 there still enters every sum, column, export and memo. ⚠️ **The register is INLINE in both HTMLs**, never loaded from `CPL_Data.js`; the designated NAME rides the config, the weekly STATUS does not.
 
@@ -39,7 +39,7 @@ related:
 
 ✅ **The funding FAQ: 45 questions in eight groups in `FAQ_DEFAULT_PLAIN`** (the tab and the public page; no `faq` or `x_faq` override, read live 10-29; `funding-model/faq.json` files it for Sierra, `scripts/build_funding_faq.js --check` guards it). Sam's settled 25 (Open Asks Sheet 138; card 8 left out; card 9 names apportionment as he wrote it, Sheet 139 card 2), Malone's twelve (Sam, 10-28: *"push them as written by Malone"*; `cpl_funding_calm` and `cpl_funding_earn_retired` exempt his sentences by name), and Sam's eight of 10-29 (*"Please review these new FAQs and add to funding model"*; his two NOVA questions on his Sheet 140 rulings) in two new groups, **Reporting in NOVA** and **Apprenticeship CPL**, in his words but for four edits named in the code's comment (lists as sentences, *Yes.* for *Absolutely!*, the MAP platform for *the MAP Initiative*, *Colleges may describe* for *The presentation identifies*). Guards `cpl_funding_faq_sheet138`, `cpl_funding_faq_groups`, `sierra_funding_faq`.
 
-⏳ **NEEDS SAM (S519; Sheet 140 card 4, Sheet 141 card 2 and Sheet 142 card 3, each "later"):** an address without github.io: a map.rccd.edu forwarding address now (Malone, ITPI), or a custom domain (one DNS record from RCCD or CO IT, one Pages setting). Sheet 140's other three cards, ruled: lessons, *Moved from the lane (S520)*.
+**An address without github.io is Sam's, with Malone (Sheet 146 card 1, 2026-10-30, "later": *"No need to ask about this anymore. I will work on it with Malone later"*):** no card asks it again; the options (a map.rccd.edu forwarding address, or a custom domain) and Sheet 140's other three cards: lessons, *Moved from the lane (S520)*.
 
 ✅ **The CSM team's test fixes before the Summit (Sam, 2026-10-29; S519):** Funds Qualified So Far for *Curr* and the sums that add the rows (above); the table's short names *Coalinga*, *Imperial Valley*, *Norco*, *Reedley*, *Cañada* and *Mt. San Antonio* (`display` in `cpl_funding_data.js`; the join keys stay); the Sources line's FTES link at DataMart's current address (`/Students/FTES_Summary.aspx`; `/Outcomes/` answers 404); a **Clear** word beside the search box, shown while it holds a search. On main since #2560 (S520, 22:36Z), with #2563 (the public page paints the published scenario first). Guards `cpl_funding_college_dashboard`, `cpl_funding_pool`. ✅ **Sam renamed his three saved Scenario 4 passages himself (Open Asks Sheet 141 card 1, *pasted*, 23:28Z 2026-10-29):** the reading note, the college introduction and the table introduction say *Funds Qualified So Far*, read back at 23:30Z. Scenarios 2 and 3, which do not publish, still say *Curr* in three passages.
 
@@ -87,7 +87,7 @@ says 116 and 2, and a Priority 3 strategy still ends in *studentsr*.
 
 ✅ **Scenario 4 (built S449, 2026-10-22) and the public requests' MAP team review (S502):** verbatim in `docs/cpl_funding_lessons.md`, *Moved from the lane (S519)*; guards `cpl_funding_nc_outcomes`, `cpl_funding_nc_attestation`.
 
-**Email first, the domain gate measured, NOCE's district domain, *Awaiting CPL Initiative Confirmation* (Sam, 2026-10-28; S506):** lessons, *S506*; guards `cpl_funding_optin` G1–G6, `cpl_funding_nc_attestation` C1b–C1d; a district's own domain lives in `cpl_funding_district_domains`.
+**Email-first forms and *Awaiting CPL Initiative Confirmation* (S506); a row's submitted word with a reviewer's Accept (Sam, 2026-10-30; S530):** lessons *S506*, *S530*; guards `cpl_funding_optin` G1–G6 and R1–R3, `cpl_funding_nc_attestation` C1b–C1d and D0r–D0t; a district's own domain lives in `cpl_funding_district_domains`. **Sam chose Microsoft 365 for Accept's email (Sheet 146 card 3, *m365*):** COBI sends as map@rccd.edu once RCCD IT grants the one mailbox; the request is drafted for him (lessons S530). NEXT: map the sender in `kb/governance_surface_map.json`, then build it.
 
 ✅ **The attestation form in Sam's words (#2476):** lessons, *Moved from the lane (S494)*; `NC_LEAD_TYPES` matches `cna_lead_chk`.
 

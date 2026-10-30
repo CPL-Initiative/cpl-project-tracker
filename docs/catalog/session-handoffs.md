@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-499 document(s).
+500 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 531 | [Session 531 handoff: Los Angeles Valley 114 to 167 passing, the reconcile's moved-page guard reads the heading, the funding rows show a waiting request with Accept, Sheet 146](../session_531_handoff.md) | 2026-10-30 |
 | 530 | [Session 530 handoff: the Fact Sheet's labels and Request Quick Adopt, the vault indexers' race behind Sierra's Cabrillo miss, Sheet 144 asks for the printed units as a floor](../session_530_handoff.md) | 2026-10-30 |
 | 529 | [Session 529 handoff: Glendale's unequal sums read against their pages; Sheet 143 asks which number a printed list counts](../session_529_handoff.md) | 2026-10-30 |
 | 528 | [Session 528 handoff: Glendale parked at 115 of 226 under Sam's stopping rule; Mark done alerts the queue](../session_528_handoff.md) | 2026-10-30 |

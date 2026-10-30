@@ -91,6 +91,9 @@
   "careers": {
    "count": 4,
    "not_verbatim": [
+    "Recording Technician",
+    "Composer/Arranger",
+    "Music Copyist",
     "Musician/Performer"
    ],
    "pass": false
@@ -214,5 +217,6 @@
    "MUSIC 265-1 is marked with an asterisk (has a prerequisite or corequisite)."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "read_run": "39006418426"
 }

@@ -28,6 +28,9 @@ function check(name, cond) { results.push([name, !!cond]); }
 
 const sandbox = { window: {} };
 vm.createContext(sandbox);
+// map_links.js first, as library/cpl-opportunity/index.html and COBI load it: the workbook takes
+// MAP's address from it (CPL_MAP_LINKS.url) and spells none of its own (S530).
+vm.runInContext(fs.readFileSync("map_links.js", "utf8"), sandbox);
 vm.runInContext(fs.readFileSync("college_cpl_workbook.js", "utf8"), sandbox);
 const W = sandbox.window.CPL_COLLEGE_WORKBOOK;
 
@@ -192,6 +195,19 @@ check("the CPL Pathways college picker links the college's visual", /"library\/c
 check("…and offers the extract", /textContent = "Download CPL Extract"/.test(pw));
 check("…and hides both until a college is chosen", /opp\.hidden = !col\.value/.test(pw) && /\.cplpw-oppacts\[hidden\] \{ display:none; \}/.test(pw));
 const page = fs.readFileSync("library/cpl-opportunity/index.html", "utf8");
+check("the workbook spells no MAP address; map_links.js holds the one (S530)",
+  !/azurewebsites|exhibit-courses|View=Non-Military"/.test(fs.readFileSync("college_cpl_workbook.js", "utf8")));
+check("the library page loads map_links.js before the workbook",
+  page.indexOf('<script src="../../map_links.js"></script>') > 0 &&
+  page.indexOf('<script src="../../map_links.js"></script>') < page.indexOf('<script src="../../college_cpl_workbook.js"></script>'));
+const bare = { window: {} };
+vm.createContext(bare);
+vm.runInContext(fs.readFileSync("college_cpl_workbook.js", "utf8"), bare);
+const b4 = bare.window.CPL_COLLEGE_WORKBOOK.build({ college: COLLEGE, today: "x", lookup: lookup, members: members, aligned: aligned,
+  statewide: statewide, programs: programs, catalog: [], verified: { checked_at: "2026-10-20T19:00Z", found: { "MAPICI-CN-1-001": { title: "CompTIA Network+" } } } });
+const nw4 = b4.swRows.find(function (r) { return r.title === "CompTIA Network+"; });
+check("without map_links.js a verified CR gets no link and says why",
+  nw4 && nw4.link === "" && /map_links\.js/.test(nw4.linkStatus));
 const oldPage = fs.readFileSync("cpl-opportunity/index.html", "utf8");
 check("the old address forwards to the library's, keeping ?college= and #section (Sheet 131 card 2)",
   /var to = "\.\.\/library\/cpl-opportunity\/" \+ \(location\.search \|\| ""\) \+ \(location\.hash \|\| ""\);/.test(oldPage) &&

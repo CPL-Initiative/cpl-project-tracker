@@ -45,7 +45,7 @@ function boot(withVerified) {
     ? (withVerified ? { ok: true, status: 200, json: () => Promise.resolve(VERIFIED) } : { ok: false, status: 404, json: () => Promise.resolve(null) })
     : { ok: true, status: 200, json: () => Promise.resolve([]) });
   let threw = false;
-  try { w.eval(src); } catch (e) { threw = true; console.error("init threw:", e); }
+  try { w.eval(fs.readFileSync("map_links.js", "utf8")); w.eval(src); } catch (e) { threw = true; console.error("init threw:", e); }
   return { w, threw };
 }
 
@@ -82,6 +82,8 @@ setTimeout(() => {
   const docB = B.w.document;
   check("with no verification file the tab renders with no MAP links",
     !!docB.querySelector(".cv-credential") && !docB.querySelector("a.sw-map-chip"));
+  check("the tab spells no MAP address; map_links.js holds the one (S530)",
+    !/azurewebsites|exhibit-courses|View=Non-Military"/.test(src));
   check("the chip is a 24px target with an underline",
     /\.sw-map-chip\{[^}]*min-height:24px;[^}]*text-decoration:underline;/.test(src));
 

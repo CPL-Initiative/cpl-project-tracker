@@ -590,6 +590,41 @@
      "why": "S524 SkyCranberry, 2026-10-30. Glendale's program pages print no 'Total Units' line; the description paragraph states the total in prose before the course list: 'Students must complete all required core courses for a total of 19 - 21 units' (Biotechnology Research Lab Assistant, pdf page 92), 'must complete all the required courses for a minimum of 9 units' (Social Media Marketing I, page 113), 'The student must complete all CORE courses totaling 17-18 units' (Tax Preparer, page 113; college-page-read 40690480267). 41 filed records name no total (live read 2026-10-30). The step reads only the words ahead of the program's first list ('Required Courses', 'Coursework required', 'Select'), because a program printing no total runs on into the next program's paragraph on the same page (Restaurant Management, then Social Media Marketing I's 'minimum of 9 units'). S525 SkyTayberry: the words run from the record's own heading (section_heading) to its first list; read from the top of the page, all 8 of S524's fills took the first program's total (page read 41025920825) and were rolled back."
     }
    ]
+  },
+  "Los Angeles Valley College": {
+   "why": "All 67 of Los Angeles Valley's failing associate-degree records add their major up equal and fail at the degree: 38 sum the major alone against 60 (unequal), 29 name 'Any GE (LACCD GE Plan or Cal-GETC)' and no units for it (incomplete). College page read 41113266504 (S530 SkyBuffaloberry, 2026-10-30) prints every degree page's foot as 'Major Units: 34 Total Minimum Units: 60' (Accounting A.A. 02942, p80 printed; Banking and Finance 02943, Management 02945 and Marketing 02947, p82), so the 60 is a floor. The catalog's Associate Degree Programs page (p30 printed) states the GE: 'Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+' and 'The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen'; the LACCD plan's own page (p31) prints 'GENERAL EDUCATION REQUIREMENTS: Minimum of 27 semester units' and 'The LACCD GE plan may NOT be used for Associate Degrees for Transfer (ADTs)'. A continuation page (p82) prints no GE footnote of its own, so the steps key on the degree's 'Total Minimum Units' line, which every degree page prints. A transfer degree takes Cal-GETC's 34 first; a local degree the span of the two plans, 27-34.",
+   "awards": "associate",
+   "steps": [
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "pattern": "Total\\s+Minimum\\s+Units:\\s*60\\b",
+     "source": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32",
+     "source_words": "Cal-GETC 34 18+ ... The LACCD GE plan may NOT be used for Associate Degrees for Transfer (ADTs)."
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 27,
+      "max": 34
+     },
+     "pattern": "Total\\s+Minimum\\s+Units:\\s*60\\b",
+     "source": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32",
+     "source_words": "Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen."
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "pattern": "Total\\s+Minimum\\s+Units:\\s*60\\b"
+    }
+   ]
   }
  }
 }

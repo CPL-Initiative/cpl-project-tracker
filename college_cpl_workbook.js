@@ -42,11 +42,12 @@
 
   // AP and IB are left out; CLEP stays in (Ashley, 2026-10-20: "excluding AP and IB. Include CLEP exhibits").
   var EXAM_RE = /^\s*(AP|IB)\b/i;
-  var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
-  /* MAP opens that page already searched for whatever ?Exhibit= carries (Malone, live 2026-10-26),
-   * so the link lands on the exhibit's card and its Request Quick Adopt, with nothing to paste. */
-  /* View=Non-Military opens the Non-Military Credit tab on the exhibit's own card (Pedro, 2026-10-28). */
-  function mapLink(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + "&View=Non-Military"; }
+  /* MAP's CPL Opportunities page opens already searched for whatever ?Exhibit= carries (Malone, live
+   * 2026-10-26), on the exhibit's Non-Military card (Pedro, 2026-10-28), so the link lands on its
+   * Request Quick Adopt with nothing to paste. The address is map_links.js's (CPL_MAP_LINKS.url), one
+   * for every public surface; the page loads it first, and without it no row gets a link. */
+  function mapLinks() { var ml = typeof window !== "undefined" && window.CPL_MAP_LINKS; return ml && typeof ml.url === "function" ? ml : null; }
+  function mapLink(id) { var ml = mapLinks(); return ml ? ml.url(id) : ""; }
   var STATEWIDE_TYPES = { "CCC Collaborative": 1, "Apprenticeship": 1, "Industry": 1,
     "Industry|Apprenticeship": 1, "Private Institution": 1, "CSU": 1 };
   var CATALOG_STOP = /work experience|topics in|special (studies|topics)|independent study|internship|seminar/i;
@@ -306,6 +307,7 @@
     var shortName = input.shortName || (typeof window !== "undefined" && window.cplCollegeShort) || function (n2) { return n2; };
     function linkFor(e) {
       var ids = (e.exhibit_ids || []).filter(function (i) { return ver.found && ver.found[String(i).toUpperCase()]; });
+      if (ids.length && !mapLinks()) return { link: "", ids: [], chips: [], status: "Not linked: the MAP address (map_links.js) did not load" };
       if (ids.length) {
         var chips = ids.map(function (i) {
           var college = ver.found[String(i).toUpperCase()].college || "";
@@ -597,7 +599,7 @@
       [b.college + ": CPL opportunity analysis", "Built " + b.today + " from COBI's published data. A snapshot: MAP and COCI data change daily."],
       ["Shareable visual", L(b.shareUrl, b.shareUrl)],
       ["Scope", "AP and IB exhibits are excluded from every sheet; CLEP is included. Statewide credit recommendations are MAP exhibits whose collaborative type is CCC Collaborative, Apprenticeship, Industry, Private Institution or CSU; exhibits other colleges built locally appear as peer-college evidence."],
-      ["Request Adopt", "Each link opens MAP's CPL Opportunities page already searched for the Statewide Credit Recommendation ID (" + MAP_PAGE + "?Exhibit= and the ID, with View=Non-Military), so the exhibit's card comes up on the Non-Military Credit tab with Request Quick Adopt, which needs no MAP sign-in and asks a college initiator to adopt, and Quick Adopt, which needs a sign-in and starts the approval queue. A link is given only where MAP's own data listed the ID on that page when last checked (" + (s.verifiedAt || "not checked") + "): " + s.nVerified + " of " + s.nCandidates + " recommendations. Nothing is submitted to MAP from here."],
+      ["Request Adopt", "Each link opens MAP's CPL Opportunities page already searched for the Statewide Credit Recommendation ID (" + ((mapLinks() || {}).MAP_PAGE || "MAP") + "?Exhibit= and the ID, with View=Non-Military), so the exhibit's card comes up on the Non-Military Credit tab with Request Quick Adopt, which needs no MAP sign-in and asks a college initiator to adopt, and Quick Adopt, which needs a sign-in and starts the approval queue. A link is given only where MAP's own data listed the ID on that page when last checked (" + (s.verifiedAt || "not checked") + "): " + s.nVerified + " of " + s.nCandidates + " recommendations. Nothing is submitted to MAP from here."],
       ["IDs", "Statewide Credit Recommendation ID: the exhibit ID MAP lists on the CPL Opportunities page. MAP Exhibit ID: every exhibit ID MAP holds under that credential's name."],
       ["Alignment tiers", "Confirmed: an exhibit exists in MAP. Needs validation: peer colleges articulate the same credential to the same common course (the Commons' M-ID or C-ID) that includes this college's course. Possible: title match only. No row says a course qualifies for CPL; discipline faculty compare the course outline of record with the credential's documented competencies first."],
       ["Priority", "High: a statewide CR reached through 2+ peer colleges, or a credential 3+ peer colleges articulate to the same common course. Medium: one peer college, a title-only match, or an apprenticeship course. Low: a TOP family with known prior-learning sources and no peer evidence."],

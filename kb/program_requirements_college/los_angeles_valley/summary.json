@@ -2,14 +2,14 @@
  "college": "Los Angeles Valley College",
  "programs": 237,
  "with_closed_list": 232,
- "found": 225,
+ "found": 223,
  "extracted": 225,
  "errors": 0,
- "passed_machine_checks": 110,
+ "passed_machine_checks": 163,
  "failed": {
   "coverage": 31,
   "invented": 10,
-  "arithmetic": 107,
+  "arithmetic": 48,
   "repeated": 0,
   "outcomes": 4
  },
@@ -23,6 +23,19 @@
    "near_miss": {
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=235",
     "coverage": 0.455
+   }
+  },
+  {
+   "control_number": "11546",
+   "title": "Commercial Music: Instrumental/Vocal Performer",
+   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
+   "near_miss": {
+    "pages": [
+     71,
+     72
+    ],
+    "coverage": 0.725,
+    "why": "the page prints neither the control number nor the title and award"
    }
   },
   {
@@ -58,7 +71,7 @@
    "award": "A.A. Degree",
    "near_miss": {
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=29",
-    "coverage": 0.13
+    "coverage": 0.174
    }
   },
   {
@@ -71,6 +84,19 @@
    }
   },
   {
+   "control_number": "31765",
+   "title": "Commercial Music: Jazz Studies",
+   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+   "near_miss": {
+    "pages": [
+     71,
+     72
+    ],
+    "coverage": 0.875,
+    "why": "the page prints neither the control number nor the title and award"
+   }
+  },
+  {
    "control_number": "40989",
    "title": "ESL Milestone - Pathway to Environmental Science",
    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
@@ -80,5 +106,5 @@
    }
   }
  ],
- "run": "39006418426"
+ "run": "41117814733"
 }

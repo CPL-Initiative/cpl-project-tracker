@@ -130,7 +130,8 @@
     "Distinguish, compare, and contrast the different elements of the cultures of Spain and the Hispanic world, including basic history, literature, and art; assess Hispanic contributions to the global society, and the role of the Spanish language and heritage in various parts of the world.",
     "Design and execute a project that examines and evaluates a special topic."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -281,5 +282,14 @@
    "No careers named in the AA-T section."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

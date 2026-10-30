@@ -76,20 +76,26 @@
     "the blocks sum to 16.0-21.0; the catalog states 18.0-21.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "incomplete",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     16.0,
-     21.0
+     43.0,
+     55.0
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the record names the degree total and the Any GE (LACCD GE Plan or Cal-GETC) pattern, but no units for it"
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     5.0,
+     17.0
     ]
    }
   },
@@ -136,8 +142,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -145,7 +151,8 @@
     "Analyze national economic issues with respect to inflation, unemployment, and economic growth.",
     "Analyze how historical economic events shaped economic institutions in the U.S."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -327,5 +334,26 @@
    "Units printed in parentheses beside elective-list courses were recorded as the course units."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 27,
+    "max": 34
+   },
+   "words": "Total Minimum Units: 60 (https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32: Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen.)"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

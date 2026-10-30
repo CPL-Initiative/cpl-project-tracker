@@ -1,0 +1,27 @@
+{
+ "_readme": "S530 SkyBuffaloberry, 2026-10-30. The front matter's graduation requirements for an associate degree at Los Angeles Valley: how many units the LACCD GE Plan and Cal-GETC carry, and whether the catalog says electives make up the 60. Its words become the college's reconcile step (ge_units and electives_fill_degree, as Cerritos's and Taft's). Pages 1-51 only, before the program pages. One load, no model call.",
+ "college": "Los Angeles Valley College",
+ "questions": {
+  "ge_units": "The units of the LACCD GE Plan and Cal-GETC, and the catalog's words for an associate degree's 60 units."
+ },
+ "keywords": [
+  "LACCD\\s+GE\\s+Plan",
+  "General\\s+Education\\s+Plan",
+  "minimum\\s+of\\s+60",
+  "60\\s+(?:semester\\s+)?units",
+  "Graduation\\s+Requirements",
+  "Cal-GETC"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "ge_units"
+   ],
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  1,
+  51
+ ]
+}

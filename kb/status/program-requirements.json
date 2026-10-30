@@ -1,17 +1,25 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T18:15:00Z",
-  "session": 529,
-  "moniker": "SkyKiwiberry",
+  "written_at": "2026-10-30T20:18:25Z",
+  "session": 530,
+  "moniker": "SkyBuffaloberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_530_handoff.md",
+  "handoff": "docs/session_531_handoff.md",
   "next_step": {
-    "title": "Sheet 145 card 2: the floor rescore's live update",
-    "text": "Read Sheet 145's replies. On migrate, commit the receipt's apply_one through kb/migrations/.apply and read back the four counts (161 and 28 to equal, 12 and 5 to unequal); on pasted, read the live rows back. Then the display build. Glendale stays parked; Los Angeles Valley is the next college."
+    "title": "Los Angeles Valley: the pages the capture lost",
+    "text": "Los Angeles Valley passes 167 of 204 live (from 114). Next, the capture's page finder for the 26 records it lost or never found, the Media Arts family first, then Physics (63-65) and Respiratory Therapy (74). Read Sheet 146's replies first: card 2 is the floor rescore's live update."
   },
   "calls": [
+    {
+      "title": "The printed floor is in the scorer: the live update",
+      "text": "You ruled each list's printed units its floor (Sheet 144). The scorer reads them that way and the filed records are rescored, but the repo's Supabase guard stopped the session's update of the live rows. Sheet 146 card 2 holds the guarded statement and asks whether it goes through the migrate run or you paste it.",
+      "if_no_reply": "The live rows keep the reading you replaced, except where a college's own reread has moved them (Los Angeles Valley, S530).",
+      "link": "https://claude.ai/artifact/WqcNWsDC73wk5srufsTgt4",
+      "link_text": "Open Sheet 146",
+      "part": "reading"
+    },
     {
       "title": "Glendale is parked: what would turn it back on",
       "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing. Glendale qualified: S526 and S527 each moved 5 of 226 (2.2%). It stands at 115 passing; 46 records sum to a different total than the catalog prints, and 65 still miss a course's units. Either of two things from you turns it back on. First, a structured export: ask Glendale's curriculum office for every active program's required courses with their units, as a spreadsheet from their curriculum system, and attach it in any Claude session. Second, a contact: name someone in Glendale's curriculum office who can say which printed totals are wrong, and the queue drafts the questions for you to send. Glendale's 2026-2027 catalog will restart it without you. When you have done one, write what you did in the note and press Mark done; the next scheduled session takes it first.",
@@ -148,6 +156,14 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-30T20:00:00Z",
+      "text": "Los Angeles Valley 114 to 167 of 204 passing live. Its steps read each degree page's Total Minimum Units: 60 as a floor and the catalog's GE plans (LACCD 27, Cal-GETC 34); two rereads posted the two reconcile runs' records with receipts."
+    },
+    {
+      "at": "2026-10-30T19:45:00Z",
+      "text": "A reconcile now keeps a record the capture starts on another page of the same file when the fresh text prints its own heading; Los Angeles Valley's capture had moved 20 degrees one page early."
+    },
     {
       "at": "2026-10-30T18:05:00Z",
       "text": "Sam ruled Sheet 144 card 2 floor: a list's printed units are its floor. The scorer reads them so; 206 filed records rescored (161 and 28 to equal, 12 and 5 to unequal). The live rows wait on Sheet 145 card 2: the repo's Supabase guard denied the session's update."
@@ -313,18 +329,18 @@
     {
       "day": "2026-10-30",
       "active": 20282,
-      "complete": 13233,
+      "complete": 13285,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-30T13:12:00Z"
+    "at": "2026-10-31T05:12:00Z"
   },
   "harvest": {
     "day": "2026-10-30",
-    "gaps": 3029,
+    "gaps": 3031,
     "parts": {
       "links": {
         "catalog": [
@@ -341,7 +357,7 @@
         ]
       },
       "roep": [
-        19152,
+        19154,
         20282
       ],
       "coci": [

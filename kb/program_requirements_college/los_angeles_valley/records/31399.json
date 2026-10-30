@@ -91,6 +91,9 @@
   "careers": {
    "count": 4,
    "not_verbatim": [
+    "Recording Technician",
+    "Composer/Arranger",
+    "Music Copyist",
     "Musician/Performer"
    ],
    "pass": false
@@ -199,5 +202,6 @@
    "'Total: 13' is the certificate total; it matches the sum of the six required courses (3+3+3+1+1+2)."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41117814733,
+ "read_run": "39006418426"
 }

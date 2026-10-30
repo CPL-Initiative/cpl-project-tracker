@@ -3057,6 +3057,23 @@ def extract(out_dir: str, shard: int, shards: int, run_id: str | None, workers: 
     return 0
 
 
+def own_heading_kept(src: dict, filed: dict) -> bool:
+    """A record the capture now starts on another page of the same file, whose fresh text still
+    prints the record's own heading, is about the same program. S530: LA Valley's capture now
+    starts a degree one page early, on the Programs Offered table naming it (Banking and Finance
+    p83, its page 84 in the same span), and the moved-page guard below held 20 degrees out of the
+    reconcile that passed the rest. The heading is matched on letters and digits as the reconcile's
+    `before` scope matches it; a record placing no course read another program's page."""
+    import _program_requirements_reconcile as R
+    new = ((src.get("source") or {}).get("url") or "").split("#")[0]
+    if not new or new != (filed.get("source_url") or "").split("#")[0]:
+        return False
+    rec = filed.get("record") if isinstance(filed.get("record"), dict) else {}
+    if not any(b.get("courses") for b in rec.get("blocks") or []):
+        return False
+    return R._heading_end(src.get("text") or "", (rec.get("program") or {}).get("section_heading")) is not None
+
+
 def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: str) -> int:
     """A reconcile run (step=reconcile, no model call): every filed record goes to
     out/records, and each one whose page the capture read again is reconciled with
@@ -3079,10 +3096,12 @@ def reconcile_filed(college: str, out_dir: str, run_id: str | None, keep_from: s
         src = sources.get(filed.get("control_number"))
         rec = filed.get("record")
         if src and filed.get("source_url") and (src.get("source") or {}).get("url") \
-                and (src.get("source") or {}).get("url") != filed.get("source_url"):
+                and (src.get("source") or {}).get("url") != filed.get("source_url") \
+                and not own_heading_kept(src, filed):
             # The capture took the program to another page than the one it was extracted
             # from: that text says nothing about this record. LA City and Pierce rescored 49
-            # records on a moved PDF page before this guard (S403).
+            # records on a moved PDF page before this guard (S403). A fresh text in the same
+            # file that prints the record's own heading is about it (own_heading_kept, S530).
             src = None
             moved += 1
         if src and isinstance(rec, dict):

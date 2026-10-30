@@ -61,29 +61,6 @@
    "pass": true
   },
   "arithmetic": {
-   "degree": {
-    "pass": true,
-    "status": "equal",
-    "computed": [
-     55.0,
-     56.5
-    ],
-    "stated": [
-     60.0,
-     60.0
-    ],
-    "against": "degree",
-    "ge": [
-     34.0,
-     34.0
-    ],
-    "why": [],
-    "transfer": true,
-    "fill": [
-     3.5,
-     5.0
-    ]
-   },
    "pass": true,
    "status": "equal",
    "computed": [
@@ -96,7 +73,29 @@
    ],
    "against": "program",
    "why": [],
-   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     55.0,
+     57.0
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     3.0,
+     5.0
+    ]
+   }
   },
   "repeated": {
    "codes": [],
@@ -151,7 +150,8 @@
     "Notate rhythmic, melodic and harmonic passages of music as they are dictated.",
     "Perform as members of chamber and large ensembles."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -320,5 +320,14 @@
    "Page also prints Commercial Music AA and Music AA sections; those were not read for this record."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }
