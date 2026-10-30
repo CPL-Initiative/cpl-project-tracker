@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T16:30:00Z",
+  "written_at": "2026-10-30T18:15:00Z",
   "session": 529,
   "moniker": "SkyKiwiberry",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_530_handoff.md",
   "next_step": {
-    "title": "Sheet 144 card 2: the printed units as a list's floor",
-    "text": "Read Sheet 144's replies. On floor, change block_units with a guard test, recompute each affected record's sum and apply both directions with a receipt (176 and 28 pass, 13 demote). On printed, the same with the full reading (218 and 27 pass, 44 demote). Glendale stays parked; Los Angeles Valley is the next college."
+    "title": "Sheet 145 card 2: the floor rescore's live update",
+    "text": "Read Sheet 145's replies. On migrate, commit the receipt's apply_one through kb/migrations/.apply and read back the four counts (161 and 28 to equal, 12 and 5 to unequal); on pasted, read the live rows back. Then the display build. Glendale stays parked; Los Angeles Valley is the next college."
   },
   "calls": [
     {
@@ -149,6 +149,10 @@
   },
   "changes": [
     {
+      "at": "2026-10-30T18:05:00Z",
+      "text": "Sam ruled Sheet 144 card 2 floor: a list's printed units are its floor. The scorer reads them so; 206 filed records rescored (161 and 28 to equal, 12 and 5 to unequal). The live rows wait on Sheet 145 card 2: the repo's Supabase guard denied the session's update."
+    },
+    {
       "at": "2026-10-30T16:20:00Z",
       "text": "The 44 records the printed-units reading would stop passing, sorted from their own block names: few catalog slips; most lists print the low end of a range the program total carries. The printed units as a list's floor passes 176 failing and 28 incomplete records and fails 13. It differs from the ruling, so it went to Sam as Open Asks Sheet 144 card 2; the scorer is unchanged."
     },
@@ -171,10 +175,6 @@
     {
       "at": "2026-10-30T08:40:00Z",
       "text": "Glendale: S524's 8 prose totals were the first program's on each page (page read 41025920825), so they were rolled back by receipt; the fill now reads from the program's own heading. Live: 105 equal, 74 incomplete, 47 unequal."
-    },
-    {
-      "at": "2026-10-30T07:46:39Z",
-      "text": "Glendale: 8 records took the total their program page prints in prose (reread 41021975265, receipt committed); all 8 sum short of it, so 105 still pass. 33 loaded records print no total."
     }
   ],
   "headline": [
