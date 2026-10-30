@@ -1625,13 +1625,17 @@ check(new["blocks"][0]["courses"][0]["units"] == 4.0 and notes and "program_requ
       "Glendale's units_file prices CABOT 102 from its description: %s" % json.dumps(notes)[:300])
 # Glendale's program total is prose ahead of the list (S524): read only the words before the program's first
 # list, so a program printing none never takes the next program's figure from the same page.
-empty_total = {"program": {"total_units": {"min": None, "max": None}}, "blocks": []}
+empty_total = {"program": {"total_units": {"min": None, "max": None}},
+               "blocks": [{"name": "R", "rule": "all", "courses": [{"code": "BIOL 142", "units": 4, "alternatives": []}]}]}
 got = [RC.reconcile(empty_total, t, "Glendale Community College", "Certificate of Achievement")[0]["program"]["total_units"]
        for t in ("BIOTECH\nmust complete all required core courses for a total of 19 - 21\nunits.\nRequired  Courses : BIOL 142",
                  "The student must complete all CORE\ncourses totaling 17-18 units.\nRequired Courses: ACCTG 101",
                  "RESTAURANT MANAGEMENT\nRequired Courses: CULIN 111\nSOCIAL MEDIA\nfor a minimum of 9 units.\nRequired Courses: BUSAD")]
 check(got == [{"min": 19, "max": 21}, {"min": 17, "max": 18}, {"min": None, "max": None}],
       "Glendale's prose total fills from the words before the first list, never the next program's: %s" % got)
+check(RC.reconcile({"program": {"total_units": {"min": None, "max": None}}, "blocks": []},
+                   "for a total of 28 units.\nRequired Courses: X", "Glendale Community College", "Certificate")[1] == [],
+      "a record placing no course (another program's page) takes no prose total")
 nc = {"program": {"measure": "hours"}, "blocks": [{"name": "Required", "rule": "all",
       "courses": [{"code": "BUS650", "units": None, "alternatives": []}]}]}
 zero = {"program": {"measure": "units"}, "blocks": [{"name": "Required", "rule": "all",

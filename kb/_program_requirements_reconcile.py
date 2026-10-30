@@ -305,6 +305,10 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             bm = re.search(st["before"], text)
             if not bm:
                 continue
+            # A record placing no course read another program's page (the not-found records): the
+            # words ahead of that page's first list are someone else's.
+            if not any(b.get("courses") for b in out.get("blocks") or []):
+                continue
             scope = text[:bm.start()]
         m = re.search(st["pattern"], scope)
         if not m:
