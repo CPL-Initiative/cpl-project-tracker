@@ -136,7 +136,7 @@
 
     // Strip chrome / non-content.
     strip(clone, '.no-print, #contents, script, style');
-    strip(clone, '.fs-del, .fs-add, .fs-add-img, .fs-imgbar, .fs-dock, #btn-curate, #live-chip, .actionbar');
+    strip(clone, '.fs-del, .fs-add, .fs-add-img, .fs-imgbar, .fs-dock, #btn-curate, #live-chip, .mh-tools');
     strip(clone, '.sw-rec-tg');                 // the rec-wedge toggle buttons (lists stay, shown)
     strip(clone, '.fs-ov-hidden');              // reviewer-hidden boxes / sections don't belong in the doc
     strip(clone, '.fs-withheld');               // source-level withheld sections (the .fs-withheld utility)
@@ -180,10 +180,8 @@
 
     var ao = asOf();
     var head =
-      '<div class="eyebrow">California Community Colleges</div>' +
-      '<h1>Credit for Prior Learning (CPL) Fact Sheet</h1>' +
-      '<div class="sub">Public &amp; Journalist Fact Sheet' + (ao ? ' &nbsp;·&nbsp; data current as of ' + esc(ao) : '') +
-        ' &nbsp;·&nbsp; map.rccd.edu</div>';
+      '<h1>Credit for Prior Learning (CPL) Initiative Fact Sheet</h1>' +
+      '<div class="sub">' + (ao ? 'Data current as of ' + esc(ao) + ' &nbsp;·&nbsp; ' : '') + 'map.rccd.edu</div>';
 
     var body = '<div class="WordSection1">' + head + clone.innerHTML + '</div>';
     var doc =

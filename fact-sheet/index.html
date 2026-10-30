@@ -28,40 +28,35 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
      content. Off-screen until focused (factsheet.css .skip-link). -->
 <a class="skip-link" href="#main-content">Skip to main content</a>
 
-<!-- ── Sticky action bar (screen only — hidden in print) ─────────────────── -->
-<!-- A named region, so its title and controls sit inside a landmark (axe
-     "region"). It cannot join the masthead's <header>: a sticky box sticks only
-     inside its parent, and a shared parent would carry the bar away with the
-     masthead. A second <header> would make a second banner. -->
-<div class="actionbar no-print" role="region" aria-label="Fact sheet tools">
-  <div class="wrap">
-    <span class="ab-title">California CPL Fact Sheet</span>
-    <span id="live-chip" class="live-chip" role="status" aria-live="polite" title="Headline progress figures are pulled live from the MAP CPL Dashboard each time this page loads.">
-      <span class="dot" aria-hidden="true"></span><span id="live-chip-text">Live data</span>
-    </span>
-    <button class="btn no-print" id="btn-collapse-all" type="button" title="Collapse or expand all sections">Collapse all</button>
-    <!-- Curate: shipped HIDDEN and revealed by factsheet_edit.js only for a signed-in
-         reviewer (or ?curate=1). Hidden in the MARKUP, not just by script, so the public
-         never sees a flash of it. This is presentation, not security — the real gate is
-         RLS is_allowed_reviewer() on factsheet_overrides. -->
-    <button class="btn no-print" id="btn-curate" type="button" hidden aria-pressed="false" title="Sign in to edit this fact sheet">✎ Curate</button>
-    <button class="btn no-print" id="btn-word" type="button" title="Download this fact sheet as a Word document">Save as Word</button>
-    <!-- Ask Sierra opens her in the side bar (../sierra/sidebar.js; Sam, Open Asks
-         Sheet 126 card 1, "public": the Fact Sheet and the funding page move onto
-         the bar the public library carries, so every public page opens one Sierra). -->
-    <button class="btn no-print" id="btn-sierra" type="button" data-sierra-open title="Ask Sierra, the CPL assistant">Ask Sierra</button>
-    <button class="btn btn-primary" id="btn-print" type="button" title="Print or save this fact sheet as a PDF">Print / Save PDF</button>
-  </div>
-</div>
-
 <!-- ── Masthead ──────────────────────────────────────────────────────────── -->
 <header class="masthead">
   <div class="wrap">
     <img class="logo" src="./img/ccc-logo.png" alt="California Community Colleges logo">
     <div class="mh-text">
-      <div class="eyebrow">California Community Colleges</div>
-      <h1>Credit for Prior Learning (CPL) Initiative</h1>
-      <div class="sub">Public &amp; Journalist Fact Sheet &nbsp;·&nbsp; <span data-bind="as_of_label">live systemwide data</span> &nbsp;·&nbsp; <a href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu</a></div>
+      <h1>Credit for Prior Learning (CPL) Initiative Fact Sheet</h1>
+      <div class="sub"><a href="https://map.rccd.edu" target="_blank" rel="noopener">map.rccd.edu</a><span data-bind="as_of_label" hidden>live systemwide data</span></div>
+      <!-- The tools sit under the title (Sam, 2026-10-30: one header row, no bar
+           above it). Ask Sierra is the chip in the window's lower right
+           (../sierra/sidebar.js), as on the other public pages; Save as Word
+           joined Print / Save PDF in one Print or save menu. -->
+      <div class="mh-tools no-print" role="group" aria-label="Fact sheet tools">
+        <span id="live-chip" class="live-chip" role="status" aria-live="polite" title="Headline progress figures are pulled live from the MAP CPL Dashboard each time this page loads.">
+          <span class="dot" aria-hidden="true"></span><span id="live-chip-text">Live data</span>
+        </span>
+        <button class="btn" id="btn-collapse-all" type="button" title="Collapse or expand all sections">Collapse all</button>
+        <!-- Curate: shipped HIDDEN and revealed by factsheet_edit.js only for a signed-in
+             reviewer (or ?curate=1). Hidden in the MARKUP, not just by script, so the public
+             never sees a flash of it. This is presentation, not security — the real gate is
+             RLS is_allowed_reviewer() on factsheet_overrides. -->
+        <button class="btn" id="btn-curate" type="button" hidden aria-pressed="false" title="Sign in to edit this fact sheet">✎ Curate</button>
+        <details class="save-menu">
+          <summary class="btn">Print or save</summary>
+          <div class="save-menu-list">
+            <button class="btn" id="btn-print" type="button" title="Print or save this fact sheet as a PDF">Print / Save PDF</button>
+            <button class="btn" id="btn-word" type="button" title="Download this fact sheet as a Word document">Save as Word</button>
+          </div>
+        </details>
+      </div>
     </div>
   </div>
 </header>
@@ -74,6 +69,8 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
       <h2 class="h-card" style="margin-top:0">Contents</h2>
       <nav class="toc">
         <a href="#exec-summary">Executive summary</a>
+        <a href="#cpl-funding">CPL Initiative funding, 2026–2028</a>
+        <a href="https://cpl-initiative.github.io/cpl-project-tracker/prototype/funding_video/funding_in_motion_n2.html?full=1">Watch: CPL Funding in Motion (video)</a>
         <a href="#what-is-cpl">What is CPL &amp; why it matters</a>
         <a href="#progress">Key performance indicators</a>
         <a href="#statewide-exhibits">Statewide exhibits</a>
@@ -82,6 +79,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
         <a href="#funding">Funding history &amp; allocations</a>
         <a href="#map">The CPL Initiative &amp; MAP</a>
         <a href="#initiatives">Key initiatives &amp; sprints</a>
+        <a href="#noncredit">Noncredit CPL</a>
         <a href="#stories">Student CPL stories</a>
         <a href="#partnerships">Partnerships</a>
         <a href="#legislation">Legislation &amp; policy</a>
@@ -116,6 +114,34 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
       align the pathways — turning the recognition of prior learning into a shared, durable practice rather than a
       one-time exception. The result is a more open door for Californians, and a clearer route from what they already
       know to where they want to go.</p>
+  </section>
+
+  <!-- ── CPL Initiative funding (2026–2028) ────────────────────────────── -->
+  <!-- Mirrors the public funding page and its FAQ (funding-model/; faq.json), the
+       one public source for these rules. Figures that move with the data stay on
+       that page; this summary carries the shape. Added S528 for the CPL Summit. -->
+  <section id="cpl-funding">
+    <h2>CPL Initiative funding, 2026–2028</h2>
+    <p>Senate Bill 135 (Statutes of 2026, Chapter 79) added Article 9 to the Education Code, sections 78093 through
+      78093.2, effective July 13, 2026. The article establishes the Credit for Prior Learning Initiative and directs the
+      Chancellor's Office, upon appropriation, to allocate funds to each campus against four goals: equitable access to
+      credit for prior learning, completion through CPL awards, career attainment, and the Chancellor's Office pilot
+      projects such as the MAP platform.</p>
+    <p>The Legislature's one-time 2026-27 appropriation of $35 million supports implementation across the 2026-27 and
+      2027-28 fiscal years. The Chancellor's Office proposes to allocate most of it directly to all 118 institutions, the
+      115 colleges and the three noncredit-only campuses, in proportion to the credit and noncredit instruction each
+      provides. Each institution's max award falls between a base award of $150,000 and a cap of $400,000 across the two
+      years. The rest funds statewide CPL projects and technology, and two Chancellor's Office posts that support
+      colleges.</p>
+    <p>An institution takes part once it meets three conditions: a CPL Coordinator assigned in MAP with its CPL landing
+      page configured, a local confirmation of participation on file by December 31, 2026, and joint services
+      transcripts processed in MAP for at least 75 percent of its enrolled veterans. Its CPL outcomes then determine how
+      much of its max award it qualifies for. Two outcomes carry the credit share, half each: Access, the CPL units
+      available to students in MAP, and Completion, the CPL units transcribed. Career attainment and innovation projects
+      are reported. Each award also carries a noncredit share, described under <a href="#noncredit">Noncredit CPL</a>.</p>
+    <p>The public page <a href="https://cpl-initiative.github.io/cpl-project-tracker/funding-model/">2026–2028 CPL Initiative Funding: How It Works</a> sets out the rules,
+      the timeline, each institution's figures and the questions colleges ask most. The narrated introduction,
+      <a href="https://cpl-initiative.github.io/cpl-project-tracker/prototype/funding_video/funding_in_motion_n2.html?full=1">CPL Funding in Motion</a>, walks through the same ground in a few minutes.</p>
   </section>
 
   <!-- ── What is CPL ───────────────────────────────────────────────────── -->
@@ -634,19 +660,30 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
       College</a> — for completion by June 2026, with potential scaling to all colleges and registered apprenticeship
       trades.</div>
 
-    <h3>Noncredit and Non-College CPL Landing Pages project</h3>
-    <p>To expand the visibility of CPL opportunities to learners at noncredit, not-for-credit, adult-education
-      programs, ROPs, high schools, and training agencies, MAP has developed CPL Landing Pages for non-college
-      entities. Where college landing pages display a college's articulated non-college credentials, non-college
-      landing pages show current students where they can obtain CPL <em>across the system</em> for the credentials
-      they are working on — empowering students to upload their credentials and request review at any college.</p>
-    <figure>
-      <img src="./img/calbright-landing.png" alt="Screenshot of the Calbright College CPL Landing Page beta, showing industry credentials students earn at Calbright that have been articulated by colleges across the system, with clickable college options.">
-      <figcaption><strong><a href="https://www.calbright.edu/" target="_blank" rel="noopener">Calbright College</a></strong> serves as the pilot — its beta CPL Landing Page displays the industry
-        credentials students earn at Calbright that colleges across the system have articulated. Students click a listed
-        college to reach that college's CPL Landing Page for next steps. The project will scale in 2026 to programs such as
-        CDCR (Rising Scholars), EMS Corps, Futuro Health, and noncredit campuses (NOCE, SDCCE).</figcaption>
-    </figure>
+  </section>
+
+  <!-- ── Noncredit CPL ──────────────────────────────────────────────────── -->
+  <!-- Rewritten S528 (2026-10-30) from the funding FAQ (funding-model/faq.json) and the
+       NC / Learning Partners lane; the Calbright screenshot retired (Sam, 2026-10-30). -->
+  <section id="noncredit">
+    <h2>Noncredit CPL</h2>
+    <p>Noncredit programs serve adults learning English, preparing for work, completing high school, and training for
+      careers, often at no cost to the student. Many of those learners already hold skills from work, military service,
+      or industry training, and many go on to credit programs. CPL lets that learning count on both sides: a noncredit
+      course or credential can carry credit at a college, and a learner's prior learning can shorten a noncredit
+      pathway.</p>
+    <p>The CPL Initiative's funding carries a noncredit share in every institution that offers noncredit instruction,
+      including the three noncredit-only campuses. Noncredit is about six percent of the institutions' combined
+      instruction, and the Chancellor's Office set noncredit's portion at 15 percent of the funding to institutions:
+      noncredit programs are generally strained for resources locally, and they hold great opportunity to expand CPL.
+      The share is restricted to noncredit outcomes, and two outcomes carry it, half each: exhibits built or adopted for
+      the noncredit program's learning, and a Noncredit Career Exploration and CPL Portfolio course. An institution with a
+      noncredit share attests each year that its Noncredit CPL Lead is assigned, is published on its CPL landing page, and
+      meets regularly with its CPL Coordinator.</p>
+    <p>MAP also builds CPL landing pages for learners outside a college's credit programs: noncredit campuses,
+      adult education, regional occupational programs, and training partners. A non-college landing page shows a learner
+      where the credentials they are earning carry credit across the system, and lets them upload a credential and
+      request review at any college.</p>
   </section>
 
   <!-- ── Stories ───────────────────────────────────────────────────────── -->
@@ -727,6 +764,7 @@ window.addEventListener("storage",function(e){if(e&&e.key==="cpl_theme")a(e.newV
     <h2>Key documents &amp; resources</h2>
     <p class="lede">All resources below are publicly available.</p>
     <div class="res-grid">
+      <div class="res"><a class="res-title" href="https://cpl-initiative.github.io/cpl-project-tracker/funding-model/">CPL Initiative Funding, 2026–2028</a><div class="res-desc">How the one-time CPL implementation funding is allocated, each institution's award and the outcomes that count toward it, with a narrated introduction.</div></div>
       <div class="res"><a class="res-title" href="https://map.rccd.edu/" target="_blank" rel="noopener">MAP Platform Website<span class="sr-only"> (opens in a new tab)</span></a><div class="res-desc">Central hub for all CPL resources, college implementation tools, and statewide data.</div></div>
       <div class="res"><a class="res-title" href="https://cpldashboardcccco.azurewebsites.net/insights/dashboard" target="_blank" rel="noopener">MAP CPL Dashboard<span class="sr-only"> (opens in a new tab)</span></a><div class="res-desc">Live data on students served, units awarded, and savings by college and region.</div></div>
       <div class="res"><a class="res-title" href="https://map.rccd.edu/wp-content/uploads/2025/06/Scaling-Credit-for-Prior-Learning-in-California.pdf" target="_blank" rel="noopener">Scaling CPL in California Report<span class="sr-only"> (opens in a new tab)</span></a><div class="res-desc">Overview of Vision 2030 goals, MAP strategy, and CPL implementation (2025 ed.).</div></div>
