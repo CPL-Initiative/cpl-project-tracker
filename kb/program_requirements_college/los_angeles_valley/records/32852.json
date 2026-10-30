@@ -98,7 +98,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      6.0,
      8.0
@@ -157,7 +157,8 @@
     "Evaluate theater performances and analyze the experience of being in the audience for a play.",
     "Apply skills in acting, design and/or stagecraft to the preparation and production of a play for public performance."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -297,5 +298,14 @@
    "The career statement ('entry-level employment in theater') appears under the separate ASSOCIATE DEGREE (AA) heading, not the AA-T section, so careers is left empty."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41117814733,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

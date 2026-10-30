@@ -90,7 +90,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      7.0,
      7.0
@@ -150,7 +150,8 @@
     "Develop skills to collect and analyze empirical data.",
     "Work toward social justice."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -296,5 +297,14 @@
    "STAT C1000 and SOC 004 are marked * (prerequisite or corequisite)."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41117814733,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

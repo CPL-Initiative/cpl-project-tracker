@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 237,
  "with_closed_list": 232,
- "started": "2026-10-30T19:26:44Z",
+ "started": "2026-10-30T19:47:37Z",
  "pdf": {
   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
   "access": "ok",
@@ -3001,7 +3001,7 @@
   ]
  },
  "loads": 1,
- "seconds": 126.3,
+ "seconds": 161.8,
  "found": 223,
  "by_method": {
   "no_closed_list": 5,
@@ -3435,7 +3435,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3445,7 +3445,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3455,7 +3455,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3465,7 +3465,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3475,7 +3475,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3485,7 +3485,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.75,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.75,
     "was_method": "pdf_pages"
    },
@@ -3495,7 +3495,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.636,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.636,
     "was_method": "pdf_pages"
    },
@@ -3505,7 +3505,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3515,7 +3515,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=74",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3525,7 +3525,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=127",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3535,7 +3535,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3545,7 +3545,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=108",
     "coverage": 0.875,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=109",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=108",
     "was_coverage": 0.875,
     "was_method": "pdf_pages"
    },
@@ -3555,7 +3555,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3565,7 +3565,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3575,7 +3575,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3585,7 +3585,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3595,7 +3595,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3605,7 +3605,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.818,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.818,
     "was_method": "pdf_pages"
    },
@@ -3615,7 +3615,7 @@
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.6,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.6,
     "was_method": "pdf_pages"
    },
@@ -3625,7 +3625,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3635,7 +3635,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3645,7 +3645,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=54",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=54",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3655,7 +3655,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3665,7 +3665,7 @@
     "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3675,7 +3675,7 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3685,8 +3685,8 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.667,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "was_coverage": 0.889,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.667,
     "was_method": "pdf_pages"
    },
    {
@@ -3695,8 +3695,8 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.714,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.714,
     "was_method": "pdf_pages"
    },
    {
@@ -3705,7 +3705,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3715,7 +3715,7 @@
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3725,8 +3725,8 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.667,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "was_coverage": 0.889,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.667,
     "was_method": "pdf_pages"
    },
    {
@@ -3735,8 +3735,8 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.714,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.714,
     "was_method": "pdf_pages"
    },
    {
@@ -3745,7 +3745,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3755,7 +3755,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3765,7 +3765,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3775,7 +3775,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.8,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.8,
     "was_method": "pdf_pages"
    },
@@ -3785,7 +3785,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.75,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.75,
     "was_method": "pdf_pages"
    },
@@ -3795,7 +3795,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.714,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.714,
     "was_method": "pdf_pages"
    },
@@ -3805,7 +3805,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.571,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.571,
     "was_method": "pdf_pages"
    },
@@ -3815,7 +3815,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "coverage": 0.778,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
     "was_coverage": 0.778,
     "was_method": "pdf_pages"
    },
@@ -3825,7 +3825,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3835,7 +3835,7 @@
     "award": "A.A- T Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=163",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3845,7 +3845,7 @@
     "award": "A.S. T Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
     "coverage": 0.857,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=145",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
     "was_coverage": 0.857,
     "was_method": "pdf_pages"
    },
@@ -3855,7 +3855,7 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3865,7 +3865,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3875,7 +3875,7 @@
     "award": "A.A- T Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3885,7 +3885,7 @@
     "award": "A.S. T Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=48",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=49",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=48",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3895,7 +3895,7 @@
     "award": "A.A- T Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=74",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3905,7 +3905,7 @@
     "award": "A.A- T Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=112",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3915,8 +3915,8 @@
     "award": "A.S. T Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-    "was_coverage": 0.607,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
+    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -3925,7 +3925,7 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3935,8 +3935,8 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.667,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.667,
     "was_method": "pdf_pages"
    },
    {
@@ -3945,8 +3945,8 @@
     "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.6,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.6,
     "was_method": "pdf_pages"
    },
    {
@@ -3955,8 +3955,8 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.667,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.667,
     "was_method": "pdf_pages"
    },
    {
@@ -3965,7 +3965,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
     "coverage": 0.833,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
     "was_coverage": 0.833,
     "was_method": "pdf_pages"
    },
@@ -3975,7 +3975,7 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3985,8 +3985,8 @@
     "award": "Baccalaureate of Science (B.S.) Degree.",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=107",
     "coverage": 0.963,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=248",
-    "was_coverage": 0.667,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=107",
+    "was_coverage": 0.963,
     "was_method": "pdf_pages"
    },
    {
@@ -3995,8 +3995,8 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.5,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.5,
     "was_method": "pdf_pages"
    },
    {
@@ -4005,8 +4005,8 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.5,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.5,
     "was_method": "pdf_pages"
    },
    {
@@ -4015,8 +4015,8 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.556,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.556,
     "was_method": "pdf_pages"
    },
    {
@@ -4025,8 +4025,8 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.5,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.5,
     "was_method": "pdf_pages"
    },
    {
@@ -4035,8 +4035,8 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.556,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.556,
     "was_method": "pdf_pages"
    },
    {
@@ -4045,8 +4045,8 @@
     "award": "A.A. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
     "coverage": 0.5,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "was_coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+    "was_coverage": 0.5,
     "was_method": "pdf_pages"
    },
    {
@@ -4055,11 +4055,11 @@
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    }
   ]
  },
- "run": "41114987325"
+ "run": "41117814733"
 }

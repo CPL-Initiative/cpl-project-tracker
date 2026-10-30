@@ -90,7 +90,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      2.0,
      2.0
@@ -151,7 +151,8 @@
     "Students will engage visual vocabulary in the making and discussion of artworks.",
     "Students will explore the history of art and society as a reference for making studio artworks."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -341,5 +342,14 @@
    "Cal-GETC units (34 semester) are taken from the general ADT requirements paragraph in this section."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41117814733,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }
