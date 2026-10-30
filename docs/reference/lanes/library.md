@@ -211,3 +211,5 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 already here (by a label naming its kind, its link, a file named for it, or the card's Revise and remediate or Edit) and asks
 what to do with it; long instructions go whole into `sources`, and every rebuild is remediated. The record moved verbatim to
 [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S520's side session)*.
+
+**The Chancellor's address:** NEXT, a Pages copy (handoff 531 item 1).
