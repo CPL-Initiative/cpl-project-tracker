@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-494 document(s).
+495 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 526 | [Session 526 handoff: S524's Glendale prose totals were borrowed; rolled back, and the fill starts at the heading](../session_526_handoff.md) | 2026-10-30 |
 | 525 | [Session 525 handoff: Glendale's prose totals, 8 records now name their total; 105 still pass](../session_525_handoff.md) | 2026-10-30 |
 | 524 | [Session 524 handoff: Glendale 80 to 105 passing, every course priced from its own description; Sierra's UI pass clean](../session_524_handoff.md) | 2026-10-30 |
 | 523 | [Session 523 handoff: shard failures name their file, the Library test race fixed, S521's memory applied](../session_523_handoff.md) | 2026-10-30 |
