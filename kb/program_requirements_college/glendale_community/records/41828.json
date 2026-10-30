@@ -168,7 +168,7 @@
      },
      {
       "code": "PHOTO 130",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -195,5 +195,19 @@
    "The description mentions 'practicing photographers' as the program's audience, not as a career outcome, so careers is empty."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41009271854,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "PHOTO 130": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read 41007920360, 41007934919, 41008605528, 41008701146 (kb/college_reads/glendale_course_units_{a,c,a2,b}) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }
