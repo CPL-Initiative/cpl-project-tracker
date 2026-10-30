@@ -16262,8 +16262,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 494,
+   "count": 495,
    "docs": [
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "n": 526,
+     "path": "docs/session_526_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "glendale"
+     ],
+     "title": "Session 526 handoff: S524's Glendale prose totals were borrowed; rolled back, and the fill starts at the heading",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24721,5 +24736,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1314
+ "total": 1315
 }

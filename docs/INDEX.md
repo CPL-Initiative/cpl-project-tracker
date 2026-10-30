@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 95 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 494 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1314** | |
+| Session handoffs | 495 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1315** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,7 +122,8 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- **2026-10-30 (S524 SkyCranberry):** Glendale's prose program totals fill `total_units` through a reconcile step's new `before` boundary; 8 records now name their total, all unequal, 105 still pass (#2575); handoff 525.
+- **2026-10-30 (S525 SkyTayberry):** S524's 8 Glendale prose totals were the first program's on each page; rolled back by receipt, and the fill now reads from the program's own heading (#2576); handoff 526.
+- 2026-10-30 (S524 SkyCranberry): Glendale's prose program totals fill `total_units` through a reconcile step's new `before` boundary; 8 records now name their total, all unequal, 105 still pass (#2575); handoff 525.
 - 2026-10-30 (S522 SkyCrowberry, light): a failing shard names its file and `library.test.js` stops racing JSZip (#2572), so #2570's shard 3 passes; #2571 merged; S521's memory rows applied; handoff 523.
 - 2026-10-30 (S521 SkyBearberry): Sierra's program search fixed live (no temp files; s521 and s521b, Sheet 142 card 1), the deploy smoke retries a read and reports a wording (#2571, card 2), handoff 522.
 - 2026-10-29 (S520 SkyLingonberry, Sam's session): the public funding page in COBI's Share menu (#2565); #2563 and #2560 landed before the Summit, #2560 after two merges of main; Sierra deployed; the tests check out less and run on six shards (#2567); handoff 521.
