@@ -2038,6 +2038,22 @@ check(RC.reconcile(hort, MPC_HORT + " " + MPC_ADT, "Monterey Peninsula College",
       == {"min": 24, "max": 34},
       "a page naming both keeps the local pattern's span: the Cal-GETC step fills only an empty field")
 
+# S526: Glendale's descriptions the first parse missed. A renumbered course prints its old number ahead of its
+# code, and a title may start with a digit or carry "+" or a curly apostrophe; the code after the units guards each.
+import tempfile
+import _description_units as DU  # noqa: E402
+with tempfile.NamedTemporaryFile("w", suffix=".txt", delete=False) as fh:
+    fh.write("[pdf page 199]\nUC · 132 · INTRODUCTION TO FILM · PRODUCTION · 3.0  Units · (Previously MEDIA 103)\n"
+             "F T V M 1 3 2 provides students with a basic overview · [pdf page 139] 130 · 2-D FOUNDATIONS · "
+             "3.0 Units · ART 130 is an introduction · USC · 135 · PROGRAMMING IN C/C++ · 3.0 Units · CS/IS 135 is "
+             "a course · 127 · CHILDREN\u2019S LITERATURE · 3.0 Units · ENGL 127 introduces · 101 · Lower case title · "
+             "3.0 Units · BIOL 101 is\n")
+got = DU.descs(fh.name)
+check({k: v[:2] for k, v in got.items()} == {"FTVM132": [3.0, 3.0], "ART130": [3.0, 3.0], "CS/IS135": [3.0, 3.0],
+                                              "ENGL127": [3.0, 3.0]},
+      "description units: a (Previously ...) note, a digit-led title, C/C++ and a curly apostrophe parse; a "
+      "lower-case title does not (got %s)" % sorted(got))
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:
