@@ -17,7 +17,12 @@
       "text": "The scorer adds a choose-courses list's courses and reads its printed units only when a course is unpriced. Reading the printed units statewide: 218 failing and 27 incomplete records would pass, 44 passing would fail; the narrower reading 91 and 30.",
       "if_no_reply": "The scorer keeps adding the courses, and those records stay as they read today.",
       "link": "https://claude.ai/artifact/LYq7MAnGSyX8ymKDu7BXRo",
-      "link_text": "Open Sheet 143"
+      "link_text": "Open Sheet 143",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-30",
+        "words": "Read the printed units, on Open Asks Sheet 143 card 2 (printed): a session reads the 44 records that would stop passing against their pages, then the scorer changes."
+      }
     },
     {
       "title": "Should the thirteen credential pairs count toward NC-1?",

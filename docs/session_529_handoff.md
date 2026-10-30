@@ -19,7 +19,7 @@ Your moniker is **SkyKiwiberry**. Session 528 (SkyMulberry) was a session Sam op
 
 ## Open work, in order
 
-1. **Read Sheet 143's replies before anything on card 2** (`replies` collection). Land #2579 and its vault twin: mark ready, wait for `test` on the newest head, squash-merge the tracker PR first, then the vault PR.
+1. **Sam ruled Sheet 143 at 12:58Z, both his own call:** card 2 *printed* (a choose-courses list's printed units count), card 1 *later* (carried to Sheet 144, built, not published). Carry out card 2 as proposed: read the 44 records that would stop passing (`python3 kb/_block_total_reading_measure.py` names them) against their pages, then change `block_units` in `kb/_program_requirements_score.py` with a guard test, rescore, and apply with a receipt. Land #2579 and its vault twin: mark ready, wait for `test` on the newest head, squash-merge the tracker PR first, then the vault PR.
 2. **Glendale's still-unpriced codes** (the 17 unequal records with unpriced courses, and the incomplete ones): the plus-suffixed MATH codes, CABOT 206-208, ACCTG 110 and 155-156, CS/IS 180-187, ETH S 102 and 124, PSYCH 131, ABSE 186-187. A `parse_units` read with them as keywords first.
 3. **The unequal pages S528 left unread:** Biotechnology Lab Assistant (p92), Civil Engineering (p100), Advanced ESL (p102), the transfer degrees (pp116-123). A page read prints about 25 pages, so one read per span under that.
 4. **Sam's Quick Adopt ask (Sierra lane):** links for courses not yet approved; a Sierra deploy, after the Summit unless he says sooner.
@@ -28,7 +28,7 @@ Your moniker is **SkyKiwiberry**. Session 528 (SkyMulberry) was a session Sam op
 
 ## Sam's decisions this run
 
-None on the work. He noted that from his phone he cannot see the scheduled sessions, which is why his greeting named Session 526 after S526 and S527 had run.
+Sheet 143 (12:58Z): card 1 *later*, card 2 *printed*. He also noted that from his phone he cannot see the scheduled sessions, which is why his greeting named Session 526 after S526 and S527 had run.
 
 ## Read first
 
