@@ -177,12 +177,12 @@
      },
      {
       "code": "PSYC C1000",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "PSYC C1000H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -236,17 +236,17 @@
       "alternatives": [
        {
         "code": "STAT C1000",
-        "units": null,
+        "units": 4.0,
         "catalog_addition": false
        },
        {
         "code": "STAT C1000E",
-        "units": null,
+        "units": 5.0,
         "catalog_addition": false
        },
        {
         "code": "STAT C1000H",
-        "units": null,
+        "units": 4.0,
         "catalog_addition": false
        }
       ],
@@ -307,7 +307,7 @@
      },
      {
       "code": "ENGL 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -379,114 +379,34 @@
    "The list separator in List A ('HIST 117; 118 or 118H') was read as HIST 117 alone and HIST 118 or HIST 118H as one choice."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40711704988,
+ "extracted_run": 41049220135,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "SOC 140": [
+    "PSYC C1000": [
      3.0,
      3.0
     ],
-    "SOC 141A": [
-     1.0,
-     1.0
-    ],
-    "SOC 141B": [
-     2.0,
-     2.0
-    ],
-    "SOC 101": [
+    "PSYC C1000H": [
      3.0,
      3.0
     ],
-    "SOC 101H": [
-     3.0,
-     3.0
-    ],
-    "BIOL 115": [
+    "STAT C1000": [
      4.0,
      4.0
     ],
-    "BIOL 120": [
+    "STAT C1000E": [
      5.0,
      5.0
     ],
-    "BIOL 121": [
+    "STAT C1000H": [
      4.0,
      4.0
     ],
-    "BIOL 122": [
-     4.0,
-     4.0
-    ],
-    "ECON 101": [
-     3.0,
-     3.0
-    ],
-    "ECON 102": [
-     3.0,
-     3.0
-    ],
-    "ECON 102H": [
-     3.0,
-     3.0
-    ],
-    "ECON 127": [
-     4.0,
-     4.0
-    ],
-    "ADMJ 101": [
-     3.0,
-     3.0
-    ],
-    "ANTHR 102": [
-     3.0,
-     3.0
-    ],
-    "ANTHR 102H": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 135": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 142": [
-     3.0,
-     3.0
-    ],
-    "COMM 108": [
-     3.0,
-     3.0
-    ],
-    "HIST 117": [
-     3.0,
-     3.0
-    ],
-    "HIST 118": [
-     3.0,
-     3.0
-    ],
-    "HIST 118H": [
-     3.0,
-     3.0
-    ],
-    "PSYC 115": [
-     3.0,
-     3.0
-    ],
-    "PSYC 106": [
-     3.0,
-     3.0
-    ],
-    "SOC 102": [
-     3.0,
-     3.0
-    ],
-    "ETH S 121": [
+    "ENGL 104": [
      3.0,
      3.0
     ]

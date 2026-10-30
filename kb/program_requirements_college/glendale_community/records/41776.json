@@ -168,7 +168,7 @@
      },
      {
       "code": "ENGL 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -266,46 +266,14 @@
    "Outcome 'Fulfill' is printed with a split ligature ('Fulﬁ ll') in the extracted text; rendered as 'Fulfill'. The last outcome has no terminal period as printed."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 41009271854,
+ "extracted_run": 41049220135,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "BIOL 142": [
-     4.0,
-     4.0
-    ],
-    "BIOL 50": [
-     1.0,
-     4.0
-    ],
-    "CHEM 110": [
-     5.0,
-     5.0
-    ],
-    "MATH 100": [
-     4.0,
-     4.0
-    ],
-    "BIOL 101": [
-     4.0,
-     4.0
-    ],
-    "BIOL 112": [
-     5.0,
-     5.0
-    ],
-    "BIOL 122": [
-     4.0,
-     4.0
-    ],
-    "BIOL 140": [
-     4.0,
-     4.0
-    ],
-    "BIOL 141": [
+    "ENGL 101": [
      4.0,
      4.0
     ]

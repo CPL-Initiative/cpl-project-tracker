@@ -193,7 +193,7 @@
      },
      {
       "code": "ENGL 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -205,7 +205,7 @@
       "alternatives": [
        {
         "code": "ENGL 104",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": true
        }
       ],
@@ -356,7 +356,7 @@
      },
      {
       "code": "POL S 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -388,18 +388,22 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": 41040709338,
- "read_run": 41012563119,
+ "extracted_run": 41049220135,
+ "read_run": 41040709338,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "MEDIA 101": [
+    "ENGL 101": [
+     4.0,
+     4.0
+    ],
+    "ENGL 104": [
      3.0,
      3.0
     ],
-    "ENGL 127": [
+    "POL S 101": [
      3.0,
      3.0
     ]

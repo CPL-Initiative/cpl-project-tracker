@@ -153,7 +153,7 @@
      },
      {
       "code": "ENGL 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -251,38 +251,14 @@
    "The following Biotechnology Research Lab Technician certificate (25-30 units, adds BIOL 50 and CHEM 110) was not read."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 41009271854,
+ "extracted_run": 41049220135,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "BIOL 142": [
-     4.0,
-     4.0
-    ],
-    "MATH 100": [
-     4.0,
-     4.0
-    ],
-    "BIOL 101": [
-     4.0,
-     4.0
-    ],
-    "BIOL 112": [
-     5.0,
-     5.0
-    ],
-    "BIOL 122": [
-     4.0,
-     4.0
-    ],
-    "BIOL 140": [
-     4.0,
-     4.0
-    ],
-    "BIOL 141": [
+    "ENGL 101": [
      4.0,
      4.0
     ]
