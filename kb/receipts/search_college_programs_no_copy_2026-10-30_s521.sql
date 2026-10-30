@@ -152,3 +152,6 @@
 --   3. every md5_set equals BEFORE; set 11 reads 77daadc0, its documented second value. PASS
 --   4. no temp pages. Set 11: 1,986 ms on the first call after the apply (cold), 149 ms warm (555
 --      before S521). Set 05: 733 ms (3,570 before S521; 6,805 under s521). PASS
+--   5. smoke modes=7c,7p (run 40983866065, 01:08Z, one billed answer): ALL MODES OK. The anon key's
+--      LVN question 0.220 s (1.2 s measured before); 7c both anchored RPCs lead with Orange County
+--      (16 and 6 contiguous rows); 7l college_program_courses 0.228 s (0.33 s measured). PASS
