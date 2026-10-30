@@ -16262,8 +16262,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 493,
+   "count": 494,
    "docs": [
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "n": 525,
+     "path": "docs/session_525_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "glendale"
+     ],
+     "title": "Session 525 handoff: Glendale's prose totals, 8 records now name their total; 105 still pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24706,5 +24721,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1313
+ "total": 1314
 }

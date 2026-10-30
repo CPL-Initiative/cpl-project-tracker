@@ -1019,6 +1019,28 @@ S445 SkyCurrant (a shared page per heading, MiraCosta's degree lists, Palomar's 
 lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`, and S446 SkyMadrone
 (a degree-and-certificate address, 91 records) since the S523 compaction.
 
+## S524 SkyCranberry (2026-10-30, the CPL Queue routine): Glendale's prose totals, 8 records from incomplete to unequal
+
+- **Glendale prints a program's total as prose ahead of its list:** "must complete all required core courses for a
+  total of 19 - 21 units", "totaling 17-18 units", "for a minimum of 9 units" (page read 40690480267). A `fill` step on
+  `total_units` names `before` (`Required Courses|Coursework required|Select`), and its pattern reads only the words
+  ahead of that match: a program printing no total runs on into the next program's paragraph on the same page.
+- **A record placing no course takes no prose total.** The first reconcile (41020193189) gave four not-found records
+  (45396, 45397, 30032, 02587) the total of the program beside them; the step now skips a record with no placed course,
+  and the filing was reverted before the second reconcile (41021155698). None of the four is loaded.
+- **Result:** 8 loaded records took a total (reread 41021975265, receipt committed, read back live); all 8 sum short of
+  it, so none passes. Computer Support Technician sums 22 against 32, Unix-Linux 14 against 20, the Advanced ESL pair
+  16 against 21: the gaps are courses the reading left out, a page read each. 33 loaded records still name no total;
+  their pages print none ahead of the list (Liberal Arts, Machinist, the Physical Sciences). No model call.
+
+## Moved from the lane (S524 compaction)
+
+Hartnell: RN 03570 read Fable's way sums to about
+71.5-78.5 against its tab's 60 (S498): the build would trade *incomplete* for *unequal*, so it waits.
+
+**San Joaquin Delta 200 of 203 (S500):** Cal-GETC 45621 passes on a `pool_areas` step over Areas 3 and 5 (S499), and
+Architectural Drafting 22244 on a `unit_line` step that adds its printed math line (lessons S500). The three left (07304, 16764, 19752) are extraction misreads, each needing its own page read (lessons S499).
+
 ## S523 SkyBarberry (2026-10-30, the CPL Queue routine): Glendale 80 to 105 passing, every course priced from its own description
 
 - **The state's file was never the whole list.** It leaves 51 Glendale credit courses unpriced, but the filed records
