@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-10-14
+updated: 2026-10-30
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -92,6 +92,20 @@ is his standing preference there too.
 4. **Tag yourself** `cpl-scheduled` (`set_session_tags`), so Sam can find the run.
 5. Then the ordinary start: the handoff, Rule 8's memory read, and the standing
    decision sheet's replies (Sam may have answered between sessions).
+   **Then the to-dos Sam marked done** (Sam, 2026-10-30, S527: *"When I complete a to do on the
+   commons, it should alert the cpl queue schedule task."*). A call in `kb/status/<project>.json` that
+   carries a `todo_id` shows **Mark done** on its Progress card; the mark is a row in `queue_todo_done`.
+   Read the rows since the handoff's date:
+
+   ```sql
+   select project, todo_id, note, reopen, by_email, at from queue_todo_done
+   where at >= '<the handoff's date>' order by id;
+   ```
+
+   The newest row per to-do wins. A done row is the session's **first** queue item, ahead of the
+   handoff's: do what its note makes possible (a parked college restarts; a file he attached is read),
+   then at the checkpoint write the call's `answer` ({by, at, words}: his note) into the status file.
+   The schedule is the alert: a mark made in the day waits for the night's first firing.
 6. **Requested briefs from the Library.** Anyone on the team can start a piece
    from the Library tab (*Create or Remediate a Document*, which saves the brief; built 2026-10-06 as
    *Start a piece*, one panel since 2026-10-29). Read them:
@@ -182,6 +196,18 @@ and the ledger records no pass dated today. Audit that view with `/a11y-pass`, w
 larger one becomes a lane item or a sheet card. Then `ui_pass.py --record <id> "<what it found and fixed>"` and
 commit the ledger with the fix. A session that cannot finish leaves the view due; the ledger carries it to the
 next night. CI's `--check` fails when a tab joins the nav and the ledger lacks it (`--sync` adds it).
+
+## The stopping rule: park a college when its catalog stops paying (Sam, 2026-10-30)
+
+Sam, S527, after five sessions on Glendale's catalog: *"I want to automate everything but not at all
+costs..."* and, on the rule the session proposed, *"good to go with 3."* A college is **parked** once
+two sessions in a row each move fewer than **3%** of its loaded programs to passing (the session
+proposed 1%, which would not have parked Glendale at 5 of 226 a session; it set 3% on his intent and
+says so on the call; reply to reverse). Parking writes one call into the project's status file with a
+`todo_id`, its part, and the plain steps that would turn the college back on (a structured export, a
+curriculum contact, or a new catalog year). The queue moves to the college with the next largest gap.
+A parked college restarts when Sam marks its to-do done, when a new catalog year loads, or when he
+says so. Worked example: `glendale-parked-2026-10-30`.
 
 ## While working: go with the recommendation
 

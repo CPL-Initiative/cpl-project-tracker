@@ -391,7 +391,9 @@
           answeredBy(c) ? answerLine(c) : null,
           c.if_no_reply && !done ? el("p", { cls: "prh-pg-foot", text: "No reply: " + c.if_no_reply }) : null,
           h.callRecords(c),
-          h.callLinks(c)],
+          h.callLinks(c),
+          /* A to-do the decider marks done on its card (todo_id; program_requirements.js callDone, S527). */
+          h.callDone ? h.callDone(c, i) : null],
           { cls: "prh-pg-box " + (done ? "prh-pg-answered" : "prh-pg-call"), h: "h4", mark: done,
             label: done ? "Answered" : "Needs " + who + "'s call" });
         card.setAttribute("data-call", String(i));

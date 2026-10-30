@@ -1,0 +1,17 @@
+-- Receipt: queue_todo_done and queue_todo_done_add, applied 2026-10-30 ~12:40Z by S527 SkyLoganberry
+-- (apply_migration queue_todo_done_s527), from chatbox/supabase_queue_todo_done.sql as committed.
+-- Sam's ask, 2026-10-30, in S527: "When I complete a to do on the commons, it should alert the cpl queue
+-- schedule task."
+--
+-- Read back the same minute:
+--   anon           execute false · select false · insert false · truncate false
+--   authenticated  execute true  · select true (RLS: is_allowed_reviewer()) · insert false · truncate false
+--   service_role   execute true  · select, insert, truncate true
+--   RLS on; one policy (queue_todo_done_reviewer_read). Rows at apply: 0.
+--
+-- Rollback (Rule 10 a2): a mark is undone by a reopen row, from the page or:
+--   select public.queue_todo_done_add('<project>', '<todo_id>', 'reopened', true);  -- as the reviewer
+-- To retire the surface entirely:
+--   revoke all on function public.queue_todo_done_add(text, text, text, boolean) from authenticated, service_role;
+--   drop function public.queue_todo_done_add(text, text, text, boolean);
+--   drop table public.queue_todo_done;

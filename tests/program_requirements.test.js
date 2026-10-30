@@ -974,11 +974,13 @@ block("(9)", function () {
 
 // ── (7) Read-only, tokens, words ──────────────────────────────────────────
 block("(7)", function () {
-  /* Sheet 51 card 1 (2026-10-08): the tab's one write is a reviewer's verdict, through one RPC. */
+  /* Sheet 51 card 1 (2026-10-08): a reviewer's verdict, through one RPC. S527 (Sam, 2026-10-30): the second,
+     a to-do marked done, through its own. Nothing else writes. */
   const writes = SRC.match(/method\s*:\s*["'](POST|PATCH|PUT|DELETE)["']/gi) || [];
   const rpcs = SRC.match(/\/rpc\/[A-Za-z_]+/g) || [];
-  check("(7) the tab's one write is the verdict RPC, a POST", writes.length === 1 && /POST/.test(writes[0]) &&
-    rpcs.length === 1 && rpcs[0] === "/rpc/program_record_verdict_add", writes.join(",") + " | " + rpcs.join(","));
+  check("(7) the tab's two writes are the verdict and to-do RPCs, each a POST", writes.length === 2 &&
+    writes.every(function (w) { return /POST/.test(w); }) &&
+    rpcs.slice().sort().join(",") === "/rpc/program_record_verdict_add,/rpc/queue_todo_done_add", writes.join(",") + " | " + rpcs.join(","));
   const css = (SRC.match(/function ensureCss\(\)[\s\S]*?\n  }\n/) || [""])[0];
   check("(7) the injected CSS uses tokens, never a raw hex", css.length > 500 && !/#[0-9a-fA-F]{3,8}\b/.test(css));
   check("(7) plain words, no emoji", !/[\u{1F300}-\u{1FAFF}✅✔✓❌⚠]/u.test(SRC));
@@ -2678,6 +2680,69 @@ block("(27)", function () {
   check("(27) answered on its sheet, it leaves the count", go.textContent === "Sam's to-dos: all answered", go.textContent);
   check("(27) the card reads Answered and shows his words",
     /Answered/.test(card.querySelector(".prh-sec-label").textContent) && /Sam, 2026-10-21: Later: keep this on ice\./.test(card.textContent), card.textContent);
+});
+
+// Sam, 2026-10-30 (S527): "When I complete a to do on the commons, it should alert the cpl queue
+// schedule task." A call with todo_id offers Mark done to a signed-in reviewer; the one write is
+// rpc/queue_todo_done_add, under the reviewer's token, and the card and the to-do word read done at
+// once. The failures this guards: a write under the anon key, a refusal that reads as saved, a
+// signed-out page that offers a control it cannot honor, and Reopen not reopening.
+block("(28)", function () {
+  const out = progressReady(20);
+  const todo = { title: "Glendale is parked", text: "Send a structured export.", todo_id: "glendale-parked-2026-10-30" };
+  out.M._state.progress.queue.calls = [todo];
+  out.M._render();
+  let card = out.root.querySelector('details[data-sec="progress:call:0"]');
+  check("(28) signed out: the card says to sign in and offers no Mark done",
+    /Sign in as a reviewer to mark this done/.test(card.textContent) && !card.querySelector("textarea"), card.textContent);
+  const posts = [];
+  let refuse = false;
+  out.w.fetch = function (url, init) {
+    posts.push({ url: String(url), init: init });
+    const body = JSON.parse(init.body);
+    if (refuse) return Promise.resolve({ ok: false, status: 400, text: function () { return Promise.resolve(JSON.stringify({ code: "42501", message: "queue_todo_done_add: not an allowed reviewer" })); } });
+    return Promise.resolve({ ok: true, status: 200, text: function () { return Promise.resolve(JSON.stringify({ id: 1, at: "2026-10-30T13:00:00Z",
+      todo_id: body.p_todo_id, reopen: body.p_reopen, by_email: "reviewer@example.org" })); } });
+  };
+  const sess = { email: "Reviewer@Example.org", access_token: "tok" };
+  out.w.CPL_SESSION = { get: function () { return sess; }, isFresh: function () { return true; },
+    ensureFresh: function () { return Promise.resolve(sess); },
+    authHeaders: function (extra) { return Object.assign({ apikey: "anon", Authorization: "Bearer tok" }, extra || {}); } };
+  out.M._state.review = { email: "reviewer@example.org", records: null, verdicts: [], todos: [], error: null };
+  out.M._render();
+  card = out.root.querySelector('details[data-sec="progress:call:0"]');
+  const note = card.querySelector("textarea"), lab = note && card.querySelector('label[for="' + note.id + '"]');
+  check("(28) signed in: a labeled note box and an underlined Mark done word", !!note && !!lab &&
+    Array.prototype.some.call(card.querySelectorAll("button.prh-word"), function (b) { return b.textContent === "Mark done"; }));
+  refuse = true;
+  const btn = function (word) { return Array.prototype.find.call(out.root.querySelectorAll('details[data-sec="progress:call:0"] button'), function (b) { return b.textContent === word; }); };
+  btn("Mark done").click();
+  return tick().then(tick).then(tick).then(function () {
+    card = out.root.querySelector('details[data-sec="progress:call:0"]');
+    check("(28) a refusal says Not saved and the to-do stays open",
+      /Not saved/.test(card.textContent) && out.root.querySelector("#prh-todo-go").textContent === "Sam's to-dos (1)", card.textContent);
+    refuse = false;
+    card.querySelector("textarea").value = "Asked the curriculum office for an export.";
+    btn("Mark done").click();
+    return tick().then(tick).then(tick);
+  }).then(function () {
+    const last = posts[posts.length - 1], body = JSON.parse(last.init.body);
+    check("(28) the write is the one RPC, under the reviewer's token, naming the project and to-do",
+      /\/rpc\/queue_todo_done_add$/.test(last.url) && last.init.headers.Authorization === "Bearer tok" &&
+      body.p_project === "program-requirements" && body.p_todo_id === "glendale-parked-2026-10-30" &&
+      body.p_note === "Asked the curriculum office for an export." && body.p_reopen === false, JSON.stringify(body));
+    card = out.root.querySelector('details[data-sec="progress:call:0"]');
+    check("(28) the card reads Answered and names who marked it, with the note",
+      /Answered/.test(card.querySelector(".prh-sec-label").textContent) && /Marked done by you, .*Asked the curriculum office/.test(card.textContent), card.textContent);
+    check("(28) the to-do word reads all answered", out.root.querySelector("#prh-todo-go").textContent === "Sam's to-dos: all answered");
+    btn("Reopen").click();
+    return tick().then(tick).then(tick);
+  }).then(function () {
+    const body = JSON.parse(posts[posts.length - 1].init.body);
+    check("(28) Reopen adds a reopen row and the to-do counts again",
+      body.p_reopen === true && out.root.querySelector("#prh-todo-go").textContent === "Sam's to-dos (1)" &&
+      !!out.root.querySelector('details[data-sec="progress:call:0"] textarea'));
+  });
 });
 
 Promise.all(pending).then(function () {
