@@ -800,3 +800,11 @@ Moved from docs/INDEX.md's update history (S507):
 ## Moved from docs/INDEX.md Update history (S521, 2026-10-30)
 
 - 2026-10-29 (S510 SkyWineberry, the CPL Queue routine): the night's UI pass (Funding model, clean); the Library checks a deck's contrast against the shape its words sit on and offers the nearest passing color (#2543); the funding Refresh comment and splash; handoff 511.
+
+## Moved from docs/INDEX.md Update history (S530, 2026-10-30)
+
+- 2026-10-29 (S519 SkyCloudberry, Sam's session): the CSM team's funding fixes and Sam's eight FAQs (#2560); Sierra answers with what loaded when a read times out, and the MAP Custom Report load moves to 10 PM Pacific (#2561); the College Identity findings link scrolls in place (#2562); Open Asks Sheet 140, ruled; a KB note on cron drift; handoff 520.
+- 2026-10-29 (S518 SkyServiceberry, Sam's session): the Library draws each slide beside its item, removes empty boxes, titles every slide and writes Claude's script into the notes (#2556, #2557); the funding page on a phone (#2558); the FAQ in six groups and Sierra reading it (#2559); handoff 519 (light).
+- 2026-10-29 (S517 SkyPartridgeberry, Sam's session): the Library's remediation draws each picture with its slide, reads QR codes, drafts every picture before the report opens, counts down to the Chancellor's Office review on one bar, and files a file in the Library as it opens (#2552 to #2554); a KB note on alt text a program wrote; handoff 518 updated.
+- 2026-10-29 (S517 SkyPartridgeberry, the CPL Queue routine): the Library measures a chart's contrast in a deck, document or workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on (#2551).
+- 2026-10-29 (S514 SkyMarionberry, the CPL Queue routine): the Library remediates a workbook (.xlsx): sheet names renamed everywhere they are referenced, alt text on charts drafted from their numbers, tables with no header row, data with no table and merged cells listed (#2548); handoff 515.

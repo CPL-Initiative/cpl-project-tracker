@@ -1,5 +1,5 @@
 ---
-title: "Program requirements harvest lessons — archive 3 (S399-S407)"
+title: "Program requirements harvest lessons — archive 3 (S399-S415)"
 created: 2026-10-22
 updated: 2026-10-30
 tags: [lessons, archive, program-requirements, catalog-harvest]
@@ -666,3 +666,98 @@ From the Records view paragraph, verbatim:
   the proxy refuses the log archive host: re-read those with a plan of their own.
 - **The Exhibit Adoption UI pass (#2211)** shipped; its record is in the UI ledger. A `transition: all` on a control
   hid a focus ring that existed (noted in `/a11y-pass`).
+
+## 2026-10-18 — Session 412 (SkyJoshua)
+
+- `182e810e207d` applied: 15,651 written (run 39093644832, 67 minutes; the last apply took 61).
+- Crafton Hills by the SmartCatalog walk: 229 pages, 64 of 79 listed programs found, all 64 extracted ($4.68),
+  40 pass the machine checks (run 39093935031); load dispatched behind Taft's capture-only read.
+- **A newer pending run in a concurrency group cancels the older pending one.** With one run active on `main`,
+  dispatch the next only once the active one has started the queue's previous pending run; Taft's read was
+  queued only after Crafton's had started, and Crafton's load only after Taft's started.
+
+## S413 SkyPinyon (2026-10-18): Taft loaded, the slashed subject, build 3f93779f0115
+
+- **The wave that turned `lints` green.** `tests/roep_display_test.py` counts every full-college record filed and loaded
+  against the newest display receipt, so a college loaded without its display build holds `lints`, and with it `test`,
+  red on `main` and on every PR. S412's #2219 could not go green alone; #2220 carried it plus the wave's build
+  (`3a5ed5d7bcf3`, 15,770 programs at 113 colleges, applied in run 39103566945). A load and its display build belong in
+  one PR, or the build follows the load before anything else merges.
+- **Taft by the SmartCatalog walk:** 58 of 63 listed programs found (the capture-only read, run 39097700126), all
+  extracted for $4.14 (run 39100858309), 24 passing the machine checks, loaded (run 39101990026). 34 fail arithmetic:
+  most read the page's 60-unit degree total as the major's units (stated 60 beside 18 to 35 computed), the Palo Verde
+  shape. A reread with the degree reading is the candidate.
+- **A slashed course subject hid ten programs from their own pages.** Crafton Hills prints `CNA/N 621`, `MATH/N 600`,
+  `KIN/D 130A`. The exact test read the slash (S408), but the coarse net that decides which pages reach it read
+  `N 621`, so a page placing every listed course at coverage 1.0 was turned away. `CODE_TOKEN_4` adds the slash reading
+  to the net's union, which can only admit a page, never refuse one. The state's file sometimes drops the slash
+  (`ESLN601` for `ESL/N 601`, `CNAN626`), so the net reads both forms. A capture-only read measured it before any
+  extraction: 64 found became 74 with the 64 filed kept unchanged (run 39103866118), then 76 with the slash-free form.
+- **The scorer had the same blind spot.** Acute Care Nursing Assistant and Home Health Aide each counted one course
+  twice, missing as `CNAN633` and invented as `CNA/N 633`. `listed_key()` maps a placed code to the listed code it names
+  once the slash is set aside, for coverage, invented and the closed list's units. A scan of every filed record found 36
+  with the same misreading: De Anza 15, Glendale 14, Los Angeles Trade-Technical 5, Crafton Hills 2. A filed record's
+  coverage cannot be rescored without the run's page text and closed list, so the Crafton two were re-extracted with
+  `force=43604,43611` (run 39108198761) and the rest wait on their college's next read.
+- **Cancel a run that checked out the branch before the fix it needs.** A dispatch checks out the branch's head when it
+  starts; a fix pushed after that does not reach it. The 07:29 run (on `eefd4235`) was canceled and one run on
+  `f5c93856` both forced the two records and extracted Foundations under the fixed scorer.
+- **Crafton Hills, end to end:** 76 of 79 listed programs hold records, 51 passing (was 64 and 40), $5.37 in all;
+  Japanese is unfound (no page names it). The load (run 39109666980) inserted 12 and kept 64. Build `3f93779f0115`:
+  15,782 programs at 113 colleges (#2222).
+- **Cañada's 11 need a reader change, not a reread.** Its capture-only read (run 39103943654) found 73 of 75 and the same
+  pages for every record, so nothing would extract; the business certificates sharing pages 148-154 and the two on the
+  course availability table stay out until the PDF reader assigns those pages differently.
+
+## S414 SkyChamise (2026-10-18): the Coursedog reader (Merced), the slash rescoring, a second slash shape
+
+- **A reconcile run rescores filed records for free.** `step=reconcile` (extract 0) captures the pages again and
+  rescores each filed record whose page it read, so a scorer fix needs no model call. Glendale 37 to 43 passing (14
+  replaced), De Anza 12 replaced, Los Angeles Trade Technical 5. A rescored record carries the reconcile run as its
+  `extracted_run`, and `step=reread` posts only the newest run's records: **reread before any extraction on the same
+  branch**, or the rescored records sit behind the newer run. Los Angeles Trade Technical's five had to be re-extracted
+  with `force=` for $0.66 after its six new programs were extracted first.
+- **A reconcile also rescores against everything the scorer learned since.** San Joaquin Delta's (run 39116289105)
+  fixed its two target records and rescored 204 others under the degree-total check that arrived after its read: 152 to
+  126 passing, 28 new arithmetic failures. Read a reconcile's summary before its reread; Delta is held.
+- **A second slash shape:** Crafton Hills prints `THART/S 124X2` and the state's file stores `THART124X2`, the letters
+  after the slash dropped. `listed_key()` tries that reading only when the slash-free one finds none, so `CNA/N 633`
+  still reads as `CNAN633` where both are listed. A scan of every filed record found it at Crafton Hills (2) and San
+  Joaquin Delta (2) only.
+- **The Coursedog reader.** Merced's page POSTs `app.coursedog.com/api/v1/cm/<school>/programs/search/$filters` for 20
+  programs at a time. Repeating the call from the browser context with only its content type answered **401** (run
+  39114886505): the page's own call carries headers the replay lacked. A Playwright route that rewrites the page's call
+  as it leaves (`limit=250`) and a response listener read all 191 at once; any further page is asked with every header
+  the page sent (`all_headers()`). Each program's Requisites tab shares one template suffix (`requisites-ojrrt`), so the
+  reader learns it from the first program's overview and loads the rest directly (181 of 188). The page's title names
+  only the code, so the heading the matcher reads is the program's name plus its award in words (`(AA)` as *associate in
+  arts*, `(CT)` as *certificate of achievement*). Capture-only 154 of 172 found, 95 at coverage 1.0 (run 39115547722);
+  extraction $9.14, 125 of 154 passing (run 39117489616); 153 loaded (run 39119871201). Ten programs lost their pages to
+  a sibling award naming the same list (Child Development A.A. to its certificates), eight found none (Diesel and
+  Mechanized Agriculture print few listed codes).
+- **Build `7e4a2a9c5ba7`: 15,946 programs at 114 colleges** (#2224).
+
+## S415 SkyRedbud (2026-10-18): a printed degree floor (San Joaquin Delta), Cal-GETC's 34 (Taft), build 48cb66f19cff
+
+- **Read the page before calling a rescore right or wrong.** Delta's 28 new arithmetic failures (S414) were the
+  scorer reading "Minimum Degree Units Required: 60" as an exact total: an 18-unit major and GE 27-34 came short, and
+  Nursing's 59.5 plus GE ran past 77.5. A four-page read (college-page-read 39122473643) showed the floor and the
+  page's advice to double-count major courses toward GE. Four loads settled what the records alone could not.
+- **A floor alone makes up a short sum.** The first step set `electives_fill_degree` from the floor's words, and the
+  scorer's guard ("the record says electives fill the degree total, but the catalog text names no electives") failed
+  15 records whose pages name none. `degree_verdict()`'s minimum branch now passes a short sum on
+  `degree_total_minimum` alone, with `fill` naming the units; Delta's steps set only the floor. One record elsewhere
+  reads differently on its next rescore: Orange Coast 10278 (37 + GE 18 under its minimum of 60).
+- **A reconcile files what it set, and a later step never clears it.** The first run's `electives_fill_degree: true`
+  stayed in the filed records, so the second run changed nothing for the 15. Reverting both filing commits and
+  reconciling again from the clean records gave 154 passing (from 152), none lost; reread 39130341466 replaced 71.
+- **Taft: Cal-GETC is the statewide 34.** Ten transfer degrees add up their major and name Cal-GETC with no units;
+  Taft's own Cal-GETC page prints none (read 39122581817). Fable, asked once, chose a Taft step citing the figure
+  over loosening the scorer (which would stop the degree check catching real misreads) or leaving the flag (which
+  would never clear). The step cites Monterey Peninsula's GE page; 24 to 34 passing, reread 39128567443 replaced 17.
+  Its card is on the sheet for Sam.
+- **A reconcile step's pattern needs `\s+`.** The first Taft run matched nothing: the capture's text is innerText,
+  and Taft's titles carry non-breaking spaces. The same words with `\s+` matched all ten. When a reconcile reports
+  "0 filed records changed" and no unread pages, suspect the pattern's spacing first.
+- **`gh run view --log` is refused here** (the log host answers 403); `get_job_logs` with `return_content` returns
+  it, saved to a file when long. Parse its `logs_content` field.

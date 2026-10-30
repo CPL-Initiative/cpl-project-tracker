@@ -1,7 +1,7 @@
 ---
 title: "Implementation Funding tab / the $35M model — lane state"
 created: 2026-08-28
-updated: 2026-10-28
+updated: 2026-10-30
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -25,7 +25,7 @@ related:
 
 ✅ **THE INTRODUCTION VIDEO: CPL Funding in Motion** ([README](../../../prototype/funding_video/README.md)): ⭐ the introduction link is always the published film; its figures script and Scenario 4 words lessons, *Moved from the lane (S480)*.
 
-✅ **Sam's phone asks of 2026-10-29 (S518, #2558):** one narrated video from the Contents (`n2.html?full=1`, opening filling the window), its row Play, Full screen and the way back to the public page, the film pages Light; the header lighter on a phone. Detail: [the film's README](../../../prototype/funding_video/README.md), *The page on a phone (S518)*. **Open, Sam's call:** an address without github.io (handoff 509 item 2).
+✅ **Sam's phone asks of 2026-10-29 (S518, #2558):** lessons, *Moved from the lane (S530)*.
 
 ✅ **THE TAB:** introduction first (`ABOUT_DEFAULT_HTML` is **Sam's own approved introduction**), then the institution table; sections build into an id-keyed map joined in a stored order (`secOrder`; the public page's `pubSecOrder`). ⭐ **ID-KEYED, NEVER POSITIONAL** (an unknown id is ignored, an unnamed one appends). A card's goal derives from its metric's milestone by default (`prioGoals()`). Prose blocks edit in curate (`TEXT_BLOCKS`); one curator section holds the explainer's and My CPL Funding's passages, an emptied passage stays empty (`TEXT_BLANK`) and bullets nest (lessons, *S506*). ⚠️ **A REPORTED CARD IS NEVER AN ENTRY IN `priorities(slot)`**: share 0 there still enters every sum, column, export and memo. ⚠️ **The register is INLINE in both HTMLs**, never loaded from `CPL_Data.js`; the designated NAME rides the config, the weekly STATUS does not.
 
@@ -87,7 +87,7 @@ says 116 and 2, and a Priority 3 strategy still ends in *studentsr*.
 
 ✅ **Scenario 4 (built S449, 2026-10-22) and the public requests' MAP team review (S502):** verbatim in `docs/cpl_funding_lessons.md`, *Moved from the lane (S519)*; guards `cpl_funding_nc_outcomes`, `cpl_funding_nc_attestation`.
 
-**Email first, the domain gate measured, NOCE's district domain, *Awaiting CPL Initiative Confirmation* (Sam, 2026-10-28; S506):** lessons, *S506*; guards `cpl_funding_optin` G1–G6, `cpl_funding_nc_attestation` C1b–C1d; a district's own domain lives in `cpl_funding_district_domains`.
+**Email-first forms and *Awaiting CPL Initiative Confirmation* (S506); a row's submitted word with a reviewer's Accept (Sam, 2026-10-30; S530):** lessons *S506*, *S530*; guards `cpl_funding_optin` G1–G6 and R1–R3, `cpl_funding_nc_attestation` C1b–C1d and D0r–D0t; a district's own domain lives in `cpl_funding_district_domains`. ⏳ **NEEDS SAM (Open Asks Sheet 146 card 3):** whether Accept sends its email itself, from map@rccd.edu through Microsoft 365 (lessons S530).
 
 ✅ **The attestation form in Sam's words (#2476):** lessons, *Moved from the lane (S494)*; `NC_LEAD_TYPES` matches `cna_lead_chk`.
 

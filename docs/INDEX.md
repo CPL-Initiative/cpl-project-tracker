@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 95 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 499 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1319** | |
+| Session handoffs | 500 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1320** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,15 +122,11 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
-- **2026-10-30 (S527 SkyLoganberry):** Glendale's eleven C-numbered courses priced from the catalog through a read that parses itself on the runner (`parse_units`); 115 of 226 pass (#2578); handoff 528.
+- **2026-10-30 (S530 SkyBuffaloberry):** Los Angeles Valley 114 to 167 of 204 passing through its degree steps and a moved-page guard that reads the record's heading; the funding rows show a waiting request with a reviewer's Accept; MAP links from `map_links.js` on two more surfaces (#2588); Sheet 146; handoff 531.
+- 2026-10-30 (S527 SkyLoganberry): Glendale's eleven C-numbered courses priced from the catalog through a read that parses itself on the runner (`parse_units`); 115 of 226 pass (#2578); handoff 528.
 - 2026-10-30 (S525 SkyTayberry): S524's 8 Glendale prose totals were the first program's on each page; rolled back by receipt, and the fill now reads from the program's own heading (#2576); handoff 526.
 - 2026-10-30 (S524 SkyCranberry): Glendale's prose program totals fill `total_units` through a reconcile step's new `before` boundary; 8 records now name their total, all unequal, 105 still pass (#2575); handoff 525.
 - 2026-10-30 (S522 SkyCrowberry, light): a failing shard names its file and `library.test.js` stops racing JSZip (#2572), so #2570's shard 3 passes; #2571 merged; S521's memory rows applied; handoff 523.
 - 2026-10-30 (S521 SkyBearberry): Sierra's program search fixed live (no temp files; s521 and s521b, Sheet 142 card 1), the deploy smoke retries a read and reports a wording (#2571, card 2), handoff 522.
 - 2026-10-29 (S520 SkyLingonberry, Sam's session): the public funding page in COBI's Share menu (#2565); #2563 and #2560 landed before the Summit, #2560 after two merges of main; Sierra deployed; the tests check out less and run on six shards (#2567); handoff 521.
 - 2026-10-29 (SkyChokeberry, Sam's Library side session beside S520): Revise and remediate from the one box, Edit moved into it, long instructions kept whole (#2564); side-lane handoff `docs/library_handoff.md` (light).
-- 2026-10-29 (S519 SkyCloudberry, Sam's session): the CSM team's funding fixes and Sam's eight FAQs (#2560); Sierra answers with what loaded when a read times out, and the MAP Custom Report load moves to 10 PM Pacific (#2561); the College Identity findings link scrolls in place (#2562); Open Asks Sheet 140, ruled; a KB note on cron drift; handoff 520.
-- 2026-10-29 (S518 SkyServiceberry, Sam's session): the Library draws each slide beside its item, removes empty boxes, titles every slide and writes Claude's script into the notes (#2556, #2557); the funding page on a phone (#2558); the FAQ in six groups and Sierra reading it (#2559); handoff 519 (light).
-- 2026-10-29 (S517 SkyPartridgeberry, Sam's session): the Library's remediation draws each picture with its slide, reads QR codes, drafts every picture before the report opens, counts down to the Chancellor's Office review on one bar, and files a file in the Library as it opens (#2552 to #2554); a KB note on alt text a program wrote; handoff 518 updated.
-- 2026-10-29 (S517 SkyPartridgeberry, the CPL Queue routine): the Library measures a chart's contrast in a deck, document or workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on (#2551).
-- 2026-10-29 (S514 SkyMarionberry, the CPL Queue routine): the Library remediates a workbook (.xlsx): sheet names renamed everywhere they are referenced, alt text on charts drafted from their numbers, tables with no header row, data with no table and merged cells listed (#2548); handoff 515.
