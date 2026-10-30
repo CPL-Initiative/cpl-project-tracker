@@ -101,6 +101,13 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .edit { font: inherit; font-size: clamp(19px, 2.2vw, 23px); font-weight: 600; color: var(--text-strong); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; width: 100%; min-width: 0; }
 .edit-sm { font: inherit; font-size: 14px; color: var(--text-body); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 8px; width: 100%; min-width: 0; }
 .fieldrow { display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: center; font-size: 14px; color: var(--text-muted); }
+.finder { position: relative; display: grid; gap: 4px; }
+.results { list-style: none; margin: 0; padding: 4px 0; position: absolute; top: 100%; left: 0; right: 0; z-index: 2; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; max-height: 320px; overflow-y: auto; }
+.results button { display: grid; gap: 2px; width: 100%; text-align: left; background: none; border: 0; padding: 8px 12px; font: inherit; color: var(--text-body); cursor: pointer; }
+.results button:hover, .results button:focus-visible { background: var(--surface-subtle); }
+.results .rt { color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.results .rm { font-size: 13px; color: var(--text-muted); }
+.results .none { padding: 8px 12px; font-size: 14px; color: var(--text-muted); }
 .why { font-size: 15px; color: var(--text-muted); border-left: 2px solid var(--border-strong); padding-left: 10px; }
 .acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
 .acts .w { font-weight: 600; }
@@ -197,31 +204,37 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
             </table>
           </div>
 
-          <div class="card" aria-label="Review one title">
+          <div class="finder">
+            <label class="small muted" for="find-exhibit">Go to an exhibit</label>
+            <input class="search" id="find-exhibit" type="search" autocomplete="off" placeholder="Title, exhibit ID, college or course code" aria-controls="find-results">
+            <ul class="results" id="find-results" role="listbox" aria-label="Matching exhibits" hidden></ul>
+          </div>
+
+          <div class="card" aria-label="Review one title" id="review-card">
             <div class="pair">
               <div>
-                <span class="small muted">Current title, as Cabrillo College typed it</span>
-                <span class="big">Introduction to Digital Media High School Articulation</span>
-                <span class="small muted">Articulated to DM 1, Introduction to Digital Media</span>
+                <span class="small muted" id="rc-who"></span>
+                <span class="big" id="rc-current"></span>
+                <span class="small muted" id="rc-course"></span>
               </div>
               <span class="to" aria-hidden="true">to</span>
               <div>
-                <label class="small muted" for="proposed-title">Proposed title, from C-ID ARTS 250 (edit it here)</label>
-                <input class="edit" id="proposed-title" type="text" value="Introduction to Digital Art">
-                <div class="fieldrow"><label for="proposed-issuer">Issuer</label><input class="edit-sm" id="proposed-issuer" type="text" value="Local High School"></div>
+                <label class="small muted" for="proposed-title" id="rc-from"></label>
+                <input class="edit" id="proposed-title" type="text">
+                <div class="fieldrow"><label for="proposed-issuer">Issuer</label><input class="edit-sm" id="proposed-issuer" type="text"></div>
               </div>
             </div>
-            <p class="why">442 students have credit on this exhibit · the classifier alone was unsure (0.80)</p>
-            <p class="small">Source: <a href="https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=MAPCXH-ITDM-1-001&amp;View=Non-Military">MAPCXH-ITDM-1-001 in MAP</a></p>
+            <p class="why" id="rc-why"></p>
+            <p class="small">Source: <a id="rc-source" href="#cobi-review"></a></p>
             <div class="acts">
-              <button class="w" type="button">Keep Current Title</button>
-              <button class="w" type="button">Change to Proposed Title</button>
+              <button class="w" type="button" data-step="1">Keep Current Title</button>
+              <button class="w" type="button" data-step="1">Change to Proposed Title</button>
               <button class="w" type="button">Teach a rule</button>
-              <button class="w" type="button">Skip</button>
+              <button class="w" type="button" data-step="1">Skip</button>
             </div>
             <div class="foot">
-              <span>1 of 468 · most students first</span>
-              <span>Next: AP Computer Science A, Los Angeles Pierce College, 398 students</span>
+              <span id="rc-pos"></span>
+              <span id="rc-next"></span>
             </div>
           </div>
         </div>
@@ -407,5 +420,66 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
   }
   window.addEventListener("hashchange", show);
   show();
+
+  /* Held exhibits, most students first (a sample of the 468, real rows of 2026-10-30). */
+  var HELD = [
+    { id: "MAPCXH-ITDM-1-001", college: "Cabrillo College", typed: "Introduction to Digital Media High School Articulation", course: "DM 1", ident: "C-ID ARTS 250", title: "Introduction to Digital Art", issuer: "Local High School", students: "442 students have credit on this exhibit", why: "the classifier alone was unsure (0.80)" },
+    { id: "MAPSAS-ACSA20-1-001", college: "Los Angeles Pierce College", typed: "AP Computer Science A - Score of 3 or higher - HISTORICAL Type 1", course: "", ident: "", title: "AP Computer Science A", issuer: "College Board", students: "398 students have credit on this exhibit", why: "an AP exam keeps its own name" },
+    { id: "MAPCXH-ITDP-1-001", college: "Cabrillo College", typed: "Intro to Digital Photography High School Articulation", course: "AP 6", ident: "M-ID ARTS M1351", title: "Introduction to Digital Photography", issuer: "Local High School", students: "316 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)" },
+    { id: "MAPCXH-RC1-1-001", college: "Cabrillo College", typed: "Residential Construction 1 High School Articulation", course: "CEM 178A", ident: "M-ID HVAC M10AE", title: "Residential Construction Skills 1: \"Front End\"", issuer: "Local High School", students: "160 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)" },
+    { id: "MAPCXH-RC2-1-001", college: "Cabrillo College", typed: "Residential Construction 2 High School Articulation", course: "CEM 178B", ident: "M-ID CNST M1130", title: "Residential Construction Skills 2: \"Finish End\"", issuer: "Local High School", students: "158 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)" },
+    { id: "MAPICI-1RO&-1-001", college: "Palo Verde College", typed: "1st Receiver Ops & Decon", course: "FST 121", ident: "M-ID ESCI M10HI", title: "First Receiver Operations & Decontamination for Healthcare", issuer: "", students: "Too few students to show", why: "the classifier alone was unsure (0.75); no issuer yet" },
+    { id: "MAPCxH-3DMH-1-001", college: "Norco College", typed: "3D Digital Modeling HS-CNUSD", course: "GAM 6A", ident: "M-ID MULT M1019", title: "3D Digital Modeling", issuer: "Corona-Norco Unified School District", students: "No students with credit yet", why: "the classifier alone was unsure (0.75)" }
+  ];
+  var MAP = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?View=Non-Military&Exhibit=";
+  var cur = 0;
+  function $(id) { return document.getElementById(id); }
+  function load(i) {
+    cur = i; var h = HELD[i];
+    $("rc-who").textContent = "Current title, as " + h.college + " typed it";
+    $("rc-current").textContent = h.typed;
+    $("rc-course").textContent = h.course ? "Articulated to " + h.course : "";
+    $("rc-from").textContent = "Proposed title, from " + (h.ident || "the classifier") + " (edit it here)";
+    $("proposed-title").value = h.title;
+    $("proposed-issuer").value = h.issuer;
+    $("rc-why").textContent = h.students + " · " + h.why;
+    $("rc-source").textContent = h.id + " in MAP";
+    $("rc-source").href = MAP + encodeURIComponent(h.id);
+    $("rc-pos").textContent = (i + 1) + " of 468 · most students first";
+    var n = HELD[i + 1];
+    $("rc-next").textContent = n ? "Next: " + n.typed + ", " + n.college : "";
+  }
+  function results(q) {
+    var list = $("find-results"); list.innerHTML = "";
+    q = q.trim().toLowerCase();
+    if (!q) { list.hidden = true; return; }
+    var hits = HELD.map(function (h, i) { return [h, i]; }).filter(function (p) {
+      var h = p[0];
+      return [h.typed, h.id, h.college, h.course, h.title].join(" ").toLowerCase().indexOf(q) !== -1;
+    });
+    if (!hits.length) {
+      var li = document.createElement("li"); li.className = "none"; li.textContent = "No held exhibit matches. Credentials search covers the settled ones.";
+      list.appendChild(li);
+    }
+    hits.forEach(function (p) {
+      var h = p[0], li = document.createElement("li"), b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "option");
+      var t = document.createElement("span"); t.className = "rt"; t.textContent = h.typed;
+      var m = document.createElement("span"); m.className = "rm"; m.textContent = h.college + " · " + h.id + (h.course ? " · " + h.course : "");
+      b.appendChild(t); b.appendChild(m);
+      b.addEventListener("click", function () { load(p[1]); $("find-exhibit").value = ""; list.hidden = true; $("proposed-title").focus(); });
+      li.appendChild(b); list.appendChild(li);
+    });
+    list.hidden = false;
+  }
+  $("find-exhibit").addEventListener("input", function (e) { results(e.target.value); });
+  $("find-exhibit").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { var first = $("find-results").querySelector("button"); if (first) { e.preventDefault(); first.click(); } }
+    if (e.key === "Escape") { $("find-results").hidden = true; }
+  });
+  document.querySelectorAll("[data-step]").forEach(function (b) {
+    b.addEventListener("click", function () { load((cur + 1) % HELD.length); });
+  });
+  load(0);
 })();
 </script>
