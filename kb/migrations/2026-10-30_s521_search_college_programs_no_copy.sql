@@ -5,8 +5,8 @@
 -- REPLACE keeps the grants ({=X, postgres=X, anon=X, authenticated=X, service_role=X}) and
 -- PostgREST sees one candidate. No table, index or row changes.
 --
--- HELD until Sam says when (Open Asks Sheet 142): the handoff of 2026-10-29 held any function
--- change until after the Summit of 2026-10-30. Apply it by pointing kb/migrations/.apply here:
+-- Sam, Open Asks Sheet 142 card 1, 00:21Z 2026-10-30: "tonight" (the handoff of 2026-10-29 had
+-- held function changes until after the Summit). Apply it by pointing kb/migrations/.apply here:
 --   file=kb/migrations/2026-10-30_s521_search_college_programs_no_copy.sql
 --   name=s521_search_college_programs_no_copy
 -- then run the after-read in kb/receipts/search_college_programs_no_copy_2026-10-30_s521.sql.

@@ -1,9 +1,9 @@
 -- RECEIPT — search_college_programs() reads the table, not a materialized copy of it.
 -- 2026-10-30, S521 (SkyBearberry). Handoff 521 item 2: "Find what is slow under load, but hold
 -- any index or function change until after the Summit, and route it through a migration."
--- Migration: kb/migrations/2026-10-30_s521_search_college_programs_no_copy.sql (NOT YET APPLIED;
--- Sam picks the time on Open Asks Sheet 142). Source: chatbox/supabase_search_college_programs.sql,
--- its NO COPY note.
+-- Migration: kb/migrations/2026-10-30_s521_search_college_programs_no_copy.sql. Sam, Open Asks
+-- Sheet 142 card 1, 00:21Z 2026-10-30: "tonight" (his own call). Source:
+-- chatbox/supabase_search_college_programs.sql, its NO COPY note.
 --
 -- WHY. Smoke 7c (the Orange County CNA-to-LVN call with the anon key, 3 s statement_timeout)
 -- returned nothing after ~7.5 s on the 2026-10-29 deploy; the same call through the MCP answered
@@ -122,5 +122,7 @@
 -- verbatim), confirm md5(prosrc) reads ff716ac2b17267d8154dfce76a627d68 again, and git revert
 -- the source-file change. No data moves either way.
 --
--- APPLIED: not yet. The session that applies it records the time, the runner's receipt and the
--- after-read here.
+-- APPLIED: not yet. A fresh live read at 00:29:44Z still read the BEFORE md5(prosrc)
+-- ff716ac2b17267d8154dfce76a627d68. The session's permission check denied the push that changes
+-- kb/migrations/.apply (a production deploy), so the apply waits on Sam. The session that applies it
+-- records the time, the runner's receipt and the after-read here.
