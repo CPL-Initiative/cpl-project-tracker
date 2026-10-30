@@ -36,4 +36,8 @@ jobs:
       - name: Run cpl-chat smoke test
         env:
           SMOKE_MODES: ${{ inputs.modes }}
+          # Sam, Open Asks Sheet 142 card 2 ("retry-report"): a missed check on an
+          # answer's wording reports as a warning here; a rule guard and a failed
+          # read still fail. The preview A/B runs the script directly and keeps failing.
+          SMOKE_ANSWER_CHECKS: report
         run: bash chatbox/smoke_test.sh

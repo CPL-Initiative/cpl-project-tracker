@@ -505,7 +505,9 @@ block("9. the direct answer first, the catalog never the world, no remark about 
   // "curl failed for"). The first run of the new checks printed a fifth shape
   // and a sixth, so the grid read "0 failing" over a preview log that ended
   // SMOKE TEST FAILED. Every prose assertion's error line takes a counted shape.
-  const errorLines = [...SMOKE.matchAll(/echo "::error::\$label: ([^"]+)"/g)].map((m) => m[1]);
+  // Since S521 (Sheet 142 card 2) most go through report_answer_miss, which prints the same
+  // wording as ::error:: or ::warning::; the A/B strips both prefixes before it reads them.
+  const errorLines = [...SMOKE.matchAll(/(?:echo "::error::|report_answer_miss ")\$label: ([^"]+)"/g)].map((m) => m[1]);
   check("(9) ⭐ every prose-assertion error line takes a shape the A/B compare counts",
     errorLines.length >= 4 && errorLines.every((l) => /^(expected answer to match|answer should NOT match)/.test(l)), errorLines.filter((l) => !/^(expected answer to match|answer should NOT match)/.test(l)).join(" | "));
   const curls = (SMOKE.match(/^[^#\n]*curl -sS[^\n]*$/gm) || []);

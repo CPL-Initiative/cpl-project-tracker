@@ -33,6 +33,48 @@ REST_BASE="${CPL_REST_BASE:-${URL%%/functions/*}/rest/v1}"
 
 fail=0
 
+# ── RETRY A READ, REPORT A WORDING (Sam, Open Asks Sheet 142 card 2, 00:21Z 2026-10-30,
+# "retry-report") ─────────────────────────────────────────────────────────────
+# The four deploys before it each failed one check, a different one each time, while
+# the deploy itself was sound: 7q (10-27), 7v (10-28 and 10-29), and 7c (10-29), the
+# program search timing out under load. So:
+#   · a database read retries once. rpc_post asks again after 5 s when the answer is
+#     empty or a PostgREST error object (57014 is a statement timeout); a real [] is
+#     an answer and never retried, so the negative controls stay exact. The two
+#     timing checks (7p, 7l) measure once more before they fail.
+#   · a check on the WORDING of an answer reports. With SMOKE_ANSWER_CHECKS=report
+#     (cpl-chat-smoke.yml sets it, so the post-deploy and dispatched runs) a missed
+#     answer check prints ::warning:: with its usual wording and the run stays green;
+#     the summary counts them. Unset, it fails as before: the preview A/B runs this
+#     file directly and reads failures by their wording either way.
+#   · a check that guards one of Sam's rules still fails the run: the opener and
+#     COCI checks inside run(), and answer_rule_must_match / _not_match (7z, the
+#     naming rule).
+SMOKE_ANSWER_CHECKS="${SMOKE_ANSWER_CHECKS:-fail}"
+answer_warnings=0
+report_answer_miss() { # message
+  if [ "$SMOKE_ANSWER_CHECKS" = report ]; then
+    echo "::warning::$1 (an answer check: reported, not failed)"; answer_warnings=$((answer_warnings + 1))
+  else
+    echo "::error::$1"; fail=1
+  fi
+}
+rpc_post() { # rpc path (rpc/<function>), json-body
+  local out
+  out="$(curl -sS --max-time 45 -X POST "$REST_BASE/$1" \
+    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+    -d "$2")"
+  case "$out" in
+    ""|"{"*)
+      echo "::warning::$1 answered '$(printf '%s' "$out" | head -c 160)'; asking once more in 5 s" >&2
+      sleep 5
+      out="$(curl -sS --max-time 45 -X POST "$REST_BASE/$1" \
+        -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+        -d "$2")" ;;
+  esac
+  printf '%s' "$out"
+}
+
 # ── THE MODE FILTER (Sam, 2026-10-27) ────────────────────────────────────────
 # Every run() below is one Sierra answer billed to her Anthropic key, and the whole
 # file asks 33. On 2026-10-26 and 27 this file ran about 20 times (pushes to branches
@@ -136,7 +178,7 @@ answer_head_must_match() { # [-i] chars regex label
   if printf '%s' "$LAST_ANSWER" | head -c "$chars" | grep -E $flag -q -- "$re"; then
     echo "  [assert ok] $label matches /$re/ within the first $chars characters"
   else
-    echo "::error::$label: expected answer to match /$re/ within the first $chars characters (the direct answer must lead)"; fail=1
+    report_answer_miss "$label: expected answer to match /$re/ within the first $chars characters (the direct answer must lead)"
   fi
 }
 
@@ -149,7 +191,7 @@ answer_head_must_not_match() { # [-i] chars regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local chars="$1" re="$2" label="$3"
   if printf '%s' "$LAST_ANSWER" | head -c "$chars" | grep -E $flag -q -- "$re"; then
-    echo "::error::$label: answer should NOT match /$re/ within the first $chars characters (regression)"; fail=1
+    report_answer_miss "$label: answer should NOT match /$re/ within the first $chars characters (regression)"
   else
     echo "  [assert ok] $label does not match /$re/ within the first $chars characters"
   fi
@@ -163,7 +205,7 @@ answer_must_match() {     # [-i] regex label
   if printf '%s' "$LAST_ANSWER" | grep -E $flag -q -- "$re"; then
     echo "  [assert ok] $label matches /$re/"
   else
-    echo "::error::$label: expected answer to match /$re/"; fail=1
+    report_answer_miss "$label: expected answer to match /$re/"
   fi
 }
 answer_must_not_match() { # [-i] regex label
@@ -171,10 +213,19 @@ answer_must_not_match() { # [-i] regex label
   local flag=""; if [ "$1" = "-i" ]; then flag="-i"; shift; fi
   local re="$1" label="$2"
   if printf '%s' "$LAST_ANSWER" | grep -E $flag -q -- "$re"; then
-    echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
+    report_answer_miss "$label: answer should NOT match /$re/ (regression)"
   else
     echo "  [assert ok] $label does not match /$re/"
   fi
+}
+# A RULE GUARD fails the run in either mode (Sam's rulings, not the model's wording).
+answer_rule_must_match() {     # [-i] regex label
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
+  local SMOKE_ANSWER_CHECKS=fail; answer_must_match "$@"
+}
+answer_rule_must_not_match() { # [-i] regex label
+  [ "${SKIP_MODE:-0}" = 1 ] && return 0   # its run() was not asked (SMOKE_MODES)
+  local SMOKE_ANSWER_CHECKS=fail; answer_must_not_match "$@"
 }
 # The same NOT-match, but a NEGATED phrase does not count. A framing guard asks
 # "does the answer call this a failure / report an absent college as zero"; a
@@ -224,7 +275,7 @@ answer_must_not_match_unnegated() { # [-i] regex label
     -e "s/\\b(not|never|no|nor|isn.?t|aren.?t|wasn.?t|weren.?t|rather than|instead of) ([^.,;:—–]|\\.[0-9]){0,40}($re)//Ig" \
     -e "s/\\b(can.?t|cannot|can not|don.?t|do not|won.?t|not|never|different from|as opposed to|far from) (say|saying|claim|claiming|report|reporting|confirm|confirming|state|stating|tell you|telling you|read|reading|treat|treating|interpret|interpreting|see|seeing|take|taking|count|counting|mistake|mistaking|describe|describing)\\b([^.,;:—–]|\\.[0-9])*//Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
-    echo "::error::$label: answer should NOT match /$re/ outside a negation (regression)"; fail=1
+    report_answer_miss "$label: answer should NOT match /$re/ outside a negation (regression)"
   else
     echo "  [assert ok] $label does not match /$re/ outside a negation"
   fi
@@ -278,7 +329,7 @@ answer_must_not_claim_absence() { # [-i] regex label
     -e "s/(articulat[^.]*)\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?(set (this|that|it|one) up|done (this|that|so|the same))\\b/\\1zero\\3 \\4 \\5\\6/Ig" \
     -e "s/\\b(no|none)\\b([^.]{0,80}) (has|have|had) (yet |not yet |ever |so far )?(set up|established|created|built|put in place|approved|adopted) (an? |any )?(([[:alnum:]-]+ ){0,4}articulat(ions?|ed|ing)|([[:alnum:]-]+ ){0,3}exhibits?)\\b/zero\\2 \\3 \\4\\5 an articulation/Ig")"
   if printf '%s' "$stripped" | grep -E $flag -q -- "$re"; then
-    echo "::error::$label: answer should NOT match /$re/ (regression)"; fail=1
+    report_answer_miss "$label: answer should NOT match /$re/ (regression)"
   else
     echo "  [assert ok] $label does not match /$re/ once instrument-attributed and articulation absences are set aside"
   fi
@@ -311,7 +362,7 @@ answer_must_name_at_least() { # [-i] count label pattern...
   if [ "$hits" -ge "$need" ]; then
     echo "  [assert ok] $label — named $hits of $total (needed $need):$found"
   else
-    echo "::error::$label: expected answer to match at least $need of $total name patterns — named only $hits. Not named:$missed"; fail=1
+    report_answer_miss "$label: expected answer to match at least $need of $total name patterns — named only $hits. Not named:$missed"
   fi
 }
 
@@ -427,9 +478,7 @@ answer_must_match -i "construction|carpentry|trades|OSHA" "7 on-topic"
 # tests/sierra_geo_ranking.test.js, not by this.
 OFFERINGS_TSQ='los:* | angeles:* | harbor:* | nccer:* | carpentry:* | construction:* | welding:* | electrician:* | plumbing:* | carpenter:* | woodworking:*'
 offerings_call() { # tsquery
-  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/search_college_offerings" \
-    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-    -d "$(printf '{"search_query":%s,"college_filter":null,"result_limit":150}' \
+  rpc_post "rpc/search_college_offerings" "$(printf '{"search_query":%s,"college_filter":null,"result_limit":150}' \
           "$(printf '%s' "$1" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')")"
 }
 echo "===================================================================="
@@ -499,9 +548,7 @@ fi
 # fails the moment they part. Same guard mode 7r's literal has.
 PROGRAMS_TERMS='["lvn","practical nursing","vocational nursing"]'
 programs_call() { # json array of terms
-  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/search_college_programs" \
-    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-    -d "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":600}' "$1")"
+  rpc_post "rpc/search_college_programs" "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":600}' "$1")"
 }
 echo "===================================================================="
 echo "MODE: 7p program retrieval answers the LVN question cleanly"
@@ -552,9 +599,13 @@ fi
 # (19.8 s for a 30-term expansion); the one-pass rewrite measures 1.2 s for
 # these three terms. This call runs on the ANON key, whose statement timeout is
 # 3 s, so 4 s here fails loudly before either timeout does.
-psecs=$(curl -sS --max-time 45 -o /dev/null -w '%{time_total}' -X POST "$REST_BASE/rpc/search_college_programs" \
-  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-  -d "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":600}' "$PROGRAMS_TERMS")" 2>/dev/null || echo 99)
+for _try in 1 2; do
+  psecs=$(curl -sS --max-time 45 -o /dev/null -w '%{time_total}' -X POST "$REST_BASE/rpc/search_college_programs" \
+    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+    -d "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":600}' "$PROGRAMS_TERMS")" 2>/dev/null || echo 99)
+  awk -v s="${psecs:-99}" 'BEGIN { exit !(s + 0 < 4.0) }' && break
+  [ "$_try" = 1 ] && { echo "::warning::rpc/search_college_programs took ${psecs}s; measuring once more in 5 s"; sleep 5; }
+done
 if awk -v s="${psecs:-99}" 'BEGIN { exit !(s + 0 < 4.0) }'; then
   echo "  [assert ok] 7p ⭐ the LVN question answered in ${psecs}s (1.2 s measured; the anon key times out at 3 s)"
 else
@@ -589,14 +640,10 @@ OC_QUESTION='I have a CNA certificate and I want to go to a college in Orange Co
 OC_TERMS='["cna","lvn","nurse assistant","certified nurse assistant","practical nursing","vocational nursing"]'
 OC_OFFERINGS_TSQ='cna:* | lvn:* | (nurse:* <-> assistant:*) | (certified:* <-> nurse:* <-> assistant:*) | (practical:* <-> nursing:*) | (vocational:* <-> nursing:*)'
 programs_call_anchored() { # json array of terms, county
-  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/search_college_programs" \
-    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-    -d "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":150,"anchor_county":"%s","anchor_region":null}' "$1" "$2")"
+  rpc_post "rpc/search_college_programs" "$(printf '{"search_terms":%s,"college_filter":null,"result_limit":150,"anchor_county":"%s","anchor_region":null}' "$1" "$2")"
 }
 offerings_call_anchored() { # tsquery, county
-  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/search_college_offerings" \
-    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-    -d "$(printf '{"search_query":%s,"college_filter":null,"result_limit":150,"anchor_county":"%s","anchor_region":null}' \
+  rpc_post "rpc/search_college_offerings" "$(printf '{"search_query":%s,"college_filter":null,"result_limit":150,"anchor_county":"%s","anchor_region":null}' \
           "$(printf '%s' "$1" | python3 -c 'import json,sys; print(json.dumps(sys.stdin.read()))')" "$2")"
 }
 # Reads a JSON row array on stdin; prints "<first county>|<n in county>|<contiguous 1/0>|<n rows>|<n with the given top_title>"
@@ -807,9 +854,7 @@ PL_COLLEGE='Mt. San Antonio College'
 PL_QUESTION='What courses are in the LVN to RN program at Mt. San Antonio College?'
 PL_TERMS='["lvn","practical nursing","vocational nursing"]'
 program_courses_call() { # json array of terms
-  curl -sS --max-time 45 -X POST "$REST_BASE/rpc/college_program_courses" \
-    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-    -d "$(printf '{"p_college":"%s","search_terms":%s,"program_limit":8,"course_limit":40}' "$PL_COLLEGE" "$1")"
+  rpc_post "rpc/college_program_courses" "$(printf '{"p_college":"%s","search_terms":%s,"program_limit":8,"course_limit":40}' "$PL_COLLEGE" "$1")"
 }
 echo "===================================================================="
 echo "MODE: 7l program course lists reach the one college asked (Mt. San Antonio, LVN to RN)"
@@ -855,9 +900,13 @@ else
 fi
 # Same cost bar as 7p: the anon key's statement timeout is 3 s, and the handler
 # awaits this read before it builds the prompt. 0.33 s measured in the database.
-lsecs=$(curl -sS --max-time 45 -o /dev/null -w '%{time_total}' -X POST "$REST_BASE/rpc/college_program_courses" \
-  -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
-  -d "$(printf '{"p_college":"%s","search_terms":%s,"program_limit":8,"course_limit":40}' "$PL_COLLEGE" "$PL_TERMS")" 2>/dev/null || echo 99)
+for _try in 1 2; do
+  lsecs=$(curl -sS --max-time 45 -o /dev/null -w '%{time_total}' -X POST "$REST_BASE/rpc/college_program_courses" \
+    -H 'Content-Type: application/json' -H "apikey: $ANON" -H "Authorization: Bearer $ANON" \
+    -d "$(printf '{"p_college":"%s","search_terms":%s,"program_limit":8,"course_limit":40}' "$PL_COLLEGE" "$PL_TERMS")" 2>/dev/null || echo 99)
+  awk -v s="${lsecs:-99}" 'BEGIN { exit !(s + 0 < 4.0) }' && break
+  [ "$_try" = 1 ] && { echo "::warning::rpc/college_program_courses took ${lsecs}s; measuring once more in 5 s"; sleep 5; }
+done
 if awk -v s="${lsecs:-99}" 'BEGIN { exit !(s + 0 < 4.0) }'; then
   echo "  [assert ok] 7l ⭐ the program course read answered in ${lsecs}s (0.33 s measured in the database)"
 else
@@ -1037,7 +1086,7 @@ answer_must_match -i "creditforbeingyou\.org" "7y ⭐ corrects the link"
 # 9,000-character budget could push it out) for cpl-chat's stable prompt.
 run "7z MAP's name" \
   '{"query":"What does MAP stand for?","session_id":"smoke-ci","surface":"public","history":[]}'
-answer_must_match -i "Mapping Articulated Pathways" "7z ⭐ expands MAP as Mapping Articulated Pathways"
+answer_rule_must_match -i "Mapping Articulated Pathways" "7z ⭐ expands MAP as Mapping Articulated Pathways"
 
 # Broad "who teaches this" — the catalog should surface colleges that TEACH
 # construction/carpentry (not only those with an existing exhibit).
@@ -1448,8 +1497,10 @@ if [ "$fail" -ne 0 ]; then
   exit 1
 fi
 # The A/B harness reads "ALL MODES OK", so a filtered run keeps the phrase.
+reported=""
+[ "$answer_warnings" -gt 0 ] && reported="; $answer_warnings answer check(s) reported as warnings"
 if [ -n "$SMOKE_MODES" ]; then
-  echo "ALL MODES OK (asked only $SMOKE_MODES: $asked answers)"
+  echo "ALL MODES OK (asked only $SMOKE_MODES: $asked answers$reported)"
 else
-  echo "ALL MODES OK"
+  echo "ALL MODES OK${reported:+ (${reported#; })}"
 fi
