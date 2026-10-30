@@ -2264,6 +2264,11 @@ module.exports = {
   "library-dsp": { file: "library/dsp-credit-starting-points/index.html", title: "DSP Credit Starting Points (public Library page)" },
   "library-dsp-dark": { file: "library/dsp-credit-starting-points/index.html", title: "DSP Credit Starting Points, dark", widths: [390, 1280],
     seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
+  /* The Chancellor's Summit address (S531; Sam, 2026-10-30: "Can I host it from git or the library itself?"):
+     a captioned film and its transcript. */
+  "library-chancellor-address": { file: "library/chancellor-summit-address/index.html", title: "Chancellor's Summit address (public Library page)" },
+  "library-chancellor-address-dark": { file: "library/chancellor-summit-address/index.html", title: "Chancellor's Summit address, dark", widths: [390, 1280],
+    seed: (page) => page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark")) },
 
   /* The Knowledge Base portal, as a team member sees it (S423): the sign-in view, the reader
      with a synthetic document, and the composer. Light only: the portal carries First Light's
