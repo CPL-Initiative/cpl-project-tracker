@@ -89,9 +89,11 @@ pilot records).
 Music 43887 passes on the `repeat` step (S497): a course the tab says is taken n times carries `times`, a list of
 "n semesters of any of" carries `repeats`, and the scorer counts both; 19.5-20 against 19.5, meets (lessons S497). RN 03570 read Fable's way sums to about
 71.5-78.5 against its tab's 60 (S498): the build would trade *incomplete* for *unequal*, so it waits.
-**Glendale (S505, S523; its 2025-26 PDF):** 105 of 260 filed records pass. Every course is priced from its own
-description (`units_file`, 1,278 codes; lessons S523). **NEXT:** 71 of the 155 arithmetic failures name no program
-total; read the totals the program pages print, then the 48 unequal sums.
+**Glendale (S505, S523, S524; its 2025-26 PDF):** 105 of 226 loaded records pass. Every course is priced from its own
+description (`units_file`, 1,278 codes; lessons S523). A program states its total in prose ahead of its list ("for a
+total of 19 - 21 units"); a `fill` step with `before` reads only those words (S524): 8 loaded records took a total, all
+now unequal, none passing. **NEXT:** the 33 loaded records still with no total print none ahead of the list (Liberal Arts,
+Machinist, the Physical Sciences); then the 55 unequal sums, Computer Support Technician 22 against 32 first.
 **San Joaquin Delta 200 of 203 (S500):** Cal-GETC 45621 passes on a `pool_areas` step over Areas 3 and 5 (S499), and
 Architectural Drafting 22244 on a `unit_line` step that adds its printed math line (lessons S500). The three left (07304, 16764, 19752) are extraction misreads, each needing its own page read (lessons S499).
 
