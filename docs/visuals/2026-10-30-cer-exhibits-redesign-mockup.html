@@ -73,7 +73,7 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .dashgroups { display: grid; gap: 14px; }
 .dashgroup { display: grid; gap: 8px; }
 .q { font-family: var(--font-display); font-size: 17px; color: var(--seal-blue-text); font-weight: 600; margin: 0; }
-.dash { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: 10px; }
+.dash { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
 .tile { display: grid; gap: 4px; align-content: start; padding: 12px 14px; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; color: var(--text-body); text-decoration: none; min-width: 0; }
 .tile:hover { border-color: var(--border-strong); }
 .tile .tl { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
@@ -115,7 +115,15 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .results .none { padding: 8px 12px; font-size: 14px; color: var(--text-muted); }
 .chip { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 999px; padding: 1px 9px; background: var(--surface-subtle); white-space: nowrap; }
 .chip[data-tip] { position: relative; cursor: help; }
-.chip[data-tip]:hover::after, .chip[data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; left: 0; top: calc(100% + 6px); z-index: 3; width: max-content; max-width: min(300px, 80vw); white-space: normal; font-size: 13px; font-weight: 400; letter-spacing: 0; line-height: 1.4; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+.chip[data-tip]:hover::after, .chip[data-tip]:focus-visible::after, .steptile[data-tip]:hover::after, .steptile[data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; left: 0; top: calc(100% + 6px); z-index: 3; width: max-content; max-width: min(300px, 80vw); white-space: normal; font-size: 13px; font-weight: 400; letter-spacing: 0; line-height: 1.4; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.steptile { position: relative; display: grid; gap: 2px; text-align: left; padding: 8px 12px; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; font: inherit; color: var(--text-body); cursor: pointer; min-width: 0; }
+.steptile:hover { border-color: var(--border-strong); }
+.steptile .sl { font-size: 14px; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.steptile .sn { font-size: 20px; font-weight: 600; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+.steptile[aria-pressed="true"] { border: 2px solid var(--seal-blue-text); padding: 7px 11px; background: var(--surface-subtle); }
+.steptile[aria-pressed="true"] .sl { color: var(--text-strong); font-weight: 600; text-decoration-thickness: 2px; }
+.steptile[data-tip]::after { left: 0; }
 .chiprow { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
 .why { font-size: 15px; color: var(--text-muted); border-left: 2px solid var(--border-strong); padding-left: 10px; }
 .acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
@@ -172,6 +180,14 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
             <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Aligned course</span><span class="tn"><b>394</b> of 468</span><span class="bar" role="img" aria-label="84 percent"><i style="width:84.2%"></i></span><span class="tt">held titles articulated to a course with a CCN, C-ID or M-ID</span><span class="ts">Let the course name them</span></a>
             <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Students waiting</span><span class="tn"><b>3,000</b></span><span class="tt">students hold credit on titles still held</span><span class="ts">Start with them</span></a>
           </div>
+          <div class="steps" role="group" aria-label="Filter the review queue by CER step">
+            <button class="steptile" type="button" data-filter="" aria-pressed="true"><span class="sn">468</span><span class="sl">All held</span></button>
+            <button class="steptile" type="button" data-filter="Proposed" aria-pressed="false"><span class="sn">401</span><span class="sl">Proposed</span></button>
+            <button class="steptile" type="button" data-filter="Wording check" aria-pressed="false"><span class="sn">36</span><span class="sl">Wording check</span></button>
+            <button class="steptile" type="button" data-filter="Two issuers" aria-pressed="false"><span class="sn">13</span><span class="sl">Two issuers</span></button>
+            <button class="steptile" type="button" data-filter="Conflict with the reference" aria-pressed="false"><span class="sn">18</span><span class="sl">Conflict with the reference</span></button>
+            <button class="steptile" type="button" data-filter="Saved, not folded" aria-pressed="false"><span class="sn">0</span><span class="sl">Saved, not folded</span></button>
+          </div>
         </div>
         <div class="dashgroup">
           <h2 class="q">What credit does it carry?</h2>
@@ -211,16 +227,6 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
                 <tr><td><a href="#cobi-review">Unsure, a course code, two issuers</a></td><td>One at a time</td><td class="r">120</td></tr>
               </tbody>
             </table>
-          </div>
-
-          <div class="filters" role="group" aria-label="Filter by CER step">
-            <span class="lbl">CER step</span>
-            <button class="w" type="button" data-filter="" aria-pressed="true">All <span class="n">468</span></button>
-            <button class="w" type="button" data-filter="Proposed" aria-pressed="false">Proposed <span class="n">401</span></button>
-            <button class="w" type="button" data-filter="Wording check" aria-pressed="false">Wording check <span class="n">36</span></button>
-            <button class="w" type="button" data-filter="Two issuers" aria-pressed="false">Two issuers <span class="n">13</span></button>
-            <button class="w" type="button" data-filter="Conflict with the reference" aria-pressed="false">Conflict with the reference <span class="n">18</span></button>
-            <button class="w" type="button" data-filter="Saved, not folded" aria-pressed="false">Saved, not folded <span class="n">0</span></button>
           </div>
 
           <div class="finder">
@@ -529,8 +535,13 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
     b.addEventListener("click", function () { var n = shown().length; load(n ? (cur + 1) % n : 0); });
   });
   document.querySelectorAll("[data-filter]").forEach(function (b) {
+    var f = b.getAttribute("data-filter");
+    var tip = f ? TIPS[f] : "Every held title, most students first.";
+    b.setAttribute("data-tip", tip);
+    b.setAttribute("aria-label", (f || "All held") + ", " + b.querySelector(".sn").textContent + ". " + tip);
     b.addEventListener("click", function () {
       filter = b.getAttribute("data-filter");
+      if (location.hash !== "#cobi-review") location.hash = "#cobi-review";
       document.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
       $("find-exhibit").value = ""; $("find-results").hidden = true;
       load(0);
