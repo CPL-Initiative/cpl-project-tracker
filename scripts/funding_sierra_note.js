@@ -161,10 +161,28 @@ const state = (r) => (r.pending ? "not yet known" : (r.met ? "met" : "not yet me
 
 // One institution's standing, as its row and drill-in show it: the conditions,
 // the JST counts, and every figure of its row in the page's own export.
+// The heading carries the full name a reader types ("Cabrillo College") and the
+// short name the page shows ("Cabrillo"), so cpl-chat finds the section by the
+// name its college lookup resolves (S529; S528's Cabrillo ask found three other
+// colleges). The short name is the page's own key for the row.
+// The funding page's two display names that no short-name record or alias folds.
+const PAGE_ONLY_NAMES = {
+  "NOCE": "North Orange Continuing Education",
+  "SD Cont. Ed": "San Diego College of Continuing Education"
+};
+function fullName(w, short) {
+  if (PAGE_ONLY_NAMES[short]) return PAGE_ONLY_NAMES[short];
+  const rec = (w.CPL_COLLEGE_SHORT || []).find((r) => r.short === short || r.canonical === short);
+  if (rec) return rec.canonical;
+  const f = typeof w.cplCollegeShort === "function" ? w.cplCollegeShort(short, "full") : "";
+  return f || short;
+}
+
 function standing(w, row) {
-  const T = w.CPL_FUNDING_TAB, name = row.Institution;
-  const out = ["", "### " + name + ": CPL funding standing", ""];
-  out.push("- Institution: " + name + (row.District ? " (" + row.District + ")" : ""));
+  const T = w.CPL_FUNDING_TAB, name = row.Institution, full = fullName(w, name);
+  const out = ["", "### " + full + SECTION_SUFFIX, ""];
+  out.push("- Institution: " + full + (full !== name ? ", shown on the funding page as " + name : "") +
+    (row.District ? " (" + row.District + ")" : ""));
   const c = T._conditions(name);
   if (c) {
     c.items.forEach((r) => out.push("- Minimum condition, " + (COND_WORDS[r.kind] || r.kind) + ": " + state(r) +
@@ -248,7 +266,11 @@ function buildNote(cfg, savedAt, pub) {
   return parts.join("\n").replace(/\n{3,}/g, "\n\n") + "\n";
 }
 
-module.exports = { buildNote, csvRows, sectionText, loadConfig, fetchPublic };
+// The section heading for one institution, by its full name: cpl-chat reads a
+// named college's section with it.
+const SECTION_SUFFIX = ": CPL funding standing";
+
+module.exports = { buildNote, csvRows, sectionText, loadConfig, fetchPublic, SECTION_SUFFIX };
 
 if (require.main === module) {
   const argv = process.argv.slice(2);

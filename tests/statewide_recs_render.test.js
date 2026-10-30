@@ -4,7 +4,9 @@
 // recs" wedge appears with course title / units / C-ID; (b) recs are de-duped;
 // (c) a non-matching <li> is left alone; (d) the toggle shows/hides the list;
 // (e) re-running is idempotent (no double-append); (f) all text is escaped;
-// (g) unit pluralization.
+// (g) unit pluralization; (h) a rec carrying a MAP exhibit ID gets a Request
+// Quick Adopt link from map_links.js's one URL builder (Sam, 2026-10-30), a rec
+// without one gets none, and the renderer holds no copy of the MAP address.
 //
 // Run from repo root: `npm test` (or `node tests/statewide_recs_render.test.js`).
 const fs = require("fs");
@@ -15,6 +17,7 @@ function check(name, cond) { results.push([name, !!cond]); }
 
 const HTML = fs.readFileSync("fact-sheet/index.html", "utf8");
 const SRC = fs.readFileSync("fact-sheet/statewide_recs_render.js", "utf8");
+const MAPLINKS = fs.readFileSync("map_links.js", "utf8");
 
 // A real exhibit present in #statewide-exhibits (CIS sector) → keyed recs (with a
 // deliberate duplicate to exercise de-dupe). "CompTIA A+" is also a real <li> but
@@ -30,10 +33,12 @@ const RECS = {
   ]
 };
 
-function load(recs) {
+function load(recs, opts) {
+  opts = opts || {};
   const dom = new JSDOM(HTML, { runScripts: "outside-only",
     url: "https://cpl-initiative.github.io/cpl-project-tracker/fact-sheet/" });
   const w = dom.window;
+  if (opts.mapLinks) w.eval(MAPLINKS);
   w.CPL_STATEWIDE_RECS = recs; // set BEFORE eval so the module's auto-render sees it
   w.eval(SRC);
   // jsdom's readyState can be "loading" at eval time (deferring the auto-render to
@@ -113,6 +118,42 @@ function liByText(w, text) {
     const inner = li2.querySelector(".sw-rec-list").innerHTML;
     check("a malicious rec title is escaped (no raw <b>)", /&lt;b&gt;x&lt;\/b&gt;/.test(inner) && !/<b>x<\/b>/.test(inner));
     check("a malicious C-ID is escaped (no raw <img>)", !/<img>/.test(inner));
+  }
+
+  // ── (h) Request Quick Adopt ──
+  {
+    const ID = "MAPICI-CCNA-1-001";
+    const R = { "Cisco Certified Network Associate (CCNA)": [
+      { t: "Computer Network Fundamentals", u: "3", cid: "ITIS 150", id: ID },
+      { t: "Network Fundamentals (Network+)", u: "4", cid: "" },
+    ] };
+    const { w: w3 } = load(R, { mapLinks: true });
+    const li3 = liByText(w3, "Cisco Certified Network Associate (CCNA)");
+    const links = li3 ? li3.querySelectorAll(".sw-rec-list a.sw-rec-adopt") : [];
+    check("a rec with a MAP exhibit ID gets one Request Quick Adopt link", links.length === 1);
+    const a = links[0];
+    check("the link opens MAP's card for that exhibit, from map_links.js",
+      a && a.getAttribute("href") === w3.CPL_MAP_LINKS.url(ID) &&
+      a.getAttribute("href") === "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?Exhibit=" + ID + "&View=Non-Military");
+    check("the link reads Request Quick Adopt", a && a.childNodes[0].textContent === "Request Quick Adopt");
+    check("its screen-reader text names the course and the exhibit",
+      a && /for Computer Network Fundamentals in MAP, exhibit MAPICI-CCNA-1-001 \(opens in a new tab\)/.test(a.textContent));
+    check("the link opens a new tab with rel=noopener", a && a.target === "_blank" && /noopener/.test(a.rel));
+    check("the screen-reader span sits inside a positioned link", /\.sw-rec-adopt\{position:relative/.test(SRC));
+    check("the link is hidden in print", /@media print\{.*\.sw-rec-adopt\{display:none/.test(SRC));
+    check("the renderer holds no copy of the MAP address", !/azurewebsites|exhibit-courses|View=Non-Military/.test(SRC));
+    const { w: w4 } = load(R);
+    const li4 = liByText(w4, "Cisco Certified Network Associate (CCNA)");
+    check("without map_links.js, no link", li4 && !li4.querySelector(".sw-rec-adopt"));
+    check("the page loads map_links.js before the renderer",
+      HTML.indexOf('src="../map_links.js"') !== -1 && HTML.indexOf('src="../map_links.js"') < HTML.indexOf('src="./statewide_recs_render.js"'));
+    check("the lede says Request Quick Adopt needs no sign-in",
+      /Request Quick\s+Adopt<\/strong> opens its exhibit in MAP, where you can ask a college initiator to adopt it without signing in/.test(HTML));
+    const { w: w5 } = load({ "Cisco Certified Network Associate (CCNA)": [{ t: "x", u: "3", cid: "", id: '"><b>z</b>' }] },
+      { mapLinks: true });
+    const a5 = liByText(w5, "Cisco Certified Network Associate (CCNA)").querySelector(".sw-rec-adopt");
+    check("a hostile id stays inside the href", a5 && !a5.parentNode.querySelector("b") &&
+      a5.getAttribute("href").indexOf("Exhibit=%22%3E%3Cb%3Ez%3C%2Fb%3E") !== -1);
   }
 
   let failed = 0;
