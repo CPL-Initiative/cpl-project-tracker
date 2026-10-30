@@ -1,17 +1,24 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T11:48:49Z",
-  "session": 527,
-  "moniker": "SkyLoganberry",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-10-30T12:58:00Z",
+  "session": 528,
+  "moniker": "SkyMulberry",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_528_handoff.md",
+  "handoff": "docs/session_529_handoff.md",
   "next_step": {
-    "title": "Glendale's 46 unequal sums",
-    "text": "Merge #2578 once test passes on its newest head. Then read one of Glendale's unequal records against its own page before any step, and list the still-unpriced codes again (the plus-suffixed MATH codes, CABOT 208, ACCTG 110)."
+    "title": "Glendale's still-unpriced courses",
+    "text": "Merge #2579 once test passes on its newest head. Then price Glendale's remaining unpriced codes (the plus-suffixed MATH codes, CABOT 206-208, ACCTG 110 and 155-156, CS/IS 180-187) with a parse_units read, and read the unequal pages S528 left unread (pp92-123, under 25 pages a read)."
   },
   "calls": [
+    {
+      "title": "When a list prints its own units, which number counts?",
+      "text": "The scorer adds a choose-courses list's courses and reads its printed units only when a course is unpriced. Reading the printed units statewide: 218 failing and 27 incomplete records would pass, 44 passing would fail; the narrower reading 91 and 30.",
+      "if_no_reply": "The scorer keeps adding the courses, and those records stay as they read today.",
+      "link": "https://claude.ai/artifact/LYq7MAnGSyX8ymKDu7BXRo",
+      "link_text": "Open Sheet 143"
+    },
     {
       "title": "Should the thirteen credential pairs count toward NC-1?",
       "text": "NC-1's channel 3 counts an exhibit whose credential a CDCP course names. Thirteen pairs are proposed (Cabrillo 3, LA Trade-Tech 9, Saddleback 1); the builder counts none until a row reads confirmed.",
@@ -137,6 +144,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-30T12:50:00Z",
+      "text": "Glendale: 15 of the unequal records read against their pages. Photography, Digital Content and Biotechnology add up as the catalog prints them; Foreign Languages now reads its two printed lists (10 units from one language and 8-10 from another; reread 41057000899, receipt committed). Which number counts when a list prints its own units is Open Asks Sheet 143 card 2."
+    },
     {
       "at": "2026-10-30T11:58:00Z",
       "text": "Glendale: the eleven C-numbered courses (STAT C1000, PSYC C1000, ENGL C1000 and others), which print no code in their descriptions, are priced from the catalog, and the old numbers their notes print with them (reconcile 41049220135, reread 41050126747, receipt committed). Live: 115 equal (from 110), 65 incomplete, 46 unequal; none lost a pass."

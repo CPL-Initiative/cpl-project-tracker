@@ -6,7 +6,7 @@
   "edge_functions": 11,
   "file_datasets": 728,
   "external_services": 191,
-  "consumers": 482,
+  "consumers": 483,
   "workflows": 58,
   "data_js_files": 71,
   "tabs": 38
@@ -13852,6 +13852,13 @@
   },
   "file:kb/program_requirements_college/*/records/*.json": {
    "consumers": [
+    {
+     "id": "script:kb/_block_total_reading_measure.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 53
+    },
     {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
