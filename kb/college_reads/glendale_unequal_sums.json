@@ -1,0 +1,21 @@
+{
+ "_readme": "S525 SkyTayberry, 2026-10-30. Glendale holds 55 records that sum unequal to their total (S524). Their source pages put several programs on one page, and some totals repeat across neighbors (IT Technician II and Computer Support Technician both 32), so the gap may be courses the reading left out or a total borrowed from the program beside it. This read prints the program pages for Information Technology and IT Technician II/III (pp79-80), Computer Support Technician (p97), the Advanced ESL pair (pp101-102), Grip and Lighting (p106) and Unix-Linux System Administrator (p114), to see each list and its total in the catalog's own words. One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "unequal_sums": "For each named program, every course its page lists and the total it states, so the record's gap can be named: a missed course or a borrowed total."
+ },
+ "keywords": [
+  "IT\\s+TECHNICIAN\\s+I",
+  "COMPUTER\\s+SUPPORT\\s+TECHNICIAN",
+  "ADVANCED\\s+ESL",
+  "GRIP\\s+AND\\s+LIGHTING",
+  "UNIX\\s*-\\s*LINUX\\s+SYSTEM"
+ ],
+ "pages": [
+  {
+   "answers": ["unequal_sums"],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [79, 114]
+}
