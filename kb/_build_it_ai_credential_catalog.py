@@ -279,6 +279,119 @@ def sector_title(t):
                     for i, w in enumerate(words))
 
 
+# ── Fields outside IT (Sam, 2026-10-30: "widen the process to any industry,
+# sector, professional licensure") ───────────────────────────────────────────
+# A non-IT row takes its CIP from, in order: the Registry's own
+# ceterms:instructionalProgramType when the record carries one (the better
+# source, credential_watch_agent.md), the SOC major group of its CTDL
+# occupation, then the name rules below. A row none of them places reads
+# "Not yet assigned" and stays out of every sector count; the build never
+# guesses a code. Sam's 2026-09-25 ruling holds: sector is a filter, never TOP.
+NO_FIELD = "Not yet assigned"
+FIELD_RULES = [
+    (r"weld", "48.0508"), (r"machin|\bcnc\b|milling|lathe", "48.0501"),
+    (r"carpent", "46.0201"), (r"plumb", "46.0503"), (r"mason|bricklay", "46.0101"),
+    (r"electrician|\belectrical\b|lineman", "46.0302"),
+    (r"hvac|refrigerat|air.condition|\bepa 608|heating", "47.0201"),
+    (r"diesel", "47.0605"), (r"aircraft|airframe|powerplant|avionics", "47.0607"),
+    (r"\bauto\b|automotive|automobile|collision|\base\b", "47.0604"),
+    (r"industry 4\.0|robot|mechatronic", "15.0405"),
+    (r"drone|unmanned|pilot", "49.0102"), (r"\bcdl\b|truck driv|commercial driver", "49.0205"),
+    (r"phlebot", "51.1009"), (r"\bekg\b|\becg\b|cardiograph", "51.0901"),
+    (r"emergency medical|\bemt\b|\bemr\b|paramedic|first responder", "51.0904"),
+    (r"nurs|\bcna\b", "51.3902"), (r"patient care|home health", "51.2602"),
+    (r"pharmacy|pharmacist|\bcpht\b", "51.0805"), (r"dental", "51.0601"),
+    (r"medical assist|\bccma\b|\bcma\b", "51.0801"),
+    (r"coder|coding|billing", "51.0713"), (r"medical admin|medical office|\bcmaa\b", "51.0710"),
+    (r"central service|sterile|dialysis", "51.1011"), (r"massage", "51.3501"),
+    (r"radiolog|x-ray", "51.0911"), (r"laborator", "51.1004"),
+    (r"child development|\bcda\b|early childhood|child care|preschool", "19.0709"),
+    (r"teacher|paraprofessional|teaching", "13.1501"),
+    (r"personal train|fitness|exercise|strength", "31.0507"),
+    (r"servsafe|food (handler|protection|safety)|culinary|cook|barista", "12.0500"),
+    (r"cosmetolog|esthetic|nail", "12.0401"), (r"barber", "12.0402"),
+    (r"real estate|property apprais", "52.1501"), (r"insurance|adjuster", "52.1701"),
+    (r"account|bookkeep|tax prepar|enrolled agent", "52.0302"),
+    (r"project management|\bcapm\b|\bpmp\b", "52.0211"),
+    (r"marketing|social media|advertis|sales", "52.1401"),
+    (r"human resource|\bhr\b|\bphr\b|\bshrm", "52.1001"),
+    (r"logistic|supply chain|warehouse|forklift", "52.0203"),
+    (r"animal|veterin|livestock|equine|dairy", "01.0901"), (r"agricultur|crop|farm|horticult", "01.0399"),
+    (r"ecology|conservation|wildlife|fisher|forest", "03.0601"),
+    (r"fire ?fight|fire (inspector|officer|science|fighter)", "43.0203"),
+    (r"police|law enforcement|peace officer|corrections|security (guard|officer)|bail", "43.0107"),
+    (r"safety|osha|hazmat|hazardous", "15.0701"),
+    (r"construction|building inspector|nccer core|\bnccer\b", "46.0401"),
+    (r"cad\b|cadd|drafting|solidworks|autodesk", "15.1302"),
+    (r"social work|case manag|community health", "44.0701"),
+    (r"counsel|behavioral|substance|addiction", "51.1508"),
+    (r"attorney|paralegal|legal", "22.0301"), (r"notary", "22.0301"),
+]
+# Where the credential's own name says nothing, the issuer's name often places
+# it (a board of radiology certifies radiology). Tried after the name rules.
+ISSUER_FIELD_RULES = [
+    (r"radiolog|sonograph|imaging|nuclear medicine|mammograph", "51.0911"),
+    (r"nurs", "51.3801"), (r"dental|orthodon", "51.0601"), (r"pharmac", "51.0805"),
+    (r"emergency medical|paramedic", "51.0904"), (r"optomet|ophthalm|optic", "51.1801"),
+    (r"physical therap|occupational therap|speech|audiolog", "51.2306"),
+    (r"psychiatr|psycholog|counsel|behavior", "51.1508"),
+    (r"medical|medicine|osteopath|surgery|surgeons|physician|pediatric|cardio|"
+     r"anesthes|dermatolog|neurolog|oncolog|pathology|health|clinical|hospital|"
+     r"allied|therap|chiropract|podiatr|veterinar", "51.0000"),
+    (r"weld", "48.0508"), (r"carpenter|ironworker|mason|pipe ?fitter|plumb|"
+     r"sheet metal|electrical|elevator|construction|\\bbuilders", "46.0401"),
+    (r"automotive|auto(mobile)? ", "47.0604"), (r"aviation|aircraft|airline|airport", "49.0102"),
+    (r"fire|police|sheriff|corrections|law enforcement|security", "43.0107"),
+    (r"restaurant|culinary|food|beverage|bartend|sommelier", "12.0500"),
+    (r"real estate|appraisal|realtor", "52.1501"), (r"insurance|underwrit", "52.1701"),
+    (r"account|bookkeep|auditor|tax|financ|bank|credit union|investment|"
+     r"securities|actuar|treasury", "52.0801"),
+    (r"human resource|personnel", "52.1001"), (r"marketing|sales|advertis", "52.1401"),
+    (r"project management", "52.0211"), (r"logistic|supply chain|transportation|trucking",
+     "52.0203"),
+    (r"teacher|education|school|educational testing|literacy|instruct", "13.1501"),
+    (r"agricultur|crop|horticult|landscape|turf|forest|arborist|farm|nursery",
+     "01.0399"),
+    (r"animal|equine|veterinar|dog|pet ", "01.0901"),
+    (r"environment|water|wastewater|energy|solar|petroleum|geolog|hydrolog",
+     "03.0104"),
+    (r"safety|hazard|industrial hygiene|occupational", "15.0701"),
+    (r"engineer|technician|technolog", "14.0101"),
+    (r"law|legal|paralegal|court|notary", "22.0301"), (r"social work|human services", "44.0701"),
+    (r"fitness|exercise|athletic|strength|yoga|sport|swim", "31.0507"),
+    (r"cosmetolog|beauty|barber|esthetic|massage|spa ", "12.0401"),
+    (r"library|archiv|museum", "25.0101"), (r"funeral|mortuary|embalm", "12.0301"),
+    (r"design|graphic|photograph|film|game|animation|music|art ", "50.0402"),
+]
+_ISSUER_FIELD_RX = [(re.compile(p, re.I), c) for p, c in ISSUER_FIELD_RULES]
+_FIELD_RX = [(re.compile(p, re.I), c) for p, c in FIELD_RULES]
+# SOC major group (first two digits of a CTDL occupation code) -> a CIP code,
+# only where the group names one field.
+SOC_MAJOR_CIP = {"11": "52.0101", "13": "52.0101", "21": "44.0701", "29": "51.0000",
+                 "31": "51.0000", "33": "43.0107", "35": "12.0500", "41": "52.1401",
+                 "47": "46.0401", "49": "47.0303", "53": "49.0205"}
+
+
+def field_cip(name, ctdl=None, issuer=""):
+    """(code, source) for a credential outside IT, or (None, None)."""
+    ipt = (ctdl or {}).get("instructional_program_type") or []
+    for o in ipt:
+        code = (o.get("code") or "").strip()
+        if re.fullmatch(r"\d{2}\.\d{4}", code):
+            return code, "Credential Engine (CTDL instructionalProgramType)"
+    for rx, code in _FIELD_RX:
+        if rx.search(name):
+            return code, "rule (name)"
+    for rx, code in _ISSUER_FIELD_RX:
+        if rx.search(issuer or ""):
+            return code, "rule (issuer name)"
+    for o in (ctdl or {}).get("occupation_type") or []:
+        code = SOC_MAJOR_CIP.get((o.get("code") or "")[:2])
+        if code:
+            return code, "rule (SOC major group)"
+    return None, None
+
+
 # MAP unified title -> the catalog name it is, where the names differ in more
 # than punctuation, vendor prefix or an exam-code parenthetical. Each pairing
 # was read by a person; never add one on a token overlap alone.
@@ -386,6 +499,12 @@ CE_TOP50_ALIASES = {
 }
 
 
+def ctdl_owner(t):
+    """The Registry record's owner, or its offerer when it names no owner."""
+    a = (t.get("owned_by") or t.get("offered_by") or [{}])[0]
+    return a.get("name")
+
+
 def ctdl_block(t):
     """The CTDL terms a catalog row carries from its Registry record."""
     keep = ("ctdl_type", "status", "audience_level", "occupation_type", "industry_type",
@@ -441,11 +560,19 @@ def build(root=ROOT):
     skills = load_json(skills_path) if os.path.exists(skills_path) else {"credentials": []}
     top_path = os.path.join(root, "kb", "reference", "credential_engine_top50.json")
     top50 = load_json(top_path) if os.path.exists(top_path) else {"credentials": []}
+    lic_path = os.path.join(root, "kb", "reference", "california_occupational_licenses.json")
+    licenses = load_json(lic_path) if os.path.exists(lic_path) else {"licenses": []}
     cip_titles = load_cip_titles(os.path.join(root, "kb", "reference", "CIPCode2020.csv"))
     for rules in CIP_RULES.values():
         for _p, code in rules:
             if code not in cip_titles:
                 raise SystemExit(f"CIP_RULES names {code}, which is not a live CIP 2020 code")
+    for _p, code in FIELD_RULES + ISSUER_FIELD_RULES:
+        if code not in cip_titles:
+            raise SystemExit(f"FIELD_RULES names {code}, which is not a live CIP 2020 code")
+    for code in SOC_MAJOR_CIP.values():
+        if code not in cip_titles:
+            raise SystemExit(f"SOC_MAJOR_CIP names {code}, which is not a live CIP 2020 code")
     cer = load_js_object(os.path.join(root, "credential_reference_data.js"))
 
     rows, index = [], {}
@@ -494,13 +621,62 @@ def build(root=ROOT):
         _add(rows, index, issuer, c["name"], {"kind": "certification"},
              "Credential Engine")
 
+    # Every other field (the widening of 2026-10-30). The IT sources above stay
+    # scoped by issuer; these come in whole, and each row is marked `wide` until
+    # its field is assigned below. Same key (issuer, core name) as everything
+    # else, so a credential two sources list is one row.
+    it_cores = {core(r["name"]) for r in rows}
+
+    def add_wide(issuer, name, fields, source, ctdl=None):
+        before = len(rows)
+        hit = _add(rows, index, issuer, name, {"kind": "certification", **fields}, source)
+        if len(rows) > before:
+            hit["wide"] = True
+            if ctdl:
+                hit["_ctdl_src"] = ctdl
+        return hit
+
+    top_kind = {"Certification": "certification", "Certificate": "certificate",
+                "BasicTechnicalCertificate": "certificate"}
+    for t in top50.get("credentials", []):
+        if t["ctid"] in CE_TOP50_ALIASES or core(t["name"]) in it_cores:
+            continue          # an IT row; the CTID join below attaches it
+        owner = ctdl_owner(t) or "Credential Engine"
+        issuer = issuer_of(owner)[0] or owner
+        add_wide(issuer, t["name"], {"kind": top_kind.get(t["ctdl_type"].split(":")[-1], "certification"),
+                                     "url": t.get("subject_webpage"),
+                                     "status": (t.get("status") or "").lower() or None},
+                 "Credential Engine", ctdl=t)
+    for lic in licenses.get("licenses", []):
+        add_wide(lic.get("issuer") or "California licensing agency", lic["name"],
+                 {"kind": "license"}, "Credential Engine (California licenses)")
+    for c in cos["certifications"]:
+        if not c.get("name") or not c.get("org"):
+            continue
+        issuer = issuer_of(c["org"])[0] or c["org"].strip()
+        if (issuer, core(c["name"])) in index:
+            continue
+        add_wide(issuer, c["name"], {"kind": "certification", "acronym": c.get("acronym"),
+                                     "cos_type": c.get("type"), "url": c.get("url"),
+                                     "cos_id": c.get("id")}, "CareerOneStop")
+    for c in ce["credentials"]:
+        if c.get("provider_confidence") == "low" or not c.get("provider"):
+            continue
+        issuer = issuer_of(c["provider"])[0] or c["provider"].strip()
+        if (issuer, core(c["name"])) in index:
+            continue
+        add_wide(issuer, c["name"], {"kind": "certification"}, "Credential Engine")
+
     # Domain: the watch file's own call where it made a specific one, else the
     # name. Its broad "IT" and "Productivity" calls defer to the name, which
     # tells a UX design certificate from an IT support one.
     hint_map = {"AI": "AI and machine learning", "Data": "Data and analytics",
                 "Cyber": "Cybersecurity", "Cloud": "Cloud, networks and systems"}
     for r in rows:
-        r["domain"] = hint_map.get(r.pop("domain_hint", None)) or domain_of(r["name"], r["issuer"])
+        if r.get("wide"):
+            r["domain"] = None        # set from the CIP below
+        else:
+            r["domain"] = hint_map.get(r.pop("domain_hint", None)) or domain_of(r["name"], r["issuer"])
         r["tech_giant"] = r["issuer"] in TECH_GIANTS
         r.setdefault("emerging", False)
         r.setdefault("kind", "certification")
@@ -508,9 +684,35 @@ def build(root=ROOT):
     # ---- MAP side ---------------------------------------------------------
     catalog_issuers = {name for _p, name, _s in ISSUERS}
     map_generic, map_unmatched = [], []
+    wide_by_core = defaultdict(list)
+    for r in rows:
+        if r.get("wide"):
+            wide_by_core[core(r["name"])].append(r)
+    wide_joined = 0
     for u in cer["unified_titles"]:
         issuer, scope = issuer_of(u.get("issuer"))
         if issuer not in catalog_issuers:
+            # Outside IT the catalog adds no row for an exhibit nothing else
+            # lists; it joins an exhibit to the one row whose core name it
+            # shares, and skips an ambiguous name.
+            cands = wide_by_core.get(core(u["ut"]), [])
+            if len(cands) == 1:
+                colleges, units = set(), []
+                for a in u.get("articulations", []):
+                    for loc in a.get("local", []):
+                        colleges.update(loc.get("colleges", []))
+                        if loc.get("u"):
+                            units.append(float(loc["u"]))
+                hit = cands[0]
+                m = hit.setdefault("map", {"titles": [], "colleges": [], "units": [],
+                                           "articulation_lines": 0})
+                m["titles"].append(u["ut"])
+                m["colleges"] = sorted(set(m["colleges"]) | colleges)
+                m["units"] += units
+                m["articulation_lines"] += u.get("n_articulation_lines") or 0
+                if "MAP" not in hit["sources"]:
+                    hit["sources"].append("MAP")
+                wide_joined += 1
             continue
         title = u["ut"]
         if scope == "it" and domain_of(title, issuer) not in IT_DOMAINS:
@@ -575,7 +777,13 @@ def build(root=ROOT):
     for t in top50.get("credentials", []):
         hits = [h for n in CE_TOP50_ALIASES.get(t["ctid"], []) for h in by_name.get(n, [])] \
             or by_name.get("~" + core(t["name"]), [])
+        owner = issuer_of(ctdl_owner(t))[0] or ctdl_owner(t) or "Credential Engine"
         for h in hits:
+            # A row from the open-ended sources carries the CTID only when its
+            # issuer is the Registry record's owner (two boards' "Certified
+            # Dental Assistant" are two credentials).
+            if h.get("wide") and h["issuer"] != owner:
+                continue
             h["ctid"] = t["ctid"]
             h["ctdl"] = ctdl_block(t)
             if "Credential Engine" not in h["sources"]:
@@ -583,10 +791,22 @@ def build(root=ROOT):
             ctid_attached.add(t["ctid"])
 
     for r in rows:
-        code = cip_of(r["name"], r["domain"])
-        r["cip"] = {"code": code, "title": cip_titles[code],
-                    "sector": code[:2], "sector_title": sector_title(cip_titles[code[:2]]),
-                    "source": "rule (domain and name)"}
+        if r.get("wide"):
+            code, src = field_cip(r["name"], r.pop("_ctdl_src", None), r["issuer"])
+            if code is None:
+                r["domain"] = NO_FIELD
+                r["cip"] = {"code": None, "title": None, "sector": None,
+                            "sector_title": NO_FIELD, "source": None}
+            else:
+                r["domain"] = sector_title(cip_titles[code[:2]])
+                r["cip"] = {"code": code, "title": cip_titles[code], "sector": code[:2],
+                            "sector_title": r["domain"], "source": src}
+            r.pop("wide")
+        else:
+            code = cip_of(r["name"], r["domain"])
+            r["cip"] = {"code": code, "title": cip_titles[code],
+                        "sector": code[:2], "sector_title": sector_title(cip_titles[code[:2]]),
+                        "source": "rule (domain and name)"}
         m = r.get("map")
         if m:
             u = m.pop("units")
@@ -628,6 +848,8 @@ def build(root=ROOT):
             "in_map": sum(r["map_status"] != "not in MAP" for r in rows),
             "articulated": sum(r["map_status"] == "articulated" for r in rows),
             "with_issuer_skills": skills_attached,
+            "wide_rows_joined_to_map": wide_joined,
+            "not_yet_assigned": sum(r["domain"] == NO_FIELD for r in rows),
             "with_ctid": sum(bool(r.get("ctid")) for r in rows),
             "ce_top50_in_catalog": len(ctid_attached),
             "ce_top50_total": len(top50.get("credentials", [])),
@@ -719,8 +941,8 @@ def write_xlsx(cat, path):
                 d["name"] + (f" ({d['weight']})" if d.get("weight") else "")
                 for d in sk.get("domains", []))
             cip = r["cip"]
-            vals = [r["domain"], f'{cip["sector"]} {cip["sector_title"]}',
-                    f'{cip["code"]} {cip["title"]}',
+            vals = [r["domain"], f'{cip["sector"]} {cip["sector_title"]}' if cip["code"] else NO_FIELD,
+                    f'{cip["code"]} {cip["title"]}' if cip["code"] else "",
                     r["issuer"], r["name"], r.get("code") or r.get("acronym") or "",
                     r.get("kind", ""), r.get("level") or r.get("cos_type") or "",
                     "yes" if r["tech_giant"] else "", "yes" if r["emerging"] else "",

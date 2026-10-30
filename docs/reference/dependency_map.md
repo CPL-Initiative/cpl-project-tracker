@@ -678,6 +678,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/CIPCode2020.csv` | scripts: `excel_to_dashboard.py`, `kb/_build_cip_crosswalk.py`, `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/asccc_area_map.json` | scripts: `kb/_apply_asccc_areas.py` | — |
 | `kb/reference/authority_subject_codes.json` | scripts: `kb/_seed_authority_codes.py` | scripts: `kb/_seed_authority_codes.py` |
+| `kb/reference/california_occupational_licenses.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/cb_course_basic_fall2025.csv` | scripts: `chatbox/build_program_courses.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_program_course_graph.py` | — |
 | `kb/reference/ccc_coll_dist_2025.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/ccc_colleges_ceo_2026.json` | scripts: `kb/_build_college_identity_crosswalk.py`, `kb/_program_source_census.py` | — |
@@ -1219,5 +1220,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 43 RPCs · 11 edge functions · 728 file
+Coverage: 102 Supabase tables · 43 RPCs · 11 edge functions · 729 file
 datasets · 191 external services · 482 consumers · 58 workflows · 38 tabs.
