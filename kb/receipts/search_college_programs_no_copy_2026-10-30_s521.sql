@@ -124,5 +124,6 @@
 --
 -- APPLIED: not yet. A fresh live read at 00:29:44Z still read the BEFORE md5(prosrc)
 -- ff716ac2b17267d8154dfce76a627d68. The session's permission check denied the push that changes
--- kb/migrations/.apply (a production deploy), so the apply waits on Sam. The session that applies it
--- records the time, the runner's receipt and the after-read here.
+-- kb/migrations/.apply (a production deploy). Sam, in session, ~00:33Z: "Push it". A fresh live read
+-- at 00:34:05Z still read ff716ac2...; .apply now names this migration. The runner's receipt and the
+-- after-read follow.

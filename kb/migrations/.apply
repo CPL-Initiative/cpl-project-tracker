@@ -1,2 +1,2 @@
-file=kb/receipts/cpl_memory_s507_2026-10-28.sql
-name=s507b_cpl_memory_faq_sheets_a11y
+file=kb/migrations/2026-10-30_s521_search_college_programs_no_copy.sql
+name=s521_search_college_programs_no_copy
