@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T20:18:25Z",
+  "written_at": "2026-10-30T21:04:43Z",
   "session": 530,
   "moniker": "SkyBuffaloberry",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_531_handoff.md",
   "next_step": {
-    "title": "Los Angeles Valley: the pages the capture lost",
-    "text": "Los Angeles Valley passes 167 of 204 live (from 114). Next, the capture's page finder for the 26 records it lost or never found, the Media Arts family first, then Physics (63-65) and Respiratory Therapy (74). Read Sheet 146's replies first: card 2 is the floor rescore's live update."
+    "title": "The display build, then Los Angeles Valley's lost pages",
+    "text": "The floor update is live (Sam pasted it, Sheet 146 card 2) and Los Angeles Valley's rereads moved 95 rows, so the display build comes first for CPL Pathways and Sierra. Then the capture's page finder for the 26 Los Angeles Valley records it lost or never found, the Media Arts family first."
   },
   "calls": [
     {
@@ -18,7 +18,12 @@
       "if_no_reply": "The live rows keep the reading you replaced, except where a college's own reread has moved them (Los Angeles Valley, S530).",
       "link": "https://claude.ai/artifact/WqcNWsDC73wk5srufsTgt4",
       "link_text": "Open Sheet 146",
-      "part": "reading"
+      "part": "reading",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-30",
+        "words": "pasted, on Open Asks Sheet 146 card 2: he ran the receipt's update (12, 27, 5 and 160 rows); all 206 read back."
+      }
     },
     {
       "title": "Glendale is parked: what would turn it back on",
@@ -156,6 +161,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-30T20:35:00Z",
+      "text": "Sam pasted the floor update (Sheet 146 card 2): 204 rows moved, Los Angeles Valley's reread had moved the other two; all 206 read back at the floor reading."
+    },
     {
       "at": "2026-10-30T20:00:00Z",
       "text": "Los Angeles Valley 114 to 167 of 204 passing live. Its steps read each degree page's Total Minimum Units: 60 as a floor and the catalog's GE plans (LACCD 27, Cal-GETC 34); two rereads posted the two reconcile runs' records with receipts."
@@ -329,7 +338,7 @@
     {
       "day": "2026-10-30",
       "active": 20282,
-      "complete": 13285,
+      "complete": 13438,
       "colleges": 114
     }
   ],
