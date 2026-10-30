@@ -1616,6 +1616,13 @@ check([(c["units"], c.get("units_max")) for c in cs] == [(1, 3), (5, None)]
       and notes and notes[0]["now"] == {"BIOL 298": [1, 3]} and notes[0]["words"].startswith("college-page-read 1"),
       "Glendale: units the step carries fill an empty course, never one the reading priced, and the note names "
       "the read: %s" % json.dumps(notes))
+# Glendale's committed step names its units_file (S523): a course the state's file never listed for the
+# program (CABOT 102) takes the units its description prints.
+glen_live = {"program": {}, "blocks": [{"name": "R", "rule": "all", "courses": [
+             {"code": "CABOT 102", "units": None, "alternatives": []}]}]}
+new, notes = RC.reconcile(glen_live, "CABOT 102", "Glendale Community College", "A.S. Degree")
+check(new["blocks"][0]["courses"][0]["units"] == 4.0 and notes and "program_requirements_units" in notes[0]["words"],
+      "Glendale's units_file prices CABOT 102 from its description: %s" % json.dumps(notes)[:300])
 nc = {"program": {"measure": "hours"}, "blocks": [{"name": "Required", "rule": "all",
       "courses": [{"code": "BUS650", "units": None, "alternatives": []}]}]}
 zero = {"program": {"measure": "units"}, "blocks": [{"name": "Required", "rule": "all",
