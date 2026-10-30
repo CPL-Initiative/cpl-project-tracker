@@ -1,0 +1,437 @@
+<title>Exhibits Redesign Mock-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: one reading column of findings, then two framed screens drawn as COBI would draw them, then the asks.
+   Palette: First Light tokens as COBI defines them (index.html :root and its dark block). */
+:root {
+  --paper: #F4F2ED;
+  --surface-opaque: #FFFFFF;
+  --surface-subtle: #F7F5F1;
+  --surface-muted: #ECE9E2;
+  --text-strong: #1C1C1A;
+  --text-body: #3A3A36;
+  --text-muted: #5C5C55;
+  --border: rgba(28,28,26,.14);
+  --border-strong: rgba(28,28,26,.30);
+  --cobalt: #0047AB;
+  --seal-blue-text: #002F6D;
+  --green-progress: #2C601A;
+  --red-alert: #920000;
+  --meter-track: #ECE9E2;
+  --meter-fill: #002F6D;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #151514; --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+    --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+    --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+    --cobalt: #7DA1D4; --seal-blue-text: #7DA1D4; --green-progress: #89A67F; --red-alert: #CF8F8F;
+    --meter-track: #30302E; --meter-fill: #7DA1D4;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #151514; --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+  --cobalt: #7DA1D4; --seal-blue-text: #7DA1D4; --green-progress: #89A67F; --red-alert: #CF8F8F;
+  --meter-track: #30302E; --meter-fill: #7DA1D4;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--text-body);
+  font: 400 clamp(15px, 1.5vw, 17px)/1.55 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 32px 64px;
+}
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: 40px; }
+h1, h2, h3 { font-family: var(--font-display); color: var(--seal-blue-text); text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(28px, 4vw, 40px); }
+h2 { font-size: clamp(22px, 2.6vw, 28px); }
+h3 { font-size: 19px; }
+p { margin: 0; }
+a, .w { color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; }
+button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+.lede { color: var(--text-muted); max-width: 70ch; }
+.eyebrow { font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+.num { font-variant-numeric: tabular-nums; }
+section { display: grid; gap: 16px; }
+
+/* Findings */
+.compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+.finding { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 20px; display: grid; gap: 10px; align-content: start; }
+.finding ul { margin: 0; padding-left: 18px; display: grid; gap: 6px; }
+.facts { display: flex; flex-wrap: wrap; gap: 8px 24px; }
+.facts div { display: grid; }
+.facts b { font-size: 24px; color: var(--text-strong); font-variant-numeric: tabular-nums; font-weight: 600; }
+.facts span { font-size: 13px; color: var(--text-muted); }
+
+/* The model */
+.model { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0; border: 1px solid var(--border-strong); border-radius: 8px; overflow: hidden; background: var(--surface-opaque); }
+.model > div { padding: 18px 20px; display: grid; gap: 6px; align-content: start; border-right: 1px solid var(--border); }
+.model > div:last-child { border-right: 0; }
+.model .q { font-family: var(--font-display); font-size: 20px; color: var(--text-strong); }
+.model .src { font-size: 14px; color: var(--text-muted); }
+@media (max-width: 720px) { .model > div { border-right: 0; border-bottom: 1px solid var(--border); } .model > div:last-child { border-bottom: 0; } }
+
+/* Screen frames */
+.screen { border: 1px solid var(--border-strong); border-radius: 10px; overflow: hidden; background: var(--paper); }
+.chrome { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 8px 16px; background: var(--surface-muted); font-size: 13px; color: var(--text-muted); }
+.pane { padding: clamp(16px, 3vw, 28px); display: grid; gap: 18px; }
+.titlebar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; }
+.crumb { font-size: 14px; color: var(--text-muted); }
+.meter { display: grid; gap: 6px; }
+.meter .bar { height: 8px; background: var(--meter-track); border-radius: 4px; overflow: hidden; }
+.meter .bar i { display: block; height: 100%; background: var(--meter-fill); }
+.meter p { font-size: 15px; }
+.views { display: flex; flex-wrap: wrap; gap: 6px 22px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.views .w { font-weight: 600; }
+.views .on { color: var(--text-strong); text-decoration-thickness: 3px; text-decoration-color: var(--seal-blue-text); }
+.views .n { color: var(--text-muted); font-weight: 400; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.search { flex: 1 1 260px; min-width: 0; padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque); color: var(--text-muted); font: inherit; }
+
+/* Review card */
+.review { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: clamp(16px, 3vw, 28px); display: grid; gap: 16px; }
+.pair { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: start; }
+.pair > div { min-width: 0; display: grid; gap: 4px; }
+.pair .big { font-size: clamp(19px, 2.2vw, 23px); color: var(--text-strong); font-weight: 600; overflow-wrap: anywhere; }
+.pair .to { color: var(--text-muted); padding-top: 22px; }
+@media (max-width: 640px) { .pair { grid-template-columns: 1fr; } .pair .to { padding-top: 0; } }
+.why { font-size: 15px; color: var(--text-muted); border-left: 2px solid var(--border-strong); padding-left: 10px; }
+.acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
+.acts .w { font-weight: 600; }
+.queue-foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 14px; color: var(--text-muted); }
+
+/* Reference table + side panel */
+.split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+.tablewrap { overflow-x: auto; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 15px; }
+col.c1 { width: 40%; } col.c2 { width: 22%; } col.c3 { width: 13%; } col.c4 { width: 25%; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
+th { font-size: 13px; color: var(--text-muted); font-weight: 600; letter-spacing: .03em; }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+tr.sel td { background: var(--surface-subtle); }
+tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
+.panel { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 18px 20px; display: grid; gap: 14px; }
+.panel h4 { margin: 0; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); }
+.panel .block { display: grid; gap: 6px; padding-top: 12px; border-top: 1px solid var(--border); }
+.panel ul { margin: 0; padding-left: 18px; font-size: 15px; display: grid; gap: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 15px; }
+.muted { color: var(--text-muted); }
+.small { font-size: 14px; }
+
+/* Public page */
+.pubhead { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--surface-opaque); font-size: 14px; }
+.pubhead b { color: var(--seal-blue-text); }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 18px; display: grid; gap: 8px; align-content: start; }
+.card .t { font-size: 18px; font-weight: 600; color: var(--text-strong); }
+.tags { display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; font-size: 14px; margin: 0; }
+.tags dt { color: var(--text-muted); }
+.tags dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.tobuild { font-size: 14px; color: var(--text-muted); font-style: italic; }
+.secthead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; }
+
+/* Advice + asks */
+.advice { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+.advice div { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: 18px; display: grid; gap: 6px; align-content: start; }
+ol.asks { margin: 0; padding-left: 22px; display: grid; gap: 14px; max-width: 80ch; }
+ol.asks b { color: var(--text-strong); }
+.note { font-size: 14px; color: var(--text-muted); }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+
+<header style="display:grid; gap:10px">
+  <p class="eyebrow">Mock-up for Sam · 2026-10-30 · react to it, nothing here is built</p>
+  <h1>Exhibits: one tab to curate, one page to adopt</h1>
+  <p class="lede">You asked for the CER made simple enough to finish, so a public page can list every credential a college could adopt. This sketch folds EACR into the CER, gives the team one tab in the Catalog Commons, and draws the public page that tab feeds. Every number comes from the committed files of today's runs.</p>
+</header>
+
+<section aria-labelledby="h-today">
+  <h2 id="h-today">What the two tabs show today</h2>
+  <div class="compare">
+    <div class="finding">
+      <h3>Common Exhibit Reference</h3>
+      <div class="facts">
+        <div><b>4 + 4</b><span>views, then lists inside one</span></div>
+        <div><b>8</b><span>filters before any row</span></div>
+        <div><b>3</b><span>counts for one set</span></div>
+      </div>
+      <ul>
+        <li>Needs you (468) opens on Held (468), with Unclassified (450) beside it: two lists of nearly the same titles.</li>
+        <li>Each held title is a card of five lines with a paragraph above them; reaching the 450th takes 450 cards of scrolling.</li>
+        <li>The tab says 2,456 credentials, the Commons row says 2,465, EACR says 2,641.</li>
+      </ul>
+    </div>
+    <div class="finding">
+      <h3>Exhibits, Credit Recs, Adoption</h3>
+      <div class="facts">
+        <div><b>9</b><span>filter menus</span></div>
+        <div><b>992</b><span>controls on the page</span></div>
+        <div><b>19,358</b><span>pixels tall</span></div>
+      </div>
+      <ul>
+        <li>It shows the top 50 of 2,641 credentials as tall cards, each with a gold badge and gold unit text.</li>
+        <li>Three views (Credentials, Adoption table, Adoption matrix) answer one question: who could adopt this?</li>
+        <li>It names each credential by the CER's common title, so its quality is the CER's quality.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-model">
+  <h2 id="h-model">One credential, three questions</h2>
+  <p class="lede">The CER and EACR describe the same record from two sides. The CER clusters what colleges typed into MAP under one common title, as SkyView does for courses. EACR shows the credit that title carries and who could adopt it. A merged tab keeps the clustering as the team's work and puts adoption on the credential itself.</p>
+  <div class="model">
+    <div><span class="q">What is it called?</span><span>MAP's freehand titles under one common title and issuer.</span><span class="src">The CER's job. The team curates it.</span></div>
+    <div><span class="q">What credit does it carry?</span><span>The credit recommendations and the courses colleges award.</span><span class="src">From MAP, read nightly.</span></div>
+    <div><span class="q">Who could adopt it?</span><span>Colleges that award it, and the MAP link to Request Quick Adopt.</span><span class="src">EACR's job. Colleges use it.</span></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-a">
+  <div class="secthead"><h2 id="h-a">Screen A · Exhibits, in the Catalog Commons</h2><span class="note">For the MAP team. Replaces the CER and EACR tabs.</span></div>
+  <div class="screen">
+    <div class="chrome"><span>COBI › Catalog Commons › Exhibits</span><span>Signed in as a reviewer</span></div>
+    <div class="pane">
+      <div class="titlebar">
+        <h2>Exhibits</h2>
+        <span class="crumb">Nightly run 2026-10-30 · <a href="#h-a">Rules that settled the rest</a></span>
+      </div>
+      <div class="meter">
+        <div class="bar" role="img" aria-label="1,844 of 5,030 titles stamped, 37 percent"><i style="width:36.7%"></i></div>
+        <p><b class="num">1,844</b> of <span class="num">5,030</span> titles in the reference carry a review stamp. <b class="num">450</b> wait for you. The rules and the classifier settled what they could.</p>
+      </div>
+      <nav class="views" aria-label="Views">
+        <a class="w on" href="#h-a">Review <span class="n">450</span></a>
+        <a class="w" href="#h-a2">Credentials <span class="n">2,465</span></a>
+        <a class="w" href="#h-a">Rules <span class="n">12</span></a>
+      </nav>
+
+      <div class="finding" aria-label="The held titles, sorted">
+        <h3>The 468 outliers, sorted by how they can be decided</h3>
+        <div class="tablewrap" role="region" aria-label="Held titles by group" tabindex="0">
+          <table>
+            <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+            <thead><tr><th scope="col">Group</th><th scope="col">How</th><th scope="col" class="r">Titles</th><th scope="col">Action</th></tr></thead>
+            <tbody>
+              <tr><td>High school and ROP courses (HS-CNUSD, BVROP, a named high school)</td><td>One rule, your call</td><td class="r">96</td><td><a href="#h-asks">Set the rule</a></td></tr>
+              <tr><td>Titles that share a proposal with another title (AP Computer Science A holds 7)</td><td>Accept as a group</td><td class="r">69</td><td><a href="#h-a">Review groups</a></td></tr>
+              <tr><td>Near-sure, 0.70 to 0.85, just under the 0.85 save bar</td><td>25 at a time, accept the page</td><td class="r">183</td><td><a href="#h-a">Review a page</a></td></tr>
+              <tr><td>Unsure, a course code left in, or two issuers</td><td>One at a time</td><td class="r">120</td><td><a href="#h-a">Start</a></td></tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="small muted">Held titles grew from 414 on 2026-10-18 to 468 today, about four a day; the nightly run settles the rest of each day's new titles. A sitting a week keeps pace once the backlog clears.</p>
+      </div>
+
+      <div class="review" aria-label="Review one title">
+        <div class="pair">
+          <div>
+            <span class="small muted">Palo Verde College typed</span>
+            <span class="big">1st Receiver Ops &amp; Decon</span>
+          </div>
+          <span class="to" aria-hidden="true">to</span>
+          <div>
+            <span class="small muted">The classifier proposes</span>
+            <span class="big">First Receiver Operations and Decontamination</span>
+          </div>
+        </div>
+        <p class="why">Here because the classifier is unsure (0.75).</p>
+        <div class="acts">
+          <button class="w" type="button">Accept</button>
+          <button class="w" type="button">Change the title</button>
+          <button class="w" type="button">Teach a rule</button>
+          <button class="w" type="button">Skip</button>
+        </div>
+        <div class="queue-foot">
+          <span>1 of 450 · 25 a sitting · keys A, C, R, S</span>
+          <span>Next: 3D Digital Modeling HS-CNUSD, Norco College</span>
+        </div>
+      </div>
+      <p class="note">One title at a time, the proposal beside what the college typed. Held and Unclassified become this one queue; No issuer and Merge confirms join it as reasons, so nothing waits in a list you have to remember to open.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-a2">
+  <div class="secthead"><h2 id="h-a2">Screen A, second view · Credentials</h2><span class="note">The reference and EACR's adoption, on one row.</span></div>
+  <div class="screen">
+    <div class="chrome"><span>COBI › Catalog Commons › Exhibits › Credentials</span><span>Signed in as a reviewer</span></div>
+    <div class="pane">
+      <nav class="views" aria-label="Views">
+        <a class="w" href="#h-a">Review <span class="n">450</span></a>
+        <a class="w on" href="#h-a2">Credentials <span class="n">2,465</span></a>
+        <a class="w" href="#h-a">Rules <span class="n">12</span></a>
+      </nav>
+      <div class="toolbar">
+        <input class="search" id="mock-search" type="search" value="CompTIA" aria-label="Search credentials, issuers, and the titles colleges typed">
+        <button class="w" type="button">Filters</button>
+        <button class="w" type="button">Download</button>
+      </div>
+      <div class="split">
+        <div class="tablewrap" role="region" aria-label="Credentials" tabindex="0">
+          <table>
+            <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+            <thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col" class="r">MAP titles</th><th scope="col">Adoption</th></tr></thead>
+            <tbody>
+              <tr class="sel"><td><a href="#h-a2">CompTIA Security+</a></td><td>CompTIA</td><td class="r">8</td><td>9 colleges to adopt from</td></tr>
+              <tr><td><a href="#h-a2">CompTIA A+</a></td><td>CompTIA</td><td class="r">7</td><td>19 exhibits in MAP</td></tr>
+              <tr><td><a href="#h-a2">AWS Certified Cloud Practitioner</a></td><td>Amazon Web Services</td><td class="r">3</td><td>6 exhibits in MAP</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <aside class="panel" aria-label="CompTIA Security+">
+          <h3>CompTIA Security+</h3>
+          <div class="block">
+            <h4>What colleges typed</h4>
+            <ul>
+              <li>CompTIA Security+ Certification</li>
+              <li>Security Fund. (Security+)</li>
+              <li>CompTIA S+ for CIS 060</li>
+              <li class="muted">and 5 more · <a href="#h-a2">See all 8</a></li>
+            </ul>
+            <p class="small muted">Who decided, and when · <a href="#h-a2">Move a title out</a></p>
+          </div>
+          <div class="block">
+            <h4>Credit</h4>
+            <p class="small">The credit recommendations and the courses each college awards, from EACR's cards, one line per college.</p>
+          </div>
+          <div class="block">
+            <h4>Adopt</h4>
+            <p class="small">Request Quick Adopt in MAP from the exhibit a college built:</p>
+            <div class="chips"><a href="#h-a2">College of the Desert</a><a href="#h-a2">De Anza College</a><a href="#h-a2">Fullerton College</a><a href="#h-a2">Long Beach City College</a><span class="muted">and 5 more colleges</span></div>
+          </div>
+        </aside>
+      </div>
+      <p class="note">One search box. CPL type, field and issuer sit behind Filters; Columns, CSV and JSON behind Download. Each count appears once. The MAP titles column is the clustering at a glance: AP Spanish Language and Culture holds 42. EACR's Adoption table and matrix become the Adopt block and the public page.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-b">
+  <div class="secthead"><h2 id="h-b">Screen B · the public page</h2><span class="note">For colleges and faculty. Working name below.</span></div>
+  <div class="screen">
+    <div class="pubhead"><b>CPL Initiative</b><span>CPL Fact Sheet · MAP · Find your college · CPL Library · Light and Dark</span></div>
+    <div class="pane">
+      <div style="display:grid; gap:8px">
+        <h2>Credentials Your College Can Adopt</h2>
+        <p class="lede">California community colleges already award credit for these industry and military credentials. Adopt one in MAP from the college that built it, or ask your faculty to review one no college has articulated yet.</p>
+      </div>
+      <div class="toolbar">
+        <input class="search" id="pub-search" type="search" value="" placeholder="Search a credential, an issuer, or an occupation" aria-label="Search credentials">
+        <button class="w" type="button">Field</button>
+        <button class="w" type="button">CPL type</button>
+      </div>
+
+      <div class="secthead"><h3>Ready to adopt</h3><span class="small muted num">2,620 credentials with an exhibit MAP lists</span></div>
+      <div class="cards">
+        <div class="card">
+          <span class="t">CompTIA Security+</span>
+          <span class="small muted">CompTIA · Industry certification</span>
+          <p class="small">Nine colleges built an exhibit in MAP. Request Quick Adopt from one of them:</p>
+          <div class="chips small"><a href="#h-b">College of the Desert</a><a href="#h-b">Mt. San Antonio College</a><a href="#h-b">San Diego City College</a><span class="muted">and 6 more</span></div>
+        </div>
+        <div class="card">
+          <span class="t">AWS Certified Cloud Practitioner</span>
+          <span class="small muted">Amazon Web Services · Industry certification</span>
+          <p class="small">Six exhibits in MAP. Request Quick Adopt from the college that built each.</p>
+          <div class="chips small"><a href="#h-b">See the colleges</a></div>
+        </div>
+      </div>
+
+      <div class="secthead"><h3>Worth a faculty review</h3><span class="small muted">From the weekly credential watch and Credential Engine's top 50</span></div>
+      <div class="cards">
+        <div class="card">
+          <span class="t">MSSC Certified Logistics Technician</span>
+          <span class="small muted">Manufacturing Skill Standards Council · not in MAP yet</span>
+          <dl class="tags">
+            <dt>Occupations</dt><dd>Logisticians (13-1081), Logistics Managers (11-3071)</dd>
+            <dt>Industry</dt><dd>Transportation and Warehousing (NAICS 48-49)</dd>
+            <dt>Field</dt><dd>Logistics, Materials, and Supply Chain Management (CIP 52.0203)</dd>
+            <dt>Level</dt><dd>High school through bachelor's</dd>
+          </dl>
+          <p class="tobuild">Courses that may align: to build, matched from COCI by CIP and title.</p>
+          <div class="chips small"><a href="#h-b">View in the Credential Engine Registry</a></div>
+        </div>
+        <div class="card">
+          <span class="t">Certified Associate in Project Management (CAPM)</span>
+          <span class="small muted">Project Management Institute · not in MAP yet</span>
+          <dl class="tags">
+            <dt>Field</dt><dd>Project Management (CIP 52.0211)</dd>
+            <dt>Occupations</dt><dd class="muted">The Registry lists none</dd>
+          </dl>
+          <p class="tobuild">Courses that may align: to build.</p>
+          <div class="chips small"><a href="#h-b">View in the Credential Engine Registry</a></div>
+        </div>
+      </div>
+      <p class="note">The watch holds 156 credentials from issuer sites, 145 of them not in MAP. Of Credential Engine's top 50, MAP already articulates 11. The wider catalog of 7,335 (CareerOneStop, the 369 California licenses, the Registry sample) can follow once these two sections prove out.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-c">
+  <div class="secthead"><h2 id="h-c">Screen C · the canonical catalog in MAP's exhibit module</h2><span class="note">For Malone's new module. The CER is its source.</span></div>
+  <div class="screen">
+    <div class="chrome"><span>MAP › Exhibits</span><span>A student searching</span></div>
+    <div class="pane">
+      <div class="toolbar">
+        <input class="search" id="map-search" type="search" value="CompTIA" aria-label="Search exhibits by credential or issuing agency">
+      </div>
+      <div class="secthead"><h3>CompTIA</h3><span class="small muted num">14 credentials · 52 titles colleges typed</span></div>
+      <div class="tablewrap" role="region" aria-label="CompTIA credentials" tabindex="0">
+        <table>
+          <colgroup><col class="c1"><col class="c2"><col class="c3"><col class="c4"></colgroup>
+          <thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col" class="r">Exhibits</th><th scope="col">Opportunities</th></tr></thead>
+          <tbody>
+            <tr class="sel"><td><a href="#h-c">CompTIA Network+</a></td><td>CompTIA</td><td class="r">9</td><td><a href="#h-c">See every college</a></td></tr>
+            <tr><td colspan="4" class="small"><span class="muted">The 9 titles colleges typed, nested here:</span> COMPTIA NETWORK+ (CIS-40A) · CompTIA Network + · CompTIA Network Plus · CompTIA Network+ Certification · CompTIA n+ for CIS 053 · Network Fund. (Network+) · Network+ Certification Preparation · Computer Network Specialist/CompTIA Net+ Training CS 003 Cx · CompTIA Network+</td></tr>
+            <tr><td><a href="#h-c">CompTIA Security+</a></td><td>CompTIA</td><td class="r">8</td><td><a href="#h-c">See every college</a></td></tr>
+            <tr><td><a href="#h-c">CompTIA A+</a></td><td>CompTIA</td><td class="r">7</td><td><a href="#h-c">See every college</a></td></tr>
+            <tr><td><a href="#h-c">CompTIA Linux+</a></td><td>CompTIA</td><td class="r">5</td><td><a href="#h-c">See every college</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="note">What the CER hands Malone: each canonical credential, its issuing agency, and every MAP exhibit ID under it with the college's own title. 2,455 of the 2,456 canonical titles already name an issuer, across 193 issuers. One grouping needs his call: 1,258 canonical titles name California Community Colleges as issuer, the colleges' own course exams, which a student search should show apart from industry issuers.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="h-ai">
+  <h2 id="h-ai">What the CPL-AI matching adds (Activity 1.1.1)</h2>
+  <p class="lede">The ASCCC and Foundation analysis rates 33,232 course and certification pairs: 115 certifications, 121 colleges. Joined to MAP, 31 of the 115 already have an exhibit some college built. At 118 colleges, 2,004 college and certification pairs have a course rated Strong evidence and a builder to Request Quick Adopt from. The other 83 certifications have strong course matches at 119 colleges and no exhibit yet; they fill the Courses that may align line on Screen B. The join runs through the CER's canonical titles, one more reason it comes first.</p>
+</section>
+
+<section aria-labelledby="h-look">
+  <h2 id="h-look">Color and layout</h2>
+  <div class="advice">
+    <div><h3>Ground and surfaces</h3><p>First Light's paper ground with white data surfaces, as drawn here. The CER's yellow wash and EACR's gold badges and gold unit text go.</p></div>
+    <div><h3>Ink</h3><p>Seal blue for headings, cobalt for every word you can press, gray for counts and notes. Green and red appear only where you must act.</p></div>
+    <div><h3>One row of controls</h3><p>A search box and two or three words. Filters open when asked for. Counts sit on the view names and the one meter, nowhere else.</p></div>
+    <div><h3>Shape follows the job</h3><p>A single card for a decision, a table for scanning, a side panel for one credential's detail. The public page uses cards because colleges browse it.</p></div>
+  </div>
+</section>
+
+<section aria-labelledby="h-asks">
+  <h2 id="h-asks">My recommendation, and what I need from you</h2>
+  <ol class="asks">
+    <li><b>Merge EACR into the CER as one Exhibits tab in the Catalog Commons</b>, with Review, Credentials and Rules. I recommend it: both tabs read the same common titles, and one record ends the three counts. EACR's statewide and college filters move to the public page, where colleges use them.</li>
+    <li><b>Build the Review queue first.</b> It is what finishes the CER. Sorted, the 468 take one rule (the 96 high school and ROP titles), a few group accepts, about eight pages of near-sure titles, and 120 single decisions; each Teach a rule shrinks the next night's queue. Done means every MAP exhibit sits under one canonical credential with its issuing agency, the catalog Malone's module reads.</li>
+    <li><b>Launch the public page on the stamped credentials only</b>, so it grows as the CER finishes and never shows a title a person or a rule has not settled. The name is yours: <i>Credentials Your College Can Adopt</i> is a placeholder.</li>
+    <li><b>The look.</b> First Light as drawn, or the CPL/AI look Malone gave the Library and Sierra, since this page is public too?</li>
+    <li><b>The high school and ROP rule.</b> 3D Digital Modeling HS-CNUSD reads as the course title with the district as issuer (3D Digital Modeling, Corona-Norco Unified School District). The classifier already reads that shape as guidance (a named school is the agency, 5f) and still holds these as unsure. Make it a rule, so the 96 save under it and undo together if wrong?</li>
+  </ol>
+  <p class="note">Reply in the session by number. The CER, CSR, CCRR and CCR menu entries: hide them with Save the menu at the bottom of the Admin arrangement today, or with the panel's own Save once the fix lands.</p>
+</section>
+
+</div>
