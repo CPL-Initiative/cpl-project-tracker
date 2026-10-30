@@ -72,4 +72,12 @@ jobs:
           if [ -z "$plans" ]; then
             echo "No plan added or changed in this commit: nothing to read."; exit 0
           fi
-          for p in $plans; do python3 kb/_college_page_read.py "$p"; done
+          for p in $plans; do
+            python3 kb/_college_page_read.py "$p" | tee /tmp/read.txt
+            # A plan with "parse_units" also prints what kb/_description_units.py reads from it, so a session
+            # reads a few lines back instead of the whole log (S527).
+            if python3 -c "import json,sys; sys.exit(0 if json.load(open(sys.argv[1])).get('parse_units') else 1)" "$p"; then
+              echo "=== DESCRIPTION UNITS ==="
+              python3 kb/_description_units.py /tmp/units.json /tmp/read.txt
+            fi
+          done
