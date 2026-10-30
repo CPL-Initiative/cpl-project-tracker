@@ -73,7 +73,7 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .dashgroups { display: grid; gap: 14px; }
 .dashgroup { display: grid; gap: 8px; }
 .q { font-family: var(--font-display); font-size: 17px; color: var(--seal-blue-text); font-weight: 600; margin: 0; }
-.dash { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.dash { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
 .tile { display: grid; gap: 4px; align-content: start; padding: 12px 14px; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; color: var(--text-body); text-decoration: none; min-width: 0; }
 .tile:hover { border-color: var(--border-strong); }
 .tile .tl { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
@@ -116,7 +116,7 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .chip { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 999px; padding: 1px 9px; background: var(--surface-subtle); white-space: nowrap; }
 .chip[data-tip] { position: relative; cursor: help; }
 .chip[data-tip]:hover::after, .chip[data-tip]:focus-visible::after, .steptile[data-tip]:hover::after, .steptile[data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; left: 0; top: calc(100% + 6px); z-index: 3; width: max-content; max-width: min(300px, 80vw); white-space: normal; font-size: 13px; font-weight: 400; letter-spacing: 0; line-height: 1.4; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
-.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(160px, 1fr)); gap: 10px; }
+.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
 .steptile { position: relative; display: grid; gap: 2px; text-align: left; padding: 8px 12px; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; font: inherit; color: var(--text-body); cursor: pointer; min-width: 0; }
 .steptile:hover { border-color: var(--border-strong); }
 .steptile .sl { font-size: 14px; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
@@ -124,6 +124,11 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .steptile[aria-pressed="true"] { border: 2px solid var(--seal-blue-text); padding: 7px 11px; background: var(--surface-subtle); }
 .steptile[aria-pressed="true"] .sl { color: var(--text-strong); font-weight: 600; text-decoration-thickness: 2px; }
 .steptile[data-tip]::after { left: 0; }
+.sites { display: grid; gap: 6px; }
+.siterow { display: grid; grid-template-columns: minmax(0, 9em) minmax(0, 1fr) auto; gap: 6px 8px; align-items: center; }
+@media (max-width: 560px) { .siterow { grid-template-columns: minmax(0, 1fr) auto; } .siterow .for { grid-column: 1 / -1; } }
+.panelacts { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; margin-top: 4px; font-size: 14px; }
+.saved { font-size: 13px; color: var(--text-muted); }
 .chiprow { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
 .why { font-size: 15px; color: var(--text-muted); border-left: 2px solid var(--border-strong); padding-left: 10px; }
 .acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
@@ -176,6 +181,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
             <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Names</span><span class="tn"><b>4,409</b> of 4,859</span><span class="bar" role="img" aria-label="91 percent"><i style="width:90.7%"></i></span><span class="tt">MAP titles under a canonical credential</span><span class="ts">450 wait for you</span></a>
             <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Reviewed</span><span class="tn"><b>1,844</b> of 5,030</span><span class="bar" role="img" aria-label="37 percent"><i style="width:36.7%"></i></span><span class="tt">titles with a person's or a rule's stamp</span><span class="ts">See the unstamped</span></a>
             <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Issuers</span><span class="tn"><b>2,455</b> of 2,456</span><span class="bar" role="img" aria-label="nearly 100 percent"><i style="width:99.9%"></i></span><span class="tt">credentials naming an issuing agency</span><span class="ts">1,258 are college exams</span></a>
+            <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Training sites</span><span class="tn"><b>363</b> of 2,465</span><span class="bar" role="img" aria-label="15 percent"><i style="width:14.7%"></i></span><span class="tt">credentials naming where the training happens</span><span class="ts">17 say only JATC</span></a>
             <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Registry</span><span class="tn"><b>11</b> of 89</span><span class="bar" role="img" aria-label="12 percent"><i style="width:12.4%"></i></span><span class="tt">industry credentials in MAP with a Credential Engine CTID</span><span class="ts">78 to link</span></a>
             <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Aligned course</span><span class="tn"><b>394</b> of 468</span><span class="bar" role="img" aria-label="84 percent"><i style="width:84.2%"></i></span><span class="tt">held titles articulated to a course with a CCN, C-ID or M-ID</span><span class="ts">Let the course name them</span></a>
             <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Students waiting</span><span class="tn"><b>3,000</b></span><span class="tt">students hold credit on titles still held</span><span class="ts">Start with them</span></a>
@@ -247,7 +253,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
               <div>
                 <label class="small muted" for="proposed-title" id="rc-from"></label>
                 <input class="edit" id="proposed-title" type="text">
-                <div class="fieldrow"><label for="proposed-issuer">Issuer</label><input class="edit-sm" id="proposed-issuer" type="text"></div>
+                <div class="fieldrow"><label for="proposed-issuer">Issuer</label><input class="edit-sm" id="proposed-issuer" type="text"><label for="proposed-trainer">Training site</label><input class="edit-sm" id="proposed-trainer" type="text" placeholder="None named"></div>
               </div>
             </div>
             <p class="why" id="rc-why"></p>
@@ -271,30 +277,34 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
       <div class="view" id="view-credentials" hidden>
         <div style="display:grid; gap:16px">
           <div class="toolbar">
-            <input class="search" id="cobi-search" type="search" value="CompTIA" aria-label="Search credentials, issuers, and the titles colleges typed">
+            <input class="search" id="cobi-search" type="search" placeholder="Search a credential, issuer, training site or a title colleges typed" aria-label="Search credentials, issuers, training sites, and the titles colleges typed">
             <button class="w" type="button">Filters</button>
             <button class="w" type="button">Download</button>
           </div>
           <div class="split">
             <div class="tablewrap" role="region" aria-label="Credentials" tabindex="0">
               <table>
-                <colgroup><col style="width:40%"><col style="width:22%"><col style="width:16%"><col style="width:22%"></colgroup>
-                <thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col" class="r">Students</th><th scope="col">Adoption</th></tr></thead>
+                <colgroup><col style="width:30%"><col style="width:20%"><col style="width:20%"><col style="width:12%"><col style="width:18%"></colgroup>
+                <thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col">Training sites</th><th scope="col" class="r">Students</th><th scope="col">Adoption</th></tr></thead>
                 <tbody>
-                  <tr><td><a href="#cobi-credentials">CompTIA A+</a></td><td>CompTIA</td><td class="r">115</td><td>19 exhibits in MAP</td></tr>
-                  <tr class="sel"><td><a href="#cobi-credentials">CompTIA Security+</a></td><td>CompTIA</td><td class="r">57</td><td>9 colleges to adopt from</td></tr>
-                  <tr><td><a href="#cobi-credentials">CompTIA Network+</a></td><td>CompTIA</td><td class="r">20</td><td>21 colleges adopted</td></tr>
-                  <tr><td><a href="#cobi-credentials">AWS Certified Cloud Practitioner</a></td><td>Amazon Web Services</td><td class="r">Too few</td><td>6 exhibits in MAP</td></tr>
+                  <tr><td><a href="#cobi-credentials">CompTIA A+</a></td><td>CompTIA</td><td class="muted">None named</td><td class="r">115</td><td>19 exhibits in MAP</td></tr>
+                  <tr class="sel" data-panel="panel-secplus"><td><a href="#cobi-credentials" data-panel-link="panel-secplus">CompTIA Security+</a></td><td>CompTIA</td><td class="muted">None named</td><td class="r">57</td><td>9 colleges to adopt from</td></tr>
+                  <tr><td><a href="#cobi-credentials">CompTIA Network+</a></td><td>CompTIA</td><td class="muted">None named</td><td class="r">20</td><td>21 colleges adopted</td></tr>
+                  <tr data-panel="panel-ibew"><td><a href="#cobi-credentials" data-panel-link="panel-ibew">IBEW Electrician Apprenticeship \u2014 Year 1</a></td><td>International Brotherhood of Electrical Workers (IBEW)</td><td>Joint Apprenticeship Training Committee (JATC)</td><td class="r">No data yet</td><td>Bakersfield and Norco articulate it</td></tr>
+                  <tr><td><a href="#cobi-credentials">IBEW/NECA Electrical Apprenticeship \u2014 ELECT 151</a></td><td>International Brotherhood of Electrical Workers (IBEW)</td><td>Sacramento Electrical Training Center</td><td class="r">No data yet</td><td>In the reference</td></tr>
+                  <tr><td><a href="#cobi-credentials">Medical Core</a></td><td>Each high school, today</td><td>Canyon High School <a href="#cobi-credentials">and 4 more</a></td><td class="r">Too few</td><td>1 college adopted</td></tr>
+                  <tr><td><a href="#cobi-credentials">AWS Certified Cloud Practitioner</a></td><td>Amazon Web Services</td><td class="muted">None named</td><td class="r">Too few</td><td>6 exhibits in MAP</td></tr>
                 </tbody>
               </table>
             </div>
-            <aside class="card panel" aria-label="CompTIA Security+">
+            <aside class="card panel" id="panel-secplus" aria-label="CompTIA Security+">
               <h3>CompTIA Security+</h3>
               <div class="chiprow"><span class="chip" tabindex="0" data-tip="Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name." aria-label="CER step: In the reference. Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.">CER step: In the reference</span></div>
               <div class="block">
                 <h4 class="q">What is it called?</h4>
                 <dl class="tags">
-                  <dt>Issuer</dt><dd>CompTIA</dd>
+                  <dt><label for="sp-issuer">Issuer</label></dt><dd><input class="edit-sm" id="sp-issuer" type="text" value="CompTIA"></dd>
+                  <dt>Training sites</dt><dd><div class="sites" id="sp-sites"></div><div class="panelacts"><button class="w" type="button" data-addsite="sp-sites">Add a training site</button><button class="w" type="button" data-save="sp-saved">Save</button><span class="saved" id="sp-saved" aria-live="polite"></span></div></dd>
                   <dt>Registry</dt><dd><a href="https://credentialengineregistry.org/resources/ce-f89c44b1-b408-4805-8653-8c92da175e31">CTID</a>, Credential Engine top 50 rank 2</dd>
                   <dt>Typed as</dt><dd>CompTIA Security+ Certification · Security Fund. (Security+) · CompTIA S+ for CIS 060 · <a href="#cobi-credentials">5 more</a></dd>
                 </dl>
@@ -313,6 +323,34 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
                 <p class="small">57 students with credit · 17 colleges adopted</p>
                 <p class="small muted">Request Quick Adopt in MAP</p>
                 <div class="chips"><a href="#cobi-credentials">College of the Desert</a><a href="#cobi-credentials">De Anza College</a><a href="#cobi-credentials">Fullerton College</a><a href="#cobi-credentials">Long Beach City College</a><span class="muted">and 5 more</span></div>
+              </div>
+            </aside>
+            <aside class="card panel" id="panel-ibew" aria-label="IBEW Electrician Apprenticeship, Year 1" hidden>
+              <h3>IBEW Electrician Apprenticeship — Year 1</h3>
+              <div class="chiprow"><span class="chip" tabindex="0" data-tip="Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name." aria-label="CER step: In the reference. Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.">CER step: In the reference</span></div>
+              <div class="block">
+                <h4 class="q">What is it called?</h4>
+                <dl class="tags">
+                  <dt><label for="ib-issuer">Issuer</label></dt><dd><input class="edit-sm" id="ib-issuer" type="text" value="International Brotherhood of Electrical Workers (IBEW)"></dd>
+                  <dt>Training sites</dt><dd><div class="sites" id="ib-sites">
+                    <div class="siterow"><input class="edit-sm for" type="text" value="Bakersfield College" aria-label="College"><input class="edit-sm" type="text" value="Joint Apprenticeship Training Committee (JATC)" aria-label="Training site for Bakersfield College"><button class="w" type="button" data-remove>Remove</button></div>
+                    <div class="siterow"><input class="edit-sm for" type="text" value="Norco College" aria-label="College"><input class="edit-sm" type="text" value="Joint Apprenticeship Training Committee (JATC)" aria-label="Training site for Norco College"><button class="w" type="button" data-remove>Remove</button></div>
+                  </div><div class="panelacts"><button class="w" type="button" data-addsite="ib-sites">Add a training site</button><button class="w" type="button" data-save="ib-saved">Save</button><span class="saved" id="ib-saved" aria-live="polite"></span></div></dd>
+                  <dt>Typed as</dt><dd>International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 1) · International Brotherhood of Electrical Workers Year 1</dd>
+                </dl>
+              </div>
+              <div class="block">
+                <h4 class="q">What credit does it carry?</h4>
+                <dl class="tags">
+                  <dt>Credit</dt><dd>ELC 401: 3.5 hours in Introduction to Electrical Theory, Basic Math Concepts, and the National Electric Code; and ELC 400</dd>
+                  <dt>Missing</dt><dd>A Credential Engine CTID</dd>
+                </dl>
+              </div>
+              <div class="block">
+                <h4 class="q">Who could adopt it?</h4>
+                <p class="small">Bakersfield College and Norco College articulate it · no student data yet</p>
+                <p class="small muted">Request Quick Adopt in MAP</p>
+                <div class="chips"><a href="#cobi-credentials">Bakersfield College</a><a href="#cobi-credentials">Norco College</a></div>
               </div>
             </aside>
           </div>
@@ -492,6 +530,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
     $("rc-from").textContent = "Proposed title, from " + (h.ident || "the classifier") + " (edit it here)";
     $("proposed-title").value = h.title;
     $("proposed-issuer").value = h.issuer;
+    $("proposed-trainer").value = h.trainer || "";
     $("rc-why").textContent = h.students + " \u00b7 " + h.why;
     $("rc-source").textContent = h.id + " in MAP";
     $("rc-source").href = MAP + encodeURIComponent(h.id);
@@ -546,6 +585,31 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
       $("find-exhibit").value = ""; $("find-results").hidden = true;
       load(0);
     });
+  });
+  document.querySelectorAll("[data-panel-link]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var id = a.getAttribute("data-panel-link");
+      document.querySelectorAll("aside.panel").forEach(function (p) { p.hidden = p.id !== id; });
+      document.querySelectorAll("tr[data-panel]").forEach(function (r) { r.classList.toggle("sel", r.getAttribute("data-panel") === id); });
+    });
+  });
+  /* The panel's issuer and training sites: edit in place, one Save. */
+  document.addEventListener("click", function (e) {
+    var add = e.target.closest("[data-addsite]"), rm = e.target.closest("[data-remove]"), sv = e.target.closest("[data-save]");
+    if (add) {
+      var box = document.getElementById(add.getAttribute("data-addsite"));
+      var row = document.createElement("div"); row.className = "siterow";
+      row.innerHTML = '<input class="edit-sm for" type="text" placeholder="College" aria-label="College">'
+        + '<input class="edit-sm" type="text" placeholder="Local school house or training center" aria-label="Training site">'
+        + '<button class="w" type="button" data-remove>Remove</button>';
+      box.appendChild(row); row.querySelector("input").focus();
+    }
+    if (rm) { var r = rm.closest(".siterow"); if (r) r.remove(); }
+    if (sv) {
+      var out = document.getElementById(sv.getAttribute("data-save"));
+      out.textContent = "Saved. Tonight's run adds it to the reference.";
+    }
   });
   load(0);
 })();
