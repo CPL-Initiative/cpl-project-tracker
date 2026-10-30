@@ -6,7 +6,7 @@
   "edge_functions": 11,
   "file_datasets": 729,
   "external_services": 192,
-  "consumers": 484,
+  "consumers": 485,
   "workflows": 59,
   "data_js_files": 71,
   "tabs": 38
@@ -18536,6 +18536,13 @@
      "direction": "read",
      "how": "markup",
      "line": 1762
+    },
+    {
+     "id": "page:library/chancellor-summit-address/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 197
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
