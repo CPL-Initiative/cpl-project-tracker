@@ -83,9 +83,9 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_documents` | `edgefn:cpl-chat` | — |
 | `cpl_funding_config` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `kb/_funding_config_edit_apply.py` · `edgefn:cpl-chat` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_funding_nc_attestation` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
-| `cpl_funding_nc_attestation_pub` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
+| `cpl_funding_nc_attestation_pub` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `scripts/funding_sierra_note.js` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_funding_notes` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
-| `cpl_funding_participation` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
+| `cpl_funding_participation` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `scripts/funding_sierra_note.js` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_funding_reports` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` |
 | `cpl_library` | tabs: `letters`, `library` | tabs: `library` |
 | `cpl_memory` | tabs: `memory` · scripts: `kb/_memory_audit.py` | tabs: `memory` |
@@ -110,7 +110,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_ace_exhibit_titles` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
 | `map_cleanup_worklist` | tabs: `map-data-quality` | — |
 | `map_college_contacts` | tabs: `college-briefing`, `college-identity`, `cpl-pathways`, `implementation-funding`, `letters`, `map-queue`, `map-users` · scripts: `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
-| `map_college_contacts_pub` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `kb/_publish_college_briefing.py` | — |
+| `map_college_contacts_pub` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `scripts/funding_sierra_note.js` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_unit` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` | — |
 | `map_college_cr_waiting_pub` | tabs: `college-briefing`, `cpl-pathways` | scripts: `kb/_publish_college_briefing.py` |
 | `map_college_credit_bucket` | `edgefn:cpl-chat` | — |
@@ -181,7 +181,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `is_allowed_reviewer` | `edgefn:cpl-chat` | — |
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
-| `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `map-queue`, `map-users` | — |
+| `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` | — |
 | `map_promote_custom_reports` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_users_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_users_summary` | tabs: `map-queue`, `map-users` | — |
@@ -270,7 +270,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_coci_course_keys.js` | `CPL_COCI_COURSE_KEYS` | `kb/_build_coci_lookup.py` | tabs: `cpl-pathways` · scripts: `kb/_build_coci_lookup.py` |
 | `cpl_funding_data.js` | `CPL_FUNDING` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `kb/_build_funding_college_map.js`, `prototype/build_funding_model_explainer.js` · pages: `funding-model/index.html`, `funding-model/memo/index.html` · scripts: `excel_to_dashboard.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py` |
 | `cpl_funding_ess.js` | `CPL_FUNDING_ESS` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · scripts: `funding/_build_funding_ess.py` |
-| `cpl_funding_performance.js` | `CPL_FUNDING_PERF` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `a11y.config.js` · scripts: `funding/_build_funding_performance.py` |
+| `cpl_funding_performance.js` | `CPL_FUNDING_PERF` | not stated in header | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `a11y.config.js`, `scripts/funding_sierra_note.js` · scripts: `funding/_build_funding_performance.py` |
 | `cpl_pathways_ccr_data.js` | `CPL_PATHWAY_CCR` | `kb/_build_cpl_pathway_ccr.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_ccr.py` |
 | `cpl_pathways_data.js` | `CPL_PATHWAYS` | not stated in header | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` |
 | `cpl_pathways_membership_data.js` | `CPL_PATHWAY_MEMBERSHIP` | `kb/_build_cpl_pathway_membership.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_cpl_pathway_membership.py` |

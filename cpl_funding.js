@@ -5730,7 +5730,15 @@
       // returns [] to anyone else); last, so the earlier indexes stand.
       fetch(NC_ATTEST_REVIEW_RPC, { method: "POST", body: "{}", headers: rh })
         .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
-    ]).then(function (res) {
+    ]).then(ingestElig);
+  }
+  // The reads above, ingested in one place (S528): the live load hands them over
+  // here, and scripts/funding_sierra_note.js hands over the same public rows it
+  // read on a runner, so Sierra's note scores each institution as the page does.
+  // res: [coordinator rows, participation rows, optin review, contacts,
+  // noncredit attestations, noncredit review]; a null entry is a failed read.
+  function ingestElig(res) {
+      var roster = rosterByShortName();
       var coord = res[0], part = res[1], review = res[2], contacts = res[3], attest = res[4], ncReview = res[5];
       if (Array.isArray(contacts)) ELIG.contact = ingestContacts(contacts, roster);
       if (Array.isArray(attest)) {
@@ -5775,7 +5783,6 @@
       }
       ELIG.loaded = true;
       render();
-    });
   }
   // Per-college Veteran Star flag (>=75% of enrolled veterans' JSTs uploaded in
   // MAP), computed daily into cpl_funding_performance.js (Sam, 2026-07-27). Null
@@ -18459,6 +18466,7 @@
       // mirror's), through the same ingest the load uses.
       ELIG.contact = o.contacts ? ingestContacts(o.contacts, rosterByShortName()) : {};
     },
+    _ingestElig: function (res) { ingestElig(res || []); },
     _gate: function (c) { return baselineGate(c); },
     // The minimum conditions for ONE institution, as the pie and the drill-in
     // score them (eligReqList), for the My CPL Funding block (Sam's card 8,
