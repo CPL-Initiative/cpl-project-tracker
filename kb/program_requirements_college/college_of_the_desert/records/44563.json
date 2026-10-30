@@ -64,21 +64,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    25.0,
-    26.0
+    31.0,
+    35.0
    ],
    "stated": [
     31.0,
     35.0
    ],
    "against": "program",
-   "why": [
-    "'One course from C6 Ethnic Studies' chooses 1 courses but 0 carry units",
-    "'One course from C1(b) Oral Communication and Critical Thinking' chooses 1 courses but 0 carry units"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -102,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

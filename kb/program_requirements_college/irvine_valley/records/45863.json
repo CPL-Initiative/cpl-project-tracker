@@ -68,19 +68,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    24.0,
-    24.0
+    33.0,
+    33.0
    ],
    "stated": [
     24.0,
     24.0
    ],
    "against": "program",
-   "why": [
-    "'A maximum of two courses from:' chooses courses but names no minimum"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],

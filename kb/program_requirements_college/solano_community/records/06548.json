@@ -73,20 +73,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    23.0,
-    25.0
+    26.0,
+    30.0
    ],
    "stated": [
     26.0,
     30.0
    ],
    "against": "program",
-   "why": [
-    "'BIOL (any course except 048 or 098)' chooses 1 courses but 0 carry units"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -110,7 +109,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

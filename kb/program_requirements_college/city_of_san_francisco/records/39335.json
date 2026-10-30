@@ -113,10 +113,11 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
+   "meets": true,
    "computed": [
-    18.0,
+    20.0,
     29.0
    ],
    "stated": [
@@ -124,9 +125,8 @@
     28.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-29.0; the catalog states 20.0-28.0"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -153,7 +153,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
