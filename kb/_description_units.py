@@ -21,7 +21,9 @@ def descs(path):
     out = {}
     for m in re.finditer(r"· ([\d.]+(?: to [\d.]+)?) Units?\b", body):
         before = body[max(0, m.start() - 160):m.start()]
-        hs = list(re.finditer(r"(?:^|[·\s])(C?\d{1,3}[A-Z]?) · (?=[A-Z0-9])", before))
+        # The state's common numbers run four digits after a C ("C1000 · INTRODUCTION TO STATISTICS",
+        # S527: STAT C1000 sat unpriced on 15 records).
+        hs = list(re.finditer(r"(?:^|[·\s])(C?\d{1,4}[A-Z]?) · (?=[A-Z0-9])", before))
         if not hs:
             continue
         h = hs[-1]
