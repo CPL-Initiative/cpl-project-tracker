@@ -66,6 +66,50 @@ child.on("close", () => {
   check("runner: the LAST line survives — truncation eats the end",
     out.includes("line " + (LINES - 1)));
   fs.rmSync(dir, { recursive: true, force: true });
-  console.log("\n" + pass + "/" + (pass + fail) + " checks passed");
-  process.exit(fail === 0 ? 0 : 1);
+  summarySurvivesPipe();
 });
+
+// THE SAME BUG, ONE LEVEL UP (S522, 2026-10-30). The runner itself writes to a
+// pipe on CI, and it ended in `process.exit(1)` after printing megabytes of
+// child output and then its summary. The exit discarded the unwritten tail, so
+// a failing shard's log stopped mid-file with no FAILED list (#2446 shard 4,
+// #2570 shard 3). Reproduced here: the old runner wrote 146 KB of 3.3 MB and no
+// summary, read promptly or slowly. Now it sets process.exitCode and returns.
+check("runner: the summary path sets process.exitCode and returns, " +
+      "never process.exit() (a pipe + process.exit() drops the summary)",
+  !/process\.exit\(failed/.test(runjs) &&
+  (runjs.match(/process\.exitCode = failed === 0 \? 0 : 1;/g) || []).length === 2);
+
+function summarySurvivesPipe() {
+  // A copy of the real runner and its lib, beside two stand-in test files: one
+  // that prints about 3 MB and passes, one that fails. Read through a pipe.
+  const root = fs.mkdtempSync(path.join(os.tmpdir(), "cpl-runner-pipe-"));
+  const t = path.join(root, "tests");
+  fs.mkdirSync(path.join(t, "lib"), { recursive: true });
+  fs.copyFileSync(path.join(__dirname, "run.js"), path.join(t, "run.js"));
+  for (const f of fs.readdirSync(path.join(__dirname, "lib"))) {
+    fs.copyFileSync(path.join(__dirname, "lib", f), path.join(t, "lib", f));
+  }
+  fs.writeFileSync(path.join(t, "aa_loud.test.js"),
+    'for (let i = 0; i < 60000; i++) console.log("ok   line " + i + " ".repeat(40));' +
+    ' console.log("1/1 checks passed");');
+  fs.writeFileSync(path.join(t, "zz_fails.test.js"),
+    'console.log("FAIL stand-in"); console.log("0/1 checks passed"); process.exit(1);');
+  const runner = spawn(process.execPath, [path.join(t, "run.js")],
+    { stdio: ["ignore", "pipe", "pipe"] });
+  let out = "";
+  runner.stdout.on("data", (d) => { out += d; });
+  runner.on("close", (code) => {
+    check("runner: through a pipe, a failing run exits 1 (got " + code + ")", code === 1);
+    check("runner: through a pipe, the child output arrives whole (" +
+          (out.match(/^ok   line /gm) || []).length + "/60000 lines)",
+      out.includes("ok   line 59999 "));
+    check("runner: through a pipe, the summary counts the failure",
+      /1 of 2 test file\(s\) FAILED/.test(out));
+    check("runner: through a pipe, the summary names the failing file",
+      /✗ zz_fails\.test\.js — exit 1/.test(out));
+    fs.rmSync(root, { recursive: true, force: true });
+    console.log("\n" + pass + "/" + (pass + fail) + " checks passed");
+    process.exit(fail === 0 ? 0 : 1);
+  });
+}
