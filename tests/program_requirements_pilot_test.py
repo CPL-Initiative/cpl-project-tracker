@@ -2065,6 +2065,30 @@ unk = [(u["num"], u["units"], u["previously"]) for u in DU.unkeyed(fh.name)]
 check(got == {} and unk == [("C1000", "4.0", "MATH 136"), ("C1000H", "4.0", "MATH 136H")],
       "description units: C-numbered descriptions come back unkeyed with their old number (got %s, %s)" % (sorted(got), unk))
 
+# ── A list's printed units are its floor, never its ceiling (Sam, Open Asks Sheet 144 card 2 "floor") ──
+def _blk(stated, units, n=1, rule="choose_courses"):
+    return {"name": "List", "rule": rule, "minimum": n, "stated": stated,
+            "courses": [{"code": "X %d" % i, "units": u} for i, u in enumerate(units)]}
+check(S.block_units(_blk({"min": 5, "max": 5}, [3, 5]), {})[0] == (5.0, 5.0),
+      "floor: 'Select one (5 units)' over a 3 and a 5 reads 5, never the 3 under the page")
+check(S.block_units(_blk({"min": 3, "max": 3}, [3, 4]), {})[0] == (3.0, 4.0),
+      "floor: 'Select one (3 units)' over courses of 3 to 4 keeps the 4 (Taft 44611's List B)")
+check(S.block_units(_blk({"min": 6, "max": 6}, [3, 3, 4], n=2), {})[0] == (6.0, 7.0),
+      "floor: 'Select two (6 units)' over 3, 3 and 4 reads 6 to 7")
+check(S.block_units(_blk({"min": 6, "max": 10}, [2.5, 3, 4.5], n=2), {})[0] == (6.0, 10.0),
+      "floor: a printed range lifts both ends where the courses fall under it")
+check(S.block_units(_blk({"min": 4, "max": 4}, [4, None], n=1), {})[0] == (4.0, 4.0),
+      "floor: an unpriced course leaves the printed figure standing")
+check(S.block_units({**_blk({"min": 9, "max": 9}, [3, 3]), "minimum": None}, {})[0] == (9.0, 9.0),
+      "floor: a list naming no count reads its printed figure")
+check(S.block_units(_blk(None, [3, 4]), {})[0] == (3.0, 4.0),
+      "floor: a list that prints nothing adds its courses")
+check(S.block_units(_blk({"min": 9, "max": 9}, [3, 3, 3], rule="all"), {})[0] == (9.0, 9.0)
+      and S.block_units(_blk({"min": 12, "max": 12}, [3, 3], rule="all"), {})[0] == (6.0, 6.0),
+      "floor: a required block still adds its courses (the floor is a choose-courses rule)")
+check(S.block_units_summed(_blk({"min": 5, "max": 5}, [3, 5]), {})[0] == (3.0, 5.0),
+      "block_units_summed keeps the reading before the floor, for the rescore")
+
 if failures:
     print("FAIL: %d" % len(failures))
     for f in failures:

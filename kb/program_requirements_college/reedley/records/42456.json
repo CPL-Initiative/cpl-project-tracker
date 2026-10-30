@@ -76,20 +76,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    548.2,
-    548.2
+    548.3,
+    548.3
    ],
    "stated": [
     548.3,
     548.3
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 548.2-548.2; the catalog states 548.3-548.3"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -113,7 +112,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

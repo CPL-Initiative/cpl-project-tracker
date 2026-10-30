@@ -279,8 +279,27 @@ def choice_units(course: dict, listed: dict, hours: bool = False) -> tuple[float
 def block_units(block: dict, listed: dict, hours: bool = False
                 ) -> tuple[tuple[float, float] | None, list[str]]:
     """The units a block contributes to the program, and why it could not be
-    computed when it cannot. The block total the catalog prints stands in when
-    a course's units are missing or the rule picks units."""
+    computed when it cannot. A choose-courses list's printed units are its floor,
+    never its ceiling (Sam, Open Asks Sheet 144 card 2 "floor", 2026-10-30): each end
+    is the larger of what the courses add to and what the list prints, and the
+    printed figure stands alone where the courses cannot be added. Before it, a
+    list printing "Select one course (5 units)" over a 3-unit course carried the
+    program's low end under the page; with it in place of the courses, a list
+    printing "Select two courses (6 units)" over courses of 6 to 7 dropped the top
+    the program's own total carries (S529 read the 44 that reading unpassed)."""
+    span, why = block_units_summed(block, listed, hours)
+    stated = _span(block.get("stated"))
+    if block.get("rule") == "choose_courses" and stated:
+        return ((max(span[0], stated[0]), max(span[1], stated[1])) if span else stated), []
+    return span, why
+
+
+def block_units_summed(block: dict, listed: dict, hours: bool = False
+                       ) -> tuple[tuple[float, float] | None, list[str]]:
+    """block_units before the printed floor: what the block's courses add to. The
+    block total the catalog prints stands in when a course's units are missing or
+    the rule picks units. kb/_program_requirements_floor_rescore.py reads it to
+    find the records the floor moves."""
     rule, minimum = block.get("rule"), _num(block.get("minimum"))
     # Courses the catalog recommends count toward nothing (Sam's rule 4, 2026-10-11:
     # "The recommended Electives should be added with blocks").

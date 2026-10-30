@@ -61,20 +61,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    1.0,
-    1.0
+    16.0,
+    26.0
    ],
    "stated": [
     16.0,
     26.0
    ],
    "against": "program",
-   "why": [
-    "'Five Courses From at Least Two Different Disciplines Completed as Honors' chooses 5 courses but 0 carry units"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -98,7 +97,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

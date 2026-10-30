@@ -61,20 +61,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     20.0,
-    20.0
+    21.0
    ],
    "stated": [
     20.0,
     21.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 20.0-20.0; the catalog states 20.0-21.0"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -98,7 +97,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

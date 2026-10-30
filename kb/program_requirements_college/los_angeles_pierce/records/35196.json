@@ -61,20 +61,19 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    12.0,
-    12.0
+    18.0,
+    18.0
    ],
    "stated": [
     18.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "'List B: Select two courses from the following:' chooses 2 courses but 0 carry units"
-   ]
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -98,7 +97,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {

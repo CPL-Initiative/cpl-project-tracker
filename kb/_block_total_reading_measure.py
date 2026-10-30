@@ -45,17 +45,10 @@ def reread(rec, inside):
     return r
 
 
-def floor_units(block, listed, hours=False):
-    """block_units, with a choose-courses block's printed figure as its floor: (max(lo, printed lo),
-    max(hi, printed hi)), and the printed figure itself when the courses cannot be added."""
-    r, why = _ORIG_BLOCK_UNITS(block, listed, hours)
-    sp = s._span(block.get('stated'))
-    if block.get('rule') == 'choose_courses' and sp:
-        return ((max(r[0], sp[0]), max(r[1], sp[1])) if r else sp), []
-    return r, why
-
-
-_ORIG_BLOCK_UNITS = s.block_units
+# Sam ruled Sheet 144 card 2 "floor" (17:50Z 2026-10-30): the scorer's block_units now floors, and
+# block_units_summed is the reading before it. Every comparison here starts from the summed reading.
+floor_units = s.block_units
+_ORIG_BLOCK_UNITS = s.block_units_summed
 
 
 def status(rec):
@@ -68,6 +61,7 @@ def status(rec):
 
 
 def main():
+    s.block_units = _ORIG_BLOCK_UNITS
     inside = '--inside' in sys.argv
     floor = '--floor' in sys.argv
     moves, colleges, ex = collections.Counter(), collections.defaultdict(set), collections.defaultdict(list)

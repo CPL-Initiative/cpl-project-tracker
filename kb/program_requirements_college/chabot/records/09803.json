@@ -63,18 +63,6 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": true,
-   "status": "equal",
-   "computed": [
-    18.0,
-    18.0
-   ],
-   "stated": [
-    18.0,
-    18.0
-   ],
-   "against": "program",
-   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
@@ -92,7 +80,20 @@
      28.0
     ],
     "why": []
-   }
+   },
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    33.0,
+    33.0
+   ],
+   "stated": [
+    18.0,
+    18.0
+   ],
+   "against": "program",
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -116,7 +117,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": true
+  "pass": false
  },
  "record": {
   "program": {

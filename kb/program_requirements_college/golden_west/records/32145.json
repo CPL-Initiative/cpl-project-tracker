@@ -66,20 +66,6 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
-   "computed": [
-    16.0,
-    23.0
-   ],
-   "stated": [
-    18.0,
-    24.0
-   ],
-   "against": "program",
-   "why": [
-    "the blocks sum to 16.0-23.0; the catalog states 18.0-24.0"
-   ],
    "degree": {
     "pass": true,
     "status": "equal",
@@ -101,7 +87,20 @@
      3.0,
      10.0
     ]
-   }
+   },
+   "pass": true,
+   "status": "equal",
+   "computed": [
+    18.0,
+    24.0
+   ],
+   "stated": [
+    18.0,
+    24.0
+   ],
+   "against": "program",
+   "why": [],
+   "rescored": "Open Asks Sheet 144 card 2 \"floor\", Sam, 2026-10-30"
   },
   "repeated": {
    "codes": [],
@@ -125,7 +124,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
