@@ -66,15 +66,18 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
     26.0,
     28.0
    ],
-   "stated": null,
-   "against": null,
+   "stated": [
+    28.0,
+    30.0
+   ],
+   "against": "program",
    "why": [
-    "the record names no total"
+    "the blocks sum to 26.0-28.0; the catalog states 28.0-30.0"
    ]
   },
   "repeated": {
@@ -109,8 +112,8 @@
    "section_heading": "FINANCIAL PLANNING AND INVESTMENT",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 28,
+    "max": 30
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -286,63 +289,20 @@
    "The last choice block is labeled '(3 units)', recorded as its stated total."
   ]
  },
- "extracted_run": 41012563119,
+ "extracted_run": 41021155698,
  "reconciled": [
   {
-   "field": "course_units",
-   "was": null,
-   "now": {
-    "BUSAD 101": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 131": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 134": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 136": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 106": [
-     3.0,
-     3.0
-    ],
-    "CABOT 105": [
-     3.0,
-     3.0
-    ],
-    "CABOT 260": [
-     4.0,
-     4.0
-    ],
-    "CS/IS 100": [
-     3.0,
-     3.0
-    ],
-    "CS/IS 101": [
-     5.0,
-     5.0
-    ],
-    "ACCTG 150": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 120": [
-     3.0,
-     3.0
-    ],
-    "BUSAD 135": [
-     3.0,
-     3.0
-    ]
+   "field": "total_units",
+   "was": {
+    "min": null,
+    "max": null
    },
-   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+   "now": {
+    "min": 28,
+    "max": 30
+   },
+   "words": "for a total \nof 28-30 units"
   }
  ],
- "read_run": 41009271854
+ "read_run": 41012563119
 }
