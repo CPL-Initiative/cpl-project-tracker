@@ -1013,45 +1013,33 @@ side session (Scenario 4) ran beside it, one writer per file.
 
 **Jev's sittings (S420-S421):** `kb/_jev_harvest.py` via `typesafe-smoke.yml` `harvest=<college>`; run for Cañada (22 rows), Taft (24) and San Joaquin Delta (49), no errors, the whole sitting in seconds after the free capture. A session's verdicts beside each row are in `kb/jev_harvest_verdicts/<slug>.json` (Cañada: cause held on 16 of 16 settled; Taft: 15 of 21; Delta: 17 of 49, and the floor rule built from its misses cleared 41, S422). Jev's cause is reliable; its owner leans wrong the same way everywhere, naming the scorer or the extraction for a figure a procedure step supplies or a page the reader cut. No gate is set: these are a session's verdicts, not Sam's, and `GATES` takes precision 1.00 on a person's.
 
-## S446 SkyMadrone (2026-10-22, the CPL Queue routine): a degree-and-certificate address, 91 records, the page-claimed that remain
-
-- **A degree-and-certificate address names both awards (#2345).** Grossmont addresses a degree and its certificate
-  on one page (`law-enforcement-as-certificate-achievement`, `arabic-aa-certificate-achievement`). The capture view
-  (page read 39750446541) shows one list under "Associate Degree Major Requirements", then "Certificate of
-  Achievement" and "Any student who chooses to complete only the courses required for the above major qualifies for a
-  Certificate of Achievement". `SLUG_AWARD` read the certificate alone, so the A.S. scored no award on its own page
-  and lost it. `SLUG_DEGREE_CERT` and `slug_awards()` read both awards. Grossmont's free capture went from 139 found
-  and 15 page-claimed to 144 and 10. Main's captures held the shape at two colleges: Grossmont 9 and Pasadena City 7.
-- **Palomar's 45 that remain have no catalog entry of their own.** Its curriQunet catalog lists 235 entries for 342
-  programs in the state file. The pages they lost belong to siblings, and the titles drifted ("Web Design and
-  Development" is now Web Front End Design; "Fashion: Buying and Management" sits under Fashion Merchandising), or
-  the program is no longer listed. Reading no page is right for them, and no reader change applies.
-- **The new rules did not move three of the four colleges named next.** Free captures under #2337 and #2339:
-  Mt. San Jacinto 99 to 100 found and 25 to 24 page-claimed (its losers fall back to the general education or C-ID
-  chart page because their own page was never found, 28 not found); Santa Barbara City 249 to 248 and 20 to 21 (its
-  Administration of Justice pages were never captured). Neither is a sharing fault. Saddleback's capture was still
-  running at the checkpoint.
-- **Loads and rereads.** Palomar 282 found (from 224), 254 passing (from 196), $18.76; 62 inserted, 1 replaced by
-  the reread. MiraCosta 142 (from 119), 98 passing (from 80), $11.96; 21 inserted, the reread replaced none (the
-  extraction re-wrote only its 21 new records). Grossmont 144 (from 139), 97 passing (from 93), $10.61; 5 inserted.
-  Pasadena City, the other college main's captures named with the shape: 296 to 297 found, 238 to 242 passing,
-  $20.91; eight programs moved to their own degree-and-certificate page (Dental Assisting A.S. had read a sibling's),
-  3 inserted, 5 replaced by the reread. Build 1b3616641146 (the first three, 17,390 rows) applied on the wave branch
-  (run 39757574337); build 0ad3c75bfa19 (17,393 rows) supersedes it and applies on `main` after #2346 merges.
-  Receipts are under `kb/receipts/`.
-- **A display job's Applied record cannot carry a PR to merge.** The bot's commit becomes the head, and its test run
-  stops at `action_required`, so no test has run on that head. Run `step=display` on `main` after the merge (the
-  S420 order) whenever main has not moved, rather than holding the PR for a base merge that is not there.
-- **A capture-only run's push can lag the run's "completed" state by a minute.** Read the branch head again before
-  concluding that a run filed nothing.
-- **The UI pass, CPL opportunity visual (#2344):** the page painted no `h1` until a college loaded, and at 360px the
-  picker's longest college name widened `main`'s grid track past the viewport (`minmax(0, 1fr)` now). A dark target
-  joined `a11y.config.js`.
-
 ## Moved to archive 3 (S505 compaction)
 
 S445 SkyCurrant (a shared page per heading, MiraCosta's degree lists, Palomar's "Cert. Achievement") and the S445
-lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`.
+lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`, and S446 SkyMadrone
+(a degree-and-certificate address, 91 records) since the S523 compaction.
+
+## S523 SkyBarberry (2026-10-30, the CPL Queue routine): Glendale 80 to 105 passing, every course priced from its own description
+
+- **The state's file was never the whole list.** It leaves 51 Glendale credit courses unpriced, but the filed records
+  place 738 more codes it does not list for their program at all (CABOT 102, ART 130, ESL 151, NS 214). Pricing only the
+  51 lifted 80 to 91 (reconcile 41009271854). Pricing every description lifted it to 105 (reconcile 41012563119).
+- **Read the whole description section in windows, then parse it locally.** The page read prints at most 14 PDF pages
+  whole, so fifteen plans (`kb/college_reads/glendale_course_desc_01..15`, keyword `Units`) cover pages 98-307, three per
+  push (about 3,500 log lines a job, inside get_job_logs' 5,000). Descriptions start at page 128; windows 1-2 held
+  program pages. `kb/_description_units.py` parses the saved logs: a description prints "NUM · TITLE · N Units", then a
+  body naming the course, sometimes letter-spaced ("B I O L 2 9 8"), and the body's code is the key (ACCTG 121's title
+  changed; its code did not). 1,234 codes, plus 44 under the entry's prefix aliases and renumbers.
+- **Anchor a log parser on the fixed token and look backward.** A title pattern with nested quantifiers hung for minutes
+  on a 370,000-character log; matching each "· N Units" and reading the 160 characters before it runs in under a second.
+- **A plan file under `kb/college_reads/` is a read.** A push reads every plan its last commit adds, so a derived map
+  kept there would run as one. The map lives at `kb/program_requirements_units/glendale_community.json`; the step names it
+  as `units_file` (#2574). Only one run waits per concurrency group: a second push while one waits cancels the first, so
+  push the next batch only after the waiting run has started (part b's first push was canceled this way).
+- **Left at Glendale (155 failing arithmetic):** 71 records name no program total, the largest cause now; 48 sum unequal
+  to the printed total (36 before: pricing exposed sums that were hidden as incomplete); about 34 still lack a course's
+  units (13 of the original 51, ART 144-255, AT 138, NS 213, PE 217, POLS 110, THTR 192-193 and others, print no
+  description in this catalog). No model call this session.
 
 ## S505 SkyBoysenberry (2026-10-28): Glendale 45 to 80 passing of its filed records, on its catalog's own words
 

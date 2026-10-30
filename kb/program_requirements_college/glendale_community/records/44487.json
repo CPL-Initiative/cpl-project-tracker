@@ -73,10 +73,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    6.0,
-    6.0
+    17.0,
+    17.0
    ],
    "stated": [
     17.0,
@@ -84,7 +84,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Courses' has no units"
+    "the blocks sum to 17.0-17.0; the catalog states 17.0-18.0"
    ]
   },
   "repeated": {
@@ -153,28 +153,28 @@
     "courses": [
      {
       "code": "ESL 151",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ESL 155",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ESL 156",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "ESL 159",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -193,68 +193,68 @@
     "courses": [
      {
       "code": "ANTHR 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 135",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHLDV 138",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 113",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 117",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 118",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIST 118H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -262,21 +262,21 @@
      },
      {
       "code": "HIST 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 131",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 132",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -303,12 +303,12 @@
      },
      {
       "code": "SOC 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "SOC 101H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -342,6 +342,91 @@
    "Ligature artifacts (e.g., 'proﬁ ciency') normalized to plain spelling in outcomes."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": 41012563119,
+ "read_run": 40696243319,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ESL 151": [
+     4.0,
+     4.0
+    ],
+    "ESL 155": [
+     3.0,
+     3.0
+    ],
+    "ESL 156": [
+     3.0,
+     3.0
+    ],
+    "ESL 159": [
+     1.0,
+     1.0
+    ],
+    "ANTHR 102": [
+     3.0,
+     3.0
+    ],
+    "CHLDV 101": [
+     3.0,
+     3.0
+    ],
+    "CHLDV 135": [
+     3.0,
+     3.0
+    ],
+    "CHLDV 138": [
+     3.0,
+     3.0
+    ],
+    "ETH S 110": [
+     3.0,
+     3.0
+    ],
+    "ETH S 121": [
+     3.0,
+     3.0
+    ],
+    "HIST 113": [
+     3.0,
+     3.0
+    ],
+    "HIST 117": [
+     3.0,
+     3.0
+    ],
+    "HIST 118": [
+     3.0,
+     3.0
+    ],
+    "HIST 118H": [
+     3.0,
+     3.0
+    ],
+    "HIST 121": [
+     3.0,
+     3.0
+    ],
+    "HIST 131": [
+     3.0,
+     3.0
+    ],
+    "HIST 132": [
+     3.0,
+     3.0
+    ],
+    "SOC 101": [
+     3.0,
+     3.0
+    ],
+    "SOC 101H": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ]
 }

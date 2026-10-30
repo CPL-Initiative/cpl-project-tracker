@@ -1,0 +1,40 @@
+{
+ "_readme": "S523 SkyBarberry, 2026-10-30. Glendale course units, part c of 3. 180 filed Glendale records fail arithmetic, most on courses the state's file (coci_program_courses, read 2026-10-30) lists with no units: 51 credit courses (the noncredit ABSE, ESL 1-50 and STV courses are left out: a program measured in hours never takes a unit figure). Their units print only in the course descriptions ('170 · SPORTS PSYCHOLOGY · 3.0 Units', read 40692306069). This read prints the description pages naming each course's number and title for PE131 PE140 PE141 PE150 PE202 PE203 PE217 PE262 PHOTO101 PHOTO112 PHOTO130 PHOTO132 PHOTO142 PHOTO146 POLS110 POLS170 SOCS101 THTR192 THTR193. One load of the 2025-2026 PDF, no model call. The 14-page print cap is why the read is three plans.",
+ "college": "Glendale Community College",
+ "questions": {
+  "course_units": "The units each course description prints for PE131, PE140, PE141, PE150, PE202, PE203, PE217, PE262, PHOTO101, PHOTO112, PHOTO130, PHOTO132, PHOTO142, PHOTO146, POLS110, POLS170, SOCS101, THTR192, THTR193."
+ },
+ "keywords": [
+  "(?<![\\d.])131\\s*\\W?\\s*Adapted\\s+Self",
+  "(?<![\\d.])140\\s*\\W?\\s*Badminton",
+  "(?<![\\d.])141\\s*\\W?\\s*BADMINTON",
+  "(?<![\\d.])150\\s*\\W?\\s*Basketball",
+  "(?<![\\d.])202\\s*\\W?\\s*GOLF",
+  "(?<![\\d.])203\\s*\\W?\\s*GOLF",
+  "(?<![\\d.])217\\s*\\W?\\s*Introduction\\s+to",
+  "(?<![\\d.])262\\s*\\W?\\s*Tennis",
+  "(?<![\\d.])101\\s*\\W?\\s*Traditional\\s+Photography",
+  "(?<![\\d.])112\\s*\\W?\\s*LIGHTING",
+  "(?<![\\d.])130\\s*\\W?\\s*Digital\\s+Photography",
+  "(?<![\\d.])132\\s*\\W?\\s*Digital\\s+Photography",
+  "(?<![\\d.])142\\s*\\W?\\s*Commercial\\s+Photography",
+  "(?<![\\d.])146\\s*\\W?\\s*Advanced\\s+Projects",
+  "(?<![\\d.])110\\s*\\W?\\s*Contemporary\\s+World",
+  "(?<![\\d.])170\\s*\\W?\\s*Introduction\\s+to",
+  "(?<![\\d.])101\\s*\\W?\\s*Urban\\s+Education",
+  "(?<![\\d.])192\\s*\\W?\\s*Entertainment\\s+Audio",
+  "(?<![\\d.])193\\s*\\W?\\s*Entertainment\\s+Rigging"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_units"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  150,
+  303
+ ]
+}

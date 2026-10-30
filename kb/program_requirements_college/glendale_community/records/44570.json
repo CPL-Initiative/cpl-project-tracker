@@ -143,7 +143,7 @@
     "courses": [
      {
       "code": "ARTH 125",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -169,14 +169,14 @@
     "courses": [
      {
       "code": "FTVM 112",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -195,56 +195,56 @@
     "courses": [
      {
       "code": "ENGL 117",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 107",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 108",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -298,7 +298,7 @@
      },
      {
       "code": "FTVM 271",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -316,5 +316,63 @@
    "The description mentions seeking 'employment in the field' of film and TV production but names no specific career, so careers is empty."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ARTH 125": [
+     3.0,
+     3.0
+    ],
+    "FTVM 112": [
+     3.0,
+     3.0
+    ],
+    "FTVM 120": [
+     3.0,
+     3.0
+    ],
+    "ENGL 117": [
+     3.0,
+     3.0
+    ],
+    "FTVM 101": [
+     3.0,
+     3.0
+    ],
+    "FTVM 102": [
+     3.0,
+     3.0
+    ],
+    "FTVM 103": [
+     3.0,
+     3.0
+    ],
+    "FTVM 104": [
+     3.0,
+     3.0
+    ],
+    "FTVM 106": [
+     3.0,
+     3.0
+    ],
+    "FTVM 107": [
+     3.0,
+     3.0
+    ],
+    "FTVM 108": [
+     3.0,
+     3.0
+    ],
+    "FTVM 271": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

@@ -67,7 +67,7 @@
    "status": "unequal",
    "computed": [
     19.5,
-    26.0
+    27.0
    ],
    "stated": [
     18.0,
@@ -75,7 +75,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 19.5-26.0; the catalog states 18.0-23.0"
+    "the blocks sum to 19.5-27.0; the catalog states 18.0-23.0"
    ]
   },
   "repeated": {
@@ -147,12 +147,12 @@
     "courses": [
      {
       "code": "ANTHR 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ANTHR 110",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -160,12 +160,12 @@
      },
      {
       "code": "ANTHR 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ANTHR 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -173,7 +173,7 @@
      },
      {
       "code": "ANTHR 150",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -192,21 +192,21 @@
     "courses": [
      {
       "code": "ANTHR 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ECON 127",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [
        {
@@ -241,12 +241,12 @@
     "courses": [
      {
       "code": "PSYCH 200",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "SOC 200",
-        "units": null,
+        "units": 3.5,
         "catalog_addition": false
        }
       ],
@@ -266,12 +266,12 @@
     "courses": [
      {
       "code": "GEOL 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "GEOL 101H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -279,12 +279,12 @@
      },
      {
       "code": "GEOL 111",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "GEOL 111H",
-        "units": null,
+        "units": 1.0,
         "catalog_addition": false
        }
       ],
@@ -292,14 +292,14 @@
      },
      {
       "code": "BIOL 120",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 155",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -318,54 +318,54 @@
     "courses": [
      {
       "code": "ANTHR 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 114",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 121",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ETH S 125",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "HIST 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -373,42 +373,42 @@
      },
      {
       "code": "HIST 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HUMAN 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHILO 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SOC 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -435,5 +435,131 @@
    "Outcomes lead-in 'Upon completion of this program, students will be able to' omitted; hyphenated line break 'intercon-nections' read as 'interconnections'."
   ]
  },
- "extracted_run": "40704760867"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ANTHR 110": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 102": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 102H": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 150": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 104": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 105": [
+     3.0,
+     3.0
+    ],
+    "ECON 127": [
+     4.0,
+     4.0
+    ],
+    "PSYCH 200": [
+     4.0,
+     4.0
+    ],
+    "SOC 200": [
+     3.5,
+     3.5
+    ],
+    "GEOL 101": [
+     3.0,
+     3.0
+    ],
+    "GEOL 101H": [
+     3.0,
+     3.0
+    ],
+    "GEOL 111": [
+     1.0,
+     1.0
+    ],
+    "GEOL 111H": [
+     1.0,
+     1.0
+    ],
+    "BIOL 120": [
+     5.0,
+     5.0
+    ],
+    "GEOG 155": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 103": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 114": [
+     3.0,
+     3.0
+    ],
+    "ETH S 121": [
+     3.0,
+     3.0
+    ],
+    "ETH S 125": [
+     3.0,
+     3.0
+    ],
+    "GEOG 103": [
+     3.0,
+     3.0
+    ],
+    "HIST 101": [
+     3.0,
+     3.0
+    ],
+    "HIST 102": [
+     3.0,
+     3.0
+    ],
+    "HIST 102H": [
+     3.0,
+     3.0
+    ],
+    "HIST 103": [
+     3.0,
+     3.0
+    ],
+    "HIST 104": [
+     3.0,
+     3.0
+    ],
+    "HUMAN 115": [
+     3.0,
+     3.0
+    ],
+    "PHILO 115": [
+     3.0,
+     3.0
+    ],
+    "SOC 102": [
+     3.0,
+     3.0
+    ],
+    "SOC 104": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": 41009271854
 }

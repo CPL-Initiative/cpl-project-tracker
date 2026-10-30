@@ -1,0 +1,40 @@
+{
+ "_readme": "S523 SkyBarberry, 2026-10-30. Glendale course units, part a of 3. 180 filed Glendale records fail arithmetic, most on courses the state's file (coci_program_courses, read 2026-10-30) lists with no units: 51 credit courses (the noncredit ABSE, ESL 1-50 and STV courses are left out: a program measured in hours never takes a unit figure). Their units print only in the course descriptions ('170 · SPORTS PSYCHOLOGY · 3.0 Units', read 40692306069). This read prints the description pages naming each course's number and title for ACCTG101 ACCTG120 ACCTG121 ANTHR101 ARCH109 ART144 ART246 ART250 ART255 AT138 BIOL298 CAM241 CAM261 CSIS211 ECON170 ENGR112 ENGR132 ENGR230 ENGR241. One load of the 2025-2026 PDF, no model call. The 14-page print cap is why the read is three plans.",
+ "college": "Glendale Community College",
+ "questions": {
+  "course_units": "The units each course description prints for ACCTG101, ACCTG120, ACCTG121, ANTHR101, ARCH109, ART144, ART246, ART250, ART255, AT138, BIOL298, CAM241, CAM261, CSIS211, ECON170, ENGR112, ENGR132, ENGR230, ENGR241."
+ },
+ "keywords": [
+  "(?<![\\d.])101\\s*\\W?\\s*Financial\\s+Accounting",
+  "(?<![\\d.])120\\s*\\W?\\s*Computerized\\s+Accounting",
+  "(?<![\\d.])121\\s*\\W?\\s*PEACHTREE/GREAT\\s+PLAINS",
+  "(?<![\\d.])101\\s*\\W?\\s*Physical\\s+Anthropology",
+  "(?<![\\d.])109\\s*\\W?\\s*Sketching\\s+Techniques",
+  "(?<![\\d.])144\\s*\\W?\\s*Color\\s+Theory",
+  "(?<![\\d.])246\\s*\\W?\\s*3\\-D\\s+Digital",
+  "(?<![\\d.])250\\s*\\W?\\s*Graphic\\s+Design",
+  "(?<![\\d.])255\\s*\\W?\\s*Web\\s+Motion",
+  "(?<![\\d.])138\\s*\\W?\\s*INTRO\\s+FLIGHT",
+  "(?<![\\d.])298\\s*\\W?\\s*Undergraduate\\s+Research",
+  "(?<![\\d.])241\\s*\\W?\\s*Advanced\\s+Mastercam",
+  "(?<![\\d.])261\\s*\\W?\\s*Advanced\\s+5\\-Axis",
+  "(?<![\\d.])211\\s*\\W?\\s*DATA\\s+STRUCTURES",
+  "(?<![\\d.])170\\s*\\W?\\s*Introduction\\s+to",
+  "(?<![\\d.])112\\s*\\W?\\s*Computer\\s+Aided",
+  "(?<![\\d.])132\\s*\\W?\\s*Introduction\\s+to",
+  "(?<![\\d.])230\\s*\\W?\\s*Dynamics",
+  "(?<![\\d.])241\\s*\\W?\\s*Strength\\s+of"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_units"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  150,
+  303
+ ]
+}

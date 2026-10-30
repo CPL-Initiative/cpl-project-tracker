@@ -81,20 +81,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
-    18.0
+    18.5
    ],
    "stated": [
     18.0,
     18.5
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 18.0-18.0; the catalog states 18.0-18.5"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -121,7 +119,7 @@
     "the record names no degree total and no general education units"
    ]
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -173,7 +171,7 @@
      },
      {
       "code": "COMM 100",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -192,49 +190,49 @@
     "courses": [
      {
       "code": "COMM 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM 108",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "COMM 160",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MCOMM 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -253,12 +251,12 @@
     "courses": [
      {
       "code": "ANTHR 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ANTHR 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": true
        }
       ],
@@ -279,12 +277,12 @@
      },
      {
       "code": "SOC 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "SOC 101H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": true
        }
       ],
@@ -292,12 +290,12 @@
      },
      {
       "code": "ENGL 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "ENGL 102H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": true
        }
       ],
@@ -312,28 +310,28 @@
      },
      {
       "code": "JOURN 102",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "COMM 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "COMM 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "COMM 117",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -358,6 +356,83 @@
    "No GE pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": 41012563119,
+ "read_run": 41009271854,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "COMM 100": [
+     3.0,
+     3.0
+    ],
+    "COMM 103": [
+     3.0,
+     3.0
+    ],
+    "COMM 104": [
+     3.0,
+     3.0
+    ],
+    "COMM 106": [
+     3.0,
+     3.0
+    ],
+    "COMM 108": [
+     3.0,
+     3.0
+    ],
+    "COMM 120": [
+     3.0,
+     3.0
+    ],
+    "COMM 160": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 102": [
+     3.0,
+     3.0
+    ],
+    "ANTHR 102H": [
+     3.0,
+     3.0
+    ],
+    "SOC 101": [
+     3.0,
+     3.0
+    ],
+    "SOC 101H": [
+     3.0,
+     3.0
+    ],
+    "ENGL 102": [
+     3.0,
+     3.0
+    ],
+    "ENGL 102H": [
+     3.0,
+     3.0
+    ],
+    "JOURN 102": [
+     3.5,
+     3.5
+    ],
+    "COMM 105": [
+     3.0,
+     3.0
+    ],
+    "COMM 115": [
+     3.0,
+     3.0
+    ],
+    "COMM 117": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ]
 }

@@ -159,75 +159,75 @@
     "courses": [
      {
       "code": "ANTHR 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ANTHR 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 112",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 115",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 120",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 121",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 122",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 123",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "BIOL 123H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -235,19 +235,19 @@
      },
      {
       "code": "BIOL 124",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 125",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "BIOL 125H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -255,21 +255,21 @@
      },
      {
       "code": "BIOL 140",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 150",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCH 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -288,89 +288,89 @@
     "courses": [
      {
       "code": "ASTRO 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ASTRO 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 101",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 105",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 106",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 110",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 120",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CHEM 121",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOG 107",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOL 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "GEOL 101H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -378,33 +378,33 @@
      },
      {
       "code": "GEOL 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOL 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "OCEAN 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 101",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "PHY 101H",
-        "units": null,
+        "units": 5.0,
         "catalog_addition": false
        }
       ],
@@ -412,35 +412,35 @@
      },
      {
       "code": "PHY 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 103",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 105",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 106",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHY 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -459,14 +459,14 @@
     "courses": [
      {
       "code": "ECON 127",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 100",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -480,14 +480,14 @@
      },
      {
       "code": "MATH 101E",
-      "units": null,
+      "units": 4.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -501,7 +501,7 @@
      },
      {
       "code": "MATH 103E",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [
        {
@@ -521,7 +521,7 @@
      },
      {
       "code": "MATH 104E",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [
        {
@@ -534,12 +534,12 @@
      },
      {
       "code": "MATH 105",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "MATH 105H",
-        "units": null,
+        "units": 5.0,
         "catalog_addition": false
        }
       ],
@@ -547,12 +547,12 @@
      },
      {
       "code": "MATH 107",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "MATH 107H",
-        "units": null,
+        "units": 5.0,
         "catalog_addition": false
        }
       ],
@@ -560,7 +560,7 @@
      },
      {
       "code": "MATH 108",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [
        {
@@ -573,42 +573,42 @@
      },
      {
       "code": "MATH 109",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 110",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 110A",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MATH 110B",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MATH 111",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 112",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -622,35 +622,35 @@
      },
      {
       "code": "MATH 133",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "MATH 134",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 135",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 137",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MATH 138",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -689,21 +689,21 @@
     "courses": [
      {
       "code": "ASTRO 102",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 126",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CS/IS 112",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -717,19 +717,19 @@
      },
      {
       "code": "GEOG 111",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOL 111",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "GEOL 111H",
-        "units": null,
+        "units": 1.0,
         "catalog_addition": false
        }
       ],
@@ -737,28 +737,28 @@
      },
      {
       "code": "GEOL 112",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "GEOL 115",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "OCEAN 116",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PSYCH 203",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -796,5 +796,295 @@
    "No general education pattern, degree total, or careers are printed in this section."
   ]
  },
- "extracted_run": "40704760867"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ANTHR 110": [
+     3.0,
+     3.0
+    ],
+    "BIOL 101": [
+     4.0,
+     4.0
+    ],
+    "BIOL 102": [
+     5.0,
+     5.0
+    ],
+    "BIOL 112": [
+     5.0,
+     5.0
+    ],
+    "BIOL 115": [
+     4.0,
+     4.0
+    ],
+    "BIOL 120": [
+     5.0,
+     5.0
+    ],
+    "BIOL 121": [
+     4.0,
+     4.0
+    ],
+    "BIOL 122": [
+     4.0,
+     4.0
+    ],
+    "BIOL 123": [
+     3.0,
+     3.0
+    ],
+    "BIOL 123H": [
+     3.0,
+     3.0
+    ],
+    "BIOL 124": [
+     3.0,
+     3.0
+    ],
+    "BIOL 125": [
+     3.0,
+     3.0
+    ],
+    "BIOL 125H": [
+     3.0,
+     3.0
+    ],
+    "BIOL 140": [
+     4.0,
+     4.0
+    ],
+    "BIOL 150": [
+     5.0,
+     5.0
+    ],
+    "PSYCH 103": [
+     3.0,
+     3.0
+    ],
+    "ASTRO 110": [
+     3.0,
+     3.0
+    ],
+    "ASTRO 120": [
+     3.0,
+     3.0
+    ],
+    "CHEM 101": [
+     5.0,
+     5.0
+    ],
+    "CHEM 102": [
+     5.0,
+     5.0
+    ],
+    "CHEM 105": [
+     5.0,
+     5.0
+    ],
+    "CHEM 106": [
+     5.0,
+     5.0
+    ],
+    "CHEM 110": [
+     5.0,
+     5.0
+    ],
+    "CHEM 120": [
+     5.0,
+     5.0
+    ],
+    "CHEM 121": [
+     5.0,
+     5.0
+    ],
+    "GEOG 101": [
+     3.0,
+     3.0
+    ],
+    "GEOG 107": [
+     3.0,
+     3.0
+    ],
+    "GEOL 101": [
+     3.0,
+     3.0
+    ],
+    "GEOL 101H": [
+     3.0,
+     3.0
+    ],
+    "GEOL 102": [
+     3.0,
+     3.0
+    ],
+    "GEOL 105": [
+     3.0,
+     3.0
+    ],
+    "OCEAN 115": [
+     3.0,
+     3.0
+    ],
+    "PHY 101": [
+     5.0,
+     5.0
+    ],
+    "PHY 101H": [
+     5.0,
+     5.0
+    ],
+    "PHY 102": [
+     5.0,
+     5.0
+    ],
+    "PHY 103": [
+     5.0,
+     5.0
+    ],
+    "PHY 105": [
+     4.0,
+     4.0
+    ],
+    "PHY 106": [
+     4.0,
+     4.0
+    ],
+    "PHY 110": [
+     3.0,
+     3.0
+    ],
+    "ECON 127": [
+     4.0,
+     4.0
+    ],
+    "MATH 100": [
+     4.0,
+     4.0
+    ],
+    "MATH 101E": [
+     4.5,
+     4.5
+    ],
+    "MATH 103E": [
+     5.0,
+     5.0
+    ],
+    "MATH 104E": [
+     5.0,
+     5.0
+    ],
+    "MATH 105": [
+     5.0,
+     5.0
+    ],
+    "MATH 105H": [
+     5.0,
+     5.0
+    ],
+    "MATH 107": [
+     5.0,
+     5.0
+    ],
+    "MATH 107H": [
+     5.0,
+     5.0
+    ],
+    "MATH 108": [
+     5.0,
+     5.0
+    ],
+    "MATH 109": [
+     3.0,
+     3.0
+    ],
+    "MATH 110": [
+     5.0,
+     5.0
+    ],
+    "MATH 110A": [
+     3.5,
+     3.5
+    ],
+    "MATH 110B": [
+     3.5,
+     3.5
+    ],
+    "MATH 111": [
+     3.5,
+     3.5
+    ],
+    "MATH 112": [
+     5.0,
+     5.0
+    ],
+    "MATH 133": [
+     3.0,
+     3.0
+    ],
+    "MATH 134": [
+     3.5,
+     3.5
+    ],
+    "MATH 135": [
+     3.0,
+     3.0
+    ],
+    "MATH 137": [
+     5.0,
+     5.0
+    ],
+    "MATH 138": [
+     3.0,
+     3.0
+    ],
+    "ASTRO 102": [
+     1.0,
+     1.0
+    ],
+    "BIOL 126": [
+     1.0,
+     1.0
+    ],
+    "CS/IS 112": [
+     3.0,
+     3.0
+    ],
+    "GEOG 111": [
+     1.0,
+     1.0
+    ],
+    "GEOL 111": [
+     1.0,
+     1.0
+    ],
+    "GEOL 111H": [
+     1.0,
+     1.0
+    ],
+    "GEOL 112": [
+     1.0,
+     1.0
+    ],
+    "GEOL 115": [
+     1.0,
+     1.0
+    ],
+    "OCEAN 116": [
+     1.0,
+     1.0
+    ],
+    "PSYCH 203": [
+     1.0,
+     1.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": 41009271854
 }

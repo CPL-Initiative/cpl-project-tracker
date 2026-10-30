@@ -66,10 +66,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    7.0,
-    9.0
+    20.0,
+    21.0
    ],
    "stated": [
     19.0,
@@ -77,7 +77,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Courses' has no units"
+    "the blocks sum to 20.0-21.0; the catalog states 19.0-21.0"
    ]
   },
   "repeated": {
@@ -150,7 +150,7 @@
     "courses": [
      {
       "code": "BIOL 142",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -164,7 +164,7 @@
      },
      {
       "code": "MATH 100",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -183,28 +183,28 @@
     "courses": [
      {
       "code": "BIOL 101",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 112",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 122",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 140",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -223,14 +223,14 @@
     "courses": [
      {
       "code": "BIOL 141",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "BIOL 298",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -254,6 +254,43 @@
    "BIOL 142 and ENGL 101 are not in the closed list; ENGL 101 may correspond to ENGL C1000 in the state file."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": 41012563119,
+ "read_run": 41009271854,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "BIOL 142": [
+     4.0,
+     4.0
+    ],
+    "MATH 100": [
+     4.0,
+     4.0
+    ],
+    "BIOL 101": [
+     4.0,
+     4.0
+    ],
+    "BIOL 112": [
+     5.0,
+     5.0
+    ],
+    "BIOL 122": [
+     4.0,
+     4.0
+    ],
+    "BIOL 140": [
+     4.0,
+     4.0
+    ],
+    "BIOL 141": [
+     4.0,
+     4.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ]
 }

@@ -62,10 +62,10 @@
   },
   "arithmetic": {
    "pass": false,
-   "status": "incomplete",
+   "status": "unequal",
    "computed": [
-    3.0,
-    3.0
+    27.0,
+    27.0
    ],
    "stated": [
     18.0,
@@ -73,7 +73,7 @@
    ],
    "against": "program",
    "why": [
-    "a required course in 'Required Courses' has no units"
+    "the blocks sum to 27.0-27.0; the catalog states 18.0-18.0"
    ]
   },
   "repeated": {
@@ -150,56 +150,56 @@
     "courses": [
      {
       "code": "ARTH 199",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 100",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 111",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 112",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 130",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 132",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -218,28 +218,28 @@
     "courses": [
      {
       "code": "PHOTO 140",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 142",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 144",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "PHOTO 146",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -258,5 +258,39 @@
    "Closed-list codes PHOTO101, PHOTO112, PHOTO130, PHOTO132, PHOTO142, PHOTO146 lack a space in the state file; the catalog's 'PHOTO 101' etc. are treated as the same courses."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ARTH 199": [
+     3.0,
+     3.0
+    ],
+    "PHOTO 100": [
+     3.0,
+     3.0
+    ],
+    "PHOTO 103": [
+     3.0,
+     3.0
+    ],
+    "PHOTO 111": [
+     3.0,
+     3.0
+    ],
+    "PHOTO 140": [
+     3.0,
+     3.0
+    ],
+    "PHOTO 144": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": 41009271854
 }

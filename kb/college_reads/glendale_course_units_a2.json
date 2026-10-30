@@ -1,0 +1,31 @@
+{
+ "_readme": "S523 SkyBarberry, 2026-10-30. Glendale course units, part a2. Part a (run 41007920360) printed pages 158-250 and priced 9 of its 19 courses; the ACCTG, ANTHR, ARCH, ART and AT descriptions sit before page 158 or are no longer printed, and no title keyword hit them. This read searches pages 100-160 for the code each description's body prints ('CAM 241 is an advanced Mastercam lathe course'). One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "course_units": "The units each course description prints for ACCTG101, ACCTG120, ACCTG121, ANTHR101, ARCH109, ART144, ART246, ART250, ART255, AT138, or that the catalog prints none of them."
+ },
+ "keywords": [
+  "(?<![A-Z])ACCTG\\s?101(?!\\d)",
+  "(?<![A-Z])ACCTG\\s?120(?!\\d)",
+  "(?<![A-Z])ACCTG\\s?121(?!\\d)",
+  "(?<![A-Z])ANTHR\\s?101(?!\\d)",
+  "(?<![A-Z])ARCH\\s?109(?!\\d)",
+  "(?<![A-Z])ART\\s?144(?!\\d)",
+  "(?<![A-Z])ART\\s?246(?!\\d)",
+  "(?<![A-Z])ART\\s?250(?!\\d)",
+  "(?<![A-Z])ART\\s?255(?!\\d)",
+  "(?<![A-Z])AT\\s?138(?!\\d)"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_units"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  100,
+  160
+ ]
+}

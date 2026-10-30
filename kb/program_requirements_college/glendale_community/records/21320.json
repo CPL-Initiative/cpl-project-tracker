@@ -143,12 +143,12 @@
     "courses": [
      {
       "code": "CULIN 111",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "CULIN 112",
-        "units": null,
+        "units": 4.0,
         "catalog_addition": false
        }
       ],
@@ -156,35 +156,35 @@
      },
      {
       "code": "CULIN 113",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "CULIN 116",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HRM 256",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NUTR 114",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "NUTR 118",
-      "units": null,
+      "units": 4.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -208,5 +208,43 @@
    "Outcome 2 rejoins 'ongo-ing', hyphenated across a line break, as 'ongoing'."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "CULIN 111": [
+     4.0,
+     4.0
+    ],
+    "CULIN 112": [
+     4.0,
+     4.0
+    ],
+    "CULIN 113": [
+     3.0,
+     3.0
+    ],
+    "CULIN 116": [
+     3.0,
+     3.0
+    ],
+    "HRM 256": [
+     3.0,
+     3.0
+    ],
+    "NUTR 114": [
+     3.0,
+     3.0
+    ],
+    "NUTR 118": [
+     4.0,
+     4.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }

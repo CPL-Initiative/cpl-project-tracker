@@ -67,7 +67,7 @@
    "status": "unequal",
    "computed": [
     13.0,
-    17.0
+    20.0
    ],
    "stated": [
     18.0,
@@ -75,7 +75,7 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 13.0-17.0; the catalog states 18.0-19.0"
+    "the blocks sum to 13.0-20.0; the catalog states 18.0-19.0"
    ]
   },
   "repeated": {
@@ -148,12 +148,12 @@
     "courses": [
      {
       "code": "T ART 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "T ART 102",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -161,7 +161,7 @@
      },
      {
       "code": "T ART 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -180,71 +180,71 @@
     "courses": [
      {
       "code": "T ART 160",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 161",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 162",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 163",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 164",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 180",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 181",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 182",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 183",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 184",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [],
       "catalog_addition": false
      }
@@ -262,109 +262,118 @@
     "courses": [
      {
       "code": "T ART 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 107",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 109",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 110",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 123",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 171",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 172",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 173",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 160",
-      "units": null,
-      "units_max": null,
+      "units": 2.0,
+      "units_max": 4.0,
       "alternatives": [
        {
         "code": "T ART 161",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        },
        {
         "code": "T ART 162",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        },
        {
         "code": "T ART 163",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        },
        {
         "code": "T ART 164",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        },
        {
         "code": "T ART 180",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        },
        {
         "code": "T ART 181",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        },
        {
         "code": "T ART 182",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        },
        {
         "code": "T ART 183",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        },
        {
         "code": "T ART 184",
-        "units": null,
-        "catalog_addition": false
+        "units": 2.0,
+        "catalog_addition": false,
+        "units_max": 4.0
        }
       ],
       "catalog_addition": false
@@ -389,5 +398,99 @@
    "No GE pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": "40704760867"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "T ART 101": [
+     3.0,
+     3.0
+    ],
+    "T ART 102": [
+     3.0,
+     3.0
+    ],
+    "T ART 103": [
+     3.0,
+     3.0
+    ],
+    "T ART 160": [
+     2.0,
+     4.0
+    ],
+    "T ART 161": [
+     2.0,
+     4.0
+    ],
+    "T ART 162": [
+     2.0,
+     4.0
+    ],
+    "T ART 163": [
+     2.0,
+     4.0
+    ],
+    "T ART 164": [
+     2.0,
+     4.0
+    ],
+    "T ART 180": [
+     2.0,
+     4.0
+    ],
+    "T ART 181": [
+     2.0,
+     4.0
+    ],
+    "T ART 182": [
+     2.0,
+     4.0
+    ],
+    "T ART 183": [
+     2.0,
+     4.0
+    ],
+    "T ART 184": [
+     2.0,
+     4.0
+    ],
+    "T ART 104": [
+     3.0,
+     3.0
+    ],
+    "T ART 107": [
+     3.0,
+     3.0
+    ],
+    "T ART 109": [
+     2.0,
+     2.0
+    ],
+    "T ART 110": [
+     1.0,
+     1.0
+    ],
+    "T ART 123": [
+     3.0,
+     3.0
+    ],
+    "T ART 171": [
+     3.0,
+     3.0
+    ],
+    "T ART 172": [
+     3.0,
+     3.0
+    ],
+    "T ART 173": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "40704760867"
 }

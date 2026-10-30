@@ -145,63 +145,63 @@
     "courses": [
      {
       "code": "RE 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 130",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 140",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 150",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 161",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 162",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 163",
-      "units": null,
+      "units": 3.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 164",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 165",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -220,7 +220,7 @@
     "courses": [
      {
       "code": "ACCTG 101",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [
        {
@@ -233,35 +233,35 @@
      },
      {
       "code": "BUSAD 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 180",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 190",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "RE 195",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "RE 250",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -280,6 +280,71 @@
    "The total of 29 units comes from the sentence 'to complete a total of 29 units'."
   ]
  },
- "extracted_run": 40711704988,
- "read_run": "39063367252"
+ "extracted_run": 41012563119,
+ "read_run": 41009271854,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "RE 101": [
+     3.0,
+     3.0
+    ],
+    "RE 130": [
+     3.0,
+     3.0
+    ],
+    "RE 140": [
+     3.0,
+     3.0
+    ],
+    "RE 150": [
+     3.0,
+     3.0
+    ],
+    "RE 161": [
+     3.0,
+     3.0
+    ],
+    "RE 162": [
+     3.5,
+     3.5
+    ],
+    "RE 163": [
+     3.5,
+     3.5
+    ],
+    "RE 164": [
+     3.0,
+     3.0
+    ],
+    "RE 165": [
+     1.0,
+     1.0
+    ],
+    "BUSAD 120": [
+     3.0,
+     3.0
+    ],
+    "RE 180": [
+     3.0,
+     3.0
+    ],
+    "RE 190": [
+     3.0,
+     3.0
+    ],
+    "RE 195": [
+     3.0,
+     3.0
+    ],
+    "RE 250": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ]
 }

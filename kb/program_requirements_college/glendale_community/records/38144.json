@@ -144,14 +144,14 @@
     "courses": [
      {
       "code": "ENGL 102",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -177,28 +177,28 @@
     "courses": [
      {
       "code": "ENGL 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 106",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 110",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 123",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -217,40 +217,40 @@
     "courses": [
      {
       "code": "ENGL 112",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 114",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "ENGL 118",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HUMAN 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "HUMAN 105H",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -274,6 +274,63 @@
    "Outcomes are printed as one semicolon-separated sentence; split at the semicolons. 'writt en' is copied as printed (PDF ligature artifact for 'written')."
   ]
  },
- "extracted_run": 40696243319,
- "read_run": "39063367252"
+ "extracted_run": 41012563119,
+ "read_run": 40696243319,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "ENGL 102": [
+     3.0,
+     3.0
+    ],
+    "ENGL 103": [
+     3.0,
+     3.0
+    ],
+    "ENGL 105": [
+     3.0,
+     3.0
+    ],
+    "ENGL 106": [
+     3.0,
+     3.0
+    ],
+    "ENGL 110": [
+     3.0,
+     3.0
+    ],
+    "ENGL 123": [
+     3.0,
+     3.0
+    ],
+    "ENGL 112": [
+     3.0,
+     3.0
+    ],
+    "ENGL 114": [
+     3.0,
+     3.0
+    ],
+    "ENGL 115": [
+     3.0,
+     3.0
+    ],
+    "ENGL 118": [
+     3.0,
+     3.0
+    ],
+    "HUMAN 105": [
+     3.0,
+     3.0
+    ],
+    "HUMAN 105H": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ]
 }

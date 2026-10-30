@@ -157,12 +157,12 @@
     "courses": [
      {
       "code": "DANCE 100",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "DANCE 102",
-        "units": null,
+        "units": 3.0,
         "catalog_addition": false
        }
       ],
@@ -170,54 +170,54 @@
      },
      {
       "code": "DANCE 114",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "DANCE 117",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "DANCE 122",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "DANCE 127",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "DANCE 129",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "DANCE 130",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "DANCE 135",
-      "units": null,
+      "units": 2.5,
       "units_max": null,
       "alternatives": [
        {
         "code": "DANCE 136",
-        "units": null,
+        "units": 2.5,
         "catalog_addition": false
        }
       ],
@@ -225,19 +225,19 @@
      },
      {
       "code": "DANCE 137",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "DANCE 190",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [
        {
         "code": "DANCE 194",
-        "units": null,
+        "units": 1.5,
         "catalog_addition": false
        }
       ],
@@ -278,26 +278,26 @@
      },
      {
       "code": "DANCE 124",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "DANCE 126",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "DANCE 127",
-      "units": null,
+      "units": 1.5,
       "units_max": null,
       "alternatives": [
        {
         "code": "DANCE 128",
-        "units": null,
+        "units": 1.5,
         "catalog_addition": true
        }
       ],
@@ -305,84 +305,84 @@
      },
      {
       "code": "HUMAN 115",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "KIN 157",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 135",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 230",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 236",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "MUSIC 237",
-      "units": null,
+      "units": 1.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 109",
-      "units": null,
+      "units": 2.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "T ART 123",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -416,5 +416,127 @@
    "Required list formatting 'DANCE 100 or 102; 114, 117, 122, 127, 129, 130, 135 or 136, 137, 190 or 194' read as all DANCE courses with three or-pairs."
   ]
  },
- "extracted_run": "40707595210"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "DANCE 100": [
+     3.0,
+     3.0
+    ],
+    "DANCE 102": [
+     3.0,
+     3.0
+    ],
+    "DANCE 114": [
+     2.0,
+     2.0
+    ],
+    "DANCE 117": [
+     2.0,
+     2.0
+    ],
+    "DANCE 122": [
+     1.5,
+     1.5
+    ],
+    "DANCE 127": [
+     1.5,
+     1.5
+    ],
+    "DANCE 129": [
+     1.5,
+     1.5
+    ],
+    "DANCE 130": [
+     1.5,
+     1.5
+    ],
+    "DANCE 135": [
+     2.5,
+     2.5
+    ],
+    "DANCE 136": [
+     2.5,
+     2.5
+    ],
+    "DANCE 137": [
+     2.0,
+     2.0
+    ],
+    "DANCE 190": [
+     1.5,
+     1.5
+    ],
+    "DANCE 194": [
+     1.5,
+     1.5
+    ],
+    "DANCE 124": [
+     1.5,
+     1.5
+    ],
+    "DANCE 126": [
+     1.5,
+     1.5
+    ],
+    "DANCE 128": [
+     1.5,
+     1.5
+    ],
+    "HUMAN 115": [
+     3.0,
+     3.0
+    ],
+    "KIN 157": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 101": [
+     3.0,
+     3.0
+    ],
+    "MUSIC 135": [
+     2.0,
+     2.0
+    ],
+    "MUSIC 230": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 236": [
+     1.0,
+     1.0
+    ],
+    "MUSIC 237": [
+     1.0,
+     1.0
+    ],
+    "T ART 101": [
+     3.0,
+     3.0
+    ],
+    "T ART 103": [
+     3.0,
+     3.0
+    ],
+    "T ART 104": [
+     3.0,
+     3.0
+    ],
+    "T ART 109": [
+     2.0,
+     2.0
+    ],
+    "T ART 123": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "40707595210"
 }

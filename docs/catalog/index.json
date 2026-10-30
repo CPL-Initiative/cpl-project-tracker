@@ -16262,8 +16262,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 492,
+   "count": 493,
    "docs": [
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "n": 524,
+     "path": "docs/session_524_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "glendale",
+      "ui-pass",
+      "sierra"
+     ],
+     "title": "Session 524 handoff: Glendale 80 to 105 passing, every course priced from its own description; Sierra's UI pass clean",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24689,5 +24706,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1312
+ "total": 1313
 }

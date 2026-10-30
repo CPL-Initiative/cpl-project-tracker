@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T02:30:06Z",
-  "session": 522,
-  "moniker": "SkyCrowberry",
-  "run": "Sam's session",
+  "written_at": "2026-10-30T06:38:46Z",
+  "session": 523,
+  "moniker": "SkyBarberry",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_523_handoff.md",
+  "handoff": "docs/session_524_handoff.md",
   "next_step": {
-    "title": "Land #2570, then Glendale's course units",
-    "text": "Merge #2570 (the program search fix, live since 01:03Z) once test passes on its newest head; then Glendale's course units, the harvest's NEXT. Sierra's Quick Adopt ask waits until after the Summit."
+    "title": "Land #2574, then Glendale's program totals",
+    "text": "Merge #2574 (Glendale 80 to 105 passing; every course priced from its own description) once test passes on its newest head. Then Glendale's next cause: 71 records name no program total; read the totals the program pages print, then the 48 unequal sums."
   },
   "calls": [
     {

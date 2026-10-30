@@ -147,26 +147,26 @@
     "courses": [
      {
       "code": "SPAN 101",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 102",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 103",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [
        {
         "code": "SPAN 115",
-        "units": null,
+        "units": 5.0,
         "catalog_addition": false
        }
       ],
@@ -174,7 +174,7 @@
      },
      {
       "code": "SPAN 104",
-      "units": null,
+      "units": 5.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -200,56 +200,56 @@
      },
      {
       "code": "ETH S 120",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 103",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 104",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 105",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "HIST 113",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "LING 101",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 124H",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "SPAN 131",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -267,5 +267,67 @@
    "ETH S 102 is not in the closed list and is recorded as a catalog addition."
   ]
  },
- "extracted_run": "39063367252"
+ "extracted_run": 41012563119,
+ "reconciled": [
+  {
+   "field": "course_units",
+   "was": null,
+   "now": {
+    "SPAN 101": [
+     5.0,
+     5.0
+    ],
+    "SPAN 102": [
+     5.0,
+     5.0
+    ],
+    "SPAN 103": [
+     5.0,
+     5.0
+    ],
+    "SPAN 115": [
+     5.0,
+     5.0
+    ],
+    "SPAN 104": [
+     5.0,
+     5.0
+    ],
+    "ETH S 120": [
+     3.0,
+     3.0
+    ],
+    "HIST 103": [
+     3.0,
+     3.0
+    ],
+    "HIST 104": [
+     3.0,
+     3.0
+    ],
+    "HIST 105": [
+     3.0,
+     3.0
+    ],
+    "HIST 113": [
+     3.0,
+     3.0
+    ],
+    "LING 101": [
+     3.0,
+     3.0
+    ],
+    "SPAN 124H": [
+     3.0,
+     3.0
+    ],
+    "SPAN 131": [
+     3.0,
+     3.0
+    ]
+   },
+   "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
+  }
+ ],
+ "read_run": "39063367252"
 }
