@@ -8,10 +8,17 @@
    statewide exhibit per credential). Keyed by the exact exhibit title, which is
    the text of each <li class? no> inside a `.sw-list`.
 
+   A rec that carries `id` (the MAP exhibit that publishes it, listed on MAP's
+   CPL Opportunities page) gets a Request Quick Adopt link to that exhibit's
+   card. Sam, 2026-10-30: Request Quick Adopt needs no MAP sign-in and asks a
+   college initiator to adopt; Quick Adopt needs one and starts the approval
+   queue. The address comes from map_links.js (CPL_MAP_LINKS.url), the one
+   builder; without it, no link.
+
    Self-contained, READ-ONLY (no Supabase, no auth), escapes all text, idempotent
-   (re-running never double-appends). #statewide-exhibits is EXCLUDED from the
-   Curate overlay (factsheet_edit.js), so this never collides with an edit.
-   Exhibits with no statewide rec simply get no wedge. */
+   (re-running never double-appends). The Curate overlay (factsheet_edit.js)
+   edits only this section's own prose, never the exhibit lists, so this never
+   collides with an edit. Exhibits with no statewide rec simply get no wedge. */
 (function () {
   'use strict';
 
@@ -56,6 +63,15 @@
     return idx;
   }
 
+  // Request Quick Adopt for one rec, or '' when it carries no listed exhibit.
+  function adoptLinkHtml(r) {
+    var ml = window.CPL_MAP_LINKS, id = String((r && r.id) || '').trim();
+    if (!id || !ml || typeof ml.url !== 'function') return '';
+    return ' <a class="sw-rec-adopt" href="' + esc(ml.url(id)) + '" target="_blank" rel="noopener">'
+      + 'Request Quick Adopt<span class="sw-rec-sr"> for ' + esc(r.t) + ' in MAP, exhibit ' + esc(id)
+      + ' (opens in a new tab)</span></a>';
+  }
+
   function recListHtml(recs) {
     var items = recs.map(function (r) {
       var cid = String(r.cid || '').trim();
@@ -64,6 +80,7 @@
       bits += '<span class="sw-rec-t">' + esc(r.t) + '</span>';
       var ul = unitLabel(r.u);
       if (ul) bits += ' <span class="sw-rec-u">— ' + esc(ul) + '</span>';
+      bits += adoptLinkHtml(r);
       return '<li>' + bits + '</li>';
     }).join('');
     return '<ul class="sw-rec-list" hidden>' + items + '</ul>';
@@ -86,8 +103,17 @@
         + 'border:1px solid var(--border-strong);border-radius:4px;padding:0 4px;margin-right:2px;}'
       + '.sw-rec-t{color:var(--ink);}'
       + '.sw-rec-u{color:var(--muted);white-space:nowrap;}'
+      // A control is an underlined word, 24px tall (Sam, 2026-10-09). position:relative
+      // keeps the screen-reader span inside the link.
+      + '.sw-rec-adopt{position:relative;display:inline-flex;align-items:center;min-height:24px;'
+        + 'margin-left:4px;font-size:.76rem;font-weight:600;color:var(--cobalt);white-space:nowrap;'
+        + 'text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px;}'
+      + '.sw-rec-adopt:hover{text-decoration-thickness:2px;}'
+      + '.sw-rec-adopt:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px;}'
+      + '.sw-rec-sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;'
+        + 'clip:rect(0 0 0 0);white-space:nowrap;border:0;}'
       // Print: show every rec list (collapsed-on-screen detail is irrelevant on paper).
-      + '@media print{.sw-rec-list{display:block!important;}.sw-rec-tg{display:none;}}';
+      + '@media print{.sw-rec-list{display:block!important;}.sw-rec-tg,.sw-rec-adopt{display:none;}}';
     var st = document.createElement('style');
     st.id = 'sw-rec-css';
     st.appendChild(document.createTextNode(css));
@@ -132,7 +158,7 @@
 
   // Test / inspection surface.
   window.CPL_STATEWIDE_RECS_RENDER = {
-    render: render, _buildIndex: buildIndex, _dedupe: dedupe,
+    render: render, _buildIndex: buildIndex, _dedupe: dedupe, _adoptLinkHtml: adoptLinkHtml,
     _norm: norm, _esc: esc, _unitLabel: unitLabel
   };
 })();

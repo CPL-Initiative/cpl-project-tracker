@@ -321,6 +321,21 @@ check("zero-adopter card still builds", e is not None,
 check("zero-adopter card has empty units", val(lambda: e["adopter_units"], None) == {})
 check("zero-adopter peer median is 0, not an error", val(lambda: e["peer_units_median"]) == 0.0)
 
+# ─────────────────────────── 10. each statewide rec names its exhibits ───────
+# The Fact Sheet's Request Quick Adopt link opens the exhibit that publishes a
+# recommendation (Sam, 2026-10-30), so the CCC rows' exhibit IDs ride along.
+res = build([
+    row("CPL-A", "Statewide Cert", "Chabot College", "X 1", "3 hours in Alpha", collab="CCC"),
+    row("CPL-B", "Statewide Cert", "Pasadena City College", "X 1", "3 hours in Alpha", collab="CCC"),
+    row("CPL-B", "Statewide Cert", "Pasadena City College", "X 2", "3 hours in Beta", collab="CCC"),
+    row("LOC-1", "Statewide Cert", "Skyline College", "X 3", "3 hours in Gamma", collab="Local"),
+])
+ar = {r["credit"]: r for r in val(lambda: res["Statewide Cert"]["authoritative_recs"], [])}
+check("a statewide rec lists every CCC exhibit that publishes it",
+      val(lambda: ar["3 hours in Alpha"]["eids"]) == ["CPL-A", "CPL-B"], str(ar))
+check("a rec one exhibit publishes lists that one", val(lambda: ar["3 hours in Beta"]["eids"]) == ["CPL-B"])
+check("a local row adds no authoritative rec", "3 hours in Gamma" not in ar)
+
 # ─────────────────────────── report ──────────────────────────────────────────
 passed = sum(1 for _, ok, _ in CHECKS if ok)
 failed = [(n, d) for n, ok, d in CHECKS if not ok]

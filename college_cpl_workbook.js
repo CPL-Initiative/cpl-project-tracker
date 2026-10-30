@@ -313,7 +313,7 @@
         });
         return { link: mapLink(ids[0]), ids: ids, chips: chips, status: "Verified " + verDate + ": "
           + chips.map(function (c) { return c.id + (c.college ? " (built by " + c.college + ")" : ""); }).join(", ")
-          + " listed on MAP's CPL Opportunities page. The link opens it searched for " + ids[0] + "; Request Adopt or Quick Adopt need a MAP sign-in." };
+          + " listed on MAP's CPL Opportunities page. The link opens it searched for " + ids[0] + "; Request Quick Adopt there needs no MAP sign-in and asks a college initiator to adopt; Quick Adopt needs one and starts the approval queue." };
       }
       return { link: "", ids: [], chips: [], status: input.verified
         ? "Not listed on MAP's CPL Opportunities page when checked " + verDate + "; no link given"
@@ -597,7 +597,7 @@
       [b.college + ": CPL opportunity analysis", "Built " + b.today + " from COBI's published data. A snapshot: MAP and COCI data change daily."],
       ["Shareable visual", L(b.shareUrl, b.shareUrl)],
       ["Scope", "AP and IB exhibits are excluded from every sheet; CLEP is included. Statewide credit recommendations are MAP exhibits whose collaborative type is CCC Collaborative, Apprenticeship, Industry, Private Institution or CSU; exhibits other colleges built locally appear as peer-college evidence."],
-      ["Request Adopt", "Each link opens MAP's CPL Opportunities page already searched for the Statewide Credit Recommendation ID (" + MAP_PAGE + "?Exhibit= and the ID, with View=Non-Military), so the exhibit's card comes up on the Non-Military Credit tab with Request Adopt and Quick Adopt, which MAP asks you to sign in for. A link is given only where MAP's own data listed the ID on that page when last checked (" + (s.verifiedAt || "not checked") + "): " + s.nVerified + " of " + s.nCandidates + " recommendations. Nothing is submitted to MAP from here."],
+      ["Request Adopt", "Each link opens MAP's CPL Opportunities page already searched for the Statewide Credit Recommendation ID (" + MAP_PAGE + "?Exhibit= and the ID, with View=Non-Military), so the exhibit's card comes up on the Non-Military Credit tab with Request Quick Adopt, which needs no MAP sign-in and asks a college initiator to adopt, and Quick Adopt, which needs a sign-in and starts the approval queue. A link is given only where MAP's own data listed the ID on that page when last checked (" + (s.verifiedAt || "not checked") + "): " + s.nVerified + " of " + s.nCandidates + " recommendations. Nothing is submitted to MAP from here."],
       ["IDs", "Statewide Credit Recommendation ID: the exhibit ID MAP lists on the CPL Opportunities page. MAP Exhibit ID: every exhibit ID MAP holds under that credential's name."],
       ["Alignment tiers", "Confirmed: an exhibit exists in MAP. Needs validation: peer colleges articulate the same credential to the same common course (the Commons' M-ID or C-ID) that includes this college's course. Possible: title match only. No row says a course qualifies for CPL; discipline faculty compare the course outline of record with the credential's documented competencies first."],
       ["Priority", "High: a statewide CR reached through 2+ peer colleges, or a credential 3+ peer colleges articulate to the same common course. Medium: one peer college, a title-only match, or an apprenticeship course. Low: a TOP family with known prior-learning sources and no peer evidence."],
@@ -849,7 +849,7 @@
       + '<div class="cpo-fact"><b>' + n(s.priority.High) + "</b><span>high-priority course opportunities</span></div></div></section>"
       + notesHtml(b.teamNotes, b.college)
       + '<section aria-labelledby="cpo-h-adopt"><h2 id="cpo-h-adopt">Could Adopt</h2>'
-      + '<p class="cpo-note">Statewide credit recommendations the college has not adopted, matched to its courses. Each link opens MAP\'s CPL Opportunities page already searched for the recommendation\'s exhibit ID, so it comes up with Request Quick Adopt (MAP asks you to sign in). The Non-Military Credit tab there shows the exhibit as a card. Beside each exhibit ID, the college that built it in MAP opens MAP searched for that ID; MAP\'s table lists the colleges that articulated it. '
+      + '<p class="cpo-note">Statewide credit recommendations the college has not adopted, matched to its courses. Each link opens MAP\'s CPL Opportunities page already searched for the recommendation\'s exhibit ID, so it comes up with Request Quick Adopt, which needs no MAP sign-in and asks a college initiator to adopt (Quick Adopt needs a sign-in and starts the approval queue). The Non-Military Credit tab there shows the exhibit as a card. Beside each exhibit ID, the college that built it in MAP opens MAP searched for that ID; MAP\'s table lists the colleges that articulated it. '
       + (s.verifiedAt ? "Links appear only for IDs MAP listed on that page when checked " + e(s.verifiedAt) + "."
         : "The check of which IDs MAP lists could not be read, so no links are shown.") + "</p>"
       + '<div class="cpo-filters"><label class="cpo-f">Search <input type="search" id="cpo-q" placeholder="Title, ID or course"></label>'

@@ -71,10 +71,15 @@
     return loading;
   }
 
+  // The one MAP address for an exhibit: CPL Opportunities searched for its ID,
+  // on its Non-Military card, where Request Quick Adopt sits. The Fact Sheet's
+  // statewide recommendations call it too.
+  function url(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW; }
+
   function chip(id) {
     var rec = index.found[String(id).toUpperCase()] || {};
     var college = rec.college || "";
-    return '<a class="cpl-mapchip" href="' + esc(MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW) +
+    return '<a class="cpl-mapchip" href="' + esc(url(id)) +
       '" target="_blank" rel="noopener">' + esc(college ? short(college) : "View in MAP") +
       '<span class="cpl-ml-sr"> (' + (college ? "built by " + esc(college) + "; " : "") +
       "opens MAP searched for " + esc(id) + ")</span></a>";
@@ -137,6 +142,7 @@
     lineHtml: function (title) { return lineHtml(title); },
     load: load,
     fillAll: fillAll,
+    url: url,
     MAP_PAGE: MAP_PAGE,
     MAP_VIEW: MAP_VIEW,
     MAX: MAX

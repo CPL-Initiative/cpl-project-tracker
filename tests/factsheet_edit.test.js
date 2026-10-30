@@ -4,8 +4,8 @@
 //  (a) the shipped page wires it up: script tag + #btn-curate button present, and
 //      the JST upload box was removed from Resources;
 //  (b) the overrides SQL is reviewer-gated (public read, is_allowed_reviewer write);
-//  (c) editability EXCLUDES the contended/live sections (#statewide-exhibits,
-//      #progress) + the chrome (#contents), and never keys a [data-bind] box;
+//  (c) #statewide-exhibits gives only its own prose and #contents only its
+//      labels; #progress KPI cards stay move-only;
 //  (d) the Resources cards + the Legislation list ARE keyed (Sam's two targets);
 //  (e) keys are STABLE — two fresh loads of the same HTML yield identical keys;
 //  (f) applyOverrides overlays html + hides a box; and it doesn't throw with no fetch.
@@ -63,11 +63,14 @@ check("exposes CPL_FACTSHEET_EDIT API", API && typeof API.collectBlocks === "fun
 const blocks = API ? API.blocks() : [];
 check("collected some editable blocks", blocks.length > 5);
 
-// (c) hands-off sections (#statewide-exhibits owned by statewide_recs_render.js,
-// #contents = chrome) never produce a keyed block. #progress is NO LONGER excluded.
-const EXCLUDED = ["statewide-exhibits", "contents"];
-check("no blocks in hands-off sections (#statewide-exhibits/#contents)",
-  blocks.every((b) => EXCLUDED.indexOf(b.sectionId) === -1));
+// (c) the hands-off sections give only what Sam asked to edit (S529): #contents
+// only its labels (text-only toc blocks), #statewide-exhibits only its own
+// section-level prose — never the renderer's grid or exhibit lists.
+check("#contents gives only Contents-label blocks",
+  blocks.filter((b) => b.sectionId === "contents").every((b) => b.isToc && b.el.tagName === "A"));
+check("#statewide-exhibits gives only its section-level prose",
+  blocks.filter((b) => b.sectionId === "statewide-exhibits").every((b) =>
+    b.el.parentElement && b.el.parentElement.id === "statewide-exhibits" && !b.el.closest(".sw-grid")));
 
 // (c-new) the #progress KPI cards ARE collected now — as MOVE-ONLY live blocks
 // (moveable + deletable, never text-editable).

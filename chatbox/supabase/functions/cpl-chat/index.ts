@@ -2395,8 +2395,9 @@ function buildVolumeContext(
         + `describing the category.\n`;
     if (mapLinked) {
       out += `MAP LINKS: a "Request Quick Adopt in MAP" line names each college that built an `
-          + `exhibit of the credential and the MAP page searched for that exhibit. ${college || "The college"}'s `
-          + `CPL coordinator, signed in to MAP, requests Quick Adopt there. When you name a credential `
+          + `exhibit of the credential and the MAP page searched for that exhibit. There, Request Quick Adopt `
+          + `needs no MAP sign-in and asks ${college || "the college"}'s CPL initiator to adopt the exhibit; `
+          + `Quick Adopt needs a MAP sign-in and starts the approval queue. When you name a credential `
           + `that carries the line, give its links as markdown links named for the building college, `
           + `for example [Saddleback College's exhibit](URL), and say who uses them. Use only the URLs `
           + `on those lines; a credential with no line gets no MAP link.\n`;
@@ -6531,6 +6532,62 @@ function buildFaqContext(matched: any[], groups: any[] | null, listAll: boolean)
 }
 // ── FUNDING FAQ BLOCK END ────────────────────────────────────────────────────────
 
+// ── COLLEGE FUNDING SECTION BLOCK START ───────────────────────────────────────────
+// A funding question that names one college reads that college's own section of the
+// vault's funding note, by its heading (S529). S528 asked about Cabrillo and Sierra
+// named Mt. San Jacinto, Pasadena and Skyline: the similarity search picks among 118
+// sections that read alike, and on 2026-10-30 Cabrillo's had not reached the index at
+// all. The note (scripts/funding_sierra_note.js) heads each section "<full name>: CPL
+// funding standing". Names match without case, accents, punctuation or the generic
+// words (so "Mt. San Jacinto College" finds "Mt San Jacinto College" and "Lassen
+// College" finds "Lassen Community College"); failing that, one heading that ends with
+// the name ("Coalinga College" finds "West Hills College Coalinga").
+const FUNDING_SECTION_SUFFIX = ": CPL funding standing";
+const FUNDING_NAME_GENERIC = new Set(["college", "community", "credit", "non", "noncredit", "of", "the"]);
+const FUNDING_ASK_RE = /\b(fund(s|ed|ing)?|max(imum)? award|award(s|ed)?|allocat\w*|qualif\w*|conditions?|JSTs?|joint services transcripts?|participat\w*|confirm\w*|landing page|coordinator|noncredit (cpl )?lead|strike team|SB ?135|78093)\b/i;
+
+function fundingAsk(q: string): boolean {
+  return FUNDING_ASK_RE.test(String(q || ""));
+}
+function fundingNameKey(name: string): string {
+  return String(name || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "")
+    .toLowerCase().split(/[^a-z0-9]+/).filter((w) => w && !FUNDING_NAME_GENERIC.has(w)).join("");
+}
+// The one heading that names the college, or null (none, or more than one).
+function pickFundingSection(rows: any[], college: string): any {
+  const want = fundingNameKey(college);
+  if (!want) return null;
+  const keyed = (rows || []).filter((r: any) => String((r && r.heading) || "").endsWith(FUNDING_SECTION_SUFFIX))
+    .map((r: any) => ({ r, k: fundingNameKey(String(r.heading).slice(0, -FUNDING_SECTION_SUFFIX.length)) }));
+  const exact = keyed.filter((x) => x.k === want);
+  if (exact.length) return exact.length === 1 ? exact[0].r : null;
+  const ends = want.length >= 6 ? keyed.filter((x) => x.k.endsWith(want)) : [];
+  return ends.length === 1 ? ends[0].r : null;
+}
+// Two small reads: the 118 headings, then the one section's text. A failed read
+// returns null and the turn answers from the similarity search alone.
+async function fetchCollegeFundingSection(sb: any, college: string): Promise<any> {
+  try {
+    const { data: heads, error } = await sb.from("cpl_document_sections")
+      .select("id, heading").like("heading", "%" + FUNDING_SECTION_SUFFIX);
+    if (error || !heads) return null;
+    const hit = pickFundingSection(heads, college);
+    if (!hit) return null;
+    const { data: row, error: e2 } = await sb.from("cpl_document_sections")
+      .select("id, document_id, heading, content, metadata").eq("id", hit.id).maybeSingle();
+    if (e2 || !row) return null;
+    return { ...row, similarity: 1 };
+  } catch (_e) {
+    return null;
+  }
+}
+// The section leads the knowledge sources, once.
+function withFundingSection(sections: any[], section: any): any[] {
+  const rest = (sections || []).filter((s: any) => !section || s.id !== section.id);
+  return section ? [section, ...rest] : rest;
+}
+// ── COLLEGE FUNDING SECTION BLOCK END ─────────────────────────────────────────────
+
 // The FAQ changes when a curator saves an edit or the house text moves, so the instance
 // keeps it FAQ_TTL_MS. The file is read from GitHub Pages; the config's x_faq, when the
 // published scenario holds one, takes its place ("__blank__" is a FAQ saved empty). A
@@ -7260,6 +7317,10 @@ Deno.serve(async (req: Request) => {
     // for the FAQ. It rides beside the library's section.
     const faqMatched = matchFaq(searchText, faqGroups || []);
     const faqContext = buildFaqContext(faqMatched, faqGroups || [], faqAsk(trimmedQuery));
+    // The named college's own funding section (S529), first among the sources.
+    const fundingSection = singleProfile?.college && fundingAsk(routeText)
+      ? await fetchCollegeFundingSection(sb, singleProfile.college) : null;
+    const promptSections = withFundingSection(sections || [], fundingSection);
 
     // The curator overlay for the built-in rules. Rides the same turn; null
     // (a failed or empty read) means every rule comes from its code default,
@@ -7268,7 +7329,7 @@ Deno.serve(async (req: Request) => {
     const ruleReport = { fired: [] as string[], overridden: [] as string[] };
 
     const systemPrompt = buildSystemPrompt(
-      sections || [], liveMetrics, collegeContext, topicContext, searchMode,
+      promptSections, liveMetrics, collegeContext, topicContext, searchMode,
       multiTurn, offeringsContext, programsContext, audienceKey ? AUDIENCE_RULES[audienceKey] : "",
       teamGuidance || "", creditContext, credentialContext, volumeContext, alignmentContext,
       prospectiveContext, rulesOverlay, ruleReport, hostScope, statewideCatalogContext, libraryContext, faqContext);
@@ -7365,7 +7426,7 @@ Deno.serve(async (req: Request) => {
 
     const stream = new ReadableStream({
       async start(controller) {
-        const sourcesData = (sections || []).map((s: any) => ({
+        const sourcesData = promptSections.map((s: any) => ({
           id: s.id,
           heading: s.heading,
           similarity: s.similarity,

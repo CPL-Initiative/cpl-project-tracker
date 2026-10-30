@@ -6438,13 +6438,18 @@ def _build_statewide_adoption(all_data, exhibit_rows, exhibit_cm):
                     e["adopter_lines"][artic] += 1
                     e["adopter_rec_idx"][artic].append(e["rec_index"][rec_key])
         # Authoritative statewide recs — only the CCC-tagged (MAP-published) rows,
-        # deduped by recommendation text, C-ID backfilled.
+        # deduped by recommendation text, C-ID backfilled. `eids` names the
+        # exhibits that publish each one, so the Fact Sheet's Request Quick Adopt
+        # link opens the card that carries it (Sam, 2026-10-30).
         if credit and collab == "CCC":
             ar = next((r for r in e["authoritative_recs"] if r["credit"] == credit), None)
             if ar is None:
-                e["authoritative_recs"].append({"credit": credit, "cid": cid})
-            elif cid and not ar["cid"]:
-                ar["cid"] = cid
+                e["authoritative_recs"].append({"credit": credit, "cid": cid, "eids": [eid] if eid else []})
+            else:
+                if cid and not ar["cid"]:
+                    ar["cid"] = cid
+                if eid and eid not in ar["eids"]:
+                    ar["eids"].append(eid)
 
     # ── Compute potential + assemble output rows ──
     from collections import Counter as _Counter

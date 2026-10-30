@@ -103,6 +103,35 @@ dc = _load("domaincw", os.path.join("kb", "_build_domain_cpl_crosswalk.py"))
 pl = dc.parse_line({"t": "All Risk Command Operations for Company Officers", "u": "2\u20133"})
 check("the domain crosswalk reads a span as low and high", (pl["lo"], pl["hi"], pl["src"]) == (2.0, 3.0, "u-range"))
 
+# Request Quick Adopt (Sam, 2026-10-30): each rec carries the MAP exhibit that
+# publishes it, when MAP's CPL Opportunities page lists that exhibit.
+id_sw = {"exhibits": [
+    {"unified_title": "CDA", "collaborative_type": "CCC Collaborative",
+     "exhibit_ids": ["MAPICI-A-1-001", "MAPICI-B-1-001"],
+     "authoritative_recs": [
+         {"credit": "3 hours in Child Growth", "cid": "", "eids": ["MAPICI-B-1-001"]},
+         {"credit": "3.0 hours in Child Growth", "cid": "", "eids": ["MAPICI-A-1-001"]},   # folds: ids union
+         {"credit": "3 hours in Unlisted Course", "cid": "", "eids": ["MAPICI-X-1-001"]},  # not on MAP's page
+         {"credit": "3 hours in Old Artifact Line", "cid": ""},   # no eids, two exhibit IDs: ambiguous
+     ]},
+    {"unified_title": "One-ID Credential", "collaborative_type": "CCC Collaborative",
+     "exhibit_ids": ["mapici-c-1-001"],
+     "authoritative_recs": [{"credit": "3 hours in Solo Course", "cid": ""}]},   # older artifact, one exhibit
+]}
+VER = {"MAPICI-A-1-001", "MAPICI-B-1-001", "MAPICI-C-1-001"}
+built_ids = m.build(id_sw, VER)[0]
+cda = {r["t"]: r for r in built_ids.get("CDA", [])}
+check("a rec carries the first listed exhibit that publishes it", cda.get("Child Growth", {}).get("id") == "MAPICI-B-1-001")
+check("a rec whose exhibit MAP does not list carries no id", "id" not in cda.get("Unlisted Course", {"id": 1}))
+check("an older artifact with two exhibits gives no id (ambiguous)", "id" not in cda.get("Old Artifact Line", {"id": 1}))
+solo = built_ids.get("One-ID Credential", [{}])[0]
+check("an older artifact with one exhibit falls back to it", solo.get("id") == "mapici-c-1-001")
+check("no verified file, no ids", all("id" not in r for v in m.build(id_sw)[0].values() for r in v))
+check("load_verified reads the committed file",
+      "CPLICI-ASE1-1-001" in (m.load_verified(os.path.join(os.path.dirname(HERE), "kb", "reference",
+                                                           "map_cpl_opportunities_verified.json")) or set()))
+check("load_verified gives None for a missing file", m.load_verified("/nonexistent.json") is None)
+
 failed = 0
 for n, ok in results:
     print(("PASS " if ok else "FAIL ") + n)

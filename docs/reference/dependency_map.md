@@ -706,7 +706,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/industry_credential_skills.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/industry_credential_watch.json` | scripts: `kb/_build_it_ai_credential_catalog.py`, `kb/_diff_credential_watch.py` | — |
 | `kb/reference/map_college_roster_rules.json` | scripts: `excel_to_dashboard.py`, `kb/_audit_control_number_claims.py` | — |
-| `kb/reference/map_cpl_opportunities_verified.json` | tabs: `vision-2030` · scripts: `kb/_verify_map_exhibit_links.py` | scripts: `kb/_verify_map_exhibit_links.py` |
+| `kb/reference/map_cpl_opportunities_verified.json` | tabs: `vision-2030` · scripts: `fact-sheet/_build_statewide_recs.py`, `kb/_verify_map_exhibit_links.py` | scripts: `kb/_verify_map_exhibit_links.py` |
 | `kb/reference/mis_district_college_codes.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/moc_crosswalk.json` | scripts: `kb/_sync_moc_crosswalk.py` | scripts: `kb/_sync_moc_crosswalk.py` · committed by: `moc-crosswalk-sync.yml` |
 | `kb/reference/mq_disciplines.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_kin_pe_convergence.py`, `kb/_build_ccr_title_rung_sheet.py`, `kb/_build_crosslist_decision_sheet.py`, `kb/_infer_disciplines.py`, `kb/_infer_disciplines_from_desc.py`, `kb/_infer_disciplines_from_top.py`, `kb/_infer_disciplines_from_top_division.py`, `kb/_mq_title5_rename.py`, `kb/_preseed_null_issuers.py`, `kb/_seed_coci_courses.py`, `kb/_seed_coci_minted_mids.py`, `kb/_seed_subject_discipline_map.py`, `kb/_verify_top_division_inference.py` | — |
@@ -777,7 +777,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `map_cleanup_views.js` | pages: `CPL_Dashboard.html` | — |
 | `map_data_quality.js` | pages: `CPL_Dashboard.html` | — |
 | `map_export.js` | pages: `CPL_Dashboard.html` | — |
-| `map_links.js` | pages: `CPL_Dashboard.html` | — |
+| `map_links.js` | pages: `CPL_Dashboard.html`, `fact-sheet/index.html` | — |
 | `map_team_queue.js` | pages: `CPL_Dashboard.html` | — |
 | `map_users.js` | tabs: `map-queue` · pages: `CPL_Dashboard.html` | — |
 | `master_report.js` | pages: `CPL_Dashboard.html` | — |
@@ -1038,7 +1038,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
-| `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `vision-2030` · pages: `CPL_Dashboard.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py` · `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `vision-2030` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py` · `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `credentialengineregistry.org` | tabs: `credential-reference` · scripts: `kb/_fetch_ce_top50.py` |
 | `creditforbeingyou.org` | tabs: `sierra-training` · `edgefn:cpl-chat` |

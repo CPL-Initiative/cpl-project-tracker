@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T13:30:00Z",
-  "session": 528,
-  "moniker": "SkyMulberry",
+  "written_at": "2026-10-30T16:30:00Z",
+  "session": 529,
+  "moniker": "SkyKiwiberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_529_handoff.md",
+  "handoff": "docs/session_530_handoff.md",
   "next_step": {
-    "title": "Sam's Sheet 143 ruling: printed list units",
-    "text": "Read the 44 records the printed-units reading would stop passing against their pages, then change the scorer with a guard test, rescore and apply with a receipt. Glendale stays parked; Los Angeles Valley is the next college."
+    "title": "Sheet 144 card 2: the printed units as a list's floor",
+    "text": "Read Sheet 144's replies. On floor, change block_units with a guard test, recompute each affected record's sum and apply both directions with a receipt (176 and 28 pass, 13 demote). On printed, the same with the full reading (218 and 27 pass, 44 demote). Glendale stays parked; Los Angeles Valley is the next college."
   },
   "calls": [
     {
@@ -149,6 +149,10 @@
   },
   "changes": [
     {
+      "at": "2026-10-30T16:20:00Z",
+      "text": "The 44 records the printed-units reading would stop passing, sorted from their own block names: few catalog slips; most lists print the low end of a range the program total carries. The printed units as a list's floor passes 176 failing and 28 incomplete records and fails 13. It differs from the ruling, so it went to Sam as Open Asks Sheet 144 card 2; the scorer is unchanged."
+    },
+    {
       "at": "2026-10-30T13:00:00Z",
       "text": "Glendale: 15 of the unequal records read against their pages; Foreign Languages reread into its two printed lists (receipt committed). Sam ruled on Open Asks Sheet 143 card 2 that a list's printed units count; the scorer change follows a read of the 44 records it would stop passing."
     },
@@ -171,10 +175,6 @@
     {
       "at": "2026-10-30T07:46:39Z",
       "text": "Glendale: 8 records took the total their program page prints in prose (reread 41021975265, receipt committed); all 8 sum short of it, so 105 still pass. 33 loaded records print no total."
-    },
-    {
-      "at": "2026-10-30T02:20:14Z",
-      "text": "S521's four memory rows applied by run 40990743558 and read back. The harvest tables are unchanged."
     }
   ],
   "headline": [

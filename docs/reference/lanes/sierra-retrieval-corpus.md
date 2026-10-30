@@ -88,6 +88,15 @@ one place. **One Sierra in COBI (S398, #2163; Sam, 2026-10-16: *"consolidate Sie
 
 **The funding FAQ (S518, #2559):** Sierra reads the page's FAQ. Mechanics: [`docs/cpl_assistant_lessons.md`](../../cpl_assistant_lessons.md), *Moved from the lane (S518)*.
 
+**A named college's funding section (S529).** The vault's funding note gives each of the 118 institutions a section
+headed `<full name>: CPL funding standing` (`scripts/funding_sierra_note.js`). A funding question that names one
+college reads that section by heading, ahead of the similarity search (`fetchCollegeFundingSection`; every profile in
+`chatbox_college_profiles` reaches its heading, the 7 non-CCC names excepted). **Built, first live at the next
+deploy** (held for Sam: a production deploy). The miss S528 saw (Cabrillo asked, three other colleges answered) was
+the index, not the ranking: the vault's two indexers raced and left 47 of 118 sections; CPLBrain#556 serializes them,
+skips unchanged files before embedding and writes a checksum after its sections. Index rebuilt 16:03Z 2026-10-30
+(187 of 187 chunks).
+
 **The public CPL Library (S469, live since 03:13Z 2026-10-25; smoke 7x green).** Sierra reads `cpl_library_public()` and a piece's page when the tracker hosts it: [lane](library.md#sierra-reads-the-library-sam-2320z-2026-10-24-built-s469), smoke 7x.
 
 **Statewide exhibits in full (S398-S399, live).** For a request for the whole set, Sierra receives the Fact Sheet's 164 statewide exhibits by program area (`fact-sheet/statewide_catalog.json`, rebuilt daily): #2164, deployed 2026-10-16 on Sam's go (Open Asks Sheet 85 card 7; deploy run 38943025631, production smoke 38943211844 green with mode 7w). **NEXT:** render the Fact Sheet's baked title lists from the catalog (132 baked, 50 current titles missing); retire the April vault note `map-exhibit-analysis.md`; curate the 22 "Other Statewide" exhibits into program areas.

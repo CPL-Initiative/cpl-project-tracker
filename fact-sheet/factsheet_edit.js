@@ -8,13 +8,22 @@
 
    Section policy
    --------------
-   • EXCLUDE_SECTIONS  — hands off entirely:
-       #statewide-exhibits  — the Statewide CRs section (owned by statewide_recs_render.js)
-       #contents            — the table of contents (chrome)
+   • EXCLUDE_SECTIONS  — no boxes, no Add, no box order:
+       #statewide-exhibits  — the Statewide CRs section (owned by statewide_recs_render.js).
+                              Its own prose (the section-level <p> and the .note) IS
+                              editable (PROSE_ONLY_SECTIONS); the program-area grid
+                              and its exhibit lists stay the renderer's.
+       #contents            — the table of contents (chrome). Each Contents label is
+                              a text-only block (Sam, 2026-10-30: "the content and its
+                              Contents labels, never the section headings or the
+                              links"): the words change, the href never does.
    • MOVE_ONLY_SECTIONS — boxes are MOVEABLE + DELETABLE but NOT text-editable:
        #progress            — the live, data-bound headline KPI grid. Editing a
                               live number makes no sense, but a reviewer can
-                              reorder the cards / hide one.
+                              reorder the cards / hide one. The section's own
+                              prose (its lede) is editable.
+   • Links and headings — a save keeps every link's address (lockLinks), and no
+       box holds a section's <h2> (sanitize drops one), so neither is in reach.
    • everything else      — full edit + move + hide/delete + ＋Add box (per grid)
        This now INCLUDES the live Veteran-Sprint outcome stats: a reviewer can
        edit them (an edit replaces the live binding with static text) and move /
@@ -62,6 +71,9 @@
   var EXCLUDE_SECTIONS = { 'statewide-exhibits': 1, 'contents': 1 };
   // Sections whose boxes are moveable + deletable but NOT text-editable.
   var MOVE_ONLY_SECTIONS = { 'progress': 1 };
+  // Excluded sections whose own prose (section-level p/ul/ol and .note) is still
+  // editable; everything else in them stays hands-off.
+  var PROSE_ONLY_SECTIONS = { 'statewide-exhibits': 1 };
   // The "box" units a reviewer can edit (outermost wins; section-level p/ul/ol
   // added separately below). `.kpi` is included so the KPI cards become move/
   // delete blocks (MOVE_ONLY_SECTIONS keeps them non-editable).
@@ -100,6 +112,28 @@
   // A block a reviewer can open in the text editor: not a move-only KPI, not a
   // table (hide-only), not an image (its own bar).
   function canEditHtml(bl) { return !!bl && !bl.noEdit && !bl.isTable && !isImgBlock(bl); }
+  // A section-level prose element: a <p>/<ul>/<ol>, or a .note, whose parent is
+  // the <section> itself.
+  function isSectionProse(el, sec) {
+    if (!el || el.parentElement !== sec) return false;
+    var tag = el.tagName;
+    return tag === 'P' || tag === 'UL' || tag === 'OL' || !!(el.classList && el.classList.contains('note'));
+  }
+
+  // ── Contents labels ────────────────────────────────────────────────────────
+  // Each link in #contents nav.toc is a text-only block keyed by its href
+  // ("contents|toc|<slug>"), so the key holds when the label changes. Its
+  // override html is plain text, applied with textContent: no markup, and the
+  // href is never written.
+  var TOC_PREFIX = 'contents|toc|';
+  function isTocKey(k) { return (k || '').indexOf(TOC_PREFIX) === 0; }
+  function tocSlug(href) {
+    href = String(href || '');
+    if (href.charAt(0) === '#') return slug(href.slice(1)) || 'link';
+    var path = href.split(/[?#]/)[0].replace(/\/+$/, '');
+    return slug(path.split('/').pop().replace(/\.[a-z0-9]+$/i, '')) || 'link';
+  }
+  function plainText(s) { return norm(String(s == null ? '' : s).replace(/<[^>]*>/g, ' ')); }
 
   // ── Add / delete / reorder boxes ───────────────────────────────────────────
   // Net-new boxes a reviewer inserts + a section's drag order ride the SAME
@@ -368,20 +402,21 @@
     for (var i = 0; i < secs.length; i++) {
       var sec = secs[i];
       var sid = sec.id || ('sec' + i);
-      if (EXCLUDE_SECTIONS[sid]) continue;
+      var proseOnly = !!PROSE_ONLY_SECTIONS[sid];
+      if (EXCLUDE_SECTIONS[sid] && !proseOnly) continue;
       if (sec.classList && sec.classList.contains('no-print')) continue;
       var moveOnly = !!MOVE_ONLY_SECTIONS[sid];
-      var grids = gridContainers(sec);
+      var grids = proseOnly ? [] : gridContainers(sec);
 
-      // Candidate boxes + section-level prose/lists.
+      // Candidate boxes + section-level prose/lists. A prose-only section gives
+      // only its section-level prose.
       var cand = [], seen = [];
       var push = function (el) { if (seen.indexOf(el) === -1) { seen.push(el); cand.push(el); } };
-      var boxes = sec.querySelectorAll(BOX_SEL);
+      var boxes = proseOnly ? [] : sec.querySelectorAll(BOX_SEL);
       for (var b = 0; b < boxes.length; b++) push(boxes[b]);
       var kids = sec.children;
       for (var k = 0; k < kids.length; k++) {
-        var tag = kids[k].tagName;
-        if (tag === 'P' || tag === 'UL' || tag === 'OL') push(kids[k]);
+        if (isSectionProse(kids[k], sec)) push(kids[k]);
       }
       // Keep only outermost (drop any candidate nested inside another candidate).
       var outer = cand.filter(function (el) {
@@ -393,7 +428,7 @@
         // A figcaption inside a <figure> is managed AS PART OF its figure (image
         // block below), not as a separate text box — avoids overlapping overrides.
         if (el.tagName === 'FIGCAPTION' && el.closest && el.closest('figure')) continue;
-        var grid = closestGrid(el, sec);
+        var grid = proseOnly ? null : closestGrid(el, sec);
         var key;
         var pre = el.getAttribute('data-fsk');
         if (pre && isAddedKey(pre)) {
@@ -411,12 +446,13 @@
         blocks.push({
           el: el, key: key, sectionId: sid, baked: el.innerHTML,
           label: norm(el.textContent || '').slice(0, 46),
-          live: isLive(el), noEdit: moveOnly, isTable: false,
+          live: isLive(el), noEdit: moveOnly && !isSectionProse(el, sec), isTable: false,
           movable: !!grid, gridSig: grid ? 'g' + grids.indexOf(grid) : null,
           added: isAddedKey(key)
         });
       }
 
+      if (proseOnly) continue;
       // Data tables (the #funding budget table) — HIDE-ONLY blocks. The whole
       // .tbl-wrap (scroll frame) hides as a unit.
       var tables = sec.querySelectorAll('table.data');
@@ -454,7 +490,23 @@
           label: 'image', isImg: true, added: isImgKey(fkey) });
       }
     }
-    return blocks;
+    return blocks.concat(collectTocBlocks());
+  }
+
+  function collectTocBlocks() {
+    var out = [], counts = {};
+    var links = document.querySelectorAll('#contents nav.toc a[href]');
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var base = TOC_PREFIX + tocSlug(a.getAttribute('href'));
+      var n = (counts[base] = (counts[base] || 0) + 1);
+      var key = n > 1 ? base + '~' + n : base;
+      a.setAttribute('data-fsk', key);
+      var text = norm(a.textContent || '');
+      out.push({ el: a, key: key, sectionId: 'contents', baked: text, label: text.slice(0, 46),
+        isToc: true, live: false, noEdit: false, isTable: false, movable: false, gridSig: null });
+    }
+    return out;
   }
 
   function indexBlocks() {
@@ -550,6 +602,13 @@
   //  • move-only / table block — never touch innerHTML; just toggle the hidden class.
   function applyBlock(bl) {
     var ov = API._overrides[bl.key];
+    if (bl.isToc) {
+      // Words only. The section hide owns this link's visibility; the href is
+      // never touched.
+      var text = (ov && ov.html) ? plainText(ov.html) : bl.baked;
+      if (bl.el.textContent !== text) bl.el.textContent = text;
+      return;
+    }
     bl.el.classList.remove('fs-ov-hidden');
     if (canEditHtml(bl)) {
       if (ov && ov.html != null && ov.html !== '') {
@@ -689,6 +748,7 @@
   // read the editor textarea / override map, not live innerHTML).
   function decorateBox(bl) {
     if (!bl || !bl.el) return;
+    if (bl.isToc) { bl.el.classList.add('fs-curatable', 'fs-editable'); return; }   // a label: no ✕, no drag
     if (isImgBlock(bl)) return decorateImg(bl);     // image blocks get the image bar
     if (bl.isTable) return decorateTable(bl);       // tables get a single hide ✕
     bl.el.classList.add('fs-curatable');
@@ -1087,6 +1147,29 @@
     persistSectionOrder();
   }
 
+  // ─── Links stay out of reach ───────────────────────────────────────────────
+  // An edit may change a box's words, a link's words included, but every link
+  // keeps the address it had when the editor opened: lockLinks copies each
+  // original <a>'s href/target/rel onto the edited <a> in the same position. An
+  // edit that adds or removes a link is refused (ok:false). A reviewer-added box
+  // is the reviewer's own and is not locked.
+  function linksOf(html) {
+    var tpl = document.createElement('template');
+    tpl.innerHTML = String(html == null ? '' : html);
+    return { tpl: tpl, links: Array.prototype.slice.call(tpl.content.querySelectorAll('a')) };
+  }
+  function lockLinks(edited, original) {
+    var e = linksOf(edited), o = linksOf(original);
+    if (e.links.length !== o.links.length) return { ok: false, html: edited };
+    for (var i = 0; i < e.links.length; i++) {
+      ['href', 'target', 'rel'].forEach(function (at) {
+        var v = o.links[i].getAttribute(at);
+        if (v == null) e.links[i].removeAttribute(at); else e.links[i].setAttribute(at, v);
+      });
+    }
+    return { ok: true, html: e.tpl.innerHTML };
+  }
+
   var dock = null, dEls = null;
   function ensureDock() {
     if (dock) return;
@@ -1104,11 +1187,12 @@
           '<button type="button" class="fs-btn fs-cancel">Cancel</button>' +
           '<span class="fs-dock-msg"></span>' +
         '</div>' +
-        '<div class="fs-dock-hint">Edits the box’s HTML — keep tags like &lt;a href&gt; and &lt;strong&gt;. ' +
+        '<div class="fs-dock-hint">Edits the box’s HTML. Links keep their addresses; keep tags like &lt;strong&gt;. ' +
           'Saved edits are visible to everyone; “Reset” restores the original.</div>' +
       '</div>';
     document.body.appendChild(dock);
     dEls = {
+      head: dock.querySelector('.fs-dock-head strong'), hint: dock.querySelector('.fs-dock-hint'),
       key: dock.querySelector('.fs-dock-key'), auth: dock.querySelector('.fs-dock-auth'),
       ta: dock.querySelector('.fs-dock-ta'), msg: dock.querySelector('.fs-dock-msg'),
       save: dock.querySelector('.fs-save'), hide: dock.querySelector('.fs-hide'),
@@ -1136,8 +1220,15 @@
     API._editing = bl;
     var ov = API._overrides[bl.key] || {};
     dEls.key.textContent = bl.sectionId + ' · “' + bl.label + (bl.label.length >= 46 ? '…' : '') + '”';
-    dEls.ta.value = currentHtml(bl);
+    dEls.ta.value = bl.isToc ? (ov.html ? plainText(ov.html) : bl.baked) : currentHtml(bl);
     dEls.hide.textContent = ov.hidden ? 'Unhide box' : 'Hide box';
+    // A Contents label edits its words only; its section's Hide controls it.
+    dEls.hide.hidden = !!bl.isToc;
+    dEls.head.textContent = bl.isToc ? 'Edit Contents label' : 'Edit box';
+    dEls.hint.textContent = bl.isToc
+      ? 'Edits the label’s words. The link and the section heading stay as they are.'
+      : 'Edits the box’s HTML. Links keep their addresses; keep tags like <strong>. ' +
+        'Saved edits are visible to everyone; “Reset” restores the original.';
     var s = getSession();
     dEls.auth.innerHTML = '';
     if (s) {
@@ -1162,6 +1253,14 @@
   function onSave() {
     var bl = API._editing; if (!bl) return;
     var val = dEls.ta.value;
+    if (bl.isToc) {
+      val = plainText(val);
+      if (!val) { dEls.msg.textContent = 'A label needs words.'; return; }
+    } else if (!bl.added) {
+      var locked = lockLinks(val, currentHtml(bl));
+      if (!locked.ok) { dEls.msg.textContent = 'Each link keeps its place and address; edit the words around them.'; return; }
+      val = locked.html;
+    }
     var hidden = !!(API._overrides[bl.key] && API._overrides[bl.key].hidden);
     busy(true);
     saveOverride(bl.key, { html: val, hidden: hidden }).then(function () {
@@ -1189,6 +1288,7 @@
     busy(true);
     deleteOverride(bl.key).then(function () {
       delete API._overrides[bl.key];
+      if (bl.isToc) { applyBlock(bl); if (API._curating) decorateBox(bl); busy(false); closeDock(); return; }
       // Explicit revert (live boxes too) — applyBlock leaves live innerHTML alone.
       if (bl.el.innerHTML !== bl.baked) bl.el.innerHTML = bl.baked;
       bl.el.classList.remove('fs-ov-hidden');
@@ -1413,6 +1513,9 @@
     boot: boot,
     EXCLUDE_SECTIONS: EXCLUDE_SECTIONS,
     MOVE_ONLY_SECTIONS: MOVE_ONLY_SECTIONS,
+    PROSE_ONLY_SECTIONS: PROSE_ONLY_SECTIONS,
+    lockLinks: lockLinks,
+    tocSlug: tocSlug,
     // section / grid model:
     gridContainers: gridContainers,
     canEditHtml: canEditHtml,
