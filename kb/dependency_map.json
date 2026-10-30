@@ -4,7 +4,7 @@
   "supabase_tables": 102,
   "rpcs": 43,
   "edge_functions": 11,
-  "file_datasets": 727,
+  "file_datasets": 728,
   "external_services": 191,
   "consumers": 482,
   "workflows": 58,
@@ -8553,6 +8553,19 @@
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_description_units.py": {
+   "consumers": [
+    {
+     "id": "workflow:college-page-read.yml",
      "kind": "workflow",
      "direction": "run",
      "how": "yaml",
@@ -25769,7 +25782,8 @@
    "name": "College page read",
    "crons": [],
    "scripts": [
-    "kb/_college_page_read.py"
+    "kb/_college_page_read.py",
+    "kb/_description_units.py"
    ],
    "adds": [],
    "push": null,

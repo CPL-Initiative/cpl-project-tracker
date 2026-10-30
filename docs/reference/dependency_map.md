@@ -488,6 +488,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/_csr_confirm_authority.py` | workflows: `csr-confirm.yml` | — |
 | `kb/_csr_quarterly_probe.py` | workflows: `csr-quarterly.yml` | — |
 | `kb/_csr_trail.py` | workflows: `daily-dashboard.yml` | — |
+| `kb/_description_units.py` | workflows: `college-page-read.yml` | — |
 | `kb/_esl_sheet_apply.py` | workflows: `esl-sheet-apply.yml` | — |
 | `kb/_fetch_program_course_files.py` | workflows: `program-course-fetch.yml` | — |
 | `kb/_fold_unclassified.py` | workflows: `daily-dashboard.yml` | — |
@@ -1218,5 +1219,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 102 Supabase tables · 43 RPCs · 11 edge functions · 727 file
+Coverage: 102 Supabase tables · 43 RPCs · 11 edge functions · 728 file
 datasets · 191 external services · 482 consumers · 58 workflows · 38 tabs.
