@@ -96,7 +96,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      3.0,
      6.0
@@ -158,7 +158,8 @@
     "Explain significance of sports history, ethics, philosophy and sociology since Greek and Roman times.",
     "Evaluate and appraise the vast applied and clinical career opportunities in the field of kinesiology."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -378,5 +379,14 @@
    "Catalog codes printed with leading zeros (ANATOMY 001, PHYSIOL 001, CHEM 051, HEALTH 011, PHYSICS 006, SOC 001) match closed-list codes without zeros; STAT C1000 is noted as formerly MATH 227."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

@@ -72,8 +72,8 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    12.0,
-    21.0
+    18.0,
+    22.0
    ],
    "stated": [
     19.0,
@@ -81,14 +81,14 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 12.0-21.0; the catalog states 19.0-20.0"
+    "the blocks sum to 18.0-22.0; the catalog states 19.0-20.0"
    ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     46.0,
-     55.0
+     52.0,
+     56.0
     ],
     "stated": [
      60.0,
@@ -100,10 +100,10 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
-     5.0,
-     14.0
+     4.0,
+     8.0
     ]
    }
   },
@@ -160,7 +160,8 @@
     "Evaluate the patterns underlying diverse behaviors, beliefs, attitudes and identities from an anthropological perspective including applying the concept of cultural relativism.",
     "Apply techniques and methods used in collecting and analyzing anthropological information."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -340,5 +341,14 @@
    "STAT C1000 (closed list 'Stat C1000') is printed as an 'or' alternative to STAT 101, which is not in the closed list."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

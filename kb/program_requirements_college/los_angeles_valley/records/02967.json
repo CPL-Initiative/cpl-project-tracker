@@ -108,10 +108,7 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
   "pass": false
  },
@@ -134,12 +131,13 @@
     "max": null
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [],
   "course_outcomes": [],
@@ -207,5 +205,26 @@
    "The Spanish Language Skills Certificate section is cut off mid-outcome at the end of the text."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 27,
+    "max": 34
+   },
+   "words": "Total Minimum Units: 60 (https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32: Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen.)"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

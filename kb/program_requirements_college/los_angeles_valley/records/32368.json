@@ -90,7 +90,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      8.0,
      8.0
@@ -150,7 +150,8 @@
     "Demonstrate college-level, critical thinking skills by analyzing rhetorical strategies in a variety of mediums and genres, including drama, poetry, fiction, and nonfiction.",
     "Demonstrate academic research skills by locating, evaluating, and integrating diverse sources of information to support an argument."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -290,5 +291,14 @@
    "Programs table lists Cal-GETC as GE plan and 18 major units; no careers named in the section."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

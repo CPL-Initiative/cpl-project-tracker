@@ -80,21 +80,24 @@
     "the blocks sum to 33.0-33.5; the catalog states 33.0-35.0"
    ],
    "degree": {
-    "pass": false,
-    "status": "unequal",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     33.0,
-     33.5
+     60.0,
+     67.5
     ],
     "stated": [
      60.0,
      60.0
     ],
     "against": "degree",
-    "ge": null,
-    "why": [
-     "the blocks and general education sum to 33.0-33.5; the catalog prints 60.0-60.0 for the degree"
-    ]
+    "ge": [
+     27.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": null
    }
   },
   "repeated": {
@@ -140,8 +143,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 27,
+    "max": 34
    },
    "electives_fill_degree": false,
    "outcomes": [
@@ -151,7 +154,8 @@
     "Participate as members of chamber and large ensembles.",
     "Play the piano at an advanced-beginning to intermediate level."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -433,5 +437,26 @@
    "The careers sentence ('positions such as: Recording Technician...') is printed for the certificates of achievement, not the Music AA, so careers left empty."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 27,
+    "max": 34
+   },
+   "words": "Total Minimum Units: 60 (https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32: Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen.)"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

@@ -156,7 +156,8 @@
     "Integrate concepts from physics, chemistry, biology, and geology to demonstrate how the earth works as a system.",
     "Analyze evidence of climate change from the geologic record."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -238,5 +239,14 @@
    "The AS (non-transfer) section with physics sequences and electives was not recorded."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

@@ -14,8 +14,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "title": "Biology AS V002941C Any GE^ 20 Y",
+   "h1": "Biology AS V002941C Any GE^ 20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -24,7 +24,8 @@
     140,
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
   "text_chars": 16000
@@ -53,8 +54,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=82",
-   "title": null,
-   "h1": null,
+   "title": "Accounting AA V002942C Any",
+   "h1": "Accounting AA V002942C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -63,7 +64,8 @@
     84,
     85
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -89,18 +91,19 @@
    "REALES7"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": "AA V002943C Any GE^ 37 Y",
+   "h1": "AA V002943C Any GE^ 37 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    83,
     84,
     85,
-    86,
-    87
+    86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -122,17 +125,19 @@
    "MGMT31"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": "CA V002944D n/a 20 Y",
+   "h1": "CA V002944D n/a 20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    83,
     84,
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 16000
@@ -161,18 +166,19 @@
    "REALES14"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": "Management AA V002945C Any GE^ 38-40 Y",
+   "h1": "Management AA V002945C Any GE^ 38-40 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    83,
     84,
     85,
-    86,
-    87
+    86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 16000
@@ -201,18 +207,19 @@
    "REALES1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": "Marketing AA V002947C Any GE^ 38 Y",
+   "h1": "Marketing AA V002947C Any GE^ 38 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    83,
     84,
     85,
-    86,
-    87
+    86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 16000
@@ -242,17 +249,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "Real Estate AA V002948C Any GE^ 38 Y",
+   "h1": "Real Estate AA V002948C Any GE^ 38 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
-  "text_chars": 4929
+  "text_chars": 4607
  },
  {
   "control_number": "02950",
@@ -270,18 +278,20 @@
    "JOURNAL2181"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+   "title": "AA V002950C Any GE^ 19 Y",
+   "h1": "AA V002950C Any GE^ 19 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 5762
+  "text_chars": 9421
  },
  {
   "control_number": "02951",
@@ -308,8 +318,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "Cinema Production AA V002951C Any",
+   "h1": "Cinema Production AA V002951C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -318,7 +328,8 @@
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 16000
@@ -347,8 +358,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "title": "Students completing the Associate in Science in Computer Science",
+   "h1": "Students completing the Associate in Science in Computer Science",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -356,7 +367,8 @@
     142,
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
   "text_chars": 16000
@@ -398,17 +410,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=145",
-   "title": null,
-   "h1": null,
+   "title": "Engineering AS V002954C Any",
+   "h1": "Engineering AS V002954C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     145
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 26,
-  "text_chars": 4784
+  "text_chars": 4514
  },
  {
   "control_number": "02955",
@@ -427,18 +440,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "Electronics AS V002955C Any",
+   "h1": "Electronics AS V002955C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     131,
     132
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 11001
+  "text_chars": 10738
  },
  {
   "control_number": "02957",
@@ -462,18 +476,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "AS V002957C Any",
+   "h1": "AS V002957C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     131,
     132
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 11001
+  "text_chars": 10658
  },
  {
   "control_number": "02958",
@@ -491,19 +506,22 @@
    "MSCNC124"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "AS V002958C Any",
+   "h1": "AS V002958C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
+    134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 10775
+  "text_chars": 16000
  },
  {
   "control_number": "02959",
@@ -523,8 +541,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": null,
-   "h1": null,
+   "title": "AS V002959C Any",
+   "h1": "AS V002959C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -533,7 +551,8 @@
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -555,17 +574,19 @@
    "NUMCON23"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "AS V002960C Any",
+   "h1": "AS V002960C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
     134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -592,17 +613,19 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
+   "title": "Art History AA V002961C Any GE^ 18 Y",
+   "h1": "Art History AA V002961C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    51,
     52,
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
   "text_chars": 16000
@@ -650,18 +673,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "title": "Students earning the Commercial Music AA degree have obtained",
+   "h1": "Students earning the Commercial Music AA degree have obtained",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     71,
     72
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 32,
-  "text_chars": 13665
+  "text_chars": 13473
  },
  {
   "control_number": "02963",
@@ -689,18 +713,19 @@
    "THEATER450"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
+   "title": "Theater Arts AA V002963C Any GE^ 18-20 Y",
+   "h1": "Theater Arts AA V002963C Any GE^ 18-20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    73,
     74,
     75,
-    76,
-    77
+    76
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
   "text_chars": 16000
@@ -741,8 +766,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "AA V002964C Any GE^ 18 Y",
+   "h1": "AA V002964C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -750,7 +775,8 @@
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 25,
   "text_chars": 16000
@@ -779,19 +805,21 @@
    "LING1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=127",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+   "title": "French AA V002965C Any GE^ 18-21 Y",
+   "h1": "French AA V002965C Any GE^ 18-21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    126,
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 11154
+  "text_chars": 16000
  },
  {
   "control_number": "02966",
@@ -807,18 +835,21 @@
    "LING1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+   "title": "Italian AA V002966C Any GE^ 18 Y",
+   "h1": "Italian AA V002966C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    126,
+    127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
-  "text_chars": 5488
+  "text_chars": 16000
  },
  {
   "control_number": "02967",
@@ -845,8 +876,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "Students completing the Associate in Arts in Spanish for Transfer",
+   "h1": "Students completing the Associate in Arts in Spanish for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -854,10 +885,11 @@
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
-  "text_chars": 16000
+  "text_chars": 15879
  },
  {
   "control_number": "02969",
@@ -888,19 +920,21 @@
    "RESPTH6"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=108",
+   "title": "ACCREDITED ASSOCIATE OF SCIENCE IN RESPIRATORY THERAPY (61",
+   "h1": "ACCREDITED ASSOCIATE OF SCIENCE IN RESPIRATORY THERAPY (61",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    108,
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 13061
+  "text_chars": 16000
  },
  {
   "control_number": "02974",
@@ -921,17 +955,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "Philosophy AA V002974C Any GE^ 18 Y",
+   "h1": "Philosophy AA V002974C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 5847
+  "text_chars": 5493
  },
  {
   "control_number": "02976",
@@ -958,19 +993,21 @@
    "PHYSICS39"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
+   "title": "Physics AS V002976C Any GE^ 36-38 Y",
+   "h1": "Physics AS V002976C Any GE^ 36-38 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    149,
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 8640
+  "text_chars": 12708
  },
  {
   "control_number": "02977",
@@ -991,8 +1028,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "Chemistry AS V002977C Any GE^ 40 Y",
+   "h1": "Chemistry AS V002977C Any GE^ 40 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1000,10 +1037,11 @@
     140,
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 15636
+  "text_chars": 14394
  },
  {
   "control_number": "02980",
@@ -1036,8 +1074,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "96  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "96  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1046,7 +1084,8 @@
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 16000
@@ -1068,17 +1107,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "Fire Technology AS V002981C Any",
+   "h1": "Fire Technology AS V002981C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 4396
+  "text_chars": 4142
  },
  {
   "control_number": "02983",
@@ -1101,17 +1141,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "AA V002983C Any GE^ 18 Y",
+   "h1": "AA V002983C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 6205
+  "text_chars": 5863
  },
  {
   "control_number": "02984",
@@ -1136,17 +1177,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "Economics AA V002984C Any GE^ 18-21 Y",
+   "h1": "Economics AA V002984C Any GE^ 18-21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 6721
+  "text_chars": 6401
  },
  {
   "control_number": "02985",
@@ -1167,18 +1209,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "title": "History AA V002985C Any GE^ 18 Y",
+   "h1": "History AA V002985C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     159,
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 12051
+  "text_chars": 11729
  },
  {
   "control_number": "02986",
@@ -1199,17 +1242,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=158",
-   "title": null,
-   "h1": null,
+   "title": "Geography AA V002986C Any GE^ 20 Y",
+   "h1": "Geography AA V002986C Any GE^ 20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     158
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 5841
+  "text_chars": 5530
  },
  {
   "control_number": "02987",
@@ -1228,17 +1272,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=160",
-   "title": null,
-   "h1": null,
+   "title": "AA V002987C Any GE^ 18 Y",
+   "h1": "AA V002987C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 6039
+  "text_chars": 5671
  },
  {
   "control_number": "02988",
@@ -1263,18 +1308,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=163",
-   "title": null,
-   "h1": null,
+   "title": "Students completing the Associate in Arts in Sociology for Transfer",
+   "h1": "Students completing the Associate in Arts in Sociology for Transfer",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     163,
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 9920
+  "text_chars": 9706
  },
  {
   "control_number": "02989",
@@ -1301,17 +1347,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=121",
-   "title": null,
-   "h1": null,
+   "title": "Humanities AA V002989C Any",
+   "h1": "Humanities AA V002989C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     121
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
-  "text_chars": 3366
+  "text_chars": 3032
  },
  {
   "control_number": "08526",
@@ -1331,18 +1378,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=129",
-   "title": null,
-   "h1": null,
+   "title": "Architecture CA V008526D n/a 19 Y",
+   "h1": "Architecture CA V008526D n/a 19 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     129,
     130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 9163
+  "text_chars": 8653
  },
  {
   "control_number": "08530",
@@ -1362,19 +1410,22 @@
    "REALES7"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": "CA V008530D n/a 19-20 Y",
+   "h1": "CA V008530D n/a 19-20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    83,
+    84,
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 11055
+  "text_chars": 16000
  },
  {
   "control_number": "08531",
@@ -1405,8 +1456,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "AA V008531C Any",
+   "h1": "AA V008531C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1415,7 +1466,8 @@
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 16000
@@ -1449,8 +1501,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "AA V008532C Any",
+   "h1": "AA V008532C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1459,7 +1511,8 @@
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 18,
   "text_chars": 16000
@@ -1480,18 +1533,20 @@
    "JOURNAL220"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+   "title": "AA V008533C Any GE^ 19 Y",
+   "h1": "AA V008533C Any GE^ 19 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 5762
+  "text_chars": 9469
  },
  {
   "control_number": "08535",
@@ -1513,19 +1568,21 @@
    "BRDCSTG5"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+   "title": "AA V008535C Any GE^ 32 Y",
+   "h1": "AA V008535C Any GE^ 32 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    55,
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 10450
+  "text_chars": 15186
  },
  {
   "control_number": "08536",
@@ -1549,19 +1606,21 @@
    "BRDCSTG3"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+   "title": "AA V008536C Any GE^ 32 Y",
+   "h1": "AA V008536C Any GE^ 32 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    55,
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 10450
+  "text_chars": 15252
  },
  {
   "control_number": "08537",
@@ -1586,8 +1645,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": null,
-   "h1": null,
+   "title": "AA V008537C Any GE^ 32 Y",
+   "h1": "AA V008537C Any GE^ 32 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1595,10 +1654,11 @@
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
-  "text_chars": 15634
+  "text_chars": 15314
  },
  {
   "control_number": "08541",
@@ -1619,17 +1679,19 @@
    "NUMCON21"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "AS V008541C Any",
+   "h1": "AS V008541C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
     134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -1650,17 +1712,19 @@
    "NUMCON23"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "AS V008542C Any",
+   "h1": "AS V008542C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
     134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 16000
@@ -1709,19 +1773,22 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
+   "title": "Art: Studio AA V008543C Any GE^ 36-37 Y",
+   "h1": "Art: Studio AA V008543C Any GE^ 36-37 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    51,
+    52,
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 34,
-  "text_chars": 13683
+  "text_chars": 16000
  },
  {
   "control_number": "08545",
@@ -1753,18 +1820,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "title": "Students earning the Commercial Music AA degree have obtained",
+   "h1": "Students earning the Commercial Music AA degree have obtained",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     71,
     72
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 19,
-  "text_chars": 13665
+  "text_chars": 13473
  },
  {
   "control_number": "08546",
@@ -1785,17 +1853,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-   "title": null,
-   "h1": null,
+   "title": "The Music Technology certificate provides the student with career",
+   "h1": "The Music Technology certificate provides the student with career",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     72
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 6165
+  "text_chars": 4254
  },
  {
   "control_number": "08548",
@@ -1828,15 +1897,16 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "title": "74  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "74  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 10360
@@ -1858,8 +1928,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": null,
-   "h1": null,
+   "title": "Broadcasting AA V008549C Any GE^ 18 Y",
+   "h1": "Broadcasting AA V008549C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1867,10 +1937,11 @@
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 15634
+  "text_chars": 15379
  },
  {
   "control_number": "08550",
@@ -1903,8 +1974,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      73",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      73",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1912,7 +1983,8 @@
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 20,
   "text_chars": 16000
@@ -1941,18 +2013,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=76",
-   "title": null,
-   "h1": null,
+   "title": "CERTIFICATE OF ACHIEVEMENT:",
+   "h1": "CERTIFICATE OF ACHIEVEMENT:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 10360
+  "text_chars": 6871
  },
  {
   "control_number": "08553",
@@ -1983,19 +2056,22 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
+   "title": "AA V008553C Any GE^ 35 Y",
+   "h1": "AA V008553C Any GE^ 35 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    51,
+    52,
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 19,
-  "text_chars": 13683
+  "text_chars": 16000
  },
  {
   "control_number": "08554",
@@ -2016,19 +2092,19 @@
    "ART619"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=54",
+   "title": "CERTIFICATE OF ACHIEVEMENT:",
+   "h1": "CERTIFICATE OF ACHIEVEMENT:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 13683
+  "text_chars": 4309
  },
  {
   "control_number": "08555",
@@ -2046,18 +2122,21 @@
    "LING1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
+   "title": "German AA V008555C Any GE^ 18-19 Y",
+   "h1": "German AA V008555C Any GE^ 18-19 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    126,
+    127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 5488
+  "text_chars": 16000
  },
  {
   "control_number": "08558",
@@ -2083,8 +2162,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      97",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      97",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2092,7 +2171,8 @@
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
   "text_chars": 16000
@@ -2132,8 +2212,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "96  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "96  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2142,7 +2222,8 @@
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 24,
   "text_chars": 16000
@@ -2172,8 +2253,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=147",
-   "title": null,
-   "h1": null,
+   "title": "Geology AS V008560C Any GE^ 36 Y",
+   "h1": "Geology AS V008560C Any GE^ 36 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2182,7 +2263,8 @@
     149,
     150
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 16000
@@ -2213,8 +2295,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=144",
-   "title": null,
-   "h1": null,
+   "title": "Earth Science AS V008561C Any",
+   "h1": "Earth Science AS V008561C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2223,7 +2305,8 @@
     146,
     147
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 15,
   "text_chars": 16000
@@ -2244,17 +2327,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "Jewish Studies AA V008563C Any GE^ 19 Y",
+   "h1": "Jewish Studies AA V008563C Any GE^ 19 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 5001
+  "text_chars": 4715
  },
  {
   "control_number": "10757",
@@ -2272,18 +2356,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "CA V010757D n/a 19 Y",
+   "h1": "CA V010757D n/a 19 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     131,
     132
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 11001
+  "text_chars": 10491
  },
  {
   "control_number": "10758",
@@ -2306,18 +2391,20 @@
    "ELECTRN6"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
+   "title": "CA V010758D n/a 33-34 Y",
+   "h1": "CA V010758D n/a 33-34 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    131,
     132
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 6738
+  "text_chars": 10539
  },
  {
   "control_number": "10759",
@@ -2336,18 +2423,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=129",
-   "title": null,
-   "h1": null,
+   "title": "CA V010759D n/a 20 Y",
+   "h1": "CA V010759D n/a 20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     129,
     130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 9163
+  "text_chars": 8593
  },
  {
   "control_number": "10760",
@@ -2376,8 +2464,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=75",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      73",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      73",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2385,7 +2473,8 @@
     76,
     77
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 16,
   "text_chars": 16000
@@ -2425,14 +2514,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=101",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      99",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      99",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 24,
   "text_chars": 6475
@@ -2457,8 +2547,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      97",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      97",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2466,7 +2556,8 @@
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -2496,15 +2587,16 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "98  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "98  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 12180
@@ -2534,15 +2626,16 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
-   "title": null,
-   "h1": null,
+   "title": "98  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "98  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 12180
@@ -2563,20 +2656,20 @@
    "CHDEV31"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
+   "title": "98  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "98  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    99,
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 12180
  },
  {
   "control_number": "10768",
@@ -2603,14 +2696,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "162  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "162  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 3533
@@ -2632,53 +2726,12 @@
   "title": "Commercial Music: Instrumental/Vocal Performer",
   "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.725,
-  "codes_found": [
-   "MUSIC111",
-   "MUSIC121",
-   "MUSIC122",
-   "MUSIC137",
-   "MUSIC141",
-   "MUSIC161",
-   "MUSIC165",
-   "MUSIC200",
-   "MUSIC201",
-   "MUSIC202",
-   "MUSIC203",
-   "MUSIC205",
-   "MUSIC206",
-   "MUSIC211",
-   "MUSIC212",
-   "MUSIC213",
-   "MUSIC241",
-   "MUSIC242",
-   "MUSIC2651",
-   "MUSIC281",
-   "MUSIC321",
-   "MUSIC322",
-   "MUSIC324",
-   "MUSIC501",
-   "MUSIC531",
-   "MUSIC563",
-   "MUSIC721",
-   "MUSIC751",
-   "MUSIC771"
-  ],
-  "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    71,
-    72
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 40,
-  "text_chars": 13665
+  "text_chars": 0
  },
  {
   "control_number": "17624",
@@ -2686,33 +2739,29 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 0.667,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
    "CINEMA114",
-   "MEDIART100",
    "MEDIART101",
-   "MEDIART116",
-   "MEDIART118"
+   "MEDIART118",
+   "MEDIART129"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    64,
-    65,
-    66,
-    67
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "17625",
@@ -2734,8 +2783,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "56  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "56  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2744,7 +2793,8 @@
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -2755,32 +2805,28 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.714,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
    "CINEMA111",
-   "MEDIART100",
    "MEDIART101",
    "MEDIART113"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    65,
-    66,
-    67,
-    68
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "17627",
@@ -2799,14 +2845,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": null,
-   "h1": null,
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 5593
@@ -2836,14 +2883,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=49",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      47",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      47",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     49
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 6630
@@ -2892,14 +2940,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "title": "11 0  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "11 0  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 33,
   "text_chars": 7187
@@ -2959,17 +3008,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "AS V021326C Any GE^ 23 Y",
+   "h1": "AS V021326C Any GE^ 23 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 5163
+  "text_chars": 4841
  },
  {
   "control_number": "21327",
@@ -2990,17 +3040,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=130",
-   "title": null,
-   "h1": null,
+   "title": "CA V021327D n/a 23 Y",
+   "h1": "CA V021327D n/a 23 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     130
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 5163
+  "text_chars": 4778
  },
  {
   "control_number": "21411",
@@ -3020,18 +3071,22 @@
    "REALES7"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": "CA V021411D n/a 18-20 Y",
+   "h1": "CA V021411D n/a 18-20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    83,
+    84,
+    85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 4650
+  "text_chars": 16000
  },
  {
   "control_number": "21874",
@@ -3054,8 +3109,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=82",
-   "title": null,
-   "h1": null,
+   "title": "Accounting CA V021874D n/a 22 Y",
+   "h1": "Accounting CA V021874D n/a 22 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3064,7 +3119,8 @@
     84,
     85
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
   "text_chars": 16000
@@ -3080,17 +3136,19 @@
    "MARKET21"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": "Marketing CA V021876D n/a 18 Y",
+   "h1": "Marketing CA V021876D n/a 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    83,
     84,
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 1,
   "text_chars": 16000
@@ -3113,17 +3171,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=91",
-   "title": null,
-   "h1": null,
+   "title": "Real Estate CA V021877D n/a 18 Y",
+   "h1": "Real Estate CA V021877D n/a 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 4929
+  "text_chars": 4570
  },
  {
   "control_number": "21878",
@@ -3147,8 +3206,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "CA V021878D n/a 30 Y",
+   "h1": "CA V021878D n/a 30 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3157,7 +3216,8 @@
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
   "text_chars": 16000
@@ -3187,8 +3247,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "CA V021879D n/a 34 Y",
+   "h1": "CA V021879D n/a 34 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3197,7 +3257,8 @@
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 16000
@@ -3208,33 +3269,29 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.889,
+  "coverage": 0.667,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
    "CINEMA114",
-   "MEDIART100",
    "MEDIART101",
-   "MEDIART116",
-   "MEDIART118"
+   "MEDIART118",
+   "MEDIART129"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    64,
-    65,
-    66,
-    67
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "21881",
@@ -3256,8 +3313,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "56  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "56  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3266,7 +3323,8 @@
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -3277,32 +3335,28 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.714,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
    "CINEMA111",
-   "MEDIART100",
    "MEDIART101",
    "MEDIART113"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    65,
-    66,
-    67,
-    68
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "21883",
@@ -3321,14 +3375,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": null,
-   "h1": null,
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 5593
@@ -3348,18 +3403,20 @@
    "JOURNAL220"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+   "title": "CA V021884D n/a 18 Y",
+   "h1": "CA V021884D n/a 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 5762
+  "text_chars": 9374
  },
  {
   "control_number": "21885",
@@ -3373,18 +3430,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "title": "CA V021885D n/a 21 Y",
+   "h1": "CA V021885D n/a 21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 1,
-  "text_chars": 9790
+  "text_chars": 9330
  },
  {
   "control_number": "21887",
@@ -3406,8 +3464,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": null,
-   "h1": null,
+   "title": "CA V021887D n/a 25 Y",
+   "h1": "CA V021887D n/a 25 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3415,10 +3473,11 @@
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 15634
+  "text_chars": 15134
  },
  {
   "control_number": "21888",
@@ -3439,19 +3498,21 @@
    "BRDCSTG3"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+   "title": "CA V021888D n/a 25 Y",
+   "h1": "CA V021888D n/a 25 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    55,
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 10450
+  "text_chars": 15076
  },
  {
   "control_number": "21889",
@@ -3471,19 +3532,21 @@
    "BRDCSTG5"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
+   "title": "CA V021889D n/a 25 Y",
+   "h1": "CA V021889D n/a 25 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    55,
     56,
     57
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 10450
+  "text_chars": 15014
  },
  {
   "control_number": "21890",
@@ -3510,8 +3573,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-   "title": null,
-   "h1": null,
+   "title": "Cinema Production CA V021890D n/a 30 Y",
+   "h1": "Cinema Production CA V021890D n/a 30 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -3520,7 +3583,8 @@
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 16000
@@ -3547,18 +3611,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
-   "title": null,
-   "h1": null,
+   "title": "CA V021893D n/a 33-34 Y",
+   "h1": "CA V021893D n/a 33-34 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     131,
     132
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 11,
-  "text_chars": 11001
+  "text_chars": 10587
  },
  {
   "control_number": "21894",
@@ -3574,19 +3639,22 @@
    "MSCNC124"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "CA V021894D n/a 18 Y",
+   "h1": "CA V021894D n/a 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
+    134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 10775
+  "text_chars": 16000
  },
  {
   "control_number": "21895",
@@ -3604,19 +3672,22 @@
    "NUMCON21"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "CA V021895D n/a 25 Y",
+   "h1": "CA V021895D n/a 25 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
+    134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 10775
+  "text_chars": 16000
  },
  {
   "control_number": "21896",
@@ -3633,17 +3704,19 @@
    "MSCNC124"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "CA V021896D n/a 21 Y",
+   "h1": "CA V021896D n/a 21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
     134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 16000
@@ -3662,17 +3735,19 @@
    "NUMCON22"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "CA V021897D n/a 21 Y",
+   "h1": "CA V021897D n/a 21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
     134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 16000
@@ -3694,17 +3769,19 @@
    "NUMCON23"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+   "title": "CA V021898D n/a 27 Y",
+   "h1": "CA V021898D n/a 27 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    133,
     134,
     135,
     136
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -3727,15 +3804,16 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=109",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      107",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      107",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     109,
     110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 13061
@@ -3755,18 +3833,20 @@
    "ADMJUS911"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
+   "title": "CA V021900D n/a 16 Y",
+   "h1": "CA V021900D n/a 16 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    95,
     96
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 4875
+  "text_chars": 9279
  },
  {
   "control_number": "21901",
@@ -3789,17 +3869,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=102",
-   "title": null,
-   "h1": null,
+   "title": "Fire Technology CA V021901D n/a 16-19 Y",
+   "h1": "Fire Technology CA V021901D n/a 16-19 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     102
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 4396
+  "text_chars": 4097
  },
  {
   "control_number": "24103",
@@ -3814,17 +3895,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "CN V024103E n/a n/a N",
+   "h1": "CN V024103E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     148
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5001
+  "text_chars": 1151
  },
  {
   "control_number": "24116",
@@ -3840,17 +3922,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "CN V024116E n/a n/a N",
+   "h1": "CN V024116E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
-  "text_chars": 4306
+  "text_chars": 3764
  },
  {
   "control_number": "24139",
@@ -3877,17 +3960,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "CN V024170E n/a n/a N",
+   "h1": "CN V024170E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 4306
+  "text_chars": 3930
  },
  {
   "control_number": "24216",
@@ -3902,17 +3986,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=119",
-   "title": null,
-   "h1": null,
+   "title": "CN V024216E n/a n/a N",
+   "h1": "CN V024216E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     119
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4306
+  "text_chars": 3875
  },
  {
   "control_number": "24247",
@@ -3963,14 +4048,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "118  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "118  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4507
@@ -3998,8 +4084,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 39",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 39",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4007,7 +4093,8 @@
     142,
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 12,
   "text_chars": 16000
@@ -4032,8 +4119,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "CA V030499D n/a 22-23 Y",
+   "h1": "CA V030499D n/a 22-23 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4042,7 +4129,8 @@
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -4068,8 +4156,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE DEGREE FOR TRANSFER:",
+   "h1": "ASSOCIATE DEGREE FOR TRANSFER:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4077,10 +4165,11 @@
     117,
     118
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 14384
+  "text_chars": 13360
  },
  {
   "control_number": "30799",
@@ -4104,19 +4193,21 @@
    "STATC1000"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=163",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
+   "title": "Sociology AA-T V030799G Cal-",
+   "h1": "Sociology AA-T V030799G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    162,
     163,
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 12,
-  "text_chars": 9920
+  "text_chars": 10639
  },
  {
   "control_number": "31036",
@@ -4134,18 +4225,22 @@
    "PHYSICS37"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=145",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
+   "title": "ASSOCIATE DEGREE FOR TRANSFER:",
+   "h1": "ASSOCIATE DEGREE FOR TRANSFER:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    145
+    148,
+    149,
+    150,
+    151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 4784
+  "text_chars": 16000
  },
  {
   "control_number": "31399",
@@ -4163,50 +4258,31 @@
    "MUSIC321"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
+   "title": "Estimated time to complete: 1- 2 years depending on certificate.",
+   "h1": "Estimated time to complete: 1- 2 years depending on certificate.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    71,
     72
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 13665
+  "text_chars": 5911
  },
  {
   "control_number": "31765",
   "title": "Commercial Music: Jazz Studies",
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.875,
-  "codes_found": [
-   "MUSIC137",
-   "MUSIC141",
-   "MUSIC205",
-   "MUSIC206",
-   "MUSIC281",
-   "MUSIC321",
-   "MUSIC322"
-  ],
-  "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
-   "title": null,
-   "h1": null,
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    71,
-    72
-   ],
-   "extractor": "pypdf"
-  },
+  "method": "not_found",
+  "coverage": 0.0,
+  "codes_found": [],
+  "source": null,
   "listed": 8,
-  "text_chars": 13665
+  "text_chars": 0
  },
  {
   "control_number": "31905",
@@ -4228,18 +4304,20 @@
    "MEDIART129"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
+   "title": "CA V031905D n/a 21 N",
+   "h1": "CA V031905D n/a 21 N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    58,
     59
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 6752
+  "text_chars": 9914
  },
  {
   "control_number": "32117",
@@ -4269,8 +4347,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-   "title": null,
-   "h1": null,
+   "title": "Art History AA-T V032117G CalGETC 18 Y",
+   "h1": "Art History AA-T V032117G CalGETC 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4279,7 +4357,8 @@
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
   "text_chars": 16000
@@ -4314,17 +4393,19 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
+   "title": "Studio Arts AA-T V032212G CalGETC 24 Y",
+   "h1": "Studio Arts AA-T V032212G CalGETC 24 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    51,
     52,
     53,
     54
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
   "text_chars": 16000
@@ -4351,17 +4432,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=117",
-   "title": null,
-   "h1": null,
+   "title": "English AA-T V032368G Cal-GETC 18 Y",
+   "h1": "English AA-T V032368G Cal-GETC 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     117
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 4364
+  "text_chars": 4118
  },
  {
   "control_number": "32379",
@@ -4383,17 +4465,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=124",
-   "title": null,
-   "h1": null,
+   "title": "Philosophy AA-T V032379G Cal-",
+   "h1": "Philosophy AA-T V032379G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     124
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 5847
+  "text_chars": 5533
  },
  {
   "control_number": "32410",
@@ -4412,18 +4495,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=155",
-   "title": null,
-   "h1": null,
+   "title": "Anthropology AA-T V032410G Cal-",
+   "h1": "Anthropology AA-T V032410G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     155,
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 11092
+  "text_chars": 10834
  },
  {
   "control_number": "32740",
@@ -4438,18 +4522,20 @@
    "PHYSICS39"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=49",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=48",
+   "title": "Physics 2.0 AS-T 147",
+   "h1": "Physics 2.0 AS-T 147",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    48,
     49
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 6630
+  "text_chars": 7740
  },
  {
   "control_number": "32741",
@@ -4469,8 +4555,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE DEGREE FOR TRANSFER:",
+   "h1": "ASSOCIATE DEGREE FOR TRANSFER:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4479,7 +4565,8 @@
     100,
     101
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 16000
@@ -4504,18 +4591,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=159",
-   "title": null,
-   "h1": null,
+   "title": "History AA-T V032849G Cal-",
+   "h1": "History AA-T V032849G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     159,
     160
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 12051
+  "text_chars": 11766
  },
  {
   "control_number": "32850",
@@ -4536,17 +4624,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=158",
-   "title": null,
-   "h1": null,
+   "title": "Geography AA-T V032850G CalGETC 20 Y",
+   "h1": "Geography AA-T V032850G CalGETC 20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     158
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 5841
+  "text_chars": 5567
  },
  {
   "control_number": "32851",
@@ -4567,18 +4656,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=160",
-   "title": null,
-   "h1": null,
+   "title": "AA-T V032851G Cal-",
+   "h1": "AA-T V032851G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     160,
     161
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 10489
+  "text_chars": 10169
  },
  {
   "control_number": "32852",
@@ -4598,18 +4688,19 @@
    "THEATER411"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=74",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
+   "title": "Theatre Arts AA-T V032852G Cal-",
+   "h1": "Theatre Arts AA-T V032852G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    73,
     74,
     75,
-    76,
-    77
+    76
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 8,
   "text_chars": 16000
@@ -4640,8 +4731,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-   "title": null,
-   "h1": null,
+   "title": "Spanish AA-T V032853G Cal-",
+   "h1": "Spanish AA-T V032853G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4649,7 +4740,8 @@
     127,
     128
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
   "text_chars": 16000
@@ -4688,8 +4780,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
-   "title": null,
-   "h1": null,
+   "title": "Kinesiology AA-T V032854G Cal-GETC 20-23 Y",
+   "h1": "Kinesiology AA-T V032854G Cal-GETC 20-23 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4697,7 +4789,8 @@
     111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 24,
   "text_chars": 16000
@@ -4728,8 +4821,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
-   "title": null,
-   "h1": null,
+   "title": "AS-T V033386H CaI-",
+   "h1": "AS-T V033386H CaI-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4737,10 +4830,11 @@
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 15,
-  "text_chars": 13693
+  "text_chars": 13216
  },
  {
   "control_number": "33566",
@@ -4769,17 +4863,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=161",
-   "title": null,
-   "h1": null,
+   "title": "Psychology AA-T V033566G Cal-",
+   "h1": "Psychology AA-T V033566G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     161
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 4448
+  "text_chars": 4194
  },
  {
   "control_number": "33572",
@@ -4799,18 +4894,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-   "title": null,
-   "h1": null,
+   "title": "Journalism AA-T V033572G Cal-",
+   "h1": "Journalism AA-T V033572G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     122,
     123
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
-  "text_chars": 9790
+  "text_chars": 9531
  },
  {
   "control_number": "33593",
@@ -4842,18 +4938,20 @@
    "THEATER100"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=112",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
+   "title": "AA-T V033593G CAL-",
+   "h1": "AA-T V033593G CAL-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    111,
     112
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 20,
-  "text_chars": 7187
+  "text_chars": 9576
  },
  {
   "control_number": "33615",
@@ -4883,18 +4981,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=70",
-   "title": null,
-   "h1": null,
+   "title": "Music AA-T V033615G Cal-",
+   "h1": "Music AA-T V033615G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     70,
     71
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 17,
-  "text_chars": 12578
+  "text_chars": 12340
  },
  {
   "control_number": "33629",
@@ -4902,7 +5001,7 @@
   "award": "A.S. T Degree",
   "shape": "adt",
   "method": "pdf_pages",
-  "coverage": 0.607,
+  "coverage": 1.0,
   "codes_found": [
    "BRDCSTG10",
    "BRDCSTG17",
@@ -4913,31 +5012,41 @@
    "BRDCSTG3",
    "BRDCSTG47",
    "BRDCSTG5",
+   "BRDCSTG51",
+   "BRDCSTG83",
    "CINEMA101",
+   "CINEMA102",
+   "CINEMA103",
+   "CINEMA104",
    "CINEMA105",
+   "CINEMA106",
    "CINEMA107",
    "CINEMA110",
+   "CINEMA113",
+   "CINEMA114",
    "CINEMA115",
    "CINEMA120",
    "CINEMA125",
-   "MEDIART118"
+   "CINEMA150",
+   "MEDIART104",
+   "MEDIART118",
+   "MEDIART130"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
+   "title": "AS-T V033629H Cal-",
+   "h1": "AS-T V033629H Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    55,
-    56,
-    57,
-    58
+    61,
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 28,
-  "text_chars": 16000
+  "text_chars": 9662
  },
  {
   "control_number": "33859",
@@ -4957,8 +5066,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-   "title": null,
-   "h1": null,
+   "title": "82  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "82  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4967,7 +5076,8 @@
     86,
     87
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 7,
   "text_chars": 16000
@@ -4996,17 +5106,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=157",
-   "title": null,
-   "h1": null,
+   "title": "AA V035201C Any GE^ 21-23 Y",
+   "h1": "AA V035201C Any GE^ 21-23 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     157
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 13,
-  "text_chars": 6205
+  "text_chars": 5907
  },
  {
   "control_number": "35395",
@@ -5029,8 +5140,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=138",
-   "title": null,
-   "h1": null,
+   "title": "Biology AS-T V035395H Cal-",
+   "h1": "Biology AS-T V035395H Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5039,7 +5150,8 @@
     140,
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 10,
   "text_chars": 16000
@@ -5059,17 +5171,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=21",
-   "title": null,
-   "h1": null,
+   "title": "A typical program map and milestones to meet while at LAVC are shown below for the AS-T in Business Administration.",
+   "h1": "A typical program map and milestones to meet while at LAVC are shown below for the AS-T in Business Administration.",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     21
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 3165
+  "text_chars": 2119
  },
  {
   "control_number": "35526",
@@ -5093,17 +5206,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=156",
-   "title": null,
-   "h1": null,
+   "title": "Economics AA-T V035526G Cal-",
+   "h1": "Economics AA-T V035526G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     156
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 6721
+  "text_chars": 6443
  },
  {
   "control_number": "36004",
@@ -5120,17 +5234,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=147",
-   "title": null,
-   "h1": null,
+   "title": "Geology AS-T V036004H CalGETC 28 Y",
+   "h1": "Geology AS-T V036004H CalGETC 28 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     147
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 6342
+  "text_chars": 6029
  },
  {
   "control_number": "37295",
@@ -5152,18 +5267,20 @@
    "MEDIART129"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
+   "title": "AA V037295C Any",
+   "h1": "AA V037295C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    58,
     59
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 6752
+  "text_chars": 10006
  },
  {
   "control_number": "37296",
@@ -5171,31 +5288,27 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.667,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
-   "MEDIART100",
    "MEDIART101",
    "MEDIART104"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    66,
-    67,
-    68,
-    69
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "37297",
@@ -5203,29 +5316,26 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.6,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
-   "MEDIART100",
    "MEDIART101"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    67,
-    68,
-    69
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 15898
+  "text_chars": 5593
  },
  {
   "control_number": "37298",
@@ -5233,31 +5343,27 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.667,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
-   "MEDIART100",
    "MEDIART101",
    "MEDIART104"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    66,
-    67,
-    68,
-    69
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "38959",
@@ -5279,17 +5385,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
-   "title": null,
-   "h1": null,
+   "title": "Religious Studies AA V038959C Any GE^ 18 Y",
+   "h1": "Religious Studies AA V038959C Any GE^ 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     162
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 5001
+  "text_chars": 4675
  },
  {
   "control_number": "39152",
@@ -5308,8 +5415,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
-   "title": null,
-   "h1": null,
+   "title": "CA V039152D n/a 18 Y",
+   "h1": "CA V039152D n/a 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5318,7 +5425,8 @@
     89,
     90
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 16000
@@ -5339,8 +5447,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "CA V039583D n/a 19 Y",
+   "h1": "CA V039583D n/a 19 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5348,10 +5456,11 @@
     119,
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 14186
+  "text_chars": 13803
  },
  {
   "control_number": "39584",
@@ -5368,8 +5477,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=118",
-   "title": null,
-   "h1": null,
+   "title": "CA V039584D n/a 19-20 Y",
+   "h1": "CA V039584D n/a 19-20 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5377,10 +5486,11 @@
     119,
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
-  "text_chars": 14186
+  "text_chars": 13715
  },
  {
   "control_number": "39619",
@@ -5403,18 +5513,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "CN V039619E n/a n/a N",
+   "h1": "CN V039619E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8520
+  "text_chars": 8126
  },
  {
   "control_number": "39620",
@@ -5437,18 +5548,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "CN V039620E n/a n/a N",
+   "h1": "CN V039620E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8520
+  "text_chars": 8045
  },
  {
   "control_number": "39621",
@@ -5471,18 +5583,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "CN V039621E n/a n/a N",
+   "h1": "CN V039621E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8520
+  "text_chars": 7972
  },
  {
   "control_number": "39622",
@@ -5505,18 +5618,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "CN V039622E n/a n/a N",
+   "h1": "CN V039622E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8520
+  "text_chars": 7888
  },
  {
   "control_number": "39623",
@@ -5539,18 +5653,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=92",
-   "title": null,
-   "h1": null,
+   "title": "CN V039623E n/a n/a N",
+   "h1": "CN V039623E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     92,
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8520
+  "text_chars": 8192
  },
  {
   "control_number": "39765",
@@ -5567,14 +5682,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 5603
@@ -5596,18 +5712,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
-   "title": null,
-   "h1": null,
+   "title": "CERTIFICATE OF ACHIEVEMENT:",
+   "h1": "CERTIFICATE OF ACHIEVEMENT:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     142,
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 12544
+  "text_chars": 12438
  },
  {
   "control_number": "40662",
@@ -5629,18 +5746,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-   "title": null,
-   "h1": null,
+   "title": "Photography CA V040662D n/a 19-21 Y",
+   "h1": "Photography CA V040662D n/a 19-21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     72,
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 9383
+  "text_chars": 5847
  },
  {
   "control_number": "40793",
@@ -5658,18 +5776,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "title": "CA V040793D n/a 24 Y",
+   "h1": "CA V040793D n/a 24 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 11505
+  "text_chars": 11110
  },
  {
   "control_number": "40794",
@@ -5687,18 +5806,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
-   "title": null,
-   "h1": null,
+   "title": "CA V040794D n/a 24 Y",
+   "h1": "CA V040794D n/a 24 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 11505
+  "text_chars": 11032
  },
  {
   "control_number": "40871",
@@ -5715,18 +5835,20 @@
    "MUSIC101"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
+   "title": "CA V040871D n/a 24 Y",
+   "h1": "CA V040871D n/a 24 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    60,
     61
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 6449
+  "text_chars": 10967
  },
  {
   "control_number": "40988",
@@ -5743,17 +5865,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=154",
-   "title": null,
-   "h1": null,
+   "title": "CA V040988D n/a 15 Y",
+   "h1": "CA V040988D n/a 15 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     154
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 4,
-  "text_chars": 2719
+  "text_chars": 2204
  },
  {
   "control_number": "40989",
@@ -5783,19 +5906,22 @@
    "MGMT1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
+   "title": "CA V041005D n/a 16-17 Y",
+   "h1": "CA V041005D n/a 16-17 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    83,
+    84,
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
-  "text_chars": 11055
+  "text_chars": 16000
  },
  {
   "control_number": "41008",
@@ -5817,18 +5943,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-   "title": null,
-   "h1": null,
+   "title": "Photography AA V041008C Any",
+   "h1": "Photography AA V041008C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     72,
     73
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 9383
+  "text_chars": 5888
  },
  {
   "control_number": "41492",
@@ -5851,18 +5978,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "title": "AS V041492C Any GE^ 18-21 Y",
+   "h1": "AS V041492C Any GE^ 18-21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8640
+  "text_chars": 5451
  },
  {
   "control_number": "41493",
@@ -5885,18 +6013,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
-   "title": null,
-   "h1": null,
+   "title": "CA V041493D n/a 18-21 Y",
+   "h1": "CA V041493D n/a 18-21 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8640
+  "text_chars": 5406
  },
  {
   "control_number": "41578",
@@ -5919,18 +6048,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "AS V041578C Any",
+   "h1": "AS V041578C Any",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8753
+  "text_chars": 6818
  },
  {
   "control_number": "41579",
@@ -5953,18 +6083,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
-   "title": null,
-   "h1": null,
+   "title": "CA V041579D n/a 24-25 Y",
+   "h1": "CA V041579D n/a 24-25 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     96,
     97
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 8753
+  "text_chars": 6762
  },
  {
   "control_number": "42328",
@@ -5979,14 +6110,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5603
@@ -6004,14 +6136,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "76  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "76  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4766
@@ -6034,14 +6167,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "112  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "112  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
   "text_chars": 5646
@@ -6059,14 +6193,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      79",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      79",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 3123
@@ -6084,14 +6219,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      79",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      79",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 3123
@@ -6109,14 +6245,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "76  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "76  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4766
@@ -6134,14 +6271,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
-   "title": null,
-   "h1": null,
+   "title": "76  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "76  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     78
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4766
@@ -6159,14 +6297,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5603
@@ -6184,14 +6323,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5603
@@ -6209,14 +6349,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     79
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5603
@@ -6234,14 +6375,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5835
@@ -6259,14 +6401,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5835
@@ -6284,14 +6427,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      79",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      79",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     81
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 3123
@@ -6309,14 +6453,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5835
@@ -6334,14 +6479,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "118  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "118  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4507
@@ -6373,8 +6519,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=116",
-   "title": null,
-   "h1": null,
+   "title": "AA-T V043774G Cal-",
+   "h1": "AA-T V043774G Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6382,10 +6528,11 @@
     117,
     118
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 16,
-  "text_chars": 14384
+  "text_chars": 13832
  },
  {
   "control_number": "43994",
@@ -6403,14 +6550,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=143",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 41",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 41",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     143
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
   "text_chars": 5643
@@ -6437,8 +6585,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "AS-T V043998M Cal-",
+   "h1": "AS-T V043998M Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6446,10 +6594,11 @@
     140,
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 15636
+  "text_chars": 14423
  },
  {
   "control_number": "44162",
@@ -6464,14 +6613,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
-   "title": null,
-   "h1": null,
+   "title": "118  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "118  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     120
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 4507
@@ -6489,17 +6639,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=164",
-   "title": null,
-   "h1": null,
+   "title": "CN V044265E n/a n/a N",
+   "h1": "CN V044265E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     164
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
-  "text_chars": 3533
+  "text_chars": 1185
  },
  {
   "control_number": "44328",
@@ -6507,12 +6658,19 @@
   "award": "Baccalaureate of Science (B.S.) Degree.",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 0.963,
   "codes_found": [
+   "ANATOMY1",
+   "ANTHRO325",
+   "BIOLOGY408",
+   "CHEM51",
+   "MICRO20",
+   "PHYSIOL1",
    "PSYCC1000",
    "RESPTH1",
    "RESPTH11",
    "RESPTH15",
+   "RESPTH2",
    "RESPTH3",
    "RESPTH310",
    "RESPTH320",
@@ -6525,21 +6683,24 @@
    "RESPTH430",
    "RESPTH440",
    "RESPTH450",
+   "RESPTH5",
    "RESPTH6",
    "SOC325"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=248",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=107",
+   "title": "BS V044328B See Listing 31 Y",
+   "h1": "BS V044328B See Listing 31 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    248,
-    249,
-    250
+    107,
+    108,
+    109,
+    110
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 27,
   "text_chars": 16000
@@ -6550,33 +6711,27 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
-   "MEDIART100",
    "MEDIART101",
-   "MEDIART104",
-   "MEDIART107",
-   "MEDIART108"
+   "MEDIART104"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    66,
-    67,
-    68,
-    69
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "44391",
@@ -6584,33 +6739,27 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
-   "MEDIART100",
    "MEDIART101",
-   "MEDIART104",
-   "MEDIART107",
-   "MEDIART108"
+   "MEDIART104"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    66,
-    67,
-    68,
-    69
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "44481",
@@ -6625,17 +6774,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "CN V044481E n/a n/a N",
+   "h1": "CN V044481E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     152
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5210
+  "text_chars": 4823
  },
  {
   "control_number": "44483",
@@ -6657,8 +6807,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=139",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 37",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 37",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6666,7 +6816,8 @@
     140,
     141
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
   "text_chars": 15636
@@ -6693,8 +6844,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
-   "title": null,
-   "h1": null,
+   "title": "ASSOCIATE DEGREE FOR TRANSFER:",
+   "h1": "ASSOCIATE DEGREE FOR TRANSFER:",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6703,7 +6854,8 @@
     143,
     144
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 16000
@@ -6737,8 +6889,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": null,
-   "h1": null,
+   "title": "CA V045136D n/a 18 Y",
+   "h1": "CA V045136D n/a 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6747,7 +6899,8 @@
     85,
     86
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 16000
@@ -6769,18 +6922,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=90",
-   "title": null,
-   "h1": null,
+   "title": "CA V045137D n/a 18 Y",
+   "h1": "CA V045137D n/a 18 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     90,
     91
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 6,
-  "text_chars": 10757
+  "text_chars": 7194
  },
  {
   "control_number": "45159",
@@ -6795,17 +6949,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "Behavior Technician CN V045159E n/a n/a N",
+   "h1": "Behavior Technician CN V045159E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 4561
+  "text_chars": 4242
  },
  {
   "control_number": "45160",
@@ -6821,17 +6976,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=113",
-   "title": null,
-   "h1": null,
+   "title": "CN V045160E n/a n/a N",
+   "h1": "CN V045160E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     113
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 4561
+  "text_chars": 4171
  },
  {
   "control_number": "45161",
@@ -6847,14 +7003,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "112  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "112  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 5646
@@ -6875,17 +7032,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "CN V045174E n/a n/a N",
+   "h1": "CN V045174E n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     152
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 5,
-  "text_chars": 5210
+  "text_chars": 4770
  },
  {
   "control_number": "45178",
@@ -6900,15 +7058,16 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "112  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "112  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114,
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 11277
@@ -6928,14 +7087,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=115",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 1 3",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 1 3",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 5629
@@ -6954,18 +7114,19 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "The Banquet and Restaurant Server certificate of completion is",
+   "h1": "The Banquet and Restaurant Server certificate of completion is",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93,
     94
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 7796
+  "text_chars": 4483
  },
  {
   "control_number": "45201",
@@ -6980,14 +7141,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "112  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "112  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 2,
   "text_chars": 5646
@@ -7005,17 +7167,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": null,
-   "h1": null,
+   "title": "The In-Home Supportive Services Skills certificate of completion",
+   "h1": "The In-Home Supportive Services Skills certificate of completion",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     114
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 5646
+  "text_chars": 1867
  },
  {
   "control_number": "45216",
@@ -7023,34 +7186,28 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.556,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
    "CINEMA115",
-   "CINEMA117",
-   "MEDIART100",
    "MEDIART101",
-   "MEDIART115",
-   "MEDIART116"
+   "MEDIART115"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    64,
-    65,
-    66,
-    67
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "45217",
@@ -7072,8 +7229,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      63",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      63",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7082,7 +7239,8 @@
     67,
     68
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -7093,35 +7251,28 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
    "CINEMA120",
-   "MEDIART100",
    "MEDIART101",
-   "MEDIART116",
-   "MEDIART120",
-   "MEDIART121",
-   "MEDIART122"
+   "MEDIART120"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    64,
-    65,
-    66,
-    67
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "45256",
@@ -7129,34 +7280,28 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.556,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
    "CINEMA115",
-   "CINEMA117",
-   "MEDIART100",
    "MEDIART101",
-   "MEDIART115",
-   "MEDIART116"
+   "MEDIART115"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    64,
-    65,
-    66,
-    67
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "45257",
@@ -7164,35 +7309,28 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 1.0,
+  "coverage": 0.5,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
-   "CINEMA107",
    "CINEMA120",
-   "MEDIART100",
    "MEDIART101",
-   "MEDIART116",
-   "MEDIART120",
-   "MEDIART121",
-   "MEDIART122"
+   "MEDIART120"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
+   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    64,
-    65,
-    66,
-    67
+    62
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 5593
  },
  {
   "control_number": "45258",
@@ -7214,8 +7352,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      63",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      63",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7224,7 +7362,8 @@
     67,
     68
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
   "text_chars": 16000
@@ -7247,8 +7386,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
-   "title": null,
-   "h1": null,
+   "title": "AS-T V046196H Cal-",
+   "h1": "AS-T V046196H Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7257,7 +7396,8 @@
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 7,
   "text_chars": 16000
@@ -7275,17 +7415,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=125",
-   "title": null,
-   "h1": null,
+   "title": "College Success CY V046258F n/a n/a N",
+   "h1": "College Success CY V046258F n/a n/a N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     125
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 2,
-  "text_chars": 1932
+  "text_chars": 1563
  },
  {
   "control_number": "46270",
@@ -7311,8 +7452,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
-   "title": null,
-   "h1": null,
+   "title": "Physics 2.0 AS-T V046270H Cal-",
+   "h1": "Physics 2.0 AS-T V046270H Cal-",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7320,10 +7461,11 @@
     150,
     151
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 13,
-  "text_chars": 13015
+  "text_chars": 12749
  },
  {
   "control_number": "46277",
@@ -7339,14 +7481,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=93",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      9 1",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      9 1",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     93
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 4379
@@ -7365,17 +7508,18 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=115",
-   "title": null,
-   "h1": null,
+   "title": "The Tutor Training Certificate of Completion is designed to prepare",
+   "h1": "The Tutor Training Certificate of Completion is designed to prepare",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     115
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 5629
+  "text_chars": 1337
  },
  {
   "control_number": "46281",
@@ -7392,14 +7536,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 4,
   "text_chars": 5835
@@ -7418,14 +7563,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": null,
-   "h1": null,
+   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     80
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 5835
@@ -7449,18 +7595,20 @@
    "KINMAJ116"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
-   "title": null,
-   "h1": null,
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
+   "title": "CA V046333D N/A 16 Y",
+   "h1": "CA V046333D N/A 16 Y",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    110,
     111
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 9,
-  "text_chars": 5448
+  "text_chars": 11277
  },
  {
   "control_number": "46437",
@@ -7478,14 +7626,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
-   "title": null,
-   "h1": null,
+   "title": "14 0  Los Angeles Valley College | General Catalog | 2026-2027",
+   "h1": "14 0  Los Angeles Valley College | General Catalog | 2026-2027",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     142
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 6,
   "text_chars": 6899
@@ -7504,14 +7653,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     153
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 5688
@@ -7530,14 +7680,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     153
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 5688
@@ -7556,14 +7707,15 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
-   "title": null,
-   "h1": null,
+   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
+   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     153
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": false
   },
   "listed": 3,
   "text_chars": 5688
@@ -7582,16 +7734,17 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=152",
-   "title": null,
-   "h1": null,
+   "title": "CN V046445E n/a n/s N",
+   "h1": "CN V046445E n/a n/s N",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
     152
    ],
-   "extractor": "pypdf"
+   "extractor": "pypdf",
+   "heading_named": true
   },
   "listed": 3,
-  "text_chars": 5210
+  "text_chars": 4879
  }
 ]

@@ -78,7 +78,7 @@
    "pass": false,
    "status": "unequal",
    "computed": [
-    17.0,
+    18.0,
     18.0
    ],
    "stated": [
@@ -87,13 +87,13 @@
    ],
    "against": "program",
    "why": [
-    "the blocks sum to 17.0-18.0; the catalog states 18.0-19.0"
+    "the blocks sum to 18.0-18.0; the catalog states 18.0-19.0"
    ],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     51.0,
+     52.0,
      52.0
     ],
     "stated": [
@@ -106,10 +106,10 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      8.0,
-     9.0
+     8.0
     ]
    }
   },
@@ -165,7 +165,8 @@
     "Understand the communication process.",
     "Understand one's own and others communication styles."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -327,5 +328,14 @@
    "COMM C1000 printed as formerly COMM 101; ENGL C1001 as formerly ENGLISH 103; PSYC C1000 as formerly PSYCH 001."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

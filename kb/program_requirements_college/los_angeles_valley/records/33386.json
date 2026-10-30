@@ -90,7 +90,7 @@
      34.0
     ],
     "why": [],
-    "transfer": true,
+    "minimum": true,
     "fill": [
      7.0,
      8.0
@@ -156,7 +156,8 @@
     "probation",
     "corrections",
     "game wardens"
-   ]
+   ],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -309,5 +310,14 @@
    "Certificate of Achievement section (ADM JUS 911, Total 16) and its career list were not used."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }

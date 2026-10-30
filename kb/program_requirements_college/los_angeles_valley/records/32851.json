@@ -128,7 +128,8 @@
     "Examine the most important political theories that have been developed from the time of the ancient Greeks to the present day, and analyze their impact on modern governments.",
     "Compare and contrast the values and weaknesses of various global political systems and evaluate the causes of international conflict and formulas for peaceful settlements."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -233,5 +234,14 @@
    "No careers are named in the AA-T section; the careers sentence (law, education, journalism, governmental service) appears only in the separate AA degree section and was not used."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": 41114987325,
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ],
+ "read_run": "39006418426"
 }
