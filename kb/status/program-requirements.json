@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T06:38:46Z",
-  "session": 523,
-  "moniker": "SkyBarberry",
+  "written_at": "2026-10-30T07:50:22Z",
+  "session": 524,
+  "moniker": "SkyCranberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_524_handoff.md",
+  "handoff": "docs/session_525_handoff.md",
   "next_step": {
-    "title": "Land #2574, then Glendale's program totals",
-    "text": "Merge #2574 (Glendale 80 to 105 passing; every course priced from its own description) once test passes on its newest head. Then Glendale's next cause: 71 records name no program total; read the totals the program pages print, then the 48 unequal sums."
+    "title": "Land #2575, then Glendale's unequal sums",
+    "text": "Merge #2575 (Glendale's prose totals: 8 records now name their total) once test passes on its newest head. Then Glendale's 55 unequal sums, Computer Support Technician 22 against 32 first, each a page read of the program's list."
   },
   "calls": [
     {
@@ -138,12 +138,12 @@
   },
   "changes": [
     {
-      "at": "2026-10-30T02:20:14Z",
-      "text": "S521's four memory rows applied by run 40990743558 and read back. The harvest tables are unchanged."
+      "at": "2026-10-30T07:46:39Z",
+      "text": "Glendale: 8 records took the total their program page prints in prose (reread 41021975265, receipt committed); all 8 sum short of it, so 105 still pass. 33 loaded records print no total."
     },
     {
-      "at": "2026-10-30T02:17:00Z",
-      "text": "The test runner names a failing shard's file, and a Library test stopped racing its unzip (#2572). The harvest tables are unchanged."
+      "at": "2026-10-30T02:20:14Z",
+      "text": "S521's four memory rows applied by run 40990743558 and read back. The harvest tables are unchanged."
     }
   ],
   "headline": [
@@ -282,14 +282,14 @@
     {
       "day": "2026-10-30",
       "active": 20282,
-      "complete": 13201,
+      "complete": 13223,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-30T05:12:00Z"
+    "at": "2026-10-30T08:12:00Z"
   },
   "harvest": {
     "day": "2026-10-30",
