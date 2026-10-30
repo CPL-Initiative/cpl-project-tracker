@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1328,
-    "bytes": 13456946,
+    "bytes": 13459268,
     "over_budget": 2,
     "handoff_max": 526,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2481545,
+        "bytes": 2483540,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 443466,
+        "bytes": 443651,
         "over": 1
       },
       "handoff": {
         "files": 495,
-        "bytes": 3552039,
+        "bytes": 3552181,
         "over": 0
       }
     },
@@ -62,9 +62,9 @@
       "vault_heavy_path": 70
     },
     "vault": {
-      "files": 25085,
-      "bytes": 3976384794,
-      "heavy_bytes": 2814136115,
+      "files": 25087,
+      "bytes": 3976350182,
+      "heavy_bytes": 2814086901,
       "heavy_share": 0.708,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -156,26 +156,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 121164,
+        "bytes": 123159,
         "limit": 120000,
         "lane": "lessons",
-        "over_by": 1164,
-        "ratio": 1.01
+        "over_by": 3159,
+        "ratio": 1.03
       },
-      "message": "121,164 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "message": "123,159 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/program_requirements_harvest_lessons.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20012,
+        "bytes": 20197,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 12,
-        "ratio": 1.0
+        "over_by": 197,
+        "ratio": 1.01
       },
-      "message": "20,012 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "20,197 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
@@ -205,10 +205,10 @@
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146383630,
+        "bytes": 146334416,
         "kind": "dir"
       },
-      "message": "directory totals 146,383,630 B inside the vault"
+      "message": "directory totals 146,334,416 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

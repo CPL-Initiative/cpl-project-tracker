@@ -79,20 +79,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    18.0,
-    18.0
+    24.0,
+    24.0
    ],
    "stated": [
     24.0,
     24.0
    ],
    "against": "program",
-   "why": [
-    "'Select two courses from the following' chooses 2 courses but 1 carry units"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -116,7 +114,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -167,7 +165,7 @@
      },
      {
       "code": "FTVM 100",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -280,35 +278,35 @@
     "courses": [
      {
       "code": "FTVM 131",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "FTVM 132",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "FTVM 135",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "FTVM 137",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
      },
      {
       "code": "FTVM 139",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -333,57 +331,33 @@
    "The description says the program prepares students 'to seek employment in the field' (film and TV production) but names no specific career or job title; careers left empty."
   ]
  },
- "extracted_run": 41012563119,
+ "extracted_run": 41040709338,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "ARTH 125": [
+    "FTVM 100": [
      3.0,
      3.0
     ],
-    "FTVM 112": [
+    "FTVM 131": [
      3.0,
      3.0
     ],
-    "FTVM 120": [
+    "FTVM 132": [
      3.0,
      3.0
     ],
-    "ENGL 117": [
+    "FTVM 135": [
      3.0,
      3.0
     ],
-    "FTVM 101": [
+    "FTVM 137": [
      3.0,
      3.0
     ],
-    "FTVM 102": [
-     3.0,
-     3.0
-    ],
-    "FTVM 103": [
-     3.0,
-     3.0
-    ],
-    "FTVM 104": [
-     3.0,
-     3.0
-    ],
-    "FTVM 106": [
-     3.0,
-     3.0
-    ],
-    "FTVM 107": [
-     3.0,
-     3.0
-    ],
-    "FTVM 108": [
-     3.0,
-     3.0
-    ],
-    "FTVM 271": [
+    "FTVM 139": [
      3.0,
      3.0
     ]
@@ -391,5 +365,5 @@
    "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
   }
  ],
- "read_run": "39063367252"
+ "read_run": 41012563119
 }

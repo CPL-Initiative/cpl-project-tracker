@@ -370,7 +370,7 @@
      },
      {
       "code": "ENGL 127",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -432,106 +432,14 @@
    "No general education pattern, degree total, or careers are printed for this award."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40696243319,
+ "extracted_run": 41040709338,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "CHLDV 101": [
-     3.0,
-     3.0
-    ],
-    "CHLDV 135": [
-     3.0,
-     3.0
-    ],
-    "GEOL 105": [
-     3.0,
-     3.0
-    ],
-    "GEOL 115": [
-     1.0,
-     1.0
-    ],
-    "ENGL 102": [
-     3.0,
-     3.0
-    ],
-    "CHEM 110": [
-     5.0,
-     5.0
-    ],
-    "PHY 110": [
-     3.0,
-     3.0
-    ],
-    "BIOL 122": [
-     4.0,
-     4.0
-    ],
-    "HIST 117": [
-     3.0,
-     3.0
-    ],
-    "GEOG 103": [
-     3.0,
-     3.0
-    ],
-    "MATH 138": [
-     3.0,
-     3.0
-    ],
-    "DANCE 100": [
-     3.0,
-     3.0
-    ],
-    "T ART 101": [
-     3.0,
-     3.0
-    ],
-    "ARTH 115": [
-     3.0,
-     3.0
-    ],
-    "ANTHR 105": [
-     3.0,
-     3.0
-    ],
-    "ENGL 105": [
-     3.0,
-     3.0
-    ],
-    "ENGL 106": [
-     3.0,
-     3.0
-    ],
-    "ENGL 109": [
-     3.0,
-     3.0
-    ],
-    "ENGL 110": [
-     3.0,
-     3.0
-    ],
-    "ENGL 122": [
-     3.0,
-     3.0
-    ],
-    "ENGL 123": [
-     3.0,
-     3.0
-    ],
-    "HUMAN 105": [
-     3.0,
-     3.0
-    ],
-    "PHILO 101": [
-     3.0,
-     3.0
-    ],
-    "PHILO 116": [
+    "ENGL 127": [
      3.0,
      3.0
     ]

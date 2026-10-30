@@ -1,0 +1,25 @@
+{
+ "_readme": "S526 SkyJostaberry, 2026-10-30. Three courses on Glendale's unequal and incomplete records carry no units: CS/IS 187 (IT Technician III 36600/36601, which print 13 courses 'to a total of 42') and FTVM 132 and 137 (Grip and Lighting 44572). The parsed descriptions (kb/program_requirements_units/glendale_community.json, S523) hold none of the three, though the state's file (coci_program_courses) prices all three at 3.0. This read prints the description pages (128-301) naming them, to see whether the catalog prints them at all. One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "course_units": "Whether the catalog prints a description for CS/IS 187, FTVM 132 and FTVM 137, and the units each states."
+ },
+ "keywords": [
+  "C\\s*S\\s*/\\s*I\\s*S\\s*1\\s*8\\s*7",
+  "F\\s*T\\s*V\\s*M\\s*1\\s*3\\s*[27]\\b",
+  "\\b18\\s*7\\s*·",
+  "\\b13\\s*[27]\\s*·\\s*(?:GRIP|LIGHT|SET|CAMERA)"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "course_units"
+   ],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [
+  128,
+  301
+ ]
+}

@@ -1,5 +1,5 @@
 {
-"_readme": "S523 SkyBarberry, 2026-10-30. The units each course description prints in Glendale's 2025-2026 catalog PDF (descriptions run pages 128-301), parsed by kb/_description_units.py from the college-page-read logs of the plans glendale_course_units_* and glendale_course_desc_* (runs listed). Keyed by the code each description's body names, in norm_code form. 'aliased' names the codes added under the reconcile entry's prefix_aliases and course_renumbers (PSYCH 101 takes PSYC 101's units). The course_units step of Glendale's reconcile entry reads this file.",
+"_readme": "S523 SkyBarberry, 2026-10-30. The units each course description prints in Glendale's 2025-2026 catalog PDF (descriptions run pages 128-301), parsed by kb/_description_units.py from the college-page-read logs of the plans glendale_course_units_* and glendale_course_desc_* (runs listed). Keyed by the code each description's body names, in norm_code form. 'aliased' names the codes added under the reconcile entry's prefix_aliases and course_renumbers (PSYCH 101 takes PSYC 101's units). The course_units step of Glendale's reconcile entry reads this file. S526 SkyJostaberry: the parser now steps over a '(Previously MEDIA 103)' note ahead of the code and takes any all-capitals title ('2-D FOUNDATIONS', 'PROGRAMMING IN C/C++', 'CHILDREN’S LITERATURE'); a reparse of the same logs plus run 41039652111 priced 59 more codes, changed none, and the old numbers those notes print are aliased to the new code (MEDIA 103 takes FTVM 132's units).",
 "college": "Glendale Community College",
 "catalog": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf",
 "runs": [
@@ -11,7 +11,8 @@
 "41010558303",
 "41011004508",
 "41011433297",
-"41011482188"
+"41011482188",
+"41039652111"
 ],
 "units": {
 "ABSE10": [
@@ -5125,6 +5126,286 @@
 "TART184": [
 2.0,
 4.0
+],
+"ARMEN127": [
+3.0,
+3.0
+],
+"ART130": [
+3.0,
+3.0
+],
+"ART138": [
+3.0,
+3.0
+],
+"ART233": [
+3.0,
+3.0
+],
+"ART235": [
+3.0,
+3.0
+],
+"ART245": [
+3.0,
+3.0
+],
+"ART246": [
+3.0,
+3.0
+],
+"ART270": [
+4.0,
+4.0
+],
+"ART271": [
+4.0,
+4.0
+],
+"ATHPE106": [
+2.5,
+2.5
+],
+"ATHPE107": [
+1.0,
+2.5
+],
+"ATHPE108": [
+2.5,
+2.5
+],
+"ATHPE109": [
+1.0,
+2.5
+],
+"ATHPE111": [
+2.5,
+2.5
+],
+"ATHPE112": [
+2.5,
+2.5
+],
+"ATHPE120": [
+2.5,
+2.5
+],
+"ATHPE121": [
+1.0,
+2.5
+],
+"ATHPE122": [
+2.5,
+2.5
+],
+"ATHPE123": [
+1.0,
+2.5
+],
+"ATHPE125": [
+2.5,
+2.5
+],
+"ATHPE126": [
+1.0,
+2.5
+],
+"ATHPE127": [
+2.5,
+2.5
+],
+"ATHPE128": [
+1.0,
+2.5
+],
+"ATHPE133": [
+2.5,
+2.5
+],
+"ATHPE134": [
+1.0,
+2.5
+],
+"ATHPE135": [
+2.5,
+2.5
+],
+"ATHPE136": [
+1.0,
+2.5
+],
+"ATHPE138": [
+2.5,
+2.5
+],
+"ATHPE139": [
+2.5,
+2.5
+],
+"ATHPE143": [
+2.5,
+2.5
+],
+"ATHPE145": [
+2.5,
+2.5
+],
+"ATHPE151": [
+1.5,
+1.5
+],
+"ATHPE152": [
+1.5,
+1.5
+],
+"ATHPE158": [
+1.5,
+1.5
+],
+"ATHPE159": [
+1.5,
+1.5
+],
+"ATHPE161": [
+1.5,
+1.5
+],
+"ATHPE162": [
+1.5,
+1.5
+],
+"CAM250": [
+3.0,
+3.0
+],
+"CS/IS135": [
+3.0,
+3.0
+],
+"CS/IS137": [
+4.0,
+4.0
+],
+"ECT167": [
+3.0,
+3.0
+],
+"ENGL127": [
+3.0,
+3.0
+],
+"ENGR120": [
+2.0,
+2.0
+],
+"FTVM100": [
+3.0,
+3.0
+],
+"FTVM131": [
+3.0,
+3.0
+],
+"FTVM132": [
+3.0,
+3.0
+],
+"FTVM135": [
+3.0,
+3.0
+],
+"FTVM137": [
+3.0,
+3.0
+],
+"FTVM139": [
+3.0,
+3.0
+],
+"HIST152": [
+3.0,
+3.0
+],
+"HLTH106": [
+3.0,
+3.0
+],
+"LLS27": [
+0.0,
+0.0
+],
+"MUSIC125": [
+3.0,
+3.0
+],
+"STV206": [
+0.0,
+0.0
+],
+"STV210": [
+0.0,
+0.0
+],
+"STV212": [
+0.0,
+0.0
+],
+"STV215": [
+0.0,
+0.0
+],
+"STV220": [
+0.0,
+0.0
+],
+"STV40": [
+0.0,
+0.0
+],
+"MEDIA107": [
+3.0,
+3.0
+],
+"MEDIA213": [
+3.0,
+3.0
+],
+"MEDIA110": [
+3.0,
+3.0
+],
+"MEDIA112": [
+3.0,
+3.0
+],
+"STV64": [
+0.0,
+0.0
+],
+"STV62": [
+0.0,
+0.0
+],
+"STV61": [
+0.0,
+0.0
+],
+"STV63": [
+0.0,
+0.0
+],
+"STV66": [
+0.0,
+0.0
+],
+"MEDIA101": [
+3.0,
+3.0
+],
+"MEDIA103": [
+3.0,
+3.0
 ]
 },
 "aliased": {
@@ -5171,7 +5452,18 @@
 "TART181": "THTR181",
 "TART182": "THTR182",
 "TART183": "THTR183",
-"TART184": "THTR184"
+"TART184": "THTR184",
+"MEDIA107": "FTVM135",
+"MEDIA213": "FTVM137",
+"MEDIA110": "FTVM100",
+"MEDIA112": "FTVM139",
+"STV64": "STV206",
+"STV62": "STV210",
+"STV61": "STV212",
+"STV63": "STV215",
+"STV66": "STV220",
+"MEDIA101": "FTVM131",
+"MEDIA103": "FTVM132"
 },
 "words": {
 "ABSE10": " 10 · BASIC ENGLISH · 0 Units · ABSE 10 is a beginning comp",
@@ -6407,6 +6699,65 @@
 "WELD124": " 124 · OCCUPATIONAL WELDING IV · 3.0 Units W E L D 1 2 4 is f o urth in ",
 "WELD125": " 125 · ADVANCED WELDING · PROCEDURES · 1.0 Unit · WELD 125 is advanced weldin",
 "WELD126": " 126 · OCCUPATIONAL WELDING · CERTIFICATE SHOP · 1.0 Unit · WELD 126 is designed for th",
-"WELD49": " 49 · WELDING INDEPENDENT STUDY · 1.0 to 3.0 Units · WELD 49 provides independen"
+"WELD49": " 49 · WELDING INDEPENDENT STUDY · 1.0 to 3.0 Units · WELD 49 provides independen",
+"ARMEN127": " 127 · 20TH AND 21ST CENTURY · ARMENIAN LITERATURE · 3.0 Units · ARMEN 127 provides students",
+"ART130": " 130 · 2-D FOUNDATIONS · 3.0 Units · ART 130 is an introduction ",
+"ART138": " 138 · 3-D FOUNDATIONS · 3.0 Units · ART 138 is an introduction ",
+"ART233": " 233 · 3-D DIGITAL CHARACTER SET-UP/ · KINEMATICS · 3.0 Units · ART 233 provides students w",
+"ART235": " 235 · 3-D CHARACTER ANIMATION · 3.0 Units · ART 235 provides students w",
+"ART245": " 245 · 3-D DIGITAL CHARACTER DESIGN I · 3.0 Units · ART 245 provides students w",
+"ART246": " 246 · 3-D DIGITAL CHARACTER DESIGN II · 3.0 Units · ART 246 provides students w",
+"ART270": " 270 · 3D GAME LEVEL DESIGN I · 4.0 Units · ART 270 introduces students",
+"ART271": " 271 · 3D GAME LEVEL DESIGN II · 4.0 Units · ART 271 covers advanced sub",
+"ATHPE106": " 106 · WOMEN’S INTERCOLLEGIATE · BASKETBALL · 2.5 Units · ATHPE 106 is an advanced co",
+"ATHPE107": " 107 · OFF-SEASON TRAINING FOR · INTERCOLLEGIATE WOMEN’S · BASKETBALL · 1.0 to 2.5 Units · ATHPE 107 provides instruct",
+"ATHPE108": " 108 · MEN’S INTERCOLLEGIATE · BASKETBALL · 2.5 Units · ATHPE 108 is an advanced co",
+"ATHPE109": " 109 · OFF-SEASON TRAINING FOR · INTERCOLLEGIATE MENA’S · BASKETBALL · 1.0 to 2.5 Units · ATHPE 109 provides instruct",
+"ATHPE111": " 111 · WOMEN’S INTERCOLLEGIATE · CROSS COUNTRY · 2.5 Units · ATHPE 111 is an advanced co",
+"ATHPE112": " 112 · MEN’S INTERCOLLEGIATE CROSS · COUNTRY · 2.5 Units · ATHPE 112 is an advanced co",
+"ATHPE120": " 120 · INTERCOLLEGIATE WOMEN’S · GOLF · 2.5 Units · ATHPE 120 is an advanced co",
+"ATHPE121": " 121 · OFF-SEASON TRAINING FOR · INTERCOLLEGIATE WOMEN’S · GOLF · 1.0 to 2.5 Units · ATHPE 121 provides instruct",
+"ATHPE122": " 122 · INTERCOLLEGIATE MEN’S GOLF · 2.5 Units · ATHPE 122 is an advanced co",
+"ATHPE123": " 123 · OFF-SEASON TRAINING FOR · INTERCOLLEGIATE MEN’S GOLF · 1.0 to 2.5 Units · ATHPE 123 provides instruct",
+"ATHPE125": " 125 · WOMEN’S INTERCOLLEGIATE · SOCCER · 2.5 Units · ATHPE 125 is an advanced co",
+"ATHPE126": " 126 · OFF-SEASON TRAINING FOR · INTERCOLLEGIATE WOMEN’S · SOCCER · 1.0 to 2.5 Units · ATHPE 126 provides instruct",
+"ATHPE127": " 127 · MEN’S INTERCOLLEGIATE · SOCCER · 2.5 Units · ATHPE 127 is an advanced co",
+"ATHPE128": " 128 · OFF-SEASON TRAINING FOR · INTERCOLLEGIATE MEN’S · SOCCER · 1.0 to 2.5 Units · ATHPE 128 provides instruct",
+"ATHPE133": " 133 · INTERCOLLEGIATE WOMEN’S · TENNIS · 2.5 Units · ATHPE 133 is an advanced co",
+"ATHPE134": " 134 · OFF-SEASON TRAINING FOR · INTERCOLLEGIATE WOMEN’S · TENNIS · 1.0 to 2.5 Units · ATHPE 134 provides instruct",
+"ATHPE135": " 135 · INTERCOLLEGIATE MEN’S TENNIS · 2.5 Units · ATHPE 135 is an advanced co",
+"ATHPE136": " 136 · OFF-SEASON TRAINING FOR · INTERCOLLEGIATE MEN’S TENNIS · 1.0 to 2.5 Units · ATHPE 136 provides instruct",
+"ATHPE138": " 138 · WOMEN’S INTERCOLLEGIATE · TRACK AND FIELD · 2.5 Units · ATHPE 138 is an advanced co",
+"ATHPE139": " 139 · MEN’S INTERCOLLEGIATE TRACK · AND FIELD · 2.5 Units · ATHPE 139 is an advanced co",
+"ATHPE143": " 143 · WOMEN’S INTERCOLLEGIATE · VOLLEYBALL · 2.5 Units · ATHPE 143 is an advanced co",
+"ATHPE145": " 145 · WOMEN’S INTERCOLLEGIATE · BEACH VOLLEYBALL · 2.5 Units · ATHPE 145 is an advanced co",
+"ATHPE151": " 151 · WOMEN’S BASKETBALL · CONDITIONING · 1.5 Units ATHPE 151 is designed for the",
+"ATHPE152": " 152 · MEN’S BASKETBALL · CONDITIONING · 1.5 Units · ATHPE 152 is designed for t",
+"ATHPE158": " 158 · WOMEN’S SOCCER · CONDITIONING · 1.5 Units · ATHPE 158 is designed for t",
+"ATHPE159": " 159 · MEN’S SOCCER CONDITIONING · 1.5 Units · ATHPE 159 is designed for t",
+"ATHPE161": " 161 · WOMEN’S TENNIS CONDITIONING · 1.5 Units · ATHPE 161 is designed for t",
+"ATHPE162": " 162 · MEN’S TENNIS CONDITIONING · 1.5 Units ATHPE 162 is designed for the",
+"CAM250": " 250 · 4TH AXIS MACHINING · 3.0 Units · CAM 250 is an advanced comp",
+"CS/IS135": " 135 · PROGRAMMING IN C/C++ · 3.0 Units · CS/IS 135 is a course in pr",
+"CS/IS137": " 137 · C++ AND ADVANCED TOPICS · 4.0 Units · CS/IS 137 prepares the stud",
+"ECT167": " 167 · CONTRACTOR’S LICENSE LAW · 3.0 Units ECT 167 covers key legal aspe",
+"ENGL127": " 127 · CHILDREN’S LITERATURE · 3.0 Units · ENGL 127 introduces student",
+"ENGR120": " 120 · 3D PRINTING AND MODELING · 2.0 Units · ENGR 120 provides students ",
+"FTVM100": " 100 · AESTHETICS OF CINEMA · 3.0 Units · (Previously MEDIA 110) · FT",
+"FTVM131": " 131 · INTRODUCTION TO TV STUDIO · PRODUCTION · 3.0 Units · (Previously MEDIA 101) F T ",
+"FTVM132": " 132 · INTRODUCTION TO FILM · PRODUCTION · 3.0 Units · (Previously MEDIA 103) F T ",
+"FTVM135": " 135 · INTRODUCTION TO AUDIO · PRODUCTION · 3.0 Units · (Previously MEDIA 107) · FT",
+"FTVM137": " 137 · INTRODUCTION TO · CINEMATOGRAPHY · 3.0 Units · (Previously MEDIA 213) · FT",
+"FTVM139": " 139 · INTRODUCTION TO EDITING · 3.0 Units · (Previously MEDIA 112) · FT",
+"HIST152": " 152 · SOCIAL PROTEST IN THE 1960’S · 3.0 Units · HIST 152 introduces student",
+"HLTH106": " 106 · WOMEN’S HEALTH EDUCATION · 3.0 Units · HLTH 106 analyzes the biolo",
+"LLS27": " 27 · WHERE’S MY MEMORY? · 0 Units · LLS 27 explores the far rea",
+"MUSIC125": " 125 · HISTORY AND LITERATURE I · (ANTIQUITY - Ì1750) · 3.0 Units · MUSIC 125 is a survey of mu",
+"STV206": " 206 · HOME CAREGIVER/AIDE I · 0 Units · (Previously STV 64) · STV 2",
+"STV210": " 210 · DENTAL FRONT OFFICE · 0 Units · (Previously STV 62) · STV 2",
+"STV212": " 212 · ADMINISTRATIVE MEDICAL · ASSISTING I · 0 Units · (Previously STV 61) · STV 2",
+"STV215": " 215 · MEDICAL CLINICAL ASSISTING · 0 Units · (Previously STV 63) · STV 2",
+"STV220": " 220 · CERTIFIED NURSING AIDE - · THEORY · 0 Units · (Previously STV 66) · STV 2",
+"STV40": " 40 · 21ST CENTURY EMPLOYMENT · STRATEGIES · 0 Units · STV 40 prepares students fo"
 }
 }

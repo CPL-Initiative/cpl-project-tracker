@@ -157,7 +157,7 @@
      },
      {
       "code": "FTVM 100",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -189,7 +189,7 @@
     "courses": [
      {
       "code": "FTVM 135",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -208,14 +208,14 @@
     "courses": [
      {
       "code": "FTVM 131",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 132",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -316,14 +316,14 @@
      },
      {
       "code": "FTVM 137",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
      },
      {
       "code": "FTVM 139",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -426,103 +426,35 @@
    "Required Units for Major: 18 units* — the asterisk's footnote is not in the text provided."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 41009271854,
+ "extracted_run": 41040709338,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "FTVM 112": [
+    "FTVM 100": [
      3.0,
      3.0
     ],
-    "FTVM 120": [
+    "FTVM 135": [
      3.0,
      3.0
     ],
-    "ARTH 125": [
+    "FTVM 131": [
      3.0,
      3.0
     ],
-    "ART 220": [
+    "FTVM 132": [
      3.0,
      3.0
     ],
-    "FTVM 101": [
+    "FTVM 137": [
      3.0,
      3.0
     ],
-    "FTVM 102": [
+    "FTVM 139": [
      3.0,
-     3.0
-    ],
-    "FTVM 103": [
-     3.0,
-     3.0
-    ],
-    "FTVM 104": [
-     3.0,
-     3.0
-    ],
-    "FTVM 106": [
-     3.0,
-     3.0
-    ],
-    "FTVM 107": [
-     3.0,
-     3.0
-    ],
-    "FTVM 108": [
-     3.0,
-     3.0
-    ],
-    "FTVM 212": [
-     3.0,
-     3.0
-    ],
-    "FTVM 249": [
-     3.0,
-     3.0
-    ],
-    "FTVM 255": [
-     1.0,
-     1.0
-    ],
-    "FTVM 256": [
-     1.0,
-     1.0
-    ],
-    "FTVM 257": [
-     1.0,
-     1.0
-    ],
-    "FTVM 258": [
-     1.0,
-     1.0
-    ],
-    "FTVM 259": [
-     1.0,
-     1.0
-    ],
-    "FTVM 270A": [
-     3.0,
-     3.0
-    ],
-    "FTVM 270B": [
-     1.0,
-     2.0
-    ],
-    "FTVM 271": [
-     3.0,
-     3.0
-    ],
-    "FTVM 272": [
-     2.0,
-     2.0
-    ],
-    "FTVM 50": [
-     1.0,
      3.0
     ]
    },
