@@ -178,11 +178,16 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             # A course the page lists without units, priced by the course data the page's own
             # scripts fetched (Hartnell's Coursedog Requirements tab, S455): never a course the
             # reading gave units, and only from the call the page made, which the note names.
-            units = {k: v for k, v in ((course_units or {}).get("units") or {}).items() if v}
+            # A catalog that prints each course's units only in its course descriptions (Glendale's
+            # 2025-2026 PDF, S523) carries them in the step itself ("units", from a committed page read
+            # its source_words name); the page's own call, where there is one, wins a code both give.
+            units = {k: v for k, v in (st.get("units") or {}).items() if v}
+            units.update({k: v for k, v in ((course_units or {}).get("units") or {}).items() if v})
             filled = fill_course_units(out, units) if units else {}
             if filled:
+                call = (course_units or {}).get("call") or st.get("read")
                 notes.append({"field": "course_units", "was": None, "now": filled,
-                              "words": "%s (%s)" % ((course_units or {}).get("call"), st.get("source_words", ""))})
+                              "words": "%s (%s)" % (call, st.get("source_words", ""))})
             continue
         if st["kind"] == "course_hours":
             # A noncredit program's course listed without hours, given them by the same call (S484):
