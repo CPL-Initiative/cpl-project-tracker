@@ -1,0 +1,22 @@
+{
+ "_readme": "S528 SkyMulberry, 2026-10-30. Of Glendale's 46 records that sum unequal to their total, 29 price every course, so each gap is the reading, not a missing price. This read prints the pages for five of them, in the catalog's own words: Digital Content Specialist (p73, sums 21 against 23), Foreign Languages and the French and Italian pair (pp76-77, the pair sum 23 against 18-20 with an elective the page makes conditional on the core), Music A.S. (p83, 21-22 against 22) and Photography (p84, 27 against 18). One load of the 2025-2026 PDF, no model call.",
+ "college": "Glendale Community College",
+ "questions": {
+  "unequal_sums": "For each named program, every course its page lists and the total it states, so the record's gap can be named: a missed or extra course, a conditional block, or a borrowed total."
+ },
+ "keywords": [
+  "DIGITAL\\s+CONTENT\\s+SPECIALIST",
+  "FOREIGN\\s+LANGUAGES",
+  "FRENCH\\s+LANGUAGE",
+  "ITALIAN\\s+LANGUAGE",
+  "MUSIC",
+  "PHOTOGRAPHY"
+ ],
+ "pages": [
+  {
+   "answers": ["unequal_sums"],
+   "url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf"
+  }
+ ],
+ "pdf_span": [73, 84]
+}
