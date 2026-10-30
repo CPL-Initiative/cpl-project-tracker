@@ -1229,7 +1229,12 @@ block("(19)", function () {
       '<w:p><w:r><w:t xml:space="preserve">Name the </w:t></w:r><w:r><w:t>college courses.</w:t></w:r></w:p></w:body></w:document>');
     return z.generateAsync({ type: "uint8array" }).then(function (u8) {
       drop({ name: "ELL revision notes.docx", arrayBuffer: function () { return Promise.resolve(u8.buffer); } });
-      return settle().then(settle);
+      // Wait on the read itself, never a fixed count of ticks (S522). JSZip unzips
+      // over several event-loop turns; on a quiet machine it lands after exactly the
+      // two settles this once waited, so a loaded CI shard (#2570, shard 3, three
+      // runs) checked before it finished and failed this check and the next.
+      const read = function (n) { return (m.M._state.src.pc || []).some(function (x) { return x.title === "ELL revision notes"; }) || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return read(n - 1); }); };
+      return read(300);
     });
   }).then(function () {
     const pc = m.M._state.src.pc || [];
@@ -1239,7 +1244,8 @@ block("(19)", function () {
     const long = new Array(41).join("Revise each grantee card. ").trim();
     doc.getElementById("lc-instr").value = long;
     click(m.w, doc.getElementById("lib-go"));
-    return settle().then(function () { return long; });
+    const written = function (n) { return writes.length || n <= 0 ? settle() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return written(n - 1); }); };
+    return written(300).then(function () { return long; });
   }).then(function (long) {
     const w0 = writes[0] || { body: {}, url: "" }, b = w0.body || {};
     check("(19) ⭐ instructions past the 600-character column are kept whole as a document, and the note points there",
