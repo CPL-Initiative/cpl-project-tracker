@@ -16262,8 +16262,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 498,
+   "count": 499,
    "docs": [
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "n": 530,
+     "path": "docs/session_530_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "fact-sheet",
+      "sierra",
+      "vault-index",
+      "program-requirements",
+      "decision-sheet"
+     ],
+     "title": "Session 530 handoff: the Fact Sheet's labels and Request Quick Adopt, the vault indexers' race behind Sierra's Cabrillo miss, Sheet 144 asks for the printed units as a floor",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24782,5 +24800,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1318
+ "total": 1319
 }

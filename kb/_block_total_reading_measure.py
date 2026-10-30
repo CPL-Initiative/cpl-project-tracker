@@ -12,6 +12,13 @@ readings and prints how each record's program arithmetic would move. No write.
     python3 kb/_block_total_reading_measure.py            # the printed figure always stands in
     python3 kb/_block_total_reading_measure.py --inside   # only where the courses can make it, and the block
                                                           # does not print "minimum"
+    python3 kb/_block_total_reading_measure.py --floor    # the printed figure is the block's floor, never its
+                                                          # ceiling (S529, Open Asks Sheet 144 card 2)
+
+S529 read the 44 records the first reading unpasses (Sam ruled Sheet 143 card 2 "printed", 12:58Z 2026-10-30):
+few are catalog slips. Most lists print their smallest figure ("Select two courses (6 units)") over courses
+that run 6 to 7 inside a program total of 18-19, so the printed figure in place of the courses drops the top
+the program's own total carries. --floor keeps it.
 """
 import collections
 import copy
@@ -38,6 +45,19 @@ def reread(rec, inside):
     return r
 
 
+def floor_units(block, listed, hours=False):
+    """block_units, with a choose-courses block's printed figure as its floor: (max(lo, printed lo),
+    max(hi, printed hi)), and the printed figure itself when the courses cannot be added."""
+    r, why = _ORIG_BLOCK_UNITS(block, listed, hours)
+    sp = s._span(block.get('stated'))
+    if block.get('rule') == 'choose_courses' and sp:
+        return ((max(r[0], sp[0]), max(r[1], sp[1])) if r else sp), []
+    return r, why
+
+
+_ORIG_BLOCK_UNITS = s.block_units
+
+
 def status(rec):
     prog = rec.get('program') or {}
     st = s._span(prog.get('total_units'))
@@ -49,6 +69,7 @@ def status(rec):
 
 def main():
     inside = '--inside' in sys.argv
+    floor = '--floor' in sys.argv
     moves, colleges, ex = collections.Counter(), collections.defaultdict(set), collections.defaultdict(list)
     for f in sorted(glob.glob('kb/program_requirements_college/*/records/*.json')):
         d = json.load(open(f))
@@ -56,7 +77,15 @@ def main():
         if not rec or not any(b.get('rule') == 'choose_courses' and s._span(b.get('stated'))
                               for b in rec.get('blocks') or []):
             continue
-        a, b = status(rec), status(reread(rec, inside))
+        if floor:
+            a = status(rec)
+            s.block_units = floor_units
+            try:
+                b = status(rec)
+            finally:
+                s.block_units = _ORIG_BLOCK_UNITS
+        else:
+            a, b = status(rec), status(reread(rec, inside))
         if a is None:
             continue
         college = f.split('/')[2]

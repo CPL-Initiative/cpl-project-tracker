@@ -923,6 +923,28 @@ S445 SkyCurrant (a shared page per heading, MiraCosta's degree lists, Palomar's 
 lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`, and S446 SkyMadrone
 (a degree-and-certificate address, 91 records) since the S523 compaction.
 
+## S529 SkyKiwiberry (2026-10-30, Sam's session): the 44 that "printed" unpasses, read from their own records
+
+- **Sam ruled Sheet 143 card 2 *printed* (12:58Z).** The card's next step was to read the 44 records the reading would
+  unpass before changing the scorer. Their own records answered most of it, with no page read: each block's printed
+  name sits beside its `stated` figure and its courses.
+- **Few are catalog slips.** Most lists print their smallest figure over courses that run past it, inside a program
+  total that carries the top: Taft 44611 "List B: Select one" prints 3 over courses of 3-4, total 18-19; College of the
+  Desert 32369 "Select 2 courses (6 units)" over 6-7, total 18-19. The printed figure in place of the courses drops the
+  top the program's own total carries, and a faithful record fails. Eight print a minimum ("6 units minimum", Contra
+  Costa's "4 units minimum"). Six carry a figure that is not the list's units: Chabot 30828 List A "12" over a
+  two-course 6, Chaffey 31891 "39" (the list's whole pool), Long Beach 33390's core "12" over 6, Merritt 22011 "6" over a
+  choose-one of 3, Santa Monica 37452's core "9" over 6, Palomar 05162 "3" over "select up to one".
+- **The floor reading.** The printed units as the list's floor, never its ceiling (max of each end; the printed figure
+  itself when the courses cannot be added): 176 unequal and 28 incomplete pass, 13 that pass today fail (9 colleges),
+  mostly the six misread figures above. `python3 kb/_block_total_reading_measure.py --floor`. It differs from what Sam
+  ruled, so it is Open Asks Sheet 144 card 2 and the scorer is unchanged.
+- **Applying any reading needs more than the rescore script.** `kb/_program_requirements_rescore.py` re-reads how a
+  record's stored sum meets its printed total and never re-adds the blocks, so a `block_units` change needs a recompute
+  of each record's `computed` before the guarded UPDATE, in both directions (13 live rows demote).
+- **Lesson: read a record's own block names before reading its page.** The extractor keeps the list's printed words;
+  they sorted 44 records into three kinds at no cost.
+
 ## S528 SkyMulberry (2026-10-30, Sam's session): Glendale's unequal sums against their pages; which number a printed list counts
 
 - **Of Glendale's 46 unequal records, 29 price every course** (a query of each record's placed courses with no units). The
