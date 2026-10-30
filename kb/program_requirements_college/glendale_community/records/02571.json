@@ -68,13 +68,12 @@
    "pass": false,
    "status": "incomplete",
    "computed": [
-    9.0,
-    9.0
+    18.0,
+    18.0
    ],
    "stated": null,
    "against": null,
    "why": [
-    "a required course in 'Required Courses' has no units",
     "the record names no total"
    ]
   },
@@ -148,7 +147,7 @@
     "courses": [
      {
       "code": "ART 130",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": true
@@ -310,82 +309,14 @@
    "No general education pattern or degree total is named in this section."
   ]
  },
- "extracted_run": 41012563119,
- "read_run": 40711704988,
+ "extracted_run": 41040709338,
+ "read_run": 41012563119,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "ARTH 101": [
-     3.0,
-     3.0
-    ],
-    "ARTH 102": [
-     3.0,
-     3.0
-    ],
-    "ARTH 103": [
-     3.0,
-     3.0
-    ],
-    "ARTH 104": [
-     3.0,
-     3.0
-    ],
-    "ARTH 105": [
-     3.0,
-     3.0
-    ],
-    "ARTH 106": [
-     3.0,
-     3.0
-    ],
-    "ARTH 107": [
-     3.0,
-     3.0
-    ],
-    "ARTH 108": [
-     3.0,
-     3.0
-    ],
-    "ARTH 111": [
-     3.0,
-     3.0
-    ],
-    "ARTH 112": [
-     3.0,
-     3.0
-    ],
-    "ARTH 113": [
-     3.0,
-     3.0
-    ],
-    "ARTH 115": [
-     3.0,
-     3.0
-    ],
-    "ARTH 116": [
-     3.0,
-     3.0
-    ],
-    "ARTH 118": [
-     3.0,
-     3.0
-    ],
-    "ARTH 120": [
-     3.0,
-     3.0
-    ],
-    "ARTH 121": [
-     3.0,
-     3.0
-    ],
-    "ARTH 125": [
-     3.0,
-     3.0
-    ],
-    "ARTH 199": [
+    "ART 130": [
      3.0,
      3.0
     ]

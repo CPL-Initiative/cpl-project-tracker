@@ -334,7 +334,7 @@
      },
      {
       "code": "MUSIC 125",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -402,117 +402,13 @@
    "No GE pattern or degree total is printed in this section; 'career opportunities' is mentioned only generically, so no careers recorded."
   ]
  },
- "extracted_run": 41012563119,
+ "extracted_run": 41040709338,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "MUSIC 201": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 202": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 203": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 212": [
-     3.0,
-     3.0
-    ],
-    "MUSIC 213": [
-     3.0,
-     3.0
-    ],
-    "MUSIC 101": [
-     3.0,
-     3.0
-    ],
-    "MUSIC 211": [
-     3.0,
-     3.0
-    ],
-    "MUSIC 140": [
-     0.5,
-     0.5
-    ],
-    "MUSIC 143": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 146": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 147": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 148": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 230": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 231": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 232": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 233": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 240": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 241": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 242": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 120": [
-     3.0,
-     3.0
-    ],
-    "MUSIC 126": [
-     3.0,
-     3.0
-    ],
-    "MUSIC 160": [
-     2.0,
-     2.0
-    ],
-    "MUSIC 161": [
-     2.0,
-     2.0
-    ],
-    "MUSIC 162": [
-     2.0,
-     2.0
-    ],
-    "MUSIC 177": [
-     3.0,
-     3.0
-    ],
-    "MUSIC 204": [
-     1.0,
-     1.0
-    ],
-    "MUSIC 214": [
+    "MUSIC 125": [
      3.0,
      3.0
     ]
@@ -520,5 +416,5 @@
    "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
   }
  ],
- "read_run": "39063367252"
+ "read_run": 41012563119
 }

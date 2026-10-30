@@ -214,7 +214,7 @@
      },
      {
       "code": "MUSIC 125",
-      "units": null,
+      "units": 3.0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -236,41 +236,13 @@
    "No general education pattern or degree total is printed in this section."
   ]
  },
- "extracted_run": 41012563119,
+ "extracted_run": 41040709338,
  "reconciled": [
   {
    "field": "course_units",
    "was": null,
    "now": {
-    "FREN 101": [
-     5.0,
-     5.0
-    ],
-    "FREN 102": [
-     5.0,
-     5.0
-    ],
-    "FREN 103": [
-     5.0,
-     5.0
-    ],
-    "FREN 104": [
-     5.0,
-     5.0
-    ],
-    "ARTH 107": [
-     3.0,
-     3.0
-    ],
-    "ENGL 110": [
-     3.0,
-     3.0
-    ],
-    "LING 101": [
-     3.0,
-     3.0
-    ],
-    "HIST 170": [
+    "MUSIC 125": [
      3.0,
      3.0
     ]
@@ -278,5 +250,5 @@
    "words": "college-page-read runs 41007920360, 41007934919, 41008605528, 41008701146, 41010097745, 41010558303, 41011004508, 41011433297, 41011482188 (kb/program_requirements_units/glendale_community.json) (each course description's own line in the 2025-2026 PDF, number, title, units, then the body naming the course: '101 · FINANCIAL ACCOUNTING · 5.0 Units · ACCTG 101 ...', '298 · UNDERGRADUATE RESEARCH IN MICROBIOLOGY AND MOLECULAR BIOLOGY · 4.0 Units B I O L 2 9 8 ...', '131 · ADAPTED SELF DEFENSE · 1.0 Unit · PE 131 ...')"
   }
  ],
- "read_run": "39063367252"
+ "read_run": 41012563119
 }
