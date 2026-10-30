@@ -15,12 +15,12 @@ Your moniker is **SkyJostaberry**. Session 525 (SkyTayberry) was the CPL Queue r
 - **S524's 8 prose totals were borrowed.** Page read 41025920825 (`kb/college_reads/glendale_unequal_sums.json`, free) printed the pages: S524's `before` cut each page at its first list, which belongs to the page's first program, so Computer Support Technician took IT Technician II's 32, the Advanced ESL Business and Health pair took 21 and Grip and Lighting (an 8-to-16-unit certificate) took 18-20. None of the four prints a total.
 - **The fill reads from the record's own heading** (`_heading_end` in `kb/_program_requirements_reconcile.py`: letters and digits only, case kept) to the next list; a heading the page does not print fills nothing. Guard: `program_requirements_pilot_test` (the page-97 shape, the letter-spaced ESL heading).
 - **Rolled back:** the 8 filed records restored from 59938a29; the live rows through `supabase-migrate.yml` run 41027518131 with S524's own receipt rollback (`kb/receipts/program_requirement_records_glendale_prose_total_rollback_s525.{sql,json}`), read back live: 8 rows, no total, run 41012563119. Glendale live: **105 equal, 74 incomplete, 47 unequal**.
-- **Reconcile 41028129478** (free, the fixed step) was dispatched at 08:41Z to fill the totals the pages do print. Its outcome is under *Open work* 1.
+- **Reconcile 41028129478** (free, the fixed step) was dispatched at 08:41Z to fill the totals the pages do print. It filed no record change (*Open work* 1).
 - Lessons: `docs/program_requirements_harvest_lessons.md` *S525*. Lane: Glendale's line. Memory: `harvest-prose-total-starts-at-heading-2026-10-30` (supersedes S524's row).
 
 ## Open work, in order
 
-1. **#2576 and reconcile 41028129478.** RECONCILE_STATE
+1. **#2576 and reconcile 41028129478.** Reconcile 41028129478 (08:41-08:48Z) filed no record change: under the heading-scoped step no empty-total Glendale record's own section prints a prose total, so there was nothing to reread. S525 merged #2576 once `test` passed; if it is still open, mark it ready, wait for `test` on the newest head and squash-merge.
 2. **IT Technician II 36598/36599 and III 36600/36601.** The pages print 10 courses "to a total of 32" and 13 to 42; the records sum 31 and 38 (BUSAD 204 reads 1 unit; CS/IS 187 is unpriced). Read BUSAD 204's and CS/IS 187's descriptions before any step.
 3. **Grip and Lighting 44572:** FTVM 132 and 137 carry no units; the description windows (S523) may hold them.
 4. **Unix-Linux 19366:** its heading prints "UNIX/LINUX"; a read with that keyword shows its list.

@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T08:43:40Z",
+  "written_at": "2026-10-30T08:51:34Z",
   "session": 525,
   "moniker": "SkyTayberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
   "handoff": "docs/session_526_handoff.md",
   "next_step": {
-    "title": "Check the reconcile's Glendale totals against their pages, then reread",
-    "text": "Reconcile 41028129478 refilled Glendale's prose totals from each program's own heading. Compare every figure it filed with its page before any reread; then IT Technician II and III, where the pages print 32 and 42 and the records sum 31 and 38."
+    "title": "IT Technician II and III at Glendale",
+    "text": "The pages print 10 courses to a total of 32 and 13 to 42; the records sum 31 and 38. Read BUSAD 204's and CS/IS 187's descriptions before any step. Reconcile 41028129478 with the heading-scoped total step filled nothing, so nothing waits to be reread."
   },
   "calls": [
     {

@@ -1037,6 +1037,8 @@ lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_arc
   "UNIX/LINUX", which the plan's keyword missed.
 - **Lesson: verify a fill's figures against the page before the reread, not the count.** S524 checked which records
   changed; none of the 8 was compared with its own page, and a borrowed figure looks like a found one.
+- **Reconcile 41028129478 with the fixed step filled nothing:** no empty-total record's own section prints a prose
+  total, so the 33 with none stay incomplete for want of a printed figure, not a reading.
 
 ## S524 SkyCranberry (2026-10-30, the CPL Queue routine): Glendale's prose totals, 8 records from incomplete to unequal
 

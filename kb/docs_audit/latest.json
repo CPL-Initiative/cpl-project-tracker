@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1328,
-    "bytes": 13456450,
+    "bytes": 13456946,
     "over_budget": 2,
     "handoff_max": 526,
     "always_loaded_files": 1,
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2481340,
+        "bytes": 2481545,
         "over": 1
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 443483,
+        "bytes": 443466,
         "over": 1
       },
       "handoff": {
         "files": 495,
-        "bytes": 3551731,
+        "bytes": 3552039,
         "over": 0
       }
     },
@@ -63,7 +63,7 @@
     },
     "vault": {
       "files": 25085,
-      "bytes": 3976384325,
+      "bytes": 3976384794,
       "heavy_bytes": 2814136115,
       "heavy_share": 0.708,
       "ignore_filters": [
@@ -156,26 +156,26 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 120959,
+        "bytes": 121164,
         "limit": 120000,
         "lane": "lessons",
-        "over_by": 959,
+        "over_by": 1164,
         "ratio": 1.01
       },
-      "message": "120,959 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "message": "121,164 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/program_requirements_harvest_lessons.md"
     },
     {
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 20029,
+        "bytes": 20012,
         "limit": 20000,
         "lane": "roadmap_lane",
-        "over_by": 29,
+        "over_by": 12,
         "ratio": 1.0
       },
-      "message": "20,029 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "message": "20,012 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
       "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
