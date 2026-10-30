@@ -486,6 +486,48 @@ BLOCKS.push((async function () {
   }
 })());
 
+// ── The editor's own button saves (Sam, 2026-10-30) ────────────────────────
+//
+// It read "Done" and only closed the editor. Sam picked "Nobody" on four tabs
+// and pressed Done on 2026-10-28 and -29; the server logs hold no write after
+// either visit, because the change sat in the draft until "Save the menu" and a
+// reload discarded it. His words: "The way I save is by clicking Done, which
+// should be labeled save".
+BLOCKS.push((async function () {
+  const w = makeWin({ nav: [] });
+  const api = w.CPL_ADMIN_TAB;
+  const root = w.document.getElementById("admin-root");
+  await api._loadGates();
+  await new Promise((r) => setTimeout(r, 20));
+  api._ensureDraft();
+  api._state.editKey = "vis:sierra-training";
+  api.render(root);
+  const btn = root.querySelector("[data-editdone]");
+  check("the ladder's button reads Save", btn && btn.textContent.trim() === "Save");
+  check("no editor button reads Done any more", !/data-editdone>Done</.test(root.innerHTML));
+
+  // Nothing changed: the button closes and writes nothing.
+  btn.click();
+  await new Promise((r) => setTimeout(r, 20));
+  check("Save with nothing changed closes the editor and writes nothing",
+    api._state.editKey === null &&
+    w.__fetches.filter((f) => /cobi_nav/.test(f.url) && f.init.method === "POST").length === 0);
+
+  // Pick Nobody, then press Save: the change reaches the table.
+  api._state.editKey = "vis:sierra-training";
+  api.render(root);
+  const nobody = root.querySelector('[data-visset="sierra-training"][value="nobody"]');
+  nobody.checked = true;
+  nobody.dispatchEvent(new w.Event("change", { bubbles: true }));
+  root.querySelector("[data-editdone]").click();
+  await new Promise((r) => setTimeout(r, 50));
+  const post = w.__fetches.filter((f) => /cobi_nav/.test(f.url) && f.init.method === "POST")[0];
+  const row = post && JSON.parse(post.init.body).filter((r) => r.key === "sierra-training")[0];
+  check("picking Nobody and pressing Save writes the row hidden", !!row && row.hidden === true);
+  check("and the page says it saved", /Saved\. The menu updated for everyone/.test(root.innerHTML));
+  check("and nothing is left waiting", api._state.dirty === false && api._state.editKey === null);
+})());
+
 // ── The save PAYLOAD, which is where it actually broke (Sky158) ─────────────
 //
 // Every save 400'd for two days and the table stayed empty while the tab looked
