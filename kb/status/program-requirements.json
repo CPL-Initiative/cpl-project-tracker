@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T12:49:43Z",
-  "session": 527,
-  "moniker": "SkyLoganberry",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-10-30T13:30:00Z",
+  "session": 528,
+  "moniker": "SkyMulberry",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_528_handoff.md",
+  "handoff": "docs/session_529_handoff.md",
   "next_step": {
-    "title": "Los Angeles Valley, the next largest gap",
-    "text": "Glendale is parked under Sam's stopping rule (its to-do names what restarts it). Read Los Angeles Valley's unpriced codes and one failing record against its catalog page before any step: 114 of 204 pass."
+    "title": "Sam's Sheet 143 ruling: printed list units",
+    "text": "Read the 44 records the printed-units reading would stop passing against their pages, then change the scorer with a guard test, rescore and apply with a receipt. Glendale stays parked; Los Angeles Valley is the next college."
   },
   "calls": [
     {
@@ -148,6 +148,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-30T13:00:00Z",
+      "text": "Glendale: 15 of the unequal records read against their pages; Foreign Languages reread into its two printed lists (receipt committed). Sam ruled on Open Asks Sheet 143 card 2 that a list's printed units count; the scorer change follows a read of the 44 records it would stop passing."
+    },
     {
       "at": "2026-10-30T12:55:00Z",
       "text": "Sam's stopping rule: a college whose last two sessions each moved fewer than 3% of its programs to passing is parked, with a to-do naming what restarts it. Glendale is parked at 115 of 226. A to-do's card now offers Mark done, which the next scheduled session reads first."

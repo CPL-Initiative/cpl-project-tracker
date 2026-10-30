@@ -13,8 +13,8 @@
   "repeated": 0,
   "outcomes": 0
  },
- "cost_usd": 20.11,
- "cost_per_program": 0.0773,
+ "cost_usd": 20.13,
+ "cost_per_program": 0.0774,
  "not_found": [
   {
    "control_number": "11147",
@@ -80,5 +80,5 @@
    }
   }
  ],
- "run": "41049220135"
+ "run": "41055650373"
 }

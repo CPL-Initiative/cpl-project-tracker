@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-497 document(s).
+498 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 529 | [Session 529 handoff: Glendale's unequal sums read against their pages; Sheet 143 asks which number a printed list counts](../session_529_handoff.md) | 2026-10-30 |
 | 528 | [Session 528 handoff: Glendale parked at 115 of 226 under Sam's stopping rule; Mark done alerts the queue](../session_528_handoff.md) | 2026-10-30 |
 | 527 | [Session 527 handoff: Glendale's description parser reads 70 more courses; 110 of 226 pass](../session_527_handoff.md) | 2026-10-30 |
 | 526 | [Session 526 handoff: S524's Glendale prose totals were borrowed; rolled back, and the fill starts at the heading](../session_526_handoff.md) | 2026-10-30 |

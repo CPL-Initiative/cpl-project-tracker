@@ -923,6 +923,39 @@ S445 SkyCurrant (a shared page per heading, MiraCosta's degree lists, Palomar's 
 lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_archive_3.md`, and S446 SkyMadrone
 (a degree-and-certificate address, 91 records) since the S523 compaction.
 
+## S528 SkyMulberry (2026-10-30, Sam's session): Glendale's unequal sums against their pages; which number a printed list counts
+
+- **Of Glendale's 46 unequal records, 29 price every course** (a query of each record's placed courses with no units). The
+  other 17 carry unpriced courses (CS/IS 187, ETH S 102 and 124, PSYCH 131, ACCTG 155-156, ABSE 186-187, CABOT 206-208 and
+  others), so their gap is a missing price, item 3's work.
+- **Two free page reads** (41054044039, pp73-84, `glendale_unequal_pages_73_84`; 41055644846, pp67-91 printed of the
+  67-123 span, `glendale_unequal_pages_67_123`) put five kinds of gap in the catalog's words:
+  - **The catalog's own arithmetic, faithful records, no step:** Photography A.S./certificate 02575 and 21318 ("requires
+    18 units" over eight required and one of four, all 3.0, so 27; the page's Digital Photography (21) and A.A. (18)
+    beside it add up); Digital Content Specialist 42738 and 35029 ("requires 23 units", seven 3.0 courses, 21);
+    Biotechnology 41767 and 41776 (BIOL 50 is 1-4 units and the record carries 1; the page prints "(3-4 units)" over two
+    4.0 courses).
+  - **A conditional elective:** the French, Italian, Japanese and Spanish pairs print "If 20 units have not been reached in
+    the required core, select one" (3 units). The core is 20, so the elective adds nothing; 18-20 is the family's shared
+    wording. The scorer has no rule for a condition, and none is worth one for eight records.
+  - **A misread, fixed:** Foreign Languages 39406 flattened "2 courses from one language (10 units) and 2 or more from a
+    different language (8-10 units)" into one choose-4 block. `force=39406` (41055650373, one model call) extracted two
+    blocks with those figures; reread 41057000899 replaced the one row (receipt
+    `kb/receipts/program_requirement_records_college_reread_glendale_community_41057000899.json`, read back live). It still
+    sums 12-20: the next point.
+  - **A printed block figure the scorer does not read:** `block_units` takes a choose-courses block's printed units only
+    when a course is unpriced, so a list with a 3-unit course among 5-unit ones (Armenian 125-127, Spanish 131) or 1-unit
+    piano workshops in "Select one course (2 units)" (Music A.S. 02572, 21315) carries the low end under the page.
+- **Measured statewide, no write** (`kb/_block_total_reading_measure.py`, the filed records): the printed figure standing
+  in moves 218 unequal and 27 incomplete to equal (59 colleges) and 44 equal to unequal (26), mostly lists that print a
+  floor ("Select one course (4 units minimum)", Contra Costa 46301). Only where the courses can make it and the list says
+  no "minimum": 91 gain, 30 lose. Sam ruled the scorer's last reading narrow (Sheet 120), so this is Open Asks Sheet 143
+  card 2, held for him.
+- **A page read prints about 25 pages.** The 67-123 span printed through p91; Civil Engineering (p100), Advanced ESL
+  (p102) and the transfer degrees (pp116-123) are still unread. Keep a span under 25 pages.
+- **Lesson: sort the unequal by whether every course is priced before reading any page.** The priced ones are the
+  reading's; the rest are a units step.
+
 ## S527 SkyLoganberry (2026-10-30, the CPL Queue routine): the state's C-numbers name no code in their body
 
 - **Glendale's C-numbered descriptions print no code after the units.** "C1000 · INTRODUCTION TO STATISTICS · 4.0 Units ·

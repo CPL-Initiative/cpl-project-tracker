@@ -654,7 +654,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/program_course_graph.json` | none found | committed by: `program-course-fetch.yml` |
 | `kb/program_requirements_college` | none found | committed by: `program-requirements-college.yml` |
 | `kb/program_requirements_college/*/capture.json` | scripts: `kb/_build_commons_status.py` | — |
-| `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_build_commons_status.py` | — |
+| `kb/program_requirements_college/*/records/*.json` | scripts: `kb/_block_total_reading_measure.py`, `kb/_build_commons_status.py` | — |
 | `kb/program_requirements_maps_sample.json` | scripts: `kb/_program_requirements_pilot.py` | — |
 | `kb/program_requirements_pilot/map_cr_by_course.json` | scripts: `kb/_build_roep_display.py` | — |
 | `kb/program_requirements_pilot/records/*.json` | scripts: `kb/_build_commons_status.py` | — |
@@ -1222,4 +1222,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 103 Supabase tables · 43 RPCs · 11 edge functions · 729 file
-datasets · 191 external services · 482 consumers · 58 workflows · 38 tabs.
+datasets · 191 external services · 483 consumers · 58 workflows · 38 tabs.

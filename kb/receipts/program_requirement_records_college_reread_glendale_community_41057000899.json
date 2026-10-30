@@ -1,0 +1,437 @@
+{
+ "college": "Glendale Community College",
+ "reread_run": "41057000899",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "41055650373",
+ "at": "2026-10-30T12:41:27Z",
+ "posted": 1,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "02570",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "02587",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "12571",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "15584",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19269",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "19562",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "24010",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30032",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30561",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "30813",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "31597",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "32738",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36155",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "36596",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "41825",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44774",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45057",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45393",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45394",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45395",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45396",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45397",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45399",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45596",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45681",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45682",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45854",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "45996",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46004",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46050",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46051",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46052",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46053",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "46054",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 1,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "39406"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 0,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Glendale Community College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 41055650373;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 30,
+    "placed": 30,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "Required Courses",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ARMEN 101",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARMEN 102",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARMEN 115",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARMEN 116",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARMEN 117",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARMEN 125",
+        "units": 3.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARMEN 126",
+        "units": 3.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ARMEN 127",
+        "units": 3.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHIN 101",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHIN 102",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FREN 101",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FREN 102",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FREN 103",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FREN 104",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 101",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 102",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 103",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ITAL 104",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPAN 101",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPAN 102",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPAN 103",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "JAPAN 104",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KOREA 101",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "KOREA 102",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 101",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 102",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 103",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 104",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 115",
+        "units": 5.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "SPAN 131",
+        "units": 3.0,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 4,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "demonstrate increased reading and listening comprehension of the target languages",
+      "utilize oral and written communicative skills to produce the target languages",
+      "demonstrate increased knowledge of the target languages’ cultures."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 20,
+      "min": 18
+     },
+     "degree_total": {
+      "max": null,
+      "min": null
+     },
+     "section_heading": "Foreign Languages",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 20,
+   "total_min": 18,
+   "source_url": "https://www.glendale.edu/academics/catalogs/_documents/2025-2026-gcc-catalog.pdf#page=76",
+   "catalog_year": "2025-2026",
+   "extracted_run": 41040709338,
+   "program_title": "Foreign Languages",
+   "control_number": "39406"
+  }
+ ]
+}

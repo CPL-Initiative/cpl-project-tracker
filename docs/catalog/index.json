@@ -16262,8 +16262,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 497,
+   "count": 498,
    "docs": [
+    {
+     "created": "2026-10-30",
+     "governs": [],
+     "n": 529,
+     "path": "docs/session_529_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "glendale",
+      "decision-sheet"
+     ],
+     "title": "Session 529 handoff: Glendale's unequal sums read against their pages; Sheet 143 asks which number a printed list counts",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24766,5 +24782,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1317
+ "total": 1318
 }
