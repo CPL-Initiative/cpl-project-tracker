@@ -19,7 +19,7 @@ Your moniker is **SkyMulberry**. Session 527 (SkyLoganberry) was the CPL Queue r
 
 ## Open work, in order
 
-0. **At the start, read `queue_todo_done`** (scheduled_sessions, step 5): a to-do Sam marked done is your first item.
+0. **If you are the night's first firing, dispatch the dashboard run** (scheduled_sessions step 0). Then **read `queue_todo_done`** (scheduled_sessions, step 5): a to-do Sam marked done is your first item.
 1. **Land #2581** (the stopping rule, Glendale's to-do and Mark done) if it is still open: `test` green on its head, then squash-merge.
 2. **Glendale is parked** (Sam's stopping rule, 2026-10-30): its to-do `glendale-parked-2026-10-30` on the Progress view names what restarts it. Do no Glendale work unless that to-do is marked done.
 3. **The next largest gap: Los Angeles Valley College**, 114 of 204 passing (90 failing; then Monterey Peninsula 87, Las Positas 85, De Anza 84). Run the unpriced-codes query for it and read one failing record against its page before any step. Apply the stopping rule from here on: two sessions under 3% each parks a college.
@@ -31,6 +31,8 @@ Your moniker is **SkyMulberry**. Session 527 (SkyLoganberry) was the CPL Queue r
 
 - **The stopping rule** (2026-10-30, ~12:20Z, *"good to go with 3"*, after *"I want to automate everything but not at all costs..."*): park a college whose catalog stops paying for itself and list what a person could do to restart it. The session proposed 1% a session and then found 1% would not park Glendale (5 of 226 is 2.2%); it set **3%** on his intent and says so on the to-do. Reply to reverse.
 - **A to-do list on the Catalog Commons that shows on Sam's to-dos, with Mark done alerting the queue** (same exchange). Built in #2581: the call carries `todo_id`; Mark done writes `queue_todo_done` (reviewers only, insert-only); the next scheduled session reads it first.
+
+- **The dashboard run starts from the routine** (2026-10-30, *"go on 1"*; *"I want to be sure the cron doesn't fire up today in the middle of our big CPL summit from 9-12"*): GitHub has created this repo's scheduled runs 5 to 7 hours late since at least Sep 20, before the routine existed, so the routine is not the cause. Now the night's first firing dispatches `daily-dashboard.yml` (scheduled_sessions step 0), and the workflow's new `gate` job makes each cron stand down once the UTC day has a successful run. Sam's 12:44Z run makes today's crons stand down through the Summit. The sturdier option, a Cloudflare Worker cron on `cpl-proxy`, waits on a GitHub token only Sam can create.
 
 ## Read first
 
