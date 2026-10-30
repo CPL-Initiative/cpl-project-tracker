@@ -47,7 +47,7 @@
       "key": "workflow:map-custom-report-load.yml",
       "kind": "cadence",
       "label": "MAP Custom Report load (staging)",
-      "detail": "Scheduled: 40 13 * * *",
+      "detail": "Scheduled: 57 4 * * *",
       "where": ".github/workflows/map-custom-report-load.yml"
     },
     {

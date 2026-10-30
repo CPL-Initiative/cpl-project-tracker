@@ -1,14 +1,14 @@
 {
-  "scraped_at": "2026-10-29T18:35:11.802900+00:00",
+  "scraped_at": "2026-10-30T12:48:16.743684+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 30403,
-    "star_colleges": 68
+    "jst": 30750,
+    "star_colleges": 70
   },
-  "computed_star_colleges": 68,
+  "computed_star_colleges": 70,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 296,
@@ -17,8 +17,8 @@
     },
     "Santiago Canyon College": {
       "vets": 288,
-      "jst": 168,
-      "star": false
+      "jst": 374,
+      "star": true
     },
     "Chaffey College": {
       "vets": 182,
@@ -62,7 +62,7 @@
     },
     "Cabrillo College": {
       "vets": 102,
-      "jst": 185,
+      "jst": 186,
       "star": true
     },
     "Merced College": {
@@ -157,7 +157,7 @@
     },
     "Sierra College": {
       "vets": 326,
-      "jst": 329,
+      "jst": 330,
       "star": true
     },
     "Mt. San Jacinto College": {
@@ -178,6 +178,11 @@
     "Glendale Community College": {
       "vets": 196,
       "jst": 227,
+      "star": true
+    },
+    "Mission College": {
+      "vets": 158,
+      "jst": 173,
       "star": true
     },
     "Los Angeles Trade Technical College": {
@@ -208,11 +213,6 @@
     "Cerro Coso Community College": {
       "vets": 115,
       "jst": 190,
-      "star": true
-    },
-    "Mission College": {
-      "vets": 158,
-      "jst": 173,
       "star": true
     },
     "Victor Valley College": {
@@ -255,6 +255,11 @@
       "jst": 220,
       "star": true
     },
+    "Rio Hondo College": {
+      "vets": 172,
+      "jst": 130,
+      "star": true
+    },
     "Lemoore College": {
       "vets": 61,
       "jst": 20,
@@ -262,7 +267,7 @@
     },
     "East Los Angeles College": {
       "vets": 637,
-      "jst": 237,
+      "jst": 236,
       "star": false
     },
     "San Jose City College": {
@@ -455,11 +460,6 @@
       "jst": 8,
       "star": false
     },
-    "Rio Hondo College": {
-      "vets": 172,
-      "jst": 2,
-      "star": false
-    },
     "Moorpark College": {
       "vets": 179,
       "jst": 237,
@@ -477,7 +477,7 @@
     },
     "Grossmont College": {
       "vets": 415,
-      "jst": 634,
+      "jst": 645,
       "star": true
     },
     "Los Angeles City College": {
@@ -497,7 +497,7 @@
     },
     "Sacramento City College": {
       "vets": 203,
-      "jst": 118,
+      "jst": 119,
       "star": false
     },
     "Cuyamaca College": {
