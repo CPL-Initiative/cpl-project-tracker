@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/receipts/program_requirement_records_glendale_prose_total_rollback_s525.sql",
+ "name": "s525_glendale_prose_total_rollback",
+ "version": "20261030084022",
+ "sha256": "0eddfe0422a3f6b18025ede636c7b74f4eaf9b96d193c97320287682017030da",
+ "run": "41027518131",
+ "status": 201,
+ "response": "[{\"control_number\":\"02551\",\"total_min\":null,\"extracted_run\":41012563119},{\"control_number\":\"11143\",\"total_min\":null,\"extracted_run\":41012563119},{\"control_number\":\"11163\",\"total_min\":null,\"extracted_run\":41012563119},{\"control_number\":\"19366\",\"total_min\":null,\"extracted_run\":41012563119},{\"control_number\":\"19555\",\"total_min\":null,\"extracted_run\":41012563119},{\"control_number\":\"44360\",\"total_min\":null,\"extracted_run\":41012563119},{\"control_number\":\"44484\",\"total_min\":null,\"extracted_run\":41012563119},{\"control_number\":\"44572\",\"total_min\":null,\"extracted_run\":41012563119}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
