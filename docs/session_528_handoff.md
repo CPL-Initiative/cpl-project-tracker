@@ -1,5 +1,5 @@
 ---
-title: "Session 528 handoff: Glendale's C-numbered courses priced; 115 of 226 pass"
+title: "Session 528 handoff: Glendale parked at 115 of 226 under Sam's stopping rule; Mark done alerts the queue"
 date: 2026-10-30
 session: 527 (SkyLoganberry, the CPL Queue routine)
 tags: [handoff, program-requirements, glendale]
@@ -19,16 +19,20 @@ Your moniker is **SkyMulberry**. Session 527 (SkyLoganberry) was the CPL Queue r
 
 ## Open work, in order
 
-1. **Land #2578.** Mark it ready, wait for `test` on the newest head, squash-merge. The runner's filing and receipt commits sit on the branch; if one is the head it has no checks, so push the next real change rather than an empty commit.
-2. **The 46 unequal sums.** Read one program's page against its record before any `force=` re-extraction (under the $40 go). The IT Technician pair and Unix-Linux are settled.
-3. **Glendale's still-unpriced codes.** Rerun the query (each placed course whose `units` is null, by code). Left: noncredit STV and ESL courses at 0 units (right to stay unpriced in a units record), the `+` and `EH` MATH codes (MATH 103E+, 103EH, 104EH, 100+, 102+, 112+), CABOT 208, ACCTG 110, SPCH 105-120, FIRE 107-151, ART 101-102. A `parse_units` read with those numbers as keywords is the cheap first step.
+0. **If you are the night's first firing, dispatch the dashboard run** (scheduled_sessions step 0). Then **read `queue_todo_done`** (scheduled_sessions, step 5): a to-do Sam marked done is your first item.
+1. **Land #2581** (the stopping rule, Glendale's to-do and Mark done) if it is still open: `test` green on its head, then squash-merge.
+2. **Glendale is parked** (Sam's stopping rule, 2026-10-30): its to-do `glendale-parked-2026-10-30` on the Progress view names what restarts it. Do no Glendale work unless that to-do is marked done.
+3. **The next largest gap: Los Angeles Valley College**, 114 of 204 passing (90 failing; then Monterey Peninsula 87, Las Positas 85, De Anza 84). Run the unpriced-codes query for it and read one failing record against its page before any step. Apply the stopping rule from here on: two sessions under 3% each parks a college.
 4. **Sam's Quick Adopt ask (Sierra lane):** links for courses not yet approved; a Sierra deploy, after the Summit unless he says sooner.
 5. **Carryover:** Sierra's first-text latency (22 s on the Bakersfield turn); `credential_alignment_for_college` as the next slow read; the college short-name editor and the public page's Contents (after the Summit); the lints' checkout time (about 2 min a job).
 6. **Library queue:** nothing new (the IACA regenerate names no change and no sources; the two noncredit notes describe a summit that has passed).
 
 ## Sam's decisions this run
 
-None; Sam was not in this session.
+- **The stopping rule** (2026-10-30, ~12:20Z, *"good to go with 3"*, after *"I want to automate everything but not at all costs..."*): park a college whose catalog stops paying for itself and list what a person could do to restart it. The session proposed 1% a session and then found 1% would not park Glendale (5 of 226 is 2.2%); it set **3%** on his intent and says so on the to-do. Reply to reverse.
+- **A to-do list on the Catalog Commons that shows on Sam's to-dos, with Mark done alerting the queue** (same exchange). Built in #2581: the call carries `todo_id`; Mark done writes `queue_todo_done` (reviewers only, insert-only); the next scheduled session reads it first.
+
+- **The dashboard run starts from the routine** (2026-10-30, *"go on 1"*; *"I want to be sure the cron doesn't fire up today in the middle of our big CPL summit from 9-12"*): GitHub has created this repo's scheduled runs 5 to 7 hours late since at least Sep 20, before the routine existed, so the routine is not the cause. Now the night's first firing dispatches `daily-dashboard.yml` (scheduled_sessions step 0), and the workflow's new `gate` job makes each cron stand down once the UTC day has a successful run. Sam's 12:44Z run makes today's crons stand down through the Summit. The sturdier option, a Cloudflare Worker cron on `cpl-proxy`, waits on a GitHub token only Sam can create.
 
 ## Read first
 
@@ -42,4 +46,4 @@ None; Sam was not in this session.
 
 ## Let go
 
-S527 holds no PR subscription, check-in or artifact watch. #2578 is open as a draft; the next session drives it. The CPL Queue routine (`trig_01L8K64ZKYb5eALdT4HW6NAV`) fires again at 12:12Z and 13:12Z.
+S527 holds no PR subscription, check-in or artifact watch. #2578 merged (20be9ced); #2581 is the session's last PR. The CPL Queue routine (`trig_01L8K64ZKYb5eALdT4HW6NAV`) fires again at 12:12Z and 13:12Z.

@@ -175,8 +175,12 @@ def faults(q, root=ROOT, parts=None):
         # Where Sam answers it (Sam, 2026-10-13, on his phone: "if there are open questions I
         # can address for any, add a link on those card to where I can answer those"). S380's
         # three calls carried none, so the cards named a question with nowhere to tap.
-        need(bool(c.get("link") or c.get("view") or c.get("records")),
-             w + " needs a place to answer it: a link (the sheet card), a view, or the records it names")
+        need(bool(c.get("link") or c.get("view") or c.get("records") or c.get("todo_id")),
+             w + " needs a place to answer it: a link (the sheet card), a view, the records it names, or a todo_id")
+        # A to-do Sam marks done on its card (S527, Sam 2026-10-30): the key queue_todo_done_add takes.
+        if c.get("todo_id") is not None:
+            need(isinstance(c.get("todo_id"), str) and bool(re.match(r"^[a-z0-9][a-z0-9-]{1,80}$", c.get("todo_id") or "")),
+                 w + ".todo_id must be lower-case letters, digits and hyphens (the key queue_todo_done takes)")
         # The part whose card carries the call's answer link, beside the side column's card.
         if c.get("part") is not None:
             known_parts = parts if parts is not None else part_ids()

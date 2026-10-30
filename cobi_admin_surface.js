@@ -424,7 +424,8 @@ window.COBI_ADMIN_SURFACE = {
         "program_record_verdicts",
         "program_requirement_records",
         "program_source_addenda",
-        "program_source_registry"
+        "program_source_registry",
+        "queue_todo_done"
       ],
       "writes": [],
       "rpcs": [],

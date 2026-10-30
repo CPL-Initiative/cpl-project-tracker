@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-30T12:52:49Z",
+ "written_at": "2026-10-30T13:06:53Z",
  "rows": [
   {
    "key": "requirements",
@@ -128,7 +128,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-30T12:48:30Z",
+    "at": "2026-10-30T13:02:53Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,7 +140,7 @@
     "records": 2688,
     "records_stamped": 1869,
     "saved_at": "2026-10-29T14:43:54Z",
-    "fold_at": "2026-10-30T12:48:30Z",
+    "fold_at": "2026-10-30T13:02:53Z",
     "map_titles": 4859,
     "unclassified": 456,
     "left_map": 621,
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-30T12:50:44+00:00",
+    "at": "2026-10-30T13:05:07+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-30T12:48:28Z",
+    "at": "2026-10-30T13:02:52Z",
     "every_hours": 24
    },
    "facts": {

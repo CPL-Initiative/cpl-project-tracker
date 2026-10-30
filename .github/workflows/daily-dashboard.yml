@@ -20,7 +20,37 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
+  # A scheduled run stands down when the day (UTC) already has a successful run (S527, Sam, 2026-10-30:
+  # the cron "could give sierra problems" firing mid-Summit, and GitHub creates these runs 5-7 hours
+  # late). The first CPL Queue firing each night dispatches the run on time (scheduled_sessions, step 0),
+  # so the three crons are backstops that run only when nothing has. A dispatch always runs. If the
+  # lookup itself fails, the run goes ahead, as before.
+  gate:
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read
+    outputs:
+      run: ${{ steps.check.outputs.run }}
+    steps:
+      - id: check
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT" != "schedule" ]; then echo "run=true" >> "$GITHUB_OUTPUT"; exit 0; fi
+          today=$(date -u +%F)
+          n=$(gh run list -R "$GITHUB_REPOSITORY" --workflow daily-dashboard.yml --status success \
+                --created ">=$today" --limit 20 --json databaseId -q 'length' 2>/dev/null || echo "")
+          if [ -n "$n" ] && [ "$n" -gt 0 ]; then
+            echo "A successful run already exists for $today ($n): this scheduled run stands down."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
   update-dashboard:
+    needs: gate
+    if: needs.gate.outputs.run == 'true'
     runs-on: ubuntu-latest
     permissions:
       contents: write

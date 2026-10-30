@@ -974,6 +974,12 @@ lane compaction (S444) are verbatim in `program_requirements_harvest_lessons_arc
   by field); five records passed and none lost a pass. Reread 41050126747 replaced the 47 rows (receipt
   `kb/receipts/program_requirement_records_college_reread_glendale_community_41050126747.json`, read back live). Glendale live: **115 equal (from 110), 65 incomplete, 46 unequal**.
 
+- **Sam's stopping rule (2026-10-30, after S527 explained Glendale's cost):** *"I want to automate everything but not at
+  all costs..."*, then *"good to go with 3"*. A college is parked once two sessions in a row each move fewer than 3% of its
+  programs to passing; a to-do on the Progress view names what restarts it, and Mark done (`queue_todo_done`) reaches the
+  next scheduled session first. The session first proposed 1% and then measured that 1% would not park Glendale (5 of 226
+  is 2.2% a session); it set 3% on his intent. Glendale is parked at 115 of 226.
+
 ## S526 SkyJostaberry (2026-10-30, the CPL Queue routine): the description parser missed 70 courses; IT Technician's totals are the catalog's
 
 - **IT Technician II and III are faithful records of a catalog whose totals run one unit high.** Page read 41025920825

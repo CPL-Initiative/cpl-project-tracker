@@ -8,7 +8,7 @@ status: current
 
 # You are Session 529
 
-Your moniker is **SkyKiwiberry**. Session 528 (SkyMulberry) was a session Sam opened by hand at 12:00Z on 2026-10-30, Summit day, after the 11:12Z firing (S527) had merged #2578. This is a **full checkpoint**: the run wrote a data receipt (one Glendale reread) and published a decision sheet. It skipped `kb/README.md`, `README.md` and the pipeline view (none moved), and no KB note crossed the bar. The 12:12Z routine firing had not started by 12:55Z; S528's #2579 carries a writer note for it.
+Your moniker is **SkyKiwiberry**. Session 528 (SkyMulberry) was a session Sam opened by hand at 12:00Z on 2026-10-30, Summit day, after the 11:12Z firing (S527) had merged #2578. This is a **full checkpoint**: the run wrote a data receipt (one Glendale reread) and published a decision sheet. It skipped `kb/README.md`, `README.md` and the pipeline view (none moved), and no KB note crossed the bar. S527 kept working with Sam in parallel and merged #2581 (the stopping rule; Glendale parked) at 13:16Z; this handoff follows its handoff 528.
 
 ## What shipped (PR #2579, open: draft until `test` passes)
 
@@ -19,12 +19,13 @@ Your moniker is **SkyKiwiberry**. Session 528 (SkyMulberry) was a session Sam op
 
 ## Open work, in order
 
-1. **Sam ruled Sheet 143 at 12:58Z, both his own call:** card 2 *printed* (a choose-courses list's printed units count), card 1 *later* (carried to Sheet 144, built, not published). Carry out card 2 as proposed: read the 44 records that would stop passing (`python3 kb/_block_total_reading_measure.py` names them) against their pages, then change `block_units` in `kb/_program_requirements_score.py` with a guard test, rescore, and apply with a receipt. Land #2579 and its vault twin: mark ready, wait for `test` on the newest head, squash-merge the tracker PR first, then the vault PR.
-2. **Glendale's still-unpriced codes** (the 17 unequal records with unpriced courses, and the incomplete ones): the plus-suffixed MATH codes, CABOT 206-208, ACCTG 110 and 155-156, CS/IS 180-187, ETH S 102 and 124, PSYCH 131, ABSE 186-187. A `parse_units` read with them as keywords first.
-3. **The unequal pages S528 left unread:** Biotechnology Lab Assistant (p92), Civil Engineering (p100), Advanced ESL (p102), the transfer degrees (pp116-123). A page read prints about 25 pages, so one read per span under that.
-4. **Sam's Quick Adopt ask (Sierra lane):** links for courses not yet approved; a Sierra deploy, after the Summit unless he says sooner.
-5. **Carryover:** Sierra's first-text latency (22 s on the Bakersfield turn); `credential_alignment_for_college` as the next slow read; the college short-name editor and the public page's Contents (after the Summit); the lints' checkout time (about 2 min a job).
-6. **Library queue:** nothing new.
+0. **If you are the night's first firing, dispatch the dashboard run** (scheduled_sessions step 0). Then **read `queue_todo_done`** (step 5): a to-do Sam marked done is your first item.
+1. **Sam ruled Sheet 143 at 12:58Z, both his own call:** card 2 *printed* (a choose-courses list's printed units count, statewide), card 1 *later* (carried to Sheet 144, built, not published). Carry out card 2 as proposed: read the 44 records that would stop passing (`python3 kb/_block_total_reading_measure.py` names them) against their pages, then change `block_units` in `kb/_program_requirements_score.py` with a guard test, rescore, and apply with a receipt. Land #2579, CPLBrain#554 (after it) and #2582 (the Fact Sheet) if still open: `test` green on the newest head, then squash-merge.
+2. **Glendale is parked** (Sam's stopping rule, S527, #2581): its to-do `glendale-parked-2026-10-30` names what restarts it. Do no Glendale work unless that to-do is marked done; S528's reads of its unequal pages (lessons *S528*) stand ready for that day.
+3. **The next largest gap: Los Angeles Valley College**, 114 of 204 passing (then Monterey Peninsula, Las Positas, De Anza). Run the unpriced-codes query, sort the unequal by whether every course is priced (lessons *S528*), and read one failing record against its page before any step. Two sessions under 3% each parks a college.
+4. **Sierra and the funding data (Sam, 10-30, held for his go):** she reads the funding FAQ and the vault note's max awards, never an institution's conditions, JST figure or Funds Qualified So Far. S528's proposal: `scripts/funding_sierra_note.js` writes one section per institution with those (the public page's own figures; `cpl_funding_performance.js` `vet_jst`, the anon participation and coordinator reads), and the vault's funding-note workflow re-indexes it. The internal tab's reviewer-only data stays out of her shared corpus unless a card rules otherwise.
+5. **Sam's Quick Adopt ask (Sierra lane):** links for courses not yet approved; a Sierra deploy, after the Summit unless he says sooner.
+6. **Carryover:** Sierra's first-text latency (22 s on the Bakersfield turn); `credential_alignment_for_college` as the next slow read; the college short-name editor and the public page's Contents (after the Summit); the lints' checkout time (about 2 min a job).
 
 ## Sam's decisions this run
 
