@@ -101,6 +101,11 @@ button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inhe
 .edit { font: inherit; font-size: clamp(19px, 2.2vw, 23px); font-weight: 600; color: var(--text-strong); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; width: 100%; min-width: 0; }
 .edit-sm { font: inherit; font-size: 14px; color: var(--text-body); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 8px; width: 100%; min-width: 0; }
 .fieldrow { display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: center; font-size: 14px; color: var(--text-muted); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; font-size: 15px; }
+.filters .lbl { font-size: 13px; color: var(--text-muted); }
+.filters .w[aria-pressed="true"] { color: var(--text-strong); font-weight: 600; text-decoration-thickness: 3px; text-decoration-color: var(--seal-blue-text); }
+.filters .n { color: var(--text-muted); font-weight: 400; }
+.empty { font-size: 15px; color: var(--text-muted); }
 .finder { position: relative; display: grid; gap: 4px; }
 .results { list-style: none; margin: 0; padding: 4px 0; position: absolute; top: 100%; left: 0; right: 0; z-index: 2; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; max-height: 320px; overflow-y: auto; }
 .results button { display: grid; gap: 2px; width: 100%; text-align: left; background: none; border: 0; padding: 8px 12px; font: inherit; color: var(--text-body); cursor: pointer; }
@@ -208,6 +213,16 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
             </table>
           </div>
 
+          <div class="filters" role="group" aria-label="Filter by CER step">
+            <span class="lbl">CER step</span>
+            <button class="w" type="button" data-filter="" aria-pressed="true">All <span class="n">468</span></button>
+            <button class="w" type="button" data-filter="Proposed" aria-pressed="false">Proposed <span class="n">401</span></button>
+            <button class="w" type="button" data-filter="Wording check" aria-pressed="false">Wording check <span class="n">36</span></button>
+            <button class="w" type="button" data-filter="Two issuers" aria-pressed="false">Two issuers <span class="n">13</span></button>
+            <button class="w" type="button" data-filter="Conflict with the reference" aria-pressed="false">Conflict with the reference <span class="n">18</span></button>
+            <button class="w" type="button" data-filter="Saved, not folded" aria-pressed="false">Saved, not folded <span class="n">0</span></button>
+          </div>
+
           <div class="finder">
             <label class="small muted" for="find-exhibit">Go to an exhibit</label>
             <input class="search" id="find-exhibit" type="search" autocomplete="off" placeholder="Title, exhibit ID, college or course code" aria-controls="find-results">
@@ -242,6 +257,7 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
               <span id="rc-next"></span>
             </div>
           </div>
+          <p class="empty" id="rc-empty" hidden>Nothing waits in this step tonight.</p>
         </div>
       </div>
 
@@ -437,22 +453,29 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
     { id: "MAPICI-1RO&-1-001", college: "Palo Verde College", typed: "1st Receiver Ops & Decon", course: "FST 121", ident: "M-ID ESCI M10HI", title: "First Receiver Operations & Decontamination for Healthcare", issuer: "", students: "Too few students to show", why: "the classifier alone was unsure (0.75); no issuer yet", step: "Proposed" },
     { id: "MAPCxH-3DMH-1-001", college: "Norco College", typed: "3D Digital Modeling HS-CNUSD", course: "GAM 6A", ident: "M-ID MULT M1019", title: "3D Digital Modeling", issuer: "Corona-Norco Unified School District", students: "No students with credit yet", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
     { id: "MAPCXS-A2-J-1-001", college: "Copper Mountain College, Modesto Junior College and Norco College", typed: "ADJU 232 - Juvenile Justice Procedures - Credit by Exam", course: "ADJ 8 (C-ID AJ 220, Juvenile Procedures)", ident: "the reference, reviewed by a person", title: "Juvenile Law and Procedures", issuer: "California Community Colleges", students: "Too few students to show", why: "the saved title disagrees with the reference", step: "Conflict with the reference", saved: "Saved by map@rccd.edu, 2026-06-02, as Juvenile Justice Procedures" },
-    { id: "MAPCXH-ATMI-1-001", college: "Santa Ana College", typed: "Automotive Technology MLR I & II - Irvine High School", course: "AUTO 102 (M-ID AUTO M9040, Introduction to Automotive)", ident: "the reference, reviewed by a person", title: "Automotive Technology Maintenance and Light Repair (MLR)", issuer: "Irvine High School", students: "No students with credit yet", why: "the saved title disagrees with the reference", step: "Conflict with the reference", saved: "Saved by map@rccd.edu, 2026-06-02, as Automotive Technology MLR I and II \u2014 Irvine High School" }
+    { id: "MAPCXH-ATMI-1-001", college: "Santa Ana College", typed: "Automotive Technology MLR I & II - Irvine High School", course: "AUTO 102 (M-ID AUTO M9040, Introduction to Automotive)", ident: "the reference, reviewed by a person", title: "Automotive Technology Maintenance and Light Repair (MLR)", issuer: "Irvine High School", students: "No students with credit yet", why: "the saved title disagrees with the reference", step: "Conflict with the reference", saved: "Saved by map@rccd.edu, 2026-06-02, as Automotive Technology MLR I and II \u2014 Irvine High School" },
+    { id: "MAPCXS-A2PA-1-001", college: "Merritt College", typed: "ADJUS 23 Principles and Procedures of the Justice System", course: "ADJUS 023", ident: "", title: "Principles and Procedures of the Justice System", issuer: "California Community Colleges", students: "No students with credit yet", why: "the reference names POST as this title's issuer", step: "Two issuers" }
   ];
   /* What each CER step means, in one or two plain sentences (the chip's hover). */
   var TIPS = {
     "Proposed": "A rule or the classifier suggested a title, but not surely enough to save it. It waits for a person to keep, change or edit it.",
     "Wording check": "The suggested title is likely right, but a word in it failed a quality check: a leftover course code, a dangling word or a method word. A person confirms it.",
+    "Two issuers": "The suggested title would join this exhibit to a credential the reference gives another issuer. A person decides whether they are one credential or two.",
     "Saved, not folded": "A person or a rule saved a title. The nightly run adds it to the reference.",
     "Conflict with the reference": "The title saved for this exhibit disagrees with one a person already approved. The nightly run never overwrites a person's decision, so it waits for you.",
     "In the reference": "Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.",
     "Left MAP": "The exhibit no longer appears in MAP. Keep its title for the record or retire it."
   };
   var MAP = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?View=Non-Military&Exhibit=";
-  var cur = 0;
+  var cur = 0, filter = "";
+  var COUNTS = { "": 468, "Proposed": 401, "Wording check": 36, "Two issuers": 13, "Conflict with the reference": 18, "Saved, not folded": 0 };
   function $(id) { return document.getElementById(id); }
+  function shown() { return HELD.filter(function (h) { return !filter || h.step === filter; }); }
   function load(i) {
-    cur = i; var h = HELD[i];
+    var list = shown();
+    $("review-card").hidden = !list.length; $("rc-empty").hidden = !!list.length;
+    if (!list.length) return;
+    cur = Math.max(0, Math.min(i, list.length - 1)); var h = list[cur];
     $("rc-step").textContent = "CER step: " + h.step;
     $("rc-step").setAttribute("data-tip", TIPS[h.step] || "");
     $("rc-step").setAttribute("aria-label", "CER step: " + h.step + ". " + (TIPS[h.step] || ""));
@@ -463,37 +486,39 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
     $("rc-from").textContent = "Proposed title, from " + (h.ident || "the classifier") + " (edit it here)";
     $("proposed-title").value = h.title;
     $("proposed-issuer").value = h.issuer;
-    $("rc-why").textContent = h.students + " · " + h.why;
+    $("rc-why").textContent = h.students + " \u00b7 " + h.why;
     $("rc-source").textContent = h.id + " in MAP";
     $("rc-source").href = MAP + encodeURIComponent(h.id);
-    $("rc-pos").textContent = (i + 1) + " of 468 · most students first";
-    var n = HELD[i + 1];
+    $("rc-pos").textContent = (cur + 1) + " of " + COUNTS[filter] + (filter ? " in " + filter : "") + " \u00b7 most students first";
+    var n = list[cur + 1];
     $("rc-next").textContent = n ? "Next: " + n.typed + ", " + n.college : "";
   }
   function results(q) {
-    var list = $("find-results"); list.innerHTML = "";
+    var box = $("find-results"); box.innerHTML = "";
     q = q.trim().toLowerCase();
-    if (!q) { list.hidden = true; return; }
-    var hits = HELD.map(function (h, i) { return [h, i]; }).filter(function (p) {
+    if (!q) { box.hidden = true; return; }
+    var list = shown();
+    var hits = list.map(function (h, i) { return [h, i]; }).filter(function (p) {
       var h = p[0];
       return [h.typed, h.id, h.college, h.course, h.title].join(" ").toLowerCase().indexOf(q) !== -1;
     });
     if (!hits.length) {
-      var li = document.createElement("li"); li.className = "none"; li.textContent = "No held exhibit matches. Credentials search covers the settled ones.";
-      list.appendChild(li);
+      var li = document.createElement("li"); li.className = "none";
+      li.textContent = filter ? "No held exhibit in " + filter + " matches." : "No held exhibit matches. Credentials search covers the settled ones.";
+      box.appendChild(li);
     }
     hits.forEach(function (p) {
       var h = p[0], li = document.createElement("li"), b = document.createElement("button");
       b.type = "button"; b.setAttribute("role", "option");
       var t = document.createElement("span"); t.className = "rt"; t.textContent = h.typed;
-      var m = document.createElement("span"); m.className = "rm"; m.textContent = h.college + " · " + h.id + (h.course ? " · " + h.course : "");
+      var m = document.createElement("span"); m.className = "rm"; m.textContent = h.college + " \u00b7 " + h.id + (h.course ? " \u00b7 " + h.course : "");
       var c = document.createElement("span"); c.className = "chip"; c.textContent = h.step; c.title = TIPS[h.step] || "";
       var row = document.createElement("span"); row.className = "chiprow"; row.appendChild(m); row.appendChild(c);
       b.appendChild(t); b.appendChild(row);
-      b.addEventListener("click", function () { load(p[1]); $("find-exhibit").value = ""; list.hidden = true; $("proposed-title").focus(); });
-      li.appendChild(b); list.appendChild(li);
+      b.addEventListener("click", function () { load(p[1]); $("find-exhibit").value = ""; box.hidden = true; $("proposed-title").focus(); });
+      li.appendChild(b); box.appendChild(li);
     });
-    list.hidden = false;
+    box.hidden = false;
   }
   $("find-exhibit").addEventListener("input", function (e) { results(e.target.value); });
   $("find-exhibit").addEventListener("keydown", function (e) {
@@ -501,7 +526,15 @@ tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
     if (e.key === "Escape") { $("find-results").hidden = true; }
   });
   document.querySelectorAll("[data-step]").forEach(function (b) {
-    b.addEventListener("click", function () { load((cur + 1) % HELD.length); });
+    b.addEventListener("click", function () { var n = shown().length; load(n ? (cur + 1) % n : 0); });
+  });
+  document.querySelectorAll("[data-filter]").forEach(function (b) {
+    b.addEventListener("click", function () {
+      filter = b.getAttribute("data-filter");
+      document.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      $("find-exhibit").value = ""; $("find-results").hidden = true;
+      load(0);
+    });
   });
   load(0);
 })();
