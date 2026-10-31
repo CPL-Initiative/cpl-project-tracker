@@ -187,7 +187,7 @@ Guards: `tests/exhibits_rules.test.js`, `tests/cer_procedures_test.py`.
 The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.
 
 **NEXT:** (0) Sam's run through *Another look*; read his saves after it (`unified_title_supersedes` rows) and the next
-fold's `revise` and `credential_moves`; move the panel rows the receipt names. (1) Sam's naming calls (2026-10-31): *narrow* the ASE issuer fill to the certification titles, and *content first*
-for the sweep's ASE proposals (course words, then the test in parentheses). (2) IB on the AP pattern, then
+fold's `revise` and `credential_moves`; move the panel rows the receipt names. (1) Sam's ASE naming call (asked 2026-10-31; *narrow* landed in #2626): on **ASE short**, the sweep's ASE rule proposes
+the test's name with a short tag, *Engine Performance (ASE A8)*. (2) IB on the AP pattern, then
 CLEP's official names. (3) The Catalog's *Courses that may align*, once a source names courses. (4) Training sites for
 a held title new to the reference, and the *Held titles by group* table, only if Sam asks.
