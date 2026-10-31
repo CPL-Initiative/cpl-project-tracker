@@ -16283,7 +16283,15 @@
     var holder = document.getElementById("cplFundTable");
     if (holder) {
       var f = captureTableFocus(holder);
+      // The table scrolls inside its own wrap, and the redraw replaces the wrap, so its scroll went back to the
+      // top and carried the clicked row out of view (Sam, 2026-10-30, on the public page: clicking a row's
+      // "Confirmation submitted" chip made "the college rows and chips disappear"; measured, Santa Ana's row
+      // moved from 392px to 3,966px down). The new wrap takes the old one's scroll.
+      var w0 = holder.querySelector(".cplfund-tablewrap");
+      var top = w0 ? w0.scrollTop : 0, left = w0 ? w0.scrollLeft : 0;
       holder.innerHTML = tableHtml();
+      var w1 = holder.querySelector(".cplfund-tablewrap");
+      if (w1) { w1.scrollTop = top; w1.scrollLeft = left; }
       restoreTableFocus(holder, f);
     }
     updateCount();

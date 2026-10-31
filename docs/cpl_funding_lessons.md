@@ -689,6 +689,20 @@ Verbatim from `docs/reference/lanes/implementation-funding.md`, to bring it unde
 - **The email (Sam, about 19:58Z: *"when the map team accepts, can it send a confirmation email to the requester?"*):** Accept already opens a filled-in draft to the requester (`openConfirmMail()`); COBI holds no mail service. An automatic send needs a sender RCCD IT authorizes (Microsoft 365 send-as for map@rccd.edu, or a mail service's DNS records on rccd.edu) and is COBI's first message to a college, so it is Open Asks Sheet 146 card 3.
 - **Sam, in chat (about 19:55Z):** *"The sunshining of the funding dash today at the summit went great, btw:)"* (`cpl_memory` `sam-funding-dash-summit-sunshine-2026-10-30`).
 
+## S531 SkyOlallieberry (2026-10-30, Sam's session): a row click kept its place in the table
+
+- **Sam, on the public page:** clicking a row's "Confirmation submitted" chip made *"the college rows and chips
+  disappear"*. Then, trying Coalinga again: *"it doesn't disappear like I thought, just relocates your view to the
+  top of the list and makes it look like it vanishes."*
+- **Cause:** a click anywhere on a row opens its drill-in, and `refreshTable()` replaces the table's scrolling wrap
+  (`.cplfund-tablewrap`, its own 675px scroll box), so the new wrap started at the top. Chromium, the live waiting
+  requests seeded: Santa Ana's row moved from 392px to 3,966px down. jsdom kept all 118 rows, because it holds no
+  scroll position; only a real browser showed it.
+- **Fix (#2600):** the redraw hands the old wrap's scroll to the new one; R4 in `cpl_funding_optin.test.js` gives
+  jsdom elements a scroll position and fails without it.
+- **Lesson: "it disappeared" after a redraw can be a scroll reset.** Measure the row's position before and after in
+  a real browser before hunting a crash.
+
 ## Moved from the lane (S530)
 
 ✅ **Sam's phone asks of 2026-10-29 (S518, #2558):** one narrated video from the Contents (`n2.html?full=1`, opening filling the window), its row Play, Full screen and the way back to the public page, the film pages Light; the header lighter on a phone. Detail: [the film's README](../../../prototype/funding_video/README.md), *The page on a phone (S518)*. **Open, Sam's call:** an address without github.io (handoff 509 item 2).
