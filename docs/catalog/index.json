@@ -16338,8 +16338,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 503,
+   "count": 504,
    "docs": [
+    {
+     "created": "2026-10-31",
+     "governs": [],
+     "n": 535,
+     "path": "docs/session_535_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "los-angeles-valley",
+      "monterey-peninsula",
+      "display-build"
+     ],
+     "title": "Session 535 handoff: Los Angeles Valley parks at 202 of 215; Monterey Peninsula next",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-31",
      "governs": [],
@@ -24945,5 +24962,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1327
+ "total": 1328
 }
