@@ -530,3 +530,29 @@ articulated or the course it already teaches. The lane file states the design; t
   the dispatched daily run lands.
 - **The a11y seed should open what the build adds.** The Credentials seed now opens a college chip, so the box is measured
   at 390 to 1440 in both themes.
+
+## 2026-10-31 — the AP rule, the Catalog's faculty review list, and two false absences (SkyElderberry)
+
+**What shipped.** #2612 (the Commons' CER row opens Exhibits through `#exhibits/held`, `/conflict` and `/credentials`),
+#2613 (the Credential Catalog's *Worth a faculty review*, 28 Credential Engine credentials MAP has no exhibit for),
+#2614 (Sam's AP rule from the Exhibits tab, built into `brand-family`: an AP title takes College Board's official exam
+name) and #2615 (the IT/AI catalog's MAP join needs the issuer to agree). The lane file states the design; this keeps
+the learning.
+
+- **A "not in MAP" mark is a lead, never an absence.** The IT/AI catalog marked 39 Credential Engine credentials *not in
+  MAP*; a hand check of each against the reference's titles and issuers found 11 in MAP, the mock-up's own example (CAPM)
+  among them. The join was IT-first and skipped an IT issuer's other titles. The page reads a committed hand check, and
+  the catalog's join now reads it too (cpl_memory `it-ai-catalog-not-in-map-missed-11-2026-10-31`).
+- **A quality gate's word list collides with official names.** The run's `residue()` reads a trailing *a* as a dangling
+  connective, so seven sure answers of *AP Computer Science A* (0.94 to 0.98) waited on Needs you under *Wording check*.
+  An official exam name now stands as written. Check a gate against names that end in a letter or a number.
+- **Read the held reasons before writing a new rule.** Sam asked for a rule for AP titles; one already existed
+  (`brand-family`). The miss was its decoration stripper (dash clauses, HISTORICAL Type notes, course and high school
+  codes) and its target (whatever twin the reference held). Grouping the 19 held exam titles by reason found both in one read.
+- **"Close enough" is a ruling, and it sets the defaults.** Sam: *"folding the locals under as best as is possible--it
+  will be close enough and infinitely better than it is now--even if its a little wrong"*. So missing letters take
+  Calculus AB and Computer Science A, and an AB subscore reads as Calculus AB, the credit it carries. Only a title naming
+  two exams is held.
+- **The reference holds the same twins the queue does.** 74 local titles sit under non-official AP twins (*AP U.S.
+  History*, *AP Calculus BC — AB Subscore*, *AP Physics 1*), 46 stamped. The rule settles the queue; the reference fold
+  re-keys reviewed entries and waits on Open Asks Sheet 149.
