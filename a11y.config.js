@@ -721,7 +721,9 @@ async function seedExhibits(page, theme) {
 
 // Seeds the Exhibits tab's Credentials view (the credential panel, Sheet 147 step 2): the table, a
 // credential's panel open beside it, and one more training site row, so the select, the site box and
-// Remove are measured. The live rows are out of reach here, which paints the fallback note too.
+// Remove are measured. The live rows are out of reach here, which paints the fallback note too. Since
+// step 3 a college chip is opened too (a could-adopt one where the credential has it), so the box of
+// what a college articulated or teaches, Exhibit Adoption's cell panel folded in, is measured.
 async function seedExhibitsCredentials(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits") location.hash = "exhibits"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
@@ -738,6 +740,11 @@ async function seedExhibitsCredentials(page, theme) {
   });
   await page.waitForFunction(() => document.getElementById("exh-c-add"), null, { timeout: 30000 });
   await page.evaluate(() => document.getElementById("exh-c-add").click());
+  await page.waitForTimeout(300);
+  await page.evaluate(() => {
+    const chips = document.querySelectorAll("#exh-cpanel button.exh-cchip");
+    if (chips.length) chips[chips.length - 1].click();
+  });
   await page.waitForTimeout(300);
 }
 

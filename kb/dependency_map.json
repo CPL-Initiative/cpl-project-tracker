@@ -4,7 +4,7 @@
   "supabase_tables": 103,
   "rpcs": 44,
   "edge_functions": 11,
-  "file_datasets": 736,
+  "file_datasets": 737,
   "external_services": 192,
   "consumers": 488,
   "workflows": 59,
@@ -1309,7 +1309,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 59,
+     "line": 64,
      "tabs": [
       "exhibits"
      ]
@@ -1543,7 +1543,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1825
+     "line": 1832
     }
    ],
    "main_committers": []
@@ -2086,7 +2086,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 882
+     "line": 889
     }
    ],
    "main_committers": []
@@ -2105,7 +2105,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1221
+     "line": 1228
     },
     {
      "id": "module:college_briefing.js",
@@ -4035,7 +4035,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1499
+     "line": 1506
     }
    ],
    "main_committers": []
@@ -5063,7 +5063,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1390
+     "line": 1397
     },
     {
      "id": "module:admin.js",
@@ -5931,7 +5931,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1764
+     "line": 1771
     },
     {
      "id": "module:college_briefing.js",
@@ -6125,7 +6125,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 936
+     "line": 943
     },
     {
      "id": "module:cpl_funding.js",
@@ -6543,7 +6543,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 52,
+     "line": 57,
      "tabs": [
       "exhibits"
      ]
@@ -9425,7 +9425,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 180
+     "line": 292
     }
    ],
    "producers": [
@@ -12012,7 +12012,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 188
+     "line": 302
     },
     {
      "id": "script:kb/_cred_rename_dryrun.py",
@@ -12090,7 +12090,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 186
+     "line": 300
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -13146,7 +13146,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 190
+     "line": 304
     }
    ],
    "producers": [
@@ -13160,6 +13160,34 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/exhibits_adoption.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 52,
+     "tabs": [
+      "exhibits"
+     ]
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:cer-procedures.yml",
+     "how": "commit"
+    },
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/exhibits_review.json": {
    "consumers": [
     {
@@ -13167,7 +13195,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 46,
+     "line": 50,
      "tabs": [
       "exhibits"
      ]
@@ -13177,7 +13205,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 48
+     "line": 62
     }
    ],
    "producers": [
@@ -13202,7 +13230,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 47,
+     "line": 51,
      "tabs": [
       "exhibits"
      ]
@@ -13212,7 +13240,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 49
+     "line": 63
     }
    ],
    "producers": [
@@ -16493,7 +16521,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 191
+     "line": 305
     },
     {
      "id": "script:kb/_fold_unclassified.py",
@@ -16600,7 +16628,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 181
+     "line": 293
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -16680,7 +16708,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 185
+     "line": 299
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -18960,7 +18988,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 183
+     "line": 295
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -19093,6 +19121,13 @@
      "direction": "write",
      "how": "literal",
      "line": 12878
+    },
+    {
+     "id": "script:kb/_build_exhibits_review.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 297
     }
    ],
    "producers": [
@@ -21415,7 +21450,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 184
+     "line": 296
     },
     {
      "id": "script:kb/_build_roep_display.py",
@@ -22127,7 +22162,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 186,
+     "line": 197,
      "tabs": [
       "exhibits"
      ]
@@ -24063,7 +24098,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 662,
+     "line": 705,
      "tabs": [
       "exhibits"
      ]
@@ -24073,7 +24108,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 214,
+     "line": 225,
      "tabs": [
       "exhibits"
      ]
@@ -26127,7 +26162,8 @@
     "kb/cer_classified.json",
     "kb/cer_procedures_out/saved",
     "kb/exhibits_review.json",
-    "kb/exhibits_review_courses.json"
+    "kb/exhibits_review_courses.json",
+    "kb/exhibits_adoption.json"
    ],
    "push": null,
    "deploys": [],
@@ -26559,6 +26595,7 @@
     "kb/unclassified_suggestions.json",
     "kb/exhibits_review.json",
     "kb/exhibits_review_courses.json",
+    "kb/exhibits_adoption.json",
     "kb/coci_title_corrections.json",
     "kb/coci_duplicate_control_numbers.json",
     "kb/cred_rename_dryrun/report.md",

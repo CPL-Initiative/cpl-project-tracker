@@ -101,7 +101,7 @@ jobs:
           git add kb/unclassified_preseed.json kb/cer_procedures_out/latest.json
           git add kb/cer_classified.json 2>/dev/null || true
           git add kb/cer_procedures_out/saved 2>/dev/null || true
-          git add kb/exhibits_review.json kb/exhibits_review_courses.json 2>/dev/null || true
+          git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

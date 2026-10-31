@@ -1,7 +1,7 @@
 ---
 title: "EACR — Exhibit & CR Adoption — lane state"
 created: 2026-08-28
-updated: 2026-09-25
+updated: 2026-10-31
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -16,6 +16,13 @@ related:
 > landed). Update it at every checkpoint that moves this lane.
 
 **What this lane is:** One place to see every exhibit, its credit recommendations, and the colleges that could adopt it.
+
+**Folding into the Exhibits tab (Sam, Open Asks Sheet 147 card 1, 2026-10-31).** The per-credential view lives in the
+Exhibits tab's credential panel since SkyBayberry's build (each college's credit lines and units, the course a
+could-adopt college already teaches, Request Quick Adopt; `kb/exhibits_adoption.json`; state in
+[`cer-procedures`](cer-procedures.md), *The redesign*). This tab stays for the college matrix and its statewide and college
+filters, its exports and Create Handout, until the public adoption page carries them; then it retires. Its 2026-09-24
+ruling travels with the fold: no could-adopt list on any screen comes from `potential_names` (the TOP and C-ID overlap).
 
 ## Status
 

@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 568,
+   "count": 569,
    "docs": [
     {
      "created": "2026-08-14",
@@ -1739,6 +1739,27 @@
      "title": "A fold at the label layer is not a fold \u2014 it hides the duplicate instead of resolving it",
      "type": "methodology",
      "updated": "2026-08-17"
+    },
+    {
+     "created": "2026-10-31",
+     "governs": [
+      "kb/_build_exhibits_review.py",
+      "exhibits.js",
+      "tests/exhibits_review_build_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-fold-carries-the-folded-tabs-rulings.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "ui",
+      "cer",
+      "eacr",
+      "rule-7",
+      "consolidation"
+     ],
+     "title": "A fold carries the folded tab's rulings, not only its data",
+     "type": "methodology",
+     "updated": "2026-10-31"
     },
     {
      "created": "2026-09-16",
@@ -15609,7 +15630,7 @@
      ],
      "title": "EACR \u2014 Exhibit & CR Adoption \u2014 lane state",
      "type": null,
-     "updated": "2026-09-25"
+     "updated": "2026-10-31"
     },
     {
      "created": "2026-08-28",
@@ -24891,5 +24912,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1324
+ "total": 1325
 }

@@ -15,6 +15,10 @@
 // What it reads:
 //   kb/exhibits_review.json          the held titles, written nightly by kb/_build_exhibits_review.py
 //   kb/exhibits_review_courses.json  the courses behind a could-adopt chip, fetched on the first click
+//   kb/exhibits_adoption.json        Exhibit Adoption's per-credential view (Sheet 147 step 3), read with the
+//                                    Credentials view: what each college articulated, the courses each
+//                                    could-adopt college already teaches, the exhibits, the field, the peer median
+//   map_links.js                     MAP's verified exhibits and who built each, for Request Quick Adopt
 //   exhibit_title_students()         students per title: an allowed reviewer only, k=10 applied in the
 //                                    database (the student-detail ADR), so this page never holds a count
 //                                    under ten. Without a reviewer sign-in the queue keeps the builder's
@@ -45,6 +49,7 @@
   var ROOT_ID = "exhibits-root";
   var DATA_URL = "kb/exhibits_review.json";
   var COURSES_URL = "kb/exhibits_review_courses.json";
+  var ADOPTION_URL = "kb/exhibits_adoption.json";
   var SUPABASE_URL = "https://hvuwhnbuahrtptokpqfh.supabase.co";
   var UNCLASS_PREFIX = "_UNCLASSIFIED::";
   var FIELD_TITLE = "unified_title_assignment";
@@ -79,7 +84,8 @@
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
     view: "review",
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null, q: "", sel: null, limit: CRED_PAGE,
-          drafts: {}, note: "", showTitles: false, showArt: false, showCould: false }
+          drafts: {}, note: "", showTitles: false, showArt: false, showCould: false, showRecords: false,
+          adopt: null, adoptErr: false, open: null, links: null }
   };
 
   function el(tag, attrs, kids) {
@@ -124,6 +130,11 @@
 
   /* ── the queue ── */
   function studentsOf(h) { return state.students ? state.students[h._i] : null; }
+  /* Could adopt names a college only with a course behind it: the aligned identity's, else one mapped to the
+     proposed credential (the builder's courses_key). A file built before 2026-10-31 carried Exhibit Adoption's
+     TOP and C-ID overlap as a fallback, off every screen since Sam's ruling of 2026-09-24 (Rule 7): never shown. */
+  function coursesKey(h) { return h.courses_key || (h.same ? h.aligned_id : ""); }
+  function couldOf(h) { return coursesKey(h) ? h.could || [] : []; }
   /* Most students first: a count of ten or more by its size, then the cells under ten, then none. */
   function rank(h) {
     var s = studentsOf(h);
@@ -362,26 +373,28 @@
     if (i == null) { box.hidden = true; return box; }
     var name = college(i);
     box.appendChild(el("h4", { text: name }));
-    var rows = h.same && state.courses && state.courses.courses[h.aligned_id]
-      ? state.courses.courses[h.aligned_id][String(i)] || [] : [];
+    var key = coursesKey(h);
+    var rows = key && state.courses && state.courses.courses[key] ? state.courses.courses[key][String(i)] || [] : [];
     var lead;
-    if (h.same && !state.courses && !state.coursesErr) lead = "Reading the courses…";
-    else if (h.same && state.coursesErr) lead = "The courses could not be read.";
-    else if (rows.length) lead = "Courses aligned to " + h.basis + " at this college:";
-    else if (h.basis) lead = "No course aligned to " + h.basis + " on file here; the college's faculty choose the course.";
-    else lead = "Exhibit Adoption lists this college; its faculty choose the course.";
+    if (!state.courses && !state.coursesErr) lead = "Reading the courses…";
+    else if (state.coursesErr) lead = "The courses could not be read.";
+    else if (rows.length && h.same) lead = "Courses aligned to " + h.basis + " at this college:";
+    else if (rows.length) lead = "Courses at this college mapped to " + h.title + ":";
+    else lead = "No course on file here; the college's faculty choose the course.";
     box.appendChild(el("p", { cls: "exh-muted", text: lead }));
-    if (rows.length) {
-      box.appendChild(el("ul", null, rows.map(function (r) {
-        var u = r[2] ? r[2] + (r[2] === 1 ? " unit" : " units") : "noncredit";
-        return el("li", { text: r[0] + " " + r[1] + ", " + u });
-      })));
-    }
+    if (rows.length) box.appendChild(courseList(rows));
     if (h.ids && h.ids.length) {
       var a = el("a", { href: mapUrl(h.ids[0]), target: "_blank", rel: "noopener", text: "Request Quick Adopt in MAP" });
       box.appendChild(el("p", null, [a, ", from " + h.ids[0] + ", " + shortList(whoBuilt(h)) + "’s exhibit"]));
     }
     return box;
+  }
+  /* [code, title, units] rows; a prescriptive course carries no title. */
+  function courseList(rows) {
+    return el("ul", null, rows.map(function (r) {
+      var u = r[2] ? r[2] + (r[2] === 1 ? " unit" : " units") : "noncredit";
+      return el("li", { text: [r[0], r[1]].filter(Boolean).join(" ") + ", " + u });
+    }));
   }
   function studentsLine(h) {
     var s = studentsOf(h);
@@ -456,14 +469,15 @@
     cc.appendChild(el("div", { cls: "exh-ccrow" }, [
       el("span", { cls: "exh-cl", text: "Articulated at (" + h.art.length + ")" }),
       chips(h.art, CHIP_MAX, state.showAllArt, function () { state.showAllArt = !state.showAllArt; render(); })]));
-    var basis = h.same ? ", same course as " + h.basis : ", from Exhibit Adoption";
+    var could = couldOf(h);
+    var basis = h.same ? ", same course as " + h.basis : ", teach a course mapped to it";
     cc.appendChild(el("div", { cls: "exh-ccrow" }, [
-      el("span", { cls: "exh-cl", text: "Could adopt (" + h.could.length + ")" + (h.could.length ? basis : "") }),
-      chips(h.could, CHIP_MAX, state.showAllCould, function () { state.showAllCould = !state.showAllCould; render(); },
+      el("span", { cls: "exh-cl", text: "Could adopt (" + could.length + ")" + (could.length ? basis : "") }),
+      chips(could, CHIP_MAX, state.showAllCould, function () { state.showAllCould = !state.showAllCould; render(); },
         function (i) {
           state.openCollege = state.openCollege === i ? null : i;
           render();
-          if (state.openCollege != null && h.same && !state.courses) loadCourses().then(render);
+          if (state.openCollege != null && !state.courses) loadCourses().then(render);
         })]));
     cc.appendChild(adoptPanel(h));
     c.appendChild(cc);
@@ -612,8 +626,37 @@
     if (r.served_suppressed) return { n: 5, word: "Too few" };
     return { n: 0, word: "None yet" };
   }
+  /* Exhibit Adoption's per-credential view (kb/exhibits_adoption.json): what each college articulated, the courses
+     each could-adopt college already teaches (the M-ID prescriptive layer; never the TOP or C-ID overlap), the
+     exhibits, the CIP sector and the peer median. Keyed by the canonical title. */
+  function credAdopt(r) {
+    var f = state.cs.adopt;
+    return f && f.credentials ? f.credentials[r.ut] || null : null;
+  }
+  function adoptName(i) { return ((state.cs.adopt && state.cs.adopt.colleges) || [])[+i] || ""; }
+  function adoptMap(m) {
+    var out = {};
+    Object.keys(m || {}).forEach(function (k) { var n = adoptName(k); if (n) out[n] = m[k]; });
+    return out;
+  }
+  /* Articulated at: the reference's colleges (a local course under the credential's identity) and, once the
+     file is read, every college MAP records articulating it (Exhibit Adoption's adopters, rows with no course
+     identity included). */
+  function credArt(r) {
+    var out = credColleges(r).slice();
+    Object.keys(adoptMap((credAdopt(r) || {}).a)).forEach(function (n) { if (out.indexOf(n) === -1) out.push(n); });
+    return out.sort();
+  }
+  /* Who could adopt it: the colleges teaching a mapped course, once the file is read; the articulating
+     colleges left out. */
+  function credCould(r) {
+    var a = credAdopt(r);
+    if (!a) return [];
+    var art = credArt(r);
+    return Object.keys(adoptMap(a.c)).filter(function (n) { return art.indexOf(n) === -1; }).sort();
+  }
   function credAdoption(r) {
-    var a = credColleges(r).length, c = (r.potential_colleges || []).length;
+    var a = credArt(r).length, c = credCould(r).length;
     var parts = [];
     if (a) parts.push(fmt(a) + (a === 1 ? " articulates it" : " articulate it"));
     if (c) parts.push(fmt(c) + " could adopt");
@@ -652,7 +695,7 @@
           || credName(a).toLowerCase().localeCompare(credName(b).toLowerCase());
       });
       cs.rows = rows; cs.generated = d._generated_at; cs.error = null;
-      return loadCredOverlay();
+      return Promise.all([loadCredOverlay(), loadAdoption(), loadLinks()]);
     }).then(function () { cs.loading = null; });
     return cs.loading;
   }
@@ -682,6 +725,33 @@
       });
       state.cs.overlay = m; state.cs.overlayOk = true;
     }).catch(function () { state.cs.overlayOk = false; });
+  }
+  function loadAdoption() {
+    var cs = state.cs;
+    if (cs.adopt) return Promise.resolve();
+    return fetch(ADOPTION_URL)
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) { cs.adopt = d && d.credentials ? d : null; cs.adoptErr = !cs.adopt; })
+      .catch(function () { cs.adopt = null; cs.adoptErr = true; });
+  }
+  /* MAP's verified exhibits and who built each (map_links.js reads kb/reference/map_cpl_opportunities_verified.json). */
+  function loadLinks() {
+    var L = window.CPL_MAP_LINKS;
+    if (!L || typeof L.load !== "function") return Promise.resolve();
+    return Promise.resolve(L.load()).then(function (ix) { state.cs.links = ix || null; }).catch(function () { state.cs.links = null; });
+  }
+  function linkUrl(id) {
+    var L = window.CPL_MAP_LINKS;
+    return L && typeof L.url === "function" ? L.url(id) : mapUrl(id);
+  }
+  /* The verified exhibits of a credential a college built, for its own Request Quick Adopt link. */
+  function builtBy(r, name) {
+    var ix = state.cs.links;
+    if (!ix || !ix.by_title) return [];
+    return (ix.by_title[r.ut] || []).filter(function (id) {
+      var f = ix.found[String(id).toUpperCase()];
+      return f && f.college === name;
+    });
   }
   function saveCredRow(sess, ut, field, value) {
     return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
@@ -733,7 +803,7 @@
   }
   function credOpen(ut) {
     var cs = state.cs;
-    cs.sel = ut; cs.note = ""; cs.showTitles = cs.showArt = cs.showCould = false;
+    cs.sel = ut; cs.note = ""; cs.showTitles = cs.showArt = cs.showCould = cs.showRecords = false; cs.open = null;
     render();
     var h = document.getElementById("exh-c-h");
     if (h) h.focus();
@@ -741,7 +811,7 @@
   /* The Review card's way in: the credential a held title joins. */
   function openCredential(ut) {
     state.view = "credentials"; state.cs.q = ""; state.cs.limit = CRED_PAGE;
-    state.cs.sel = ut; state.cs.note = "";
+    state.cs.sel = ut; state.cs.note = ""; state.cs.open = null;
     render();
     loadCredentials().then(function () { render(); var h = document.getElementById("exh-c-h"); if (h) h.focus(); });
   }
@@ -761,6 +831,35 @@
       tile("Training sites", cs.rows ? nSite : null, cs.rows ? rows.length : null, "credentials naming where the training happens",
         "Set them in a credential's panel", "Reading")]));
     return group;
+  }
+  /* What credit does it carry? and Who could adopt it? (mock-up version 26), counted over the reference's credentials. */
+  function credMoreTiles() {
+    var cs = state.cs, rows = cs.rows || [], n = cs.rows ? rows.length : null;
+    var recs = 0, statewide = 0, field = 0, adoptable = 0, shared = 0, could = 0;
+    rows.forEach(function (r) {
+      if (r.ccc_rec || r.gen_rec) recs++;
+      if (r.ccc_rec) statewide++;
+      var a = credAdopt(r);
+      if (a && a.s) field++;
+      if (credArt(r).length >= 2) shared++;
+      if (credCould(r).length) could++;
+      var ix = cs.links;
+      if (ix && ix.by_title && (ix.by_title[r.ut] || []).some(function (id) { return ix.found[String(id).toUpperCase()]; })) adoptable++;
+    });
+    var adoptWord = cs.adopt ? null : (cs.adoptErr ? "Could not be read" : "Reading");
+    var credit = el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "What credit does it carry?" }),
+      el("div", { cls: "exh-dash", role: "list", "aria-label": "What credit does it carry" }, [
+        tile("Credit recs", n == null ? null : recs, n, "credentials with a credit recommendation in MAP", "", "Reading"),
+        tile("Statewide recs", n == null ? null : statewide, n, "credentials with a statewide recommendation", "", "Reading"),
+        tile("Field", cs.adopt && n != null ? field : null, cs.adopt ? n : null, "credentials with a CIP sector", "", adoptWord)])]);
+    var adopt = el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "Who could adopt it?" }),
+      el("div", { cls: "exh-dash", role: "list", "aria-label": "Who could adopt it" }, [
+        tile("Adoptable", cs.links && n != null ? adoptable : null, cs.links ? n : null,
+          "credentials with an exhibit to Request Quick Adopt from", "", cs.rows ? "Not read" : "Reading"),
+        tile("Shared", n == null ? null : shared, n, "credentials two or more colleges articulate", "", "Reading"),
+        tile("Could adopt", cs.adopt && n != null ? could : null, cs.adopt ? n : null,
+          "credentials a college could adopt, teaching a mapped course", "", adoptWord)])]);
+    return el("div", { cls: "exh-groups" }, [credit, adopt]);
   }
   function credTable(list) {
     var cs = state.cs;
@@ -842,7 +941,7 @@
     if (also.length) called.appendChild(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
       + ". The Common Exhibit Reference edits a credential's other issuers." }));
     var fs = el("fieldset", { cls: "exh-sites" }, [el("legend", { cls: "exh-cl", text: "Training sites" })]);
-    var colleges = credColleges(r);
+    var colleges = credArt(r);
     if (!d.sites.length) fs.appendChild(el("p", { cls: "exh-muted exh-small", text: "None named" }));
     d.sites.forEach(function (x, k) { fs.appendChild(siteRow(r, d, k, colleges)); });
     fs.appendChild(el("p", { cls: "exh-muted exh-small", text: colleges.length
@@ -860,8 +959,11 @@
     var vars = (r.raw_variants || []).map(function (v) { return v.r; });
     var shownVars = cs.showTitles ? vars : vars.slice(0, 3);
     var lt = el("p", { cls: "exh-small" }, [el("span", { cls: "exh-cl", text: "Local titles: " }), shownVars.join(" · ") || "None"]);
-    if (vars.length > 3) lt.appendChild(word(cs.showTitles ? " Show fewer" : " and " + (vars.length - 3) + " more",
-      function () { cs.showTitles = !cs.showTitles; render(); }, { cls: "exh-w exh-small" }));
+    if (vars.length > 3) {
+      lt.appendChild(document.createTextNode(" "));
+      lt.appendChild(word(cs.showTitles ? "Show fewer" : "and " + (vars.length - 3) + " more",
+        function () { cs.showTitles = !cs.showTitles; render(); }, { cls: "exh-w exh-small" }));
+    }
     called.appendChild(lt);
     p.appendChild(called);
 
@@ -873,31 +975,98 @@
     dd("Discipline", r.disc_modal || "");
     var ids = (r.articulations || []).map(function (a) { return (a.sys ? a.sys + " " : "") + a.cid + (a.title ? ", " + a.title : ""); });
     dd("Courses", ids.slice(0, 3).join("; ") + (ids.length > 3 ? "; and " + (ids.length - 3) + " more" : ""));
+    var ad = credAdopt(r);
+    if (ad && ad.s) {
+      var sector = ((cs.adopt && cs.adopt.cip_sectors) || {})[ad.s];
+      dd("Field", "CIP " + ad.s + (sector ? ", " + sector : ""));
+    }
+    if (ad && ad.p) dd("Units", "The median articulating college awards " + fmt(ad.p) + (ad.p === 1 ? " unit" : " units"));
     credit.appendChild(dl);
+    if (ad && ad.x && ad.x.length) {
+      var recs = cs.showRecords ? ad.x : ad.x.slice(0, 3);
+      var xp = el("p", { cls: "exh-small" }, [el("span", { cls: "exh-cl", text: "Exhibits in MAP (" + ad.x.length + "): " })]);
+      recs.forEach(function (x, k) {
+        if (k) xp.appendChild(document.createTextNode(" · "));
+        xp.appendChild(el("span", { title: x[0], text: (x[1] || x[0]) + (x[2] ? ", " + fmt(x[2]) + (x[2] === 1 ? " unit" : " units") : "") }));
+      });
+      if (ad.x.length > 3) {
+        xp.appendChild(document.createTextNode(" "));
+        xp.appendChild(word(cs.showRecords ? "Show fewer" : "and " + (ad.x.length - 3) + " more",
+          function () { cs.showRecords = !cs.showRecords; render(); }, { cls: "exh-w exh-small" }));
+      }
+      credit.appendChild(xp);
+    }
     p.appendChild(credit);
 
     var adopt = el("div", { cls: "exh-block" }, [el("h4", { cls: "exh-q", text: "Who could adopt it?" })]);
     var st = credStudents(r);
     adopt.appendChild(el("p", { cls: "exh-small", text: st.n >= 10 ? st.word + " students with credit"
       : st.n ? "Too few students to show" : "No students with credit yet" }));
-    function names(label, list, all, toggle) {
+    /* A college chip opens what it articulated, or the course it already teaches, and the way to adopt in MAP
+       (Sam, 2026-10-30: "When college could adopt chips clicked they should open with the courses and Request
+       Quick Adopt links"). Exhibit Adoption's cell panel, folded in. */
+    function names(kind, label, list, all, toggle) {
       var box = el("span", { cls: "exh-cchips" });
-      if (!list.length) box.appendChild(el("span", { cls: "exh-muted", text: "None yet" }));
-      (all ? list : list.slice(0, CHIP_MAX)).forEach(function (n) { box.appendChild(el("span", { cls: "exh-cchip", title: n, text: shortName(n) })); });
+      if (!list.length) box.appendChild(el("span", { cls: "exh-muted", text: kind === "c" && !cs.adopt
+        ? (cs.adoptErr ? "Could not be read" : "Reading") : "None yet" }));
+      (all ? list : list.slice(0, CHIP_MAX)).forEach(function (n) {
+        var on = cs.open && cs.open.k === kind && cs.open.n === n;
+        var b = el("button", { type: "button", cls: "exh-cchip", title: n, "aria-controls": "exh-c-adopt",
+          "aria-expanded": on ? "true" : "false" }, [shortName(n)]);
+        b.addEventListener("click", function () { cs.open = on ? null : { k: kind, n: n }; render(); });
+        box.appendChild(b);
+      });
       if (list.length > CHIP_MAX) box.appendChild(word(all ? "Show fewer" : "and " + (list.length - CHIP_MAX) + " more", toggle, { cls: "exh-w exh-small" }));
       return el("div", { cls: "exh-ccrow" }, [el("span", { cls: "exh-cl", text: label + " (" + list.length + ")" }), box]);
     }
-    adopt.appendChild(names("Articulated at", colleges, cs.showArt, function () { cs.showArt = !cs.showArt; render(); }));
-    adopt.appendChild(names("Could adopt", r.potential_colleges || [], cs.showCould, function () { cs.showCould = !cs.showCould; render(); }));
-    adopt.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: "#exhibit-adoption", text: "Each college's courses, in Exhibit Adoption" })]));
+    var could = credCould(r);
+    adopt.appendChild(names("a", "Articulated at", colleges, cs.showArt, function () { cs.showArt = !cs.showArt; render(); }));
+    adopt.appendChild(names("c", "Could adopt", could, cs.showCould, function () { cs.showCould = !cs.showCould; render(); }));
+    if (ad && ad.w) adopt.appendChild(el("p", { cls: "exh-small exh-muted", text: fmt(ad.w) + (ad.w === 1 ? " college teaches" : " colleges teach")
+      + " a course under an identity that joins too many courses to name them; curating the identity names them." }));
+    adopt.appendChild(credAdoptBox(r, ad));
+    var L = window.CPL_MAP_LINKS;
+    if (L && typeof L.node === "function") adopt.appendChild(L.node(r.ut));
     p.appendChild(adopt);
     p.appendChild(el("p", { cls: "exh-small exh-muted" }, ["Its other issuers, discipline and title edits are in ",
       el("a", { href: "#credential-reference", text: "the Common Exhibit Reference" }), "."]));
     return p;
   }
+  function credAdoptBox(r, ad) {
+    var cs = state.cs, o = cs.open;
+    var box = el("div", { cls: "exh-adopt", id: "exh-c-adopt" });
+    if (!o) { box.hidden = true; return box; }
+    box.appendChild(el("h4", { text: o.n }));
+    if (!cs.adopt) {
+      box.appendChild(el("p", { cls: "exh-muted", text: cs.adoptErr ? "What each college articulated could not be read." : "Reading…" }));
+      return box;
+    }
+    if (o.k === "a") {
+      var got = adoptMap(ad && ad.a)[o.n];
+      if (got && got[1].length) {
+        box.appendChild(el("p", { cls: "exh-muted", text: "Articulated, " + fmt(got[0]) + (got[0] === 1 ? " unit" : " units") + " in all:" }));
+        box.appendChild(el("ul", null, got[1].map(function (l) { return el("li", { text: [l[0], l[1]].filter(Boolean).join(": ") }); })));
+      } else {
+        box.appendChild(el("p", { cls: "exh-muted", text: "Articulates it; MAP lists no credit recommendation line for this college." }));
+      }
+      var own = builtBy(r, o.n);
+      if (own.length) {
+        box.appendChild(el("p", null, ["Its exhibit in MAP, for others to Request Quick Adopt from: "].concat(own.slice(0, 3).map(function (id, k) {
+          return el("span", null, [k ? ", " : "", el("a", { href: linkUrl(id), target: "_blank", rel: "noopener", text: id })]);
+        }))));
+      }
+      return box;
+    }
+    var rows = adoptMap(ad && ad.c)[o.n] || [];
+    box.appendChild(el("p", { cls: "exh-muted", text: rows.length ? "Already teaches a course mapped to it:" : "No course on file here; the college's faculty choose the course." }));
+    if (rows.length) box.appendChild(courseList(rows));
+    box.appendChild(el("p", { cls: "exh-muted exh-small", text: "Request Quick Adopt from an exhibit a college built, below." }));
+    return box;
+  }
   function renderCredentials(wrap) {
     var cs = state.cs;
     wrap.appendChild(credTiles());
+    wrap.appendChild(credMoreTiles());
     wrap.appendChild(viewsNav());
     if (cs.error) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The credentials could not be read (" + cs.error + ")." })); return; }
     if (!cs.rows) { wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the credentials…" })); return; }
@@ -939,7 +1108,7 @@
     return el("nav", { cls: "exh-views", "aria-label": "Views" }, [
       v("review", "Review", state.data ? stepCount("") : null),
       v("credentials", "Credentials", state.cs.rows ? state.cs.rows.length : null),
-      el("a", { href: "#exhibit-adoption", text: "Adoption, in Exhibit Adoption" })]);
+      el("a", { href: "#exhibit-adoption", text: "The college matrix, in Exhibit Adoption" })]);
   }
 
   function render() {
@@ -1008,6 +1177,7 @@
     ".exh-muted { color:var(--text-muted); }",
     ".exh-small { font-size:.88rem; }",
     ".exh-group { display:grid; gap:8px; }",
+    ".exh-groups { display:grid; grid-template-columns:repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap:16px; min-width:0; }",
     ".exh-dash, .exh-steps { display:grid; grid-template-columns:repeat(auto-fill, minmax(150px, 1fr)); gap:10px; }",
     ".exh-tile { display:grid; gap:4px; align-content:start; padding:12px 14px; background:var(--surface); border:1px solid var(--border); border-radius:8px; min-width:0; }",
     ".exh-tl { font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; color:var(--text-muted); font-weight:600; }",
@@ -1127,7 +1297,7 @@
   function newVisit() {
     state.filter = ""; state.cur = 0; state.openCollege = null; state.teach = false; state.note = "";
     state.view = "review";
-    state.cs.q = ""; state.cs.sel = null; state.cs.limit = CRED_PAGE; state.cs.note = "";
+    state.cs.q = ""; state.cs.sel = null; state.cs.limit = CRED_PAGE; state.cs.note = ""; state.cs.open = null;
     render();
   }
   function boot() {
@@ -1145,6 +1315,7 @@
     boot: boot, render: render, load: load, loadStudents: loadStudents, ensureCss: ensureCss,
     _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS,
     loadCredentials: loadCredentials, openCredential: openCredential,
-    _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent, _credRows: credRows
+    _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent, _credRows: credRows,
+    _credCould: credCould
   };
 })();
