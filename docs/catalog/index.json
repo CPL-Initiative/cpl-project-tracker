@@ -13752,9 +13752,10 @@
       "cer",
       "eacr",
       "catalog-commons",
-      "exhibits"
+      "exhibits",
+      "adoption-page"
      ],
-     "title": "CER redesign handoff: Exhibit Adoption's per-credential view in the panel; could-adopt off the TOP overlap",
+     "title": "CER redesign handoff: the public adoption page built; its name and linking on Sheet 148",
      "type": null,
      "updated": ""
     },
