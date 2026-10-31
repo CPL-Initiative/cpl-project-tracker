@@ -54,7 +54,11 @@ sections, with Sam's words).
    CPL contact covers 49, the lead Initiator 5 more, the VPAA 6 more, and 6 have none of the four. Colleges average 5.8
    active Ambassadors (up to 16) in `map_college_users`, so advised: read his "Ambassador" step as MAP's primary CPL
    contact (one person, the one MAP routes student requests to), with all active Ambassadors only as the last resort;
-   the preview names which step chose each recipient. The tab's PII guard forbids these addresses today: a reviewer-only
+   the preview names which step chose each recipient. Sam then added the **CEO** (*"could go to the CEO...I think we may
+   have those emails in our dataset. I could get the list from the CO if not"*): `ceo_email` covers 70 of 124 and fills
+   none of the six with no contact, which are not funded institutions (Calbright College Credit, Cal State LA, Futuro
+   Health, Launch Apprenticeship, and the Credit listings of North Orange and San Diego Continuing Education). Every
+   funded college reaches someone before the CEO step; the CO's list would complete it. The tab's PII guard forbids these addresses today: a reviewer-only
    read is the build's first piece. Build on his reply; if none, put it on the next sheet.
 1. **Sam's ASE naming call, asked in chat (19:30Z):** the course title as the ASE test's name plus a short tag,
    *Engine Performance (ASE A8)*, with the level kept where a college teaches a sequence. On **ASE short**, change
