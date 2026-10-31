@@ -69,7 +69,12 @@ The whole ecosystem, end-to-end:
    title's pre-filled proposal, credentials with no issuer, and merges to
    confirm), **Procedures** (each rule in plain words, who set it and what it
    settled) and **Reference** (every credential and the industry credentials);
-   the tab opens on Needs you when the run held titles), a
+   the tab opens on Needs you when the run held titles), an **Exhibits** tab
+   (Sheet 147, 2026-10-31: one tab replacing the Common Exhibit Reference and
+   Exhibit Adoption as it grows; its **Review** queue first: each held title's
+   proposed canonical title, named by its aligned course where it has one,
+   saved with Keep Current Title or Change to Proposed Title, step tiles as
+   filters, and students per title for a reviewer), a
    **quick-start natural-language chat** widget on the first screen (Claude
    API classifies your prompt to one of the 11 tabs **and** can pre-pop the
    destination tab's filters — "review unclassified credentials" lands you

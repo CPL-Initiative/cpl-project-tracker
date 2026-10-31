@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "session": 531,
-  "moniker": "SkyGooseberry",
+  "moniker": "SkyRowanberry",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_532_handoff.md",
@@ -39,13 +39,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-31T00:33:44Z",
+  "written_at": "2026-10-31T01:31:26Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Build the Exhibits tab's Review queue",
-    "text": "Port the drawn Review card into one Exhibits tab in the Catalog Commons: the held titles with their aligned-course proposals, sorted by students holding credit, the step tiles as filters, Keep Current Title and Change to Proposed Title saving through the CER's existing path."
+    "title": "Read the first published Review queue, then build the credential panel",
+    "text": "After the daily run publishes kb/exhibits_review.json, read it and Sam's first saves from the Exhibits tab; then build the credential panel with issuer and training sites editable (Sheet 147 order, step 2)."
   },
   "changes": [
+    {
+      "at": "2026-10-31T01:31:21Z",
+      "text": "The Exhibits tab's Review queue: the drawn card of version 26 in COBI (#exhibits), its nightly builder, and the reviewer-only students function, k=10 in the database."
+    },
     {
       "at": "2026-10-31T00:06:00Z",
       "text": "Sam answered Open Asks Sheet 147 whole: one Exhibits tab with Review first, the high school and ROP rule, the adoption page on settled credentials in the CPL/AI look, the CPL-AI matching in the Program Requirements dialog."

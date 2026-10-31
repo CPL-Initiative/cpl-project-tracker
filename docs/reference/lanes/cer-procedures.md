@@ -85,16 +85,12 @@ source. Its data:
   a session's reviewed change, which the card says. *Teach a rule* copies the rule in plain words for a session.
 - Not yet drawn from version 26: the *Held titles by group* table (one rule, accept as a group, 25 at a time).
 
-**Drawn in version 26 (2026-10-31):** each could-adopt college chip is a button that opens that college's aligned
-courses (the identity's members there, from `unified_courses_members.js`, units or noncredit) and the Request Quick
-Adopt link to the held exhibit's ID; a college EACR lists without a same-identity course reads that its faculty
-choose the course.
-
 ## Status
 
-🔨 **Sheet 94's three rulings are on main (built S416, merged S417 as b36286d7 at 16:50Z 2026-10-18): the fold holds each conflict by itself, a sure result saves under its procedure, and the Initiated sign-off and the Curate panel left the tab.**
-
-**The first saving run landed (S418, `cer-procedures.yml` run 39150222312, 17:37Z 2026-10-18), on Sam's Sheet 96 ruling (17:23Z, *keep*; `cpl_memory` `sam-sheet-96-rulings-2026-10-18`): a rule procedure's settlement saves at the rule's word, the course-identity rule's 0.8 included.** 926 titles saved to `kb_curation` as 1,852 rows (a title row and an issuer row each) under 7 cohorts: classifier 737, course-identity 125, brand-family 53, nccer-verbatim 5, statewide-catalog 3, cslb-classification 2, apprenticeship-trades 1; none held by a live row, none a duplicate; receipt `kb/cer_procedures_out/saved/saved_2026-10-18T17-37-29Z.json`. The dispatch waited on #2232: the workflow's options list read a bare on and off as YAML booleans, so GitHub offered true, preview, false. The run's tallies: queue 1,498, waiting 1,322, proposed 1,287, Needs you 414, 0 not yet asked. The daily run of 17:44Z (run 39150946369), the fold's first apply since 2026-07-08, folded 1,102 assignments (the 176 that waited and the 926 the saving run wrote), 12 supersedes and 455 credential records, held the 18 conflicts, and left the reference at 4,915 titles (`kb/unclassified_fold/2026-10-18/applied.json`). The procedures run is live, the classifier has made two passes (S412, S413), and the tab is three views: Needs you, Procedures, Reference (#2221, S413).
+✅ **Live: the procedures run saves nightly, the fold applies per assignment, and the CER tab is three views (Needs
+you, Procedures, Reference).** Sheet 94's three rulings landed in S416 and S417 and the first saving run in S418
+(2026-10-18, 926 titles under 7 cohorts, receipt `kb/cer_procedures_out/saved/saved_2026-10-18T17-37-29Z.json`); the
+run-by-run figures are in the lessons doc's S416 to S418 sections.
 
 - **The fold holds per assignment (card 1, `kb/_fold_unclassified.py`).** V1 and V4 were an all-or-nothing hold; now a
   conflict with a human-reviewed classification, or a raw whose articulation rows carry another title, holds only

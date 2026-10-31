@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-31 (Exhibits tab build, SkyRowanberry): the Exhibits tab's Review queue on the drawn card (`exhibits.js`, `kb/_build_exhibits_review.py`), `exhibit_title_students()` (reviewer-only, k=10), lessons in `docs/cer_v2_redesign_lessons.md`; handoff `docs/cer_redesign_handoff.md`.
 - 2026-10-31 (CER redesign build, SkyGooseberry): Open Asks Sheet 147 answered whole; the high school and ROP rule and the CPL-AI matching in the Program Requirements dialog (#2601); mock-up version 26; KB note `methodology-a-record-level-join-needs-a-word-guard`; handoff `docs/cer_redesign_handoff.md`.
 - 2026-10-30 (CER redesign side session): the Exhibits mock-up (`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html`), the CER and college-identity lanes, `docs/cer_v2_redesign_lessons.md` (2026-10-30), the handoff `docs/cer_redesign_handoff.md`.
 - **2026-10-30 (S531 SkyOlallieberry):** the Chancellor's Summit address public on Pages with the gentle sound Sam picked (#2592); Los Angeles Valley 167 to 186 passing once the page finder reads State Code (#2596); display builds 956fee0d62bc and f8c94ef23142; handoff 532.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-30 (S527 SkyLoganberry): Glendale's eleven C-numbered courses priced from the catalog through a read that parses itself on the runner (`parse_units`); 115 of 226 pass (#2578); handoff 528.
 - 2026-10-30 (S525 SkyTayberry): S524's 8 Glendale prose totals were the first program's on each page; rolled back by receipt, and the fill now reads from the program's own heading (#2576); handoff 526.
 - 2026-10-30 (S524 SkyCranberry): Glendale's prose program totals fill `total_units` through a reconcile step's new `before` boundary; 8 records now name their total, all unequal, 105 still pass (#2575); handoff 525.
-- 2026-10-30 (S522 SkyCrowberry, light): a failing shard names its file and `library.test.js` stops racing JSZip (#2572), so #2570's shard 3 passes; #2571 merged; S521's memory rows applied; handoff 523.
