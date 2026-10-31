@@ -475,6 +475,28 @@ function reviewerSession() {
     !ptr.querySelector("[data-optinaccept]"));
 }
 
+{
+  // R4 (S531; Sam, 2026-10-30, on the public page: clicking a row's "Confirmation submitted" chip made "the
+  // college rows and chips disappear"). The click opens the row, and the redraw replaced the table's scrolling
+  // wrap, so its scroll went back to the top and the row left the view (Chromium: 392px to 3,966px down).
+  // jsdom keeps no scroll position, so the test gives elements one.
+  const pub = freshDom();
+  pub.window.CPL_FUNDING_PUBLIC = true;
+  Object.defineProperty(pub.window.HTMLElement.prototype, "scrollTop", { configurable: true,
+    get() { return this._st || 0; }, set(v) { this._st = v; } });
+  const pdoc = boot(pub.window);
+  const Q = pub.window.CPL_FUNDING_TAB;
+  const pRow = {}; pRow[COL] = { college: COL, status: "self_attested", source: "self" };
+  Q._setElig({ coordOk: true, coord: {}, optinRow: pRow });
+  Q.render();
+  const wrap = () => pdoc.querySelector("#cplFundTable .cplfund-tablewrap");
+  wrap().scrollTop = 3574;
+  const chip = pdoc.querySelector('#cplFundTable tr.cplfund-row[data-id="c:' + COL + '"] .cf-waitchip');
+  if (chip) click(pub.window, chip);
+  check("R4: clicking a row's chip opens the row and keeps the table's scroll, so the row stays in view",
+    !!chip && !!pdoc.querySelector("#cplFundTable tr.cplfund-detail") && wrap().scrollTop === 3574);
+}
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
