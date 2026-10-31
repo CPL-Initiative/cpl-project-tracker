@@ -1,0 +1,688 @@
+<title>Exhibits Redesign Mock-up</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Source+Sans+3:wght@400;600;700&display=swap">
+<style>
+/* Layout: the screens alone, as each reader meets them. A word switcher picks the screen; view words switch inside it.
+   The three questions (called, credit, adopt) organize the status bar and the credential panel.
+   Palette: First Light tokens as COBI defines them (index.html :root and its dark block). */
+:root {
+  --paper: #F4F2ED;
+  --surface-opaque: #FFFFFF;
+  --surface-subtle: #F7F5F1;
+  --surface-muted: #ECE9E2;
+  --text-strong: #1C1C1A;
+  --text-body: #3A3A36;
+  --text-muted: #5C5C55;
+  --border: rgba(28,28,26,.14);
+  --border-strong: rgba(28,28,26,.30);
+  --cobalt: #0047AB;
+  --seal-blue-text: #002F6D;
+  --meter-track: #ECE9E2;
+  --meter-fill: #002F6D;
+  --font-display: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #151514; --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+    --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+    --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+    --cobalt: #7DA1D4; --seal-blue-text: #7DA1D4; --meter-track: #30302E; --meter-fill: #7DA1D4;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #151514; --surface-opaque: #1E1E1C; --surface-subtle: #262624; --surface-muted: #30302E;
+  --text-strong: #ECE9E2; --text-body: #D6D6D0; --text-muted: #ABABA3;
+  --border: rgba(255,255,255,.14); --border-strong: rgba(255,255,255,.32);
+  --cobalt: #7DA1D4; --seal-blue-text: #7DA1D4; --meter-track: #30302E; --meter-fill: #7DA1D4;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--text-body);
+  font: 400 clamp(15px, 1.5vw, 17px)/1.55 var(--font-body);
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 16px 48px;
+}
+.wrap { max-width: 1180px; margin: 0 auto; display: grid; gap: 16px; }
+h1, h2, h3 { font-family: var(--font-display); color: var(--seal-blue-text); text-wrap: balance; margin: 0; line-height: 1.2; }
+h1 { font-size: clamp(26px, 3.4vw, 36px); }
+h2 { font-size: clamp(20px, 2.4vw, 25px); }
+h3 { font-size: 18px; }
+p { margin: 0; }
+a, .w { color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; }
+button.w { background: none; border: 0; padding: 0; min-height: 24px; font: inherit; cursor: pointer; }
+:focus-visible { outline: 2px solid var(--cobalt); outline-offset: 2px; }
+.muted { color: var(--text-muted); }
+.small { font-size: 14px; }
+.num { font-variant-numeric: tabular-nums; }
+
+.switch { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; }
+.switch .w[aria-current="page"] { color: var(--text-strong); font-weight: 600; text-decoration-thickness: 2px; }
+
+.screen { border: 1px solid var(--border-strong); border-radius: 10px; overflow: hidden; background: var(--paper); }
+.bar-top { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 16px; padding: 10px 18px; background: var(--surface-opaque); border-bottom: 1px solid var(--border); font-size: 14px; }
+.brand { font-family: var(--font-display); font-weight: 700; font-size: 20px; color: var(--seal-blue-text); letter-spacing: .02em; }
+.pane { padding: clamp(16px, 3vw, 28px); display: grid; gap: 18px; }
+.titlebar { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 20px; }
+.crumb { font-size: 14px; color: var(--text-muted); }
+
+/* Status bar: three questions, a row of tiles under each */
+.dashgroups { display: grid; gap: 14px; }
+.dashgroup { display: grid; gap: 8px; }
+.q { font-family: var(--font-display); font-size: 17px; color: var(--seal-blue-text); font-weight: 600; margin: 0; }
+.dash { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+.tile { display: grid; gap: 4px; align-content: start; padding: 12px 14px; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; color: var(--text-body); text-decoration: none; min-width: 0; }
+.tile:hover { border-color: var(--border-strong); }
+.tile .tl { font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--text-muted); font-weight: 600; }
+.tile .tn { font-size: 15px; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.tile .tn b { font-size: 22px; color: var(--text-strong); font-weight: 600; }
+.tile .bar { height: 6px; background: var(--meter-track); border-radius: 3px; overflow: hidden; }
+.tile .bar i { display: block; height: 100%; background: var(--meter-fill); }
+.tile .tt { font-size: 13px; color: var(--text-muted); line-height: 1.35; }
+.tile .ts { font-size: 14px; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; }
+.stamps { font-size: 13px; color: var(--text-muted); }
+
+.views { display: flex; flex-wrap: wrap; gap: 6px 22px; border-bottom: 1px solid var(--border); padding-bottom: 8px; }
+.views .w { font-weight: 600; }
+.views .w[aria-current="page"] { color: var(--text-strong); text-decoration-thickness: 3px; text-decoration-color: var(--seal-blue-text); }
+.views .n { color: var(--text-muted); font-weight: 400; }
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 18px; align-items: center; }
+.search { flex: 1 1 260px; min-width: 0; padding: 8px 12px; border: 1px solid var(--border-strong); border-radius: 6px; background: var(--surface-opaque); color: var(--text-body); font: inherit; }
+
+.card { background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; padding: clamp(16px, 3vw, 24px); display: grid; gap: 14px; align-content: start; min-width: 0; }
+.pair { display: grid; grid-template-columns: 1fr auto 1fr; gap: 16px; align-items: start; }
+.pair > div { min-width: 0; display: grid; gap: 4px; }
+.pair .big { font-size: clamp(19px, 2.2vw, 23px); color: var(--text-strong); font-weight: 600; overflow-wrap: anywhere; }
+.pair .to { color: var(--text-muted); padding-top: 22px; }
+@media (max-width: 640px) { .pair { grid-template-columns: 1fr; } .pair .to { padding-top: 0; } }
+.edit { font: inherit; font-size: clamp(19px, 2.2vw, 23px); font-weight: 600; color: var(--text-strong); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 4px 8px; width: 100%; min-width: 0; }
+.edit-sm { font: inherit; font-size: 14px; color: var(--text-body); background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 8px; width: 100%; min-width: 0; }
+.fieldrow { display: grid; grid-template-columns: max-content 1fr; gap: 6px 10px; align-items: center; font-size: 14px; color: var(--text-muted); }
+.filters { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; font-size: 15px; }
+.filters .lbl { font-size: 13px; color: var(--text-muted); }
+.filters .w[aria-pressed="true"] { color: var(--text-strong); font-weight: 600; text-decoration-thickness: 3px; text-decoration-color: var(--seal-blue-text); }
+.filters .n { color: var(--text-muted); font-weight: 400; }
+.empty { font-size: 15px; color: var(--text-muted); }
+.finder { position: relative; display: grid; gap: 4px; }
+.results { list-style: none; margin: 0; padding: 4px 0; position: absolute; top: 100%; left: 0; right: 0; z-index: 2; background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; max-height: 320px; overflow-y: auto; }
+.results button { display: grid; gap: 2px; width: 100%; text-align: left; background: none; border: 0; padding: 8px 12px; font: inherit; color: var(--text-body); cursor: pointer; }
+.results button:hover, .results button:focus-visible { background: var(--surface-subtle); }
+.results .rt { color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.results .rm { font-size: 13px; color: var(--text-muted); }
+.results .none { padding: 8px 12px; font-size: 14px; color: var(--text-muted); }
+.chip { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .02em; color: var(--text-muted); border: 1px solid var(--border-strong); border-radius: 999px; padding: 1px 9px; background: var(--surface-subtle); white-space: nowrap; }
+.chip[data-tip] { position: relative; cursor: help; }
+.chip[data-tip]:hover::after, .chip[data-tip]:focus-visible::after, .steptile[data-tip]:hover::after, .steptile[data-tip]:focus-visible::after { content: attr(data-tip); position: absolute; left: 0; top: calc(100% + 6px); z-index: 3; width: max-content; max-width: min(300px, 80vw); white-space: normal; font-size: 13px; font-weight: 400; letter-spacing: 0; line-height: 1.4; color: var(--text-body); background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 6px; padding: 8px 10px; box-shadow: 0 4px 14px rgba(0,0,0,.12); }
+.steps { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 10px; }
+.steptile { position: relative; display: grid; gap: 2px; text-align: left; padding: 8px 12px; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; font: inherit; color: var(--text-body); cursor: pointer; min-width: 0; }
+.steptile:hover { border-color: var(--border-strong); }
+.steptile .sl { font-size: 14px; color: var(--cobalt); text-decoration: underline; text-underline-offset: 3px; overflow-wrap: anywhere; }
+.steptile .sn { font-size: 20px; font-weight: 600; color: var(--text-strong); font-variant-numeric: tabular-nums; }
+.steptile[aria-pressed="true"] { border: 2px solid var(--seal-blue-text); padding: 7px 11px; background: var(--surface-subtle); }
+.steptile[aria-pressed="true"] .sl { color: var(--text-strong); font-weight: 600; text-decoration-thickness: 2px; }
+.steptile[data-tip]::after { left: 0; }
+.sites { display: grid; gap: 6px; }
+.siterow { display: grid; grid-template-columns: minmax(0, 9em) minmax(0, 1fr) auto; gap: 6px 8px; align-items: center; }
+@media (max-width: 560px) { .siterow { grid-template-columns: minmax(0, 1fr) auto; } .siterow .for { grid-column: 1 / -1; } }
+.panelacts { display: flex; flex-wrap: wrap; gap: 6px 18px; align-items: baseline; margin-top: 4px; font-size: 14px; }
+.saved { font-size: 13px; color: var(--text-muted); }
+.chiprow { display: flex; flex-wrap: wrap; gap: 6px 10px; align-items: center; }
+.canon { display: grid; gap: 6px; }
+.inbox { display: flex; align-items: center; gap: 6px; background: var(--surface-subtle); border: 1px solid var(--border-strong); border-radius: 6px; padding: 3px 8px; min-width: 0; }
+.inbox .pre { font-size: 14px; color: var(--text-muted); white-space: nowrap; }
+.inbox input { flex: 1 1 auto; min-width: 0; border: 0; background: transparent; font: inherit; font-size: 14px; color: var(--text-body); padding: 2px 0; }
+.inbox:focus-within { outline: 2px solid var(--cobalt); outline-offset: 1px; }
+.canon-title { font-family: var(--font-display); font-size: clamp(22px, 2.8vw, 30px); font-weight: 700; color: var(--seal-blue-text); }
+.collegechips { display: grid; gap: 8px; }
+.ccrow { display: grid; grid-template-columns: minmax(0, 11em) minmax(0, 1fr); gap: 4px 12px; align-items: start; }
+@media (max-width: 560px) { .ccrow { grid-template-columns: 1fr; } }
+.cl { font-size: 13px; color: var(--text-muted); padding-top: 3px; }
+.cchips { display: flex; flex-wrap: wrap; gap: 4px 6px; min-width: 0; }
+.cchip { font-size: 13px; color: var(--text-body); border: 1px solid var(--border); border-radius: 999px; padding: 1px 9px; background: var(--surface-subtle); white-space: nowrap; }
+.typedlist { display: grid; gap: 4px; }
+.typedlist ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 2px; font-size: 14px; }
+.typedlist .now { background: var(--surface-subtle); border-left: 3px solid var(--seal-blue-text); padding: 4px 8px; color: var(--text-strong); overflow-wrap: anywhere; }
+.typedlist .under li { color: var(--text-muted); padding: 0 11px; overflow-wrap: anywhere; }
+.typed { font-size: 15px; overflow-wrap: anywhere; border-top: 1px solid var(--border); padding-top: 10px; }
+.why { font-size: 15px; color: var(--text-muted); border-left: 2px solid var(--border-strong); padding-left: 10px; }
+.acts { display: flex; flex-wrap: wrap; gap: 8px 22px; align-items: center; }
+.acts .w { font-weight: 600; }
+.foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 16px; font-size: 14px; color: var(--text-muted); }
+
+.tablewrap { overflow-x: auto; background: var(--surface-opaque); border: 1px solid var(--border); border-radius: 8px; }
+table { width: 100%; border-collapse: collapse; table-layout: fixed; font-size: 15px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--border); vertical-align: top; overflow-wrap: anywhere; }
+tbody tr:last-child td { border-bottom: 0; }
+th { font-size: 13px; color: var(--text-muted); font-weight: 600; letter-spacing: .03em; }
+td.r, th.r { text-align: right; font-variant-numeric: tabular-nums; }
+tr.sel td { background: var(--surface-subtle); }
+tr.sel td:first-child { box-shadow: inset 3px 0 0 var(--seal-blue-text); }
+.split { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr); gap: 16px; align-items: start; }
+@media (max-width: 860px) { .split { grid-template-columns: 1fr; } }
+.panel .block { display: grid; gap: 6px; padding-top: 12px; border-top: 1px solid var(--border); }
+.panel ul { margin: 0; padding-left: 18px; font-size: 15px; display: grid; gap: 2px; }
+.chips { display: flex; flex-wrap: wrap; gap: 4px 14px; font-size: 15px; }
+.tags { display: grid; grid-template-columns: max-content 1fr; gap: 3px 12px; font-size: 14px; margin: 0; }
+.tags dt { color: var(--text-muted); }
+.tags dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+.card .t { font-size: 18px; font-weight: 600; color: var(--text-strong); }
+.secthead { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: baseline; gap: 6px 16px; }
+.publinks { display: flex; flex-wrap: wrap; gap: 4px 16px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <nav class="switch" aria-label="Screens">
+    <a class="w" href="#cobi-review" data-screen="cobi">COBI, Exhibits</a>
+    <a class="w" href="#public" data-screen="public">The public page</a>
+    <a class="w" href="#map" data-screen="map">MAP, Exhibits</a>
+  </nav>
+
+  <!-- COBI: Exhibits in the Catalog Commons -->
+  <section class="screen" id="screen-cobi" aria-label="COBI, Exhibits">
+    <div class="bar-top"><span class="brand">COBI</span><span class="muted">Catalog Commons › Exhibits</span></div>
+    <div class="pane">
+      <div class="titlebar">
+        <h1>Exhibits</h1>
+        <span class="crumb">Saving run 14:35Z · fold 16:58Z · 2026-10-30</span>
+      </div>
+
+      <div class="dashgroups">
+        <div class="dashgroup">
+          <h2 class="q">What is it called?</h2>
+          <div class="dash" role="list" aria-label="What is it called">
+            <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Names</span><span class="tn"><b>4,409</b> of 4,859</span><span class="bar" role="img" aria-label="91 percent"><i style="width:90.7%"></i></span><span class="tt">MAP titles under a canonical credential</span><span class="ts">450 wait for you</span></a>
+            <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Reviewed</span><span class="tn"><b>1,844</b> of 5,030</span><span class="bar" role="img" aria-label="37 percent"><i style="width:36.7%"></i></span><span class="tt">titles with a person's or a rule's stamp</span><span class="ts">See the unstamped</span></a>
+            <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Issuers</span><span class="tn"><b>2,455</b> of 2,456</span><span class="bar" role="img" aria-label="nearly 100 percent"><i style="width:99.9%"></i></span><span class="tt">credentials naming an issuing agency</span><span class="ts">1,258 are college exams</span></a>
+            <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Training sites</span><span class="tn"><b>363</b> of 2,465</span><span class="bar" role="img" aria-label="15 percent"><i style="width:14.7%"></i></span><span class="tt">credentials naming where the training happens</span><span class="ts">17 say only JATC</span></a>
+            <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Registry</span><span class="tn"><b>11</b> of 89</span><span class="bar" role="img" aria-label="12 percent"><i style="width:12.4%"></i></span><span class="tt">industry credentials in MAP with a Credential Engine CTID</span><span class="ts">78 to link</span></a>
+            <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Aligned course</span><span class="tn"><b>394</b> of 468</span><span class="bar" role="img" aria-label="84 percent"><i style="width:84.2%"></i></span><span class="tt">held titles articulated to a course with a CCN, C-ID or M-ID</span><span class="ts">Let the course name them</span></a>
+            <a class="tile" role="listitem" href="#cobi-review"><span class="tl">Students waiting</span><span class="tn"><b>3,000</b></span><span class="tt">students hold credit on titles still held</span><span class="ts">Start with them</span></a>
+          </div>
+          <div class="steps" role="group" aria-label="Filter the review queue by CER step">
+            <button class="steptile" type="button" data-filter="" aria-pressed="true"><span class="sn">468</span><span class="sl">All held</span></button>
+            <button class="steptile" type="button" data-filter="Proposed" aria-pressed="false"><span class="sn">401</span><span class="sl">Proposed</span></button>
+            <button class="steptile" type="button" data-filter="Wording check" aria-pressed="false"><span class="sn">36</span><span class="sl">Wording check</span></button>
+            <button class="steptile" type="button" data-filter="Two issuers" aria-pressed="false"><span class="sn">13</span><span class="sl">Two issuers</span></button>
+            <button class="steptile" type="button" data-filter="Conflict with the reference" aria-pressed="false"><span class="sn">18</span><span class="sl">Conflict with the reference</span></button>
+            <button class="steptile" type="button" data-filter="Saved, not folded" aria-pressed="false"><span class="sn">0</span><span class="sl">Saved, not folded</span></button>
+          </div>
+        </div>
+        <div class="dashgroup">
+          <h2 class="q">What credit does it carry?</h2>
+          <div class="dash" role="list" aria-label="What credit does it carry">
+            <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Credit recs</span><span class="tn"><b>2,573</b> of 2,641</span><span class="bar" role="img" aria-label="97 percent"><i style="width:97.4%"></i></span><span class="tt">credentials with a credit recommendation in MAP</span><span class="ts">68 without</span></a>
+            <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Statewide recs</span><span class="tn"><b>154</b> of 2,641</span><span class="bar" role="img" aria-label="6 percent"><i style="width:5.8%"></i></span><span class="tt">credentials with a statewide recommendation</span><span class="ts">See them</span></a>
+            <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Field</span><span class="tn"><b>2,626</b> of 2,641</span><span class="bar" role="img" aria-label="99 percent"><i style="width:99.4%"></i></span><span class="tt">credentials with a CIP sector</span><span class="ts">15 without</span></a>
+            <a class="tile" role="listitem" href="#cobi-credentials"><span class="tl">Course matches</span><span class="tn"><b>31</b> of 115</span><span class="bar" role="img" aria-label="27 percent"><i style="width:27%"></i></span><span class="tt">CPL-AI certifications joined to a MAP exhibit</span><span class="ts">84 to join</span></a>
+          </div>
+        </div>
+        <div class="dashgroup">
+          <h2 class="q">Who could adopt it?</h2>
+          <div class="dash" role="list" aria-label="Who could adopt it">
+            <a class="tile" role="listitem" href="#public"><span class="tl">Adoptable</span><span class="tn"><b>2,620</b> of 2,641</span><span class="bar" role="img" aria-label="99 percent"><i style="width:99.2%"></i></span><span class="tt">credentials with an exhibit to Request Quick Adopt from</span><span class="ts">21 without</span></a>
+            <a class="tile" role="listitem" href="#public"><span class="tl">Shared</span><span class="tn"><b>624</b> of 2,641</span><span class="bar" role="img" aria-label="24 percent"><i style="width:23.6%"></i></span><span class="tt">credentials two or more colleges adopted</span><span class="ts">See them</span></a>
+          </div>
+        </div>
+      </div>
+
+      <nav class="views" aria-label="Views">
+        <a class="w" href="#cobi-review" data-view="review">Review <span class="n">468</span></a>
+        <a class="w" href="#cobi-credentials" data-view="credentials">Credentials <span class="n">2,465</span></a>
+        <a class="w" href="#cobi-rules" data-view="rules">Rules <span class="n">12</span></a>
+      </nav>
+
+      <!-- Review -->
+      <div class="view" id="view-review">
+        <div style="display:grid; gap:16px">
+          <div class="tablewrap" role="region" aria-label="Held titles by group" tabindex="0">
+            <table>
+              <colgroup><col style="width:52%"><col style="width:30%"><col style="width:18%"></colgroup>
+              <thead><tr><th scope="col">Group</th><th scope="col">How</th><th scope="col" class="r">Titles</th></tr></thead>
+              <tbody>
+                <tr><td><a href="#cobi-review">High school and ROP courses</a><br><span class="small muted">93 named by an aligned course</span></td><td>One rule</td><td class="r">96</td></tr>
+                <tr><td><a href="#cobi-review">Titles that share a proposal</a></td><td>Accept as a group</td><td class="r">69</td></tr>
+                <tr><td><a href="#cobi-review">Near-sure, 0.70 to 0.85</a></td><td>25 at a time</td><td class="r">183</td></tr>
+                <tr><td><a href="#cobi-review">Unsure, a course code, two issuers</a></td><td>One at a time</td><td class="r">120</td></tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="finder">
+            <label class="small muted" for="find-exhibit">Go to an exhibit</label>
+            <input class="search" id="find-exhibit" type="search" autocomplete="off" placeholder="Title, exhibit ID, college or course code" aria-controls="find-results">
+            <ul class="results" id="find-results" role="listbox" aria-label="Matching exhibits" hidden></ul>
+          </div>
+
+          <div class="card" aria-label="Review one title" id="review-card">
+            <div class="chiprow"><span class="chip" id="rc-step" tabindex="0"></span><span class="small muted" id="rc-saved"></span></div>
+            <div class="canon">
+              <label class="small muted" for="proposed-title" id="rc-from"></label>
+              <input class="edit canon-title" id="proposed-title" type="text">
+              <label class="inbox" for="proposed-issuer"><span class="pre">Issuer:</span><input id="proposed-issuer" type="text"></label>
+              <label class="inbox" for="proposed-trainer"><span class="pre">Training site:</span><input id="proposed-trainer" type="text" placeholder="None named"></label>
+            </div>
+            <div class="typedlist">
+              <span class="cl">Local titles</span>
+              <ul>
+                <li class="now"><span class="muted" id="rc-who"></span> <span id="rc-current"></span> <span class="muted" id="rc-course"></span></li>
+              </ul>
+              <ul class="under" id="rc-under"></ul>
+            </div>
+            <div class="collegechips">
+              <div class="ccrow"><span class="cl" id="rc-art-label">Articulated at</span><span class="cchips" id="rc-art"></span></div>
+              <div class="ccrow"><span class="cl" id="rc-could-label">Could adopt</span><span class="cchips" id="rc-could"></span></div>
+            </div>
+            <p class="why" id="rc-why"></p>
+            <p class="small">Source: <a id="rc-source" href="#cobi-review"></a></p>
+            <div class="acts">
+              <button class="w" type="button" data-step="1">Keep Current Title</button>
+              <button class="w" type="button" data-step="1">Change to Proposed Title</button>
+              <button class="w" type="button">Teach a rule</button>
+              <button class="w" type="button" data-step="1">Skip</button>
+            </div>
+            <div class="foot">
+              <span id="rc-pos"></span>
+              <span id="rc-next"></span>
+            </div>
+          </div>
+          <p class="empty" id="rc-empty" hidden>Nothing waits in this step tonight.</p>
+        </div>
+      </div>
+
+      <!-- Credentials -->
+      <div class="view" id="view-credentials" hidden>
+        <div style="display:grid; gap:16px">
+          <div class="toolbar">
+            <input class="search" id="cobi-search" type="search" placeholder="Search a credential, issuer, training site or local title" aria-label="Search credentials, issuers, training sites and local titles">
+            <button class="w" type="button">Filters</button>
+            <button class="w" type="button">Download</button>
+          </div>
+          <div class="split">
+            <div class="tablewrap" role="region" aria-label="Credentials" tabindex="0">
+              <table>
+                <colgroup><col style="width:30%"><col style="width:20%"><col style="width:20%"><col style="width:12%"><col style="width:18%"></colgroup>
+                <thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col">Training sites</th><th scope="col" class="r">Students</th><th scope="col">Adoption</th></tr></thead>
+                <tbody>
+                  <tr><td><a href="#cobi-credentials">CompTIA A+</a></td><td>CompTIA</td><td class="muted">None named</td><td class="r">115</td><td>19 exhibits in MAP</td></tr>
+                  <tr class="sel" data-panel="panel-secplus"><td><a href="#cobi-credentials" data-panel-link="panel-secplus">CompTIA Security+</a></td><td>CompTIA</td><td class="muted">None named</td><td class="r">57</td><td>9 colleges to adopt from</td></tr>
+                  <tr><td><a href="#cobi-credentials">CompTIA Network+</a></td><td>CompTIA</td><td class="muted">None named</td><td class="r">20</td><td>21 colleges adopted</td></tr>
+                  <tr data-panel="panel-ibew"><td><a href="#cobi-credentials" data-panel-link="panel-ibew">IBEW Electrician Apprenticeship \u2014 Year 1</a></td><td>International Brotherhood of Electrical Workers (IBEW)</td><td>Joint Apprenticeship Training Committee (JATC)</td><td class="r">No data yet</td><td>Bakersfield and Norco articulate it</td></tr>
+                  <tr><td><a href="#cobi-credentials">IBEW/NECA Electrical Apprenticeship \u2014 ELECT 151</a></td><td>International Brotherhood of Electrical Workers (IBEW)</td><td>Sacramento Electrical Training Center</td><td class="r">No data yet</td><td>In the reference</td></tr>
+                  <tr><td><a href="#cobi-credentials">Medical Core</a></td><td>Each high school, today</td><td>Canyon High School <a href="#cobi-credentials">and 4 more</a></td><td class="r">Too few</td><td>1 college adopted</td></tr>
+                  <tr><td><a href="#cobi-credentials">AWS Certified Cloud Practitioner</a></td><td>Amazon Web Services</td><td class="muted">None named</td><td class="r">Too few</td><td>6 exhibits in MAP</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <aside class="card panel" id="panel-secplus" aria-label="CompTIA Security+">
+              <h3>CompTIA Security+</h3>
+              <div class="chiprow"><span class="chip" tabindex="0" data-tip="Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name." aria-label="CER step: In the reference. Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.">CER step: In the reference</span></div>
+              <div class="block">
+                <h4 class="q">What is it called?</h4>
+                <dl class="tags">
+                  <dt><label for="sp-issuer">Issuer</label></dt><dd><input class="edit-sm" id="sp-issuer" type="text" value="CompTIA"></dd>
+                  <dt>Training sites</dt><dd><div class="sites" id="sp-sites"></div><div class="panelacts"><button class="w" type="button" data-addsite="sp-sites">Add a training site</button><button class="w" type="button" data-save="sp-saved">Save</button><span class="saved" id="sp-saved" aria-live="polite"></span></div></dd>
+                  <dt>Registry</dt><dd><a href="https://credentialengineregistry.org/resources/ce-f89c44b1-b408-4805-8653-8c92da175e31">CTID</a>, Credential Engine top 50 rank 2</dd>
+                  <dt>Local titles</dt><dd>CompTIA Security+ Certification · Security Fund. (Security+) · CompTIA S+ for CIS 060 · <a href="#cobi-credentials">and 5 more</a></dd>
+                </dl>
+              </div>
+              <div class="block">
+                <h4 class="q">What credit does it carry?</h4>
+                <dl class="tags">
+                  <dt>Field</dt><dd>CIP 11.1003, Computer and Information Systems Security</dd>
+                  <dt>Occupation</dt><dd>Information Security Analysts (SOC 15-1122)</dd>
+                  <dt>Industry</dt><dd>NAICS 541519, Other Computer Related Services</dd>
+                  <dt>Missing</dt><dd>Skills the issuer lists</dd>
+                </dl>
+              </div>
+              <div class="block">
+                <h4 class="q">Who could adopt it?</h4>
+                <p class="small">57 students with credit · 17 colleges adopted</p>
+                <p class="small muted">Request Quick Adopt in MAP</p>
+                <div class="chips"><a href="#cobi-credentials" class="cname">College of the Desert</a><a href="#cobi-credentials" class="cname">De Anza College</a><a href="#cobi-credentials" class="cname">Fullerton College</a><a href="#cobi-credentials" class="cname">Long Beach City College</a><span class="muted">and 5 more</span></div>
+              </div>
+            </aside>
+            <aside class="card panel" id="panel-ibew" aria-label="IBEW Electrician Apprenticeship, Year 1" hidden>
+              <h3>IBEW Electrician Apprenticeship — Year 1</h3>
+              <div class="chiprow"><span class="chip" tabindex="0" data-tip="Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name." aria-label="CER step: In the reference. Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.">CER step: In the reference</span></div>
+              <div class="block">
+                <h4 class="q">What is it called?</h4>
+                <dl class="tags">
+                  <dt><label for="ib-issuer">Issuer</label></dt><dd><input class="edit-sm" id="ib-issuer" type="text" value="International Brotherhood of Electrical Workers (IBEW)"></dd>
+                  <dt>Training sites</dt><dd><div class="sites" id="ib-sites">
+                    <div class="siterow"><input class="edit-sm for" type="text" value="Bakersfield College" aria-label="College"><input class="edit-sm" type="text" value="Joint Apprenticeship Training Committee (JATC)" aria-label="Training site for Bakersfield College"><button class="w" type="button" data-remove>Remove</button></div>
+                    <div class="siterow"><input class="edit-sm for" type="text" value="Norco College" aria-label="College"><input class="edit-sm" type="text" value="Joint Apprenticeship Training Committee (JATC)" aria-label="Training site for Norco College"><button class="w" type="button" data-remove>Remove</button></div>
+                  </div><div class="panelacts"><button class="w" type="button" data-addsite="ib-sites">Add a training site</button><button class="w" type="button" data-save="ib-saved">Save</button><span class="saved" id="ib-saved" aria-live="polite"></span></div></dd>
+                  <dt>Local titles</dt><dd>International Brotherhood Electrical Workers (IBEW) Electrician Apprenticeship (Year 1) · International Brotherhood of Electrical Workers Year 1</dd>
+                </dl>
+              </div>
+              <div class="block">
+                <h4 class="q">What credit does it carry?</h4>
+                <dl class="tags">
+                  <dt>Credit</dt><dd>ELC 401: 3.5 hours in Introduction to Electrical Theory, Basic Math Concepts, and the National Electric Code; and ELC 400</dd>
+                  <dt>Missing</dt><dd>A Credential Engine CTID</dd>
+                </dl>
+              </div>
+              <div class="block">
+                <h4 class="q">Who could adopt it?</h4>
+                <p class="small">Bakersfield College and Norco College articulate it · no student data yet</p>
+                <p class="small muted">Request Quick Adopt in MAP</p>
+                <div class="chips"><a href="#cobi-credentials" class="cname">Bakersfield College</a><a href="#cobi-credentials" class="cname">Norco College</a></div>
+              </div>
+            </aside>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rules -->
+      <div class="view" id="view-rules" hidden>
+        <div style="display:grid; gap:16px">
+          <div class="toolbar"><button class="w" type="button">Add a rule</button></div>
+          <div class="tablewrap" role="region" aria-label="Rules" tabindex="0">
+            <table>
+              <colgroup><col style="width:44%"><col style="width:24%"><col style="width:12%"><col style="width:20%"></colgroup>
+              <thead><tr><th scope="col">Rule</th><th scope="col">Set by</th><th scope="col" class="r">Held tonight</th><th scope="col">Action</th></tr></thead>
+              <tbody>
+                <tr><td>A course names its own exam<br><span class="small muted">CCN, then C-ID, then M-ID, then the college's title; AP and brand credentials keep their names</span></td><td>Sam, 2026-07-07; M-ID added 2026-10-30</td><td class="r">181</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>A named school is the agency</td><td>Sam, 2026-07-08</td><td class="r">122</td><td><a href="#cobi-rules">Make it a rule</a></td></tr>
+                <tr><td>Brand families join the family</td><td>Sam, 2026-07-07</td><td class="r">101</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>Join, and let faculty pull out</td><td>Sam, 2026-09-20</td><td class="r">95</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>The issuer issues the card</td><td>Sam, 2026-10-05</td><td class="r">60</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>How it was assessed never splits a credential</td><td>Sam, 2026-07-14</td><td class="r">56</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>Level words go last</td><td>Sam, 2026-07-08</td><td class="r">37</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>The statewide catalog names it</td><td>Sam, 2026-07-07</td><td class="r">1</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>Apprenticeships take the trade's house name</td><td>Sam, 2026-07-07</td><td class="r">1</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>NCCER keeps its own names</td><td>Sam, 2026-07-07</td><td class="r">0</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>Contractor classifications stay as written</td><td>Session 104, 2026-07-07</td><td class="r">0</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+                <tr><td>One-off titles decided once</td><td>Sessions 103-104, 2026-07-07</td><td class="r">0</td><td><a href="#cobi-rules">See what it did</a></td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The public page -->
+  <section class="screen" id="screen-public" aria-label="The public page" hidden>
+    <div class="bar-top"><b style="color:var(--seal-blue-text)">CPL Initiative</b><span class="publinks"><a href="#public">CPL Fact Sheet</a><a href="#public">MAP</a><a href="#public">Find your college</a><a href="#public">CPL Library</a></span></div>
+    <div class="pane">
+      <div style="display:grid; gap:8px">
+        <h1>Credentials Your College Can Adopt</h1>
+        <p class="muted">California community colleges already award credit for these credentials. Adopt one in MAP from the college that built it, or ask your faculty to review one no college has articulated yet.</p>
+      </div>
+      <div class="toolbar">
+        <input class="search" id="pub-search" type="search" placeholder="Search a credential, an issuer, or an occupation" aria-label="Search credentials">
+        <button class="w" type="button">Field</button>
+        <button class="w" type="button">CPL type</button>
+      </div>
+
+      <div class="secthead"><h2>Ready to adopt</h2><span class="small muted num">2,620 credentials</span></div>
+      <div class="cards">
+        <div class="card">
+          <span class="t">CompTIA Security+</span>
+          <span class="small muted">CompTIA · Industry certification</span>
+          <p class="small">Nine colleges built an exhibit in MAP. Request Quick Adopt from one of them:</p>
+          <div class="chips small"><a href="#public" class="cname">College of the Desert</a><a href="#public" class="cname">Mt. San Antonio College</a><a href="#public" class="cname">San Diego City College</a><span class="muted">and 6 more</span></div>
+        </div>
+        <div class="card">
+          <span class="t">AWS Certified Cloud Practitioner</span>
+          <span class="small muted">Amazon Web Services · Industry certification</span>
+          <p class="small">Six exhibits in MAP. Request Quick Adopt from the college that built each.</p>
+          <div class="chips small"><a href="#public" class="cname">See the colleges</a></div>
+        </div>
+      </div>
+
+      <div class="secthead"><h2>Worth a faculty review</h2><span class="small muted">Not in MAP yet</span></div>
+      <div class="cards">
+        <div class="card">
+          <span class="t">MSSC Certified Logistics Technician</span>
+          <span class="small muted">Manufacturing Skill Standards Council</span>
+          <dl class="tags">
+            <dt>Occupations</dt><dd>Logisticians (13-1081), Logistics Managers (11-3071)</dd>
+            <dt>Industry</dt><dd>Transportation and Warehousing (NAICS 48-49)</dd>
+            <dt>Field</dt><dd>Logistics, Materials, and Supply Chain Management (CIP 52.0203)</dd>
+            <dt>Level</dt><dd>High school through bachelor's</dd>
+          </dl>
+          <div class="chips small"><a href="#public">Courses that may align</a><a href="#public">View in the Credential Engine Registry</a></div>
+        </div>
+        <div class="card">
+          <span class="t">Certified Associate in Project Management (CAPM)</span>
+          <span class="small muted">Project Management Institute</span>
+          <dl class="tags">
+            <dt>Field</dt><dd>Project Management (CIP 52.0211)</dd>
+          </dl>
+          <div class="chips small"><a href="#public">Courses that may align</a><a href="#public">View in the Credential Engine Registry</a></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP: the exhibit module -->
+  <section class="screen" id="screen-map" aria-label="MAP, Exhibits" hidden>
+    <div class="bar-top"><span class="brand">MAP</span><span class="muted">Exhibits</span></div>
+    <div class="pane">
+      <div class="toolbar">
+        <input class="search" id="map-search" type="search" value="CompTIA" aria-label="Search exhibits by credential or issuing agency">
+      </div>
+      <div class="secthead"><h2>CompTIA</h2><span class="small muted num">14 credentials · 52 exhibits</span></div>
+      <div class="tablewrap" role="region" aria-label="CompTIA credentials" tabindex="0">
+        <table>
+          <colgroup><col style="width:44%"><col style="width:20%"><col style="width:14%"><col style="width:22%"></colgroup>
+          <thead><tr><th scope="col">Credential</th><th scope="col">Issuer</th><th scope="col" class="r">Exhibits</th><th scope="col">Opportunities</th></tr></thead>
+          <tbody>
+            <tr class="sel"><td><a href="#map">CompTIA Network+</a></td><td>CompTIA</td><td class="r">9</td><td><a href="#map">See every college</a></td></tr>
+            <tr><td colspan="4" class="small">COMPTIA NETWORK+ (CIS-40A) · CompTIA Network + · CompTIA Network Plus · CompTIA Network+ Certification · CompTIA n+ for CIS 053 · Network Fund. (Network+) · Network+ Certification Preparation · Computer Network Specialist/CompTIA Net+ Training CS 003 Cx · CompTIA Network+</td></tr>
+            <tr><td><a href="#map">CompTIA Security+</a></td><td>CompTIA</td><td class="r">8</td><td><a href="#map">See every college</a></td></tr>
+            <tr><td><a href="#map">CompTIA A+</a></td><td>CompTIA</td><td class="r">7</td><td><a href="#map">See every college</a></td></tr>
+            <tr><td><a href="#map">CompTIA Linux+</a></td><td>CompTIA</td><td class="r">5</td><td><a href="#map">See every college</a></td></tr>
+            <tr><td><a href="#map">CompTIA CySA+</a></td><td>CompTIA</td><td class="r">4</td><td><a href="#map">See every college</a></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var screens = { cobi: "screen-cobi", "public": "screen-public", map: "screen-map" };
+  function show() {
+    var h = (location.hash || "#cobi-review").slice(1);
+    var screen = h.indexOf("cobi") === 0 ? "cobi" : (screens[h] ? h : "cobi");
+    var view = h.indexOf("cobi-") === 0 ? h.slice(5) : "review";
+    if (["review", "credentials", "rules"].indexOf(view) === -1) view = "review";
+    Object.keys(screens).forEach(function (k) { document.getElementById(screens[k]).hidden = k !== screen; });
+    ["review", "credentials", "rules"].forEach(function (v) { document.getElementById("view-" + v).hidden = v !== view; });
+    document.querySelectorAll("[data-screen]").forEach(function (a) {
+      if (a.getAttribute("data-screen") === screen) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+    document.querySelectorAll("[data-view]").forEach(function (a) {
+      if (a.getAttribute("data-view") === view) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+    });
+  }
+  window.addEventListener("hashchange", show);
+  show();
+
+  /* College short names from COBI's college table (kb/college_short_names.json, MAP@rccd.edu). The table holds every
+     choice, exceptions included (Sam, 2026-10-30); a college it lacks shows its full name, as cplCollegeShort does. */
+  var COLLEGE_TABLE = [{"canonical": "Allan Hancock College", "short": "Allan Hancock", "aliases": ["Allan Hancock College"]}, {"canonical": "American River College", "short": "American River", "aliases": ["American River College"]}, {"canonical": "Antelope Valley College", "short": "Antelope Valley", "aliases": ["Antelope Valley College"]}, {"canonical": "Bakersfield College", "short": "Bakersfield", "aliases": ["Bakersfield College"]}, {"canonical": "Barstow College", "short": "Barstow", "aliases": ["Barstow College"]}, {"canonical": "Berkeley City College", "short": "Berkeley City", "aliases": ["Berkeley City College"]}, {"canonical": "Butte College", "short": "Butte", "aliases": ["Butte College"]}, {"canonical": "Cabrillo College", "short": "Cabrillo", "aliases": ["Cabrillo College"]}, {"canonical": "Calbright College", "short": "Calbright", "aliases": ["Calbright College"]}, {"canonical": "Canada College", "short": "Canada", "aliases": ["Canada College", "CaÃ±ada College", "Cañada College"]}, {"canonical": "Cerritos College", "short": "Cerritos", "aliases": ["Cerritos College"]}, {"canonical": "Cerro Coso Community College", "short": "Cerro Coso", "aliases": ["Cerro Coso Community College"]}, {"canonical": "Chabot College", "short": "Chabot", "aliases": ["Chabot College", "Chabot Hayward"]}, {"canonical": "Chaffey College", "short": "Chaffey", "aliases": ["Chaffey College"]}, {"canonical": "Citrus College", "short": "Citrus", "aliases": ["Citrus College"]}, {"canonical": "City College Of San Francisco", "short": "San Francisco", "aliases": ["City College Of San Francisco"]}, {"canonical": "Clovis Community College", "short": "Clovis", "aliases": ["Clovis Community College"]}, {"canonical": "Coastline Community College", "short": "Coastline", "aliases": ["Coastline Community College"]}, {"canonical": "College of Alameda", "short": "Alameda", "aliases": ["College of Alameda"]}, {"canonical": "College Of Marin", "short": "Marin", "aliases": ["College Of Marin"]}, {"canonical": "College of San Mateo", "short": "San Mateo", "aliases": ["College of San Mateo"]}, {"canonical": "College Of The Canyons", "short": "Canyons", "aliases": ["College Of The Canyons"]}, {"canonical": "College Of The Desert", "short": "Desert", "aliases": ["College Of The Desert"]}, {"canonical": "College Of The Redwoods", "short": "Redwoods", "aliases": ["College Of The Redwoods"]}, {"canonical": "College Of The Sequoias", "short": "Sequoias", "aliases": ["College Of The Sequoias"]}, {"canonical": "College Of The Siskiyous", "short": "Siskiyous", "aliases": ["College Of The Siskiyous"]}, {"canonical": "Columbia College", "short": "Columbia", "aliases": ["Columbia College"]}, {"canonical": "Compton College", "short": "Compton", "aliases": ["Compton College"]}, {"canonical": "Contra Costa College", "short": "Contra Costa", "aliases": ["Contra Costa College"]}, {"canonical": "Copper Mountain College", "short": "Copper Mountain", "aliases": ["Copper Mountain College"]}, {"canonical": "Cosumnes River College", "short": "Cosumnes River", "aliases": ["Cosumnes River College"]}, {"canonical": "Crafton Hills College", "short": "Crafton Hills", "aliases": ["Crafton Hills College"]}, {"canonical": "Cuesta College", "short": "Cuesta", "aliases": ["Cuesta College"]}, {"canonical": "Cuyamaca College", "short": "Cuyamaca", "aliases": ["Cuyamaca College"]}, {"canonical": "Cypress College", "short": "Cypress", "aliases": ["Cypress College"]}, {"canonical": "De Anza College", "short": "De Anza", "aliases": ["De Anza College"]}, {"canonical": "Diablo Valley College", "short": "Diablo Valley", "aliases": ["Diablo Valley College"]}, {"canonical": "East Los Angeles College", "short": "East LA", "aliases": ["East Los Angeles College"]}, {"canonical": "El Camino College", "short": "El Camino", "aliases": ["El Camino College"]}, {"canonical": "Evergreen Valley College", "short": "Evergreen Valley", "aliases": ["Evergreen Valley College"]}, {"canonical": "Feather River College", "short": "Feather River", "aliases": ["Feather River College"]}, {"canonical": "Folsom Lake College", "short": "Folsom Lake", "aliases": ["Folsom Lake College"]}, {"canonical": "Foothill College", "short": "Foothill", "aliases": ["Foothill College"]}, {"canonical": "Fresno City College", "short": "Fresno City", "aliases": ["Fresno City College"]}, {"canonical": "Fullerton College", "short": "Fullerton", "aliases": ["Fullerton College"]}, {"canonical": "Gavilan College", "short": "Gavilan", "aliases": ["Gavilan College"]}, {"canonical": "Glendale Community College", "short": "Glendale", "aliases": ["Glendale Community College"]}, {"canonical": "Golden West College", "short": "Golden West", "aliases": ["Golden West College"]}, {"canonical": "Grossmont College", "short": "Grossmont", "aliases": ["Grossmont College"]}, {"canonical": "Hartnell College", "short": "Hartnell", "aliases": ["Hartnell College"]}, {"canonical": "Imperial Valley College", "short": "Imperial", "aliases": ["Imperial Valley College"]}, {"canonical": "Irvine Valley College", "short": "Irvine", "aliases": ["Irvine Valley College"]}, {"canonical": "Lake Tahoe Community College", "short": "Lake Tahoe", "aliases": ["Lake Tahoe Community College"]}, {"canonical": "Laney College", "short": "Laney", "aliases": ["Laney College"]}, {"canonical": "Las Positas College", "short": "Las Positas", "aliases": ["Las Positas College"]}, {"canonical": "Lassen Community College", "short": "Lassen", "aliases": ["Lassen Community College"]}, {"canonical": "Long Beach City College", "short": "Long Beach", "aliases": ["Long Beach City College"]}, {"canonical": "Los Angeles City College", "short": "LA City", "aliases": ["Los Angeles City College"]}, {"canonical": "Los Angeles Harbor College", "short": "LA Harbor", "aliases": ["Los Angeles Harbor College"]}, {"canonical": "Los Angeles Mission College", "short": "LA Mission", "aliases": ["Los Angeles Mission College"]}, {"canonical": "Los Angeles Pierce College", "short": "LA Pierce", "aliases": ["Los Angeles Pierce College"]}, {"canonical": "Los Angeles Southwest College", "short": "LA Southwest", "aliases": ["Los Angeles Southwest College"]}, {"canonical": "Los Angeles Trade Technical College", "short": "LA Trade", "aliases": ["Los Angeles Trade Technical College"]}, {"canonical": "Los Angeles Valley College", "short": "LA Valley", "aliases": ["Los Angeles Valley College"]}, {"canonical": "Los Medanos College", "short": "Los Medanos", "aliases": ["Los Medanos College"]}, {"canonical": "Madera Community College", "short": "Madera", "aliases": ["Madera Community College"]}, {"canonical": "Mendocino College", "short": "Mendocino", "aliases": ["Mendocino College"]}, {"canonical": "Merced College", "short": "Merced", "aliases": ["Merced College"]}, {"canonical": "Merritt College", "short": "Merritt", "aliases": ["Merritt College"]}, {"canonical": "Miracosta College", "short": "Mira Costa", "aliases": ["Miracosta College"]}, {"canonical": "Mission College", "short": "Mission", "aliases": ["Mission College"]}, {"canonical": "Modesto Junior College", "short": "Modesto", "aliases": ["Modesto Junior College"]}, {"canonical": "Monterey Peninsula College", "short": "Monterey", "aliases": ["Monterey Peninsula College"]}, {"canonical": "Moorpark College", "short": "Moorpark", "aliases": ["Moorpark College"]}, {"canonical": "Moreno Valley College", "short": "Moreno Valley", "aliases": ["Moreno Valley College"]}, {"canonical": "Mt San Antonio College", "short": "Mt. San Antonio", "aliases": ["Mt San Antonio College"]}, {"canonical": "Mt San Jacinto College", "short": "Mt. San Jacinto", "aliases": ["Mt San Jacinto College"]}, {"canonical": "Napa Valley College", "short": "Napa", "aliases": ["Napa Valley College"]}, {"canonical": "Norco College", "short": "Norco", "aliases": ["Norco College"]}, {"canonical": "North Orange Continuing Education", "short": "North Orange Adult", "aliases": ["North Orange Continuing Education"]}, {"canonical": "Ohlone College", "short": "Ohlone", "aliases": ["Ohlone College"]}, {"canonical": "Orange Coast College", "short": "Orange Coast", "aliases": ["Orange Coast College"]}, {"canonical": "Oxnard College", "short": "Oxnard", "aliases": ["Oxnard College"]}, {"canonical": "Palo Verde College", "short": "Palo Verde", "aliases": ["Palo Verde College"]}, {"canonical": "Palomar College", "short": "Palomar", "aliases": ["Palomar College"]}, {"canonical": "Pasadena City College", "short": "Pasadena", "aliases": ["Pasadena City College"]}, {"canonical": "Porterville College", "short": "Porterville", "aliases": ["Porterville College"]}, {"canonical": "Reedley College", "short": "Reedley", "aliases": ["Reedley College"]}, {"canonical": "Rio Hondo College", "short": "Rio Hondo", "aliases": ["Rio Hondo College"]}, {"canonical": "Riverside City College", "short": "Riverside", "aliases": ["Riverside City College"]}, {"canonical": "Sacramento City College", "short": "Sacramento City", "aliases": ["Sacramento City College"]}, {"canonical": "Saddleback College", "short": "Saddleback", "aliases": ["Saddleback College"]}, {"canonical": "San Bernardino Valley College", "short": "San Bernardino", "aliases": ["San Bernardino Valley College"]}, {"canonical": "San Diego City College", "short": "San Diego City", "aliases": ["San Diego City College"]}, {"canonical": "San Diego College of Continuing Education", "short": "San Diego Adult", "aliases": ["San Diego College of Continuing Education"]}, {"canonical": "San Diego Mesa College", "short": "San Diego Mesa", "aliases": ["San Diego Mesa College"]}, {"canonical": "San Diego Miramar College", "short": "San Diego Miramar", "aliases": ["San Diego Miramar College"]}, {"canonical": "San Joaquin Delta College", "short": "San Joaquin Delta", "aliases": ["San Joaquin Delta College"]}, {"canonical": "San Jose City College", "short": "San Jose City", "aliases": ["San Jose City College"]}, {"canonical": "Santa Ana College", "short": "Santa Ana", "aliases": ["Santa Ana College"]}, {"canonical": "Santa Barbara City College", "short": "Santa Barbara", "aliases": ["Santa Barbara City College"]}, {"canonical": "Santa Monica College", "short": "Santa Monica", "aliases": ["Santa Monica College"]}, {"canonical": "Santa Rosa Junior College", "short": "Santa Rosa", "aliases": ["Santa Rosa Junior College"]}, {"canonical": "Santiago Canyon College", "short": "Santiago Canyon", "aliases": ["Santiago Canyon College"]}, {"canonical": "Shasta College", "short": "Shasta", "aliases": ["Shasta College"]}, {"canonical": "Sierra College", "short": "Sierra", "aliases": ["Sierra College"]}, {"canonical": "Skyline College", "short": "Skyline", "aliases": ["Skyline College"]}, {"canonical": "Solano Community College", "short": "Solano", "aliases": ["Solano Community College"]}, {"canonical": "Southwestern Community College", "short": "Southwestern", "aliases": ["Southwestern Community College"]}, {"canonical": "Taft College", "short": "Taft", "aliases": ["Taft College"]}, {"canonical": "Ventura College", "short": "Ventura", "aliases": ["Ventura College"]}, {"canonical": "Victor Valley College", "short": "Victor Valley", "aliases": ["Victor Valley College"]}, {"canonical": "West Hills College Coalinga", "short": "West Hills Coalinga", "aliases": ["Coalinga", "Coalinga College", "West Hills College Coalinga"]}, {"canonical": "West Hills College Lemoore", "short": "West Hills Lemoore", "aliases": ["Lemoore", "Lemoore College", "West Hills College Lemoore"]}, {"canonical": "West Los Angeles College", "short": "West LA", "aliases": ["West Los Angeles College"]}, {"canonical": "West Valley College", "short": "West Valley", "aliases": ["West Valley College"]}, {"canonical": "Woodland Community College", "short": "Woodland", "aliases": ["Woodland Community College"]}, {"canonical": "Yuba College", "short": "Yuba", "aliases": ["Yuba College"]}];
+  function norm(n) { return String(n || "").replace(/CaÃ±ada/g, "Cañada").replace(/\s+(Non-Credit|Credit)$/i, "").replace(/\s+/g, " ").trim().toLowerCase(); }
+  var SHORT = {};
+  COLLEGE_TABLE.forEach(function (r) { [r.canonical].concat(r.aliases || []).forEach(function (a) { SHORT[norm(a)] = r; }); });
+  function shortName(n) {
+    var clean = String(n || "").replace(/CaÃ±ada/g, "Cañada").trim();
+    var r = SHORT[norm(clean)];
+    return r ? r.short : clean;
+  }
+  function shortList(s) { return String(s).split(/,\s*|\s+and\s+/).map(shortName).join(", "); }
+  /* Colleges per sample: who articulates the canonical title, and who could adopt it (same-identity course, else EACR's list). */
+  var CH = {"MAPCXH-ITDM-1-001": {"art": ["Cabrillo College", "Modesto Junior College"], "could": ["Allan Hancock College", "American River College", "Bakersfield College", "Berkeley City College", "Butte College", "Cañada College", "Chabot College", "Chaffey College", "Clovis Community College", "Coastline Community College", "College of Marin", "College of San Mateo", "College of the Desert", "College of the Redwoods", "College of the Sequoias", "Columbia College", "Compton College", "Contra Costa College", "Copper Mountain College", "Cosumnes River College", "Cuesta College", "Cuyamaca College", "Cypress College ", "De Anza College", "Diablo Valley College", "East Los Angeles College", "Evergreen Valley College", "Foothill College", "Fresno City College", "Fullerton College", "Golden West College", "Grossmont College", "Hartnell College", "Imperial Valley College", "Irvine Valley College", "Lake Tahoe Community College", "Laney College", "Las Positas College", "Lassen College", "Lemoore College", "Long Beach City College", "Los Angeles City College", "Los Angeles Harbor College", "Los Angeles Mission College", "Los Angeles Pierce College", "Los Angeles Valley College", "Los Medanos College", "Madera College", "Mendocino College", "Merced College", "MiraCosta College", "Mission College", "Monterey Peninsula College", "Moorpark College", "Moreno Valley College", "Mt. San Antonio College", "Mt. San Jacinto College", "Napa Valley College", "Norco College", "Ohlone College", "Orange Coast College", "Oxnard College", "Pasadena City College", "Porterville College", "Rio Hondo College", "Riverside City College", "Sacramento City College", "Saddleback College", "San Bernardino Valley College", "San Diego City College", "San Diego Mesa College", "San Jose City College ", "Santa Ana College", "Santa Rosa Junior College", "Santiago Canyon College", "Shasta College", "Sierra College", "Skyline College", "Solano Community College", "Southwestern College", "Taft College", "Ventura College", "West Los Angeles College", "West Valley College"], "basis": "ARTS 250"}, "MAPSAS-ACSA20-1-001": {"art": ["Barstow Community College", "California State University Los Angeles", "Chaffey College", "Clovis Community College", "Coastline Community College", "College of the Canyons", "Foothill College", "Glendale Community College", "Las Positas College", "Los Angeles Pierce College", "Mission College", "Modesto Junior College", "Saddleback College", "San Bernardino Valley College", "San Jose City College", "Santa Ana College", "Yuba College"], "could": ["Allan Hancock College", "American River College", "Antelope Valley College", "Bakersfield College", "Berkeley City College", "Butte College", "Cabrillo College", "Calbright College Non-Credit", "Cañada College", "Cerritos College", "Cerro Coso Community College", "Chabot College", "Citrus College", "City College of San Francisco", "Coalinga College", "College of Alameda", "College of Marin", "College of San Mateo", "College of the Desert", "College of the Redwoods", "College of the Sequoias", "College of the Siskiyous", "Columbia College", "Compton College", "Contra Costa College", "Copper Mountain College", "Cosumnes River College", "Crafton Hills College", "Cuesta College", "Cuyamaca College", "Cypress College", "De Anza College", "Diablo Valley College", "East Los Angeles College", "El Camino College", "Evergreen Valley College", "Folsom Lake College", "Fresno City College", "Fullerton College", "Gavilan College", "Golden West College", "Grossmont College", "Hartnell College", "Imperial Valley College", "Irvine Valley College", "Lake Tahoe Community College", "Laney College", "Lassen College", "Lemoore College", "Long Beach City College", "Los Angeles City College", "Los Angeles Harbor College", "Los Angeles Mission College", "Los Angeles Southwest College", "Los Angeles Trade Technical College", "Los Angeles Valley College", "Los Medanos College", "Madera College", "Mendocino College", "Merced College", "Merritt College", "MiraCosta College", "Monterey Peninsula College", "Moorpark College", "Moreno Valley College", "Mt. San Antonio College", "Mt. San Jacinto College", "Napa Valley College", "Norco College", "North Orange Continuing Education", "Ohlone College", "Orange Coast College", "Oxnard College", "Palo Verde College", "Palomar College", "Pasadena City College", "Porterville College", "Reedley College", "Rio Hondo College", "Riverside City College", "Sacramento City College", "San Diego City College", "San Diego College of Continuing Education", "San Diego Mesa College", "San Diego Miramar College", "San Joaquin Delta College", "Santa Barbara City College", "Santa Monica College", "Santa Rosa Junior College", "Santiago Canyon College", "Shasta College", "Sierra College", "Skyline College", "Solano Community College", "Southwestern College", "Taft College", "Ventura College", "Victor Valley College", "West Los Angeles College", "West Valley College", "Woodland Community College"], "basis": ""}, "MAPCXH-ITDP-1-001": {"art": ["Cabrillo College", "San Diego City College"], "could": ["Berkeley City College", "Cañada College", "Cerritos College", "College of Marin", "Columbia College", "Cypress College ", "De Anza College", "Diablo Valley College", "East Los Angeles College", "Las Positas College", "Long Beach City College", "Los Medanos College", "Moreno Valley College", "Norco College", "Orange Coast College", "Oxnard College", "Rio Hondo College", "Riverside City College", "San Joaquin Delta College", "Santiago Canyon College", "Yuba College"], "basis": "ARTS M1351"}, "MAPCXH-RC1-1-001": {"art": ["Cabrillo College"], "could": [], "basis": "HVAC M10AE"}, "MAPCXH-RC2-1-001": {"art": ["Cabrillo College"], "could": ["Bakersfield College"], "basis": "CNST M1130"}, "MAPICI-1RO&-1-001": {"art": ["Palo Verde College"], "could": [], "basis": "ESCI M10HI"}, "MAPCxH-3DMH-1-001": {"art": ["Norco College"], "could": ["Mt. San Jacinto College"], "basis": "MULT M1019"}, "MAPCXS-A2-J-1-001": {"art": ["Copper Mountain College", "Modesto Junior College", "Norco College"], "could": ["Allan Hancock College", "American River College", "Antelope Valley College", "Bakersfield College", "Barstow Community College", "Butte College", "Cabrillo College", "Cerritos College", "Cerro Coso Community College", "Chabot College", "Chaffey College", "Citrus College", "City College of San Francisco", "Clovis Community College", "Coalinga College", "College of Marin", "College of San Mateo", "College of the Desert", "College of the Redwoods", "College of the Sequoias", "Compton College", "Contra Costa College", "De Anza College", "Diablo Valley College", "East Los Angeles College", "El Camino College", "Evergreen Valley College", "Feather River College", "Fresno City College", "Fullerton College", "Gavilan College", "Glendale Community College", "Golden West College", "Grossmont College", "Hartnell College", "Imperial Valley College", "Irvine Valley College", "Lake Tahoe Community College", "Las Positas College", "Lassen College", "Lemoore College", "Long Beach City College", "Los Angeles City College", "Los Angeles Harbor College", "Los Angeles Mission College", "Los Angeles Pierce College", "Los Angeles Southwest College", "Los Angeles Trade Technical College", "Los Angeles Valley College", "Los Medanos College", "Madera College", "Mendocino College", "Merced College", "Merritt College", "MiraCosta College", "Monterey Peninsula College", "Moorpark College", "Moreno Valley College", "Mt. San Jacinto College", "Napa Valley College", "Ohlone College", "Palomar College", "Porterville College", "Reedley College", "Rio Hondo College", "Riverside City College", "Sacramento City College", "Saddleback College", "San Bernardino Valley College", "San Diego Miramar College", "San Joaquin Delta College", "San Jose City College ", "Santa Ana College", "Santa Monica College", "Santa Rosa Junior College", "Santiago Canyon College", "Shasta College", "Sierra College", "Skyline College", "Solano Community College", "Southwestern College", "Taft College", "Ventura College", "Victor Valley College", "West Los Angeles College", "West Valley College", "Woodland Community College", "Yuba College"], "basis": "AJ 220"}, "MAPCXH-ATMI-1-001": {"art": ["Santa Ana College"], "could": ["Las Positas College"], "basis": "AUTO M9040"}, "MAPCXS-A2PA-1-001": {"art": ["Merritt College", "Modesto Junior College"], "could": ["Allan Hancock College", "American River College", "Bakersfield College", "Barstow Community College", "Butte College", "Cabrillo College", "Cerritos College", "Cerro Coso Community College", "Chabot College", "Chaffey College", "Citrus College", "City College of San Francisco", "Clovis Community College", "Coalinga College", "Coastline Community College", "College of Marin", "College of San Mateo", "College of the Canyons", "College of the Desert", "College of the Redwoods", "College of the Sequoias", "College of the Siskiyous", "Compton College", "Contra Costa College", "Copper Mountain College", "Cuesta College", "Cypress College", "De Anza College", "Diablo Valley College", "East Los Angeles College", "El Camino College", "Evergreen Valley College", "Feather River College", "Folsom Lake College", "Fresno City College", "Fullerton College", "Gavilan College", "Glendale Community College", "Golden West College", "Grossmont College", "Hartnell College", "Imperial Valley College", "Irvine Valley College", "Lake Tahoe Community College", "Las Positas College", "Lassen College", "Lemoore College", "Long Beach City College", "Los Angeles City College", "Los Angeles Harbor College", "Los Angeles Mission College", "Los Angeles Pierce College", "Los Angeles Southwest College", "Los Angeles Trade Technical College", "Los Angeles Valley College", "Los Medanos College", "Madera College", "Mendocino College", "Merced College", "MiraCosta College", "Mission College", "Monterey Peninsula College", "Moorpark College", "Moreno Valley College", "Mt. San Antonio College", "Mt. San Jacinto College", "Napa Valley College", "Norco College", "Ohlone College", "Palo Verde College", "Palomar College", "Pasadena City College", "Porterville College", "Reedley College", "Rio Hondo College", "Riverside City College", "Sacramento City College", "Saddleback College", "San Bernardino Valley College", "San Diego Miramar College", "San Joaquin Delta College", "San Jose City College", "Santa Ana College", "Santa Barbara City College", "Santa Monica College", "Santa Rosa Junior College", "Shasta College", "Sierra College", "Skyline College", "Solano Community College", "Southwestern College", "Taft College", "Ventura College", "Victor Valley College", "West Los Angeles College", "West Valley College", "Woodland Community College", "Yuba College"], "basis": ""}};
+  /* Local titles already under each canonical title (kb/unified_titles.json, 2026-10-30). */
+  var UNDER = {"MAPCXH-ITDM-1-001": ["ART 102 Introduction to Computer Graphics - Portfolio"], "MAPSAS-ACSA20-1-001": ["AP Computer Science - A Exam", "AP Computer Science 1A (Score of 4 or 5)", "AP Computer Science A", "AP Computer Science A (Score 4-5)", "AP Computer Science A (Score of 3-5)", "AP Computer Science: A (CSU Semester Transfer Units)", "AP Exam Computer Science A (Score 3-5)", "AP Exam: Computer Science A", "AP: Computer Science A", "CSCI 270 Introduction to Programming - Advanced Placement", "CSCI 271 Problem Solving and Programming 1 - Advanced Placement"], "MAPCXH-ITDP-1-001": ["Intro. to Digital Photography"], "MAPCXH-RC1-1-001": [], "MAPCXH-RC2-1-001": [], "MAPICI-1RO&-1-001": [], "MAPCxH-3DMH-1-001": [], "MAPCXS-A2-J-1-001": ["Juvenile Law and Procedures ADJ 8 Cx"], "MAPCXH-ATMI-1-001": [], "MAPCXS-A2PA-1-001": ["ADJU 202 Principles/Procedures of Justice Sysytem - Credit by Exam", "ADJU 202 Principles/Procedures of Justice Sysytem - Industry Certification", "ADJU 202 Principles/Procedures of Justice Sysytem - Portfolio", "ADJUS 102 +"]};
+  /* Held exhibits, most students first (a sample of the 468, real rows of 2026-10-30). */
+  var HELD = [
+    { id: "MAPCXH-ITDM-1-001", college: "Cabrillo College", typed: "Introduction to Digital Media High School Articulation", course: "DM 1", ident: "C-ID ARTS 250", title: "Introduction to Digital Art", issuer: "Local High School", students: "442 students have credit on this exhibit", why: "the classifier alone was unsure (0.80)", step: "Proposed" },
+    { id: "MAPSAS-ACSA20-1-001", college: "Los Angeles Pierce College", typed: "AP Computer Science A - Score of 3 or higher - HISTORICAL Type 1", course: "", ident: "", title: "AP Computer Science A", issuer: "College Board", students: "398 students have credit on this exhibit", why: "an AP exam keeps its own name; held for a word left in the title", step: "Wording check" },
+    { id: "MAPCXH-ITDP-1-001", college: "Cabrillo College", typed: "Intro to Digital Photography High School Articulation", course: "AP 6", ident: "M-ID ARTS M1351", title: "Introduction to Digital Photography", issuer: "Local High School", students: "316 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
+    { id: "MAPCXH-RC1-1-001", college: "Cabrillo College", typed: "Residential Construction 1 High School Articulation", course: "CEM 178A", ident: "M-ID HVAC M10AE", title: "Residential Construction Skills 1: \"Front End\"", issuer: "Local High School", students: "160 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
+    { id: "MAPCXH-RC2-1-001", college: "Cabrillo College", typed: "Residential Construction 2 High School Articulation", course: "CEM 178B", ident: "M-ID CNST M1130", title: "Residential Construction Skills 2: \"Finish End\"", issuer: "Local High School", students: "158 students have credit on this exhibit", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
+    { id: "MAPICI-1RO&-1-001", college: "Palo Verde College", typed: "1st Receiver Ops & Decon", course: "FST 121", ident: "M-ID ESCI M10HI", title: "First Receiver Operations & Decontamination for Healthcare", issuer: "", students: "Too few students to show", why: "the classifier alone was unsure (0.75); no issuer yet", step: "Proposed" },
+    { id: "MAPCxH-3DMH-1-001", college: "Norco College", typed: "3D Digital Modeling HS-CNUSD", course: "GAM 6A", ident: "M-ID MULT M1019", title: "3D Digital Modeling", issuer: "Corona-Norco Unified School District", students: "No students with credit yet", why: "the classifier alone was unsure (0.75)", step: "Proposed" },
+    { id: "MAPCXS-A2-J-1-001", college: "Copper Mountain College, Modesto Junior College and Norco College", typed: "ADJU 232 - Juvenile Justice Procedures - Credit by Exam", course: "ADJ 8 (C-ID AJ 220, Juvenile Procedures)", ident: "the reference, reviewed by a person", title: "Juvenile Law and Procedures", issuer: "California Community Colleges", students: "Too few students to show", why: "the saved title disagrees with the reference", step: "Conflict with the reference", saved: "Saved by map@rccd.edu, 2026-06-02, as Juvenile Justice Procedures" },
+    { id: "MAPCXH-ATMI-1-001", college: "Santa Ana College", typed: "Automotive Technology MLR I & II - Irvine High School", course: "AUTO 102 (M-ID AUTO M9040, Introduction to Automotive)", ident: "the reference, reviewed by a person", title: "Automotive Technology Maintenance and Light Repair (MLR)", issuer: "Irvine High School", students: "No students with credit yet", why: "the saved title disagrees with the reference", step: "Conflict with the reference", saved: "Saved by map@rccd.edu, 2026-06-02, as Automotive Technology MLR I and II \u2014 Irvine High School" },
+    { id: "MAPCXS-A2PA-1-001", college: "Merritt College", typed: "ADJUS 23 Principles and Procedures of the Justice System", course: "ADJUS 023", ident: "", title: "Principles and Procedures of the Justice System", issuer: "California Community Colleges", students: "No students with credit yet", why: "the reference names POST as this title's issuer", step: "Two issuers" }
+  ];
+  /* What each CER step means, in one or two plain sentences (the chip's hover). */
+  var TIPS = {
+    "Proposed": "A rule or the classifier suggested a title, but not surely enough to save it. It waits for a person to keep, change or edit it.",
+    "Wording check": "The suggested title is likely right, but a word in it failed a quality check: a leftover course code, a dangling word or a method word. A person confirms it.",
+    "Two issuers": "The suggested title would join this exhibit to a credential the reference gives another issuer. A person decides whether they are one credential or two.",
+    "Saved, not folded": "A person or a rule saved a title. The nightly run adds it to the reference.",
+    "Conflict with the reference": "The title saved for this exhibit disagrees with one a person already approved. The nightly run never overwrites a person's decision, so it waits for you.",
+    "In the reference": "Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.",
+    "Left MAP": "The exhibit no longer appears in MAP. Keep its title for the record or retire it."
+  };
+  var MAP = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses?View=Non-Military&Exhibit=";
+  var cur = 0, filter = "";
+  var COUNTS = { "": 468, "Proposed": 401, "Wording check": 36, "Two issuers": 13, "Conflict with the reference": 18, "Saved, not folded": 0 };
+  function $(id) { return document.getElementById(id); }
+  function chips(id, names) {
+    var box = $(id); box.innerHTML = "";
+    var MAXC = 10, all = false;
+    function draw() {
+      box.innerHTML = "";
+      if (!names.length) { var none = document.createElement("span"); none.className = "small muted"; none.textContent = "None yet"; box.appendChild(none); return; }
+      (all ? names : names.slice(0, MAXC)).forEach(function (n) { var c = document.createElement("span"); c.className = "cchip"; c.textContent = shortName(n); c.title = n; box.appendChild(c); });
+      if (names.length > MAXC) {
+        var b = document.createElement("button"); b.type = "button"; b.className = "w small";
+        b.textContent = all ? "Show fewer" : "and " + (names.length - MAXC) + " more";
+        b.addEventListener("click", function () { all = !all; draw(); });
+        box.appendChild(b);
+      }
+    }
+    draw();
+  }
+  function shown() { return HELD.filter(function (h) { return !filter || h.step === filter; }); }
+  function load(i) {
+    var list = shown();
+    $("review-card").hidden = !list.length; $("rc-empty").hidden = !!list.length;
+    if (!list.length) return;
+    cur = Math.max(0, Math.min(i, list.length - 1)); var h = list[cur];
+    $("rc-step").textContent = "CER step: " + h.step;
+    $("rc-step").setAttribute("data-tip", TIPS[h.step] || "");
+    $("rc-step").setAttribute("aria-label", "CER step: " + h.step + ". " + (TIPS[h.step] || ""));
+    $("rc-saved").textContent = h.saved || "";
+    $("rc-who").textContent = "Deciding now, " + shortList(h.college) + ":";
+    (function () {
+      var list = UNDER[h.id] || [], box = $("rc-under"), open = false;
+      function draw() {
+        box.innerHTML = "";
+        if (!list.length) { var li0 = document.createElement("li"); li0.textContent = "No other local titles under it yet"; box.appendChild(li0); return; }
+        if (open) list.forEach(function (t) { var li = document.createElement("li"); li.textContent = t; box.appendChild(li); });
+        var li = document.createElement("li"), b = document.createElement("button");
+        b.type = "button"; b.className = "w small";
+        b.textContent = open ? "Show fewer" : "and " + list.length + " more";
+        b.addEventListener("click", function () { open = !open; draw(); });
+        li.appendChild(b); box.appendChild(li);
+      }
+      draw();
+    })();
+    $("rc-current").textContent = h.typed;
+    $("rc-course").textContent = h.course ? "\u00b7 articulated to " + h.course : "";
+    $("rc-from").textContent = "Canonical title, from " + (h.ident || "the classifier") + " (edit it here)";
+    var c = CH[h.id] || { art: [], could: [], basis: "" };
+    $("rc-art-label").textContent = "Articulated at (" + c.art.length + ")";
+    $("rc-could-label").textContent = "Could adopt (" + c.could.length + ")" + (c.basis ? ", same course as " + c.basis : ", from EACR");
+    chips("rc-art", c.art); chips("rc-could", c.could);
+    $("proposed-title").value = h.title;
+    $("proposed-issuer").value = h.issuer;
+    $("proposed-trainer").value = h.trainer || "";
+    $("rc-why").textContent = h.students + " \u00b7 " + h.why;
+    $("rc-source").textContent = h.id + " in MAP";
+    $("rc-source").href = MAP + encodeURIComponent(h.id);
+    $("rc-pos").textContent = (cur + 1) + " of " + COUNTS[filter] + (filter ? " in " + filter : "") + " \u00b7 most students first";
+    var n = list[cur + 1];
+    $("rc-next").textContent = n ? "Next: " + n.typed + ", " + shortList(n.college) : "";
+  }
+  function results(q) {
+    var box = $("find-results"); box.innerHTML = "";
+    q = q.trim().toLowerCase();
+    if (!q) { box.hidden = true; return; }
+    var list = shown();
+    var hits = list.map(function (h, i) { return [h, i]; }).filter(function (p) {
+      var h = p[0];
+      return [h.typed, h.id, h.college, h.course, h.title].join(" ").toLowerCase().indexOf(q) !== -1;
+    });
+    if (!hits.length) {
+      var li = document.createElement("li"); li.className = "none";
+      li.textContent = filter ? "No held exhibit in " + filter + " matches." : "No held exhibit matches. Credentials search covers the settled ones.";
+      box.appendChild(li);
+    }
+    hits.forEach(function (p) {
+      var h = p[0], li = document.createElement("li"), b = document.createElement("button");
+      b.type = "button"; b.setAttribute("role", "option");
+      var t = document.createElement("span"); t.className = "rt"; t.textContent = h.typed;
+      var m = document.createElement("span"); m.className = "rm"; m.textContent = shortList(h.college) + " \u00b7 " + h.id + (h.course ? " \u00b7 " + h.course : "");
+      var c = document.createElement("span"); c.className = "chip"; c.textContent = h.step; c.title = TIPS[h.step] || "";
+      var row = document.createElement("span"); row.className = "chiprow"; row.appendChild(m); row.appendChild(c);
+      b.appendChild(t); b.appendChild(row);
+      b.addEventListener("click", function () { load(p[1]); $("find-exhibit").value = ""; box.hidden = true; $("proposed-title").focus(); });
+      li.appendChild(b); box.appendChild(li);
+    });
+    box.hidden = false;
+  }
+  $("find-exhibit").addEventListener("input", function (e) { results(e.target.value); });
+  $("find-exhibit").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") { var first = $("find-results").querySelector("button"); if (first) { e.preventDefault(); first.click(); } }
+    if (e.key === "Escape") { $("find-results").hidden = true; }
+  });
+  document.querySelectorAll("[data-step]").forEach(function (b) {
+    b.addEventListener("click", function () { var n = shown().length; load(n ? (cur + 1) % n : 0); });
+  });
+  document.querySelectorAll("[data-filter]").forEach(function (b) {
+    var f = b.getAttribute("data-filter");
+    var tip = f ? TIPS[f] : "Every held title, most students first.";
+    b.setAttribute("data-tip", tip);
+    b.setAttribute("aria-label", (f || "All held") + ", " + b.querySelector(".sn").textContent + ". " + tip);
+    b.addEventListener("click", function () {
+      filter = b.getAttribute("data-filter");
+      if (location.hash !== "#cobi-review") location.hash = "#cobi-review";
+      document.querySelectorAll("[data-filter]").forEach(function (x) { x.setAttribute("aria-pressed", x === b ? "true" : "false"); });
+      $("find-exhibit").value = ""; $("find-results").hidden = true;
+      load(0);
+    });
+  });
+  document.querySelectorAll("[data-panel-link]").forEach(function (a) {
+    a.addEventListener("click", function (e) {
+      e.preventDefault();
+      var id = a.getAttribute("data-panel-link");
+      document.querySelectorAll("aside.panel").forEach(function (p) { p.hidden = p.id !== id; });
+      document.querySelectorAll("tr[data-panel]").forEach(function (r) { r.classList.toggle("sel", r.getAttribute("data-panel") === id); });
+    });
+  });
+  /* The panel's issuer and training sites: edit in place, one Save. */
+  document.addEventListener("click", function (e) {
+    var add = e.target.closest("[data-addsite]"), rm = e.target.closest("[data-remove]"), sv = e.target.closest("[data-save]");
+    if (add) {
+      var box = document.getElementById(add.getAttribute("data-addsite"));
+      var row = document.createElement("div"); row.className = "siterow";
+      row.innerHTML = '<input class="edit-sm for" type="text" placeholder="College" aria-label="College">'
+        + '<input class="edit-sm" type="text" placeholder="Local school house or training center" aria-label="Training site">'
+        + '<button class="w" type="button" data-remove>Remove</button>';
+      box.appendChild(row); row.querySelector("input").focus();
+    }
+    if (rm) { var r = rm.closest(".siterow"); if (r) r.remove(); }
+    if (sv) {
+      var out = document.getElementById(sv.getAttribute("data-save"));
+      out.textContent = "Saved. Tonight's run adds it to the reference.";
+    }
+  });
+  document.querySelectorAll(".cname").forEach(function (a) { a.title = a.textContent; a.textContent = shortName(a.textContent); });
+  load(0);
+})();
+</script>

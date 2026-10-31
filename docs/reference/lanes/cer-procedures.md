@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-10-18
+updated: 2026-10-31
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -18,6 +18,44 @@ sees only the exceptions. Sam, 2026-10-18 ~02:55Z (vault braindump
 `braindump-2026-10-18-0300-cer-procedures-automate-curation`): *"I want to be able to add more procedures to have you
 classify and complete common exhibit titles and elements as we go. I don't have enough time to curate the growing list
 and want to further automate so curation is manageable."*
+
+## The redesign (2026-10-30, side session beside S531)
+
+Sam, 2026-10-30: *"Have a good look at the current CER and notice how crowded it is and not intuitive to navigate. It is
+now part of our Catalog Commons overall project and I want you to help me make it much more manageable and simple."*
+Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (version 25), source
+`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html` (PR #2595). Nothing built yet. What Sam ruled in the
+mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2026-10-30):
+
+- **One Exhibits tab in the Catalog Commons replaces CER and EACR** (recommended; his "we might be able to consolidate
+  the EACR tab with CER if we are careful"). Three questions organize it: *What is it called? What credit does it
+  carry? Who could adopt it?* ("I do like your 3 categories"). Views: Review, Credentials, Rules.
+- **A status bar of tiles per question**, the Commons pattern; the **CER step tiles filter the Review queue** (All held
+  468, Proposed 401, Wording check 36, Two issuers 13, Conflict with the reference 18, Saved not folded 0), each step a
+  chip with a plain hover.
+- **Review sorts by students** with credit (106 held exhibits carry 3,000 students; the 40 with ten or more carry at
+  least 84%; Cabrillo's high school articulations lead). **The canonical title is always the focus**, editable; issuer
+  and training site sit in gray-labeled boxes under it; local titles in small print, the one being decided
+  highlighted, the rest *and N more*; college chips for *Articulated at* and *Could adopt* (same-identity course, else
+  EACR's list). Buttons: Keep Current Title, Change to Proposed Title, Teach a rule, Skip. A search goes to any exhibit.
+- **The aligned course names the proposal** (cpl_memory `sam-cer-aligned-course-names-the-exhibit-2026-10-30`): 394 of
+  468 held titles articulate to a course with a CCN, C-ID or M-ID. A conflict proposes the reference's person-reviewed
+  title.
+- **One issuer, many training sites**, set from the panel (cpl_memory `sam-cer-issuer-and-training-sites-2026-10-30`):
+  363 of 2,465 credentials name a site; 17 say only JATC.
+- **Why it matters (vault braindumps of 2026-10-30):** the public adoption page and Malone's new MAP exhibit module
+  both read the CER's canonical titles and issuers.
+
+**Sam's rulings, Open Asks Sheet 147** ([the sheet](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), completed 00:06Z 2026-10-31, all five his own call; cpl_memory `sam-sheet-147-rulings-2026-10-31`). Build in this order:
+
+1. **One Exhibits tab** in the Catalog Commons replaces the CER and EACR; **Review is built first**. The two tabs stay until Exhibits carries everything they show.
+2. **The high school and ROP rule.** The 96 held titles settle under one rule once the aligned-course lookup lands (CCN, then C-ID, then M-ID, then the college's title; fold leading zeros), the school or district as issuer; AP exams keep the College Board's names (brand-family). One cohort, one receipt, the procedure's undo.
+3. **The public adoption page lists settled credentials only** (a person's or a rule's stamp), so it grows as the CER finishes. Its name is still his to give; *Credentials Your College Can Adopt* holds the place.
+4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
+5. **The CPL-AI matching loads into the Program Requirements dialog first**; Sierra and public surfaces wait on his word.
+
+**Sam asked, not yet drawn:** clicking a could-adopt college chip opens that college's aligned courses and the Request
+Quick Adopt links.
 
 ## Status
 
@@ -121,4 +159,7 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
 rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
 `python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
 
-**NEXT:** after the daily build, confirm on the tab that the Unclassified lane names each saved title's cohort as the saver and Needs you holds the 414 (the fold's 18 among them); read the nightly 07:47Z run's receipt tomorrow, the first unattended saving night.
+**NEXT:** build the redesign in this order: (1) the Review queue on the drawn card, sorted by students, with the
+aligned-course rule (CCN, C-ID, then M-ID; AP and brand credentials keep their names, pending Sam's confirmation) and the
+step tiles as filters; (2) the credential panel with issuer and training sites editable; (3) EACR folds into it; (4) the
+public page on stamped credentials only. Each answer waits on Sam (below).

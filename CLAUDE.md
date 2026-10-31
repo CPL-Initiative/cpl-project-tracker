@@ -587,7 +587,7 @@ file.
   add the role to the dark `:root` in both HTMLs (Rule 4), never a component
   rule there. [lane](docs/reference/lanes/cobi-dark-mode.md)
   **One departure (Sam, 2026-10-24):** the public `library/` page and Sierra take Malone's
-  CPL/AI look ([lane](docs/reference/lanes/library.md)).
+  CPL/AI look ([lane](docs/reference/lanes/library.md)); the public adoption page joins them (Sheet 147, 2026-10-31).
 - **Accessible to today's standards — and verified, not claimed.** Compute every
   fg-on-bg pair actually used (zebra rows and glass composites included) against
   **AA 4.5:1 / 3:1** — `prototype/check_contrast.py` holds the math. **Color is
@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 146](https://claude.ai/artifact/WqcNWsDC73wk5srufsTgt4), 2026-10-30, answered whole; nothing open). An answer
+> (latest: [Open Asks Sheet 147](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), 2026-10-31, answered whole; nothing open). An answer
 > changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

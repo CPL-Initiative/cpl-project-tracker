@@ -378,3 +378,45 @@ check that exists nowhere else; then the CCR mountain in leverage-ordered waves.
 - **A sheet answered before its lane carried a marker needs none.** Sheet 96 was published at 17:11Z and answered at 17:23Z; the lane records the ruling, the builder retires the card the way every answered card left, and the vault's coverage check passes with an empty backlog (29/29) without reading a tracker marker.
 - **Read the queued notifications before a Rule 8 write when another session was live.** S417 wrote Sam's Sheet 96 ruling to `cpl_memory` at 17:29Z after its sign-off and said so in two cross-session messages; those sat in this session's queue until the turn ended, and S418 wrote the same ruling at 17:43Z. The duplicate is superseded explicitly (same source, same fact; the cited row keeps the store quotes) through `supabase-migrate.yml`, because `execute_sql` holds an UPDATE for the connector's own confirmation (60 s timeout, twice) where an INSERT runs at once; the migrate route takes DML (S411's precedent) and its apply job ran without a gate.
 
+
+## 2026-10-30 — the Exhibits redesign mock-up, and the Admin Save (side session beside S531)
+
+**Sam's words, in order** (all 2026-10-30, in session): *"Have a good look at the current CER and notice how crowded it
+is and not intuitive to navigate ... I want you to help me make it much more manageable and simple. let's use the
+process where you produce a visual I can react to. I don't like the current color scheme or layout. advise"*; *"We might
+be able to consolidate the EACR tab with CER if we are careful"*; *"Malone needs a canonical catalog of our exhibits for
+the new MAP exhibit module"*; *"prioritize the work on canonicalizing based on the number of estimated students it could
+touch or does touch now"*; *"make the mock the way I'd see it, without the explanations"*; *"I do like your 3
+categories"*; *"if there's a M-ID title aligned show it and let it determine the proposed classifyer"*; *"change Accept to
+Keep Current Title and Change the title to Changed to Proposed Title...but what if we want to edit the proposed title?"*;
+*"can we shoot to a certain exhibit to set the title using a search bar?"*; *"chip showing the status of CER step"* with
+a hover; *"the filters for status could be in the higher cards"*; *"add the training site ... could be multiple training
+sites ... set and change both issuer and training site from here"*; *"Once a canonical title is proposed ... the main
+focus with small chips for all the colleges"*; *"shouldn't the proposed canonical title always be the focus and the
+differing titles below it in small print"*; *"call it Local titles"*, then *"Local titles and 1 more"*; the gray labels
+inside the boxes; *"When college could adopt chips clicked they should open with the courses and Request Quick Adopt
+links"* (not yet drawn). The lane file states the design; this section keeps the learning.
+
+**What the run learned.**
+
+- **Check the server before the code.** Sam's menu hides "did not save". The edge logs showed his Admin visits signed in
+  as a reviewer (`cobi_rls_gates` 200, 123 rows) and no `cobi_nav` write after either: the page never sent one. The
+  cause was a button: the ladder's **Done** only closed the editor, and Save the menu sat below the fold. Fixed in #2593
+  (the editor's button reads Save and saves).
+- **EACR's "potential" counts colleges, not students.** Student counts live in `map_credential_volume` (canonical titles)
+  and `map_student_credit` (per exhibit). A held title has no canonical row yet, so rank held titles through their
+  exhibit IDs (`statewide_data.js` records) into `map_student_credit`, aggregate only.
+- **A round number earns one more look.** 3,000 distinct students on held exhibits read like a cap; the per-exhibit sum
+  was 3,775 (a student holds credit on several), and the figure stood.
+- **The aligned course reaches most of the queue and misnames brands.** 394 of 468 held titles articulate to a course
+  with a CCN, C-ID or M-ID, but "AP Computer Science A HS-LEUSD" would become "Java Programming: Advanced Objects": AP and
+  brand credentials keep their own names.
+- **A course code with a leading zero misses the course lookup.** MAP's "ADJUS 023" did not find COCI's course; the
+  build should fold leading zeros.
+- **The CPL-AI join runs through the CER.** 31 of the 115 ASCCC/Foundation certifications matched a MAP common title by
+  hand (16 exact); the rest wait on canonical titles. 2,004 college and certification pairs have a strong-evidence course
+  and a builder to Request Quick Adopt from.
+- **The short-name table and a naming rule disagree on 46 of 118 colleges.** Keep the table as the one source and fix
+  rows there; code no exceptions (Sam). #2598 carries his four corrections.
+- **Show the screens.** When Sam asked for the mock "the way I'd see it", every finding and note left the page; the design
+  record lives in git history (version 8) and here.
