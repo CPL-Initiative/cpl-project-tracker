@@ -81,6 +81,8 @@
     data: null, error: null, filter: "", cur: 0,
     students: null, studentsWord: "", total: null,
     done: {}, note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
+    // Back (Sam, 2026-10-31): the cards decided or skipped this visit, newest last, as {raw, saved}.
+    history: [], bulkAsk: false, bulkBusy: false,
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
     view: "review",
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null, q: "", sel: null, limit: CRED_PAGE,
@@ -244,8 +246,34 @@
     }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
   }
 
+  /* Accept all proposed titles: the same two rows per title, posted in batches of 100 titles. */
+  function saveMany(items) {
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      var rows = [];
+      items.forEach(function (it) {
+        rows.push({ course_id: UNCLASS_PREFIX + it.raw, field: FIELD_TITLE, value: it.title, reviewer_email: sess.email });
+        rows.push({ course_id: UNCLASS_PREFIX + it.raw, field: FIELD_ISSUER, value: it.issuer, reviewer_email: sess.email });
+      });
+      var chain = Promise.resolve();
+      for (var i = 0; i < rows.length; i += 200) {
+        (function (part) {
+          chain = chain.then(function () {
+            return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+              method: "POST", headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
+              body: JSON.stringify(part)
+            }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
+          });
+        })(rows.slice(i, i + 200));
+      }
+      return chain;
+    });
+  }
+
   /* ── the actions ── */
-  function decided(h, note) {
+  function decided(h, note, saved) {
+    state.history.push({ raw: h.raw, saved: saved == null ? null : saved });
+    h.saved = saved || h.saved;
     state.done[h.raw] = true;
     delete state.drafts[h.raw];
     state.teachDraft = "";
@@ -270,7 +298,7 @@
       return;
     }
     saveAssignment(h.raw, h.raw.trim(), issuer)
-      .then(function () { decided(h, "Saved “" + h.raw.trim() + "” as its own title. The nightly run adds it to the reference."); })
+      .then(function () { decided(h, "Saved “" + h.raw.trim() + "” as its own title. The nightly run adds it to the reference.", h.raw.trim()); })
       .catch(failed);
   }
   function changeToProposed(h, box, issuer) {
@@ -283,19 +311,71 @@
         return;
       }
       clearAssignment(h.raw)
-        .then(function () { decided(h, "Cleared the saved assignment; the reference's title “" + title + "” stands."); })
+        .then(function () { decided(h, "Cleared the saved assignment; the reference's title “" + title + "” stands.", title); })
         .catch(failed);
       return;
     }
     saveAssignment(h.raw, title, issuer)
-      .then(function () { decided(h, "Saved “" + title + "”. The nightly run adds it to the reference."); })
+      .then(function () { decided(h, "Saved “" + title + "”. The nightly run adds it to the reference.", title); })
       .catch(failed);
   }
-  function skip(list) {
-    state.cur = list.length ? (state.cur + 1) % list.length : 0;
-    state.note = ""; state.teach = false; state.openCollege = null; state.teachDraft = "";
+  function resetCard() {
+    state.teach = false; state.openCollege = null; state.teachDraft = ""; state.bulkAsk = false;
     state.showAllArt = state.showAllCould = state.showUnder = false;
+  }
+  function skip(list) {
+    if (list[state.cur]) state.history.push({ raw: list[state.cur].raw, skipped: true });
+    state.cur = list.length ? (state.cur + 1) % list.length : 0;
+    state.note = "";
+    resetCard();
     render();
+  }
+  /* Back (Sam, 2026-10-31: "need a back button ... to go to a few previous items"): the last card
+     decided or skipped this visit returns to the queue where it was, with what was saved for it; a new
+     choice replaces that save (kb_curation's key is the title and the field). */
+  function back() {
+    var last = state.history.pop();
+    if (!last) return;
+    var h = state.data.held.filter(function (x) { return x.raw === last.raw; })[0];
+    if (!h) { render(); return; }
+    delete state.done[h.raw];
+    if (last.saved) h.saved = last.saved;
+    var list = shown();
+    if (list.indexOf(h) < 0) { state.filter = ""; list = shown(); }
+    state.cur = Math.max(0, list.indexOf(h));
+    state.note = "Back to “" + h.raw + "”." + (last.saved
+      ? " You saved “" + last.saved + "”; a new choice replaces it." : "");
+    resetCard();
+    render();
+    var t = document.getElementById("exh-title");
+    if (t) t.focus();
+  }
+  /* Accept all proposed titles (Sam, 2026-10-31): every title in the list on screen takes its proposed
+     title and issuer, a typed edit where there is one. A conflict with the reference stays for a person, and
+     a title someone already saved keeps that save: the bulk word never overwrites a person's decision. */
+  function bulkItems(list) {
+    return list.filter(function (h) { return h.step !== CONFLICT && !h.saved; }).map(function (h) {
+      var d = state.drafts[h.raw] || {};
+      return { h: h, raw: h.raw, title: String(d.title != null ? d.title : (h.title || "")).trim(),
+        issuer: String(d.issuer != null ? d.issuer : (h.issuer || "")).trim() };
+    }).filter(function (it) { return !!it.title; });
+  }
+  function acceptAll(list) {
+    var items = bulkItems(list);
+    if (!items.length) return;
+    state.bulkBusy = true; render();
+    saveMany(items).then(function () {
+      items.forEach(function (it) {
+        state.history.push({ raw: it.raw, saved: it.title });
+        it.h.saved = it.title;
+        state.done[it.raw] = true;
+        delete state.drafts[it.raw];
+      });
+      state.bulkBusy = false; state.cur = 0;
+      resetCard();
+      state.note = "Saved the proposed title for " + fmt(items.length) + " titles. The nightly run adds them to the reference. Back returns to them one at a time.";
+      render();
+    }).catch(function (e) { state.bulkBusy = false; state.bulkAsk = false; failed(e); });
   }
   function teachText(h, words, box, issuer) {
     return "Add a CER procedure (from the Exhibits tab, " + new Date().toISOString().slice(0, 10) + "): "
@@ -450,7 +530,7 @@
     var typed = el("div", { cls: "exh-typed" }, [el("span", { cls: "exh-cl", text: "Local titles" })]);
     var nowLi = el("li", { cls: "exh-now" }, [
       el("span", { cls: "exh-muted", text: "Deciding now, " + shortList(whoBuilt(h)) + ": " }),
-      el("span", { text: h.raw })]);
+      el("strong", { text: h.raw })]);
     if (h.course) nowLi.appendChild(el("span", { cls: "exh-muted", text: " · articulated to " + h.course }));
     typed.appendChild(el("ul", null, [nowLi]));
     var under = el("ul", { cls: "exh-under" });
@@ -494,11 +574,34 @@
     }
 
     var acts = el("div", { cls: "exh-acts" });
-    acts.appendChild(word("Keep Current Title", function () { keepCurrent(h, title.value, issuer.value.trim()); }));
+    // Change to Proposed Title first (Sam, 2026-10-31: "to the left of keep current title").
     acts.appendChild(word("Change to Proposed Title", function () { changeToProposed(h, title.value, issuer.value.trim()); }));
+    acts.appendChild(word("Keep Current Title", function () { keepCurrent(h, title.value, issuer.value.trim()); }));
     acts.appendChild(word("Teach a rule", function () { state.teach = !state.teach; render(); }, { "aria-expanded": state.teach ? "true" : "false", "aria-controls": "exh-teach" }));
+    if (state.history.length) acts.appendChild(word("Back", back, { "aria-label": "Back to the previous title, " + state.history[state.history.length - 1].raw }));
     acts.appendChild(word("Skip", function () { skip(list); }));
     c.appendChild(acts);
+    var many = bulkItems(list);
+    if (many.length > 1) {
+      var bulk = el("div", { cls: "exh-bulk" });
+      if (!state.bulkAsk) {
+        bulk.appendChild(word("Accept all proposed titles (" + fmt(many.length) + ")", function () { state.bulkAsk = true; render(); },
+          { cls: "exh-w exh-small", "aria-expanded": "false" }));
+      } else {
+        var steps = {};
+        many.forEach(function (it) { steps[it.h.step] = (steps[it.h.step] || 0) + 1; });
+        var held = list.length - many.length;
+        bulk.appendChild(el("p", { cls: "exh-small", role: "status" }, [
+          "Save the proposed title and issuer for the " + fmt(many.length) + " titles in this list ("
+          + Object.keys(steps).map(function (k) { return fmt(steps[k]) + " " + k; }).join(", ") + ")? An edit you typed on a card counts as its proposal."
+          + (held ? " The other " + fmt(held) + ", in conflict with the reference or saved earlier, stay as they are." : "")]));
+        bulk.appendChild(el("div", { cls: "exh-acts" }, [
+          word(state.bulkBusy ? "Saving…" : "Save all " + fmt(many.length), function () { if (!state.bulkBusy) acceptAll(list); },
+            state.bulkBusy ? { disabled: "disabled" } : null),
+          word("Cancel", function () { state.bulkAsk = false; render(); })]));
+      }
+      c.appendChild(bulk);
+    }
     if (state.teach) {
       var ta = el("textarea", { id: "exh-teach-words", rows: "3", cls: "exh-ta",
         placeholder: "The rule in plain words, as you would tell a session" });
@@ -1245,6 +1348,8 @@
     ".exh-why { margin:0; color:var(--text-muted); border-left:2px solid var(--border-strong); padding-left:10px; overflow-wrap:anywhere; }",
     ".exh-card > p { margin:0; }",
     ".exh-acts { display:flex; flex-wrap:wrap; gap:8px 22px; align-items:center; }",
+    ".exh-bulk { display:grid; gap:6px; padding-top:8px; border-top:1px solid var(--border); }",
+    ".exh-bulk p { margin:0; color:var(--text-body); max-width:var(--cpl-measure,none); }",
     ".exh-teach { display:grid; gap:6px; border-top:1px solid var(--border); padding-top:10px; }",
     ".exh-ta { font:inherit; color:var(--text-body); background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:6px 8px; width:100%; box-sizing:border-box; min-width:0; }",
     ".exh-foot { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 16px; font-size:.88rem; color:var(--text-muted); }",
