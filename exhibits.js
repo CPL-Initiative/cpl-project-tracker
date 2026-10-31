@@ -56,7 +56,8 @@
 // trainer box, it should search for text matches for existing items and present option to click with each
 // text entry". So a conflict card's Change and Keep save the way Another look does, with
 // unified_title_supersedes naming the reviewed title (the fold re-points it only while that title still
-// stands); a title naming an ASE test fills its issuer box with ASE until he types his own; and the issuer
+// stands); a title that is an ASE certification fills its issuer box with ASE until he types his own (a course
+// aligned to a test keeps its college or school, Sam's later word that day); and the issuer
 // and training-site boxes offer the names already in the reference (kb/exhibits_review.json's issuers and
 // sites, and the credential view's rows once read).
 //
@@ -106,7 +107,10 @@
   var FIELD_SUPERSEDES = "unified_title_supersedes";
   var FIELD_KEPT = "title_sweep_kept";
   var ASE_ISSUER = "National Institute for Automotive Service Excellence (ASE)";
-  var ASE_IN_TITLE = /\bASE\b|Automotive Services? Excellence/i;
+  /* The certification itself opens with ASE (ASE A8 — Engine Performance). A course aligned to a test names it in
+     parentheses and keeps its college or school as issuer (Sam, 2026-10-31: "Agree on your call on the college as
+     issuer"). */
+  var ASE_CERT_TITLE = /^\s*(?:ASE\b|Automotive Services? Excellence\b|National Institute for Automotive Service Excellence\b)/i;
   var OPTS_MAX = 8;
   var REQ_PREFIX = "_CER_PROCEDURE_REQUEST::";
   var FIELD_REQ = "cer_procedure_request";
@@ -184,9 +188,9 @@
   }
   function mapUrl(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW; }
   function whoBuilt(h) { return h.colleges && h.colleges.length ? h.colleges : h.art; }
-  /* The issuer a title brings with it: an ASE test in the title names ASE, ahead of the proposal's issuer;
+  /* The issuer a title brings with it: an ASE certification's title names ASE, ahead of the proposal's issuer;
      what a person typed in the box wins over both. */
-  function aseIssuer(title) { return ASE_IN_TITLE.test(title || "") ? ASE_ISSUER : ""; }
+  function aseIssuer(title) { return ASE_CERT_TITLE.test(title || "") ? ASE_ISSUER : ""; }
   function issuerFor(title, issuer) { return aseIssuer(title) || issuer || ""; }
 
   /* ── names to pick from: the issuers and training sites already in the reference ── */
@@ -830,7 +834,7 @@
     canon.appendChild(title);
     var iss = el("input", { id: "exh-sw-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
     iss.value = sweepIssuer(c, title.value);
-    var swAse = el("p", { cls: "exh-muted exh-small", text: "Issuer filled from the ASE test in the title. Type another to change it." });
+    var swAse = el("p", { cls: "exh-muted exh-small", text: "Issuer filled: the title is an ASE certification. Type another to change it." });
     function swShowAse() { swAse.hidden = state.sw.issuers[c.id] != null || !aseIssuer(title.value); }
     function swTyped() { state.sw.issuers[c.id] = iss.value; swShowAse(); }
     iss.addEventListener("input", swTyped);
@@ -985,7 +989,7 @@
     var issuerTyped = draft.issuer != null;
     issuer.value = issuerTyped ? draft.issuer : issuerFor(title.value, h.issuer);
     function keepDraft() { var dd = { title: title.value }; if (issuerTyped) dd.issuer = issuer.value; state.drafts[h.raw] = dd; }
-    var aseNote = el("p", { cls: "exh-muted exh-small", text: "Issuer filled from the ASE test in the title. Type another to change it." });
+    var aseNote = el("p", { cls: "exh-muted exh-small", text: "Issuer filled: the title is an ASE certification. Type another to change it." });
     function showAse() { aseNote.hidden = issuerTyped || !aseIssuer(title.value); }
     issuer.addEventListener("input", function () { issuerTyped = true; keepDraft(); showAse(); });
     canon.appendChild(el("label", { cls: "exh-inbox", "for": "exh-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));

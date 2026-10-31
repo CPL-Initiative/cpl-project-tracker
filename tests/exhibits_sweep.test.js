@@ -119,15 +119,14 @@ function card(d) { return d.querySelector("section.exh-card"); }
     ["Change to Proposed Title", "Keep Current Title", "Skip"].every(function (w) { return !!byText(t.d, ".exh-acts button", w); }));
 
   // Sam, 2026-10-31: "anything with an ASE cert in the title should auto-populate the issuer and allow me to accept it."
-  check("a title naming an ASE test fills the issuer box with ASE and says why",
-    t.d.getElementById("exh-sw-issuer").value === "National Institute for Automotive Service Excellence (ASE)"
-    && /Issuer filled from the ASE test in the title/.test(txt(c)));
+  check("a course aligned to an ASE test keeps the card's issuer in its box",
+    t.d.getElementById("exh-sw-issuer").value === "California Community Colleges");
   byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
   let rows = rowsOf(t);
   check("Change saves the local title's assignment, its issuer and the title it replaces, in one post",
     posts(t).length === 1 && rows.length === 3
     && rows.some(function (r) { return r.course_id === "_UNCLASSIFIED::Noncredit for AUTO A1" && r.field === "unified_title_assignment" && r.value === "Automotive Technology (ASE A1 Engine Repair)"; })
-    && rows.some(function (r) { return r.field === "issuing_agency_assignment" && r.value === "National Institute for Automotive Service Excellence (ASE)"; })
+    && rows.some(function (r) { return r.field === "issuing_agency_assignment" && r.value === "California Community Colleges"; })
     && rows.some(function (r) { return r.field === "unified_title_supersedes" && r.value === "Engine Repair"; })
     && rows.every(function (r) { return r.reviewer_email === "reviewer@example.org" && /^\d{4}-\d\d-\d\dT/.test(r.reviewed_at); }));
   check("the note says the fold moves it while the current title stands", /while “Engine Repair” still stands/.test(txt(t.d.querySelector(".exh-status"))));
