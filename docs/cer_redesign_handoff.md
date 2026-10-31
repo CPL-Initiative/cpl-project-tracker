@@ -63,7 +63,11 @@ sections, with Sam's words).
    noncredit programs and are not eligible (Sam, ~20:50Z; neither appears in the funding tab; the model skips the
    names in `kb/non_ccc_institutions.json`, which lists only Cal State LA today).
 5. **Later, an idea of Sam's (~20:50Z):** *"set up a scheduled task to harvest the key position emails, names, titles to
-   add to our MAP Colleges table"*. Not yet asked to build; the cascade above shows which positions matter. The tab's PII guard forbids these addresses today: a reviewer-only
+   add to our MAP Colleges table"*, then the spec (~20:55Z): *"would want the cron to run weekly...District CEO, College
+   CEO, VPAA, VPSS, VPBS, Dean CTE, Dean Instruction, Dean or Director of A&R, VRC Director or Coordinator, Articulation
+   Officer"*. `map_college_contacts` already carries CEO, VPAA, VPSS and Articulation Officer from MAP; the rest are new.
+   A weekly scheduled task needs Sam to create it on claude.ai's routines page (S490), and writing staff contacts into a
+   shared table routes through Governance first (Rule 10 a3). Not yet asked to build. The tab's PII guard forbids these addresses today: a reviewer-only
    read is the build's first piece. Build on his reply; if none, put it on the next sheet.
 1. **Sam's ASE naming call, asked in chat (19:30Z):** the course title as the ASE test's name plus a short tag,
    *Engine Performance (ASE A8)*, with the level kept where a college teaches a sequence. On **ASE short**, change
