@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-30T17:01:50Z",
+ "written_at": "2026-10-31T02:13:02Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13243,
+     "n": 13464,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,7 +26,7 @@
    ],
    "issues": [
     {
-     "n": 3684,
+     "n": 3463,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
@@ -50,17 +50,17 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-30T12:31:04Z",
+    "at": "2026-10-30T23:03:18Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13243,
-    "failing": 3684,
+    "complete": 13464,
+    "failing": 3463,
     "unread": 3355,
-    "records": 18552,
+    "records": 18550,
     "colleges": 114,
-    "outside_active": 1625
+    "outside_active": 1623
    },
    "sources": [
     "coci_programs_data.js",
@@ -77,6 +77,10 @@
     {
      "href": "#credential-reference",
      "text": "Open the tab"
+    },
+    {
+     "href": "#exhibits",
+     "text": "Open Exhibits"
     }
    ],
    "status_file": "kb/status/exhibit.json",
@@ -117,8 +121,8 @@
    ],
    "procedures": [
     {
-     "n": 12,
-     "words": "in force: 7 rules applied by code, 5 read by the classifier",
+     "n": 13,
+     "words": "in force: 8 rules applied by code, 5 read by the classifier",
      "open": "#credential-reference/procs",
      "error": null
     },
@@ -128,7 +132,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-30T16:58:18Z",
+    "at": "2026-10-31T02:08:33Z",
     "every_hours": 24
    },
    "facts": {
@@ -140,9 +144,9 @@
     "records": 2689,
     "records_stamped": 1870,
     "saved_at": "2026-10-30T14:35:41Z",
-    "fold_at": "2026-10-30T16:58:18Z",
-    "map_titles": 4859,
-    "unclassified": 450,
+    "fold_at": "2026-10-31T02:08:33Z",
+    "map_titles": 4872,
+    "unclassified": 463,
     "left_map": 621,
     "below_80": 1151,
     "below_60": 245
@@ -221,7 +225,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-30T17:00:02+00:00",
+    "at": "2026-10-31T02:10:46+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -269,7 +273,7 @@
      "open": "#cr-reference/open"
     },
     {
-     "n": 38,
+     "n": 37,
      "words": "groups an official number reaches whose title shares no word with the wordings, held for a check",
      "owner": "a curator",
      "open": "#cr-reference/names"
@@ -287,7 +291,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-21T14:37:51Z",
+    "at": "2026-10-30T17:01:52Z",
     "every_hours": null
    },
    "facts": {
@@ -328,12 +332,12 @@
      }
     },
     "awaiting_look": 138,
-    "names_to_check": 38,
+    "names_to_check": 37,
     "held_by_screen": 0,
     "named_by_range": 88,
     "named_noncredit": 7,
     "units_differ": 113,
-    "named_official": 295
+    "named_official": 296
    },
    "sources": [
     "kb/cr_reference_worklist.json",
@@ -402,7 +406,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-30T16:58:17Z",
+    "at": "2026-10-31T02:08:30Z",
     "every_hours": 24
    },
    "facts": {
@@ -414,7 +418,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-10-30",
+    "scanned_at": "2026-10-31",
     "procedures_on": 6
    },
    "sources": [

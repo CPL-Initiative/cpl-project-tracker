@@ -4,10 +4,10 @@
 // funding/_build_funding_ess.py in the daily workflow; do not hand-edit.
 // Institutional aggregates only — no person-level data.
 window.CPL_FUNDING_ESS = {
- "as_of": "2026-10-30",
+ "as_of": "2026-10-31",
  "source": "credential_reference_data.js — credentials flagged statewide (ASCCC Pathways to Credit) with >= 1 local articulation",
  "n_statewide_credentials": 84,
- "n_adopters": 71,
+ "n_adopters": 70,
  "statewide_adopters": {
   "American River": true,
   "Antelope Valley": true,
@@ -66,7 +66,6 @@ window.CPL_FUNDING_ESS = {
   "San Diego City": true,
   "San Diego Mesa": true,
   "San Diego Miramar": true,
-  "San Francisco": true,
   "San Joaquin Delta": true,
   "San Mateo": true,
   "Santa Ana": true,
@@ -81,5 +80,7 @@ window.CPL_FUNDING_ESS = {
   "West LA": true,
   "Woodland": true
  },
- "unmatched": {}
+ "unmatched": {
+  "City College of San Francisco": 159
+ }
 };
