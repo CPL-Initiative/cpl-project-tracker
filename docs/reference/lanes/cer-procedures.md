@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-10-30
+updated: 2026-10-31
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -46,10 +46,14 @@ mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2
 - **Why it matters (vault braindumps of 2026-10-30):** the public adoption page and Malone's new MAP exhibit module
   both read the CER's canonical titles and issuers.
 
-**NEEDS SAM** (open, asked in chat 2026-10-30; [Open Asks Sheet 147](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), 2026-10-31, carries them on five cards; cards 1, 2 and 5 proceed on the recommendation, 3 and 4 wait for his reply): merge EACR into the CER; Review first;
-public page on stamped credentials only; its look (First Light or Malone's CPL/AI look); the high school and ROP rule and
-the AP exception; loading the CPL-AI matching (Activity 1.1.1; 31 of 115 certifications join a MAP exhibit, 2,004
-college and certification pairs with strong evidence and a builder) into the Program Requirements dialog first.
+**Sam's rulings, Open Asks Sheet 147** ([the sheet](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), completed 00:06Z 2026-10-31, all five his own call; cpl_memory `sam-sheet-147-rulings-2026-10-31`). Build in this order:
+
+1. **One Exhibits tab** in the Catalog Commons replaces the CER and EACR; **Review is built first**. The two tabs stay until Exhibits carries everything they show.
+2. **The high school and ROP rule.** The 96 held titles settle under one rule once the aligned-course lookup lands (CCN, then C-ID, then M-ID, then the college's title; fold leading zeros), the school or district as issuer; AP exams keep the College Board's names (brand-family). One cohort, one receipt, the procedure's undo.
+3. **The public adoption page lists settled credentials only** (a person's or a rule's stamp), so it grows as the CER finishes. Its name is still his to give; *Credentials Your College Can Adopt* holds the place.
+4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
+5. **The CPL-AI matching loads into the Program Requirements dialog first**; Sierra and public surfaces wait on his word.
+
 **Sam asked, not yet drawn:** clicking a could-adopt college chip opens that college's aligned courses and the Request
 Quick Adopt links.
 
