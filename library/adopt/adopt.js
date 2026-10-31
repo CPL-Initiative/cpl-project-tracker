@@ -224,6 +224,56 @@
     return html + "</article>";
   }
 
+  /* ── Worth a faculty review: the search and the field apply; a college scope does not,
+     since no college has an exhibit for any of them. ─────────────────────────────────── */
+  var REGISTRY = "https://credentialengineregistry.org/resources/";
+
+  function reviewMatch(r, f) {
+    if (f.q) {
+      var hay = (r.t + " " + (r.i || "")).toLowerCase();
+      var words = f.q.toLowerCase().split(/\s+/).filter(Boolean);
+      for (var w = 0; w < words.length; w++) if (hay.indexOf(words[w]) < 0) return false;
+    }
+    return !f.sector || r.s === f.sector;
+  }
+
+  function reviewRows(data, f) {
+    return (data.review || []).filter(function (r) { return reviewMatch(r, f); });
+  }
+
+  function reviewCard(r) {
+    var tags = [];
+    if (r.o) tags.push(["Occupations", r.o.join(", ") + (r.on ? ", and " + fmt(r.on) + " more" : "")]);
+    if (r.n) tags.push(["Industry", r.n.join(", ") + (r.nn ? ", and " + fmt(r.nn) + " more" : "")]);
+    if (r.f) tags.push(["Field", r.f]);
+    if (r.l) tags.push(["Level", r.l]);
+    var html = '<article class="cred"><h3>' + esc(r.t) + "</h3>";
+    if (r.i) html += '<p class="meta">' + esc(r.i) + "</p>";
+    if (tags.length) {
+      html += '<dl class="tags">' + tags.map(function (t) { return "<dt>" + esc(t[0]) + "</dt><dd>" + esc(t[1]) + "</dd>"; }).join("") + "</dl>";
+    }
+    if (r.r) html += '<p class="says">MAP holds a related credential from the same issuer: ' + esc(r.r) + ".</p>";
+    var links = [];
+    if (r.u) links.push('<a class="chip" href="' + esc(r.u) + '" target="_blank" rel="noopener">The issuer\'s page</a>');
+    links.push('<a class="chip" href="' + esc(REGISTRY + r.k) + '" target="_blank" rel="noopener">Its Credential Engine Registry record</a>');
+    html += '<div class="chips">' + links.join("") + "</div>";
+    return html + "</article>";
+  }
+
+  function drawReview(f) {
+    var sec = $("review");
+    if (!sec) return;
+    var all = D.review || [];
+    sec.hidden = all.length === 0;
+    if (!all.length) return;
+    var list = reviewRows(D, f);
+    $("ad-review").innerHTML = list.map(reviewCard).join("");
+    $("ad-review-empty").hidden = list.length > 0;
+    $("ad-review-state").textContent = list.length === all.length
+      ? plural(all.length, "credential", "credentials")
+      : fmt(list.length) + " of " + plural(all.length, "credential", "credentials");
+  }
+
   function drawList(f) {
     var sc = scope(D, f), list = state.rows;
     $("ad-list").innerHTML = list.slice(0, state.shown).map(function (c) { return card(c, sc, f); }).join("");
@@ -354,6 +404,7 @@
     } catch (e) { /* the page still works */ }
     if (state.view === "list") drawList(f);
     else { mx.focus = null; buildMatrix(); }
+    drawReview(f);
   }
 
   function setView(v) {
@@ -437,7 +488,8 @@
     draw(true);
   }
 
-  window.CPL_ADOPT = { scope: scope, match: match, rows: rows, cols: cols, csvList: csvList, csvMatrix: csvMatrix, mapUrl: mapUrl };
+  window.CPL_ADOPT = { scope: scope, match: match, rows: rows, cols: cols, csvList: csvList, csvMatrix: csvMatrix, mapUrl: mapUrl,
+    reviewRows: reviewRows, reviewCard: reviewCard };
 
   if (typeof document === "undefined" || !document.getElementById("ad-list")) return;
   fetch(DATA_URL, { cache: "no-cache" })

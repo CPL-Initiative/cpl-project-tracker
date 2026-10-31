@@ -112,6 +112,14 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
 .cred col.c1 { width: 32%; } .cred col.c2 { width: 13%; }
 .list-more { justify-self: start; }
 
+/* Worth a faculty review: Credential Engine credentials MAP has no exhibit for */
+.review { padding-top: 0; }
+.review h2 { font-size: clamp(1.3rem, 1.1rem + .8vw, 1.7rem); }
+.cred dl.tags { display: grid; grid-template-columns: max-content minmax(0, 1fr); gap: 3px 12px; margin: 2px 0 0; font-size: .86rem; }
+.cred dl.tags dt { color: var(--muted); font-weight: 600; }
+.cred dl.tags dd { margin: 0; color: var(--ink); overflow-wrap: anywhere; }
+@media (max-width: 560px) { .cred dl.tags { grid-template-columns: minmax(0, 1fr); } .cred dl.tags dd { margin-bottom: 4px; } }
+
 /* The college matrix: the DOM only holds the rows near the scroll position. */
 .mx-legend { display: flex; flex-wrap: wrap; gap: 4px 18px; font-size: .9rem; color: var(--muted); }
 .mx-key { display: inline-block; min-width: 2.2em; padding: 0 4px; text-align: center; border-radius: 4px; font-weight: 700; }
@@ -304,6 +312,15 @@ a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible
       <p class="mx-legend"><span><span class="mx-key art">3</span> the college awards this many units</span><span><span class="mx-key could">C</span> the college already teaches a matching course</span><span>Arrow keys move between cells.</span></p>
       <div class="mx-wrap" id="ad-mx-wrap" role="region" aria-label="College matrix: credentials down, colleges across" tabindex="0"></div>
     </div>
+  </section>
+  <section id="review" class="results review" aria-labelledby="ad-review-h" hidden>
+    <div class="results-bar">
+      <h2 id="ad-review-h">Worth a faculty review</h2>
+      <p class="state" id="ad-review-state" role="status"></p>
+    </div>
+    <p class="scope-note">These credentials sit in the most collections of the Credential Engine Registry, and no college has an exhibit for them in MAP yet, so a student who holds one has no credit to request. A faculty review decides whether one warrants credit. The search and the field filter apply here.</p>
+    <div class="list" id="ad-review"></div>
+    <p class="empty" id="ad-review-empty" hidden>None of these match the search or the field.</p>
   </section>
 </main>
 <footer class="foot">

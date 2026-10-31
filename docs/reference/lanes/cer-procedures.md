@@ -170,14 +170,9 @@ run-by-run figures are in the lessons doc's S416 to S418 sections.
   key only; `claude-opus-5-5`, effort medium, 15 titles a call). The run sends the skill, every procedure
   and the house families (about 48,000 tokens, cached). A title is asked once, and again when the
   procedures change and its answer was unsure. First pass over the queue: about $8.
-- **First pass (run 39097682221, 2026-10-18):** 75 calls, all answered, $8.30. Of 1,322 waiting titles, 1,116
-  pre-fill (the rules 189, the classifier the rest) and 428 are held for Sam, mostly "the classifier is unsure";
-  105 were dropped by an exact match on a non-breaking space. A 30-answer sample: the sure band (606) is right; the
-  middle (311) plausible; the low band (111) is mostly code-only titles.
-- **Follow-up pass (run 39103573166, S413, `classify=200`):** 13 calls, $2.67. 1,287 of 1,322 pre-fill, 396 held,
-  none left unasked. The 105 dropped answers came back (#2219's spacing-free match, landed in #2220); the 195 hinted
-  code-only titles read at 0.8 to 0.9. One to watch: *Industry for GDDM 53* took the course's title (*Adobe Photoshop 1*)
-  where the credential tied to the course was meant; lessons S413.
+- **The first two passes (2026-10-18, runs 39097682221 and 39103573166):** $10.97 in all; 1,287 of 1,322 titles
+  pre-filled and 396 held. A 30-answer sample read the sure band right. Figures and the one to watch (*Industry for
+  GDDM 53*): `docs/exhibit_canonicalization_lessons.md`, its 2026-10-18 sections.
 - **Code-only titles get the college's own course (#2219, landed in #2220):** the run looks a trailing code up in COCI at the
   college that entered the title and hands the title on as a hint (94 titles); a record carries its hints'
   fingerprint, so an unsure title is asked again when its hints change. The workflow installs `openpyxl`.
@@ -228,8 +223,11 @@ himself at 23:51Z 2026-10-30, and they still open at `#credential-reference` and
 
 **NEXT:** the redesign is built through Sheet 148: (1) read Sam's first saves from the card and the panel, and the first
 nightly save of `high-school-rop` (expected 55; its receipt in `kb/cer_procedures_out/saved/`; the queue should fall to
-about 413; the 07:47Z cron fires near 14:31Z); (2) the Catalog's *Worth a faculty review* list (credentials no college
-has articulated, from Credential Engine); (3) the Commons' CER row opens Exhibits (SkyElderberry: `#exhibits/held`,
+about 413; the 07:47Z cron fires near 14:31Z); (2) *Worth a faculty review* is built (SkyElderberry, at Sam's go): the
+Catalog lists Credential Engine's top-50 credentials MAP has no exhibit for, 28 (5 beside a related MAP credential from
+the same issuer), from `kb/reference/credential_engine_top50_map_check.json`, a hand check of the 39 the IT/AI catalog
+marks *not in MAP* (11 of them are in MAP; the catalog's join missed them). The search and Field apply; *Courses that
+may align* waits for an alignment source; (3) the Commons' CER row opens Exhibits (SkyElderberry: `#exhibits/held`,
 `/conflict`, `/credentials`, read once per visit); its left-MAP and procedures counts stay at `#credential-reference`
 until Exhibits carries them, and no Sierra Training link into the retired tabs was found; (4) training sites for a held title new to the reference, and the *Held titles by group* table, only
 if Sam asks.
