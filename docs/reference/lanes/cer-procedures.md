@@ -23,7 +23,7 @@ and want to further automate so curation is manageable."*
 
 Sam, 2026-10-30: *"Have a good look at the current CER and notice how crowded it is and not intuitive to navigate. It is
 now part of our Catalog Commons overall project and I want you to help me make it much more manageable and simple."*
-Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (version 25), source
+Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (version 26), source
 `docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html` (PR #2595). Nothing built yet. What Sam ruled in the
 mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2026-10-30):
 
@@ -54,8 +54,10 @@ mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2
 4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
 5. **The CPL-AI matching loads into the Program Requirements dialog first**; Sierra and public surfaces wait on his word.
 
-**Sam asked, not yet drawn:** clicking a could-adopt college chip opens that college's aligned courses and the Request
-Quick Adopt links.
+**Drawn in version 26 (2026-10-31):** each could-adopt college chip is a button that opens that college's aligned
+courses (the identity's members there, from `unified_courses_members.js`, units or noncredit) and the Request Quick
+Adopt link to the held exhibit's ID; a college EACR lists without a same-identity course reads that its faculty
+choose the course.
 
 ## Status
 
