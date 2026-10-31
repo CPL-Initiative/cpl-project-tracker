@@ -1,0 +1,3128 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-10-31T14-01-00Z",
+ "run_id": "41207633258",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "e9d6bb7f8641",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot",
+  "cer-procedure-high-school-rop@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::3D Digital Modeling HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "3D Digital Modeling",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::3D Digital Modeling HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AGBU-059B Portfolio",
+   "field": "unified_title_assignment",
+   "value": "Careers",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AGBU-059B Portfolio",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History HS-LEUSD",
+   "field": "unified_title_assignment",
+   "value": "AP Art History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History HS-LEUSD",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus: PreCalculus",
+   "field": "unified_title_assignment",
+   "value": "AP Precalculus",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus: PreCalculus",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science Principles (AB) -CIST 004B",
+   "field": "unified_title_assignment",
+   "value": "AP Computer Science Principles",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science Principles (AB) -CIST 004B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science Principles (AB) -CIST 004B1",
+   "field": "unified_title_assignment",
+   "value": "AP Computer Science Principles",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science Principles (AB) -CIST 004B1",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History – World History (Area A-3)",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History – World History (Area A-3)",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History – World History (Area A-4)",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History – World History (Area A-4)",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Latin: Virgil - Score of 3 or higher - HISTORICAL Type 1",
+   "field": "unified_title_assignment",
+   "value": "AP Latin",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Latin: Virgil - Score of 3 or higher - HISTORICAL Type 1",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Exam",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Exam",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History, Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History, Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History, Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History, Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0135 Basic Military Police (STO2)",
+   "field": "unified_title_assignment",
+   "value": "Basic Military Police",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0135 Basic Military Police (STO2)",
+   "field": "issuing_agency_assignment",
+   "value": "American Council on Education (ACE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0188 U.S. Army Civilian Police Academy",
+   "field": "unified_title_assignment",
+   "value": "U.S. Army Civilian Police Academy",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0188 U.S. Army Civilian Police Academy",
+   "field": "issuing_agency_assignment",
+   "value": "American Council on Education (ACE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0205 Basic Military Police (STO1)",
+   "field": "unified_title_assignment",
+   "value": "Basic Military Police",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0205 Basic Military Police (STO1)",
+   "field": "issuing_agency_assignment",
+   "value": "American Council on Education (ACE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Accounting 1- HS CE(MVUSD)",
+   "field": "unified_title_assignment",
+   "value": "Bookkeeping-Accounting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Accounting 1- HS CE(MVUSD)",
+   "field": "issuing_agency_assignment",
+   "value": "Moreno Valley Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Advanced Wildland Firefighter - Certification NWCG S-131",
+   "field": "unified_title_assignment",
+   "value": "S-131 — Advanced Firefighter Training",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Advanced Wildland Firefighter - Certification NWCG S-131",
+   "field": "issuing_agency_assignment",
+   "value": "National Wildfire Coordinating Group (NWCG)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology 1A & 1B HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology 1A & 1B HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology HS-VVUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology HS-VVUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Val Verde Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology- HS CE(NUSD)",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology- HS CE(NUSD)",
+   "field": "issuing_agency_assignment",
+   "value": "Nuview Union School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Arc Welding High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Arc Welding",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Arc Welding High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Athl Injury Prevent High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Athletic Training: Injury Prevention, Evaluation and Care",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Athl Injury Prevent High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Collision Repair for Non-Majors - Credit by Exam (ACRP 6 )",
+   "field": "unified_title_assignment",
+   "value": "Automotive Collision Repair for Non-Majors",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Collision Repair for Non-Majors - Credit by Exam (ACRP 6 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A4 and A5",
+   "field": "unified_title_assignment",
+   "value": "ASE Bundle — A4, A5",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A4 and A5",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Baking & Past High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Basic Baking and Pastry",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Baking & Past High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Horticulture: Crop Prod High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Organic Crop Planning and Production",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Horticulture: Crop Prod High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
+   "field": "unified_title_assignment",
+   "value": "Brakes",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Building Trades & Construction 2 HS-SBCUSD",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Construction",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Building Trades & Construction 2 HS-SBCUSD",
+   "field": "issuing_agency_assignment",
+   "value": "San Bernardino City Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Business of Video Games HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "History of Games",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Business of Video Games HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CEM151 Construction Fundamentals: Principles and Practices",
+   "field": "unified_title_assignment",
+   "value": "Construction Fundamentals: Principles and Practices",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CEM151 Construction Fundamentals: Principles and Practices",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Levels 1 and 2",
+   "field": "unified_title_assignment",
+   "value": "Spanish Language (Levels 1 and 2)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Levels 1 and 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Film/TV Production IIA at William S. Hart District High School (MEA 111)",
+   "field": "unified_title_assignment",
+   "value": "Exploring Video Field Production",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Film/TV Production IIA at William S. Hart District High School (MEA 111)",
+   "field": "issuing_agency_assignment",
+   "value": "William S. Hart Union High School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Film/TV Production IIB at William S. Hart District High School (MEA 112)",
+   "field": "unified_title_assignment",
+   "value": "Exploring Video Studio Production",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Film/TV Production IIB at William S. Hart District High School (MEA 112)",
+   "field": "issuing_agency_assignment",
+   "value": "William S. Hart Union High School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Graphics & Design Advanced HS-VVUSD",
+   "field": "unified_title_assignment",
+   "value": "Design and Graphics",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Graphics & Design Advanced HS-VVUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Val Verde Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Honors Athletic Training at William S. Hart High School District (KPET 210 & 210L)",
+   "field": "unified_title_assignment",
+   "value": "Prevention and Care of Athletic Injuries Lab",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Honors Athletic Training at William S. Hart High School District (KPET 210 & 210L)",
+   "field": "issuing_agency_assignment",
+   "value": "William S. Hart Union High School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California Basic P.O.S.T. Peace Officer Certificate",
+   "field": "unified_title_assignment",
+   "value": "POST Basic Academy",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California Basic P.O.S.T. Peace Officer Certificate",
+   "field": "issuing_agency_assignment",
+   "value": "California Commission on Peace Officer Standards and Training (POST)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California EMT Certificate and American Heart Association BLS Providers card",
+   "field": "unified_title_assignment",
+   "value": "EMT Certification",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California EMT Certificate and American Heart Association BLS Providers card",
+   "field": "issuing_agency_assignment",
+   "value": "California Emergency Medical Services Authority (EMSA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 1",
+   "field": "unified_title_assignment",
+   "value": "Defense Language Proficiency Test (DLPT) — Chinese",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 1",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Language Institute Foreign Language Center (DLIFLC)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 1+",
+   "field": "unified_title_assignment",
+   "value": "Defense Language Proficiency Test (DLPT) — Chinese",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 1+",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Language Institute Foreign Language Center (DLIFLC)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 2 or above",
+   "field": "unified_title_assignment",
+   "value": "Defense Language Proficiency Test (DLPT) — Chinese",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 2 or above",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Language Institute Foreign Language Center (DLIFLC)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Clothing Construction I - Credit by Exam (FASH 10 )",
+   "field": "unified_title_assignment",
+   "value": "Clothing Construction 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Clothing Construction I - Credit by Exam (FASH 10 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Commercial Refrigeration Applications - Credit by Exam (ACR 23 )",
+   "field": "unified_title_assignment",
+   "value": "Commercial Refrigeration Applications",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Commercial Refrigeration Applications - Credit by Exam (ACR 23 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Computer Graphics and Design HS-JUSD",
+   "field": "unified_title_assignment",
+   "value": "Design and Graphics",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Computer Graphics and Design HS-JUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Jurupa Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Concept Art HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Concept Art and Design for Entertainment Media",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Concept Art HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Fundamentals High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Construction Fundamentals: Principles and Practices",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Fundamentals High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Lab High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Construction Fundamentals: Principles and Practices Lab",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Lab High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Technology 1 & 2 HS-CRYROP",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Construction",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Technology 1 & 2 HS-CRYROP",
+   "field": "issuing_agency_assignment",
+   "value": "Colton-Redlands-Yucaipa ROP",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Technology 1 HS-JUSD",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Construction",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Technology 1 HS-JUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Jurupa Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Long Beach Unified School District - Intro to International Business",
+   "field": "unified_title_assignment",
+   "value": "Introduction to International Business",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Long Beach Unified School District - Intro to International Business",
+   "field": "issuing_agency_assignment",
+   "value": "Long Beach Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Long Beach Unified School District - Introduction to Forensics",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Forensics",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Long Beach Unified School District - Introduction to Forensics",
+   "field": "issuing_agency_assignment",
+   "value": "Long Beach Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam: Introduction to Criminal Justice",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Criminal Justice",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam: Introduction to Criminal Justice",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DANTES Exam - Introduction to Computing",
+   "field": "unified_title_assignment",
+   "value": "DSST Computing and Information Technology",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DANTES Exam - Introduction to Computing",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRON 130 F Aerial Mapping and Photogrammetry- Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Aerial Mapping and Photogrammetry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRON 130 F Aerial Mapping and Photogrammetry- Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRON 170 F Introduction to LiDAR Acquisition - Credit by exam",
+   "field": "unified_title_assignment",
+   "value": "Introduction to LiDAR Acquisition",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRON 170 F Introduction to LiDAR Acquisition - Credit by exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-CJUSD",
+   "field": "unified_title_assignment",
+   "value": "Digital Techniques",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-CJUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Project Lead The Way",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-MVUSD",
+   "field": "unified_title_assignment",
+   "value": "Digital Techniques",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-MVUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Project Lead The Way",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Digital Techniques",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Project Lead The Way",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Game Design HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Scripting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Game Design HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - BIOTECH 002",
+   "field": "unified_title_assignment",
+   "value": "Biotechnology I",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - BIOTECH 002",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - CIS 210",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Computer Networking",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - CIS 210",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - CLN ART 101",
+   "field": "unified_title_assignment",
+   "value": "Culinary Fundamentals I",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - CLN ART 101",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Dron 130 Aerial Mapping and Photogrammetry- Credit By Exam",
+   "field": "unified_title_assignment",
+   "value": "Aerial Mapping and Photogrammetry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Dron 130 Aerial Mapping and Photogrammetry- Credit By Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Entrepreneurship and Small Business HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Entrepreneurship: Foundations and Fundamentals",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Entrepreneurship and Small Business HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Examination for MUS 147",
+   "field": "unified_title_assignment",
+   "value": "Piano Technology 3",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Examination for MUS 147",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification",
+   "field": "unified_title_assignment",
+   "value": "FAA Remote Pilot Certificate (Part 107)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification - DRON 105 F Applied Drone Piloting",
+   "field": "unified_title_assignment",
+   "value": "FAA Remote Pilot Certificate (Part 107)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification - DRON 105 F Applied Drone Piloting",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification- DRON 080 F Federal Aviation Administration Drone Pilot Test Preparation",
+   "field": "unified_title_assignment",
+   "value": "FAA Remote Pilot Certificate (Part 107)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification- DRON 080 F Federal Aviation Administration Drone Pilot Test Preparation",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification- DRON 101 F Basic Drone Piloting",
+   "field": "unified_title_assignment",
+   "value": "FAA Remote Pilot Certificate (Part 107)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification- DRON 101 F Basic Drone Piloting",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Design HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Design",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Design HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Design Principles HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Design",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Design Principles HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Scripting HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Scripting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Scripting HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1A: Basic Chemistry",
+   "field": "unified_title_assignment",
+   "value": "Hazardous Materials Technician 1A: Basic Chemistry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1A: Basic Chemistry",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1B: Applied Chemistry",
+   "field": "unified_title_assignment",
+   "value": "Hazardous Materials Technician 1B: Applied Chemistry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1B: Applied Chemistry",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1C: Incident Considerations",
+   "field": "unified_title_assignment",
+   "value": "Hazardous Materials Technician 1C: Incident Considerations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1C: Incident Considerations",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1D: Tactical Field Operations",
+   "field": "unified_title_assignment",
+   "value": "Hazardous Materials Technician 1D: Tactical Field Operations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1D: Tactical Field Operations",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Health Science and Workplace Safety HS-LEUSD",
+   "field": "unified_title_assignment",
+   "value": "Occupational Safety and Health Administration (OSHA) Standards for General Industry",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Health Science and Workplace Safety HS-LEUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Lake Elsinore Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::History of Video Games HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "History of Games",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::History of Video Games HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB English B HL (Minimum Passing Score of 4)",
+   "field": "unified_title_assignment",
+   "value": "IB Language B: English HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB English B HL (Minimum Passing Score of 4)",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Global Politics",
+   "field": "unified_title_assignment",
+   "value": "IB Global Politics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Global Politics",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB World Religions HL",
+   "field": "unified_title_assignment",
+   "value": "IB World Religions HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB World Religions HL",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Implications of Pathophysiology Concepts for Nurses - Credit by Exam (NURS 210 )",
+   "field": "unified_title_assignment",
+   "value": "Implications of Pathophysiology Concepts for Nurses",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Implications of Pathophysiology Concepts for Nurses - Credit by Exam (NURS 210 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intermediate Arc Welding-Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Intermediate Arc Welding",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intermediate Arc Welding-Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Appetizers High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Appetizers and Baking Preparation",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Appetizers High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Community Mental Health HS/CE",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Community Mental Health",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Community Mental Health HS/CE",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Culinary Art High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Culinary Arts Basics",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Culinary Art High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Entree Prep High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Entree Preparation and Service",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Entree Prep High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Introduction to English & Spanish Translation (HS: RSUD)",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Spanish English Translation",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Introduction to English & Spanish Translation (HS: RSUD)",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Iot Fundamentals High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "IoT Fundamentals",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Iot Fundamentals High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Cisco",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MIG Welding (GMAW/FCAW)-Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "MIG Welding (GMAW/FCAW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MIG Welding (GMAW/FCAW)-Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Medical Anatomy and Physiology HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Medical Anatomy and Physiology HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Music Production I High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Music Production 1: Digital Music Production and MIDI",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Music Production I High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for CIS 100",
+   "field": "unified_title_assignment",
+   "value": "AI (Artificial Intelligence) in the Workplace",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for CIS 100",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ENG 110",
+   "field": "unified_title_assignment",
+   "value": "Craft of the Sentence",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ENG 110",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ENG 115",
+   "field": "unified_title_assignment",
+   "value": "Personalized Coaching for Academic Reading and Writing",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ENG 115",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ESL 113",
+   "field": "unified_title_assignment",
+   "value": "Speaking and Listening Fluency for Academic and Professional Purposes",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ESL 113",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::OSHA 10 Certification",
+   "field": "unified_title_assignment",
+   "value": "OSHA 10 Card",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::OSHA 10 Certification",
+   "field": "issuing_agency_assignment",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::PLTW Human Body Systems HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::PLTW Human Body Systems HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Project Lead The Way",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Personal Money Management High School to College Articulation",
+   "field": "unified_title_assignment",
+   "value": "Money Management",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Personal Money Management High School to College Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Principles of Emergency Services Safety and Survival",
+   "field": "unified_title_assignment",
+   "value": "Principles of Fire and Emergency Services Safety and Survival",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Principles of Emergency Services Safety and Survival",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Principles of Engineering HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Math for Engineering Technology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Principles of Engineering HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Anatomy & Physiology for the Health Profession (Survey of Human Anatomy & Physiology) HS",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Anatomy & Physiology for the Health Profession (Survey of Human Anatomy & Physiology) HS",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside County Office of Education",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Construction Technology- Level 1 HS",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Construction",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Construction Technology- Level 1 HS",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside County Office of Education",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Intermediate Game Scripting HS",
+   "field": "unified_title_assignment",
+   "value": "Game Scripting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Intermediate Game Scripting HS",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside County Office of Education",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Renewable Energy Sy High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Renewable Energy",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Renewable Energy Sy High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Residential Construction 1 High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Residential Construction Skills 1: \"Front End\"",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Residential Construction 1 High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Residential Construction 2 High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Residential Construction Skills 2: \"Finish End\"",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Residential Construction 2 High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Robotics 1A/1B HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Robotics for Manufacturing",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Robotics 1A/1B HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Sports Med Lab I High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Clinical Experience in Sports Medicine I",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Sports Med Lab I High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Video Game Design 2- HS-CRYROP",
+   "field": "unified_title_assignment",
+   "value": "Game Design Advanced",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Video Game Design 2- HS-CRYROP",
+   "field": "issuing_agency_assignment",
+   "value": "Colton-Redlands-Yucaipa ROP",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Video Gaming 2 Game Design and Development HS-MVUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Scripting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Video Gaming 2 Game Design and Development HS-MVUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Moreno Valley Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::3D Digital Modeling HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "3D Digital Modeling",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::3D Digital Modeling HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AGBU-059B Portfolio",
+   "field": "unified_title_assignment",
+   "value": "Careers",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AGBU-059B Portfolio",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History HS-LEUSD",
+   "field": "unified_title_assignment",
+   "value": "AP Art History",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History HS-LEUSD",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus: PreCalculus",
+   "field": "unified_title_assignment",
+   "value": "AP Precalculus",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus: PreCalculus",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science Principles (AB) -CIST 004B",
+   "field": "unified_title_assignment",
+   "value": "AP Computer Science Principles",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science Principles (AB) -CIST 004B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science Principles (AB) -CIST 004B1",
+   "field": "unified_title_assignment",
+   "value": "AP Computer Science Principles",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science Principles (AB) -CIST 004B1",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History – World History (Area A-3)",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History – World History (Area A-3)",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History – World History (Area A-4)",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History – World History (Area A-4)",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Latin: Virgil - Score of 3 or higher - HISTORICAL Type 1",
+   "field": "unified_title_assignment",
+   "value": "AP Latin",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Latin: Virgil - Score of 3 or higher - HISTORICAL Type 1",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Exam",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History Exam",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History, Area 3B",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History, Area 3B",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History, Area 4",
+   "field": "unified_title_assignment",
+   "value": "AP World History: Modern",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP World History, Area 4",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0135 Basic Military Police (STO2)",
+   "field": "unified_title_assignment",
+   "value": "Basic Military Police",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0135 Basic Military Police (STO2)",
+   "field": "issuing_agency_assignment",
+   "value": "American Council on Education (ACE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0188 U.S. Army Civilian Police Academy",
+   "field": "unified_title_assignment",
+   "value": "U.S. Army Civilian Police Academy",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0188 U.S. Army Civilian Police Academy",
+   "field": "issuing_agency_assignment",
+   "value": "American Council on Education (ACE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0205 Basic Military Police (STO1)",
+   "field": "unified_title_assignment",
+   "value": "Basic Military Police",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AR-1728-0205 Basic Military Police (STO1)",
+   "field": "issuing_agency_assignment",
+   "value": "American Council on Education (ACE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Accounting 1- HS CE(MVUSD)",
+   "field": "unified_title_assignment",
+   "value": "Bookkeeping-Accounting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Accounting 1- HS CE(MVUSD)",
+   "field": "issuing_agency_assignment",
+   "value": "Moreno Valley Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Advanced Wildland Firefighter - Certification NWCG S-131",
+   "field": "unified_title_assignment",
+   "value": "S-131 — Advanced Firefighter Training",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Advanced Wildland Firefighter - Certification NWCG S-131",
+   "field": "issuing_agency_assignment",
+   "value": "National Wildfire Coordinating Group (NWCG)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology 1A & 1B HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology 1A & 1B HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology HS-VVUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology HS-VVUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Val Verde Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology- HS CE(NUSD)",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Anatomy & Physiology- HS CE(NUSD)",
+   "field": "issuing_agency_assignment",
+   "value": "Nuview Union School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Arc Welding High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Arc Welding",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Arc Welding High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Athl Injury Prevent High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Athletic Training: Injury Prevention, Evaluation and Care",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Athl Injury Prevent High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Collision Repair for Non-Majors - Credit by Exam (ACRP 6 )",
+   "field": "unified_title_assignment",
+   "value": "Automotive Collision Repair for Non-Majors",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Collision Repair for Non-Majors - Credit by Exam (ACRP 6 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A4 and A5",
+   "field": "unified_title_assignment",
+   "value": "ASE Bundle — A4, A5",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Automotive Service Excellence (ASE) A4 and A5",
+   "field": "issuing_agency_assignment",
+   "value": "National Institute for Automotive Service Excellence (ASE)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Baking & Past High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Basic Baking and Pastry",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Baking & Past High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Horticulture: Crop Prod High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Organic Crop Planning and Production",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Basic Horticulture: Crop Prod High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
+   "field": "unified_title_assignment",
+   "value": "Brakes",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Brakes - Credit by Exam (ATEC 14 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Building Trades & Construction 2 HS-SBCUSD",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Construction",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Building Trades & Construction 2 HS-SBCUSD",
+   "field": "issuing_agency_assignment",
+   "value": "San Bernardino City Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Business of Video Games HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "History of Games",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Business of Video Games HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CEM151 Construction Fundamentals: Principles and Practices",
+   "field": "unified_title_assignment",
+   "value": "Construction Fundamentals: Principles and Practices",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CEM151 Construction Fundamentals: Principles and Practices",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Levels 1 and 2",
+   "field": "unified_title_assignment",
+   "value": "Spanish Language (Levels 1 and 2)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Levels 1 and 2",
+   "field": "issuing_agency_assignment",
+   "value": "College Board",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Film/TV Production IIA at William S. Hart District High School (MEA 111)",
+   "field": "unified_title_assignment",
+   "value": "Exploring Video Field Production",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Film/TV Production IIA at William S. Hart District High School (MEA 111)",
+   "field": "issuing_agency_assignment",
+   "value": "William S. Hart Union High School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Film/TV Production IIB at William S. Hart District High School (MEA 112)",
+   "field": "unified_title_assignment",
+   "value": "Exploring Video Studio Production",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Film/TV Production IIB at William S. Hart District High School (MEA 112)",
+   "field": "issuing_agency_assignment",
+   "value": "William S. Hart Union High School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Graphics & Design Advanced HS-VVUSD",
+   "field": "unified_title_assignment",
+   "value": "Design and Graphics",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Graphics & Design Advanced HS-VVUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Val Verde Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Honors Athletic Training at William S. Hart High School District (KPET 210 & 210L)",
+   "field": "unified_title_assignment",
+   "value": "Prevention and Care of Athletic Injuries Lab",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CTE Honors Athletic Training at William S. Hart High School District (KPET 210 & 210L)",
+   "field": "issuing_agency_assignment",
+   "value": "William S. Hart Union High School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California Basic P.O.S.T. Peace Officer Certificate",
+   "field": "unified_title_assignment",
+   "value": "POST Basic Academy",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California Basic P.O.S.T. Peace Officer Certificate",
+   "field": "issuing_agency_assignment",
+   "value": "California Commission on Peace Officer Standards and Training (POST)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California EMT Certificate and American Heart Association BLS Providers card",
+   "field": "unified_title_assignment",
+   "value": "EMT Certification",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::California EMT Certificate and American Heart Association BLS Providers card",
+   "field": "issuing_agency_assignment",
+   "value": "California Emergency Medical Services Authority (EMSA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 1",
+   "field": "unified_title_assignment",
+   "value": "Defense Language Proficiency Test (DLPT) — Chinese",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 1",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Language Institute Foreign Language Center (DLIFLC)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 1+",
+   "field": "unified_title_assignment",
+   "value": "Defense Language Proficiency Test (DLPT) — Chinese",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 1+",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Language Institute Foreign Language Center (DLIFLC)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 2 or above",
+   "field": "unified_title_assignment",
+   "value": "Defense Language Proficiency Test (DLPT) — Chinese",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Chinese Defense Language Proficiency Test (DLPT) Score 2 or above",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Language Institute Foreign Language Center (DLIFLC)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Clothing Construction I - Credit by Exam (FASH 10 )",
+   "field": "unified_title_assignment",
+   "value": "Clothing Construction 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Clothing Construction I - Credit by Exam (FASH 10 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Commercial Refrigeration Applications - Credit by Exam (ACR 23 )",
+   "field": "unified_title_assignment",
+   "value": "Commercial Refrigeration Applications",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Commercial Refrigeration Applications - Credit by Exam (ACR 23 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Computer Graphics and Design HS-JUSD",
+   "field": "unified_title_assignment",
+   "value": "Design and Graphics",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Computer Graphics and Design HS-JUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Jurupa Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Concept Art HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Concept Art and Design for Entertainment Media",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Concept Art HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Fundamentals High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Construction Fundamentals: Principles and Practices",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Fundamentals High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Lab High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Construction Fundamentals: Principles and Practices Lab",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Lab High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Technology 1 & 2 HS-CRYROP",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Construction",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Technology 1 & 2 HS-CRYROP",
+   "field": "issuing_agency_assignment",
+   "value": "Colton-Redlands-Yucaipa ROP",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Technology 1 HS-JUSD",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Construction",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Construction Technology 1 HS-JUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Jurupa Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Long Beach Unified School District - Intro to International Business",
+   "field": "unified_title_assignment",
+   "value": "Introduction to International Business",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Long Beach Unified School District - Intro to International Business",
+   "field": "issuing_agency_assignment",
+   "value": "Long Beach Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Long Beach Unified School District - Introduction to Forensics",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Forensics",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam - Long Beach Unified School District - Introduction to Forensics",
+   "field": "issuing_agency_assignment",
+   "value": "Long Beach Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam: Introduction to Criminal Justice",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Criminal Justice",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Credit by Exam: Introduction to Criminal Justice",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DANTES Exam - Introduction to Computing",
+   "field": "unified_title_assignment",
+   "value": "DSST Computing and Information Technology",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DANTES Exam - Introduction to Computing",
+   "field": "issuing_agency_assignment",
+   "value": "Defense Activity for Non-Traditional Education Support (DANTES)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRON 130 F Aerial Mapping and Photogrammetry- Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Aerial Mapping and Photogrammetry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRON 130 F Aerial Mapping and Photogrammetry- Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRON 170 F Introduction to LiDAR Acquisition - Credit by exam",
+   "field": "unified_title_assignment",
+   "value": "Introduction to LiDAR Acquisition",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::DRON 170 F Introduction to LiDAR Acquisition - Credit by exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-CJUSD",
+   "field": "unified_title_assignment",
+   "value": "Digital Techniques",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-CJUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Project Lead The Way",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-MVUSD",
+   "field": "unified_title_assignment",
+   "value": "Digital Techniques",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-MVUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Project Lead The Way",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Digital Techniques",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Electronics HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Project Lead The Way",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Game Design HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Scripting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Digital Game Design HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - BIOTECH 002",
+   "field": "unified_title_assignment",
+   "value": "Biotechnology I",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - BIOTECH 002",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - CIS 210",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Computer Networking",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - CIS 210",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - CLN ART 101",
+   "field": "unified_title_assignment",
+   "value": "Culinary Fundamentals I",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Discipline Exam - CLN ART 101",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Dron 130 Aerial Mapping and Photogrammetry- Credit By Exam",
+   "field": "unified_title_assignment",
+   "value": "Aerial Mapping and Photogrammetry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Dron 130 Aerial Mapping and Photogrammetry- Credit By Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Entrepreneurship and Small Business HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Entrepreneurship: Foundations and Fundamentals",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Entrepreneurship and Small Business HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Examination for MUS 147",
+   "field": "unified_title_assignment",
+   "value": "Piano Technology 3",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Examination for MUS 147",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification",
+   "field": "unified_title_assignment",
+   "value": "FAA Remote Pilot Certificate (Part 107)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification - DRON 105 F Applied Drone Piloting",
+   "field": "unified_title_assignment",
+   "value": "FAA Remote Pilot Certificate (Part 107)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification - DRON 105 F Applied Drone Piloting",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification- DRON 080 F Federal Aviation Administration Drone Pilot Test Preparation",
+   "field": "unified_title_assignment",
+   "value": "FAA Remote Pilot Certificate (Part 107)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification- DRON 080 F Federal Aviation Administration Drone Pilot Test Preparation",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification- DRON 101 F Basic Drone Piloting",
+   "field": "unified_title_assignment",
+   "value": "FAA Remote Pilot Certificate (Part 107)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::FAA Part 107 Certification- DRON 101 F Basic Drone Piloting",
+   "field": "issuing_agency_assignment",
+   "value": "Federal Aviation Administration (FAA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Design HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Design",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Design HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Design Principles HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Design",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Design Principles HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Scripting HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Scripting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Game Scripting HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1A: Basic Chemistry",
+   "field": "unified_title_assignment",
+   "value": "Hazardous Materials Technician 1A: Basic Chemistry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1A: Basic Chemistry",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1B: Applied Chemistry",
+   "field": "unified_title_assignment",
+   "value": "Hazardous Materials Technician 1B: Applied Chemistry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1B: Applied Chemistry",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1C: Incident Considerations",
+   "field": "unified_title_assignment",
+   "value": "Hazardous Materials Technician 1C: Incident Considerations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1C: Incident Considerations",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1D: Tactical Field Operations",
+   "field": "unified_title_assignment",
+   "value": "Hazardous Materials Technician 1D: Tactical Field Operations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Haz Mat Technician 1D: Tactical Field Operations",
+   "field": "issuing_agency_assignment",
+   "value": "California State Fire Training (SFT)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Health Science and Workplace Safety HS-LEUSD",
+   "field": "unified_title_assignment",
+   "value": "Occupational Safety and Health Administration (OSHA) Standards for General Industry",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Health Science and Workplace Safety HS-LEUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Lake Elsinore Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::History of Video Games HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "History of Games",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::History of Video Games HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB English B HL (Minimum Passing Score of 4)",
+   "field": "unified_title_assignment",
+   "value": "IB Language B: English HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB English B HL (Minimum Passing Score of 4)",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Global Politics",
+   "field": "unified_title_assignment",
+   "value": "IB Global Politics",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Global Politics",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB World Religions HL",
+   "field": "unified_title_assignment",
+   "value": "IB World Religions HL",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB World Religions HL",
+   "field": "issuing_agency_assignment",
+   "value": "International Baccalaureate Organization (IBO)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Implications of Pathophysiology Concepts for Nurses - Credit by Exam (NURS 210 )",
+   "field": "unified_title_assignment",
+   "value": "Implications of Pathophysiology Concepts for Nurses",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Implications of Pathophysiology Concepts for Nurses - Credit by Exam (NURS 210 )",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intermediate Arc Welding-Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "Intermediate Arc Welding",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intermediate Arc Welding-Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Appetizers High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Appetizers and Baking Preparation",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Appetizers High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Community Mental Health HS/CE",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Community Mental Health",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Community Mental Health HS/CE",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Culinary Art High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Culinary Arts Basics",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Culinary Art High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Entree Prep High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Entree Preparation and Service",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Intro Entree Prep High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Introduction to English & Spanish Translation (HS: RSUD)",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Spanish English Translation",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Introduction to English & Spanish Translation (HS: RSUD)",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Iot Fundamentals High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "IoT Fundamentals",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Iot Fundamentals High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Cisco",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MIG Welding (GMAW/FCAW)-Credit by Exam",
+   "field": "unified_title_assignment",
+   "value": "MIG Welding (GMAW/FCAW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::MIG Welding (GMAW/FCAW)-Credit by Exam",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Medical Anatomy and Physiology HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Medical Anatomy and Physiology HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Music Production I High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Music Production 1: Digital Music Production and MIDI",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Music Production I High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for CIS 100",
+   "field": "unified_title_assignment",
+   "value": "AI (Artificial Intelligence) in the Workplace",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for CIS 100",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ENG 110",
+   "field": "unified_title_assignment",
+   "value": "Craft of the Sentence",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ENG 110",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ENG 115",
+   "field": "unified_title_assignment",
+   "value": "Personalized Coaching for Academic Reading and Writing",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ENG 115",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ESL 113",
+   "field": "unified_title_assignment",
+   "value": "Speaking and Listening Fluency for Academic and Professional Purposes",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Noncredit for ESL 113",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::OSHA 10 Certification",
+   "field": "unified_title_assignment",
+   "value": "OSHA 10 Card",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::OSHA 10 Certification",
+   "field": "issuing_agency_assignment",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::PLTW Human Body Systems HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::PLTW Human Body Systems HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Project Lead The Way",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Personal Money Management High School to College Articulation",
+   "field": "unified_title_assignment",
+   "value": "Money Management",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Personal Money Management High School to College Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Principles of Emergency Services Safety and Survival",
+   "field": "unified_title_assignment",
+   "value": "Principles of Fire and Emergency Services Safety and Survival",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Principles of Emergency Services Safety and Survival",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Principles of Engineering HS-RUSD",
+   "field": "unified_title_assignment",
+   "value": "Math for Engineering Technology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Principles of Engineering HS-RUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Anatomy & Physiology for the Health Profession (Survey of Human Anatomy & Physiology) HS",
+   "field": "unified_title_assignment",
+   "value": "Survey of Human Anatomy and Physiology",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Anatomy & Physiology for the Health Profession (Survey of Human Anatomy & Physiology) HS",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside County Office of Education",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Construction Technology- Level 1 HS",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Construction",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Construction Technology- Level 1 HS",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside County Office of Education",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Intermediate Game Scripting HS",
+   "field": "unified_title_assignment",
+   "value": "Game Scripting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::RCOE Intermediate Game Scripting HS",
+   "field": "issuing_agency_assignment",
+   "value": "Riverside County Office of Education",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Renewable Energy Sy High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Introduction to Renewable Energy",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Renewable Energy Sy High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Residential Construction 1 High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Residential Construction Skills 1: \"Front End\"",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Residential Construction 1 High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Residential Construction 2 High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Residential Construction Skills 2: \"Finish End\"",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Residential Construction 2 High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Robotics 1A/1B HS-CNUSD",
+   "field": "unified_title_assignment",
+   "value": "Robotics for Manufacturing",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Robotics 1A/1B HS-CNUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Corona-Norco Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Sports Med Lab I High School Articulation",
+   "field": "unified_title_assignment",
+   "value": "Clinical Experience in Sports Medicine I",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Sports Med Lab I High School Articulation",
+   "field": "issuing_agency_assignment",
+   "value": "Local High School",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Video Game Design 2- HS-CRYROP",
+   "field": "unified_title_assignment",
+   "value": "Game Design Advanced",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Video Game Design 2- HS-CRYROP",
+   "field": "issuing_agency_assignment",
+   "value": "Colton-Redlands-Yucaipa ROP",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Video Gaming 2 Game Design and Development HS-MVUSD",
+   "field": "unified_title_assignment",
+   "value": "Game Scripting",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Video Gaming 2 Game Design and Development HS-MVUSD",
+   "field": "issuing_agency_assignment",
+   "value": "Moreno Valley Unified School District",
+   "reviewer_email": "cer-procedure-high-school-rop@bot",
+   "procedure": "high-school-rop"
+  }
+ ],
+ "skipped_as_duplicate": []
+}
