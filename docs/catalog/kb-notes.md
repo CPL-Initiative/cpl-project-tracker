@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-567 document(s).
+568 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -501,6 +501,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [When two implementations agree on your live data, your test is not distinguishing them](../kb-notes/methodology-when-two-implementations-agree-on-live-data-your-test-proves-nothing.md) | methodology | published | 2026-08-28 | 2026-08-28 |
 | [When two source tabs disagree, neither is authoritative — get the certified value](../kb-notes/methodology-conflicting-source-tabs-use-certified-value.md) | methodology | published | 2026-07-15 |  |
 | [When you can't verify an assumption, ship the oracle beside it](../kb-notes/methodology-ship-the-oracle-with-the-assumption.md) | methodology | published | 2026-07-31 | 2026-07-31 |
+| [Widen a field by saving its old reading beside it](../kb-notes/methodology-widen-a-field-by-saving-its-old-reading-beside-it.md) | methodology | published | 2026-10-31 | 2026-10-31 |
 | [Witness-kinship gate: historical receipts need a present-tense validity check](../kb-notes/methodology-witness-kinship-gate.md) | methodology | published | 2026-06-11 |  |
 | [Write a model's rule as the sentence you want the reader to leave with, because the model will say it](../kb-notes/methodology-write-the-rule-as-the-sentence-you-want-said.md) | methodology | published | 2026-10-03 | 2026-10-03 |
 | [Write the dependency-free output first](../kb-notes/methodology-write-the-dependency-free-output-first.md) | methodology | published | 2026-09-17 | 2026-09-17 |

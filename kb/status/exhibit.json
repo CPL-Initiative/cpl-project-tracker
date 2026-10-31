@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "session": 531,
-  "moniker": "SkyRowanberry",
+  "moniker": "SkyBunchberry",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_532_handoff.md",
@@ -39,13 +39,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-31T01:31:26Z",
+  "written_at": "2026-10-31T02:48:52Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Read the first published Review queue, then build the credential panel",
-    "text": "After the daily run publishes kb/exhibits_review.json, read it and Sam's first saves from the Exhibits tab; then build the credential panel with issuer and training sites editable (Sheet 147 order, step 2)."
+    "title": "Read Sam's first saves and the first high school and ROP save, then fold EACR in",
+    "text": "After the 07:47Z procedures run, read the high-school-rop receipt (expected 55) and Sam's first saves from the Review card and the credential panel; then fold Exhibit Adoption into the Exhibits tab (Sheet 147 card 1)."
   },
   "changes": [
+    {
+      "at": "2026-10-31T02:48:47Z",
+      "text": "The Exhibits tab's Credentials view and credential panel: every credential, most students first, with its issuer and its training sites editable, each site with the college it trains for."
+    },
+    {
+      "at": "2026-10-31T02:12:58Z",
+      "text": "The first published Review queue: 468 held titles (401 proposed, 36 wording checks, 13 with two issuers, 18 conflicts), 209 named by an aligned course."
+    },
     {
       "at": "2026-10-31T01:31:21Z",
       "text": "The Exhibits tab's Review queue: the drawn card of version 26 in COBI (#exhibits), its nightly builder, and the reviewer-only students function, k=10 in the database."

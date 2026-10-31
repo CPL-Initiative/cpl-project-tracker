@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 567,
+   "count": 568,
    "docs": [
     {
      "created": "2026-08-14",
@@ -9511,6 +9511,26 @@
      "updated": "2026-07-31"
     },
     {
+     "created": "2026-10-31",
+     "governs": [
+      "exhibits.js",
+      "kb/_apply_credential_review.py",
+      "tests/credential_review_sites_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-widen-a-field-by-saving-its-old-reading-beside-it.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "curation",
+      "kb-curation",
+      "cer",
+      "data-model"
+     ],
+     "title": "Widen a field by saving its old reading beside it",
+     "type": "methodology",
+     "updated": "2026-10-31"
+    },
+    {
      "created": "2026-06-11",
      "governs": [
       "excel_to_dashboard.py",
@@ -13713,7 +13733,7 @@
       "catalog-commons",
       "exhibits"
      ],
-     "title": "CER redesign handoff: the Exhibits tab's Review queue built; the credential panel next",
+     "title": "CER redesign handoff: the credential panel built; Sam's first saves and EACR next",
      "type": null,
      "updated": ""
     },
@@ -24871,5 +24891,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1323
+ "total": 1324
 }

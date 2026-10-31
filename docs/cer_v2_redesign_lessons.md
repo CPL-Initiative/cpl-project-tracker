@@ -480,3 +480,29 @@ and `exhibit_title_students()`, the reviewer-only students read. The lane file s
   builder repairs both before a name reaches a chip.
 - **Re-serializing a hand-kept JSON rewrites its escapes.** `json.dump` of `kb/governance_surface_map.json` changed two
   unrelated lines' `—` escapes; the entries went in as text, so the diff carries only them.
+
+## 2026-10-31 — the credential panel: issuer and training sites (SkyBunchberry)
+
+**What shipped (#2603).** *Credentials* beside *Review* in `#exhibits`, and the panel where the issuer and the training
+sites are set, each site with the college it trains for. The lane file states the design; this keeps the learning.
+
+- **Widen a field by saving its old reading beside it.** `training_agency_override` holds one trainer and five readers
+  take it as one string (the bake, Mode A3, MAP export, the CER tab, the Review builder). The panel saves the list as
+  `training_sites_override` and, in the same Save, the sites joined into the old field, so no reader had to change for
+  the save to be right everywhere. Only the readers that want the list learned it. KB note:
+  `methodology-widen-a-field-by-saving-its-old-reading-beside-it`.
+- **"Later wins" alone hides the list behind its own echo.** The panel's writes are separate requests, and the trainer
+  row lands a few milliseconds after the list. A rule of the newest row would read every panel save as a one-trainer
+  edit. The rule compares content first: the trainer stands down the list only when it says something else and was
+  saved after it (a later edit in the CER's Trainer box). Python and the tab share one table of cases in the test.
+- **The public payload already suppresses students at ten.** `credential_reference_data.js` holds 144 credentials with
+  a count, 391 marked under ten and 1,921 with none, so the Credentials view needs no reviewer read for students.
+- **Counts differ by file.** The payload lists 2,456 credentials and 342 naming a training site; `kb/credentials.json`
+  lists 2,465 and 363 (the mock-up's figure). The tiles read the payload with the live rows applied.
+- **A fixed table cannot hide a column by its cells.** With `table-layout:fixed` and a five-column colgroup,
+  `display:none` on the third and fifth cells slides the fourth into the third column's width. Below 560px the table
+  keeps its columns and scrolls inside its own box.
+- **The target-size check measures width too.** At 1024px the panel beside the table squeezed the site box to 14px wide;
+  `npm run a11y` named it. Rows now wrap (flex), and the panel stacks above the table below 1200px.
+- **First Light's greeting covers a review screenshot.** The a11y runner's shots showed the morning painting over the
+  page; a screenshot script sets `cplFirstLight.optOut.v1` and `cplFirstLight.seen.v1` in an init script first.
