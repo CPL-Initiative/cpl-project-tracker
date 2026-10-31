@@ -406,8 +406,8 @@
    "name": "Exhibits",
    "page": "index.html#exhibits",
    "audience": "staff",
-   "last": null,
-   "outcome": null
+   "last": "2026-10-31",
+   "outcome": "S532 (2026-10-31): npm run a11y cobi:exhibits and cobi-dark:exhibits pass at both widths; no raw hex in exhibits.js. Wiring: the Credentials view reads 2,456 credentials and Review 468, the same as the Common Exhibit Reference's Reference (2456) and Needs you (468) on screen. No fix needed."
   }
  ]
 }
