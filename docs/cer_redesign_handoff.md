@@ -53,7 +53,8 @@ open PR at start). This is a **full checkpoint** for the CER lane (a tab joined 
 - Suppress where the figure is made: a reviewer may SELECT the base table, which is why the page reads a function.
 - The fold moves under the queue; the builder drops what it settled since the run and counts it.
 - Drafts live in the tab's state: a re-render must not cost an edit.
-- `git add`, then `bash scripts/check_generated.sh`, before every push; a new tab stales `cobi_admin_surface.js`.
+- `git add`, then `bash scripts/check_generated.sh`, before every push; a new tab stales `cobi_admin_surface.js` and the
+  UI pass ledger (`python3 scripts/ui_pass.py --sync`), which the gate now checks too (it missed it once, on #2602).
 
 ## Let go
 

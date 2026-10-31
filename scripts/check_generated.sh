@@ -33,6 +33,9 @@ run "dependency map contents" "python3 tests/dependency_map_test.py"
 # These two are found by their own suites rather than a --check flag, so they
 # only surface in a full `node tests/run.js` — which is exactly the run this
 # script exists to save you.
+# A new COBI tab also stales the UI pass ledger (kb/ui_pass_ledger.json): CI's lints job refuses a
+# nav tab it does not list, and this gate missed the Exhibits tab on 2026-10-31 (#2602).
+run "UI pass ledger lists every view" "python3 scripts/ui_pass.py --check"
 run "COBI admin surface"      "python3 kb/_build_cobi_admin_surface.py --check 2>/dev/null || node tests/admin_tab.test.js >/dev/null"
 run "Sierra rule defaults"    "node tests/sierra_rules.test.js >/dev/null 2>&1 || python3 kb/_build_sierra_rule_defaults.py --check"
 # The funding FAQ Sierra reads (S518): funding-model/faq.json is built from the FAQ's
