@@ -60,10 +60,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    13.5,
+    16.0,
     16.0
    ],
    "stated": [
@@ -71,9 +71,7 @@
     16.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 13.5-16.0; the catalog states 16.0-16.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +95,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,12 +145,12 @@
       "alternatives": [
        {
         "code": "HUMS 50",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        },
        {
         "code": "HUMS 53",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -165,7 +163,7 @@
       "alternatives": [
        {
         "code": "BUSI 39",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -185,7 +183,7 @@
       "alternatives": [
        {
         "code": "BUSI 64",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -198,7 +196,7 @@
       "alternatives": [
        {
         "code": "WORK 96",
-        "units": null,
+        "units": 2,
         "catalog_addition": false
        }
       ],
@@ -211,12 +209,12 @@
       "alternatives": [
        {
         "code": "WORK 98",
-        "units": null,
+        "units": 2,
         "catalog_addition": false
        },
        {
         "code": "WORK 97",
-        "units": null,
+        "units": 2,
         "catalog_addition": false
        }
       ],
@@ -234,5 +232,43 @@
    "No program learning outcomes are printed in the provided text; the 'Program Map' and 'Career Information' tabs' content was not included."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 41192567009,
+ "reconciled": [
+  {
+   "field": "alternative_units",
+   "was": null,
+   "now": {
+    "HUMS 50": [
+     3,
+     null
+    ],
+    "HUMS 53": [
+     3,
+     null
+    ],
+    "BUSI 39": [
+     3,
+     null
+    ],
+    "BUSI 64": [
+     3,
+     null
+    ],
+    "WORK 96": [
+     2,
+     null
+    ],
+    "WORK 98": [
+     2,
+     null
+    ],
+    "WORK 97": [
+     2,
+     null
+    ]
+   },
+   "words": "Business - Leadership 39261: 'WORK 96 Professional and Essential Skills 2 · or WORK 99 Career-Focused Work Experience · or WORK 98 Exploratory Work Experience · or WORK 97 Service Learning Work Experience · Total Units 17'; Automotive Maintenance 38076: 'Note: WORK 99 may be offered for 0.5-4.0 units. 2.0 Units of WORK 99 are required to satisfy the work experience certificate requirement' (college page read 41192128530)"
+  }
+ ],
+ "read_run": "38675240344"
 }

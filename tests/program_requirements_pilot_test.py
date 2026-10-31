@@ -2174,11 +2174,21 @@ hort = {"program": {"total_units": {"min": 18, "max": 21}, "degree_total": {"min
                     "electives_fill_degree": True}, "blocks": []}
 new, notes = RC.reconcile(hort, MPC_HORT, "Monterey Peninsula College", "A.S. Degree")
 deg = S.degree_check(new["program"], (60.0, 60.0), 18.0, 21.0, [], MPC_HORT, "A.S. Degree")
-check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 24, "max": 34}
+check([n["field"] for n in notes] == ["ge_units", "degree_total_minimum"]
+      and new["program"]["ge_units"] == {"min": 24, "max": 34}
       and "catalog.mpc.edu" in notes[0]["words"] and deg["pass"] and deg["computed"] == [42.0, 55.0]
       and deg["fill"] == [5.0, 18.0],
       "Monterey Peninsula Horticulture: MPC GE or Cal-GETC is 24-34, an 18-21 major comes to 42-55, electives "
       "make up the 60: %s" % json.dumps(deg))
+# S535: "electives, if needed, for a total of 60" makes the 60 a floor (Title 5 section 55063), so a 27-unit
+# major with Cal-GETC's 34 (Theatre Arts A.A. 03622, 51-61) meets it where electives_fill_degree alone failed it.
+thea = {"program": {**hort["program"], "total_units": {"min": 27, "max": 27}}, "blocks": []}
+new, notes = RC.reconcile(thea, MPC_HORT, "Monterey Peninsula College", "A.A. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 27.0, 27.0, [], MPC_HORT, "A.A. Degree")
+check(new["program"].get("degree_total_minimum") is True and deg["pass"] and deg.get("minimum")
+      and deg["computed"] == [51.0, 61.0]
+      and not S.degree_check(thea["program"], (60.0, 60.0), 27.0, 27.0, [], MPC_HORT, "A.A. Degree")["pass"],
+      "Monterey Peninsula Theatre Arts: the 60 a floor, 51-61 meets it: %s" % json.dumps(deg))
 adt = {"program": {"total_units": {"min": 18, "max": 20}, "degree_total": {"min": 60, "max": 60},
                    "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC"}, "blocks": []}
 new, notes = RC.reconcile(adt, MPC_ADT, "Monterey Peninsula College", "A.A.-T Degree")
@@ -2187,6 +2197,27 @@ check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"]
 check(RC.reconcile(hort, MPC_HORT + " " + MPC_ADT, "Monterey Peninsula College", "A.S. Degree")[0]["program"]["ge_units"]
       == {"min": 24, "max": 34},
       "a page naming both keeps the local pattern's span: the Cal-GETC step fills only an empty field")
+
+# S535 (page read 41192128530): a CourseLeaf "or" row prints no units, so the alternative takes its parent's
+# (WORK 99 holds 0.5 in the state file, a variable-unit course); a certificate reads the step too.
+MPC_LEAD = ("Required Core \u00b7 BUSI 40\tOrganizational Management\t3 \u00b7 WORK 96\tProfessional and Essential Skills\t2 "
+            "\u00b7 or WORK 99\tCareer-Focused Work Experience \u00b7 or WORK 98\tExploratory Work Experience \u00b7 Total Units\t5")
+lead = {"program": {"total_units": {"min": 5, "max": 5}}, "blocks": [{"name": "Required Core", "rule": "all", "courses": [
+    {"code": "BUSI 40", "units": 3, "alternatives": []},
+    {"code": "WORK 96", "units": 2, "alternatives": [{"code": "WORK 99", "units": None}, {"code": "WORK 98", "units": None},
+                                                     {"code": "WORK 97", "units": None}]}]}]}
+new, notes = RC.reconcile(lead, MPC_LEAD, "Monterey Peninsula College",
+                          "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units")
+alts = {a["code"]: a["units"] for a in new["blocks"][0]["courses"][1]["alternatives"]}
+check([n["field"] for n in notes] == ["alternative_units"] and alts == {"WORK 99": 2, "WORK 98": 2, "WORK 97": None}
+      and S.choice_units(new["blocks"][0]["courses"][1], {"WORK99": 0.5, "WORK97": 0.5}) == (0.5, 2),
+      "Monterey Peninsula's or rows take the parent's 2 units; WORK 97, not printed, keeps the state file's: %s" % alts)
+MPC_ADT2 = "TOTAL MAJOR UNITS\t20 \u00b7 Additional Requirements\t40\nComplete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units.\nTotal Units\t60"
+new, notes = RC.reconcile(adt, MPC_ADT2, "Monterey Peninsula College", "A.A- T Degree")
+check(new["program"]["ge_units"] == {"min": 34, "max": 34}
+      and RC.reconcile(adt, MPC_ADT2, "Monterey Peninsula College", "A.A. Degree")[0]["program"]["ge_units"]
+      == {"min": None, "max": None},
+      "Monterey Peninsula's transfer degree in its 2026-27 words: Cal-GETC's 34, for transfer degrees only")
 
 # S526: Glendale's descriptions the first parse missed. A renumbered course prints its old number ahead of its
 # code, and a title may start with a digit or carry "+" or a curly apostrophe; the code after the units guards each.

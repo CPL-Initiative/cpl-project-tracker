@@ -101,6 +101,7 @@
      34.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      8.0,
      18.0
@@ -159,7 +160,8 @@
     "Develop and refine critical thinking skills through the evaluation and use of academic research, argumentative writing, and the critical assessment, evaluation, and use of persuasive and interpersonal oral communication.",
     "Analyze and evaluate complex logic or quantitative problems and arguments, generate solutions, and effectively communicate their results."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -399,20 +401,14 @@
    "Electives 'if needed, for a total of 60 degree-applicable units' are recorded as electives_fill_degree true."
   ]
  },
- "extracted_run": 38844053281,
+ "extracted_run": 41192567009,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 24,
-    "max": 34
-   },
-   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270 (Horticulture A.S.): Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units)"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 38844053281
 }

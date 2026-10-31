@@ -344,91 +344,9 @@ team own and train. S320: "Go" on the registry table as described (its
 history, its one write path, a public read); "Approved" on the push that adds
 the weekly apply.
 
-## S489 SkySnowberry (2026-10-26, the CPL Queue routine): lists with floors under one total
+## S486-S489: moved to the archive (S535 compaction)
 
-- **One printed total over lists that carry their own figures is still one choice.** Liberal Arts: Pathway to Health
-  Sciences A.A. 17924 read List A: Biology (3), List B: Chemistry (4) and List C (10-11) as three blocks, 17-18 against
-  18. The tab prints "Complete a total of 18 units from List A, List B, and List C" (page read 40306415059, S488).
-  `pool_lists` gains `with_floors`: the lists become one 18-unit choice, each list's figure stays in the block's
-  `floors`, a course listed in two of the lists is listed once (List C repeats A's and B's courses, which `repeated`
-  would fail inside one block), and the step never fires where the floors sum past the total. `block_pattern` (a regex on
-  the list name) stands in for `block_prefix` where the lists share no prefix.
-- **The floors are kept, not scored.** The scorer sums the block's 18. A floor is a rule on which courses, like 17912's
-  two-disciplines condition, and the record holds it so a curator and the display can still read it.
-- Reconcile 40314109801 (free) moved 17924 alone (18 of 18; degree 60 with Cal-GETC 34 and 8 elective units). The other
-  55 re-filed records changed only the `ge_overlap` flag or score bookkeeping and were restored before reread
-  40318170598, which replaced one row (before-values in its receipt). Hartnell 80 to 81 of 94. Display build 19d2397e8004.
-- **Still waiting on a reader change:** CalGETC 45096 (area totals over sub-areas, 5C's lab counted again) and Music
-  43887 (repeat counts; the record shape has no repeat field). The 45096 step needs the tab's captured text for its
-  pattern; read it from the reconcile run's `out/sources/45096.json` artifact first.
-
-## S488 SkyThimbleberry (2026-10-26, the CPL Queue routine): Hartnell's last eight failing tabs, read
-
-- **Every Hartnell failure has now been read against its tab** (page read 40306415059, eight tabs, free;
-  plan `kb/college_reads/hartnell_unread_failures.json`). No reader change shipped; each failure sorts into one of three
-  kinds.
-- **The narrow `meets` class, as Sam ruled (Sheet 119 card 9, Sheet 120 card 1).** Agriculture Production 31591 (24-35
-  against 27) and Sustainable Crop Management 43119 (25-33 against 27) carry ABT99 at 1-8 units; Technical Support 41819
-  (15-16 against 16) carries "CIS57 OR BUS43". The printed total lies inside the range and the low end falls short, as
-  for Biology 03537 and Engineering 33851. They stay failing.
-- **A vendor gap stays incomplete.** Agriculture A.S. 11803's Sustainable Crop emphasis requires ABT41, which the tab
-  prints with no title and the vendor with no units (as ABT82, ABT160 and MFGT75 elsewhere). Vocational Nursing 03571's
-  HES120 reads "Any AHA BLS for Health Care Professional course is acceptable": no Hartnell figure exists.
-- **Three wait on a reader change, each named by the page's words.** Liberal Arts: Pathway to Health Sciences 17924
-  prints "Complete a total of 18 units from List A, List B, and List C" over list floors of 3, 4 and "10-11": one figure
-  over lists that carry their own, which `pool_lists` (figureless lists only) does not reach. CalGETC 45096 prints each
-  area's total ("A total of 6 semester units is required", "A total of 7") over sub-area blocks (3A, 3B; 5A, 5B, 5C) that
-  the record sums separately, 5C's lab counted again. Music 43887 prints two repeat counts, "If MUS 11 is chosen, it must
-  be taken for 2 semesters" and "2 semesters of any of the following Courses"; with both, it reads 19.5-20 against 19.5.
-  The record shape has no repeat field (Delta 44197, S424, is the same gap).
-- **A renumber map is college-wide, so read every tab that lists the course first.** Technical Support's tab prints
-  CIS50, CIS59, CIS53 and CIS57 where the state's file lists CSS 50, CSS 169, CSS 53 and CSS 57 (same titles and units),
-  so its coverage reads 0.2. But Hartnell's other passing records read CSS codes from their own tabs (31592, 31593, 43809),
-  and `course_renumbers` would make the capture look for CIS on those pages too. No map was written.
-- **Fable's advice on the two definition calls (asked once).** Respiratory Care B.S. 44537: compare its 40 upper-division
-  units only against an upper-division figure the page prints; with only the 120 (which includes the admitting A.S.),
-  keep it incomplete with that reason, and never sum the A.S. record into it (the two name different GE patterns, and the
-  elective gap would read as a mismatch). RN 03570: read the prerequisite list as blocks priced from each course's own
-  vendor units and Area 6 at the Local GE table's figure, label the GE "partial pattern", count a course once, and report
-  the sum beside 60 with any gap standing; a course with no found units keeps it incomplete. Not yet built.
-- **The display apply ran past an hour.** `step=display` run 40297886199 (build 767a48c10e89, dispatched 09:13Z) was still
-  in its apply step at 10:26Z against a 120-minute timeout; S486's took about 25 minutes.
-
-## S487 SkyHuckleberry (2026-10-26, the CPL Queue routine): Hartnell's pooled subject lists
-
-- **One figure over several lists is one choice.** General Studies: Arts and Humanities A.A. 17912 (AA.GAH) read its
-  eleven "List A: <subject>" lists as eleven `choose_units` blocks with no units. The tab prints "For the 18 units
-  required, select courses in List A from at least two disciplines; from one of the disciplines select at least two
-  courses." over a Completion requirement whose lists each say "Complete ANY of the following Courses" (page read
-  40291523425). Its sibling Social and Behavioral Sciences 17911 prints the same words and was read as one 18-unit block,
-  so the extraction, and nothing on the page, split 17912. A `pool_lists` reconcile step joins two or more figureless
-  lists sharing `block_prefix` into one block of the page's figure, and never where `total_units` names another.
-  Reconcile 40292405207 (free) moved 17912 alone (18 of 18 in the major, 60 with Local GE 23 and electives); 56
-  bookkeeping-only records were restored, and reread 40294638373 replaced one row (before-values in its receipt).
-  Hartnell 79 to 80 of 94. Display build 767a48c10e89.
-- **The two-disciplines condition has no field.** It rules which courses count, never how many units; the record keeps the
-  courses and the scorer checks the units.
-- **A step that changes blocks needs no carry-basis change.** The basis keeps every block, so a confirm of the split
-  record does not carry and the curator sees the pooled list (the college test now names `pool_lists` beside
-  `course_units` and `course_hours`).
-- **Read a sibling before writing a reader change.** The passing sibling showed the reading the page supports; the page
-  read confirmed it before any code.
-
-## S486 SkyQuince (2026-10-26, the CPL Queue routine): Hartnell's double-count words read as the overlap
-
-- **A page's own words carry a ruling past the case it was made on.** Sheet 82 card 2 allowed the overlap for transfer
-  degrees because Cal-GETC was the case in front of Sam; Hartnell's tabs state the same rule for local degrees ("Students
-  can double-count required courses and courses for General Education."). The reconcile `set` step records it as
-  `ge_overlap: true` (the kind already took a boolean, `degree_total_minimum`), and `degree_verdict` reads it beside
-  `transfer_degree`. Reconcile 40285320209 (free) and reread 40287110123: Vocational Nursing 39248 (80-89 against 63),
-  Addiction Studies 19718 (63 against 60) and Agricultural Mechatronics 43809 (70-79 against 60) pass; Hartnell 76 to 79.
-- **A new reconcile field joins the confirm carry basis.** `tests/program_requirements_college_test.py` requires every field
-  a step fills to be one `program_record_carry_basis` leaves out, so the function changed with the step (supabase-migrate
-  run 40285298395); otherwise a confirmed record would lose its confirm on the next reread for a flag alone.
-- **The transfer tabs print the same words**, so the step re-filed 52 transfer records with the flag and no verdict change.
-  As in S484, every record whose verdict stood was restored before `step=reread`, which then posted three.
-- **The display build needs openpyxl** (`python3 -m pip install openpyxl`; the bare `pip` here installs to another
-  interpreter). Build 8052e240575a changed only the build stamp in `cpl_pathways_roep_data.js`.
+Hartnell's double-count words, its pooled subject lists, its last eight failing tabs and the lists with floors under one total: verbatim in [archive 3](program_requirements_harvest_lessons_archive_3.md).
 
 ## S485 SkyElderberry (2026-10-26, the CPL Queue routine): Hartnell's last hours and its degree failures, read
 
@@ -845,6 +763,34 @@ Delta 200 of 203: lessons, *Moved from the lane (S524 compaction)*.
 
 **The second reader, Grok (Sam, Open Asks Sheet 97 card 1, 2026-10-19; built S421, #2246: `provider` on the function, `kb/_second_reader.py`, `second-reader.yml`, nothing written) waits on the xAI API billing moving to the RCCD district card (Sam, 2026-10-20) and the two Edge Function secrets only Sam sets; then one deploy and `second-reader.yml` with `college=Cañada College`. The ruling, the design and Jev's sittings: lessons, *Moved from the lane (S449 compaction)*.
 **Display build e021a2824548 is applied on `main` (S459: #2387 merged, `step=display` run 40027395883, 22:46Z: 17,529 statements written, none missing, no errors; the applied record committed by the run).** **Hartnell (S484-S489; lessons S484-S489):** passing rose to 81 of 94 after the `course_hours`, `ge_overlap` (#2462) and `pool_lists` (#2463; `with_floors`, #2465) steps (kept, Sheet 131 cards 3-4). **Still failing, all thirteen read (S488):** the narrow `meets` class (03537, 33851, 31591, 43119, 41819) stays as Sam ruled; a vendor gap (ABT41 in Agriculture A.S. 11803, HES120 in Vocational Nursing 03571, beside 44161 and 44574) stays incomplete; CalGETC 45096 and Music 43887 have since passed (below). Fable's advice on RN 03570 and Respiratory Care 44537 is in lessons S488. CSS/CIS codes are mixed across Hartnell's tabs, so no college-wide renumber.
+
+## S535 SkyGooseberry (2026-10-31, the CPL Queue routine, 10:12Z firing): Monterey Peninsula, 110 to 176 passing on three steps
+
+- **Grouped the 87 failing live records by shape before any read:** 25 offer WORK 99, 98 or 97 as an alternative with
+  no units (the state file holds 0.5 for the variable-unit WORK 99, so the low end fell 0.5 to 1.5 under the printed
+  total); 24 transfer degrees named Cal-GETC with no units; 13 local degrees summed the major and the GE span past 60.
+- **Page read 41192128530** (plan `mpc_work_ge_words`, five pages, no model call): CourseLeaf prints "WORK 96
+  Professional and Essential Skills 2 · or WORK 99 Career-Focused Work Experience · or WORK 98 ... · Total Units 17",
+  units on the group's first row only; Automotive Maintenance adds "2.0 Units of WORK 99 are required". The transfer
+  pages print "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units", so the S396
+  step keyed on "Certified completion of ... Cal-GETC" never matched the 2026-27 catalog. Local degrees print
+  "electives, if needed, for a total of 60 degree-applicable units".
+- **Three steps.** New reconcile kind **`or_units`**: an alternative printed as its own "or CODE" row with no units takes
+  its parent's units (never one the reading priced, never a parent without units). A second Cal-GETC `set` step on the
+  2026-27 words (transfer only). A `degree_total_minimum` set on "electives, if needed, for a total of 60" (Fable
+  advised the floor: "if needed" is the minimum construction in other words, Title 5 section 55063; the risk, a major
+  whose own units pass 60, does not occur in the thirteen). The college's steps had read associate degrees only; each
+  degree step now names its awards, so `or_units` reaches certificates. Guards in `program_requirements_pilot_test`;
+  the carry-basis guard in `program_requirements_college_test` lists `or_units` as a block-level kind.
+- **Reconcile 41192567009** (free) changed 119 filed records; **reread 41194846700** posted 125, receipt committed.
+  **Live: 110 to 176 of 197** (read back 11:02Z). Display build 598ff64220dd on the branch.
+- **Left (21):** coverage 42989, 43858, 44876; incomplete 22049 (Horticulture certificate), 33584 (Spanish AA-T), 45271
+  (Workforce Skills noncredit); unequal by a unit or two in the medical family (03635, 09978, 09979, 22059, 22083 print a
+  total one under the sum), 22052 Accounting (33.5-34 against 35), Nursing 03633 (57.5-63 against 72), the transfer
+  degrees 32033, 33586, 37243, 41831, ASL 39266, Nutrition 39463, and two noncredit hours records (39202, 45242).
+- **Lesson: a step keyed on last year's words goes quiet when the catalog is rewritten.** The S396 Cal-GETC step cited
+  the 2025-26 wording; the reread under the 2026-27 catalog left 24 degrees incomplete with the step in place. When a
+  college's step stops firing, page-read one record before writing a new reader.
 
 ## S534 SkyChokeberry (2026-10-31, the CPL Queue routine, 09:12Z firing): a list that fills the major, 198 to 202 passing; Los Angeles Valley parks
 

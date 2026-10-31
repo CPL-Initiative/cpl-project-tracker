@@ -215,6 +215,34 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 notes.append({"field": "course_hours", "was": None, "now": filled,
                               "words": "%s (%s)" % ((course_hours or {}).get("call"), st.get("source_words", ""))})
             continue
+        if st["kind"] == "or_units":
+            # A CourseLeaf course list prints an alternative as its own row, "or WORK 99<tab>Career-Focused
+            # Work Experience", with no units: the units on the first row are the group's, and the page's
+            # total counts them once (Monterey Peninsula's Business - Leadership 39261: "WORK 96 ... 2 · or
+            # WORK 99 · or WORK 98 · or WORK 97 · Total Units 17"; S535). An alternative the reading left
+            # without units, printed so, takes its parent's; never one the reading gave units, and never a
+            # parent without them.
+            filled = {}
+            for block in out.get("blocks") or []:
+                for course in block.get("courses") or []:
+                    if _num(course.get("units")) is None:
+                        continue
+                    for alt in course.get("alternatives") or []:
+                        if not isinstance(alt, dict) or not alt.get("code"):
+                            continue
+                        if alt.get("units") is not None or alt.get("units_max") is not None:
+                            continue
+                        code = r"\s*".join(re.escape(ch) for ch in re.sub(r"\s+", "", alt["code"]))
+                        if not re.search(r"\bor\s+%s\t[^\t\n\u00b7]*(?=\u00b7|\n|$)" % code, text):
+                            continue
+                        alt["units"] = course["units"]
+                        if _num(course.get("units_max")) is not None:
+                            alt["units_max"] = course["units_max"]
+                        filled[alt["code"]] = [course["units"], course.get("units_max")]
+            if filled:
+                notes.append({"field": "alternative_units", "was": None, "now": filled,
+                              "words": st.get("source_words", "")})
+            continue
         if st["kind"] == "pool_areas":
             # A total the page prints over each area's sub-areas (Hartnell's CalGETC 45096, S491: "A total of
             # 6 semester units is required" over Area 3A and 3B; "A total of 7" over 5A, 5B and 5C). Each

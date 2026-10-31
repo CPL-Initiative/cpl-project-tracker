@@ -68,26 +68,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    33.5,
-    34.0
+    35.0,
+    35.0
    ],
    "stated": [
     35.0,
     35.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 33.5-34.0; the catalog states 35.0-35.0"
-   ],
+   "why": [],
    "degree": {
-    "pass": false,
-    "status": "unequal",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     57.5,
-     68.0
+     59.0,
+     69.0
     ],
     "stated": [
      60.0,
@@ -98,10 +96,12 @@
      24.0,
      34.0
     ],
-    "why": [
-     "the blocks and general education come to 57.5-68.0, past the 60.0-60.0 the catalog prints for the degree"
-    ],
-    "fill": null
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     1.0
+    ]
    }
   },
   "repeated": {
@@ -126,7 +126,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -154,7 +154,8 @@
    "outcomes": [
     "Apply generally accepted accounting principles and accounting fundamentals to complete the accounting cycle using both manual and computerized systems."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -334,7 +335,7 @@
       "alternatives": [
        {
         "code": "BUSI 6",
-        "units": null,
+        "units": 3,
         "catalog_addition": true
        }
       ],
@@ -414,20 +415,25 @@
    "The Career Information tab content is not present in the text; no careers recorded."
   ]
  },
- "extracted_run": 38844053281,
+ "extracted_run": 41192567009,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "alternative_units",
+   "was": null,
    "now": {
-    "min": 24,
-    "max": 34
+    "BUSI 6": [
+     3,
+     null
+    ]
    },
-   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+   "words": "Business - Leadership 39261: 'WORK 96 Professional and Essential Skills 2 · or WORK 99 Career-Focused Work Experience · or WORK 98 Exploratory Work Experience · or WORK 97 Service Learning Work Experience · Total Units 17'; Automotive Maintenance 38076: 'Note: WORK 99 may be offered for 0.5-4.0 units. 2.0 Units of WORK 99 are required to satisfy the work experience certificate requirement' (college page read 41192128530)"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270 (Horticulture A.S.): Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units)"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 38844053281
 }

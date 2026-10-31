@@ -95,6 +95,7 @@
      34.0
     ],
     "why": [],
+    "minimum": true,
     "fill": [
      3.5,
      13.5
@@ -153,7 +154,8 @@
     "Accurately assess knowledge, skills, and abilities in relationship to one’s educational, career, and/or personal goals.",
     "Plan strategies to enhance the probability of acceptance into a nursing program."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -239,20 +241,14 @@
    "No careers are named in the program text; the Career Information tab content was not included in the text."
   ]
  },
- "extracted_run": 38844053281,
+ "extracted_run": 41192567009,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 24,
-    "max": 34
-   },
-   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270 (Horticulture A.S.): Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units)"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 38844053281
 }

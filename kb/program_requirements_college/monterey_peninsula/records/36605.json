@@ -60,26 +60,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    27.5,
-    37.0
+    29.0,
+    38.0
    ],
    "stated": [
     29.0,
     38.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 27.5-37.0; the catalog states 29.0-38.0"
-   ],
+   "why": [],
    "degree": {
-    "pass": false,
-    "status": "unequal",
+    "pass": true,
+    "status": "equal",
     "computed": [
-     51.5,
-     71.0
+     53.0,
+     72.0
     ],
     "stated": [
      60.0,
@@ -90,10 +88,12 @@
      24.0,
      34.0
     ],
-    "why": [
-     "the blocks and general education come to 51.5-71.0, past the 60.0-60.0 the catalog prints for the degree"
-    ],
-    "fill": null
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     7.0
+    ]
    }
   },
   "repeated": {
@@ -118,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -147,7 +147,8 @@
     "Apply quantitative information competencies to manage business resources and communicate results.",
     "Apply specific small business operational skills in the areas of technology, entrepreneurship, human resources, leadership, marketing or personal finance."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -641,20 +642,14 @@
    "No careers are named beyond 'enter the business field in positions above entry-level'; the Career Information tab content is not in the text."
   ]
  },
- "extracted_run": 38844053281,
+ "extracted_run": 41192567009,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 24,
-    "max": 34
-   },
-   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270 (Horticulture A.S.): Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units)"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 38844053281
 }

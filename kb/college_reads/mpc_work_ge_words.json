@@ -1,0 +1,22 @@
+{
+ "_readme": "S535 SkyGooseberry, 2026-10-31. Monterey Peninsula's failing records, three shapes: 25 records list a WORK 96-99 work-experience course as an alternative with no units (the state file holds 0.5), 24 transfer degrees name Cal-GETC with no units (the Cal-GETC set step's words did not match), and 13 local degrees sum past 60 with the GE span. Five pages, no model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "words": "How each page prints the WORK courses and their units, its general education pattern and units, and its program and degree totals."
+ },
+ "keywords": [
+  "WORK 9",
+  "Cal-GETC",
+  "[Gg]eneral [Ee]ducation",
+  "Total",
+  "electives",
+  "60"
+ ],
+ "pages": [
+  {"url": "https://catalog.mpc.edu/programs-study/business/business-leadership-certificate-achievement/", "answers": ["words"]},
+  {"url": "https://catalog.mpc.edu/programs-study/automotive-technology/automotive-maintenance-light-repair-coa/", "answers": ["words"]},
+  {"url": "https://catalog.mpc.edu/programs-study/psychology/psychology-aa-t/", "answers": ["words"]},
+  {"url": "https://catalog.mpc.edu/programs-study/sociology/sociology-associate-arts-transfer/", "answers": ["words"]},
+  {"url": "https://catalog.mpc.edu/programs-study/theatre-arts/theatre-arts-aa/", "answers": ["words"]}
+ ]
+}
