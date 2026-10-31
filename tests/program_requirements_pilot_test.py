@@ -2098,6 +2098,12 @@ check(RC.reconcile(kin, "x", "Los Angeles Valley College", "A.A. Degree")[0]["bl
 other = json.loads(json.dumps(econ))
 check(RC.reconcile(other, "x", "Hartnell College", "A.A. Degree")[0]["blocks"][3].get("fills_to") is None,
       "another college's records are untouched")
+fire = {"program": {"total_units": {"min": 19, "max": 23}, "degree_total": {"min": 60, "max": 60}, "measure": "units"},
+        "blocks": [{"name": "COMPLETE THE FOLLOWING 5 REQUIRED COURSES", "rule": "all", "courses": _cs([3, 3, 3, 3, 3])}]}
+fire_r = RC.reconcile(fire, "Major Units: 19-23 T otal Minimum Units: 60 \u00b7 CERTIFICATE", "Los Angeles Valley College",
+                      "A.S. Degree")[0]
+check((fire_r["program"].get("ge_units") or {}).get("min") == 27 and fire_r["program"].get("degree_total_minimum"),
+      "Fire Technology 02981's 'T otal Minimum Units: 60' still sets the GE plans and the floor (S534)")
 SJ = [{"closed_list": [{"code": "ANTHR 2L"}, {"code": "ARTH 12"}]}]
 PC.with_renumbers(SJ, {}, {"ARTH": "ART", "ANTH": "ANTHR"})
 check([c.get("printed") for c in SJ[0]["closed_list"]] == ["ANTH 2L", None],

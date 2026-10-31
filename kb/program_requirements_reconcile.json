@@ -593,7 +593,7 @@
    ]
   },
   "Los Angeles Valley College": {
-   "why": "All 67 of Los Angeles Valley's failing associate-degree records add their major up equal and fail at the degree: 38 sum the major alone against 60 (unequal), 29 name 'Any GE (LACCD GE Plan or Cal-GETC)' and no units for it (incomplete). College page read 41113266504 (S530 SkyBuffaloberry, 2026-10-30) prints every degree page's foot as 'Major Units: 34 Total Minimum Units: 60' (Accounting A.A. 02942, p80 printed; Banking and Finance 02943, Management 02945 and Marketing 02947, p82), so the 60 is a floor. The catalog's Associate Degree Programs page (p30 printed) states the GE: 'Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+' and 'The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen'; the LACCD plan's own page (p31) prints 'GENERAL EDUCATION REQUIREMENTS: Minimum of 27 semester units' and 'The LACCD GE plan may NOT be used for Associate Degrees for Transfer (ADTs)'. A continuation page (p82) prints no GE footnote of its own, so the steps key on the degree's 'Total Minimum Units' line, which every degree page prints. A transfer degree takes Cal-GETC's 34 first; a local degree the span of the two plans, 27-34. S532 SkyHackberry, 2026-10-31: the Engineering and Manufacturing family's ten coverage failures (02958, 02959, 02960, 08541, 08542, 21894-21898) each place every course their page prints, and miss only the shop courses: the catalog prints \"T & M 027\", \"T & M 030\", \"T & M 031\" and \"T & M 032\" where the state's file keeps TM027, TM030, TM031 and TM032 (same numbers; the records read from their own State Code headings, run 41141747238). prefix_aliases names T & M for TM, so the scorer reads them as the listed courses and the capture finds them on the page.",
+   "why": "All 67 of Los Angeles Valley's failing associate-degree records add their major up equal and fail at the degree: 38 sum the major alone against 60 (unequal), 29 name 'Any GE (LACCD GE Plan or Cal-GETC)' and no units for it (incomplete). College page read 41113266504 (S530 SkyBuffaloberry, 2026-10-30) prints every degree page's foot as 'Major Units: 34 Total Minimum Units: 60' (Accounting A.A. 02942, p80 printed; Banking and Finance 02943, Management 02945 and Marketing 02947, p82), so the 60 is a floor. The catalog's Associate Degree Programs page (p30 printed) states the GE: 'Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+' and 'The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen'; the LACCD plan's own page (p31) prints 'GENERAL EDUCATION REQUIREMENTS: Minimum of 27 semester units' and 'The LACCD GE plan may NOT be used for Associate Degrees for Transfer (ADTs)'. A continuation page (p82) prints no GE footnote of its own, so the steps key on the degree's 'Total Minimum Units' line, which every degree page prints. A transfer degree takes Cal-GETC's 34 first; a local degree the span of the two plans, 27-34. S532 SkyHackberry, 2026-10-31: the Engineering and Manufacturing family's ten coverage failures (02958, 02959, 02960, 08541, 08542, 21894-21898) each place every course their page prints, and miss only the shop courses: the catalog prints \"T & M 027\", \"T & M 030\", \"T & M 031\" and \"T & M 032\" where the state's file keeps TM027, TM030, TM031 and TM032 (same numbers; the records read from their own State Code headings, run 41141747238). prefix_aliases names T & M for TM, so the scorer reads them as the listed courses and the capture finds them on the page. S534 SkyChokeberry, 2026-10-31: Fire Technology A.S. 02981's page prints 'T otal Minimum Units: 60' (page read 41188051977, p102), so the three steps read 'T\\s?otal'.",
    "awards": "associate",
    "prefix_aliases": {
     "T & M": "TM"
@@ -607,7 +607,7 @@
       "max": 34
      },
      "awards": "transfer",
-     "pattern": "Total\\s+Minimum\\s+Units:\\s*60\\b",
+     "pattern": "T\\s?otal\\s+Minimum\\s+Units:\\s*60\\b",
      "source": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32",
      "source_words": "Cal-GETC 34 18+ ... The LACCD GE plan may NOT be used for Associate Degrees for Transfer (ADTs)."
     },
@@ -618,7 +618,7 @@
       "min": 27,
       "max": 34
      },
-     "pattern": "Total\\s+Minimum\\s+Units:\\s*60\\b",
+     "pattern": "T\\s?otal\\s+Minimum\\s+Units:\\s*60\\b",
      "source": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32",
      "source_words": "Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen."
     },
@@ -626,7 +626,7 @@
      "kind": "set",
      "field": "degree_total_minimum",
      "value": true,
-     "pattern": "Total\\s+Minimum\\s+Units:\\s*60\\b"
+     "pattern": "T\\s?otal\\s+Minimum\\s+Units:\\s*60\\b"
     },
     {
      "kind": "repeat",
