@@ -42,6 +42,15 @@
 // set to the sites joined, so a reader that takes one trainer (the bake, MAP export, the CER tab) stays
 // right. kb/_apply_credential_review.py resolves the two the way resolveSites() does here.
 //
+// Another look (Sam, 2026-10-31, after his pass through Review): "build an audit process as part of the
+// overall procedure to look for opportunities to take another look at exhibits that look the same but
+// still have differences and things we can fold and correct". kb/_sweep_exhibit_titles.py writes
+// kb/exhibits_sweep.json nightly: cards of titles already in the reference, each with its proposed title,
+// why, and the local titles it moves. Change to Proposed Title saves each local title's _UNCLASSIFIED::
+// assignment and issuer as Review does, and unified_title_supersedes, the title it replaces: the fold
+// re-points a title a person approved only while that title still stands. Keep Current Title saves
+// title_sweep_kept, the proposal declined, which the sweep never shows again.
+//
 // Loaded by the tab's boot block (both HTMLs, Rule 4). First Light tokens only, words for every control.
 (function () {
   "use strict";
@@ -66,6 +75,10 @@
   var CHIP_MAX = 10;
   var CONFLICT = "Conflict with the reference";
   var STEPS = ["Proposed", "Wording check", "Two issuers", CONFLICT];
+  var SWEEP = "Another look";
+  var SWEEP_URL = "kb/exhibits_sweep.json";
+  var FIELD_SUPERSEDES = "unified_title_supersedes";
+  var FIELD_KEPT = "title_sweep_kept";
   /* What each CER step means, in a sentence or two (the chip's hover; the mock-up's words). */
   var TIPS = {
     "": "Every held title, most students first.",
@@ -74,7 +87,8 @@
     "Two issuers": "The suggested title would join this exhibit to a credential the reference gives another issuer. A person decides whether they are one credential or two.",
     "Saved, not folded": "A person or a rule saved a title. The nightly run adds it to the reference.",
     "In the reference": "Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.",
-    "Conflict with the reference": "The title saved for this exhibit disagrees with one a person already approved. The nightly run never overwrites a person's decision, so it waits for you."
+    "Conflict with the reference": "The title saved for this exhibit disagrees with one a person already approved. The nightly run never overwrites a person's decision, so it waits for you.",
+    "Another look": "Titles already in the reference that still differ from their neighbors: an ASE test to name, Roman numerals, a language level, a course number left in, a level that disagrees, or two titles to fold. Built nightly."
   };
 
   var state = {
@@ -85,6 +99,8 @@
     history: [], bulkAsk: false, bulkBusy: false,
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
     view: "review",
+    // Another look: the sweep's cards, decided this visit by card id.
+    sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, history: [], bulkAsk: false, bulkBusy: false },
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null, q: "", sel: null, limit: CRED_PAGE,
           drafts: {}, note: "", showTitles: false, showArt: false, showCould: false, showRecords: false,
           adopt: null, adoptErr: false, open: null, links: null }
@@ -214,6 +230,23 @@
         .catch(function () { state.students = null; state.studentsWord = "error"; });
     });
   }
+  function loadSweep() {
+    return fetch(SWEEP_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) { state.sw.data = d; state.sw.error = null; })
+      .catch(function (e) { state.sw.data = null; state.sw.error = String(e && e.message || e); });
+  }
+  function sweepRule(id) {
+    var rules = (state.sw.data && state.sw.data.rules) || [];
+    for (var i = 0; i < rules.length; i++) if (rules[i].id === id) return rules[i];
+    return { id: id, label: id, tip: "" };
+  }
+  function sweepShown(rule) {
+    var d = state.sw.data;
+    if (!d) return [];
+    var r = rule == null ? state.sw.rule : rule;
+    return (d.cards || []).filter(function (c) { return !state.sw.done[c.id] && (!r || c.rules[0] === r); });
+  }
   function loadCourses() {
     if (state.courses || state.coursesErr) return Promise.resolve();
     return fetch(COURSES_URL, { cache: "no-store" })
@@ -246,6 +279,21 @@
     }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
   }
 
+  /* kb_curation rows posted in batches of 200, each batch an upsert on (course_id, field). */
+  function postRows(sess, rows) {
+    var chain = Promise.resolve();
+    for (var i = 0; i < rows.length; i += 200) {
+      (function (part) {
+        chain = chain.then(function () {
+          return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+            method: "POST", headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
+            body: JSON.stringify(part)
+          }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
+        });
+      })(rows.slice(i, i + 200));
+    }
+    return chain;
+  }
   /* Accept all proposed titles: the same two rows per title, posted in batches of 100 titles. */
   function saveMany(items) {
     return session().then(function (sess) {
@@ -255,18 +303,36 @@
         rows.push({ course_id: UNCLASS_PREFIX + it.raw, field: FIELD_TITLE, value: it.title, reviewer_email: sess.email });
         rows.push({ course_id: UNCLASS_PREFIX + it.raw, field: FIELD_ISSUER, value: it.issuer, reviewer_email: sess.email });
       });
-      var chain = Promise.resolve();
-      for (var i = 0; i < rows.length; i += 200) {
-        (function (part) {
-          chain = chain.then(function () {
-            return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
-              method: "POST", headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
-              body: JSON.stringify(part)
-            }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
-          });
-        })(rows.slice(i, i + 200));
+      return postRows(sess, rows);
+    });
+  }
+  /* Another look's rows for one card. Change: each local title's assignment and issuer, and the title it
+     replaces, so the fold applies it only while that title stands. Keep: the proposal declined; after a
+     Change this visit, the assignment goes back to the current title too. */
+  function sweepRows(email, c, kind, title) {
+    var rows = [];
+    c.locals.forEach(function (l) {
+      var id = UNCLASS_PREFIX + l.raw;
+      if (kind === "change") {
+        rows.push({ course_id: id, field: FIELD_TITLE, value: title, reviewer_email: email });
+        rows.push({ course_id: id, field: FIELD_ISSUER, value: c.issuer || "", reviewer_email: email });
+        rows.push({ course_id: id, field: FIELD_SUPERSEDES, value: c.current, reviewer_email: email });
+      } else {
+        rows.push({ course_id: id, field: FIELD_KEPT, value: c.proposed, reviewer_email: email });
+        if (state.sw.saved[c.id] === "change") {
+          rows.push({ course_id: id, field: FIELD_TITLE, value: c.current, reviewer_email: email });
+          rows.push({ course_id: id, field: FIELD_SUPERSEDES, value: c.current, reviewer_email: email });
+        }
       }
-      return chain;
+    });
+    return rows;
+  }
+  function saveSweep(cards, kind, titles) {
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      var rows = [];
+      cards.forEach(function (c, i) { rows = rows.concat(sweepRows(sess.email, c, kind, titles[i])); });
+      return postRows(sess, rows);
     });
   }
 
@@ -350,6 +416,71 @@
     var t = document.getElementById("exh-title");
     if (t) t.focus();
   }
+  /* ── Another look's actions ── */
+  function swDecided(c, kind, title, note) {
+    state.sw.history.push({ id: c.id, kind: kind, title: title });
+    state.sw.saved[c.id] = kind;
+    state.sw.done[c.id] = true;
+    delete state.sw.drafts[c.id];
+    state.sw.bulkAsk = false;
+    state.note = note;
+    render();
+    var t = document.getElementById("exh-sw-title");
+    if (t) t.focus();
+  }
+  function swChange(c, box) {
+    var title = (box || "").trim();
+    if (!title) { state.note = "Write a canonical title first."; render(); return; }
+    if (title === c.current) { swKeep(c); return; }
+    saveSweep([c], "change", [title])
+      .then(function () {
+        swDecided(c, "change", title, "Saved “" + title + "” for " + fmt(c.locals.length) + " local title"
+          + (c.locals.length === 1 ? "" : "s") + ". The nightly fold moves them while “" + c.current + "” still stands.");
+      }).catch(failed);
+  }
+  function swKeep(c) {
+    saveSweep([c], "keep", [c.current])
+      .then(function () { swDecided(c, "keep", c.current, "Kept “" + c.current + "”. This proposal will not come back."); })
+      .catch(failed);
+  }
+  function swSkip(list) {
+    if (list[state.sw.cur]) state.sw.history.push({ id: list[state.sw.cur].id, skipped: true });
+    state.sw.cur = list.length ? (state.sw.cur + 1) % list.length : 0;
+    state.note = ""; state.sw.bulkAsk = false;
+    render();
+  }
+  function swBack() {
+    var last = state.sw.history.pop();
+    if (!last) return;
+    var c = ((state.sw.data && state.sw.data.cards) || []).filter(function (x) { return x.id === last.id; })[0];
+    if (!c) { render(); return; }
+    delete state.sw.done[c.id];
+    var list = sweepShown();
+    if (list.indexOf(c) < 0) { state.sw.rule = ""; list = sweepShown(); }
+    state.sw.cur = Math.max(0, list.indexOf(c));
+    state.note = "Back to “" + c.current + "”." + (last.kind === "change" ? " You saved “" + last.title + "”; a new choice replaces it."
+      : last.kind === "keep" ? " You kept the current title; a new choice replaces it." : "");
+    state.sw.bulkAsk = false;
+    render();
+  }
+  function swAcceptAll(list) {
+    var cards = list.slice();
+    var titles = cards.map(function (c) { var d = state.sw.drafts[c.id]; return String(d != null ? d : c.proposed).trim(); });
+    cards = cards.filter(function (c, i) { return titles[i] && titles[i] !== c.current; });
+    titles = titles.filter(function (t, i) { return t && t !== list[i].current; });
+    if (!cards.length) return;
+    state.sw.bulkBusy = true; render();
+    saveSweep(cards, "change", titles).then(function () {
+      cards.forEach(function (c, i) {
+        state.sw.history.push({ id: c.id, kind: "change", title: titles[i] });
+        state.sw.saved[c.id] = "change"; state.sw.done[c.id] = true; delete state.sw.drafts[c.id];
+      });
+      state.sw.bulkBusy = false; state.sw.bulkAsk = false; state.sw.cur = 0;
+      state.note = "Saved the proposed title for " + fmt(cards.length) + " cards. The nightly fold moves them. Back returns to them one at a time.";
+      render();
+    }).catch(function (e) { state.sw.bulkBusy = false; state.sw.bulkAsk = false; failed(e); });
+  }
+
   /* Accept all proposed titles (Sam, 2026-10-31): every title in the list on screen takes its proposed
      title and issuer, a typed edit where there is one. A conflict with the reference stays for a person, and
      a title someone already saved keeps that save: the bulk word never overwrites a person's decision. */
@@ -429,6 +560,113 @@
       });
     }
     return b;
+  }
+  function sweepTile() {
+    var n = sweepShown("").length;
+    var b = el("button", {
+      type: "button", cls: "exh-step", "aria-pressed": state.filter === SWEEP ? "true" : "false",
+      "data-tip": TIPS[SWEEP], "aria-label": SWEEP + ", " + (state.sw.data ? fmt(n) : "not built yet") + ". " + TIPS[SWEEP]
+    }, [el("span", { cls: "exh-sn", text: state.sw.data ? fmt(n) : "–" }), el("span", { cls: "exh-sl", text: SWEEP })]);
+    if (!state.sw.data) b.disabled = true;
+    else b.addEventListener("click", function () {
+      state.filter = SWEEP; state.sw.cur = 0; state.sw.rule = ""; state.note = ""; state.sw.bulkAsk = false;
+      render();
+    });
+    return b;
+  }
+  function sweepRules() {
+    var d = state.sw.data;
+    var box = el("div", { cls: "exh-views", role: "group", "aria-label": "Another look by rule" });
+    [{ id: "", label: "Every rule" }].concat(d.rules || []).forEach(function (r) {
+      var n = sweepShown(r.id).length;
+      if (r.id && !n && state.sw.rule !== r.id) return;
+      var b = word(r.label + " (" + fmt(n) + ")", function () { state.sw.rule = r.id; state.sw.cur = 0; state.note = ""; state.sw.bulkAsk = false; render(); },
+        { "aria-pressed": state.sw.rule === r.id ? "true" : "false", title: r.tip || "" });
+      if (state.sw.rule === r.id) b.className = "exh-w exh-view-on";
+      box.appendChild(b);
+    });
+    return box;
+  }
+  function sweepCard(c, list) {
+    var box = el("section", { cls: "exh-card", "aria-label": "Take another look at one title" });
+    var row = el("div", { cls: "exh-chiprow" });
+    c.rules.forEach(function (id) {
+      var r = sweepRule(id);
+      row.appendChild(el("span", { cls: "exh-chip", tabindex: "0", "data-tip": r.tip || "", "aria-label": r.label + ". " + (r.tip || "") }, [r.label]));
+    });
+    if (state.sw.saved[c.id]) row.appendChild(el("span", { cls: "exh-muted exh-small", text: state.sw.saved[c.id] === "change" ? "Changed earlier this visit" : "Kept earlier this visit" }));
+    box.appendChild(row);
+
+    var canon = el("div", { cls: "exh-canon" });
+    canon.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: "Current title: " }), el("span", { cls: "exh-strong", text: c.current }),
+      el("span", { cls: "exh-muted", text: " · " + fmt(c.current_locals) + " local title" + (c.current_locals === 1 ? "" : "s") + (c.issuer ? " · " + c.issuer : "") })]));
+    canon.appendChild(el("label", { cls: "exh-muted exh-small", "for": "exh-sw-title", text: "Proposed title (edit it here)" }));
+    var title = el("input", { cls: "exh-edit", id: "exh-sw-title", type: "text", autocomplete: "off" });
+    title.value = state.sw.drafts[c.id] != null ? state.sw.drafts[c.id] : c.proposed;
+    title.addEventListener("input", function () { state.sw.drafts[c.id] = title.value; });
+    canon.appendChild(title);
+    canon.appendChild(el("p", { cls: "exh-muted exh-small", text: c.proposed_exists
+      ? "Joins the credential already in the reference under this title (" + fmt(c.proposed_locals) + " local title" + (c.proposed_locals === 1 ? "" : "s") + ")."
+        + (c.proposed_issuer && c.issuer && c.proposed_issuer !== c.issuer ? " Its issuer is " + c.proposed_issuer + "; this one's is " + c.issuer + "." : "")
+      : "A new credential in the reference." }));
+    box.appendChild(canon);
+
+    box.appendChild(el("div", { cls: "exh-why" }, [el("h4", { cls: "exh-q exh-small", text: "Why" }),
+      el("ul", null, c.why.map(function (w) { return el("li", { text: w }); }))]));
+    var locals = el("ul", { cls: "exh-locals" }, c.locals.map(function (l) {
+      var meta = [shortListNames(l.colleges), l.course, l.credit].filter(Boolean).join(" · ");
+      return el("li", null, [el("b", { text: l.raw }), meta ? el("span", { cls: "exh-muted exh-small", text: " · " + meta }) : null]);
+    }));
+    box.appendChild(el("div", { cls: "exh-why" }, [el("h4", { cls: "exh-q exh-small", text: "Local titles that move (" + fmt(c.locals.length) + ")" }), locals,
+      c.moves_all ? null : el("p", { cls: "exh-muted exh-small", text: "The other " + fmt(c.current_locals - c.locals.length)
+        + " under “" + c.current + "” stay where they are." })]));
+
+    var acts = el("div", { cls: "exh-acts" });
+    acts.appendChild(word("Change to Proposed Title", function () { swChange(c, title.value); }));
+    acts.appendChild(word("Keep Current Title", function () { swKeep(c); }));
+    if (state.sw.history.length) acts.appendChild(word("Back", swBack, { "aria-label": "Back to the previous card" }));
+    acts.appendChild(word("Skip", function () { swSkip(list); }));
+    box.appendChild(acts);
+    if (list.length > 1) {
+      var bulk = el("div", { cls: "exh-bulk" });
+      if (!state.sw.bulkAsk) {
+        bulk.appendChild(word("Accept all proposed titles (" + fmt(list.length) + ")", function () { state.sw.bulkAsk = true; render(); },
+          { cls: "exh-w exh-small", "aria-expanded": "false" }));
+      } else {
+        bulk.appendChild(el("p", { cls: "exh-small", role: "status" }, ["Save the proposed title for the " + fmt(list.length)
+          + " cards in " + (state.sw.rule ? sweepRule(state.sw.rule).label : "every rule") + "? An edit you typed on a card counts as its proposal. "
+          + "Each moves only while its current title still stands."]));
+        bulk.appendChild(el("div", { cls: "exh-acts" }, [
+          word(state.sw.bulkBusy ? "Saving…" : "Save all " + fmt(list.length), function () { if (!state.sw.bulkBusy) swAcceptAll(list); },
+            state.sw.bulkBusy ? { disabled: "disabled" } : null),
+          word("Cancel", function () { state.sw.bulkAsk = false; render(); })]));
+      }
+      box.appendChild(bulk);
+    }
+    var next = list[state.sw.cur + 1];
+    box.appendChild(el("div", { cls: "exh-foot" }, [
+      el("span", { text: (state.sw.cur + 1) + " of " + fmt(list.length) + " in " + SWEEP }),
+      el("span", { text: next ? "Next: " + next.current + " → " + next.proposed : "" })]));
+    return box;
+  }
+  function shortListNames(names) {
+    var s = (names || []).map(shortName).filter(Boolean);
+    return s.length > 3 ? s.slice(0, 3).join(", ") + " and " + (s.length - 3) + " more" : s.join(", ");
+  }
+  function renderSweep(wrap) {
+    var d = state.sw.data;
+    wrap.appendChild(el("p", { cls: "exh-muted exh-small", text: "Built " + stamp(d.generated_at) + " from every title in the reference. "
+      + "Each card names its rule; a change moves its local titles at the nightly fold." }));
+    wrap.appendChild(sweepRules());
+    var list = sweepShown();
+    if (state.sw.cur >= list.length) state.sw.cur = Math.max(0, list.length - 1);
+    wrap.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: state.note || "" }));
+    if (!list.length) {
+      wrap.appendChild(el("p", { cls: "exh-empty", text: "Nothing waits for another look in this rule." }));
+      if (state.sw.history.length) wrap.appendChild(el("div", { cls: "exh-acts" }, [word("Back", swBack)]));
+      return;
+    }
+    wrap.appendChild(sweepCard(list[state.sw.cur], list));
   }
   function chips(idx, max, all, onMore, pick) {
     var box = el("span", { cls: "exh-cchips" });
@@ -1247,12 +1485,16 @@
         "held titles articulated to a course that names them", "The course names the proposal"),
       studentsTile()]));
     var steps = el("div", { cls: "exh-steps", role: "group", "aria-label": "Filter the review queue by CER step" },
-      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, not folded")]));
+      [stepTile("", "All held")].concat(STEPS.map(function (s) { return stepTile(s, s); }), [stepTile("Saved, not folded", "Saved, not folded"), sweepTile()]));
     group.appendChild(steps);
     wrap.appendChild(group);
 
     wrap.appendChild(viewsNav());
 
+    if (state.filter === SWEEP && state.sw.data) {
+      renderSweep(wrap);
+      return;
+    }
     var list = shown();
     if (state.cur >= list.length) state.cur = Math.max(0, list.length - 1);
     wrap.appendChild(finder(list));
@@ -1389,6 +1631,10 @@
     "@media (max-width: 560px) { .exh-ccrow { grid-template-columns:minmax(0, 1fr); } .exh-dash, .exh-steps { grid-template-columns:repeat(2, minmax(0, 1fr)); }"
       + " .exh-dl { grid-template-columns:minmax(0, 1fr); }"
       + " .exh-table { min-width:560px; } }",
+    ".exh-why { display:grid; gap:4px; min-width:0; }",
+    ".exh-why ul { margin:0; padding-left:1.2em; display:grid; gap:4px; }",
+    ".exh-locals li { overflow-wrap:anywhere; }",
+    ".exh-strong { color:var(--text-strong); font-weight:600; }",
     "@media (prefers-reduced-motion: reduce) { .exh-wrap * { transition:none !important; } }"
   ].join("\n");
   function ensureCss() {
@@ -1402,6 +1648,7 @@
   function newVisit() {
     state.filter = ""; state.cur = 0; state.openCollege = null; state.teach = false; state.note = "";
     state.view = "review";
+    state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false;
     state.cs.q = ""; state.cs.sel = null; state.cs.limit = CRED_PAGE; state.cs.note = ""; state.cs.open = null;
     routeFromHash();
     render();
@@ -1409,7 +1656,7 @@
   /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
      they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with
      the reference, credentials = the Credentials view. The address is not a remembered filter. */
-  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], credentials: ["credentials", ""] };
+  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["credentials", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
@@ -1427,7 +1674,7 @@
       if (e && e.detail && e.detail.tab === "exhibits") newVisit();
     });
     window.addEventListener("cpl-session-changed", function () { loadStudents().then(render); });
-    return load().then(function () { render(); return loadStudents(); }).then(render);
+    return Promise.all([load(), loadSweep()]).then(function () { render(); return loadStudents(); }).then(render);
   }
 
   window.CPL_EXHIBITS = {
@@ -1435,6 +1682,6 @@
     _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS,
     loadCredentials: loadCredentials, openCredential: openCredential,
     _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent, _credRows: credRows,
-    _credCould: credCould, _routeFromHash: routeFromHash
+    _credCould: credCould, _routeFromHash: routeFromHash, loadSweep: loadSweep, _sweepShown: sweepShown, _sweepRows: sweepRows
   };
 })();

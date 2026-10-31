@@ -591,3 +591,68 @@ Sam, accepting proposed titles: *"need a back button ... to go to a few previous
   363 of 2,465 credentials name a site; 17 say only JATC.
 - **Why it matters (vault braindumps of 2026-10-30):** the public adoption page and Malone's new MAP exhibit module
   both read the CER's canonical titles and issuers.
+
+## 2026-10-31 — Another look: the sweep through every title (SkyCoralberry)
+
+Sam, 2026-10-31 ~17:07Z, after his pass through Review (384 titles saved from 13:46Z, folded by the 17:20Z daily run):
+*"I went through the Exhibits to adjust and accept the canonical titles. As I did I noticed some things I want you to build
+an audit process as part of the overall procedure to look for opportunities to take another look at exhibits that look
+the same but still have differences and things we can fold and correct: 1. Auto exhibits are most often aligned with ASE
+cert titles and I started adding those to later exhibit titles in parens after the title--see those and make a short
+list of the ones that could get the ASE parens based on the local titles and add those as the suggested titles. Note
+that there are many Automotive Technology exhibits where I took off the local course number and left it just Automotive
+Technology, but the local course corresponds to the ASE cert, so those should have the ASE parens 2. Many exhibits use I,
+II, III and I skipped adjusting some of those to 1,2,3 for consistency. Add those to the audit procedure too 3. For
+foreign lang exhibits, look for beginning labels that should be elementary (our canonical term for 1,2 or 1A,1B and
+intermediate should be often 2,3 or 2A,2B 4. Look for other opportunities and bundle them for me to have another run
+through them. Compare to all the exhibit titles in the whole data set and let's see if we can take another sweep through
+to adjust and fold 5. Looks for any exhibits where I didn't take off the local course number and bundle those with a
+suggested title"*
+
+- **A course number in a raw title is not evidence.** The first draft read codes from the local title and stripped
+  *OSHA 10*, *ICS 400*, *C-36*, *Fire Inspector 1C* and apprenticeship *Period 4* from canonical titles (253 cards). Only
+  the exhibit's own college course, from its credit lines, counts, and only on a title whose primary issuer is the colleges.
+- **One title over two courses is normal for an exam.** AP Calculus AB earns College Algebra at a 3 and Calculus at a 5;
+  splitting by course belongs to local course exhibits only. Checking every issuer record, not the primary, let
+  CompTIA Security+ through because one record names the colleges.
+- **The statewide file pools a credential's credit lines once its local titles fold.** Sam's *Automotive Technology* held
+  four Las Positas courses (AUTO INT, INTL, SDR, SMOG) in one entry; a line belongs to the local title that names its code.
+- **His own saves held the sixth rule.** *Haz Mat Technician 1A: Basic Chemistry* saved under the 1B title, and NUTR 071A
+  *Level A* under *Level C*: a level the local title names and the canonical contradicts. Las Positas's AUTO P1 is
+  *Powertrains: Modifications for Performance*, so the (ASE P1 Parts Specialist) paren is wrong; the course title must
+  agree with the test's name before a code counts.
+- **Rule 5g put *Intermediate* last** (*Spanish I Intermediate*). Sam's words make Elementary the canonical term, and C-ID's
+  descriptors lead with the level, so world-language levels are an exception (procedure `language-levels`). His saves
+  today also led with *Beginning* and *Advanced* in two families; the fold rule follows the placement he chose last.
+- **A test that counts a data-dependent queue breaks when the queue empties.** `cer_procedures_test.py` asserted the
+  committed queue staged more than none; after the fold the queue was 1 title, so it failed on main. It now checks that
+  every waiting title is proposed, held or not yet asked.
+
+## Moved from the lane (SkyCoralberry)
+
+**The design** (S411 mock-up https://claude.ai/artifact/Gu6HTwqSwMYLSy4C4xRag3, source
+`docs/visuals/2026-10-18-cer-procedures-mockup.html`): three views, **Needs you** (the exceptions, each with
+its proposal, why it came, Accept · Change · Teach a procedure), **Procedures** (each rule with who set it,
+what it settled and held, See what it did · Turn off; Add a procedure with a free preview), **Reference**
+(search, two filters, a Decided by column). The run's report already carries each view's numbers.
+
+**What the S411 map found** (counts from `kb/exhibit_audit/latest.json` of 2026-10-17 and
+`kb/unclassified_fold/2026-10-17/report.json`):
+
+- **The fold has applied nothing since 2026-07-08.** `kb/_fold_unclassified.py --apply-if-safe` is all-or-nothing
+  (`v1 = not conflict`): 18 conflicts hold back 176 clean saved assignments, 157 credential adds and 12 supersedes.
+  The tab's copy promises they fold "automatically on the next daily refresh."
+- **The backlog grows about 200 a month:** 241 unclassified (2026-07-16), 1,015 (09-25), 1,498 (10-17). No new KB
+  entry since July; the last curator assignment is 2026-07-12.
+- **A procedure's write shape to copy, when one may save:** `cer-decision-apply.yml` (a plan under a
+  `<lane>-s<N>@bot` cohort, a fresh read that holds a curator's change, a receipt before the insert, rollback
+  by cohort). `kb_curation` has no reason column; Sheet 3 card 10 (2026-09-29) asked for a CER decisions store
+  routed through Governance (DR-07).
+
+- **The first two passes (2026-10-18, runs 39097682221 and 39103573166):** $10.97 in all; 1,287 of 1,322 titles
+  pre-filled and 396 held. A 30-answer sample read the sure band right. Figures and the one to watch (*Industry for
+  GDDM 53*): `docs/exhibit_canonicalization_lessons.md`, its 2026-10-18 sections.
+
+- **Code-only titles get the college's own course (#2219, landed in #2220):** the run looks a trailing code up in COCI at the
+  college that entered the title and hands the title on as a hint (94 titles); a record carries its hints'
+  fingerprint, so an unsure title is asked again when its hints change. The workflow installs `openpyxl`.

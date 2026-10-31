@@ -60,6 +60,12 @@ FIELD_ISSUER = "issuing_agency_assignment"
 # additional_issuing_agencies list on the overlay entry, ready for the PR-3
 # credential fold to append each alongside the primary (never clobbering it).
 FIELD_ISSUER2 = "issuing_agency_assignment2"
+# The Exhibits tab's Another look (Sam, 2026-10-31; kb/_sweep_exhibit_titles.py). Change to Proposed Title
+# saves, beside the assignment, the title it replaces; the fold re-points a title a person approved only
+# while that title still stands (its revise lane). Keep Current Title saves the proposal declined, which
+# the sweep never shows again; it is not an assignment and leaves the entry's reviewer and time alone.
+FIELD_SUPERSEDES = "unified_title_supersedes"
+FIELD_KEPT = "title_sweep_kept"
 
 
 def split_issuers(s):
@@ -99,9 +105,11 @@ def fetch_rows():
 
 def build_assignments(rows):
     """Group kb_curation rows into raw_title -> {unified_title, issuing_agency,
-    reviewed_by, reviewed_at}. A row is a valid assignment only once it carries a
-    non-empty unified_title_assignment (the issuer alone never classifies)."""
+    reviewed_by, reviewed_at[, supersedes]}, and raw_title -> [the proposal a person kept the
+    current title against]. A row is a valid assignment only once it carries a non-empty
+    unified_title_assignment (the issuer alone never classifies)."""
     acc = {}
+    kept = {}
     skipped_field = skipped_prefix = 0
     for row in rows:
         cid = row.get("course_id") or ""
@@ -110,7 +118,12 @@ def build_assignments(rows):
             continue
         raw = cid[len(KEY_PREFIX):]
         field = (row.get("field") or "").strip()
-        if field not in (FIELD_TITLE, FIELD_ISSUER, FIELD_ISSUER2):
+        if field == FIELD_KEPT:
+            v = (row.get("value") or "").strip()
+            if v:
+                kept[raw] = [v]
+            continue
+        if field not in (FIELD_TITLE, FIELD_ISSUER, FIELD_ISSUER2, FIELD_SUPERSEDES):
             skipped_field += 1
             continue
         entry = acc.setdefault(raw, {})
@@ -118,6 +131,12 @@ def build_assignments(rows):
             entry["unified_title"] = (row.get("value") or "").strip()
         elif field == FIELD_ISSUER:
             entry["issuing_agency"] = (row.get("value") or "").strip()
+        elif field == FIELD_SUPERSEDES:
+            v = (row.get("value") or "").strip()
+            if v:
+                entry["supersedes"] = v
+            else:
+                entry.pop("supersedes", None)
         elif field == FIELD_ISSUER2:
             extras = split_issuers(row.get("value"))
             if extras:
@@ -131,13 +150,14 @@ def build_assignments(rows):
 
     # Keep only rows that actually assign a unified_title; drop issuer-only stubs.
     assignments = {raw: e for raw, e in acc.items() if e.get("unified_title")}
-    return assignments, skipped_field, skipped_prefix
+    return assignments, skipped_field, skipped_prefix, dict(sorted(kept.items()))
 
 
 def existing_assignments():
     try:
         with open(OUT, encoding="utf-8") as f:
-            return json.load(f).get("assignments", {})
+            d = json.load(f)
+            return d.get("assignments", {}), d.get("sweep_kept", {})
     except (FileNotFoundError, ValueError):
         return None
 
@@ -146,12 +166,12 @@ def main():
     if not KEY:
         sys.exit("Set SUPABASE_SERVICE_KEY (service_role key) in the environment.")
     rows = fetch_rows()
-    assignments, skipped_field, skipped_prefix = build_assignments(rows)
+    assignments, skipped_field, skipped_prefix, kept = build_assignments(rows)
     assignments = dict(sorted(assignments.items()))
 
     # Idempotent: if the assignment set is unchanged, leave the file (and its
     # _synced_at) alone so an empty/stable overlay produces no daily diff.
-    if existing_assignments() == assignments:
+    if existing_assignments() == (assignments, kept):
         print(f"no change: {len(assignments)} assignments "
               f"({len(rows)} rows from Supabase) — overlay left untouched")
         return
@@ -169,6 +189,7 @@ def main():
         "_synced_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "count": len(assignments),
         "assignments": assignments,
+        "sweep_kept": kept,
     }
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(out, f, indent=2, ensure_ascii=False)

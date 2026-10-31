@@ -1,0 +1,3937 @@
+{
+ "schema": 1,
+ "generated_at": "2026-10-31T17:44:11Z",
+ "generated_by": "kb/_sweep_exhibit_titles.py",
+ "rules": [
+  {
+   "id": "ase",
+   "label": "ASE",
+   "words": "Auto exhibits are most often aligned with ASE cert titles and I started adding those to later exhibit titles in parens after the title",
+   "tip": "An automotive course that prepares for an ASE test gets the test in parentheses after the title: Automotive Technology (ASE A7 Heating and Air Conditioning)."
+  },
+  {
+   "id": "numerals",
+   "label": "Numerals",
+   "words": "Many exhibits use I, II, III and I skipped adjusting some of those to 1,2,3 for consistency.",
+   "tip": "Roman level numerals become 1, 2, 3. Official names that carry them, such as Firefighter I, keep them."
+  },
+  {
+   "id": "language",
+   "label": "Language level",
+   "words": "look for beginning labels that should be elementary (our canonical term for 1,2 or 1A,1B and intermediate should be often 2,3 or 2A,2B",
+   "tip": "A world-language course is Elementary or Intermediate, then the language, then 1 or 2: Elementary Spanish 1, Intermediate Spanish 2."
+  },
+  {
+   "id": "course-code",
+   "label": "Course number",
+   "words": "Looks for any exhibits where I didn't take off the local course number",
+   "tip": "The canonical title still carries a college's course number or a method word such as Credit by Exam."
+  },
+  {
+   "id": "level",
+   "label": "Level differs",
+   "words": "exhibits that look the same but still have differences",
+   "tip": "The local title names one level (1A, Year 5, Level 2) and its canonical title another. Often a title accepted with its neighbor's name."
+  },
+  {
+   "id": "fold",
+   "label": "Fold",
+   "words": "Compare to all the exhibit titles in the whole data set and let's see if we can take another sweep through to adjust and fold",
+   "tip": "Two canonical titles that differ only in spelling, one title over different courses at one college, or a family whose level word sits in two places."
+  }
+ ],
+ "counts": {
+  "ase": 17,
+  "numerals": 45,
+  "language": 32,
+  "course-code": 6,
+  "level": 1,
+  "fold": 33
+ },
+ "local_titles": 168,
+ "cards": [
+  {
+   "current": "Auto Electricity and Electronics",
+   "proposed": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is named for ASE A6"
+   ],
+   "locals": [
+    {
+     "raw": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "AUTOTEC-15: Auto Electricity and Electronics",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "83e7c5ab067b",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "Automatic Transmission/Transaxle",
+   "proposed": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is A2, named for the ASE test"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A2",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO A2",
+     "credit": "4 units in AUTO A2 Automatic Transmission Transaxle"
+    }
+   ],
+   "id": "e93010eab588",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Air Conditioning",
+   "proposed": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is named for ASE A7"
+   ],
+   "locals": [
+    {
+     "raw": "Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ATEC 81",
+     "credit": "3 hours in Automotive Air Conditioning"
+    }
+   ],
+   "id": "3c54e55d858d",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Brake System",
+   "proposed": "Automotive Technology (ASE A5 Brakes)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is named for ASE A5"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam AUTO 106 Automotive Brake System",
+     "colleges": [
+      "Evergreen Valley College"
+     ],
+     "course": "AUTO 106",
+     "credit": "2 hours in Automotive Brake Systems"
+    }
+   ],
+   "id": "8d8437e05134",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Brake Systems",
+   "proposed": "Automotive Technology (ASE A5 Brakes)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is named for ASE A5",
+    "the course is A5, named for the ASE test"
+   ],
+   "locals": [
+    {
+     "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "Automotive Brake Systems",
+     "colleges": [
+      "San Diego Miramar College"
+     ],
+     "course": "AUTO 176G",
+     "credit": "4 hours in Automotive Brake Systems"
+    },
+    {
+     "raw": "Automotive Brake Systems AUTO 036 Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "AUTO 36",
+     "credit": "4 hours in Automotive Brake Systems"
+    },
+    {
+     "raw": "IC-Automotive Brake Systems",
+     "colleges": [
+      "Mt. San Jacinto College"
+     ],
+     "course": "AUME 771",
+     "credit": "4 hours in Automotive Brake Systems"
+    },
+    {
+     "raw": "Noncredit for AUTO A5",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO A5",
+     "credit": "4 units in AUTO A5 Brakes"
+    }
+   ],
+   "id": "b2e15fdcc116",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 5,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Electrical Systems",
+   "proposed": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is A6, named for the ASE test"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A6",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO A6",
+     "credit": "5 units in AUTO A6 Electrical Electronic Systems"
+    }
+   ],
+   "id": "0cee5916e25c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Automotive Electrical/Electronics I",
+   "proposed": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+   "rules": [
+    "ase",
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic",
+    "the course is named for ASE A6"
+   ],
+   "locals": [
+    {
+     "raw": "IC- Automotive Electrical/Electronics I",
+     "colleges": [
+      "Mt. San Jacinto College"
+     ],
+     "course": "AUME 780",
+     "credit": "4 hours in Automotive Electrical/Electronics I"
+    }
+   ],
+   "id": "a3b8d2f234e5",
+   "issuer": "",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Electrical/Electronics II",
+   "proposed": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+   "rules": [
+    "ase",
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic",
+    "the course is named for ASE A6"
+   ],
+   "locals": [
+    {
+     "raw": "IC-Automotive Electrical/Electronics II",
+     "colleges": [
+      "Mt. San Jacinto College"
+     ],
+     "course": "AUME 781",
+     "credit": "4 hours in Automotive Electrical/Electronics II"
+    }
+   ],
+   "id": "67c014a627e4",
+   "issuer": "",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Technology (ASE A8 Engine Performance Certification)",
+   "proposed": "Automotive Technology (ASE A8 Engine Performance)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A8's official name is Engine Performance"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A8",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO A8",
+     "credit": "5 units in AUTO A9 Engine Performance"
+    }
+   ],
+   "id": "b9ce45e49ca3",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)",
+   "proposed": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "ASE A9's official name is Light Vehicle Diesel Engines"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A9",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO A9",
+     "credit": "4 units in AUTO A9 Light Vehicle Diesel Engines"
+    }
+   ],
+   "id": "bd7b90e914a9",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
+   "proposed": "Powertrains: Modifications for Performance",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "P1 at this college is “Powertrains: Modifications for Performance”, not ASE P1 Medium/Heavy Truck Parts Specialist; the course's own title in its place"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO P1",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO P1",
+     "credit": "4 units in AUTO P1 Powertrains: Modifications for Performance"
+    }
+   ],
+   "id": "4b1782efa60c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Brakes",
+   "proposed": "Automotive Technology (ASE A5 Brakes)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is named for ASE A5"
+   ],
+   "locals": [
+    {
+     "raw": "Brakes - Credit by Exam (ATEC 14 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ATEC 14",
+     "credit": "4 hours in Brakes"
+    }
+   ],
+   "id": "033358f96a55",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Engine Performance",
+   "proposed": "Automotive Technology (ASE A8 Engine Performance)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is named for ASE A8"
+   ],
+   "locals": [
+    {
+     "raw": "Engine Performance - Credit by Exam (ATEC 23 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ATEC 23",
+     "credit": "4 hours in Engine Performance"
+    }
+   ],
+   "id": "2a9e7e28d949",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Engine Performance I",
+   "proposed": "Engine Performance 1 (ASE A8 Engine Performance)",
+   "rules": [
+    "ase",
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic",
+    "the course is named for ASE A8"
+   ],
+   "locals": [
+    {
+     "raw": "IC-Engine Performance I",
+     "colleges": [
+      "Mt. San Jacinto College"
+     ],
+     "course": "AUME 790",
+     "credit": "4 hours in Engine Performance I"
+    }
+   ],
+   "id": "3c9df6ff2301",
+   "issuer": "",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Engine Performance II",
+   "proposed": "Engine Performance 2 (ASE A8 Engine Performance)",
+   "rules": [
+    "ase",
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic",
+    "the course is named for ASE A8"
+   ],
+   "locals": [
+    {
+     "raw": "IC- Engine Performance II",
+     "colleges": [
+      "Mt. San Jacinto College"
+     ],
+     "course": "AUME 791",
+     "credit": "4 hours in Engine Performance II"
+    }
+   ],
+   "id": "965b40b736eb",
+   "issuer": "",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Manual Drive Train and Axles",
+   "proposed": "Automotive Technology (ASE A3 Manual Drive Train and Axles)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is A3, named for the ASE test"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A3",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO A3",
+     "credit": "4 units in AUTO A3 Manual Drive Train and Axles"
+    }
+   ],
+   "id": "46998ae89caf",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Suspension and Steering",
+   "proposed": "Automotive Technology (ASE A4 Suspension and Steering)",
+   "rules": [
+    "ase"
+   ],
+   "why": [
+    "the course is A4, named for the ASE test",
+    "the course is named for ASE A4"
+   ],
+   "locals": [
+    {
+     "raw": "Noncredit for AUTO A4",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AUTO A4",
+     "credit": "4 units in AUTO A4 Suspension and Steering"
+    },
+    {
+     "raw": "Suspension and Steering",
+     "colleges": [
+      "San Diego Miramar College"
+     ],
+     "course": "AUTO 178G",
+     "credit": "4 hours in Suspension, Steering and Handling"
+    },
+    {
+     "raw": "Suspension and Steering Systems",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "AUTOTEC 418",
+     "credit": "4 hours in Suspension and Steering Systems"
+    }
+   ],
+   "id": "8eab47bee7de",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
+   "moves_all": true
+  },
+  {
+   "current": "Advanced Medical-Surgical Nursing II Preceptorship",
+   "proposed": "Advanced Medical-Surgical Nursing 2 Preceptorship",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Advanced Medical - Surgical Nursing II Preceptorship - Credit by Exam (NURS 248 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "NURS 248",
+     "credit": "2 hours in Advanced Medical-Surgical Nursing II Preceptorship"
+    }
+   ],
+   "id": "7bce09b27a1b",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Architectural Design I",
+   "proposed": "Architectural Design 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "ARC 201 - Architectural Design I",
+     "colleges": [
+      "Los Angeles Pierce College"
+     ],
+     "course": "ARC 201",
+     "credit": "3 hours in Architectural Design I"
+    }
+   ],
+   "id": "961ca4241c65",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 3,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "ASNT Level I — Infrared and Thermal Testing",
+   "proposed": "ASNT Level 1 — Infrared and Thermal Testing",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "ASNT Level 1 Thermal (Infrared) Thermography Certification",
+     "colleges": [
+      "Fullerton College"
+     ],
+     "course": "DRON 120 F",
+     "credit": "2 hours in Infrared Thermal Imaging Level 1"
+    }
+   ],
+   "id": "65c3e3284137",
+   "issuer": "American Society for Nondestructive Testing (ASNT)",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Biotechnology I",
+   "proposed": "Biotechnology 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Discipline Exam - BIOTECH 002",
+     "colleges": [
+      "Los Angeles Mission College"
+     ],
+     "course": "BIOTECH 002",
+     "credit": "4 hours in BIOTECHNOLOGY I"
+    }
+   ],
+   "id": "2c9d1374fad2",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Blueprint Reading I",
+   "proposed": "Blueprint Reading 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Discipline Exam - DRAFT 016",
+     "colleges": [
+      "Los Angeles Mission College"
+     ],
+     "course": "DRAFT 016",
+     "credit": "2 hours in BLUEPRINT READING I"
+    }
+   ],
+   "id": "2011119d68f5",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Class Piano I",
+   "proposed": "Class Piano 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Class Piano I",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "MUSA-27A CLASS PIANO I",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "ecb55362985b",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "Class Piano II",
+   "proposed": "Class Piano 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Class Piano II",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "MUS 51B",
+     "credit": "1 hour in Class Piano II"
+    }
+   ],
+   "id": "f4e1d720d232",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "CLEP French Language Level III",
+   "proposed": "CLEP French Language Level 3",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "CLEP French Level III",
+     "colleges": [
+      "Santa Rosa Junior College"
+     ],
+     "course": "Local GE Area 3",
+     "credit": "9 hours in ARTS AND HUMANITIES"
+    }
+   ],
+   "id": "16e7f6dbf65f",
+   "issuer": "College Board",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "CLEP German Language Level III",
+   "proposed": "CLEP German Language Level 3",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "CLEP German Level III",
+     "colleges": [
+      "Santa Rosa Junior College"
+     ],
+     "course": "Local GE Area 3",
+     "credit": "9 hours in ARTS AND HUMANITIES"
+    }
+   ],
+   "id": "3fc127508df5",
+   "issuer": "College Board",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "CLEP Spanish with Writing Level II",
+   "proposed": "CLEP Spanish with Writing Level 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "CLEP : Spanish with Writing Level II",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Exam Spanish with Writing II (Score of 63 or higher)",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Spanish and Writing Level II",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Spanish With Writing II",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Spanish with Writing Level 2",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Spanish with Writing Level II",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Spanish with Writing Level II (Score of 63)",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Spanish with Writing ll",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Spanish with Writing: Level 2",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "CLEP Spanish with Writing: Level II",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "ab3c8263d9c9",
+   "issuer": "College Board",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 10,
+   "moves_all": true
+  },
+  {
+   "current": "Clinical Experience in Sports Medicine I",
+   "proposed": "Clinical Experience in Sports Medicine 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Sports Med Lab I High School Articulation",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "KIN 10AL",
+     "credit": "1 hour in Clinical Experience in Sports Medicine I"
+    }
+   ],
+   "id": "70537076c50b",
+   "issuer": "Local High School",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Combined Processes I",
+   "proposed": "Combined Processes 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Combinded Processes I",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "AP 32A",
+     "credit": "3 hours in Combined Processes I"
+    }
+   ],
+   "id": "6ffced385f4e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Computer Document Processing I",
+   "proposed": "Computer Document Processing 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "BT 1: Computer Document Processing I",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "BT 1",
+     "credit": "3 hours in Computer Document Processing I"
+    }
+   ],
+   "id": "544d7dc9ce06",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Culinary Fundamentals I",
+   "proposed": "Culinary Fundamentals 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Discipline Exam - CLN ART 101",
+     "colleges": [
+      "Los Angeles Mission College"
+     ],
+     "course": "CLN ART 101",
+     "credit": "4 hours in CULINARY FUNDAMENTALS I"
+    }
+   ],
+   "id": "c2626f7956e4",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Elementary Spanish I",
+   "proposed": "Elementary Spanish 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Elem Spanish I High School Articulation",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    },
+    {
+     "raw": "SPAN 001: Elementary Spanish I",
+     "colleges": [
+      "Lemoore College"
+     ],
+     "course": "SPAN 001",
+     "credit": "4 hours in Elementary Spanish I"
+    },
+    {
+     "raw": "SPAN 1: Beginning Spanish",
+     "colleges": [
+      "Cabrillo College",
+      "Fresno City College"
+     ],
+     "course": "SPAN 1",
+     "credit": "5 hours in Elementary Spanish I"
+    }
+   ],
+   "id": "41f377a0abbf",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 9,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 3,
+   "moves_all": true
+  },
+  {
+   "current": "Elementary Spanish II",
+   "proposed": "Elementary Spanish 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "SPAN 002: Elementary Spanish II",
+     "colleges": [
+      "Lemoore College"
+     ],
+     "course": "SPAN 002",
+     "credit": "4 hours in Elementary Spanish II"
+    },
+    {
+     "raw": "SPAN 2: High-Beginning Spanish",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "SPAN 2",
+     "credit": "5 hours in HIGH-BEGINNING SPANISH"
+    }
+   ],
+   "id": "00ae64939a31",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 7,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "Figure and Composition I",
+   "proposed": "Figure and Composition 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Portfolio for ARTS 3A",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "ARTS 3A",
+     "credit": "3 units in ARTS 3A Figure and Composition I"
+    }
+   ],
+   "id": "fba31fdf9ee9",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Foundations of Design I",
+   "proposed": "Foundations of Design 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "ENV 101 - Foundations of Design I",
+     "colleges": [
+      "Los Angeles Pierce College"
+     ],
+     "course": "ENV 101",
+     "credit": "3 hours in Foundations of Design I"
+    },
+    {
+     "raw": "ENV DES 101 - Foundations of Design I",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "0b67f91b83f3",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "Foundations of Design II",
+   "proposed": "Foundations of Design 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "ENV 102 - Foundations of Design II",
+     "colleges": [
+      "Los Angeles Pierce College"
+     ],
+     "course": "ENV 102",
+     "credit": "3 hours in Foundations of Design II"
+    }
+   ],
+   "id": "4ad988aeb043",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Graphic Communications I — Orthographic Drawings",
+   "proposed": "Graphic Communications 1 — Orthographic Drawings",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ARCH 170",
+     "credit": "3 hours in Graphic Communications I - Orthographic Drawings"
+    }
+   ],
+   "id": "ad77e29f8a11",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Guitar I",
+   "proposed": "Guitar 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "MUSA-25A GUITAR I",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "963d140d1de4",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 2,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Ironworker Architectural II",
+   "proposed": "Ironworker Architectural 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "IW- Architectural II",
+     "colleges": [
+      "Cerritos College"
+     ],
+     "course": "IWAP 41.05",
+     "credit": "2.5 hours in IW - Architectural ll"
+    }
+   ],
+   "id": "2f363c8b64ba",
+   "issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 0,
+   "proposed_issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Ironworker Architectural III",
+   "proposed": "Ironworker Architectural 3",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "IW- Architectural III",
+     "colleges": [
+      "Cerritos College"
+     ],
+     "course": "IWAP 41.04",
+     "credit": "2.5 hours in IW - Architectural lll"
+    }
+   ],
+   "id": "85023de18d78",
+   "issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 0,
+   "proposed_issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Ironworker Structural Steel I",
+   "proposed": "Ironworker Structural Steel 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Structural Steel I",
+     "colleges": [
+      "Cerritos College"
+     ],
+     "course": "IWAP 40.21",
+     "credit": "2.5 hours in Structural Steel l"
+    }
+   ],
+   "id": "eab7b08c1287",
+   "issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 0,
+   "proposed_issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Ironworker Structural Steel II",
+   "proposed": "Ironworker Structural Steel 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "IW- Structural Steel II",
+     "colleges": [
+      "Cerritos College"
+     ],
+     "course": "IWAP 41.06",
+     "credit": "2 hours in IW - Structural Steel ll"
+    }
+   ],
+   "id": "c0a9dd106ee8",
+   "issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 0,
+   "proposed_issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Ironworker Structural, Architectural and Ornamental I",
+   "proposed": "Ironworker Structural, Architectural and Ornamental 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Structural Arch Orn I",
+     "colleges": [
+      "Cerritos College"
+     ],
+     "course": "IWAP 40.60",
+     "credit": "2.5 hours in Structural Arch Orn l"
+    }
+   ],
+   "id": "8036ed064064",
+   "issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 0,
+   "proposed_issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Ironworker Welding III",
+   "proposed": "Ironworker Welding 3",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "IW- Welding III",
+     "colleges": [
+      "Cerritos College"
+     ],
+     "course": "IWAP 40.05",
+     "credit": "2.5 hours in IW- Welding lll"
+    }
+   ],
+   "id": "ec288d903e29",
+   "issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 0,
+   "proposed_issuer": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Keyboarding II",
+   "proposed": "Keyboarding 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Keyboarding II - Credit by Exam (BUS 146 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "BUS 146",
+     "credit": "1 hour in Keyboarding II"
+    }
+   ],
+   "id": "df24ab173a4c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Metal Building Erection I / Foreman Training",
+   "proposed": "Metal Building Erection 1 / Foreman Training",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Metal Building Erection I / Foreman Training",
+     "colleges": [
+      "Cerritos College"
+     ],
+     "course": "IWAP 40.26",
+     "credit": "2.5 hours in Metal Building Erection /Foreman Training"
+    }
+   ],
+   "id": "9c6fb6380925",
+   "issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 0,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Microsoft Word I",
+   "proposed": "Microsoft Word 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "BT 28: Microsoft Word I",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "BT 28",
+     "credit": "1.5 hours in Microsoft Word I"
+    }
+   ],
+   "id": "3d37c33edd43",
+   "issuer": "Microsoft",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Microsoft Word II",
+   "proposed": "Microsoft Word 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "BT 29: Microsoft Word II",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "BT 29",
+     "credit": "1.5 hours in Microsoft Word II"
+    }
+   ],
+   "id": "f64879863451",
+   "issuer": "Microsoft",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Music Production I and MIDI",
+   "proposed": "Music Production 1 and MIDI",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Music Production I and MIDI",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "MUS 57A",
+     "credit": "1.5 hours in Music Production I: Digital Music Production and MIDI"
+    }
+   ],
+   "id": "a997ff32ce56",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Music Production II and Electronic Composition",
+   "proposed": "Music Production 2 and Electronic Composition",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Music Production II and  Electronic Composition",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "MUS 57B",
+     "credit": "1.5 hours in Music Production II: Electronic Music Composition and Performance"
+    }
+   ],
+   "id": "1a02e21ab81d",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Oil/Acrylic Painting: Beginning I",
+   "proposed": "Oil/Acrylic Painting: Beginning 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Portfolio for ARTS 12A",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "ARTS 12A",
+     "credit": "3 units in ARTS 12A Oil/Acrylic Painting: Beginning I"
+    }
+   ],
+   "id": "7b2e9b1e6d22",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Revit I-Architectural Drafting",
+   "proposed": "Revit 1-Architectural Drafting",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Architectural Design 1A and 1B (2 courses) HS-CNUD",
+     "colleges": [
+      "Norco College"
+     ],
+     "course": "ARE 25",
+     "credit": "3 hours in Revit II-Advanced Architectural Drafting"
+    }
+   ],
+   "id": "7ef84b2e24c3",
+   "issuer": "Corona-Norco Unified School District",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Semiconductor Circuits II",
+   "proposed": "Semiconductor Circuits 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Semiconductor Circuits II - Credit by Exam (ECHT 122 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ECHT 122",
+     "credit": "3 hours in Semiconductor Circuits II"
+    }
+   ],
+   "id": "a34e71242631",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Single Variable Calculus I Early Transcendentals",
+   "proposed": "Single Variable Calculus 1 Early Transcendentals",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "NVC Administered Calculus I Exam",
+     "colleges": [
+      "Napa Valley College"
+     ],
+     "course": "MATH C2210",
+     "credit": "5 hours in Calculus 1: Early Transcendentals"
+    }
+   ],
+   "id": "05b83ff4858c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 4,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Spanish I Intermediate",
+   "proposed": "Intermediate Spanish 1",
+   "rules": [
+    "numerals",
+    "language"
+   ],
+   "why": [
+    "Roman numerals become Arabic",
+    "“SPAN 003: Intermediate Spanish I” reads as intermediate level 1"
+   ],
+   "locals": [
+    {
+     "raw": "SPAN 003: Intermediate Spanish I",
+     "colleges": [
+      "Lemoore College"
+     ],
+     "course": "SPAN 003",
+     "credit": "4 hours in Intermediate Spanish I"
+    }
+   ],
+   "id": "b9709400fcbf",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Video I",
+   "proposed": "Video 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Video I",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "AP 14A",
+     "credit": "3 hours in Video I"
+    }
+   ],
+   "id": "d637ab63b6ee",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Voice I",
+   "proposed": "Voice 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "MUSA-21A VOICE I",
+     "colleges": [
+      "Merced College"
+     ],
+     "course": "MUSA 21A",
+     "credit": "3 hours in Voice I"
+    }
+   ],
+   "id": "0d7c73b0f0dd",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Water Distribution Operator II",
+   "proposed": "Water Distribution Operator 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "California State Water Resources Control Board D3, D4, or D5 certification",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "WATER 141",
+     "credit": "3 hours in Water Distribution Operator II"
+    }
+   ],
+   "id": "7588c7bfa243",
+   "issuer": "California State Water Resources Control Board (SWRCB)",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Water Treatment I",
+   "proposed": "Water Treatment 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "California State Water Resources Control Board T2, T3, T4, or T5 certification",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "WATER 150",
+     "credit": "3 hours in Water Treatment Plant Operation Processes I"
+    }
+   ],
+   "id": "0ad1dd04b687",
+   "issuer": "California State Water Resources Control Board (SWRCB)",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Watercolor I",
+   "proposed": "Watercolor 1",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Watercolor I",
+     "colleges": [
+      "Foothill College"
+     ],
+     "course": "ART 047A",
+     "credit": "4 hours in WATERCOLOR I"
+    }
+   ],
+   "id": "43b9c2e9daa7",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Welding II",
+   "proposed": "Welding 2",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Carpenter’s Training Center CTCNC CARP 109",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "d47286732747",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Welding II SMAW",
+   "proposed": "Welding 2 SMAW",
+   "rules": [
+    "numerals"
+   ],
+   "why": [
+    "Roman numerals become Arabic"
+   ],
+   "locals": [
+    {
+     "raw": "Carpenter’s Training Center CTCNC CARP 284",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "ff8c29ed368a",
+   "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "American Sign Language 1",
+   "proposed": "Elementary American Sign Language 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“ASL 1: Beginning American Sign Language” reads as elementary level 1",
+    "“Credit by Exam-Elementary American Sign Language 1” reads as elementary level 1",
+    "“Elementary American Sign Language I ASL 001 Cx” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "ASL 1: Beginning American Sign Language",
+     "colleges": [
+      "Fresno City College",
+      "Moreno Valley College"
+     ],
+     "course": "ASL 1",
+     "credit": "4 hours in Beginning American Sign Language"
+    },
+    {
+     "raw": "Credit by Exam-Elementary American Sign Language 1",
+     "colleges": [
+      "Ventura College"
+     ],
+     "course": "ASL V01",
+     "credit": "4 hours in Elementary American Sign Language I"
+    },
+    {
+     "raw": "Elementary American Sign Language I ASL 001 Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "ASL 1",
+     "credit": "5 hours in Elementary American Sign Language I"
+    }
+   ],
+   "id": "8de30773d704",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 4,
+   "moves_all": false
+  },
+  {
+   "current": "American Sign Language 2",
+   "proposed": "Elementary American Sign Language 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“ASL 2: High-Beginning American Sign Language” reads as elementary level 2",
+    "“Credit by Exam: Elementary American Sign Language II” reads as elementary level 2",
+    "“Elementary American Sign Language II ASL 002 Cx” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "ASL 2: High-Beginning American Sign Language",
+     "colleges": [
+      "Chaffey College",
+      "Fresno City College"
+     ],
+     "course": "ASL 2",
+     "credit": "4 hours in Elementary American Sign Language II"
+    },
+    {
+     "raw": "Credit by Exam: Elementary American Sign Language II",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "ASL 2",
+     "credit": "4 hours in Elementary American Sign Language II"
+    },
+    {
+     "raw": "Elementary American Sign Language II ASL 002 Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "ASL 2",
+     "credit": "5 hours in Elementary American Sign Language II"
+    }
+   ],
+   "id": "eb5e4242a05d",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 3,
+   "moves_all": true
+  },
+  {
+   "current": "American Sign Language Intermediate",
+   "proposed": "Intermediate American Sign Language",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“American Sign Language Intermediate Level - Credit by Exam” reads as intermediate"
+   ],
+   "locals": [
+    {
+     "raw": "American Sign Language Intermediate Level - Credit by Exam",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "e833220634da",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
+   "moves_all": false
+  },
+  {
+   "current": "American Sign Language Intermediate",
+   "proposed": "Intermediate American Sign Language 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Intermediate American Sign Language I ASL 003 Cx” reads as intermediate level 1"
+   ],
+   "locals": [
+    {
+     "raw": "Intermediate American Sign Language I ASL 003 Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "ASL 3",
+     "credit": "4 hours in Intermediate American Sign Language I"
+    }
+   ],
+   "id": "a62275ab18cf",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
+   "moves_all": false
+  },
+  {
+   "current": "American Sign Language Intermediate",
+   "proposed": "Intermediate American Sign Language 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Intermediate American Sign Language II ASL 004 Cx” reads as intermediate level 2"
+   ],
+   "locals": [
+    {
+     "raw": "Intermediate American Sign Language II ASL 004 Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "ASL 4",
+     "credit": "4 hours in Intermediate American Sign Language II"
+    }
+   ],
+   "id": "5de1c2be04ce",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
+   "moves_all": false
+  },
+  {
+   "current": "American Sign Language: Level 2 Intermediate",
+   "proposed": "Intermediate American Sign Language 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“ASL 002: Intermediate American Sign Language: Level 2” reads as intermediate level 2"
+   ],
+   "locals": [
+    {
+     "raw": "ASL 002: Intermediate American Sign Language: Level 2",
+     "colleges": [
+      "Lemoore College"
+     ],
+     "course": "ASL 002",
+     "credit": "4 hours in Intermediate American Sign Language: Level 2"
+    }
+   ],
+   "id": "35da30905096",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Armenian 1",
+   "proposed": "Elementary Armenian 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“ARMEN 1: Beginning Armenian” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "ARMEN 1: Beginning Armenian",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "ARMEN 1",
+     "credit": "5 hours in Beginning Armenian"
+    }
+   ],
+   "id": "9e4049356659",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Armenian 2",
+   "proposed": "Elementary Armenian 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“ARMEN 2: High-Beginning Armenian” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "ARMEN 2: High-Beginning Armenian",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "ARMEN 2",
+     "credit": "5 hours in High-Beginning Armenian"
+    }
+   ],
+   "id": "ebb1f6bb3e03",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Chinese 1",
+   "proposed": "Elementary Chinese 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“CHIN 1: Beginning Chinese” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "CHIN 1: Beginning Chinese",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "CHIN 1",
+     "credit": "5 hours in Beginning Chinese"
+    }
+   ],
+   "id": "214b18fbae05",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Chinese 2",
+   "proposed": "Elementary Chinese 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“CHIN 2: High-Beginning Chinese” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "CHIN 2: High-Beginning Chinese",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "CHIN 2",
+     "credit": "5 hours in High-Beginning Chinese"
+    }
+   ],
+   "id": "7479bdd36a5e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Elementary French",
+   "proposed": "Elementary French 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Examination for FREN 1A” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "Examination for FREN 1A",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "FREN 1A",
+     "credit": "5 units in FREN 1A Beginning French"
+    }
+   ],
+   "id": "a63e43c35325",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Elementary French",
+   "proposed": "Elementary French 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Examination for FREN 1B” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "Examination for FREN 1B",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "FREN 1B",
+     "credit": "5 units in FREN 1B Elementary French"
+    }
+   ],
+   "id": "157f0b05709d",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Elementary Russian (First Quarter)",
+   "proposed": "Elementary Russian 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“RUSS 1-Elementary Russian- Credit by Exam” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "RUSS 1-Elementary Russian- Credit by Exam",
+     "colleges": [
+      "De Anza College"
+     ],
+     "course": "",
+     "credit": "5 hours in Elementary Russian (First Quarter)"
+    }
+   ],
+   "id": "cc35a725e918",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Elementary Spanish 1",
+   "proposed": "Elementary Spanish 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Credit by Exam SPAN 1B Elementary Spanish” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam SPAN 1B Elementary Spanish",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "SPAN 1B",
+     "credit": "5 hours in Elementary Spanish"
+    }
+   ],
+   "id": "a3c7b1bf1454",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 7,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 9,
+   "moves_all": false
+  },
+  {
+   "current": "French 1",
+   "proposed": "Elementary French 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“FREN 101 French 1 - Portfolio Review” reads as elementary level 1",
+    "“FRENCH 1: Beginning French” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "FREN 101\tFrench 1 - Portfolio Review",
+     "colleges": [
+      "Modesto Junior College"
+     ],
+     "course": "FREN 101",
+     "credit": "5 hours in French 1"
+    },
+    {
+     "raw": "FRENCH 1: Beginning French",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "FRENCH 1",
+     "credit": "5 hours in Beginning French"
+    }
+   ],
+   "id": "efcf85d32c72",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "French 2",
+   "proposed": "Elementary French 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“FRENCH 2: High-Beginning French” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "FRENCH 2: High-Beginning French",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "FRENCH 2",
+     "credit": "5 hours in High-Beginning French"
+    }
+   ],
+   "id": "c19528b6c4b7",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "French — Level 2",
+   "proposed": "Elementary French 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“French Level II” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "French Level II",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "03fd96da6abb",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "German 1",
+   "proposed": "Elementary German 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“GERMAN 1: Beginning German” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "GERMAN 1: Beginning German",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "GERMAN 1",
+     "credit": "5 hours in Beginning German"
+    }
+   ],
+   "id": "e41249f8adb8",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "German 2",
+   "proposed": "Elementary German 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“GERMAN 2: High-Beginning German” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "GERMAN 2: High-Beginning German",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "GERMAN 2",
+     "credit": "5 hours in High-Beginning German"
+    }
+   ],
+   "id": "255ff7246e1c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Hmong 1",
+   "proposed": "Elementary Hmong 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Elementary Hmong I” reads as elementary level 1",
+    "“HMONG 1: Beginning Hmong” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "Elementary Hmong I",
+     "colleges": [
+      "Merced College"
+     ],
+     "course": "HMNG 1",
+     "credit": "5 hours in Elementary Hmong I"
+    },
+    {
+     "raw": "HMONG 1: Beginning Hmong",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "HMONG 1",
+     "credit": "5 hours in Beginning Hmong"
+    }
+   ],
+   "id": "9e020c8cd2ef",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "Hmong 2",
+   "proposed": "Elementary Hmong 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Elementary Hmong II” reads as elementary level 2",
+    "“HMONG 2: High-Beginning Hmong” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "Elementary Hmong II",
+     "colleges": [
+      "Merced College"
+     ],
+     "course": "HMNG 2",
+     "credit": "5 hours in Elementary Hmong"
+    },
+    {
+     "raw": "HMONG 2: High-Beginning Hmong",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "HMONG 2",
+     "credit": "5 hours in High-Beginning Hmong"
+    }
+   ],
+   "id": "3f47b6de30ca",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": true
+  },
+  {
+   "current": "Japanese 1",
+   "proposed": "Elementary Japanese 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Elementary Japanese” reads as elementary level 1",
+    "“Elementary Japanese 01A” reads as elementary level 1",
+    "“JAPAN 1: Beginning Japanese” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "Elementary Japanese",
+     "colleges": [
+      "Merced College"
+     ],
+     "course": "JPNS 1B",
+     "credit": "2.5 hours in Elementary Japanese"
+    },
+    {
+     "raw": "Elementary Japanese 01A",
+     "colleges": [
+      "Merced College"
+     ],
+     "course": "JPNS 1A",
+     "credit": "2.5 hours in Elementary Japanese"
+    },
+    {
+     "raw": "JAPAN 1: Beginning Japanese",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "JAPAN 1",
+     "credit": "5 hours in Beginning Japanese"
+    }
+   ],
+   "id": "88887a6260a8",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 3,
+   "moves_all": true
+  },
+  {
+   "current": "Japanese 2",
+   "proposed": "Elementary Japanese 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“JAPAN 2: High-Beginning Japanese” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "JAPAN 2: High-Beginning Japanese",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "JAPAN 2",
+     "credit": "5 hours in High-Beginning Japanese"
+    }
+   ],
+   "id": "f0c0b3b7b40e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Portuguese 1",
+   "proposed": "Elementary Portuguese 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“PORT 1: Beginning Portuguese” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "PORT 1: Beginning Portuguese",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "PORT 1",
+     "credit": "5 hours in BEGINNING PORTUGUESE"
+    }
+   ],
+   "id": "78ce1f939f0c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Portuguese 2",
+   "proposed": "Elementary Portuguese 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“PORT 2: High-Beginning Portuguese” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "PORT 2: High-Beginning Portuguese",
+     "colleges": [
+      "Fresno City College"
+     ],
+     "course": "PORT 2",
+     "credit": "5 hours in HIGH-BEGINNING PORTUGUESE"
+    }
+   ],
+   "id": "5ad4ca3d7a2a",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Spanish 1",
+   "proposed": "Elementary Spanish 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Spanish I” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "Spanish I",
+     "colleges": [
+      "Rio Hondo College"
+     ],
+     "course": "SPAN 101",
+     "credit": "4.5 hours in Spanish I"
+    }
+   ],
+   "id": "c471a5840d02",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 9,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Spanish 2",
+   "proposed": "Elementary Spanish 2",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Spanish II” reads as elementary level 2"
+   ],
+   "locals": [
+    {
+     "raw": "Spanish II",
+     "colleges": [
+      "Rio Hondo College"
+     ],
+     "course": "SPAN 102",
+     "credit": "4.5 hours in Spanish II"
+    }
+   ],
+   "id": "42bf32f03f6c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 7,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Spanish 3",
+   "proposed": "Intermediate Spanish 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“SPAN 103 Spanish 3 - Industry Certification” reads as intermediate level 1",
+    "“SPAN 103 - CBE” reads as intermediate level 1",
+    "“SPAN 3” reads as intermediate level 1"
+   ],
+   "locals": [
+    {
+     "raw": "SPAN 103\tSpanish 3 - Industry  Certification",
+     "colleges": [
+      "Modesto Junior College"
+     ],
+     "course": "SPAN 103",
+     "credit": "5 hours in Spanish 3"
+    },
+    {
+     "raw": "SPAN 103 - CBE",
+     "colleges": [
+      "San Bernardino Valley College"
+     ],
+     "course": "SPAN 103",
+     "credit": "4 hours in College Spanish III"
+    },
+    {
+     "raw": "SPAN 3",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "47e1cf47b55a",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 3,
+   "moves_all": true
+  },
+  {
+   "current": "Spanish Beginning",
+   "proposed": "Elementary Spanish 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Examination for SPAN 1A” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "Examination for SPAN 1A",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "SPAN 1A",
+     "credit": "5 units in SPAN 1A Beginning Spanish"
+    }
+   ],
+   "id": "e4dbed0071d4",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 9,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Spanish Intermediate",
+   "proposed": "Intermediate Spanish 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Credit by Exam: Spanish 3 (SPA-3)” reads as intermediate level 1",
+    "“Intermediate Spanish I SPAN 003 Cx” reads as intermediate level 1"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam: Spanish 3 (SPA-3)",
+     "colleges": [
+      "Norco College",
+      "Riverside City College",
+      "Moreno Valley College"
+     ],
+     "course": "SPA 3",
+     "credit": "5 hours in Spanish 3"
+    },
+    {
+     "raw": "Intermediate Spanish I SPAN 003 Cx",
+     "colleges": [
+      "College of the Redwoods",
+      "Copper Mountain College"
+     ],
+     "course": "SPAN 2A",
+     "credit": "4 hours in Intermediate Spanish I"
+    }
+   ],
+   "id": "39fba4f067dc",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 3,
+   "moves_all": false
+  },
+  {
+   "current": "Spanish Intermediate",
+   "proposed": "Intermediate Spanish",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“Intermediate Spanish” reads as intermediate"
+   ],
+   "locals": [
+    {
+     "raw": "Intermediate Spanish",
+     "colleges": [
+      "San Jose City College"
+     ],
+     "course": "SPANISH (SPAN) 2A",
+     "credit": "5 hours in Intermediate Spanish 1"
+    }
+   ],
+   "id": "34def9a3d6ff",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 3,
+   "moves_all": false
+  },
+  {
+   "current": "Vietnamese — First Semester",
+   "proposed": "Elementary Vietnamese 1",
+   "rules": [
+    "language"
+   ],
+   "why": [
+    "“First Semester Vietnamese- Credit by Exam” reads as elementary level 1"
+   ],
+   "locals": [
+    {
+     "raw": "First Semester Vietnamese- Credit by Exam",
+     "colleges": [
+      "Mission College"
+     ],
+     "course": "VIE 1",
+     "credit": "5 hours in First Semester Vietnamese (Elementary Level)"
+    }
+   ],
+   "id": "fc28b996de29",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Credit by Exam",
+   "proposed": "Basic Computer Keyboarding",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word and takes the course's own title"
+   ],
+   "locals": [
+    {
+     "raw": "Credit By Exam at Mesa",
+     "colleges": [
+      "San Diego Mesa College",
+      "San Diego City College",
+      "San Diego Miramar College",
+      "Glendale Community College",
+      "Mendocino College"
+     ],
+     "course": "CBTE 101",
+     "credit": "1 hour in Basic Computer Keyboarding"
+    }
+   ],
+   "id": "4fa9d46dfad8",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 4,
+   "moves_all": false
+  },
+  {
+   "current": "Credit by Exam",
+   "proposed": "Plant Propagation",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word and takes the course's own title"
+   ],
+   "locals": [
+    {
+     "raw": "Credit By Exam at Saddleback College",
+     "colleges": [
+      "Saddleback College",
+      "Lemoore College"
+     ],
+     "course": "HORT 112",
+     "credit": "3 hours in PLANT PROPAGATION"
+    }
+   ],
+   "id": "f8813f8b505f",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 4,
+   "moves_all": false
+  },
+  {
+   "current": "Credit by Exam",
+   "proposed": "Basic Refrigeration & AC Lab",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word and takes the course's own title"
+   ],
+   "locals": [
+    {
+     "raw": "Credit By Exam San Diego City College",
+     "colleges": [
+      "San Diego City College",
+      "San Diego Mesa College",
+      "San Diego Miramar College"
+     ],
+     "course": "AIRE 103",
+     "credit": "2 hours in Basic Refrigeration & AC Lab"
+    }
+   ],
+   "id": "2796759c7c96",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 4,
+   "moves_all": false
+  },
+  {
+   "current": "Industry Certification",
+   "proposed": "Introduction to Geographic Information Systems",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word and takes the course's own title"
+   ],
+   "locals": [
+    {
+     "raw": "Professional Certifications",
+     "colleges": [
+      "College of the Canyons"
+     ],
+     "course": "GIS 101",
+     "credit": "3 hours in Introduction to Geographic Information Systems"
+    }
+   ],
+   "id": "f2881c4f91b2",
+   "issuer": "",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Portfolio Review",
+   "proposed": "Computer Basics",
+   "rules": [
+    "course-code"
+   ],
+   "why": [
+    "drops a method word and takes the course's own title"
+   ],
+   "locals": [
+    {
+     "raw": "Portfolio",
+     "colleges": [
+      "Madera College"
+     ],
+     "course": "BT 3",
+     "credit": "1.5 hours in Computer Basics"
+    }
+   ],
+   "id": "3376a7df239c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Rotations in Supervised Practice, Level C",
+   "proposed": "Rotations in Supervised Practice, Level A",
+   "rules": [
+    "course-code",
+    "level"
+   ],
+   "why": [
+    "the local title is Level A, the canonical title Level C",
+    "drops the course number NUTR 071A"
+   ],
+   "locals": [
+    {
+     "raw": "NUTR 071A  Rotations in Supervised Practice, Level A",
+     "colleges": [
+      "Merritt College"
+     ],
+     "course": "NUTR 071A",
+     "credit": "2 hours in Rotations in Supervised Practice, Level A"
+    }
+   ],
+   "id": "f79a2ef3f486",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Haz Mat Technician 1B: Applied Chemistry",
+   "proposed": "Haz Mat Technician 1A: Basic Chemistry",
+   "rules": [
+    "level"
+   ],
+   "why": [
+    "the local title is 1A, the canonical title 1B"
+   ],
+   "locals": [
+    {
+     "raw": "Haz Mat Technician 1A: Basic Chemistry",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "793688626f60",
+   "issuer": "California Specialized Training Institute (CSTI)",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Advanced AutoCAD",
+   "proposed": "AutoCAD Advanced",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "its family puts the level word last, as in “AutoCAD Beginning”"
+   ],
+   "locals": [
+    {
+     "raw": "Advanced AutoCAD",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "ETECH 41",
+     "credit": "3 hours in Advanced AutoCAD"
+    }
+   ],
+   "id": "bc16cf090786",
+   "issuer": "Autodesk",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Advanced Law Enforcement",
+   "proposed": "Law Enforcement Advanced",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "its family puts the level word last, as in “Law Enforcement Intermediate”"
+   ],
+   "locals": [
+    {
+     "raw": "FONTANA HIGH SCHOOL- Advanced Law Enforcement",
+     "colleges": [
+      "Chaffey College",
+      "Copper Mountain College",
+      "Los Medanos College",
+      "Solano Community College"
+     ],
+     "course": "ADJUS 200",
+     "credit": "3 hours in Introduction to Corrections"
+    }
+   ],
+   "id": "b01bd0245e13",
+   "issuer": "Fontana High School",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Collision Repair 1 Intermediate",
+   "proposed": "Intermediate Automotive Collision Repair 1",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "its family puts the level word first, as in “Beginning Automotive Collision Repair 1”"
+   ],
+   "locals": [
+    {
+     "raw": "Intermediate Automotive Collision Repair I - Credit by Exam (ACRP 4C )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ACRP 4C",
+     "credit": "4 hours in Intermediate Automotive Collision Repair I"
+    }
+   ],
+   "id": "cf2350c5d84a",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Collision Repair 2 Intermediate",
+   "proposed": "Intermediate Automotive Collision Repair 2",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "its family puts the level word first, as in “Beginning Automotive Collision Repair 2”"
+   ],
+   "locals": [
+    {
+     "raw": "Intermediate Automotive Collision Repair II - Credit by Exam (ACRP 4D )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "ACRP 4D",
+     "credit": "4 hours in Intermediate Automotive Collision Repair II"
+    }
+   ],
+   "id": "71a7c9961c72",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Automotive Maintenance and Light Repair",
+   "proposed": "Automotive Maintenance & Light Repair",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Automotive Maintenance and Light Repair” and “Automotive Maintenance & Light Repair” differ only in spelling; “Automotive Maintenance & Light Repair” has 3 local titles"
+   ],
+   "locals": [
+    {
+     "raw": "SUMMIT HIGH SCHOOL- Automotive Maintenance Light Repair 3",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "AUTOTEC 15",
+     "credit": "2 hours in Auto Electricity and Electronics"
+    }
+   ],
+   "id": "474079103000",
+   "issuer": "Summit High School",
+   "proposed_exists": true,
+   "proposed_locals": 3,
+   "proposed_issuer": "Santiago High School",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Boatworks 101 — Yacht Electrical Systems",
+   "proposed": "Boatworks 101 Yacht Electrical Systems",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Boatworks 101 — Yacht Electrical Systems” and “Boatworks 101 Yacht Electrical Systems” differ only in spelling; “Boatworks 101 Yacht Electrical Systems” has 1 local title"
+   ],
+   "locals": [
+    {
+     "raw": "Boatworks 101 Yacht Electrical Systems",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "APMT 51",
+     "credit": "4 hours in Boatworks 101 Yacht Electrical Systems"
+    }
+   ],
+   "id": "49117d6fce5f",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Business Communications",
+   "proposed": "Business Communication",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Business Communications” and “Business Communication” differ only in spelling; “Business Communication” has 4 local titles"
+   ],
+   "locals": [
+    {
+     "raw": "Business Communications",
+     "colleges": [
+      "Modesto Junior College",
+      "Moorpark College"
+     ],
+     "course": "BUSAD 210",
+     "credit": "3 hours in Business Communication"
+    }
+   ],
+   "id": "421682bf26a3",
+   "issuer": "American Council on Education (ACE)",
+   "proposed_exists": true,
+   "proposed_locals": 4,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "C++ Programming",
+   "proposed": "C++ Programming 2",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“C++ Programming” holds different courses at Copper Mountain College; this one is “C++ Programming 2”"
+   ],
+   "locals": [
+    {
+     "raw": "C++ Programming II CS 089A Cx",
+     "colleges": [
+      "Copper Mountain College"
+     ],
+     "course": "CS 89A",
+     "credit": "3 hours in C++ Programming II"
+    }
+   ],
+   "id": "5e184612740e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Choreography",
+   "proposed": "Choreography 2",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Choreography” holds different courses at Los Angeles Pierce College; this one is “Choreography 2”"
+   ],
+   "locals": [
+    {
+     "raw": "DANCEST 302 - Choreography II",
+     "colleges": [
+      "Los Angeles Pierce College"
+     ],
+     "course": "DANCEST 302",
+     "credit": "1 hour in Choreography II"
+    }
+   ],
+   "id": "6d608bedfd36",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "College Algebra",
+   "proposed": "Plane Trigonometry",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“College Algebra” holds different courses at San Bernardino Valley College; this one is “Plane Trigonometry”"
+   ],
+   "locals": [
+    {
+     "raw": "Math 103 - CBE",
+     "colleges": [
+      "San Bernardino Valley College"
+     ],
+     "course": "MATH 103",
+     "credit": "4 hours in Trigonometry"
+    }
+   ],
+   "id": "166dfe5250db",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 5,
+   "moves_all": false
+  },
+  {
+   "current": "Computer Science Internship",
+   "proposed": "Internship in Computer Science Discussion",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Computer Science Internship” holds different courses at Modesto Junior College; this one is “Internship in Computer Science Discussion”"
+   ],
+   "locals": [
+    {
+     "raw": "CSCI 295\tInternship in Computer Science Discussion",
+     "colleges": [
+      "Modesto Junior College"
+     ],
+     "course": "CSCI 295",
+     "credit": "1 hour in Internship in Computer Science Discussion"
+    }
+   ],
+   "id": "95fcb0d054ac",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Computer Science Internship",
+   "proposed": "Internship in Computer Science",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Computer Science Internship” holds different courses at Modesto Junior College; this one is “Internship in Computer Science”"
+   ],
+   "locals": [
+    {
+     "raw": "CSCI 296C\tInternship in Computer Science - Portfolio Review",
+     "colleges": [
+      "Modesto Junior College"
+     ],
+     "course": "CSCI 296ABC",
+     "credit": "3 hours in Internship in Computer Science"
+    }
+   ],
+   "id": "40f67571d5ce",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Construction Fundamentals",
+   "proposed": "Construction Fundamentals: Principles and Practices Lab",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Construction Fundamentals” holds different courses at Cabrillo College; this one is “Construction Fundamentals: Principles and Practices Lab”"
+   ],
+   "locals": [
+    {
+     "raw": "Construction Fundamentals Lab: Principles and Practices",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "CEM 151L",
+     "credit": "1 hour in Construction Fundamentals: Principles and Practices Lab"
+    }
+   ],
+   "id": "da226772617a",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "Local High School",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Construction Fundamentals",
+   "proposed": "Construction Fundamentals: Principles and Practices",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Construction Fundamentals” holds different courses at Cabrillo College; this one is “Construction Fundamentals: Principles and Practices”"
+   ],
+   "locals": [
+    {
+     "raw": "Construction Fundamentals: Principles and Practice",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "CEM 151",
+     "credit": "3 hours in Construction Fundamentals: Principles and Practices"
+    }
+   ],
+   "id": "2a877f40ef5f",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 2,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Criminal Justice Written Communication",
+   "proposed": "Written Criminal Justice Communications",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Criminal Justice Written Communication” and “Written Criminal Justice Communications” differ only in spelling; “Written Criminal Justice Communications” has 1 local title"
+   ],
+   "locals": [
+    {
+     "raw": "Criminal Justice Written Communication",
+     "colleges": [
+      "Cabrillo College"
+     ],
+     "course": "CJ 7",
+     "credit": "3 hours in Criminal Justice Written Communications"
+    }
+   ],
+   "id": "781368c0dd3e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Critical Thinking and the Nursing Process",
+   "proposed": "Critical Thinking and the Nursing Process 2",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Critical Thinking and the Nursing Process” holds different courses at Chaffey College; this one is “Critical Thinking and the Nursing Process 2”"
+   ],
+   "locals": [
+    {
+     "raw": "Critical Thinking and the Nursing Process II",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "NURVN 417B",
+     "credit": "1 hour in Critical Thinking and the Nursing Process II"
+    }
+   ],
+   "id": "46019cc1f401",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "ESL Grammar for Reading and Writing Beginning",
+   "proposed": "High-Beginning Grammar for Reading and Writing",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“ESL Grammar for Reading and Writing Beginning” holds different courses at Las Positas College; this one is “High-Beginning Grammar for Reading and Writing”"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "ESL 130B",
+     "credit": "3 hours in High-Beginning Grammar for Reading and Writing"
+    }
+   ],
+   "id": "3539a1cca1c2",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "ESL Grammar for Reading and Writing Intermediate",
+   "proposed": "High-Intermediate Grammar for Reading and Writing",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“ESL Grammar for Reading and Writing Intermediate” holds different courses at Las Positas College; this one is “High-Intermediate Grammar for Reading and Writing”"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "ESL 120B",
+     "credit": "3 hours in High-Intermediate Grammar for Reading and Writing"
+    }
+   ],
+   "id": "f970341fe9a0",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "ESL Reading and Writing Beginning",
+   "proposed": "High-Beginning Reading and Writing",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“ESL Reading and Writing Beginning” holds different courses at Las Positas College; this one is “High-Beginning Reading and Writing”"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam ESL 131B High-Beginning Reading and Writing",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "ESL 131B",
+     "credit": "6 hours in High-Beginning Reading and Writing"
+    }
+   ],
+   "id": "7d87c56febb1",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "ESL Reading and Writing Intermediate",
+   "proposed": "High-Intermediate Reading and Writing",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“ESL Reading and Writing Intermediate” holds different courses at Las Positas College; this one is “High-Intermediate Reading and Writing”"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam ESL 121B High-Intermediate Reading and Writing",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "ESL 121B",
+     "credit": "6 hours in High-Intermediate Reading and Writing"
+    }
+   ],
+   "id": "686a8f5eba5a",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "First Aid, CPR & AED",
+   "proposed": "First Aid, CPR and AED",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“First Aid, CPR & AED” and “First Aid, CPR and AED” differ only in spelling; “First Aid, CPR and AED” has 3 local titles"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam KINS 025 First Aid, CPR & AED",
+     "colleges": [
+      "Evergreen Valley College"
+     ],
+     "course": "KINS 025",
+     "credit": "3 hours in First Aid, CPR & AED"
+    }
+   ],
+   "id": "8de28582a28e",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 3,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Human Resource Management",
+   "proposed": "Human Resources Management",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Human Resource Management” and “Human Resources Management” differ only in spelling; “Human Resources Management” has 1 local title"
+   ],
+   "locals": [
+    {
+     "raw": "Human Resource Management",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "BUSMGT 42",
+     "credit": "3 hours in Human Resource Management"
+    }
+   ],
+   "id": "c745801ac4bd",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Intermediate Algebra",
+   "proposed": "Algebra Intermediate",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Intermediate Algebra” and “Algebra Intermediate” differ only in spelling; “Algebra Intermediate” has 1 local title"
+   ],
+   "locals": [
+    {
+     "raw": "Math 095 CBE",
+     "colleges": [
+      "San Bernardino Valley College"
+     ],
+     "course": "MATH 95",
+     "credit": "4 hours in Intermediate Algebra"
+    }
+   ],
+   "id": "bf2a45289171",
+   "issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Introduction to Computer Networks",
+   "proposed": "Introduction to Computer Networking",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Introduction to Computer Networks” and “Introduction to Computer Networking” differ only in spelling; “Introduction to Computer Networking” has 1 local title"
+   ],
+   "locals": [
+    {
+     "raw": "Introduction to Computer Networks",
+     "colleges": [
+      "Chaffey College"
+     ],
+     "course": "CIS 50",
+     "credit": "3 hours in Introduction to Computer Networks"
+    }
+   ],
+   "id": "3c55e2c10663",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Medical-Surgical Nursing 1 Intermediate",
+   "proposed": "Intermediate Medical-Surgical Nursing 1",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "its family puts the level word first, as in “Advanced Medical-Surgical Nursing 1”"
+   ],
+   "locals": [
+    {
+     "raw": "Intermediate Medical - Surgical Nursing I - Credit by Exam (NURS 240 )",
+     "colleges": [
+      "El Camino College"
+     ],
+     "course": "NURS 240",
+     "credit": "4 hours in Intermediate Medical-Surgical Nursing I"
+    }
+   ],
+   "id": "359d1569cf47",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Military Police Basic",
+   "proposed": "Basic Military Police",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Military Police Basic” and “Basic Military Police” differ only in spelling; “Basic Military Police” has 4 local titles"
+   ],
+   "locals": [
+    {
+     "raw": "MC-1728-0012 Military Police Basic",
+     "colleges": [
+      "Las Positas College"
+     ],
+     "course": "AJ 50",
+     "credit": "3 units in AJ 50 Introduction to Administration of Justice"
+    }
+   ],
+   "id": "18f4814e13b7",
+   "issuer": "American Council on Education (ACE)",
+   "proposed_exists": true,
+   "proposed_locals": 4,
+   "proposed_issuer": "American Council on Education (ACE)",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Network Fundamentals",
+   "proposed": "Networking Fundamentals",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Network Fundamentals” and “Networking Fundamentals” differ only in spelling; “Networking Fundamentals” has 2 local titles"
+   ],
+   "locals": [
+    {
+     "raw": "Network Fundamentals",
+     "colleges": [],
+     "course": "",
+     "credit": ""
+    }
+   ],
+   "id": "5a53800890a1",
+   "issuer": "American Council on Education (ACE)",
+   "proposed_exists": true,
+   "proposed_locals": 2,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing",
+   "proposed": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing: 30-UO",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing” holds different courses at Ventura College; this one is “Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing: 30-UO”"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO",
+     "colleges": [
+      "Ventura College"
+     ],
+     "course": "NS V31",
+     "credit": "9 hours in Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO"
+    }
+   ],
+   "id": "e2b67378cbd1",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "Patient-Centered Care 3 and Transition to Professional Practice",
+   "proposed": "Patient-Centered Care 3 and Transition to Professional Practice: 30-UO",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Patient-Centered Care 3 and Transition to Professional Practice” holds different courses at Ventura College; this one is “Patient-Centered Care 3 and Transition to Professional Practice: 30-UO”"
+   ],
+   "locals": [
+    {
+     "raw": "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO",
+     "colleges": [
+      "Ventura College"
+     ],
+     "course": "NS V41",
+     "credit": "9 hours in Patient-Centered Care III and Transition to Professional Practice: 30-UO"
+    }
+   ],
+   "id": "e3011e3a8dd3",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 2,
+   "moves_all": false
+  },
+  {
+   "current": "PC Operating System",
+   "proposed": "PC Operating Systems",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“PC Operating System” and “PC Operating Systems” differ only in spelling; “PC Operating Systems” has 1 local title"
+   ],
+   "locals": [
+    {
+     "raw": "PC Operating System",
+     "colleges": [
+      "Mt. San Antonio College"
+     ],
+     "course": "CNET 52",
+     "credit": "4 hours in PC Operating Systems"
+    }
+   ],
+   "id": "4347f135477c",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
+   "current_locals": 1,
+   "moves_all": true
+  },
+  {
+   "current": "Restaurant Service and Catering 2",
+   "proposed": "Introduction to Baking Skills, Ingredients, and Technology",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Restaurant Service and Catering 2” holds different courses at San Bernardino Valley College; this one is “Introduction to Baking Skills, Ingredients, and Technology”"
+   ],
+   "locals": [
+    {
+     "raw": "CULART 044 CBE",
+     "colleges": [
+      "San Bernardino Valley College"
+     ],
+     "course": "CULART 44",
+     "credit": "3 hours in Introduction to Baking Skills, Ingredients, and Technology"
+    }
+   ],
+   "id": "47a7251bdca3",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 4,
+   "moves_all": false
+  },
+  {
+   "current": "Restaurant Service and Catering 2",
+   "proposed": "Procurement, Purchasing and Selection",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Restaurant Service and Catering 2” holds different courses at San Bernardino Valley College; this one is “Procurement, Purchasing and Selection”"
+   ],
+   "locals": [
+    {
+     "raw": "CULART 240 CBE",
+     "colleges": [
+      "San Bernardino Valley College"
+     ],
+     "course": "CULART 240",
+     "credit": "3 hours in Procurement, Purchasing and Selection"
+    }
+   ],
+   "id": "61e758315561",
+   "issuer": "California Community Colleges",
+   "proposed_exists": false,
+   "proposed_locals": 0,
+   "proposed_issuer": "",
+   "current_locals": 4,
+   "moves_all": false
+  },
+  {
+   "current": "Technical Theatre in Production",
+   "proposed": "Technical Stage Production",
+   "rules": [
+    "fold"
+   ],
+   "why": [
+    "“Technical Theatre in Production” holds different courses at Los Angeles Pierce College; this one is “Technical Stage Production”"
+   ],
+   "locals": [
+    {
+     "raw": "TECTHTR 342 - Technical Stage Production",
+     "colleges": [
+      "Los Angeles Pierce College"
+     ],
+     "course": "TECTHTR 342",
+     "credit": "2 hours in Technical Stage Production"
+    },
+    {
+     "raw": "THEATER 342: Technical Theater Production",
+     "colleges": [
+      "Los Angeles Pierce College"
+     ],
+     "course": "THEATER 342",
+     "credit": "2 hours in Technical Stage Production"
+    }
+   ],
+   "id": "8bfb0a63a647",
+   "issuer": "California Community Colleges",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "Birmingham Community Charter High School",
+   "current_locals": 3,
+   "moves_all": false
+  }
+ ]
+}

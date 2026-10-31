@@ -78,6 +78,22 @@ filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (
 Engine's top-50 credentials MAP has no exhibit for (28), from the hand check `kb/reference/credential_engine_top50_map_check.json`;
 the IT/AI catalog's own join now needs the issuer to agree and reads that check (#2615; in MAP 89 to 102).
 
+**Another look (SkyCoralberry, 2026-10-31; Sam's words in the lessons doc).**
+`kb/_sweep_exhibit_titles.py` reads every title in the reference nightly (after the fold, in `daily-dashboard.yml` and
+`cer-procedures.yml`) and writes `kb/exhibits_sweep.json`: cards of local titles whose canonical title still differs,
+one per current and proposed title. Six rules: *ase* (a course named by its ASE code, or titled as an ASE test, takes
+*(ASE A7 Heating and Air Conditioning)*; a wrong code gives way to the course's own title), *numerals* (Arabic; State Fire
+Training's names keep Roman), *language* (*Elementary/Intermediate <Language> 1/2*, the level word first as C-ID names
+them), *course-code* (the exhibit's own college course number or a method word left in), *level* (the local title says 1A,
+the canonical 1B), *fold* (twins, one title over different courses at one college, a family's level word). A local
+course is one the colleges issue; an industry credential's or an exam's name is never read as a course number. First build: 134 cards, 168 local titles (ase 17, numerals 45, language 32, course-code 6, level 1, fold 33).
+The tab draws it as Review's *Another look* step (`#exhibits/another-look`). Change saves the `_UNCLASSIFIED::`
+assignment and issuer and `unified_title_supersedes` (the title replaced); the fold's **revise lane** applies it only
+while that title still stands, renames an emptied credential or retires it, and receipts both with the panel rows left
+under the old name. Keep saves `title_sweep_kept`, which never comes back. Procedures `ase-paren`,
+`arabic-level-numerals`, `language-levels` (skill Rule 5h) teach the classifier the same. Guards:
+`tests/exhibits_sweep_build_test.py` (24), `tests/exhibits_sweep.test.js` (33), `tests/fold_unclassified_test.py` (22).
+
 ## Status
 
 ✅ **Live: the procedures run saves nightly, the fold applies per assignment, and the CER tab is three views (Needs
@@ -133,36 +149,13 @@ exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2
   key only; `claude-opus-5-5`, effort medium, 15 titles a call). The run sends the skill, every procedure
   and the house families (about 48,000 tokens, cached). A title is asked once, and again when the
   procedures change and its answer was unsure. First pass over the queue: about $8.
-- **The first two passes (2026-10-18, runs 39097682221 and 39103573166):** $10.97 in all; 1,287 of 1,322 titles
-  pre-filled and 396 held. A 30-answer sample read the sure band right. Figures and the one to watch (*Industry for
-  GDDM 53*): `docs/exhibit_canonicalization_lessons.md`, its 2026-10-18 sections.
-- **Code-only titles get the college's own course (#2219, landed in #2220):** the run looks a trailing code up in COCI at the
-  college that entered the title and hands the title on as a hint (94 titles); a record carries its hints'
-  fingerprint, so an unsure title is asked again when its hints change. The workflow installs `openpyxl`.
 - **The tab's three views (#2221, S413; the S411 mock-up):** **Needs you** (Held, the titles the run held for a
   person, 25 at a time with why, each opening alone in Unclassified where its proposal saves; then Unclassified, No
   issuer, Merge confirms), **Procedures** (each procedure with its words, who set it and what it settled), **Reference**
   (All, Industry credentials, and the Initiated sign-off's two lanes until card 3). It opens on Held when the report
   holds titles, else on Reference; a quickstart hint opens Reference. UI pass: `docs/ui_pass_lessons.md` S413.
 
-**The design** (S411 mock-up https://claude.ai/artifact/Gu6HTwqSwMYLSy4C4xRag3, source
-`docs/visuals/2026-10-18-cer-procedures-mockup.html`): three views, **Needs you** (the exceptions, each with
-its proposal, why it came, Accept · Change · Teach a procedure), **Procedures** (each rule with who set it,
-what it settled and held, See what it did · Turn off; Add a procedure with a free preview), **Reference**
-(search, two filters, a Decided by column). The run's report already carries each view's numbers.
-
-**What the S411 map found** (counts from `kb/exhibit_audit/latest.json` of 2026-10-17 and
-`kb/unclassified_fold/2026-10-17/report.json`):
-
-- **The fold has applied nothing since 2026-07-08.** `kb/_fold_unclassified.py --apply-if-safe` is all-or-nothing
-  (`v1 = not conflict`): 18 conflicts hold back 176 clean saved assignments, 157 credential adds and 12 supersedes.
-  The tab's copy promises they fold "automatically on the next daily refresh."
-- **The backlog grows about 200 a month:** 241 unclassified (2026-07-16), 1,015 (09-25), 1,498 (10-17). No new KB
-  entry since July; the last curator assignment is 2026-07-12.
-- **A procedure's write shape to copy, when one may save:** `cer-decision-apply.yml` (a plan under a
-  `<lane>-s<N>@bot` cohort, a fresh read that holds a curator's change, a receipt before the insert, rollback
-  by cohort). `kb_curation` has no reason column; Sheet 3 card 10 (2026-09-29) asked for a CER decisions store
-  routed through Governance (DR-07).
+The S411 design, its map's findings, the first two classifier passes and the code-only hints moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (SkyCoralberry)*.
 
 **RULED (Sam, Open Asks Sheet 94, 13:42-13:43Z 2026-10-18, each his own call; `cpl_memory`
 `sam-sheet-94-rulings-2026-10-18`):**
@@ -192,7 +185,8 @@ moves in the reference (77 local titles to College Board's names; `kb/credential
 `kb/credential_merges_out/2026-10-31/`), and 42 saved assignments moved to match under `cer-ap-fold-s536@bot` (Sam ran
 the guarded UPDATE; before-values and rollback in `kb_curation_update_receipt.json`).
 
-**NEXT:** (1) The routine (Sheet 149 card 2): the tab writes a rule as a request row, a scheduled session builds it,
+**NEXT:** (0) Sam's run through *Another look*; read his saves after it (`unified_title_supersedes` rows) and the next
+fold's `revise` and `credential_moves`; move the panel rows the receipt names. (1) The routine (Sheet 149 card 2): the tab writes a rule as a request row, a scheduled session builds it,
 runs the dry run and writes it back for *Turn on* or *Discard*; Governance (DR-07) and the privacy ADRs first, as a
 new write surface. Sessions now run their own data writes (Sam, 2026-10-31; #2618). (2) IB on the AP pattern, then
 CLEP's official names. (3) The Catalog's *Courses that may align*, once a source names courses. (4) Training sites for

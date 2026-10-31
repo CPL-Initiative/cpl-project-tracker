@@ -95,6 +95,7 @@ def point_at(kb, outdir):
     fu.AUDIT_PATH = os.path.join(kb, "exhibit_audit", "latest.json")
     fu.ART_PATH = os.path.join(kb, "coci_articulations.json")
     fu.OUTDIR = outdir
+    fu.PANEL_PATH = os.path.join(kb, "credential_review_overlay.json")
 
 
 def run(flag):
@@ -173,6 +174,71 @@ try:
               "APPLIED" in log3 and load(fu.UT_PATH).get(RAW_CLEAN, {}).get("unified_title") == "Applied Accounting")
     except SystemExit as exc:
         check("--apply folds the clean assignments and does not stop on a held one", False, str(exc))
+
+    # The revise lane (Another look, Sam 2026-10-31): a person re-picks a title the reference holds,
+    # naming the title it replaces. It lands while that title still stands, and only then.
+    kb3 = os.path.join(tmp, "revise", "kb")
+    os.makedirs(os.path.join(kb3, "exhibit_audit"))
+    A1, SPAN, MOVED, OLDER = "Noncredit for AUTO A1", "SPAN 001: Elementary Spanish I", "Moved meanwhile", "Kept older"
+    SAM_EARLIER = {"reviewed_by": "slee@cccco.edu", "reviewed_at": "2026-10-31T14:00:00+00:00"}
+    SAM_LATER = {"reviewed_by": "slee@cccco.edu", "reviewed_at": "2026-11-01T18:00:00+00:00"}
+    curator = lambda t, who: {"unified_title": t, "confidence_title": 1.0, "classified_at": "2026-10-31",  # noqa: E731
+                              "classified_by": fu.CLASSIFIED_BY, **who}
+    write(os.path.join(kb3, "unified_titles.json"), {
+        A1: curator("Engine Repair", SAM_EARLIER),
+        SPAN: curator("Elementary Spanish I", SAM_EARLIER),
+        "SPAN 1 at another college": curator("Elementary Spanish 1", SAM_EARLIER),
+        MOVED: curator("Changed Since", {"reviewed_by": "map@rccd.edu", "reviewed_at": "2026-11-01T10:00:00+00:00"}),
+        OLDER: curator("W", {"reviewed_by": "map@rccd.edu", "reviewed_at": "2026-11-05T10:00:00+00:00"}),
+    })
+    rec = lambda: [{"issuing_agency": "California Community Colleges", "training_agency": None,  # noqa: E731
+                    "classified_by": fu.CLASSIFIED_BY, **SAM_EARLIER}]
+    write(os.path.join(kb3, "credentials.json"), {"Engine Repair": rec(), "Elementary Spanish I": rec(),
+                                                  "Elementary Spanish 1": rec(), "Changed Since": rec(), "W": rec()})
+    write(os.path.join(kb3, "unclassified_assignments.json"), {"assignments": {
+        A1: dict(unified_title="Automotive Technology (ASE A1 Engine Repair)", supersedes="Engine Repair",
+                 issuing_agency="California Community Colleges", **SAM_LATER),
+        SPAN: dict(unified_title="Elementary Spanish 1", supersedes="Elementary Spanish I", **SAM_LATER),
+        MOVED: dict(unified_title="Y", supersedes="Old Name", **SAM_LATER),
+        OLDER: dict(unified_title="Z", supersedes="W", **SAM_LATER),
+    }})
+    write(os.path.join(kb3, "coci_articulations.json"), {"articulations": [
+        {"exhibit_title": A1, "unified_title": "Engine Repair", "college": "Las Positas College"}]})
+    write(os.path.join(kb3, "exhibit_audit", "latest.json"), {"title_cards": [], "stats": {}}, minified=True)
+    write(os.path.join(kb3, "unclassified_suggestions.json"), {"suggestions": {}})
+    write(os.path.join(kb3, "credential_review_overlay.json"),
+          {"overrides": {"Engine Repair": {"issuing_agency_override": "Local High School"}}})
+    out3 = os.path.join(tmp, "revise", "out")
+    point_at(kb3, out3)
+    fu.PANEL_PATH = os.path.join(kb3, "credential_review_overlay.json")
+    log4 = run("--apply-if-safe")
+    ut3, cr3 = load(fu.UT_PATH), load(fu.CR_PATH)
+    rep3 = load(os.path.join(out3, "report.json"))
+    check("a re-pick naming the title that still stands lands (revise)",
+          ut3[A1]["unified_title"] == "Automotive Technology (ASE A1 Engine Repair)"
+          and ut3[A1].get("_revised_from") == "Engine Repair"
+          and ut3[A1]["reviewed_at"] == SAM_LATER["reviewed_at"], log4)
+    check("the emptied credential is renamed to the new title, its records kept",
+          "Engine Repair" not in cr3
+          and cr3.get("Automotive Technology (ASE A1 Engine Repair)", [{}])[0].get("_renamed_from") == "Engine Repair"
+          and len(cr3["Automotive Technology (ASE A1 Engine Repair)"]) == 1)
+    check("the receipt names the panel rows left under the old name",
+          [m["panel_rows_left"] for m in rep3["credential_moves"]] == [["issuing_agency_override"]])
+    check("a revise into a credential that exists retires the emptied one, whole, in the receipt",
+          ut3[SPAN]["unified_title"] == "Elementary Spanish 1" and "Elementary Spanish I" not in cr3
+          and [m["title"] for m in rep3["credential_retires"]] == ["Elementary Spanish I"]
+          and rep3["credential_retires"][0]["records"][0]["issuing_agency"] == "California Community Colleges")
+    check("a re-pick whose replaced title changed meanwhile is held as a conflict",
+          ut3[MOVED]["unified_title"] == "Changed Since"
+          and any(h["raw"] == MOVED and h["kind"] == "conflict" for h in rep3["held"]))
+    check("a re-pick older than the reference's decision is stale, never applied",
+          ut3[OLDER]["unified_title"] == "W" and [r["raw"] for r in rep3["stale"]] == [OLDER])
+    check("the articulation row moves with the revised title",
+          load(fu.ART_PATH)["articulations"][0]["unified_title"] == "Automotive Technology (ASE A1 Engine Repair)")
+    before3 = json.dumps([ut3, cr3], sort_keys=True)
+    run("--apply-if-safe")
+    check("a second run changes nothing after a revise",
+          json.dumps([load(fu.UT_PATH), load(fu.CR_PATH)], sort_keys=True) == before3)
 finally:
     shutil.rmtree(tmp, ignore_errors=True)
 
