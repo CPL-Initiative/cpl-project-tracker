@@ -58,7 +58,9 @@ Run from repo root:
   python3 kb/_cer_procedures.py --dry-run       # print the tallies, write nothing
 """
 import argparse
+import contextlib
 import hashlib
+import io
 import json
 import os
 import re
@@ -80,6 +82,9 @@ PROCEDURES = os.path.join(HERE, "cer_procedures.json")
 SUGGESTIONS = os.path.join(HERE, "unclassified_suggestions.json")
 CREDENTIALS = os.path.join(HERE, "credentials.json")
 CLASSIFIED = os.path.join(HERE, "cer_classified.json")
+# A rule asked for from the Exhibits tab (Sheet 149 card 2): the tab writes the request
+# under this key; the routine builds the procedure off, naming the row in `request`.
+REQUEST_PREFIX = "_CER_PROCEDURE_REQUEST::"
 REPORT = os.path.join(HERE, "cer_procedures_out", "latest.json")
 SAVED_DIR = os.path.join(HERE, "cer_procedures_out", "saved")
 FOLD_DIR = os.path.join(HERE, "unclassified_fold")
@@ -111,9 +116,9 @@ SCHOOL = re.compile(r"\bHS\b|\bHS-[A-Z]|\(HSA\)|high\s*school|\bROP\b|\bUSD\b|un
 
 # ── procedures ───────────────────────────────────────────────────────────────
 
-def load_procedures(path=PROCEDURES):
-    """The procedures in force, in order. A malformed one stops the run: a rule
-    nobody can read must not settle anything."""
+def read_procedures(path=PROCEDURES):
+    """Every procedure in the store, on or off, checked. A malformed one stops the
+    run: a rule nobody can read must not settle anything."""
     procs = json.load(open(path, encoding="utf-8"))["procedures"]
     seen = set()
     for p in procs:
@@ -129,7 +134,30 @@ def load_procedures(path=PROCEDURES):
             raise ValueError("rule procedure %r names no lanes" % p["id"])
         if not (p["source"].get("who") and p["source"].get("date") and p["source"].get("words")):
             raise ValueError("procedure %r: its source needs who, date and words" % p["id"])
-    return [p for p in procs if p["on"]]
+        if p.get("request") and not str(p["request"]).startswith(REQUEST_PREFIX):
+            raise ValueError("procedure %r: its request must be a %s row" % (p["id"], REQUEST_PREFIX))
+    return procs
+
+
+def load_procedures(path=PROCEDURES, include=()):
+    """The procedures in force, in order, plus any off procedure `include` names
+    (the dry run of a rule built for the Exhibits tab's Turn on)."""
+    procs = read_procedures(path)
+    unknown = set(include) - {p["id"] for p in procs}
+    if unknown:
+        raise ValueError("no procedure %s in %s" % (", ".join(sorted(unknown)), os.path.basename(path)))
+    return [p for p in procs if p["on"] or p["id"] in include]
+
+
+def off_lanes(path=PROCEDURES, include=()):
+    """Lanes only an off rule procedure names. Their proposals reach nobody, not
+    even the classifier as a hint, until the procedure is turned on: a rule the
+    routine built waits for Turn on before it changes a single answer."""
+    procs = read_procedures(path)
+    on = {lane for p in procs if p["kind"] == "rule" and (p["on"] or p["id"] in include)
+          for lane in p["lanes"]}
+    return {lane for p in procs if p["kind"] == "rule" and not (p["on"] or p["id"] in include)
+            for lane in p["lanes"]} - on
 
 
 def lane_owners(procs):
@@ -729,11 +757,14 @@ def undo_procedure(procedure, cur, now=None, out=print):
 # ── the run ──────────────────────────────────────────────────────────────────
 
 def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True, save=None, cur=None,
-        run_id=""):
+        run_id="", include=()):
     if save in ("on", "preview") and cur is None and not key and not dry_run:
         # Before any file is written: a run that cannot save must not half-run.
         sys.exit("--save needs SUPABASE_SERVICE_KEY (the fresh read and the write go through it).")
-    procs = load_procedures()
+    if include and not dry_run:
+        sys.exit("an off procedure runs only in a dry run (--try); Turn on is the store's on flag.")
+    procs = load_procedures(include=include)
+    quiet = off_lanes(include=include)
     owners = lane_owners(procs)
     phash = procedures_hash(procs)
     audit = json.load(open(pre.AUDIT_PATH, encoding="utf-8"))
@@ -743,6 +774,7 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
     assigned = pre.load_assigned()
     waiting = [r for r in queue if r not in assigned]
     lanes, _residual, raw_meta = pre.stage_lanes(queue, pre.load_families(), assigned)
+    lanes = {raw: lane for raw, lane in lanes.items() if lane.get("via") not in quiet}
     suggestions = (json.load(open(SUGGESTIONS, encoding="utf-8")).get("suggestions") or {}
                    if os.path.exists(SUGGESTIONS) else {})
     aligned = (json.load(open(SUGGESTIONS, encoding="utf-8")).get("aligned") or {}
@@ -905,6 +937,56 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
     return report, stage
 
 
+def try_procedure(pid, now=None, examples=10):
+    """The dry run the routine writes back for the Exhibits tab's Turn on: what an
+    off procedure would do, measured against tonight's run without it. Writes nothing.
+
+    queue      the waiting titles it would settle (they save under its cohort the
+               night after Turn on) and hold for a person;
+    reference  for a rule, the titles already in the reference its lanes read
+               differently from their canonical title (a fold to make, as the AP
+               fold was; the rule itself only reads the queue);
+    reasks     for guidance, the classifier's unsure answers on the queue, each
+               asked again the night after Turn on (the procedures changed)."""
+    proc = {p["id"]: p for p in read_procedures()}.get(pid)
+    if not proc:
+        raise ValueError("no procedure %r in %s" % (pid, os.path.basename(PROCEDURES)))
+    buf = io.StringIO()
+    with contextlib.redirect_stdout(buf):
+        base_report, base = run(dry_run=True, catalog=False, now=now)
+        report, trial = run(dry_run=True, catalog=False, now=now, include=(pid,))
+    mine = {raw: rec for raw, rec in trial["staged"].items() if rec.get("procedure") == pid}
+    changed = {raw: rec for raw, rec in mine.items()
+               if (base["staged"].get(raw) or {}).get("title") != rec.get("title")}
+    tally = next((p for p in report["procedures"] if p["id"] == pid), {})
+    out = {"procedure": pid, "name": proc["name"], "kind": proc["kind"], "on": bool(proc["on"]),
+           "request": proc.get("request") or "",
+           "at": (now or datetime.now(timezone.utc)).strftime("%Y-%m-%dT%H:%M:%SZ"),
+           "queue": {"waiting": report["waiting"], "settled": tally.get("settled", 0),
+                     "held": tally.get("held", 0), "changed": len(changed),
+                     "examples": [[raw, mine[raw]["title"]] for raw in sorted(mine)[:examples]]}}
+    if proc["kind"] == "rule":
+        ut = json.load(open(pre.UT_PATH, encoding="utf-8"))
+        titles = ut.get("titles") or ut
+        raws = [r for r, e in titles.items() if isinstance(e, dict) and e.get("unified_title")]
+        with contextlib.redirect_stdout(buf):
+            lanes, _res, _meta = pre.stage_lanes(raws, pre.load_families(), set())
+        mine_lanes = set(proc["lanes"]) - HINT_LANES
+        read = {r: l for r, l in lanes.items() if l.get("via") in mine_lanes}
+        differ = {r: l for r, l in read.items()
+                  if pre.normalize_key(l["title"]) != pre.normalize_key(titles[r]["unified_title"])}
+        out["reference"] = {"read": len(read), "differ": len(differ),
+                            "examples": [[r, titles[r]["unified_title"], differ[r]["title"]]
+                                         for r in sorted(differ)[:examples]]}
+    else:
+        cache = json.load(open(CLASSIFIED, encoding="utf-8")) if os.path.exists(CLASSIFIED) else {}
+        records = cache.get("records", {})
+        waiting = set(base["_residual"]) | set(base["staged"]) | {n["raw_title"] for n in base_report["needs_you"]}
+        out["reasks"] = sum(1 for r in waiting if r in records
+                            and as_proposal(records[r])["confidence"] < SURE)
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split("\n")[1])
     ap.add_argument("--classify", type=int, default=0, help="ask the classifier about up to N titles")
@@ -913,7 +995,13 @@ def main():
                          "or list what would save and write no row (preview)")
     ap.add_argument("--undo", metavar="PROCEDURE", help="take back every kb_curation row this procedure saved")
     ap.add_argument("--dry-run", action="store_true", help="print the tallies; write nothing")
+    ap.add_argument("--try", dest="trying", metavar="PROCEDURE",
+                    help="the dry run of one procedure, on or off, as JSON for the Exhibits tab's Rules view; "
+                         "writes nothing")
     args = ap.parse_args()
+    if args.trying:
+        print(json.dumps(try_procedure(args.trying), indent=1, ensure_ascii=False))
+        return
     key = os.environ.get("SUPABASE_SERVICE_KEY")
     if args.undo:
         if not key:

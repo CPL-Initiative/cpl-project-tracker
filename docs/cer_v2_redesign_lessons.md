@@ -674,3 +674,33 @@ existing items and present option to click with each text entry"*.
   a title only for an assignment newer than the reviewed entry. A re-pick now sends its time with the rows.
 - **`var` hoisting bit the first draft:** the card function already declared `typed` for the Local titles block, so the
   issuer's "typed" flag was an element and always true. The jsdom check caught it.
+
+## 2026-10-31 — Rules: every rule in one view, and a rule sent to the routine (SkyBilberry)
+
+Sam, 2026-10-31 ~19:10Z, rethinking the ASE titles: *"can you add a link to a view of all the rules used to suggest or
+fold exhibit titles?"* Sheet 149 card 2 (*routine*, 14:41Z) had asked for the other half: a rule added in the tab runs
+without a session he drives.
+
+- **The routine already existed.** The CPL queue routine reads `scheduled_sessions.md` before anything else, so a new kind
+  of request is a numbered step there (step 7), and Sam creates no trigger. A session cannot create one with the repos
+  attached anyway (Sheet 131, S490).
+- **An off rule still spoke.** `load_procedures` dropped an off procedure, but its pre-seed lane still staged a proposal,
+  which `settle()` handed the classifier as a hint (no owner). `off_lanes()` now quiets a lane only off procedures name.
+- **A dry run on tonight's queue says little.** Sam's 384 saves left the queue at one title, so `--try` reads the reference
+  too: the titles a rule's lanes read differently from their canonical title (brand-family: 44 of 1,674 tonight; the AP
+  lane 0 of 930, since the AP fold landed).
+- **Turn on writes a switch row, and the routine sets `on`.** The store stays the one place a procedure is on, and a
+  person's word is what turns it on; the tab cannot merge.
+
+## Moved from the lane (SkyBilberry)
+
+**RULED (Sam, Open Asks Sheet 96 card 1, 17:23Z 2026-10-18, his own call; `cpl_memory`
+`sam-sheet-96-rulings-2026-10-18`): keep.** A rule procedure's settlement saves at the rule's word, the course-identity
+rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
+`python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
+
+**The AP fold — applied (SkyElderberry, 2026-10-31; Sheet 149 card 1).** 14 credential merges and 7 AB-subscore
+moves in the reference (77 local titles to College Board's names; `kb/credential_merges.json`, receipts in
+`kb/credential_merges_out/2026-10-31/`), and 42 saved assignments moved to match under `cer-ap-fold-s536@bot` (Sam ran
+the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
+

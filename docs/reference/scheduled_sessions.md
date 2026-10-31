@@ -173,6 +173,40 @@ is his standing preference there too.
    `<slug>.json` and the draft file goes. **Done:** add the version, empty `refresh_note` and set
    `regen` to null. Every write goes through a receipt with the row's before-values (Rule 10).
 
+7. **Rules sent from the Exhibits tab** (Sam, Open Asks Sheet 149 card 2, 2026-10-31, *routine*). Teach a rule's
+   *Send to the routine* writes a request row; the tab's Rules view shows each with its state. Read them:
+
+   ```sql
+   select r.course_id, r.value as ask, r.reviewer_email as sent_by, r.reviewed_at as sent_at,
+          b.value as built, s.value as switch, s.reviewer_email as switch_by, s.reviewed_at as switch_at
+   from kb_curation r
+   left join kb_curation b on b.course_id = r.course_id and b.field = 'cer_procedure_built'
+   left join kb_curation s on s.course_id = r.course_id and s.field = 'cer_procedure_switch'
+   where r.course_id like '\_CER\_PROCEDURE\_REQUEST::%' and r.field = 'cer_procedure_request'
+   order by r.reviewed_at;
+   ```
+
+   Each open row is a queue item after the handoff's first. Compare it with `kb/cer_procedures.json`, where a
+   procedure's `request` names its row:
+
+   - **No `built` row and no procedure: build it.** The ask (JSON) holds the rule's `words` and an example: the
+     local title `raw`, the `title` it should read and its `issuer`. Add the procedure with `"on": false`, its
+     `request`, and a `source` naming the sender (`sent_by`), the date and the words. A rule that settles a title
+     by code gets its lane in `kb/_preseed_unclassified.py` and a test; one the classifier can apply from words is
+     `guidance`. Run `python3 kb/_cer_procedures.py --try <id>` (it writes nothing), merge on a passing `test`, and
+     write its JSON with `"pr": <number>` as the `cer_procedure_built` row. A rule that cannot be built (its words
+     name nothing a rule can test) gets `{"could_not": "<one sentence>"}` instead.
+   - **`switch` is `on` and the procedure is off:** set `"on": true`, add an `amended` entry (who: `switch_by`, the
+     date, words *Turned on from the Exhibits tab*) and merge. That night's procedures run applies it and saves
+     under `cer-procedure-<id>@bot`; `--undo <id>` takes its saves back.
+   - **`switch` is `discard` and the procedure is in the store:** remove it and its lane, and merge. The request's
+     rows stay as the record.
+   - **On, or discarded and gone:** nothing to do.
+
+   Turn on is the person's word: never set `on` without a switch row. The `built` row is INSERT-only under the
+   run's cohort `cer-routine-s<N>@bot`, with its receipt (`kb/cer_procedures_out/routine/<date>.json`) in the same
+   pull request (Rule 10); a request row is never deleted.
+
 ## The daytime Library run (Sam, Open Asks Sheet 131 card 1, 2026-10-26)
 
 Sam ruled *two-hours*: a run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific, working only the Library's

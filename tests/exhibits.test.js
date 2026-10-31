@@ -260,7 +260,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("Skip moves to the next title", current(t.d) === DM);
   byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
   check("signed out, a save asks for a sign-in and writes nothing", /Sign in as a reviewer to save/.test(txt(t.d.querySelector(".exh-status")))
-    && !t.calls.some(function (c) { return /kb_curation/.test(c.url); }));
+    && !t.calls.some(function (c) { return /kb_curation/.test(c.url) && c.method !== "GET"; }));
 
   // the card
   check("the canonical title is the aligned course's, from its identity", title(t.d).value === "Introduction to Digital Art"

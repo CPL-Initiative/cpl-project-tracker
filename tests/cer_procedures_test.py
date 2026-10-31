@@ -447,6 +447,57 @@ check("a report from before the per-item hold is read by its conflict list",
 shutil.rmtree(tmpf)
 check("no fold directory means nothing held", cp.fold_held(os.path.join(tmpf, "none")) == [])
 
+# ── a rule built for the Exhibits tab waits for Turn on (Sheet 149 card 2) ─────
+store = json.load(open(cp.PROCEDURES, encoding="utf-8"))
+tmps = tempfile.mkdtemp(prefix="cer-store-")
+off_path = os.path.join(tmps, "cer_procedures.json")
+built = {"id": "test-built", "name": "A built rule", "kind": "rule", "on": False,
+         "rule": "A test rule the routine built.", "lanes": ["nccer"],
+         "request": cp.REQUEST_PREFIX + "2026-10-31T19:00:00Z-ab12",
+         "source": {"who": "Sam", "date": "2026-10-31", "words": "a test"}}
+store_off = dict(store, procedures=[dict(p, on=False) if p["id"] == "nccer-verbatim" else p
+                                    for p in store["procedures"]] + [built])
+json.dump(store_off, open(off_path, "w"))
+check("an off procedure is not in force", "test-built" not in {p["id"] for p in cp.load_procedures(off_path)})
+check("include turns one off procedure on for a dry run",
+      "test-built" in {p["id"] for p in cp.load_procedures(off_path, include=("test-built",))})
+check("a lane only off procedures name goes quiet; one an on procedure names stays",
+      cp.off_lanes(off_path) == {"nccer"} and cp.off_lanes(off_path, include=("test-built",)) == set())
+check("the store today quiets no lane", cp.off_lanes() == set(), cp.off_lanes())
+try:
+    cp.load_procedures(off_path, include=("no-such-rule",))
+    check("include names an unknown procedure: the run stops", False)
+except ValueError:
+    check("include names an unknown procedure: the run stops", True)
+bad = dict(store, procedures=store["procedures"] + [dict(built, request="not-a-request-row")])
+json.dump(bad, open(off_path, "w"))
+try:
+    cp.read_procedures(off_path)
+    check("a request that is not a request row stops the run", False)
+except ValueError:
+    check("a request that is not a request row stops the run", True)
+shutil.rmtree(tmps)
+try:
+    cp.run(include=("brand-family",))
+    check("an off procedure runs only in a dry run", False)
+except SystemExit:
+    check("an off procedure runs only in a dry run", True)
+
+# The dry run the routine writes back: one procedure against tonight's run without it.
+tr = cp.try_procedure("brand-family")
+check("--try reads a rule over the queue and the reference",
+      tr["kind"] == "rule" and set(tr["queue"]) >= {"waiting", "settled", "held", "changed", "examples"}
+      and tr["reference"]["read"] >= tr["reference"]["differ"] >= 0
+      and all(len(e) == 3 for e in tr["reference"]["examples"]), tr)
+tg = cp.try_procedure("ase-paren")
+check("--try counts a guidance procedure's re-asks and reads no reference",
+      tg["kind"] == "guidance" and "reference" not in tg and isinstance(tg["reasks"], int), tg)
+try:
+    cp.try_procedure("no-such-rule")
+    check("--try on an unknown procedure stops", False)
+except ValueError:
+    check("--try on an unknown procedure stops", True)
+
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
     print(("PASS " if ok else "FAIL ") + name + ("" if ok else "  " + repr(why)[:300]))
