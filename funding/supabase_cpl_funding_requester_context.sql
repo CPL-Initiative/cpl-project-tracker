@@ -42,6 +42,9 @@ create table if not exists public.map_landing_contacts (
 );
 alter table public.map_landing_contacts enable row level security;
 revoke all on public.map_landing_contacts from public, anon, authenticated;
+-- New tables get no Data API grant by default (from 2026-10-30): the service
+-- role, which the sync and the definer functions stand on, is granted here.
+grant select, insert, update, delete on public.map_landing_contacts to service_role;
 
 -- "Torres-Benavides, Cari M" and "Cari Torres-Benavides" both read
 -- "cari torresbenavides"; "(Interim) Jon Endicott" reads "jon endicott";
