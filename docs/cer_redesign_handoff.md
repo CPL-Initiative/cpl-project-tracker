@@ -48,9 +48,14 @@ sections, with Sam's words).
    for you to send automatically once we get that set up with RCCD IT."* Measured: 6 participation requests and 4
    noncredit attestations, so about 110 colleges. Advised in chat: a preview list first (who, what is missing, the
    deadline), sent today as one Outlook mail merge from a CSV (or one BCC draft), and later sent by COBI as map@rccd.edu
-   through Microsoft 365 with a send log and a 14-day skip, after Governance. His call first: may a reviewer-only read
-   give the funding tab each college's CPL Coordinator and primary contact addresses (the tab's PII guard forbids it
-   today)? Build on his reply; if none, put both on the next sheet.
+   through Microsoft 365 with a send log and a 14-day skip, after Governance. **Recipients (Sam, ~20:45Z):** *"the CPL
+   Coordinator or if there is none, the Ambassador or if there is none, initiator, then VPAA, then whomever we have on
+   file"*. Measured on `map_college_contacts` (124 colleges): CPL Coordinator 58; of the 66 without one, MAP's primary
+   CPL contact covers 49, the lead Initiator 5 more, the VPAA 6 more, and 6 have none of the four. Colleges average 5.8
+   active Ambassadors (up to 16) in `map_college_users`, so advised: read his "Ambassador" step as MAP's primary CPL
+   contact (one person, the one MAP routes student requests to), with all active Ambassadors only as the last resort;
+   the preview names which step chose each recipient. The tab's PII guard forbids these addresses today: a reviewer-only
+   read is the build's first piece. Build on his reply; if none, put it on the next sheet.
 1. **Sam's ASE naming call, asked in chat (19:30Z):** the course title as the ASE test's name plus a short tag,
    *Engine Performance (ASE A8)*, with the level kept where a college teaches a sequence. On **ASE short**, change
    Another look's ASE rule (`kb/_sweep_exhibit_titles.py`) to propose that form, including the six reference titles that
