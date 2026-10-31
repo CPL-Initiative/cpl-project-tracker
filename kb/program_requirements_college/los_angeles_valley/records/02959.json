@@ -46,31 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 7,
+   "placed": 10,
    "listed": 10,
-   "share": 0.7,
-   "missing": [
-    "TM27",
-    "TM30",
-    "TM31"
-   ],
-   "unexplained": [
-    "TM27",
-    "TM30",
-    "TM31"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "T&M27",
-    "T&M30",
-    "T&M31"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -131,7 +119,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -267,7 +255,7 @@
    "The Certificate of Achievement with the same title (Total: 25) is a separate award and was not read; its outcomes list is identical to this degree's."
   ]
  },
- "extracted_run": 41114987325,
+ "extracted_run": 41172599271,
  "reconciled": [
   {
    "field": "ge_units",
@@ -288,5 +276,5 @@
    "words": "Total Minimum Units: 60"
   }
  ],
- "read_run": "39006418426"
+ "read_run": 41114987325
 }

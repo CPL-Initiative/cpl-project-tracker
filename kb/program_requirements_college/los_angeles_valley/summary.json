@@ -4,17 +4,17 @@
  "with_closed_list": 232,
  "found": 223,
  "extracted": 223,
- "errors": 2,
- "passed_machine_checks": 178,
+ "errors": 0,
+ "passed_machine_checks": 191,
  "failed": {
-  "coverage": 19,
-  "invented": 10,
-  "arithmetic": 28,
+  "coverage": 8,
+  "invented": 0,
+  "arithmetic": 27,
   "repeated": 0,
   "outcomes": 5
  },
- "cost_usd": 15.32,
- "cost_per_program": 0.0687,
+ "cost_usd": 15.45,
+ "cost_per_program": 0.0693,
  "not_found": [
   {
    "control_number": "11545",
@@ -106,5 +106,5 @@
    }
   }
  ],
- "run": "41141747238"
+ "run": "41172599271"
 }

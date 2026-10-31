@@ -493,14 +493,16 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "EGDTEK101",
    "EGDTEK102",
    "ENGGEN101",
    "MATH240",
    "MSCNC114",
-   "MSCNC124"
+   "MSCNC124",
+   "TM27",
+   "TM30"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
@@ -524,7 +526,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.7,
+  "coverage": 1.0,
   "codes_found": [
    "CHEM60",
    "CIS104",
@@ -532,7 +534,10 @@
    "ENGGEN101",
    "MATH240",
    "MSCNC124",
-   "NUMCON21"
+   "NUMCON21",
+   "TM27",
+   "TM30",
+   "TM31"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
@@ -558,7 +563,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.636,
+  "coverage": 1.0,
   "codes_found": [
    "ELECTRN2",
    "ENGGEN101",
@@ -566,7 +571,11 @@
    "MSCNC124",
    "NUMCON21",
    "NUMCON22",
-   "NUMCON23"
+   "NUMCON23",
+   "TM27",
+   "TM30",
+   "TM31",
+   "TM32"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
@@ -1650,7 +1659,7 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.818,
+  "coverage": 1.0,
   "codes_found": [
    "CIS104",
    "EGDTEK101",
@@ -1660,7 +1669,9 @@
    "MATH240",
    "MSCNC114",
    "MSCNC124",
-   "NUMCON21"
+   "NUMCON21",
+   "TM27",
+   "TM31"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
@@ -1685,14 +1696,18 @@
   "award": "A.S. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
    "ELECTRN2",
    "ENGGEN101",
    "MSCNC124",
    "NUMCON21",
    "NUMCON22",
-   "NUMCON23"
+   "NUMCON23",
+   "TM27",
+   "TM30",
+   "TM31",
+   "TM32"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
@@ -3612,12 +3627,13 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.8,
+  "coverage": 1.0,
   "codes_found": [
    "EGDTEK101",
    "EGDTEK102",
    "ENGGEN101",
-   "MSCNC124"
+   "MSCNC124",
+   "TM27"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
@@ -3640,14 +3656,16 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.75,
+  "coverage": 1.0,
   "codes_found": [
    "CIS104",
    "EGDTEK101",
    "ELECTRN4",
    "ENGGEN101",
    "MSCNC124",
-   "NUMCON21"
+   "NUMCON21",
+   "TM27",
+   "TM30"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
@@ -3671,13 +3689,15 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
    "EGDTEK101",
    "EGDTEK102",
    "ENGGEN101",
    "MATH240",
-   "MSCNC124"
+   "MSCNC124",
+   "TM27",
+   "TM30"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
@@ -3701,12 +3721,15 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.571,
+  "coverage": 1.0,
   "codes_found": [
    "ENGGEN101",
    "MSCNC114",
    "NUMCON21",
-   "NUMCON22"
+   "NUMCON22",
+   "TM27",
+   "TM30",
+   "TM31"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
@@ -3729,7 +3752,7 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.778,
+  "coverage": 1.0,
   "codes_found": [
    "CIS104",
    "ENGGEN101",
@@ -3737,7 +3760,9 @@
    "MSCNC124",
    "NUMCON21",
    "NUMCON22",
-   "NUMCON23"
+   "NUMCON23",
+   "TM27",
+   "TM30"
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",

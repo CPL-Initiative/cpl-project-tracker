@@ -46,31 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 7,
    "listed": 7,
-   "share": 0.571,
-   "missing": [
-    "TM27",
-    "TM30",
-    "TM31"
-   ],
-   "unexplained": [
-    "TM27",
-    "TM30",
-    "TM31"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
-   "codes": [
-    "T&M27",
-    "T&M30",
-    "T&M31"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -108,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -218,5 +206,6 @@
    "The same four outcomes are printed for the Numerical Control certificate as well."
   ]
  },
- "extracted_run": "41141747238"
+ "extracted_run": 41172599271,
+ "read_run": "41141747238"
 }

@@ -46,29 +46,25 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 9,
+   "placed": 10,
    "listed": 11,
-   "share": 0.818,
+   "share": 0.909,
    "missing": [
-    "TM27",
     "TM31"
    ],
-   "unexplained": [
-    "TM27"
-   ],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "T&M27",
     "T&M30"
    ],
    "flagged": [
     "T&M30"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -126,7 +122,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -267,7 +263,7 @@
    "No careers are named in this degree section; career lists appear only in certificate sections."
   ]
  },
- "extracted_run": "41141747238",
+ "extracted_run": 41172599271,
  "reconciled": [
   {
    "field": "ge_units",
@@ -287,5 +283,6 @@
    "now": true,
    "words": "Total Minimum Units: 60"
   }
- ]
+ ],
+ "read_run": "41141747238"
 }

@@ -46,28 +46,19 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 8,
-   "share": 0.75,
-   "missing": [
-    "TM27",
-    "TM30"
-   ],
-   "unexplained": [
-    "TM27",
-    "TM30"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
-   "codes": [
-    "T&M27",
-    "T&M30"
-   ],
+   "count": 0,
+   "codes": [],
    "flagged": [],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +96,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -226,5 +217,6 @@
    "ELECTRN 004 is marked with * (has a prerequisite or corequisite)."
   ]
  },
- "extracted_run": "41141747238"
+ "extracted_run": 41172599271,
+ "read_run": "41141747238"
 }
