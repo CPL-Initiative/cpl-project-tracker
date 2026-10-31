@@ -67,4 +67,51 @@ function shardFiles(files, index, count) {
   return files.filter((_, i) => i % count === index - 1);
 }
 
-module.exports = { parseShard, shardFiles };
+// BALANCED BY MEASURED TIME (Sam, 2026-10-31: "If there are any other ways to
+// shave test time, feel free"). Round-robin evens the COUNT of heavy files per
+// shard, not their seconds: on #2629's two runs the six shards' test steps read
+// 4:19 to 9:40, then 5:37 to 11:13 with checkout, and `test` waits for the
+// slowest. With tests/durations.json (each file's seconds, written by
+// `npm run test:durations`), the files go heaviest first to whichever shard
+// holds the least time so far (longest-processing-time first), and each shard
+// runs its own heaviest first so a long file never starts last.
+//
+// A stale table costs balance, never coverage: a file the table does not know
+// weighs the table's median, a name it knows that is gone is ignored, and every
+// file still lands on exactly one shard. Re-measure when a shard's time drifts
+// (each run prints its slowest ten). Without a table, round-robin stands.
+function weights(files, durations) {
+  const known = files.map((f) => durations[f]).filter((v) => typeof v === "number" && v >= 0).sort((a, b) => a - b);
+  const median = known.length ? known[Math.floor(known.length / 2)] : 1;
+  const w = {};
+  files.forEach((f) => {
+    const v = durations[f];
+    w[f] = typeof v === "number" && v >= 0 ? v : median;
+  });
+  return w;
+}
+function byWeight(w) {
+  return (a, b) => w[b] - w[a] || (a < b ? -1 : a > b ? 1 : 0);
+}
+function balancedFiles(files, index, count, durations) {
+  if (!durations || typeof durations !== "object" || !Object.keys(durations).length) {
+    return shardFiles(files, index, count);
+  }
+  const w = weights(files, durations);
+  const load = new Array(count).fill(0);
+  const bins = Array.from({ length: count }, () => []);
+  files.slice().sort(byWeight(w)).forEach((f) => {
+    let k = 0;
+    for (let i = 1; i < count; i++) if (load[i] < load[k]) k = i;
+    bins[k].push(f);
+    load[k] += w[f];
+  });
+  return bins[index - 1];
+}
+// The whole suite, heaviest first, for an unsharded run (the same reason).
+function heaviestFirst(files, durations) {
+  if (!durations || typeof durations !== "object" || !Object.keys(durations).length) return files;
+  return files.slice().sort(byWeight(weights(files, durations)));
+}
+
+module.exports = { parseShard, shardFiles, balancedFiles, heaviestFirst };

@@ -3,9 +3,9 @@
 // The failure modes here are green-looking: a shard that runs every file is
 // a 4x slower pass, and shards that overlap or leave a gap pass while a file
 // runs twice or never. Each is provoked below.
-const { parseShard, shardFiles } = require("./lib/shard.js");
+const { parseShard, shardFiles, balancedFiles, heaviestFirst } = require("./lib/shard.js");
 
-const EXPECTED_CHECKS = 14;
+const EXPECTED_CHECKS = 21;
 let pass = 0, fail = 0;
 function check(name, cond) {
   if (cond) { pass++; console.log("  ok   " + name); }
@@ -54,6 +54,33 @@ check("partition: more shards than files leaves the extra shards empty rather th
   shardFiles(["a.test.js"], 2, 3).length === 0 && shardFiles(["a.test.js"], 1, 3).length === 1);
 check("partition: input order is preserved within a shard",
   shardFiles(files, 3, 4).join() === "f02.test.js,f06.test.js,f10.test.js,f14.test.js,f18.test.js,f22.test.js");
+
+// ── balanced by measured time ─────────────────────────────────────────────
+// Two heavy files beside each other alphabetically, the case round-robin gets
+// wrong whenever the count is right and the seconds are not.
+const timed = ["a.test.js", "b.test.js", "c.test.js", "d.test.js", "e.test.js", "f.test.js", "g.test.js"];
+const secs = { "a.test.js": 100, "b.test.js": 90, "c.test.js": 10, "d.test.js": 10, "e.test.js": 10, "f.test.js": 10 };
+const bal = [1, 2, 3].map((i) => balancedFiles(timed, i, 3, secs));
+const ball = [].concat(...bal);
+check("balanced: every file on exactly one shard, a file the table does not know included",
+  ball.length === timed.length && new Set(ball).size === timed.length && ball.includes("g.test.js"));
+const loadOf = (s) => s.reduce((a, f) => a + (f in secs ? secs[f] : 10), 0);
+check("balanced: the two heavy files land on different shards, and the spread is smaller than round-robin's",
+  bal.findIndex((s) => s.includes("a.test.js")) !== bal.findIndex((s) => s.includes("b.test.js")) &&
+  Math.max(...bal.map(loadOf)) - Math.min(...bal.map(loadOf)) <
+    Math.max(...[1, 2, 3].map((i) => loadOf(shardFiles(timed, i, 3)))) - Math.min(...[1, 2, 3].map((i) => loadOf(shardFiles(timed, i, 3)))));
+check("balanced: each shard runs its heaviest file first",
+  bal.every((s) => s.every((f, i) => i === 0 || (secs[s[i - 1]] || 10) >= (secs[f] || 10))));
+check("balanced: deterministic (same input, same split)",
+  JSON.stringify([1, 2, 3].map((i) => balancedFiles(timed, i, 3, secs))) === JSON.stringify(bal));
+check("balanced: no table (null or empty) falls back to round-robin",
+  balancedFiles(files, 2, 4, null).join() === shardFiles(files, 2, 4).join() &&
+  balancedFiles(files, 2, 4, {}).join() === shardFiles(files, 2, 4).join());
+check("balanced: a name in the table that no longer exists is ignored",
+  [].concat(...[1, 2].map((i) => balancedFiles(["x.test.js", "y.test.js"], i, 2, { "gone.test.js": 999, "x.test.js": 5 }))).sort().join() === "x.test.js,y.test.js");
+check("heaviest first: the unsharded run starts the long files first, and keeps every file",
+  heaviestFirst(timed, secs)[0] === "a.test.js" && heaviestFirst(timed, secs).length === timed.length &&
+  heaviestFirst(timed, null) === timed);
 
 if (pass + fail !== EXPECTED_CHECKS) {
   fail++;

@@ -6,7 +6,8 @@
     "a11y": "node scripts/a11y.js",
     "sweep": "node prototype/check_skyview_sweep.js",
     "test": "node tests/run.js",
-    "test:floor": "node tests/run.js --update-floor"
+    "test:floor": "node tests/run.js --update-floor",
+    "test:durations": "node tests/run.js --durations-out tests/durations.json"
   },
   "devDependencies": {
     "axe-core": "4.10.2",
