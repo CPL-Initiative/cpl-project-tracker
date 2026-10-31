@@ -56,9 +56,27 @@
 // trainer box, it should search for text matches for existing items and present option to click with each
 // text entry". So a conflict card's Change and Keep save the way Another look does, with
 // unified_title_supersedes naming the reviewed title (the fold re-points it only while that title still
-// stands); a title naming an ASE test fills its issuer box with ASE until he types his own; and the issuer
+// stands); a title that is an ASE certification fills its issuer box with ASE until he types his own (a course
+// aligned to a test keeps its college or school, Sam's later word that day); and the issuer
 // and training-site boxes offer the names already in the reference (kb/exhibits_review.json's issuers and
 // sites, and the credential view's rows once read).
+//
+// Rules (Sam, 2026-10-31: "can you add a link to a view of all the rules used to suggest or fold exhibit
+// titles?"): the view lists every procedure in kb/cer_procedures.json (its words, who set it and when, what
+// it settled and held on the last procedures run, kb/cer_procedures_out/latest.json) and Another look's
+// rules (kb/exhibits_sweep.json), then the rules sent to the routine. Linked from the views row and from
+// Another look's rule filter, at #exhibits/rules.
+//
+// Rules sent to the routine (Sam, Open Asks Sheet 149 card 2, 2026-10-31, "routine": "Can we, should we be able to run this added
+// rule from the Exhibits tab rather than a session? ... Or have an agent run the rule and return the results?").
+// Teach a rule's Send to the routine writes a request row, _CER_PROCEDURE_REQUEST::<when>-<tag> with
+// cer_procedure_request (his words, the example title, the title it should read and its issuer, as JSON).
+// The CPL queue routine's first firing of the night (step 7 of docs/reference/scheduled_sessions.md) builds
+// the procedure off in kb/cer_procedures.json, merges it, and writes cer_procedure_built back: the dry run of
+// kb/_cer_procedures.py --try and the pull request, or why it could not. Turn on and Discard write
+// cer_procedure_switch; the routine's next firing sets the procedure on, or takes it out. An off rule
+// changes no answer, so nothing reaches a college until Turn on. The view reads the rows (public, as every
+// kb_curation row is) and the store, which says whether a procedure is on. Governance: DR-07.
 //
 // Loaded by the tab's boot block (both HTMLs, Rule 4). First Light tokens only, words for every control.
 (function () {
@@ -89,8 +107,19 @@
   var FIELD_SUPERSEDES = "unified_title_supersedes";
   var FIELD_KEPT = "title_sweep_kept";
   var ASE_ISSUER = "National Institute for Automotive Service Excellence (ASE)";
-  var ASE_IN_TITLE = /\bASE\b|Automotive Services? Excellence/i;
+  /* The certification itself opens with ASE (ASE A8 — Engine Performance). A course aligned to a test names it in
+     parentheses and keeps its college or school as issuer (Sam, 2026-10-31: "Agree on your call on the college as
+     issuer"). */
+  var ASE_CERT_TITLE = /^\s*(?:ASE\b|Automotive Services? Excellence\b|National Institute for Automotive Service Excellence\b)/i;
   var OPTS_MAX = 8;
+  var REQ_PREFIX = "_CER_PROCEDURE_REQUEST::";
+  var FIELD_REQ = "cer_procedure_request";
+  var FIELD_BUILT = "cer_procedure_built";
+  var FIELD_SWITCH = "cer_procedure_switch";
+  var PROCEDURES_URL = "kb/cer_procedures.json";
+  var PROC_REPORT_URL = "kb/cer_procedures_out/latest.json";
+  var PR_BASE = "https://github.com/CPL-Initiative/cpl-project-tracker/pull/";
+  var ROUTINE_WHEN = "The CPL queue routine's first run of the night, at 10:12 PM Pacific";
   /* What each CER step means, in a sentence or two (the chip's hover; the mock-up's words). */
   var TIPS = {
     "": "Every held title, most students first.",
@@ -111,6 +140,8 @@
     history: [], bulkAsk: false, bulkBusy: false,
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
     view: "review",
+    // Rules sent to the routine: the request rows grouped by request, and the procedures store.
+    rq: { rows: null, store: null, report: null, error: null, busy: "", note: "" },
     // Another look: the sweep's cards, decided this visit by card id.
     sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, issuers: {}, history: [], bulkAsk: false, bulkBusy: false },
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null, q: "", sel: null, limit: CRED_PAGE,
@@ -157,9 +188,9 @@
   }
   function mapUrl(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW; }
   function whoBuilt(h) { return h.colleges && h.colleges.length ? h.colleges : h.art; }
-  /* The issuer a title brings with it: an ASE test in the title names ASE, ahead of the proposal's issuer;
+  /* The issuer a title brings with it: an ASE certification's title names ASE, ahead of the proposal's issuer;
      what a person typed in the box wins over both. */
-  function aseIssuer(title) { return ASE_IN_TITLE.test(title || "") ? ASE_ISSUER : ""; }
+  function aseIssuer(title) { return ASE_CERT_TITLE.test(title || "") ? ASE_ISSUER : ""; }
   function issuerFor(title, issuer) { return aseIssuer(title) || issuer || ""; }
 
   /* ── names to pick from: the issuers and training sites already in the reference ── */
@@ -340,6 +371,68 @@
       .catch(function () { state.coursesErr = true; });
   }
 
+  /* Rules sent to the routine: every _CER_PROCEDURE_REQUEST:: row (a handful; one page) and the store. */
+  function parseJson(v) {
+    if (v == null || v === "") return null;
+    if (typeof v === "object") return v;
+    try { return JSON.parse(v); } catch (e) { return null; }
+  }
+  function loadRules() {
+    var key = anonKey();
+    var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewer_email,reviewed_at"
+      + "&course_id=like." + encodeURIComponent(REQ_PREFIX) + "%25"
+      + "&field=in.(" + [FIELD_REQ, FIELD_BUILT, FIELD_SWITCH].join(",") + ")&order=course_id.asc";
+    var rows = key
+      ? fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": "0-999" } })
+          .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      : Promise.reject(new Error("no key"));
+    var store = fetch(PROCEDURES_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function (d) { return d.procedures || []; })
+      .catch(function () { return null; });
+    var report = fetch(PROC_REPORT_URL, { cache: "no-store" })
+      .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .catch(function () { return null; });
+    store.then(function (st) { state.rq.store = st; });
+    report.then(function (rp) { state.rq.report = rp; });
+    return Promise.all([rows, store, report]).then(function (got) {
+      state.rq.store = got[1]; state.rq.report = got[2]; state.rq.rows = requestRows(got[0], got[1]); state.rq.error = null;
+    }).catch(function (e) {
+      state.rq.rows = null; state.rq.error = String(e && e.message || e);
+      return Promise.all([store, report]).then(function (got) { state.rq.store = got[0]; state.rq.report = got[1]; });
+    });
+  }
+  /* The rows grouped into one record per request, newest first, each with its state. */
+  function requestRows(rows, store) {
+    var by = {};
+    (rows || []).forEach(function (row) {
+      var id = row.course_id || "";
+      if (id.indexOf(REQ_PREFIX) !== 0) return;
+      var r = by[id] = by[id] || { id: id };
+      if (row.field === FIELD_REQ) { r.ask = parseJson(row.value) || { words: String(row.value || "") }; r.by = row.reviewer_email || ""; r.at = row.reviewed_at || ""; }
+      else if (row.field === FIELD_BUILT) { r.built = parseJson(row.value) || {}; r.builtAt = row.reviewed_at || ""; }
+      else if (row.field === FIELD_SWITCH) { r.sw = String(row.value || ""); r.swBy = row.reviewer_email || ""; r.swAt = row.reviewed_at || ""; }
+    });
+    var procs = {};
+    (store || []).forEach(function (p) { if (p && p.request) procs[p.request] = p; });
+    return Object.keys(by).map(function (id) { return by[id]; }).filter(function (r) { return r.ask; })
+      .map(function (r) { r.proc = procs[r.id] || null; r.state = requestState(r, store != null); return r; })
+      .sort(function (a, b) { return a.id < b.id ? 1 : a.id > b.id ? -1 : 0; });
+  }
+  /* waiting · could-not · built (Turn on or Discard) · turning-on · on · discarding · discarded. The store
+     settles on and gone; a switch row shows the choice until the routine carries it out. */
+  function requestState(r, storeRead) {
+    if (r.proc && r.proc.on) return "on";
+    if (r.sw === "on") return "turning-on";
+    if (r.sw === "discard") return r.proc ? "discarding" : "discarded";
+    if (r.built && r.built.could_not) return "could-not";
+    if (r.proc || (r.built && r.built.procedure)) return storeRead || r.proc ? "built" : "built";
+    return "waiting";
+  }
+  function requestsWaitingOnYou() {
+    return (state.rq.rows || []).filter(function (r) { return r.state === "built"; }).length;
+  }
+
   /* ── writes: the CER's own kb_curation rows ── */
   function saveRow(sess, raw, field, value) {
     return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
@@ -347,6 +440,31 @@
       headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
       body: JSON.stringify({ course_id: UNCLASS_PREFIX + raw, field: field, value: value, reviewer_email: sess.email })
     });
+  }
+  /* A rule sent to the routine: one new request row. The key carries the moment and a tag, so two sends
+     never share a row. */
+  function sendRequest(words, raw, title, issuer) {
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      var when = new Date().toISOString().replace(/\.\d+Z$/, "Z");
+      var tag = Math.random().toString(16).slice(2, 6);
+      var ask = { words: (words || "").trim(), raw: raw || "", title: title || "", issuer: issuer || "" };
+      return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+        method: "POST", headers: headers(sess, { "Prefer": "return=minimal" }),
+        body: JSON.stringify({ course_id: REQ_PREFIX + when + "-" + tag, field: FIELD_REQ,
+          value: JSON.stringify(ask), reviewer_email: sess.email })
+      });
+    }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
+  }
+  /* Turn on or Discard: the request's switch row, replaced by a later choice until the routine acts on it. */
+  function switchRequest(id, value) {
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+        method: "POST", headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
+        body: JSON.stringify({ course_id: id, field: FIELD_SWITCH, value: value, reviewer_email: sess.email })
+      });
+    }).then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); });
   }
   function saveAssignment(raw, title, issuer) {
     return session().then(function (sess) {
@@ -693,6 +811,8 @@
       if (state.sw.rule === r.id) b.className = "exh-w exh-view-on";
       box.appendChild(b);
     });
+    // Sam, 2026-10-31: "a link to a view of all the rules used to suggest or fold exhibit titles".
+    box.appendChild(word("Every rule, with its words", function () { state.view = "rules"; state.note = ""; render(); }, { cls: "exh-w" }));
     return box;
   }
   function sweepCard(c, list) {
@@ -714,7 +834,7 @@
     canon.appendChild(title);
     var iss = el("input", { id: "exh-sw-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
     iss.value = sweepIssuer(c, title.value);
-    var swAse = el("p", { cls: "exh-muted exh-small", text: "Issuer filled from the ASE test in the title. Type another to change it." });
+    var swAse = el("p", { cls: "exh-muted exh-small", text: "Issuer filled: the title is an ASE certification. Type another to change it." });
     function swShowAse() { swAse.hidden = state.sw.issuers[c.id] != null || !aseIssuer(title.value); }
     function swTyped() { state.sw.issuers[c.id] = iss.value; swShowAse(); }
     iss.addEventListener("input", swTyped);
@@ -869,7 +989,7 @@
     var issuerTyped = draft.issuer != null;
     issuer.value = issuerTyped ? draft.issuer : issuerFor(title.value, h.issuer);
     function keepDraft() { var dd = { title: title.value }; if (issuerTyped) dd.issuer = issuer.value; state.drafts[h.raw] = dd; }
-    var aseNote = el("p", { cls: "exh-muted exh-small", text: "Issuer filled from the ASE test in the title. Type another to change it." });
+    var aseNote = el("p", { cls: "exh-muted exh-small", text: "Issuer filled: the title is an ASE certification. Type another to change it." });
     function showAse() { aseNote.hidden = issuerTyped || !aseIssuer(title.value); }
     issuer.addEventListener("input", function () { issuerTyped = true; keepDraft(); showAse(); });
     canon.appendChild(el("label", { cls: "exh-inbox", "for": "exh-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
@@ -979,9 +1099,24 @@
       ta.addEventListener("input", function () { state.teachDraft = ta.value; });
       var out = el("span", { cls: "exh-muted exh-small", "aria-live": "polite" });
       c.appendChild(el("div", { cls: "exh-teach", id: "exh-teach" }, [
-        el("label", { "for": "exh-teach-words", cls: "exh-small", text: "A procedure joins the nightly run when a session adds it. Write it here and copy the message for a session." }),
+        el("label", { "for": "exh-teach-words", cls: "exh-small", text: "Write the rule as you would tell a session. Send to the routine: "
+          + ROUTINE_WHEN.charAt(0).toLowerCase() + ROUTINE_WHEN.slice(1) + ", builds it switched off and returns its dry run under Rules, "
+          + "where you Turn it on or Discard it. Or copy the message for a session you drive." }),
         ta,
-        el("div", { cls: "exh-acts" }, [word("Copy for a session", function () {
+        el("div", { cls: "exh-acts" }, [word(state.rq.busy === "send" ? "Sending…" : "Send to the routine", function () {
+          if (state.rq.busy) return;
+          if (!ta.value.trim()) { out.textContent = "Write the rule first."; return; }
+          state.rq.busy = "send"; out.textContent = "Sending…";
+          sendRequest(ta.value, h.raw, title.value, issuer.value.trim()).then(function () {
+            state.rq.busy = ""; state.teachDraft = ""; state.teach = false;
+            state.note = "Sent to the routine. It waits under Rules until tonight's run builds it.";
+            return loadRules();
+          }).then(render).catch(function (e) {
+            state.rq.busy = "";
+            out.textContent = String(e && e.message) === "signin" ? "Sign in as a reviewer to send it, or copy it for a session."
+              : "It did not send (" + (e && e.message || e) + "). Copy it for a session instead.";
+          });
+        }, state.rq.busy ? { disabled: "disabled" } : null), word("Copy for a session", function () {
           copy(teachText(h, ta.value, title.value, issuer.value.trim()))
             .then(function () { out.textContent = "Copied. Paste it into a session."; })
             .catch(function () { ta.value = teachText(h, ta.value, title.value, issuer.value.trim()); ta.select(); out.textContent = "Select and copy the message in the box."; });
@@ -1583,7 +1718,160 @@
     return el("nav", { cls: "exh-views", "aria-label": "Views" }, [
       v("review", "Review", state.data ? stepCount("") : null),
       v("credentials", "Credentials", state.cs.rows ? state.cs.rows.length : null),
+      v("rules", "Rules", state.rq.rows ? requestsWaitingOnYou() : null),
       el("a", { href: "#exhibit-adoption", text: "The college matrix, in Exhibit Adoption" })]);
+  }
+
+  /* ── Rules: what each rule sent to the routine would do, and the word that turns it on ── */
+  var RQ_WORDS = {
+    "waiting": ROUTINE_WHEN + " builds it switched off and writes its dry run here.",
+    "could-not": "The routine could not build it.",
+    "built": "Built and switched off. Nothing changes until you turn it on.",
+    "turning-on": "Turned on. The routine's next run switches it on, and the night's procedures run saves what it settles under its own cohort, so its saves undo together.",
+    "on": "On. The nightly procedures run applies it; its saves undo together.",
+    "discarding": "Discarded. The routine's next run takes it out.",
+    "discarded": "Discarded."
+  };
+  function dryRunLines(b) {
+    var lines = [];
+    if (!b || !b.queue) return lines;
+    var q = b.queue;
+    lines.push("On the queue of " + fmt(q.waiting) + " waiting " + (q.waiting === 1 ? "title" : "titles") + ", it settles "
+      + fmt(q.settled) + " and holds " + fmt(q.held) + " for you.");
+    if (b.reference) lines.push("In the reference, it reads " + fmt(b.reference.read) + " titles, and " + fmt(b.reference.differ)
+      + (b.reference.differ === 1 ? " reads" : " read") + " differently from their canonical title.");
+    if (b.reasks != null) lines.push("The classifier asks again about " + fmt(b.reasks) + " titles it was unsure of.");
+    return lines;
+  }
+  function requestCard(r) {
+    var ask = r.ask || {};
+    var c = el("article", { cls: "exh-card exh-rq", "aria-label": "Rule sent " + stamp(r.at) });
+    c.appendChild(el("p", { cls: "exh-rq-words", text: ask.words || "(no words)" }));
+    if (ask.raw) c.appendChild(el("p", { cls: "exh-small exh-muted", text: "Example: “" + ask.raw + "” should read “" + (ask.title || "") + "”"
+      + (ask.issuer ? ", issued by " + ask.issuer : "") + "." }));
+    c.appendChild(el("p", { cls: "exh-small exh-muted", text: "Sent " + stamp(r.at) + (r.by ? " by " + r.by : "") }));
+    var b = r.built || {};
+    var name = (r.proc && r.proc.name) || b.name;
+    if (name) c.appendChild(el("p", { cls: "exh-small" }, [el("b", { text: "The procedure: " }), name
+      + (b.procedure || (r.proc && r.proc.id) ? " (" + (b.procedure || r.proc.id) + ")" : "")]));
+    var st = el("p", { cls: "exh-rq-state" }, [el("b", { text: { "waiting": "Waiting", "could-not": "Could not build",
+      "built": "Ready for you", "turning-on": "Turning on", "on": "On", "discarding": "Discarding", "discarded": "Discarded" }[r.state] + ". " }),
+      RQ_WORDS[r.state] + (r.state === "could-not" && b.could_not ? " " + b.could_not : "")]);
+    c.appendChild(st);
+    var lines = dryRunLines(b);
+    if (lines.length && r.state !== "discarded") {
+      var dry = el("div", { cls: "exh-rq-dry" }, [el("p", { cls: "exh-small exh-muted", text: "Its dry run" + (b.at ? ", " + stamp(b.at) : "") + ":" })]);
+      lines.forEach(function (t) { dry.appendChild(el("p", { text: t })); });
+      var ex = (b.queue && b.queue.examples || []).map(function (e) { return e[0] + " → " + e[1]; })
+        .concat((b.reference && b.reference.examples || []).map(function (e) { return e[0] + ": " + e[1] + " → " + e[2]; })).slice(0, 8);
+      if (ex.length) {
+        var ul = el("ul", { cls: "exh-rq-ex", "aria-label": "Examples from the dry run" });
+        ex.forEach(function (t) { ul.appendChild(el("li", { text: t })); });
+        dry.appendChild(ul);
+      }
+      c.appendChild(dry);
+    }
+    if (b.pr) c.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: PR_BASE + encodeURIComponent(b.pr), target: "_blank", rel: "noopener", text: "The pull request that built it" })]));
+    if (r.sw && r.swBy && (r.state === "turning-on" || r.state === "discarding" || r.state === "discarded"))
+      c.appendChild(el("p", { cls: "exh-small exh-muted", text: (r.sw === "on" ? "Turned on " : "Discarded ") + stamp(r.swAt) + " by " + r.swBy }));
+    var acts = [];
+    function act(label, value) {
+      var busy = state.rq.busy === r.id;
+      return word(busy ? "Saving…" : label, function () {
+        if (state.rq.busy) return;
+        state.rq.busy = r.id; state.rq.note = ""; render();
+        switchRequest(r.id, value).then(function () {
+          state.rq.busy = "";
+          state.rq.note = value === "on" ? "Turned on. The routine switches it on at its next run." : "Discarded. The routine takes it out at its next run.";
+          return loadRules();
+        }).then(render).catch(function (e) {
+          state.rq.busy = "";
+          state.rq.note = String(e && e.message) === "signin" ? "Sign in as a reviewer to turn a rule on or discard it." : "It did not save (" + (e && e.message || e) + ").";
+          render();
+        });
+      }, state.rq.busy ? { disabled: "disabled" } : null);
+    }
+    if (r.state === "built") acts.push(act("Turn on", "on"), act("Discard", "discard"));
+    else if (r.state === "turning-on") acts.push(act("Discard instead", "discard"));
+    else if (r.state === "discarding") acts.push(act("Turn on instead", "on"));
+    if (acts.length) c.appendChild(el("div", { cls: "exh-acts" }, acts));
+    return c;
+  }
+  function procedureCard(p, tally) {
+    var src = p.source || {};
+    var c = el("article", { cls: "exh-card exh-rq", "aria-label": p.name });
+    c.appendChild(el("h4", { cls: "exh-q", text: p.name }));
+    c.appendChild(el("p", { cls: "exh-small exh-muted", text: (p.kind === "rule" ? "A rule: it settles a title by itself" : "Guidance the classifier reads")
+      + (p.on ? "" : ". Switched off") + (p.request ? ". Sent from this tab" : "") }));
+    c.appendChild(el("p", { cls: "exh-rq-words", text: p.rule || "" }));
+    var who = [src.who, src.date].filter(Boolean).join(", ");
+    if (who || src.words) c.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: "Set by " + (who || "a person") + (src.words ? ": " : "") }),
+      src.words ? "“" + src.words + "”" : ""]));
+    (p.amended || []).forEach(function (m) {
+      c.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: "Amended by " + [m.who, m.date].filter(Boolean).join(", ") + (m.words ? ": " : "") }),
+        m.words ? "“" + m.words + "”" : ""]));
+    });
+    if (tally) c.appendChild(el("p", { cls: "exh-small exh-muted", text: "On the last run it settled " + fmt(tally.settled) + " and held " + fmt(tally.held) + " for a person." }));
+    return c;
+  }
+  function renderRules(wrap) {
+    wrap.appendChild(viewsNav());
+    wrap.appendChild(el("p", { cls: "exh-muted", text: "Every rule that suggests or folds an exhibit title. The procedures run each night, "
+      + "in this order, and propose a title for each new exhibit; Another look's rules read the titles already in the reference." }));
+    wrap.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: state.rq.note || "" }));
+
+    var store = state.rq.store, report = state.rq.report || {};
+    var tallies = {};
+    (report.procedures || []).forEach(function (t) { tallies[t.id] = t; });
+    var g1 = el("section", { cls: "exh-group", "aria-labelledby": "exh-rules-procs" }, [el("h3", { cls: "exh-q", id: "exh-rules-procs",
+      text: "The procedures: new exhibits" + (store ? " (" + fmt(store.length) + ")" : "") })]);
+    if (report._generated_at) g1.appendChild(el("p", { cls: "exh-small exh-muted", text: "Last run " + stamp(report._generated_at) + "." }));
+    if (store == null) g1.appendChild(el("p", { cls: "exh-empty", text: "The procedures could not be read." }));
+    else {
+      var pl = el("div", { cls: "exh-rq-list" });
+      store.forEach(function (p) { pl.appendChild(procedureCard(p, tallies[p.id])); });
+      if (tallies.classifier) pl.appendChild(procedureCard({ name: "The classifier decides the rest", kind: "guidance", on: true,
+        rule: "Every title no rule settles goes to the classifier, which reads the exhibit-canonicalization skill and every procedure above.",
+        source: { who: "Sam", date: "2026-10-18", words: "have you classify and complete common exhibit titles" } }, tallies.classifier));
+      g1.appendChild(pl);
+    }
+    wrap.appendChild(g1);
+
+    var sw = state.sw.data;
+    var g2 = el("section", { cls: "exh-group", "aria-labelledby": "exh-rules-sweep" }, [el("h3", { cls: "exh-q", id: "exh-rules-sweep",
+      text: "Another look: titles already in the reference" + (sw && sw.rules ? " (" + fmt(sw.rules.length) + ")" : "") })]);
+    if (!sw || !sw.rules) g2.appendChild(el("p", { cls: "exh-empty", text: "Another look's rules could not be read." }));
+    else {
+      var sl = el("div", { cls: "exh-rq-list" });
+      sw.rules.forEach(function (r) {
+        var n = (sw.cards || []).filter(function (c) { return c.rules[0] === r.id; }).length;
+        var c = el("article", { cls: "exh-card exh-rq", "aria-label": r.label }, [el("h4", { cls: "exh-q", text: r.label }),
+          el("p", { cls: "exh-rq-words", text: r.tip || "" })]);
+        if (r.words) c.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: "Sam, 2026-10-31: " }), "“" + r.words + "”"]));
+        c.appendChild(el("p", { cls: "exh-small" }, [el("span", { cls: "exh-muted", text: fmt(n) + " card" + (n === 1 ? "" : "s") + " tonight. " }),
+          n ? word("Open them", function () { state.view = "review"; state.filter = SWEEP; state.sw.rule = r.id; state.sw.cur = 0; render(); }, { cls: "exh-w exh-small" }) : null]));
+        sl.appendChild(c);
+      });
+      g2.appendChild(sl);
+    }
+    wrap.appendChild(g2);
+
+    var g3 = el("section", { cls: "exh-group", "aria-labelledby": "exh-rules-sent" }, [el("h3", { cls: "exh-q", id: "exh-rules-sent", text: "Rules sent to the routine" }),
+      el("p", { cls: "exh-small exh-muted", text: ROUTINE_WHEN + " builds each one switched off and writes back what it would do. Turn on lets the nightly procedures run apply it." })]);
+    if (state.rq.rows == null) g3.appendChild(el("p", { cls: "exh-empty", text: state.rq.error ? "The rules sent could not be read (" + state.rq.error + ")." : "Reading the rules sent…" }));
+    else if (!state.rq.rows.length) g3.appendChild(el("p", { cls: "exh-empty", text: "None sent yet. Teach a rule, on any card in Review, sends one." }));
+    else {
+      var list = el("div", { cls: "exh-rq-list" });
+      state.rq.rows.forEach(function (r) { list.appendChild(requestCard(r)); });
+      g3.appendChild(list);
+    }
+    wrap.appendChild(g3);
+    if (state.studentsWord === "signin" && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
+      var mount = el("div", { cls: "exh-signin" });
+      wrap.appendChild(mount);
+      window.CPL_REVIEWER_SIGNIN.mountInto(mount, { title: "Sign in to decide",
+        blurb: "A reviewer's sign-in turns a rule sent to the routine on or discards it.", returnTab: "exhibits" });
+    }
   }
 
   function render() {
@@ -1599,6 +1887,10 @@
     if (state.view === "credentials") {
       if (state.cs.generated) head.appendChild(el("span", { cls: "exh-muted exh-small", text: "Reference built " + stamp(state.cs.generated) }));
       renderCredentials(wrap);
+      return;
+    }
+    if (state.view === "rules") {
+      renderRules(wrap);
       return;
     }
     if (state.error || !state.data) {
@@ -1728,6 +2020,12 @@
     ".exh-opts[hidden] { display:none; }",
     "button.exh-opt { all:unset; cursor:pointer; min-height:24px; font-size:.92rem; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }",
     "button.exh-opt:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-rq-list { display:grid; gap:12px; min-width:0; }",
+    ".exh-rq { gap:8px; }",
+    ".exh-rq p { margin:0; }",
+    ".exh-rq-words { color:var(--text-strong); font-size:1.02rem; white-space:pre-wrap; overflow-wrap:anywhere; max-width:var(--cpl-measure,none); }",
+    ".exh-rq-dry { display:grid; gap:4px; padding-top:6px; border-top:1px solid var(--border); }",
+    ".exh-rq-ex { margin:2px 0 0; padding-left:1.2em; font-size:.88rem; color:var(--text-body); overflow-wrap:anywhere; }",
     ".exh-bulk { display:grid; gap:6px; padding-top:8px; border-top:1px solid var(--border); }",
     ".exh-bulk p { margin:0; color:var(--text-body); max-width:var(--cpl-measure,none); }",
     ".exh-teach { display:grid; gap:6px; border-top:1px solid var(--border); padding-top:10px; }",
@@ -1793,8 +2091,10 @@
   }
   /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
      they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with
-     the reference, credentials = the Credentials view. The address is not a remembered filter. */
-  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["credentials", ""] };
+     the reference, credentials = the Credentials view, rules = the rules sent to the routine. The address is
+     not a remembered filter. */
+  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["credentials", ""],
+    rules: ["rules", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
@@ -1812,7 +2112,7 @@
       if (e && e.detail && e.detail.tab === "exhibits") newVisit();
     });
     window.addEventListener("cpl-session-changed", function () { loadStudents().then(render); });
-    return Promise.all([load(), loadSweep()]).then(function () { render(); return loadStudents(); }).then(render);
+    return Promise.all([load(), loadSweep(), loadRules()]).then(function () { render(); return loadStudents(); }).then(render);
   }
 
   window.CPL_EXHIBITS = {
@@ -1822,6 +2122,8 @@
     _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent, _credRows: credRows,
     _credCould: credCould, _routeFromHash: routeFromHash, loadSweep: loadSweep, _sweepShown: sweepShown, _sweepRows: sweepRows,
     _aseIssuer: aseIssuer, _issuerFor: issuerFor, _nameOptions: nameOptions, _nameMatches: nameMatches, _bulkItems: bulkItems,
-    _sweepIssuer: sweepIssuer
+    _sweepIssuer: sweepIssuer,
+    loadRules: loadRules, _requestRows: requestRows, _requestState: requestState, _sendRequest: sendRequest,
+    _switchRequest: switchRequest, _dryRunLines: dryRunLines
   };
 })();

@@ -165,29 +165,29 @@ exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2
    2026-07-07 ruling that pre-seeds stay "ready to save, not yet saved".
 3. **retire:** the Initiated sign-off and the Curate panel leave the tab.
 
-**RULED (Sam, Open Asks Sheet 96 card 1, 17:23Z 2026-10-18, his own call; `cpl_memory`
-`sam-sheet-96-rulings-2026-10-18`): keep.** A rule procedure's settlement saves at the rule's word, the course-identity
-rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
-`python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
+Sheet 96 card 1 (*keep*: a rule settles at its own word, course-identity's 0.8 included) is in the lessons doc.
 
-**Sam's rulings, Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, completed 12:09Z 2026-10-31,
-both his own call; `cpl_memory` `sam-sheet-148-rulings-2026-10-31`): card 1 *note*, the page is the **Credential Catalog**;
-card 2 *link-retire*, link it from the Library and the public header and retire the CER and EACR tabs. Built by
-SkyTwinberry the same hour: the name, `noindex` dropped, a *Credential Catalog* line in `header.html` and on every page
-carrying the header, the Library's own Links. The two tabs were already off the side menu: Sam hid both `cobi_nav` rows
-himself at 23:51Z 2026-10-30, and they still open at `#credential-reference` and `#exhibit-adoption`; their files stay.
+**Sam's rulings, Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, 12:09Z 2026-10-31, his own
+calls; `cpl_memory` `sam-sheet-148-rulings-2026-10-31`): the public page is the **Credential Catalog**, linked from the
+Library and the public header (SkyTwinberry); the CER and EACR tabs are retired. Sam had hidden both `cobi_nav` rows at
+23:51Z 2026-10-30; they still open at `#credential-reference` and `#exhibit-adoption`, and their files stay.
 
-**Sam's rulings, Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, completed 14:41Z 2026-10-31,
-both his own call; cpl_memory `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
+**Sam's rulings, Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, 14:41Z 2026-10-31, his own
+calls; `cpl_memory` `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
 
-**The AP fold — applied (SkyElderberry, 2026-10-31; Sheet 149 card 1).** 14 credential merges and 7 AB-subscore
-moves in the reference (77 local titles to College Board's names; `kb/credential_merges.json`, receipts in
-`kb/credential_merges_out/2026-10-31/`), and 42 saved assignments moved to match under `cer-ap-fold-s536@bot` (Sam ran
-the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
+**Rules (SkyBilberry, 2026-10-31; Sam: "a link to a view of all the rules used to suggest or fold exhibit titles", and
+Sheet 149 card 2).** The tab's **Rules** view (`#exhibits/rules`, also from Another look's rule filter) lists every
+procedure with its words, who set it and the last run's tallies, Another look's rules, and the rules sent to the routine.
+Teach a rule's *Send to the routine* writes `_CER_PROCEDURE_REQUEST::<when>-<tag>` / `cer_procedure_request`; the CPL
+queue routine (step 7 of `scheduled_sessions.md`) builds the procedure off (`request` names the row; an off rule's
+lanes reach nobody), writes `cer_procedure_built` from `kb/_cer_procedures.py --try`, and applies *Turn on* or *Discard*
+(`cer_procedure_switch`) at its next firing. DR-07 maps the three fields; the rows carry no student detail.
+Guards: `tests/exhibits_rules.test.js`, `tests/cer_procedures_test.py`.
+
+The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.
 
 **NEXT:** (0) Sam's run through *Another look*; read his saves after it (`unified_title_supersedes` rows) and the next
-fold's `revise` and `credential_moves`; move the panel rows the receipt names. (1) The routine (Sheet 149 card 2): the tab writes a rule as a request row, a scheduled session builds it,
-runs the dry run and writes it back for *Turn on* or *Discard*; Governance (DR-07) and the privacy ADRs first, as a
-new write surface. Sessions now run their own data writes (Sam, 2026-10-31; #2618). (2) IB on the AP pattern, then
+fold's `revise` and `credential_moves`; move the panel rows the receipt names. (1) Sam's naming calls (2026-10-31): *narrow* the ASE issuer fill to the certification titles, and *content first*
+for the sweep's ASE proposals (course words, then the test in parentheses). (2) IB on the AP pattern, then
 CLEP's official names. (3) The Catalog's *Courses that may align*, once a source names courses. (4) Training sites for
 a held title new to the reference, and the *Held titles by group* table, only if Sam asks.

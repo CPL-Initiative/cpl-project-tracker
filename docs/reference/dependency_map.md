@@ -549,8 +549,8 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/catalog_framing.json` | tabs: `program-requirements` | — |
 | `kb/ccr_cpl_funnel.json` | scripts: `kb/_build_ccr_cpl.py` | — |
 | `kb/cer_classified.json` | scripts: `kb/_cer_procedures.py` | scripts: `kb/_cer_procedures.py` · committed by: `cer-procedures.yml` |
-| `kb/cer_procedures.json` | scripts: `kb/_build_commons_status.py`, `kb/_cer_procedures.py` | — |
-| `kb/cer_procedures_out/latest.json` | tabs: `credential-reference` · scripts: `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py` | committed by: `cer-procedures.yml` |
+| `kb/cer_procedures.json` | tabs: `exhibits` · scripts: `kb/_build_commons_status.py`, `kb/_cer_procedures.py` | — |
+| `kb/cer_procedures_out/latest.json` | tabs: `credential-reference`, `exhibits` · scripts: `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py` | committed by: `cer-procedures.yml` |
 | `kb/cer_procedures_out/saved` | none found | committed by: `cer-procedures.yml` |
 | `kb/cer_procedures_out/saved/saved_*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/cid_articulation_joins.json` | scripts: `excel_to_dashboard.py`, `kb/_desc_consolidation_dryrun.py`, `kb/_join_cid_articulations.py`, `kb/_title_consolidation_dryrun.py` | scripts: `kb/_join_cid_articulations.py` |
@@ -1083,7 +1083,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
 | `github.com` | pages: `kb-portal/index.html` |
 | `github.com/CPL-Initiative/cpl-knowledge-base` | pages: `kb-portal/index.html` |
-| `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `canonical-subj4`, `commons`, `cr-reference`, `credential-reference`, `governance`, `program-requirements`, `unified-courses` · scripts: `prototype/ironworker_video/build.py`, `prototype/noncredit_video/build.py` |
+| `github.com/CPL-Initiative/cpl-project-tracker` | tabs: `canonical-subj4`, `commons`, `cr-reference`, `credential-reference`, `exhibits`, `governance`, `program-requirements`, `unified-courses` · scripts: `prototype/ironworker_video/build.py`, `prototype/noncredit_video/build.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker)` | scripts: `kb/_csr_quarterly_probe.py` |
 | `github.com/CPL-Initiative/cpl-project-tracker;` | scripts: `tools/source_first_light_art.mjs` |
 | `github.com/cpl-initiative/cpl-project-tracker` | tabs: `unified-courses` |
