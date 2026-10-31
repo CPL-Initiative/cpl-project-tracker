@@ -60,3 +60,17 @@ drop policy if exists cfn_delete on public.cpl_funding_notes;
 create policy cfn_delete on public.cpl_funding_notes for delete
   to anon, authenticated
   using (is_allowed_reviewer());
+
+-- Declined participation (2026-10-31): declined_at and declined_by ride this row, the note may be
+-- null while a decline stands, and a row holds one or both. Applied as
+-- kb/migrations/2026-10-31_cpl_funding_notes_declined.sql (rollback beside it).
+alter table public.cpl_funding_notes add column if not exists declined_at timestamptz;
+alter table public.cpl_funding_notes add column if not exists declined_by text
+  check (declined_by is null or char_length(declined_by) <= 160);
+alter table public.cpl_funding_notes alter column note drop not null;
+alter table public.cpl_funding_notes drop constraint if exists cpl_funding_notes_note_check;
+alter table public.cpl_funding_notes add constraint cpl_funding_notes_note_check
+  check (note is null or char_length(note) between 1 and 4000);
+alter table public.cpl_funding_notes drop constraint if exists cpl_funding_notes_holds_something;
+alter table public.cpl_funding_notes add constraint cpl_funding_notes_holds_something
+  check (note is not null or declined_at is not null);

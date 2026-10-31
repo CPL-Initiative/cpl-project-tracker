@@ -121,7 +121,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_college_goal2` | tabs: `college-briefing`, `cpl-pathways` · scripts: `chatbox/smoke_test.sh`, `kb/_publish_college_briefing.py` · `edgefn:cpl-chat` | — |
 | `map_college_goal2_pub` | tabs: `college-briefing`, `cpl-pathways` · scripts: `kb/_publish_college_briefing.py` | — |
 | `map_college_nudges` | tabs: `governance`, `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |
-| `map_college_users` | tabs: `map-queue`, `map-users` | — |
+| `map_college_users` | tabs: `map-queue`, `map-users` · modules: `cpl_funding_nudge.js` | — |
 | `map_colleges` | tabs: `college-briefing`, `college-identity`, `cpl-pathways`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users`, `program-requirements` · scripts: `chatbox/smoke_test.sh`, `kb/_identity_daily_check.py` · `edgefn:cpl-chat` | — |
 | `map_contact_gaps` | tabs: `governance`, `map-queue`, `map-users` | — |
 | `map_contact_proposals` | tabs: `map-queue`, `map-users` | tabs: `map-queue`, `map-users` |

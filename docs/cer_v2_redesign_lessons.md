@@ -704,3 +704,23 @@ moves in the reference (77 local titles to College Board's names; `kb/credential
 `kb/credential_merges_out/2026-10-31/`), and 42 saved assignments moved to match under `cer-ap-fold-s536@bot` (Sam ran
 the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
 
+
+## SkyHuckleberry (2026-10-31): the first panel-row move, and ASE's two calls
+
+- **Sam's run through Another look reached the fold the same evening.** He saved 17 `unified_title_supersedes`
+  between 18:52Z and 18:55Z; the 19:32Z fold applied them (15 revise, 8 credential moves, 2 retires). Two moves left
+  Curate-panel rows under the old names (*Automotive Electrical/Electronics I* and *II*, four rows), moved by a guarded
+  UPDATE of `course_id` alone with before-values and rollback SQL in
+  `kb/receipts/credential_panel_move_2026-10-31_skyhuckleberry.json`. The guard refused the move if the new names
+  already held a row.
+- **A moved row can carry a call that a later ruling contradicts.** One of the moved rows was Sam's ASE issuer
+  override (2026-10-27); his 2026-10-31 ruling narrowed ASE to titles that open with ASE. The session moved the row
+  unchanged and asked, rather than drop a human row on inference (Rule 8). Sam: *"Drop the ASE override; go with the
+  long form."* The two override rows were deleted (same receipt), and `kb/credentials.json` dropped the ASE record and
+  named the colleges.
+- **"The long form" was already the sweep's form.** `rule_ase` in `kb/_sweep_exhibit_titles.py` proposes
+  *Automotive Technology (ASE A5 Brakes)* whenever the title's own words add nothing to the test's name and carry no
+  level digit, so a base like *Engine Performance* becomes *Automotive Technology*, while *Automotive
+  Electrical/Electronics 1* keeps its base. The ruling needed no code; it is recorded in the lane. It applies to local
+  exhibits alone (the colleges as issuer: college courses, high school and Cx), which Sam confirmed: *"this is just for
+  the local hs and Cx exhibits, right?"*

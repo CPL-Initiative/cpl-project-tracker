@@ -738,3 +738,23 @@ a Follow-up button to do that. Can you make the default From email address for e
   rewrite for the college. It writes no record, so it needs no Governance mapping; a follow-up log would.
 - **The funding jsdom tests take minutes:** `cpl_funding_nc_attestation.test.js` ran 4 m 28 s unchanged here, so a long
   local run is the suite, not a loop.
+
+## SkyHuckleberry (2026-10-31): Nudge
+
+- **The addresses live in a module of their own.** `cpl_funding.js` renders the public funding page too, and its PII
+  guard (`tests/cpl_funding_equity.test.js`) is a static grep: the file may never name `coordinator_email`. Nudge needs
+  every directory address, so `cpl_funding_nudge.js` holds the reads (`map_college_contacts`, and MAP's active
+  Ambassadors and Initiators from `map_college_users`, both reviewer-gated by RLS) and `cpl_funding.js` loads it only on
+  a signed-in reviewer's press. The guard stays a grep, and `tests/cpl_funding_nudge.test.js` 2f pins that no address
+  column reaches `cpl_funding.js`.
+- **Sam's "Ambassador" step is MAP's primary CPL contact.** Colleges average 5.8 active Ambassadors (up to 16), so the
+  cascade reads his step as the one person MAP routes student requests to; the *Ambassadors* role, added in v2, is
+  where every active one goes.
+- **The list is the funding roster's, never the directory's.** `map_college_contacts` names Cal State LA and Launch
+  Apprenticeship, which are not eligible (Sam, ~20:50Z).
+- **Declined participation rides the notes row.** Its audience and writer are the CO Monitor's note's, so two columns
+  on `cpl_funding_notes` (migration `kb/migrations/2026-10-31_cpl_funding_notes_declined.sql`) carried it without a new
+  write surface; the note became nullable, with a check that a row holds a note or a decline. An emptied note on a
+  declined row PATCHes the note to null instead of deleting the row.
+- **MAP's user list needs paging.** About 1,470 active Ambassadors and Initiators against PostgREST's thousand-row
+  answer, so the module reads with `Range` a page at a time.
