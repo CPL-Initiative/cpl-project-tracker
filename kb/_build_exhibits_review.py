@@ -288,6 +288,17 @@ def under_index(unified_titles):
     return idx
 
 
+def name_list(creds, field):
+    """Every distinct name the reference's credential records give in `field`, sorted."""
+    out = set()
+    for recs in creds.values():
+        for r in recs if isinstance(recs, list) else []:
+            v = " ".join(str((r or {}).get(field) or "").split()) if isinstance(r, dict) else ""
+            if v:
+                out.add(v)
+    return sorted(out, key=str.lower)
+
+
 def build(root):
     report = load_json(root, "kb/cer_procedures_out/latest.json", {}) or {}
     sugg = load_json(root, "kb/unclassified_suggestions.json", {}) or {}
@@ -430,6 +441,12 @@ def build(root):
         },
         "steps": counts,
         "colleges": names,
+        # The names an issuer or training-site box offers as Sam types (2026-10-31: "it should search
+        # for text matches for existing items and present option to click with each text entry").
+        "issuers": name_list(creds, "issuing_agency"),
+        "sites": sorted(set(name_list(creds, "training_agency"))
+                        | {(s.get("site") or "").strip() for ss in site_lists.values() for s in ss
+                           if isinstance(s, dict)} - {""}, key=str.lower),
         "held": items,
     }, course_file, adoption_file(statewide, prescriptive)
 

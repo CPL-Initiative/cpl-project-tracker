@@ -656,3 +656,21 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
 - **Code-only titles get the college's own course (#2219, landed in #2220):** the run looks a trailing code up in COCI at the
   college that entered the title and hands the title on as a hint (94 titles); a record carries its hints'
   fingerprint, so an unsure title is asked again when its hints change. The workflow installs `openpyxl`.
+
+## 2026-10-31 — The conflict card saves, ASE names its issuer, the boxes offer names (SkyBilberry)
+
+Sam, 2026-10-31 ~19:00Z, at the last card of his pass: *"working my way through the new list and the last one is Auto and
+it seems to have a conflict and won't save. advise. Also, anything with an ASE cert in the title should auto-populate the
+issuer and allow me to accept it. When I enter text in the issuer or trainer box, it should search for text matches for
+existing items and present option to click with each text entry"*.
+
+- **The block was the tab's own guard,** written before the fold had a revise lane: a conflict card refused any title
+  but the reviewed one and said to tell a session. Another look already writes the safe form of that change (the title
+  it replaces, applied only while that title stands), so the conflict card now writes it too.
+- **The card was stale as well.** Its saved title (2026-06-02) had already left `kb_curation`, and the 10-31 fold held
+  nothing; the Review file reads the procedures run's report, which is rebuilt at 07:47 UTC, so a cleared card lingers
+  until then.
+- **An upsert keeps a row's first `reviewed_at`** (the column defaults to `now()` on insert only), and the fold re-points
+  a title only for an assignment newer than the reviewed entry. A re-pick now sends its time with the rows.
+- **`var` hoisting bit the first draft:** the card function already declared `typed` for the Local titles block, so the
+  issuer's "typed" flag was an element and always true. The jsdom check caught it.

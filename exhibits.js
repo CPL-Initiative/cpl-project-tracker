@@ -51,6 +51,15 @@
 // re-points a title a person approved only while that title still stands. Keep Current Title saves
 // title_sweep_kept, the proposal declined, which the sweep never shows again.
 //
+// Sam, 2026-10-31, at the last card of his pass, a conflict that would not save: "anything with an ASE cert in
+// the title should auto-populate the issuer and allow me to accept it. When I enter text in the issuer or
+// trainer box, it should search for text matches for existing items and present option to click with each
+// text entry". So a conflict card's Change and Keep save the way Another look does, with
+// unified_title_supersedes naming the reviewed title (the fold re-points it only while that title still
+// stands); a title naming an ASE test fills its issuer box with ASE until he types his own; and the issuer
+// and training-site boxes offer the names already in the reference (kb/exhibits_review.json's issuers and
+// sites, and the credential view's rows once read).
+//
 // Loaded by the tab's boot block (both HTMLs, Rule 4). First Light tokens only, words for every control.
 (function () {
   "use strict";
@@ -79,6 +88,9 @@
   var SWEEP_URL = "kb/exhibits_sweep.json";
   var FIELD_SUPERSEDES = "unified_title_supersedes";
   var FIELD_KEPT = "title_sweep_kept";
+  var ASE_ISSUER = "National Institute for Automotive Service Excellence (ASE)";
+  var ASE_IN_TITLE = /\bASE\b|Automotive Services? Excellence/i;
+  var OPTS_MAX = 8;
   /* What each CER step means, in a sentence or two (the chip's hover; the mock-up's words). */
   var TIPS = {
     "": "Every held title, most students first.",
@@ -100,7 +112,7 @@
     teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
     view: "review",
     // Another look: the sweep's cards, decided this visit by card id.
-    sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, history: [], bulkAsk: false, bulkBusy: false },
+    sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, issuers: {}, history: [], bulkAsk: false, bulkBusy: false },
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null, q: "", sel: null, limit: CRED_PAGE,
           drafts: {}, note: "", showTitles: false, showArt: false, showCould: false, showRecords: false,
           adopt: null, adoptErr: false, open: null, links: null }
@@ -145,6 +157,79 @@
   }
   function mapUrl(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW; }
   function whoBuilt(h) { return h.colleges && h.colleges.length ? h.colleges : h.art; }
+  /* The issuer a title brings with it: an ASE test in the title names ASE, ahead of the proposal's issuer;
+     what a person typed in the box wins over both. */
+  function aseIssuer(title) { return ASE_IN_TITLE.test(title || "") ? ASE_ISSUER : ""; }
+  function issuerFor(title, issuer) { return aseIssuer(title) || issuer || ""; }
+
+  /* ── names to pick from: the issuers and training sites already in the reference ── */
+  function nameOptions(kind) {
+    var seen = {}, out = [];
+    function add(v) {
+      v = String(v == null ? "" : v).replace(/\s+/g, " ").trim();
+      var k = v.toLowerCase();
+      if (v && !seen[k]) { seen[k] = true; out.push(v); }
+    }
+    var d = state.data || {}, ov = state.cs.overlay || {};
+    (d[kind] || []).forEach(add);
+    if (kind === "issuers") {
+      add(ASE_ISSUER);
+      (d.held || []).forEach(function (h) { add(h.issuer); });
+      (state.cs.rows || []).forEach(function (r) { add(r.issuer); (r.issuers || []).forEach(add); });
+      Object.keys(ov).forEach(function (t) { add(ov[t].issuer); });
+    } else {
+      (d.held || []).forEach(function (h) { (h.trainers || []).forEach(function (t) { add(String(t).replace(/ \([^)]*\)$/, "")); }); });
+      (state.cs.rows || []).forEach(function (r) { add(r.trainer); (credCurrent(r).sites || []).forEach(function (x) { add(x.site); }); });
+    }
+    return out;
+  }
+  /* The names holding what was typed: a match at the start of a word first, then the rest, A to Z. */
+  function nameMatches(options, typed, max) {
+    var q = String(typed || "").replace(/\s+/g, " ").trim().toLowerCase();
+    if (q.length < 2) return [];
+    var starts = [], inside = [];
+    options.forEach(function (o) {
+      var l = o.toLowerCase(), i = l.indexOf(q);
+      if (i < 0 || l === q) return;
+      (i === 0 || /[\s(\/-]/.test(l.charAt(i - 1)) ? starts : inside).push(o);
+    });
+    function az(a, b) { return a.toLowerCase() < b.toLowerCase() ? -1 : 1; }
+    return starts.sort(az).concat(inside.sort(az)).slice(0, max || OPTS_MAX);
+  }
+  /* A list of matching names under a box, one word each, redrawn as the box is typed in; a click fills the box. */
+  function suggest(input, kind, onPick) {
+    var id = input.id + "-opts";
+    var list = el("ul", { cls: "exh-opts", id: id, "aria-label": kind === "issuers" ? "Issuers in the reference" : "Training sites in the reference" });
+    list.hidden = true;
+    input.setAttribute("aria-controls", id);
+    function close() { list.hidden = true; }
+    function draw() {
+      while (list.firstChild) list.removeChild(list.firstChild);
+      var hits = nameMatches(nameOptions(kind), input.value);
+      hits.forEach(function (t, k) {
+        var b = el("button", { type: "button", cls: "exh-opt" }, [t]);
+        b.addEventListener("mousedown", function (e) { e.preventDefault(); });
+        b.addEventListener("click", function () { input.value = t; close(); if (onPick) onPick(t); input.focus(); });
+        b.addEventListener("keydown", function (e) {
+          var bs = list.querySelectorAll("button");
+          if (e.key === "ArrowDown" && bs[k + 1]) { e.preventDefault(); bs[k + 1].focus(); }
+          else if (e.key === "ArrowUp") { e.preventDefault(); (bs[k - 1] || input).focus(); }
+          else if (e.key === "Escape") { e.preventDefault(); close(); input.focus(); }
+        });
+        list.appendChild(el("li", null, [b]));
+      });
+      list.hidden = !hits.length;
+    }
+    input.addEventListener("input", draw);
+    input.addEventListener("keydown", function (e) {
+      if (e.key === "ArrowDown" && !list.hidden) { e.preventDefault(); var f = list.querySelector("button"); if (f) f.focus(); }
+      else if (e.key === "Escape") close();
+    });
+    input.addEventListener("blur", function () {
+      setTimeout(function () { if (!list.contains(document.activeElement) && document.activeElement !== input) close(); }, 150);
+    });
+    return list;
+  }
 
   /* ── the queue ── */
   function studentsOf(h) { return state.students ? state.students[h._i] : null; }
@@ -271,6 +356,18 @@
       if (!rs.every(function (r) { return r.ok; })) throw new Error("HTTP " + rs.map(function (r) { return r.status; }).join("/"));
     });
   }
+  /* A re-pick over a person-reviewed title (a conflict card): the assignment, its issuer, and the title it
+     replaces, as Another look writes them. The fold's revise lane applies it only while that title still
+     stands; the time goes with the rows, since an upsert keeps a row's first reviewed_at. */
+  function saveRevision(raw, title, issuer, replaces) {
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      var at = new Date().toISOString(), id = UNCLASS_PREFIX + raw;
+      return postRows(sess, [FIELD_TITLE, FIELD_ISSUER, FIELD_SUPERSEDES].map(function (f, k) {
+        return { course_id: id, field: f, value: [title, issuer, replaces][k], reviewer_email: sess.email, reviewed_at: at };
+      }));
+    });
+  }
   function clearAssignment(raw) {
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
@@ -309,23 +406,31 @@
   /* Another look's rows for one card. Change: each local title's assignment and issuer, and the title it
      replaces, so the fold applies it only while that title stands. Keep: the proposal declined; after a
      Change this visit, the assignment goes back to the current title too. */
-  function sweepRows(email, c, kind, title) {
-    var rows = [];
+  /* Each row carries the time: an upsert keeps a row's first reviewed_at, and the fold re-points a title
+     only for an assignment newer than the reviewed entry. */
+  function sweepRows(email, c, kind, title, issuer, at) {
+    var rows = [], when = at || new Date().toISOString();
+    var iss = issuer != null ? issuer : sweepIssuer(c, title);
     c.locals.forEach(function (l) {
       var id = UNCLASS_PREFIX + l.raw;
       if (kind === "change") {
-        rows.push({ course_id: id, field: FIELD_TITLE, value: title, reviewer_email: email });
-        rows.push({ course_id: id, field: FIELD_ISSUER, value: c.issuer || "", reviewer_email: email });
-        rows.push({ course_id: id, field: FIELD_SUPERSEDES, value: c.current, reviewer_email: email });
+        rows.push({ course_id: id, field: FIELD_TITLE, value: title, reviewer_email: email, reviewed_at: when });
+        rows.push({ course_id: id, field: FIELD_ISSUER, value: iss, reviewer_email: email, reviewed_at: when });
+        rows.push({ course_id: id, field: FIELD_SUPERSEDES, value: c.current, reviewer_email: email, reviewed_at: when });
       } else {
-        rows.push({ course_id: id, field: FIELD_KEPT, value: c.proposed, reviewer_email: email });
+        rows.push({ course_id: id, field: FIELD_KEPT, value: c.proposed, reviewer_email: email, reviewed_at: when });
         if (state.sw.saved[c.id] === "change") {
-          rows.push({ course_id: id, field: FIELD_TITLE, value: c.current, reviewer_email: email });
-          rows.push({ course_id: id, field: FIELD_SUPERSEDES, value: c.current, reviewer_email: email });
+          rows.push({ course_id: id, field: FIELD_TITLE, value: c.current, reviewer_email: email, reviewed_at: when });
+          rows.push({ course_id: id, field: FIELD_SUPERSEDES, value: c.current, reviewer_email: email, reviewed_at: when });
         }
       }
     });
     return rows;
+  }
+  /* A card's issuer: what was typed in its box, else the ASE test the title names, else the card's own. */
+  function sweepIssuer(c, title) {
+    var typed = state.sw.issuers[c.id];
+    return typed != null ? String(typed).trim() : issuerFor(title, c.issuer);
   }
   function saveSweep(cards, kind, titles) {
     return session().then(function (sess) {
@@ -358,9 +463,10 @@
   }
   function keepCurrent(h, box, issuer) {
     if (h.step === CONFLICT) {
-      state.note = "The reference's title was approved by a person, so keeping the saved title means re-keying "
-        + "that entry. Tell a session; it is a reviewed change.";
-      render();
+      var kept = h.saved || h.raw.trim();
+      saveRevision(h.raw, kept, issuer, h.title)
+        .then(function () { decided(h, "Saved “" + kept + "” over the reviewed title “" + h.title + "”. The nightly run moves it while that title still stands.", kept); })
+        .catch(failed);
       return;
     }
     saveAssignment(h.raw, h.raw.trim(), issuer)
@@ -372,8 +478,9 @@
     if (!title) { state.note = "Write a canonical title first."; render(); return; }
     if (h.step === CONFLICT) {
       if (title !== h.title) {
-        state.note = "A different title here would re-key a person-reviewed entry. Tell a session; it is a reviewed change.";
-        render();
+        saveRevision(h.raw, title, issuer, h.title)
+          .then(function () { decided(h, "Saved “" + title + "” over the reviewed title “" + h.title + "”. The nightly run moves it while that title still stands.", title); })
+          .catch(failed);
         return;
       }
       clearAssignment(h.raw)
@@ -422,6 +529,7 @@
     state.sw.saved[c.id] = kind;
     state.sw.done[c.id] = true;
     delete state.sw.drafts[c.id];
+    delete state.sw.issuers[c.id];
     state.sw.bulkAsk = false;
     state.note = note;
     render();
@@ -487,8 +595,8 @@
   function bulkItems(list) {
     return list.filter(function (h) { return h.step !== CONFLICT && !h.saved; }).map(function (h) {
       var d = state.drafts[h.raw] || {};
-      return { h: h, raw: h.raw, title: String(d.title != null ? d.title : (h.title || "")).trim(),
-        issuer: String(d.issuer != null ? d.issuer : (h.issuer || "")).trim() };
+      var title = String(d.title != null ? d.title : (h.title || "")).trim();
+      return { h: h, raw: h.raw, title: title, issuer: String(d.issuer != null ? d.issuer : issuerFor(title, h.issuer)).trim() };
     }).filter(function (it) { return !!it.title; });
   }
   function acceptAll(list) {
@@ -603,8 +711,22 @@
     canon.appendChild(el("label", { cls: "exh-muted exh-small", "for": "exh-sw-title", text: "Proposed title (edit it here)" }));
     var title = el("input", { cls: "exh-edit", id: "exh-sw-title", type: "text", autocomplete: "off" });
     title.value = state.sw.drafts[c.id] != null ? state.sw.drafts[c.id] : c.proposed;
-    title.addEventListener("input", function () { state.sw.drafts[c.id] = title.value; });
     canon.appendChild(title);
+    var iss = el("input", { id: "exh-sw-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
+    iss.value = sweepIssuer(c, title.value);
+    var swAse = el("p", { cls: "exh-muted exh-small", text: "Issuer filled from the ASE test in the title. Type another to change it." });
+    function swShowAse() { swAse.hidden = state.sw.issuers[c.id] != null || !aseIssuer(title.value); }
+    function swTyped() { state.sw.issuers[c.id] = iss.value; swShowAse(); }
+    iss.addEventListener("input", swTyped);
+    title.addEventListener("input", function () {
+      state.sw.drafts[c.id] = title.value;
+      if (state.sw.issuers[c.id] == null) iss.value = sweepIssuer(c, title.value);
+      swShowAse();
+    });
+    canon.appendChild(el("label", { cls: "exh-inbox", "for": "exh-sw-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), iss]));
+    canon.appendChild(suggest(iss, "issuers", swTyped));
+    swShowAse();
+    canon.appendChild(swAse);
     canon.appendChild(el("p", { cls: "exh-muted exh-small", text: c.proposed_exists
       ? "Joins the credential already in the reference under this title (" + fmt(c.proposed_locals) + " local title" + (c.proposed_locals === 1 ? "" : "s") + ")."
         + (c.proposed_issuer && c.issuer && c.proposed_issuer !== c.issuer ? " Its issuer is " + c.proposed_issuer + "; this one's is " + c.issuer + "." : "")
@@ -743,10 +865,17 @@
     title.value = draft.title != null ? draft.title : (h.title || "");
     canon.appendChild(title);
     var issuer = el("input", { id: "exh-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
-    issuer.value = draft.issuer != null ? draft.issuer : (h.issuer || "");
-    function keepDraft() { state.drafts[h.raw] = { title: title.value, issuer: issuer.value }; }
-    issuer.addEventListener("input", keepDraft);
+    // The issuer follows the title (an ASE test names ASE) until a person types or picks one.
+    var issuerTyped = draft.issuer != null;
+    issuer.value = issuerTyped ? draft.issuer : issuerFor(title.value, h.issuer);
+    function keepDraft() { var dd = { title: title.value }; if (issuerTyped) dd.issuer = issuer.value; state.drafts[h.raw] = dd; }
+    var aseNote = el("p", { cls: "exh-muted exh-small", text: "Issuer filled from the ASE test in the title. Type another to change it." });
+    function showAse() { aseNote.hidden = issuerTyped || !aseIssuer(title.value); }
+    issuer.addEventListener("input", function () { issuerTyped = true; keepDraft(); showAse(); });
     canon.appendChild(el("label", { cls: "exh-inbox", "for": "exh-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
+    canon.appendChild(suggest(issuer, "issuers", function () { issuerTyped = true; keepDraft(); showAse(); }));
+    showAse();
+    canon.appendChild(aseNote);
     var sites = (h.trainers || []).join("; ");
     // The credential panel sets training sites; a title new to the reference gets them once the nightly run adds it.
     canon.appendChild(el("div", { cls: "exh-inbox exh-read" }, [el("span", { cls: "exh-pre", text: "Training site:" }),
@@ -756,7 +885,10 @@
     var exists = el("p", { cls: "exh-muted exh-small" },
       [h.exists ? "Joins the credential already in the reference under this title." : "A new credential in the reference."]);
     exists.hidden = title.value.trim() !== (h.title || "");
-    title.addEventListener("input", function () { keepDraft(); exists.hidden = title.value.trim() !== (h.title || ""); });
+    title.addEventListener("input", function () {
+      if (!issuerTyped) issuer.value = issuerFor(title.value, h.issuer);
+      keepDraft(); showAse(); exists.hidden = title.value.trim() !== (h.title || "");
+    });
     canon.appendChild(exists);
     (h.alternates || []).forEach(function (alt) {
       canon.appendChild(el("p", { cls: "exh-muted exh-small" }, [
@@ -1264,7 +1396,8 @@
       d.sites.splice(k, 1); render();
       var a = document.getElementById("exh-c-add"); if (a) a.focus();
     }, { "aria-label": "Remove training site " + (k + 1) });
-    return el("div", { cls: "exh-siterow" }, [sel, inp, rm]);
+    return el("div", { cls: "exh-siteitem" }, [el("div", { cls: "exh-siterow" }, [sel, inp, rm]),
+      suggest(inp, "sites", function (t) { x.site = t; })]);
   }
   function credPanel(r) {
     var cs = state.cs, d = credDraft(r);
@@ -1278,6 +1411,7 @@
     issuer.value = d.issuer;
     issuer.addEventListener("input", function () { d.issuer = issuer.value; });
     called.appendChild(el("label", { cls: "exh-inbox", "for": "exh-c-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
+    called.appendChild(suggest(issuer, "issuers", function (t) { d.issuer = t; }));
     var also = (r.issuers || []).filter(function (x) { return x !== d.issuer.trim() && x !== (r.issuer || ""); });
     if (also.length) called.appendChild(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
       + ". The Common Exhibit Reference edits a credential's other issuers." }));
@@ -1590,6 +1724,10 @@
     ".exh-why { margin:0; color:var(--text-muted); border-left:2px solid var(--border-strong); padding-left:10px; overflow-wrap:anywhere; }",
     ".exh-card > p { margin:0; }",
     ".exh-acts { display:flex; flex-wrap:wrap; gap:8px 22px; align-items:center; }",
+    ".exh-opts { list-style:none; margin:-2px 0 4px; padding:6px 12px; background:var(--surface); border:1px solid var(--border); border-radius:6px; max-height:240px; overflow-y:auto; display:grid; gap:2px; }",
+    ".exh-opts[hidden] { display:none; }",
+    "button.exh-opt { all:unset; cursor:pointer; min-height:24px; font-size:.92rem; color:var(--cobalt); text-decoration:underline; text-underline-offset:3px; overflow-wrap:anywhere; }",
+    "button.exh-opt:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
     ".exh-bulk { display:grid; gap:6px; padding-top:8px; border-top:1px solid var(--border); }",
     ".exh-bulk p { margin:0; color:var(--text-body); max-width:var(--cpl-measure,none); }",
     ".exh-teach { display:grid; gap:6px; border-top:1px solid var(--border); padding-top:10px; }",
@@ -1682,6 +1820,8 @@
     _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS,
     loadCredentials: loadCredentials, openCredential: openCredential,
     _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent, _credRows: credRows,
-    _credCould: credCould, _routeFromHash: routeFromHash, loadSweep: loadSweep, _sweepShown: sweepShown, _sweepRows: sweepRows
+    _credCould: credCould, _routeFromHash: routeFromHash, loadSweep: loadSweep, _sweepShown: sweepShown, _sweepRows: sweepRows,
+    _aseIssuer: aseIssuer, _issuerFor: issuerFor, _nameOptions: nameOptions, _nameMatches: nameMatches, _bulkItems: bulkItems,
+    _sweepIssuer: sweepIssuer
   };
 })();

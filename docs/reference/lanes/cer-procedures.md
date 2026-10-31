@@ -86,13 +86,14 @@ one per current and proposed title. Six rules: *ase* (a course named by its ASE 
 Training's names keep Roman), *language* (*Elementary/Intermediate <Language> 1/2*, the level word first as C-ID names
 them), *course-code* (the exhibit's own college course number or a method word left in), *level* (the local title says 1A,
 the canonical 1B), *fold* (twins, one title over different courses at one college, a family's level word). A local
-course is one the colleges issue; an industry credential's or an exam's name is never read as a course number. First build: 134 cards, 168 local titles (ase 17, numerals 45, language 32, course-code 6, level 1, fold 33).
-The tab draws it as Review's *Another look* step (`#exhibits/another-look`). Change saves the `_UNCLASSIFIED::`
+course is one the colleges issue; an industry credential's or an exam's name is never read as a course number. First build: 134 cards over 168 local titles.
+The tab draws it as Review's *Another look* step (`#exhibits/another-look`). A conflict card's Change and Keep save the
+same way (SkyBilberry, Sam 2026-10-31); a title naming an ASE test fills its issuer with ASE until he types one; the
+issuer and site boxes offer the reference's names (`issuers`, `sites` in `kb/exhibits_review.json`). Change saves the `_UNCLASSIFIED::`
 assignment and issuer and `unified_title_supersedes` (the title replaced); the fold's **revise lane** applies it only
 while that title still stands, renames an emptied credential or retires it, and receipts both with the panel rows left
 under the old name. Keep saves `title_sweep_kept`, which never comes back. Procedures `ase-paren`,
-`arabic-level-numerals`, `language-levels` (skill Rule 5h) teach the classifier the same. Guards:
-`tests/exhibits_sweep_build_test.py` (24), `tests/exhibits_sweep.test.js` (33), `tests/fold_unclassified_test.py` (22).
+`arabic-level-numerals`, `language-levels` (skill Rule 5h) teach the classifier the same. Guards: the sweep's build and jsdom tests, `tests/fold_unclassified_test.py`.
 
 ## Status
 
@@ -155,7 +156,6 @@ exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2
   (All, Industry credentials, and the Initiated sign-off's two lanes until card 3). It opens on Held when the report
   holds titles, else on Reference; a quickstart hint opens Reference. UI pass: `docs/ui_pass_lessons.md` S413.
 
-The S411 design, its map's findings, the first two classifier passes and the code-only hints moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (SkyCoralberry)*.
 
 **RULED (Sam, Open Asks Sheet 94, 13:42-13:43Z 2026-10-18, each his own call; `cpl_memory`
 `sam-sheet-94-rulings-2026-10-18`):**
@@ -183,7 +183,7 @@ both his own call; cpl_memory `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *
 **The AP fold — applied (SkyElderberry, 2026-10-31; Sheet 149 card 1).** 14 credential merges and 7 AB-subscore
 moves in the reference (77 local titles to College Board's names; `kb/credential_merges.json`, receipts in
 `kb/credential_merges_out/2026-10-31/`), and 42 saved assignments moved to match under `cer-ap-fold-s536@bot` (Sam ran
-the guarded UPDATE; before-values and rollback in `kb_curation_update_receipt.json`).
+the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
 
 **NEXT:** (0) Sam's run through *Another look*; read his saves after it (`unified_title_supersedes` rows) and the next
 fold's `revise` and `credential_moves`; move the panel rows the receipt names. (1) The routine (Sheet 149 card 2): the tab writes a rule as a request row, a scheduled session builds it,
