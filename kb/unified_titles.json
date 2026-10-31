@@ -1861,18 +1861,18 @@
     "_notes": null
   },
   "AP - Calculus BC/AB subscore": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": "2026-06-04",
+    "reviewed_at": "2026-10-31",
     "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-A-CB1-1-001"
     ],
     "quality_flag": null,
     "_notes": "Subscore variant of BC exam; kept distinct since it credits the AB portion.",
-    "_merge_note": "merged from credential 'AP Calculus BC (AB Subscore)' (curator)"
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP - Chemistry": {
     "unified_title": "AP Chemistry",
@@ -2448,18 +2448,18 @@
     "_notes": null
   },
   "AP : Calculus BC/AB Subscore": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": "2026-06-04",
+    "reviewed_at": "2026-10-31",
     "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-A:CB1-1-001"
     ],
     "quality_flag": null,
     "_notes": null,
-    "_merge_note": "merged from credential 'AP Calculus BC (AB Subscore)' (curator)"
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP : Chemistry": {
     "unified_title": "AP Chemistry",
@@ -2839,43 +2839,46 @@
     "_notes": null
   },
   "AP : U.S. Government and Politics": {
-    "unified_title": "AP U.S. Government and Politics",
+    "unified_title": "AP United States Government and Politics",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-A:UG-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP U.S. Government and Politics' (curator)"
   },
   "AP : U.S. History Area 3B": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-A:UH1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped articulation-area suffix per Rule 1."
+    "_notes": "Stripped articulation-area suffix per Rule 1.",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP : U.S. History Area 4": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-A:UH-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped articulation-area suffix per Rule 1."
+    "_notes": "Stripped articulation-area suffix per Rule 1.",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP : World History Area 3B": {
     "unified_title": "AP World History: Modern",
@@ -3285,18 +3288,19 @@
     "_notes": null
   },
   "AP Calculus BC/ AB Subscore": {
-    "unified_title": "AP Calculus BC",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ACBA-1-001",
       "MAPSAS-ACBA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Refers to BC exam with AB subscore; unifying with BC."
+    "_notes": "Refers to BC exam with AB subscore; unifying with BC.",
+    "_merge_note": "AB subscore: folded under AP Calculus AB, the credit it carries (Sam, Open Asks Sheet 149 card 1, fold; kb/_ap_official_titles.py)."
   },
   "AP Calculus BC/ AB sub score (score 3-5): Cal-GETC Area 2": {
     "unified_title": "AP Calculus AB",
@@ -3312,43 +3316,46 @@
     "_notes": "Judgment call: the 'BC/AB sub score' refers to the AB subscore reported on the BC exam, which demonstrates AB-level competency. Skill Rule 3 (don't split sub-results) applies â€” unified with AP Calculus AB. Confidence below 0.85 because this could plausibly also be modeled as a separate credential."
   },
   "AP Calculus BC/AB Subscore": {
-    "unified_title": "AP Calculus BC",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAH-ACBS-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Refers to BC exam with AB subscore; unifying with BC."
+    "_notes": "Refers to BC exam with AB subscore; unifying with BC.",
+    "_merge_note": "AB subscore: folded under AP Calculus AB, the credit it carries (Sam, Open Asks Sheet 149 card 1, fold; kb/_ap_official_titles.py)."
   },
   "AP Calculus BC/AB Subscore (Score 3-5)": {
-    "unified_title": "AP Calculus BC",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ACBS1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Refers to BC exam with AB subscore; unifying with BC."
+    "_notes": "Refers to BC exam with AB subscore; unifying with BC.",
+    "_merge_note": "AB subscore: folded under AP Calculus AB, the credit it carries (Sam, Open Asks Sheet 149 card 1, fold; kb/_ap_official_titles.py)."
   },
   "AP Calculus BC/AB Subscore (Score of 3-5)": {
-    "unified_title": "AP Calculus BC",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ACBS2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Refers to BC exam with AB subscore; unifying with BC."
+    "_notes": "Refers to BC exam with AB subscore; unifying with BC.",
+    "_merge_note": "AB subscore: folded under AP Calculus AB, the credit it carries (Sam, Open Asks Sheet 149 card 1, fold; kb/_ap_official_titles.py)."
   },
   "AP Chemistry": {
     "unified_title": "AP Chemistry",
@@ -4572,16 +4579,17 @@
     "_notes": null
   },
   "AP Exam Calculus BC/AB Sub-score (Score 3-5)": {
-    "unified_title": "AP Calculus BC",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.82,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AECB4-1-001"
     ],
-    "_notes": "Refers to the AB subscore reported on the BC exam; unified with AP Calculus BC."
+    "_notes": "Refers to the AB subscore reported on the BC exam; unified with AP Calculus BC.",
+    "_merge_note": "AB subscore: folded under AP Calculus AB, the credit it carries (Sam, Open Asks Sheet 149 card 1, fold; kb/_ap_official_titles.py)."
   },
   "AP Exam Chemistry (Score 3-5)": {
     "unified_title": "AP Chemistry",
@@ -5259,17 +5267,18 @@
     "_notes": null
   },
   "AP Exam: Calculus BC/AB Subscore": {
-    "unified_title": "AP Calculus BC",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AECB2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "BC exam reported with AB subscore; clustering with BC."
+    "_notes": "BC exam reported with AB subscore; clustering with BC.",
+    "_merge_note": "AB subscore: folded under AP Calculus AB, the credit it carries (Sam, Open Asks Sheet 149 card 1, fold; kb/_ap_official_titles.py)."
   },
   "AP Exam: Chemistry": {
     "unified_title": "AP Chemistry",
@@ -5551,31 +5560,33 @@
     "_notes": null
   },
   "AP Exam: Physics 1": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AEP1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Exam: Physics 2": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AEP2-1-001",
       "MAPSAS-AEP23-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Exam: Physics C- Mechanics": {
     "unified_title": "AP Physics C: Mechanics",
@@ -6695,17 +6706,18 @@
     "_notes": null
   },
   "AP Mathematics - Calculus BC/AB Subscore": {
-    "unified_title": "AP Calculus BC",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AM-C-1-001"
     ],
     "quality_flag": null,
-    "_notes": "BC/AB subscore is part of AP Calculus BC exam reporting; unifying with BC."
+    "_notes": "BC/AB subscore is part of AP Calculus BC exam reporting; unifying with BC.",
+    "_merge_note": "AB subscore: folded under AP Calculus AB, the credit it carries (Sam, Open Asks Sheet 149 card 1, fold; kb/_ap_official_titles.py)."
   },
   "AP Micro-economics": {
     "unified_title": "AP Microeconomics",
@@ -6820,172 +6832,185 @@
     "_notes": "Abbreviated source title."
   },
   "AP Physics 1\tNatural Sciences - 4\tCredit for PHYS 2A ": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [],
-    "_notes": "Stripped articulation-area and local course-credit suffixes."
+    "_notes": "Stripped articulation-area and local course-credit suffixes.",
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Physics 1 (Score of 3-5)": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP18-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Physics 1/ Physics 1 Algebra- Based": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAH-AP1P-1-001"
     ],
     "quality_flag": null,
-    "_notes": "AP Physics 1 is the algebra-based exam."
+    "_notes": "AP Physics 1 is the algebra-based exam.",
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Physics 1: Algebra based": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP1A3-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Physics 1: Algebra-Based": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP1A-1-001",
       "MAPSAS-AP1A1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Physics 1: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.96,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP1A2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers; College Board now markets the exam as 'AP Physics 1' alone (Algebra-Based is implicit)."
+    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers; College Board now markets the exam as 'AP Physics 1' alone (Algebra-Based is implicit).",
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Physics 2": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP21-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Physics 2 (Score of 3-5)": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP24-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Physics 2- Mechanics": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.75,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP2M-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Source mislabels with 'Mechanics' (which belongs to Physics C); assuming Physics 2 based on source's primary label."
+    "_notes": "Source mislabels with 'Mechanics' (which belongs to Physics C); assuming Physics 2 based on source's primary label.",
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Physics 2/ Physics 2 Algebra- Based": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAH-AP2P-1-001"
     ],
     "quality_flag": null,
-    "_notes": "AP Physics 2 is the algebra-based exam."
+    "_notes": "AP Physics 2 is the algebra-based exam.",
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Physics 2: Algebra based": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP2A2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Physics 2: Algebra-Based": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP2A-1-001",
       "MAPSAS-AP2A1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Physics 2: Algebra-Based (score 3-5): Cal-GETC Area 5A and 5C": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.96,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP2A3-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers (see AP Physics 1)."
+    "_notes": "Skill Rule 1: stripped algebra-based/score/area qualifiers (see AP Physics 1).",
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Physics B": {
     "unified_title": "AP Physics B",
@@ -7819,18 +7844,18 @@
     "_notes": "Score qualifier stripped."
   },
   "AP U.S. Government & Politics (score 3-5): Cal-GETC Area 4": {
-    "unified_title": "AP U.S. Government and Politics",
+    "unified_title": "AP United States Government and Politics",
     "confidence_title": 0.97,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": "2026-06-04",
+    "reviewed_at": "2026-10-31",
     "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AUGP-1-001"
     ],
     "quality_flag": null,
     "_notes": null,
-    "_merge_note": "merged from credential 'AP U.S. Government & Politics' (curator)"
+    "_merge_note": "merged from credential 'AP U.S. Government and Politics' (curator)"
   },
   "AP U.S. Government and Politics": {
     "unified_title": "AP United States Government and Politics",
@@ -7874,17 +7899,18 @@
     "_notes": "Score qualifier stripped."
   },
   "AP U.S. History (score 3-5): Cal-GETC Area 3B or 4": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 0.98,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AUH3-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP United States Government and Politics": {
     "unified_title": "AP United States Government and Politics",
@@ -8086,18 +8112,18 @@
     "_notes": null
   },
   "AP: Calculus BC/AB Subscore": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": "2026-06-04",
+    "reviewed_at": "2026-10-31",
     "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-ACBS-1-001"
     ],
     "quality_flag": null,
     "_notes": "AB subscore reported separately on the Calculus BC exam; preserved as distinct credential per Rule 8b.",
-    "_merge_note": "merged from credential 'AP Calculus BC: AB Subscore' (curator)"
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP: Chemistry ": {
     "unified_title": "AP Chemistry",
@@ -8256,16 +8282,17 @@
     "_notes": null
   },
   "AP: History U.S. History ": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+    "reviewed_at": "2026-10-31",
     "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AHUH-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'AP United States History' (conf 0.94)."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'AP United States History' (conf 0.94).",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP: History: World  HIstory-Modern": {
     "unified_title": "AP World History: Modern",
@@ -8333,30 +8360,32 @@
     "_notes": null
   },
   "AP: Physics 1": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP11-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP: Physics 2": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPSAS-AP22-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP: Physics C- Electricity/ Magnetism ": {
     "unified_title": "AP Physics C: Electricity and Magnetism",
@@ -17221,17 +17250,18 @@
     "_notes": null
   },
   "Calculus BC/AB Subscore AP": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXO-CBSA-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Subscore is part of BC exam; kept distinct for articulation purposes."
+    "_notes": "Subscore is part of BC exam; kept distinct for articulation purposes.",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "Calif First Responder Awareness Cert of Completion": {
     "unified_title": "First Responder Awareness",
@@ -38171,30 +38201,32 @@
     "_notes": null
   },
   "Physics 1 AP": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXO-P1A-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "Physics 2 AP": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
     "source_exhibit_ids": [
       "MAPCXO-P2A-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "Pipe ASME BPVC (S9) GMAW & FCAW": {
     "unified_title": "ASME BPVC Section IX Pipe Welder Qualification — GMAW & FCAW",
@@ -43229,12 +43261,13 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AP: History U.S. History": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-06-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:30:00Z",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP: Physics C- Electricity/ Magnetism": {
     "unified_title": "AP Physics C: Electricity and Magnetism",
@@ -43694,12 +43727,13 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AP Physics 1\tNatural Sciences - 4\tCredit for PHYS 2A": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 1.0,
     "classified_at": "2026-06-03",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "Adobe Photoshop Certified Professional": {
     "unified_title": "Adobe Certified Professional — Visual Design (Photoshop)",
@@ -44550,12 +44584,13 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "AP Physics 1": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Precalculus (MATH-100)": {
     "unified_title": "AP Precalculus",
@@ -47458,12 +47493,13 @@
     }
   },
   "AP 2-D Art and Design (Score of 3, 4 or 5)": {
-    "unified_title": "AP 2-D Art and Design (Score of 3, 4 or 5)",
+    "unified_title": "AP 2-D Art and Design",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:48:45.701316+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP 2-D Art and Design (Score of 3, 4 or 5)' (curator)"
   },
   "AP 2-D Art and Design - Score of 3 or higher - HISTORICAL Type 1": {
     "unified_title": "AP 2-D Art and Design",
@@ -47490,12 +47526,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP 3-D Art and Design (Score of 3, 4 or 5)": {
-    "unified_title": "AP 3-D Art and Design (Score of 3, 4 or 5)",
+    "unified_title": "AP 3-D Art and Design",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:03.460199+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP 3-D Art and Design (Score of 3, 4 or 5)' (curator)"
   },
   "AP 3-D Art and Design - Score of 3 or higher - HISTORICAL Type 1": {
     "unified_title": "AP 3-D Art and Design",
@@ -47562,12 +47599,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Art History (Score of 3, 4 or 5)": {
-    "unified_title": "AP Art History (Score of 3, 4 or 5)",
+    "unified_title": "AP Art History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:02.111207+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Art History (Score of 3, 4 or 5)' (curator)"
   },
   "AP Art History - Area 3": {
     "unified_title": "AP Art History",
@@ -47666,12 +47704,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Calculus  BC/AB Subscore": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-brand-family@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus AB (Score of 3 or higher)": {
     "unified_title": "AP Calculus AB",
@@ -47850,84 +47889,94 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Calculus BC with AB subscore": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus BC/AB Sub-score (Score of 3 or higher)": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus BC/AB Subscore (Score of 3, 4 or 5)": {
-    "unified_title": "AP Calculus BC/AB (Score of 3, 4 or 5)",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:01.666413+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC/AB (Score of 3, 4 or 5)' (curator)"
   },
   "AP Calculus BC/AB Subscore (score 3)": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus BC/AB Subscore (score 5)": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus BC/AB Subscore - Score of 3": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus BC/AB Subscore - Score of 3 or higher - HISTORICAL Type 1": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus BC/AB Subscore - Score of 4-5": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus BC/AB sub score": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Calculus BC/AB sub score¹": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP Chemistry (CHEM 1)": {
     "unified_title": "AP Chemistry",
@@ -47954,12 +48003,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Chemistry (Score of 3, 4 or 5)": {
-    "unified_title": "AP Chemistry (Score of 3, 4 or 5)",
+    "unified_title": "AP Chemistry",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:09.735572+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Chemistry (Score of 3, 4 or 5)' (curator)"
   },
   "AP Chemistry - Score of 3 or higher - HISTORICAL Type 1": {
     "unified_title": "AP Chemistry",
@@ -48018,12 +48068,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Chinese Language and Culture (Score of 3, 4 or 5)": {
-    "unified_title": "AP Chinese Language and Culture (Score of 3, 4 or 5)",
+    "unified_title": "AP Chinese Language and Culture",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:14.365816+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Chinese Language and Culture (Score of 3, 4 or 5)' (curator)"
   },
   "AP Chinese Language and Culture - Score of 3 or higher - HISTORICAL Type 1": {
     "unified_title": "AP Chinese Language and Culture",
@@ -48082,12 +48133,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Computer Science A (Score of 3, 4 or 5)": {
-    "unified_title": "AP Computer Science A (Score of 3, 4 or 5)",
+    "unified_title": "AP Computer Science A",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:19.672129+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Computer Science A (Score of 3, 4 or 5)' (curator)"
   },
   "AP Computer Science AB (Score of 3 or higher)": {
     "unified_title": "AP Computer Science AB",
@@ -48098,12 +48150,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Computer Science AB (Score of 3, 4 or 5)": {
-    "unified_title": "AP Computer Science AB (Score of 3, 4 or 5)",
+    "unified_title": "AP Computer Science AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:24.277747+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Computer Science AB (Score of 3, 4 or 5)' (curator)"
   },
   "AP Computer Science Principles (Score of 3 or higher)": {
     "unified_title": "AP Computer Science Principles",
@@ -48154,12 +48207,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Drawing (Score of 3, 4 or 5)": {
-    "unified_title": "AP Drawing (Score of 3, 4 or 5)",
+    "unified_title": "AP Drawing",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:30.491564+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Drawing (Score of 3, 4 or 5)' (curator)"
   },
   "AP Drawing - Score of 3 or higher - HISTORICAL Type 1": {
     "unified_title": "AP Drawing",
@@ -48666,12 +48720,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Government and Politics - U.S.": {
-    "unified_title": "AP U.S. Government and Politics",
+    "unified_title": "AP United States Government and Politics",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. Government and Politics' (curator)"
   },
   "AP Government and Politics – Comparative": {
     "unified_title": "AP Comparative Government and Politics",
@@ -48682,20 +48737,22 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Government and Politics: US (POLS C1000)": {
-    "unified_title": "AP U.S. Government and Politics",
+    "unified_title": "AP United States Government and Politics",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. Government and Politics' (curator)"
   },
   "AP Government and Politics: US (POLS C1000H)": {
-    "unified_title": "AP U.S. Government and Politics",
+    "unified_title": "AP United States Government and Politics",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. Government and Politics' (curator)"
   },
   "AP History - Modern World": {
     "unified_title": "AP World History: Modern",
@@ -48706,20 +48763,22 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP History - U.S.": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP History - U.S. History": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP History – European": {
     "unified_title": "AP European History",
@@ -49050,12 +49109,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Physics 1 (Phy B replaced by Phy 1 & 2 (14-15)": {
-    "unified_title": "AP Physics 1",
+    "unified_title": "AP Physics 1: Algebra-Based",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Physics 1' (curator)"
   },
   "AP Physics 1: Algebra Based": {
     "unified_title": "AP Physics 1: Algebra-Based",
@@ -49130,12 +49190,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Physics 2 (Phy B replaced by Phy 1 & 2 (14-15)": {
-    "unified_title": "AP Physics 2",
+    "unified_title": "AP Physics 2: Algebra-Based",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Physics 2' (curator)"
   },
   "AP Physics 2: Algebra Based": {
     "unified_title": "AP Physics 2: Algebra-Based",
@@ -49842,76 +49903,85 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP U.S Government and Politics": {
-    "unified_title": "AP U.S. Government and Politics",
+    "unified_title": "AP United States Government and Politics",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. Government and Politics' (curator)"
   },
   "AP U.S. Government and Politics (Score of 3 or higher)": {
-    "unified_title": "AP U.S. Government and Politics",
+    "unified_title": "AP United States Government and Politics",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. Government and Politics' (curator)"
   },
   "AP U.S. Government and Politics - Score of 3 or higher - HISTORICAL Type 1": {
-    "unified_title": "AP U.S. Government and Politics",
+    "unified_title": "AP United States Government and Politics",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. Government and Politics' (curator)"
   },
   "AP U.S. History (Score of 3 or higher) Area 3": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP U.S. History (Score of 3 or higher) Area 4A": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP U.S. History (Score of 3, 4 or 5)": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP U.S. History - Area 4": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP U.S. History - Score of 3 or higher - HISTORICAL Type 1": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP U.S. History - Score of 3 or higher - HISTORICAL Type 2": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP US History Exam": {
     "unified_title": "AP United States History",
@@ -56638,12 +56708,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP Calculus BC/AB Subscore - Area 2": {
-    "unified_title": "AP Calculus BC — AB Subscore",
+    "unified_title": "AP Calculus AB",
     "confidence_title": 1.0,
     "classified_at": "2026-10-28",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP Calculus BC — AB Subscore' (curator)"
   },
   "AP European History - Area 3B": {
     "unified_title": "AP European History",
@@ -56774,20 +56845,22 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "AP U.S. History,  Area 4": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-28",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP U.S. History, Area 3B": {
-    "unified_title": "AP U.S. History",
+    "unified_title": "AP United States History",
     "confidence_title": 1.0,
     "classified_at": "2026-10-28",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31",
+    "reviewed_by": "map@rccd.edu",
+    "_merge_note": "merged from credential 'AP U.S. History' (curator)"
   },
   "AP World History Modern - Area 3B": {
     "unified_title": "AP World History: Modern",

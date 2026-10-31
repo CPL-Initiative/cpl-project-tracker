@@ -1,0 +1,105 @@
+{
+  "_generated_at": "2026-10-31T14:44:07Z",
+  "applied": [
+    {
+      "loser": "AP 2-D Art and Design (Score of 3, 4 or 5)",
+      "winner": "AP 2-D Art and Design",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP 3-D Art and Design (Score of 3, 4 or 5)",
+      "winner": "AP 3-D Art and Design",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Art History (Score of 3, 4 or 5)",
+      "winner": "AP Art History",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Calculus BC — AB Subscore",
+      "winner": "AP Calculus AB",
+      "raws_repointed": 15,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Calculus BC/AB (Score of 3, 4 or 5)",
+      "winner": "AP Calculus AB",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Chemistry (Score of 3, 4 or 5)",
+      "winner": "AP Chemistry",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Chinese Language and Culture (Score of 3, 4 or 5)",
+      "winner": "AP Chinese Language and Culture",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Computer Science A (Score of 3, 4 or 5)",
+      "winner": "AP Computer Science A",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Computer Science AB (Score of 3, 4 or 5)",
+      "winner": "AP Computer Science AB",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Drawing (Score of 3, 4 or 5)",
+      "winner": "AP Drawing",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Physics 1",
+      "winner": "AP Physics 1: Algebra-Based",
+      "raws_repointed": 12,
+      "articulations_repointed": 8,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP Physics 2",
+      "winner": "AP Physics 2: Algebra-Based",
+      "raws_repointed": 11,
+      "articulations_repointed": 8,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP U.S. Government and Politics",
+      "winner": "AP United States Government and Politics",
+      "raws_repointed": 8,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "AP U.S. History",
+      "winner": "AP United States History",
+      "raws_repointed": 15,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    }
+  ],
+  "unified_titles_count": 5030,
+  "credentials_count": 2451
+}
