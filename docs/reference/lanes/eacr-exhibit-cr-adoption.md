@@ -20,8 +20,9 @@ related:
 **Folding into the Exhibits tab (Sam, Open Asks Sheet 147 card 1, 2026-10-31).** The per-credential view lives in the
 Exhibits tab's credential panel since SkyBayberry's build (each college's credit lines and units, the course a
 could-adopt college already teaches, Request Quick Adopt; `kb/exhibits_adoption.json`; state in
-[`cer-procedures`](cer-procedures.md), *The redesign*). This tab stays for the college matrix and its statewide and college
-filters, its exports and Create Handout, until the public adoption page carries them; then it retires. Its 2026-09-24
+[`cer-procedures`](cer-procedures.md), *The redesign*). The public adoption page
+(`library/adopt/`, SkyTwinberry, 2026-10-31) now carries the college matrix, its statewide and college filters, the
+exports and Create Handout; this tab retires once Sam has seen the page (Open Asks Sheet 148). Its 2026-09-24
 ruling travels with the fold: no could-adopt list on any screen comes from `potential_names` (the TOP and C-ID overlap).
 
 ## Status

@@ -2392,6 +2392,39 @@ module.exports = {
     mayHideBelow: [],
   },
 
+  /* ── The public adoption page (Sam, Open Asks Sheet 147, 2026-10-31) ──
+     library/adopt/, settled credentials in Malone's CPL/AI look. Measured on one college (the
+     cards, the Already teaches pill, the Request Quick Adopt chips) and on the College matrix
+     narrowed to a region (the vertical headers, the shaded cells, the windowed rows). */
+  "public-adopt": {
+    file: "library/adopt/index.html",
+    query: "?college=Norco%20College",
+    title: "Credentials Your College Can Adopt (public)",
+    seed: (page) => page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 }),
+  },
+  "public-adopt-dark": {
+    file: "library/adopt/index.html",
+    query: "?college=Norco%20College",
+    title: "Credentials Your College Can Adopt (public), dark",
+    widths: [390, 1280],
+    seed: async (page) => {
+      await page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 });
+      await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
+    },
+  },
+  "public-adopt-matrix": {
+    file: "library/adopt/index.html",
+    title: "Credentials Your College Can Adopt (public), College matrix",
+    seed: async (page) => {
+      await page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 });
+      await page.evaluate(() => {
+        const r = document.getElementById("ad-region"); r.value = r.options[1].value; r.dispatchEvent(new Event("change"));
+        const s = document.getElementById("ad-show"); s.value = "all"; s.dispatchEvent(new Event("change"));
+        document.querySelector('[data-view="matrix"]').click();
+      });
+    },
+  },
+
   /* ── The CPL opportunity visual (Ashley and Sam, 2026-10-20) ──
      library/cpl-opportunity/index.html (moved from cpl-opportunity/, which forwards,
      Sheet 131 card 2, 2026-10-26), one college per ?college=, linked from My

@@ -383,6 +383,10 @@ jobs:
       # student figure in the public file.
       - name: Exhibits review queue builder
         run: python3 tests/exhibits_review_build_test.py
+      # The public adoption page's builder (Sheet 147 cards 1 and 3): settled credentials only, could
+      # adopt from the prescriptive layer alone, no student figure in the public file.
+      - name: Public adoption page builder
+        run: python3 tests/adopt_page_build_test.py
       # The credential panel's training sites (Sheet 147 step 2): the overlay sync and exhibits.js
       # resolve the list against the one-trainer field by one rule; Mode A3 fills with the first site.
       - name: Credential panel training sites
