@@ -36,8 +36,11 @@ function check(name, cond, why) { results.push([name, !!cond, why]); }
 const LIB = path.join(ROOT, "library");
 // The CPL Opportunity page (library/cpl-opportunity/, moved 2026-10-26, Sheet 131 card 2) is a live page the
 // browser builds per college, not a copy library_page.py writes; tests/college_cpl_workbook.test.js guards it.
+// The public adoption page (library/adopt/, Sheet 147, 2026-10-31) is live too: it reads adopt_data.json and
+// carries the Library's own adapted header; tests/public_adopt.test.js guards it.
+const LIVE = ["cpl-opportunity", "adopt"];
 const pages = fs.readdirSync(LIB, { withFileTypes: true })
-  .filter((d) => d.isDirectory() && d.name !== "cpl-opportunity" && fs.existsSync(path.join(LIB, d.name, "index.html")))
+  .filter((d) => d.isDirectory() && !LIVE.includes(d.name) && fs.existsSync(path.join(LIB, d.name, "index.html")))
   .map((d) => ({ slug: d.name, html: fs.readFileSync(path.join(LIB, d.name, "index.html"), "utf8") }));
 
 check("(0) the two pieces Sam's pick moved are pages under library/",

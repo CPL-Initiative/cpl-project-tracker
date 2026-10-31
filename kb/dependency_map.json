@@ -4,9 +4,9 @@
   "supabase_tables": 103,
   "rpcs": 44,
   "edge_functions": 11,
-  "file_datasets": 737,
+  "file_datasets": 741,
   "external_services": 192,
-  "consumers": 488,
+  "consumers": 491,
   "workflows": 59,
   "data_js_files": 71,
   "tabs": 39
@@ -1312,6 +1312,16 @@
      "line": 64,
      "tabs": [
       "exhibits"
+     ]
+    },
+    {
+     "id": "module:library/adopt/adopt.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 15,
+     "pages": [
+      "library/adopt/index.html"
      ]
     },
     {
@@ -5633,6 +5643,13 @@
      "direction": "write",
      "how": "literal",
      "line": 21
+    },
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 69
     }
    ],
    "served": true,
@@ -6595,6 +6612,13 @@
      "direction": "read",
      "how": "literal",
      "line": 49
+    },
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 122
     },
     {
      "id": "script:kb/_build_baccalaureate_pathways.py",
@@ -8102,6 +8126,19 @@
    "main_committers": []
   },
   "file:kb/_audit_exhibits.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_build_adopt_page.py": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -11565,6 +11602,13 @@
      "line": 196
     },
     {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 80
+    },
+    {
      "id": "script:kb/_build_college_identity_crosswalk.py",
      "kind": "script",
      "direction": "read",
@@ -13171,6 +13215,13 @@
      "tabs": [
       "exhibits"
      ]
+    },
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 120
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -15412,6 +15463,13 @@
      "line": 154
     },
     {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 124
+    },
+    {
      "id": "script:kb/_verify_map_exhibit_links.py",
      "kind": "script",
      "direction": "read",
@@ -16704,6 +16762,13 @@
      "line": 182
     },
     {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 121
+    },
+    {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
      "direction": "read",
@@ -17081,6 +17146,43 @@
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:library/adopt/adopt.js": {
+   "consumers": [
+    {
+     "id": "page:library/adopt/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 316
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:library/adopt/adopt_data.json": {
+   "consumers": [
+    {
+     "id": "module:library/adopt/adopt.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 14,
+     "pages": [
+      "library/adopt/index.html"
+     ]
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": false,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:library/cpl-opportunity/index.html": {
    "consumers": [
@@ -18775,6 +18877,13 @@
      "line": 1762
     },
     {
+     "id": "page:library/adopt/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 317
+    },
+    {
      "id": "page:library/chancellor-summit-address/index.html",
      "kind": "page",
      "direction": "read",
@@ -19269,6 +19378,19 @@
    "main_committers": []
   },
   "file:tests/admin_live_banner_control.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/adopt_page_build_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26548,6 +26670,7 @@
     "kb/_build_remint_blast_radius.py",
     "kb/_csr_trail.py",
     "kb/_build_exhibits_review.py",
+    "kb/_build_adopt_page.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -26603,6 +26726,7 @@
     "kb/exhibits_review.json",
     "kb/exhibits_review_courses.json",
     "kb/exhibits_adoption.json",
+    "library/adopt/adopt_data.json",
     "kb/coci_title_corrections.json",
     "kb/coci_duplicate_control_numbers.json",
     "kb/cred_rename_dryrun/report.md",
@@ -26738,6 +26862,7 @@
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/exhibits_review_build_test.py",
+    "tests/adopt_page_build_test.py",
     "tests/credential_review_sites_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",

@@ -99,6 +99,23 @@ KB note `methodology-a-fold-carries-the-folded-tabs-rulings`. What EACR still sh
 matrix and its statewide and college filters (CIP sector, ASCCC Area, SW Region, District, College), its exports and
 Create Handout. Card 1's facts move those to the public adoption page, where colleges use them.
 
+**The public adoption page — built (SkyTwinberry, 2026-10-31; Sheet 147 cards 1, 3 and 4).** `library/adopt/`, Pages-served,
+`noindex` and linked from nowhere until Sam has seen it. *Credentials Your College Can Adopt* holds the place of his name.
+`kb/_build_adopt_page.py` writes `library/adopt/adopt_data.json` daily from `kb/exhibits_adoption.json`: **settled means a
+local title under the credential carries a review stamp** in `kb/unified_titles.json`, a person's or a cohort's, the
+classifier's sure saves included (the mock-up's Reviewed tile, which Sam answered on). That gives 957 credentials of 2,232
+in the reference, against 677 without the classifier's stamps and 495 on a person's alone. Columns are the 119 colleges
+`college_lookup.js` holds; CSU Los Angeles takes none. The page has Malone's CPL/AI look and the Library's header with the
+Library linked. Its filters are College, Show (*Not adopted yet*, *Adopted here*, *Every credential*), Field (CIP sector),
+CPL type, SW Region, ASCCC Area, District and Search. The **Credentials** view puts the college's own course first, then
+the most colleges, with Request Quick Adopt chips per building college (a scope never sees its own) and each college's
+units and credit lines. The **College matrix** is windowed like EACR's, shows units or *C* for a college that already
+teaches a matching course, has arrow keys and a tooltip, and a content filter never drops a column. The page also offers
+both CSVs and **Create Handout** (the college's `library/cpl-opportunity/` visual). It writes nothing and remembers no
+filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (44), `tests/adopt_page_build_test.py` (19),
+`npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width. Not carried over: the
+mock-up's *Worth a faculty review* list of credentials no college has articulated (Credential Engine), a later build.
+
 ## Status
 
 ✅ **Live: the procedures run saves nightly, the fold applies per assignment, and the CER tab is three views (Needs
@@ -202,11 +219,11 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
 rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
 `python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
 
-**NEXT:** the redesign in Sam's Sheet 147 order, Review, the credential panel and EACR's per-credential view built (above): (1) read Sam's first
-saves from the card and the panel, and the first nightly save of `high-school-rop` (expected 55; its receipt in
-`kb/cer_procedures_out/saved/`; the queue should fall to about 413); (2) training sites for a held title new to the
-reference, if Sam asks for them before the fold adds it (a field the fold reads on `_UNCLASSIFIED::`, mapped first under
-Rule 10 a3); the *Held titles by group* table if he asks; (3) EACR's last part, the college matrix with its statewide
-and college filters, exports and Create Handout, moves to (4) the public adoption page on settled credentials only, in
-Malone's CPL/AI look, its name still Sam's to give; then the CER and EACR tabs retire. After the PR merges, a dispatched
-daily run publishes `kb/exhibits_adoption.json`; until then the panel's tiles read *Could not be read*.
+**NEXT:** the redesign in Sam's Sheet 147 order, Review, the credential panel, EACR's per-credential view and the public
+adoption page built (above): (1) after the merge, dispatch `daily-dashboard.yml` so `library/adopt/adopt_data.json`
+lands, and hand Sam the page. NEEDS SAM: its name, where it is linked, and the CER and EACR tabs' retirement (Open
+Asks Sheet 148); (2) read Sam's first saves from the card and the panel, and the first nightly save of `high-school-rop`
+(expected 55; its receipt in `kb/cer_procedures_out/saved/`; the queue should fall to about 413; the 07:47Z cron fires
+near 14:31Z); (3) training sites for a held title new to the reference, if Sam asks (a field the fold reads on
+`_UNCLASSIFIED::`, mapped first under Rule 10 a3); the *Held titles by group* table if he asks; (4) the public page's
+*Worth a faculty review* list, when Sam names the page.
