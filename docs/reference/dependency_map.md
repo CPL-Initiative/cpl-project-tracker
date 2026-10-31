@@ -565,6 +565,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/course_outline_census` | none found | committed by: `course-outline-census.yml` |
 | `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
 | `kb/course_outline_index/index_<run>.json` | scripts: `kb/_course_outcomes_read.py` | — |
+| `kb/cpl_ai/pairs.json` | tabs: `program-requirements` · scripts: `kb/_build_cpl_ai.py` | — |
 | `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_commons_status.py`, `kb/_build_cr_reference.py`, `kb/_jev_adjudicate.py`, `kb/_typesafe_cr_trial.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun` | none found | committed by: `cred-rename-apply.yml` |
 | `kb/cred_rename_dryrun/alias_map.json` | workflows: `cred-rename-apply.yml` | committed by: `daily-dashboard.yml` |
@@ -1079,7 +1080,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map-collegelanding-pages-bkh3ffghf4cqd7fu.westus-01.azurewebsites.net` | scripts: `chatbox/scrape_landing_pages.py` |
 | `map.example` | modules: `a11y.config.js` |
-| `map.rccd.edu` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `a11y.config.js` · scripts: `kb/_seed_statewide_categories.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
+| `map.rccd.edu` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` · modules: `a11y.config.js` · scripts: `kb/_build_cpl_ai.py`, `kb/_seed_statewide_categories.py`, `tools/source_cpl_stories.mjs`, `veteran-sprint-map/build_selfcontained.py`, `veteran-sprint-map/build_web.py` · `edgefn:cpl-chat` |
 | `mapwebapinew.azurewebsites.net` | scripts: `fetch_custom_report.py`, `kb/_discover_map_datasets.py`, `kb/_probe_confirmed_custom_reports.py`, `kb/_probe_exhibit_evidence_fields.py`, `kb/_probe_lifecycle_checks.py`, `kb/_probe_new_custom_reports.py`, `kb/_probe_new_custom_reports_followup.py`, `kb/_probe_student_detail_view.py`, `map/probe_users_schema.py`, `map/sync_map_users.py`, `statewide/_probe_exhibit_authority.py` |
 | `merritt.edu` | tabs: `map-queue`, `map-users` |
 | `miracosta.edu` | tabs: `map-queue`, `map-users` |
@@ -1222,5 +1223,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 103 Supabase tables · 43 RPCs · 11 edge functions · 729 file
-datasets · 192 external services · 485 consumers · 59 workflows · 38 tabs.
+Coverage: 103 Supabase tables · 43 RPCs · 11 edge functions · 730 file
+datasets · 192 external services · 486 consumers · 59 workflows · 38 tabs.

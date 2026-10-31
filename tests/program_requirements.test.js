@@ -1607,6 +1607,42 @@ block("(17)", function () {
   check("(17) tokens only in the new CSS", !/\.prh-(id|tip|cplbtn|exback|exdialog|exlist|extype)[^"]*#[0-9a-fA-F]{3,6}/.test(SRC));
 });
 
+// ── (17b) The CPL-AI matching in the dialog (Sam, Open Asks Sheet 147 card 5, 2026-10-31: "dialog") ──
+// The failures this guards: a course whose only lead is a CPL-AI match left as a dead 0, a match
+// shown without the page's credit and caveat, the tier shown as a bare number, and MAP's code
+// spelling (ART 0110) missing the page's (ART 110).
+block("(17b)", function () {
+  const AI = { page: "https://map.rccd.edu/CPL-AI/", fetched_at: "2026-10-31T00:22:24Z",
+    credit: "These recommendations were developed through the statewide Credit for Prior Learning & Artificial Intelligence Initiative.",
+    caveat: "Final determinations regarding Credit for Prior Learning remain the responsibility of individual colleges.",
+    tiers: { "1": "Strong evidence", "2": "Faculty interpretation" },
+    credentials: ["Adobe Certified Professional in Illustration", "Autodesk Certified User"],
+    by_college: { cerritos: { ART110: [[0, 1, "ART 0110"], [1, 2, "ART 110"]] } } };
+  const m = loadModule({ fetch: function (url) {
+    if (/kb\/cpl_ai\/pairs\.json/.test(url)) return Promise.resolve({ ok: true, json: function () { return Promise.resolve(AI); } });
+    return new Promise(function () {});
+  } });
+  m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; pickAll(m.M); m.M._state.view = "records";
+  m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  return tick().then(tick).then(tick).then(function () {
+    const rows = m.root.querySelectorAll("article.prh-rec tbody tr");
+    const art = rows[2], engl = rows[1];
+    const b = art.querySelector("button.prh-cplbtn");
+    check("(17b) a course whose only lead is a CPL-AI match shows its 0 as a button once the file arrives",
+      !!b && b.textContent === "0" && /with 2 CPL-AI recommendations/.test(b.getAttribute("aria-label")), art.innerHTML.slice(-300));
+    check("(17b) a course with no match keeps its plain 0", !engl.querySelector("button.prh-cplbtn"));
+    b.click();
+    const d = m.w.document.querySelector(".prh-exdialog");
+    const t = d ? d.textContent : "";
+    check("(17b) the dialog lists each certification with its tier in the page's words",
+      /CPL-AI recommendations \(2\)/.test(t) && /Adobe Certified Professional in Illustration/.test(t) && /Strong evidence/.test(t)
+      && /Faculty interpretation/.test(t), t.slice(0, 400));
+    check("(17b) it carries the page's credit and caveat, and links the page",
+      t.indexOf(AI.credit) >= 0 && t.indexOf(AI.caveat) >= 0 && !!d.querySelector('a[href="https://map.rccd.edu/CPL-AI/"]'));
+    check("(17b) a code spelled differently by the page is named", /rated as ART 0110/.test(t));
+  });
+});
+
 // ── (18) Sam, 2026-10-11, reading the Mt. San Antonio sample ──
 // "Have the split screen open automatically when I click in to review. When I choose Confirm or
 // Save Note close the screens and bring me to the next item to confirm. Note when opening the
