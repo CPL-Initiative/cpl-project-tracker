@@ -14,7 +14,8 @@
   "pool_areas": "an area's sub-areas the reading split into blocks, under one total the page prints over the area (pattern's area and n; Hartnell's Cal-GETC 45096): the sub-area blocks block_pattern names (with {area}) become one choice of n units, each sub-area kept in floors with its rule, a course listed under two sub-areas listed once; only two or more blocks, never where the sub-areas' own printed figures sum past n",
   "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one (or n itself, S533), makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave; a total group (Delta's \"for a total of 16 units\") keeps the printed sum as units_total, which the scorer reads in place of the course's units times n; n may be a word (four)",
   "unit_line": "a requirement the page prints as a line with units and no course (Delta's Architectural Drafting 22244, \"Associate Degree Math Requirement: Units 4\"): pattern's label and n add a choose_units block of n with no courses, only where no block carries the label and the record's sum falls short of its printed total by exactly n",
-  "fill_to": "a list the page says fills the program to a total (\"FOR A MINIMUM OF 18 UNITS\", \"TO COMPLETE 36 TOTAL UNITS\"): block_pattern's n on a block's name gives fills_to, and the scorer reads neither end of the program's sum below it; range_pattern's n and m on a choose_courses block's name (\"COMPLETE 3-4 COURSES\") give the count's top as maximum where the reading kept n as its minimum (Los Angeles Valley, S534)"
+  "fill_to": "a list the page says fills the program to a total (\"FOR A MINIMUM OF 18 UNITS\", \"TO COMPLETE 36 TOTAL UNITS\"): block_pattern's n on a block's name gives fills_to, and the scorer reads neither end of the program's sum below it; range_pattern's n and m on a choose_courses block's name (\"COMPLETE 3-4 COURSES\") give the count's top as maximum where the reading kept n as its minimum (Los Angeles Valley, S534)",
+  "or_units": "an alternative the page prints as its own 'or CODE' row with no units (CourseLeaf's course list) takes its parent's units, the group's figure the page's total counts once: never an alternative the reading gave units, never a parent without them (Monterey Peninsula, S535)"
  },
  "colleges": {
   "Cabrillo College": {
@@ -123,9 +124,12 @@
    ]
   },
   "Monterey Peninsula College": {
-   "why": "Sixty-five of Monterey Peninsula's associate-degree records name the 60 and a GE pattern with no units for it (S395): 42 \"MPC General Education or Cal-GETC\", 23 Cal-GETC alone. A local degree page prints \"Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units\" and no GE units (college page read 38749721270, Horticulture A.S.); a transfer degree page prints \"Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern\" (read 38843693844, Psychology AA-T). The catalog's GE page (read 38759288106) says Cal-GETC \"satisfies the 34 units of lower-division general education\" and lists MPC GE as eight areas (1A, 1B, 2, 3, 4, 5, 6, 7), each \"Select three units\" (1A one 3-unit course), with no total. So a local degree's GE is 24 to 34: the least the MPC GE areas ask, eight times three, and Cal-GETC's 34. The 24 is a sum of the page's own figures, which the page does not print; S396 SkyJacaranda, 2026-10-16, proceeded on it and put it to Sam as a card. S535 SkyGooseberry, 2026-10-31: thirteen local degrees summed their major and the GE span past 60 (Theatre Arts 03622 51-61) and failed, because the record says electives fill the degree and the scorer bars a high end past the total. The page's 'electives, if needed, for a total of 60' makes electives fill a shortfall only, the same reading as 'a minimum of 60' (Title 5 section 55063), so the step sets degree_total_minimum. Fable advised the floor (a major whose own units push the low end past 60 would pass unseen; none of the thirteen does). Proceeded on the recommendation; reversible by deleting this step.",
-   "awards": "associate",
+   "why": "Sixty-five of Monterey Peninsula's associate-degree records name the 60 and a GE pattern with no units for it (S395): 42 \"MPC General Education or Cal-GETC\", 23 Cal-GETC alone. A local degree page prints \"Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units\" and no GE units (college page read 38749721270, Horticulture A.S.); a transfer degree page prints \"Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern\" (read 38843693844, Psychology AA-T). The catalog's GE page (read 38759288106) says Cal-GETC \"satisfies the 34 units of lower-division general education\" and lists MPC GE as eight areas (1A, 1B, 2, 3, 4, 5, 6, 7), each \"Select three units\" (1A one 3-unit course), with no total. So a local degree's GE is 24 to 34: the least the MPC GE areas ask, eight times three, and Cal-GETC's 34. The 24 is a sum of the page's own figures, which the page does not print; S396 SkyJacaranda, 2026-10-16, proceeded on it and put it to Sam as a card. S535 SkyGooseberry, 2026-10-31: thirteen local degrees summed their major and the GE span past 60 (Theatre Arts 03622 51-61) and failed, because the record says electives fill the degree and the scorer bars a high end past the total. The page's 'electives, if needed, for a total of 60' makes electives fill a shortfall only, the same reading as 'a minimum of 60' (Title 5 section 55063), so the step sets degree_total_minimum. Fable advised the floor (a major whose own units push the low end past 60 would pass unseen; none of the thirteen does). Proceeded on the recommendation; reversible by deleting this step. The same run's page read (41192128530) found two more shapes. 25 records offer WORK 99, 98 or 97 as an 'or' row beside WORK 96 or AUTO 162 with no units of their own, so the state file's 0.5 for the variable-unit course carried the low end under the printed total: the or_units step gives the alternative its parent's units, as the page's total counts them. 24 transfer degrees print 'Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units', words the Cal-GETC step keyed on 'Certified completion' missed: a second step sets 34 for transfer degrees on them. The college's steps had read associate degrees only; or_units reads every award (most of the 25 are certificates), so each degree step now names its own awards.",
    "steps": [
+    {
+     "kind": "or_units",
+     "source_words": "Business - Leadership 39261: 'WORK 96 Professional and Essential Skills 2 \u00b7 or WORK 99 Career-Focused Work Experience \u00b7 or WORK 98 Exploratory Work Experience \u00b7 or WORK 97 Service Learning Work Experience \u00b7 Total Units 17'; Automotive Maintenance 38076: 'Note: WORK 99 may be offered for 0.5-4.0 units. 2.0 Units of WORK 99 are required to satisfy the work experience certificate requirement' (college page read 41192128530)"
+    },
     {
      "kind": "set",
      "field": "ge_units",
@@ -135,7 +139,8 @@
      },
      "pattern": "[Gg]eneral education pattern \\(MPC General Education or Cal-GETC\\)",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
-     "source_words": "MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\""
+     "source_words": "MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\"",
+     "awards": "associate"
     },
     {
      "kind": "set",
@@ -146,7 +151,8 @@
      },
      "pattern": "Certified completion of the California General Education Transfer Curriculum \\(Cal-GETC\\) pattern",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
-     "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
+     "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)",
+     "awards": "associate"
     },
     {
      "kind": "set",
@@ -154,7 +160,20 @@
      "value": true,
      "pattern": "electives,?\\s+if needed,?\\s+for a total of 60 degree[- ]applicable units",
      "source": "college page read 38749721270 (Horticulture A.S.)",
-     "source_words": "Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units"
+     "source_words": "Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units",
+     "awards": "associate"
+    },
+    {
+     "kind": "set",
+     "field": "ge_units",
+     "value": {
+      "min": 34,
+      "max": 34
+     },
+     "awards": "transfer",
+     "pattern": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units",
+     "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
+     "source_words": "Psychology AA-T 31860 and Sociology AA-T 32034: 'Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units' (college page read 41192128530); the GE page: Cal-GETC 'satisfies the 34 units of lower-division general education requirements'"
     }
    ]
   },
