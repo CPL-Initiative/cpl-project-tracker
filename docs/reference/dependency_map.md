@@ -183,6 +183,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` | — |
+| `map_landing_contacts_roster` | tabs: `map-queue`, `map-users` | — |
 | `map_promote_custom_reports` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_users_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_users_summary` | tabs: `map-queue`, `map-users` | — |
@@ -1238,5 +1239,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 103 Supabase tables · 44 RPCs · 11 edge functions · 744 file
+Coverage: 103 Supabase tables · 45 RPCs · 11 edge functions · 744 file
 datasets · 192 external services · 492 consumers · 59 workflows · 39 tabs.

@@ -893,13 +893,19 @@ async function seedMapUsers(page, theme, lens) {
         proposed_email: null, needs_ask: true, ask_reason: "leadership only", landing_page_url: "https://map.example/gamma", active_users: 3 },
     ];
     S.propEdit = lens === "gaps" ? M._ckey("Alpha College") : null;
+    // The landing pages' contacts (Sam, 2026-10-31): the column and the roster's section paint.
+    S.landing = { synced: "2026-10-31T13:05:00Z", n: 2, by: { "Foothill College": [
+      { college: "Foothill College", contact_title: "CPL Counselor", contact_name: "Ada Lovelace", contact_email: "ada@foothill.edu",
+        map_users: [{ role: "Ambassador", status: "Active", college: "Foothill College" }] },
+      { college: "Foothill College", contact_title: "School Certifying Official", contact_name: "Lin Ortiz", contact_email: "",
+        map_users: [] }] } };
     M.render(root);
     const cell = root.querySelector('[data-roster-cell="Foothill College"]');
     if (cell) cell.innerHTML = M._rosterHtml([
       { first_name: "Ada", last_name: "Lovelace", email: "ada@foothill.edu", role_name: "CPL Coordinator", user_status: "Active",
         disciplines: "Mathematics, Computer Science, Engineering", last_updated_on: "2026-06-15", username: "alovelace" },
       { first_name: "Grace", last_name: "Hopper", email: "grace@foothill.edu", role_name: "Faculty", user_status: "Inactive",
-        disciplines: "Computer Science", last_updated_on: "2025-11-02", username: "ghopper" }]);
+        disciplines: "Computer Science", last_updated_on: "2025-11-02", username: "ghopper" }]) + M._landingHtml("Foothill College");
   }, lens);
   await page.waitForTimeout(300);
 }
