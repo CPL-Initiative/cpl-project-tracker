@@ -562,3 +562,32 @@ the learning.
 - **The guard routed the UPDATE to Sam, and he unblocked data writes for good** (#2618): *"I've run the recommended sql
   queries from you 100% of the time without editing your code ... let's unblock it"*. Schema and permission writes stay
   denied; Rule 10's receipts are unchanged.
+
+## 2026-10-31 — the review card's Back and Accept all (SkyCloudberry)
+
+Sam, accepting proposed titles: *"need a back button ... to go to a few previous items"* (he wanted the simpler *Anatomy and Physiology* over *Survey of Human Anatomy and Physiology*), Accept all, Change to Proposed Title first, the local title in bold (#2620; `cpl_memory` `sam-exhibits-review-back-accept-all-2026-10-31`). `kb_curation`'s key is (course_id, field) and the write merges, so a second save after Back replaces the first. Accept all skips a title with a save (`h.saved`): a bulk word must never overwrite a person's decision.
+
+## Moved from the lane (SkyCloudberry)
+
+- **One Exhibits tab in the Catalog Commons replaces CER and EACR** (recommended; his "we might be able to consolidate
+  the EACR tab with CER if we are careful"). Three questions organize it: *What is it called? What credit does it
+  carry? Who could adopt it?* ("I do like your 3 categories"). Views: Review, Credentials, Rules.
+- **A status bar of tiles per question**, the Commons pattern; the **CER step tiles filter the Review queue** (All held
+  468, Proposed 401, Wording check 36, Two issuers 13, Conflict with the reference 18, Saved not folded 0), each step a
+  chip with a plain hover.
+- **Review sorts by students** with credit (106 held exhibits carry 3,000 students; the 40 with ten or more carry at
+  least 84%; Cabrillo's high school articulations lead). **The canonical title is always the focus**, editable; issuer
+  and training site sit in gray-labeled boxes under it; local titles in small print, the one being decided
+  highlighted and in bold, the rest *and N more*; college chips for *Articulated at* and *Could adopt* (same-identity
+  course, else EACR's list). Buttons (Sam, 2026-10-31): Change to Proposed Title, Keep Current Title, Teach a rule,
+  Back, Skip. **Back** reopens the cards decided or skipped this visit, newest first, naming what was saved; a new
+  choice replaces it (`kb_curation`'s key is the title and the field). **Accept all proposed titles (N)** asks first,
+  then saves every title in the list on screen in one merging write, a typed edit counting as its proposal; a conflict
+  with the reference, or a title someone already saved, stays as it is. A search goes to any exhibit.
+- **The aligned course names the proposal** (cpl_memory `sam-cer-aligned-course-names-the-exhibit-2026-10-30`): 394 of
+  468 held titles articulate to a course with a CCN, C-ID or M-ID. A conflict proposes the reference's person-reviewed
+  title.
+- **One issuer, many training sites**, set from the panel (cpl_memory `sam-cer-issuer-and-training-sites-2026-10-30`):
+  363 of 2,465 credentials name a site; 17 say only JATC.
+- **Why it matters (vault braindumps of 2026-10-30):** the public adoption page and Malone's new MAP exhibit module
+  both read the CER's canonical titles and issuers.
