@@ -6431,6 +6431,7 @@
     "The CPL Initiative team";
   // Follow up (Sam, 2026-10-31, at El Camino's attestation: "noticed that the CPL Coord is not listed on the
   // landing page ... it did make me want to send them a follow up email ... but would need a Follow-up button").
+  // It rides a waiting request, beside Accept and Deny.
   // The same window as Accept, its email editable before the copy; {note} is the CO Monitor's note when one is
   // saved, for the reviewer to rewrite for the college. It changes no record.
   var FOLLOWUP_EMAIL_DEFAULT = "Subject: CPL Implementation Funding: a follow-up on the {request} for {college}\n\n" +
@@ -6758,7 +6759,7 @@
           ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + k + '">Revoke</button>'
           : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinaccept="' + k + '">Accept</button>' +
             '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optindeny="' + k + '">Deny</button>') +
-        (rev && rev.email ? followWord("data-optinfollow", college, personName(rev.name) || rev.email) : "") +
+        (rev && rev.email && row.status !== "confirmed" ? followWord("data-optinfollow", college, personName(rev.name) || rev.email) : "") +
         "</span>";
     }
     return '<div class="cplfund-basestatus cf-conds"><strong class="cf-conds-h">Minimum Conditions:</strong>' +
@@ -6940,7 +6941,8 @@
       ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-ncattestreject="' + k + '">Reject</button>'
       : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-ncattestconfirm="' + k + '">Re-confirm</button>' +
         '<button type="button" class="cplfund-optbtn" data-ncattestremove="' + k + '">Remove</button>';
-    if (rev && rev.attestor_email) btns += followWord("data-ncattestfollow", college, personName(rev.attestor_name) || rev.attestor_email);
+    // Follow up rides a waiting request, beside Accept and Deny; a standing attestation still offers Reject alone.
+    if (ncAttestPending(att) && rev && rev.attestor_email) btns += followWord("data-ncattestfollow", college, personName(rev.attestor_name) || rev.attestor_email);
     return '<span class="cplfund-corow">' + (bits.length ? '<span class="dk">' + bits.join(" &middot; ") + "</span> " : "") + btns + "</span>";
   }
 

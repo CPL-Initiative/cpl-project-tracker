@@ -315,8 +315,8 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "conf
   const pub = setup({ public: true, elig: { ncAttestOk: true, ncAttest: JSON.parse(JSON.stringify(waiting)) } });
   check("D0y: the public preview shows no Follow up", !pub.doc.querySelector("[data-ncattestfollow], [data-optinfollow]"));
   // The participation confirmation's Follow up, beside its Accept and Deny under Minimum Conditions.
-  const part = setup({ signedIn: true, elig: { optinReview: [{ college: COLLEGE, name: "Dana Lee", title: "Dean", email: "dana@mtsac.edu",
-    requested_at: "2026-10-28T04:00:00Z" }] } });
+  const part = setup({ signedIn: true, elig: { optinRow: { [COLLEGE]: { college: COLLEGE, status: "self_attested" } },
+    optinReview: [{ college: COLLEGE, name: "Dana Lee", title: "Dean", email: "dana@mtsac.edu", requested_at: "2026-10-28T04:00:00Z" }] } });
   part.T._setNotes({ [COLLEGE]: { college: COLLEGE, note: "Please add your CPL counselors' email addresses." } });
   part.T.render();
   const pdet = drill(part.window, part.doc, COLLEGE);
