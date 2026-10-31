@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1342,
-    "bytes": 13623778,
-    "over_budget": 1,
+    "bytes": 13625688,
+    "over_budget": 2,
     "handoff_max": 536,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59997,
@@ -26,7 +26,7 @@
       },
       "other": {
         "files": 137,
-        "bytes": 4180488,
+        "bytes": 4180638,
         "over": 0
       },
       "index": {
@@ -36,7 +36,7 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2506983,
+        "bytes": 2508534,
         "over": 0
       },
       "kb_note": {
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 455941,
-        "over": 1
+        "bytes": 456150,
+        "over": 2
       },
       "handoff": {
         "files": 505,
@@ -57,14 +57,14 @@
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 1,
+      "oversized_doc": 2,
       "house_voice": 1,
       "vault_heavy_path": 73,
       "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25189,
-      "bytes": 4128795348,
+      "files": 25190,
+      "bytes": 4128836852,
       "heavy_bytes": 2952668631,
       "heavy_share": 0.715,
       "ignore_filters": [
@@ -155,6 +155,19 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20196,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 196,
+        "ratio": 1.01
+      },
+      "message": "20,196 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/cer-procedures.md"
     },
     {
       "rule": "oversized_doc",
@@ -916,11 +929,11 @@
       "fixable": false,
       "path": "docs/session_536_handoff.md",
       "detail": {
-        "commits_since": 17,
+        "commits_since": 19,
         "budget": 6,
         "handoff": "session_536_handoff.md"
       },
-      "message": "17 commit(s) have landed since `docs/session_536_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "19 commit(s) have landed since `docs/session_536_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

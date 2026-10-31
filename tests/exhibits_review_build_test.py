@@ -171,6 +171,14 @@ def named(idx):
     return [names[i] for i in idx]
 
 
+# The names an issuer or training-site box offers (Sam, 2026-10-31): every issuer and trainer the
+# reference's records give, once each, A to Z.
+creds_fix = FIX.get("kb/credentials.json") or {}
+want_iss = sorted({" ".join(str(r.get("issuing_agency") or "").split()) for recs in creds_fix.values()
+                   for r in (recs if isinstance(recs, list) else []) if isinstance(r, dict)} - {""}, key=str.lower)
+check("the file lists the reference's issuers to pick from", data["issuers"] == want_iss and len(want_iss) > 0, data["issuers"])
+check("and its training sites, once each, A to Z", data["sites"] == sorted(set(data["sites"]), key=str.lower), data["sites"])
+
 check("schema 1, a written_at stamp, and the run it read", data["schema"] == 1 and data["written_at"].endswith("Z")
       and data["sources"]["procedures_run"] == "2026-10-31T07:47:00Z")
 check("a title folded since the run leaves the queue", GONE not in held)

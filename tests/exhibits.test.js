@@ -338,28 +338,47 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   byText(t.d, ".exh-acts button", "Skip").click(); await settle();
   check("zero reads No students with credit yet", current(t.d) === WELD && /No students with credit yet/.test(txt(t.d.querySelector(".exh-why"))));
 
-  // the conflict's buttons
+  // the conflict's buttons (Sam, 2026-10-31, at a conflict that would not save): Change and Keep write the
+  // title the reference holds as unified_title_supersedes, as Another look does; the fold re-points it only
+  // while that title stands.
   stepTile(t.d, "Conflict with the reference").click(); await settle();
+  function curPosts() { return t.calls.filter(function (c) { return /kb_curation/.test(c.url) && c.method === "POST"; }); }
   byText(t.d, ".exh-acts button", "Keep Current Title").click(); await settle();
-  check("Keep Current Title on a conflict writes nothing and says a session re-keys it",
-    !t.calls.some(function (c) { return /kb_curation/.test(c.url); }) && /Tell a session; it is a reviewed change/.test(txt(t.d.querySelector(".exh-status"))));
+  let revRows = [].concat.apply([], curPosts().map(function (c) { return c.body; }));
+  check("Keep Current Title on a conflict saves the title saved earlier over the reviewed one",
+    revRows.length === 3 && revRows.every(function (r) { return r.course_id === "_UNCLASSIFIED::" + JUV && /^\d{4}-\d\d-\d\dT/.test(r.reviewed_at); })
+    && revRows.some(function (r) { return r.field === "unified_title_assignment" && r.value === "Juvenile Justice Procedures"; })
+    && revRows.some(function (r) { return r.field === "unified_title_supersedes" && r.value === "Juvenile Law and Procedures"; }));
+  check("the note says the run moves it while the reviewed title stands",
+    /over the reviewed title “Juvenile Law and Procedures”/.test(txt(t.d.querySelector(".exh-status"))) && /still stands/.test(txt(t.d.querySelector(".exh-status"))));
+  // The step is empty once its one card is decided; Back sits on any card and returns there.
+  stepTile(t.d, "All held").click(); await settle();
+  byText(t.d, ".exh-acts button", "Back").click(); await settle();
+  check("Back returns to the conflict card", current(t.d) === JUV);
   title(t.d).value = "Something Else"; title(t.d).dispatchEvent(new t.w.Event("input"));
   byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
-  check("an edited title on a conflict writes nothing", !t.calls.some(function (c) { return /kb_curation/.test(c.url); }) && /re-key a person-reviewed entry/.test(txt(t.d.querySelector(".exh-status"))));
+  revRows = [].concat.apply([], curPosts().slice(1).map(function (c) { return c.body; }));
+  check("an edited title on a conflict saves it with the reviewed title it replaces",
+    revRows.some(function (r) { return r.field === "unified_title_assignment" && r.value === "Something Else"; })
+    && revRows.some(function (r) { return r.field === "unified_title_supersedes" && r.value === "Juvenile Law and Procedures"; }));
+  stepTile(t.d, "All held").click(); await settle();
+  byText(t.d, ".exh-acts button", "Back").click(); await settle();
+  stepTile(t.d, "Conflict with the reference").click(); await settle();
   title(t.d).value = "Juvenile Law and Procedures"; title(t.d).dispatchEvent(new t.w.Event("input"));
   byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
-  const del = t.calls.find(function (c) { return /kb_curation/.test(c.url); });
-  check("the reference's title on a conflict clears the saved assignment", del && del.method === "DELETE"
+  const del = t.calls.find(function (c) { return /kb_curation/.test(c.url) && c.method === "DELETE"; });
+  check("the reference's title on a conflict clears the saved assignment", del
     && del.url.indexOf("course_id=eq." + encodeURIComponent("_UNCLASSIFIED::" + JUV)) !== -1);
   check("the cleared title leaves the queue and says so", /the reference's title “Juvenile Law and Procedures” stands/.test(txt(t.d.querySelector(".exh-status")))
     && /Nothing waits in this step tonight/.test(txt(t.root)) && txt(stepTile(t.d, "All held").querySelector(".exh-sn")) === "3");
+  const nPosts = curPosts().length;
 
   // a save
   stepTile(t.d, "All held").click(); await settle();
   title(t.d).value = "Introduction to Digital Art"; title(t.d).dispatchEvent(new t.w.Event("input"));
   t.d.getElementById("exh-issuer").value = "Cabrillo High School"; t.d.getElementById("exh-issuer").dispatchEvent(new t.w.Event("input"));
   byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
-  const posts = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; });
+  const posts = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(nPosts);
   check("Change to Proposed Title writes the CER's two rows", posts.length === 2
     && posts.every(function (p) { return p.body.course_id === "_UNCLASSIFIED::" + DM && p.body.reviewer_email === "reviewer@example.org"; })
     && posts.some(function (p) { return p.body.field === "unified_title_assignment" && p.body.value === "Introduction to Digital Art"; })
@@ -367,7 +386,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the write merges on the row's key, as the CER's Save does", posts.every(function (p) { return /resolution=merge-duplicates/.test(p.headers.Prefer); }));
   check("the saved title leaves the queue and the next one opens", current(t.d) === AP && /Saved “Introduction to Digital Art”. The nightly run adds it/.test(txt(t.d.querySelector(".exh-status"))));
   byText(t.d, ".exh-acts button", "Keep Current Title").click(); await settle();
-  const keep = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(2);
+  const keep = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(nPosts + 2);
   check("Keep Current Title saves the local title as its own title", keep.some(function (p) { return p.body.field === "unified_title_assignment" && p.body.value === AP; }));
   // Sam, 2026-10-31: Change to Proposed Title first, the local title in bold, and Back to the cards before.
   const firstAct = t.d.querySelector(".exh-acts button");
@@ -418,6 +437,42 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   await t.M.boot(); await settle();
   check("a non-reviewer sign-in gets no counts and is told why", /Students show to a reviewer's sign-in/.test(txt(t.d.querySelector(".exh-why")))
     && /Your sign-in is not a reviewer's/.test(txt(Array.from(t.d.querySelectorAll(".exh-tile"))[2])));
+
+  // ASE titles and names to pick from (Sam, 2026-10-31): "anything with an ASE cert in the title should
+  // auto-populate the issuer and allow me to accept it. When I enter text in the issuer or trainer box, it
+  // should search for text matches for existing items and present option to click with each text entry".
+  REVIEW.issuers = ["Cabrillo High School", "California Community Colleges", "Carpenters Training Committee for Northern California (CTCNC)"];
+  REVIEW.sites = ["Inland Empire Electrical Training", "Kern County JATC"];
+  t = load({ signedIn: true });
+  await t.M.boot(); await settle();
+  check("the first card is the Proposed one, its issuer the proposal's", current(t.d) === DM && t.d.getElementById("exh-issuer").value === "Local High School");
+  title(t.d).value = "Automotive Technology (ASE A1 Engine Repair)"; title(t.d).dispatchEvent(new t.w.Event("input"));
+  const aseNote = Array.from(t.d.querySelectorAll(".exh-canon p")).find(function (p) { return /Issuer filled from the ASE test/.test(txt(p)); });
+  check("a title naming an ASE test fills the issuer box with ASE and says why",
+    t.d.getElementById("exh-issuer").value === "National Institute for Automotive Service Excellence (ASE)" && aseNote && !aseNote.hidden);
+  const iss = t.d.getElementById("exh-issuer");
+  iss.value = "cabr"; iss.dispatchEvent(new t.w.Event("input"));
+  const opts = t.d.getElementById("exh-issuer-opts");
+  check("typing in the issuer box lists the names that hold the text, as words to click",
+    opts && !opts.hidden && Array.from(opts.querySelectorAll("button")).map(txt).join("|") === "Cabrillo High School"
+    && iss.getAttribute("aria-controls") === "exh-issuer-opts");
+  opts.querySelector("button").click(); await settle();
+  check("a click fills the box and closes the list", iss.value === "Cabrillo High School" && opts.hidden);
+  title(t.d).value = "Automotive Technology (ASE A8 Engine Performance)"; title(t.d).dispatchEvent(new t.w.Event("input"));
+  check("a picked issuer stays when the title changes", iss.value === "Cabrillo High School");
+  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  const picked = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; });
+  check("Change saves the picked issuer", picked.some(function (p) { return p.body.field === "issuing_agency_assignment" && p.body.value === "Cabrillo High School"; }));
+  t.M._state.drafts[AP] = { title: "Brakes (ASE A5 Brakes)" };
+  const bi = t.M._bulkItems(t.M._shown()).find(function (it) { return it.raw === AP; });
+  check("Accept all gives an ASE title its ASE issuer", bi && bi.issuer === "National Institute for Automotive Service Excellence (ASE)");
+  check("one letter offers nothing; a word start sorts ahead of a match inside a word",
+    t.M._nameMatches(REVIEW.issuers, "c").length === 0
+    && t.M._nameMatches(["Western Training Co", "Training Center West", "Untrained"], "train").join("|") === "Training Center West|Western Training Co|Untrained");
+  check("training sites to pick from come from the file and the held titles' sites",
+    t.M._nameOptions("sites").indexOf("Kern County JATC") !== -1 && t.M._nameOptions("issuers").indexOf("National Institute for Automotive Service Excellence (ASE)") !== -1);
+  check("ASE reads in the title, never inside a word", t.M._aseIssuer("Phase Change") === "" && t.M._aseIssuer("Automotive Service Excellence G1") !== "");
+  delete REVIEW.issuers; delete REVIEW.sites;
 
   // the file could not be read
   t = load({ noData: true });
