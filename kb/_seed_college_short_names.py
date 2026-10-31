@@ -44,20 +44,20 @@ Berkeley City College\tBERKELEY CITY
 Butte College\tBUTTE
 Cabrillo College\tCABRILLO
 Calbright College\tCALBRIGHT
-Canada College\tCANADA
+Canada College\tCAÑADA
 Cerritos College\tCERRITOS
 Cerro Coso Community College\tCERRO COSO
 Chabot College\tCHABOT
 Chaffey College\tCHAFFEY
 Citrus College\tCITRUS
-City College Of San Francisco\tSAN FRANCISCO
+City College Of San Francisco\tCITY COLLEGE SAN FRANCISCO
 Clovis Community College\tCLOVIS
 Coastline Community College\tCOASTLINE
 College of Alameda\tALAMEDA
 College Of Marin\tMARIN
 College of San Mateo\tSAN MATEO
 College Of The Canyons\tCANYONS
-College Of The Desert\tDESERT
+College Of The Desert\tCOLLEGE OF THE DESERT
 College Of The Redwoods\tREDWOODS
 College Of The Sequoias\tSEQUOIAS
 College Of The Siskiyous\tSISKIYOUS
@@ -166,7 +166,11 @@ SPECIAL_TITLE = {
     "EAST LA": "East LA", "LA CITY": "LA City", "LA HARBOR": "LA Harbor",
     "LA MISSION": "LA Mission", "LA PIERCE": "LA Pierce", "LA SWEST": "LA Southwest",
     "LA TRADE": "LA Trade", "LA VALLEY": "LA Valley", "WEST LA": "West LA",
-    "DEANZA": "De Anza", "MIRA COSTA": "Mira Costa", "SAN FRANCISCO": "San Francisco",
+    "DEANZA": "De Anza", "MIRA COSTA": "Mira Costa",
+    # Sam, 2026-10-30: "College of the Desert stays whole", "Cañada keeps its ñ",
+    # "City College San Francisco", and "Sequoias" (unchanged).
+    "COLLEGE OF THE DESERT": "College of the Desert", "CAÑADA": "Cañada",
+    "CITY COLLEGE SAN FRANCISCO": "City College San Francisco",
     "MT SAN ANTONIO": "Mt. San Antonio", "MT. SAN JACINTO": "Mt. San Jacinto",
     "NORTH ORANGE ADULT": "North Orange Adult", "SAN DIEGO ADULT": "San Diego Adult",
     "SAN DIEGO CITY": "San Diego City", "SAN DIEGO MESA": "San Diego Mesa",
@@ -185,6 +189,8 @@ EXTRA_ALIASES = {
     "West Hills College Lemoore": ["Lemoore College", "Lemoore"],
     # Cañada: proper diacritic, plain ASCII, and the mojibake already in the data.
     "Canada College": ["Cañada College", "CaÃ±ada College"],
+    # The prior short ("San Francisco", until Sam's 2026-10-30 correction) keeps resolving.
+    "City College Of San Francisco": ["San Francisco"],
 }
 
 
