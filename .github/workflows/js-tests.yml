@@ -387,6 +387,11 @@ jobs:
       # student figure in the public file.
       - name: Exhibits review queue builder
         run: python3 tests/exhibits_review_build_test.py
+      # Another look (Sam, 2026-10-31): each rule's proposal on a fixture, what a person kept never comes
+      # back, a held title is left to Review, an exam's or an industry credential's name is never read
+      # as a course number.
+      - name: Exhibits Another look builder
+        run: python3 tests/exhibits_sweep_build_test.py
       # The public adoption page's builder (Sheet 147 cards 1 and 3): settled credentials only, could
       # adopt from the prescriptive layer alone, no student figure in the public file.
       - name: Public adoption page builder

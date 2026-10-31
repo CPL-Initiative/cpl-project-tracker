@@ -59,6 +59,16 @@ assignment is folded or held on its own:
 The report and the receipt list `held`, each with why, and the nightly CER
 procedures run (kb/_cer_procedures.py) brings them to the tab's Needs you.
 
+REVISE lane (added 2026-10-31, SkyCoralberry; Sam's Another look in the Exhibits tab): a person who
+re-picks a title the reference already holds saves, beside the assignment, the title it replaces
+(`supersedes`, from unified_title_supersedes). When every human-reviewed spelling still carries
+exactly that title and the assignment is newer, the person saw what stood and chose to replace it,
+so the fold re-points the raw (like a supersede, articulation rows included) instead of holding it
+as a conflict. Anything else (the title changed in between, or no `supersedes`) is the conflict it
+always was. A credential left with no raw is retired: its records move to the new title when that
+title has none, else they are dropped; the receipt keeps them whole, with any credential-panel rows
+that stay under the old name (kb/credential_review_overlay.json) for a session to move.
+
 V-gates (structural, enforced in the apply):
   V2 target_credential   — every assigned unified_title has a credentials.json
                            record after the fold.
@@ -86,6 +96,7 @@ UT_PATH = os.path.join(HERE, "unified_titles.json")
 CR_PATH = os.path.join(HERE, "credentials.json")
 AUDIT_PATH = os.path.join(HERE, "exhibit_audit", "latest.json")
 ART_PATH = os.path.join(HERE, "coci_articulations.json")
+PANEL_PATH = os.path.join(HERE, "credential_review_overlay.json")
 OUTDIR = os.path.join(HERE, "unclassified_fold", date.today().isoformat())
 
 CLASSIFIED_BY = "curator (CER unclassified-triage)"
@@ -117,7 +128,7 @@ def _entry_ts(entry):
 
 
 def classify(assignments, ut):
-    """Bucket each assignment as clean / skip / supersede / stale / conflict.
+    """Bucket each assignment as clean / skip / supersede / revise / stale / conflict.
 
     supersede rec shape adds: spellings (the ut keys being re-pointed) and
     displaced (the machine unified_titles they currently hold). stale = the KB
@@ -125,6 +136,7 @@ def classify(assignments, ut):
     strategy-2 adopt-the-article-spelling rename after the overlay assignment
     was made) — the overlay record is outdated, report-only, never a gate."""
     clean, skip, supersede, stale, conflict = [], [], [], [], []
+    revise = []
     for raw, a in sorted(assignments.items()):
         assigned = (a.get("unified_title") or "").strip()
         rec = {"raw": raw, "assigned": assigned, "issuer": (a.get("issuing_agency") or "").strip(),
@@ -144,7 +156,13 @@ def classify(assignments, ut):
         else:
             held = [(s, ut[s]) for s in disagreeing if not _machine_unreviewed(ut[s])]
             newest = max(_entry_ts(e) for _, e in held)
-            if (rec["reviewed_at"] or "") <= newest:
+            sup = (a.get("supersedes") or "").strip()
+            if (sup and (rec["reviewed_at"] or "") > newest
+                    and all((e.get("unified_title") or "") == sup for _, e in held)):
+                revise.append({**rec, "spellings": spellings, "disagreeing": disagreeing,
+                               "displaced": sorted({ut[s].get("unified_title") or "" for s in disagreeing}),
+                               "supersedes": sup})
+            elif (rec["reviewed_at"] or "") <= newest:
                 stale.append({**rec, "why": "KB holds a newer curator decision: "
                               + "; ".join(f"{s!r} -> {e.get('unified_title')!r} ({_entry_ts(e)})"
                                           for s, e in held)})
@@ -153,7 +171,7 @@ def classify(assignments, ut):
                                  "standing": sorted({e.get("unified_title") or "" for _, e in held}),
                                  "why": "human-reviewed classification stands: "
                                  + "; ".join(f"{s!r} -> {e.get('unified_title')!r}" for s, e in held)})
-    return clean, skip, supersede, stale, conflict
+    return clean, skip, supersede, revise, stale, conflict
 
 
 def articulation_ripples(recs, art):
@@ -183,19 +201,19 @@ def main():
         print("No assignments in the overlay — nothing to fold.")
         return
 
-    clean, skip, supersede, stale, conflict = classify(assignments, ut)
+    clean, skip, supersede, revise, stale, conflict = classify(assignments, ut)
 
     # Articulation ripple scan (load the big file only when there's work to do).
     art = None
     ripples = []
-    if clean or supersede:
+    if clean or supersede or revise:
         art = load(ART_PATH)
-        ripples = articulation_ripples(clean + supersede, art)
+        ripples = articulation_ripples(clean + supersede + revise, art)
     # Ripples on SUPERSEDED raws are resolved by the in-apply re-point (the
     # displaced title is a machine draft, not a valid alternate spelling —
     # methodology strategy 3). A ripple on a CLEAN raw is the "two valid
     # spellings" case that needs the human call: that raw is HELD, by itself.
-    superseded_raws = {r["raw"].strip() for r in supersede}
+    superseded_raws = {r["raw"].strip() for r in supersede + revise}
     resolved_ripples = [x for x in ripples if (x["raw"] or "").strip() in superseded_raws]
     blocking_ripples = [x for x in ripples if (x["raw"] or "").strip() not in superseded_raws]
     rippled_raws = {(x["raw"] or "").strip() for x in blocking_ripples}
@@ -207,7 +225,7 @@ def main():
     clean = [r for r in clean if r["raw"].strip() not in rippled_raws]
     # Each held assignment holds only itself (Sheet 94 card 1).
     held = conflict + held_ripple
-    fold_recs = clean + supersede
+    fold_recs = clean + supersede + revise
 
     # Which assigned unified_titles lack a credentials.json record? (would be
     # added — deduped by target title, since two raws may mint the same one.)
@@ -296,6 +314,29 @@ def main():
                         and x.get("classified_by") != CLASSIFIED_BY for x in recs)):
             cred_prunes.append(t)
 
+    # Credentials a REVISE leaves with no raw: the records move to the new title when it has none (the
+    # person renamed the credential), else they retire; either way the receipt keeps them whole.
+    revised_spellings = {s for r in revise for s in r["disagreeing"]}
+    cred_moves, cred_retires = [], []
+    _moved_to = set()
+    try:
+        _panel = load(PANEL_PATH).get("overrides", {})
+    except (FileNotFoundError, ValueError):
+        _panel = {}
+    for t in sorted({r["supersedes"] for r in revise}):
+        if any(v.get("unified_title") == t for k, v in ut.items() if k not in revised_spellings):
+            continue
+        if t in cred_prunes or not cr.get(t):
+            continue
+        targets = sorted({r["assigned"] for r in revise if r["supersedes"] == t})
+        rec = {"title": t, "records": cr[t], "panel_rows_left": sorted((_panel.get(t) or {}).keys())}
+        if len(targets) == 1 and not cr.get(targets[0]) and targets[0] not in _moved_to:
+            cred_moves.append({**rec, "to": targets[0]})
+            _moved_to.add(targets[0])
+        else:
+            cred_retires.append({**rec, "to": targets})
+    cred_adds = [r for r in cred_adds if r["assigned"] not in _moved_to]
+
     # ---- V-gates ----
     # V1 (no conflicts) and V4 (no blocking ripples) were the all-or-nothing
     # hold until 2026-10-18; each is now a per-assignment hold, listed in `held`.
@@ -314,6 +355,12 @@ def main():
     for r in supersede:
         print(f"     ^ {r['raw']!r} -> {r['assigned']!r}  (displaces {r['displaced']}, "
               f"re-points {r['disagreeing']})")
+    print(f"  REVISE (a person re-picked a title that still stands): {len(revise)}")
+    for r in revise:
+        print(f"     > {r['raw']!r}: {r['supersedes']!r} -> {r['assigned']!r}")
+    if cred_moves or cred_retires:
+        print(f"  credentials renamed by a revise: {[(m['title'], m['to']) for m in cred_moves]}; "
+              f"retired: {[m['title'] for m in cred_retires]}")
     print(f"  SKIP (already):     {len(skip)}")
     for r in skip:
         print(f"     = {r['raw']!r} ({r['why']})")
@@ -351,7 +398,8 @@ def main():
         "_generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "mode": "apply" if apply else "dry-run",
         "gates": gates, "apply_safe": apply_safe,
-        "clean": clean, "skip": skip, "supersede": supersede,
+        "clean": clean, "skip": skip, "supersede": supersede, "revise": revise,
+        "credential_moves": cred_moves, "credential_retires": cred_retires,
         "stale": stale, "conflict": conflict, "held": held,
         "credential_adds": cred_adds, "credential_issuer_fills": issuer_fills,
         "credential_issuer_adds": issuer_adds,
@@ -434,6 +482,17 @@ def main():
         if r["raw"] not in ut:
             ut[r["raw"]] = new_entry(r)
             supersede_adds += 1
+    for r in revise:
+        # Every disagreeing spelling takes the person's new title; each keeps its exhibits and says what it
+        # replaced. The trimmed spelling is always among them (a revise needs a standing entry).
+        for s in r["disagreeing"]:
+            old = ut[s]
+            e = new_entry(r)
+            e["source_exhibit_ids"] = old.get("source_exhibit_ids")
+            e["_revised_from"] = old.get("unified_title")
+            e["_notes"] = (f"Another look (Exhibits tab): {r['reviewed_by']} replaced "
+                           f"{old.get('unified_title')!r} on {str(r['reviewed_at'])[:10]}.")
+            ut[s] = e
     assert len(ut) == ut_before + len(clean) + supersede_adds, \
         "V3 violated: unexpected unified_titles delta"
 
@@ -470,6 +529,10 @@ def main():
         })
     for t in cred_prunes:
         del cr[t]
+    for m in cred_moves:
+        cr[m["to"]] = [dict(x, _renamed_from=m["title"]) for x in cr.pop(m["title"])]
+    for m in cred_retires:
+        del cr[m["title"]]
 
     # Re-point the resolved articulation rows (superseded raws only) so the
     # articulation layer moves WITH the curator's credential — 0 residual ripple.
@@ -489,10 +552,10 @@ def main():
         # SUPERSEDE ones this fold just landed AND the SKIP ones already
         # classified (stale audit snapshot) — so the worklist drops all the
         # curator acted on, not just the new adds.
-        folded = {r["raw"]: r["assigned"] for r in (clean + skip + supersede)}
+        folded = {r["raw"]: r["assigned"] for r in (clean + skip + supersede + revise)}
         # Superseded twin spellings have CLASSIFIED cards pointing at the
         # displaced machine title — re-point those too so the snapshot coheres.
-        twin_targets = {s: r["assigned"] for r in supersede for s in r["disagreeing"]}
+        twin_targets = {s: r["assigned"] for r in supersede + revise for s in r["disagreeing"]}
         for card in audit.get("title_cards", []):
             rt = card.get("raw_title")
             if rt in folded and not card.get("unified_title"):
@@ -515,12 +578,13 @@ def main():
     with open(UT_PATH, "w", encoding="utf-8") as f:
         json.dump(ut, f, indent=2, ensure_ascii=False)
         f.write("\n")
-    if cred_adds or issuer_fills or issuer_adds or cred_prunes:
+    if cred_adds or issuer_fills or issuer_adds or cred_prunes or cred_moves or cred_retires:
         with open(CR_PATH, "w", encoding="utf-8") as f:
             json.dump(cr, f, indent=2, ensure_ascii=False)
             f.write("\n")
 
-    applied = {"folded": clean, "superseded": supersede, "held": held,
+    applied = {"folded": clean, "superseded": supersede, "revised": revise,
+               "credential_moved": cred_moves, "credential_retired": cred_retires, "held": held,
                "credential_added": cred_adds, "credential_issuer_fills": issuer_fills,
                "credential_issuer_adds": issuer_adds,
                "credential_pruned": cred_prunes,
@@ -531,7 +595,7 @@ def main():
     with open(os.path.join(OUTDIR, "applied.json"), "w", encoding="utf-8") as f:
         json.dump(applied, f, indent=2, ensure_ascii=False)
         f.write("\n")
-    print(f"\nAPPLIED — folded {len(clean)} + superseded {len(supersede)} into "
+    print(f"\nAPPLIED — folded {len(clean)} + superseded {len(supersede)} + revised {len(revise)} into "
           f"unified_titles.json ({ut_before} -> {len(ut)}), "
           f"{len(cred_adds)} credential record(s) added, "
           f"{len(issuer_fills)} issuer(s) filled, {len(issuer_adds)} additional "

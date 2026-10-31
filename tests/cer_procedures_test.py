@@ -275,7 +275,12 @@ cp.open = guarded_open
 with redirect_stdout(io.StringIO()):
     report, stage = cp.run(dry_run=True, catalog=False)
 check("a dry run writes nothing", wrote == [], wrote)
-check("the run proposes titles from the committed queue", stage["_counts"]["staged"] > 0)
+# Every waiting title in the committed queue is proposed, held for a person, or not yet asked (an unsure
+# proposal is both pre-filled and held, so the three can add to more). The count itself is the data's:
+# Sam's saves of 2026-10-31 folded the queue from 468 to 1, and a check on "more than none" failed on main.
+check("the run accounts for every waiting title in the committed queue",
+      report["waiting"] <= report["proposed"] + report["needs_you_count"] + report["not_yet_asked"]
+      and report["queue"] >= report["waiting"], report)
 check("no pre-fill comes from a hint lane",
       not any((v.get("procedure") or "").startswith("lane-") or v.get("via") in cp.HINT_LANES
               for v in stage["staged"].values()))

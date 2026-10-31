@@ -72,6 +72,8 @@
   "field:kb_curation.anchor_discipline_proposal": "DR-25",
   "field:kb_curation.discipline": "DR-25",
   "field:kb_curation.training_sites_override": "DR-07",
+  "field:kb_curation.unified_title_supersedes": "DR-07",
+  "field:kb_curation.title_sweep_kept": "DR-07",
   "file:kb/reference/subject_discipline_map.json": "DR-25",
   "file:kb/discipline_canonical_subj4.json": "DR-25",
   "tab:ccr-anchor-proposal-apply": "DR-25",

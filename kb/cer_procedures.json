@@ -95,8 +95,32 @@
       "name": "Level words go last",
       "kind": "guidance",
       "on": true,
-      "rule": "A leading Beginning, Intermediate or Advanced moves to the end of the title; Intro becomes Introduction; an official proper name keeps its own order.",
+      "rule": "A leading Beginning, Intermediate or Advanced moves to the end of the title; Intro becomes Introduction; an official proper name keeps its own order. A world-language level leads instead (language-levels).",
       "source": {"who": "Sam", "date": "2026-07-08", "words": "level words move to the end of the title", "skill": "Rule 5g"}
+    },
+    {
+      "id": "ase-paren",
+      "name": "Name the ASE test",
+      "kind": "guidance",
+      "on": true,
+      "rule": "An automotive course exhibit that prepares for an ASE test names the test in parentheses after the title, with its code and official name: Automotive Technology (ASE A7 Heating and Air Conditioning). A course code names a test only when the course's own title agrees with it (Las Positas's AUTO P1 is Powertrains, not the parts test). The ASE certification itself keeps its own name (ASE A7 — Heating and Air Conditioning).",
+      "source": {"who": "Sam", "date": "2026-10-31", "words": "Auto exhibits are most often aligned with ASE cert titles and I started adding those to later exhibit titles in parens after the title", "skill": "Rule 5h"}
+    },
+    {
+      "id": "arabic-level-numerals",
+      "name": "Level numerals are Arabic",
+      "kind": "guidance",
+      "on": true,
+      "rule": "A level numeral is 1, 2, 3, never I, II, III. An official name that carries a Roman numeral keeps it (State Fire Training's Firefighter I, Fire Officer, Fire Inspector).",
+      "source": {"who": "Sam", "date": "2026-10-31", "words": "Many exhibits use I, II, III and I skipped adjusting some of those to 1,2,3 for consistency.", "skill": "Rule 5h"}
+    },
+    {
+      "id": "language-levels",
+      "name": "World-language levels",
+      "kind": "guidance",
+      "on": true,
+      "rule": "A world-language course is Elementary or Intermediate, then the language, then 1 or 2, the level word first as C-ID names these courses: Elementary Spanish 1, Intermediate Spanish 2. Course 1 and 2 (or 1A and 1B), Beginning and High-Beginning are Elementary 1 and 2; 2A and 2B are Intermediate 1 and 2.",
+      "source": {"who": "Sam", "date": "2026-10-31", "words": "look for beginning labels that should be elementary (our canonical term for 1,2 or 1A,1B and intermediate should be often 2,3 or 2A,2B", "skill": "Rule 5h"}
     },
     {
       "id": "mechanism-collapses",

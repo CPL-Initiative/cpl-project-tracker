@@ -90,6 +90,10 @@ jobs:
       - name: Build the Exhibits review queue
         run: python3 kb/_build_exhibits_review.py --quiet || echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run."
 
+      # Another look (Sam, 2026-10-31) leaves a title this run holds to Review, so it rebuilds after it.
+      - name: Build the Exhibits tab's Another look
+        run: python3 kb/_sweep_exhibit_titles.py --quiet || echo "::warning title=Another look not rebuilt::kb/_sweep_exhibit_titles.py failed; the Exhibits tab reads the previous file until the next run."
+
       # always(): a save refused at the INSERT still wrote its receipt, and a receipt that never
       # reaches main cannot undo anything.
       - name: Commit the run
@@ -102,6 +106,7 @@ jobs:
           git add kb/cer_classified.json 2>/dev/null || true
           git add kb/cer_procedures_out/saved 2>/dev/null || true
           git add kb/exhibits_review.json kb/exhibits_review_courses.json kb/exhibits_adoption.json 2>/dev/null || true
+          git add kb/exhibits_sweep.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

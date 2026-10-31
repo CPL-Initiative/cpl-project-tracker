@@ -301,7 +301,8 @@ word buries the subject ("Advanced Floral Design" files under A, away from
 4. **Official proper names are exempt from the level move** when the level
    word is part of the credential's own name, not a course level: **Advanced
    Placement (AP)**, **Advanced EMT** (the NREMT license level), **Advanced
-   Cardiac/Cardiovascular Life Support (ACLS)**. Rule 8b (verbatim official
+   Cardiac/Cardiovascular Life Support (ACLS)**, and a **world-language level**
+   (*Elementary Spanish 1*, Rule 5h). Rule 8b (verbatim official
    titles) outranks 5g; extend the exemption list (`_LEVEL_KEEP` in
    `kb/_preseed_null_issuers.py`) as cases surface.
 5. Applies AFTER the Rule 5c authority lookup — a C-ID/CCN/COCI-aligned title
@@ -314,6 +315,23 @@ entries for triage rows whose display title changes under the rule); verified
 by `kb/_verify_issuer_preseed.py`. Scope: the CER triage cohort (null-issuer
 queue + staged/resurface rows) — already-issuered credentials are NOT
 mass-resurfaced for styling alone.
+
+### Rule 5h — Name the ASE test, Arabic level numerals, world-language levels (Sam, 2026-10-31)
+
+From Sam's pass through the Exhibits review. Procedures `ase-paren`, `arabic-level-numerals` and
+`language-levels` in `kb/cer_procedures.json`; the nightly audit `kb/_sweep_exhibit_titles.py`
+(the Exhibits tab's *Another look*) finds titles already in the reference that miss them.
+
+1. **An automotive course that prepares for an ASE test names the test in parentheses** after the
+   title, code and official name: *Automotive Technology (ASE A7 Heating and Air Conditioning)*. A
+   course code names a test only when the course's title agrees (Las Positas's AUTO P1 is
+   *Powertrains: Modifications for Performance*). The ASE certification keeps its own name.
+2. **Level numerals are Arabic** (1, 2, 3), except an official name that carries a Roman numeral
+   (State Fire Training's Firefighter I).
+3. **A world-language course is Elementary or Intermediate, the language, then 1 or 2**, the level
+   word first as C-ID names these courses (*Elementary Spanish 1*, *Intermediate Spanish 2*), an
+   exception to 5g. Course 1 and 2, 1A and 1B, Beginning and High-Beginning are Elementary 1 and 2;
+   2A and 2B are Intermediate 1 and 2.
 
 ### Authority sources for exhibit + agency names
 
