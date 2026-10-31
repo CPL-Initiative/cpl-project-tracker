@@ -42,6 +42,15 @@ sections, with Sam's words).
 
 ## Open work, in order
 
+0. **Funding Nudge (Sam, ~20:35Z):** *"add a Nudge button at the top of the college rows internal funding tab that
+   allows me to send nudge emails to all the colleges who have not yet requested participation or attested to the NC
+   lead? I realize this would open a gazzilion email messages to send, so advise ... Maybe we should set up the ability
+   for you to send automatically once we get that set up with RCCD IT."* Measured: 6 participation requests and 4
+   noncredit attestations, so about 110 colleges. Advised in chat: a preview list first (who, what is missing, the
+   deadline), sent today as one Outlook mail merge from a CSV (or one BCC draft), and later sent by COBI as map@rccd.edu
+   through Microsoft 365 with a send log and a 14-day skip, after Governance. His call first: may a reviewer-only read
+   give the funding tab each college's CPL Coordinator and primary contact addresses (the tab's PII guard forbids it
+   today)? Build on his reply; if none, put both on the next sheet.
 1. **Sam's ASE naming call, asked in chat (19:30Z):** the course title as the ASE test's name plus a short tag,
    *Engine Performance (ASE A8)*, with the level kept where a college teaches a sequence. On **ASE short**, change
    Another look's ASE rule (`kb/_sweep_exhibit_titles.py`) to propose that form, including the six reference titles that
