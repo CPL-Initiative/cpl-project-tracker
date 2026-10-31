@@ -28,7 +28,7 @@ Scopes, plans, specs, briefs and workstream handoffs — everything in `docs/` t
 | [CCR Convergence Strategy — from 7,716 decisions to a 2,500-course crosswalk](../ccr_convergence_strategy.md) | `ccr_convergence_strategy.md` | 2026-07-03 |  |
 | [CCR merge-workspace epic — consolidate the two merge popups + dock the worklist](../ccr_merge_workspace_epic_scope.md) | `ccr_merge_workspace_epic_scope.md` | 2026-06-24 |  |
 | [CER exhibit model — multi-issuer + aligned-assessment pathways (design note)](../cer_assessment_pathways_design.md) | `cer_assessment_pathways_design.md` | 2026-07-12 |  |
-| [CER redesign handoff: the Exhibits tab's Review queue built; the credential panel next](../cer_redesign_handoff.md) | `cer_redesign_handoff.md` | 2026-10-31 |  |
+| [CER redesign handoff: the credential panel built; Sam's first saves and EACR next](../cer_redesign_handoff.md) | `cer_redesign_handoff.md` | 2026-10-31 |  |
 | [CIP Review — progress dashboard, editing access, and COCI submission (design note)](../cip_submission_access_plan.md) | `cip_submission_access_plan.md` | 2026-07-18 |  |
 | [CIP workstream handoff → next session](../cip_crosswalk_handoff.md) | `cip_crosswalk_handoff.md` | 2026-07-20 |  |
 | [CIS ↔ CS Convergence — Scope (decision pending)](../cis_cs_convergence_scope.md) | `cis_cs_convergence_scope.md` | 2026-06-10 |  |

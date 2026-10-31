@@ -74,7 +74,9 @@ The whole ecosystem, end-to-end:
    Exhibit Adoption as it grows; its **Review** queue first: each held title's
    proposed canonical title, named by its aligned course where it has one,
    saved with Keep Current Title or Change to Proposed Title, step tiles as
-   filters, and students per title for a reviewer), a
+   filters, and students per title for a reviewer; then **Credentials**, where
+   a credential's panel sets its issuer and its training sites, each with the
+   college it trains for), a
    **quick-start natural-language chat** widget on the first screen (Claude
    API classifies your prompt to one of the 11 tabs **and** can pre-pop the
    destination tab's filters — "review unclassified credentials" lands you

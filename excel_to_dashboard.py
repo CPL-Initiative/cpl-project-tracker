@@ -7854,6 +7854,15 @@ def export_credential_reference():
                 issuer_all.append(_ia)
                 _iseen.add(_ia)
         trainer_val = primary.get("training_agency")
+        # Every distinct training site across the records, emitted only when >1
+        # (the issuers pattern); a curator's list (the Exhibits panel's
+        # training_sites, resolved by kb/_apply_credential_review.py) replaces it
+        # below and carries the college each site trains for.
+        trainer_all = []
+        for _cr in creds:
+            _ta = (_cr.get("training_agency") or "").strip()
+            if _ta and {"site": _ta} not in trainer_all:
+                trainer_all.append({"site": _ta})
         qflag_val = quality_by_ut.get(ut)
         # System-level GE-Area credit for AP/IB/CLEP exams (ESLEI 24-35 charts).
         # None for non-exam credentials + exams not on the 2024 charts (AP African
@@ -7906,6 +7915,7 @@ def export_credential_reference():
             "issuer": issuer_val,
             **({"issuers": issuer_all} if len(issuer_all) > 1 else {}),
             "trainer": trainer_val,
+            **({"trainers": trainer_all} if len(trainer_all) > 1 else {}),
             "conf_title": conf_modal,
             "conf_issuer": primary.get("confidence_issuer", 0),
             "quality_flag": qflag_val,
@@ -7933,6 +7943,8 @@ def export_credential_reference():
             if "training_agency_override" in ov:
                 row["_original_trainer"] = trainer_val
                 row["trainer"] = ov["training_agency_override"] or None
+            if ov.get("training_sites") is not None:
+                row["trainers"] = ov["training_sites"]
             if "quality_flag_override" in ov:
                 row["_original_quality_flag"] = qflag_val
                 row["quality_flag"] = ov["quality_flag_override"] or None
