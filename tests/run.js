@@ -28,11 +28,13 @@ const TYPICAL_HEAVY_MB = 2200;   // the cpl_funding_* family, minus the outlier
 const OUTLIER_EXTRA_MB = 1700;   // what the one 3.8 GB file costs above that
 
 const dir = __dirname;
-// `--shard i/N` runs every N-th file of the sorted list (tests/lib/shard.js).
+// `--shard i/N` runs shard i's files: balanced by measured time when
+// tests/durations.json is there, else every N-th file of the sorted list
+// (tests/lib/shard.js).
 // js-tests.yml runs N of these on N runners at once and fans them into the one
 // `test` check, because a single machine is memory-bound at 4 files wide (the
 // budget below) and the suite had grown to an 18-minute step by 2026-09-24.
-const { parseShard, shardFiles } = require("./lib/shard.js");
+const { parseShard, balancedFiles, heaviestFirst } = require("./lib/shard.js");
 const SHARD = parseShard(process.argv);
 const DURATIONS_OUT = (() => {
   const i = process.argv.indexOf("--durations-out");
@@ -43,7 +45,13 @@ const DURATIONS_OUT = (() => {
 const allFiles = fs.readdirSync(dir)
   .filter((f) => f.endsWith(".test.js"))
   .sort();
-const files = SHARD ? shardFiles(allFiles, SHARD.index, SHARD.count) : allFiles;
+// Each file's measured seconds (tests/durations.json, `npm run test:durations`):
+// the shards balance by them and run their heaviest first (tests/lib/shard.js).
+// Missing or unreadable, the split falls back to round-robin.
+const DURATIONS = (() => {
+  try { return JSON.parse(fs.readFileSync(path.join(dir, "durations.json"), "utf8")); } catch (e) { return null; }
+})();
+const files = SHARD ? balancedFiles(allFiles, SHARD.index, SHARD.count, DURATIONS) : heaviestFirst(allFiles, DURATIONS);
 const SUITE_LABEL = SHARD ? " (shard " + SHARD.index + " of " + SHARD.count + ")" : "";
 
 if (!files.length) {
