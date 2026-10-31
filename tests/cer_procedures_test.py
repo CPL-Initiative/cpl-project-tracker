@@ -498,6 +498,12 @@ try:
 except ValueError:
     check("--try on an unknown procedure stops", True)
 
+# Step 7 of the scheduled sessions page tells the CPL queue routine how to work a request.
+sched = open(os.path.join(os.path.dirname(cp.HERE), "docs", "reference", "scheduled_sessions.md"), encoding="utf-8").read()
+check("the scheduled sessions page tells the routine how to work a request (step 7)",
+      "Rules sent from the Exhibits tab" in sched and "_CER\\_PROCEDURE\\_REQUEST::" in sched and "--try" in sched
+      and "cer_procedure_built" in sched and "cer_procedure_switch" in sched and "never set `on` without a switch row" in sched)
+
 failed = [r for r in results if not r[1]]
 for name, ok, why in results:
     print(("PASS " if ok else "FAIL ") + name + ("" if ok else "  " + repr(why)[:300]))

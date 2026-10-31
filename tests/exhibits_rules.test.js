@@ -7,8 +7,7 @@
 //     Another look's rule filter and at #exhibits/rules;
 //   - the writes: Send to the routine writes one request row (cer_procedure_request, JSON); Turn on and Discard
 //     write the request's switch row, merging on its key; signed out, nothing is written;
-//   - the record around it: Governance maps the three fields to DR-07, and step 7 of the scheduled sessions
-//     page tells the routine how to work a request.
+//   - the record around it: Governance maps the three fields to DR-07.
 //
 // Run from repo root: `npm test` (or `node tests/exhibits_rules.test.js`).
 const fs = require("fs");
@@ -23,10 +22,8 @@ const src = fs.readFileSync("exhibits.js", "utf8");
 const gov = JSON.parse(fs.readFileSync("kb/governance_surface_map.json", "utf8"));
 check("Governance maps the request, built and switch fields to DR-07",
   ["cer_procedure_request", "cer_procedure_built", "cer_procedure_switch"].every(function (f) { return gov.mapped["field:kb_curation." + f] === "DR-07"; }));
-const sched = fs.readFileSync("docs/reference/scheduled_sessions.md", "utf8");
-check("the scheduled sessions page tells the routine how to work a request",
-  /Rules sent from the Exhibits tab/.test(sched) && /_CER\\?_PROCEDURE\\?_REQUEST::/.test(sched) && /--try/.test(sched)
-  && /cer_procedure_built/.test(sched) && /cer_procedure_switch/.test(sched));
+// Step 7 of the scheduled sessions page (how the routine works a request) is checked in tests/cer_procedures_test.py:
+// a .test.js that reads docs/ must also run on docs-only PRs (tests/js_suite_gate_test.py).
 check("exhibits.js writes the request rows under their own key", /"_CER_PROCEDURE_REQUEST::"/.test(src)
   && /"cer_procedure_request"/.test(src) && /"cer_procedure_switch"/.test(src));
 check("the procedures store says what request and an off rule mean",
