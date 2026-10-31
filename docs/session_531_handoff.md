@@ -4,6 +4,8 @@ date: 2026-10-30
 session: 530 (SkyBuffaloberry, Sam's session)
 tags: [handoff, program-requirements, los-angeles-valley, reconcile, implementation-funding, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_533_handoff.md
 ---
 
 # You are Session 531

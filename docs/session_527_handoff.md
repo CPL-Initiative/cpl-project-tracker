@@ -4,6 +4,8 @@ date: 2026-10-30
 session: 526 (SkyJostaberry, the CPL Queue routine)
 tags: [handoff, program-requirements, glendale]
 status: current
+superseded: true
+superseded_by: session_533_handoff.md
 ---
 
 # You are Session 527

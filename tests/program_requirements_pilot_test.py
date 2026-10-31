@@ -2027,6 +2027,22 @@ check([c.get("printed") for c in GCL] == ["TART 101", "PSYCH 170", "ENGL 101", N
       "an aliased prefix and a renumber each give the code the catalog prints: %s" % GCL)
 check(sorted(P.find_codes("Required Courses: K I N 157; P SYC H 170; TART 1 0 1; ENGL 1 01", GCL))
       == ["ENGLC1000", "KIN157", "PSYC170", "THTR101"], "the program page names all four listed courses")
+# Los Angeles Valley (S532): the catalog prints T & M 027 where the state's file keeps TM027 (21897's shop courses).
+LAV_ALIASES = RC.prefix_aliases("Los Angeles Valley College")
+tm = {"program": {"total_units": {"min": 7, "max": 7}, "measure": "units"},
+      "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "T & M 027", "units": 4},
+                                                                 {"code": "MSCNC 114", "units": 3}]}]}
+TM_LIST = [{"code": "TM027", "units": None}, {"code": "MSCNC 114", "units": 3}]
+check(S.score(tm, TM_LIST, "x", "Certificate of Achievement")["coverage"]["missing"] == ["TM27"],
+      "without the alias, T & M 027 misses the listed TM027")
+tm_scored = S.score(tm, TM_LIST, "x", "Certificate of Achievement", LAV_ALIASES)
+check(not tm_scored["coverage"]["missing"] and not tm_scored["invented"]["codes"],
+      "Los Angeles Valley's alias reads T & M 027 as the listed TM027: %s" % json.dumps(tm_scored["coverage"]))
+LAV = [{"closed_list": [{"code": "TM027"}, {"code": "MSCNC 114"}]}]
+PC.with_renumbers(LAV, RC.course_renumbers("Los Angeles Valley College"), LAV_ALIASES)
+check(sorted(P.find_codes("COMPLETE THE FOLLOWING: T & M 027 Basic Machine Shop 4; MSCNC 114 Print Interpretation 3",
+                          LAV[0]["closed_list"])) == ["MSCNC114", "TM27"],
+      "the capture finds TM027 printed as T & M 027: %s" % LAV[0]["closed_list"])
 SJ = [{"closed_list": [{"code": "ANTHR 2L"}, {"code": "ARTH 12"}]}]
 PC.with_renumbers(SJ, {}, {"ARTH": "ART", "ANTH": "ANTHR"})
 check([c.get("printed") for c in SJ[0]["closed_list"]] == ["ANTH 2L", None],

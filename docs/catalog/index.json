@@ -15870,7 +15870,7 @@
      ],
      "title": "Program requirements harvest \u2014 lane state",
      "type": null,
-     "updated": "2026-10-30"
+     "updated": "2026-10-31"
     },
     {
      "created": "2026-08-28",
@@ -16338,8 +16338,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 501,
+   "count": 502,
    "docs": [
+    {
+     "created": "2026-10-31",
+     "governs": [],
+     "n": 533,
+     "path": "docs/session_533_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "los-angeles-valley",
+      "display-build",
+      "ui-pass"
+     ],
+     "title": "Session 533 handoff: Los Angeles Valley 186 to 196 passing on a T & M prefix alias; both display applies read back; the UI pass on Exhibits",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-30",
      "governs": [],
@@ -24912,5 +24929,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1325
+ "total": 1326
 }

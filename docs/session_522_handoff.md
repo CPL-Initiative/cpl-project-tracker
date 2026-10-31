@@ -4,6 +4,8 @@ date: 2026-10-30
 session: 521 (SkyBearberry, Sam's session)
 tags: [handoff, sierra, supabase, smoke, ci]
 status: current
+superseded: true
+superseded_by: session_533_handoff.md
 ---
 
 # You are Session 522

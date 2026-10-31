@@ -46,31 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 6,
+   "placed": 8,
    "listed": 8,
-   "share": 0.75,
-   "missing": [
-    "TM27",
-    "TM30"
-   ],
-   "unexplained": [
-    "TM27",
-    "TM30"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 3,
+   "count": 1,
    "codes": [
-    "EGDTEK121",
-    "T&M27",
-    "T&M30"
+    "EGDTEK121"
    ],
    "flagged": [
     "EGDTEK121"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -131,7 +123,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -256,7 +248,7 @@
    "The page also prints a separate Mechanical Drafting/Design Certificate of Achievement (State Code 21894) and other certificates; these were not used."
   ]
  },
- "extracted_run": "41141747238",
+ "extracted_run": 41172599271,
  "reconciled": [
   {
    "field": "ge_units",
@@ -276,5 +268,6 @@
    "now": true,
    "words": "Total Minimum Units: 60"
   }
- ]
+ ],
+ "read_run": "41141747238"
 }

@@ -46,28 +46,23 @@
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 4,
+   "placed": 5,
    "listed": 5,
-   "share": 0.8,
-   "missing": [
-    "TM27"
-   ],
-   "unexplained": [
-    "TM27"
-   ],
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
    "none_placed": false,
-   "pass": false
+   "pass": true
   },
   "invented": {
-   "count": 2,
+   "count": 1,
    "codes": [
-    "EGDTEK121",
-    "T&M27"
+    "EGDTEK121"
    ],
    "flagged": [
     "EGDTEK121"
    ],
-   "pass": false
+   "pass": true
   },
   "arithmetic": {
    "pass": true,
@@ -105,7 +100,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -209,5 +204,6 @@
    "'Total: 18' recorded as the certificate total and as the stated total of the required-courses block."
   ]
  },
- "extracted_run": "41141747238"
+ "extracted_run": 41172599271,
+ "read_run": "41141747238"
 }

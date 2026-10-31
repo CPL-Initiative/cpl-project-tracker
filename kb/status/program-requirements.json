@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-30T23:35:13Z",
-  "session": 531,
-  "moniker": "SkyOlallieberry",
-  "run": "Sam's session",
+  "written_at": "2026-10-31T05:36:52Z",
+  "session": 532,
+  "moniker": "SkyHackberry",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_532_handoff.md",
+  "handoff": "docs/session_533_handoff.md",
   "next_step": {
-    "title": "Read back the display applies, then Los Angeles Valley's Engineering family",
-    "text": "Los Angeles Valley reads 186 of 215 passing live (#2596). Its display build f8c94ef23142 applies on main behind the earlier build; read both back. Then read the Engineering and Manufacturing family's ten coverage failures against their own pages."
+    "title": "Los Angeles Valley's 12 program sums",
+    "text": "Los Angeles Valley reads 196 of 215 passing live, with no coverage failure left. Next are the 12 records whose program sum fails while the degree adds up: Communication Studies 30699 read the 2.0 degree's page, and Anthropology 32410's lists repeat one another. Read their pages first."
   },
   "calls": [
     {
@@ -162,6 +162,14 @@
   },
   "changes": [
     {
+      "at": "2026-10-31T05:35:00Z",
+      "text": "Los Angeles Valley 186 to 196 of 215 passing live. The catalog prints T & M 027 where the state's file keeps TM027, so a prefix alias lets the ten Engineering and Manufacturing records count their shop courses (reconcile 41172599271, reread 41172998050)."
+    },
+    {
+      "at": "2026-10-31T05:20:00Z",
+      "text": "Both display applies read back: all 17,546 rows carry build f8c94ef23142, Los Angeles Valley's 215 included."
+    },
+    {
       "at": "2026-10-30T23:35:00Z",
       "text": "The page finder change merged (#2596) and display build f8c94ef23142's apply was dispatched on main, queued behind 956fee0d62bc's."
     },
@@ -176,46 +184,6 @@
     {
       "at": "2026-10-30T22:30:00Z",
       "text": "Display build 956fee0d62bc merged and its apply dispatched on main: the floor update and Los Angeles Valley's earlier rereads reach CPL Pathways and Sierra."
-    },
-    {
-      "at": "2026-10-30T20:35:00Z",
-      "text": "Sam pasted the floor update (Sheet 146 card 2): 204 rows moved, Los Angeles Valley's reread had moved the other two; all 206 read back at the floor reading."
-    },
-    {
-      "at": "2026-10-30T20:00:00Z",
-      "text": "Los Angeles Valley 114 to 167 of 204 passing live. Its steps read each degree page's Total Minimum Units: 60 as a floor and the catalog's GE plans (LACCD 27, Cal-GETC 34); two rereads posted the two reconcile runs' records with receipts."
-    },
-    {
-      "at": "2026-10-30T19:45:00Z",
-      "text": "A reconcile now keeps a record the capture starts on another page of the same file when the fresh text prints its own heading; Los Angeles Valley's capture had moved 20 degrees one page early."
-    },
-    {
-      "at": "2026-10-30T18:05:00Z",
-      "text": "Sam ruled Sheet 144 card 2 floor: a list's printed units are its floor. The scorer reads them so; 206 filed records rescored (161 and 28 to equal, 12 and 5 to unequal). The live rows wait on Sheet 145 card 2: the repo's Supabase guard denied the session's update."
-    },
-    {
-      "at": "2026-10-30T16:20:00Z",
-      "text": "The 44 records the printed-units reading would stop passing, sorted from their own block names: few catalog slips; most lists print the low end of a range the program total carries. The printed units as a list's floor passes 176 failing and 28 incomplete records and fails 13. It differs from the ruling, so it went to Sam as Open Asks Sheet 144 card 2; the scorer is unchanged."
-    },
-    {
-      "at": "2026-10-30T13:00:00Z",
-      "text": "Glendale: 15 of the unequal records read against their pages; Foreign Languages reread into its two printed lists (receipt committed). Sam ruled on Open Asks Sheet 143 card 2 that a list's printed units count; the scorer change follows a read of the 44 records it would stop passing."
-    },
-    {
-      "at": "2026-10-30T12:55:00Z",
-      "text": "Sam's stopping rule: a college whose last two sessions each moved fewer than 3% of its programs to passing is parked, with a to-do naming what restarts it. Glendale is parked at 115 of 226. A to-do's card now offers Mark done, which the next scheduled session reads first."
-    },
-    {
-      "at": "2026-10-30T11:58:00Z",
-      "text": "Glendale: the eleven C-numbered courses (STAT C1000, PSYC C1000, ENGL C1000 and others), which print no code in their descriptions, are priced from the catalog, and the old numbers their notes print with them (reconcile 41049220135, reread 41050126747, receipt committed). Live: 115 equal (from 110), 65 incomplete, 46 unequal; none lost a pass."
-    },
-    {
-      "at": "2026-10-30T10:34:00Z",
-      "text": "Glendale: the description parser now reads renumbered and punctuated course titles, pricing 70 more courses (reconcile 41040709338, reread 41041428504, receipt committed). Live: 110 equal (from 105), 67 incomplete, 49 unequal; none lost a pass."
-    },
-    {
-      "at": "2026-10-30T08:40:00Z",
-      "text": "Glendale: S524's 8 prose totals were the first program's on each page (page read 41025920825), so they were rolled back by receipt; the fill now reads from the program's own heading. Live: 105 equal, 74 incomplete, 47 unequal."
     }
   ],
   "headline": [
@@ -356,15 +324,21 @@
       "active": 20282,
       "complete": 13454,
       "colleges": 114
+    },
+    {
+      "day": "2026-10-31",
+      "active": 20282,
+      "complete": 13464,
+      "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-31T05:12:00Z"
+    "at": "2026-10-31T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-10-30",
+    "day": "2026-10-31",
     "gaps": 3031,
     "parts": {
       "links": {
@@ -382,7 +356,7 @@
         ]
       },
       "roep": [
-        19154,
+        19163,
         20282
       ],
       "coci": [

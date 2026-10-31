@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 237,
  "with_closed_list": 232,
- "started": "2026-10-30T23:03:18Z",
+ "started": "2026-10-31T05:28:47Z",
  "pdf": {
   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
   "access": "ok",
@@ -210,7 +210,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.75,
+    "coverage": 1.0,
     "opens": "[page 135] (Program Code 095340, State Code 02958) This degree is designed for the student who wishes to enter the workforce after graduation as a mechanical or civil engineering drafter, with strong coursework in Auto"
    },
    {
@@ -225,7 +225,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.7,
+    "coverage": 1.0,
     "opens": "[page 133] AS V002959C Any GE^ 32 Y Engineering Technology: Mechanical Engineering AS V008541C Any GE^ 33 Y Manufacturing Technology: Metal Machining AS V002960C Any GE^ 33 Y Manufacturing Technology: Numerical"
    },
    {
@@ -239,7 +239,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.636,
+    "coverage": 1.0,
     "opens": "[page 134] (Program Code 095630, State Code 02960) This degree is designed for the student who wishes to enter the workforce after graduation with a strong background in both traditional machining and in numerical cont"
    },
    {
@@ -622,7 +622,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.818,
+    "coverage": 1.0,
     "opens": "[page 134] (Program Code 095600, State Code 08541) This degree is designed for the student who wishes to enter the workforce after graduation with a strong background in AutoCAD drafting, blueprint reading, numerical c"
    },
    {
@@ -636,7 +636,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.6,
+    "coverage": 1.0,
     "opens": "[page 134] (Program Code 095630, State Code 08542) This degree is designed for the student who wishes to enter the workforce after graduation with a strong background in all aspects of numerical control. Program Studen"
    },
    {
@@ -1321,7 +1321,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.8,
+    "coverage": 1.0,
     "opens": "[page 136] (Program Code 095340, State Code 21894) This certificate is designed for the student who wishes to enter the workforce in positions such as Drafter Tracer; Detailer Engineering Aid; Drafter; and Computer-Aid"
    },
    {
@@ -1334,7 +1334,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.75,
+    "coverage": 1.0,
     "opens": "[page 135] (Program Code 095600, State Code 21895) The Industrial Technology/Manufacturing Certificate can lead to positions such as: Drafter; Drill Press Operator; Engineering Liaison; Quality Controller; Grinder; Man"
    },
    {
@@ -1347,7 +1347,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.714,
+    "coverage": 1.0,
     "opens": "[page 135] (Program Code 095600, State Code 21896) This certificate can lead to positions such as: Research Aide; Production Aide; Design Aide; Construction Aide; Maintenance Aide; Salesperson; Detail Drafter; and Engi"
    },
    {
@@ -1359,7 +1359,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.571,
+    "coverage": 1.0,
     "opens": "[page 136] (Program Code 095630, State Code 21897) This certificate is designed for the student who wishes to enter the workforce in positions such as: Mill operator; Numerical Control Machinist; Lathe Operator; and Nu"
    },
    {
@@ -1371,7 +1371,7 @@
     "code": null,
     "cn_printed": true,
     "titled": true,
-    "coverage": 0.778,
+    "coverage": 1.0,
     "opens": "[page 136] (Program Code 095630, State Code 21898) This certificate is designed for the student who wishes to enter the workforce in positions such as: Numerical Control Programmer; Numerical Control Machinist; and Num"
    },
    {
@@ -2965,7 +2965,7 @@
   ]
  },
  "loads": 1,
- "seconds": 112.2,
+ "seconds": 181.4,
  "found": 223,
  "by_method": {
   "no_closed_list": 5,
@@ -3408,62 +3408,22 @@
  ],
  "page_claimed": [],
  "coverage_bands": {
-  "0.5-0.8": 12,
-  "0.8-1.0": 17,
-  "1.0": 194
+  "0.5-0.8": 4,
+  "0.8-1.0": 15,
+  "1.0": 204
  },
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_valley",
-  "kept": 147,
-  "programs": 76,
+  "kept": 211,
+  "programs": 12,
   "list": [
-   {
-    "control_number": "02943",
-    "title": "Banking and Finance",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
    {
     "control_number": "02944",
     "title": "Business Management",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
     "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02945",
-    "title": "Management",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02947",
-    "title": "Marketing",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02950",
-    "title": "Journalism: Newspaper",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
@@ -3472,9 +3432,19 @@
     "title": "Mechanical Drafting/Design",
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "coverage": 0.75,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
     "was_coverage": 0.75,
+    "was_method": "pdf_pages"
+   },
+   {
+    "control_number": "02959",
+    "title": "Engineering Technology: Industrial/Manufacturing",
+    "award": "A.S. Degree",
+    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "was_coverage": 0.7,
     "was_method": "pdf_pages"
    },
    {
@@ -3482,119 +3452,9 @@
     "title": "Manufacturing Technology: Metal Machining",
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "coverage": 0.636,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
     "was_coverage": 0.636,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02961",
-    "title": "Art History",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02963",
-    "title": "Theater Arts",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02965",
-    "title": "French",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=127",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02966",
-    "title": "Italian",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02970",
-    "title": "Respiratory Therapy",
-    "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=108",
-    "coverage": 0.875,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=108",
-    "was_coverage": 0.875,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02976",
-    "title": "Physics",
-    "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02980",
-    "title": "Child Development: Early Childhood Education",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08530",
-    "title": "Banking and Finance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08533",
-    "title": "Journalism: Magazine",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08535",
-    "title": "Broadcasting: Television",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08536",
-    "title": "Broadcasting: Radio",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -3602,8 +3462,8 @@
     "title": "Engineering Technology: Mechanical Engineering",
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "coverage": 0.818,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
     "was_coverage": 0.818,
     "was_method": "pdf_pages"
    },
@@ -3612,109 +3472,9 @@
     "title": "Manufacturing Technology: Numerical Control",
     "award": "A.S. Degree",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "coverage": 0.6,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
     "was_coverage": 0.6,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08543",
-    "title": "Art: Studio",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08553",
-    "title": "Art: Graphic Design",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08554",
-    "title": "Art: Graphic Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=54",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=54",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08555",
-    "title": "German",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "10757",
-    "title": "Electronics Technology",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "10758",
-    "title": "Electronics Technician",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "10765",
-    "title": "Child Development: Infant/Toddler Care Teacher (D)",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "17624",
-    "title": "Media Arts: Directing",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "coverage": 0.889,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "17626",
-    "title": "Media Arts - Producing",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21411",
-    "title": "Property Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    },
    {
@@ -3728,102 +3488,12 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "21878",
-    "title": "CAOT: Administrative Assistant",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=88",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21880",
-    "title": "Media Arts: Directing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
-    "coverage": 0.889,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21882",
-    "title": "Media Arts - Producing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21884",
-    "title": "Journalism: Magazine",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21885",
-    "title": "Journalism: Newspaper",
-    "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21887",
-    "title": "Broadcasting: Performance",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21888",
-    "title": "Broadcasting: Radio",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=57",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21889",
-    "title": "Broadcasting: Television",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=57",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21890",
-    "title": "Cinema Production",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "21894",
     "title": "Mechanical Drafting/Design",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "coverage": 0.8,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
     "was_coverage": 0.8,
     "was_method": "pdf_pages"
    },
@@ -3832,8 +3502,8 @@
     "title": "Engineering Technology: Industrial/Manufacturing",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "coverage": 0.75,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
     "was_coverage": 0.75,
     "was_method": "pdf_pages"
    },
@@ -3842,8 +3512,8 @@
     "title": "Engineering Technology: Mechanical Engineering",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "coverage": 0.714,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
     "was_coverage": 0.714,
     "was_method": "pdf_pages"
    },
@@ -3852,8 +3522,8 @@
     "title": "Manufacturing Technology: Metal Machining",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "coverage": 0.571,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
     "was_coverage": 0.571,
     "was_method": "pdf_pages"
    },
@@ -3862,322 +3532,12 @@
     "title": "Manufacturing Technology: Numerical Control",
     "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
     "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "coverage": 0.778,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
+    "coverage": 1.0,
+    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
     "was_coverage": 0.778,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21900",
-    "title": "Administration of Justice",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30425",
-    "title": "Computer Science Programming",
-    "award": "Certificate of Achievement requiring 30S/45Q to fewer than 60S/90Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "30799",
-    "title": "Sociology",
-    "award": "A.A- T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=162",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31036",
-    "title": "Mathematics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
-    "coverage": 0.857,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=148",
-    "was_coverage": 0.857,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31399",
-    "title": "Commercial Music: Music Notation",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "31905",
-    "title": "Cinema Theory & Criticism",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32212",
-    "title": "Studio Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32740",
-    "title": "Physics",
-    "award": "A.S. T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=48",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "32852",
-    "title": "Theatre Arts",
-    "award": "A.A- T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33593",
-    "title": "Elementary Teacher Education",
-    "award": "A.A- T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33629",
-    "title": "Film, Television, and Electronic Media",
-    "award": "A.S. T Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "33859",
-    "title": "Retail Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37295",
-    "title": "Cinema Theory & Criticism",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37296",
-    "title": "Media Arts: Visual Effects",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37297",
-    "title": "Media Arts: Core Studies",
-    "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.6,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "37298",
-    "title": "Media Arts: Visual Effects",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.667,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40662",
-    "title": "Photography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "40871",
-    "title": "Advanced ESL Milestone - Pathway to Music",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
-    "coverage": 0.833,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
-    "was_coverage": 0.833,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41005",
-    "title": "Business Essentials",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41493",
-    "title": "STEM Foundation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=151",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "41579",
-    "title": "Allied Health Preparation",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=97",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44328",
-    "title": "Respiratory Therapy",
-    "award": "Baccalaureate of Science (B.S.) Degree.",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=107",
-    "coverage": 0.963,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=107",
-    "was_coverage": 0.963,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44379",
-    "title": "Media Arts: Virtual Production, Motion Capture, and Advanced Visual Effects",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=69",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.5,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "44391",
-    "title": "Media Arts: Virtual Production, Motion Capture, and Advanced Visual Effects",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.5,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45136",
-    "title": "Human Resource Management",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45216",
-    "title": "Media Arts: Cinematography",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.556,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45217",
-    "title": "Media Arts: Sound Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=68",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-    "was_coverage": 1.0,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45218",
-    "title": "Media Arts: Editing and Color Grading",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.5,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45256",
-    "title": "Media Arts: Cinematography",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.556,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "45257",
-    "title": "Media Arts: Editing and Color Grading",
-    "award": "A.A. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-    "was_coverage": 0.5,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "46333",
-    "title": "Physical Fitness and Body Movement",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
-    "was_coverage": 1.0,
     "was_method": "pdf_pages"
    }
   ]
  },
- "run": "41141747238"
+ "run": "41172599271"
 }
