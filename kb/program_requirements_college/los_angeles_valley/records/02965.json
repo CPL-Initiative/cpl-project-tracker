@@ -61,26 +61,25 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    14.0,
-    20.0
+    18.0,
+    25.0
    ],
    "stated": [
     18.0,
     21.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 14.0-20.0; the catalog states 18.0-21.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     41.0,
-     54.0
+     45.0,
+     59.0
     ],
     "stated": [
      60.0,
@@ -94,8 +93,8 @@
     "why": [],
     "minimum": true,
     "fill": [
-     6.0,
-     19.0
+     1.0,
+     15.0
     ]
    }
   },
@@ -121,7 +120,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -221,7 +220,8 @@
       "alternatives": [],
       "catalog_addition": false
      }
-    ]
+    ],
+    "maximum": 4
    },
    {
     "name": "3-5 UNITS CHOSEN FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS",
@@ -275,7 +275,8 @@
       "alternatives": [],
       "catalog_addition": false
      }
-    ]
+    ],
+    "fills_to": 18
    }
   ],
   "course_outcomes": [],
@@ -287,25 +288,28 @@
    "Catalog codes are printed with leading zeros (e.g., FRENCH 001) and map to closed-list codes (FRENCH 1); asterisks marking prerequisites were dropped from codes."
   ]
  },
- "extracted_run": "41141747238",
+ "extracted_run": 41188677929,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "blocks",
+   "was": null,
    "now": {
-    "min": 27,
-    "max": 34
+    "3-5 UNITS CHOSEN FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS": {
+     "fills_to": 18
+    }
    },
-   "words": "Total Minimum Units: 60 (https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32: Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen.)"
+   "words": "FOR A MINIMUM OF 18 UNITS"
   },
   {
-   "field": "degree_total_minimum",
+   "field": "blocks",
    "was": null,
-   "now": true,
-   "words": "Total Minimum Units: 60"
+   "now": {
+    "COMPLETE 3-4 COURSES FROM THE FOLLOWING": {
+     "maximum": 4
+    }
+   },
+   "words": "COMPLETE 3-4 COURSES"
   }
- ]
+ ],
+ "read_run": "41141747238"
 }

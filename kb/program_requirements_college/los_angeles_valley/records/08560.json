@@ -61,10 +61,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    29.0,
+    36.0,
     43.0
    ],
    "stated": [
@@ -72,14 +72,13 @@
     36.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 29.0-43.0; the catalog states 36.0-36.0"
-   ],
+   "why": [],
+   "meets": true,
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     56.0,
+     63.0,
      77.0
     ],
     "stated": [
@@ -93,10 +92,7 @@
     ],
     "why": [],
     "minimum": true,
-    "fill": [
-     0.0,
-     4.0
-    ]
+    "fill": null
    }
   },
   "repeated": {
@@ -121,7 +117,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -300,7 +296,8 @@
       "alternatives": [],
       "catalog_addition": false
      }
-    ]
+    ],
+    "fills_to": 36
    }
   ],
   "course_outcomes": [],
@@ -314,26 +311,18 @@
    "Codes recorded as printed with leading zeros (e.g., GEOLOGY 001 = closed-list GEOLOGY 1)."
   ]
  },
- "extracted_run": 41114987325,
+ "extracted_run": 41188677929,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 27,
-    "max": 34
-   },
-   "words": "Total Minimum Units: 60 (https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32: Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen.)"
-  },
-  {
-   "field": "degree_total_minimum",
+   "field": "blocks",
    "was": null,
-   "now": true,
-   "words": "Total Minimum Units: 60"
+   "now": {
+    "COMPLETE 7–14 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS": {
+     "fills_to": 36
+    }
+   },
+   "words": "TO COMPLETE 36 TOTAL UNITS"
   }
  ],
- "read_run": "39006418426"
+ "read_run": 41114987325
 }
