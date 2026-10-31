@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-503 document(s).
+504 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 535 | [Session 535 handoff: Los Angeles Valley parks at 202 of 215; Monterey Peninsula next](../session_535_handoff.md) | 2026-10-31 |
 | 534 | [Session 534 handoff: Los Angeles Valley 196 to 198 passing on Music's repeatable lists; display build 8603831048ac waits for main](../session_534_handoff.md) | 2026-10-31 |
 | 533 | [Session 533 handoff: Los Angeles Valley 186 to 196 passing on a T & M prefix alias; both display applies read back; the UI pass on Exhibits](../session_533_handoff.md) | 2026-10-31 |
 | 532 | [Session 532 handoff: the Chancellor's address public with the gentle sound Sam picked; Los Angeles Valley 167 to 186 passing once the page finder reads State Code; two display builds](../session_532_handoff.md) | 2026-10-30 |

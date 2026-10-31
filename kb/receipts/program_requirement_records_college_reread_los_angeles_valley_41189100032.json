@@ -1,0 +1,785 @@
+{
+ "college": "Los Angeles Valley College",
+ "reread_run": "41189100032",
+ "function": "program_requirement_records_college_reread",
+ "extracted_run": "41188677929",
+ "at": "2026-10-31T09:34:30Z",
+ "posted": 4,
+ "batches": 1,
+ "skipped": [
+  {
+   "control_number": "02967",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17625",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17627",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "17959",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21881",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "21883",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "39152",
+   "why": "places none of its listed courses (another program's page)"
+  },
+  {
+   "control_number": "44483",
+   "why": "places none of its listed courses (another program's page)"
+  }
+ ],
+ "error": null,
+ "replaced": 4,
+ "absent": 0,
+ "held": 0,
+ "kept": 0,
+ "carried": 0,
+ "replaced_keys": [
+  "02965",
+  "02981",
+  "02984",
+  "08560"
+ ],
+ "absent_keys": [],
+ "held_keys": [],
+ "kept_keys": [],
+ "carried_keys": [],
+ "machine_pass": 4,
+ "rollback": "update public.program_requirement_records r set program_title = b.program_title, award = b.award, catalog_year = b.catalog_year, source_url = b.source_url, measure = b.measure, total_min = b.total_min, total_max = b.total_max, record = b.record, checks = b.checks, extracted_run = b.extracted_run, checked = false, checked_by = null, checked_at = null from jsonb_to_recordset(<before>) as b(control_number text, program_title text, award text, catalog_year text, source_url text, measure text, total_min numeric, total_max numeric, record jsonb, checks jsonb, extracted_run bigint) where r.college = 'Los Angeles Valley College' and r.control_number = b.control_number and r.checked = false and r.extracted_run = 41188677929;  -- <before> is this receipt's before, as a jsonb literal",
+ "before": [
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 14,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "COMPLETE 3-4 COURSES FROM THE FOLLOWING",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FRENCH 001",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 002",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 003",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 004",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 005",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 006",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 021",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 022",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     },
+     {
+      "name": "3-5 UNITS CHOSEN FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS",
+      "rule": "choose_units",
+      "stated": {
+       "max": 5,
+       "min": 3
+      },
+      "courses": [
+       {
+        "code": "FRENCH 010",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 025",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 063",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 064",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FRENCH 066",
+        "units": 2,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "LING 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 3,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 27
+     },
+     "outcomes": [
+      "Demonstrate effective skills in the four major areas of language study: reading, writing, speaking, listening comprehension.",
+      "Demonstrate knowledge of the global society, and the role of France and francophone nations and of the French language and culture in the contemporary world.",
+      "Design and execute a project that examines and evaluates a special topic."
+     ],
+     "ge_pattern": null,
+     "total_units": {
+      "max": 21,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "French Associate of Arts Degree (AA) (Program Code 110200, State Code 02965)",
+     "open_elective_units": null,
+     "degree_total_minimum": true,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 21,
+   "total_min": 18,
+   "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=127",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41141747238,
+   "program_title": "French",
+   "control_number": "02965"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 6,
+    "placed": 6,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "incomplete"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "COMPLETE THE FOLLOWING 5 REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FIRETEK 201",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": true
+       },
+       {
+        "code": "FIRETEK 202",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRETEK 203",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRETEK 204",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRETEK 205",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "COMPLETE 1 COURSE FROM THE FOLLOWING",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "FIRETEK 027",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "FIRETEK 096",
+        "units": 8,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [
+      "Fire Fighter",
+      "Forest Fire Fighter",
+      "Fire Inspector",
+      "Arson Investigator"
+     ],
+     "measure": "units",
+     "ge_units": {
+      "max": null,
+      "min": null
+     },
+     "outcomes": [
+      "Analyze fire behavior and draft a plan for fire suppression.",
+      "Student will be able to analyze a topic in Fire Technology and effectively communicate the results of their analysis.",
+      "Analyze the basic history and organization of the fire service.",
+      "Identify major fire causes and firefighting techniques."
+     ],
+     "ge_pattern": "Any GE plan (LACCD GE Plan or Cal-GETC)",
+     "total_units": {
+      "max": 23,
+      "min": 19
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ASSOCIATE DEGREE: FIRE TECHNOLOGY Associate of Science Degree (AS)",
+     "open_elective_units": null,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 23,
+   "total_min": 19,
+   "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=102",
+   "catalog_year": "2026-2027",
+   "extracted_run": 39006418426,
+   "program_title": "Fire Technology",
+   "control_number": "02981"
+  },
+  {
+   "award": "A.A. Degree",
+   "checks": {
+    "listed": 12,
+    "placed": 12,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "COMPLETE THE FOLLOWING 2 REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ECON C2001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ECON C2002",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "COMPLETE 1 COURSE FROM THE FOLLOWING",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "MATH 238",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 245",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 261",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "COMPLETE 1 COURSE FROM THE FOLLOWING",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ACCTG 001",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 262",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     },
+     {
+      "name": "COMPLETE 1 COURSE FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS",
+      "rule": "choose_courses",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "ACCTG 001",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "ACCTG 002",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CIS 101",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 238",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 261",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 262",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHILOS 009",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT 101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT C1000",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 1,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 27
+     },
+     "outcomes": [
+      "Apply basic economic principles to individual and business decision making.",
+      "Analyze national economic issues with respect to inflation, unemployment, and economic growth.",
+      "Analyze how historical economic events shaped economic institutions in the U.S."
+     ],
+     "ge_pattern": "Any GE (LACCD GE Plan or Cal-GETC)",
+     "total_units": {
+      "max": 21,
+      "min": 18
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ASSOCIATE DEGREE: ECONOMICS Associate of Arts Degree (AA)",
+     "open_elective_units": null,
+     "degree_total_minimum": true,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 21,
+   "total_min": 18,
+   "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=156",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41114987325,
+   "program_title": "Economics",
+   "control_number": "02984"
+  },
+  {
+   "award": "A.S. Degree",
+   "checks": {
+    "listed": 14,
+    "placed": 14,
+    "coverage": true,
+    "invented": true,
+    "arithmetic": "unequal"
+   },
+   "record": {
+    "blocks": [
+     {
+      "name": "COMPLETE THE FOLLOWING 4 REQUIRED COURSES",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "CHEM 101",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "CHEM 102",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOLOGY 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "GEOLOGY 006",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": null
+     },
+     {
+      "name": "SEQUENCE A",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHYSICS 037",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYSICS 038",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYSICS 039",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Physics sequence"
+     },
+     {
+      "name": "SEQUENCE B",
+      "rule": "all",
+      "stated": {
+       "max": null,
+       "min": null
+      },
+      "courses": [
+       {
+        "code": "PHYSICS 006",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "PHYSICS 007",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": null,
+      "option_group": "Physics sequence"
+     },
+     {
+      "name": "COMPLETE 7–14 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS",
+      "rule": "choose_units",
+      "stated": {
+       "max": 14,
+       "min": 7
+      },
+      "courses": [
+       {
+        "code": "BIOLOGY 007",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "MATH 261",
+        "units": 5,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "OCEANO 001",
+        "units": 3,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "OCEANO 010",
+        "units": 1,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       },
+       {
+        "code": "STAT 101",
+        "units": 4,
+        "units_max": null,
+        "alternatives": [],
+        "catalog_addition": false
+       }
+      ],
+      "minimum": 7,
+      "option_group": null
+     }
+    ],
+    "program": {
+     "careers": [],
+     "measure": "units",
+     "ge_units": {
+      "max": 34,
+      "min": 27
+     },
+     "outcomes": [
+      "Explain the concepts and principles of Historical Geology including fossilization, ecology, evolution, and extinction, Plate Tectonics, Geologic Time, and Age Dating Methods.",
+      "Apply the scientific method to problem-solving in the earth-system environment.",
+      "Integrate concepts from physics, chemistry, biology, and geology to demonstrate how the earth works as a system.",
+      "Analyze evidence of climate change from the geologic record."
+     ],
+     "ge_pattern": "Any GE",
+     "total_units": {
+      "max": 36,
+      "min": 36
+     },
+     "degree_total": {
+      "max": 60,
+      "min": 60
+     },
+     "section_heading": "ASSOCIATE DEGREE: GEOLOGY Associate of Science Degree (AS)",
+     "open_elective_units": null,
+     "degree_total_minimum": true,
+     "degree_elective_units": {
+      "max": null,
+      "min": null
+     },
+     "electives_fill_degree": false
+    }
+   },
+   "measure": "units",
+   "total_max": 36,
+   "total_min": 36,
+   "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=147",
+   "catalog_year": "2026-2027",
+   "extracted_run": 41114987325,
+   "program_title": "Geology",
+   "control_number": "08560"
+  }
+ ]
+}

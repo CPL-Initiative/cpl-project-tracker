@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-31T08:19:31Z",
-  "session": 533,
-  "moniker": "SkyNannyberry",
+  "written_at": "2026-10-31T09:38:06Z",
+  "session": 534,
+  "moniker": "SkyChokeberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_534_handoff.md",
+  "handoff": "docs/session_535_handoff.md",
   "next_step": {
-    "title": "Apply display build 8603831048ac, then Los Angeles Valley's 12 unequal sums",
-    "text": "Los Angeles Valley reads 198 of 215 passing live. First the display build goes live on main. Then the 12 records whose program sum fails: Communication Studies 30699 read the 2.0 degree's page, and Anthropology 32410's lists repeat one another. Read their pages first."
+    "title": "Monterey Peninsula's failing records",
+    "text": "Los Angeles Valley parked at 202 of 215 (S534). Monterey Peninsula has the next largest gap: 87 of its 197 loaded records fail. Read them live, look for a shared cause first, and page-read before any reader change."
   },
   "calls": [
     {
@@ -35,6 +35,17 @@
       },
       "part": "reading",
       "todo_id": "glendale-parked-2026-10-30"
+    },
+    {
+      "title": "Los Angeles Valley is parked: what would turn it back on",
+      "text": "Under the stopping rule you set on Oct 30, the queue parks a college once two sessions in a row each move fewer than 3% of its programs to passing. Los Angeles Valley qualified: S533 moved 2 of 215 and S534 moved 4. It stands at 202 passing. Of the 13 left, 9 sum to a different total than the catalog prints and 4 lack a figure; several point a list at \"any course not used in List A\", and two STEM programs print 18-21 over lists that add to 15-21. Either of two things from you turns it back on. First, a structured export: ask Los Angeles Valley's curriculum office for every active program's required courses with their units, as a spreadsheet from their curriculum system, and attach it in any Claude session. Second, a contact: name someone in its curriculum office who can say which printed totals are right, and the queue drafts the questions for you to send. Its 2027-2028 catalog will restart it without you. When you have done one, write what you did in the note and press Mark done; the next scheduled session takes it first.",
+      "if_no_reply": "Los Angeles Valley stays at 202 of 215, and the queue moves to Monterey Peninsula, the college with the next largest gap.",
+      "view": {
+        "href": "#program-requirements",
+        "text": "Open Program records"
+      },
+      "part": "reading",
+      "todo_id": "lavc-parked-2026-10-31"
     },
     {
       "title": "Should the thirteen credential pairs count toward NC-1?",
@@ -161,6 +172,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-31T09:35:00Z",
+      "text": "Los Angeles Valley 198 to 202 of 215 passing live. Economics, French and Geology close with a list that fills the major to its printed total (for a minimum of 18 units, to complete 36 total units), and Fire Technology's page prints its degree total with a split word; both now read (reconcile 41188677929, reread 41189100032). Under the stopping rule the college parks."
+    },
     {
       "at": "2026-10-31T08:20:00Z",
       "text": "Los Angeles Valley 196 to 198 of 215 passing live. Music 02962 and Commercial Music 08545 print lists whose courses may be repeated, and the reading now counts the repeats (reconcile 41179958796, reread 41180348558)."
@@ -332,14 +347,14 @@
     {
       "day": "2026-10-31",
       "active": 20282,
-      "complete": 13466,
+      "complete": 13470,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-31T09:12:00Z"
+    "at": "2026-10-31T10:12:00Z"
   },
   "harvest": {
     "day": "2026-10-31",

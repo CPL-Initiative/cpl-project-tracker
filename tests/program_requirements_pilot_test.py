@@ -2058,6 +2058,52 @@ mus3 = json.loads(json.dumps(mus))
 mus3["blocks"][1]["minimum"] = 3
 check(not RC.reconcile(mus3, "x", "Los Angeles Valley College", "A.A. Degree")[0]["blocks"][1].get("repeats"),
       "a minimum the reading gave that differs from the printed count stays the reading's")
+# Los Angeles Valley (S534, page read 41188051977): a last list "FOR A MINIMUM OF 18 UNITS" or "TO COMPLETE 36 TOTAL
+# UNITS" fills the major to the printed total, and French's "COMPLETE 3-4 COURSES" keeps its top as maximum.
+def _cs(units):
+    return [{"code": "C %d" % i, "units": u} for i, u in enumerate(units)]
+def _arith(rec, award):
+    r, notes = RC.reconcile(rec, "x", "Los Angeles Valley College", award)
+    return S.program_units(r, {})[0], S.score(r, [], None, award)["arithmetic"], r
+econ = {"program": {"total_units": {"min": 18, "max": 21}, "measure": "units"},
+        "blocks": [{"name": "COMPLETE THE FOLLOWING 2 REQUIRED COURSES", "rule": "all", "courses": _cs([3, 3])},
+                   {"name": "COMPLETE 1 COURSE FROM THE FOLLOWING", "rule": "choose_courses", "minimum": 1, "courses": _cs([5, 3, 5])},
+                   {"name": "COMPLETE 1 COURSE FROM THE FOLLOWING", "rule": "choose_courses", "minimum": 1, "courses": _cs([5, 5, 4])},
+                   {"name": "COMPLETE 1 COURSE FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS", "rule": "choose_courses",
+                    "minimum": 1, "courses": _cs([5, 5, 3, 5, 5, 5, 3, 4, 4])}]}
+check(S.program_units(econ, {})[0] == (16.0, 21.0), "without the fill, Economics 02984 sums 16-21 against 18-21")
+span, a, _ = _arith(econ, "A.A. Degree")
+check(span == (18.0, 21.0) and a["pass"], "the fill step reads Economics 02984 at 18-21, equal: %s %s" % (span, a))
+geo = {"program": {"total_units": {"min": 36, "max": 36}, "measure": "units"},
+       "blocks": [{"name": "COMPLETE THE FOLLOWING 4 REQUIRED COURSES", "rule": "all", "courses": _cs([5, 5, 3, 1])},
+                  {"name": "SEQUENCE A", "rule": "all", "option_group": "P", "courses": _cs([5, 5, 5])},
+                  {"name": "SEQUENCE B", "rule": "all", "option_group": "P", "courses": _cs([4, 4])},
+                  {"name": "COMPLETE 7\u201314 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS", "rule": "choose_units",
+                   "minimum": 7, "stated": {"min": 7, "max": 14}, "courses": _cs([5, 5, 3, 1, 4])}]}
+span, a, _ = _arith(geo, "A.S. Degree")
+check(span[0] == 36.0 and a["pass"], "the fill step reads Geology 08560's low end at its printed 36: %s %s" % (span, a))
+fr = {"program": {"total_units": {"min": 18, "max": 21}, "measure": "units"},
+      "blocks": [{"name": "COMPLETE 3-4 COURSES FROM THE FOLLOWING", "rule": "choose_courses", "minimum": 3,
+                  "courses": _cs([5, 5, 5, 5, 5, 5, 3, 3])},
+                 {"name": "3-5 UNITS CHOSEN FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS", "rule": "choose_units",
+                  "minimum": 3, "stated": {"min": 3, "max": 5}, "courses": _cs([3, 3, 2, 2, 2, 3])}]}
+span, a, r = _arith(fr, "A.A. Degree")
+check(r["blocks"][0].get("maximum") == 4 and span[0] == 18.0 and a["pass"],
+      "French 02965's 3-4 courses keep 4 as the top, and the fill reads its low end at 18: %s %s" % (span, a))
+kin = {"program": {"total_units": {"min": 20, "max": 23}, "measure": "units"},
+       "blocks": [{"name": "SELECT 1 COURSE FROM THREE OF THE FOLLOWING ACTIVITY AREAS FOR A MINIMUM OF 3 UNITS",
+                   "rule": "choose_courses", "minimum": 3, "courses": _cs([1, 1, 1, 1])}]}
+check(RC.reconcile(kin, "x", "Los Angeles Valley College", "A.A. Degree")[0]["blocks"][0].get("fills_to") is None,
+      "a list's own 'minimum of 3 units' (Kinesiology 32854) is no program total, so it fills nothing")
+other = json.loads(json.dumps(econ))
+check(RC.reconcile(other, "x", "Hartnell College", "A.A. Degree")[0]["blocks"][3].get("fills_to") is None,
+      "another college's records are untouched")
+fire = {"program": {"total_units": {"min": 19, "max": 23}, "degree_total": {"min": 60, "max": 60}, "measure": "units"},
+        "blocks": [{"name": "COMPLETE THE FOLLOWING 5 REQUIRED COURSES", "rule": "all", "courses": _cs([3, 3, 3, 3, 3])}]}
+fire_r = RC.reconcile(fire, "Major Units: 19-23 T otal Minimum Units: 60 \u00b7 CERTIFICATE", "Los Angeles Valley College",
+                      "A.S. Degree")[0]
+check((fire_r["program"].get("ge_units") or {}).get("min") == 27 and fire_r["program"].get("degree_total_minimum"),
+      "Fire Technology 02981's 'T otal Minimum Units: 60' still sets the GE plans and the floor (S534)")
 SJ = [{"closed_list": [{"code": "ANTHR 2L"}, {"code": "ARTH 12"}]}]
 PC.with_renumbers(SJ, {}, {"ARTH": "ART", "ANTH": "ANTHR"})
 check([c.get("printed") for c in SJ[0]["closed_list"]] == ["ANTH 2L", None],

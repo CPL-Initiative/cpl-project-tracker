@@ -1,0 +1,33 @@
+{
+ "_readme": "S534 SkyChokeberry, 2026-10-31. Los Angeles Valley's 12 records whose program sums fail while the degree adds up (02965, 02984, 08560, 21899, 30699, 32410, 33593, 33629, 35526, 41492, 41493, 43774): each one's own heading page, read before any reader change.",
+ "college": "Los Angeles Valley College",
+ "questions": {
+  "program_pages": "Each program's heading, its course lists with their printed counts and units, and the program and degree totals it prints."
+ },
+ "keywords": [
+  "State Code 02965",
+  "State Code 02984",
+  "State Code 08560",
+  "State Code 21899",
+  "State Code 30699",
+  "State Code 32410",
+  "State Code 33593",
+  "State Code 33629",
+  "State Code 35526",
+  "State Code 41492",
+  "State Code 41493",
+  "State Code 43774"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_pages"
+   ],
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  55,
+  165
+ ]
+}

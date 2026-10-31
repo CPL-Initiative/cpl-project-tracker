@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 503 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1327** | |
+| Session handoffs | 504 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1328** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-31 (S534 SkyChokeberry, the CPL Queue routine): Los Angeles Valley 198 to 202 of 215 passing on a new `fill_to` reconcile step (a closing list "for a minimum of N units") and "T otal Minimum Units"; the stopping rule parks the college (`lavc-parked-2026-10-31`); display build d8b6c033cfc6; lessons in `docs/program_requirements_harvest_lessons.md`; handoff `docs/session_535_handoff.md`.
 - 2026-10-31 (S533 SkyNannyberry, the CPL Queue routine, finished by the 08:12Z firing): Los Angeles Valley 196 to 198 of 215 passing on the repeat step reading Music's repeatable lists; display build 8603831048ac; lessons in `docs/program_requirements_harvest_lessons.md` (S495-S500 moved to archive 3); handoff `docs/session_534_handoff.md`.
 - 2026-10-31 (S532 SkyHackberry, the CPL Queue routine): Los Angeles Valley 186 to 196 of 215 passing on a T & M prefix alias (#2605); the two display applies read back; the UI pass on the Exhibits view; lessons in `docs/program_requirements_harvest_lessons.md`; handoff `docs/session_533_handoff.md`.
 - 2026-10-31 (Exhibits tab build, SkyBayberry): Exhibit Adoption's per-credential view folded into the credential panel (`kb/exhibits_adoption.json`), and could-adopt off the TOP and C-ID overlap on the Review card and the panel; KB note `methodology-a-fold-carries-the-folded-tabs-rulings`; lessons in `docs/cer_v2_redesign_lessons.md`; handoff `docs/cer_redesign_handoff.md`.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-31 (Exhibits tab build, SkyRowanberry): the Exhibits tab's Review queue on the drawn card (`exhibits.js`, `kb/_build_exhibits_review.py`), `exhibit_title_students()` (reviewer-only, k=10), lessons in `docs/cer_v2_redesign_lessons.md`; handoff `docs/cer_redesign_handoff.md`.
 - 2026-10-31 (CER redesign build, SkyGooseberry): Open Asks Sheet 147 answered whole; the high school and ROP rule and the CPL-AI matching in the Program Requirements dialog (#2601); mock-up version 26; KB note `methodology-a-record-level-join-needs-a-word-guard`; handoff `docs/cer_redesign_handoff.md`.
 - 2026-10-30 (CER redesign side session): the Exhibits mock-up (`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html`), the CER and college-identity lanes, `docs/cer_v2_redesign_lessons.md` (2026-10-30), the handoff `docs/cer_redesign_handoff.md`.
-- **2026-10-30 (S531 SkyOlallieberry):** the Chancellor's Summit address public on Pages with the gentle sound Sam picked (#2592); Los Angeles Valley 167 to 186 passing once the page finder reads State Code (#2596); display builds 956fee0d62bc and f8c94ef23142; handoff 532.
-- 2026-10-30 (S530 SkyBuffaloberry): Los Angeles Valley 114 to 167 of 204 passing through its degree steps and a moved-page guard that reads the record's heading; the funding rows show a waiting request with a reviewer's Accept; MAP links from `map_links.js` on two more surfaces (#2588); Sheet 146; handoff 531.

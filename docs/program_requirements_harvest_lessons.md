@@ -846,6 +846,30 @@ Delta 200 of 203: lessons, *Moved from the lane (S524 compaction)*.
 **The second reader, Grok (Sam, Open Asks Sheet 97 card 1, 2026-10-19; built S421, #2246: `provider` on the function, `kb/_second_reader.py`, `second-reader.yml`, nothing written) waits on the xAI API billing moving to the RCCD district card (Sam, 2026-10-20) and the two Edge Function secrets only Sam sets; then one deploy and `second-reader.yml` with `college=Cañada College`. The ruling, the design and Jev's sittings: lessons, *Moved from the lane (S449 compaction)*.
 **Display build e021a2824548 is applied on `main` (S459: #2387 merged, `step=display` run 40027395883, 22:46Z: 17,529 statements written, none missing, no errors; the applied record committed by the run).** **Hartnell (S484-S489; lessons S484-S489):** passing rose to 81 of 94 after the `course_hours`, `ge_overlap` (#2462) and `pool_lists` (#2463; `with_floors`, #2465) steps (kept, Sheet 131 cards 3-4). **Still failing, all thirteen read (S488):** the narrow `meets` class (03537, 33851, 31591, 43119, 41819) stays as Sam ruled; a vendor gap (ABT41 in Agriculture A.S. 11803, HES120 in Vocational Nursing 03571, beside 44161 and 44574) stays incomplete; CalGETC 45096 and Music 43887 have since passed (below). Fable's advice on RN 03570 and Respiratory Care 44537 is in lessons S488. CSS/CIS codes are mixed across Hartnell's tabs, so no college-wide renumber.
 
+## S534 SkyChokeberry (2026-10-31, the CPL Queue routine, 09:12Z firing): a list that fills the major, 198 to 202 passing; Los Angeles Valley parks
+
+- **Page read 41188051977** (plans `lavc_unequal_sums`, `lavc_incomplete`, keyed on "State Code NNNNN"): 9 of the 12
+  unequal headings and 2 of the 5 incomplete printed. Respiratory Therapy 21899, Political Science 32851, Spanish 32853
+  and Business Administration 2.0 35427 print their state code elsewhere or not at all on the heading page.
+- **A list that fills the major to the printed total.** Economics A.A. 02984 closes with "COMPLETE 1 COURSE FROM THE
+  FOLLOWING FOR A MINIMUM OF 18 UNITS", French A.A. 02965 with "3-5 UNITS CHOSEN FROM THE FOLLOWING FOR A MINIMUM OF 18
+  UNITS", Geology A.S. 08560 with "COMPLETE 7–14 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS". The
+  sum's low end fell short (16, 14, 29) because nothing told the scorer a student keeps taking courses until the total.
+  New reconcile kind **`fill_to`**: `block_pattern`'s n marks the list `fills_to`, only where n equals the record's own
+  printed total (Kinesiology 32854's "FOR A MINIMUM OF 3 UNITS" is one list's floor); the scorer reads neither end of the
+  sum below it. Its `range_pattern` keeps French's "COMPLETE 3-4 COURSES" top as `maximum`, which the scorer's high end takes.
+- **Fire Technology A.S. 02981 printed "T otal Minimum Units: 60"** (a split word in the PDF's text), so the three GE
+  steps keyed on `Total\s+Minimum` missed it and the degree read incomplete. They read `T\s?otal` now.
+- **Reconcile 41188677929** (free) rescored exactly the four: 02984 18-21 equal, 02965 18-25 meets, 08560 36-43 meets,
+  02981 19-23 equal. Reread 41189100032 posts them. **Live: 198 to 202 of 215.**
+- **The stopping rule parks Los Angeles Valley** (S533 moved 2, S534 4; both under 3% of 215). Its call
+  `lavc-parked-2026-10-31` is in the status file. **Left (13):** 8 unequal (21899 prints 74 over its own 62; 30699
+  read the 2.0 page; 32410 and 35526 and 43774 point a list at "any course not used in LIST A"; 33593, 33629; STEM
+  41492 and 41493 print 18-21 over lists that sum 15-21) and 4 incomplete (32117's List C is "Any course from LIST A or
+  LIST B not already used"; 32851, 32853, 35427 unread). **Next college: Monterey Peninsula, 87 failing of 197** (Glendale, 105, is parked; failing means not equal or unstated, or a coverage or invented check failing).
+- **Lesson: read the list's own heading for a fill.** A sum short of the printed total by a varying amount, while the
+  degree adds up, is often a closing list worded "for a minimum of N" or "to complete N total units".
+
 ## S533 SkyNannyberry (2026-10-31, the CPL Queue routine, 07:12Z firing; finished by the 08:12Z firing): Music's repeatable lists, 196 to 198 passing
 
 - **Two arithmetic failures were one missed repeat.** Music A.A. 02962 and Commercial Music A.A. 08545 print
