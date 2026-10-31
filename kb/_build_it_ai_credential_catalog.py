@@ -39,7 +39,13 @@ and one MAP side:
       Every unified title with its issuer and its articulations, which carry
       the colleges and units. A catalog row joins to MAP when a unified title
       from the same issuer carries the same core name, or when ALIASES names
-      the pairing outright.
+      the pairing outright. Outside IT the issuer must agree too
+      (issuer_agrees; 2026-10-31), so a college's own course never joins an
+      industry certification of the same name.
+  kb/reference/credential_engine_top50_map_check.json
+      A person's check of Credential Engine's top 50 against the CER reference.
+      It wins over the name join: in_map joins the row to the MAP title named,
+      related and not_in_map keep it out of MAP.
 
 Run from the repo root:
   python3 kb/_build_it_ai_credential_catalog.py            # write the JSON
@@ -499,6 +505,60 @@ CE_TOP50_ALIASES = {
 }
 
 
+# One issuer under two names, where neither name contains the other or its acronym
+# (a person read each pairing). The C++ Institute is run by the Open Education and
+# Development Group; the Board of Behavioral Sciences sits in Consumer Affairs.
+ISSUER_SAME = [
+    ("Open Education and Development Group LLC", "C++ Institute"),
+    ("California Department of Consumer Affairs", "California Board of Behavioral Sciences (BBS)"),
+]
+_ISSUER_STOP = {"the", "inc", "llc", "u", "s", "us", "of", "for", "and", "a"}
+
+
+def _issuer_forms(s):
+    """An issuer string as the set of forms it is known by: each slash-separated
+    name with its filler dropped, each parenthetical acronym, and the initials of
+    each name ('National Center for Construction Education and Research' -> nccer)."""
+    forms = set()
+    s = (s or "").replace("&", " and ")
+    for part in re.split(r"\s+/\s+", s):
+        for acr in re.findall(r"\(([^)]+)\)", part):
+            a = norm(acr).replace(" ", "")
+            if len(a) >= 2:
+                forms.add(a)
+        words = [w for w in norm(part).split() if w not in _ISSUER_STOP]
+        if words:
+            forms.add(" ".join(words))
+            initials = "".join(w[0] for w in words)
+            if len(initials) >= 3:
+                forms.add(initials)
+    return forms
+
+
+def issuer_agrees(a, b):
+    """True when two issuer strings name one issuer: the same canonical issuer, a
+    shared form, one name inside the other (two words at least), or a pairing in
+    ISSUER_SAME. A college's own course ('California Community Colleges') never
+    agrees with an industry body."""
+    if not a or not b:
+        return False
+    ca, cb = issuer_of(a)[0], issuer_of(b)[0]
+    if ca and ca == cb:
+        return True
+    for x, y in ISSUER_SAME:
+        if {norm(a), norm(b)} == {norm(x), norm(y)}:
+            return True
+    fa, fb = _issuer_forms(a), _issuer_forms(b)
+    if fa & fb:
+        return True
+    for x in fa:
+        for y in fb:
+            short, long_ = (x, y) if len(x) <= len(y) else (y, x)
+            if " " in short and (" " + short + " ") in (" " + long_ + " "):
+                return True
+    return False
+
+
 def ctdl_owner(t):
     """The Registry record's owner, or its offerer when it names no owner."""
     a = (t.get("owned_by") or t.get("offered_by") or [{}])[0]
@@ -688,34 +748,57 @@ def build(root=ROOT):
     for r in rows:
         if r.get("wide"):
             wide_by_core[core(r["name"])].append(r)
+    def attach(hit, u):
+        """MAP's unified title u, with its colleges and units, onto catalog row hit."""
+        colleges, units = set(), []
+        for a in u.get("articulations", []):
+            for loc in a.get("local", []):
+                colleges.update(loc.get("colleges", []))
+                if loc.get("u"):
+                    units.append(float(loc["u"]))
+        m = hit.setdefault("map", {"titles": [], "colleges": [], "units": [],
+                                   "articulation_lines": 0})
+        if u["ut"] in m["titles"]:
+            return
+        m["titles"].append(u["ut"])
+        m["colleges"] = sorted(set(m["colleges"]) | colleges)
+        m["units"] += units
+        m["articulation_lines"] += u.get("n_articulation_lines") or 0
+        if "MAP" not in hit["sources"]:
+            hit["sources"].append("MAP")
+
+    # Every issuer the reference records for a title, not only the CER's first:
+    # "Emergency Medical Responder" carries NREMT beside the colleges that teach it.
+    cred_path = os.path.join(root, "kb", "credentials.json")
+    title_issuers = defaultdict(set)
+    if os.path.exists(cred_path):
+        for t, recs in load_json(cred_path).items():
+            for rec in recs if isinstance(recs, list) else [recs]:
+                if isinstance(rec, dict) and rec.get("issuing_agency"):
+                    title_issuers[t].add(rec["issuing_agency"])
+
+    def agrees(row_issuer, u):
+        return any(issuer_agrees(row_issuer, i) for i in {u.get("issuer")} | title_issuers.get(u["ut"], set()) if i)
+
     wide_joined = 0
     for u in cer["unified_titles"]:
         issuer, scope = issuer_of(u.get("issuer"))
-        if issuer not in catalog_issuers:
+        title = u["ut"]
+        if issuer not in catalog_issuers or (scope == "it" and domain_of(title, issuer) not in IT_DOMAINS):
             # Outside IT the catalog adds no row for an exhibit nothing else
             # lists; it joins an exhibit to the one row whose core name it
-            # shares, and skips an ambiguous name.
-            cands = wide_by_core.get(core(u["ut"]), [])
+            # shares AND whose issuer agrees (2026-10-31: a college's own
+            # "Bookkeeping" course had joined NACPB's certification, and two
+            # same-named rows from two issuers left ServSafe unjoined), and skips
+            # an ambiguous name. An IT issuer's non-IT title (PMI's CAPM) takes
+            # this path too, rather than none.
+            cands = [r for r in wide_by_core.get(core(title), []) if agrees(r["issuer"], u)]
+            if len(cands) > 1:
+                named = {norm(i) for i in {u.get("issuer")} | title_issuers.get(title, set()) if i}
+                cands = [r for r in cands if norm(r["issuer"]) in named]
             if len(cands) == 1:
-                colleges, units = set(), []
-                for a in u.get("articulations", []):
-                    for loc in a.get("local", []):
-                        colleges.update(loc.get("colleges", []))
-                        if loc.get("u"):
-                            units.append(float(loc["u"]))
-                hit = cands[0]
-                m = hit.setdefault("map", {"titles": [], "colleges": [], "units": [],
-                                           "articulation_lines": 0})
-                m["titles"].append(u["ut"])
-                m["colleges"] = sorted(set(m["colleges"]) | colleges)
-                m["units"] += units
-                m["articulation_lines"] += u.get("n_articulation_lines") or 0
-                if "MAP" not in hit["sources"]:
-                    hit["sources"].append("MAP")
+                attach(cands[0], u)
                 wide_joined += 1
-            continue
-        title = u["ut"]
-        if scope == "it" and domain_of(title, issuer) not in IT_DOMAINS:
             continue
         if title in MAP_GENERIC:
             map_generic.append(title)
@@ -790,6 +873,32 @@ def build(root=ROOT):
                 h["sources"].append("Credential Engine")
             ctid_attached.add(t["ctid"])
 
+    # The hand check of the top 50 against the CER reference wins over the name
+    # join (kb/reference/credential_engine_top50_map_check.json, 2026-10-31): an
+    # in_map verdict joins its row to the MAP title a person named, and a related
+    # or not_in_map verdict keeps the row out of MAP, since a related credential
+    # is another credential.
+    check_path = os.path.join(root, "kb", "reference", "credential_engine_top50_map_check.json")
+    checks = load_json(check_path).get("checks", []) if os.path.exists(check_path) else []
+    ut_by_title = {u["ut"]: u for u in cer["unified_titles"]}
+    by_ctid = defaultdict(list)
+    for r in rows:
+        if r.get("ctid"):
+            by_ctid[r["ctid"]].append(r)
+    hand_joined, hand_kept_out = 0, 0
+    for c in checks:
+        for r in by_ctid.get(c["ctid"], []):
+            if c.get("verdict") == "in_map":
+                u = ut_by_title.get(c.get("map_title"))
+                if u is not None and c["map_title"] not in (r.get("map") or {}).get("titles", []):
+                    attach(r, u)
+                    hand_joined += 1
+            elif c.get("verdict") in ("related", "not_in_map") and r.get("map"):
+                del r["map"]
+                if "MAP" in r["sources"]:
+                    r["sources"].remove("MAP")
+                hand_kept_out += 1
+
     for r in rows:
         if r.get("wide"):
             code, src = field_cip(r["name"], r.pop("_ctdl_src", None), r["issuer"])
@@ -849,6 +958,8 @@ def build(root=ROOT):
             "articulated": sum(r["map_status"] == "articulated" for r in rows),
             "with_issuer_skills": skills_attached,
             "wide_rows_joined_to_map": wide_joined,
+            "ce_top50_hand_joined": hand_joined,
+            "ce_top50_hand_kept_out": hand_kept_out,
             "not_yet_assigned": sum(r["domain"] == NO_FIELD for r in rows),
             "with_ctid": sum(bool(r.get("ctid")) for r in rows),
             "ce_top50_in_catalog": len(ctid_attached),

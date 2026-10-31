@@ -391,6 +391,11 @@ jobs:
       # adopt from the prescriptive layer alone, no student figure in the public file.
       - name: Public adoption page builder
         run: python3 tests/adopt_page_build_test.py
+      # The IT/AI credential catalog's fields and MAP join (2026-10-30, 2026-10-31): no guessed
+      # CIP, a CTID only on its owner's row, a name join only where the issuer agrees, and the
+      # hand check of Credential Engine's top 50 winning over the name join.
+      - name: Credential catalog fields and MAP join
+        run: python3 tests/credential_catalog_widening_test.py
       # The credential panel's training sites (Sheet 147 step 2): the overlay sync and exhibits.js
       # resolve the list against the one-trainer field by one rule; Mode A3 fills with the first site.
       - name: Credential panel training sites
