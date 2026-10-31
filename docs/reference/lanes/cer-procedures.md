@@ -55,11 +55,16 @@ mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2
 4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
 5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** `kb/_build_cpl_ai.py --fetch` reads https://map.rccd.edu/CPL-AI/preview-data/catalog.json into the dated snapshot `kb/cpl_ai/pairs.json` (33,232 pairs, 115 certifications, 121 colleges; keeps tiers 1 and 2, *Strong evidence* and *Faculty interpretation*: 20,166 pairs) with the page's credit and caveat word for word. The dialog lists a course's certifications under *CPL-AI recommendations (N)*, and a course whose only lead is a match shows its 0 as a button. Refreshed by hand (`--fetch`) until a schedule is chosen. Sierra and the public pages wait on his word.
 
-**The Exhibits tab's Review queue — built (SkyRowanberry, 2026-10-31, #2602).** COBI tab `#exhibits` (`exhibits.js`),
-in Reference & Curation after the Commons, linked from the Commons' CER row; the CER and Exhibit Adoption stay. The card
-of version 26: the *What is it called?* tiles, the step tiles as filters with their hovers, *Go to an exhibit*, one card
-per held title (canonical title editable and in focus, issuer, training site, local titles, *Articulated at* and *Could
-adopt* chips, students, the MAP source).
+**The Exhibits tab** (`#exhibits`, `exhibits.js`; built 2026-10-31 in #2602, #2603 and #2604, history in the lessons
+doc's 2026-10-31 sections). *Review* draws mock-up v26's card per held title, the step tiles as filters and *Go to an
+exhibit*; `#exhibits/held`, `/conflict` and `/credentials` open one place, read once per visit, and the Commons' CER row
+links them (#2612). *Credentials* lists every credential, most students first, with a panel whose issuer and training
+sites (each with its college) save as `_CREDENTIAL_REVIEW::` rows; `resolve_sites` and `resolveSites` decide which
+stands (`tests/credential_review_sites_test.py`); `field:kb_curation.training_sites_override` maps to DR-07. The panel
+reads `kb/exhibits_adoption.json`: each college's lines and units, the course a could-adopt college already teaches,
+the peer median. **Could adopt never reads the TOP and C-ID overlap** (Sam, 2026-09-24; Rule 7; KB note
+`methodology-a-fold-carries-the-folded-tabs-rulings`). EACR's matrix, filters, exports and Create Handout live on the
+public Credential Catalog. Not built: sites for a title new to the reference, and the *Held titles by group* table.
 
 - `kb/_build_exhibits_review.py` writes `kb/exhibits_review.json` and the lazy `kb/exhibits_review_courses.json` from the
   procedures run's `needs_you`, the `aligned` course, `statewide_data.js`, the identity members, the reference and the
@@ -71,33 +76,6 @@ adopt* chips, students, the MAP source).
 - **The buttons** write the CER's own `_UNCLASSIFIED::<local title>` rows (title and issuer). A conflict's *Change to
   Proposed Title* with the reference's title clears the saved assignment; any other title on a conflict re-keys a
   person-reviewed entry and stays a session's change. *Teach a rule* copies the rule for a session.
-
-**The credential panel — built (SkyBunchberry, 2026-10-31, #2603).** *Credentials* beside *Review*: every credential
-(`credential_reference_data.js` on the first visit, plus the live `_CREDENTIAL_REVIEW::` rows), most students first, a
-search, and a panel on the three questions. The issuer and the training sites are editable, each site with the college
-it trains for or *Any college*. Save writes `issuing_agency_override`, `training_sites_override` (a JSON list of
-`{site, college}`) and `training_agency_override` (the sites joined, so one-trainer readers stay right). One rule
-decides which stands, a later different one-trainer edit winning: `resolve_sites` in `kb/_apply_credential_review.py`,
-`resolveSites` in `exhibits.js`, pinned together by `tests/credential_review_sites_test.py`. Mode A3 fills an empty
-trainer with the first site; the bake emits `trainers`; the Review card links the panel for a title that joins an
-existing credential. Governance: `field:kb_curation.training_sites_override` mapped to DR-07. Not yet built: sites for a
-title new to the reference (they wait until the fold adds it), and the *Held titles by group* table.
-
-**Exhibit Adoption folded into the panel — built (SkyBayberry, 2026-10-31; Sheet 147 step 3).** The same builder writes
-`kb/exhibits_adoption.json`: per credential, what each college articulated (its distinct credit recommendation lines,
-units by EACR's own leading-figure rule), the courses each could-adopt college already teaches (`statewide_prescriptive.js`,
-over-merged identities counted and never named), the exhibits, the CIP sector and the peer median. The Credentials view
-reads it with the reference and adds the *What credit does it carry?* tiles (Credit recs, Statewide recs, Field) and the
-*Who could adopt it?* tiles (Adoptable, from `map_links.js`'s verified index; Shared; Could adopt). In the panel every
-college chip is a button: *Articulated at* (the reference's colleges and MAP's adopters, joined) opens the college's lines,
-units and its own exhibit in MAP; *Could adopt* opens the course it already teaches; the `map_links.js` line of Request
-Quick Adopt chips sits under them. **Could adopt never reads the TOP and C-ID overlap** (EACR's `potential_names`, off every
-screen since Sam's ruling of 2026-09-24; Rule 7): the Review card's fallback had shown it on 269 of 468 cards (14,669 pairs)
-and the panel read the reference's unheld `adoption_leverage` (15,081 pairs against EACR's 4,865). A held title with no
-same-identity course now names the colleges that teach a course mapped to its proposed credential (51 titles), else none.
-KB note `methodology-a-fold-carries-the-folded-tabs-rulings`. What EACR still shows that Exhibits does not: the college
-matrix and its statewide and college filters (CIP sector, ASCCC Area, SW Region, District, College), its exports and
-Create Handout. Card 1's facts move those to the public adoption page, where colleges use them.
 
 **The Credential Catalog, the public adoption page — built (SkyTwinberry, 2026-10-31; Sheet 147 cards 1, 3 and 4; named
 on Sheet 148).** `library/adopt/`, Pages-served, linked from the Library and the public header.
@@ -113,8 +91,9 @@ units and credit lines. The **College matrix** is windowed like EACR's, shows un
 teaches a matching course, has arrow keys and a tooltip, and a content filter never drops a column. The page also offers
 both CSVs and **Create Handout** (the college's `library/cpl-opportunity/` visual). It writes nothing and remembers no
 filter, and `?college=` follows the pick. Guards: `tests/public_adopt.test.js` (44), `tests/adopt_page_build_test.py` (19),
-`npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width. Not carried over: the
-mock-up's *Worth a faculty review* list of credentials no college has articulated (Credential Engine), a later build.
+`npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix` passing at every width. *Worth a faculty review* (#2613) lists Credential
+Engine's top-50 credentials MAP has no exhibit for (28), from the hand check `kb/reference/credential_engine_top50_map_check.json`;
+the IT/AI catalog's own join now needs the issuer to agree and reads that check (#2615; in MAP 89 to 102).
 
 ## Status
 
@@ -153,7 +132,8 @@ run-by-run figures are in the lessons doc's S416 to S418 sections.
   cells. Past sign-offs still load from the overlay for the export's Initiated columns and the Generated Title chip.
 
 - **The store:** `kb/cer_procedures.json`, each procedure a rule in plain words with who set it, when, and
-  their words. Seven **rule** procedures settle a title by code, in order: brand families, the statewide
+  their words. Seven **rule** procedures settle a title by code, in order: brand families (an AP title takes College Board's official
+exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2614), the statewide
   catalog, NCCER, CSLB, the apprenticeship trades, one-off singles (the pre-seed lanes of
   `kb/_preseed_unclassified.py`) and the course-identity lookup (Rule 5c, `kb/unclassified_suggestions.json`,
   which must share words with the college's own title: HIST 035 *History of African Americans* had joined
@@ -221,13 +201,16 @@ SkyTwinberry the same hour: the name, `noindex` dropped, a *Credential Catalog* 
 carrying the header, the Library's own Links. The two tabs were already off the side menu: Sam hid both `cobi_nav` rows
 himself at 23:51Z 2026-10-30, and they still open at `#credential-reference` and `#exhibit-adoption`; their files stay.
 
-**NEXT:** the redesign is built through Sheet 148: (1) read Sam's first saves from the card and the panel, and the first
-nightly save of `high-school-rop` (expected 55; its receipt in `kb/cer_procedures_out/saved/`; the queue should fall to
-about 413; the 07:47Z cron fires near 14:31Z); (2) *Worth a faculty review* is built (SkyElderberry, at Sam's go): the
-Catalog lists Credential Engine's top-50 credentials MAP has no exhibit for, 28 (5 beside a related MAP credential from
-the same issuer), from `kb/reference/credential_engine_top50_map_check.json`, a hand check of the 39 the IT/AI catalog
-marks *not in MAP* (11 of them are in MAP; the catalog's join missed them). The search and Field apply; *Courses that
-may align* waits for an alignment source; (3) the Commons' CER row opens Exhibits (SkyElderberry: `#exhibits/held`,
-`/conflict`, `/credentials`, read once per visit); its left-MAP and procedures counts stay at `#credential-reference`
-until Exhibits carries them, and no Sierra Training link into the retired tabs was found; (4) training sites for a held title new to the reference, and the *Held titles by group* table, only
-if Sam asks.
+**Sam's rulings, Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, completed 14:41Z 2026-10-31,
+both his own call; cpl_memory `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
+
+**The AP fold — applied (SkyElderberry, 2026-10-31; Sheet 149 card 1).** 14 credential merges and 7 AB-subscore
+moves in the reference (77 local titles to College Board's names; `kb/credential_merges.json`, receipts in
+`kb/credential_merges_out/2026-10-31/`), and 42 saved assignments moved to match under `cer-ap-fold-s536@bot` (Sam ran
+the guarded UPDATE; before-values and rollback in `kb_curation_update_receipt.json`).
+
+**NEXT:** (1) The routine (Sheet 149 card 2): the tab writes a rule as a request row, a scheduled session builds it,
+runs the dry run and writes it back for *Turn on* or *Discard*; Governance (DR-07) and the privacy ADRs first, as a
+new write surface. Sessions now run their own data writes (Sam, 2026-10-31; #2618). (2) IB on the AP pattern, then
+CLEP's official names. (3) The Catalog's *Courses that may align*, once a source names courses. (4) Training sites for
+a held title new to the reference, and the *Held titles by group* table, only if Sam asks.

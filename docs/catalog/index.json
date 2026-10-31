@@ -13750,12 +13750,12 @@
      "tags": [
       "handoff",
       "cer",
-      "eacr",
-      "catalog-commons",
       "exhibits",
-      "adoption-page"
+      "catalog-commons",
+      "ap",
+      "credential-engine"
      ],
-     "title": "CER redesign handoff: the Credential Catalog built, named and linked (Sheets 147 and 148)",
+     "title": "CER redesign handoff: the AP rule, the Catalog's faculty review list, the catalog join (SkyElderberry)",
      "type": null,
      "updated": ""
     },
