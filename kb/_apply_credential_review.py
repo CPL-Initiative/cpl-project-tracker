@@ -9,6 +9,8 @@ override 4 fields per unified_title row:
   - unified_title_override   (DISPLAY-ONLY by PR-4 design; identity stays)
   - issuing_agency_override
   - training_agency_override
+  - training_sites_override  (the Exhibits tab's credential panel: many sites, each
+                              with the college it trains for; see resolve_sites)
   - quality_flag_override
   - (plus the "reviewed_marker" sentinel from PR-B's Mark Initiated)
 
@@ -84,9 +86,15 @@ FIELDS = {
     "issuing_agency_override",
     "issuing_agency_additional_override",
     "training_agency_override",
+    # The Exhibits tab's credential panel (Sam, 2026-10-30: "could be multiple
+    # training sites"): a JSON list of {"site", "college"}, saved beside
+    # training_agency_override (the sites joined) so a one-trainer reader is
+    # never wrong. resolve_sites() decides which of the two stands.
+    "training_sites_override",
     "quality_flag_override",
     "reviewed_marker",
 }
+TRAINER_FIELDS = {"training_agency_override", "training_sites_override"}
 
 
 def fetch_rows():
@@ -118,6 +126,59 @@ def fetch_rows():
             break
         start += page_size
     return rows
+
+
+# ── Training sites (the Exhibits tab's credential panel) ──────────────────────
+# exhibits.js reads the same two fields live and decides the same way
+# (resolveSites); tests/credential_review_sites_test.py pins both.
+
+def parse_sites(value):
+    """training_sites_override's value: a JSON list of {"site", "college"}, in the
+    order the curator set them. Blank sites and repeats drop; a value that is not
+    such a list reads as None (the field is ignored, never half-applied)."""
+    try:
+        got = json.loads(value or "")
+    except ValueError:
+        return None
+    if not isinstance(got, list):
+        return None
+    out, seen = [], set()
+    for s in got:
+        if not isinstance(s, dict):
+            continue
+        site = " ".join(str(s.get("site") or "").split())
+        col = " ".join(str(s.get("college") or "").split())
+        if not site or (site, col) in seen:
+            continue
+        seen.add((site, col))
+        out.append({"site": site, "college": col} if col else {"site": site})
+    return out
+
+
+def join_sites(sites):
+    """The sites as the one-trainer text training_agency_override carries."""
+    names = []
+    for s in sites or []:
+        if s["site"] not in names:
+            names.append(s["site"])
+    return "; ".join(names)
+
+
+def resolve_sites(entry, stamps):
+    """The training sites that stand for one credential, or None when the list
+    does not apply. The panel saves the list and its joined text together; a
+    later one-trainer edit (the Common Exhibit Reference's Trainer box) whose text
+    differs from the list's is the newer word, so the list stands down."""
+    if "training_sites_override" not in entry:
+        return None
+    sites = parse_sites(entry.get("training_sites_override"))
+    if sites is None:
+        return None
+    tr = entry.get("training_agency_override")
+    if (tr is not None and " ".join((tr or "").split()) != join_sites(sites)
+            and (stamps.get("training_agency_override") or "") > (stamps.get("training_sites_override") or "")):
+        return None
+    return sites
 
 
 # ── Mode A2 helpers — mirror kb/_fold_unclassified.py's issuer semantics;
@@ -220,7 +281,13 @@ def promote_trainers(overrides):
         return [], []
     fills, missing = [], []
     for ut, entry in overrides.items():
-        tr = (entry.get("training_agency_override") or "").strip()
+        # A list of sites fills with its first; its joined text never lands in
+        # the one-trainer field. The full list lives in the overlay, which the bake
+        # and the Exhibits builder read.
+        if entry.get("training_sites") is not None:
+            tr = entry["training_sites"][0]["site"] if entry["training_sites"] else ""
+        else:
+            tr = (entry.get("training_agency_override") or "").strip()
         if not tr:
             continue
         recs = cr.get(ut)
@@ -248,6 +315,7 @@ def main():
     rows = fetch_rows()
 
     overrides = {}
+    stamps = {}
     skipped_field = 0
     skipped_prefix = 0
     rename_count = 0
@@ -263,19 +331,26 @@ def main():
             continue
         entry = overrides.setdefault(ut, {})
         entry[field] = row.get("value")
+        if field in TRAINER_FIELDS:
+            stamps.setdefault(ut, {})[field] = row.get("reviewed_at") or ""
         if field == "unified_title_override" and row.get("value"):
             rename_count += 1
         # Latest reviewer/timestamp wins (matches _apply_curation.py).
         if row.get("reviewed_at", "") >= entry.get("reviewed_at", ""):
             entry["reviewed_by"] = row.get("reviewer_email")
             entry["reviewed_at"] = row.get("reviewed_at")
+    for ut, entry in overrides.items():
+        sites = resolve_sites(entry, stamps.get(ut, {}))
+        if sites is not None:
+            entry["training_sites"] = sites
 
     out = {
         "_about": (
             "Credential-Reference curator overrides synced from Supabase "
             "kb_curation (_CREDENTIAL_REVIEW::<unified_title> namespace). "
             "Applied by excel_to_dashboard.py:export_credential_reference() "
-            "for issuer/trainer/quality_flag/reviewed_marker. "
+            "for issuer/trainer/quality_flag/reviewed_marker; training_sites is "
+            "the resolved list of a credential's training sites. "
             "unified_title_override is RECORDED here but NOT applied as a "
             "rename — that's Cred-Ref PR-5b with the re-mint playbook."
         ),

@@ -383,6 +383,10 @@ jobs:
       # student figure in the public file.
       - name: Exhibits review queue builder
         run: python3 tests/exhibits_review_build_test.py
+      # The credential panel's training sites (Sheet 147 step 2): the overlay sync and exhibits.js
+      # resolve the list against the one-trainer field by one rule; Mode A3 fills with the first site.
+      - name: Credential panel training sites
+        run: python3 tests/credential_review_sites_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a

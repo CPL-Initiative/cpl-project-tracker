@@ -88,6 +88,10 @@ FIX = {
         "title_cards": [{"raw_title": t, "unified_title": None, "tags": ["unclassified_in_map"]} for t in (DM, AP, CODE, WORD, SAVED)]
                        + [{"raw_title": GONE, "unified_title": "Gone"}, {"raw_title": JUV, "unified_title": "Juvenile Law and Procedures"}]},
     "kb/unclassified_assignments.json": {"assignments": {SAVED: {"unified_title": "Saved", "reviewed_by": "map@rccd.edu"}}},
+    "kb/credential_review_overlay.json": {"overrides": {
+        "Introduction to Digital Art": {"training_sites": [{"site": "Cabrillo Media Lab", "college": "Cabrillo College"},
+                                                           {"site": "Aptos High School"}]},
+        "Juvenile Law and Procedures": {"issuing_agency_override": "California Community Colleges"}}},
 }
 STATEWIDE = {"generated_at": "2026-10-31T06:00:00", "exhibits": [
     {"exhibit_ids": ["MAPCXH-ITDM-1-001"], "raw_titles": [DM], "adopter_names": ["Cabrillo College"],
@@ -182,6 +186,8 @@ check("a conflict proposes the reference's person-reviewed title, never the alig
 check("a conflict carries the saved assignment it disagrees with", juv.get("saved") == "Juvenile Justice Procedures")
 check("a pipe-joined exhibit id splits into its exhibits", juv["ids"] == ["MAPCXS-A2-J-1-001", "MAPCxS-JLAP-1-001"])
 check("the reference's training site shows, read-only", juv.get("trainers") == ["Regional Academy"])
+check("a curator's training sites stand in for the records', in order, each with its college",
+      held[DM].get("trainers") == ["Cabrillo Media Lab (Cabrillo College)", "Aptos High School"], held[DM].get("trainers"))
 
 check("the written file matches the build", [h["raw"] for h in written["held"]] == [h["raw"] for h in data["held"]]
       and written_courses["courses"].keys() == courses["courses"].keys())

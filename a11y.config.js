@@ -719,6 +719,28 @@ async function seedExhibits(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Seeds the Exhibits tab's Credentials view (the credential panel, Sheet 147 step 2): the table, a
+// credential's panel open beside it, and one more training site row, so the select, the site box and
+// Remove are measured. The live rows are out of reach here, which paints the fallback note too.
+async function seedExhibitsCredentials(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits") location.hash = "exhibits"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => window.CPL_EXHIBITS && window.CPL_EXHIBITS._state.data, null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const b = Array.prototype.filter.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+      (x) => x.textContent.indexOf("Credentials") === 0)[0];
+    if (b) b.click();
+  });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-table tbody tr"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const b = document.querySelector("#exhibits-root .exh-table button.exh-cred");
+    if (b) b.click();
+  });
+  await page.waitForFunction(() => document.getElementById("exh-c-add"), null, { timeout: 30000 });
+  await page.evaluate(() => document.getElementById("exh-c-add").click());
+  await page.waitForTimeout(300);
+}
+
 // Seeds the Records view with its first filter open (S391 UI pass): the dropdowns of #2121
 // (Sam, 2026-10-14) open a list of checkboxes no other target paints.
 async function seedFilterOpen(page, theme) {
@@ -3104,6 +3126,24 @@ module.exports = {
     routes: [{ hash: "program-requirements", name: "filter-dark" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedFilterOpen(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Exhibits: Credentials, the credential panel (Sheet 147 step 2) ─────
+     The table with a credential's panel open and a training site row added. */
+  "exhibits-credentials": {
+    file: "index.html",
+    title: "Exhibits: Credentials, a credential's panel open",
+    routes: [{ hash: "exhibits", name: "credentials" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedExhibitsCredentials(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-credentials-dark": {
+    file: "index.html",
+    title: "Exhibits: Credentials, a credential's panel open, dark",
+    routes: [{ hash: "exhibits", name: "credentials-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedExhibitsCredentials(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the exhibits view (S355) ─────────────────────

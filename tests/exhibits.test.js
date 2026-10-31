@@ -9,6 +9,10 @@
 //   - Students: a reviewer-only read, sorted most first, a suppressed cell reads "Too few students to
 //     show"; signed out, the page holds no count at all.
 //   - Tokens only in the injected CSS; no glyphs in the rendered text; American spelling.
+//   - Credentials (the credential panel, Sheet 147 step 2): every credential, most students first, a search,
+//     and a panel whose issuer and training sites (many, each with the college it trains for) save as
+//     _CREDENTIAL_REVIEW:: rows: training_sites_override as JSON and training_agency_override as the sites
+//     joined. The live rows win over the daily file; a later one-trainer edit wins over the list.
 //
 // Run from repo root: `npm test` (or `node tests/exhibits.test.js`).
 const fs = require("fs");
@@ -52,6 +56,15 @@ const src = fs.readFileSync("exhibits.js", "utf8");
 check("exhibits.js carries no service key", src.indexOf("service_role") === -1);
 check("exhibits.js writes the CER's own namespace and fields",
   /"_UNCLASSIFIED::"/.test(src) && /"unified_title_assignment"/.test(src) && /"issuing_agency_assignment"/.test(src));
+check("exhibits.js writes the credential panel's fields under the CER's credential namespace",
+  /"_CREDENTIAL_REVIEW::"/.test(src) && /"issuing_agency_override"/.test(src) && /"training_sites_override"/.test(src) && /"training_agency_override"/.test(src));
+check("the governance map names the training sites field", (function () {
+  const g = JSON.parse(fs.readFileSync("kb/governance_surface_map.json", "utf8"));
+  return g.mapped["field:kb_curation.training_sites_override"] === "DR-07";
+})());
+check("the overlay sync reads the field and resolves it", /"training_sites_override"/.test(fs.readFileSync("kb/_apply_credential_review.py", "utf8"))
+  && /def resolve_sites/.test(fs.readFileSync("kb/_apply_credential_review.py", "utf8")));
+check("CI runs the sites test", /python3 tests\/credential_review_sites_test\.py/.test(fs.readFileSync(".github/workflows/js-tests.yml", "utf8")));
 const cssStart = src.indexOf("var CSS = [");
 const cssBlock = src.slice(cssStart, src.indexOf("].join(", cssStart));
 check("the injected CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(cssBlock));
@@ -96,6 +109,38 @@ const REVIEW = {
 const COURSES = { schema: 1, colleges: COLLEGES, courses: { "ARTS 250": {
   [String(C("Cabrillo College"))]: [["DM 1", "Intro to Digital Media", 3]],
   [String(C("Cypress College"))]: [["ART 20", "Digital Art I", 3], ["ART 20N", "Digital Art I", 0]] } } };
+const IBEW = "IBEW Electrician Apprenticeship — Year 1";
+const SECP = "CompTIA Security+";
+const MED = "Medical Core";
+const JLP = "Juvenile Law and Procedures";
+const CREDREF = { _generated_at: "2026-10-31T06:20:00+00:00", unified_titles: [
+  { ut: IBEW, issuer: "International Brotherhood of Electrical Workers (IBEW)", trainer: "Joint Apprenticeship Training Committee (JATC)",
+    students_served: null, served_suppressed: false, raw_variants: [{ r: "IBEW Electrician Apprenticeship (Year 1)" }, { r: "International Brotherhood of Electrical Workers Year 1" }],
+    articulations: [{ cid: "ELEC M1001", sys: "M-ID", title: "Electrical Theory", local: [{ colleges: ["Norco College", "Bakersfield College"] }] }],
+    potential_colleges: ["Chabot College"], cpl_types: ["Portfolio Review"], gen_rec: "3.5 hours in Electrical Theory", ccc_rec: "", disc_modal: "Electricity" },
+  { ut: JLP, issuer: "California Community Colleges", trainer: "Regional Academy", students_served: null, served_suppressed: false,
+    raw_variants: [{ r: "ADJU 232 Juvenile Procedures" }],
+    articulations: [{ cid: "AJ 220", sys: "C-ID", title: "Juvenile Procedures", local: [{ colleges: ["Norco College", "Modesto Junior College", "Copper Mountain College"] }] }],
+    potential_colleges: [], cpl_types: ["Credit by Exam"], gen_rec: "", ccc_rec: "3 units, AJ 220", disc_modal: "Administration of Justice" },
+  { ut: MED, issuer: "Canyon High School", issuers: ["Canyon High School", "El Modena High School"], trainer: "Canyon High School",
+    trainers: [{ site: "Canyon High School" }, { site: "El Modena High School" }], students_served: null, served_suppressed: true,
+    raw_variants: [{ r: "Medical Core HS" }], articulations: [], potential_colleges: [], cpl_types: [], gen_rec: "", ccc_rec: "", disc_modal: "" },
+  { ut: SECP, issuer: "CompTIA", trainer: null, students_served: 57, served_suppressed: false,
+    raw_variants: [{ r: "CompTIA Security+ Certification" }, { r: "Security Fund. (Security+)" }, { r: "CompTIA S+ for CIS 060" }, { r: "Sec Plus" }],
+    articulations: [{ cid: "ITIS 160", sys: "C-ID", title: "Network Security", local: [{ colleges: ["Cabrillo College"] }] }],
+    potential_colleges: COLLEGES.concat(["De Anza College", "Fullerton College", "Long Beach City College"]), cpl_types: ["Industry Certification"],
+    gen_rec: "3 units in Network Security", ccc_rec: "", disc_modal: "Computer Information Systems" }
+] };
+const OVERLAY = [
+  { course_id: "_CREDENTIAL_REVIEW::" + JLP, field: "training_sites_override", reviewed_at: "2026-10-31T01:00:00.100+00:00",
+    value: JSON.stringify([{ site: "Regional Academy North", college: "Norco College" }, { site: "Valley Academy" }]) },
+  { course_id: "_CREDENTIAL_REVIEW::" + JLP, field: "training_agency_override", reviewed_at: "2026-10-31T01:00:00.300+00:00",
+    value: "Regional Academy North; Valley Academy" },
+  { course_id: "_CREDENTIAL_REVIEW::" + MED, field: "training_sites_override", reviewed_at: "2026-10-01T00:00:00+00:00",
+    value: JSON.stringify([{ site: "Canyon High School" }, { site: "El Modena High School" }]) },
+  { course_id: "_CREDENTIAL_REVIEW::" + MED, field: "training_agency_override", reviewed_at: "2026-10-20T00:00:00+00:00", value: "Orange High School" },
+  { course_id: "_CREDENTIAL_REVIEW::" + SECP, field: "issuing_agency_override", reviewed_at: "2026-10-20T00:00:00+00:00", value: "CompTIA (Computing Technology Industry Association)" }
+];
 const STUDENTS = { "0": [null, true], "1": [442, false], "2": [398, false], "3": [0, false] };
 
 function load(opts) {
@@ -121,6 +166,9 @@ function load(opts) {
         return { key: k, students: s[0], suppressed: s[1] };
       }));
     }
+    if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") {
+      return opts.overlayFails ? bad(503) : ok(opts.overlay || []);
+    }
     if (/\/rest\/v1\/kb_curation/.test(url)) return opts.saveFails ? bad(500) : Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
     return bad(404);
   };
@@ -130,12 +178,18 @@ function load(opts) {
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; }
   };
   w.cplCollegeShort = function (n) { return n.replace(/ College$/, "").replace("Los Angeles ", "LA "); };
+  w.CPL_TABS = { loadScript: function (src, name, cb) {
+    calls.push({ url: "loadScript:" + src, method: "SCRIPT" });
+    if (src === "credential_reference_data.js" && !opts.noCreds) w[name] = JSON.parse(JSON.stringify(CREDREF));
+    setTimeout(cb, 0);
+  } };
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_EXHIBITS, root: w.document.getElementById("exhibits-root"), calls: calls };
 }
 function tick() { return new Promise(function (r) { setTimeout(r, 0); }); }
 async function settle() { for (let i = 0; i < 6; i++) await tick(); }
 function byText(d, sel, t) { return Array.from(d.querySelectorAll(sel)).find(function (b) { return txt(b) === t; }); }
+function viewBtn(d, name) { return Array.from(d.querySelectorAll(".exh-views button")).find(function (b) { return txt(b).indexOf(name) === 0; }); }
 function stepTile(d, label) { return Array.from(d.querySelectorAll(".exh-step")).find(function (b) { return txt(b.querySelector(".exh-sl")) === label; }); }
 function title(d) { return d.getElementById("exh-title"); }
 function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li.children[1]) : ""; }
@@ -298,6 +352,152 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   t = load({ noData: true });
   await t.M.boot(); await settle();
   check("an unread review file says so", /The review file could not be read \(HTTP 404\)/.test(txt(t.root)));
+
+
+  // ───────────────────────────── Part C — Credentials, the credential panel ─────────────────────────────
+  t = load({ overlay: OVERLAY });
+  await t.M.boot(); await settle();
+  check("the views name Review and Credentials, Review current", txt(t.d.querySelector('.exh-views [aria-current="page"]')).indexOf("Review") === 0
+    && viewBtn(t.d, "Credentials"));
+  check("the credential file is not read until the view opens", !t.calls.some(function (c) { return c.url === "loadScript:credential_reference_data.js"; }));
+  viewBtn(t.d, "Credentials").click(); await settle();
+  check("Credentials loads the reference's file once and the live rows", t.calls.filter(function (c) { return c.url === "loadScript:credential_reference_data.js"; }).length === 1
+    && t.calls.some(function (c) { return /kb_curation\?select=course_id,field,value,reviewed_at/.test(c.url) && /field=in\.\(issuing_agency_override,training_agency_override,training_sites_override\)/.test(c.url)
+      && /course_id=like\._CREDENTIAL_REVIEW%3A%3A%25/.test(c.url) && c.headers.Range === "0-999"; }));
+  check("the view is current and counts the credentials", /Credentials 4/.test(txt(t.d.querySelector('.exh-views [aria-current="page"]'))));
+  const ctiles = Array.from(t.d.querySelectorAll(".exh-tile")).map(txt);
+  check("the tiles count issuers and training sites", /Issuers4 of 4/.test(ctiles[1]) && /Training sites3 of 4/.test(ctiles[2]));
+  function rowsOf(d) { return Array.from(d.querySelectorAll(".exh-table tbody tr")).map(function (tr) { return Array.from(tr.children).map(txt); }); }
+  let rows = rowsOf(t.d);
+  check("most students first, then the cells under ten, then by colleges", rows.map(function (r) { return r[0]; }).join("|") === [SECP, MED, JLP, IBEW].join("|"));
+  check("a suppressed count reads Too few; none reads None yet", rows[0][3] === "57" && rows[1][3] === "Too few" && rows[3][3] === "None yet");
+  check("the live issuer stands over the daily file's", rows[0][1] === "CompTIA (Computing Technology Industry Association)");
+  check("no site reads None named", rows[0][2] === "None named");
+  check("the live list stands when its joined text matches the trainer saved beside it", rows[2][2] === "Regional Academy North; Valley Academy");
+  check("a later one-trainer edit that differs wins over the list", rows[1][2] === "Orange High School");
+  check("a credential's other issuers count beside it", rows[1][1] === "Canyon High School and 1 more");
+  check("adoption counts the colleges", rows[2][4] === "3 articulate it" && rows[0][4] === "1 articulates it · 11 could adopt");
+  check("the table is a labeled region with scoped headers and a fixed layout", t.d.querySelector('.exh-tablewrap[role="region"][aria-label="Credentials"][tabindex="0"]')
+    && t.d.querySelectorAll('.exh-table th[scope="col"]').length === 5 && t.d.querySelectorAll(".exh-table col").length === 5);
+
+  const cfind = t.d.getElementById("exh-c-find");
+  cfind.focus(); cfind.value = "academy"; cfind.dispatchEvent(new t.w.Event("input")); await settle();
+  check("the search finds a training site and keeps the box focused", rowsOf(t.d).length === 1 && rowsOf(t.d)[0][0] === JLP && t.d.activeElement === t.d.getElementById("exh-c-find"));
+  cfind.value = "security fund"; cfind.dispatchEvent(new t.w.Event("input")); await settle();
+  check("the search finds a local title, every word", rowsOf(t.d).length === 1 && rowsOf(t.d)[0][0] === SECP);
+  cfind.value = "no such credential"; cfind.dispatchEvent(new t.w.Event("input")); await settle();
+  check("no match says so", /No credential matches/.test(txt(t.d.querySelector(".exh-ctable"))));
+  cfind.value = ""; cfind.dispatchEvent(new t.w.Event("input")); await settle();
+
+  byText(t.d, ".exh-table button", IBEW).click(); await settle();
+  let cp = t.d.getElementById("exh-cpanel");
+  check("a credential opens its panel, focused on its name", cp && txt(t.d.getElementById("exh-c-h")) === IBEW && t.d.activeElement === t.d.getElementById("exh-c-h"));
+  check("the row reads selected", byText(t.d, ".exh-table button", IBEW).getAttribute("aria-current") === "true");
+  check("the panel carries the three questions", ["What is it called?", "What credit does it carry?", "Who could adopt it?"].every(function (q) {
+    return Array.from(cp.querySelectorAll("h4")).some(function (h) { return txt(h) === q; }); }));
+  check("its CER step chip says In the reference, with the hover", /CER step: In the reference/.test(txt(cp.querySelector(".exh-chip"))) && /Settled\./.test(cp.querySelector(".exh-chip").getAttribute("data-tip")));
+  check("the issuer is an input with its label", t.d.getElementById("exh-c-issuer").value === "International Brotherhood of Electrical Workers (IBEW)"
+    && t.d.querySelector('label[for="exh-c-issuer"]'));
+  check("the daily file's site is the first row, for any college", t.d.getElementById("exh-c-site-0").value === "Joint Apprenticeship Training Committee (JATC)"
+    && t.d.getElementById("exh-c-col-0").value === "");
+  const opts0 = Array.from(t.d.getElementById("exh-c-col-0").options).map(function (o) { return o.value; });
+  check("the college choices are Any college and the colleges that articulate it", opts0.join("|") === "|Bakersfield College|Norco College");
+  check("the credit and the colleges show", /3\.5 hours in Electrical Theory/.test(txt(cp)) && /M-ID ELEC M1001, Electrical Theory/.test(txt(cp))
+    && /Articulated at \(2\)/.test(txt(cp)) && /Could adopt \(1\)/.test(txt(cp)) && /No students with credit yet/.test(txt(cp)));
+
+  // edit: two JATCs, each for its college
+  t.d.getElementById("exh-c-col-0").value = "Bakersfield College"; t.d.getElementById("exh-c-col-0").dispatchEvent(new t.w.Event("change"));
+  t.d.getElementById("exh-c-site-0").value = "Kern County JATC"; t.d.getElementById("exh-c-site-0").dispatchEvent(new t.w.Event("input"));
+  byText(cp, "button", "Add a training site").click(); await settle();
+  check("Add a training site adds a row and focuses its box", t.d.getElementById("exh-c-site-1") && t.d.activeElement === t.d.getElementById("exh-c-site-1"));
+  check("the first row's edits survive the re-render", t.d.getElementById("exh-c-site-0").value === "Kern County JATC" && t.d.getElementById("exh-c-col-0").value === "Bakersfield College");
+  t.d.getElementById("exh-c-col-1").value = "Norco College"; t.d.getElementById("exh-c-col-1").dispatchEvent(new t.w.Event("change"));
+  t.d.getElementById("exh-c-site-1").value = "  Inland Empire   JATC "; t.d.getElementById("exh-c-site-1").dispatchEvent(new t.w.Event("input"));
+  byText(t.d.getElementById("exh-cpanel"), "button", "Add a training site").click(); await settle();
+  t.d.querySelector('[aria-label="Remove training site 3"]').click(); await settle();
+  check("Remove takes the row away and returns focus to Add", !t.d.getElementById("exh-c-site-2") && t.d.activeElement === t.d.getElementById("exh-c-add"));
+  t.d.getElementById("exh-c-save").click(); await settle();
+  check("signed out, Save asks for a sign-in and writes nothing", /Sign in as a reviewer to save/.test(txt(t.d.querySelector("#exh-cpanel .exh-status")))
+    && !t.calls.some(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }));
+
+  t.w.dispatchEvent(new t.w.CustomEvent("cpl-tab-activated", { detail: { tab: "exhibits" } })); await settle();
+  check("a new visit starts on Review with no credential chosen", /Review/.test(txt(t.d.querySelector('.exh-views [aria-current="page"]'))) && !t.d.getElementById("exh-cpanel")
+    && t.M._state.cs.sel === null && t.M._state.cs.q === "");
+
+  // signed in: the save
+  t = load({ signedIn: true, overlay: OVERLAY });
+  await t.M.boot(); await settle();
+  t.M.openCredential(IBEW); await settle();
+  check("the Review card's way in opens a credential's panel", txt(t.d.getElementById("exh-c-h")) === IBEW);
+  t.d.getElementById("exh-c-save").click(); await settle();
+  check("Save with nothing changed writes nothing and says so", /Nothing changed/.test(txt(t.d.querySelector("#exh-cpanel .exh-status")))
+    && !t.calls.some(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }));
+  t.d.getElementById("exh-c-col-0").value = "Bakersfield College"; t.d.getElementById("exh-c-col-0").dispatchEvent(new t.w.Event("change"));
+  t.d.getElementById("exh-c-site-0").value = "Kern County JATC"; t.d.getElementById("exh-c-site-0").dispatchEvent(new t.w.Event("input"));
+  byText(t.d.getElementById("exh-cpanel"), "button", "Add a training site").click(); await settle();
+  t.d.getElementById("exh-c-col-1").value = "Norco College"; t.d.getElementById("exh-c-col-1").dispatchEvent(new t.w.Event("change"));
+  t.d.getElementById("exh-c-site-1").value = "  Inland Empire   JATC "; t.d.getElementById("exh-c-site-1").dispatchEvent(new t.w.Event("input"));
+  t.d.getElementById("exh-c-issuer").value = "IBEW"; t.d.getElementById("exh-c-issuer").dispatchEvent(new t.w.Event("input"));
+  t.d.getElementById("exh-c-save").click(); await settle();
+  const cposts = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; });
+  const byField = {}; cposts.forEach(function (p) { byField[p.body.field] = p.body; });
+  check("Save writes three rows under the credential's key, as the reviewer", cposts.length === 3 && cposts.every(function (p) {
+    return p.body.course_id === "_CREDENTIAL_REVIEW::" + IBEW && p.body.reviewer_email === "reviewer@example.org" && /resolution=merge-duplicates/.test(p.headers.Prefer); }));
+  check("the issuer saves as issuing_agency_override", byField.issuing_agency_override && byField.issuing_agency_override.value === "IBEW");
+  check("the sites save as JSON, in order, each with its college, spaces folded",
+    byField.training_sites_override && byField.training_sites_override.value === JSON.stringify([{ site: "Kern County JATC", college: "Bakersfield College" }, { site: "Inland Empire JATC", college: "Norco College" }]));
+  check("the one-trainer field carries the sites joined", byField.training_agency_override && byField.training_agency_override.value === "Kern County JATC; Inland Empire JATC");
+  check("the save says so and the table shows it at once", /Saved\. The tabs show it now/.test(txt(t.d.querySelector("#exh-cpanel .exh-status")))
+    && rowsOf(t.d).some(function (r) { return r[0] === IBEW && r[1] === "IBEW" && r[2] === "Kern County JATC; Inland Empire JATC"; }));
+  t.d.getElementById("exh-c-save").click(); await settle();
+  check("a second Save right after writes nothing", t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).length === 3);
+  // removing every site saves an empty list and an empty trainer
+  t.d.querySelector('[aria-label="Remove training site 2"]').click(); await settle();
+  t.d.querySelector('[aria-label="Remove training site 1"]').click(); await settle();
+  check("with no sites the panel says None named", /None named/.test(txt(t.d.querySelector("#exh-cpanel .exh-sites"))));
+  t.d.getElementById("exh-c-save").click(); await settle();
+  const last = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(3);
+  check("clearing the sites saves an empty list and an empty trainer", last.length === 2
+    && last.some(function (p) { return p.body.field === "training_sites_override" && p.body.value === "[]"; })
+    && last.some(function (p) { return p.body.field === "training_agency_override" && p.body.value === ""; }));
+
+  // the Review card links the panel for a credential already in the reference
+  t = load({ overlay: OVERLAY });
+  await t.M.boot(); await settle();
+  const setIt = byText(t.d, ".exh-read button", "Set in the credential panel");
+  check("the card's training site links the credential panel", setIt);
+  setIt.click(); await settle();
+  check("the link opens the credential the title joins", txt(t.d.getElementById("exh-c-h")) === JLP
+    && t.d.getElementById("exh-c-site-0").value === "Regional Academy North" && t.d.getElementById("exh-c-col-0").value === "Norco College");
+  t.d.getElementById("exh-c-issuer").value = "Draft issuer"; t.d.getElementById("exh-c-issuer").dispatchEvent(new t.w.Event("input"));
+  viewBtn(t.d, "Review").click(); await settle();
+  viewBtn(t.d, "Credentials").click(); await settle();
+  byText(t.d, ".exh-table button", JLP).click(); await settle();
+  check("a panel draft outlives leaving the view", t.d.getElementById("exh-c-issuer").value === "Draft issuer");
+
+  // the live rows could not be read
+  t = load({ overlayFails: true });
+  await t.M.boot(); await settle();
+  viewBtn(t.d, "Credentials").click(); await settle();
+  check("unread live rows fall back to the daily file and say so", /Today's saves could not be read, so the credentials show as of 2026-10-31 06:20Z/.test(txt(t.root))
+    && rowsOf(t.d).some(function (r) { return r[0] === JLP && r[2] === "Regional Academy"; }));
+  t = load({ noCreds: true });
+  await t.M.boot(); await settle();
+  viewBtn(t.d, "Credentials").click(); await settle();
+  check("an unread credential file says so", /The credentials could not be read \(the credential file did not load\)/.test(txt(t.root)));
+
+  // the one rule, shared with kb/_apply_credential_review.py
+  const M = t.M;
+  check("parseSites drops blanks and repeats and folds spaces", JSON.stringify(M._parseSites(JSON.stringify([{ site: " A  B " }, { site: "" }, { site: "A B" }, { site: "C", college: "Norco College" }, "x"])))
+    === JSON.stringify([{ site: "A B" }, { site: "C", college: "Norco College" }]));
+  check("parseSites reads a value that is not a list as null", M._parseSites("{}") === null && M._parseSites("not json") === null);
+  check("joinSites names each site once", M._joinSites([{ site: "A" }, { site: "A", college: "X" }, { site: "B" }]) === "A; B");
+  check("resolveSites: no list, no answer", M._resolveSites({ trainer: "A" }) === null);
+  check("resolveSites: a later, different trainer stands the list down", M._resolveSites({ sites: '[{"site":"A"}]', sitesAt: "1", trainer: "B", trainerAt: "2" }) === null);
+  check("resolveSites: the list stands when the trainer matches or is older",
+    M._resolveSites({ sites: '[{"site":"A"}]', sitesAt: "1", trainer: "A", trainerAt: "2" }).length === 1
+    && M._resolveSites({ sites: '[{"site":"A"}]', sitesAt: "2", trainer: "B", trainerAt: "1" }).length === 1);
+  check("the rendered credential view has no emoji", !/[\u{1F300}-\u{1FAFF}☀-➿]/u.test(txt(t.root)));
 
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0]); });

@@ -28,6 +28,16 @@
 // The buttons, read from Sam's words: the current title is the exhibit's latest decision (its local title,
 // or the title a person saved for a conflict); the proposed title is the box, which he may edit first.
 //
+// Credentials (the credential panel, Sheet 147's order, step 2): every credential in the reference, from
+// credential_reference_data.js (loaded on the first visit to the view) and the live _CREDENTIAL_REVIEW::
+// rows, so a save shows at once. Sam, 2026-10-30: "the issuer for an electrician apprentice is the
+// national trade union and the training site is the local union school house"; "could be multiple
+// training sites"; "would want to be able to set and change both issuer and training site from here".
+// The panel's Save writes, under _CREDENTIAL_REVIEW::<credential>, issuing_agency_override and
+// training_sites_override (a JSON list of {site, college}, college optional), with training_agency_override
+// set to the sites joined, so a reader that takes one trainer (the bake, MAP export, the CER tab) stays
+// right. kb/_apply_credential_review.py resolves the two the way resolveSites() does here.
+//
 // Loaded by the tab's boot block (both HTMLs, Rule 4). First Light tokens only, words for every control.
 (function () {
   "use strict";
@@ -39,6 +49,13 @@
   var UNCLASS_PREFIX = "_UNCLASSIFIED::";
   var FIELD_TITLE = "unified_title_assignment";
   var FIELD_ISSUER = "issuing_agency_assignment";
+  var CRED_DATA = "credential_reference_data.js";
+  var CRED_PREFIX = "_CREDENTIAL_REVIEW::";
+  var FIELD_CRED_ISSUER = "issuing_agency_override";
+  var FIELD_CRED_TRAINER = "training_agency_override";
+  var FIELD_CRED_SITES = "training_sites_override";
+  var CRED_PAGE = 50;
+  var IN_REF = "In the reference";
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
   var MAP_VIEW = "&View=Non-Military";
   var CHIP_MAX = 10;
@@ -51,6 +68,7 @@
     "Wording check": "The suggested title is likely right, but a word in it failed a quality check: a leftover course code, a dangling word or a method word. A person confirms it.",
     "Two issuers": "The suggested title would join this exhibit to a credential the reference gives another issuer. A person decides whether they are one credential or two.",
     "Saved, not folded": "A person or a rule saved a title. The nightly run adds it to the reference.",
+    "In the reference": "Settled. The exhibit sits under its canonical credential, and the tabs and public pages show that name.",
     "Conflict with the reference": "The title saved for this exhibit disagrees with one a person already approved. The nightly run never overwrites a person's decision, so it waits for you."
   };
 
@@ -58,7 +76,10 @@
     data: null, error: null, filter: "", cur: 0,
     students: null, studentsWord: "", total: null,
     done: {}, note: "", courses: null, coursesErr: false, drafts: {}, teachDraft: "",
-    teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false
+    teach: false, openCollege: null, showAllArt: false, showAllCould: false, showUnder: false,
+    view: "review",
+    cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null, q: "", sel: null, limit: CRED_PAGE,
+          drafts: {}, note: "", showTitles: false, showArt: false, showCould: false }
   };
 
   function el(tag, attrs, kids) {
@@ -396,8 +417,11 @@
     issuer.addEventListener("input", keepDraft);
     canon.appendChild(el("label", { cls: "exh-inbox", "for": "exh-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
     var sites = (h.trainers || []).join("; ");
+    // The credential panel sets training sites; a title new to the reference gets them once the nightly run adds it.
     canon.appendChild(el("div", { cls: "exh-inbox exh-read" }, [el("span", { cls: "exh-pre", text: "Training site:" }),
-      el("span", { text: sites || "None named" })]));
+      el("span", { cls: "exh-grow", text: sites || "None named" }),
+      h.exists ? word("Set in the credential panel", function () { openCredential(h.title); }, { cls: "exh-w exh-small" })
+        : el("span", { cls: "exh-muted exh-small", text: "set once it joins the reference" })]));
     var exists = el("p", { cls: "exh-muted exh-small" },
       [h.exists ? "Joins the credential already in the reference under this title." : "A new credential in the reference."]);
     exists.hidden = title.value.trim() !== (h.title || "");
@@ -503,7 +527,7 @@
       });
       if (!hits.length) {
         results.appendChild(el("li", { cls: "exh-none", text: state.filter
-          ? "No held exhibit in " + state.filter + " matches." : "No held exhibit matches. Settled credentials are in the Common Exhibit Reference." }));
+          ? "No held exhibit in " + state.filter + " matches." : "No held exhibit matches. Settled credentials are in Credentials." }));
       }
       hits.slice(0, 40).forEach(function (p) {
         var h = p[0];
@@ -532,6 +556,392 @@
     return wrap;
   }
 
+  /* ── Credentials: the credential panel ── */
+  /* One rule with kb/_apply_credential_review.py: a list of {site, college}, blank sites and repeats
+     dropped, anything else read as null (ignored, never half-applied). */
+  function parseSites(value) {
+    var got;
+    try { got = JSON.parse(value || ""); } catch (e) { return null; }
+    if (!Array.isArray(got)) return null;
+    var out = [], seen = {};
+    got.forEach(function (x) {
+      if (!x || typeof x !== "object" || Array.isArray(x)) return;
+      var site = String(x.site == null ? "" : x.site).replace(/\s+/g, " ").trim();
+      var col = String(x.college == null ? "" : x.college).replace(/\s+/g, " ").trim();
+      var k = site + "\u0000" + col;
+      if (!site || seen[k]) return;
+      seen[k] = true;
+      out.push(col ? { site: site, college: col } : { site: site });
+    });
+    return out;
+  }
+  function joinSites(sites) {
+    var names = [];
+    (sites || []).forEach(function (x) { if (names.indexOf(x.site) === -1) names.push(x.site); });
+    return names.join("; ");
+  }
+  /* The list stands unless a later one-trainer edit (the CER's Trainer box) says something else. */
+  function resolveSites(o) {
+    if (!o || o.sites == null) return null;
+    var sites = parseSites(o.sites);
+    if (sites == null) return null;
+    if (o.trainer != null && String(o.trainer).replace(/\s+/g, " ").trim() !== joinSites(sites)
+        && (o.trainerAt || "") > (o.sitesAt || "")) return null;
+    return sites;
+  }
+  function credName(r) { return r.display_title || r.ut; }
+  function credCurrent(r) {
+    var o = state.cs.overlay[r.ut] || {};
+    var issuer = o.issuer != null ? o.issuer : (r.issuer || "");
+    var sites = resolveSites(o);
+    if (sites == null && o.trainer != null) sites = o.trainer.trim() ? [{ site: o.trainer.trim() }] : [];
+    if (sites == null) sites = r.trainers ? parseSites(JSON.stringify(r.trainers)) || [] : (r.trainer ? [{ site: r.trainer }] : []);
+    return { issuer: issuer, sites: sites };
+  }
+  function credColleges(r) {
+    var out = [];
+    (r.articulations || []).forEach(function (a) {
+      (a.local || []).forEach(function (l) {
+        (l.colleges || []).forEach(function (c) { if (c && out.indexOf(c) === -1) out.push(c); });
+      });
+    });
+    return out.sort();
+  }
+  function credStudents(r) {
+    if (r.students_served != null) return { n: r.students_served, word: fmt(r.students_served) };
+    if (r.served_suppressed) return { n: 5, word: "Too few" };
+    return { n: 0, word: "None yet" };
+  }
+  function credAdoption(r) {
+    var a = credColleges(r).length, c = (r.potential_colleges || []).length;
+    var parts = [];
+    if (a) parts.push(fmt(a) + (a === 1 ? " articulates it" : " articulate it"));
+    if (c) parts.push(fmt(c) + " could adopt");
+    return parts.join(" · ") || "No college yet";
+  }
+  function credRows() {
+    var cs = state.cs;
+    if (!cs.rows) return [];
+    var words = cs.q.trim().toLowerCase().split(/\s+/).filter(Boolean);
+    var list = cs.rows;
+    if (words.length) {
+      list = list.filter(function (r) {
+        var cur = credCurrent(r);
+        var hay = [credName(r), r.ut, cur.issuer, (r.issuers || []).join(" "), joinSites(cur.sites),
+          (r.raw_variants || []).map(function (v) { return v.r; }).join(" ")].join(" ").toLowerCase();
+        return words.every(function (w) { return hay.indexOf(w) !== -1; });
+      });
+    }
+    return list;
+  }
+
+  function loadCredentials() {
+    var cs = state.cs;
+    if (cs.rows) return Promise.resolve();
+    if (cs.loading) return cs.loading;
+    cs.loading = new Promise(function (resolve) {
+      var T = window.CPL_TABS;
+      if (window.CPL_CREDENTIAL_REFERENCE || !T || typeof T.loadScript !== "function") { resolve(); return; }
+      T.loadScript(CRED_DATA, "CPL_CREDENTIAL_REFERENCE", resolve);
+    }).then(function () {
+      var d = window.CPL_CREDENTIAL_REFERENCE;
+      if (!d || !Array.isArray(d.unified_titles)) { cs.error = "the credential file did not load"; return; }
+      var rows = d.unified_titles.slice();
+      rows.sort(function (a, b) {
+        return credStudents(b).n - credStudents(a).n || credColleges(b).length - credColleges(a).length
+          || credName(a).toLowerCase().localeCompare(credName(b).toLowerCase());
+      });
+      cs.rows = rows; cs.generated = d._generated_at; cs.error = null;
+      return loadCredOverlay();
+    }).then(function () { cs.loading = null; });
+    return cs.loading;
+  }
+  /* The live _CREDENTIAL_REVIEW:: rows for the three fields, paginated (PostgREST caps a response at 1,000). */
+  function loadCredOverlay() {
+    var PAGE = 1000, key = anonKey();
+    var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
+      + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES].join(",") + ")"
+      + "&order=course_id.asc,field.asc";
+    var out = [];
+    function page(from) {
+      return fetch(url, { headers: { "apikey": key, "Range-Unit": "items", "Range": from + "-" + (from + PAGE - 1) } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (arr) { out = out.concat(arr || []); return arr && arr.length === PAGE ? page(from + PAGE) : out; });
+    }
+    if (!key) { state.cs.overlayOk = false; return Promise.resolve(); }
+    return page(0).then(function (rows) {
+      var m = {};
+      rows.forEach(function (row) {
+        var t = (row.course_id || "").slice(CRED_PREFIX.length);
+        if (!t) return;
+        var o = m[t] = m[t] || {};
+        if (row.field === FIELD_CRED_ISSUER) o.issuer = row.value || "";
+        else if (row.field === FIELD_CRED_TRAINER) { o.trainer = row.value; o.trainerAt = row.reviewed_at || ""; }
+        else if (row.field === FIELD_CRED_SITES) { o.sites = row.value || ""; o.sitesAt = row.reviewed_at || ""; }
+      });
+      state.cs.overlay = m; state.cs.overlayOk = true;
+    }).catch(function () { state.cs.overlayOk = false; });
+  }
+  function saveCredRow(sess, ut, field, value) {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
+      body: JSON.stringify({ course_id: CRED_PREFIX + ut, field: field, value: value, reviewer_email: sess.email })
+    });
+  }
+
+  function credDraft(r) {
+    var cs = state.cs;
+    if (!cs.drafts[r.ut]) {
+      var cur = credCurrent(r);
+      cs.drafts[r.ut] = { issuer: cur.issuer, sites: cur.sites.map(function (x) { return { site: x.site, college: x.college || "" }; }) };
+    }
+    return cs.drafts[r.ut];
+  }
+  function credSave(r) {
+    var cs = state.cs, d = credDraft(r), cur = credCurrent(r);
+    var issuer = d.issuer.replace(/\s+/g, " ").trim();
+    var sites = parseSites(JSON.stringify(d.sites)) || [];
+    var writes = [];
+    if (issuer !== (cur.issuer || "")) writes.push([FIELD_CRED_ISSUER, issuer]);
+    if (JSON.stringify(sites) !== JSON.stringify(cur.sites)) {
+      writes.push([FIELD_CRED_SITES, JSON.stringify(sites)]);
+      writes.push([FIELD_CRED_TRAINER, joinSites(sites)]);
+    }
+    if (!writes.length) { cs.note = "Nothing changed."; render(); return Promise.resolve(); }
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); }));
+    }).then(function (rs) {
+      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+      var o = cs.overlay[r.ut] = cs.overlay[r.ut] || {};
+      var now = new Date().toISOString();
+      writes.forEach(function (w) {
+        if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
+        else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
+        else { o.sites = w[1]; o.sitesAt = now; }
+      });
+      delete cs.drafts[r.ut];
+      cs.note = "Saved. The tabs show it now; the daily run writes it into the reference.";
+      render();
+    }).catch(function (e) {
+      cs.note = e && e.message === "signin" ? "Sign in as a reviewer to save."
+        : "The save did not reach the reference (" + (e && e.message || "no answer") + "). Nothing changed; try again.";
+      render();
+    });
+  }
+  function credOpen(ut) {
+    var cs = state.cs;
+    cs.sel = ut; cs.note = ""; cs.showTitles = cs.showArt = cs.showCould = false;
+    render();
+    var h = document.getElementById("exh-c-h");
+    if (h) h.focus();
+  }
+  /* The Review card's way in: the credential a held title joins. */
+  function openCredential(ut) {
+    state.view = "credentials"; state.cs.q = ""; state.cs.limit = CRED_PAGE;
+    state.cs.sel = ut; state.cs.note = "";
+    render();
+    loadCredentials().then(function () { render(); var h = document.getElementById("exh-c-h"); if (h) h.focus(); });
+  }
+
+  function credTiles() {
+    var cs = state.cs, rows = cs.rows || [];
+    var nIss = 0, nSite = 0;
+    rows.forEach(function (r) {
+      var cur = credCurrent(r);
+      if (cur.issuer) nIss++;
+      if (cur.sites.length) nSite++;
+    });
+    var group = el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "What is it called?" })]);
+    group.appendChild(el("div", { cls: "exh-dash", role: "list", "aria-label": "What is it called" }, [
+      tile("Credentials", cs.rows ? rows.length : null, null, "canonical credentials in the reference", "", "Reading"),
+      tile("Issuers", cs.rows ? nIss : null, cs.rows ? rows.length : null, "credentials naming an issuing agency", "", "Reading"),
+      tile("Training sites", cs.rows ? nSite : null, cs.rows ? rows.length : null, "credentials naming where the training happens",
+        "Set them in a credential's panel", "Reading")]));
+    return group;
+  }
+  function credTable(list) {
+    var cs = state.cs;
+    var box = el("div", { cls: "exh-ctable" });
+    var wrap = el("div", { cls: "exh-tablewrap", role: "region", "aria-label": "Credentials", tabindex: "0" });
+    var table = el("table", { cls: "exh-table" });
+    table.appendChild(el("colgroup", null, [el("col", { style: "width:31%" }), el("col", { style: "width:20%" }),
+      el("col", { style: "width:19%" }), el("col", { style: "width:13%" }), el("col", { style: "width:17%" })]));
+    table.appendChild(el("thead", null, [el("tr", null, [el("th", { scope: "col", text: "Credential" }),
+      el("th", { scope: "col", text: "Issuer" }), el("th", { scope: "col", text: "Training sites" }),
+      el("th", { scope: "col", cls: "exh-r", text: "Students" }), el("th", { scope: "col", text: "Adoption" })])]));
+    var body = el("tbody");
+    list.slice(0, cs.limit).forEach(function (r) {
+      var cur = credCurrent(r), on = cs.sel === r.ut;
+      var b = word(credName(r), function () { credOpen(r.ut); }, { cls: "exh-w exh-cred", "aria-controls": "exh-cpanel",
+        "aria-current": on ? "true" : null });
+      var iss = cur.issuer || "None named";
+      var more = (r.issuers || []).filter(function (x) { return x !== cur.issuer; }).length;
+      var sites = joinSites(cur.sites);
+      body.appendChild(el("tr", { cls: on ? "exh-sel" : null }, [
+        el("td", null, [b]),
+        el("td", { cls: cur.issuer ? null : "exh-muted" }, [iss + (more ? " and " + more + " more" : "")]),
+        el("td", { cls: sites ? null : "exh-muted", text: sites || "None named" }),
+        el("td", { cls: "exh-r", text: credStudents(r).word }),
+        el("td", { text: credAdoption(r) })]));
+    });
+    table.appendChild(body);
+    wrap.appendChild(table);
+    box.appendChild(wrap);
+    var foot = el("p", { cls: "exh-small exh-muted" }, [list.length
+      ? "Showing " + fmt(Math.min(cs.limit, list.length)) + " of " + fmt(list.length) + ", most students first. "
+      : (cs.q.trim() ? "No credential matches." : "No credentials.")]);
+    if (list.length > cs.limit) {
+      foot.appendChild(word("Show " + fmt(Math.min(CRED_PAGE, list.length - cs.limit)) + " more", function () {
+        cs.limit += CRED_PAGE; redrawCredTable();
+      }, { cls: "exh-w exh-small" }));
+    }
+    box.appendChild(foot);
+    return box;
+  }
+  function redrawCredTable() {
+    var old = document.querySelector(".exh-ctable");
+    if (old && old.parentNode) old.parentNode.replaceChild(credTable(credRows()), old);
+  }
+  function siteRow(r, d, k, colleges) {
+    var x = d.sites[k];
+    var sel = el("select", { id: "exh-c-col-" + k, "aria-label": "College for training site " + (k + 1) });
+    var opts = [""].concat(colleges);
+    if (x.college && opts.indexOf(x.college) === -1) opts.push(x.college);
+    opts.forEach(function (c) {
+      var o = el("option", { value: c, text: c ? shortName(c) : "Any college" });
+      if (c === (x.college || "")) o.selected = true;
+      sel.appendChild(o);
+    });
+    sel.addEventListener("change", function () { x.college = sel.value; });
+    var inp = el("input", { id: "exh-c-site-" + k, type: "text", autocomplete: "off",
+      placeholder: "Local school house or training center", "aria-label": "Training site " + (k + 1) });
+    inp.value = x.site || "";
+    inp.addEventListener("input", function () { x.site = inp.value; });
+    var rm = word("Remove", function () {
+      d.sites.splice(k, 1); render();
+      var a = document.getElementById("exh-c-add"); if (a) a.focus();
+    }, { "aria-label": "Remove training site " + (k + 1) });
+    return el("div", { cls: "exh-siterow" }, [sel, inp, rm]);
+  }
+  function credPanel(r) {
+    var cs = state.cs, d = credDraft(r);
+    var p = el("section", { cls: "exh-card exh-cpanel", id: "exh-cpanel", "aria-labelledby": "exh-c-h" });
+    p.appendChild(el("h3", { cls: "exh-ph", id: "exh-c-h", tabindex: "-1", text: credName(r) }));
+    p.appendChild(el("div", { cls: "exh-chiprow" }, [el("span", { cls: "exh-chip", tabindex: "0", "data-tip": TIPS[IN_REF],
+      "aria-label": "CER step: " + IN_REF + ". " + TIPS[IN_REF] }, ["CER step: " + IN_REF])]));
+
+    var called = el("div", { cls: "exh-block" }, [el("h4", { cls: "exh-q", text: "What is it called?" })]);
+    var issuer = el("input", { id: "exh-c-issuer", type: "text", autocomplete: "off", placeholder: "None named" });
+    issuer.value = d.issuer;
+    issuer.addEventListener("input", function () { d.issuer = issuer.value; });
+    called.appendChild(el("label", { cls: "exh-inbox", "for": "exh-c-issuer" }, [el("span", { cls: "exh-pre", text: "Issuer:" }), issuer]));
+    var also = (r.issuers || []).filter(function (x) { return x !== d.issuer.trim() && x !== (r.issuer || ""); });
+    if (also.length) called.appendChild(el("p", { cls: "exh-muted exh-small", text: "Also issued by " + also.join(", ")
+      + ". The Common Exhibit Reference edits a credential's other issuers." }));
+    var fs = el("fieldset", { cls: "exh-sites" }, [el("legend", { cls: "exh-cl", text: "Training sites" })]);
+    var colleges = credColleges(r);
+    if (!d.sites.length) fs.appendChild(el("p", { cls: "exh-muted exh-small", text: "None named" }));
+    d.sites.forEach(function (x, k) { fs.appendChild(siteRow(r, d, k, colleges)); });
+    fs.appendChild(el("p", { cls: "exh-muted exh-small", text: colleges.length
+      ? "Name the college a site trains for, or leave Any college." : "No college articulates it yet, so each site reads Any college." }));
+    called.appendChild(fs);
+    var acts = el("div", { cls: "exh-acts" }, [
+      word("Add a training site", function () {
+        d.sites.push({ site: "", college: colleges.length === 1 ? colleges[0] : "" });
+        render();
+        var n = document.getElementById("exh-c-site-" + (d.sites.length - 1)); if (n) n.focus();
+      }, { id: "exh-c-add" }),
+      word("Save", function () { credSave(r); }, { id: "exh-c-save" })]);
+    called.appendChild(acts);
+    called.appendChild(el("p", { cls: "exh-status", role: "status", "aria-live": "polite", text: cs.note || "" }));
+    var vars = (r.raw_variants || []).map(function (v) { return v.r; });
+    var shownVars = cs.showTitles ? vars : vars.slice(0, 3);
+    var lt = el("p", { cls: "exh-small" }, [el("span", { cls: "exh-cl", text: "Local titles: " }), shownVars.join(" · ") || "None"]);
+    if (vars.length > 3) lt.appendChild(word(cs.showTitles ? " Show fewer" : " and " + (vars.length - 3) + " more",
+      function () { cs.showTitles = !cs.showTitles; render(); }, { cls: "exh-w exh-small" }));
+    called.appendChild(lt);
+    p.appendChild(called);
+
+    var credit = el("div", { cls: "exh-block" }, [el("h4", { cls: "exh-q", text: "What credit does it carry?" })]);
+    var dl = el("dl", { cls: "exh-dl" });
+    function dd(label, value) { if (value) { dl.appendChild(el("dt", { text: label })); dl.appendChild(el("dd", { text: value })); } }
+    dd(r.ccc_rec ? "Statewide recommendation" : "Credit recommendation", r.ccc_rec || r.gen_rec || "None in MAP");
+    dd("CPL type", (r.cpl_types || []).join(", "));
+    dd("Discipline", r.disc_modal || "");
+    var ids = (r.articulations || []).map(function (a) { return (a.sys ? a.sys + " " : "") + a.cid + (a.title ? ", " + a.title : ""); });
+    dd("Courses", ids.slice(0, 3).join("; ") + (ids.length > 3 ? "; and " + (ids.length - 3) + " more" : ""));
+    credit.appendChild(dl);
+    p.appendChild(credit);
+
+    var adopt = el("div", { cls: "exh-block" }, [el("h4", { cls: "exh-q", text: "Who could adopt it?" })]);
+    var st = credStudents(r);
+    adopt.appendChild(el("p", { cls: "exh-small", text: st.n >= 10 ? st.word + " students with credit"
+      : st.n ? "Too few students to show" : "No students with credit yet" }));
+    function names(label, list, all, toggle) {
+      var box = el("span", { cls: "exh-cchips" });
+      if (!list.length) box.appendChild(el("span", { cls: "exh-muted", text: "None yet" }));
+      (all ? list : list.slice(0, CHIP_MAX)).forEach(function (n) { box.appendChild(el("span", { cls: "exh-cchip", title: n, text: shortName(n) })); });
+      if (list.length > CHIP_MAX) box.appendChild(word(all ? "Show fewer" : "and " + (list.length - CHIP_MAX) + " more", toggle, { cls: "exh-w exh-small" }));
+      return el("div", { cls: "exh-ccrow" }, [el("span", { cls: "exh-cl", text: label + " (" + list.length + ")" }), box]);
+    }
+    adopt.appendChild(names("Articulated at", colleges, cs.showArt, function () { cs.showArt = !cs.showArt; render(); }));
+    adopt.appendChild(names("Could adopt", r.potential_colleges || [], cs.showCould, function () { cs.showCould = !cs.showCould; render(); }));
+    adopt.appendChild(el("p", { cls: "exh-small" }, [el("a", { href: "#exhibit-adoption", text: "Each college's courses, in Exhibit Adoption" })]));
+    p.appendChild(adopt);
+    p.appendChild(el("p", { cls: "exh-small exh-muted" }, ["Its other issuers, discipline and title edits are in ",
+      el("a", { href: "#credential-reference", text: "the Common Exhibit Reference" }), "."]));
+    return p;
+  }
+  function renderCredentials(wrap) {
+    var cs = state.cs;
+    wrap.appendChild(credTiles());
+    wrap.appendChild(viewsNav());
+    if (cs.error) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The credentials could not be read (" + cs.error + ")." })); return; }
+    if (!cs.rows) { wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the credentials…" })); return; }
+    var find = el("div", { cls: "exh-finder" });
+    find.appendChild(el("label", { cls: "exh-muted exh-small", "for": "exh-c-find", text: "Find a credential" }));
+    var q = el("input", { cls: "exh-search", id: "exh-c-find", type: "search", autocomplete: "off",
+      placeholder: "Credential, issuer, training site or local title" });
+    q.value = cs.q;
+    q.addEventListener("input", function () { cs.q = q.value; cs.limit = CRED_PAGE; redrawCredTable(); });
+    find.appendChild(q);
+    wrap.appendChild(find);
+    if (cs.overlayOk === false) wrap.appendChild(el("p", { cls: "exh-muted exh-small",
+      text: "Today's saves could not be read, so the credentials show as of " + (stamp(cs.generated) || "the last daily run") + "." }));
+    var sel = cs.sel && cs.rows.filter(function (r) { return r.ut === cs.sel; })[0];
+    var split = el("div", { cls: "exh-split" + (sel ? " exh-has-panel" : "") });
+    split.appendChild(credTable(credRows()));
+    if (sel) split.appendChild(credPanel(sel));
+    else if (cs.sel) split.appendChild(el("p", { cls: "exh-empty", text: "“" + cs.sel + "” is not in the reference yet. The nightly run adds it." }));
+    wrap.appendChild(split);
+    if (state.studentsWord === "signin" && window.CPL_REVIEWER_SIGNIN && typeof window.CPL_REVIEWER_SIGNIN.mountInto === "function") {
+      var mount = el("div", { cls: "exh-signin" });
+      wrap.appendChild(mount);
+      window.CPL_REVIEWER_SIGNIN.mountInto(mount, { title: "Sign in to edit",
+        blurb: "A reviewer's sign-in saves a credential's issuer and training sites.", returnTab: "exhibits" });
+    }
+  }
+  function viewsNav() {
+    function v(id, label, n) {
+      var kids = [label + " ", el("span", { cls: "exh-n", text: n == null ? "" : fmt(n) })];
+      if (state.view === id) return el("span", { cls: "exh-view-on", "aria-current": "page" }, kids);
+      var b = el("button", { type: "button", cls: "exh-w" }, kids);
+      b.addEventListener("click", function () {
+        state.view = id; state.note = ""; state.cs.note = "";
+        render();
+        if (id === "credentials") loadCredentials().then(render);
+      });
+      return b;
+    }
+    return el("nav", { cls: "exh-views", "aria-label": "Views" }, [
+      v("review", "Review", state.data ? stepCount("") : null),
+      v("credentials", "Credentials", state.cs.rows ? state.cs.rows.length : null),
+      el("a", { href: "#exhibit-adoption", text: "Adoption, in Exhibit Adoption" })]);
+  }
+
   function render() {
     var root = document.getElementById(ROOT_ID);
     if (!root) return;
@@ -542,6 +952,11 @@
     root.appendChild(wrap);
     var head = el("div", { cls: "exh-titlebar" }, [el("h2", { cls: "exh-h", text: "Exhibits" })]);
     wrap.appendChild(head);
+    if (state.view === "credentials") {
+      if (state.cs.generated) head.appendChild(el("span", { cls: "exh-muted exh-small", text: "Reference built " + stamp(state.cs.generated) }));
+      renderCredentials(wrap);
+      return;
+    }
     if (state.error || !state.data) {
       wrap.appendChild(el("p", { cls: "exh-empty", text: state.error
         ? "The review file could not be read (" + state.error + ")." : "Reading the review queue…" }));
@@ -564,10 +979,7 @@
     group.appendChild(steps);
     wrap.appendChild(group);
 
-    wrap.appendChild(el("nav", { cls: "exh-views", "aria-label": "Views" }, [
-      el("span", { cls: "exh-view-on", "aria-current": "page" }, ["Review ", el("span", { cls: "exh-n", text: fmt(stepCount("")) })]),
-      el("a", { href: "#credential-reference", text: "Credentials, in the Common Exhibit Reference" }),
-      el("a", { href: "#exhibit-adoption", text: "Adoption, in Exhibit Adoption" })]));
+    wrap.appendChild(viewsNav());
 
     var list = shown();
     if (state.cur >= list.length) state.cur = Math.max(0, list.length - 1);
@@ -639,7 +1051,8 @@
     ".exh-canon p { margin:0; }",
     ".exh-edit { font-family:var(--f-display, Georgia, serif); font-size:clamp(1.3rem, 2.8vw, 1.8rem); font-weight:700; color:var(--seal-blue-text); background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:4px 8px; width:100%; min-width:0; box-sizing:border-box; }",
     ".exh-inbox { display:flex; align-items:center; gap:6px; background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:3px 8px; min-width:0; font-size:.9rem; }",
-    ".exh-inbox.exh-read { border-style:dashed; }",
+    ".exh-inbox.exh-read { border-style:dashed; flex-wrap:wrap; }",
+    ".exh-grow { flex:1 1 auto; min-width:0; overflow-wrap:anywhere; }",
     ".exh-pre { color:var(--text-muted); white-space:nowrap; }",
     ".exh-inbox input { flex:1 1 auto; min-width:0; border:0; background:transparent; font:inherit; color:var(--text-body); padding:2px 0; }",
     ".exh-inbox:focus-within { outline:2px solid var(--seal-blue); outline-offset:1px; }",
@@ -667,7 +1080,40 @@
     ".exh-foot { display:flex; flex-wrap:wrap; justify-content:space-between; gap:8px 16px; font-size:.88rem; color:var(--text-muted); }",
     ".exh-foot span { overflow-wrap:anywhere; min-width:0; }",
     ".exh-empty { color:var(--text-muted); margin:0; }",
-    "@media (max-width: 560px) { .exh-ccrow { grid-template-columns:minmax(0, 1fr); } .exh-dash, .exh-steps { grid-template-columns:repeat(2, minmax(0, 1fr)); } }",
+    ".exh-views button.exh-w { font-size:.95rem; }",
+    ".exh-split { display:grid; gap:16px; min-width:0; align-items:start; }",
+    ".exh-split.exh-has-panel { grid-template-columns:minmax(0, 1.35fr) minmax(0, 1fr); }",
+    ".exh-ctable { display:grid; gap:6px; min-width:0; }",
+    ".exh-ctable > p { margin:0; }",
+    ".exh-tablewrap { overflow-x:auto; border:1px solid var(--border); border-radius:8px; background:var(--surface); min-width:0; }",
+    ".exh-table { width:100%; table-layout:fixed; border-collapse:collapse; font-size:.9rem; }",
+    ".exh-table th { text-align:left; font-size:.75rem; letter-spacing:.04em; text-transform:uppercase; color:var(--text-muted); font-weight:600; padding:8px 8px; border-bottom:1px solid var(--border-strong); background:var(--surface-subtle); }",
+    ".exh-table td { padding:7px 8px; border-bottom:1px solid var(--border); vertical-align:top; overflow-wrap:anywhere; color:var(--text-body); }",
+    ".exh-table .exh-r { text-align:right; font-variant-numeric:tabular-nums; }",
+    ".exh-table td.exh-muted { color:var(--text-muted); }",
+    ".exh-table tr.exh-sel td { background:var(--surface-subtle); }",
+    ".exh-table tr.exh-sel td:first-child { box-shadow:inset 3px 0 0 var(--seal-blue-text); }",
+    "button.exh-cred { overflow-wrap:anywhere; }",
+    "button.exh-cred[aria-current='true'] { color:var(--text-strong); font-weight:600; }",
+    ".exh-cpanel { gap:12px; }",
+    ".exh-ph { margin:0; font-family:var(--f-display, Georgia, serif); color:var(--seal-blue-text); font-size:clamp(1.2rem, 2.4vw, 1.5rem); overflow-wrap:anywhere; }",
+    ".exh-ph:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-block { display:grid; gap:8px; padding-top:12px; border-top:1px solid var(--border); min-width:0; }",
+    ".exh-block > p { margin:0; }",
+    ".exh-sites { border:0; margin:0; padding:0; display:grid; gap:6px; min-width:0; }",
+    ".exh-sites p { margin:0; }",
+    ".exh-siterow { display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; min-width:0; }",
+    ".exh-siterow select { flex:1 1 9em; }",
+    ".exh-siterow input { flex:3 1 14em; }",
+    ".exh-siterow select, .exh-siterow input { min-width:0; font:inherit; font-size:.9rem; color:var(--text-body); background:var(--surface-subtle); border:1px solid var(--border-strong); border-radius:6px; padding:4px 6px; }",
+    ".exh-siterow select:focus-visible, .exh-siterow input:focus-visible, .exh-search:focus-visible { outline:2px solid var(--seal-blue); outline-offset:1px; }",
+    ".exh-dl { display:grid; grid-template-columns:minmax(0, 11em) minmax(0, 1fr); gap:4px 12px; margin:0; font-size:.9rem; }",
+    ".exh-dl dt { color:var(--text-muted); }",
+    ".exh-dl dd { margin:0; color:var(--text-body); overflow-wrap:anywhere; }",
+    "@media (max-width: 1200px) { .exh-split.exh-has-panel { grid-template-columns:minmax(0, 1fr); } .exh-cpanel { order:-1; } }",
+    "@media (max-width: 560px) { .exh-ccrow { grid-template-columns:minmax(0, 1fr); } .exh-dash, .exh-steps { grid-template-columns:repeat(2, minmax(0, 1fr)); }"
+      + " .exh-dl { grid-template-columns:minmax(0, 1fr); }"
+      + " .exh-table { min-width:560px; } }",
     "@media (prefers-reduced-motion: reduce) { .exh-wrap * { transition:none !important; } }"
   ].join("\n");
   function ensureCss() {
@@ -680,6 +1126,8 @@
      saved stays saved. */
   function newVisit() {
     state.filter = ""; state.cur = 0; state.openCollege = null; state.teach = false; state.note = "";
+    state.view = "review";
+    state.cs.q = ""; state.cs.sel = null; state.cs.limit = CRED_PAGE; state.cs.note = "";
     render();
   }
   function boot() {
@@ -695,6 +1143,8 @@
 
   window.CPL_EXHIBITS = {
     boot: boot, render: render, load: load, loadStudents: loadStudents, ensureCss: ensureCss,
-    _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS
+    _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS,
+    loadCredentials: loadCredentials, openCredential: openCredential,
+    _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent, _credRows: credRows
   };
 })();

@@ -19,6 +19,8 @@ What it joins, all committed files:
                                       those courses (a could-adopt chip opens them)
   kb/unified_titles.json              the local titles already under the proposed title
   kb/credentials.json                 whether the proposed title is a credential yet, its training site
+  kb/credential_review_overlay.json   the training sites a curator set in the credential panel, which
+                                      stand in for the records' own
   kb/exhibit_audit/latest.json        the Names tile, and which titles still wait: the daily fold can settle
                                       a held title between the nightly run and this build
   kb/unclassified_assignments.json    titles a person or a rule saved since, which the fold has not added
@@ -182,6 +184,9 @@ def build(root):
     members = load_js(os.path.join(root, "unified_courses_members.js"))
     under = under_index(load_json(root, "kb/unified_titles.json", {}))
     creds = load_json(root, "kb/credentials.json", {}) or {}
+    site_lists = {t: e["training_sites"] for t, e in
+                  ((load_json(root, "kb/credential_review_overlay.json", {}) or {}).get("overrides") or {}).items()
+                  if isinstance(e, dict) and e.get("training_sites") is not None}
     audit = load_json(root, "kb/exhibit_audit/latest.json", {}) or {}
     saved = (load_json(root, "kb/unclassified_assignments.json", {}) or {}).get("assignments") or {}
     cards = audit.get("title_cards") or []
@@ -254,7 +259,10 @@ def build(root):
         cred = creds.get(title)
         if cred:
             rec["exists"] = True
-            sites = sorted({(c or {}).get("training_agency") or "" for c in cred} - {""})
+            if title in site_lists:
+                sites = [s["site"] + (" (" + s["college"] + ")" if s.get("college") else "") for s in site_lists[title]]
+            else:
+                sites = sorted({(c or {}).get("training_agency") or "" for c in cred} - {""})
             if sites:
                 rec["trainers"] = sites
         items.append(rec)
