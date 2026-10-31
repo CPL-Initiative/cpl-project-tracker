@@ -2043,6 +2043,21 @@ PC.with_renumbers(LAV, RC.course_renumbers("Los Angeles Valley College"), LAV_AL
 check(sorted(P.find_codes("COMPLETE THE FOLLOWING: T & M 027 Basic Machine Shop 4; MSCNC 114 Print Interpretation 3",
                           LAV[0]["closed_list"])) == ["MSCNC114", "TM27"],
       "the capture finds TM027 printed as T & M 027: %s" % LAV[0]["closed_list"])
+# Los Angeles Valley (S533): "COMPLETE 4 COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)" read with the count and
+# not the repeat (Music 02962). The repeat step takes a minimum equal to n; another figure stays the reading's.
+mus = {"program": {"total_units": {"min": 33, "max": 35}, "measure": "units"},
+       "blocks": [{"name": "Required", "rule": "all", "courses": [{"code": "MUSIC 121", "units": 29}]},
+                  {"name": "COMPLETE 4 COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)", "rule": "choose_courses",
+                   "minimum": 4, "courses": [{"code": c, "units": u} for c, u in
+                                                (("MUSIC 501", 1), ("MUSIC 531", 1), ("MUSIC 563", 1.5), ("MUSIC 721", 1), ("MUSIC 751", 1))]}]}
+check(S.program_units(mus, {})[0] == (33.0, 33.5), "without the repeat, the list's high end takes each course once")
+mus_r, mus_notes = RC.reconcile(mus, "x", "Los Angeles Valley College", "A.A. Degree")
+check(S.program_units(mus_r, {})[0] == (33.0, 35.0) and mus_r["blocks"][1].get("repeats"),
+      "Los Angeles Valley's repeat step reads the list as 4 enrollments a student may repeat: %s" % mus_notes)
+mus3 = json.loads(json.dumps(mus))
+mus3["blocks"][1]["minimum"] = 3
+check(not RC.reconcile(mus3, "x", "Los Angeles Valley College", "A.A. Degree")[0]["blocks"][1].get("repeats"),
+      "a minimum the reading gave that differs from the printed count stays the reading's")
 SJ = [{"closed_list": [{"code": "ANTHR 2L"}, {"code": "ARTH 12"}]}]
 PC.with_renumbers(SJ, {}, {"ARTH": "ART", "ANTH": "ANTHR"})
 check([c.get("printed") for c in SJ[0]["closed_list"]] == ["ANTH 2L", None],
