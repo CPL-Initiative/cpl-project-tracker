@@ -4,6 +4,8 @@ date: 2026-10-30
 session: 531 (SkyOlallieberry, Sam's session)
 tags: [handoff, library, video, program-requirements, los-angeles-valley, display-build]
 status: current
+superseded: true
+superseded_by: session_533_handoff.md
 ---
 
 # You are Session 532

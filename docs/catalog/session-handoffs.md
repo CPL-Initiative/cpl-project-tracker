@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-501 document(s).
+502 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 533 | [Session 533 handoff: Los Angeles Valley 186 to 196 passing on a T & M prefix alias; both display applies read back; the UI pass on Exhibits](../session_533_handoff.md) | 2026-10-31 |
 | 532 | [Session 532 handoff: the Chancellor's address public with the gentle sound Sam picked; Los Angeles Valley 167 to 186 passing once the page finder reads State Code; two display builds](../session_532_handoff.md) | 2026-10-30 |
 | 531 | [Session 531 handoff: Los Angeles Valley 114 to 167 passing, the reconcile's moved-page guard reads the heading, the funding rows show a waiting request with Accept, Sheet 146](../session_531_handoff.md) | 2026-10-30 |
 | 530 | [Session 530 handoff: the Fact Sheet's labels and Request Quick Adopt, the vault indexers' race behind Sierra's Cabrillo miss, Sheet 144 asks for the printed units as a floor](../session_530_handoff.md) | 2026-10-30 |

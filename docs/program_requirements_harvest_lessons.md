@@ -842,6 +842,24 @@ Delta 200 of 203: lessons, *Moved from the lane (S524 compaction)*.
 **The second reader, Grok (Sam, Open Asks Sheet 97 card 1, 2026-10-19; built S421, #2246: `provider` on the function, `kb/_second_reader.py`, `second-reader.yml`, nothing written) waits on the xAI API billing moving to the RCCD district card (Sam, 2026-10-20) and the two Edge Function secrets only Sam sets; then one deploy and `second-reader.yml` with `college=Cañada College`. The ruling, the design and Jev's sittings: lessons, *Moved from the lane (S449 compaction)*.
 **Display build e021a2824548 is applied on `main` (S459: #2387 merged, `step=display` run 40027395883, 22:46Z: 17,529 statements written, none missing, no errors; the applied record committed by the run).** **Hartnell (S484-S489; lessons S484-S489):** passing rose to 81 of 94 after the `course_hours`, `ge_overlap` (#2462) and `pool_lists` (#2463; `with_floors`, #2465) steps (kept, Sheet 131 cards 3-4). **Still failing, all thirteen read (S488):** the narrow `meets` class (03537, 33851, 31591, 43119, 41819) stays as Sam ruled; a vendor gap (ABT41 in Agriculture A.S. 11803, HES120 in Vocational Nursing 03571, beside 44161 and 44574) stays incomplete; CalGETC 45096 and Music 43887 have since passed (below). Fable's advice on RN 03570 and Respiratory Care 44537 is in lessons S488. CSS/CIS codes are mixed across Hartnell's tabs, so no college-wide renumber.
 
+## S532 SkyHackberry (2026-10-31, the CPL Queue routine): Los Angeles Valley's T & M, 186 to 196 passing
+
+- **The ten Engineering and Manufacturing coverage failures were one prefix.** Each record placed every course its page
+  prints; the missing ones were the shop courses the catalog prints as "T & M 027" through "T & M 032", which the state's
+  file keeps as TM027 through TM032 (same numbers, units blank in the file). Read from the live records and
+  `coci_program_courses`, no page read needed: the records came from their own State Code headings (run 41141747238).
+- **`prefix_aliases {"T & M": "TM"}`** on the college's reconcile entry. A local rescore of the filed records with the
+  alias passed all ten on coverage and invented before any dispatch. Guard in `program_requirements_pilot_test`.
+- **Reconcile 41172599271** (free) rescored exactly those ten, all passing; **reread 41172998050** replaced 10 rows;
+  receipt committed. **Live: 186 to 196 of 215 passing, no coverage failure left** (read back 05:35Z). Display build
+  97f8cb5d3f44 carries them; its `step=display` runs on `main` after the merge.
+- **Lesson: before reading a coverage failure's page, diff the record's codes against the state's list.** When every
+  missing course has a printed twin under another prefix, it is an alias, and the live tables prove it.
+- **Left at LA Valley (19 failing):** 12 program sums that fail while the degree adds up. Two shapes so far: 30699
+  Communication Studies read the 2.0 degree's page (43774's), and Anthropology 32410's lists B and C repeat list A's
+  courses (a multi-column read). Then 5 incomplete and Respiratory Therapy 21899 (prints 74). Outside the load, 8 still
+  place none.
+
 ## S531 SkyOlallieberry (2026-10-30, Sam's session): Los Angeles Valley's "State Code", 167 to 186 passing
 
 - **Page read 41140057846** (PDF pp54-67, no model call): LA Valley heads every program "(Program Code 061220, State

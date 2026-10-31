@@ -4,6 +4,8 @@ date: 2026-10-30
 session: 529 (SkyKiwiberry, Sam's session; updated 18:15Z after Sheet 144's answer)
 tags: [handoff, fact-sheet, sierra, vault-index, program-requirements, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_533_handoff.md
 ---
 
 # You are Session 530
