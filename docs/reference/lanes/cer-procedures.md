@@ -25,7 +25,7 @@ Sam, 2026-10-30: *"Have a good look at the current CER and notice how crowded it
 now part of our Catalog Commons overall project and I want you to help me make it much more manageable and simple."*
 Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (version 26), source
 `docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html` (#2595, merged). Built so far: the high school and ROP
-rule and the CPL-AI dialog (#2601); the Exhibits tab itself is next. What Sam ruled in the
+rule and the CPL-AI dialog (#2601); the Exhibits tab's Review queue (SkyRowanberry, 2026-10-31, below). What Sam ruled in the
 mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2026-10-30):
 
 - **One Exhibits tab in the Catalog Commons replaces CER and EACR** (recommended; his "we might be able to consolidate
@@ -54,6 +54,36 @@ mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2
 3. **The public adoption page lists settled credentials only** (a person's or a rule's stamp), so it grows as the CER finishes. Its name is still his to give; *Credentials Your College Can Adopt* holds the place.
 4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
 5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** `kb/_build_cpl_ai.py --fetch` reads https://map.rccd.edu/CPL-AI/preview-data/catalog.json into the dated snapshot `kb/cpl_ai/pairs.json` (33,232 pairs, 115 certifications, 121 colleges; keeps tiers 1 and 2, *Strong evidence* and *Faculty interpretation*: 20,166 pairs) with the page's credit and caveat word for word. The dialog lists a course's certifications under *CPL-AI recommendations (N)*, and a course whose only lead is a match shows its 0 as a button. Refreshed by hand (`--fetch`) until a schedule is chosen. Sierra and the public pages wait on his word.
+
+**The Exhibits tab's Review queue — built (SkyRowanberry, 2026-10-31).** COBI tab `#exhibits` (`exhibits.js`), in
+Reference & Curation after the Commons and linked from the Commons' CER row (*Open Exhibits*); the CER and Exhibit
+Adoption stay, and the view line links both. It draws the card of version 26: the *What is it called?* tiles (Names,
+Aligned course, Students waiting), the step tiles as filters with their plain hovers, *Go to an exhibit*, and one card
+per held title: the canonical title editable and in focus, issuer, training site (read from the reference; editing it
+is the credential panel's, build step 2), the local titles, *Articulated at* and *Could adopt* chips, students, the MAP
+source. Its data:
+
+- `kb/_build_exhibits_review.py` writes `kb/exhibits_review.json` (one held title a line) and
+  `kb/exhibits_review_courses.json` (a could-adopt chip's courses, by identity, fetched on the first click), from the
+  procedures run's `needs_you`, `kb/unclassified_suggestions.json` `aligned`, `statewide_data.js`,
+  `unified_courses_members.js`, `kb/unified_titles.json` and `kb/credentials.json`. An aligned course names the
+  proposal (*C-ID ARTS 250*) and the classifier's title stays beside it with *Use it*; a conflict proposes the
+  reference's title; a title the fold settled or a person saved since the run leaves the queue. Run at the end of
+  `cer-procedures.yml` and in `daily-dashboard.yml`. Measured on the 2026-10-30 run with the 2026-10-31 `aligned`
+  (a local build): 468 held, 209 aligned, 466 with an exhibit ID, 162 with same-identity adopters.
+- **Students:** `exhibit_title_students(p_keys, p_ids)` (`kb/migrations/2026-10-31_exhibit_title_students.sql`,
+  applied 2026-10-31 through the MCP), distinct students in `map_student_credit` per title, an allowed reviewer only,
+  k=10 inside the function (1 to 9 return null and *suppressed*, 0 returns 0), so the page never holds a count under
+  ten and the public file holds none. Verified live: 442 (Digital Media), 398 (AP Computer Science A), suppressed for
+  the Juvenile Justice pair, no rows for a non-reviewer, no execute for anon. Governance: `rpc:exhibit_title_students`
+  dismissed (a read under the base table's own gate) and `tab:exhibits` mapped to DR-07.
+- **The buttons.** The current title is the exhibit's latest decision (its local title, or the title saved for a
+  conflict); the proposed title is the box. *Change to Proposed Title* writes the CER's own two `kb_curation` rows
+  (`_UNCLASSIFIED::<local title>`, title and issuer, merge on the key); *Keep Current Title* saves the local title as
+  its own. On a conflict, *Change to Proposed Title* with the reference's title clears the saved assignment (the CER's
+  *Keep the reference's title*); keeping the saved title, or any other title, re-keys a person-reviewed entry and stays
+  a session's reviewed change, which the card says. *Teach a rule* copies the rule in plain words for a session.
+- Not yet drawn from version 26: the *Held titles by group* table (one rule, accept as a group, 25 at a time).
 
 **Drawn in version 26 (2026-10-31):** each could-adopt college chip is a button that opens that college's aligned
 courses (the identity's members there, from `unified_courses_members.js`, units or noncredit) and the Request Quick
@@ -162,10 +192,10 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
 rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
 `python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
 
-**NEXT:** build the redesign in Sam's Sheet 147 order: (1) the Exhibits tab's Review queue on the drawn card (version
-26), its proposal from `kb/unclassified_suggestions.json`'s `aligned` key, sorted by students holding credit (a
-reviewer-only read of `map_student_credit` per exhibit ID, k=10 under the student-detail ADR; no RPC exists yet), the
-step tiles as filters, Keep Current Title and Change to Proposed Title saving through the CER's existing `kb_curation`
-path; (2) the credential panel with issuer and training sites editable; (3) EACR folds in; (4) the public adoption
-page on settled credentials only, in Malone's CPL/AI look, its name still Sam's to give. Watch the first nightly save
-of `high-school-rop` (expected 55) and read its receipt.
+**NEXT:** the redesign in Sam's Sheet 147 order, Review built (above): (1) read the first published
+`kb/exhibits_review.json` (the daily run after the merge, then each night after the procedures run) and Sam's first
+saves from the card; the *Held titles by group* table if he asks for it; (2) the credential panel with issuer and
+training sites editable (a training site for a new title needs a field the fold reads; today only
+`training_agency_override` on an existing credential exists); (3) EACR folds in; (4) the public adoption page on
+settled credentials only, in Malone's CPL/AI look, its name still Sam's to give. Watch the first nightly save of
+`high-school-rop` (expected 55) and read its receipt.

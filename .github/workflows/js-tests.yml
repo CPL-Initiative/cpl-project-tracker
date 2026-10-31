@@ -378,6 +378,11 @@ jobs:
       # committed files, a figure it cannot read is null with its error, never a zero.
       - name: Commons status builder reads every row
         run: python3 tests/commons_status_build_test.py
+      # The Exhibits tab's Review queue (Sheet 147 card 1, 2026-10-31): each held title in its step,
+      # the aligned course naming the proposal, a conflict proposing the reference's title, and no
+      # student figure in the public file.
+      - name: Exhibits review queue builder
+        run: python3 tests/exhibits_review_build_test.py
       # The PreToolUse guard that lets auto mode stop prompting on every read
       # (Session 277). It returns `allow` for read-only SQL, so the convenience
       # is only safe while every write case stays `deny` — a false allow is a

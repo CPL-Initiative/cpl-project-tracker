@@ -202,7 +202,9 @@ def row_exhibit(root):
     stamps = [t for t in (saved_at, fold_at) if t]
     return {
         "key": "exhibit", "title": "Common Exhibit Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open the tab"}],
+        # The Exhibits tab replaces the CER and Exhibit Adoption as it grows (Sam, Open Asks Sheet 147
+        # card 1, 2026-10-31); its Review queue is built first, so both doors stand until it carries all.
+        "links": [{"href": tab, "text": "Open the tab"}, {"href": "#exhibits", "text": "Open Exhibits"}],
         "status_file": "kb/status/exhibit.json" if exists(root, "kb/status/exhibit.json") else None,
         "pair": [{"n": len(stamped), "of": len(ut),
                   "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"
