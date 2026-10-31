@@ -40,7 +40,7 @@ keeps this file.
 
 ## Open work, in order
 
-1. **Open Asks Sheet 149** (SHEET_LINK): (a) the AP fold in the reference, 74 local titles under non-official twins to
+1. **Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, current, nothing answered yet): (a) the AP fold in the reference, 74 local titles under non-official twins to
    College Board's names, 46 stamped (`python3 kb/_ap_official_titles.py` lists them); (b) how a rule added in the tab
    gets run (recommended: a request row the tab writes and a routine that builds the rule, runs the dry run and writes it
    back). Read its replies before acting; a *fold* means one revertible commit to `kb/unified_titles.json` and the twin

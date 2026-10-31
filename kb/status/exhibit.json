@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 531,
-  "moniker": "SkyBunchberry",
+  "session": 536,
+  "moniker": "SkyElderberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_532_handoff.md",
+  "handoff": "docs/session_536_handoff.md",
   "calls": [
     {
       "title": "Merge EACR into the CER as one Exhibits tab",
@@ -35,17 +35,39 @@
         "at": "2026-10-31",
         "words": "stamped; cpl-ai"
       }
+    },
+    {
+      "title": "Fold the reference's AP titles under College Board's official names",
+      "text": "74 local titles under non-official AP twins move to the official names, 46 of them stamped; held because it re-files stamped titles. With no reply they stay where they are.",
+      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A"
+    },
+    {
+      "title": "How a rule added in the Exhibits tab gets run",
+      "text": "Recommended: a request row the tab writes and a routine that builds the rule, runs the dry run and writes it back for Turn on or Discard. With no reply the tab keeps the paste for a session.",
+      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A"
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-31T02:48:52Z",
+  "written_at": "2026-10-31T14:38:54Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Read Sam's first saves and the first high school and ROP save, then fold EACR in",
-    "text": "After the 07:47Z procedures run, read the high-school-rop receipt (expected 55) and Sam's first saves from the Review card and the credential panel; then fold Exhibit Adoption into the Exhibits tab (Sheet 147 card 1)."
+    "title": "Read Sheet 149's replies, then fold the AP twins or build the rule runner",
+    "text": "Read Open Asks Sheet 149: a fold re-files 74 local titles under College Board's official AP names in one revertible commit; the second card decides how a rule added in the Exhibits tab gets run. Then read the night's first AP saves under brand-family."
   },
   "changes": [
+    {
+      "at": "2026-10-31T14:38:49Z",
+      "text": "Sam's AP rule in brand-family: an AP title takes College Board's official exam name; 18 of the 23 AP titles waiting settle (#2614)."
+    },
+    {
+      "at": "2026-10-31T14:38:49Z",
+      "text": "The Credential Catalog's Worth a faculty review: 28 Credential Engine credentials MAP has no exhibit for (#2613); the catalog's MAP join needs the issuer to agree (#2615)."
+    },
+    {
+      "at": "2026-10-31T14:38:49Z",
+      "text": "The Commons' CER row opens the Exhibits tab (#2612)."
+    },
     {
       "at": "2026-10-31T02:48:47Z",
       "text": "The Exhibits tab's Credentials view and credential panel: every credential, most students first, with its issuer and its training sites editable, each site with the college it trains for."
@@ -61,18 +83,6 @@
     {
       "at": "2026-10-31T00:06:00Z",
       "text": "Sam answered Open Asks Sheet 147 whole: one Exhibits tab with Review first, the high school and ROP rule, the adoption page on settled credentials in the CPL/AI look, the CPL-AI matching in the Program Requirements dialog."
-    },
-    {
-      "at": "2026-10-31T00:12:00Z",
-      "text": "The mock-up reached version 26: a could-adopt college chip opens that college's aligned courses and the Request Quick Adopt link."
-    },
-    {
-      "at": "2026-10-31T00:20:00Z",
-      "text": "College short names corrected in the table (#2598, merged)."
-    },
-    {
-      "at": "2026-10-31T00:27:00Z",
-      "text": "The high school and ROP rule and each held title's aligned course are built (#2601); the nightly run saves about 55 titles under the rule."
     }
   ]
 }
