@@ -441,6 +441,19 @@ window.COBI_ADMIN_SURFACE = {
       "rpcs": [],
       "measured": true
     },
+    "exhibits": {
+      "modules": [
+        "exhibits.js"
+      ],
+      "reads": [],
+      "writes": [
+        "kb_curation"
+      ],
+      "rpcs": [
+        "exhibit_title_students"
+      ],
+      "measured": true
+    },
     "gr-priorities": {
       "modules": [
         "gr_priorities.js"

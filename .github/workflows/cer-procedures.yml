@@ -86,6 +86,10 @@ jobs:
             echo '```'
           } >> "$GITHUB_STEP_SUMMARY"
 
+      # The Exhibits tab's Review queue reads this run's held titles (kb/_build_exhibits_review.py).
+      - name: Build the Exhibits review queue
+        run: python3 kb/_build_exhibits_review.py --quiet || echo "::warning title=Exhibits review not rebuilt::kb/_build_exhibits_review.py failed; the Exhibits tab reads the previous file until the next run."
+
       # always(): a save refused at the INSERT still wrote its receipt, and a receipt that never
       # reaches main cannot undo anything.
       - name: Commit the run
@@ -97,6 +101,7 @@ jobs:
           git add kb/unclassified_preseed.json kb/cer_procedures_out/latest.json
           git add kb/cer_classified.json 2>/dev/null || true
           git add kb/cer_procedures_out/saved 2>/dev/null || true
+          git add kb/exhibits_review.json kb/exhibits_review_courses.json 2>/dev/null || true
           if git diff --cached --quiet; then
             echo "No changes to commit."
             exit 0

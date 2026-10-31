@@ -453,3 +453,30 @@ answer: the sheet was the right form for six asks that had waited a day in chat.
   returned the full line diff into context (about 30 KB here). Read with `path` saves the file but does not count as
   viewing; when the live page is known to match git, expect the one refusal and publish again.
 
+
+## 2026-10-31 — the Exhibits tab's Review queue (SkyRowanberry)
+
+**What shipped.** The `#exhibits` tab on the drawn card of version 26, its builder (`kb/_build_exhibits_review.py`),
+and `exhibit_title_students()`, the reviewer-only students read. The lane file states the design; this keeps the learning.
+
+- **Two feeds of 12 and 14 MB do not join in the browser.** The held titles' exhibits live in `statewide_data.js` and
+  the could-adopt courses in `unified_courses_members.js`. A nightly builder joins them into one 341 KB file, and the
+  courses behind a chip (461 KB, most of the bytes) go to a second file the tab fetches on the first click, keyed by
+  identity so titles that share one share the rows. One title per line keeps a nightly diff readable by title.
+- **A reviewer can already read the base table, and that is why the read is a function.** RLS lets an allowed
+  reviewer SELECT `map_student_credit`, so a per-exhibit PostgREST read would have worked, and it would have put
+  student-grain rows in the browser. The ADR's third decision (suppress where the figure is made, never at render
+  time) makes the function the shape: the page holds counts of ten or more, a suppressed flag, or zero.
+- **Exhibit IDs match exactly.** 95 of the 472 held IDs are mixed case (`MAPCxH-...`); `map_student_credit` stores the
+  same spelling, so the function joins on the index without `upper()`. The counts matched the mock-up's (442, 398, 316,
+  160).
+- **The fold moves under the queue.** The procedures run writes `needs_you` at 07:47Z and the daily fold can settle a
+  held title after it, so the builder drops a title the audit no longer lists as waiting, or one a person saved since,
+  and counts them (`settled_since_run`). A conflict stays: the reference already holds its raw, which is its point.
+- **A re-render must not cost an edit.** Sam's "what if we want to edit the proposed title?" is answered by the box,
+  and opening a college chip re-renders the card; the draft title and issuer now live in the tab's state until the
+  title is decided.
+- **The members file carries COCI's spellings.** *CaÃ±ada College* and *Cypress College* with a trailing space; the
+  builder repairs both before a name reaches a chip.
+- **Re-serializing a hand-kept JSON rewrites its escapes.** `json.dump` of `kb/governance_surface_map.json` changed two
+  unrelated lines' `—` escapes; the entries went in as text, so the diff carries only them.

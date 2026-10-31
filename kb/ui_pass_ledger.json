@@ -400,6 +400,14 @@
    "audience": "staff",
    "last": "2026-10-27",
    "outcome": "S500: axe (wcag 2.2 AA) passes at 9 widths; wiring reads no datasets; First Light holds (raw hex only in the :root tokens; the same source as funding-film). No fix needed."
+  },
+  {
+   "id": "cobi:exhibits",
+   "name": "Exhibits",
+   "page": "index.html#exhibits",
+   "audience": "staff",
+   "last": null,
+   "outcome": null
   }
  ]
 }
