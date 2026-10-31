@@ -123,7 +123,7 @@
    ]
   },
   "Monterey Peninsula College": {
-   "why": "Sixty-five of Monterey Peninsula's associate-degree records name the 60 and a GE pattern with no units for it (S395): 42 \"MPC General Education or Cal-GETC\", 23 Cal-GETC alone. A local degree page prints \"Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units\" and no GE units (college page read 38749721270, Horticulture A.S.); a transfer degree page prints \"Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern\" (read 38843693844, Psychology AA-T). The catalog's GE page (read 38759288106) says Cal-GETC \"satisfies the 34 units of lower-division general education\" and lists MPC GE as eight areas (1A, 1B, 2, 3, 4, 5, 6, 7), each \"Select three units\" (1A one 3-unit course), with no total. So a local degree's GE is 24 to 34: the least the MPC GE areas ask, eight times three, and Cal-GETC's 34. The 24 is a sum of the page's own figures, which the page does not print; S396 SkyJacaranda, 2026-10-16, proceeded on it and put it to Sam as a card.",
+   "why": "Sixty-five of Monterey Peninsula's associate-degree records name the 60 and a GE pattern with no units for it (S395): 42 \"MPC General Education or Cal-GETC\", 23 Cal-GETC alone. A local degree page prints \"Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units\" and no GE units (college page read 38749721270, Horticulture A.S.); a transfer degree page prints \"Certified completion of the California General Education Transfer Curriculum (Cal-GETC) pattern\" (read 38843693844, Psychology AA-T). The catalog's GE page (read 38759288106) says Cal-GETC \"satisfies the 34 units of lower-division general education\" and lists MPC GE as eight areas (1A, 1B, 2, 3, 4, 5, 6, 7), each \"Select three units\" (1A one 3-unit course), with no total. So a local degree's GE is 24 to 34: the least the MPC GE areas ask, eight times three, and Cal-GETC's 34. The 24 is a sum of the page's own figures, which the page does not print; S396 SkyJacaranda, 2026-10-16, proceeded on it and put it to Sam as a card. S535 SkyGooseberry, 2026-10-31: thirteen local degrees summed their major and the GE span past 60 (Theatre Arts 03622 51-61) and failed, because the record says electives fill the degree and the scorer bars a high end past the total. The page's 'electives, if needed, for a total of 60' makes electives fill a shortfall only, the same reading as 'a minimum of 60' (Title 5 section 55063), so the step sets degree_total_minimum. Fable advised the floor (a major whose own units push the low end past 60 would pass unseen; none of the thirteen does). Proceeded on the recommendation; reversible by deleting this step.",
    "awards": "associate",
    "steps": [
     {
@@ -147,6 +147,14 @@
      "pattern": "Certified completion of the California General Education Transfer Curriculum \\(Cal-GETC\\) pattern",
      "source": "https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/",
      "source_words": "Completion of this pattern satisfies the 34 units of lower-division general education requirements for transfer to any CSU or UC campus as well as the general education requirements for the Associate Degree for Transfer (AA-T, AS-T)"
+    },
+    {
+     "kind": "set",
+     "field": "degree_total_minimum",
+     "value": true,
+     "pattern": "electives,?\\s+if needed,?\\s+for a total of 60 degree[- ]applicable units",
+     "source": "college page read 38749721270 (Horticulture A.S.)",
+     "source_words": "Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units"
     }
    ]
   },

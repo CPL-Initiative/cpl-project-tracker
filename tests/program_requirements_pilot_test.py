@@ -2174,11 +2174,21 @@ hort = {"program": {"total_units": {"min": 18, "max": 21}, "degree_total": {"min
                     "electives_fill_degree": True}, "blocks": []}
 new, notes = RC.reconcile(hort, MPC_HORT, "Monterey Peninsula College", "A.S. Degree")
 deg = S.degree_check(new["program"], (60.0, 60.0), 18.0, 21.0, [], MPC_HORT, "A.S. Degree")
-check([n["field"] for n in notes] == ["ge_units"] and new["program"]["ge_units"] == {"min": 24, "max": 34}
+check([n["field"] for n in notes] == ["ge_units", "degree_total_minimum"]
+      and new["program"]["ge_units"] == {"min": 24, "max": 34}
       and "catalog.mpc.edu" in notes[0]["words"] and deg["pass"] and deg["computed"] == [42.0, 55.0]
       and deg["fill"] == [5.0, 18.0],
       "Monterey Peninsula Horticulture: MPC GE or Cal-GETC is 24-34, an 18-21 major comes to 42-55, electives "
       "make up the 60: %s" % json.dumps(deg))
+# S535: "electives, if needed, for a total of 60" makes the 60 a floor (Title 5 section 55063), so a 27-unit
+# major with Cal-GETC's 34 (Theatre Arts A.A. 03622, 51-61) meets it where electives_fill_degree alone failed it.
+thea = {"program": {**hort["program"], "total_units": {"min": 27, "max": 27}}, "blocks": []}
+new, notes = RC.reconcile(thea, MPC_HORT, "Monterey Peninsula College", "A.A. Degree")
+deg = S.degree_check(new["program"], (60.0, 60.0), 27.0, 27.0, [], MPC_HORT, "A.A. Degree")
+check(new["program"].get("degree_total_minimum") is True and deg["pass"] and deg.get("minimum")
+      and deg["computed"] == [51.0, 61.0]
+      and not S.degree_check(thea["program"], (60.0, 60.0), 27.0, 27.0, [], MPC_HORT, "A.A. Degree")["pass"],
+      "Monterey Peninsula Theatre Arts: the 60 a floor, 51-61 meets it: %s" % json.dumps(deg))
 adt = {"program": {"total_units": {"min": 18, "max": 20}, "degree_total": {"min": 60, "max": 60},
                    "ge_units": {"min": None, "max": None}, "ge_pattern": "Cal-GETC"}, "blocks": []}
 new, notes = RC.reconcile(adt, MPC_ADT, "Monterey Peninsula College", "A.A.-T Degree")
