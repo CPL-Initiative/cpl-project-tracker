@@ -1,5 +1,12 @@
 #!/usr/bin/env python3
-"""Guard the guard: `scripts/supabase_sql_guard.py` must never allow a write.
+"""Guard the guard: `scripts/supabase_sql_guard.py` allows reads and data writes, and never a schema write.
+
+Sam, 2026-10-31: "check the records, I've run the recommended sql queries from you 100% of the time
+without editing your code ... let's unblock it so in next session and all other sessions following,
+it's unblocked". Since then INSERT, UPDATE, DELETE and MERGE run without a prompt (Rule 10 still
+governs how: a receipt first); CREATE, ALTER, DROP, TRUNCATE, GRANT, REVOKE, DO, CALL and COPY stay
+denied, and the memory audit log takes appends only. The older text below describes the guard before
+that ruling.
 
     python3 tests/supabase_sql_guard_test.py
 
@@ -84,23 +91,25 @@ CASES = [
      "insert into cpl_memory (slug) values ('x');", "allow"),
     ("cpl_memory update, schema-qualified",
      "update public.cpl_memory set summary='y' where slug='x';", "allow"),
-    ("a second table in the same statement keeps the deny",
-     "insert into cpl_memory (slug) select 1; insert into kb_curation (k) values ('x');", "deny"),
-    ("a delete against cpl_memory is still a delete",
-     "update cpl_memory set a=1; delete from cpl_memory;", "deny"),
-    ("the carve-out is cpl_memory ALONE, not any table",
-     "insert into kb_curation (k) values ('x');", "deny"),
+    ("a second table in the same statement is a data write too (Sam, 2026-10-31)",
+     "insert into cpl_memory (slug) select 1; insert into kb_curation (k) values ('x');", "allow"),
+    ("a memory write beside a drop keeps the deny",
+     "update cpl_memory set a=1; drop table cpl_memory;", "deny"),
+    ("an insert into another table is a data write (Sam, 2026-10-31)",
+     "insert into kb_curation (k) values ('x');", "allow"),
     # ON CONFLICT DO NOTHING is the idempotent INSERT-only form Rule 10 asks for,
     # and read "deny" until 2026-09-23: its `do` looked like a DO block, so every
     # checkpoint receipt written the documented way was refused while a bare
     # insert passed. DO UPDATE overwrites a row that may carry a human's verdict.
     ("cpl_memory insert, ON CONFLICT (slug) DO NOTHING",
      "insert into cpl_memory (slug) values ('x') on conflict (slug) do nothing;", "allow"),
-    ("ON CONFLICT DO UPDATE on cpl_memory keeps the deny",
+    ("an upsert's ON CONFLICT DO UPDATE is a data write (Sam, 2026-10-31)",
      "insert into cpl_memory (slug) values ('x') on conflict (slug) "
-     "do update set summary = excluded.summary;", "deny"),
-    ("DO NOTHING opens nothing on another table",
-     "insert into kb_curation (k) values ('x') on conflict (k) do nothing;", "deny"),
+     "do update set summary = excluded.summary;", "allow"),
+    ("DO NOTHING on another table is a data write",
+     "insert into kb_curation (k) values ('x') on conflict (k) do nothing;", "allow"),
+    ("a DO block is not an ON CONFLICT clause",
+     "do $$ begin update kb_curation set value = 'x'; end $$;", "deny"),
     ("a memory receipt whose header comment says the repo's",
      "-- STAGED: the repo's guard refused it\n"
      "-- Rollback: delete from cpl_memory where verified_by like '%S284%';\n"
@@ -127,15 +136,22 @@ CASES = [
      "delete from public.cpl_memory_log where actor = 'S1';", "deny"),
     ("a log insert beside another table's insert",
      "insert into cpl_memory_log (actor, action) values ('S1', 'create'); "
-     "insert into kb_curation (k) values ('x');", "deny"),
+     "insert into kb_curation (k) values ('x');", "allow"),
+    ("a log rewrite hidden beside another table's insert",
+     "insert into kb_curation (k) values ('x'); "
+     "delete from cpl_memory_log where actor = 'S1';", "deny"),
     ("a table that only starts with the log's name",
-     "insert into cpl_memory_log_archive (actor) values ('S1');", "deny"),
+     "insert into cpl_memory_log_archive (actor) values ('S1');", "allow"),
 
-    # ── writes: every one of these must be denied ────────────────────────────
-    ("update", "update cobi_nav set audience='everyone' where key='admin';", "deny"),
-    ("delete", "delete from kb_curation where id = 5;", "deny"),
+    # ── data writes run (Sam, 2026-10-31); a receipt first, by Rule 10 ──────
+    ("update", "update cobi_nav set audience='everyone' where key='admin';", "allow"),
+    ("delete", "delete from kb_curation where id = 5;", "allow"),
     ("CTE-wrapped insert",
-     "with x as (select 1) insert into t select * from x;", "deny"),
+     "with x as (select 1) insert into t select * from x;", "allow"),
+    ("a guarded update pinned to its before-value",
+     "with m(course_id,before,after) as (values ('a','b','c')) update kb_curation k set value=m.after "
+     "from m where k.course_id=m.course_id and k.value=m.before returning k.course_id;", "allow"),
+    # ── schema, permission and code-running writes: every one is denied ─────
     ("truncate", "truncate table stg_map_student_credit;", "deny"),
     ("drop", "drop table cobi_nav;", "deny"),
     ("alter", "alter table cobi_nav add column access text;", "deny"),
@@ -155,14 +171,14 @@ CASES = [
     # Measured 2026-09-23: the first case came back "allow". The guard stripped
     # literals before comments, so the apostrophe opened a string that ran to
     # the last quote and swallowed the delete between them.
-    ("an apostrophe in a comment cannot hide a delete",
-     "select 1; -- the curator's list\ndelete from kb_curation where true; -- end'", "deny"),
-    ("an apostrophe in a comment cannot hide an update",
-     "-- don't worry\nupdate kb_curation set status = 'x' where id = 1; -- '", "deny"),
+    ("an apostrophe in a comment cannot hide a drop",
+     "select 1; -- the curator's list\ndrop table kb_curation; -- end'", "deny"),
+    ("an apostrophe in a comment cannot hide a truncate",
+     "-- don't worry\ntruncate kb_curation; -- '", "deny"),
     ("an E-string escape cannot shift the reading",
-     "select E'it\\'s'; delete from kb_curation where id = 5; select '''';", "deny"),
+     "select E'it\\'s'; drop table kb_curation; select '''';", "deny"),
     ("a block comment ends no later than Postgres's does",
-     "/* a /* b */ delete from kb_curation; */ select 1;", "deny"),
+     "/* a /* b */ drop table kb_curation; */ select 1;", "deny"),
     ("a $$ inside a tagged dollar body is text",
      "select $a$ x $$ delete from kb_curation; $$ y $a$;", "allow"),
     ("a positional parameter is not a dollar quote",

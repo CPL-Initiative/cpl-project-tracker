@@ -92,6 +92,25 @@ READ_STARTS = ("select", "with", "explain", "show", "table", "values")
 MEMORY_TABLE = "cpl_memory"
 MEMORY_LOG_TABLE = "cpl_memory_log"
 
+# ⚠️ DATA WRITES ARE ALLOWED (Sam, 2026-10-31, after the AP fold's UPDATE was refused):
+# "check the records, I've run the recommended sql queries from you 100% of the time
+# without editing your code...I'll run the query this time, but let's unblock it so in
+# next session and all other sessions following, it's unblocked". A statement whose only
+# write verbs are INSERT, UPDATE, DELETE or MERGE (an upsert's ON CONFLICT DO UPDATE
+# included) runs without a prompt. Rule 10 still governs HOW: a fresh read first, a
+# receipt with before-values written before the write, INSERT-only cohorts where they
+# fit, guarded UPDATEs that pin the before-value. Schema, permissions and anything that
+# runs a body (CREATE, ALTER, DROP, TRUNCATE, GRANT, REVOKE, DO, CALL, COPY) stay denied:
+# DDL goes through apply_migration or a migration file. The memory audit log stays
+# append-only: an UPDATE or DELETE of cpl_memory_log is still denied.
+DML_VERBS = {"insert", "update", "delete", "merge"}
+
+
+def _log_rewrite(clean):
+    """True when the statement updates or deletes from the memory audit log."""
+    return bool(re.search(r"\bupdate\s+(?:only\s+)?(?:public\.)?" + MEMORY_LOG_TABLE + r"\b", clean)
+                or re.search(r"\bdelete\s+from\s+(?:only\s+)?(?:public\.)?" + MEMORY_LOG_TABLE + r"\b", clean))
+
 
 def _memory_only_write(clean, hits):
     """True when every write in this statement targets cpl_memory, or appends to its log."""
@@ -207,6 +226,9 @@ def strip_noise(sql):
 # overwrites a row that may carry a human's verdict, and keeps the deny.
 _ON_CONFLICT_NOTHING = re.compile(
     r"\bon\s+conflict\b(\s*\([^()]*\)|\s+on\s+constraint\s+[a-z_][a-z0-9_$]*)?\s+do\s+nothing\b")
+# An upsert's DO UPDATE is a clause too; read it as the update it is, so it counts as a data write.
+_ON_CONFLICT_UPDATE = re.compile(
+    r"\bon\s+conflict\b(\s*\([^()]*\)|\s+on\s+constraint\s+[a-z_][a-z0-9_$]*)?\s+do\s+update\b")
 
 
 def decide(sql):
@@ -216,6 +238,7 @@ def decide(sql):
     if not complete:
         return "ask", "A string, identifier or comment never closes - confirm by hand."
     clean = _ON_CONFLICT_NOTHING.sub(" on conflict ", clean.lower())
+    clean = _ON_CONFLICT_UPDATE.sub(" on conflict update ", clean)
 
     hits = [v for v in WRITE_VERBS if re.search(r"\b" + v + r"\b", clean)]
     if hits and _memory_only_write(clean, hits):
@@ -224,15 +247,19 @@ def decide(sql):
             "guard). Every write in this statement targets cpl_memory or "
             "appends to cpl_memory_log."
         )
+    if hits and set(hits) <= DML_VERBS and not _log_rewrite(clean):
+        return "allow", (
+            "Data write (" + ", ".join(sorted(set(hits))) + ") allowed by the repo's guard (Sam, "
+            "2026-10-31). Rule 10 still applies: a fresh read first, and a receipt with the "
+            "before-values committed before the write."
+        )
     if hits:
         return "deny", (
             "Blocked by the repo's Supabase guard: this statement contains "
             + ", ".join(sorted(set(hits)))
-            + ". CLAUDE.md Rule 10 routes writes to a shared table through a "
-            "reviewed path - apply_migration for DDL, an INSERT-only cohort "
-            "under a <lane>-s<N>@bot reviewer_email with a committed receipt "
-            "for data, or the curation pipeline. If this write IS the reviewed "
-            "plan, say so and Sam can run it, or lift the guard for the run."
+            + ". Data writes (INSERT, UPDATE, DELETE, MERGE) run; schema, permission "
+            "and code-running statements go through apply_migration or a committed "
+            "migration file (CLAUDE.md Rule 10), and the memory audit log takes appends only."
         )
 
     # `select ... into new_table` writes. The bare `into` of a PL/pgSQL block
