@@ -22,7 +22,8 @@ Exhibits tab's credential panel since SkyBayberry's build (each college's credit
 could-adopt college already teaches, Request Quick Adopt; `kb/exhibits_adoption.json`; state in
 [`cer-procedures`](cer-procedures.md), *The redesign*). The public adoption page
 (`library/adopt/`, SkyTwinberry, 2026-10-31) now carries the college matrix, its statewide and college filters, the
-exports and Create Handout; this tab retires once Sam has seen the page (Open Asks Sheet 148). Its 2026-09-24
+exports and Create Handout, named the Credential Catalog. The tab is retired (Sam, Open Asks Sheet 148 card 2): off the side
+menu since Sam hid its `cobi_nav` row at 23:51Z 2026-10-30, still open at `#exhibit-adoption`, its files kept. Its 2026-09-24
 ruling travels with the fold: no could-adopt list on any screen comes from `potential_names` (the TOP and C-ID overlap).
 
 ## Status

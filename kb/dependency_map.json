@@ -5535,7 +5535,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 224
+     "line": 225
     }
    ],
    "served": true,
@@ -5703,7 +5703,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 222
+     "line": 223
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -17154,7 +17154,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 316
+     "line": 315
     }
    ],
    "served": true,
@@ -17204,7 +17204,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 279
+     "line": 280
     }
    ],
    "served": true,
@@ -17381,7 +17381,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 223
+     "line": 224
     }
    ],
    "served": true,
@@ -18881,42 +18881,42 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 317
+     "line": 316
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 197
+     "line": 198
     },
     {
      "id": "page:library/cpl-opportunity/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 281
+     "line": 282
     },
     {
      "id": "page:library/dsp-credit-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 405
+     "line": 406
     },
     {
      "id": "page:library/ell-iet-cpl-starting-points/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 625
+     "line": 626
     },
     {
      "id": "page:library/index.html",
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 281
+     "line": 282
     }
    ],
    "served": true,

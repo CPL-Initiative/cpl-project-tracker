@@ -139,7 +139,8 @@ function titles(d) { return Array.from(d.querySelectorAll("#ad-list .cred h3")).
   // Malone's look, Light by default, unlisted.
   check("the Library's tokens", /--heading: #082B61/.test(PAGE) && /--gold: #F4B300/.test(PAGE));
   check("dark only when picked", !/prefers-color-scheme/.test(PAGE));
-  check("noindex until Sam links it", /<meta name="robots" content="noindex">/.test(PAGE));
+  check("named the Credential Catalog and indexable (Sheet 148)", /<h1 id="ad-title">Credential Catalog<\/h1>/.test(PAGE) && !/noindex/.test(PAGE));
+  check("the Library links the Catalog", /href="\.\/adopt\/"[^>]*>Credential Catalog</.test(fs.readFileSync("library/index.html", "utf8")));
   check("a skip link and one h1", /class="skip-link"/.test(PAGE) && (PAGE.match(/<h1/g) || []).length === 1);
   check("in the a11y sweep", /"public-adopt"/.test(fs.readFileSync("a11y.config.js", "utf8")));
   check("the daily run builds the data", /kb\/_build_adopt_page\.py/.test(fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8")));

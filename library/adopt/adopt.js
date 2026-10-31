@@ -378,7 +378,7 @@
 
   function slug() {
     var f = filters(), n = scopeName(f);
-    return "credentials-to-adopt" + (n ? "-" + n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "");
+    return "credential-catalog" + (n ? "-" + n.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") : "");
   }
 
   function wire() {

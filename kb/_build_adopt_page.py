@@ -5,7 +5,7 @@ Sam, Open Asks Sheet 147 (2026-10-31): the public adoption page lists settled cr
 a person's or a rule's stamp, "so it grows as the CER finishes" (card 3); it takes Malone's CPL/AI
 look (card 4); and card 1's facts move EACR's college matrix, its statewide and college filters
 (CIP sector, ASCCC Area, SW Region, District, College), its exports and Create Handout to it.
-Its name is still his to give; "Credentials Your College Can Adopt" holds the place.
+Sam named it the Credential Catalog (Open Asks Sheet 148 card 1, 2026-10-31).
 
 Settled: a credential is listed when at least one local title under it in kb/unified_titles.json
 carries a review stamp (`reviewed_at`), a person's or a procedure cohort's (`...@bot`). That is the
