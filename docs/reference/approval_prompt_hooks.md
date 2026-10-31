@@ -217,6 +217,17 @@ else, so each of these has a test:
 `checkout`, `reset`, `restore` and `clean` are *absent* rather than denied — a
 subcommand nobody thought about is asked about.
 
+### Data writes run (Sam, 2026-10-31)
+
+*"check the records, I've run the recommended sql queries from you 100% of the time without editing
+your code...let's unblock it so in next session and all other sessions following, it's unblocked"*,
+after the guard refused the AP fold's guarded UPDATE of `kb_curation`. Since then a statement whose
+only write verbs are INSERT, UPDATE, DELETE or MERGE (an upsert's ON CONFLICT DO UPDATE included)
+returns `allow`. CREATE, ALTER, DROP, TRUNCATE, GRANT, REVOKE, DO, CALL and COPY stay `deny` (DDL goes
+through `apply_migration` or a migration file), and `cpl_memory_log` stays append-only. Rule 10 still
+governs how a write is made: a fresh read, a receipt with before-values first, INSERT-only cohorts
+where they fit, and guarded UPDATEs pinned to the before-value. The section below is the history.
+
 ### The `cpl_memory` carve-out
 
 The SQL guard denied **every** write verb with no exception, which blocked
