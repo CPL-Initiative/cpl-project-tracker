@@ -10,14 +10,14 @@
     "other": 150000
   },
   "summary": {
-    "files": 1339,
-    "bytes": 13580849,
-    "over_budget": 3,
-    "handoff_max": 533,
+    "files": 1340,
+    "bytes": 13588417,
+    "over_budget": 2,
+    "handoff_max": 534,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59993,
-    "superseded_files": 11,
-    "superseded_bytes": 63580,
+    "superseded_files": 0,
+    "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
@@ -26,18 +26,18 @@
       },
       "other": {
         "files": 137,
-        "bytes": 4158039,
+        "bytes": 4167012,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9381,
+        "bytes": 9725,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2501077,
-        "over": 1
+        "bytes": 2494169,
+        "over": 0
       },
       "kb_note": {
         "files": 571,
@@ -46,27 +46,26 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 456026,
+        "bytes": 456144,
         "over": 2
       },
       "handoff": {
-        "files": 502,
-        "bytes": 3596849,
+        "files": 503,
+        "bytes": 3601890,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 3,
-      "superseded_handoff": 11,
+      "oversized_doc": 2,
       "house_voice": 1,
       "vault_heavy_path": 72
     },
     "vault": {
-      "files": 25150,
-      "bytes": 4069195177,
-      "heavy_bytes": 2891238314,
-      "heavy_share": 0.711,
+      "files": 25153,
+      "bytes": 4087831582,
+      "heavy_bytes": 2909884946,
+      "heavy_share": 0.712,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -159,19 +158,6 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 121691,
-        "limit": 120000,
-        "lane": "lessons",
-        "over_by": 1691,
-        "ratio": 1.01
-      },
-      "message": "121,691 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
-      "path": "docs/program_requirements_harvest_lessons.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
         "bytes": 20962,
         "limit": 20000,
         "lane": "roadmap_lane",
@@ -195,127 +181,6 @@
       "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
     },
     {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 522,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 522 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_522_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 523,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 523 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_523_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 524,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 524 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_524_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 525,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 525 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_525_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 526,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 526 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_526_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 527,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 527 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_527_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 528,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 528 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_528_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 529,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 529 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_529_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 530,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 530 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_530_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 531,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 531 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_531_handoff.md"
-    },
-    {
-      "rule": "superseded_handoff",
-      "fixable": true,
-      "detail": {
-        "session": 532,
-        "authoritative": 533,
-        "has_frontmatter": true
-      },
-      "message": "handoff 532 is below the authoritative 533 but is not stamped `superseded: true`",
-      "path": "docs/session_532_handoff.md"
-    },
-    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -332,20 +197,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1776777373,
+        "bytes": 1795429281,
         "kind": "dir"
       },
-      "message": "directory totals 1,776,777,373 B inside the vault"
+      "message": "directory totals 1,795,429,281 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146435998,
+        "bytes": 146430722,
         "kind": "dir"
       },
-      "message": "directory totals 146,435,998 B inside the vault"
+      "message": "directory totals 146,430,722 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
