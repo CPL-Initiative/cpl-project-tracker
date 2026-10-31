@@ -128,21 +128,31 @@ begin
     select 'lead', a.college, a.fiscal_year, null, a.coordinator_name,
            split_part(lower(trim(a.attestor_email)), '@', 2)
     from public.cpl_funding_nc_attestation a
-  ), r as (
+  ), r as materialized (
     select q.*, public.cpl_funding_name_key(q.nm) as nk from req q
+  -- MATERIALIZED: each name key is computed once, not once per request row.
+  ), u as materialized (
+    select m.role_name, m.user_status, m.college,
+           lower(trim(coalesce(m.email, ''))) as em,
+           split_part(lower(trim(coalesce(m.email, ''))), '@', 2) as dom,
+           public.cpl_funding_name_key(coalesce(m.first_name, '') || ' ' || coalesce(m.last_name, '')) as nk
+    from public.map_college_users m
+  ), l as materialized (
+    select c.contact_title, c.college, lower(trim(coalesce(c.contact_email, ''))) as em,
+           public.cpl_funding_name_key(c.contact_name) as nk
+    from public.map_landing_contacts c
   )
   select r.kind, r.college, r.fiscal_year,
     coalesce((select jsonb_agg(distinct jsonb_build_object('role', u.role_name, 'college', u.college,
                 'status', u.user_status))
-              from public.map_college_users u
-              where (r.em is not null and r.em <> '' and lower(trim(u.email)) = r.em)
-                 or (r.nk is not null and r.dom <> '' and split_part(lower(trim(u.email)), '@', 2) = r.dom
-                     and public.cpl_funding_name_key(coalesce(u.first_name, '') || ' ' || coalesce(u.last_name, '')) = r.nk)),
+              from u
+              where (r.em is not null and r.em <> '' and u.em = r.em)
+                 or (r.nk is not null and r.dom <> '' and u.dom = r.dom and u.nk = r.nk)),
              '[]'::jsonb),
     coalesce((select jsonb_agg(distinct jsonb_build_object('title', l.contact_title, 'college', l.college))
-              from public.map_landing_contacts l
-              where (r.em is not null and r.em <> '' and lower(trim(l.contact_email)) = r.em)
-                 or (r.nk is not null and public.cpl_funding_name_key(l.contact_name) = r.nk)),
+              from l
+              where (r.em is not null and r.em <> '' and l.em = r.em)
+                 or (r.nk is not null and l.nk = r.nk)),
              '[]'::jsonb)
   from r;
 end $$;

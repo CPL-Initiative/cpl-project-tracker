@@ -70,6 +70,13 @@ check("S2: the landing mirror is closed to every API role, and its replace is th
   /revoke all on function public\.map_landing_contacts_replace\(jsonb\) from public, anon, authenticated;/.test(SQL) &&
   /grant execute on function public\.map_landing_contacts_replace\(jsonb\) to service_role;/.test(SQL));
 check("S3: the module never reads a coordinator's address (the PII guard holds)", !/coordinator_email/.test(consumerSrc));
+// Measured 2026-10-31: inlined, the correlated lookups recomputed every MAP user's name key per row and the
+// roster timed out at 60s over 313 contacts; materialized, both lookups answer in under half a second.
+const ROSTER_SQL = fs.readFileSync("map/supabase_map_landing_contacts_roster.sql", "utf8");
+check("S4: both lookups compute the MAP users' name keys once, in a materialized CTE",
+  /u as materialized \(/.test(SQL) && /l as materialized \(/.test(SQL) &&
+  /u as materialized \(/.test(ROSTER_SQL) && /l as materialized \(/.test(ROSTER_SQL) &&
+  !/from public\.map_college_users u\s+where/.test(SQL));
 
 // ── A signed-in reviewer ──────────────────────────────────────────────────────
 {

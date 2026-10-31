@@ -35,7 +35,11 @@
                 proposals: {}, propEdit: null, propBusy: false, propErr: null,
                 // The landing pages' CPL Coordinator (and, later, NC CPL Lead),
                 // keyed by college; null until map_coordinator_summary() answers.
-                coord: null, coordError: null };
+                coord: null, coordError: null,
+                // The people each college's MAP landing page lists, with the title the
+                // page gives them and their MAP user rows (Sam, 2026-10-31); null until
+                // map_landing_contacts_roster() answers a signed-in reader.
+                landing: null, landingError: null };
 
   // ── Auth (shared cpl_sb magic-link session + cpl_team_pass phrase) ──
   // Reads-only here; the roster RLS validates the access token / x-team-pass
@@ -94,6 +98,9 @@
       ".mapu-table th.num, .mapu-table td.num { text-align:right; }",
       // The landing pages' coordinator columns: a word carries the state; TBA is the quietest thing in the row.
       ".mapu-tba { color: var(--text-muted); }",
+      ".mapu-notmap { color: var(--text-strong); font-weight:600; }",
+      ".mapu-landing-h { margin:14px 0 2px; font-size:.86rem; color: var(--navy-primary); }",
+      ".mapu-landing-note { margin:0 0 6px; font-size:.78rem; color: var(--text-muted); max-width: var(--cpl-measure,none); }",
       ".mapu-table td { padding:7px 10px; border-bottom:1px solid var(--border); vertical-align:top; }",
       ".mapu-table tr:hover { background: var(--surface-subtle); }",
       ".mapu-roles { display:flex; flex-wrap:wrap; gap:4px; }",
@@ -121,6 +128,8 @@
       ".mapu-roster table { width:100%; border-collapse:collapse; font-size:.82rem; }",
       ".mapu-roster td, .mapu-roster th { padding:4px 8px; border-bottom:1px solid var(--border); }",
       ".mapu-roster th { color: var(--text-muted); text-transform:uppercase; font-size:.66rem; letter-spacing:.04em; text-align:left; }",
+      // A drawer's own tables sit inside the main table: its header cells take none of the main header's seal blue.
+      ".mapu-table .mapu-roster th { background:none; position:static; }",
       // Session 88 — active count + status/disciplines in the roster
       ".mapu-active { color: var(--hunter); font-size:.74rem; font-weight:600; margin-left:3px; }",
       ".mapu-st { font-size:.72rem; font-weight:600; padding:1px 7px; border-radius:10px; white-space:nowrap; }",
@@ -251,6 +260,73 @@
       state.coord = { by: by, ncLeadKnown: rows.some(function (row) { return row && "has_nc_cpl_lead" in row; }) };
       return state.coord;
     });
+  }
+  // ── The landing pages' contacts beside the MAP users (Sam, 2026-10-31: "add the
+  // college landing page college contacts and title they list on their landing
+  // page to the MAP users table so the MAP team have one stop shopping for all
+  // that? ... It will also help the MAP team know what user roles they need to
+  // add to the MAP platform user table and keep it all aligned.") ────────────
+  // map_landing_contacts_roster() returns every contact each MAP landing page
+  // lists (mirrored daily by map/sync_landing_contacts.py), the title the page
+  // gives them, and the MAP user rows that are the same person (email, else the
+  // name at the same college or domain). Gated like the roster: signed out, no
+  // rows, and the column stays off the table.
+  function loadLanding() {
+    if (!signedIn()) { state.landing = null; return Promise.resolve(null); }
+    var h = authHeaders(); h["Content-Type"] = "application/json";
+    return fetch(REST + "/rpc/map_landing_contacts_roster", { method: "POST", headers: h, body: "{}" })
+      .then(function (r) {
+        if (!r.ok) throw new Error("landing " + r.status);
+        return r.json();
+      }).then(function (rows) {
+        var by = {}, synced = null;
+        (Array.isArray(rows) ? rows : []).forEach(function (row) {
+          if (!row || !row.college) return;
+          (by[ckey(row.college)] = by[ckey(row.college)] || []).push(row);
+          if (row.synced_at && (!synced || row.synced_at > synced)) synced = row.synced_at;
+        });
+        state.landing = { by: by, synced: synced, n: (rows || []).length };
+        return state.landing;
+      });
+  }
+  function landingFor(college) {
+    if (!state.landing) return null;
+    return pickByIdentity(state.landing.by, ckey(college)) || [];
+  }
+  function landingMissing(list) {
+    return (list || []).filter(function (c) { return !(c.map_users && c.map_users.length); }).length;
+  }
+  // The table cell: "4 listed" or "4 listed, 2 not MAP users"; "None listed".
+  function landingCell(college) {
+    var list = landingFor(college);
+    if (!list) return '<span class="mapu-tba">TBA</span>';
+    if (!list.length) return '<span class="mapu-tba">None listed</span>';
+    var miss = landingMissing(list);
+    return list.length + " listed" + (miss ? ', <span class="mapu-notmap">' + miss + " not MAP user" + (miss === 1 ? "" : "s") + "</span>" : "");
+  }
+  // The roster drawer's section: Title on the landing page · Name · Email · MAP user.
+  function landingHtml(college) {
+    var list = landingFor(college);
+    if (!list) return "";
+    var h = '<h3 class="mapu-landing-h">On the landing page</h3>'
+      + '<p class="mapu-landing-note">The people this college’s MAP landing page lists, with the title the page gives each'
+      + (state.landing.synced ? ", read " + fmtDate(state.landing.synced) : "")
+      + ". Not a MAP user marks a person the MAP team may add as a user.</p>";
+    if (!list.length) return h + '<div class="mapu-gate">The landing page lists no one by name.</div>';
+    h += "<table><thead><tr><th scope=\"col\">Title on the landing page</th><th scope=\"col\">Name</th><th scope=\"col\">Email</th><th scope=\"col\">MAP user</th></tr></thead><tbody>";
+    list.forEach(function (c) {
+      var seen = {}, roles = [];
+      (c.map_users || []).forEach(function (u) {
+        var w = esc(u.role || "User")
+          + (u.status && !/^active$/i.test(u.status) ? " (" + esc(String(u.status).toLowerCase()) + ")" : "")
+          + (u.college && ckey(u.college) !== ckey(college) ? ", " + esc(u.college) : "");
+        if (!seen[w]) { seen[w] = 1; roles.push(w); }
+      });
+      h += "<tr><td>" + esc(c.contact_title || "—") + "</td><td>" + esc(c.contact_name || "—") + "</td><td>"
+        + esc(c.contact_email || "—") + "</td><td>"
+        + (roles.length ? roles.join("; ") : '<span class="mapu-notmap">Not a MAP user</span>') + "</td></tr>";
+    });
+    return h + "</tbody></table>";
   }
   // { coord: true|false|null, ncLead: true|false|null } for one college; null
   // means no landing-page row (coord) or no NC CPL Lead option yet (ncLead).
@@ -1640,8 +1716,19 @@
       + '<p class="mapu-intro">The <b>CPL Coordinator</b> and <b>NC CPL Lead</b> columns come from each college\u2019s '
       + "CPL landing page, not from these MAP user roles: MAP\u2019s roles have no CPL Coordinator. The coordinator is "
       + "the one the funding model\u2019s first minimum condition counts. The NC CPL Lead reads TBA until the landing "
-      + "pages carry it.</p>";
+      + "pages carry it.</p>"
+      + (signedIn() ? '<p class="mapu-intro">The <b>Landing page</b> column and each roster’s <b>On the landing page</b> '
+        + "table list the people each college’s MAP landing page names, with the title the page gives them, read "
+        + "daily. A person who is not a MAP user is a role the MAP team may add.</p>" : "");
     var cc = state.coord ? coordCounts(state.summary || []) : null;
+    var showLanding = signedIn() && !!state.landing;
+    var lc = null;
+    if (showLanding) {
+      lc = { n: 0, miss: 0 };
+      Object.keys(state.landing.by).forEach(function (k) {
+        lc.n += state.landing.by[k].length; lc.miss += landingMissing(state.landing.by[k]);
+      });
+    }
 
     html += '<div class="mapu-stat">'
       + '<div class="box"><div class="n">' + totalUsers.toLocaleString() + '</div><div class="l">MAP users</div></div>'
@@ -1651,6 +1738,8 @@
       + '</div><div class="l">CPL Coordinators on landing pages</div></div>'
       + '<div class="box"><div class="n">' + (cc && state.coord.ncLeadKnown ? cc.ncLead + " of " + cc.of : "TBA")
       + '</div><div class="l">NC CPL Leads on landing pages</div></div>'
+      + (lc ? '<div class="box"><div class="n">' + lc.miss + " of " + lc.n
+        + '</div><div class="l">Landing-page contacts not MAP users</div></div>' : "")
       + "</div>";
 
     // Lens switch. Reviewer-only: the worklist is built from gated contact rows,
@@ -1700,6 +1789,7 @@
       + '<th scope="col">College</th><th scope="col" class="num">Users</th><th scope="col">Role mix</th>'
       + '<th scope="col" title="From the college\u2019s CPL landing page, not a MAP user role">CPL Coordinator</th>'
       + '<th scope="col" title="Counted once the landing pages carry a Noncredit CPL Lead">NC CPL Lead</th>'
+      + (showLanding ? '<th scope="col" title="The people the college\u2019s MAP landing page lists, and how many are not MAP users">Landing page</th>' : "")
       + '<th scope="col">Actions</th>'
       + "</tr></thead><tbody>";
     rows.forEach(function (r) {
@@ -1724,11 +1814,12 @@
         + '<td><div class="mapu-roles">' + roleChips(r.role_mix) + "</div></td>"
         + "<td>" + (state.coord ? yesNoCell(coordFor(r.college).coord, false) : '<span class="mapu-tba">TBA</span>') + "</td>"
         + "<td>" + yesNoCell(coordFor(r.college).ncLead, true) + "</td>"
+        + (showLanding ? "<td>" + landingCell(r.college) + "</td>" : "")
         + '<td><button class="mapu-rosterbtn" data-roster="' + esc(r.college) + '">'
         + (open ? "✕ hide" : "roster") + "</button>" + nudgeBtn + nudgedLine + "</td>"
         + "</tr>";
       if (open) {
-        html += '<tr class="mapu-roster"><td colspan="6" data-roster-cell="' + esc(r.college) + '">'
+        html += '<tr class="mapu-roster"><td colspan="' + (showLanding ? 7 : 6) + '" data-roster-cell="' + esc(r.college) + '">'
           + '<div class="mapu-gate">Loading roster…</div></td></tr>';
       }
     });
@@ -2086,10 +2177,11 @@
     var cell = root.querySelector('[data-roster-cell="' + cssEscape(college) + '"]');
     if (!cell) return;
     loadRoster(college).then(function (rows) {
-      cell.innerHTML = rosterHtml(rows);
+      cell.innerHTML = rosterHtml(rows) + landingHtml(college);
     }).catch(function () {
       cell.innerHTML = '<div class="mapu-gate">Could not load the roster. '
-        + "Sign in from the header\u2019s Sign in menu (the team phrase or an email link) and try again.</div>";
+        + "Sign in from the header\u2019s Sign in menu (the team phrase or an email link) and try again.</div>"
+        + landingHtml(college);
     });
   }
 
@@ -2246,6 +2338,9 @@
     // render without them and the two columns read TBA until they land.
     loadCoordinators().then(function () { if (state.summary) render(root); })
       .catch(function (e) { state.coordError = (e && e.message) || "error"; });
+    // The landing pages' contacts, signed in only, side-loaded the same way.
+    loadLanding().then(function () { if (state.summary && state.landing) render(root); })
+      .catch(function (e) { state.landingError = (e && e.message) || "error"; });
     loadSummary().then(function (data) {
       state.summary = Array.isArray(data) ? data : [];
       state.loading = false; render(root);
@@ -2269,6 +2364,9 @@
     _loadCoordinators: loadCoordinators,
     _coordFor: coordFor,
     _coordCounts: coordCounts,
+    _loadLanding: loadLanding,
+    _landingCell: landingCell,
+    _landingHtml: landingHtml,
     _rosterHtml: rosterHtml,
     _authHeaders: authHeaders,
     _filteredSorted: filteredSorted,

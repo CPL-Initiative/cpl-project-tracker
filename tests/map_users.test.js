@@ -681,9 +681,47 @@ function makeWin(opts) {
     csv.indexOf("Contra Costa College") < 0 && csv.indexOf("Los Angeles Harbor College") < 0);
 })();
 
+// The landing pages' contacts beside the MAP users (Sam, 2026-10-31: "add the
+// college landing page college contacts and title they list on their landing
+// page to the MAP users table so the MAP team have one stop shopping ... It will
+// also help the MAP team know what user roles they need to add").
+const landingDone = (async function () {
+  const rows = [
+    { college: "Coalinga College", contact_title: "Evaluator", contact_name: "Mg <Swarts>", contact_email: "mg@whccd.edu",
+      contact_order: 5, synced_at: "2026-10-31T13:05:00Z", map_users: [{ role: "Ambassador", status: "Active", college: "Coalinga College" }] },
+    { college: "Coalinga College", contact_title: "School Certifying Official", contact_name: "Maria Drappo", contact_email: "",
+      contact_order: 4, synced_at: "2026-10-31T13:05:00Z", map_users: [] },
+    { college: "Coalinga College", contact_title: "Veteran Rep/Counselor", contact_name: "Jon Endicott", contact_email: "jon@whccd.edu",
+      contact_order: 2, synced_at: "2026-10-31T13:05:00Z", map_users: [{ role: "Initiator", status: "Inactive", college: "Lemoore College" }] }
+  ];
+  const out = makeWin();
+  await out.CPL_MAP_USERS_TAB._loadLanding();
+  check("landing: signed out, no read and no column", out.CPL_MAP_USERS_TAB._state.landing === null && !out.__lastFetch
+    && out.CPL_MAP_USERS_TAB._landingHtml("Coalinga College") === "");
+  const w = makeWin({ teamPass: "open-sesame", fetchData: rows });
+  const api = w.CPL_MAP_USERS_TAB;
+  await api._loadLanding();
+  check("landing: signed in, the gated roster RPC is read with the sign-in headers",
+    /\/rpc\/map_landing_contacts_roster$/.test(w.__lastFetch.url) && w.__lastFetch.init.method === "POST"
+      && w.__lastFetch.init.headers["x-team-pass"] === "open-sesame");
+  check("landing: the cell counts who is listed and who is not a MAP user",
+    /^3 listed, <span class="mapu-notmap">1 not MAP user<\/span>$/.test(api._landingCell("Coalinga College"))
+      && /None listed/.test(api._landingCell("Nowhere College")));
+  const html = api._landingHtml("Coalinga College");
+  check("landing: the drawer lists the landing page's title, name, email and MAP user, escaped",
+    /On the landing page/.test(html) && /Title on the landing page/.test(html) && /<th scope="col">MAP user<\/th>/.test(html)
+      && /Evaluator<\/td><td>Mg &lt;Swarts&gt;<\/td><td>mg@whccd\.edu<\/td><td>Ambassador<\/td>/.test(html) && html.indexOf("<Swarts>") < 0);
+  check("landing: a person with no MAP user record says so, the role to add",
+    /Maria Drappo<\/td><td>—<\/td><td><span class="mapu-notmap">Not a MAP user<\/span>/.test(html));
+  check("landing: another college's or an inactive MAP user row says which",
+    /Initiator \(inactive\), Lemoore College/.test(html) && /read /.test(html));
+})();
+
 // ── report ──
+landingDone.catch(function (e) { check("landing block ran: " + e, false); }).then(function () {
 let failed = 0;
 for (const [name, ok] of results) { console.log((ok ? "PASS " : "FAIL ") + name); if (!ok) failed++; }
 console.log("\n" + (results.length - failed) + "/" + results.length + " passed");
 process.exit(failed ? 1 : 0);
+});
 

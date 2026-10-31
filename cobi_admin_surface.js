@@ -57,6 +57,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "rpcs": [
         "map_coordinator_summary",
+        "map_landing_contacts_roster",
         "map_users_summary"
       ],
       "measured": true
@@ -284,6 +285,7 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "rpcs": [
         "map_coordinator_summary",
+        "map_landing_contacts_roster",
         "map_users_summary"
       ],
       "measured": true
