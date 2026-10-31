@@ -36,13 +36,15 @@ begin
     return;
   end if;
   return query
-  with u as (
+  -- MATERIALIZED: each name key is computed once; inlined, the correlated
+  -- lookup below recomputed 2,915 of them per contact and timed out.
+  with u as materialized (
     select m.role_name, m.user_status, m.college,
            lower(trim(coalesce(m.email, ''))) as em,
            split_part(lower(trim(coalesce(m.email, ''))), '@', 2) as dom,
            public.cpl_funding_name_key(coalesce(m.first_name, '') || ' ' || coalesce(m.last_name, '')) as nk
     from public.map_college_users m
-  ), l as (
+  ), l as materialized (
     select c.*, lower(trim(coalesce(c.contact_email, ''))) as em,
            split_part(lower(trim(coalesce(c.contact_email, ''))), '@', 2) as dom,
            public.cpl_funding_name_key(c.contact_name) as nk
