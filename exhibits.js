@@ -1298,11 +1298,25 @@
     state.filter = ""; state.cur = 0; state.openCollege = null; state.teach = false; state.note = "";
     state.view = "review";
     state.cs.q = ""; state.cs.sel = null; state.cs.limit = CRED_PAGE; state.cs.note = ""; state.cs.open = null;
+    routeFromHash();
     render();
+  }
+  /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
+     they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with
+     the reference, credentials = the Credentials view. The address is not a remembered filter. */
+  var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], credentials: ["credentials", ""] };
+  function routeFromHash() {
+    var parts = String(location.hash || "").replace(/^#/, "").split("/");
+    var r = parts[0] === "exhibits" && ROUTES[parts[1]];
+    if (!r) return false;
+    state.view = r[0]; state.filter = r[1];
+    if (r[0] === "credentials") loadCredentials().then(render);
+    return true;
   }
   function boot() {
     if (booted) return Promise.resolve();
     booted = true;
+    routeFromHash();
     render();
     window.addEventListener("cpl-tab-activated", function (e) {
       if (e && e.detail && e.detail.tab === "exhibits") newVisit();
@@ -1316,6 +1330,6 @@
     _state: state, _shown: shown, _teachText: teachText, _TIPS: TIPS,
     loadCredentials: loadCredentials, openCredential: openCredential,
     _parseSites: parseSites, _joinSites: joinSites, _resolveSites: resolveSites, _credCurrent: credCurrent, _credRows: credRows,
-    _credCould: credCould
+    _credCould: credCould, _routeFromHash: routeFromHash
   };
 })();

@@ -43,7 +43,9 @@ receipt was written, and the docs index, lessons and KB notes were not touched.
    `high-school-rop` save (expected 55, cohort `cer-procedure-high-school-rop@bot`, receipt in
    `kb/cer_procedures_out/saved/`); the queue should fall to about 413. Sam had saved nothing from the card or the
    panel by 11:30Z.
-3. **Links into the retired tabs move to Exhibits:** the Commons' CER row and Sierra Training's targets.
+3. **Links into the retired tabs:** SkyElderberry moved the Commons' CER row to Exhibits (`#exhibits/held`, `/conflict`,
+   `/credentials`). Its left-MAP and procedures counts still open `#credential-reference` (Exhibits has no such view);
+   no Sierra Training link into either retired tab was found. Item 1 confirmed at 12:40Z: 861 at Norco College.
 4. The Catalog's *Worth a faculty review* list (credentials no college has articulated, from Credential Engine).
 5. Carried: training sites for a held title new to the reference, only if Sam asks; the college short-name editor; the
    CPL-AI snapshot refreshed by hand (`python3 kb/_build_cpl_ai.py --fetch`).

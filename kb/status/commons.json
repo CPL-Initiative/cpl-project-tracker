@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-31T12:14:16Z",
+ "written_at": "2026-10-31T12:44:20Z",
  "rows": [
   {
    "key": "requirements",
@@ -72,12 +72,8 @@
   {
    "key": "exhibit",
    "title": "Common Exhibit Reference",
-   "tab": "#credential-reference",
+   "tab": "#exhibits",
    "links": [
-    {
-     "href": "#credential-reference",
-     "text": "Open the tab"
-    },
     {
      "href": "#exhibits",
      "text": "Open Exhibits"
@@ -89,7 +85,7 @@
      "n": 1844,
      "of": 5030,
      "words": "titles carry a review stamp (645 a person's, 1,199 a cohort's); 2,465 credentials, 1,870 of 2,689 records stamped",
-     "open": "#credential-reference/progress"
+     "open": "#exhibits/credentials"
     }
    ],
    "tests": [
@@ -101,14 +97,14 @@
      "n": 450,
      "words": "titles held for a person",
      "owner": "a curator (the classifier is unsure 401, the classifier's title has a course code left in 23, a merge would join two issuers 13, the classifier's title has a dangling word 11, the classifier's title has a method word left in 2)",
-     "open": "#credential-reference/held",
+     "open": "#exhibits/held",
      "error": null
     },
     {
      "n": 18,
      "words": "saved assignments the fold holds",
      "owner": "a curator (a human-reviewed classification stands)",
-     "open": "#credential-reference/held",
+     "open": "#exhibits/conflict",
      "error": null
     },
     {
@@ -291,7 +287,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-31T03:57:53Z",
+    "at": "2026-10-31T03:57:53+00:00",
     "every_hours": null
    },
    "facts": {

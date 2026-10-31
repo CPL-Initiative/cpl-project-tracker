@@ -776,7 +776,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kpi_reorder.js` | pages: `CPL_Dashboard.html` | — |
 | `library.js` | pages: `CPL_Dashboard.html` | — |
 | `library/adopt/adopt.js` | pages: `library/adopt/index.html` | — |
-| `library/adopt/adopt_data.json` | pages: `library/adopt/index.html` | committed by: `daily-dashboard.yml` |
+| `library/adopt/adopt_data.json` | pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_page.py` | committed by: `daily-dashboard.yml` |
 | `library/cpl-opportunity/index.html` | scripts: `scripts/ui_pass.py` | — |
 | `library/public_library.js` | pages: `library/index.html` | — |
 | `library_remediate.js` | tabs: `library` | — |
