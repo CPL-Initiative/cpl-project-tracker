@@ -158,7 +158,11 @@ def receipt_time(v):
 
 
 def row_exhibit(root):
-    tab = "#credential-reference"
+    # The Exhibits tab carries the reference's queue now (Sam, Open Asks Sheet 148, 2026-10-31: link-retire);
+    # the counts open its routes. Titles that left MAP and the procedures stay at the CER's address, which
+    # still opens, until Exhibits carries them.
+    tab = "#exhibits"
+    cer = "#credential-reference"
     ut = load_json(root, "kb/unified_titles.json")
     stamped = [v for v in ut.values() if v.get("reviewed_at")]
     person = sum(1 for v in stamped if not is_cohort(v.get("reviewed_by")))
@@ -202,26 +206,24 @@ def row_exhibit(root):
     stamps = [t for t in (saved_at, fold_at) if t]
     return {
         "key": "exhibit", "title": "Common Exhibit Reference", "tab": tab,
-        # The Exhibits tab replaces the CER and Exhibit Adoption as it grows (Sam, Open Asks Sheet 147
-        # card 1, 2026-10-31); its Review queue is built first, so both doors stand until it carries all.
-        "links": [{"href": tab, "text": "Open the tab"}, {"href": "#exhibits", "text": "Open Exhibits"}],
+        "links": [{"href": tab, "text": "Open Exhibits"}],
         "status_file": "kb/status/exhibit.json" if exists(root, "kb/status/exhibit.json") else None,
         "pair": [{"n": len(stamped), "of": len(ut),
                   "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"
-                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/progress"}],
+                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/credentials"}],
         "tests": ["curator-stamped", "procedure-settled"],
         "issues": [
             {"n": held_n, "words": "titles held for a person", "owner": "a curator" + (" (" + held_why + ")" if held_why else ""),
              "open": tab + "/held", "error": run["error"]},
             {"n": conflicts, "words": "saved assignments the fold holds", "owner": "a curator (a human-reviewed classification stands)",
-             "open": tab + "/held", "error": run["error"]},
+             "open": tab + "/conflict", "error": run["error"]},
             {"n": left["n"], "words": "titles in the reference that have left MAP", "owner": "a curator (retire or keep)",
-             "open": tab + "/all", "error": left["error"]},
+             "open": cer + "/all", "error": left["error"]},
         ],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,
              "words": "in force: %d rules applied by code, %d read by the classifier" % (kinds.get("rule", 0), kinds.get("guidance", 0))
-             if procs["n"] is not None else "in force", "open": tab + "/procs", "error": procs["error"]},
+             if procs["n"] is not None else "in force", "open": cer + "/procs", "error": procs["error"]},
             {"words": "A procedure's saves undo together"},
         ],
         "machine": {"what": "the saving run and the fold", "at": max(stamps) if stamps else None, "every_hours": 24},
@@ -457,7 +459,7 @@ def row_subjects(root):
 # ── the frame ─────────────────────────────────────────────────────────────────────────────
 ROWS = [
     ("requirements", "Program Requirements", "#program-requirements", row_requirements),
-    ("exhibit", "Common Exhibit Reference", "#credential-reference", row_exhibit),
+    ("exhibit", "Common Exhibit Reference", "#exhibits", row_exhibit),
     ("course", "Common Course Reference", "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html", row_course),
     ("cr", "Common CR Reference", "#cr-reference", row_cr),
     ("subjects", "Common Subjects Reference", "#canonical-subj4", row_subjects),

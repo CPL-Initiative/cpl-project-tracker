@@ -45,7 +45,9 @@ check("the nightly procedures run rebuilds and commits them", /python3 kb\/_buil
   && /git add kb\/exhibits_review\.json kb\/exhibits_review_courses\.json kb\/exhibits_adoption\.json/.test(proc)
   && proc.indexOf("_cer_procedures.py --classify") < proc.indexOf("_build_exhibits_review.py"));
 check("CI runs the builder's test", /python3 tests\/exhibits_review_build_test\.py/.test(fs.readFileSync(".github/workflows/js-tests.yml", "utf8")));
-check("the Commons row links Open Exhibits", /"href": "#exhibits", "text": "Open Exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
+check("the Commons row links Open Exhibits", /"href": tab, "text": "Open Exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
+check("the Commons row's tab is Exhibits (Sheet 148, link-retire)", /tab = "#exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8"))
+  && /\("exhibit", "Common Exhibit Reference", "#exhibits", row_exhibit\)/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 check("the students function is migrated, reviewer-gated and closed to anon",
   (function () {
     const sql = fs.readFileSync("kb/migrations/2026-10-31_exhibit_title_students.sql", "utf8");
@@ -166,7 +168,7 @@ const STUDENTS = { "0": [null, true], "1": [442, false], "2": [398, false], "3":
 function load(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="exhibits-root" style="border:1px dashed;padding:28px;">Loading</div></body></html>',
-    { url: "https://example.org/#exhibits", runScripts: "dangerously" });
+    { url: "https://example.org/" + (opts.hash || "#exhibits"), runScripts: "dangerously" });
   const w = dom.window;
   const calls = [];
   w.fetch = function (url, init) {
@@ -575,6 +577,18 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   await t.M.boot(); await settle();
   viewBtn(t.d, "Credentials").click(); await settle();
   check("an unread credential file says so", /The credentials could not be read \(the credential file did not load\)/.test(txt(t.root)));
+
+  // #exhibits/<route>: the Commons row's counts land here, read once per visit (Sheet 148, link-retire)
+  t = load({ hash: "#exhibits/conflict" });
+  await t.M.boot(); await settle();
+  check("#exhibits/conflict opens Review on Conflict with the reference", t.M._state.view === "review"
+    && stepTile(t.d, "Conflict with the reference").getAttribute("aria-pressed") === "true");
+  t = load({ hash: "#exhibits/credentials" });
+  await t.M.boot(); await settle();
+  check("#exhibits/credentials opens the Credentials view", t.M._state.view === "credentials" && rowsOf(t.d).length === 4);
+  t = load({ hash: "#exhibits/nowhere" });
+  await t.M.boot(); await settle();
+  check("an unknown route opens Review on all held", t.M._state.view === "review" && t.M._state.filter === "");
 
   // the one rule, shared with kb/_apply_credential_review.py
   const M = t.M;

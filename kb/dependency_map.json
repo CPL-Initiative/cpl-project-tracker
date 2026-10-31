@@ -1049,7 +1049,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 243
+     "line": 245
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -9425,7 +9425,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 188
+     "line": 192
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -9455,7 +9455,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 177
+     "line": 181
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -9492,7 +9492,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 192
+     "line": 196
     }
    ],
    "served": false,
@@ -11900,7 +11900,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 307
+     "line": 309
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -12127,7 +12127,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 166
+     "line": 170
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -12347,7 +12347,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 397
+     "line": 399
     }
    ],
    "producers": [
@@ -12404,7 +12404,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 398
+     "line": 400
     }
    ],
    "served": true,
@@ -12635,7 +12635,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 376
+     "line": 378
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -13183,7 +13183,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 169
+     "line": 173
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -14538,7 +14538,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 310
+     "line": 312
     }
    ],
    "served": false,
@@ -15959,7 +15959,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 244
+     "line": 246
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -16062,7 +16062,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 262
+     "line": 264
     }
    ],
    "served": true,
@@ -16075,7 +16075,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 338
+     "line": 340
     }
    ],
    "served": true,
@@ -16088,7 +16088,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 208
+     "line": 210
     }
    ],
    "served": true,
@@ -16141,7 +16141,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 441
+     "line": 443
     }
    ],
    "served": true,
@@ -16634,7 +16634,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 197
+     "line": 201
     }
    ],
    "served": false,
@@ -16773,7 +16773,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 162
+     "line": 166
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -17171,6 +17171,13 @@
      "pages": [
       "library/adopt/index.html"
      ]
+    },
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 42
     }
    ],
    "producers": [
@@ -17179,7 +17186,7 @@
      "how": "commit-to-main"
     }
    ],
-   "served": false,
+   "served": true,
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
@@ -17911,7 +17918,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 247
+     "line": 249
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -21670,7 +21677,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 248
+     "line": 250
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",

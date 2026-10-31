@@ -229,6 +229,7 @@ himself at 23:51Z 2026-10-30, and they still open at `#credential-reference` and
 **NEXT:** the redesign is built through Sheet 148: (1) read Sam's first saves from the card and the panel, and the first
 nightly save of `high-school-rop` (expected 55; its receipt in `kb/cer_procedures_out/saved/`; the queue should fall to
 about 413; the 07:47Z cron fires near 14:31Z); (2) the Catalog's *Worth a faculty review* list (credentials no college
-has articulated, from Credential Engine); (3) the links into the retired tabs (the Commons' CER row, Sierra Training)
-move to Exhibits; (4) training sites for a held title new to the reference, and the *Held titles by group* table, only
+has articulated, from Credential Engine); (3) the Commons' CER row opens Exhibits (SkyElderberry: `#exhibits/held`,
+`/conflict`, `/credentials`, read once per visit); its left-MAP and procedures counts stay at `#credential-reference`
+until Exhibits carries them, and no Sierra Training link into the retired tabs was found; (4) training sites for a held title new to the reference, and the *Held titles by group* table, only
 if Sam asks.
