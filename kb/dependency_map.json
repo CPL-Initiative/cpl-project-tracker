@@ -4,9 +4,9 @@
   "supabase_tables": 103,
   "rpcs": 44,
   "edge_functions": 11,
-  "file_datasets": 742,
+  "file_datasets": 743,
   "external_services": 192,
-  "consumers": 491,
+  "consumers": 492,
   "workflows": 59,
   "data_js_files": 71,
   "tabs": 39
@@ -12249,7 +12249,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 845
+     "line": 848
     },
     {
      "id": "script:kb/_seed_coci_articulations.py",
@@ -13194,6 +13194,13 @@
      "tabs": [
       "credential-reference"
      ]
+    },
+    {
+     "id": "script:kb/_ap_official_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 187
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -16644,7 +16651,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 51
+     "line": 54
     }
    ],
    "producers": [
@@ -16701,14 +16708,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 374
+     "line": 377
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 374
+     "line": 377
     }
    ],
    "producers": [
@@ -16797,6 +16804,13 @@
      "direction": "read",
      "how": "literal",
      "line": 5939
+    },
+    {
+     "id": "script:kb/_ap_official_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 169
     },
     {
      "id": "script:kb/_audit_exhibits.py",
@@ -16922,7 +16936,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 50
+     "line": 53
     },
     {
      "id": "script:kb/_seed_coci_articulations.py",
@@ -19190,7 +19204,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 801
+     "line": 804
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -19468,6 +19482,19 @@
    "main_committers": []
   },
   "file:tests/american_spelling_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ap_official_titles_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24397,7 +24424,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 587
+     "line": 589
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -24460,14 +24487,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1195
+     "line": 1209
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1212
+     "line": 1226
     },
     {
      "id": "script:kb/_rekey_kb_curation_supabase.py",
@@ -26910,6 +26937,7 @@
     "tests/statewide_recs_test.py",
     "tests/cer_decision_apply_test.py",
     "tests/cer_procedures_test.py",
+    "tests/ap_official_titles_test.py",
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/exhibits_review_build_test.py",

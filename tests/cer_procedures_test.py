@@ -40,7 +40,7 @@ def check(name, cond, why=""):
 
 
 # ── the procedures file ──────────────────────────────────────────────────────
-KNOWN_LANES = {"family", "statewide", "nccer", "cslb", "journeyman", "carpenters", "ironworker",
+KNOWN_LANES = {"family", "ap", "statewide", "nccer", "cslb", "journeyman", "carpenters", "ironworker",
                "single", "identity", "school"}
 procs = cp.load_procedures()
 check("every procedure in force names who, when and their words",
@@ -50,6 +50,9 @@ check("every rule procedure's lanes are lanes the run knows",
       [p["lanes"] for p in procs if p["kind"] == "rule"])
 check("no hint lane is owned by a rule procedure",
       not (set(cp.lane_owners(procs)) & cp.HINT_LANES))
+
+check("an official AP exam name stands as written (it may end in a letter: Computer Science A)",
+      cp.residue("AP Computer Science A", "College Board", "ap") == [] and cp.residue("Welding A", "", "") != [])
 
 with tempfile.NamedTemporaryFile("w", suffix=".json", delete=False) as f:
     json.dump({"procedures": [{"id": "x", "name": "X", "kind": "rule", "on": True, "rule": "r",
