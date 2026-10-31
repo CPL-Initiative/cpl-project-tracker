@@ -64,20 +64,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    11.5,
-    17.0
+    16.0,
+    18.0
    ],
    "stated": [
     16.0,
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 11.5-17.0; the catalog states 16.0-18.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -101,7 +99,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -259,5 +257,6 @@
    "A 'Career Information' tab is named but the text prints no career content; careers left empty."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 41192567009,
+ "read_run": "38675240344"
 }

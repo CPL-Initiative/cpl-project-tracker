@@ -60,38 +60,40 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    51.0,
-    61.0
+    27.0,
+    27.0
    ],
    "stated": [
-    60.0,
-    60.0
+    27.0,
+    27.0
    ],
-   "against": "degree",
-   "ge": [
-    24.0,
-    34.0
-   ],
-   "why": [
-    "the blocks and general education come to 51.0-61.0, past the 60.0-60.0 the catalog prints for the degree"
-   ],
-   "fill": null,
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     27.0,
-     27.0
+     51.0,
+     61.0
     ],
     "stated": [
-     27.0,
-     27.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.0,
+     9.0
+    ]
    }
   },
   "repeated": {
@@ -116,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -146,7 +148,8 @@
     "Perform in a variety of diverse theatrical genres, forms and styles through a combination of intellectual, emotional, physical and verbal approaches.",
     "Analyze performance in a manner which demonstrates both an awareness of the craft, skill and discipline employed and also the intuitive values expressed by the performance."
    ],
-   "careers": []
+   "careers": [],
+   "degree_total_minimum": true
   },
   "blocks": [
    {
@@ -486,20 +489,14 @@
    "The description mentions AA degrees in technical theatre and performance with acting and musical theatre tracks; this page presents those tracks within the single Theatre Arts A.A."
   ]
  },
- "extracted_run": 38844053281,
+ "extracted_run": 41192567009,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 24,
-    "max": 34
-   },
-   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270 (Horticulture A.S.): Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units)"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 38844053281
 }

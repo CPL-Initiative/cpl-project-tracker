@@ -68,20 +68,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    27.5,
-    37.0
+    29.0,
+    38.0
    ],
    "stated": [
     29.0,
     38.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 27.5-37.0; the catalog states 29.0-38.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -105,7 +103,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -641,5 +639,6 @@
    "BUSI 5, BUSI 6 and HOSP 63 are not in the closed list and are marked catalog additions."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 41192567009,
+ "read_run": "38675240344"
 }

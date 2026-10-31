@@ -64,34 +64,39 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
     18.0,
     19.0
    ],
    "stated": [
-    60.0,
-    60.0
+    18.0,
+    19.0
    ],
-   "against": "degree",
-   "ge": null,
-   "why": [
-    "the record names the degree total and the Cal-GETC pattern, but no units for it"
-   ],
-   "major": {
+   "against": "program",
+   "why": [],
+   "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     18.0,
-     19.0
+     52.0,
+     53.0
     ],
     "stated": [
-     18.0,
-     19.0
+     60.0,
+     60.0
     ],
-    "against": "program",
-    "why": []
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "fill": [
+     7.0,
+     8.0
+    ]
    }
   },
   "repeated": {
@@ -116,7 +121,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -137,8 +142,8 @@
     "max": 60
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": true,
    "outcomes": [
@@ -369,5 +374,20 @@
    "Degree total of 60 transferable units is printed as 'Total Units 60' for this award."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 41192567009,
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 34,
+    "max": 34
+   },
+   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Psychology AA-T 31860 and Sociology AA-T 32034: 'Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units' (college page read 41192128530); the GE page: Cal-GETC 'satisfies the 34 units of lower-division general education requirements')"
+  }
+ ],
+ "read_run": "38675240344"
 }

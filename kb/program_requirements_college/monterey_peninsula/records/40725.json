@@ -64,10 +64,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    9.5,
+    10.0,
     11.0
    ],
    "stated": [
@@ -75,9 +75,7 @@
     11.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 9.5-11.0; the catalog states 10.0-11.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -101,7 +99,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -171,8 +169,9 @@
       "alternatives": [
        {
         "code": "WORK 99",
-        "units": null,
-        "catalog_addition": false
+        "units": 1,
+        "catalog_addition": false,
+        "units_max": 2
        }
       ],
       "catalog_addition": true
@@ -188,5 +187,19 @@
    "The page has a 'Career Information' tab whose content is not included in the extracted text; no careers are named in the text provided."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 41192567009,
+ "reconciled": [
+  {
+   "field": "alternative_units",
+   "was": null,
+   "now": {
+    "WORK 99": [
+     1,
+     2
+    ]
+   },
+   "words": "Business - Leadership 39261: 'WORK 96 Professional and Essential Skills 2 · or WORK 99 Career-Focused Work Experience · or WORK 98 Exploratory Work Experience · or WORK 97 Service Learning Work Experience · Total Units 17'; Automotive Maintenance 38076: 'Note: WORK 99 may be offered for 0.5-4.0 units. 2.0 Units of WORK 99 are required to satisfy the work experience certificate requirement' (college page read 41192128530)"
+  }
+ ],
+ "read_run": "38675240344"
 }

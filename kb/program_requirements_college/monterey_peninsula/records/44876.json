@@ -68,10 +68,10 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    17.5,
+    18.0,
     18.0
    ],
    "stated": [
@@ -79,9 +79,7 @@
     18.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 17.5-18.0; the catalog states 18.0-18.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [
@@ -652,5 +650,6 @@
    "Total Units 18 printed for the certificate."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 41192567009,
+ "read_run": "38675240344"
 }

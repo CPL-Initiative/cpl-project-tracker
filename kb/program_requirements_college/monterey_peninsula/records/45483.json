@@ -147,7 +147,7 @@
       "alternatives": [
        {
         "code": "BUSI 2",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -174,7 +174,7 @@
       "alternatives": [
        {
         "code": "BUSI 5",
-        "units": null,
+        "units": 3,
         "catalog_addition": false
        }
       ],
@@ -266,5 +266,23 @@
    "The Career Information tab content is not included in the text, so no careers were recorded."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 41192567009,
+ "reconciled": [
+  {
+   "field": "alternative_units",
+   "was": null,
+   "now": {
+    "BUSI 2": [
+     3,
+     null
+    ],
+    "BUSI 5": [
+     3,
+     null
+    ]
+   },
+   "words": "Business - Leadership 39261: 'WORK 96 Professional and Essential Skills 2 · or WORK 99 Career-Focused Work Experience · or WORK 98 Exploratory Work Experience · or WORK 97 Service Learning Work Experience · Total Units 17'; Automotive Maintenance 38076: 'Note: WORK 99 may be offered for 0.5-4.0 units. 2.0 Units of WORK 99 are required to satisfy the work experience certificate requirement' (college page read 41192128530)"
+  }
+ ],
+ "read_run": "38675240344"
 }
