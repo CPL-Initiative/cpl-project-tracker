@@ -65,8 +65,8 @@ sections, with Sam's words).
 5. **Later, an idea of Sam's (~20:50Z):** *"set up a scheduled task to harvest the key position emails, names, titles to
    add to our MAP Colleges table"*, then the spec (~20:55Z): *"would want the cron to run weekly...District CEO, College
    CEO, VPAA, VPSS, VPBS, Dean CTE, Dean Instruction, Dean or Director of A&R, VRC Director or Coordinator, Articulation
-   Officer"*. Title variants to match (Sam): VPAA is also VP Instruction, VP Instruction and Student Services, or Chief
-   Instructional Officer (CIO); VPSS is also Chief Student Services Officer (CSSO); VPBS is also Chief Business Officer
+   Officer"*. Title variants to match (Sam): a CEO is a Chancellor (district), a Superintendent/President or a President;
+   VPAA is also Provost, VP Instruction, VP Instruction and Student Services, or Chief Instructional Officer (CIO); VPSS is also Chief Student Services Officer (CSSO); VPBS is also Chief Business Officer
    (CBO) or VP Business Services and Facilities. Ask him for others. `map_college_contacts` already carries CEO, VPAA, VPSS and Articulation Officer from MAP; the rest are new.
    A weekly scheduled task needs Sam to create it on claude.ai's routines page (S490), and writing staff contacts into a
    shared table routes through Governance first (Rule 10 a3). Not yet asked to build. The tab's PII guard forbids these addresses today: a reviewer-only
