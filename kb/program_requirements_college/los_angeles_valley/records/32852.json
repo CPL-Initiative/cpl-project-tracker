@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Theatre Arts",
  "award": "A.A- T Degree",
- "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=74",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 11413,
+  "input_tokens": 11521,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 11413,
-    "output_tokens": 1988,
+    "input_tokens": 11521,
+    "output_tokens": 1985,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,16 +30,16 @@
     "model": null
    }
   ],
-  "output_tokens": 1988,
+  "output_tokens": 1985,
   "output_tokens_details": {
-   "thinking_tokens": 651
+   "thinking_tokens": 635
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.08541,
- "ms": 15751,
+ "cost_usd": 0.08578,
+ "ms": 15425,
  "seconds": 16.0,
  "parts": null,
  "error": null,
@@ -131,7 +131,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "ASSOCIATE DEGREE FOR TRANSFER: THEATRE ARTS",
+   "section_heading": "ASSOCIATE DEGREE FOR TRANSFER: THEATRE ARTS — Associate in Arts for Transfer Degree (AA-T)",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -290,15 +290,15 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Total Minimum Units: 60 is printed at the foot of the AA-T section and recorded as degree_total; Major Units: 18-20 recorded as total_units.",
-   "Cal-GETC units (34 semester/45 quarter) come from the general ADT requirements text in this section.",
-   "The sentence 'A minimum of 18 semester units' for the major is a generic ADT rule, not used as the total; the printed Major Units 18-20 is used.",
-   "THEATER 342 is printed as 'Technical Theater Production' while the state file titles it 'Technical Stage Production'.",
-   "THEATER 291, 292 and 342 are marked ^^ (audition and/or interview required); THEATER 272 is marked * (prerequisite or corequisite).",
-   "The career statement ('entry-level employment in theater') appears under the separate ASSOCIATE DEGREE (AA) heading, not the AA-T section, so careers is left empty."
+   "Read only the AA-T section on catalog page 72 (PDF page 74); the Theater Arts AA and emphasis AAs that follow were ignored.",
+   "Major Units printed as 18-20; 'Total Minimum Units: 60' printed in the section is recorded as degree_total. Cal-GETC printed as 34 semester units.",
+   "THEATER 342 is printed as 'Technical Theater Production' while the closed list titles it 'Technical Stage Production'; treated as the same course.",
+   "THEATER 291, 292 and 342 are marked ^^ (audition and/or interview required); THEATER 272 marked * (prerequisite/corequisite).",
+   "Stated total of 3 recorded for the 'COMPLETE 3 UNITS' block from its heading.",
+   "No careers named in the AA-T section; the 'entry-level employment in theater' sentence belongs to the AA degrees section."
   ]
  },
- "extracted_run": 41117814733,
+ "extracted_run": "41141747238",
  "reconciled": [
   {
    "field": "degree_total_minimum",
@@ -306,6 +306,5 @@
    "now": true,
    "words": "Total Minimum Units: 60"
   }
- ],
- "read_run": "39006418426"
+ ]
 }

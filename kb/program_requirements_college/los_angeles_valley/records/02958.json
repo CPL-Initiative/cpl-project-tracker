@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9835,
+  "input_tokens": 9756,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9835,
-    "output_tokens": 1492,
+    "input_tokens": 9756,
+    "output_tokens": 1641,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1492,
+  "output_tokens": 1641,
   "output_tokens_details": {
-   "thinking_tokens": 439
+   "thinking_tokens": 523
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06918,
- "ms": 11982,
- "seconds": 12.2,
+ "cost_usd": 0.07184,
+ "ms": 13554,
+ "seconds": 14.4,
  "parts": null,
  "error": null,
  "score": {
@@ -135,7 +135,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "MECHANICAL DRAFTING/DESIGN Associate of Science Degree (AS)",
+   "section_heading": "(Program Code 095340, State Code 02958)",
    "measure": "units",
    "total_units": {
     "min": 27,
@@ -247,14 +247,16 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints 'T & M 027' and 'T & M 030'; matched to closed-list codes TM027 and TM030 (same titles).",
-   "Catalog titles for EGD TEK 101 ('Engineering Graphics with CAD') and EGD TEK 102 ('Engineering Graphics with CAD and Introduction to GD&T') differ slightly from the state file titles; treated as the same courses.",
-   "EGD TEK 121 (3D Computer Aided Design with Solidworks) is required in the A.S. but not in the closed list.",
-   "'Major Units: 27' recorded as total_units; 'Total Minimum Units: 60' recorded as degree_total. No GE pattern or GE units are named on the page.",
-   "The page also prints a separate Mechanical Drafting/Design Certificate of Achievement (18 units) and other certificates; only the A.S. section was read."
+   "The A.S. section begins at the top of page 135 with its program code line; the program title/award heading appears to have been printed on the previous page and is not in the supplied text, so section_heading uses the first printed line.",
+   "Catalog prints 'T & M 027' and 'T & M 030'; these were matched to closed-list TM027 and TM030 (same course numbers and titles), so catalog_addition is false.",
+   "EGD TEK 121 (3D Computer Aided Design with Solidworks) is not in the closed list and is recorded as a catalog addition.",
+   "'Major Units: 27' recorded as total_units; 'Total Minimum Units: 60' recorded as degree_total. No GE pattern or GE units are named in this section.",
+   "Catalog titles for EGD TEK 101/102 differ from the state file titles ('Engineering Graphics with CAD' vs 'Engineering Graphics'); codes match.",
+   "MATH 240 is marked with * (has a prerequisite or corequisite).",
+   "The page also prints a separate Mechanical Drafting/Design Certificate of Achievement (State Code 21894) and other certificates; these were not used."
   ]
  },
- "extracted_run": 41117814733,
+ "extracted_run": "41141747238",
  "reconciled": [
   {
    "field": "ge_units",
@@ -274,6 +276,5 @@
    "now": true,
    "words": "Total Minimum Units: 60"
   }
- ],
- "read_run": "39006418426"
+ ]
 }

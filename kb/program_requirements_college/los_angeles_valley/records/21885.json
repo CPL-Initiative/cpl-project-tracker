@@ -4,12 +4,12 @@
  "shape": "certificate",
  "title": "Journalism: Newspaper",
  "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
- "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9431,
+  "input_tokens": 6480,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9431,
-    "output_tokens": 1120,
+    "input_tokens": 6480,
+    "output_tokens": 1379,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1120,
+  "output_tokens": 1379,
   "output_tokens_details": {
-   "thinking_tokens": 0
+   "thinking_tokens": 279
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06012,
- "ms": 8457,
- "seconds": 8.7,
+ "cost_usd": 0.0535,
+ "ms": 10644,
+ "seconds": 11.1,
  "parts": null,
  "error": null,
  "score": {
@@ -126,7 +126,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "JOURNALISM: NEWSPAPER Certificate of Achievement (CA) (Program Code 060200, State Code 21885)",
+   "section_heading": "Certificate of Achievement in Journalism: Newspaper (Program Code 060200, State Code 21885)",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -281,10 +281,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "The closed list names only JOURNAL 218-1; every other course in the certificate section is recorded as a catalog addition.",
-   "The certificate's printed outcomes are identical to those printed for the Journalism: Magazine certificate; recorded as printed under the Newspaper certificate.",
-   "Program table lists 21 major units for the Newspaper CA, matching 'Total: 21'."
+   "The excerpt begins at the program code line; no separate heading is printed, so section_heading is taken from the description sentence and program code line.",
+   "Asterisks after course codes (prerequisite/corequisite markers) were dropped from the codes.",
+   "Only JOURNAL 218-1 is on the closed list; all other courses are recorded as catalog additions."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": "41141747238"
 }

@@ -14,6 +14,26 @@ related:
 
 # The Library and its filer — lessons
 
+## S531 SkyOlallieberry (2026-10-30): the Chancellor's Summit address, a public page with its film
+
+- **Live** at https://cpl-initiative.github.io/cpl-project-tracker/library/chancellor-summit-address/ (#2592; CPLBrain#565).
+  Sam: *"Can I host it from git or the library itself?"*, after his Library record linked SharePoint, which only RCCD
+  opens. The page is `library_page.py`'s copy of a source in the vault, with the public header, the film (13.7 MB,
+  H.264 CRF 23, AAC 128k, faststart), captions as a default WebVTT track, and the transcript under its own heading.
+  `tests/library_pages.test.js` (8) holds a film page to that; `a11y.config.js` sweeps it light and dark.
+- **The vault encodes and the session carries.** Handoff 531 planned a tracker workflow, which would need the Drive
+  file's id in this public repo. The vault's runner (`tools/video_accessible.py`, a job with `web`) commits the web
+  MP4 to its branch; the session copies it to `library/<slug>/` and deletes it from the vault branch before review.
+- **The high end.** Sam: *"Her voice audio still has distortion on the high end, not sure you can fix that."* The
+  recording clipped at capture. An `ab_of` job rendered the loudest 40 s five ways, each at -16 LUFS so the louder
+  one never wins. Round 1's dynamic treatments moved 3-8 kHz only 1-2 dB, because the source runs compressed (LRA 4);
+  round 2 set their thresholds under the average. Sam picked *gentle* (a light de-esser and a 3 dB shelf above 6 kHz):
+  *"Ok, still has the distortion but nothing you can do about that. gentle sounds the best to me."* In the full film
+  it lowers 3-8 kHz 6.5 dB and above 8 kHz 12.2 dB (`cpl_memory` `sam-chancellor-address-gentle-high-end-2026-10-30`).
+- **Waiting on Sam, no card:** whether to repoint the address's Library record from SharePoint to the Pages address
+  (Sierra reads a `library/` page only through a record that links it), and filing the gentle MP4s from run
+  41139746530 to CPLLibrary.
+
 ## 2026-10-06 — S338: the first real Google sign-in, and the first filing by hand
 
 Sam set up the filer's sign-in with this session walking him through it. The guide was wrong or silent at

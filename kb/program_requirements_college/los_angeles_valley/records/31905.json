@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 8257,
+  "input_tokens": 6696,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 8257,
-    "output_tokens": 1557,
+    "input_tokens": 6696,
+    "output_tokens": 1220,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1557,
+  "output_tokens": 1220,
   "output_tokens_details": {
-   "thinking_tokens": 519
+   "thinking_tokens": 265
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06417,
- "ms": 13284,
- "seconds": 13.6,
+ "cost_usd": 0.05118,
+ "ms": 10137,
+ "seconds": 10.6,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "CINEMA THEORY & CRITICISM Certificate of Achievement (CA) (Program Code 061200, State Code 31905)",
+   "section_heading": "Cinema Theory & Criticism",
    "measure": "units",
    "total_units": {
     "min": 21,
@@ -131,7 +131,7 @@
   },
   "blocks": [
    {
-    "name": "COMPLETE THE FOLLOWING 3 REQUIRED COURSES:",
+    "name": "COMPLETE THE FOLLOWING 3 REQUIRED COURSES",
     "rule": "all",
     "minimum": null,
     "option_group": null,
@@ -164,7 +164,7 @@
     ]
    },
    {
-    "name": "COMPLETE 4 COURSES FROM THE FOLLOWING:",
+    "name": "COMPLETE 4 COURSES FROM THE FOLLOWING",
     "rule": "choose_courses",
     "minimum": 4,
     "option_group": null,
@@ -228,10 +228,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Read the Certificate of Achievement section (State Code 31905) only; the page also prints the A.A. degree (same courses, Major Units: 21, Total Minimum Units: 60) and the Cinema Production certificate.",
-   "Catalog prints JOURNAL 101 as 'Collecting and Writing the News'; closed list title is 'Collecting And Writing News'.",
-   "Outcomes text also mentions 'gainful employment in the entertainment industry'; not recorded as a separate career since it appears only within an outcome statement."
+   "The excerpt begins at the program code line; the section's printed heading is not in the text, so section_heading uses the program title. A reviewer should confirm the heading on the preceding page.",
+   "Elective courses' units are printed in parentheses (3); recorded as 3 units each.",
+   "Program code 061200 / State code 31905 identifies this section; footer says 'Cinema, continued next page.'"
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": "41141747238"
 }

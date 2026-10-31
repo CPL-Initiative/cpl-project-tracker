@@ -1563,7 +1563,8 @@ const NUMBERED = {
       "HED 100": { title: "Contemporary Health Problems",
         ids: [{ kind: "C-ID", id: "HLTH 100", title: "Health Education" }, { kind: "M-ID", id: "HLTH M1001", title: "Personal Health" }],
         here: { recs: 1, credentials_n: 1, exhibits_n: 2, untitled_n: 1, exhibits: [
-          { exhibit: "MAPMM-BMT-1-001", title: "Basic Military Training", credential: "Basic Military Training", type: "Military", recs: ["3 hours in Contemporary Health Problems"] }] } },
+          { exhibit: "MAPMM-BMT-1-001", title: "Basic Military Training", credential: "Basic Military Training", type: "Military", recs: ["3 hours in Contemporary Health Problems"] }] },
+        adopt: { credentials_n: 1, credentials: [{ credential: "American Red Cross First Aid", colleges: ["Fullerton College"] }] } },
       "ENGL C1000": { title: "Academic Reading and Writing", identity: { kind: "CCN", id: "ENGL C1000", title: "Academic Reading and Writing" } },
       "ART 110": { title: "Drawing", identity: { kind: "CCR", id: "ARTS M1010", title: "Drawing I" } } } }
 };
@@ -1571,6 +1572,8 @@ block("(17)", function () {
   const m = loadModule();
   m.M._state.registry = REGISTRY; m.M._state.records = [NUMBERED]; pickAll(m.M); m.M._state.view = "records";
   m.M._state.open = { "Cerritos College|41982": true }; m.M._render();
+  // map_links.js stands in: a span the module would fill from the verified MAP index.
+  m.w.CPL_MAP_LINKS = { node: function (t) { const s = m.w.document.createElement("span"); s.className = "cpl-maplinks"; s.setAttribute("data-ml-title", t); return s; } };
   const rows = m.root.querySelectorAll("article.prh-rec tbody tr");
   const hed = rows[0], engl = rows[1], art = rows[2];
   const chips = Array.prototype.map.call(hed.querySelectorAll("button.prh-id"), function (b) { return b.textContent; });
@@ -1595,6 +1598,9 @@ block("(17)", function () {
     !!d && /Articulated at Cerritos \(2\)/.test(d.textContent) && /Basic Military Training/.test(d.textContent) &&
     /Military/.test(d.textContent) && /3 hours in Contemporary Health Problems/.test(d.textContent) && /1 more exhibit in MAP carries no title/.test(d.textContent),
     d && d.textContent.slice(0, 300));
+  const ml = d.querySelector('.cpl-maplinks[data-ml-title="American Red Cross First Aid"]');
+  check("(17) a credential the college could adopt carries the MAP line (Request Quick Adopt)", !!ml && !!ml.closest("li"),
+    d && d.innerHTML.slice(-400));
   check("(17) the page behind is inert while it is open", m.root.closest("[inert]") === m.root);
   d.parentNode.dispatchEvent(new m.w.KeyboardEvent("keydown", { key: "Escape", bubbles: true }));
   check("(17) Escape closes it and returns to the count", !m.w.document.querySelector(".prh-exdialog") && m.w.document.activeElement === cpl && !m.root.hasAttribute("inert"));

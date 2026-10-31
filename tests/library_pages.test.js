@@ -20,7 +20,8 @@
 //       is (Sam, 2026-10-26: "so new-to-CPL users will not be immediately lost in our
 //       acronyms"), on these pages and on the CPL opportunity visual;
 //   (7) the Ask Sierra chip, opening the library's side bar (Sam, 2026-10-26: "on all visuals
-//       and opens the same way it does in the Public Library"), on the same pages.
+//       and opens the same way it does in the Public Library"), on the same pages;
+//   (8) a page that plays a film: captions on by default, no autoplay, the transcript, its files.
 // Run from repo root: `node tests/library_pages.test.js`.
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -199,6 +200,27 @@ for (const p of HEADERED) {
       used.length >= 8 && !missing.length && !/--sierra-bar-[a-z-]+:\s*#/.test(p.html) && /html\.sbar-chip-on (body|main) ?\{ ?padding-bottom: ?(7[2-9]|8\d|9\d)px/.test(p.html),
       "missing: " + missing.join(", "));
   }
+}
+
+// (8) A page that plays a film (the Chancellor's Summit address, S531; Sam, 2026-10-30: "make this video of
+// the Chancellor accessible", then "Can I host it from git or the library itself?"): captions on by default
+// from a file beside it, nothing that plays on its own, the transcript on the page, and every file it plays
+// in the folder and under GitHub's 100 MB limit.
+for (const p of pages.filter((x) => /<video\b/.test(x.html))) {
+  const d = new JSDOM(p.html).window.document, dir = path.join(LIB, p.slug);
+  const videos = Array.from(d.querySelectorAll("video"));
+  const tracks = videos.map((v) => v.querySelector('track[kind="captions"][srclang="en"][default]'));
+  check(`(8) ${p.slug}: ⭐ every film carries English captions, on by default, from a WebVTT file beside the page`,
+    tracks.every((t) => t && /\.vtt$/.test(t.getAttribute("src")) && fs.existsSync(path.join(dir, t.getAttribute("src"))) &&
+      /^WEBVTT\b/.test(fs.readFileSync(path.join(dir, t.getAttribute("src")), "utf8"))));
+  check(`(8) ${p.slug}: a film waits for the reader (controls, no autoplay or loop) and has a name`,
+    videos.every((v) => v.hasAttribute("controls") && !v.hasAttribute("autoplay") && !v.hasAttribute("loop") && (v.getAttribute("aria-label") || "").length > 10));
+  const files = videos.flatMap((v) => Array.from(v.querySelectorAll("source")).map((s) => s.getAttribute("src")).concat(v.getAttribute("poster") || []));
+  check(`(8) ${p.slug}: every file a film plays sits in the folder, under 100 MB`,
+    files.length > 0 && files.every((f) => fs.existsSync(path.join(dir, f)) && fs.statSync(path.join(dir, f)).size < 100e6), files.join(", "));
+  const h2 = Array.from(d.querySelectorAll("h2")).find((h) => /Transcript/.test(h.textContent));
+  const words = h2 ? h2.parentNode.textContent.trim().split(/\s+/).length : 0;
+  check(`(8) ${p.slug}: ⭐ the transcript is on the page, under its own heading`, words > 300, words + " words");
 }
 
 let pass = 0;

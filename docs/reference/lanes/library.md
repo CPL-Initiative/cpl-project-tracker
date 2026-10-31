@@ -212,4 +212,4 @@ already here (by a label naming its kind, its link, a file named for it, or the 
 what to do with it; long instructions go whole into `sources`, and every rebuild is remediated. The record moved verbatim to
 [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S520's side session)*.
 
-**The Chancellor's address:** NEXT, a Pages copy (handoff 531 item 1).
+**The Chancellor's address** is on Pages with its film: lessons S531.

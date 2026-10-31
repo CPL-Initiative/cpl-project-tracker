@@ -1716,7 +1716,8 @@
       kids.push(el("h4", { text: "Could adopt (" + ad.credentials_n + ")" }));
       kids.push(el("ul", { cls: "prh-exlist" }, ad.credentials.map(function (a) {
         return el("li", {}, [el("b", { text: a.credential }),
-          el("span", { cls: "prh-alts", text: "Articulated to a course of the same identity at " + (a.colleges || []).map(shortCollege).join(", ") })]);
+          el("span", { cls: "prh-alts", text: "Articulated to a course of the same identity at " + (a.colleges || []).map(shortCollege).join(", ") }),
+          mapLine(a.credential)]);
       })));
       if (ad.credentials_n > ad.credentials.length) kids.push(el("p", { cls: "prh-small prh-quiet", text: "And " + (ad.credentials_n - ad.credentials.length) + " more." }));
     }
@@ -1890,6 +1891,13 @@
     return out;
   }
   function shortCollege(c) { return String(c || "").replace(/\s+College$/, ""); }
+  /* The MAP line beside a credential this college could adopt (Sam, 2026-10-30: "I want to
+   * integrate the Request Adopt buttons wherever possible"). map_links.js draws a chip per
+   * college that built the exhibit, opening MAP where Request Quick Adopt sits; no module, no line. */
+  function mapLine(title) {
+    var M = window.CPL_MAP_LINKS;
+    return M && typeof M.node === "function" && title ? M.node(title) : null;
+  }
   function monthDay(ts) {
     var d = ts ? new Date(ts) : null;
     if (!d || isNaN(d.getTime())) return "";

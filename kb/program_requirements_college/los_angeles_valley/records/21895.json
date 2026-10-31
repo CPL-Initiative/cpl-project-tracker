@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9877,
+  "input_tokens": 9139,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9877,
-    "output_tokens": 1428,
+    "input_tokens": 9139,
+    "output_tokens": 1447,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1428,
+  "output_tokens": 1447,
   "output_tokens_details": {
-   "thinking_tokens": 471
+   "thinking_tokens": 461
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.06807,
- "ms": 10556,
- "seconds": 10.9,
+ "cost_usd": 0.0655,
+ "ms": 11759,
+ "seconds": 12.1,
  "parts": null,
  "error": null,
  "score": {
@@ -109,7 +109,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "CERTIFICATE OF ACHIEVEMENT: ENGINEERING TECHNOLOGY: INDUSTRIAL/MANUFACTURING",
+   "section_heading": "(Program Code 095600, State Code 21895)",
    "measure": "units",
    "total_units": {
     "min": 25,
@@ -154,8 +154,8 @@
     "minimum": null,
     "option_group": null,
     "stated": {
-     "min": null,
-     "max": null
+     "min": 25,
+     "max": 25
     },
     "courses": [
      {
@@ -220,12 +220,11 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Printed codes differ in format from the closed list but name the same courses: ELECTRN 004 = ELECTRN 4, NUM CON 021 = NUM CON 21, T & M 027 = TM027, T & M 030 = TM030.",
-   "CIS 104 is printed with '(Formerly CO SCI 830)'.",
-   "ELECTRN 004 is marked * (has a prerequisite or corequisite).",
-   "Printed course units sum to 25, matching 'Total: 25'.",
-   "The page also prints a Mechanical Drafting/Design AS and other certificates; only the Industrial/Manufacturing certificate section was read."
+   "The section's title heading is not in the excerpt (it likely sits at the bottom of the previous page); the section begins at '(Program Code 095600, State Code 21895)' and its description calls it 'The Industrial Technology/Manufacturing Certificate'. State Code 21895 identifies it as distinct from Mechanical Engineering (21896).",
+   "Catalog prints 'Total: 25' after the block; recorded as the block's stated total and as total_units.",
+   "ELECTRN 004 matches closed-list ELECTRN 4; NUM CON 021 matches NUM CON 21; T & M 027 and T & M 030 match TM027 and TM030 (closed list stores no units; catalog prints 4 and 3).",
+   "ELECTRN 004 is marked with * (has a prerequisite or corequisite)."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": "41141747238"
 }

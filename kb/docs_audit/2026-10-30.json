@@ -11,9 +11,9 @@
   },
   "summary": {
     "files": 1334,
-    "bytes": 13529894,
+    "bytes": 13527881,
     "over_budget": 1,
-    "handoff_max": 531,
+    "handoff_max": 532,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59974,
     "superseded_files": 0,
@@ -25,18 +25,18 @@
         "over": 0
       },
       "other": {
-        "files": 137,
-        "bytes": 4151156,
+        "files": 136,
+        "bytes": 4147331,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9061,
+        "bytes": 8858,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2483927,
+        "bytes": 2484586,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 449648,
+        "bytes": 445431,
         "over": 1
       },
       "handoff": {
-        "files": 500,
-        "bytes": 3586172,
+        "files": 501,
+        "bytes": 3591745,
         "over": 0
       }
     },
@@ -59,14 +59,13 @@
       "kb_note_dialect": 1,
       "oversized_doc": 1,
       "house_voice": 1,
-      "vault_heavy_path": 71,
-      "checkpoint_overdue": 1
+      "vault_heavy_path": 72
     },
     "vault": {
-      "files": 25120,
-      "bytes": 4006896046,
-      "heavy_bytes": 2838020207,
-      "heavy_share": 0.708,
+      "files": 25125,
+      "bytes": 4038009790,
+      "heavy_bytes": 2870504949,
+      "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -75,6 +74,7 @@
         "cpl-project-tracker/cip_fitcheck",
         "cpl-project-tracker/kb/unclassified_fold",
         "cpl-project-tracker/prototype/landing_page_video",
+        "cpl-project-tracker/library",
         "cpl-project-tracker/tmc",
         "cpl-project-tracker/kb/course_outcomes",
         "cpl-project-tracker/unified_courses_member_desc.js",
@@ -184,20 +184,20 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1739222416,
+        "bytes": 1756662132,
         "kind": "dir"
       },
-      "message": "directory totals 1,739,222,416 B inside the vault"
+      "message": "directory totals 1,756,662,132 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
       "fixable": false,
       "path": "kb/program_requirements_college",
       "detail": {
-        "bytes": 146435336,
+        "bytes": 146463976,
         "kind": "dir"
       },
-      "message": "directory totals 146,435,336 B inside the vault"
+      "message": "directory totals 146,463,976 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -248,6 +248,16 @@
         "kind": "dir"
       },
       "message": "directory totals 26,846,596 B inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
+      "path": "library",
+      "detail": {
+        "bytes": 15016386,
+        "kind": "dir"
+      },
+      "message": "directory totals 15,016,386 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -888,17 +898,6 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
-    },
-    {
-      "rule": "checkpoint_overdue",
-      "fixable": false,
-      "path": "docs/session_531_handoff.md",
-      "detail": {
-        "commits_since": 20,
-        "budget": 6,
-        "handoff": "session_531_handoff.md"
-      },
-      "message": "20 commit(s) have landed since `docs/session_531_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

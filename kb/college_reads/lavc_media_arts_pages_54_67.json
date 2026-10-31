@@ -1,0 +1,24 @@
+{
+ "_readme": "S531 SkyOlallieberry, 2026-10-30. Los Angeles Valley's Media Arts family: ten filed records place none of their listed courses (17625, 17627, 21881, 21882, 21883, 33629, 37298, 44379, 45216, 45217, filed on PDF pages 55-66) and three more fail their unit sums (17624, 17626, 37296). S530 found the fresh capture moved the family to p62. This read prints pages 54-67 in the catalog's own words, so the page finder's change is checked against where each program's heading and course list actually sit. One load of the 2026-2027 PDF, no model call.",
+ "college": "Los Angeles Valley College",
+ "questions": {
+  "program_pages": "Where each Media Arts and Film program's heading, award, control number and course list sit, page by page."
+ },
+ "keywords": [
+  "Media Arts",
+  "Film",
+  "Cinema"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_pages"
+   ],
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  54,
+  67
+ ]
+}

@@ -6,7 +6,7 @@
   "edge_functions": 11,
   "file_datasets": 729,
   "external_services": 192,
-  "consumers": 484,
+  "consumers": 485,
   "workflows": 59,
   "data_js_files": 71,
   "tabs": 38
@@ -1776,7 +1776,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2713,
+     "line": 2721,
      "tabs": [
       "program-requirements"
      ]
@@ -18538,6 +18538,13 @@
      "line": 1762
     },
     {
+     "id": "page:library/chancellor-summit-address/index.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "markup",
+     "line": 197
+    },
+    {
      "id": "page:library/cpl-opportunity/index.html",
      "kind": "page",
      "direction": "read",
@@ -22061,7 +22068,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3205
+     "line": 3209
     }
    ],
    "main_committers": []
@@ -22073,7 +22080,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 3292
+     "line": 3296
     }
    ],
    "main_committers": []
@@ -22802,7 +22809,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1778,
+     "line": 1779,
      "tabs": [
       "program-requirements"
      ]

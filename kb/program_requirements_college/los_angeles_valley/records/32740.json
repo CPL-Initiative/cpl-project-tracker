@@ -4,12 +4,12 @@
  "shape": "adt",
  "title": "Physics",
  "award": "A.S. T Degree",
- "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=49",
+ "source_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
  "record_shape": 6,
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 9443,
+  "input_tokens": 10124,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 9443,
-    "output_tokens": 967,
+    "input_tokens": 10124,
+    "output_tokens": 1858,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,64 +30,102 @@
     "model": null
    }
   ],
-  "output_tokens": 967,
+  "output_tokens": 1858,
   "output_tokens_details": {
-   "thinking_tokens": 303
+   "thinking_tokens": 540
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05711,
- "ms": 10375,
- "seconds": 10.8,
+ "cost_usd": 0.07766,
+ "ms": 15234,
+ "seconds": 15.7,
  "parts": null,
  "error": null,
  "score": {
   "measure": "units",
   "coverage": {
-   "placed": 0,
+   "placed": 3,
    "listed": 3,
-   "share": 0.0,
-   "missing": [
-    "PHYSICS37",
-    "PHYSICS38",
-    "PHYSICS39"
-   ],
+   "share": 1.0,
+   "missing": [],
    "unexplained": [],
-   "none_placed": true,
-   "pass": false
+   "none_placed": false,
+   "pass": true
   },
   "invented": {
-   "count": 0,
-   "codes": [],
-   "flagged": [],
+   "count": 10,
+   "codes": [
+    "CS115",
+    "CS117",
+    "CS119",
+    "CS136",
+    "CS216",
+    "MATH261",
+    "MATH262",
+    "MATH263",
+    "MATH270",
+    "MATH275"
+   ],
+   "flagged": [
+    "CS115",
+    "CS117",
+    "CS119",
+    "CS136",
+    "CS216",
+    "MATH261",
+    "MATH262",
+    "MATH263",
+    "MATH270",
+    "MATH275"
+   ],
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "incomplete",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    0.0,
-    0.0
+    39.0,
+    39.0
    ],
-   "stated": null,
-   "against": null,
-   "why": [
-    "the record names no total"
-   ]
+   "stated": [
+    39.0,
+    39.0
+   ],
+   "against": "program",
+   "why": [],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     73.0,
+     73.0
+    ],
+    "stated": [
+     66.0,
+     66.0
+    ],
+    "against": "degree",
+    "ge": [
+     34.0,
+     34.0
+    ],
+    "why": [],
+    "overlap": true
+   }
   },
   "repeated": {
    "codes": [],
    "pass": true
   },
   "outcomes": {
-   "program": 0,
+   "program": 5,
    "courses": 0,
-   "count": 0,
+   "count": 5,
    "not_verbatim": [],
    "why": [],
-   "heading_printed": false,
+   "heading_printed": true,
    "heading_without_outcomes": false,
    "pass": true
   },
@@ -97,20 +135,17 @@
    "pass": true
   },
   "degree": {
-   "status": "major only",
-   "why": [
-    "the record names no degree total and no general education units"
-   ]
+   "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
-   "section_heading": "REQUIREMENTS FOR THE ASSOCIATE IN ARTS FOR TRANSFER DEGREE (AA-T) OR ASSOCIATE IN SCIENCE FOR TRANSFER DEGREE (AS-T)",
+   "section_heading": "Associate in Science in Physics 2.0 for Transfer (Program Code 190200, State Code 32740)",
    "measure": "units",
    "total_units": {
-    "min": null,
-    "max": null
+    "min": 39,
+    "max": 39
    },
    "open_elective_units": null,
    "degree_elective_units": {
@@ -119,39 +154,158 @@
    },
    "ge_pattern": "Cal-GETC",
    "degree_total": {
-    "min": null,
-    "max": null
+    "min": 66,
+    "max": 66
    },
    "ge_units": {
-    "min": null,
-    "max": null
+    "min": 34,
+    "max": 34
    },
    "electives_fill_degree": false,
-   "outcomes": [],
-   "careers": []
+   "outcomes": [
+    "Explain physical phenomena encountered in mechanics, electricity and magnetism.",
+    "Explain wave theory, quantum theory and introductory ideas in relativity.",
+    "Explain the basic theories of thermodynamic and atomic structure.",
+    "Use calculus to solve problems in mechanics, electricity and magnetism.",
+    "Analyze and solve problems in thermodynamics, wave mechanics, quantum mechanics, and special relativity."
+   ],
+   "careers": [],
+   "degree_total_minimum": true
   },
-  "blocks": [],
-  "course_outcomes": [],
-  "missing_explained": [
+  "blocks": [
    {
-    "code": "PHYSICS 37",
-    "why": "Physics AS-T section not in the text; named only in the C-ID table (PHYS 205)"
+    "name": "REQUIRED CORE: COMPLETE THE FOLLOWING 8 COURSES",
+    "rule": "all",
+    "minimum": null,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "MATH 261",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 262",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 263",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 270",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "MATH 275",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "PHYSICS 037",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 038",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "PHYSICS 039",
+      "units": 5,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
    },
    {
-    "code": "PHYSICS 38",
-    "why": "Physics AS-T section not in the text; named only in the C-ID table (PHYS 210)"
-   },
-   {
-    "code": "PHYSICS 39",
-    "why": "Physics AS-T section not in the text; named only in the C-ID table (PHYS 215)"
+    "name": "REQUIRED CORE: COMPLETE ONE OF THE FOLLOWING COURSES",
+    "rule": "choose_courses",
+    "minimum": 1,
+    "option_group": null,
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "CS 115",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 117",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 119",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 136",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     },
+     {
+      "code": "CS 216",
+      "units": 3,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": true
+     }
+    ]
    }
   ],
+  "course_outcomes": [],
+  "missing_explained": [],
   "notes": [
-   "The supplied text (catalog page 49) holds only the C-ID descriptor table and the general requirements for all AA-T/AS-T degrees; the Physics A.S.-T program section itself, with its course list, is not in the text. The page refers to the program section of the catalog for the major details, which seems to begin on a later page. A reviewer should fetch the following page(s).",
-   "The 60 CSU-transferable unit requirement and the minimum 18 units in the major apply to all AA-T/AS-T degrees. They are not printed as this award's own totals, so total_units and degree_total are left null.",
-   "The ge_pattern Cal-GETC comes from the general AA-T/AS-T requirements, for students admitted Fall 2025 or later. Students with earlier catalog rights may use CSU GE-Breadth or IGETC for CSU.",
-   "No program learning outcomes or careers appear in the text for this award."
+   "The award's own heading (likely on page 148) is not in the extracted text; section_heading uses the program name and codes printed at the top of page 149 (State Code 32740).",
+   "PHYSICS 037/038/039 as printed are taken to match closed-list PHYSICS 37/38/39 (leading zero only).",
+   "Degree total taken from 'Total Minimum Units: 66'; major total from 'Major Units: 39'. The 18-unit minimum and 60-unit ADT requirement are generic statements, not this award's totals.",
+   "Course titles for MATH 270 and MATH 275 differ between the AS-T section (270 = Ordinary Differential Equations, 275 = Linear Algebra) and the AS section (275 = ODE, 270 = Linear Algebra); codes recorded as printed in the AS-T section.",
+   "The Physics AS (State Code 02976) and STEM Foundation sections on pages 150-151 were not used."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": "41141747238",
+ "reconciled": [
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "Total Minimum Units: 60"
+  }
+ ]
 }

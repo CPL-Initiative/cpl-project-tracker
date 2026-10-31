@@ -9,7 +9,7 @@
  "model": "claude-opus-5-5",
  "stop_reason": "end_turn",
  "usage": {
-  "input_tokens": 7457,
+  "input_tokens": 6912,
   "cache_creation_input_tokens": 0,
   "cache_read_input_tokens": 0,
   "cache_creation": {
@@ -18,8 +18,8 @@
   },
   "iterations": [
    {
-    "input_tokens": 7457,
-    "output_tokens": 1075,
+    "input_tokens": 6912,
+    "output_tokens": 1134,
     "cache_read_input_tokens": 0,
     "cache_creation_input_tokens": 0,
     "cache_creation": {
@@ -30,17 +30,17 @@
     "model": null
    }
   ],
-  "output_tokens": 1075,
+  "output_tokens": 1134,
   "output_tokens_details": {
-   "thinking_tokens": 232
+   "thinking_tokens": 333
   },
   "service_tier": "standard",
   "inference_geo": "global",
   "speed": "standard"
  },
- "cost_usd": 0.05133,
- "ms": 9048,
- "seconds": 9.4,
+ "cost_usd": 0.05033,
+ "ms": 9698,
+ "seconds": 10.1,
  "parts": null,
  "error": null,
  "score": {
@@ -100,7 +100,7 @@
  },
  "record": {
   "program": {
-   "section_heading": "PROPERTY MANAGEMENT Certificate of Achievement (CA)",
+   "section_heading": "Property Management (heading not printed in the extracted text; section begins with Program Code 051100, State Code 21411)",
    "measure": "units",
    "total_units": {
     "min": 18,
@@ -126,7 +126,7 @@
    ],
    "careers": [
     "manager of investment property",
-    "entry-level positions in property management"
+    "property management"
    ]
   },
   "blocks": [
@@ -214,10 +214,10 @@
   "course_outcomes": [],
   "missing_explained": [],
   "notes": [
-   "Catalog prints course numbers with leading zeros (e.g., REAL ES 001, ACCTG 001); these were matched to the closed-list codes without leading zeros (REAL ES 1, ACCTG 1, etc.) and not marked as catalog additions.",
-   "Total printed as 'Total: 18-20'; the range reflects the choice between the 5-unit ACCTG 001 and 3-unit courses in the elective block.",
-   "Elective-block units were printed in parentheses, e.g. '(5)', '(3)'."
+   "The program heading and award line for Property Management are not in the extracted text (likely at the bottom of page 85); the section was identified by its description and placement before RETAIL MANAGEMENT.",
+   "Catalog prints codes with leading zeros (e.g., REAL ES 001); these match closed-list codes without zeros (REAL ES 1).",
+   "Elective course units are printed in parentheses in the catalog."
   ]
  },
- "extracted_run": "39006418426"
+ "extracted_run": "41141747238"
 }

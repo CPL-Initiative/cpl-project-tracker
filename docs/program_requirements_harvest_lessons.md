@@ -842,6 +842,32 @@ Delta 200 of 203: lessons, *Moved from the lane (S524 compaction)*.
 **The second reader, Grok (Sam, Open Asks Sheet 97 card 1, 2026-10-19; built S421, #2246: `provider` on the function, `kb/_second_reader.py`, `second-reader.yml`, nothing written) waits on the xAI API billing moving to the RCCD district card (Sam, 2026-10-20) and the two Edge Function secrets only Sam sets; then one deploy and `second-reader.yml` with `college=Cañada College`. The ruling, the design and Jev's sittings: lessons, *Moved from the lane (S449 compaction)*.
 **Display build e021a2824548 is applied on `main` (S459: #2387 merged, `step=display` run 40027395883, 22:46Z: 17,529 statements written, none missing, no errors; the applied record committed by the run).** **Hartnell (S484-S489; lessons S484-S489):** passing rose to 81 of 94 after the `course_hours`, `ge_overlap` (#2462) and `pool_lists` (#2463; `with_floors`, #2465) steps (kept, Sheet 131 cards 3-4). **Still failing, all thirteen read (S488):** the narrow `meets` class (03537, 33851, 31591, 43119, 41819) stays as Sam ruled; a vendor gap (ABT41 in Agriculture A.S. 11803, HES120 in Vocational Nursing 03571, beside 44161 and 44574) stays incomplete; CalGETC 45096 and Music 43887 have since passed (below). Fable's advice on RN 03570 and Respiratory Care 44537 is in lessons S488. CSS/CIS codes are mixed across Hartnell's tabs, so no college-wide renumber.
 
+## S531 SkyOlallieberry (2026-10-30, Sam's session): Los Angeles Valley's "State Code", 167 to 186 passing
+
+- **Page read 41140057846** (PDF pp54-67, no model call): LA Valley heads every program "(Program Code 061220, State
+  Code 45216)". The state code is the control number. `pdf_control_number` read only East LA's "Academic Plan
+  E013343D" shape, so 74 of the catalog's 225 picks printed a number it did not see.
+- **Why the Media Arts family failed:** each certificate's title matches its degree's heading, so the certificate
+  took the degree's page (or the family's p62) and extracted no course. Counting "State Code" lifts printed numbers
+  from 151 of 225 picks to 214 (capture-only run 41141053219), and the bonus moves each program to its own page:
+  the Media Arts certificates to pp66-69, Physics A.S.-T 32740 from the front matter (p48) to p149, the Engineering
+  and Manufacturing family to its own headings. Guard in `program_requirements_college_test`.
+- **Extraction 41141747238** re-extracted the 78 programs whose page moved, for $5.37: 19 failing records pass, 41
+  passing ones still pass, and three regressed. Two hit an HTTP 503 BOOT_ERROR from the extraction function
+  (02944, 02950) and Marketing 21876 read p83 and placed none; their earlier files stand, so the reread skipped them.
+  Commercial Music 11546 and 31765 left the capture as unproven (their page prints neither the number nor the
+  title); both placed none before.
+- **Reread 41142694138** replaced 62 rows; **load 41142935133** inserted the 11 that had placed none and stayed out.
+  **Live: 167 of 204 to 186 of 215 passing**, read back 23:14Z. Display build f8c94ef23142 carries them.
+- **Lesson: a catalog that prints the control number gives the page finder an exact key.** Before tuning title
+  matching for look-alike programs, page-read one of their pages and look for the number in its heading.
+- **Lesson: compare the re-extracted verdicts before a reread posts them.** A full read re-extracts every program
+  whose page moved, passing ones too; a regressed record's restored file keeps its old run, so the reread skips it.
+- **Left at LA Valley (29 failing live, 8 outside the load):** the Engineering and Manufacturing family's coverage
+  (10, now read from their own headings; not yet read against the page), 12 program sums that fail while the degree
+  adds up, 5 incomplete, 2 unequal (Respiratory Therapy 21899 prints 74). Outside the load, 8 still place none
+  (Post-Production and Screenwriting, IGETC, Spanish, Computerized Bookkeeping, UCTP Physics).
+
 ## S530 SkyBuffaloberry (2026-10-30, Sam's session): Los Angeles Valley's degrees, the 60 a floor, the GE plans' units
 
 - **All 67 failing degrees added their major up equal and failed at the degree.** 38 summed the major alone against

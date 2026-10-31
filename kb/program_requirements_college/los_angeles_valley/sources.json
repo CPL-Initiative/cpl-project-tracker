@@ -91,16 +91,16 @@
    "REALES7"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": "AA V002943C Any GE^ 37 Y",
-   "h1": "AA V002943C Any GE^ 37 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": "Program Code 050400, State Code 02943)",
+   "h1": "Program Code 050400, State Code 02943)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
     84,
     85,
-    86
+    86,
+    87
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -125,14 +125,12 @@
    "MGMT31"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": "CA V002944D n/a 20 Y",
-   "h1": "CA V002944D n/a 20 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+   "title": "(Program Code 050600, State Code 02944)",
+   "h1": "(Program Code 050600, State Code 02944)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
-    84,
     85,
     86
    ],
@@ -140,7 +138,7 @@
    "heading_named": false
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 7792
  },
  {
   "control_number": "02945",
@@ -166,19 +164,19 @@
    "REALES14"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": "Management AA V002945C Any GE^ 38-40 Y",
-   "h1": "Management AA V002945C Any GE^ 38-40 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": "(Program Code 050630, State Code 02945)",
+   "h1": "(Program Code 050630, State Code 02945)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
     84,
     85,
-    86
+    86,
+    87
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": false
   },
   "listed": 14,
   "text_chars": 16000
@@ -207,16 +205,16 @@
    "REALES1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": "Marketing AA V002947C Any GE^ 38 Y",
-   "h1": "Marketing AA V002947C Any GE^ 38 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
+   "title": "(Program Code 050900, State Code 02947)",
+   "h1": "(Program Code 050900, State Code 02947)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
     84,
     85,
-    86
+    86,
+    87
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -278,20 +276,19 @@
    "JOURNAL2181"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-   "title": "AA V002950C Any GE^ 19 Y",
-   "h1": "AA V002950C Any GE^ 19 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+   "title": "(Program Code 060200, State Code 02950)",
+   "h1": "(Program Code 060200, State Code 02950)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    122,
     123
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 9421
+  "text_chars": 4431
  },
  {
   "control_number": "02951",
@@ -358,8 +355,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
-   "title": "Students completing the Associate in Science in Computer Science",
-   "h1": "Students completing the Associate in Science in Computer Science",
+   "title": "(Program Code 070600, State Code 02952)",
+   "h1": "(Program Code 070600, State Code 02952)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -371,7 +368,7 @@
    "heading_named": true
   },
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 15031
  },
  {
   "control_number": "02954",
@@ -506,14 +503,12 @@
    "MSCNC124"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "AS V002958C Any",
-   "h1": "AS V002958C Any",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+   "title": "(Program Code 095340, State Code 02958)",
+   "h1": "(Program Code 095340, State Code 02958)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
-    134,
     135,
     136
    ],
@@ -521,7 +516,7 @@
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 10626
  },
  {
   "control_number": "02959",
@@ -574,13 +569,12 @@
    "NUMCON23"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "AS V002960C Any",
-   "h1": "AS V002960C Any",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": "(Program Code 095630, State Code 02960)",
+   "h1": "(Program Code 095630, State Code 02960)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
     134,
     135,
     136
@@ -589,7 +583,7 @@
    "heading_named": false
   },
   "listed": 11,
-  "text_chars": 16000
+  "text_chars": 14842
  },
  {
   "control_number": "02961",
@@ -673,8 +667,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
-   "title": "Students earning the Commercial Music AA degree have obtained",
-   "h1": "Students earning the Commercial Music AA degree have obtained",
+   "title": "(Program Code 100400, State Code 02962)",
+   "h1": "(Program Code 100400, State Code 02962)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -685,7 +679,7 @@
    "heading_named": true
   },
   "listed": 32,
-  "text_chars": 13473
+  "text_chars": 10787
  },
  {
   "control_number": "02963",
@@ -805,21 +799,20 @@
    "LING1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-   "title": "French AA V002965C Any GE^ 18-21 Y",
-   "h1": "French AA V002965C Any GE^ 18-21 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=127",
+   "title": "(Program Code 110200, State Code 02965)",
+   "h1": "(Program Code 110200, State Code 02965)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    126,
     127,
     128
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": false
   },
   "listed": 14,
-  "text_chars": 16000
+  "text_chars": 7962
  },
  {
   "control_number": "02966",
@@ -835,21 +828,19 @@
    "LING1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-   "title": "Italian AA V002966C Any GE^ 18 Y",
-   "h1": "Italian AA V002966C Any GE^ 18 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
+   "title": "(Program Code 110400, State Code 02966)",
+   "h1": "(Program Code 110400, State Code 02966)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    126,
-    127,
     128
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 16000
+  "text_chars": 3370
  },
  {
   "control_number": "02967",
@@ -921,8 +912,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=108",
-   "title": "ACCREDITED ASSOCIATE OF SCIENCE IN RESPIRATORY THERAPY (61",
-   "h1": "ACCREDITED ASSOCIATE OF SCIENCE IN RESPIRATORY THERAPY (61",
+   "title": "(Program Code 121000, State Code 02970)",
+   "h1": "(Program Code 121000, State Code 02970)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -934,7 +925,7 @@
    "heading_named": true
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 15870
  },
  {
   "control_number": "02974",
@@ -993,13 +984,12 @@
    "PHYSICS39"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
-   "title": "Physics AS V002976C Any GE^ 36-38 Y",
-   "h1": "Physics AS V002976C Any GE^ 36-38 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
+   "title": "(Program Code 190200, State Code 02976)",
+   "h1": "(Program Code 190200, State Code 02976)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    149,
     150,
     151
    ],
@@ -1007,7 +997,7 @@
    "heading_named": true
   },
   "listed": 15,
-  "text_chars": 12708
+  "text_chars": 8474
  },
  {
   "control_number": "02977",
@@ -1073,13 +1063,12 @@
    "SOC12"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
-   "title": "96  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "96  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
+   "title": "(Program Code 130500, State Code 02980)",
+   "h1": "(Program Code 130500, State Code 02980)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    98,
     99,
     100,
     101
@@ -1308,8 +1297,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=163",
-   "title": "Students completing the Associate in Arts in Sociology for Transfer",
-   "h1": "Students completing the Associate in Arts in Sociology for Transfer",
+   "title": "(Program Code 220800, State Code 02988)",
+   "h1": "(Program Code 220800, State Code 02988)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1320,7 +1309,7 @@
    "heading_named": true
   },
   "listed": 12,
-  "text_chars": 9706
+  "text_chars": 5581
  },
  {
   "control_number": "02989",
@@ -1410,22 +1399,20 @@
    "REALES7"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": "CA V008530D n/a 19-20 Y",
-   "h1": "CA V008530D n/a 19-20 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+   "title": "(Program Code 050404, State Code 08530)",
+   "h1": "(Program Code 050404, State Code 08530)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
-    84,
     85,
     86
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 10889
  },
  {
   "control_number": "08531",
@@ -1533,20 +1520,19 @@
    "JOURNAL220"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-   "title": "AA V008533C Any GE^ 19 Y",
-   "h1": "AA V008533C Any GE^ 19 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+   "title": "(Program Code 060200, State Code 08533)",
+   "h1": "(Program Code 060200, State Code 08533)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    122,
     123
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 9469
+  "text_chars": 5436
  },
  {
   "control_number": "08535",
@@ -1568,13 +1554,12 @@
    "BRDCSTG5"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": "AA V008535C Any GE^ 32 Y",
-   "h1": "AA V008535C Any GE^ 32 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+   "title": "(Program Code 060420, State Code 08535)",
+   "h1": "(Program Code 060420, State Code 08535)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    55,
     56,
     57
    ],
@@ -1582,7 +1567,7 @@
    "heading_named": false
   },
   "listed": 10,
-  "text_chars": 15186
+  "text_chars": 8142
  },
  {
   "control_number": "08536",
@@ -1606,13 +1591,12 @@
    "BRDCSTG3"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": "AA V008536C Any GE^ 32 Y",
-   "h1": "AA V008536C Any GE^ 32 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+   "title": "(Program Code 060410, State Code 08536)",
+   "h1": "(Program Code 060410, State Code 08536)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    55,
     56,
     57
    ],
@@ -1620,7 +1604,7 @@
    "heading_named": false
   },
   "listed": 12,
-  "text_chars": 15252
+  "text_chars": 10299
  },
  {
   "control_number": "08537",
@@ -1679,13 +1663,12 @@
    "NUMCON21"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "AS V008541C Any",
-   "h1": "AS V008541C Any",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": "(Program Code 095600, State Code 08541)",
+   "h1": "(Program Code 095600, State Code 08541)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
     134,
     135,
     136
@@ -1712,13 +1695,12 @@
    "NUMCON23"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "AS V008542C Any",
-   "h1": "AS V008542C Any",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
+   "title": "(Program Code 095630, State Code 08542)",
+   "h1": "(Program Code 095630, State Code 08542)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
     134,
     135,
     136
@@ -1727,7 +1709,7 @@
    "heading_named": false
   },
   "listed": 10,
-  "text_chars": 16000
+  "text_chars": 12839
  },
  {
   "control_number": "08543",
@@ -1773,22 +1755,20 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-   "title": "Art: Studio AA V008543C Any GE^ 36-37 Y",
-   "h1": "Art: Studio AA V008543C Any GE^ 36-37 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
+   "title": "(Program Code 100200, State Code 08543)",
+   "h1": "(Program Code 100200, State Code 08543)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    51,
-    52,
     53,
     54
    ],
    "extractor": "pypdf",
-   "heading_named": true
+   "heading_named": false
   },
   "listed": 34,
-  "text_chars": 16000
+  "text_chars": 9991
  },
  {
   "control_number": "08545",
@@ -1820,8 +1800,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=71",
-   "title": "Students earning the Commercial Music AA degree have obtained",
-   "h1": "Students earning the Commercial Music AA degree have obtained",
+   "title": "(Program Code 100500, State Code 08545)",
+   "h1": "(Program Code 100500, State Code 08545)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1832,7 +1812,7 @@
    "heading_named": true
   },
   "listed": 19,
-  "text_chars": 13473
+  "text_chars": 13513
  },
  {
   "control_number": "08546",
@@ -1853,8 +1833,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-   "title": "The Music Technology certificate provides the student with career",
-   "h1": "The Music Technology certificate provides the student with career",
+   "title": "(Program Code 100502, State Code 08546)",
+   "h1": "(Program Code 100502, State Code 08546)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1864,7 +1844,7 @@
    "heading_named": true
   },
   "listed": 8,
-  "text_chars": 4254
+  "text_chars": 4294
  },
  {
   "control_number": "08548",
@@ -1897,8 +1877,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=76",
-   "title": "74  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "74  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 100600, State Code 08548)",
+   "h1": "(Program Code 100600, State Code 08548)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1909,7 +1889,7 @@
    "heading_named": false
   },
   "listed": 20,
-  "text_chars": 10360
+  "text_chars": 10220
  },
  {
   "control_number": "08549",
@@ -1974,8 +1954,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=75",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      73",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      73",
+   "title": "(Program Code 100703, State Code 08550)",
+   "h1": "(Program Code 100703, State Code 08550)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -1987,7 +1967,7 @@
    "heading_named": false
   },
   "listed": 20,
-  "text_chars": 16000
+  "text_chars": 13799
  },
  {
   "control_number": "08551",
@@ -2013,8 +1993,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=76",
-   "title": "CERTIFICATE OF ACHIEVEMENT:",
-   "h1": "CERTIFICATE OF ACHIEVEMENT:",
+   "title": "(Program Code 100702, State Code 08551)",
+   "h1": "(Program Code 100702, State Code 08551)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2025,7 +2005,7 @@
    "heading_named": true
   },
   "listed": 13,
-  "text_chars": 6871
+  "text_chars": 6790
  },
  {
   "control_number": "08553",
@@ -2056,14 +2036,12 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-   "title": "AA V008553C Any GE^ 35 Y",
-   "h1": "AA V008553C Any GE^ 35 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=53",
+   "title": "(Program Code 101300, State Code 08553)",
+   "h1": "(Program Code 101300, State Code 08553)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    51,
-    52,
     53,
     54
    ],
@@ -2071,7 +2049,7 @@
    "heading_named": false
   },
   "listed": 19,
-  "text_chars": 16000
+  "text_chars": 13545
  },
  {
   "control_number": "08554",
@@ -2093,8 +2071,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=54",
-   "title": "CERTIFICATE OF ACHIEVEMENT:",
-   "h1": "CERTIFICATE OF ACHIEVEMENT:",
+   "title": "(Program Code 103000, State Code 08554)",
+   "h1": "(Program Code 103000, State Code 08554)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2104,7 +2082,7 @@
    "heading_named": true
   },
   "listed": 9,
-  "text_chars": 4309
+  "text_chars": 4229
  },
  {
   "control_number": "08555",
@@ -2122,21 +2100,19 @@
    "LING1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=126",
-   "title": "German AA V008555C Any GE^ 18-19 Y",
-   "h1": "German AA V008555C Any GE^ 18-19 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=128",
+   "title": "(Program Code 110300, State Code 08555)",
+   "h1": "(Program Code 110300, State Code 08555)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    126,
-    127,
     128
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 5358
  },
  {
   "control_number": "08558",
@@ -2162,8 +2138,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      97",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      97",
+   "title": "(Program Code 130520, State Code 08558)",
+   "h1": "(Program Code 130520, State Code 08558)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2175,7 +2151,7 @@
    "heading_named": false
   },
   "listed": 13,
-  "text_chars": 16000
+  "text_chars": 15918
  },
  {
   "control_number": "08559",
@@ -2212,8 +2188,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
-   "title": "96  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "96  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 130500, State Code 08559)",
+   "h1": "(Program Code 130500, State Code 08559)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2355,20 +2331,19 @@
    "ELECTRN6"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
-   "title": "CA V010757D n/a 19 Y",
-   "h1": "CA V010757D n/a 19 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
+   "title": "(Program Code 093400, State Code 10757)",
+   "h1": "(Program Code 093400, State Code 10757)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    131,
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 10491
+  "text_chars": 2496
  },
  {
   "control_number": "10758",
@@ -2391,20 +2366,19 @@
    "ELECTRN6"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=131",
-   "title": "CA V010758D n/a 33-34 Y",
-   "h1": "CA V010758D n/a 33-34 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=132",
+   "title": "(Program Code 093400, State Code 10758)",
+   "h1": "(Program Code 093400, State Code 10758)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    131,
     132
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 11,
-  "text_chars": 10539
+  "text_chars": 4455
  },
  {
   "control_number": "10759",
@@ -2464,8 +2438,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=75",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      73",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      73",
+   "title": "(Program Code 100701, State Code 10760)",
+   "h1": "(Program Code 100701, State Code 10760)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2514,8 +2488,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=101",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      99",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      99",
+   "title": "(Program Code 130500, State Code 10761)",
+   "h1": "(Program Code 130500, State Code 10761)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2525,7 +2499,7 @@
    "heading_named": true
   },
   "listed": 24,
-  "text_chars": 6475
+  "text_chars": 6329
  },
  {
   "control_number": "10762",
@@ -2547,8 +2521,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=99",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      97",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      97",
+   "title": "(Program Code 130540, State Code 10762)",
+   "h1": "(Program Code 130540, State Code 10762)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2560,7 +2534,7 @@
    "heading_named": false
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 13958
  },
  {
   "control_number": "10763",
@@ -2587,8 +2561,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
-   "title": "98  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "98  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 130580, State Code 10763)",
+   "h1": "(Program Code 130580, State Code 10763)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2599,7 +2573,7 @@
    "heading_named": false
   },
   "listed": 14,
-  "text_chars": 12180
+  "text_chars": 12016
  },
  {
   "control_number": "10764",
@@ -2626,8 +2600,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
-   "title": "98  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "98  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 130550, State Code 10764)",
+   "h1": "(Program Code 130550, State Code 10764)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2638,7 +2612,7 @@
    "heading_named": false
   },
   "listed": 14,
-  "text_chars": 12180
+  "text_chars": 9874
  },
  {
   "control_number": "10765",
@@ -2657,8 +2631,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=100",
-   "title": "98  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "98  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 130590, State Code 10765)",
+   "h1": "(Program Code 130590, State Code 10765)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2669,7 +2643,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 12180
+  "text_chars": 7818
  },
  {
   "control_number": "10768",
@@ -2696,8 +2670,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=164",
-   "title": "162  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "162  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 220800, State Code 10768)",
+   "h1": "(Program Code 220800, State Code 10768)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -2707,7 +2681,7 @@
    "heading_named": false
   },
   "listed": 14,
-  "text_chars": 3533
+  "text_chars": 3383
  },
  {
   "control_number": "11545",
@@ -2739,29 +2713,34 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 0.889,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
    "CINEMA114",
+   "MEDIART100",
    "MEDIART101",
-   "MEDIART118",
-   "MEDIART129"
+   "MEDIART116",
+   "MEDIART118"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": "(Program Code 061220, State Code 17624)",
+   "h1": "(Program Code 061220, State Code 17624)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    64,
+    65,
+    66,
+    67
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 9,
-  "text_chars": 5593
+  "text_chars": 16000
  },
  {
   "control_number": "17625",
@@ -2805,28 +2784,33 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
    "CINEMA111",
+   "MEDIART100",
    "MEDIART101",
    "MEDIART113"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
+   "title": "(Program Code 061220, State Code 17626)",
+   "h1": "(Program Code 061220, State Code 17626)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    65,
+    66,
+    67,
+    68
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 7,
-  "text_chars": 5593
+  "text_chars": 16000
  },
  {
   "control_number": "17627",
@@ -3071,22 +3055,19 @@
    "REALES7"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": "CA V021411D n/a 18-20 Y",
-   "h1": "CA V021411D n/a 18-20 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
+   "title": "(Program Code 051100, State Code 21411)",
+   "h1": "(Program Code 051100, State Code 21411)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
-    84,
-    85,
     86
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 3063
  },
  {
   "control_number": "21874",
@@ -3205,19 +3186,19 @@
    "CAOT97"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=87",
-   "title": "CA V021878D n/a 30 Y",
-   "h1": "CA V021878D n/a 30 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=88",
+   "title": "(Program Code 051400, State Code 21878)",
+   "h1": "(Program Code 051400, State Code 21878)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    87,
     88,
     89,
-    90
+    90,
+    91
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 11,
   "text_chars": 16000
@@ -3269,29 +3250,33 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 0.889,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
    "CINEMA114",
+   "MEDIART100",
    "MEDIART101",
-   "MEDIART118",
-   "MEDIART129"
+   "MEDIART116",
+   "MEDIART118"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
+   "title": "(Program Code 060101, State Code 21880)",
+   "h1": "(Program Code 060101, State Code 21880)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    67,
+    68,
+    69
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 9,
-  "text_chars": 5593
+  "text_chars": 14303
  },
  {
   "control_number": "21881",
@@ -3335,28 +3320,31 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.714,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
    "CINEMA111",
+   "MEDIART100",
    "MEDIART101",
    "MEDIART113"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=68",
+   "title": "(Program Code 060103, State Code 21882)",
+   "h1": "(Program Code 060103, State Code 21882)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    68,
+    69
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 7,
-  "text_chars": 5593
+  "text_chars": 9807
  },
  {
   "control_number": "21883",
@@ -3403,20 +3391,19 @@
    "JOURNAL220"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-   "title": "CA V021884D n/a 18 Y",
-   "h1": "CA V021884D n/a 18 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+   "title": "(Program Code 060200, State Code 21884)",
+   "h1": "(Program Code 060200, State Code 21884)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    122,
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 9374
+  "text_chars": 3229
  },
  {
   "control_number": "21885",
@@ -3429,20 +3416,19 @@
    "JOURNAL2181"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=122",
-   "title": "CA V021885D n/a 21 Y",
-   "h1": "CA V021885D n/a 21 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=123",
+   "title": "(Program Code 060200, State Code 21885)",
+   "h1": "(Program Code 060200, State Code 21885)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    122,
     123
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 1,
-  "text_chars": 9330
+  "text_chars": 1970
  },
  {
   "control_number": "21887",
@@ -3463,21 +3449,20 @@
    "BRDCSTG5"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": "CA V021887D n/a 25 Y",
-   "h1": "CA V021887D n/a 25 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=56",
+   "title": "(Program Code 060400, State Code 21887)",
+   "h1": "(Program Code 060400, State Code 21887)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    55,
     56,
     57
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 15134
+  "text_chars": 6096
  },
  {
   "control_number": "21888",
@@ -3498,21 +3483,19 @@
    "BRDCSTG3"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": "CA V021888D n/a 25 Y",
-   "h1": "CA V021888D n/a 25 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=57",
+   "title": "(Program Code 060410, State Code 21888)",
+   "h1": "(Program Code 060410, State Code 21888)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    55,
-    56,
     57
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 15076
+  "text_chars": 3845
  },
  {
   "control_number": "21889",
@@ -3532,21 +3515,19 @@
    "BRDCSTG5"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=55",
-   "title": "CA V021889D n/a 25 Y",
-   "h1": "CA V021889D n/a 25 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=57",
+   "title": "(Program Code 060420, State Code 21889)",
+   "h1": "(Program Code 060420, State Code 21889)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    55,
-    56,
     57
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 8,
-  "text_chars": 15014
+  "text_chars": 1922
  },
  {
   "control_number": "21890",
@@ -3572,19 +3553,19 @@
    "MEDIART120"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-   "title": "Cinema Production CA V021890D n/a 30 Y",
-   "h1": "Cinema Production CA V021890D n/a 30 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
+   "title": "(Program Code 061220, State Code 21890)",
+   "h1": "(Program Code 061220, State Code 21890)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    58,
     59,
     60,
-    61
+    61,
+    62
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 14,
   "text_chars": 16000
@@ -3639,22 +3620,19 @@
    "MSCNC124"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "CA V021894D n/a 18 Y",
-   "h1": "CA V021894D n/a 18 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
+   "title": "(Program Code 095340, State Code 21894)",
+   "h1": "(Program Code 095340, State Code 21894)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
-    134,
-    135,
     136
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 16000
+  "text_chars": 1586
  },
  {
   "control_number": "21895",
@@ -3672,14 +3650,12 @@
    "NUMCON21"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "CA V021895D n/a 25 Y",
-   "h1": "CA V021895D n/a 25 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+   "title": "(Program Code 095600, State Code 21895)",
+   "h1": "(Program Code 095600, State Code 21895)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
-    134,
     135,
     136
    ],
@@ -3687,7 +3663,7 @@
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 16000
+  "text_chars": 8778
  },
  {
   "control_number": "21896",
@@ -3704,14 +3680,12 @@
    "MSCNC124"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "CA V021896D n/a 21 Y",
-   "h1": "CA V021896D n/a 21 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
+   "title": "(Program Code 095600, State Code 21896)",
+   "h1": "(Program Code 095600, State Code 21896)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
-    134,
     135,
     136
    ],
@@ -3719,7 +3693,7 @@
    "heading_named": false
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 7008
  },
  {
   "control_number": "21897",
@@ -3735,22 +3709,19 @@
    "NUMCON22"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "CA V021897D n/a 21 Y",
-   "h1": "CA V021897D n/a 21 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
+   "title": "(Program Code 095630, State Code 21897)",
+   "h1": "(Program Code 095630, State Code 21897)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
-    134,
-    135,
     136
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 7,
-  "text_chars": 16000
+  "text_chars": 5075
  },
  {
   "control_number": "21898",
@@ -3769,22 +3740,19 @@
    "NUMCON23"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-   "title": "CA V021898D n/a 27 Y",
-   "h1": "CA V021898D n/a 27 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
+   "title": "(Program Code 095630, State Code 21898)",
+   "h1": "(Program Code 095630, State Code 21898)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    133,
-    134,
-    135,
     136
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 9,
-  "text_chars": 16000
+  "text_chars": 3453
  },
  {
   "control_number": "21899",
@@ -3833,20 +3801,19 @@
    "ADMJUS911"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=95",
-   "title": "CA V021900D n/a 16 Y",
-   "h1": "CA V021900D n/a 16 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
+   "title": "(Program Code 210500, State Code 21900)",
+   "h1": "(Program Code 210500, State Code 21900)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    95,
     96
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 5,
-  "text_chars": 9279
+  "text_chars": 4702
  },
  {
   "control_number": "21901",
@@ -4048,8 +4015,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
-   "title": "118  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "118  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 493087, State Code 24464)",
+   "h1": "(Program Code 493087, State Code 24464)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4059,7 +4026,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4507
+  "text_chars": 4340
  },
  {
   "control_number": "30425",
@@ -4083,13 +4050,12 @@
    "CS236"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 39",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 39",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
+   "title": "(Program Code 070710, State Code 30425)",
+   "h1": "(Program Code 070710, State Code 30425)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    141,
     142,
     143
    ],
@@ -4097,7 +4063,7 @@
    "heading_named": false
   },
   "listed": 12,
-  "text_chars": 16000
+  "text_chars": 10349
  },
  {
   "control_number": "30499",
@@ -4259,8 +4225,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-   "title": "Estimated time to complete: 1- 2 years depending on certificate.",
-   "h1": "Estimated time to complete: 1- 2 years depending on certificate.",
+   "title": "(Program Code 100505, State Code 31399)",
+   "h1": "(Program Code 100505, State Code 31399)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -4270,7 +4236,7 @@
    "heading_named": true
   },
   "listed": 6,
-  "text_chars": 5911
+  "text_chars": 5780
  },
  {
   "control_number": "31765",
@@ -4304,20 +4270,19 @@
    "MEDIART129"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-   "title": "CA V031905D n/a 21 N",
-   "h1": "CA V031905D n/a 21 N",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
+   "title": "(Program Code 061200, State Code 31905)",
+   "h1": "(Program Code 061200, State Code 31905)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    58,
     59
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 10,
-  "text_chars": 9914
+  "text_chars": 2094
  },
  {
   "control_number": "32117",
@@ -4393,13 +4358,12 @@
    "ARTHC1200"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=51",
-   "title": "Studio Arts AA-T V032212G CalGETC 24 Y",
-   "h1": "Studio Arts AA-T V032212G CalGETC 24 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=52",
+   "title": "(Program Code 100200, State Code 32212)",
+   "h1": "(Program Code 100200, State Code 32212)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    51,
     52,
     53,
     54
@@ -4522,20 +4486,21 @@
    "PHYSICS39"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=48",
-   "title": "Physics 2.0 AS-T 147",
-   "h1": "Physics 2.0 AS-T 147",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=149",
+   "title": "(Program Code 190200, State Code 32740)",
+   "h1": "(Program Code 190200, State Code 32740)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    48,
-    49
+    149,
+    150,
+    151
    ],
    "extractor": "pypdf",
    "heading_named": true
   },
   "listed": 3,
-  "text_chars": 7740
+  "text_chars": 12141
  },
  {
   "control_number": "32741",
@@ -4555,8 +4520,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=98",
-   "title": "ASSOCIATE DEGREE FOR TRANSFER:",
-   "h1": "ASSOCIATE DEGREE FOR TRANSFER:",
+   "title": "(Program Code 130500, State Code 32741)",
+   "h1": "(Program Code 130500, State Code 32741)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5065,16 +5030,16 @@
    "MGMT33"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=84",
-   "title": "82  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "82  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=86",
+   "title": "(Program Code 050650, State Code 33859)",
+   "h1": "(Program Code 050650, State Code 33859)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    84,
-    85,
     86,
-    87
+    87,
+    88,
+    89
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -5267,20 +5232,19 @@
    "MEDIART129"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=58",
-   "title": "AA V037295C Any",
-   "h1": "AA V037295C Any",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=59",
+   "title": "(Program Code 061210, State Code 37295 )",
+   "h1": "(Program Code 061210, State Code 37295 )",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    58,
     59
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 10,
-  "text_chars": 10006
+  "text_chars": 6609
  },
  {
   "control_number": "37296",
@@ -5288,27 +5252,32 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
    "MEDIART101",
    "MEDIART104"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+   "title": "(Program Code 061220, State Code 37296)",
+   "h1": "(Program Code 061220, State Code 37296)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    66,
+    67,
+    68,
+    69
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 5593
+  "text_chars": 16000
  },
  {
   "control_number": "37297",
@@ -5316,26 +5285,30 @@
   "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.6,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
    "MEDIART101"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
+   "title": "(Program Code 061210, State Code 37297)",
+   "h1": "(Program Code 061210, State Code 37297)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    67,
+    68,
+    69
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 5593
+  "text_chars": 15754
  },
  {
   "control_number": "37298",
@@ -5343,27 +5316,29 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.667,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
    "MEDIART101",
    "MEDIART104"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=69",
+   "title": "(Program Code 061220, State Code 37298)",
+   "h1": "(Program Code 061220, State Code 37298)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    69
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 5593
+  "text_chars": 1678
  },
  {
   "control_number": "38959",
@@ -5682,8 +5657,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "title": "(Program Code 060100, State Code 39765)",
+   "h1": "(Program Code 060100, State Code 39765)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5693,7 +5668,7 @@
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 5603
+  "text_chars": 5441
  },
  {
   "control_number": "40533",
@@ -5712,8 +5687,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
-   "title": "CERTIFICATE OF ACHIEVEMENT:",
-   "h1": "CERTIFICATE OF ACHIEVEMENT:",
+   "title": "(Program Code 070710, State Code 40533)",
+   "h1": "(Program Code 070710, State Code 40533)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -5724,7 +5699,7 @@
    "heading_named": true
   },
   "listed": 6,
-  "text_chars": 12438
+  "text_chars": 12361
  },
  {
   "control_number": "40662",
@@ -5745,20 +5720,19 @@
    "PHOTO21"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=72",
-   "title": "Photography CA V040662D n/a 19-21 Y",
-   "h1": "Photography CA V040662D n/a 19-21 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=73",
+   "title": "(Program Code 101200, State Code 40662)",
+   "h1": "(Program Code 101200, State Code 40662)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    72,
     73
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 5847
+  "text_chars": 3056
  },
  {
   "control_number": "40793",
@@ -5835,20 +5809,19 @@
    "MUSIC101"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=60",
-   "title": "CA V040871D n/a 24 Y",
-   "h1": "CA V040871D n/a 24 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=61",
+   "title": "(Program Code 493087, State Code 40871)",
+   "h1": "(Program Code 493087, State Code 40871)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    60,
     61
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 10967
+  "text_chars": 6287
  },
  {
   "control_number": "40988",
@@ -5906,14 +5879,12 @@
    "MGMT1"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": "CA V041005D n/a 16-17 Y",
-   "h1": "CA V041005D n/a 16-17 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+   "title": "(Program Code 050640, State Code 41005)",
+   "h1": "(Program Code 050640, State Code 41005)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
-    84,
     85,
     86
    ],
@@ -5921,7 +5892,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 9431
  },
  {
   "control_number": "41008",
@@ -6012,20 +5983,19 @@
    "PHYSICS66"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=150",
-   "title": "CA V041493D n/a 18-21 Y",
-   "h1": "CA V041493D n/a 18-21 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=151",
+   "title": "(Program Code 490200, State Code 41493)",
+   "h1": "(Program Code 490200, State Code 41493)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    150,
     151
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 5406
+  "text_chars": 2355
  },
  {
   "control_number": "41578",
@@ -6082,20 +6052,19 @@
    "PSYCC1000"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=96",
-   "title": "CA V041579D n/a 24-25 Y",
-   "h1": "CA V041579D n/a 24-25 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=97",
+   "title": "(Program Code 490200, State Code 41579)",
+   "h1": "(Program Code 490200, State Code 41579)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    96,
     97
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 10,
-  "text_chars": 6762
+  "text_chars": 3704
  },
  {
   "control_number": "42328",
@@ -6110,8 +6079,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "title": "(Program Code 061220, State Code 42328)",
+   "h1": "(Program Code 061220, State Code 42328)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6121,7 +6090,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5603
+  "text_chars": 780
  },
  {
   "control_number": "42380",
@@ -6136,8 +6105,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
-   "title": "76  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "76  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 061220, State Code 42380)",
+   "h1": "(Program Code 061220, State Code 42380)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6147,7 +6116,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4766
+  "text_chars": 2949
  },
  {
   "control_number": "42382",
@@ -6167,8 +6136,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": "112  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "112  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 126100, State Code 42382)",
+   "h1": "(Program Code 126100, State Code 42382)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6178,7 +6147,7 @@
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 5646
+  "text_chars": 3482
  },
  {
   "control_number": "43336",
@@ -6193,8 +6162,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      79",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      79",
+   "title": "(Program Code 060420, State Code 43336)",
+   "h1": "(Program Code 060420, State Code 43336)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6204,7 +6173,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 3123
+  "text_chars": 1822
  },
  {
   "control_number": "43337",
@@ -6219,8 +6188,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      79",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      79",
+   "title": "(Program Code 061220, State Code 43337)",
+   "h1": "(Program Code 061220, State Code 43337)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6230,7 +6199,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 3123
+  "text_chars": 1049
  },
  {
   "control_number": "43338",
@@ -6245,8 +6214,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
-   "title": "76  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "76  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 061220, State Code 43338)",
+   "h1": "(Program Code 061220, State Code 43338)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6256,7 +6225,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4766
+  "text_chars": 1958
  },
  {
   "control_number": "43339",
@@ -6271,8 +6240,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=78",
-   "title": "76  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "76  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 061220, State Code 43339)",
+   "h1": "(Program Code 061220, State Code 43339)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6282,7 +6251,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4766
+  "text_chars": 1065
  },
  {
   "control_number": "43340",
@@ -6297,8 +6266,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "title": "(Program Code 061220, State Code 43340)",
+   "h1": "(Program Code 061220, State Code 43340)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6308,7 +6277,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5603
+  "text_chars": 3580
  },
  {
   "control_number": "43341",
@@ -6323,8 +6292,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "title": "(Program Code 061220, State Code 43341)",
+   "h1": "(Program Code 061220, State Code 43341)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6334,7 +6303,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5603
+  "text_chars": 2565
  },
  {
   "control_number": "43342",
@@ -6349,8 +6318,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=79",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      77",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      77",
+   "title": "(Program Code 061220, State Code 43342)",
+   "h1": "(Program Code 061220, State Code 43342)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6360,7 +6329,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5603
+  "text_chars": 1649
  },
  {
   "control_number": "43343",
@@ -6375,8 +6344,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 101200, State Code 43343)",
+   "h1": "(Program Code 101200, State Code 43343)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6386,7 +6355,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5835
+  "text_chars": 3948
  },
  {
   "control_number": "43344",
@@ -6401,8 +6370,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 061220, State Code 43344)",
+   "h1": "(Program Code 061220, State Code 43344)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6412,7 +6381,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5835
+  "text_chars": 938
  },
  {
   "control_number": "43345",
@@ -6427,8 +6396,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=81",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      79",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      79",
+   "title": "(Program Code 060200, State Code 43345)",
+   "h1": "(Program Code 060200, State Code 43345)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6438,7 +6407,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 3123
+  "text_chars": 2971
  },
  {
   "control_number": "43454",
@@ -6453,8 +6422,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 060420, State Code 43454)",
+   "h1": "(Program Code 060420, State Code 43454)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6464,7 +6433,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5835
+  "text_chars": 1667
  },
  {
   "control_number": "43579",
@@ -6479,8 +6448,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
-   "title": "118  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "118  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 493087, State Code 43579)",
+   "h1": "(Program Code 493087, State Code 43579)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6490,7 +6459,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4507
+  "text_chars": 3825
  },
  {
   "control_number": "43774",
@@ -6550,8 +6519,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=143",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 41",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 41",
+   "title": "(Program Code 070200, State Code 43994)",
+   "h1": "(Program Code 070200, State Code 43994)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6561,7 +6530,7 @@
    "heading_named": false
   },
   "listed": 5,
-  "text_chars": 5643
+  "text_chars": 5496
  },
  {
   "control_number": "43998",
@@ -6613,8 +6582,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=120",
-   "title": "118  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "118  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 493087, State Code 44162)",
+   "h1": "(Program Code 493087, State Code 44162)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6624,7 +6593,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 4507
+  "text_chars": 2586
  },
  {
   "control_number": "44265",
@@ -6711,27 +6680,31 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
    "MEDIART101",
-   "MEDIART104"
+   "MEDIART104",
+   "MEDIART107",
+   "MEDIART108"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=69",
+   "title": "(Program Code 061220, State Code 44379)",
+   "h1": "(Program Code 061220, State Code 44379)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    69
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 5593
+  "text_chars": 3712
  },
  {
   "control_number": "44391",
@@ -6739,27 +6712,34 @@
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
+   "MEDIART100",
    "MEDIART101",
-   "MEDIART104"
+   "MEDIART104",
+   "MEDIART107",
+   "MEDIART108"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+   "title": "(Program Code 061220, State Code 44391)",
+   "h1": "(Program Code 061220, State Code 44391)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    66,
+    67,
+    68,
+    69
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 8,
-  "text_chars": 5593
+  "text_chars": 16000
  },
  {
   "control_number": "44481",
@@ -6844,8 +6824,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=141",
-   "title": "ASSOCIATE DEGREE FOR TRANSFER:",
-   "h1": "ASSOCIATE DEGREE FOR TRANSFER:",
+   "title": "(Program Code: 070600, State Code: 44542)",
+   "h1": "(Program Code: 070600, State Code: 44542)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -6888,14 +6868,12 @@
    "MGMT33"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
-   "title": "CA V045136D n/a 18 Y",
-   "h1": "CA V045136D n/a 18 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=85",
+   "title": "(Program Code 050600, State Code 45136)",
+   "h1": "(Program Code 050600, State Code 45136)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    83,
-    84,
     85,
     86
    ],
@@ -6903,7 +6881,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 16000
+  "text_chars": 6398
  },
  {
   "control_number": "45137",
@@ -7003,8 +6981,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": "112  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "112  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 130500, State Code: 45161)",
+   "h1": "(Program Code 130500, State Code: 45161)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7014,7 +6992,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 5646
+  "text_chars": 4567
  },
  {
   "control_number": "45174",
@@ -7058,8 +7036,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": "112  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "112  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code: 050600, State Code: 45178)",
+   "h1": "(Program Code: 050600, State Code: 45178)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7070,7 +7048,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 11277
+  "text_chars": 6593
  },
  {
   "control_number": "45179",
@@ -7087,8 +7065,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=115",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 1 3",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 1 3",
+   "title": "(Program Code: 050600, State Code: 45179)",
+   "h1": "(Program Code: 050600, State Code: 45179)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7098,7 +7076,7 @@
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 5629
+  "text_chars": 3843
  },
  {
   "control_number": "45192",
@@ -7114,8 +7092,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=93",
-   "title": "The Banquet and Restaurant Server certificate of completion is",
-   "h1": "The Banquet and Restaurant Server certificate of completion is",
+   "title": "(Program Code 130700, State Code 45192)",
+   "h1": "(Program Code 130700, State Code 45192)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7126,7 +7104,7 @@
    "heading_named": true
   },
   "listed": 3,
-  "text_chars": 4483
+  "text_chars": 4523
  },
  {
   "control_number": "45201",
@@ -7141,8 +7119,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": "112  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "112  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 123030, State Code: 45201)",
+   "h1": "(Program Code 123030, State Code: 45201)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7152,7 +7130,7 @@
    "heading_named": false
   },
   "listed": 2,
-  "text_chars": 5646
+  "text_chars": 5492
  },
  {
   "control_number": "45202",
@@ -7167,8 +7145,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=114",
-   "title": "The In-Home Supportive Services Skills certificate of completion",
-   "h1": "The In-Home Supportive Services Skills certificate of completion",
+   "title": "(Program Code: 123080, State Code: 45202)",
+   "h1": "(Program Code: 123080, State Code: 45202)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7178,7 +7156,7 @@
    "heading_named": true
   },
   "listed": 2,
-  "text_chars": 1867
+  "text_chars": 1909
  },
  {
   "control_number": "45216",
@@ -7186,28 +7164,35 @@
   "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
   "shape": "certificate",
   "method": "pdf_pages",
-  "coverage": 0.556,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
    "CINEMA115",
+   "CINEMA117",
+   "MEDIART100",
    "MEDIART101",
-   "MEDIART115"
+   "MEDIART115",
+   "MEDIART116"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=66",
+   "title": "(Program Code 061220, State Code 45216)",
+   "h1": "(Program Code 061220, State Code 45216)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    66,
+    67,
+    68,
+    69
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 5593
+  "text_chars": 16000
  },
  {
   "control_number": "45217",
@@ -7228,16 +7213,86 @@
    "MEDIART116"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      63",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      63",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=68",
+   "title": "(Program Code 061220, State Code 45217)",
+   "h1": "(Program Code 061220, State Code 45217)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
+    68,
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 9,
+  "text_chars": 6222
+ },
+ {
+  "control_number": "45218",
+  "title": "Media Arts: Editing and Color Grading",
+  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
+  "shape": "certificate",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA120",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART116",
+   "MEDIART120",
+   "MEDIART121",
+   "MEDIART122"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=67",
+   "title": "(Program Code 061220, State Code 45218)",
+   "h1": "(Program Code 061220, State Code 45218)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    67,
+    68,
+    69
+   ],
+   "extractor": "pypdf",
+   "heading_named": false
+  },
+  "listed": 10,
+  "text_chars": 12118
+ },
+ {
+  "control_number": "45256",
+  "title": "Media Arts: Cinematography",
+  "award": "A.A. Degree",
+  "shape": "degree",
+  "method": "pdf_pages",
+  "coverage": 1.0,
+  "codes_found": [
+   "CINEMA101",
+   "CINEMA105",
+   "CINEMA107",
+   "CINEMA115",
+   "CINEMA117",
+   "MEDIART100",
+   "MEDIART101",
+   "MEDIART115",
+   "MEDIART116"
+  ],
+  "source": {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": "(Program Code 061220, State Code 45256)",
+   "h1": "(Program Code 061220, State Code 45256)",
+   "text_from": "pdf_pages",
+   "label": null,
+   "pages": [
+    64,
     65,
     66,
-    67,
-    68
+    67
    ],
    "extractor": "pypdf",
    "heading_named": false
@@ -7246,91 +7301,41 @@
   "text_chars": 16000
  },
  {
-  "control_number": "45218",
-  "title": "Media Arts: Editing and Color Grading",
-  "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-  "shape": "certificate",
-  "method": "pdf_pages",
-  "coverage": 0.5,
-  "codes_found": [
-   "CINEMA101",
-   "CINEMA105",
-   "CINEMA120",
-   "MEDIART101",
-   "MEDIART120"
-  ],
-  "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    62
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
-  "listed": 10,
-  "text_chars": 5593
- },
- {
-  "control_number": "45256",
-  "title": "Media Arts: Cinematography",
-  "award": "A.A. Degree",
-  "shape": "degree",
-  "method": "pdf_pages",
-  "coverage": 0.556,
-  "codes_found": [
-   "CINEMA101",
-   "CINEMA105",
-   "CINEMA115",
-   "MEDIART101",
-   "MEDIART115"
-  ],
-  "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "text_from": "pdf_pages",
-   "label": null,
-   "pages": [
-    62
-   ],
-   "extractor": "pypdf",
-   "heading_named": false
-  },
-  "listed": 9,
-  "text_chars": 5593
- },
- {
   "control_number": "45257",
   "title": "Media Arts: Editing and Color Grading",
   "award": "A.A. Degree",
   "shape": "degree",
   "method": "pdf_pages",
-  "coverage": 0.5,
+  "coverage": 1.0,
   "codes_found": [
    "CINEMA101",
    "CINEMA105",
+   "CINEMA107",
    "CINEMA120",
+   "MEDIART100",
    "MEDIART101",
-   "MEDIART120"
+   "MEDIART116",
+   "MEDIART120",
+   "MEDIART121",
+   "MEDIART122"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=62",
-   "title": "60  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "60  Los Angeles Valley College | General Catalog | 2026-2027",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=64",
+   "title": "(Program Code 061220, State Code 45257)",
+   "h1": "(Program Code 061220, State Code 45257)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    62
+    64,
+    65,
+    66,
+    67
    ],
    "extractor": "pypdf",
    "heading_named": false
   },
   "listed": 10,
-  "text_chars": 5593
+  "text_chars": 16000
  },
  {
   "control_number": "45258",
@@ -7352,8 +7357,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=65",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      63",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      63",
+   "title": "(Program Code 061220, State Code 45258)",
+   "h1": "(Program Code 061220, State Code 45258)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7481,8 +7486,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=93",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      9 1",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      9 1",
+   "title": "(Program Code 050600, State Code 46277)",
+   "h1": "(Program Code 050600, State Code 46277)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7492,7 +7497,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 4379
+  "text_chars": 2779
  },
  {
   "control_number": "46280",
@@ -7508,8 +7513,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=115",
-   "title": "The Tutor Training Certificate of Completion is designed to prepare",
-   "h1": "The Tutor Training Certificate of Completion is designed to prepare",
+   "title": "(Program Code 080200, State Code 46280)",
+   "h1": "(Program Code 080200, State Code 46280)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7519,7 +7524,7 @@
    "heading_named": true
   },
   "listed": 3,
-  "text_chars": 1337
+  "text_chars": 1377
  },
  {
   "control_number": "46281",
@@ -7536,8 +7541,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 101200, State Code 46281)",
+   "h1": "(Program Code 101200, State Code 46281)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7547,7 +7552,7 @@
    "heading_named": false
   },
   "listed": 4,
-  "text_chars": 5835
+  "text_chars": 5638
  },
  {
   "control_number": "46282",
@@ -7563,8 +7568,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=80",
-   "title": "78  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "78  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 101200, State Code 46282)",
+   "h1": "(Program Code 101200, State Code 46282)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7574,7 +7579,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 5835
+  "text_chars": 3181
  },
  {
   "control_number": "46333",
@@ -7595,20 +7600,19 @@
    "KINMAJ116"
   ],
   "source": {
-   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=110",
-   "title": "CA V046333D N/A 16 Y",
-   "h1": "CA V046333D N/A 16 Y",
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=111",
+   "title": "(Program Code 083510, State Code 46333)",
+   "h1": "(Program Code 083510, State Code 46333)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
-    110,
     111
    ],
    "extractor": "pypdf",
-   "heading_named": false
+   "heading_named": true
   },
   "listed": 9,
-  "text_chars": 11277
+  "text_chars": 5266
  },
  {
   "control_number": "46437",
@@ -7626,8 +7630,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=142",
-   "title": "14 0  Los Angeles Valley College | General Catalog | 2026-2027",
-   "h1": "14 0  Los Angeles Valley College | General Catalog | 2026-2027",
+   "title": "(Program Code 070200, State Code 46437)",
+   "h1": "(Program Code 070200, State Code 46437)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7637,7 +7641,7 @@
    "heading_named": false
   },
   "listed": 6,
-  "text_chars": 6899
+  "text_chars": 2618
  },
  {
   "control_number": "46442",
@@ -7653,8 +7657,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
+   "title": "(Program Code 070800, State Code 46442)",
+   "h1": "(Program Code 070800, State Code 46442)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7664,7 +7668,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 5688
+  "text_chars": 5514
  },
  {
   "control_number": "46443",
@@ -7680,8 +7684,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
+   "title": "(Program Code 070800, State Code 46443)",
+   "h1": "(Program Code 070800, State Code 46443)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7691,7 +7695,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 5688
+  "text_chars": 3591
  },
  {
   "control_number": "46444",
@@ -7707,8 +7711,8 @@
   ],
   "source": {
    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=153",
-   "title": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
-   "h1": "Los Angeles Valley College | General Catalog | 2026-2027      1 5 1",
+   "title": "(Program Code 070730, State Code 46444)",
+   "h1": "(Program Code 070730, State Code 46444)",
    "text_from": "pdf_pages",
    "label": null,
    "pages": [
@@ -7718,7 +7722,7 @@
    "heading_named": false
   },
   "listed": 3,
-  "text_chars": 5688
+  "text_chars": 1825
  },
  {
   "control_number": "46445",
