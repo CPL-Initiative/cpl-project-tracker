@@ -61,26 +61,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
     35.0,
-    35.5
+    36.0
    ],
    "stated": [
     35.0,
     36.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 35.0-35.5; the catalog states 35.0-36.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
      62.0,
-     69.5
+     70.0
     ],
     "stated": [
      60.0,
@@ -118,7 +116,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -308,7 +306,8 @@
       "alternatives": [],
       "catalog_addition": false
      }
-    ]
+    ],
+    "repeats": true
    }
   ],
   "course_outcomes": [],
@@ -321,26 +320,16 @@
    "Career positions (Recording Technician, Composer/Arranger, Music Copyist, Musician/Performer) are printed for the certificates on page 72, not for the AA, so not recorded; the AA description refers only to entry-level employment in the music industry."
   ]
  },
- "extracted_run": 41114987325,
+ "extracted_run": 41179958796,
  "reconciled": [
   {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
+   "field": "blocks",
+   "was": 2,
    "now": {
-    "min": 27,
-    "max": 34
+    "COMPLETE 2 COURSES FROM THE FOLLOWING (COURSES MAY BE REPEATED)": 2
    },
-   "words": "Total Minimum Units: 60 (https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=32: Plan No. of GE Units No. Of Major Units: LACCD GE Plan 27 18+, Cal-GETC 34 18+. The total number of units required for an Associate Degree is 60, regardless of which GE Plan is chosen.)"
-  },
-  {
-   "field": "degree_total_minimum",
-   "was": null,
-   "now": true,
-   "words": "Total Minimum Units: 60"
+   "words": "COMPLETE 2 COURSES FROM THE FOLLOWING (COURSES MAY BE REPEATED)"
   }
  ],
- "read_run": "39006418426"
+ "read_run": 41114987325
 }

@@ -5,7 +5,7 @@
  "catalog_year": "2026-2027",
  "programs": 237,
  "with_closed_list": 232,
- "started": "2026-10-31T05:28:47Z",
+ "started": "2026-10-31T07:19:02Z",
  "pdf": {
   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
   "access": "ok",
@@ -2965,7 +2965,7 @@
   ]
  },
  "loads": 1,
- "seconds": 181.4,
+ "seconds": 179.9,
  "found": 223,
  "by_method": {
   "no_closed_list": 5,
@@ -3414,8 +3414,8 @@
  },
  "would_extract": {
   "against": "kb/program_requirements_college/los_angeles_valley",
-  "kept": 211,
-  "programs": 12,
+  "kept": 221,
+  "programs": 2,
   "list": [
    {
     "control_number": "02944",
@@ -3428,56 +3428,6 @@
     "was_method": "pdf_pages"
    },
    {
-    "control_number": "02958",
-    "title": "Mechanical Drafting/Design",
-    "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02959",
-    "title": "Engineering Technology: Industrial/Manufacturing",
-    "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=133",
-    "was_coverage": 0.7,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "02960",
-    "title": "Manufacturing Technology: Metal Machining",
-    "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "was_coverage": 0.636,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08541",
-    "title": "Engineering Technology: Mechanical Engineering",
-    "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "was_coverage": 0.818,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "08542",
-    "title": "Manufacturing Technology: Numerical Control",
-    "award": "A.S. Degree",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=134",
-    "was_coverage": 0.6,
-    "was_method": "pdf_pages"
-   },
-   {
     "control_number": "21876",
     "title": "Marketing",
     "award": "Certificate of Achievement: 18  or greater semester(or 27  or greater quarter) u",
@@ -3486,58 +3436,8 @@
     "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=83",
     "was_coverage": 1.0,
     "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21894",
-    "title": "Mechanical Drafting/Design",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "was_coverage": 0.8,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21895",
-    "title": "Engineering Technology: Industrial/Manufacturing",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "was_coverage": 0.75,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21896",
-    "title": "Engineering Technology: Mechanical Engineering",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=135",
-    "was_coverage": 0.714,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21897",
-    "title": "Manufacturing Technology: Metal Machining",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "was_coverage": 0.571,
-    "was_method": "pdf_pages"
-   },
-   {
-    "control_number": "21898",
-    "title": "Manufacturing Technology: Numerical Control",
-    "award": "Certificate of Achievement requiring 16S/24Q to fewer than 30S/45Q units",
-    "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "coverage": 1.0,
-    "was_url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf#page=136",
-    "was_coverage": 0.778,
-    "was_method": "pdf_pages"
    }
   ]
  },
- "run": "41172599271"
+ "run": "41179958796"
 }
