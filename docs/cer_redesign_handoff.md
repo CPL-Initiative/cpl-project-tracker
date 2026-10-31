@@ -58,7 +58,12 @@ sections, with Sam's words).
    have those emails in our dataset. I could get the list from the CO if not"*): `ceo_email` covers 70 of 124 and fills
    none of the six with no contact, which are not funded institutions (Calbright College Credit, Cal State LA, Futuro
    Health, Launch Apprenticeship, and the Credit listings of North Orange and San Diego Continuing Education). Every
-   funded college reaches someone before the CEO step; the CO's list would complete it. The tab's PII guard forbids these addresses today: a reviewer-only
+   funded college reaches someone before the CEO step; the CO's list would complete it. **The list comes from the
+   funding tab's institutions, never `map_college_contacts`:** Cal State LA and Launch Apprenticeship are not CCCs or
+   noncredit programs and are not eligible (Sam, ~20:50Z; neither appears in the funding tab; the model skips the
+   names in `kb/non_ccc_institutions.json`, which lists only Cal State LA today).
+5. **Later, an idea of Sam's (~20:50Z):** *"set up a scheduled task to harvest the key position emails, names, titles to
+   add to our MAP Colleges table"*. Not yet asked to build; the cascade above shows which positions matter. The tab's PII guard forbids these addresses today: a reviewer-only
    read is the build's first piece. Build on his reply; if none, put it on the next sheet.
 1. **Sam's ASE naming call, asked in chat (19:30Z):** the course title as the ASE test's name plus a short tag,
    *Engine Performance (ASE A8)*, with the level kept where a college teaches a sequence. On **ASE short**, change
