@@ -46,7 +46,10 @@ receipt was written, and the docs index, lessons and KB notes were not touched.
 3. **Links into the retired tabs:** SkyElderberry moved the Commons' CER row to Exhibits (`#exhibits/held`, `/conflict`,
    `/credentials`). Its left-MAP and procedures counts still open `#credential-reference` (Exhibits has no such view);
    no Sierra Training link into either retired tab was found. Item 1 confirmed at 12:40Z: 861 at Norco College.
-4. The Catalog's *Worth a faculty review* list (credentials no college has articulated, from Credential Engine).
+4. **Built (SkyElderberry):** the Catalog's *Worth a faculty review* list, 28 Credential Engine credentials MAP has no
+   exhibit for, from a hand check (`kb/reference/credential_engine_top50_map_check.json`). The IT/AI catalog's
+   `map_status` marked 11 MAP credentials *not in MAP* (CAPM, ServSafe, EMT and eight more): its join wants fixing.
+   *Courses that may align* was left out until there is a source that names courses.
 5. Carried: training sites for a held title new to the reference, only if Sam asks; the college short-name editor; the
    CPL-AI snapshot refreshed by hand (`python3 kb/_build_cpl_ai.py --fetch`).
 

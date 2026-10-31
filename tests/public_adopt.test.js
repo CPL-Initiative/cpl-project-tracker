@@ -12,7 +12,9 @@
 //   - Create Handout opens the college's CPL opportunity visual;
 //   - the page remembers no filter (Sam, 2026-10-21): no storage write but the theme's;
 //   - Malone's look: the Library's tokens, Light unless the reader picks Dark, noindex until linked;
-//   - a failed read says so and paints no list.
+//   - a failed read says so and paints no list;
+//   - Worth a faculty review: every Credential Engine card, filtered by the search and the field and
+//     never by a college scope; its tags, the related MAP credential, and links that open a new tab.
 // Run from repo root: `npm test` (or `node tests/public_adopt.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -41,6 +43,12 @@ const DATA = {
     { t: "EMT", i: "NREMT", y: [1], s: "51", p: 4, a: [[0, 4, "EMS 1: 4 hours"], [1, 4, "EMS 2: 4 hours"], [2, 4, "EMS 3"]],
       m: [["MAP-A", 0, ""]] },
     { t: "AP Biology", i: "College Board", y: [0], s: "11", p: 4, a: [[1, 4, "BIO 1"]], m: [["MAP-X", -1, "Delta University"]] },
+  ],
+  review: [
+    { t: "Certified Welder (CW)", i: "American Welding Society", k: "ce-1", s: "51", f: "Welding (CIP 48.0508)", l: "High school",
+      o: ["Welders (51-4121)"], u: "https://aws.example/cw", r: "AWS D1.1 Structural Welder Qualification" },
+    { t: "Certified Professional Coder (CPC)", i: "AAPC", k: "ce-2", s: "11",
+      o: ["A (1)", "B (2)", "C (3)"], on: 2, n: ["Health Care (NAICS 62)"] },
   ],
 };
 
@@ -132,6 +140,41 @@ function titles(d) { return Array.from(d.querySelectorAll("#ad-list .cred h3")).
   check("the matrix sits in a labelled region", d.getElementById("ad-mx-wrap").getAttribute("role") === "region" && d.getElementById("ad-mx-wrap").getAttribute("aria-label"));
   check("one cell is in the tab order", d.querySelectorAll('.mx td[tabindex="0"]').length === 1);
   check("the page remembers no filter", one.writes.every((k) => k === "cpl_theme"));
+
+  // Worth a faculty review.
+  function reviewTitles(d) { return Array.from(d.querySelectorAll("#ad-review .cred h3")).map((h) => h.textContent); }
+  const rv = await load("?college=Alpha%20College");
+  d = rv.d;
+  check("review: shown with every card, a college pick notwithstanding", !d.getElementById("review").hidden
+    && reviewTitles(d).join("|") === "Certified Welder (CW)|Certified Professional Coder (CPC)");
+  check("review: its heading and count", d.getElementById("ad-review-h").textContent === "Worth a faculty review"
+    && d.getElementById("ad-review-state").textContent === "2 credentials");
+  const cw = d.querySelector("#ad-review .cred");
+  const dts = Array.from(cw.querySelectorAll("dl.tags dt")).map((x) => x.textContent);
+  check("review: tags are a description list in order", dts.join() === "Occupations,Field,Level");
+  check("review: the related MAP credential is named", /MAP holds a related credential from the same issuer: AWS D1\.1 Structural Welder Qualification\./.test(cw.textContent));
+  const rl = Array.from(cw.querySelectorAll("a.chip"));
+  check("review: the issuer's page and the Registry record, each in a new tab", rl.map((a) => a.textContent).join("|") === "The issuer's page|Its Credential Engine Registry record"
+    && rl[1].href === "https://credentialengineregistry.org/resources/ce-1" && rl.every((a) => a.target === "_blank" && /noopener/.test(a.rel)));
+  const cpc = d.querySelectorAll("#ad-review .cred")[1];
+  check("review: a card without a page has only the Registry link, and counts the rest", cpc.querySelectorAll("a.chip").length === 1 && /A \(1\), B \(2\), C \(3\), and 2 more/.test(cpc.textContent));
+  change(d, "ad-sector", "51");
+  check("review: the field filters it", reviewTitles(d).join() === "Certified Welder (CW)" && d.getElementById("ad-review-state").textContent === "1 of 2 credentials");
+  change(d, "ad-sector", "");
+  const q = d.getElementById("ad-q"); q.value = "aapc"; q.dispatchEvent(new rv.w.Event("input"));
+  await new Promise((r) => setTimeout(r, 220));
+  check("review: the search reads title and issuer", reviewTitles(d).join() === "Certified Professional Coder (CPC)");
+  q.value = "zzzz"; q.dispatchEvent(new rv.w.Event("input"));
+  await new Promise((r) => setTimeout(r, 220));
+  check("review: no match says so", !d.getElementById("ad-review-empty").hidden && reviewTitles(d).length === 0);
+  check("review: the pure filter", rv.w.CPL_ADOPT.reviewRows(DATA, { q: "", sector: "11" }).map((r) => r.k).join() === "ce-2");
+  const none = Object.assign({}, DATA, { review: [] });
+  const nd = new JSDOM(PAGE, { url: "https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/", runScripts: "outside-only", pretendToBeVisual: true });
+  nd.window.fetch = () => Promise.resolve({ ok: true, json: () => Promise.resolve(none) });
+  nd.window.requestAnimationFrame = (f) => setTimeout(f, 0);
+  nd.window.eval(JS);
+  await new Promise((r) => setTimeout(r, 30));
+  check("review: no rows, no section", nd.window.document.getElementById("review").hidden);
 
   const bad = await load("", { fail: true });
   check("a failed read says so", /could not be read/.test(bad.d.getElementById("ad-state").textContent) && !bad.d.querySelector("#ad-list .cred"));

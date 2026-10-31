@@ -25,6 +25,15 @@ What it joins, all committed files:
   college_lookup.js                   each college's district, SW region and ASCCC Area
   kb/college_short_names.json         the column headers' short names
 
+Worth a faculty review (the mock-up's list, built 2026-10-31 at Sam's go): Credential Engine's 50
+most-referenced credentials that MAP has no exhibit for, from
+  kb/reference/credential_engine_top50.json            the CTDL terms (occupations, industries, levels)
+  kb/reference/credential_engine_top50_map_check.json  the hand check against the reference (the
+                                                       catalog's own join missed 11 MAP holds)
+  kb/it_ai_credential_catalog.json                     the CIP code (CE's own where it gives one)
+A row is listed when its check says related or not_in_map, and dropped again the day the reference
+gains a title of the same name. A top-50 row with no check waits until one is written.
+
 Writes library/adopt/adopt_data.json, which library/adopt/adopt.js reads. Runs daily from
 daily-dashboard.yml after the Exhibits builder. It writes nothing anywhere else.
 
@@ -116,6 +125,96 @@ def line_text(lines):
     return text
 
 
+# ── Worth a faculty review ────────────────────────────────────────────────────────────────
+REVIEW_OCC = 3       # occupations named per card; the rest are counted
+REVIEW_IND = 2       # industries named per card
+REGISTRY = "https://credentialengineregistry.org/resources/"
+# CTDL audience levels, low to high, in the page's words. Beginner, Intermediate and Advanced
+# describe the learner, not the schooling, so they do not set the range.
+LEVELS = [("Secondary School or Equivalent", "high school"), ("Post-Secondary Level", "postsecondary"),
+          ("Associates Degree Level", "associate"), ("Bachelors Degree Level", "bachelor's"),
+          ("Graduate Level", "graduate"), ("Masters Degree Level", "graduate"),
+          ("Doctoral Degree Level", "graduate")]
+
+
+def norm_title(t):
+    """A title for comparison: case, marks and spacing folded."""
+    return re.sub(r"[^a-z0-9]+", " ", str(t or "").lower().replace("©", "").replace("®", "")).strip()
+
+
+def level_phrase(levels):
+    words = []
+    for key, w in LEVELS:
+        if key in (levels or []) and w not in words:
+            words.append(w)
+    if not words:
+        return ""
+    if len(words) == 1:
+        return words[0][0].upper() + words[0][1:]
+    return words[0][0].upper() + words[0][1:] + " through " + words[-1]
+
+
+def code6(code):
+    """An O*NET-SOC code to its six-digit SOC (51-4121.06 -> 51-4121)."""
+    return str(code or "").split(".")[0]
+
+
+def review_rows(root, reference_titles):
+    top = (load_json(root, "kb/reference/credential_engine_top50.json") or {}).get("credentials") or []
+    checks = {c["ctid"]: c for c in (load_json(root, "kb/reference/credential_engine_top50_map_check.json") or {}).get("checks") or []}
+    cat = {}
+    for x in (load_json(root, "kb/it_ai_credential_catalog.json") or {}).get("credentials") or []:
+        if x.get("ctid") and x["ctid"] not in cat:
+            cat[x["ctid"]] = x
+    have = {norm_title(t) for t in reference_titles}
+    out, unchecked, joined, sector_titles = [], 0, 0, {}
+    for c in sorted(top, key=lambda c: c.get("rank") or 999):
+        x = cat.get(c["ctid"]) or {}
+        chk = checks.get(c["ctid"])
+        if not chk:
+            if x.get("map_status") == "not in MAP":
+                unchecked += 1
+            continue
+        if chk.get("verdict") not in ("related", "not_in_map"):
+            continue
+        if norm_title(c.get("name")) in have:
+            joined += 1     # the reference gained it since the check; it is a catalog credential now
+            continue
+        occ, seen = [], set()
+        for o in c.get("occupation_type") or []:
+            k = code6(o.get("code"))
+            if k and k not in seen:
+                seen.add(k)
+                occ.append("%s (%s)" % (o.get("name") or "", k))
+        ind = ["%s (NAICS %s)" % (o.get("name") or "", o.get("code")) for o in (c.get("industry_type") or []) if o.get("code")]
+        cip = x.get("cip") or {}
+        owner = ((c.get("owned_by") or [{}])[0] or {}).get("name") or x.get("issuer") or ""
+        rec = {"t": c.get("name"), "i": owner, "k": c["ctid"]}
+        if occ:
+            rec["o"] = occ[:REVIEW_OCC]
+            if len(occ) > REVIEW_OCC:
+                rec["on"] = len(occ) - REVIEW_OCC
+        if ind:
+            rec["n"] = ind[:REVIEW_IND]
+            if len(ind) > REVIEW_IND:
+                rec["nn"] = len(ind) - REVIEW_IND
+        if cip.get("code"):
+            rec["f"] = "%s (CIP %s)" % (cip.get("title") or "", cip["code"])
+            if cip.get("sector"):
+                rec["s"] = str(cip["sector"]).zfill(2)
+                if cip.get("sector_title"):
+                    sector_titles.setdefault(rec["s"], cip["sector_title"])
+        lvl = level_phrase(c.get("audience_level"))
+        if lvl:
+            rec["l"] = lvl
+        if c.get("subject_webpage"):
+            rec["u"] = c["subject_webpage"]
+        if chk.get("verdict") == "related" and chk.get("map_title") in reference_titles:
+            rec["r"] = chk["map_title"]
+        out.append(rec)
+    return out, unchecked, joined, sector_titles
+
+
 def build(root):
     adoption = load_json(root, "kb/exhibits_adoption.json") or {}
     settled = settled_titles(load_json(root, "kb/unified_titles.json", {}))
@@ -185,8 +284,12 @@ def build(root):
     for c in creds:
         c["y"] = sorted(remap[i] for i in c["y"])
 
-    used = {c.get("s") for c in creds if c.get("s")}
-    sectors = {k: v for k, v in sorted((adoption.get("cip_sectors") or {}).items()) if k in used}
+    review, unchecked, joined, review_sectors = review_rows(root, set((adoption.get("credentials") or {}).keys()))
+    used = {c.get("s") for c in creds + review if c.get("s")}
+    # A review row's sector the adoption file does not name takes the catalog's CIP sector title.
+    names = dict(review_sectors)
+    names.update(adoption.get("cip_sectors") or {})
+    sectors = {k: v for k, v in sorted(names.items()) if k in used}
     return {
         "schema": SCHEMA,
         "_about": "The public adoption page (library/adopt/, kb/_build_adopt_page.py): settled credentials only "
@@ -196,15 +299,20 @@ def build(root):
                   "units, credit lines]] for each college that articulated it, c = [[college, courses]] for each "
                   "college that already teaches a course mapped to its identity (never the TOP or C-ID overlap), "
                   "w = colleges withheld because the identity is over-merged, m = [[exhibit id, building college "
-                  "index or -1, building college's name when it has no column]] for Request Quick Adopt.",
+                  "index or -1, building college's name when it has no column]] for Request Quick Adopt. review = Worth "
+                  "a faculty review, Credential Engine's most-referenced credentials MAP has no exhibit for: t, i, "
+                  "k = CTID, o = occupations (on more), n = industries (nn more), f = field (CIP), s = CIP sector, "
+                  "l = level, u = the issuer's page, r = the related credential MAP holds from the same issuer.",
         "written_at": iso_now(),
         "sources": {"adoption": adoption.get("written_at"), "reference": ref.get("_generated_at"),
                     "map_links": verified.get("checked_at")},
-        "counts": {"settled": len(creds), "held": held, "in_reference": len(adoption.get("credentials") or {})},
+        "counts": {"settled": len(creds), "held": held, "in_reference": len(adoption.get("credentials") or {}),
+                   "review": len(review), "review_unchecked": unchecked, "review_joined": joined},
         "colleges": colleges,
         "sectors": sectors,
         "types": types,
         "credentials": creds,
+        "review": review,
     }
 
 
@@ -240,9 +348,9 @@ def main(argv=None):
     changed = write_if_changed(out, data)
     if not a.quiet:
         c = data["counts"]
-        print("%s %s: %d settled credentials of %d (%d held), %d colleges"
+        print("%s %s: %d settled credentials of %d (%d held), %d colleges; %d worth a faculty review (%d unchecked)"
               % ("wrote" if changed else "unchanged", os.path.relpath(out, a.root), c["settled"],
-                 c["in_reference"], c["held"], len(data["colleges"])))
+                 c["in_reference"], c["held"], len(data["colleges"]), c["review"], c["review_unchecked"]))
     return 0
 
 

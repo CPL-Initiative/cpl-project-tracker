@@ -4,7 +4,7 @@
   "supabase_tables": 103,
   "rpcs": 44,
   "edge_functions": 11,
-  "file_datasets": 741,
+  "file_datasets": 742,
   "external_services": 192,
   "consumers": 491,
   "workflows": 59,
@@ -1408,6 +1408,23 @@
      "tabs": [
       "credential-reference"
      ]
+    },
+    {
+     "id": "module:library/adopt/adopt.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 229,
+     "pages": [
+      "library/adopt/index.html"
+     ]
+    },
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 131
     },
     {
      "id": "script:kb/_fetch_ce_top50.py",
@@ -5649,7 +5666,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 69
+     "line": 78
     }
    ],
    "served": true,
@@ -6618,7 +6635,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 122
+     "line": 221
     },
     {
      "id": "script:kb/_build_baccalaureate_pathways.py",
@@ -11606,7 +11623,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 80
+     "line": 89
     },
     {
      "id": "script:kb/_build_college_identity_crosswalk.py",
@@ -13221,7 +13238,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 120
+     "line": 219
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -13583,6 +13600,13 @@
      "tabs": [
       "credential-reference"
      ]
+    },
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 166
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -15288,6 +15312,13 @@
   "file:kb/reference/credential_engine_top50.json": {
    "consumers": [
     {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 163
+    },
+    {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
      "kind": "script",
      "direction": "read",
@@ -15320,6 +15351,19 @@
      "direction": "read",
      "how": "literal",
      "line": 24
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/reference/credential_engine_top50_map_check.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_adopt_page.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 164
     }
    ],
    "served": true,
@@ -15467,7 +15511,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 124
+     "line": 223
     },
     {
      "id": "script:kb/_verify_map_exhibit_links.py",
@@ -16766,7 +16810,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 121
+     "line": 220
     },
     {
      "id": "script:kb/_build_commons_status.py",
@@ -17154,7 +17198,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 315
+     "line": 332
     }
    ],
    "served": true,
@@ -17177,7 +17221,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 42
+     "line": 51
     }
    ],
    "producers": [
@@ -18888,7 +18932,7 @@
      "kind": "page",
      "direction": "read",
      "how": "markup",
-     "line": 316
+     "line": 333
     },
     {
      "id": "page:library/chancellor-summit-address/index.html",

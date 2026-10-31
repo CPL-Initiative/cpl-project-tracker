@@ -11,7 +11,10 @@ draws whatever this builder writes, so the contract guarded here is the file:
   - a college articulating a credential is never also listed as one that could adopt it;
   - a name college_lookup.js does not hold takes no column;
   - the Request Quick Adopt IDs are MAP's verified ones, each with the college that built it;
-  - no student figure reaches this public file (the student-detail ADR).
+  - no student figure reaches this public file (the student-detail ADR);
+  - Worth a faculty review lists a Credential Engine top-50 credential only when its hand check says
+    related or not_in_map, never one the check found in MAP, never one with no check yet, and drops
+    one the day the reference gains a title of the same name; a related one names MAP's credential.
 
 Run from the repo root: python3 tests/adopt_page_build_test.py
 """
@@ -77,6 +80,35 @@ def fixture(root):
                 '  "Gamma College": { district: "Gamma CCD", swRegion: "Bay Area (Region 3)", ascccArea: "B" },\n'
                 '};\n')
     write(root, "kb/college_short_names.json", {"colleges": [{"canonical": "Alpha College", "short": "Alpha", "aliases": []}]})
+    def ce(rank, name, **kw):
+        row = {"ctid": "ce-%d" % rank, "rank": rank, "name": name,
+               "owned_by": [{"name": "Issuer %d" % rank}], "audience_level": [], "occupation_type": [], "industry_type": []}
+        row.update(kw)
+        return row
+    write(root, "kb/reference/credential_engine_top50.json", {"credentials": [
+        ce(2, "Logistics Tech", subject_webpage="https://issuer.example/clt",
+           audience_level=["Beginner Level", "Secondary School or Equivalent", "Bachelors Degree Level"],
+           occupation_type=[{"code": "13-1081.00", "name": "Logisticians"}, {"code": "13-1081.02", "name": "Logistics Analysts"},
+                            {"code": "11-3071.00", "name": "Managers A"}, {"code": "11-3071.04", "name": "Managers B"},
+                            {"code": "43-5011.00", "name": "Cargo Agents"}, {"code": "53-7065.00", "name": "Stockers"}],
+           industry_type=[{"code": "48", "name": "Transportation"}, {"code": "49", "name": "Warehousing"}, {"code": "42", "name": "Wholesale"}]),
+        ce(1, "Entry Welder", audience_level=["Intermediate Level"]),
+        ce(3, "In MAP Already"),
+        ce(4, "Nobody Checked"),
+        ce(5, "Rule Stamped"),
+    ]})
+    write(root, "kb/reference/credential_engine_top50_map_check.json", {"checks": [
+        {"ctid": "ce-1", "verdict": "related", "map_title": "Person Stamped"},
+        {"ctid": "ce-2", "verdict": "not_in_map"},
+        {"ctid": "ce-3", "verdict": "in_map", "map_title": "Rule Stamped"},
+        {"ctid": "ce-5", "verdict": "not_in_map"},
+    ]})
+    write(root, "kb/it_ai_credential_catalog.json", {"credentials": [
+        {"ctid": "ce-2", "map_status": "not in MAP", "cip": {"code": "52.0203", "title": "Logistics", "sector": "52", "sector_title": "Business"}},
+        {"ctid": "ce-2", "map_status": "not in MAP", "cip": {"code": "99.9999", "title": "A second row", "sector": "99"}},
+        {"ctid": "ce-3", "map_status": "not in MAP"},
+        {"ctid": "ce-4", "map_status": "not in MAP"},
+    ]})
 
 
 with tempfile.TemporaryDirectory() as root:
@@ -88,7 +120,20 @@ with tempfile.TemporaryDirectory() as root:
     check("a credential no stamped title names is held back", "Classifier Only" not in by)
     check("a person's stamp settles it", "Person Stamped" in by)
     check("a procedure cohort's stamp settles it", "Rule Stamped" in by)
-    check("counts say how many were held", d["counts"] == {"settled": 2, "held": 1, "in_reference": 3})
+    check("counts say how many were held", {k: d["counts"][k] for k in ("settled", "held", "in_reference")} == {"settled": 2, "held": 1, "in_reference": 3})
+    rv = {r["t"]: r for r in d["review"]}
+    check("review: a not_in_map and a related check are listed, most collections first", [r["t"] for r in d["review"]] == ["Entry Welder", "Logistics Tech"])
+    check("review: a credential the check found in MAP is not listed", "In MAP Already" not in rv)
+    check("review: a credential with no check waits, and is counted", "Nobody Checked" not in rv and d["counts"]["review_unchecked"] == 1)
+    check("review: one the reference has gained since the check is dropped", "Rule Stamped" not in rv and d["counts"]["review_joined"] == 1)
+    check("review: a related credential names MAP's", rv["Entry Welder"].get("r") == "Person Stamped")
+    lt = rv["Logistics Tech"]
+    check("review: occupations fold O*NET codes to SOC and name three", lt["o"] == ["Logisticians (13-1081)", "Managers A (11-3071)", "Cargo Agents (43-5011)"] and lt["on"] == 1)
+    check("review: industries name two and count the rest", len(lt["n"]) == 2 and lt["nn"] == 1 and lt["n"][0] == "Transportation (NAICS 48)")
+    check("review: the field is the catalog's first CIP row, with its sector", lt["f"] == "Logistics (CIP 52.0203)" and lt["s"] == "52")
+    check("review: the level reads the schooling range, not the learner words", lt["l"] == "High school through bachelor's" and "l" not in rv["Entry Welder"])
+    check("review: the issuer, its page and the CTID travel", lt["i"] == "Issuer 2" and lt["u"] == "https://issuer.example/clt" and lt["k"] == "ce-2")
+    check("review: a review row's sector the adoption file lacks takes the catalog's title", d["sectors"].get("52") == "Business")
     check("a name college_lookup.js does not hold takes no column", "California State University Los Angeles" not in names)
     check("columns carry district, region and Area", d["colleges"][0] == ["Alpha College", "Alpha", "Alpha CCD", "Bay Area (Region 3)", "B"])
     ps = by["Person Stamped"]
@@ -101,7 +146,7 @@ with tempfile.TemporaryDirectory() as root:
     check("issuer and types come from the reference", ps["i"] == "CompTIA" and [d["types"][i] for i in ps["y"]] == ["Credit By Exam", "Industry Certification"])
     check("the withheld count travels", ps.get("w") == 2)
     check("Request Quick Adopt IDs carry their builder", ps["m"] == [["MAP-1", at["Alpha College"], ""], ["MAP-2", -1, "Delta University"]])
-    check("only sectors in use are listed", set(d["sectors"]) == {"11", "51"})
+    check("only sectors in use are listed", set(d["sectors"]) == {"11", "51", "52"})
     text = json.dumps(d)
     check("no student figure reaches the public file", "students" not in text and "25" not in json.dumps(ps))
     out = os.path.join(root, "out.json")
@@ -115,6 +160,10 @@ with tempfile.TemporaryDirectory() as root:
         live = B.build(ROOT)
         settled = B.settled_titles(B.load_json(ROOT, "kb/unified_titles.json", {}))
         check("live: every listed credential is settled", all(c["t"] in settled for c in live["credentials"]))
+        ref_titles = set((B.load_json(ROOT, "kb/exhibits_adoption.json") or {}).get("credentials") or {})
+        check("live: no review credential shares a name with a reference credential",
+              not ({B.norm_title(r["t"]) for r in live["review"]} & {B.norm_title(t) for t in ref_titles}))
+        check("live: every top-50 row the catalog marks not in MAP has a check", live["counts"]["review_unchecked"] == 0)
         check("live: no could-adopt college also articulates", all(
             not ({x[0] for x in c.get("c", [])} & {a[0] for a in c["a"]}) for c in live["credentials"]))
 

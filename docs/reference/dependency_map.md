@@ -628,7 +628,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.md` | none found | scripts: `kb/_identities_rekey_dryrun.py` |
 | `kb/insert.sql` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
 | `kb/issuer_preseed.json` | tabs: `credential-reference` · scripts: `kb/_preseed_null_issuers.py`, `kb/_verify_issuer_preseed.py` | scripts: `kb/_preseed_null_issuers.py` |
-| `kb/it_ai_credential_catalog.json` | tabs: `credential-reference` · scripts: `kb/_build_it_ai_credential_catalog.py` | scripts: `kb/_build_it_ai_credential_catalog.py` |
+| `kb/it_ai_credential_catalog.json` | tabs: `credential-reference` · scripts: `kb/_build_adopt_page.py`, `kb/_build_it_ai_credential_catalog.py` | scripts: `kb/_build_it_ai_credential_catalog.py` |
 | `kb/kb/reference/coci_program_course_file.csv.gz` | modules: `kb/_college_apprenticeship_cpl_roster.js` | — |
 | `kb/kb/reference/map_college_names.json` | modules: `kb/_build_funding_college_map.js` | — |
 | `kb/kin_pe_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
@@ -704,8 +704,9 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/reference/coci_program_file.csv` | none found | committed by: `program-course-fetch.yml` |
 | `kb/reference/college_identity_rulings.json` | scripts: `kb/_build_college_identity_crosswalk.py` | — |
 | `kb/reference/cos_certifications.json` | scripts: `kb/_build_it_ai_credential_catalog.py`, `kb/_match_cos_authority.py`, `kb/_suggest_unclassified.py`, `kb/_sync_cos_certifications.py` | scripts: `kb/_sync_cos_certifications.py` · committed by: `cos-authority-sync.yml` |
-| `kb/reference/credential_engine_top50.json` | scripts: `kb/_build_it_ai_credential_catalog.py`, `kb/_fetch_ce_top50.py` | scripts: `kb/_fetch_ce_top50.py` |
+| `kb/reference/credential_engine_top50.json` | scripts: `kb/_build_adopt_page.py`, `kb/_build_it_ai_credential_catalog.py`, `kb/_fetch_ce_top50.py` | scripts: `kb/_fetch_ce_top50.py` |
 | `kb/reference/credential_engine_top50_ctids.json` | scripts: `kb/_fetch_ce_top50.py` | — |
+| `kb/reference/credential_engine_top50_map_check.json` | scripts: `kb/_build_adopt_page.py` | — |
 | `kb/reference/credential_registry_national_sample.json` | scripts: `kb/_build_it_ai_credential_catalog.py` | — |
 | `kb/reference/csr_quarterly_baseline.json` | scripts: `kb/_csr_quarterly_probe.py` | — |
 | `kb/reference/eacr_cip_title_rules.json` | scripts: `excel_to_dashboard.py` | — |
@@ -1053,7 +1054,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
 | `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `exhibits`, `implementation-funding` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `library/adopt/index.html`, `library/cpl-opportunity/index.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py` · `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
-| `credentialengineregistry.org` | tabs: `credential-reference` · scripts: `kb/_fetch_ce_top50.py` |
+| `credentialengineregistry.org` | tabs: `credential-reference` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_page.py`, `kb/_fetch_ce_top50.py` |
 | `creditforbeingyou.org` | tabs: `sierra-training` · `edgefn:cpl-chat` |
 | `cuesta.curriqunet.com` | scripts: `kb/_course_outline_census.py` |
 | `customreportingmodule.azurewebsites.net` | scripts: `kb/_probe_new_custom_reports.py` |
@@ -1235,5 +1236,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 103 Supabase tables · 44 RPCs · 11 edge functions · 741 file
+Coverage: 103 Supabase tables · 44 RPCs · 11 edge functions · 742 file
 datasets · 192 external services · 491 consumers · 59 workflows · 39 tabs.
