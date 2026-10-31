@@ -172,6 +172,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `cpl_funding_my_reports` | tabs: `college-briefing`, `cpl-pathways` | — |
 | `cpl_funding_nc_attestation_review` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
 | `cpl_funding_optin_review` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
+| `cpl_funding_requester_context` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding` | — |
 | `cpl_library_public` | tabs: `admin` · pages: `library/index.html` · `edgefn:cpl-chat` | — |
 | `cpl_library_set_public` | tabs: `admin`, `library` | — |
 | `credential_alignment_for_college` | `edgefn:cpl-chat` | — |
@@ -183,6 +184,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_clear_custom_report_staging` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `implementation-funding`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` | — |
+| `map_landing_contacts_replace` | scripts: `map/sync_landing_contacts.py` | — |
 | `map_promote_custom_reports` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_users_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_users_summary` | tabs: `map-queue`, `map-users` | — |
@@ -343,7 +345,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `chatbox/build_coci_offerings.py` | workflows: `coci-offerings-sync.yml` | — |
 | `chatbox/build_program_courses.py` | workflows: `coci-offerings-sync.yml` | — |
 | `chatbox/college_geo.json` | scripts: `chatbox/_seed_college_geo.py`, `chatbox/build_coci_offerings.py` | scripts: `chatbox/_seed_college_geo.py` |
-| `chatbox/college_landing_pages.json` | scripts: `chatbox/scrape_landing_pages.py` | scripts: `chatbox/scrape_landing_pages.py` · committed by: `cpl-landing-pages.yml` |
+| `chatbox/college_landing_pages.json` | scripts: `chatbox/scrape_landing_pages.py`, `map/sync_landing_contacts.py` | scripts: `chatbox/scrape_landing_pages.py` · committed by: `cpl-landing-pages.yml` |
 | `chatbox/health_check.sh` | workflows: `cpl-chat-health.yml` | — |
 | `chatbox/preflight_bgca.sh` | workflows: `sierra-preflight.yml` | — |
 | `chatbox/scrape_landing_pages.py` | workflows: `cpl-landing-pages.yml` | — |
@@ -784,6 +786,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `live_metrics.json` | tabs: `college-briefing`, `cpl-pathways` · pages: `fact-sheet/index.html` · scripts: `excel_to_dashboard.py`, `veteran-sprint-map/extract_military.py` · `edgefn:cpl-chat` | committed by: `daily-dashboard.yml` |
 | `live_metrics_new.json` | workflows: `daily-dashboard.yml` | — |
 | `map/probe_users_schema.py` | workflows: `map-users-schema-probe.yml` | — |
+| `map/sync_landing_contacts.py` | workflows: `map-users-sync.yml` | — |
 | `map/sync_map_users.py` | workflows: `map-users-sync.yml` | — |
 | `map_cleanup_views.js` | pages: `CPL_Dashboard.html` | — |
 | `map_data_quality.js` | pages: `CPL_Dashboard.html` | — |
@@ -1054,7 +1057,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `counseling.santarosa.edu` | tabs: `map-queue`, `map-users` |
 | `cpl-initiative.github.io` | tabs: `admin`, `college-briefing`, `cpl-pathways`, `implementation-funding`, `letters`, `library`, `map-queue`, `map-users` · modules: `scripts/build_funding_faq.js`, `scripts/funding_sierra_note.js` · scripts: `chatbox/health_check.sh`, `fact-sheet/_build_statewide_catalog.py`, `kb/_build_commons_status.py`, `kb/_build_partner_crosswalk.py`, `kb/_program_source_census.py`, `prototype/funding_video/build.py`, `prototype/ironworker_video/build.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/noncredit_video/build.py`, `scripts/catalog_framing.py`, `scripts/fetch_gallery_thumbs.py`, `scripts/fetch_sierra_art.py`, `scripts/library_page.py` · workflows: `daily-dashboard.yml` · `edgefn:cpl-chat`, `edgefn:cpl-news-harvest`, `edgefn:workplan-rebuild`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `cpl-proxy.slee-548.workers.dev` | tabs: `annual-report`, `credential-reference`, `letters`, `raci` · modules: `kb-portal/config.js` · pages: `CPL_Dashboard.html`, `kb-portal/index.html` · scripts: `excel_to_dashboard.py` · workflows: `daily-dashboard.yml` |
-| `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `exhibits`, `implementation-funding` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `library/adopt/index.html`, `library/cpl-opportunity/index.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py` · `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
+| `cpldashboardcccco.azurewebsites.net` | tabs: `college-briefing`, `cpl-pathways`, `exhibits`, `implementation-funding` · pages: `CPL_Dashboard.html`, `fact-sheet/index.html`, `library/adopt/index.html`, `library/cpl-opportunity/index.html` · scripts: `chatbox/scrape_landing_pages.py`, `fetch_veteran_jst.py`, `kb/_build_futuro_hth_crosswalk.py`, `kb/_verify_map_exhibit_links.py`, `map/sync_landing_contacts.py` · `edgefn:cpl-chat`, `worker:cloudflare-worker-proxy.js`, `worker:worker-to-paste.js` |
 | `crc.losrios.edu` | tabs: `map-queue`, `map-users` |
 | `credentialengineregistry.org` | tabs: `credential-reference` · pages: `library/adopt/index.html` · scripts: `kb/_build_adopt_page.py`, `kb/_fetch_ce_top50.py` |
 | `creditforbeingyou.org` | tabs: `sierra-training` · `edgefn:cpl-chat` |
@@ -1160,7 +1163,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `www.fresnocitycollege.edu` | tabs: `map-queue`, `map-users` |
 | `www.gavilan.edu` | tabs: `map-queue`, `map-users` |
 | `www.goldenwestcollege.edu` | tabs: `map-queue`, `map-users` |
-| `www.google.com` | tabs: `credential-reference` |
+| `www.google.com` | tabs: `college-briefing`, `cpl-pathways`, `credential-reference`, `implementation-funding` |
 | `www.googleapis.com` | scripts: `scripts/library_file.py` |
 | `www.grossmont.edu` | tabs: `map-queue`, `map-users` |
 | `www.hancockcollege.edu` | tabs: `map-queue`, `map-users` |
@@ -1238,5 +1241,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 103 Supabase tables · 44 RPCs · 11 edge functions · 744 file
-datasets · 192 external services · 492 consumers · 59 workflows · 39 tabs.
+Coverage: 103 Supabase tables · 46 RPCs · 11 edge functions · 745 file
+datasets · 192 external services · 493 consumers · 59 workflows · 39 tabs.

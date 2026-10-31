@@ -62,6 +62,19 @@ jobs:
           echo "event=${{ github.event_name }} apply='${APPLY:-(dry-run)}'"
           python3 map/sync_map_users.py $APPLY
 
+      # The contacts each college's MAP landing page lists, mirrored into the gated
+      # map_landing_contacts for the funding tab's requester lines (Sam, 2026-10-31).
+      # Fail-soft: a bad night leaves yesterday's mirror and the lint still runs.
+      - name: Sync landing-page contacts (apply on schedule / dispatch-apply)
+        continue-on-error: true
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          APPLY=""
+          if [ "${{ github.event_name }}" = "schedule" ]; then APPLY="--apply"; fi
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ "${{ inputs.apply }}" = "true" ]; then APPLY="--apply"; fi
+          python3 map/sync_landing_contacts.py $APPLY
+
       # ── The college-identity lint, against the names we just pulled ──────────
       # Sam, 2026-09-11: "We could run it daily in the cron against what we pull
       # from MAP and flag any diffs."

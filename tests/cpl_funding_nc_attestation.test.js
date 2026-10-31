@@ -266,6 +266,11 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "conf
   check("D0b: Accept confirms it: the Lead's condition met, the share released, and Reject offered",
     T._ncAttest(COLLEGE).status === "confirmed" && T._alloc(COLLEGE).nc_gate_blocked === false &&
     /Noncredit CPL Lead published/.test(flat(det.querySelector(".cf-conds-nc"))) && !!det.querySelector("[data-ncattestreject]"));
+  const dlg = doc.getElementById("cplfund-maildlg");
+  check("D0c0: …and opens the response email for the attestation, signed by the CPL Initiative team",
+    !!dlg && dlg.textContent.indexOf("noncredit attestation for " + FY + " accepted for ") >= 0 &&
+    /The CPL Initiative team/.test(dlg.textContent) && !!dlg.querySelector("[data-maildlgbody] img"));
+  if (dlg) click(window, dlg.querySelector("[data-maildlgsend]"));
   check("D0c: …and opens the confirmation email to the attestor, with the reply line",
     mails.length === 1 && mails[0].indexOf("mailto:ben%40mtsac.edu?") === 0 &&
     decodeURIComponent(mails[0]).indexOf("If you did not send this request, please reply to this email.") >= 0);
@@ -285,6 +290,8 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "conf
     !!word && /Awaiting CPL Initiative Confirmation/.test(word.getAttribute("title")) &&
     !!acc && acc.textContent === "Accept" && /^Accept the Noncredit CPL Lead attestation for /.test(acc.getAttribute("aria-label")));
   if (acc) click(window, acc);
+  const sdlg = doc.getElementById("cplfund-maildlg");
+  if (sdlg) click(window, sdlg.querySelector("[data-maildlgsend]"));
   check("D0s: the row's Accept confirms it and opens the email to the attestor; the row's word leaves",
     T._ncAttest(COLLEGE).status === "confirmed" && mails.length === 1 && mails[0].indexOf("mailto:ben%40mtsac.edu?") === 0 &&
     !rowOf(doc, COLLEGE).querySelector(".cf-waitchip"));

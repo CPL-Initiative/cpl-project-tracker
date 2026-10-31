@@ -80,6 +80,11 @@
   // and title alone. kb/supabase_cpl_funding_nc_attestation.sql.
   var NC_ATTEST_TABLE_URL = SUPABASE_URL + "/rest/v1/cpl_funding_nc_attestation";
   var NC_ATTEST_REVIEW_RPC = SUPABASE_URL + "/rest/v1/rpc/cpl_funding_nc_attestation_review";
+  // Who sent each request, read beside it (Sam, 2026-10-31): the requester's
+  // MAP role and landing-page listing, and the named Lead's. A signed-in
+  // reviewer alone; the RPC answers anyone else with no rows
+  // (funding/supabase_cpl_funding_requester_context.sql).
+  var REQ_CONTEXT_RPC = SUPABASE_URL + "/rest/v1/rpc/cpl_funding_requester_context";
   // MUST stay in lockstep with the cna_insert_self RLS check (attestor_title in (...)).
   var NC_ATTEST_TITLES = [
     { val: "VPAA", label: "VP of Academic Affairs (VPAA)" },
@@ -1216,6 +1221,26 @@
     ".cplfund-colane-no { border-color: var(--border-strong); color: var(--red-alert); }",
     ".cplfund-colane-more { margin-top: 7px; }",
     ".cplfund-colane-more > summary { cursor: pointer; font-size: .8rem; color: var(--text-muted); }",
+    // The response email (Sam, 2026-10-31): its template under the review lane,
+    // and the window Accept opens. The email itself shows on white with the
+    // seal blue ink in both themes, as the requester will read it.
+    ".cplfund-mailtpl { border: 1px solid var(--border); border-radius: 8px; background: var(--surface-opaque); padding: 8px 13px; margin: 4px 0 14px; }",
+    ".cplfund-mailtpl > summary { cursor: pointer; font-weight: 700; color: var(--navy-primary); min-height: 24px; }",
+    ".cplfund-mailtpl-note { font-size: .78rem; margin: 6px 0 8px; line-height: 1.4; max-width: var(--cpl-measure,none); }",
+    ".cplfund-mailtpl-text { font-size: .86rem; }",
+    ".cplfund-mailtpl-logo { display: block; width: 200px; max-width: 100%; height: auto; margin: 4px 0 6px; padding: 6px; background: var(--white); border-radius: 4px; }",
+    ".cplfund-maildlg { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: flex-start; justify-content: center; " +
+      "padding: 6vh 16px; overflow-y: auto; background: color-mix(in srgb, var(--text-strong) 40%, transparent); }",
+    ".cplfund-maildlg-card { background: var(--surface-opaque); color: var(--text-body); border: 1px solid var(--border-strong); border-radius: 10px; " +
+      "padding: 16px 20px; width: 100%; max-width: 680px; box-sizing: border-box; }",
+    ".cplfund-maildlg-h { margin: 0 0 6px; color: var(--navy-primary); font-size: 1.05rem; }",
+    ".cplfund-maildlg-h:focus { outline: none; }",
+    ".cplfund-maildlg-meta { display: flex; flex-direction: column; gap: 2px; font-size: .84rem; margin: 0 0 8px; overflow-wrap: anywhere; }",
+    ".cplfund-maildlg-body { background: var(--white); color: var(--seal-blue); border: 1px solid var(--border-strong); border-radius: 6px; padding: 12px 14px; overflow-wrap: anywhere; }",
+    ".cplfund-maildlg-body a { color: var(--seal-blue); }",
+    ".cplfund-maildlg-body img { max-width: 100%; height: auto; }",
+    ".cplfund-maildlg-ctl { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; margin-top: 10px; }",
+    ".cplfund-maildlg-msg { flex: 1 1 260px; font-size: .78rem; line-height: 1.4; }",
     // ── collapsible sections (Sam, 2026-07-27): each top-level section folds ──
     ".cplfund-sec { border: 1px solid var(--border); border-radius: 8px; margin: 0 0 14px; background: var(--surface-opaque); }",
     ".cplfund-sec > summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 9px; padding: 0 16px; }",
@@ -3776,6 +3801,8 @@
     college_intro: { label: "the institution table introduction", rows: 4, marks: true },
     timing_note:   { label: "the timeline note", rows: 2, marks: true },
     faq:           { label: "the frequently asked questions", rows: 24, marks: true },
+    // The email Accept opens to a requester, one for both kinds (responseEmailHtml).
+    accept_email:  { label: "the response email", rows: 13 },
     // ── THE PUBLIC PAGE'S OWN COPIES (Sam, 2026-10-15, call 2: "Separate all
     // four") ── funding-model/ borrowed these from the Internal view, so an edit
     // made for one reached the other. Each starts from what colleges read that
@@ -4268,6 +4295,7 @@
     if (key === "college_intro" || key === "x_table_intro") return COLLEGE_INTRO_DEFAULT_HTML;
     if (key === "timing_note" || key === "x_timing_note") return TIMING_NOTE_DEFAULT_HTML;
     if (key === "faq" || key === "x_faq") return plainToHtml(FAQ_DEFAULT_PLAIN);
+    if (key === "accept_email") return plainToHtml(ACCEPT_EMAIL_DEFAULT);
     if (key === "x_about") return textHtml("about");
     if (key === "elig_intro") {
       var v = base().elig_intro;
@@ -5581,7 +5609,9 @@
     optin: {}, optinRow: {}, optinReview: [], asOf: null, contact: {},
     // The noncredit attestation COBI takes (Scenario 4): the latest row an
     // institution, from the published view; ncAttestOk once it has been read.
-    ncAttestOk: false, ncAttest: {}, ncAttestReview: [] };
+    ncAttestOk: false, ncAttest: {}, ncAttestReview: [],
+    // Requester context by "kind|key[|fy]" (kind part, nc or lead); null until read.
+    reqCtx: null };
   // WHO STANDS BEHIND THE FIRST CONDITION (Sam, 2026-09-29): "The condition is
   // to have a CPL Coordinator assigned (so we should have that name listed); a
   // CPL Primary contact (need that name listed as well--it's OK is the same name
@@ -5733,7 +5763,12 @@
       // Its names, emails and reported lists, for the CO alone (the RPC
       // returns [] to anyone else); last, so the earlier indexes stand.
       fetch(NC_ATTEST_REVIEW_RPC, { method: "POST", body: "{}", headers: rh })
-        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+        .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }),
+      // Who sent each request (MAP role, landing page): a reviewer on the tab only.
+      (!publicMode() && unlocked()
+        ? fetch(REQ_CONTEXT_RPC, { method: "POST", body: "{}", headers: rh })
+            .then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; })
+        : Promise.resolve(null))
     ]).then(ingestElig);
   }
   // The reads above, ingested in one place (S528): the live load hands them over
@@ -5744,6 +5779,7 @@
   function ingestElig(res) {
       var roster = rosterByShortName();
       var coord = res[0], part = res[1], review = res[2], contacts = res[3], attest = res[4], ncReview = res[5];
+      if (Array.isArray(res[6])) ELIG.reqCtx = ingestReqCtx(res[6], roster);
       if (Array.isArray(contacts)) ELIG.contact = ingestContacts(contacts, roster);
       if (Array.isArray(attest)) {
         ELIG.ncAttest = {};
@@ -6351,29 +6387,240 @@
     if (p && typeof p.then === "function") p.then(done); else done();
   }
   function denyNcAttest(college) { removeNcAttest(college); }
-  // THE CONFIRMATION EMAIL: a draft in the reviewer's own mail app (a person
-  // presses send), to the submitter. It names no one else: this module never
-  // reads a coordinator's address (tests/cpl_funding_equity.test.js's PII
+  // ── THE RESPONSE EMAIL (Sam, 2026-10-31: "Give me a place to revise the
+  // response email once for both the confirmation and the attestation. Will want
+  // to refer to us as the CPL Initiative team and include the CPL Initiative logo
+  // on the signature line of the email.") ─────────────────────────────────────
+  // One template serves both kinds: its first line is the subject, and {name},
+  // {college}, {request} and {date} fill in for each request. A reviewer edits
+  // it under Minimum Conditions (responseEmailHtml), and it saves for everyone
+  // like the page's other passages. The logo follows the sign-off.
+  //
+  // A mailto link carries plain text alone, so Accept opens the email in a
+  // window: Copy and open draft puts the formatted email, logo included, on the
+  // clipboard and opens a draft to the requester with the subject filled in; the
+  // reviewer pastes and presses send. Where the browser refuses the copy, the
+  // draft opens with the plain text instead. It names no one else: this module
+  // never reads a coordinator's address (tests/cpl_funding_equity.test.js's PII
   // guard), so a reviewer who wants the CPL Coordinator copied adds them.
-  function openConfirmMail(college, rev, kind) {
-    var nm = dispName(college);
-    var sent = rev.requested_at ? " on " + isoMdy(rev.requested_at) : "";
-    var subj = kind === "nc"
-      ? "CPL Implementation Funding: noncredit attestation accepted for " + nm
-      : "CPL Implementation Funding: participation confirmed for " + nm;
-    var body = (rev.name ? "Dear " + rev.name + ",\n\n" : "") +
-      (kind === "nc"
-        ? "Thank you for the noncredit attestation you sent" + sent + " for " + nm + (rev.fiscal_year ? ", " + rev.fiscal_year : "") +
-          ". The MAP team has accepted it, and the CPL funding page now shows the noncredit conditions it covers as met."
-        : "Thank you for confirming " + nm + "'s participation in CPL Implementation Funding. The MAP team has accepted the request you sent" +
-          sent + ", and the CPL funding page now shows the college's participation confirmation on file.") +
-      "\n\nIf you did not send this request, please reply to this email.\n\nThe MAP team";
-    var href = "mailto:" + encodeURIComponent(rev.email) + "?subject=" + encodeURIComponent(subj) +
-      "&body=" + encodeURIComponent(body);
+  var PUBLIC_FUNDING_URL = "https://cpl-initiative.github.io/cpl-project-tracker/funding-model/";
+  var EMAIL_LOGO_URL = "https://cpl-initiative.github.io/cpl-project-tracker/sierra/cpl-initiative-logo-navy.png";
+  var EMAIL_LOGO_ALT = "California Community Colleges Credit for Prior Learning Initiative, at the Chancellor's Office";
+  var ACCEPT_EMAIL_DEFAULT = "Subject: CPL Implementation Funding: {request} accepted for {college}\n\n" +
+    "Dear {name},\n\n" +
+    "Thank you for the {request} you sent on {date} for {college}. The CPL Initiative team has accepted it, and " +
+    "the CPL Implementation Funding dashboard now shows the condition as met: " + PUBLIC_FUNDING_URL + "\n\n" +
+    "If you did not send this request, please reply to this email.\n\n" +
+    "The CPL Initiative team";
+  var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
+    "October", "November", "December"];
+  function longDate(v) {
+    var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(String(v || "")), d = m ? null : new Date();
+    return m ? MONTHS[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1]
+      : MONTHS[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
+  }
+  // The template filled in for one request: { to, subject, text, html }.
+  function acceptEmail(college, rev, kind) {
+    var fill = {
+      name: personName(rev.name) || "colleague",
+      college: dispName(college),
+      request: kind === "nc"
+        ? "noncredit attestation" + (rev.fiscal_year ? " for " + rev.fiscal_year : "")
+        : "participation confirmation",
+      date: longDate(rev.requested_at) };
+    var t = plainNormalize(textPlain("accept_email")).replace(/\{(name|college|request|date)\}/g, function (m, k) { return fill[k]; });
+    var subject = "", lines = t.split("\n");
+    var sm = /^subject:\s*(.*)$/i.exec(lines[0] || "");
+    if (sm) { subject = sm[1].trim(); t = lines.slice(1).join("\n").replace(/^\s+/, ""); }
+    var paras = t ? t.split(/\n\n/) : [];
+    var link = function (h) {
+      return h.replace(/https?:\/\/[^\s<>"]+[^\s<>".,;:)]/g, function (u) { return '<a href="' + u + '">' + u + "</a>"; });
+    };
+    var html = '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;">' +
+      paras.map(function (p) { return '<p style="margin:0 0 12px;">' + link(esc(p)).replace(/\n/g, "<br>") + "</p>"; }).join("") +
+      '<p style="margin:4px 0 0;"><img src="' + EMAIL_LOGO_URL + '" alt="' + esc(EMAIL_LOGO_ALT) +
+      '" width="200" height="37" style="display:block;border:0;width:200px;height:37px;"></p></div>';
+    return { to: rev.email || "", subject: subject, text: t, html: html };
+  }
+  function mailHref(m, withBody) {
+    return "mailto:" + encodeURIComponent(m.to) + "?subject=" + encodeURIComponent(m.subject) +
+      (withBody ? "&body=" + encodeURIComponent(m.text) : "");
+  }
+  function openMailHref(href) {
     if (typeof window.CPL_FUNDING_OPEN_MAIL === "function") { window.CPL_FUNDING_OPEN_MAIL(href); return; }
     try { window.location.href = href; } catch (e) {}
   }
+  // The formatted copy first (text/html and text/plain together); else the
+  // shown email selected and copied, which carries its formatting too.
+  function copyEmail(m, node, done) {
+    function bySelection() {
+      var ok = false;
+      try {
+        var sel = window.getSelection(), r = document.createRange();
+        r.selectNodeContents(node); sel.removeAllRanges(); sel.addRange(r);
+        ok = !!document.execCommand("copy");
+        sel.removeAllRanges();
+      } catch (e) { ok = false; }
+      return ok;
+    }
+    try {
+      if (window.ClipboardItem && navigator.clipboard && typeof navigator.clipboard.write === "function") {
+        var item = new window.ClipboardItem({
+          "text/html": new Blob([m.html], { type: "text/html" }),
+          "text/plain": new Blob([m.text], { type: "text/plain" }) });
+        navigator.clipboard.write([item]).then(function () { done(true); }, function () { done(bySelection()); });
+        return;
+      }
+    } catch (e) {}
+    done(bySelection());
+  }
+  // The window Accept opens, outside the tab's render so a re-render leaves it
+  // standing. Escape and Close shut it and return the focus.
+  function openConfirmMail(college, rev, kind) {
+    var m = acceptEmail(college, rev, kind);
+    var old = document.getElementById("cplfund-maildlg");
+    if (old) old.parentNode.removeChild(old);
+    var back = document.activeElement;
+    var who = esc(personName(rev.name) || rev.email || "");
+    var box = document.createElement("div");
+    box.id = "cplfund-maildlg";
+    box.className = "cplfund-maildlg";
+    box.setAttribute("role", "dialog");
+    box.setAttribute("aria-modal", "true");
+    box.setAttribute("aria-labelledby", "cplfund-maildlg-h");
+    box.innerHTML = '<div class="cplfund-maildlg-card">' +
+      '<h3 id="cplfund-maildlg-h" class="cplfund-maildlg-h" tabindex="-1">Accepted. Email ' + who + "</h3>" +
+      '<div class="cplfund-maildlg-meta"><span>To: ' + esc(m.to) + "</span><span>Subject: " + esc(m.subject) + "</span></div>" +
+      '<div class="cplfund-maildlg-body" data-maildlgbody="1">' + m.html + "</div>" +
+      '<div class="cplfund-maildlg-ctl">' +
+      '<button type="button" class="cplfund-textbtn primary" data-maildlgsend="1">Copy and open draft</button>' +
+      '<button type="button" class="cplfund-textbtn" data-maildlgclose="1">Close</button>' +
+      '<span class="dk cplfund-maildlg-msg" role="status" aria-live="polite">Copy and open draft starts a message to ' + esc(m.to) +
+      " with the subject filled in; paste the email into it (Ctrl+V) and send. Revise the email for every request under " +
+      "Minimum Conditions, Response email.</span></div></div>";
+    document.body.appendChild(box);
+    var close = function () {
+      if (box.parentNode) box.parentNode.removeChild(box);
+      document.removeEventListener("keydown", onKey, true);
+      try { if (back && back.focus && document.contains(back)) back.focus(); } catch (e) {}
+    };
+    var onKey = function (e) { if (e.key === "Escape") { e.preventDefault(); close(); } };
+    document.addEventListener("keydown", onKey, true);
+    box.addEventListener("click", function (e) { if (e.target === box) close(); });
+    box.querySelector("[data-maildlgclose]").addEventListener("click", close);
+    box.querySelector("[data-maildlgsend]").addEventListener("click", function () {
+      var msg = box.querySelector(".cplfund-maildlg-msg");
+      copyEmail(m, box.querySelector("[data-maildlgbody]"), function (ok) {
+        openMailHref(mailHref(m, !ok));
+        msg.textContent = ok
+          ? "Copied. Paste it into the draft (Ctrl+V) and send."
+          : "This browser would not copy the formatted email, so the draft opened with the plain text. Select the email above, copy it and paste it over the text to carry the logo.";
+      });
+    });
+    var h = box.querySelector("#cplfund-maildlg-h");
+    try { h.focus(); } catch (e) {}
+  }
+  // The place to revise it: one passage, for a signed-in reviewer, under the
+  // review lane. Never in a public rendering (the passage is a reviewer's tool).
+  function responseEmailHtml() {
+    if (!unlocked() || publicMode()) return "";
+    var open = state.textEditing === "accept_email" || state.mailTplOpen;
+    return '<details class="cplfund-mailtpl" id="cplfund-mailtpl" data-mailtpl="1"' + (open ? " open" : "") + ">" +
+      "<summary>Response email</summary>" +
+      '<div class="dk cplfund-mailtpl-note">Accept opens this email to the person who sent a participation confirmation ' +
+      "or a noncredit attestation. The first line is the subject. {name}, {college}, {request} and {date} fill in for " +
+      "each request; {request} reads participation confirmation or noncredit attestation for the year. The CPL Initiative " +
+      "logo follows the last line.</div>" +
+      proseBlockHtml("accept_email", "cplfund-mailtpl-text") +
+      '<img class="cplfund-mailtpl-logo" src="' + EMAIL_LOGO_URL + '" alt="' + esc(EMAIL_LOGO_ALT) + '" width="200" height="37">' +
+      "</details>";
+  }
   function removeNcAttest(college) { ncAttestWrite(college, "DELETE", null); }
+
+  // ── WHO SENT IT (Sam, 2026-10-31: "check to see if they are a map user and
+  // add their map role next to their name; if it is possible to look up their
+  // title on the college website when they select 'Other' as their title, add
+  // that as well; check if they are listed on the college landing page and give
+  // info on that as well--keep it all as simple and short as possible.") ─────
+  // A few words after the requester's name, for a signed-in reviewer: the MAP
+  // role, the landing-page listing, and for a title of Other a search of the
+  // college's own site. No page can read a college's site for us, so the search
+  // is one click away. The landing page is MAP's (cpldashboardcccco/<slug>),
+  // mirrored daily by map/sync_landing_contacts.py.
+  function ingestReqCtx(rows, roster) {
+    var out = {};
+    rows.forEach(function (r) {
+      var key = roster[shortName(r.college)] || r.college;
+      out[r.kind + "|" + key + (r.kind === "part" ? "" : "|" + (r.fiscal_year || ""))] = {
+        map: Array.isArray(r.map_users) ? r.map_users : [],
+        landing: Array.isArray(r.landing) ? r.landing : [] };
+    });
+    return out;
+  }
+  function reqCtxOf(kind, key, fy) {
+    if (!ELIG.reqCtx) return null;
+    return ELIG.reqCtx[kind + "|" + key + (kind === "part" ? "" : "|" + (fy || ""))] || null;
+  }
+  // "Torres-Benavides, Cari M" reads "Cari Torres-Benavides": the first and last
+  // word, the order turned round, initials, honorifics and parentheses dropped.
+  var NAME_SKIP = /^(dr|mr|mrs|ms|mx|prof|jr|sr|ii|iii|iv|phd|edd|md)$/i;
+  function personName(n) {
+    var s = String(n || ""), i = s.indexOf(",");
+    if (i >= 0) s = s.slice(i + 1) + " " + s.slice(0, i);
+    var w = s.replace(/\([^)]*\)/g, " ").split(/\s+/).filter(function (t) {
+      var b = t.replace(/\./g, "");
+      return b.length > 1 && !NAME_SKIP.test(b);
+    });
+    return w.length >= 2 ? w[0] + " " + w[w.length - 1] : w.join(" ");
+  }
+  function titleSearchHtml(name, email) {
+    var dom = String(email || "").split("@")[1] || "", who = personName(name);
+    if (!dom || !who) return "";
+    var href = "https://www.google.com/search?q=" + encodeURIComponent('"' + who + '" site:' + dom.toLowerCase());
+    return '<a href="' + esc(href) + '" target="_blank" rel="noopener" aria-label="' +
+      esc("Find " + who + "'s title on " + dom.toLowerCase() + " (opens in a new tab)") + '">find title</a>';
+  }
+  function titleWords(title, name, email) {
+    var t = String(title || "").trim();
+    var find = /^other$/i.test(t) ? titleSearchHtml(name, email) : "";
+    return esc(t || "?") + (find ? ", " + find : "");
+  }
+  function ctxCollegeIs(name, key) {
+    return (rosterByShortName()[shortName(name)] || name) === key;
+  }
+  // "MAP role: Initiator" or "Not a MAP user"; another college's role names it.
+  function mapRoleWords(ctx, key) {
+    if (!ctx.map.length) return "Not a MAP user";
+    var seen = {}, parts = [];
+    ctx.map.forEach(function (u) {
+      var w = esc(u.role || "user") +
+        (u.status && !/^active$/i.test(u.status) ? " (" + esc(String(u.status).toLowerCase()) + ")" : "") +
+        (u.college && !ctxCollegeIs(u.college, key) ? ", " + esc(u.college) : "");
+      if (!seen[w]) { seen[w] = 1; parts.push(w); }
+    });
+    return "MAP role: " + parts.join("; ");
+  }
+  // "On landing page as Evaluator" or "Not on landing page"; the Lead's reads
+  // "Lead on landing page as …" or "Lead not on landing page". A listing on
+  // another college's page names that college.
+  function landingWords(ctx, key, lead) {
+    if (!ctx.landing.length) return lead ? "Lead not on landing page" : "Not on landing page";
+    var own = ctx.landing.filter(function (l) { return ctxCollegeIs(l.college, key); });
+    var list = own.length ? own : ctx.landing, seen = {}, titles = [];
+    list.forEach(function (l) {
+      var w = esc(l.title || "a contact") + (own.length ? "" : " (" + esc(l.college) + ")");
+      if (!seen[w]) { seen[w] = 1; titles.push(w); }
+    });
+    return (lead ? "Lead on landing page as " : "On landing page as ") + titles.join(" and ");
+  }
+  function ctxWords(kind, key, fy) {
+    var ctx = reqCtxOf(kind, key, fy);
+    return ctx ? " &middot; " + mapRoleWords(ctx, key) + " &middot; " + landingWords(ctx, key, false) : "";
+  }
+  // The requester, as the review lines name them: name (title) · MAP role · landing page.
+  function whoHtml(kind, key, fy, name, title, email) {
+    return esc(name || "?") + " (" + titleWords(title, name, email) + ")" + ctxWords(kind, key, fy);
+  }
 
   // Reviewer-only lookup of the PII attestation row for a college (from the gated
   // RPC feed). Null when the caller isn't a reviewer, or the active row is a
@@ -6462,8 +6709,8 @@
     if (unlocked() && !publicMode() && row && row.status !== "revoked") {
       var rev = optinReviewOf(college), k = esc(college);
       ctl = '<span class="cplfund-corow">' +
-        (rev ? '<span class="dk">' + (row.status === "confirmed" ? "Confirmed for " : "Requested by ") + esc(rev.name || "?") +
-          " (" + esc(rev.title || "?") + ") &middot; " +
+        (rev ? '<span class="dk">' + (row.status === "confirmed" ? "Confirmed for " : "Requested by ") +
+          whoHtml("part", college, null, rev.name, rev.title, rev.email) + " &middot; " +
           esc(rev.email || "") + (rev.requested_at ? " &middot; " + esc(isoMdy(rev.requested_at)) : "") +
           "</span> " : "") +
         (row.status === "confirmed"
@@ -6628,14 +6875,18 @@
     if (!att) return "";
     var rev = ncAttestReviewOf(college), bits = [];
     if (rev) {
-      bits.push("Noncredit attestation " + esc(att.fiscal_year || "") + " by " + esc(rev.attestor_name || "?") +
-        " (" + esc(rev.attestor_title || "?") + ") &middot; " + esc(rev.attestor_email || ""));
+      bits.push("Noncredit attestation " + esc(att.fiscal_year || "") + " by " +
+        whoHtml("nc", college, att.fiscal_year, rev.attestor_name, rev.attestor_title, rev.attestor_email) +
+        " &middot; " + esc(rev.attestor_email || ""));
       if (rev.requested_at) bits.push(esc(isoMdy(rev.requested_at)));
       if (rev.nc_awarded_count != null) bits.push(esc(fmtInt(rev.nc_awarded_count)) + " former noncredit students awarded CPL");
       if (rev.portfolio_course) bits.push("portfolio course " + esc(rev.portfolio_course));
       if (rev.attested_exhibits) bits.push("exhibits: " + esc(rev.attested_exhibits));
       if (rev.lead_types && rev.lead_types.length) bits.push("Lead: " + esc(rev.lead_types.map(function (v) {
         var o = NC_LEAD_TYPES.filter(function (x) { return x.val === v; })[0]; return o ? o.label : v; }).join(", ")));
+      // The attestation says the Lead is published on the landing page; this checks it.
+      var leadCtx = reqCtxOf("lead", college, att.fiscal_year);
+      if (leadCtx) bits.push(landingWords(leadCtx, college, true));
       if (rev.lead_assignment) bits.push("assignment: " + esc(rev.lead_assignment));
       if (rev.lead_meets) bits.push("meets credit CPL colleagues " + esc(rev.lead_meets));
     }
@@ -6661,7 +6912,7 @@
     function line(r, actions) {
       return '<div class="cplfund-colane-row"><div class="cplfund-colane-who">' +
         "<strong>" + esc(dispName(r.college)) + "</strong> &middot; " + esc(r.name || "?") +
-        ' <span class="dk">(' + esc(r.title || "?") + ")</span><br>" +
+        ' <span class="dk">(' + titleWords(r.title, r.name, r.email) + ")" + ctxWords("part", r.college, null) + "</span><br>" +
         '<span class="dk">' + esc(r.email || "") + " &middot; submitted " + fmtWhen(r.requested_at) +
         (r.status === "confirmed" && r.confirmed_at ? " &middot; confirmed " + fmtWhen(r.confirmed_at) : "") +
         (r.status === "revoked" && r.revoked_at ? " &middot; withdrawn " + fmtWhen(r.revoked_at) : "") +
@@ -11772,6 +12023,7 @@
     // curator choices showing)", flipping back to edit. Session-only.
     docType: "memo",    // memo | letter | report | brief
     textEditing: null,  // key of the prose block a signed-in reviewer is editing, else null
+    mailTplOpen: false, // the Response email fold, kept open across renders once opened
     cardRenaming: null, // card id whose custom-title field Rename opened (2026-09-24), else null
     textDraft: {},      // what they have typed so far, kept across the re-renders an edit triggers
     titleEditing: null, // id of the section whose TITLE is being renamed, else null
@@ -13750,7 +14002,7 @@
       : "";
     return '<div class="cplfund-elig">' +
       '<div class="cplfund-elig-intro">' + proseBlockHtml("elig_intro") + "</div>" +
-      coReviewLaneHtml() +
+      coReviewLaneHtml() + responseEmailHtml() +
       coordItem + partItem + extraHtml +
       '<div class="dk cplfund-reqafter">Once an institution meets the minimum conditions, it receives ' +
       "its full outcomes-based funding within the two-year window.</div>" +
@@ -17184,6 +17436,10 @@
     // Editable prose blocks (2026-09-02): Edit opens a textarea; Save commits
     // to the active layer (shared when signed in); Cancel discards; Restore
     // drops the override so the house text returns.
+    // The Response email fold stays as the reviewer left it across renders.
+    document.querySelectorAll("#cplFundingMount details[data-mailtpl]").forEach(function (d) {
+      d.addEventListener("toggle", function () { state.mailTplOpen = d.open; });
+    });
     document.querySelectorAll("#cplFundingMount [data-textedit]").forEach(function (b) {
       b.addEventListener("click", function () {
         var key = b.getAttribute("data-textedit");
@@ -18503,6 +18759,8 @@
       // Contacts as PostgREST returns them (the directory's rows or the
       // mirror's), through the same ingest the load uses.
       ELIG.contact = o.contacts ? ingestContacts(o.contacts, rosterByShortName()) : {};
+      // Requester context as cpl_funding_requester_context() returns it.
+      ELIG.reqCtx = o.reqCtx ? ingestReqCtx(o.reqCtx, rosterByShortName()) : null;
     },
     _ingestElig: function (res) { ingestElig(res || []); },
     _gate: function (c) { return baselineGate(c); },
