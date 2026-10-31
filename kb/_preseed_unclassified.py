@@ -45,6 +45,9 @@ import re
 import sys
 from datetime import date, datetime, timezone
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import _ap_official_titles as AP  # noqa: E402  (the official AP exam names)
+
 HERE = os.path.dirname(os.path.abspath(__file__))
 AUDIT_PATH = os.path.join(HERE, "exhibit_audit", "latest.json")
 UT_PATH = os.path.join(HERE, "unified_titles.json")
@@ -1006,6 +1009,17 @@ def stage_cslb(raw):
                     "A statewide CCC-collaborative exhibit."}
 
 
+def stage_ap(raw):
+    """An AP title takes College Board's official exam name (kb/_ap_official_titles.py; Sam,
+    2026-10-31: "set the canonical title to the official College Board AP title ... folding the
+    locals under as best as is possible"). A title naming two exams is left to the classifier."""
+    r = AP.resolve(raw)
+    if not r or not r.get("title"):
+        return None
+    return {"title": r["title"], "issuer": AP.ISSUER, "confidence": 0.95, "via": "ap",
+            "note": "College Board's official AP exam name, read from the title."}
+
+
 def stage_family(raw, sw_index, fam_index, issuer_of):
     """Match a residual raw against the statewide CCC catalog, then ALL existing
     house families, after stripping non-identity decoration ('Certification:'
@@ -1114,8 +1128,8 @@ def build_stage_plan(queue, families, assigned_raws, sw_index=None, fam_index=No
     for raw in queue:
         if raw in assigned_raws:
             continue
-        rec = None
-        for lane in (stage_journeyman, stage_carpenters_trade, stage_ironworker, stage_nccer):
+        rec = stage_ap(raw)
+        for lane in (() if rec else (stage_journeyman, stage_carpenters_trade, stage_ironworker, stage_nccer)):
             rec = lane(raw)
             if rec:
                 break
