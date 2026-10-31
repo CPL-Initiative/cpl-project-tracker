@@ -13,6 +13,11 @@
 //     and a panel whose issuer and training sites (many, each with the college it trains for) save as
 //     _CREDENTIAL_REVIEW:: rows: training_sites_override as JSON and training_agency_override as the sites
 //     joined. The live rows win over the daily file; a later one-trainer edit wins over the list.
+//   - Exhibit Adoption folded into the panel (Sheet 147 step 3, kb/exhibits_adoption.json): a college chip opens
+//     what it articulated (lines, units, its own exhibit) or the course it already teaches; Could adopt is the
+//     M-ID prescriptive layer, never the TOP or C-ID overlap (Sam, 2026-09-24; Rule 7), on the panel and on the
+//     Review card alike; the What credit does it carry? and Who could adopt it? tiles; Request Quick Adopt from
+//     map_links.js.
 //
 // Run from repo root: `npm test` (or `node tests/exhibits.test.js`).
 const fs = require("fs");
@@ -34,10 +39,10 @@ check("nav_groups.js lists 'exhibits' after the Commons", /'commons', 'exhibits'
 const daily = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
 const proc = fs.readFileSync(".github/workflows/cer-procedures.yml", "utf8");
 check("the daily run builds and commits the review files", /python3 kb\/_build_exhibits_review\.py/.test(daily)
-  && /git add kb\/exhibits_review\.json kb\/exhibits_review_courses\.json/.test(daily));
+  && /git add kb\/exhibits_review\.json kb\/exhibits_review_courses\.json kb\/exhibits_adoption\.json/.test(daily));
 check("the daily build runs after the suggestions it reads", daily.indexOf("_suggest_unclassified.py") < daily.indexOf("_build_exhibits_review.py"));
 check("the nightly procedures run rebuilds and commits them", /python3 kb\/_build_exhibits_review\.py/.test(proc)
-  && /git add kb\/exhibits_review\.json kb\/exhibits_review_courses\.json/.test(proc)
+  && /git add kb\/exhibits_review\.json kb\/exhibits_review_courses\.json kb\/exhibits_adoption\.json/.test(proc)
   && proc.indexOf("_cer_procedures.py --classify") < proc.indexOf("_build_exhibits_review.py"));
 check("CI runs the builder's test", /python3 tests\/exhibits_review_build_test\.py/.test(fs.readFileSync(".github/workflows/js-tests.yml", "utf8")));
 check("the Commons row links Open Exhibits", /"href": "#exhibits", "text": "Open Exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
@@ -100,7 +105,7 @@ const REVIEW = {
       under: ["ART 10 Digital Art", "DM 2 Intro Digital Art"], under_count: 2, exists: true },
     { raw: AP, step: "Wording check", why: "the classifier's title has a method word left in", colleges: [C("Los Angeles Pierce College")],
       title: "AP Computer Science A", issuer: "College Board", from: "the classifier", ids: ["MAPSAS-ACSA20-1-001"],
-      art: [C("Los Angeles Pierce College")], could: [C("Chabot College"), C("Norco College")], basis: "", same: false },
+      art: [C("Los Angeles Pierce College")], could: [C("Norco College")], basis: "", same: false, courses_key: "teaches:AP Computer Science A" },
     { raw: WELD, step: "Wording check", why: "the classifier's title has a dangling word", colleges: [C("Norco College")],
       title: "Welding 1 for", issuer: "", from: "the classifier", ids: ["MAPCXI-WELD-1-001"],
       art: [C("Norco College")], could: [], basis: "", same: false }
@@ -108,7 +113,22 @@ const REVIEW = {
 };
 const COURSES = { schema: 1, colleges: COLLEGES, courses: { "ARTS 250": {
   [String(C("Cabrillo College"))]: [["DM 1", "Intro to Digital Media", 3]],
-  [String(C("Cypress College"))]: [["ART 20", "Digital Art I", 3], ["ART 20N", "Digital Art I", 0]] } } };
+  [String(C("Cypress College"))]: [["ART 20", "Digital Art I", 3], ["ART 20N", "Digital Art I", 0]] },
+  "teaches:AP Computer Science A": { [String(C("Norco College"))]: [["CIS 5", "", 4]] } } };
+const AC = ["Bakersfield College", "Cabrillo College", "Cañada College", "Chabot College", "De Anza College", "Norco College"];
+const A = function (n) { return String(AC.indexOf(n)); };
+const ADOPTION = { schema: 1, written_at: "2026-10-31T08:00:00Z", cip_sectors: { "11": "Computer and Information Sciences", "46": "Construction Trades" },
+  colleges: AC, credentials: {
+    "CompTIA Security+": { a: { [A("Cabrillo College")]: [3, [["CIS 75", "3 hours in Introduction Information Systems Security"]]],
+      [A("Chabot College")]: [2, [["CNT 69", "2 hours in Network Security"]]] },
+      c: { [A("Cañada College")]: [["CIS 60", "", 3]], [A("Cabrillo College")]: [["CIS 75", "", 3]], [A("De Anza College")]: [["CIS 108", "", 4.5]] },
+      w: 4, s: "11", p: 3,
+      x: [["MAPCBEN-SF(-1-001", "Security Fund. (Security+)", 3], ["MAPCXI-CS-1-001", "CompTIA Security+", 3], ["MAPCXN-SCP1-1-001", "Security+ Prep", 2], ["MAPCxS-CSS/-1-001", "CS 004", 3]] },
+    "IBEW Electrician Apprenticeship — Year 1": { a: { [A("Norco College")]: [3.5, [["ELC 401", "3.5 hours in Introduction to Electrical Theory"]]], [A("Bakersfield College")]: [0, []] },
+      s: "46", p: 3.5, x: [["MAPAPP-IBEW-1-001", "IBEW Year 1", 3.5]] }
+  } };
+const LINKS = { by_title: { "IBEW Electrician Apprenticeship — Year 1": ["MAPAPP-IBEW-1-001"], "CompTIA Security+": ["MAPCXI-CS-1-001", "NOT-VERIFIED"] },
+  found: { "MAPAPP-IBEW-1-001": { college: "Norco College" }, "MAPCXI-CS-1-001": { college: "Cabrillo College" } } };
 const IBEW = "IBEW Electrician Apprenticeship — Year 1";
 const SECP = "CompTIA Security+";
 const MED = "Medical Core";
@@ -156,6 +176,7 @@ function load(opts) {
     function bad(status) { return Promise.resolve({ ok: false, status: status, json: function () { return Promise.resolve({}); } }); }
     if (url === "kb/exhibits_review.json") return opts.noData ? bad(404) : ok(REVIEW);
     if (url === "kb/exhibits_review_courses.json") return ok(COURSES);
+    if (url === "kb/exhibits_adoption.json") return opts.noAdoption ? bad(404) : ok(ADOPTION);
     if (/\/rest\/v1\/rpc\/exhibit_title_students$/.test(url)) {
       if (opts.notReviewer) return ok([]);
       const body = JSON.parse(init.body);
@@ -178,6 +199,13 @@ function load(opts) {
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; }
   };
   w.cplCollegeShort = function (n) { return n.replace(/ College$/, "").replace("Los Angeles ", "LA "); };
+  // map_links.js's surface: the verified index, the one address, and the line of chips per building college.
+  w.CPL_MAP_LINKS = {
+    load: function () { calls.push({ url: "maplinks:load", method: "GET" }); return Promise.resolve(JSON.parse(JSON.stringify(LINKS))); },
+    url: function (id) { return "https://map.example/opp?Exhibit=" + encodeURIComponent(id) + "&View=Non-Military"; },
+    node: function (title) { const sp = w.document.createElement("span"); sp.className = "cpl-maplinks"; sp.setAttribute("data-ml-title", title);
+      sp.textContent = "Request Quick Adopt in MAP, from the exhibit each college built"; return sp; }
+  };
   w.CPL_TABS = { loadScript: function (src, name, cb) {
     calls.push({ url: "loadScript:" + src, method: "SCRIPT" });
     if (src === "credential_reference_data.js" && !opts.noCreds) w[name] = JSON.parse(JSON.stringify(CREDREF));
@@ -217,6 +245,8 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the footer says most colleges first", /1 of 4 · most colleges first/.test(txt(t.d.querySelector(".exh-foot"))));
   check("the CER step chip names the step, with its hover", /CER step: Conflict with the reference/.test(txt(t.d.querySelector(".exh-chip")))
     && /never overwrites a person's decision/.test(t.d.querySelector(".exh-chip").getAttribute("data-tip")));
+  check("an older file's broad could-adopt list never shows (Rule 7; Sam, 2026-09-24)", /Could adopt \(0\)/.test(txt(t.d.querySelector(".exh-colleges")))
+    && !Array.from(t.d.querySelectorAll(".exh-colleges .exh-cchip")).some(function (b) { return txt(b) === "Chabot"; }));
   check("the conflict shows the title saved earlier", /Saved earlier as “Juvenile Justice Procedures”/.test(txt(t.d.querySelector(".exh-card"))));
   check("the training site reads from the reference and is not an input", /Training site:Regional Academy/.test(txt(t.d.querySelector(".exh-read"))) && !t.d.querySelector(".exh-read input"));
   check("signed out, the students line asks for a sign-in", /Sign in as a reviewer to see students/.test(txt(t.d.querySelector(".exh-why"))));
@@ -261,9 +291,11 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   stepTile(t.d, "Wording check").click(); await settle();
   check("a step tile filters the queue and presses", stepTile(t.d, "Wording check").getAttribute("aria-pressed") === "true"
     && current(t.d) === AP && /1 of 2 in Wording check/.test(txt(t.d.querySelector(".exh-foot"))));
-  check("a filtered AP title offers Exhibit Adoption's colleges as buttons", /Could adopt \(2\), from Exhibit Adoption/.test(txt(t.d.querySelector(".exh-colleges"))));
+  check("a filtered AP title offers the colleges that teach a course mapped to it", /Could adopt \(1\), teach a course mapped to it/.test(txt(t.d.querySelector(".exh-colleges"))));
   Array.from(t.d.querySelectorAll("button.exh-cchip")).find(function (b) { return txt(b) === "Norco"; }).click(); await settle();
-  check("an Exhibit Adoption college says its faculty choose the course", /its faculty choose the course/.test(txt(t.d.getElementById("exh-adopt"))));
+  check("a teaching college's chip opens the course mapped to the proposed credential, with no empty title",
+    /Courses at this college mapped to AP Computer Science A/.test(txt(t.d.getElementById("exh-adopt"))) && /CIS 5, 4 units/.test(txt(t.d.getElementById("exh-adopt")))
+    && !/CIS 5 ,/.test(txt(t.d.getElementById("exh-adopt"))));
   const find = t.d.getElementById("exh-find");
   find.value = "weld"; find.dispatchEvent(new t.w.Event("input"));
   const hit = t.d.querySelector("#exh-results button");
@@ -376,7 +408,22 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the live list stands when its joined text matches the trainer saved beside it", rows[2][2] === "Regional Academy North; Valley Academy");
   check("a later one-trainer edit that differs wins over the list", rows[1][2] === "Orange High School");
   check("a credential's other issuers count beside it", rows[1][1] === "Canyon High School and 1 more");
-  check("adoption counts the colleges", rows[2][4] === "3 articulate it" && rows[0][4] === "1 articulates it · 11 could adopt");
+  check("adoption counts the colleges; could adopt is the prescriptive layer, the articulating college left out",
+    rows[2][4] === "3 articulate it" && rows[0][4] === "2 articulate it · 2 could adopt" && rows[3][4] === "2 articulate it");
+  check("articulated at joins MAP's adopters with no course identity to the reference's colleges", rows[0][4].indexOf("2 articulate it") === 0);
+  check("the reference's broad potential_colleges never count", !rows.some(function (r) { return /11 could adopt|1 could adopt/.test(r[4]); }));
+  const groups = Array.from(t.d.querySelectorAll(".exh-group > .exh-q")).map(txt);
+  check("the view asks the three questions", groups.join("|") === "What is it called?|What credit does it carry?|Who could adopt it?");
+  const all = Array.from(t.d.querySelectorAll(".exh-tile")).map(txt);
+  check("the credit tiles count recommendations, statewide ones and the field",
+    all.some(function (x) { return /^Credit recs3 of 4/.test(x); }) && all.some(function (x) { return /^Statewide recs1 of 4/.test(x); })
+    && all.some(function (x) { return /^Field2 of 4/.test(x); }));
+  check("the adoption tiles count the adoptable, the shared and the could-adopt credentials",
+    all.some(function (x) { return /^Adoptable2 of 4/.test(x); }) && all.some(function (x) { return /^Shared3 of 4/.test(x); })
+    && all.some(function (x) { return /^Could adopt1 of 4/.test(x); }));
+  check("the adoption file and MAP's index load once with the view", t.calls.filter(function (c) { return c.url === "kb/exhibits_adoption.json"; }).length === 1
+    && t.calls.filter(function (c) { return c.url === "maplinks:load"; }).length === 1);
+  check("the views link names what Exhibit Adoption still holds", /The college matrix, in Exhibit Adoption/.test(txt(t.d.querySelector(".exh-views"))));
   check("the table is a labeled region with scoped headers and a fixed layout", t.d.querySelector('.exh-tablewrap[role="region"][aria-label="Credentials"][tabindex="0"]')
     && t.d.querySelectorAll('.exh-table th[scope="col"]').length === 5 && t.d.querySelectorAll(".exh-table col").length === 5);
 
@@ -403,7 +450,25 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   const opts0 = Array.from(t.d.getElementById("exh-c-col-0").options).map(function (o) { return o.value; });
   check("the college choices are Any college and the colleges that articulate it", opts0.join("|") === "|Bakersfield College|Norco College");
   check("the credit and the colleges show", /3\.5 hours in Electrical Theory/.test(txt(cp)) && /M-ID ELEC M1001, Electrical Theory/.test(txt(cp))
-    && /Articulated at \(2\)/.test(txt(cp)) && /Could adopt \(1\)/.test(txt(cp)) && /No students with credit yet/.test(txt(cp)));
+    && /Articulated at \(2\)/.test(txt(cp)) && /Could adopt \(0\)/.test(txt(cp)) && /No students with credit yet/.test(txt(cp)));
+  check("the credit block names the field, the peer median and the exhibits", /CIP 46, Construction Trades/.test(txt(cp))
+    && /The median articulating college awards 3\.5 units/.test(txt(cp)) && /Exhibits in MAP \(1\): IBEW Year 1, 3\.5 units/.test(txt(cp)));
+  check("the panel no longer sends a reader to Exhibit Adoption for a college's courses", !/Each college's courses/.test(txt(cp)));
+  check("the MAP line for the credential sits under the chips", cp.querySelector('.cpl-maplinks[data-ml-title="' + IBEW + '"]'));
+  const norco = Array.from(cp.querySelectorAll("button.exh-cchip")).find(function (b) { return txt(b) === "Norco"; });
+  check("an articulating college is a button tied to the box", norco && norco.getAttribute("aria-controls") === "exh-c-adopt" && norco.getAttribute("aria-expanded") === "false"
+    && t.d.getElementById("exh-c-adopt").hidden);
+  norco.click(); await settle();
+  let box = t.d.getElementById("exh-c-adopt");
+  check("its chip opens what it articulated: the line, the units, its own exhibit in MAP", !box.hidden && /Norco College/.test(txt(box))
+    && /Articulated, 3\.5 units in all/.test(txt(box)) && /ELC 401: 3\.5 hours in Introduction to Electrical Theory/.test(txt(box))
+    && /Its exhibit in MAP/.test(txt(box)) && box.querySelector("a").href === "https://map.example/opp?Exhibit=MAPAPP-IBEW-1-001&View=Non-Military");
+  check("the chip reads expanded and the focus target survives", Array.from(t.d.querySelectorAll("#exh-cpanel button.exh-cchip")).find(function (b) { return txt(b) === "Norco"; }).getAttribute("aria-expanded") === "true");
+  Array.from(t.d.querySelectorAll("#exh-cpanel button.exh-cchip")).find(function (b) { return txt(b) === "Bakersfield"; }).click(); await settle();
+  box = t.d.getElementById("exh-c-adopt");
+  check("a college with no line says so and claims no exhibit", /MAP lists no credit recommendation line/.test(txt(box)) && !box.querySelector("a"));
+  Array.from(t.d.querySelectorAll("#exh-cpanel button.exh-cchip")).find(function (b) { return txt(b) === "Bakersfield"; }).click(); await settle();
+  check("a second click closes the box", t.d.getElementById("exh-c-adopt").hidden);
 
   // edit: two JATCs, each for its college
   t.d.getElementById("exh-c-col-0").value = "Bakersfield College"; t.d.getElementById("exh-c-col-0").dispatchEvent(new t.w.Event("change"));
@@ -474,6 +539,31 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   viewBtn(t.d, "Credentials").click(); await settle();
   byText(t.d, ".exh-table button", JLP).click(); await settle();
   check("a panel draft outlives leaving the view", t.d.getElementById("exh-c-issuer").value === "Draft issuer");
+
+  // Exhibit Adoption folded in: CompTIA Security+'s could-adopt colleges
+  byText(t.d, ".exh-table button", SECP).click(); await settle();
+  cp = t.d.getElementById("exh-cpanel");
+  check("Could adopt lists the teaching colleges, the articulating one left out", /Could adopt \(2\)/.test(txt(cp))
+    && !Array.from(cp.querySelectorAll(".exh-ccrow")).some(function (row) { return /Could adopt/.test(txt(row)) && /Cabrillo/.test(txt(row)); }));
+  check("the over-merged colleges are counted, never named", /4 colleges teach a course under an identity that joins too many courses to name them/.test(txt(cp)));
+  check("an adopter MAP records beyond the reference is a chip", Array.from(cp.querySelectorAll("button.exh-cchip")).some(function (b) { return txt(b) === "Chabot"; })
+    && /Articulated at \(2\)/.test(txt(cp)));
+  check("a more control keeps a space from the text before it", /and 1 more/.test(txt(cp)) && !/unitsand/.test(txt(cp)) && !/Plusand/.test(txt(cp)));
+  check("four exhibits fold to three and 1 more", /Exhibits in MAP \(4\)/.test(txt(cp)) && byText(cp, "button", "and 1 more"));
+  Array.from(cp.querySelectorAll("button.exh-cchip")).find(function (b) { return txt(b) === "De Anza"; }).click(); await settle();
+  box = t.d.getElementById("exh-c-adopt");
+  check("a could-adopt chip opens the course it already teaches and points to Request Quick Adopt",
+    /Already teaches a course mapped to it/.test(txt(box)) && /CIS 108, 4\.5 units/.test(txt(box)) && /Request Quick Adopt/.test(txt(box)));
+  t.M._state.cs.open = null;
+
+  // the adoption file could not be read
+  t = load({ noAdoption: true });
+  await t.M.boot(); await settle();
+  viewBtn(t.d, "Credentials").click(); await settle();
+  check("an unread adoption file leaves the table standing and says so on the tiles", rowsOf(t.d).length === 4
+    && Array.from(t.d.querySelectorAll(".exh-tile")).some(function (x) { return /^FieldCould not be read/.test(txt(x)); }));
+  byText(t.d, ".exh-table button", SECP).click(); await settle();
+  check("its Could adopt says it could not be read rather than none", /Could adopt \(0\)Could not be read/.test(txt(t.d.getElementById("exh-cpanel"))));
 
   // the live rows could not be read
   t = load({ overlayFails: true });

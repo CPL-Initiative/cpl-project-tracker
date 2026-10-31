@@ -83,6 +83,22 @@ trainer with the first site; the bake emits `trainers`; the Review card links th
 existing credential. Governance: `field:kb_curation.training_sites_override` mapped to DR-07. Not yet built: sites for a
 title new to the reference (they wait until the fold adds it), and the *Held titles by group* table.
 
+**Exhibit Adoption folded into the panel — built (SkyBayberry, 2026-10-31; Sheet 147 step 3).** The same builder writes
+`kb/exhibits_adoption.json`: per credential, what each college articulated (its distinct credit recommendation lines,
+units by EACR's own leading-figure rule), the courses each could-adopt college already teaches (`statewide_prescriptive.js`,
+over-merged identities counted and never named), the exhibits, the CIP sector and the peer median. The Credentials view
+reads it with the reference and adds the *What credit does it carry?* tiles (Credit recs, Statewide recs, Field) and the
+*Who could adopt it?* tiles (Adoptable, from `map_links.js`'s verified index; Shared; Could adopt). In the panel every
+college chip is a button: *Articulated at* (the reference's colleges and MAP's adopters, joined) opens the college's lines,
+units and its own exhibit in MAP; *Could adopt* opens the course it already teaches; the `map_links.js` line of Request
+Quick Adopt chips sits under them. **Could adopt never reads the TOP and C-ID overlap** (EACR's `potential_names`, off every
+screen since Sam's ruling of 2026-09-24; Rule 7): the Review card's fallback had shown it on 269 of 468 cards (14,669 pairs)
+and the panel read the reference's unheld `adoption_leverage` (15,081 pairs against EACR's 4,865). A held title with no
+same-identity course now names the colleges that teach a course mapped to its proposed credential (51 titles), else none.
+KB note `methodology-a-fold-carries-the-folded-tabs-rulings`. What EACR still shows that Exhibits does not: the college
+matrix and its statewide and college filters (CIP sector, ASCCC Area, SW Region, District, College), its exports and
+Create Handout. Card 1's facts move those to the public adoption page, where colleges use them.
+
 ## Status
 
 ✅ **Live: the procedures run saves nightly, the fold applies per assignment, and the CER tab is three views (Needs
@@ -186,9 +202,11 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
 rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
 `python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
 
-**NEXT:** the redesign in Sam's Sheet 147 order, Review and the credential panel built (above): (1) read Sam's first
+**NEXT:** the redesign in Sam's Sheet 147 order, Review, the credential panel and EACR's per-credential view built (above): (1) read Sam's first
 saves from the card and the panel, and the first nightly save of `high-school-rop` (expected 55; its receipt in
 `kb/cer_procedures_out/saved/`; the queue should fall to about 413); (2) training sites for a held title new to the
 reference, if Sam asks for them before the fold adds it (a field the fold reads on `_UNCLASSIFIED::`, mapped first under
-Rule 10 a3); the *Held titles by group* table if he asks; (3) EACR folds in; (4) the public adoption page on settled
-credentials only, in Malone's CPL/AI look, its name still Sam's to give.
+Rule 10 a3); the *Held titles by group* table if he asks; (3) EACR's last part, the college matrix with its statewide
+and college filters, exports and Create Handout, moves to (4) the public adoption page on settled credentials only, in
+Malone's CPL/AI look, its name still Sam's to give; then the CER and EACR tabs retire. After the PR merges, a dispatched
+daily run publishes `kb/exhibits_adoption.json`; until then the panel's tiles read *Could not be read*.

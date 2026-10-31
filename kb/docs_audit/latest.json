@@ -10,9 +10,9 @@
     "other": 150000
   },
   "summary": {
-    "files": 1337,
-    "bytes": 13564598,
-    "over_budget": 1,
+    "files": 1338,
+    "bytes": 13574192,
+    "over_budget": 2,
     "handoff_max": 532,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59993,
@@ -26,44 +26,44 @@
       },
       "other": {
         "files": 137,
-        "bytes": 4156551,
+        "bytes": 4157594,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9103,
+        "bytes": 9481,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2497284,
+        "bytes": 2499369,
         "over": 0
       },
       "kb_note": {
-        "files": 570,
-        "bytes": 2796229,
+        "files": 571,
+        "bytes": 2799484,
         "over": 0
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 453372,
-        "over": 1
+        "bytes": 456156,
+        "over": 2
       },
       "handoff": {
         "files": 501,
-        "bytes": 3592066,
+        "bytes": 3592115,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
-      "oversized_doc": 1,
+      "oversized_doc": 2,
       "house_voice": 1,
       "vault_heavy_path": 72
     },
     "vault": {
-      "files": 25145,
-      "bytes": 4050338691,
+      "files": 25146,
+      "bytes": 4050384114,
       "heavy_bytes": 2874035280,
       "heavy_share": 0.71,
       "ignore_filters": [
@@ -153,6 +153,19 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20962,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 962,
+        "ratio": 1.05
+      },
+      "message": "20,962 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/cer-procedures.md"
     },
     {
       "rule": "oversized_doc",

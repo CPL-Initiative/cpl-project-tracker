@@ -29,7 +29,7 @@ Your moniker is **SkyHackberry**. Session 531 (SkyOlallieberry) was Sam's sessio
 2. **Accept's email (Sheet 146 card 3, *m365*):** once Sam sends the RCCD IT request and IT grants the mailbox, map the sender in `kb/governance_surface_map.json` (Rule 10 a3), then build the Edge Function.
 3. **Los Angeles Valley, 29 failing live and 8 outside the load:** read the Engineering and Manufacturing family's ten coverage failures against their own pages (a free page read first), then the 12 program sums that fail while the degree adds up. Respiratory Therapy 21899 prints 74 units.
 4. **A cpl-chat deploy is held for Sam's go** (handoff 530 item 4). Run the preview A/B first.
-5. **Beside this run, the CER redesign side lane** keeps its own handoff, `docs/cer_redesign_handoff.md` (next: SkyBayberry). The Exhibits tab's Review queue (#2602) and its credential panel (#2603) are built; Sheet 147 is answered whole and the lane carries no NEEDS SAM. That lane owns `exhibits.js` and the CER files.
+5. **Beside this run, the CER redesign side lane** keeps its own handoff, `docs/cer_redesign_handoff.md` (next: SkyTwinberry). The Exhibits tab's Review queue (#2602), its credential panel (#2603) and Exhibit Adoption's per-credential view (#2604) are built; Sheet 147 is answered whole and the lane carries no NEEDS SAM. That lane owns `exhibits.js` and the CER files.
 6. **Carryover:** Sierra's first-text latency; `credential_alignment_for_college`; the college short-name editor and the public page's Contents; the lints' checkout time. Glendale stays parked (`glendale-parked-2026-10-30`).
 
 ## Sam's decisions and words this run

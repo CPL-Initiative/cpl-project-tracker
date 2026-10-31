@@ -506,3 +506,27 @@ sites are set, each site with the college it trains for. The lane file states th
   `npm run a11y` named it. Rows now wrap (flex), and the panel stacks above the table below 1200px.
 - **First Light's greeting covers a review screenshot.** The a11y runner's shots showed the morning painting over the
   page; a screenshot script sets `cplFirstLight.optOut.v1` and `cplFirstLight.seen.v1` in an init script first.
+
+## 2026-10-31 — Exhibit Adoption folded into the credential panel (SkyBayberry)
+
+**What shipped.** Sheet 147 step 3, first part: `kb/exhibits_adoption.json` from the Review builder, the *What credit does
+it carry?* and *Who could adopt it?* tiles on Credentials, and college chips in the panel that open what a college
+articulated or the course it already teaches. The lane file states the design; this keeps the learning.
+
+- **A fold carries the folded tab's rulings, not only its data.** EACR's payload holds `potential_names` (every college
+  with a program under one of the exhibit's TOP codes or a course carrying one of its C-IDs), which Sam ruled off every
+  EACR screen on 2026-09-24. The Review card's fallback read it anyway: 269 of 468 cards, 14,669 college pairs. The panel
+  read the reference's `potential_colleges`, the M-ID `adoption_leverage` list without the over-merge hold: 15,081 pairs against EACR's 4,865.
+  Both now read the prescriptive layer, and both tests fail on the broad list. KB note
+  `methodology-a-fold-carries-the-folded-tabs-rulings`.
+- **Two sources name the articulating colleges, and neither is whole.** The reference counts colleges with a local course
+  under the credential's identity (17 for CompTIA Security+); EACR counts MAP's adopters, rows with no course identity
+  included (24). The panel joins them.
+- **Units across cards add by distinct line.** A credential spans several EACR cards (by CPL type), and 220 college and
+  credential pairs sit in more than one. Summing each card's units would count a shared line twice; the builder sums the
+  distinct lines with EACR's own leading-figure rule.
+- **A file the tab reads before the runner writes it.** The PR ships code only, so the tab has to read the old review file
+  (no `courses_key`) and no adoption file. An old fallback list never shows, and the tiles read *Could not be read* until
+  the dispatched daily run lands.
+- **The a11y seed should open what the build adds.** The Credentials seed now opens a college chip, so the box is measured
+  at 390 to 1440 in both themes.

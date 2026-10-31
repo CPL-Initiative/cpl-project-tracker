@@ -13,10 +13,14 @@ What it joins, all committed files:
                                       which names the proposal (Sam, 2026-10-30: "if there's a M-ID
                                       title aligned show it and let it determine the proposed
                                       classifyer")
-  statewide_data.js                   each title's exhibits: their IDs, where they are articulated,
-                                      and EACR's could-adopt colleges
+  statewide_data.js                   each title's exhibits: their IDs and where they are articulated;
+                                      per credential, what each college articulated (its credit
+                                      recommendations and units) and the exhibits in MAP
   unified_courses_members.js          the colleges holding a course of the aligned identity, and
                                       those courses (a could-adopt chip opens them)
+  statewide_prescriptive.js           the colleges that already teach a course mapped to a credential's
+                                      M-ID identity, and the courses (over-merged identities withheld):
+                                      Exhibit Adoption's could-adopt since Sam's ruling of 2026-09-24
   kb/unified_titles.json              the local titles already under the proposed title
   kb/credentials.json                 whether the proposed title is a credential yet, its training site
   kb/credential_review_overlay.json   the training sites a curator set in the credential panel, which
@@ -28,8 +32,16 @@ What it joins, all committed files:
 Students per title are not here: they are a reviewer-only read of map_student_credit, k=10
 (exhibit_title_students(), kb/migrations/), and the tab asks for them with each title's `ids`.
 
+Could adopt never reads EACR's `potential_names`: that list is every college with a program under
+one of the exhibit's TOP codes or a course carrying one of its C-IDs, and Exhibit Adoption took it off
+every screen on 2026-09-24 (Sam; Rule 7, TOP is a last-in-line signal). A held title's could-adopt
+colleges hold a course of the aligned identity, else teach a course mapped to the proposed credential
+(the prescriptive layer), else none are named.
+
 Runs nightly at the end of cer-procedures.yml and daily from daily-dashboard.yml. Writes
-kb/exhibits_review.json, which exhibits.js reads.
+kb/exhibits_review.json and kb/exhibits_review_courses.json (the Review queue) and
+kb/exhibits_adoption.json (the credential panel's "Who could adopt it?", Exhibit Adoption's
+per-credential view folded into the Exhibits tab), which exhibits.js reads.
 
 Usage, from the repo root:
   python3 kb/_build_exhibits_review.py [--root DIR] [--out PATH] [--quiet]
@@ -38,6 +50,8 @@ import argparse
 import datetime as dt
 import json
 import os
+import re
+import statistics
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -47,6 +61,8 @@ from _suggest_unclassified import load_js, norm_college  # noqa: E402
 SCHEMA = 1
 OUT = "kb/exhibits_review.json"
 COURSES_OUT = "kb/exhibits_review_courses.json"
+ADOPTION_OUT = "kb/exhibits_adoption.json"
+TEACHES = "teaches:"   # the courses file's key for a credential's prescriptive courses
 
 PROPOSED = "Proposed"
 WORDING = "Wording check"
@@ -128,7 +144,7 @@ def clean_college(name):
 
 
 def exhibits_by_raw(statewide, raws):
-    """raw title -> {ids, art, could}: every exhibit record that lists the raw."""
+    """raw title -> {ids, art}: every exhibit record that lists the raw."""
     want, out = set(raws), {}
     for x in statewide.get("exhibits") or []:
         hits = [r for r in x.get("raw_titles") or [] if r in want]
@@ -136,17 +152,113 @@ def exhibits_by_raw(statewide, raws):
             continue
         ids = x.get("exhibit_ids") or [i for i in (x.get("exhibit_id") or "").split("|") if i]
         for raw in hits:
-            rec = out.setdefault(raw, {"ids": [], "art": [], "could": []})
+            rec = out.setdefault(raw, {"ids": [], "art": []})
             for i in ids:
                 if i not in rec["ids"]:
                     rec["ids"].append(i)
             for c in map(clean_college, x.get("adopter_names") or []):
                 if c not in rec["art"]:
                     rec["art"].append(c)
-            for c in map(clean_college, x.get("potential_names") or []):
-                if c not in rec["could"]:
-                    rec["could"].append(c)
     return out
+
+
+def teaching_colleges(prescriptive, title):
+    """college name -> [[code, "", units]] for the courses a college already teaches that map to the
+    credential's M-ID identity (statewide_prescriptive.js), in the courses file's row shape."""
+    out = {}
+    for c in ((prescriptive or {}).get(title) or {}).get("colleges") or []:
+        rows = []
+        for x in c.get("courses") or []:
+            row = [" ".join(p for p in ((x.get("subject") or "").strip(), (x.get("number") or "").strip()) if p),
+                   "", x.get("units")]
+            if row[0] and row not in rows:
+                rows.append(row)
+        have = out.setdefault(clean_college(c.get("college")), [])
+        have.extend(r for r in rows if r not in have)
+    return {c: rows for c, rows in out.items() if c and rows}
+
+
+def rec_units(credit):
+    """The leading figure of a credit recommendation ("3 hours in Child Growth" -> 3.0): Exhibit
+    Adoption's own rule (_rec_units in excel_to_dashboard.py), so a college's units read the same."""
+    m = re.search(r"(\d+(?:\.\d+)?)", credit or "")
+    return float(m.group(1)) if m else 0.0
+
+
+def adoption_file(statewide, prescriptive):
+    """Exhibit Adoption's per-credential view, for the credential panel: per canonical credential,
+    what each articulating college articulated (its distinct credit recommendation lines and their
+    units), the courses each could-adopt college already teaches, the exhibits in MAP, the CIP sector
+    and the peer benchmark (the median college's units). Classified cards only: an unclassified card
+    is a held title, which the Review queue carries."""
+    by = {}
+    for x in statewide.get("exhibits") or []:
+        if x.get("is_classified") is False:
+            continue
+        ut = x.get("unified_title") or ""
+        if not ut:
+            continue
+        rec = by.setdefault(ut, {"art": {}, "records": [], "cip": x.get("cip_sector") or ""})
+        if not rec["cip"]:
+            rec["cip"] = x.get("cip_sector") or ""
+        recs = x.get("credit_recs") or []
+        for college, idx in (x.get("adopter_rec_idx") or {}).items():
+            lines = rec["art"].setdefault(clean_college(college), [])
+            for i in idx:
+                if 0 <= i < len(recs):
+                    line = [(recs[i].get("course") or "").strip(), (recs[i].get("credit") or "").strip()]
+                    if line not in lines:
+                        lines.append(line)
+        for college in x.get("adopter_names") or []:
+            rec["art"].setdefault(clean_college(college), [])
+        for r in x.get("exhibit_records") or []:
+            row = [r.get("id") or "", (r.get("title") or "").strip(), r.get("units")]
+            if row[0] and row[0] not in [k[0] for k in rec["records"]]:
+                rec["records"].append(row)
+    for ut, p in (prescriptive or {}).items():
+        if ut in by or (p or {}).get("n_colleges") or (p or {}).get("withheld"):
+            by.setdefault(ut, {"art": {}, "records": [], "cip": ""})
+    out = {}
+    for ut in sorted(by):
+        rec = by[ut]
+        art = {c: lines for c, lines in sorted(rec["art"].items()) if c}
+        units = {c: round(sum(rec_units(l[1]) for l in lines), 2) for c, lines in art.items() if lines}
+        could = {c: rows for c, rows in sorted(teaching_colleges(prescriptive, ut).items()) if c not in art}
+        entry = {"a": {c: [units.get(c, 0.0), lines] for c, lines in art.items()}}
+        if could:
+            entry["c"] = could
+        held_back = ((prescriptive or {}).get(ut) or {}).get("withheld") or 0
+        if held_back:
+            entry["w"] = held_back
+        if rec["records"]:
+            entry["x"] = sorted(rec["records"])
+        if rec["cip"]:
+            entry["s"] = rec["cip"]
+        vals = [u for u in units.values() if u]
+        if vals:
+            entry["p"] = round(statistics.median(vals), 2)
+        out[ut] = entry
+    names = sorted({c for e in out.values() for k in ("a", "c") for c in e.get(k, {})}, key=str.lower)
+    at = {c: i for i, c in enumerate(names)}
+    for e in out.values():
+        for k in ("a", "c"):
+            if k in e:
+                e[k] = {str(at[c]): v for c, v in e[k].items()}
+    return {
+        "schema": SCHEMA,
+        "_about": "The Exhibits tab's credential panel, \"Who could adopt it?\" (kb/_build_exhibits_review.py): "
+                  "Exhibit Adoption's per-credential view. Per canonical credential: a = college index -> "
+                  "[units, [[course, credit recommendation]]] for each college that articulated it; c = college "
+                  "index -> [[course, \"\", units]] for each college that already teaches a course mapped to its "
+                  "M-ID identity (statewide_prescriptive.js; never the TOP or C-ID program overlap); w = colleges "
+                  "withheld because the identity is over-merged; x = [[exhibit id, MAP title, units]]; s = the "
+                  "CIP sector; p = the median articulating college's units (the peer benchmark).",
+        "written_at": iso_now(),
+        "sources": {"statewide": statewide.get("generated_at")},
+        "cip_sectors": statewide.get("cip_sectors") or {},
+        "colleges": names,
+        "credentials": out,
+    }
 
 
 def identity_colleges(members, ident):
@@ -182,6 +294,8 @@ def build(root):
     aligned_all = sugg.get("aligned") or {}
     statewide = load_js(os.path.join(root, "statewide_data.js"))
     members = load_js(os.path.join(root, "unified_courses_members.js"))
+    pres_path = os.path.join(root, "statewide_prescriptive.js")
+    prescriptive = load_js(pres_path) if os.path.exists(pres_path) else {}
     under = under_index(load_json(root, "kb/unified_titles.json", {}))
     creds = load_json(root, "kb/credentials.json", {}) or {}
     site_lists = {t: e["training_sites"] for t, e in
@@ -208,11 +322,12 @@ def build(root):
         step = step_of(n)
         aligned = aligned_all.get(raw) if step != CONFLICT else None
         prop = proposal_of(n, aligned)
-        ex = by_raw.get(raw) or {"ids": [], "art": [], "could": []}
+        ex = by_raw.get(raw) or {"ids": [], "art": []}
         typed = [clean_college(c) for c in n.get("colleges") or []]
         art = ex["art"] or typed
         art_keys = {norm_college(c) for c in art}
-        basis, same, could = "", False, []
+        title = prop["title"]
+        basis, same, could, key = "", False, [], ""
         if aligned:
             basis = basis_of(aligned)
             if aligned["id"] not in courses:
@@ -220,11 +335,17 @@ def build(root):
             could = sorted((c for c in courses[aligned["id"]] if norm_college(c) not in art_keys),
                            key=str.lower)
             same = bool(could)
-        if not could:
-            # No same-identity course outside the articulating colleges: EACR's list stands, and
-            # each college's faculty choose the course.
-            could = sorted((c for c in ex["could"] if norm_college(c) not in art_keys), key=str.lower)
-        title = prop["title"]
+            key = aligned["id"] if same else ""
+        if not could and title:
+            # No same-identity course outside the articulating colleges: the colleges that already
+            # teach a course mapped to the proposed credential (Exhibit Adoption's could-adopt), else none.
+            teach_key = TEACHES + title
+            if teach_key not in courses:
+                courses[teach_key] = teaching_colleges(prescriptive, title)
+            could = sorted((c for c in courses[teach_key] if norm_college(c) not in art_keys), key=str.lower)
+            key = teach_key if could else ""
+            if not courses[teach_key]:
+                del courses[teach_key]
         rec = {
             "raw": raw,
             "step": step,
@@ -239,6 +360,8 @@ def build(root):
             "basis": basis,
             "same": same,
         }
+        if key:
+            rec["courses_key"] = key
         conf = (n.get("proposal") or {}).get("confidence")
         if isinstance(conf, (int, float)):
             rec["confidence"] = conf
@@ -308,7 +431,7 @@ def build(root):
         "steps": counts,
         "colleges": names,
         "held": items,
-    }, course_file
+    }, course_file, adoption_file(statewide, prescriptive)
 
 
 def dump(data, list_key):
@@ -346,14 +469,16 @@ def main(argv=None):
     ap.add_argument("--out", default=None, help="the review file (the courses file is written beside it)")
     ap.add_argument("--quiet", action="store_true")
     a = ap.parse_args(argv)
-    data, course_file = build(a.root)
+    data, course_file, adoption = build(a.root)
     out = a.out or os.path.join(a.root, OUT)
     courses_out = os.path.join(os.path.dirname(out), os.path.basename(COURSES_OUT))
-    wrote = [p for p, d, k, st in ((out, data, "held", "written_at"), (courses_out, course_file, "courses", None))
+    adoption_out = os.path.join(os.path.dirname(out), os.path.basename(ADOPTION_OUT))
+    wrote = [p for p, d, k, st in ((out, data, "held", "written_at"), (courses_out, course_file, "courses", None),
+                                   (adoption_out, adoption, "credentials", "written_at"))
              if write_if_changed(p, d, k, st)]
     if not a.quiet:
-        print("exhibits review: %d held | steps %s | aligned %d | %s"
-              % (len(data["held"]), data["steps"], data["tiles"]["aligned"]["n"],
+        print("exhibits review: %d held | steps %s | aligned %d | adoption %d credentials | %s"
+              % (len(data["held"]), data["steps"], data["tiles"]["aligned"]["n"], len(adoption["credentials"]),
                  "wrote " + ", ".join(wrote) if wrote else "unchanged"))
     return 0
 

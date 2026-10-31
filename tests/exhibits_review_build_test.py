@@ -6,9 +6,14 @@ Review first. exhibits.js draws whatever this builder writes, so the contract gu
 file: each held title in its CER step; an aligned course names the proposal ("if there's a M-ID title
 aligned show it and let it determine the proposed classifyer", 2026-10-30) with the classifier's title
 kept beside it; a conflict proposes the reference's person-reviewed title; could-adopt colleges hold a
-course of the same identity, else Exhibit Adoption's list; a title the fold settled since the run
-leaves the queue; and no student count is ever written to this public file (the student-detail ADR:
-students are a reviewer-only read).
+course of the same identity, else teach a course mapped to the proposed credential (the prescriptive
+layer), and never come from EACR's TOP and C-ID overlap (`potential_names`, off every screen since Sam's
+ruling of 2026-09-24; Rule 7); a title the fold settled since the run leaves the queue; and no student
+count is ever written to this public file (the student-detail ADR: students are a reviewer-only read).
+
+The same run writes kb/exhibits_adoption.json, Exhibit Adoption's per-credential view folded into the
+credential panel: what each college articulated (its distinct lines, units by EACR's own rule), the
+courses each could-adopt college already teaches, the exhibits, the CIP sector and the peer median.
 
 Run from the repo root: python3 tests/exhibits_review_build_test.py
 """
@@ -93,14 +98,39 @@ FIX = {
                                                            {"site": "Aptos High School"}]},
         "Juvenile Law and Procedures": {"issuing_agency_override": "California Community Colleges"}}},
 }
-STATEWIDE = {"generated_at": "2026-10-31T06:00:00", "exhibits": [
+STATEWIDE = {"generated_at": "2026-10-31T06:00:00", "cip_sectors": {"11": "Computer and Information Sciences"}, "exhibits": [
     {"exhibit_ids": ["MAPCXH-ITDM-1-001"], "raw_titles": [DM], "adopter_names": ["Cabrillo College"],
      "potential_names": ["Chabot College", "Cabrillo College"]},
     {"exhibit_ids": ["MAPSAS-ACSA20-1-001"], "raw_titles": [AP], "adopter_names": ["Los Angeles Pierce College"],
      "potential_names": ["Norco College", "Chabot College"]},
     {"exhibit_id": "MAPCXS-A2-J-1-001|MAPCxS-JLAP-1-001", "raw_titles": [JUV], "adopter_names": ["Norco College", "Modesto Junior College"],
      "potential_names": ["Chabot College"]},
+    # Two classified cards of one credential: Norco in both (its lines merge, units by distinct line).
+    {"exhibit_ids": ["MAPCXI-CS-1-001"], "raw_titles": ["CompTIA Security+"], "unified_title": "CompTIA Security+",
+     "is_classified": True, "cip_sector": "11", "adopter_names": ["Norco College", "Chabot College"],
+     "potential_names": ["Cabrillo College", "Modesto Junior College"],
+     "credit_recs": [{"course": "CIS 75", "credit": "3 hours in Security Fundamentals"},
+                     {"course": "CNT 69", "credit": "2 hours in Network Security"}],
+     "adopter_rec_idx": {"Norco College": [0], "Chabot College": [1]},
+     "exhibit_records": [{"id": "MAPCXI-CS-1-001", "title": "CompTIA Security+", "units": 3.0}]},
+    {"exhibit_ids": ["MAPCBEN-SF(-1-001"], "raw_titles": ["Security Fund. (Security+)"], "unified_title": "CompTIA Security+",
+     "is_classified": True, "cip_sector": "", "adopter_names": ["Norco College"],
+     "credit_recs": [{"course": "CIS 75", "credit": "3 hours in Security Fundamentals"},
+                     {"course": "CIS 76", "credit": "1.5 hours in Security Lab"}],
+     "adopter_rec_idx": {"Norco College": [0, 1]},
+     "exhibit_records": [{"id": "MAPCBEN-SF(-1-001", "title": "Security Fund. (Security+)", "units": 4.5}]},
+    {"exhibit_ids": ["MAPX-UNCL-1-001"], "raw_titles": ["Industry for EMS 70"], "unified_title": "Industry for EMS 70",
+     "is_classified": False, "adopter_names": ["Norco College"], "credit_recs": [], "adopter_rec_idx": {}},
 ]}
+PRESCRIPTIVE = {
+    "AP Computer Science A": {"colleges": [{"college": "Norco College", "courses": [{"subject": "CIS", "number": "5", "units": 4}]},
+                                           {"college": "Los Angeles Pierce College", "courses": [{"subject": "CS", "number": "101", "units": 3}]}],
+                              "n_colleges": 2, "withheld": 0},
+    "CompTIA Security+": {"colleges": [{"college": "CaÃ±ada College", "courses": [{"subject": "CIS", "number": "60", "units": 3},
+                                                                                  {"subject": "CIS", "number": "60", "units": 3}]},
+                                       {"college": "Norco College", "courses": [{"subject": "CIS", "number": "75", "units": 3}]}],
+                          "n_colleges": 2, "withheld": 3},
+}
 MEMBERS = {"colleges": ["Cabrillo College", "CaÃ±ada College", "Cypress College ", "Norco College"],
            "members": {"ARTS 250": [{"c": 0, "n": "DM 1", "t": "Intro to Digital Media", "u": 3},
                                     {"c": 1, "n": "ART 10", "t": "Digital Art", "u": 3},
@@ -112,7 +142,8 @@ with tempfile.TemporaryDirectory() as root:
         write(root, rel, obj)
     write(root, "statewide_data.js", STATEWIDE, js="CPL_STATEWIDE")
     write(root, "unified_courses_members.js", MEMBERS, js="CPL_UNIFIED_MEMBERS")
-    data, courses = B.build(root)
+    write(root, "statewide_prescriptive.js", PRESCRIPTIVE, js="CPL_STATEWIDE_PRESCRIPTIVE")
+    data, courses, adoption = B.build(root)
     out = os.path.join(root, "kb", "exhibits_review.json")
     r = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root, "--quiet"],
                        capture_output=True, text=True, timeout=120)
@@ -123,6 +154,8 @@ with tempfile.TemporaryDirectory() as root:
         written_courses = json.load(f)
     with open(out, encoding="utf-8") as f:
         text = f.read()
+    with open(os.path.join(root, "kb", "exhibits_adoption.json"), encoding="utf-8") as f:
+        written_adoption = json.load(f)
     stamp = written["written_at"]
     r2 = subprocess.run([sys.executable, os.path.join(ROOT, "kb", "_build_exhibits_review.py"), "--root", root],
                         capture_output=True, text=True, timeout=120)
@@ -168,9 +201,21 @@ check("the courses file holds the identity's rows per college, deduplicated",
 check("the courses file and the review file share one college list", courses["colleges"] == names)
 
 ap = held[AP]
-check("no aligned course: the classifier's proposal, and Exhibit Adoption's colleges",
+check("no aligned course: the classifier's proposal, and the colleges that teach a course mapped to it",
       ap["title"] == "AP Computer Science A" and ap["from"] == "the classifier" and not ap["same"]
-      and named(ap["could"]) == ["Chabot College", "Norco College"], (ap["from"], named(ap["could"])))
+      and named(ap["could"]) == ["Norco College"] and ap.get("courses_key") == "teaches:AP Computer Science A",
+      (ap["from"], named(ap["could"]), ap.get("courses_key")))
+check("the articulating college is left out of the teaching colleges", "Los Angeles Pierce College" not in named(ap["could"]))
+check("the courses file holds the teaching colleges' courses under the credential's key",
+      courses["courses"]["teaches:AP Computer Science A"][str(names.index("Norco College"))] == [["CIS 5", "", 4]],
+      courses["courses"].get("teaches:AP Computer Science A"))
+# Rule 7 and Sam's 2026-09-24 ruling: the TOP and C-ID overlap reaches no screen.
+check("no could-adopt college comes from potential_names",
+      "Chabot College" not in named(ap["could"]) and not any("Chabot College" in named(h["could"]) for h in data["held"]),
+      {k: named(v["could"]) for k, v in held.items()})
+check("a title with no identity course and no teaching college names none, and carries no courses key",
+      named(held[CODE]["could"]) == [] and "courses_key" not in held[CODE] and named(held[WORD]["could"]) == [])
+check("a same-identity title's courses key is its identity", dm.get("courses_key") == "ARTS 250")
 
 code = held[CODE]
 check("two proposals: the first leads, the second is an alternate, the rule named",
@@ -197,6 +242,38 @@ check("one held title per line, so a nightly diff reads by title",
 check("no student figure is written to the public file", "student" not in json.dumps(
     {k: v for k, v in written.items() if k != "_about"}).lower())
 check("the most widely articulated title leads without students", len(data["held"][0]["art"]) >= len(data["held"][-1]["art"]))
+
+cr = adoption["credentials"]
+an = adoption["colleges"]
+
+
+def by_name(d):
+    return {an[int(k)]: v for k, v in (d or {}).items()}
+
+
+sec = cr.get("CompTIA Security+") or {}
+check("the adoption file: schema 1, a stamp, one college list, the CIP vocabulary",
+      adoption["schema"] == 1 and adoption["written_at"].endswith("Z") and adoption["cip_sectors"] == {"11": "Computer and Information Sciences"}
+      and an == sorted(an, key=str.lower))
+check("an unclassified card is not a credential here", "Industry for EMS 70" not in cr)
+check("a college in two cards: its distinct lines merge, units by EACR's rule (3 + 1.5)",
+      by_name(sec.get("a")).get("Norco College") == [4.5, [["CIS 75", "3 hours in Security Fundamentals"], ["CIS 76", "1.5 hours in Security Lab"]]],
+      by_name(sec.get("a")))
+check("each articulating college carries its own lines", by_name(sec.get("a")).get("Chabot College") == [2.0, [["CNT 69", "2 hours in Network Security"]]])
+check("could adopt: the prescriptive layer's courses, deduplicated, the articulating college left out, the name cleaned",
+      by_name(sec.get("c")) == {"Cañada College": [["CIS 60", "", 3]]}, by_name(sec.get("c")))
+check("the over-merged colleges are counted, never named", sec.get("w") == 3)
+check("potential_names reaches no could-adopt list", "Modesto Junior College" not in by_name(sec.get("c"))
+      and "Cabrillo College" not in by_name(sec.get("c")))
+check("the exhibits, the first CIP sector a card names, and the peer median",
+      sec.get("x") == [["MAPCBEN-SF(-1-001", "Security Fund. (Security+)", 4.5], ["MAPCXI-CS-1-001", "CompTIA Security+", 3.0]]
+      and sec.get("s") == "11" and sec.get("p") == 3.25, (sec.get("x"), sec.get("s"), sec.get("p")))
+check("a credential only the prescriptive layer knows still has an entry", by_name(cr.get("AP Computer Science A", {}).get("c")) ==
+      {"Los Angeles Pierce College": [["CS 101", "", 3]], "Norco College": [["CIS 5", "", 4]]}, cr.get("AP Computer Science A"))
+check("the written adoption file matches the build", written_adoption["credentials"].keys() == cr.keys())
+check("no student figure is written to the adoption file", "student" not in json.dumps(
+    {k: v for k, v in written_adoption.items() if k != "_about"}).lower())
+check("rec_units reads the leading figure, else 0", B.rec_units("4.5 hours in Ethical Hacking") == 4.5 and B.rec_units("Credit") == 0.0)
 
 check("basis_of names the identity, else the course",
       B.basis_of({"kind": "ccn", "id": "POLS C1000"}) == "CCN POLS C1000" and B.basis_of({"kind": "course", "code": "MATH 110"}) == "the course MATH 110")

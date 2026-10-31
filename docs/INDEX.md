@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 568 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 569 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 501 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1324** | |
+| **total** | **1325** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-31 (Exhibits tab build, SkyBayberry): Exhibit Adoption's per-credential view folded into the credential panel (`kb/exhibits_adoption.json`), and could-adopt off the TOP and C-ID overlap on the Review card and the panel; KB note `methodology-a-fold-carries-the-folded-tabs-rulings`; lessons in `docs/cer_v2_redesign_lessons.md`; handoff `docs/cer_redesign_handoff.md`.
 - 2026-10-31 (Exhibits tab build, SkyBunchberry): Credentials and the credential panel, issuer and training sites editable (#2603); KB note `methodology-widen-a-field-by-saving-its-old-reading-beside-it`; lessons in `docs/cer_v2_redesign_lessons.md`; handoff `docs/cer_redesign_handoff.md`.
 - 2026-10-31 (Exhibits tab build, SkyRowanberry): the Exhibits tab's Review queue on the drawn card (`exhibits.js`, `kb/_build_exhibits_review.py`), `exhibit_title_students()` (reviewer-only, k=10), lessons in `docs/cer_v2_redesign_lessons.md`; handoff `docs/cer_redesign_handoff.md`.
 - 2026-10-31 (CER redesign build, SkyGooseberry): Open Asks Sheet 147 answered whole; the high school and ROP rule and the CPL-AI matching in the Program Requirements dialog (#2601); mock-up version 26; KB note `methodology-a-record-level-join-needs-a-word-guard`; handoff `docs/cer_redesign_handoff.md`.
