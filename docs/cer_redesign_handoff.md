@@ -14,7 +14,7 @@ open PR at start). This is a **full checkpoint** for the CER lane (a tab joined 
 
 ## What shipped
 
-- **#PR (Exhibits tab, Review):** COBI tab `#exhibits` (`exhibits.js`), in Reference & Curation after the Commons, and
+- **#2602 (Exhibits tab, Review):** COBI tab `#exhibits` (`exhibits.js`), in Reference & Curation after the Commons, and
   *Open Exhibits* on the Commons' CER row. The drawn card of mock-up version 26: the *What is it called?* tiles, the
   step tiles as filters with their hovers, *Go to an exhibit*, and one card per held title. Its data come from
   `kb/_build_exhibits_review.py` (`kb/exhibits_review.json`, and `kb/exhibits_review_courses.json` loaded on a
