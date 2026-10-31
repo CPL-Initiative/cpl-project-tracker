@@ -302,8 +302,11 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
             for block in (out.get("blocks") or []) if named else []:
                 bm = named.search(block.get("name") or "")
                 n = _num(bm.group("n")) if bm else None
+                # The reading may already have the count right and miss only the repeat ("COMPLETE 4
+                # COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)", Los Angeles Valley's Music
+                # 02962, S533): a minimum equal to n takes the repeat; any other figure stays the reading's.
                 if (not n or n < 2 or block.get("rule") != "choose_courses" or block.get("repeats")
-                        or _num(block.get("minimum")) not in (None, 1)):
+                        or _num(block.get("minimum")) not in (None, 1, n)):
                     continue
                 notes.append({"field": "blocks", "was": block.get("minimum"), "now": {block["name"]: n},
                               "words": bm.group(0).strip()})

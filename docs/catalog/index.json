@@ -16338,8 +16338,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 502,
+   "count": 503,
    "docs": [
+    {
+     "created": "2026-10-31",
+     "governs": [],
+     "n": 534,
+     "path": "docs/session_534_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "los-angeles-valley",
+      "display-build"
+     ],
+     "title": "Session 534 handoff: Los Angeles Valley 196 to 198 passing on Music's repeatable lists; display build 8603831048ac waits for main",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-31",
      "governs": [],
@@ -24929,5 +24945,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1326
+ "total": 1327
 }
