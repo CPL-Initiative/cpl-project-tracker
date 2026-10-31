@@ -221,8 +221,8 @@ rule's 0.8 included (the college's own course title for a code-only title; 96 of
 
 **NEXT:** the redesign in Sam's Sheet 147 order, Review, the credential panel, EACR's per-credential view and the public
 adoption page built (above): (1) after the merge, dispatch `daily-dashboard.yml` so `library/adopt/adopt_data.json`
-lands, and hand Sam the page; its name, where it is linked, and the CER and EACR tabs' retirement are his on Open Asks
-Sheet 148; (2) read Sam's first saves from the card and the panel, and the first nightly save of `high-school-rop`
+lands, and hand Sam the page. NEEDS SAM: its name, where it is linked, and the CER and EACR tabs' retirement (Open
+Asks Sheet 148); (2) read Sam's first saves from the card and the panel, and the first nightly save of `high-school-rop`
 (expected 55; its receipt in `kb/cer_procedures_out/saved/`; the queue should fall to about 413; the 07:47Z cron fires
 near 14:31Z); (3) training sites for a held title new to the reference, if Sam asks (a field the fold reads on
 `_UNCLASSIFIED::`, mapped first under Rule 10 a3); the *Held titles by group* table if he asks; (4) the public page's

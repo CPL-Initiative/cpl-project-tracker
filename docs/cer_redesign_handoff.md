@@ -1,67 +1,63 @@
 ---
-title: "CER redesign handoff: Exhibit Adoption's per-credential view in the panel; could-adopt off the TOP overlap"
+title: "CER redesign handoff: the public adoption page built; its name and linking on Sheet 148"
 date: 2026-10-31
-session: CER redesign build, side session after S531 (SkyBayberry)
-tags: [handoff, cer, eacr, catalog-commons, exhibits]
+session: CER redesign build, side session after S535 (SkyTwinberry)
+tags: [handoff, cer, eacr, catalog-commons, exhibits, adoption-page]
 status: current
 ---
 
-# You are SkyTwinberry, the Exhibits tab's next build
+# You are SkyElderberry, the Exhibits tab's next build
 
-SkyBayberry ran the CER redesign queue on 2026-10-31 from about 03:07Z, alone: no other session was live and no PR was
-open at the start. This is a **light checkpoint**. The lane file, the lessons doc, a KB note, the docs index and this
-handoff moved in #2604; no data receipt was written. `docs/session_532_handoff.md` item 5 points here.
+SkyTwinberry ran the CER redesign queue on 2026-10-31 from about 11:20Z. No other session was live on this lane; the
+program-requirements sessions (S532 to S535) were working Los Angeles Valley and Monterey Peninsula on `main` beside it.
+This is a **light checkpoint**: the lane files, `CLAUDE.md`'s sheet pointer and this handoff moved in #2610, no data
+receipt was written, and the docs index, lessons and KB notes were not touched.
 
 ## What shipped
 
-- **#2604 (Sheet 147 step 3, first part).** `kb/_build_exhibits_review.py` also writes `kb/exhibits_adoption.json`: per
-  credential, what each college articulated (its distinct lines, units by EACR's leading-figure rule), the courses each
-  could-adopt college already teaches (`statewide_prescriptive.js`, over-merged colleges counted, never named), the
-  exhibits, the CIP sector and the peer median. The Credentials view adds the *What credit does it carry?* and *Who could
-  adopt it?* tiles. In the panel every college chip opens the college's lines and its own exhibit, or the course it
-  already teaches, and the `map_links.js` Request Quick Adopt line sits under them. *Articulated at* joins the reference's
-  colleges with MAP's adopters (17 and 24 for CompTIA Security+).
-- **Could adopt never reads the TOP and C-ID overlap.** The Review card's fallback had shown EACR's `potential_names`, a
-  list Sam ruled off every screen on 2026-09-24 (Rule 7), on 269 of 468 cards. The panel read the reference's unheld
-  `adoption_leverage`. Both now read the prescriptive layer: 162 held titles keep same-identity colleges, 51 name the
-  colleges teaching a course mapped to the proposed credential, and 255 name none.
-- **Code only.** After the merge a dispatched `daily-dashboard.yml` run publishes `kb/exhibits_adoption.json`. Until it
-  lands the panel's tiles read *Could not be read*.
-- **KB note:** `methodology-a-fold-carries-the-folded-tabs-rulings`.
+- **#2610: the public adoption page** (Sheet 147 cards 1, 3 and 4). `library/adopt/` is in Malone's CPL/AI look, carries
+  the Library's header with the Library linked, and is `noindex`. Nothing links to it yet. `kb/_build_adopt_page.py`
+  writes `library/adopt/adopt_data.json` daily (a `daily-dashboard.yml` step after the Exhibits builder). Settled means
+  a local title under the credential carries a review stamp in `kb/unified_titles.json`, a person's or a cohort's,
+  the classifier's sure saves included. That gives 957 credentials of 2,232, against 677 without the classifier and 495
+  on a person's stamp alone. The page carries EACR's college matrix (windowed, units or *C*), its filters, both CSVs and
+  Create Handout (the college's `library/cpl-opportunity/` visual). Request Quick Adopt chips go to each building
+  college. Guards: `tests/public_adopt.test.js` (44), `tests/adopt_page_build_test.py` (19), and
+  `npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix`.
+- **Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, current, both cards held): card 1 is the
+  page's name, card 2 links it from the Library and the header and retires the CER and EACR tabs. Its source is
+  `CPLBrain/decision-sheets/` (`cer_cards_148()`), in the vault PR beside #2610.
 
 ## Read first
 
-`docs/reference/lanes/cer-procedures.md` (*The redesign*: the credential panel and the Exhibit Adoption fold, NEXT);
-`docs/reference/lanes/eacr-exhibit-cr-adoption.md` (what it still holds); `docs/cer_v2_redesign_lessons.md` (2026-10-31,
-SkyBayberry); the mock-up `docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html` (version 26, its public screen).
+`docs/reference/lanes/cer-procedures.md` (*The public adoption page*, NEXT); Sheet 148's `replies` store, before you
+act on either card.
 
 ## Open work, in order
 
-1. **Confirm the adoption file landed.** It comes from the daily run dispatched after #2604 merged, else the 06:17Z run.
-   Open Credentials: the Field and Could adopt tiles carry figures (2,183 and 616 of 2,456 on the 03:18Z build).
-2. **Read the 07:47Z procedures run and the first `high-school-rop` save** (expected 55, cohort
-   `cer-procedure-high-school-rop@bot`, its receipt in `kb/cer_procedures_out/saved/`). The queue should fall to about
-   413. Then read Sam's first saves: `kb_curation` rows under `_UNCLASSIFIED::` and `_CREDENTIAL_REVIEW::` with his email
-   after 2026-10-31 02:00Z, a `training_sites_override` row above all. Check that the next daily overlay
-   (`kb/credential_review_overlay.json`) carries `training_sites` for it.
-3. **The public adoption page** (Sheet 147 cards 3 and 4): settled credentials only, Malone's CPL/AI look,
-   *Credentials Your College Can Adopt* holding the place of the name Sam gives. It takes EACR's college matrix and its
-   statewide and college filters (CIP sector, ASCCC Area, SW Region, District, College), the exports and Create Handout.
-   Then the CER and EACR tabs retire. The page is public, so its first publish goes to Sam before it is linked anywhere.
-4. Only if Sam asks: training sites for a held title new to the reference (a field the fold reads on `_UNCLASSIFIED::`,
-   mapped first under Rule 10 a3); the *Held titles by group* table.
-5. Carried: the college short-name editor (college-district-identity lane NEXT); the CPL-AI snapshot refreshed by hand
-   (`python3 kb/_build_cpl_ai.py --fetch`) until Sam picks a schedule.
-
-Nothing waits on Sam in this lane; Sheet 147 is answered whole.
+1. **Confirm the data landed.** After #2610 merged, a dispatched `daily-dashboard.yml` run writes
+   `library/adopt/adopt_data.json`. Open https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/?college=Norco%20College:
+   it should read about 860 credentials not yet adopted at Norco College.
+2. **Read Sheet 148's replies.** On a name: change the `<h1>`, `<title>` and the builder's `_about`, and drop
+   `noindex`. On linking: add a Library card and a header line, and take `#credential-reference` and `#exhibit-adoption`
+   off COBI's menu in the same change, keeping their files so a revert brings them back. Drop the lane's marker in the
+   same PR.
+3. **The procedures run and Sam's saves** (carried). Today's 07:47Z cron fires near 14:31Z. Read the first
+   `high-school-rop` save (expected 55, cohort `cer-procedure-high-school-rop@bot`, receipt in
+   `kb/cer_procedures_out/saved/`); the queue should fall to about 413. Sam had saved nothing from the card or the
+   panel by 11:30Z.
+4. The mock-up's *Worth a faculty review* list (credentials no college has articulated, from Credential Engine), once
+   the page has its name.
+5. Carried: training sites for a held title new to the reference, only if Sam asks; the college short-name editor; the
+   CPL-AI snapshot refreshed by hand (`python3 kb/_build_cpl_ai.py --fetch`).
 
 ## Lessons to honor
 
-- A fold carries the folded tab's rulings: read its lane file before its payload, and test for what it refused to show.
-- Two sources name the articulating colleges, and neither is whole; join them.
-- A screenshot for review sets `cplFirstLight.optOut.v1` and `cplFirstLight.seen.v1` first, or First Light covers the page.
-- `git add`, then `bash scripts/check_generated.sh`, before every push (this run: the docs index after a new KB note).
+- An untracked generated file changes the dependency map. Move it aside before `kb/_build_dependency_map.py`, or the
+  gate reads STALE on a map that CI will regenerate without the file.
+- A public page's hero gradient reads as the worst stop in the contrast check: keep bare word controls off it.
+- A grid inside a CSS grid needs `minmax(0, 1fr)` on the parent, or the matrix widens the page at every width.
 
 ## Let go
 
-At sign-off this session drops its watch on #2604. No check-ins are scheduled and no artifact is watched.
+At sign-off this session drops its watch on #2610 and on Sheet 148 (the artifact). No check-ins are scheduled.
