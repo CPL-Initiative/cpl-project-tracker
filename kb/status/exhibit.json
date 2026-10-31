@@ -1,42 +1,66 @@
 {
   "schema": 1,
   "session": 531,
-  "moniker": "SkyThimbleberry",
+  "moniker": "SkyGooseberry",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_531_handoff.md",
+  "handoff": "docs/session_532_handoff.md",
   "calls": [
     {
       "title": "Merge EACR into the CER as one Exhibits tab",
-      "text": "Recommended in the mock-up; nothing is built until Sam answers. On no reply the two tabs stay as they are.",
-      "link": "https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM"
+      "text": "Answered on Open Asks Sheet 147 card 1: one Exhibits tab, Review built first. The CER and EACR tabs stay until it carries what they show.",
+      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "merge"
+      }
     },
     {
       "title": "The high school and ROP rule, and the AP exception",
-      "text": "An aligned course would name 93 of the 96 high school and ROP titles; AP and brand credentials keep their own names. On no reply the titles stay held.",
-      "link": "https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM"
+      "text": "Answered on Open Asks Sheet 147 card 2: built as procedure high-school-rop; the dry run settles 55 and holds 29 on an issuer conflict.",
+      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "rule"
+      }
+    },
+    {
+      "title": "The public adoption page: settled credentials only, in the CPL/AI look",
+      "text": "Answered on Open Asks Sheet 147 cards 3 and 4: settled credentials only, in Malone's CPL/AI look. Its name is still Sam's to give.",
+      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "stamped; cpl-ai"
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-30T23:52:23Z",
+  "written_at": "2026-10-31T00:33:44Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Put the redesign's asks to Sam, then draw the college chips",
-    "text": "Carry the lane's open questions onto a decision sheet (merge EACR into the CER, Review first, the public page on stamped credentials, its look, the high school rule and the AP exception, the CPL-AI load order), then draw a could-adopt chip opening that college's aligned courses and Request Quick Adopt links. This run's handoff: docs/cer_redesign_handoff.md."
+    "title": "Build the Exhibits tab's Review queue",
+    "text": "Port the drawn Review card into one Exhibits tab in the Catalog Commons: the held titles with their aligned-course proposals, sorted by students holding credit, the step tiles as filters, Keep Current Title and Change to Proposed Title saving through the CER's existing path."
   },
   "changes": [
     {
-      "at": "2026-10-30T22:51:00Z",
-      "text": "Admin's editor button reads Save and saves (#2593), so the CER and its sibling tabs can leave the menu from the Admin panel."
+      "at": "2026-10-31T00:06:00Z",
+      "text": "Sam answered Open Asks Sheet 147 whole: one Exhibits tab with Review first, the high school and ROP rule, the adoption page on settled credentials in the CPL/AI look, the CPL-AI matching in the Program Requirements dialog."
     },
     {
-      "at": "2026-10-30T23:40:00Z",
-      "text": "The Exhibits redesign mock-up reached version 25 (#2595): one tab for CER and EACR, the three questions, students first, the canonical title as the focus."
+      "at": "2026-10-31T00:12:00Z",
+      "text": "The mock-up reached version 26: a could-adopt college chip opens that college's aligned courses and the Request Quick Adopt link."
     },
     {
-      "at": "2026-10-30T23:45:00Z",
-      "text": "College short names corrected in the table (#2598): College of the Desert, Cañada, City College San Francisco."
+      "at": "2026-10-31T00:20:00Z",
+      "text": "College short names corrected in the table (#2598, merged)."
+    },
+    {
+      "at": "2026-10-31T00:27:00Z",
+      "text": "The high school and ROP rule and each held title's aligned course are built (#2601); the nightly run saves about 55 titles under the rule."
     }
   ]
 }

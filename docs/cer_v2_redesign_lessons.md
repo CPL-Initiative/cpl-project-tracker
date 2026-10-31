@@ -420,3 +420,36 @@ links"* (not yet drawn). The lane file states the design; this section keeps the
   rows there; code no exceptions (Sam). #2598 carries his four corrections.
 - **Show the screens.** When Sam asked for the mock "the way I'd see it", every finding and note left the page; the design
   record lives in git history (version 8) and here.
+
+## 2026-10-31 — Sheet 147 answered, the high school and ROP rule, the CPL-AI dialog (SkyGooseberry)
+
+**Sam's decisions** (Open Asks Sheet 147, completed 00:06Z, all five his own call, no notes): *merge* (one Exhibits tab,
+Review first), *rule* (the high school and ROP titles under one rule, AP keeping its names), *stamped* (the public
+adoption page lists settled credentials only), *cpl-ai* (that page takes Malone's CPL/AI look; First Light was
+proposed), *dialog* (the CPL-AI matching in the Program Requirements dialog first). Fourteen minutes from publish to
+answer: the sheet was the right form for six asks that had waited a day in chat.
+
+**What the run learned.**
+
+- **An exhibit's credit recommendation names its course; the title often does not.** A high school articulation reads
+  "Introduction to Digital Media High School Articulation"; the course (DM 1 at Cabrillo) lives on the exhibit's credit
+  recommendation in `statewide_data.js`. Joining that course through the identity layer's member rows reaches its CCN,
+  C-ID or M-ID.
+- **A cross product of courses and colleges needs a word guard.** The exhibit names every course at every college that
+  articulated it, so pairing them invents joins: "Anatomy/Physiology HS-AUSD" met an entrepreneurship course. Requiring
+  one shared word cut the aligned set from 374 to 209 of 450 and removed every wrong join in a sample of fourteen. A
+  guarded rule that saves without a person should err toward holding.
+- **The dormant M-ID tier read the wrong field.** `_suggest_unclassified.py --with-mids` read `title` or
+  `representative_title`; the minted file carries `common_title`, so the gate would have opened onto nothing. The new
+  aligned path reads `common_title`.
+- **The conflict guard does the rule's hardest work.** Of 84 school titles the rule could name, 29 already exist in the
+  reference under another issuer (Arc Welding under California Community Colleges), and the run holds them for a person.
+  A rule that names titles must still meet the reference's issuers.
+- **A tally can count one decision twice.** The run tallied every classifier answer under the classifier, so a title the
+  school rule replaced counted under both. A rule that replaces another's answer counts under itself alone.
+- **CSS display beats the hidden attribute.** `.adoptpanel { display: grid }` showed an empty panel at load until
+  `.adoptpanel[hidden] { display: none }` joined it.
+- **Republishing an artifact from another session costs its whole diff.** The publish refused without a prior read and
+  returned the full line diff into context (about 30 KB here). Read with `path` saves the file but does not count as
+  viewing; when the live page is known to match git, expect the one refusal and publish again.
+

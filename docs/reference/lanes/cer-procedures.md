@@ -24,7 +24,8 @@ and want to further automate so curation is manageable."*
 Sam, 2026-10-30: *"Have a good look at the current CER and notice how crowded it is and not intuitive to navigate. It is
 now part of our Catalog Commons overall project and I want you to help me make it much more manageable and simple."*
 Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (version 26), source
-`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html` (PR #2595). Nothing built yet. What Sam ruled in the
+`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html` (#2595, merged). Built so far: the high school and ROP
+rule and the CPL-AI dialog (#2601); the Exhibits tab itself is next. What Sam ruled in the
 mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2026-10-30):
 
 - **One Exhibits tab in the Catalog Commons replaces CER and EACR** (recommended; his "we might be able to consolidate
@@ -161,7 +162,10 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
 rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
 `python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
 
-**NEXT:** build the redesign in this order: (1) the Review queue on the drawn card, sorted by students, with the
-aligned-course rule (CCN, C-ID, then M-ID; AP and brand credentials keep their names, pending Sam's confirmation) and the
-step tiles as filters; (2) the credential panel with issuer and training sites editable; (3) EACR folds into it; (4) the
-public page on stamped credentials only. Each answer waits on Sam (below).
+**NEXT:** build the redesign in Sam's Sheet 147 order: (1) the Exhibits tab's Review queue on the drawn card (version
+26), its proposal from `kb/unclassified_suggestions.json`'s `aligned` key, sorted by students holding credit (a
+reviewer-only read of `map_student_credit` per exhibit ID, k=10 under the student-detail ADR; no RPC exists yet), the
+step tiles as filters, Keep Current Title and Change to Proposed Title saving through the CER's existing `kb_curation`
+path; (2) the credential panel with issuer and training sites editable; (3) EACR folds in; (4) the public adoption
+page on settled credentials only, in Malone's CPL/AI look, its name still Sam's to give. Watch the first nightly save
+of `high-school-rop` (expected 55) and read its receipt.

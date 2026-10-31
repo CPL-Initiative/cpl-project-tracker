@@ -15,6 +15,11 @@ Parts 2 to 6 ([2](roadmap_archive_2.md) · [3](roadmap_archive_3.md) · [4](road
 (S474) for the 150 KB archive budget: the completed roadmap rows, the session narratives through
 S196, and the INDEX history rotated out before 2026-09-17. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-10-31)
+
+- 2026-10-30 (S521 SkyBearberry): Sierra's program search fixed live (no temp files; s521 and s521b, Sheet 142 card 1), the deploy smoke retries a read and reports a wording (#2571, card 2), handoff 522.
+- 2026-10-29 (S520 SkyLingonberry, Sam's session): the public funding page in COBI's Share menu (#2565); #2563 and #2560 landed before the Summit, #2560 after two merges of main; Sierra deployed; the tests check out less and run on six shards (#2567); handoff 521.
+
 ## INDEX update-history entries rotated out (2026-10-27)
 
 - 2026-10-27 (S495 SkySalmonberry): Sierra's scene 8 re-read and the narrated cut on the v11 picture (#2499, held for Open Asks Sheet 135); axe on the internal tabs worked (#2498, #2500, #2501); lanes under budget (#2502); Hartnell's Cal-GETC area step on its branch; handoff 496.
