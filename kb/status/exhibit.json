@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "session": 536,
-  "moniker": "SkyCloudberry",
+  "moniker": "SkyCoralberry",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_536_handoff.md",
@@ -59,13 +59,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-31T16:47:10Z",
+  "written_at": "2026-10-31T18:16:02Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Build the routine that runs a rule added in the Exhibits tab",
-    "text": "A request row from the tab, a scheduled session that builds the rule, runs its dry run and writes it back for Turn on or Discard; Governance DR-07 first."
+    "title": "Sam's run through Another look",
+    "text": "Read his saves (unified_title_supersedes rows) and the next fold's revise and credential moves; move the panel rows its receipt names. Then the routine that runs a rule added in the Exhibits tab (Governance DR-07 first)."
   },
   "changes": [
+    {
+      "at": "2026-10-31T18:16:02Z",
+      "text": "Another look in the Exhibits tab: a nightly sweep through every title for what still differs (ASE test, Arabic numerals, language level, a course number, a level, a fold), 134 cards; Change applies at the fold only while the replaced title stands (#2623)."
+    },
     {
       "at": "2026-10-31T16:47:06Z",
       "text": "The Exhibits review card: Change to Proposed Title first, the local title in bold, Back to this visit's earlier cards (a new choice replaces the save), and Accept all proposed titles, which leaves conflicts and earlier saves as they are (#2620)."
