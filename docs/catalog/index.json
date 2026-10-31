@@ -13751,11 +13751,11 @@
       "handoff",
       "cer",
       "exhibits",
-      "catalog-commons",
-      "ap",
-      "credential-engine"
+      "implementation-funding",
+      "map-users",
+      "landing-page"
      ],
-     "title": "CER redesign handoff: the AP rule, the Catalog's faculty review list, the catalog join (SkyElderberry)",
+     "title": "CER redesign handoff: the review card's Back and Accept all, the funding requesters, the landing-page contacts (SkyCloudberry)",
      "type": null,
      "updated": ""
     },

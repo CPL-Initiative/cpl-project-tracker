@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "session": 536,
-  "moniker": "SkyElderberry",
+  "moniker": "SkyCloudberry",
   "run": "Sam's session",
   "decider": "Sam",
   "handoff": "docs/session_536_handoff.md",
@@ -59,13 +59,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-31T15:08:18Z",
+  "written_at": "2026-10-31T16:47:10Z",
   "project": "exhibit",
   "next_step": {
     "title": "Build the routine that runs a rule added in the Exhibits tab",
     "text": "A request row from the tab, a scheduled session that builds the rule, runs its dry run and writes it back for Turn on or Discard; Governance DR-07 first."
   },
   "changes": [
+    {
+      "at": "2026-10-31T16:47:06Z",
+      "text": "The Exhibits review card: Change to Proposed Title first, the local title in bold, Back to this visit's earlier cards (a new choice replaces the save), and Accept all proposed titles, which leaves conflicts and earlier saves as they are (#2620)."
+    },
     {
       "at": "2026-10-31T15:08:18Z",
       "text": "The AP fold in the reference: 77 local titles under College Board's official names, 42 saved assignments moved to match (#2617)."
