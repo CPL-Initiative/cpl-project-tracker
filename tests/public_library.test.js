@@ -135,9 +135,10 @@ block("(2d)", function () {
   const word = d.querySelector(".cplh button[data-cplh-links]");
   const panel = word && d.getElementById(word.getAttribute("aria-controls"));
   const links = Array.from(d.querySelectorAll('.cplh nav[aria-label="CPL pages"] a'));
+  // Six links since the Credential Catalog joined them (Sam, Open Asks Sheet 148 card 2, 2026-10-31).
   check("(2d) ⭐ the links sit behind one word, Links, an underlined word button, collapsed over a hidden panel",
     !!word && word.textContent.trim() === "Links" && word.classList.contains("word") && word.getAttribute("aria-expanded") === "false" &&
-    !!panel && panel.hidden && links.length === 5 && links.every(function (a) { return panel.contains(a); }));
+    !!panel && panel.hidden && links.length === 6 && links.every(function (a) { return panel.contains(a); }));
   const bad = links.filter(function (a) {
     const el = d.getElementById(a.getAttribute("aria-describedby") || "");
     const n = el ? el.textContent.trim().split(/\s+/).length : 0;

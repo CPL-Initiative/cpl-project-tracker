@@ -1,5 +1,5 @@
 ---
-title: "CER redesign handoff: the public adoption page built; its name and linking on Sheet 148"
+title: "CER redesign handoff: the Credential Catalog built, named and linked (Sheets 147 and 148)"
 date: 2026-10-31
 session: CER redesign build, side session after S535 (SkyTwinberry)
 tags: [handoff, cer, eacr, catalog-commons, exhibits, adoption-page]
@@ -24,30 +24,27 @@ receipt was written, and the docs index, lessons and KB notes were not touched.
   Create Handout (the college's `library/cpl-opportunity/` visual). Request Quick Adopt chips go to each building
   college. Guards: `tests/public_adopt.test.js` (44), `tests/adopt_page_build_test.py` (19), and
   `npm run a11y -- public-adopt public-adopt-dark public-adopt-matrix`.
-- **Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, current, both cards held): card 1 is the
-  page's name, card 2 links it from the Library and the header and retires the CER and EACR tabs. Its source is
-  `CPLBrain/decision-sheets/` (`cer_cards_148()`), in the vault PR beside #2610.
+- **Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, answered whole at 12:09Z, both his own
+  call): the page is the **Credential Catalog**, and *link-retire*. Built in a second PR: the name, `noindex` dropped,
+  a *Credential Catalog* line in the public header (`CPLBrain/.../public-header/header.html`, re-applied to the four
+  Library pages) and in the Library's own Links. The CER and EACR tabs were already off the menu (Sam hid both
+  `cobi_nav` rows at 23:51Z 2026-10-30); they still open by address, and their files stay.
 
 ## Read first
 
-`docs/reference/lanes/cer-procedures.md` (*The public adoption page*, NEXT); Sheet 148's `replies` store, before you
-act on either card.
+`docs/reference/lanes/cer-procedures.md` (*The Credential Catalog*, NEXT).
 
 ## Open work, in order
 
-1. **Confirm the data landed.** After #2610 merged, a dispatched `daily-dashboard.yml` run writes
-   `library/adopt/adopt_data.json`. Open https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/?college=Norco%20College:
-   it should read about 860 credentials not yet adopted at Norco College.
-2. **Read Sheet 148's replies.** On a name: change the `<h1>`, `<title>` and the builder's `_about`, and drop
-   `noindex`. On linking: add a Library card and a header line, and take `#credential-reference` and `#exhibit-adoption`
-   off COBI's menu in the same change, keeping their files so a revert brings them back. Drop the lane's marker in the
-   same PR.
-3. **The procedures run and Sam's saves** (carried). Today's 07:47Z cron fires near 14:31Z. Read the first
+1. **Confirm the data landed.** The daily run dispatched after #2610 merged writes `library/adopt/adopt_data.json`.
+   https://cpl-initiative.github.io/cpl-project-tracker/library/adopt/?college=Norco%20College should read about 860
+   credentials not yet adopted at Norco College.
+2. **The procedures run and Sam's saves** (carried). Today's 07:47Z cron fires near 14:31Z. Read the first
    `high-school-rop` save (expected 55, cohort `cer-procedure-high-school-rop@bot`, receipt in
    `kb/cer_procedures_out/saved/`); the queue should fall to about 413. Sam had saved nothing from the card or the
    panel by 11:30Z.
-4. The mock-up's *Worth a faculty review* list (credentials no college has articulated, from Credential Engine), once
-   the page has its name.
+3. **Links into the retired tabs move to Exhibits:** the Commons' CER row and Sierra Training's targets.
+4. The Catalog's *Worth a faculty review* list (credentials no college has articulated, from Credential Engine).
 5. Carried: training sites for a held title new to the reference, only if Sam asks; the college short-name editor; the
    CPL-AI snapshot refreshed by hand (`python3 kb/_build_cpl_ai.py --fetch`).
 
@@ -60,4 +57,4 @@ act on either card.
 
 ## Let go
 
-At sign-off this session drops its watch on #2610 and on Sheet 148 (the artifact). No check-ins are scheduled.
+At sign-off this session drops its watches on the Catalog PRs (tracker and vault) and on Sheet 148, and cancels its check-in.

@@ -99,8 +99,8 @@ KB note `methodology-a-fold-carries-the-folded-tabs-rulings`. What EACR still sh
 matrix and its statewide and college filters (CIP sector, ASCCC Area, SW Region, District, College), its exports and
 Create Handout. Card 1's facts move those to the public adoption page, where colleges use them.
 
-**The public adoption page — built (SkyTwinberry, 2026-10-31; Sheet 147 cards 1, 3 and 4).** `library/adopt/`, Pages-served,
-`noindex` and linked from nowhere until Sam has seen it. *Credentials Your College Can Adopt* holds the place of his name.
+**The Credential Catalog, the public adoption page — built (SkyTwinberry, 2026-10-31; Sheet 147 cards 1, 3 and 4; named
+on Sheet 148).** `library/adopt/`, Pages-served, linked from the Library and the public header.
 `kb/_build_adopt_page.py` writes `library/adopt/adopt_data.json` daily from `kb/exhibits_adoption.json`: **settled means a
 local title under the credential carries a review stamp** in `kb/unified_titles.json`, a person's or a cohort's, the
 classifier's sure saves included (the mock-up's Reviewed tile, which Sam answered on). That gives 957 credentials of 2,232
@@ -219,11 +219,16 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
 rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
 `python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
 
-**NEXT:** the redesign in Sam's Sheet 147 order, Review, the credential panel, EACR's per-credential view and the public
-adoption page built (above): (1) after the merge, dispatch `daily-dashboard.yml` so `library/adopt/adopt_data.json`
-lands, and hand Sam the page. NEEDS SAM: its name, where it is linked, and the CER and EACR tabs' retirement (Open
-Asks Sheet 148); (2) read Sam's first saves from the card and the panel, and the first nightly save of `high-school-rop`
-(expected 55; its receipt in `kb/cer_procedures_out/saved/`; the queue should fall to about 413; the 07:47Z cron fires
-near 14:31Z); (3) training sites for a held title new to the reference, if Sam asks (a field the fold reads on
-`_UNCLASSIFIED::`, mapped first under Rule 10 a3); the *Held titles by group* table if he asks; (4) the public page's
-*Worth a faculty review* list, when Sam names the page.
+**Sam's rulings, Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, completed 12:09Z 2026-10-31,
+both his own call; `cpl_memory` `sam-sheet-148-rulings-2026-10-31`): card 1 *note*, the page is the **Credential Catalog**;
+card 2 *link-retire*, link it from the Library and the public header and retire the CER and EACR tabs. Built by
+SkyTwinberry the same hour: the name, `noindex` dropped, a *Credential Catalog* line in `header.html` and on every page
+carrying the header, the Library's own Links. The two tabs were already off the side menu: Sam hid both `cobi_nav` rows
+himself at 23:51Z 2026-10-30, and they still open at `#credential-reference` and `#exhibit-adoption`; their files stay.
+
+**NEXT:** the redesign is built through Sheet 148: (1) read Sam's first saves from the card and the panel, and the first
+nightly save of `high-school-rop` (expected 55; its receipt in `kb/cer_procedures_out/saved/`; the queue should fall to
+about 413; the 07:47Z cron fires near 14:31Z); (2) the Catalog's *Worth a faculty review* list (credentials no college
+has articulated, from Credential Engine); (3) the links into the retired tabs (the Commons' CER row, Sierra Training)
+move to Exhibits; (4) training sites for a held title new to the reference, and the *Held titles by group* table, only
+if Sam asks.

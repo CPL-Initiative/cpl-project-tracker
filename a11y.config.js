@@ -2399,13 +2399,13 @@ module.exports = {
   "public-adopt": {
     file: "library/adopt/index.html",
     query: "?college=Norco%20College",
-    title: "Credentials Your College Can Adopt (public)",
+    title: "Credential Catalog (public)",
     seed: (page) => page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 }),
   },
   "public-adopt-dark": {
     file: "library/adopt/index.html",
     query: "?college=Norco%20College",
-    title: "Credentials Your College Can Adopt (public), dark",
+    title: "Credential Catalog (public), dark",
     widths: [390, 1280],
     seed: async (page) => {
       await page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 });
@@ -2414,7 +2414,7 @@ module.exports = {
   },
   "public-adopt-matrix": {
     file: "library/adopt/index.html",
-    title: "Credentials Your College Can Adopt (public), College matrix",
+    title: "Credential Catalog (public), College matrix",
     seed: async (page) => {
       await page.waitForFunction(() => !/Loading/.test(document.getElementById("ad-state").textContent), null, { timeout: 20000 });
       await page.evaluate(() => {
