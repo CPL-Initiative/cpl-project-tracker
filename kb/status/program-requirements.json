@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-31T09:38:06Z",
-  "session": 534,
-  "moniker": "SkyChokeberry",
+  "written_at": "2026-10-31T11:06:46Z",
+  "session": 535,
+  "moniker": "SkyGooseberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_535_handoff.md",
+  "handoff": "docs/session_536_handoff.md",
   "next_step": {
-    "title": "Monterey Peninsula's failing records",
-    "text": "Los Angeles Valley parked at 202 of 215 (S534). Monterey Peninsula has the next largest gap: 87 of its 197 loaded records fail. Read them live, look for a shared cause first, and page-read before any reader change."
+    "title": "Monterey Peninsula's last 21",
+    "text": "Monterey Peninsula went from 110 to 176 of 197 passing (S535). Of the 21 left, five medical programs print a total one unit under what their courses add to; read those pages first, then the rest. The stopping rule applies from here."
   },
   "calls": [
     {
@@ -166,12 +166,34 @@
         "at": "2026-10-26",
         "words": "Keep, on Open Asks Sheet 131 card 4: the reading stands."
       }
+    },
+    {
+      "title": "Is Monterey Peninsula's electives if needed for a total of 60 a floor?",
+      "text": "Thirteen local degrees add their major and general education past 60 when a student takes Cal-GETC (Theatre Arts, 51 to 61) and failed. The page says electives, if needed, for a total of 60 degree-applicable units, which S535 read as a minimum of 60, as Title 5 section 55063 sets it; Fable advised the same. Proceeded on the recommendation (S535, Oct 31); reply to reverse.",
+      "if_no_reply": "The reading stands, made on the recommendation.",
+      "records": [
+        {
+          "college": "Monterey Peninsula College",
+          "control_number": "03622",
+          "label": "Theatre Arts A.A."
+        },
+        {
+          "college": "Monterey Peninsula College",
+          "control_number": "41669",
+          "label": "Translation and Interpretation A.A."
+        }
+      ],
+      "part": "reading"
     }
   ],
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-10-31T11:02:00Z",
+      "text": "Monterey Peninsula 110 to 176 of 197 passing live. Work experience courses printed as an or row beside a 2-unit course now carry its 2 units, the transfer degrees' 2026-27 wording gives Cal-GETC its 34, and the local degrees' electives if needed for a total of 60 reads the 60 as a floor (reconcile 41192567009, reread 41194846700)."
+    },
     {
       "at": "2026-10-31T09:35:00Z",
       "text": "Los Angeles Valley 198 to 202 of 215 passing live. Economics, French and Geology close with a list that fills the major to its printed total (for a minimum of 18 units, to complete 36 total units), and Fire Technology's page prints its degree total with a split word; both now read (reconcile 41188677929, reread 41189100032). Under the stopping rule the college parks."
@@ -199,10 +221,6 @@
     {
       "at": "2026-10-30T23:05:00Z",
       "text": "An extraction of the 78 Los Angeles Valley programs whose page moved cost 5.37 dollars: 19 failing records pass, twelve of them Media Arts. Three passing records that came back worse kept their earlier files."
-    },
-    {
-      "at": "2026-10-30T22:30:00Z",
-      "text": "Display build 956fee0d62bc merged and its apply dispatched on main: the floor update and Los Angeles Valley's earlier rereads reach CPL Pathways and Sierra."
     }
   ],
   "headline": [
@@ -347,18 +365,18 @@
     {
       "day": "2026-10-31",
       "active": 20282,
-      "complete": 13470,
+      "complete": 13535,
       "colleges": 114
     }
   ],
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-10-31T10:12:00Z"
+    "at": "2026-10-31T11:12:00Z"
   },
   "harvest": {
     "day": "2026-10-31",
-    "gaps": 3031,
+    "gaps": 3025,
     "parts": {
       "links": {
         "catalog": [
@@ -375,7 +393,7 @@
         ]
       },
       "roep": [
-        19163,
+        19157,
         20282
       ],
       "coci": [

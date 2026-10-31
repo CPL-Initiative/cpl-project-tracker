@@ -16338,8 +16338,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 504,
+   "count": 505,
    "docs": [
+    {
+     "created": "2026-10-31",
+     "governs": [],
+     "n": 536,
+     "path": "docs/session_536_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "program-requirements",
+      "monterey-peninsula",
+      "display-build"
+     ],
+     "title": "Session 536 handoff: Monterey Peninsula 110 to 176 of 197; its last 21",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-10-31",
      "governs": [],
@@ -24962,5 +24978,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1328
+ "total": 1329
 }
