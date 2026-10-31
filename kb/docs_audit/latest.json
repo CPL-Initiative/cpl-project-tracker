@@ -1,5 +1,5 @@
 {
-  "generated": "2026-10-30",
+  "generated": "2026-10-31",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,43 +10,43 @@
     "other": 150000
   },
   "summary": {
-    "files": 1334,
-    "bytes": 13528194,
+    "files": 1336,
+    "bytes": 13550205,
     "over_budget": 1,
     "handoff_max": 532,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59974,
+    "always_loaded_bytes": 59993,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59974,
+        "bytes": 59993,
         "over": 0
       },
       "other": {
-        "files": 136,
-        "bytes": 4147331,
+        "files": 137,
+        "bytes": 4152864,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 8858,
+        "bytes": 8948,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2484586,
+        "bytes": 2491249,
         "over": 0
       },
       "kb_note": {
-        "files": 568,
-        "bytes": 2789956,
+        "files": 569,
+        "bytes": 2792861,
         "over": 0
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 445431,
+        "bytes": 452232,
         "over": 1
       },
       "handoff": {
@@ -62,9 +62,9 @@
       "vault_heavy_path": 72
     },
     "vault": {
-      "files": 25126,
-      "bytes": 4039452424,
-      "heavy_bytes": 2871947270,
+      "files": 25132,
+      "bytes": 4041522781,
+      "heavy_bytes": 2873390506,
       "heavy_share": 0.711,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -184,10 +184,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1758104453,
+        "bytes": 1759547689,
         "kind": "dir"
       },
-      "message": "directory totals 1,758,104,453 B inside the vault"
+      "message": "directory totals 1,759,547,689 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

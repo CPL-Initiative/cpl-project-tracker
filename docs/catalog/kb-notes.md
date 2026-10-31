@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-566 document(s).
+567 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -128,6 +128,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A hide affordance must suppress the item in the report too — reuse the class the export already strips](../kb-notes/methodology-hide-must-suppress-the-export.md) | methodology | published | 2026-07-23 | 2026-07-23 |
 | [A human-gated practice becomes a machine-checked one](../kb-notes/methodology-a-human-gated-practice-becomes-a-machine-checked-one.md) | methodology | published | 2026-08-30 |  |
 | [A JavaScript catalog is data; read what its own scripts fetch](../kb-notes/methodology-a-javascript-catalog-is-data-read-what-it-fetches.md) | methodology | published | 2026-10-10 | 2026-10-10 |
+| [A join through a record's lists needs a word guard before anything saves on it](../kb-notes/methodology-a-record-level-join-needs-a-word-guard.md) | methodology | published | 2026-10-31 | 2026-10-31 |
 | [A knowledge base needs a lint pass, not just an ingest and a query](../kb-notes/methodology-a-knowledge-base-needs-a-lint-pass.md) | methodology | published | 2026-08-09 | 2026-08-09 |
 | [A label that decides behavior is a policy switch, not a label](../kb-notes/methodology-a-label-that-decides-behaviour-is-a-policy-switch.md) | methodology | published | 2026-08-06 | 2026-08-06 |
 | [A lane file is a summary of a measurement, not the measurement](../kb-notes/methodology-a-lane-file-is-a-summary-of-a-measurement.md) | methodology | published | 2026-09-13 | 2026-09-13 |

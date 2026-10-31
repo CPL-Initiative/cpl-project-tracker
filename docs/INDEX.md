@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-30
+updated: 2026-10-31
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 566 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 567 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 501 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1322** | |
+| **total** | **1323** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-10-31 (CER redesign build, SkyGooseberry): Open Asks Sheet 147 answered whole; the high school and ROP rule and the CPL-AI matching in the Program Requirements dialog (#2601); mock-up version 26; KB note `methodology-a-record-level-join-needs-a-word-guard`; handoff `docs/cer_redesign_handoff.md`.
 - 2026-10-30 (CER redesign side session): the Exhibits mock-up (`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html`), the CER and college-identity lanes, `docs/cer_v2_redesign_lessons.md` (2026-10-30), the handoff `docs/cer_redesign_handoff.md`.
 - **2026-10-30 (S531 SkyOlallieberry):** the Chancellor's Summit address public on Pages with the gentle sound Sam picked (#2592); Los Angeles Valley 167 to 186 passing once the page finder reads State Code (#2596); display builds 956fee0d62bc and f8c94ef23142; handoff 532.
 - 2026-10-30 (S530 SkyBuffaloberry): Los Angeles Valley 114 to 167 of 204 passing through its degree steps and a moved-page guard that reads the record's heading; the funding rows show a waiting request with a reviewer's Accept; MAP links from `map_links.js` on two more surfaces (#2588); Sheet 146; handoff 531.
@@ -129,5 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-30 (S525 SkyTayberry): S524's 8 Glendale prose totals were the first program's on each page; rolled back by receipt, and the fill now reads from the program's own heading (#2576); handoff 526.
 - 2026-10-30 (S524 SkyCranberry): Glendale's prose program totals fill `total_units` through a reconcile step's new `before` boundary; 8 records now name their total, all unequal, 105 still pass (#2575); handoff 525.
 - 2026-10-30 (S522 SkyCrowberry, light): a failing shard names its file and `library.test.js` stops racing JSZip (#2572), so #2570's shard 3 passes; #2571 merged; S521's memory rows applied; handoff 523.
-- 2026-10-30 (S521 SkyBearberry): Sierra's program search fixed live (no temp files; s521 and s521b, Sheet 142 card 1), the deploy smoke retries a read and reports a wording (#2571, card 2), handoff 522.
-- 2026-10-29 (S520 SkyLingonberry, Sam's session): the public funding page in COBI's Share menu (#2565); #2563 and #2560 landed before the Summit, #2560 after two merges of main; Sierra deployed; the tests check out less and run on six shards (#2567); handoff 521.

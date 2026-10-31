@@ -97,6 +97,13 @@ ISSUER_CCC = pre.ISSUER_CCC
 # strip rules were written for July's queue and misread today's title shapes.
 HINT_LANES = {"cx", "hs", "ic"}
 IDENTITY_KINDS = ("ccn", "cid", "course")   # Rule 5c precedence; cos is a hint
+# The high school and ROP rule (Sam, Open Asks Sheet 147 card 2, 2026-10-31): a high
+# school, district, county office or ROP articulation, not an adult school or a
+# training center, which stay with the classifier.
+HS_ROP = re.compile(r"\bHS\b|\bHS-[A-Z]|\(HSA\)|high\s*school|\bROP\b|\bUSD\b|unified school|school district"
+                    r"|county office of education|\b[A-Z]{1,3}COE\b", re.I)
+EXAM_BRAND = re.compile(r"^\s*(?:AP|IB|CLEP|AICE|DSST)\b|\bAdvanced Placement\b", re.I)
+_ISSUER_ACRONYM = re.compile(r"\s*\([A-Z][A-Za-z&.-]{1,9}\)\s*$")
 SCHOOL = re.compile(r"\bHS\b|\bHS-[A-Z]|\(HSA\)|high\s*school|\bROP\b|\bUSD\b|unified school|adult school"
                     r"|school district|county office of education|\b[A-Z]{1,3}COE\b|training cent(?:er|re)",
                     re.I)
@@ -229,6 +236,24 @@ def identity_proposal(raw, suggestions):
                         "via": "identity", "confidence": 0.85 if anchor else 0.8,
                         "note": note + "; issuer = CCC."}
     return None
+
+
+def school_proposal(raw, aligned, record):
+    """The high school and ROP rule (Sam, Open Asks Sheet 147 card 2, 2026-10-31): the
+    aligned course names the title (CCN, then C-ID, then M-ID, then the college's own
+    course title, kb/_suggest_unclassified.py), and the school, district or county
+    office the classifier named issues it, its trailing acronym dropped so one
+    district reads one way. None for an exam brand (it keeps its own name), a title
+    with no aligned course or two in its best tier, or no issuer named."""
+    a = aligned.get(raw)
+    issuer = _ISSUER_ACRONYM.sub("", ((record or {}).get("issuing_agency") or "").strip())
+    if not a or a.get("ambiguous") or not HS_ROP.search(raw) or not issuer or EXAM_BRAND.search(raw):
+        return None
+    kind = {"ccn": "CCN", "cid": "C-ID", "mid": "M-ID"}.get(a["kind"])
+    anchor = "%s %s" % (kind, a["id"]) if kind else "the college's own title for %s" % a["code"]
+    return {"title": restyle_title(a["title"].strip()), "issuer": issuer, "via": "school", "confidence": 1.0,
+            "note": "Sheet 147 card 2: the aligned course (%s at %s) names it, %s; the school issues it."
+                    % (a["code"], a["college"], anchor)}
 
 
 def settle(waiting, lanes, suggestions, owners):
@@ -718,6 +743,8 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
     lanes, _residual, raw_meta = pre.stage_lanes(queue, pre.load_families(), assigned)
     suggestions = (json.load(open(SUGGESTIONS, encoding="utf-8")).get("suggestions") or {}
                    if os.path.exists(SUGGESTIONS) else {})
+    aligned = (json.load(open(SUGGESTIONS, encoding="utf-8")).get("aligned") or {}
+               if os.path.exists(SUGGESTIONS) else {})
     cred_issuers = load_cred_issuers()
 
     settled, hints, held = settle(waiting, lanes, suggestions, owners)
@@ -772,6 +799,10 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         if raw in settled or raw not in records:
             continue
         classified_proposals[raw] = as_proposal(records[raw], cred_issuers)
+        if "school" in owners:
+            sp = school_proposal(raw, aligned, records[raw])
+            if sp:
+                classified_proposals[raw] = dict(sp, procedure=owners["school"], rests_on=[owners["school"]])
     conflicts = issuer_conflicts(classified_proposals, cred_issuers)
     for raw, prop in classified_proposals.items():
         why = residue(prop["title"], prop["issuer"], "classifier")
@@ -789,8 +820,12 @@ def run(classify_n=0, dry_run=False, key=None, call=post, now=None, catalog=True
         for pid in prop["rests_on"] or ["classifier"]:
             if pid in by_proc:
                 by_proc[pid]["held" if reason else "settled"] += 1
-        tally = by_proc["classifier"]
-        tally["held" if reason else "settled"] += 1
+        # A rule that replaced the classifier's answer (the high school and ROP rule)
+        # counts under the rule alone; the classifier's tally is its own answers.
+        own = prop.get("procedure") or "classifier"
+        tally = by_proc[own]
+        if own == "classifier":
+            tally["held" if reason else "settled"] += 1
         if not reason and len(tally["sample"]) < 5:
             tally["sample"].append([raw, prop["title"]])
         if reason:

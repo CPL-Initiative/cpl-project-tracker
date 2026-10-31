@@ -4,9 +4,9 @@
   "supabase_tables": 103,
   "rpcs": 43,
   "edge_functions": 11,
-  "file_datasets": 729,
+  "file_datasets": 730,
   "external_services": 192,
-  "consumers": 485,
+  "consumers": 486,
   "workflows": 59,
   "data_js_files": 71,
   "tabs": 38
@@ -1776,7 +1776,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2721,
+     "line": 2778,
      "tabs": [
       "program-requirements"
      ]
@@ -2119,6 +2119,13 @@
       "cpl-pathways",
       "implementation-funding"
      ]
+    },
+    {
+     "id": "script:kb/_build_cpl_ai.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 7
     },
     {
      "id": "script:kb/_seed_statewide_categories.py",
@@ -11749,6 +11756,29 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/cpl_ai/pairs.json": {
+   "consumers": [
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1675,
+     "tabs": [
+      "program-requirements"
+     ]
+    },
+    {
+     "id": "script:kb/_build_cpl_ai.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 33
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/cr_reference_worklist.json": {
    "consumers": [
     {
@@ -18803,6 +18833,13 @@
      "line": 121
     },
     {
+     "id": "script:kb/_suggest_unclassified.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 51
+    },
+    {
      "id": "script:kb/_sync_credential_catalog.py",
      "kind": "script",
      "direction": "read",
@@ -21195,6 +21232,13 @@
      "direction": "read",
      "how": "literal",
      "line": 117
+    },
+    {
+     "id": "script:kb/_suggest_unclassified.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 52
     }
    ],
    "producers": [
@@ -22809,7 +22853,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1779,
+     "line": 1836,
      "tabs": [
       "program-requirements"
      ]
@@ -23891,7 +23935,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 562
+     "line": 587
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",

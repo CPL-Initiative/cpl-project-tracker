@@ -1651,10 +1651,66 @@
     return h.exhibits_n != null ? h.exhibits_n : (h.recs || 0) + (h.credentials_n || 0);
   }
   function hasLeads(info) { return !!((info.adopt && info.adopt.credentials_n) || (info.consider && info.consider.length)); }
+  /* The CPL-AI matching (Activity 1.1.1; Sam, Open Asks Sheet 147 card 5, 2026-10-31: the dialog
+     first, Sierra and the public pages on his word). kb/cpl_ai/pairs.json holds the certifications the
+     CPL-AI recommendations rate against each course at each college, in the page's first two evidence
+     tiers, with its credit and caveat (kb/_build_cpl_ai.py). Read once, on the first table drawn; a
+     course whose only lead is a CPL-AI match shows its 0 as a button once the file arrives. */
+  var AI = null, aiLoad = null, aiWaiting = [];
+  function aiCollegeKey(n) {
+    var s = String(n || "").normalize ? String(n || "").normalize("NFKD").replace(/[\u0300-\u036f]/g, "") : String(n || "");
+    return s.toLowerCase().replace(/\b(community|college|district)\b/g, " ").replace(/[^a-z0-9]/g, "");
+  }
+  function aiCourseKey(code) {
+    var m = /^(.*?)(\d+)([A-Za-z]*)\s*$/.exec(String(code || "").trim());
+    if (!m) return String(code || "").toUpperCase().replace(/[^A-Z0-9]/g, "");
+    return m[1].toUpperCase().replace(/[^A-Z0-9]/g, "") + String(parseInt(m[2], 10)) + m[3].toUpperCase();
+  }
+  function aiMatches(college, code) {
+    if (!AI) return [];
+    return (AI.by_college[aiCollegeKey(college)] || {})[aiCourseKey(code)] || [];
+  }
+  function loadAi() {
+    if (!aiLoad) {
+      aiLoad = (typeof fetch === "function" ? fetch("kb/cpl_ai/pairs.json") : Promise.reject(new Error("no fetch")))
+        .then(function (r) { return r && r.ok ? r.json() : null; })
+        .catch(function () { return null; })
+        .then(function (j) {
+          AI = j && j.by_college && j.credentials ? j : null;
+          var waiting = aiWaiting; aiWaiting = [];
+          if (AI) waiting.forEach(function (w) {
+            if (w.node.parentNode && aiMatches(w.p.college, w.code).length)
+              w.node.parentNode.replaceChild(cplButton(w.p, w.code, w.info, 0), w.node);
+          });
+          return AI;
+        });
+    }
+    return aiLoad;
+  }
+  function zeroCount(p, code, info) {
+    var z = el("span", { cls: "prh-quiet", text: "0" });
+    if (!AI) { aiWaiting.push({ node: z, p: p, code: code, info: info }); loadAi(); }
+    return z;
+  }
+  function aiSection(college, code) {
+    var hits = aiMatches(college, code);
+    if (!hits.length) return [];
+    return [el("h4", { text: "CPL-AI recommendations (" + hits.length + ")" }),
+      el("ul", { cls: "prh-exlist" }, hits.map(function (h) {
+        return el("li", {}, [el("b", { text: AI.credentials[h[0]] }),
+          el("span", { cls: "prh-alts", text: (AI.tiers[String(h[1])] || "Tier " + h[1]) +
+            (aiCourseKey(h[2]) === aiCourseKey(code) && h[2] !== code ? ", rated as " + h[2] : "") })]);
+      })),
+      el("p", { cls: "prh-small prh-quiet" }, ["From the ",
+        el("a", { href: AI.page, target: "_blank", rel: "noopener", text: "CPL-AI recommendations" }),
+        ", read " + String(AI.fetched_at || "").slice(0, 10) + ". " + AI.credit + " " + AI.caveat])];
+  }
   function cplButton(p, code, info, n) {
+    var ai = aiMatches(p.college, code).length;
     var b = el("button", { cls: "prh-cplbtn" + (n ? "" : " prh-cplbtn-zero"), type: "button",
       "aria-label": n + (n === 1 ? " exhibit" : " exhibits") + " articulated to " + code + " at " + shortCollege(p.college) +
-        (hasLeads(info) ? ", with leads from other colleges" : "") + "; show them" }, [String(n)]);
+        (hasLeads(info) ? ", with leads from other colleges" : "") +
+        (ai ? ", with " + ai + (ai === 1 ? " CPL-AI recommendation" : " CPL-AI recommendations") : "") + "; show them" }, [String(n)]);
     b.addEventListener("click", function () { openExhibits(p, code, info, b); });
     return b;
   }
@@ -1728,6 +1784,7 @@
           el("span", { cls: "prh-alts", text: (c.credit ? c.credit + "; " : "") + "a statewide recommendation names C-ID " + c.cid })]);
       })));
     }
+    kids = kids.concat(aiSection(p.college, code));
     openDialog(p, code, info, kids, "the exhibits", opener);
   }
   /* The one dialog both views open: a course's heading, its numbers, and the body it is given. */
@@ -2595,7 +2652,7 @@
           [info.title || "", rowMark(c, F.byCode, courses),
             el("span", { cls: "prh-outslot", "data-key": codeKey(c.code), "data-code": c.code })],
           c.units != null || info.units_from_state_file == null ? span(c.units, c.units_max) : fmt(info.units_from_state_file) + " (COCI)",
-          n || hasLeads(info) ? cplButton(p, c.code, info, n) : el("span", { cls: "prh-quiet", text: "0" })
+          n || hasLeads(info) || aiMatches(p.college, c.code).length ? cplButton(p, c.code, info, n) : zeroCount(p, c.code, info)
         ];
       }), p.program_title + ": " + (b.name || "courses"), true)])));
     });

@@ -23,8 +23,9 @@ and want to further automate so curation is manageable."*
 
 Sam, 2026-10-30: *"Have a good look at the current CER and notice how crowded it is and not intuitive to navigate. It is
 now part of our Catalog Commons overall project and I want you to help me make it much more manageable and simple."*
-Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (version 25), source
-`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html` (PR #2595). Nothing built yet. What Sam ruled in the
+Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (version 26), source
+`docs/visuals/2026-10-30-cer-exhibits-redesign-mockup.html` (#2595, merged). Built so far: the high school and ROP
+rule and the CPL-AI dialog (#2601); the Exhibits tab itself is next. What Sam ruled in the
 mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2026-10-30):
 
 - **One Exhibits tab in the Catalog Commons replaces CER and EACR** (recommended; his "we might be able to consolidate
@@ -49,13 +50,15 @@ mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2
 **Sam's rulings, Open Asks Sheet 147** ([the sheet](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), completed 00:06Z 2026-10-31, all five his own call; cpl_memory `sam-sheet-147-rulings-2026-10-31`). Build in this order:
 
 1. **One Exhibits tab** in the Catalog Commons replaces the CER and EACR; **Review is built first**. The two tabs stay until Exhibits carries everything they show.
-2. **The high school and ROP rule.** The 96 held titles settle under one rule once the aligned-course lookup lands (CCN, then C-ID, then M-ID, then the college's title; fold leading zeros), the school or district as issuer; AP exams keep the College Board's names (brand-family). One cohort, one receipt, the procedure's undo.
+2. **The high school and ROP rule — built (SkyGooseberry, 2026-10-31).** `kb/_suggest_unclassified.py` writes each queue title's aligned course under `aligned` (the course its exhibit's credit recommendation names at the college that built it; CCN, then C-ID, then M-ID, then the college's title; leading zeros fold; a join must share a word with the title; exam brands never align): 209 of 450 on 2026-10-31. Procedure `high-school-rop` (`kb/cer_procedures.json`, lane `school`) takes that title and the school, district or county office the classifier named (its trailing acronym dropped); adult schools and training centers stay with the classifier. Dry run: 55 settle, 29 held where the title already exists under another issuer; needs-you 468 to 413. The nightly run saves them under `cer-procedure-high-school-rop@bot`; `python3 kb/_cer_procedures.py --undo high-school-rop` takes them back.
 3. **The public adoption page lists settled credentials only** (a person's or a rule's stamp), so it grows as the CER finishes. Its name is still his to give; *Credentials Your College Can Adopt* holds the place.
 4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
-5. **The CPL-AI matching loads into the Program Requirements dialog first**; Sierra and public surfaces wait on his word.
+5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** `kb/_build_cpl_ai.py --fetch` reads https://map.rccd.edu/CPL-AI/preview-data/catalog.json into the dated snapshot `kb/cpl_ai/pairs.json` (33,232 pairs, 115 certifications, 121 colleges; keeps tiers 1 and 2, *Strong evidence* and *Faculty interpretation*: 20,166 pairs) with the page's credit and caveat word for word. The dialog lists a course's certifications under *CPL-AI recommendations (N)*, and a course whose only lead is a match shows its 0 as a button. Refreshed by hand (`--fetch`) until a schedule is chosen. Sierra and the public pages wait on his word.
 
-**Sam asked, not yet drawn:** clicking a could-adopt college chip opens that college's aligned courses and the Request
-Quick Adopt links.
+**Drawn in version 26 (2026-10-31):** each could-adopt college chip is a button that opens that college's aligned
+courses (the identity's members there, from `unified_courses_members.js`, units or noncredit) and the Request Quick
+Adopt link to the held exhibit's ID; a college EACR lists without a same-identity course reads that its faculty
+choose the course.
 
 ## Status
 
@@ -159,7 +162,10 @@ what it settled and held, See what it did · Turn off; Add a procedure with a fr
 rule's 0.8 included (the college's own course title for a code-only title; 96 of its 125 on the preview);
 `python3 kb/_cer_procedures.py --undo course-identity` stays the reversal. The sheet: https://claude.ai/artifact/Gta7x4T2NfFwbymH4nddui.
 
-**NEXT:** build the redesign in this order: (1) the Review queue on the drawn card, sorted by students, with the
-aligned-course rule (CCN, C-ID, then M-ID; AP and brand credentials keep their names, pending Sam's confirmation) and the
-step tiles as filters; (2) the credential panel with issuer and training sites editable; (3) EACR folds into it; (4) the
-public page on stamped credentials only. Each answer waits on Sam (below).
+**NEXT:** build the redesign in Sam's Sheet 147 order: (1) the Exhibits tab's Review queue on the drawn card (version
+26), its proposal from `kb/unclassified_suggestions.json`'s `aligned` key, sorted by students holding credit (a
+reviewer-only read of `map_student_credit` per exhibit ID, k=10 under the student-detail ADR; no RPC exists yet), the
+step tiles as filters, Keep Current Title and Change to Proposed Title saving through the CER's existing `kb_curation`
+path; (2) the credential panel with issuer and training sites editable; (3) EACR folds in; (4) the public adoption
+page on settled credentials only, in Malone's CPL/AI look, its name still Sam's to give. Watch the first nightly save
+of `high-school-rop` (expected 55) and read its receipt.

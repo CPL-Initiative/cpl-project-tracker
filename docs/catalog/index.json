@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 566,
+   "count": 567,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2208,6 +2208,25 @@
      "title": "A JavaScript catalog is data; read what its own scripts fetch",
      "type": "methodology",
      "updated": "2026-10-10"
+    },
+    {
+     "created": "2026-10-31",
+     "governs": [
+      "kb/_suggest_unclassified.py",
+      "kb/_cer_procedures.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-record-level-join-needs-a-word-guard.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "joins",
+      "cer",
+      "exhibit-canonicalization",
+      "identity"
+     ],
+     "title": "A join through a record's lists needs a word guard before anything saves on it",
+     "type": "methodology",
+     "updated": "2026-10-31"
     },
     {
      "created": "2026-08-09",
@@ -13683,7 +13702,7 @@
      "updated": ""
     },
     {
-     "created": "2026-10-30",
+     "created": "2026-10-31",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
@@ -13692,11 +13711,10 @@
       "cer",
       "eacr",
       "catalog-commons",
-      "admin",
-      "college-identity",
-      "cpl-ai"
+      "cpl-ai",
+      "program-requirements"
      ],
-     "title": "CER redesign handoff: the Exhibits mock-up, the Admin Save, college short names",
+     "title": "CER redesign handoff: Sheet 147 answered, the high school and ROP rule, the CPL-AI dialog; the Exhibits tab next",
      "type": null,
      "updated": ""
     },
@@ -24854,5 +24872,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1322
+ "total": 1323
 }
