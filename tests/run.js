@@ -34,6 +34,12 @@ const dir = __dirname;
 // budget below) and the suite had grown to an 18-minute step by 2026-09-24.
 const { parseShard, shardFiles } = require("./lib/shard.js");
 const SHARD = parseShard(process.argv);
+const DURATIONS_OUT = (() => {
+  const i = process.argv.indexOf("--durations-out");
+  if (i >= 0) return process.argv[i + 1] || null;
+  const eq = process.argv.find((x) => x.startsWith("--durations-out="));
+  return eq ? eq.slice("--durations-out=".length) : null;
+})();
 const allFiles = fs.readdirSync(dir)
   .filter((f) => f.endsWith(".test.js"))
   .sort();
@@ -188,6 +194,7 @@ function cleanupTmp() {
 }
 
 function runOne(f) {
+  const t0 = Date.now();
   return new Promise((resolve) => {
     const logPath = path.join(tmpdir, f.replace(/[^\w.-]/g, "_") + ".log");
     const fd = fs.openSync(logPath, "w");
@@ -213,11 +220,31 @@ function runOne(f) {
         out = "[runner: could not read this file's output — " + err.message + "]";
       }
       try { fs.unlinkSync(logPath); } catch (e) { /* best effort */ }
-      resolve({ out, status, signal });
+      resolve({ out, status, signal, secs: (Date.now() - t0) / 1000 });
     };
     child.on("error", (err) => finish(1, null));
     child.on("close", (status, signal) => finish(status, signal));
   });
+}
+
+// WHERE THE TIME GOES (Sam, 2026-10-31: "If there are any other ways to shave
+// test time, feel free"). Each file's wall seconds, as it ran here (beside the
+// others the limiter ran with it, which is how it runs on CI). The slowest ten
+// print at the end of every run, so a CI log says what made a shard long, and
+// `--durations-out PATH` writes them all as JSON for tests/durations.json
+// (`npm run test:durations` re-measures the whole table; shard.js reads it).
+const seconds = {};
+function reportDurations(secs) {
+  const rows = Object.keys(secs).sort((a, b) => secs[b] - secs[a] || (a < b ? -1 : 1));
+  const total = rows.reduce((a, f) => a + secs[f], 0);
+  console.log("\nslowest files (" + Math.round(total) + " s of file time in all):");
+  rows.slice(0, 10).forEach((f) => console.log("  " + secs[f].toFixed(1).padStart(7) + " s  " + f));
+  const out = DURATIONS_OUT;
+  if (!out) return;
+  const table = {};
+  rows.slice().sort().forEach((f) => { table[f] = Math.round(secs[f] * 10) / 10; });
+  fs.writeFileSync(out, JSON.stringify(table, null, 1) + "\n");
+  console.log("durations written: " + out + " (" + rows.length + " file(s))");
 }
 
 async function main() {
@@ -253,6 +280,7 @@ for (const f of files) {
     console.log("──────── ✗ FAILED: " + f + " ────────");
   }
 
+  seconds[f] = r.secs;
   const observed = ledgerLib.reportedTotal(out);
   observedCounts[f] = observed;
   // A file that already failed is not also judged on its count: a file that
@@ -305,6 +333,7 @@ if (UPDATE) {
 }
 
 cleanupTmp();
+reportDurations(seconds);
 console.log("\n════════════════════════════════════");
 console.log(failed === 0
   ? `All ${files.length} test file(s) passed.${SUITE_LABEL}`
