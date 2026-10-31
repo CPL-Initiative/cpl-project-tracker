@@ -275,6 +275,59 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "conf
     mails.length === 1 && mails[0].indexOf("mailto:ben%40mtsac.edu?") === 0 &&
     decodeURIComponent(mails[0]).indexOf("If you did not send this request, please reply to this email.") >= 0);
 }
+// D0u (Sam, 2026-10-31, at El Camino's attestation: "it did make me want to send them a follow up email ... but
+// would need a Follow-up button"): Follow up opens the same window, the email editable and the CO Monitor's note
+// in its middle, and changes no record.
+{
+  const waiting = JSON.parse(JSON.stringify(STANDING)); waiting[COLLEGE].status = "self_attested";
+  const rev = JSON.parse(JSON.stringify(REVIEW)); rev[0].status = "self_attested";
+  const { window, doc, T } = setup({ signedIn: true, elig: { ncAttestOk: true, ncAttest: waiting, ncAttestReview: rev } });
+  T._setNotes({ [COLLEGE]: { college: COLLEGE, note: "No CPL Coordinator is listed on the college's CPL landing page." } });
+  T.render();
+  const mails = [];
+  window.CPL_FUNDING_OPEN_MAIL = function (href) { mails.push(href); };
+  const det = drill(window, doc, COLLEGE);
+  const fol = det && det.querySelector("[data-ncattestfollow]");
+  check("D0u: a waiting attestation offers Follow up beside Accept and Deny, named for the attestor",
+    !!fol && fol.textContent === "Follow up" && /^Follow up with Ben Ko about /.test(fol.getAttribute("aria-label")) && !!det.querySelector("[data-ncattestaccept]"));
+  if (fol) click(window, fol);
+  const dlg = doc.getElementById("cplfund-maildlg");
+  const body = dlg && dlg.querySelector("[data-maildlgbody]");
+  check("D0v: …it opens the follow-up email to the attestor, editable, the note in its middle, and the record unchanged",
+    !!dlg && /^Follow up with Ben Ko/.test(dlg.querySelector("h3").textContent) && body.getAttribute("contenteditable") === "true"
+    && /a follow-up on the noncredit attestation for 2026-27 for /.test(dlg.textContent)
+    && /No CPL Coordinator is listed on the college's CPL landing page\./.test(body.textContent)
+    && /The CPL Initiative team/.test(body.textContent) && T._ncAttest(COLLEGE).status === "self_attested");
+  if (body) {
+    const ps = body.querySelectorAll("p");
+    ps[2].textContent = "Please list your CPL Coordinator on the landing page.";
+  }
+  if (dlg) click(window, dlg.querySelector("[data-maildlgsend]"));
+  check("D0w: Copy and open draft carries the edited words to the attestor",
+    mails.length === 1 && mails[0].indexOf("mailto:ben%40mtsac.edu?") === 0 &&
+    (decodeURIComponent(mails[0]).indexOf("Please list your CPL Coordinator on the landing page.") >= 0 ||
+     /Copied/.test(dlg.querySelector(".cplfund-maildlg-msg").textContent)));
+  T._setNotes({}); T.render();
+  const det2 = drill(window, doc, COLLEGE);
+  const f2 = det2 && det2.querySelector("[data-ncattestfollow]");
+  if (f2) click(window, f2);
+  check("D0x: with no note saved, the email asks the reviewer to write it", /Write what the college can do here\./.test(doc.getElementById("cplfund-maildlg").textContent));
+  const pub = setup({ public: true, elig: { ncAttestOk: true, ncAttest: JSON.parse(JSON.stringify(waiting)) } });
+  check("D0y: the public preview shows no Follow up", !pub.doc.querySelector("[data-ncattestfollow], [data-optinfollow]"));
+  // The participation confirmation's Follow up, beside its Accept and Deny under Minimum Conditions.
+  const part = setup({ signedIn: true, elig: { optinReview: [{ college: COLLEGE, name: "Dana Lee", title: "Dean", email: "dana@mtsac.edu",
+    requested_at: "2026-10-28T04:00:00Z" }] } });
+  part.T._setNotes({ [COLLEGE]: { college: COLLEGE, note: "Please add your CPL counselors' email addresses." } });
+  part.T.render();
+  const pdet = drill(part.window, part.doc, COLLEGE);
+  const pf = pdet && pdet.querySelector("[data-optinfollow]");
+  if (pf) click(part.window, pf);
+  const pd = part.doc.getElementById("cplfund-maildlg");
+  check("D0z: a participation request offers Follow up, which opens the email to its sender with the note",
+    !!pf && !!pd && /^Follow up with Dana Lee/.test(pd.querySelector("h3").textContent)
+    && /a follow-up on the participation confirmation for /.test(pd.textContent) && /dana@mtsac\.edu/.test(pd.textContent)
+    && /Please add your CPL counselors' email addresses\./.test(pd.textContent));
+}
 // D0r (S530; Sam, 2026-10-30: "a chip to the college rows showing that a confirmation has been submitted and a
 // way for the MAP team to respond easily with an acceptance--same thing needed for the NC Lead attestation").
 {

@@ -6387,6 +6387,23 @@
     if (p && typeof p.then === "function") p.then(done); else done();
   }
   function denyNcAttest(college) { removeNcAttest(college); }
+  // Follow up: the editable email to the person who sent the request, the CO Monitor's note in its middle.
+  function noteFor(college) { var n = NOTES[college]; return n && n.note ? String(n.note).trim() : ""; }
+  function followNcAttest(college) {
+    var rev = ncAttestReviewOf(college), att = ncAttestOf(college);
+    if (!rev || !rev.attestor_email) return;
+    openConfirmMail(college, { email: rev.attestor_email, name: rev.attestor_name, requested_at: rev.requested_at,
+      fiscal_year: att && att.fiscal_year, note: noteFor(college) }, "nc", true);
+  }
+  function followOptIn(college) {
+    var rev = optinReviewOf(college);
+    if (!rev || !rev.email) return;
+    openConfirmMail(college, { email: rev.email, name: rev.name, requested_at: rev.requested_at, note: noteFor(college) }, "part", true);
+  }
+  function followWord(attr, college, who) {
+    return '<button type="button" class="cplfund-optbtn" ' + attr + '="' + esc(college) + '" aria-label="Follow up with ' +
+      esc(who || "the person who sent it") + " about " + esc(dispName(college)) + '">Follow up</button>';
+  }
   // ── THE RESPONSE EMAIL (Sam, 2026-10-31: "Give me a place to revise the
   // response email once for both the confirmation and the attestation. Will want
   // to refer to us as the CPL Initiative team and include the CPL Initiative logo
@@ -6412,6 +6429,17 @@
     "the CPL Implementation Funding dashboard now shows the condition as met: " + PUBLIC_FUNDING_URL + "\n\n" +
     "If you did not send this request, please reply to this email.\n\n" +
     "The CPL Initiative team";
+  // Follow up (Sam, 2026-10-31, at El Camino's attestation: "noticed that the CPL Coord is not listed on the
+  // landing page ... it did make me want to send them a follow up email ... but would need a Follow-up button").
+  // The same window as Accept, its email editable before the copy; {note} is the CO Monitor's note when one is
+  // saved, for the reviewer to rewrite for the college. It changes no record.
+  var FOLLOWUP_EMAIL_DEFAULT = "Subject: CPL Implementation Funding: a follow-up on the {request} for {college}\n\n" +
+    "Dear {name},\n\n" +
+    "Thank you for the {request} you sent on {date} for {college}. In reviewing it, the CPL Initiative team noticed " +
+    "the following:\n\n{note}\n\n" +
+    "We would welcome a reply when this is in place, or a note if we have misread it.\n\n" +
+    "The CPL Initiative team";
+  var FOLLOWUP_NOTE_BLANK = "Write what the college can do here.";
   var MONTHS = ["January", "February", "March", "April", "May", "June", "July", "August", "September",
     "October", "November", "December"];
   function longDate(v) {
@@ -6419,16 +6447,18 @@
     return m ? MONTHS[Number(m[2]) - 1] + " " + Number(m[3]) + ", " + m[1]
       : MONTHS[d.getMonth()] + " " + d.getDate() + ", " + d.getFullYear();
   }
-  // The template filled in for one request: { to, subject, text, html }.
-  function acceptEmail(college, rev, kind) {
+  // The template filled in for one request: { to, subject, text, html }. Follow up passes its own template.
+  function acceptEmail(college, rev, kind, template) {
     var fill = {
       name: personName(rev.name) || "colleague",
       college: dispName(college),
       request: kind === "nc"
         ? "noncredit attestation" + (rev.fiscal_year ? " for " + rev.fiscal_year : "")
         : "participation confirmation",
-      date: longDate(rev.requested_at) };
-    var t = plainNormalize(textPlain("accept_email")).replace(/\{(name|college|request|date)\}/g, function (m, k) { return fill[k]; });
+      date: longDate(rev.requested_at),
+      note: rev.note || FOLLOWUP_NOTE_BLANK };
+    var t = plainNormalize(template != null ? template : textPlain("accept_email"))
+      .replace(/\{(name|college|request|date|note)\}/g, function (m, k) { return fill[k]; });
     var subject = "", lines = t.split("\n");
     var sm = /^subject:\s*(.*)$/i.exec(lines[0] || "");
     if (sm) { subject = sm[1].trim(); t = lines.slice(1).join("\n").replace(/^\s+/, ""); }
@@ -6476,8 +6506,8 @@
   }
   // The window Accept opens, outside the tab's render so a re-render leaves it
   // standing. Escape and Close shut it and return the focus.
-  function openConfirmMail(college, rev, kind) {
-    var m = acceptEmail(college, rev, kind);
+  function openConfirmMail(college, rev, kind, follow) {
+    var m = follow ? acceptEmail(college, rev, kind, FOLLOWUP_EMAIL_DEFAULT) : acceptEmail(college, rev, kind);
     var old = document.getElementById("cplfund-maildlg");
     if (old) old.parentNode.removeChild(old);
     var back = document.activeElement;
@@ -6489,15 +6519,20 @@
     box.setAttribute("aria-modal", "true");
     box.setAttribute("aria-labelledby", "cplfund-maildlg-h");
     box.innerHTML = '<div class="cplfund-maildlg-card">' +
-      '<h3 id="cplfund-maildlg-h" class="cplfund-maildlg-h" tabindex="-1">Accepted. Email ' + who + "</h3>" +
+      '<h3 id="cplfund-maildlg-h" class="cplfund-maildlg-h" tabindex="-1">' + (follow ? "Follow up with " : "Accepted. Email ") + who + "</h3>" +
       '<div class="cplfund-maildlg-meta"><span>To: ' + esc(m.to) + "</span><span>Subject: " + esc(m.subject) + "</span></div>" +
-      '<div class="cplfund-maildlg-body" data-maildlgbody="1">' + m.html + "</div>" +
+      '<div class="cplfund-maildlg-body" data-maildlgbody="1"' +
+        (follow ? ' contenteditable="true" role="textbox" aria-multiline="true" aria-label="The follow-up email, to edit before you copy it"' : "") +
+        ">" + m.html + "</div>" +
       '<div class="cplfund-maildlg-ctl">' +
       '<button type="button" class="cplfund-textbtn primary" data-maildlgsend="1">Copy and open draft</button>' +
       '<button type="button" class="cplfund-textbtn" data-maildlgclose="1">Close</button>' +
-      '<span class="dk cplfund-maildlg-msg" role="status" aria-live="polite">Copy and open draft starts a message to ' + esc(m.to) +
-      " with the subject filled in; paste the email into it (Ctrl+V) and send. Revise the email for every request under " +
-      "Minimum Conditions, Response email.</span></div></div>";
+      '<span class="dk cplfund-maildlg-msg" role="status" aria-live="polite">' + (follow
+        ? "Edit the email above, then Copy and open draft starts a message to " + esc(m.to) +
+          " with the subject filled in; paste it (Ctrl+V) and send. It sends from your mail program's own account."
+        : "Copy and open draft starts a message to " + esc(m.to) +
+          " with the subject filled in; paste the email into it (Ctrl+V) and send. Revise the email for every request under " +
+          "Minimum Conditions, Response email.") + "</span></div></div>";
     document.body.appendChild(box);
     var close = function () {
       if (box.parentNode) box.parentNode.removeChild(box);
@@ -6509,8 +6544,14 @@
     box.addEventListener("click", function (e) { if (e.target === box) close(); });
     box.querySelector("[data-maildlgclose]").addEventListener("click", close);
     box.querySelector("[data-maildlgsend]").addEventListener("click", function () {
-      var msg = box.querySelector(".cplfund-maildlg-msg");
-      copyEmail(m, box.querySelector("[data-maildlgbody]"), function (ok) {
+      var msg = box.querySelector(".cplfund-maildlg-msg"), body = box.querySelector("[data-maildlgbody]");
+      if (follow) {
+        // What the reviewer wrote is what goes: the edited body's words and its formatting.
+        var paras = Array.prototype.map.call(body.querySelectorAll("p"), function (p) { return p.querySelector("img") ? "" : (p.innerText || p.textContent || "").trim(); })
+          .filter(Boolean);
+        m = { to: m.to, subject: m.subject, text: paras.join("\n\n"), html: '<div style="font-family:Arial,Helvetica,sans-serif;font-size:14px;line-height:1.5;">' + body.innerHTML + "</div>" };
+      }
+      copyEmail(m, body, function (ok) {
         openMailHref(mailHref(m, !ok));
         msg.textContent = ok
           ? "Copied. Paste it into the draft (Ctrl+V) and send."
@@ -6717,6 +6758,7 @@
           ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + k + '">Revoke</button>'
           : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinaccept="' + k + '">Accept</button>' +
             '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optindeny="' + k + '">Deny</button>') +
+        (rev && rev.email ? followWord("data-optinfollow", college, personName(rev.name) || rev.email) : "") +
         "</span>";
     }
     return '<div class="cplfund-basestatus cf-conds"><strong class="cf-conds-h">Minimum Conditions:</strong>' +
@@ -6898,6 +6940,7 @@
       ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-ncattestreject="' + k + '">Reject</button>'
       : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-ncattestconfirm="' + k + '">Re-confirm</button>' +
         '<button type="button" class="cplfund-optbtn" data-ncattestremove="' + k + '">Remove</button>';
+    if (rev && rev.attestor_email) btns += followWord("data-ncattestfollow", college, personName(rev.attestor_name) || rev.attestor_email);
     return '<span class="cplfund-corow">' + (bits.length ? '<span class="dk">' + bits.join(" &middot; ") + "</span> " : "") + btns + "</span>";
   }
 
@@ -16879,6 +16922,12 @@
     });
     holder.querySelectorAll("[data-ncattestdeny]").forEach(function (b) {
       b.addEventListener("click", function (e) { e.stopPropagation(); savingState = ""; denyNcAttest(b.getAttribute("data-ncattestdeny")); });
+    });
+    holder.querySelectorAll("[data-ncattestfollow]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); followNcAttest(b.getAttribute("data-ncattestfollow")); });
+    });
+    holder.querySelectorAll("[data-optinfollow]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); followOptIn(b.getAttribute("data-optinfollow")); });
     });
     focusOptinForm();
   }

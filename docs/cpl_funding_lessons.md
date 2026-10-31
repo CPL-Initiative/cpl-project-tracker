@@ -722,3 +722,19 @@ Sam's words, verbatim in `cpl_memory` `sam-funding-requester-context-and-email-2
 ## Moved from the lane (SkyCloudberry)
 
 ⭐ **WCAG 2.2 AA FOR THE CPL SUMMIT (10-30; Sam: *"fully accessible according to the latest state and federal standards and mobile friendly"*).** ⚠️ Keep `funding-model-mycpl` in every pre-Summit sweep: it is the one target that opens My Institution. Method: [`methodology-geometry-is-half-an-accessibility-audit`](../../kb-notes/methodology-geometry-is-half-an-accessibility-audit.md). ✅ The films: lessons, *Moved from the lane (S507)*. ✅ **S507 swept every target on main 157c3b39 (10-28):** the ten and `funding-film-narrated` pass (axe too); Pages serves both films. ✅ **COBI's one fault, moved on Sam's word (Sheet 139 card 1, *move*):** a link in a section title now opens the section's body as *Source: …* (`sectionShell`, `.cplfund-sec-ref`), so the priorities title holds no control inside its `<summary>`. Guards `cpl_funding_statutory_goals`, `cpl_funding_section_titles`. **NEXT:** ① No Summit-morning re-run (Sam, 10-28: covered); a session that changes a public view runs `npm run a11y` before it ships.
+
+## 2026-10-31 — Follow up beside Accept (SkyBilberry, a side session after S536)
+
+Sam, 2026-10-31 ~19:55Z, at El Camino's noncredit attestation: *"I was going to accept the screenshot confirmation
+request but noticed that the CPL Coord is not listed on the landing page and the CPL counselors are listed by name with
+not contact email (not a requirement but it did make me want to send them a follow up email noting that and asking to
+list the CPL Coordinator on the landing page and to strongly consider adding the CPL Counselors emails...but would need
+a Follow-up button to do that. Can you make the default From email address for everything map@rccd.edu? advise"*
+
+- **A draft cannot choose its sender.** Copy and open draft hands a `mailto:` link to the mail program, which sends from
+  its own default account. map@rccd.edu as the sender for everything is the Microsoft 365 path he chose on Sheet 146
+  card 3, which waits on RCCD IT; until then, making map@rccd.edu the mail program's default account does it per machine.
+- **Follow up reuses Accept's window,** editable in place, with his internal note as the starting paragraph for him to
+  rewrite for the college. It writes no record, so it needs no Governance mapping; a follow-up log would.
+- **The funding jsdom tests take minutes:** `cpl_funding_nc_attestation.test.js` ran 4 m 28 s unchanged here, so a long
+  local run is the suite, not a loop.
