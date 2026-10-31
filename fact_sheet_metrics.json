@@ -1,6 +1,6 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-10-31T12:10:31.958Z",
+ "_as_of": "2026-10-31T17:24:40.250Z",
  "credit_recommendations": {
   "total": "14,859",
   "ccc": "1,475",
@@ -14,30 +14,30 @@
   ]
  },
  "map_exhibits": {
-  "total": "2,654",
-  "ccc": "164",
-  "local": "2,490",
+  "total": "2,444",
+  "ccc": "162",
+  "local": "2,282",
   "originating_colleges": "89"
  },
  "statewide_exhibits": {
-  "total": "164",
+  "total": "162",
   "program_areas": "12",
-  "distinct_credit_recs": "1,272",
+  "distinct_credit_recs": "1,271",
   "adoptions": "1,462",
   "adopting_colleges": "66",
   "by_sector": [
    {
     "sector": "Construction Technology",
-    "exhibits": 56,
-    "credit_recs": 158,
-    "adoptions": 158,
+    "exhibits": 54,
+    "credit_recs": 157,
+    "adoptions": 157,
     "could_adopt": 0
    },
    {
     "sector": "Welding",
-    "exhibits": 25,
-    "credit_recs": 213,
-    "adoptions": 268,
+    "exhibits": 24,
+    "credit_recs": 212,
+    "adoptions": 267,
     "could_adopt": 27
    },
    {
@@ -112,9 +112,9 @@
    },
    {
     "sector": "Other Statewide",
-    "exhibits": 21,
-    "credit_recs": 51,
-    "adoptions": 55,
+    "exhibits": 22,
+    "credit_recs": 52,
+    "adoptions": 57,
     "could_adopt": 0
    }
   ],

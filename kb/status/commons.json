@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-31T12:44:20Z",
+ "written_at": "2026-10-31T17:29:06Z",
  "rows": [
   {
    "key": "requirements",
@@ -82,9 +82,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 1844,
-     "of": 5030,
-     "words": "titles carry a review stamp (645 a person's, 1,199 a cohort's); 2,465 credentials, 1,870 of 2,689 records stamped",
+     "n": 2337,
+     "of": 5492,
+     "words": "titles carry a review stamp (1,090 a person's, 1,247 a cohort's); 2,713 credentials, 2,177 of 2,991 records stamped",
      "open": "#exhibits/credentials"
     }
    ],
@@ -94,9 +94,9 @@
    ],
    "issues": [
     {
-     "n": 450,
+     "n": 351,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 401, the classifier's title has a course code left in 23, a merge would join two issuers 13, the classifier's title has a dangling word 11, the classifier's title has a method word left in 2)",
+     "owner": "a curator (the classifier is unsure 274, a merge would join two issuers 42, the classifier's title has a course code left in 23, the classifier's title has a dangling word 11, the classifier's title has a method word left in 1)",
      "open": "#exhibits/held",
      "error": null
     },
@@ -128,21 +128,21 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-31T12:10:41Z",
+    "at": "2026-10-31T17:24:52Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5030,
-    "stamped": 1844,
-    "person": 645,
-    "cohort": 1199,
-    "credentials": 2465,
-    "records": 2689,
-    "records_stamped": 1870,
-    "saved_at": "2026-10-30T14:35:41Z",
-    "fold_at": "2026-10-31T12:10:41Z",
+    "titles": 5492,
+    "stamped": 2337,
+    "person": 1090,
+    "cohort": 1247,
+    "credentials": 2713,
+    "records": 2991,
+    "records_stamped": 2177,
+    "saved_at": "2026-10-31T14:01:00Z",
+    "fold_at": "2026-10-31T17:24:52Z",
     "map_titles": 4872,
-    "unclassified": 463,
+    "unclassified": 1,
     "left_map": 621,
     "below_80": 1151,
     "below_60": 245
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-31T12:12:37+00:00",
+    "at": "2026-10-31T17:27:01+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -253,7 +253,7 @@
     {
      "n": 459,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (408 by a rung 1 to 4 rule, 51 more by a curator); 5,750 of 9,413 articulations",
+     "words": "wordings resolve to a settled reference (408 by a rung 1 to 4 rule, 51 more by a curator); 5,750 of 9,418 articulations",
      "open": "#cr-reference/progress"
     }
    ],
@@ -287,14 +287,14 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-31T03:57:53+00:00",
+    "at": "2026-10-31T03:57:53Z",
     "every_hours": null
    },
    "facts": {
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1936,
-    "rows": 9413,
+    "rows": 9418,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
@@ -309,7 +309,7 @@
     "curator_only": 51,
     "curator_only_rows": 1184,
     "unsettled": 1885,
-    "unsettled_rows": 3663,
+    "unsettled_rows": 3668,
     "head": {
      "50": {
       "settled": 44,
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-31T12:10:39Z",
+    "at": "2026-10-31T17:24:49Z",
     "every_hours": 24
    },
    "facts": {

@@ -1,6 +1,6 @@
 # Credential Rename Dry-Run — 2026-10-31
 
-Generated: `2026-10-31T12:13:02Z`
+Generated: `2026-10-31T17:27:31Z`
 
 **Mode B preview** — projects `unified_title_override` curator entries from `kb/credential_review_overlay.json` onto the post-rename state of the three credential-identity files (`unified_titles.json`, `credentials.json`, `coci_articulations.json`). Reports collisions + downstream impact. **Does NOT apply.** Apply is Cred-Ref PR-5b/1, manual workflow_dispatch.
 
@@ -18,7 +18,7 @@ Generated: `2026-10-31T12:13:02Z`
 
 | Old unified_title | ⇒ folds into | Records folding | Already on target | raw_titles | articulations |
 |---|---|---:|---:|---:|---:|
-| `Spanish 1` | ⇒ `Elementary Spanish I` | 1 | 2 | 2 | 1 |
+| `Spanish 1` | ⇒ `Elementary Spanish I` | 1 | 3 | 2 | 1 |
 | `Spanish 2` | ⇒ `Elementary Spanish II` | 1 | 2 | 2 | 1 |
 
 ## Clean renames (would land on apply)
