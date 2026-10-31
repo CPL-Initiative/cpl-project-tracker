@@ -41,7 +41,7 @@ def check(name, cond, why=""):
 
 # ── the procedures file ──────────────────────────────────────────────────────
 KNOWN_LANES = {"family", "statewide", "nccer", "cslb", "journeyman", "carpenters", "ironworker",
-               "single", "identity"}
+               "single", "identity", "school"}
 procs = cp.load_procedures()
 check("every procedure in force names who, when and their words",
       all(p["source"]["who"] and p["source"]["date"] and p["source"]["words"] for p in procs))
@@ -202,6 +202,61 @@ check("a code the catalog does not hold gives no hint", "Portfolio for ART 9" no
 check("a changed hint changes the key a title was asked under",
       cp.hints_key([{"title": "a", "via": "cx"}]) != cp.hints_key([{"title": "a", "via": "cx"}, ch["Discipline Exam - CS 119"]]))
 
+# ── the high school and ROP rule (Sam, Open Asks Sheet 147 card 2, 2026-10-31) ─
+AL = {"3D Digital Modeling HS-CNUSD": {"kind": "mid", "id": "MULT M1019", "title": "3D Digital Modeling",
+                                       "code": "GAM 6A", "college": "Norco College"},
+      "Residential Construction 2 High School Articulation": {"kind": "mid", "id": "CNST M1130",
+                                       "title": "Residential Construction Skills 2", "code": "CEM 178B",
+                                       "college": "Cabrillo College"},
+      "AP Computer Science A HS-LEUSD": {"kind": "cid", "id": "COMP 122", "title": "Java Programming",
+                                         "code": "CS 5", "college": "Norco College"},
+      "Welding Basics Training Center": {"kind": "course", "id": "WELD M10LB", "title": "Welding Basics",
+                                         "code": "WELD 1", "college": "Norco College"},
+      "Business Law HS-CNUSD": {"kind": "cid", "id": "BUS 125", "title": "Business Law", "code": "BUS 18A",
+                                "college": "Norco College", "ambiguous": ["BUS 125", "BUS 126"]}}
+sp = cp.school_proposal("3D Digital Modeling HS-CNUSD", AL,
+                        {"issuing_agency": "Corona-Norco Unified School District (CNUSD)"})
+check("a high school title takes its aligned course's name, and the district issues it",
+      sp and sp["title"] == "3D Digital Modeling" and sp["issuer"] == "Corona-Norco Unified School District"
+      and sp["via"] == "school", sp)
+check("an unnamed high school stays Local High School, as the classifier read it",
+      (cp.school_proposal("Residential Construction 2 High School Articulation", AL,
+                          {"issuing_agency": "Local High School"}) or {}).get("issuer") == "Local High School")
+check("an AP exam keeps its own name", cp.school_proposal(
+    "AP Computer Science A HS-LEUSD", AL, {"issuing_agency": "College Board"}) is None)
+check("a training center stays with the classifier", cp.school_proposal(
+    "Welding Basics Training Center", AL, {"issuing_agency": "Some Training Center"}) is None)
+check("two aligned courses in the best tier hold the title", cp.school_proposal(
+    "Business Law HS-CNUSD", AL, {"issuing_agency": "Corona-Norco Unified School District"}) is None)
+check("no issuer named holds the title", cp.school_proposal(
+    "3D Digital Modeling HS-CNUSD", AL, {"issuing_agency": ""}) is None)
+check("a title with no aligned course holds", cp.school_proposal(
+    "Floral Design HS-CNUSD", AL, {"issuing_agency": "Corona-Norco Unified School District"}) is None)
+
+# ── the aligned course (kb/_suggest_unclassified.py; Sam, 2026-10-30) ────────
+import _suggest_unclassified as su  # noqa: E402
+check("a leading zero folds, so MAP's ADJUS 023 meets COCI's ADJUS 23",
+      su.split_code("ADJUS 023") == su.split_code("ADJUS 23") == ("ADJUS", "23"))
+check("a two-word subject and a lettered number split", su.split_code("ADM JUS 8") == ("ADMJUS", "8")
+      and su.split_code("CEM 178A") == ("CEM", "178A"))
+sw = {"exhibits": [{"raw_titles": ["Intro to Digital Photography High School Articulation", "AP Biology HS-X"],
+                    "adopter_names": ["Cabrillo College"],
+                    "credit_recs": [{"course": "AP 6"}, {"course": "BIO 1"}]},
+                   {"raw_titles": ["Anatomy/Physiology HS-AUSD"], "adopter_names": ["Norco College"],
+                    "credit_recs": [{"course": "BUS 50"}]}]}
+arts = su.articulated(["Intro to Digital Photography High School Articulation", "AP Biology HS-X",
+                       "Anatomy/Physiology HS-AUSD"], sw)
+idx = {("CABRILLOCOLLEGE", "AP", "6"): {("ARTS M1351", "Intro to Digital Photography")},
+       ("CABRILLOCOLLEGE", "BIO", "1"): {("BIOL 135", "General Biology")},
+       ("NORCOCOLLEGE", "BUS", "50"): {("BUSI M1284", "Entrepreneurship")}}
+got = su.aligned_courses(arts, idx, {}, {"BIOL 135": "General Biology"},
+                         {"ARTS M1351": "Introduction to Digital Photography", "BUSI M1284": "Entrepreneurship"})
+check("the exhibit's credit recommendation names the aligned course, by its M-ID title",
+      got.get("Intro to Digital Photography High School Articulation", {}).get("title")
+      == "Introduction to Digital Photography", got)
+check("an exam brand never takes an aligned course", "AP Biology HS-X" not in got)
+check("a course that shares no word with the title is no alignment", "Anatomy/Physiology HS-AUSD" not in got)
+
 # ── the whole run, against the committed queue ───────────────────────────────
 wrote = []
 real_open = open
@@ -223,6 +278,11 @@ check("no pre-fill comes from a hint lane",
               for v in stage["staged"].values()))
 check("no pre-fill carries residue",
       not [r for r, v in stage["staged"].items() if cp.residue(v["title"], v.get("issuer", ""), v.get("via", ""))])
+check("a title the high school rule settles is counted under the rule, never the classifier",
+      all(v.get("procedure") == "high-school-rop" for r, v in stage["staged"].items() if v.get("via") == "school")
+      and next(p for p in report["procedures"] if p["id"] == "classifier")["settled"]
+      == sum(1 for r, v in stage["staged"].items() if v.get("procedure") == "classifier"
+             and r not in {n["raw_title"] for n in report["needs_you"]}))
 check("the report tallies every procedure in force",
       {p["id"] for p in procs} <= {p["id"] for p in report["procedures"]})
 try:

@@ -65,6 +65,15 @@
       "source": {"who": "Sam", "date": "2026-07-07", "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title", "skill": "Rule 5c"}
     },
     {
+      "id": "high-school-rop",
+      "name": "A high school course takes its college course's name",
+      "kind": "rule",
+      "on": true,
+      "rule": "A high school, district, county office or ROP articulation takes the name of the college course it is aligned to (its Common Course Number title, then its C-ID title, then its M-ID title, then the college's own course title), and the school, district or county office the classifier named issues it. An AP or other exam keeps its own name. A title with no aligned course that shares a word with it, or with no named issuer, stays with a person.",
+      "lanes": ["school"],
+      "source": {"who": "Sam", "date": "2026-10-31", "words": "Make it a rule (Open Asks Sheet 147 card 2: 'High school and ROP titles: settle the 96 under one rule, with the AP exams keeping their names?'); 2026-10-30: 'if there's a M-ID title aligned show it and let it determine the proposed classifyer'", "skill": "Rule 5c, Rule 5f"}
+    },
+    {
       "id": "issuer-issues-the-card",
       "name": "The issuer issues the card",
       "kind": "guidance",

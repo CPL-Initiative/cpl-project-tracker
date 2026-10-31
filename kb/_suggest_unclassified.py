@@ -48,6 +48,8 @@ CCN = os.path.join(HERE, "reference", "ccn_courses.json")
 COS = os.path.join(HERE, "reference", "cos_certifications.json")
 MINTED = os.path.join(HERE, "coci_minted_courses.json")
 OUT = os.path.join(HERE, "unclassified_suggestions.json")
+STATEWIDE = os.path.join(os.path.dirname(HERE), "statewide_data.js")
+MEMBERS = os.path.join(os.path.dirname(HERE), "unified_courses_members.js")
 
 EXAM_BRANDS = {"AP", "IB", "CLEP", "AICE", "DSST"}
 STOP = {"the", "of", "and", "in", "for", "a", "an", "to", "with", "on", "or",
@@ -176,6 +178,111 @@ def build_coci_index():
             if ce is not None:
                 ce["ccns"].add(ccn)
     return idx, cidx
+
+
+# ── the aligned course (Sam, 2026-10-30) ─────────────────────────────────────
+# "if there's a M-ID title aligned show it and let it determine the proposed
+# classifyer" (cpl_memory sam-cer-aligned-course-names-the-exhibit-2026-10-30).
+# A held title rarely carries its course code (a high school articulation reads
+# "Introduction to Digital Media High School Articulation"), but its exhibit's
+# credit recommendation names the course at the college that built it (DM 1 at
+# Cabrillo). That course's identity names the credential: CCN, then C-ID, then
+# M-ID, then the college's own course title. AP and the other exam brands keep
+# their own names (brand-family), so they never take an aligned course. The
+# result sits beside the suggestions under its own key, so the CER tab's fill
+# chips read exactly what they read before.
+ALIGNED_RANK = {"ccn": 0, "cid": 1, "mid": 2, "course": 3}
+_EXAM_BRAND = re.compile(r"^\s*(?:AP|IB|CLEP|AICE|DSST)\b|\bAdvanced Placement\b|\bAP\s+(?:Exam|Test)\b", re.I)
+_CODE = re.compile(r"^(.*?[A-Za-z][A-Za-z ./&-]*?)[\s-]*(\d+[A-Za-z]*)\s*$")
+
+
+def load_js(path):
+    """A generated `window.X = {...};` file as its object."""
+    with open(path, encoding="utf-8") as f:
+        src = f.read()
+    start = re.search(r"window\.\w+\s*=\s*\{", src).end() - 1
+    return json.loads(src[start:src.rindex("}") + 1])
+
+
+def split_code(code):
+    """'ADJUS 023' -> ('ADJUS', '23'); 'CEM 178A' -> ('CEM', '178A'). Leading zeros
+    fold, so MAP's 'ADJUS 023' meets COCI's 'ADJUS 23'."""
+    m = _CODE.match((code or "").strip())
+    if not m:
+        return None
+    subj, num = norm_subj(m.group(1)), norm_num(m.group(2))
+    return (subj, num) if subj and num else None
+
+
+def articulated(raws, statewide):
+    """raw title -> {(college, course code)}: the course each MAP exhibit's credit
+    recommendations name, at the colleges that articulated the exhibit."""
+    want, out = set(raws), {}
+    for x in statewide.get("exhibits") or []:
+        hits = [r for r in x.get("raw_titles") or [] if r in want]
+        if not hits:
+            continue
+        codes = {c.get("course").strip() for c in x.get("credit_recs") or [] if (c.get("course") or "").strip()}
+        for raw in hits:
+            for college in x.get("adopter_names") or []:
+                for code in codes:
+                    out.setdefault(raw, set()).add((college, code))
+    return out
+
+
+def identity_index(members):
+    """(COLLEGE, SUBJ, NUM) -> {(identity id, the college's course title)} from the
+    identity layer's member rows."""
+    names = members.get("colleges") or []
+    idx = {}
+    for ident, rows in (members.get("members") or {}).items():
+        for r in rows:
+            key = split_code(r.get("n"))
+            if not key or r.get("c") is None or r["c"] >= len(names):
+                continue
+            idx.setdefault((norm_college(names[r["c"]]),) + key, set()).add((ident, (r.get("t") or "").strip()))
+    return idx
+
+
+def aligned_courses(arts, index, ccn_titles, cid_titles, mid_titles):
+    """raw title -> the aligned course's identity, best tier first, or nothing when
+    the raw names an exam brand or no course that shares a word with it joins.
+    Two ids in the best tier are kept and listed under `ambiguous`."""
+    out = {}
+    for raw, pairs in arts.items():
+        if _EXAM_BRAND.search(raw):
+            continue
+        found = []
+        for college, code in sorted(pairs):
+            key = split_code(code)
+            if not key:
+                continue
+            for ident, local in index.get((norm_college(college),) + key, ()):
+                up = ident.upper()
+                if up in ccn_titles:
+                    found.append(("ccn", ident, ccn_titles[up], code, college))
+                elif up in cid_titles:
+                    found.append(("cid", ident, cid_titles[up], code, college))
+                elif ident in mid_titles:
+                    found.append(("mid", ident, mid_titles[ident], code, college))
+                elif local:
+                    found.append(("course", ident, local, code, college))
+        # The pairing is every course an exhibit names at every college that
+        # articulated it, so a join must share a word with the title it names
+        # (the same guard the code path uses): "Anatomy/Physiology HS-AUSD" met an
+        # entrepreneurship course on 2026-10-31.
+        rt = tokens(raw)
+        found = [f for f in found if rt & tokens(f[2])]
+        if not found:
+            continue
+        best = min(ALIGNED_RANK[f[0]] for f in found)
+        top = [f for f in found if ALIGNED_RANK[f[0]] == best]
+        kind, ident, title, code, college = top[0]
+        rec = {"kind": kind, "id": ident, "title": title.strip(), "code": code, "college": college}
+        if len({f[1] for f in top}) > 1:
+            rec["ambiguous"] = sorted({f[1] for f in top})
+        out[raw] = rec
+    return out
 
 
 def main():
@@ -307,6 +414,14 @@ def main():
             stats["with_" + final[0]["kind"]] += 1
 
     print(f"suggestions: {len(suggestions)}/{len(queue)} raws | {dict(stats)}")
+    aligned = {}
+    if os.path.exists(STATEWIDE) and os.path.exists(MEMBERS) and os.path.exists(MINTED):
+        mids = {k: (v.get("common_title") or "").strip()
+                for k, v in load(MINTED).get("courses", {}).items() if v.get("common_title")}
+        aligned = aligned_courses(articulated([r for r, _c in queue], load_js(STATEWIDE)),
+                                  identity_index(load_js(MEMBERS)), ccn_titles, cid_titles, mids)
+        print(f"aligned course: {len(aligned)}/{len(queue)} raws | "
+              f"{dict(Counter(a['kind'] for a in aligned.values()))}")
     for raw in list(suggestions)[:8]:
         s = suggestions[raw][0]
         print(f"  💡 {raw!r} → [{s['kind']}] {s['title']!r}"
@@ -314,10 +429,11 @@ def main():
 
     # Idempotent write (the file is a daily-cron artifact — no timestamp churn).
     try:
-        prior = load(OUT).get("suggestions")
+        prior_file = load(OUT)
+        prior = (prior_file.get("suggestions"), prior_file.get("aligned") or {})
     except (FileNotFoundError, ValueError):
         prior = None
-    if prior == suggestions:
+    if prior == (suggestions, aligned):
         print("no change — file left untouched")
         return
     payload = {
@@ -326,10 +442,14 @@ def main():
                    "skill Rule 5c: CCN > C-ID > (M-ID once stable) > modal local "
                    "course title; plus CareerOneStop authority matches when the "
                    "registry is synced. One-click FILL chips — the curator always "
-                   "confirms; never auto-applied."),
+                   "confirms; never auto-applied. `aligned` names each title's "
+                   "aligned course: the course its exhibit's credit recommendation "
+                   "names, as CCN > C-ID > M-ID > the college's course title (Sam, "
+                   "2026-10-30); exam brands keep their names."),
         "_generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "count": len(suggestions),
         "suggestions": suggestions,
+        "aligned": aligned,
     }
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(payload, f, indent=1, ensure_ascii=False)
