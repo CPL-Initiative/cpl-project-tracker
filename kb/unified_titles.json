@@ -11007,17 +11007,16 @@
     "_notes": "Curator triage superseded the unreviewed machine classification 'Automotive (Generic)' (conf 0.4)."
   },
   "Automotive Brake Systems": {
-    "unified_title": "Automotive Brake Systems",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-31",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBEN-ABS-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college course (distinct from ASE A5 cert variant)."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Automotive Brake Systems' (conf 0.8)."
   },
   "Automotive Brake Systems ASE A5": {
     "unified_title": "ASE A5 — Brakes",
@@ -11033,17 +11032,16 @@
     "_notes": null
   },
   "Automotive Brake Systems AUTO 036 Cx": {
-    "unified_title": "Automotive Brake Systems",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Automotive Technology (ASE A5 Brakes)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-10-31",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCxS-ABSA-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course code stripped; same as local Brake Systems course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Automotive Brake Systems' (conf 0.85)."
   },
   "Automotive Electrical Systems I AUTO 020 Cx": {
     "unified_title": "ASE A6 — Electrical/Electronic Systems",
@@ -44288,12 +44286,15 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AUTO 61A-Automotive Brake Systems-Credit by Exam": {
-    "unified_title": "Automotive Brake Systems",
+    "unified_title": "Automotive Technology (ASE A5 Brakes)",
     "confidence_title": 1.0,
-    "classified_at": "2026-07-07",
+    "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T17:00:21.698426+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Brake Systems",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Brake Systems' on 2026-10-31."
   },
   "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam": {
     "unified_title": "Electronically Controlled Brake Systems",
@@ -44737,20 +44738,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
-    "unified_title": "Auto Electricity and Electronics",
+    "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
     "confidence_title": 1.0,
-    "classified_at": "2026-07-07",
+    "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T20:44:33.863431+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Auto Electricity and Electronics",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Auto Electricity and Electronics' on 2026-10-31."
   },
   "AUTOTEC-15: Auto Electricity and Electronics": {
-    "unified_title": "Auto Electricity and Electronics",
+    "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
     "confidence_title": 1.0,
-    "classified_at": "2026-07-07",
+    "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T20:44:33.933262+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Auto Electricity and Electronics",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Auto Electricity and Electronics' on 2026-10-31."
   },
   "BIOL-424 High School Anatomy and Physiology Honors": {
     "unified_title": "Anatomy and Physiology",
@@ -46065,12 +46072,15 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam AUTO 106 Automotive Brake System": {
-    "unified_title": "Automotive Brake System",
+    "unified_title": "Automotive Technology (ASE A5 Brakes)",
     "confidence_title": 1.0,
-    "classified_at": "2026-07-07",
+    "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T20:44:36.625581+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31T18:52:52.433133+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Brake System",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Brake System' on 2026-10-31."
   },
   "Credit by Exam AUTO 117 Automotive Principles": {
     "unified_title": "Automotive Principles",
@@ -50388,12 +50398,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Automotive Air Conditioning - Credit by Exam (ATEC 81 )": {
-    "unified_title": "Automotive Air Conditioning",
+    "unified_title": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31T18:52:51.410312+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Air Conditioning",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Air Conditioning' on 2026-10-31."
   },
   "Automotive Collision Analysis - Credit by Exam (ACRP 24 )": {
     "unified_title": "Automotive Collision Analysis",
@@ -54264,12 +54277,15 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC- Automotive Electrical/Electronics I": {
-    "unified_title": "Automotive Electrical/Electronics I",
+    "unified_title": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:28.796211+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31T18:53:03.493942+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Electrical/Electronics I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical/Electronics I' on 2026-10-31."
   },
   "IC- Engine Performance II": {
     "unified_title": "Engine Performance II",
@@ -54312,20 +54328,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC-Automotive Brake Systems": {
-    "unified_title": "Automotive Brake Systems",
+    "unified_title": "Automotive Technology (ASE A5 Brakes)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:29.062288+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Brake Systems",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Brake Systems' on 2026-10-31."
   },
   "IC-Automotive Electrical/Electronics II": {
-    "unified_title": "Automotive Electrical/Electronics II",
+    "unified_title": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:29.103869+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-10-31T18:53:04.866031+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Electrical/Electronics II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical/Electronics II' on 2026-10-31."
   },
   "IC-Automotive Suspension, Steering and Alignment Systems": {
     "unified_title": "Automotive Suspension, Steering and Alignment Systems",
@@ -58043,12 +58065,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Brakes - Credit by Exam (ATEC 14 )": {
-    "unified_title": "Brakes",
+    "unified_title": "Automotive Technology (ASE A5 Brakes)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-10-31T18:54:58.953988+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Brakes",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Brakes' on 2026-10-31."
   },
   "Building Trades & Construction 2 HS-SBCUSD": {
     "unified_title": "Introduction to Construction",
@@ -59067,12 +59092,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Engine Performance - Credit by Exam (ATEC 23 )": {
-    "unified_title": "Engine Performance",
+    "unified_title": "Engine Performance (ASE A8 Engine Performance)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:33:26.94443+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-10-31T18:55:02.371422+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Engine Performance",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Engine Performance' on 2026-10-31."
   },
   "Entrepreneurship and Small Business HS-RUSD": {
     "unified_title": "Entrepreneurship: Foundations and Fundamentals",
@@ -60051,12 +60079,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Noncredit for AUTO A2": {
-    "unified_title": "Automatic Transmission/Transaxle",
+    "unified_title": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:37:50.553384+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-10-31T18:52:51.042885+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automatic Transmission/Transaxle",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automatic Transmission/Transaxle' on 2026-10-31."
   },
   "Noncredit for AUTO A3": {
     "unified_title": "Manual Drive Train and Axles",
@@ -60075,20 +60106,26 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Noncredit for AUTO A5": {
-    "unified_title": "Automotive Brake Systems",
+    "unified_title": "Automotive Technology (ASE A5 Brakes)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:37:55.277052+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Brake Systems",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Brake Systems' on 2026-10-31."
   },
   "Noncredit for AUTO A6": {
-    "unified_title": "Automotive Electrical Systems",
+    "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:37:56.688852+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-10-31T18:53:02.183869+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Electrical Systems",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical Systems' on 2026-10-31."
   },
   "Noncredit for AUTO A7": {
     "unified_title": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
@@ -60099,20 +60136,26 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Noncredit for AUTO A8": {
-    "unified_title": "Automotive Technology (ASE A8 Engine Performance Certification)",
+    "unified_title": "Automotive Technology (ASE A8 Engine Performance)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:38:10.951595+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-10-31T18:53:07.319531+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Technology (ASE A8 Engine Performance Certification)",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Technology (ASE A8 Engine Performance Certification)' on 2026-10-31."
   },
   "Noncredit for AUTO A9": {
-    "unified_title": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)",
+    "unified_title": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:38:22.782544+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-10-31T18:53:10.017818+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)' on 2026-10-31."
   },
   "Noncredit for AUTO INT": {
     "unified_title": "Automotive Technology",

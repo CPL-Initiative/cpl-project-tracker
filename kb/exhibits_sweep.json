@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-10-31T17:44:11Z",
+ "generated_at": "2026-10-31T19:36:40Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -41,386 +41,23 @@
   }
  ],
  "counts": {
-  "ase": 17,
+  "ase": 5,
   "numerals": 45,
   "language": 32,
   "course-code": 6,
   "level": 1,
   "fold": 33
  },
- "local_titles": 168,
+ "local_titles": 151,
  "cards": [
   {
-   "current": "Auto Electricity and Electronics",
-   "proposed": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "the course is named for ASE A6"
-   ],
-   "locals": [
-    {
-     "raw": "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "AUTOTEC-15: Auto Electricity and Electronics",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "83e7c5ab067b",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 2,
-   "moves_all": true
-  },
-  {
-   "current": "Automatic Transmission/Transaxle",
-   "proposed": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "the course is A2, named for the ASE test"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A2",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "AUTO A2",
-     "credit": "4 units in AUTO A2 Automatic Transmission Transaxle"
-    }
-   ],
-   "id": "e93010eab588",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Automotive Air Conditioning",
-   "proposed": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "the course is named for ASE A7"
-   ],
-   "locals": [
-    {
-     "raw": "Automotive Air Conditioning - Credit by Exam (ATEC 81 )",
-     "colleges": [
-      "El Camino College"
-     ],
-     "course": "ATEC 81",
-     "credit": "3 hours in Automotive Air Conditioning"
-    }
-   ],
-   "id": "3c54e55d858d",
-   "issuer": "California Community Colleges",
-   "proposed_exists": true,
-   "proposed_locals": 1,
-   "proposed_issuer": "California Community Colleges",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Automotive Brake System",
-   "proposed": "Automotive Technology (ASE A5 Brakes)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "the course is named for ASE A5"
-   ],
-   "locals": [
-    {
-     "raw": "Credit by Exam AUTO 106 Automotive Brake System",
-     "colleges": [
-      "Evergreen Valley College"
-     ],
-     "course": "AUTO 106",
-     "credit": "2 hours in Automotive Brake Systems"
-    }
-   ],
-   "id": "8d8437e05134",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Automotive Brake Systems",
-   "proposed": "Automotive Technology (ASE A5 Brakes)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "the course is named for ASE A5",
-    "the course is A5, named for the ASE test"
-   ],
-   "locals": [
-    {
-     "raw": "AUTO 61A-Automotive Brake Systems-Credit by Exam",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "Automotive Brake Systems",
-     "colleges": [
-      "San Diego Miramar College"
-     ],
-     "course": "AUTO 176G",
-     "credit": "4 hours in Automotive Brake Systems"
-    },
-    {
-     "raw": "Automotive Brake Systems AUTO 036 Cx",
-     "colleges": [
-      "Copper Mountain College"
-     ],
-     "course": "AUTO 36",
-     "credit": "4 hours in Automotive Brake Systems"
-    },
-    {
-     "raw": "IC-Automotive Brake Systems",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ],
-     "course": "AUME 771",
-     "credit": "4 hours in Automotive Brake Systems"
-    },
-    {
-     "raw": "Noncredit for AUTO A5",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "AUTO A5",
-     "credit": "4 units in AUTO A5 Brakes"
-    }
-   ],
-   "id": "b2e15fdcc116",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 5,
-   "moves_all": true
-  },
-  {
-   "current": "Automotive Electrical Systems",
-   "proposed": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "the course is A6, named for the ASE test"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A6",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "AUTO A6",
-     "credit": "5 units in AUTO A6 Electrical Electronic Systems"
-    }
-   ],
-   "id": "0cee5916e25c",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 2,
-   "moves_all": false
-  },
-  {
-   "current": "Automotive Electrical/Electronics I",
-   "proposed": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
-   "rules": [
-    "ase",
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic",
-    "the course is named for ASE A6"
-   ],
-   "locals": [
-    {
-     "raw": "IC- Automotive Electrical/Electronics I",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ],
-     "course": "AUME 780",
-     "credit": "4 hours in Automotive Electrical/Electronics I"
-    }
-   ],
-   "id": "a3b8d2f234e5",
-   "issuer": "",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Automotive Electrical/Electronics II",
-   "proposed": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
-   "rules": [
-    "ase",
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic",
-    "the course is named for ASE A6"
-   ],
-   "locals": [
-    {
-     "raw": "IC-Automotive Electrical/Electronics II",
-     "colleges": [
-      "Mt. San Jacinto College"
-     ],
-     "course": "AUME 781",
-     "credit": "4 hours in Automotive Electrical/Electronics II"
-    }
-   ],
-   "id": "67c014a627e4",
-   "issuer": "",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Automotive Technology (ASE A8 Engine Performance Certification)",
+   "current": "Engine Performance (ASE A8 Engine Performance)",
    "proposed": "Automotive Technology (ASE A8 Engine Performance)",
    "rules": [
     "ase"
    ],
    "why": [
     "ASE A8's official name is Engine Performance"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A8",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "AUTO A8",
-     "credit": "5 units in AUTO A9 Engine Performance"
-    }
-   ],
-   "id": "b9ce45e49ca3",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)",
-   "proposed": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A9's official name is Light Vehicle Diesel Engines"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A9",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "AUTO A9",
-     "credit": "4 units in AUTO A9 Light Vehicle Diesel Engines"
-    }
-   ],
-   "id": "bd7b90e914a9",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)",
-   "proposed": "Powertrains: Modifications for Performance",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "P1 at this college is “Powertrains: Modifications for Performance”, not ASE P1 Medium/Heavy Truck Parts Specialist; the course's own title in its place"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO P1",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "AUTO P1",
-     "credit": "4 units in AUTO P1 Powertrains: Modifications for Performance"
-    }
-   ],
-   "id": "4b1782efa60c",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Brakes",
-   "proposed": "Automotive Technology (ASE A5 Brakes)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "the course is named for ASE A5"
-   ],
-   "locals": [
-    {
-     "raw": "Brakes - Credit by Exam (ATEC 14 )",
-     "colleges": [
-      "El Camino College"
-     ],
-     "course": "ATEC 14",
-     "credit": "4 hours in Brakes"
-    }
-   ],
-   "id": "033358f96a55",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Engine Performance",
-   "proposed": "Automotive Technology (ASE A8 Engine Performance)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "the course is named for ASE A8"
    ],
    "locals": [
     {
@@ -432,11 +69,11 @@
      "credit": "4 hours in Engine Performance"
     }
    ],
-   "id": "2a9e7e28d949",
+   "id": "c0b138003637",
    "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
+   "proposed_exists": true,
+   "proposed_locals": 1,
+   "proposed_issuer": "California Community Colleges",
    "current_locals": 1,
    "moves_all": true
   },

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-31T17:29:06Z",
+ "written_at": "2026-10-31T19:36:44Z",
  "rows": [
   {
    "key": "requirements",
@@ -82,9 +82,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2337,
+     "n": 2339,
      "of": 5492,
-     "words": "titles carry a review stamp (1,090 a person's, 1,247 a cohort's); 2,713 credentials, 2,177 of 2,991 records stamped",
+     "words": "titles carry a review stamp (1,094 a person's, 1,245 a cohort's); 2,711 credentials, 2,193 of 3,007 records stamped",
      "open": "#exhibits/credentials"
     }
    ],
@@ -117,8 +117,8 @@
    ],
    "procedures": [
     {
-     "n": 13,
-     "words": "in force: 8 rules applied by code, 5 read by the classifier",
+     "n": 16,
+     "words": "in force: 8 rules applied by code, 8 read by the classifier",
      "open": "#credential-reference/procs",
      "error": null
     },
@@ -128,19 +128,19 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-31T17:24:52Z",
+    "at": "2026-10-31T19:32:41Z",
     "every_hours": 24
    },
    "facts": {
     "titles": 5492,
-    "stamped": 2337,
-    "person": 1090,
-    "cohort": 1247,
-    "credentials": 2713,
-    "records": 2991,
-    "records_stamped": 2177,
+    "stamped": 2339,
+    "person": 1094,
+    "cohort": 1245,
+    "credentials": 2711,
+    "records": 3007,
+    "records_stamped": 2193,
     "saved_at": "2026-10-31T14:01:00Z",
-    "fold_at": "2026-10-31T17:24:52Z",
+    "fold_at": "2026-10-31T19:32:41Z",
     "map_titles": 4872,
     "unclassified": 1,
     "left_map": 621,
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-31T17:27:01+00:00",
+    "at": "2026-10-31T19:34:54+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -287,7 +287,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-31T03:57:53Z",
+    "at": "2026-10-31T17:29:10Z",
     "every_hours": null
    },
    "facts": {
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-31T17:24:49Z",
+    "at": "2026-10-31T19:32:39Z",
     "every_hours": 24
    },
    "facts": {

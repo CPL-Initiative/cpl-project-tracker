@@ -1,8 +1,8 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-10-31T17:24:51Z",
-  "count": 2254,
+  "_synced_at": "2026-10-31T19:32:40Z",
+  "count": 2256,
   "assignments": {
     "1st Receiver Ops & Decon": {
       "issuing_agency": "",
@@ -3217,9 +3217,10 @@
     },
     "AUTO 61A-Automotive Brake Systems-Credit by Exam": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T17:00:21.698426+00:00",
-      "unified_title": "Automotive Brake Systems"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "unified_title": "Automotive Technology (ASE A5 Brakes)",
+      "supersedes": "Automotive Brake Systems"
     },
     "AUTO 61B-Electronically Controlled Brake Systems Credit by Exam": {
       "issuing_agency": "California Community Colleges",
@@ -3263,15 +3264,17 @@
     },
     "AUTOTEC-15 SUMMIT HIGH SCHOOL- Auto Electricity and Electronics": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T20:44:33.863431+00:00",
-      "unified_title": "Auto Electricity and Electronics"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
+      "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "supersedes": "Auto Electricity and Electronics"
     },
     "AUTOTEC-15: Auto Electricity and Electronics": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T20:44:33.933262+00:00",
-      "unified_title": "Auto Electricity and Electronics"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:38.202178+00:00",
+      "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "supersedes": "Auto Electricity and Electronics"
     },
     "Academic Reading and Writing ENGL C1000": {
       "issuing_agency": "California Community Colleges",
@@ -3593,9 +3596,24 @@
     },
     "Automotive Air Conditioning - Credit by Exam (ATEC 81 )": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "Automotive Air Conditioning"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:51.410312+00:00",
+      "unified_title": "Automotive Technology (ASE A7 Heating and Air Conditioning)",
+      "supersedes": "Automotive Air Conditioning"
+    },
+    "Automotive Brake Systems": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "unified_title": "Automotive Technology (ASE A5 Brakes)",
+      "supersedes": "Automotive Brake Systems"
+    },
+    "Automotive Brake Systems AUTO 036 Cx": {
+      "issuing_agency": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "unified_title": "Automotive Technology (ASE A5 Brakes)",
+      "supersedes": "Automotive Brake Systems"
     },
     "Automotive Collision Analysis - Credit by Exam (ACRP 24 )": {
       "issuing_agency": "California Community Colleges",
@@ -4283,9 +4301,10 @@
     },
     "Brakes - Credit by Exam (ATEC 14 )": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-      "unified_title": "Brakes"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:54:58.953988+00:00",
+      "unified_title": "Automotive Technology (ASE A5 Brakes)",
+      "supersedes": "Brakes"
     },
     "Building Construction for Fire Protection Credit by Exam": {
       "unified_title": "Building Construction for Fire Protection",
@@ -7029,9 +7048,10 @@
     },
     "Credit by Exam AUTO 106 Automotive Brake System": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-07T20:44:36.625581+00:00",
-      "unified_title": "Automotive Brake System"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:52.433133+00:00",
+      "unified_title": "Automotive Technology (ASE A5 Brakes)",
+      "supersedes": "Automotive Brake System"
     },
     "Credit by Exam AUTO 117 Automotive Principles": {
       "issuing_agency": "California Community Colleges",
@@ -8208,8 +8228,9 @@
     "Engine Performance - Credit by Exam (ATEC 23 )": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:33:26.94443+00:00",
-      "unified_title": "Engine Performance"
+      "reviewed_at": "2026-10-31T18:55:02.371422+00:00",
+      "unified_title": "Engine Performance (ASE A8 Engine Performance)",
+      "supersedes": "Engine Performance"
     },
     "Engineering Design and Development - Credit by Exam (ETEC 18 )": {
       "issuing_agency": "California Community Colleges",
@@ -9731,9 +9752,10 @@
     },
     "IC- Automotive Electrical/Electronics I": {
       "issuing_agency": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:28.796211+00:00",
-      "unified_title": "Automotive Electrical/Electronics I"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:53:03.493942+00:00",
+      "unified_title": "Automotive Electrical/Electronics 1 (ASE A6 Electrical/Electronic Systems)",
+      "supersedes": "Automotive Electrical/Electronics I"
     },
     "IC- Engine Performance II": {
       "issuing_agency": "",
@@ -9767,15 +9789,17 @@
     },
     "IC-Automotive Brake Systems": {
       "issuing_agency": "California Community Colleges",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:29.062288+00:00",
-      "unified_title": "Automotive Brake Systems"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "unified_title": "Automotive Technology (ASE A5 Brakes)",
+      "supersedes": "Automotive Brake Systems"
     },
     "IC-Automotive Electrical/Electronics II": {
       "issuing_agency": "",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:29.103869+00:00",
-      "unified_title": "Automotive Electrical/Electronics II"
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-10-31T18:53:04.866031+00:00",
+      "unified_title": "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)",
+      "supersedes": "Automotive Electrical/Electronics II"
     },
     "IC-Automotive Suspension, Steering and Alignment Systems": {
       "issuing_agency": "",
@@ -11606,8 +11630,9 @@
     "Noncredit for AUTO A2": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:37:50.553384+00:00",
-      "unified_title": "Automatic Transmission/Transaxle"
+      "reviewed_at": "2026-10-31T18:52:51.042885+00:00",
+      "unified_title": "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)",
+      "supersedes": "Automatic Transmission/Transaxle"
     },
     "Noncredit for AUTO A3": {
       "issuing_agency": "California Community Colleges",
@@ -11624,14 +11649,16 @@
     "Noncredit for AUTO A5": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:37:55.277052+00:00",
-      "unified_title": "Automotive Brake Systems"
+      "reviewed_at": "2026-10-31T18:52:59.978032+00:00",
+      "unified_title": "Automotive Technology (ASE A5 Brakes)",
+      "supersedes": "Automotive Brake Systems"
     },
     "Noncredit for AUTO A6": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:37:56.688852+00:00",
-      "unified_title": "Automotive Electrical Systems"
+      "reviewed_at": "2026-10-31T18:53:02.183869+00:00",
+      "unified_title": "Automotive Technology (ASE A6 Electrical/Electronic Systems)",
+      "supersedes": "Automotive Electrical Systems"
     },
     "Noncredit for AUTO A7": {
       "issuing_agency": "California Community Colleges",
@@ -11642,14 +11669,16 @@
     "Noncredit for AUTO A8": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:38:10.951595+00:00",
-      "unified_title": "Automotive Technology (ASE A8 Engine Performance Certification)"
+      "reviewed_at": "2026-10-31T18:53:07.319531+00:00",
+      "unified_title": "Automotive Technology (ASE A8 Engine Performance)",
+      "supersedes": "Automotive Technology (ASE A8 Engine Performance Certification)"
     },
     "Noncredit for AUTO A9": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:38:22.782544+00:00",
-      "unified_title": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)"
+      "reviewed_at": "2026-10-31T18:53:10.017818+00:00",
+      "unified_title": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)",
+      "supersedes": "Automotive Technology (ASE A9 Light Vehicle Diesel Engines certification exam)"
     },
     "Noncredit for AUTO INT": {
       "issuing_agency": "California Community Colleges",
@@ -13360,5 +13389,10 @@
       "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
       "unified_title": "Windows Server Network Infrastructure"
     }
+  },
+  "sweep_kept": {
+    "Noncredit for AUTO P1": [
+      "Powertrains: Modifications for Performance"
+    ]
   }
 }
