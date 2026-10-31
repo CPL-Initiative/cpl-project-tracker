@@ -46,7 +46,7 @@ mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2
 - **Why it matters (vault braindumps of 2026-10-30):** the public adoption page and Malone's new MAP exhibit module
   both read the CER's canonical titles and issuers.
 
-**NEEDS SAM** (open, asked in chat 2026-10-30; the next sheet carries them): merge EACR into the CER; Review first;
+**NEEDS SAM** (open, asked in chat 2026-10-30; [Open Asks Sheet 147](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), 2026-10-31, carries them on five cards; cards 1, 2 and 5 proceed on the recommendation, 3 and 4 wait for his reply): merge EACR into the CER; Review first;
 public page on stamped credentials only; its look (First Light or Malone's CPL/AI look); the high school and ROP rule and
 the AP exception; loading the CPL-AI matching (Activity 1.1.1; 31 of 115 certifications join a MAP exhibit, 2,004
 college and certification pairs with strong evidence and a builder) into the Program Requirements dialog first.
