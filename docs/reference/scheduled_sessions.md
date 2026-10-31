@@ -207,6 +207,49 @@ is his standing preference there too.
    run's cohort `cer-routine-s<N>@bot`, with its receipt (`kb/cer_procedures_out/routine/<date>.json`) in the same
    pull request (Rule 10); a request row is never deleted.
 
+8. **The college contacts harvest** (Sam, 2026-10-31: *"harvest the contacts when it sends runners out to collect
+   our catalog data ... it might be better in the daily for a while until we get a good dataset"*).
+   **Armed: yes** (Sam, 2026-10-31, on these instructions: *"go"*). Nightly until the first full pass, then weekly.
+   Spec, positions and title variants: `docs/reference/lanes/map-users-student-contact.md` (*The weekly contacts
+   harvest*). Sessions cannot reach college sites, so a GitHub runner reads them, as the catalog sweep's do.
+
+   **While its pieces are missing, building the next one is this step's queue item, in this order**, one PR each,
+   merged on a passing `test`:
+
+   1. **Governance.** Map `table:college_contacts_harvest` and `workflow:college-contacts-harvest.yml` in
+      `kb/governance_surface_map.json` with the reason (staff names, titles and work addresses a college
+      publishes on its own site; reviewer-only read; one writer, the apply function under the service role; MAP's
+      own contacts never overwritten). It holds no student detail.
+   2. **The table** (`kb/migrations/`, with its rollback): `college_contacts_harvest`, one row a person a position a
+      college: `college`, `position` (Sam's list, one word each: `district_ceo`, `college_ceo`, `vice_chancellor`,
+      `assoc_vice_chancellor`, `vpaa`, `vpss`, `vpbs`, `assoc_vp`, `dean_cte`, `dean_instruction`, `dean_ar`,
+      `vrc`, `articulation_officer`), `title_as_printed`, `name`, `email`, `source_url`, `seen_run`, `first_seen`,
+      `last_seen`, `gone_since`. RLS: SELECT for `is_allowed_reviewer() or team_pass_ok()`, as
+      `map_college_contacts`; no anon, no client write. One write path: `college_contacts_harvest_apply(jsonb)`,
+      service role only, revoked from public, anon and authenticated (Rule 10 b2). It upserts on (college, position,
+      email), moves `last_seen`, and sets `gone_since` on a row a later read no longer finds; it never deletes.
+   3. **The runner** (`.github/workflows/college-contacts-harvest.yml` + `kb/_college_contacts_harvest.py`), on the
+      census's terms: the user agent that names the CPL Initiative, robots.txt, 4 s between loads, no page behind a
+      sign-in. From each college's and district's homepage it follows the links whose words name leadership
+      (*Administration, Leadership, President's Office, Cabinet, Chancellor, Directory, Admissions and Records,
+      Veterans, Articulation*), at most 12 pages a site, and commits each page's text near a title from Sam's
+      variants to `kb/contacts_harvest/<run>/<college>.json` on the branch. Dispatch inputs: `colleges` (a list) or
+      `batch` (the next N by `last_seen`, oldest first). Guard: a test over saved pages.
+   4. **The read.** The session reads that night's committed excerpts and writes one record a person found:
+      position (from the variants, never guessed from a title that matches none: those are listed for Sam),
+      name, the email only when the page prints it, the source URL. The apply job posts them with the service key
+      and commits its receipt (`kb/receipts/college_contacts_harvest_<run>.json`), which is how the load rolls back.
+
+   **Once built, each night:** dispatch the runner for the **15 colleges read longest ago** (about 120 sites, so a
+   full pass in eight nights), read, apply, and note in the handoff how many positions filled and how many people
+   changed (a new name where another stood, a `gone_since`). **After the first full pass, change the cadence to
+   weekly** (Sundays, the census's day) **with this line**, unless Sam keeps it daily; a college whose leader
+   changed in the last month stays in every night's batch until two reads agree.
+
+   What it never does: write `map_college_contacts` or MAP (read-only for us), email anyone, or fill a role from a
+   search result. Its consumers read the table beside MAP's contacts: Nudge's *Deans and directors* role, and the
+   Letters, Memos, Reports tab.
+
 ## The daytime Library run (Sam, Open Asks Sheet 131 card 1, 2026-10-26)
 
 Sam ruled *two-hours*: a run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific, working only the Library's
