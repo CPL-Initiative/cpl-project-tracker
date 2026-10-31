@@ -13,6 +13,7 @@
   "tab:skyview-merge-execution": "DR-04",
   "table:map_college_contacts": "DR-01/DR-02",
   "table:map_college_users": "DR-10",
+  "table:map_landing_contacts": "CA-02",
   "table:budget_funding": "DR-09",
   "table:sierra_guidance": "DR-11",
   "table:cobi_nav": "DR-12",

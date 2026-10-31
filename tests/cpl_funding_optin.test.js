@@ -295,6 +295,15 @@ function reviewerSession() {
   const t2 = doc.getElementById("cplFundTable").textContent;
   check("F4b: clicking inline Accept confirms the request (holder-scoped binding survives refreshTable)",
     P._optinActive(COL) === true && /Confirmation on file/.test(t2));
+  // Accept opens the email in a window (Sam, 2026-10-31); Copy and open draft
+  // opens the draft. jsdom cannot copy, so the draft carries the plain text.
+  const dlg = doc.getElementById("cplfund-maildlg");
+  check("F4c0: Accept opens the response email: To the requester, from the CPL Initiative team, the logo after the sign-off",
+    !!dlg && mails.length === 0 && /To: jane@college\.edu/.test(dlg.textContent) &&
+    /participation confirmation accepted for /.test(dlg.textContent) &&
+    /The CPL Initiative team has accepted it/.test(dlg.textContent) && !/MAP team/.test(dlg.textContent) &&
+    !!dlg.querySelector('[data-maildlgbody] img[src$="sierra/cpl-initiative-logo-navy.png"]'));
+  if (dlg) click(priv.window, dlg.querySelector("[data-maildlgsend]"));
   const m = mails[0] || "";
   // To the requester alone: this module never reads a coordinator's address
   // (tests/cpl_funding_equity.test.js's PII guard).
@@ -458,6 +467,8 @@ function reviewerSession() {
     !!acc && acc.textContent === "Accept" && /^Accept the participation confirmation for /.test(acc.getAttribute("aria-label")) &&
     !rowOf().querySelector("[data-optinjump]"));
   if (acc) click(priv.window, acc);
+  const rdlg = doc.getElementById("cplfund-maildlg");
+  if (rdlg) click(priv.window, rdlg.querySelector("[data-maildlgsend]"));
   check("R2: the row's Accept confirms the request without opening the drill-in, and opens the email to the requester",
     P._optinActive(COL) === true && P._optinPending(COL) === false && mails.length === 1 &&
     mails[0].indexOf("mailto:jane%40college.edu?") === 0 && !rowOf().querySelector(".cf-waitchip") &&
