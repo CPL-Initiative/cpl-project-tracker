@@ -336,7 +336,10 @@ def block_units_summed(block: dict, listed: dict, hours: bool = False
                 return None, ["'%s' chooses %d courses but none carries units" % (block.get("name"), n)]
             return (min(s[0] for s in known) * n, max(s[1] for s in known) * n), []
         lows = sorted(s[0] for s in known)[:n]
-        highs = sorted((s[1] for s in known), reverse=True)[:n]
+        # A count printed as a range ("COMPLETE 3-4 COURSES FROM THE FOLLOWING", Los Angeles Valley's
+        # French 02965, S534) keeps its top as maximum: the high end takes that many.
+        top = max(n, int(_num(block.get("maximum")) or n))
+        highs = sorted((s[1] for s in known), reverse=True)[:top]
         return (sum(lows), sum(highs)), []
     return None, ["'%s' has no rule the scorer knows (%r)" % (block.get("name"), rule)]
 
@@ -362,6 +365,13 @@ def program_units(record: dict, listed: dict) -> tuple[tuple[float, float], list
     for spans in groups.values():
         lo += min(s[0] for s in spans)
         hi += max(s[1] for s in spans)
+    # A list the page says completes the program to a total ("3-5 UNITS CHOSEN FROM THE FOLLOWING FOR
+    # A MINIMUM OF 18 UNITS", "COMPLETE 7-14 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS",
+    # Los Angeles Valley, S534) carries fills_to: a student takes from it until the sum reaches that
+    # figure, so neither end falls below it.
+    fills = [_num(b.get("fills_to")) for b in record.get("blocks") or [] if _num(b.get("fills_to"))]
+    if fills and not reasons:
+        lo, hi = max(lo, max(fills)), max(hi, max(fills))
     return (lo, hi), reasons
 
 

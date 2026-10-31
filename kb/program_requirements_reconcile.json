@@ -13,7 +13,8 @@
   "pool_lists": "several lists the reading split one choice into, pooled: where the page prints one unit figure (pattern's n) over lists each read as choose_units with no figure of their own and named with block_prefix, the lists become one choose_units block of n (name), courses in order; never one list, and never where the record's total_units names another figure; with_floors (S489) also pools lists that carry their own figures, where the page prints one total over them all: each list's figure stays in the pooled block's floors, a course listed in two of the lists counts once, and never where the floors sum past n. block_pattern (a regex on the list name) may stand in for block_prefix",
   "pool_areas": "an area's sub-areas the reading split into blocks, under one total the page prints over the area (pattern's area and n; Hartnell's Cal-GETC 45096): the sub-area blocks block_pattern names (with {area}) become one choice of n units, each sub-area kept in floors with its rule, a course listed under two sub-areas listed once; only two or more blocks, never where the sub-areas' own printed figures sum past n",
   "repeat": "a course or a list the page says is taken more than once (Hartnell's Music 43887): pattern's code and n give that course or alternative times n, so its units count n times; block_pattern's n, read on a choose_courses block's name the reading gave a minimum of one (or n itself, S533), makes it n enrollments from a list a student may repeat (repeats); never a figure the reading gave; a total group (Delta's \"for a total of 16 units\") keeps the printed sum as units_total, which the scorer reads in place of the course's units times n; n may be a word (four)",
-  "unit_line": "a requirement the page prints as a line with units and no course (Delta's Architectural Drafting 22244, \"Associate Degree Math Requirement: Units 4\"): pattern's label and n add a choose_units block of n with no courses, only where no block carries the label and the record's sum falls short of its printed total by exactly n"
+  "unit_line": "a requirement the page prints as a line with units and no course (Delta's Architectural Drafting 22244, \"Associate Degree Math Requirement: Units 4\"): pattern's label and n add a choose_units block of n with no courses, only where no block carries the label and the record's sum falls short of its printed total by exactly n",
+  "fill_to": "a list the page says fills the program to a total (\"FOR A MINIMUM OF 18 UNITS\", \"TO COMPLETE 36 TOTAL UNITS\"): block_pattern's n on a block's name gives fills_to, and the scorer reads neither end of the program's sum below it; range_pattern's n and m on a choose_courses block's name (\"COMPLETE 3-4 COURSES\") give the count's top as maximum where the reading kept n as its minimum (Los Angeles Valley, S534)"
  },
  "colleges": {
   "Cabrillo College": {
@@ -632,6 +633,13 @@
      "field": "blocks",
      "block_pattern": "(?i)COMPLETE (?P<n>[0-9]+) COURSES FROM THE FOLLOWING:? *\\(COURSES MAY BE REPEATED\\)",
      "why": "S533 SkyNannyberry, 2026-10-31: Music A.A. 02962 read 33-33.5 against the printed 33-35 and Commercial Music A.A. 08545 35-35.5 against 35-36. Each has a list the record names 'COMPLETE 4 COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)' (2 for 08545) of ensembles at 1 to 1.5 units (MUSIC 501, 531, 563 at 1.5, 721, 751, 771). The reading kept the count but not the repeat, so the high end took four different courses where a student may take MUSIC 563 four times. As n enrollments from a list a student may repeat, the lists come to 4-6 and 2-3, and the records sum to 33-35 and 35-36, the totals the catalog prints. Music A.A.-T 33615 carries the same words and already passes; it stays equal."
+    },
+    {
+     "kind": "fill_to",
+     "field": "blocks",
+     "block_pattern": "(?i)(?:FOR A MINIMUM OF|TO\\s+COMPLETE)\\s+(?P<n>[0-9]+)\\s+(?:TOTAL\\s+)?UNITS",
+     "range_pattern": "(?i)COMPLETE (?P<n>[0-9]+)\\s*[-\u2013]\\s*(?P<m>[0-9]+) COURSES",
+     "why": "S534 SkyChokeberry, 2026-10-31, page read 41188051977: Economics A.A. 02984 (p156 \"COMPLETE 1 COURSE FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS\", Major Units 18-21), French A.A. 02965 (p127 \"COMPLETE 3-4 COURSES FROM THE FOLLOWING\" then \"3-5 UNITS CHOSEN FROM THE FOLLOWING FOR A MINIMUM OF 18 UNITS\", 18-21) and Geology A.S. 08560 (p147 \"COMPLETE 7\u201314 UNITS FROM THE FOLLOWING COURSES TO COMPLETE 36 TOTAL UNITS\", 36). The last list fills the major to the printed total, so the sum's low end is that total; French's count is a range whose top the reading dropped."
     }
    ]
   }

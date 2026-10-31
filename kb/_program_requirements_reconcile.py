@@ -274,6 +274,35 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 notes.append({"field": "blocks", "was": None, "now": label, "words": m.group(0).strip()})
                 out["blocks"] = blocks + [block]
             continue
+        if st["kind"] == "fill_to":
+            # A list the page says fills the program to a total (Los Angeles Valley's Economics 02984,
+            # French 02965 and Geology 08560, S534: "... FOR A MINIMUM OF 18 UNITS", "... TO COMPLETE 36
+            # TOTAL UNITS"): block_pattern's n on the block's name gives fills_to, which the scorer reads
+            # as the least the program sums to. range_pattern's n and m on a choose_courses block's name
+            # ("COMPLETE 3-4 COURSES") give the count's top as maximum where the reading kept n alone.
+            for key, pat in (("fills_to", st.get("block_pattern")), ("maximum", st.get("range_pattern"))):
+                named = re.compile(pat) if pat else None
+                for block in (out.get("blocks") or []) if named else []:
+                    bm = named.search(block.get("name") or "")
+                    if not bm or block.get(key) is not None:
+                        continue
+                    if key == "fills_to":
+                        # Only the program's own printed total: "FOR A MINIMUM OF 3 UNITS" over one list's
+                        # activity areas (Kinesiology 32854) is that list's floor.
+                        n = _num(bm.group("n"))
+                        if n is None or _span_of(prog.get("total_units"))[0] != n:
+                            continue
+                    else:
+                        lo_n, n = _num(bm.group("n")), _num(bm.group("m"))
+                        if (block.get("rule") != "choose_courses" or not n or not lo_n or n <= lo_n
+                                or _num(block.get("minimum")) != lo_n):
+                            continue
+                    if not n:
+                        continue
+                    block[key] = n
+                    notes.append({"field": "blocks", "was": None, "now": {block.get("name"): {key: n}},
+                                  "words": bm.group(0).strip()})
+            continue
         if st["kind"] == "repeat":
             # A course or a list the page says is taken more than once (Hartnell's Music 43887, S497):
             # "If MUS 11 is chosen, it must be taken for 2 semesters" gives that course (or alternative)

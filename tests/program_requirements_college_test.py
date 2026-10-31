@@ -1298,9 +1298,9 @@ check(all("- '%s'" % k in BASIS for k in ("outcomes", "careers", "total_units", 
       "block, compares as jsonb (3 and 3.0 alike), and is closed to the API roles")
 steps_fields = {st["field"] for c in json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "kb",
                 "program_requirements_reconcile.json")))["colleges"].values() for st in c["steps"]
-                if st["kind"] not in ("course_units", "course_hours", "pool_lists", "pool_areas", "repeat", "unit_line")}
+                if st["kind"] not in ("course_units", "course_hours", "pool_lists", "pool_areas", "repeat", "unit_line", "fill_to")}
 # course_units and course_hours fill a course's figure inside a block (S455, S484), and pool_lists (S487) and
-# pool_areas (S495) join blocks, repeat (S497) marks a course or a list taken more than once, and unit_line (S500) adds a block: the basis keeps every block, so a confirm of the record before the change does
+# pool_areas (S495) join blocks, repeat (S497) marks a course or a list taken more than once, unit_line (S500) adds a block and fill_to (S534) marks a block's fill: the basis keeps every block, so a confirm of the record before the change does
 # not carry, and the curator sees the course list again.
 check(all("- '%s'" % f in BASIS for f in steps_fields),
       "every field a college's reconcile steps fill or clear is one a confirm carries across: %s" % sorted(steps_fields))
