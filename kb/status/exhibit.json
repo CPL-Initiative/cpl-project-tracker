@@ -1,106 +1,124 @@
 {
-  "schema": 1,
-  "session": 536,
-  "moniker": "SkyCoralberry",
-  "run": "Sam's session",
-  "decider": "Sam",
-  "handoff": "docs/session_536_handoff.md",
-  "calls": [
-    {
-      "title": "Merge EACR into the CER as one Exhibits tab",
-      "text": "Answered on Open Asks Sheet 147 card 1: one Exhibits tab, Review built first. The CER and EACR tabs stay until it carries what they show.",
-      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "merge"
-      }
-    },
-    {
-      "title": "The high school and ROP rule, and the AP exception",
-      "text": "Answered on Open Asks Sheet 147 card 2: built as procedure high-school-rop; the dry run settles 55 and holds 29 on an issuer conflict.",
-      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "rule"
-      }
-    },
-    {
-      "title": "The public adoption page: settled credentials only, in the CPL/AI look",
-      "text": "Answered on Open Asks Sheet 147 cards 3 and 4: settled credentials only, in Malone's CPL/AI look. Its name is still Sam's to give.",
-      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "stamped; cpl-ai"
-      }
-    },
-    {
-      "title": "Fold the reference's AP titles under College Board's official names",
-      "text": "Answered fold: applied, 14 merges, 7 moves and 42 saved assignments (#2617).",
-      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "fold"
-      }
-    },
-    {
-      "title": "How a rule added in the Exhibits tab gets run",
-      "text": "Answered routine: the lane's next build.",
-      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
-      "answer": {
-        "by": "Sam",
-        "at": "2026-10-31",
-        "words": "routine"
-      }
-    }
-  ],
-  "notes": {},
-  "headline": [],
-  "written_at": "2026-10-31T18:16:02Z",
-  "project": "exhibit",
-  "next_step": {
-    "title": "Sam's run through Another look",
-    "text": "Read his saves (unified_title_supersedes rows) and the next fold's revise and credential moves; move the panel rows its receipt names. Then the routine that runs a rule added in the Exhibits tab (Governance DR-07 first)."
+ "schema": 1,
+ "session": 536,
+ "moniker": "SkyBilberry",
+ "run": "Sam's session",
+ "decider": "Sam",
+ "handoff": "docs/cer_redesign_handoff.md",
+ "calls": [
+  {
+   "title": "Merge EACR into the CER as one Exhibits tab",
+   "text": "Answered on Open Asks Sheet 147 card 1: one Exhibits tab, Review built first. The CER and EACR tabs stay until it carries what they show.",
+   "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-31",
+    "words": "merge"
+   }
   },
-  "changes": [
-    {
-      "at": "2026-10-31T18:16:02Z",
-      "text": "Another look in the Exhibits tab: a nightly sweep through every title for what still differs (ASE test, Arabic numerals, language level, a course number, a level, a fold), 134 cards; Change applies at the fold only while the replaced title stands (#2623)."
-    },
-    {
-      "at": "2026-10-31T16:47:06Z",
-      "text": "The Exhibits review card: Change to Proposed Title first, the local title in bold, Back to this visit's earlier cards (a new choice replaces the save), and Accept all proposed titles, which leaves conflicts and earlier saves as they are (#2620)."
-    },
-    {
-      "at": "2026-10-31T15:08:18Z",
-      "text": "The AP fold in the reference: 77 local titles under College Board's official names, 42 saved assignments moved to match (#2617)."
-    },
-    {
-      "at": "2026-10-31T15:08:18Z",
-      "text": "The IT/AI catalog's MAP join needs the issuer to agree and reads the hand check (#2615)."
-    },
-    {
-      "at": "2026-10-31T14:38:49Z",
-      "text": "Sam's AP rule in brand-family: an AP title takes College Board's official exam name; 18 of the 23 AP titles waiting settle (#2614)."
-    },
-    {
-      "at": "2026-10-31T14:38:49Z",
-      "text": "The Credential Catalog's Worth a faculty review: 28 Credential Engine credentials MAP has no exhibit for (#2613); the catalog's MAP join needs the issuer to agree (#2615)."
-    },
-    {
-      "at": "2026-10-31T14:38:49Z",
-      "text": "The Commons' CER row opens the Exhibits tab (#2612)."
-    },
-    {
-      "at": "2026-10-31T02:48:47Z",
-      "text": "The Exhibits tab's Credentials view and credential panel: every credential, most students first, with its issuer and its training sites editable, each site with the college it trains for."
-    },
-    {
-      "at": "2026-10-31T02:12:58Z",
-      "text": "The first published Review queue: 468 held titles (401 proposed, 36 wording checks, 13 with two issuers, 18 conflicts), 209 named by an aligned course."
-    }
-  ]
+  {
+   "title": "The high school and ROP rule, and the AP exception",
+   "text": "Answered on Open Asks Sheet 147 card 2: built as procedure high-school-rop; the dry run settles 55 and holds 29 on an issuer conflict.",
+   "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-31",
+    "words": "rule"
+   }
+  },
+  {
+   "title": "The public adoption page: settled credentials only, in the CPL/AI look",
+   "text": "Answered on Open Asks Sheet 147 cards 3 and 4: settled credentials only, in Malone's CPL/AI look. Its name is still Sam's to give.",
+   "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-31",
+    "words": "stamped; cpl-ai"
+   }
+  },
+  {
+   "title": "Fold the reference's AP titles under College Board's official names",
+   "text": "Answered fold: applied, 14 merges, 7 moves and 42 saved assignments (#2617).",
+   "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-31",
+    "words": "fold"
+   }
+  },
+  {
+   "title": "How a rule added in the Exhibits tab gets run",
+   "text": "Answered routine: the lane's next build.",
+   "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-31",
+    "words": "routine"
+   }
+  },
+  {
+   "title": "The issuer of a course aligned to an ASE test",
+   "text": "Answered in chat: the college or school that teaches it; ASE fills only an ASE certification's title (#2626).",
+   "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/2626",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-31",
+    "words": "Agree on your call on the college as issuer"
+   }
+  },
+  {
+   "title": "ASE course titles: the test's name with a short tag",
+   "text": "Asked in chat: Engine Performance (ASE A8), the level kept where a college teaches a sequence. On ASE short, Another look's ASE rule proposes that form."
+  }
+ ],
+ "notes": {},
+ "headline": [],
+ "written_at": "2026-10-31T20:40:00Z",
+ "project": "exhibit",
+ "next_step": {
+  "title": "Sam's ASE naming reply, then his Another look saves",
+  "text": "On ASE short, change the sweep's ASE rule. Then read his unified_title_supersedes and title_sweep_kept rows and the next fold's revise receipt, and move the panel rows it lists. Watch the first rule sent to the routine."
+ },
+ "changes": [
+  {
+   "at": "2026-10-31T20:30:00Z",
+   "text": "Funding review rows: Follow up beside Accept and Deny on a waiting request, an editable email to the requester with the CO Monitor's note (#2627)."
+  },
+  {
+   "at": "2026-10-31T20:05:00Z",
+   "text": "The Exhibits tab's Rules view: every rule that suggests or folds a title, with who set it and what it did, and Send to the routine, which the CPL queue routine builds switched off for Turn on or Discard (#2626)."
+  },
+  {
+   "at": "2026-10-31T19:22:00Z",
+   "text": "A conflict card saves over a person-reviewed title the way Another look does; the issuer and site boxes offer the reference's names (#2625)."
+  },
+  {
+   "at": "2026-10-31T18:16:02Z",
+   "text": "Another look in the Exhibits tab: a nightly sweep through every title for what still differs (ASE test, Arabic numerals, language level, a course number, a level, a fold), 134 cards; Change applies at the fold only while the replaced title stands (#2623)."
+  },
+  {
+   "at": "2026-10-31T16:47:06Z",
+   "text": "The Exhibits review card: Change to Proposed Title first, the local title in bold, Back to this visit's earlier cards (a new choice replaces the save), and Accept all proposed titles, which leaves conflicts and earlier saves as they are (#2620)."
+  },
+  {
+   "at": "2026-10-31T15:08:18Z",
+   "text": "The AP fold in the reference: 77 local titles under College Board's official names, 42 saved assignments moved to match (#2617)."
+  },
+  {
+   "at": "2026-10-31T15:08:18Z",
+   "text": "The IT/AI catalog's MAP join needs the issuer to agree and reads the hand check (#2615)."
+  },
+  {
+   "at": "2026-10-31T14:38:49Z",
+   "text": "Sam's AP rule in brand-family: an AP title takes College Board's official exam name; 18 of the 23 AP titles waiting settle (#2614)."
+  },
+  {
+   "at": "2026-10-31T14:38:49Z",
+   "text": "The Credential Catalog's Worth a faculty review: 28 Credential Engine credentials MAP has no exhibit for (#2613); the catalog's MAP join needs the issuer to agree (#2615)."
+  },
+  {
+   "at": "2026-10-31T14:38:49Z",
+   "text": "The Commons' CER row opens the Exhibits tab (#2612)."
+  }
+ ]
 }
