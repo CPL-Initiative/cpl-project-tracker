@@ -201,10 +201,13 @@ SkyTwinberry the same hour: the name, `noindex` dropped, a *Credential Catalog* 
 carrying the header, the Library's own Links. The two tabs were already off the side menu: Sam hid both `cobi_nav` rows
 himself at 23:51Z 2026-10-30, and they still open at `#credential-reference` and `#exhibit-adoption`; their files stay.
 
-**NEXT:** (1) **NEEDS SAM (Open Asks Sheet 149):** (a) the AP fold in the reference: 74 local titles under
-non-official AP twins (*AP U.S. History*, *AP Calculus BC — AB Subscore*, *AP Physics 1*) move to College Board's names,
-46 of them stamped (`python3 kb/_ap_official_titles.py` lists them); (b) running a rule from the Exhibits tab: the
-recommendation is a request row the tab writes and a routine that builds the rule, runs the dry run and writes it back
-for *Turn on* or *Discard*. (2) IB on the AP pattern, then CLEP's official names. (3) The Catalog's *Courses that may
-align*, once a source names courses. (4) Training sites for a held title new to the reference, and the *Held titles by
-group* table, only if Sam asks.
+**Sam's rulings, Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, completed 14:41Z 2026-10-31,
+both his own call; cpl_memory `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
+
+**NEXT:** (1) The AP fold's live side: Sam runs `kb/credential_merges_out/2026-10-31/kb_curation_update.sql` (42 saved
+assignments to the official names, receipt beside it; the repo's Supabase guard routes the UPDATE to him), then the
+fold PR merges. (2) The routine (card 2): the tab writes a rule as a request row, a scheduled session builds it, runs
+the dry run and writes it back for *Turn on* or *Discard*; Governance (DR-07) and the privacy ADRs first, as a new
+write surface. (3) IB on the AP pattern, then CLEP's official names. (4) The Catalog's *Courses that may align*, once a
+source names courses. (5) Training sites for a held title new to the reference, and the *Held titles by group* table,
+only if Sam asks.
