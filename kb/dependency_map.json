@@ -4,7 +4,7 @@
   "supabase_tables": 103,
   "rpcs": 44,
   "edge_functions": 11,
-  "file_datasets": 743,
+  "file_datasets": 744,
   "external_services": 192,
   "consumers": 492,
   "workflows": 59,
@@ -6663,7 +6663,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 66
+     "line": 72
     },
     {
      "id": "script:kb/_build_occupation_cpl_crosswalk.py",
@@ -12154,6 +12154,13 @@
      "line": 300
     },
     {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 772
+    },
+    {
      "id": "script:kb/_cer_procedures.py",
      "kind": "script",
      "direction": "read",
@@ -13620,14 +13627,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 67
+     "line": 73
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 67
+     "line": 73
     }
    ],
    "served": true,
@@ -14622,7 +14629,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 65
+     "line": 71
     }
    ],
    "served": true,
@@ -14668,7 +14675,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 563
+     "line": 623
     }
    ],
    "served": true,
@@ -15274,7 +15281,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 61
+     "line": 67
     },
     {
      "id": "script:kb/_match_cos_authority.py",
@@ -15330,7 +15337,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 561
+     "line": 621
     },
     {
      "id": "script:kb/_fetch_ce_top50.py",
@@ -15371,6 +15378,13 @@
      "direction": "read",
      "how": "literal",
      "line": 164
+    },
+    {
+     "id": "script:kb/_build_it_ai_credential_catalog.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 881
     }
    ],
    "served": true,
@@ -15383,7 +15397,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 62
+     "line": 68
     }
    ],
    "served": true,
@@ -15448,7 +15462,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 64
+     "line": 70
     }
    ],
    "served": true,
@@ -15461,7 +15475,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 63
+     "line": 69
     },
     {
      "id": "script:kb/_diff_credential_watch.py",
@@ -19853,6 +19867,19 @@
    "main_committers": []
   },
   "file:tests/course_title_mojibake_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_catalog_widening_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -26942,6 +26969,7 @@
     "tests/commons_status_build_test.py",
     "tests/exhibits_review_build_test.py",
     "tests/adopt_page_build_test.py",
+    "tests/credential_catalog_widening_test.py",
     "tests/credential_review_sites_test.py",
     "tests/supabase_sql_guard_test.py",
     "tests/bash_read_guard_test.py",
