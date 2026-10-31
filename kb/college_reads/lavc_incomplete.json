@@ -1,0 +1,27 @@
+{
+ "_readme": "S534 SkyChokeberry, 2026-10-31. Los Angeles Valley's 5 incomplete records (02981, 32117, 32851, 32853, 35427): each heading page and the page after it.",
+ "college": "Los Angeles Valley College",
+ "questions": {
+  "program_pages": "Each program's heading, its course lists with their printed counts and units, and the program and degree totals it prints."
+ },
+ "keywords": [
+  "State Code 02981",
+  "State Code 32117",
+  "State Code 32851",
+  "State Code 32853",
+  "State Code 35427"
+ ],
+ "pages": [
+  {
+   "answers": [
+    "program_pages"
+   ],
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf"
+  }
+ ],
+ "pdf_span": [
+  15,
+  165
+ ],
+ "pdf_after": 1
+}
