@@ -1,0 +1,474 @@
+{
+ "table": "kb_curation",
+ "kind": "guarded UPDATE",
+ "at": "2026-10-31",
+ "ruling": "Sam, Open Asks Sheet 149 card 1 ('fold', 14:41Z): AP titles fold under College Board's official names",
+ "cohort": "cer-ap-fold-s536@bot",
+ "field": "unified_title_assignment",
+ "guard": "UPDATE ... SET value=<after>, reviewer_email=cohort, reviewed_at=now() WHERE course_id=<id> AND field='unified_title_assignment' AND value=<before>",
+ "rollback": "for each row: UPDATE kb_curation SET value=<before.value>, reviewer_email=<before.reviewer_email>, reviewed_at=<before.reviewed_at> WHERE course_id=<id> AND field='unified_title_assignment' AND reviewer_email='cer-ap-fold-s536@bot'",
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::AP 2-D Art and Design (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP 2-D Art and Design (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:48:45.700624+00"
+   },
+   "after": {
+    "value": "AP 2-D Art and Design"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP 3-D Art and Design (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP 3-D Art and Design (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:50:03.45915+00"
+   },
+   "after": {
+    "value": "AP 3-D Art and Design"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Art History (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP Art History (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:50:02.100253+00"
+   },
+   "after": {
+    "value": "AP Art History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus  BC/AB Subscore",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-brand-family@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC with AB subscore",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB sub score",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB sub score¹",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Sub-score (Score of 3 or higher)",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore - Area 2",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-28 14:36:41.831286+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore - Score of 3",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore - Score of 3 or higher - HISTORICAL Type 1",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore - Score of 4-5",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore (score 3)",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore (score 5)",
+   "before": {
+    "value": "AP Calculus BC — AB Subscore",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Calculus BC/AB Subscore (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP Calculus BC/AB (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:50:01.66457+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Chemistry (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP Chemistry (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:50:09.735572+00"
+   },
+   "after": {
+    "value": "AP Chemistry"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Chinese Language and Culture (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP Chinese Language and Culture (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:50:14.362739+00"
+   },
+   "after": {
+    "value": "AP Chinese Language and Culture"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science A (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP Computer Science A (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:50:19.670045+00"
+   },
+   "after": {
+    "value": "AP Computer Science A"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Computer Science AB (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP Computer Science AB (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:50:24.277747+00"
+   },
+   "after": {
+    "value": "AP Computer Science AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Drawing (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP Drawing (Score of 3, 4 or 5)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-12 19:50:30.491564+00"
+   },
+   "after": {
+    "value": "AP Drawing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Exam Calculus BC/AB Sub-score (Score 3-5)",
+   "before": {
+    "value": "AP Calculus BC",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-06-03 17:13:24.442594+00"
+   },
+   "after": {
+    "value": "AP Calculus AB"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Government and Politics - U.S.",
+   "before": {
+    "value": "AP U.S. Government and Politics",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States Government and Politics"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Government and Politics: US (POLS C1000)",
+   "before": {
+    "value": "AP U.S. Government and Politics",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States Government and Politics"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Government and Politics: US (POLS C1000H)",
+   "before": {
+    "value": "AP U.S. Government and Politics",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States Government and Politics"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History - U.S.",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP History - U.S. History",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Physics 1",
+   "before": {
+    "value": "AP Physics 1",
+    "reviewer_email": "preseed-v1@bot",
+    "reviewed_at": "2026-07-07 18:27:01.567802+00"
+   },
+   "after": {
+    "value": "AP Physics 1: Algebra-Based"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Physics 1\tNatural Sciences - 4\tCredit for PHYS 2A",
+   "before": {
+    "value": "AP Physics 1",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-06-03 17:12:43.443936+00"
+   },
+   "after": {
+    "value": "AP Physics 1: Algebra-Based"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Physics 1 (Phy B replaced by Phy 1 & 2 (14-15)",
+   "before": {
+    "value": "AP Physics 1",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Physics 1: Algebra-Based"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP Physics 2 (Phy B replaced by Phy 1 & 2 (14-15)",
+   "before": {
+    "value": "AP Physics 2",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP Physics 2: Algebra-Based"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S Government and Politics",
+   "before": {
+    "value": "AP U.S. Government and Politics",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States Government and Politics"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. Government and Politics - Score of 3 or higher - HISTORICAL Type 1",
+   "before": {
+    "value": "AP U.S. Government and Politics",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States Government and Politics"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. Government and Politics (Score of 3 or higher)",
+   "before": {
+    "value": "AP U.S. Government and Politics",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States Government and Politics"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History - Area 4",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History - Score of 3 or higher - HISTORICAL Type 1",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History - Score of 3 or higher - HISTORICAL Type 2",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History (Score of 3 or higher) Area 3",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History (Score of 3 or higher) Area 4A",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History (Score of 3, 4 or 5)",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History,  Area 4",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-28 14:36:41.831286+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP U.S. History, Area 3B",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-28 14:36:41.831286+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::AP: History U.S. History",
+   "before": {
+    "value": "AP U.S. History",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-06-02 18:32:36.011415+00"
+   },
+   "after": {
+    "value": "AP United States History"
+   }
+  }
+ ]
+}
