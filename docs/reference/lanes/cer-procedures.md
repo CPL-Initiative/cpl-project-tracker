@@ -37,8 +37,12 @@ mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2
 - **Review sorts by students** with credit (106 held exhibits carry 3,000 students; the 40 with ten or more carry at
   least 84%; Cabrillo's high school articulations lead). **The canonical title is always the focus**, editable; issuer
   and training site sit in gray-labeled boxes under it; local titles in small print, the one being decided
-  highlighted, the rest *and N more*; college chips for *Articulated at* and *Could adopt* (same-identity course, else
-  EACR's list). Buttons: Keep Current Title, Change to Proposed Title, Teach a rule, Skip. A search goes to any exhibit.
+  highlighted and in bold, the rest *and N more*; college chips for *Articulated at* and *Could adopt* (same-identity
+  course, else EACR's list). Buttons (Sam, 2026-10-31): Change to Proposed Title, Keep Current Title, Teach a rule,
+  Back, Skip. **Back** reopens the cards decided or skipped this visit, newest first, naming what was saved; a new
+  choice replaces it (`kb_curation`'s key is the title and the field). **Accept all proposed titles (N)** asks first,
+  then saves every title in the list on screen in one merging write, a typed edit counting as its proposal; a conflict
+  with the reference, or a title someone already saved, stays as it is. A search goes to any exhibit.
 - **The aligned course names the proposal** (cpl_memory `sam-cer-aligned-course-names-the-exhibit-2026-10-30`): 394 of
   468 held titles articulate to a course with a CCN, C-ID or M-ID. A conflict proposes the reference's person-reviewed
   title.

@@ -369,6 +369,43 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   byText(t.d, ".exh-acts button", "Keep Current Title").click(); await settle();
   const keep = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(2);
   check("Keep Current Title saves the local title as its own title", keep.some(function (p) { return p.body.field === "unified_title_assignment" && p.body.value === AP; }));
+  // Sam, 2026-10-31: Change to Proposed Title first, the local title in bold, and Back to the cards before.
+  const firstAct = t.d.querySelector(".exh-acts button");
+  check("Change to Proposed Title is the first word, Keep Current Title beside it",
+    txt(firstAct) === "Change to Proposed Title" && txt(firstAct.nextElementSibling) === "Keep Current Title");
+  check("the local title being decided is in bold", !!t.d.querySelector(".exh-now strong"));
+  byText(t.d, ".exh-acts button", "Back").click(); await settle();
+  check("Back returns the last card decided, with what was saved for it", current(t.d) === AP
+    && new RegExp("You saved “" + AP.replace(/[.*+?^${}()|[\]\\]/g, "\\$&") + "”; a new choice replaces it").test(txt(t.d.querySelector(".exh-status"))));
+  byText(t.d, ".exh-acts button", "Back").click(); await settle();
+  check("Back again reaches the card before it, its save named on the card", current(t.d) === DM
+    && /Saved earlier as “Introduction to Digital Art”/.test(txt(t.d.querySelector(".exh-card"))));
+  title(t.d).value = "Digital Art"; title(t.d).dispatchEvent(new t.w.Event("input"));
+  byText(t.d, ".exh-acts button", "Change to Proposed Title").click(); await settle();
+  const again = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }).slice(-2);
+  check("a new choice after Back writes the same keys again, so it replaces the first save",
+    again.some(function (p) { return p.body.course_id === "_UNCLASSIFIED::" + DM && p.body.field === "unified_title_assignment" && p.body.value === "Digital Art"; })
+    && again.every(function (p) { return /resolution=merge-duplicates/.test(p.headers.Prefer); }));
+
+  // Accept all proposed titles (Sam, 2026-10-31): a confirm first, then the list's titles in one write; conflicts stay.
+  t = load({ signedIn: true });
+  await t.M.boot(); await settle();
+  const allWord = Array.from(t.d.querySelectorAll(".exh-bulk button")).find(function (b) { return /^Accept all proposed titles \(\d+\)$/.test(txt(b)); });
+  const n = allWord ? Number(/\((\d+)\)/.exec(txt(allWord))[1]) : 0;
+  check("Accept all proposed titles counts the list's titles, conflicts left out", !!allWord && n === 3);
+  allWord.click(); await settle();
+  check("Accept all asks first, naming the steps and the conflict that stays",
+    /Save the proposed title and issuer for the 3 titles in this list/.test(txt(t.d.querySelector(".exh-bulk")))
+    && /The other 1, in conflict with the reference or saved earlier, stay as they are/.test(txt(t.d.querySelector(".exh-bulk")))
+    && !t.calls.some(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; }));
+  byText(t.d, ".exh-bulk button", "Save all 3").click(); await settle();
+  const bulkPosts = t.calls.filter(function (c) { return /kb_curation$/.test(c.url) && c.method === "POST"; });
+  check("Save all writes the two CER rows per title in one merging request",
+    bulkPosts.length === 1 && Array.isArray(bulkPosts[0].body) && bulkPosts[0].body.length === 6
+    && bulkPosts[0].body.every(function (r) { return r.reviewer_email === "reviewer@example.org" && /^_UNCLASSIFIED::/.test(r.course_id); })
+    && /resolution=merge-duplicates/.test(bulkPosts[0].headers.Prefer));
+  check("after Save all only the conflict waits, and the status says so",
+    /Saved the proposed title for 3 titles/.test(txt(t.d.querySelector(".exh-status"))) && current(t.d) === JUV);
 
   // a save that fails
   t = load({ signedIn: true, saveFails: true });
