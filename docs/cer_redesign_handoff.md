@@ -9,7 +9,7 @@ status: current
 # You are SkyCloudberry, the Exhibits tab's next build
 
 SkyElderberry ran the CER redesign queue on 2026-10-31 from 12:37Z, the only session live on this lane. This is a
-**light checkpoint**: the lane file, the lessons doc, the docs index, the Exhibit status file, the memory rows and the
+**full checkpoint** (the AP fold wrote a Rule 10 receipt): the lane file, the lessons doc, the docs index, the Exhibit status file, the memory rows and the
 vault note moved; no Roadmap row moved and no re-mint or Rule 10 data write ran. `README.md`, `kb/README.md`, the pipeline
 view and the KB notes were not touched. The numbered session handoffs stay with the main queue (S536 and on); this lane
 keeps this file.
@@ -28,6 +28,11 @@ keeps this file.
   they write the letters; the `ap` lane runs first. The quality gate lets an official name stand (it had held seven
   *AP Computer Science A* answers on the trailing *A*). Dry run: `brand-family` 30 to 37, Needs you 369 to 362; of 23 AP
   titles waiting, 18 settle.
+- **Sheet 149 answered** (1 *fold*, 2 *routine*). **#2617, the AP fold:** 14 merges and 7 AB-subscore moves in the
+  reference, and 42 saved assignments moved under `cer-ap-fold-s536@bot` (Sam ran the guarded UPDATE; receipt beside it).
+- **#2618, the Supabase guard** lets data writes run (INSERT, UPDATE, DELETE, MERGE); schema and permission writes stay
+  denied. Sam: *"I've run the recommended sql queries from you 100% of the time ... let's unblock it"*. It takes effect
+  from the next session.
 - **#2615: the IT/AI catalog's MAP join** needs the issuer to agree and reads the hand check: in MAP 89 to 102, 24 joined
   (the 11 hand-checked, the PMI family, BLS, CNA and five more), 11 false joins dropped.
 - **Read:** the 14:01Z procedures run saved 111 titles (`high-school-rop` 55 as expected, the classifier 55,
@@ -40,16 +45,14 @@ keeps this file.
 
 ## Open work, in order
 
-1. **Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, current, nothing answered yet): (a) the AP fold in the reference, 74 local titles under non-official twins to
-   College Board's names, 46 stamped (`python3 kb/_ap_official_titles.py` lists them); (b) how a rule added in the tab
-   gets run (recommended: a request row the tab writes and a routine that builds the rule, runs the dry run and writes it
-   back). Read its replies before acting; a *fold* means one revertible commit to `kb/unified_titles.json` and the twin
-   credentials merged.
-2. **Read tonight's run** (the 07:47Z cron): `brand-family`'s first AP saves under `cer-procedure-brand-family@bot`.
-3. **IB on the AP pattern**, then CLEP's official names, if Sam wants them.
-4. Carried: the Catalog's *Courses that may align* (needs a source that names courses); training sites for a held title
-   new to the reference and the *Held titles by group* table, only if Sam asks; the college short-name editor; the
-   CPL-AI snapshot refreshed by hand.
+1. **The routine** (Open Asks Sheet 149 card 2, Sam's *routine*): a rule Sam adds in the Exhibits tab becomes a request
+   row; a scheduled session builds it with tests, runs the dry run, opens the PR and writes the dry run back so the tab
+   shows *Turn on* and *Discard*. Map the new surface in `kb/governance_surface_map.json` (DR-07) and check the privacy
+   ADRs before it ships. Sessions now run their own data writes (Sam's ruling, #2618), so the routine can write its rows.
+2. **Read tonight's run** (07:47Z cron): `brand-family`'s first AP saves; the AP fold (#2617) should leave no conflicts.
+3. **IB on the AP pattern**, then CLEP's official names.
+4. Carried: the Catalog's *Courses that may align*; training sites for a held title new to the reference and the *Held
+   titles by group* table, only if Sam asks; the college short-name editor; the CPL-AI snapshot by hand.
 
 ## Lessons to honor
 

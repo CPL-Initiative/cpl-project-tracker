@@ -556,3 +556,9 @@ the learning.
 - **The reference holds the same twins the queue does.** 74 local titles sit under non-official AP twins (*AP U.S.
   History*, *AP Calculus BC — AB Subscore*, *AP Physics 1*), 46 stamped. The rule settles the queue; the reference fold
   re-keys reviewed entries and waits on Open Asks Sheet 149.
+- **A merge in the reference needs its live rows moved too.** `kb_curation` keys on (course_id, field), so the saved
+  assignments that still named a twin could not take a new row; left alone, the nightly fold would have held all 42 as
+  conflicts. Move them with a guarded UPDATE pinned to the before-value, its receipt first, in the same change.
+- **The guard routed the UPDATE to Sam, and he unblocked data writes for good** (#2618): *"I've run the recommended sql
+  queries from you 100% of the time without editing your code ... let's unblock it"*. Schema and permission writes stay
+  denied; Rule 10's receipts are unchanged.

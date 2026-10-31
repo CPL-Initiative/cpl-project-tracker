@@ -204,10 +204,13 @@ himself at 23:51Z 2026-10-30, and they still open at `#credential-reference` and
 **Sam's rulings, Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, completed 14:41Z 2026-10-31,
 both his own call; cpl_memory `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
 
-**NEXT:** (1) The AP fold's live side: Sam runs `kb/credential_merges_out/2026-10-31/kb_curation_update.sql` (42 saved
-assignments to the official names, receipt beside it; the repo's Supabase guard routes the UPDATE to him), then the
-fold PR merges. (2) The routine (card 2): the tab writes a rule as a request row, a scheduled session builds it, runs
-the dry run and writes it back for *Turn on* or *Discard*; Governance (DR-07) and the privacy ADRs first, as a new
-write surface. (3) IB on the AP pattern, then CLEP's official names. (4) The Catalog's *Courses that may align*, once a
-source names courses. (5) Training sites for a held title new to the reference, and the *Held titles by group* table,
-only if Sam asks.
+**The AP fold — applied (SkyElderberry, 2026-10-31; Sheet 149 card 1).** 14 credential merges and 7 AB-subscore
+moves in the reference (77 local titles to College Board's names; `kb/credential_merges.json`, receipts in
+`kb/credential_merges_out/2026-10-31/`), and 42 saved assignments moved to match under `cer-ap-fold-s536@bot` (Sam ran
+the guarded UPDATE; before-values and rollback in `kb_curation_update_receipt.json`).
+
+**NEXT:** (1) The routine (Sheet 149 card 2): the tab writes a rule as a request row, a scheduled session builds it,
+runs the dry run and writes it back for *Turn on* or *Discard*; Governance (DR-07) and the privacy ADRs first, as a
+new write surface. Sessions now run their own data writes (Sam, 2026-10-31; #2618). (2) IB on the AP pattern, then
+CLEP's official names. (3) The Catalog's *Courses that may align*, once a source names courses. (4) Training sites for
+a held title new to the reference, and the *Held titles by group* table, only if Sam asks.

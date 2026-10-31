@@ -38,24 +38,42 @@
     },
     {
       "title": "Fold the reference's AP titles under College Board's official names",
-      "text": "74 local titles under non-official AP twins move to the official names, 46 of them stamped; held because it re-files stamped titles. With no reply they stay where they are.",
-      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A"
+      "text": "Answered fold: applied, 14 merges, 7 moves and 42 saved assignments (#2617).",
+      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "fold"
+      }
     },
     {
       "title": "How a rule added in the Exhibits tab gets run",
-      "text": "Recommended: a request row the tab writes and a routine that builds the rule, runs the dry run and writes it back for Turn on or Discard. With no reply the tab keeps the paste for a session.",
-      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A"
+      "text": "Answered routine: the lane's next build.",
+      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "routine"
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-31T14:38:54Z",
+  "written_at": "2026-10-31T15:08:18Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Read Sheet 149's replies, then fold the AP twins or build the rule runner",
-    "text": "Read Open Asks Sheet 149: a fold re-files 74 local titles under College Board's official AP names in one revertible commit; the second card decides how a rule added in the Exhibits tab gets run. Then read the night's first AP saves under brand-family."
+    "title": "Build the routine that runs a rule added in the Exhibits tab",
+    "text": "A request row from the tab, a scheduled session that builds the rule, runs its dry run and writes it back for Turn on or Discard; Governance DR-07 first."
   },
   "changes": [
+    {
+      "at": "2026-10-31T15:08:18Z",
+      "text": "The AP fold in the reference: 77 local titles under College Board's official names, 42 saved assignments moved to match (#2617)."
+    },
+    {
+      "at": "2026-10-31T15:08:18Z",
+      "text": "The IT/AI catalog's MAP join needs the issuer to agree and reads the hand check (#2615)."
+    },
     {
       "at": "2026-10-31T14:38:49Z",
       "text": "Sam's AP rule in brand-family: an AP title takes College Board's official exam name; 18 of the 23 AP titles waiting settle (#2614)."
@@ -75,14 +93,6 @@
     {
       "at": "2026-10-31T02:12:58Z",
       "text": "The first published Review queue: 468 held titles (401 proposed, 36 wording checks, 13 with two issuers, 18 conflicts), 209 named by an aligned course."
-    },
-    {
-      "at": "2026-10-31T01:31:21Z",
-      "text": "The Exhibits tab's Review queue: the drawn card of version 26 in COBI (#exhibits), its nightly builder, and the reviewer-only students function, k=10 in the database."
-    },
-    {
-      "at": "2026-10-31T00:06:00Z",
-      "text": "Sam answered Open Asks Sheet 147 whole: one Exhibits tab with Review first, the high school and ROP rule, the adoption page on settled credentials in the CPL/AI look, the CPL-AI matching in the Program Requirements dialog."
     }
   ]
 }
