@@ -610,7 +610,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/eths_remint_out/<date>/<scope>/alias_map.json` | scripts: `kb/_eths_remint.py` | — |
 | `kb/eths_remint_out/<date>/ruled/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
-| `kb/exhibit_audit/latest.json` | tabs: `credential-reference` · scripts: `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py` | committed by: `daily-dashboard.yml` |
+| `kb/exhibit_audit/latest.json` | tabs: `credential-reference` · scripts: `kb/_ap_official_titles.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py` | committed by: `daily-dashboard.yml` |
 | `kb/exhibits_adoption.json` | tabs: `exhibits` · scripts: `kb/_build_adopt_page.py`, `kb/_build_exhibits_review.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/exhibits_review.json` | tabs: `exhibits` · scripts: `kb/_build_exhibits_review.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/exhibits_review_courses.json` | tabs: `exhibits` · scripts: `kb/_build_exhibits_review.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
@@ -762,7 +762,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/unclassified_fold/*/report.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/unclassified_preseed.json` | tabs: `credential-reference` · scripts: `kb/_preseed_unclassified.py` | scripts: `kb/_preseed_unclassified.py` · committed by: `cer-procedures.yml` |
 | `kb/unclassified_suggestions.json` | tabs: `credential-reference` · scripts: `kb/_build_exhibits_review.py`, `kb/_cer_procedures.py`, `kb/_fold_unclassified.py`, `kb/_suggest_unclassified.py` | scripts: `kb/_suggest_unclassified.py` · committed by: `daily-dashboard.yml` |
-| `kb/unified_titles.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_audit_exhibits.py`, `kb/_build_adopt_page.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `kb/_build_roep_display.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/classify_exhibits.py` | scripts: `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
+| `kb/unified_titles.json` | tabs: `credential-reference` · scripts: `excel_to_dashboard.py`, `kb/_ap_official_titles.py`, `kb/_audit_exhibits.py`, `kb/_build_adopt_page.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `kb/_build_roep_display.py`, `kb/_cer_procedures.py`, `kb/_cred_rename_apply.py`, `kb/_cred_rename_dryrun.py`, `kb/_curation_credentials_01.py`, `kb/_detect_cpl_type_dupes.py`, `kb/_eacr_dryrun.py`, `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_match_cos_authority.py`, `kb/_merge_credentials.py`, `kb/_preseed_unclassified.py`, `kb/_seed_coci_articulations.py`, `kb/classify_exhibits.py` | scripts: `kb/_flag_hinky_exhibits.py`, `kb/_fold_unclassified.py`, `kb/_seed_top50.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
 | `kb/workplan_description_drafts.json` | scripts: `kb/_draft_workplan_descriptions.py` | — |
 | `kb/workplan_goals_seed_out` | none found | committed by: `workplan-goals-seed-apply.yml` |
 | `kb/workplan_goals_seed_plan.md` | none found | scripts: `kb/_seed_workplan_goals.py` · committed by: `workplan-goals-seed-apply.yml` |
@@ -882,6 +882,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/adopt_page_build_test.py` | workflows: `js-tests.yml` | — |
 | `tests/alias_chain_single_source_test.py` | workflows: `js-tests.yml` | — |
 | `tests/american_spelling_test.py` | workflows: `js-tests.yml` | — |
+| `tests/ap_official_titles_test.py` | workflows: `js-tests.yml` | — |
 | `tests/athl_four_remint_test.py` | workflows: `js-tests.yml` | — |
 | `tests/authority_recode_apply_test.py` | workflows: `js-tests.yml` | — |
 | `tests/bash_read_guard_test.py` | workflows: `js-tests.yml` | — |
@@ -1237,5 +1238,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 103 Supabase tables · 44 RPCs · 11 edge functions · 743 file
-datasets · 192 external services · 491 consumers · 59 workflows · 39 tabs.
+Coverage: 103 Supabase tables · 44 RPCs · 11 edge functions · 744 file
+datasets · 192 external services · 492 consumers · 59 workflows · 39 tabs.

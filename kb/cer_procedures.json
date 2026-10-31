@@ -6,9 +6,10 @@
       "name": "Brand families join the family",
       "kind": "rule",
       "on": true,
-      "rule": "A title that names a known credential family (College Board AP and CLEP exams, a house family already in the reference) joins that family's title as written, with the family's issuer.",
-      "lanes": ["family"],
-      "source": {"who": "Sam", "date": "2026-07-07", "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?", "skill": "Rule 5d"}
+      "rule": "A title that names a known credential family (College Board AP and CLEP exams, a house family already in the reference) joins that family's title, with the family's issuer. An AP title, for an AP course, an AP exam or AP prep, takes College Board's official exam name, current or retired, whatever score, area, course code or school the college added and however it wrote the letters (A, AB, A/B, A+B or none); a title naming two exams waits for a person.",
+      "lanes": ["family", "ap"],
+      "source": {"who": "Sam", "date": "2026-07-07", "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?", "skill": "Rule 5d"},
+      "amended": [{"who": "Sam", "date": "2026-10-31", "via": "the Exhibits tab's Add a CER procedure", "words": "screen all exhibit titles that are for AP prep or AP course or have an AP course or exam in the title and set the canonical title to the official College Board AP title. Fold all aligned AP MAP exhibits, whether for AP Course credit or AP Exam credit under the aligned canonical titles.", "then": "We can just rely on the official titles from AP, listing all the variations they offer and folding the locals under as best as is possible--it will be close enough and infinitely better than it is now--even if its a little wrong"}]
     },
     {
       "id": "statewide-catalog",

@@ -162,6 +162,8 @@ def residue(title, issuer="", via=""):
     why = []
     if not t.strip():
         return ["empty title"]
+    if pre.AP.is_official(t):
+        return []   # College Board's own exam name stands as written ("AP Computer Science A" ends in A)
     if re.match(r"^%s\b" % _CONN, t, re.I) or re.search(r"\b%s$" % _CONN, t, re.I):
         why.append("a dangling word")
     if re.search(r"^[-–(,:;/&]|[-–(,:;/&]$", t.strip()):
