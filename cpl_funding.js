@@ -6578,6 +6578,40 @@
       "</details>";
   }
   function removeNcAttest(college) { ncAttestWrite(college, "DELETE", null); }
+  // ── NUDGE (Sam, 2026-10-31: "add a Nudge button at the top of the college rows
+  // internal funding tab that allows me to send nudge emails to all the colleges
+  // who have not yet requested participation or attested to the NC lead") ──────
+  // A signed-in reviewer on the internal tab only. The list is the funding
+  // roster's institutions (never the MAP directory's, which names Cal State LA and
+  // Launch Apprenticeship): those with no participation confirmation sent, and,
+  // where the award carries a noncredit share, no noncredit attestation sent. A
+  // request already waiting counts as sent. The recipients and the email live in
+  // cpl_funding_nudge.js, loaded on the press, because this module renders the
+  // public page too and keeps every directory address out (the PII guard).
+  function nudgeShown() { return unlocked() && !publicMode() && !publicSurface(); }
+  function nudgeBtnHtml() {
+    return nudgeShown() ? '<button type="button" class="cplfund-optbtn" id="cplFundNudge" title="List the institutions ' +
+      'still missing a participation confirmation or a noncredit attestation, with one recipient each, for a mail merge">Nudge</button>' : "";
+  }
+  function nudgeInstitutions() {
+    return oneRoster().map(function (c) {
+      var missing = [];
+      if (partShown() && !optinActive(c.college) && !optinPending(c.college)) missing.push("part");
+      if (ncAttestShown(c)) {
+        var att = ncAttestOf(c.college);
+        if (!ncAttestStanding(att) && !ncAttestPending(att)) missing.push("nc");
+      }
+      return { key: c.college, name: dispName(c.college), aliases: [c.short, c.name].filter(Boolean), missing: missing };
+    }).filter(function (r) { return r.missing.length; });
+  }
+  function openNudge() {
+    if (!nudgeShown()) return;
+    var rh = applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON });
+    var ctx = { institutions: nudgeInstitutions(), deadline: participationDeadline(), headers: rh };
+    loadScriptCompat("cpl_funding_nudge.js", "CPL_FUNDING_NUDGE", function () {
+      if (window.CPL_FUNDING_NUDGE) window.CPL_FUNDING_NUDGE.open(ctx);
+    });
+  }
 
   // ── WHO SENT IT (Sam, 2026-10-31: "check to see if they are a map user and
   // add their map role next to their name; if it is possible to look up their
@@ -16416,7 +16450,8 @@
         ' aria-label="Clear the search">Clear</button>' +
       '<span class="cplfund-count" id="cplFundCount"></span>' +
       colMenuHtml() +
-      '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as a CSV that opens directly in Excel (the full data, including any hidden columns and the county context)">Download as Excel</button></div>' +
+      '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as a CSV that opens directly in Excel (the full data, including any hidden columns and the county context)">Download as Excel</button>' +
+      nudgeBtnHtml() + '</div>' +
       '<div id="cplFundTable">' + tableHtml() + "</div>");
     // The table's footnote travels WITH the table (2026-09-02): the notes
     // explain its cells, and the table no longer sits at the foot of the page.
@@ -17377,6 +17412,8 @@
     if (memoDocx) memoDocx.addEventListener("click", exportMemoDocx);
     var csvBtn = document.getElementById("cplFundCsv");
     if (csvBtn) csvBtn.addEventListener("click", downloadCsv);
+    var nudgeBtn = document.getElementById("cplFundNudge");
+    if (nudgeBtn) nudgeBtn.addEventListener("click", openNudge);
     var pdfBtn = document.getElementById("cplFundPdf");
     if (pdfBtn) pdfBtn.addEventListener("click", openPdf);
     var pdfTop = document.getElementById("cplFundPdfTop");
@@ -18291,6 +18328,7 @@
       WHATIF[key] = o || {};
       SCENARIO = WHATIF[key];
     },
+    _nudgeInstitutions: function () { return nudgeInstitutions(); },
     _setConfig: function (cfg) { SUPA_CONFIG = normalizeConfig(cfg); CONFIG_SAVED = clone(SUPA_CONFIG); syncActive(); },
     _config: function () { return SUPA_CONFIG; },
     _normalizeConfig: normalizeConfig,

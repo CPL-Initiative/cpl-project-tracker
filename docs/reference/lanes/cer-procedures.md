@@ -92,7 +92,7 @@ same way (SkyBilberry, Sam 2026-10-31); a title naming an ASE test fills its iss
 issuer and site boxes offer the reference's names (`issuers`, `sites` in `kb/exhibits_review.json`). Change saves the `_UNCLASSIFIED::`
 assignment and issuer and `unified_title_supersedes` (the title replaced); the fold's **revise lane** applies it only
 while that title still stands, renames an emptied credential or retires it, and receipts both with the panel rows left
-under the old name. Keep saves `title_sweep_kept`, which never comes back. Procedures `ase-paren`,
+under the old name. Keep saves `title_sweep_kept`, which never comes back. **ASE naming: the long form (Sam, 2026-10-31: *"go with the long form"*).** A local exhibit (the colleges issue it: college courses, high school and Cx) names the test as *Automotive Technology (ASE A5 Brakes)*; a title whose own words add to the test's, or carry a level (*Automotive Electrical/Electronics 1*), keeps its base; the ASE certification keeps its own name and ASE as issuer. The sweep's rule already proposes this form. Procedures `ase-paren`,
 `arabic-level-numerals`, `language-levels` (skill Rule 5h) teach the classifier the same. Guards: the sweep's build and jsdom tests, `tests/fold_unclassified_test.py`.
 
 ## Status
@@ -186,8 +186,8 @@ Guards: `tests/exhibits_rules.test.js`, `tests/cer_procedures_test.py`.
 
 The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.
 
-**NEXT:** (0) Sam's run through *Another look*; read his saves after it (`unified_title_supersedes` rows) and the next
-fold's `revise` and `credential_moves`; move the panel rows the receipt names. (1) Sam's ASE naming call (asked 2026-10-31; *narrow* landed in #2626): on **ASE short**, the sweep's ASE rule proposes
-the test's name with a short tag, *Engine Performance (ASE A8)*. (2) IB on the AP pattern, then
-CLEP's official names. (3) The Catalog's *Courses that may align*, once a source names courses. (4) Training sites for
+**NEXT:** (0) After each of Sam's runs through *Another look*, read the next fold's `credential_moves` and
+`credential_retires` and move the panel rows they list (SkyHuckleberry moved the first four, receipt
+`kb/receipts/credential_panel_move_2026-10-31_skyhuckleberry.json`). (1) IB on the AP pattern, then
+CLEP's official names. (2) The Catalog's *Courses that may align*, once a source names courses. (3) Training sites for
 a held title new to the reference, and the *Held titles by group* table, only if Sam asks.
