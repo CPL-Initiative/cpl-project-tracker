@@ -13752,9 +13752,10 @@
       "cer",
       "exhibits",
       "exhibit-canonicalization",
-      "funding"
+      "funding",
+      "tests"
      ],
-     "title": "CER redesign handoff: the Rules view, Send to the routine, and Sam's ASE naming (SkyBilberry)",
+     "title": "CER redesign handoff: Nudge, the fold's panel rows, ASE's long form, balanced test shards (SkyHuckleberry)",
      "type": null,
      "updated": ""
     },
