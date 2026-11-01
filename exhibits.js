@@ -112,6 +112,9 @@
   var AI_SORT_URL = "kb/exhibits_ai_sort.json";
   /* The Fact Sheet's statewide credentials, from MAP's CCC Collaborative rows: the List's Basis column reads it. */
   var STATEWIDE_RECS = "fact-sheet/statewide_recs.js";
+  /* Which certs each canonical title holds, by the industry credential catalog's ids (kb/_build_exhibit_cert_links.py;
+     Sam, 2026-11-01: "a separate canonical list of just our certs, apart from how they might be bundled"). */
+  var CERT_LINKS_URL = "kb/exhibit_cert_links.json";
   var CRED_PAGE = 50;
   var IN_REF = "In the reference";
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
@@ -1303,6 +1306,10 @@
     return list;
   }
 
+  function loadCertLinks() {
+    return fetch(CERT_LINKS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+      .then(function (d) { state.cs.certLinks = d && d.links ? d : null; }, function () { state.cs.certLinks = null; });
+  }
   function loadCredentials() {
     var cs = state.cs;
     if (cs.rows) return Promise.resolve();
@@ -1323,7 +1330,7 @@
           || credName(a).toLowerCase().localeCompare(credName(b).toLowerCase());
       });
       cs.rows = rows; cs.generated = d._generated_at; cs.error = null;
-      return Promise.all([loadCredOverlay(), loadAdoption(), loadLinks()]);
+      return Promise.all([loadCredOverlay(), loadAdoption(), loadLinks(), loadCertLinks()]);
     }).then(function () { cs.loading = null; });
     return cs.loading;
   }
@@ -1773,6 +1780,17 @@
       { h: "Basis", w: 5, v: listBasis }
     ];
   }
+  /* The certs a title holds or is aligned to, by catalog id, and the words the finder matches them by: each cert's test
+     code ("T8") and name ("Preventive Maintenance Inspection"), so a bundle answers to any test inside it. */
+  function listCertLink(r) { var d = state.cs.certLinks; return (d && d.links[r.ut]) || null; }
+  function listCerts(r) { var l = listCertLink(r); return l ? l.certs : []; }
+  function listCertWords(r) {
+    var l = listCertLink(r), d = state.cs.certLinks;
+    if (!l) return "";
+    return l.certs.map(function (id) { var c = d.certs[id] || {}; return [c.code, c.name, c.family ? c.family + " " + c.code : "", id].join(" "); })
+      .concat(l.unresolved || []).join(" | ");
+  }
+  function listCertName(id) { var c = (state.cs.certLinks || {}).certs ? state.cs.certLinks.certs[id] : null; return c ? (c.family ? c.family + " " : "") + c.code + " " + c.name : id; }
   function listColIndex(h) {
     var C = listCols();
     for (var i = 0; i < C.length; i++) if (C[i].h === h) return i;
@@ -1860,6 +1878,7 @@
       if (L.f === "waiting" && !listPendingFold(r)) return false;
       if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
       if (L.f === "local" && listBasis(r) !== "Local") return false;
+      if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
       var cols = listCols();
       for (var k in L.cf) {
         var want = String(L.cf[k] || "").trim().toLowerCase();
@@ -1868,7 +1887,7 @@
       if (!q) return true;
       var cur = credCurrent(r);
       var hay = [r.ut, listTitle(r), cur.issuer, cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
-        r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r);
+        r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r) + " | " + listCertWords(r);
       return listFold(hay).indexOf(listFold(q)) !== -1;
     });
   }
@@ -2235,6 +2254,8 @@
           ? fmt(L.changed.length) + " changed this visit go with it" : "With no change this visit, it looks over everything you changed since its last pass" })])]);
     wrap.appendChild(re);
     if (L.note) wrap.appendChild(el("p", { cls: "exh-note", role: "status", text: L.note }));
+    if (L.cert) wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-certline" }, ["Showing every exhibit that holds or is aligned to "
+      + listCertName(L.cert) + ". ", word("Clear", function () { L.cert = null; L.limit = LIST_LIMIT; render(); })]));
     wrap.appendChild(el("div", { id: "exh-fr-host" }, frState().open ? [frPanel()] : []));
     wrap.appendChild(el("div", { id: "exh-l-host" }, [listTable()]));
     listSyncGrips();
@@ -2565,6 +2586,17 @@
     if (name === "Title") {
       line("Local titles in MAP, as colleges typed them:");
       list((r.raw_variants || []).map(function (v) { return v.r + (v.c != null ? " (title " + Math.round(v.c * 100) + "%)" : "") + (v.q ? ", " + String(v.q).replace(/_/g, " ") : ""); }));
+      var cl = listCertLink(r);
+      if (cl && (cl.certs.length || (cl.unresolved || []).length)) {
+        line(cl.relation === "aligned" ? "Aligned to this test: the college issues the course, and ASE issues only the test."
+          : cl.certs.length > 1 ? (cl.rule === "any" ? "Holds any one of these certifications:" : "Holds all of these certifications:")
+          : "Holds this certification:");
+        list(cl.certs.map(function (id) {
+          return [listCertName(id) + " (" + id + ") ", word("Show every exhibit with it", function () {
+            L.cert = id; L.f = ""; L.open = null; L.limit = LIST_LIMIT; render(); }, { "aria-label": "Show every exhibit with " + listCertName(id) })];
+        }));
+        if ((cl.unresolved || []).length) line("Also names, not yet in the cert table: " + cl.unresolved.join("; ") + ".");
+      }
       var openC = word("Open it in Credentials", function () { openCredential(r.ut); });
       box.appendChild(openC);
     } else if (name === "Status" || name === "Confidence") {

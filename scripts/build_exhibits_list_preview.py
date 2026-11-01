@@ -21,7 +21,7 @@ ROOT = pathlib.Path(__file__).resolve().parent.parent
 KB_FILES = [
     "kb/exhibits_review.json", "kb/exhibits_review_courses.json", "kb/exhibits_adoption.json",
     "kb/cred_rename_dryrun/collisions.json", "kb/exhibits_sweep.json", "kb/cer_procedures.json",
-    "kb/cer_procedures_out/latest.json", "kb/exhibits_ai_sort.json",
+    "kb/cer_procedures_out/latest.json", "kb/exhibits_ai_sort.json", "kb/exhibit_cert_links.json",
 ]
 
 
