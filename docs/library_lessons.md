@@ -30,8 +30,8 @@ related:
   round 2 set their thresholds under the average. Sam picked *gentle* (a light de-esser and a 3 dB shelf above 6 kHz):
   *"Ok, still has the distortion but nothing you can do about that. gentle sounds the best to me."* In the full film
   it lowers 3-8 kHz 6.5 dB and above 8 kHz 12.2 dB (`cpl_memory` `sam-chancellor-address-gentle-high-end-2026-10-30`).
-- **Waiting on Sam, no card:** whether to repoint the address's Library record from SharePoint to the Pages address
-  (Sierra reads a `library/` page only through a record that links it), and filing the gentle MP4s from run
+- **Settled:** Sam repointed the address's Library record to the Pages address himself on 2026-10-31 (read by S540;
+  Sierra reads a `library/` page only through a record that links it). Still open: filing the gentle MP4s from run
   41139746530 to CPLLibrary.
 
 ## 2026-10-06 — S338: the first real Google sign-in, and the first filing by hand
