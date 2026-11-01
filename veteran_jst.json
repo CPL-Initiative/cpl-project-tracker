@@ -1,11 +1,11 @@
 {
-  "scraped_at": "2026-10-31T19:32:34.119507+00:00",
+  "scraped_at": "2026-11-01T05:18:06.173941+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 33435,
-    "jst": 30829,
+    "jst": 30653,
     "star_colleges": 70
   },
   "computed_star_colleges": 70,
@@ -112,7 +112,7 @@
     },
     "Southwestern College": {
       "vets": 584,
-      "jst": 723,
+      "jst": 555,
       "star": true
     },
     "San Bernardino Valley College": {
@@ -172,7 +172,7 @@
     },
     "San Joaquin Delta College": {
       "vets": 248,
-      "jst": 494,
+      "jst": 493,
       "star": true
     },
     "Glendale Community College": {
@@ -242,7 +242,7 @@
     },
     "Napa Valley College": {
       "vets": 38,
-      "jst": 53,
+      "jst": 50,
       "star": true
     },
     "College of the Sequoias": {
@@ -277,7 +277,7 @@
     },
     "Oxnard College": {
       "vets": 118,
-      "jst": 162,
+      "jst": 161,
       "star": true
     },
     "Los Angeles Harbor College": {
@@ -317,7 +317,7 @@
     },
     "Reedley College": {
       "vets": 82,
-      "jst": 133,
+      "jst": 132,
       "star": true
     },
     "Laney College": {
@@ -387,7 +387,7 @@
     },
     "Hartnell College": {
       "vets": 106,
-      "jst": 81,
+      "jst": 80,
       "star": true
     },
     "College of the Redwoods": {
@@ -462,7 +462,7 @@
     },
     "Moorpark College": {
       "vets": 179,
-      "jst": 237,
+      "jst": 236,
       "star": true
     },
     "Monterey Peninsula College": {

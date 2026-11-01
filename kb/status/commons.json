@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-10-31T19:36:44Z",
+ "written_at": "2026-11-01T05:22:26Z",
  "rows": [
   {
    "key": "requirements",
@@ -82,9 +82,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2339,
+     "n": 2402,
      "of": 5492,
-     "words": "titles carry a review stamp (1,094 a person's, 1,245 a cohort's); 2,711 credentials, 2,193 of 3,007 records stamped",
+     "words": "titles carry a review stamp (1,088 a person's, 1,314 a cohort's); 2,673 credentials, 2,188 of 2,961 records stamped",
      "open": "#exhibits/credentials"
     }
    ],
@@ -133,12 +133,12 @@
    },
    "facts": {
     "titles": 5492,
-    "stamped": 2339,
-    "person": 1094,
-    "cohort": 1245,
-    "credentials": 2711,
-    "records": 3007,
-    "records_stamped": 2193,
+    "stamped": 2402,
+    "person": 1088,
+    "cohort": 1314,
+    "credentials": 2673,
+    "records": 2961,
+    "records_stamped": 2188,
     "saved_at": "2026-10-31T14:01:00Z",
     "fold_at": "2026-10-31T19:32:41Z",
     "map_titles": 4872,
@@ -221,7 +221,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-10-31T19:34:54+00:00",
+    "at": "2026-11-01T05:20:28+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -253,7 +253,7 @@
     {
      "n": 459,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (408 by a rung 1 to 4 rule, 51 more by a curator); 5,750 of 9,418 articulations",
+     "words": "wordings resolve to a settled reference (408 by a rung 1 to 4 rule, 51 more by a curator); 5,750 of 9,416 articulations",
      "open": "#cr-reference/progress"
     }
    ],
@@ -294,7 +294,7 @@
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1936,
-    "rows": 9418,
+    "rows": 9416,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
@@ -309,22 +309,22 @@
     "curator_only": 51,
     "curator_only_rows": 1184,
     "unsettled": 1885,
-    "unsettled_rows": 3668,
+    "unsettled_rows": 3666,
     "head": {
      "50": {
       "settled": 44,
       "of": 50,
-      "rows": 4650
+      "rows": 4648
      },
      "100": {
       "settled": 76,
       "of": 100,
-      "rows": 5546
+      "rows": 5544
      },
      "250": {
       "settled": 150,
       "of": 250,
-      "rows": 6555
+      "rows": 6553
      }
     },
     "awaiting_look": 138,
@@ -402,7 +402,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-10-31T19:32:39Z",
+    "at": "2026-11-01T05:18:13Z",
     "every_hours": 24
    },
    "facts": {
@@ -414,7 +414,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-10-31",
+    "scanned_at": "2026-11-01",
     "procedures_on": 6
    },
    "sources": [

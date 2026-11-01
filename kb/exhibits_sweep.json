@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-10-31T19:36:40Z",
+ "generated_at": "2026-11-01T05:22:21Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -42,13 +42,13 @@
  ],
  "counts": {
   "ase": 5,
-  "numerals": 45,
+  "numerals": 42,
   "language": 32,
   "course-code": 6,
   "level": 1,
   "fold": 33
  },
- "local_titles": 151,
+ "local_titles": 139,
  "cards": [
   {
    "current": "Engine Performance (ASE A8 Engine Performance)",
@@ -400,139 +400,6 @@
    "moves_all": true
   },
   {
-   "current": "CLEP French Language Level III",
-   "proposed": "CLEP French Language Level 3",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "CLEP French Level III",
-     "colleges": [
-      "Santa Rosa Junior College"
-     ],
-     "course": "Local GE Area 3",
-     "credit": "9 hours in ARTS AND HUMANITIES"
-    }
-   ],
-   "id": "16e7f6dbf65f",
-   "issuer": "College Board",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "CLEP German Language Level III",
-   "proposed": "CLEP German Language Level 3",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "CLEP German Level III",
-     "colleges": [
-      "Santa Rosa Junior College"
-     ],
-     "course": "Local GE Area 3",
-     "credit": "9 hours in ARTS AND HUMANITIES"
-    }
-   ],
-   "id": "3fc127508df5",
-   "issuer": "College Board",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "CLEP Spanish with Writing Level II",
-   "proposed": "CLEP Spanish with Writing Level 2",
-   "rules": [
-    "numerals"
-   ],
-   "why": [
-    "Roman numerals become Arabic"
-   ],
-   "locals": [
-    {
-     "raw": "CLEP : Spanish with Writing Level II",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Exam Spanish with Writing II (Score of 63 or higher)",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Spanish and Writing Level II",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Spanish With Writing II",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Spanish with Writing Level 2",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Spanish with Writing Level II",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Spanish with Writing Level II (Score of 63)",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Spanish with Writing ll",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Spanish with Writing: Level 2",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    },
-    {
-     "raw": "CLEP Spanish with Writing: Level II",
-     "colleges": [],
-     "course": "",
-     "credit": ""
-    }
-   ],
-   "id": "ab3c8263d9c9",
-   "issuer": "College Board",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 10,
-   "moves_all": true
-  },
-  {
    "current": "Clinical Experience in Sports Medicine I",
    "proposed": "Clinical Experience in Sports Medicine 1",
    "rules": [
@@ -667,11 +534,11 @@
     {
      "raw": "SPAN 1: Beginning Spanish",
      "colleges": [
-      "Cabrillo College",
-      "Fresno City College"
+      "Fresno City College",
+      "Cabrillo College"
      ],
      "course": "SPAN 1",
-     "credit": "5 hours in Elementary Spanish I"
+     "credit": "5 hours in BEGINNING SPANISH"
     }
    ],
    "id": "41f377a0abbf",

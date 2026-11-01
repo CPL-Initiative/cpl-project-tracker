@@ -1,12 +1,12 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-10-31T19:36:38Z",
+ "written_at": "2026-11-01T05:22:19Z",
  "sources": {
   "procedures_run": "2026-10-31T14:00:59Z",
   "suggestions": "2026-10-31T17:27:31Z",
-  "statewide": "2026-10-31T19:31:47",
-  "audit": "2026-10-31T19:35:03+00:00"
+  "statewide": "2026-11-01T05:17:15",
+  "audit": "2026-11-01T05:20:37+00:00"
  },
  "tiles": {
   "names": {
@@ -229,7 +229,6 @@
   "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
   "International Association of Fire Fighters (IAFF)",
   "International Association of Sheet Metal, Air, Rail and Transportation Workers (SMART)",
-  "International Baccalaureate (IB)",
   "International Baccalaureate Organization (IBO)",
   "International Brotherhood of Electrical Workers (IBEW)",
   "International Code Council",

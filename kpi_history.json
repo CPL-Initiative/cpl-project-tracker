@@ -3956,8 +3956,8 @@
   {
     "date": "2026-10-31",
     "students": 59130,
-    "students_military": 30829,
-    "students_workforce": 28399,
+    "students_military": 30653,
+    "students_workforce": 28575,
     "students_apprentice": 958,
     "eligible_units": 282905,
     "transcribed_units": 84684,
@@ -3967,9 +3967,9 @@
     "leading_colleges": 19,
     "star_colleges": 70,
     "credit_recs": 14859,
-    "common_titles": 2441,
+    "common_titles": 2422,
     "ccc_common_titles": 162,
-    "map_exhibits": 2786,
+    "map_exhibits": 2767,
     "ccc_exhibits": 162,
     "ccc_collaborative": 66,
     "articulating_colleges": 103
