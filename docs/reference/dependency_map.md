@@ -581,6 +581,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cred_rename_dryrun/report.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_out` | none found | committed by: `cred-rename-apply.yml` |
 | `kb/credential_merges.json` | scripts: `kb/_clep_fold_apply.py`, `kb/_ib_fold_apply.py`, `kb/_merge_credentials.py` | — |
+| `kb/credential_merges_out/2026-11-01/clep_kb_curation_update_receipt.json` | none found | scripts: `kb/_clep_fold_apply.py` |
 | `kb/credential_merges_out/2026-11-01/ib_fold_receipt.json` | none found | scripts: `kb/_ib_fold_apply.py` |
 | `kb/credential_merges_out/2026-11-01/ib_kb_curation_update_receipt.json` | scripts: `kb/_ib_fold_apply.py` | — |
 | `kb/credential_review_overlay.json` | scripts: `excel_to_dashboard.py`, `kb/_apply_credential_review.py`, `kb/_build_exhibits_review.py`, `kb/_cred_rename_dryrun.py`, `kb/_fold_unclassified.py` | scripts: `kb/_apply_credential_review.py` · committed by: `cred-rename-apply.yml`, `daily-dashboard.yml` |
@@ -1249,5 +1250,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 103 Supabase tables · 47 RPCs · 11 edge functions · 752 file
+Coverage: 103 Supabase tables · 47 RPCs · 11 edge functions · 753 file
 datasets · 192 external services · 499 consumers · 59 workflows · 39 tabs.

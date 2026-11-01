@@ -4,7 +4,7 @@
   "supabase_tables": 103,
   "rpcs": 47,
   "edge_functions": 11,
-  "file_datasets": 752,
+  "file_datasets": 753,
   "external_services": 192,
   "consumers": 499,
   "workflows": 59,
@@ -12151,6 +12151,19 @@
      "direction": "read",
      "how": "literal",
      "line": 47
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/credential_merges_out/2026-11-01/clep_kb_curation_update_receipt.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_clep_fold_apply.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 158
     }
    ],
    "served": true,

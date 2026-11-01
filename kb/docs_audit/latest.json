@@ -11,32 +11,32 @@
   },
   "summary": {
     "files": 1342,
-    "bytes": 13651009,
+    "bytes": 13652973,
     "over_budget": 4,
     "handoff_max": 536,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60099,
+    "always_loaded_bytes": 60083,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60099,
+        "bytes": 60083,
         "over": 1
       },
       "other": {
         "files": 137,
-        "bytes": 4189885,
+        "bytes": 4189405,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9765,
+        "bytes": 9660,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2519717,
+        "bytes": 2522387,
         "over": 1
       },
       "kb_note": {
@@ -46,7 +46,7 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 460939,
+        "bytes": 460834,
         "over": 2
       },
       "handoff": {
@@ -63,9 +63,9 @@
       "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25204,
-      "bytes": 4128877769,
-      "heavy_bytes": 2952435160,
+      "files": 25211,
+      "bytes": 4129024874,
+      "heavy_bytes": 2952444285,
       "heavy_share": 0.715,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -149,13 +149,13 @@
       "rule": "oversized_doc",
       "fixable": false,
       "detail": {
-        "bytes": 60099,
+        "bytes": 60083,
         "limit": 60000,
         "lane": "always_loaded",
-        "over_by": 99,
+        "over_by": 83,
         "ratio": 1.0
       },
-      "message": "60,099 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "message": "60,083 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
       "path": "CLAUDE.md"
     },
     {
@@ -645,10 +645,10 @@
       "fixable": false,
       "path": "kb/coci_articulations.json",
       "detail": {
-        "bytes": 7521452,
+        "bytes": 7521316,
         "kind": "file"
       },
-      "message": "7,521,452 B single file inside the vault"
+      "message": "7,521,316 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -935,10 +935,10 @@
       "fixable": false,
       "path": "kb/unified_titles.json",
       "detail": {
-        "bytes": 2146771,
+        "bytes": 2156032,
         "kind": "file"
       },
-      "message": "2,146,771 B single file inside the vault"
+      "message": "2,156,032 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -955,11 +955,11 @@
       "fixable": false,
       "path": "docs/session_536_handoff.md",
       "detail": {
-        "commits_since": 32,
+        "commits_since": 29,
         "budget": 6,
         "handoff": "session_536_handoff.md"
       },
-      "message": "32 commit(s) have landed since `docs/session_536_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "29 commit(s) have landed since `docs/session_536_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

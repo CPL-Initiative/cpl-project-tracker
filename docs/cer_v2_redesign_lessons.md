@@ -750,6 +750,29 @@ the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
   bounds a shard.
 
 
+## SkyTeaberry (2026-11-01): CLEP folds on Sam's ruling
+
+- **Sam ruled fold on Sheet 150 card 2 at 01:50Z, and kept the IB fold (card 1).** One credential per CLEP exam, its
+  levels folded in, Arabic numerals, no period subtitle. `kb/_clep_official_titles.py` and the fold landed in #2633:
+  18 merges, 110 local titles, 48 CLEP names to 35, 33 live assignments and 3 panel markers under
+  `cer-clep-fold-skyteaberry@bot`.
+- **When the ruling itself moves reviewed titles, the dry run's test narrows to everything else.** Five person-reviewed
+  titles moved (two Level III, three prefix-less *(Levels 1 and 2)*, and Sam's *Spanish with Writing: Levels 1 and 2*),
+  each because the ruling folds levels. The other eight agreed where they sat, *History I* and *History II* among them.
+  Name the ruled moves one by one in the receipt, so a reviewed title never moves unannounced.
+- **`kb/_merge_credentials.py` writes `report.json` and `applied.json` into the day's folder**, over an earlier fold's
+  receipts from the same day. Rename the new pair (`clep_applied.json`, `clep_report.json`) and restore the old with
+  `git checkout`.
+- **A panel row cannot fan in.** `kb_curation`'s key is `(course_id, field)`, so two folded credentials' markers cannot
+  both move to the winner. Move the one whose meaning carries (the one-exam *(Levels 1 and 2)* marker) and leave the
+  other under its old key; deleting it would put a person's row on the hold list.
+- **A merge leaves the nightly fold nothing to hold.** It stamps every re-pointed title today, so each saved assignment
+  on one reads as already folded, or STALE until the nightly sync copies the live rows. The 38 old preseed rows that
+  name Roman-numeral forms (*CLEP Spanish Language Level II*) read STALE before the fold and after; they were left alone.
+- **`clep.collegeboard.org` is outside the sandbox's network.** The exam list rests on a search result (Information
+  Systems is the current name of Information Systems and Computer Applications) and College Board's 34 current exams.
+
+
 ## Moved from the lane (SkyInkberry)
 
 The CER tab is retired (Open Asks Sheet 148); these two bullets described its views and moved here verbatim on 2026-11-01, when the lane passed its size budget.
@@ -774,3 +797,13 @@ The CER tab is retired (Open Asks Sheet 148); these two bullets described its vi
 3. **retire:** the Initiated sign-off and the Curate panel leave the tab.
 
 Sheet 96 card 1 (*keep*: a rule settles at its own word, course-identity's 0.8 included) is in the lessons doc.
+
+
+## Moved from the lane (SkyTeaberry)
+
+Sheet 148's ruling block moved here verbatim on 2026-11-01, when the CLEP fold took the lane past its size budget.
+
+**Sam's rulings, Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, 12:09Z 2026-10-31, his own
+calls; `cpl_memory` `sam-sheet-148-rulings-2026-10-31`): the public page is the **Credential Catalog**, linked from the
+Library and the public header (SkyTwinberry); the CER and EACR tabs are retired. Sam had hidden both `cobi_nav` rows at
+23:51Z 2026-10-30; they still open at `#credential-reference` and `#exhibit-adoption`, and their files stay.

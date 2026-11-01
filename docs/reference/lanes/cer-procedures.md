@@ -149,10 +149,7 @@ exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2
 
 Sheet 94's three rulings (apply, save, retire; `sam-sheet-94-rulings-2026-10-18`) and Sheet 96 card 1 are in the lessons doc.
 
-**Sam's rulings, Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, 12:09Z 2026-10-31, his own
-calls; `cpl_memory` `sam-sheet-148-rulings-2026-10-31`): the public page is the **Credential Catalog**, linked from the
-Library and the public header (SkyTwinberry); the CER and EACR tabs are retired. Sam had hidden both `cobi_nav` rows at
-23:51Z 2026-10-30; they still open at `#credential-reference` and `#exhibit-adoption`, and their files stay.
+Sheet 148's rulings (the Credential Catalog's name and links, the CER and EACR tabs retired) are in the lessons doc.
 
 **Sam's rulings, Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, 14:41Z 2026-10-31, his own
 calls; `cpl_memory` `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
@@ -168,7 +165,7 @@ Guards: `tests/exhibits_rules.test.js`, `tests/cer_procedures_test.py`.
 
 The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.
 
-**IB on the AP pattern (SkyInkberry, 2026-11-01, on the recommendation; Open Asks Sheet 150 card 1).**
+**IB on the AP pattern (SkyInkberry, 2026-11-01; Sam kept it, Open Asks Sheet 150 card 1).**
 `kb/_ib_official_titles.py` holds IB's `Diploma Programme` subjects, current and retired, at IB's levels, named as the
 reference and the Cal-GETC IB list write them (*IB Language A: Literature HL*). A missing level takes HL, the
 exam colleges award IB credit for, and an SL-only subject takes SL (*IB World Religions SL*). The exam's language folds
@@ -177,12 +174,15 @@ into the subject; a Language A exam in another language keeps *(Non-English)*. B
 the issuer reads *International Baccalaureate Organization (IBO)* everywhere. Eight live rows moved under `cer-ib-fold-skyinkberry@bot`, one of them Sam's issuer save
 (`ib_kb_curation_update_receipt.json`). Guard: `tests/ib_official_titles_test.py`.
 
-**NEEDS SAM ([Open Asks Sheet 150](https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL), 2026-11-01):** card 1, keep the IB fold (proceeded on the recommendation, reply to
-reverse); card 2, which names CLEP exams take (held: one credential per exam with its levels folded and Arabic numerals
-is proposed, which re-files stamped titles and reads the numerals rule into College Board's names).
+**CLEP on the same pattern (SkyTeaberry, 2026-11-01; Sam, Sheet 150 card 2: fold; #2633).** `kb/_clep_official_titles.py`
+holds College Board's 34 CLEP exams and the retired ones, one credential per exam: a language exam's levels fold in as
+score bands (*CLEP Spanish Language*), the numbered exams take 1 and 2 with no period subtitle, a renamed exam takes its
+current name (*CLEP Information Systems*). Brand-family's `clep` lane runs after `ib`. 48 CLEP names became 35; 33 live
+assignments and 3 panel markers moved under `cer-clep-fold-skyteaberry@bot` (`clep_kb_curation_update_receipt.json`);
+the two Level III markers stay under their old keys. Guard: `tests/clep_official_titles_test.py`.
 
 **NEXT:** (0) After each of Sam's runs through *Another look*, read the next fold's `credential_moves` and
 `credential_retires` and move the panel rows they list (SkyHuckleberry moved the first four, receipt
-`kb/receipts/credential_panel_move_2026-10-31_skyhuckleberry.json`). (1) CLEP's official names, on the AP
-and IB pattern. (2) The Catalog's *Courses that may align*, once a source names courses. (3) Training sites for
-a held title new to the reference, and the *Held titles by group* table, only if Sam asks.
+`kb/receipts/credential_panel_move_2026-10-31_skyhuckleberry.json`). (1) The Catalog's *Courses that may align*,
+once a source names courses. (2) Training sites for a held title new to the reference, and the *Held titles by group*
+table, only if Sam asks.
