@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "session": 536,
- "moniker": "SkyTeaberry",
+ "moniker": "SkySnowberry",
  "run": "Sam's session",
  "decider": "Sam",
  "handoff": "docs/cer_redesign_handoff.md",
@@ -99,11 +99,11 @@
  ],
  "notes": {},
  "headline": [],
- "written_at": "2026-11-01T02:15:39Z",
+ "written_at": "2026-11-01T07:21:51Z",
  "project": "exhibit",
  "next_step": {
   "title": "Sam's next Another look pass",
-  "text": "After each of Sam's Another look passes, move the panel rows the next fold lists. Confirm tonight's fold reads the moved CLEP rows as already folded."
+  "text": "After each of Sam's Another look passes, move the panel rows the next fold lists, and confirm the overnight firing works the first rule sent to the routine."
  },
  "changes": [
   {
