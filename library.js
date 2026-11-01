@@ -238,6 +238,21 @@
     return m ? fmtDate(m[1]) + ", " + m[2] + " UTC" : fmtDate(iso);
   }
   function sourceList(r) { return Array.isArray(r && r.sources) ? r.sources : []; }
+  // SharePoint stays closed to a session until RCCD approves the Microsoft 365 connector (Sam,
+  // 2026-11-01, on the IACA request: "build in a note to the user that sharepoint is not
+  // currently accessible and offer instructions on what to do instead"). The way around it is a
+  // downloaded copy dropped into the one box, whose words this browser reads.
+  function isSharePoint(url) { return /^https:\/\/[a-z0-9-]+\.sharepoint\.com\//i.test(String(url || "")); }
+  var SP_INSTEAD = "A session cannot open SharePoint yet: RCCD has not approved the Microsoft 365 connector. " +
+    "Download a copy of the file from SharePoint, then drop that copy into Create, Revise or Remediate a Document.";
+  // A request a run cannot start: no source to rebuild from, no document it can read, and the
+  // only file on SharePoint.
+  function sharePointOnly(r) {
+    var srcs = sourceList(r);
+    if (r.rebuild_from) return false;
+    if (srcs.some(function (x) { return (x.text && String(x.text).trim()) || (x.url && !isSharePoint(x.url)); })) return false;
+    return isSharePoint(r.url) || srcs.some(function (x) { return isSharePoint(x.url); });
+  }
   function say(text, isErr) { state.message = text; state.msgErr = !!isErr; }
   function statusWord(r) { return r.status ? STATUS[r.status] || r.status : "Not set"; }
   function seenWord(r) { return r.seen_by ? SEEN[r.seen_by] || r.seen_by : "Not set"; }
@@ -918,6 +933,11 @@
   // What the card says while a request is open.
   function regenWords(r) {
     var g = r.regen || {}, rs = regenState(r);
+    if (rs === "waiting" && sharePointOnly(r)) {
+      return esc("Rebuild requested by " + (g.requested_by || "the team") + ", " + stamp(g.requested_at) + ". Its file is on SharePoint, which a session cannot open yet: " +
+        "RCCD has not approved the Microsoft 365 connector. Download a copy of the file from SharePoint, then drop that copy into Create, Revise or Remediate a Document " +
+        "with this piece picked, and the next scheduled run rebuilds it.");
+    }
     if (rs === "waiting") {
       return esc("Rebuild requested by " + (g.requested_by || "the team") + ", " + stamp(g.requested_at) + ". The next scheduled run rebuilds it from its source" +
         (sourceList(r).length ? " and the documents" : "") + " and remediates it; Copy the request starts it in a session now.");
@@ -1170,7 +1190,7 @@
   function addPieceFile(file) {
     var name = file.name, ext = extOf(name);
     if (state.pieceUse === "version") { say("Put " + name + " in the CPLLibrary folder, or its Drafts folder, then paste its link below."); render(); return; }
-    var fail = function () { say("A session cannot open " + name + " from here. Put it in SharePoint and paste its link, or paste its words into Instructions.", true); render(); };
+    var fail = function () { say("A session cannot open " + name + " from here. Save it as a Word document or plain text and drop that copy, or paste its words into Instructions.", true); render(); };
     var take = function (text) {
       if (!String(text || "").trim()) { fail(); return; }
       var list = (state.src.pc || []).slice();
@@ -1918,7 +1938,7 @@
       state.src.ls = src ? [src] : [];
       state.start = { kind: kind, say: instr, shape: pk && pk.ext === "pptx" && kind === "deck" ? NOTES_BRIEF[state.notesMode || "keep"] : defaultShape(kind) };
       state.form = null; state.formFor = null;
-      say(src ? "The brief carries " + src.title + " as a document to work from. Name the piece and save it." : "");
+      say(src ? "The brief carries " + src.title + " as a document to work from. Name the piece and save it." + (isSharePoint(src.url) ? " " + SP_INSTEAD : "") : "");
       render();
       var t = document.getElementById("ls-title"); if (t) t.focus();
     };
@@ -1943,7 +1963,7 @@
       return;
     }
     openBrief(null);
-    say("A session cannot open " + pk.name + " from here. Paste its text under Documents to work from, or put it in SharePoint and paste the link.");
+    say("A session cannot open " + pk.name + " from here. Paste its text under Documents to work from, or save it as a Word document or plain text and drop that copy.");
     render();
   }
 
@@ -1982,7 +2002,9 @@
     var id = r.id, name = r.title;
     var body = { refresh_note: note || null, sources: list, regen: { requested_at: new Date().toISOString(), requested_by: by, publish: "show" }, updated_by: by };
     write(TABLE_URL + "?id=eq." + encodeURIComponent(id), { method: "PATCH", body: body }).then(function () {
-      say("Requested. Claude rebuilds " + name + " from its source, your instructions and the documents, checks its accessibility, and puts the draft on its card. Copy the request on the card starts it in a session now.");
+      say(sharePointOnly(Object.assign({}, r, { sources: list }))
+        ? "Requested. " + SP_INSTEAD + " Pick " + name + " there, and the next scheduled run rebuilds it."
+        : "Requested. Claude rebuilds " + name + " from its source, your instructions and the documents, checks its accessibility, and puts the draft on its card. Copy the request on the card starts it in a session now.");
       clearPiece();
       ["lc-instr", "lc-link"].forEach(function (x) { var n = document.getElementById(x); if (n) n.value = ""; });
       return load();
@@ -2756,6 +2778,8 @@
     _viewFromHash: viewFromHash,
     _knowledgeValue: knowledgeValue,
     _regenState: regenState,
+    _sharePointOnly: sharePointOnly,
+    _regenWords: regenWords,
     _requestText: requestText,
     _sourcesText: sourcesText,
     _ensureSierraBar: ensureSierraBar

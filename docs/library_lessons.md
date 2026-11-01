@@ -1126,3 +1126,21 @@ work from, with a pointer in the note. The request's paste asks the session to r
 (a page through `npm run a11y`, a deck, document, workbook or PDF through `library_remediate.js`). The Regenerate form, its
 publish question and its separate document fields are gone. Mockup: https://claude.ai/artifact/DNzaPRUD1qsrBTAhbn29kR
 (Version 21 beside Version 20). Test: `library` block (19), and (13), (14) moved to the box.
+
+## SharePoint is closed to a session, and the card says so (S540 SkyBunchberry, 2026-11-01)
+
+- **The ask.** Crystal Nasio's IACA request (`iaca-mvpmcjyl`, 2026-10-26) named no change, no document and no source to
+  rebuild from, and its one file is a SharePoint deck, so five handoffs read it and left it. Sam, about 14:15Z through a
+  side session: *"I will have Crystal reload it. Can you build in a note to the user that sharepoint is not currently
+  accessible and offer instructions on what to do instead?"*
+- **Built.** `sharePointOnly(r)` in `library.js`: no `rebuild_from`, no pasted text, no non-SharePoint link, and a
+  SharePoint file on the record or its documents. Such a waiting card reads *Its file is on SharePoint, which a session
+  cannot open yet ... Download a copy of the file from SharePoint, then drop that copy into Create, Revise or Remediate a
+  Document with this piece picked*, in place of *The next scheduled run rebuilds it*. The request's confirmation and a
+  brief started from a SharePoint link say the same. Two older messages told people to *put it in SharePoint and paste
+  its link*, which no session can read; they now say to save a Word or plain-text copy and drop it. Guard: `library` (20).
+- **Lesson.** Advice that routes a file through a store the reader cannot open is worse than no advice: the request
+  looks complete and sits. When a connector is held, every hint that names the held store needs its way around.
+- **The two summit refresh notes** (`noncredit-summit-in-motion`, `noncredit-summit-cpl-slides`) were cleared on Sam's
+  *"yes, clear them"* by migration `2026-11-01_library_summit_refresh_notes.sql` (the side session's #2644, before-values
+  in its rollback). The summit met on October 8.
