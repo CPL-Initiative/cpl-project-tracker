@@ -2219,6 +2219,23 @@ check(new["program"]["ge_units"] == {"min": 34, "max": 34}
       == {"min": None, "max": None},
       "Monterey Peninsula's transfer degree in its 2026-27 words: Cal-GETC's 34, for transfer degrees only")
 
+# S536 (page read 41276213077): CourseLeaf prints a lecture and its lab as one row, "CSIS 50 · & 50L ... 3", so a lab
+# the reading listed on its own with no units takes 0; the full-prefix chain "BUSC 140 · & BUSC 150 · & BUSC 160" too.
+# A course the page does not join keeps the state file's figure, and so does one the reading gave units.
+MPC_MEDA = ("Required Core · ANAT 5\tHuman Biology\t4 · CSIS 50 · & 50L\tMS Office Applications · and MS "
+            "Office Applications Lab\t3 · Path 1 · BUSC 140 · & BUSC 150 · & BUSC 160\t3 · GEOL 2\tPhysical Geology\t3 "
+            "· GEOL 2L\tPhysical Geology Lab\t1")
+meda = {"program": {"total_units": {"min": 17, "max": 17}}, "blocks": [{"name": "Required Core", "rule": "all", "courses": [
+    {"code": "ANAT 5", "units": 4}, {"code": "CSIS 50", "units": 3}, {"code": "CSIS 50L", "units": None},
+    {"code": "BUSC 140", "units": 3}, {"code": "BUSC 150", "units": None}, {"code": "BUSC 160", "units": None},
+    {"code": "GEOL 2", "units": 3}, {"code": "GEOL 2L", "units": None}]}]}
+new, notes = RC.reconcile(meda, MPC_MEDA, "Monterey Peninsula College", "A.S. Degree")
+got = {c["code"]: c["units"] for c in new["blocks"][0]["courses"]}
+check("joined_units" in [n["field"] for n in notes]
+      and got["CSIS 50L"] == 0 and got["BUSC 150"] == 0 and got["BUSC 160"] == 0 and got["GEOL 2L"] is None
+      and meda["blocks"][0]["courses"][2]["units"] is None,
+      "Monterey Peninsula's joined rows: CSIS 50L and the BUSC chain take 0, GEOL 2L (its own row) keeps none: %s" % got)
+
 # S526: Glendale's descriptions the first parse missed. A renumbered course prints its old number ahead of its
 # code, and a title may start with a digit or carry "+" or a curly apostrophe; the code after the units guards each.
 import tempfile

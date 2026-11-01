@@ -1,0 +1,20 @@
+{
+ "college": "Monterey Peninsula College",
+ "control_number": "39356",
+ "shape": "certificate",
+ "title": "Administration of Justice - Level II Corrections",
+ "award": "Certificate of Achievement requiring 8S/12Q to fewer than 16S/24Q units",
+ "source_url": "https://catalog.mpc.edu/programs-study/administration-justice/level-ii-corrections-coa/",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 10.3,
+ "parts": null,
+ "error": "HTTP 503: {\"code\":\"BOOT_ERROR\",\"message\":\"Function failed to start (please check logs)\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "41276977991"
+}

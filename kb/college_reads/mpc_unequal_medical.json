@@ -1,0 +1,53 @@
+{
+ "_readme": "S536 SkySugarberry, 2026-11-01. Monterey Peninsula's unequal records: the medical family (03635, 09978, 09979, 22059, 22083) sums one unit past its printed total, and Accounting 22052 reads 33.5-34 against 35. Six pages, no model call.",
+ "college": "Monterey Peninsula College",
+ "questions": {
+  "words": "Each course row with its units, each list's or-choices and units, and the program's printed total units."
+ },
+ "keywords": [
+  "Total",
+  "Units",
+  "[Ss]elect",
+  "or ",
+  "[Cc]hoose",
+  "[Cc]omplete"
+ ],
+ "pages": [
+  {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-assisting-as/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-office-administration-as/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-insurance-coding-specialist-as/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-insurance-coding-specialist-coa/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/medical-assisting/medical-assisting-coa/",
+   "answers": [
+    "words"
+   ]
+  },
+  {
+   "url": "https://catalog.mpc.edu/programs-study/business/business-accounting-coa/",
+   "answers": [
+    "words"
+   ]
+  }
+ ]
+}
