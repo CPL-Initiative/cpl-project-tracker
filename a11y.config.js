@@ -776,6 +776,11 @@ async function seedExhibitsList(page, theme) {
     document.getElementById("exh-fr-prev").click();
   });
   await page.waitForFunction(() => document.querySelector("#exh-fr .exh-fr-table tbody tr, #exh-fr-count"), null, { timeout: 10000 });
+  // AI sort's group bands and Edit every row's boxes (S541), measured with the rest.
+  await page.evaluate(() => { document.getElementById("exh-l-ai").click(); });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-l-band"), null, { timeout: 10000 });
+  await page.evaluate(() => { document.getElementById("exh-l-editall").click(); });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-l-cellin"), null, { timeout: 10000 });
 }
 
 // Seeds the Records view with its first filter open (S391 UI pass): the dropdowns of #2121
