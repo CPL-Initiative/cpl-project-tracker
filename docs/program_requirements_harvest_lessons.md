@@ -842,6 +842,23 @@ Delta 200 of 203: lessons, *Moved from the lane (S524 compaction)*.
 **The second reader, Grok (Sam, Open Asks Sheet 97 card 1, 2026-10-19; built S421, #2246: `provider` on the function, `kb/_second_reader.py`, `second-reader.yml`, nothing written) waits on the xAI API billing moving to the RCCD district card (Sam, 2026-10-20) and the two Edge Function secrets only Sam sets; then one deploy and `second-reader.yml` with `college=Cañada College`. The ruling, the design and Jev's sittings: lessons, *Moved from the lane (S449 compaction)*.
 **Display build e021a2824548 is applied on `main` (S459: #2387 merged, `step=display` run 40027395883, 22:46Z: 17,529 statements written, none missing, no errors; the applied record committed by the run).** **Hartnell (S484-S489; lessons S484-S489):** passing rose to 81 of 94 after the `course_hours`, `ge_overlap` (#2462) and `pool_lists` (#2463; `with_floors`, #2465) steps (kept, Sheet 131 cards 3-4). **Still failing, all thirteen read (S488):** the narrow `meets` class (03537, 33851, 31591, 43119, 41819) stays as Sam ruled; a vendor gap (ABT41 in Agriculture A.S. 11803, HES120 in Vocational Nursing 03571, beside 44161 and 44574) stays incomplete; CalGETC 45096 and Music 43887 have since passed (below). Fable's advice on RN 03570 and Respiratory Care 44537 is in lessons S488. CSS/CIS codes are mixed across Hartnell's tabs, so no college-wide renumber.
 
+## S533 SkyNannyberry (2026-10-31, the CPL Queue routine): Los Angeles Valley's repeatable ensembles
+
+- **Display read back first:** all 17,546 rows carry build 97f8cb5d3f44 (S532's `step=display`, run 41174386400).
+- **Two of the program sums were one shape.** Music A.A. 02962 and Commercial Music A.A. 08545 each carry a list the
+  record names "COMPLETE 4 (2) COURSES FROM THE FOLLOWING: (COURSES MAY BE REPEATED)", of ensembles at 1 to 1.5 units.
+  The reading kept the count and missed the repeat, so the high end took each course once (33-33.5, 35-35.5 against
+  the printed 33-35, 35-36). The `repeat` step's `block_pattern` only took a block the reading gave a minimum of one;
+  it now takes a minimum equal to its n too, and the college has the step. Rescored locally: both equal.
+  Guard in `program_requirements_pilot_test`.
+- **The other 12 failing sums are not one shape.** Geology 08560 prints Sequence A or B with no option group and a
+  "to complete 36 total units" fill. French 02965 and Economics 02984 print "for a minimum of 18 units" over a range.
+  STEM Foundation 41492/41493 print unit ranges per list. Film/TV 33629, Economics AA-T 35526 and Elementary Teacher
+  33593 each carry their own reading. Communication Studies 30699 read 43774's page, and Anthropology 32410's lists
+  repeat. Each needs its page read before a step.
+- **Lesson: read the block names of the failing records side by side before a page read.** Words the reading kept
+  in a name ("COURSES MAY BE REPEATED") can already say what the record's figures missed.
+
 ## S532 SkyHackberry (2026-10-31, the CPL Queue routine): Los Angeles Valley's T & M, 186 to 196 passing
 
 - **The ten Engineering and Manufacturing coverage failures were one prefix.** Each record placed every course its page
