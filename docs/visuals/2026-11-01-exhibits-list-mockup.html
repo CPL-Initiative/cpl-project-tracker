@@ -1,0 +1,208 @@
+<title>Exhibits List</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<style>
+/* Layout: one working sheet, controls above it, the table filling the width, the proposed pieces below. First Light tokens. */
+:root{
+  --paper:#F4F2ED; --surface:#FFFFFF; --ink-strong:#1C1C1A; --ink:#3A3A36; --ink-muted:#5C5C55;
+  --rule:rgba(28,28,26,.14); --link:#0047AB; --seal:#002F6D; --on-seal:#FFFFFF; --hint:#E9EEF7; --flag:#8A5A00;
+  --font-display:'Playfair Display',Georgia,serif; --font-body:'Source Sans 3','Segoe UI',system-ui,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --paper:#151514; --surface:#1E1E1C; --ink-strong:#ECE9E2; --ink:#D6D6D0; --ink-muted:#ABABA3;
+  --rule:rgba(236,233,226,.16); --link:#7DA1D4; --seal:#7DA1D4; --on-seal:#151514; --hint:#232A36; --flag:#E0B25C; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --paper:#151514; --surface:#1E1E1C; --ink-strong:#ECE9E2; --ink:#D6D6D0; --ink-muted:#ABABA3;
+  --rule:rgba(236,233,226,.16); --link:#7DA1D4; --seal:#7DA1D4; --on-seal:#151514; --hint:#232A36; --flag:#E0B25C; color-scheme:dark}
+body{background:var(--paper);color:var(--ink);font-family:var(--font-body);font-size:14px;line-height:1.45;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:20px 40px}
+.wrap{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:14px;min-width:0}
+h1{font-family:var(--font-display);color:var(--seal);font-size:1.9rem;margin:0;text-wrap:balance}
+h2{font-family:var(--font-display);color:var(--ink-strong);font-size:1.15rem;margin:0}
+.mock{background:var(--hint);border:1px solid var(--rule);border-radius:6px;padding:8px 12px;font-size:.85rem;color:var(--ink-strong)}
+.views{display:flex;flex-wrap:wrap;gap:6px 22px;border-bottom:1px solid var(--rule);padding-bottom:8px}
+.views span{color:var(--ink-muted)} .views b{color:var(--ink-strong);border-bottom:2px solid var(--seal)}
+.bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center}
+input,textarea{font:inherit;font-size:.8125rem;color:var(--ink);background:var(--surface);border:1px solid var(--rule);border-radius:4px;padding:3px 7px;min-height:24px;box-sizing:border-box}
+#q{flex:1 1 260px;max-width:480px}
+button.w{background:none;border:0;padding:0 2px;font:inherit;color:var(--link);text-decoration:underline;text-underline-offset:3px;cursor:pointer;min-height:24px;min-width:24px}
+button.w[aria-pressed="true"]{color:var(--ink-strong);text-decoration-thickness:2px;font-weight:600}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+.filters{display:flex;flex-wrap:wrap;gap:4px 14px;font-size:.8125rem}
+.re{display:flex;flex-direction:column;gap:6px;max-width:760px}
+.re label{font-weight:600;color:var(--ink-strong);font-size:.8125rem}
+.re textarea{width:100%;resize:vertical}
+.row{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:center}
+.note{font-size:.85rem;color:var(--ink-strong);background:var(--surface);border-left:3px solid var(--seal);padding:6px 10px}
+.muted{color:var(--ink-muted);font-size:.8125rem}
+.sheet{overflow:auto;max-height:70vh;border:1px solid var(--rule);border-radius:6px;background:var(--surface);min-width:0}
+table{width:100%;min-width:1080px;border-collapse:collapse;table-layout:fixed;font-size:12px;line-height:1.3}
+th{position:sticky;top:0;background:var(--surface);text-align:left;padding:3px 6px;border-bottom:1px solid var(--rule);z-index:2}
+th{position:sticky}
+.grip{position:absolute;top:0;right:-12px;width:24px;height:100%;cursor:col-resize;z-index:3;touch-action:none}
+.grip::after{content:"";position:absolute;top:20%;bottom:20%;left:12px;width:1px;background:var(--rule)}
+.grip:hover::after,.grip:focus-visible::after{width:3px;left:11px;background:var(--link)}
+.grip:focus-visible{outline:2px solid var(--link);outline-offset:-2px}
+th button{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--ink-strong);text-decoration:underline;text-underline-offset:2px;cursor:pointer;text-align:left;min-height:24px}
+tr.cf td{position:sticky;top:34px;background:var(--surface);z-index:1;padding:5px 4px 4px}
+tr.cf input{width:100%;font-size:11px}
+td{padding:2px 6px;border-bottom:1px solid var(--rule);vertical-align:top;overflow-wrap:anywhere;color:var(--ink)}
+table.nowrap td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+table.nowrap tr.ed td{white-space:normal}
+td.t{color:var(--ink-strong)} td.n{text-align:right;font-variant-numeric:tabular-nums}
+.sub{display:block;color:var(--ink-muted);font-size:11px}
+.fl{color:var(--flag)}
+tr.ed td{background:var(--hint)}
+.edit{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;padding:4px 0}
+.edit label{display:flex;flex-direction:column;gap:2px;flex:1 1 200px;font-size:11px;color:var(--ink-muted)}
+section.next{display:flex;flex-direction:column;gap:8px;background:var(--surface);border:1px solid var(--rule);border-radius:6px;padding:12px 14px;max-width:960px}
+.fr{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px 12px;align-items:end}
+.fr label{display:flex;flex-direction:column;gap:2px;font-size:12px;color:var(--ink-muted)}
+.prev{font-size:12px;border-collapse:collapse;min-width:0;table-layout:auto}
+.prev td,.prev th{position:static;padding:2px 8px}
+del{color:var(--flag)} ins{color:var(--link);text-decoration:none;font-weight:600}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto}}
+</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Source+Sans+3:wght@400;600&display=swap">
+<div class="wrap">
+  <h1>Exhibits</h1>
+  <p class="mock">A mock of the Exhibits tab's new List view (PR #2648): your first 90 credentials A to Z, from the reference built 2026-11-01. Everything works on this page, and nothing saves. Comment anywhere on the page, or on a column, and I'll take it into the build.</p>
+  <nav class="views" aria-label="Views"><span>Review</span><span>Credentials</span><b aria-current="page">List 2,663</b><span>Rules</span></nav>
+  <div class="bar">
+    <input id="q" type="search" placeholder="Title, issuer, discipline, subject or CPL type" aria-label="Find in the list">
+    <div class="filters" role="group" aria-label="Show" id="filters"></div>
+  </div>
+  <div class="re">
+    <label for="cm">Your comments for the re-analysis</label>
+    <textarea id="cm" rows="3" placeholder="Observations, concerns or opportunities: what you were fixing, a pattern you noticed, titles that should fold, an issuer that looks wrong"></textarea>
+    <div class="row"><button class="w" id="re" type="button">Re-analyze my changes</button><span class="muted" id="reline"></span></div>
+  </div>
+  <p class="note" id="note" role="status" hidden></p>
+  <div class="row"><span class="muted" id="count"></span><button class="w" id="wrap" type="button" aria-pressed="false">Wrap text</button><button class="w" id="dl" type="button"></button></div>
+  <div class="sheet" role="region" aria-label="Every credential, A to Z" tabindex="0"><table id="tbl"></table></div>
+
+  <section class="next" aria-labelledby="fr-h">
+    <h2 id="fr-h">Proposed next: find and replace</h2>
+    <p class="muted">The Excel move you named. Pick a column, type what to find and what to put instead, and the preview lists every row it would change, each with its own check. Save writes only the checked rows; the re-analysis then looks at them.</p>
+    <div class="fr">
+      <label>Column<input id="fcol" value="Issuer" readonly></label>
+      <label>Find<input id="ffind" value="Proctored Testing Center"></label>
+      <label>Replace with<input id="frep" value="Local college (credit by exam)"></label>
+      <div><button class="w" id="fgo" type="button">Preview the changes</button></div>
+    </div>
+    <div id="fprev"></div>
+  </section>
+</div>
+<script>
+const ROWS = [{"t":"10-Key Data Entry","st":"Cohort","q":"suspect_course_as_exhibit","c":0.45,"ty":"Credit By Exam, Industry Certification","i":"Proctored Testing Center","ts":"","d":"Building Codes and Regulations","sj":"CNSR","cip":"52 Business, Management, Marketing, and Related Support Services","n":1,"m":2},{"t":"2-D Foundations","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"50 Visual and Performing Arts","n":0,"m":1},{"t":"2D CAD 1","st":"Person","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":0,"m":1},{"t":"2D Design","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"50 Visual and Performing Arts","n":0,"m":1},{"t":"2D Design Beginning","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"50 Visual and Performing Arts","n":0,"m":1},{"t":"3D Animation","st":"Person","q":"suspect_course_as_exhibit","c":0.6,"ty":"Industry Certification, Portfolio Review","i":"California Community Colleges","ts":"","d":"Multimedia","sj":"MULT","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":1,"m":1},{"t":"3D Animation Intermediate","st":"Person","q":"suspect_course_as_exhibit","c":0.65,"ty":"Industry Certification, Portfolio Review","i":"California Community Colleges","ts":"","d":"Multimedia","sj":"MULT","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":1,"m":1},{"t":"3D CAD and 3D Printing","st":"Person","q":"","c":0.7,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Drafting/CADD","sj":"DRAF","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":1,"m":1},{"t":"3D Digital Modeling","st":"Unreviewed","q":"","c":1,"ty":"","i":"Corona-Norco Unified School District","ts":"","d":"","sj":"","cip":"50 Visual and Performing Arts","n":0,"m":1},{"t":"3D Solid Modeling 1","st":"Person","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":0,"m":1},{"t":"AAG Industry Recognized Training","st":"Unreviewed","q":"","c":1,"ty":"","i":"","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":1},{"t":"ABA Bank Management","st":"Unreviewed","q":"","c":0.85,"ty":"Industry Certification","i":"American Bankers Association (ABA)","ts":"","d":"Business","sj":"BUSI","cip":"52 Business, Management, Marketing, and Related Support Services","n":3,"m":1},{"t":"Abutments","st":"Person","q":"","c":0.4,"ty":"Portfolio Review","i":"Southwest Carpenter And Affiliated Trade J.A.T.C.","ts":"Southwest Carpenter And Affiliated Trade J.A.T.C.","d":"Carpentry","sj":"CARP","cip":"46 Construction Trades","n":1,"m":1},{"t":"Academic Reading and Writing","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"23 English Language and Literature/Letters","n":0,"m":2},{"t":"Access Floor Systems","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"ACE Health Coach Certification","st":"Unreviewed","q":"","c":0.9,"ty":"Industry Certification","i":"American Council on Exercise (ACE)","ts":"","d":"Kinesiology","sj":"KINE","cip":"31 Parks, Recreation, Leisure, Fitness, and Kinesiology","n":3,"m":1},{"t":"Acoustical Blueprint Reading","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Acoustical Ceilings","st":"Person","q":"","c":0.75,"ty":"Portfolio Review","i":"Southwest Carpenter And Affiliated Trade J.A.T.C.","ts":"","d":"Industrial Technology","sj":"INDT","cip":"46 Construction Trades","n":1,"m":1},{"t":"Acoustical Soffits","st":"Person","q":"","c":0.4,"ty":"Portfolio Review","i":"Southwest Carpenter And Affiliated Trade J.A.T.C.","ts":"Southwest Carpenter And Affiliated Trade J.A.T.C.","d":"Industrial Technology","sj":"INDT","cip":"46 Construction Trades","n":1,"m":1},{"t":"Acrylic Painting 1","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"50 Visual and Performing Arts","n":0,"m":1},{"t":"ACSM Certified Exercise Physiologist","st":"Unreviewed","q":"","c":0.85,"ty":"Industry Certification","i":"American College of Sports Medicine (ACSM)","ts":"","d":"Kinesiology","sj":"KINE","cip":"31 Parks, Recreation, Leisure, Fitness, and Kinesiology","n":3,"m":1},{"t":"ACSM Exercise Physiologist and NSCA Certified Strength and Conditioning Specialist (CSCS)","st":"Unreviewed","q":"","c":0.6,"ty":"Industry Certification","i":"American College of Sports Medicine (ACSM) / National Strength and Conditioning Association (NSCA)","ts":"","d":"Kinesiology","sj":"KINE","cip":"31 Parks, Recreation, Leisure, Fitness, and Kinesiology","n":3,"m":1},{"t":"Acute Care Nursing Assistant","st":"Unreviewed","q":"","c":0.75,"ty":"Credit By Exam","i":"California Department of Public Health (CDPH)","ts":"","d":"Nursing","sj":"NRSR","cip":"51 Health Professions and Related Programs","n":1,"m":1},{"t":"Acute Medical/Surgical and Nursing of the Childbearing Family","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"51 Health Professions and Related Programs","n":0,"m":1},{"t":"Acute Medical/Surgical Nursing and Mental Health Nursing","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"51 Health Professions and Related Programs","n":0,"m":1},{"t":"Administration of Justice","st":"Person","q":"","c":0.45,"ty":"Credit By Exam, Portfolio Review","i":"Lemoore High School","ts":"Lemoore High School","d":"","sj":"","cip":"43 Homeland Security, Law Enforcement, Firefighting and Related Protective Services","n":4,"m":3},{"t":"Administrative Professional","st":"Person","q":"","c":0.8,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Office Technologies","sj":"BSOT","cip":"52 Business, Management, Marketing, and Related Support Services","n":1,"m":1},{"t":"Adobe Certified Professional — Acrobat","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Adobe","ts":"","d":"Building Codes and Regulations","sj":"CNSR","cip":"52 Business, Management, Marketing, and Related Support Services","n":1,"m":1},{"t":"Adobe Certified Professional — Visual Design (Photoshop)","st":"Unreviewed","q":"","c":0.95,"ty":"Industry Certification","i":"Adobe","ts":"","d":"Multimedia","sj":"MULT, PHOT","cip":"10 Communications Technologies/Technicians and Support Services","n":2,"m":3},{"t":"Adobe Illustrator 2","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"50 Visual and Performing Arts","n":0,"m":1},{"t":"Adobe InDesign 1","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"50 Visual and Performing Arts","n":0,"m":1},{"t":"Adobe Photoshop 1","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"50 Visual and Performing Arts","n":0,"m":1},{"t":"Adult CPR & Standard First Aid","st":"Unreviewed","q":"","c":0.7,"ty":"","i":"American Red Cross / American Heart Association (varies)","ts":"","d":"","sj":"","cip":"51 Health Professions and Related Programs","n":0,"m":1},{"t":"Adult Health Care 1","st":"Person","q":"","c":0.88,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Nursing","sj":"NRSR","cip":"51 Health Professions and Related Programs","n":1,"m":1},{"t":"Adult Health Care 2","st":"Person","q":"","c":0.88,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Nursing","sj":"NRSR","cip":"51 Health Professions and Related Programs","n":1,"m":1},{"t":"Adult Health Care 3","st":"Person","q":"","c":0.88,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Nursing","sj":"NRSR","cip":"51 Health Professions and Related Programs","n":1,"m":1},{"t":"Adult Health Care 4","st":"Person","q":"","c":0.88,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Nursing","sj":"NRSR","cip":"51 Health Professions and Related Programs","n":1,"m":1},{"t":"Adv ESL: Writing/Grammar","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"32 Basic Skills and Developmental/Remedial Education","n":0,"m":1},{"t":"Advanced Acoustical Ceiling Installation","st":"Person","q":"","c":0.55,"ty":"Portfolio Review","i":"Southwest Carpenter And Affiliated Trade J.A.T.C.","ts":"Southwest Carpenter And Affiliated Trade J.A.T.C.","d":"Carpentry","sj":"CARP","cip":"46 Construction Trades","n":1,"m":1},{"t":"Advanced Acoustical Ceiling Layout","st":"Person","q":"","c":0.55,"ty":"Portfolio Review","i":"Southwest Carpenter And Affiliated Trade J.A.T.C.","ts":"Southwest Carpenter And Affiliated Trade J.A.T.C.","d":"Carpentry","sj":"CARP","cip":"46 Construction Trades","n":1,"m":1},{"t":"Advanced Agricultural Welding","st":"Person","q":"","c":0.7,"ty":"Credit By Exam, Industry Certification, Military","i":"California Community Colleges","ts":"","d":"Welding","sj":"WELD","cip":"47 Mechanic and Repair Technologies/Technicians","n":1,"m":3},{"t":"Advanced Architecture","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"04 Architecture and Related Services","n":0,"m":1},{"t":"Advanced AutoCAD","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification, Portfolio Review","i":"Autodesk","ts":"","d":"Architecture","sj":"ARCH","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":1,"m":1},{"t":"Advanced Automatic Finishing Tools","st":"Person","q":"","c":0.5,"ty":"Portfolio Review","i":"Southwest Carpenter And Affiliated Trade J.A.T.C.","ts":"Southwest Carpenter And Affiliated Trade J.A.T.C.","d":"Industrial Technology","sj":"INDT","cip":"46 Construction Trades","n":1,"m":1},{"t":"Advanced Blueprint Reading for Mill Cabinet","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Advanced Cabinet Making","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Advanced CAD Modeling and Applications","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":0,"m":3},{"t":"Advanced Commercial Framing","st":"Person","q":"","c":0.55,"ty":"Portfolio Review","i":"Southwest Carpenter And Affiliated Trade J.A.T.C.","ts":"Southwest Carpenter And Affiliated Trade J.A.T.C.","d":"Carpentry","sj":"CARP","cip":"46 Construction Trades","n":1,"m":1},{"t":"Advanced Construction Techniques","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Industrial Technology","sj":"INDT","cip":"","n":1,"m":1},{"t":"Advanced Desserts and Pastry/Chocolate/Sugar","st":"Person","q":"","c":0.75,"ty":"Portfolio Review","i":"California Community Colleges","ts":"","d":"Culinary Arts/Food Technology","sj":"CULN","cip":"19 Family and Consumer Sciences/Human Sciences","n":1,"m":1},{"t":"Advanced Drivability and Onboard Diagnostics","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":1},{"t":"Advanced Electrical and Electronic Systems","st":"Unreviewed","q":"","c":1,"ty":"","i":"National Institute for Automotive Service Excellence (ASE)","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":1},{"t":"Advanced Firefighter Training (S-131)","st":"Unreviewed","q":"","c":1,"ty":"","i":"National Wildfire Coordinating Group (NWCG)","ts":"","d":"","sj":"","cip":"43 Homeland Security, Law Enforcement, Firefighting and Related Protective Services","n":0,"m":1},{"t":"Advanced Formwork","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Advanced Grid Ceilings","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Advanced Lab Scope and Waveform Diagnosis","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":1},{"t":"Advanced Law Enforcement","st":"Person","q":"","c":0.7,"ty":"Credit By Exam","i":"Fontana High School","ts":"Fontana High School","d":"Administration of Justice","sj":"CRIM","cip":"","n":4,"m":1},{"t":"Advanced Machinery Operation","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Advanced Medical-Surgical Nursing 1","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"51 Health Professions and Related Programs","n":0,"m":1},{"t":"Advanced Medical-Surgical Nursing II Preceptorship","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"51 Health Professions and Related Programs","n":0,"m":1},{"t":"Advanced Pile Driving Land and Water","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Advanced Placement in Nursing","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"51 Health Professions and Related Programs","n":0,"m":1},{"t":"Advanced Project for Mill Cabinet","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Advanced Scan Tool Diagnosis","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":1},{"t":"Advanced Structural Blueprints and Bridge Building","st":"Unreviewed","q":"","c":0.7,"ty":"Industry Certification","i":"Carpenters Training Committee for Northern California (CTCNC)","ts":"Carpenters Training Committee for Northern California (CTCNC)","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Advertising for Small Business","st":"Person","q":"","c":0.85,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Business","sj":"BUSI","cip":"52 Business, Management, Marketing, and Related Support Services","n":1,"m":1},{"t":"Aerial Mapping and Photogrammetry","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":2},{"t":"Aerial Work Platform Operator Certification","st":"Cohort","q":"","c":0.7,"ty":"Standardized Assessment","i":"California Community Colleges","ts":"","d":"Construction Technology","sj":"CNST","cip":"","n":1,"m":1},{"t":"Aerospace Engineering","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":0,"m":1},{"t":"After Effects","st":"Person","q":"","c":0.85,"ty":"Credit By Exam, Portfolio Review","i":"California Community Colleges","ts":"","d":"Multimedia","sj":"MULT","cip":"10 Communications Technologies/Technicians and Support Services","n":1,"m":2},{"t":"Agricultural Accounting","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":0,"m":1},{"t":"Agricultural and Industrial Technical Skills","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":1},{"t":"Agricultural Computer Applications","st":"Person","q":"","c":0.78,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":1,"m":2},{"t":"Agricultural Safety","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":0,"m":1},{"t":"Agricultural Systems","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":0,"m":1},{"t":"Agricultural Welding","st":"Person","q":"suspect_course_as_exhibit","c":0.78,"ty":"Credit By Exam, Industry Certification","i":"California Community Colleges","ts":"","d":"Welding","sj":"WELD","cip":"47 Mechanic and Repair Technologies/Technicians","n":1,"m":2},{"t":"Agricultural Work Experience","st":"Person","q":"suspect_course_as_exhibit","c":0.7,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":0,"m":2},{"t":"Agriculture Accounting","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":0,"m":1},{"t":"Agriculture Economics","st":"Person","q":"","c":0.78,"ty":"Credit By Exam, Portfolio Review","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":1,"m":3},{"t":"Agriculture Education Early Field Experience","st":"Person","q":"suspect_course_as_exhibit","c":0.75,"ty":"Credit By Exam, Industry Certification","i":"California Community Colleges","ts":"","d":"Agriculture","sj":"AGPS","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":1,"m":2},{"t":"Agriculture Occupational Safety","st":"Cohort","q":"suspect_course_as_exhibit","c":0.78,"ty":"Credit By Exam, Industry Certification","i":"U.S. Occupational Safety and Health Administration (OSHA)","ts":"","d":"Industrial Safety","sj":"OSHA","cip":"47 Mechanic and Repair Technologies/Technicians","n":1,"m":2},{"t":"Agriculture Safety","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":1},{"t":"Agriculture Technical Literacy","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":0,"m":1},{"t":"Agriculture, Environment and Society","st":"Cohort","q":"","c":0.78,"ty":"Credit By Exam","i":"U.S. Occupational Safety and Health Administration (OSHA)","ts":"","d":"Agriculture","sj":"AGRI","cip":"01 Agricultural/Animal/Plant/Veterinary Science and Related Fields","n":1,"m":1},{"t":"AI (Artificial Intelligence) in the Workplace","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"11 Computer and Information Sciences and Support Services","n":0,"m":1},{"t":"Air Conditioning Fundamentals","st":"Unreviewed","q":"","c":1,"ty":"","i":"California Community Colleges","ts":"","d":"","sj":"","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":0,"m":1},{"t":"Air Conditioning Intermediate","st":"Person","q":"","c":0.65,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Air Conditioning, Refrigeration, Heating","sj":"HVAC","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":1,"m":1},{"t":"Air Conditioning Principles","st":"Person","q":"","c":0.85,"ty":"Credit By Exam","i":"California Community Colleges","ts":"","d":"Air Conditioning, Refrigeration, Heating","sj":"HVAC","cip":"15 Engineering/Engineering-Related Technologies/Technicians","n":1,"m":1},{"t":"Air, Moisture, and Thermal Barriers","st":"Person","q":"","c":0.8,"ty":"Portfolio Review","i":"California Community Colleges","ts":"","d":"Industrial Technology","sj":"INDT","cip":"46 Construction Trades","n":1,"m":1},{"t":"Aircraft and Engines","st":"Person","q":"","c":0.8,"ty":"","i":"Federal Aviation Administration (FAA)","ts":"","d":"","sj":"","cip":"47 Mechanic and Repair Technologies/Technicians","n":0,"m":1}];
+const COLS = [
+  ["Title","t",23],["Status","st",9],["CPL types","ty",10],["Issuer","i",12],["Training sites","ts",10],
+  ["Discipline (M-IDs)","d",11],["Common SUBJ","sj",6],["CIP family (from TOP)","cip",9],["Colleges","n",5,1],["MAP titles","m",5,1]];
+const S = { widths:null, wrap:false, q:"", f:"", sort:[0,1], cf:{}, edit:-1, changed:new Set(), note:"" };
+const FIL = [["","All"],["un","Unreviewed"],["low","Low-confidence title"],["fl","Flagged"],["bare","No articulation"],["ch","Changed this visit"]];
+const $ = (id) => document.getElementById(id);
+const status = (r) => r.st + (r.q ? "; " + r.q.replace(/_/g, " ") : "") + (r.c != null && r.c < 0.6 ? "; title " + Math.round(r.c * 100) + "%" : "");
+const val = (r, k) => k === "st" ? status(r) : r[k];
+function rows() {
+  const q = S.q.trim().toLowerCase();
+  let out = ROWS.map((r, i) => Object.assign({ _i: i }, r)).filter((r) => {
+    if (S.f === "un" && r.st !== "Unreviewed") return false;
+    if (S.f === "low" && !(r.c != null && r.c < 0.6)) return false;
+    if (S.f === "fl" && !r.q) return false;
+    if (S.f === "bare" && r.n) return false;
+    if (S.f === "ch" && !S.changed.has(r._i)) return false;
+    for (const k in S.cf) { const w = S.cf[k].trim().toLowerCase(); if (w && String(val(r, COLS[k][1])).toLowerCase().indexOf(w) < 0) return false; }
+    return !q || [r.t, r.i, r.ts, r.ty, r.d, r.sj, r.q].join(" ").toLowerCase().includes(q);
+  });
+  const [ci, dir] = S.sort, c = COLS[ci];
+  out.sort((a, b) => {
+    let x = val(a, c[1]), y = val(b, c[1]);
+    if (c[3]) return dir * (x - y) || a.t.localeCompare(b.t);
+    x = String(x || ""); y = String(y || "");
+    if ((!x || !y) && x !== y) return x ? -1 : 1;
+    return dir * x.toLowerCase().localeCompare(y.toLowerCase()) || a.t.localeCompare(b.t);
+  });
+  return out;
+}
+function esc(s) { return String(s == null ? "" : s).replace(/[&<>"]/g, (m) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[m]); }
+function draw(keepFocus) {
+  $("filters").innerHTML = FIL.map((f) => `<button class="w" type="button" data-f="${f[0]}" aria-pressed="${S.f === f[0]}">${f[1]}</button>`).join("");
+  const R = rows();
+  $("count").textContent = R.length + " credentials (of 90 in this mock; 2,663 in the reference)";
+  $("dl").textContent = "Download these " + R.length + " as a spreadsheet";
+  $("reline").textContent = S.changed.size ? S.changed.size + " changed this visit go with it" : "With no change this visit, it looks over everything you changed since its last pass";
+  const [ci, dir] = S.sort;
+  const head = "<colgroup>" + COLS.map((c, i) => `<col style="width:${S.widths ? S.widths[i] + "px" : c[2] + "%"}">`).join("") + `<col style="width:${S.widths ? S.widths[COLS.length] + "px" : "5%"}"></colgroup><thead><tr>`
+    + COLS.map((c, i) => `<th scope="col" aria-sort="${ci === i ? (dir > 0 ? "ascending" : "descending") : "none"}"><button type="button" data-s="${i}">${c[0]}${ci === i ? (c[3] ? (dir > 0 ? ", low to high" : ", high to low") : (dir > 0 ? ", A to Z" : ", Z to A")) : ""}</button><span class="grip" role="separator" tabindex="0" aria-orientation="vertical" aria-label="Resize ${c[0]}" aria-valuemin="48" aria-valuemax="1200" aria-valuenow="${S.widths ? S.widths[i] : 120}" data-g="${i}"></span></th>`).join("")
+    + '<th scope="col"><span class="muted">Edit</span></th></tr><tr class="cf">'
+    + COLS.map((c, i) => `<td><input type="search" id="cf${i}" data-cf="${i}" placeholder="Filter" aria-label="Filter ${c[0]}" value="${esc(S.cf[i] || "")}"></td>`).join("") + "<td></td></tr></thead>";
+  const body = R.map((r) => {
+    let t = `<td class="t" title="${esc(r.t)}">${esc(r.t)}${S.changed.has(r._i) ? '<span class="sub">changed this visit</span>' : ""}</td>`;
+    const tds = COLS.slice(1).map((c) => c[3] ? `<td class="n">${r[c[1]]}</td>` : `<td title="${esc(val(r, c[1]))}"${c[1] === "st" && (r.q || (r.c != null && r.c < 0.6)) ? ' class="fl"' : ""}>${esc(val(r, c[1]))}</td>`).join("");
+    let tr = `<tr>${t}${tds}<td><button class="w" type="button" data-e="${r._i}" aria-label="Edit ${esc(r.t)}">Edit</button></td></tr>`;
+    if (S.edit === r._i) tr += `<tr class="ed"><td colspan="11"><div class="edit"><label>Title<input id="et" value="${esc(r.t)}"></label><label>Issuer<input id="ei" value="${esc(r.i)}"></label><label>Training sites, separated by ;<input id="es" value="${esc(r.ts)}"></label><div class="row"><button class="w" type="button" id="esave">Save</button><button class="w" type="button" id="ecan">Cancel</button></div></div></td></tr>`;
+    return tr;
+  }).join("");
+  $("tbl").innerHTML = head + "<tbody>" + body + "</tbody>";
+  $("tbl").className = S.wrap ? "" : "nowrap";
+  $("tbl").style.width = S.widths ? S.widths.reduce((a, w) => a + w, 0) + "px" : "";
+  $("wrap").setAttribute("aria-pressed", String(S.wrap));
+  const n = $("note"); n.hidden = !S.note; n.textContent = S.note;
+  if (keepFocus) { const el = $(keepFocus); if (el) { el.focus(); try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) {} } }
+}
+document.addEventListener("click", (e) => {
+  const b = e.target.closest("button"); if (!b) return;
+  if (b.dataset.f != null) { S.f = b.dataset.f; draw(); }
+  else if (b.dataset.s != null) { const i = +b.dataset.s; S.sort = [i, S.sort[0] === i ? -S.sort[1] : 1]; draw(); }
+  else if (b.dataset.e != null) { S.edit = +b.dataset.e; S.note = ""; draw("et"); }
+  else if (b.id === "ecan") { S.edit = -1; draw(); }
+  else if (b.id === "wrap") { S.wrap = !S.wrap; draw(); }
+  else if (b.id === "esave") {
+    const r = ROWS[S.edit], t = $("et").value.trim(), i = $("ei").value.trim(), s = $("es").value.trim(), was = r.t;
+    const parts = [];
+    if (t && t !== r.t) parts.push("the title (a rename request: the daily run checks it for a collision, and a reviewed apply renames it)");
+    if (i !== r.i) parts.push("the issuer"); if (s !== r.ts) parts.push("the training sites");
+    r.t = t || r.t; r.i = i; r.ts = s; if (parts.length) S.changed.add(S.edit); S.edit = -1;
+    S.note = parts.length ? "In the real view this saves " + parts.join(", ") + " for “" + was + "”. This mock saves nothing." : "Nothing changed.";
+    draw();
+  } else if (b.id === "re") {
+    const c = $("cm").value.trim();
+    S.note = "In the real view this queues one request with " + (S.changed.size ? S.changed.size + " changed credential(s)" : "no change this visit") + (c ? " and your comments" : "") + ". The CPL queue routine's first run of the night runs the code checks (a rename that collides, an issuer spelled two ways, a credential with no CPL type) and Jev's two questions (the same credential under two names? an issuer that is really a training site?), and its findings come back to you. This mock sends nothing.";
+    draw();
+  } else if (b.id === "dl") { S.note = "In the real view this downloads the " + rows().length + " rows shown, filtered and sorted, as a CSV Excel opens. A mock page cannot hand you a file."; draw(); }
+  else if (b.id === "fgo") {
+    const col = "i", f = $("ffind").value, rp = $("frep").value;
+    const hits = ROWS.map((r, i) => [r, i]).filter(([r]) => f && String(r[col]).includes(f));
+    $("fprev").innerHTML = hits.length ? `<p class="muted">${hits.length} row(s) would change. Uncheck any to leave alone.</p><div class="sheet" style="max-height:none"><table class="prev"><thead><tr><th scope="col">Keep</th><th scope="col">Credential</th><th scope="col">Issuer now and after</th></tr></thead><tbody>`
+      + hits.map(([r, i]) => `<tr><td><input type="checkbox" checked aria-label="Change ${esc(r.t)}" id="fx${i}"></td><td>${esc(r.t)}</td><td><del>${esc(r.i)}</del> <ins>${esc(String(r.i).split(f).join(rp))}</ins></td></tr>`).join("")
+      + `</tbody></table></div><div class="row"><button class="w" type="button" disabled>Save the checked rows (not in the mock)</button></div>` : '<p class="muted">No row in this mock matches.</p>';
+  }
+});
+function fixW() {
+  if (!S.widths) S.widths = Array.from(document.querySelectorAll("#tbl col")).map((c) => Math.round(c.getBoundingClientRect().width) || 120);
+  return S.widths;
+}
+function setW(i, w) {
+  const W = fixW(); W[i] = Math.max(48, Math.round(w));
+  const col = document.querySelectorAll("#tbl col")[i]; if (col) col.style.width = W[i] + "px";
+  $("tbl").style.width = W.reduce((a, x) => a + x, 0) + "px";
+}
+document.addEventListener("pointerdown", (e) => {
+  const g = e.target.closest(".grip"); if (!g) return;
+  e.preventDefault();
+  const i = +g.dataset.g, x0 = e.clientX, w0 = fixW()[i];
+  const mv = (ev) => setW(i, w0 + ev.clientX - x0);
+  const up = () => { document.removeEventListener("pointermove", mv); document.removeEventListener("pointerup", up); };
+  document.addEventListener("pointermove", mv); document.addEventListener("pointerup", up);
+});
+document.addEventListener("keydown", (e) => {
+  const g = e.target.closest && e.target.closest(".grip"); if (!g) return;
+  const i = +g.dataset.g, W = fixW();
+  if (e.key === "ArrowRight") setW(i, W[i] + 24); else if (e.key === "ArrowLeft") setW(i, W[i] - 24); else if (e.key === "Home") setW(i, 48); else return;
+  e.preventDefault();
+});
+document.addEventListener("input", (e) => {
+  if (e.target.id === "q") { S.q = e.target.value; draw("q"); }
+  else if (e.target.dataset.cf != null) { S.cf[e.target.dataset.cf] = e.target.value; draw(e.target.id); }
+});
+draw();
+</script>

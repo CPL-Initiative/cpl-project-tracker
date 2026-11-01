@@ -1330,7 +1330,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 100,
+     "line": 110,
      "tabs": [
       "exhibits"
      ]
@@ -1598,7 +1598,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1838
+     "line": 1858
     }
    ],
    "main_committers": []
@@ -1831,7 +1831,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 121,
+     "line": 131,
      "tabs": [
       "exhibits"
      ]
@@ -2151,7 +2151,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 889
+     "line": 909
     }
    ],
    "main_committers": []
@@ -2170,7 +2170,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1234
+     "line": 1254
     },
     {
      "id": "module:college_briefing.js",
@@ -4112,7 +4112,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1512
+     "line": 1532
     }
    ],
    "main_committers": []
@@ -5147,7 +5147,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1403
+     "line": 1423
     },
     {
      "id": "module:admin.js",
@@ -6022,7 +6022,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1777
+     "line": 1797
     },
     {
      "id": "module:college_briefing.js",
@@ -6216,7 +6216,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 949
+     "line": 969
     },
     {
      "id": "module:cpl_funding.js",
@@ -9532,7 +9532,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 119,
+     "line": 129,
      "tabs": [
       "exhibits"
      ]
@@ -9572,7 +9572,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 120,
+     "line": 130,
      "tabs": [
       "exhibits"
      ]
@@ -12129,7 +12129,18 @@
    ]
   },
   "file:kb/cred_rename_dryrun/collisions.json": {
-   "consumers": [],
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 107,
+     "tabs": [
+      "exhibits"
+     ]
+    }
+   ],
    "producers": [
     {
      "by": "workflow:daily-dashboard.yml",
@@ -13591,7 +13602,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 106,
+     "line": 116,
      "tabs": [
       "exhibits"
      ]
@@ -22838,7 +22849,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 331,
+     "line": 341,
      "tabs": [
       "exhibits"
      ]
@@ -24814,7 +24825,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 382,
+     "line": 392,
      "tabs": [
       "exhibits"
      ]
@@ -24824,7 +24835,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 438,
+     "line": 448,
      "tabs": [
       "exhibits"
      ]

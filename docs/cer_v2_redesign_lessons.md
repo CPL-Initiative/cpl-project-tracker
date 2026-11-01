@@ -819,3 +819,36 @@ Sheet 148's ruling block moved here verbatim on 2026-11-01, when the CLEP fold t
 calls; `cpl_memory` `sam-sheet-148-rulings-2026-10-31`): the public page is the **Credential Catalog**, linked from the
 Library and the public header (SkyTwinberry); the CER and EACR tabs are retired. Sam had hidden both `cobi_nav` rows at
 23:51Z 2026-10-30; they still open at `#credential-reference` and `#exhibit-adoption`, and their files stay.
+
+## The List view and the re-analysis request (S540 SkyBunchberry, 2026-11-01)
+
+Sam, 2026-11-01: *"can you build me a simple exhibit view in small font, alpha order with tight margins and passing. I
+want to be able to scan and correct directly on the view exhibit titles next to their key information, such as status,
+CIP title, Subject, Discipline, issuing agency, CPL types...and any other data you think might help. advice and
+pushback welcome! If you could embed a button that fired an re-analysis routine that you and JEV work together on,
+looking at any changes I make and thinking of how that affects the canonical exhibits ... Use Fable as advisor"*; then
+*"new view should be part of our new Exhibit procedures on Catalog Commons"* and *"add in a comments box to the
+reanalysis routine where I can add my observations or concerns or opportunities to better inform the reanalysis"*.
+
+- **Fable's pushback, taken.** No TOP column (Rule 7). No credential carries a CIP code, so the column is *CIP family
+  (from TOP)*, read-only. Discipline is the M-IDs' modal one, read-only. A title edit saves `unified_title_override`, the
+  rename the reference already reads; the daily dry-run checks collisions and a reviewed apply re-keys, so no second
+  rename vocabulary. Filters for the blanks: 1,482 of 2,663 credentials are unreviewed and 1,067 have no articulation.
+- **Built** (`exhibits.js`, view *List*, `#exhibits/list`): 12px rows, A to Z by current title, 400 at a time, sticky
+  header; Edit opens title, issuer and training sites on the row; a rename shows *pending the apply*, a collision from
+  `kb/cred_rename_dryrun/collisions.json` shows *collides with*. *Re-analyze my changes* writes
+  `_EXHIBIT_REANALYSIS::<when>` (`exhibit_reanalysis_request`: the credentials changed this visit and Sam's comments).
+  Guard `tests/exhibits_list.test.js` (17); `a11y.config.js` `exhibits-list`, light and dark pass.
+- **Jev's scope** (Fable): two questions with a verifiable answer, the same credential under two names (the 0.85
+  gate) and an issuer that is really a training site. Code checks the rest. Never units, TOP, discipline or title
+  quality.
+- **The spreadsheet moves** (Sam, the same hour: *"sometimes I miss good ol' Excel, where I can quickly filter any
+  column, sort any way ... use find and replace to fix things on the fly"*; braindump
+  `braindump-2026-11-01-1545-excel-freedom-and-ceding-control`). Every header sorts (A to Z, then Z to A; blanks
+  last; numbers low to high), every column has its own filter, and *Download these N as a spreadsheet* writes the
+  filtered, sorted rows as a CSV Excel opens. One accessor per column serves cell, filter, sort and download.
+  Find and replace, with a preview of every change before it saves, is the next build.
+- **Next builds:** the routine's pass (scheduled_sessions step 9; the code checks first), the Jev runner job, and the
+  findings panel in the List view with Accept and Dismiss. Until then findings reach Sam on the standing sheet.
+- **Lesson.** The a11y seed must wait for the control it clicks, not for the module's data: the view row draws a
+  moment after the queue loads, and a click before it finds nothing.

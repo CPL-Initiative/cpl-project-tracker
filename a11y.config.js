@@ -748,6 +748,26 @@ async function seedExhibitsCredentials(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
+// editor open, so the table, its sticky header and the editor's boxes are measured.
+async function seedExhibitsList(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits") location.hash = "exhibits"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => Array.prototype.some.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+    (x) => x.textContent.indexOf("List") === 0), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const b = Array.prototype.filter.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+      (x) => x.textContent.indexOf("List") === 0)[0];
+    if (b) b.click();
+  });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-l-table tbody tr"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const b = document.querySelector("#exhibits-root .exh-l-table button.exh-w");
+    if (b) b.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds the Records view with its first filter open (S391 UI pass): the dropdowns of #2121
 // (Sam, 2026-10-14) open a list of checkboxes no other target paints.
 async function seedFilterOpen(page, theme) {
@@ -3182,6 +3202,22 @@ module.exports = {
     routes: [{ hash: "exhibits", name: "credentials" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedExhibitsCredentials(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-list": {
+    file: "index.html",
+    title: "Exhibits: List, every credential A to Z, one editor open",
+    routes: [{ hash: "exhibits", name: "list" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedExhibitsList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-list-dark": {
+    file: "index.html",
+    title: "Exhibits: List, dark",
+    routes: [{ hash: "exhibits", name: "list-dark" }],
+    widths: [390, 768, 1024, 1440],
+    seed: (page) => seedExhibitsList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-credentials-dark": {
