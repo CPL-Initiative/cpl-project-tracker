@@ -397,7 +397,7 @@ def cmd_apply(a) -> int:
     before = _rest("/rest/v1/college_contacts_harvest?select=*&college=in.(" + urllib.parse.quote(cols) + ")")
     result = _rest("/rest/v1/rpc/college_contacts_harvest_apply",
                    {"p": {"run": run, "colleges": [] if doc.get("partial") else doc["colleges"],
-                          "rows": doc["rows"]}})
+                          "partial": bool(doc.get("partial")), "rows": doc["rows"]}})
     os.makedirs(RECEIPTS, exist_ok=True)
     receipt = {"run": run, "applied_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                "github_run": os.environ.get("GITHUB_RUN_ID"), "result": result,
