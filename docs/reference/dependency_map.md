@@ -581,7 +581,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_commons_status.py`, `kb/_build_cr_reference.py`, `kb/_jev_adjudicate.py`, `kb/_typesafe_cr_trial.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun` | none found | committed by: `cred-rename-apply.yml` |
 | `kb/cred_rename_dryrun/alias_map.json` | workflows: `cred-rename-apply.yml` | committed by: `daily-dashboard.yml` |
-| `kb/cred_rename_dryrun/collisions.json` | none found | committed by: `daily-dashboard.yml` |
+| `kb/cred_rename_dryrun/collisions.json` | tabs: `exhibits` | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun/report.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_out` | none found | committed by: `cred-rename-apply.yml` |
 | `kb/credential_merges.json` | scripts: `kb/_clep_fold_apply.py`, `kb/_ib_fold_apply.py`, `kb/_merge_credentials.py` | — |

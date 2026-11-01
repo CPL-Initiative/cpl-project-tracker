@@ -95,6 +95,13 @@
   var FIELD_CRED_ISSUER = "issuing_agency_override";
   var FIELD_CRED_TRAINER = "training_agency_override";
   var FIELD_CRED_SITES = "training_sites_override";
+  // The List view (Sam, 2026-11-01): a title edited there saves the rename field the reference already reads
+  // (credential_reference.js: display-only until the daily dry-run projects it and the reviewed apply re-keys).
+  var FIELD_CRED_TITLE = "unified_title_override";
+  // Re-analyze my changes: one request row a press, worked by the CPL queue routine (scheduled_sessions step 9).
+  var REANALYSIS_PREFIX = "_EXHIBIT_REANALYSIS::";
+  var FIELD_REANALYSIS = "exhibit_reanalysis_request";
+  var COLLISIONS_URL = "kb/cred_rename_dryrun/collisions.json";
   var CRED_PAGE = 50;
   var IN_REF = "In the reference";
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
@@ -1312,7 +1319,7 @@
     var PAGE = 1000, key = anonKey();
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
-      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES].join(",") + ")"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE].join(",") + ")"
       + "&order=course_id.asc,field.asc";
     var out = [];
     function page(from) {
@@ -1330,6 +1337,7 @@
         if (row.field === FIELD_CRED_ISSUER) o.issuer = row.value || "";
         else if (row.field === FIELD_CRED_TRAINER) { o.trainer = row.value; o.trainerAt = row.reviewed_at || ""; }
         else if (row.field === FIELD_CRED_SITES) { o.sites = row.value || ""; o.sitesAt = row.reviewed_at || ""; }
+        else if (row.field === FIELD_CRED_TITLE) o.title = row.value || "";
       });
       state.cs.overlay = m; state.cs.overlayOk = true;
     }).catch(function () { state.cs.overlayOk = false; });
@@ -1703,6 +1711,271 @@
         blurb: "A reviewer's sign-in saves a credential's issuer and training sites.", returnTab: "exhibits" });
     }
   }
+  /* ── List: every credential on one sheet, A to Z (Sam, 2026-11-01) ──
+     "a simple exhibit view in small font, alpha order with tight margins and padding. I want to be able to scan
+     and correct directly on the view exhibit titles next to their key information, such as status, CIP title,
+     Subject, Discipline, issuing agency, CPL types". Fable advised the columns (S540, docs/cer_procedures lessons):
+     no TOP column (Rule 7: TOP is last-in-line), the CIP field named as a family read from TOP, never a code;
+     the discipline is the M-IDs' own. Edit saves what the credential panel saves (issuer, training sites) and the
+     rename field the reference already reads (unified_title_override; the daily dry-run checks collisions and a
+     reviewed apply re-keys). Re-analyze my changes writes one request row the CPL queue routine works. */
+  var LIST_LIMIT = 400;
+  var LIST_FILTERS = [
+    ["", "All"],
+    ["unreviewed", "Unreviewed"],
+    ["low", "Low-confidence title"],
+    ["flagged", "Flagged"],
+    ["bare", "No articulation"],
+    ["changed", "Changed this visit"]
+  ];
+  function listState() {
+    return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
+      busy: false, collisions: null });
+  }
+  function listStatus(r) {
+    var by = String(r.curated_by || "");
+    if (!r.curated_at && !by) return "Unreviewed";
+    return /@bot$/.test(by) ? "Cohort" : "Person";
+  }
+  function listSubj(r) {
+    var out = [];
+    (r.articulations || []).forEach(function (a) {
+      var p = String(a.cid || "").split(" ")[0];
+      if (a.sys === "M-ID" && p && out.indexOf(p) === -1) out.push(p);
+    });
+    return out.join(", ");
+  }
+  function listCip(r) {
+    var ad = credAdopt(r);
+    if (!ad || !ad.s) return "";
+    var name = ((state.cs.adopt && state.cs.adopt.cip_sectors) || {})[ad.s];
+    return ad.s + (name ? " " + name : "");
+  }
+  function listTitle(r) {
+    var o = state.cs.overlay[r.ut] || {};
+    return o.title ? o.title : credName(r);
+  }
+  function listCollision(r) {
+    var c = listState().collisions;
+    if (!c) return null;
+    return c.filter(function (x) { return x.old_unified_title === r.ut; })[0] || null;
+  }
+  function listRows() {
+    var L = listState(), cs = state.cs, q = L.q.trim().toLowerCase();
+    var rows = cs.rows.slice().sort(function (a, b) { return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase()); });
+    return rows.filter(function (r) {
+      if (L.f === "unreviewed" && listStatus(r) !== "Unreviewed") return false;
+      if (L.f === "low" && !(r.conf_title != null && r.conf_title < 0.6)) return false;
+      if (L.f === "flagged" && !r.quality_flag) return false;
+      if (L.f === "bare" && (r.articulations || []).length) return false;
+      if (L.f === "changed" && L.changed.indexOf(r.ut) === -1) return false;
+      if (!q) return true;
+      var cur = credCurrent(r);
+      var hay = [r.ut, listTitle(r), cur.issuer, cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
+        r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ").toLowerCase();
+      return hay.indexOf(q) !== -1;
+    });
+  }
+  function listSave(r) {
+    var L = listState(), d = L.draft, cur = credCurrent(r), cs = state.cs;
+    var title = d.title.replace(/\s+/g, " ").trim(), issuer = d.issuer.replace(/\s+/g, " ").trim();
+    var sites = d.sites.split(";").map(function (x) { return x.replace(/\s+/g, " ").trim(); })
+      .filter(Boolean).map(function (x) { return { site: x }; });
+    var writes = [];
+    if (!title) { L.note = "A title cannot be empty."; render(); return Promise.resolve(); }
+    if (title !== listTitle(r)) writes.push([FIELD_CRED_TITLE, title === r.ut ? "" : title]);
+    if (issuer !== (cur.issuer || "")) writes.push([FIELD_CRED_ISSUER, issuer]);
+    var curSites = cur.sites.map(function (x) { return x.site; }).join("; ");
+    if (sites.map(function (x) { return x.site; }).join("; ") !== curSites) {
+      writes.push([FIELD_CRED_SITES, JSON.stringify(sites)]);
+      writes.push([FIELD_CRED_TRAINER, joinSites(sites)]);
+    }
+    if (!writes.length) { L.edit = null; L.draft = null; L.note = "Nothing changed."; render(); return Promise.resolve(); }
+    L.busy = true; render();
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); }));
+    }).then(function (rs) {
+      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+      var o = cs.overlay[r.ut] = cs.overlay[r.ut] || {};
+      var now = new Date().toISOString();
+      writes.forEach(function (w) {
+        if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
+        else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
+        else if (w[0] === FIELD_CRED_SITES) { o.sites = w[1]; o.sitesAt = now; }
+        else o.title = w[1];
+      });
+      if (L.changed.indexOf(r.ut) === -1) L.changed.push(r.ut);
+      L.busy = false; L.edit = null; L.draft = null;
+      L.note = "Saved “" + listTitle(r) + "”." + (writes.some(function (w) { return w[0] === FIELD_CRED_TITLE; })
+        ? " The new title shows now; the daily run checks it for a collision, and a reviewed apply renames it in the reference." : "");
+      render();
+    }).catch(function (e) {
+      L.busy = false;
+      L.note = e && e.message === "signin" ? "Sign in as a reviewer to save."
+        : "The save did not reach the reference (" + (e && e.message || "no answer") + "). Nothing changed; try again.";
+      render();
+    });
+  }
+  /* One request row a press: the credentials changed this visit and the reader's note. The routine reads every
+     change since its last re-analysis from kb_curation itself, so a list left empty still asks for a full pass. */
+  function listReanalyze() {
+    var L = listState(), note = L.comments || (document.getElementById("exh-l-note") || {}).value || "";
+    L.busy = true; render();
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      var when = new Date().toISOString();
+      return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+        method: "POST", headers: headers(sess, { "Prefer": "return=minimal" }),
+        body: JSON.stringify({ course_id: REANALYSIS_PREFIX + when + "-" + Math.random().toString(36).slice(2, 6),
+          field: FIELD_REANALYSIS, reviewer_email: sess.email, reviewed_at: when,
+          value: JSON.stringify({ changed: L.changed.slice(0, 200), comments: String(note).trim().slice(0, 4000) }) })
+      });
+    }).then(function (r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      L.busy = false; L.comments = "";
+      L.note = "Queued with your comments. " + ROUTINE_WHEN + " looks at what changed: the code checks (a rename that collides, an issuer spelled two ways, " +
+        "a credential with no CPL type) and Jev's two questions (the same credential under two names? an issuer that is really a training site?). " +
+        "Its findings come back to you as cards on the standing decision sheet until this view shows them.";
+      render();
+    }).catch(function (e) {
+      L.busy = false;
+      L.note = e && e.message === "signin" ? "Sign in as a reviewer to ask for a re-analysis."
+        : "The request did not reach the routine (" + (e && e.message || "no answer") + "). Try again.";
+      render();
+    });
+  }
+  function listCell(text, cls) { return el("td", { cls: cls || null, text: text == null ? "" : String(text) }); }
+  function listEditRow(r) {
+    var L = listState(), d = L.draft;
+    function box(id, label, key, ph) {
+      var i = el("input", { id: id, type: "text", cls: "exh-l-in", placeholder: ph || "" });
+      i.value = d[key];
+      i.addEventListener("input", function () { d[key] = i.value; });
+      return el("label", { cls: "exh-l-f", "for": id }, [el("span", { text: label }), i]);
+    }
+    var td = el("td", { colspan: "11" }, [
+      el("div", { cls: "exh-l-edit" }, [
+        box("exh-l-t", "Title", "title"), box("exh-l-i", "Issuer", "issuer"),
+        box("exh-l-s", "Training sites, separated by ;", "sites", "Site; Site"),
+        el("div", { cls: "exh-l-acts" }, [
+          word(L.busy ? "Saving…" : "Save", function () { listSave(r); }),
+          word("Cancel", function () { L.edit = null; L.draft = null; render(); })])])]);
+    return el("tr", { cls: "exh-l-editrow" }, [td]);
+  }
+  function renderList(wrap) {
+    var L = listState(), cs = state.cs;
+    ensureListCss();
+    wrap.appendChild(viewsNav());
+    if (cs.error) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The credentials could not be read (" + cs.error + ")." })); return; }
+    if (!cs.rows) { wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the credentials…" })); return; }
+    if (L.collisions == null) {
+      L.collisions = [];
+      fetch(COLLISIONS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (d) { L.collisions = (d && d.collisions) || []; if (state.view === "list") render(); }).catch(function () {});
+    }
+    var bar = el("div", { cls: "exh-l-bar" });
+    var q = el("input", { cls: "exh-search exh-l-q", id: "exh-l-find", type: "search", autocomplete: "off",
+      placeholder: "Title, issuer, discipline, subject or CPL type", "aria-label": "Find in the list" });
+    q.value = L.q;
+    q.addEventListener("input", function () { L.q = q.value; L.limit = LIST_LIMIT; redrawList(); });
+    bar.appendChild(q);
+    var fl = el("div", { cls: "exh-l-filters", role: "group", "aria-label": "Show" });
+    LIST_FILTERS.forEach(function (f) {
+      if (f[0] === L.f) fl.appendChild(el("span", { cls: "exh-view-on", "aria-current": "true", text: f[1] }));
+      else fl.appendChild(word(f[1], function () { L.f = f[0]; L.limit = LIST_LIMIT; render(); }));
+    });
+    bar.appendChild(fl);
+    wrap.appendChild(bar);
+    if (cs.overlayOk === false) wrap.appendChild(el("p", { cls: "exh-muted exh-small",
+      text: "Today's saves could not be read, so the list shows the reference as of " + (stamp(cs.generated) || "the last daily run") + "." }));
+    // The comments box (Sam, 2026-11-01: "add in a comments box to the reanalysis routine where I can add my
+    // observations or concerns or opportunities to better inform the reanalysis"). Kept across repaints this visit.
+    var box = el("textarea", { id: "exh-l-note", cls: "exh-l-in exh-l-ta", rows: "3", maxlength: "4000",
+      placeholder: "Observations, concerns or opportunities: what you were fixing, a pattern you noticed, titles that should fold, an issuer that looks wrong" });
+    box.value = L.comments || "";
+    box.addEventListener("input", function () { L.comments = box.value; });
+    var re = el("div", { cls: "exh-l-re" }, [
+      el("label", { cls: "exh-l-relabel", "for": "exh-l-note", text: "Your comments for the re-analysis" }),
+      box,
+      el("div", { cls: "exh-l-acts" }, [word(L.busy ? "Working…" : "Re-analyze my changes", listReanalyze),
+        el("span", { cls: "exh-muted exh-small", text: L.changed.length
+          ? fmt(L.changed.length) + " changed this visit go with it" : "With no change this visit, it looks over everything you changed since its last pass" })])]);
+    wrap.appendChild(re);
+    if (L.note) wrap.appendChild(el("p", { cls: "exh-note", role: "status", text: L.note }));
+    wrap.appendChild(el("div", { id: "exh-l-host" }, [listTable()]));
+  }
+  function redrawList() {
+    var host = document.getElementById("exh-l-host");
+    if (!host) { render(); return; }
+    while (host.firstChild) host.removeChild(host.firstChild);
+    host.appendChild(listTable());
+  }
+  function listTable() {
+    var L = listState(), rows = listRows(), shown = rows.slice(0, L.limit);
+    var heads = ["Title", "Status", "CPL types", "Issuer", "Training sites", "Discipline (M-IDs)", "Common SUBJ",
+      "CIP family (from TOP)", "Colleges", "MAP titles", ""];
+    var cols = el("colgroup", null, [25, 8, 11, 12, 10, 11, 6, 9, 4, 4, 6].map(function (w) {
+      return el("col", { style: "width:" + w + "%" }); }));
+    var thead = el("thead", null, [el("tr", null, heads.map(function (h) {
+      return el("th", { scope: "col", text: h }); }))]);
+    var body = el("tbody");
+    shown.forEach(function (r) {
+      var cur = credCurrent(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
+      var status = listStatus(r) + (r.quality_flag ? "; " + String(r.quality_flag).replace(/_/g, " ") : "")
+        + (r.conf_title != null && r.conf_title < 0.6 ? "; title " + Math.round(r.conf_title * 100) + "%" : "");
+      var titleTd = el("td", { cls: "exh-l-title" }, [listTitle(r)]);
+      if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
+      if (col) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
+      if (L.changed.indexOf(r.ut) !== -1) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
+      var editBtn = word("Edit", function () {
+        L.edit = r.ut;
+        L.draft = { title: listTitle(r), issuer: cur.issuer || "", sites: cur.sites.map(function (x) { return x.site; }).join("; ") };
+        L.note = ""; redrawList();
+        var t = document.getElementById("exh-l-t"); if (t) t.focus();
+      }, { "aria-label": "Edit " + listTitle(r) });
+      body.appendChild(el("tr", null, [titleTd, listCell(status), listCell((r.cpl_types || []).join(", ")), listCell(cur.issuer),
+        listCell(cur.sites.map(function (x) { return x.site; }).join("; ")), listCell(r.disc_modal), listCell(listSubj(r)),
+        listCell(listCip(r)), listCell(fmt(credColleges(r).length), "exh-l-n"), listCell(fmt(r.raw_count), "exh-l-n"),
+        el("td", null, [editBtn])]));
+      if (L.edit === r.ut && L.draft) body.appendChild(listEditRow(r));
+    });
+    var region = el("div", { cls: "exh-l-wrap", role: "region", "aria-label": "Every credential, A to Z", tabindex: "0" }, [
+      el("table", { cls: "exh-l-table" }, [cols, thead, body])]);
+    var out = el("div", null, [el("p", { cls: "exh-muted exh-small", text: fmt(rows.length) + " credentials" +
+      (rows.length > shown.length ? ", the first " + fmt(shown.length) + " shown" : "") }), region]);
+    if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
+      function () { L.limit += LIST_LIMIT; redrawList(); }));
+    return out;
+  }
+  function ensureListCss() {
+    if (document.getElementById("exh-l-css")) return;
+    document.head.appendChild(el("style", { id: "exh-l-css", text: [
+      ".exh-l-bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:8px 0}",
+      ".exh-l-q{flex:1 1 280px;max-width:520px}",
+      ".exh-l-filters{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.8125rem}",
+      ".exh-l-re{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:4px 0 8px}",
+      ".exh-l-re{flex-direction:column;align-items:stretch;max-width:760px}",
+      ".exh-l-relabel{font-size:.8125rem;color:var(--text-strong);font-weight:600}",
+      ".exh-l-ta{width:100%;box-sizing:border-box;resize:vertical;min-height:3.5em}",
+      ".exh-l-in{font:inherit;font-size:.8125rem;padding:2px 6px;border:1px solid var(--border);border-radius:4px;background:var(--surface-opaque);color:var(--text-body)}",
+      "#exh-l-host{min-width:0;max-width:100%}",
+      ".exh-l-wrap{width:100%;max-width:100%;box-sizing:border-box;overflow-x:auto;max-height:75vh;overflow-y:auto;border:1px solid var(--border);border-radius:6px}",
+      ".exh-l-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.75rem;line-height:1.3}",
+      ".exh-l-table th{position:sticky;top:0;background:var(--surface-opaque);color:var(--text-strong);text-align:left;font-weight:600;padding:3px 6px;border-bottom:1px solid var(--border)}",
+      ".exh-l-table td{padding:2px 6px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-body);overflow-wrap:anywhere}",
+      ".exh-l-title{color:var(--text-strong)}",
+      ".exh-l-sub{display:block;color:var(--text-muted);font-size:.6875rem}",
+      ".exh-l-n{text-align:right;font-variant-numeric:tabular-nums}",
+      ".exh-l-table .exh-w{font-size:.75rem;min-height:24px;min-width:24px;padding:0 2px}",
+      ".exh-l-editrow td{background:var(--surface-opaque)}",
+      ".exh-l-edit{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;padding:4px 0}",
+      ".exh-l-f{display:flex;flex-direction:column;gap:2px;flex:1 1 200px;font-size:.6875rem;color:var(--text-muted)}",
+      ".exh-l-acts{display:flex;gap:12px}",
+      "@media (max-width:560px){.exh-l-table{table-layout:auto;min-width:900px}}"
+    ].join("\n") }));
+  }
+
   function viewsNav() {
     function v(id, label, n) {
       var kids = [label + " ", el("span", { cls: "exh-n", text: n == null ? "" : fmt(n) })];
@@ -1711,13 +1984,14 @@
       b.addEventListener("click", function () {
         state.view = id; state.note = ""; state.cs.note = "";
         render();
-        if (id === "credentials") loadCredentials().then(render);
+        if (id === "credentials" || id === "list") loadCredentials().then(render);
       });
       return b;
     }
     return el("nav", { cls: "exh-views", "aria-label": "Views" }, [
       v("review", "Review", state.data ? stepCount("") : null),
       v("credentials", "Credentials", state.cs.rows ? state.cs.rows.length : null),
+      v("list", "List", state.cs.rows ? state.cs.rows.length : null),
       v("rules", "Rules", state.rq.rows ? requestsWaitingOnYou() : null),
       el("a", { href: "#exhibit-adoption", text: "The college matrix, in Exhibit Adoption" })]);
   }
@@ -1891,6 +2165,11 @@
     }
     if (state.view === "rules") {
       renderRules(wrap);
+      return;
+    }
+    if (state.view === "list") {
+      if (state.cs.generated) head.appendChild(el("span", { cls: "exh-muted exh-small", text: "Reference built " + stamp(state.cs.generated) }));
+      renderList(wrap);
       return;
     }
     if (state.error || !state.data) {
@@ -2085,6 +2364,7 @@
     state.filter = ""; state.cur = 0; state.openCollege = null; state.teach = false; state.note = "";
     state.view = "review";
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false;
+    state.ls = null;
     state.cs.q = ""; state.cs.sel = null; state.cs.limit = CRED_PAGE; state.cs.note = ""; state.cs.open = null;
     routeFromHash();
     render();
@@ -2094,13 +2374,13 @@
      the reference, credentials = the Credentials view, rules = the rules sent to the routine. The address is
      not a remembered filter. */
   var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["credentials", ""],
-    rules: ["rules", ""] };
+    rules: ["rules", ""], list: ["list", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
     if (!r) return false;
     state.view = r[0]; state.filter = r[1];
-    if (r[0] === "credentials") loadCredentials().then(render);
+    if (r[0] === "credentials" || r[0] === "list") loadCredentials().then(render);
     return true;
   }
   function boot() {

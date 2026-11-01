@@ -250,6 +250,27 @@ is his standing preference there too.
    search result. Its consumers read the table beside MAP's contacts: Nudge's *Deans and directors* role, and the
    Letters, Memos, Reports tab.
 
+9. **Exhibit re-analysis requests** (Sam, 2026-11-01: *"a button that fired an re-analysis routine that you and JEV work
+   together on, looking at any changes I make and thinking of how that affects the canonical exhibits"*; Fable advised
+   the scope). The Exhibits tab's List view writes one row a press, with Sam's comments:
+
+   ```sql
+   select course_id, reviewer_email as sent_by, reviewed_at as sent_at, value from kb_curation
+   where course_id like '\_EXHIBIT\_REANALYSIS::%' and field = 'exhibit_reanalysis_request' order by reviewed_at;
+   ```
+
+   A row with no `exhibit_reanalysis_done` row beside it (same `course_id`) is a queue item after the handoff's first.
+   Read its `comments` first: they are the reason for the pass. The changes are every `_CREDENTIAL_REVIEW::` row the
+   sender saved since the last done row (and the request's `changed` list). **Code checks, no model:** a rename whose
+   target is an existing key (`kb/cred_rename_dryrun/collisions.json`), the same issuer spelled two ways, an issuer that
+   differs from siblings sharing a title stem, a credential with no CPL type, two credentials now sharing an M-ID.
+   **Jev, on a runner, two questions only:** the same credential under two names (the 0.85 gate,
+   `kb/_jev_adjudicate.py`), and an issuer that is really a training site. Never units, TOP, discipline or "is this a
+   good title". Write the findings to `kb/exhibits_reanalysis/<date>.json`, answer each comment in it, put anything
+   that needs Sam on the standing sheet, and write the `exhibit_reanalysis_done` row (INSERT-only, cohort
+   `exhibit-reanalysis-s<N>@bot`, receipt in the PR). The findings panel in the List view and the Jev runner job are
+   the next builds; until the runner exists, the code checks run alone and the findings say so.
+
 ## The daytime Library run (Sam, Open Asks Sheet 131 card 1, 2026-10-26)
 
 Sam ruled *two-hours*: a run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific, working only the Library's
