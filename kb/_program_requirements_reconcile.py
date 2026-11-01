@@ -243,6 +243,43 @@ def reconcile(record: dict, text: str | None, college: str, award: str | None = 
                 notes.append({"field": "alternative_units", "was": None, "now": filled,
                               "words": st.get("source_words", "")})
             continue
+        if st["kind"] == "and_units":
+            # A CourseLeaf course list prints a lecture and its lab as one row, "CSIS 50 · & 50L<tab>MS Office
+            # Applications · and MS Office Applications Lab<tab>3": the row's units are the pair's, and the
+            # page's total counts them once (Monterey Peninsula's Medical Assisting 03635, "TOTAL MAJOR UNITS
+            # 37-40"; S536). The joined course the reading listed as its own entry with no units takes 0, so
+            # the scorer stops pricing it from the state file a second time. Only where the page prints the
+            # two codes joined by "&" (the prefix may be left off), only where the course before it in the
+            # same list carries a figure, and never a course the reading gave units.
+            def _code_re(code, bare=False):
+                code = re.sub(r"\s+", "", code or "")
+                m = re.match(r"([A-Za-z]+)(.*)$", code)
+                pre, rest = (m.group(1), m.group(2)) if m else ("", code)
+                body = r"\s*".join(re.escape(ch) for ch in rest)
+                if not pre:
+                    return body
+                pre = r"\s*".join(re.escape(ch) for ch in pre)
+                return r"(?:%s\s*)?%s" % (pre, body) if bare else r"%s\s*%s" % (pre, body)
+            filled = {}
+            for block in out.get("blocks") or []:
+                courses = block.get("courses") or []
+                for i, course in enumerate(courses):
+                    prev = courses[i - 1] if i else None
+                    if not prev or not course.get("code") or not prev.get("code"):
+                        continue
+                    if course.get("units") is not None or course.get("units_max") is not None:
+                        continue
+                    if _num(prev.get("units")) is None:
+                        continue
+                    pat = r"\b%s\s*·?\s*&\s*%s(?![0-9A-Za-z])" % (_code_re(prev["code"]), _code_re(course["code"], bare=True))
+                    if not re.search(pat, text):
+                        continue
+                    course["units"] = 0
+                    filled[course["code"]] = prev["code"]
+            if filled:
+                notes.append({"field": "joined_units", "was": None, "now": filled,
+                              "words": st.get("source_words", "")})
+            continue
         if st["kind"] == "pool_areas":
             # A total the page prints over each area's sub-areas (Hartnell's CalGETC 45096, S491: "A total of
             # 6 semester units is required" over Area 3A and 3B; "A total of 7" over 5A, 5B and 5C). Each
