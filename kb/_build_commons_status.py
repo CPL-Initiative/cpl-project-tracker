@@ -212,14 +212,16 @@ def row_exhibit(root):
                   "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"
                            % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/credentials"}],
         "tests": ["curator-stamped", "procedure-settled"],
-        "issues": [
+        # An issue that reads zero has nothing in it and is left out; an unread one (null, its error) stays.
+        # The fold's conflicts read 0 after the CER procedures run of 2026-11-01 14:34Z (dd95a03f).
+        "issues": [i for i in [
             {"n": held_n, "words": "titles held for a person", "owner": "a curator" + (" (" + held_why + ")" if held_why else ""),
              "open": tab + "/held", "error": run["error"]},
             {"n": conflicts, "words": "saved assignments the fold holds", "owner": "a curator (a human-reviewed classification stands)",
              "open": tab + "/conflict", "error": run["error"]},
             {"n": left["n"], "words": "titles in the reference that have left MAP", "owner": "a curator (retire or keep)",
              "open": cer + "/all", "error": left["error"]},
-        ],
+        ] if i["n"] != 0],
         "procedures": [
             {"n": len(procs["n"]) if procs["n"] is not None else None,
              "words": "in force: %d rules applied by code, %d read by the classifier" % (kinds.get("rule", 0), kinds.get("guidance", 0))

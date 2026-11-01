@@ -78,13 +78,16 @@ TITLE_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("vice_chancellor", re.compile(r"\b(vice|deputy|executive vice)[- ]chancellor\b", re.I)),
     ("district_ceo", re.compile(r"\bchancellor\b", re.I)),
     ("assoc_vp", re.compile(r"\bassociate vice[- ]president\b", re.I)),
-    ("vpaa", re.compile(r"\b(provost|chief instructional officer|vice[- ]president,? (of )?(academic affairs|"
-                        r"instruction(al services)?( and student services)?))\b|\bCIO\b", re.I)),
-    ("vpss", re.compile(r"\b(chief student services officer|vice[- ]president,? (of )?student "
+    # Equity joined to the post counts as the post, and so does Academic Services (Sam, Open Asks Sheet 153 card 2,
+    # "count", 2026-11-01): Equity and Instruction, Equity and Student Services, Student Services and Equity.
+    ("vpaa", re.compile(r"\b(provost|chief instructional officer|(vice[- ]president|VP),? (of |for )?(equity and )?"
+                        r"(academic (affairs|services)|instruction(al services)?( and student services)?))\b|\bCIO\b",
+                        re.I)),
+    ("vpss", re.compile(r"\b(chief student services officer|(vice[- ]president|VP),? (of |for )?(equity and )?student "
                         r"(services|affairs|success|development))\b|\bCSSO\b", re.I)),
     # Sam's VPBS variants: CBO, VP Business Services (and Facilities), and VP Administrative Services (Open Asks
     # Sheet 151 card 1, "vpbs", 2026-11-01). A title outside the variants is listed for him, never filled.
-    ("vpbs", re.compile(r"\b(chief business officer|(vice[- ]president|VP),? (of )?(business|administrative) services"
+    ("vpbs", re.compile(r"\b(chief business officer|(vice[- ]president|VP),? (of |for )?(business and )?(business|administrative) services"
                         r"( and facilities)?)\b|\bCBO\b", re.I)),
     ("college_ceo", re.compile(r"\b(superintendent[/ -]+president|president)\b", re.I)),
     ("dean_cte", re.compile(r"\bdean\b[^.\n]{0,60}\b(career (and|&) technical|CTE|workforce|economic development)\b",

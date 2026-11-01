@@ -293,12 +293,20 @@ check("a title the high school rule settles is counted under the rule, never the
              and r not in {n["raw_title"] for n in report["needs_you"]}))
 check("the report tallies every procedure in force",
       {p["id"] for p in procs} <= {p["id"] for p in report["procedures"]})
+# Hermetic: with no classified cache every waiting title needs asking, so the key check is
+# reached whatever the committed cache holds (CI's lints job failed this on 2026-11-01 when the
+# cache already answered every waiting title and run() never reached the check).
+_classified, _assigned = cp.CLASSIFIED, cp.pre.load_assigned
+cp.CLASSIFIED = os.path.join(tempfile.mkdtemp(), "none.json")
+cp.pre.load_assigned = lambda: set()
 try:
     with redirect_stdout(io.StringIO()):
         cp.run(classify_n=5, dry_run=True, key=None, catalog=False)
     check("asking the classifier without the service key stops the run", False)
 except SystemExit:
     check("asking the classifier without the service key stops the run", True)
+finally:
+    cp.CLASSIFIED, cp.pre.load_assigned = _classified, _assigned
 cp.open = real_open
 
 # ── saving under a procedure (Sheet 94 card 2) ───────────────────────────────

@@ -519,3 +519,18 @@ first sentence read as missing data, and the control lives in the header's Sign 
   from memory came out wrong (*Career Education* for *Career Services*). Check every truncated title against the page's
   line before it goes in the records file.
 
+
+## S540 SkyBunchberry (2026-11-01, the CPL Queue routine's 14:12Z firing): the contacts harvest's fourth read
+
+- **Read 41315220745** (15 colleges, Diablo Valley to Imperial Valley; apply 41316260199): **41 people at 8 colleges, 41
+  new, 0 gone.** The table holds 116. Seven found no one: East Los Angeles and Fresno City answer 403 to the plain-HTTP
+  read, Feather River was unreachable, Folsom Lake's homepage seed 404s, Grossmont gave one page, Golden West and
+  Hartnell only veterans and admissions pages.
+- **Three layouts in one night.** Diablo Valley prints name, pronouns, title; El Camino name then title; Glendale's
+  cabinet title then name; Imperial Valley *Last, First*, title, phone, email. Read each window's order before filing.
+- **Equity joins the post.** Three colleges name their student services or instruction VP *Equity and Student
+  Services* or *Equity and Instruction*; Imperial Valley's instruction VP is *Academic Services*. None is in Sam's
+  variants, so five rows wait in `held_for_sam` for Open Asks Sheet 153 card 2. Titles that only join his two VPBS
+  variants (*Business and Administrative Services*) or swap the preposition (*for Administrative Services*) filed under
+  Sheet 151's reading.
+- **Not the articulation officer:** Fullerton's *Director, Dual Enrollment and High School Articulation*.

@@ -273,6 +273,9 @@ is his standing preference there too.
 
 ## The daytime Library run (Sam, Open Asks Sheet 131 card 1, 2026-10-26)
 
+**Not created; the overnight queue works the Library** (Sam, Open Asks Sheet 153 card 1, *overnight*, 2026-11-01). Requests ran
+about one a week, so step 6 of each overnight firing covers them. The prompt below stays for when requests pick up.
+
 Sam ruled *two-hours*: a run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific, working only the Library's
 requests (step 6's two queries). It needs the three repos and the Supabase connector, which a session's
 `create_trigger` cannot attach here (S490), so Sam creates it on claude.ai's routines page: the same repos and
