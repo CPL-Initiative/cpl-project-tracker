@@ -1,0 +1,1151 @@
+{
+ "college": "Columbia College",
+ "homepage": "https://www.gocolumbia.edu/",
+ "read_at": "2026-11-01T13:24:49+00:00",
+ "pages": [
+  {
+   "url": "https://www.gocolumbia.edu/",
+   "final_url": "https://gocolumbia.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Dr. Lena Tran Selected as YCCD Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "Register for class",
+      "Columbia College News",
+      "10/15/2026",
+      "Dr. Lena Tran Selected as YCCD Chancellor",
+      "Read More",
+      "09/21/2026",
+      "How Do You Use AI? Student Input Needed"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://gocolumbia.edu/administration/organizational_chart.html",
+   "final_url": "https://gocolumbia.edu/administration/organizational_chart.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Organizational Chart",
+      "Home",
+      "Organizational Chart",
+      "President's Office",
+      "Interim President - Dr. Chad Redwing",
+      "Executive Assistant - Jasmine Sedlmeyer",
+      "Columbia College Foundation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim President - Dr. Chad Redwing",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Organizational Chart",
+      "President's Office",
+      "Interim President - Dr. Chad Redwing",
+      "Executive Assistant - Jasmine Sedlmeyer",
+      "Columbia College Foundation",
+      "Director of Development - Amanda Stephens"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Development - Amanda Stephens",
+     "position": null,
+     "window": [
+      "Interim President - Dr. Chad Redwing",
+      "Executive Assistant - Jasmine Sedlmeyer",
+      "Columbia College Foundation",
+      "Director of Development - Amanda Stephens",
+      "College Research and Planning",
+      "Instruction & Student Services",
+      "Interim Executive Vice President - Patrick Bettencourt"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Executive Vice President - Patrick Bettencourt",
+     "position": null,
+     "window": [
+      "Director of Development - Amanda Stephens",
+      "College Research and Planning",
+      "Instruction & Student Services",
+      "Interim Executive Vice President - Patrick Bettencourt",
+      "Executive Secretary, Instruction Office - Kelsie Gillen",
+      "Executive Secretary, Student Services - Brook Crouse",
+      "Dean of Student Services - Michael Igoe"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Student Services - Michael Igoe",
+     "position": null,
+     "window": [
+      "Interim Executive Vice President - Patrick Bettencourt",
+      "Executive Secretary, Instruction Office - Kelsie Gillen",
+      "Executive Secretary, Student Services - Brook Crouse",
+      "Dean of Student Services - Michael Igoe",
+      "Arts, Sciences, & Human Performance",
+      "Dean of Arts, Sciences, & Human Performance - Michael Smedshammer",
+      "Career Technical Education (CTE)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Arts, Sciences, & Human Performance - Michael Smedshammer",
+     "position": null,
+     "window": [
+      "Executive Secretary, Student Services - Brook Crouse",
+      "Dean of Student Services - Michael Igoe",
+      "Arts, Sciences, & Human Performance",
+      "Dean of Arts, Sciences, & Human Performance - Michael Smedshammer",
+      "Career Technical Education (CTE)",
+      "Dean of Career Technical Education - Carolyn Shipp",
+      "Dual Enrollment"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Career Technical Education - Carolyn Shipp",
+     "position": null,
+     "window": [
+      "Arts, Sciences, & Human Performance",
+      "Dean of Arts, Sciences, & Human Performance - Michael Smedshammer",
+      "Career Technical Education (CTE)",
+      "Dean of Career Technical Education - Carolyn Shipp",
+      "Dual Enrollment",
+      "Director of Dual Enrollment - Michael Baldwin",
+      "Rising Scholars"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Dual Enrollment - Michael Baldwin",
+     "position": null,
+     "window": [
+      "Career Technical Education (CTE)",
+      "Dean of Career Technical Education - Carolyn Shipp",
+      "Dual Enrollment",
+      "Director of Dual Enrollment - Michael Baldwin",
+      "Rising Scholars",
+      "Director of Rising Scholars - Michelle Walker",
+      "K16 Initiative"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Rising Scholars - Michelle Walker",
+     "position": null,
+     "window": [
+      "Dual Enrollment",
+      "Director of Dual Enrollment - Michael Baldwin",
+      "Rising Scholars",
+      "Director of Rising Scholars - Michelle Walker",
+      "K16 Initiative",
+      "Director of K16 Initiative - Emily Graham",
+      "Student Access, Retention, & Support"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of K16 Initiative - Emily Graham",
+     "position": null,
+     "window": [
+      "Rising Scholars",
+      "Director of Rising Scholars - Michelle Walker",
+      "K16 Initiative",
+      "Director of K16 Initiative - Emily Graham",
+      "Student Access, Retention, & Support",
+      "Director of Student Access, Retention & Support - Courtney Sutton",
+      "Special Programs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Student Access, Retention & Support - Courtney Sutton",
+     "position": null,
+     "window": [
+      "K16 Initiative",
+      "Director of K16 Initiative - Emily Graham",
+      "Student Access, Retention, & Support",
+      "Director of Student Access, Retention & Support - Courtney Sutton",
+      "Special Programs",
+      "Director of Special Programs - Anneka Rogers-Whitmer",
+      "Admissions and Records"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Special Programs - Anneka Rogers-Whitmer",
+     "position": null,
+     "window": [
+      "Student Access, Retention, & Support",
+      "Director of Student Access, Retention & Support - Courtney Sutton",
+      "Special Programs",
+      "Director of Special Programs - Anneka Rogers-Whitmer",
+      "Admissions and Records",
+      "Director of Admissions and Records - Lesley Brunner",
+      "Financial Aid"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Admissions and Records - Lesley Brunner",
+     "position": "dean_ar",
+     "window": [
+      "Special Programs",
+      "Director of Special Programs - Anneka Rogers-Whitmer",
+      "Admissions and Records",
+      "Director of Admissions and Records - Lesley Brunner",
+      "Financial Aid",
+      "Interim Director of Student Financial Services - Aaron Colby",
+      "College and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Director of Student Financial Services - Aaron Colby",
+     "position": null,
+     "window": [
+      "Admissions and Records",
+      "Director of Admissions and Records - Lesley Brunner",
+      "Financial Aid",
+      "Interim Director of Student Financial Services - Aaron Colby",
+      "College and Administrative Services",
+      "Senior Director of College & Administrative Services - Kristina Godinez",
+      "Assistant Director of College Administrative Services - Sandra Smith"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Senior Director of College & Administrative Services - Kristina Godinez",
+     "position": null,
+     "window": [
+      "Financial Aid",
+      "Interim Director of Student Financial Services - Aaron Colby",
+      "College and Administrative Services",
+      "Senior Director of College & Administrative Services - Kristina Godinez",
+      "Assistant Director of College Administrative Services - Sandra Smith",
+      "Child Care Center",
+      "Child Care Manager - Kelly Thomas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director of College Administrative Services - Sandra Smith",
+     "position": null,
+     "window": [
+      "Interim Director of Student Financial Services - Aaron Colby",
+      "College and Administrative Services",
+      "Senior Director of College & Administrative Services - Kristina Godinez",
+      "Assistant Director of College Administrative Services - Sandra Smith",
+      "Child Care Center",
+      "Child Care Manager - Kelly Thomas",
+      "Facilities and Maintenance"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://gocolumbia.edu/admissions/index.html",
+   "final_url": "https://gocolumbia.edu/admissions/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Quick Links",
+      "College Catalog",
+      "FERPA",
+      "Veterans Services",
+      "Affirmed Name and Gender Identification",
+      "Dual Enrollment - High School Students",
+      "GED Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Admissions & Records and Veterans Benefits",
+     "position": "dean_ar",
+     "window": [
+      "Friday - Closed",
+      "Appointments available by request",
+      "Lesley Brunner",
+      "Director of Admissions & Records and Veterans Benefits",
+      "209-588-5232",
+      "brunnerl@yosemite.edu brunnerl@yosemite.edu",
+      "Megan Burke"
+     ],
+     "emails": [
+      "brunnerl@yosemite.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://gocolumbia.edu/directory/index.html",
+   "final_url": "https://gocolumbia.edu/directory/index.html",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://gocolumbia.edu/news/chancellortran.html/",
+   "final_url": "https://gocolumbia.edu/news/chancellortran.html/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Dr. Lena Tran Selected as YCCD Chancellor - Columbia College",
+     "position": "district_ceo",
+     "window": [
+      "Dr. Lena Tran Selected as YCCD Chancellor - Columbia College",
+      "Skip to page content",
+      "Donate",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Lena Tran Selected as YCCD Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "Coming to Campus",
+      "Student Email",
+      "Apply",
+      "Dr. Lena Tran Selected as YCCD Chancellor",
+      "Oct 15, 2026",
+      "by",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Yosemite Community College District Board of Trustees Selects Dr. Lena Tran as Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "by",
+      "Home",
+      "News",
+      "Yosemite Community College District Board of Trustees Selects Dr. Lena Tran as Chancellor",
+      "Following Her Successful Tenure As Interim Chancellor, Dr. Tran Will Lead YCCD Into",
+      "A New Chapter of Student Success, Innovation and Regional Opportunity.",
+      "The Yosemite Community College District (YCCD) Board of Trustees has selected Dr."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Following Her Successful Tenure As Interim Chancellor, Dr. Tran Will Lead YCCD Into",
+     "position": "district_ceo",
+     "window": [
+      "Home",
+      "News",
+      "Yosemite Community College District Board of Trustees Selects Dr. Lena Tran as Chancellor",
+      "Following Her Successful Tenure As Interim Chancellor, Dr. Tran Will Lead YCCD Into",
+      "A New Chapter of Student Success, Innovation and Regional Opportunity.",
+      "The Yosemite Community College District (YCCD) Board of Trustees has selected Dr.",
+      "Lena Tran as Chancellor, effective November 1, 2026. Approved at the Board’s October"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Lena Tran as Chancellor, effective November 1, 2026. Approved at the Board’s October",
+     "position": "district_ceo",
+     "window": [
+      "Following Her Successful Tenure As Interim Chancellor, Dr. Tran Will Lead YCCD Into",
+      "A New Chapter of Student Success, Innovation and Regional Opportunity.",
+      "The Yosemite Community College District (YCCD) Board of Trustees has selected Dr.",
+      "Lena Tran as Chancellor, effective November 1, 2026. Approved at the Board’s October",
+      "14, 2026 meeting, her appointment follows a comprehensive search process with participation",
+      "from faculty, staff, administrators, community members and trustees representing Columbia",
+      "College, Modesto Junior College and the District."
+     ],
+     "emails": []
+    },
+    {
+     "line": "our colleges and students.\" shared Dr. Milton Richards, President of the YCCD Board",
+     "position": "college_ceo",
+     "window": [
+      "community members and friends of the District generously shared their time, perspectives",
+      "and commitment to YCCD's future. Their thoughtful input played an important role in",
+      "this process and reflects the deep investment our community has in the success of",
+      "our colleges and students.\" shared Dr. Milton Richards, President of the YCCD Board",
+      "of Trustees.",
+      "Dr. Tran has served as Interim Chancellor since May 2025, bringing collaborative leadership,",
+      "a clear commitment to students and a strong vision for the District's future. During"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Tran has served as Interim Chancellor since May 2025, bringing collaborative leadership,",
+     "position": "district_ceo",
+     "window": [
+      "this process and reflects the deep investment our community has in the success of",
+      "our colleges and students.\" shared Dr. Milton Richards, President of the YCCD Board",
+      "of Trustees.",
+      "Dr. Tran has served as Interim Chancellor since May 2025, bringing collaborative leadership,",
+      "a clear commitment to students and a strong vision for the District's future. During",
+      "her tenure as Interim Chancellor, Dr. Tran has advanced initiatives that expand student",
+      "access and achievement, strengthen regional workforce pathways and extend educational"
+     ],
+     "emails": []
+    },
+    {
+     "line": "her tenure as Interim Chancellor, Dr. Tran has advanced initiatives that expand student",
+     "position": "district_ceo",
+     "window": [
+      "of Trustees.",
+      "Dr. Tran has served as Interim Chancellor since May 2025, bringing collaborative leadership,",
+      "a clear commitment to students and a strong vision for the District's future. During",
+      "her tenure as Interim Chancellor, Dr. Tran has advanced initiatives that expand student",
+      "access and achievement, strengthen regional workforce pathways and extend educational",
+      "opportunities to rural and underserved communities. Her leadership centers on the",
+      "role of YCCD's colleges as engines of opportunity, preparing students for meaningful"
+     ],
+     "emails": []
+    },
+    {
+     "line": "\"Dr. Tran has demonstrated exceptional leadership as Interim Chancellor, as President",
+     "position": "district_ceo",
+     "window": [
+      "opportunities to rural and underserved communities. Her leadership centers on the",
+      "role of YCCD's colleges as engines of opportunity, preparing students for meaningful",
+      "careers while supporting the region's economic vitality.",
+      "\"Dr. Tran has demonstrated exceptional leadership as Interim Chancellor, as President",
+      "of Columbia College and throughout her career in higher education,\" said Dr. Milton",
+      "Richards, President of the YCCD Board of Trustees. \"Through our collaborative search",
+      "process, she emerged as the leader to move YCCD forward with purpose and vision. Her"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Richards, President of the YCCD Board of Trustees. \"Through our collaborative search",
+     "position": "college_ceo",
+     "window": [
+      "careers while supporting the region's economic vitality.",
+      "\"Dr. Tran has demonstrated exceptional leadership as Interim Chancellor, as President",
+      "of Columbia College and throughout her career in higher education,\" said Dr. Milton",
+      "Richards, President of the YCCD Board of Trustees. \"Through our collaborative search",
+      "process, she emerged as the leader to move YCCD forward with purpose and vision. Her",
+      "ability to bring people together, expand educational opportunity and build meaningful",
+      "workforce and community partnerships will strengthen our colleges and the communities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Previously, as President of Columbia College, Dr. Tran expanded workforce training",
+     "position": "college_ceo",
+     "window": [
+      "ability to bring people together, expand educational opportunity and build meaningful",
+      "workforce and community partnerships will strengthen our colleges and the communities",
+      "we serve.”",
+      "Previously, as President of Columbia College, Dr. Tran expanded workforce training",
+      "opportunities, strengthened industry and community partnerships, and advanced student",
+      "support programs. Before joining Columbia College in 2022, she held executive leadership",
+      "positions at San Jose City College and Evergreen Valley College. Throughout her career,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "As Chancellor, Dr. Tran will lead Modesto Junior College in Modesto and Columbia College",
+     "position": "district_ceo",
+     "window": [
+      "to meaningful careers and ensure that opportunity reaches every community we serve.",
+      "I am excited to lead this next chapter, one grounded in collaboration, driven by innovation",
+      "and focused on helping our students and our region thrive.\"",
+      "As Chancellor, Dr. Tran will lead Modesto Junior College in Modesto and Columbia College",
+      "in Sonora. Her priorities include expanding educational access throughout the District's",
+      "vast service area; strengthening workforce and industry partnerships; preparing students",
+      "for emerging industries and the evolving needs of a modern workforce; and securing"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://gocolumbia.edu/administration/president/index.html",
+   "final_url": "https://gocolumbia.edu/administration/president/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President - Columbia College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President - Columbia College",
+      "Skip to page content",
+      "Donate",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Coming to Campus",
+      "Student Email",
+      "Apply",
+      "Office of the President",
+      "Home",
+      "Office of the President",
+      "President's Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Apply",
+      "Office of the President",
+      "Home",
+      "Office of the President",
+      "President's Office",
+      "Facilities Master Plan",
+      "Welcome to Columbia College - Nestled in California, Open to the World"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Home",
+      "Office of the President",
+      "President's Office",
+      "Facilities Master Plan",
+      "Welcome to Columbia College - Nestled in California, Open to the World",
+      "At Columbia College, we believe education is the most powerful engine of innovation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "environments. Dr. Chad Redwing, Interim President at Columbia College, and a former",
+     "position": "college_ceo",
+     "window": [
+      "and communities alike.",
+      "The College welcomes international students. Having a diverse student body that includes",
+      "international students prepares all graduates to thrive in global and multicultural",
+      "environments. Dr. Chad Redwing, Interim President at Columbia College, and a former",
+      "U.S. Peace Corps volunteer in Chile, shared: “At Columbia College, education is not",
+      "only about learning, but also about shaping the future.”",
+      "Learn More About Columbia College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet Dr. Chad Redwing, Interim President, Columbia College",
+     "position": "college_ceo",
+     "window": [
+      "College since 1968, offering a wide range of degrees, certificates, dorm living options,",
+      "and affordable opportunities to pursue a career and transfer pathways to universities.",
+      "Columbia College is a member of the Yosemite Community College District.",
+      "Meet Dr. Chad Redwing, Interim President, Columbia College",
+      "Dr. Chad Redwing has served the Yosemite Community College District (YCCD) for more",
+      "than twenty years as a tenured professor of interdisciplinary humanities at Modesto",
+      "Junior College (MJC). He has also held leadership roles at MJC, including Faculty"
+     ],
+     "emails": []
+    },
+    {
+     "line": "at California State University, Stanislaus, where he previously served as co-director",
+     "position": null,
+     "window": [
+      "Junior College (MJC). He has also held leadership roles at MJC, including Faculty",
+      "Academic Senate President and Interim President. In addition, Dr. Redwing teaches",
+      "seminars, colloquia, and service-learning projects in the University Honors Program",
+      "at California State University, Stanislaus, where he previously served as co-director",
+      "of the program.",
+      "A former dean of a distinctive Doctor of Arts program in Arizona and a former U.S.",
+      "Peace Corps volunteer in Chile, Dr. Redwing has also founded several 501(c)(3) nonprofit"
+     ],
+     "emails": []
+    },
+    {
+     "line": "A former dean of a distinctive Doctor of Arts program in Arizona and a former U.S.",
+     "position": null,
+     "window": [
+      "seminars, colloquia, and service-learning projects in the University Honors Program",
+      "at California State University, Stanislaus, where he previously served as co-director",
+      "of the program.",
+      "A former dean of a distinctive Doctor of Arts program in Arizona and a former U.S.",
+      "Peace Corps volunteer in Chile, Dr. Redwing has also founded several 501(c)(3) nonprofit",
+      "organizations in Arizona, New Mexico, and California, addressing a wide range of social",
+      "issues. He is bilingual in English and Spanish, and he aims to increase international"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "issues. He is bilingual in English and Spanish, and he aims to increase international",
+      "student enrollment at Columbia College.",
+      "Chad",
+      "President's Office",
+      "Facilities Master Plan",
+      "Contact Info",
+      "Chad Redwing, Ph.D"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim President",
+     "position": "college_ceo",
+     "window": [
+      "Facilities Master Plan",
+      "Contact Info",
+      "Chad Redwing, Ph.D",
+      "Interim President",
+      "209-588-5115",
+      "redwingc@yosemite.edu redwingc@yosemite.edu",
+      "Jasmine Sedlmeyer"
+     ],
+     "emails": [
+      "redwingc@yosemite.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "209-588-5115",
+      "redwingc@yosemite.edu redwingc@yosemite.edu",
+      "Jasmine Sedlmeyer",
+      "Executive Assistant to the President",
+      "209-588-5115",
+      "sedlmeyerj@yosemite.edu sedlmeyerj@yosemite.edu",
+      "General Inquires: 209-588-5100"
+     ],
+     "emails": [
+      "redwingc@yosemite.edu",
+      "sedlmeyerj@yosemite.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://gocolumbia.edu/veterans/index.html",
+   "final_url": "https://gocolumbia.edu/veterans/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services - Columbia College",
+     "position": "vrc",
+     "window": [
+      "Veterans Services - Columbia College",
+      "Skip to page content",
+      "Donate",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Coming to Campus",
+      "Student Email",
+      "Apply",
+      "Veterans Services",
+      "Home",
+      "Veterans Services",
+      "In This Section"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Apply",
+      "Veterans Services",
+      "Home",
+      "Veterans Services",
+      "In This Section",
+      "Veterans Services",
+      "New VA Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Veterans Services",
+      "In This Section",
+      "Veterans Services",
+      "New VA Students",
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits",
+      "Educational Benefits by Chapter",
+      "Veterans Center",
+      "Services for Veterans",
+      "The Veterans Benefits Office welcomes you to Columbia College. Our role is to assist",
+      "and support veterans and qualified dependents in accessing veterans educational benefits,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "for up to $250.00 per semester for any veteran student who has turned in a DD 214",
+      "member 4 form to the Admissions and Records office. Please email ccveterans@yosemite.edu ccveterans@yosemite.edu to request a voucher. You can also stop by the Admissions and Records window to",
+      "make your request.",
+      "Veterans Resource Center",
+      "The Columbia College Veteran Resource Center, located in Tamarack 119-The Columbia College Library, strives to meet veterans wherever",
+      "they are in their transition from military to college life and assist by providing",
+      "an inclusive community of those who understand the culture of military service. Services"
+     ],
+     "emails": [
+      "ccveterans@yosemite.edu"
+     ]
+    },
+    {
+     "line": "The Columbia College Veteran Resource Center, located in Tamarack 119-The Columbia College Library, strives to meet veterans wherever",
+     "position": "vrc",
+     "window": [
+      "member 4 form to the Admissions and Records office. Please email ccveterans@yosemite.edu ccveterans@yosemite.edu to request a voucher. You can also stop by the Admissions and Records window to",
+      "make your request.",
+      "Veterans Resource Center",
+      "The Columbia College Veteran Resource Center, located in Tamarack 119-The Columbia College Library, strives to meet veterans wherever",
+      "they are in their transition from military to college life and assist by providing",
+      "an inclusive community of those who understand the culture of military service. Services",
+      "include:"
+     ],
+     "emails": [
+      "ccveterans@yosemite.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans Club meetings and events",
+      "Snacks and drinks",
+      "In This Section",
+      "Veterans Services",
+      "New VA Students",
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits",
+      "Educational Benefits by Chapter",
+      "Veterans Center",
+      "Quick Links",
+      "Certification/Decertification Form",
+      "Terms of Agreement form"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Admissions & Records and Veterans Benefits - Certifying Official for GI",
+     "position": "dean_ar",
+     "window": [
+      "Hours: Monday -Friday 8:00AM-5:00PM",
+      "Contact Information",
+      "Lesley Brunner",
+      "Director of Admissions & Records and Veterans Benefits - Certifying Official for GI",
+      "Bill®",
+      "209-588-5232",
+      "brunnerl@yosemite.edu brunnerl@yosemite.edu"
+     ],
+     "emails": [
+      "brunnerl@yosemite.edu"
+     ]
+    },
+    {
+     "line": "Student Services Dean-USAF Veteran",
+     "position": null,
+     "window": [
+      "209-588-5109",
+      "greenem@yosemite.edu greenem@yosemite.edu",
+      "Michael Igoe",
+      "Student Services Dean-USAF Veteran",
+      "209-588-5146",
+      "igoem@yosemite.edu igoem@yosemite.edu",
+      "General Inquires: 209-588-5100"
+     ],
+     "emails": [
+      "greenem@yosemite.edu",
+      "igoem@yosemite.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://gocolumbia.edu/veterans/veteranscenter.html",
+   "final_url": "https://gocolumbia.edu/veterans/veteranscenter.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Center - Columbia College",
+     "position": "vrc",
+     "window": [
+      "Veterans Center - Columbia College",
+      "Skip to page content",
+      "Donate",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Coming to Campus",
+      "Student Email",
+      "Apply",
+      "Veterans Center",
+      "Home",
+      "Veterans Services",
+      "Veterans Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Apply",
+      "Veterans Center",
+      "Home",
+      "Veterans Services",
+      "Veterans Center",
+      "Veterans Services",
+      "New VA Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Center",
+      "Home",
+      "Veterans Services",
+      "Veterans Center",
+      "Veterans Services",
+      "New VA Students",
+      "Continuing VA Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Veterans Services",
+      "Veterans Center",
+      "Veterans Services",
+      "New VA Students",
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits",
+      "Educational Benefits by Chapter",
+      "Veterans Center",
+      "Veterans Resource Center",
+      "The Veterans Resource Center is located in the lower Tamarack Building 119 (inside",
+      "the library). Stop by for a quiet study space, computer and printing use, or a snack."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Apply For VA Educational Benefits",
+      "Educational Benefits by Chapter",
+      "Veterans Center",
+      "Veterans Resource Center",
+      "The Veterans Resource Center is located in the lower Tamarack Building 119 (inside",
+      "the library). Stop by for a quiet study space, computer and printing use, or a snack.",
+      "We are actively seeking to hire a student worker to help us keep the Veterans Resource"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center is located in the lower Tamarack Building 119 (inside",
+     "position": "vrc",
+     "window": [
+      "Educational Benefits by Chapter",
+      "Veterans Center",
+      "Veterans Resource Center",
+      "The Veterans Resource Center is located in the lower Tamarack Building 119 (inside",
+      "the library). Stop by for a quiet study space, computer and printing use, or a snack.",
+      "We are actively seeking to hire a student worker to help us keep the Veterans Resource",
+      "Center supplied with the essentials and welcoming to all who served. If you are taking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "We are actively seeking to hire a student worker to help us keep the Veterans Resource",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center",
+      "The Veterans Resource Center is located in the lower Tamarack Building 119 (inside",
+      "the library). Stop by for a quiet study space, computer and printing use, or a snack.",
+      "We are actively seeking to hire a student worker to help us keep the Veterans Resource",
+      "Center supplied with the essentials and welcoming to all who served. If you are taking",
+      "at least 9 units at MJC or Columbia and interested in paid student work, please contact",
+      "Lesley Brunner brunnerl@yosemite.edu"
+     ],
+     "emails": [
+      "brunnerl@yosemite.edu"
+     ]
+    },
+    {
+     "line": "College, visit the Veterans Services page.",
+     "position": "vrc",
+     "window": [
+      "of our veteran academic counselors, Rebekah Rogers, by contacting the Special Programs",
+      "desk at 209-588-5130, or, Katie Marquez at 209-588-5109.",
+      "For more information about certification of your VA Educational Benefits at Columbia",
+      "College, visit the Veterans Services page.",
+      "Veterans Services",
+      "New VA Students",
+      "Continuing VA Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "desk at 209-588-5130, or, Katie Marquez at 209-588-5109.",
+      "For more information about certification of your VA Educational Benefits at Columbia",
+      "College, visit the Veterans Services page.",
+      "Veterans Services",
+      "New VA Students",
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits",
+      "Educational Benefits by Chapter",
+      "Veterans Center",
+      "Contact Info",
+      "Lesley Brunner",
+      "Veterans Benefits - Certifying Official for GI Bill"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gocolumbia.edu/veterans_center/veteranscenter.html",
+   "status": 404
+  },
+  {
+   "url": "https://gocolumbia.edu/veterans/",
+   "final_url": "https://gocolumbia.edu/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services - Columbia College",
+     "position": "vrc",
+     "window": [
+      "Veterans Services - Columbia College",
+      "Skip to page content",
+      "Donate",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Coming to Campus",
+      "Student Email",
+      "Apply",
+      "Veterans Services",
+      "Home",
+      "Veterans Services",
+      "In This Section"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Apply",
+      "Veterans Services",
+      "Home",
+      "Veterans Services",
+      "In This Section",
+      "Veterans Services",
+      "New VA Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Veterans Services",
+      "In This Section",
+      "Veterans Services",
+      "New VA Students",
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits",
+      "Educational Benefits by Chapter",
+      "Veterans Center",
+      "Services for Veterans",
+      "The Veterans Benefits Office welcomes you to Columbia College. Our role is to assist",
+      "and support veterans and qualified dependents in accessing veterans educational benefits,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "for up to $250.00 per semester for any veteran student who has turned in a DD 214",
+      "member 4 form to the Admissions and Records office. Please email ccveterans@yosemite.edu ccveterans@yosemite.edu to request a voucher. You can also stop by the Admissions and Records window to",
+      "make your request.",
+      "Veterans Resource Center",
+      "The Columbia College Veteran Resource Center, located in Tamarack 119-The Columbia College Library, strives to meet veterans wherever",
+      "they are in their transition from military to college life and assist by providing",
+      "an inclusive community of those who understand the culture of military service. Services"
+     ],
+     "emails": [
+      "ccveterans@yosemite.edu"
+     ]
+    },
+    {
+     "line": "The Columbia College Veteran Resource Center, located in Tamarack 119-The Columbia College Library, strives to meet veterans wherever",
+     "position": "vrc",
+     "window": [
+      "member 4 form to the Admissions and Records office. Please email ccveterans@yosemite.edu ccveterans@yosemite.edu to request a voucher. You can also stop by the Admissions and Records window to",
+      "make your request.",
+      "Veterans Resource Center",
+      "The Columbia College Veteran Resource Center, located in Tamarack 119-The Columbia College Library, strives to meet veterans wherever",
+      "they are in their transition from military to college life and assist by providing",
+      "an inclusive community of those who understand the culture of military service. Services",
+      "include:"
+     ],
+     "emails": [
+      "ccveterans@yosemite.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans Club meetings and events",
+      "Snacks and drinks",
+      "In This Section",
+      "Veterans Services",
+      "New VA Students",
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Continuing VA Students",
+      "Apply For VA Educational Benefits",
+      "Educational Benefits by Chapter",
+      "Veterans Center",
+      "Quick Links",
+      "Certification/Decertification Form",
+      "Terms of Agreement form"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Admissions & Records and Veterans Benefits - Certifying Official for GI",
+     "position": "dean_ar",
+     "window": [
+      "Hours: Monday -Friday 8:00AM-5:00PM",
+      "Contact Information",
+      "Lesley Brunner",
+      "Director of Admissions & Records and Veterans Benefits - Certifying Official for GI",
+      "Bill®",
+      "209-588-5232",
+      "brunnerl@yosemite.edu brunnerl@yosemite.edu"
+     ],
+     "emails": [
+      "brunnerl@yosemite.edu"
+     ]
+    },
+    {
+     "line": "Student Services Dean-USAF Veteran",
+     "position": null,
+     "window": [
+      "209-588-5109",
+      "greenem@yosemite.edu greenem@yosemite.edu",
+      "Michael Igoe",
+      "Student Services Dean-USAF Veteran",
+      "209-588-5146",
+      "igoem@yosemite.edu igoem@yosemite.edu",
+      "General Inquires: 209-588-5100"
+     ],
+     "emails": [
+      "greenem@yosemite.edu",
+      "igoem@yosemite.edu"
+     ]
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41310748240"
+}

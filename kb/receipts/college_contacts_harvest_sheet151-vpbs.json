@@ -1,0 +1,205 @@
+{
+ "run": "sheet151-vpbs",
+ "applied_at": "2026-11-01T13:31:49+00:00",
+ "github_run": "41311609490",
+ "result": {
+  "new": 4,
+  "run": "sheet151-vpbs",
+  "gone": 0,
+  "colleges": 4,
+  "seen_again": 0
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [
+  {
+   "id": 5,
+   "college": "Antelope Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Message from the President",
+   "name": "Dr. Jennifer Zellet",
+   "email": "",
+   "source_url": "https://www.avc.edu/about-avc/office-superintendentpresident",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 6,
+   "college": "Antelope Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President Student Services",
+   "name": "Idania Padron",
+   "email": "idania.padron@avc.edu",
+   "source_url": "https://www.avc.edu/directory",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 7,
+   "college": "Barstow Community College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent-President",
+   "name": "Eva Bagg, Ph.D.",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 8,
+   "college": "Barstow Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Michael Wangler",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 9,
+   "college": "Barstow Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Edward Alvarez",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 20,
+   "college": "Chabot College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Jamal Cooks",
+   "email": "",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 21,
+   "college": "Chabot College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Luis Escobar",
+   "email": "laescobar@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 22,
+   "college": "Chabot College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions & Records",
+   "name": "Liz Oteyza",
+   "email": "moteyza@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/admissions/contact-info.php",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 25,
+   "college": "Coastline College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Dr. Vince Rodriguez",
+   "email": "",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 26,
+   "college": "Coastline College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Kathryn Mueller, Ed.D.",
+   "email": "kmueller@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 27,
+   "college": "Coastline College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Isela Ocegueda, Ph.D.",
+   "email": "iocegueda@cccd.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 28,
+   "college": "Coastline College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Westminster - Le-Jao Campus",
+   "name": "Stephanie Bridges",
+   "email": "sbridges@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "seen_run": "41305785750",
+   "first_seen": "2026-11-01T12:30:13.062577+00:00",
+   "last_seen": "2026-11-01T12:30:13.062577+00:00",
+   "gone_since": null
+  }
+ ],
+ "rows": [
+  {
+   "college": "Antelope Valley College",
+   "position": "vpbs",
+   "title_as_printed": "VP Administrative Services",
+   "name": "Shami Brar",
+   "email": "shami.brar@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "DeeDee Garcia",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Marie Amboy",
+   "email": "mamboy@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Christine Nguyen, M.B.A.",
+   "email": "cnguyen@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  }
+ ]
+}

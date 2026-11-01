@@ -1,0 +1,332 @@
+{
+ "run": "41310748240",
+ "read_by": "S539 SkySilverberry, 2026-11-01",
+ "colleges": [
+  "College of the Canyons",
+  "College of the Desert",
+  "College of the Redwoods",
+  "Columbia College",
+  "Compton College",
+  "Contra Costa College",
+  "Copper Mountain College",
+  "Crafton Hills College",
+  "Cuesta College",
+  "Cypress College"
+ ],
+ "rows": [
+  {
+   "college": "College of the Canyons",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jasmine Ruys",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Senior Curriculum Analyst",
+   "name": "Patrick Backes",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans Resource Center",
+   "name": "Renard Thomas",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "dean_ar",
+   "title_as_printed": "Associate Dean- Admissions, Records, & Online Services",
+   "name": "Steve Erwin",
+   "email": "steve.erwin@canyons.edu",
+   "source_url": "https://www.canyons.edu/studentservices/admissions/contact/staff.php"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction (Special Projects)",
+   "name": "James Glapa-Grossklag",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Valentine Martinez Garcia",
+   "email": "vmartinezgarcia@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Joy Cowden",
+   "email": "jcowden@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  },
+  {
+   "college": "College of the Desert",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions And Records",
+   "name": "Noelle McMillin",
+   "email": "nmcmillin@collegeofthedesert.edu",
+   "source_url": "https://collegeofthedesert.edu/directory/default.php"
+  },
+  {
+   "college": "College of the Redwoods",
+   "position": "college_ceo",
+   "title_as_printed": "President/Superintendent",
+   "name": "Dr. Keith Flamer",
+   "email": "",
+   "source_url": "https://www.redwoods.edu/about/president/index.php"
+  },
+  {
+   "college": "Columbia College",
+   "position": "college_ceo",
+   "title_as_printed": "Interim President",
+   "name": "Dr. Chad Redwing",
+   "email": "",
+   "source_url": "https://gocolumbia.edu/administration/organizational_chart.html"
+  },
+  {
+   "college": "Columbia College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions & Records and Veterans Benefits",
+   "name": "Lesley Brunner",
+   "email": "brunnerl@yosemite.edu",
+   "source_url": "https://gocolumbia.edu/admissions/index.html"
+  },
+  {
+   "college": "Columbia College",
+   "position": "district_ceo",
+   "title_as_printed": "YCCD Chancellor",
+   "name": "Dr. Lena Tran",
+   "email": "",
+   "source_url": "https://gocolumbia.edu/news/chancellortran.html/"
+  },
+  {
+   "college": "Compton College",
+   "position": "college_ceo",
+   "title_as_printed": "President/CEO",
+   "name": "Keith Curry",
+   "email": "",
+   "source_url": "https://www.compton.edu/about/presidentceo/index.aspx"
+  },
+  {
+   "college": "Contra Costa College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Kimberly R. Rogers, Ph.D.",
+   "email": "",
+   "source_url": "https://www.contracosta.edu/office-of-the-president/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Daren Otten, Ed.D",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Academic Services, CIO",
+   "name": "Michael Reese",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Jane Kwon",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "vpbs",
+   "title_as_printed": "Chief Business Officer",
+   "name": "Meredith Plummer",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer & Transfer Center Coordinator",
+   "name": "Karen Hill",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Distance Education, and Learning Resources",
+   "name": "Eva Hedger",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Copper Mountain College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean of Instruction, Career Technical Education, and Career Services",
+   "name": "Evelyn Sheffield",
+   "email": "",
+   "source_url": "https://www.cmccd.edu/directory/"
+  },
+  {
+   "college": "Crafton Hills College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Kevin Horan",
+   "email": "khoran@craftonhills.edu",
+   "source_url": "https://www.craftonhills.edu/about-chc/college-administration.php"
+  },
+  {
+   "college": "Crafton Hills College",
+   "position": "vpaa",
+   "title_as_printed": "V.P. of Instruction",
+   "name": "Dr. Keith Wurtz",
+   "email": "kwurtz@craftonhills.edu",
+   "source_url": "https://www.craftonhills.edu/about-chc/college-administration.php"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Jill Stearns",
+   "email": "jill_stearns@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Dr. Jason Curtis",
+   "email": "jason_curtis@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent/Vice President, Student Success and Support Programs",
+   "name": "Dr. Elizabeth Coria",
+   "email": "elizabeth_coria@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions, Student Records, and Registration",
+   "name": "Jacquelyn Contreras",
+   "email": "jacquelyn_contreras@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "articulation_officer",
+   "title_as_printed": "Academic Counselor/Articulation Officer",
+   "name": "Dina Hallmark",
+   "email": "dina_hallmark@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction: Applied Behavioral Sciences, Business Education, Social Sciences",
+   "name": "David Kadanoff",
+   "email": "david_kadanoff@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cuesta College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction: English, Fine Arts, Performing Arts, Language and Communications",
+   "name": "Aubrey Kuan Roderick",
+   "email": "aubrey_kuanroderick@cuesta.edu",
+   "source_url": "https://www.cuesta.edu/about/college-resources/directories/staff-directory/index.html"
+  },
+  {
+   "college": "Cypress College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Scott W. Thayer",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/"
+  },
+  {
+   "college": "Cypress College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Dr. Luis Gonzalez",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/"
+  },
+  {
+   "college": "Cypress College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Dr. Paul de Dios",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/"
+  },
+  {
+   "college": "Cypress College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Dr. Tony Jake",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/about/college-leadership/"
+  },
+  {
+   "college": "Cypress College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions and Records",
+   "name": "Dr. David Mosely Booze",
+   "email": "",
+   "source_url": "https://www.cypresscollege.edu/admissions-records/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Facilities and Operations",
+   "name": "Jason Munoz",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  },
+  {
+   "college": "College of the Canyons",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, District Communications",
+   "name": "John Green",
+   "email": "",
+   "source_url": "https://www.canyons.edu/directory/"
+  }
+ ],
+ "note": "Only colleges with at least one record go to apply. Read with no record: College of the Sequoias, Cosumnes River, Cuyamaca, De Anza (one page each), College of the Siskiyous (veterans page and the president's office link only). Canyons' directory prints name, title, office, room in that order (Jasmine Ruys over Superintendent/President).",
+ "unmatched_titles": [
+  {
+   "college": "Crafton Hills College",
+   "title": "Dean, Student Services & Student Development",
+   "name": "Dr. Willie Blackmon"
+  }
+ ],
+ "not_filled": [
+  {
+   "college": "Contra Costa College",
+   "why": "The district's homepage names Chancellor Mehdizadeh (retiring Dec. 30) without a first name; never filled from a partial name."
+  },
+  {
+   "college": "Crafton Hills College",
+   "why": "The page lists the VP of Student Services and VP of Administrative Services org charts, but the read kept no name beside them."
+  }
+ ]
+}

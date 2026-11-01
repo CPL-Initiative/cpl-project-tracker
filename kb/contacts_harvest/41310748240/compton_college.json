@@ -1,0 +1,685 @@
+{
+ "college": "Compton College",
+ "homepage": "https://www.compton.edu/",
+ "read_at": "2026-11-01T13:25:17+00:00",
+ "pages": [
+  {
+   "url": "https://www.compton.edu/",
+   "final_url": "https://www.compton.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President & CEO",
+     "position": "college_ceo",
+     "window": [
+      "Student Housing Information",
+      "Visit",
+      "Leadership & Governance",
+      "President & CEO",
+      "Board of Trustees",
+      "Vice Presidents",
+      "Campus Committees"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.compton.edu/academics/health-public-services/administration-of-justice/index.aspx",
+   "final_url": "https://www.compton.edu/academics/health-public-services/administration-of-justice/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President & CEO",
+     "position": "college_ceo",
+     "window": [
+      "Student Housing Information",
+      "Visit",
+      "Leadership & Governance",
+      "President & CEO",
+      "Board of Trustees",
+      "Vice Presidents",
+      "Campus Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Student Learning",
+     "position": null,
+     "window": [
+      "start here",
+      "Contact Information:",
+      "Gerson Valle",
+      "Dean of Student Learning",
+      "gvalle@compton.edu gvalle@compton.edu",
+      "(310)900-1600, ext 2727",
+      "Allied Health Building, Room 111"
+     ],
+     "emails": [
+      "gvalle@compton.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.compton.edu/about/presidentceo/index.aspx",
+   "final_url": "https://www.compton.edu/about/presidentceo/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President/CEO, Compton College",
+     "position": "college_ceo",
+     "window": [
+      "President/CEO, Compton College",
+      "Winter and Spring 2027 Class Schedules Available Online Find your classes and be prepared to register.MenuSide Menu",
+      "Search",
+      "Close"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President & CEO",
+     "position": "college_ceo",
+     "window": [
+      "Student Housing Information",
+      "Visit",
+      "Leadership & Governance",
+      "President & CEO",
+      "Board of Trustees",
+      "Vice Presidents",
+      "Campus Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO, Compton College",
+     "position": "college_ceo",
+     "window": [
+      "Calendar",
+      "Apply",
+      "Search",
+      "President/CEO, Compton College",
+      "Home",
+      "About",
+      "President/CEO"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "President/CEO, Compton College",
+      "Home",
+      "About",
+      "President/CEO",
+      "President/CEO, Keith Curry",
+      "Welcome to Compton College—Where every student is a success story!",
+      "As we approach our Centennial in 2027, we are proud of our history and focused on"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO, Keith Curry",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About",
+      "President/CEO",
+      "President/CEO, Keith Curry",
+      "Welcome to Compton College—Where every student is a success story!",
+      "As we approach our Centennial in 2027, we are proud of our history and focused on",
+      "the work ahead: helping students complete their educational goals, transfer to a university,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President, Compton College",
+     "position": "college_ceo",
+     "window": [
+      "at Compton College. We are proud to serve our students and community, and we look",
+      "forward to continuing this work as we celebrate 100 years of Compton College.",
+      "Keith Curry",
+      "President, Compton College",
+      "CEO, Compton Community College District",
+      "Video chat with President/CEO on Cranium Cafe",
+      "News from the President/CEO"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Video chat with President/CEO on Cranium Cafe",
+     "position": "college_ceo",
+     "window": [
+      "Keith Curry",
+      "President, Compton College",
+      "CEO, Compton Community College District",
+      "Video chat with President/CEO on Cranium Cafe",
+      "News from the President/CEO",
+      "This Week's President/CEO Message",
+      "View Archived Messages"
+     ],
+     "emails": []
+    },
+    {
+     "line": "News from the President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "President, Compton College",
+      "CEO, Compton Community College District",
+      "Video chat with President/CEO on Cranium Cafe",
+      "News from the President/CEO",
+      "This Week's President/CEO Message",
+      "View Archived Messages",
+      "2026-2028 President/CEO Priorities (PDF)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "This Week's President/CEO Message",
+     "position": "college_ceo",
+     "window": [
+      "CEO, Compton Community College District",
+      "Video chat with President/CEO on Cranium Cafe",
+      "News from the President/CEO",
+      "This Week's President/CEO Message",
+      "View Archived Messages",
+      "2026-2028 President/CEO Priorities (PDF)",
+      "2025-2026 President/CEO Priorities (PDF)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2026-2028 President/CEO Priorities (PDF)",
+     "position": "college_ceo",
+     "window": [
+      "News from the President/CEO",
+      "This Week's President/CEO Message",
+      "View Archived Messages",
+      "2026-2028 President/CEO Priorities (PDF)",
+      "2025-2026 President/CEO Priorities (PDF)",
+      "2026-2027 Student Forums",
+      "Wednesdays, 2:30 to 3:30 p.m. in SSB 212"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2025-2026 President/CEO Priorities (PDF)",
+     "position": "college_ceo",
+     "window": [
+      "This Week's President/CEO Message",
+      "View Archived Messages",
+      "2026-2028 President/CEO Priorities (PDF)",
+      "2025-2026 President/CEO Priorities (PDF)",
+      "2026-2027 Student Forums",
+      "Wednesdays, 2:30 to 3:30 p.m. in SSB 212",
+      "September 9, 2026"
+     ],
+     "emails": []
+    },
+    {
+     "line": "August 22, 2024 Professional Development Day President/CEO Presentation",
+     "position": "college_ceo",
+     "window": [
+      "March 18, 2025 Campuswide Forum PowerPoint Presentation",
+      "February 13, 2025 Spring 2025 Professional Development Day Presentation",
+      "November 19, 2024 Campuswide Forum Presentation",
+      "August 22, 2024 Professional Development Day President/CEO Presentation",
+      "May 21, 2024 Campuswide Forum Presentation",
+      "March 19, 2024 Campuswide Forum Presentation",
+      "February 8, 2024 Professional Development Day President/CEO Presentation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "February 8, 2024 Professional Development Day President/CEO Presentation",
+     "position": "college_ceo",
+     "window": [
+      "August 22, 2024 Professional Development Day President/CEO Presentation",
+      "May 21, 2024 Campuswide Forum Presentation",
+      "March 19, 2024 Campuswide Forum Presentation",
+      "February 8, 2024 Professional Development Day President/CEO Presentation",
+      "November 21, 2023 Campuswide Forum (PowerPoint presentation - PDF)",
+      "September 19, 2023 Campuswide Forum (PowerPoint presentation - PDF)",
+      "August 17, 2023 Professional Development Day President/CEO Presentation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "August 17, 2023 Professional Development Day President/CEO Presentation",
+     "position": "college_ceo",
+     "window": [
+      "February 8, 2024 Professional Development Day President/CEO Presentation",
+      "November 21, 2023 Campuswide Forum (PowerPoint presentation - PDF)",
+      "September 19, 2023 Campuswide Forum (PowerPoint presentation - PDF)",
+      "August 17, 2023 Professional Development Day President/CEO Presentation",
+      "April 18, 2023 Tartar Talks Presentation",
+      "February 21, 2023 Tartar Talks Presentation",
+      "November 22, 2022 Tartar Talks Presentation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "August 18, 2022 Professional Development Day President/CEO Presentation",
+     "position": "college_ceo",
+     "window": [
+      "February 21, 2023 Tartar Talks Presentation",
+      "November 22, 2022 Tartar Talks Presentation",
+      "September 20, 2022 Tartar Talks Presentation",
+      "August 18, 2022 Professional Development Day President/CEO Presentation",
+      "April 19, 2022 Tartar Talks Presentation",
+      "February 10, 2022 Professional Development Day 2 President/CEO Presentation",
+      "November 23, 2021 Tartar Talks Presentation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "February 10, 2022 Professional Development Day 2 President/CEO Presentation",
+     "position": "college_ceo",
+     "window": [
+      "September 20, 2022 Tartar Talks Presentation",
+      "August 18, 2022 Professional Development Day President/CEO Presentation",
+      "April 19, 2022 Tartar Talks Presentation",
+      "February 10, 2022 Professional Development Day 2 President/CEO Presentation",
+      "November 23, 2021 Tartar Talks Presentation",
+      "October 7, 2021 Academic Senate Presentation: FTES Protection and Enrollment",
+      "September 21, 2021 Tartar Talks Presentation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "February 11, 2021 Professional Development Day 2 President/CEO Presentation",
+     "position": "college_ceo",
+     "window": [
+      "September 21, 2021 Tartar Talks Presentation",
+      "August 19, 2021: Fall 2021 Professional Development Day 1 Presentation",
+      "April 20, 2021 \"Tartar Talks\" Presentation",
+      "February 11, 2021 Professional Development Day 2 President/CEO Presentation",
+      "November 24, 2020 \"Tartar Talks\" Presentation",
+      "September 22, 2020 \"Tartar Talks\" Presentation",
+      "August 20, 2020 - Professional Development Day 1 -President/CEO Presentation (PDF)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "August 20, 2020 - Professional Development Day 1 -President/CEO Presentation (PDF)",
+     "position": "college_ceo",
+     "window": [
+      "February 11, 2021 Professional Development Day 2 President/CEO Presentation",
+      "November 24, 2020 \"Tartar Talks\" Presentation",
+      "September 22, 2020 \"Tartar Talks\" Presentation",
+      "August 20, 2020 - Professional Development Day 1 -President/CEO Presentation (PDF)",
+      "May 19, 2020 - \"Tartar Talks\" Presentation",
+      "February 25, 2020 - \"Tartar Talks\" Presentation",
+      "February 13, 2020 - Professional Development Day 2 President/CEO Presentation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "February 13, 2020 - Professional Development Day 2 President/CEO Presentation",
+     "position": "college_ceo",
+     "window": [
+      "August 20, 2020 - Professional Development Day 1 -President/CEO Presentation (PDF)",
+      "May 19, 2020 - \"Tartar Talks\" Presentation",
+      "February 25, 2020 - \"Tartar Talks\" Presentation",
+      "February 13, 2020 - Professional Development Day 2 President/CEO Presentation",
+      "November 19, 2019 \"Tartar Talks\" Presentation",
+      "September 17, 2019 \"Tartar Talks\" Presentation",
+      "August 22, 209 - Professional Development Day"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO PowerPoint Presentation",
+     "position": "college_ceo",
+     "window": [
+      "November 19, 2019 \"Tartar Talks\" Presentation",
+      "September 17, 2019 \"Tartar Talks\" Presentation",
+      "August 22, 209 - Professional Development Day",
+      "President/CEO PowerPoint Presentation",
+      "On the Edge - Karen Stout",
+      "April 23, 2019 \"Tartar Talks\" Presentation",
+      "February 27, 2018 \"Tartar Talks\" Presentation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO Recommendations",
+     "position": "college_ceo",
+     "window": [
+      "Community Forums",
+      "October 25, 2018 - Community Summit: Compton College Presentation",
+      "July 14, 2018 - Compton CCD Community Forum Presentation",
+      "President/CEO Recommendations",
+      "Recommendation to the President/CEO (MS Office Form)",
+      "President/CEO Taskforces",
+      "President/CEO Taskforce Monthly Updates (available via BoardDocs)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Recommendation to the President/CEO (MS Office Form)",
+     "position": "college_ceo",
+     "window": [
+      "October 25, 2018 - Community Summit: Compton College Presentation",
+      "July 14, 2018 - Compton CCD Community Forum Presentation",
+      "President/CEO Recommendations",
+      "Recommendation to the President/CEO (MS Office Form)",
+      "President/CEO Taskforces",
+      "President/CEO Taskforce Monthly Updates (available via BoardDocs)",
+      "Mascot Development Workgroup"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO Taskforces",
+     "position": "college_ceo",
+     "window": [
+      "July 14, 2018 - Compton CCD Community Forum Presentation",
+      "President/CEO Recommendations",
+      "Recommendation to the President/CEO (MS Office Form)",
+      "President/CEO Taskforces",
+      "President/CEO Taskforce Monthly Updates (available via BoardDocs)",
+      "Mascot Development Workgroup",
+      "Navigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO Taskforce Monthly Updates (available via BoardDocs)",
+     "position": "college_ceo",
+     "window": [
+      "President/CEO Recommendations",
+      "Recommendation to the President/CEO (MS Office Form)",
+      "President/CEO Taskforces",
+      "President/CEO Taskforce Monthly Updates (available via BoardDocs)",
+      "Mascot Development Workgroup",
+      "Navigation",
+      "CCCD Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Messages from the President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "CCCD Board of Trustee Meetings",
+      "Elections",
+      "Event Participation Request Form",
+      "Messages from the President/CEO",
+      "Applause Card",
+      "Public Records Requests",
+      "We're Here to Help! Create Your Success Story at Compton College."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.compton.edu/student-support/veterans/index.aspx",
+   "final_url": "https://www.compton.edu/student-support/veterans/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center",
+      "Winter and Spring 2027 Class Schedules Available Online Find your classes and be prepared to register.MenuSide Menu",
+      "Search",
+      "Close"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President & CEO",
+     "position": "college_ceo",
+     "window": [
+      "Student Housing Information",
+      "Visit",
+      "Leadership & Governance",
+      "President & CEO",
+      "Board of Trustees",
+      "Vice Presidents",
+      "Campus Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Calendar",
+      "Apply",
+      "Search",
+      "Veterans Resource Center",
+      "Home",
+      "Student Support",
+      "Veterans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Financial Aid Coordinator/Veterans SCO",
+     "position": null,
+     "window": [
+      "service member, or qualified family member!",
+      "Contact us, we're here to help.",
+      "Kisha McThirsty",
+      "Financial Aid Coordinator/Veterans SCO",
+      "Office of Financial Aid & Scholarships",
+      "Compton College",
+      "310-900-1600, ext. 2927"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Dependents Education Assistance",
+      "Montgomery GI Bill® Selected Reserve (Chapter 1606) Program",
+      "Verifying Enrollment for Veterans Educational Programs",
+      "Veterans Resource Center",
+      "Find a place to relax, study, and connect with other student veterans at the Veterans",
+      "Resource Center, located in the Student Services Building, 2nd Floor, Room 220. Access",
+      "to computers and a workspace are just some of the amenities available in this welcoming"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chat with a Veteran's Services Team Member",
+     "position": "vrc",
+     "window": [
+      "College students are welcome to visit and learn more about our services.",
+      "Navigation",
+      "Scholarships",
+      "Chat with a Veteran's Services Team Member",
+      "Contact Us",
+      "We're Here to Help! Create Your Success Story at Compton College.",
+      "START HERE"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.compton.edu/student-support/veterans/chat_with_veteransservices.aspx",
+   "final_url": "https://www.compton.edu/student-support/veterans/chat_with_veteransservices.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Chat with a Veteran's Services Team Member",
+     "position": "vrc",
+     "window": [
+      "Chat with a Veteran's Services Team Member",
+      "Winter and Spring 2027 Class Schedules Available Online Find your classes and be prepared to register.MenuSide Menu",
+      "Search",
+      "Close"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President & CEO",
+     "position": "college_ceo",
+     "window": [
+      "Student Housing Information",
+      "Visit",
+      "Leadership & Governance",
+      "President & CEO",
+      "Board of Trustees",
+      "Vice Presidents",
+      "Campus Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chat with a Veteran's Services Team Member",
+     "position": "vrc",
+     "window": [
+      "Calendar",
+      "Apply",
+      "Search",
+      "Chat with a Veteran's Services Team Member",
+      "Home",
+      "Student Support",
+      "Veterans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chat with a Veteran's Services Team Member",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Student Support",
+      "Veterans",
+      "Chat with a Veteran's Services Team Member",
+      "Chat with a Veterans Services Team Member",
+      "If the Veterans Services team member's light is green, \"Online\", you can click on \"Knock on Door\" to begin chatting. If they are not \"Online \" you can click \"Send Offline Message\" to send them an email.",
+      "Video chat with Veterans Resource Center on Cranium Cafe"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chat with a Veterans Services Team Member",
+     "position": "vrc",
+     "window": [
+      "Student Support",
+      "Veterans",
+      "Chat with a Veteran's Services Team Member",
+      "Chat with a Veterans Services Team Member",
+      "If the Veterans Services team member's light is green, \"Online\", you can click on \"Knock on Door\" to begin chatting. If they are not \"Online \" you can click \"Send Offline Message\" to send them an email.",
+      "Video chat with Veterans Resource Center on Cranium Cafe",
+      "We're Here to Help! Create Your Success Story at Compton College."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Video chat with Veterans Resource Center on Cranium Cafe",
+     "position": "vrc",
+     "window": [
+      "Chat with a Veteran's Services Team Member",
+      "Chat with a Veterans Services Team Member",
+      "If the Veterans Services team member's light is green, \"Online\", you can click on \"Knock on Door\" to begin chatting. If they are not \"Online \" you can click \"Send Offline Message\" to send them an email.",
+      "Video chat with Veterans Resource Center on Cranium Cafe",
+      "We're Here to Help! Create Your Success Story at Compton College.",
+      "START HERE",
+      "MyCompton"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.compton.edu/student-support/veterans/",
+   "final_url": "https://www.compton.edu/student-support/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center",
+      "Winter and Spring 2027 Class Schedules Available Online Find your classes and be prepared to register.MenuSide Menu",
+      "Search",
+      "Close"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President & CEO",
+     "position": "college_ceo",
+     "window": [
+      "Student Housing Information",
+      "Visit",
+      "Leadership & Governance",
+      "President & CEO",
+      "Board of Trustees",
+      "Vice Presidents",
+      "Campus Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Calendar",
+      "Apply",
+      "Search",
+      "Veterans Resource Center",
+      "Home",
+      "Student Support",
+      "Veterans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Financial Aid Coordinator/Veterans SCO",
+     "position": null,
+     "window": [
+      "service member, or qualified family member!",
+      "Contact us, we're here to help.",
+      "Kisha McThirsty",
+      "Financial Aid Coordinator/Veterans SCO",
+      "Office of Financial Aid & Scholarships",
+      "Compton College",
+      "310-900-1600, ext. 2927"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Dependents Education Assistance",
+      "Montgomery GI Bill® Selected Reserve (Chapter 1606) Program",
+      "Verifying Enrollment for Veterans Educational Programs",
+      "Veterans Resource Center",
+      "Find a place to relax, study, and connect with other student veterans at the Veterans",
+      "Resource Center, located in the Student Services Building, 2nd Floor, Room 220. Access",
+      "to computers and a workspace are just some of the amenities available in this welcoming"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chat with a Veteran's Services Team Member",
+     "position": "vrc",
+     "window": [
+      "College students are welcome to visit and learn more about our services.",
+      "Navigation",
+      "Scholarships",
+      "Chat with a Veteran's Services Team Member",
+      "Contact Us",
+      "We're Here to Help! Create Your Success Story at Compton College.",
+      "START HERE"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41310748240"
+}

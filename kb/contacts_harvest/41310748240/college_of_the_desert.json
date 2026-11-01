@@ -1,0 +1,1010 @@
+{
+ "college": "College of the Desert",
+ "homepage": "https://collegeofthedesert.edu/",
+ "read_at": "2026-11-01T13:23:05+00:00",
+ "pages": [
+  {
+   "url": "https://collegeofthedesert.edu/",
+   "final_url": "https://collegeofthedesert.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://collegeofthedesert.edu/directory/default.php",
+   "final_url": "https://collegeofthedesert.edu/directory/default.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Interim Executive Director, Bond Program and Facilities Plan",
+     "position": null,
+     "window": [
+      "Social Sciences and Arts",
+      "x5758",
+      "rsadkins@collegeofthedesert.edu Rodney Adkins",
+      "Interim Executive Director, Bond Program and Facilities Plan",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "x2504"
+     ],
+     "emails": [
+      "rsadkins@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "x5758",
+      "rsadkins@collegeofthedesert.edu Rodney Adkins",
+      "Interim Executive Director, Bond Program and Facilities Plan",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "x2504",
+      "bagbayani@collegeofthedesert.edu Brian Agbayani"
+     ],
+     "emails": [
+      "bagbayani@collegeofthedesert.edu",
+      "rsadkins@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Institutional Research",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "Health Sciences and Education",
+      "oaghaei@collegeofthedesert.edu Oxana Aghaei",
+      "Director, Institutional Research",
+      "Institutional Research",
+      "Institutional Effectiveness",
+      "x7212"
+     ],
+     "emails": [
+      "oaghaei@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Acting, Director, Student Success and Outreach",
+     "position": null,
+     "window": [
+      "Social Sciences and Arts",
+      "Social Sciences and Arts",
+      "falfaro@collegeofthedesert.edu Francisco Alfaro",
+      "Acting, Director, Student Success and Outreach",
+      "Dept. of Counseling and Advising",
+      "Counseling Services",
+      "x7449"
+     ],
+     "emails": [
+      "falfaro@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Adjunct Faculty, Assistant Tutorial Coordinator",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "x6562",
+      "aalvarado-cantu@collegeofthedesert.edu Anthony Alvarado-Cantu",
+      "Adjunct Faculty, Assistant Tutorial Coordinator",
+      "Library and Learning Resources",
+      "Library and Learning Resources",
+      "x7497"
+     ],
+     "emails": [
+      "aalvarado-cantu@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "x7817",
+      "ravanzini@collegeofthedesert.edu Renan Avanzini",
+      "Public Safety Officer",
+      "Security",
+      "Administrative Services",
+      "javila@collegeofthedesert.edu Jennifer Avila"
+     ],
+     "emails": [
+      "javila@collegeofthedesert.edu",
+      "ravanzini@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Dean, Enrollment Services",
+     "position": null,
+     "window": [
+      "Counseling Services",
+      "x1381",
+      "mayon@collegeofthedesert.edu Maria Ayon",
+      "Dean, Enrollment Services",
+      "Enrollment Services",
+      "Student Access and School Relations",
+      "abaine@collegeofthedesert.edu Annette Baine"
+     ],
+     "emails": [
+      "abaine@collegeofthedesert.edu",
+      "mayon@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director of Kinesiology and Athletics",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "Health Sciences and Education",
+      "kblank@collegeofthedesert.edu Kaytlyn Blank",
+      "Director of Kinesiology and Athletics",
+      "Dept.Of Kinesiology andAthletics",
+      "Health Sciences and Education",
+      "x7260"
+     ],
+     "emails": [
+      "kblank@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Maintenance and Operations",
+     "position": null,
+     "window": [
+      "Mathematics And Science",
+      "x7840",
+      "mblawski@collegeofthedesert.edu Mark Blawski",
+      "Director, Maintenance and Operations",
+      "Maintenance and Operations",
+      "Administrative Services",
+      "cbloomquist@collegeofthedesert.edu Christian Bloomquist"
+     ],
+     "emails": [
+      "cbloomquist@collegeofthedesert.edu",
+      "mblawski@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x6342",
+      "ecabitla@collegeofthedesert.edu Edmar Cabitla",
+      "Public Safety Officer",
+      "Security",
+      "Administrative Services",
+      "x2111"
+     ],
+     "emails": [
+      "ecabitla@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Acting Asstant Director, Nursing and Allied Health",
+     "position": null,
+     "window": [
+      "Communication and Humanities",
+      "x6550",
+      "mcamargo@collegeofthedesert.edu Monica Camargo",
+      "Acting Asstant Director, Nursing and Allied Health",
+      "Dept. of Health Sci and Nursing",
+      "Health Sciences and Education",
+      "x7343"
+     ],
+     "emails": [
+      "mcamargo@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "dcarere@collegeofthedesert.edu Dean Carere",
+     "position": null,
+     "window": [
+      "Social Sciences and Arts",
+      "Social Sciences and Arts",
+      "x9071",
+      "dcarere@collegeofthedesert.edu Dean Carere",
+      "Adjunct Faculty, Clinical Nursing",
+      "Health Sciences and Education",
+      "Health Sciences and Education"
+     ],
+     "emails": [
+      "dcarere@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Educational Partnerships and Outreach",
+     "position": null,
+     "window": [
+      "Communication and Humanities",
+      "x5672",
+      "kcarrigan@collegeofthedesert.edu Kyle Carrigan",
+      "Director, Educational Partnerships and Outreach",
+      "Office of Instruction",
+      "Office of Instruction",
+      "ncarrillo@collegeofthedesert.edu Nellie Carrillo"
+     ],
+     "emails": [
+      "kcarrigan@collegeofthedesert.edu",
+      "ncarrillo@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Assistant Director, Clinical Services",
+     "position": null,
+     "window": [
+      "Student Access and School Relations",
+      "x2039",
+      "delia@collegeofthedesert.edu Daniela Cervantes-Elia",
+      "Assistant Director, Clinical Services",
+      "Health Services",
+      "Student Support Services",
+      "x7291"
+     ],
+     "emails": [
+      "delia@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Interim Dean, Counseling Services",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "x6575",
+      "kchartier@collegeofthedesert.edu Katie Chartier",
+      "Interim Dean, Counseling Services",
+      "Dept. of Counseling and Advising",
+      "Counseling Services",
+      "x7635"
+     ],
+     "emails": [
+      "kchartier@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Project Director, Career Technical Education",
+     "position": null,
+     "window": [
+      "Counseling Services",
+      "x7635",
+      "pchase@collegeofthedesert.edu Prudence Chase",
+      "Project Director, Career Technical Education",
+      "Applied Science and Business",
+      "Applied Science and Business",
+      "x4832"
+     ],
+     "emails": [
+      "pchase@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x7154",
+      "chcomo@collegeofthedesert.edu Chaz Como",
+      "Public Safety Officer",
+      "Public Safety",
+      "Administrative Services",
+      "x2111"
+     ],
+     "emails": [
+      "chcomo@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Instruction",
+     "position": "vpaa",
+     "window": [
+      "Social Sciences and Arts",
+      "Social Sciences and Arts",
+      "jcowden@collegeofthedesert.edu Joy Cowden",
+      "Vice President, Instruction",
+      "Office of Instruction",
+      "Office of Instruction",
+      "x4806"
+     ],
+     "emails": [
+      "jcowden@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Executive Director of Education Technology",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "x4439",
+      "stdavis@collegeofthedesert.edu Stuart Davis",
+      "Executive Director of Education Technology",
+      "Information Systems",
+      "Administrative Services",
+      "x1333"
+     ],
+     "emails": [
+      "stdavis@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Execuitve Assistant To the Foundation Executive Director",
+     "position": null,
+     "window": [
+      "Social Sciences and Arts",
+      "x6400",
+      "edehondt@collegeofthedesert.edu Eve-Marie Dehondt",
+      "Execuitve Assistant To the Foundation Executive Director",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "x1380"
+     ],
+     "emails": [
+      "edehondt@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "x6400",
+      "edehondt@collegeofthedesert.edu Eve-Marie Dehondt",
+      "Execuitve Assistant To the Foundation Executive Director",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "x1380",
+      "sdelahanty@collegeofthedesert.edu Suzanne Delahanty"
+     ],
+     "emails": [
+      "edehondt@collegeofthedesert.edu",
+      "sdelahanty@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Acting Dean, Comm and Humanities",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "x6560",
+      "kdozier@collegeofthedesert.edu Kim Dozier",
+      "Acting Dean, Comm and Humanities",
+      "Dept. of Communication",
+      "Communication and Humanities",
+      "x7208"
+     ],
+     "emails": [
+      "kdozier@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Interim Director, PACE",
+     "position": null,
+     "window": [
+      "Communication and Humanities",
+      "x5616",
+      "jdunn@collegeofthedesert.edu James Dunn",
+      "Interim Director, PACE",
+      "Partnership and Community Educ",
+      "x7301",
+      "sdupus@collegeofthedesert.edu Stevan Dupus"
+     ],
+     "emails": [
+      "jdunn@collegeofthedesert.edu",
+      "sdupus@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Administrative Services",
+      "x2551",
+      "vduran@collegeofthedesert.edu Victor Duran",
+      "Public Safety Officer",
+      "Security",
+      "Administrative Services",
+      "rdurkin@collegeofthedesert.edu Robert Durkin"
+     ],
+     "emails": [
+      "rdurkin@collegeofthedesert.edu",
+      "vduran@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "x5785",
+      "ddurney@collegeofthedesert.edu Dotty Durney",
+      "Executive Administrative Assistant Institutional Advancement",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "x2582",
+      "kdurr@collegeofthedesert.edu Kevin Durr"
+     ],
+     "emails": [
+      "ddurney@collegeofthedesert.edu",
+      "kdurr@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Dean, Applied Science and Business",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x7048",
+      "jenders@collegeofthedesert.edu Jessica Enders",
+      "Dean, Applied Science and Business",
+      "Dept. of Business",
+      "Applied Science and Business",
+      "x7972"
+     ],
+     "emails": [
+      "jenders@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Upward Bound",
+     "position": null,
+     "window": [
+      "Administrative Services",
+      "x7948",
+      "pespinosa@collegeofthedesert.edu Patricia Espinosa",
+      "Director, Upward Bound",
+      "TRiO-Upward Bound",
+      "Student Support Services",
+      "gestes@collegeofthedesert.edu Gary Estes"
+     ],
+     "emails": [
+      "gestes@collegeofthedesert.edu",
+      "pespinosa@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Secretary, Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Counseling Services",
+      "Counseling Services",
+      "jfelix@collegeofthedesert.edu Jason Felix",
+      "Secretary, Veterans Resource Center",
+      "Veterans Services",
+      "Student Access and School Relations",
+      "x7845"
+     ],
+     "emails": [
+      "jfelix@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Counseling Services",
+      "jfelix@collegeofthedesert.edu Jason Felix",
+      "Secretary, Veterans Resource Center",
+      "Veterans Services",
+      "Student Access and School Relations",
+      "x7845",
+      "kferguson@collegeofthedesert.edu Kennellie Ferguson"
+     ],
+     "emails": [
+      "jfelix@collegeofthedesert.edu",
+      "kferguson@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Dean, Social Sciences and Arts",
+     "position": null,
+     "window": [
+      "Communication and Humanities",
+      "x7644",
+      "vfountain@collegeofthedesert.edu Vanessa Fountain",
+      "Dean, Social Sciences and Arts",
+      "Dept. of Social Sciences",
+      "Social Sciences and Arts",
+      "x7987"
+     ],
+     "emails": [
+      "vfountain@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Acting Dean, Masc",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x6936",
+      "sfry@collegeofthedesert.edu Sarah Fry",
+      "Acting Dean, Masc",
+      "Dept. of Math and Computer Sci",
+      "Mathematics And Science",
+      "x7303"
+     ],
+     "emails": [
+      "sfry@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Security Officer",
+     "position": null,
+     "window": [
+      "Social Sciences and Arts",
+      "x6332",
+      "agarza@collegeofthedesert.edu Augusto Garza",
+      "Security Officer",
+      "Security",
+      "Administrative Services",
+      "lgastelum@collegeofthedesert.edu Luis Gastelum"
+     ],
+     "emails": [
+      "agarza@collegeofthedesert.edu",
+      "lgastelum@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director Public Affairs and Community Relations",
+     "position": null,
+     "window": [
+      "Communication and Humanities",
+      "x5866",
+      "ggonzalez@collegeofthedesert.edu Genesis Gonzalez",
+      "Director Public Affairs and Community Relations",
+      "Institutional Advancement",
+      "Office of the Superintendent - Pres",
+      "x2545"
+     ],
+     "emails": [
+      "ggonzalez@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Acting, Director, Dsps",
+     "position": null,
+     "window": [
+      "Student Support Services",
+      "x6853",
+      "jgorges@collegeofthedesert.edu Jonathan Gorges",
+      "Acting, Director, Dsps",
+      "Disabled Students",
+      "Counseling Services",
+      "cgorospe@collegeofthedesert.edu Cory Gorospe"
+     ],
+     "emails": [
+      "cgorospe@collegeofthedesert.edu",
+      "jgorges@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "x5649",
+      "asgranados@collegeofthedesert.edu Ashley Granados",
+      "Executive Administrative Assistant- Student Services",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "x5437",
+      "agrandmain@collegeofthedesert.edu Andre Grandmain"
+     ],
+     "emails": [
+      "agrandmain@collegeofthedesert.edu",
+      "asgranados@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Professor, De and Instructional Design Coordinator",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x5553",
+      "dgreene@collegeofthedesert.edu Donna Greene",
+      "Professor, De and Instructional Design Coordinator",
+      "Library and Learning Resources",
+      "Library and Learning Resources",
+      "x7398"
+     ],
+     "emails": [
+      "dgreene@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, EOPS/CARE and Foster Youth Services",
+     "position": null,
+     "window": [
+      "Information Systems",
+      "Administrative Services",
+      "agriffith@collegeofthedesert.edu Ashley Griffith",
+      "Director, EOPS/CARE and Foster Youth Services",
+      "Dept. of Counseling and Advising",
+      "Counseling Services",
+      "sgriffith@collegeofthedesert.edu Shaun Griffith"
+     ],
+     "emails": [
+      "agriffith@collegeofthedesert.edu",
+      "sgriffith@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Fiscal Services",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x1308",
+      "dguijarro@collegeofthedesert.edu Diana Guijarro",
+      "Director, Fiscal Services",
+      "Administrative Services",
+      "Administrative Services",
+      "sguilin@collegeofthedesert.edu Salvador Guilin"
+     ],
+     "emails": [
+      "dguijarro@collegeofthedesert.edu",
+      "sguilin@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Interim Director, Mathematics, Engineering, Science Achievem",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x5563",
+      "bhorton@collegeofthedesert.edu Bronwyn Horton",
+      "Interim Director, Mathematics, Engineering, Science Achievem",
+      "Dept. of Math and Computer Sci",
+      "Mathematics And Science",
+      "x1395"
+     ],
+     "emails": [
+      "bhorton@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x5780",
+      "djauregui@collegeofthedesert.edu Dario Jauregui",
+      "Public Safety Officer",
+      "Public Safety",
+      "Administrative Services",
+      "x2111"
+     ],
+     "emails": [
+      "djauregui@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Adjunct Faculty, Assistant Tutorial Coordinator",
+     "position": null,
+     "window": [
+      "Applied Science and Business",
+      "x5869",
+      "jscottjones@collegeofthedesert.edu James Jones",
+      "Adjunct Faculty, Assistant Tutorial Coordinator",
+      "Library and Learning Resources",
+      "Library and Learning Resources",
+      "x6744"
+     ],
+     "emails": [
+      "jscottjones@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Student Access and School Relations",
+      "x7427",
+      "dijuarez@collegeofthedesert.edu Diego Juarez",
+      "Public Safety Officer",
+      "Security",
+      "Administrative Services",
+      "mjuarez@collegeofthedesert.edu Mayra Juarez"
+     ],
+     "emails": [
+      "dijuarez@collegeofthedesert.edu",
+      "mjuarez@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Professor, De and Instructional Design Coordinator",
+     "position": null,
+     "window": [
+      "Social Sciences and Arts",
+      "Social Sciences and Arts",
+      "cleighton@collegeofthedesert.edu Cora Leighton",
+      "Professor, De and Instructional Design Coordinator",
+      "Library and Learning Resources",
+      "Library and Learning Resources",
+      "bleon@collegeofthedesert.edu Bianca Leon"
+     ],
+     "emails": [
+      "bleon@collegeofthedesert.edu",
+      "cleighton@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Trio Programs",
+     "position": null,
+     "window": [
+      "Library and Learning Resources",
+      "Library and Learning Resources",
+      "bleon@collegeofthedesert.edu Bianca Leon",
+      "Director, Trio Programs",
+      "TRiO-DSPS",
+      "Student Support Services",
+      "mlerma@collegeofthedesert.edu Miguel Lerma"
+     ],
+     "emails": [
+      "bleon@collegeofthedesert.edu",
+      "mlerma@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Information Security Officer",
+     "position": null,
+     "window": [
+      "Office of the Superintendent - Pres",
+      "x6515",
+      "jlilly@collegeofthedesert.edu Jaime Lilly",
+      "Information Security Officer",
+      "Information Systems",
+      "Administrative Services",
+      "x3274"
+     ],
+     "emails": [
+      "jlilly@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Financial Aid",
+     "position": null,
+     "window": [
+      "Library and Learning Resources",
+      "x5844",
+      "eluna-orozco@collegeofthedesert.edu Emmanuel Luna-Orozco",
+      "Director, Financial Aid",
+      "Financial Aid",
+      "Student Access and School Relations",
+      "x7304"
+     ],
+     "emails": [
+      "eluna-orozco@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "x7166",
+      "cmaldonado@collegeofthedesert.edu Carlos Maldonado",
+      "Interim Chief of Staff",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "x2566",
+      "CMaloney@collegeofthedesert.edu Linda Maloney"
+     ],
+     "emails": [
+      "CMaloney@collegeofthedesert.edu",
+      "cmaldonado@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Institutional Grants",
+     "position": null,
+     "window": [
+      "Office of the Superintendent - Pres",
+      "x2566",
+      "CMaloney@collegeofthedesert.edu Linda Maloney",
+      "Director, Institutional Grants",
+      "Institutional Advancement",
+      "Office of the Superintendent - Pres",
+      "x7640"
+     ],
+     "emails": [
+      "CMaloney@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Administrative Services",
+      "x7813",
+      "vmartinezgarcia@collegeofthedesert.edu Valentine Martinez Garcia",
+      "Superintendent / President",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "rculpepper@collegeofthedesert.edu Rosaline Martinez-Culpepper"
+     ],
+     "emails": [
+      "rculpepper@collegeofthedesert.edu",
+      "vmartinezgarcia@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "x7813",
+      "vmartinezgarcia@collegeofthedesert.edu Valentine Martinez Garcia",
+      "Superintendent / President",
+      "President's Office",
+      "Office of the Superintendent - Pres",
+      "rculpepper@collegeofthedesert.edu Rosaline Martinez-Culpepper",
+      "Adjunct Faculty, Health Science"
+     ],
+     "emails": [
+      "rculpepper@collegeofthedesert.edu",
+      "vmartinezgarcia@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, International Student Program",
+     "position": null,
+     "window": [
+      "Social Sciences and Arts",
+      "x7511",
+      "cmccabe@collegeofthedesert.edu Cody McCabe",
+      "Director, International Student Program",
+      "International Education",
+      "Student Support Services",
+      "x7238"
+     ],
+     "emails": [
+      "cmccabe@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Admissions And Records",
+     "position": "dean_ar",
+     "window": [
+      "Social Sciences and Arts",
+      "x7641",
+      "nmcmillin@collegeofthedesert.edu Noelle McMillin",
+      "Director, Admissions And Records",
+      "Admissions and Records",
+      "Student Access and School Relations",
+      "x1309"
+     ],
+     "emails": [
+      "nmcmillin@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Job Developer/Placement Coordinator",
+     "position": null,
+     "window": [
+      "Communication and Humanities",
+      "x6555",
+      "nmendoza@collegeofthedesert.edu Nashelle Mendoza",
+      "Job Developer/Placement Coordinator",
+      "Applied Science and Business",
+      "Applied Science and Business",
+      "ameraz@collegeofthedesert.edu Angela Meraz"
+     ],
+     "emails": [
+      "ameraz@collegeofthedesert.edu",
+      "nmendoza@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Public Safety Academy",
+     "position": null,
+     "window": [
+      "Administrative Services",
+      "x2551",
+      "wmeyer@collegeofthedesert.edu Wally Meyer",
+      "Director, Public Safety Academy",
+      "Applied Sciences",
+      "Applied Science and Business",
+      "x4880"
+     ],
+     "emails": [
+      "wmeyer@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "x6503",
+      "mmijarez@collegeofthedesert.edu Manuel Mijarez",
+      "Public Safety Officer",
+      "Security",
+      "Administrative Services",
+      "jmiklesprobst@collegeofthedesert.edu Jill Mikles-Probst"
+     ],
+     "emails": [
+      "jmiklesprobst@collegeofthedesert.edu",
+      "mmijarez@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Counseling Services",
+      "x5977",
+      "pemora@collegeofthedesert.edu Pedro Mora",
+      "Public Safety Officer",
+      "Security",
+      "Administrative Services",
+      "blmorales@collegeofthedesert.edu Blanca Morales"
+     ],
+     "emails": [
+      "blmorales@collegeofthedesert.edu",
+      "pemora@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Security Officer",
+     "position": null,
+     "window": [
+      "Health Sciences and Education",
+      "x5490",
+      "amoreno@collegeofthedesert.edu Andres Moreno",
+      "Security Officer",
+      "Security",
+      "Administrative Services",
+      "jemoreno@collegeofthedesert.edu Jesus Moreno"
+     ],
+     "emails": [
+      "amoreno@collegeofthedesert.edu",
+      "jemoreno@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Instructor, Coordinator, Counseling, CalWORKs",
+     "position": null,
+     "window": [
+      "Communication and Humanities",
+      "x6979",
+      "rmoreno@collegeofthedesert.edu Rebeca Moreno",
+      "Instructor, Coordinator, Counseling, CalWORKs",
+      "Counseling Services",
+      "Counseling Services",
+      "rimoreno@collegeofthedesert.edu Rigoberto Moreno"
+     ],
+     "emails": [
+      "rimoreno@collegeofthedesert.edu",
+      "rmoreno@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Counseling Services",
+      "Counseling Services",
+      "rimoreno@collegeofthedesert.edu Rigoberto Moreno",
+      "Public Safety Officer",
+      "Security",
+      "Administrative Services",
+      "jumoreno@collegeofthedesert.edu Juan Jose Moreno Ibarra"
+     ],
+     "emails": [
+      "jumoreno@collegeofthedesert.edu",
+      "rimoreno@collegeofthedesert.edu"
+     ]
+    },
+    {
+     "line": "Director, Security and Emergency Preparedness",
+     "position": null,
+     "window": [
+      "Dept. of Math and Computer Sci",
+      "Mathematics And Science",
+      "tnakamura@collegeofthedesert.edu Timothy Nakamura",
+      "Director, Security and Emergency Preparedness",
+      "Security",
+      "Administrative Services",
+      "x3352"
+     ],
+     "emails": [
+      "tnakamura@collegeofthedesert.edu"
+     ]
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41310748240"
+}

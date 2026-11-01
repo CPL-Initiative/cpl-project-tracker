@@ -1,0 +1,218 @@
+{
+ "college": "College of the Siskiyous",
+ "homepage": "https://www.siskiyous.edu/",
+ "read_at": "2026-11-01T13:24:01+00:00",
+ "pages": [
+  {
+   "url": "https://www.siskiyous.edu/",
+   "final_url": "https://www.siskiyous.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Rights and Responsibilities",
+      "Student Services",
+      "Tutoring",
+      "Veterans Services",
+      "Student Resources",
+      "Academic Success Center (ASC)",
+      "Basecamp"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Faculty Diversity Internship Program (FDIP)",
+      "Maps and Directions",
+      "Non-Discrimination Statement and Policy",
+      "Office of the Superintendent / President",
+      "Our Local Area",
+      "Planning",
+      "Program Review"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.siskiyous.edu/admissions/",
+   "final_url": "https://www.siskiyous.edu/admissions/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Rights and Responsibilities",
+      "Student Services",
+      "Tutoring",
+      "Veterans Services",
+      "Student Resources",
+      "Academic Success Center (ASC)",
+      "Basecamp"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Faculty Diversity Internship Program (FDIP)",
+      "Maps and Directions",
+      "Non-Discrimination Statement and Policy",
+      "Office of the Superintendent / President",
+      "Our Local Area",
+      "Planning",
+      "Program Review"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.siskiyous.edu/admissions/forms.htm",
+   "final_url": "https://www.siskiyous.edu/admissions/forms.htm",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Rights and Responsibilities",
+      "Student Services",
+      "Tutoring",
+      "Veterans Services",
+      "Student Resources",
+      "Academic Success Center (ASC)",
+      "Basecamp"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Faculty Diversity Internship Program (FDIP)",
+      "Maps and Directions",
+      "Non-Discrimination Statement and Policy",
+      "Office of the Superintendent / President",
+      "Our Local Area",
+      "Planning",
+      "Program Review"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.siskiyous.edu/financialaid/veterans.htm",
+   "final_url": "https://www.siskiyous.edu/financialaid/veterans.htm",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services - Financial Aid",
+     "position": "vrc",
+     "window": [
+      "Veterans Services - Financial Aid",
+      "Home",
+      "Class Schedule",
+      "Apply"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Satisfactory Academic Progress (PDF)",
+      "Student Consumer Information",
+      "VA Certification Agreement Form Policy (PDF)",
+      "Veterans Services",
+      "Veterans Services",
+      "Veterans Resources",
+      "Stress and Anxiety Assistance"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Consumer Information",
+      "VA Certification Agreement Form Policy (PDF)",
+      "Veterans Services",
+      "Veterans Services",
+      "Veterans Resources",
+      "Stress and Anxiety Assistance",
+      "VA Financial Assistance and Relief"
+     ],
+     "emails": []
+    },
+    {
+     "line": "General Information About Veterans Services",
+     "position": "vrc",
+     "window": [
+      "First-time Applicants",
+      "Contact the COS Counseling Office (530) 938-5353 to make an appointment with the VA counselor. Bring with you the Veteran Application for Benefits, DD-214, and any previous college transcripts. Copies are fine.",
+      "The VA counselor will verify all courses for accuracy regarding classes which can be certified. The VA counselor will explain courses in your major, general education, or possible electives that can be certified.",
+      "General Information About Veterans Services",
+      "Continuing Veteran Students",
+      "A veteran who has attended College of the Siskiyous before on any GI Bill® program must make an appointment with the VA counselor prior to each semester before registering for classes.",
+      "Transferring from Another School"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact Veterans Services",
+     "position": "vrc",
+     "window": [
+      "How to Apply for GI Benefits",
+      "Scholarships by Military Branch",
+      "Awards and Aid for Family Members",
+      "Contact Veterans Services",
+      "For General Inquires/Information:",
+      "Email: veterans@siskiyous.edu veterans@siskiyous.edu",
+      "For Counseling Services/Appointments:"
+     ],
+     "emails": [
+      "veterans@siskiyous.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Rights and Responsibilities",
+      "Student Services",
+      "Tutoring",
+      "Veterans Services",
+      "Student Resources",
+      "Academic Success Center (ASC)",
+      "Basecamp"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Faculty Diversity Internship Program (FDIP)",
+      "Maps and Directions",
+      "Non-Discrimination Statement and Policy",
+      "Office of the Superintendent / President",
+      "Our Local Area",
+      "Planning",
+      "Program Review"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41310748240"
+}

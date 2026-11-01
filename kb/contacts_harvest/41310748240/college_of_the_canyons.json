@@ -1,0 +1,1873 @@
+{
+ "college": "College of the Canyons",
+ "homepage": "https://www.canyons.edu/",
+ "read_at": "2026-11-01T13:22:53+00:00",
+ "pages": [
+  {
+   "url": "https://www.canyons.edu/",
+   "final_url": "https://www.canyons.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.canyons.edu/directory/index.php",
+   "final_url": "https://www.canyons.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Information Technology Coordinator I (Audio/Visual)",
+     "position": null,
+     "window": [
+      "Mathematics",
+      "BONH 327",
+      "Shawn Irwin",
+      "Information Technology Coordinator I (Audio/Visual)",
+      "Audio-Visual",
+      "BONH 104",
+      "Gloria Lopez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Technician II (Veterans Resource Center)",
+     "position": "vrc",
+     "window": [
+      "Audio-Visual",
+      "BONH 104",
+      "Gloria Lopez",
+      "Student Services Technician II (Veterans Resource Center)",
+      "Adult Reentry/Veterans",
+      "HSLH 207",
+      "Lin Wilde"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Campus Safety Officer",
+     "position": null,
+     "window": [
+      "Adjunct Pharmacy Technician",
+      "Health Professions",
+      "Eliott Uribe",
+      "Campus Safety Officer",
+      "Campus Safety",
+      "Michael Forne",
+      "Campus Safety Officer"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Campus Safety Officer",
+     "position": null,
+     "window": [
+      "Campus Safety Officer",
+      "Campus Safety",
+      "Michael Forne",
+      "Campus Safety Officer",
+      "Campus Safety",
+      "Jessica Edmond",
+      "Adjunct ESL Instructor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director, Campus Safety",
+     "position": null,
+     "window": [
+      "Adjunct ESL Instructor",
+      "English As a Second Language",
+      "Reinhardt Schuerger",
+      "Executive Director, Campus Safety",
+      "Campus Safety",
+      "Scott McAfee",
+      "High Tech Ctr Access Coord III (IT)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Facilities Coordinator",
+     "position": null,
+     "window": [
+      "Adjunct Physical Therapy Assistant",
+      "Health Professions",
+      "Justin Bradshaw",
+      "Facilities Coordinator",
+      "Warehouse",
+      "Gabrielle Temple",
+      "Communication Director, NSF CREATE National Energy Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Communication Director, NSF CREATE National Energy Center",
+     "position": null,
+     "window": [
+      "Facilities Coordinator",
+      "Warehouse",
+      "Gabrielle Temple",
+      "Communication Director, NSF CREATE National Energy Center",
+      "Nsf Regional Center",
+      "UCEN 204J",
+      "Scott Groller"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Health Professions and Public Safety Coordinator III",
+     "position": null,
+     "window": [
+      "Mathematics",
+      "MENH 212",
+      "Julie Lutes",
+      "Health Professions and Public Safety Coordinator III",
+      "Health Prof/Public Safety",
+      "BONH 240A",
+      "Patrick Backes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Officer and Senior Curriculum Analyst",
+     "position": "articulation_officer",
+     "window": [
+      "Health Prof/Public Safety",
+      "BONH 240A",
+      "Patrick Backes",
+      "Articulation Officer and Senior Curriculum Analyst",
+      "Instruction Office",
+      "BONH 231",
+      "Anna Hahn"
+     ],
+     "emails": []
+    },
+    {
+     "line": "SS Coordinator III (CWEE)",
+     "position": null,
+     "window": [
+      "Counseling",
+      "SCOH 103D",
+      "Cindy Nelson",
+      "SS Coordinator III (CWEE)",
+      "Cooperative Work Edu Exp",
+      "X6 115",
+      "Eric Harnish"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent/Vice President Public Information",
+     "position": null,
+     "window": [
+      "Cooperative Work Edu Exp",
+      "X6 115",
+      "Eric Harnish",
+      "Assistant Superintendent/Vice President Public Information",
+      "Public Information Office",
+      "CHCS 261",
+      "Jorge Iniguez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "IT Coordinator I (Computer Support)",
+     "position": null,
+     "window": [
+      "Adjunct Biological Sciences Instructor",
+      "Biological & Environ Sciences",
+      "Noel Lopez",
+      "IT Coordinator I (Computer Support)",
+      "Computer Support Services",
+      "BONH 103",
+      "Joanne Schatz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Facilities Coordinator, Energy Services",
+     "position": null,
+     "window": [
+      "Education/Early Childhood Ed",
+      "ECE 126A",
+      "Kenneth Barlow",
+      "Facilities Coordinator, Energy Services",
+      "Facilities/Planning & Svcs",
+      "M&O CCC",
+      "Elissa Brassfield"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Instructional Lab Coordinator (Auto Technologies)",
+     "position": null,
+     "window": [
+      "Geography",
+      "SCOH 306D",
+      "Mark Carr",
+      "Instructional Lab Coordinator (Auto Technologies)",
+      "Automotive Technology",
+      "CCC 700A",
+      "Cynthia Carpenter"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Campus Safety Officer",
+     "position": null,
+     "window": [
+      "Adjunct Nursing Clinical",
+      "Nursing",
+      "Mike Marcinko",
+      "Campus Safety Officer",
+      "Campus Safety",
+      "CCC 511",
+      "Nicholas Schutz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director Nursing",
+     "position": null,
+     "window": [
+      "Library",
+      "LIBR 103",
+      "Tina Rorick",
+      "Director Nursing",
+      "Nursing",
+      "ALLB 304",
+      "Regina Roscigno"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Academic Innovation and Continuing Education",
+     "position": null,
+     "window": [
+      "Adjunct Physical Education / Kinesiology Instructor",
+      "Kinesiology-Physical Education",
+      "Dianne Avery",
+      "Dean, Academic Innovation and Continuing Education",
+      "Community Education",
+      "CHCS 155",
+      "Renard Thomas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Community Education",
+      "CHCS 155",
+      "Renard Thomas",
+      "Director, Veterans Resource Center",
+      "Adult Reentry/Veterans",
+      "HSLH 207",
+      "David Bogna"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator III Outreach & School Relation",
+     "position": null,
+     "window": [
+      "Business Services Office",
+      "UCEN 276",
+      "Gina Thompson",
+      "Student Services Coordinator III Outreach & School Relation",
+      "Outreach",
+      "CHCS 157",
+      "Allen Basallaje"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Health Professions and Public Safety Coordinator III",
+     "position": null,
+     "window": [
+      "Outreach",
+      "CHCS 157",
+      "Allen Basallaje",
+      "Health Professions and Public Safety Coordinator III",
+      "Nursing",
+      "BONH 243A",
+      "Christopher Thompson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Campus Safety Officer II (clery Compliance)",
+     "position": null,
+     "window": [
+      "Adjunct Instructor - Fire Technology",
+      "Fire Technology",
+      "Ken Bricker",
+      "Campus Safety Officer II (clery Compliance)",
+      "Campus Safety",
+      "CCC 511",
+      "Julie Vazquez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Exec Director, Infrastructure and Information Security",
+     "position": null,
+     "window": [
+      "Financial Aid",
+      "CHCS 120",
+      "Hsiawen Hull",
+      "Exec Director, Infrastructure and Information Security",
+      "Computer Support Services",
+      "HSLH 325",
+      "Sarah Kees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Student Resources and Basic Needs",
+     "position": null,
+     "window": [
+      "Nc Theatre Business of Acting",
+      "Community Education",
+      "Sarah Cox",
+      "Director of Student Resources and Basic Needs",
+      "Student Services",
+      "STCN 123E",
+      "Linda De Leon"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator I (Admissions & Records)",
+     "position": null,
+     "window": [
+      "Admissions & Records",
+      "CHCS 132",
+      "Andrea Varney",
+      "Student Services Coordinator I (Admissions & Records)",
+      "Admissions & Records",
+      "CHCS 128",
+      "Yannick Minniti"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Exec Director, Contracts, Procurement, and Risk Mgmt Svs",
+     "position": null,
+     "window": [
+      "Education/Early Childhood Ed",
+      "ECE 104",
+      "April Marin",
+      "Exec Director, Contracts, Procurement, and Risk Mgmt Svs",
+      "Contract & Procurement Service",
+      "UCEN 277",
+      "Jesse Munoz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Dist. Public Relations, Sports Info, & Ath Comms",
+     "position": null,
+     "window": [
+      "Contract & Procurement Service",
+      "UCEN 277",
+      "Jesse Munoz",
+      "Director, Dist. Public Relations, Sports Info, & Ath Comms",
+      "Public Information Office",
+      "CHCS 260",
+      "Luis Lara"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Technology User Support Services",
+     "position": null,
+     "window": [
+      "Adjunct NC Education",
+      "Community Education",
+      "Mathew Camara",
+      "Director, Technology User Support Services",
+      "Computer Support Services",
+      "BONH 103",
+      "Justin Lundin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator II (Admission and Records)",
+     "position": null,
+     "window": [
+      "Custodian II Graveyard Shift",
+      "Custodial",
+      "Erika Hernandez",
+      "Student Services Coordinator II (Admission and Records)",
+      "Admissions & Records",
+      "CHCS 129",
+      "Faiqa Yazdani"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Instructional Lab Coordinator II Culinary Arts & Wine Stud",
+     "position": null,
+     "window": [
+      "Facilities Engineer",
+      "Maintenance",
+      "Jonathan Kolouch",
+      "Instructional Lab Coordinator II Culinary Arts & Wine Stud",
+      "Culinary Arts/Hospitality/Wine",
+      "ICUE 134",
+      "Samuel Minyard"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator I (PE/Locker/Equipment Technician)",
+     "position": null,
+     "window": [
+      "Adjunct Instructor - Mathematics",
+      "Mathematics",
+      "Matthew Tapia",
+      "Coordinator I (PE/Locker/Equipment Technician)",
+      "Kinesiology-Physical Education",
+      "WPEK 7",
+      "Debbie Nakashima"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator III-Athletics (Stats/Recruit)",
+     "position": null,
+     "window": [
+      "Custodial",
+      "CCC 304A",
+      "Dan Corbet",
+      "Student Services Coordinator III-Athletics (Stats/Recruit)",
+      "Kinesiology-Physical Education",
+      "WPEK 13-C",
+      "Christopher Ramey"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator II-Financial Aid",
+     "position": null,
+     "window": [
+      "Instruction Office",
+      "BONH 315",
+      "Griselda Santiago",
+      "Student Services Coordinator II-Financial Aid",
+      "Financial Aid",
+      "CCSS 222",
+      "Gina Harris"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction (Special Projects)",
+     "position": "dean_instruction",
+     "window": [
+      "Adjunct Communication Studies",
+      "Communication Studies",
+      "James Glapa-Grossklag",
+      "Dean of Instruction (Special Projects)",
+      "Instruction Office",
+      "LIBR 221",
+      "Sherrill Pennington"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Campus Life & Student Engagement",
+     "position": null,
+     "window": [
+      "Institutional Development",
+      "BONH 220D",
+      "Kelly Dapp",
+      "Director, Campus Life & Student Engagement",
+      "Campus Life",
+      "STCN 103",
+      "David Bell"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Mesa Program Director",
+     "position": null,
+     "window": [
+      "Adjunct Welding Instructor",
+      "Welding",
+      "Amy Foote",
+      "Mesa Program Director",
+      "MESA",
+      "ALLB 114E",
+      "Jason Munoz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Vice President, Facilities and Operations",
+     "position": "assoc_vp",
+     "window": [
+      "MESA",
+      "ALLB 114E",
+      "Jason Munoz",
+      "Associate Vice President, Facilities and Operations",
+      "Facilities/Planning & Svcs",
+      "M&O X-10",
+      "Ana VanDer Leek"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Art Director/Manager, Graphic Design Services",
+     "position": null,
+     "window": [
+      "Modern Languages",
+      "MENH 232",
+      "Nick Pavik",
+      "Art Director/Manager, Graphic Design Services",
+      "Graphics",
+      "BONH 116",
+      "Garrett Hooper"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Student Financial Services",
+     "position": null,
+     "window": [
+      "Counseling",
+      "CHCS 227",
+      "Tom Bilbruck",
+      "Associate Dean, Student Financial Services",
+      "Financial Aid",
+      "CHCS 122",
+      "Marcella Rodriguez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "SS Coordinator IV (A&R)",
+     "position": null,
+     "window": [
+      "Financial Aid",
+      "CHCS 122",
+      "Marcella Rodriguez",
+      "SS Coordinator IV (A&R)",
+      "Admissions & Records",
+      "CHCS 125",
+      "Debra Heller"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Vice President, District Communications",
+     "position": "assoc_vp",
+     "window": [
+      "Mathematics",
+      "SCOH 312D",
+      "John Green",
+      "Associate Vice President, District Communications",
+      "Public Information Office",
+      "BONH 237",
+      "Kelly Bronco"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Civic Center Coordinator",
+     "position": null,
+     "window": [
+      "Health Sciences",
+      "SCOH 308",
+      "Lole Takapu",
+      "Civic Center Coordinator",
+      "Civic Center",
+      "M&O 116",
+      "Andrea Vibe"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Instructional Laboratory Coordinator III-Learning Center",
+     "position": null,
+     "window": [
+      "Adjunct Physical Education / Kinesiology Instructor",
+      "Kinesiology-Physical Education",
+      "Alex Halcyon",
+      "Instructional Laboratory Coordinator III-Learning Center",
+      "T.L.C. Lab",
+      "LTLC 126",
+      "Hilary Skoch"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Information Technology Network/Telecom Coordinator II",
+     "position": null,
+     "window": [
+      "Adjunct Paralegal",
+      "Paralegal",
+      "Jason Buccat",
+      "Information Technology Network/Telecom Coordinator II",
+      "Computer Support Services",
+      "HSLH 226",
+      "Shelby Curtis"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Multimedia Coordinator",
+     "position": null,
+     "window": [
+      "Communication Studies",
+      "HSLH 332",
+      "Matthew Robinson",
+      "Multimedia Coordinator",
+      "Public Information Office",
+      "CHCS 257",
+      "David Stears"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Civic Center Filming Coordinator/Lead",
+     "position": null,
+     "window": [
+      "Adjunct Parks and Outdoor Recreation",
+      "Kinesiology-Physical Education",
+      "Ricardo Lopez",
+      "Civic Center Filming Coordinator/Lead",
+      "Civic Center",
+      "M&O 116",
+      "Kelly Alvarez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Employee Training Institute (ETI)",
+     "position": null,
+     "window": [
+      "Adjunct Instructor - History",
+      "History",
+      "John Alvarez",
+      "Director, Employee Training Institute (ETI)",
+      "Employee Training Institute",
+      "UCEN 279",
+      "Anna Glapa-Grossklag"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Volunteer Bureau & Student Employment",
+     "position": null,
+     "window": [
+      "Management Information Systems",
+      "BONH 208",
+      "Yasser Issa",
+      "Director, Volunteer Bureau & Student Employment",
+      "Student Services",
+      "STCN 111",
+      "Gayle Freund"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator III (Transfer Center)",
+     "position": null,
+     "window": [
+      "Political Science",
+      "PCOH 119",
+      "Connie Cruz",
+      "Student Services Coordinator III (Transfer Center)",
+      "Counseling",
+      "STCN 217",
+      "Phillip Trujillo"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Faculty Director, Continuing and Adult Education",
+     "position": null,
+     "window": [
+      "Adjunct Communication Studies",
+      "Communication Studies",
+      "Garrett Rieck",
+      "Faculty Director, Continuing and Adult Education",
+      "Community Education",
+      "SCOH 101",
+      "Alexander Dekok"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Fiscal Services",
+     "position": null,
+     "window": [
+      "Adjunct Math Instructor",
+      "Mathematics",
+      "Balbir Chandi",
+      "Director, Fiscal Services",
+      "Fiscal Services",
+      "UCEN 249",
+      "Melinda Ursetta"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Adjunct Physical Education Instructor (coaching)",
+      "Kinesiology-Physical Education",
+      "Jasmine Ruys",
+      "Superintendent/President",
+      "President's Office",
+      "CHCS 202A",
+      "Janet English"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Kinesiology-Physical Education",
+      "Jasmine Ruys",
+      "Superintendent/President",
+      "President's Office",
+      "CHCS 202A",
+      "Janet English",
+      "Adjunct Computer Info Technology Instructor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator IV-Canyon Country Campus",
+     "position": null,
+     "window": [
+      "Computer Information Tech",
+      "BONH 209",
+      "Robynn Fridlund",
+      "Student Services Coordinator IV-Canyon Country Campus",
+      "Enrollment Services",
+      "CCSS 216",
+      "Susan Ling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Campus Services & Operations (CCC)",
+     "position": null,
+     "window": [
+      "Adjunct Instructor - Fire Technology",
+      "Fire Technology",
+      "Anthony Michaelides",
+      "Dean, Campus Services & Operations (CCC)",
+      "Canyon Country Campus",
+      "CCSS 411",
+      "Jaya George"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Faculty Director, Pharmacy Technician Program",
+     "position": null,
+     "window": [
+      "Canyon Country Campus",
+      "CCSS 411",
+      "Jaya George",
+      "Faculty Director, Pharmacy Technician Program",
+      "Health Professions",
+      "CCLB 330B",
+      "Leslie Miller"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Faculty Director, Fire Academy",
+     "position": null,
+     "window": [
+      "Computer Science",
+      "HSLH 328",
+      "Mark Rotondo",
+      "Faculty Director, Fire Academy",
+      "Health Prof/Public Safety",
+      "BONH 245",
+      "Alisha Kaminsky"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Assistant Director, Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Business Services Office",
+      "UCEN 379",
+      "Rachael Velarde",
+      "Interim Assistant Director, Veterans Resource Center",
+      "Adult Reentry/Veterans",
+      "HSLH 207",
+      "Nicholas Moore"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean, Counseling",
+     "position": null,
+     "window": [
+      "Adjunct Emergency Medical Tech (EMT) Instructor",
+      "Health Sciences",
+      "Erika Torgeson",
+      "Interim Dean, Counseling",
+      "Counseling",
+      "CHCS 224",
+      "Teresa Ciardi"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean, School of Social & Behavioral Sciences",
+     "position": null,
+     "window": [
+      "Architecture & Interior Design",
+      "SCOH 310",
+      "Tammera Stokes Rice",
+      "Interim Dean, School of Social & Behavioral Sciences",
+      "Social and Behavioral Sciences",
+      "HSLH 334",
+      "Gretchen Lindgreen"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant V - Deputy Chancellor, DEI Office",
+     "position": "vice_chancellor",
+     "window": [
+      "Adjunct Nursing Clinical",
+      "Nursing",
+      "Diane Rausch",
+      "Administrative Assistant V - Deputy Chancellor, DEI Office",
+      "Diversity, Equity, & Inclusion",
+      "CHCS 245",
+      "Tammy Bathke"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.canyons.edu/studentservices/admissions/index.php",
+   "final_url": "https://www.canyons.edu/studentservices/admissions/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.canyons.edu/academics/justice/index.php",
+   "final_url": "https://www.canyons.edu/academics/justice/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.canyons.edu/directory/",
+   "final_url": "https://www.canyons.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Information Technology Coordinator I (Audio/Visual)",
+     "position": null,
+     "window": [
+      "Mathematics",
+      "BONH 327",
+      "Shawn Irwin",
+      "Information Technology Coordinator I (Audio/Visual)",
+      "Audio-Visual",
+      "BONH 104",
+      "Gloria Lopez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Technician II (Veterans Resource Center)",
+     "position": "vrc",
+     "window": [
+      "Audio-Visual",
+      "BONH 104",
+      "Gloria Lopez",
+      "Student Services Technician II (Veterans Resource Center)",
+      "Adult Reentry/Veterans",
+      "HSLH 207",
+      "Lin Wilde"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Campus Safety Officer",
+     "position": null,
+     "window": [
+      "Adjunct Pharmacy Technician",
+      "Health Professions",
+      "Eliott Uribe",
+      "Campus Safety Officer",
+      "Campus Safety",
+      "Michael Forne",
+      "Campus Safety Officer"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Campus Safety Officer",
+     "position": null,
+     "window": [
+      "Campus Safety Officer",
+      "Campus Safety",
+      "Michael Forne",
+      "Campus Safety Officer",
+      "Campus Safety",
+      "Jessica Edmond",
+      "Adjunct ESL Instructor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director, Campus Safety",
+     "position": null,
+     "window": [
+      "Adjunct ESL Instructor",
+      "English As a Second Language",
+      "Reinhardt Schuerger",
+      "Executive Director, Campus Safety",
+      "Campus Safety",
+      "Scott McAfee",
+      "High Tech Ctr Access Coord III (IT)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Facilities Coordinator",
+     "position": null,
+     "window": [
+      "Adjunct Physical Therapy Assistant",
+      "Health Professions",
+      "Justin Bradshaw",
+      "Facilities Coordinator",
+      "Warehouse",
+      "Gabrielle Temple",
+      "Communication Director, NSF CREATE National Energy Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Communication Director, NSF CREATE National Energy Center",
+     "position": null,
+     "window": [
+      "Facilities Coordinator",
+      "Warehouse",
+      "Gabrielle Temple",
+      "Communication Director, NSF CREATE National Energy Center",
+      "Nsf Regional Center",
+      "UCEN 204J",
+      "Scott Groller"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Health Professions and Public Safety Coordinator III",
+     "position": null,
+     "window": [
+      "Mathematics",
+      "MENH 212",
+      "Julie Lutes",
+      "Health Professions and Public Safety Coordinator III",
+      "Health Prof/Public Safety",
+      "BONH 240A",
+      "Patrick Backes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Officer and Senior Curriculum Analyst",
+     "position": "articulation_officer",
+     "window": [
+      "Health Prof/Public Safety",
+      "BONH 240A",
+      "Patrick Backes",
+      "Articulation Officer and Senior Curriculum Analyst",
+      "Instruction Office",
+      "BONH 231",
+      "Anna Hahn"
+     ],
+     "emails": []
+    },
+    {
+     "line": "SS Coordinator III (CWEE)",
+     "position": null,
+     "window": [
+      "Counseling",
+      "SCOH 103D",
+      "Cindy Nelson",
+      "SS Coordinator III (CWEE)",
+      "Cooperative Work Edu Exp",
+      "X6 115",
+      "Eric Harnish"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent/Vice President Public Information",
+     "position": null,
+     "window": [
+      "Cooperative Work Edu Exp",
+      "X6 115",
+      "Eric Harnish",
+      "Assistant Superintendent/Vice President Public Information",
+      "Public Information Office",
+      "CHCS 261",
+      "Jorge Iniguez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "IT Coordinator I (Computer Support)",
+     "position": null,
+     "window": [
+      "Adjunct Biological Sciences Instructor",
+      "Biological & Environ Sciences",
+      "Noel Lopez",
+      "IT Coordinator I (Computer Support)",
+      "Computer Support Services",
+      "BONH 103",
+      "Joanne Schatz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Facilities Coordinator, Energy Services",
+     "position": null,
+     "window": [
+      "Education/Early Childhood Ed",
+      "ECE 126A",
+      "Kenneth Barlow",
+      "Facilities Coordinator, Energy Services",
+      "Facilities/Planning & Svcs",
+      "M&O CCC",
+      "Elissa Brassfield"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Instructional Lab Coordinator (Auto Technologies)",
+     "position": null,
+     "window": [
+      "Geography",
+      "SCOH 306D",
+      "Mark Carr",
+      "Instructional Lab Coordinator (Auto Technologies)",
+      "Automotive Technology",
+      "CCC 700A",
+      "Cynthia Carpenter"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Campus Safety Officer",
+     "position": null,
+     "window": [
+      "Adjunct Nursing Clinical",
+      "Nursing",
+      "Mike Marcinko",
+      "Campus Safety Officer",
+      "Campus Safety",
+      "CCC 511",
+      "Nicholas Schutz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director Nursing",
+     "position": null,
+     "window": [
+      "Library",
+      "LIBR 103",
+      "Tina Rorick",
+      "Director Nursing",
+      "Nursing",
+      "ALLB 304",
+      "Regina Roscigno"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Academic Innovation and Continuing Education",
+     "position": null,
+     "window": [
+      "Adjunct Physical Education / Kinesiology Instructor",
+      "Kinesiology-Physical Education",
+      "Dianne Avery",
+      "Dean, Academic Innovation and Continuing Education",
+      "Community Education",
+      "CHCS 155",
+      "Renard Thomas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Community Education",
+      "CHCS 155",
+      "Renard Thomas",
+      "Director, Veterans Resource Center",
+      "Adult Reentry/Veterans",
+      "HSLH 207",
+      "David Bogna"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator III Outreach & School Relation",
+     "position": null,
+     "window": [
+      "Business Services Office",
+      "UCEN 276",
+      "Gina Thompson",
+      "Student Services Coordinator III Outreach & School Relation",
+      "Outreach",
+      "CHCS 157",
+      "Allen Basallaje"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Health Professions and Public Safety Coordinator III",
+     "position": null,
+     "window": [
+      "Outreach",
+      "CHCS 157",
+      "Allen Basallaje",
+      "Health Professions and Public Safety Coordinator III",
+      "Nursing",
+      "BONH 243A",
+      "Christopher Thompson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Campus Safety Officer II (clery Compliance)",
+     "position": null,
+     "window": [
+      "Adjunct Instructor - Fire Technology",
+      "Fire Technology",
+      "Ken Bricker",
+      "Campus Safety Officer II (clery Compliance)",
+      "Campus Safety",
+      "CCC 511",
+      "Julie Vazquez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Exec Director, Infrastructure and Information Security",
+     "position": null,
+     "window": [
+      "Financial Aid",
+      "CHCS 120",
+      "Hsiawen Hull",
+      "Exec Director, Infrastructure and Information Security",
+      "Computer Support Services",
+      "HSLH 325",
+      "Sarah Kees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Student Resources and Basic Needs",
+     "position": null,
+     "window": [
+      "Nc Theatre Business of Acting",
+      "Community Education",
+      "Sarah Cox",
+      "Director of Student Resources and Basic Needs",
+      "Student Services",
+      "STCN 123E",
+      "Linda De Leon"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator I (Admissions & Records)",
+     "position": null,
+     "window": [
+      "Admissions & Records",
+      "CHCS 132",
+      "Andrea Varney",
+      "Student Services Coordinator I (Admissions & Records)",
+      "Admissions & Records",
+      "CHCS 128",
+      "Yannick Minniti"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Exec Director, Contracts, Procurement, and Risk Mgmt Svs",
+     "position": null,
+     "window": [
+      "Education/Early Childhood Ed",
+      "ECE 104",
+      "April Marin",
+      "Exec Director, Contracts, Procurement, and Risk Mgmt Svs",
+      "Contract & Procurement Service",
+      "UCEN 277",
+      "Jesse Munoz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Dist. Public Relations, Sports Info, & Ath Comms",
+     "position": null,
+     "window": [
+      "Contract & Procurement Service",
+      "UCEN 277",
+      "Jesse Munoz",
+      "Director, Dist. Public Relations, Sports Info, & Ath Comms",
+      "Public Information Office",
+      "CHCS 260",
+      "Luis Lara"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Technology User Support Services",
+     "position": null,
+     "window": [
+      "Adjunct NC Education",
+      "Community Education",
+      "Mathew Camara",
+      "Director, Technology User Support Services",
+      "Computer Support Services",
+      "BONH 103",
+      "Justin Lundin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator II (Admission and Records)",
+     "position": null,
+     "window": [
+      "Custodian II Graveyard Shift",
+      "Custodial",
+      "Erika Hernandez",
+      "Student Services Coordinator II (Admission and Records)",
+      "Admissions & Records",
+      "CHCS 129",
+      "Faiqa Yazdani"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Instructional Lab Coordinator II Culinary Arts & Wine Stud",
+     "position": null,
+     "window": [
+      "Facilities Engineer",
+      "Maintenance",
+      "Jonathan Kolouch",
+      "Instructional Lab Coordinator II Culinary Arts & Wine Stud",
+      "Culinary Arts/Hospitality/Wine",
+      "ICUE 134",
+      "Samuel Minyard"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator I (PE/Locker/Equipment Technician)",
+     "position": null,
+     "window": [
+      "Adjunct Instructor - Mathematics",
+      "Mathematics",
+      "Matthew Tapia",
+      "Coordinator I (PE/Locker/Equipment Technician)",
+      "Kinesiology-Physical Education",
+      "WPEK 7",
+      "Debbie Nakashima"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator III-Athletics (Stats/Recruit)",
+     "position": null,
+     "window": [
+      "Custodial",
+      "CCC 304A",
+      "Dan Corbet",
+      "Student Services Coordinator III-Athletics (Stats/Recruit)",
+      "Kinesiology-Physical Education",
+      "WPEK 13-C",
+      "Christopher Ramey"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator II-Financial Aid",
+     "position": null,
+     "window": [
+      "Instruction Office",
+      "BONH 315",
+      "Griselda Santiago",
+      "Student Services Coordinator II-Financial Aid",
+      "Financial Aid",
+      "CCSS 222",
+      "Gina Harris"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction (Special Projects)",
+     "position": "dean_instruction",
+     "window": [
+      "Adjunct Communication Studies",
+      "Communication Studies",
+      "James Glapa-Grossklag",
+      "Dean of Instruction (Special Projects)",
+      "Instruction Office",
+      "LIBR 221",
+      "Sherrill Pennington"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Campus Life & Student Engagement",
+     "position": null,
+     "window": [
+      "Institutional Development",
+      "BONH 220D",
+      "Kelly Dapp",
+      "Director, Campus Life & Student Engagement",
+      "Campus Life",
+      "STCN 103",
+      "David Bell"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Mesa Program Director",
+     "position": null,
+     "window": [
+      "Adjunct Welding Instructor",
+      "Welding",
+      "Amy Foote",
+      "Mesa Program Director",
+      "MESA",
+      "ALLB 114E",
+      "Jason Munoz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Vice President, Facilities and Operations",
+     "position": "assoc_vp",
+     "window": [
+      "MESA",
+      "ALLB 114E",
+      "Jason Munoz",
+      "Associate Vice President, Facilities and Operations",
+      "Facilities/Planning & Svcs",
+      "M&O X-10",
+      "Ana VanDer Leek"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Art Director/Manager, Graphic Design Services",
+     "position": null,
+     "window": [
+      "Modern Languages",
+      "MENH 232",
+      "Nick Pavik",
+      "Art Director/Manager, Graphic Design Services",
+      "Graphics",
+      "BONH 116",
+      "Garrett Hooper"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Student Financial Services",
+     "position": null,
+     "window": [
+      "Counseling",
+      "CHCS 227",
+      "Tom Bilbruck",
+      "Associate Dean, Student Financial Services",
+      "Financial Aid",
+      "CHCS 122",
+      "Marcella Rodriguez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "SS Coordinator IV (A&R)",
+     "position": null,
+     "window": [
+      "Financial Aid",
+      "CHCS 122",
+      "Marcella Rodriguez",
+      "SS Coordinator IV (A&R)",
+      "Admissions & Records",
+      "CHCS 125",
+      "Debra Heller"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Vice President, District Communications",
+     "position": "assoc_vp",
+     "window": [
+      "Mathematics",
+      "SCOH 312D",
+      "John Green",
+      "Associate Vice President, District Communications",
+      "Public Information Office",
+      "BONH 237",
+      "Kelly Bronco"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Civic Center Coordinator",
+     "position": null,
+     "window": [
+      "Health Sciences",
+      "SCOH 308",
+      "Lole Takapu",
+      "Civic Center Coordinator",
+      "Civic Center",
+      "M&O 116",
+      "Andrea Vibe"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Instructional Laboratory Coordinator III-Learning Center",
+     "position": null,
+     "window": [
+      "Adjunct Physical Education / Kinesiology Instructor",
+      "Kinesiology-Physical Education",
+      "Alex Halcyon",
+      "Instructional Laboratory Coordinator III-Learning Center",
+      "T.L.C. Lab",
+      "LTLC 126",
+      "Hilary Skoch"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Information Technology Network/Telecom Coordinator II",
+     "position": null,
+     "window": [
+      "Adjunct Paralegal",
+      "Paralegal",
+      "Jason Buccat",
+      "Information Technology Network/Telecom Coordinator II",
+      "Computer Support Services",
+      "HSLH 226",
+      "Shelby Curtis"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Multimedia Coordinator",
+     "position": null,
+     "window": [
+      "Communication Studies",
+      "HSLH 332",
+      "Matthew Robinson",
+      "Multimedia Coordinator",
+      "Public Information Office",
+      "CHCS 257",
+      "David Stears"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Civic Center Filming Coordinator/Lead",
+     "position": null,
+     "window": [
+      "Adjunct Parks and Outdoor Recreation",
+      "Kinesiology-Physical Education",
+      "Ricardo Lopez",
+      "Civic Center Filming Coordinator/Lead",
+      "Civic Center",
+      "M&O 116",
+      "Kelly Alvarez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Employee Training Institute (ETI)",
+     "position": null,
+     "window": [
+      "Adjunct Instructor - History",
+      "History",
+      "John Alvarez",
+      "Director, Employee Training Institute (ETI)",
+      "Employee Training Institute",
+      "UCEN 279",
+      "Anna Glapa-Grossklag"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Volunteer Bureau & Student Employment",
+     "position": null,
+     "window": [
+      "Management Information Systems",
+      "BONH 208",
+      "Yasser Issa",
+      "Director, Volunteer Bureau & Student Employment",
+      "Student Services",
+      "STCN 111",
+      "Gayle Freund"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator III (Transfer Center)",
+     "position": null,
+     "window": [
+      "Political Science",
+      "PCOH 119",
+      "Connie Cruz",
+      "Student Services Coordinator III (Transfer Center)",
+      "Counseling",
+      "STCN 217",
+      "Phillip Trujillo"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Faculty Director, Continuing and Adult Education",
+     "position": null,
+     "window": [
+      "Adjunct Communication Studies",
+      "Communication Studies",
+      "Garrett Rieck",
+      "Faculty Director, Continuing and Adult Education",
+      "Community Education",
+      "SCOH 101",
+      "Alexander Dekok"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Fiscal Services",
+     "position": null,
+     "window": [
+      "Adjunct Math Instructor",
+      "Mathematics",
+      "Balbir Chandi",
+      "Director, Fiscal Services",
+      "Fiscal Services",
+      "UCEN 249",
+      "Melinda Ursetta"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Adjunct Physical Education Instructor (coaching)",
+      "Kinesiology-Physical Education",
+      "Jasmine Ruys",
+      "Superintendent/President",
+      "President's Office",
+      "CHCS 202A",
+      "Janet English"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Kinesiology-Physical Education",
+      "Jasmine Ruys",
+      "Superintendent/President",
+      "President's Office",
+      "CHCS 202A",
+      "Janet English",
+      "Adjunct Computer Info Technology Instructor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator IV-Canyon Country Campus",
+     "position": null,
+     "window": [
+      "Computer Information Tech",
+      "BONH 209",
+      "Robynn Fridlund",
+      "Student Services Coordinator IV-Canyon Country Campus",
+      "Enrollment Services",
+      "CCSS 216",
+      "Susan Ling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Campus Services & Operations (CCC)",
+     "position": null,
+     "window": [
+      "Adjunct Instructor - Fire Technology",
+      "Fire Technology",
+      "Anthony Michaelides",
+      "Dean, Campus Services & Operations (CCC)",
+      "Canyon Country Campus",
+      "CCSS 411",
+      "Jaya George"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Faculty Director, Pharmacy Technician Program",
+     "position": null,
+     "window": [
+      "Canyon Country Campus",
+      "CCSS 411",
+      "Jaya George",
+      "Faculty Director, Pharmacy Technician Program",
+      "Health Professions",
+      "CCLB 330B",
+      "Leslie Miller"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Faculty Director, Fire Academy",
+     "position": null,
+     "window": [
+      "Computer Science",
+      "HSLH 328",
+      "Mark Rotondo",
+      "Faculty Director, Fire Academy",
+      "Health Prof/Public Safety",
+      "BONH 245",
+      "Alisha Kaminsky"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Assistant Director, Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Business Services Office",
+      "UCEN 379",
+      "Rachael Velarde",
+      "Interim Assistant Director, Veterans Resource Center",
+      "Adult Reentry/Veterans",
+      "HSLH 207",
+      "Nicholas Moore"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean, Counseling",
+     "position": null,
+     "window": [
+      "Adjunct Emergency Medical Tech (EMT) Instructor",
+      "Health Sciences",
+      "Erika Torgeson",
+      "Interim Dean, Counseling",
+      "Counseling",
+      "CHCS 224",
+      "Teresa Ciardi"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean, School of Social & Behavioral Sciences",
+     "position": null,
+     "window": [
+      "Architecture & Interior Design",
+      "SCOH 310",
+      "Tammera Stokes Rice",
+      "Interim Dean, School of Social & Behavioral Sciences",
+      "Social and Behavioral Sciences",
+      "HSLH 334",
+      "Gretchen Lindgreen"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant V - Deputy Chancellor, DEI Office",
+     "position": "vice_chancellor",
+     "window": [
+      "Adjunct Nursing Clinical",
+      "Nursing",
+      "Diane Rausch",
+      "Administrative Assistant V - Deputy Chancellor, DEI Office",
+      "Diversity, Equity, & Inclusion",
+      "CHCS 245",
+      "Tammy Bathke"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.canyons.edu/studentservices/admissions/students/residency/hs-concurrent.php",
+   "final_url": "https://www.canyons.edu/studentservices/admissions/students/residency/hs-concurrent.php",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.canyons.edu/studentservices/admissions/students/residency/daca.php",
+   "final_url": "https://www.canyons.edu/studentservices/admissions/students/residency/daca.php",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.canyons.edu/studentservices/admissions/contact/staff.php",
+   "final_url": "https://www.canyons.edu/studentservices/admissions/contact/staff.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Student Services Coordinator III-",
+     "position": null,
+     "window": [
+      "Degree Audit Evaluator",
+      "diana.barahona@canyons.edu diana.barahona@canyons.edu",
+      "Daiana Bogosian",
+      "Student Services Coordinator III-",
+      "Off-Site Education - Early College",
+      "earlycollege@canyons.edu earlycollege@canyons.edu",
+      "Noelia Borcherding"
+     ],
+     "emails": [
+      "diana.barahona@canyons.edu",
+      "earlycollege@canyons.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator V",
+     "position": null,
+     "window": [
+      "Student Services Technical Analyst",
+      "noelia.borcherding@canyons.edu noelia.borcherding@canyons.edu",
+      "Steve Bullock",
+      "Student Services Coordinator V",
+      "steve.bullock@canyons.edu steve.bullock@canyons.edu",
+      "Erika Chavez",
+      "Student Services Coordinator II"
+     ],
+     "emails": [
+      "noelia.borcherding@canyons.edu",
+      "steve.bullock@canyons.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator II",
+     "position": null,
+     "window": [
+      "Student Services Coordinator V",
+      "steve.bullock@canyons.edu steve.bullock@canyons.edu",
+      "Erika Chavez",
+      "Student Services Coordinator II",
+      "erika.hernandez@canyons.edu erika.hernandez@canyons.edu",
+      "Linda Rios De Leon",
+      "Student Services Technician II-"
+     ],
+     "emails": [
+      "erika.hernandez@canyons.edu",
+      "steve.bullock@canyons.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean- Admissions,",
+     "position": "dean_ar",
+     "window": [
+      "Residency",
+      "sonia.deleon@canyons.edu residency@canyons.edu",
+      "Steve Erwin",
+      "Associate Dean- Admissions,",
+      "Records, & Online Services",
+      "steve.erwin@canyons.edu steve.erwin@canyons.edu robynn.fridlund@canyons.edu",
+      "Robynn Fridlund"
+     ],
+     "emails": [
+      "residency@canyons.edu",
+      "robynn.fridlund@canyons.edu",
+      "sonia.deleon@canyons.edu",
+      "steve.erwin@canyons.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator IV-",
+     "position": null,
+     "window": [
+      "Records, & Online Services",
+      "steve.erwin@canyons.edu steve.erwin@canyons.edu robynn.fridlund@canyons.edu",
+      "Robynn Fridlund",
+      "Student Services Coordinator IV-",
+      "Canyon Country Campus",
+      "robynn.fridlund@canyons.edu robynn.fridlund@canyons.edu",
+      "Hazel Giron"
+     ],
+     "emails": [
+      "robynn.fridlund@canyons.edu",
+      "steve.erwin@canyons.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator IV &",
+     "position": null,
+     "window": [
+      "Transcript/Deg./Imaging Evaluator",
+      "james.ortega@canyons.edu james.ortega@canyons.edu",
+      "Erika Rodriguez",
+      "Student Services Coordinator IV &",
+      "Admin Asst. - Valencia Campus",
+      "erika.rodriguez@canyons.edu erika.rodriguez@canyons.edu",
+      "Alissa Seidel"
+     ],
+     "emails": [
+      "erika.rodriguez@canyons.edu",
+      "james.ortega@canyons.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator I-",
+     "position": null,
+     "window": [
+      "Certificate & Degree Eligibility",
+      "alissa.seidel@canyons.edu alissa.seidel@canyons.edu",
+      "Andrea Varney",
+      "Student Services Coordinator I-",
+      "AOC & Public Safety Liaison: LAPD",
+      "andrea.varney@canyons.edu andrea.varney@canyons.edu",
+      "College of the Canyons"
+     ],
+     "emails": [
+      "alissa.seidel@canyons.edu",
+      "andrea.varney@canyons.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.canyons.edu/academics/justice/programs/degree.php",
+   "final_url": "https://www.canyons.edu/academics/justice/programs/degree.php",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.canyons.edu/academics/justice/programs/transfer.php",
+   "final_url": "https://www.canyons.edu/academics/justice/programs/transfer.php",
+   "status": 200,
+   "excerpts": []
+  }
+ ],
+ "unread_links": [],
+ "run": "41310748240"
+}

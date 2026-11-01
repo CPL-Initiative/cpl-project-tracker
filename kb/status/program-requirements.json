@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-01T12:30:16Z",
-  "session": 538,
-  "moniker": "SkyWolfberry",
+  "written_at": "2026-11-01T13:34:15Z",
+  "session": 539,
+  "moniker": "SkySilverberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_539_handoff.md",
+  "handoff": "docs/session_540_handoff.md",
   "next_step": {
     "title": "Monterey Peninsula's last 14",
-    "text": "Monterey Peninsula went from 176 to 183 of 197 passing (S536); S538 worked the contacts harvest instead. Of the 14 left, three miss a listed course, three have a course with no units, and eight add to a different total than the page prints. One more session that moves fewer than 3% parks the college."
+    "text": "Monterey Peninsula stands at 183 of 197 passing (S536); S537 to S539 worked the contacts harvest. Of the 14 left, three miss a listed course, three have a course with no units, and eight add to a different total than the page prints. One more session that moves fewer than 3% parks the college."
   },
   "calls": [
     {
@@ -382,7 +382,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 24,
-    "at": "2026-11-01T13:12:00Z"
+    "at": "2026-11-02T06:12:00Z"
   },
   "harvest": {
     "day": "2026-11-01",
