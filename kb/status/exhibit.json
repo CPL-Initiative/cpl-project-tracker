@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 541,
-  "moniker": "SkyBlatusoff",
+  "session": 542,
+  "moniker": "SkyTriangulum",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_542_handoff.md",
+  "handoff": "docs/session_543_handoff.md",
   "calls": [
     {
       "title": "Merge EACR into the CER as one Exhibits tab",
@@ -99,13 +99,25 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-01T19:24:12Z",
+  "written_at": "2026-11-01T22:53:46Z",
   "project": "exhibit",
   "next_step": {
-    "title": "The cert link's next families",
-    "text": "Add AP, CLEP and IB to kb/exhibit_cert_links.json from the official-name tables we keep, then the names it holds unresolved (SP/2 HD, Snap-on 604, MACS/609, Cummins ISX, G1, Master Automobile Technician, xEV)."
+    "title": "The Commons row joins the Exhibits tiles",
+    "text": "Fold everything the Commons shows for the Exhibit reference into the Exhibits tab's tiles above the list, into existing tiles where it fits and new ones where it does not, read from the same status files so both pages agree."
   },
   "changes": [
+    {
+      "at": "2026-11-01T20:34:00Z",
+      "text": "Kept groups in the List: a band over every run, Move, Out of every group, Back to the AI sort, Keep this group, Rename and Release (#2655)."
+    },
+    {
+      "at": "2026-11-01T21:00:00Z",
+      "text": "The List moved into the shared engine commons_list.js with no change in behavior (#2656)."
+    },
+    {
+      "at": "2026-11-01T22:48:00Z",
+      "text": "Every List spans the window and scrolls sideways in its own box only when needed; Edit no longer clips (#2661)."
+    },
     {
       "at": "2026-11-01T17:43:00Z",
       "text": "The exhibit-to-cert link, ASE first: 59 canonical titles to 24 certs in the industry catalog, 27 bundles and 12 aligned courses; the List finds a bundle by any test it holds (#2652)."

@@ -1126,3 +1126,13 @@ Architectural Drafting 22244 on a `unit_line` step that adds its printed math li
   unspaced codes such as BIOL298, ACCTG101); their units print only in the course descriptions ("3.0 Units"), so a
   reader step that takes a course's units from its description is next. Biotechnology 41767 sums 25-27 against its
   printed 28-30, the catalog's own disagreement. Cost: $2.64 + about $0.40 in forced retries.
+
+## Moved from the lane (S542 compaction)
+
+Moved verbatim from `docs/reference/lanes/program-requirements-harvest.md` on 2026-11-01 (S542 SkyTriangulum), when the List line put the lane 910 bytes over its 20,000-byte budget.
+
+**The List (2026-11-01, `#program-requirements/list`):** the tab's sixth view is the Catalog Commons' shared List (`commons_list.js`; Sam: *"I want one now for each of our Catalog Commons groups"*): one row per active program in COCI (`coci_programs_data.js`, 20,282, the headline's universe) with its college as the live table names it, its award, CIP family (the program's CIP; TOP only as a finder word and in that drawer, Rule 7), COCI's units, and from the index whether the harvest holds its record, the machine checks and the issues they name; each filter word carries its count. A record joins by control number (unique among active programs). Read only: a row's Record drawer opens the record in Program records. At 20,282 rows in Chromium a sort or filter takes 35 to 75 ms, a header press painted about 0.2 to 0.5 s (the 400 rows drawn). Guard `tests/program_requirements_list.test.js`; a11y `program-requirements-list` and `-dark`.
+
+**A reconcile step for a figure a local degree never carries reads transfer degrees only (`awards: transfer`, S421):** a local degree's captured page can span the sibling transfer section; where the code-kind gate makes a tab one program's (Hartnell), a second step with `awards: associate` reads the local degree's own tab (S456, Sheet 117 card 3).
+
+Also moved (history): The status file no longer carries the `unchecked` list (3.5 MB to 4 KB); the headline history records `complete` (`queue_status.py --headline-sql`).

@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-01T19:23:58Z",
-  "session": 541,
-  "moniker": "SkyBlatusoff",
+  "written_at": "2026-11-01T22:54:11Z",
+  "session": 542,
+  "moniker": "SkyTriangulum",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_542_handoff.md",
+  "handoff": "docs/session_543_handoff.md",
   "next_step": {
     "title": "Monterey Peninsula's last 14",
     "text": "Monterey Peninsula stands at 183 of 197 passing (S536); S537 to S541 worked the contacts harvest, the Library, Sierra and the Exhibits List. Read coverage 42989, 43858 and 44876 first."
@@ -190,6 +190,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-01T22:28:00Z",
+      "text": "A List view on the shared engine: one row per active COCI program, 20,282, read only (#2660)."
+    },
     {
       "at": "2026-11-01T10:55:00Z",
       "text": "Monterey Peninsula 176 to 183 of 197 passing live. A lab the page prints on its lecture's row (CSIS 50 & 50L) no longer counts its units twice (reconcile 41278868382, reread 41280847881)."

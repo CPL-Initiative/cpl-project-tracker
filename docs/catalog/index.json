@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 569,
+   "count": 570,
    "docs": [
     {
      "created": "2026-08-14",
@@ -11030,6 +11030,24 @@
      "updated": "2026-11-01"
     },
     {
+     "created": "2026-11-01",
+     "governs": [
+      "commons_list.js",
+      "exhibits.js"
+     ],
+     "path": "docs/kb-notes/reference-catalog-commons-list-norms.md",
+     "status": "published",
+     "tags": [
+      "reference",
+      "commons",
+      "commons-list",
+      "ui"
+     ],
+     "title": "The Catalog Commons List norms, what every common reference's List shares and what stays different",
+     "type": "reference",
+     "updated": "2026-11-01"
+    },
+    {
      "created": "2026-09-01",
      "governs": [
       "kb/_docs_audit.py"
@@ -16339,8 +16357,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 510,
+   "count": 511,
    "docs": [
+    {
+     "created": "2026-11-01",
+     "governs": [],
+     "n": 543,
+     "path": "docs/session_543_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "exhibits",
+      "exhibits-list",
+      "commons",
+      "commons-list",
+      "slo",
+      "course-outcomes"
+     ],
+     "title": "Session 543 handoff: kept groups, one List engine for the Catalog Commons, full width, the SLO test",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-01",
      "governs": [],
@@ -25060,5 +25097,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1334
+ "total": 1336
 }
