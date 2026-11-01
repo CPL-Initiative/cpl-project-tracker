@@ -1,0 +1,533 @@
+{
+ "college": "Butte College",
+ "homepage": "https://www.butte.edu/",
+ "read_at": "2026-11-01T10:44:57+00:00",
+ "pages": [
+  {
+   "url": "https://www.butte.edu/",
+   "final_url": "https://www.butte.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Vance, Program Coordinator",
+     "position": null,
+     "window": [
+      "Roadrunner Hub",
+      "Alison, Retention Specialist",
+      "TRIO SSS",
+      "Vance, Program Coordinator",
+      "Inspiring Scholars",
+      "Karla, Student Activities Specialist",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.butte.edu/student-resources/admissions-and-records/index.html",
+   "final_url": "https://www.butte.edu/student-resources/admissions-and-records/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.butte.edu/about/leadership/index.html",
+   "final_url": "https://www.butte.edu/about/leadership/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Leadership and Organization",
+      "Board of Trustees",
+      "Meet the members of Butte College's Board of Trustees. Discover their role in shaping the college's mission and vision, and access meeting minutes and agendas.",
+      "Office of the President",
+      "Learn more about the vision, leadership, and initiatives shaping Butte College through the Office of the President.",
+      "Assistant Superintendent/VP for Instruction",
+      "Supporting academic excellence across campus, the Office of Instruction leads our programs, scheduling, curriculum and faculty development, and learning resources to help you thrive in class and beyond."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Learn more about the vision, leadership, and initiatives shaping Butte College through the Office of the President.",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "Meet the members of Butte College's Board of Trustees. Discover their role in shaping the college's mission and vision, and access meeting minutes and agendas.",
+      "Office of the President",
+      "Learn more about the vision, leadership, and initiatives shaping Butte College through the Office of the President.",
+      "Assistant Superintendent/VP for Instruction",
+      "Supporting academic excellence across campus, the Office of Instruction leads our programs, scheduling, curriculum and faculty development, and learning resources to help you thrive in class and beyond.",
+      "Vice President for Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for Student Services",
+     "position": null,
+     "window": [
+      "Learn more about the vision, leadership, and initiatives shaping Butte College through the Office of the President.",
+      "Assistant Superintendent/VP for Instruction",
+      "Supporting academic excellence across campus, the Office of Instruction leads our programs, scheduling, curriculum and faculty development, and learning resources to help you thrive in class and beyond.",
+      "Vice President for Student Services",
+      "From enrollment to graduation, student services champions your success. Our VP leads the student services, campus life, and support programs that empower you.",
+      "Vice President for Administrative Services",
+      "Administrative services keep Butte College running smoothly — from facilities and budgeting to information technology — so you can focus on what matters most: your education."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for Administrative Services",
+     "position": null,
+     "window": [
+      "Supporting academic excellence across campus, the Office of Instruction leads our programs, scheduling, curriculum and faculty development, and learning resources to help you thrive in class and beyond.",
+      "Vice President for Student Services",
+      "From enrollment to graduation, student services champions your success. Our VP leads the student services, campus life, and support programs that empower you.",
+      "Vice President for Administrative Services",
+      "Administrative services keep Butte College running smoothly — from facilities and budgeting to information technology — so you can focus on what matters most: your education.",
+      "Vice President for HR, training, and Employee Development",
+      "Access leadership information, employee resources, and professional development opportunities that support a positive, inclusive workplace at Butte College."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for HR, training, and Employee Development",
+     "position": null,
+     "window": [
+      "From enrollment to graduation, student services champions your success. Our VP leads the student services, campus life, and support programs that empower you.",
+      "Vice President for Administrative Services",
+      "Administrative services keep Butte College running smoothly — from facilities and budgeting to information technology — so you can focus on what matters most: your education.",
+      "Vice President for HR, training, and Employee Development",
+      "Access leadership information, employee resources, and professional development opportunities that support a positive, inclusive workplace at Butte College.",
+      "Participatory Governance and Committees",
+      "Explore how collaborative decision-making empowers our students, faculty, and staff to shape our future."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.butte.edu/directory//index.html",
+   "final_url": "https://www.butte.edu/directory/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.butte.edu/student-resources/support-programs/veterans-services/index.html",
+   "final_url": "https://www.butte.edu/student-resources/support-programs/veterans-services/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services | Butte College",
+     "position": "vrc",
+     "window": [
+      "Veterans Services | Butte College",
+      "Skip to content",
+      "MyBC Portal",
+      "Info For"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Cosmetology and Barbering Center",
+      "Online Education",
+      "Transportation and Buses",
+      "Veterans Services",
+      "Home",
+      "Student Resources",
+      "Support Programs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Student Resources",
+      "Support Programs",
+      "Veterans Services",
+      "Veterans Services helps veterans, service members, and eligible dependents use their VA education benefits while attending Butte College. We provide certification of VA education benefits, guidance through the benefits process, and connections to campus and community resources.",
+      "Beyond benefits support, we foster a welcoming community where military-connected students feel supported, valued, and empowered to achieve their academic, personal, and professional goals.",
+      "Jump To"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services is a place to connect, study, and build community with fellow military-connected students and staff who understand the military experience.",
+     "position": "vrc",
+     "window": [
+      "Borrow laptops and calculators to help you stay connected and succeed in your classes.",
+      "Equipment is available on a first-come, first-served basis each semester.",
+      "Community, Camaraderie & Support",
+      "Veterans Services is a place to connect, study, and build community with fellow military-connected students and staff who understand the military experience.",
+      "Resources include:",
+      "Computer lab",
+      "Free printing"
+     ],
+     "emails": []
+    },
+    {
+     "line": "In addition, Veterans Services students have access to the following:",
+     "position": "vrc",
+     "window": [
+      "Student lounge",
+      "Community events",
+      "Additional Resources",
+      "In addition, Veterans Services students have access to the following:",
+      "Priority Registration",
+      "Emergency Loans",
+      "VA Work Study Opportunities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VA Benefits Estimate — Veterans Services",
+     "position": "vrc",
+     "window": [
+      "veterans@butte.edu veterans@butte.edu",
+      "Find us on Campus",
+      "VA Benefits Breakdown",
+      "VA Benefits Estimate — Veterans Services",
+      "Butte College",
+      "Veterans Services",
+      "This is an estimate based on the information you've entered. The VA makes the final decision on your actual payment amounts. Enrollment status, such as full-time or 3/4-time, is estimated from your credit hours. Your School Certifying Official reports your official enrollment status to the VA."
+     ],
+     "emails": [
+      "veterans@butte.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "VA Benefits Breakdown",
+      "VA Benefits Estimate — Veterans Services",
+      "Butte College",
+      "Veterans Services",
+      "This is an estimate based on the information you've entered. The VA makes the final decision on your actual payment amounts. Enrollment status, such as full-time or 3/4-time, is estimated from your credit hours. Your School Certifying Official reports your official enrollment status to the VA.",
+      "Step 1",
+      "Select a benefit chapter"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Students who are not receiving VA education benefits may still qualify but must provide documentation to Veterans Services and meet college requirements.",
+     "position": "vrc",
+     "window": [
+      "Do veterans receive priority registration?",
+      "Yes. Eligible veterans, active-duty service members, reservists, National Guard members, and certain dependents may qualify for priority registration at Butte College.",
+      "Students currently receiving VA education benefits through Chapters 30, 31, 33, or 1606 are automatically considered for priority registration and do not need to self-report.",
+      "Students who are not receiving VA education benefits may still qualify but must provide documentation to Veterans Services and meet college requirements.",
+      "Contact Veterans Services at (530) 895-2566 for assistance with priority registration eligibility.",
+      "Back to top",
+      "Is there a Work-Study program available?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact Veterans Services at (530) 895-2566 for assistance with priority registration eligibility.",
+     "position": "vrc",
+     "window": [
+      "Yes. Eligible veterans, active-duty service members, reservists, National Guard members, and certain dependents may qualify for priority registration at Butte College.",
+      "Students currently receiving VA education benefits through Chapters 30, 31, 33, or 1606 are automatically considered for priority registration and do not need to self-report.",
+      "Students who are not receiving VA education benefits may still qualify but must provide documentation to Veterans Services and meet college requirements.",
+      "Contact Veterans Services at (530) 895-2566 for assistance with priority registration eligibility.",
+      "Back to top",
+      "Is there a Work-Study program available?",
+      "The V. A. Work-Study program is an opportunity to \"earn while you learn\". Students employed in the work-study program fill a number of positions at various V. A. facilities throughout Butte County."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Once approved, a Letter of Eligibility will be sent to you and Butte College Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "How Do I Apply?",
+      "Apply through your local County Veterans Service Office.",
+      "The County Veterans Service Office will determine your eligibility.",
+      "Once approved, a Letter of Eligibility will be sent to you and Butte College Veterans Services.",
+      "Submit the required documentation to Veterans Services if requested.",
+      "What If I Already Paid My Fees?",
+      "If you paid eligible fees before your waiver was applied, you may be eligible for a refund. Contact the Butte College Business Office for assistance."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Submit the required documentation to Veterans Services if requested.",
+     "position": "vrc",
+     "window": [
+      "Apply through your local County Veterans Service Office.",
+      "The County Veterans Service Office will determine your eligibility.",
+      "Once approved, a Letter of Eligibility will be sent to you and Butte College Veterans Services.",
+      "Submit the required documentation to Veterans Services if requested.",
+      "What If I Already Paid My Fees?",
+      "If you paid eligible fees before your waiver was applied, you may be eligible for a refund. Contact the Butte College Business Office for assistance.",
+      "Can I Use the Cal Vet Fee Waiver at Other Schools?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Butte College Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Phone: 1-800-952-5626",
+      "Butte County Veterans Service Office",
+      "Phone: (530) 552-6608",
+      "Butte College Veterans Services",
+      "Phone: (530) 895-2566",
+      "Email: veterans@butte.edu veterans@butte.edu",
+      "Veterans Services Tuition Deadline Exemption"
+     ],
+     "emails": [
+      "veterans@butte.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Tuition Deadline Exemption",
+     "position": "vrc",
+     "window": [
+      "Butte College Veterans Services",
+      "Phone: (530) 895-2566",
+      "Email: veterans@butte.edu veterans@butte.edu",
+      "Veterans Services Tuition Deadline Exemption",
+      "Category",
+      "Enhanced Services",
+      "Audience"
+     ],
+     "emails": [
+      "veterans@butte.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Transcript Information",
+     "position": "vrc",
+     "window": [
+      "Exemption From 7 Days Policy",
+      "Only Post 9/11 - Chapter 33 and Vocational Rehabilitation - Chapter 31 veterans are exempt from this policy.",
+      "If you're seeking an exemption, you are required to turn in a Declaration of Enrollment (D.O.E.) form within 3 business days after registering for classes.",
+      "Veterans Services Transcript Information",
+      "Category",
+      "Enhanced Services",
+      "Audience"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Request Air Force transcripts:",
+      "Air University",
+      "Events",
+      "Veterans Services",
+      "Back to Top",
+      "Land Acknowledgement",
+      "We acknowledge that Butte College and its satellite campuses stand on lands that were originally occupied by the first people of this area, and we recognize and honor the Maidu, Wintun, Wailaki and Nomlaki Tribes. We thank them for their strength and resilience in protecting this land for centuries and aspire to uphold our responsibilities according to their example. In offering this land acknowledgement, we affirm Native American sovereignty, history, and experiences."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.butte.edu/about/leadership/office-of-the-president/index.html",
+   "final_url": "https://www.butte.edu/about/leadership/office-of-the-president/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | Butte College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | Butte College",
+      "Skip to content",
+      "MyBC Portal",
+      "Info For"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Cosmetology and Barbering Center",
+      "Online Education",
+      "Transportation and Buses",
+      "Office of the Superintendent/President",
+      "Home",
+      "About Butte College",
+      "Leadership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About Butte College",
+      "Leadership",
+      "Office of the President",
+      "Jump To",
+      "President's Welcome",
+      "Contact My Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Office of the President",
+      "Jump To",
+      "President's Welcome",
+      "Contact My Office",
+      "Meet My Leadership Team",
+      "Meet My Staff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "A Message from the President",
+     "position": "college_ceo",
+     "window": [
+      "Contact My Office",
+      "Meet My Leadership Team",
+      "Meet My Staff",
+      "A Message from the President",
+      "You are welcome at Butte College!",
+      "Whether you are a first-time student or a returning student, whether you are seeking to complete a degree or certificate at our Main Campus, through our online course offerings or at our Chico Center or Glenn County Center, Butte College welcomes you!",
+      "Butte College opened its doors on September 23, 1968, to 1,194 students. Located on a 928-acre Wildlife Refuge in the center of Northern California’s Butte County, Butte College has emerged as a national leader in sustainability. Butte College serves a diverse student population and, since 2018, has been designated as a Hispanic Serving Institution (HSI) with 31% of our students identifying as Hispanic/Latinx. Additionally, Butte College is accredited by the Accrediting Commission for Community and Junior Colleges of the Western Association of Schools and Colleges (ACCJC/WASC)."
+     ],
+     "emails": []
+    },
+    {
+     "line": "president@butte.edu president@butte.edu",
+     "position": "college_ceo",
+     "window": [
+      "We offer 38 campus clubs and 13 athletic teams for students to join.",
+      "I invite you to visit at one of our locations to learn more about Butte College and discover all that we have to offer.",
+      "Contact My Office",
+      "president@butte.edu president@butte.edu",
+      "530-895-2484",
+      "Office",
+      "Meet My Leadership Team"
+     ],
+     "emails": [
+      "president@butte.edu"
+     ]
+    },
+    {
+     "line": "Vice President for Student Services",
+     "position": null,
+     "window": [
+      "Meet My Leadership Team",
+      "Assistant Superintendent/VP for Instruction",
+      "Supporting academic excellence across campus, the Office of Instruction leads our programs, scheduling, curriculum and faculty development, and learning resources to help you thrive in class and beyond.",
+      "Vice President for Student Services",
+      "From enrollment to graduation, student services champions your success. Our VP leads the student services, campus life, and support programs that empower you.",
+      "Vice President for Administrative Services",
+      "Administrative services keep Butte College running smoothly — from facilities and budgeting to information technology — so you can focus on what matters most: your education."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for Administrative Services",
+     "position": null,
+     "window": [
+      "Supporting academic excellence across campus, the Office of Instruction leads our programs, scheduling, curriculum and faculty development, and learning resources to help you thrive in class and beyond.",
+      "Vice President for Student Services",
+      "From enrollment to graduation, student services champions your success. Our VP leads the student services, campus life, and support programs that empower you.",
+      "Vice President for Administrative Services",
+      "Administrative services keep Butte College running smoothly — from facilities and budgeting to information technology — so you can focus on what matters most: your education.",
+      "Vice President for HR, training, and Employee Development",
+      "Access leadership information, employee resources, and professional development opportunities that support a positive, inclusive workplace at Butte College."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for HR, training, and Employee Development",
+     "position": null,
+     "window": [
+      "From enrollment to graduation, student services champions your success. Our VP leads the student services, campus life, and support programs that empower you.",
+      "Vice President for Administrative Services",
+      "Administrative services keep Butte College running smoothly — from facilities and budgeting to information technology — so you can focus on what matters most: your education.",
+      "Vice President for HR, training, and Employee Development",
+      "Access leadership information, employee resources, and professional development opportunities that support a positive, inclusive workplace at Butte College.",
+      "Meet My Staff",
+      "Melissa Cafferata-Ainsworth"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant, President & Board of Trustees",
+     "position": "college_ceo",
+     "window": [
+      "Access leadership information, employee resources, and professional development opportunities that support a positive, inclusive workplace at Butte College.",
+      "Meet My Staff",
+      "Melissa Cafferata-Ainsworth",
+      "Executive Assistant, President & Board of Trustees",
+      "Christian Gutierrez",
+      "Public Relations Officer",
+      "Doreen Nguku"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Public Relations Officer",
+     "position": null,
+     "window": [
+      "Melissa Cafferata-Ainsworth",
+      "Executive Assistant, President & Board of Trustees",
+      "Christian Gutierrez",
+      "Public Relations Officer",
+      "Doreen Nguku",
+      "Program Coordinator, Office of the President",
+      "My Organizational Chart"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Program Coordinator, Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Christian Gutierrez",
+      "Public Relations Officer",
+      "Doreen Nguku",
+      "Program Coordinator, Office of the President",
+      "My Organizational Chart",
+      "Start Here",
+      "Go Anywhere"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Apply Now",
+      "Welcome Center",
+      "Class Schedule",
+      "Office of the Superintendent/President",
+      "Back to Top",
+      "Land Acknowledgement",
+      "We acknowledge that Butte College and its satellite campuses stand on lands that were originally occupied by the first people of this area, and we recognize and honor the Maidu, Wintun, Wailaki and Nomlaki Tribes. We thank them for their strength and resilience in protecting this land for centuries and aspire to uphold our responsibilities according to their example. In offering this land acknowledgement, we affirm Native American sovereignty, history, and experiences."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.butte.edu/directory/index.html",
+   "final_url": "https://www.butte.edu/directory/",
+   "status": 200,
+   "excerpts": []
+  }
+ ],
+ "unread_links": [],
+ "run": "41298454812"
+}

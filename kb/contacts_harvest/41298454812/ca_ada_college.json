@@ -1,0 +1,867 @@
+{
+ "college": "Cañada College",
+ "homepage": "https://canadacollege.edu/",
+ "read_at": "2026-11-01T10:46:14+00:00",
+ "pages": [
+  {
+   "url": "https://canadacollege.edu/",
+   "final_url": "https://canadacollege.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://directory.smccd.edu/allemp.php?college=Canada",
+   "final_url": "https://directory.smccd.edu/allemp.php?college=Canada",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Cañada College - Student Services - Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Cañada College - Student Services - Admissions and Records",
+      "Aganon, James",
+      "Adjunct Counselor",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "Aguilar Alfaro, Manuel",
+      "Peer Mentor",
+      "Cañada College - Student Services - EOPS|CARE|Calworks"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Student Support",
+     "position": null,
+     "window": [
+      "Community Fitness Group Exercise Instructor",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Andrade, Ronald",
+      "Director of Student Support",
+      "Cañada College - Academic Support and Learning Technologies - Learning Center",
+      "(650) 306-3104",
+      "Angel Garcia Santos, Jose"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Counselor & Coordinator Ã¢ÂÂ EOPS/CalWORKs",
+     "position": null,
+     "window": [
+      "Community Fitness Personal Trainer",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Aranyakul, Sarah",
+      "Counselor & Coordinator Ã¢ÂÂ EOPS/CalWORKs",
+      "Cañada College - Student Services - EOPS|CARE|Calworks",
+      "(650) 381-3529",
+      "Arellano, Mayra"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of High School Transition and Dual Enrollment",
+     "position": null,
+     "window": [
+      "Cañada College - Student Services - EOPS|CARE|Calworks",
+      "(650) 381-3529",
+      "Arellano, Mayra",
+      "Director of High School Transition and Dual Enrollment",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "(650) 306-3166",
+      "Armstrong, Tyrone"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Student Services - Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "(650) 381-3529",
+      "Arellano, Mayra",
+      "Director of High School Transition and Dual Enrollment",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "(650) 306-3166",
+      "Armstrong, Tyrone",
+      "Custodial Supervisor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "(650) 306-3277",
+      "Arner, John",
+      "SUHSD, Independent Study",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Arrizon, Gonzalo",
+      "Assistant Professor",
+      "Cañada College - Humanities and Social Sciences - English"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Counselor & Coordinator Ã¢ÂÂ EOPS/CARE/FYSI",
+     "position": null,
+     "window": [
+      "Lifeguard",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Barrales-Ramirez, Lorraine",
+      "Counselor & Coordinator Ã¢ÂÂ EOPS/CARE/FYSI",
+      "Cañada College - Student Services - EOPS|CARE|Calworks",
+      "(650) 306-3462",
+      "Barreiro, Karla"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Enrollment Services",
+     "position": null,
+     "window": [
+      "Assistant Professor",
+      "Cañada College - Humanities and Social Sciences - English",
+      "Bennani, Wissem",
+      "Dean of Enrollment Services",
+      "Cañada College - Student Services - Admissions and Records",
+      "(650) 306-3232",
+      "Bennett, Brian"
+     ],
+     "emails": []
+    },
+    {
+     "line": "MESA Project Director",
+     "position": null,
+     "window": [
+      "Assistant Professor",
+      "Cañada College - Business, Design and Workforce - Paralegal",
+      "Bobo, Rance",
+      "MESA Project Director",
+      "Cañada College - Academic Support and Learning Technologies - Division Office",
+      "(650) 381-3559",
+      "Bornstein, Judith"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Cañada College - Humanities and Social Sciences - English",
+      "(650) 306-3367",
+      "Bricker, Lizette",
+      "Vice President of Student Services",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "(650) 306-3234",
+      "Bridge to Opportunites Program"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Student Services - Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "(650) 306-3367",
+      "Bricker, Lizette",
+      "Vice President of Student Services",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "(650) 306-3234",
+      "Bridge to Opportunites Program",
+      "BTO Program account"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dual Enrollment Coordinator",
+     "position": null,
+     "window": [
+      "Adjunct Faculty",
+      "Cañada College - Humanities and Social Sciences - ESL|CBET",
+      "Burkle, Tiffany",
+      "Dual Enrollment Coordinator",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Burns, Chris",
+      "Adjunct Librarian"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Cañada College - Humanities and Social Sciences - ESL|CBET",
+      "Burkle, Tiffany",
+      "Dual Enrollment Coordinator",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Burns, Chris",
+      "Adjunct Librarian",
+      "Cañada College - Academic Support and Learning Technologies - Library"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Student Services - Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Cañada College - Business, Design and Workforce - Division Office",
+      "CANBraveSpaceCollective",
+      "CAN Brave Space Collective",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "CANCEITL",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Cabrera, Berenice Alex"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "CAN Brave Space Collective",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "CANCEITL",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Cabrera, Berenice Alex",
+      "Instructor",
+      "Cañada College - Science and Technology - Biology"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Vice President, Administrative Services - Division Office",
+     "position": "vpbs",
+     "window": [
+      "(650) 306-3377",
+      "Canada Admin Services",
+      "Canada Administrative Services",
+      "Cañada College - Vice President, Administrative Services - Division Office",
+      "Canada Alternate Media Production",
+      "Account for Alternate Media Production",
+      "Cañada College - Student Services - Disability Resources Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Canada College Vice President Student Services",
+     "position": "vpss",
+     "window": [
+      "Canada College Community Fitness Aquatics",
+      "Canada Community Fitness Aquatics",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Canada College Vice President Student Services",
+      "Account for Canada VPSS Laptop",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "(650) 306-3234"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Student Services - Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Cañada College - Community Fitness - Athletics Center",
+      "Canada College Vice President Student Services",
+      "Account for Canada VPSS Laptop",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "(650) 306-3234",
+      "Canada Counseling",
+      "Cañada College - Student Services - Counseling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Vice President, Administrative Services - Division Office",
+     "position": "vpbs",
+     "window": [
+      "Cañada College - Student Services - Admissions and Records",
+      "Canada District Vehicle",
+      "CaÃÂ±ada District Vehicle",
+      "Cañada College - Vice President, Administrative Services - Division Office",
+      "Canada Dreamers",
+      "Account for Canada Dreamers",
+      "Cañada College - Humanities and Social Sciences - History"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Cañada College - Student Services - EOPS|CARE|Calworks",
+      "(650) 306-3300",
+      "Canada Executive Assistants",
+      "Cañada College - President's Office - President's Office",
+      "Canada Financial Aid Office",
+      "Cañada College - Student Services - Financial Aid Services",
+      "(650) 306-3307"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - Planning, Research and Institutional Effectiveness",
+     "position": "college_ceo",
+     "window": [
+      "Cañada College - Business, Design and Workforce - Menlo Park Center",
+      "Canada PRIE",
+      "PRIE Account",
+      "Cañada College - President's Office - Planning, Research and Institutional Effectiveness",
+      "Canada Placement",
+      "Account for Canada Placement",
+      "Cañada College - Student Services - Counseling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Cañada College - Student Services - Counseling",
+      "Canada Position Justifications",
+      "Account for Canada Position Justifications",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Canada Radiologic Technology",
+      "Departmental Account",
+      "Cañada College - Science and Technology - Radiologic Technology"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Canada Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Canada Veterans",
+      "Canada Veterans",
+      "Cañada College - Student Services - SparkPoint",
+      "Canada Vice President of Instruction",
+      "Departmental Account",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Canada Webmaster"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Cañada College - Student Services - SparkPoint",
+      "Canada Vice President of Instruction",
+      "Departmental Account",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Canada Webmaster",
+      "Account for Canada Webmaster",
+      "Cañada College - President's Office - Marketing"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - Marketing",
+     "position": "college_ceo",
+     "window": [
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Canada Webmaster",
+      "Account for Canada Webmaster",
+      "Cañada College - President's Office - Marketing",
+      "Canada Welcome Center",
+      "Account for Welcome Center",
+      "Cañada College - Student Services - Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Financial Aid Services",
+     "position": null,
+     "window": [
+      "Student Assistant",
+      "Cañada College - Student Services - Financial Aid Services",
+      "Castro, Breanna",
+      "Director of Financial Aid Services",
+      "Cañada College - Student Services - Financial Aid Services",
+      "(650) 306-3193",
+      "Caunday, Elisha"
+     ],
+     "emails": []
+    },
+    {
+     "line": "CaÃ±ada Disciplinary Officer",
+     "position": null,
+     "window": [
+      "Cañada College - Science and Technology - Division Office",
+      "CaÃ±ada Counseling Petitions",
+      "Cañada College - Student Services - Counseling",
+      "CaÃ±ada Disciplinary Officer",
+      "CaÃÂ±ada Disciplinary Officer",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "CaÃ±ada E-Counseling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "CaÃÂ±ada Disciplinary Officer",
+     "position": null,
+     "window": [
+      "CaÃ±ada Counseling Petitions",
+      "Cañada College - Student Services - Counseling",
+      "CaÃ±ada Disciplinary Officer",
+      "CaÃÂ±ada Disciplinary Officer",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "CaÃ±ada E-Counseling",
+      "Departmental Account"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Student Services - Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Cañada College - Student Services - Counseling",
+      "CaÃ±ada Disciplinary Officer",
+      "CaÃÂ±ada Disciplinary Officer",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "CaÃ±ada E-Counseling",
+      "Departmental Account",
+      "Cañada College - Student Services - Counseling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Canada Honors Program",
+     "position": "vpaa",
+     "window": [
+      "(650) 306-3309",
+      "CaÃ±ada Honors",
+      "CaÃÂÃÂ±ada Honors",
+      "Cañada College - Office of the Vice President, Instruction - Canada Honors Program",
+      "(650) 306-3347",
+      "CaÃ±ada Humanities Division",
+      "CaÃÂ±ada Humanities Division"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "(650) 306-3336",
+      "CaÃ±ada Instructional Services Division",
+      "CaÃÂ±ada Instructional Services Division",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "(650) 306-3399",
+      "CaÃ±ada International Student",
+      "Account for Int'l Student Login"
+     ],
+     "emails": []
+    },
+    {
+     "line": "CaÃ±ada MESA Coordinator",
+     "position": null,
+     "window": [
+      "CaÃ±ada Library Weblink",
+      "CaÃÂ±ada Library Weblink",
+      "Cañada College - Academic Support and Learning Technologies - Library",
+      "CaÃ±ada MESA Coordinator",
+      "MESA Coordinator",
+      "Cañada College - Science and Technology - MESA",
+      "(650) 306-3156"
+     ],
+     "emails": []
+    },
+    {
+     "line": "MESA Coordinator",
+     "position": null,
+     "window": [
+      "CaÃÂ±ada Library Weblink",
+      "Cañada College - Academic Support and Learning Technologies - Library",
+      "CaÃ±ada MESA Coordinator",
+      "MESA Coordinator",
+      "Cañada College - Science and Technology - MESA",
+      "(650) 306-3156",
+      "CaÃ±ada Mailroom Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - Marketing",
+     "position": "college_ceo",
+     "window": [
+      "(650) 306-3316",
+      "CaÃ±ada Marketing Public Information Office",
+      "CaÃÂ±ada Marketing Department Account",
+      "Cañada College - President's Office - Marketing",
+      "CaÃ±ada Math Jam",
+      "CaÃÂ±ada Math Jam account",
+      "Cañada College - Science and Technology - Mathematics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "CaÃ±ada Now",
+      "Cañada College - Humanities and Social Sciences - College for Working Adults",
+      "CaÃ±ada Office of Instruction",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "CaÃ±ada Olivefest",
+      "CaÃÂ±ada Olivefest Coordinator",
+      "Cañada College - Business, Design and Workforce - Division Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "CaÃÂ±ada Olivefest Coordinator",
+     "position": null,
+     "window": [
+      "CaÃ±ada Office of Instruction",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "CaÃ±ada Olivefest",
+      "CaÃÂ±ada Olivefest Coordinator",
+      "Cañada College - Business, Design and Workforce - Division Office",
+      "CaÃ±ada Outreach",
+      "Canada Outreach Department - Campus Ambassadors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - President's Office",
+     "position": "college_ceo",
+     "window": [
+      "(650) 381-3550",
+      "CaÃ±ada Special Ed Class",
+      "Account for Special Ed classes",
+      "Cañada College - President's Office - President's Office",
+      "CaÃ±ada Student Activities",
+      "Student Activities Account",
+      "Cañada College - Student Services - Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "SparkPoint Coordinator",
+     "position": null,
+     "window": [
+      "Community Fitness Group Exercise Instructor",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Chavez, Brianna",
+      "SparkPoint Coordinator",
+      "Cañada College - Student Services - SparkPoint",
+      "(650) 381-3552",
+      "Chavez, Irene"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Student Services - Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "(650) 306-3293",
+      "Cortez-Figueroa, Olivia",
+      "College Recruiter",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "(650) 306-3209",
+      "Cottong, Nancy",
+      "Group Exercise instructor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Cañada College - Humanities and Social Sciences - English|Reading",
+      "Cuevas, Hernan",
+      "Dual Enrollment Teacher",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Cuevas, John",
+      "Lead Groundskeeper",
+      "Cañada College - Facilities Planning and Operations - Facilities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Asst. Professor and Online Ed Coordinator",
+     "position": null,
+     "window": [
+      "Professor",
+      "Cañada College - Humanities and Social Sciences - Sociology",
+      "DeMello, Nicholas",
+      "Asst. Professor and Online Ed Coordinator",
+      "Cañada College - Science and Technology - Chemistry",
+      "DeWolfe, Emily",
+      "Comfit GEX Instructo"
+     ],
+     "emails": []
+    },
+    {
+     "line": "International Program Services Coordinator",
+     "position": null,
+     "window": [
+      "Swim Instructor",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Dominion, Catherine",
+      "International Program Services Coordinator",
+      "Cañada College - Student Services - International Student Center",
+      "(650) 381-3514",
+      "Dorantes, Claudia"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Outreach Program Services Coordinator",
+     "position": null,
+     "window": [
+      "Community Fitness Personal Trainer",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Dulmage-Bekker, Nickolas",
+      "Outreach Program Services Coordinator",
+      "Cañada College - Student Services - Outreach",
+      "Dunn, Mary",
+      "SUHSD Independent Study Coordinator"
+     ],
+     "emails": []
+    },
+    {
+     "line": "SUHSD Independent Study Coordinator",
+     "position": null,
+     "window": [
+      "Outreach Program Services Coordinator",
+      "Cañada College - Student Services - Outreach",
+      "Dunn, Mary",
+      "SUHSD Independent Study Coordinator",
+      "Cañada College - Business, Design and Workforce - Division Office",
+      "(650) 381-3523",
+      "Dykes, Sara"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Humanities and Social Sciences",
+     "position": null,
+     "window": [
+      "Instructor",
+      "Cañada College - Business, Design and Workforce - Business",
+      "Eck, David",
+      "Dean of Humanities and Social Sciences",
+      "Cañada College - Humanities and Social Sciences - Humanities Division Office",
+      "(650) 306-3350",
+      "Ekhtiar, Ramin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Planning, Research, Innovation and Effectiveness",
+     "position": null,
+     "window": [
+      "Cañada College - Business|Operations Office - Cashier's Office",
+      "(650) 306-3246",
+      "Engel, Karen",
+      "Dean of Planning, Research, Innovation and Effectiveness",
+      "Cañada College - President's Office - Planning, Research and Institutional Effectiveness",
+      "(650) 306-3145",
+      "Equity and Antiracism Planning Council"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - Planning, Research and Institutional Effectiveness",
+     "position": "college_ceo",
+     "window": [
+      "(650) 306-3246",
+      "Engel, Karen",
+      "Dean of Planning, Research, Innovation and Effectiveness",
+      "Cañada College - President's Office - Planning, Research and Institutional Effectiveness",
+      "(650) 306-3145",
+      "Equity and Antiracism Planning Council",
+      "Cañada College - Student Services - Counseling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Front Desk Assistant",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Firmeza, Raymond A.",
+      "Public Safety Officer",
+      "Cañada College - Public Safety - Public Safety",
+      "(650) 738-7000",
+      "Fitzgerald, Vincent"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Student Services - Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "(650) 306-3123",
+      "Flores, Jackie",
+      "Executive Assistant",
+      "Cañada College - Student Services - Vice President, Student Services",
+      "(650) 306-3318",
+      "Fong, Kristen",
+      "ST Temporary PRIE Analyst"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - Planning, Research and Institutional Effectiveness",
+     "position": "college_ceo",
+     "window": [
+      "(650) 306-3318",
+      "Fong, Kristen",
+      "ST Temporary PRIE Analyst",
+      "Cañada College - President's Office - Planning, Research and Institutional Effectiveness",
+      "Fontes, Steve",
+      "Instructor",
+      "Cañada College - Science and Technology - Radiologic Technology"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - Marketing",
+     "position": "college_ceo",
+     "window": [
+      "(650) 306-3391",
+      "Garcia-Ruiz, Iliana",
+      "Social Media Consultant",
+      "Cañada College - President's Office - Marketing",
+      "Garrino, Jane",
+      "Instructional Aide II",
+      "Cañada College - Business, Design and Workforce - Fashion Design"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Assistant Professor",
+      "Cañada College - Business, Design and Workforce - Interior Design",
+      "Gomez, Zorie",
+      "Public Safety Officer",
+      "Cañada College - Public Safety - Public Safety",
+      "(650) 738-7000",
+      "Gonzalez, Jaqueline"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Program Services Coordinator",
+     "position": null,
+     "window": [
+      "Commfit CAN Instructor",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Hale, Mary",
+      "Program Services Coordinator",
+      "Cañada College - Business, Design and Workforce - Workforce Development",
+      "(650) 381-2246",
+      "Hall, Patty"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Professor || OER/ZTC Coordinator",
+     "position": null,
+     "window": [
+      "Assistant Professor",
+      "Cañada College - Business, Design and Workforce - Interior Design",
+      "Harmon, Sarah",
+      "Assistant Professor || OER/ZTC Coordinator",
+      "Cañada College - Humanities and Social Sciences - Spanish",
+      "(650) 306-3426",
+      "Haro, Yesenia"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Counseling",
+     "position": null,
+     "window": [
+      "Assistant Professor",
+      "Cañada College - Humanities and Social Sciences - English",
+      "Hartman, C. Max",
+      "Dean of Counseling",
+      "Cañada College - Student Services - Counseling",
+      "(650) 306-3132",
+      "Haven, Kathleen"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Visual Communications Coordinator",
+     "position": null,
+     "window": [
+      "Adjunct Faculty",
+      "Cañada College - Humanities and Social Sciences - ESL",
+      "Haw, Hannah-Joy",
+      "Visual Communications Coordinator",
+      "Cañada College - President's Office - Marketing",
+      "(650) 306-3211",
+      "Healthcare"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - President's Office - Marketing",
+     "position": "college_ceo",
+     "window": [
+      "Cañada College - Humanities and Social Sciences - ESL",
+      "Haw, Hannah-Joy",
+      "Visual Communications Coordinator",
+      "Cañada College - President's Office - Marketing",
+      "(650) 306-3211",
+      "Healthcare",
+      "Departmental Account"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Cañada College - Community Fitness - Athletics Center",
+      "Homatu, Andrew",
+      "Dual Enrollment Teacher",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "Honda, Kimberly",
+      "Assistant Professor",
+      "Cañada College - Humanities and Social Sciences - English"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Private Swim Instructor",
+      "Cañada College - Community Fitness - Athletics Center",
+      "Hsieh, Chialin",
+      "Vice President of Instruction",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "(650) 306-3298",
+      "Hsieh, Yi-Shan"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Cañada College - Community Fitness - Athletics Center",
+      "Hsieh, Chialin",
+      "Vice President of Instruction",
+      "Cañada College - Office of the Vice President, Instruction - Office of Instruction",
+      "(650) 306-3298",
+      "Hsieh, Yi-Shan",
+      "Assistant Professor"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://directory.smccd.edu/allemp.php?college=District Office",
+   "status": "unreachable",
+   "error": "InvalidURL: URL can't contain control characters. '/allemp.php?college=District Office' (found at least ' ')"
+  }
+ ],
+ "unread_links": [],
+ "run": "41298454812"
+}

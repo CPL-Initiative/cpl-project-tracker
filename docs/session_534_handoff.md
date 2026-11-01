@@ -4,6 +4,8 @@ date: 2026-10-31
 session: 533 (SkyNannyberry, the CPL Queue routine; finished by the 08:12Z firing)
 tags: [handoff, program-requirements, los-angeles-valley, display-build]
 status: current
+superseded: true
+superseded_by: session_538_handoff.md
 ---
 
 # You are Session 534

@@ -1,0 +1,1851 @@
+{
+ "college": "Cerritos College",
+ "homepage": "https://www.cerritos.edu/",
+ "read_at": "2026-11-01T10:46:43+00:00",
+ "pages": [
+  {
+   "url": "https://www.cerritos.edu/",
+   "final_url": "https://www.cerritos.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.cerritos.edu/directory/employees/",
+   "final_url": "https://www.cerritos.edu/directory/employees/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Public Transportation",
+      "Employment",
+      "Facts at a Glance",
+      "President's Office",
+      "Mission Statement",
+      "Accredited Status",
+      "Calendars"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sam, Instructional Dean, Business Education,",
+     "position": null,
+     "window": [
+      "Arya, Instructor (Hrly), Science, Engineering & Math,",
+      "email Arya Afshari",
+      "Agdasi,",
+      "Sam, Instructional Dean, Business Education,",
+      "email Sam Agdasi",
+      "Aguayo,",
+      "Robert, Counselor, Counseling,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Luisito, Dean, Student Equity & Success,",
+     "position": null,
+     "window": [
+      "Hector, Custodian, Operations/Custodial, ext. 2304,",
+      "email Hector Amador",
+      "Amador,",
+      "Luisito, Dean, Student Equity & Success,",
+      "email Luisito Amador",
+      "Amaira,",
+      "Hannah, Instructor (Hrly), Bus Communications Office Tech,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Ayako (Aya), Media Relations Coordinator, Public Affairs, ext. 2287,",
+     "position": null,
+     "window": [
+      "Marco, Instructor (Hrly), Athletics,",
+      "email Marco Anzures",
+      "Aoki,",
+      "Ayako (Aya), Media Relations Coordinator, Public Affairs, ext. 2287,",
+      "email Ayako (Aya) Aoki",
+      "Applebury,",
+      "Kimberly (Kim), Administrative Secretary II, Counseling, ext. 2127,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Daniel, Campus Police Officer, Campus Police,",
+     "position": null,
+     "window": [
+      "Charlan (Charlan J.), Instructor (Hrly), Physical Education/Athletics,",
+      "email Charlan (Charlan J.) Arnold",
+      "Arriola,",
+      "Daniel, Campus Police Officer, Campus Police,",
+      "email Daniel Arriola",
+      "Artates,",
+      "Evangeline, Instructor (Hrly), Medical Assisting,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jairzinhio, Campus Police Officer, Campus Police, ext. 2325,",
+     "position": null,
+     "window": [
+      "Gabriela, Instructor (Hrly), Adult Ed/Diversity Programs,",
+      "email Gabriela Barrera De Contreras",
+      "Barron,",
+      "Jairzinhio, Campus Police Officer, Campus Police, ext. 2325,",
+      "email Jairzinhio Barron",
+      "Baskette,",
+      "Shawna, Dean of Academic Success, Library,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Shawna, Dean of Academic Success, Library,",
+     "position": null,
+     "window": [
+      "Jairzinhio, Campus Police Officer, Campus Police, ext. 2325,",
+      "email Jairzinhio Barron",
+      "Baskette,",
+      "Shawna, Dean of Academic Success, Library,",
+      "email Shawna Baskette",
+      "Bateman,",
+      "Michael, Instructor (Hrly), Mathematics,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Robyn, Vice President of Student Services/Assistant Superintendent, Student Services, ext. 2237,",
+     "position": "vpss",
+     "window": [
+      "Alex, Counselor (Hrly), EOPS,",
+      "email Alex Brambila",
+      "Brammer,",
+      "Robyn, Vice President of Student Services/Assistant Superintendent, Student Services, ext. 2237,",
+      "email Robyn Brammer",
+      "Bran,",
+      "Brenda, Instructor (Hrly), English,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Gladys, Assistant Director, International Student Services and Cultural Engagement, Student Equity & Success,",
+     "position": null,
+     "window": [
+      "Eric, Scholarship Relations Specialist, Foundation, ext. 2539,",
+      "email Eric Calderon",
+      "Calderon,",
+      "Gladys, Assistant Director, International Student Services and Cultural Engagement, Student Equity & Success,",
+      "email Gladys Calderon",
+      "Caldwell,",
+      "Caitlyn, Instructor (Hrly), Psychology,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Maria, Athletic Director, Physical Education/Athletics,",
+     "position": null,
+     "window": [
+      "Kenia, Graduate Assistant Intern, Student Affairs/ Office Of Student Conduct & Grievances,",
+      "email Kenia Castro",
+      "Castro,",
+      "Maria, Athletic Director, Physical Education/Athletics,",
+      "email Maria Castro",
+      "Castro,",
+      "Monica, Facilities Scheduling Specialist, Facilities, ext. 2203,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Mario, Campus Police Officer, Campus Police, ext. 2325,",
+     "position": null,
+     "window": [
+      "Albert (Albert R.), Instructor (Hrly), Manufacturing Technology,",
+      "email Albert (Albert R.) Chavez",
+      "Chavez,",
+      "Mario, Campus Police Officer, Campus Police, ext. 2325,",
+      "email Mario Chavez",
+      "Chavez,",
+      "Samuel, Web Support Technician, Public Affairs, ext. 2966,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Etelvina, Interim Executive Director, Foundation & Community Advancement,",
+     "position": null,
+     "window": [
+      "Sergio, Instructional Academic Support, EOPS/CARE/LINC,",
+      "email Sergio De La Paz",
+      "De La Torre,",
+      "Etelvina, Interim Executive Director, Foundation & Community Advancement,",
+      "email Etelvina De La Torre",
+      "De La Torre,",
+      "Gloria, Intermediate Clerk - Adult Hourly, Adult Education,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Noorali, Director of Fiscal Svcs, Fiscal Services, ext. 2266,",
+     "position": null,
+     "window": [
+      "Christopher, Student Activities, EOPS,",
+      "email Christopher Dela Cruz",
+      "Delawalla,",
+      "Noorali, Director of Fiscal Svcs, Fiscal Services, ext. 2266,",
+      "email Noorali Delawalla",
+      "Delgado,",
+      "Laura, Program Facilitator, Student Equity and Success,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "John, Campus Police Officer, Campus Police, ext. 2325,",
+     "position": null,
+     "window": [
+      "Chhay (Joey), Admissions & Records Tech I, Admissions and Records, ext. 2115,",
+      "email Chhay (Joey) Ear",
+      "Echevarria,",
+      "John, Campus Police Officer, Campus Police, ext. 2325,",
+      "email John Echevarria",
+      "Echeverria,",
+      "Diana (Diana M.), CDC Teacher (FT), Child Development Center,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Christopher, Dean, Student Accessibility and Wellness Services,",
+     "position": null,
+     "window": [
+      "Yvette, Instructor (Hrly), Nursing,",
+      "email Yvette Elpidio",
+      "Elquizabal,",
+      "Christopher, Dean, Student Accessibility and Wellness Services,",
+      "email Christopher Elquizabal",
+      "Elwell,",
+      "Michael, Academic, 3rd Party Contract, Apprent - Field Ironworkers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Laura, Assistant Director, Admissions and Records, Enrollment Services,",
+     "position": "dean_ar",
+     "window": [
+      "Emmanuel, Instructor (Hrly), Automotive Technology,",
+      "email Emmanuel Estrada",
+      "Estrada,",
+      "Laura, Assistant Director, Admissions and Records, Enrollment Services,",
+      "email Laura Estrada",
+      "Estrada,",
+      "Shannon, Reentry Resource Specialist, Career Services, ext. 2362,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jose (Jose L.), President/Superintendent, President's Office,",
+     "position": "college_ceo",
+     "window": [
+      "Rebecca, Counselor (Hrly), Student Accessibility Services,",
+      "email Rebecca Ferrelli",
+      "Fierro,",
+      "Jose (Jose L.), President/Superintendent, President's Office,",
+      "email Jose (Jose L.) Fierro",
+      "Figueiredo,",
+      "Virginia, Instructor (Hrly), Music,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Alexa, Educational Partnerships Coordinator, Educational Partnership & Programs,",
+     "position": null,
+     "window": [
+      "Melissa, Instructor, Welding,",
+      "email Melissa Figueroa",
+      "Filatoff,",
+      "Alexa, Educational Partnerships Coordinator, Educational Partnership & Programs,",
+      "email Alexa Filatoff",
+      "Filer,",
+      "Anthony, Instructor (Hrly), Paralegal Education, ext. 4687,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Judy, LA Regional Director of Business & Entrepreneurship, Auto Partners,",
+     "position": null,
+     "window": [
+      "Anthony, Instructor, Woodworking Mfg Technology, ext. 2985,",
+      "email Anthony Fortner",
+      "Fox,",
+      "Judy, LA Regional Director of Business & Entrepreneurship, Auto Partners,",
+      "email Judy Fox",
+      "Fragoso,",
+      "Manuel, Instructor (Hrly), Adult Ed/Diversity Programs,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Deisi, Alumni Relations & Development Officer, Foundation, ext. 3739,",
+     "position": null,
+     "window": [
+      "David, Instructor (Hrly), Auto Repair,",
+      "email David Gonzalez",
+      "Gonzalez,",
+      "Deisi, Alumni Relations & Development Officer, Foundation, ext. 3739,",
+      "email Deisi Gonzalez",
+      "Gonzalez,",
+      "Elizabeth, Administrative Secretary I, Fiscal Services, ext. 2261,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Eliza, Dean, Counseling Services,",
+     "position": null,
+     "window": [
+      "Elvie (Jr., Elvie), Groundskeeper, Maintenance/Grounds,",
+      "email Elvie (Jr., Elvie) Howard Jr",
+      "Hoyos Vences,",
+      "Eliza, Dean, Counseling Services,",
+      "email Eliza Hoyos Vences",
+      "Hroch,",
+      "Amber, Dean, Institutional Effectiveness, Research, Planning, and Grants, IERPG,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Amber, Dean, Institutional Effectiveness, Research, Planning, and Grants, IERPG,",
+     "position": null,
+     "window": [
+      "Eliza, Dean, Counseling Services,",
+      "email Eliza Hoyos Vences",
+      "Hroch,",
+      "Amber, Dean, Institutional Effectiveness, Research, Planning, and Grants, IERPG,",
+      "email Amber Hroch",
+      "Hu,",
+      "Jianli, Instructor, Business Administration,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Raquel, Coordinator, School Relations, ext. 2904,",
+     "position": null,
+     "window": [
+      "Carmen, Administrative Secretary II, Technology,",
+      "email Carmen Lizarraga",
+      "Lizarraga,",
+      "Raquel, Coordinator, School Relations, ext. 2904,",
+      "email Raquel Lizarraga",
+      "Lo,",
+      "Cindy, Program Facilitator, Economic Development, ext. 2511,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Felipe, Executive Vice President, Business Services,",
+     "position": "vpbs",
+     "window": [
+      "David (David F.), Instructor (Hrly), Music,",
+      "email David (David F.) Lopez",
+      "Lopez,",
+      "Felipe, Executive Vice President, Business Services,",
+      "email Felipe Lopez",
+      "Lopez,",
+      "Irlanda, Program Facilitator, Cosmetology, ext. 2961,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jannet, Statewide Director of Advanced Transportation & Logistics, Auto Partners Building, ext. 2912,",
+     "position": null,
+     "window": [
+      "Mayra, Locker & Equipment Specialist, Physical Education/Athletics,",
+      "email Mayra Maldonado",
+      "Malig,",
+      "Jannet, Statewide Director of Advanced Transportation & Logistics, Auto Partners Building, ext. 2912,",
+      "email Jannet Malig",
+      "Maline,",
+      "Rama, Instructor (Hrly), Paralegal Education,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Colleen, Dean, Academic Affairs,",
+     "position": null,
+     "window": [
+      "McGuire,",
+      "James, Academic, 3rd Party Contract, Apprent - Field Ironworkers",
+      "McKinley,",
+      "Colleen, Dean, Academic Affairs,",
+      "email Colleen McKinley",
+      "McKinley,",
+      "Patricia, Lead Custodian, Operations/Custodial, ext. 2304,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Instructor, Computer & Info Sciences, ext. 2720,",
+     "position": null,
+     "window": [
+      "Mellard,",
+      "Steve, Academic, 3rd Party Contract, Apprent - Field Ironworkers",
+      "Mellas,",
+      "Dean, Instructor, Computer & Info Sciences, ext. 2720,",
+      "email Dean Mellas",
+      "Mellgoza,",
+      "Ramona, Buyer II, Purchasing, ext. 2248,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "email Dean Mellas",
+     "position": null,
+     "window": [
+      "Steve, Academic, 3rd Party Contract, Apprent - Field Ironworkers",
+      "Mellas,",
+      "Dean, Instructor, Computer & Info Sciences, ext. 2720,",
+      "email Dean Mellas",
+      "Mellgoza,",
+      "Ramona, Buyer II, Purchasing, ext. 2248,",
+      "email Ramona Mellgoza"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Hillary, Associate Dean Student Health and Wellness, Student Health Services,",
+     "position": null,
+     "window": [
+      "Vivian, Payroll Technician, Payroll,",
+      "email Vivian Mendoza",
+      "Mennella,",
+      "Hillary, Associate Dean Student Health and Wellness, Student Health Services,",
+      "email Hillary Mennella",
+      "Mensah,",
+      "James, Custodian, Operations/Custodial,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jeffrey, Athletic Director, Athletics, ext. 2862,",
+     "position": null,
+     "window": [
+      "Miodrag, Instructor, Engineering Design Technology, ext. 2910,",
+      "email Miodrag Micic, https://www.cerritos.edu/mmicic",
+      "Miera,",
+      "Jeffrey, Athletic Director, Athletics, ext. 2862,",
+      "email Jeffrey Miera",
+      "Millard,",
+      "Samuel (Sam), Maintenance Mechanic, Woodworking Mfg Technology, ext. 2937,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Elizabeth, Dean of Student Services, Student Activities, Student Services, ext. 2476,",
+     "position": null,
+     "window": [
+      "Brian, Instructor (Hrly), Woodworking Mfg Technology, ext. 4326,",
+      "email Brian Miller",
+      "Miller,",
+      "Elizabeth, Dean of Student Services, Student Activities, Student Services, ext. 2476,",
+      "email Elizabeth Miller",
+      "Miller,",
+      "Jennifer, Human Resources Tech I (Conf), Human Resources, ext. 2023,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Stephanie, EOPS Specialist & CARE Coordinator, EOPS, ext. 2384,",
+     "position": null,
+     "window": [
+      "Kealohilani, Instructional Academic Support - hourly, EOPS,",
+      "email Kealohilani Minami",
+      "Minami,",
+      "Stephanie, EOPS Specialist & CARE Coordinator, EOPS, ext. 2384,",
+      "email Stephanie Minami",
+      "Minear,",
+      "Samantha, Instructor (Hrly), Art,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Katherine, Program Facilitator, Veterans Resource Center, ext. 3732,",
+     "position": "vrc",
+     "window": [
+      "Rosemarie (Rose), Instructor (Hrly), Art,",
+      "email Rosemarie (Rose) Misanchuk",
+      "Mishler,",
+      "Katherine, Program Facilitator, Veterans Resource Center, ext. 3732,",
+      "email Katherine Mishler",
+      "Mitchell,",
+      "Roxanne, Administrative Secretary II, Technology, ext. 2901,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Frank, Vice President, Academic Affairs/Assistant Superintendent, ext. 2228,",
+     "position": "vpaa",
+     "window": [
+      "William R, Instructor, Philosophy,",
+      "email William R Mittendorf",
+      "Mixson,",
+      "Frank, Vice President, Academic Affairs/Assistant Superintendent, ext. 2228,",
+      "email Frank Mixson",
+      "Molina,",
+      "Nancy, Testing Technician, Career Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Rory, Instructional Dean, Physical Education, Kinesiology,",
+     "position": null,
+     "window": [
+      "Rachel, Instructor, Nursing, ext. 3515,",
+      "email Rachel Natividad",
+      "Natividad,",
+      "Rory, Instructional Dean, Physical Education, Kinesiology,",
+      "email Rory Natividad",
+      "Nau,",
+      "Teresa, Administrative Clerk I, Admissions and Records, ext. 2113,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Fatima, Student Body Vice President, Student Affairs/Student Activities (ASCC),",
+     "position": "vpss",
+     "window": [
+      "Anthony, Instructor (Hrly), Science, Engineering & Math,",
+      "email Anthony Ong",
+      "Oregon,",
+      "Fatima, Student Body Vice President, Student Affairs/Student Activities (ASCC),",
+      "email Fatima Oregon",
+      "Ornelas,",
+      "Jazmine, Administrative Office Support, Educational Partnership and Programs,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Michael, Instructional Dean, Science, Engineering and Mathematics,",
+     "position": null,
+     "window": [
+      "Elizabeth, Counselor (SAS), Student Accessibility Services, ext. 2342,",
+      "email Elizabeth Page",
+      "Page,",
+      "Michael, Instructional Dean, Science, Engineering and Mathematics,",
+      "email Michael Page",
+      "Palavecino,",
+      "Lorenzo, Student Events Specialist, Student Activities, ext. 2475,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sue, Teacher TRAC Director Emeritus, Teacher Trac,",
+     "position": null,
+     "window": [
+      "Shivani, Instructor (Hrly), English,",
+      "email Shivani Parmar",
+      "Parsons,",
+      "Sue, Teacher TRAC Director Emeritus, Teacher Trac,",
+      "email Sue Parsons",
+      "Patchell,",
+      "Shawn, Instructor (Hrly), English,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Gary, Instructional Dean, Fine Arts/Communications, ext. 2602,",
+     "position": null,
+     "window": [
+      "Donna, Instructor (Hrly), Athletics, ext. 4877,",
+      "email Donna Prindle",
+      "Pritchard,",
+      "Gary, Instructional Dean, Fine Arts/Communications, ext. 2602,",
+      "email Gary Pritchard",
+      "Profumo,",
+      "Angelica, Program Assistant, Student Activities, ext. 2067,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Narges, Instructional Dean, Humanities/Social Sciences, ext. 2700,",
+     "position": null,
+     "window": [
+      "email Jamie Quiroz",
+      "R",
+      "Rabii-Rakin,",
+      "Narges, Instructional Dean, Humanities/Social Sciences, ext. 2700,",
+      "email Narges Rabii-Rakin",
+      "Radillo,",
+      "Mayra, Buyer II, Purchasing, ext. 2246,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Terri, Campus Police Officer, Campus Police, ext. 3076,",
+     "position": null,
+     "window": [
+      "Michelle, Instructor (Hrly), Child Dev/Early Childhood,",
+      "email Michelle Ramirez",
+      "Ramirez,",
+      "Terri, Campus Police Officer, Campus Police, ext. 3076,",
+      "email Terri Ramirez",
+      "Ramirez,",
+      "Yesenia, Financial Aid Specialist, Financial Aid, ext. 2389,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Elizabeth, Dean, Health Occupations, ext. 2554,",
+     "position": null,
+     "window": [
+      "Jeffrey (Jeffrey W.), Instructor, Anthropology, ext. 2758,",
+      "email Jeffrey (Jeffrey W.) Rigby",
+      "Riley,",
+      "Elizabeth, Dean, Health Occupations, ext. 2554,",
+      "email Elizabeth Riley",
+      "Rincon,",
+      "David, Multimedia Production Specialist II, Student Success/Public Affairs,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Kelly, Compliance & Employee Relations/Deputy Title IX Coordinator, Human Resources,",
+     "position": null,
+     "window": [
+      "Hugo, Instructor (Hrly), Adult Ed/Diversity Programs,",
+      "email Hugo Rios",
+      "Rios,",
+      "Kelly, Compliance & Employee Relations/Deputy Title IX Coordinator, Human Resources,",
+      "email Kelly Rios",
+      "Rios,",
+      "Mariana, Board Member, Board Of Trustees,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sunny, Instructional Dean, Liberal Arts,",
+     "position": null,
+     "window": [
+      "Edward (Edward J.), Instructor, Architecture, ext. 2911,",
+      "email Edward (Edward J.) Rother",
+      "Rothstein,",
+      "Sunny, Instructional Dean, Liberal Arts,",
+      "email Sunny Rothstein",
+      "Rouhi,",
+      "Samaneh, Instructor (Hrly), ESL,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Patricia (Patricia Robbins), Director, Special Support Programs, EOPS/CARE/LINC/NextUp/CalWORKs, ext. 2525,",
+     "position": null,
+     "window": [
+      "James (James B.), Instructor (Hrly), Administration of Justice,",
+      "email James (James B.) Smith",
+      "Smith,",
+      "Patricia (Patricia Robbins), Director, Special Support Programs, EOPS/CARE/LINC/NextUp/CalWORKs, ext. 2525,",
+      "email Patricia (Patricia Robbins) Smith",
+      "Smith,",
+      "Peggy, Instructor (Hrly), Science, Engineering & Math,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Yvette, Dean, Enrollment Services, ext. 2381,",
+     "position": null,
+     "window": [
+      "email Thad Szabo",
+      "T",
+      "Tafoya,",
+      "Yvette, Dean, Enrollment Services, ext. 2381,",
+      "email Yvette Tafoya",
+      "Tahernia,",
+      "Farshid, Instructor (Hrly), Economics,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Instructor (Hrly), Automotive Mechanical Repair, ext. 4894,",
+     "position": null,
+     "window": [
+      "Gabriela, Student Services Support Hourly, Adult Education,",
+      "email Gabriela Tecun-Funes",
+      "Tedtaotao,",
+      "Dean, Instructor (Hrly), Automotive Mechanical Repair, ext. 4894,",
+      "email Dean Tedtaotao",
+      "Templeton,",
+      "Phillip, Academic, 3rd Party Contract, Apprent - Field Ironworkers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "email Dean Tedtaotao",
+     "position": null,
+     "window": [
+      "email Gabriela Tecun-Funes",
+      "Tedtaotao,",
+      "Dean, Instructor (Hrly), Automotive Mechanical Repair, ext. 4894,",
+      "email Dean Tedtaotao",
+      "Templeton,",
+      "Phillip, Academic, 3rd Party Contract, Apprent - Field Ironworkers",
+      "Teposte,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Wendy, Administrative Assistant (Conf), President’s Office, ext. 2204,",
+     "position": "college_ceo",
+     "window": [
+      "Joshua, Instructor (Hrly), Physical Education,",
+      "email Joshua Thomas",
+      "Thomas,",
+      "Wendy, Administrative Assistant (Conf), President’s Office, ext. 2204,",
+      "email Wendy Thomas",
+      "Thomason,",
+      "Asela, Instructor (Hrly), Computer & Info Sciences,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chelsea, Director of Public Relations and Communications, Public Affairs,",
+     "position": null,
+     "window": [
+      "Barbara, Instructor (Hrly), Business Administration,",
+      "email Barbara Van Dine",
+      "Van Doornum,",
+      "Chelsea, Director of Public Relations and Communications, Public Affairs,",
+      "email Chelsea Van Doornum",
+      "Van Gaston,",
+      "John, Sports Information Publicist, Physical Education/Athletics, ext. 2896,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Graciela, Instructional Dean of Continuing Education, Adult Ed/Diversity Programs, ext. 2490,",
+     "position": null,
+     "window": [
+      "Richard, Instructor (Hrly), Automotive Mechanical Repair, ext. 4634,",
+      "email Richard Vasilik",
+      "Vasquez,",
+      "Graciela, Instructional Dean of Continuing Education, Adult Ed/Diversity Programs, ext. 2490,",
+      "email Graciela Vasquez",
+      "Vasquez,",
+      "Rosario, Administrative Secretary I, Career Services, ext. 2357,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Carlo (Carlo G.), Campus Police Officer, Campus Police, ext. 2325,",
+     "position": null,
+     "window": [
+      "Angelica, Instructor (Hrly), Nursing,",
+      "email Angelica Velasquez",
+      "Velazquez,",
+      "Carlo (Carlo G.), Campus Police Officer, Campus Police, ext. 2325,",
+      "email Carlo (Carlo G.) Velazquez",
+      "Velazquez,",
+      "David, Instructor (Hrly), Chemistry,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Victor, Board Member, President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Michael, Maintenance Mechanic, Facilities, ext. 4991,",
+      "email Michael Villalobos",
+      "Villalobos,",
+      "Victor, Board Member, President's Office",
+      "Villalon Jr,",
+      "Ramiro, Instructor (Hrly), Architecture,",
+      "email Ramiro Villalon Jr"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Christopher, Instructional Dean, Business Education,",
+     "position": null,
+     "window": [
+      "Charles (Julian), Instructor (Hrly), Theatre Arts, ext. 3099,",
+      "email Charles (Julian) White",
+      "Whiteside,",
+      "Christopher, Instructional Dean, Business Education,",
+      "email Christopher Whiteside",
+      "Whitfield,",
+      "Brent, Instructor (Hrly), Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Andrea, Manager, Office of the President, Trustee Services, & Strategic Initiatives, President's Office, ext. 2202,",
+     "position": "college_ceo",
+     "window": [
+      "Kathleen, Instructor (Hrly), Nursing,",
+      "email Kathleen Wisinski",
+      "Wittig,",
+      "Andrea, Manager, Office of the President, Trustee Services, & Strategic Initiatives, President's Office, ext. 2202,",
+      "email Andrea Wittig",
+      "Wolde,",
+      "Elleni, Instructor (Hrly), Computer & Info Sciences,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Wei, Instructional Dean, Technology,",
+     "position": null,
+     "window": [
+      "Zhang,",
+      "Bing, Instructor (Hrly), Engineering Design Technology",
+      "Zhou,",
+      "Wei, Instructional Dean, Technology,",
+      "email Wei Zhou",
+      "Zhou,",
+      "Yiran, Instructor, Foreign Language,"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.cerritos.edu/support/program-directory/default.htm",
+   "final_url": "https://www.cerritos.edu/support/program-directory/default.htm",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.cerritos.edu/about/president/",
+   "final_url": "https://www.cerritos.edu/about/president/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President - Cerritos College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President - Cerritos College",
+      "Skip to main content",
+      "Future Students",
+      "Current Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Search",
+      "Search Site:",
+      "Navigate this Section",
+      "President's Office",
+      "Home",
+      "Caring Campus",
+      "Service Excellence Commitment"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Goals",
+     "position": "college_ceo",
+     "window": [
+      "Service Excellence Commitment",
+      "Executive Council Updates",
+      "EC Connect",
+      "President's Goals",
+      "President's Hour",
+      "President's Initiatives",
+      "Cerritos Complete"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Hour",
+     "position": "college_ceo",
+     "window": [
+      "Executive Council Updates",
+      "EC Connect",
+      "President's Goals",
+      "President's Hour",
+      "President's Initiatives",
+      "Cerritos Complete",
+      "Convocation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Initiatives",
+     "position": "college_ceo",
+     "window": [
+      "EC Connect",
+      "President's Goals",
+      "President's Hour",
+      "President's Initiatives",
+      "Cerritos Complete",
+      "Convocation",
+      "Economic Development Summit"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Speaker Series",
+     "position": "college_ceo",
+     "window": [
+      "Cerritos Complete",
+      "Convocation",
+      "Economic Development Summit",
+      "President's Speaker Series",
+      "State of the College",
+      "Student Convocation",
+      "President's Innovation Fund"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Innovation Fund",
+     "position": "college_ceo",
+     "window": [
+      "President's Speaker Series",
+      "State of the College",
+      "Student Convocation",
+      "President's Innovation Fund",
+      "President's Messages",
+      "President's Office Functions",
+      "College Coordinating Committee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Messages",
+     "position": "college_ceo",
+     "window": [
+      "State of the College",
+      "Student Convocation",
+      "President's Innovation Fund",
+      "President's Messages",
+      "President's Office Functions",
+      "College Coordinating Committee",
+      "Citizens' Bond Oversight Committee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office Functions",
+     "position": "college_ceo",
+     "window": [
+      "Student Convocation",
+      "President's Innovation Fund",
+      "President's Messages",
+      "President's Office Functions",
+      "College Coordinating Committee",
+      "Citizens' Bond Oversight Committee",
+      "Related Sites"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact the President",
+     "position": "college_ceo",
+     "window": [
+      "Shared Governance",
+      "Strategic Planning",
+      "Staff",
+      "Contact the President",
+      "@cerritoscollegepres",
+      "@drjfierro_",
+      "Home Icon"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "@drjfierro_",
+      "Home Icon",
+      "About Cerritos College",
+      "Office of the President",
+      "Office of the President",
+      "Welcome to Cerritos College",
+      "If you are a returning student, I hope you are moving toward the completion of your"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home Icon",
+      "About Cerritos College",
+      "Office of the President",
+      "Office of the President",
+      "Welcome to Cerritos College",
+      "If you are a returning student, I hope you are moving toward the completion of your",
+      "educational goals. If you are new to our college, I wish you luck and encourage you"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/Superintendent",
+     "position": "college_ceo",
+     "window": [
+      "College Board of Trustees.",
+      "Sincerely,",
+      "Dr. Jose Fierro",
+      "President/Superintendent",
+      "About President Jose Fierro",
+      "Dr. Jose Fierro began his tenure as President/Superintendent of the Cerritos Community",
+      "College District in July 2015. Through Dr. Fierro’s initiatives and commitment to"
+     ],
+     "emails": []
+    },
+    {
+     "line": "About President Jose Fierro",
+     "position": "college_ceo",
+     "window": [
+      "Sincerely,",
+      "Dr. Jose Fierro",
+      "President/Superintendent",
+      "About President Jose Fierro",
+      "Dr. Jose Fierro began his tenure as President/Superintendent of the Cerritos Community",
+      "College District in July 2015. Through Dr. Fierro’s initiatives and commitment to",
+      "increasing educational access, providing basic needs, and supporting personal and"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Jose Fierro began his tenure as President/Superintendent of the Cerritos Community",
+     "position": "college_ceo",
+     "window": [
+      "Dr. Jose Fierro",
+      "President/Superintendent",
+      "About President Jose Fierro",
+      "Dr. Jose Fierro began his tenure as President/Superintendent of the Cerritos Community",
+      "College District in July 2015. Through Dr. Fierro’s initiatives and commitment to",
+      "increasing educational access, providing basic needs, and supporting personal and",
+      "professional advancement, Cerritos College has become the launchpad for social and"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Fierro currently serves as the President of the California Association of Latino",
+     "position": "college_ceo",
+     "window": [
+      "avid athlete. Dr. Fierro is always looking for more opportunities to stay active and",
+      "engaged with students, including joining in training programs for marathon events",
+      "with student veterans and other student groups on campus.",
+      "Dr. Fierro currently serves as the President of the California Association of Latino",
+      "Community College Trustees and Administrators, Immediate Past President of the National",
+      "Community College Hispanic Council, Co-Chair of the Los Angeles Regional Consortium,",
+      "and Member of the Coast Plaza Hospital Board of Directors."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Community College Trustees and Administrators, Immediate Past President of the National",
+     "position": "college_ceo",
+     "window": [
+      "engaged with students, including joining in training programs for marathon events",
+      "with student veterans and other student groups on campus.",
+      "Dr. Fierro currently serves as the President of the California Association of Latino",
+      "Community College Trustees and Administrators, Immediate Past President of the National",
+      "Community College Hispanic Council, Co-Chair of the Los Angeles Regional Consortium,",
+      "and Member of the Coast Plaza Hospital Board of Directors.",
+      "Stay Connected"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.cerritos.edu/public-relations/social-media-directory.htm",
+   "final_url": "https://www.cerritos.edu/public-relations/social-media-directory.htm",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.cerritos.edu/employees/",
+   "final_url": "https://www.cerritos.edu/directory/employees/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Public Transportation",
+      "Employment",
+      "Facts at a Glance",
+      "President's Office",
+      "Mission Statement",
+      "Accredited Status",
+      "Calendars"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sam, Instructional Dean, Business Education,",
+     "position": null,
+     "window": [
+      "Arya, Instructor (Hrly), Science, Engineering & Math,",
+      "email Arya Afshari",
+      "Agdasi,",
+      "Sam, Instructional Dean, Business Education,",
+      "email Sam Agdasi",
+      "Aguayo,",
+      "Robert, Counselor, Counseling,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Luisito, Dean, Student Equity & Success,",
+     "position": null,
+     "window": [
+      "Hector, Custodian, Operations/Custodial, ext. 2304,",
+      "email Hector Amador",
+      "Amador,",
+      "Luisito, Dean, Student Equity & Success,",
+      "email Luisito Amador",
+      "Amaira,",
+      "Hannah, Instructor (Hrly), Bus Communications Office Tech,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Ayako (Aya), Media Relations Coordinator, Public Affairs, ext. 2287,",
+     "position": null,
+     "window": [
+      "Marco, Instructor (Hrly), Athletics,",
+      "email Marco Anzures",
+      "Aoki,",
+      "Ayako (Aya), Media Relations Coordinator, Public Affairs, ext. 2287,",
+      "email Ayako (Aya) Aoki",
+      "Applebury,",
+      "Kimberly (Kim), Administrative Secretary II, Counseling, ext. 2127,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Daniel, Campus Police Officer, Campus Police,",
+     "position": null,
+     "window": [
+      "Charlan (Charlan J.), Instructor (Hrly), Physical Education/Athletics,",
+      "email Charlan (Charlan J.) Arnold",
+      "Arriola,",
+      "Daniel, Campus Police Officer, Campus Police,",
+      "email Daniel Arriola",
+      "Artates,",
+      "Evangeline, Instructor (Hrly), Medical Assisting,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jairzinhio, Campus Police Officer, Campus Police, ext. 2325,",
+     "position": null,
+     "window": [
+      "Gabriela, Instructor (Hrly), Adult Ed/Diversity Programs,",
+      "email Gabriela Barrera De Contreras",
+      "Barron,",
+      "Jairzinhio, Campus Police Officer, Campus Police, ext. 2325,",
+      "email Jairzinhio Barron",
+      "Baskette,",
+      "Shawna, Dean of Academic Success, Library,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Shawna, Dean of Academic Success, Library,",
+     "position": null,
+     "window": [
+      "Jairzinhio, Campus Police Officer, Campus Police, ext. 2325,",
+      "email Jairzinhio Barron",
+      "Baskette,",
+      "Shawna, Dean of Academic Success, Library,",
+      "email Shawna Baskette",
+      "Bateman,",
+      "Michael, Instructor (Hrly), Mathematics,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Robyn, Vice President of Student Services/Assistant Superintendent, Student Services, ext. 2237,",
+     "position": "vpss",
+     "window": [
+      "Alex, Counselor (Hrly), EOPS,",
+      "email Alex Brambila",
+      "Brammer,",
+      "Robyn, Vice President of Student Services/Assistant Superintendent, Student Services, ext. 2237,",
+      "email Robyn Brammer",
+      "Bran,",
+      "Brenda, Instructor (Hrly), English,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Gladys, Assistant Director, International Student Services and Cultural Engagement, Student Equity & Success,",
+     "position": null,
+     "window": [
+      "Eric, Scholarship Relations Specialist, Foundation, ext. 2539,",
+      "email Eric Calderon",
+      "Calderon,",
+      "Gladys, Assistant Director, International Student Services and Cultural Engagement, Student Equity & Success,",
+      "email Gladys Calderon",
+      "Caldwell,",
+      "Caitlyn, Instructor (Hrly), Psychology,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Maria, Athletic Director, Physical Education/Athletics,",
+     "position": null,
+     "window": [
+      "Kenia, Graduate Assistant Intern, Student Affairs/ Office Of Student Conduct & Grievances,",
+      "email Kenia Castro",
+      "Castro,",
+      "Maria, Athletic Director, Physical Education/Athletics,",
+      "email Maria Castro",
+      "Castro,",
+      "Monica, Facilities Scheduling Specialist, Facilities, ext. 2203,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Mario, Campus Police Officer, Campus Police, ext. 2325,",
+     "position": null,
+     "window": [
+      "Albert (Albert R.), Instructor (Hrly), Manufacturing Technology,",
+      "email Albert (Albert R.) Chavez",
+      "Chavez,",
+      "Mario, Campus Police Officer, Campus Police, ext. 2325,",
+      "email Mario Chavez",
+      "Chavez,",
+      "Samuel, Web Support Technician, Public Affairs, ext. 2966,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Etelvina, Interim Executive Director, Foundation & Community Advancement,",
+     "position": null,
+     "window": [
+      "Sergio, Instructional Academic Support, EOPS/CARE/LINC,",
+      "email Sergio De La Paz",
+      "De La Torre,",
+      "Etelvina, Interim Executive Director, Foundation & Community Advancement,",
+      "email Etelvina De La Torre",
+      "De La Torre,",
+      "Gloria, Intermediate Clerk - Adult Hourly, Adult Education,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Noorali, Director of Fiscal Svcs, Fiscal Services, ext. 2266,",
+     "position": null,
+     "window": [
+      "Christopher, Student Activities, EOPS,",
+      "email Christopher Dela Cruz",
+      "Delawalla,",
+      "Noorali, Director of Fiscal Svcs, Fiscal Services, ext. 2266,",
+      "email Noorali Delawalla",
+      "Delgado,",
+      "Laura, Program Facilitator, Student Equity and Success,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "John, Campus Police Officer, Campus Police, ext. 2325,",
+     "position": null,
+     "window": [
+      "Chhay (Joey), Admissions & Records Tech I, Admissions and Records, ext. 2115,",
+      "email Chhay (Joey) Ear",
+      "Echevarria,",
+      "John, Campus Police Officer, Campus Police, ext. 2325,",
+      "email John Echevarria",
+      "Echeverria,",
+      "Diana (Diana M.), CDC Teacher (FT), Child Development Center,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Christopher, Dean, Student Accessibility and Wellness Services,",
+     "position": null,
+     "window": [
+      "Yvette, Instructor (Hrly), Nursing,",
+      "email Yvette Elpidio",
+      "Elquizabal,",
+      "Christopher, Dean, Student Accessibility and Wellness Services,",
+      "email Christopher Elquizabal",
+      "Elwell,",
+      "Michael, Academic, 3rd Party Contract, Apprent - Field Ironworkers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Laura, Assistant Director, Admissions and Records, Enrollment Services,",
+     "position": "dean_ar",
+     "window": [
+      "Emmanuel, Instructor (Hrly), Automotive Technology,",
+      "email Emmanuel Estrada",
+      "Estrada,",
+      "Laura, Assistant Director, Admissions and Records, Enrollment Services,",
+      "email Laura Estrada",
+      "Estrada,",
+      "Shannon, Reentry Resource Specialist, Career Services, ext. 2362,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jose (Jose L.), President/Superintendent, President's Office,",
+     "position": "college_ceo",
+     "window": [
+      "Rebecca, Counselor (Hrly), Student Accessibility Services,",
+      "email Rebecca Ferrelli",
+      "Fierro,",
+      "Jose (Jose L.), President/Superintendent, President's Office,",
+      "email Jose (Jose L.) Fierro",
+      "Figueiredo,",
+      "Virginia, Instructor (Hrly), Music,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Alexa, Educational Partnerships Coordinator, Educational Partnership & Programs,",
+     "position": null,
+     "window": [
+      "Melissa, Instructor, Welding,",
+      "email Melissa Figueroa",
+      "Filatoff,",
+      "Alexa, Educational Partnerships Coordinator, Educational Partnership & Programs,",
+      "email Alexa Filatoff",
+      "Filer,",
+      "Anthony, Instructor (Hrly), Paralegal Education, ext. 4687,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Judy, LA Regional Director of Business & Entrepreneurship, Auto Partners,",
+     "position": null,
+     "window": [
+      "Anthony, Instructor, Woodworking Mfg Technology, ext. 2985,",
+      "email Anthony Fortner",
+      "Fox,",
+      "Judy, LA Regional Director of Business & Entrepreneurship, Auto Partners,",
+      "email Judy Fox",
+      "Fragoso,",
+      "Manuel, Instructor (Hrly), Adult Ed/Diversity Programs,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Deisi, Alumni Relations & Development Officer, Foundation, ext. 3739,",
+     "position": null,
+     "window": [
+      "David, Instructor (Hrly), Auto Repair,",
+      "email David Gonzalez",
+      "Gonzalez,",
+      "Deisi, Alumni Relations & Development Officer, Foundation, ext. 3739,",
+      "email Deisi Gonzalez",
+      "Gonzalez,",
+      "Elizabeth, Administrative Secretary I, Fiscal Services, ext. 2261,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Eliza, Dean, Counseling Services,",
+     "position": null,
+     "window": [
+      "Elvie (Jr., Elvie), Groundskeeper, Maintenance/Grounds,",
+      "email Elvie (Jr., Elvie) Howard Jr",
+      "Hoyos Vences,",
+      "Eliza, Dean, Counseling Services,",
+      "email Eliza Hoyos Vences",
+      "Hroch,",
+      "Amber, Dean, Institutional Effectiveness, Research, Planning, and Grants, IERPG,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Amber, Dean, Institutional Effectiveness, Research, Planning, and Grants, IERPG,",
+     "position": null,
+     "window": [
+      "Eliza, Dean, Counseling Services,",
+      "email Eliza Hoyos Vences",
+      "Hroch,",
+      "Amber, Dean, Institutional Effectiveness, Research, Planning, and Grants, IERPG,",
+      "email Amber Hroch",
+      "Hu,",
+      "Jianli, Instructor, Business Administration,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Raquel, Coordinator, School Relations, ext. 2904,",
+     "position": null,
+     "window": [
+      "Carmen, Administrative Secretary II, Technology,",
+      "email Carmen Lizarraga",
+      "Lizarraga,",
+      "Raquel, Coordinator, School Relations, ext. 2904,",
+      "email Raquel Lizarraga",
+      "Lo,",
+      "Cindy, Program Facilitator, Economic Development, ext. 2511,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Felipe, Executive Vice President, Business Services,",
+     "position": "vpbs",
+     "window": [
+      "David (David F.), Instructor (Hrly), Music,",
+      "email David (David F.) Lopez",
+      "Lopez,",
+      "Felipe, Executive Vice President, Business Services,",
+      "email Felipe Lopez",
+      "Lopez,",
+      "Irlanda, Program Facilitator, Cosmetology, ext. 2961,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jannet, Statewide Director of Advanced Transportation & Logistics, Auto Partners Building, ext. 2912,",
+     "position": null,
+     "window": [
+      "Mayra, Locker & Equipment Specialist, Physical Education/Athletics,",
+      "email Mayra Maldonado",
+      "Malig,",
+      "Jannet, Statewide Director of Advanced Transportation & Logistics, Auto Partners Building, ext. 2912,",
+      "email Jannet Malig",
+      "Maline,",
+      "Rama, Instructor (Hrly), Paralegal Education,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Colleen, Dean, Academic Affairs,",
+     "position": null,
+     "window": [
+      "McGuire,",
+      "James, Academic, 3rd Party Contract, Apprent - Field Ironworkers",
+      "McKinley,",
+      "Colleen, Dean, Academic Affairs,",
+      "email Colleen McKinley",
+      "McKinley,",
+      "Patricia, Lead Custodian, Operations/Custodial, ext. 2304,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Instructor, Computer & Info Sciences, ext. 2720,",
+     "position": null,
+     "window": [
+      "Mellard,",
+      "Steve, Academic, 3rd Party Contract, Apprent - Field Ironworkers",
+      "Mellas,",
+      "Dean, Instructor, Computer & Info Sciences, ext. 2720,",
+      "email Dean Mellas",
+      "Mellgoza,",
+      "Ramona, Buyer II, Purchasing, ext. 2248,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "email Dean Mellas",
+     "position": null,
+     "window": [
+      "Steve, Academic, 3rd Party Contract, Apprent - Field Ironworkers",
+      "Mellas,",
+      "Dean, Instructor, Computer & Info Sciences, ext. 2720,",
+      "email Dean Mellas",
+      "Mellgoza,",
+      "Ramona, Buyer II, Purchasing, ext. 2248,",
+      "email Ramona Mellgoza"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Hillary, Associate Dean Student Health and Wellness, Student Health Services,",
+     "position": null,
+     "window": [
+      "Vivian, Payroll Technician, Payroll,",
+      "email Vivian Mendoza",
+      "Mennella,",
+      "Hillary, Associate Dean Student Health and Wellness, Student Health Services,",
+      "email Hillary Mennella",
+      "Mensah,",
+      "James, Custodian, Operations/Custodial,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jeffrey, Athletic Director, Athletics, ext. 2862,",
+     "position": null,
+     "window": [
+      "Miodrag, Instructor, Engineering Design Technology, ext. 2910,",
+      "email Miodrag Micic, https://www.cerritos.edu/mmicic",
+      "Miera,",
+      "Jeffrey, Athletic Director, Athletics, ext. 2862,",
+      "email Jeffrey Miera",
+      "Millard,",
+      "Samuel (Sam), Maintenance Mechanic, Woodworking Mfg Technology, ext. 2937,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Elizabeth, Dean of Student Services, Student Activities, Student Services, ext. 2476,",
+     "position": null,
+     "window": [
+      "Brian, Instructor (Hrly), Woodworking Mfg Technology, ext. 4326,",
+      "email Brian Miller",
+      "Miller,",
+      "Elizabeth, Dean of Student Services, Student Activities, Student Services, ext. 2476,",
+      "email Elizabeth Miller",
+      "Miller,",
+      "Jennifer, Human Resources Tech I (Conf), Human Resources, ext. 2023,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Stephanie, EOPS Specialist & CARE Coordinator, EOPS, ext. 2384,",
+     "position": null,
+     "window": [
+      "Kealohilani, Instructional Academic Support - hourly, EOPS,",
+      "email Kealohilani Minami",
+      "Minami,",
+      "Stephanie, EOPS Specialist & CARE Coordinator, EOPS, ext. 2384,",
+      "email Stephanie Minami",
+      "Minear,",
+      "Samantha, Instructor (Hrly), Art,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Katherine, Program Facilitator, Veterans Resource Center, ext. 3732,",
+     "position": "vrc",
+     "window": [
+      "Rosemarie (Rose), Instructor (Hrly), Art,",
+      "email Rosemarie (Rose) Misanchuk",
+      "Mishler,",
+      "Katherine, Program Facilitator, Veterans Resource Center, ext. 3732,",
+      "email Katherine Mishler",
+      "Mitchell,",
+      "Roxanne, Administrative Secretary II, Technology, ext. 2901,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Frank, Vice President, Academic Affairs/Assistant Superintendent, ext. 2228,",
+     "position": "vpaa",
+     "window": [
+      "William R, Instructor, Philosophy,",
+      "email William R Mittendorf",
+      "Mixson,",
+      "Frank, Vice President, Academic Affairs/Assistant Superintendent, ext. 2228,",
+      "email Frank Mixson",
+      "Molina,",
+      "Nancy, Testing Technician, Career Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Rory, Instructional Dean, Physical Education, Kinesiology,",
+     "position": null,
+     "window": [
+      "Rachel, Instructor, Nursing, ext. 3515,",
+      "email Rachel Natividad",
+      "Natividad,",
+      "Rory, Instructional Dean, Physical Education, Kinesiology,",
+      "email Rory Natividad",
+      "Nau,",
+      "Teresa, Administrative Clerk I, Admissions and Records, ext. 2113,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Fatima, Student Body Vice President, Student Affairs/Student Activities (ASCC),",
+     "position": "vpss",
+     "window": [
+      "Anthony, Instructor (Hrly), Science, Engineering & Math,",
+      "email Anthony Ong",
+      "Oregon,",
+      "Fatima, Student Body Vice President, Student Affairs/Student Activities (ASCC),",
+      "email Fatima Oregon",
+      "Ornelas,",
+      "Jazmine, Administrative Office Support, Educational Partnership and Programs,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Michael, Instructional Dean, Science, Engineering and Mathematics,",
+     "position": null,
+     "window": [
+      "Elizabeth, Counselor (SAS), Student Accessibility Services, ext. 2342,",
+      "email Elizabeth Page",
+      "Page,",
+      "Michael, Instructional Dean, Science, Engineering and Mathematics,",
+      "email Michael Page",
+      "Palavecino,",
+      "Lorenzo, Student Events Specialist, Student Activities, ext. 2475,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sue, Teacher TRAC Director Emeritus, Teacher Trac,",
+     "position": null,
+     "window": [
+      "Shivani, Instructor (Hrly), English,",
+      "email Shivani Parmar",
+      "Parsons,",
+      "Sue, Teacher TRAC Director Emeritus, Teacher Trac,",
+      "email Sue Parsons",
+      "Patchell,",
+      "Shawn, Instructor (Hrly), English,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Gary, Instructional Dean, Fine Arts/Communications, ext. 2602,",
+     "position": null,
+     "window": [
+      "Donna, Instructor (Hrly), Athletics, ext. 4877,",
+      "email Donna Prindle",
+      "Pritchard,",
+      "Gary, Instructional Dean, Fine Arts/Communications, ext. 2602,",
+      "email Gary Pritchard",
+      "Profumo,",
+      "Angelica, Program Assistant, Student Activities, ext. 2067,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Narges, Instructional Dean, Humanities/Social Sciences, ext. 2700,",
+     "position": null,
+     "window": [
+      "email Jamie Quiroz",
+      "R",
+      "Rabii-Rakin,",
+      "Narges, Instructional Dean, Humanities/Social Sciences, ext. 2700,",
+      "email Narges Rabii-Rakin",
+      "Radillo,",
+      "Mayra, Buyer II, Purchasing, ext. 2246,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Terri, Campus Police Officer, Campus Police, ext. 3076,",
+     "position": null,
+     "window": [
+      "Michelle, Instructor (Hrly), Child Dev/Early Childhood,",
+      "email Michelle Ramirez",
+      "Ramirez,",
+      "Terri, Campus Police Officer, Campus Police, ext. 3076,",
+      "email Terri Ramirez",
+      "Ramirez,",
+      "Yesenia, Financial Aid Specialist, Financial Aid, ext. 2389,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Elizabeth, Dean, Health Occupations, ext. 2554,",
+     "position": null,
+     "window": [
+      "Jeffrey (Jeffrey W.), Instructor, Anthropology, ext. 2758,",
+      "email Jeffrey (Jeffrey W.) Rigby",
+      "Riley,",
+      "Elizabeth, Dean, Health Occupations, ext. 2554,",
+      "email Elizabeth Riley",
+      "Rincon,",
+      "David, Multimedia Production Specialist II, Student Success/Public Affairs,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Kelly, Compliance & Employee Relations/Deputy Title IX Coordinator, Human Resources,",
+     "position": null,
+     "window": [
+      "Hugo, Instructor (Hrly), Adult Ed/Diversity Programs,",
+      "email Hugo Rios",
+      "Rios,",
+      "Kelly, Compliance & Employee Relations/Deputy Title IX Coordinator, Human Resources,",
+      "email Kelly Rios",
+      "Rios,",
+      "Mariana, Board Member, Board Of Trustees,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sunny, Instructional Dean, Liberal Arts,",
+     "position": null,
+     "window": [
+      "Edward (Edward J.), Instructor, Architecture, ext. 2911,",
+      "email Edward (Edward J.) Rother",
+      "Rothstein,",
+      "Sunny, Instructional Dean, Liberal Arts,",
+      "email Sunny Rothstein",
+      "Rouhi,",
+      "Samaneh, Instructor (Hrly), ESL,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Patricia (Patricia Robbins), Director, Special Support Programs, EOPS/CARE/LINC/NextUp/CalWORKs, ext. 2525,",
+     "position": null,
+     "window": [
+      "James (James B.), Instructor (Hrly), Administration of Justice,",
+      "email James (James B.) Smith",
+      "Smith,",
+      "Patricia (Patricia Robbins), Director, Special Support Programs, EOPS/CARE/LINC/NextUp/CalWORKs, ext. 2525,",
+      "email Patricia (Patricia Robbins) Smith",
+      "Smith,",
+      "Peggy, Instructor (Hrly), Science, Engineering & Math,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Yvette, Dean, Enrollment Services, ext. 2381,",
+     "position": null,
+     "window": [
+      "email Thad Szabo",
+      "T",
+      "Tafoya,",
+      "Yvette, Dean, Enrollment Services, ext. 2381,",
+      "email Yvette Tafoya",
+      "Tahernia,",
+      "Farshid, Instructor (Hrly), Economics,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Instructor (Hrly), Automotive Mechanical Repair, ext. 4894,",
+     "position": null,
+     "window": [
+      "Gabriela, Student Services Support Hourly, Adult Education,",
+      "email Gabriela Tecun-Funes",
+      "Tedtaotao,",
+      "Dean, Instructor (Hrly), Automotive Mechanical Repair, ext. 4894,",
+      "email Dean Tedtaotao",
+      "Templeton,",
+      "Phillip, Academic, 3rd Party Contract, Apprent - Field Ironworkers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "email Dean Tedtaotao",
+     "position": null,
+     "window": [
+      "email Gabriela Tecun-Funes",
+      "Tedtaotao,",
+      "Dean, Instructor (Hrly), Automotive Mechanical Repair, ext. 4894,",
+      "email Dean Tedtaotao",
+      "Templeton,",
+      "Phillip, Academic, 3rd Party Contract, Apprent - Field Ironworkers",
+      "Teposte,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Wendy, Administrative Assistant (Conf), President’s Office, ext. 2204,",
+     "position": "college_ceo",
+     "window": [
+      "Joshua, Instructor (Hrly), Physical Education,",
+      "email Joshua Thomas",
+      "Thomas,",
+      "Wendy, Administrative Assistant (Conf), President’s Office, ext. 2204,",
+      "email Wendy Thomas",
+      "Thomason,",
+      "Asela, Instructor (Hrly), Computer & Info Sciences,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chelsea, Director of Public Relations and Communications, Public Affairs,",
+     "position": null,
+     "window": [
+      "Barbara, Instructor (Hrly), Business Administration,",
+      "email Barbara Van Dine",
+      "Van Doornum,",
+      "Chelsea, Director of Public Relations and Communications, Public Affairs,",
+      "email Chelsea Van Doornum",
+      "Van Gaston,",
+      "John, Sports Information Publicist, Physical Education/Athletics, ext. 2896,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Graciela, Instructional Dean of Continuing Education, Adult Ed/Diversity Programs, ext. 2490,",
+     "position": null,
+     "window": [
+      "Richard, Instructor (Hrly), Automotive Mechanical Repair, ext. 4634,",
+      "email Richard Vasilik",
+      "Vasquez,",
+      "Graciela, Instructional Dean of Continuing Education, Adult Ed/Diversity Programs, ext. 2490,",
+      "email Graciela Vasquez",
+      "Vasquez,",
+      "Rosario, Administrative Secretary I, Career Services, ext. 2357,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Carlo (Carlo G.), Campus Police Officer, Campus Police, ext. 2325,",
+     "position": null,
+     "window": [
+      "Angelica, Instructor (Hrly), Nursing,",
+      "email Angelica Velasquez",
+      "Velazquez,",
+      "Carlo (Carlo G.), Campus Police Officer, Campus Police, ext. 2325,",
+      "email Carlo (Carlo G.) Velazquez",
+      "Velazquez,",
+      "David, Instructor (Hrly), Chemistry,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Victor, Board Member, President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Michael, Maintenance Mechanic, Facilities, ext. 4991,",
+      "email Michael Villalobos",
+      "Villalobos,",
+      "Victor, Board Member, President's Office",
+      "Villalon Jr,",
+      "Ramiro, Instructor (Hrly), Architecture,",
+      "email Ramiro Villalon Jr"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Christopher, Instructional Dean, Business Education,",
+     "position": null,
+     "window": [
+      "Charles (Julian), Instructor (Hrly), Theatre Arts, ext. 3099,",
+      "email Charles (Julian) White",
+      "Whiteside,",
+      "Christopher, Instructional Dean, Business Education,",
+      "email Christopher Whiteside",
+      "Whitfield,",
+      "Brent, Instructor (Hrly), Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Andrea, Manager, Office of the President, Trustee Services, & Strategic Initiatives, President's Office, ext. 2202,",
+     "position": "college_ceo",
+     "window": [
+      "Kathleen, Instructor (Hrly), Nursing,",
+      "email Kathleen Wisinski",
+      "Wittig,",
+      "Andrea, Manager, Office of the President, Trustee Services, & Strategic Initiatives, President's Office, ext. 2202,",
+      "email Andrea Wittig",
+      "Wolde,",
+      "Elleni, Instructor (Hrly), Computer & Info Sciences,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Wei, Instructional Dean, Technology,",
+     "position": null,
+     "window": [
+      "Zhang,",
+      "Bing, Instructor (Hrly), Engineering Design Technology",
+      "Zhou,",
+      "Wei, Instructional Dean, Technology,",
+      "email Wei Zhou",
+      "Zhou,",
+      "Yiran, Instructor, Foreign Language,"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41298454812"
+}

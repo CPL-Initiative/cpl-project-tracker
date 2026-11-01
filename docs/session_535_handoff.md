@@ -4,6 +4,8 @@ date: 2026-10-31
 session: 534 (SkyChokeberry, the CPL Queue routine's 09:12Z firing)
 tags: [handoff, program-requirements, los-angeles-valley, monterey-peninsula, display-build]
 status: current
+superseded: true
+superseded_by: session_538_handoff.md
 ---
 
 # You are Session 535

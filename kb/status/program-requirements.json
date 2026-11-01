@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-10-31T11:06:46Z",
-  "session": 535,
-  "moniker": "SkyGooseberry",
+  "written_at": "2026-11-01T11:00:00Z",
+  "session": 537,
+  "moniker": "SkyMayberry",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_536_handoff.md",
+  "handoff": "docs/session_538_handoff.md",
   "next_step": {
-    "title": "Monterey Peninsula's last 21",
-    "text": "Monterey Peninsula went from 110 to 176 of 197 passing (S535). Of the 21 left, five medical programs print a total one unit under what their courses add to; read those pages first, then the rest. The stopping rule applies from here."
+    "title": "Monterey Peninsula's last 14",
+    "text": "Monterey Peninsula went from 176 to 183 of 197 passing (S536). Of the 14 left, three miss a listed course, three have a course with no units, and eight add to a different total than the page prints. One more session that moves fewer than 3% parks the college."
   },
   "calls": [
     {
@@ -190,6 +190,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-01T10:55:00Z",
+      "text": "Monterey Peninsula 176 to 183 of 197 passing live. A lab the page prints on its lecture's row (CSIS 50 & 50L) no longer counts its units twice (reconcile 41278868382, reread 41280847881)."
+    },
     {
       "at": "2026-10-31T11:02:00Z",
       "text": "Monterey Peninsula 110 to 176 of 197 passing live. Work experience courses printed as an or row beside a 2-unit course now carry its 2 units, the transfer degrees' 2026-27 wording gives Cal-GETC its 34, and the local degrees' electives if needed for a total of 60 reads the 60 as a floor (reconcile 41192567009, reread 41194846700)."

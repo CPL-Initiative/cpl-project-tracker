@@ -1,0 +1,221 @@
+{
+ "run": "41298454812",
+ "read_by": "S537 SkyMayberry, 2026-11-01",
+ "colleges": [
+  "Allan Hancock College",
+  "Antelope Valley College",
+  "Barstow Community College",
+  "Berkeley City College",
+  "Cabrillo College",
+  "Cerritos College",
+  "Chabot College"
+ ],
+ "rows": [
+  {
+   "college": "Allan Hancock College",
+   "position": "college_ceo",
+   "title_as_printed": "AHC President",
+   "name": "Kevin G. Walthers, Ph.D.",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/index.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "vpaa",
+   "title_as_printed": "Associate Superintendent/Vice President, Academic Affairs",
+   "name": "Dr. Bob Curry",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "vpss",
+   "title_as_printed": "Associate Superintendent/Vice President, Student Services",
+   "name": "Dr. Genevieve Siwabessy",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions & Records",
+   "name": "Dr. David Vasquez",
+   "email": "dvasquez@hancockcollege.edu",
+   "source_url": "https://www.hancockcollege.edu/admissions/staff.php"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Message from the President",
+   "name": "Dr. Jennifer Zellet",
+   "email": "",
+   "source_url": "https://www.avc.edu/about-avc/office-superintendentpresident"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President Student Services",
+   "name": "Idania Padron",
+   "email": "idania.padron@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent-President",
+   "name": "Eva Bagg, Ph.D.",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Michael Wangler",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Edward Alvarez",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Berkeley City College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Berkeley City College",
+   "name": "Denise Richardson, Ed.D.",
+   "email": "",
+   "source_url": "https://www.berkeleycitycollege.edu/president"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Dr. Jenn Capps",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/president/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Assistant Superintendent, Vice President of Instruction",
+   "name": "Dr. Robin McFarland",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent, Vice President of Student Services",
+   "name": "Dr. Blanca Baltazar-Sabbah",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Strategic Enrollment",
+   "name": "Dave Reynolds",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vrc",
+   "title_as_printed": "Veterans Program Coordinator",
+   "name": "JuanDiego (JD) Alvarez",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/directory/juandiego-jd-alvarez/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "college_ceo",
+   "title_as_printed": "President/Superintendent",
+   "name": "Dr. Jose Fierro",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/about/president/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs/Assistant Superintendent",
+   "name": "Frank Mixson",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services/Assistant Superintendent, Student Services",
+   "name": "Robyn Brammer",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Cerritos College",
+   "position": "vpbs",
+   "title_as_printed": "Executive Vice President, Business Services",
+   "name": "Felipe Lopez",
+   "email": "",
+   "source_url": "https://www.cerritos.edu/directory/employees/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Jamal Cooks",
+   "email": "",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Luis Escobar",
+   "email": "laescobar@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Chabot College",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions & Records",
+   "name": "Liz Oteyza",
+   "email": "moteyza@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/admissions/contact-info.php"
+  }
+ ],
+ "note": "Only colleges with at least one record go to apply; a college read with no record would mark nothing gone (none held yet) but is left out so a later read fills it.",
+ "held_for_sam": {
+  "why": "Titles that match none of Sam's variants (lane, The weekly contacts harvest): VPBS is CBO or VP Business Services and Facilities. Not filled; listed for his word.",
+  "rows": [
+   {
+    "college": "Antelope Valley College",
+    "position": "vpbs",
+    "title_as_printed": "VP Administrative Services",
+    "name": "Shami Brar",
+    "email": "shami.brar@avc.edu",
+    "source_url": "https://www.avc.edu/directory"
+   },
+   {
+    "college": "Barstow Community College",
+    "position": "vpbs",
+    "title_as_printed": "Vice President, Administrative Services",
+    "name": "DeeDee Garcia",
+    "email": "",
+    "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+   },
+   {
+    "college": "Chabot College",
+    "position": "vpbs",
+    "title_as_printed": "Vice President, Administrative Services",
+    "name": "Marie Amboy",
+    "email": "mamboy@chabotcollege.edu",
+    "source_url": "https://www.chabotcollege.edu/about/leadership/"
+   }
+  ]
+ }
+}

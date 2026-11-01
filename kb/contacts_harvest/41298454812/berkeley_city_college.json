@@ -1,0 +1,985 @@
+{
+ "college": "Berkeley City College",
+ "homepage": "https://www.berkeleycitycollege.edu/",
+ "read_at": "2026-11-01T10:44:25+00:00",
+ "pages": [
+  {
+   "url": "https://www.berkeleycitycollege.edu/",
+   "final_url": "https://www.berkeleycitycollege.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.berkeleycitycollege.edu/admissions",
+   "final_url": "https://www.berkeleycitycollege.edu/admissions",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.berkeleycitycollege.edu/faculty-staff-directory",
+   "final_url": "https://www.berkeleycitycollege.edu/faculty-staff-directory",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Modern Languages",
+      "Multimedia Arts",
+      "Office of Instruction",
+      "Office of the President",
+      "Office of the Vice President",
+      "Science",
+      "Social Sciences"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President",
+     "position": null,
+     "window": [
+      "Multimedia Arts",
+      "Office of Instruction",
+      "Office of the President",
+      "Office of the Vice President",
+      "Science",
+      "Social Sciences",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Modern Languages",
+      "Multimedia Arts",
+      "Office of Instruction",
+      "Office of the President",
+      "Office of the Vice President",
+      "Science",
+      "Social Sciences"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President",
+     "position": null,
+     "window": [
+      "Multimedia Arts",
+      "Office of Instruction",
+      "Office of the President",
+      "Office of the Vice President",
+      "Science",
+      "Social Sciences",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Abdurahman, Susana | Coordinator, Student Services, EOPS",
+     "position": null,
+     "window": [
+      "More info",
+      "Abdi, Shadee | Instructor, Arts and Cultural Studies, Communications",
+      "More info",
+      "Abdurahman, Susana | Coordinator, Student Services, EOPS",
+      "More info",
+      "Alfe, Norman | Instructor, Multimedia Arts",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Alvarenga, Roberto | Counselor, Counseling, Veteran's Resource Center",
+     "position": "vrc",
+     "window": [
+      "More info",
+      "Allison, Suzanne | Adjunct Librarian, Library",
+      "More info",
+      "Alvarenga, Roberto | Counselor, Counseling, Veteran's Resource Center",
+      "More info",
+      "Alvillar, Michael | Campus Warehouse Supervisor, Business Office",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Bertuso, Jeejun | Coordinator, Student Services, Veteran's Resource Center",
+     "position": "vrc",
+     "window": [
+      "More info",
+      "Bersamin, Melina | Instructor, Social Sciences, Psychology",
+      "More info",
+      "Bertuso, Jeejun | Coordinator, Student Services, Veteran's Resource Center",
+      "More info",
+      "Bhatnagar, Yamini | Instructor, Social Sciences, Health Education",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Covalt, Dean | Instructor, Science, Chemistry",
+     "position": null,
+     "window": [
+      "More info",
+      "Coleman, Sharon | Instructor, English, English",
+      "More info",
+      "Covalt, Dean | Instructor, Science, Chemistry",
+      "More info",
+      "Cralle, Lisa | Instructor, Arts and Cultural Studies, Art",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dorsey, Donna | Staff Assistant, Office of Instruction, Dean, Liberal Arts & Social Sciences",
+     "position": null,
+     "window": [
+      "More info",
+      "Dong, Johnny | Sr. Academic Support Service Specialist, Office of Instruction",
+      "More info",
+      "Dorsey, Donna | Staff Assistant, Office of Instruction, Dean, Liberal Arts & Social Sciences",
+      "More info",
+      "Doubiago, Shawn | Instructor, Arts and Cultural Studies, Humanities",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Espinosa, Sylvia | Staff Assistant, Office of Instruction, Dean, Math, Science, & Career Education",
+     "position": null,
+     "window": [
+      "More info",
+      "Espino, Michelle | Instructor, Social Sciences, Education",
+      "More info",
+      "Espinosa, Sylvia | Staff Assistant, Office of Instruction, Dean, Math, Science, & Career Education",
+      "More info",
+      "Farahmand, Arash | Instructor, Math",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Fedorova, Natalia | Project Manager, Office of Instruction, Dean, Math, Science, & Career Education",
+     "position": null,
+     "window": [
+      "More info",
+      "Farris, Deborah | Instructor, Arts and Cultural Studies, Communication Studies",
+      "More info",
+      "Fedorova, Natalia | Project Manager, Office of Instruction, Dean, Math, Science, & Career Education",
+      "More info",
+      "Felluss, Scott | Instructor, English, English",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Flores, Lissette | Acting Dean of Enrollment Services , Student Services, Hispanic Serving Institution, Director",
+     "position": null,
+     "window": [
+      "More info",
+      "Fillingim, Matthew | Instructor, Science, Astronomy",
+      "More info",
+      "Flores, Lissette | Acting Dean of Enrollment Services , Student Services, Hispanic Serving Institution, Director",
+      "More info",
+      "Franco, Armando | Director, Office of Instruction, MESA Program, Director",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Franco, Armando | Director, Office of Instruction, MESA Program, Director",
+     "position": null,
+     "window": [
+      "More info",
+      "Flores, Lissette | Acting Dean of Enrollment Services , Student Services, Hispanic Serving Institution, Director",
+      "More info",
+      "Franco, Armando | Director, Office of Instruction, MESA Program, Director",
+      "More info",
+      "Freeman, Matthew | Instructor, Social Sciences, Political Science",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Gonzalez, Alejandro | Project Manager, Office of Instruction, Dean, Liberal Arts & Social Sciences",
+     "position": null,
+     "window": [
+      "More info",
+      "Gomez Liendo, Marx | Instructor, Social Sciences, Sociology",
+      "More info",
+      "Gonzalez, Alejandro | Project Manager, Office of Instruction, Dean, Liberal Arts & Social Sciences",
+      "More info",
+      "Gonzalez, Roberto | Alternate Media Technology Specialist, Student Services, Student Accessibility Services",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Johnson, Raniyah | Dean, Counseling & Student Equity, Student Services",
+     "position": null,
+     "window": [
+      "More info",
+      "Jirde, Hoda | Staff Assistant, Student Services, Student Accessibility Services (SAS)",
+      "More info",
+      "Johnson, Raniyah | Dean, Counseling & Student Equity, Student Services",
+      "More info",
+      "Jones, Denise | General Counselor, Counseling",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Kim, Angel | Executive Assistant, Office of the Vice President, Office of the Vice President",
+     "position": null,
+     "window": [
+      "More info",
+      "Kim, Dru | Instructor, Multimedia Arts, Digital Imaging",
+      "More info",
+      "Kim, Angel | Executive Assistant, Office of the Vice President, Office of the Vice President",
+      "More info",
+      "Kim, Richard | Instructor, Social Sciences, History",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Leonian, Tania | Web Content Developer, Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "More info",
+      "Leitner, David | Instructor, Social Sciences, Anthropology",
+      "More info",
+      "Leonian, Tania | Web Content Developer, Office of the President",
+      "More info",
+      "Lewis, Azul | Chemistry and Physical Sciences Laboratory Coordinator, Office of Instruction",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Lewis, Azul | Chemistry and Physical Sciences Laboratory Coordinator, Office of Instruction",
+     "position": null,
+     "window": [
+      "More info",
+      "Leonian, Tania | Web Content Developer, Office of the President",
+      "More info",
+      "Lewis, Azul | Chemistry and Physical Sciences Laboratory Coordinator, Office of Instruction",
+      "More info",
+      "Lewis, Francine | Staff Assistant, Office of Instruction, Contract Education",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Liu, Annie | Executive Assistant, Office of the President ,",
+     "position": "college_ceo",
+     "window": [
+      "More info",
+      "Liu, Willis | Network Support Services Specialist, Office of Instruction",
+      "More info",
+      "Liu, Annie | Executive Assistant, Office of the President ,",
+      "More info",
+      "Logan, Geoffrey | Instructor, Science",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Martinez, Carolina | Coordinator, Student Services, Student Equity and Achievement",
+     "position": null,
+     "window": [
+      "More info",
+      "Martin, Carolyn | Instructor, Arts and Cultural Studies, Art History",
+      "More info",
+      "Martinez, Carolina | Coordinator, Student Services, Student Equity and Achievement",
+      "More info",
+      "Martinez Beildeck, Gabriel | General Counselor, Counseling",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "McGee, Amari | Associate Dean of Student Activities, Leadership & Engagement, Student Services",
+     "position": null,
+     "window": [
+      "More info",
+      "McDougal, Shawn | Instructor, Math",
+      "More info",
+      "McGee, Amari | Associate Dean of Student Activities, Leadership & Engagement, Student Services",
+      "More info",
+      "McGriff, Ilona | Director, Workforce Development, Office of Instruction",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "McGriff, Ilona | Director, Workforce Development, Office of Instruction",
+     "position": null,
+     "window": [
+      "More info",
+      "McGee, Amari | Associate Dean of Student Activities, Leadership & Engagement, Student Services",
+      "More info",
+      "McGriff, Ilona | Director, Workforce Development, Office of Instruction",
+      "More info",
+      "Mcpheron, Linda | Instructor, Science, Biology",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Nguyen, Loan | Officer, Financial Aid",
+     "position": null,
+     "window": [
+      "More info",
+      "Nguyen, Kent | Specialist, Financial Aid",
+      "More info",
+      "Nguyen, Loan | Officer, Financial Aid",
+      "More info",
+      "Nguyen, Loan | Financial Aid Officer, Student Services, Financial Aid",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Nguyen, Loan | Financial Aid Officer, Student Services, Financial Aid",
+     "position": null,
+     "window": [
+      "More info",
+      "Nguyen, Loan | Officer, Financial Aid",
+      "More info",
+      "Nguyen, Loan | Financial Aid Officer, Student Services, Financial Aid",
+      "More info",
+      "Nguyen-Bilse, Jessica | Instructor, English",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Nichols, Catherine | Articulation Officer, Counseling",
+     "position": "articulation_officer",
+     "window": [
+      "More info",
+      "Nguyen-Bilse, Jessica | Instructor, English",
+      "More info",
+      "Nichols, Catherine | Articulation Officer, Counseling",
+      "More info",
+      "Noonan, Robert | Instructor, Social Sciences, History",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Oh, Kyla | Dean, Math, Science, and Career Education, Office of Instruction",
+     "position": null,
+     "window": [
+      "More info",
+      "O'Connell, Richard | Instructor, Multimedia Arts, Video Arts",
+      "More info",
+      "Oh, Kyla | Dean, Math, Science, and Career Education, Office of Instruction",
+      "More info",
+      "Olmedo, Adan | Instructor, English , Chair",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Park, Cynthia | General Counselor, Counseling, Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "More info",
+      "Panasiti, Diego | Instructor, Modern Languages, Spanish",
+      "More info",
+      "Park, Cynthia | General Counselor, Counseling, Veterans Resource Center",
+      "More info",
+      "Patel, Hemil | Instructor, Multimedia Arts",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Pendleton, Gail | Coordinator, Student Services, Enrollment Services",
+     "position": null,
+     "window": [
+      "More info",
+      "Peet, Ralph | Alt. Media Technology Assistant, Student Services, Student Accessibility Services (SAS)",
+      "More info",
+      "Pendleton, Gail | Coordinator, Student Services, Enrollment Services",
+      "More info",
+      "Penn, Shannon | Counselor, Counseling, Society of Scholars",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Richardson, Denise | President,",
+     "position": "college_ceo",
+     "window": [
+      "More info",
+      "Regalado, Dri | Counselor, Counseling, Society of Scholars",
+      "More info",
+      "Richardson, Denise | President,",
+      "More info",
+      "Ridgway, Kevin | Instructor, Multimedia Arts, Animation & Game Design",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Rizza, Thomas | Public Information Officer, Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "More info",
+      "Rinker, Mark | Instructor, Math",
+      "More info",
+      "Rizza, Thomas | Public Information Officer, Office of the President",
+      "More info",
+      "Robinson, Velma | Instructor, Social Sciences, Education",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Saenz, John | Coordinator, Student Services, Learning Resources Center",
+     "position": null,
+     "window": [
+      "More info",
+      "Russakovskii, Eugene | Instructor, Math",
+      "More info",
+      "Saenz, John | Coordinator, Student Services, Learning Resources Center",
+      "More info",
+      "Saint Germain , Gerri | Instructor, Education Program",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sanchez, Zaira | Coordinator, Student Services, Hispanic Serving Institution",
+     "position": null,
+     "window": [
+      "More info",
+      "Saint Germain , Gerri | Instructor, Education Program",
+      "More info",
+      "Sanchez, Zaira | Coordinator, Student Services, Hispanic Serving Institution",
+      "More info",
+      "Sanchez Trujillo, Gaston | Instructor, Math",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sayavong, Phoumy | Sr. Research & Planning Analyst, Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "More info",
+      "Saric, Steven | Instructor, Science, Chemistry",
+      "More info",
+      "Sayavong, Phoumy | Sr. Research & Planning Analyst, Office of the President",
+      "More info",
+      "Schieszler, Tyrone | Instructor, Multimedia Arts, Animation & Game Design",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Segal, Emily | Lab Coordinator, Office of Instruction",
+     "position": null,
+     "window": [
+      "More info",
+      "Schmidt, Douglas | Instructor, Science, Biology",
+      "More info",
+      "Segal, Emily | Lab Coordinator, Office of Instruction",
+      "More info",
+      "Seidel, Michael | Instructor, Business and Computer Information Systems, Computer Information Systems",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sumandal, Jasmine | Executive Assistant, Office of the Vice President, Vice President’s Office",
+     "position": null,
+     "window": [
+      "More info",
+      "Stalker, Pamela | Instructor, Multimedia Arts, Animation & Game Design",
+      "More info",
+      "Sumandal, Jasmine | Executive Assistant, Office of the Vice President, Vice President’s Office",
+      "More info",
+      "Swiencicki, Mark | Instructor, Social Sciences, Sociology",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Verbera, Camille | Coordinator, Student Services, Learning Resource Center",
+     "position": null,
+     "window": [
+      "More info",
+      "Velazquez, Liliana | Instructor, Multimedia Arts",
+      "More info",
+      "Verbera, Camille | Coordinator, Student Services, Learning Resource Center",
+      "More info",
+      "Villanueva, Izzie | Coordinator, Student Services, Basic Needs Center",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Villanueva, Izzie | Coordinator, Student Services, Basic Needs Center",
+     "position": null,
+     "window": [
+      "More info",
+      "Verbera, Camille | Coordinator, Student Services, Learning Resource Center",
+      "More info",
+      "Villanueva, Izzie | Coordinator, Student Services, Basic Needs Center",
+      "More info",
+      "Vysotskiy, Mikhail | Instructor, Science",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Wilkins, Lisa | Executive Vice President of Student Learning & Success, Office of the Vice President, Vice President’s Office",
+     "position": null,
+     "window": [
+      "More info",
+      "Whalen, Kelly | Instructor, Multimedia Arts, Video Arts",
+      "More info",
+      "Wilkins, Lisa | Executive Vice President of Student Learning & Success, Office of the Vice President, Vice President’s Office",
+      "More info",
+      "Williams, Andrea | Coordinator, Student Services, Career & Transfer Center",
+      "More info"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Williams, Andrea | Coordinator, Student Services, Career & Transfer Center",
+     "position": null,
+     "window": [
+      "More info",
+      "Wilkins, Lisa | Executive Vice President of Student Learning & Success, Office of the Vice President, Vice President’s Office",
+      "More info",
+      "Williams, Andrea | Coordinator, Student Services, Career & Transfer Center",
+      "More info",
+      "Winer, Gabriel | Instructor, English for Speakers of Other Languages, English for Speakers of Other Languages",
+      "More info"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.berkeleycitycollege.edu/president",
+   "final_url": "https://www.berkeleycitycollege.edu/president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "BCC Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "BCC Office of the President",
+      "Skip to main content",
+      "📅 Important 2026–27 dates & deadlines",
+      "search"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Student Portal Login",
+      "Translation",
+      "Careers",
+      "Office of the President",
+      "Message from President Denise Richardson",
+      "Welcome to Berkeley City College, and congratulations on taking this important step toward achieving your academic and career goals. As President, I join our faculty, administrators, and classified professionals in welcoming you to a college deeply committed to your success.",
+      "At Berkeley City College, our vision is for students to Envision. Engage. Excel. We invite you to Envision your academic and career goals with over 100 degree and certificate programs, Engage with our diverse curriculum, vibrant campus life, and esteemed faculty and staff, and Excel in your studies through successful completion."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Message from President Denise Richardson",
+     "position": "college_ceo",
+     "window": [
+      "Translation",
+      "Careers",
+      "Office of the President",
+      "Message from President Denise Richardson",
+      "Welcome to Berkeley City College, and congratulations on taking this important step toward achieving your academic and career goals. As President, I join our faculty, administrators, and classified professionals in welcoming you to a college deeply committed to your success.",
+      "At Berkeley City College, our vision is for students to Envision. Engage. Excel. We invite you to Envision your academic and career goals with over 100 degree and certificate programs, Engage with our diverse curriculum, vibrant campus life, and esteemed faculty and staff, and Excel in your studies through successful completion.",
+      "Our programs are shaped by workforce demand, university transfer requirements, and student voice, ensuring that what you learn here prepares you for what comes next. Whether you are preparing to transfer to a four-year university, earning a career-focused certificate, enhancing your academic experience as a dual-enrolled high school student, or exploring your options, our counselors, career specialists, and faculty are here to guide you every step of the way."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President, Berkeley City College",
+     "position": "college_ceo",
+     "window": [
+      "Having lived in the Bay Area and worked within the Peralta Community College District for more than 20 years, supporting students as they transform their lives has become both a professional mission and a personal commitment. It is truly an honor to serve as President of Berkeley City College. I look forward to celebrating your achievements and supporting your journey toward graduation, transfer, and career success.",
+      "Warmly,",
+      "Denise Richardson, Ed.D.",
+      "President, Berkeley City College",
+      "Main Menu",
+      "Office of the Vice President",
+      "Shared Governance"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President",
+     "position": null,
+     "window": [
+      "Denise Richardson, Ed.D.",
+      "President, Berkeley City College",
+      "Main Menu",
+      "Office of the Vice President",
+      "Shared Governance",
+      "Administration",
+      "Office of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant | Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Marketing",
+      "Publications",
+      "Executive Assistant | Office of the President",
+      "Annie Liu",
+      "Email: bcc-president@peralta.edu aliu@peralta.edu",
+      "Biography"
+     ],
+     "emails": [
+      "aliu@peralta.edu",
+      "bcc-president@peralta.edu"
+     ]
+    },
+    {
+     "line": "Email: bcc-president@peralta.edu aliu@peralta.edu",
+     "position": "college_ceo",
+     "window": [
+      "Publications",
+      "Executive Assistant | Office of the President",
+      "Annie Liu",
+      "Email: bcc-president@peralta.edu aliu@peralta.edu",
+      "Biography",
+      "President Denise Richardson, Ed.D. began her role at Berkeley City College on July 1, 2023. Dr. Richardson is an experienced community college educator, dedicated to maximizing student success and institutional effectiveness in support of the diverse and extraordinary students of the Peralta Community College District. Dr. Richardson comes to Berkeley City College from Merritt College, where she has served as Vice President of Instruction since March 2020. In addition to working collaboratively with her administrative team to successfully navigate an ever-emerging educational climate, she has been a highly responsible steward of fiscal resources and a resolute advocate for Diversity, equity and inclusion.",
+      "As the College Accreditation Liaison Officer (ALO), Dr. Richardson was integral to the development of Merritt’s 2020 Institutional Self-Evaluation Report (ISER). Merritt’s ISER was distinguished by the fact that it received no recommendations from the ACCJC. Dr. Richardson also led the effort to secure the $500,000 Omnibus Appropriations grant for the College Cybersecurity Program in 2022. Dr. Richardson recognizes that classified professionals are the lifeblood of community college success, so she is particularly proud of the work that she has done with Merritt’s classified senate leadership to secure an IEPI grant that will support classified professional development opportunities and career advancement pathways over the next three years."
+     ],
+     "emails": [
+      "aliu@peralta.edu",
+      "bcc-president@peralta.edu"
+     ]
+    },
+    {
+     "line": "Contact the President's Office",
+     "position": "college_ceo",
+     "window": [
+      "In August of 2013, Dr. Richardson began her administrative career as the Dean of Math and Sciences at Laney College, a position she held until March 2020. In addition to her role as dean, Denise was the Accreditation Liaison Officer for Laney College for two years, and successfully led the report-writing efforts for two follow-up reports and the 2018 Midterm Report.",
+      "Dr. Richardson earned her Ed.D. in Educational Leadership at Mills College in Oakland, CA, and wrote a narrative dissertation that examined success strategies of Black American males who completed STEM degree programs at California Bay Area community colleges. She also holds a M.A. Degree in Educational Leadership from Mills College, a M.A. Degree in Political Science from San Francisco State University, and B.A. and A.S. Degrees in Communication from Oakwood University in Huntsville, AL.",
+      "We welcome to your feedback - please fill out the form below.",
+      "Contact the President's Office",
+      "Address:",
+      "2050 Center Street",
+      "Berkeley, California 94704"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.berkeleycitycollege.edu/administration",
+   "final_url": "https://www.berkeleycitycollege.edu/administration",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Why Berkeley City College?",
+      "Faculty & Staff Directory",
+      "Office of the President",
+      "News About BCC",
+      "Shared Governance",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Translation",
+      "Careers",
+      "Administration",
+      "President",
+      "Denise Richardson, Ed.D.",
+      "Executive Vice President of Student Learning and Success",
+      "Dr. Lisa Cooper Wilkins, Ed.D"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Vice President of Student Learning and Success",
+     "position": null,
+     "window": [
+      "Administration",
+      "President",
+      "Denise Richardson, Ed.D.",
+      "Executive Vice President of Student Learning and Success",
+      "Dr. Lisa Cooper Wilkins, Ed.D",
+      "Associate Dean of Student Activities, Leadership & Engagement",
+      "Amari McGee, Ed.D"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean of Student Activities, Leadership & Engagement",
+     "position": null,
+     "window": [
+      "Denise Richardson, Ed.D.",
+      "Executive Vice President of Student Learning and Success",
+      "Dr. Lisa Cooper Wilkins, Ed.D",
+      "Associate Dean of Student Activities, Leadership & Engagement",
+      "Amari McGee, Ed.D",
+      "Dean of Liberal Arts and Social Sciences",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Liberal Arts and Social Sciences",
+     "position": null,
+     "window": [
+      "Dr. Lisa Cooper Wilkins, Ed.D",
+      "Associate Dean of Student Activities, Leadership & Engagement",
+      "Amari McGee, Ed.D",
+      "Dean of Liberal Arts and Social Sciences",
+      "Vacant",
+      "Dean of Math, Science, and Career Education",
+      "Kyla Oh"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Math, Science, and Career Education",
+     "position": null,
+     "window": [
+      "Amari McGee, Ed.D",
+      "Dean of Liberal Arts and Social Sciences",
+      "Vacant",
+      "Dean of Math, Science, and Career Education",
+      "Kyla Oh",
+      "Acting Dean of Enrollment Services",
+      "Lissette Flores"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Acting Dean of Enrollment Services",
+     "position": null,
+     "window": [
+      "Vacant",
+      "Dean of Math, Science, and Career Education",
+      "Kyla Oh",
+      "Acting Dean of Enrollment Services",
+      "Lissette Flores",
+      "Dean of Counseling and Student Equity",
+      "Raniyah Johnson, Ed.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Counseling and Student Equity",
+     "position": null,
+     "window": [
+      "Kyla Oh",
+      "Acting Dean of Enrollment Services",
+      "Lissette Flores",
+      "Dean of Counseling and Student Equity",
+      "Raniyah Johnson, Ed.D.",
+      "Acting Director, Hispanic Serving Institution Grant",
+      "Zaira Sanchez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Acting Director, Hispanic Serving Institution Grant",
+     "position": null,
+     "window": [
+      "Lissette Flores",
+      "Dean of Counseling and Student Equity",
+      "Raniyah Johnson, Ed.D.",
+      "Acting Director, Hispanic Serving Institution Grant",
+      "Zaira Sanchez",
+      "Director, Math, Engineering, Science and Achievement (MESA) Grant",
+      "Armando Franco"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Math, Engineering, Science and Achievement (MESA) Grant",
+     "position": null,
+     "window": [
+      "Raniyah Johnson, Ed.D.",
+      "Acting Director, Hispanic Serving Institution Grant",
+      "Zaira Sanchez",
+      "Director, Math, Engineering, Science and Achievement (MESA) Grant",
+      "Armando Franco",
+      "Director of Workforce Development",
+      "Ilona McGriff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Workforce Development",
+     "position": null,
+     "window": [
+      "Zaira Sanchez",
+      "Director, Math, Engineering, Science and Achievement (MESA) Grant",
+      "Armando Franco",
+      "Director of Workforce Development",
+      "Ilona McGriff",
+      "BCC Organization Chart",
+      "Click here to view"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41298454812"
+}
