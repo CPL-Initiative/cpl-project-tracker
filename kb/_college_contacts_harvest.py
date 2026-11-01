@@ -82,10 +82,10 @@ TITLE_PATTERNS: list[tuple[str, re.Pattern]] = [
                         r"instruction(al services)?( and student services)?))\b|\bCIO\b", re.I)),
     ("vpss", re.compile(r"\b(chief student services officer|vice[- ]president,? (of )?student "
                         r"(services|affairs|success|development))\b|\bCSSO\b", re.I)),
-    # Sam's VPBS variants only: CBO, VP Business Services (and Facilities). "VP Administrative Services" waits on
-    # his word (S537): a title outside the variants is listed for him, never filled.
-    ("vpbs", re.compile(r"\b(chief business officer|vice[- ]president,? (of )?business services( and facilities)?)\b"
-                        r"|\bCBO\b", re.I)),
+    # Sam's VPBS variants: CBO, VP Business Services (and Facilities), and VP Administrative Services (Open Asks
+    # Sheet 151 card 1, "vpbs", 2026-11-01). A title outside the variants is listed for him, never filled.
+    ("vpbs", re.compile(r"\b(chief business officer|(vice[- ]president|VP),? (of )?(business|administrative) services"
+                        r"( and facilities)?)\b|\bCBO\b", re.I)),
     ("college_ceo", re.compile(r"\b(superintendent[/ -]+president|president)\b", re.I)),
     ("dean_cte", re.compile(r"\bdean\b[^.\n]{0,60}\b(career (and|&) technical|CTE|workforce|economic development)\b",
                             re.I)),
@@ -363,8 +363,16 @@ def check_records(doc: dict) -> list[str]:
     for c in doc.get("colleges", []):
         if c not in known:
             errs.append("unknown college %r" % c)
+    # A partial load (held rows Sam has since ruled on) read no college whole, so it names none and marks
+    # nobody gone; each row's college must still be known.
+    partial = bool(doc.get("partial"))
+    if partial and doc.get("colleges"):
+        errs.append("a partial load names no colleges")
     for i, r in enumerate(doc.get("rows", [])):
-        if r.get("college") not in doc.get("colleges", []):
+        if partial:
+            if r.get("college") not in known:
+                errs.append("row %d: unknown college %r" % (i, r.get("college")))
+        elif r.get("college") not in doc.get("colleges", []):
             errs.append("row %d: college not among the run's colleges" % i)
         if r.get("position") not in positions:
             errs.append("row %d: position %r" % (i, r.get("position")))
@@ -384,10 +392,12 @@ def cmd_apply(a) -> int:
         print("\n".join(errs))
         return 1
     run = doc.get("run") or a.run
-    cols = ",".join('"%s"' % c.replace('"', '') for c in doc["colleges"])
+    read = sorted({r["college"] for r in doc["rows"]}) if doc.get("partial") else doc["colleges"]
+    cols = ",".join('"%s"' % c.replace('"', '') for c in read)
     before = _rest("/rest/v1/college_contacts_harvest?select=*&college=in.(" + urllib.parse.quote(cols) + ")")
     result = _rest("/rest/v1/rpc/college_contacts_harvest_apply",
-                   {"p": {"run": run, "colleges": doc["colleges"], "rows": doc["rows"]}})
+                   {"p": {"run": run, "colleges": [] if doc.get("partial") else doc["colleges"],
+                          "rows": doc["rows"]}})
     os.makedirs(RECEIPTS, exist_ok=True)
     receipt = {"run": run, "applied_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
                "github_run": os.environ.get("GITHUB_RUN_ID"), "result": result,

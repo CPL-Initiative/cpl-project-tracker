@@ -1,0 +1,41 @@
+{
+ "run": "sheet151-vpbs",
+ "read_by": "S539 SkySilverberry, 2026-11-01",
+ "partial": true,
+ "colleges": [],
+ "note": "The four VP Administrative Services rows held for Open Asks Sheet 151 card 1; Sam ruled vpbs at 13:08Z 2026-11-01. Partial: names no college, so marks nobody gone.",
+ "rows": [
+  {
+   "college": "Antelope Valley College",
+   "position": "vpbs",
+   "title_as_printed": "VP Administrative Services",
+   "name": "Shami Brar",
+   "email": "shami.brar@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "DeeDee Garcia",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Chabot College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Marie Amboy",
+   "email": "mamboy@chabotcollege.edu",
+   "source_url": "https://www.chabotcollege.edu/about/leadership/"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Christine Nguyen, M.B.A.",
+   "email": "cnguyen@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  }
+ ]
+}

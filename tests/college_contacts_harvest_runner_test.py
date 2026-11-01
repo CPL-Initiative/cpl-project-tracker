@@ -40,7 +40,8 @@ def test_positions():
     assert h.position_of("Vice President of Student Services") == "vpss"
     assert h.position_of("Chief Business Officer") == "vpbs"
     assert h.position_of("Vice President, Business Services and Facilities") == "vpbs"
-    assert h.position_of("Vice President, Administrative Services") is None  # not among Sam's variants (S537)
+    assert h.position_of("Vice President, Administrative Services") == "vpbs"  # Sheet 151 card 1, "vpbs"
+    assert h.position_of("VP Administrative Services") == "vpbs"
     assert h.position_of("Associate Vice President, Workforce") == "assoc_vp"
     assert h.position_of("Dean, Career and Technical Education") == "dean_cte"
     assert h.position_of("Dean of Admissions and Records") == "dean_ar"
@@ -104,6 +105,17 @@ def test_check_records():
     errs = h.check_records(bad)
     assert any("Nowhere" in e for e in errs) and any("position" in e for e in errs)
     assert any("email" in e for e in errs) and any("source_url" in e for e in errs)
+
+
+def test_partial_load_names_no_college():
+    # A load of held rows read no college whole: naming one would mark its other people gone.
+    name = h.load_colleges()[0]["college"]
+    row = {"college": name, "position": "vpbs", "title_as_printed": "Vice President, Administrative Services",
+           "name": "A B", "email": "", "source_url": "https://x.edu/a"}
+    assert h.check_records({"run": "x", "partial": True, "colleges": [], "rows": [row]}) == []
+    assert h.check_records({"run": "x", "partial": True, "colleges": [name], "rows": [row]})
+    assert h.check_records({"run": "x", "partial": True, "colleges": [],
+                            "rows": [dict(row, college="Nowhere College")]})
 
 
 if __name__ == "__main__":
