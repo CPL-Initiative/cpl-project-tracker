@@ -1,0 +1,2169 @@
+{
+ "college": "Barstow Community College",
+ "homepage": "https://www.barstow.edu/",
+ "read_at": "2026-11-01T10:44:02+00:00",
+ "pages": [
+  {
+   "url": "https://www.barstow.edu/",
+   "final_url": "https://www.barstow.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/directory",
+   "final_url": "https://www.barstow.edu/directory",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of Institutional Research",
+      "research@barstow.edu",
+      "Read More",
+      "Office of the President",
+      "Ext. 7214",
+      "mhenderson@barstow.edu",
+      "Read More"
+     ],
+     "emails": [
+      "mhenderson@barstow.edu",
+      "research@barstow.edu"
+     ]
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/about-bcc/office-president",
+   "final_url": "https://www.barstow.edu/about-bcc/office-president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | Barstow Community College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | Barstow Community College",
+      "Skip to main content",
+      "Information Menu",
+      "Find Info For"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Breadcrumb",
+      "Home",
+      "About BCC",
+      "Office of the President",
+      "Office of the President",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About BCC",
+      "Office of the President",
+      "Office of the President",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Office of the President",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Goals",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources",
+      "Menu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Public Information Office",
+      "Resources",
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "Resources",
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Goals",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources",
+      "The Office of the President in partnership with the elected Board of Trustees, provides leadership necessary to guarantee educational quality, promote student success and engagement, maintain fiscal solvency, and develop and nurture useful community, regional, state, and national relationships."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent-President",
+     "position": "college_ceo",
+     "window": [
+      "Public Information Office",
+      "Resources",
+      "The Office of the President in partnership with the elected Board of Trustees, provides leadership necessary to guarantee educational quality, promote student success and engagement, maintain fiscal solvency, and develop and nurture useful community, regional, state, and national relationships.",
+      "Superintendent-President",
+      "Eva Bagg, Ph.D.",
+      "Executive Assistant",
+      "Michelle Henderson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "ATTN: Superintendent-President",
+     "position": "college_ceo",
+     "window": [
+      "Michelle Henderson",
+      "Contact Us",
+      "Barstow Community College",
+      "ATTN: Superintendent-President",
+      "2700 Barstow Road",
+      "Barstow, CA 92311",
+      "P: (760) 252-2411, ext. 7214 or 7215"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/admissions-aid/admissions-records",
+   "final_url": "https://www.barstow.edu/admissions-aid/admissions-records",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/departments/admissions-records",
+   "final_url": "https://www.barstow.edu/admissions-aid/admissions-records",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/academic-affairs/guided-pathways/business-and-entrepreneurship/business-administration-adt",
+   "final_url": "https://www.barstow.edu/academic-affairs/guided-pathways/business-and-entrepreneurship/business-administration-adt",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/academic-affairs/guided-pathways/public-service-and-education/administration-justice-adt",
+   "final_url": "https://www.barstow.edu/academic-affairs/guided-pathways/public-service-and-education/administration-justice-adt",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/academic-affairs/guided-pathways/business-and-entrepreneurship/administration-justice",
+   "final_url": "https://www.barstow.edu/academic-affairs/guided-pathways/business-and-entrepreneurship/administration-justice",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.cccco.edu",
+   "final_url": "https://www.cccco.edu",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Chancellor’s Office",
+     "position": "district_ceo",
+     "window": [
+      "Vision 2030",
+      "State of the System",
+      "Key Facts",
+      "Chancellor’s Office",
+      "Board of Governors",
+      "Consultation Council",
+      "News & Media"
+     ],
+     "emails": []
+    },
+    {
+     "line": "CALIFORNIA COMMUNITY COLLEGES CHANCELLOR'S OFFICE",
+     "position": "district_ceo",
+     "window": [
+      "Please explore our students and system operations areas and also check our FAQs. Or simply enter your question in the search form below.",
+      "Search the Website",
+      "Search",
+      "CALIFORNIA COMMUNITY COLLEGES CHANCELLOR'S OFFICE",
+      "1102 Q Street, 6th Floor",
+      "Sacramento, CA 95811",
+      "916-445-8752"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor’s Office Divisions",
+     "position": "district_ceo",
+     "window": [
+      "College Professionals",
+      "Data",
+      "Guided Pathways",
+      "Chancellor’s Office Divisions",
+      "About",
+      "About California Community Colleges",
+      "Vision 2030"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor’s Office",
+     "position": "district_ceo",
+     "window": [
+      "Vision 2030",
+      "State of the System",
+      "Key Facts",
+      "Chancellor’s Office",
+      "Board of Governors",
+      "Consultation Council",
+      "News & Media"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Copyright © 2026 by California Community Colleges Chancellor’s Office",
+     "position": "district_ceo",
+     "window": [
+      "Land Acknowledgement",
+      "Job Opportunities",
+      "Contact",
+      "Copyright © 2026 by California Community Colleges Chancellor’s Office",
+      "Terms of Use | Privacy Statement | Accessibility | Complaints",
+      "Home",
+      "StudentsToggle child menu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor’s Office",
+     "position": "district_ceo",
+     "window": [
+      "Vision 2030",
+      "State of the System",
+      "Key Facts",
+      "Chancellor’s Office",
+      "Board of Governors",
+      "Consultation Council",
+      "News & Media"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/departments/office-president",
+   "final_url": "https://www.barstow.edu/about-bcc/office-president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | Barstow Community College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | Barstow Community College",
+      "Skip to main content",
+      "Information Menu",
+      "Find Info For"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Breadcrumb",
+      "Home",
+      "About BCC",
+      "Office of the President",
+      "Office of the President",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About BCC",
+      "Office of the President",
+      "Office of the President",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Office of the President",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Goals",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources",
+      "Menu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Public Information Office",
+      "Resources",
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "Resources",
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Goals",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources",
+      "The Office of the President in partnership with the elected Board of Trustees, provides leadership necessary to guarantee educational quality, promote student success and engagement, maintain fiscal solvency, and develop and nurture useful community, regional, state, and national relationships."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent-President",
+     "position": "college_ceo",
+     "window": [
+      "Public Information Office",
+      "Resources",
+      "The Office of the President in partnership with the elected Board of Trustees, provides leadership necessary to guarantee educational quality, promote student success and engagement, maintain fiscal solvency, and develop and nurture useful community, regional, state, and national relationships.",
+      "Superintendent-President",
+      "Eva Bagg, Ph.D.",
+      "Executive Assistant",
+      "Michelle Henderson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "ATTN: Superintendent-President",
+     "position": "college_ceo",
+     "window": [
+      "Michelle Henderson",
+      "Contact Us",
+      "Barstow Community College",
+      "ATTN: Superintendent-President",
+      "2700 Barstow Road",
+      "Barstow, CA 92311",
+      "P: (760) 252-2411, ext. 7214 or 7215"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "final_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Cabinet | Barstow Community College",
+     "position": "college_ceo",
+     "window": [
+      "President's Cabinet | Barstow Community College",
+      "Skip to main content",
+      "Information Menu",
+      "Find Info For"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Breadcrumb",
+      "Home",
+      "About BCC",
+      "Office of the President",
+      "President's Cabinet",
+      "President's Cabinet",
+      "Main Navigation (Desktop Sidebar)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About BCC",
+      "Office of the President",
+      "President's Cabinet",
+      "President's Cabinet",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "About BCC",
+      "Office of the President",
+      "President's Cabinet",
+      "President's Cabinet",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "President's Cabinet",
+      "President's Cabinet",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "President's Cabinet",
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Main Navigation (Desktop Sidebar)",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Goals",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources",
+      "Menu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Public Information Office",
+      "Resources",
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "Resources",
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Menu",
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Goals",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "President's Bio",
+      "President's Cabinet",
+      "President's Goals",
+      "President's Welcome",
+      "Public Information Office",
+      "Resources",
+      "Members"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent-President – Eva Bagg, Ph.D.",
+     "position": "college_ceo",
+     "window": [
+      "Public Information Office",
+      "Resources",
+      "Members",
+      "Superintendent-President – Eva Bagg, Ph.D.",
+      "Vice President, Academic Affairs – Michael Wangler",
+      "Vice President, Student Services – Edward Alvarez",
+      "Vice President, Administrative Services – DeeDee Garcia"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Academic Affairs – Michael Wangler",
+     "position": "vpaa",
+     "window": [
+      "Resources",
+      "Members",
+      "Superintendent-President – Eva Bagg, Ph.D.",
+      "Vice President, Academic Affairs – Michael Wangler",
+      "Vice President, Student Services – Edward Alvarez",
+      "Vice President, Administrative Services – DeeDee Garcia",
+      "Vice President, Human Resources – Rocio Chavez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Student Services – Edward Alvarez",
+     "position": "vpss",
+     "window": [
+      "Members",
+      "Superintendent-President – Eva Bagg, Ph.D.",
+      "Vice President, Academic Affairs – Michael Wangler",
+      "Vice President, Student Services – Edward Alvarez",
+      "Vice President, Administrative Services – DeeDee Garcia",
+      "Vice President, Human Resources – Rocio Chavez",
+      "Advisory Members"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Administrative Services – DeeDee Garcia",
+     "position": "vpbs",
+     "window": [
+      "Superintendent-President – Eva Bagg, Ph.D.",
+      "Vice President, Academic Affairs – Michael Wangler",
+      "Vice President, Student Services – Edward Alvarez",
+      "Vice President, Administrative Services – DeeDee Garcia",
+      "Vice President, Human Resources – Rocio Chavez",
+      "Advisory Members",
+      "Director, Public Relations, Communications & Marketing – Amanda Simpson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Human Resources – Rocio Chavez",
+     "position": null,
+     "window": [
+      "Vice President, Academic Affairs – Michael Wangler",
+      "Vice President, Student Services – Edward Alvarez",
+      "Vice President, Administrative Services – DeeDee Garcia",
+      "Vice President, Human Resources – Rocio Chavez",
+      "Advisory Members",
+      "Director, Public Relations, Communications & Marketing – Amanda Simpson",
+      "Executive Director of Research, Development & Planning; Accreditation Liaison Officer – Lisa Holmes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Public Relations, Communications & Marketing – Amanda Simpson",
+     "position": null,
+     "window": [
+      "Vice President, Administrative Services – DeeDee Garcia",
+      "Vice President, Human Resources – Rocio Chavez",
+      "Advisory Members",
+      "Director, Public Relations, Communications & Marketing – Amanda Simpson",
+      "Executive Director of Research, Development & Planning; Accreditation Liaison Officer – Lisa Holmes",
+      "Facebook",
+      "Instagram"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director of Research, Development & Planning; Accreditation Liaison Officer – Lisa Holmes",
+     "position": null,
+     "window": [
+      "Vice President, Human Resources – Rocio Chavez",
+      "Advisory Members",
+      "Director, Public Relations, Communications & Marketing – Amanda Simpson",
+      "Executive Director of Research, Development & Planning; Accreditation Liaison Officer – Lisa Holmes",
+      "Facebook",
+      "Instagram",
+      "Linkedin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "http://barstow.edu/admissions-aid/admissions-records/residency/military-residency",
+   "final_url": "https://www.barstow.edu/admissions-aid/admissions-records/residency/military-residency",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    },
+    {
+     "line": "If you plan to use VA education benefits or have questions about your eligibility under VACA, please contact the Veterans Resource Center (VRC) for assistance.",
+     "position": "vrc",
+     "window": [
+      "Eligible spouses and dependents of active-duty service members who are domiciled or stationed in California may qualify for resident tuition. In many cases, eligibility continues if the service member is transferred or retires while the student remains continuously enrolled.",
+      "I'm a Veteran.",
+      "Veterans may qualify for resident tuition or a nonresident tuition exemption under California law or the federal Veterans Access, Choice, and Accountability Act (VACA). Eligibility depends on your military service, discharge status, VA education benefits, and other applicable requirements.",
+      "If you plan to use VA education benefits or have questions about your eligibility under VACA, please contact the Veterans Resource Center (VRC) for assistance.",
+      "vets@barstow.edu Contact the Veterans Resource Center",
+      "Military Residency Affidavit",
+      "Students requesting military residency benefits should complete the Military Affidavit and submit any required supporting documentation to Admissions & Records."
+     ],
+     "emails": [
+      "vets@barstow.edu"
+     ]
+    },
+    {
+     "line": "vets@barstow.edu Contact the Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "I'm a Veteran.",
+      "Veterans may qualify for resident tuition or a nonresident tuition exemption under California law or the federal Veterans Access, Choice, and Accountability Act (VACA). Eligibility depends on your military service, discharge status, VA education benefits, and other applicable requirements.",
+      "If you plan to use VA education benefits or have questions about your eligibility under VACA, please contact the Veterans Resource Center (VRC) for assistance.",
+      "vets@barstow.edu Contact the Veterans Resource Center",
+      "Military Residency Affidavit",
+      "Students requesting military residency benefits should complete the Military Affidavit and submit any required supporting documentation to Admissions & Records.",
+      "Download Military Affidavit"
+     ],
+     "emails": [
+      "vets@barstow.edu"
+     ]
+    },
+    {
+     "line": "vets@barstow.edu Contact the Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Eligible dependents may qualify for resident tuition. Benefits often continue if the service member is transferred or retires while the student remains continuously enrolled.",
+      "I'm using VA education benefits. Who should I contact?",
+      "If you have questions about VA education benefits, certification, or your eligibility under the Veterans Access, Choice, and Accountability Act (VACA), please contact the Veterans Resource Center (VRC). The VRC can help determine which benefits may apply to your situation and guide you through the certification process.",
+      "vets@barstow.edu Contact the Veterans Resource Center",
+      "Need Additional Assistance?",
+      "If you have questions about military residency benefits, required documentation, or your eligibility, Admissions & Records is here to help.",
+      "admissions@barstow.edu Contact Admissions & Records"
+     ],
+     "emails": [
+      "admissions@barstow.edu",
+      "vets@barstow.edu"
+     ]
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "CARES/HEERF",
+      "Catalog & Schedule",
+      "Campus Maps",
+      "Chancellor's Office",
+      "Consumer Information",
+      "Employment Opportunities",
+      "FERPA/Privacy Rights"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Maps & Directions",
+      "Mission | Vision | Values",
+      "Institutional Effectiveness",
+      "Office of the President",
+      "Performing Arts Center",
+      "Fort Irwin Campus",
+      "BCC Fact Book"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Library",
+      "MESA",
+      "Military",
+      "Office of the Vice President of Academic Affairs",
+      "Programs of study",
+      "Register for Classes",
+      "Schedule of Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Counseling Services",
+      "Dream Resource Center",
+      "Multicultural and Equity Communities",
+      "Office of the Vice President of Student Services",
+      "Register for Classes",
+      "Special Programs & Services",
+      "Student Life"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.cccco.edu/about-us/chancellors-office/",
+  "https://www.cccco.edu/about-us/chancellors-office/divisions/"
+ ],
+ "run": "41298454812"
+}
