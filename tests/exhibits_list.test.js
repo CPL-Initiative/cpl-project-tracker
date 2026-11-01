@@ -60,7 +60,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   const t = load();
   await t.M.boot(); await settle();
   check("(1) #exhibits/list opens the List view", t.M._state.view === "list");
-  const titles = rows(t.d).map((r) => txt(r.children[0]).split("collides")[0]);
+  const titles = rows(t.d).map((r) => txt(r.children[2]).split("collides")[0]);
   check("(1) ⭐ every credential, A to Z", titles.length === 3 && /^10-Key/.test(titles[0]) && /^Apiary/.test(titles[1]) && /^Welding/.test(titles[2]), titles.join(" | "));
   const heads = Array.from(t.d.querySelectorAll(".exh-l-table th")).map(txt);
   check("(1) every header cell is th scope=col, inside a labelled region",
@@ -69,10 +69,10 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     !heads.some((h) => /^TOP/.test(h)) && heads.indexOf("CIP family (from TOP)") > -1 && heads.indexOf("Discipline (M-IDs)") > -1, heads.join(","));
   const key = rows(t.d)[0];
   check("(2) a row reads its status, flag, CPL types, issuer, discipline, common SUBJ and CIP family",
-    /Cohort; suspect course as exhibit; title 45%/.test(txt(key.children[1])) && txt(key.children[2]) === "Credit By Exam"
-    && txt(key.children[3]) === "Proctored Testing Center" && txt(key.children[5]) === "Building Codes and Regulations"
-    && txt(key.children[6]) === "CNSR" && txt(key.children[7]) === "52 Business", txt(key));
-  check("(6) a rename the dry-run found colliding says so", /collides with Beekeeping/.test(txt(rows(t.d)[1].children[0])));
+    /Cohort; suspect course as exhibit; title 45%/.test(txt(key.children[3])) && txt(key.children[4]) === "Credit By Exam"
+    && txt(key.children[5]) === "Proctored Testing Center" && txt(key.children[7]) === "Building Codes and Regulations"
+    && txt(key.children[8]) === "CNSR" && txt(key.children[9]) === "52 Business", txt(key));
+  check("(6) a rename the dry-run found colliding says so", /collides with Beekeeping/.test(txt(rows(t.d)[1].children[2])));
   check("(1) no raw hex in the view's CSS", !/#[0-9a-fA-F]{3,6}\b/.test(txt(t.d.getElementById("exh-l-css"))));
 
   words(t.d, "Unreviewed").click(); await settle();
@@ -101,7 +101,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     && posts.some((p) => p.body.field === "issuing_agency_override" && p.body.value === "Local College"), JSON.stringify(posts.map((p) => p.body)));
   const renamed = rows(t.d).find((r) => /Ten-Key/.test(txt(r)));
   check("(4) the row shows the new title, the rename pending, and the new issuer",
-    !!renamed && /renamed from 10-Key Data Entry; pending the apply/.test(txt(renamed)) && txt(renamed.children[3]) === "Local College");
+    !!renamed && /renamed from 10-Key Data Entry; pending the apply/.test(txt(renamed)) && txt(renamed.children[5]) === "Local College");
 
   const ta = t.d.getElementById("exh-l-note");
   check("(5) the comments box is a labelled text area", ta && ta.tagName === "TEXTAREA" && !!t.d.querySelector('label[for="exh-l-note"]'));
@@ -118,12 +118,12 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   const sortBtn = (h) => Array.from(t.d.querySelectorAll(".exh-l-sort")).find((b) => txt(b).indexOf(h) === 0);
   sortBtn("MAP titles").click(); await settle();
   check("(7) ⭐ a header sorts its column, low to high, and says so",
-    /^Apiary/.test(txt(rows(t.d)[0].children[0])) && /low to high/.test(txt(sortBtn("MAP titles")))
+    /^Apiary/.test(txt(rows(t.d)[0].children[2])) && /low to high/.test(txt(sortBtn("MAP titles")))
     && sortBtn("MAP titles").parentNode.getAttribute("aria-sort") === "ascending");
   sortBtn("MAP titles").click(); await settle();
-  check("(7) a second press reverses it", /^Welding/.test(txt(rows(t.d)[0].children[0])) && sortBtn("MAP titles").parentNode.getAttribute("aria-sort") === "descending");
+  check("(7) a second press reverses it", /^Welding/.test(txt(rows(t.d)[0].children[2])) && sortBtn("MAP titles").parentNode.getAttribute("aria-sort") === "descending");
   sortBtn("Issuer").click(); await settle();
-  check("(7) a text column sorts A to Z with blanks last", /^Apiary/.test(txt(rows(t.d)[2].children[0])));
+  check("(7) a text column sorts A to Z with blanks last", /^Apiary/.test(txt(rows(t.d)[2].children[2])));
   const cf = t.d.getElementById("exh-l-cf-3");
   check("(8) every column has its own labelled filter", t.d.querySelectorAll(".exh-l-cfin").length === 10 && cf.getAttribute("aria-label") === "Filter Issuer");
   cf.value = "aws"; cf.dispatchEvent(new t.w.Event("input")); await settle();
@@ -138,7 +138,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   const wb = t.d.getElementById("exh-l-wrap");
   check("(10) ⭐ the list opens unwrapped: one line a cell, the full text on hover",
     t.d.querySelector(".exh-l-table").classList.contains("exh-l-nowrap") && wb.getAttribute("aria-pressed") === "false"
-    && rows(t.d)[0].children[3].getAttribute("title") === txt(rows(t.d)[0].children[3]));
+    && rows(t.d)[0].children[5].getAttribute("title") === txt(rows(t.d)[0].children[5]));
   wb.click(); await settle();
   check("(10) Wrap text wraps every field and says it is on",
     !t.d.querySelector(".exh-l-table").classList.contains("exh-l-nowrap") && t.d.getElementById("exh-l-wrap").getAttribute("aria-pressed") === "true");
@@ -148,11 +148,37 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   grip.dispatchEvent(new t.w.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
   const w1 = t.M._state.ls.widths;
   check("(11) ⭐ the arrow keys widen a column by a step and fix the widths in pixels",
-    Array.isArray(w1) && w1[3] === 120 + 24 && /144px/.test(t.d.querySelectorAll(".exh-l-table col")[3].getAttribute("style")), JSON.stringify(w1));
+    Array.isArray(w1) && w1[3] === 120 + 24 && /144px/.test(t.d.querySelectorAll(".exh-l-table col")[5].getAttribute("style")), JSON.stringify(w1));
   grip.dispatchEvent(new t.w.KeyboardEvent("keydown", { key: "Home", bubbles: true }));
   check("(11) Home narrows it to the least", t.M._state.ls.widths[3] === 48);
   t.d.getElementById("exh-l-wrap").click(); await settle();
-  check("(11) the widths survive a repaint this visit", /48px/.test(t.d.querySelectorAll(".exh-l-table col")[3].getAttribute("style")));
+  check("(11) the widths survive a repaint this visit", /48px/.test(t.d.querySelectorAll(".exh-l-table col")[5].getAttribute("style")));
+  // Sam, 2026-11-01: selection boxes, a flag that persists until cleared, and drill-downs on click.
+  const box = (lab) => Array.from(t.d.querySelectorAll("input[type=checkbox]")).find((b) => b.getAttribute("aria-label") === lab);
+  box("Select Welding Level 1").click(); await settle();
+  words(t.d, "Selected").click(); await settle();
+  check("(12) ⭐ a selected row shows under Selected, and the count says so",
+    rows(t.d).length === 1 && /Welding/.test(txt(rows(t.d)[0])) && /1 selected/.test(txt(t.d.getElementById("exh-l-selcount"))));
+  words(t.d, "All").click(); await settle();
+  box("Flag Welding Level 1").click(); await settle();
+  const fl = t.calls.filter((c) => c.method === "POST" && c.body && c.body.field === "list_flag");
+  check("(13) ⭐ a flag saves as list_flag with the time, under the credential", fl.length === 1
+    && fl[0].body.course_id === "_CREDENTIAL_REVIEW::Welding Level 1" && /^\d{4}-\d\d-\d\dT/.test(fl[0].body.value));
+  words(t.d, "Your flags").click(); await settle();
+  check("(13) Your flags shows the flagged row", rows(t.d).length === 1 && /Welding/.test(txt(rows(t.d)[0])));
+  box("Flag Welding Level 1").click(); await settle();
+  const fl2 = t.calls.filter((c) => c.method === "POST" && c.body && c.body.field === "list_flag");
+  check("(13) clearing writes an empty value, never a delete", fl2.length === 2 && fl2[1].body.value === ""
+    && !t.calls.some((c) => c.method === "DELETE"));
+  words(t.d, "All").click(); await settle();
+  const issuerBtn = Array.from(t.d.querySelectorAll(".exh-l-open")).find((b) => /^Issuer: AWS/.test(b.getAttribute("aria-label")));
+  issuerBtn.click(); await settle();
+  check("(14) ⭐ a cell opens its drill-down under the row, and says so", /Issuer, /.test(txt(t.d.querySelector(".exh-l-drawer")))
+    && !!t.d.querySelector('.exh-l-open[aria-expanded="true"]'));
+  const mapBtn = Array.from(t.d.querySelectorAll(".exh-l-open")).find((b) => /^Discipline \(M-IDs\): Welding/.test(b.getAttribute("aria-label")));
+  mapBtn.click(); await settle();
+  check("(14) the discipline drill-down lists the M-ID and its colleges", /M-ID WELD M1001/.test(txt(t.d.querySelector(".exh-l-drawer")))
+    && /Norco College/.test(txt(t.d.querySelector(".exh-l-drawer"))));
   let failed = 0;
   for (const [name, ok, why] of results) { console.log((ok ? "PASS " : "FAIL ") + name + (ok || !why ? "" : "\n     " + why)); if (!ok) failed++; }
   console.log("\n" + (results.length - failed) + "/" + results.length + " checks passed");

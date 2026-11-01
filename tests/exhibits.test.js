@@ -496,7 +496,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the credential file is not read until the view opens", !t.calls.some(function (c) { return c.url === "loadScript:credential_reference_data.js"; }));
   viewBtn(t.d, "Credentials").click(); await settle();
   check("Credentials loads the reference's file once and the live rows", t.calls.filter(function (c) { return c.url === "loadScript:credential_reference_data.js"; }).length === 1
-    && t.calls.some(function (c) { return /kb_curation\?select=course_id,field,value,reviewed_at/.test(c.url) && /field=in\.\(issuing_agency_override,training_agency_override,training_sites_override,unified_title_override\)/.test(c.url)
+    && t.calls.some(function (c) { return /kb_curation\?select=course_id,field,value,reviewed_at/.test(c.url) && /field=in\.\(issuing_agency_override,training_agency_override,training_sites_override,unified_title_override,list_flag\)/.test(c.url)
       && /course_id=like\._CREDENTIAL_REVIEW%3A%3A%25/.test(c.url) && c.headers.Range === "0-999"; }));
   check("the view is current and counts the credentials", /Credentials 4/.test(txt(t.d.querySelector('.exh-views [aria-current="page"]'))));
   const ctiles = Array.from(t.d.querySelectorAll(".exh-tile")).map(txt);

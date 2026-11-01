@@ -79,6 +79,7 @@
   "field:kb_curation.cer_procedure_switch": "DR-07",
   "field:kb_curation.exhibit_reanalysis_request": "DR-07",
   "field:kb_curation.exhibit_reanalysis_done": "DR-07",
+  "field:kb_curation.list_flag": "DR-07",
   "file:kb/reference/subject_discipline_map.json": "DR-25",
   "file:kb/discipline_canonical_subj4.json": "DR-25",
   "tab:ccr-anchor-proposal-apply": "DR-25",
