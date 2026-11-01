@@ -22,8 +22,8 @@ no re-mint and no Rule 10 data write. Skipped: kb/README, README, the Pipeline t
   replace). **#2658** Subjects List (`#canonical-subj4/list`, adds *Confirm this pick*). **#2660** Program Requirements
   List (`#program-requirements/list`, 20,282 rows, read only).
 - **#2661** every List spans the window; its table scrolls in its own box only when narrower than its columns; Edit no
-  longer clips. **#2662** (merge it if still open) Catalog Commons: full width, **Decision Sheet Library**, bold count with
-  a green 0, **Completed Decision Sheets** one line each that opens.
+  longer clips. **#2662** Catalog Commons: full width, **Decision Sheet Library**, bold count with a green 0,
+  **Completed Decision Sheets** one line each that opens.
 
 ## Sam's decisions this run (cpl_memory rows name him)
 
@@ -32,7 +32,13 @@ no re-mint and no Rule 10 data write. Skipped: kb/README, README, the Pipeline t
 - Lists full width with a sideways scroll when needed (`sam-lists-full-width-scroll-when-needed-2026-11-01`).
 - Catalog Commons wording and layout above; then: *"I like the tiles above the list ... integrate what's needed into
   existing tiles and create any others needed to capture everything from 1st into Exhibits view."*
-- He asked for the one-time SLO test (done, below).
+- He asked for the one-time SLO test (done, below), then: *"yes to SLO hints and the nightly harvest"*
+  (`sam-slo-hints-and-nightly-harvest-2026-11-01`).
+- Where the Courses List lives: *"WE have the COCI lookup tab in COBI...maybe courses in that?"* S542 proceeded on it
+  (`sam-courses-list-in-coci-lookup-2026-11-01`). Nothing waits on him; no Open Asks Sheet 154.
+- *"Would be nice to use any design lessons and norms from the exhibit list view for courses and all the other commons
+  modules...moving toward consistent views for all the folding and consolidation work"*, with *"feel free to add fable as
+  advisor on that move"*. S542 wrote the norms: `docs/kb-notes/reference-catalog-commons-list-norms.md`.
 
 ## Read in order
 
@@ -43,14 +49,24 @@ no re-mint and no Rule 10 data write. Skipped: kb/README, README, the Pipeline t
 
 ## Open work, in order
 
-1. **Exhibits tiles carry the Commons row** (Sam's call above). S542 started a background build; look for its PR. One
-   source for both pages (`kb/status/commons.json`'s exhibit row and `kb/status/exhibit.json`), so they stay aligned.
-2. **Open Asks Sheet 154**, three cards S542 started building in the background: (a) SLO hints in the Exhibits List at
-   similarity 0.5 or more; (b) the SLO read nightly in the CPL queue, most-articulating colleges first (a scheduled
-   cost, his to approve); (c) where the Courses List lives (S542 recommends a COBI view from the Commons' Course row,
-   leaving SkyView the map alone). If no sheet exists, build it (`CPLBrain/decision-sheets/decision_sheets.md`).
-3. **The Courses List** once (c) is answered: 27,581 cards on the engine.
-4. **Carryover from 542:** step 10's first night (the credential harvest); the cert link's next families (AP, CLEP, IB,
+**First, the PRs S542's background builds opened** (it let go before they finished). List open PRs; for each, check its
+`test` on the current head, merge main in if it is behind, and merge on green. Expect five, on these branches:
+- `claude/exhibits-tiles-commons`: the Exhibits tiles carry everything in the Commons' Exhibit row (Sam's call).
+- `claude/exhibits-slo-hints`: *Outcomes match* hints in the Exhibits List from a nightly neighbors file; it may carry a
+  Supabase function as a migration through `supabase-migrate.yml` (check Rule 10 before applying).
+- `claude/slo-nightly-queue`: the SLO read as a new numbered step of `scheduled_sessions.md`; check the cost answer it
+  gives before the queue runs it (if it costs money beyond a standing go, that is Sam's call).
+- `claude/coci-lookup-list`: COCI Lookup on the shared engine as the Courses List, local courses banded by M-ID; check
+  its timings at 141,738 rows.
+- a branch recording Sam's three answers as plain lines in the cer-procedures, program-requirements-harvest and commons
+  lanes (no sheet).
+If a branch has no PR, its agent did not finish: rebuild from its brief in this handoff.
+
+1. **Align every List to the norms** (`reference-catalog-commons-list-norms`), engine first: bands and kept groups for
+   CR and Subjects, tiles carrying each reference's Commons row, suggested folds where a reference can fold. Sam asked
+   for Fable as advisor on this move: S542 asked Fable for norms and the three best first steps; if its advice is not
+   in this handoff, ask again (read-only advisor, model fable) before building.
+2. **Carryover from 542:** step 10's first night (the credential harvest); the cert link's next families (AP, CLEP, IB,
    then the unresolved names); the reference's statewide flag (84 vs 152, code only); step 9's Jev runner; Monterey
    Peninsula's 14; Accept's email (Sheet 146 card 3); Sierra's first-text latency; the college short-name editor.
 

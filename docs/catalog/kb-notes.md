@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-569 document(s).
+570 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -574,6 +574,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Statewide Collaborative (CCC) credit recommendations are not housed at one college](../kb-notes/reference-statewide-credit-recommendations.md) | reference | published | 2026-06-25 | 2026-06-25 |
 | [The articulated-and-waiting backlog is almost entirely basic military service credit](../kb-notes/reference-the-waiting-credit-backlog-is-basic-military-service.md) | reference | published | 2026-08-11 | 2026-08-11 |
 | [The authoritative statewide MAP exhibit is the raw row with Collaborative Type == "CCC](../kb-notes/reference-authoritative-statewide-exhibit-signal.md) | reference | published | 2026-06-28 | 2026-11-01 |
+| [The Catalog Commons List norms, what every common reference's List carries](../kb-notes/reference-catalog-commons-list-norms.md) | reference | published | 2026-11-01 | 2026-11-01 |
 | [The CCCCO house voice — how our outward writing should read](../kb-notes/reference-cccco-house-voice.md) | reference | internal | 2026-09-01 | 2026-10-26 |
 | [The CCCCO style guide and brand basics — the usage, names and colors our writing follows](../kb-notes/reference-cccco-style-guide.md) | reference | internal | 2026-09-30 | 2026-09-30 |
 | [The CPL guiding question, and why sufficiency is not equivalence](../kb-notes/reference-the-cpl-guiding-question.md) | reference | published | 2026-09-05 | 2026-09-05 |

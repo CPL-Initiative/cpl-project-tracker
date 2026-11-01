@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 569,
+   "count": 570,
    "docs": [
     {
      "created": "2026-08-14",
@@ -11026,6 +11026,24 @@
       "data-provenance"
      ],
      "title": "The authoritative statewide MAP exhibit is the raw row with Collaborative Type == \"CCC",
+     "type": "reference",
+     "updated": "2026-11-01"
+    },
+    {
+     "created": "2026-11-01",
+     "governs": [
+      "commons_list.js",
+      "exhibits.js"
+     ],
+     "path": "docs/kb-notes/reference-catalog-commons-list-norms.md",
+     "status": "published",
+     "tags": [
+      "reference",
+      "commons",
+      "commons-list",
+      "ui"
+     ],
+     "title": "The Catalog Commons List norms, what every common reference's List carries",
      "type": "reference",
      "updated": "2026-11-01"
     },
@@ -25079,5 +25097,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1335
+ "total": 1336
 }
