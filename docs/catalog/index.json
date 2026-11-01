@@ -16339,8 +16339,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 508,
+   "count": 509,
    "docs": [
+    {
+     "created": "2026-11-01",
+     "governs": [],
+     "n": 541,
+     "path": "docs/session_541_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "contacts-harvest",
+      "sierra-training",
+      "library"
+     ],
+     "title": "Session 541 handoff: Sierra training opens the current Sierra beside the tab; the Library's SharePoint note; the contacts harvest's fourth read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-01",
      "governs": [],
@@ -25025,5 +25041,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1332
+ "total": 1333
 }
