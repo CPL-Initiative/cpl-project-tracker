@@ -1,7 +1,7 @@
 ---
 title: "Common CR Reference — lane state"
 created: 2026-08-28
-updated: 2026-10-20
+updated: 2026-11-01
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -32,6 +32,17 @@ identity behind the course-count guard; Jev runs the new pairs, the unanchored c
 anchored pairs under the 0.85 gate, then a sheet of 40 to 60. Beside it, the six head wordings left
 are Sam's to decide on the tab. The title-rung sitting at the foot of this file is the CCR's ladder,
 not this reference's.
+
+## The List (S542, 2026-11-01)
+
+The tab's third view, `#cr-reference/list`, is the Catalog Commons' shared List (`commons_list.js`) with this
+reference's spec in `cr_reference.js` (Sam, 2026-11-01: *"I want one now for each of our Catalog Commons groups"*): one
+row per wording (2,344), A to Z, with its reference, rung, decision, articulations, colleges, units, credentials,
+courses and group size. Edit and Edit every row rename a group's reference through the worklist's own write
+(`saveDecision`, the group's `cr_reference_decisions` row, its decision kept or deferred), so a rename never settles a
+group; Confirm the group and Not a topic sit in the reference's drawer. No flag column and no find and replace yet: the
+reference has no flag field, and a replace across wordings would write one group once per wording. Guard:
+`tests/cr_list.test.js`; a11y targets `cr-list` and `cr-list-dark`.
 
 ## Jev on this lane — the blocking, the gate, the verdicts (S279/S280, 2026-09-20)
 

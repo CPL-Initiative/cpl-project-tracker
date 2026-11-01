@@ -47,6 +47,12 @@ together and places them in some order of priority and completion and known issu
 
 ## Status
 
+**The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
+hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
+groups"*). The Exhibits List and the Common CR Reference List run on it; Courses (SkyView), Subjects and Program
+Requirements are next. A change to the engine reaches every List.
+
+
 **LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can
 live without the words on the cards—pretty self explanatory and I am the main user."* The tab is the
 mock-up's row without its prose: five rows in his order, each with the complete pair and the test behind

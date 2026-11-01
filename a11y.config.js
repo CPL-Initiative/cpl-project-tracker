@@ -869,6 +869,21 @@ async function seedCrProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Common CR Reference's List (S542, the Catalog Commons' shared List): every wording A to Z, the Reference
+// drawer of the first row open and Edit every row's boxes on, so the table, the drawer and the boxes are measured.
+async function seedCrList(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "cr-reference") location.hash = "cr-reference"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector('#tab-cr-reference button.crr-view[data-view="list"]', { timeout: 60000 });
+  await page.evaluate(() => document.querySelector('#tab-cr-reference button.crr-view[data-view="list"]').click());
+  await page.waitForSelector("#tab-cr-reference .crl-table tbody tr", { timeout: 60000 });
+  await page.evaluate(() => { const b = document.querySelector("#tab-cr-reference .crl-table tbody tr td:nth-child(3) button.crl-open"); if (b) b.click(); });
+  await page.waitForSelector("#tab-cr-reference .crl-drawer", { timeout: 10000 });
+  await page.evaluate(() => { document.getElementById("crl-editall").click(); });
+  await page.waitForSelector("#tab-cr-reference .crl-cellin", { timeout: 10000 });
+  await page.waitForTimeout(300);
+}
+
 // Procedures: each procedure, one opened to what it did.
 async function seedCerProcedures(page, theme) {
   await openCerView(page, theme, "procs");
@@ -3044,6 +3059,22 @@ module.exports = {
     routes: [{ hash: "cr-reference", name: "progress" }],
     widths: [320, 390, 1440],
     seed: (page) => seedCrProgress(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cr-list": {
+    file: "index.html",
+    title: "Common CR Reference: List, every wording A to Z, a drawer and the boxes open",
+    routes: [{ hash: "cr-reference", name: "list" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedCrList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "cr-list-dark": {
+    file: "index.html",
+    title: "Common CR Reference: List, dark",
+    routes: [{ hash: "cr-reference", name: "list-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCrList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cr-progress-dark": {

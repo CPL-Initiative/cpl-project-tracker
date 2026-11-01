@@ -57,7 +57,8 @@
     decisionsStale: false,  // the READ failed — the map is last-known-good, NOT the truth
     loadedSignedIn: false,
     loading: false, error: null,
-    view: "worklist",       // or "progress" (S437): the Commons' dash for this reference
+    view: "worklist",       // or "progress" (S437): the Commons' dash for this reference, or "list" (S542)
+    ls: null,               // the List view's state; a new visit drops it (tabs never remember a filter)
     filter: "todo", q: "",
     open: {},               // group_key -> true. Lives HERE, not in the DOM:
                             // render() rewrites innerHTML and would drop it.
@@ -212,7 +213,7 @@
   }
 
   function load() {
-    state.loading = true; state.error = null; render();
+    state.loading = true; state.error = null; listRowsCache = null; render();
     return loadWorklist().then(function (d) {
       state.data = d;
       state.groups = d.groups || [];
@@ -438,9 +439,9 @@
 
     var h = [];
 
-    var progress = state.view === "progress";
+    var progress = state.view === "progress", listing = state.view === "list";
     h.push('<div class="crr-head">', "<h2>Common CR Reference</h2>");
-    if (!progress) {
+    if (!progress && !listing) {
       h.push('<div class="crr-sub">A canonical vocabulary for credit recommendations &mdash; what the CER did for ',
         "freehand credential titles, for the freehand recommendation text. Colleges wrote ",
         "<b>" + fmt(s.distinct_strings) + "</b> different strings across <b>" + fmt(s.total_rows) + "</b> articulations; ",
@@ -454,8 +455,17 @@
     h.push('<div class="crr-views" role="group" aria-label="Common CR Reference views">',
       '<button type="button" class="crr-view" data-view="progress" aria-pressed="' + progress + '"',
       ' title="Where the reference stands, in the shape every common reference shares.">Progress</button>',
-      '<button type="button" class="crr-view" data-view="worklist" aria-pressed="' + !progress + '"',
-      ' title="The groups, ranked by collapse value, with a filter for each list.">Worklist</button></div>');
+      '<button type="button" class="crr-view" data-view="worklist" aria-pressed="' + (!progress && !listing) + '"',
+      ' title="The groups, ranked by collapse value, with a filter for each list.">Worklist</button>',
+      '<button type="button" class="crr-view" data-view="list" aria-pressed="' + listing + '"',
+      ' title="Every wording on one sheet, A to Z, its reference edited in place.">List</button></div>');
+    if (listing) {
+      h.push('<div id="crr-list-mount"></div>');
+      root.innerHTML = h.join("");
+      wire(root);
+      mountList();
+      return;
+    }
     if (progress) {
       h.push('<div id="crr-progress-mount"></div>');
       root.innerHTML = h.join("");
@@ -794,6 +804,185 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
   }
 
+
+  // ── List: every wording on one sheet, A to Z (S542) ─────────────────────
+  // Sam, 2026-11-01, after the Exhibits List: "This new list view is so helpful that I want one now for each of our
+  // Catalog Commons groups." The Catalog Commons' shared engine draws it (commons_list.js); this spec makes it the CR
+  // Reference's: one row per wording colleges wrote (2,344), the reference its group resolves to, the rung that placed
+  // it, its decision and where it is articulated. A reference is renamed in place through the same write the worklist
+  // makes (saveDecision, the group's cr_reference_decisions row: its decision kept, or deferred), so a rename never
+  // settles a group by itself; Confirm and Not a topic sit in the reference's drawer, as on the worklist.
+  var listRowsCache = null, listNamedMemo = null, LIST_ENGINE = null, listLoading = false, listFailed = false;
+  var DECISION_WORDS = { confirmed: "Confirmed", not_a_topic: "Not a topic", deferred: "Deferred", split: "Split", cleared: "" };
+  function listState() { return state.ls || (state.ls = {}); }
+  function listFlat() {
+    if (listRowsCache) return listRowsCache;
+    var out = [];
+    state.groups.forEach(function (g) { (g.members || []).forEach(function (m) { out.push({ ut: m.rec, m: m, g: g }); }); });
+    listRowsCache = out;
+    return out;
+  }
+  function refOf(g) { var d = state.decisions[g.key]; return (d && d.canonical) || g.canonical; }
+  function decisionOf(g) { var d = decidedState(g); return d ? (DECISION_WORDS[d.decision] != null ? DECISION_WORDS[d.decision] : d.decision) : ""; }
+  function listCols() {
+    return [
+      { h: "Wording", w: 20, v: function (r) { return r.m.rec; } },
+      { h: "Reference", w: 18, edit: "reference", v: function (r) { return refOf(r.g); } },
+      { h: "Rung", w: 7, v: function (r) { return (RUNGS[r.g.rung] || RUNGS[5]).label; } },
+      { h: "Decision", w: 7, v: function (r) { return decisionOf(r.g); } },
+      { h: "Articulations", w: 6, n: true, v: function (r) { return r.m.rows; } },
+      { h: "Colleges", w: 5, n: true, v: function (r) { return r.m.colleges_n; } },
+      { h: "Units", w: 6, v: function (r) { return unitRange([r.m]); } },
+      { h: "Credentials", w: 11, v: function (r) { return (r.m.credentials || []).join("; "); } },
+      { h: "Courses", w: 8, v: function (r) { return (r.m.courses || []).join(", "); } },
+      { h: "In group", w: 5, n: true, v: function (r) { return r.g.wordings; } }
+    ];
+  }
+  // The members a decision on this group carries: its own wordings, any pulled in, less any split out (setCanonical's).
+  function groupMembers(g, prev) {
+    var ex = (prev.excluded || []).slice();
+    return { members: g.members.map(function (m) { return m.rec; }).concat(addedTo(g.key))
+      .filter(function (r) { return ex.indexOf(r) < 0; }), excluded: ex };
+  }
+  function listSetReference(g, name) {
+    if (!signedIn()) return Promise.reject(new Error("signin"));
+    var prev = state.decisions[g.key] || {}, gm = groupMembers(g, prev);
+    return saveDecision(g.key, prev.decision || "deferred", name, gm.members, gm.excluded, prev.note);
+  }
+  function listDecide(g, decision) {
+    if (!signedIn()) return Promise.reject(new Error("signin"));
+    var prev = state.decisions[g.key] || {}, gm = groupMembers(g, prev);
+    return saveDecision(g.key, decision, prev.canonical || g.canonical, gm.members, gm.excluded, prev.note || "");
+  }
+  function saveWords(e) {
+    return e && e.message === "signin" ? "Sign in as a reviewer, or unlock with the team phrase, to record it."
+      : (e && e.message) || "no answer";
+  }
+  function listSpec() {
+    return {
+      prefix: "crl-", frPrefix: "crl-fr-",
+      noun: { many: "wordings", region: "Every credit recommendation wording, A to Z", keyHeader: "Wording", file: "cr-reference-list",
+        placeholder: "Wording, reference, credential, course or C-ID", findLabel: "Find in the list" },
+      state: listState, rows: function () { listNamedMemo = null; return listFlat(); }, cols: listCols,
+      key: function (r) { return r.ut; }, title: function (r) { return r.m.rec; }, render: render,
+      head: function (wrap, api) {
+        if (!signedIn()) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "You are not signed in. The list is readable; "
+          + "decisions show and save once you unlock with the team phrase or sign in with a reviewer link." }));
+        else if (state.decisionsStale) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "Could not read the decisions table, so the "
+          + "Decision column and any renamed reference are not shown; this is a failed read, not an empty table. Reload before working." }));
+        return true;
+      },
+      filters: [["", "All"], ["todo", "Needs a decision"], ["auto", "Automatic proposals"], ["done", "Decided"],
+        ["open", "No rule or decision"], ["names", "Name to check"], ["solo", "Single wording"]],
+      filterPass: function (r, L) {
+        var g = r.g, d = decidedState(g);
+        if (L.f === "todo") return needsDecision(g) && !d;
+        if (L.f === "auto") return g.acts_automatically && needsDecision(g);
+        if (L.f === "done") return !!d;
+        if (L.f === "solo") return !needsDecision(g);
+        if (L.f === "open") return isOpen(g, listNamedMemo || (listNamedMemo = curatorNamed()));
+        if (L.f === "names") return isName(g);
+        return true;
+      },
+      hay: function (r) {
+        var g = r.g;
+        return [r.m.rec, refOf(g), g.key, g.official_id, g.official_title, g.cid, (r.m.credentials || []).join(" "),
+          (r.m.courses || []).join(" "), (g.subjects || []).join(" ")].join(" ");
+      },
+      drawer: listDrawer,
+      edit: {
+        fields: [{ id: "crl-ref", label: "Reference for this wording's group", key: "ref" }],
+        draft: function (r) { return { ref: refOf(r.g) }; },
+        save: function (r) {
+          var L = listState(), name = String(L.draft.ref || "").replace(/\s+/g, " ").trim();
+          if (!name) { L.note = "A reference cannot be empty."; render(); return Promise.resolve(); }
+          if (name === refOf(r.g)) { L.edit = null; L.draft = null; L.note = "Nothing changed."; render(); return Promise.resolve(); }
+          L.busy = true; render();
+          return listSetReference(r.g, name).then(function () {
+            L.busy = false; L.edit = null; L.draft = null;
+            L.note = "Saved: the group's " + fmt(r.g.wordings) + (r.g.wordings === 1 ? " wording reads " : " wordings read ") + name + ".";
+            render();
+          }).catch(function (e) { L.busy = false; L.note = "The reference did not save (" + saveWords(e) + "). Nothing changed."; render(); });
+        }
+      },
+      cellSave: function (r, kind, inp, label) {
+        var value = inp.value.replace(/\s+/g, " ").trim(), before = inp.getAttribute("data-was");
+        if (!value) { inp.value = before; LIST_ENGINE.cellNote("A reference cannot be empty; " + before + " stays."); return Promise.resolve(); }
+        if (value === before) { inp.value = before; return Promise.resolve(); }
+        inp.setAttribute("aria-busy", "true");
+        LIST_ENGINE.cellNote("Saving the reference of " + r.m.rec + "…");
+        return listSetReference(r.g, value).then(function () {
+          inp.value = value; inp.setAttribute("data-was", value); inp.removeAttribute("aria-busy");
+          LIST_ENGINE.cellNote("Saved the reference of " + r.m.rec + (r.g.wordings > 1 ? "; its group's other wordings read it too." : "."));
+          // A group of several wordings repaints, so every row of it shows the new reference.
+          if (r.g.wordings > 1) LIST_ENGINE.redraw();
+        }).catch(function (e) {
+          inp.value = before; inp.removeAttribute("aria-busy");
+          LIST_ENGINE.cellNote("The reference of " + r.m.rec + " did not save (" + saveWords(e) + "); it is back as it was.");
+        });
+      }
+    };
+  }
+  function listDrawer(r, name, h) {
+    var g = r.g, m = r.m, rung = RUNGS[g.rung] || RUNGS[5], d = state.decisions[g.key];
+    if (name === "Wording") {
+      h.line(fmt(m.rows) + (m.rows === 1 ? " articulation" : " articulations") + " at " + fmt(m.colleges_n) + (m.colleges_n === 1 ? " college" : " colleges")
+        + ", " + unitRange([m]) + ".");
+      var screens = Object.keys(m.screens || {}).filter(function (k) { return m.screens[k]; });
+      if (screens.length) h.line("Its words mark it as " + screens.join(", ") + ", so it never merges with a wording that differs on that.");
+      if ((m.credentials || []).length) { h.line("Articulated under:"); h.list(m.credentials); }
+    } else if (name === "Reference" || name === "Decision") {
+      h.line("The group (" + fmt(g.wordings) + (g.wordings === 1 ? " wording" : " wordings") + ", " + fmt(g.rows) + " articulations, " + fmt(g.colleges)
+        + " colleges) resolves to " + refOf(g) + ".");
+      if (g.official_id) h.line((g.official_applied ? "Named by its " : "An official title reaches it but was not applied: ")
+        + (g.official_system || "") + " " + g.official_id + (g.official_title ? ", " + g.official_title : "") + ".");
+      h.line(d && d.decision !== "cleared" ? "Decision: " + (DECISION_WORDS[d.decision] || d.decision) + (d.updated_by ? ", by " + d.updated_by : "")
+        + (d.updated_at ? " " + h.stamp(d.updated_at) : "") + "." : "No decision recorded yet.");
+      h.line("Its wordings:");
+      h.list(g.members.map(function (x) { return x.rec + " (" + fmt(x.rows) + ")"; }));
+      var go = function (decision, words) {
+        return function () {
+          LIST_ENGINE.cellNote("Recording " + words.toLowerCase() + " for " + refOf(g) + "…");
+          listDecide(g, decision).then(function () {
+            h.L.open = null; LIST_ENGINE.cellNote("Recorded: " + words.toLowerCase() + ", " + refOf(g) + "."); LIST_ENGINE.redraw();
+          }).catch(function (e) { LIST_ENGINE.cellNote("It did not save (" + saveWords(e) + "). Nothing changed."); });
+        };
+      };
+      h.box.appendChild(h.el("div", { cls: "crl-acts" }, [h.word("Confirm the group", go("confirmed", "Confirmed")),
+        h.word("Not a topic", go("not_a_topic", "Not a topic")),
+        h.word("Open it in the worklist", function () { state.view = "worklist"; state.filter = "all"; state.q = m.rec; state.open[g.key] = true; render(); })]));
+    } else if (name === "Rung") {
+      h.line(rung.label + ": " + (g.rung_why || rung.why));
+    } else if (name === "Credentials") {
+      if (!(m.credentials || []).length) h.line("No credential named.");
+      else (m.credentials || []).forEach(function (c) { h.box.appendChild(h.word("Show every wording under " + c, function () { h.filterBy(h.colIndex("Credentials"), c); })); });
+    } else if (name === "Courses") {
+      if (!(m.courses || []).length) h.line("No course identity reaches it.");
+      else h.list(m.courses);
+    } else {
+      h.line(name + ": " + (listCols()[h.colIndex(name)].v(r) || "none") + ".");
+    }
+  }
+  function listApi() {
+    if (!LIST_ENGINE && window.CPL_COMMONS_LIST) LIST_ENGINE = window.CPL_COMMONS_LIST.create(listSpec());
+    return LIST_ENGINE;
+  }
+  function mountList() {
+    var node = document.getElementById("crr-list-mount");
+    if (!node) return;
+    if (listApi()) { LIST_ENGINE.render(node); return; }
+    if (listFailed) { node.innerHTML = '<div class="crr-warn" role="alert">The List (commons_list.js) could not be loaded. The worklist reads as usual; reload the tab to try again.</div>'; return; }
+    node.innerHTML = '<div class="crr-info">Loading the List&hellip;</div>';
+    var T = window.CPL_TABS;
+    if (listLoading || !T || typeof T.loadScript !== "function") return;
+    listLoading = true;
+    T.loadScript("commons_list.js", "CPL_COMMONS_LIST", function () {
+      listLoading = false;
+      if (!window.CPL_COMMONS_LIST) listFailed = true;
+      if (state.view === "list") render();
+    });
+  }
+
   // ── The Progress view (S437): the Commons' dash for this reference ──────
   // cr_progress.js holds the definitions and commons_progress.js draws them;
   // both load the first time the view opens. The tab lends its filter switch,
@@ -801,7 +990,7 @@
   // table, so the view can say when a sitting has not landed its receipt.
   var FILTERS = ["todo", "auto", "held", "done", "open", "names", "solo", "all"];
   function setView(v) {
-    state.view = v === "progress" ? "progress" : "worklist";
+    state.view = v === "progress" || v === "list" ? v : "worklist";
     render();
   }
   function setFilter(f) {
@@ -842,7 +1031,7 @@
   function routeFromHash() {
     var parts = (location.hash || "").replace(/^#/, "").split("/");
     if (parts[0] !== "cr-reference" || !parts[1]) return false;
-    if (parts[1] === "progress" || parts[1] === "worklist") { state.view = parts[1]; return true; }
+    if (parts[1] === "progress" || parts[1] === "worklist" || parts[1] === "list") { state.view = parts[1]; return true; }
     if (FILTERS.indexOf(parts[1]) < 0) return false;
     state.view = "worklist"; state.filter = parts[1]; state.limit = 60;
     return true;
@@ -851,6 +1040,7 @@
 
   function activate() {
     ensureCss();
+    state.ls = null;
     routeFromHash();
     if (!hashWired) {
       hashWired = true;
