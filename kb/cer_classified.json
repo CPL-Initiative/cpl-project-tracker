@@ -22045,6 +22045,27 @@
    "hints": "69da516aab",
    "asked": "2026-10-18"
   },
+  "Theater Arts Portfolio Review": {
+   "raw_title": "Theater Arts Portfolio Review",
+   "unified_title": "Theatre Arts",
+   "issuing_agency": "California Community Colleges",
+   "training_agency": null,
+   "confidence_title": 0.75,
+   "confidence_issuer": 0.9,
+   "confidence_trainer": 0.85,
+   "procedures": [
+    "course-identity",
+    "mechanism-collapses",
+    "join-when-likely-one",
+    "Rule 5c",
+    "Rule 1",
+    "Rule 2"
+   ],
+   "_notes": "The 'Portfolio Review' mechanism phrase was stripped, and the row joins the existing house family 'Theatre Arts' (CCC); the hint's 'Theater' spelling differs only in spelling. The exhibit names no specific course, so the College of the Desert target course should be checked against COCI for a CCN or C-ID title, or for a batch umbrella.",
+   "rules": "d20f2caab9db",
+   "hints": "11595d5d10",
+   "asked": "2026-11-01"
+  },
   "Transport and Supply HS-BVROP": {
    "raw_title": "Transport and Supply HS-BVROP",
    "unified_title": "Transport and Supply",

@@ -1,0 +1,2864 @@
+{
+ "college": "Gavilan College",
+ "homepage": "https://www.gavilan.edu/",
+ "read_at": "2026-11-01T14:21:27+00:00",
+ "pages": [
+  {
+   "url": "https://www.gavilan.edu/",
+   "final_url": "https://www.gavilan.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Pedro Avila - President",
+     "position": "college_ceo",
+     "window": [
+      "Hollister Campus, Enroll Now",
+      "Take classes at the Hollister Campus.",
+      "Read more about Hollister Campus, Enroll Now",
+      "Dr. Pedro Avila - President",
+      "Student and Staff Portal",
+      "Steps for New Students",
+      "Online Support"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/about/directory.php",
+   "final_url": "https://www.gavilan.edu/staff/dir.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Human Resources",
+     "position": null,
+     "window": [
+      "Spanish",
+      "malnas@gavilan.edu",
+      "Lucy Alvarez",
+      "Vice President, Human Resources",
+      "Human Resources",
+      "lalvarez@gavilan.edu",
+      "408-846-4964"
+     ],
+     "emails": [
+      "lalvarez@gavilan.edu",
+      "malnas@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Business Services",
+     "position": null,
+     "window": [
+      "408-848-4796",
+      "MU 105",
+      "Michelle Anaya",
+      "Director, Business Services",
+      "Business Services",
+      "manaya@gavilan.edu",
+      "408-848-4739"
+     ],
+     "emails": [
+      "manaya@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Chem/Bio Lab Coordinator",
+     "position": null,
+     "window": [
+      "NonCredit",
+      "aao@gavilan.edu",
+      "Rachel Araiza",
+      "Chem/Bio Lab Coordinator",
+      "Chemistry",
+      "raraiza@gavilan.edu",
+      "408-848-4835"
+     ],
+     "emails": [
+      "aao@gavilan.edu",
+      "raraiza@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Allied Health",
+      "mauburt@gavilan.edu",
+      "Pedro Avila",
+      "Superintendent/President",
+      "President",
+      "pedroavila@gavilan.edu",
+      "408-848-4712"
+     ],
+     "emails": [
+      "mauburt@gavilan.edu",
+      "pedroavila@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "mauburt@gavilan.edu",
+      "Pedro Avila",
+      "Superintendent/President",
+      "President",
+      "pedroavila@gavilan.edu",
+      "408-848-4712",
+      "LSRC 228"
+     ],
+     "emails": [
+      "mauburt@gavilan.edu",
+      "pedroavila@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Information Tech",
+     "position": null,
+     "window": [
+      "408-848-4792",
+      "SF 107",
+      "Kyle Billups",
+      "Director, Information Tech",
+      "Information Technology",
+      "kbillups@gavilan.edu",
+      "408-846-4901"
+     ],
+     "emails": [
+      "kbillups@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Financial Aid",
+     "position": null,
+     "window": [
+      "408-848-4805",
+      "CDC 129",
+      "Kelli Bostwick",
+      "Director, Financial Aid",
+      "Financial Aid",
+      "kbostwick@gavilan.edu",
+      "408-848-4725"
+     ],
+     "emails": [
+      "kbostwick@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Community, Continuing, Corporate Education and Grants",
+     "position": null,
+     "window": [
+      "408-846-4975",
+      "MS 112",
+      "Rosio Bugarin Pedroso",
+      "Director, Community, Continuing, Corporate Education and Grants",
+      "NonCredit",
+      "rpedroso@gavilan.edu",
+      "408-848-4847"
+     ],
+     "emails": [
+      "rpedroso@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "Theatre/Dramatic Arts",
+      "bcarmack@gavilan.edu",
+      "Steve Carpenter",
+      "Campus Security Officer",
+      "Security",
+      "scarpenter@gavilan.edu",
+      "408-848-4703"
+     ],
+     "emails": [
+      "bcarmack@gavilan.edu",
+      "scarpenter@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, Career Education and Workforce Development",
+     "position": "dean_cte",
+     "window": [
+      "Spanish",
+      "lcervantes@gavilan.edu",
+      "Vins Chacko",
+      "Dean, Career Education and Workforce Development",
+      "Career Education (CE)",
+      "vchacko@gavilan.edu",
+      "408-848-4757"
+     ],
+     "emails": [
+      "lcervantes@gavilan.edu",
+      "vchacko@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "Sociology",
+      "mchap@gavilan.edu",
+      "Pam Chatten",
+      "Campus Security Officer",
+      "Security",
+      "pchatten@gavilan.edu",
+      "408-848-4703"
+     ],
+     "emails": [
+      "mchap@gavilan.edu",
+      "pchatten@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, Student Support",
+     "position": null,
+     "window": [
+      "Rising Scholars Network",
+      "mchristian@gavilan.edu",
+      "Carina Cisneros",
+      "Dean, Student Support",
+      "EOPS",
+      "ccisneros@gavilan.edu",
+      "408-848-4772"
+     ],
+     "emails": [
+      "ccisneros@gavilan.edu",
+      "mchristian@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Institutional Research and Planning",
+     "position": null,
+     "window": [
+      "Theatre/Dramatic Arts",
+      "mcruz@gavilan.edu",
+      "Hazel De Ausen (She/Her/Hers)",
+      "Director, Institutional Research and Planning",
+      "RPIE",
+      "hdeausen@gavilan.edu",
+      "408-852-2820"
+     ],
+     "emails": [
+      "hdeausen@gavilan.edu",
+      "mcruz@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Chem/Bio Lab Coordinator",
+     "position": null,
+     "window": [
+      "408-852-2858",
+      "CDC 134",
+      "Melanie Deiss",
+      "Chem/Bio Lab Coordinator",
+      "Biology",
+      "mdeiss@gavilan.edu",
+      "Darlene Del Carmen"
+     ],
+     "emails": [
+      "mdeiss@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "MP 105",
+      "Jennifer Dinis",
+      "Executive Asst. to President and Gavilan Foundation",
+      "President",
+      "jdinis@gavilan.edu",
+      "408-852-2803",
+      "LSRC 220"
+     ],
+     "emails": [
+      "jdinis@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Business & Commerce",
+      "tfarr@gavilan.edu",
+      "Moaty Fayek (He/Him/His)",
+      "Vice President, Academic Affairs",
+      "Office of VP Academic Affairs",
+      "mfayek@gavilan.edu",
+      "408-852-2814"
+     ],
+     "emails": [
+      "mfayek@gavilan.edu",
+      "tfarr@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Capital Projects",
+     "position": null,
+     "window": [
+      "408-852-2814",
+      "SS 117",
+      "Serafin Fernandez (He/Him/His)",
+      "Director, Capital Projects",
+      "Office, Administrative Services",
+      "sfernandez@gavilan.edu",
+      "408-852-2878"
+     ],
+     "emails": [
+      "sfernandez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Accessible Education Center",
+     "position": null,
+     "window": [
+      "Library",
+      "bgaffney@gavilan.edu",
+      "Stephen Gaitan",
+      "Director, Accessible Education Center",
+      "AEC",
+      "sgaitan@gavilan.edu",
+      "408-848-4871"
+     ],
+     "emails": [
+      "bgaffney@gavilan.edu",
+      "sgaitan@gavilan.edu"
+     ]
+    },
+    {
+     "line": "South Bay Regional Director",
+     "position": null,
+     "window": [
+      "Social Science",
+      "jgamboa@gavilan.edu",
+      "Pamela Gangloff",
+      "South Bay Regional Director",
+      "JPA - Police Academy",
+      "pgangloff@gavilan.edu",
+      "Erin Garcia"
+     ],
+     "emails": [
+      "jgamboa@gavilan.edu",
+      "pgangloff@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Asst, Vice President",
+     "position": null,
+     "window": [
+      "JPA - Police Academy",
+      "pgangloff@gavilan.edu",
+      "Erin Garcia",
+      "Executive Asst, Vice President",
+      "Office, Student Services",
+      "egarcia@gavilan.edu",
+      "408-848-4738"
+     ],
+     "emails": [
+      "egarcia@gavilan.edu",
+      "pgangloff@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "408-848-4738",
+      "LSRC 221",
+      "Hunter Garcia",
+      "Campus Security Officer",
+      "Security",
+      "hgarcia@gavilan.edu",
+      "Isela Garcia"
+     ],
+     "emails": [
+      "hgarcia@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "Counseling",
+      "egoble@gavilan.edu",
+      "David Godoy",
+      "Campus Security Officer",
+      "Security",
+      "dgodoy@gavilan.edu",
+      "Tamara Goldie (She/Her/Hers)"
+     ],
+     "emails": [
+      "dgodoy@gavilan.edu",
+      "egoble@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "mguerrero@gavilan.edu",
+      "LSRC 164",
+      "John Guevara",
+      "Campus Security Officer",
+      "Security",
+      "johnathan.guevara@my.gavilan.edu",
+      "408-848-4703"
+     ],
+     "emails": [
+      "johnathan.guevara@my.gavilan.edu",
+      "mguerrero@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Stu Basic Needs & Su",
+     "position": null,
+     "window": [
+      "Studio Arts",
+      "dgustlin@gavilan.edu",
+      "Annette Gutierrez",
+      "Director, Stu Basic Needs & Su",
+      "CalWORKs",
+      "agutierrez@gavilan.edu",
+      "408-848-4813"
+     ],
+     "emails": [
+      "agutierrez@gavilan.edu",
+      "dgustlin@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "ygutierrez@gavilan.edu",
+      "Katrina Guzman",
+      "Program Services Specialist",
+      "Veteran Resource Center",
+      "kguzman@gavilan.edu",
+      "408-848-4787",
+      "LSRC 133"
+     ],
+     "emails": [
+      "kguzman@gavilan.edu",
+      "ygutierrez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Admissions & Records",
+     "position": "dean_ar",
+     "window": [
+      "408-846-4993",
+      "LSRC 148",
+      "Irene Haneta",
+      "Director, Admissions & Records",
+      "Admissions & Records",
+      "ihaneta@gavilan.edu",
+      "408-848-4754"
+     ],
+     "emails": [
+      "ihaneta@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Foundation",
+     "position": null,
+     "window": [
+      "408-848-4817",
+      "CDC 128",
+      "Anna Hernandez",
+      "Director, Foundation",
+      "President",
+      "aquinones@gavilan.edu",
+      "408-229-4208"
+     ],
+     "emails": [
+      "aquinones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "CDC 128",
+      "Anna Hernandez",
+      "Director, Foundation",
+      "President",
+      "aquinones@gavilan.edu",
+      "408-229-4208",
+      "Coyote Valley"
+     ],
+     "emails": [
+      "aquinones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, Arts, Humanities, Social Science",
+     "position": null,
+     "window": [
+      "408-846-4975",
+      "SF",
+      "Carla Johnson",
+      "Dean, Arts, Humanities, Social Science",
+      "Division Office, AHSS",
+      "cajohnson@gavilan.edu",
+      "408-848-4702"
+     ],
+     "emails": [
+      "cajohnson@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Asst. to President",
+     "position": "college_ceo",
+     "window": [
+      "ejohnson@gavilan.edu",
+      "408-848-4859",
+      "Michelle Jones",
+      "Executive Asst. to President",
+      "President",
+      "mjones@gavilan.edu",
+      "408-848-4711"
+     ],
+     "emails": [
+      "ejohnson@gavilan.edu",
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "408-848-4859",
+      "Michelle Jones",
+      "Executive Asst. to President",
+      "President",
+      "mjones@gavilan.edu",
+      "408-848-4711",
+      "LSRC 220"
+     ],
+     "emails": [
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Coordinator, Student Life and Engagement",
+     "position": null,
+     "window": [
+      "Astronomy",
+      "skemp@gavilan.edu",
+      "Ken Kennedy (He/Him/His)",
+      "Coordinator, Student Life and Engagement",
+      "Division Office, Special Programs",
+      "kkennedy@gavilan.edu",
+      "Torisha Khonach (She/Her/Hers)"
+     ],
+     "emails": [
+      "kkennedy@gavilan.edu",
+      "skemp@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Payroll Officer",
+     "position": null,
+     "window": [
+      "408-848-4809",
+      "LI 155",
+      "Chris Krygier (He/Him/His)",
+      "Payroll Officer",
+      "Business Services",
+      "ckrygier@gavilan.edu",
+      "408-852-2899"
+     ],
+     "emails": [
+      "ckrygier@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Chem/Bio Lab Coordinator",
+     "position": null,
+     "window": [
+      "Program Mngmt, Planning and Support",
+      "clagunadeflores@gavilan.edu",
+      "Alyssa Lai",
+      "Chem/Bio Lab Coordinator",
+      "Chemistry",
+      "alai@gavilan.edu",
+      "408-848-4835"
+     ],
+     "emails": [
+      "alai@gavilan.edu",
+      "clagunadeflores@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Accessibility and Assistive Technology Coordinator",
+     "position": null,
+     "window": [
+      "Allied Health",
+      "jlara@gavilan.edu",
+      "Marina Lares",
+      "Accessibility and Assistive Technology Coordinator",
+      "AEC",
+      "mlares@gavilan.edu",
+      "408-848-4788"
+     ],
+     "emails": [
+      "jlara@gavilan.edu",
+      "mlares@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Studio Art Technical Coordinator",
+     "position": null,
+     "window": [
+      "History",
+      "clasley@gavilan.edu",
+      "Sophia Lastra",
+      "Studio Art Technical Coordinator",
+      "Studio Arts",
+      "slastra@gavilan.edu",
+      "Benjamin Latham (He/Him/His)"
+     ],
+     "emails": [
+      "clasley@gavilan.edu",
+      "slastra@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "408-848-4885",
+      "LSRC 203",
+      "Ismael Lemus",
+      "Campus Security Officer",
+      "Security",
+      "ilemus@gavilan.edu",
+      "Ruben Lerma III"
+     ],
+     "emails": [
+      "ilemus@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Asst, Vice President",
+     "position": null,
+     "window": [
+      "Computer Science",
+      "mlin@gavilan.edu",
+      "Miressa Lira",
+      "Executive Asst, Vice President",
+      "Office, Administrative Services",
+      "mlira@gavilan.edu",
+      "408-848-4744"
+     ],
+     "emails": [
+      "mlin@gavilan.edu",
+      "mlira@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Academic Scheduling Coordinator",
+     "position": null,
+     "window": [
+      "408-848-4858",
+      "LSRC 127",
+      "Lupe Lopez",
+      "Academic Scheduling Coordinator",
+      "BFAP-Staffing",
+      "llopez@gavilan.edu",
+      "408-846-4980"
+     ],
+     "emails": [
+      "llopez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Outreach and Educational Partnerships",
+     "position": null,
+     "window": [
+      "NonCredit",
+      "bmancini@gavilan.edu",
+      "Lelannie Mann",
+      "Director, Outreach and Educational Partnerships",
+      "Title V INICIO",
+      "lmann@gavilan.edu",
+      "408-852-2873"
+     ],
+     "emails": [
+      "bmancini@gavilan.edu",
+      "lmann@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Asst, Vice President",
+     "position": null,
+     "window": [
+      "408-848-4891",
+      "LSRC 115",
+      "Victoria Masey",
+      "Executive Asst, Vice President",
+      "Office of VP Academic Affairs",
+      "vmasey@gavilan.edu",
+      "408-848-4761"
+     ],
+     "emails": [
+      "vmasey@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, Nursing and Allied Health",
+     "position": null,
+     "window": [
+      "408-848-4761",
+      "LSRC 221",
+      "Sana Massad",
+      "Dean, Nursing and Allied Health",
+      "Allied Health",
+      "smassad@gavilan.edu",
+      "408-848-4866"
+     ],
+     "emails": [
+      "smassad@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Payroll Officer",
+     "position": null,
+     "window": [
+      "408-848-4866",
+      "NAH 107",
+      "Margie Mastrini (She/Her/Hers)",
+      "Payroll Officer",
+      "Business Services",
+      "mmastrini@gavilan.edu",
+      "408-848-4718"
+     ],
+     "emails": [
+      "mmastrini@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Facilities Services",
+     "position": null,
+     "window": [
+      "408-848-4869",
+      "NAH 109",
+      "Edward Medal",
+      "Director, Facilities Services",
+      "Facilities/Maintenance",
+      "emedal@gavilan.edu",
+      "408-848-4705"
+     ],
+     "emails": [
+      "emedal@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Admin Services",
+     "position": null,
+     "window": [
+      "831-636-3783",
+      "Hollister (A107)",
+      "Marilyn Morikang",
+      "Vice President, Admin Services",
+      "Office, Administrative Services",
+      "mmorikang@gavilan.edu",
+      "408-848-4715"
+     ],
+     "emails": [
+      "mmorikang@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant, Chief Human Resources Officer",
+     "position": null,
+     "window": [
+      "Mathematic",
+      "tnaik@gavilan.edu",
+      "Norma Najar-Santoyo",
+      "Executive Assistant, Chief Human Resources Officer",
+      "Human Resources",
+      "nnajar@gavilan.edu",
+      "408-852-2823"
+     ],
+     "emails": [
+      "nnajar@gavilan.edu",
+      "tnaik@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, STEM",
+     "position": null,
+     "window": [
+      "408-852-2825",
+      "CDC 139",
+      "Jennifer Nari (She/Her/Hers)",
+      "Dean, STEM",
+      "Mathematic",
+      "jnari@gavilan.edu",
+      "408-852-2880"
+     ],
+     "emails": [
+      "jnari@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Interim Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "pomidi@gavilan.edu",
+      "408-848-4701",
+      "Newin Paul Orante",
+      "Interim Vice President, Student Services",
+      "Office of VP Academic Affairs",
+      "norante@gavilan.edu",
+      "408-848-4760"
+     ],
+     "emails": [
+      "norante@gavilan.edu",
+      "pomidi@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Interim Director, Library, Learning Resources and Distance Education",
+     "position": null,
+     "window": [
+      "Basic Needs & Success",
+      "ygarnica@gavilan.edu",
+      "Christopher Padgett",
+      "Interim Director, Library, Learning Resources and Distance Education",
+      "Library",
+      "cpadgett@gavilan.edu",
+      "408-848-4886"
+     ],
+     "emails": [
+      "cpadgett@gavilan.edu",
+      "ygarnica@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean Peralta",
+     "position": null,
+     "window": [
+      "PT Faculty",
+      "Mathematic",
+      "jpelias@gavilan.edu",
+      "Dean Peralta",
+      "PT Faculty",
+      "Allied Health",
+      "nperalta@gavilan.edu"
+     ],
+     "emails": [
+      "jpelias@gavilan.edu",
+      "nperalta@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Chem/Bio Lab Coordinator",
+     "position": null,
+     "window": [
+      "French",
+      "lquijano@gavilan.edu",
+      "Maria Quist-Shorey",
+      "Chem/Bio Lab Coordinator",
+      "Chemistry",
+      "mshorey@gavilan.edu",
+      "408-848-4835"
+     ],
+     "emails": [
+      "lquijano@gavilan.edu",
+      "mshorey@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Theater Technical Coordinator",
+     "position": null,
+     "window": [
+      "408-848-4835",
+      "PS 108",
+      "Isabel Quistian",
+      "Theater Technical Coordinator",
+      "Theatre/Dramatic Arts",
+      "iquistian@gavilan.edu",
+      "408-848-4822"
+     ],
+     "emails": [
+      "iquistian@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "Physics",
+      "mrocha@gavilan.edu",
+      "Diana Rocha Rocha-Serrano (She/Her/Hers)",
+      "Campus Security Officer",
+      "Parking",
+      "drocha@gavilan.edu",
+      "Judy Rodriguez"
+     ],
+     "emails": [
+      "drocha@gavilan.edu",
+      "mrocha@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Instructional Site",
+     "position": null,
+     "window": [
+      "Parking",
+      "drocha@gavilan.edu",
+      "Judy Rodriguez",
+      "Director, Instructional Site",
+      "Hollister Campus",
+      "jrodriguez@gavilan.edu",
+      "831-636-3783"
+     ],
+     "emails": [
+      "drocha@gavilan.edu",
+      "jrodriguez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Coordinator, Higher Aspirations Juvenile Justice",
+     "position": null,
+     "window": [
+      "NonCredit",
+      "rrodriguez@gavilan.edu",
+      "Robb Rodriguez",
+      "Coordinator, Higher Aspirations Juvenile Justice",
+      "Juvenile Justice Program",
+      "rorodriguez@gavilan.edu",
+      "408-848-4854"
+     ],
+     "emails": [
+      "rorodriguez@gavilan.edu",
+      "rrodriguez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Marketing and Communications",
+     "position": null,
+     "window": [
+      "408-848-4893",
+      "LSRC 112",
+      "Tanaya Stumpf",
+      "Director, Marketing and Communications",
+      "Public Information Office",
+      "tstumpf@gavilan.edu",
+      "408-848-4724"
+     ],
+     "emails": [
+      "tstumpf@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/student/veterans/veterans.php",
+   "final_url": "https://www.gavilan.edu/student/veterans/veterans.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center >",
+     "position": "vrc",
+     "window": [
+      "Educational Foundation",
+      "Home >",
+      "Student Services >",
+      "Veterans Resource Center >",
+      "Veterans Checklist",
+      "Veterans Checklist",
+      "First time using your VA Education Benefits at Gavilan College? You're in the right place!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Next up, you need to submit a few documents to the Veterans Resource Center:",
+     "position": "vrc",
+     "window": [
+      "Complete your FAFSA",
+      "Apply for FAFSA (Free Application for Federal Student Aid) at www.fafsa.ed.gov . You may be entitled to financial aid and fee waivers in addition to your GI Bill®. If you need assistance filling these out please stop by the VRC for help.",
+      "Submit Documentation",
+      "Next up, you need to submit a few documents to the Veterans Resource Center:",
+      "DD FORM 214, MEMBER 4: Send a copy of your DD Form 214 (Member 4) to the VRC at vrc@gavilan.edu vrc@gavilan.edu",
+      "VA CERTIFICATE OF ELIGIBILITY (CoE): Send a copy of your VA CoE for Education Benefits to the VRC at vrc@gavilan.edu vrc@gavilan.edu. The VA will mail this to you after you’ve applied for your GI Bill® benefits online. The CoE shows which GI Bill® Chapter you are eligible for and at what percentage. If you don't have it yet, that's okay. Just be sure to send it once you receive it.",
+      "Order official transcripts from previous colleges"
+     ],
+     "emails": [
+      "vrc@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/administration/index.php",
+   "final_url": "https://www.gavilan.edu/administration/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Executive Leadership Team",
+      "Executive Leadership Team",
+      "Dr. Pedro Avila",
+      "Superintendent/President",
+      "Dr. Avila is responsible for providing leadership, strategic direction, and management of the college and all its departments, including the administration of the college's business activities and the operation of campus facilities. To assist in these duties, he delegates and assigns responsibilities to his senior staff members.",
+      "Executive Assistant, President's Office and Board of Trustees - Michelle Jones",
+      "(408) 848-4711 mjones@gavilan.edu mjones@gavilan.edu"
+     ],
+     "emails": [
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant, President's Office and Board of Trustees - Michelle Jones",
+     "position": "college_ceo",
+     "window": [
+      "Dr. Pedro Avila",
+      "Superintendent/President",
+      "Dr. Avila is responsible for providing leadership, strategic direction, and management of the college and all its departments, including the administration of the college's business activities and the operation of campus facilities. To assist in these duties, he delegates and assigns responsibilities to his senior staff members.",
+      "Executive Assistant, President's Office and Board of Trustees - Michelle Jones",
+      "(408) 848-4711 mjones@gavilan.edu mjones@gavilan.edu",
+      "Executive Assistant, President's Office and Foundation - Jennifer Dinis",
+      "(408) 852-2803 jdinis@gavilan.edu jdinis@gavilan.edu"
+     ],
+     "emails": [
+      "jdinis@gavilan.edu",
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Visit the Office of the President webpage",
+     "position": "college_ceo",
+     "window": [
+      "(408) 848-4711 mjones@gavilan.edu mjones@gavilan.edu",
+      "Executive Assistant, President's Office and Foundation - Jennifer Dinis",
+      "(408) 852-2803 jdinis@gavilan.edu jdinis@gavilan.edu",
+      "Visit the Office of the President webpage",
+      "Dr. Newin Orante",
+      "Interim Vice President of Student Services",
+      "Dr. Orante is responsible for the administration of all Student Services at Gavilan College. This includes Admissions & Records, Financial Aid, Counseling, Student Success & Equity, and Student Support Programs."
+     ],
+     "emails": [
+      "jdinis@gavilan.edu",
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Interim Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "(408) 852-2803 jdinis@gavilan.edu jdinis@gavilan.edu",
+      "Visit the Office of the President webpage",
+      "Dr. Newin Orante",
+      "Interim Vice President of Student Services",
+      "Dr. Orante is responsible for the administration of all Student Services at Gavilan College. This includes Admissions & Records, Financial Aid, Counseling, Student Success & Equity, and Student Support Programs.",
+      "Contact: rcraigmarius@gavilan.edu vpss@gavilan.edu",
+      "Executive Assistant - Erin Garcia"
+     ],
+     "emails": [
+      "jdinis@gavilan.edu",
+      "rcraigmarius@gavilan.edu",
+      "vpss@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "408-848-4738 egarcia@gavilan.edu egarcia@gavilan.edu",
+      "Visit the Student Services webpage",
+      "Marilyn Morikang",
+      "Vice President, Administrative Services",
+      "Marilyn Morikang oversees college fiscal services, including budget and finance, and college operations, bond measure projects, technology, sustainability programs and emergency preparedness.",
+      "408-848-4715 mmorikang@gavilan.edu mmorikang@gavilan.edu",
+      "Executive Assistant - Miressa Lira"
+     ],
+     "emails": [
+      "egarcia@gavilan.edu",
+      "mmorikang@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Management Team",
+      "Measure E Facilities Bond",
+      "Mission Statement",
+      "Office of the President",
+      "Policies and Procedures",
+      "Title V Grants",
+      "Plans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/about/president/index.php",
+   "final_url": "https://www.gavilan.edu/about/president/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Gavilan President Dr. Pedro Avila - Gavilan College",
+     "position": "college_ceo",
+     "window": [
+      "Gavilan President Dr. Pedro Avila - Gavilan College",
+      "Skip to content",
+      "Students",
+      "Intranet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Educational Foundation",
+      "Home >",
+      "About Gavilan >",
+      "Office of the President",
+      "Gavilan President Dr. Pedro Avila",
+      "View Messages from the President",
+      "President Avila became Gavilan's 8th President upon approval from the Gavilan Joint Community Districts Board of Trustees meeting on Tuesday, July 12, 2022. As Gavilan president, Avila leads a team of senior staff including vice presidents and associate vice presidents of Instruction, Administrative Services, Student Services and the Public Information Office."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Gavilan President Dr. Pedro Avila",
+     "position": "college_ceo",
+     "window": [
+      "Home >",
+      "About Gavilan >",
+      "Office of the President",
+      "Gavilan President Dr. Pedro Avila",
+      "View Messages from the President",
+      "President Avila became Gavilan's 8th President upon approval from the Gavilan Joint Community Districts Board of Trustees meeting on Tuesday, July 12, 2022. As Gavilan president, Avila leads a team of senior staff including vice presidents and associate vice presidents of Instruction, Administrative Services, Student Services and the Public Information Office.",
+      "Previously, President Avila served as the Vice President of Student Services at Santa Rosa Junior College. He has worked in the community college system for 20 years and has led several successful initiatives to increase college-going rates for underrepresented student populations."
+     ],
+     "emails": []
+    },
+    {
+     "line": "View Messages from the President",
+     "position": "college_ceo",
+     "window": [
+      "About Gavilan >",
+      "Office of the President",
+      "Gavilan President Dr. Pedro Avila",
+      "View Messages from the President",
+      "President Avila became Gavilan's 8th President upon approval from the Gavilan Joint Community Districts Board of Trustees meeting on Tuesday, July 12, 2022. As Gavilan president, Avila leads a team of senior staff including vice presidents and associate vice presidents of Instruction, Administrative Services, Student Services and the Public Information Office.",
+      "Previously, President Avila served as the Vice President of Student Services at Santa Rosa Junior College. He has worked in the community college system for 20 years and has led several successful initiatives to increase college-going rates for underrepresented student populations.",
+      "President Avila holds degrees in Latino studies and business from Fresno State University. A Master in Business Administration from Rockhurst University and a Certificate in Institutional Performance Assessment from Harvard’s Higher Education Institute. He holds a Doctorate in Community College Policy from the University of Maryland."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Get to Know President Avila",
+     "position": "college_ceo",
+     "window": [
+      "His administrative experience includes serving as Associate Vice Chancellor of Enrollment Management, Admissions & Records, and Information Systems at State Center Community College District. At West Hills Community College District, he served as Vice President of Student Services and Vice-Chancellor of Institutional Effectiveness & Enrollment Management.",
+      "Dr. Avila’s work is grounded in his experiences as an immigrant, English-language learner, and first-generation college student.",
+      "Please click here to access Dr. Avila's full Bio",
+      "Get to Know President Avila",
+      "President Avila is eager to get to know Gavilan students and the community, if you are interested in meeting with Dr. Avila during office hours, please contact Michelle Jones (mjones@gavilan.edu or 408-848-4711) in the President’s Office.",
+      "Quick Links",
+      "About President Avila"
+     ],
+     "emails": [
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "About President Avila",
+     "position": "college_ceo",
+     "window": [
+      "Get to Know President Avila",
+      "President Avila is eager to get to know Gavilan students and the community, if you are interested in meeting with Dr. Avila during office hours, please contact Michelle Jones (mjones@gavilan.edu or 408-848-4711) in the President’s Office.",
+      "Quick Links",
+      "About President Avila",
+      "President's Messages",
+      "Executive Leadership Team",
+      "Management Team"
+     ],
+     "emails": [
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President's Messages",
+     "position": "college_ceo",
+     "window": [
+      "President Avila is eager to get to know Gavilan students and the community, if you are interested in meeting with Dr. Avila during office hours, please contact Michelle Jones (mjones@gavilan.edu or 408-848-4711) in the President’s Office.",
+      "Quick Links",
+      "About President Avila",
+      "President's Messages",
+      "Executive Leadership Team",
+      "Management Team",
+      "Board of Trustees"
+     ],
+     "emails": [
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/staff/dir.php",
+   "final_url": "https://www.gavilan.edu/staff/dir.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Human Resources",
+     "position": null,
+     "window": [
+      "Spanish",
+      "malnas@gavilan.edu",
+      "Lucy Alvarez",
+      "Vice President, Human Resources",
+      "Human Resources",
+      "lalvarez@gavilan.edu",
+      "408-846-4964"
+     ],
+     "emails": [
+      "lalvarez@gavilan.edu",
+      "malnas@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Business Services",
+     "position": null,
+     "window": [
+      "408-848-4796",
+      "MU 105",
+      "Michelle Anaya",
+      "Director, Business Services",
+      "Business Services",
+      "manaya@gavilan.edu",
+      "408-848-4739"
+     ],
+     "emails": [
+      "manaya@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Chem/Bio Lab Coordinator",
+     "position": null,
+     "window": [
+      "NonCredit",
+      "aao@gavilan.edu",
+      "Rachel Araiza",
+      "Chem/Bio Lab Coordinator",
+      "Chemistry",
+      "raraiza@gavilan.edu",
+      "408-848-4835"
+     ],
+     "emails": [
+      "aao@gavilan.edu",
+      "raraiza@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Allied Health",
+      "mauburt@gavilan.edu",
+      "Pedro Avila",
+      "Superintendent/President",
+      "President",
+      "pedroavila@gavilan.edu",
+      "408-848-4712"
+     ],
+     "emails": [
+      "mauburt@gavilan.edu",
+      "pedroavila@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "mauburt@gavilan.edu",
+      "Pedro Avila",
+      "Superintendent/President",
+      "President",
+      "pedroavila@gavilan.edu",
+      "408-848-4712",
+      "LSRC 228"
+     ],
+     "emails": [
+      "mauburt@gavilan.edu",
+      "pedroavila@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Information Tech",
+     "position": null,
+     "window": [
+      "408-848-4792",
+      "SF 107",
+      "Kyle Billups",
+      "Director, Information Tech",
+      "Information Technology",
+      "kbillups@gavilan.edu",
+      "408-846-4901"
+     ],
+     "emails": [
+      "kbillups@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Financial Aid",
+     "position": null,
+     "window": [
+      "408-848-4805",
+      "CDC 129",
+      "Kelli Bostwick",
+      "Director, Financial Aid",
+      "Financial Aid",
+      "kbostwick@gavilan.edu",
+      "408-848-4725"
+     ],
+     "emails": [
+      "kbostwick@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Community, Continuing, Corporate Education and Grants",
+     "position": null,
+     "window": [
+      "408-846-4975",
+      "MS 112",
+      "Rosio Bugarin Pedroso",
+      "Director, Community, Continuing, Corporate Education and Grants",
+      "NonCredit",
+      "rpedroso@gavilan.edu",
+      "408-848-4847"
+     ],
+     "emails": [
+      "rpedroso@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "Theatre/Dramatic Arts",
+      "bcarmack@gavilan.edu",
+      "Steve Carpenter",
+      "Campus Security Officer",
+      "Security",
+      "scarpenter@gavilan.edu",
+      "408-848-4703"
+     ],
+     "emails": [
+      "bcarmack@gavilan.edu",
+      "scarpenter@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, Career Education and Workforce Development",
+     "position": "dean_cte",
+     "window": [
+      "Spanish",
+      "lcervantes@gavilan.edu",
+      "Vins Chacko",
+      "Dean, Career Education and Workforce Development",
+      "Career Education (CE)",
+      "vchacko@gavilan.edu",
+      "408-848-4757"
+     ],
+     "emails": [
+      "lcervantes@gavilan.edu",
+      "vchacko@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "Sociology",
+      "mchap@gavilan.edu",
+      "Pam Chatten",
+      "Campus Security Officer",
+      "Security",
+      "pchatten@gavilan.edu",
+      "408-848-4703"
+     ],
+     "emails": [
+      "mchap@gavilan.edu",
+      "pchatten@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, Student Support",
+     "position": null,
+     "window": [
+      "Rising Scholars Network",
+      "mchristian@gavilan.edu",
+      "Carina Cisneros",
+      "Dean, Student Support",
+      "EOPS",
+      "ccisneros@gavilan.edu",
+      "408-848-4772"
+     ],
+     "emails": [
+      "ccisneros@gavilan.edu",
+      "mchristian@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Institutional Research and Planning",
+     "position": null,
+     "window": [
+      "Theatre/Dramatic Arts",
+      "mcruz@gavilan.edu",
+      "Hazel De Ausen (She/Her/Hers)",
+      "Director, Institutional Research and Planning",
+      "RPIE",
+      "hdeausen@gavilan.edu",
+      "408-852-2820"
+     ],
+     "emails": [
+      "hdeausen@gavilan.edu",
+      "mcruz@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Chem/Bio Lab Coordinator",
+     "position": null,
+     "window": [
+      "408-852-2858",
+      "CDC 134",
+      "Melanie Deiss",
+      "Chem/Bio Lab Coordinator",
+      "Biology",
+      "mdeiss@gavilan.edu",
+      "Darlene Del Carmen"
+     ],
+     "emails": [
+      "mdeiss@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "MP 105",
+      "Jennifer Dinis",
+      "Executive Asst. to President and Gavilan Foundation",
+      "President",
+      "jdinis@gavilan.edu",
+      "408-852-2803",
+      "LSRC 220"
+     ],
+     "emails": [
+      "jdinis@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Business & Commerce",
+      "tfarr@gavilan.edu",
+      "Moaty Fayek (He/Him/His)",
+      "Vice President, Academic Affairs",
+      "Office of VP Academic Affairs",
+      "mfayek@gavilan.edu",
+      "408-852-2814"
+     ],
+     "emails": [
+      "mfayek@gavilan.edu",
+      "tfarr@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Capital Projects",
+     "position": null,
+     "window": [
+      "408-852-2814",
+      "SS 117",
+      "Serafin Fernandez (He/Him/His)",
+      "Director, Capital Projects",
+      "Office, Administrative Services",
+      "sfernandez@gavilan.edu",
+      "408-852-2878"
+     ],
+     "emails": [
+      "sfernandez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Accessible Education Center",
+     "position": null,
+     "window": [
+      "Library",
+      "bgaffney@gavilan.edu",
+      "Stephen Gaitan",
+      "Director, Accessible Education Center",
+      "AEC",
+      "sgaitan@gavilan.edu",
+      "408-848-4871"
+     ],
+     "emails": [
+      "bgaffney@gavilan.edu",
+      "sgaitan@gavilan.edu"
+     ]
+    },
+    {
+     "line": "South Bay Regional Director",
+     "position": null,
+     "window": [
+      "Social Science",
+      "jgamboa@gavilan.edu",
+      "Pamela Gangloff",
+      "South Bay Regional Director",
+      "JPA - Police Academy",
+      "pgangloff@gavilan.edu",
+      "Erin Garcia"
+     ],
+     "emails": [
+      "jgamboa@gavilan.edu",
+      "pgangloff@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Asst, Vice President",
+     "position": null,
+     "window": [
+      "JPA - Police Academy",
+      "pgangloff@gavilan.edu",
+      "Erin Garcia",
+      "Executive Asst, Vice President",
+      "Office, Student Services",
+      "egarcia@gavilan.edu",
+      "408-848-4738"
+     ],
+     "emails": [
+      "egarcia@gavilan.edu",
+      "pgangloff@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "408-848-4738",
+      "LSRC 221",
+      "Hunter Garcia",
+      "Campus Security Officer",
+      "Security",
+      "hgarcia@gavilan.edu",
+      "Isela Garcia"
+     ],
+     "emails": [
+      "hgarcia@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "Counseling",
+      "egoble@gavilan.edu",
+      "David Godoy",
+      "Campus Security Officer",
+      "Security",
+      "dgodoy@gavilan.edu",
+      "Tamara Goldie (She/Her/Hers)"
+     ],
+     "emails": [
+      "dgodoy@gavilan.edu",
+      "egoble@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "mguerrero@gavilan.edu",
+      "LSRC 164",
+      "John Guevara",
+      "Campus Security Officer",
+      "Security",
+      "johnathan.guevara@my.gavilan.edu",
+      "408-848-4703"
+     ],
+     "emails": [
+      "johnathan.guevara@my.gavilan.edu",
+      "mguerrero@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Stu Basic Needs & Su",
+     "position": null,
+     "window": [
+      "Studio Arts",
+      "dgustlin@gavilan.edu",
+      "Annette Gutierrez",
+      "Director, Stu Basic Needs & Su",
+      "CalWORKs",
+      "agutierrez@gavilan.edu",
+      "408-848-4813"
+     ],
+     "emails": [
+      "agutierrez@gavilan.edu",
+      "dgustlin@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "ygutierrez@gavilan.edu",
+      "Katrina Guzman",
+      "Program Services Specialist",
+      "Veteran Resource Center",
+      "kguzman@gavilan.edu",
+      "408-848-4787",
+      "LSRC 133"
+     ],
+     "emails": [
+      "kguzman@gavilan.edu",
+      "ygutierrez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Admissions & Records",
+     "position": "dean_ar",
+     "window": [
+      "408-846-4993",
+      "LSRC 148",
+      "Irene Haneta",
+      "Director, Admissions & Records",
+      "Admissions & Records",
+      "ihaneta@gavilan.edu",
+      "408-848-4754"
+     ],
+     "emails": [
+      "ihaneta@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Foundation",
+     "position": null,
+     "window": [
+      "408-848-4817",
+      "CDC 128",
+      "Anna Hernandez",
+      "Director, Foundation",
+      "President",
+      "aquinones@gavilan.edu",
+      "408-229-4208"
+     ],
+     "emails": [
+      "aquinones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "CDC 128",
+      "Anna Hernandez",
+      "Director, Foundation",
+      "President",
+      "aquinones@gavilan.edu",
+      "408-229-4208",
+      "Coyote Valley"
+     ],
+     "emails": [
+      "aquinones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, Arts, Humanities, Social Science",
+     "position": null,
+     "window": [
+      "408-846-4975",
+      "SF",
+      "Carla Johnson",
+      "Dean, Arts, Humanities, Social Science",
+      "Division Office, AHSS",
+      "cajohnson@gavilan.edu",
+      "408-848-4702"
+     ],
+     "emails": [
+      "cajohnson@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Asst. to President",
+     "position": "college_ceo",
+     "window": [
+      "ejohnson@gavilan.edu",
+      "408-848-4859",
+      "Michelle Jones",
+      "Executive Asst. to President",
+      "President",
+      "mjones@gavilan.edu",
+      "408-848-4711"
+     ],
+     "emails": [
+      "ejohnson@gavilan.edu",
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "408-848-4859",
+      "Michelle Jones",
+      "Executive Asst. to President",
+      "President",
+      "mjones@gavilan.edu",
+      "408-848-4711",
+      "LSRC 220"
+     ],
+     "emails": [
+      "mjones@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Coordinator, Student Life and Engagement",
+     "position": null,
+     "window": [
+      "Astronomy",
+      "skemp@gavilan.edu",
+      "Ken Kennedy (He/Him/His)",
+      "Coordinator, Student Life and Engagement",
+      "Division Office, Special Programs",
+      "kkennedy@gavilan.edu",
+      "Torisha Khonach (She/Her/Hers)"
+     ],
+     "emails": [
+      "kkennedy@gavilan.edu",
+      "skemp@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Payroll Officer",
+     "position": null,
+     "window": [
+      "408-848-4809",
+      "LI 155",
+      "Chris Krygier (He/Him/His)",
+      "Payroll Officer",
+      "Business Services",
+      "ckrygier@gavilan.edu",
+      "408-852-2899"
+     ],
+     "emails": [
+      "ckrygier@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Chem/Bio Lab Coordinator",
+     "position": null,
+     "window": [
+      "Program Mngmt, Planning and Support",
+      "clagunadeflores@gavilan.edu",
+      "Alyssa Lai",
+      "Chem/Bio Lab Coordinator",
+      "Chemistry",
+      "alai@gavilan.edu",
+      "408-848-4835"
+     ],
+     "emails": [
+      "alai@gavilan.edu",
+      "clagunadeflores@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Accessibility and Assistive Technology Coordinator",
+     "position": null,
+     "window": [
+      "Allied Health",
+      "jlara@gavilan.edu",
+      "Marina Lares",
+      "Accessibility and Assistive Technology Coordinator",
+      "AEC",
+      "mlares@gavilan.edu",
+      "408-848-4788"
+     ],
+     "emails": [
+      "jlara@gavilan.edu",
+      "mlares@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Studio Art Technical Coordinator",
+     "position": null,
+     "window": [
+      "History",
+      "clasley@gavilan.edu",
+      "Sophia Lastra",
+      "Studio Art Technical Coordinator",
+      "Studio Arts",
+      "slastra@gavilan.edu",
+      "Benjamin Latham (He/Him/His)"
+     ],
+     "emails": [
+      "clasley@gavilan.edu",
+      "slastra@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "408-848-4885",
+      "LSRC 203",
+      "Ismael Lemus",
+      "Campus Security Officer",
+      "Security",
+      "ilemus@gavilan.edu",
+      "Ruben Lerma III"
+     ],
+     "emails": [
+      "ilemus@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Asst, Vice President",
+     "position": null,
+     "window": [
+      "Computer Science",
+      "mlin@gavilan.edu",
+      "Miressa Lira",
+      "Executive Asst, Vice President",
+      "Office, Administrative Services",
+      "mlira@gavilan.edu",
+      "408-848-4744"
+     ],
+     "emails": [
+      "mlin@gavilan.edu",
+      "mlira@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Academic Scheduling Coordinator",
+     "position": null,
+     "window": [
+      "408-848-4858",
+      "LSRC 127",
+      "Lupe Lopez",
+      "Academic Scheduling Coordinator",
+      "BFAP-Staffing",
+      "llopez@gavilan.edu",
+      "408-846-4980"
+     ],
+     "emails": [
+      "llopez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Outreach and Educational Partnerships",
+     "position": null,
+     "window": [
+      "NonCredit",
+      "bmancini@gavilan.edu",
+      "Lelannie Mann",
+      "Director, Outreach and Educational Partnerships",
+      "Title V INICIO",
+      "lmann@gavilan.edu",
+      "408-852-2873"
+     ],
+     "emails": [
+      "bmancini@gavilan.edu",
+      "lmann@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Asst, Vice President",
+     "position": null,
+     "window": [
+      "408-848-4891",
+      "LSRC 115",
+      "Victoria Masey",
+      "Executive Asst, Vice President",
+      "Office of VP Academic Affairs",
+      "vmasey@gavilan.edu",
+      "408-848-4761"
+     ],
+     "emails": [
+      "vmasey@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, Nursing and Allied Health",
+     "position": null,
+     "window": [
+      "408-848-4761",
+      "LSRC 221",
+      "Sana Massad",
+      "Dean, Nursing and Allied Health",
+      "Allied Health",
+      "smassad@gavilan.edu",
+      "408-848-4866"
+     ],
+     "emails": [
+      "smassad@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Payroll Officer",
+     "position": null,
+     "window": [
+      "408-848-4866",
+      "NAH 107",
+      "Margie Mastrini (She/Her/Hers)",
+      "Payroll Officer",
+      "Business Services",
+      "mmastrini@gavilan.edu",
+      "408-848-4718"
+     ],
+     "emails": [
+      "mmastrini@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Facilities Services",
+     "position": null,
+     "window": [
+      "408-848-4869",
+      "NAH 109",
+      "Edward Medal",
+      "Director, Facilities Services",
+      "Facilities/Maintenance",
+      "emedal@gavilan.edu",
+      "408-848-4705"
+     ],
+     "emails": [
+      "emedal@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Admin Services",
+     "position": null,
+     "window": [
+      "831-636-3783",
+      "Hollister (A107)",
+      "Marilyn Morikang",
+      "Vice President, Admin Services",
+      "Office, Administrative Services",
+      "mmorikang@gavilan.edu",
+      "408-848-4715"
+     ],
+     "emails": [
+      "mmorikang@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant, Chief Human Resources Officer",
+     "position": null,
+     "window": [
+      "Mathematic",
+      "tnaik@gavilan.edu",
+      "Norma Najar-Santoyo",
+      "Executive Assistant, Chief Human Resources Officer",
+      "Human Resources",
+      "nnajar@gavilan.edu",
+      "408-852-2823"
+     ],
+     "emails": [
+      "nnajar@gavilan.edu",
+      "tnaik@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean, STEM",
+     "position": null,
+     "window": [
+      "408-852-2825",
+      "CDC 139",
+      "Jennifer Nari (She/Her/Hers)",
+      "Dean, STEM",
+      "Mathematic",
+      "jnari@gavilan.edu",
+      "408-852-2880"
+     ],
+     "emails": [
+      "jnari@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Interim Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "pomidi@gavilan.edu",
+      "408-848-4701",
+      "Newin Paul Orante",
+      "Interim Vice President, Student Services",
+      "Office of VP Academic Affairs",
+      "norante@gavilan.edu",
+      "408-848-4760"
+     ],
+     "emails": [
+      "norante@gavilan.edu",
+      "pomidi@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Interim Director, Library, Learning Resources and Distance Education",
+     "position": null,
+     "window": [
+      "Basic Needs & Success",
+      "ygarnica@gavilan.edu",
+      "Christopher Padgett",
+      "Interim Director, Library, Learning Resources and Distance Education",
+      "Library",
+      "cpadgett@gavilan.edu",
+      "408-848-4886"
+     ],
+     "emails": [
+      "cpadgett@gavilan.edu",
+      "ygarnica@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Dean Peralta",
+     "position": null,
+     "window": [
+      "PT Faculty",
+      "Mathematic",
+      "jpelias@gavilan.edu",
+      "Dean Peralta",
+      "PT Faculty",
+      "Allied Health",
+      "nperalta@gavilan.edu"
+     ],
+     "emails": [
+      "jpelias@gavilan.edu",
+      "nperalta@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Chem/Bio Lab Coordinator",
+     "position": null,
+     "window": [
+      "French",
+      "lquijano@gavilan.edu",
+      "Maria Quist-Shorey",
+      "Chem/Bio Lab Coordinator",
+      "Chemistry",
+      "mshorey@gavilan.edu",
+      "408-848-4835"
+     ],
+     "emails": [
+      "lquijano@gavilan.edu",
+      "mshorey@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Theater Technical Coordinator",
+     "position": null,
+     "window": [
+      "408-848-4835",
+      "PS 108",
+      "Isabel Quistian",
+      "Theater Technical Coordinator",
+      "Theatre/Dramatic Arts",
+      "iquistian@gavilan.edu",
+      "408-848-4822"
+     ],
+     "emails": [
+      "iquistian@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Campus Security Officer",
+     "position": null,
+     "window": [
+      "Physics",
+      "mrocha@gavilan.edu",
+      "Diana Rocha Rocha-Serrano (She/Her/Hers)",
+      "Campus Security Officer",
+      "Parking",
+      "drocha@gavilan.edu",
+      "Judy Rodriguez"
+     ],
+     "emails": [
+      "drocha@gavilan.edu",
+      "mrocha@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Instructional Site",
+     "position": null,
+     "window": [
+      "Parking",
+      "drocha@gavilan.edu",
+      "Judy Rodriguez",
+      "Director, Instructional Site",
+      "Hollister Campus",
+      "jrodriguez@gavilan.edu",
+      "831-636-3783"
+     ],
+     "emails": [
+      "drocha@gavilan.edu",
+      "jrodriguez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Coordinator, Higher Aspirations Juvenile Justice",
+     "position": null,
+     "window": [
+      "NonCredit",
+      "rrodriguez@gavilan.edu",
+      "Robb Rodriguez",
+      "Coordinator, Higher Aspirations Juvenile Justice",
+      "Juvenile Justice Program",
+      "rorodriguez@gavilan.edu",
+      "408-848-4854"
+     ],
+     "emails": [
+      "rorodriguez@gavilan.edu",
+      "rrodriguez@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Director, Marketing and Communications",
+     "position": null,
+     "window": [
+      "408-848-4893",
+      "LSRC 112",
+      "Tanaya Stumpf",
+      "Director, Marketing and Communications",
+      "Public Information Office",
+      "tstumpf@gavilan.edu",
+      "408-848-4724"
+     ],
+     "emails": [
+      "tstumpf@gavilan.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/admit/index.php",
+   "final_url": "https://www.gavilan.edu/admit/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "For more information, please visit the articulation page",
+     "position": "articulation_officer",
+     "window": [
+      "Admissions and Records Records has moved to the LSRC",
+      "California Common Course Numbers (CCN)",
+      "Effective Fall 2025 the following course numbers and titles changed required by recent legislation AB 1111. All California Community Colleges will standardize Course Numbering for several transferable courses. The goal is to assign the same course number to comparable courses across all California community colleges in order to streamline transfer from two to four year post secondary educational institutions and reduce excess credit accumulation",
+      "For more information, please visit the articulation page",
+      "Download Gavilan Common Courses",
+      "Table of transferable courses with revised CCN course numbers and titles.",
+      "CURRENT COURSE"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran's Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veteran or Active Duty Student",
+      "Veteran or Active Duty Student",
+      "I am a Veteran or a Veteran Dependent who has not previously attended Gavilan.",
+      "Veteran's Resource Center",
+      "International Student",
+      "F-1 International Students",
+      "I am a student with citizenship from from another country other than the United States seeking an associates degree from Gavilan College ."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/about/site_index.php",
+   "final_url": "https://www.gavilan.edu/about/site_index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "All Calendar Events",
+      "Alumni Association",
+      "Art Department",
+      "Articulation",
+      "Assessment",
+      "Associated Students Of Gavilan College",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Gavilan News and Events",
+      "Guided Pathways",
+      "Health Services",
+      "High School Articulation",
+      "High Step Program",
+      "History",
+      "Human Resources Department"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Title V 2015",
+      "Transfer Services",
+      "Tutoring",
+      "Veterans Services",
+      "Writing Center",
+      "Quick Links",
+      "About Gavilan"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/student/veterans/index.php",
+   "final_url": "https://www.gavilan.edu/student/veterans/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center - Gavilan College",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center - Gavilan College",
+      "Skip to content",
+      "Students",
+      "Intranet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Educational Foundation",
+      "Home >",
+      "Student Services >",
+      "Veterans Resource Center",
+      "Veterans Resource Center",
+      "Welcome to the Veterans Resource Center",
+      "The mission of the Veterans Resource Center (VRC) at Gavilan College is to assist military and veteran students in making a successful transition from military to academic life by providing information, tools, and comprehensive programs that increase student academic success and completion of their academic goal."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Home >",
+      "Student Services >",
+      "Veterans Resource Center",
+      "Veterans Resource Center",
+      "Welcome to the Veterans Resource Center",
+      "The mission of the Veterans Resource Center (VRC) at Gavilan College is to assist military and veteran students in making a successful transition from military to academic life by providing information, tools, and comprehensive programs that increase student academic success and completion of their academic goal.",
+      "The VRC provides a warm and welcoming place for veterans to connect with one another and learn about available campus services. Come by and see us in Library 109. We are here to help you succeed!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome to the Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Student Services >",
+      "Veterans Resource Center",
+      "Veterans Resource Center",
+      "Welcome to the Veterans Resource Center",
+      "The mission of the Veterans Resource Center (VRC) at Gavilan College is to assist military and veteran students in making a successful transition from military to academic life by providing information, tools, and comprehensive programs that increase student academic success and completion of their academic goal.",
+      "The VRC provides a warm and welcoming place for veterans to connect with one another and learn about available campus services. Come by and see us in Library 109. We are here to help you succeed!",
+      "Appointments: Please contact Katrina Guzman at 408-848-4787 to schedule appointments with Dewitt Stuckey"
+     ],
+     "emails": []
+    },
+    {
+     "line": "First time on campus? Be sure to visit the veterans in the Veterans Resource Center in Library 109 to fast-track a path to success!",
+     "position": "vrc",
+     "window": [
+      "Information on determining which Veteran Education Benefit is right for you",
+      "Referrals to campus and community resources",
+      "Gavilan College adheres to Presidential Executive Order 13607: Principles of Excellence for Educational Institutions Serving Veterans, and implements the 8 Keys to Success for Veterans recently announced by the White House. These principles ensure that Gavilan is providing meaningful information to service members, veterans, spouses, and other family members about the financial cost and quality of education, to assist prospective students in making choices about how to use their Federal educational benefits",
+      "First time on campus? Be sure to visit the veterans in the Veterans Resource Center in Library 109 to fast-track a path to success!",
+      "Veterans’ Suicide Prevention Lifeline",
+      "1-800-273-TALK (1-800-273-8255), press 1",
+      "https://www.veteranscrisisline.net/"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/student/veterans/council.php",
+   "final_url": "https://www.gavilan.edu/student/veterans/council.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center >",
+     "position": "vrc",
+     "window": [
+      "Educational Foundation",
+      "Home >",
+      "Student Services >",
+      "Veterans Resource Center >",
+      "Gavilan Veterans Council",
+      "Gavilan Veterans Council",
+      "The Gavilan College Veterans Council formed in Fall 2011 for the purpose of increasing awareness of veteran issues and promoting student veterans' success. As a working sub-committee of the Learning Council, the group actively helped to foster awareness, worked with the Student Veterans Club in an advisory role, and assisted with the Veterans Voices Project and other events."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/student/veterans/vet_club.php",
+   "final_url": "https://www.gavilan.edu/student/veterans/vet_club.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center >",
+     "position": "vrc",
+     "window": [
+      "Read more about Gavilan Student Veterans of America (GSVA)",
+      "Home >",
+      "Student Services >",
+      "Veterans Resource Center >",
+      "Gavilan Student Veterans of America (GSVA)",
+      "Gavilan Student Veterans of America (GSVA)",
+      "GSVA meets monthly in the Veterans Resource Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "GSVA meets monthly in the Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center >",
+      "Gavilan Student Veterans of America (GSVA)",
+      "Gavilan Student Veterans of America (GSVA)",
+      "GSVA meets monthly in the Veterans Resource Center",
+      "Spring 2020 Meeting Schedule: 2nd Tuesday/4th Wednesday every month",
+      "Tuesday Feb 11, 1pm",
+      "Wednesday Feb 26, 11am"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President: Kay Navarro",
+     "position": "college_ceo",
+     "window": [
+      "GSVA (Vets Club) members like to be adventurous and we want you to be part of the fun! In the 2018/19 academic year Vets Club went to Break Stuff San Jose, San Jose Giants games, Bellator fights, a Tahoe ski trip, and indoor skydiving at iFly! We had a family BBQ/kickball event and participated for the fourth year in a row in Walk A Mile in Her Shoes to raise awareness about domestic violence and sexual assault.",
+      "GSVA meets twice monthly in the VRC to plan our events and fundraisers.",
+      "Officers for the 2019 / 2020 academic year are:",
+      "President: Kay Navarro",
+      "Vice-President: Kenny Ruiz",
+      "Secretary: VACANT",
+      "Treasurer: VACANT"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice-President: Kenny Ruiz",
+     "position": null,
+     "window": [
+      "GSVA meets twice monthly in the VRC to plan our events and fundraisers.",
+      "Officers for the 2019 / 2020 academic year are:",
+      "President: Kay Navarro",
+      "Vice-President: Kenny Ruiz",
+      "Secretary: VACANT",
+      "Treasurer: VACANT",
+      "ICC Rep: VACANT"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Past GSVA President Connor Quinn to publish a children's book about Operation Freedom Paws!!",
+     "position": "college_ceo",
+     "window": [
+      "ICC Rep: VACANT",
+      "Sergeant at Arms: VACANT",
+      "Club Advisors: Dewitt Stuckey & Molly Howe",
+      "Past GSVA President Connor Quinn to publish a children's book about Operation Freedom Paws!!",
+      "Peep Connor's Kickstarter campaign and share the link with your friends!",
+      "Four Paws, Two Feet, One Team",
+      "Gavilan Student Veterans of America is a chapter of the Student Veterans of America national organization."
+     ],
+     "emails": []
+    },
+    {
+     "line": "For more information about the club inquire in the Veterans Resource Center in Library 109.",
+     "position": "vrc",
+     "window": [
+      "The Gavilan Student Veterans of America chapter was founded in Fall of 2011 by a group of student veterans interested in helping veterans and families of veterans succeed and adapt to academic life at a community college.",
+      "Our club goals include: improving veteran services at Gavilan College, mentoring student veterans, bringing awareness to veteran issues, promoting understanding on campus, and working with the Gavilan extended community to foster veteran success.",
+      "As a club we are committed to Service, Scholarship, and being Social. Each semester we aim to do one service project, one event related to academics (scholarship), and at least one social event. See the schedule below to learn more about what we have planned this semester!",
+      "For more information about the club inquire in the Veterans Resource Center in Library 109.",
+      "Quick Links",
+      "Contact Us",
+      "Katrina Guzman - School Certifying Official"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.gavilan.edu/counseling/articulation/index.php",
+   "final_url": "https://www.gavilan.edu/counseling/articulation/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation - Gavilan College",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation - Gavilan College",
+      "Skip to content",
+      "Students",
+      "Intranet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Guided Pathways",
+      "Institutional Learning Outcomes",
+      "Maps & Directions",
+      "Office of the President",
+      "More",
+      "Personnel Directory",
+      "Institutional Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Gavilan College Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Educational Foundation",
+      "Home >",
+      "Counseling >",
+      "Gavilan College Articulation",
+      "Articulation",
+      "Articulation",
+      "For California students, college transfer offers profound opportunities for advancement into a wide array of majors and career paths. Transferring from a California community college to a four-year university requires current information and thoughtful planning. Become familiar with both articulation agreements and transferability lists to ensure a smooth transition with the use of the ASSIST tool."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Home >",
+      "Counseling >",
+      "Gavilan College Articulation",
+      "Articulation",
+      "Articulation",
+      "For California students, college transfer offers profound opportunities for advancement into a wide array of majors and career paths. Transferring from a California community college to a four-year university requires current information and thoughtful planning. Become familiar with both articulation agreements and transferability lists to ensure a smooth transition with the use of the ASSIST tool.",
+      "Articulation agreements show how courses at a CCC may satisfy specific department or major requirements at a CSU, UC, or private campus."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Counseling >",
+      "Gavilan College Articulation",
+      "Articulation",
+      "Articulation",
+      "For California students, college transfer offers profound opportunities for advancement into a wide array of majors and career paths. Transferring from a California community college to a four-year university requires current information and thoughtful planning. Become familiar with both articulation agreements and transferability lists to ensure a smooth transition with the use of the ASSIST tool.",
+      "Articulation agreements show how courses at a CCC may satisfy specific department or major requirements at a CSU, UC, or private campus.",
+      "Transferability lists display CCC courses that are transferable to CSU or UC, as well as which courses may be used to satisfy elective or general education requirements upon transfer."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation agreements show how courses at a CCC may satisfy specific department or major requirements at a CSU, UC, or private campus.",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation",
+      "Articulation",
+      "For California students, college transfer offers profound opportunities for advancement into a wide array of majors and career paths. Transferring from a California community college to a four-year university requires current information and thoughtful planning. Become familiar with both articulation agreements and transferability lists to ensure a smooth transition with the use of the ASSIST tool.",
+      "Articulation agreements show how courses at a CCC may satisfy specific department or major requirements at a CSU, UC, or private campus.",
+      "Transferability lists display CCC courses that are transferable to CSU or UC, as well as which courses may be used to satisfy elective or general education requirements upon transfer.",
+      "ASSIST ( assist.org) is the official statewide database and online resource that shows prospective California transfer students how courses they complete at a community college may be used to satisfy elective, general education and major requirements at a CSU, UC campus or participating Independent University.",
+      "Getting Started with ASSIST"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation vs. Transferable - terms used often in college. Know the difference!",
+     "position": "articulation_officer",
+     "window": [
+      "Additional Information",
+      "Accrediting Agencies U.S. Department of Education database of accrediting agencies for schools",
+      "Regional Accreditation is required if course work completed at other colleges will be applied for degree or certificates",
+      "Articulation vs. Transferable - terms used often in college. Know the difference!",
+      "Gavilan College Career Services - The staff can assist you with:",
+      "Information on university majors and graduation requirements",
+      "Assistance with filling out college applications"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Quick Links",
+      "Counseling Department Home",
+      "Academic Standings",
+      "Articulation",
+      "Career & Academic Pathway Maps",
+      "CAP Counselors",
+      "Career Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "Associate Degrees For Transfer",
+      "Campus Safety Information & Disclosures",
+      "Office of the President",
+      "Register to Vote",
+      "Student Success Scorecard",
+      "Student Learning Outcomes"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.gavilan.edu/student/aec/index.php",
+  "https://www.gavilan.edu/staff/dir_2020_retired.php",
+  "https://www.gavilan.edu/student/veterans/vrc.php",
+  "http://gavilan.edu/veterans/vrc.html"
+ ],
+ "run": "41315220745"
+}

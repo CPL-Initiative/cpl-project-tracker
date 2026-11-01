@@ -1,0 +1,14 @@
+{
+ "college": "Feather River College",
+ "homepage": "https://www.frc.edu/",
+ "read_at": "2026-11-01T14:18:15+00:00",
+ "pages": [
+  {
+   "url": "https://www.frc.edu/",
+   "status": "unreachable",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  }
+ ],
+ "unread_links": [],
+ "run": "41315220745"
+}

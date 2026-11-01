@@ -1,0 +1,501 @@
+{
+ "college": "Golden West College",
+ "homepage": "https://www.goldenwestcollege.edu/",
+ "read_at": "2026-11-01T14:22:27+00:00",
+ "pages": [
+  {
+   "url": "https://www.goldenwestcollege.edu/",
+   "final_url": "https://www.goldenwestcollege.edu/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.goldenwestcollege.edu/military-and-veterans/index.html",
+   "final_url": "https://www.goldenwestcollege.edu/military-and-veterans/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Menu",
+      "In This Section",
+      "Military and Veterans",
+      "Veterans Resource Center",
+      "New & Returning Student Veterans",
+      "Certification & Important Links",
+      "At Golden West College, we proudly serve those who have served our nation. Whether you’re transitioning from active duty, currently serving, or a family member of a service member, we are here to help you achieve your educational and career goals."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Students interested in using Tuition Assistance should contact the Education Officer of their unit.",
+     "position": null,
+     "window": [
+      "Tuition Assistance",
+      "Chapter 1606: Selected Reserve",
+      "Chapter 1607: Reserve Educational Assistance",
+      "Students interested in using Tuition Assistance should contact the Education Officer of their unit.",
+      "AIR FORCE/MARINE/NAVY/COAST GUARD: Once you receive your TA Authorization form, please email a copy to our office at vets@gwc.cccd.edu vets@gwc.cccd.edu for processing.",
+      "ARMY: Please follow these instructions for requesting TA through ArmyIgnitED",
+      "Army TA instructions [PDF]"
+     ],
+     "emails": [
+      "vets@gwc.cccd.edu"
+     ]
+    },
+    {
+     "line": "Students interested in using Tuition Assistance should contact the Education Officer of their unit.",
+     "position": null,
+     "window": [
+      "In many ways, Chapter 33: Post-9/11 GI Bill® has replaced REAP as it also provides educational assistance benefits for Reserve and National Guard members called to active duty on or after September 11, 2001, and in many cases provides a greater benefit than REAP.",
+      "Post-9/11 GI Bill (Chapter 33)",
+      "Tuition Assistance",
+      "Students interested in using Tuition Assistance should contact the Education Officer of their unit.",
+      "AIR FORCE/MARINE/NAVY/COAST GUARD: Once you receive your TA Authorization form, please email a copy to our office at vets@gwc.cccd.edu vets@gwc.cccd.edu for processing.",
+      "ARMY: Please follow these instructions for requesting TA through ArmyIgnitED",
+      "Army TA instructions [PDF]"
+     ],
+     "emails": [
+      "vets@gwc.cccd.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.goldenwestcollege.edu/enrollment/admissions/index.html",
+   "final_url": "https://www.goldenwestcollege.edu/enrollment/admissions/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.goldenwestcollege.edu/vrc/index.html",
+   "final_url": "https://www.goldenwestcollege.edu/vrc/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center | Golden West College",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center | Golden West College",
+      "SKIP TO PAGE CONTENT",
+      "#YourFutureIsGolden",
+      "About"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Give",
+      "#YourFutureIsGolden",
+      "Golden West College",
+      "Veterans Resource Center",
+      "The Veterans Resource Center (VRC) is committed to supporting the unique needs of Golden West College’s military-connected student population. We achieve this by collaborating with various campus departments and community organizations, ensuring students have access to the resources they need to succeed. Our team is here to serve veterans, active-duty service members, reservists, and the spouses or dependents of veterans. Whether you're pursuing an Associate’s degree, a Certificate of Achievement, or planning to transfer to a four-year university, we welcome you to the Veterans Resource Center. We look forward to supporting you on your journey!",
+      "More Information",
+      "• Tutoring"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "• VRC Team/Points of contact",
+      "Contact Us",
+      "If you have any questions or concerns, please don’t hesitate to reach out to us for assistance.",
+      "Veterans Resource Center",
+      "vets@gwc.cccd.edu vets@gwc.cccd.edu - (714) 892-7711 ext. 55144",
+      "#YourFutureIsGolden",
+      "(714) 892-7711"
+     ],
+     "emails": [
+      "vets@gwc.cccd.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.goldenwestcollege.edu/vrc/new-returning-student-veterans/index.html",
+   "final_url": "https://www.goldenwestcollege.edu/vrc/new-returning-student-veterans/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Give",
+      "#YourFutureIsGolden",
+      "Golden West College",
+      "Veterans Resource Center",
+      "New & Returning Student Veterans",
+      "Menu",
+      "In This Section"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "New & Returning Student Veterans",
+      "Menu",
+      "In This Section",
+      "Veterans Resource Center",
+      "New & Returning Student Veterans",
+      "Veterans Certification & Important Links",
+      "Educational & Personal Counseling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Amenities",
+      "Team and Point of Contact",
+      "Veteran Partnerships",
+      "Veterans Resource Center",
+      "Location:",
+      "Student Services Center, Rm 1150",
+      "Phone Number:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Please contact the Veterans Resource Center for any questions at (714) 892-7711 x55144 or vets@gwc.cccd.edu vets@gwc.cccd.edu.",
+     "position": "vrc",
+     "window": [
+      "Access Request for Certification Form",
+      "This form is required every semester after you register for your enrollment to be reported to the VA.",
+      "Forgetting to submit this form after registration may lead to being dropped for non-payment. Enrollments aren't always monitored by the School Certifying Official (SCO) before the term begins.",
+      "Please contact the Veterans Resource Center for any questions at (714) 892-7711 x55144 or vets@gwc.cccd.edu vets@gwc.cccd.edu.",
+      "Click here for a PDF version of this checklist.",
+      "Veterans Resource Center",
+      "Location:"
+     ],
+     "emails": [
+      "vets@gwc.cccd.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Forgetting to submit this form after registration may lead to being dropped for non-payment. Enrollments aren't always monitored by the School Certifying Official (SCO) before the term begins.",
+      "Please contact the Veterans Resource Center for any questions at (714) 892-7711 x55144 or vets@gwc.cccd.edu vets@gwc.cccd.edu.",
+      "Click here for a PDF version of this checklist.",
+      "Veterans Resource Center",
+      "Location:",
+      "Student Services Center, Rm 1150",
+      "Phone Number:"
+     ],
+     "emails": [
+      "vets@gwc.cccd.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.goldenwestcollege.edu/vrc/partnerships/index.html",
+   "final_url": "https://www.goldenwestcollege.edu/vrc/partnerships/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Give",
+      "#YourFutureIsGolden",
+      "Golden West College",
+      "Veterans Resource Center",
+      "Veteran Partnerships",
+      "Menu",
+      "In This Section"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veteran Partnerships",
+      "Menu",
+      "In This Section",
+      "Veterans Resource Center",
+      "New & Returning Student Veterans",
+      "Veterans Certification & Important Links",
+      "Educational & Personal Counseling"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.goldenwestcollege.edu/vrc/cert-links/index.html",
+   "final_url": "https://www.goldenwestcollege.edu/vrc/cert-links/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Technology Support",
+      "Transfer to a University",
+      "Tutoring & Academic Support",
+      "Veterans Services",
+      "Academic Calendar",
+      "Apply",
+      "Catalog of Programs & Classes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Give",
+      "#YourFutureIsGolden",
+      "Golden West College",
+      "Veterans Resource Center",
+      "Certification & Important Links",
+      "Menu",
+      "In This Section"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Certification & Important Links",
+      "Menu",
+      "In This Section",
+      "Veterans Resource Center",
+      "New & Returning Student Veterans",
+      "Veterans Certification & Important Links",
+      "Educational & Personal Counseling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Amenities",
+      "Team and Point of Contact",
+      "Veteran Partnerships",
+      "Veterans Resource Center",
+      "Location:",
+      "Student Services Center, Rm 1150",
+      "Phone Number:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Students using VA Education Benefits who are taking classes at a school outside of the Coast Community College District (Golden West College, Coastline College, or Orange Coast College) must submit a Primary School Letter request to have a letter sent from Golden West College to the guest school.",
+      "If you have any questions or concerns regarding your Request for Certification, please contact the School Certifying Official, Stephani Rogers at vets@gwc.cccd.edu or (714) 895-8140",
+      "GI Bill® is a registered trademark of the U.S. Department of Veterans Affairs (VA). More information about education benefits offered by VA is available at the official U.S. government Web site at https://www.benefits.va.gov/gibill.",
+      "Veterans Resource Center",
+      "Location:",
+      "Student Services Center, Rm 1150",
+      "Phone Number:"
+     ],
+     "emails": [
+      "vets@gwc.cccd.edu"
+     ]
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41315220745"
+}

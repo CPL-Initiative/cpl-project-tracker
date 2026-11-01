@@ -1,0 +1,49 @@
+{
+ "run": "sheet153-equity",
+ "read_by": "S540 SkyBunchberry, 2026-11-01",
+ "partial": true,
+ "colleges": [],
+ "note": "The five VP rows held for Open Asks Sheet 153 card 2 (Equity joined to the post, and Academic Services); Sam ruled count at 14:41Z 2026-11-01. Partial: names no college, so marks nobody gone.",
+ "rows": [
+  {
+   "college": "Diablo Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Equity and Student Services/Title IX Coordinator",
+   "name": "Vicki Ferguson",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Equity and Instruction",
+   "name": "Joseph Gorga",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "El Camino College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Equity and Student Services",
+   "name": "Jeff Stephenson, Ph.D.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President for Student Services and Equity",
+   "name": "Alexis Ayala",
+   "email": "alexis.ayala@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Academic Services",
+   "name": "Julia Jules Johnson",
+   "email": "jules.johnson@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  }
+ ]
+}

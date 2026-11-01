@@ -10,34 +10,34 @@
     "other": 150000
   },
   "summary": {
-    "files": 1345,
-    "bytes": 13679105,
-    "over_budget": 4,
-    "handoff_max": 540,
+    "files": 1346,
+    "bytes": 13693854,
+    "over_budget": 0,
+    "handoff_max": 541,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 60112,
+    "always_loaded_bytes": 59980,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 60112,
-        "over": 1
+        "bytes": 59980,
+        "over": 0
       },
       "other": {
         "files": 137,
-        "bytes": 4189629,
+        "bytes": 4198133,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9877,
+        "bytes": 10143,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2528264,
-        "over": 1
+        "bytes": 2531533,
+        "over": 0
       },
       "kb_note": {
         "files": 571,
@@ -46,25 +46,25 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 466145,
-        "over": 2
+        "bytes": 463749,
+        "over": 0
       },
       "handoff": {
-        "files": 508,
-        "bytes": 3625594,
+        "files": 509,
+        "bytes": 3630832,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
       "kb_note_dialect": 1,
       "house_voice": 1,
-      "vault_heavy_path": 73
+      "vault_heavy_path": 73,
+      "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25287,
-      "bytes": 4155940134,
-      "heavy_bytes": 2971068005,
+      "files": 25310,
+      "bytes": 4156327947,
+      "heavy_bytes": 2971080690,
       "heavy_share": 0.715,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -145,32 +145,6 @@
   },
   "findings": [
     {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 60112,
-        "limit": 60000,
-        "lane": "always_loaded",
-        "over_by": 112,
-        "ratio": 1.0
-      },
-      "message": "60,112 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
-      "path": "CLAUDE.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 121095,
-        "limit": 120000,
-        "lane": "lessons",
-        "over_by": 1095,
-        "ratio": 1.01
-      },
-      "message": "121,095 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
-      "path": "docs/cpl_funding_lessons.md"
-    },
-    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -180,32 +154,6 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 22092,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 2092,
-        "ratio": 1.1
-      },
-      "message": "22,092 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/implementation-funding.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20821,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 821,
-        "ratio": 1.04
-      },
-      "message": "20,821 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/sierra-retrieval-corpus.md"
     },
     {
       "rule": "house_voice",
@@ -224,10 +172,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853559735,
+        "bytes": 1853572420,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,559,735 B inside the vault"
+      "message": "directory totals 1,853,572,420 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",
@@ -948,6 +896,17 @@
         "kind": "file"
       },
       "message": "2,038,305 B single file inside the vault"
+    },
+    {
+      "rule": "checkpoint_overdue",
+      "fixable": false,
+      "path": "docs/session_541_handoff.md",
+      "detail": {
+        "commits_since": 8,
+        "budget": 6,
+        "handoff": "session_541_handoff.md"
+      },
+      "message": "8 commit(s) have landed since `docs/session_541_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }

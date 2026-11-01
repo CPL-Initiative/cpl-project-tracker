@@ -1,0 +1,1248 @@
+{
+ "college": "Fullerton College",
+ "homepage": "https://www.fullcoll.edu/",
+ "read_at": "2026-11-01T14:20:35+00:00",
+ "pages": [
+  {
+   "url": "https://www.fullcoll.edu/",
+   "final_url": "https://www.fullcoll.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.fullcoll.edu/directory/",
+   "final_url": "https://www.fullcoll.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Officer is on-campus 24/7",
+     "position": null,
+     "window": [
+      "Campus Communications Website",
+      "Campus Safety",
+      "Mon – Thu, 7:30 a.m. – 6 p.m.; Fri, 8 a.m. – 12 p.m.",
+      "Officer is on-campus 24/7",
+      "During business hours: 714-992-7080 Ext. 0",
+      "After-hours and emergency: 714-992-7777",
+      "Email: campussafetydept@fullcoll.edu campussafetydept@fullcoll.edu"
+     ],
+     "emails": [
+      "campussafetydept@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Wendy Perez – wperez@fullcoll.edu wperez@fullcoll.edu (Department coordinator)",
+     "position": null,
+     "window": [
+      "Appointment only:",
+      "Anita Coggi – acoggi@fullcoll.edu acoggi@fullcoll.edu (Program information and assistance)",
+      "Vivi Orozco – vorozco@fullcoll.edu vorozco@fullcoll.edu (Vendors)",
+      "Wendy Perez – wperez@fullcoll.edu wperez@fullcoll.edu (Department coordinator)",
+      "Phone: 714-732-5463 | Email: acoggi@fullcoll.edu acoggi@fullcoll.edu",
+      "Location: Building 700, Room 712-A",
+      "Cosmetology Website"
+     ],
+     "emails": [
+      "acoggi@fullcoll.edu",
+      "vorozco@fullcoll.edu",
+      "wperez@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Phone: 714-992-7045 | Email: kwd@fullcoll.edu kwd@fullcoll.edu",
+      "Location: Building 1200, Room 1206",
+      "Physical Education Division Website",
+      "President’s Office",
+      "Phone: 714-992-7001 | Email: president@fullcoll.edu president@fullcoll.edu",
+      "Location: Building 100",
+      "President’s Office Website"
+     ],
+     "emails": [
+      "kwd@fullcoll.edu",
+      "president@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Phone: 714-992-7001 | Email: president@fullcoll.edu president@fullcoll.edu",
+     "position": "college_ceo",
+     "window": [
+      "Location: Building 1200, Room 1206",
+      "Physical Education Division Website",
+      "President’s Office",
+      "Phone: 714-992-7001 | Email: president@fullcoll.edu president@fullcoll.edu",
+      "Location: Building 100",
+      "President’s Office Website",
+      "Professional Learning/Staff Development"
+     ],
+     "emails": [
+      "president@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "President’s Office Website",
+     "position": "college_ceo",
+     "window": [
+      "President’s Office",
+      "Phone: 714-992-7001 | Email: president@fullcoll.edu president@fullcoll.edu",
+      "Location: Building 100",
+      "President’s Office Website",
+      "Professional Learning/Staff Development",
+      "Mon – Thu, 8 a.m. – 5 p.m.",
+      "Phone: 714-732-5005 | Email: staffdev@fullcoll.edu staffdev@fullcoll.edu"
+     ],
+     "emails": [
+      "president@fullcoll.edu",
+      "staffdev@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center (VRC)",
+     "position": "vrc",
+     "window": [
+      "Location: Building 1900, Room 1903-04",
+      "Umoja Website",
+      "V",
+      "Veterans Resource Center (VRC)",
+      "Mon – Thu, 8 a.m. – 5 p.m.; Fri, 8 a.m. – 12 p.m.",
+      "Phone: 714-992-7102 | Email: veterans@fullcoll.edu veterans@fullcoll.edu",
+      "Location: SSC, Room 101"
+     ],
+     "emails": [
+      "veterans@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center Website",
+     "position": "vrc",
+     "window": [
+      "Mon – Thu, 8 a.m. – 5 p.m.; Fri, 8 a.m. – 12 p.m.",
+      "Phone: 714-992-7102 | Email: veterans@fullcoll.edu veterans@fullcoll.edu",
+      "Location: SSC, Room 101",
+      "Veterans Resource Center Website",
+      "Vice President of Administrative Services",
+      "Phone: 714-992-7017 | Email: vpas@fullcoll.edu vpas@fullcoll.edu",
+      "Location: Building 100, Room 112"
+     ],
+     "emails": [
+      "veterans@fullcoll.edu",
+      "vpas@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Phone: 714-992-7102 | Email: veterans@fullcoll.edu veterans@fullcoll.edu",
+      "Location: SSC, Room 101",
+      "Veterans Resource Center Website",
+      "Vice President of Administrative Services",
+      "Phone: 714-992-7017 | Email: vpas@fullcoll.edu vpas@fullcoll.edu",
+      "Location: Building 100, Room 112",
+      "Vice President of Administrative Services Website"
+     ],
+     "emails": [
+      "veterans@fullcoll.edu",
+      "vpas@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Administrative Services Website",
+     "position": "vpbs",
+     "window": [
+      "Vice President of Administrative Services",
+      "Phone: 714-992-7017 | Email: vpas@fullcoll.edu vpas@fullcoll.edu",
+      "Location: Building 100, Room 112",
+      "Vice President of Administrative Services Website",
+      "Vice President of Instruction",
+      "Phone: 714-992-7030 | Email: vpi@fullcoll.edu vpi@fullcoll.edu",
+      "Location: Building 100, Room 111"
+     ],
+     "emails": [
+      "vpas@fullcoll.edu",
+      "vpi@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Phone: 714-992-7017 | Email: vpas@fullcoll.edu vpas@fullcoll.edu",
+      "Location: Building 100, Room 112",
+      "Vice President of Administrative Services Website",
+      "Vice President of Instruction",
+      "Phone: 714-992-7030 | Email: vpi@fullcoll.edu vpi@fullcoll.edu",
+      "Location: Building 100, Room 111",
+      "Vice President of Student Services"
+     ],
+     "emails": [
+      "vpas@fullcoll.edu",
+      "vpi@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Vice President of Instruction",
+      "Phone: 714-992-7030 | Email: vpi@fullcoll.edu vpi@fullcoll.edu",
+      "Location: Building 100, Room 111",
+      "Vice President of Student Services",
+      "Phone: 714-732-5386 | Email: vpss@fullcoll.edu vpss@fullcoll.edu",
+      "Location: Building 100, Room 111-02",
+      "W"
+     ],
+     "emails": [
+      "vpi@fullcoll.edu",
+      "vpss@fullcoll.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.fullcoll.edu/directory",
+   "final_url": "https://www.fullcoll.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Officer is on-campus 24/7",
+     "position": null,
+     "window": [
+      "Campus Communications Website",
+      "Campus Safety",
+      "Mon – Thu, 7:30 a.m. – 6 p.m.; Fri, 8 a.m. – 12 p.m.",
+      "Officer is on-campus 24/7",
+      "During business hours: 714-992-7080 Ext. 0",
+      "After-hours and emergency: 714-992-7777",
+      "Email: campussafetydept@fullcoll.edu campussafetydept@fullcoll.edu"
+     ],
+     "emails": [
+      "campussafetydept@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Wendy Perez – wperez@fullcoll.edu wperez@fullcoll.edu (Department coordinator)",
+     "position": null,
+     "window": [
+      "Appointment only:",
+      "Anita Coggi – acoggi@fullcoll.edu acoggi@fullcoll.edu (Program information and assistance)",
+      "Vivi Orozco – vorozco@fullcoll.edu vorozco@fullcoll.edu (Vendors)",
+      "Wendy Perez – wperez@fullcoll.edu wperez@fullcoll.edu (Department coordinator)",
+      "Phone: 714-732-5463 | Email: acoggi@fullcoll.edu acoggi@fullcoll.edu",
+      "Location: Building 700, Room 712-A",
+      "Cosmetology Website"
+     ],
+     "emails": [
+      "acoggi@fullcoll.edu",
+      "vorozco@fullcoll.edu",
+      "wperez@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Phone: 714-992-7045 | Email: kwd@fullcoll.edu kwd@fullcoll.edu",
+      "Location: Building 1200, Room 1206",
+      "Physical Education Division Website",
+      "President’s Office",
+      "Phone: 714-992-7001 | Email: president@fullcoll.edu president@fullcoll.edu",
+      "Location: Building 100",
+      "President’s Office Website"
+     ],
+     "emails": [
+      "kwd@fullcoll.edu",
+      "president@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Phone: 714-992-7001 | Email: president@fullcoll.edu president@fullcoll.edu",
+     "position": "college_ceo",
+     "window": [
+      "Location: Building 1200, Room 1206",
+      "Physical Education Division Website",
+      "President’s Office",
+      "Phone: 714-992-7001 | Email: president@fullcoll.edu president@fullcoll.edu",
+      "Location: Building 100",
+      "President’s Office Website",
+      "Professional Learning/Staff Development"
+     ],
+     "emails": [
+      "president@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "President’s Office Website",
+     "position": "college_ceo",
+     "window": [
+      "President’s Office",
+      "Phone: 714-992-7001 | Email: president@fullcoll.edu president@fullcoll.edu",
+      "Location: Building 100",
+      "President’s Office Website",
+      "Professional Learning/Staff Development",
+      "Mon – Thu, 8 a.m. – 5 p.m.",
+      "Phone: 714-732-5005 | Email: staffdev@fullcoll.edu staffdev@fullcoll.edu"
+     ],
+     "emails": [
+      "president@fullcoll.edu",
+      "staffdev@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center (VRC)",
+     "position": "vrc",
+     "window": [
+      "Location: Building 1900, Room 1903-04",
+      "Umoja Website",
+      "V",
+      "Veterans Resource Center (VRC)",
+      "Mon – Thu, 8 a.m. – 5 p.m.; Fri, 8 a.m. – 12 p.m.",
+      "Phone: 714-992-7102 | Email: veterans@fullcoll.edu veterans@fullcoll.edu",
+      "Location: SSC, Room 101"
+     ],
+     "emails": [
+      "veterans@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center Website",
+     "position": "vrc",
+     "window": [
+      "Mon – Thu, 8 a.m. – 5 p.m.; Fri, 8 a.m. – 12 p.m.",
+      "Phone: 714-992-7102 | Email: veterans@fullcoll.edu veterans@fullcoll.edu",
+      "Location: SSC, Room 101",
+      "Veterans Resource Center Website",
+      "Vice President of Administrative Services",
+      "Phone: 714-992-7017 | Email: vpas@fullcoll.edu vpas@fullcoll.edu",
+      "Location: Building 100, Room 112"
+     ],
+     "emails": [
+      "veterans@fullcoll.edu",
+      "vpas@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Phone: 714-992-7102 | Email: veterans@fullcoll.edu veterans@fullcoll.edu",
+      "Location: SSC, Room 101",
+      "Veterans Resource Center Website",
+      "Vice President of Administrative Services",
+      "Phone: 714-992-7017 | Email: vpas@fullcoll.edu vpas@fullcoll.edu",
+      "Location: Building 100, Room 112",
+      "Vice President of Administrative Services Website"
+     ],
+     "emails": [
+      "veterans@fullcoll.edu",
+      "vpas@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Administrative Services Website",
+     "position": "vpbs",
+     "window": [
+      "Vice President of Administrative Services",
+      "Phone: 714-992-7017 | Email: vpas@fullcoll.edu vpas@fullcoll.edu",
+      "Location: Building 100, Room 112",
+      "Vice President of Administrative Services Website",
+      "Vice President of Instruction",
+      "Phone: 714-992-7030 | Email: vpi@fullcoll.edu vpi@fullcoll.edu",
+      "Location: Building 100, Room 111"
+     ],
+     "emails": [
+      "vpas@fullcoll.edu",
+      "vpi@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Phone: 714-992-7017 | Email: vpas@fullcoll.edu vpas@fullcoll.edu",
+      "Location: Building 100, Room 112",
+      "Vice President of Administrative Services Website",
+      "Vice President of Instruction",
+      "Phone: 714-992-7030 | Email: vpi@fullcoll.edu vpi@fullcoll.edu",
+      "Location: Building 100, Room 111",
+      "Vice President of Student Services"
+     ],
+     "emails": [
+      "vpas@fullcoll.edu",
+      "vpi@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Vice President of Instruction",
+      "Phone: 714-992-7030 | Email: vpi@fullcoll.edu vpi@fullcoll.edu",
+      "Location: Building 100, Room 111",
+      "Vice President of Student Services",
+      "Phone: 714-732-5386 | Email: vpss@fullcoll.edu vpss@fullcoll.edu",
+      "Location: Building 100, Room 111-02",
+      "W"
+     ],
+     "emails": [
+      "vpi@fullcoll.edu",
+      "vpss@fullcoll.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.fullcoll.edu/administrative-directory/",
+   "final_url": "https://www.fullcoll.edu/administrative-directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Community",
+      "Directory",
+      "Administrative Directory",
+      "President's Cabinet",
+      "Cynthia Olivo, Ph.D.",
+      "President",
+      "colivo@fullcoll.edu colivo@fullcoll.edu"
+     ],
+     "emails": [
+      "colivo@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Administrative Directory",
+      "President's Cabinet",
+      "Cynthia Olivo, Ph.D.",
+      "President",
+      "colivo@fullcoll.edu colivo@fullcoll.edu",
+      "714-992-7001",
+      "Sonia De La Torre, Ed.D."
+     ],
+     "emails": [
+      "colivo@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "colivo@fullcoll.edu colivo@fullcoll.edu",
+      "714-992-7001",
+      "Sonia De La Torre, Ed.D.",
+      "Vice President, Student Services",
+      "sdelatorre@fullcoll.edu sdelatorre@fullcoll.edu",
+      "714-992-7073",
+      "Henry Hua"
+     ],
+     "emails": [
+      "colivo@fullcoll.edu",
+      "sdelatorre@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "sdelatorre@fullcoll.edu sdelatorre@fullcoll.edu",
+      "714-992-7073",
+      "Henry Hua",
+      "Vice President, Administrative Services",
+      "hhua@fullcoll.edu hhua@fullcoll.edu",
+      "714-992-7017",
+      "Carlos Ayon, Ph.D."
+     ],
+     "emails": [
+      "hhua@fullcoll.edu",
+      "sdelatorre@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Instruction",
+     "position": "vpaa",
+     "window": [
+      "hhua@fullcoll.edu hhua@fullcoll.edu",
+      "714-992-7017",
+      "Carlos Ayon, Ph.D.",
+      "Vice President, Instruction",
+      "cayon@fullcoll.edu cayon@fullcoll.edu",
+      "714-992-7033",
+      "Miranda Bates"
+     ],
+     "emails": [
+      "cayon@fullcoll.edu",
+      "hhua@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Chief Campus Communications Officer",
+     "position": null,
+     "window": [
+      "cayon@fullcoll.edu cayon@fullcoll.edu",
+      "714-992-7033",
+      "Miranda Bates",
+      "Chief Campus Communications Officer",
+      "mbates@fullcoll.edu mbates@fullcoll.edu",
+      "714-992-7014",
+      "Daniel Berumen"
+     ],
+     "emails": [
+      "cayon@fullcoll.edu",
+      "mbates@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Institutional Research, Planning and Effectiveness",
+     "position": null,
+     "window": [
+      "mbates@fullcoll.edu mbates@fullcoll.edu",
+      "714-992-7014",
+      "Daniel Berumen",
+      "Director, Institutional Research, Planning and Effectiveness",
+      "dberumen@fullcoll.edu dberumen@fullcoll.edu",
+      "714-992-7064",
+      "Lisa Nashua, Ph.D."
+     ],
+     "emails": [
+      "dberumen@fullcoll.edu",
+      "mbates@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Executive Director, Friends of Fullerton College Foundation",
+     "position": null,
+     "window": [
+      "dberumen@fullcoll.edu dberumen@fullcoll.edu",
+      "714-992-7064",
+      "Lisa Nashua, Ph.D.",
+      "Executive Director, Friends of Fullerton College Foundation",
+      "lnashua@fullcoll.edu lnashua@fullcoll.edu",
+      "714-992-7058",
+      "Managers"
+     ],
+     "emails": [
+      "dberumen@fullcoll.edu",
+      "lnashua@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Interim Director, Student Life and Leadership",
+     "position": null,
+     "window": [
+      "714-992-7058",
+      "Managers",
+      "Stephanie Rodriguez Yokana",
+      "Interim Director, Student Life and Leadership",
+      "srodriguezyokana@fullcoll.edu srodriguezyokana@fullcoll.edu",
+      "714-992-7096",
+      "Ericka Adakai"
+     ],
+     "emails": [
+      "srodriguezyokana@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Instructional Partnerships and Programs",
+     "position": null,
+     "window": [
+      "srodriguezyokana@fullcoll.edu srodriguezyokana@fullcoll.edu",
+      "714-992-7096",
+      "Ericka Adakai",
+      "Director, Instructional Partnerships and Programs",
+      "eadakai@fullcoll.edu eadakai@fullcoll.edu",
+      "714-992-7071",
+      "Carlos Aguirre, PhD."
+     ],
+     "emails": [
+      "eadakai@fullcoll.edu",
+      "srodriguezyokana@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Academic Support Programs – MESA",
+     "position": null,
+     "window": [
+      "eadakai@fullcoll.edu eadakai@fullcoll.edu",
+      "714-992-7071",
+      "Carlos Aguirre, PhD.",
+      "Director, Academic Support Programs – MESA",
+      "caguirre1@fullcoll.edu caguirre1@fullcoll.edu",
+      "714-992-7726",
+      "Cecilia Arriaza"
+     ],
+     "emails": [
+      "caguirre1@fullcoll.edu",
+      "eadakai@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Transfer Center",
+     "position": null,
+     "window": [
+      "caguirre1@fullcoll.edu caguirre1@fullcoll.edu",
+      "714-992-7726",
+      "Cecilia Arriaza",
+      "Director, Transfer Center",
+      "carriaza@fullcoll.edu carriaza@fullcoll.edu",
+      "714-992-7087",
+      "Alexander Brown"
+     ],
+     "emails": [
+      "caguirre1@fullcoll.edu",
+      "carriaza@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Dual Enrollment and High School Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "acarlos@fullcoll.edu acarlos@fullcoll.edu",
+      "714-992-7012",
+      "Tam Contreras",
+      "Director, Dual Enrollment and High School Articulation",
+      "tcontreras@fullcoll.edu tcontreras@fullcoll.edu",
+      "714-992-7728",
+      "Nichole Crockrom"
+     ],
+     "emails": [
+      "acarlos@fullcoll.edu",
+      "tcontreras@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Educational Partnerships and Programs – Student Success Advocates",
+     "position": null,
+     "window": [
+      "tcontreras@fullcoll.edu tcontreras@fullcoll.edu",
+      "714-992-7728",
+      "Nichole Crockrom",
+      "Director, Educational Partnerships and Programs – Student Success Advocates",
+      "ncrockrom@fullcoll.edu ncrockrom@fullcoll.edu",
+      "714-732-5010",
+      "Andrew Diaz"
+     ],
+     "emails": [
+      "ncrockrom@fullcoll.edu",
+      "tcontreras@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, EOPS, CARE, FYSI and CalWORKs",
+     "position": null,
+     "window": [
+      "jerickson@fullcoll.ed jerickson@fullcoll.edu",
+      "714-992-7185",
+      "Deniz Fierro, Ed.D.",
+      "Director, EOPS, CARE, FYSI and CalWORKs",
+      "dfierro@fullcoll.edu dfierro@fullcoll.edu",
+      "714-992-7090",
+      "Scott Giles"
+     ],
+     "emails": [
+      "dfierro@fullcoll.edu",
+      "jerickson@fullcoll.ed",
+      "jerickson@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean, Kinesiology and Athletics",
+     "position": null,
+     "window": [
+      "dfierro@fullcoll.edu dfierro@fullcoll.edu",
+      "714-992-7090",
+      "Scott Giles",
+      "Associate Dean, Kinesiology and Athletics",
+      "sgiles@fullcoll.edu sgiles@fullcoll.edu",
+      "714-992-7477",
+      "Marietta Gilliard"
+     ],
+     "emails": [
+      "dfierro@fullcoll.edu",
+      "sgiles@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Child Development and Educational Studies Lab School",
+     "position": null,
+     "window": [
+      "sgiles@fullcoll.edu sgiles@fullcoll.edu",
+      "714-992-7477",
+      "Marietta Gilliard",
+      "Director, Child Development and Educational Studies Lab School",
+      "mgilliard@fullcoll.edu mgilliard@fullcoll.edu",
+      "714-992-7070",
+      "Jessica Johnson"
+     ],
+     "emails": [
+      "mgilliard@fullcoll.edu",
+      "sgiles@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Campus Safety",
+     "position": null,
+     "window": [
+      "jjohnson2@fullcoll.edu jjohnson2@fullcoll.edu",
+      "714-992-7175",
+      "John Krok",
+      "Director, Campus Safety",
+      "jkrok@fullcoll.edu jkrok@fullcoll.edu",
+      "714-992-7081",
+      "VACANT"
+     ],
+     "emails": [
+      "jjohnson2@fullcoll.edu",
+      "jkrok@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Physical Plant and Facilities",
+     "position": null,
+     "window": [
+      "jkrok@fullcoll.edu jkrok@fullcoll.edu",
+      "714-992-7081",
+      "VACANT",
+      "Director, Physical Plant and Facilities",
+      "714-992-7025",
+      "Daniel Berumen",
+      "Interim Director, Academic Computing Technologies"
+     ],
+     "emails": [
+      "jkrok@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Interim Director, Academic Computing Technologies",
+     "position": null,
+     "window": [
+      "Director, Physical Plant and Facilities",
+      "714-992-7025",
+      "Daniel Berumen",
+      "Interim Director, Academic Computing Technologies",
+      "dberumen@fullcoll.edu dberumen@fullcoll.edu",
+      "714-992-7021",
+      "Rena Martinez Stluka"
+     ],
+     "emails": [
+      "dberumen@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Admissions and Records",
+     "position": "dean_ar",
+     "window": [
+      "dberumen@fullcoll.edu dberumen@fullcoll.edu",
+      "714-992-7021",
+      "Rena Martinez Stluka",
+      "Director, Admissions and Records",
+      "rmartinezstluka@fullcoll.edu rmartinezstluka@fullcoll.edu",
+      "714-992-7077",
+      "Jennifer Merchant, Ed.D."
+     ],
+     "emails": [
+      "dberumen@fullcoll.edu",
+      "rmartinezstluka@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Educational Partnerships and Programs – Guided Pathways",
+     "position": null,
+     "window": [
+      "rmartinezstluka@fullcoll.edu rmartinezstluka@fullcoll.edu",
+      "714-992-7077",
+      "Jennifer Merchant, Ed.D.",
+      "Director, Educational Partnerships and Programs – Guided Pathways",
+      "jmerchant@fullcoll.edu jmerchant@fullcoll.edu",
+      "714-992-7148",
+      "Kristine Nikkhoo"
+     ],
+     "emails": [
+      "jmerchant@fullcoll.edu",
+      "rmartinezstluka@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean, Learning Resources",
+     "position": null,
+     "window": [
+      "jmerchant@fullcoll.edu jmerchant@fullcoll.edu",
+      "714-992-7148",
+      "Kristine Nikkhoo",
+      "Associate Dean, Learning Resources",
+      "knikkhoo@fullcoll.edu knikkhoo@fullcoll.edu",
+      "714-992-7066",
+      "John Quinn"
+     ],
+     "emails": [
+      "jmerchant@fullcoll.edu",
+      "knikkhoo@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Financial Aid",
+     "position": null,
+     "window": [
+      "lreyes@fullcoll.edu lreyes@fullcoll.edu",
+      "714-992-7027",
+      "Greg Ryan",
+      "Director, Financial Aid",
+      "gryan@fullcoll.edu gryan@fullcoll.edu",
+      "714-992-7092",
+      "Valerie Salazar"
+     ],
+     "emails": [
+      "gryan@fullcoll.edu",
+      "lreyes@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Educational Partnerships and Programs – Promise Program",
+     "position": null,
+     "window": [
+      "gryan@fullcoll.edu gryan@fullcoll.edu",
+      "714-992-7092",
+      "Valerie Salazar",
+      "Director, Educational Partnerships and Programs – Promise Program",
+      "vsalazar@fullcoll.edu vsalazar@fullcoll.edu",
+      "714-992-7189",
+      "Theresa Ullrich"
+     ],
+     "emails": [
+      "gryan@fullcoll.edu",
+      "vsalazar@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Student Health and Wellness Center",
+     "position": null,
+     "window": [
+      "vsalazar@fullcoll.edu vsalazar@fullcoll.edu",
+      "714-992-7189",
+      "Theresa Ullrich",
+      "Director, Student Health and Wellness Center",
+      "tullrich@fullcoll.edu tullrich@fullcoll.edu",
+      "714-992-7094",
+      "Leona Vassale"
+     ],
+     "emails": [
+      "tullrich@fullcoll.edu",
+      "vsalazar@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Director, Disability Support Services",
+     "position": null,
+     "window": [
+      "tullrich@fullcoll.edu tullrich@fullcoll.edu",
+      "714-992-7094",
+      "Leona Vassale",
+      "Director, Disability Support Services",
+      "lvassale@fullcoll.edu lvassale@fullcoll.edu",
+      "714-992-7100",
+      "Malmi Vitharanage"
+     ],
+     "emails": [
+      "lvassale@fullcoll.edu",
+      "tullrich@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean, Student Inclusion and Engagement",
+     "position": null,
+     "window": [
+      "mvitharanage@fullcoll.edu mvitharanage@fullcoll.edu",
+      "714-992-7007",
+      "Connie Moreno Yamashiro, Ed.D.",
+      "Associate Dean, Student Inclusion and Engagement",
+      "cmorenoyamashiro@fullcoll.edu cmorenoyamashiro@fullcoll.edu",
+      "714-992-7016",
+      "Deans"
+     ],
+     "emails": [
+      "cmorenoyamashiro@fullcoll.edu",
+      "mvitharanage@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Enrollment Services",
+     "position": null,
+     "window": [
+      "714-992-7016",
+      "Deans",
+      "Albert Abutin, Ed.D.",
+      "Dean, Enrollment Services",
+      "aabutin@fullcoll.edu aabutin@fullcoll.edu",
+      "714-992-7076",
+      "Brandi Avila, Ed.D."
+     ],
+     "emails": [
+      "aabutin@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Student Support Services",
+     "position": null,
+     "window": [
+      "aabutin@fullcoll.edu aabutin@fullcoll.edu",
+      "714-992-7076",
+      "Brandi Avila, Ed.D.",
+      "Dean, Student Support Services",
+      "bavila@fullcoll.edu bavila@fullcoll.edu",
+      "714-992-7088",
+      "Dani WIlson, Ed.D."
+     ],
+     "emails": [
+      "aabutin@fullcoll.edu",
+      "bavila@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Interim Dean, Business and Computer Information Systems",
+     "position": null,
+     "window": [
+      "bavila@fullcoll.edu bavila@fullcoll.edu",
+      "714-992-7088",
+      "Dani WIlson, Ed.D.",
+      "Interim Dean, Business and Computer Information Systems",
+      "dwilson@fullcoll.edu dwilson@fullcoll.edu",
+      "714-992-7033",
+      "Ziza Delgado Noguera, Ph.D."
+     ],
+     "emails": [
+      "bavila@fullcoll.edu",
+      "dwilson@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Ethnic Studies and Student Equity",
+     "position": null,
+     "window": [
+      "dwilson@fullcoll.edu dwilson@fullcoll.edu",
+      "714-992-7033",
+      "Ziza Delgado Noguera, Ph.D.",
+      "Dean, Ethnic Studies and Student Equity",
+      "zdelgado@fullcoll.edu zdelgado@fullcoll.edu",
+      "714-992-7731",
+      "Samuel Foster, Ph.D."
+     ],
+     "emails": [
+      "dwilson@fullcoll.edu",
+      "zdelgado@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Mathematics and Computer Sciences",
+     "position": null,
+     "window": [
+      "zdelgado@fullcoll.edu zdelgado@fullcoll.edu",
+      "714-992-7731",
+      "Samuel Foster, Ph.D.",
+      "Dean, Mathematics and Computer Sciences",
+      "sfoster@fullcoll.edu sfoster@fullcoll.edu",
+      "714-992-7042",
+      "Jorge Gamboa, Ed.D."
+     ],
+     "emails": [
+      "sfoster@fullcoll.edu",
+      "zdelgado@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Social Sciences",
+     "position": null,
+     "window": [
+      "sfoster@fullcoll.edu sfoster@fullcoll.edu",
+      "714-992-7042",
+      "Jorge Gamboa, Ed.D.",
+      "Dean, Social Sciences",
+      "jgamboa@fullcoll.edu jgamboa@fullcoll.edu",
+      "714-992-7048",
+      "Flor Huerta, Ed.D."
+     ],
+     "emails": [
+      "jgamboa@fullcoll.edu",
+      "sfoster@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Counseling and Student Development",
+     "position": null,
+     "window": [
+      "jgamboa@fullcoll.edu jgamboa@fullcoll.edu",
+      "714-992-7048",
+      "Flor Huerta, Ed.D.",
+      "Dean, Counseling and Student Development",
+      "fhuerta@fullcoll.edu fhuerta@fullcoll.edu",
+      "714-992-7085",
+      "Beth Kelley, Ed.D."
+     ],
+     "emails": [
+      "fhuerta@fullcoll.edu",
+      "jgamboa@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Kinesiology and Athletics",
+     "position": null,
+     "window": [
+      "fhuerta@fullcoll.edu fhuerta@fullcoll.edu",
+      "714-992-7085",
+      "Beth Kelley, Ed.D.",
+      "Dean, Kinesiology and Athletics",
+      "bkelley@fullcoll.edu bkelley@fullcoll.edu",
+      "714-992-7046",
+      "Grant Linsell, DMA"
+     ],
+     "emails": [
+      "bkelley@fullcoll.edu",
+      "fhuerta@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Fine Arts",
+     "position": null,
+     "window": [
+      "bkelley@fullcoll.edu bkelley@fullcoll.edu",
+      "714-992-7046",
+      "Grant Linsell, DMA",
+      "Dean, Fine Arts",
+      "glinsell@fullcoll.edu glinsell@fullcoll.edu",
+      "714-992-7035",
+      "Jeanette Rodriguez"
+     ],
+     "emails": [
+      "bkelley@fullcoll.edu",
+      "glinsell@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Humanities",
+     "position": null,
+     "window": [
+      "glinsell@fullcoll.edu glinsell@fullcoll.edu",
+      "714-992-7035",
+      "Jeanette Rodriguez",
+      "Dean, Humanities",
+      "jrodriguez1@fullcoll.edu jrodriguez1@fullcoll.edu",
+      "714-992-7036",
+      "Angela Henderson"
+     ],
+     "emails": [
+      "glinsell@fullcoll.edu",
+      "jrodriguez1@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Interim Dean, Natural Sciences",
+     "position": null,
+     "window": [
+      "jrodriguez1@fullcoll.edu jrodriguez1@fullcoll.edu",
+      "714-992-7036",
+      "Angela Henderson",
+      "Interim Dean, Natural Sciences",
+      "ahenderson@fullcoll.edu ahenderson@fullcoll.edu",
+      "714-992-7044",
+      "Ken Starkman"
+     ],
+     "emails": [
+      "ahenderson@fullcoll.edu",
+      "jrodriguez1@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Technology and Engineering",
+     "position": null,
+     "window": [
+      "ahenderson@fullcoll.edu ahenderson@fullcoll.edu",
+      "714-992-7044",
+      "Ken Starkman",
+      "Dean, Technology and Engineering",
+      "kstarkman@fullcoll.edu kstarkman@fullcoll.edu",
+      "714-992-7052",
+      "Dani Wilson, Ed.D."
+     ],
+     "emails": [
+      "ahenderson@fullcoll.edu",
+      "kstarkman@fullcoll.edu"
+     ]
+    },
+    {
+     "line": "Dean, Library/LRISPS",
+     "position": null,
+     "window": [
+      "kstarkman@fullcoll.edu kstarkman@fullcoll.edu",
+      "714-992-7052",
+      "Dani Wilson, Ed.D.",
+      "Dean, Library/LRISPS",
+      "dwilson@fullcoll.edu dwilson@fullcoll.edu",
+      "714-992-7040",
+      "Fullerton College"
+     ],
+     "emails": [
+      "dwilson@fullcoll.edu",
+      "kstarkman@fullcoll.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://instructionalpartnerships.fullcoll.edu/administration-of-justice-pathway-program/",
+   "status": 404
+  },
+  {
+   "url": "https://admissions.fullcoll.edu/",
+   "final_url": "https://admissions.fullcoll.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://studentlife.fullcoll.edu/",
+   "final_url": "https://studentlife.fullcoll.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://veterans.fullcoll.edu/",
+   "final_url": "https://veterans.fullcoll.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center | Serving those who served us",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center | Serving those who served us",
+      "714.992.7000",
+      "Online Services",
+      "Directory"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Location: Veterans Resource Center (VRC), SCC Room 101",
+     "position": "vrc",
+     "window": [
+      "October 13, 2026",
+      "November 12, 2026",
+      "December 8, 2026",
+      "Location: Veterans Resource Center (VRC), SCC Room 101",
+      "We look forward to seeing you there!",
+      "Academics",
+      "Business, CIS, and Economic & Workforce Development"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Email",
+      "Orientation",
+      "Administration",
+      "President's Office",
+      "Campus Communications",
+      "Administrative Services",
+      "Instruction"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "http://www.fullcoll.edu/faculty-staff/faculty-staff-directory",
+   "status": 404
+  },
+  {
+   "url": "https://veterans.fullcoll.edu/veterans-educational-assistance-program-veap-ch-32/",
+   "final_url": "https://veterans.fullcoll.edu/veterans-educational-assistance-program-veap-ch-32/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Educational Assistance Program (VEAP) (Ch. 32) | Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Educational Assistance Program (VEAP) (Ch. 32) | Veterans Resource Center",
+      "714.992.7000",
+      "Online Services",
+      "Directory"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Email",
+      "Orientation",
+      "Administration",
+      "President's Office",
+      "Campus Communications",
+      "Administrative Services",
+      "Instruction"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://veterans.fullcoll.edu/vocational-rehabilitation-employment-ch-31/",
+   "final_url": "https://veterans.fullcoll.edu/vocational-rehabilitation-employment-ch-31/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Readiness & Employment (Ch. 31) | Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veteran Readiness & Employment (Ch. 31) | Veterans Resource Center",
+      "714.992.7000",
+      "Online Services",
+      "Directory"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Obtain a memorandum rating of 20% or more from the Department of Veterans Affairs (VA), and apply for VR&E services",
+     "position": "vrc",
+     "window": [
+      "Who is Eligible for VR&E Services?",
+      "Active Duty Servicemembers are eligible if they:",
+      "Expect to receive an honorable or other than dishonorable discharge upon separation from active duty",
+      "Obtain a memorandum rating of 20% or more from the Department of Veterans Affairs (VA), and apply for VR&E services",
+      "Or (until December 31, 2015)",
+      "Are participating in the Integrated Disability Evaluation System (IDES) or are certified by the military as having a severe injury or illness that may prevent them from performing their military duties",
+      "Apply for VR&E services, and report for an evaluation with a VR&E counselor before separating from active duty"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Email",
+      "Orientation",
+      "Administration",
+      "President's Office",
+      "Campus Communications",
+      "Administrative Services",
+      "Instruction"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "http://www.fullcoll.edu/president/presidents-welcome",
+   "status": 404
+  }
+ ],
+ "unread_links": [
+  "http://admissions.fullcoll.edu/index.html"
+ ],
+ "run": "41315220745"
+}
