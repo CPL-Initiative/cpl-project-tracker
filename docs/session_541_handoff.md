@@ -1,69 +1,59 @@
 ---
-title: "Session 541 handoff: Sierra training opens the current Sierra beside the tab; the Library's SharePoint note; the contacts harvest's fourth read"
+title: "Session 541 handoff: Sierra's side panel and matched instructions, the Exhibits List view, the contacts harvest's fourth read"
 date: 2026-11-01
 session: 540 (SkyBunchberry, the CPL Queue routine's 14:12Z firing, with Sam live from about 14:30Z)
-tags: [handoff, contacts-harvest, sierra-training, library]
+tags: [handoff, sierra, exhibits, contacts-harvest, library]
 status: current
 ---
 
 # You are Session 541
 
-Your moniker is **SkySparkleberry**. Session 540 (SkyBunchberry) was the CPL Queue routine's 14:12Z firing on 2026-11-01
-(6:12 AM Pacific, standard time since today). Sam joined it live about 14:30Z with two Sierra training asks. This is a
-**full checkpoint**: the run wrote Rule 10 data receipts (the harvest apply, the summit notes). It skipped `README.md`,
-`kb/README.md` and the pipeline view, because nothing they describe moved. No KB note met the bar.
-
-## Sam's words this run
-
-- **Sierra training** (about 14:30Z): *"I added and instruction on a vet sprint and cpl funding question and click Save
-  and Ask Sierra or Try it on Sierra, both lead to what looks like a dead version of sierra--should go to the current
-  version and open her in a side panel so the user doesn't get lost."* Built, PR **#2645**.
-- **Sierra's instruction budget:** *"worrying that we are removing part of her brain to stuff in different parts and
-  thinking that may not be sustainable or wise ... consider whether we might use JEV ..."*, then *"use Fable as
-  advisor"*. Fable's advice is in `docs/sierra_rules_lessons.md`, *Matched instructions*. The first step changes the live
-  `cpl-chat` function, so it is **Open Asks Sheet 153 card 3**, held.
-- **Through the side session beside S539** (which Sam routed to S540, *"to keep it simple"*): *"yes, clear them"* (the
-  two noncredit summit refresh notes, done); *"build in a note to the user that sharepoint is not currently accessible
-  and offer instructions on what to do instead"* (done, `library.js`); *"put anything else needed on a decision sheet"*.
-
-## What shipped
-
-- **PR #2643** (this branch): the Library's SharePoint note (`sharePointOnly`, guard `library` (20)); the summit notes
-  cleared through the Supabase MCP after the migrate run's 502 (receipts beside the migration; the side session's #2644
-  closed with a pointer); the fourth contacts read; lanes, lessons, status file, this handoff.
-- **PR #2645** (`claude/sierra-training-sidebar`): `sierra/sidebar.js` `ask(q)`, `sierra.js` sends `?ask=` only with
-  `send=1&panel=1` for a same-origin parent, `sierra_training.js` asks in the bar. Guards `sierra_sidebar_ask`,
-  `sierra_training_p1`.
-- **The fourth read** (step 8): run 41315220745, Diablo Valley to Imperial Valley. **41 people at 8 colleges, 41 new,
-  0 gone** (apply 41316260199). Five Equity-joined VP titles held for Sheet 153 card 2. The table holds 116.
-- **Open Asks Sheet 153**, https://claude.ai/artifact/RjwgkgeczU7wDS9YDZN6Js (current; CPLBrain #593): 1 the daytime
-  Library run never created; 2 the Equity VP titles; 3 matched instructions for Sierra. Sheet 152
-  (https://claude.ai/artifact/4zeWoZTwbxVpmrBy52ZJcr) is superseded, no replies.
-- The Chancellor's address record already links its Pages address (Sam repointed it 10-31); that wait is closed.
+Your moniker is **SkySparkleberry** (the CER side lane used SkySnowberry today). S540 was the routine's 14:12Z
+firing; Sam joined live and drove most of it. **Full checkpoint**, written at the context WARN (about 92k left). It
+skipped `README.md`, `kb/README.md` and the pipeline view; nothing they describe moved.
 
 ## Open work, in order
 
-0. **PRs #2643, #2645 and CPLBrain #593**, if still open: wait for `test` on each head, squash-merge the tracker PRs,
-   then the vault PR (its `coverage` check reads the tracker's main).
-1. **Sheet 153's replies** (read the store first). Card 2 *count*: release `held_for_sam` from
-   `kb/contacts_harvest/41315220745_records/records.json` as a partial load, and widen the runner's VPSS/VPAA patterns.
-   Card 3 *deploy* or *build*: Fable's first step in `chatbox/supabase/functions/cpl-chat/index.ts` (lessons).
-2. **The contacts harvest, each night** (step 8): `step=read`, `batch=15`; records by hand (read each window's order:
-   tonight had four layouts); `step=apply`. West Hills Lemoore's own page still settles Coalinga's `unsettled_campus`.
-3. **Monterey Peninsula's 14:** coverage first (42989, 43858, 44876; their record files carry no `parts`, so page-read
-   them), then the transfer degrees. Fewer than 3% parks the college.
-4. **Carryover:** Accept's email (Sheet 146 card 3, RCCD IT); the cpl-chat deploy held for Sam's go (handoff 530 item
-   4); Sierra's first-text latency; `credential_alignment_for_college`; the college short-name editor; the lints'
-   checkout time.
+0. **The cpl-chat deploy Sam approved ("deploy all", ~14:55Z).** PR **#2647** (matched instructions) waits on
+   `test` after a timing-log guard fix. When green: squash-merge, then dispatch `cpl-chat-deploy.yml` on `main` with
+   confirm `DEPLOY`; it carries handoff 530's three held changes too. The preview A/B regressed smoke 7v twice on the
+   first design (one shared word matched the Cabrillo noncredit rule); with two shared words required it passed
+   (run 41321479920, modes 7v,7l). Read the deploy's own smoke job, then delete nothing; the preview slug is cleaned.
+1. **PR #2645** (Sierra training opens the current Sierra in the side panel) and **PR #2648** (the Exhibits List
+   view): merge each on a passing `test` on its current head; main moves under them, so merge `origin/main` and run
+   `python3 kb/_build_dependency_map.py` if lints say stale. **CPLBrain #593** (Sheet 152/153 builder, session note,
+   braindump) merges after.
+2. **Sam's next asks on the List view** (his words in `docs/cer_v2_redesign_lessons.md`, *The List view*):
+   - the search bar finds a credential by **college, district, SWP region or ASCCC region** (college is in
+     `articulations[].local[].colleges`; district and regions need the college identity file joined);
+   - **find and replace with a preview** (mocked at https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A, bottom);
+   - mirror selection, flags, drill-downs, Confidence and resizing into that mock if he asks to react again.
+3. **Scheduled-sessions step 9, the re-analysis pass** (new today): read `_EXHIBIT_REANALYSIS::` rows with Sam's
+   comments; code checks first; the Jev runner job and the findings panel are the next builds.
+4. **The contacts harvest, each night** (step 8). 121 people after S540 (fourth read 41 + the five Equity titles,
+   counted on Sheet 153). Coalinga's `unsettled_campus` still waits for West Hills Lemoore's own page.
+5. **Monterey Peninsula's 14**, unchanged (coverage 42989, 43858, 44876 first).
+6. **Carryover:** the Exhibits tab hides a decided card only for the visit (make it read the live rows); Accept's
+   email (Sheet 146 card 3); Sierra's first-text latency; the college short-name editor; the lints' checkout time.
+
+## What shipped or ran this session
+
+- **#2643 merged:** the Library's SharePoint note; the two summit refresh notes cleared (MCP after a 502); the fourth
+  contacts read; Sheet 153 rulings in the lanes; CI made hermetic (`cer_procedures_test`) and the Commons builder
+  leaves out a zero issue (a 14:34Z bot push to main had broken both for every PR).
+- **Open Asks Sheet 153** (https://claude.ai/artifact/RjwgkgeczU7wDS9YDZN6Js), answered 14:41Z: 1 overnight, 2 count,
+  3 deploy. No sheet is open.
+- **Pages** dispatched by hand for the 14:34Z CER run (bot pushes start no Pages deploy): Sam's 18 Exhibits saves had
+  landed; only the served queue was stale.
 
 ## Lessons to honor
 
-- **A migrate run that answers 502 applied nothing.** Read back before retrying; a guarded UPDATE through the MCP is
-  the same write, and its receipt names the failed run.
-- **Advice that routes a file through a store no session can open is worse than none** (the SharePoint hints).
-- **Sam live in a scheduled run:** his asks go first; the queue item that was mid-flight finishes at the checkpoint.
+- **A bot push to main can break every PR's lints without a CI run of its own.** Fetch main before calling a PR
+  failure yours.
+- **One shared word is not a match** for instruction routing; the A/B caught it.
+- **The a11y seed waits for the control it clicks.**
 
 ## Let go
 
-S540 holds no PR subscription, no check-in and no artifact watch (remote sessions cannot watch artifacts). The CPL
-Queue routine (`trig_01L8K64ZKYb5eALdT4HW6NAV`) fires next at 06:12Z on 2026-11-02 (10:12 PM Pacific).
+No PR subscription, no check-in. The artifacts have no watch (remote sessions cannot). The routine fires next at
+06:12Z on 2026-11-02.
