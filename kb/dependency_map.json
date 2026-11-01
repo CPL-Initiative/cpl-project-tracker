@@ -4,9 +4,9 @@
   "supabase_tables": 103,
   "rpcs": 47,
   "edge_functions": 11,
-  "file_datasets": 748,
+  "file_datasets": 751,
   "external_services": 192,
-  "consumers": 495,
+  "consumers": 497,
   "workflows": 59,
   "data_js_files": 71,
   "tabs": 39
@@ -9817,6 +9817,13 @@
      "line": 98
     },
     {
+     "id": "script:kb/_ib_fold_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 109
+    },
+    {
      "id": "script:kb/_identities_rekey_dryrun.py",
      "kind": "script",
      "direction": "read",
@@ -12125,11 +12132,44 @@
   "file:kb/credential_merges.json": {
    "consumers": [
     {
+     "id": "script:kb/_ib_fold_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 146
+    },
+    {
      "id": "script:kb/_merge_credentials.py",
      "kind": "script",
      "direction": "read",
      "how": "literal",
      "line": 47
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/credential_merges_out/2026-11-01/ib_fold_receipt.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_ib_fold_apply.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 153
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/credential_merges_out/2026-11-01/ib_kb_curation_update_receipt.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_ib_fold_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 161
     }
    ],
    "served": true,
@@ -12328,6 +12368,13 @@
      "line": 96
     },
     {
+     "id": "script:kb/_ib_fold_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 91
+    },
+    {
      "id": "script:kb/_match_cos_authority.py",
      "kind": "script",
      "direction": "read",
@@ -12353,7 +12400,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 848
+     "line": 849
     },
     {
      "id": "script:kb/_seed_coci_articulations.py",
@@ -13326,6 +13373,13 @@
      "direction": "read",
      "how": "literal",
      "line": 315
+    },
+    {
+     "id": "script:kb/_ib_official_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 244
     }
    ],
    "producers": [
@@ -16811,7 +16865,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 55
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -16875,14 +16929,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 377
+     "line": 378
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 377
+     "line": 378
     }
    ],
    "producers": [
@@ -17085,6 +17139,20 @@
      "line": 95
     },
     {
+     "id": "script:kb/_ib_fold_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 61
+    },
+    {
+     "id": "script:kb/_ib_official_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 225
+    },
+    {
      "id": "script:kb/_match_cos_authority.py",
      "kind": "script",
      "direction": "read",
@@ -17103,7 +17171,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 53
+     "line": 54
     },
     {
      "id": "script:kb/_seed_coci_articulations.py",
@@ -19391,7 +19459,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 804
+     "line": 805
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -20437,6 +20505,19 @@
    "main_committers": []
   },
   "file:tests/governance_docs_panel.test.js": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/ib_official_titles_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24689,7 +24770,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 617
+     "line": 619
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -24752,14 +24833,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1209
+     "line": 1220
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1226
+     "line": 1237
     },
     {
      "id": "script:kb/_rekey_kb_curation_supabase.py",
@@ -27221,6 +27302,7 @@
     "tests/cer_decision_apply_test.py",
     "tests/cer_procedures_test.py",
     "tests/ap_official_titles_test.py",
+    "tests/ib_official_titles_test.py",
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/exhibits_review_build_test.py",

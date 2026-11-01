@@ -187,7 +187,7 @@ Guards: `tests/exhibits_rules.test.js`, `tests/cer_procedures_test.py`.
 The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.
 
 **IB on the AP pattern (SkyInkberry, 2026-11-01, on the recommendation; Open Asks Sheet 150 card 1).**
-`kb/_ib_official_titles.py` holds IB's Diploma Programme subjects, current and retired, at the levels IB offers, named
+`kb/_ib_official_titles.py` holds IB's `Diploma Programme` subjects (IB's own name), current and retired, at the levels IB offers, named
 as the reference and the Cal-GETC IB list write them (*IB Language A: Literature HL*). A missing level takes HL, the
 exam colleges award IB credit for, and an SL-only subject takes SL (*IB World Religions SL*). The exam's language folds
 into the subject; a Language A exam in another language keeps *(Non-English)*. Brand-family's `ib` lane runs beside
