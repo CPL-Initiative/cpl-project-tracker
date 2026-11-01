@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-01_college_contacts_harvest.sql
-name=s536_college_contacts_harvest
+file=kb/migrations/2026-11-01_library_summit_refresh_notes.sql
+name=s539side_library_summit_refresh_notes
