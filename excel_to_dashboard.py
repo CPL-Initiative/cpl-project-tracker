@@ -7246,6 +7246,42 @@ def _public_curator(v):
     return "reviewer" if "@" in v else v
 
 
+def _statewide_basis_titles(odir=None):
+    """Unified titles based on statewide: the Fact Sheet's statewide set.
+
+    Sam, 2026-11-01: "count all canonical exhibit titles that include a
+    statewide as based on a statewide, whether local or not." The set is every
+    unified title whose MAP CCC Collaborative exhibit publishes at least one
+    credit recommendation (Sam, 2026-10-30: "Exhibits need at least one credit
+    recommendation to show here"). fact-sheet/_build_statewide_recs.py's own
+    build() decides it, read from statewide_data.js, so the Fact Sheet, the
+    Exhibits List's Basis column and this reference count one set. The
+    articulation lines alone found 84 of its 152 (2026-11-01).
+
+    statewide_data.js is written earlier in the same run. Absent or unreadable,
+    the set is empty and the flag falls back to the articulation lines; the
+    NOTE says so in the run log.
+    """
+    import importlib.util
+    cands = [os.path.join(odir or SCRIPT_DIR, "statewide_data.js"),
+             os.path.join(SCRIPT_DIR, "statewide_data.js")]
+    path = next((c for c in cands if os.path.exists(c)), None)
+    if not path:
+        print("  NOTE: statewide_data.js absent; the statewide flag reads articulation lines alone")
+        return set()
+    try:
+        spec = importlib.util.spec_from_file_location(
+            "_fact_sheet_statewide_recs",
+            os.path.join(SCRIPT_DIR, "fact-sheet", "_build_statewide_recs.py"))
+        mod = importlib.util.module_from_spec(spec)
+        spec.loader.exec_module(mod)
+        recs, _no_ccc = mod.build(mod.load_statewide(path))
+    except Exception as e:                       # noqa: BLE001 — degrade, never block
+        print(f"  NOTE: statewide set unreadable ({e}); the statewide flag reads articulation lines alone")
+        return set()
+    return set(recs)
+
+
 def export_credential_reference():
     """Build credential_reference_data.js — the lean payload consumed by the
     Credential Reference tab. Joins the credential-identity layer
@@ -7255,7 +7291,9 @@ def export_credential_reference():
 
       - the canonical credential name (unified_title) + issuer + trainer
       - the predominant discipline + TOP code across articulations
-      - whether ANY articulation is CCC Collaborative (statewide badge)
+      - whether it is based on statewide (statewide badge): any CCC
+        Collaborative articulation, or a statewide exhibit with a credit
+        recommendation in MAP (_statewide_basis_titles)
       - per common-course identity (CCN-ID/C-ID/M-ID/Unified) that articulates
         to this credential: identity + title + discipline + the local college
         course rows (subject/number/title) and earning colleges
@@ -7720,6 +7758,8 @@ def export_credential_reference():
                                     for a in members if a["cid"] != rep["cid"]]})
         return out
 
+    sw_basis = _statewide_basis_titles(odir)
+
     rows = []
     for ut, _n in raw_count_by_ut.items():
         creds = cred_doc.get(ut, [])
@@ -7730,7 +7770,9 @@ def export_credential_reference():
 
         ut_arts = art_by_ut.get(ut, [])
         disc_counter, top_counter = Counter(), Counter()
-        statewide = False        # has_ccc — any CCC Collaborative articulation
+        # Based on statewide: a statewide exhibit with a recommendation in MAP
+        # (sw_basis, the Fact Sheet's set), or any CCC Collaborative articulation.
+        statewide = ut in sw_basis
         has_local = False        # any non-CCC (Local/Industry/Apprenticeship/blank) articulation
         cpl_set = set()          # distinct CPL types across this credential's articulations
         ccc_recs = Counter()     # credit-recommendation strings from CCC rows (the statewide standard)
