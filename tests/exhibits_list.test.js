@@ -179,6 +179,17 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   mapBtn.click(); await settle();
   check("(14) the discipline drill-down lists the M-ID and its colleges", /M-ID WELD M1001/.test(txt(t.d.querySelector(".exh-l-drawer")))
     && /Norco College/.test(txt(t.d.querySelector(".exh-l-drawer"))));
+  // Custom sort (Sam, 2026-11-01: "first by title then by issuer or vice versa ... like Excel Custom sort").
+  t.d.getElementById("exh-l-cf-4").value = ""; t.d.getElementById("exh-l-cf-4").dispatchEvent(new t.w.Event("input")); await settle();
+  t.M._state.ls.sort = [{ col: 0, dir: 1 }];
+  sortBtn("CPL types").click(); await settle();
+  sortBtn("Issuer").dispatchEvent(new t.w.MouseEvent("click", { bubbles: true, shiftKey: true })); await settle();
+  check("(15) ⭐ Shift and a press adds a second sort level, and the line names both in order",
+    t.M._state.ls.sort.length === 2 && t.M._state.ls.sort[1].col === 4
+    && /Sorted by CPL types, A to Z, then Issuer, A to Z/.test(txt(t.d.getElementById("exh-l-sortline")))
+    && /\(2\)/.test(txt(sortBtn("Issuer"))));
+  words(t.d, "Clear the sort").click(); await settle();
+  check("(15) Clear the sort returns to Title A to Z", t.M._state.ls.sort.length === 1 && t.M._state.ls.sort[0].col === 0);
   let failed = 0;
   for (const [name, ok, why] of results) { console.log((ok ? "PASS " : "FAIL ") + name + (ok || !why ? "" : "\n     " + why)); if (!ok) failed++; }
   console.log("\n" + (results.length - failed) + "/" + results.length + " checks passed");

@@ -1736,7 +1736,7 @@
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
-      busy: false, collisions: null, sort: { col: 0, dir: 1 }, cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {} });
+      busy: false, collisions: null, sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {} });
   }
   /* The columns, each with what it shows (Sam, 2026-11-01: "sometimes I miss good ol' Excel, where I can quickly
      filter any column, sort any way ... use find and replace to fix things on the fly--that freedom is what you're
@@ -1787,16 +1787,22 @@
   }
   function listRows() {
     var L = listState(), cs = state.cs, q = L.q.trim().toLowerCase();
-    var sc = listCols()[L.sort.col] || listCols()[0], dir = L.sort.dir;
-    var rows = cs.rows.slice().sort(function (a, b) {
-      var x = sc.v(a), y = sc.v(b), c;
-      if (sc.n) c = (+x || 0) - (+y || 0);
-      else {
-        x = String(x || ""); y = String(y || "");
-        if ((!x || !y) && x !== y) return x ? -1 : 1;   // blanks last, either way
-        c = x.toLowerCase().localeCompare(y.toLowerCase());
+    // Custom sort (Sam, 2026-11-01: "first by title then by issuer or vice versa ... like Excel Custom sort"): the
+    // levels apply in order; a press on a header sorts by it alone, Shift and a press adds it as the next level.
+    var C0 = listCols(), levels = L.sort.length ? L.sort : [{ col: 0, dir: 1 }];
+    function cmp(a, b, lv) {
+      var sc = C0[lv.col] || C0[0], x = sc.v(a), y = sc.v(b);
+      if (sc.n) {
+        if ((x == null || y == null) && x !== y) return x == null ? 1 : -1;
+        return lv.dir * ((+x || 0) - (+y || 0));
       }
-      return dir * c || listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
+      x = String(x || ""); y = String(y || "");
+      if ((!x || !y) && x !== y) return x ? -1 : 1;   // blanks last, either way
+      return lv.dir * x.toLowerCase().localeCompare(y.toLowerCase());
+    }
+    var rows = cs.rows.slice().sort(function (a, b) {
+      for (var i = 0; i < levels.length; i++) { var c = cmp(a, b, levels[i]); if (c) return c; }
+      return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
     });
     return rows.filter(function (r) {
       if (L.f === "unreviewed" && listStatus(r) !== "Unreviewed") return false;
@@ -1973,13 +1979,18 @@
     });
     var headRow = el("tr", null, [el("th", { scope: "col", cls: "exh-l-box" }, [allBox]),
       el("th", { scope: "col", cls: "exh-l-box", text: "Flag" })].concat(C.map(function (c, i) {
-      var on = L.sort.col === i, up = L.sort.dir > 0;
-      var b = el("button", { type: "button", cls: "exh-l-sort" }, [c.h + (!on ? "" : c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A"))]);
-      b.addEventListener("click", function () {
-        L.sort = { col: i, dir: on ? -L.sort.dir : 1 }; redrawList();
+      var lvIdx = -1; L.sort.forEach(function (x, k) { if (x.col === i) lvIdx = k; });
+      var on = lvIdx > -1, up = on && L.sort[lvIdx].dir > 0;
+      var b = el("button", { type: "button", cls: "exh-l-sort", title: "Press to sort by this column; Shift and press to sort within the sort already set" },
+        [c.h + (!on ? "" : (L.sort.length > 1 ? " (" + (lvIdx + 1) + ")" : "") + (c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")))]);
+      b.addEventListener("click", function (e) {
+        if (e.shiftKey) {
+          if (on) L.sort[lvIdx].dir = -L.sort[lvIdx].dir; else L.sort.push({ col: i, dir: 1 });
+        } else L.sort = [{ col: i, dir: on && L.sort.length === 1 ? -L.sort[0].dir : 1 }];
+        redrawList();
         var nb = document.querySelectorAll(".exh-l-sort")[i]; if (nb) nb.focus();
       });
-      return el("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b, listGrip(i, c.h)]);
+      return el("th", { scope: "col", "aria-sort": lvIdx === 0 ? (up ? "ascending" : "descending") : "none" }, [b, listGrip(i, c.h)]);
     })).concat([el("th", { scope: "col" }, [el("span", { cls: "exh-vh", text: "Edit" })])]));
     var filterRow = el("tr", { cls: "exh-l-cf" }, [el("td"), el("td")].concat(C.map(function (c, i) {
       var inp = el("input", { type: "search", cls: "exh-l-in exh-l-cfin", id: "exh-l-cf-" + i, autocomplete: "off",
@@ -2036,6 +2047,10 @@
     var out = el("div", null, [el("div", { cls: "exh-l-count" }, [el("span", { cls: "exh-muted exh-small", text: fmt(rows.length) + " credentials" +
       (rows.length > shown.length ? ", the first " + fmt(shown.length) + " shown" : "") }),
       el("span", { cls: "exh-muted exh-small", id: "exh-l-selcount", text: listSelWords() }),
+      el("span", { cls: "exh-muted exh-small", id: "exh-l-sortline", text: "Sorted by " + L.sort.map(function (x) {
+        var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
+        + ". Shift and press a header to add a level." }),
+      L.sort.length > 1 || L.sort[0].col !== 0 || L.sort[0].dir !== 1 ? word("Clear the sort", function () { L.sort = [{ col: 0, dir: 1 }]; redrawList(); }) : null,
       word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn, dl]), region]);
     if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
       function () { L.limit += LIST_LIMIT; redrawList(); }));
