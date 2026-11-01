@@ -880,7 +880,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `sierra/art/*.webp` | none found | committed by: `sierra-art-fetch.yml` |
 | `sierra/art/fetched.json` | none found | scripts: `scripts/fetch_sierra_art.py` · committed by: `sierra-art-fetch.yml` |
 | `sierra/index.html` | scripts: `scripts/ui_pass.py` | — |
-| `sierra/sidebar.js` | tabs: `library` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/adopt/index.html`, `library/chancellor-summit-address/index.html`, `library/cpl-opportunity/index.html`, `library/dsp-credit-starting-points/index.html`, `library/ell-iet-cpl-starting-points/index.html`, `library/index.html` | — |
+| `sierra/sidebar.js` | tabs: `library`, `sierra-training` · pages: `fact-sheet/index.html`, `funding-model/index.html`, `library/adopt/index.html`, `library/chancellor-summit-address/index.html`, `library/cpl-opportunity/index.html`, `library/dsp-credit-starting-points/index.html`, `library/ell-iet-cpl-starting-points/index.html`, `library/index.html` | — |
 | `sierra/sierra.js` | pages: `sierra/index.html` | — |
 | `sierra_training.js` | pages: `CPL_Dashboard.html` | — |
 | `sierra_wording_check.js` | tabs: `sierra-training` | — |

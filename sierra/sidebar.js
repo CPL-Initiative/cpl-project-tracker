@@ -60,6 +60,7 @@
   var WIDE = '(min-width: 1200px)';
   var DEFAULT_W = 420, MIN_W = 340, MAX_W = 960, PAGE_KEEPS = 600, STEP = 40;
   var KEY_W = 'cpl_sierra_bar_w';
+  var ASK_MAX = 1000; // sierra.js keeps the same cap on ?ask=
 
   var CSS = [
     'html.sbar-chip-on { scroll-padding-bottom: 88px; }',
@@ -257,6 +258,27 @@
     if (loaded) focusSierra();
     else { try { closeBtn.focus(); } catch (e) { /* best effort */ } }
   }
+  // Ask her a question and send it (Sam, 2026-11-01, on the Sierra training tab: "Save
+  // and Ask Sierra or Try it on Sierra ... should go to the current version and open her
+  // in a side panel so the user doesn't get lost"). The frame reloads with the question
+  // in ?ask= and ?send=1, so each test starts a fresh conversation under the newest
+  // instructions; sierra.js sends only inside the bar, for a host on its own origin.
+  function ask(question, from) {
+    var q = String(question || '').trim();
+    if (!q) { open(from); return; }
+    build();
+    var src = frameUrl() + '&ask=' + encodeURIComponent(q.slice(0, ASK_MAX)) + '&send=1';
+    if (frame) { loaded = false; frame.src = src; }
+    else {
+      frame = document.createElement('iframe');
+      frame.className = 'sbar-frame';
+      frame.title = 'Sierra, the CPL assistant';
+      frame.addEventListener('load', onFrameLoad);
+      frame.src = src;
+      bar.appendChild(frame);
+    }
+    open(from);
+  }
   function close() {
     if (!isOpen()) return;
     bar.hidden = true;
@@ -385,7 +407,7 @@
   else build();
 
   window.CPL_SIERRA_BAR = {
-    open: open, close: close, isOpen: isOpen, setChip: setChip, frameUrl: frameUrl,
+    open: open, ask: ask, close: close, isOpen: isOpen, setChip: setChip, frameUrl: frameUrl,
     width: width, setWidth: setWidth,
     SIERRA_URL: SIERRA_URL, WIDE: WIDE, MIN_W: MIN_W, DEFAULT_W: DEFAULT_W, KEY_W: KEY_W
   };

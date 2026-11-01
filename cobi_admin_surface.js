@@ -595,6 +595,7 @@ window.COBI_ADMIN_SURFACE = {
     },
     "sierra-training": {
       "modules": [
+        "sierra/sidebar.js",
         "sierra_rule_defaults.js",
         "sierra_training.js"
       ],
