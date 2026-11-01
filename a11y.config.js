@@ -675,6 +675,61 @@ async function seedProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Program Requirements List (2026-11-01, the Catalog Commons' shared List): every active program in COCI from the
+// real coci_programs_data.js the origin serves, a record seeded on four of every five (some failing a check), the live
+// college names from COCI's short ones, and the Record drawer of the first failing row open, so the table, the filter
+// words, the lede and the drawer are measured. The sweep aborts the Supabase reads, so the seed hands the tab the index.
+async function seedPrList(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "program-requirements/list") location.hash = "program-requirements/list"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => {
+    const M = window.CPL_PROGRAM_REQUIREMENTS;
+    return M && !M._state.loading && M._state.progress;
+  }, null, { timeout: 60000 });
+  /* The tables' reads failed off the origin, so the tab drew its error; clear it, and the List loads its engine
+     and COCI's list. */
+  await page.evaluate(() => {
+    const M = window.CPL_PROGRAM_REQUIREMENTS, S = M._state;
+    S.registry = []; S.records = []; S.error = null; S.view = "list";
+    M._render();
+  });
+  await page.waitForFunction(() => window.CPL_COCI_PROGRAMS && window.CPL_COMMONS_LIST, null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const M = window.CPL_PROGRAM_REQUIREMENTS, S = M._state, D = window.CPL_COCI_PROGRAMS;
+    const act = D.statuses.indexOf("Active"), recs = [], at = {};
+    let i = 0;
+    D.rows.forEach((r) => {
+      if (r[6] !== act) return;
+      const college = String(D.colleges[r[0]] || "").replace(/\b\w+/g, (w) => w.charAt(0) + w.slice(1).toLowerCase()) + " College";
+      at[r[1]] = college;
+      if (++i % 5 === 0) return;
+      recs.push({ college: college, control_number: r[1], program_title: r[2], checked: i % 50 === 1,
+        checks: { coverage: i % 7 !== 0, invented: i % 31 !== 0, arithmetic: i % 9 === 0 ? "unequal" : i % 13 === 0 ? "incomplete" : "equal" },
+        display: { counts: { here: i % 4 } }, _light: true });
+    });
+    S.registry = [{ college: "Cerritos College", catalog_url: "https://catalog.example/", catalog_year: "2026-2027" }];
+    S.records = recs; S.error = null;
+    S.progress = Object.assign({}, S.progress, { active: i, activeKeys: {}, activeCollege: at, errors: {} });
+    S.view = "list";
+    M._render();
+  });
+  await page.waitForSelector("#program-requirements-root .prl-table tbody tr", { timeout: 60000 });
+  // First Light's greeting opens 650 ms after load and would cover the List: mark the day seen and close it if it is up.
+  await page.waitForTimeout(700);
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.evaluate(() => {
+    const row = Array.from(document.querySelectorAll("#program-requirements-root .prl-table tbody tr")).find((tr) => /Fails/.test(tr.textContent));
+    const b = row && Array.from(row.querySelectorAll("button.prl-open")).find((x) => /^Record:/.test(x.getAttribute("aria-label") || ""));
+    if (b) b.click();
+  });
+  await page.waitForSelector("#program-requirements-root .prl-drawer", { timeout: 10000 });
+  await page.waitForTimeout(300);
+}
+
 // Seeds the Records view as a signed-in reviewer sees it (S347, Sheet 51 card 1): a record
 // with flags on the whole record and on a block, its blocks open, and the verdict box with
 // its Needs a fix note open, so every surface the flags and the verdict paint is measured.
@@ -3240,6 +3295,24 @@ module.exports = {
     routes: [{ hash: "canonical-subj4/list", name: "list-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCsrList(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Program Requirements: the List (2026-11-01, the Catalog Commons' shared List) ──
+     Every active program in COCI on one sheet, the Record drawer of a failing row open; one per theme. */
+  "program-requirements-list": {
+    file: "index.html",
+    title: "Program Requirements: List, every active program, a Record drawer open",
+    routes: [{ hash: "program-requirements/list", name: "list" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedPrList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "program-requirements-list-dark": {
+    file: "index.html",
+    title: "Program Requirements: List, dark",
+    routes: [{ hash: "program-requirements/list", name: "list-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedPrList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the Records view, signed in (S347) ──────────

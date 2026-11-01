@@ -357,10 +357,11 @@ block("(5)", function () {
   const { M, root, w } = ready();
   M._state.view = "catalogs"; M._render();
   const tabs = root.querySelectorAll('[role="tab"]');
-  check("(5) five views, Progress first", tabs.length === 5 && /^Progress/.test(tabs[0].textContent));
+  check("(5) six views, Progress first and the List last", tabs.length === 6 && /^Progress/.test(tabs[0].textContent)
+    && /^List/.test(tabs[5].textContent));
   check("(5) one tab selected, the rest out of the tab order",
     root.querySelectorAll('[role="tab"][aria-selected="true"]').length === 1 &&
-    root.querySelectorAll('[role="tab"][tabindex="-1"]').length === 4);
+    root.querySelectorAll('[role="tab"][tabindex="-1"]').length === 5);
   tabs[1].dispatchEvent(new w.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
   check("(5) ArrowRight moves to the next view", M._state.view === "records");
   check("(5) the panel names its tab",

@@ -269,7 +269,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `coci_lookup_desc_W.js` | `CPL_COCI_DESC` | not stated in header | none found |
 | `coci_lookup_desc_Y.js` | `CPL_COCI_DESC` | not stated in header | none found |
 | `coci_lookup_desc_Z.js` | `CPL_COCI_DESC` | not stated in header | tabs: `coci-lookup` |
-| `coci_programs_data.js` | `CPL_COCI_PROGRAMS` | `kb/_build_coci_programs.py` | tabs: `cip-crosswalk`, `coci-lookup`, `college-briefing`, `cpl-pathways` · modules: `kb/_college_apprenticeship_cpl_roster.js` · scripts: `kb/_build_coci_programs.py`, `kb/_build_college_offering_crosswalk.py`, `kb/_build_commons_status.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py` |
+| `coci_programs_data.js` | `CPL_COCI_PROGRAMS` | `kb/_build_coci_programs.py` | tabs: `cip-crosswalk`, `coci-lookup`, `college-briefing`, `cpl-pathways`, `program-requirements` · modules: `a11y.config.js`, `kb/_college_apprenticeship_cpl_roster.js` · scripts: `kb/_build_coci_programs.py`, `kb/_build_college_offering_crosswalk.py`, `kb/_build_commons_status.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_openclassrooms_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py` |
 | `college_identity_data.js` | `CPL_COLLEGE_IDENTITY` | `kb/_build_college_identity_crosswalk.py` | tabs: `college-identity` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_college_identity_crosswalk.py`, `kb/_identity_daily_check.py` |
 | `college_lookup.js` | `CCC_COLLEGE_LOOKUP` | not stated in header | tabs: `exhibits`, `vision-2030` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_apply_asccc_areas.py`, `kb/_build_adopt_page.py`, `scripts/build_exhibits_list_preview.py` |
 | `cpl_baccalaureates_data.js` | `CPL_BACCALAUREATES` | `kb/_build_baccalaureate_pathways.py` | tabs: `cpl-pathways` · pages: `CPL_Dashboard.html` · scripts: `kb/_build_baccalaureate_pathways.py`, `kb/_build_cpl_pathway_ccr.py`, `kb/_build_cpl_pathway_membership.py` |
@@ -375,7 +375,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html`, `library/cpl-opportunity/index.html` · scripts: `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
-| `commons_list.js` | tabs: `canonical-subj4`, `cr-reference`, `exhibits` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
+| `commons_list.js` | tabs: `canonical-subj4`, `cr-reference`, `exhibits`, `program-requirements` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `commons_progress.js` | tabs: `canonical-subj4`, `cr-reference`, `credential-reference` · pages: `CPL_Dashboard.html` | — |
 | `comms.js` | pages: `CPL_Dashboard.html` | — |
 | `contracts.js` | pages: `CPL_Dashboard.html` | — |
