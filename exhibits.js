@@ -110,6 +110,8 @@
   /* The AI sort's order, built daily by kb/_build_exhibits_ai_sort.py (Sam, 2026-11-01: "sort the list based on your
      understanding of the exhibits (like with like in an alpha-like order)"). */
   var AI_SORT_URL = "kb/exhibits_ai_sort.json";
+  /* The Fact Sheet's statewide credentials, from MAP's CCC Collaborative rows: the List's Basis column reads it. */
+  var STATEWIDE_RECS = "fact-sheet/statewide_recs.js";
   var CRED_PAGE = 50;
   var IN_REF = "In the reference";
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
@@ -1308,7 +1310,10 @@
     cs.loading = new Promise(function (resolve) {
       var T = window.CPL_TABS;
       if (window.CPL_CREDENTIAL_REFERENCE || !T || typeof T.loadScript !== "function") { resolve(); return; }
-      T.loadScript(CRED_DATA, "CPL_CREDENTIAL_REFERENCE", resolve);
+      T.loadScript(CRED_DATA, "CPL_CREDENTIAL_REFERENCE", function () {
+        if (window.CPL_STATEWIDE_RECS) { resolve(); return; }
+        T.loadScript(STATEWIDE_RECS, "CPL_STATEWIDE_RECS", resolve);
+      });
     }).then(function () {
       var d = window.CPL_CREDENTIAL_REFERENCE;
       if (!d || !Array.isArray(d.unified_titles)) { cs.error = "the credential file did not load"; return; }
@@ -1327,7 +1332,7 @@
     var PAGE = 1000, key = anonKey();
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
-      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG].join(",") + ")"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_MERGE_CONFIRM].join(",") + ")"
       + "&order=course_id.asc,field.asc";
     var out = [];
     function page(from) {
@@ -1347,6 +1352,7 @@
         else if (row.field === FIELD_CRED_SITES) { o.sites = row.value || ""; o.sitesAt = row.reviewed_at || ""; }
         else if (row.field === FIELD_CRED_TITLE) o.title = row.value || "";
         else if (row.field === FIELD_LIST_FLAG) o.flag = row.value || "";
+        else if (row.field === FIELD_MERGE_CONFIRM) o.merge = row.value || "";
       });
       state.cs.overlay = m; state.cs.overlayOk = true;
     }).catch(function () { state.cs.overlayOk = false; });
@@ -1738,7 +1744,10 @@
     ["selected", "Selected"],
     ["bare", "No articulation"],
     ["changed", "Changed this visit"],
-    ["suggested", "Suggested folds"]
+    ["suggested", "Suggested folds"],
+    ["waiting", "Folds waiting for the apply"],
+    ["statewide", "Based on statewide"],
+    ["local", "Local only"]
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
@@ -1749,19 +1758,41 @@
      doing for me"). One accessor serves the cell, the column's filter, the sort and the download. */
   function listCols() {
     return [
-      { h: "Title", w: 19, v: function (r) { return listTitle(r); } },
+      { h: "Title", w: 17, v: function (r) { return listTitle(r); } },
       { h: "Status", w: 8, v: function (r) { return listStatus(r) + (r.quality_flag ? "; " + String(r.quality_flag).replace(/_/g, " ") : ""); } },
       // The classifier's title confidence, a percent (Sam, 2026-11-01: "add the confidence indicator as a column").
       { h: "Confidence", w: 5, n: true, v: function (r) { return r.conf_title != null ? Math.round(r.conf_title * 100) : null; } },
       { h: "CPL types", w: 9, v: function (r) { return (r.cpl_types || []).join(", "); } },
-      { h: "Issuer", w: 11, v: function (r) { return credCurrent(r).issuer || ""; } },
-      { h: "Training sites", w: 9, v: function (r) { return credCurrent(r).sites.map(function (x) { return x.site; }).join("; "); } },
+      { h: "Issuer", w: 10, v: function (r) { return credCurrent(r).issuer || ""; } },
+      { h: "Training sites", w: 8, v: function (r) { return credCurrent(r).sites.map(function (x) { return x.site; }).join("; "); } },
       { h: "Discipline (M-IDs)", w: 9, v: function (r) { return r.disc_modal || ""; } },
       { h: "Common SUBJ", w: 5, v: listSubj },
-      { h: "CIP family (from TOP)", w: 8, v: listCip },
+      { h: "CIP family (from TOP)", w: 7, v: listCip },
       { h: "Colleges", w: 5, n: true, v: function (r) { return credColleges(r).length; } },
-      { h: "MAP titles", w: 5, n: true, v: function (r) { return r.raw_count || 0; } }
+      { h: "MAP titles", w: 5, n: true, v: function (r) { return r.raw_count || 0; } },
+      { h: "Basis", w: 5, v: listBasis }
     ];
+  }
+  function listColIndex(h) {
+    var C = listCols();
+    for (var i = 0; i < C.length; i++) if (C[i].h === h) return i;
+    return 0;
+  }
+  /* Based on statewide (Sam, 2026-11-01: "count all canonical exhibit titles that include a statewide as based on a
+     statewide, whether local or not. It goes with our adopted or adapted approach"). A credential is based on statewide
+     when MAP's CCC Collaborative rows place a statewide exhibit under it: fact-sheet/statewide_recs.js, the Fact Sheet's
+     list, names 152 such credentials (2026-11-01). The reference's own statewide flag (84) reads only articulated
+     lines, so it stands in only when that list did not load. */
+  function listStatewideExhibits(r) {
+    var S = window.CPL_STATEWIDE_RECS, recs = S && S[r.ut];
+    if (!recs) return [];
+    var by = {}, out = [];
+    recs.forEach(function (x) { if (!x.id) return; if (!by[x.id]) { by[x.id] = { id: x.id, n: 0 }; out.push(by[x.id]); } by[x.id].n++; });
+    return out;
+  }
+  function listBasis(r) {
+    var S = window.CPL_STATEWIDE_RECS;
+    return (S ? !!S[r.ut] : !!r.statewide) ? "Statewide" : "Local";
   }
   function listStatus(r) {
     var by = String(r.curated_by || "");
@@ -1826,6 +1857,9 @@
       if (L.f === "mine" && !listFlag(r)) return false;
       if (L.f === "selected" && !L.sel[r.ut]) return false;
       if (L.f === "suggested" && !listSuggest(r)) return false;
+      if (L.f === "waiting" && !listPendingFold(r)) return false;
+      if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
+      if (L.f === "local" && listBasis(r) !== "Local") return false;
       var cols = listCols();
       for (var k in L.cf) {
         var want = String(L.cf[k] || "").trim().toLowerCase();
@@ -1900,7 +1934,8 @@
       if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
       else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
       else if (w[0] === FIELD_CRED_SITES) { o.sites = w[1]; o.sitesAt = now; }
-      else o.title = w[1];
+      else if (w[0] === FIELD_MERGE_CONFIRM) o.merge = w[1];
+      else if (w[0] === FIELD_CRED_TITLE) o.title = w[1];
     });
     if (L.changed.indexOf(r.ut) === -1) L.changed.push(r.ut);
   }
@@ -2148,7 +2183,7 @@
       i.addEventListener("input", function () { d[key] = i.value; });
       return el("label", { cls: "exh-l-f", "for": id }, [el("span", { text: label }), i]);
     }
-    var td = el("td", { colspan: "13" }, [
+    var td = el("td", { colspan: String(listCols().length + 3) }, [
       el("div", { cls: "exh-l-edit" }, [
         box("exh-l-t", "Title", "title"), box("exh-l-i", "Issuer", "issuer"),
         box("exh-l-s", "Training sites, separated by ;", "sites", "Site; Site"),
@@ -2252,7 +2287,11 @@
     })).concat([el("td")]));
     var thead = el("thead", null, [headRow, filterRow]);
     var body = el("tbody");
-    var aiOn = L.ai && L.aiData, lastG = null;
+    var aiOn = L.ai && L.aiData, lastG = null, sgByGroup = {};
+    if (aiOn && L.aiData.suggest) state.cs.rows.forEach(function (x) {
+      var p = L.aiData.order[x.ut];
+      if (p && listSuggest(x)) sgByGroup[p[0]] = (sgByGroup[p[0]] || 0) + 1;
+    });
     shown.forEach(function (r) {
       if (aiOn) {
         var pos = L.aiData.order[r.ut], g = pos ? pos[0] : -1;
@@ -2260,13 +2299,19 @@
           var gr = g === -1 ? null : L.aiData.groups[g];
           body.appendChild(el("tr", { cls: "exh-l-band" }, [el("th", { scope: "rowgroup", colspan: String(C.length + 3) }, [
             el("span", { text: gr ? gr.name : "Added since the AI sort was built" }),
-            el("span", { cls: "exh-muted", text: gr ? " " + fmt(gr.n) + " in this group" : "" })])]));
+            el("span", { cls: "exh-muted", text: gr ? " " + fmt(gr.n) + " in this group" + (sgByGroup[g]
+              ? ", " + fmt(sgByGroup[g]) + " suggested fold" + (sgByGroup[g] === 1 ? "" : "s") : "") : "" })])]));
         }
         lastG = g;
       }
       var cur = credCurrent(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
       var titleTd = el("td", { cls: "exh-l-title", title: listTitle(r) }, [listTitle(r)]);
-      if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
+      var pf = listPendingFold(r);
+      if (pf) titleTd.appendChild(el("span", { cls: "exh-l-sub exh-l-sg" }, pf.end === pf.to
+        ? ["folds " + r.ut + " into this credential; waits for the reviewed apply"]
+        : [pf.to + " now folds into " + pf.end + ", so this fold would stall. ",
+          word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the fold of " + r.ut + " to " + pf.end })]));
+      else if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
       if (col) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
       if (L.changed.indexOf(r.ut) !== -1) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
       var sg = (aiOn || L.f === "suggested") && listSuggest(r);
@@ -2355,7 +2400,45 @@
     var L = listState(), sg = L.aiData && L.aiData.suggest && L.aiData.suggest[r.ut];
     if (!sg || (L.sgDone || {})[r.ut]) return null;
     var o = state.cs.overlay[r.ut] || {};
-    return o.title ? null : sg;
+    if (o.title) return null;
+    var end = listChainEnd(sg.to);
+    if (end === r.ut) return null;
+    return end === sg.to ? sg : { to: end, why: sg.why + "; " + sg.to + " itself now folds into " + end };
+  }
+  /* Where a title lands once the pending renames run: follow each credential's saved rename until one has none
+     (Sam, 2026-11-01: "for the folds already accepted I would want to be sure that we can fold to better titles"). */
+  function listChainEnd(t) {
+    var seen = {}, ov = state.cs.overlay || {};
+    for (var k = 0; k < 12 && t && !seen[t]; k++) {
+      seen[t] = true;
+      var nx = (ov[t] || {}).title;
+      if (!nx || nx === t) break;
+      t = nx;
+    }
+    return t;
+  }
+  /* A fold accepted and waiting for the reviewed apply: a rename and a merge confirm naming the same target. */
+  function listPendingFold(r) {
+    var o = state.cs.overlay[r.ut] || {};
+    if (!o.title || !o.merge || o.merge !== o.title) return null;
+    return { to: o.title, end: listChainEnd(o.title) };
+  }
+  /* Re-point a waiting fold at the end of its chain, so the dry-run never holds it as stale. */
+  function listRepoint(r, pf) {
+    var L = listState(), writes = [[FIELD_CRED_TITLE, pf.end], [FIELD_MERGE_CONFIRM, pf.end]];
+    listCellNote("Re-pointing the fold of " + r.ut + " to " + pf.end + "…");
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); }));
+    }).then(function (rs) {
+      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+      listApply(r, writes);
+      L.cellNote = "Saved: " + r.ut + " now folds straight into " + pf.end + ".";
+      redrawList();
+    }).catch(function (e) {
+      listCellNote(e && e.message === "signin" ? "Sign in as a reviewer to re-point a fold." : "The re-point of " + r.ut
+        + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed.");
+    });
   }
   /* Accept writes the rename and the merge confirm naming the same target, the pair the rename dry-run needs to fold
      one credential's records into the other; a reviewed apply does the merge. */
@@ -2368,7 +2451,7 @@
       return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
     }).then(function (rs) {
       if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
-      listApply(r, writes.slice(0, 1));
+      listApply(r, writes);
       L.sgDone[from] = "accepted";
       L.cellNote = "Saved: " + from + " folds into " + sg.to + ". The daily dry-run pairs them, and a reviewed apply merges the records.";
       redrawList();
@@ -2476,21 +2559,24 @@
     function line(text, cls) { box.appendChild(el("p", { cls: "exh-l-dl" + (cls ? " " + cls : ""), text: text })); }
     function list(items) { box.appendChild(el("ul", { cls: "exh-l-dul" }, items.map(function (x) { return el("li", null, typeof x === "string" ? [x] : x); }))); }
     var ad = credAdopt(r) || {};
-    if (col === 0) {
+    // Each drawer answers its column by name: the Confidence column, added after the drawers, had shifted every one
+    // after it by a place (S541).
+    var name = C[col].h;
+    if (name === "Title") {
       line("Local titles in MAP, as colleges typed them:");
       list((r.raw_variants || []).map(function (v) { return v.r + (v.c != null ? " (title " + Math.round(v.c * 100) + "%)" : "") + (v.q ? ", " + String(v.q).replace(/_/g, " ") : ""); }));
       var openC = word("Open it in Credentials", function () { openCredential(r.ut); });
       box.appendChild(openC);
-    } else if (col === 1) {
+    } else if (name === "Status" || name === "Confidence") {
       line(listStatus(r) === "Unreviewed" ? "No review stamp yet." : "Reviewed " + (stamp(r.curated_at) || "") + " by " +
         (listStatus(r) === "Cohort" ? "the cohort " + r.curated_by : "a person") + ".");
       var tags = r.audit_tags || {};
       if (Object.keys(tags).length) { line("The audit's tags:"); list(Object.keys(tags).map(function (k) { return k.replace(/_/g, " ") + ": " + tags[k]; })); }
       if (r.conf_title != null) line("Title confidence " + Math.round(r.conf_title * 100) + "%" + (r.conf_issuer != null ? ", issuer " + Math.round(r.conf_issuer * 100) + "%" : "") + ".");
-    } else if (col === 2) {
+    } else if (name === "CPL types") {
       line("Show every credential of a type:");
-      box.appendChild(el("div", { cls: "exh-l-acts" }, (r.cpl_types || []).map(function (t) { return word(t, function () { listFilterBy(2, t); }); })));
-    } else if (col === 3) {
+      box.appendChild(el("div", { cls: "exh-l-acts" }, (r.cpl_types || []).map(function (t) { return word(t, function () { listFilterBy(listColIndex("CPL types"), t); }); })));
+    } else if (name === "Issuer") {
       var iss = credCurrent(r).issuer || "", norm = function (x) { return String(x || "").toLowerCase().replace(/[^a-z0-9]/g, ""); };
       if (!iss) { line("No issuer named."); }
       else {
@@ -2498,27 +2584,27 @@
         var alike = {};
         state.cs.rows.forEach(function (x) { var i2 = credCurrent(x).issuer || ""; if (i2 && i2 !== iss && norm(i2) === norm(iss)) alike[i2] = (alike[i2] || 0) + 1; });
         line(fmt(same.length) + (same.length === 1 ? " credential names " : " credentials name ") + iss + ".");
-        box.appendChild(word("Show them all", function () { listFilterBy(3, iss); }));
+        box.appendChild(word("Show them all", function () { listFilterBy(listColIndex("Issuer"), iss); }));
         var ak = Object.keys(alike);
         if (ak.length) { line("Spelled another way:", "exh-l-warn"); list(ak.map(function (k) { return k + " (" + alike[k] + ")"; })); }
       }
-    } else if (col === 4) {
+    } else if (name === "Training sites") {
       var sites = credCurrent(r).sites;
       if (!sites.length) line("No training site named.");
       else list(sites.map(function (x) { return x.site + (x.college ? ", " + x.college : ""); }));
-    } else if (col === 5 || col === 6) {
-      var arts = (r.articulations || []).filter(function (a) { return col === 5 || a.sys === "M-ID"; });
+    } else if (name === "Discipline (M-IDs)" || name === "Common SUBJ") {
+      var arts = (r.articulations || []).filter(function (a) { return name !== "Common SUBJ" || a.sys === "M-ID"; });
       if (!arts.length) line("No M-ID or C-ID carries it yet.");
       list(arts.map(function (a) {
         var loc = (a.local || []).map(function (l) { return [l.subj, l.num].filter(Boolean).join(" ") + (l.t ? " " + l.t : "") +
           (l.colleges && l.colleges.length ? " (" + l.colleges.join(", ") + ")" : ""); }).join("; ");
         return (a.sys ? a.sys + " " : "") + a.cid + (a.title ? ", " + a.title : "") + (a.disc ? " · " + a.disc : "") + (loc ? ". Local: " + loc : "");
       }));
-      if (col === 6 && listSubj(r)) box.appendChild(word("Show every credential under " + listSubj(r).split(",")[0], function () { listFilterBy(6, listSubj(r).split(",")[0]); }));
-    } else if (col === 7) {
+      if (name === "Common SUBJ" && listSubj(r)) box.appendChild(word("Show every credential under " + listSubj(r).split(",")[0], function () { listFilterBy(listColIndex("Common SUBJ"), listSubj(r).split(",")[0]); }));
+    } else if (name === "CIP family (from TOP)") {
       if (!listCip(r)) line("No CIP family read.");
-      else { line("Read from TOP, so a hint, never a determination."); box.appendChild(word("Show every credential in " + listCip(r), function () { listFilterBy(7, listCip(r)); })); }
-    } else if (col === 8) {
+      else { line("Read from TOP, so a hint, never a determination."); box.appendChild(word("Show every credential in " + listCip(r), function () { listFilterBy(listColIndex("CIP family (from TOP)"), listCip(r)); })); }
+    } else if (name === "Colleges") {
       var a = ad.a || {}, c = ad.c || {};
       if (Object.keys(a).length) {
         line("Articulated at:");
@@ -2529,13 +2615,22 @@
         line("Could adopt, teaching a course mapped to it:");
         list(Object.keys(c).map(function (k) { return adoptName(k) + ": " + (c[k] || []).map(function (x) { return x[0]; }).join(", "); }));
       }
-    } else if (col === 9) {
+    } else if (name === "MAP titles") {
       var xs = ad.x || [];
       if (!xs.length) line("No MAP exhibit is read for it.");
       list(xs.map(function (x) { return [el("a", { href: linkUrl(x[0]), target: "_blank", rel: "noopener", text: x[0] }), " " + x[1] + (x[2] != null ? ", " + fmt(x[2]) + " units" : "")]; }));
+    } else if (name === "Basis") {
+      var sw = listStatewideExhibits(r);
+      if (!sw.length) line("No statewide exhibit is part of it, so it counts as local.");
+      else {
+        line("Based on statewide: it includes " + (sw.length === 1 ? "this statewide exhibit" : "these statewide exhibits")
+          + ", which colleges adopt or adapt (CCC Collaborative rows in MAP).");
+        list(sw.map(function (x) { return [el("a", { href: linkUrl(x.id), target: "_blank", rel: "noopener", text: x.id }), ", " + fmt(x.n)
+          + (x.n === 1 ? " credit recommendation" : " credit recommendations")]; }));
+      }
     }
     box.appendChild(word("Close", function () { L.open = null; redrawList(); }));
-    return el("tr", { cls: "exh-l-editrow" }, [el("td", { colspan: "13" }, [box])]);
+    return el("tr", { cls: "exh-l-editrow" }, [el("td", { colspan: String(listCols().length + 3) }, [box])]);
   }
   /* Resizable columns (Sam, 2026-11-01: "make the columns resizable"). Each header's right edge is a separator: drag
      it, or focus it and use the arrow keys (Home narrows to the least). The first resize fixes every column at its
