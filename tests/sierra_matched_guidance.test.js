@@ -40,7 +40,7 @@ if (G) {
     o1.rows[0].id === "name0002" && o1.rows[1].id === "great004", o1.rows.map((r) => r.id).join(","));
   check("(2) the matching rule follows them, and is named as matched",
     o1.rows[2].id === "vet00001" && o1.matched.join(",") === "vet00001", o1.matched.join(","));
-  const o2 = G.orderGuidanceForQuestion(rows, "Should a college transcribe CPL in its SIS?");
+  const o2 = G.orderGuidanceForQuestion(rows, "Should a college transcribe CPL in its local SIS?");
   check("(2) ⭐ the oldest rule moves up when the question is about it",
     o2.rows[2].id === "trans005" && o2.matched.join(",") === "trans005", o2.rows.map((r) => r.id).join(","));
   check("(2) the unmatched conditionals keep newest first behind it",
@@ -59,6 +59,9 @@ if (G) {
     ids.sent.length + ids.dropped.length === rows.length && ids.dropped.every((id) => !text.includes(rows.find((r) => r.id === id).rule.slice(0, 30))),
     JSON.stringify(ids));
   check("(4) an empty question changes nothing", G.orderGuidanceForQuestion(rows, "").matched.length === 0);
+  // The 7v regression (preview A/B, 2026-11-01): one shared word is not a match.
+  const k = G.orderGuidanceForQuestion(rows, "You have the noncredit courses in COCI and the MIS program and course dataset. Check again and let me know.");
+  check("(6) ⭐ one shared word is not a match (the noncredit follow-up leaves the kitchen rule where it was)", k.matched.length === 0, k.matched.join(","));
 }
 check("(5) the function passes the question and a log object in",
   /fetchTeamGuidance\(sb, hostSurface, routeText, guidanceLog\)/.test(SRC));

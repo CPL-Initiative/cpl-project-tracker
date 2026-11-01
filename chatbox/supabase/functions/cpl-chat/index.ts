@@ -6741,10 +6741,22 @@ function guidanceWords(text: string): Set<string> {
   const out = new Set<string>();
   for (const w of extractTopicKeywords(text)) {
     if (GUIDANCE_GENERIC.has(w)) continue;
-    out.add(w.length > 4 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w);
+    out.add(guidanceStem(w));
   }
   return out;
 }
+// A light stem, so "transcribe" meets "transcribing" and "colleges" meets "college".
+function guidanceStem(w: string): string {
+  if (w.length > 6 && w.endsWith("ing")) return w.slice(0, -3);
+  if (w.length > 5 && w.endsWith("ed")) return w.slice(0, -2);
+  if (w.length > 4 && w.endsWith("s") && !w.endsWith("ss")) w = w.slice(0, -1);
+  if (w.length > 5 && w.endsWith("e")) return w.slice(0, -1);
+  return w;
+}
+// A match needs TWO shared distinctive words. One alone moved an example-specific rule to the top: the preview A/B
+// of 2026-11-01 (runs 41318633888, 41320717380) regressed smoke 7v twice when the follow-up "You have the noncredit
+// courses in COCI ... check again" matched the Cabrillo Basic Kitchen Skills (Noncredit program) rule on "noncredit".
+const GUIDANCE_MIN_SHARED = 2;
 function isStandingRule(rule: string): boolean {
   return !/^\s*(when|if)\b/i.test(rule);
 }
@@ -6760,7 +6772,7 @@ function orderGuidanceForQuestion(rows: any[], question: string): any {
     if (isStandingRule(rule)) { standing.push(r); return; }
     let n = 0;
     if (q.size) for (const w of guidanceWords(guidanceTrigger(rule))) if (q.has(w)) n++;
-    if (n > 0) hits.push({ r, n, i }); else rest.push(r);
+    if (n >= GUIDANCE_MIN_SHARED) hits.push({ r, n, i }); else rest.push(r);
   });
   hits.sort((a, b) => b.n - a.n || a.i - b.i);
   return { rows: [...standing, ...hits.map((h) => h.r), ...rest], matched: hits.map((h) => String(h.r.id || "")) };
