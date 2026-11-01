@@ -375,7 +375,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `college_report_generator.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `college_short_names.js` | pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html`, `library/cpl-opportunity/index.html` · scripts: `kb/_seed_college_short_names.py` | scripts: `kb/_seed_college_short_names.py` |
 | `commons.js` | pages: `CPL_Dashboard.html` | — |
-| `commons_list.js` | tabs: `exhibits` · scripts: `scripts/build_exhibits_list_preview.py` | — |
+| `commons_list.js` | tabs: `cr-reference`, `exhibits` · scripts: `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` | — |
 | `commons_progress.js` | tabs: `canonical-subj4`, `cr-reference`, `credential-reference` · pages: `CPL_Dashboard.html` | — |
 | `comms.js` | pages: `CPL_Dashboard.html` | — |
 | `contracts.js` | pages: `CPL_Dashboard.html` | — |
@@ -389,7 +389,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `cpl_theme.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_writer.js` | pages: `CPL_Dashboard.html`, `kb-portal/index.html` | — |
 | `cr_progress.js` | tabs: `cr-reference` | — |
-| `cr_reference.js` | pages: `CPL_Dashboard.html` | — |
+| `cr_reference.js` | pages: `CPL_Dashboard.html` · scripts: `scripts/build_cr_list_preview.py` | — |
 | `cr_reference_decisions_<date>_s280.json` | scripts: `kb/_jev_adjudicate.py`, `kb/_jev_battery.py`, `kb/_jev_score.py` | — |
 | `credential_reference.js` | pages: `CPL_Dashboard.html` | — |
 | `csr_authority_codes_rulings_<date>.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_seed_authority_codes.py` | — |
@@ -581,7 +581,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
 | `kb/course_outline_index/index_<run>.json` | scripts: `kb/_course_outcomes_read.py` | — |
 | `kb/cpl_ai/pairs.json` | tabs: `program-requirements` · scripts: `kb/_build_cpl_ai.py` | — |
-| `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_commons_status.py`, `kb/_build_cr_reference.py`, `kb/_jev_adjudicate.py`, `kb/_typesafe_cr_trial.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
+| `kb/cr_reference_worklist.json` | tabs: `cr-reference` · scripts: `kb/_build_commons_status.py`, `kb/_build_cr_reference.py`, `kb/_jev_adjudicate.py`, `kb/_typesafe_cr_trial.py`, `scripts/build_cr_list_preview.py` | scripts: `kb/_build_cr_reference.py` · committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun` | none found | committed by: `cred-rename-apply.yml` |
 | `kb/cred_rename_dryrun/alias_map.json` | workflows: `cred-rename-apply.yml` | committed by: `daily-dashboard.yml` |
 | `kb/cred_rename_dryrun/collisions.json` | tabs: `exhibits` · scripts: `scripts/build_exhibits_list_preview.py` | committed by: `daily-dashboard.yml` |
@@ -1093,7 +1093,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `example.org` | modules: `a11y.config.js` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
-| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py`, `scripts/build_exhibits_list_preview.py` |
+| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py`, `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` |
 | `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py` |
 | `foothill.edu` | tabs: `map-queue`, `map-users` |
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
@@ -1263,4 +1263,4 @@ check these BY HAND before trusting an absence:
 - `scripts/supabase_migrate.py`
 
 Coverage: 104 Supabase tables · 48 RPCs · 11 edge functions · 762 file
-datasets · 192 external services · 504 consumers · 60 workflows · 39 tabs.
+datasets · 192 external services · 505 consumers · 60 workflows · 39 tabs.

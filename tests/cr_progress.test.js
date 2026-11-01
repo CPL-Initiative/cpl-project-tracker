@@ -174,8 +174,10 @@ const card = (doc, title) => Array.from(doc.querySelectorAll(".prh-pg-part")).fi
   const chipText = Array.from(w.document.querySelectorAll(".crr-chip")).map(txt).join(" | ");
   check("the filter row counts the two new lists", /No rule or decision \(2\)/.test(chipText) && /Name to check \(1\)/.test(chipText));
   const views = Array.from(w.document.querySelectorAll("button.crr-view"));
-  check("the view row: Progress, then Worklist pressed", views.map(txt).join(",") === "Progress,Worklist"
-    && views[1].getAttribute("aria-pressed") === "true" && views[0].getAttribute("aria-pressed") === "false");
+  // S542 added the List after the Worklist (the Catalog Commons' shared List, commons_list.js).
+  check("the view row: Progress, then Worklist pressed, then List", views.map(txt).join(",") === "Progress,Worklist,List"
+    && views[1].getAttribute("aria-pressed") === "true" && views[0].getAttribute("aria-pressed") === "false"
+    && views[2].getAttribute("aria-pressed") === "false");
   const w1 = tab("");
   const root1 = w1.document.getElementById("cr-reference-root");
   root1.setAttribute("style", "border: 1px dashed var(--border-strong); text-align: center;");

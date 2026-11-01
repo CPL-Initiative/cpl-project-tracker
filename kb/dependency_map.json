@@ -6,7 +6,7 @@
   "edge_functions": 11,
   "file_datasets": 762,
   "external_services": 192,
-  "consumers": 504,
+  "consumers": 505,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 39
@@ -1605,7 +1605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1873
+     "line": 1888
     }
    ],
    "main_committers": []
@@ -1711,6 +1711,13 @@
      "direction": "read",
      "how": "url",
      "line": 657
+    },
+    {
+     "id": "script:scripts/build_cr_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 55
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -2165,7 +2172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 924
+     "line": 939
     }
    ],
    "main_committers": []
@@ -2184,7 +2191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1269
+     "line": 1284
     },
     {
      "id": "module:college_briefing.js",
@@ -4126,7 +4133,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1547
+     "line": 1562
     }
    ],
    "main_committers": []
@@ -5161,7 +5168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1438
+     "line": 1453
     },
     {
      "id": "module:admin.js",
@@ -5844,6 +5851,16 @@
   "file:commons_list.js": {
    "consumers": [
     {
+     "id": "module:cr_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 979,
+     "tabs": [
+      "cr-reference"
+     ]
+    },
+    {
      "id": "module:exhibits.js",
      "kind": "module",
      "direction": "read",
@@ -5852,6 +5869,13 @@
      "tabs": [
       "exhibits"
      ]
+    },
+    {
+     "id": "script:scripts/build_cr_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 87
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -5881,7 +5905,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 817,
+     "line": 1006,
      "tabs": [
       "cr-reference"
      ]
@@ -6076,7 +6100,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1812
+     "line": 1827
     },
     {
      "id": "module:college_briefing.js",
@@ -6270,7 +6294,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 984
+     "line": 999
     },
     {
      "id": "module:cpl_funding.js",
@@ -6599,7 +6623,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 818,
+     "line": 1007,
      "tabs": [
       "cr-reference"
      ]
@@ -6616,6 +6640,13 @@
      "direction": "read",
      "how": "inline",
      "line": 0
+    },
+    {
+     "id": "script:scripts/build_cr_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 88
     }
    ],
    "served": true,
@@ -12227,6 +12258,13 @@
      "direction": "read",
      "how": "literal",
      "line": 38
+    },
+    {
+     "id": "script:scripts/build_cr_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 33
     }
    ],
    "producers": [
@@ -24671,7 +24709,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 207,
+     "line": 208,
      "tabs": [
       "cr-reference"
      ]
@@ -24681,7 +24719,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 251,
+     "line": 252,
      "tabs": [
       "cr-reference"
      ]
@@ -26998,6 +27036,7 @@
    "commons"
   ],
   "commons_list.js": [
+   "cr-reference",
    "exhibits"
   ],
   "commons_progress.js": [
