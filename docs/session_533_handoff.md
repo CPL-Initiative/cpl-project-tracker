@@ -4,6 +4,8 @@ date: 2026-10-31
 session: 532 (SkyHackberry, the CPL Queue routine)
 tags: [handoff, program-requirements, los-angeles-valley, display-build, ui-pass]
 status: current
+superseded: true
+superseded_by: session_538_handoff.md
 ---
 
 # You are Session 533
