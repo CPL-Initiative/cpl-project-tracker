@@ -127,6 +127,18 @@ const handoffDone = (async function () {
   check("…and stays on this tab, writing no hand-off key",
     w.location.hash === "#sierra-training" && w.sessionStorage.getItem("cplSierraTestQ.v1") === null);
 
+  // Sam, 2026-11-01: "should go to the current version and open her in a side panel so the
+  // user doesn't get lost". With the side bar's script present, the current Sierra opens
+  // beside this tab with the question, and the full-screen chat stays shut.
+  const asked = [];
+  opened.length = 0;
+  w.CPL_SIERRA_BAR = { ask: function (q, from) { asked.push([q, from]); }, setChip: function () {}, isOpen: function () { return false; } };
+  api._testInSierra("Which colleges have met the vet sprint goal?", undefined, btn);
+  check("⭐ with the side bar loaded, testInSierra asks the current Sierra beside the tab, not the full-screen chat",
+    asked.length === 1 && asked[0][0] === "Which colleges have met the vet sprint goal?" && asked[0][1] === btn && opened.length === 0);
+  check("…and maps the bar's tokens onto First Light", !!w.document.getElementById("sit-sbar-css"));
+  w.CPL_SIERRA_BAR = undefined;
+
   // No chat module that can open (an older page): the question waits under the
   // shared key and the retired tab's address carries it to Sierra AI.
   w.CPL_CHAT = undefined;

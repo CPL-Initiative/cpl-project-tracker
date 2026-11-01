@@ -733,7 +733,7 @@
   // learner clear through credit for prior learning?") puts it in the box. It
   // never sends: the visitor reads it and presses Ask. Plain
   // text, control characters dropped, capped at ASK_MAX characters.
-  var ASK_MAX = 500;
+  var ASK_MAX = 1000;
   function askFromUrl() {
     try {
       var q = new URLSearchParams(location.search).get('ask');
@@ -744,6 +744,18 @@
   function prefillAsk() {
     var q = askFromUrl();
     if (q && inputEl && !inputEl.value) inputEl.value = q;
+    return !!q;
+  }
+  // ?send=1 sends the prefilled question, only inside the side bar (?panel=1) and only
+  // for a host page on this origin: COBI's Sierra training tab asks her that way (Sam,
+  // 2026-11-01). A link from anywhere else still only fills the box.
+  function sendFromHost() {
+    try {
+      var sp = new URLSearchParams(location.search);
+      if (sp.get('send') !== '1' || sp.get('panel') !== '1') return false;
+      if (window.parent === window) return false;
+      return window.parent.location.origin === location.origin;
+    } catch (e) { return false; } // a cross-origin parent throws: never send
   }
 
   // ── The question box grows with what it holds ──
@@ -887,7 +899,7 @@
     wireTheme();
     renderTries();
     if (inputEl) inputEl.placeholder = 'Try: ' + FIRST_TRY;
-    prefillAsk();
+    if (prefillAsk() && sendFromHost()) setTimeout(submit, 0);
 
     var newBtn = document.getElementById('s-new');
     if (newBtn) newBtn.addEventListener('click', newQuestion);

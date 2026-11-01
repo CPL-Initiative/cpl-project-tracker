@@ -114,7 +114,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1887,
+     "line": 1929,
      "tabs": [
       "sierra-training"
      ]
@@ -1478,7 +1478,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1902,
+     "line": 1944,
      "tabs": [
       "sierra-training"
      ]
@@ -19273,6 +19273,16 @@
      ]
     },
     {
+     "id": "module:sierra_training.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 364,
+     "tabs": [
+      "sierra-training"
+     ]
+    },
+    {
      "id": "page:fact-sheet/index.html",
      "kind": "page",
      "direction": "read",
@@ -19352,7 +19362,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1296,
+     "line": 1338,
      "tabs": [
       "sierra-training"
      ]
@@ -19408,7 +19418,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1815,
+     "line": 1857,
      "tabs": [
       "sierra-training"
      ]
@@ -23245,7 +23255,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 1452,
+     "line": 1494,
      "tabs": [
       "sierra-training"
      ]
@@ -23511,7 +23521,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 953,
+     "line": 995,
      "tabs": [
       "sierra-training"
      ]
@@ -26252,7 +26262,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 926,
+     "line": 968,
      "tabs": [
       "sierra-training"
      ]
@@ -26281,7 +26291,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1066,
+     "line": 1108,
      "tabs": [
       "sierra-training"
      ]
@@ -26291,7 +26301,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1137,
+     "line": 1179,
      "tabs": [
       "sierra-training"
      ]
@@ -26313,7 +26323,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1324,
+     "line": 1366,
      "tabs": [
       "sierra-training"
      ]
@@ -26323,7 +26333,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 1406,
+     "line": 1448,
      "tabs": [
       "sierra-training"
      ]
@@ -26338,7 +26348,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 963,
+     "line": 1005,
      "tabs": [
       "sierra-training"
      ]
@@ -26348,7 +26358,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 984,
+     "line": 1026,
      "tabs": [
       "sierra-training"
      ]
@@ -26399,7 +26409,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1315,
+     "line": 1357,
      "tabs": [
       "sierra-training"
      ]
@@ -26818,7 +26828,8 @@
    "raci"
   ],
   "sierra/sidebar.js": [
-   "library"
+   "library",
+   "sierra-training"
   ],
   "sierra_rule_defaults.js": [
    "sierra-training"

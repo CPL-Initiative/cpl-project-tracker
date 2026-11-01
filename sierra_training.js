@@ -128,8 +128,8 @@
       + "no college has articulated it, or it is filed under a different name.",
     ruleSent: "This instruction is currently being sent to Sierra with every question she answers.",
     ruleOff: "Turned off — Sierra never sees this one. Kept as a record of what was tried.",
-    testInSierra: "Opens Sierra AI over this tab and asks her this exact question, so you can see whether "
-      + "she answers it better now. Back to the tab, or Escape, brings you back here.",
+    testInSierra: "Opens Sierra in a side panel beside this tab and asks her this exact question, so you can see "
+      + "whether she answers it better now. Close, or Escape, shuts the panel; this tab stays where you left it.",
     testInMyCollege: "Opens Sierra on the My College tab with this exact question filled in. There she answers "
       + "for the college picked on that tab; if none is picked yet, pick one and the question waits in her box. "
       + "It does not send it; you press Enter yourself.",
@@ -150,7 +150,7 @@
       + "so it keeps its spot among the newest instructions Sierra is actually sent.",
     ruleTestQ: "The question you want to get a better answer to. It is kept with this editor while you "
       + "go back and forth to Sierra, so you do not have to retype it each round.",
-    ruleSaveTest: "Saves the new wording, then opens Sierra AI over this tab and asks her your test question. "
+    ruleSaveTest: "Saves the new wording, then opens Sierra in a side panel beside this tab and asks her your test question. "
       + "Close her and the editor is still open, so you can adjust and try again."
   };
   function statusLabel(s) { return STATUS_LABEL[s || "new"] || (s || "new"); }
@@ -331,11 +331,53 @@
    * way); `dest` === DEST_MY_COLLEGE sends the question to My College's Sierra
    * box instead, filled and not sent. `from` is the control that asked, so focus
    * returns to it when she closes. */
+  // The default opens the current Sierra (sierra/index.html) in the side bar beside this
+  // tab and sends the question there (Sam, 2026-11-01: "Save and Ask Sierra or Try it on
+  // Sierra, both lead to what looks like a dead version of sierra--should go to the
+  // current version and open her in a side panel so the user doesn't get lost"). The
+  // editor stays open beside her. The full-screen CPL_CHAT is the fallback only when the
+  // bar's script cannot load.
+  function ensureBarCss() {
+    if (document.getElementById("sit-sbar-css")) return;
+    var st = document.createElement("style");
+    st.id = "sit-sbar-css";
+    st.textContent = ".sbar,.sbar-chip{--sierra-bar-bg:var(--surface-opaque);--sierra-bar-ink:var(--text-body);" +
+      "--sierra-bar-heading:var(--text-strong);--sierra-bar-link:var(--accent-link);--sierra-bar-line:var(--border);" +
+      "--sierra-bar-focus:var(--focus-ring);--sierra-bar-chip-bg:var(--seal-blue);--sierra-bar-chip-ink:var(--on-seal-blue);" +
+      "--sierra-bar-shadow:color-mix(in srgb,var(--text-strong) 16%,transparent);" +
+      "--sierra-bar-head-font:'Playfair Display',Georgia,serif;}";
+    document.head.appendChild(st);
+  }
+  function askInBar(q, from) {
+    var B = window.CPL_SIERRA_BAR;
+    if (!B || typeof B.ask !== "function") return false;
+    ensureBarCss();
+    if (typeof B.setChip === "function" && !B.isOpen()) B.setChip(false);
+    B.ask(String(q || "").slice(0, 1000), from || null);
+    return true;
+  }
   function testInSierra(q, dest, from) {
     var toMyCollege = dest === DEST_MY_COLLEGE;
+    if (!toMyCollege) {
+      if (askInBar(q, from)) return;
+      if (window.CPL_TABS && typeof window.CPL_TABS.loadScript === "function") {
+        window.CPL_TABS.loadScript("sierra/sidebar.js", "CPL_SIERRA_BAR", function () {
+          if (!askInBar(q, from)) legacyAsk(q, from);
+        });
+        return;
+      }
+    }
+    if (toMyCollege) { handOff(q, dest); return; }
+    legacyAsk(q, from);
+  }
+  function legacyAsk(q, from) {
     var C = window.CPL_CHAT;
-    if (!toMyCollege && C && typeof C.open === "function"
+    if (C && typeof C.open === "function"
         && C.open({ question: String(q || "").slice(0, 1000), send: true, from: from || null })) return;
+    handOff(q, null);
+  }
+  function handOff(q, dest) {
+    var toMyCollege = dest === DEST_MY_COLLEGE;
     try {
       sessionStorage.setItem(TEST_Q_KEY, String(q || "").slice(0, 1000));
       // The default carries NO destination; a stale one left by an earlier My
