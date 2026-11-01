@@ -2538,14 +2538,22 @@
       else return;
       e.preventDefault();
     });
+    /* A drag by mouse, pen or finger (Sam on his phone, 2026-11-01: "trying to resize the first column but not having
+       luck"). The grip captures the pointer, so a finger that leaves the strip keeps resizing, and touch-action:none
+       keeps the phone from taking the drag as a scroll. */
     g.addEventListener("pointerdown", function (e) {
       if (e.button !== undefined && e.button !== 0) return;
       e.preventDefault(); e.stopPropagation();
       var startX = e.clientX, startW = listFixWidths()[i];
-      function move(ev) { listSetWidth(i, startW + (ev.clientX - startX)); }
-      function up() { document.removeEventListener("pointermove", move); document.removeEventListener("pointerup", up); }
-      document.addEventListener("pointermove", move);
-      document.addEventListener("pointerup", up);
+      try { g.setPointerCapture(e.pointerId); } catch (err) {}
+      function move(ev) { if (ev.pointerId === e.pointerId) listSetWidth(i, startW + (ev.clientX - startX)); }
+      function up(ev) {
+        if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+        g.removeEventListener("pointermove", move); document.removeEventListener("pointermove", move);
+        ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.removeEventListener(t, up); document.removeEventListener(t, up); });
+      }
+      g.addEventListener("pointermove", move); document.addEventListener("pointermove", move);
+      ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.addEventListener(t, up); document.addEventListener(t, up); });
     });
     g.addEventListener("click", function (e) { e.stopPropagation(); });
     return g;
@@ -2600,9 +2608,11 @@
       ".exh-l-dul{margin:0;padding-left:18px}",
       ".exh-l-warn{color:var(--text-strong);font-weight:600}",
       ".exh-l-table th{position:sticky}",
-      ".exh-l-grip{position:absolute;top:0;right:-12px;width:24px;height:100%;min-height:24px;cursor:col-resize;z-index:3;touch-action:none}",
-      ".exh-l-grip::after{content:'';position:absolute;top:20%;bottom:20%;left:12px;width:1px;background:var(--border)}",
-      ".exh-l-grip:hover::after,.exh-l-grip:focus-visible::after{width:3px;left:11px;background:var(--accent-link)}",
+      ".exh-l-grip{position:absolute;top:0;right:0;width:24px;height:100%;min-height:24px;cursor:col-resize;z-index:3;touch-action:none}",
+      ".exh-l-grip::after{content:'';position:absolute;top:20%;bottom:20%;right:0;width:1px;background:var(--border)}",
+      ".exh-l-grip:hover::after,.exh-l-grip:focus-visible::after{width:3px;background:var(--accent-link)}",
+      // On a touch screen the handle shows at rest, a finger's width to find (Sam on his phone, 2026-11-01).
+      "@media (pointer:coarse){.exh-l-grip{width:32px}.exh-l-grip::after{width:3px;top:25%;bottom:25%;background:var(--text-muted)}}",
       ".exh-l-grip:focus-visible{outline:2px solid var(--focus-ring);outline-offset:-2px}",
       ".exh-l-nowrap td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
       ".exh-l-nowrap .exh-l-sub{display:inline;margin-left:6px}",
@@ -2634,7 +2644,9 @@
       ".exh-l-cf td{background:var(--surface-opaque);padding:5px 4px 4px;border-bottom:1px solid var(--border)}",
       ".exh-l-cfin{width:100%;min-width:24px;box-sizing:border-box;font-size:.6875rem;min-height:24px}",
       ".exh-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}",
-      "@media (max-width:560px){.exh-l-table{table-layout:auto;min-width:900px}}"
+      // A phone keeps the fixed layout, so the column widths a drag sets apply; automatic layout sized the Title
+      // column to its longest title, past the screen's edge, and ignored the grip (Sam on his phone, 2026-11-01).
+      "@media (max-width:560px){.exh-l-table{min-width:900px}}"
     ].join("\n") }));
   }
 

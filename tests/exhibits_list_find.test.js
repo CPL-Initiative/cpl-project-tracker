@@ -9,7 +9,10 @@
 //   (5) AI sort orders the rows by kb/exhibits_ai_sort.json, a band names each group of two or more, and a header press
 //       leaves it (Sam, 2026-11-01: "like with like in an alpha-like order");
 //   (6) Edit every row turns Title, Issuer and Training sites into boxes on every row; leaving a box saves that field
-//       alone, Escape puts the value back (Sam, 2026-11-01: "a global Edit button").
+//       alone, Escape puts the value back (Sam, 2026-11-01: "a global Edit button");
+//   (7) a column resizes on a phone (Sam, 2026-11-01: "trying to resize the first column but not having luck"): the
+//       table keeps its fixed layout under 560px, where automatic layout ignored the widths a drag set, and the grip
+//       sits inside its own header, takes the finger (touch-action:none) and captures the pointer.
 // Run from repo root: `npm test` (or `node tests/exhibits_list_find.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -168,6 +171,12 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   const n3 = t.calls.filter((c) => c.method === "POST").length;
   tbox.value = "   "; tbox.dispatchEvent(new t.w.Event("change")); await settle();
   check("(6) an emptied title does not save", t.calls.filter((c) => c.method === "POST").length === n3 && tbox.value === "Apiary Basics");
+
+  const css = txt(t.d.getElementById("exh-l-css"));
+  check("(7) ⭐ a phone keeps the fixed table layout, so a dragged width applies",
+    !/max-width:560px\)\{\.exh-l-table\{[^}]*table-layout:auto/.test(css) && /\.exh-l-table\{[^}]*table-layout:fixed/.test(css), css.slice(0, 200));
+  check("(7) the grip sits inside its header and takes the finger", /\.exh-l-grip\{[^}]*right:0;[^}]*touch-action:none/.test(css)
+    && /setPointerCapture/.test(src) && /pointercancel/.test(src));
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "  -- " + why)); if (!ok) fail++; });
