@@ -69,9 +69,9 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     !heads.some((h) => /^TOP/.test(h)) && heads.indexOf("CIP family (from TOP)") > -1 && heads.indexOf("Discipline (M-IDs)") > -1, heads.join(","));
   const key = rows(t.d)[0];
   check("(2) a row reads its status, flag, CPL types, issuer, discipline, common SUBJ and CIP family",
-    /Cohort; suspect course as exhibit; title 45%/.test(txt(key.children[3])) && txt(key.children[4]) === "Credit By Exam"
-    && txt(key.children[5]) === "Proctored Testing Center" && txt(key.children[7]) === "Building Codes and Regulations"
-    && txt(key.children[8]) === "CNSR" && txt(key.children[9]) === "52 Business", txt(key));
+    /Cohort; suspect course as exhibit/.test(txt(key.children[3])) && txt(key.children[4]) === "45%" && txt(key.children[5]) === "Credit By Exam"
+    && txt(key.children[6]) === "Proctored Testing Center" && txt(key.children[8]) === "Building Codes and Regulations"
+    && txt(key.children[9]) === "CNSR" && txt(key.children[10]) === "52 Business", txt(key));
   check("(6) a rename the dry-run found colliding says so", /collides with Beekeeping/.test(txt(rows(t.d)[1].children[2])));
   check("(1) no raw hex in the view's CSS", !/#[0-9a-fA-F]{3,6}\b/.test(txt(t.d.getElementById("exh-l-css"))));
 
@@ -101,7 +101,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     && posts.some((p) => p.body.field === "issuing_agency_override" && p.body.value === "Local College"), JSON.stringify(posts.map((p) => p.body)));
   const renamed = rows(t.d).find((r) => /Ten-Key/.test(txt(r)));
   check("(4) the row shows the new title, the rename pending, and the new issuer",
-    !!renamed && /renamed from 10-Key Data Entry; pending the apply/.test(txt(renamed)) && txt(renamed.children[5]) === "Local College");
+    !!renamed && /renamed from 10-Key Data Entry; pending the apply/.test(txt(renamed)) && txt(renamed.children[6]) === "Local College");
 
   const ta = t.d.getElementById("exh-l-note");
   check("(5) the comments box is a labelled text area", ta && ta.tagName === "TEXTAREA" && !!t.d.querySelector('label[for="exh-l-note"]'));
@@ -124,14 +124,14 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   check("(7) a second press reverses it", /^Welding/.test(txt(rows(t.d)[0].children[2])) && sortBtn("MAP titles").parentNode.getAttribute("aria-sort") === "descending");
   sortBtn("Issuer").click(); await settle();
   check("(7) a text column sorts A to Z with blanks last", /^Apiary/.test(txt(rows(t.d)[2].children[2])));
-  const cf = t.d.getElementById("exh-l-cf-3");
-  check("(8) every column has its own labelled filter", t.d.querySelectorAll(".exh-l-cfin").length === 10 && cf.getAttribute("aria-label") === "Filter Issuer");
+  const cf = t.d.getElementById("exh-l-cf-4");
+  check("(8) every column has its own labelled filter", t.d.querySelectorAll(".exh-l-cfin").length === 11 && cf.getAttribute("aria-label") === "Filter Issuer");
   cf.value = "aws"; cf.dispatchEvent(new t.w.Event("input")); await settle();
   check("(8) ⭐ a column filter narrows to its matches and keeps focus", rows(t.d).length === 1 && /Welding/.test(txt(rows(t.d)[0]))
-    && t.d.activeElement && t.d.activeElement.id === "exh-l-cf-3");
+    && t.d.activeElement && t.d.activeElement.id === "exh-l-cf-4");
   const csv = t.M._listCsv(t.M._listRows());
   check("(9) ⭐ the spreadsheet carries the filtered rows, every column, the credential key first",
-    /^\ufeffCredential key,Title,Status,CPL types,Issuer/.test(csv) && csv.trim().split("\r\n").length === 2 && /Welding Level 1/.test(csv), csv.slice(0, 200));
+    /^\ufeffCredential key,Title,Status,Confidence,CPL types,Issuer/.test(csv) && csv.trim().split("\r\n").length === 2 && /Welding Level 1/.test(csv), csv.slice(0, 200));
   check("(9) a comma or quote in a value is quoted", t.M._listCsv([{ ut: 'A, "B"', cpl_types: [], articulations: [] }]).indexOf('"A, ""B"""') > -1);
   check("(9) the Download word names the count", !!Array.from(t.d.querySelectorAll("button")).find((b) => /^Download these 1 as a spreadsheet$/.test(txt(b))));
 
@@ -142,17 +142,17 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   wb.click(); await settle();
   check("(10) Wrap text wraps every field and says it is on",
     !t.d.querySelector(".exh-l-table").classList.contains("exh-l-nowrap") && t.d.getElementById("exh-l-wrap").getAttribute("aria-pressed") === "true");
-  const grip = t.d.getElementById("exh-l-grip-3");
-  check("(11) every header carries a labelled resize separator", t.d.querySelectorAll(".exh-l-grip[role=separator]").length === 10
+  const grip = t.d.getElementById("exh-l-grip-4");
+  check("(11) every header carries a labelled resize separator", t.d.querySelectorAll(".exh-l-grip[role=separator]").length === 11
     && grip.getAttribute("aria-label") === "Resize Issuer" && grip.getAttribute("tabindex") === "0");
   grip.dispatchEvent(new t.w.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
   const w1 = t.M._state.ls.widths;
   check("(11) ⭐ the arrow keys widen a column by a step and fix the widths in pixels",
-    Array.isArray(w1) && w1[3] === 120 + 24 && /144px/.test(t.d.querySelectorAll(".exh-l-table col")[5].getAttribute("style")), JSON.stringify(w1));
+    Array.isArray(w1) && w1[4] === 120 + 24 && /144px/.test(t.d.querySelectorAll(".exh-l-table col")[6].getAttribute("style")), JSON.stringify(w1));
   grip.dispatchEvent(new t.w.KeyboardEvent("keydown", { key: "Home", bubbles: true }));
-  check("(11) Home narrows it to the least", t.M._state.ls.widths[3] === 48);
+  check("(11) Home narrows it to the least", t.M._state.ls.widths[4] === 48);
   t.d.getElementById("exh-l-wrap").click(); await settle();
-  check("(11) the widths survive a repaint this visit", /48px/.test(t.d.querySelectorAll(".exh-l-table col")[5].getAttribute("style")));
+  check("(11) the widths survive a repaint this visit", /48px/.test(t.d.querySelectorAll(".exh-l-table col")[6].getAttribute("style")));
   // Sam, 2026-11-01: selection boxes, a flag that persists until cleared, and drill-downs on click.
   const box = (lab) => Array.from(t.d.querySelectorAll("input[type=checkbox]")).find((b) => b.getAttribute("aria-label") === lab);
   box("Select Welding Level 1").click(); await settle();

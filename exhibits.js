@@ -1743,13 +1743,14 @@
      doing for me"). One accessor serves the cell, the column's filter, the sort and the download. */
   function listCols() {
     return [
-      { h: "Title", w: 20, v: function (r) { return listTitle(r); } },
-      { h: "Status", w: 8, v: function (r) { return listStatus(r) + (r.quality_flag ? "; " + String(r.quality_flag).replace(/_/g, " ") : "")
-        + (r.conf_title != null && r.conf_title < 0.6 ? "; title " + Math.round(r.conf_title * 100) + "%" : ""); } },
+      { h: "Title", w: 19, v: function (r) { return listTitle(r); } },
+      { h: "Status", w: 8, v: function (r) { return listStatus(r) + (r.quality_flag ? "; " + String(r.quality_flag).replace(/_/g, " ") : ""); } },
+      // The classifier's title confidence, a percent (Sam, 2026-11-01: "add the confidence indicator as a column").
+      { h: "Confidence", w: 5, n: true, v: function (r) { return r.conf_title != null ? Math.round(r.conf_title * 100) : null; } },
       { h: "CPL types", w: 9, v: function (r) { return (r.cpl_types || []).join(", "); } },
       { h: "Issuer", w: 11, v: function (r) { return credCurrent(r).issuer || ""; } },
       { h: "Training sites", w: 9, v: function (r) { return credCurrent(r).sites.map(function (x) { return x.site; }).join("; "); } },
-      { h: "Discipline (M-IDs)", w: 10, v: function (r) { return r.disc_modal || ""; } },
+      { h: "Discipline (M-IDs)", w: 9, v: function (r) { return r.disc_modal || ""; } },
       { h: "Common SUBJ", w: 5, v: listSubj },
       { h: "CIP family (from TOP)", w: 8, v: listCip },
       { h: "Colleges", w: 5, n: true, v: function (r) { return credColleges(r).length; } },
@@ -2016,7 +2017,7 @@
       titleTd.removeChild(titleTd.childNodes[1]);
       body.appendChild(el("tr", { cls: (L.sel[r.ut] ? "exh-l-sel" : "") + (listFlag(r) ? " exh-l-flagged" : "") || null }, [
         el("td", { cls: "exh-l-box" }, [selBox]), el("td", { cls: "exh-l-box" }, [flagBox]), titleTd].concat(C.slice(1).map(function (c, k) {
-        var v = c.v(r), t = c.n ? fmt(v) : v;
+        var v = c.v(r), t = c.n ? (v == null ? "" : fmt(v) + (c.h === "Confidence" ? "%" : "")) : v;
         var td = el("td", { cls: c.n ? "exh-l-n" : null, title: t ? String(t) : null });
         td.appendChild(listOpener(r, k + 1, t == null ? "" : String(t), open === k + 1));
         return td;
