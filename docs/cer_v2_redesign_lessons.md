@@ -906,3 +906,45 @@ Verbatim from `docs/reference/lanes/cer-procedures.md`, to bring the lane under 
 
 2. **The high school and ROP rule — built (SkyGooseberry, 2026-10-31).** `kb/_suggest_unclassified.py` writes each queue title's aligned course under `aligned` (the course its exhibit's credit recommendation names at the college that built it; CCN, then C-ID, then M-ID, then the college's title; leading zeros fold; a join must share a word with the title; exam brands never align): 209 of 450 on 2026-10-31. Procedure `high-school-rop` (`kb/cer_procedures.json`, lane `school`) takes that title and the school, district or county office the classifier named (its trailing acronym dropped); adult schools and training centers stay with the classifier. Dry run: 55 settle, 29 held where the title already exists under another issuer; needs-you 468 to 413. The nightly run saves them under `cer-procedure-high-school-rop@bot`; `python3 kb/_cer_procedures.py --undo high-school-rop` takes them back.
 5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** `kb/_build_cpl_ai.py --fetch` reads https://map.rccd.edu/CPL-AI/preview-data/catalog.json into the dated snapshot `kb/cpl_ai/pairs.json` (33,232 pairs, 115 certifications, 121 colleges; keeps tiers 1 and 2, *Strong evidence* and *Faculty interpretation*: 20,166 pairs) with the page's credit and caveat word for word. The dialog lists a course's certifications under *CPL-AI recommendations (N)*, and a course whose only lead is a match shows its 0 as a button. Refreshed by hand (`--fetch`) until a schedule is chosen. Sierra and the public pages wait on his word.
+
+## Groups you keep, one List engine, outcomes tested (S542 SkyTriangulum, 2026-11-01)
+
+**Sam's words, in order.** On the AI sort's 832 Arrest group: *"it would be helpful to establish the groups and be able
+to move exhibits out and into more appropriate groups where needed ... a way to do it easily from this view, which is
+really helpful to give me insights into bigger picture gaps and opportunities."* Then: *"we have been harvesting course
+SLOs, which might make alignments with certs and exhibits more reliable. Advise"* and *"This new list view is so helpful
+that I want one now for each of our Catalog Commons groups."* Then: *"give me the flag but no find and replace"* (the CR
+List), *"for exhibit and all other list views, adjust table and tab to full screen width and allow for a horizontal
+scroll bar when needed"*, and the Catalog Commons asks (full width; Decision Sheet Library; a bold count, a green 0;
+Completed Decision Sheets cut to one line that opens).
+
+**What the screenshot showed was a render gap, not a grouping.** AAG, ABA and Abutments sat under 832 Arrest because the
+List drew a band only over groups of two or more; the 592 titles alone ran on under the group above them. Every run now
+has its band. Lesson: when a user reads a grouping as wrong, check what the screen draws before re-running the method.
+
+**Kept groups (#2655).** `exhibit_group` on `_CREDENTIAL_REVIEW::<title>` (a group name, `_NO_GROUP`, or "" for the
+night's sort), written one request per move; the view lays it over `kb/exhibits_ai_sort.json`, so a kept group holds
+through rebuilds without the builder reading it. Two groups that share a name are one group, so Rename to another
+group's name joins them. The move bar pins to the screen's bottom (a phone could not reach a bar under a 75vh table).
+
+**One engine (#2656-#2660).** `commons_list.js` took the Exhibits List whole (exhibits.js lost about 660 lines) with every
+Exhibits test unchanged; the CR, Subjects and Program Requirements Lists are specs on it. A background fork built the
+engine and the CR List; two fresh agents built Subjects and Programs in parallel. The Subjects List added *Confirm this
+pick*, the first way to confirm a pre-seeded Common SUBJ without retyping it, through the table's own save path.
+
+**Full width (#2661).** COBI's `.main-container` caps every tab at 1400px; the engine lifts it with
+`.main-container:has(#<prefix>host)`, so the cap returns when another view drops the host. The table's minimum width
+comes from its columns (12px per width unit), so it fits at 1662px and scrolls in its own box at 1280. The Edit column
+had taken the 1% the percent columns left and clipped; it now keeps 4%.
+
+**The SLO test (read-only, 2026-11-01).** 746 of 2,663 credentials have an articulated course with SLOs (nine colleges).
+Of distinct-course pairs at SLO similarity 0.5 or more, 36 of 113 already share an AI sort group; misses include
+California Wines / French Wines (0.88) and Introduction to Corrections / Probation and Parole (0.54). 45 of 164 groups
+share almost no outcomes (word-only groups such as CLEP Management with Trigonometry), though series groups score low
+too. A shared course is articulation evidence, not outcome evidence; 409 shared-course pairs sit in different groups.
+At the nine harvested colleges, 81 to 86% of articulated courses carry SLOs; the harvest is dispatch-only and last loaded
+2026-10-14. The cert catalog carries skills for 1 of 7,335 certs, so outcome-to-cert matching waits on issuers' task
+lists. Report: `CPLBrain/04-projects/cpl-initiative/20261101_SLO_Grouping_Test.md`.
+
+**A slip worth naming.** The first commit of #2655 carried `kb/docs_audit/` files from a local lint run swept in by
+`git add -A`; the merge conflict on main exposed it. Stage files by name.

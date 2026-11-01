@@ -147,27 +147,42 @@
     }))]);
   }
   /* The calls in the project's run log, as its last checkpoint left them. */
+  /* How many calls wait on Sam, in bold; a 0 in green (Sam, 2026-11-01: "bold the label that notes how many I have
+     waiting on me and if it's 0, make the 0 green"). */
+  function waitingCount(n) {
+    if (n) return el("p", { cls: "cmn-waiting" }, [stateChip({ key: "open", word: n + " open" })]);
+    return el("p", { cls: "cmn-waiting" }, [el("span", { cls: "cmn-state cmn-state-ok" }, [el("span", { cls: "cmn-zero", text: "0" }), " open"])]);
+  }
   function callsCell(Q, err) {
     var kids;
     if (err) kids = [el("p", null, [stateChip({ key: "unread", word: "Could not be read" }), el("span", { cls: "cmn-why", text: " " + err })])];
     else if (!Q) kids = [el("p", null, [stateChip({ key: "neutral", word: "no run log" })])];
     else {
       var calls = Array.isArray(Q.calls) ? Q.calls : [];
-      if (!calls.length) kids = [el("p", null, [stateChip({ key: "ok", word: "None open" })])];
-      else {
-        var ul = el("ul", null, calls.map(function (c) {
-          var li = el("li", { text: c.title || "" });
-          /* Answered on its sheet: the call stays listed, with the answer's words and who gave them. */
-          if (c.answer && c.answer.words) li.appendChild(el("span", { cls: "cmn-why", text: " Answered by " + (c.answer.by || DECIDER) + (c.answer.at ? ", " + c.answer.at : "") + ": " + c.answer.words }));
-          if (c.link && /^https:\/\//.test(c.link)) { li.appendChild(document.createTextNode(" ")); li.appendChild(openLink(c.link, c.link_text || "Open the decision sheet")); }
-          else if (c.view && c.view.href && c.view.text) { li.appendChild(document.createTextNode(" ")); li.appendChild(openLink(c.view.href, c.view.text)); }
-          return li;
-        }));
-        var open = calls.filter(function (c) { return !(c.answer && c.answer.words); }).length;
-        kids = [el("p", null, [stateChip(open ? { key: "open", word: open + " open" } : { key: "ok", word: "None open" })]), ul];
+      var answered = function (c) { return !!(c.answer && c.answer.words); };
+      var openCalls = calls.filter(function (c) { return !answered(c); }), done = calls.filter(answered);
+      kids = [waitingCount(openCalls.length)];
+      var sheetLink = function (c, node) {
+        if (c.link && /^https:\/\//.test(c.link)) { node.appendChild(document.createTextNode(" ")); node.appendChild(openLink(c.link, c.link_text || "Open the decision sheet")); }
+        else if (c.view && c.view.href && c.view.text) { node.appendChild(document.createTextNode(" ")); node.appendChild(openLink(c.view.href, c.view.text)); }
+        return node;
+      };
+      if (openCalls.length) kids.push(el("ul", null, openCalls.map(function (c) { return sheetLink(c, el("li", { text: c.title || "" })); })));
+      /* Answered on its sheet: the call stays listed under Completed Decision Sheets (Sam, 2026-11-01), one line each,
+         cut with an ellipsis; pressing the line opens his words and the sheet's link. */
+      if (done.length) {
+        kids.push(el("h5", { cls: "cmn-done-h", text: "Completed Decision Sheets" }));
+        kids.push(el("ul", { cls: "cmn-done" }, done.map(function (c) {
+          var why = "Answered by " + (c.answer.by || DECIDER) + (c.answer.at ? ", " + c.answer.at : "") + ": " + c.answer.words;
+          return el("li", null, [el("details", null, [
+            el("summary", { title: (c.title || "") + ". " + why }, [el("span", { cls: "cmn-done-line", text: (c.title || "") + " · " + why })]),
+            sheetLink(c, el("p", { cls: "cmn-done-body" }))])]);
+        })));
       }
     }
-    return cell("Calls waiting on " + DECIDER, kids);
+    // Sam, 2026-11-01: "Change the Decisions Waiting on Sam label to Decision Sheet Library and bold the label that notes
+    // how many I have waiting on me." The cell lists the calls each decision sheet carried, answered or open.
+    return cell("Decision Sheet Library", kids);
   }
   function runCell(row, Q, err, now) {
     var m = row.machine || {}, ms = machineState(m, now);
@@ -340,7 +355,22 @@
 
   /* ── the look: First Light tokens only ── */
   var CSS = [
-    ".cmn-wrap { display:grid; gap:18px; max-width:1080px; }",
+    // The full width (Sam, 2026-11-01: "Make Catalog Commons use full width as well"): the tab drops COBI's 1400px
+    // main column and its own 1080px cap, as the Lists do.
+    "#tab-commons .main-container { max-width:none; padding-left:16px; padding-right:16px; }",
+    ".cmn-wrap { display:grid; gap:18px; }",
+    ".cmn-waiting .cmn-state { font-weight:700; }",
+    ".cmn-waiting .cmn-zero { color:var(--hunter); }",
+    ".cmn-done-h { margin:10px 0 4px; font-size:.78rem; font-weight:700; color:var(--text-strong); }",
+    ".cmn-done { list-style:none; padding:0; margin:0; }",
+    ".cmn-done li { margin:0 0 2px; }",
+    ".cmn-done summary { list-style:none; cursor:pointer; min-height:24px; display:flex; align-items:center; }",
+    ".cmn-done summary::-webkit-details-marker { display:none; }",
+    ".cmn-done-line { display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; min-width:0; flex:1 1 auto; }",
+    ".cmn-done summary:hover .cmn-done-line { text-decoration:underline; text-underline-offset:2px; }",
+    ".cmn-done summary:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; border-radius:2px; }",
+    ".cmn-done details[open] .cmn-done-line { white-space:normal; }",
+    ".cmn-done-body { margin:0 0 4px; }",
     ".cmn-title { margin:0; font-family:var(--f-display, Georgia, serif); color:var(--text-strong); }",
     ".cmn-bar { display:flex; gap:18px; flex-wrap:wrap; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:10px; }",
     ".cmn-bar .cmn-note { flex:1 1 240px; font-size:.9rem; color:var(--text-muted); font-variant-numeric:tabular-nums; }",

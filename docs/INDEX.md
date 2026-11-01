@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 569 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 570 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 510 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1334** | |
+| Session handoffs | 511 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1336** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-01 (Sam's session, SkyTriangulum S542): kept groups and moves in the Exhibits List (#2655); one List engine, `commons_list.js`, with Lists for the CR Reference (flag, #2659), Subjects and Program Requirements (#2656-#2660); Lists and the Catalog Commons span the window (#2661, #2662); a read-only SLO grouping test (lessons, the vault report).
 - 2026-11-01 (Sam's session, SkyBlatusoff S541): the Exhibits List grew live from its preview (find by place, find and replace, AI sort with suggested folds and Re-point, Edit every row, Basis, phone resize, #2649-#2651); the exhibit-to-cert link, ASE first (#2652); the credential harvest moved into the CPL queue as step 10 (#2653); the statewide flag's 84-of-152 finding in the authoritative-signal note
 - 2026-11-01 (CPL Queue routine, SkySilverberry S539): Sam's Sheet 151 *vpbs* applied (VP Administrative Services is VPBS; four held rows loaded through a new partial load that marks nobody gone); the contacts harvest's third read, 37 people at 10 colleges (#2641).
 - 2026-11-01 (CPL Queue routine, SkyWolfberry S538): the contacts harvest's second read, 12 people for 6 colleges applied with a receipt, and the batch ordered by the last read so empty sites stop leading it (#2640).
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-01 (Exhibits tab build, SkyInkberry): IB on the AP pattern, brand-family's `ib` lane and the reference fold, 49 IB credentials into 24 with one issuer name (#2632); Open Asks Sheet 150 (the IB fold carried out, CLEP's names held); the CER lane trimmed under its budget.
 - 2026-10-31 (side session, SkyCloudberry): the funding requester line (MAP role, landing page, *find title*) and one editable response email signed by the CPL Initiative team (#2619); the Exhibits review card's Back and Accept all (#2620); the landing pages' contacts in the MAP Users tab (#2621); two lane files back under budget, history moved verbatim to their lessons docs.
 - 2026-10-31 (Exhibits tab build, SkyElderberry): the Commons' CER row opens Exhibits (#2612); the Credential Catalog's *Worth a faculty review* (#2613); Sam's AP rule in `brand-family`, College Board's official names (#2614); the IT/AI catalog's MAP join needs the issuer (#2615); Open Asks Sheet 149; light checkpoint.
-- 2026-10-31 (S535 SkyGooseberry, the CPL Queue routine): Monterey Peninsula 110 to 176 of 197 passing on three reconcile steps (a new `or_units` kind for CourseLeaf "or" rows, the 2026-27 Cal-GETC words, the 60 a floor on "electives, if needed"); display build 598ff64220dd; lessons in `docs/program_requirements_harvest_lessons.md` (S535); handoff 536 for SkySugarberry.
