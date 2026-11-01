@@ -4,9 +4,9 @@
   "supabase_tables": 104,
   "rpcs": 48,
   "edge_functions": 11,
-  "file_datasets": 762,
+  "file_datasets": 765,
   "external_services": 192,
-  "consumers": 505,
+  "consumers": 506,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 39
@@ -5723,7 +5723,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1864,
+     "line": 1912,
      "tabs": [
       "exhibits"
      ]
@@ -5892,7 +5892,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2321,
+     "line": 2396,
      "tabs": [
       "exhibits"
      ]
@@ -8616,6 +8616,19 @@
    "main_committers": []
   },
   "file:kb/_build_exhibit_cert_links.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:kb/_build_exhibit_slo_neighbors.py": {
    "consumers": [
     {
      "id": "workflow:daily-dashboard.yml",
@@ -13749,6 +13762,44 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/exhibit_slo_neighbors.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1781,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "script:kb/_build_exhibit_slo_neighbors.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 48
+    },
+    {
+     "id": "script:kb/_build_exhibit_slo_neighbors.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 48
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/exhibits_adoption.json": {
    "consumers": [
     {
@@ -13767,6 +13818,13 @@
      "direction": "read",
      "how": "literal",
      "line": 219
+    },
+    {
+     "id": "script:kb/_build_exhibit_slo_neighbors.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 46
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -13800,6 +13858,13 @@
   },
   "file:kb/exhibits_ai_sort.json": {
    "consumers": [
+    {
+     "id": "script:kb/_build_exhibit_slo_neighbors.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 47
+    },
     {
      "id": "script:kb/_build_exhibits_ai_sort.py",
      "kind": "script",
@@ -20906,6 +20971,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/exhibit_slo_neighbors_build_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/exhibits_review_build_test.py": {
    "consumers": [
     {
@@ -24189,6 +24267,13 @@
      "tabs": [
       "program-requirements"
      ]
+    },
+    {
+     "id": "script:kb/_build_exhibit_slo_neighbors.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 271
     }
    ],
    "main_committers": []
@@ -27672,6 +27757,7 @@
     "kb/_sweep_exhibit_titles.py",
     "kb/_build_exhibits_ai_sort.py",
     "kb/_build_exhibit_cert_links.py",
+    "kb/_build_exhibit_slo_neighbors.py",
     "kb/_build_adopt_page.py",
     "kb/_build_commons_status.py"
    ],
@@ -27731,6 +27817,7 @@
     "kb/exhibits_sweep.json",
     "kb/exhibits_ai_sort.json",
     "kb/exhibit_cert_links.json",
+    "kb/exhibit_slo_neighbors.json",
     "library/adopt/adopt_data.json",
     "kb/coci_title_corrections.json",
     "kb/coci_duplicate_control_numbers.json",
@@ -27873,6 +27960,7 @@
     "tests/commons_status_build_test.py",
     "tests/exhibits_review_build_test.py",
     "tests/exhibits_sweep_build_test.py",
+    "tests/exhibit_slo_neighbors_build_test.py",
     "tests/adopt_page_build_test.py",
     "tests/credential_catalog_widening_test.py",
     "tests/credential_review_sites_test.py",
