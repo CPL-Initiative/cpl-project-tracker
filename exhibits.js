@@ -1780,13 +1780,13 @@
      doing for me"). One accessor serves the cell, the column's filter, the sort and the download. */
   function listCols() {
     return [
-      { h: "Title", w: 17, v: function (r) { return listTitle(r); } },
+      { h: "Title", w: 17, edit: "title", v: function (r) { return listTitle(r); } },
       { h: "Status", w: 8, v: function (r) { return listStatus(r) + (r.quality_flag ? "; " + String(r.quality_flag).replace(/_/g, " ") : ""); } },
       // The classifier's title confidence, a percent (Sam, 2026-11-01: "add the confidence indicator as a column").
-      { h: "Confidence", w: 5, n: true, v: function (r) { return r.conf_title != null ? Math.round(r.conf_title * 100) : null; } },
+      { h: "Confidence", w: 5, n: true, suffix: "%", v: function (r) { return r.conf_title != null ? Math.round(r.conf_title * 100) : null; } },
       { h: "CPL types", w: 9, v: function (r) { return (r.cpl_types || []).join(", "); } },
-      { h: "Issuer", w: 10, v: function (r) { return credCurrent(r).issuer || ""; } },
-      { h: "Training sites", w: 8, v: function (r) { return credCurrent(r).sites.map(function (x) { return x.site; }).join("; "); } },
+      { h: "Issuer", w: 10, edit: "issuer", v: function (r) { return credCurrent(r).issuer || ""; } },
+      { h: "Training sites", w: 8, edit: "sites", v: function (r) { return credCurrent(r).sites.map(function (x) { return x.site; }).join("; "); } },
       { h: "Discipline (M-IDs)", w: 9, v: function (r) { return r.disc_modal || ""; } },
       { h: "Common SUBJ", w: 5, v: listSubj },
       { h: "CIP family (from TOP)", w: 7, v: listCip },
@@ -1855,62 +1855,6 @@
     if (!c) return null;
     return c.filter(function (x) { return x.old_unified_title === r.ut; })[0] || null;
   }
-  function listRows() {
-    var L = listState(), cs = state.cs, q = L.q.trim().toLowerCase();
-    // Custom sort (Sam, 2026-11-01: "first by title then by issuer or vice versa ... like Excel Custom sort"): the
-    // levels apply in order; a press on a header sorts by it alone, Shift and a press adds it as the next level.
-    var C0 = listCols(), levels = L.sort.length ? L.sort : [{ col: 0, dir: 1 }];
-    function cmp(a, b, lv) {
-      var sc = C0[lv.col] || C0[0], x = sc.v(a), y = sc.v(b);
-      if (sc.n) {
-        if ((x == null || y == null) && x !== y) return x == null ? 1 : -1;
-        return lv.dir * ((+x || 0) - (+y || 0));
-      }
-      x = String(x || ""); y = String(y || "");
-      if ((!x || !y) && x !== y) return x ? -1 : 1;   // blanks last, either way
-      return lv.dir * x.toLowerCase().localeCompare(y.toLowerCase());
-    }
-    var gi = L.ai && L.aiData && L.aiData.order ? (L.gi = listGroupIndex()) : null;
-    var rows = cs.rows.slice().sort(function (a, b) {
-      if (gi) {
-        var ga = gi.by[a.ut], gb = gi.by[b.ut];
-        return ga.sort.localeCompare(gb.sort) || (ga.key < gb.key ? -1 : ga.key > gb.key ? 1 : 0) || ga.pos - gb.pos
-          || listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
-      }
-      for (var i = 0; i < levels.length; i++) { var c = cmp(a, b, levels[i]); if (c) return c; }
-      return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
-    });
-    return rows.filter(function (r) {
-      if (L.f === "unreviewed" && listStatus(r) !== "Unreviewed") return false;
-      if (L.f === "low" && !(r.conf_title != null && r.conf_title < 0.6)) return false;
-      if (L.f === "flagged" && !r.quality_flag) return false;
-      if (L.f === "bare" && (r.articulations || []).length) return false;
-      if (L.f === "changed" && L.changed.indexOf(r.ut) === -1) return false;
-      if (L.f === "mine" && !listFlag(r)) return false;
-      if (L.f === "selected" && !L.sel[r.ut]) return false;
-      if (L.f === "suggested" && !listSuggest(r)) return false;
-      if (L.f === "waiting" && !listPendingFold(r)) return false;
-      if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
-      if (L.f === "local" && listBasis(r) !== "Local") return false;
-      if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
-      var cols = listCols();
-      for (var k in L.cf) {
-        var want = String(L.cf[k] || "").trim().toLowerCase();
-        if (want && String(cols[+k].v(r)).toLowerCase().indexOf(want) === -1) return false;
-      }
-      if (!q) return true;
-      var cur = credCurrent(r);
-      var hay = [r.ut, listTitle(r), cur.issuer, cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
-        r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r) + " | " + listCertWords(r);
-      return listFold(hay).indexOf(listFold(q)) !== -1;
-    });
-  }
-  /* Case and accents aside, so "canada" finds Cañada College. */
-  function listFold(s) {
-    s = String(s == null ? "" : s);
-    if (s.normalize) s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
-    return s.toLowerCase();
-  }
   /* Where a credential is articulated, for the finder (Sam, 2026-11-01: find a credential by "college, district, SWP
      region or ASCCC region"). The colleges come from the reference; college_lookup.js, which COBI loads, names each
      college's district, SWP region and ASCCC area. Measured 2026-11-01: all 86 college names in the reference match
@@ -1973,209 +1917,15 @@
     if (L.changed.indexOf(r.ut) === -1) L.changed.push(r.ut);
   }
 
-  /* Find and replace (Sam, 2026-11-01: "use find and replace to fix things on the fly"). The three columns a reviewer
-     can edit; a preview lists every change with its own check before anything saves, and the visit keeps the values
-     it replaced, so Undo this replace writes them back. */
+  /* Find and replace (Sam, 2026-11-01: "use find and replace to fix things on the fly"): the three columns a reviewer
+     can edit, drawn by the shared List (commons_list.js); these are the writes each one needs, the same fields Edit saves. */
   var FR_COLS = [["title", "Title"], ["issuer", "Issuer"], ["sites", "Training sites"]];
-  var FR_BATCH = 6;
-  function frState() {
-    var L = listState();
-    return L.fr || (L.fr = { open: false, col: "issuer", find: "", rep: "", mcase: false, whole: false, within: "shown",
-      preview: null, busy: false, done: 0, last: null, note: "" });
-  }
-  function frEscape(s) { return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
-  /* One value through the rule: whole cell or every occurrence, with or without case. */
-  function frSwap(v, F) {
-    v = String(v == null ? "" : v);
-    if (!F.find) return v;
-    if (F.whole) return (F.mcase ? v === F.find : v.toLowerCase() === F.find.toLowerCase()) ? F.rep : v;
-    return v.replace(new RegExp(frEscape(F.find), F.mcase ? "g" : "gi"), function () { return F.rep; });
-  }
-  function frClean(s) { return String(s).replace(/\s+/g, " ").trim(); }
-  /* Each row the rule would change, with what it holds now and after. A title the rule would empty is left out. */
-  function frPreview() {
-    var F = frState(), L = listState();
-    var pool = F.within === "selected" ? state.cs.rows.filter(function (r) { return L.sel[r.ut]; }) : listRows();
-    var out = [], empty = 0;
-    pool.forEach(function (r) {
-      var cur = credCurrent(r), before, after, sites = null;
-      if (F.col === "title") { before = listTitle(r); after = frClean(frSwap(before, F)); }
-      else if (F.col === "issuer") { before = cur.issuer || ""; after = frClean(frSwap(before, F)); }
-      else {
-        before = cur.sites.map(function (x) { return x.site; }).join("; ");
-        sites = [];
-        cur.sites.forEach(function (x) {
-          var s = frClean(frSwap(x.site, F));
-          if (s) sites.push(x.college ? { site: s, college: x.college } : { site: s });
-        });
-        after = sites.map(function (x) { return x.site; }).join("; ");
-      }
-      if (after === before) return;
-      if (F.col === "title" && !after) { empty++; return; }
-      out.push({ ut: r.ut, before: before, after: after, sites: sites, prevSites: F.col === "sites" ? cur.sites : null, keep: true });
-    });
-    F.preview = out; F.emptied = empty; F.note = "";
-  }
   /* The writes one row needs to hold a value: the same fields Edit saves. */
   function frWrites(r, col, value, sites) {
     if (col === "title") return [[FIELD_CRED_TITLE, value === r.ut ? "" : value]];
     if (col === "issuer") return [[FIELD_CRED_ISSUER, value]];
     return [[FIELD_CRED_SITES, JSON.stringify(sites)], [FIELD_CRED_TRAINER, joinSites(sites)]];
   }
-  function frRow(ut) { return state.cs.rows.filter(function (r) { return r.ut === ut; })[0]; }
-  /* Save a list of { ut, value, sites } in small batches; resolves to the ones that saved and the ones that did not. */
-  function frRun(col, items) {
-    var F = frState(), saved = [], failed = [], i = 0;
-    F.busy = true; F.done = 0; render();
-    return session().then(function (sess) {
-      if (!sess) throw new Error("signin");
-      function next() {
-        var batch = items.slice(i, i + FR_BATCH);
-        i += FR_BATCH;
-        if (!batch.length) return Promise.resolve();
-        return Promise.all(batch.map(function (it) {
-          var r = frRow(it.ut);
-          if (!r) { failed.push(it); return null; }
-          var writes = frWrites(r, col, it.value, it.sites);
-          return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); })).then(function (rs) {
-            if (rs.every(function (x) { return x.ok; })) { listApply(r, writes); saved.push(it); } else failed.push(it);
-          }, function () { failed.push(it); });
-        })).then(function () { F.done = saved.length + failed.length; listFrProgress(); return next(); });
-      }
-      return next();
-    }).then(function () { F.busy = false; return { saved: saved, failed: failed }; },
-      function (e) { F.busy = false; throw e; });
-  }
-  function listFrProgress() {
-    var n = document.getElementById("exh-fr-progress"), F = frState();
-    if (n) n.textContent = "Saving " + fmt(F.done) + " of " + fmt(F.total || 0) + "…";
-  }
-  function frSave() {
-    var F = frState(), col = F.col, kept = (F.preview || []).filter(function (p) { return p.keep; });
-    if (!kept.length) { F.note = "No row is checked, so nothing saved."; render(); return Promise.resolve(); }
-    F.total = kept.length;
-    var label = FR_COLS.filter(function (c) { return c[0] === col; })[0][1];
-    return frRun(col, kept.map(function (p) { return { ut: p.ut, value: p.after, sites: p.sites }; })).then(function (res) {
-      var back = {};
-      kept.forEach(function (p) { back[p.ut] = p; });
-      F.last = { col: col, label: label, items: res.saved.map(function (it) {
-        var p = back[it.ut];
-        return { ut: it.ut, value: p.before, sites: p.prevSites ? p.prevSites.map(function (x) { return x.college ? { site: x.site, college: x.college } : { site: x.site }; }) : null };
-      }) };
-      F.preview = null;
-      F.note = "Replaced in " + fmt(res.saved.length) + " credential" + (res.saved.length === 1 ? "" : "s") + " (" + label + ")."
-        + (res.failed.length ? " " + fmt(res.failed.length) + " did not reach the reference and are unchanged: "
-          + res.failed.slice(0, 5).map(function (x) { return x.ut; }).join("; ") + (res.failed.length > 5 ? "…" : "") + "." : "")
-        + (col === "title" && res.saved.length ? " The daily run checks each new title for a collision; a reviewed apply renames it in the reference." : "");
-      render();
-    }).catch(function (e) {
-      F.note = e && e.message === "signin" ? "Sign in as a reviewer to save." : "The replace did not reach the reference (" + (e && e.message || "no answer") + "). Nothing changed.";
-      render();
-    });
-  }
-  function frUndo() {
-    var F = frState(), last = F.last;
-    if (!last || !last.items.length) return Promise.resolve();
-    F.total = last.items.length;
-    return frRun(last.col, last.items).then(function (res) {
-      F.last = res.failed.length ? { col: last.col, label: last.label, items: res.failed } : null;
-      F.note = "Put back " + fmt(res.saved.length) + " " + last.label.toLowerCase() + (res.saved.length === 1 ? " value" : " values") + "."
-        + (res.failed.length ? " " + fmt(res.failed.length) + " did not save; Undo again to retry them." : "");
-      render();
-    }).catch(function (e) {
-      F.note = e && e.message === "signin" ? "Sign in as a reviewer to undo." : "The undo did not reach the reference (" + (e && e.message || "no answer") + ").";
-      render();
-    });
-  }
-  function frPanel() {
-    var F = frState(), L = listState(), nSel = Object.keys(L.sel).length;
-    if (F.within === "selected" && !nSel) F.within = "shown";
-    function field(id, label, key) {
-      var i = el("input", { id: id, type: "text", cls: "exh-l-in", autocomplete: "off" });
-      i.value = F[key];
-      i.addEventListener("input", function () { F[key] = i.value; if (F.preview) { F.preview = null; redrawFr(id); } });
-      return el("label", { cls: "exh-l-f", "for": id }, [el("span", { text: label }), i]);
-    }
-    function tick(id, label, key) {
-      var i = el("input", { id: id, type: "checkbox" });
-      i.checked = !!F[key];
-      i.addEventListener("change", function () { F[key] = i.checked; F.preview = null; redrawFr(id); });
-      return el("label", { cls: "exh-fr-tick", "for": id }, [i, " " + label]);
-    }
-    var sel = el("select", { id: "exh-fr-col", cls: "exh-l-in" }, FR_COLS.map(function (c) {
-      var o = el("option", { value: c[0], text: c[1] }); if (c[0] === F.col) o.selected = true; return o; }));
-    sel.addEventListener("change", function () { F.col = sel.value; F.preview = null; redrawFr("exh-fr-col"); });
-    var within = el("select", { id: "exh-fr-within", cls: "exh-l-in" }, [
-      el("option", { value: "shown", text: "The " + fmt(listRows().length) + " rows the list shows" })].concat(nSel
-      ? [el("option", { value: "selected", text: "The " + fmt(nSel) + " selected rows" })] : []));
-    within.value = F.within;
-    within.addEventListener("change", function () { F.within = within.value; F.preview = null; redrawFr("exh-fr-within"); });
-    var form = el("div", { cls: "exh-fr-form" }, [
-      el("label", { cls: "exh-l-f", "for": "exh-fr-col" }, [el("span", { text: "Column" }), sel]),
-      field("exh-fr-find", "Find", "find"), field("exh-fr-rep", "Replace with", "rep"),
-      el("label", { cls: "exh-l-f", "for": "exh-fr-within" }, [el("span", { text: "Within" }), within]),
-      el("div", { cls: "exh-fr-ticks" }, [tick("exh-fr-case", "Match case", "mcase"), tick("exh-fr-whole", F.col === "sites" ? "Whole site name" : "Whole cell", "whole")]),
-      el("div", { cls: "exh-l-acts" }, [
-        word("Preview the changes", function () {
-          if (!F.find) { F.note = "Type what to find first."; redrawFr("exh-fr-find"); return; }
-          frPreview(); redrawFr("exh-fr-prev"); }, { id: "exh-fr-prev" }),
-        word("Close", function () { F.open = false; F.preview = null; render(); })])]);
-    var box = el("section", { cls: "exh-fr", id: "exh-fr", "aria-labelledby": "exh-fr-h" }, [
-      el("h3", { id: "exh-fr-h", cls: "exh-fr-h", text: "Find and replace" }),
-      el("p", { cls: "exh-muted exh-small", text: "Pick a column, type what to find and what to put instead, and preview. Every row it would change "
-        + "is listed with its own check; Save writes only the checked rows, the same fields Edit saves. Undo this replace puts the old values back for this visit." }),
-      form]);
-    if (F.busy) box.appendChild(el("p", { cls: "exh-note", role: "status", id: "exh-fr-progress", text: "Saving " + fmt(F.done) + " of " + fmt(F.total || 0) + "…" }));
-    if (F.note) box.appendChild(el("p", { cls: "exh-note", role: "status", text: F.note }));
-    if (F.last && F.last.items.length && !F.busy) box.appendChild(el("div", { cls: "exh-l-acts" }, [
-      word("Undo this replace (" + fmt(F.last.items.length) + ")", frUndo)]));
-    if (F.preview) box.appendChild(frPreviewTable());
-    return box;
-  }
-  function frPreviewTable() {
-    var F = frState(), P = F.preview, label = FR_COLS.filter(function (c) { return c[0] === F.col; })[0][1];
-    var kept = P.filter(function (p) { return p.keep; }).length;
-    var wrap = el("div", null, [el("p", { cls: "exh-muted exh-small", id: "exh-fr-count", text: P.length
-      ? fmt(P.length) + " row" + (P.length === 1 ? "" : "s") + " would change; " + fmt(kept) + " checked. Uncheck any to leave alone."
-        + (F.emptied ? " " + fmt(F.emptied) + " left out: the title would be empty." : "")
-      : "No row in " + (F.within === "selected" ? "the selection" : "the list as shown") + " matches." + (F.emptied ? " " + fmt(F.emptied) + " would leave an empty title and are left out." : "") })]);
-    if (!P.length) return wrap;
-    var all = el("input", { type: "checkbox", id: "exh-fr-all", "aria-label": "Keep every row" });
-    all.checked = kept === P.length;
-    all.addEventListener("change", function () { P.forEach(function (p) { p.keep = all.checked; }); redrawFr("exh-fr-all"); });
-    var body = el("tbody");
-    P.forEach(function (p, i) {
-      var b = el("input", { type: "checkbox", id: "exh-fr-k" + i, "aria-label": "Change " + p.ut });
-      b.checked = p.keep;
-      b.addEventListener("change", function () {
-        p.keep = b.checked;
-        var n = document.getElementById("exh-fr-count"), k = P.filter(function (x) { return x.keep; }).length;
-        if (n) n.textContent = fmt(P.length) + " row" + (P.length === 1 ? "" : "s") + " would change; " + fmt(k) + " checked. Uncheck any to leave alone.";
-        var s = document.getElementById("exh-fr-save"); if (s) s.textContent = "Save the " + fmt(k) + " checked";
-      });
-      body.appendChild(el("tr", null, [el("td", { cls: "exh-l-box" }, [b]), el("td", { text: p.ut }),
-        el("td", null, [el("del", { text: p.before || "(blank)" })]), el("td", null, [el("ins", { text: p.after || "(blank)" })])]));
-    });
-    var table = el("table", { cls: "exh-l-table exh-fr-table" }, [
-      el("colgroup", null, [el("col", { style: "width:32px" }), el("col", { style: "width:34%" }), el("col", { style: "width:31%" }), el("col", { style: "width:31%" })]),
-      el("thead", null, [el("tr", null, [el("th", { scope: "col", cls: "exh-l-box" }, [all]), el("th", { scope: "col", text: "Credential" }),
-        el("th", { scope: "col", text: label + " now" }), el("th", { scope: "col", text: label + " after" })])]), body]);
-    wrap.appendChild(el("div", { cls: "exh-l-wrap exh-fr-wrap", role: "region", "aria-label": "The changes find and replace would make", tabindex: "0" }, [table]));
-    wrap.appendChild(el("div", { cls: "exh-l-acts" }, [
-      word(F.busy ? "Saving…" : "Save the " + fmt(kept) + " checked", function () { if (!F.busy) frSave(); }, { id: "exh-fr-save" }),
-      word("Discard the preview", function () { F.preview = null; redrawFr("exh-fr-prev"); })]));
-    return wrap;
-  }
-  /* Repaint the panel alone and give focus back to the control that asked. */
-  function redrawFr(focusId) {
-    var host = document.getElementById("exh-fr-host");
-    if (!host) { render(); return; }
-    while (host.firstChild) host.removeChild(host.firstChild);
-    host.appendChild(frPanel());
-    var n = focusId && document.getElementById(focusId);
-    if (n) { n.focus(); if (n.type === "text") { try { n.setSelectionRange(n.value.length, n.value.length); } catch (e) {} } }
-  }
-
   /* One request row a press: the credentials changed this visit and the reader's note. The routine reads every
      change since its last re-analysis from kb_curation itself, so a list left empty still asks for a full pass. */
   function listReanalyze() {
@@ -2202,380 +1952,6 @@
       L.note = e && e.message === "signin" ? "Sign in as a reviewer to ask for a re-analysis."
         : "The request did not reach the routine (" + (e && e.message || "no answer") + "). Try again.";
       render();
-    });
-  }
-  function listCell(text, cls) {
-    var t = text == null ? "" : String(text);
-    return el("td", { cls: cls || null, text: t, title: t || null });
-  }
-  function listEditRow(r) {
-    var L = listState(), d = L.draft;
-    function box(id, label, key, ph) {
-      var i = el("input", { id: id, type: "text", cls: "exh-l-in", placeholder: ph || "" });
-      i.value = d[key];
-      i.addEventListener("input", function () { d[key] = i.value; });
-      return el("label", { cls: "exh-l-f", "for": id }, [el("span", { text: label }), i]);
-    }
-    var td = el("td", { colspan: String(listCols().length + 3) }, [
-      el("div", { cls: "exh-l-edit" }, [
-        box("exh-l-t", "Title", "title"), box("exh-l-i", "Issuer", "issuer"),
-        box("exh-l-s", "Training sites, separated by ;", "sites", "Site; Site"),
-        el("div", { cls: "exh-l-acts" }, [
-          word(L.busy ? "Saving…" : "Save", function () { listSave(r); }),
-          word("Cancel", function () { L.edit = null; L.draft = null; render(); })])])]);
-    return el("tr", { cls: "exh-l-editrow" }, [td]);
-  }
-  function renderList(wrap) {
-    var L = listState(), cs = state.cs;
-    ensureListCss();
-    wrap.appendChild(viewsNav());
-    if (cs.error) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The credentials could not be read (" + cs.error + ")." })); return; }
-    if (!cs.rows) { wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the credentials…" })); return; }
-    if (L.collisions == null) {
-      L.collisions = [];
-      fetch(COLLISIONS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
-        .then(function (d) { L.collisions = (d && d.collisions) || []; if (state.view === "list") render(); }).catch(function () {});
-    }
-    var bar = el("div", { cls: "exh-l-bar" });
-    var q = el("input", { cls: "exh-search exh-l-q", id: "exh-l-find", type: "search", autocomplete: "off",
-      placeholder: "Title, issuer, college, district, SWP region, ASCCC area, discipline, subject or CPL type", "aria-label": "Find in the list" });
-    q.value = L.q;
-    q.addEventListener("input", function () { L.q = q.value; L.limit = LIST_LIMIT; redrawList(); });
-    bar.appendChild(q);
-    var fl = el("div", { cls: "exh-l-filters", role: "group", "aria-label": "Show" });
-    LIST_FILTERS.forEach(function (f) {
-      if (f[0] === L.f) fl.appendChild(el("span", { cls: "exh-view-on", "aria-current": "true", text: f[1] }));
-      else fl.appendChild(word(f[1], function () {
-        L.f = f[0]; L.limit = LIST_LIMIT;
-        if (f[0] === "suggested" && !L.aiData) listAiLoad().then(render, render); else render();
-      }));
-    });
-    bar.appendChild(fl);
-    wrap.appendChild(bar);
-    if (cs.overlayOk === false) wrap.appendChild(el("p", { cls: "exh-muted exh-small",
-      text: "Today's saves could not be read, so the list shows the reference as of " + (stamp(cs.generated) || "the last daily run") + "." }));
-    // The comments box (Sam, 2026-11-01: "add in a comments box to the reanalysis routine where I can add my
-    // observations or concerns or opportunities to better inform the reanalysis"). Kept across repaints this visit.
-    var box = el("textarea", { id: "exh-l-note", cls: "exh-l-in exh-l-ta", rows: "3", maxlength: "4000",
-      placeholder: "Observations, concerns or opportunities: what you were fixing, a pattern you noticed, titles that should fold, an issuer that looks wrong" });
-    box.value = L.comments || "";
-    box.addEventListener("input", function () { L.comments = box.value; });
-    var re = el("div", { cls: "exh-l-re" }, [
-      el("label", { cls: "exh-l-relabel", "for": "exh-l-note", text: "Your comments for the re-analysis" }),
-      box,
-      el("div", { cls: "exh-l-acts" }, [word(L.busy ? "Working…" : "Re-analyze my changes", listReanalyze),
-        el("span", { cls: "exh-muted exh-small", text: L.changed.length
-          ? fmt(L.changed.length) + " changed this visit go with it" : "With no change this visit, it looks over everything you changed since its last pass" })])]);
-    wrap.appendChild(re);
-    if (L.note) wrap.appendChild(el("p", { cls: "exh-note", role: "status", text: L.note }));
-    if (L.cert) wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-certline" }, ["Showing every exhibit that holds or is aligned to "
-      + listCertName(L.cert) + ". ", word("Clear", function () { L.cert = null; L.limit = LIST_LIMIT; render(); })]));
-    wrap.appendChild(el("div", { id: "exh-fr-host" }, frState().open ? [frPanel()] : []));
-    wrap.appendChild(el("div", { id: "exh-l-host" }, [listTable()]));
-    listSyncGrips();
-  }
-  function redrawList() {
-    var host = document.getElementById("exh-l-host");
-    if (!host) { render(); return; }
-    while (host.firstChild) host.removeChild(host.firstChild);
-    host.appendChild(listTable());
-    listSyncGrips();
-  }
-  function listTable() {
-    var L = listState(), rows = listRows(), shown = rows.slice(0, L.limit);
-    var C = listCols();
-    var editW = 100 - 6 - C.reduce(function (a, c) { return a + c.w; }, 0);
-    var cols = el("colgroup", null, [el("col", { style: "width:32px" }), el("col", { style: "width:32px" })].concat(C.map(function (c, i) {
-      return el("col", { style: "width:" + (L.widths ? L.widths[i] + "px" : c.w + "%") }); }))
-      .concat([el("col", { style: "width:" + (L.widths ? L.widths[C.length] + "px" : editW + "%") })]));
-    var allBox = el("input", { type: "checkbox", id: "exh-l-selall", "aria-label": "Select every row shown" });
-    allBox.checked = shown.length > 0 && shown.every(function (r) { return L.sel[r.ut]; });
-    allBox.addEventListener("change", function () {
-      shown.forEach(function (r) { if (allBox.checked) L.sel[r.ut] = true; else delete L.sel[r.ut]; });
-      redrawList(); var b = document.getElementById("exh-l-selall"); if (b) b.focus();
-    });
-    var headRow = el("tr", null, [el("th", { scope: "col", cls: "exh-l-box" }, [allBox]),
-      el("th", { scope: "col", cls: "exh-l-box", text: "Flag" })].concat(C.map(function (c, i) {
-      var lvIdx = -1; L.sort.forEach(function (x, k) { if (x.col === i) lvIdx = k; });
-      var on = lvIdx > -1, up = on && L.sort[lvIdx].dir > 0;
-      var b = el("button", { type: "button", cls: "exh-l-sort", title: "Press to sort by this column; Shift and press to sort within the sort already set" },
-        [c.h + (!on ? "" : (L.sort.length > 1 ? " (" + (lvIdx + 1) + ")" : "") + (c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")))]);
-      b.addEventListener("click", function (e) {
-        L.ai = false;
-        if (e.shiftKey) {
-          if (on) L.sort[lvIdx].dir = -L.sort[lvIdx].dir; else L.sort.push({ col: i, dir: 1 });
-        } else L.sort = [{ col: i, dir: on && L.sort.length === 1 ? -L.sort[0].dir : 1 }];
-        redrawList();
-        var nb = document.querySelectorAll(".exh-l-sort")[i]; if (nb) nb.focus();
-      });
-      return el("th", { scope: "col", "aria-sort": lvIdx === 0 ? (up ? "ascending" : "descending") : "none" }, [b, listGrip(i, c.h)]);
-    })).concat([el("th", { scope: "col" }, [el("span", { cls: "exh-vh", text: "Edit" })])]));
-    var filterRow = el("tr", { cls: "exh-l-cf" }, [el("td"), el("td")].concat(C.map(function (c, i) {
-      var inp = el("input", { type: "search", cls: "exh-l-in exh-l-cfin", id: "exh-l-cf-" + i, autocomplete: "off",
-        "aria-label": "Filter " + c.h, placeholder: "Filter" });
-      inp.value = L.cf[i] || "";
-      inp.addEventListener("input", function () {
-        L.cf[i] = inp.value; L.limit = LIST_LIMIT; redrawList();
-        var n = document.getElementById("exh-l-cf-" + i); if (n) { n.focus(); try { n.setSelectionRange(n.value.length, n.value.length); } catch (e) {} }
-      });
-      return el("td", null, [inp]);
-    })).concat([el("td")]));
-    var thead = el("thead", null, [headRow, filterRow]);
-    var body = el("tbody");
-    var aiOn = L.ai && L.aiData, gi = aiOn ? (L.gi || listGroupIndex()) : null, sgByGroup = {};
-    var lastKey = null, lastLone = false, lastNew = false;
-    if (gi && L.aiData.suggest) state.cs.rows.forEach(function (x) {
-      if (listSuggest(x)) { var k = gi.by[x.ut].key; sgByGroup[k] = (sgByGroup[k] || 0) + 1; }
-    });
-    shown.forEach(function (r) {
-      // Every run of rows gets its band (Sam, 2026-11-01, on 832 Arrest: three titles that stood alone read as members,
-      // because only groups of two or more had one).
-      if (gi) {
-        var gb = gi.by[r.ut], G = gi.groups[gb.key], isNew = gb.key.indexOf("new:") === 0;
-        if (G.isGroup) { if (gb.key !== lastKey) body.appendChild(listGroupBand(G, sgByGroup[gb.key] || 0)); }
-        else if (isNew) { if (!lastNew) body.appendChild(listPlainBand("Added since the AI sort was built")); }
-        else if (!lastLone) body.appendChild(listPlainBand("Not in a group"));
-        lastKey = gb.key; lastLone = !G.isGroup && !isNew; lastNew = isNew;
-      }
-      var cur = credCurrent(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
-      var titleTd = el("td", { cls: "exh-l-title", title: listTitle(r) }, [listTitle(r)]);
-      var pf = listPendingFold(r);
-      if (pf) titleTd.appendChild(el("span", { cls: "exh-l-sub exh-l-sg" }, pf.end === pf.to
-        ? ["folds " + r.ut + " into this credential; waits for the reviewed apply"]
-        : [pf.to + " now folds into " + pf.end + ", so this fold would stall. ",
-          word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the fold of " + r.ut + " to " + pf.end })]));
-      else if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
-      if (col) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
-      if (L.changed.indexOf(r.ut) !== -1) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
-      var sg = (aiOn || L.f === "suggested") && listSuggest(r);
-      if (sg) titleTd.appendChild(el("span", { cls: "exh-l-sub exh-l-sg" }, [
-        "Suggested: fold into " + sg.to + " (" + sg.why + ") ",
-        word("Accept", function () { listSuggestAccept(r, sg); }, { "aria-label": "Fold " + r.ut + " into " + sg.to }),
-        " ", word("Dismiss", function () { L.sgDone[r.ut] = "dismissed"; redrawList(); }, { "aria-label": "Dismiss the fold of " + r.ut })]));
-      var editBtn = word("Edit", function () {
-        L.edit = r.ut;
-        L.draft = { title: listTitle(r), issuer: cur.issuer || "", sites: cur.sites.map(function (x) { return x.site; }).join("; ") };
-        L.note = ""; redrawList();
-        var t = document.getElementById("exh-l-t"); if (t) t.focus();
-      }, { "aria-label": "Edit " + listTitle(r) });
-      var selBox = el("input", { type: "checkbox", "aria-label": "Select " + listTitle(r) });
-      selBox.checked = !!L.sel[r.ut];
-      selBox.addEventListener("change", function () {
-        if (selBox.checked) L.sel[r.ut] = true; else delete L.sel[r.ut];
-        if (gi) { var y = listScrollTop(); redrawList(); listScrollTop(y); var b = document.querySelector('[aria-label="Select ' + listTitle(r).replace(/"/g, '\\"') + '"]'); if (b) b.focus(); }
-        else listCountSel();
-      });
-      var flagBox = el("input", { type: "checkbox", "aria-label": "Flag " + listTitle(r), title: listFlag(r) ? "Flagged " + stamp(listFlag(r)) : null });
-      flagBox.checked = !!listFlag(r);
-      flagBox.disabled = !!L.flagBusy[r.ut];
-      flagBox.addEventListener("change", function () { listSetFlag(r, flagBox.checked); });
-      var open = L.open && L.open.ut === r.ut ? L.open.col : -1;
-      titleTd.insertBefore(L.editAll ? listCellInput(r, "title", listTitle(r), "Title") : listOpener(r, 0, listTitle(r), open === 0), titleTd.firstChild);
-      titleTd.removeChild(titleTd.childNodes[1]);
-      body.appendChild(el("tr", { cls: (L.sel[r.ut] ? "exh-l-sel" : "") + (listFlag(r) ? " exh-l-flagged" : "") || null }, [
-        el("td", { cls: "exh-l-box" }, [selBox]), el("td", { cls: "exh-l-box" }, [flagBox]), titleTd].concat(C.slice(1).map(function (c, k) {
-        var v = c.v(r), t = c.n ? (v == null ? "" : fmt(v) + (c.h === "Confidence" ? "%" : "")) : v;
-        var td = el("td", { cls: c.n ? "exh-l-n" : null, title: t ? String(t) : null });
-        var kind = L.editAll && (c.h === "Issuer" ? "issuer" : c.h === "Training sites" ? "sites" : "");
-        td.appendChild(kind ? listCellInput(r, kind, t == null ? "" : String(t), c.h) : listOpener(r, k + 1, t == null ? "" : String(t), open === k + 1));
-        return td;
-      }), [el("td", null, [editBtn])])));
-      if (open > -1) body.appendChild(listDrawer(r, open));
-      if (L.edit === r.ut && L.draft) body.appendChild(listEditRow(r));
-    });
-    var region = el("div", { cls: "exh-l-wrap", role: "region", "aria-label": "Every credential, A to Z", tabindex: "0" }, [
-      el("table", { cls: "exh-l-table" + (L.wrap ? "" : " exh-l-nowrap"),
-        style: L.widths ? "width:" + (L.widths.reduce(function (a, w) { return a + w; }, 0) + 64) + "px" : null }, [cols, thead, body])]);
-    var dl = word("Download these " + fmt(rows.length) + " as a spreadsheet", function () { listDownload(rows); });
-    // Wrap text (Sam, 2026-11-01: "a toggle to wrap or unwrap all fields and set it to default unwrapped ... that tight
-    // scrollable, scannable view I need"). Unwrapped, each cell keeps one line and shows the rest on hover.
-    var wrapBtn = word("Wrap text", function () { L.wrap = !L.wrap; redrawList(); var b = document.getElementById("exh-l-wrap"); if (b) b.focus(); },
-      { id: "exh-l-wrap", "aria-pressed": L.wrap ? "true" : "false" });
-    var out = el("div", null, [el("div", { cls: "exh-l-count" }, [el("span", { cls: "exh-muted exh-small", text: fmt(rows.length) + " credentials" +
-      (rows.length > shown.length ? ", the first " + fmt(shown.length) + " shown" : "") }),
-      el("span", { cls: "exh-muted exh-small", id: "exh-l-selcount", text: listSelWords() }),
-      el("span", { cls: "exh-note exh-small", id: "exh-l-cellnote", role: "status", text: L.cellNote || "", hidden: L.cellNote ? null : "" }),
-      el("span", { cls: "exh-muted exh-small", id: "exh-l-sortline", text: aiOn
-        ? "AI sort: like with like, the groups A to Z. A group gathers titles that share their subject words once level words (Beginning, 1, II, Advanced) "
-          + "are set aside, with discipline and issuer weighing in; built " + (stamp(L.aiData._built_at) || L.aiData._reference_generated_at && stamp(L.aiData._reference_generated_at) || "daily")
-          + ". " + (L.aiData.counts && L.aiData.counts.suggested_folds ? fmt(L.aiData.counts.suggested_folds) + " spelling twins carry a suggested fold. " : "")
-          + "Select rows to move them to another group; Keep this group fixes a group and its name, and a rename to another group's name joins the two. "
-          + "What you keep or move holds through every nightly rebuild. Press a header to sort by it instead."
-        : "Sorted by " + L.sort.map(function (x) {
-        var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
-        + ". Shift and press a header to add a level." }),
-      word("AI sort", listAiToggle, { id: "exh-l-ai", "aria-pressed": aiOn ? "true" : "false" }),
-      aiOn || L.sort.length > 1 || L.sort[0].col !== 0 || L.sort[0].dir !== 1 ? word("Clear the sort", function () { L.ai = false; L.sort = [{ col: 0, dir: 1 }]; redrawList(); }) : null,
-      word("Edit every row", function () { L.editAll = !L.editAll; redrawList(); var b = document.getElementById("exh-l-editall"); if (b) b.focus(); },
-        { id: "exh-l-editall", "aria-pressed": L.editAll ? "true" : "false" }),
-      word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn,
-      frState().open ? null : word("Find and replace", function () {
-        frState().open = true; render(); var n = document.getElementById("exh-fr-find"); if (n) n.focus(); }, { id: "exh-fr-open" }), dl]), region]);
-    var selUts = Object.keys(L.sel);
-    if (gi && selUts.length) out.appendChild(listMovePanel(selUts));
-    if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
-      function () { L.limit += LIST_LIMIT; redrawList(); }));
-    return out;
-  }
-  /* AI sort: read the day's order once, then sort by it until a header is pressed. */
-  function listAiToggle() {
-    var L = listState();
-    function focusIt() { var b = document.getElementById("exh-l-ai"); if (b) b.focus(); }
-    if (L.ai) { L.ai = false; redrawList(); focusIt(); return Promise.resolve(); }
-    return listAiLoad().then(function () {
-      L.ai = true; L.limit = LIST_LIMIT; redrawList(); focusIt();
-    }).catch(function () { L.cellNote = "The AI sort's order could not be read; the list keeps its sort."; redrawList(); focusIt(); });
-  }
-  function listAiLoad() {
-    var L = listState();
-    if (L.aiData) return Promise.resolve(L.aiData);
-    return fetch(AI_SORT_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
-      if (!d || !d.order) throw new Error("no order");
-      L.aiData = d; return d;
-    });
-  }
-  /* Every credential's group under the AI sort. A saved group wins: a kept group by its name, Out of every group alone;
-     otherwise the night's grouping. A group is two or more titles, or any group a reviewer kept, even of one. Groups and
-     titles alone run A to Z by name; inside a group, the night's order (subject words, then level). Two groups that share
-     a name are one group, so a rename to another group's name joins them. */
-  function listGroupIndex() {
-    var d = listState().aiData, ov = state.cs.overlay || {}, by = {}, groups = {};
-    state.cs.rows.forEach(function (r) {
-      var pos = d.order[r.ut], saved = String((ov[r.ut] || {}).group || "").trim(), key, name;
-      if (saved && saved !== NO_GROUP) { key = "g:" + saved.toLowerCase(); name = saved; }
-      else if (saved === NO_GROUP || !pos) { key = (pos || saved ? "1:" : "new:") + r.ut; name = listTitle(r); }
-      else {
-        var g = d.groups[pos[0]] || { name: listTitle(r), n: 1 };
-        key = g.n > 1 ? "g:" + g.name.toLowerCase() : "1:" + r.ut; name = g.name;
-      }
-      var G = groups[key] || (groups[key] = { key: key, name: name, n: 0, kept: 0, members: [] });
-      G.n++; G.members.push(r);
-      if (saved && saved !== NO_GROUP) G.kept++;
-      by[r.ut] = { key: key, pos: pos ? pos[1] : 1e9, sort: key.indexOf("new:") === 0 ? "\uffff" : name.toLowerCase() };
-    });
-    Object.keys(groups).forEach(function (k) { var G = groups[k]; G.isGroup = k.indexOf("g:") === 0 && (G.n > 1 || G.kept > 0); });
-    return { by: by, groups: groups };
-  }
-  function listPlainBand(name) {
-    return el("tr", { cls: "exh-l-band exh-l-band-plain" }, [el("th", { scope: "rowgroup", colspan: String(listCols().length + 3) }, [el("span", { text: name })])]);
-  }
-  /* A group's band: its name, what it holds across its titles (the colleges, the statewide basis), and Keep or Rename.
-     The facts count every title in the group, filtered out or not. */
-  function listGroupBand(G, sg) {
-    var L = listState(), colls = {}, sw = 0, all = G.kept === G.n;
-    G.members.forEach(function (m) { credColleges(m).forEach(function (c) { colls[c] = 1; }); if (listBasis(m) === "Statewide") sw++; });
-    var nc = Object.keys(colls).length;
-    var facts = fmt(G.n) + " in this group, " + fmt(nc) + " college" + (nc === 1 ? "" : "s")
-      + (sw ? ", " + fmt(sw) + " based on statewide" : "")
-      + (sg ? ", " + fmt(sg) + " suggested fold" + (sg === 1 ? "" : "s") : "")
-      + (all ? "; kept" : G.kept ? "; " + fmt(G.kept) + " kept" : "");
-    var th = el("th", { scope: "rowgroup", colspan: String(listCols().length + 3), "data-gkey": G.key });
-    if (L.gEdit === G.key) {
-      var inp = el("input", { type: "text", id: "exh-l-gname", cls: "exh-l-in", autocomplete: "off", "aria-label": "Name for the group " + G.name });
-      inp.value = G.name;
-      var go = function () { listKeepGroup(G, inp.value); };
-      var stop = function () { L.gEdit = null; redrawList(); listFocusBand(G.key); };
-      inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); else if (e.key === "Escape") stop(); });
-      th.appendChild(el("span", { cls: "exh-l-gedit" }, [inp, word(L.gBusy ? "Saving…" : "Keep under this name", go), word("Cancel", stop)]));
-      th.appendChild(el("span", { cls: "exh-muted", text: facts }));
-    } else {
-      th.appendChild(el("span", { text: G.name }));
-      th.appendChild(el("span", { cls: "exh-muted", text: facts }));
-      th.appendChild(el("span", { cls: "exh-l-gacts" }, [
-        word(all ? "Rename" : "Keep this group", function () {
-          L.gEdit = G.key; redrawList();
-          var n = document.getElementById("exh-l-gname"); if (n) { n.focus(); try { n.select(); } catch (e) {} }
-        }, { "aria-label": (all ? "Rename the group " : "Keep the group ") + G.name }),
-        G.kept ? word("Release", function () { listReleaseGroup(G); }, { "aria-label": "Hand the group " + G.name + " back to the AI sort" }) : null]));
-    }
-    return el("tr", { cls: "exh-l-band" }, [th]);
-  }
-  function listFocusBand(key) {
-    var th = Array.from(document.querySelectorAll(".exh-l-band th[data-gkey]")).filter(function (x) { return x.getAttribute("data-gkey") === key; })[0];
-    var b = th && th.querySelector("button");
-    if (b) b.focus(); else { var r = document.querySelector(".exh-l-wrap"); if (r) r.focus(); }
-  }
-  function listScrollTop(y) {
-    var w = document.querySelector(".exh-l-wrap");
-    if (!w) return 0;
-    if (y != null) w.scrollTop = y;
-    return w.scrollTop;
-  }
-  /* Move the selected titles (Sam, 2026-11-01: "a way to do it easily from this view"): tick the rows, name a group, or
-     take them out of every group, or hand them back to the night's sort. It sits under the table, where a phone reaches. */
-  function listMovePanel(uts) {
-    var L = listState(), gi = L.gi || listGroupIndex(), ov = state.cs.overlay || {};
-    var names = Object.keys(gi.groups).map(function (k) { return gi.groups[k]; }).filter(function (G) { return G.isGroup; })
-      .map(function (G) { return G.name; }).sort(function (a, b) { return a.toLowerCase().localeCompare(b.toLowerCase()); });
-    var what = uts.length === 1 ? "the selected title" : "the " + fmt(uts.length) + " selected titles";
-    var inp = el("input", { type: "text", id: "exh-l-moveto", cls: "exh-l-in", autocomplete: "off", list: "exh-l-gnames",
-      placeholder: "A group's name, or a new one" });
-    inp.value = L.moveTo || "";
-    inp.addEventListener("input", function () { L.moveTo = inp.value; });
-    var go = function () {
-      var v = inp.value.trim();
-      if (!v || v === NO_GROUP) { L.cellNote = "Name the group to move " + what + " into."; redrawList(); var n = document.getElementById("exh-l-moveto"); if (n) n.focus(); return; }
-      listMoveTo(uts, v);
-    };
-    inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); });
-    var saved = uts.some(function (u) { return (ov[u] || {}).group; });
-    return el("div", { cls: "exh-l-move", role: "group", "aria-label": "Move " + what }, [
-      el("label", { cls: "exh-l-f", "for": "exh-l-moveto" }, [el("span", { text: "Move " + what + " to a group" }), inp]),
-      el("datalist", { id: "exh-l-gnames" }, names.map(function (n) { return el("option", { value: n }); })),
-      el("div", { cls: "exh-l-acts" }, [
-        word(L.gBusy ? "Saving…" : "Move", go, { id: "exh-l-movego" }),
-        word("Out of every group", function () { listMoveTo(uts, NO_GROUP); }),
-        saved ? word("Back to the AI sort", function () { listMoveTo(uts, ""); }) : null,
-        word("Clear the selection", function () { L.sel = {}; redrawList(); })])]);
-  }
-  function listMoveTo(uts, value) {
-    var L = listState(), n = uts.length, label = n === 1 ? "“" + listTitleOf(uts[0]) + "”" : fmt(n) + " titles";
-    var note = value === NO_GROUP ? "Took " + label + " out of every group." : value === "" ? "Handed " + label + " back to the AI sort."
-      : "Moved " + label + " to " + value + ".";
-    return listSaveGroups(uts, value, note).then(function (ok) {
-      if (!ok) return;
-      L.sel = {}; L.moveTo = "";
-      redrawList();
-      if (value && value !== NO_GROUP) listFocusBand("g:" + value.toLowerCase()); else listFocusBand("");
-    });
-  }
-  function listTitleOf(ut) {
-    var r = (state.cs.rows || []).filter(function (x) { return x.ut === ut; })[0];
-    return r ? listTitle(r) : ut;
-  }
-  /* Keep this group: every title in it saves the group's name, the one in the box. Rename is the same write. */
-  function listKeepGroup(G, name) {
-    var L = listState();
-    name = String(name || "").trim();
-    if (!name || name === NO_GROUP) { L.cellNote = "A group needs a name."; redrawList(); return Promise.resolve(); }
-    var uts = G.members.map(function (m) { return m.ut; });
-    return listSaveGroups(uts, name, (G.kept === G.n && name !== G.name ? "Renamed " + G.name + " to " : "Kept " + fmt(uts.length) + " in ") + name + ".")
-      .then(function (ok) { if (!ok) return; L.gEdit = null; redrawList(); listFocusBand("g:" + name.toLowerCase()); });
-  }
-  function listReleaseGroup(G) {
-    var ov = state.cs.overlay || {};
-    var uts = G.members.filter(function (m) { var v = (ov[m.ut] || {}).group; return v && v !== NO_GROUP; }).map(function (m) { return m.ut; });
-    return listSaveGroups(uts, "", "Handed " + G.name + " back to the AI sort.").then(function (ok) { if (ok) { redrawList(); listFocusBand(""); } });
-  }
-  /* One request for the lot; the overlay changes only once the store says yes. */
-  function listSaveGroups(uts, value, note) {
-    var L = listState(), cs = state.cs;
-    if (!uts.length) return Promise.resolve(false);
-    L.gBusy = true;
-    return session().then(function (sess) {
-      if (!sess) throw new Error("signin");
-      return saveCredRows(sess, FIELD_LIST_GROUP, uts.map(function (u) { return [u, value]; }));
-    }).then(function (x) {
-      if (!x.ok) throw new Error("HTTP " + x.status);
-      uts.forEach(function (u) { (cs.overlay[u] = cs.overlay[u] || {}).group = value; });
-      L.gBusy = false; L.cellNote = note;
-      return true;
-    }).catch(function (e) {
-      L.gBusy = false;
-      L.cellNote = e && e.message === "signin" ? "Sign in as a reviewer to move titles or keep a group."
-        : "The group did not save (" + (e && e.message || "no answer") + "). Nothing changed; try again.";
-      redrawList();
-      return false;
     });
   }
   /* A spelling twin's fold (Sam, 2026-11-01: "what do you think about offering suggested titles based on what you
@@ -2644,25 +2020,6 @@
         + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed.");
     });
   }
-  /* Edit every row (Sam, 2026-11-01: "a global Edit button that would allow me to make edits directly on any row
-     without clicking the rows individual edit button"). Title, Issuer and Training sites become boxes; leaving a box
-     saves it, Enter saves, Escape puts the value back. The same fields Edit saves. */
-  function listCellInput(r, kind, value, label) {
-    var inp = el("input", { type: "text", cls: "exh-l-in exh-l-cellin", autocomplete: "off",
-      "aria-label": label + " of " + listTitle(r), "data-kind": kind });
-    inp.value = value; inp.setAttribute("data-was", value);
-    inp.addEventListener("keydown", function (e) {
-      if (e.key === "Enter") { e.preventDefault(); inp.blur(); }
-      else if (e.key === "Escape") { inp.value = inp.getAttribute("data-was"); }
-    });
-    inp.addEventListener("change", function () { listCellSave(r, kind, inp, label); });
-    return inp;
-  }
-  function listCellNote(text) {
-    var L = listState(), n = document.getElementById("exh-l-cellnote");
-    L.cellNote = text;
-    if (n) { n.textContent = text; n.hidden = !text; }
-  }
   function listCellSave(r, kind, inp, label) {
     var cur = credCurrent(r), value = inp.value.replace(/\s+/g, " ").trim(), before = inp.getAttribute("data-was"), sites = null;
     if (kind === "title" && !value) { inp.value = before; listCellNote("A title cannot be empty; " + before + " stays."); return Promise.resolve(); }
@@ -2694,11 +2051,6 @@
     });
   }
   function listFlag(r) { var o = state.cs.overlay[r.ut]; return o && o.flag ? o.flag : ""; }
-  function listSelWords() {
-    var n = Object.keys(listState().sel).length;
-    return n ? fmt(n) + " selected" : "";
-  }
-  function listCountSel() { var n = document.getElementById("exh-l-selcount"); if (n) n.textContent = listSelWords(); }
   /* Your flag: set writes the time, clear writes "". Both are upserts on (course_id, field). */
   function listSetFlag(r, on) {
     var L = listState(), cs = state.cs;
@@ -2720,32 +2072,10 @@
       render();
     });
   }
-  /* A cell opens its drill-down in a drawer under the row (Sam, 2026-11-01: "how many of these fields can you make
-     drill downs for on click?"; "build the open in detail as you propose"). A second press closes it. */
-  function listOpener(r, col, text, isOpen) {
-    var L = listState();
-    var b = el("button", { type: "button", cls: "exh-l-open", "aria-expanded": isOpen ? "true" : "false",
-      "aria-label": listCols()[col].h + ": " + (text || "none") + ", details" }, [text || "—"]);
-    b.addEventListener("click", function () {
-      L.open = isOpen ? null : { ut: r.ut, col: col }; L.edit = null; redrawList();
-      var again = document.querySelector('.exh-l-open[aria-expanded="true"]'); if (again) again.focus();
-    });
-    return b;
-  }
-  function listFilterBy(col, value) {
-    var L = listState();
-    L.cf = {}; L.cf[col] = value; L.open = null; L.limit = LIST_LIMIT; render();
-  }
-  function listDrawer(r, col) {
-    var L = listState(), C = listCols(), box = el("div", { cls: "exh-l-drawer" });
-    var h = el("p", { cls: "exh-l-dh" }, [C[col].h + ", " + listTitle(r)]);
-    box.appendChild(h);
-    function line(text, cls) { box.appendChild(el("p", { cls: "exh-l-dl" + (cls ? " " + cls : ""), text: text })); }
-    function list(items) { box.appendChild(el("ul", { cls: "exh-l-dul" }, items.map(function (x) { return el("li", null, typeof x === "string" ? [x] : x); }))); }
+  /* A cell's drawer, by column name (the shared List draws the frame and the Close word). */
+  function listDrawerFill(r, name, h) {
+    var L = h.L, box = h.box, line = h.line, list = h.list, listFilterBy = h.filterBy;
     var ad = credAdopt(r) || {};
-    // Each drawer answers its column by name: the Confidence column, added after the drawers, had shifted every one
-    // after it by a place (S541).
-    var name = C[col].h;
     if (name === "Title") {
       line("Local titles in MAP, as colleges typed them:");
       list((r.raw_variants || []).map(function (v) { return v.r + (v.c != null ? " (title " + Math.round(v.c * 100) + "%)" : "") + (v.q ? ", " + String(v.q).replace(/_/g, " ") : ""); }));
@@ -2781,7 +2111,7 @@
         line(fmt(same.length) + (same.length === 1 ? " credential names " : " credentials name ") + iss + ".");
         box.appendChild(word("Show them all", function () { listFilterBy(listColIndex("Issuer"), iss); }));
         var ak = Object.keys(alike);
-        if (ak.length) { line("Spelled another way:", "exh-l-warn"); list(ak.map(function (k) { return k + " (" + alike[k] + ")"; })); }
+        if (ak.length) { line("Spelled another way:", "warn"); list(ak.map(function (k) { return k + " (" + alike[k] + ")"; })); }
       }
     } else if (name === "Training sites") {
       var sites = credCurrent(r).sites;
@@ -2824,171 +2154,182 @@
           + (x.n === 1 ? " credit recommendation" : " credit recommendations")]; }));
       }
     }
-    box.appendChild(word("Close", function () { L.open = null; redrawList(); }));
-    return el("tr", { cls: "exh-l-editrow" }, [el("td", { colspan: String(listCols().length + 3) }, [box])]);
   }
-  /* Resizable columns (Sam, 2026-11-01: "make the columns resizable"). Each header's right edge is a separator: drag
-     it, or focus it and use the arrow keys (Home narrows to the least). The first resize fixes every column at its
-     drawn width in pixels, so the table may grow wider and scroll inside its own box. Widths last the visit; a column
-     width is not a filter (CLAUDE.md, tabs never remember a filter). */
-  var LIST_MIN_W = 48, LIST_STEP = 24;
-  function listFixWidths() {
-    var L = listState();
-    if (L.widths) return L.widths;
-    var cols = Array.prototype.slice.call(document.querySelectorAll(".exh-l-table col"), 2);
-    L.widths = cols.map(function (c) {
-      var w = c.getBoundingClientRect ? Math.round(c.getBoundingClientRect().width) : 0;
-      return w > 0 ? w : 120;
-    });
-    return L.widths;
-  }
-  function listSetWidth(i, w) {
-    var L = listState(), W = listFixWidths();
-    W[i] = Math.max(LIST_MIN_W, Math.round(w));
-    var col = document.querySelectorAll(".exh-l-table col")[i + 2];
-    if (col) col.style.width = W[i] + "px";
-    var t = document.querySelector(".exh-l-table");
-    if (t) t.style.width = (W.reduce(function (a, x) { return a + x; }, 0) + 64) + "px";
-    var g = document.getElementById("exh-l-grip-" + i);
-    if (g) g.setAttribute("aria-valuenow", String(W[i]));
-    return L;
-  }
-  // Each separator reports its column's drawn width once the table is on the page.
-  function listSyncGrips() {
-    var cols = Array.prototype.slice.call(document.querySelectorAll(".exh-l-table col"), 2);
-    Array.prototype.forEach.call(document.querySelectorAll(".exh-l-grip"), function (g, i) {
-      var w = cols[i] && cols[i].getBoundingClientRect ? Math.round(cols[i].getBoundingClientRect().width) : 0;
-      if (w > 0) g.setAttribute("aria-valuenow", String(w));
-    });
-  }
-  function listGrip(i, label) {
-    var L = listState();
-    var g = el("span", { cls: "exh-l-grip", id: "exh-l-grip-" + i, role: "separator", tabindex: "0", "aria-orientation": "vertical",
-      "aria-label": "Resize " + label, "aria-valuemin": String(LIST_MIN_W), "aria-valuemax": "1200",
-      "aria-valuenow": L.widths ? String(L.widths[i]) : "120" });
-    g.addEventListener("keydown", function (e) {
-      var W = listFixWidths();
-      if (e.key === "ArrowRight") listSetWidth(i, W[i] + LIST_STEP);
-      else if (e.key === "ArrowLeft") listSetWidth(i, W[i] - LIST_STEP);
-      else if (e.key === "Home") listSetWidth(i, LIST_MIN_W);
-      else return;
-      e.preventDefault();
-    });
-    /* A drag by mouse, pen or finger (Sam on his phone, 2026-11-01: "trying to resize the first column but not having
-       luck"). The grip captures the pointer, so a finger that leaves the strip keeps resizing, and touch-action:none
-       keeps the phone from taking the drag as a scroll. */
-    g.addEventListener("pointerdown", function (e) {
-      if (e.button !== undefined && e.button !== 0) return;
-      e.preventDefault(); e.stopPropagation();
-      var startX = e.clientX, startW = listFixWidths()[i];
-      try { g.setPointerCapture(e.pointerId); } catch (err) {}
-      function move(ev) { if (ev.pointerId === e.pointerId) listSetWidth(i, startW + (ev.clientX - startX)); }
-      function up(ev) {
-        if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
-        g.removeEventListener("pointermove", move); document.removeEventListener("pointermove", move);
-        ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.removeEventListener(t, up); document.removeEventListener(t, up); });
+  /* The List is drawn by the Catalog Commons' shared engine, commons_list.js (Sam, 2026-11-01: "I want one now for each
+     of our Catalog Commons groups"); this spec is what makes it the Exhibits List. The engine loads on the List's first
+     open, as commons_progress.js does for the Progress views. */
+  var LIST_ENGINE = null;
+  function listSpec() {
+    return {
+      prefix: "exh-l-", frPrefix: "exh-fr-",
+      cls: { w: "exh-w", muted: "exh-muted", small: "exh-small", note: "exh-note", search: "exh-search", on: "exh-view-on", vh: "exh-vh", empty: "exh-empty" },
+      noun: { many: "credentials", region: "Every credential, A to Z", keyHeader: "Credential key", file: "exhibits-list",
+        placeholder: "Title, issuer, college, district, SWP region, ASCCC area, discipline, subject or CPL type", findLabel: "Find in the list" },
+      state: listState, rows: function () { return state.cs.rows || []; }, cols: listCols,
+      key: function (r) { return r.ut; }, title: listTitle, render: function () { render(); }, session: session,
+      head: function (wrap) {
+        var L = listState(), cs = state.cs;
+        wrap.appendChild(viewsNav());
+        if (cs.error) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The credentials could not be read (" + cs.error + ")." })); return false; }
+        if (!cs.rows) { wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the credentials…" })); return false; }
+        if (L.collisions == null) {
+          L.collisions = [];
+          fetch(COLLISIONS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
+            .then(function (d) { L.collisions = (d && d.collisions) || []; if (state.view === "list") render(); }).catch(function () {});
+        }
+        return true;
+      },
+      filters: LIST_FILTERS,
+      filterPass: function (r, L) {
+        if (L.f === "unreviewed" && listStatus(r) !== "Unreviewed") return false;
+        if (L.f === "low" && !(r.conf_title != null && r.conf_title < 0.6)) return false;
+        if (L.f === "flagged" && !r.quality_flag) return false;
+        if (L.f === "bare" && (r.articulations || []).length) return false;
+        if (L.f === "changed" && L.changed.indexOf(r.ut) === -1) return false;
+        if (L.f === "mine" && !listFlag(r)) return false;
+        if (L.f === "selected" && !L.sel[r.ut]) return false;
+        if (L.f === "suggested" && !listSuggest(r)) return false;
+        if (L.f === "waiting" && !listPendingFold(r)) return false;
+        if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
+        if (L.f === "local" && listBasis(r) !== "Local") return false;
+        if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
+        return true;
+      },
+      onFilter: function (id, api) { return id === "suggested" && !listState().aiData ? api.aiLoad() : null; },
+      hay: function (r) {
+        var cur = credCurrent(r);
+        return [r.ut, listTitle(r), cur.issuer, cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
+          r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r) + " | " + listCertWords(r);
+      },
+      afterBar: function (wrap) {
+        var L = listState(), cs = state.cs;
+        if (cs.overlayOk === false) wrap.appendChild(el("p", { cls: "exh-muted exh-small",
+          text: "Today's saves could not be read, so the list shows the reference as of " + (stamp(cs.generated) || "the last daily run") + "." }));
+        // The comments box (Sam, 2026-11-01: "add in a comments box to the reanalysis routine where I can add my
+        // observations or concerns or opportunities to better inform the reanalysis"). Kept across repaints this visit.
+        var box = el("textarea", { id: "exh-l-note", cls: "exh-l-in exh-l-ta", rows: "3", maxlength: "4000",
+          placeholder: "Observations, concerns or opportunities: what you were fixing, a pattern you noticed, titles that should fold, an issuer that looks wrong" });
+        box.value = L.comments || "";
+        box.addEventListener("input", function () { L.comments = box.value; });
+        wrap.appendChild(el("div", { cls: "exh-l-re" }, [
+          el("label", { cls: "exh-l-relabel", "for": "exh-l-note", text: "Your comments for the re-analysis" }),
+          box,
+          el("div", { cls: "exh-l-acts" }, [word(L.busy ? "Working…" : "Re-analyze my changes", listReanalyze),
+            el("span", { cls: "exh-muted exh-small", text: L.changed.length
+              ? fmt(L.changed.length) + " changed this visit go with it" : "With no change this visit, it looks over everything you changed since its last pass" })])]));
+      },
+      beforeTable: function (wrap) {
+        var L = listState();
+        if (L.cert) wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-certline" }, ["Showing every exhibit that holds or is aligned to "
+          + listCertName(L.cert) + ". ", word("Clear", function () { L.cert = null; L.limit = LIST_LIMIT; render(); })]));
+      },
+      titleSubs: function (r, L, aiOn) {
+        var out = [], o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
+        var pf = listPendingFold(r);
+        if (pf) out.push(el("span", { cls: "exh-l-sub exh-l-sg" }, pf.end === pf.to
+          ? ["folds " + r.ut + " into this credential; waits for the reviewed apply"]
+          : [pf.to + " now folds into " + pf.end + ", so this fold would stall. ",
+            word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the fold of " + r.ut + " to " + pf.end })]));
+        else if (o.title) out.push(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
+        if (col) out.push(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
+        if (L.changed.indexOf(r.ut) !== -1) out.push(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
+        var sg = (aiOn || L.f === "suggested") && listSuggest(r);
+        if (sg) out.push(el("span", { cls: "exh-l-sub exh-l-sg" }, [
+          "Suggested: fold into " + sg.to + " (" + sg.why + ") ",
+          word("Accept", function () { listSuggestAccept(r, sg); }, { "aria-label": "Fold " + r.ut + " into " + sg.to }),
+          " ", word("Dismiss", function () { L.sgDone[r.ut] = "dismissed"; redrawList(); }, { "aria-label": "Dismiss the fold of " + r.ut })]));
+        return out;
+      },
+      drawer: listDrawerFill,
+      flag: { get: listFlag, set: listSetFlag },
+      edit: {
+        fields: [{ id: "exh-l-t", label: "Title", key: "title" }, { id: "exh-l-i", label: "Issuer", key: "issuer" },
+          { id: "exh-l-s", label: "Training sites, separated by ;", key: "sites", ph: "Site; Site" }],
+        draft: function (r) {
+          var cur = credCurrent(r);
+          return { title: listTitle(r), issuer: cur.issuer || "", sites: cur.sites.map(function (x) { return x.site; }).join("; ") };
+        },
+        save: listSave
+      },
+      cellSave: listCellSave,
+      fr: {
+        cols: FR_COLS, defaultCol: "issuer", rowHeader: "Credential", one: "credential", many: "credentials",
+        wholeLabel: function (col) { return col === "sites" ? "Whole site name" : "Whole cell"; },
+        change: function (r, col, F, api) {
+          var cur = credCurrent(r), before, after, sites = null;
+          if (col === "title") { before = listTitle(r); after = api.frClean(api.frSwap(before, F)); return { before: before, after: after, refuseEmpty: true }; }
+          if (col === "issuer") { before = cur.issuer || ""; after = api.frClean(api.frSwap(before, F)); return { before: before, after: after }; }
+          before = cur.sites.map(function (x) { return x.site; }).join("; ");
+          sites = [];
+          cur.sites.forEach(function (x) {
+            var s = api.frClean(api.frSwap(x.site, F));
+            if (s) sites.push(x.college ? { site: s, college: x.college } : { site: s });
+          });
+          after = sites.map(function (x) { return x.site; }).join("; ");
+          return { before: before, after: after, sites: sites, prevSites: cur.sites };
+        },
+        save: function (sess, r, col, value, sites) {
+          var writes = frWrites(r, col, value, sites);
+          return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); })).then(function (rs) {
+            if (rs.every(function (x) { return x.ok; })) { listApply(r, writes); return true; }
+            return false;
+          });
+        },
+        savedTail: function (col, n) { return col === "title" && n ? " The daily run checks each new title for a collision; a reviewed apply renames it in the reference." : ""; }
+      },
+      groups: {
+        url: AI_SORT_URL, none: NO_GROUP, item: "title",
+        saved: function (r) { return ((state.cs.overlay || {})[r.ut] || {}).group || ""; },
+        save: function (keys, value) {
+          var cs = state.cs;
+          return session().then(function (sess) {
+            if (!sess) throw new Error("signin");
+            return saveCredRows(sess, FIELD_LIST_GROUP, keys.map(function (u) { return [u, value]; }));
+          }).then(function (x) {
+            if (!x.ok) throw new Error("HTTP " + x.status);
+            keys.forEach(function (u) { (cs.overlay[u] = cs.overlay[u] || {}).group = value; });
+          });
+        },
+        facts: function (members) {
+          var colls = {}, sw = 0;
+          members.forEach(function (m) { credColleges(m).forEach(function (c) { colls[c] = 1; }); if (listBasis(m) === "Statewide") sw++; });
+          var nc = Object.keys(colls).length;
+          return fmt(nc) + " college" + (nc === 1 ? "" : "s") + (sw ? ", " + fmt(sw) + " based on statewide" : "");
+        },
+        extra: { test: listSuggest, words: function (n) { return fmt(n) + " suggested fold" + (n === 1 ? "" : "s"); } },
+        sortLine: function (L) {
+          return "AI sort: like with like, the groups A to Z. A group gathers titles that share their subject words once level words (Beginning, 1, II, Advanced) "
+            + "are set aside, with discipline and issuer weighing in; built " + (stamp(L.aiData._built_at) || L.aiData._reference_generated_at && stamp(L.aiData._reference_generated_at) || "daily")
+            + ". " + (L.aiData.counts && L.aiData.counts.suggested_folds ? fmt(L.aiData.counts.suggested_folds) + " spelling twins carry a suggested fold. " : "")
+            + "Select rows to move them to another group; Keep this group fixes a group and its name, and a rename to another group's name joins the two. "
+            + "What you keep or move holds through every nightly rebuild. Press a header to sort by it instead.";
+        }
       }
-      g.addEventListener("pointermove", move); document.addEventListener("pointermove", move);
-      ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.addEventListener(t, up); document.addEventListener(t, up); });
+    };
+  }
+  function listApi() {
+    if (!LIST_ENGINE && window.CPL_COMMONS_LIST) LIST_ENGINE = window.CPL_COMMONS_LIST.create(listSpec());
+    return LIST_ENGINE;
+  }
+  function renderList(wrap) {
+    if (listApi()) { LIST_ENGINE.render(wrap); return; }
+    wrap.appendChild(viewsNav());
+    if (state.listFailed) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The list could not be loaded; reload the tab to try again." })); return; }
+    wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the list…" }));
+    if (state.listLoading || !window.CPL_TABS || !window.CPL_TABS.loadScript) return;
+    state.listLoading = true;
+    window.CPL_TABS.loadScript("commons_list.js", "CPL_COMMONS_LIST", function () {
+      state.listLoading = false;
+      if (!window.CPL_COMMONS_LIST) state.listFailed = true;
+      if (state.view === "list") render();
     });
-    g.addEventListener("click", function (e) { e.stopPropagation(); });
-    return g;
   }
-  /* The rows as they are filtered and sorted, as a CSV Excel opens (a byte-order mark keeps é and – intact). */
-  function listCsv(rows) {
-    var C = listCols();
-    var q = function (v) { v = String(v == null ? "" : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
-    var lines = [["Credential key"].concat(C.map(function (c) { return c.h; })).map(q).join(",")];
-    rows.forEach(function (r) { lines.push([r.ut].concat(C.map(function (c) { return c.v(r); })).map(q).join(",")); });
-    return "\ufeff" + lines.join("\r\n") + "\r\n";
-  }
-  function listDownload(rows) {
-    var csv = listCsv(rows), L = listState();
-    try {
-      var url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
-      var a = el("a", { href: url, download: "exhibits-list-" + new Date().toISOString().slice(0, 10) + ".csv" });
-      document.body.appendChild(a); a.click(); a.remove();
-      setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
-      L.note = "Downloaded " + fmt(rows.length) + " rows. Edits made in the spreadsheet do not come back here yet; make them in the list.";
-    } catch (e) { L.note = "This browser could not make the file (" + (e && e.message || "no answer") + ")."; }
-    render();
-  }
-  function ensureListCss() {
-    if (document.getElementById("exh-l-css")) return;
-    document.head.appendChild(el("style", { id: "exh-l-css", text: [
-      ".exh-l-bar{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:center;margin:8px 0}",
-      ".exh-l-q{flex:1 1 280px;max-width:520px}",
-      ".exh-l-filters{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.8125rem}",
-      ".exh-l-re{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:center;margin:4px 0 8px}",
-      ".exh-l-re{flex-direction:column;align-items:stretch;max-width:760px}",
-      ".exh-l-relabel{font-size:.8125rem;color:var(--text-strong);font-weight:600}",
-      ".exh-l-ta{width:100%;box-sizing:border-box;resize:vertical;min-height:3.5em}",
-      ".exh-l-in{font:inherit;font-size:.8125rem;padding:2px 6px;border:1px solid var(--border);border-radius:4px;background:var(--surface-opaque);color:var(--text-body)}",
-      "#exh-l-host{min-width:0;max-width:100%}",
-      ".exh-l-wrap{width:100%;max-width:100%;box-sizing:border-box;overflow-x:auto;max-height:75vh;overflow-y:auto;border:1px solid var(--border);border-radius:6px}",
-      ".exh-l-table{width:100%;min-width:1100px;table-layout:fixed;border-collapse:collapse;font-size:.75rem;line-height:1.3}",
-      ".exh-l-table th{position:sticky;top:0;background:var(--surface-opaque);color:var(--text-strong);text-align:left;font-weight:600;padding:3px 6px;border-bottom:1px solid var(--border)}",
-      ".exh-l-table td{padding:2px 6px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-body);overflow-wrap:anywhere}",
-      ".exh-l-title{color:var(--text-strong)}",
-      ".exh-l-box{text-align:center;padding-left:2px;padding-right:2px}",
-      ".exh-l-box input{width:24px;height:24px;margin:0;accent-color:var(--accent-link)}",
-      ".exh-l-open{background:none;border:0;padding:0;margin:0;font:inherit;color:inherit;text-align:inherit;cursor:pointer;min-height:24px;width:100%;overflow:hidden;text-overflow:ellipsis;display:block}",
-      ".exh-l-nowrap .exh-l-open{white-space:nowrap}",
-      ".exh-l-open:hover,.exh-l-open:focus-visible{text-decoration:underline;text-decoration-color:var(--accent-link);text-underline-offset:2px}",
-      ".exh-l-open[aria-expanded='true']{font-weight:600}",
-      ".exh-l-sel td{background:var(--surface-opaque)}",
-      ".exh-l-flagged td:nth-child(3){box-shadow:inset 3px 0 0 var(--accent-link)}",
-      ".exh-l-drawer{display:flex;flex-direction:column;gap:4px;padding:6px 4px;max-width:960px;white-space:normal}",
-      ".exh-l-dh{margin:0;font-weight:600;color:var(--text-strong)}",
-      ".exh-l-dl{margin:0}",
-      ".exh-l-dul{margin:0;padding-left:18px}",
-      ".exh-l-warn{color:var(--text-strong);font-weight:600}",
-      ".exh-l-table th{position:sticky}",
-      ".exh-l-grip{position:absolute;top:0;right:0;width:24px;height:100%;min-height:24px;cursor:col-resize;z-index:3;touch-action:none}",
-      ".exh-l-grip::after{content:'';position:absolute;top:20%;bottom:20%;right:0;width:1px;background:var(--border)}",
-      ".exh-l-grip:hover::after,.exh-l-grip:focus-visible::after{width:3px;background:var(--accent-link)}",
-      // On a touch screen the handle shows at rest, a finger's width to find (Sam on his phone, 2026-11-01).
-      "@media (pointer:coarse){.exh-l-grip{width:32px}.exh-l-grip::after{width:3px;top:25%;bottom:25%;background:var(--text-muted)}}",
-      ".exh-l-grip:focus-visible{outline:2px solid var(--focus-ring);outline-offset:-2px}",
-      ".exh-l-nowrap td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
-      ".exh-l-nowrap .exh-l-sub{display:inline;margin-left:6px}",
-      ".exh-l-nowrap .exh-l-editrow td,.exh-l-nowrap .exh-l-cf td{white-space:normal;overflow:visible}",
-      ".exh-l-count .exh-w[aria-pressed='true']{font-weight:600}",
-      ".exh-l-sub{display:block;color:var(--text-muted);font-size:.6875rem}",
-      ".exh-l-n{text-align:right;font-variant-numeric:tabular-nums}",
-      ".exh-l-table .exh-w{font-size:.75rem;min-height:24px;min-width:24px;padding:0 2px}",
-      ".exh-l-editrow td{background:var(--surface-opaque)}",
-      ".exh-l-edit{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;padding:4px 0}",
-      ".exh-l-f{display:flex;flex-direction:column;gap:2px;flex:1 1 200px;font-size:.6875rem;color:var(--text-muted)}",
-      ".exh-l-acts{display:flex;gap:12px}",
-      ".exh-fr{border:1px solid var(--border);border-radius:6px;padding:8px 10px;margin:4px 0 8px;min-width:0;max-width:100%;box-sizing:border-box}",
-      "#exh-fr-host{min-width:0;max-width:100%}",
-      ".exh-l-table tr.exh-l-band th{position:static;text-align:left;font-weight:600;color:var(--text-strong);background:var(--surface-opaque);padding:8px 6px 2px;border-top:1px solid var(--border);border-bottom:0;white-space:normal}",
-      ".exh-l-band .exh-muted{font-weight:400;margin-left:8px}",
-      ".exh-l-table tr.exh-l-band-plain th{color:var(--text-muted);font-weight:400}",
-      ".exh-l-band .exh-l-gacts{display:inline-flex;gap:12px;margin-left:12px;font-weight:400}",
-      ".exh-l-band .exh-l-gedit{display:inline-flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-weight:400}",
-      ".exh-l-move{position:sticky;bottom:0;z-index:3;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;margin:6px 0;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--surface-opaque)}",
-      ".exh-l-nowrap .exh-l-sg{display:block;white-space:normal}",
-      ".exh-l-cellin{width:100%;box-sizing:border-box;font-size:.75rem;padding:1px 4px;min-height:24px}",
-      ".exh-l-nowrap td .exh-l-cellin{white-space:normal}",
-      ".exh-l-table.exh-fr-table{min-width:0}",
-      ".exh-fr-h{font-size:14px;margin:0 0 2px}",
-      ".exh-fr-form{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;margin:6px 0}",
-      ".exh-fr-ticks{display:flex;gap:12px;align-items:center;min-height:24px}",
-      ".exh-fr-tick{display:inline-flex;gap:4px;align-items:center;font-size:12px;min-height:24px}",
-      ".exh-fr-wrap{max-height:50vh;margin:4px 0}",
-      ".exh-fr-table del{color:var(--text-muted);text-decoration:line-through}",
-      ".exh-fr-table ins{text-decoration:none;font-weight:600}",
-      ".exh-l-count{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;margin:2px 0 4px}",
-      ".exh-l-sort{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--text-strong);text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:24px}",
-      ".exh-l-cf td{background:var(--surface-opaque);padding:5px 4px 4px;border-bottom:1px solid var(--border)}",
-      ".exh-l-cfin{width:100%;min-width:24px;box-sizing:border-box;font-size:.6875rem;min-height:24px}",
-      ".exh-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}",
-      // A phone keeps the fixed layout, so the column widths a drag sets apply; automatic layout sized the Title
-      // column to its longest title, past the screen's edge, and ignored the grip (Sam on his phone, 2026-11-01).
-      "@media (max-width:560px){.exh-l-table{min-width:900px}}"
-    ].join("\n") }));
+  function redrawList() { if (listApi()) LIST_ENGINE.redraw(); else render(); }
+  function listRows() { return listApi() ? LIST_ENGINE.rows() : []; }
+  function listCsv(rows) { return listApi() ? LIST_ENGINE.csv(rows) : ""; }
+  function listCellNote(text) {
+    if (listApi()) { LIST_ENGINE.cellNote(text); return; }
+    listState().cellNote = text;
   }
 
   function viewsNav() {

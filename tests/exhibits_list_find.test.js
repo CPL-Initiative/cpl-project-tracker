@@ -35,6 +35,8 @@ const results = [];
 function check(name, cond, why) { results.push([name, !!cond, why]); }
 function txt(el) { return (el && el.textContent || "").trim(); }
 const src = fs.readFileSync("exhibits.js", "utf8");
+// The List is drawn by the shared engine (commons_list.js, S542); the grip's pointer handling lives there.
+const listSrc = fs.readFileSync("commons_list.js", "utf8");
 
 const CREDREF = { _generated_at: "2026-11-01T05:19:00+00:00", unified_titles: [
   { ut: "Welding Level 1", issuer: "AWS", cpl_types: ["Industry Certification"], disc_modal: "Welding", top_modal: "0956.50",
@@ -85,6 +87,7 @@ function load() {
   w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(sess); },
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; } };
   w.CPL_TABS = { loadScript: function (s, name, cb) {
+    if (s === "commons_list.js") { const e = w.document.createElement("script"); e.textContent = fs.readFileSync("commons_list.js", "utf8"); w.document.body.appendChild(e); }
     if (s === "credential_reference_data.js") w[name] = JSON.parse(JSON.stringify(CREDREF));
     if (s === "fact-sheet/statewide_recs.js") w[name] = { "Welding Level 1": [{ t: "Welding 101", u: "3", id: "MAPICI-WELD-1-001" }, { t: "Welding 102", u: "3", id: "MAPICI-WELD-1-001" }] };
     setTimeout(cb, 0); } };
@@ -203,7 +206,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   check("(7) ⭐ a phone keeps the fixed table layout, so a dragged width applies",
     !/max-width:560px\)\{\.exh-l-table\{[^}]*table-layout:auto/.test(css) && /\.exh-l-table\{[^}]*table-layout:fixed/.test(css), css.slice(0, 200));
   check("(7) the grip sits inside its header and takes the finger", /\.exh-l-grip\{[^}]*right:0;[^}]*touch-action:none/.test(css)
-    && /setPointerCapture/.test(src) && /pointercancel/.test(src));
+    && /setPointerCapture/.test(listSrc) && /pointercancel/.test(listSrc));
 
   t.d.getElementById("exh-l-editall").click(); await settle();
   words(t.d, "Suggested folds").click(); await settle();

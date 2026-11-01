@@ -4,7 +4,7 @@
   "supabase_tables": 104,
   "rpcs": 48,
   "edge_functions": 11,
-  "file_datasets": 761,
+  "file_datasets": 762,
   "external_services": 192,
   "consumers": 504,
   "workflows": 60,
@@ -5699,7 +5699,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1920,
+     "line": 1864,
      "tabs": [
       "exhibits"
      ]
@@ -5754,7 +5754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 116
+     "line": 117
     }
    ],
    "served": true,
@@ -5836,6 +5836,29 @@
      "direction": "read",
      "how": "inline",
      "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:commons_list.js": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2321,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 121
     }
    ],
    "served": true,
@@ -6842,7 +6865,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 109
+     "line": 110
     }
    ],
    "producers": [
@@ -7478,7 +7501,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 120
+     "line": 122
     }
    ],
    "served": true,
@@ -7777,7 +7800,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 118
+     "line": 119
     }
    ],
    "producers": [
@@ -13702,16 +13725,6 @@
   },
   "file:kb/exhibits_ai_sort.json": {
    "consumers": [
-    {
-     "id": "module:exhibits.js",
-     "kind": "module",
-     "direction": "read",
-     "how": "literal",
-     "line": 118,
-     "tabs": [
-      "exhibits"
-     ]
-    },
     {
      "id": "script:kb/_build_exhibits_ai_sort.py",
      "kind": "script",
@@ -26984,6 +26997,9 @@
   "commons.js": [
    "commons"
   ],
+  "commons_list.js": [
+   "exhibits"
+  ],
   "commons_progress.js": [
    "canonical-subj4",
    "commons",
@@ -28572,6 +28588,7 @@
  "unresolved": [
   "chatbox/sync_program_courses.py",
   "commons.js",
+  "commons_list.js",
   "cpl_session.js",
   "cr_progress.js",
   "exhibit_progress.js",

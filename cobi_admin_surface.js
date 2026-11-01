@@ -448,6 +448,7 @@ window.COBI_ADMIN_SURFACE = {
     },
     "exhibits": {
       "modules": [
+        "commons_list.js",
         "exhibits.js"
       ],
       "reads": [],

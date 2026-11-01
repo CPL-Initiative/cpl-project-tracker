@@ -63,6 +63,7 @@ function load() {
   w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(sess); },
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; } };
   w.CPL_TABS = { loadScript: function (s, name, cb) {
+    if (s === "commons_list.js") { const e = w.document.createElement("script"); e.textContent = fs.readFileSync("commons_list.js", "utf8"); w.document.body.appendChild(e); }
     if (s === "credential_reference_data.js") w[name] = JSON.parse(JSON.stringify(CREDREF));
     if (s === "fact-sheet/statewide_recs.js") w[name] = { "PC 832 Arrest and Firearms Training": [{ t: "Arrest", u: "3", id: "MAPICI-ADMJ-1-001" }] };
     setTimeout(cb, 0); } };
