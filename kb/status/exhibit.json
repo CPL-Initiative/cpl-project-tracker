@@ -1,162 +1,178 @@
 {
- "schema": 1,
- "session": 536,
- "moniker": "SkySnowberry",
- "run": "Sam's session",
- "decider": "Sam",
- "handoff": "docs/cer_redesign_handoff.md",
- "calls": [
-  {
-   "title": "Merge EACR into the CER as one Exhibits tab",
-   "text": "Answered on Open Asks Sheet 147 card 1: one Exhibits tab, Review built first. The CER and EACR tabs stay until it carries what they show.",
-   "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-10-31",
-    "words": "merge"
-   }
+  "schema": 1,
+  "session": 541,
+  "moniker": "SkyBlatusoff",
+  "run": "Sam's session",
+  "decider": "Sam",
+  "handoff": "docs/session_542_handoff.md",
+  "calls": [
+    {
+      "title": "Merge EACR into the CER as one Exhibits tab",
+      "text": "Answered on Open Asks Sheet 147 card 1: one Exhibits tab, Review built first. The CER and EACR tabs stay until it carries what they show.",
+      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "merge"
+      }
+    },
+    {
+      "title": "The high school and ROP rule, and the AP exception",
+      "text": "Answered on Open Asks Sheet 147 card 2: built as procedure high-school-rop; the dry run settles 55 and holds 29 on an issuer conflict.",
+      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "rule"
+      }
+    },
+    {
+      "title": "The public adoption page: settled credentials only, in the CPL/AI look",
+      "text": "Answered on Open Asks Sheet 147 cards 3 and 4: settled credentials only, in Malone's CPL/AI look. Its name is still Sam's to give.",
+      "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "stamped; cpl-ai"
+      }
+    },
+    {
+      "title": "Fold the reference's AP titles under College Board's official names",
+      "text": "Answered fold: applied, 14 merges, 7 moves and 42 saved assignments (#2617).",
+      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "fold"
+      }
+    },
+    {
+      "title": "How a rule added in the Exhibits tab gets run",
+      "text": "Answered routine: the lane's next build.",
+      "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "routine"
+      }
+    },
+    {
+      "title": "The issuer of a course aligned to an ASE test",
+      "text": "Answered in chat: the college or school that teaches it; ASE fills only an ASE certification's title (#2626).",
+      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/2626",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "Agree on your call on the college as issuer"
+      }
+    },
+    {
+      "title": "ASE course titles: the test's name with a short tag",
+      "text": "Answered in chat: drop the ASE override on the two local titles and take the long form, Automotive Technology (ASE A5 Brakes), for local exhibits alone; the sweep already proposes it (#2629).",
+      "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/2629",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-31",
+        "words": "Drop the ASE override; go with the long form"
+      }
+    },
+    {
+      "title": "Keep the IB fold under IB's own subject names",
+      "text": "Answered keep: the IB fold stands, 49 IB credentials into 24 (#2632).",
+      "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-01",
+        "words": "keep"
+      }
+    },
+    {
+      "title": "Which names CLEP exams take",
+      "text": "Answered fold: applied, 48 CLEP names into 35 and 36 live rows moved (#2633).",
+      "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-01",
+        "words": "fold"
+      }
+    }
+  ],
+  "notes": {},
+  "headline": [],
+  "written_at": "2026-11-01T19:24:12Z",
+  "project": "exhibit",
+  "next_step": {
+    "title": "The cert link's next families",
+    "text": "Add AP, CLEP and IB to kb/exhibit_cert_links.json from the official-name tables we keep, then the names it holds unresolved (SP/2 HD, Snap-on 604, MACS/609, Cummins ISX, G1, Master Automobile Technician, xEV)."
   },
-  {
-   "title": "The high school and ROP rule, and the AP exception",
-   "text": "Answered on Open Asks Sheet 147 card 2: built as procedure high-school-rop; the dry run settles 55 and holds 29 on an issuer conflict.",
-   "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-10-31",
-    "words": "rule"
-   }
-  },
-  {
-   "title": "The public adoption page: settled credentials only, in the CPL/AI look",
-   "text": "Answered on Open Asks Sheet 147 cards 3 and 4: settled credentials only, in Malone's CPL/AI look. Its name is still Sam's to give.",
-   "link": "https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-10-31",
-    "words": "stamped; cpl-ai"
-   }
-  },
-  {
-   "title": "Fold the reference's AP titles under College Board's official names",
-   "text": "Answered fold: applied, 14 merges, 7 moves and 42 saved assignments (#2617).",
-   "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-10-31",
-    "words": "fold"
-   }
-  },
-  {
-   "title": "How a rule added in the Exhibits tab gets run",
-   "text": "Answered routine: the lane's next build.",
-   "link": "https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-10-31",
-    "words": "routine"
-   }
-  },
-  {
-   "title": "The issuer of a course aligned to an ASE test",
-   "text": "Answered in chat: the college or school that teaches it; ASE fills only an ASE certification's title (#2626).",
-   "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/2626",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-10-31",
-    "words": "Agree on your call on the college as issuer"
-   }
-  },
-  {
-   "title": "ASE course titles: the test's name with a short tag",
-   "text": "Answered in chat: drop the ASE override on the two local titles and take the long form, Automotive Technology (ASE A5 Brakes), for local exhibits alone; the sweep already proposes it (#2629).",
-   "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/2629",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-10-31",
-    "words": "Drop the ASE override; go with the long form"
-   }
-  },
-  {
-   "title": "Keep the IB fold under IB's own subject names",
-   "text": "Answered keep: the IB fold stands, 49 IB credentials into 24 (#2632).",
-   "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-11-01",
-    "words": "keep"
-   }
-  },
-  {
-   "title": "Which names CLEP exams take",
-   "text": "Answered fold: applied, 48 CLEP names into 35 and 36 live rows moved (#2633).",
-   "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL",
-   "answer": {
-    "by": "Sam",
-    "at": "2026-11-01",
-    "words": "fold"
-   }
-  }
- ],
- "notes": {},
- "headline": [],
- "written_at": "2026-11-01T07:21:51Z",
- "project": "exhibit",
- "next_step": {
-  "title": "Sam's next Another look pass",
-  "text": "After each of Sam's Another look passes, move the panel rows the next fold lists, and confirm the overnight firing works the first rule sent to the routine."
- },
- "changes": [
-  {
-   "at": "2026-11-01T02:20:00Z",
-   "text": "CLEP titles take College Board's exam names, one credential per exam with its levels folded in; the reference's 48 CLEP names became 35 and 36 live rows moved (#2633)."
-  },
-  {
-   "at": "2026-10-31T20:30:00Z",
-   "text": "Funding review rows: Follow up beside Accept and Deny on a waiting request, an editable email to the requester with the CO Monitor's note (#2627)."
-  },
-  {
-   "at": "2026-10-31T20:05:00Z",
-   "text": "The Exhibits tab's Rules view: every rule that suggests or folds a title, with who set it and what it did, and Send to the routine, which the CPL queue routine builds switched off for Turn on or Discard (#2626)."
-  },
-  {
-   "at": "2026-10-31T19:22:00Z",
-   "text": "A conflict card saves over a person-reviewed title the way Another look does; the issuer and site boxes offer the reference's names (#2625)."
-  },
-  {
-   "at": "2026-10-31T18:16:02Z",
-   "text": "Another look in the Exhibits tab: a nightly sweep through every title for what still differs (ASE test, Arabic numerals, language level, a course number, a level, a fold), 134 cards; Change applies at the fold only while the replaced title stands (#2623)."
-  },
-  {
-   "at": "2026-10-31T16:47:06Z",
-   "text": "The Exhibits review card: Change to Proposed Title first, the local title in bold, Back to this visit's earlier cards (a new choice replaces the save), and Accept all proposed titles, which leaves conflicts and earlier saves as they are (#2620)."
-  },
-  {
-   "at": "2026-10-31T15:08:18Z",
-   "text": "The AP fold in the reference: 77 local titles under College Board's official names, 42 saved assignments moved to match (#2617)."
-  },
-  {
-   "at": "2026-10-31T15:08:18Z",
-   "text": "The IT/AI catalog's MAP join needs the issuer to agree and reads the hand check (#2615)."
-  },
-  {
-   "at": "2026-10-31T14:38:49Z",
-   "text": "Sam's AP rule in brand-family: an AP title takes College Board's official exam name; 18 of the 23 AP titles waiting settle (#2614)."
-  },
-  {
-   "at": "2026-10-31T14:38:49Z",
-   "text": "The Credential Catalog's Worth a faculty review: 28 Credential Engine credentials MAP has no exhibit for (#2613); the catalog's MAP join needs the issuer to agree (#2615)."
-  },
-  {
-   "at": "2026-10-31T14:38:49Z",
-   "text": "The Commons' CER row opens the Exhibits tab (#2612)."
-  },
-  {
-   "at": "2026-11-01T01:09:34Z",
-   "text": "IB titles take IB's own subject names in brand-family (the ib lane); the reference's IB twins folded, 49 credentials into 24, one issuer name, 8 live rows moved (#2632)."
-  },
-  {
-   "at": "2026-11-01T01:09:34Z",
-   "text": "Open Asks Sheet 150: the IB fold carried out on the recommendation, and CLEP's names held for Sam."
-  }
- ]
+  "changes": [
+    {
+      "at": "2026-11-01T17:43:00Z",
+      "text": "The exhibit-to-cert link, ASE first: 59 canonical titles to 24 certs in the industry catalog, 27 bundles and 12 aligned courses; the List finds a bundle by any test it holds (#2652)."
+    },
+    {
+      "at": "2026-11-01T17:30:00Z",
+      "text": "The List's Basis column: 152 credentials based on statewide, 2,511 local, from the Fact Sheet's statewide list; accepted folds Re-point along their chain; drawers keyed by column name (#2651)."
+    },
+    {
+      "at": "2026-11-01T17:09:00Z",
+      "text": "The List's AI sort: 384 groups of two or more hold 2,071 of 2,663 credentials; 22 spelling twins carry a suggested fold; Edit every row; columns resize on a phone (#2650)."
+    },
+    {
+      "at": "2026-11-01T16:32:00Z",
+      "text": "The List finds a credential by college, district, SWP region or ASCCC area, and find and replace previews every change (#2649)."
+    },
+    {
+      "at": "2026-11-01T02:20:00Z",
+      "text": "CLEP titles take College Board's exam names, one credential per exam with its levels folded in; the reference's 48 CLEP names became 35 and 36 live rows moved (#2633)."
+    },
+    {
+      "at": "2026-10-31T20:30:00Z",
+      "text": "Funding review rows: Follow up beside Accept and Deny on a waiting request, an editable email to the requester with the CO Monitor's note (#2627)."
+    },
+    {
+      "at": "2026-10-31T20:05:00Z",
+      "text": "The Exhibits tab's Rules view: every rule that suggests or folds a title, with who set it and what it did, and Send to the routine, which the CPL queue routine builds switched off for Turn on or Discard (#2626)."
+    },
+    {
+      "at": "2026-10-31T19:22:00Z",
+      "text": "A conflict card saves over a person-reviewed title the way Another look does; the issuer and site boxes offer the reference's names (#2625)."
+    },
+    {
+      "at": "2026-10-31T18:16:02Z",
+      "text": "Another look in the Exhibits tab: a nightly sweep through every title for what still differs (ASE test, Arabic numerals, language level, a course number, a level, a fold), 134 cards; Change applies at the fold only while the replaced title stands (#2623)."
+    },
+    {
+      "at": "2026-10-31T16:47:06Z",
+      "text": "The Exhibits review card: Change to Proposed Title first, the local title in bold, Back to this visit's earlier cards (a new choice replaces the save), and Accept all proposed titles, which leaves conflicts and earlier saves as they are (#2620)."
+    },
+    {
+      "at": "2026-10-31T15:08:18Z",
+      "text": "The AP fold in the reference: 77 local titles under College Board's official names, 42 saved assignments moved to match (#2617)."
+    },
+    {
+      "at": "2026-10-31T15:08:18Z",
+      "text": "The IT/AI catalog's MAP join needs the issuer to agree and reads the hand check (#2615)."
+    },
+    {
+      "at": "2026-10-31T14:38:49Z",
+      "text": "Sam's AP rule in brand-family: an AP title takes College Board's official exam name; 18 of the 23 AP titles waiting settle (#2614)."
+    },
+    {
+      "at": "2026-10-31T14:38:49Z",
+      "text": "The Credential Catalog's Worth a faculty review: 28 Credential Engine credentials MAP has no exhibit for (#2613); the catalog's MAP join needs the issuer to agree (#2615)."
+    },
+    {
+      "at": "2026-10-31T14:38:49Z",
+      "text": "The Commons' CER row opens the Exhibits tab (#2612)."
+    },
+    {
+      "at": "2026-11-01T01:09:34Z",
+      "text": "IB titles take IB's own subject names in brand-family (the ib lane); the reference's IB twins folded, 49 credentials into 24, one issuer name, 8 live rows moved (#2632)."
+    },
+    {
+      "at": "2026-11-01T01:09:34Z",
+      "text": "Open Asks Sheet 150: the IB fold carried out on the recommendation, and CLEP's names held for Sam."
+    }
+  ]
 }

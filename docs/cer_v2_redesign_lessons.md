@@ -852,3 +852,57 @@ reanalysis routine where I can add my observations or concerns or opportunities 
   findings panel in the List view with Accept and Dismiss. Until then findings reach Sam on the standing sheet.
 - **Lesson.** The a11y seed must wait for the control it clicks, not for the module's data: the view row draws a
   moment after the queue loads, and a click before it finds nothing.
+
+## The List view grows, a cert table found, the harvest moves (S541 SkyBlatusoff, 2026-11-01)
+
+Sam drove the session live from the List mock, now a page that runs the real `exhibits.js` (`scripts/build_exhibits_list_preview.py`,
+https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A, saves kept in the page). His words, in order:
+
+- *"wow! a find and replace will be great!"* Built (#2649): Title, Issuer or Training sites, within the rows shown or the
+  selection; a preview with a check per row; Save writes only the checked rows; Undo this replace for the visit.
+- Search by place (handoff 541's ask): the finder joins `college_lookup.js` (all 86 college names in the reference match).
+- *"Can you add an AI-Sort button where you sort the list based on your understanding of of the exhibits (like with like in
+  an alpha-like order)? This would allow me to get out of my literal sorting practice to see opportunities based on your
+  expandd view of things."* Built (#2650): `kb/_build_exhibits_ai_sort.py`, TF-IDF over subject words with level words set
+  aside, discipline and issuer lighter, a center check and a 60 cap; 384 groups hold 2,071 of 2,663. It reads words, so
+  CPR and Basic Life Support land apart; a Claude pass grouping by meaning is the offered next step.
+- *"Is there a way you can set a global Edit button that would allow me to make edits directly on any row"*: Edit every row.
+- *"trying to resize the first column but not having luck"* (on his phone): under 560px the table used automatic layout,
+  which sized Title to its longest title (464px on a 390px screen) and ignored a dragged width; the grip also sat half
+  under the next header. Fixed layout everywhere, the grip inside its header, pointer capture, `pointercancel`.
+- *"On AI sort, what do you think about offering suggested titles based on what you see?"* Tier 1 built: 22 spelling twins
+  (II and 2, & and "and", a plural, a dash) inside AI sort groups; Accept writes `unified_title_override` and
+  `unified_title_merge_confirm` naming the same target, the pair the rename dry-run folds on. Arabic numerals hold even for
+  official names (Sheet 150 kept them on College Board's), so *Firefighter I* folds into *Firefighter 1*.
+- *"for the folds already accepted I would want to be sure that we can fold to better titles"*, then *"build it all"*
+  (#2651): the dry-run holds a merge whose target is itself retitled and then calls its confirm stale, so the List follows
+  each pending rename to the chain's end and offers Re-point; *Folds waiting for the apply* lists them.
+- *"count all canonical exhibit titles that include a statewide as based on a statewide, whether local or not. It goes with
+  our adopted or adapted approach"*: Basis, *Based on statewide* (152) or *Local only* (2,511), from the Fact Sheet's
+  `statewide_recs.js`. The reference's own `statewide` flag marks only 84 of the 152: it is set from colleges' articulation
+  lines, so a statewide exhibit no college has articulated never sets it. No funding or ESS code reads the flag (an
+  October memory row said otherwise; checked at the checkpoint); the export's fix is ordinary generator work.
+- Bundles (*"maybe we don't need to separate out the bundled certs into individual exhibit titles, right? As long as we can
+  recognize all the certs"*) and *"Do we have a separate canonical list of just our certs ... my DB dev days of
+  normalizing"*, then *"Maybe we already have it?"*: we did. `kb/it_ai_credential_catalog.json` (7,335 credentials, stable
+  ids) is the cert table; the missing piece was the link. `kb/_build_exhibit_cert_links.py` (#2652) writes the
+  many-to-many, ASE first: 59 titles to 24 certs, 27 bundles, 12 aligned courses, unresolved names kept.
+- *"should we add this cert catalog harvest to our Cpl queue workload and retire we weekly job ... I don't want our nightly
+  jobs to collide"*, then *"Go"* (#2653): step 10 of `scheduled_sessions`, 7 issuers a night; the Monday routine disabled.
+
+**Lessons.**
+- **A drawer keyed by column position drifts.** The Confidence column, inserted after the drill-downs were written, had
+  shifted every drawer from CPL types on by one place: Issuer opened Training sites, and a CPL type picked in its drawer
+  filtered Confidence. Key a column's behavior by its name; a test now fails on the drift.
+- **Automatic table layout ignores column widths.** A resizable grid needs `table-layout: fixed` at every width.
+- **A preview built from the real code cannot drift from it.** Inlining `exhibits.js` with a fetch shim replaced a
+  hand-written mock that lagged the view by six features.
+- **Look before building a table.** The cert table existed under another name; the work was the link.
+- **A fold is two rows.** A rename into an existing title merges only with a merge confirm naming the same target.
+
+### Moved from the lane (S541)
+
+Verbatim from `docs/reference/lanes/cer-procedures.md`, to bring the lane under its 20 KB budget:
+
+2. **The high school and ROP rule — built (SkyGooseberry, 2026-10-31).** `kb/_suggest_unclassified.py` writes each queue title's aligned course under `aligned` (the course its exhibit's credit recommendation names at the college that built it; CCN, then C-ID, then M-ID, then the college's title; leading zeros fold; a join must share a word with the title; exam brands never align): 209 of 450 on 2026-10-31. Procedure `high-school-rop` (`kb/cer_procedures.json`, lane `school`) takes that title and the school, district or county office the classifier named (its trailing acronym dropped); adult schools and training centers stay with the classifier. Dry run: 55 settle, 29 held where the title already exists under another issuer; needs-you 468 to 413. The nightly run saves them under `cer-procedure-high-school-rop@bot`; `python3 kb/_cer_procedures.py --undo high-school-rop` takes them back.
+5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** `kb/_build_cpl_ai.py --fetch` reads https://map.rccd.edu/CPL-AI/preview-data/catalog.json into the dated snapshot `kb/cpl_ai/pairs.json` (33,232 pairs, 115 certifications, 121 colleges; keeps tiers 1 and 2, *Strong evidence* and *Faculty interpretation*: 20,166 pairs) with the page's credit and caveat word for word. The dialog lists a course's certifications under *CPL-AI recommendations (N)*, and a course whose only lead is a match shows its 0 as a button. Refreshed by hand (`--fetch`) until a schedule is chosen. Sierra and the public pages wait on his word.

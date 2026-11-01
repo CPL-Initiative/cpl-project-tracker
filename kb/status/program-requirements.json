@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-01T16:00:00Z",
-  "session": 540,
-  "moniker": "SkyBunchberry",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-01T19:23:58Z",
+  "session": 541,
+  "moniker": "SkyBlatusoff",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_541_handoff.md",
+  "handoff": "docs/session_542_handoff.md",
   "next_step": {
     "title": "Monterey Peninsula's last 14",
-    "text": "Monterey Peninsula stands at 183 of 197 passing (S536); S537 to S540 worked the contacts harvest, the Library's SharePoint note and Sierra training. Of the 14 left, three miss a listed course, three have a course with no units, and eight add to a different total than the page prints. The next session that works it page-reads the three coverage records first."
+    "text": "Monterey Peninsula stands at 183 of 197 passing (S536); S537 to S541 worked the contacts harvest, the Library, Sierra and the Exhibits List. Read coverage 42989, 43858 and 44876 first."
   },
   "calls": [
     {
