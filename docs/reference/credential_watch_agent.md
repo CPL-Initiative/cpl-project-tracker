@@ -34,15 +34,16 @@ never the agent's (a new write surface, CLAUDE.md Rule 10 a3).
 This page is the agent's standing instruction. A scheduled run reads it and
 follows it; a session changing the agent changes this page.
 
-**State: ARMED (2026-09-30, Sam: *"yes, arm the watch agent for Mondays"*).**
-Routine `trig_019tTcardPfntFz6ctWU9Jg1`, Mondays at 05:51 Pacific, first run
-2026-10-05. Details and its limits: section *Armed*.
+**State: NIGHTLY IN THE CPL QUEUE (2026-11-01, Sam: *"Thinking this should be daily until we get a good catalog
+established. I don't want our nightly jobs to collide"*, then *"Go"*).** Step 10 of
+[`scheduled_sessions`](scheduled_sessions.md) runs this page once a UTC day, a slice of issuers a night, until its
+stopping rule moves it back to weekly. The Monday routine is disabled: section *Armed*.
 
 ## What it keeps current
 
 | File | Holds | Written by |
 |---|---|---|
-| `kb/reference/industry_credential_watch.json` | What the issuers publish now: certifications, course certificates, badges; status, launch, retirement, `formerly` for renames; evidence URL per row | this agent, weekly |
+| `kb/reference/industry_credential_watch.json` | What the issuers publish now: certifications, course certificates, badges; status, launch, retirement, `formerly` for renames; evidence URL per row; `_issuers_read`, the date each issuer was last read | this agent, nightly in the CPL queue |
 | `kb/reference/industry_credential_skills.json` | The skills each issuer publishes for a credential: exam domains with weights, "skills measured", the courses inside a certificate | this agent, a batch per run |
 | `kb/reference/cos_certifications.json` | CareerOneStop's national list | `cos-authority-sync.yml`, monthly on a runner (unchanged) |
 | `kb/reference/credential_registry_national_sample.json` | Credential Engine sample, 974 of 6,738 | Sam's 2026-09-16 capture, until the Registry API replaces it |
@@ -96,7 +97,8 @@ covers what only reading can.
    "AI Certification Providers") and add any provider it names to
    `_issuers_watched`. For each issuer in `_issuers_watched`, read its certification
    catalog and its retirement and what's-new pages for changes since
-   `_verified_on`. Add each new credential as a row with `evidence` (the URL
+   `_verified_on`. **Nightly, a slice:** the 7 issuers whose `_issuers_read` date is oldest or missing; set each one's
+   date as it is read. Add each new credential as a row with `evidence` (the URL
    seen). Mark a retirement `status: "retired"` with the date in `notes`. For a
    rename, give the new name its own row and list every old name in `formerly`;
    the builder routes the registry row and the MAP exhibit filed under the old
@@ -108,8 +110,9 @@ covers what only reading can.
    tech-giant credentials, (c) entry-level credentials. Record the top-level
    domains with the issuer's weights, up to five of the issuer's own
    sub-skill phrases each, `exam_version`, and `source_url`.
-5. Run `python3 kb/_build_it_ai_credential_catalog.py` and
-   `python3 kb/_diff_credential_watch.py --out kb/credential_watch_out/<date>.md`.
+5. Run `python3 kb/_build_it_ai_credential_catalog.py`,
+   `python3 kb/_diff_credential_watch.py --out kb/credential_watch_out/<date>.md` and
+   `python3 kb/_build_exhibit_cert_links.py` (the exhibit-to-cert link reads the catalog's ids).
 6. **No change** (the report says so and no skills were added): commit nothing,
    open nothing, end the run.
 7. **Change:** branch `claude/credential-watch-<date>`, commit the two reference
@@ -117,13 +120,12 @@ covers what only reading can.
    follow the repo's branch policy (merge on a green `test`). If the GitHub PR
    tools are missing from the run, push the branch and stop: the committed
    report is the receipt, and the next interactive session opens the PR.
-   **The CPL queue merges it:** the routine cannot, so the first queue session after a Monday run lands the PR on a
-   green `test` and files step 8's row (S505 found #2257 and #2468 a week and two days old).
+   **The queue session that ran it merges it** on a green `test` (the Monday routine could not, and S505 found #2257
+   and #2468 a week and two days old).
 8. **A material event** (a tech giant launched or retired an AI credential, or
    a credential MAP has articulated was renamed or retired) goes at the top of
-   the PR body under *For the memory table*. The run holds no Supabase
-   connector, so the next interactive session files the `cpl_memory` row
-   (tag `credential-registry`).
+   the PR body under *For the memory table*, and the queue session files the
+   `cpl_memory` row itself (tag `credential-registry`).
 
 ## Guardrails
 
@@ -182,7 +184,11 @@ caught up with.
 
 ## Armed
 
-Armed 2026-09-30 on Sam's go, from the credential catalog side session. A
+**Now: step 10 of the CPL queue, nightly (2026-11-01, S541 on Sam's go).** The routine below is **disabled**
+(`enabled=false`, history kept); it ran as a second session inside the queue's overnight window. To restore the
+weekly run, `update_trigger` it with `enabled=true` and take step 10 out of the queue in the same PR.
+
+The routine as it stood, armed 2026-09-30 on Sam's go, from the credential catalog side session. A
 Claude Routine that starts a fresh session each run, in this environment:
 
 - **Routine:** Industry credential watch, `trig_019tTcardPfntFz6ctWU9Jg1`
