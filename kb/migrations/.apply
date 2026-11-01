@@ -1,2 +1,2 @@
-file=kb/receipts/program_requirement_records_glendale_prose_total_rollback_s525.sql
-name=s525_glendale_prose_total_rollback
+file=kb/migrations/2026-11-01_college_contacts_harvest.sql
+name=s536_college_contacts_harvest
