@@ -1,7 +1,7 @@
 ---
 title: cpl-project-tracker docs — Index
 created: 2026-05-27
-updated: 2026-10-31
+updated: 2026-11-01
 tags: [meta, index, obsidian-target]
 kb-status: internal
 obsidian-folder: cpl-project-tracker
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-01 (Exhibits tab build, SkyInkberry): IB on the AP pattern, brand-family's `ib` lane and the reference fold, 49 IB credentials into 24 with one issuer name (#2632); Open Asks Sheet 150 (the IB fold carried out, CLEP's names held); the CER lane trimmed under its budget.
 - 2026-10-31 (side session, SkyCloudberry): the funding requester line (MAP role, landing page, *find title*) and one editable response email signed by the CPL Initiative team (#2619); the Exhibits review card's Back and Accept all (#2620); the landing pages' contacts in the MAP Users tab (#2621); two lane files back under budget, history moved verbatim to their lessons docs.
 - 2026-10-31 (Exhibits tab build, SkyElderberry): the Commons' CER row opens Exhibits (#2612); the Credential Catalog's *Worth a faculty review* (#2613); Sam's AP rule in `brand-family`, College Board's official names (#2614); the IT/AI catalog's MAP join needs the issuer (#2615); Open Asks Sheet 149; light checkpoint.
 - 2026-10-31 (S535 SkyGooseberry, the CPL Queue routine): Monterey Peninsula 110 to 176 of 197 passing on three reconcile steps (a new `or_units` kind for CourseLeaf "or" rows, the 2026-27 Cal-GETC words, the 60 a floor on "electives, if needed"); display build 598ff64220dd; lessons in `docs/program_requirements_harvest_lessons.md` (S535); handoff 536 for SkySugarberry.
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-31 (S533 SkyNannyberry, the CPL Queue routine, finished by the 08:12Z firing): Los Angeles Valley 196 to 198 of 215 passing on the repeat step reading Music's repeatable lists; display build 8603831048ac; lessons in `docs/program_requirements_harvest_lessons.md` (S495-S500 moved to archive 3); handoff `docs/session_534_handoff.md`.
 - 2026-10-31 (S532 SkyHackberry, the CPL Queue routine): Los Angeles Valley 186 to 196 of 215 passing on a T & M prefix alias (#2605); the two display applies read back; the UI pass on the Exhibits view; lessons in `docs/program_requirements_harvest_lessons.md`; handoff `docs/session_533_handoff.md`.
 - 2026-10-31 (Exhibits tab build, SkyBayberry): Exhibit Adoption's per-credential view folded into the credential panel (`kb/exhibits_adoption.json`), and could-adopt off the TOP and C-ID overlap on the Review card and the panel; KB note `methodology-a-fold-carries-the-folded-tabs-rulings`; lessons in `docs/cer_v2_redesign_lessons.md`; handoff `docs/cer_redesign_handoff.md`.
-- 2026-10-31 (Exhibits tab build, SkyBunchberry): Credentials and the credential panel, issuer and training sites editable (#2603); KB note `methodology-widen-a-field-by-saving-its-old-reading-beside-it`; lessons in `docs/cer_v2_redesign_lessons.md`; handoff `docs/cer_redesign_handoff.md`.

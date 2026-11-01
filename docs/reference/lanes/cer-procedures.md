@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-10-31
+updated: 2026-11-01
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -125,12 +125,6 @@ run-by-run figures are in the lessons doc's S416 to S418 sections.
   CCN or C-ID read 0.85). The first night's preview: 926 titles under 7 procedures (classifier 737, course-identity
   125, brand-family 53, nccer-verbatim 5, statewide-catalog 3, cslb-classification 2, apprenticeship-trades 1).
   `save=preview` on the workflow lists them and writes no row. Governance: `workflow:cer-procedures.yml` → DR-07.
-- **The sign-off and the Curate panel left (card 3, `credential_reference.js`).** Reference keeps All and Industry
-  credentials; the checkbox column, the bulk *Mark N initiated*, the Init button, the worklist's *Initiate all
-  assigned* bar and the Curate panel are gone, with their CSS in both HTMLs. The quality flag sits at the top of the
-  open row as a select for a signed-in curator (a word for a reader); the other four fields already edit in the grid's
-  cells. Past sign-offs still load from the overlay for the export's Initiated columns and the Generated Title chip.
-
 - **The store:** `kb/cer_procedures.json`, each procedure a rule in plain words with who set it, when, and
   their words. Seven **rule** procedures settle a title by code, in order: brand families (an AP title takes College Board's official
 exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2614), the statewide
@@ -150,22 +144,10 @@ exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2
   key only; `claude-opus-5-5`, effort medium, 15 titles a call). The run sends the skill, every procedure
   and the house families (about 48,000 tokens, cached). A title is asked once, and again when the
   procedures change and its answer was unsure. First pass over the queue: about $8.
-- **The tab's three views (#2221, S413; the S411 mock-up):** **Needs you** (Held, the titles the run held for a
-  person, 25 at a time with why, each opening alone in Unclassified where its proposal saves; then Unclassified, No
-  issuer, Merge confirms), **Procedures** (each procedure with its words, who set it and what it settled), **Reference**
-  (All, Industry credentials, and the Initiated sign-off's two lanes until card 3). It opens on Held when the report
-  holds titles, else on Reference; a quickstart hint opens Reference. UI pass: `docs/ui_pass_lessons.md` S413.
+- **The CER tab's views and its sign-off removal** (the tab is retired, Sheet 148): moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (SkyInkberry)*.
 
 
-**RULED (Sam, Open Asks Sheet 94, 13:42-13:43Z 2026-10-18, each his own call; `cpl_memory`
-`sam-sheet-94-rulings-2026-10-18`):**
-
-1. **apply:** the fold applies the clean assignments and holds only the conflicts.
-2. **save:** a result the classifier is sure of saves under its procedure, reversible by procedure; this revises his
-   2026-07-07 ruling that pre-seeds stay "ready to save, not yet saved".
-3. **retire:** the Initiated sign-off and the Curate panel leave the tab.
-
-Sheet 96 card 1 (*keep*: a rule settles at its own word, course-identity's 0.8 included) is in the lessons doc.
+Sheet 94's three rulings (apply, save, retire; `sam-sheet-94-rulings-2026-10-18`) and Sheet 96 card 1 are in the lessons doc.
 
 **Sam's rulings, Open Asks Sheet 148** (https://claude.ai/artifact/NnrRFjJVpMLd2NQt84GFX5, 12:09Z 2026-10-31, his own
 calls; `cpl_memory` `sam-sheet-148-rulings-2026-10-31`): the public page is the **Credential Catalog**, linked from the
@@ -187,13 +169,12 @@ Guards: `tests/exhibits_rules.test.js`, `tests/cer_procedures_test.py`.
 The AP fold (Sheet 149 card 1) applied on 2026-10-31; its receipts are in the lessons doc.
 
 **IB on the AP pattern (SkyInkberry, 2026-11-01, on the recommendation; Open Asks Sheet 150 card 1).**
-`kb/_ib_official_titles.py` holds IB's `Diploma Programme` subjects (IB's own name), current and retired, at the levels IB offers, named
-as the reference and the Cal-GETC IB list write them (*IB Language A: Literature HL*). A missing level takes HL, the
+`kb/_ib_official_titles.py` holds IB's `Diploma Programme` subjects, current and retired, at IB's levels, named as the
+reference and the Cal-GETC IB list write them (*IB Language A: Literature HL*). A missing level takes HL, the
 exam colleges award IB credit for, and an SL-only subject takes SL (*IB World Religions SL*). The exam's language folds
 into the subject; a Language A exam in another language keeps *(Non-English)*. Brand-family's `ib` lane runs beside
-`ap`. The reference fold merged 49 IB credentials into 24 (27 merges, one title moved alone, receipt
-`kb/credential_merges_out/2026-11-01/ib_fold_receipt.json`), and the issuer reads *International Baccalaureate
-Organization (IBO)* everywhere. Eight live rows moved under `cer-ib-fold-skyinkberry@bot`, one of them Sam's issuer save
+`ap`. The fold merged 49 IB credentials into 24 (receipt `kb/credential_merges_out/2026-11-01/ib_fold_receipt.json`);
+the issuer reads *International Baccalaureate Organization (IBO)* everywhere. Eight live rows moved under `cer-ib-fold-skyinkberry@bot`, one of them Sam's issuer save
 (`ib_kb_curation_update_receipt.json`). Guard: `tests/ib_official_titles_test.py`.
 
 **NEEDS SAM ([Open Asks Sheet 150](https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL), 2026-11-01):** card 1, keep the IB fold (proceeded on the recommendation, reply to

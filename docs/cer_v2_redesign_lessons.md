@@ -748,3 +748,29 @@ the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
   4:35 / 6:30 / 8:05 / 4:40 across shards 1 to 6: shard 3 ran 8:35 once and 4:35 the next, shard 6 8:20 then 4:40.
   A table re-measured on CI would inherit the same noise. The gain left is splitting the slowest files, since one file
   bounds a shard.
+
+
+## Moved from the lane (SkyInkberry)
+
+The CER tab is retired (Open Asks Sheet 148); these two bullets described its views and moved here verbatim on 2026-11-01, when the lane passed its size budget.
+
+- **The sign-off and the Curate panel left (card 3, `credential_reference.js`).** Reference keeps All and Industry
+  credentials; the checkbox column, the bulk *Mark N initiated*, the Init button, the worklist's *Initiate all
+  assigned* bar and the Curate panel are gone, with their CSS in both HTMLs. The quality flag sits at the top of the
+  open row as a select for a signed-in curator (a word for a reader); the other four fields already edit in the grid's
+  cells. Past sign-offs still load from the overlay for the export's Initiated columns and the Generated Title chip.
+- **The tab's three views (#2221, S413; the S411 mock-up):** **Needs you** (Held, the titles the run held for a
+  person, 25 at a time with why, each opening alone in Unclassified where its proposal saves; then Unclassified, No
+  issuer, Merge confirms), **Procedures** (each procedure with its words, who set it and what it settled), **Reference**
+  (All, Industry credentials, and the Initiated sign-off's two lanes until card 3). It opens on Held when the report
+  holds titles, else on Reference; a quickstart hint opens Reference. UI pass: `docs/ui_pass_lessons.md` S413.
+
+**RULED (Sam, Open Asks Sheet 94, 13:42-13:43Z 2026-10-18, each his own call; `cpl_memory`
+`sam-sheet-94-rulings-2026-10-18`):**
+
+1. **apply:** the fold applies the clean assignments and holds only the conflicts.
+2. **save:** a result the classifier is sure of saves under its procedure, reversible by procedure; this revises his
+   2026-07-07 ruling that pre-seeds stay "ready to save, not yet saved".
+3. **retire:** the Initiated sign-off and the Curate panel leave the tab.
+
+Sheet 96 card 1 (*keep*: a rule settles at its own word, course-identity's 0.8 included) is in the lessons doc.

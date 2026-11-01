@@ -171,6 +171,13 @@ rows seeded, 36% of the 451-row backlog. When adding a brand, extend the
 `FAMILIES` table + `ALIASES`, then run `kb/_verify_preseed_rules.py`
 (73 checks) before applying.
 
+**IB (2026-11-01, on the AP pattern):** an IB title takes IB's own subject and
+level as the Cal-GETC list writes it (`IB History HL`, `IB Language A:
+Literature HL`), HL where the college wrote none; the exam's language folds
+into the subject, and a Language A exam in another language carries
+`(Non-English)`. Issuer: `International Baccalaureate Organization (IBO)`. The
+names are `kb/_ib_official_titles.py`; brand-family's `ib` lane applies them.
+
 ### Rule 5e — STAGED pre-seed lanes: ready to save, NOT saved (2026-07-07)
 
 Lanes that must PROPOSE a title (rather than retarget to an existing family)
