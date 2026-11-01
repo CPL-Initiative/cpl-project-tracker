@@ -98,6 +98,8 @@
   // The List view (Sam, 2026-11-01): a title edited there saves the rename field the reference already reads
   // (credential_reference.js: display-only until the daily dry-run projects it and the reviewed apply re-keys).
   var FIELD_CRED_TITLE = "unified_title_override";
+  /* A fold into an existing credential: the rename apply merges only when this names the exact target. */
+  var FIELD_MERGE_CONFIRM = "unified_title_merge_confirm";
   // Your flag (Sam, 2026-11-01: "a flag for any row that persists until I clear it"): one row per credential, the
   // value the time it was set; clearing writes "" (an upsert, never a delete, so a refused write cannot pass as done).
   var FIELD_LIST_FLAG = "list_flag";
@@ -105,6 +107,9 @@
   var REANALYSIS_PREFIX = "_EXHIBIT_REANALYSIS::";
   var FIELD_REANALYSIS = "exhibit_reanalysis_request";
   var COLLISIONS_URL = "kb/cred_rename_dryrun/collisions.json";
+  /* The AI sort's order, built daily by kb/_build_exhibits_ai_sort.py (Sam, 2026-11-01: "sort the list based on your
+     understanding of the exhibits (like with like in an alpha-like order)"). */
+  var AI_SORT_URL = "kb/exhibits_ai_sort.json";
   var CRED_PAGE = 50;
   var IN_REF = "In the reference";
   var MAP_PAGE = "https://cpldashboardcccco.azurewebsites.net/insights/exhibit-courses";
@@ -1732,11 +1737,12 @@
     ["mine", "Your flags"],
     ["selected", "Selected"],
     ["bare", "No articulation"],
-    ["changed", "Changed this visit"]
+    ["changed", "Changed this visit"],
+    ["suggested", "Suggested folds"]
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
-      busy: false, collisions: null, sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {} });
+      busy: false, collisions: null, sgDone: {}, sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {} });
   }
   /* The columns, each with what it shows (Sam, 2026-11-01: "sometimes I miss good ol' Excel, where I can quickly
      filter any column, sort any way ... use find and replace to fix things on the fly--that freedom is what you're
@@ -1800,7 +1806,14 @@
       if ((!x || !y) && x !== y) return x ? -1 : 1;   // blanks last, either way
       return lv.dir * x.toLowerCase().localeCompare(y.toLowerCase());
     }
+    var ai = L.ai && L.aiData && L.aiData.order;
     var rows = cs.rows.slice().sort(function (a, b) {
+      if (ai) {
+        var pa = ai[a.ut], pb = ai[b.ut];
+        if (pa && pb) return pa[1] - pb[1];
+        if (pa || pb) return pa ? -1 : 1;
+        return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
+      }
       for (var i = 0; i < levels.length; i++) { var c = cmp(a, b, levels[i]); if (c) return c; }
       return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
     });
@@ -1812,6 +1825,7 @@
       if (L.f === "changed" && L.changed.indexOf(r.ut) === -1) return false;
       if (L.f === "mine" && !listFlag(r)) return false;
       if (L.f === "selected" && !L.sel[r.ut]) return false;
+      if (L.f === "suggested" && !listSuggest(r)) return false;
       var cols = listCols();
       for (var k in L.cf) {
         var want = String(L.cf[k] || "").trim().toLowerCase();
@@ -2163,7 +2177,10 @@
     var fl = el("div", { cls: "exh-l-filters", role: "group", "aria-label": "Show" });
     LIST_FILTERS.forEach(function (f) {
       if (f[0] === L.f) fl.appendChild(el("span", { cls: "exh-view-on", "aria-current": "true", text: f[1] }));
-      else fl.appendChild(word(f[1], function () { L.f = f[0]; L.limit = LIST_LIMIT; render(); }));
+      else fl.appendChild(word(f[1], function () {
+        L.f = f[0]; L.limit = LIST_LIMIT;
+        if (f[0] === "suggested" && !L.aiData) listAiLoad().then(render, render); else render();
+      }));
     });
     bar.appendChild(fl);
     wrap.appendChild(bar);
@@ -2214,6 +2231,7 @@
       var b = el("button", { type: "button", cls: "exh-l-sort", title: "Press to sort by this column; Shift and press to sort within the sort already set" },
         [c.h + (!on ? "" : (L.sort.length > 1 ? " (" + (lvIdx + 1) + ")" : "") + (c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A")))]);
       b.addEventListener("click", function (e) {
+        L.ai = false;
         if (e.shiftKey) {
           if (on) L.sort[lvIdx].dir = -L.sort[lvIdx].dir; else L.sort.push({ col: i, dir: 1 });
         } else L.sort = [{ col: i, dir: on && L.sort.length === 1 ? -L.sort[0].dir : 1 }];
@@ -2234,12 +2252,28 @@
     })).concat([el("td")]));
     var thead = el("thead", null, [headRow, filterRow]);
     var body = el("tbody");
+    var aiOn = L.ai && L.aiData, lastG = null;
     shown.forEach(function (r) {
+      if (aiOn) {
+        var pos = L.aiData.order[r.ut], g = pos ? pos[0] : -1;
+        if (g !== lastG && (g === -1 || L.aiData.groups[g].n > 1)) {
+          var gr = g === -1 ? null : L.aiData.groups[g];
+          body.appendChild(el("tr", { cls: "exh-l-band" }, [el("th", { scope: "rowgroup", colspan: String(C.length + 3) }, [
+            el("span", { text: gr ? gr.name : "Added since the AI sort was built" }),
+            el("span", { cls: "exh-muted", text: gr ? " " + fmt(gr.n) + " in this group" : "" })])]));
+        }
+        lastG = g;
+      }
       var cur = credCurrent(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
       var titleTd = el("td", { cls: "exh-l-title", title: listTitle(r) }, [listTitle(r)]);
       if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
       if (col) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
       if (L.changed.indexOf(r.ut) !== -1) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
+      var sg = (aiOn || L.f === "suggested") && listSuggest(r);
+      if (sg) titleTd.appendChild(el("span", { cls: "exh-l-sub exh-l-sg" }, [
+        "Suggested: fold into " + sg.to + " (" + sg.why + ") ",
+        word("Accept", function () { listSuggestAccept(r, sg); }, { "aria-label": "Fold " + r.ut + " into " + sg.to }),
+        " ", word("Dismiss", function () { L.sgDone[r.ut] = "dismissed"; redrawList(); }, { "aria-label": "Dismiss the fold of " + r.ut })]));
       var editBtn = word("Edit", function () {
         L.edit = r.ut;
         L.draft = { title: listTitle(r), issuer: cur.issuer || "", sites: cur.sites.map(function (x) { return x.site; }).join("; ") };
@@ -2254,13 +2288,14 @@
       flagBox.disabled = !!L.flagBusy[r.ut];
       flagBox.addEventListener("change", function () { listSetFlag(r, flagBox.checked); });
       var open = L.open && L.open.ut === r.ut ? L.open.col : -1;
-      titleTd.insertBefore(listOpener(r, 0, listTitle(r), open === 0), titleTd.firstChild);
+      titleTd.insertBefore(L.editAll ? listCellInput(r, "title", listTitle(r), "Title") : listOpener(r, 0, listTitle(r), open === 0), titleTd.firstChild);
       titleTd.removeChild(titleTd.childNodes[1]);
       body.appendChild(el("tr", { cls: (L.sel[r.ut] ? "exh-l-sel" : "") + (listFlag(r) ? " exh-l-flagged" : "") || null }, [
         el("td", { cls: "exh-l-box" }, [selBox]), el("td", { cls: "exh-l-box" }, [flagBox]), titleTd].concat(C.slice(1).map(function (c, k) {
         var v = c.v(r), t = c.n ? (v == null ? "" : fmt(v) + (c.h === "Confidence" ? "%" : "")) : v;
         var td = el("td", { cls: c.n ? "exh-l-n" : null, title: t ? String(t) : null });
-        td.appendChild(listOpener(r, k + 1, t == null ? "" : String(t), open === k + 1));
+        var kind = L.editAll && (c.h === "Issuer" ? "issuer" : c.h === "Training sites" ? "sites" : "");
+        td.appendChild(kind ? listCellInput(r, kind, t == null ? "" : String(t), c.h) : listOpener(r, k + 1, t == null ? "" : String(t), open === k + 1));
         return td;
       }), [el("td", null, [editBtn])])));
       if (open > -1) body.appendChild(listDrawer(r, open));
@@ -2277,16 +2312,119 @@
     var out = el("div", null, [el("div", { cls: "exh-l-count" }, [el("span", { cls: "exh-muted exh-small", text: fmt(rows.length) + " credentials" +
       (rows.length > shown.length ? ", the first " + fmt(shown.length) + " shown" : "") }),
       el("span", { cls: "exh-muted exh-small", id: "exh-l-selcount", text: listSelWords() }),
-      el("span", { cls: "exh-muted exh-small", id: "exh-l-sortline", text: "Sorted by " + L.sort.map(function (x) {
+      el("span", { cls: "exh-note exh-small", id: "exh-l-cellnote", role: "status", text: L.cellNote || "", hidden: L.cellNote ? null : "" }),
+      el("span", { cls: "exh-muted exh-small", id: "exh-l-sortline", text: aiOn
+        ? "AI sort: like with like, the groups A to Z. A group gathers titles that share their subject words once level words (Beginning, 1, II, Advanced) "
+          + "are set aside, with discipline and issuer weighing in; built " + (stamp(L.aiData._built_at) || L.aiData._reference_generated_at && stamp(L.aiData._reference_generated_at) || "daily")
+          + ". " + (L.aiData.counts && L.aiData.counts.suggested_folds ? fmt(L.aiData.counts.suggested_folds) + " spelling twins carry a suggested fold. " : "")
+          + "Press a header to sort by it instead."
+        : "Sorted by " + L.sort.map(function (x) {
         var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
         + ". Shift and press a header to add a level." }),
-      L.sort.length > 1 || L.sort[0].col !== 0 || L.sort[0].dir !== 1 ? word("Clear the sort", function () { L.sort = [{ col: 0, dir: 1 }]; redrawList(); }) : null,
+      word("AI sort", listAiToggle, { id: "exh-l-ai", "aria-pressed": aiOn ? "true" : "false" }),
+      aiOn || L.sort.length > 1 || L.sort[0].col !== 0 || L.sort[0].dir !== 1 ? word("Clear the sort", function () { L.ai = false; L.sort = [{ col: 0, dir: 1 }]; redrawList(); }) : null,
+      word("Edit every row", function () { L.editAll = !L.editAll; redrawList(); var b = document.getElementById("exh-l-editall"); if (b) b.focus(); },
+        { id: "exh-l-editall", "aria-pressed": L.editAll ? "true" : "false" }),
       word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn,
       frState().open ? null : word("Find and replace", function () {
         frState().open = true; render(); var n = document.getElementById("exh-fr-find"); if (n) n.focus(); }, { id: "exh-fr-open" }), dl]), region]);
     if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
       function () { L.limit += LIST_LIMIT; redrawList(); }));
     return out;
+  }
+  /* AI sort: read the day's order once, then sort by it until a header is pressed. */
+  function listAiToggle() {
+    var L = listState();
+    function focusIt() { var b = document.getElementById("exh-l-ai"); if (b) b.focus(); }
+    if (L.ai) { L.ai = false; redrawList(); focusIt(); return Promise.resolve(); }
+    return listAiLoad().then(function () {
+      L.ai = true; L.limit = LIST_LIMIT; redrawList(); focusIt();
+    }).catch(function () { L.cellNote = "The AI sort's order could not be read; the list keeps its sort."; redrawList(); focusIt(); });
+  }
+  function listAiLoad() {
+    var L = listState();
+    if (L.aiData) return Promise.resolve(L.aiData);
+    return fetch(AI_SORT_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.order) throw new Error("no order");
+      L.aiData = d; return d;
+    });
+  }
+  /* A spelling twin's fold (Sam, 2026-11-01: "what do you think about offering suggested titles based on what you
+     see?"). Shown until it is accepted, dismissed for the visit, or the credential already carries a rename. */
+  function listSuggest(r) {
+    var L = listState(), sg = L.aiData && L.aiData.suggest && L.aiData.suggest[r.ut];
+    if (!sg || (L.sgDone || {})[r.ut]) return null;
+    var o = state.cs.overlay[r.ut] || {};
+    return o.title ? null : sg;
+  }
+  /* Accept writes the rename and the merge confirm naming the same target, the pair the rename dry-run needs to fold
+     one credential's records into the other; a reviewed apply does the merge. */
+  function listSuggestAccept(r, sg) {
+    var L = listState(), from = r.ut;
+    var writes = [[FIELD_CRED_TITLE, sg.to], [FIELD_MERGE_CONFIRM, sg.to]];
+    listCellNote("Saving the fold of " + from + " into " + sg.to + "…");
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
+    }).then(function (rs) {
+      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+      listApply(r, writes.slice(0, 1));
+      L.sgDone[from] = "accepted";
+      L.cellNote = "Saved: " + from + " folds into " + sg.to + ". The daily dry-run pairs them, and a reviewed apply merges the records.";
+      redrawList();
+    }).catch(function (e) {
+      listCellNote(e && e.message === "signin" ? "Sign in as a reviewer to accept a fold." : "The fold of " + from
+        + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed.");
+    });
+  }
+  /* Edit every row (Sam, 2026-11-01: "a global Edit button that would allow me to make edits directly on any row
+     without clicking the rows individual edit button"). Title, Issuer and Training sites become boxes; leaving a box
+     saves it, Enter saves, Escape puts the value back. The same fields Edit saves. */
+  function listCellInput(r, kind, value, label) {
+    var inp = el("input", { type: "text", cls: "exh-l-in exh-l-cellin", autocomplete: "off",
+      "aria-label": label + " of " + listTitle(r), "data-kind": kind });
+    inp.value = value; inp.setAttribute("data-was", value);
+    inp.addEventListener("keydown", function (e) {
+      if (e.key === "Enter") { e.preventDefault(); inp.blur(); }
+      else if (e.key === "Escape") { inp.value = inp.getAttribute("data-was"); }
+    });
+    inp.addEventListener("change", function () { listCellSave(r, kind, inp, label); });
+    return inp;
+  }
+  function listCellNote(text) {
+    var L = listState(), n = document.getElementById("exh-l-cellnote");
+    L.cellNote = text;
+    if (n) { n.textContent = text; n.hidden = !text; }
+  }
+  function listCellSave(r, kind, inp, label) {
+    var cur = credCurrent(r), value = inp.value.replace(/\s+/g, " ").trim(), before = inp.getAttribute("data-was"), sites = null;
+    if (kind === "title" && !value) { inp.value = before; listCellNote("A title cannot be empty; " + before + " stays."); return Promise.resolve(); }
+    if (kind === "sites") {
+      var keep = {};
+      cur.sites.forEach(function (x) { if (x.college) keep[x.site] = x.college; });
+      sites = value.split(";").map(function (x) { return x.replace(/\s+/g, " ").trim(); }).filter(Boolean)
+        .map(function (x) { return keep[x] ? { site: x, college: keep[x] } : { site: x }; });
+      value = sites.map(function (x) { return x.site; }).join("; ");
+    }
+    if (value === before) { inp.value = before; return Promise.resolve(); }
+    var name = listTitle(r);
+    inp.setAttribute("aria-busy", "true");
+    listCellNote("Saving the " + label.toLowerCase() + " of " + name + "…");
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      var writes = frWrites(r, kind, value, sites);
+      return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); })).then(function (rs) {
+        if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+        listApply(r, writes);
+      });
+    }).then(function () {
+      inp.value = value; inp.setAttribute("data-was", value); inp.removeAttribute("aria-busy");
+      listCellNote("Saved the " + label.toLowerCase() + " of " + name + (kind === "title" ? "; the daily run checks the new title for a collision." : "."));
+    }).catch(function (e) {
+      inp.value = before; inp.removeAttribute("aria-busy");
+      listCellNote(e && e.message === "signin" ? "Sign in as a reviewer to save." : "The " + label.toLowerCase() + " of " + name
+        + " did not reach the reference (" + (e && e.message || "no answer") + "); it is back as it was.");
+    });
   }
   function listFlag(r) { var o = state.cs.overlay[r.ut]; return o && o.flag ? o.flag : ""; }
   function listSelWords() {
@@ -2446,14 +2584,22 @@
       else return;
       e.preventDefault();
     });
+    /* A drag by mouse, pen or finger (Sam on his phone, 2026-11-01: "trying to resize the first column but not having
+       luck"). The grip captures the pointer, so a finger that leaves the strip keeps resizing, and touch-action:none
+       keeps the phone from taking the drag as a scroll. */
     g.addEventListener("pointerdown", function (e) {
       if (e.button !== undefined && e.button !== 0) return;
       e.preventDefault(); e.stopPropagation();
       var startX = e.clientX, startW = listFixWidths()[i];
-      function move(ev) { listSetWidth(i, startW + (ev.clientX - startX)); }
-      function up() { document.removeEventListener("pointermove", move); document.removeEventListener("pointerup", up); }
-      document.addEventListener("pointermove", move);
-      document.addEventListener("pointerup", up);
+      try { g.setPointerCapture(e.pointerId); } catch (err) {}
+      function move(ev) { if (ev.pointerId === e.pointerId) listSetWidth(i, startW + (ev.clientX - startX)); }
+      function up(ev) {
+        if (ev && ev.pointerId !== undefined && ev.pointerId !== e.pointerId) return;
+        g.removeEventListener("pointermove", move); document.removeEventListener("pointermove", move);
+        ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.removeEventListener(t, up); document.removeEventListener(t, up); });
+      }
+      g.addEventListener("pointermove", move); document.addEventListener("pointermove", move);
+      ["pointerup", "pointercancel", "lostpointercapture"].forEach(function (t) { g.addEventListener(t, up); document.addEventListener(t, up); });
     });
     g.addEventListener("click", function (e) { e.stopPropagation(); });
     return g;
@@ -2508,9 +2654,11 @@
       ".exh-l-dul{margin:0;padding-left:18px}",
       ".exh-l-warn{color:var(--text-strong);font-weight:600}",
       ".exh-l-table th{position:sticky}",
-      ".exh-l-grip{position:absolute;top:0;right:-12px;width:24px;height:100%;min-height:24px;cursor:col-resize;z-index:3;touch-action:none}",
-      ".exh-l-grip::after{content:'';position:absolute;top:20%;bottom:20%;left:12px;width:1px;background:var(--border)}",
-      ".exh-l-grip:hover::after,.exh-l-grip:focus-visible::after{width:3px;left:11px;background:var(--accent-link)}",
+      ".exh-l-grip{position:absolute;top:0;right:0;width:24px;height:100%;min-height:24px;cursor:col-resize;z-index:3;touch-action:none}",
+      ".exh-l-grip::after{content:'';position:absolute;top:20%;bottom:20%;right:0;width:1px;background:var(--border)}",
+      ".exh-l-grip:hover::after,.exh-l-grip:focus-visible::after{width:3px;background:var(--accent-link)}",
+      // On a touch screen the handle shows at rest, a finger's width to find (Sam on his phone, 2026-11-01).
+      "@media (pointer:coarse){.exh-l-grip{width:32px}.exh-l-grip::after{width:3px;top:25%;bottom:25%;background:var(--text-muted)}}",
       ".exh-l-grip:focus-visible{outline:2px solid var(--focus-ring);outline-offset:-2px}",
       ".exh-l-nowrap td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
       ".exh-l-nowrap .exh-l-sub{display:inline;margin-left:6px}",
@@ -2525,6 +2673,11 @@
       ".exh-l-acts{display:flex;gap:12px}",
       ".exh-fr{border:1px solid var(--border);border-radius:6px;padding:8px 10px;margin:4px 0 8px;min-width:0;max-width:100%;box-sizing:border-box}",
       "#exh-fr-host{min-width:0;max-width:100%}",
+      ".exh-l-table tr.exh-l-band th{position:static;text-align:left;font-weight:600;color:var(--text-strong);background:var(--surface-opaque);padding:8px 6px 2px;border-top:1px solid var(--border);border-bottom:0;white-space:normal}",
+      ".exh-l-band .exh-muted{font-weight:400;margin-left:8px}",
+      ".exh-l-nowrap .exh-l-sg{display:block;white-space:normal}",
+      ".exh-l-cellin{width:100%;box-sizing:border-box;font-size:.75rem;padding:1px 4px;min-height:24px}",
+      ".exh-l-nowrap td .exh-l-cellin{white-space:normal}",
       ".exh-l-table.exh-fr-table{min-width:0}",
       ".exh-fr-h{font-size:14px;margin:0 0 2px}",
       ".exh-fr-form{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;margin:6px 0}",
@@ -2538,7 +2691,9 @@
       ".exh-l-cf td{background:var(--surface-opaque);padding:5px 4px 4px;border-bottom:1px solid var(--border)}",
       ".exh-l-cfin{width:100%;min-width:24px;box-sizing:border-box;font-size:.6875rem;min-height:24px}",
       ".exh-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}",
-      "@media (max-width:560px){.exh-l-table{table-layout:auto;min-width:900px}}"
+      // A phone keeps the fixed layout, so the column widths a drag sets apply; automatic layout sized the Title
+      // column to its longest title, past the screen's edge, and ignored the grip (Sam on his phone, 2026-11-01).
+      "@media (max-width:560px){.exh-l-table{min-width:900px}}"
     ].join("\n") }));
   }
 

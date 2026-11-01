@@ -4,9 +4,9 @@
   "supabase_tables": 104,
   "rpcs": 48,
   "edge_functions": 11,
-  "file_datasets": 757,
+  "file_datasets": 759,
   "external_services": 192,
-  "consumers": 502,
+  "consumers": 503,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 39
@@ -1337,7 +1337,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 110,
+     "line": 115,
      "tabs": [
       "exhibits"
      ]
@@ -1605,7 +1605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1868
+     "line": 1873
     }
    ],
    "main_committers": []
@@ -1845,7 +1845,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 131,
+     "line": 136,
      "tabs": [
       "exhibits"
      ]
@@ -2165,7 +2165,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 919
+     "line": 924
     }
    ],
    "main_committers": []
@@ -2184,7 +2184,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1264
+     "line": 1269
     },
     {
      "id": "module:college_briefing.js",
@@ -4126,7 +4126,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1542
+     "line": 1547
     }
    ],
    "main_committers": []
@@ -5161,7 +5161,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1433
+     "line": 1438
     },
     {
      "id": "module:admin.js",
@@ -5699,7 +5699,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1839,
+     "line": 1853,
      "tabs": [
       "exhibits"
      ]
@@ -6053,7 +6053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1807
+     "line": 1812
     },
     {
      "id": "module:college_briefing.js",
@@ -6247,7 +6247,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 979
+     "line": 984
     },
     {
      "id": "module:cpl_funding.js",
@@ -6745,6 +6745,13 @@
      "direction": "read",
      "how": "literal",
      "line": 64
+    },
+    {
+     "id": "script:kb/_build_exhibits_ai_sort.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 42
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -8493,6 +8500,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_exhibits_ai_sort.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_exhibits_review.py": {
    "consumers": [
     {
@@ -9584,7 +9604,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 129,
+     "line": 134,
      "tabs": [
       "exhibits"
      ]
@@ -9631,7 +9651,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 130,
+     "line": 135,
      "tabs": [
       "exhibits"
      ]
@@ -12201,7 +12221,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 107,
+     "line": 109,
      "tabs": [
       "exhibits"
      ]
@@ -13598,6 +13618,51 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/exhibits_ai_sort.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 112,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "script:kb/_build_exhibits_ai_sort.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 43
+    },
+    {
+     "id": "script:kb/_build_exhibits_ai_sort.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 43
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 24
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/exhibits_review.json": {
    "consumers": [
     {
@@ -13696,7 +13761,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 116,
+     "line": 121,
      "tabs": [
       "exhibits"
      ]
@@ -22950,7 +23015,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 341,
+     "line": 346,
      "tabs": [
       "exhibits"
      ]
@@ -24926,7 +24991,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 392,
+     "line": 397,
      "tabs": [
       "exhibits"
      ]
@@ -24936,7 +25001,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 448,
+     "line": 453,
      "tabs": [
       "exhibits"
      ]
@@ -27402,6 +27467,7 @@
     "kb/_csr_trail.py",
     "kb/_build_exhibits_review.py",
     "kb/_sweep_exhibit_titles.py",
+    "kb/_build_exhibits_ai_sort.py",
     "kb/_build_adopt_page.py",
     "kb/_build_commons_status.py"
    ],
@@ -27459,6 +27525,7 @@
     "kb/exhibits_review_courses.json",
     "kb/exhibits_adoption.json",
     "kb/exhibits_sweep.json",
+    "kb/exhibits_ai_sort.json",
     "library/adopt/adopt_data.json",
     "kb/coci_title_corrections.json",
     "kb/coci_duplicate_control_numbers.json",

@@ -5,7 +5,17 @@
 //   (2) find and replace previews every change with its own check before anything saves, and saves only the checked rows,
 //       through the same kb_curation fields Edit writes (issuing_agency_override, unified_title_override);
 //   (3) a whole-cell rule leaves a partial match alone; a rule that would empty a title leaves that row out;
-//   (4) Undo this replace writes the old values back.
+//   (4) Undo this replace writes the old values back;
+//   (5) AI sort orders the rows by kb/exhibits_ai_sort.json, a band names each group of two or more, and a header press
+//       leaves it (Sam, 2026-11-01: "like with like in an alpha-like order");
+//   (6) Edit every row turns Title, Issuer and Training sites into boxes on every row; leaving a box saves that field
+//       alone, Escape puts the value back (Sam, 2026-11-01: "a global Edit button");
+//   (7) a column resizes on a phone (Sam, 2026-11-01: "trying to resize the first column but not having luck"): the
+//       table keeps its fixed layout under 560px, where automatic layout ignored the widths a drag set, and the grip
+//       sits inside its own header, takes the finger (touch-action:none) and captures the pointer;
+//   (8) a spelling twin carries a suggested fold (Sam, 2026-11-01: "offering suggested titles based on what you see"):
+//       the Suggested folds filter shows only twins; Accept writes unified_title_override and unified_title_merge_confirm
+//       naming the same target, the pair the rename dry-run folds on; Dismiss hides it for the visit.
 // Run from repo root: `npm test` (or `node tests/exhibits_list_find.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -30,6 +40,11 @@ const LOOKUP = {
   "Bakersfield College": { district: "Kern Community College District", swRegion: "Central Valley/Mother Lode (Region 5)", ascccArea: "A" },
   "Modesto Junior College": { district: "Yosemite Community College District", swRegion: "Central Valley/Mother Lode (Region 5)", ascccArea: "A" }
 };
+const AISORT = { schema: 1, _reference_generated_at: "2026-11-01T05:19:00+00:00",
+  groups: [{ name: "Apiary", n: 1 }, { name: "Data and Welding", n: 2 }],
+  order: { "Apiary Basics": [0, 0], "Welding Level 1": [1, 1], "10-Key Data Entry": [1, 2] },
+  counts: { suggested_folds: 1 },
+  suggest: { "10-Key Data Entry": { to: "Apiary Basics", why: "the same words spelled another way" } } };
 const COLLISIONS = { collisions: [{ old_unified_title: "Apiary Basics", proposed_new_title: "Beekeeping" }] };
 
 function load() {
@@ -43,6 +58,7 @@ function load() {
     if (url === "kb/exhibits_review.json") return ok({ schema: 1, written_at: "2026-11-01T05:22:00Z", sources: {}, tiles: {}, steps: {}, colleges: [], held: [] });
     if (url === "kb/exhibits_adoption.json") return ok(ADOPTION);
     if (url === "kb/cred_rename_dryrun/collisions.json") return ok(COLLISIONS);
+    if (url === "kb/exhibits_ai_sort.json") return ok(AISORT);
     if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok([]);
     if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
     return Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } });
@@ -131,6 +147,59 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   t.d.getElementById("exh-fr-prev").click(); await settle();
   check("(3) a rule that would empty a title leaves the row out", t.d.querySelectorAll(".exh-fr-table tbody tr").length === 0
     && /empty title/.test(txt(t.d.getElementById("exh-fr-count"))), txt(t.d.getElementById("exh-fr-count")));
+
+  words(t.d, "Close").click(); await settle();
+  t.d.getElementById("exh-l-ai").click(); await settle();
+  const body = Array.from(t.d.querySelectorAll(".exh-l-table tbody tr"));
+  const seq = body.map((r) => r.classList.contains("exh-l-band") ? "band:" + txt(r) : txt(r.children[2]).slice(0, 7));
+  check("(5) ⭐ AI sort orders like with like, a band over each group of two or more",
+    seq.length === 4 && seq[0] === "Apiary " && /^band:Data and Welding/.test(seq[1]) && /^welding/i.test(seq[2]) && /^10-Key/.test(seq[3]), seq.join(" | "));
+  check("(5) the band is a th scope=rowgroup and the button says it is on",
+    !!t.d.querySelector('.exh-l-band th[scope="rowgroup"]') && t.d.getElementById("exh-l-ai").getAttribute("aria-pressed") === "true");
+  check("(5) the sort line says how the groups were made", /AI sort: like with like/.test(txt(t.d.getElementById("exh-l-sortline"))));
+  Array.from(t.d.querySelectorAll(".exh-l-sort"))[0].click(); await settle();
+  check("(5) a header press leaves the AI sort", !t.d.querySelector(".exh-l-band") && t.d.getElementById("exh-l-ai").getAttribute("aria-pressed") === "false");
+
+  t.d.getElementById("exh-l-editall").click(); await settle();
+  const boxes = t.d.querySelectorAll(".exh-l-cellin");
+  check("(6) Edit every row puts a Title, Issuer and Training sites box on every row", boxes.length === 9, String(boxes.length));
+  const iss = Array.from(boxes).find((b) => /^Issuer of welding level 1$/i.test(b.getAttribute("aria-label")));
+  const n2 = t.calls.filter((c) => c.method === "POST").length;
+  iss.value = "American Welding Society (AWS)"; iss.dispatchEvent(new t.w.Event("change")); await settle(); await settle();
+  posts = t.calls.filter((c) => c.method === "POST").slice(n2);
+  check("(6) ⭐ leaving a box saves that field alone", posts.length === 1 && posts[0].body.field === "issuing_agency_override"
+    && posts[0].body.value === "American Welding Society (AWS)" && posts[0].body.course_id === "_CREDENTIAL_REVIEW::Welding Level 1"
+    && /Saved the issuer of welding level 1/i.test(txt(t.d.getElementById("exh-l-cellnote"))), JSON.stringify(posts.map((p) => p.body)));
+  const tbox = Array.from(t.d.querySelectorAll(".exh-l-cellin")).find((b) => b.getAttribute("aria-label") === "Title of Apiary Basics");
+  tbox.value = "Bees"; tbox.dispatchEvent(new t.w.KeyboardEvent("keydown", { key: "Escape" }));
+  check("(6) Escape puts the value back", tbox.value === "Apiary Basics");
+  const n3 = t.calls.filter((c) => c.method === "POST").length;
+  tbox.value = "   "; tbox.dispatchEvent(new t.w.Event("change")); await settle();
+  check("(6) an emptied title does not save", t.calls.filter((c) => c.method === "POST").length === n3 && tbox.value === "Apiary Basics");
+
+  const css = txt(t.d.getElementById("exh-l-css"));
+  check("(7) ⭐ a phone keeps the fixed table layout, so a dragged width applies",
+    !/max-width:560px\)\{\.exh-l-table\{[^}]*table-layout:auto/.test(css) && /\.exh-l-table\{[^}]*table-layout:fixed/.test(css), css.slice(0, 200));
+  check("(7) the grip sits inside its header and takes the finger", /\.exh-l-grip\{[^}]*right:0;[^}]*touch-action:none/.test(css)
+    && /setPointerCapture/.test(src) && /pointercancel/.test(src));
+
+  t.d.getElementById("exh-l-editall").click(); await settle();
+  words(t.d, "Suggested folds").click(); await settle();
+  const sgRows = rows(t.d);
+  check("(8) Suggested folds shows only the twin, with its fold and why", sgRows.length === 1 && /^10-Key/.test(txt(sgRows[0].children[2]))
+    && /Suggested: fold into Apiary Basics \(the same words spelled another way\)/.test(txt(sgRows[0].children[2])), sgRows.map(txt).join(" | "));
+  const n4 = t.calls.filter((c) => c.method === "POST").length;
+  Array.from(sgRows[0].querySelectorAll("button")).find((b) => txt(b) === "Accept").click(); await settle(); await settle();
+  posts = t.calls.filter((c) => c.method === "POST").slice(n4);
+  check("(8) ⭐ Accept writes the rename and the merge confirm, both naming the target",
+    posts.length === 2 && posts.every((p) => p.body.course_id === "_CREDENTIAL_REVIEW::10-Key Data Entry" && p.body.value === "Apiary Basics")
+    && posts.map((p) => p.body.field).sort().join(",") === "unified_title_merge_confirm,unified_title_override", JSON.stringify(posts.map((p) => p.body)));
+  check("(8) an accepted fold leaves the Suggested list", rows(t.d).length === 0 && /folds into Apiary Basics/.test(txt(t.d.getElementById("exh-l-cellnote"))),
+    txt(t.d.getElementById("exh-l-cellnote")));
+  t.M._state.ls.aiData.suggest["Apiary Basics"] = { to: "Welding Level 1", why: "test" }; t.M._state.ls.f = ""; t.M.render(); await settle();
+  words(t.d, "Suggested folds").click(); await settle();
+  Array.from(rows(t.d)[0].querySelectorAll("button")).find((b) => txt(b) === "Dismiss").click(); await settle();
+  check("(8) Dismiss hides the suggestion", rows(t.d).length === 0);
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "  -- " + why)); if (!ok) fail++; });
