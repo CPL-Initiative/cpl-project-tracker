@@ -991,6 +991,11 @@ jobs:
       # as the only write. Pure-stdlib python.
       - name: Course outcomes load (rows, fingerprint, receipt, insert-only)
         run: python3 tests/course_outcomes_load_test.py
+      # The nightly SLO read's queue (step 11 of scheduled_sessions; Sam, 2026-11-01):
+      # most articulations first, loaded colleges and verdicts skipped, a trial before
+      # an unproven host's full read. Pure-stdlib python.
+      - name: Next SLO colleges (the order, the trial gate, the verdicts)
+        run: python3 tests/next_slo_colleges_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It

@@ -1136,3 +1136,19 @@ Moved verbatim from `docs/reference/lanes/program-requirements-harvest.md` on 20
 **A reconcile step for a figure a local degree never carries reads transfer degrees only (`awards: transfer`, S421):** a local degree's captured page can span the sibling transfer section; where the code-kind gate makes a tab one program's (Hartnell), a second step with `awards: associate` reads the local degree's own tab (S456, Sheet 117 card 3).
 
 Also moved (history): The status file no longer carries the `unchecked` list (3.5 MB to 4 KB); the headline history records `complete` (`queue_status.py --headline-sql`).
+
+Also moved (2026-11-01, for the nightly SLO read's lane line):
+
+From the Progress view paragraph: **Whole harvest** (Sam, 2026-10-13): five parts, confirm left out; `queue_status.py --harvest` stamps it. **Complete (S415, Sam's ask of 2026-10-18 that the headline "doesn't seem quite right"):** an active COCI program whose record passes the three machine checks (`program_record_machine_pass`), counted live from the index against COCI's active programs read by key; it had meant a person's check, which stood at 32 after Sam's 2026-10-17 "trusting your procedures". The 32 stay on the pilot milestone; Sierra quotes every complete record since Sheet 95 card 2 (S416, [sierra lane](sierra-retrieval-corpus.md)).
+
+From the Records view paragraph: #2090: a light index for every college (about 0.6 MB), full records only for the colleges the filters reach (S390, #2121, Sam 2026-10-14: District, College, SWP Region and CIP Sector dropdowns; the tab opens on Progress and carries no Sierra window), and every attention link (deep link, call cards, Next waiting, the Progress counts) loading its record on demand with nothing picked.
+
+From the Phase 2 paragraph: Procedure records come from `kb/_program_source_procedure_v1.py` (#2146); an existing record gets a v2 merged in SQL.
+
+From the tab paragraph: `cpl-chat` reads the surface as unscoped until `KNOWN_SURFACES` names it (a deploy). Cerritos's Ironworker A.S. reads 0 MAP credit recs (its credit is exhibit articulation, in CER).
+
+From the CPL Pathways port (each record the selector lists): each opens By requirement (tiles, an option fork, CPL in three kinds in words, the checks, the outcomes, the gaps read-only) or By term (the map's status, every course in the tray), for the College or Student or public viewer.
+
+From the Progress view's NEXT: Maps: 3 of 32 read, 24 mapper hosts refused (lessons S345).
+
+From Sheet 144 card 2's paragraph: S529 rescored the filed records (`kb/_program_requirements_floor_rescore.py`): 161 unequal and 28 incomplete to equal, 12 equal and 5 incomplete to unequal; 14 left failing on their degree check. ✅ **Applied live (Sheet 146 card 2, *pasted*, 20:30Z):** Sam ran the receipt's `apply_one` (12 equal to unequal, 27 and 160 to equal, 5 incomplete to unequal); Los Angeles Valley's reread had moved the other two; all 206 read back (S530).

@@ -1,7 +1,7 @@
 ---
 title: Scheduled sessions — what a session started by Sam's routine does
 date: 2026-10-04
-updated: 2026-10-30
+updated: 2026-11-01
 tags: [reference, scheduled-sessions, checkpoint, governance-team-enablement]
 ---
 
@@ -291,6 +291,55 @@ is his standing preference there too.
    **Stopping rule:** when 14 nights in a row each add or change fewer than 25 credentials, change the cadence to
    weekly (the night before Monday) with this line, unless Sam keeps it daily. A night with no change ends at the
    instruction's step 6: no commit, no PR. It never writes MAP, the CER's files or curation rows, or a schedule.
+
+11. **The course SLO read** (Sam, 2026-11-01: *"yes to SLO hints and the nightly harvest"*; `cpl_memory`
+   `sam-slo-hints-and-nightly-harvest-2026-11-01`). **Armed: yes.** Each course's student learning outcomes, as its
+   public outline or catalog page prints them, go into `course_outcomes` (nine colleges, loaded 2026-10-13 and 10-14),
+   the colleges that articulate the most exhibits first. The step drives the existing push-started workflows
+   (`course-outline-index.yml`, `course-outcomes-read.yml`, `course-outcomes-load.yml`); none gains a schedule.
+   **It costs runner minutes only:** the read loads pages and calls no model, so the $40 extraction go (the program
+   requirements extraction) never applies; a change that would add a model call is a card.
+
+   **Every firing that reaches this step, after steps 6 to 10, in about ten minutes.** Never wait on a run: the next
+   firing reads it.
+   - **First, what is in flight.** Read the open `claude/slo-<slug>` PRs and their runs (`actions_list`
+     `list_workflow_runs` on the three workflows, by branch). On each branch, after a pull of what the runner committed
+     back, run `python3 scripts/next_slo_colleges.py --all` and act on the college's state.
+     **load** (every slice filed complete): write `kb/course_outcomes/.load` as printed (`host=<folder>`) and push.
+     The load inserts only blocks the table lacks, in about two minutes, and commits
+     `kb/receipts/course_outcomes_<host>_<run>.json`: every inserted id and the delete that rolls them back (Rule 10).
+     Merge on a passing `test` once the receipt is on the branch. **reading**: a slice is running or failed; one that
+     failed or timed out (240 minutes) reads again when one line of `.run` changes. **A trial** that parsed half or
+     more of the pages that answered moves the college to *read*. One that parsed none: open a filed page's text
+     (`kb/course_outcomes/trial_<run>/<code>.txt`). No outcomes printed: add a `none` row to
+     `kb/course_outcomes/queue.json` (state, on, by `S<N>`, why, source). Outcomes the reader missed: a `parser` row,
+     and the fix is a lane item, tested on the filed pages (`--reparse`). A curriQunet host whose index read another
+     report while it lists *All Fields* gets one more index run with `report=^All Fields$` first (SDCCD printed its
+     SLOs only there).
+   - **Then the next, once a UTC day: at most one full read and one preparation run** (a trial or an index), on two
+     hosts, never two runs on one host. `python3 scripts/next_slo_colleges.py --next --skip <slugs with an open PR>`
+     names the college and the trigger file; the plain listing names the first trial or index below it, and `--college <slug>` prints that
+     one's file. On a new branch `claude/slo-<slug>` off `main`, write the file with every line it prints (`run=`
+     takes the date), commit with a message that does not start with *Merge*, push, and open a draft PR. A workflow
+     runs only when the pushed file differs from `main`'s. **read**: `.run` names `catalog=<slug>` (an eLumen catalog,
+     or the Coast district's outlines) or `index=<file>` with `slugs=` (a curriQunet host), and `parts=` (about 400
+     course pages a slice, about 40 minutes each, one at a time). **trial**: the same with `trial=12`, where no load
+     has proved the host (each eLumen college prints its own template). **index**, **reindex**:
+     `kb/course_outline_index/.run`, for a curriQunet host with no index naming the college, or one that read another
+     report than the one the census found SLOs on.
+
+   **The order** is the helper's: the canonical credentials each college articulates (`kb/exhibits_adoption.json`),
+   most first, skipping the colleges a load receipt names, the verdicts in `queue.json`, and the hosts the census
+   (`kb/course_outline_census/`) found printing none: no outline system, a sign-in, a refusal, or a curriQunet outline
+   with no SLO heading (Chaffey's; Cerritos, Long Beach City and Mt. San Antonio's CourseLeaf entries print none).
+   First five on 2026-11-01: Santa Ana 216 (index), Las Positas 177 (index), Columbia 113 (trial), Golden West 87
+   (read), Lake Tahoe 85 (trial). The Coast district files every college under `cccd`, so a later college's load
+   re-posts an earlier one's slices when their part counts differ; they come back `kept`, never twice.
+   **The count:** the handoff names the college read or loaded, the receipt's inserted rows, and any verdict written.
+   **Stopping rule:** when `--next` says the queue is empty, the step ends in one line and the handoff says so; it
+   opens again when a census, a harvest capture or a verdict row changes. A college whose full read parses outcomes
+   on fewer than half the pages that answered gets a verdict row, never a second read. It never writes MAP or a
+   curation row, opens a page behind a sign-in, or puts two readers on one host.
 
 ## The daytime Library run (Sam, Open Asks Sheet 131 card 1, 2026-10-26)
 
