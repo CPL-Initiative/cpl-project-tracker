@@ -1,0 +1,246 @@
+{
+ "run": "41305785750",
+ "read_by": "S538 SkyWolfberry, 2026-11-01",
+ "colleges": [
+  "Cañada College",
+  "Coalinga College",
+  "Coastline College",
+  "College of Alameda",
+  "College of Marin",
+  "College of San Mateo"
+ ],
+ "rows": [
+  {
+   "college": "Cañada College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Lizette Bricker",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+  },
+  {
+   "college": "Cañada College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Chialin Hsieh",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+  },
+  {
+   "college": "Coastline College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Dr. Vince Rodriguez",
+   "email": "",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Kathryn Mueller, Ed.D.",
+   "email": "kmueller@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Isela Ocegueda, Ph.D.",
+   "email": "iocegueda@cccd.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Westminster - Le-Jao Campus",
+   "name": "Stephanie Bridges",
+   "email": "sbridges@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "College of Alameda",
+   "position": "college_ceo",
+   "title_as_printed": "Acting President",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership"
+  },
+  {
+   "college": "College of Alameda",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor, Peralta Community College District",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership"
+  },
+  {
+   "college": "College of Marin",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jonathan Eldridge, Ed.D.",
+   "email": "",
+   "source_url": "https://president.marin.edu"
+  },
+  {
+   "college": "College of Marin",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Transfer Counselor",
+   "name": "Sara Malmquist-West",
+   "email": "",
+   "source_url": "https://ss.marin.edu/articulation"
+  },
+  {
+   "college": "College of San Mateo",
+   "position": "college_ceo",
+   "title_as_printed": "President, College of San Mateo",
+   "name": "Dr. Manuel Alejandro Pérez",
+   "email": "",
+   "source_url": "https://www.collegeofsanmateo.edu/president/"
+  },
+  {
+   "college": "Coalinga College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor of Ed. Services and Institutional Effect.",
+   "name": "Lataria Hall",
+   "email": "latariahall@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/"
+  }
+ ],
+ "note": "Only colleges with at least one record go to apply. Read with no record: American River (homepage 404), Bakersfield (veterans pages only), Butte (leadership page prints titles without names), Calbright, Citrus, CCSF, Clovis (one page each), Cerro Coso (veterans page only), Chaffey (division deans only; its president search is open).",
+ "held_for_sam": {
+  "why": "VP Administrative Services, the Sheet 151 card 1 question (S537).",
+  "rows": [
+   {
+    "college": "Coastline College",
+    "position": "vpbs",
+    "title_as_printed": "Vice President, Administrative Services",
+    "name": "Christine Nguyen, M.B.A.",
+    "email": "cnguyen@coastline.edu",
+    "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+   }
+  ]
+ },
+ "unmatched_titles": {
+  "why": "Titles that match none of Sam's variants; never filled from a guess (step 8). Dean of Enrollment Services sits over Admissions and Records at Canada and Alameda; Dean of Career Education reads as CTE but its words are not among the variants.",
+  "rows": [
+   {
+    "college": "Coastline College",
+    "position": "",
+    "title_as_printed": "Dean of Career Education, Garden Grove Campus",
+    "name": "Natalie V. Nagthall, Ed.D.",
+    "email": "nnagthall@cccd.edu",
+    "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+   },
+   {
+    "college": "College of Alameda",
+    "position": "",
+    "title_as_printed": "Executive Vice President, Student Learning & Success",
+    "name": "Dr. Nicole Porter",
+    "email": "nporter@peralta.edu",
+    "source_url": "https://alameda.edu/leadership"
+   },
+   {
+    "college": "College of Alameda",
+    "position": "",
+    "title_as_printed": "Dean of Enrollment Services",
+    "name": "John Nguyen",
+    "email": "johnnguyen@peralta.edu",
+    "source_url": "https://alameda.edu/leadership"
+   },
+   {
+    "college": "Cañada College",
+    "position": "",
+    "title_as_printed": "Dean of Enrollment Services (Student Services - Admissions and Records)",
+    "name": "Wissem Bennani",
+    "email": "",
+    "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+   }
+  ]
+ },
+ "unsettled_campus": {
+  "why": "Coalinga's directory is West Hills district-wide (whccd.edu) and prints no campus: two presidents and two instruction VPs serve Coalinga and Lemoore. Not filled until a campus's own page names them; the next read of Coalinga or West Hills Lemoore settles it.",
+  "rows": [
+   {
+    "college": "Coalinga College",
+    "position": "college_ceo",
+    "title_as_printed": "President",
+    "name": "Carla Tweed",
+    "email": "carlatweed@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "college_ceo",
+    "title_as_printed": "President",
+    "name": "James Preston",
+    "email": "JamesPreston@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "vpaa",
+    "title_as_printed": "VP of Ed. Services/CIO",
+    "name": "Kris Costa",
+    "email": "kriscosta@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "vpaa",
+    "title_as_printed": "Interim VP of Ed. Services/CIO",
+    "name": "Bobbi Mahfood",
+    "email": "bobbimahfood@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "vpss",
+    "title_as_printed": "Vice President of Student Services",
+    "name": "Angela Tos",
+    "email": "angelatos@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "dean_ar",
+    "title_as_printed": "Director of Admissions & Records/Registrar",
+    "name": "Edward Cunha",
+    "email": "edwardcunha@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "dean_cte",
+    "title_as_printed": "Dean of CTE",
+    "name": "Nick Griffith",
+    "email": "nickgriffith@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "dean_instruction",
+    "title_as_printed": "Interim Dean of Educational Services",
+    "name": "Kyle Crider",
+    "email": "kylecrider@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "articulation_officer",
+    "title_as_printed": "Counselor/Articulation Officer",
+    "name": "Leonel Burgos",
+    "email": "leonelburgos@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   },
+   {
+    "college": "Coalinga College",
+    "position": "articulation_officer",
+    "title_as_printed": "Counselor/Articulation Officer",
+    "name": "Mark Matteson",
+    "email": "markmatteson@whccd.edu",
+    "source_url": "https://coalingacollege.edu/contact-us/directory/"
+   }
+  ]
+ }
+}
