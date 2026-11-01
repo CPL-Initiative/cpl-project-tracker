@@ -8,7 +8,8 @@
  * https://claude.ai/artifact/DkfRYLpyusuqYy6ErqQe6f) and marked the tab and its contents
  * Beta draft: everything here is public record.
  *
- * Five views, each read LIVE from tables anon may SELECT (no snapshot to go stale):
+ * Six views, each read LIVE from tables anon may SELECT (no snapshot to go stale), the List
+ * beside them with COCI's export for each program's own words:
  *   Progress     the harvest as a workflow (Sam, 2026-10-07: "a workflow dashboard to
  *                monitor the progress like the attached"): a headline pairing COCI's
  *                active programs with the complete ones, whose record passes the
@@ -29,6 +30,10 @@
  *                agent runs by (hosts, steps, answers, open questions, nuances, held
  *                requests). Sam's sheet 34 card 2: one per college, kept with its
  *                history; a misread changes the procedure, never the record.
+ *   List         every active program in COCI on one sheet (#program-requirements/list), drawn
+ *                by the Catalog Commons' shared List (commons_list.js): its college, award, CIP
+ *                family, units, whether the harvest holds its record, the machine checks and the
+ *                issues they name. Read only. See "the List" below.
  *
  * No Sierra on this tab (Sam, 2026-10-14: "Let's take the Sierra window off the
  * program requirements (PR) tab as I don't think it will be useful for now"). The
@@ -148,7 +153,8 @@
     { id: "catalogs", label: "Catalogs" },
     { id: "records", label: "Program records" },
     { id: "sequences", label: "Sequences" },
-    { id: "procedures", label: "Procedures" }
+    { id: "procedures", label: "Procedures" },
+    { id: "list", label: "List" }
   ];
 
   /* The one write (Sheet 51 card 1). A reviewer's verdict on a record, held to the
@@ -952,9 +958,11 @@
       getJson(REST + "/program_source_addenda?select=college,status").then(function (r) { G.addenda = r || []; }, miss("A")),
       getAllRows(REST + "/coci_college_programs?select=" + ACTIVE_SELECT + "&status=eq.Active&order=college,control_number",
         headers(), INDEX_PAGE, INDEX_PARALLEL).then(function (got) {
-          var keys = {};
-          (got || []).forEach(function (r) { keys[r.college + "|" + r.control_number] = 1; });
-          G.activeKeys = keys; G.active = (got || []).length;
+          /* activeCollege: each active control number's college as the live table names it (one row
+             per control number), so the List names a college as the records do, not COCI's short name. */
+          var keys = {}, at = {};
+          (got || []).forEach(function (r) { keys[r.college + "|" + r.control_number] = 1; at[r.control_number] = r.college; });
+          G.activeKeys = keys; G.activeCollege = at; G.active = (got || []).length;
         }).catch(miss("active")),
       /* The display build: the newest record's, and how many records carry none yet. Both
          read stored columns or one row's display, never a path over every row (S405), and go out
@@ -1234,6 +1242,14 @@
       ".prh tbody th { font-weight:600; color:var(--text-strong); }",
       ".prh tbody tr:nth-child(even) { background:var(--surface-subtle); }",
       ".prh .prh-num { text-align:right; font-variant-numeric:tabular-nums; }",
+      /* The List's table keeps the shared engine's tight rows (commons_list.js): the four rules above reach it through
+         .prh and outrank its own, so these put back its padding, header type, box cells and right-aligned numbers, and
+         drop the zebra the engine does not draw (at 390px the padding left the Units cell 21px wide). */
+      ".prh .prl-table thead th { padding:3px 6px; font-size:inherit; font-weight:600; background:var(--surface-opaque); }",
+      ".prh .prl-table tbody td { padding:2px 6px; border-top:0; }",
+      ".prh .prl-table th.prl-box, .prh .prl-table td.prl-box { padding-left:2px; padding-right:2px; }",
+      ".prh .prl-table tbody td.prl-n { text-align:right; }",
+      ".prh .prl-table tbody tr:nth-child(even) { background:transparent; }",
       ".prh-quiet { color:var(--text-muted); }",
       ".prh-caution { color:var(--mustard-text); font-weight:600; }",
       ".prh-small { font-size:.8125rem; }",
@@ -3493,12 +3509,255 @@
     if (opener && opener.isConnected !== false && opener.focus) opener.focus();
   }
 
+  /* ── the List: every active program on one sheet (2026-11-01) ──
+   * Sam, 2026-11-01, after the Exhibits List: "This new list view is so helpful that I want one now
+   * for each of our Catalog Commons groups." The Catalog Commons' shared engine draws it
+   * (commons_list.js, loaded with COCI's program list the first time the view opens); this spec
+   * makes it the harvest's. One row per active program in COCI (coci_programs_data.js, one Active
+   * row per control number: the 20,282 the headline counts), with its college as the live table
+   * names it, its award, its CIP family (the program's own CIP, which Sam called reliable on
+   * 2026-09-25) and COCI's units; then, from the index this tab already reads, whether the harvest
+   * holds its record, whether that record passes the three machine checks, and the issues the
+   * checks name. The TOP code is a word the finder reads and the CIP family's drawer shows as the
+   * college entered it; it decides nothing here (CLAUDE.md Rule 7).
+   * Read only. The tab's one write is a reviewer's verdict on a record, and each row's drawer opens
+   * that record in Program records, where the verdict sits.
+   * A record joins its program by control number, unique among active programs (20,282 of 20,282
+   * and the same 16,132 records by control number as by college and control number, 2026-11-01),
+   * so COCI's short college names ("L.A. VALLEY") never have to match the records' names. */
+  var LIST = { engine: null, loading: false, failed: null, memo: null, cols: null };
+  var LIST_FILTERS = [["", "All"], ["unread", "Not read yet"], ["read", "Read"], ["pass", "Pass the machine checks"],
+    ["fail", "Fail a machine check"], ["conflict", "Disagree with the state's course list"], ["units", "Units do not add up"]];
+  function listState() { return state.ls || (state.ls = {}); }
+  function listFold(s) {
+    s = String(s == null ? "" : s);
+    if (s.normalize) s = s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    return s.toLowerCase();
+  }
+  /* COCI's award as a reader names it: the degree's letters, or a certificate's unit band in words. */
+  function awardWords(a) {
+    a = String(a || "").replace(/\s+/g, " ").trim();
+    var m;
+    if (/^Certificate of Achievement/i.test(a)) {
+      var band = "";
+      if ((m = /(\d+)S\/\d+Q to fewer than (\d+)S/i.exec(a)) || (m = /:\s*(\d+) to fewer than (\d+) semester/i.exec(a))) band = m[1] + " to fewer than " + m[2] + " units";
+      else if ((m = /(\d+)\+S\//i.exec(a)) || (m = /:\s*(\d+) or greater semester/i.exec(a))) band = m[1] + " or more units";
+      return "Certificate of Achievement" + (band ? " (" + band + ")" : "");
+    }
+    if (/^A\.A[.\s-]*T\b/i.test(a)) return "A.A.-T degree";
+    if (/^A\.S[.\s-]*T\b/i.test(a)) return "A.S.-T degree";
+    if (/^A\.A\./i.test(a)) return "A.A. degree";
+    if (/^A\.S\./i.test(a)) return "A.S. degree";
+    if (/Baccalaureate of Science/i.test(a)) return "B.S. degree";
+    if (/Baccalaureate of Arts/i.test(a)) return "B.A. degree";
+    return award(a);
+  }
+  /* COCI's units, "18.00-24.00" (the major's, else the certificate's): the least and the most; a
+     program listing none, or zero (noncredit), shows none. */
+  function cociUnits(s) {
+    var m = /^\s*(\d+(?:\.\d+)?)\s*-\s*(\d+(?:\.\d+)?)/.exec(String(s || ""));
+    var lo = m ? Number(m[1]) : 0, hi = m ? Number(m[2]) : 0;
+    return lo > 0 || hi > 0 ? { lo: lo, hi: hi } : { lo: null, hi: null };
+  }
+  function unitsWords(p) {
+    var a = (p.checks || {}).arithmetic;
+    return a === "equal" ? "they add up to the printed total" : a === "unstated" ? "the catalog prints no total"
+      : a === "unequal" ? "they differ from the printed total" : a === "incomplete" ? "they cannot be added up: the record lacks a figure"
+      : "not measured";
+  }
+  /* The machine checks a record fails, in the words the headline uses for them. */
+  function listIssues(p, fails) {
+    return (fails || []).map(function (f) {
+      if (f === "courses") return "A listed course is not placed";
+      if (f === "off-list") return "A course is added that the state's list lacks";
+      var a = (p.checks || {}).arithmetic;
+      return a === "unequal" ? "Units differ from the printed total" : a === "incomplete" ? "Units cannot be added up" : "Units not measured";
+    });
+  }
+  /* Every active program, built once per index, progress read and COCI list (the engine asks for
+     the rows on every keystroke), with the filters' counts. */
+  function listBuild() {
+    var D = window.CPL_COCI_PROGRAMS;
+    if (!D || !Array.isArray(D.rows) || !Array.isArray(D.statuses)) return null;
+    var P = rows(), G = state.progress, live = (G && G.activeCollege) || null, M = LIST.memo;
+    if (M && M.D === D && M.P === P && M.n === P.length && M.G === G) return M;
+    var byCtl = {};
+    P.forEach(function (p) {
+      var k = String(p.control_number || ""), had = byCtl[k];
+      if (!had || (live && live[k] === p.college && had.college !== p.college)) byCtl[k] = p;
+    });
+    var act = D.statuses.indexOf("Active"), out = [], seen = {}, colleges = {};
+    var n = { "": 0, unread: 0, read: 0, pass: 0, fail: 0, conflict: 0, units: 0 };
+    D.rows.forEach(function (r) {
+      if (r[6] !== act) return;
+      var ctl = String(r[1]), p = byCtl[ctl] || null, u = cociUnits(r[7]), fails = p ? machineFails(p) : [];
+      var cip = String(r[4] || ""), short = D.colleges[r[0]] || "", awardLong = D.awards[r[5]] || "";
+      var row = { ut: ctl, ctl: ctl, title: String(r[2] || ""), college: (live && live[ctl]) || short, coci: short,
+        awardLong: awardLong, award: awardWords(awardLong), top: String(r[3] || ""), cip: cip,
+        fam: sectorLabel((/^(\d{2})/.exec(cip) || [])[1] || ""), lo: u.lo, hi: u.hi, p: p, fails: fails };
+      row.issueText = listIssues(p, fails).join("; ");
+      row.hay = listFold([row.title, row.college, short, ctl, row.award, awardLong, row.top, cip, row.fam,
+        p ? p.program_title : "", row.issueText].join(" "));
+      seen[ctl] = 1; colleges[row.college] = 1;
+      n[""]++;
+      if (!p) n.unread++;
+      else {
+        n.read++;
+        if (fails.length) n.fail++; else n.pass++;
+        if (fails.indexOf("courses") >= 0 || fails.indexOf("off-list") >= 0) n.conflict++;
+        if (fails.indexOf("units") >= 0) n.units++;
+      }
+      out.push(row);
+    });
+    var off = P.filter(function (p) { return !seen[String(p.control_number || "")]; }).length;
+    LIST.memo = { D: D, P: P, n: P.length, G: G, rows: out, counts: n, colleges: Object.keys(colleges).length, off: off, live: !!live };
+    return LIST.memo;
+  }
+  /* The columns, found by name (the engine's rule, S541); built once, since the engine asks per row. */
+  function listCols() {
+    return LIST.cols || (LIST.cols = [
+      { h: "Program", w: 16, v: function (r) { return r.title; } },
+      { h: "College", w: 12, v: function (r) { return r.college; } },
+      { h: "Control number", w: 6, v: function (r) { return r.ctl; } },
+      { h: "Award", w: 11, v: function (r) { return r.award; } },
+      { h: "CIP family", w: 12, v: function (r) { return r.fam; } },
+      { h: "Units", w: 5, n: true, v: function (r) { return r.lo; } },
+      { h: "Record", w: 8, v: function (r) { return r.p ? "Read" : "Not read yet"; } },
+      { h: "Machine checks", w: 7, v: function (r) { return !r.p ? "" : r.fails.length ? "Fails" : "Passes"; } },
+      { h: "Known issues", w: 18, v: function (r) { return r.issueText; } }
+    ]);
+  }
+  function listFilterPass(r, L) {
+    var f = L.f;
+    if (!f) return true;
+    if (f === "unread") return !r.p;
+    if (!r.p) return false;
+    if (f === "pass") return !r.fails.length;
+    if (f === "fail") return r.fails.length > 0;
+    if (f === "conflict") return r.fails.indexOf("courses") >= 0 || r.fails.indexOf("off-list") >= 0;
+    if (f === "units") return r.fails.indexOf("units") >= 0;
+    return true;
+  }
+  function listHead(wrap) {
+    var m = listBuild();
+    if (!m) {
+      wrap.appendChild(el("div", { cls: "prh-empty", role: "alert", text: "COCI's program list (coci_programs_data.js) could not be read, so the List has no programs to show. Nothing here is a count of zero; reload the tab to try again." }));
+      return false;
+    }
+    var c = m.counts, G = state.progress || {}, D = window.CPL_COCI_PROGRAMS;
+    var asOf = (/(\d{4}-\d\d-\d\d)\)?\s*$/.exec(String(D._source || "")) || [])[1] || D._built_at || "";
+    wrap.appendChild(el("p", { cls: "prh-lede", text: "Every active program in COCI, one row each: " + fmt(c[""]) + " at " + m.colleges +
+      " colleges. The harvest holds a record of " + fmt(c.read) + ", read from the college's catalog, and " + fmt(c.pass) +
+      " of those pass the machine checks: every listed course placed, none added, the units add up. The List is read only; a row's Record drawer opens its record in Program records, where a reviewer confirms it." }));
+    var notes = ["Each program's title, award, CIP and TOP codes and units are COCI's" + (asOf ? ", from its " + asOf + " export" : "") + "; the records are read live."];
+    if (m.off) notes.push(fmt(m.off) + (m.off === 1 ? " record is on a program" : " records are on programs") + " COCI does not list as active; Program records lists them.");
+    if (!m.live) notes.push("The live read of COCI's active programs did not arrive" + (G.errors && G.errors.active ? " (" + G.errors.active + ")" : "") + ", so each college shows COCI's short name.");
+    else if (G.active != null && G.active !== c[""]) notes.push("COCI's live table lists " + fmt(G.active) + " active programs and the export " + fmt(c[""]) + "; they agree again once kb/_build_coci_programs.py rebuilds the export.");
+    wrap.appendChild(el("p", { cls: "prh-meta", text: notes.join(" ") }));
+    return true;
+  }
+  function listOpenRecord(p) {
+    state.open[keyOf(p)] = true;
+    goTo({ view: "records", rcollege: p.college, rq: p.control_number, sec: "records:find" });
+  }
+  /* Each drawer answers its column by name. */
+  function listDrawer(r, name, h) {
+    var p = r.p;
+    var openWord = function () { return h.word("Open the record in Program records", function () { listOpenRecord(p); }); };
+    var notRead = "The harvest holds no record of this program yet.";
+    if (name === "Program") {
+      h.line(r.title + (r.award ? ", " + r.award : "") + ", control number " + r.ctl + ".");
+      h.line(r.lo == null ? "COCI lists no units for it." : "COCI lists " + span(r.lo, r.hi) + " units.");
+      if (p && p.program_title && listFold(p.program_title) !== listFold(r.title)) h.line("Its catalog names it " + p.program_title + ".");
+      if (p) h.box.appendChild(openWord()); else h.line(notRead);
+    } else if (name === "College") {
+      h.line(r.college + (r.coci && r.coci !== r.college ? "; COCI's short name is " + r.coci : "") + ".");
+      h.box.appendChild(h.word("Show every program at " + r.college, function () { h.filterBy(h.colIndex("College"), r.college); }));
+    } else if (name === "Award") {
+      h.line(r.awardLong ? "COCI's words: " + r.awardLong + "." : "COCI names no award for this program.");
+      if (r.award) h.box.appendChild(h.word("Show every " + r.award, function () { h.filterBy(h.colIndex("Award"), r.award); }));
+    } else if (name === "CIP family") {
+      h.line(r.cip ? "CIP " + r.cip + ", in the family " + r.fam + "." : "COCI holds no CIP code for this program.");
+      if (r.top) h.line("TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing on this list (a TOP code is a last-in-line signal).");
+      h.box.appendChild(h.word("Show every program in " + (r.cip ? "this family" : "no CIP family"), function () { h.filterBy(h.colIndex("CIP family"), r.fam); }));
+    } else if (name === "Record" || name === "Machine checks" || name === "Known issues") {
+      if (!p) { h.line(notRead); return; }
+      h.line("Read from " + shortCollege(p.college) + "'s catalog" + (p.program_title ? " as " + p.program_title : "") + ".");
+      h.list(["Courses: " + (p.checks && p.checks.coverage === true ? "every listed course placed" : "a listed course is not placed"),
+        "Added courses: " + (p.checks && p.checks.invented === true ? "none" : "a course the state's list lacks"),
+        "Units: " + unitsWords(p)]);
+      h.line(p.checked ? "A person confirmed it." : "Not yet confirmed by a person.");
+      h.box.appendChild(openWord());
+    } else {
+      var col = listCols()[h.colIndex(name)], v = col ? col.v(r) : "";
+      h.line(name + ": " + (v == null || v === "" ? "none" : v) + ".");
+    }
+  }
+  function listSpec() {
+    var spec = {
+      prefix: "prl-", frPrefix: "prl-fr-",
+      noun: { many: "active programs", region: "Every active program in COCI, A to Z", keyHeader: "COCI control number",
+        file: "program-requirements-list", placeholder: "Program, college, control number, award, CIP or TOP code",
+        findLabel: "Find in the list" },
+      state: listState, rows: function () { var m = listBuild(); return m ? m.rows : []; }, cols: listCols,
+      key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: render,
+      head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, drawer: listDrawer
+    };
+    /* Each filter word carries its count, read from the same build as the rows. */
+    Object.defineProperty(spec, "filters", { enumerable: true, get: function () {
+      var m = listBuild(), n = m ? m.counts : {};
+      return LIST_FILTERS.map(function (f) { return [f[0], f[1] + (n[f[0]] != null ? " (" + fmt(n[f[0]]) + ")" : "")]; });
+    } });
+    return spec;
+  }
+  function listApi() {
+    if (!LIST.engine && window.CPL_COMMONS_LIST && window.CPL_COCI_PROGRAMS) LIST.engine = window.CPL_COMMONS_LIST.create(listSpec());
+    return LIST.engine;
+  }
+  function viewList() { return el("div", { cls: "prh-view prh-list", id: "prh-list-mount" }); }
+  /* The engine and COCI's list load together the first time the view opens; one that fails says so. */
+  function mountList() {
+    var node = document.getElementById("prh-list-mount");
+    if (!node) return;
+    if (listApi()) { LIST.engine.render(node); return; }
+    var T = window.CPL_TABS;
+    if (LIST.failed || !T || typeof T.loadScript !== "function") {
+      node.appendChild(el("div", { cls: "prh-empty", role: "alert", text: "The List could not be loaded (" + (LIST.failed || "no script loader") +
+        "). The other views read as usual; reload the tab to try again." }));
+      return;
+    }
+    node.appendChild(el("div", { cls: "prh-empty", text: "Loading the List…" }));
+    if (LIST.loading) return;
+    LIST.loading = true;
+    var left = 2;
+    function done() {
+      if (--left) return;
+      LIST.loading = false;
+      var miss = [];
+      if (!window.CPL_COMMONS_LIST) miss.push("commons_list.js");
+      if (!window.CPL_COCI_PROGRAMS) miss.push("coci_programs_data.js");
+      LIST.failed = miss.length ? miss.join(" and ") + " did not arrive" : null;
+      if (state.view === "list" && document.getElementById(ROOT_ID)) render();
+    }
+    T.loadScript("commons_list.js", "CPL_COMMONS_LIST", done);
+    T.loadScript("coci_programs_data.js", "CPL_COCI_PROGRAMS", done);
+  }
+  /* #program-requirements/list opens the List; any other hash leaves the view as the reader set it. */
+  function routeFromHash() {
+    var parts = (location.hash || "").replace(/^#/, "").split("/");
+    if (parts[0] !== "program-requirements" || parts[1] !== "list") return false;
+    state.view = "list";
+    return true;
+  }
+  var hashWired = false;
+
   /* ── frame ── */
   function counts() {
     var R = state.registry || [], P = rows();
     return { progress: null, catalogs: R.length, records: P.length,
       sequences: R.filter(function (r) { return r.sequence_url || r.sequence_host; }).length,
-      procedures: R.filter(function (r) { return r.procedure; }).length };
+      procedures: R.filter(function (r) { return r.procedure; }).length,
+      list: state.progress && state.progress.active != null ? state.progress.active : null };
   }
 
   function render() {
@@ -3567,7 +3826,8 @@
     panel.appendChild(state.view === "progress" ? viewProgress()
       : state.view === "records" ? viewRecords()
       : state.view === "sequences" ? viewSequences()
-      : state.view === "procedures" ? viewProcedures() : viewCatalogs());
+      : state.view === "procedures" ? viewProcedures()
+      : state.view === "list" ? viewList() : viewCatalogs());
     wrap.appendChild(sw);
     wrap.appendChild(panel);
     wrap.appendChild(el("footer", { cls: "prh-foot" }, [
@@ -3576,6 +3836,7 @@
       el("p", { text: "Sources: program_source_registry (the weekly census, a person's corrections, each college's reading procedure) and program_requirement_records (each program's record and its display facts)." })
     ]));
     root.appendChild(wrap);
+    if (state.view === "list") mountList();
   }
 
   function choose(id, focus) {
@@ -3590,6 +3851,11 @@
 
   function activate() {
     wireSession();
+    routeFromHash();
+    if (!hashWired) {
+      hashWired = true;
+      window.addEventListener("hashchange", function () { if (routeFromHash() && document.getElementById(ROOT_ID)) render(); });
+    }
     render();
     if (!state.registry && !state.loading) load();
     /* A list another tab asked for before this module had loaded (CPL Pathways' college line). */
@@ -3608,6 +3874,7 @@
     todoCount: todoCount, goToTodos: goToTodos, openSplit: openSplit, closeSplit: closeSplit, framingOf: framingOf, FRAMING_URL: FRAMING_URL,
     openKey: openKey, nextWaiting: nextWaiting, nextToRead: nextToRead, notice: notice, callAnswered: callAnswered, RECORD_KEY: RECORD_KEY,
     exhibitCount: exhibitCount, openExhibits: openExhibits, closeExhibits: closeExhibits,
+    awardWords: awardWords, cociUnits: cociUnits, _listRows: function () { var m = listBuild(); return m ? m.rows : null; }, _listApi: listApi,
     MILESTONES: MILESTONES, PARTS: PARTS, WHOLE: WHOLE, wholeFacts: wholeFacts, TO: TO, goTo: goTo, goToCall: goToCall, progressContext: progressContext, headlineFacts: headlineFacts, nextRun: nextRun, nextWeekly: nextWeekly
   };
 })();

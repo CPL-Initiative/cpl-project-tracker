@@ -1605,7 +1605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1910
+     "line": 1965
     }
    ],
    "main_committers": []
@@ -1872,7 +1872,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2778,
+     "line": 2794,
      "tabs": [
       "program-requirements"
      ]
@@ -2172,7 +2172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 961
+     "line": 1016
     }
    ],
    "main_committers": []
@@ -2191,7 +2191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1306
+     "line": 1361
     },
     {
      "id": "module:college_briefing.js",
@@ -4133,7 +4133,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1584
+     "line": 1639
     }
    ],
    "main_committers": []
@@ -5168,7 +5168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1475
+     "line": 1530
     },
     {
      "id": "module:admin.js",
@@ -5420,6 +5420,13 @@
   "file:coci_programs_data.js": {
    "consumers": [
     {
+     "id": "module:a11y.config.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 696
+    },
+    {
      "id": "module:cip_crosswalk.js",
      "kind": "module",
      "direction": "read",
@@ -5456,6 +5463,16 @@
      "direction": "read",
      "how": "literal",
      "line": 83
+    },
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3743,
+     "tabs": [
+      "program-requirements"
+     ]
     },
     {
      "id": "script:kb/_build_coci_programs.py",
@@ -5881,6 +5898,16 @@
      ]
     },
     {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3742,
+     "tabs": [
+      "program-requirements"
+     ]
+    },
+    {
      "id": "script:scripts/build_cr_list_preview.py",
      "kind": "script",
      "direction": "read",
@@ -6110,7 +6137,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1849
+     "line": 1904
     },
     {
      "id": "module:college_briefing.js",
@@ -6304,7 +6331,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1021
+     "line": 1076
     },
     {
      "id": "module:cpl_funding.js",
@@ -9650,7 +9677,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 126,
+     "line": 131,
      "tabs": [
       "program-requirements"
      ]
@@ -12206,7 +12233,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1675,
+     "line": 1691,
      "tabs": [
       "program-requirements"
      ]
@@ -24058,7 +24085,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 848,
+     "line": 854,
      "tabs": [
       "program-requirements"
      ]
@@ -24158,7 +24185,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1836,
+     "line": 1852,
      "tabs": [
       "program-requirements"
      ]
@@ -25931,7 +25958,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 773,
+     "line": 779,
      "tabs": [
       "program-requirements"
      ]
@@ -26256,7 +26283,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 886,
+     "line": 892,
      "tabs": [
       "program-requirements"
      ]
@@ -26299,7 +26326,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 576,
+     "line": 582,
      "tabs": [
       "program-requirements"
      ]
@@ -26328,7 +26355,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 952,
+     "line": 958,
      "tabs": [
       "program-requirements"
      ]
@@ -26375,7 +26402,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 738,
+     "line": 744,
      "tabs": [
       "program-requirements"
      ]
@@ -26574,7 +26601,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 218,
+     "line": 224,
      "tabs": [
       "program-requirements"
      ]
@@ -27068,7 +27095,8 @@
   "commons_list.js": [
    "canonical-subj4",
    "cr-reference",
-   "exhibits"
+   "exhibits",
+   "program-requirements"
   ],
   "commons_progress.js": [
    "canonical-subj4",
