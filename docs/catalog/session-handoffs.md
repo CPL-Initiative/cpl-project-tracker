@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-506 document(s).
+507 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 539 | [Session 539 handoff: the contacts harvest's second read; the batch counts a read that found no one](../session_539_handoff.md) | 2026-11-01 |
 | 538 | [Session 538 handoff: the contacts harvest's first read; Monterey Peninsula's last 14](../session_538_handoff.md) | 2026-11-01 |
 | 536 | [Session 536 handoff: Monterey Peninsula 110 to 176 of 197; its last 21](../session_536_handoff.md) | 2026-10-31 |
 | 535 | [Session 535 handoff: Los Angeles Valley parks at 202 of 215; Monterey Peninsula next](../session_535_handoff.md) | 2026-10-31 |
