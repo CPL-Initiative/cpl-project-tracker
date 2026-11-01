@@ -2293,7 +2293,7 @@
       ".exh-l-acts{display:flex;gap:12px}",
       ".exh-l-count{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;margin:2px 0 4px}",
       ".exh-l-sort{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--text-strong);text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:24px}",
-      ".exh-l-cf td{background:var(--surface-opaque);padding:2px 4px;border-bottom:1px solid var(--border)}",
+      ".exh-l-cf td{background:var(--surface-opaque);padding:5px 4px 4px;border-bottom:1px solid var(--border)}",
       ".exh-l-cfin{width:100%;min-width:24px;box-sizing:border-box;font-size:.6875rem;min-height:24px}",
       ".exh-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}",
       "@media (max-width:560px){.exh-l-table{table-layout:auto;min-width:900px}}"
