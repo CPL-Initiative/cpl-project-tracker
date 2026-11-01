@@ -1,0 +1,78 @@
+{
+ "college": "Cerro Coso Community College",
+ "homepage": "https://www.cerrocoso.edu/",
+ "read_at": "2026-11-01T12:20:51+00:00",
+ "pages": [
+  {
+   "url": "https://www.cerrocoso.edu/",
+   "final_url": "https://www.cerrocoso.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.cerrocoso.edu/campus-life/calendar.html",
+   "final_url": "https://www.cerrocoso.edu/campus-life/calendar.html",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.cerrocoso.edu/enrollment-aid/outreach/getting-started-cc/militaryveteran-student.html",
+   "final_url": "https://www.cerrocoso.edu/enrollment-aid/outreach/getting-started-cc/militaryveteran-student.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "students. The Military and Veterans Services team aids active-duty military, veterans,",
+     "position": "vrc",
+     "window": [
+      "Military/Veteran Student",
+      "Returning CC Student",
+      "Cerro Coso Community College proudly provides services to all our military-connected",
+      "students. The Military and Veterans Services team aids active-duty military, veterans,",
+      "and their dependents that may be eligible for various military-connected educational",
+      "benefits. This team helps transition veterans from military to civilian life within",
+      "the academic environment. Military and Veterans Services houses a dedicated Educational"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the academic environment. Military and Veterans Services houses a dedicated Educational",
+     "position": "vrc",
+     "window": [
+      "students. The Military and Veterans Services team aids active-duty military, veterans,",
+      "and their dependents that may be eligible for various military-connected educational",
+      "benefits. This team helps transition veterans from military to civilian life within",
+      "the academic environment. Military and Veterans Services houses a dedicated Educational",
+      "Advisor eager to help students complete their academic goals and a dedicated School",
+      "Certifying official who serves as a liaison between veteran students/dependents and",
+      "the Department of Veterans Affairs."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Questions? Reach out to Veterans Services at veterans@cerrocoso.edu veterans@cerrocoso.edu",
+     "position": "vrc",
+     "window": [
+      "Apply Now",
+      "Make sure to connect with a CC Counselor as soon as you have completed the application.",
+      "Contact counseling to make an appointment and receive support at the beginning of your journey.",
+      "Questions? Reach out to Veterans Services at veterans@cerrocoso.edu veterans@cerrocoso.edu",
+      "Get Started",
+      "Today.",
+      "Apply Now"
+     ],
+     "emails": [
+      "veterans@cerrocoso.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.cerrocoso.edu/directory/index.html",
+   "final_url": "https://www.cerrocoso.edu/directory/index.html",
+   "status": 200,
+   "excerpts": []
+  }
+ ],
+ "unread_links": [],
+ "run": "41305785750"
+}

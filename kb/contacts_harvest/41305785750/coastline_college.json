@@ -1,0 +1,824 @@
+{
+ "college": "Coastline College",
+ "homepage": "https://www.coastline.edu/",
+ "read_at": "2026-11-01T12:22:40+00:00",
+ "pages": [
+  {
+   "url": "https://www.coastline.edu/",
+   "final_url": "https://www.coastline.edu/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.coastline.edu/about/administration/index.php",
+   "final_url": "https://www.coastline.edu/about/administration/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Vince Rodriguez, College President",
+     "position": "college_ceo",
+     "window": [
+      "What is Participatory Governance?",
+      "Participatory governance is a model of decision-making that places an emphasis on collaboration and democratic principles.",
+      "At Coastline, this means that the Administration seeks feedback from committees, constituency groups, councils, panels, and work groups.",
+      "Dr. Vince Rodriguez, College President",
+      "Coastline extends its gratitude for his many years of dedication and congratulates Dr. Rodriguez on becoming President of Coastline College, July 2021.",
+      "Board of Trustees",
+      "The Coast Community College District (CCCD) Board of Trustees represents the three Coast Colleges (Coastline, Golden West, and Orange Coast). The Board is a five-member elected board serving 4-year terms. One student trustee is appointed annually in May by the student governments from each campus."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coastline extends its gratitude for his many years of dedication and congratulates Dr. Rodriguez on becoming President of Coastline College, July 2021.",
+     "position": "college_ceo",
+     "window": [
+      "Participatory governance is a model of decision-making that places an emphasis on collaboration and democratic principles.",
+      "At Coastline, this means that the Administration seeks feedback from committees, constituency groups, councils, panels, and work groups.",
+      "Dr. Vince Rodriguez, College President",
+      "Coastline extends its gratitude for his many years of dedication and congratulates Dr. Rodriguez on becoming President of Coastline College, July 2021.",
+      "Board of Trustees",
+      "The Coast Community College District (CCCD) Board of Trustees represents the three Coast Colleges (Coastline, Golden West, and Orange Coast). The Board is a five-member elected board serving 4-year terms. One student trustee is appointed annually in May by the student governments from each campus.",
+      "(D.E.I.A. - Diversity, Equity, Inclusion, Access) The Coast Community College District (Orange Coast College, Golden West College, and Coastline) continue to strengthen our efforts around diversity, equity, inclusion, and access. Coastline College is focused on creating a culture of inclusive excellence by uplifting employees and students through an environment that is equitable, diverse, inclusive, and accessible. We have a strong focus and importance on D.E.I.A. (Diversity, Equity, Inclusion, Access)."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.coastline.edu/about/administration/directory.php",
+   "final_url": "https://www.coastline.edu/about/administration/directory.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.coastline.edu/military-and-veterans/index.php",
+   "final_url": "https://www.coastline.edu/military-and-veterans/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Our Veterans Resource Centers serve as hubs for collecting and distributing info to Veterans.",
+     "position": "vrc",
+     "window": [
+      "(714) 241-6040",
+      "Public safety",
+      "Military & Veterans",
+      "Our Veterans Resource Centers serve as hubs for collecting and distributing info to Veterans.",
+      "Military & Veterans",
+      "Military & Veterans",
+      "Serving the Military for more than 40 years, Coastline is dedicated to serving the unique and mobile lifestyle of our military students, families, and veterans."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director's Welcome Message",
+     "position": null,
+     "window": [
+      "Monday – Friday: 7:30 am to 4:30 pm PST",
+      "Get More Info",
+      "Loading...",
+      "Director's Welcome Message",
+      "Welcome!",
+      "At Coastline College, student success is at the core of our mission. Coastline College's Military and Contract Education Department has been serving active duty service members, veterans, and their families for more than 40 years.",
+      "Today's students strive for life-family balance while maintaining personal responsibilities, education, and a fulfilling career. The Coastline degree and certificate programs offered through the Military and Contract Education Department focus on real-time education to help students achieve their academic and personal goals."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Coastline is proud to hold a Department of Defense Memorandum of Understanding and multiple contracts with Corporations across the country. These partnerships represent our dedication to each student, and we are here to assist you in achieving your education and career goals. Please do not hesitate to contact me. We look forward to having you be a part of the Coastline community.",
+      "Sincerely,",
+      "Araba Mensah, M.S",
+      "Director",
+      "Military and Contract Education",
+      "Coastline - An Outstanding Choice",
+      "At Coastline College, student success is at the core of our mission. Our Extended Learning Division has been serving active duty service members, veterans, and their families for more than 40 years."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.coastline.edu/military-and-veterans/veterans.php",
+   "final_url": "https://www.coastline.edu/military-and-veterans/veterans.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Education Benefits",
+      "VA Benefits Chapters",
+      "FAQs",
+      "Veterans Resource Center",
+      "Useful Links",
+      "Contact / Hours",
+      "Registration Priority for Veterans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Submit your Discharge Letter (DD214) to the Veterans Resource Center in order to request priority registration, if eligible.",
+     "position": "vrc",
+     "window": [
+      "6. Request an official copy of your Military Training Transcript",
+      "Request an official copy of your military training transcript (Joint Service Transcript). A copy of your transcript order confirmation page will be sufficient for certifying your benefits your first semester.",
+      "7. Submit your Discharge Letter",
+      "Submit your Discharge Letter (DD214) to the Veterans Resource Center in order to request priority registration, if eligible.",
+      "8. Make an appointment with Coastline's Career Counselor",
+      "Schedule with Career Services to make sure your Degree Plan corresponds with your Career goals.",
+      "9. Complete an intake appointment with an Academic Counselor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Complete your VA File by presenting these documents in person to the Veterans Services Center:",
+     "position": "vrc",
+     "window": [
+      "9. Complete an intake appointment with an Academic Counselor",
+      "Schedule with Academic Counseling to develop an Education Plan. Be sure to identify yourself as a Veteran.",
+      "10. Complete your VA File",
+      "Complete your VA File by presenting these documents in person to the Veterans Services Center:",
+      "A Certificate of Eligibility",
+      "Education plan signed by a counselor",
+      "Certification request form (or email to rcervantes@coastline.edu rcervantes@coastline.edu)"
+     ],
+     "emails": [
+      "rcervantes@coastline.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Centers (VRC)",
+     "position": "vrc",
+     "window": [
+      "Military credits may count towards general education, major, areas of emphasis, certificate, and elective credits and are applicable to an associate degree at Coastline.",
+      "How can I get questions answered for my specific situation?",
+      "The college Admissions & Records Office is open from 8 a.m. to 5 p.m. Monday through Thursday, and from 8 a.m. to 12 p.m. on Friday. No appointment is necessary. Come in, or email the School Certifying Official at VeteranServices@coastline.edu VeteranServices@coastline.edu.",
+      "Veterans Resource Centers (VRC)",
+      "The Coastline College VRC provide Coastline Student and Community Veterans with an informative and supportive environment so that they may explore the comprehensive array of resources available to them. VRC are located at three campuses: Fountain Valley, Garden Grove, and Newport Beach.",
+      "visit VRC webpage",
+      "Useful Links"
+     ],
+     "emails": [
+      "VeteranServices@coastline.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.coastline.edu/admissions-and-records/index.php",
+   "final_url": "https://www.coastline.edu/admissions-and-records/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "final_url": "https://www.coastline.edu/about/administration/college-leadership/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coastline College President",
+     "position": "college_ceo",
+     "window": [
+      "College Leadership",
+      "College Leadership",
+      "The Coastline leadership team includes presidents, deans, and senior administrators from the Fountain Valley, Garden Grove, Newport Beach, and Westminster campuses, working together to serve the interests of the college as a whole.",
+      "Coastline College President",
+      "President Dr. Vince Rodriguez",
+      "Dr. Vince Rodriguez is a strong believer in education being the most powerful tool for providing social justice for traditionally disadvantaged students. \"While elite colleges and universities choose to only accept students who have demonstrated the most academic success, community colleges accept the top 100% of applicants. As a result, working in a community college has become a calling,\" says Dr. Rodriguez.",
+      "visit college president page"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Dr. Vince Rodriguez",
+     "position": "college_ceo",
+     "window": [
+      "College Leadership",
+      "The Coastline leadership team includes presidents, deans, and senior administrators from the Fountain Valley, Garden Grove, Newport Beach, and Westminster campuses, working together to serve the interests of the college as a whole.",
+      "Coastline College President",
+      "President Dr. Vince Rodriguez",
+      "Dr. Vince Rodriguez is a strong believer in education being the most powerful tool for providing social justice for traditionally disadvantaged students. \"While elite colleges and universities choose to only accept students who have demonstrated the most academic success, community colleges accept the top 100% of applicants. As a result, working in a community college has become a calling,\" says Dr. Rodriguez.",
+      "visit college president page",
+      "Coastline College Vice Presidents"
+     ],
+     "emails": []
+    },
+    {
+     "line": "visit college president page",
+     "position": "college_ceo",
+     "window": [
+      "Coastline College President",
+      "President Dr. Vince Rodriguez",
+      "Dr. Vince Rodriguez is a strong believer in education being the most powerful tool for providing social justice for traditionally disadvantaged students. \"While elite colleges and universities choose to only accept students who have demonstrated the most academic success, community colleges accept the top 100% of applicants. As a result, working in a community college has become a calling,\" says Dr. Rodriguez.",
+      "visit college president page",
+      "Coastline College Vice Presidents",
+      "Kathryn Mueller, Ed.D.",
+      "Vice President, Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "visit college president page",
+      "Coastline College Vice Presidents",
+      "Kathryn Mueller, Ed.D.",
+      "Vice President, Student Services",
+      "kmueller@coastline.edu kmueller@coastline.edu",
+      "Office of Student Services | Coastline College",
+      "Isela Ocegueda, Ph.D."
+     ],
+     "emails": [
+      "kmueller@coastline.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Instruction",
+     "position": "vpaa",
+     "window": [
+      "kmueller@coastline.edu kmueller@coastline.edu",
+      "Office of Student Services | Coastline College",
+      "Isela Ocegueda, Ph.D.",
+      "Vice President, Instruction",
+      "iocegueda@cccd.edu iocegueda@cccd.edu",
+      "Office of Instruction | Coastline College",
+      "Christine Nguyen, M.B.A."
+     ],
+     "emails": [
+      "iocegueda@cccd.edu",
+      "kmueller@coastline.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": null,
+     "window": [
+      "iocegueda@cccd.edu iocegueda@cccd.edu",
+      "Office of Instruction | Coastline College",
+      "Christine Nguyen, M.B.A.",
+      "Vice President, Administrative Services",
+      "cnguyen@coastline.edu cnguyen@coastline.edu",
+      "Office of Administrative Services | Coastline College",
+      "Coastline College Deans"
+     ],
+     "emails": [
+      "cnguyen@coastline.edu",
+      "iocegueda@cccd.edu"
+     ]
+    },
+    {
+     "line": "Dean, Innovative Learning",
+     "position": null,
+     "window": [
+      "Office of Administrative Services | Coastline College",
+      "Coastline College Deans",
+      "Nathaniel Harrison",
+      "Dean, Innovative Learning",
+      "nharrison@coastline.edu nharrison@coastline.edu",
+      "Student Services | Coastline College",
+      "Natalie V. Nagthall, Ed.D."
+     ],
+     "emails": [
+      "nharrison@coastline.edu"
+     ]
+    },
+    {
+     "line": "Dean of Career Education, Garden Grove Campus",
+     "position": null,
+     "window": [
+      "nharrison@coastline.edu nharrison@coastline.edu",
+      "Student Services | Coastline College",
+      "Natalie V. Nagthall, Ed.D.",
+      "Dean of Career Education, Garden Grove Campus",
+      "nnagthall@cccd.edu nnagthall@cccd.edu",
+      "Garden Grove Campus | Coastline College",
+      "Stephanie Bridges"
+     ],
+     "emails": [
+      "nharrison@coastline.edu",
+      "nnagthall@cccd.edu"
+     ]
+    },
+    {
+     "line": "Dean of Instruction, Westminster - Le-Jao Campus",
+     "position": "dean_instruction",
+     "window": [
+      "nnagthall@cccd.edu nnagthall@cccd.edu",
+      "Garden Grove Campus | Coastline College",
+      "Stephanie Bridges",
+      "Dean of Instruction, Westminster - Le-Jao Campus",
+      "sbridges@coastline.edu sbridges@coastline.edu",
+      "Westminster - Le-Jao Campus | Coastline College",
+      "Leighia Fleming, Ed.D. (she/her)"
+     ],
+     "emails": [
+      "nnagthall@cccd.edu",
+      "sbridges@coastline.edu"
+     ]
+    },
+    {
+     "line": "Dean of Students",
+     "position": null,
+     "window": [
+      "sbridges@coastline.edu sbridges@coastline.edu",
+      "Westminster - Le-Jao Campus | Coastline College",
+      "Leighia Fleming, Ed.D. (she/her)",
+      "Dean of Students",
+      "Lfleming5@coastline.edu Lfleming5@coastline.edu",
+      "Student Services | Coastline College",
+      "Tom Neal, Ph.D."
+     ],
+     "emails": [
+      "Lfleming5@coastline.edu",
+      "sbridges@coastline.edu"
+     ]
+    },
+    {
+     "line": "Dean, Newport Beach Campus",
+     "position": null,
+     "window": [
+      "Lfleming5@coastline.edu Lfleming5@coastline.edu",
+      "Student Services | Coastline College",
+      "Tom Neal, Ph.D.",
+      "Dean, Newport Beach Campus",
+      "tneal14@coastline.edu tneal14@coastline.edu",
+      "Newport Beach Campus | Coastline College",
+      "Natalie Schonfeld, Ph.D."
+     ],
+     "emails": [
+      "Lfleming5@coastline.edu",
+      "tneal14@coastline.edu"
+     ]
+    },
+    {
+     "line": "Dean of Counseling",
+     "position": null,
+     "window": [
+      "tneal14@coastline.edu tneal14@coastline.edu",
+      "Newport Beach Campus | Coastline College",
+      "Natalie Schonfeld, Ph.D.",
+      "Dean of Counseling",
+      "nschonfeld@coastline.edu nschonfeld@coastline.edu",
+      "Academic Counseling | Coastline College",
+      "Aeron Zentner, D.B.A."
+     ],
+     "emails": [
+      "nschonfeld@coastline.edu",
+      "tneal14@coastline.edu"
+     ]
+    },
+    {
+     "line": "Dean, Institutional Effectiveness",
+     "position": null,
+     "window": [
+      "nschonfeld@coastline.edu nschonfeld@coastline.edu",
+      "Academic Counseling | Coastline College",
+      "Aeron Zentner, D.B.A.",
+      "Dean, Institutional Effectiveness",
+      "azentner@coastline.edu azentner@coastline.edu",
+      "Institutional Effectiveness | Coastline College",
+      "Coastline College Academic Senate"
+     ],
+     "emails": [
+      "azentner@coastline.edu",
+      "nschonfeld@coastline.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Coastline College Academic Senate",
+      "2026-2027 Executive Committee",
+      "Steve Fauce, Ph.D.",
+      "President",
+      "Kelly Ruppert",
+      "President-Elect",
+      "Tobi West, Ph.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President-Elect",
+     "position": "college_ceo",
+     "window": [
+      "Steve Fauce, Ph.D.",
+      "President",
+      "Kelly Ruppert",
+      "President-Elect",
+      "Tobi West, Ph.D.",
+      "Recording Secretary",
+      "David Lee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Coastline College Classified Senate",
+      "2026-28 Executive Board",
+      "Anna Isbell",
+      "President",
+      "Vanessa Ayala",
+      "President-Elect",
+      "Michelle Neal"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President-Elect",
+     "position": "college_ceo",
+     "window": [
+      "Anna Isbell",
+      "President",
+      "Vanessa Ayala",
+      "President-Elect",
+      "Michelle Neal",
+      "Classified Senate Chair of Communication and Accreditation",
+      "College Leadership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "Michelle Neal",
+      "Classified Senate Chair of Communication and Accreditation",
+      "College Leadership",
+      "College President",
+      "Office of Administrative Services",
+      "Office of Instruction",
+      "Office of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Wing",
+     "position": "college_ceo",
+     "window": [
+      "Office of Administrative Services",
+      "Office of Instruction",
+      "Office of Student Services",
+      "President's Wing",
+      "Get In Touch",
+      "Patty Gilyeart, Executive Assistant, Office of the President",
+      "E:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Patty Gilyeart, Executive Assistant, Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of Student Services",
+      "President's Wing",
+      "Get In Touch",
+      "Patty Gilyeart, Executive Assistant, Office of the President",
+      "E:",
+      "pfranco@coastline.edu pfranco@coastline.edu",
+      "(714) 546-7600"
+     ],
+     "emails": [
+      "pfranco@coastline.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.coastline.edu/student-services/veterans-resources-centers/index.php",
+   "final_url": "https://www.coastline.edu/student-services/veterans-resources-centers/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Centers | Coastline College",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Centers | Coastline College",
+      "Jump to Header",
+      "Jump to Main Content",
+      "Jump to Footer"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "About Coastline",
+      "Mission & Vision",
+      "Administration",
+      "College President",
+      "Governance",
+      "Public Safety",
+      "Blog and Newsroom"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Centers",
+     "position": "vrc",
+     "window": [
+      "IT Help Desk",
+      "(714) 241-6040",
+      "Public safety",
+      "Veterans Resource Centers",
+      "Transition assistance for Veterans: personal assistance, educational guidance, and professional resource support services.",
+      "Student Services",
+      "Veterans Resource Centers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Centers",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Centers",
+      "Transition assistance for Veterans: personal assistance, educational guidance, and professional resource support services.",
+      "Student Services",
+      "Veterans Resource Centers",
+      "Veterans Resource Centers",
+      "Coastline College is approved by the Bureau for Private Post-secondary and Vocational Education for the training of Veterans seeking benefits under state and federal regulations. Our Veterans Resource Center(s) serve as hubs for collecting and distributing information of interest to Veterans.",
+      "About the VRC"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Centers",
+     "position": "vrc",
+     "window": [
+      "Transition assistance for Veterans: personal assistance, educational guidance, and professional resource support services.",
+      "Student Services",
+      "Veterans Resource Centers",
+      "Veterans Resource Centers",
+      "Coastline College is approved by the Bureau for Private Post-secondary and Vocational Education for the training of Veterans seeking benefits under state and federal regulations. Our Veterans Resource Center(s) serve as hubs for collecting and distributing information of interest to Veterans.",
+      "About the VRC",
+      "The Coastline College Veterans Resource Centers (VRC) provide Coastline Student and Community Veterans with an informative and supportive environment so that they may explore the comprehensive array of resources available to them. The VRC provides Veterans with transition assistance, including personal assistance, educational guidance, and professional resource support services. Our goal is to honor our Veterans for their service, and to fully assist them with an effective transition and reintegration into civilian life. The following programs and services are available through each VRC:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coastline College President, Dr. Rodriguez, and VP Christine Nguyen were also present.",
+     "position": "college_ceo",
+     "window": [
+      "Marine Corps Sergeant and Coastline College student, Daniel Geurkink, shares his views on the Paralegal Studies program at Coastline College and how the Veterans Resource Centers supported him throughout his journey.",
+      "Tom Boscamp of Coastline College Receives Award",
+      "In July, 2022, the Military Officers Association of America (MOAA) presented Tom Boscamp with an award for his service to veterans of Orange County. Tom Bell, President of the Los Alamitos Chapter presented the award.",
+      "Coastline College President, Dr. Rodriguez, and VP Christine Nguyen were also present.",
+      "MOAA is the nation's largest and most influential association of military officers. It is an independent, nonprofit, politically nonpartisan organization. MOAA's purpose includes career transition assistance, improved member products, military benefits counseling, educational assistance to children of military families, and strong involvement in military professionalism activities.",
+      "STUDENT FEATURE",
+      "STUDENT FEATURE"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Finding Community in Coastline Veteran Services",
+     "position": "vrc",
+     "window": [
+      "STUDENT FEATURE",
+      "STUDENT FEATURE",
+      "STUDENT FEATURE",
+      "Finding Community in Coastline Veteran Services",
+      "Adam Lozis served nine years in the Air Force before coming to Coastline to obtain his AA in Cybersecurity. Read more about his transition from the Air Force to civilian life, going back to college, and the resources that were most helpful to him throughout his journey.",
+      "Related Pages",
+      "Veterans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Centers",
+     "position": "vrc",
+     "window": [
+      "Leaving active-duty service is a major life transition. Find information, tools, and resources to help you navigate this season on our CTAP page.",
+      "Military & Veterans",
+      "Serving the Military for more than 40 years, Coastline is dedicated to serving the unique and mobile lifestyle of our military students, families, and veterans.",
+      "Veterans Resource Centers",
+      "Coastline Transition Program (CTAP)",
+      "Get In Touch",
+      "Tom Boscamp"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41305785750"
+}
