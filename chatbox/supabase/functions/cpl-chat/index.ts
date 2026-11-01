@@ -6878,9 +6878,9 @@ Deno.serve(async (req: Request) => {
     });
   }
 
-  const timings = newTimings(Date.now());
   // Which team instructions this turn sent, matched and dropped (Open Asks Sheet 153 card 3).
   const guidanceLog: any = {};
+  const timings = newTimings(Date.now());
   try {
     const { query, session_id, history, audience, ctx, scope, surface, retrieval_query } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
