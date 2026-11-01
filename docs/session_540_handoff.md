@@ -43,12 +43,15 @@ At the start no PR was open (#2640 had merged) and the to-do, Library and CER-re
    A session that moves fewer than 3% parks the college.
 3. **Accept's email** (Sheet 146 card 3, *m365*) waits on RCCD IT granting the mailbox.
 4. **The cpl-chat deploy is held for Sam's go** (handoff 530, item 4). Run the preview A/B first.
-5. **The CER redesign side lane** owns `docs/cer_redesign_handoff.md`. Over budget: `implementation-funding.md`,
-   `sierra-retrieval-corpus.md`, `cpl_funding_lessons.md`; `CLAUDE.md` sits 112 bytes over 60,000.
+5. **A side session** (Sam opened it by hand at 13:36Z, `session_01Rvwe2UQVanaxYSzZ8ezna8`; branch
+   `claude/session-538-queue-dfig9j`, a draft PR) took two items from handoff 539: trimming
+   `implementation-funding.md` and `sierra-retrieval-corpus.md` under the 20,000 budget, and reading the three Library
+   records that still carry a `refresh_note`. Read its PR first; merge, port or close it with a pointer. The CER redesign
+   side lane owns `docs/cer_redesign_handoff.md`. Still over budget: `cpl_funding_lessons.md`; `CLAUDE.md` sits 112
+   bytes over 60,000.
 6. **Carryover:** Sierra's first-text latency; `credential_alignment_for_college`; the college short-name editor and the
    public page's Contents; the lints' checkout time. Waiting on Sam, with no card: repointing the Chancellor's address
-   Library record to its Pages address. Three old Library notes still carry a `refresh_note` (the two noncredit summit
-   pieces, and `iaca-mvpmcjyl`'s *show* request of 2026-10-26); read each before the daytime Library routine takes them.
+   Library record to its Pages address.
 
 ## Read first
 
