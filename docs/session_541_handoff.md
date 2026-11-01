@@ -8,7 +8,8 @@ status: current
 
 # You are Session 541
 
-Your moniker is **SkySparkleberry** (the CER side lane used SkySnowberry today). S540 was the routine's 14:12Z
+Your moniker is **SkyBlatusoff**. Sam, at sign-off: *"let's move back to our galaxy exploration session naming
+practices--SkyBlatusoff"*. Name the sessions after it the galaxy-exploration way, no more berries. S540 was the routine's 14:12Z
 firing; Sam joined live and drove most of it. **Full checkpoint**, written at the context WARN (about 92k left). It
 skipped `README.md`, `kb/README.md` and the pipeline view; nothing they describe moved.
 
@@ -27,7 +28,11 @@ skipped `README.md`, `kb/README.md` and the pipeline view; nothing they describe
    - the search bar finds a credential by **college, district, SWP region or ASCCC region** (college is in
      `articulations[].local[].colleges`; district and regions need the college identity file joined);
    - **find and replace with a preview** (mocked at https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A, bottom);
-   - mirror selection, flags, drill-downs, Confidence and resizing into that mock if he asks to react again.
+   - **keep the mock going at the same link** (Sam: "Hopefully, SkyBlatusoff will be able to publish the mock so we can
+     keep working on it"): its source is `docs/visuals/2026-11-01-exhibits-list-mockup.html` (on #2648's branch until it
+     merges). Publish with the Artifact tool, `url: https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A`, after one
+     `action: "read"` of that URL. The mock lags the real view: mirror selection, flags, drill-downs, Confidence and
+     custom sort (Shift and a header press) into it first.
 3. **Scheduled-sessions step 9, the re-analysis pass** (new today): read `_EXHIBIT_REANALYSIS::` rows with Sam's
    comments; code checks first; the Jev runner job and the findings panel are the next builds.
 4. **The contacts harvest, each night** (step 8). 121 people after S540 (fourth read 41 + the five Equity titles,
