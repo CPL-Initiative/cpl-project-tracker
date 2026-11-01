@@ -1,0 +1,10 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-01_library_summit_refresh_notes.sql",
+ "name": "s539side_library_summit_refresh_notes",
+ "version": "20261101141928",
+ "sha256": "294bfcd3b00643186fcd362a73f5f3701e133d6fc56d288eefd4290a5ff9aeae",
+ "run": "41315433226",
+ "status": 502,
+ "response": "error code: 502\n"
+}
