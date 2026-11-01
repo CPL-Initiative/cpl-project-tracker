@@ -416,6 +416,28 @@ async function seedCsrProgress(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Common Subjects Reference's List (the Catalog Commons' shared List, 2026-11-01): every MQ discipline A to Z, the
+// Status drawer of the first row open and Edit every row's boxes on, so the table, the drawer and the boxes are measured.
+async function seedCsrList(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "canonical-subj4/list") location.hash = "canonical-subj4/list"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#tab-canonical-subj4 #cs-tab-list", { timeout: 60000 });
+  await page.evaluate(() => { const b = document.getElementById("cs-tab-list"); if (b && b.getAttribute("aria-selected") !== "true") b.click(); });
+  await page.waitForSelector("#tab-canonical-subj4 .csl-table tbody tr", { timeout: 60000 });
+  await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csl-table tbody tr td:nth-child(4) button.csl-open"); if (b) b.click(); });
+  await page.waitForSelector("#tab-canonical-subj4 .csl-drawer", { timeout: 10000 });
+  await page.evaluate(() => { document.getElementById("csl-editall").click(); });
+  await page.waitForSelector("#tab-canonical-subj4 .csl-cellin", { timeout: 10000 });
+  await page.waitForTimeout(700);
+  // First Light's greeting opens 650 ms after load and would cover the List.
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(200);
+}
+
 /* The docked Sierra, full screen with a conversation (S349). Seeded through
    the real path: the reader's role is confirmed on the chip, only the chat
    function's stream is stubbed, and six questions are asked, so the first one
@@ -3202,6 +3224,22 @@ module.exports = {
     title: "Common Subjects Reference: the table",
     routes: [{ hash: "canonical-subj4/reference", name: "reference" }],
     widths: [390, 768, 1024, 1440],
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-list": {
+    file: "index.html",
+    title: "Common Subjects Reference: List, every MQ discipline A to Z, a drawer and the boxes open",
+    routes: [{ hash: "canonical-subj4/list", name: "list" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedCsrList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-list-dark": {
+    file: "index.html",
+    title: "Common Subjects Reference: List, dark",
+    routes: [{ hash: "canonical-subj4/list", name: "list-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCsrList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the Records view, signed in (S347) ──────────

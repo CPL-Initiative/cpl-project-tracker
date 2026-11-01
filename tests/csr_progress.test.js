@@ -161,8 +161,8 @@ setTimeout(function () {
     const d = t.d, w = t.w, M = w.CPL_CANONICAL_SUBJ4;
     // ── the two views ──
     const sw = d.getElementById("cs-views");
-    check("the view switch is a tablist of two words", sw && sw.getAttribute("role") === "tablist" && sw.querySelectorAll("button[role=tab]").length === 2);
-    check("the words are Progress and Reference", Array.prototype.map.call(sw.querySelectorAll("button"), txt).join(",") === "Progress,Reference");
+    check("the view switch is a tablist of three words", sw && sw.getAttribute("role") === "tablist" && sw.querySelectorAll("button[role=tab]").length === 3);
+    check("the words are Progress, Reference and List (the Catalog Commons' List, 2026-11-01)", Array.prototype.map.call(sw.querySelectorAll("button"), txt).join(",") === "Progress,Reference,List");
     check("Progress opens by default", M._state.view === "progress" && !d.getElementById("cs-progress").hidden && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-toolbar").hidden);
     check("the selected word is marked and focusable", d.getElementById("cs-tab-progress").getAttribute("aria-selected") === "true" && d.getElementById("cs-tab-reference").getAttribute("tabindex") === "-1");
     const pg = d.getElementById("cs-progress");

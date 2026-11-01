@@ -733,7 +733,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 623
+     "line": 645
     }
    ],
    "main_committers": []
@@ -801,7 +801,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2062,
+     "line": 2091,
      "tabs": [
       "canonical-subj4"
      ]
@@ -1605,7 +1605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1888
+     "line": 1910
     }
    ],
    "main_committers": []
@@ -2172,7 +2172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 939
+     "line": 961
     }
    ],
    "main_committers": []
@@ -2191,7 +2191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1284
+     "line": 1306
     },
     {
      "id": "module:college_briefing.js",
@@ -4133,7 +4133,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1562
+     "line": 1584
     }
    ],
    "main_committers": []
@@ -5168,7 +5168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1453
+     "line": 1475
     },
     {
      "id": "module:admin.js",
@@ -5851,6 +5851,16 @@
   "file:commons_list.js": {
    "consumers": [
     {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2771,
+     "tabs": [
+      "canonical-subj4"
+     ]
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -5895,7 +5905,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2462,
+     "line": 2491,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6100,7 +6110,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1827
+     "line": 1849
     },
     {
      "id": "module:college_briefing.js",
@@ -6294,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 999
+     "line": 1021
     },
     {
      "id": "module:cpl_funding.js",
@@ -12908,7 +12918,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 202,
+     "line": 253,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13015,7 +13025,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 134,
+     "line": 185,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13241,7 +13251,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 143,
+     "line": 194,
      "tabs": [
       "canonical-subj4"
      ]
@@ -13982,7 +13992,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 164,
+     "line": 215,
      "tabs": [
       "canonical-subj4"
      ]
@@ -15361,7 +15371,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 244,
+     "line": 295,
      "tabs": [
       "canonical-subj4"
      ]
@@ -15501,7 +15511,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 241,
+     "line": 292,
      "tabs": [
       "canonical-subj4"
      ]
@@ -16297,7 +16307,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 153,
+     "line": 204,
      "tabs": [
       "canonical-subj4"
      ]
@@ -27036,6 +27046,7 @@
    "commons"
   ],
   "commons_list.js": [
+   "canonical-subj4",
    "cr-reference",
    "exhibits"
   ],

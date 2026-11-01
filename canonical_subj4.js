@@ -122,6 +122,57 @@
     });
   }
 
+  /* ── The one save path for a Common SUBJ and its note ──
+     The Reference table's boxes and the List (its Edit, Edit every row and Confirm this pick)
+     write through these three, so the four-letter check, the confirm on a code another MQ
+     discipline owns, the kb_curation row and the overlay stay one path.
+     canonCheck runs before a write, synchronously (the confirm is a dialog): "" to go ahead,
+     "format" when the value is not four letters, "declined" when the reader kept the code off.
+     writeCanon and writeNote resolve to the fetch response and update the overlay on a save the
+     way fetchOverlay reads the rows back: the pick's reviewer is the code row's, a note's author
+     is the note's, and a note stands in as the review only where no code row exists (S425). */
+  function canonCheck(entry, v) {
+    if (v && !SUBJ4_RE.test(v)) return "format";
+    if (v) {
+      // Hard-collision guard: another discipline already owns this code as
+      // its Common SUBJ (or umbrella split/span). Never silent — but never
+      // blocking either: an intentional fan-in convergence is a legitimate
+      // save, so confirm instead of refuse.
+      var own = otherOwners(v, entry.discipline);
+      if (own.length && !confirm(
+        v + " is already the Common SUBJ of " + own.map(function (o) { return o.d; }).join(" + ") +
+        ".\n\nTwo disciplines sharing one code will collide at the SUBJ4 fold re-mint. " +
+        "Save anyway (e.g. an intentional convergence)?")) return "declined";
+    }
+    return "";
+  }
+  function overlayRec(d) { return state.overlay[d] = state.overlay[d] || {}; }
+  function writeCanon(entry, v) {
+    var sess = state.sess;
+    return saveField(entry.discipline, FIELD_CANON, v, sess).then(function (r) {
+      if (!r.ok) return r;
+      // Reflect in state.overlay so the row updates without a refetch.
+      var rec = overlayRec(entry.discipline), at = new Date().toISOString();
+      rec[FIELD_CANON] = v;
+      rec._pick_by = sess.email; rec._pick_at = at;
+      rec.reviewed_by = sess.email; rec.reviewed_at = at;
+      invalidateSubjIndex(); // ownership changed — next check/hint rebuilds
+      return r;
+    });
+  }
+  function writeNote(entry, text) {
+    var sess = state.sess;
+    return saveField(entry.discipline, FIELD_NOTES, text, sess).then(function (r) {
+      if (!r.ok) return r;
+      var rec = overlayRec(entry.discipline), at = new Date().toISOString();
+      rec[FIELD_NOTES] = text;
+      rec._notes_by = sess.email; rec._notes_at = at;
+      if (!rec._pick_at) { rec.reviewed_by = sess.email; rec.reviewed_at = at; }
+      invalidateSubjIndex();
+      return r;
+    });
+  }
+
   // The validate stage (validated_at / validated_by) stays in the data and the sync; its column
   // and control left the tab on Sam's Sheet 99 card 5 (2026-10-19) until the faculty-published
   // moment, when they return.
@@ -415,7 +466,8 @@
     state._subjIdx = { owners: owners, observed: observed };
     return state._subjIdx;
   }
-  function invalidateSubjIndex() { state._subjIdx = null; }
+  // The List's rows read the same index and overlay, so they rebuild with it.
+  function invalidateSubjIndex() { state._subjIdx = null; state._listRows = null; }
 
   // Fan-in alias families: a converged discipline and its recorded alternate
   // name(s) (kb/discipline_aliases.json) are ONE discipline for collision
@@ -1634,32 +1686,13 @@
       setTimeout(function () { hint.innerHTML = ""; hint.classList.remove("show"); }, 150);
       var v = (input.value || "").toUpperCase();
       if (v === initial.toUpperCase()) return;
-      if (v && !SUBJ4_RE.test(v)) { toast("Canonical SUBJ4 must be exactly 4 letters", true); return; }
-      if (v) {
-        // Hard-collision guard: another discipline already owns this code as
-        // its Common SUBJ (or umbrella split/span). Never silent — but never
-        // blocking either: an intentional fan-in convergence is a legitimate
-        // save, so confirm instead of refuse.
-        var own = otherOwners(v, entry.discipline);
-        if (own.length && !confirm(
-          v + " is already the Common SUBJ of " + own.map(function (o) { return o.d; }).join(" + ") +
-          ".\n\nTwo disciplines sharing one code will collide at the SUBJ4 fold re-mint. " +
-          "Save anyway (e.g. an intentional convergence)?")) {
-          input.value = initial;
-          reflectValidity();
-          return;
-        }
-      }
-      saveField(entry.discipline, FIELD_CANON, v, state.sess)
+      var stop = canonCheck(entry, v);
+      if (stop === "format") { toast("Canonical SUBJ4 must be exactly 4 letters", true); return; }
+      if (stop === "declined") { input.value = initial; reflectValidity(); return; }
+      writeCanon(entry, v)
         .then(function (r) {
           if (!r.ok) { toast("Save failed (" + r.status + ")", true); return; }
           input.classList.add("cs-saved");
-          // Reflect in state.overlay so the row updates without a refetch.
-          var rec = state.overlay[entry.discipline] = state.overlay[entry.discipline] || {};
-          rec[FIELD_CANON] = v;
-          rec.reviewed_by = state.sess.email;
-          rec.reviewed_at = new Date().toISOString();
-          invalidateSubjIndex(); // ownership changed — next check/hint rebuilds
           toast("Saved " + entry.discipline + " → " + v);
           render();
         })
@@ -1828,13 +1861,9 @@
     var initialNote = ta.value;
     ta.onblur = function () {
       if (ta.value === initialNote) return;
-      saveField(entry.discipline, FIELD_NOTES, ta.value, state.sess)
+      writeNote(entry, ta.value)
         .then(function (r) {
           if (!r.ok) { toast("Notes save failed (" + r.status + ")", true); return; }
-          var rec = state.overlay[entry.discipline] = state.overlay[entry.discipline] || {};
-          rec[FIELD_NOTES] = ta.value;
-          rec.reviewed_by = state.sess.email;
-          rec.reviewed_at = new Date().toISOString();
           toast("Note saved · " + entry.discipline);
           // Don't re-render the whole table — just bump initialNote tracker.
           initialNote = ta.value;
@@ -1997,7 +2026,7 @@
   var SKYVIEW_URL = "prototype/skyview.html";
   var VIEW_KEY = "cplCsr.view.v1";
   var SECS_KEY = "cplCsr.secs.v1";
-  var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }];
+  var VIEWS = [{ id: "progress", label: "Progress" }, { id: "reference", label: "Reference" }, { id: "list", label: "List" }];
   var FILTER_ROUTES = { needs_review: 1, pre_seeded: 1, reviewed: 1, invalid: 1, ccn: 1, cid: 1, chip: 1, proposed: 1 };
   var RULE_WORDS = {
     cs1_format: "not four letters", cs2_dup: "a code on two MQ disciplines", cs3_squat: "an official prefix on another subject",
@@ -2483,16 +2512,281 @@
     });
   }
 
-  /* ── the two views and the route in the address ──
-     #canonical-subj4/progress and #canonical-subj4/reference name a view; #canonical-subj4/<filter>
-     opens the Reference view with that filter (the Commons row's counts link here);
-     #canonical-subj4/check opens the SUBJ check. The last view chosen is remembered. */
+  /* ── List: every MQ discipline on one sheet, A to Z (the Catalog Commons' shared List) ──
+     Sam, 2026-11-01, after the Exhibits List: "This new list view is so helpful that I want one now for each of our
+     Catalog Commons groups." commons_list.js draws it; this spec makes it the CSR's: one row per MQ discipline with
+     courses (147), its Common SUBJ, who confirmed it (a person, the nightly procedure, or open), the Local SUBJs
+     colleges use for its courses and how many, its local courses and M-IDs, and any collision. Edit, Edit every row
+     and Confirm this pick write through the table's own save path (canonCheck, writeCanon, writeNote: the
+     _CANON_SUBJ4:: kb_curation rows), so the List adds no write surface. No flag column: the reference has no flag
+     field. No find and replace: a replace on Common SUBJ would hand one code to several MQ disciplines, and a note
+     saved where no code row exists stands in as the review (fetchOverlay and the sync read it so), so a replace
+     across notes would confirm picks as a side effect. */
+  var LIST_ENGINE = null, listLoading = false, listFailed = false;
+  var NIGHTLY_COHORT = "csr-confirm-authority@bot";
+  var CONFIRM_WORDS = { person: "Confirmed by a person", nightly: "Confirmed by the nightly procedure",
+    cohort: "Confirmed by a session cohort", open: "Open" };
+  var SOURCE_WORDS = { ccn: "CCN", "c-id": "C-ID", csr: "Minted here" };
+  function listState() { return state.ls || (state.ls = {}); }
+  function confirmedHow(e) {
+    if (!isConfirmed(e)) return "open";
+    if (!isCohort(e.reviewed_by)) return "person";
+    return e.reviewed_by === NIGHTLY_COHORT ? "nightly" : "cohort";
+  }
+  /* One row per MQ discipline, built from the same merge, check and index the table reads; a save clears it
+     (invalidateSubjIndex). A collision is the check's (two MQ disciplines on one code); a code shared by design
+     (an alias family, a ruled fan-in, an umbrella code) rides in the drawer, never the column. */
+  function listRowsAll() {
+    if (state._listRows) return state._listRows;
+    var check = runSubjCheck(), coll = {}, shared = {}, drift = {};
+    function add(map, rec) {
+      rec.owners.forEach(function (o) {
+        (map[o.d] = map[o.d] || []).push({ code: rec.code, why: o.why, others: rec.owners.filter(function (x) { return x.d !== o.d; }) });
+      });
+    }
+    check.collisions.forEach(function (c) { add(coll, c); });
+    check.aliasShared.forEach(function (c) { add(shared, c); });
+    check.drift.forEach(function (x) { drift[x.d] = x; });
+    state._listRows = mergedEntries().map(function (e) {
+      var lv = variantsFor(e), fromLocal = !!(e.local_subject_variants && Object.keys(e.local_subject_variants).length);
+      var locals = Object.keys(lv).map(function (k) { return [k, lv[k]]; })
+        .sort(function (a, b) { return b[1] - a[1] || (a[0] < b[0] ? -1 : a[0] > b[0] ? 1 : 0); });
+      return { ut: e.discipline, e: e, how: confirmedHow(e), coll: coll[e.discipline] || [], shared: shared[e.discipline] || [],
+        drift: drift[e.discipline] || null, locals: locals, more: fromLocal ? (e.local_subject_variants_truncated || 0) : 0 };
+    });
+    return state._listRows;
+  }
+  function collisionWords(r) {
+    return r.coll.map(function (c) { return c.code + " with " + c.others.map(function (o) { return o.d; }).join(", "); }).join("; ");
+  }
+  function localWords(r) {
+    return r.locals.map(function (x) { return x[0] + " (" + fmtN(x[1]) + ")"; }).join(", ") + (r.more ? ", and " + fmtN(r.more) + " more" : "");
+  }
+  function authorityWords(r) {
+    var e = r.e, src = SOURCE_WORDS[e.canonical_source] || "";
+    if (src && e.authority_flag === "proposed") src += " (proposed)";
+    var chips = authorityChips(e).map(function (c) { return c.system + " says " + c.code; });
+    return [src].concat(chips).filter(Boolean).join("; ");
+  }
+  function listCols() {
+    return [
+      { h: "MQ Discipline", w: 17, v: function (r) { return r.ut; } },
+      { h: "Common SUBJ", w: 7, edit: "subj", v: function (r) { return r.e.canonical_subj4 || ""; } },
+      { h: "Status", w: 11, v: function (r) { return CONFIRM_WORDS[r.how]; } },
+      { h: "Collision", w: 11, v: collisionWords },
+      { h: "Local SUBJs", w: 16, v: localWords },
+      { h: "Local SUBJ count", w: 5, n: true, v: function (r) { return r.locals.length + r.more; } },
+      { h: "Local courses", w: 6, n: true, v: function (r) { return r.e.local_subject_total == null ? null : r.e.local_subject_total; } },
+      { h: "M-IDs", w: 5, n: true, v: function (r) { return r.e.total_mids == null ? null : r.e.total_mids; } },
+      { h: "Authority", w: 7, v: authorityWords },
+      { h: "Notes", w: 8, edit: "notes", v: function (r) { return r.e._notes || ""; } }
+    ];
+  }
+  function listNote(text) { if (LIST_ENGINE) LIST_ENGINE.cellNote(text); }
+  /* After a save: the table repaints (it is one click away and reads the same overlay), then the List, with
+     focus back on the box or word that had it, so Edit every row keeps its place. */
+  function listAfterSave(text) {
+    render();
+    if (!LIST_ENGINE) return;
+    LIST_ENGINE.state().cellNote = text;
+    var a = document.activeElement, label = a && a.getAttribute ? a.getAttribute("aria-label") : null;
+    LIST_ENGINE.redraw();
+    if (label) {
+      var n = Array.prototype.filter.call(document.querySelectorAll("#cs-list [aria-label]"), function (x) { return x.getAttribute("aria-label") === label; })[0];
+      if (n) n.focus();
+    }
+  }
+  function signinWords() { return "Sign in as a reviewer to save; the sign-in sits on the Reference view."; }
+  function failWords(r) { return r && r.status ? "status " + r.status : "no answer"; }
+  /* A Common SUBJ through the table's path. Resolves to the words for the note line; `ok` says whether it saved.
+     A List save never writes an empty code: the overlay would keep the seed's and only the reviewer would move. */
+  function listSaveCode(r, value, opts) {
+    var e = r.e, v = String(value == null ? "" : value).replace(/\s+/g, "").toUpperCase(), was = (e.canonical_subj4 || "").toUpperCase();
+    opts = opts || {};
+    if (v === was && !opts.confirm) return Promise.resolve({ ok: false, same: true, words: "Nothing changed." });
+    if (!v) return Promise.resolve({ ok: false, words: "A Common SUBJ cannot be empty; " + (was || "the pick") + " stays on " + r.ut + "." });
+    if (!state.sess) return Promise.resolve({ ok: false, words: signinWords() });
+    var stop = canonCheck(e, v);
+    if (stop === "format") return Promise.resolve({ ok: false, words: "A Common SUBJ is four letters, A to Z, and " + v + " is not; " + (was || "the pick") + " stays on " + r.ut + "." });
+    if (stop === "declined") return Promise.resolve({ ok: false, words: v + " stays off " + r.ut + "; nothing changed." });
+    return writeCanon(e, v).then(function (res) {
+      if (!res.ok) return { ok: false, words: "The Common SUBJ of " + r.ut + " did not save (" + failWords(res) + "); it is back as it was." };
+      return { ok: true, words: opts.confirm && v === was ? "Confirmed " + v + " for " + r.ut + "." : "Saved " + r.ut + ": " + v + "." };
+    }, function () { return { ok: false, words: "The Common SUBJ of " + r.ut + " did not save (no answer); it is back as it was." }; });
+  }
+  function listSaveNote(r, text) {
+    var e = r.e;
+    if (text === (e._notes || "")) return Promise.resolve({ ok: false, same: true, words: "Nothing changed." });
+    if (!state.sess) return Promise.resolve({ ok: false, words: signinWords() });
+    return writeNote(e, text).then(function (res) {
+      if (!res.ok) return { ok: false, words: "The note on " + r.ut + " did not save (" + failWords(res) + "); it is back as it was." };
+      return { ok: true, words: "Saved the note on " + r.ut + "." };
+    }, function () { return { ok: false, words: "The note on " + r.ut + " did not save (no answer); it is back as it was." }; });
+  }
+  function listSaveRow(r) {
+    var L = listState(), d = L.draft || {};
+    var code = String(d.subj == null ? "" : d.subj).replace(/\s+/g, "").toUpperCase(), note = String(d.notes == null ? "" : d.notes);
+    var codeChanged = code !== (r.e.canonical_subj4 || "").toUpperCase(), noteChanged = note !== (r.e._notes || "");
+    if (!codeChanged && !noteChanged) { L.edit = null; L.draft = null; L.note = "Nothing changed."; listRepaint(); return Promise.resolve(); }
+    L.busy = true; listRepaint();
+    var said = [];
+    var p = codeChanged ? listSaveCode(r, code) : Promise.resolve({ ok: true });
+    return p.then(function (a) {
+      if (codeChanged) said.push(a.words);
+      if (!a.ok || !noteChanged) return a;
+      return listSaveNote(r, note).then(function (b) { said.push(b.words); return b; });
+    }).then(function (last) {
+      L.busy = false; L.note = said.join(" ");
+      if (last.ok) { L.edit = null; L.draft = null; }
+      render(); listRepaint();
+    });
+  }
+  function listCellSave(r, kind, inp) {
+    var before = inp.getAttribute("data-was") || "";
+    var p = kind === "subj" ? listSaveCode(r, inp.value) : listSaveNote(r, inp.value);
+    if (kind === "subj") inp.value = inp.value.replace(/\s+/g, "").toUpperCase();
+    inp.setAttribute("aria-busy", "true");
+    return p.then(function (res) {
+      inp.removeAttribute("aria-busy");
+      if (res.same) { inp.value = before; return; }
+      if (!res.ok) { inp.value = before; listNote(res.words); return; }
+      listAfterSave(res.words);
+    });
+  }
+  function listDrawer(r, name, h) {
+    var e = r.e, d = r.ut, ov = state.overlay[d] || {};
+    if (name === "MQ Discipline") {
+      var mq = state.mq && state.mq[d];
+      h.line(mq ? "MQ handbook (19th edition): " + (mq.mq_list_label || mq.mq_list) + (mq.special_ccr ? "; " + mq.special_ccr : "") + "."
+        : "The MQ handbook's index does not list this name.");
+      var al = aliasesFor(e);
+      if (al && al.length) h.line("Also: " + al.join(", ") + ". Identities minted under " + (al.length > 1 ? "those names" : "that name") + " were folded into " + d + ".");
+      if ((e.umbrella_codes || []).length) h.line("An umbrella: it carries " + e.umbrella_codes.join(", ") + ".");
+      var sp = splitFor(e);
+      if (sp) h.line("Split by language: " + sp.map(function (x) { return x.lang + " " + x.code; }).join(", ") + ".");
+      if ((e.fan_in_with || []).length) h.line("Shares its code by ruling with " + e.fan_in_with.join(", ") + ".");
+      if (e.top_modal_4digit) h.line("Most common TOP: " + (e.top_modal_6digit || e.top_modal_4digit) + (e.top_modal_title ? ", " + e.top_modal_title : "") + ".");
+      h.box.appendChild(h.word("Show it in the Reference view", function () { goTo({ view: "reference", search: d.toLowerCase() }); }));
+    } else if (name === "Common SUBJ" || name === "Status") {
+      h.line(e.canonical_subj4 ? "The Common SUBJ is " + e.canonical_subj4 + "." : "No Common SUBJ picked yet.");
+      if (e.data_modal) h.line("Most used locally: " + e.data_modal + (e.data_modal_share ? ", " + Math.round(e.data_modal_share * 100) + "% of the local courses" : "") + ".");
+      if (r.how === "open") h.line(e.source === "data_modal" ? "The pick is the data's most-used code and waits for a person to confirm it." : "The pick waits for a person.");
+      else h.line(CONFIRM_WORDS[r.how] + (e.reviewed_by ? ", " + e.reviewed_by : "") + (e.reviewed_at ? " " + h.stamp(e.reviewed_at) : "") + ".");
+      var nCid = e.canonical_subj4 ? (state.cidBySubj[e.canonical_subj4] || []).length : 0, nCcn = e.canonical_subj4 ? (state.ccnBySubj[e.canonical_subj4] || []).length : 0;
+      if (nCid || nCcn) h.line("An official subject: " + [nCid ? plural(nCid, "C-ID descriptor", "C-ID descriptors") : "", nCcn ? plural(nCcn, "CCN course", "CCN courses") : ""].filter(Boolean).join(" and ") + " use " + e.canonical_subj4 + ".");
+      if (r.how === "open" && hasCode(e)) h.box.appendChild(h.el("div", { cls: "csl-acts" }, [h.word("Confirm this pick", function () {
+        listNote("Confirming " + e.canonical_subj4 + " for " + d + "…");
+        listSaveCode(r, e.canonical_subj4, { confirm: true }).then(function (res) {
+          if (res.ok) { h.L.open = null; listAfterSave(res.words); } else listNote(res.words);
+        });
+      })]));
+    } else if (name === "Collision") {
+      if (!r.coll.length) h.line("In no collision: no other MQ discipline carries " + (e.canonical_subj4 || "its code") + " as its Common SUBJ.");
+      r.coll.forEach(function (c) {
+        h.line(c.code + " is also claimed by " + c.others.map(function (o) { return o.d + " (" + o.why + ")"; }).join(", ") + ". One code belongs to one MQ discipline, so one of them takes another code at the next fold.");
+      });
+      if (r.shared.length) {
+        h.line("Shared by design (an alias family, a ruled fan-in, or an umbrella code every owner declares):");
+        h.list(r.shared.map(function (c) { return c.code + " with " + c.others.map(function (o) { return o.d; }).join(", "); }));
+      }
+      if (r.drift) h.line(plural(r.drift.nOff, "identity carries", "identities carry") + " a code other than " + r.drift.canonical + ": "
+        + r.drift.off.map(function (x) { return x.code + " " + fmtN(x.n) + (x.ownedBy ? " (the code of " + x.ownedBy + ")" : ""); }).join(", ") + ". They fold at the next re-mint.");
+    } else if (name === "Local SUBJs" || name === "Local SUBJ count") {
+      if (!r.locals.length) h.line("No college course under this MQ discipline names a subject code yet.");
+      else {
+        h.line(plural(r.locals.length + r.more, "local code", "local codes") + " on " + plural(e.local_subject_total || 0, "local course", "local courses") + ", most used first:");
+        h.list(r.locals.map(function (x) { return x[0] + ", " + plural(x[1], "course", "courses"); }));
+        if (r.more) h.line("And " + fmtN(r.more) + " more the reference file does not list.");
+      }
+    } else if (name === "Authority") {
+      h.line(e.canonical_source === "ccn" ? "The Common SUBJ is the CCN code." : e.canonical_source === "c-id" ? "The Common SUBJ is the C-ID code."
+        : e.canonical_source === "csr" ? "This reference minted the Common SUBJ" + (e.authority_flag === "proposed" ? "; no C-ID or CCN code names these courses yet, so it reads proposed." : ".")
+        : "No authority reading recorded.");
+      if (e.ccn_subject_code) h.line("CCN: " + e.ccn_subject_code + ".");
+      if ((e.cid_subject_codes || []).length) h.line("C-ID: " + e.cid_subject_codes.join(", ") + ".");
+      if (e.authority_note) h.line(e.authority_note);
+    } else if (name === "Notes") {
+      var by = ov._notes_by || e._notes_by, at = ov._notes_at || e._notes_at;
+      h.line(e._notes ? e._notes : "No note yet.");
+      if (e._notes && (by || at)) h.line("Written by " + (by || "a reviewer") + (at ? " " + h.stamp(at) : "") + ".");
+    } else {
+      var C = listCols()[h.colIndex(name)];
+      h.line(name + ": " + ((C && C.v(r)) || "none") + ".");
+    }
+  }
+  function listSpec() {
+    return {
+      prefix: "csl-", frPrefix: "csl-fr-",
+      noun: { many: "MQ disciplines", region: "Every MQ discipline, A to Z", keyHeader: "MQ Discipline", file: "common-subjects-list",
+        placeholder: "MQ discipline, Common SUBJ, local code or note", findLabel: "Find in the list" },
+      state: listState, rows: listRowsAll, cols: listCols,
+      key: function (r) { return r.ut; }, title: function (r) { return r.ut; }, render: listRepaint,
+      head: function (wrap, api) {
+        wrap.appendChild(api.el("p", { cls: "cs-quiet", text: "Every MQ discipline with courses, A to Z: its Common SUBJ, who confirmed it, "
+          + "the Local SUBJs colleges use for its courses and how many, its local courses and M-IDs, and any collision. Press a cell for its details." }));
+        if (!state.sess) wrap.appendChild(api.el("p", { cls: "cs-lede" }, ["You are not signed in. The list reads; a save asks for a sign-in, which sits on the Reference view. ",
+          api.word("Go to the Reference view", function () { applyView("reference"); })]));
+        return true;
+      },
+      filters: [["", "All"], ["open", "Open"], ["person", "Confirmed by a person"], ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"]],
+      filterPass: function (r, L) {
+        if (L.f === "open") return r.how === "open";
+        if (L.f === "person") return r.how === "person";
+        if (L.f === "procedure") return r.how === "nightly" || r.how === "cohort";
+        if (L.f === "collision") return r.coll.length > 0;
+        return true;
+      },
+      hay: function (r) {
+        var e = r.e;
+        return [r.ut, e.canonical_subj4, CONFIRM_WORDS[r.how], aliasSearchText(e), splitSearchText(e), authoritySearchText(e),
+          r.locals.map(function (x) { return x[0]; }).join(" "), e._notes || ""].join(" ");
+      },
+      drawer: listDrawer,
+      edit: {
+        fields: [{ id: "csl-subj", label: "Common SUBJ, four letters", key: "subj", ph: "ABCD" }, { id: "csl-notes", label: "Note", key: "notes" }],
+        draft: function (r) { return { subj: r.e.canonical_subj4 || "", notes: r.e._notes || "" }; },
+        save: listSaveRow
+      },
+      cellSave: listCellSave
+    };
+  }
+  function listApi() {
+    if (!LIST_ENGINE && window.CPL_COMMONS_LIST) LIST_ENGINE = window.CPL_COMMONS_LIST.create(listSpec());
+    return LIST_ENGINE;
+  }
+  /* Draw the List into its section; the engine loads the first time the view opens. */
+  function listRepaint() {
+    var node = document.getElementById("cs-list");
+    if (!node || state.view !== "list" || !state.seed) return;
+    node.innerHTML = "";
+    if (listApi()) { LIST_ENGINE.render(node); return; }
+    if (listFailed) {
+      node.appendChild(el("p", { class: "cs-caution", role: "alert" }, ["The List (commons_list.js) could not be loaded. The Reference view reads as usual; reload the tab to try again."]));
+      return;
+    }
+    node.appendChild(el("p", { class: "cs-quiet" }, ["Loading the List…"]));
+    var T = window.CPL_TABS;
+    if (listLoading || !T || typeof T.loadScript !== "function") return;
+    listLoading = true;
+    T.loadScript("commons_list.js", "CPL_COMMONS_LIST", function () {
+      listLoading = false;
+      if (!window.CPL_COMMONS_LIST) listFailed = true;
+      listRepaint();
+    });
+  }
+
+  /* ── the three views and the route in the address ──
+     #canonical-subj4/progress, #canonical-subj4/reference and #canonical-subj4/list name a view;
+     #canonical-subj4/<filter> opens the Reference view with that filter (the Commons row's counts link here);
+     #canonical-subj4/check opens the SUBJ check. The last view chosen is remembered; the List's filters,
+     sort and selection last the visit (tabs never remember a filter, Sam 2026-10-21). */
+  var VIEW_MOUNT = { progress: "cs-progress", reference: "cs-table-wrap", list: "cs-list" };
   function readView() {
-    try { var v = localStorage.getItem(VIEW_KEY); return v === "reference" || v === "progress" ? v : null; } catch (e) { return null; }
+    try { var v = localStorage.getItem(VIEW_KEY); return VIEW_MOUNT[v] ? v : null; } catch (e) { return null; }
   }
   function keepView(v) { try { localStorage.setItem(VIEW_KEY, v); } catch (e) { /* private window */ } }
   function applyView(v) {
-    state.view = v === "reference" ? "reference" : "progress";
+    state.view = VIEW_MOUNT[v] ? v : "progress";
     keepView(state.view);
     var onRef = state.view === "reference";
     ["cs-toolbar", "cs-summary", "cs-table-wrap"].forEach(function (id) {
@@ -2500,14 +2794,17 @@
       if (n) n.hidden = !onRef;
     });
     var pg = document.getElementById("cs-progress");
-    if (pg) pg.hidden = onRef;
+    if (pg) pg.hidden = state.view !== "progress";
+    var ls = document.getElementById("cs-list");
+    if (ls) ls.hidden = state.view !== "list";
     var sw = document.getElementById("cs-views");
     if (sw) Array.prototype.forEach.call(sw.querySelectorAll("button[role=tab]"), function (b) {
       var sel = b.getAttribute("data-view") === state.view;
       b.setAttribute("aria-selected", sel ? "true" : "false");
       b.setAttribute("tabindex", sel ? "0" : "-1");
     });
-    if (!onRef) renderProgress();
+    if (state.view === "progress") renderProgress();
+    else if (state.view === "list") listRepaint();
   }
   function ensureViewMounts() {
     var tb = document.getElementById("cs-toolbar");
@@ -2515,7 +2812,7 @@
     ensureProgressCss();
     var sw = el("div", { class: "cs-views", id: "cs-views", role: "tablist", "aria-label": "Common Subjects Reference views" });
     VIEWS.forEach(function (v, i) {
-      var b = el("button", { role: "tab", id: "cs-tab-" + v.id, "data-view": v.id, "aria-controls": v.id === "progress" ? "cs-progress" : "cs-table-wrap",
+      var b = el("button", { role: "tab", id: "cs-tab-" + v.id, "data-view": v.id, "aria-controls": VIEW_MOUNT[v.id],
         "aria-selected": "false", tabindex: "-1", type: "button" }, [v.label]);
       b.addEventListener("click", function () { applyView(v.id); b.focus(); });
       b.addEventListener("keydown", function (e) {
@@ -2532,13 +2829,15 @@
     tb.parentNode.insertBefore(sw, tb);
     var pg = el("section", { class: "cs-progress", id: "cs-progress", "aria-label": "Common Subjects Reference, Progress", hidden: "" });
     tb.parentNode.insertBefore(pg, tb);
+    var ls = el("section", { class: "cs-list", id: "cs-list", "aria-label": "Common Subjects Reference, List", hidden: "" });
+    tb.parentNode.insertBefore(ls, tb);
   }
   function routeFromHash() {
     var h = (location.hash || "").replace(/^#/, "");
     var parts = h.split("/");
     if (parts[0] !== QS_TAB) return false;
     var r = parts[1] || "";
-    if (r === "progress" || r === "reference") { applyView(r); return true; }
+    if (VIEW_MOUNT[r]) { applyView(r); return true; }
     if (FILTER_ROUTES[r]) { goTo({ view: "reference", filter: r }); return true; }
     if (r === "check") { goTo(TO.check); return true; }
     return false;
@@ -2557,6 +2856,10 @@
       "#tab-canonical-subj4 .cs-views button:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; }",
       "#tab-canonical-subj4 .cs-progress { display:block; margin-bottom:18px; min-width:0; }",
       "#tab-canonical-subj4 .cs-progress[hidden] { display:none; }",
+      "#tab-canonical-subj4 .cs-list { display:block; margin-bottom:18px; min-width:0; max-width:100%; }",
+      "#tab-canonical-subj4 .cs-list[hidden] { display:none; }",
+      "#tab-canonical-subj4 .cs-list > p { margin:0 0 6px; font-size:.875rem; }",
+      "#tab-canonical-subj4 .csl-acts { display:flex; flex-wrap:wrap; gap:6px 16px; }",
       "#tab-canonical-subj4 .cs-toolbar[hidden], #tab-canonical-subj4 .cs-summary[hidden], #tab-canonical-subj4 .cs-table-wrap[hidden] { display:none; }",
       "#tab-canonical-subj4 .cs-word { font:inherit; font-size:.9rem; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; display:inline-block; }",
       "#tab-canonical-subj4 .cs-word:hover { text-decoration-thickness:2px; }",
@@ -2647,6 +2950,15 @@
       if (!routeFromHash()) applyView(window.CPL_QS_HINTED_CSR ? "reference" : (readView() || "progress"));
       window.addEventListener("hashchange", onHashChange);
     });
+    // A new visit drops the List's filters, sort and selection (tabs never remember a filter, Sam, 2026-10-21).
+    var awayFromTab = false;
+    window.addEventListener("cpl-tab-activated", function (e) {
+      var t = e && e.detail && e.detail.tab;
+      if (t !== QS_TAB) { awayFromTab = true; return; }
+      if (!awayFromTab) return;
+      awayFromTab = false; state.ls = null;
+      if (state.view === "list") listRepaint();
+    });
     // Subscribe to runtime hints (quickstart fires after the tab is already
     // mounted — most common path). Rebuild the toolbar so the hinted filter
     // is visible in the dropdown chrome too.
@@ -2663,5 +2975,6 @@
   }
   /* Exposed for the tests and the a11y sweep's seed: the definitions, the context and the view. */
   window.CPL_CANONICAL_SUBJ4 = { MILESTONES: MILESTONES, PARTS: PARTS, HEADLINE: HEADLINE, TO: TO, progressContext: progressContext,
-    applyView: applyView, routeFromHash: routeFromHash, renderProgress: renderProgress, _state: state };
+    applyView: applyView, routeFromHash: routeFromHash, renderProgress: renderProgress, _state: state,
+    _listRows: listRowsAll, _listCols: listCols };
 })();
