@@ -95,6 +95,7 @@ PAGE = """<meta charset="utf-8">
 <script>{credref}</script>
 <script>{statewide}</script>
 <script>{shim}</script>
+<script>{commons_list}</script>
 <script>{exhibits}</script>
 <script>window.CPL_EXHIBITS && window.CPL_EXHIBITS.boot && window.CPL_EXHIBITS.boot();</script>
 """
@@ -117,6 +118,7 @@ def main(out):
         credref=script_safe(credref),
         statewide=script_safe((ROOT / "fact-sheet" / "statewide_recs.js").read_text(encoding="utf-8")),
         shim=SHIM,
+        commons_list=script_safe((ROOT / "commons_list.js").read_text(encoding="utf-8")),
         exhibits=script_safe((ROOT / "exhibits.js").read_text(encoding="utf-8")),
     )
     pathlib.Path(out).write_text(page, encoding="utf-8")
