@@ -1730,7 +1730,7 @@
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
-      busy: false, collisions: null, sort: { col: 0, dir: 1 }, cf: {} });
+      busy: false, collisions: null, sort: { col: 0, dir: 1 }, cf: {}, wrap: false });
   }
   /* The columns, each with what it shows (Sam, 2026-11-01: "sometimes I miss good ol' Excel, where I can quickly
      filter any column, sort any way ... use find and replace to fix things on the fly--that freedom is what you're
@@ -1878,7 +1878,10 @@
       render();
     });
   }
-  function listCell(text, cls) { return el("td", { cls: cls || null, text: text == null ? "" : String(text) }); }
+  function listCell(text, cls) {
+    var t = text == null ? "" : String(text);
+    return el("td", { cls: cls || null, text: t, title: t || null });
+  }
   function listEditRow(r) {
     var L = listState(), d = L.draft;
     function box(id, label, key, ph) {
@@ -1972,7 +1975,7 @@
     var body = el("tbody");
     shown.forEach(function (r) {
       var cur = credCurrent(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
-      var titleTd = el("td", { cls: "exh-l-title" }, [listTitle(r)]);
+      var titleTd = el("td", { cls: "exh-l-title", title: listTitle(r) }, [listTitle(r)]);
       if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
       if (col) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
       if (L.changed.indexOf(r.ut) !== -1) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
@@ -1989,10 +1992,14 @@
       if (L.edit === r.ut && L.draft) body.appendChild(listEditRow(r));
     });
     var region = el("div", { cls: "exh-l-wrap", role: "region", "aria-label": "Every credential, A to Z", tabindex: "0" }, [
-      el("table", { cls: "exh-l-table" }, [cols, thead, body])]);
+      el("table", { cls: "exh-l-table" + (L.wrap ? "" : " exh-l-nowrap") }, [cols, thead, body])]);
     var dl = word("Download these " + fmt(rows.length) + " as a spreadsheet", function () { listDownload(rows); });
+    // Wrap text (Sam, 2026-11-01: "a toggle to wrap or unwrap all fields and set it to default unwrapped ... that tight
+    // scrollable, scannable view I need"). Unwrapped, each cell keeps one line and shows the rest on hover.
+    var wrapBtn = word("Wrap text", function () { L.wrap = !L.wrap; redrawList(); var b = document.getElementById("exh-l-wrap"); if (b) b.focus(); },
+      { id: "exh-l-wrap", "aria-pressed": L.wrap ? "true" : "false" });
     var out = el("div", null, [el("div", { cls: "exh-l-count" }, [el("span", { cls: "exh-muted exh-small", text: fmt(rows.length) + " credentials" +
-      (rows.length > shown.length ? ", the first " + fmt(shown.length) + " shown" : "") }), dl]), region]);
+      (rows.length > shown.length ? ", the first " + fmt(shown.length) + " shown" : "") }), wrapBtn, dl]), region]);
     if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
       function () { L.limit += LIST_LIMIT; redrawList(); }));
     return out;
@@ -2033,6 +2040,10 @@
       ".exh-l-table th{position:sticky;top:0;background:var(--surface-opaque);color:var(--text-strong);text-align:left;font-weight:600;padding:3px 6px;border-bottom:1px solid var(--border)}",
       ".exh-l-table td{padding:2px 6px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-body);overflow-wrap:anywhere}",
       ".exh-l-title{color:var(--text-strong)}",
+      ".exh-l-nowrap td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
+      ".exh-l-nowrap .exh-l-sub{display:inline;margin-left:6px}",
+      ".exh-l-nowrap .exh-l-editrow td,.exh-l-nowrap .exh-l-cf td{white-space:normal;overflow:visible}",
+      ".exh-l-count .exh-w[aria-pressed='true']{font-weight:600}",
       ".exh-l-sub{display:block;color:var(--text-muted);font-size:.6875rem}",
       ".exh-l-n{text-align:right;font-variant-numeric:tabular-nums}",
       ".exh-l-table .exh-w{font-size:.75rem;min-height:24px;min-width:24px;padding:0 2px}",

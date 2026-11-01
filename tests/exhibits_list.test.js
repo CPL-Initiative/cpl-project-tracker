@@ -135,6 +135,13 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   check("(9) a comma or quote in a value is quoted", t.M._listCsv([{ ut: 'A, "B"', cpl_types: [], articulations: [] }]).indexOf('"A, ""B"""') > -1);
   check("(9) the Download word names the count", !!Array.from(t.d.querySelectorAll("button")).find((b) => /^Download these 1 as a spreadsheet$/.test(txt(b))));
 
+  const wb = t.d.getElementById("exh-l-wrap");
+  check("(10) ⭐ the list opens unwrapped: one line a cell, the full text on hover",
+    t.d.querySelector(".exh-l-table").classList.contains("exh-l-nowrap") && wb.getAttribute("aria-pressed") === "false"
+    && rows(t.d)[0].children[3].getAttribute("title") === txt(rows(t.d)[0].children[3]));
+  wb.click(); await settle();
+  check("(10) Wrap text wraps every field and says it is on",
+    !t.d.querySelector(".exh-l-table").classList.contains("exh-l-nowrap") && t.d.getElementById("exh-l-wrap").getAttribute("aria-pressed") === "true");
   let failed = 0;
   for (const [name, ok, why] of results) { console.log((ok ? "PASS " : "FAIL ") + name + (ok || !why ? "" : "\n     " + why)); if (!ok) failed++; }
   console.log("\n" + (results.length - failed) + "/" + results.length + " checks passed");

@@ -41,6 +41,8 @@ th button{background:none;border:0;padding:0;font:inherit;font-weight:600;color:
 tr.cf td{position:sticky;top:30px;background:var(--surface);z-index:1;padding:2px 4px}
 tr.cf input{width:100%;font-size:11px}
 td{padding:2px 6px;border-bottom:1px solid var(--rule);vertical-align:top;overflow-wrap:anywhere;color:var(--ink)}
+table.nowrap td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+table.nowrap tr.ed td{white-space:normal}
 td.t{color:var(--ink-strong)} td.n{text-align:right;font-variant-numeric:tabular-nums}
 .sub{display:block;color:var(--ink-muted);font-size:11px}
 .fl{color:var(--flag)}
@@ -70,7 +72,7 @@ del{color:var(--flag)} ins{color:var(--link);text-decoration:none;font-weight:60
     <div class="row"><button class="w" id="re" type="button">Re-analyze my changes</button><span class="muted" id="reline"></span></div>
   </div>
   <p class="note" id="note" role="status" hidden></p>
-  <div class="row"><span class="muted" id="count"></span><button class="w" id="dl" type="button"></button></div>
+  <div class="row"><span class="muted" id="count"></span><button class="w" id="wrap" type="button" aria-pressed="false">Wrap text</button><button class="w" id="dl" type="button"></button></div>
   <div class="sheet" role="region" aria-label="Every credential, A to Z" tabindex="0"><table id="tbl"></table></div>
 
   <section class="next" aria-labelledby="fr-h">
@@ -90,7 +92,7 @@ const ROWS = [{"t":"10-Key Data Entry","st":"Cohort","q":"suspect_course_as_exhi
 const COLS = [
   ["Title","t",23],["Status","st",9],["CPL types","ty",10],["Issuer","i",12],["Training sites","ts",10],
   ["Discipline (M-IDs)","d",11],["Common SUBJ","sj",6],["CIP family (from TOP)","cip",9],["Colleges","n",5,1],["MAP titles","m",5,1]];
-const S = { q:"", f:"", sort:[0,1], cf:{}, edit:-1, changed:new Set(), note:"" };
+const S = { wrap:false, q:"", f:"", sort:[0,1], cf:{}, edit:-1, changed:new Set(), note:"" };
 const FIL = [["","All"],["un","Unreviewed"],["low","Low-confidence title"],["fl","Flagged"],["bare","No articulation"],["ch","Changed this visit"]];
 const $ = (id) => document.getElementById(id);
 const status = (r) => r.st + (r.q ? "; " + r.q.replace(/_/g, " ") : "") + (r.c != null && r.c < 0.6 ? "; title " + Math.round(r.c * 100) + "%" : "");
@@ -129,13 +131,15 @@ function draw(keepFocus) {
     + '<th scope="col"><span class="muted">Edit</span></th></tr><tr class="cf">'
     + COLS.map((c, i) => `<td><input type="search" id="cf${i}" data-cf="${i}" placeholder="Filter" aria-label="Filter ${c[0]}" value="${esc(S.cf[i] || "")}"></td>`).join("") + "<td></td></tr></thead>";
   const body = R.map((r) => {
-    let t = `<td class="t">${esc(r.t)}${S.changed.has(r._i) ? '<span class="sub">changed this visit</span>' : ""}</td>`;
-    const tds = COLS.slice(1).map((c) => c[3] ? `<td class="n">${r[c[1]]}</td>` : `<td${c[1] === "st" && (r.q || (r.c != null && r.c < 0.6)) ? ' class="fl"' : ""}>${esc(val(r, c[1]))}</td>`).join("");
+    let t = `<td class="t" title="${esc(r.t)}">${esc(r.t)}${S.changed.has(r._i) ? '<span class="sub">changed this visit</span>' : ""}</td>`;
+    const tds = COLS.slice(1).map((c) => c[3] ? `<td class="n">${r[c[1]]}</td>` : `<td title="${esc(val(r, c[1]))}"${c[1] === "st" && (r.q || (r.c != null && r.c < 0.6)) ? ' class="fl"' : ""}>${esc(val(r, c[1]))}</td>`).join("");
     let tr = `<tr>${t}${tds}<td><button class="w" type="button" data-e="${r._i}" aria-label="Edit ${esc(r.t)}">Edit</button></td></tr>`;
     if (S.edit === r._i) tr += `<tr class="ed"><td colspan="11"><div class="edit"><label>Title<input id="et" value="${esc(r.t)}"></label><label>Issuer<input id="ei" value="${esc(r.i)}"></label><label>Training sites, separated by ;<input id="es" value="${esc(r.ts)}"></label><div class="row"><button class="w" type="button" id="esave">Save</button><button class="w" type="button" id="ecan">Cancel</button></div></div></td></tr>`;
     return tr;
   }).join("");
   $("tbl").innerHTML = head + "<tbody>" + body + "</tbody>";
+  $("tbl").className = S.wrap ? "" : "nowrap";
+  $("wrap").setAttribute("aria-pressed", String(S.wrap));
   const n = $("note"); n.hidden = !S.note; n.textContent = S.note;
   if (keepFocus) { const el = $(keepFocus); if (el) { el.focus(); try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) {} } }
 }
@@ -145,6 +149,7 @@ document.addEventListener("click", (e) => {
   else if (b.dataset.s != null) { const i = +b.dataset.s; S.sort = [i, S.sort[0] === i ? -S.sort[1] : 1]; draw(); }
   else if (b.dataset.e != null) { S.edit = +b.dataset.e; S.note = ""; draw("et"); }
   else if (b.id === "ecan") { S.edit = -1; draw(); }
+  else if (b.id === "wrap") { S.wrap = !S.wrap; draw(); }
   else if (b.id === "esave") {
     const r = ROWS[S.edit], t = $("et").value.trim(), i = $("ei").value.trim(), s = $("es").value.trim(), was = r.t;
     const parts = [];
