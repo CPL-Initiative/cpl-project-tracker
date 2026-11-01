@@ -1,7 +1,7 @@
 ---
 title: "CPL Implementation Funding tab — archived lessons, part 4 (2026-09-22 onward)"
 date: 2026-10-24
-updated: 2026-10-29
+updated: 2026-11-01
 tags: [lessons, archive, funding, implementation-funding, dashboard-tab]
 related:
   - "[[cpl_funding_lessons]]"
@@ -511,3 +511,98 @@ Sam asked for "a script for the scenario 2 video for an ElevenLabs narrator... v
 The lane passed its 20 KB budget; this closed ruling moved here verbatim.
 
 ✅ **Kept (Sam, sheet 11 cards 2-4, 2026-09-30):** the Timeline at the prose size; the priority cards keep their boxes; the sign-in form shows to every reader of a college's *Reported expenditures*.
+
+## 2026-10-14 — the funding session beside S392: noncredit's portion, the three boxes, Bold and Italic
+
+Sam's five asks and his note to wire them into Refresh everything (verbatim: `cpl_memory`
+`sam-funding-noncredit-portion-and-boxes-2026-10-14`) shipped in #2132, live 22:36Z.
+
+- **Noncredit's portion is a solved weight.** `pool.nc_portion_pct`; blank keeps the teaching mix
+  (7.18%). Set, one weight on noncredit FTES enters the size and the split alike, found by bisection,
+  inside the one solve and its bounds. 15% needs 2.72; 20% needs 4.23. Method and the measured table:
+  [the note](kb-notes/methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight.md).
+- **The explainer's guard wants an id on every typed copy of a figure.** `funding_model_page`'s
+  unpainted-figure check reads `id=` only, so the noncredit total's second copy took its own alias id
+  (`f-nc2` through `FIG_ID_ALIAS`), the `l-floor`/`l-cap` pattern. A `data-fig` copy is painted, and the
+  guard cannot see it. CI shard 3 caught this on the first run.
+- **A test that pins a layout pins a ruling.** The statewide-box check counted Sam's two boxes of
+  2026-10-01; his 2026-10-14 ask made the row three. The count moved; its purpose (one statewide figure,
+  no staff box) stayed.
+- **Refresh everything carries any setting the config holds**, because `render()` clears the caches
+  before the subscribers repaint. Test 6a-6g proves it across two windows on one channel.
+- **A still-running local file is not a pass.** One local process reached about 62 of 430 test files in
+  30 minutes; `xargs -P 6` over the 99 funding, explainer and briefing files finished 98, and the one it
+  had not finished was the file CI failed. CI's four shards decide.
+- **Sam's calls:** the control he wants is a percentage; *"Keep in mind to wire in the Refresh
+  Everything procedure"*; he sets 15% on a Scenario 3 copy himself through the tab (*"It's OK if not; I
+  can make the change"*), which keeps the curator edit where the lane says it belongs. Bold in the editor:
+  the asterisks show in the edit box and render as bold on the page; a second press of Bold removes them.
+- **Parallel sessions:** S392 held the checkpoint, and a `send_message` put #2132 into its handoff 393.
+  A third session (the queue, from 22:37Z) then held the next handoff, so this checkpoint wrote only the
+  funding files and the shared generated ones.
+
+## 2026-10-15 — SkyHarbor (side session beside S395): the My College view
+
+Sam's asks for "the My College view of Implementation Funding" (verbatim: `cpl_memory`
+`sam-my-college-funding-view-asks-2026-10-15`), mocked up first
+(https://claude.ai/artifact/FvKVtQkj8z1GFpMtPUj4rm), nine calls answered as proposed.
+
+- **"The My College view" named two pages.** His quoted sentence lived only on the explainer, yet the intro he
+  called "a repeat from the explainer" was the tab's. One question settled it: "Both pages". Ask when an ask's
+  evidence splits between surfaces; a mockup of the wrong page costs more than the question.
+- **The explainer's Timeline had no dates.** The tab's `titles.timing` ("Timeline") retitles the explainer's
+  disbursement step through the shared `timing` id, so a section named Timeline held only the two timing
+  settings while the dates sat under the outcomes (the 2026-09-15 placement). Read the page under the live
+  config before believing its markup's headings.
+- **Every redraw re-reads the live folds (the 2026-09-29 fix), so a per-view default needs a view-switch
+  exception.** The Internal view's open Introduction carried into the Public view until `render()` skipped
+  the re-read for `about` across a switch (`_lastRenderPublic`).
+- **A grid with `auto-fit` cannot collapse a track a spanning label occupies.** The priorities filled two of
+  three columns; a wrapping flex row fixed it.
+- **A sentence moved out of code keeps its code copy as the fallback**, and a source pin on its line breaks
+  breaks when the fallback re-wraps: two `college_briefing` checks matched `"...the " + "following..."` and
+  failed until they matched the sentence. Pin the words, not where a string literal splits.
+- **Sam missed the calls at the foot of a long mockup** and answered in chat, then pressed Complete, which
+  arrived as an artifact comment. A mockup's calls want a line at its top saying they are there.
+
+## 2026-10-15 — SkyMeridian (side session beside the queue): one public page, calls back, build handed on
+
+Sam's ask after #2152 (verbatim: `cpl_memory` `sam-one-public-funding-view-ask-2026-10-15`), mocked up with eight
+calls (https://claude.ai/artifact/XtrzM3LoNcQfdZRGuFKwWM) and answered the same evening, all his own call
+(`sam-one-public-page-calls-2026-10-15`). The build brief: `CPLBrain/decision-sheets/one-public-funding-page/BUILD.md`.
+
+- **The consolidation was half built.** The explainer already kept its own block order (`pubSecOrder`, never set) and
+  its fourteen `x_*` passages were its alone; it borrowed only the FAQ, the table introduction and Timeline's title (the
+  shared `timing` id). The missing piece is an editing surface on the page, not a second page.
+- **The black box is a redraw, measured.** Once a college is opened, My College's `onModelChange` subscriber redraws
+  the whole tab on every model update, replacing `#cb-college` seven times in eight seconds; the funding pages' Step 1
+  list five times while loading. A MutationObserver counting insertions found it in one run; a reading of the code had
+  pointed at the funding page, and Sam's answer put the box on My College.
+- **Render a mockup with the anon feeds, not without them.** Answering `map_coordinator_summary`, the contacts and
+  the ledger from an anon-role read let every condition show Met or Not yet as a college sees it.
+- **Sam overruled two proposals:** the Introduction joins the page beside the Overview (call 3), and the black-box
+  fix ships with the rest (call 7).
+- **Screenshots spend context fast.** About a dozen full-page images took this session from 15% to 87% of its window
+  before the build began; crop to the region a question needs.
+
+## Moved from the lane (SkyHarbor, 2026-10-15)
+
+The lane sits at its 20 KB budget; these moved here verbatim (the fourth, `target_rate`, by SkyMeridian).
+
+✅ **CSU LA stays out by name (Sam, sheet 33 card 2, 2026-10-04):** *"funding is only provided to CCC colleges and campuses. We do have project funding that supports our work with our partners, but no need to focus on that in our materials--also no need to hide it"*. `_build_funding_performance.py` reads `kb/non_ccc_institutions.json` and skips Cal State LA at the row, beside the partners; `tests/funding_origination_test.py` §4 guards it.
+
+⚠️ **EVERY COMBINATOR IN `colHideStyleHtml()` IS A CHILD COMBINATOR** — a descendant one reached into the nested drill-in and hid its third cell for every reader; only `Element.matches()` can see it (`cpl_funding_col_hide_scope`).
+
+**HELD (Sam, 2026-09-12: "Hold, no action"):** the **LWDA partnership** stays undesignated on the (C) card — no register project names it and he chose to leave it; do **not** designate it on inference.
+
+⚠️ **`target_rate` IS DEAD ON BOTH ENDS — LEAVE IT THAT WAY.** `prioTarget()` reads it only on the students path; no control
+renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` reproduces every target. **Do not rebuild it.**
+
+## 2026-10-15 — SkyLantern (side session beside the queue): the one public page, built
+
+- **A frame taken out of the page reloads.** `render()` rewrites the mount on every remote load, so the Public page
+  view keeps its `<iframe>` in place and rewrites only the chrome above it (`renderPagePreview`).
+- **The model's subscribers hear before the mount is rewritten** (`notifyModel()` leads `render()`), so the page's
+  editor puts nothing inside `#cplFundingMount`: the table introduction's Edit sits just above the table.
+- **`.btn{display:inline-flex}` beats `[hidden]`**: a hidden masthead word needs its own `display:none`.
+- **A seed read beats a seed write.** `x_about` follows `about` until saved; no shared-config write was needed.

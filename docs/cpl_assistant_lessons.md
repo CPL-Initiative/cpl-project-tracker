@@ -857,3 +857,24 @@ From the Status paragraph's v73 heading, moved to keep the lane under its budget
 
 - **The runner's own summary was lost to the pipe; once fixed, it named `library.test.js`.** Three red shard-3 runs on #2570 had no file named. With `tests/run.js` setting `process.exitCode` (#2572), the same shard printed `1 of 85 test file(s) FAILED: library.test.js`. Sierra's change was never in question; the PR adds a test file, which reshuffles every shard. Lessons: `docs/test_suite_speed_lessons.md`, *S522*.
 - **Sam cleared the memory receipt's `.apply` push in chat** ("Yes, push the .apply for the memory receipt"), as S521's lesson asked. Run 40990743558 landed the four rows (read back, 02:25Z). The runner's receipt commit, pushed by the bot token, starts no CI, so the next session push is what tests that head.
+
+## Moved from the lane (beside S539, 2026-11-01)
+
+From the Sierra retrieval + corpus lane, verbatim, to bring it under its budget.
+
+From *The endpoint itself — model, cost, reliability (added 2026-09-11)*:
+
+**Cost, MEASURED from `function_logs` across the deploy boundary** (not modelled):
+
+| | requests | input tokens | cached | blended $/MTok in |
+|---|---|---:|---:|---:|
+| Haiku 4.5 | 48 | 760,274 | 0.0% | $1.00 |
+| Sonnet 5 | 23 | 554,161 | 18.6% | **$1.72** |
+
+Sonnet 5 is **1.72× Haiku per input token** (2.00× uncached); the cached prefix is **4,476 of a 24,093-token average request (19%)** and the other 81% is RETRIEVAL — whether it repeats enough to cache is unmeasured. Absolute spend is trivial (23 requests = $1.21): **choose on answer quality, price is a tiebreak.**
+
+From *Where applied and transcribed credit comes from (2026-09-30)*, the three PRs behind *All of it is live*:
+
+- **#1777** `map_college_credit_summary` suppresses **each figure on its own students**. It had tested only the college's headcount, so 8 colleges published a transcribed total from under 10 students (3 from one), the public `_pub` copy too, and at 13 colleges `applied_credits − articulated_waiting` recovered a thin in-plan figure. It gains `applied_in_plan` and `transcribed_student_view` (student view), a `withheld` list, and **`map_college_credit_statewide`** (real totals). My College renders a withheld figure as "<10 students" (`numN()`; `num(null)` had been a false zero).
+- **#1779** **`map_college_credit_bucket`** (military / non-military, per college and statewide) and **`map_college_exhibit_credit`** (per college and exhibit: title, MAP's CPL type, units applied and transcribed, recommendations, "<10 each" roll-ups), rebuilt nightly inside the promotion, each raising on its own property check. MAP's `CPLTypeCode` now rides into the title tables (the id rule mistyped 546 of 677 Credit by Exam exhibits).
+- **#1780** Sierra leads with applied on the CPL plan, labels MAP's *Applied Credits* column as the one that CONTAINS the waiting credit (she had counted Chaffey's 1,206 units in both), splits the buckets non-military first, says "<10 students" for a withheld figure, and answers "where does this college's credit come from" by units from the exhibit table.

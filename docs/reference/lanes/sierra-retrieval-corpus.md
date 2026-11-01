@@ -1,7 +1,7 @@
 ---
 title: "Sierra retrieval + corpus — lane state"
 created: 2026-08-28
-updated: 2026-10-30
+updated: 2026-11-01
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -52,14 +52,7 @@ cannot see this class** — one simple question, and it passed straight through 
 hours of blanks on broad questions.
 
 
-**Cost, MEASURED from `function_logs` across the deploy boundary** (not modelled):
-
-| | requests | input tokens | cached | blended $/MTok in |
-|---|---|---:|---:|---:|
-| Haiku 4.5 | 48 | 760,274 | 0.0% | $1.00 |
-| Sonnet 5 | 23 | 554,161 | 18.6% | **$1.72** |
-
-Sonnet 5 is **1.72× Haiku per input token** (2.00× uncached); the cached prefix is **4,476 of a 24,093-token average request (19%)** and the other 81% is RETRIEVAL — whether it repeats enough to cache is unmeasured. Absolute spend is trivial (23 requests = $1.21): **choose on answer quality, price is a tiebreak.**
+**Cost (measured 2026-09-11):** Sonnet 5 runs 1.72× Haiku per input token and the spend is trivial, so choose on answer quality; price is a tiebreak. The table: lessons, *Moved from the lane (beside S539)*.
 
 ⭐ **The cache line names the model that answered** (Sam's ruling, sheet item 3) — from
 `event.message.model`, never the `MODEL` constant. ⚠️ **Nothing on our side can see which
@@ -110,9 +103,7 @@ Sam asked Sierra for the military and non-military split of Chaffey's applied un
 ⭐ **Sam's item 6 ruling (2026-09-30): *"I want Sierra to total for everyone using real numbers but when the totals (at any level) are below 10, to show "<10" on the views. This should happen without a governance gate."*** One published layer for every viewer; no reviewer tier. The condition is the student-detail ADR's decision 5: wherever a real total sits above rows, a withheld remainder spans two or more cells and 10 or more students.
 
 **All of it is live (data applied 2026-09-30, receipts in `kb/receipts/`); Sierra reads it from cpl-chat v74 (#1780, deployed 17:19 UTC after a preview A/B with no regressions):**
-- **#1777** `map_college_credit_summary` suppresses **each figure on its own students**. It had tested only the college's headcount, so 8 colleges published a transcribed total from under 10 students (3 from one), the public `_pub` copy too, and at 13 colleges `applied_credits − articulated_waiting` recovered a thin in-plan figure. It gains `applied_in_plan` and `transcribed_student_view` (student view), a `withheld` list, and **`map_college_credit_statewide`** (real totals). My College renders a withheld figure as "<10 students" (`numN()`; `num(null)` had been a false zero).
-- **#1779** **`map_college_credit_bucket`** (military / non-military, per college and statewide) and **`map_college_exhibit_credit`** (per college and exhibit: title, MAP's CPL type, units applied and transcribed, recommendations, "<10 each" roll-ups), rebuilt nightly inside the promotion, each raising on its own property check. MAP's `CPLTypeCode` now rides into the title tables (the id rule mistyped 546 of 677 Credit by Exam exhibits).
-- **#1780** Sierra leads with applied on the CPL plan, labels MAP's *Applied Credits* column as the one that CONTAINS the waiting credit (she had counted Chaffey's 1,206 units in both), splits the buckets non-military first, says "<10 students" for a withheld figure, and answers "where does this college's credit come from" by units from the exhibit table.
+`map_college_credit_summary` (each figure suppressed on its own students; a `withheld` list), `map_college_credit_statewide`, `map_college_credit_bucket` and `map_college_exhibit_credit`, rebuilt nightly. What #1777, #1779 and #1780 each changed: lessons, *Moved from the lane (beside S539)*.
 
 **Item 3 went to the funding lane and is ruled there:** P1 keeps every applied unit, Needs Action credit included (Sam, sheet 11 card 1, 2026-09-30; [implementation-funding](implementation-funding.md); `cpl_memory` `summary-applied-includes-needs-action-articulated-2026-09-30`).
 

@@ -1,7 +1,7 @@
 ---
 title: CPL Implementation Funding tab — workstream lessons
 created: 2026-06-11
-updated: 2026-10-29
+updated: 2026-11-01
 tags: [lessons, funding, implementation-funding, dashboard-tab, parallel-session]
 artifacts:
   - CPL_Dashboard.html / index.html (tab shell — PR #352)
@@ -57,100 +57,7 @@ the two consolidations (Session 219) on **2026-09-30** (S306), and the 2026-09-0
 
 *The S310 to S317 sections and S328's lane move (2026-10-01 to 10-04) moved verbatim to [`cpl_funding_lessons_archive_4.md`](cpl_funding_lessons_archive_4.md) at S520 (2026-10-29).*
 
-## 2026-10-14 — the funding session beside S392: noncredit's portion, the three boxes, Bold and Italic
-
-Sam's five asks and his note to wire them into Refresh everything (verbatim: `cpl_memory`
-`sam-funding-noncredit-portion-and-boxes-2026-10-14`) shipped in #2132, live 22:36Z.
-
-- **Noncredit's portion is a solved weight.** `pool.nc_portion_pct`; blank keeps the teaching mix
-  (7.18%). Set, one weight on noncredit FTES enters the size and the split alike, found by bisection,
-  inside the one solve and its bounds. 15% needs 2.72; 20% needs 4.23. Method and the measured table:
-  [the note](kb-notes/methodology-a-share-target-inside-a-bounded-allocation-is-a-solved-weight.md).
-- **The explainer's guard wants an id on every typed copy of a figure.** `funding_model_page`'s
-  unpainted-figure check reads `id=` only, so the noncredit total's second copy took its own alias id
-  (`f-nc2` through `FIG_ID_ALIAS`), the `l-floor`/`l-cap` pattern. A `data-fig` copy is painted, and the
-  guard cannot see it. CI shard 3 caught this on the first run.
-- **A test that pins a layout pins a ruling.** The statewide-box check counted Sam's two boxes of
-  2026-10-01; his 2026-10-14 ask made the row three. The count moved; its purpose (one statewide figure,
-  no staff box) stayed.
-- **Refresh everything carries any setting the config holds**, because `render()` clears the caches
-  before the subscribers repaint. Test 6a-6g proves it across two windows on one channel.
-- **A still-running local file is not a pass.** One local process reached about 62 of 430 test files in
-  30 minutes; `xargs -P 6` over the 99 funding, explainer and briefing files finished 98, and the one it
-  had not finished was the file CI failed. CI's four shards decide.
-- **Sam's calls:** the control he wants is a percentage; *"Keep in mind to wire in the Refresh
-  Everything procedure"*; he sets 15% on a Scenario 3 copy himself through the tab (*"It's OK if not; I
-  can make the change"*), which keeps the curator edit where the lane says it belongs. Bold in the editor:
-  the asterisks show in the edit box and render as bold on the page; a second press of Bold removes them.
-- **Parallel sessions:** S392 held the checkpoint, and a `send_message` put #2132 into its handoff 393.
-  A third session (the queue, from 22:37Z) then held the next handoff, so this checkpoint wrote only the
-  funding files and the shared generated ones.
-
-## 2026-10-15 — SkyHarbor (side session beside S395): the My College view
-
-Sam's asks for "the My College view of Implementation Funding" (verbatim: `cpl_memory`
-`sam-my-college-funding-view-asks-2026-10-15`), mocked up first
-(https://claude.ai/artifact/FvKVtQkj8z1GFpMtPUj4rm), nine calls answered as proposed.
-
-- **"The My College view" named two pages.** His quoted sentence lived only on the explainer, yet the intro he
-  called "a repeat from the explainer" was the tab's. One question settled it: "Both pages". Ask when an ask's
-  evidence splits between surfaces; a mockup of the wrong page costs more than the question.
-- **The explainer's Timeline had no dates.** The tab's `titles.timing` ("Timeline") retitles the explainer's
-  disbursement step through the shared `timing` id, so a section named Timeline held only the two timing
-  settings while the dates sat under the outcomes (the 2026-09-15 placement). Read the page under the live
-  config before believing its markup's headings.
-- **Every redraw re-reads the live folds (the 2026-09-29 fix), so a per-view default needs a view-switch
-  exception.** The Internal view's open Introduction carried into the Public view until `render()` skipped
-  the re-read for `about` across a switch (`_lastRenderPublic`).
-- **A grid with `auto-fit` cannot collapse a track a spanning label occupies.** The priorities filled two of
-  three columns; a wrapping flex row fixed it.
-- **A sentence moved out of code keeps its code copy as the fallback**, and a source pin on its line breaks
-  breaks when the fallback re-wraps: two `college_briefing` checks matched `"...the " + "following..."` and
-  failed until they matched the sentence. Pin the words, not where a string literal splits.
-- **Sam missed the calls at the foot of a long mockup** and answered in chat, then pressed Complete, which
-  arrived as an artifact comment. A mockup's calls want a line at its top saying they are there.
-
-## 2026-10-15 — SkyMeridian (side session beside the queue): one public page, calls back, build handed on
-
-Sam's ask after #2152 (verbatim: `cpl_memory` `sam-one-public-funding-view-ask-2026-10-15`), mocked up with eight
-calls (https://claude.ai/artifact/XtrzM3LoNcQfdZRGuFKwWM) and answered the same evening, all his own call
-(`sam-one-public-page-calls-2026-10-15`). The build brief: `CPLBrain/decision-sheets/one-public-funding-page/BUILD.md`.
-
-- **The consolidation was half built.** The explainer already kept its own block order (`pubSecOrder`, never set) and
-  its fourteen `x_*` passages were its alone; it borrowed only the FAQ, the table introduction and Timeline's title (the
-  shared `timing` id). The missing piece is an editing surface on the page, not a second page.
-- **The black box is a redraw, measured.** Once a college is opened, My College's `onModelChange` subscriber redraws
-  the whole tab on every model update, replacing `#cb-college` seven times in eight seconds; the funding pages' Step 1
-  list five times while loading. A MutationObserver counting insertions found it in one run; a reading of the code had
-  pointed at the funding page, and Sam's answer put the box on My College.
-- **Render a mockup with the anon feeds, not without them.** Answering `map_coordinator_summary`, the contacts and
-  the ledger from an anon-role read let every condition show Met or Not yet as a college sees it.
-- **Sam overruled two proposals:** the Introduction joins the page beside the Overview (call 3), and the black-box
-  fix ships with the rest (call 7).
-- **Screenshots spend context fast.** About a dozen full-page images took this session from 15% to 87% of its window
-  before the build began; crop to the region a question needs.
-
-## Moved from the lane (SkyHarbor, 2026-10-15)
-
-The lane sits at its 20 KB budget; these moved here verbatim (the fourth, `target_rate`, by SkyMeridian).
-
-✅ **CSU LA stays out by name (Sam, sheet 33 card 2, 2026-10-04):** *"funding is only provided to CCC colleges and campuses. We do have project funding that supports our work with our partners, but no need to focus on that in our materials--also no need to hide it"*. `_build_funding_performance.py` reads `kb/non_ccc_institutions.json` and skips Cal State LA at the row, beside the partners; `tests/funding_origination_test.py` §4 guards it.
-
-⚠️ **EVERY COMBINATOR IN `colHideStyleHtml()` IS A CHILD COMBINATOR** — a descendant one reached into the nested drill-in and hid its third cell for every reader; only `Element.matches()` can see it (`cpl_funding_col_hide_scope`).
-
-**HELD (Sam, 2026-09-12: "Hold, no action"):** the **LWDA partnership** stays undesignated on the (C) card — no register project names it and he chose to leave it; do **not** designate it on inference.
-
-⚠️ **`target_rate` IS DEAD ON BOTH ENDS — LEAVE IT THAT WAY.** `prioTarget()` reads it only on the students path; no control
-renders it. Sam had S263's wiring (#1579) REVERTED (#1580): `rate = k/factor` reproduces every target. **Do not rebuild it.**
-
-## 2026-10-15 — SkyLantern (side session beside the queue): the one public page, built
-
-- **A frame taken out of the page reloads.** `render()` rewrites the mount on every remote load, so the Public page
-  view keeps its `<iframe>` in place and rewrites only the chrome above it (`renderPagePreview`).
-- **The model's subscribers hear before the mount is rewritten** (`notifyModel()` leads `render()`), so the page's
-  editor puts nothing inside `#cplFundingMount`: the table introduction's Edit sits just above the table.
-- **`.btn{display:inline-flex}` beats `[hidden]`**: a hidden masthead word needs its own `display:none`.
-- **A seed read beats a seed write.** `x_about` follows `about` until saved; no shared-config write was needed.
+*The 2026-10-14 and 10-15 sections (the funding session beside S392, SkyHarbor, SkyMeridian, SkyHarbor's lane move and SkyLantern) moved verbatim to [`cpl_funding_lessons_archive_4.md`](cpl_funding_lessons_archive_4.md) at the side session beside S539 (2026-11-01), so the lane's detail could come here.*
 
 ## 2026-10-19 — the side session beside S427: Sam's five interface asks, and the film reads the model
 
@@ -758,3 +665,19 @@ a Follow-up button to do that. Can you make the default From email address for e
   declined row PATCHes the note to null instead of deleting the row.
 - **MAP's user list needs paging.** About 1,470 active Ambassadors and Initiators against PostgREST's thousand-row
   answer, so the module reads with `Range` a page at a time.
+
+## Moved from the lane (beside S539, 2026-11-01)
+
+From the Implementation Funding lane, verbatim, to bring it under its budget.
+
+✅ **The CSM team's test fixes before the Summit (Sam, 2026-10-29; S519):** Funds Qualified So Far for *Curr* and the sums that add the rows (above); the table's short names *Coalinga*, *Imperial Valley*, *Norco*, *Reedley*, *Cañada* and *Mt. San Antonio* (`display` in `cpl_funding_data.js`; the join keys stay); the Sources line's FTES link at DataMart's current address (`/Students/FTES_Summary.aspx`; `/Outcomes/` answers 404); a **Clear** word beside the search box, shown while it holds a search. On main since #2560 (S520, 22:36Z), with #2563 (the public page paints the published scenario first). Guards `cpl_funding_college_dashboard`, `cpl_funding_pool`. ✅ **Sam renamed his three saved Scenario 4 passages himself (Open Asks Sheet 141 card 1, *pasted*, 23:28Z 2026-10-29):** the reading note, the college introduction and the table introduction say *Funds Qualified So Far*, read back at 23:30Z. Scenarios 2 and 3, which do not publish, still say *Curr* in three passages.
+
+From the funding FAQ paragraph (45 questions in eight groups):
+
+Sam's settled 25 (Open Asks Sheet 138; card 8 left out; card 9 names apportionment as he wrote it, Sheet 139 card 2), Malone's twelve (Sam, 10-28: *"push them as written by Malone"*; `cpl_funding_calm` and `cpl_funding_earn_retired` exempt his sentences by name), and Sam's eight of 10-29 (*"Please review these new FAQs and add to funding model"*; his two NOVA questions on his Sheet 140 rulings) in two new groups, **Reporting in NOVA** and **Apprenticeship CPL**, in his words but for four edits named in the code's comment (lists as sentences, *Yes.* for *Absolutely!*, the MAP platform for *the MAP Initiative*, *Colleges may describe* for *The presentation identifies*).
+
+✅ **Sam's 10-28 page asks (S508) are on main:** the public page's footer gone; the tab opens on the published scenario (`CONFIG_HOLD_MS`, test `cpl_funding_published_first`); one link to the public page; Natalie's (CSM lead) hovers on Max Funds, Curr Funds, Base and Cap.
+
+From the Nudge paragraph:
+
+It offers an editable email, *Download for mail merge* (one row a recipient, the filled-in subject and email beside the address) and *Copy addresses* for one Bcc line; it sends and writes nothing. **v2 (Sam, 2026-10-31: *"need check boxes for each so we can take some off the list ... a select all/ clear all choice at top of list"*; *"select from a multi-select list of recipient roles"*; *"a few may want to refuse participation"*):** a box on every institution with *Select all* and *Clear all*; a *Send to* list of roles (Primary contact, the cascade, checked by default; CEOs; VPs, VPAA and VPSS; Ambassadors and Initiators, every active one in MAP's user list, read a page at a time; *Deans and directors* disabled until the weekly contacts harvest, lane `map-users-student-contact`); a person in two roles receives one email. **Declined participation** is a reviewer's mark on the CO Monitor's notes row (`cpl_funding_notes.declined_at`/`declined_by`, migration `kb/migrations/2026-10-31_cpl_funding_notes_declined.sql`, applied 2026-10-31; same reviewer-only RLS, DR-09): *Mark as declined participation* and *Clear* in the drill-in, the word *Declined* on the row, never public; Nudge lists a declined college grayed and unchecked, *Select all* leaves it so, and its own box overrides. Guards `tests/cpl_funding_nudge.test.js`.
