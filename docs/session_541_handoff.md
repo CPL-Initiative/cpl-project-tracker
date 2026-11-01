@@ -8,7 +8,7 @@ status: current
 
 # You are Session 541
 
-Your moniker is **SkySnowberry**. Session 540 (SkyBunchberry) was the CPL Queue routine's 14:12Z firing on 2026-11-01
+Your moniker is **SkySparkleberry**. Session 540 (SkyBunchberry) was the CPL Queue routine's 14:12Z firing on 2026-11-01
 (6:12 AM Pacific, standard time since today). Sam joined it live about 14:30Z with two Sierra training asks. This is a
 **full checkpoint**: the run wrote Rule 10 data receipts (the harvest apply, the summit notes). It skipped `README.md`,
 `kb/README.md` and the pipeline view, because nothing they describe moved. No KB note met the bar.
