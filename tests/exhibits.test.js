@@ -500,7 +500,8 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
       && /course_id=like\._CREDENTIAL_REVIEW%3A%3A%25/.test(c.url) && c.headers.Range === "0-999"; }));
   check("the view is current and counts the credentials", /Credentials 4/.test(txt(t.d.querySelector('.exh-views [aria-current="page"]'))));
   const ctiles = Array.from(t.d.querySelectorAll(".exh-tile")).map(txt);
-  check("the tiles count issuers and training sites", /Issuers4 of 4/.test(ctiles[1]) && /Training sites3 of 4/.test(ctiles[2]));
+  check("the tiles count issuers and training sites", ctiles.some(function (x) { return /^Issuers4 of 4/.test(x); })
+    && ctiles.some(function (x) { return /^Training sites3 of 4/.test(x); }));
   function rowsOf(d) { return Array.from(d.querySelectorAll(".exh-table tbody tr")).map(function (tr) { return Array.from(tr.children).map(txt); }); }
   let rows = rowsOf(t.d);
   check("most students first, then the cells under ten, then by colleges", rows.map(function (r) { return r[0]; }).join("|") === [SECP, MED, JLP, IBEW].join("|"));
@@ -515,7 +516,8 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("articulated at joins MAP's adopters with no course identity to the reference's colleges", rows[0][4].indexOf("2 articulate it") === 0);
   check("the reference's broad potential_colleges never count", !rows.some(function (r) { return /11 could adopt|1 could adopt/.test(r[4]); }));
   const groups = Array.from(t.d.querySelectorAll(".exh-group > .exh-q")).map(txt);
-  check("the view asks the three questions", groups.join("|") === "What is it called?|What credit does it carry?|Who could adopt it?");
+  check("the view asks the three questions, then How is it kept? (the Commons' row, Sam 2026-11-01)",
+    groups.join("|") === "What is it called?|What credit does it carry?|Who could adopt it?|How is it kept?");
   const all = Array.from(t.d.querySelectorAll(".exh-tile")).map(txt);
   check("the credit tiles count recommendations, statewide ones and the field",
     all.some(function (x) { return /^Credit recs3 of 4/.test(x); }) && all.some(function (x) { return /^Statewide recs1 of 4/.test(x); })
