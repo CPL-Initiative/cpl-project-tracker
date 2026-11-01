@@ -103,6 +103,12 @@
   // Your flag (Sam, 2026-11-01: "a flag for any row that persists until I clear it"): one row per credential, the
   // value the time it was set; clearing writes "" (an upsert, never a delete, so a refused write cannot pass as done).
   var FIELD_LIST_FLAG = "list_flag";
+  /* The group a reviewer keeps a credential in under the AI sort (Sam, 2026-11-01: "establish the groups and be able to
+     move exhibits out and into more appropriate groups where needed"): the group's name. NO_GROUP takes the credential
+     out of every group; "" hands it back to the night's sort. The view lays these over the nightly order, so a kept group
+     and a moved title hold through every rebuild. */
+  var FIELD_LIST_GROUP = "exhibit_group";
+  var NO_GROUP = "_NO_GROUP";
   // Re-analyze my changes: one request row a press, worked by the CPL queue routine (scheduled_sessions step 9).
   var REANALYSIS_PREFIX = "_EXHIBIT_REANALYSIS::";
   var FIELD_REANALYSIS = "exhibit_reanalysis_request";
@@ -1339,7 +1345,7 @@
     var PAGE = 1000, key = anonKey();
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
-      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_MERGE_CONFIRM].join(",") + ")"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_LIST_GROUP, FIELD_MERGE_CONFIRM].join(",") + ")"
       + "&order=course_id.asc,field.asc";
     var out = [];
     function page(from) {
@@ -1359,6 +1365,7 @@
         else if (row.field === FIELD_CRED_SITES) { o.sites = row.value || ""; o.sitesAt = row.reviewed_at || ""; }
         else if (row.field === FIELD_CRED_TITLE) o.title = row.value || "";
         else if (row.field === FIELD_LIST_FLAG) o.flag = row.value || "";
+        else if (row.field === FIELD_LIST_GROUP) o.group = row.value || "";
         else if (row.field === FIELD_MERGE_CONFIRM) o.merge = row.value || "";
       });
       state.cs.overlay = m; state.cs.overlayOk = true;
@@ -1396,6 +1403,14 @@
       method: "POST",
       headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
       body: JSON.stringify({ course_id: CRED_PREFIX + ut, field: field, value: value, reviewer_email: sess.email })
+    });
+  }
+  /* Many credentials, one field, one request: [[title, value], ...], each an upsert on (course_id, field). */
+  function saveCredRows(sess, field, pairs) {
+    return fetch(SUPABASE_URL + "/rest/v1/kb_curation", {
+      method: "POST",
+      headers: headers(sess, { "Prefer": "resolution=merge-duplicates,return=minimal" }),
+      body: JSON.stringify(pairs.map(function (p) { return { course_id: CRED_PREFIX + p[0], field: field, value: p[1], reviewer_email: sess.email }; }))
     });
   }
 
@@ -1758,7 +1773,7 @@
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
-      busy: false, collisions: null, sgDone: {}, sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {} });
+      busy: false, collisions: null, sgDone: {}, sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {}, move: null, gEdit: null, gBusy: false });
   }
   /* The columns, each with what it shows (Sam, 2026-11-01: "sometimes I miss good ol' Excel, where I can quickly
      filter any column, sort any way ... use find and replace to fix things on the fly--that freedom is what you're
@@ -1855,13 +1870,12 @@
       if ((!x || !y) && x !== y) return x ? -1 : 1;   // blanks last, either way
       return lv.dir * x.toLowerCase().localeCompare(y.toLowerCase());
     }
-    var ai = L.ai && L.aiData && L.aiData.order;
+    var gi = L.ai && L.aiData && L.aiData.order ? (L.gi = listGroupIndex()) : null;
     var rows = cs.rows.slice().sort(function (a, b) {
-      if (ai) {
-        var pa = ai[a.ut], pb = ai[b.ut];
-        if (pa && pb) return pa[1] - pb[1];
-        if (pa || pb) return pa ? -1 : 1;
-        return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
+      if (gi) {
+        var ga = gi.by[a.ut], gb = gi.by[b.ut];
+        return ga.sort.localeCompare(gb.sort) || (ga.key < gb.key ? -1 : ga.key > gb.key ? 1 : 0) || ga.pos - gb.pos
+          || listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
       }
       for (var i = 0; i < levels.length; i++) { var c = cmp(a, b, levels[i]); if (c) return c; }
       return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
@@ -2308,22 +2322,20 @@
     })).concat([el("td")]));
     var thead = el("thead", null, [headRow, filterRow]);
     var body = el("tbody");
-    var aiOn = L.ai && L.aiData, lastG = null, sgByGroup = {};
-    if (aiOn && L.aiData.suggest) state.cs.rows.forEach(function (x) {
-      var p = L.aiData.order[x.ut];
-      if (p && listSuggest(x)) sgByGroup[p[0]] = (sgByGroup[p[0]] || 0) + 1;
+    var aiOn = L.ai && L.aiData, gi = aiOn ? (L.gi || listGroupIndex()) : null, sgByGroup = {};
+    var lastKey = null, lastLone = false, lastNew = false;
+    if (gi && L.aiData.suggest) state.cs.rows.forEach(function (x) {
+      if (listSuggest(x)) { var k = gi.by[x.ut].key; sgByGroup[k] = (sgByGroup[k] || 0) + 1; }
     });
     shown.forEach(function (r) {
-      if (aiOn) {
-        var pos = L.aiData.order[r.ut], g = pos ? pos[0] : -1;
-        if (g !== lastG && (g === -1 || L.aiData.groups[g].n > 1)) {
-          var gr = g === -1 ? null : L.aiData.groups[g];
-          body.appendChild(el("tr", { cls: "exh-l-band" }, [el("th", { scope: "rowgroup", colspan: String(C.length + 3) }, [
-            el("span", { text: gr ? gr.name : "Added since the AI sort was built" }),
-            el("span", { cls: "exh-muted", text: gr ? " " + fmt(gr.n) + " in this group" + (sgByGroup[g]
-              ? ", " + fmt(sgByGroup[g]) + " suggested fold" + (sgByGroup[g] === 1 ? "" : "s") : "") : "" })])]));
-        }
-        lastG = g;
+      // Every run of rows gets its band (Sam, 2026-11-01, on 832 Arrest: three titles that stood alone read as members,
+      // because only groups of two or more had one).
+      if (gi) {
+        var gb = gi.by[r.ut], G = gi.groups[gb.key], isNew = gb.key.indexOf("new:") === 0;
+        if (G.isGroup) { if (gb.key !== lastKey) body.appendChild(listGroupBand(G, sgByGroup[gb.key] || 0)); }
+        else if (isNew) { if (!lastNew) body.appendChild(listPlainBand("Added since the AI sort was built")); }
+        else if (!lastLone) body.appendChild(listPlainBand("Not in a group"));
+        lastKey = gb.key; lastLone = !G.isGroup && !isNew; lastNew = isNew;
       }
       var cur = credCurrent(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
       var titleTd = el("td", { cls: "exh-l-title", title: listTitle(r) }, [listTitle(r)]);
@@ -2348,7 +2360,11 @@
       }, { "aria-label": "Edit " + listTitle(r) });
       var selBox = el("input", { type: "checkbox", "aria-label": "Select " + listTitle(r) });
       selBox.checked = !!L.sel[r.ut];
-      selBox.addEventListener("change", function () { if (selBox.checked) L.sel[r.ut] = true; else delete L.sel[r.ut]; listCountSel(); });
+      selBox.addEventListener("change", function () {
+        if (selBox.checked) L.sel[r.ut] = true; else delete L.sel[r.ut];
+        if (gi) { var y = listScrollTop(); redrawList(); listScrollTop(y); var b = document.querySelector('[aria-label="Select ' + listTitle(r).replace(/"/g, '\\"') + '"]'); if (b) b.focus(); }
+        else listCountSel();
+      });
       var flagBox = el("input", { type: "checkbox", "aria-label": "Flag " + listTitle(r), title: listFlag(r) ? "Flagged " + stamp(listFlag(r)) : null });
       flagBox.checked = !!listFlag(r);
       flagBox.disabled = !!L.flagBusy[r.ut];
@@ -2383,7 +2399,8 @@
         ? "AI sort: like with like, the groups A to Z. A group gathers titles that share their subject words once level words (Beginning, 1, II, Advanced) "
           + "are set aside, with discipline and issuer weighing in; built " + (stamp(L.aiData._built_at) || L.aiData._reference_generated_at && stamp(L.aiData._reference_generated_at) || "daily")
           + ". " + (L.aiData.counts && L.aiData.counts.suggested_folds ? fmt(L.aiData.counts.suggested_folds) + " spelling twins carry a suggested fold. " : "")
-          + "Press a header to sort by it instead."
+          + "Select rows to move them to another group; Keep this group fixes a group and its name, and a rename to another group's name joins the two. "
+          + "What you keep or move holds through every nightly rebuild. Press a header to sort by it instead."
         : "Sorted by " + L.sort.map(function (x) {
         var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
         + ". Shift and press a header to add a level." }),
@@ -2394,6 +2411,8 @@
       word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn,
       frState().open ? null : word("Find and replace", function () {
         frState().open = true; render(); var n = document.getElementById("exh-fr-find"); if (n) n.focus(); }, { id: "exh-fr-open" }), dl]), region]);
+    var selUts = Object.keys(L.sel);
+    if (gi && selUts.length) out.appendChild(listMovePanel(selUts));
     if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
       function () { L.limit += LIST_LIMIT; redrawList(); }));
     return out;
@@ -2413,6 +2432,150 @@
     return fetch(AI_SORT_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
       if (!d || !d.order) throw new Error("no order");
       L.aiData = d; return d;
+    });
+  }
+  /* Every credential's group under the AI sort. A saved group wins: a kept group by its name, Out of every group alone;
+     otherwise the night's grouping. A group is two or more titles, or any group a reviewer kept, even of one. Groups and
+     titles alone run A to Z by name; inside a group, the night's order (subject words, then level). Two groups that share
+     a name are one group, so a rename to another group's name joins them. */
+  function listGroupIndex() {
+    var d = listState().aiData, ov = state.cs.overlay || {}, by = {}, groups = {};
+    state.cs.rows.forEach(function (r) {
+      var pos = d.order[r.ut], saved = String((ov[r.ut] || {}).group || "").trim(), key, name;
+      if (saved && saved !== NO_GROUP) { key = "g:" + saved.toLowerCase(); name = saved; }
+      else if (saved === NO_GROUP || !pos) { key = (pos || saved ? "1:" : "new:") + r.ut; name = listTitle(r); }
+      else {
+        var g = d.groups[pos[0]] || { name: listTitle(r), n: 1 };
+        key = g.n > 1 ? "g:" + g.name.toLowerCase() : "1:" + r.ut; name = g.name;
+      }
+      var G = groups[key] || (groups[key] = { key: key, name: name, n: 0, kept: 0, members: [] });
+      G.n++; G.members.push(r);
+      if (saved && saved !== NO_GROUP) G.kept++;
+      by[r.ut] = { key: key, pos: pos ? pos[1] : 1e9, sort: key.indexOf("new:") === 0 ? "\uffff" : name.toLowerCase() };
+    });
+    Object.keys(groups).forEach(function (k) { var G = groups[k]; G.isGroup = k.indexOf("g:") === 0 && (G.n > 1 || G.kept > 0); });
+    return { by: by, groups: groups };
+  }
+  function listPlainBand(name) {
+    return el("tr", { cls: "exh-l-band exh-l-band-plain" }, [el("th", { scope: "rowgroup", colspan: String(listCols().length + 3) }, [el("span", { text: name })])]);
+  }
+  /* A group's band: its name, what it holds across its titles (the colleges, the statewide basis), and Keep or Rename.
+     The facts count every title in the group, filtered out or not. */
+  function listGroupBand(G, sg) {
+    var L = listState(), colls = {}, sw = 0, all = G.kept === G.n;
+    G.members.forEach(function (m) { credColleges(m).forEach(function (c) { colls[c] = 1; }); if (listBasis(m) === "Statewide") sw++; });
+    var nc = Object.keys(colls).length;
+    var facts = fmt(G.n) + " in this group, " + fmt(nc) + " college" + (nc === 1 ? "" : "s")
+      + (sw ? ", " + fmt(sw) + " based on statewide" : "")
+      + (sg ? ", " + fmt(sg) + " suggested fold" + (sg === 1 ? "" : "s") : "")
+      + (all ? "; kept" : G.kept ? "; " + fmt(G.kept) + " kept" : "");
+    var th = el("th", { scope: "rowgroup", colspan: String(listCols().length + 3), "data-gkey": G.key });
+    if (L.gEdit === G.key) {
+      var inp = el("input", { type: "text", id: "exh-l-gname", cls: "exh-l-in", autocomplete: "off", "aria-label": "Name for the group " + G.name });
+      inp.value = G.name;
+      var go = function () { listKeepGroup(G, inp.value); };
+      var stop = function () { L.gEdit = null; redrawList(); listFocusBand(G.key); };
+      inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); else if (e.key === "Escape") stop(); });
+      th.appendChild(el("span", { cls: "exh-l-gedit" }, [inp, word(L.gBusy ? "Saving…" : "Keep under this name", go), word("Cancel", stop)]));
+      th.appendChild(el("span", { cls: "exh-muted", text: facts }));
+    } else {
+      th.appendChild(el("span", { text: G.name }));
+      th.appendChild(el("span", { cls: "exh-muted", text: facts }));
+      th.appendChild(el("span", { cls: "exh-l-gacts" }, [
+        word(all ? "Rename" : "Keep this group", function () {
+          L.gEdit = G.key; redrawList();
+          var n = document.getElementById("exh-l-gname"); if (n) { n.focus(); try { n.select(); } catch (e) {} }
+        }, { "aria-label": (all ? "Rename the group " : "Keep the group ") + G.name }),
+        G.kept ? word("Release", function () { listReleaseGroup(G); }, { "aria-label": "Hand the group " + G.name + " back to the AI sort" }) : null]));
+    }
+    return el("tr", { cls: "exh-l-band" }, [th]);
+  }
+  function listFocusBand(key) {
+    var th = Array.from(document.querySelectorAll(".exh-l-band th[data-gkey]")).filter(function (x) { return x.getAttribute("data-gkey") === key; })[0];
+    var b = th && th.querySelector("button");
+    if (b) b.focus(); else { var r = document.querySelector(".exh-l-wrap"); if (r) r.focus(); }
+  }
+  function listScrollTop(y) {
+    var w = document.querySelector(".exh-l-wrap");
+    if (!w) return 0;
+    if (y != null) w.scrollTop = y;
+    return w.scrollTop;
+  }
+  /* Move the selected titles (Sam, 2026-11-01: "a way to do it easily from this view"): tick the rows, name a group, or
+     take them out of every group, or hand them back to the night's sort. It sits under the table, where a phone reaches. */
+  function listMovePanel(uts) {
+    var L = listState(), gi = L.gi || listGroupIndex(), ov = state.cs.overlay || {};
+    var names = Object.keys(gi.groups).map(function (k) { return gi.groups[k]; }).filter(function (G) { return G.isGroup; })
+      .map(function (G) { return G.name; }).sort(function (a, b) { return a.toLowerCase().localeCompare(b.toLowerCase()); });
+    var what = uts.length === 1 ? "the selected title" : "the " + fmt(uts.length) + " selected titles";
+    var inp = el("input", { type: "text", id: "exh-l-moveto", cls: "exh-l-in", autocomplete: "off", list: "exh-l-gnames",
+      placeholder: "A group's name, or a new one" });
+    inp.value = L.moveTo || "";
+    inp.addEventListener("input", function () { L.moveTo = inp.value; });
+    var go = function () {
+      var v = inp.value.trim();
+      if (!v || v === NO_GROUP) { L.cellNote = "Name the group to move " + what + " into."; redrawList(); var n = document.getElementById("exh-l-moveto"); if (n) n.focus(); return; }
+      listMoveTo(uts, v);
+    };
+    inp.addEventListener("keydown", function (e) { if (e.key === "Enter") go(); });
+    var saved = uts.some(function (u) { return (ov[u] || {}).group; });
+    return el("div", { cls: "exh-l-move", role: "group", "aria-label": "Move " + what }, [
+      el("label", { cls: "exh-l-f", "for": "exh-l-moveto" }, [el("span", { text: "Move " + what + " to a group" }), inp]),
+      el("datalist", { id: "exh-l-gnames" }, names.map(function (n) { return el("option", { value: n }); })),
+      el("div", { cls: "exh-l-acts" }, [
+        word(L.gBusy ? "Saving…" : "Move", go, { id: "exh-l-movego" }),
+        word("Out of every group", function () { listMoveTo(uts, NO_GROUP); }),
+        saved ? word("Back to the AI sort", function () { listMoveTo(uts, ""); }) : null,
+        word("Clear the selection", function () { L.sel = {}; redrawList(); })])]);
+  }
+  function listMoveTo(uts, value) {
+    var L = listState(), n = uts.length, label = n === 1 ? "“" + listTitleOf(uts[0]) + "”" : fmt(n) + " titles";
+    var note = value === NO_GROUP ? "Took " + label + " out of every group." : value === "" ? "Handed " + label + " back to the AI sort."
+      : "Moved " + label + " to " + value + ".";
+    return listSaveGroups(uts, value, note).then(function (ok) {
+      if (!ok) return;
+      L.sel = {}; L.moveTo = "";
+      redrawList();
+      if (value && value !== NO_GROUP) listFocusBand("g:" + value.toLowerCase()); else listFocusBand("");
+    });
+  }
+  function listTitleOf(ut) {
+    var r = (state.cs.rows || []).filter(function (x) { return x.ut === ut; })[0];
+    return r ? listTitle(r) : ut;
+  }
+  /* Keep this group: every title in it saves the group's name, the one in the box. Rename is the same write. */
+  function listKeepGroup(G, name) {
+    var L = listState();
+    name = String(name || "").trim();
+    if (!name || name === NO_GROUP) { L.cellNote = "A group needs a name."; redrawList(); return Promise.resolve(); }
+    var uts = G.members.map(function (m) { return m.ut; });
+    return listSaveGroups(uts, name, (G.kept === G.n && name !== G.name ? "Renamed " + G.name + " to " : "Kept " + fmt(uts.length) + " in ") + name + ".")
+      .then(function (ok) { if (!ok) return; L.gEdit = null; redrawList(); listFocusBand("g:" + name.toLowerCase()); });
+  }
+  function listReleaseGroup(G) {
+    var ov = state.cs.overlay || {};
+    var uts = G.members.filter(function (m) { var v = (ov[m.ut] || {}).group; return v && v !== NO_GROUP; }).map(function (m) { return m.ut; });
+    return listSaveGroups(uts, "", "Handed " + G.name + " back to the AI sort.").then(function (ok) { if (ok) { redrawList(); listFocusBand(""); } });
+  }
+  /* One request for the lot; the overlay changes only once the store says yes. */
+  function listSaveGroups(uts, value, note) {
+    var L = listState(), cs = state.cs;
+    if (!uts.length) return Promise.resolve(false);
+    L.gBusy = true;
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return saveCredRows(sess, FIELD_LIST_GROUP, uts.map(function (u) { return [u, value]; }));
+    }).then(function (x) {
+      if (!x.ok) throw new Error("HTTP " + x.status);
+      uts.forEach(function (u) { (cs.overlay[u] = cs.overlay[u] || {}).group = value; });
+      L.gBusy = false; L.cellNote = note;
+      return true;
+    }).catch(function (e) {
+      L.gBusy = false;
+      L.cellNote = e && e.message === "signin" ? "Sign in as a reviewer to move titles or keep a group."
+        : "The group did not save (" + (e && e.message || "no answer") + "). Nothing changed; try again.";
+      redrawList();
+      return false;
     });
   }
   /* A spelling twin's fold (Sam, 2026-11-01: "what do you think about offering suggested titles based on what you
@@ -2802,6 +2965,10 @@
       "#exh-fr-host{min-width:0;max-width:100%}",
       ".exh-l-table tr.exh-l-band th{position:static;text-align:left;font-weight:600;color:var(--text-strong);background:var(--surface-opaque);padding:8px 6px 2px;border-top:1px solid var(--border);border-bottom:0;white-space:normal}",
       ".exh-l-band .exh-muted{font-weight:400;margin-left:8px}",
+      ".exh-l-table tr.exh-l-band-plain th{color:var(--text-muted);font-weight:400}",
+      ".exh-l-band .exh-l-gacts{display:inline-flex;gap:12px;margin-left:12px;font-weight:400}",
+      ".exh-l-band .exh-l-gedit{display:inline-flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-weight:400}",
+      ".exh-l-move{position:sticky;bottom:0;z-index:3;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;margin:6px 0;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--surface-opaque)}",
       ".exh-l-nowrap .exh-l-sg{display:block;white-space:normal}",
       ".exh-l-cellin{width:100%;box-sizing:border-box;font-size:.75rem;padding:1px 4px;min-height:24px}",
       ".exh-l-nowrap td .exh-l-cellin{white-space:normal}",
