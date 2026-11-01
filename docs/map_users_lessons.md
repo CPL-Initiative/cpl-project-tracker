@@ -486,3 +486,17 @@ Sam saw no records on every roster. The edge logs answered it in two queries: `r
 was `anon` and each roster response was 2 bytes (`[]`), while the summary returned 128 colleges. After signing in he saw
 the rosters. The tab had said "No roster rows returned. Unlock with the team phrase (the About menu in the header)": the
 first sentence read as missing data, and the control lives in the header's Sign in menu. #2036 says why first.
+
+## S538 SkyWolfberry (2026-11-01, 12:12Z firing): the contacts harvest's second read
+
+- **Run 41305785750, 15 colleges; 12 people for 6 colleges** (apply 41306714482, receipt
+  `kb/receipts/college_contacts_harvest_41305785750.json`).
+- **A batch ordered by the last row found starves.** A college whose read found no one has no row, so it sorted as
+  "never read" and came first every night: five of tonight's 15 were S537's empty sites again. The runner now orders by
+  the later of its last row and its last committed read (`read_history`). A queue keyed on outcomes, not attempts,
+  repeats its failures.
+- **A district-wide directory prints no campus.** West Hills' directory (whccd.edu) lists Coalinga's and Lemoore's
+  leaders together, so it shows two presidents. Phone exchanges hint at the campus, but a hint is a guess; the rows wait
+  in `unsettled_campus` for a campus's own page.
+- **A title near a variant is still outside it.** *Dean of Enrollment Services* runs Admissions and Records at Cañada and
+  Alameda and reads as `dean_ar`, but its words name neither admissions nor registrar. Listed, never filled.

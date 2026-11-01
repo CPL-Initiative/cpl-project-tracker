@@ -1,0 +1,736 @@
+{
+ "college": "Chaffey College",
+ "homepage": "https://www.chaffey.edu/",
+ "read_at": "2026-11-01T12:21:28+00:00",
+ "pages": [
+  {
+   "url": "https://www.chaffey.edu/",
+   "final_url": "https://www.chaffey.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Success Centers",
+      "Supplemental Instruction",
+      "Transfer Center",
+      "Veteran Services",
+      "Chaffey CommunityToggle submenu",
+      "Alumni and Community Outreach",
+      "The Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President Search",
+     "position": "college_ceo",
+     "window": [
+      "THE PANTHER SCENE",
+      "NEWS AND EVENTS",
+      "See Happenings",
+      "Superintendent/President Search",
+      "Chaffey College is seeking a visionary leader to serve as Superintendent/President. Learn More.",
+      "Start Here. Go Anywhere!",
+      "Ready to build your future? Get transfer or career ready with flexible degree and"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chaffey College is seeking a visionary leader to serve as Superintendent/President. Learn More.",
+     "position": "college_ceo",
+     "window": [
+      "NEWS AND EVENTS",
+      "See Happenings",
+      "Superintendent/President Search",
+      "Chaffey College is seeking a visionary leader to serve as Superintendent/President. Learn More.",
+      "Start Here. Go Anywhere!",
+      "Ready to build your future? Get transfer or career ready with flexible degree and",
+      "certificate programs designed for your success."
+     ],
+     "emails": []
+    },
+    {
+     "line": "CCSG Celebrates Retirement of Superintendent/President Henry D. Shannon",
+     "position": "college_ceo",
+     "window": [
+      "Oct 22 2026",
+      "Chaffey College Takes Top Statewide Rankings in Awarding Transfer Degrees",
+      "Oct 20 2026",
+      "CCSG Celebrates Retirement of Superintendent/President Henry D. Shannon",
+      "Oct 9 2026",
+      "Chaffey News",
+      "\"Chaffey students are some of the most resilient and curious people I’ve met. Many"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "InTech Center",
+      "Interactive map",
+      "ABOUT CHAFFEY",
+      "Superintendent/President",
+      "Governing Board",
+      "Board Policies & Procedures",
+      "About"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chaffey.edu/admissions/index.php",
+   "final_url": "https://www.chaffey.edu/admissions/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Success Centers",
+      "Supplemental Instruction",
+      "Transfer Center",
+      "Veteran Services",
+      "Chaffey CommunityToggle submenu",
+      "Alumni and Community Outreach",
+      "The Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "InTech Center",
+      "Interactive map",
+      "ABOUT CHAFFEY",
+      "Superintendent/President",
+      "Governing Board",
+      "Board Policies & Procedures",
+      "About"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chaffey.edu/spops/veterans.php",
+   "final_url": "https://www.chaffey.edu/spops/veterans.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Resource Center | Special Populations and Equity Programs | Chaffey College",
+     "position": "vrc",
+     "window": [
+      "Veteran Resource Center | Special Populations and Equity Programs | Chaffey College",
+      "Skip to Content",
+      "Menu",
+      "Translate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Success Centers",
+      "Supplemental Instruction",
+      "Transfer Center",
+      "Veteran Services",
+      "Chaffey CommunityToggle submenu",
+      "Alumni and Community Outreach",
+      "The Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "Justice-Involved",
+      "Umoja",
+      "A2Mend",
+      "Veteran Resource Center",
+      "Library Libguide World Religions",
+      "Black and Brown Minds & Mattering Conference",
+      "Intertribal Pow Wow"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "Chaffey CARES",
+      "Home",
+      "Equity Programs and Student Engagement",
+      "Veteran Resource Center",
+      "Veteran Resource Center",
+      "You've served your country through the U.S. Armed Forces and now you're ready to explore",
+      "the educational benefits available to you. Our staff in the veteran services office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Equity Programs and Student Engagement",
+      "Veteran Resource Center",
+      "Veteran Resource Center",
+      "You've served your country through the U.S. Armed Forces and now you're ready to explore",
+      "the educational benefits available to you. Our staff in the veteran services office",
+      "can help."
+     ],
+     "emails": []
+    },
+    {
+     "line": "the educational benefits available to you. Our staff in the veteran services office",
+     "position": "vrc",
+     "window": [
+      "Veteran Resource Center",
+      "Veteran Resource Center",
+      "You've served your country through the U.S. Armed Forces and now you're ready to explore",
+      "the educational benefits available to you. Our staff in the veteran services office",
+      "can help.",
+      "Our department serves as a liaison between veteran students and the Department of",
+      "Veteran Affairs. Veteran services is equipped to assist veteran students with the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Affairs. Veteran services is equipped to assist veteran students with the",
+     "position": "vrc",
+     "window": [
+      "the educational benefits available to you. Our staff in the veteran services office",
+      "can help.",
+      "Our department serves as a liaison between veteran students and the Department of",
+      "Veteran Affairs. Veteran services is equipped to assist veteran students with the",
+      "appropriate forms to process claims for veteran educational benefits. The office is",
+      "also an information center to assist with any questions concerning veteran educational",
+      "benefits or educational experiences at Chaffey College."
+     ],
+     "emails": []
+    },
+    {
+     "line": "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+     "position": "vrc",
+     "window": [
+      "You are considered a New Veteran Student if you have never received VA educational",
+      "benefits. If this is you, please select what GI Bill® benefits you intend to use while",
+      "at Chaffey College to get started.",
+      "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+      "Expand AllCollapse All",
+      "Post 9/11 GI Bill®",
+      "Post 9/11 GI Bill®"
+     ],
+     "emails": []
+    },
+    {
+     "line": "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+     "position": "vrc",
+     "window": [
+      "Once you receive your welcome email, please make sure to set up your email account,",
+      "log in to Wingspan, and complete your mandatory new student orientation. To do so,",
+      "visit the Orientation and Placement page.",
+      "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+      "Step 1: Submit Documents",
+      "Vocational Rehabilitation and Employment (VRE) entitlement letter",
+      "DD 214 member 4"
+     ],
+     "emails": []
+    },
+    {
+     "line": "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+     "position": "vrc",
+     "window": [
+      "Once you receive your welcome email, please make sure to set up your email account,",
+      "log in to Wingspan, and complete your mandatory new student orientation. To do so,",
+      "visit the Orientation and Placement web page.",
+      "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+      "Step 1: Submit Documents",
+      "Certificate of eligibility - request online from the VA website",
+      "DD 214 member 4"
+     ],
+     "emails": []
+    },
+    {
+     "line": "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+     "position": "vrc",
+     "window": [
+      "Application for Admission to Chaffey College",
+      "Once you receive your welcome email, please make sure to set up your email account,",
+      "log in to Wingspan, and complete your mandatory new student orientation. To do so, visit Orientation and Placement.",
+      "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+      "Step 1: Submit Documents",
+      "DD Form 2384-1 Notice of Basic Eligibility (NOBE) given by your command",
+      "Certificate of eligibility - request online from the VA website"
+     ],
+     "emails": []
+    },
+    {
+     "line": "from the education service officer (ESO), military counselor or command.",
+     "position": null,
+     "window": [
+      "Active Duty Tuition Assistance Program",
+      "Active Duty Tuition Assistance Program",
+      "Prior to applying, Chaffey College military service members need to receive approval",
+      "from the education service officer (ESO), military counselor or command.",
+      "Application for Admission to Chaffey College",
+      "Once you receive your welcome email, please make sure to set up your email account",
+      "and log in to Wingspan."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact the Veterans Resource Center at (909) 652-6235 if you are unsure which education",
+     "position": "vrc",
+     "window": [
+      "Application for Admission to Chaffey College",
+      "Once you receive your welcome email, please make sure to set up your email account",
+      "and log in to Wingspan.",
+      "Contact the Veterans Resource Center at (909) 652-6235 if you are unsure which education",
+      "benefit you are eligible to use at Chaffey College.",
+      "Step 2: Submit Documents",
+      "Certificate of eligibility - request online from the VA website"
+     ],
+     "emails": []
+    },
+    {
+     "line": "or University of California campus. The Veterans Resource Center wants to support",
+     "position": "vrc",
+     "window": [
+      "The College Fee Waiver for Veteran Dependents benefits the spouse and children of",
+      "U.S. veterans. Students meeting the eligibility criteria may get their college fees",
+      "waived if they attend a California community college, a California state university,",
+      "or University of California campus. The Veterans Resource Center wants to support",
+      "your decision to attend Chaffey College and is here to help you process your veteran",
+      "dependent benefits.",
+      "For questions about this process, contact the Veterans Resource Center at (909) 652-6235."
+     ],
+     "emails": []
+    },
+    {
+     "line": "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+     "position": "vrc",
+     "window": [
+      "or University of California campus. The Veterans Resource Center wants to support",
+      "your decision to attend Chaffey College and is here to help you process your veteran",
+      "dependent benefits.",
+      "For questions about this process, contact the Veterans Resource Center at (909) 652-6235.",
+      "Step 1: Check Eligibility",
+      "Verify your eligibility on the official CalVet College Fee Waiver website",
+      "Step 2: Apply for Fee Waiver"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Veteran Resources and Services",
+     "position": "vrc",
+     "window": [
+      "Step 4: Submit Documents",
+      "Submit the CalVet Award Letter to our CalVet Waiver Submission.",
+      "Back to top",
+      "Student Veteran Resources and Services",
+      "Expand AllCollapse All",
+      "Academic Counseling",
+      "To make a counseling appointment with a veterans counselor, visit Veterans Appointment Scheduling web page. Select the \"Specialty Area Counseling\" tab from the drop down menu to see"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Failure to report to the veterans clerk in the Veterans Resource Center any change",
+     "position": "vrc",
+     "window": [
+      "are most commonly the result of:",
+      "Failure to process a program change form when dropping a course (the Veterans Administration",
+      "considers the recipient ineligible to receive benefits after the last date of attendance);",
+      "Failure to report to the veterans clerk in the Veterans Resource Center any change",
+      "in status (number of units or change of address) and;",
+      "Repetition of a course in which a satisfactory (\"C\" or better) grade has been received.",
+      "If an overpayment occurs, the VA will automatically stop further payment until the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Back to top",
+      "Contact",
+      "For further information, contact:",
+      "Veterans Resource Center",
+      "Phone:",
+      "(909) 652-6235",
+      "Email:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center/Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Jessica.Galvan@chaffey.edu",
+      "Address",
+      "Chaffey College",
+      "Veterans Resource Center/Veteran Services",
+      "5885 Haven Avenue",
+      "Rancho Cucamonga, CA 91737-3002",
+      "Veteran services is located in the Veterans Resource Center, administration building,"
+     ],
+     "emails": [
+      "Jessica.Galvan@chaffey.edu"
+     ]
+    },
+    {
+     "line": "Veteran services is located in the Veterans Resource Center, administration building,",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center/Veteran Services",
+      "5885 Haven Avenue",
+      "Rancho Cucamonga, CA 91737-3002",
+      "Veteran services is located in the Veterans Resource Center, administration building,",
+      "Room 125.",
+      "Footer CTA image Graduate holding their diploma and smiling, filled with joy and excitement.",
+      "Welcome to Chaffey"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "InTech Center",
+      "Interactive map",
+      "ABOUT CHAFFEY",
+      "Superintendent/President",
+      "Governing Board",
+      "Board Policies & Procedures",
+      "About"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chaffey.edu/acc/bth/index.php",
+   "final_url": "https://www.chaffey.edu/acc/bth/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Success Centers",
+      "Supplemental Instruction",
+      "Transfer Center",
+      "Veteran Services",
+      "Chaffey CommunityToggle submenu",
+      "Alumni and Community Outreach",
+      "The Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "or the dean’s office. They can answer questions or concerns about your classes, and",
+     "position": null,
+     "window": [
+      "Coordinators are faculty leaders who are vital to ensuring students have the best",
+      "experience possible while taking classes at Chaffey College. Coordinators help to",
+      "mediate any concerns that you might have and can connect you with your instructor",
+      "or the dean’s office. They can answer questions or concerns about your classes, and",
+      "refer you to resources related to your academic experience. Email is the best way",
+      "to reach them:",
+      "Thierry Brusselle, AA, BS, MBA"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator: Accounting, Accounting & Financial Services, Business Administration,",
+     "position": null,
+     "window": [
+      "refer you to resources related to your academic experience. Email is the best way",
+      "to reach them:",
+      "Thierry Brusselle, AA, BS, MBA",
+      "Coordinator: Accounting, Accounting & Financial Services, Business Administration,",
+      "Business Management, Paralegal Studies, Real Estate",
+      "Phone:",
+      "(909) 652-6835"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator: Business and Office Technologies,",
+     "position": null,
+     "window": [
+      "thierry.brusselle@chaffey.edu",
+      "thierry.brusselle@chaffey.edu",
+      "David Nimri",
+      "Coordinator: Business and Office Technologies,",
+      "Computer Information Systems, Computer Science,",
+      "Industrial Electrical Technology,",
+      "Heating, Ventilation, Air Conditioning and Refrigeration"
+     ],
+     "emails": [
+      "thierry.brusselle@chaffey.edu"
+     ]
+    },
+    {
+     "line": "Dean & Staff",
+     "position": null,
+     "window": [
+      "Email:",
+      "anas.nimri@chaffey.edu",
+      "anas.nimri@chaffey.edu",
+      "Dean & Staff",
+      "Dr. Yolanda Friday",
+      "Dean",
+      "Email:"
+     ],
+     "emails": [
+      "anas.nimri@chaffey.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "anas.nimri@chaffey.edu",
+      "Dean & Staff",
+      "Dr. Yolanda Friday",
+      "Dean",
+      "Email:",
+      "Yolanda.Friday@chaffey.edu",
+      "Yolanda.Friday@chaffey.edu"
+     ],
+     "emails": [
+      "Yolanda.Friday@chaffey.edu",
+      "anas.nimri@chaffey.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "InTech Center",
+      "Interactive map",
+      "ABOUT CHAFFEY",
+      "Superintendent/President",
+      "Governing Board",
+      "Board Policies & Procedures",
+      "About"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chaffey.edu/acc/pcs/index.php",
+   "final_url": "https://www.chaffey.edu/acc/pcs/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Success Centers",
+      "Supplemental Instruction",
+      "Transfer Center",
+      "Veteran Services",
+      "Chaffey CommunityToggle submenu",
+      "Alumni and Community Outreach",
+      "The Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "or the dean’s office. They can answer questions or concerns about your classes, and",
+     "position": null,
+     "window": [
+      "Coordinators are faculty leaders who are vital to ensuring students have the best",
+      "experience possible while taking classes at Chaffey College. Coordinators help to",
+      "mediate any concerns that you might have and can connect you with your instructor",
+      "or the dean’s office. They can answer questions or concerns about your classes, and",
+      "refer you to resources related to your academic experience. Email is the best way",
+      "to reach them:",
+      "Criminal Justice; Emergency Medical Technician; Fire Technology; and Homeland & National"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean & Staff",
+     "position": null,
+     "window": [
+      "Anthropology; Psychology; Sociology; and Social Science - Angela.Sadowski@chaffey.edu Angela Sadowski",
+      "Child Development & Education; Education; and Ethnic Studies - Maryline.Chemama@chaffey.edu Maryline Chemama",
+      "Economics; History; Humanities; Philosophy; and Political Science - Ian.Baldwin@chaffey.edu Ian Baldwin",
+      "Dean & Staff",
+      "Robert Rundquist",
+      "Dean of Public Service, Culture, and Society",
+      "Email:"
+     ],
+     "emails": [
+      "Angela.Sadowski@chaffey.edu",
+      "Ian.Baldwin@chaffey.edu",
+      "Maryline.Chemama@chaffey.edu"
+     ]
+    },
+    {
+     "line": "Dean of Public Service, Culture, and Society",
+     "position": null,
+     "window": [
+      "Economics; History; Humanities; Philosophy; and Political Science - Ian.Baldwin@chaffey.edu Ian Baldwin",
+      "Dean & Staff",
+      "Robert Rundquist",
+      "Dean of Public Service, Culture, and Society",
+      "Email:",
+      "robert.rundquist@chaffey.edu",
+      "robert.rundquist@chaffey.edu"
+     ],
+     "emails": [
+      "Ian.Baldwin@chaffey.edu",
+      "robert.rundquist@chaffey.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "InTech Center",
+      "Interactive map",
+      "ABOUT CHAFFEY",
+      "Superintendent/President",
+      "Governing Board",
+      "Board Policies & Procedures",
+      "About"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chaffey.edu/about/employee-directory.php",
+   "final_url": "https://www.chaffey.edu/about/employee-directory.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Success Centers",
+      "Supplemental Instruction",
+      "Transfer Center",
+      "Veteran Services",
+      "Chaffey CommunityToggle submenu",
+      "Alumni and Community Outreach",
+      "The Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "InTech Center",
+      "Interactive map",
+      "ABOUT CHAFFEY",
+      "Superintendent/President",
+      "Governing Board",
+      "Board Policies & Procedures",
+      "About"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chaffey.edu/spops/veteran-faculty-staff-info.php",
+   "final_url": "https://www.chaffey.edu/spops/veteran-faculty-staff-info.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Success Centers",
+      "Supplemental Instruction",
+      "Transfer Center",
+      "Veteran Services",
+      "Chaffey CommunityToggle submenu",
+      "Alumni and Community Outreach",
+      "The Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "Justice-Involved",
+      "Umoja",
+      "A2Mend",
+      "Veteran Resource Center",
+      "Library Libguide World Religions",
+      "Black and Brown Minds & Mattering Conference",
+      "Intertribal Pow Wow"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "InTech Center",
+      "Interactive map",
+      "ABOUT CHAFFEY",
+      "Superintendent/President",
+      "Governing Board",
+      "Board Policies & Procedures",
+      "About"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chaffey.edu/about/dir-update.php",
+   "final_url": "https://www.chaffey.edu/about/dir-update.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Success Centers",
+      "Supplemental Instruction",
+      "Transfer Center",
+      "Veteran Services",
+      "Chaffey CommunityToggle submenu",
+      "Alumni and Community Outreach",
+      "The Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "InTech Center",
+      "Interactive map",
+      "ABOUT CHAFFEY",
+      "Superintendent/President",
+      "Governing Board",
+      "Board Policies & Procedures",
+      "About"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41305785750"
+}

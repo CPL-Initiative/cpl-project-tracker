@@ -33,6 +33,7 @@ The pure functions are tested by tests/college_contacts_harvest_runner_test.py o
 from __future__ import annotations
 
 import argparse
+import glob
 import json
 import os
 import re
@@ -305,13 +306,42 @@ def read_last_seen() -> dict[str, str]:
     return out
 
 
+def read_history(out_root: str) -> dict[str, str]:
+    """The day each college was last read, from the committed pages (kb/contacts_harvest/<run>/).
+
+    A college whose read found no one has no row, so ordering by `last_seen` alone put the same
+    empty sites (a 404 homepage, a one-page site) first every night (S538)."""
+    out: dict[str, str] = {}
+    for f in glob.glob(os.path.join(out_root, "*", "*.json")):
+        if os.path.basename(os.path.dirname(f)).endswith("_records"):
+            continue
+        try:
+            with open(f, encoding="utf-8") as fh:
+                d = json.load(fh)
+        except (OSError, ValueError):
+            continue
+        c, at = d.get("college"), str(d.get("read_at", ""))[:10]
+        if c and at and at > out.get(c, ""):
+            out[c] = at
+    return out
+
+
+def last_read(last_seen: dict[str, str], history: dict[str, str]) -> dict[str, str]:
+    """The later of a college's last row seen and its last read, as a day."""
+    out = {c: str(v)[:10] for c, v in last_seen.items()}
+    for c, at in history.items():
+        if at > out.get(c, ""):
+            out[c] = at
+    return out
+
+
 def cmd_read(a) -> int:
     allc = load_colleges()
     if a.colleges:
         want = [w.strip().lower() for w in a.colleges.split(";") if w.strip()]
         chosen = [c for c in allc if any(w in c["college"].lower() for w in want)]
     else:
-        chosen = batch_order(allc, read_last_seen())[: a.batch]
+        chosen = batch_order(allc, last_read(read_last_seen(), read_history(a.out)))[: a.batch]
     out_dir = os.path.join(a.out, a.run)
     os.makedirs(out_dir, exist_ok=True)
     f = Fetcher(int(os.environ.get("HARVEST_DELAY_MS", "4000")))

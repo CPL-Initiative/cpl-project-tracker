@@ -1,0 +1,112 @@
+{
+ "run": "41305785750",
+ "applied_at": "2026-11-01T12:30:13+00:00",
+ "github_run": "41306714482",
+ "result": {
+  "new": 12,
+  "run": "41305785750",
+  "gone": 0,
+  "colleges": 6,
+  "seen_again": 0
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [],
+ "rows": [
+  {
+   "college": "Cañada College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Lizette Bricker",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+  },
+  {
+   "college": "Cañada College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Chialin Hsieh",
+   "email": "",
+   "source_url": "https://directory.smccd.edu/allemp.php?college=Canada"
+  },
+  {
+   "college": "Coastline College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Dr. Vince Rodriguez",
+   "email": "",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Kathryn Mueller, Ed.D.",
+   "email": "kmueller@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Isela Ocegueda, Ph.D.",
+   "email": "iocegueda@cccd.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "Coastline College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Westminster - Le-Jao Campus",
+   "name": "Stephanie Bridges",
+   "email": "sbridges@coastline.edu",
+   "source_url": "https://www.coastline.edu/about/administration/college-leadership/index.php"
+  },
+  {
+   "college": "College of Alameda",
+   "position": "college_ceo",
+   "title_as_printed": "Acting President",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership"
+  },
+  {
+   "college": "College of Alameda",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor, Peralta Community College District",
+   "name": "Dr. Tammeil Gilkerson",
+   "email": "tgilkerson@peralta.edu",
+   "source_url": "https://alameda.edu/leadership"
+  },
+  {
+   "college": "College of Marin",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Jonathan Eldridge, Ed.D.",
+   "email": "",
+   "source_url": "https://president.marin.edu"
+  },
+  {
+   "college": "College of Marin",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Transfer Counselor",
+   "name": "Sara Malmquist-West",
+   "email": "",
+   "source_url": "https://ss.marin.edu/articulation"
+  },
+  {
+   "college": "College of San Mateo",
+   "position": "college_ceo",
+   "title_as_printed": "President, College of San Mateo",
+   "name": "Dr. Manuel Alejandro Pérez",
+   "email": "",
+   "source_url": "https://www.collegeofsanmateo.edu/president/"
+  },
+  {
+   "college": "Coalinga College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor of Ed. Services and Institutional Effect.",
+   "name": "Lataria Hall",
+   "email": "latariahall@whccd.edu",
+   "source_url": "https://coalingacollege.edu/contact-us/directory/"
+  }
+ ]
+}

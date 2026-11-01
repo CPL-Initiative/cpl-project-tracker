@@ -1,0 +1,1427 @@
+{
+ "college": "College of Marin",
+ "homepage": "https://www.marin.edu/",
+ "read_at": "2026-11-01T12:24:23+00:00",
+ "pages": [
+  {
+   "url": "https://www.marin.edu/",
+   "final_url": "https://marin.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Previous Slide◀︎",
+      "Next Slide▶︎"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www1.marin.edu/administration",
+   "final_url": "https://www1.marin.edu/administration",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Administration",
+      "OFFICE OF THE PRESIDENT"
+     ],
+     "emails": []
+    },
+    {
+     "line": "OFFICE OF THE PRESIDENT",
+     "position": "college_ceo",
+     "window": [
+      "President's Circle",
+      "< Back",
+      "Administration",
+      "OFFICE OF THE PRESIDENT",
+      "The Superintendent/President is the chief executive officer of the District serving under the direction of the Board of Trustees. The Superintendent/ President provides overall administrative leadership to the College and monitors institutional adherence to the policies prescribed and adopted by the Board of Trustees. The President also provides institutional leadership in carrying out the mission and strategic goals of the College.",
+      "From The President's Desk",
+      "BOARD OF TRUSTEES"
+     ],
+     "emails": []
+    },
+    {
+     "line": "From The President's Desk",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "OFFICE OF THE PRESIDENT",
+      "The Superintendent/President is the chief executive officer of the District serving under the direction of the Board of Trustees. The Superintendent/ President provides overall administrative leadership to the College and monitors institutional adherence to the policies prescribed and adopted by the Board of Trustees. The President also provides institutional leadership in carrying out the mission and strategic goals of the College.",
+      "From The President's Desk",
+      "BOARD OF TRUSTEES",
+      "The Board of Trustees of College of Marin consists of seven voting members who are chosen at large on a nonpartisan basis in public elections held in odd-numbered years. These members serve four- year terms which are staggered. A non-voting student member of the Board is elected by the student body for a one-year term. The Board of Trustees, composed of community representatives and responsible to the public, has the authority to appoint the Superintendent/President and other administrative personnel, faculty members, and members of the Board in the case of vacancies.",
+      "COLLEGE ADMINISTRATION"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://ss.marin.edu/articulation",
+   "final_url": "https://ss.marin.edu/articulation",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Home",
+      "What is Articulation?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "What is Articulation?",
+     "position": "articulation_officer",
+     "window": [
+      "President's Circle",
+      "< Back",
+      "Home",
+      "What is Articulation?",
+      "Articulation is the process of creating formal agreements between colleges and universities that determine the transferability of courses as “comparable to” or “acceptable in lieu of” a specific course at the receiving institution. Articulation agreements determine which courses will transfer to meet admission, general education, or major preparation requirements for a specific academic program or degree. Successful completion of an articulated course assures the student and the faculty that the student has taken the appropriate course, received the necessary instruction and preparation, and that similar outcomes can be assured.",
+      "In short, the articulation process enables students to progress to the next level of instruction at their receiving institution using coursework from College of Marin!",
+      "Types of Articulation Agreements"
+     ],
+     "emails": []
+    },
+    {
+     "line": "In short, the articulation process enables students to progress to the next level of instruction at their receiving institution using coursework from College of Marin!",
+     "position": "articulation_officer",
+     "window": [
+      "Home",
+      "What is Articulation?",
+      "Articulation is the process of creating formal agreements between colleges and universities that determine the transferability of courses as “comparable to” or “acceptable in lieu of” a specific course at the receiving institution. Articulation agreements determine which courses will transfer to meet admission, general education, or major preparation requirements for a specific academic program or degree. Successful completion of an articulated course assures the student and the faculty that the student has taken the appropriate course, received the necessary instruction and preparation, and that similar outcomes can be assured.",
+      "In short, the articulation process enables students to progress to the next level of instruction at their receiving institution using coursework from College of Marin!",
+      "Types of Articulation Agreements",
+      "General Education",
+      "General education articulation agreements identify courses that will meet the lower-division general education requirements at a given institution."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Types of Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "What is Articulation?",
+      "Articulation is the process of creating formal agreements between colleges and universities that determine the transferability of courses as “comparable to” or “acceptable in lieu of” a specific course at the receiving institution. Articulation agreements determine which courses will transfer to meet admission, general education, or major preparation requirements for a specific academic program or degree. Successful completion of an articulated course assures the student and the faculty that the student has taken the appropriate course, received the necessary instruction and preparation, and that similar outcomes can be assured.",
+      "In short, the articulation process enables students to progress to the next level of instruction at their receiving institution using coursework from College of Marin!",
+      "Types of Articulation Agreements",
+      "General Education",
+      "General education articulation agreements identify courses that will meet the lower-division general education requirements at a given institution.",
+      "Course-to-Course"
+     ],
+     "emails": []
+    },
+    {
+     "line": "General education articulation agreements identify courses that will meet the lower-division general education requirements at a given institution.",
+     "position": "articulation_officer",
+     "window": [
+      "In short, the articulation process enables students to progress to the next level of instruction at their receiving institution using coursework from College of Marin!",
+      "Types of Articulation Agreements",
+      "General Education",
+      "General education articulation agreements identify courses that will meet the lower-division general education requirements at a given institution.",
+      "Course-to-Course",
+      "Course-to-course articulation agreements determine if a specific course taken at one institution will meet the requirements of a specific course at the receiving institution. This is most often used to determine preparation for a specific major.",
+      "Elective Credit"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation agreements can also determine a course's transferability as elective units to a given institution.",
+     "position": "articulation_officer",
+     "window": [
+      "Course-to-Course",
+      "Course-to-course articulation agreements determine if a specific course taken at one institution will meet the requirements of a specific course at the receiving institution. This is most often used to determine preparation for a specific major.",
+      "Elective Credit",
+      "Articulation agreements can also determine a course's transferability as elective units to a given institution.",
+      "California Intersegmental Articulation Council (CIAC)",
+      "College of Marin is a member of the California Intersegmental Articulation Counsel (CIAC). CIAC is a professional organization convened by articulation officers in the 1990's in response to the growing population of transfer students between California's four segments of higher education as defined by the Donahoe Higher Education Act of 1960, also known as California's Master Plan of Education. To learn more about CIAC and articulation in California, visit the CIAC website.",
+      "The final responsibility for successfully achieving an educational goal lies with the student. Information found on these web pages is designed to be helpful; however, information is subject to frequent changes so students should always consult with a counselor to ensure successful transfer. You can make an appointment with a counselor through your MyCOM Portal or by calling (415) 485-9432"
+     ],
+     "emails": []
+    },
+    {
+     "line": "California Intersegmental Articulation Council (CIAC)",
+     "position": "articulation_officer",
+     "window": [
+      "Course-to-course articulation agreements determine if a specific course taken at one institution will meet the requirements of a specific course at the receiving institution. This is most often used to determine preparation for a specific major.",
+      "Elective Credit",
+      "Articulation agreements can also determine a course's transferability as elective units to a given institution.",
+      "California Intersegmental Articulation Council (CIAC)",
+      "College of Marin is a member of the California Intersegmental Articulation Counsel (CIAC). CIAC is a professional organization convened by articulation officers in the 1990's in response to the growing population of transfer students between California's four segments of higher education as defined by the Donahoe Higher Education Act of 1960, also known as California's Master Plan of Education. To learn more about CIAC and articulation in California, visit the CIAC website.",
+      "The final responsibility for successfully achieving an educational goal lies with the student. Information found on these web pages is designed to be helpful; however, information is subject to frequent changes so students should always consult with a counselor to ensure successful transfer. You can make an appointment with a counselor through your MyCOM Portal or by calling (415) 485-9432",
+      "Articulation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "California Intersegmental Articulation Council (CIAC)",
+      "College of Marin is a member of the California Intersegmental Articulation Counsel (CIAC). CIAC is a professional organization convened by articulation officers in the 1990's in response to the growing population of transfer students between California's four segments of higher education as defined by the Donahoe Higher Education Act of 1960, also known as California's Master Plan of Education. To learn more about CIAC and articulation in California, visit the CIAC website.",
+      "The final responsibility for successfully achieving an educational goal lies with the student. Information found on these web pages is designed to be helpful; however, information is subject to frequent changes so students should always consult with a counselor to ensure successful transfer. You can make an appointment with a counselor through your MyCOM Portal or by calling (415) 485-9432",
+      "Articulation",
+      "Home",
+      "General Education",
+      "Articulation Agreements"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation",
+      "Home",
+      "General Education",
+      "Articulation Agreements",
+      "Articulation with CSU & UC",
+      "Course Outlines of Record",
+      "Faculty Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation with CSU & UC",
+     "position": "articulation_officer",
+     "window": [
+      "Home",
+      "General Education",
+      "Articulation Agreements",
+      "Articulation with CSU & UC",
+      "Course Outlines of Record",
+      "Faculty Resources",
+      "Credit for Prior Learning"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Officer and",
+     "position": "articulation_officer",
+     "window": [
+      "Other CPL",
+      "Contact Information",
+      "Sara Malmquist-West",
+      "Articulation Officer and",
+      "Transfer Counselor",
+      "M.S. Counseling",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation and",
+     "position": "articulation_officer",
+     "window": [
+      "M.S. Counseling",
+      "[email protected]",
+      "Grace Yuan",
+      "Articulation and",
+      "Curriculum Specialist",
+      "[email protected]",
+      "Kentfield Campus"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://ss.marin.edu/veterans",
+   "final_url": "https://ss.marin.edu/veterans",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Home",
+      "College of Marin welcomes all active duty, veterans/service members, reserve and dependents, regardless of VA eligibility. We recognize the significant value that student veterans bring to our campus and we are committed to ensuring that you receive the best possible educational experience."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "A “Red” placard will be issued by the Cashiers Office",
+      "Additionally, you must be a Purple Heart recipient to park in the only designated space painted in the distinct “purple” for a Purple Heart recipient(s).",
+      "GI Bill® is a registered trademark of the U.S. Department of Veterans Affairs(VA). More information about education benefits offered by VA is available at the official U.S. government Web site at www.benefits.va.gov/​gibill.",
+      "Veteran Services",
+      "Home",
+      "Counseling Services",
+      "VA Education Benefits"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Forms",
+      "Our Team",
+      "Contact Information",
+      "Veteran Services",
+      "Contact and Support",
+      "Follow Us:",
+      "facebook"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://netapps.marin.edu/Apps/Directory/EmployeeSearch.aspx",
+   "final_url": "https://netapps.marin.edu/Apps/Directory/EmployeeSearch.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Employee Search",
+      "Please select the first letter of the employee's last name. Alternatively, enter a keyword and press the Search button to find all employees with a last name, first name or nickname that begins with the keyword. Select the employee's name for additional information."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "http://www1.marin.edu/administration",
+   "final_url": "https://www1.marin.edu/administration",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Administration",
+      "OFFICE OF THE PRESIDENT"
+     ],
+     "emails": []
+    },
+    {
+     "line": "OFFICE OF THE PRESIDENT",
+     "position": "college_ceo",
+     "window": [
+      "President's Circle",
+      "< Back",
+      "Administration",
+      "OFFICE OF THE PRESIDENT",
+      "The Superintendent/President is the chief executive officer of the District serving under the direction of the Board of Trustees. The Superintendent/ President provides overall administrative leadership to the College and monitors institutional adherence to the policies prescribed and adopted by the Board of Trustees. The President also provides institutional leadership in carrying out the mission and strategic goals of the College.",
+      "From The President's Desk",
+      "BOARD OF TRUSTEES"
+     ],
+     "emails": []
+    },
+    {
+     "line": "From The President's Desk",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "OFFICE OF THE PRESIDENT",
+      "The Superintendent/President is the chief executive officer of the District serving under the direction of the Board of Trustees. The Superintendent/ President provides overall administrative leadership to the College and monitors institutional adherence to the policies prescribed and adopted by the Board of Trustees. The President also provides institutional leadership in carrying out the mission and strategic goals of the College.",
+      "From The President's Desk",
+      "BOARD OF TRUSTEES",
+      "The Board of Trustees of College of Marin consists of seven voting members who are chosen at large on a nonpartisan basis in public elections held in odd-numbered years. These members serve four- year terms which are staggered. A non-voting student member of the Board is elected by the student body for a one-year term. The Board of Trustees, composed of community representatives and responsible to the public, has the authority to appoint the Superintendent/President and other administrative personnel, faculty members, and members of the Board in the case of vacancies.",
+      "COLLEGE ADMINISTRATION"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://president.marin.edu",
+   "final_url": "https://president.marin.edu",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Skip to main content",
+      "MyCOM",
+      "Skip to Content"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Main navigation",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "From the President's Desk",
+     "position": "college_ceo",
+     "window": [
+      "Main navigation",
+      "Home",
+      "News Releases",
+      "From the President's Desk",
+      "Leadership Team",
+      "Media Resources",
+      "Welcome"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "At College of Marin we take seriously our role as the community’s college, where we provide equitable opportunities and foster success for all members of our diverse community. This work comes in many forms, from classroom instruction to fieldwork, from apprenticeships to lifelong learning opportunities, and convening our myriad partners to tackle persistent issues relevant to the communities we serve. Our students receive world-class support from our dedicated faculty and staff. Collectively, they are what make us a premier California community college. Regardless of your educational objectives, we welcome you.",
+      "Sincerely,",
+      "Jonathan Eldridge, Ed.D.",
+      "Superintendent/President",
+      "BIOGRAPHY",
+      "Jonathan Eldridge, Ed.D serves as College of Marin’s 11th Superintendent/President. He came to the College in 2013 and most recently served as the College’s Assistant Superintendent/Vice President for Student Learning & Success. Dr. Eldridge supports a diverse group of faculty, staff, and administrators to create a truly coherent and integrated educational program for students. His commitment to student success is rooted in recognizing historical and systemic disparities in opportunity and outcomes and ensuring resources are directed at eliminating those disparities. At College of Marin Dr. Eldridge has developed, expanded, and nurtured partnerships with 10,000 Degrees, Canal Alliance, Marin Community Foundation, Marin County Office of Higher Education, all local school districts, Sonoma State University, Dominican University, Marin Economic Forum, and many others to allow the College to deliver more fully on its mission of providing equitable opportunities and fostering success for all members of our diverse community.",
+      "Dr. Eldridge received a bachelor’s degree in History with a minor in political science from Central Washington University, graduating from CWU’s William O. Douglas Honors College. His master’s degree is in student affairs in higher education from Colorado State University and his doctorate is in organizational change and leadership from the University of Southern California. In addition to working at the University of Washington, he has also served as Dean of Students at Lewis & Clark College in Portland, Oregon and Vice President for Student Affairs at Southern Oregon University. These experiences at flagship, land grant, private, and regional institutions have proved to be invaluable in informing his work at College of Marin."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://marin.edu/event/veterans-day-0",
+   "final_url": "https://marin.edu/event/veterans-day-0",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Veterans' Day",
+      "College campuses will be closed in observance of Veterans' Day."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "http://president.marin.edu",
+   "final_url": "https://president.marin.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Skip to main content",
+      "MyCOM",
+      "Skip to Content"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Main navigation",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "From the President's Desk",
+     "position": "college_ceo",
+     "window": [
+      "Main navigation",
+      "Home",
+      "News Releases",
+      "From the President's Desk",
+      "Leadership Team",
+      "Media Resources",
+      "Welcome"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "At College of Marin we take seriously our role as the community’s college, where we provide equitable opportunities and foster success for all members of our diverse community. This work comes in many forms, from classroom instruction to fieldwork, from apprenticeships to lifelong learning opportunities, and convening our myriad partners to tackle persistent issues relevant to the communities we serve. Our students receive world-class support from our dedicated faculty and staff. Collectively, they are what make us a premier California community college. Regardless of your educational objectives, we welcome you.",
+      "Sincerely,",
+      "Jonathan Eldridge, Ed.D.",
+      "Superintendent/President",
+      "BIOGRAPHY",
+      "Jonathan Eldridge, Ed.D serves as College of Marin’s 11th Superintendent/President. He came to the College in 2013 and most recently served as the College’s Assistant Superintendent/Vice President for Student Learning & Success. Dr. Eldridge supports a diverse group of faculty, staff, and administrators to create a truly coherent and integrated educational program for students. His commitment to student success is rooted in recognizing historical and systemic disparities in opportunity and outcomes and ensuring resources are directed at eliminating those disparities. At College of Marin Dr. Eldridge has developed, expanded, and nurtured partnerships with 10,000 Degrees, Canal Alliance, Marin Community Foundation, Marin County Office of Higher Education, all local school districts, Sonoma State University, Dominican University, Marin Economic Forum, and many others to allow the College to deliver more fully on its mission of providing equitable opportunities and fostering success for all members of our diverse community.",
+      "Dr. Eldridge received a bachelor’s degree in History with a minor in political science from Central Washington University, graduating from CWU’s William O. Douglas Honors College. His master’s degree is in student affairs in higher education from Colorado State University and his doctorate is in organizational change and leadership from the University of Southern California. In addition to working at the University of Washington, he has also served as Dean of Students at Lewis & Clark College in Portland, Oregon and Vice President for Student Affairs at Southern Oregon University. These experiences at flagship, land grant, private, and regional institutions have proved to be invaluable in informing his work at College of Marin."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://ss.marin.edu/articulation/articulation-agreements",
+   "final_url": "https://ss.marin.edu/articulation/articulation-agreements",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation Agreements | Student Services",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation Agreements | Student Services",
+      "Skip to main content",
+      "MyCOM",
+      "Skip to Content"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Articulation Agreements",
+      "Articulation Agreements at College of Marin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Articulation Agreements",
+      "Articulation Agreements at College of Marin",
+      "College of Marin has articulation agreements with the following private and out-of-state institutions:",
+      "CA Private & Independent Colleges and Universities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements at College of Marin",
+     "position": "articulation_officer",
+     "window": [
+      "President's Circle",
+      "< Back",
+      "Articulation Agreements",
+      "Articulation Agreements at College of Marin",
+      "College of Marin has articulation agreements with the following private and out-of-state institutions:",
+      "CA Private & Independent Colleges and Universities",
+      "Academy of Art University"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College of Marin has articulation agreements with the following private and out-of-state institutions:",
+     "position": "articulation_officer",
+     "window": [
+      "< Back",
+      "Articulation Agreements",
+      "Articulation Agreements at College of Marin",
+      "College of Marin has articulation agreements with the following private and out-of-state institutions:",
+      "CA Private & Independent Colleges and Universities",
+      "Academy of Art University",
+      "Dominican University Articulation Agreements"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dominican University Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "College of Marin has articulation agreements with the following private and out-of-state institutions:",
+      "CA Private & Independent Colleges and Universities",
+      "Academy of Art University",
+      "Dominican University Articulation Agreements",
+      "CORE Articulation Agreement",
+      "Business B.A.",
+      "Education Studies B.A."
+     ],
+     "emails": []
+    },
+    {
+     "line": "CORE Articulation Agreement",
+     "position": "articulation_officer",
+     "window": [
+      "CA Private & Independent Colleges and Universities",
+      "Academy of Art University",
+      "Dominican University Articulation Agreements",
+      "CORE Articulation Agreement",
+      "Business B.A.",
+      "Education Studies B.A.",
+      "English B.A."
+     ],
+     "emails": []
+    },
+    {
+     "line": "General Articulation Agreement",
+     "position": "articulation_officer",
+     "window": [
+      "Psychology (BA) + Pathway to Occupational Therapy (MS) (see \"Dominican University\" link above)",
+      "Nursing prerequisites can be found at ASSIST.org",
+      "California College of the Arts",
+      "General Articulation Agreement",
+      "2 + 3 Architecture Agreement",
+      "Kaiser Permanente School of Allied Health Sciences (KPSAHS)",
+      "Diagnostic Medical Sonography, Nuclear Medicine, Radiologic Technology (PDF)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College of Marin Articulation Agreement",
+     "position": "articulation_officer",
+     "window": [
+      "University of Redlands",
+      "Business B.S.",
+      "University of San Francisco",
+      "College of Marin Articulation Agreement",
+      "University of Southern California (USC)",
+      "USC Articulation Agreement",
+      "USC Transfer Planning Guide"
+     ],
+     "emails": []
+    },
+    {
+     "line": "USC Articulation Agreement",
+     "position": "articulation_officer",
+     "window": [
+      "University of San Francisco",
+      "College of Marin Articulation Agreement",
+      "University of Southern California (USC)",
+      "USC Articulation Agreement",
+      "USC Transfer Planning Guide",
+      "USC Unofficial Articulation Histories",
+      "Western Governors University"
+     ],
+     "emails": []
+    },
+    {
+     "line": "USC Unofficial Articulation Histories",
+     "position": "articulation_officer",
+     "window": [
+      "University of Southern California (USC)",
+      "USC Articulation Agreement",
+      "USC Transfer Planning Guide",
+      "USC Unofficial Articulation Histories",
+      "Western Governors University",
+      "WGU School of Business",
+      "WGU School of Education"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements available on ASSIST.ORG",
+     "position": "articulation_officer",
+     "window": [
+      "Nursing (pre-licensure)",
+      "Historically Black Colleges & Universities (HBCUs)",
+      "National University",
+      "Articulation Agreements available on ASSIST.ORG",
+      "UMassGlobal",
+      "ADT Guarantee & Transfer Guides",
+      "California Community Colleges"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Association of Independent California Colleges and Universities (AICCU)",
+      "The Association of Independent California Colleges and Universities (AICCU) represents over 75 nonprofit private schools in California. The universities and colleges that belong to this association are accredited and reputable.",
+      "The final responsibility for successfully achieving an educational goal lies with the student. Information found on these web pages is designed to be helpful; however, information is subject to frequent changes so students should always consult with a counselor to ensure successful transfer. You can make an appointment with a counselor through your MyCOM Portal or by calling (415) 485-9432",
+      "Articulation",
+      "Home",
+      "General Education",
+      "Articulation Agreements"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation",
+      "Home",
+      "General Education",
+      "Articulation Agreements",
+      "Articulation with CSU & UC",
+      "Course Outlines of Record",
+      "Faculty Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation with CSU & UC",
+     "position": "articulation_officer",
+     "window": [
+      "Home",
+      "General Education",
+      "Articulation Agreements",
+      "Articulation with CSU & UC",
+      "Course Outlines of Record",
+      "Faculty Resources",
+      "Credit for Prior Learning"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Officer and",
+     "position": "articulation_officer",
+     "window": [
+      "Other CPL",
+      "Contact Information",
+      "Sara Malmquist-West",
+      "Articulation Officer and",
+      "Transfer Counselor",
+      "M.S. Counseling",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation and",
+     "position": "articulation_officer",
+     "window": [
+      "M.S. Counseling",
+      "[email protected]",
+      "Grace Yuan",
+      "Articulation and",
+      "Curriculum Specialist",
+      "[email protected]",
+      "Kentfield Campus"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://ss.marin.edu/articulation/articulation-csu-uc",
+   "final_url": "https://ss.marin.edu/articulation/articulation-csu-uc",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation with CSU & UC | Student Services",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation with CSU & UC | Student Services",
+      "Skip to main content",
+      "MyCOM",
+      "Skip to Content"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Articulation with CSU & UC",
+      "There are two public school systems in California: The University of California (UCs) and the California State Universities (CSUs). California Community Colleges have developed articulation agreements with both the UC and CSU systems. These agreements can be found on ASSIST.org."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation with CSU & UC",
+     "position": "articulation_officer",
+     "window": [
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Articulation with CSU & UC",
+      "There are two public school systems in California: The University of California (UCs) and the California State Universities (CSUs). California Community Colleges have developed articulation agreements with both the UC and CSU systems. These agreements can be found on ASSIST.org.",
+      "What is ASSIST.org",
+      "The website ASSIST.org is the official repository of articulation agreements for California Community Colleges with the UCs and CSUs. Agreements on ASSIST.org can be viewed by department or major, depending on the institution. Students often find the agreements BY MAJOR to be most helpful."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Participating AICCU members",
+      "For more information on CSU Transfer.",
+      "The final responsibility for successfully achieving an educational goal lies with the student. Information found on these web pages is designed to be helpful; however, information is subject to frequent changes so students should always consult with a counselor to ensure successful transfer. You can make an appointment with a counselor through your MyCOM Portal or by calling (415) 485-9432",
+      "Articulation",
+      "Home",
+      "General Education",
+      "Articulation Agreements"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation",
+      "Home",
+      "General Education",
+      "Articulation Agreements",
+      "Articulation with CSU & UC",
+      "Course Outlines of Record",
+      "Faculty Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation with CSU & UC",
+     "position": "articulation_officer",
+     "window": [
+      "Home",
+      "General Education",
+      "Articulation Agreements",
+      "Articulation with CSU & UC",
+      "Course Outlines of Record",
+      "Faculty Resources",
+      "Credit for Prior Learning"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Officer and",
+     "position": "articulation_officer",
+     "window": [
+      "Other CPL",
+      "Contact Information",
+      "Sara Malmquist-West",
+      "Articulation Officer and",
+      "Transfer Counselor",
+      "M.S. Counseling",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation and",
+     "position": "articulation_officer",
+     "window": [
+      "M.S. Counseling",
+      "[email protected]",
+      "Grace Yuan",
+      "Articulation and",
+      "Curriculum Specialist",
+      "[email protected]",
+      "Kentfield Campus"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "http://ss.marin.edu/veterans",
+   "final_url": "https://ss.marin.edu/veterans",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Academics Home",
+      "Academic Programs",
+      "Articulation",
+      "Career & Technical Education",
+      "Class Schedules & Catalogs",
+      "Course Outline of Record"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Student Services",
+      "Transfer Center",
+      "Tutoring / Labs",
+      "Veteran Services",
+      "Campus Life Home",
+      "Athletics",
+      "COM Card / Student ID"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources",
+      "Information Technology",
+      "Maintenance & Operations",
+      "Office of the President",
+      "Planning & Research",
+      "Student Learning/Success",
+      "About COM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Giving to COM",
+      "Pillars of Philanthropy",
+      "Planned Giving",
+      "President's Circle",
+      "< Back",
+      "Home",
+      "College of Marin welcomes all active duty, veterans/service members, reserve and dependents, regardless of VA eligibility. We recognize the significant value that student veterans bring to our campus and we are committed to ensuring that you receive the best possible educational experience."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "A “Red” placard will be issued by the Cashiers Office",
+      "Additionally, you must be a Purple Heart recipient to park in the only designated space painted in the distinct “purple” for a Purple Heart recipient(s).",
+      "GI Bill® is a registered trademark of the U.S. Department of Veterans Affairs(VA). More information about education benefits offered by VA is available at the official U.S. government Web site at www.benefits.va.gov/​gibill.",
+      "Veteran Services",
+      "Home",
+      "Counseling Services",
+      "VA Education Benefits"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Forms",
+      "Our Team",
+      "Contact Information",
+      "Veteran Services",
+      "Contact and Support",
+      "Follow Us:",
+      "facebook"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "http://profiles.marin.edu/profiles/Leadership-Team"
+ ],
+ "run": "41305785750"
+}

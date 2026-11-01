@@ -1,0 +1,971 @@
+{
+ "college": "College of San Mateo",
+ "homepage": "https://collegeofsanmateo.edu/",
+ "read_at": "2026-11-01T12:25:28+00:00",
+ "pages": [
+  {
+   "url": "https://collegeofsanmateo.edu/",
+   "final_url": "https://collegeofsanmateo.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Support Services & Special Programs",
+      "Transfer Services",
+      "Undocumented Community Center",
+      "Veterans Services",
+      "Welcome Center",
+      "Wellness Center",
+      "Explore CSM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Bookstore",
+      "Learning Support Centers",
+      "Library",
+      "Office of the President",
+      "Theatre",
+      "Construction Updates",
+      "Maps, Directions & Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "International Students",
+      "Maps, Directions & Parking",
+      "News",
+      "Office of the President",
+      "Planetarium",
+      "Student Services",
+      "Title IX"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.collegeofsanmateo.edu/admissions/",
+   "final_url": "https://www.collegeofsanmateo.edu/admissions/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Support Services & Special Programs",
+      "Transfer Services",
+      "Undocumented Community Center",
+      "Veterans Services",
+      "Welcome Center",
+      "Wellness Center",
+      "Explore CSM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Bookstore",
+      "Learning Support Centers",
+      "Library",
+      "Office of the President",
+      "Theatre",
+      "Construction Updates",
+      "Maps, Directions & Parking"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.collegeofsanmateo.edu/veterans/",
+   "final_url": "https://www.collegeofsanmateo.edu/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College of San Mateo | Veterans Services",
+     "position": "vrc",
+     "window": [
+      "College of San Mateo | Veterans Services",
+      "Skip to Main Content",
+      "Menu",
+      "Academics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Support Services & Special Programs",
+      "Transfer Services",
+      "Undocumented Community Center",
+      "Veterans Services",
+      "Welcome Center",
+      "Wellness Center",
+      "Explore CSM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Bookstore",
+      "Learning Support Centers",
+      "Library",
+      "Office of the President",
+      "Theatre",
+      "Construction Updates",
+      "Maps, Directions & Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Search",
+      "Translate this page",
+      "Disclaimer",
+      "Veterans Services",
+      "Veterans Services Menu",
+      "Overview",
+      "Getting Started"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services Menu",
+     "position": "vrc",
+     "window": [
+      "Translate this page",
+      "Disclaimer",
+      "Veterans Services",
+      "Veterans Services Menu",
+      "Overview",
+      "Getting Started",
+      "Veterans Shopping Sheet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Donate",
+      "Forms",
+      "Contact Us",
+      "Veterans Services",
+      "Overview",
+      "CSM is dedicated to making sure that all veterans, reservists, active duty members",
+      "and their family members receive the well-deserved respect and benefits they have"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center (VROC)",
+     "position": "vrc",
+     "window": [
+      "CSM is dedicated to making sure that all veterans, reservists, active duty members",
+      "and their family members receive the well-deserved respect and benefits they have",
+      "earned.",
+      "Veterans Resource & Opportunity Center (VROC)",
+      "We can assist you in starting, continuing or resuming your education. We have experience",
+      "and knowledge of the Post-9/11 GIB, MGIB-SR, Voc Rehab, CalVet Fee Waiver, VA Work",
+      "Study, GI Bill® Payment Rates and Post-9/11 BAH rates. We can help you navigate through"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the VA system as well as connect you to your local county veteran services office.",
+     "position": "vrc",
+     "window": [
+      "We can assist you in starting, continuing or resuming your education. We have experience",
+      "and knowledge of the Post-9/11 GIB, MGIB-SR, Voc Rehab, CalVet Fee Waiver, VA Work",
+      "Study, GI Bill® Payment Rates and Post-9/11 BAH rates. We can help you navigate through",
+      "the VA system as well as connect you to your local county veteran services office.",
+      "Mission",
+      "To provide all student veterans and their families a college experience with inspiration",
+      "and purpose."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center (VROC)",
+     "position": "vrc",
+     "window": [
+      "More information about education benefits offered by VA is available at the official",
+      "U.S. government Web site at benefits.va.gov/gibill",
+      "Contact Us",
+      "Veterans Resource & Opportunity Center (VROC)",
+      "Central Hall Building 16, Room 150",
+      "csmvets@smccd.edu csmvets@smccd.edu",
+      "(650) 574-6675"
+     ],
+     "emails": [
+      "csmvets@smccd.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.collegeofsanmateo.edu/president/",
+   "final_url": "https://www.collegeofsanmateo.edu/president/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | College of San Mateo",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | College of San Mateo",
+      "Skip to Main Content",
+      "Menu",
+      "Academics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Support Services & Special Programs",
+      "Transfer Services",
+      "Undocumented Community Center",
+      "Veterans Services",
+      "Welcome Center",
+      "Wellness Center",
+      "Explore CSM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Bookstore",
+      "Learning Support Centers",
+      "Library",
+      "Office of the President",
+      "Theatre",
+      "Construction Updates",
+      "Maps, Directions & Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Search",
+      "Translate this page",
+      "Disclaimer",
+      "Office of the President",
+      "Office of the President Menu",
+      "President's Message",
+      "President's Biography"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President Menu",
+     "position": "college_ceo",
+     "window": [
+      "Translate this page",
+      "Disclaimer",
+      "Office of the President",
+      "Office of the President Menu",
+      "President's Message",
+      "President's Biography",
+      "Pan with the Pérezidente"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "Disclaimer",
+      "Office of the President",
+      "Office of the President Menu",
+      "President's Message",
+      "President's Biography",
+      "Pan with the Pérezidente",
+      "College Leadership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Biography",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Office of the President Menu",
+      "President's Message",
+      "President's Biography",
+      "Pan with the Pérezidente",
+      "College Leadership",
+      "Cabinet Office Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet the President's Assistant",
+     "position": "college_ceo",
+     "window": [
+      "Pan with the Pérezidente",
+      "College Leadership",
+      "Cabinet Office Hours",
+      "Meet the President's Assistant",
+      "CSM Organizational Chart",
+      "President's Advocacy Council",
+      "President's Communications"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Advocacy Council",
+     "position": "college_ceo",
+     "window": [
+      "Cabinet Office Hours",
+      "Meet the President's Assistant",
+      "CSM Organizational Chart",
+      "President's Advocacy Council",
+      "President's Communications",
+      "Impact Report",
+      "CSM Forward 2028 (EMP)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Communications",
+     "position": "college_ceo",
+     "window": [
+      "Meet the President's Assistant",
+      "CSM Organizational Chart",
+      "President's Advocacy Council",
+      "President's Communications",
+      "Impact Report",
+      "CSM Forward 2028 (EMP)",
+      "Board Report"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "CSM Forward 2028 (EMP)",
+      "Board Report",
+      "Contact Us",
+      "Office of the President",
+      "President's Message",
+      "Welcome to College of San Mateo!",
+      "Welcome to College of San Mateo!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "Board Report",
+      "Contact Us",
+      "Office of the President",
+      "President's Message",
+      "Welcome to College of San Mateo!",
+      "Welcome to College of San Mateo!",
+      "For over 100 years, College of San Mateo (CSM) has been dedicated to fostering excellence, inclusivity, and student success in San Mateo County. CSM serves over 15,000 students annually. We provide holistic student services, an extensive range of degree and certificate programs, and various collegiate sports for all students. Currently serving over 70% of students of color, the College is a designated Hispanic-Serving Institution (HSI) and an Asian American and Native American Pacific Islander-Serving Institution (AANAPISI). We are proud of our foundations in equity and social justice. CSM strives to build a sense of belonging and culture of success for all. Our vision is to deliver liberatory education that inspires individual achievement and generational impacts."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President, College of San Mateo",
+     "position": "college_ceo",
+     "window": [
+      "At CSM, we understand that your success can also be impacted by your environment. We offer comprehensive student support services to guide you through your educational journey. From our Wellness Center to counseling services, athletic center, SparkPoint for basic needs resources, and financial aid services, we aim to support your full experience at CSM. Our campus is a safe, welcoming, and inclusive space for all students, and we invite you to take full advantage of the resources and opportunities available.",
+      "On behalf of our campus community, I welcome you to CSM! Let’s go, Bulldogs!",
+      "Dr. Manuel Alejandro Pérez",
+      "President, College of San Mateo",
+      "¡Bienvenidos a College of San Mateo!",
+      "¡Bienvenidos a College of San Mateo!",
+      "Durante más de 100 años, College of San Mateo (CSM) se ha dedicado a fomentar la excelencia, la inclusión y el éxito estudiantil en el condado de San Mateo. CSM atiende a más de 15.000 estudiantes anualmente. Brindamos servicios integrales para estudiantes, una amplia gama de programas de títulos y certificados, y varios deportes colegiales para todos los estudiantes. Actualmente, el colegio atiende a más del 70% de estudiantes de color y es una institución designada al servicio de los hispanos (HSI) y una institución al servicio de los asiáticos estadounidenses y nativos americanos de las islas del Pacífico (AANAPISI). Estamos orgullosos de nuestros cimientos en equidad y justicia social. CSM se esfuerza por generar un sentido de pertenencia y una cultura de éxito para todos. Nuestra visión es brindar una educación liberadora que inspire logros individuales e impactos generacionales."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://collegeofsanmateo.edu/admissions",
+   "final_url": "https://collegeofsanmateo.edu/admissions/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Support Services & Special Programs",
+      "Transfer Services",
+      "Undocumented Community Center",
+      "Veterans Services",
+      "Welcome Center",
+      "Wellness Center",
+      "Explore CSM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Bookstore",
+      "Learning Support Centers",
+      "Library",
+      "Office of the President",
+      "Theatre",
+      "Construction Updates",
+      "Maps, Directions & Parking"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://smccd.edu/accounts/smccd",
+   "final_url": "https://smccd.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Chancellor’s Office",
+     "position": "district_ceo",
+     "window": [
+      "Foundation",
+      "Departments",
+      "Auxiliary Services",
+      "Chancellor’s Office",
+      "Educational Services",
+      "Facilities",
+      "Financial Services"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://collegeofsanmateo.edu/directory",
+   "final_url": "https://collegeofsanmateo.edu/directory/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://collegeofsanmateo.edu/president",
+   "final_url": "https://collegeofsanmateo.edu/president/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | College of San Mateo",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | College of San Mateo",
+      "Skip to Main Content",
+      "Menu",
+      "Academics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Support Services & Special Programs",
+      "Transfer Services",
+      "Undocumented Community Center",
+      "Veterans Services",
+      "Welcome Center",
+      "Wellness Center",
+      "Explore CSM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Bookstore",
+      "Learning Support Centers",
+      "Library",
+      "Office of the President",
+      "Theatre",
+      "Construction Updates",
+      "Maps, Directions & Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Search",
+      "Translate this page",
+      "Disclaimer",
+      "Office of the President",
+      "Office of the President Menu",
+      "President's Message",
+      "President's Biography"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President Menu",
+     "position": "college_ceo",
+     "window": [
+      "Translate this page",
+      "Disclaimer",
+      "Office of the President",
+      "Office of the President Menu",
+      "President's Message",
+      "President's Biography",
+      "Pan with the Pérezidente"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "Disclaimer",
+      "Office of the President",
+      "Office of the President Menu",
+      "President's Message",
+      "President's Biography",
+      "Pan with the Pérezidente",
+      "College Leadership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Biography",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Office of the President Menu",
+      "President's Message",
+      "President's Biography",
+      "Pan with the Pérezidente",
+      "College Leadership",
+      "Cabinet Office Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet the President's Assistant",
+     "position": "college_ceo",
+     "window": [
+      "Pan with the Pérezidente",
+      "College Leadership",
+      "Cabinet Office Hours",
+      "Meet the President's Assistant",
+      "CSM Organizational Chart",
+      "President's Advocacy Council",
+      "President's Communications"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Advocacy Council",
+     "position": "college_ceo",
+     "window": [
+      "Cabinet Office Hours",
+      "Meet the President's Assistant",
+      "CSM Organizational Chart",
+      "President's Advocacy Council",
+      "President's Communications",
+      "Impact Report",
+      "CSM Forward 2028 (EMP)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Communications",
+     "position": "college_ceo",
+     "window": [
+      "Meet the President's Assistant",
+      "CSM Organizational Chart",
+      "President's Advocacy Council",
+      "President's Communications",
+      "Impact Report",
+      "CSM Forward 2028 (EMP)",
+      "Board Report"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "CSM Forward 2028 (EMP)",
+      "Board Report",
+      "Contact Us",
+      "Office of the President",
+      "President's Message",
+      "Welcome to College of San Mateo!",
+      "Welcome to College of San Mateo!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "Board Report",
+      "Contact Us",
+      "Office of the President",
+      "President's Message",
+      "Welcome to College of San Mateo!",
+      "Welcome to College of San Mateo!",
+      "For over 100 years, College of San Mateo (CSM) has been dedicated to fostering excellence, inclusivity, and student success in San Mateo County. CSM serves over 15,000 students annually. We provide holistic student services, an extensive range of degree and certificate programs, and various collegiate sports for all students. Currently serving over 70% of students of color, the College is a designated Hispanic-Serving Institution (HSI) and an Asian American and Native American Pacific Islander-Serving Institution (AANAPISI). We are proud of our foundations in equity and social justice. CSM strives to build a sense of belonging and culture of success for all. Our vision is to deliver liberatory education that inspires individual achievement and generational impacts."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President, College of San Mateo",
+     "position": "college_ceo",
+     "window": [
+      "At CSM, we understand that your success can also be impacted by your environment. We offer comprehensive student support services to guide you through your educational journey. From our Wellness Center to counseling services, athletic center, SparkPoint for basic needs resources, and financial aid services, we aim to support your full experience at CSM. Our campus is a safe, welcoming, and inclusive space for all students, and we invite you to take full advantage of the resources and opportunities available.",
+      "On behalf of our campus community, I welcome you to CSM! Let’s go, Bulldogs!",
+      "Dr. Manuel Alejandro Pérez",
+      "President, College of San Mateo",
+      "¡Bienvenidos a College of San Mateo!",
+      "¡Bienvenidos a College of San Mateo!",
+      "Durante más de 100 años, College of San Mateo (CSM) se ha dedicado a fomentar la excelencia, la inclusión y el éxito estudiantil en el condado de San Mateo. CSM atiende a más de 15.000 estudiantes anualmente. Brindamos servicios integrales para estudiantes, una amplia gama de programas de títulos y certificados, y varios deportes colegiales para todos los estudiantes. Actualmente, el colegio atiende a más del 70% de estudiantes de color y es una institución designada al servicio de los hispanos (HSI) y una institución al servicio de los asiáticos estadounidenses y nativos americanos de las islas del Pacífico (AANAPISI). Estamos orgullosos de nuestros cimientos en equidad y justicia social. CSM se esfuerza por generar un sentido de pertenencia y una cultura de éxito para todos. Nuestra visión es brindar una educación liberadora que inspire logros individuales e impactos generacionales."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "http://collegeofsanmateo.edu/veterans",
+   "final_url": "https://collegeofsanmateo.edu/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College of San Mateo | Veterans Services",
+     "position": "vrc",
+     "window": [
+      "College of San Mateo | Veterans Services",
+      "Skip to Main Content",
+      "Menu",
+      "Academics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Support Services & Special Programs",
+      "Transfer Services",
+      "Undocumented Community Center",
+      "Veterans Services",
+      "Welcome Center",
+      "Wellness Center",
+      "Explore CSM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Bookstore",
+      "Learning Support Centers",
+      "Library",
+      "Office of the President",
+      "Theatre",
+      "Construction Updates",
+      "Maps, Directions & Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Search",
+      "Translate this page",
+      "Disclaimer",
+      "Veterans Services",
+      "Veterans Services Menu",
+      "Overview",
+      "Getting Started"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services Menu",
+     "position": "vrc",
+     "window": [
+      "Translate this page",
+      "Disclaimer",
+      "Veterans Services",
+      "Veterans Services Menu",
+      "Overview",
+      "Getting Started",
+      "Veterans Shopping Sheet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Donate",
+      "Forms",
+      "Contact Us",
+      "Veterans Services",
+      "Overview",
+      "CSM is dedicated to making sure that all veterans, reservists, active duty members",
+      "and their family members receive the well-deserved respect and benefits they have"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center (VROC)",
+     "position": "vrc",
+     "window": [
+      "CSM is dedicated to making sure that all veterans, reservists, active duty members",
+      "and their family members receive the well-deserved respect and benefits they have",
+      "earned.",
+      "Veterans Resource & Opportunity Center (VROC)",
+      "We can assist you in starting, continuing or resuming your education. We have experience",
+      "and knowledge of the Post-9/11 GIB, MGIB-SR, Voc Rehab, CalVet Fee Waiver, VA Work",
+      "Study, GI Bill® Payment Rates and Post-9/11 BAH rates. We can help you navigate through"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the VA system as well as connect you to your local county veteran services office.",
+     "position": "vrc",
+     "window": [
+      "We can assist you in starting, continuing or resuming your education. We have experience",
+      "and knowledge of the Post-9/11 GIB, MGIB-SR, Voc Rehab, CalVet Fee Waiver, VA Work",
+      "Study, GI Bill® Payment Rates and Post-9/11 BAH rates. We can help you navigate through",
+      "the VA system as well as connect you to your local county veteran services office.",
+      "Mission",
+      "To provide all student veterans and their families a college experience with inspiration",
+      "and purpose."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center (VROC)",
+     "position": "vrc",
+     "window": [
+      "More information about education benefits offered by VA is available at the official",
+      "U.S. government Web site at benefits.va.gov/gibill",
+      "Contact Us",
+      "Veterans Resource & Opportunity Center (VROC)",
+      "Central Hall Building 16, Room 150",
+      "csmvets@smccd.edu csmvets@smccd.edu",
+      "(650) 574-6675"
+     ],
+     "emails": [
+      "csmvets@smccd.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.collegeofsanmateo.edu/admissions/staff.php",
+   "status": 404
+  },
+  {
+   "url": "https://events.collegeofsanmateo.edu/all/search/Veterans%20Holiday%20Weekend/tags/holiday",
+   "final_url": "https://events.collegeofsanmateo.edu/all/search/Veterans%20Holiday%20Weekend/tags/holiday",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.collegeofsanmateo.edu/veterans/students.php",
+   "final_url": "https://www.collegeofsanmateo.edu/veterans/students.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services | College of San Mateo",
+     "position": "vrc",
+     "window": [
+      "Student Veterans Assisting Veterans |",
+      "Veterans Services | College of San Mateo",
+      "Skip to Main Content",
+      "Menu",
+      "Academics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Support Services & Special Programs",
+      "Transfer Services",
+      "Undocumented Community Center",
+      "Veterans Services",
+      "Welcome Center",
+      "Wellness Center",
+      "Explore CSM"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Bookstore",
+      "Learning Support Centers",
+      "Library",
+      "Office of the President",
+      "Theatre",
+      "Construction Updates",
+      "Maps, Directions & Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Search",
+      "Translate this page",
+      "Disclaimer",
+      "Veterans Services",
+      "Veterans Services Menu",
+      "Overview",
+      "Getting Started"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services Menu",
+     "position": "vrc",
+     "window": [
+      "Translate this page",
+      "Disclaimer",
+      "Veterans Services",
+      "Veterans Services Menu",
+      "Overview",
+      "Getting Started",
+      "Veterans Shopping Sheet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Donate",
+      "Forms",
+      "Contact Us",
+      "Veterans Services",
+      "Student Veterans Assisting Veterans",
+      "Home of the free, because of the brave.",
+      "The Veteran Resource Opportunity Center (VROC) staff members are work-study CSM student"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veteran Resource Opportunity Center (VROC) staff members are work-study CSM student",
+     "position": "vrc",
+     "window": [
+      "Veterans Services",
+      "Student Veterans Assisting Veterans",
+      "Home of the free, because of the brave.",
+      "The Veteran Resource Opportunity Center (VROC) staff members are work-study CSM student",
+      "veterans. These hand selected students are a team of extremely talented and well-rounded",
+      "veterans who are who are dedicated to guiding and mentoring all CSM student veterans.",
+      "They are here to help guide you through the Veterans Admissions Checklist as needed"
+     ],
+     "emails": []
+    },
+    {
+     "line": "I have been working at the Veteran Resource Opportunity Center since fall 2015. Hobbies;",
+     "position": "vrc",
+     "window": [
+      "Jose Cortes",
+      "I have been attending College of San Mateo for 1 year and majoring in the Administration",
+      "of Justice. I was in the Army for 3 ½ years as an 11B (Infantryman, Expert qualified).",
+      "I have been working at the Veteran Resource Opportunity Center since fall 2015. Hobbies;",
+      "Riding my motorcycle, playing pool, powerlifting, shooting and videogames.",
+      "My future goal is to become a police officer and eventually down the road when I’m",
+      "too old to chase bad guys, teach law enforcement or classes on the subject at a college."
+     ],
+     "emails": []
+    },
+    {
+     "line": "My future goal is to become a police officer and eventually down the road when I’m",
+     "position": null,
+     "window": [
+      "of Justice. I was in the Army for 3 ½ years as an 11B (Infantryman, Expert qualified).",
+      "I have been working at the Veteran Resource Opportunity Center since fall 2015. Hobbies;",
+      "Riding my motorcycle, playing pool, powerlifting, shooting and videogames.",
+      "My future goal is to become a police officer and eventually down the road when I’m",
+      "too old to chase bad guys, teach law enforcement or classes on the subject at a college.",
+      "Tyler Kuker",
+      "My military service began in 2011 right after high school. I served as a Marine for"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2017. I am new to Veteran’s Resource Opportunity Center team but bring with me a strong",
+     "position": "vrc",
+     "window": [
+      "I served in the Marine Corps from 2009 to 2015 as an Infantry Mortarman. After leaving",
+      "the Marine Corps in 2015 I moved to San Mateo and began college by enrolling in the",
+      "2015 summer semester. I am studying business and plan on transferring in the spring",
+      "2017. I am new to Veteran’s Resource Opportunity Center team but bring with me a strong",
+      "background of working with people and a desire to assist and lead my fellow veterans.",
+      "In my spare time I enjoy watching sports and doing CrossFit. I also coach CrossFit",
+      "in the evenings. I look forward to continuing my education here at CSM and helping"
+     ],
+     "emails": []
+    },
+    {
+     "line": "I have been working in the Veteran Resource Opportunity Center since fall 2015 but",
+     "position": "vrc",
+     "window": [
+      "Tiannia Romero",
+      "I was in the Navy for 6 years as an Aviation Boatswain Mate on the Launch/ Recovery",
+      "team. I have been attending College of San Mateo since fall 2015 and majoring in Psychology.",
+      "I have been working in the Veteran Resource Opportunity Center since fall 2015 but",
+      "on my spare time you can find me snowboarding or at the movies. I will be a California",
+      "Congresswoman in the future, however until I make it there my goal is to help support",
+      "the veteran community by becoming a counselor for VA facilities."
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.collegeofsanmateo.edu/veterans/veteransclub.php",
+  "https://www.collegeofsanmateo.edu/president/collegeleadership.php",
+  "https://www.collegeofsanmateo.edu/president/hours.php",
+  "https://collegeofsanmateo.edu/admissions/staff.php",
+  "http://directory.smccd.edu/",
+  "https://smccd.edu/chancellors-office/",
+  "https://collegeofsanmateo.edu/president/collegeleadership.php",
+  "https://collegeofsanmateo.edu/president/hours.php",
+  "https://collegeofsanmateo.edu/veterans/students.php",
+  "https://collegeofsanmateo.edu/veterans/veteransclub.php"
+ ],
+ "run": "41305785750"
+}

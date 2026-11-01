@@ -78,6 +78,20 @@ def test_batch_order():
     assert got == ["B", "D", "C", "A"], got
 
 
+def test_batch_order_counts_a_read_that_found_no_one(tmp=None):
+    import tempfile, json as _j
+    root = tempfile.mkdtemp()
+    os.makedirs(os.path.join(root, "41", ), exist_ok=True)
+    os.makedirs(os.path.join(root, "41_records"), exist_ok=True)
+    _j.dump({"college": "B", "read_at": "2026-11-01T12:00:00+00:00"}, open(os.path.join(root, "41", "b.json"), "w"))
+    _j.dump({"college": "D", "read_at": "2026-11-03T12:00:00+00:00"}, open(os.path.join(root, "41_records", "records.json"), "w"))
+    hist = h.read_history(root)
+    assert hist == {"B": "2026-11-01"}, hist
+    cs = [{"college": n} for n in ("A", "B", "C", "D")]
+    got = [c["college"] for c in h.batch_order(cs, h.last_read({"A": "2026-11-02T01:00:00", "C": "2026-10-30"}, hist))]
+    assert got == ["D", "C", "B", "A"], got
+
+
 def test_check_records():
     name = h.load_colleges()[0]["college"]
     good = {"run": "x", "colleges": [name], "rows": [

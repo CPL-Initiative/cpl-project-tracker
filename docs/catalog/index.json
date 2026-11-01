@@ -16339,8 +16339,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 506,
+   "count": 507,
    "docs": [
+    {
+     "created": "2026-11-01",
+     "governs": [],
+     "n": 539,
+     "path": "docs/session_539_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "contacts-harvest",
+      "monterey-peninsula"
+     ],
+     "title": "Session 539 handoff: the contacts harvest's second read; the batch counts a read that found no one",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-01",
      "governs": [],
@@ -24995,5 +25010,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1330
+ "total": 1331
 }
