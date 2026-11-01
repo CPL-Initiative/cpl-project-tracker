@@ -124,10 +124,34 @@ class AgainstTheRealArtifact(unittest.TestCase):
         cls.rows = sync.build_rows(sync.load_artifact())
 
     def test_every_statewide_credential_can_answer_cred_std(self):
+        # CRED-STD answers from ccc_rec OR the published statewide set, the Fact
+        # Sheet builder's. ccc_rec is derived from adoptions, so a gate on it
+        # alone hides every statewide credential no college has adopted yet
+        # (the sierra-retrieval-corpus lane). The one known gap is the
+        # builder's MAP fix list: a statewide exhibit MAP publishes with no
+        # CCC-tagged recommendation, which Sierra still names without a line.
+        recs = importlib.import_module("_build_credential_recs")
+        if not os.path.exists(recs.ARTIFACT):
+            self.skipTest("statewide_data.js absent")
+        data = recs.load_artifact()
+        published = recs.statewide_sets(data)
+        _, fix_in_map = recs._load_factsheet_builder().build(data)
+        fix_in_map = set(fix_in_map)
         missing = [r["unified_title"] for r in self.rows
-                   if r["statewide"] and not r["ccc_rec"]]
+                   if r["statewide"] and not r["ccc_rec"]
+                   and not published.get(r["unified_title"])
+                   and r["unified_title"] not in fix_in_map]
         self.assertEqual(missing, [],
-                         "statewide credentials with no recommendation text")
+                         "statewide credentials with no recommendation text "
+                         "and not on the Fact Sheet builder's MAP fix list")
+        # The published set must actually carry the adoption-less ones; if it
+        # went empty, the fix list would be the whole statewide set.
+        reached = [r for r in self.rows if r["statewide"] and not r["ccc_rec"]
+                   and published.get(r["unified_title"])]
+        self.assertTrue(reached, "no statewide credential reaches a rec "
+                        "through the published set")
+        self.assertLess(len(fix_in_map), len(published),
+                        "the MAP fix list outgrew the published statewide set")
 
     def test_post_folds_its_variants_and_knows_its_adopters(self):
         post = next((r for r in self.rows
