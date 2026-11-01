@@ -70,8 +70,8 @@
    "pass": true,
    "status": "equal",
    "computed": [
-    67.0,
-    83.0
+    66.0,
+    82.0
    ],
    "stated": [
     60.0,
@@ -182,7 +182,7 @@
      },
      {
       "code": "EDUC 1L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -399,35 +399,16 @@
    "Page URL slug says 'as-t' while the heading and award are AA-T."
   ]
  },
- "extracted_run": 41192567009,
+ "extracted_run": 41278868382,
  "reconciled": [
   {
-   "field": "alternative_units",
+   "field": "joined_units",
    "was": null,
    "now": {
-    "ENGL C1002": [
-     3,
-     null
-    ],
-    "ENGL 21": [
-     3,
-     null
-    ]
+    "EDUC 1L": "EDUC 1"
    },
-   "words": "Business - Leadership 39261: 'WORK 96 Professional and Essential Skills 2 · or WORK 99 Career-Focused Work Experience · or WORK 98 Exploratory Work Experience · or WORK 97 Service Learning Work Experience · Total Units 17'; Automotive Maintenance 38076: 'Note: WORK 99 may be offered for 0.5-4.0 units. 2.0 Units of WORK 99 are required to satisfy the work experience certificate requirement' (college page read 41192128530)"
-  },
-  {
-   "field": "ge_units",
-   "was": {
-    "min": null,
-    "max": null
-   },
-   "now": {
-    "min": 34,
-    "max": 34
-   },
-   "words": "Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: Psychology AA-T 31860 and Sociology AA-T 32034: 'Complete Cal-GETC pattern and electives, if needed, for a total of 60 transferable units' (college page read 41192128530); the GE page: Cal-GETC 'satisfies the 34 units of lower-division general education requirements')"
+   "words": "Medical Assisting 03635: 'CSIS 50 · & 50L MS Office Applications · and MS Office Applications Lab 3' ... 'TOTAL MAJOR UNITS 37-40', the rows summing to 37-40 with the pair counted once; Business - Accounting 22052: 'Path 1 · BUSC 140 · & BUSC 150 · & BUSC 160' (college page read 41276213077)"
   }
  ],
- "read_run": "38675240344"
+ "read_run": 41192567009
 }
