@@ -6,7 +6,8 @@
 //       through the same kb_curation fields Edit writes (issuing_agency_override, unified_title_override);
 //   (3) a whole-cell rule leaves a partial match alone; a rule that would empty a title leaves that row out;
 //   (4) Undo this replace writes the old values back;
-//   (5) AI sort orders the rows by kb/exhibits_ai_sort.json, a band names each group of two or more, and a header press
+//   (5) AI sort orders the rows by kb/exhibits_ai_sort.json, a band names each group of two or more (and each run of
+//       titles alone, "Not in a group"), and a header press
 //       leaves it (Sam, 2026-11-01: "like with like in an alpha-like order");
 //   (6) Edit every row turns Title, Issuer and Training sites into boxes on every row; leaving a box saves that field
 //       alone, Escape puts the value back (Sam, 2026-11-01: "a global Edit button");
@@ -172,8 +173,9 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   t.d.getElementById("exh-l-ai").click(); await settle();
   const body = Array.from(t.d.querySelectorAll(".exh-l-table tbody tr"));
   const seq = body.map((r) => r.classList.contains("exh-l-band") ? "band:" + txt(r) : txt(r.children[2]).slice(0, 7));
-  check("(5) ⭐ AI sort orders like with like, a band over each group of two or more",
-    seq.length === 4 && seq[0] === "Apiary " && /^band:Data and Welding/.test(seq[1]) && /^welding/i.test(seq[2]) && /^10-Key/.test(seq[3]), seq.join(" | "));
+  check("(5) ⭐ AI sort orders like with like, a band over each group of two or more and one over each run of titles alone",
+    seq.length === 5 && seq[0] === "band:Not in a group" && seq[1] === "Apiary " && /^band:Data and Welding/.test(seq[2]) && /^welding/i.test(seq[3])
+    && /^10-Key/.test(seq[4]), seq.join(" | "));
   check("(5) the band is a th scope=rowgroup and the button says it is on",
     !!t.d.querySelector('.exh-l-band th[scope="rowgroup"]') && t.d.getElementById("exh-l-ai").getAttribute("aria-pressed") === "true");
   check("(5) the sort line says how the groups were made", /AI sort: like with like/.test(txt(t.d.getElementById("exh-l-sortline"))));
@@ -248,7 +250,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   await v.M.boot(); await settle();
   v.d.getElementById("exh-l-ai").click(); await settle();
   const band = Array.from(v.d.querySelectorAll(".exh-l-band")).map(txt).join(" | ");
-  check("(9) a group's band counts its suggested folds", /2 in this group, 1 suggested fold/.test(band), band);
+  check("(9) a group's band counts its suggested folds", /2 in this group, .*1 suggested fold/.test(band), band);
   const tenKey = rows(v.d).find((r) => /^10-Key/.test(txt(r.children[2])));
   check("(9) a suggestion points at the end of the chain",
     !!tenKey && /Suggested: fold into Welding Level 1 \(the same words spelled another way; Apiary Basics itself now folds into Welding Level 1\)/.test(txt(tenKey.children[2])),
