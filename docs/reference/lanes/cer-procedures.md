@@ -28,17 +28,17 @@ Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (versio
 rule and the CPL-AI dialog (#2601); the Exhibits tab's Review queue (SkyRowanberry, 2026-10-31, below). What Sam ruled in the
 mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2026-10-30):
 
-**The List view** (S540): every credential A to Z, edited in place, *Re-analyze* (step 9); lessons.
+**The List view** (S540, S541): every credential A to Z, edited in place, *Re-analyze* (step 9); find by college, district or region; find and replace; **AI sort** with suggested folds and Re-point; Edit every row; **Basis**, based on statewide or local (`fact-sheet/statewide_recs.js`: 152; the reference flag reads 84); the **exhibit-to-cert link** (`kb/exhibit_cert_links.json`, ASE first). Preview at https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A (`scripts/build_exhibits_list_preview.py`); lessons.
 
 Sam's mock-up rulings, item by item, moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (SkyCloudberry)*.
 
 **Sam's rulings, Open Asks Sheet 147** ([the sheet](https://claude.ai/artifact/XVNFzgxMW4mAiCC9YUsABB), completed 00:06Z 2026-10-31, all five his own call; cpl_memory `sam-sheet-147-rulings-2026-10-31`). Build in this order:
 
 1. **One Exhibits tab** in the Catalog Commons replaces the CER and EACR; **Review is built first**. The two tabs stay until Exhibits carries everything they show.
-2. **The high school and ROP rule — built (SkyGooseberry, 2026-10-31).** `kb/_suggest_unclassified.py` writes each queue title's aligned course under `aligned` (the course its exhibit's credit recommendation names at the college that built it; CCN, then C-ID, then M-ID, then the college's title; leading zeros fold; a join must share a word with the title; exam brands never align): 209 of 450 on 2026-10-31. Procedure `high-school-rop` (`kb/cer_procedures.json`, lane `school`) takes that title and the school, district or county office the classifier named (its trailing acronym dropped); adult schools and training centers stay with the classifier. Dry run: 55 settle, 29 held where the title already exists under another issuer; needs-you 468 to 413. The nightly run saves them under `cer-procedure-high-school-rop@bot`; `python3 kb/_cer_procedures.py --undo high-school-rop` takes them back.
+2. **The high school and ROP rule — built (SkyGooseberry, 2026-10-31).** Detail moved verbatim to the lessons doc, *Moved from the lane (S541)*.
 3. **The public adoption page lists settled credentials only** (a person's or a rule's stamp), so it grows as the CER finishes. Its name is still his to give; *Credentials Your College Can Adopt* holds the place.
 4. **The page takes Malone's CPL/AI look**, beside the Library and Sierra (the mock-up's First Light was proposed and set aside).
-5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** `kb/_build_cpl_ai.py --fetch` reads https://map.rccd.edu/CPL-AI/preview-data/catalog.json into the dated snapshot `kb/cpl_ai/pairs.json` (33,232 pairs, 115 certifications, 121 colleges; keeps tiers 1 and 2, *Strong evidence* and *Faculty interpretation*: 20,166 pairs) with the page's credit and caveat word for word. The dialog lists a course's certifications under *CPL-AI recommendations (N)*, and a course whose only lead is a match shows its 0 as a button. Refreshed by hand (`--fetch`) until a schedule is chosen. Sierra and the public pages wait on his word.
+5. **The CPL-AI matching in the Program Requirements dialog — built (SkyGooseberry, 2026-10-31).** Detail moved verbatim to the lessons doc, *Moved from the lane (S541)*.
 
 **The Exhibits tab** (`#exhibits`, `exhibits.js`; built 2026-10-31 in #2602, #2603 and #2604, history in the lessons
 doc's 2026-10-31 sections). *Review* draws mock-up v26's card per held title, the step tiles as filters and *Go to an

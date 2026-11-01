@@ -1,7 +1,7 @@
 ---
 title: The authoritative statewide MAP exhibit is the raw row with Collaborative Type == "CCC"
 created: 2026-06-28
-updated: 2026-06-28
+updated: 2026-11-01
 tags: [reference, cpl, map, statewide-collaborative, exhibits, credit-recommendations, data-provenance]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -73,6 +73,23 @@ problem — one exact equality solved it; normalization would not have.
   statewide credentials that have NO CCC-tagged exhibit (e.g. EMT) show no recs. That's
   a deliberate, Sam-approved caveat — the fix is upstream in MAP (add/tag the CCC
   exhibit), not a workaround in our pipeline.
+
+## The credential flag reads articulations, so it undercounts (2026-11-01, S541)
+
+Two signals answer "is this credential statewide?", and they disagree. `credential_reference_data.js` sets each
+credential's `statewide` from **articulation lines**: true when any of its articulated course rows carries
+`collaborative_type == "CCC"` (`excel_to_dashboard.py`, `export_credential_reference`). The Fact Sheet's
+`fact-sheet/statewide_recs.js` keys each credential that holds a **CCC exhibit row** in MAP. Measured 2026-11-01: the
+exhibit list names 152 credentials, all present in the reference; the flag marks 84 of them and no others. The other 68,
+among them the Child Development Associate (CDA) Credential, OSHA 10 Card and Paramedic License, hold a statewide exhibit
+that no college has articulated in the course data, so nothing sets the flag.
+
+For "is this credential based on a statewide exhibit", read the exhibit rows: the Exhibits List's Basis column does
+(Sam, 2026-11-01: *"count all canonical exhibit titles that include a statewide as based on a statewide, whether local
+or not"*). Checked the same day: no funding or ESS code reads the flag (the funding builder's `statewide` is a
+statewide total, a different thing). `kb/_sync_credential_catalog.py` already ORs the flag with the published statewide
+list, and `kb/_build_partner_crosswalk.py` sets its own from the exhibits. The export itself
+(`excel_to_dashboard.py`) is the fix that remains: read the CCC exhibit rows, so the flag and the list agree.
 
 ## Caveats
 

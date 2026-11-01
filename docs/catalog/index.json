@@ -11027,7 +11027,7 @@
      ],
      "title": "The authoritative statewide MAP exhibit is the raw row with Collaborative Type == \"CCC",
      "type": "reference",
-     "updated": "2026-06-28"
+     "updated": "2026-11-01"
     },
     {
      "created": "2026-09-01",
@@ -16339,8 +16339,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 509,
+   "count": 510,
    "docs": [
+    {
+     "created": "2026-11-01",
+     "governs": [],
+     "n": 542,
+     "path": "docs/session_542_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "exhibits",
+      "exhibits-list",
+      "cert-link",
+      "credential-registry",
+      "scheduled-sessions"
+     ],
+     "title": "Session 542 handoff: the Exhibits List grows, the cert link (ASE first), the credential harvest moves into the queue",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-01",
      "governs": [],
@@ -25042,5 +25060,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1333
+ "total": 1334
 }

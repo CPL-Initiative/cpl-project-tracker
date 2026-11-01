@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-509 document(s).
+510 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 542 | [Session 542 handoff: the Exhibits List grows, the cert link (ASE first), the credential harvest moves into the queue](../session_542_handoff.md) | 2026-11-01 |
 | 541 | [Session 541 handoff: Sierra's side panel and matched instructions, the Exhibits List view, the contacts harvest's fourth read](../session_541_handoff.md) | 2026-11-01 |
 | 540 | [Session 540 handoff: VP Administrative Services is VPBS; the contacts harvest's third read](../session_540_handoff.md) | 2026-11-01 |
 | 539 | [Session 539 handoff: the contacts harvest's second read; the batch counts a read that found no one](../session_539_handoff.md) | 2026-11-01 |
