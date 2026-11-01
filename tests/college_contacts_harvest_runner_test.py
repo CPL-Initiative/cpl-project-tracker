@@ -40,6 +40,7 @@ def test_positions():
     assert h.position_of("Vice President of Student Services") == "vpss"
     assert h.position_of("Chief Business Officer") == "vpbs"
     assert h.position_of("Vice President, Business Services and Facilities") == "vpbs"
+    assert h.position_of("Vice President, Administrative Services") is None  # not among Sam's variants (S537)
     assert h.position_of("Associate Vice President, Workforce") == "assoc_vp"
     assert h.position_of("Dean, Career and Technical Education") == "dean_cte"
     assert h.position_of("Dean of Admissions and Records") == "dean_ar"

@@ -81,9 +81,10 @@ TITLE_PATTERNS: list[tuple[str, re.Pattern]] = [
                         r"instruction(al services)?( and student services)?))\b|\bCIO\b", re.I)),
     ("vpss", re.compile(r"\b(chief student services officer|vice[- ]president,? (of )?student "
                         r"(services|affairs|success|development))\b|\bCSSO\b", re.I)),
-    ("vpbs", re.compile(r"\b(chief business officer|vice[- ]president,? (of )?(business|administrative|"
-                        r"administration|finance)( services| and facilities| services and facilities)?)\b|\bCBO\b",
-                        re.I)),
+    # Sam's VPBS variants only: CBO, VP Business Services (and Facilities). "VP Administrative Services" waits on
+    # his word (S537): a title outside the variants is listed for him, never filled.
+    ("vpbs", re.compile(r"\b(chief business officer|vice[- ]president,? (of )?business services( and facilities)?)\b"
+                        r"|\bCBO\b", re.I)),
     ("college_ceo", re.compile(r"\b(superintendent[/ -]+president|president)\b", re.I)),
     ("dean_cte", re.compile(r"\bdean\b[^.\n]{0,60}\b(career (and|&) technical|CTE|workforce|economic development)\b",
                             re.I)),
