@@ -764,6 +764,25 @@ Delta 200 of 203: lessons, *Moved from the lane (S524 compaction)*.
 **The second reader, Grok (Sam, Open Asks Sheet 97 card 1, 2026-10-19; built S421, #2246: `provider` on the function, `kb/_second_reader.py`, `second-reader.yml`, nothing written) waits on the xAI API billing moving to the RCCD district card (Sam, 2026-10-20) and the two Edge Function secrets only Sam sets; then one deploy and `second-reader.yml` with `college=Cañada College`. The ruling, the design and Jev's sittings: lessons, *Moved from the lane (S449 compaction)*.
 **Display build e021a2824548 is applied on `main` (S459: #2387 merged, `step=display` run 40027395883, 22:46Z: 17,529 statements written, none missing, no errors; the applied record committed by the run).** **Hartnell (S484-S489; lessons S484-S489):** passing rose to 81 of 94 after the `course_hours`, `ge_overlap` (#2462) and `pool_lists` (#2463; `with_floors`, #2465) steps (kept, Sheet 131 cards 3-4). **Still failing, all thirteen read (S488):** the narrow `meets` class (03537, 33851, 31591, 43119, 41819) stays as Sam ruled; a vendor gap (ABT41 in Agriculture A.S. 11803, HES120 in Vocational Nursing 03571, beside 44161 and 44574) stays incomplete; CalGETC 45096 and Music 43887 have since passed (below). Fable's advice on RN 03570 and Respiratory Care 44537 is in lessons S488. CSS/CIS codes are mixed across Hartnell's tabs, so no college-wide renumber.
 
+## S536 SkySugarberry (2026-11-01, 05:12Z firing) and S537 SkyMayberry (10:12Z): Monterey Peninsula 176 to 183 of 197, on `and_units`
+
+- **Page read 41276213077** (plan `kb/college_reads/mpc_unequal_medical.json`): the medical family (03635, 09978, 09979,
+  22059, 22083) sums one unit over its printed totals because CourseLeaf prints "CSIS 50 · & 50L MS Office Applications ·
+  and MS Office Applications Lab 3", the lecture and lab as one row, and the reading listed CSIS 50L on its own with no
+  units, which the scorer priced again from the state file.
+- **New reconcile kind `and_units`:** a course the page prints joined to the row above by "&", listed by the reading as
+  its own entry with no units, takes 0. Gated on the page printing the two codes joined, the course before it carrying a
+  figure, and the reading having given it no units. Guard in `program_requirements_pilot_test`.
+- **Reconcile and reread** (41276977991, 41278868382, reread 41280847881, receipt committed): live 176 to **183 of 197**
+  (read back 10:55Z by S537). S536 moved 7 of 197, 3.6%: above the stopping rule's 3%, so the college stays open.
+- **S536 stopped at 06:27Z with its PR open and no handoff.** Its bot commits never ran CI (`action_required`), and the
+  lints then failed on `roep_display_test`: new records filed on the branch need a display build in the same PR
+  (`kb/_build_roep_display.py`, build 119388125e9f). S537 merged main into the branch, built, and merged #2635.
+  **Lesson: a session's last act before any long wait is the handoff,** even a short one, so a firing that finds the
+  PR stale knows what it was doing.
+- **Left (14):** coverage 42989, 43858, 44876; incomplete 22049, 33584, 45271; unequal Nursing 03633 (against 72),
+  Accounting 22052 (against 35), transfer degrees 32033, 37243, 41831, ASL 39266, and noncredit hours 39202, 45242.
+
 ## S535 SkyGooseberry (2026-10-31, the CPL Queue routine, 10:12Z firing): Monterey Peninsula, 110 to 176 passing on three steps
 
 - **Grouped the 87 failing live records by shape before any read:** 25 offer WORK 99, 98 or 97 as an alternative with
