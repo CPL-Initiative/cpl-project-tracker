@@ -111,5 +111,5 @@ Sam asked Sierra for the military and non-military split of Chaffey's applied un
 
 **S308-S315 (the two-view double count, CCCSF's split, the place leading only where it teaches, 7c catalog timeouts):** moved verbatim to `docs/cpl_assistant_lessons.md`, *Moved from the lane (S372)*.
 
-**Instructions matched to the question (S540, 2026-11-01; Sam: *"worrying that we are removing part of her brain"*).** Today every active instruction goes newest first to 9,000 characters (18, 8,693 used), the question playing no part. First step: match each to the question, matches first, log sent/matched/dropped ids; Jev later, behind a flag. **NEEDS SAM (Open Asks Sheet 153):** it changes the live function, a deploy on his hold list. Fable's advice: `docs/sierra_rules_lessons.md`, *Matched instructions*.
+**Instructions matched to the question (S540, 2026-11-01; Sam: *"worrying that we are removing part of her brain"*).** Before #2647 every active instruction went newest first to 9,000 characters (19, about 9,360), the question playing no part. First step: match each to the question, matches first, log sent/matched/dropped ids; Jev later, behind a flag. Sam, Sheet 153 card 3, *deploy*, then *"deploy all"* with handoff 530's three held changes: built #2647, preview A/B, one deploy of main. Fable's advice: `docs/sierra_rules_lessons.md`, *Matched instructions*.
 
