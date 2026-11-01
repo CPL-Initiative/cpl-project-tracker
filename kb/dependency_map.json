@@ -5855,7 +5855,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 979,
+     "line": 1041,
      "tabs": [
       "cr-reference"
      ]
@@ -5905,7 +5905,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1006,
+     "line": 1068,
      "tabs": [
       "cr-reference"
      ]
@@ -6623,7 +6623,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1007,
+     "line": 1069,
      "tabs": [
       "cr-reference"
      ]
@@ -25104,6 +25104,26 @@
      "line": 114,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:cr_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 825,
+     "tabs": [
+      "cr-reference"
+     ]
+    },
+    {
+     "id": "module:cr_reference.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 850,
+     "tabs": [
+      "cr-reference"
      ]
     },
     {
