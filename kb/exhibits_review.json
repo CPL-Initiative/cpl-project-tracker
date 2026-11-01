@@ -1,9 +1,9 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-01T05:22:19Z",
+ "written_at": "2026-11-01T14:34:43Z",
  "sources": {
-  "procedures_run": "2026-10-31T14:00:59Z",
+  "procedures_run": "2026-11-01T14:34:41Z",
   "suggestions": "2026-10-31T17:27:31Z",
   "statewide": "2026-11-01T05:17:15",
   "audit": "2026-11-01T05:20:37+00:00"
@@ -16,63 +16,19 @@
   },
   "aligned": {
    "n": 0,
-   "of": 18
+   "of": 1
   },
   "saved_not_folded": 0,
-  "settled_since_run": 351
+  "settled_since_run": 0
  },
  "steps": {
-  "Proposed": 0,
+  "Proposed": 1,
   "Wording check": 0,
   "Two issuers": 0,
-  "Conflict with the reference": 18
+  "Conflict with the reference": 0
  },
  "colleges": [
-  "American River College",
-  "Chabot College",
-  "Chaffey College",
-  "Citrus College",
-  "City College of San Francisco",
-  "Clovis Community College",
-  "College of Marin",
-  "College of the Desert",
-  "Contra Costa College",
-  "Copper Mountain College",
-  "Crafton Hills College",
-  "Cuesta College",
-  "Cypress College",
-  "East Los Angeles College",
-  "Folsom Lake College",
-  "Fresno City College",
-  "Glendale Community College",
-  "Irvine Valley College",
-  "Lake Tahoe Community College",
-  "Laney College",
-  "Las Positas College",
-  "Long Beach City College",
-  "Los Angeles City College",
-  "Los Angeles Harbor College",
-  "Los Angeles Mission College",
-  "Los Angeles Pierce College",
-  "Los Angeles Southwest College",
-  "Los Angeles Trade Technical College",
-  "Los Angeles Valley College",
-  "Merritt College",
-  "Modesto Junior College",
-  "Moreno Valley College",
-  "Mt. San Antonio College",
-  "Norco College",
-  "Palomar College",
-  "Riverside City College",
-  "Sacramento City College",
-  "San Bernardino Valley College",
-  "San Jose City College",
-  "Santa Ana College",
-  "Santa Monica College",
-  "Southwestern College",
-  "Victor Valley College",
-  "Woodland Community College",
-  "Yuba College"
+  "College of the Desert"
  ],
  "issuers": [
   "A.B. Miller High School",
@@ -419,23 +375,6 @@
   "Villa Park High School"
  ],
  "held": [
-  {"raw": "ADJU 232 - Juvenile Justice Procedures - Credit by Exam", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'ADJU 232 - Juvenile Justice Procedures - Credit by Exam' -> 'Juvenile Law and Procedures'", "colleges": [], "title": "Juvenile Law and Procedures", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-A2-J-1-001", "MAPCxS-JLAP-1-001"], "art": [9, 30, 33], "could": [17, 18, 21, 29, 35, 38, 41, 42, 43], "basis": "", "same": false, "courses_key": "teaches:Juvenile Law and Procedures", "saved": "Juvenile Justice Procedures", "under": ["ADJU 232 - Juvenile Justice Procedures - Credit by Exam ", "Juvenile Law and Procedures ADJ 8 Cx"], "under_count": 2, "exists": true},
-  {"raw": "Center for Financial Training: CFTA-0025 Human Resources Management;", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'Center for Financial Training: CFTA-0025 Human Resources Management;' -> 'Center for Financial Training (CFT) — Human Resources Management'", "colleges": [], "title": "Center for Financial Training (CFT) — Human Resources Management", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPICI-CFFT3-1-001"], "art": [31, 33, 35], "could": [], "basis": "", "same": false, "saved": "Center for Financial Training (CFT) — Human Resources Management (CFTA-0025)", "under": ["Center for Financial Training: CFTA-0025 Human Resources Management; "], "under_count": 1, "exists": true},
-  {"raw": "McDonald's Corporation MCD-0051 Business Leadership Practices;", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: \"McDonald's Corporation MCD-0051 Business Leadership Practices;\" -> \"McDonald's Business Leadership Practices\"", "colleges": [], "title": "McDonald's Business Leadership Practices", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPICI-MCMB-1-001"], "art": [31, 33, 35], "could": [], "basis": "", "same": false, "saved": "McDonald's MCD-0051 Business Leadership Practices", "under": ["McDonald's Corporation MCD-0051 Business Leadership Practices; "], "under_count": 1, "exists": true, "trainers": ["McDonald's Corporation"]},
-  {"raw": "McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: \"McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role;\" -> \"McDonald's Mid-Management Foundations Curriculum\"", "colleges": [], "title": "McDonald's Mid-Management Foundations Curriculum", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPICI-MCMM-1-001"], "art": [31, 33, 35], "could": [], "basis": "", "same": false, "saved": "McDonald's MCD-0074 Mid-Management Foundations Curriculum", "under": ["McDonald's Corporation: MCD-0074 Mid Management Foundations Curriculum: Getting Started & Transition to the Role; "], "under_count": 1, "exists": true, "trainers": ["McDonald's Corporation"]},
-  {"raw": "GEOG 025 - Introduction to Geographic Information Systems and Laboratory", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'GEOG 025 - Introduction to Geographic Information Systems and Laboratory' -> 'Introduction to Geographic Information Systems and Laboratory'", "colleges": [], "title": "Introduction to Geographic Information Systems and Laboratory", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-G0-I-1-001", "MAPCXS-G0-I2-1-001", "MAPCXS-ITGI-1-001"], "art": [2, 25], "could": [0, 1, 3, 5, 8, 10, 11, 13, 14, 26, 28, 32, 40, 44], "basis": "", "same": false, "courses_key": "teaches:Introduction to Geographic Information Systems and Laboratory", "saved": "Introduction to Geographic Information Systems", "under": ["GEOG 025 - Introduction to Geographic Information Systems and Laboratory ", "GIS 025 - Introduction to Geographic Information Systems and Laboratory", "GIS 025 - Introduction to Geographic Information Systems and Laboratory ", "Introduction to Geographic Information Systems", "Portfolio of spatial projects or map products demonstrating mastery"], "under_count": 5, "exists": true},
-  {"raw": "GIS 025 - Introduction to Geographic Information Systems and Laboratory", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'GIS 025 - Introduction to Geographic Information Systems and Laboratory' -> 'Introduction to Geographic Information Systems and Laboratory'", "colleges": [], "title": "Introduction to Geographic Information Systems and Laboratory", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-G0-I-1-001", "MAPCXS-G0-I2-1-001", "MAPCXS-ITGI-1-001"], "art": [2, 25], "could": [0, 1, 3, 5, 8, 10, 11, 13, 14, 26, 28, 32, 40, 44], "basis": "", "same": false, "courses_key": "teaches:Introduction to Geographic Information Systems and Laboratory", "saved": "Introduction to Geographic Information Systems", "under": ["GEOG 025 - Introduction to Geographic Information Systems and Laboratory", "GEOG 025 - Introduction to Geographic Information Systems and Laboratory ", "GIS 025 - Introduction to Geographic Information Systems and Laboratory ", "Introduction to Geographic Information Systems", "Portfolio of spatial projects or map products demonstrating mastery"], "under_count": 5, "exists": true},
-  {"raw": "Automotive Technology MLR I & II - Irvine High School", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'Automotive Technology MLR I & II - Irvine High School' -> 'Automotive Technology Maintenance and Light Repair (MLR)'", "colleges": [], "title": "Automotive Technology Maintenance and Light Repair (MLR)", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXH-ATMI-1-001"], "art": [39], "could": [20], "basis": "", "same": false, "courses_key": "teaches:Automotive Technology Maintenance and Light Repair (MLR)", "saved": "Automotive Technology MLR I and II — Irvine High School", "under": ["Automotive Technology MLR I & II - Irvine High School "], "under_count": 1, "exists": true, "trainers": ["Irvine High School"]},
-  {"raw": "Credit by Exam: History Of Architecture I", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'Credit by Exam: History Of Architecture I' -> 'History of Architecture 1'", "colleges": [], "title": "History of Architecture 1", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-CBEH-1-001"], "art": [27], "could": [4, 6, 7, 15, 16], "basis": "", "same": false, "courses_key": "teaches:History of Architecture 1", "saved": "History of Architecture I", "under": ["Credit by Exam: History Of Architecture I ", "Portfolio: History Of Architecture I", "Portfolio: History Of Architecture I "], "under_count": 3, "exists": true},
-  {"raw": "DANCETQ 141 - Modern Dance Techniques I", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'DANCETQ 141 - Modern Dance Techniques I' -> 'Modern Dance Techniques 1'", "colleges": [], "title": "Modern Dance Techniques 1", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-D1-M-1-001"], "art": [25], "could": [13, 22, 23, 24, 26, 28], "basis": "", "same": false, "courses_key": "teaches:Modern Dance Techniques 1", "saved": "Modern Dance Techniques I", "under": ["DANCETQ 141 - Modern Dance Techniques I "], "under_count": 1, "exists": true},
-  {"raw": "INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)' -> 'Construction Inspection: Uniform Plumbing Code (UPC) Advanced'", "colleges": [], "title": "Construction Inspection: Uniform Plumbing Code (UPC) Advanced", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPICA-I0-A-1-001"], "art": [37], "could": [], "basis": "", "same": false, "saved": "Advanced Construction Inspection: Uniform Plumbing Code (UPC)", "under": ["INSPEC 015 - Advanced Construction Inspection: Uniform Plumbing Code (UPC)\t"], "under_count": 1, "exists": true},
-  {"raw": "MDAST 323 - Medical Assisting Clinical - Indsutry Certification", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'MDAST 323 - Medical Assisting Clinical - Indsutry Certification' -> 'Medical Assisting Clinical Procedures'", "colleges": [], "title": "Medical Assisting Clinical Procedures", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPICI-M3-M1-1-001"], "art": [30], "could": [], "basis": "", "same": false, "saved": "Medical Assisting Clinical", "under": ["MDAST 323 - Medical Assisting Clinical - Indsutry Certification "], "under_count": 1, "exists": true},
-  {"raw": "MDAST 325 - Medical Assisting Lab Procedures - Industry Certification", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'MDAST 325 - Medical Assisting Lab Procedures - Industry Certification' -> 'Medical Assisting Laboratory Procedures'", "colleges": [], "title": "Medical Assisting Laboratory Procedures", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPICI-M3-M2-1-001"], "art": [30], "could": [], "basis": "", "same": false, "saved": "Medical Assisting Lab Procedures", "under": ["MDAST 325 - Medical Assisting Lab Procedures - Industry Certification "], "under_count": 1, "exists": true},
-  {"raw": "Music Skills II - Credit by Exam", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'Music Skills II - Credit by Exam' -> 'Music Skills 2'", "colleges": [], "title": "Music Skills 2", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-MSI-1-1-001"], "art": [19], "could": [34], "basis": "", "same": false, "courses_key": "teaches:Music Skills 2", "saved": "Music Skills II", "under": ["Music Skills II - Credit by Exam "], "under_count": 1, "exists": true},
-  {"raw": "NURSING 402 - Pharmacology", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'NURSING 402 - Pharmacology' -> 'Pharmacology'", "colleges": [], "title": "Pharmacology", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-N4-P-1-001"], "art": [25], "could": [], "basis": "", "same": false, "saved": "Pharmacology (Nursing)", "under": ["NURSING 402 - Pharmacology "], "under_count": 1, "exists": true},
-  {"raw": "PLNT SC 812 - Landscape Installation and Maintenance I", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'PLNT SC 812 - Landscape Installation and Maintenance I' -> 'Landscape Installation and Maintenance 1'", "colleges": [], "title": "Landscape Installation and Maintenance 1", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-LIAM-1-001"], "art": [25], "could": [], "basis": "", "same": false, "saved": "Landscape Installation and Maintenance I", "under": [" PLNT SC 812 - Landscape Installation and Maintenance I"], "under_count": 1, "exists": true},
-  {"raw": "PLNT SC 827 - Sustainable Gardening for Landscapes", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'PLNT SC 827 - Sustainable Gardening for Landscapes' -> 'Sustainable Gardening for Landscapes (Horticulture)'", "colleges": [], "title": "Sustainable Gardening for Landscapes (Horticulture)", "issuer": "", "from": "the reference, reviewed by a person", "ids": ["MAPCXS-PS8--1-001"], "art": [25], "could": [], "basis": "", "same": false, "saved": "Sustainable Gardening for Landscapes", "under": ["PLNT SC 827 - Sustainable Gardening for Landscapes "], "under_count": 1, "exists": true},
-  {"raw": "CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267)' -> 'Business Management and Entrepreneurship'", "colleges": [], "title": "Business Management and Entrepreneurship", "issuer": "", "from": "the reference, reviewed by a person", "ids": [], "art": [], "could": [], "basis": "", "same": false, "saved": "Business Management and Entrepreneurship — Cajon High School", "under": ["CAJON HIGH SCHOOL- Business Management and Entrepreneurship (BUS Mgmt & Entr IS266/IS267) "], "under_count": 1, "exists": true, "trainers": ["Cajon High School"]},
-  {"raw": "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors", "step": "Conflict with the reference", "why": "the fold held the saved assignment: human-reviewed classification stands: 'Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors' -> 'Anatomy and Physiology Honors'", "colleges": [], "title": "Anatomy and Physiology Honors", "issuer": "", "from": "the reference, reviewed by a person", "ids": [], "art": [], "could": [0, 1, 12, 14, 20, 36, 44], "basis": "", "same": false, "courses_key": "teaches:Anatomy and Physiology Honors", "saved": "High School Articulation — Anatomy and Physiology Honors (Colton-Redlands-Yucaipa ROP)", "under": ["COLTON HIGH SCHOOL- Anatomy and Physiology (Honors)", "Colton-Redlands-Yucaipa ROP Anatomy and Physiology Honors "], "under_count": 2, "exists": true, "trainers": ["Colton High School"]}
+  {"raw": "Theater Arts Portfolio Review", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [0], "title": "Theatre Arts", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPPRA-TAPR-1-001"], "art": [0], "could": [], "basis": "", "same": false, "confidence": 0.75, "under": ["Creative Careers Theatre Art"], "under_count": 1, "exists": true}
  ]
 }
