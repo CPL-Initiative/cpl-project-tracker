@@ -1,0 +1,213 @@
+{
+ "run": "sheet153-equity",
+ "applied_at": "2026-11-01T14:43:45+00:00",
+ "github_run": "41317524839",
+ "result": {
+  "new": 5,
+  "run": "sheet153-equity",
+  "gone": 0,
+  "colleges": 3,
+  "seen_again": 0
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [
+  {
+   "id": 76,
+   "college": "Diablo Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Monica Chahal",
+   "email": "mchahal@dvc.edu",
+   "source_url": "https://www.dvc.edu/directory",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 77,
+   "college": "Diablo Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Senior Dean, Curriculum and Instruction",
+   "name": "Nikki Moultrie",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 78,
+   "college": "Diablo Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Business and Administrative Services",
+   "name": "Sara Parker",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 79,
+   "college": "El Camino College",
+   "position": "college_ceo",
+   "title_as_printed": "President/CEO",
+   "name": "Brenda Thames, Ph.D.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 80,
+   "college": "El Camino College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Carlos Lopez, M.S.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 81,
+   "college": "El Camino College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Jessie Wang, CPA, CGMA, CITP, MBA",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 111,
+   "college": "Imperial Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Interim Supt/President",
+   "name": "James Limbaugh",
+   "email": "james.limbaugh@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 112,
+   "college": "Imperial Valley College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean of Instruction- Economic and Workforce Development",
+   "name": "Efrain Silva",
+   "email": "efrain.silva@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 113,
+   "college": "Imperial Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction- Arts, Letters and Learning Services",
+   "name": "Hector Garza",
+   "email": "hector.garza@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 114,
+   "college": "Imperial Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction- Math and Sciences",
+   "name": "Krista Byrd",
+   "email": "krista.byrd@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 115,
+   "college": "Imperial Valley College",
+   "position": "articulation_officer",
+   "title_as_printed": "Transfer Center Coordinator and Articulation Officer",
+   "name": "Kristen Gomez",
+   "email": "kristen.gomez@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 116,
+   "college": "Imperial Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President for Administrative Services",
+   "name": "Cesar Vega",
+   "email": "cesar.vega@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html",
+   "seen_run": "41315220745",
+   "first_seen": "2026-11-01T14:28:10.319255+00:00",
+   "last_seen": "2026-11-01T14:28:10.319255+00:00",
+   "gone_since": null
+  }
+ ],
+ "rows": [
+  {
+   "college": "Diablo Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Equity and Student Services/Title IX Coordinator",
+   "name": "Vicki Ferguson",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Equity and Instruction",
+   "name": "Joseph Gorga",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "El Camino College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Equity and Student Services",
+   "name": "Jeff Stephenson, Ph.D.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President for Student Services and Equity",
+   "name": "Alexis Ayala",
+   "email": "alexis.ayala@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Academic Services",
+   "name": "Julia Jules Johnson",
+   "email": "jules.johnson@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  }
+ ]
+}

@@ -1,0 +1,857 @@
+{
+ "college": "Glendale Community College",
+ "homepage": "https://www.glendale.edu/",
+ "read_at": "2026-11-01T14:21:55+00:00",
+ "pages": [
+  {
+   "url": "https://www.glendale.edu/",
+   "final_url": "https://www.glendale.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Board of Trustees Superintendent/ President Administration Governance",
+     "position": "college_ceo",
+     "window": [
+      "FoundationDonate",
+      "Foundation & CommunityAnnual Golf Classic",
+      "Leadership",
+      "Board of Trustees Superintendent/ President Administration Governance",
+      "Training & Professional Development",
+      "Professional Learning and You Faculty Professional Development Classified Professional Development Mandated Training",
+      "Offices/ College Business"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.glendale.edu/directory/index.html",
+   "final_url": "https://www.glendale.edu/directory/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Board of Trustees Superintendent/ President Administration Governance",
+     "position": "college_ceo",
+     "window": [
+      "FoundationDonate",
+      "Foundation & CommunityAnnual Golf Classic",
+      "Leadership",
+      "Board of Trustees Superintendent/ President Administration Governance",
+      "Training & Professional Development",
+      "Professional Learning and You Faculty Professional Development Classified Professional Development Mandated Training",
+      "Offices/ College Business"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Raven Program Manager",
+     "position": null,
+     "window": [
+      "Ceramics",
+      "View",
+      "Verdugo",
+      "Dean, Raven Program Manager",
+      "rdean@glendale.edu rdean@glendale.edu Copy",
+      "Verdugo",
+      "ESL Credit Division"
+     ],
+     "emails": [
+      "rdean@glendale.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President Office",
+     "position": "college_ceo",
+     "window": [
+      "dkallas@glendale.edu dkallas@glendale.edu Copy",
+      "ext. 5105 Copy",
+      "Verdugo",
+      "Superintendent/President Office",
+      "View",
+      "Verdugo",
+      "Chia, Diane Program Manager"
+     ],
+     "emails": [
+      "dkallas@glendale.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President Office",
+     "position": "college_ceo",
+     "window": [
+      "rcornner@glendale.edu rcornner@glendale.edu Copy",
+      "ext. 5105 Copy",
+      "Verdugo",
+      "Superintendent/President Office",
+      "View",
+      "Verdugo",
+      "Mathews, David Program Manager"
+     ],
+     "emails": [
+      "rcornner@glendale.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President Office",
+     "position": "college_ceo",
+     "window": [
+      "atchakian@glendale.edu atchakian@glendale.edu Copy",
+      "ext. 5144 Copy",
+      "Verdugo",
+      "Superintendent/President Office",
+      "View",
+      "Verdugo",
+      "Rockwell, Cassie Program Manager"
+     ],
+     "emails": [
+      "atchakian@glendale.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.glendale.edu/students/admissions-records/index.html",
+   "final_url": "https://www.glendale.edu/students/admissions-records/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Board of Trustees Superintendent/ President Administration Governance",
+     "position": "college_ceo",
+     "window": [
+      "FoundationDonate",
+      "Foundation & CommunityAnnual Golf Classic",
+      "Leadership",
+      "Board of Trustees Superintendent/ President Administration Governance",
+      "Training & Professional Development",
+      "Professional Learning and You Faculty Professional Development Classified Professional Development Mandated Training",
+      "Offices/ College Business"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.glendale.edu/students/student-activities/index.html",
+   "final_url": "https://www.glendale.edu/students/student-activities/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Board of Trustees Superintendent/ President Administration Governance",
+     "position": "college_ceo",
+     "window": [
+      "FoundationDonate",
+      "Foundation & CommunityAnnual Golf Classic",
+      "Leadership",
+      "Board of Trustees Superintendent/ President Administration Governance",
+      "Training & Professional Development",
+      "Professional Learning and You Faculty Professional Development Classified Professional Development Mandated Training",
+      "Offices/ College Business"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.glendale.edu/about-gcc/administration/index.html",
+   "final_url": "https://www.glendale.edu/about-gcc/administration/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Board of Trustees Superintendent/ President Administration Governance",
+     "position": "college_ceo",
+     "window": [
+      "FoundationDonate",
+      "Foundation & CommunityAnnual Golf Classic",
+      "Leadership",
+      "Board of Trustees Superintendent/ President Administration Governance",
+      "Training & Professional Development",
+      "Professional Learning and You Faculty Professional Development Classified Professional Development Mandated Training",
+      "Offices/ College Business"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "BOARD OF TRUSTEES",
+      "ADMINISTRATIVE CABINET",
+      "Superintendent/President",
+      "Ryan Cornner",
+      "Vice President, Administrative Services",
+      "Sharlene Coleal"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "ADMINISTRATIVE CABINET",
+      "Superintendent/President",
+      "Ryan Cornner",
+      "Vice President, Administrative Services",
+      "Sharlene Coleal",
+      "Vice President, Instructional Services",
+      "Michael Ritterbrown"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Instructional Services",
+     "position": "vpaa",
+     "window": [
+      "Ryan Cornner",
+      "Vice President, Administrative Services",
+      "Sharlene Coleal",
+      "Vice President, Instructional Services",
+      "Michael Ritterbrown",
+      "Vice President, Student Services",
+      "Alen Andriassian"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Sharlene Coleal",
+      "Vice President, Instructional Services",
+      "Michael Ritterbrown",
+      "Vice President, Student Services",
+      "Alen Andriassian",
+      "Vice President, Human Resources",
+      "Brittany Grice"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Human Resources",
+     "position": null,
+     "window": [
+      "Michael Ritterbrown",
+      "Vice President, Student Services",
+      "Alen Andriassian",
+      "Vice President, Human Resources",
+      "Brittany Grice",
+      "Associate Vice President, Administrative Services",
+      "Amy Williams"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Vice President, Administrative Services",
+     "position": "assoc_vp",
+     "window": [
+      "Alen Andriassian",
+      "Vice President, Human Resources",
+      "Brittany Grice",
+      "Associate Vice President, Administrative Services",
+      "Amy Williams",
+      "Associate Vice President, Technology and Innovation",
+      "Michael Dioquino"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Vice President, Technology and Innovation",
+     "position": "assoc_vp",
+     "window": [
+      "Brittany Grice",
+      "Associate Vice President, Administrative Services",
+      "Amy Williams",
+      "Associate Vice President, Technology and Innovation",
+      "Michael Dioquino",
+      "Chief of Police",
+      "Gary Montecuollo"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Continuing Education",
+     "position": null,
+     "window": [
+      "Michael Dioquino",
+      "Chief of Police",
+      "Gary Montecuollo",
+      "Dean, Continuing Education",
+      "Thatcher Weldon",
+      "Dean, Instructional Services (Interim)",
+      "Meg Chil-Gevorkyan"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Instructional Services (Interim)",
+     "position": null,
+     "window": [
+      "Gary Montecuollo",
+      "Dean, Continuing Education",
+      "Thatcher Weldon",
+      "Dean, Instructional Services (Interim)",
+      "Meg Chil-Gevorkyan",
+      "Dean, Library and Learning Resources",
+      "Katie Datko"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Library and Learning Resources",
+     "position": null,
+     "window": [
+      "Thatcher Weldon",
+      "Dean, Instructional Services (Interim)",
+      "Meg Chil-Gevorkyan",
+      "Dean, Library and Learning Resources",
+      "Katie Datko",
+      "Dean, Research, Planning, & Grants",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Research, Planning, & Grants",
+     "position": null,
+     "window": [
+      "Meg Chil-Gevorkyan",
+      "Dean, Library and Learning Resources",
+      "Katie Datko",
+      "Dean, Research, Planning, & Grants",
+      "Vacant",
+      "Dean, STEAM",
+      "Jeremy Talaoc"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, STEAM",
+     "position": null,
+     "window": [
+      "Katie Datko",
+      "Dean, Research, Planning, & Grants",
+      "Vacant",
+      "Dean, STEAM",
+      "Jeremy Talaoc",
+      "Dean, Student Affairs",
+      "Tzoler Oukayan"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Affairs",
+     "position": null,
+     "window": [
+      "Vacant",
+      "Dean, STEAM",
+      "Jeremy Talaoc",
+      "Dean, Student Affairs",
+      "Tzoler Oukayan",
+      "Dean, Student Services",
+      "Drew Yamanishi"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Services",
+     "position": null,
+     "window": [
+      "Jeremy Talaoc",
+      "Dean, Student Affairs",
+      "Tzoler Oukayan",
+      "Dean, Student Services",
+      "Drew Yamanishi",
+      "Dean, Workforce Development",
+      "Federico Saucedo"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Workforce Development",
+     "position": "dean_cte",
+     "window": [
+      "Tzoler Oukayan",
+      "Dean, Student Services",
+      "Drew Yamanishi",
+      "Dean, Workforce Development",
+      "Federico Saucedo",
+      "Executive Director, Communications and Governance Relations",
+      "Kristine Nam"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director, Communications and Governance Relations",
+     "position": null,
+     "window": [
+      "Drew Yamanishi",
+      "Dean, Workforce Development",
+      "Federico Saucedo",
+      "Executive Director, Communications and Governance Relations",
+      "Kristine Nam",
+      "Executive Director, College Foundation",
+      "Paola Santana"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director, College Foundation",
+     "position": null,
+     "window": [
+      "Federico Saucedo",
+      "Executive Director, Communications and Governance Relations",
+      "Kristine Nam",
+      "Executive Director, College Foundation",
+      "Paola Santana",
+      "Program Director, Professional Development Center",
+      "Ani Keshishian"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Program Director, Professional Development Center",
+     "position": null,
+     "window": [
+      "Kristine Nam",
+      "Executive Director, College Foundation",
+      "Paola Santana",
+      "Program Director, Professional Development Center",
+      "Ani Keshishian",
+      "ADMINISTRATIVE OFFICERS",
+      "Assistant Director, Professional Development Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director, Professional Development Center",
+     "position": null,
+     "window": [
+      "Program Director, Professional Development Center",
+      "Ani Keshishian",
+      "ADMINISTRATIVE OFFICERS",
+      "Assistant Director, Professional Development Center",
+      "Vacant",
+      "Associate Dean, Athletics",
+      "Chris Cicuto"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Athletics",
+     "position": null,
+     "window": [
+      "ADMINISTRATIVE OFFICERS",
+      "Assistant Director, Professional Development Center",
+      "Vacant",
+      "Associate Dean, Athletics",
+      "Chris Cicuto",
+      "Associate Dean, Career Education and Workforce Development",
+      "Meg Chil-Gevorkyan"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Career Education and Workforce Development",
+     "position": "dean_cte",
+     "window": [
+      "Vacant",
+      "Associate Dean, Athletics",
+      "Chris Cicuto",
+      "Associate Dean, Career Education and Workforce Development",
+      "Meg Chil-Gevorkyan",
+      "Associate Dean, Research and Institutional Effectiveness",
+      "Michael Davis"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Research and Institutional Effectiveness",
+     "position": null,
+     "window": [
+      "Chris Cicuto",
+      "Associate Dean, Career Education and Workforce Development",
+      "Meg Chil-Gevorkyan",
+      "Associate Dean, Research and Institutional Effectiveness",
+      "Michael Davis",
+      "Associate Dean, Continuing and Community Education",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Continuing and Community Education",
+     "position": null,
+     "window": [
+      "Meg Chil-Gevorkyan",
+      "Associate Dean, Research and Institutional Effectiveness",
+      "Michael Davis",
+      "Associate Dean, Continuing and Community Education",
+      "Vacant",
+      "Associate Dean, Health Sciences",
+      "Michelle Ramirez Saelak"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Health Sciences",
+     "position": null,
+     "window": [
+      "Michael Davis",
+      "Associate Dean, Continuing and Community Education",
+      "Vacant",
+      "Associate Dean, Health Sciences",
+      "Michelle Ramirez Saelak",
+      "Associate Dean, Student Financial Aid Services",
+      "Giselle Gamino"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Student Financial Aid Services",
+     "position": null,
+     "window": [
+      "Vacant",
+      "Associate Dean, Health Sciences",
+      "Michelle Ramirez Saelak",
+      "Associate Dean, Student Financial Aid Services",
+      "Giselle Gamino",
+      "Associate Dean of Student Services (Interim)",
+      "Aarin Edwards"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean of Student Services (Interim)",
+     "position": null,
+     "window": [
+      "Michelle Ramirez Saelak",
+      "Associate Dean, Student Financial Aid Services",
+      "Giselle Gamino",
+      "Associate Dean of Student Services (Interim)",
+      "Aarin Edwards",
+      "Associate Dean, Student Wellbeing",
+      "Andre Manukyan"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Student Wellbeing",
+     "position": null,
+     "window": [
+      "Giselle Gamino",
+      "Associate Dean of Student Services (Interim)",
+      "Aarin Edwards",
+      "Associate Dean, Student Wellbeing",
+      "Andre Manukyan",
+      "Manager, Career Pathways and Strong Workforce Programs",
+      "Alejandra Gonzalez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Ann Simon",
+      "SUPPORT SERVICES STAFF",
+      "Admissions and Records",
+      "Director",
+      "Michelle Mora",
+      "CalWORKs, Program for Parenting Students",
+      "Director, Acting"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Acting",
+     "position": null,
+     "window": [
+      "Director",
+      "Michelle Mora",
+      "CalWORKs, Program for Parenting Students",
+      "Director, Acting",
+      "Karen Tu",
+      "Child Development Center",
+      "Director"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Director, Acting",
+      "Karen Tu",
+      "Child Development Center",
+      "Director",
+      "Alessandra Pinheiro",
+      "Child Development Center",
+      "Site Supervisor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Parent Support Center Director",
+     "position": null,
+     "window": [
+      "Continuing Education",
+      "Computer Lab Supervisor",
+      "Vacant",
+      "Parent Support Center Director",
+      "Vacant",
+      "Controller's Office",
+      "Director, Accounting"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Accounting",
+     "position": null,
+     "window": [
+      "Parent Support Center Director",
+      "Vacant",
+      "Controller's Office",
+      "Director, Accounting",
+      "Angineh Baghoomian",
+      "Curriculum and Scheduling",
+      "Manager"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director, Facilities Operations, Development & Planning",
+     "position": null,
+     "window": [
+      "Manager",
+      "Nancy Traynor",
+      "Facilities",
+      "Executive Director, Facilities Operations, Development & Planning",
+      "Jerry Lewis",
+      "Facilities Project Manager",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director",
+     "position": null,
+     "window": [
+      "Custodial Supervisor, Night Shift",
+      "Silvester Flores",
+      "Financial Aid",
+      "Assistant Director",
+      "Arda Najarian",
+      "Food Services",
+      "Manager"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Manager",
+      "Vacant",
+      "Human Resources",
+      "Director",
+      "Valicia Dantzler",
+      "Director, Employee Relations",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Employee Relations",
+     "position": null,
+     "window": [
+      "Human Resources",
+      "Director",
+      "Valicia Dantzler",
+      "Director, Employee Relations",
+      "Vacant",
+      "Assistant Director, Human Resources, Equity and Compliance",
+      "May Zhang"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director, Human Resources, Equity and Compliance",
+     "position": null,
+     "window": [
+      "Valicia Dantzler",
+      "Director, Employee Relations",
+      "Vacant",
+      "Assistant Director, Human Resources, Equity and Compliance",
+      "May Zhang",
+      "Information Technology Services",
+      "Director of Enterprise Application and Systems"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Enterprise Application and Systems",
+     "position": null,
+     "window": [
+      "Assistant Director, Human Resources, Equity and Compliance",
+      "May Zhang",
+      "Information Technology Services",
+      "Director of Enterprise Application and Systems",
+      "Ranell Holmes",
+      "Director of Network, Systems, and Support Services",
+      "Lawrence Lampietti"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Network, Systems, and Support Services",
+     "position": null,
+     "window": [
+      "Information Technology Services",
+      "Director of Enterprise Application and Systems",
+      "Ranell Holmes",
+      "Director of Network, Systems, and Support Services",
+      "Lawrence Lampietti",
+      "Computer Lab Supervisor",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator",
+     "position": null,
+     "window": [
+      "IT Manager",
+      "Vacant",
+      "Public Information Office",
+      "Coordinator",
+      "Vacant",
+      "Student Affairs",
+      "Manager"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Student Outreach Services",
+      "Program Manager",
+      "Karen \"Gary\" Shamoyan",
+      "Program Coordinator",
+      "Vacant",
+      "Study Abroad",
+      "Program Director (Interim)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Program Director (Interim)",
+     "position": null,
+     "window": [
+      "Program Coordinator",
+      "Vacant",
+      "Study Abroad",
+      "Program Director (Interim)",
+      "Emily Shartrand",
+      "Superintendent/President",
+      "Chief Executive Assistant to Superintendent/President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Study Abroad",
+      "Program Director (Interim)",
+      "Emily Shartrand",
+      "Superintendent/President",
+      "Chief Executive Assistant to Superintendent/President",
+      "Debra Kallas",
+      "Coordinator, Strategic Initiatives & Special Projects - (Confidential)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chief Executive Assistant to Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Program Director (Interim)",
+      "Emily Shartrand",
+      "Superintendent/President",
+      "Chief Executive Assistant to Superintendent/President",
+      "Debra Kallas",
+      "Coordinator, Strategic Initiatives & Special Projects - (Confidential)",
+      "Arda Tchakian"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator, Strategic Initiatives & Special Projects - (Confidential)",
+     "position": null,
+     "window": [
+      "Superintendent/President",
+      "Chief Executive Assistant to Superintendent/President",
+      "Debra Kallas",
+      "Coordinator, Strategic Initiatives & Special Projects - (Confidential)",
+      "Arda Tchakian",
+      "Title V",
+      "OHSI Program Director (Interim)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "OHSI Program Director (Interim)",
+     "position": null,
+     "window": [
+      "Coordinator, Strategic Initiatives & Special Projects - (Confidential)",
+      "Arda Tchakian",
+      "Title V",
+      "OHSI Program Director (Interim)",
+      "Silvana Carrion-Palomares",
+      "Program Manager",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Silvana Carrion-Palomares",
+      "Program Manager",
+      "Vacant",
+      "Program Coordinator",
+      "Vacant",
+      "DIVISION CHAIR",
+      "Biology"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.glendale.edu/directory/directory-update.html",
+   "final_url": "https://www.glendale.edu/directory/directory-update.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Board of Trustees Superintendent/ President Administration Governance",
+     "position": "college_ceo",
+     "window": [
+      "FoundationDonate",
+      "Foundation & CommunityAnnual Golf Classic",
+      "Leadership",
+      "Board of Trustees Superintendent/ President Administration Governance",
+      "Training & Professional Development",
+      "Professional Learning and You Faculty Professional Development Classified Professional Development Mandated Training",
+      "Offices/ College Business"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41315220745"
+}

@@ -362,8 +362,7 @@ nobody finds; `unreferenced_offload` flags any that stop being.
     floor linted by `house_voice` in `kb/_docs_audit.py`.
 - **"Activities" = activities and their projects.** When Sam says
   "Activities" he generally means both the workplan activities and the
-  projects under them. The sidebar label is **Activities** (renamed from
-  "Activities & Projects", Session 97); the tab hash stays
+  projects under them. The sidebar label is **Activities**; the tab hash stays
   `activities-projects`.
 
 ## Working with the MAP team
@@ -751,7 +750,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 151](https://claude.ai/artifact/L58HaitkSR2T4NHRHjniMe), 2026-11-01, one card open: whether *VP Administrative Services* counts as VPBS in the contacts harvest). An answer
+> (latest: [Open Asks Sheet 153](https://claude.ai/artifact/RjwgkgeczU7wDS9YDZN6Js), 2026-11-01, answered; none open). An answer
 > changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

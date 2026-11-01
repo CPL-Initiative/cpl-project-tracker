@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-508 document(s).
+509 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 541 | [Session 541 handoff: Sierra training opens the current Sierra beside the tab; the Library's SharePoint note; the contacts harvest's fourth read](../session_541_handoff.md) | 2026-11-01 |
 | 540 | [Session 540 handoff: VP Administrative Services is VPBS; the contacts harvest's third read](../session_540_handoff.md) | 2026-11-01 |
 | 539 | [Session 539 handoff: the contacts harvest's second read; the batch counts a read that found no one](../session_539_handoff.md) | 2026-11-01 |
 | 538 | [Session 538 handoff: the contacts harvest's first read; Monterey Peninsula's last 14](../session_538_handoff.md) | 2026-11-01 |

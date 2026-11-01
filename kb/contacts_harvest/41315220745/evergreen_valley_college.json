@@ -1,0 +1,1647 @@
+{
+ "college": "Evergreen Valley College",
+ "homepage": "https://www.evc.edu/",
+ "read_at": "2026-11-01T14:18:07+00:00",
+ "pages": [
+  {
+   "url": "https://www.evc.edu/",
+   "final_url": "https://www.evc.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Event Spaces",
+      "Directory",
+      "About EVC",
+      "President's Office",
+      "EVC History",
+      "Accreditation",
+      "Participatory Governance & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Freedom Center",
+     "position": "vrc",
+     "window": [
+      "Umoja-AFFIRM",
+      "Studio Q Pride",
+      "Student Club & ASG",
+      "Veterans Freedom Center",
+      "See Our Communities",
+      "Undocumented Students",
+      "Our mission is to provide immigrant students with the necessary tools and information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.evc.edu/faculty/index.html",
+   "final_url": "https://www.evc.edu/faculty/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Event Spaces",
+      "Directory",
+      "About EVC",
+      "President's Office",
+      "EVC History",
+      "Accreditation",
+      "Participatory Governance & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College Curriculum Coordinator",
+     "position": null,
+     "window": [
+      "Campus Technology Support Services (CTSS)",
+      "juan.zamora@evc.edu juan.zamora@evc.edu",
+      "Vicki Brewster",
+      "College Curriculum Coordinator",
+      "Academic Services & Affairs",
+      "Vicki.Brewster@evc.edu Vicki.Brewster@evc.edu",
+      "Hsuan-Ya Chen"
+     ],
+     "emails": [
+      "Vicki.Brewster@evc.edu",
+      "juan.zamora@evc.edu"
+     ]
+    },
+    {
+     "line": "Interim Dean",
+     "position": null,
+     "window": [
+      "Accounting",
+      "Melody.Barta@evc.edu Melody.Barta@evc.edu",
+      "Ebonnie Berry",
+      "Interim Dean",
+      "Admissions,Administration,Financial Aid",
+      "Ebonnie.Berry@evc.edu Ebonnie.Berry@evc.edu",
+      "Irene Gutierrez"
+     ],
+     "emails": [
+      "Ebonnie.Berry@evc.edu",
+      "Melody.Barta@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Kinesiology",
+      "Lauren.Hickey@evc.edu Lauren.Hickey@evc.edu",
+      "Antoinette Herrera",
+      "Dean",
+      "Math, Science and Engineering,Administration",
+      "Antoinette.Herrera@evc.edu Antoinette.Herrera@evc.edu",
+      "Rachel Cohen"
+     ],
+     "emails": [
+      "Antoinette.Herrera@evc.edu",
+      "Lauren.Hickey@evc.edu"
+     ]
+    },
+    {
+     "line": "College Facilities Coordinator",
+     "position": null,
+     "window": [
+      "Custodial",
+      "Veronica.Colin@evc.edu Veronica.Colin@evc.edu",
+      "Jamison M. Jossis",
+      "College Facilities Coordinator",
+      "Facilities",
+      "Jamison.Jossis@evc.edu Jamison.Jossis@evc.edu",
+      "Sylvia Min"
+     ],
+     "emails": [
+      "Jamison.Jossis@evc.edu",
+      "Veronica.Colin@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Maintenance",
+      "Jose.Mardueno@sjeccd.edu Jose.Mardueno@sjeccd.edu",
+      "Reyna E. Avila",
+      "Program Coordinator",
+      "CalWORKs,EOPS/CARE",
+      "Reyna.Avila@evc.edu Reyna.Avila@evc.edu",
+      "Shivakumar Mathapathi"
+     ],
+     "emails": [
+      "Jose.Mardueno@sjeccd.edu",
+      "Reyna.Avila@evc.edu"
+     ]
+    },
+    {
+     "line": "Articulation Officer / Faculty",
+     "position": "articulation_officer",
+     "window": [
+      "Counseling",
+      "Delia.Galvan@evc.edu Delia.Galvan@evc.edu",
+      "Laura Garcia",
+      "Articulation Officer / Faculty",
+      "Counseling",
+      "Laura.Garcia@evc.edu Laura.Garcia@evc.edu",
+      "Vanphuong Nguyen"
+     ],
+     "emails": [
+      "Delia.Galvan@evc.edu",
+      "Laura.Garcia@evc.edu"
+     ]
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Maintenance",
+      "Juan.Olivas@sjeccd.edu Juan.Olivas@sjeccd.edu",
+      "Teresa De La Cruz",
+      "Director",
+      "CalWORKs,EOPS/CARE,Foster Youth,OASISS,Administration",
+      "Teresa.DeLaCruz@evc.edu Teresa.DeLaCruz@evc.edu",
+      "Laurie Yates"
+     ],
+     "emails": [
+      "Juan.Olivas@sjeccd.edu",
+      "Teresa.DeLaCruz@evc.edu"
+     ]
+    },
+    {
+     "line": "Marketing Director / PIO",
+     "position": null,
+     "window": [
+      "Math",
+      "ToTam.Pham@evc.edu ToTam.Pham@evc.edu",
+      "Niall Adler",
+      "Marketing Director / PIO",
+      "Marketing,Administration",
+      "nadler@evc.edu nadler@evc.edu",
+      "Melissa Hornstein"
+     ],
+     "emails": [
+      "ToTam.Pham@evc.edu",
+      "nadler@evc.edu"
+     ]
+    },
+    {
+     "line": "Interim Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Kinesiology",
+      "Joseph.Silveira@evc.edu Joseph.Silveira@evc.edu",
+      "Yulian Ligioso",
+      "Interim Vice President, Administrative Services",
+      "Administrative Services,Administration,Business Services",
+      "yulian.ligioso@evc.edu yulian.ligioso@evc.edu",
+      "Lisa Bell"
+     ],
+     "emails": [
+      "Joseph.Silveira@evc.edu",
+      "yulian.ligioso@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Nursing",
+      "susana.machado@evc.edu susana.machado@evc.edu",
+      "Tam Nguyen",
+      "Program Coordinator",
+      "Academic Services & Affairs",
+      "Tam.Nguyen@evc.edu Tam.Nguyen@evc.edu",
+      "Toni Moos"
+     ],
+     "emails": [
+      "Tam.Nguyen@evc.edu",
+      "susana.machado@evc.edu"
+     ]
+    },
+    {
+     "line": "Medical Director",
+     "position": null,
+     "window": [
+      "Academic Services & Affairs",
+      "Tam.Nguyen@evc.edu Tam.Nguyen@evc.edu",
+      "Toni Moos",
+      "Medical Director",
+      "Health Services",
+      "Mia Vodanovich",
+      "Associate Faculty"
+     ],
+     "emails": [
+      "Tam.Nguyen@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "English",
+      "Shannon.Cummings@evc.edu Shannon.Cummings@evc.edu",
+      "Alla Markevitch",
+      "Program Coordinator",
+      "International",
+      "Alla.Markevitch@evc.edu Alla.Markevitch@evc.edu",
+      "Richard Longacre"
+     ],
+     "emails": [
+      "Alla.Markevitch@evc.edu",
+      "Shannon.Cummings@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Automotive Technology",
+      "adil.ali@evc.edu adil.ali@evc.edu",
+      "Alexis Marquez Villa",
+      "Program Coordinator",
+      "Dual Enrollment",
+      "Alexis.MarquezVilla@evc.edu Alexis.MarquezVilla@evc.edu",
+      "Tiffany T. O'Brien"
+     ],
+     "emails": [
+      "Alexis.MarquezVilla@evc.edu",
+      "adil.ali@evc.edu"
+     ]
+    },
+    {
+     "line": "DSP Faculty Coordinator",
+     "position": null,
+     "window": [
+      "Computer Science",
+      "Harjinder.Kang@evc.edu Harjinder.Kang@evc.edu",
+      "Himani Tiwari",
+      "DSP Faculty Coordinator",
+      "Disabilities Support (DSP)",
+      "Himani.Tiwari@evc.edu Himani.Tiwari@evc.edu",
+      "Juliet Mathews"
+     ],
+     "emails": [
+      "Harjinder.Kang@evc.edu",
+      "Himani.Tiwari@evc.edu"
+     ]
+    },
+    {
+     "line": "Mental Health & Wellness Coordinator",
+     "position": null,
+     "window": [
+      "Custodial",
+      "Patricia.QuinonezMendez@evc.edu Patricia.QuinonezMendez@evc.edu",
+      "Jaelien V. Pinheiro",
+      "Mental Health & Wellness Coordinator",
+      "Wellness",
+      "Binh Vo",
+      "Associate Faculty"
+     ],
+     "emails": [
+      "Patricia.QuinonezMendez@evc.edu"
+     ]
+    },
+    {
+     "line": "College Schedule Coordinator",
+     "position": null,
+     "window": [
+      "English",
+      "Elizabeth.Eckford@evc.edu Elizabeth.Eckford@evc.edu",
+      "Erlinda E. Farris",
+      "College Schedule Coordinator",
+      "Academic Services & Affairs",
+      "Erlinda.Farris@evc.edu Erlinda.Farris@evc.edu",
+      "Antonio Perez"
+     ],
+     "emails": [
+      "Elizabeth.Eckford@evc.edu",
+      "Erlinda.Farris@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Financial Aid",
+      "Tanya.Le@evc.edu Tanya.Le@evc.edu",
+      "Teneka Cornish",
+      "Program Coordinator",
+      "Umoja-AFFIRM",
+      "Teneka.Cornish@evc.edu Teneka.Cornish@evc.edu",
+      "Carlos Ruiz"
+     ],
+     "emails": [
+      "Tanya.Le@evc.edu",
+      "Teneka.Cornish@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "English",
+      "Darlene.Elasigue@evc.edu Darlene.Elasigue@evc.edu",
+      "Austin Hunter",
+      "Program Coordinator",
+      "Nursing",
+      "Austin.Hunter@evc.edu Austin.Hunter@evc.edu",
+      "Jose de Jesus Sanchez"
+     ],
+     "emails": [
+      "Austin.Hunter@evc.edu",
+      "Darlene.Elasigue@evc.edu"
+     ]
+    },
+    {
+     "line": "Co-Op Ed. Coordinator, Faculty",
+     "position": null,
+     "window": [
+      "ESL",
+      "Ty.Khuu@evc.edu Ty.Khuu@evc.edu",
+      "Janina Espinoza",
+      "Co-Op Ed. Coordinator, Faculty",
+      "Career Center",
+      "Janina.Espinoza@evc.edu Janina.Espinoza@evc.edu",
+      "Grant Holder"
+     ],
+     "emails": [
+      "Janina.Espinoza@evc.edu",
+      "Ty.Khuu@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator (Math & Science Resource Center)",
+     "position": null,
+     "window": [
+      "Counseling",
+      "Celina.Gallegos@evc.edu Celina.Gallegos@evc.edu",
+      "Bryan Pham",
+      "Program Coordinator (Math & Science Resource Center)",
+      "Tutoring",
+      "Bryan.Pham@evc.edu Bryan.Pham@evc.edu",
+      "Matthew Alanis"
+     ],
+     "emails": [
+      "Bryan.Pham@evc.edu",
+      "Celina.Gallegos@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Ethnic Studies",
+      "Bobby.Seals@evc.edu Bobby.Seals@evc.edu",
+      "Lu Crary",
+      "Dean",
+      "Nursing,Administration",
+      "Shara.Crary@evc.edu Shara.Crary@evc.edu",
+      "Kelley E. O'Leary"
+     ],
+     "emails": [
+      "Bobby.Seals@evc.edu",
+      "Shara.Crary@evc.edu"
+     ]
+    },
+    {
+     "line": "Associate Faculty / LGBTQ+ Program Coordinator",
+     "position": null,
+     "window": [
+      "ESL",
+      "Sharon.Chien@evc.edu Sharon.Chien@evc.edu",
+      "John Ruys",
+      "Associate Faculty / LGBTQ+ Program Coordinator",
+      "Psychology",
+      "John.Ruys@evc.edu John.Ruys@evc.edu",
+      "Louis C. Sun"
+     ],
+     "emails": [
+      "John.Ruys@evc.edu",
+      "Sharon.Chien@evc.edu"
+     ]
+    },
+    {
+     "line": "Lab Coordinator",
+     "position": null,
+     "window": [
+      "Astronomy,Physics,Chemistry",
+      "Chieu-Khang.Phan@evc.edu Chieu-Khang.Phan@evc.edu",
+      "Margarita J. Savageau",
+      "Lab Coordinator",
+      "Biology",
+      "Margarita.Savageau@evc.edu Margarita.Savageau@evc.edu",
+      "Poonam Khare"
+     ],
+     "emails": [
+      "Chieu-Khang.Phan@evc.edu",
+      "Margarita.Savageau@evc.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Custodial",
+      "Salvador.Cuellar-Hernandez@evc.edu Salvador.Cuellar-Hernandez@evc.edu",
+      "Sam Morgan",
+      "Vice President, Student Services",
+      "Student Services, Administration",
+      "Sam.Morgan@evc.edu Sam.Morgan@evc.edu",
+      "Sindhu Sebastian"
+     ],
+     "emails": [
+      "Salvador.Cuellar-Hernandez@evc.edu",
+      "Sam.Morgan@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Business Information Systems,Digital Literacy,Educational Instructional Technology (EDIT)",
+      "Nasreen.Rahim@evc.edu Nasreen.Rahim@evc.edu",
+      "Vivian Yabumoto",
+      "Program Coordinator",
+      "Aspire",
+      "Vivian.Yabumoto@evc.edu Vivian.Yabumoto@evc.edu",
+      "Maricela Hernandez"
+     ],
+     "emails": [
+      "Nasreen.Rahim@evc.edu",
+      "Vivian.Yabumoto@evc.edu"
+     ]
+    },
+    {
+     "line": "Financial Aid Coordinator",
+     "position": null,
+     "window": [
+      "Administrative Services",
+      "Colleen.Cuen@evc.edu Colleen.Cuen@evc.edu",
+      "Anh T. Nguyen",
+      "Financial Aid Coordinator",
+      "Financial Aid",
+      "Anh.Nguyen2@evc.edu Anh.Nguyen2@evc.edu",
+      "Patricia R. James"
+     ],
+     "emails": [
+      "Anh.Nguyen2@evc.edu",
+      "Colleen.Cuen@evc.edu"
+     ]
+    },
+    {
+     "line": "Tutoring Center Coordinator",
+     "position": null,
+     "window": [
+      "English",
+      "Scott.Wilson@evc.edu Scott.Wilson@evc.edu",
+      "Sarai Minjares",
+      "Tutoring Center Coordinator",
+      "Tutoring",
+      "Minjares.Sarai@evc.edu Minjares.Sarai@evc.edu",
+      "Andrew Takimoto"
+     ],
+     "emails": [
+      "Minjares.Sarai@evc.edu",
+      "Scott.Wilson@evc.edu"
+     ]
+    },
+    {
+     "line": "A & R Coordinator II",
+     "position": null,
+     "window": [
+      "Geography",
+      "justine.cuevas@evc.edu justine.cuevas@evc.edu",
+      "Jose A. Denton",
+      "A & R Coordinator II",
+      "Admissions",
+      "Jose.Denton@evc.edu Jose.Denton@evc.edu",
+      "Laimi Cong-Huyen"
+     ],
+     "emails": [
+      "Jose.Denton@evc.edu",
+      "justine.cuevas@evc.edu"
+     ]
+    },
+    {
+     "line": "Director, Student Life & Umoja",
+     "position": null,
+     "window": [
+      "History",
+      "Daniel.Allen@evc.edu Daniel.Allen@evc.edu",
+      "Sean Dickerson",
+      "Director, Student Life & Umoja",
+      "Student Life,Umoja",
+      "Sean.Dickerson@evc.edu Sean.Dickerson@evc.edu",
+      "Alessandra Cain"
+     ],
+     "emails": [
+      "Daniel.Allen@evc.edu",
+      "Sean.Dickerson@evc.edu"
+     ]
+    },
+    {
+     "line": "President's Office,Administration",
+     "position": "college_ceo",
+     "window": [
+      "Maria.Hernandez@evc.edu Maria.Hernandez@evc.edu",
+      "Penny L. Garibay",
+      "Executive Administrative Assistant",
+      "President's Office,Administration",
+      "Penny.Garibay@evc.edu Penny.Garibay@evc.edu",
+      "Keilee Liu",
+      "Associate Faculty"
+     ],
+     "emails": [
+      "Maria.Hernandez@evc.edu",
+      "Penny.Garibay@evc.edu"
+     ]
+    },
+    {
+     "line": "Campus Personnel Coordinator",
+     "position": null,
+     "window": [
+      "Chemistry",
+      "keilee.liu@evc.edu keilee.liu@evc.edu",
+      "Stacy Alvarez",
+      "Campus Personnel Coordinator",
+      "Academic Services & Affairs",
+      "Stacy.Alvarez@evc.edu Stacy.Alvarez@evc.edu",
+      "Raul Mendoza Ochoa"
+     ],
+     "emails": [
+      "Stacy.Alvarez@evc.edu",
+      "keilee.liu@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean Macaraeg",
+     "position": null,
+     "window": [
+      "Financial Aid Specialist II",
+      "Financial Aid",
+      "Julissa.LopezGarcia@evc.edu Julissa.LopezGarcia@evc.edu",
+      "Dean Macaraeg",
+      "Bookstore Manager",
+      "Bookstore",
+      "evcstore@evc.edu evcstore@evc.edu"
+     ],
+     "emails": [
+      "Julissa.LopezGarcia@evc.edu",
+      "evcstore@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean, Athletics Director",
+     "position": null,
+     "window": [
+      "Biology",
+      "Austin.McKenna@evc.edu Austin.McKenna@evc.edu",
+      "Sean Stewart",
+      "Dean, Athletics Director",
+      "Athletics,Kinesiology,SSAKA,Administration",
+      "sean.stewart@evc.edu sean.stewart@evc.edu",
+      "Cheri Newman"
+     ],
+     "emails": [
+      "Austin.McKenna@evc.edu",
+      "sean.stewart@evc.edu"
+     ]
+    },
+    {
+     "line": "Interim Vice President",
+     "position": null,
+     "window": [
+      "ESL",
+      "Cheri.Newman@evc.edu Cheri.Newman@evc.edu",
+      "Maniphone Dickerson",
+      "Interim Vice President",
+      "Academic Services & Affairs,Administration",
+      "Maniphone.Dickerson@evc.edu Maniphone.Dickerson@evc.edu",
+      "Adriana Sarza"
+     ],
+     "emails": [
+      "Cheri.Newman@evc.edu",
+      "Maniphone.Dickerson@evc.edu"
+     ]
+    },
+    {
+     "line": "Director of Student Health, Wellness, Veterans and Accessibility",
+     "position": null,
+     "window": [
+      "Custodial",
+      "Adriana.Sarza@evc.edu Adriana.Sarza@evc.edu",
+      "Spike Osorio",
+      "Director of Student Health, Wellness, Veterans and Accessibility",
+      "Disabilities Support (DSP),Health Services,Veterans,Administration,Wellness",
+      "Michael.Osorio@evc.edu Michael.Osorio@evc.edu",
+      "Lorenzo Rosas"
+     ],
+     "emails": [
+      "Adriana.Sarza@evc.edu",
+      "Michael.Osorio@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Custodial",
+      "Lorenzo.Rosas@evc.edu Lorenzo.Rosas@evc.edu",
+      "Mayra Garcia",
+      "Program Coordinator",
+      "Enlace",
+      "Mayra.Garcia@evc.edu Mayra.Garcia@evc.edu",
+      "Sandra Wise"
+     ],
+     "emails": [
+      "Lorenzo.Rosas@evc.edu",
+      "Mayra.Garcia@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "English,Reading",
+      "Sherryanne.Lim@evc.edu Sherryanne.Lim@evc.edu",
+      "Angel G. Fuentes",
+      "Dean",
+      "Business & Workforce Development,Administration",
+      "Angel.Fuentes@evc.edu Angel.Fuentes@evc.edu",
+      "Terri Oliva"
+     ],
+     "emails": [
+      "Angel.Fuentes@evc.edu",
+      "Sherryanne.Lim@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean of Counseling",
+     "position": null,
+     "window": [
+      "Business",
+      "Emon.Graves@evc.edu Emon.Graves@evc.edu",
+      "Leo Villalobos",
+      "Dean of Counseling",
+      "Counseling,Administration",
+      "Leopoldo.Villalobos@evc.edu Leopoldo.Villalobos@evc.edu",
+      "Ivanna Ramirez"
+     ],
+     "emails": [
+      "Emon.Graves@evc.edu",
+      "Leopoldo.Villalobos@evc.edu"
+     ]
+    },
+    {
+     "line": "Veterans,Automotive Technology,Transfer Center",
+     "position": "vrc",
+     "window": [
+      "Martin.LaGrow@evc.edu Martin.LaGrow@evc.edu",
+      "Kim Nguyen",
+      "Associate Counseling Faculty",
+      "Veterans,Automotive Technology,Transfer Center",
+      "Kimn.Nguyen@evc.edu Kimn.Nguyen@evc.edu",
+      "Huong T. Nguyen",
+      "A & R Assistant"
+     ],
+     "emails": [
+      "Kimn.Nguyen@evc.edu",
+      "Martin.LaGrow@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "ESL",
+      "huong.pham@evc.edu huong.pham@evc.edu",
+      "Robert Gutierrez",
+      "Dean",
+      "Language Arts,Administration",
+      "Robert.Gutierrez@evc.edu Robert.Gutierrez@evc.edu",
+      "Deborah Chan"
+     ],
+     "emails": [
+      "Robert.Gutierrez@evc.edu",
+      "huong.pham@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Language Arts",
+      "Margaret.Powell@evc.edu Margaret.Powell@evc.edu",
+      "Paulina Lee Reza",
+      "Program Coordinator",
+      "OASISS",
+      "Paulina.LeeReza@evc.edu Paulina.LeeReza@evc.edu",
+      "Vera A. Nazarov"
+     ],
+     "emails": [
+      "Margaret.Powell@evc.edu",
+      "Paulina.LeeReza@evc.edu"
+     ]
+    },
+    {
+     "line": "Director of Student Health Services",
+     "position": null,
+     "window": [
+      "Transfer Center,Career Center",
+      "Luis.Murguia@evc.edu Luis.Murguia@evc.edu",
+      "Janice Assadi",
+      "Director of Student Health Services",
+      "Health Services",
+      "Evc.Health@evc.edu Evc.Health@evc.edu",
+      "Sean A. Pingue"
+     ],
+     "emails": [
+      "Evc.Health@evc.edu",
+      "Luis.Murguia@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "World Languages - Vietnamese",
+      "Bac.Tran@evc.edu Bac.Tran@evc.edu",
+      "Maya Gonzales",
+      "Program Coordinator",
+      "Foster Youth",
+      "Maya.Gonzales@evc.edu Maya.Gonzales@evc.edu",
+      "Maria C. Chavez"
+     ],
+     "emails": [
+      "Bac.Tran@evc.edu",
+      "Maya.Gonzales@evc.edu"
+     ]
+    },
+    {
+     "line": "Basic Needs Coordinator",
+     "position": null,
+     "window": [
+      "Custodial",
+      "Maria.Chavez@evc.edu Maria.Chavez@evc.edu",
+      "America Minjares",
+      "Basic Needs Coordinator",
+      "Student Life",
+      "America.Minjares@evc.edu America.Minjares@evc.edu",
+      "Rama Ruppenthal"
+     ],
+     "emails": [
+      "America.Minjares@evc.edu",
+      "Maria.Chavez@evc.edu"
+     ]
+    },
+    {
+     "line": "A & R Lead Coordinator",
+     "position": null,
+     "window": [
+      "Math",
+      "Teck.Ky@evc.edu Teck.Ky@evc.edu",
+      "Tiffani Lam",
+      "A & R Lead Coordinator",
+      "Admissions",
+      "Tiffani.Lam@evc.edu Tiffani.Lam@evc.edu",
+      "Jose Ochoa"
+     ],
+     "emails": [
+      "Teck.Ky@evc.edu",
+      "Tiffani.Lam@evc.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Family and Consumer Studies",
+      "Ashley.Lamboley@evc.edu Ashley.Lamboley@evc.edu",
+      "Vinicio Lopez",
+      "President",
+      "Administration",
+      "Nancy W Tung",
+      "Instructional Support Asst., Lab Lead"
+     ],
+     "emails": [
+      "Ashley.Lamboley@evc.edu"
+     ]
+    },
+    {
+     "line": "Faculty, DE Coordinator",
+     "position": null,
+     "window": [
+      "Adjunct Mental Health Clinician",
+      "Wellness",
+      "Tejal Naik",
+      "Faculty, DE Coordinator",
+      "Digital Literacy,Educational Instructional Technology (EDIT),Library,Math",
+      "Tejal.Naik@evc.edu Tejal.Naik@evc.edu",
+      "Olenka Hubickyj"
+     ],
+     "emails": [
+      "Tejal.Naik@evc.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator, First Stop Center",
+     "position": null,
+     "window": [
+      "Astronomy,Physics",
+      "Olenka.Hubickyj@evc.edu Olenka.Hubickyj@evc.edu",
+      "Bryana Perez",
+      "Program Coordinator, First Stop Center",
+      "First Stop Center",
+      "Bryana.Perez@evc.edu Bryana.Perez@evc.edu",
+      "Celso Batalha"
+     ],
+     "emails": [
+      "Bryana.Perez@evc.edu",
+      "Olenka.Hubickyj@evc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.evc.edu/about/president/index.html",
+   "final_url": "https://www.evc.edu/about/president/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President Dr. Vinicio López",
+     "position": "college_ceo",
+     "window": [
+      "President Dr. Vinicio López",
+      "Skip to main content",
+      "Skip to main navigation",
+      "Skip to footer content"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Event Spaces",
+      "Directory",
+      "About EVC",
+      "President's Office",
+      "EVC History",
+      "Accreditation",
+      "Participatory Governance & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Vinicio J. López",
+     "position": "college_ceo",
+     "window": [
+      "Faculty & Staff Resources",
+      "Mission & Vision",
+      "Research & Fast Facts",
+      "President Vinicio J. López",
+      "Home",
+      "About",
+      "President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "President Vinicio J. López",
+      "Home",
+      "About",
+      "President",
+      "In This Section",
+      "Home",
+      "Administration at EVC"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Reports",
+     "position": "college_ceo",
+     "window": [
+      "In This Section",
+      "Home",
+      "Administration at EVC",
+      "President's Reports",
+      "President's Office",
+      "Student Services Complex (A - 2003)",
+      "408-270-6471"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Administration at EVC",
+      "President's Reports",
+      "President's Office",
+      "Student Services Complex (A - 2003)",
+      "408-270-6471",
+      "Contact"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Report (2025-26)",
+     "position": "college_ceo",
+     "window": [
+      "Penny Garibay",
+      "Penny.Garibay@evc.edu Penny.Garibay@evc.edu",
+      "Latest Yearly Reports",
+      "President's Report (2025-26)",
+      "District Priorities (2025-26)",
+      "We have proudly served the foothills of San José since September 3, 1975. We are pleased",
+      "that you have chosen the college to pursue your educational and workforce goals. EVC’s"
+     ],
+     "emails": [
+      "Penny.Garibay@evc.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "We are here for the community. We are here for you. We wish you much success in your",
+      "educational endeavors. I hope to see you on campus.",
+      "Vinicio J. López, Ed.D.",
+      "President",
+      "Leadership Team | President's Reports | PRESIDENT LOPEZ BIO",
+      "Evergreen Valley College",
+      "3095 Yerba Buena Road,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Leadership Team | President's Reports | PRESIDENT LOPEZ BIO",
+     "position": "college_ceo",
+     "window": [
+      "educational endeavors. I hope to see you on campus.",
+      "Vinicio J. López, Ed.D.",
+      "President",
+      "Leadership Team | President's Reports | PRESIDENT LOPEZ BIO",
+      "Evergreen Valley College",
+      "3095 Yerba Buena Road,",
+      "San José, CA 95135"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.evc.edu/general/campus-services.html",
+   "final_url": "https://www.evc.edu/general/campus-services.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Event Spaces",
+      "Directory",
+      "About EVC",
+      "President's Office",
+      "EVC History",
+      "Accreditation",
+      "Participatory Governance & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Police (District Police)",
+      "Central Plant Building",
+      "408.270.6468",
+      "President’s Office",
+      "A-2003, Student Services Building",
+      "408.270.6471",
+      "Reprographics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran’s Freedom Center",
+     "position": "vrc",
+     "window": [
+      "LE-237, Library/ETC Building",
+      "408.274.7900 x6802",
+      "Email: william.nguyen@evc.edu%E2%80%8B%E2%80%8B william.nguyen@evc.edu​​",
+      "Veteran’s Freedom Center",
+      "S-1027, Student Services Building",
+      "408.223.6789",
+      "Email: evcvet@evc.edu evcvet@evc.edu"
+     ],
+     "emails": [
+      "evcvet@evc.edu",
+      "william.nguyen@evc.edu"
+     ]
+    },
+    {
+     "line": "Vice President Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "S-1027, Student Services Building",
+      "408.223.6789",
+      "Email: evcvet@evc.edu evcvet@evc.edu",
+      "Vice President Academic Affairs",
+      "A-2039, Student Services Building",
+      "408.270.6450",
+      "Vice President Administrative Services"
+     ],
+     "emails": [
+      "evcvet@evc.edu"
+     ]
+    },
+    {
+     "line": "Vice President Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Vice President Academic Affairs",
+      "A-2039, Student Services Building",
+      "408.270.6450",
+      "Vice President Administrative Services",
+      "A-1015, Student Services Building",
+      "408.223.6796",
+      "Vice President Student Affairs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President Student Affairs",
+     "position": "vpss",
+     "window": [
+      "Vice President Administrative Services",
+      "A-1015, Student Services Building",
+      "408.223.6796",
+      "Vice President Student Affairs",
+      "A-2039, Student Services Building",
+      "408.270.6749",
+      "Writing Lab"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.evc.edu/about/president/administration-directory.html",
+   "final_url": "https://www.evc.edu/about/president/administration-directory.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Event Spaces",
+      "Directory",
+      "About EVC",
+      "President's Office",
+      "EVC History",
+      "Accreditation",
+      "Participatory Governance & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Administration at EVC",
+      "Home",
+      "About",
+      "President",
+      "Administration at EVC",
+      "In This Section",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Reports",
+     "position": "college_ceo",
+     "window": [
+      "In This Section",
+      "Home",
+      "Administration at EVC",
+      "President's Reports",
+      "Leadership Team",
+      "Mission of the Evergreen Valley College Administrative Council:",
+      "\"As a learning institution and as EVC's Administrative Council, we connect our community"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vinicio J. López - President",
+     "position": "college_ceo",
+     "window": [
+      "to education with empathy, advocacy, and accountability for a collective impact to",
+      "those we serve.\"",
+      "Executive Team",
+      "Vinicio J. López - President",
+      "Maniphone Dickerson - Acting Vice President of Academic Affairs",
+      "Yulian Ligioso - Interim Vice President of Administrative Services",
+      "Sam Morgan - ​ Vice President​ of Student Affairs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Maniphone Dickerson - Acting Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "those we serve.\"",
+      "Executive Team",
+      "Vinicio J. López - President",
+      "Maniphone Dickerson - Acting Vice President of Academic Affairs",
+      "Yulian Ligioso - Interim Vice President of Administrative Services",
+      "Sam Morgan - ​ Vice President​ of Student Affairs",
+      "Deans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Yulian Ligioso - Interim Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Executive Team",
+      "Vinicio J. López - President",
+      "Maniphone Dickerson - Acting Vice President of Academic Affairs",
+      "Yulian Ligioso - Interim Vice President of Administrative Services",
+      "Sam Morgan - ​ Vice President​ of Student Affairs",
+      "Deans",
+      "Shara Crary - Nursing & Allied Health​​"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Sam Morgan - ​ Vice President​ of Student Affairs",
+     "position": null,
+     "window": [
+      "Vinicio J. López - President",
+      "Maniphone Dickerson - Acting Vice President of Academic Affairs",
+      "Yulian Ligioso - Interim Vice President of Administrative Services",
+      "Sam Morgan - ​ Vice President​ of Student Affairs",
+      "Deans",
+      "Shara Crary - Nursing & Allied Health​​",
+      "Angel G. Fuentes - Business & Workforce Development, Non Credit, Dual Enrollment"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Ebonnie Berry - Interim Dean, Enrollment Services",
+     "position": null,
+     "window": [
+      "Leo Villalobos - ​Student Success/Counseling",
+      "Robert Gutierrez - Language Arts",
+      "​Antoinette Herrera - Library & Learning Resources, Math, Science and Engineering",
+      "Ebonnie Berry - Interim Dean, Enrollment Services",
+      "Sean Stewart - ​ Social Sciences, Humanities, Arts, Kinesiology, and Athletics",
+      "Directors",
+      "Niall Adler- Marketing & Public Relations"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean",
+     "position": null,
+     "window": [
+      "Department",
+      "Email",
+      "Ebonnie Berry",
+      "Interim Dean",
+      "Admissions,Administration,Financial Aid",
+      "Ebonnie.Berry@evc.edu Ebonnie.Berry@evc.edu",
+      "Ken Nguyen"
+     ],
+     "emails": [
+      "Ebonnie.Berry@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Campus Technology Support Services (CTSS),Administration",
+      "Phong.Nguyen@evc.edu Phong.Nguyen@evc.edu",
+      "Antoinette Herrera",
+      "Dean",
+      "Math, Science and Engineering,Administration",
+      "Antoinette.Herrera@evc.edu Antoinette.Herrera@evc.edu",
+      "Teresa De La Cruz"
+     ],
+     "emails": [
+      "Antoinette.Herrera@evc.edu",
+      "Phong.Nguyen@evc.edu"
+     ]
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Math, Science and Engineering,Administration",
+      "Antoinette.Herrera@evc.edu Antoinette.Herrera@evc.edu",
+      "Teresa De La Cruz",
+      "Director",
+      "CalWORKs,EOPS/CARE,Foster Youth,OASISS,Administration",
+      "Teresa.DeLaCruz@evc.edu Teresa.DeLaCruz@evc.edu",
+      "Niall Adler"
+     ],
+     "emails": [
+      "Antoinette.Herrera@evc.edu",
+      "Teresa.DeLaCruz@evc.edu"
+     ]
+    },
+    {
+     "line": "Marketing Director / PIO",
+     "position": null,
+     "window": [
+      "CalWORKs,EOPS/CARE,Foster Youth,OASISS,Administration",
+      "Teresa.DeLaCruz@evc.edu Teresa.DeLaCruz@evc.edu",
+      "Niall Adler",
+      "Marketing Director / PIO",
+      "Marketing,Administration",
+      "nadler@evc.edu nadler@evc.edu",
+      "Yulian Ligioso"
+     ],
+     "emails": [
+      "Teresa.DeLaCruz@evc.edu",
+      "nadler@evc.edu"
+     ]
+    },
+    {
+     "line": "Interim Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Marketing,Administration",
+      "nadler@evc.edu nadler@evc.edu",
+      "Yulian Ligioso",
+      "Interim Vice President, Administrative Services",
+      "Administrative Services,Administration,Business Services",
+      "yulian.ligioso@evc.edu yulian.ligioso@evc.edu",
+      "Juan B. Manriquez"
+     ],
+     "emails": [
+      "nadler@evc.edu",
+      "yulian.ligioso@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Custodial,Administration",
+      "luis.rivassalinas@evc.edu luis.rivassalinas@evc.edu",
+      "Lu Crary",
+      "Dean",
+      "Nursing,Administration",
+      "Shara.Crary@evc.edu Shara.Crary@evc.edu",
+      "Tina Nguyen"
+     ],
+     "emails": [
+      "Shara.Crary@evc.edu",
+      "luis.rivassalinas@evc.edu"
+     ]
+    },
+    {
+     "line": "President's Office,Administration",
+     "position": "college_ceo",
+     "window": [
+      "michael.casares@evc.edu michael.casares@evc.edu",
+      "Penny L. Garibay",
+      "Executive Administrative Assistant",
+      "President's Office,Administration",
+      "Penny.Garibay@evc.edu Penny.Garibay@evc.edu",
+      "Sean Stewart",
+      "Dean, Athletics Director"
+     ],
+     "emails": [
+      "Penny.Garibay@evc.edu",
+      "michael.casares@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean, Athletics Director",
+     "position": null,
+     "window": [
+      "President's Office,Administration",
+      "Penny.Garibay@evc.edu Penny.Garibay@evc.edu",
+      "Sean Stewart",
+      "Dean, Athletics Director",
+      "Athletics,Kinesiology,SSAKA,Administration",
+      "sean.stewart@evc.edu sean.stewart@evc.edu",
+      "Maniphone Dickerson"
+     ],
+     "emails": [
+      "Penny.Garibay@evc.edu",
+      "sean.stewart@evc.edu"
+     ]
+    },
+    {
+     "line": "Interim Vice President",
+     "position": null,
+     "window": [
+      "Athletics,Kinesiology,SSAKA,Administration",
+      "sean.stewart@evc.edu sean.stewart@evc.edu",
+      "Maniphone Dickerson",
+      "Interim Vice President",
+      "Academic Services & Affairs,Administration",
+      "Maniphone.Dickerson@evc.edu Maniphone.Dickerson@evc.edu",
+      "Spike Osorio"
+     ],
+     "emails": [
+      "Maniphone.Dickerson@evc.edu",
+      "sean.stewart@evc.edu"
+     ]
+    },
+    {
+     "line": "Director of Student Health, Wellness, Veterans and Accessibility",
+     "position": null,
+     "window": [
+      "Academic Services & Affairs,Administration",
+      "Maniphone.Dickerson@evc.edu Maniphone.Dickerson@evc.edu",
+      "Spike Osorio",
+      "Director of Student Health, Wellness, Veterans and Accessibility",
+      "Disabilities Support (DSP),Health Services,Veterans,Administration,Wellness",
+      "Michael.Osorio@evc.edu Michael.Osorio@evc.edu",
+      "Angel G. Fuentes"
+     ],
+     "emails": [
+      "Maniphone.Dickerson@evc.edu",
+      "Michael.Osorio@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Disabilities Support (DSP),Health Services,Veterans,Administration,Wellness",
+      "Michael.Osorio@evc.edu Michael.Osorio@evc.edu",
+      "Angel G. Fuentes",
+      "Dean",
+      "Business & Workforce Development,Administration",
+      "Angel.Fuentes@evc.edu Angel.Fuentes@evc.edu",
+      "Leo Villalobos"
+     ],
+     "emails": [
+      "Angel.Fuentes@evc.edu",
+      "Michael.Osorio@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean of Counseling",
+     "position": null,
+     "window": [
+      "Business & Workforce Development,Administration",
+      "Angel.Fuentes@evc.edu Angel.Fuentes@evc.edu",
+      "Leo Villalobos",
+      "Dean of Counseling",
+      "Counseling,Administration",
+      "Leopoldo.Villalobos@evc.edu Leopoldo.Villalobos@evc.edu",
+      "Robert Gutierrez"
+     ],
+     "emails": [
+      "Angel.Fuentes@evc.edu",
+      "Leopoldo.Villalobos@evc.edu"
+     ]
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Counseling,Administration",
+      "Leopoldo.Villalobos@evc.edu Leopoldo.Villalobos@evc.edu",
+      "Robert Gutierrez",
+      "Dean",
+      "Language Arts,Administration",
+      "Robert.Gutierrez@evc.edu Robert.Gutierrez@evc.edu",
+      "Vinicio Lopez"
+     ],
+     "emails": [
+      "Leopoldo.Villalobos@evc.edu",
+      "Robert.Gutierrez@evc.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Language Arts,Administration",
+      "Robert.Gutierrez@evc.edu Robert.Gutierrez@evc.edu",
+      "Vinicio Lopez",
+      "President",
+      "Administration",
+      "Vincent Cabada",
+      "Manager"
+     ],
+     "emails": [
+      "Robert.Gutierrez@evc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.evc.edu/services/veterans/index.html",
+   "final_url": "https://www.evc.edu/services/veterans/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Freedom Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Freedom Center",
+      "Skip to main content",
+      "Skip to main navigation",
+      "Skip to footer content"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Event Spaces",
+      "Directory",
+      "About EVC",
+      "President's Office",
+      "EVC History",
+      "Accreditation",
+      "Participatory Governance & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Freedom Center",
+     "position": "vrc",
+     "window": [
+      "Faculty & Staff Resources",
+      "Mission & Vision",
+      "Research & Fast Facts",
+      "Veterans Freedom Center",
+      "Home",
+      "Services",
+      "Veterans Freedom Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Freedom Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Freedom Center",
+      "Home",
+      "Services",
+      "Veterans Freedom Center",
+      "In This Section",
+      "Home",
+      "Veterans Staff Directory"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Freedom Center",
+     "position": "vrc",
+     "window": [
+      "Getting Started",
+      "FAQ's",
+      "Forms",
+      "Veterans Freedom Center",
+      "S-1027, Student Services Complex",
+      "evcvet@evc.edu evcvet@evc.edu",
+      "(408) 223-6789"
+     ],
+     "emails": [
+      "evcvet@evc.edu"
+     ]
+    },
+    {
+     "line": "Veterans Freedom Center",
+     "position": "vrc",
+     "window": [
+      "Office Hours:",
+      "Monday-Thursday: 8 a.m.-5 p.m.",
+      "Friday: 8 a.m.–1 p.m.",
+      "Veterans Freedom Center",
+      "Welcome TO THE VETERANS FREEDOM CENTER!",
+      "At Evergreen Valley College, we proudly support veterans, active service members,",
+      "and their dependents as they transition into academic and civilian life."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome TO THE VETERANS FREEDOM CENTER!",
+     "position": "vrc",
+     "window": [
+      "Monday-Thursday: 8 a.m.-5 p.m.",
+      "Friday: 8 a.m.–1 p.m.",
+      "Veterans Freedom Center",
+      "Welcome TO THE VETERANS FREEDOM CENTER!",
+      "At Evergreen Valley College, we proudly support veterans, active service members,",
+      "and their dependents as they transition into academic and civilian life.",
+      "Our Veterans Freedom Center (VFC) is dedicated to providing the resources, guidance,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Our Veterans Freedom Center (VFC) is dedicated to providing the resources, guidance,",
+     "position": "vrc",
+     "window": [
+      "Welcome TO THE VETERANS FREEDOM CENTER!",
+      "At Evergreen Valley College, we proudly support veterans, active service members,",
+      "and their dependents as they transition into academic and civilian life.",
+      "Our Veterans Freedom Center (VFC) is dedicated to providing the resources, guidance,",
+      "and community needed to help you succeed.",
+      "Whether you're seeking educational support, navigating VA benefits, or connecting",
+      "with fellow veterans, our team is here to assist you every step of the way."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Counseling Services",
+     "position": "vrc",
+     "window": [
+      "Thank you, Veterans",
+      "Our team is your liaison and primary point of contact to assist with:",
+      "Veterans Affairs (VA) Education Benefits Certification Process",
+      "Veteran Counseling Services",
+      "Assistance with accessing campus/community resources",
+      "Provide a supportive community for Veteran students",
+      "We also offer:"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.evc.edu/services/veterans/veterans-staff-directory.html",
+   "final_url": "https://www.evc.edu/services/veterans/veterans-staff-directory.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Event Spaces",
+      "Directory",
+      "About EVC",
+      "President's Office",
+      "EVC History",
+      "Accreditation",
+      "Participatory Governance & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Student Health, Wellness, Veterans and Accessibility",
+     "position": null,
+     "window": [
+      "Veterans",
+      "Jorgina.MacumbaLazcano@evc.edu Jorgina.MacumbaLazcano@evc.edu",
+      "Spike Osorio",
+      "Director of Student Health, Wellness, Veterans and Accessibility",
+      "Disabilities Support (DSP),Health Services,Veterans,Administration,Wellness",
+      "Michael.Osorio@evc.edu Michael.Osorio@evc.edu",
+      "Kim Nguyen"
+     ],
+     "emails": [
+      "Jorgina.MacumbaLazcano@evc.edu",
+      "Michael.Osorio@evc.edu"
+     ]
+    },
+    {
+     "line": "Veterans,Automotive Technology,Transfer Center",
+     "position": "vrc",
+     "window": [
+      "Michael.Osorio@evc.edu Michael.Osorio@evc.edu",
+      "Kim Nguyen",
+      "Associate Counseling Faculty",
+      "Veterans,Automotive Technology,Transfer Center",
+      "Kimn.Nguyen@evc.edu Kimn.Nguyen@evc.edu",
+      "Evergreen Valley College",
+      "3095 Yerba Buena Road,"
+     ],
+     "emails": [
+      "Kimn.Nguyen@evc.edu",
+      "Michael.Osorio@evc.edu"
+     ]
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41315220745"
+}
