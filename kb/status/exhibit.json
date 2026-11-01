@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "session": 536,
- "moniker": "SkyInkberry",
+ "moniker": "SkyTeaberry",
  "run": "Sam's session",
  "decider": "Sam",
  "handoff": "docs/cer_redesign_handoff.md",
@@ -78,24 +78,38 @@
   },
   {
    "title": "Keep the IB fold under IB's own subject names",
-   "text": "Proceeded on the recommendation (SkyInkberry, 2026-11-01): 49 IB credentials into 24, one issuer name, 8 live rows moved. No reply keeps it; a reply of reverse undoes it by revert and the receipt's rollback.",
-   "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL"
+   "text": "Answered keep: the IB fold stands, 49 IB credentials into 24 (#2632).",
+   "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-01",
+    "words": "keep"
+   }
   },
   {
    "title": "Which names CLEP exams take",
-   "text": "Held: one credential per exam with its levels folded, Arabic numerals and no period subtitle is proposed. No reply leaves CLEP as it is, 400 titles under 48 names.",
-   "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL"
+   "text": "Answered fold: applied, 48 CLEP names into 35 and 36 live rows moved (#2633).",
+   "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-01",
+    "words": "fold"
+   }
   }
  ],
  "notes": {},
  "headline": [],
- "written_at": "2026-11-01T01:09:58Z",
+ "written_at": "2026-11-01T02:15:39Z",
  "project": "exhibit",
  "next_step": {
-  "title": "Sam's Sheet 150 replies, then CLEP",
-  "text": "Read Sheet 150's replies. On card 2's answer, build CLEP's reader and fold on the IB pattern. After each of Sam's Another look passes, move the panel rows the next fold lists."
+  "title": "Sam's next Another look pass",
+  "text": "After each of Sam's Another look passes, move the panel rows the next fold lists. Confirm tonight's fold reads the moved CLEP rows as already folded."
  },
  "changes": [
+  {
+   "at": "2026-11-01T02:20:00Z",
+   "text": "CLEP titles take College Board's exam names, one credential per exam with its levels folded in; the reference's 48 CLEP names became 35 and 36 live rows moved (#2633)."
+  },
   {
    "at": "2026-10-31T20:30:00Z",
    "text": "Funding review rows: Follow up beside Accept and Deny on a waiting request, an editable email to the requester with the CO Monitor's note (#2627)."

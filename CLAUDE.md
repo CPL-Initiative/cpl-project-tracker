@@ -751,7 +751,7 @@ stays here.
 > time (four occasions). [`lanes/README.md`](docs/reference/lanes/README.md).
 
 > **Anything waiting on Sam is a card on the standing sheet**
-> (latest: [Open Asks Sheet 150](https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL), 2026-11-01, two cards from the CER lane: the IB fold, carried out, and CLEP's names, held). An answer
+> (latest: [Open Asks Sheet 150](https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL), 2026-11-01, answered: the IB fold kept, CLEP's names folded; no card open). An answer
 > changes its lane's marker in the same PR (`CPLBrain/decision-sheets/decision_sheets.md`).
 
 | Phase | What | Status |

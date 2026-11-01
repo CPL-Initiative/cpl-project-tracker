@@ -178,6 +178,13 @@ into the subject, and a Language A exam in another language carries
 `(Non-English)`. Issuer: `International Baccalaureate Organization (IBO)`. The
 names are `kb/_ib_official_titles.py`; brand-family's `ib` lane applies them.
 
+**CLEP (2026-11-01, Sam's ruling on Sheet 150 card 2):** one credential per
+exam, named as College Board names it with Arabic numerals and no period
+subtitle: a language exam's levels fold in (`CLEP Spanish Language`), the
+numbered exams take 1 and 2 (`CLEP History of the United States 1`), a renamed
+exam takes its current name (`CLEP Information Systems`). Issuer: `College
+Board`. The names are `kb/_clep_official_titles.py`; the `clep` lane applies them.
+
 ### Rule 5e — STAGED pre-seed lanes: ready to save, NOT saved (2026-07-07)
 
 Lanes that must PROPOSE a title (rather than retarget to an existing family)
