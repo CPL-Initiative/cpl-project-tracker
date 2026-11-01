@@ -12,7 +12,10 @@
 //       alone, Escape puts the value back (Sam, 2026-11-01: "a global Edit button");
 //   (7) a column resizes on a phone (Sam, 2026-11-01: "trying to resize the first column but not having luck"): the
 //       table keeps its fixed layout under 560px, where automatic layout ignored the widths a drag set, and the grip
-//       sits inside its own header, takes the finger (touch-action:none) and captures the pointer.
+//       sits inside its own header, takes the finger (touch-action:none) and captures the pointer;
+//   (8) a spelling twin carries a suggested fold (Sam, 2026-11-01: "offering suggested titles based on what you see"):
+//       the Suggested folds filter shows only twins; Accept writes unified_title_override and unified_title_merge_confirm
+//       naming the same target, the pair the rename dry-run folds on; Dismiss hides it for the visit.
 // Run from repo root: `npm test` (or `node tests/exhibits_list_find.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -39,7 +42,9 @@ const LOOKUP = {
 };
 const AISORT = { schema: 1, _reference_generated_at: "2026-11-01T05:19:00+00:00",
   groups: [{ name: "Apiary", n: 1 }, { name: "Data and Welding", n: 2 }],
-  order: { "Apiary Basics": [0, 0], "Welding Level 1": [1, 1], "10-Key Data Entry": [1, 2] } };
+  order: { "Apiary Basics": [0, 0], "Welding Level 1": [1, 1], "10-Key Data Entry": [1, 2] },
+  counts: { suggested_folds: 1 },
+  suggest: { "10-Key Data Entry": { to: "Apiary Basics", why: "the same words spelled another way" } } };
 const COLLISIONS = { collisions: [{ old_unified_title: "Apiary Basics", proposed_new_title: "Beekeeping" }] };
 
 function load() {
@@ -177,6 +182,24 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     !/max-width:560px\)\{\.exh-l-table\{[^}]*table-layout:auto/.test(css) && /\.exh-l-table\{[^}]*table-layout:fixed/.test(css), css.slice(0, 200));
   check("(7) the grip sits inside its header and takes the finger", /\.exh-l-grip\{[^}]*right:0;[^}]*touch-action:none/.test(css)
     && /setPointerCapture/.test(src) && /pointercancel/.test(src));
+
+  t.d.getElementById("exh-l-editall").click(); await settle();
+  words(t.d, "Suggested folds").click(); await settle();
+  const sgRows = rows(t.d);
+  check("(8) Suggested folds shows only the twin, with its fold and why", sgRows.length === 1 && /^10-Key/.test(txt(sgRows[0].children[2]))
+    && /Suggested: fold into Apiary Basics \(the same words spelled another way\)/.test(txt(sgRows[0].children[2])), sgRows.map(txt).join(" | "));
+  const n4 = t.calls.filter((c) => c.method === "POST").length;
+  Array.from(sgRows[0].querySelectorAll("button")).find((b) => txt(b) === "Accept").click(); await settle(); await settle();
+  posts = t.calls.filter((c) => c.method === "POST").slice(n4);
+  check("(8) ⭐ Accept writes the rename and the merge confirm, both naming the target",
+    posts.length === 2 && posts.every((p) => p.body.course_id === "_CREDENTIAL_REVIEW::10-Key Data Entry" && p.body.value === "Apiary Basics")
+    && posts.map((p) => p.body.field).sort().join(",") === "unified_title_merge_confirm,unified_title_override", JSON.stringify(posts.map((p) => p.body)));
+  check("(8) an accepted fold leaves the Suggested list", rows(t.d).length === 0 && /folds into Apiary Basics/.test(txt(t.d.getElementById("exh-l-cellnote"))),
+    txt(t.d.getElementById("exh-l-cellnote")));
+  t.M._state.ls.aiData.suggest["Apiary Basics"] = { to: "Welding Level 1", why: "test" }; t.M._state.ls.f = ""; t.M.render(); await settle();
+  words(t.d, "Suggested folds").click(); await settle();
+  Array.from(rows(t.d)[0].querySelectorAll("button")).find((b) => txt(b) === "Dismiss").click(); await settle();
+  check("(8) Dismiss hides the suggestion", rows(t.d).length === 0);
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "  -- " + why)); if (!ok) fail++; });

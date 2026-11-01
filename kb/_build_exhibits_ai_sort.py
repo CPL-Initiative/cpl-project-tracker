@@ -18,6 +18,12 @@ The method, so a reader can check a placement:
      own subject words. Groups and singles run A to Z by that name; inside a group, by subject words, then level
      (Beginning before 1 before Intermediate before 2 before Advanced), then title.
 
+  5. Spelling twins (Sam, 2026-11-01: "what do you think about offering suggested titles based on what you see?"):
+     inside a group, credentials whose titles hold the same words spelled two ways (II and 2, & and "and", a plural,
+     a dash) get a suggestion to fold into one form. The form kept: Arabic numerals (Sam, 2026-10-31: "level numerals
+     are 1,2,3"), then "and" over "&", then the title a person reviewed, then the one more colleges articulate, then
+     more MAP titles. A suggestion applies only when a reviewer presses Accept in the List view.
+
 Units, TOP and title quality play no part. Writes kb/exhibits_ai_sort.json; the daily run rebuilds it after the
 credential reference, and the List view sorts by it when AI sort is pressed. Standard library only.
 
@@ -86,6 +92,41 @@ def load_rows():
     text = SRC.read_text(encoding="utf-8")
     data = json.loads(text[text.index("{"):text.rstrip().rstrip(";").rindex("}") + 1])
     return data["unified_titles"], data.get("_generated_at")
+
+
+ROMAN = {"i": "1", "ii": "2", "iii": "3", "iv": "4", "v": "5", "vi": "6", "one": "1", "two": "2", "three": "3"}
+
+
+def twin_key(title):
+    """The title's words with spelling set aside: numerals as digits, plurals and -ing off, punctuation and stop words
+    gone. Level words stay, so Welding 1 and Welding 2 never meet."""
+    out = []
+    for w in re.findall(r"[a-z0-9]+", fold(title)):
+        if w in STOP:
+            continue
+        out.append(stem(ROMAN.get(w, w)))
+    return " ".join(out)
+
+
+def keep_rank(row):
+    """Lower sorts first: the form a twin set keeps."""
+    t = row.get("ut", "")
+    roman = bool(re.search(r"\b(?:I{1,3}|IV|VI?)\b", t))
+    by = str(row.get("curated_by") or "")
+    person = bool(row.get("curated_at") or by) and not by.endswith("@bot")
+    colleges = set()
+    for a in row.get("articulations") or []:
+        for l in a.get("local") or []:
+            colleges.update(l.get("colleges") or [])
+    return (roman, "&" in t, not person, -len(colleges), -(row.get("raw_count") or 0), t.lower())
+
+
+def twin_why(src, dst):
+    if re.search(r"\b(?:I{1,3}|IV|VI?)\b", src) and not re.search(r"\b(?:I{1,3}|IV|VI?)\b", dst):
+        return "the same title with Roman numerals; level numerals are 1, 2, 3 (Sam, 2026-10-31)"
+    if "&" in src and "&" not in dst:
+        return "the same title with & for and"
+    return "the same words spelled another way"
 
 
 def cosine(a, b):
@@ -214,6 +255,21 @@ def build():
             order[items[i]["ut"]] = [gi, rank]
             rank += 1
 
+    # Spelling twins inside each group.
+    by_ut = {r.get("ut"): r for r in rows}
+    suggest = {}
+    for g in groups:
+        sets = defaultdict(list)
+        for i in g["ids"]:
+            sets[twin_key(items[i]["ut"])].append(items[i]["ut"])
+        for uts in sets.values():
+            if len(uts) < 2:
+                continue
+            ranked = sorted(uts, key=lambda u: keep_rank(by_ut.get(u, {"ut": u})))
+            keep = ranked[0]
+            for u in ranked[1:]:
+                suggest[u] = {"to": keep, "why": twin_why(u, keep)}
+
     multi = [g for g in out_groups if g["n"] > 1]
     return {
         "schema": 1,
@@ -223,9 +279,11 @@ def build():
         "_params": {"threshold": THRESHOLD, "center_agree": CENTER_AGREE, "max_group": MAX_GROUP,
                     "candidate_df": CANDIDATE_DF, "w_disc": W_DISC, "w_issuer": W_ISSUER},
         "counts": {"credentials": len(order), "groups_of_two_or_more": len(multi),
-                   "credentials_in_groups": sum(g["n"] for g in multi), "alone": len(out_groups) - len(multi)},
+                   "credentials_in_groups": sum(g["n"] for g in multi), "alone": len(out_groups) - len(multi),
+                   "suggested_folds": len(suggest)},
         "groups": out_groups,
         "order": order,
+        "suggest": suggest,
     }
 
 
@@ -241,7 +299,7 @@ def main():
     OUT.write_text(text, encoding="utf-8")
     c = data["counts"]
     print(f"wrote {OUT.relative_to(ROOT)}: {c['credentials']} credentials, {c['groups_of_two_or_more']} groups holding "
-          f"{c['credentials_in_groups']}, {c['alone']} alone")
+          f"{c['credentials_in_groups']}, {c['alone']} alone; {c['suggested_folds']} suggested folds")
 
 
 if __name__ == "__main__":

@@ -98,6 +98,8 @@
   // The List view (Sam, 2026-11-01): a title edited there saves the rename field the reference already reads
   // (credential_reference.js: display-only until the daily dry-run projects it and the reviewed apply re-keys).
   var FIELD_CRED_TITLE = "unified_title_override";
+  /* A fold into an existing credential: the rename apply merges only when this names the exact target. */
+  var FIELD_MERGE_CONFIRM = "unified_title_merge_confirm";
   // Your flag (Sam, 2026-11-01: "a flag for any row that persists until I clear it"): one row per credential, the
   // value the time it was set; clearing writes "" (an upsert, never a delete, so a refused write cannot pass as done).
   var FIELD_LIST_FLAG = "list_flag";
@@ -1735,11 +1737,12 @@
     ["mine", "Your flags"],
     ["selected", "Selected"],
     ["bare", "No articulation"],
-    ["changed", "Changed this visit"]
+    ["changed", "Changed this visit"],
+    ["suggested", "Suggested folds"]
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
-      busy: false, collisions: null, sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {} });
+      busy: false, collisions: null, sgDone: {}, sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {} });
   }
   /* The columns, each with what it shows (Sam, 2026-11-01: "sometimes I miss good ol' Excel, where I can quickly
      filter any column, sort any way ... use find and replace to fix things on the fly--that freedom is what you're
@@ -1822,6 +1825,7 @@
       if (L.f === "changed" && L.changed.indexOf(r.ut) === -1) return false;
       if (L.f === "mine" && !listFlag(r)) return false;
       if (L.f === "selected" && !L.sel[r.ut]) return false;
+      if (L.f === "suggested" && !listSuggest(r)) return false;
       var cols = listCols();
       for (var k in L.cf) {
         var want = String(L.cf[k] || "").trim().toLowerCase();
@@ -2173,7 +2177,10 @@
     var fl = el("div", { cls: "exh-l-filters", role: "group", "aria-label": "Show" });
     LIST_FILTERS.forEach(function (f) {
       if (f[0] === L.f) fl.appendChild(el("span", { cls: "exh-view-on", "aria-current": "true", text: f[1] }));
-      else fl.appendChild(word(f[1], function () { L.f = f[0]; L.limit = LIST_LIMIT; render(); }));
+      else fl.appendChild(word(f[1], function () {
+        L.f = f[0]; L.limit = LIST_LIMIT;
+        if (f[0] === "suggested" && !L.aiData) listAiLoad().then(render, render); else render();
+      }));
     });
     bar.appendChild(fl);
     wrap.appendChild(bar);
@@ -2262,6 +2269,11 @@
       if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
       if (col) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
       if (L.changed.indexOf(r.ut) !== -1) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
+      var sg = (aiOn || L.f === "suggested") && listSuggest(r);
+      if (sg) titleTd.appendChild(el("span", { cls: "exh-l-sub exh-l-sg" }, [
+        "Suggested: fold into " + sg.to + " (" + sg.why + ") ",
+        word("Accept", function () { listSuggestAccept(r, sg); }, { "aria-label": "Fold " + r.ut + " into " + sg.to }),
+        " ", word("Dismiss", function () { L.sgDone[r.ut] = "dismissed"; redrawList(); }, { "aria-label": "Dismiss the fold of " + r.ut })]));
       var editBtn = word("Edit", function () {
         L.edit = r.ut;
         L.draft = { title: listTitle(r), issuer: cur.issuer || "", sites: cur.sites.map(function (x) { return x.site; }).join("; ") };
@@ -2304,7 +2316,8 @@
       el("span", { cls: "exh-muted exh-small", id: "exh-l-sortline", text: aiOn
         ? "AI sort: like with like, the groups A to Z. A group gathers titles that share their subject words once level words (Beginning, 1, II, Advanced) "
           + "are set aside, with discipline and issuer weighing in; built " + (stamp(L.aiData._built_at) || L.aiData._reference_generated_at && stamp(L.aiData._reference_generated_at) || "daily")
-          + ". Press a header to sort by it instead."
+          + ". " + (L.aiData.counts && L.aiData.counts.suggested_folds ? fmt(L.aiData.counts.suggested_folds) + " spelling twins carry a suggested fold. " : "")
+          + "Press a header to sort by it instead."
         : "Sorted by " + L.sort.map(function (x) {
         var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
         + ". Shift and press a header to add a level." }),
@@ -2324,12 +2337,45 @@
     var L = listState();
     function focusIt() { var b = document.getElementById("exh-l-ai"); if (b) b.focus(); }
     if (L.ai) { L.ai = false; redrawList(); focusIt(); return Promise.resolve(); }
-    var get = L.aiData ? Promise.resolve(L.aiData)
-      : fetch(AI_SORT_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; });
-    return get.then(function (d) {
-      if (!d || !d.order) throw new Error("no order");
-      L.aiData = d; L.ai = true; L.limit = LIST_LIMIT; redrawList(); focusIt();
+    return listAiLoad().then(function () {
+      L.ai = true; L.limit = LIST_LIMIT; redrawList(); focusIt();
     }).catch(function () { L.cellNote = "The AI sort's order could not be read; the list keeps its sort."; redrawList(); focusIt(); });
+  }
+  function listAiLoad() {
+    var L = listState();
+    if (L.aiData) return Promise.resolve(L.aiData);
+    return fetch(AI_SORT_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }).then(function (d) {
+      if (!d || !d.order) throw new Error("no order");
+      L.aiData = d; return d;
+    });
+  }
+  /* A spelling twin's fold (Sam, 2026-11-01: "what do you think about offering suggested titles based on what you
+     see?"). Shown until it is accepted, dismissed for the visit, or the credential already carries a rename. */
+  function listSuggest(r) {
+    var L = listState(), sg = L.aiData && L.aiData.suggest && L.aiData.suggest[r.ut];
+    if (!sg || (L.sgDone || {})[r.ut]) return null;
+    var o = state.cs.overlay[r.ut] || {};
+    return o.title ? null : sg;
+  }
+  /* Accept writes the rename and the merge confirm naming the same target, the pair the rename dry-run needs to fold
+     one credential's records into the other; a reviewed apply does the merge. */
+  function listSuggestAccept(r, sg) {
+    var L = listState(), from = r.ut;
+    var writes = [[FIELD_CRED_TITLE, sg.to], [FIELD_MERGE_CONFIRM, sg.to]];
+    listCellNote("Saving the fold of " + from + " into " + sg.to + "…");
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
+    }).then(function (rs) {
+      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+      listApply(r, writes.slice(0, 1));
+      L.sgDone[from] = "accepted";
+      L.cellNote = "Saved: " + from + " folds into " + sg.to + ". The daily dry-run pairs them, and a reviewed apply merges the records.";
+      redrawList();
+    }).catch(function (e) {
+      listCellNote(e && e.message === "signin" ? "Sign in as a reviewer to accept a fold." : "The fold of " + from
+        + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed.");
+    });
   }
   /* Edit every row (Sam, 2026-11-01: "a global Edit button that would allow me to make edits directly on any row
      without clicking the rows individual edit button"). Title, Issuer and Training sites become boxes; leaving a box
@@ -2629,6 +2675,7 @@
       "#exh-fr-host{min-width:0;max-width:100%}",
       ".exh-l-table tr.exh-l-band th{position:static;text-align:left;font-weight:600;color:var(--text-strong);background:var(--surface-opaque);padding:8px 6px 2px;border-top:1px solid var(--border);border-bottom:0;white-space:normal}",
       ".exh-l-band .exh-muted{font-weight:400;margin-left:8px}",
+      ".exh-l-nowrap .exh-l-sg{display:block;white-space:normal}",
       ".exh-l-cellin{width:100%;box-sizing:border-box;font-size:.75rem;padding:1px 4px;min-height:24px}",
       ".exh-l-nowrap td .exh-l-cellin{white-space:normal}",
       ".exh-l-table.exh-fr-table{min-width:0}",
