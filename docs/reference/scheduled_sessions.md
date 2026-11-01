@@ -271,6 +271,27 @@ is his standing preference there too.
    `exhibit-reanalysis-s<N>@bot`, receipt in the PR). The findings panel in the List view and the Jev runner job are
    the next builds; until the runner exists, the code checks run alone and the findings say so.
 
+10. **The industry credential harvest** (Sam, 2026-11-01: *"should we add this cert catalog harvest to our Cpl queue
+   workload and retire the weekly job. Thinking this should be daily until we get a good catalog established. I don't
+   want our nightly jobs to collide"*; then *"Go"*). **Armed: yes.** It replaces the Monday routine
+   `trig_019tTcardPfntFz6ctWU9Jg1`, disabled 2026-11-01 with its history kept, which ran as a second session inside
+   this window. Step 1's one-writer check now covers it. The catalog is the cert table the exhibit-to-cert link points
+   at (`kb/exhibit_cert_links.json`, #2652).
+
+   **Once a UTC day**, by the first firing that reaches this step and finds no `claude/credential-watch-<date>` PR for
+   that day, after steps 6 to 9 and in about 30 minutes: run `docs/reference/credential_watch_agent.md` (*One run, in
+   order*), with these changes for the nightly cadence.
+   - **A slice of issuers:** the 7 in `_issuers_watched` whose `_issuers_read` date is oldest or missing (a full pass in
+     three nights); set each one's date as it is read. Steps 3 and 4 keep their caps (15 unverified rows, 25 skills).
+   - **Rebuild the link too:** after the catalog, `python3 kb/_build_exhibit_cert_links.py`.
+   - **This session merges the PR** on a passing `test`, and files the `cpl_memory` row for a material event itself
+     (tag `credential-registry`); the queue holds the Supabase connector the routine lacked.
+   - **The count:** the handoff names the report's new and changed credentials for the night.
+
+   **Stopping rule:** when 14 nights in a row each add or change fewer than 25 credentials, change the cadence to
+   weekly (the night before Monday) with this line, unless Sam keeps it daily. A night with no change ends at the
+   instruction's step 6: no commit, no PR. It never writes MAP, the CER's files or curation rows, or a schedule.
+
 ## The daytime Library run (Sam, Open Asks Sheet 131 card 1, 2026-10-26)
 
 **Not created; the overnight queue works the Library** (Sam, Open Asks Sheet 153 card 1, *overnight*, 2026-11-01). Requests ran
