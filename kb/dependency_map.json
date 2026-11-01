@@ -1717,7 +1717,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 55
+     "line": 57
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -5875,7 +5875,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 87
+     "line": 89
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -6646,7 +6646,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 88
+     "line": 90
     }
    ],
    "served": true,
