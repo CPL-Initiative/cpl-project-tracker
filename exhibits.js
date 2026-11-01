@@ -1730,7 +1730,7 @@
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
-      busy: false, collisions: null, sort: { col: 0, dir: 1 }, cf: {}, wrap: false });
+      busy: false, collisions: null, sort: { col: 0, dir: 1 }, cf: {}, wrap: false, widths: null });
   }
   /* The columns, each with what it shows (Sam, 2026-11-01: "sometimes I miss good ol' Excel, where I can quickly
      filter any column, sort any way ... use find and replace to fix things on the fly--that freedom is what you're
@@ -1940,18 +1940,22 @@
     wrap.appendChild(re);
     if (L.note) wrap.appendChild(el("p", { cls: "exh-note", role: "status", text: L.note }));
     wrap.appendChild(el("div", { id: "exh-l-host" }, [listTable()]));
+    listSyncGrips();
   }
   function redrawList() {
     var host = document.getElementById("exh-l-host");
     if (!host) { render(); return; }
     while (host.firstChild) host.removeChild(host.firstChild);
     host.appendChild(listTable());
+    listSyncGrips();
   }
   function listTable() {
     var L = listState(), rows = listRows(), shown = rows.slice(0, L.limit);
     var C = listCols();
-    var cols = el("colgroup", null, C.map(function (c) { return el("col", { style: "width:" + c.w + "%" }); })
-      .concat([el("col", { style: "width:" + (100 - C.reduce(function (a, c) { return a + c.w; }, 0)) + "%" })]));
+    var editW = 100 - C.reduce(function (a, c) { return a + c.w; }, 0);
+    var cols = el("colgroup", null, C.map(function (c, i) {
+      return el("col", { style: "width:" + (L.widths ? L.widths[i] + "px" : c.w + "%") }); })
+      .concat([el("col", { style: "width:" + (L.widths ? L.widths[C.length] + "px" : editW + "%") })]));
     var headRow = el("tr", null, C.map(function (c, i) {
       var on = L.sort.col === i, up = L.sort.dir > 0;
       var b = el("button", { type: "button", cls: "exh-l-sort" }, [c.h + (!on ? "" : c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A"))]);
@@ -1959,7 +1963,7 @@
         L.sort = { col: i, dir: on ? -L.sort.dir : 1 }; redrawList();
         var nb = document.querySelectorAll(".exh-l-sort")[i]; if (nb) nb.focus();
       });
-      return el("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b]);
+      return el("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b, listGrip(i, c.h)]);
     }).concat([el("th", { scope: "col" }, [el("span", { cls: "exh-vh", text: "Edit" })])]));
     var filterRow = el("tr", { cls: "exh-l-cf" }, C.map(function (c, i) {
       var inp = el("input", { type: "search", cls: "exh-l-in exh-l-cfin", id: "exh-l-cf-" + i, autocomplete: "off",
@@ -1992,7 +1996,8 @@
       if (L.edit === r.ut && L.draft) body.appendChild(listEditRow(r));
     });
     var region = el("div", { cls: "exh-l-wrap", role: "region", "aria-label": "Every credential, A to Z", tabindex: "0" }, [
-      el("table", { cls: "exh-l-table" + (L.wrap ? "" : " exh-l-nowrap") }, [cols, thead, body])]);
+      el("table", { cls: "exh-l-table" + (L.wrap ? "" : " exh-l-nowrap"),
+        style: L.widths ? "width:" + L.widths.reduce(function (a, w) { return a + w; }, 0) + "px" : null }, [cols, thead, body])]);
     var dl = word("Download these " + fmt(rows.length) + " as a spreadsheet", function () { listDownload(rows); });
     // Wrap text (Sam, 2026-11-01: "a toggle to wrap or unwrap all fields and set it to default unwrapped ... that tight
     // scrollable, scannable view I need"). Unwrapped, each cell keeps one line and shows the rest on hover.
@@ -2003,6 +2008,65 @@
     if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
       function () { L.limit += LIST_LIMIT; redrawList(); }));
     return out;
+  }
+  /* Resizable columns (Sam, 2026-11-01: "make the columns resizable"). Each header's right edge is a separator: drag
+     it, or focus it and use the arrow keys (Home narrows to the least). The first resize fixes every column at its
+     drawn width in pixels, so the table may grow wider and scroll inside its own box. Widths last the visit; a column
+     width is not a filter (CLAUDE.md, tabs never remember a filter). */
+  var LIST_MIN_W = 48, LIST_STEP = 24;
+  function listFixWidths() {
+    var L = listState();
+    if (L.widths) return L.widths;
+    var cols = document.querySelectorAll(".exh-l-table col");
+    L.widths = Array.prototype.map.call(cols, function (c) {
+      var w = c.getBoundingClientRect ? Math.round(c.getBoundingClientRect().width) : 0;
+      return w > 0 ? w : 120;
+    });
+    return L.widths;
+  }
+  function listSetWidth(i, w) {
+    var L = listState(), W = listFixWidths();
+    W[i] = Math.max(LIST_MIN_W, Math.round(w));
+    var col = document.querySelectorAll(".exh-l-table col")[i];
+    if (col) col.style.width = W[i] + "px";
+    var t = document.querySelector(".exh-l-table");
+    if (t) t.style.width = W.reduce(function (a, x) { return a + x; }, 0) + "px";
+    var g = document.getElementById("exh-l-grip-" + i);
+    if (g) g.setAttribute("aria-valuenow", String(W[i]));
+    return L;
+  }
+  // Each separator reports its column's drawn width once the table is on the page.
+  function listSyncGrips() {
+    var cols = document.querySelectorAll(".exh-l-table col");
+    Array.prototype.forEach.call(document.querySelectorAll(".exh-l-grip"), function (g, i) {
+      var w = cols[i] && cols[i].getBoundingClientRect ? Math.round(cols[i].getBoundingClientRect().width) : 0;
+      if (w > 0) g.setAttribute("aria-valuenow", String(w));
+    });
+  }
+  function listGrip(i, label) {
+    var L = listState();
+    var g = el("span", { cls: "exh-l-grip", id: "exh-l-grip-" + i, role: "separator", tabindex: "0", "aria-orientation": "vertical",
+      "aria-label": "Resize " + label, "aria-valuemin": String(LIST_MIN_W), "aria-valuemax": "1200",
+      "aria-valuenow": L.widths ? String(L.widths[i]) : "120" });
+    g.addEventListener("keydown", function (e) {
+      var W = listFixWidths();
+      if (e.key === "ArrowRight") listSetWidth(i, W[i] + LIST_STEP);
+      else if (e.key === "ArrowLeft") listSetWidth(i, W[i] - LIST_STEP);
+      else if (e.key === "Home") listSetWidth(i, LIST_MIN_W);
+      else return;
+      e.preventDefault();
+    });
+    g.addEventListener("pointerdown", function (e) {
+      if (e.button !== undefined && e.button !== 0) return;
+      e.preventDefault(); e.stopPropagation();
+      var startX = e.clientX, startW = listFixWidths()[i];
+      function move(ev) { listSetWidth(i, startW + (ev.clientX - startX)); }
+      function up() { document.removeEventListener("pointermove", move); document.removeEventListener("pointerup", up); }
+      document.addEventListener("pointermove", move);
+      document.addEventListener("pointerup", up);
+    });
+    g.addEventListener("click", function (e) { e.stopPropagation(); });
+    return g;
   }
   /* The rows as they are filtered and sorted, as a CSV Excel opens (a byte-order mark keeps é and – intact). */
   function listCsv(rows) {
@@ -2040,6 +2104,11 @@
       ".exh-l-table th{position:sticky;top:0;background:var(--surface-opaque);color:var(--text-strong);text-align:left;font-weight:600;padding:3px 6px;border-bottom:1px solid var(--border)}",
       ".exh-l-table td{padding:2px 6px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-body);overflow-wrap:anywhere}",
       ".exh-l-title{color:var(--text-strong)}",
+      ".exh-l-table th{position:sticky}",
+      ".exh-l-grip{position:absolute;top:0;right:-12px;width:24px;height:100%;min-height:24px;cursor:col-resize;z-index:3;touch-action:none}",
+      ".exh-l-grip::after{content:'';position:absolute;top:20%;bottom:20%;left:12px;width:1px;background:var(--border)}",
+      ".exh-l-grip:hover::after,.exh-l-grip:focus-visible::after{width:3px;left:11px;background:var(--accent-link)}",
+      ".exh-l-grip:focus-visible{outline:2px solid var(--focus-ring);outline-offset:-2px}",
       ".exh-l-nowrap td{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}",
       ".exh-l-nowrap .exh-l-sub{display:inline;margin-left:6px}",
       ".exh-l-nowrap .exh-l-editrow td,.exh-l-nowrap .exh-l-cf td{white-space:normal;overflow:visible}",

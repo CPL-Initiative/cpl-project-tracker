@@ -37,6 +37,11 @@ button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px soli
 .sheet{overflow:auto;max-height:70vh;border:1px solid var(--rule);border-radius:6px;background:var(--surface);min-width:0}
 table{width:100%;min-width:1080px;border-collapse:collapse;table-layout:fixed;font-size:12px;line-height:1.3}
 th{position:sticky;top:0;background:var(--surface);text-align:left;padding:3px 6px;border-bottom:1px solid var(--rule);z-index:2}
+th{position:sticky}
+.grip{position:absolute;top:0;right:-12px;width:24px;height:100%;cursor:col-resize;z-index:3;touch-action:none}
+.grip::after{content:"";position:absolute;top:20%;bottom:20%;left:12px;width:1px;background:var(--rule)}
+.grip:hover::after,.grip:focus-visible::after{width:3px;left:11px;background:var(--link)}
+.grip:focus-visible{outline:2px solid var(--link);outline-offset:-2px}
 th button{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--ink-strong);text-decoration:underline;text-underline-offset:2px;cursor:pointer;text-align:left;min-height:24px}
 tr.cf td{position:sticky;top:30px;background:var(--surface);z-index:1;padding:2px 4px}
 tr.cf input{width:100%;font-size:11px}
@@ -92,7 +97,7 @@ const ROWS = [{"t":"10-Key Data Entry","st":"Cohort","q":"suspect_course_as_exhi
 const COLS = [
   ["Title","t",23],["Status","st",9],["CPL types","ty",10],["Issuer","i",12],["Training sites","ts",10],
   ["Discipline (M-IDs)","d",11],["Common SUBJ","sj",6],["CIP family (from TOP)","cip",9],["Colleges","n",5,1],["MAP titles","m",5,1]];
-const S = { wrap:false, q:"", f:"", sort:[0,1], cf:{}, edit:-1, changed:new Set(), note:"" };
+const S = { widths:null, wrap:false, q:"", f:"", sort:[0,1], cf:{}, edit:-1, changed:new Set(), note:"" };
 const FIL = [["","All"],["un","Unreviewed"],["low","Low-confidence title"],["fl","Flagged"],["bare","No articulation"],["ch","Changed this visit"]];
 const $ = (id) => document.getElementById(id);
 const status = (r) => r.st + (r.q ? "; " + r.q.replace(/_/g, " ") : "") + (r.c != null && r.c < 0.6 ? "; title " + Math.round(r.c * 100) + "%" : "");
@@ -126,8 +131,8 @@ function draw(keepFocus) {
   $("dl").textContent = "Download these " + R.length + " as a spreadsheet";
   $("reline").textContent = S.changed.size ? S.changed.size + " changed this visit go with it" : "With no change this visit, it looks over everything you changed since its last pass";
   const [ci, dir] = S.sort;
-  const head = "<colgroup>" + COLS.map((c) => `<col style="width:${c[2]}%">`).join("") + '<col style="width:5%"></colgroup><thead><tr>'
-    + COLS.map((c, i) => `<th scope="col" aria-sort="${ci === i ? (dir > 0 ? "ascending" : "descending") : "none"}"><button type="button" data-s="${i}">${c[0]}${ci === i ? (c[3] ? (dir > 0 ? ", low to high" : ", high to low") : (dir > 0 ? ", A to Z" : ", Z to A")) : ""}</button></th>`).join("")
+  const head = "<colgroup>" + COLS.map((c, i) => `<col style="width:${S.widths ? S.widths[i] + "px" : c[2] + "%"}">`).join("") + `<col style="width:${S.widths ? S.widths[COLS.length] + "px" : "5%"}"></colgroup><thead><tr>`
+    + COLS.map((c, i) => `<th scope="col" aria-sort="${ci === i ? (dir > 0 ? "ascending" : "descending") : "none"}"><button type="button" data-s="${i}">${c[0]}${ci === i ? (c[3] ? (dir > 0 ? ", low to high" : ", high to low") : (dir > 0 ? ", A to Z" : ", Z to A")) : ""}</button><span class="grip" role="separator" tabindex="0" aria-orientation="vertical" aria-label="Resize ${c[0]}" aria-valuemin="48" aria-valuemax="1200" aria-valuenow="${S.widths ? S.widths[i] : 120}" data-g="${i}"></span></th>`).join("")
     + '<th scope="col"><span class="muted">Edit</span></th></tr><tr class="cf">'
     + COLS.map((c, i) => `<td><input type="search" id="cf${i}" data-cf="${i}" placeholder="Filter" aria-label="Filter ${c[0]}" value="${esc(S.cf[i] || "")}"></td>`).join("") + "<td></td></tr></thead>";
   const body = R.map((r) => {
@@ -139,6 +144,7 @@ function draw(keepFocus) {
   }).join("");
   $("tbl").innerHTML = head + "<tbody>" + body + "</tbody>";
   $("tbl").className = S.wrap ? "" : "nowrap";
+  $("tbl").style.width = S.widths ? S.widths.reduce((a, w) => a + w, 0) + "px" : "";
   $("wrap").setAttribute("aria-pressed", String(S.wrap));
   const n = $("note"); n.hidden = !S.note; n.textContent = S.note;
   if (keepFocus) { const el = $(keepFocus); if (el) { el.focus(); try { el.setSelectionRange(el.value.length, el.value.length); } catch (e) {} } }
@@ -170,6 +176,29 @@ document.addEventListener("click", (e) => {
       + hits.map(([r, i]) => `<tr><td><input type="checkbox" checked aria-label="Change ${esc(r.t)}" id="fx${i}"></td><td>${esc(r.t)}</td><td><del>${esc(r.i)}</del> <ins>${esc(String(r.i).split(f).join(rp))}</ins></td></tr>`).join("")
       + `</tbody></table></div><div class="row"><button class="w" type="button" disabled>Save the checked rows (not in the mock)</button></div>` : '<p class="muted">No row in this mock matches.</p>';
   }
+});
+function fixW() {
+  if (!S.widths) S.widths = Array.from(document.querySelectorAll("#tbl col")).map((c) => Math.round(c.getBoundingClientRect().width) || 120);
+  return S.widths;
+}
+function setW(i, w) {
+  const W = fixW(); W[i] = Math.max(48, Math.round(w));
+  const col = document.querySelectorAll("#tbl col")[i]; if (col) col.style.width = W[i] + "px";
+  $("tbl").style.width = W.reduce((a, x) => a + x, 0) + "px";
+}
+document.addEventListener("pointerdown", (e) => {
+  const g = e.target.closest(".grip"); if (!g) return;
+  e.preventDefault();
+  const i = +g.dataset.g, x0 = e.clientX, w0 = fixW()[i];
+  const mv = (ev) => setW(i, w0 + ev.clientX - x0);
+  const up = () => { document.removeEventListener("pointermove", mv); document.removeEventListener("pointerup", up); };
+  document.addEventListener("pointermove", mv); document.addEventListener("pointerup", up);
+});
+document.addEventListener("keydown", (e) => {
+  const g = e.target.closest && e.target.closest(".grip"); if (!g) return;
+  const i = +g.dataset.g, W = fixW();
+  if (e.key === "ArrowRight") setW(i, W[i] + 24); else if (e.key === "ArrowLeft") setW(i, W[i] - 24); else if (e.key === "Home") setW(i, 48); else return;
+  e.preventDefault();
 });
 document.addEventListener("input", (e) => {
   if (e.target.id === "q") { S.q = e.target.value; draw("q"); }

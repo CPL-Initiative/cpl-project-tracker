@@ -142,6 +142,17 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   wb.click(); await settle();
   check("(10) Wrap text wraps every field and says it is on",
     !t.d.querySelector(".exh-l-table").classList.contains("exh-l-nowrap") && t.d.getElementById("exh-l-wrap").getAttribute("aria-pressed") === "true");
+  const grip = t.d.getElementById("exh-l-grip-3");
+  check("(11) every header carries a labelled resize separator", t.d.querySelectorAll(".exh-l-grip[role=separator]").length === 10
+    && grip.getAttribute("aria-label") === "Resize Issuer" && grip.getAttribute("tabindex") === "0");
+  grip.dispatchEvent(new t.w.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+  const w1 = t.M._state.ls.widths;
+  check("(11) ⭐ the arrow keys widen a column by a step and fix the widths in pixels",
+    Array.isArray(w1) && w1[3] === 120 + 24 && /144px/.test(t.d.querySelectorAll(".exh-l-table col")[3].getAttribute("style")), JSON.stringify(w1));
+  grip.dispatchEvent(new t.w.KeyboardEvent("keydown", { key: "Home", bubbles: true }));
+  check("(11) Home narrows it to the least", t.M._state.ls.widths[3] === 48);
+  t.d.getElementById("exh-l-wrap").click(); await settle();
+  check("(11) the widths survive a repaint this visit", /48px/.test(t.d.querySelectorAll(".exh-l-table col")[3].getAttribute("style")));
   let failed = 0;
   for (const [name, ok, why] of results) { console.log((ok ? "PASS " : "FAIL ") + name + (ok || !why ? "" : "\n     " + why)); if (!ok) failed++; }
   console.log("\n" + (results.length - failed) + "/" + results.length + " checks passed");
