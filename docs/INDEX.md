@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 509 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1333** | |
+| Session handoffs | 510 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1334** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-01 (Sam's session, SkyBlatusoff S541): the Exhibits List grew live from its preview (find by place, find and replace, AI sort with suggested folds and Re-point, Edit every row, Basis, phone resize, #2649-#2651); the exhibit-to-cert link, ASE first (#2652); the credential harvest moved into the CPL queue as step 10 (#2653); the statewide flag's 84-of-152 finding in the authoritative-signal note
 - 2026-11-01 (CPL Queue routine, SkySilverberry S539): Sam's Sheet 151 *vpbs* applied (VP Administrative Services is VPBS; four held rows loaded through a new partial load that marks nobody gone); the contacts harvest's third read, 37 people at 10 colleges (#2641).
 - 2026-11-01 (CPL Queue routine, SkyWolfberry S538): the contacts harvest's second read, 12 people for 6 colleges applied with a receipt, and the batch ordered by the last read so empty sites stop leading it (#2640).
 - 2026-11-01 (Exhibits tab build, SkyTeaberry): Sam answered Open Asks Sheet 150 (IB fold kept; CLEP fold); CLEP on the AP and IB pattern, brand-family's `clep` lane and the reference fold, 48 CLEP names into 35 with 36 live rows moved (#2633); the CER lane trimmed under its budget.
@@ -129,6 +130,3 @@ Authoritative external sources we've cached:
 - 2026-10-31 (side session, SkyCloudberry): the funding requester line (MAP role, landing page, *find title*) and one editable response email signed by the CPL Initiative team (#2619); the Exhibits review card's Back and Accept all (#2620); the landing pages' contacts in the MAP Users tab (#2621); two lane files back under budget, history moved verbatim to their lessons docs.
 - 2026-10-31 (Exhibits tab build, SkyElderberry): the Commons' CER row opens Exhibits (#2612); the Credential Catalog's *Worth a faculty review* (#2613); Sam's AP rule in `brand-family`, College Board's official names (#2614); the IT/AI catalog's MAP join needs the issuer (#2615); Open Asks Sheet 149; light checkpoint.
 - 2026-10-31 (S535 SkyGooseberry, the CPL Queue routine): Monterey Peninsula 110 to 176 of 197 passing on three reconcile steps (a new `or_units` kind for CourseLeaf "or" rows, the 2026-27 Cal-GETC words, the 60 a floor on "electives, if needed"); display build 598ff64220dd; lessons in `docs/program_requirements_harvest_lessons.md` (S535); handoff 536 for SkySugarberry.
-- 2026-10-31 (S534 SkyChokeberry, the CPL Queue routine): Los Angeles Valley 198 to 202 of 215 passing on a new `fill_to` reconcile step (a closing list "for a minimum of N units") and "T otal Minimum Units"; the stopping rule parks the college (`lavc-parked-2026-10-31`); display build d8b6c033cfc6; lessons in `docs/program_requirements_harvest_lessons.md`; handoff `docs/session_535_handoff.md`.
-- 2026-10-31 (S533 SkyNannyberry, the CPL Queue routine, finished by the 08:12Z firing): Los Angeles Valley 196 to 198 of 215 passing on the repeat step reading Music's repeatable lists; display build 8603831048ac; lessons in `docs/program_requirements_harvest_lessons.md` (S495-S500 moved to archive 3); handoff `docs/session_534_handoff.md`.
-- 2026-10-31 (S532 SkyHackberry, the CPL Queue routine): Los Angeles Valley 186 to 196 of 215 passing on a T & M prefix alias (#2605); the two display applies read back; the UI pass on the Exhibits view; lessons in `docs/program_requirements_harvest_lessons.md`; handoff `docs/session_533_handoff.md`.

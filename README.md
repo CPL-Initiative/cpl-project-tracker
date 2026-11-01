@@ -76,7 +76,10 @@ The whole ecosystem, end-to-end:
    saved with Keep Current Title or Change to Proposed Title, step tiles as
    filters, and students per title for a reviewer; then **Credentials**, where
    a credential's panel sets its issuer and its training sites, each with the
-   college it trains for), a
+   college it trains for; and **List**, every credential A to Z in a sortable,
+   filterable sheet with find and replace, an AI sort that groups like with
+   like and suggests folds, Edit every row, a Basis column (based on statewide
+   or local) and each credential's certs, by the industry catalog's ids), a
    **quick-start natural-language chat** widget on the first screen (Claude
    API classifies your prompt to one of the 11 tabs **and** can pre-pop the
    destination tab's filters — "review unclassified credentials" lands you
