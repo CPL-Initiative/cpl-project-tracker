@@ -406,6 +406,10 @@ jobs:
       # as a course number.
       - name: Exhibits Another look builder
         run: python3 tests/exhibits_sweep_build_test.py
+      # The Exhibits List's Outcomes match hints (Sam, 2026-11-01): a shared course is never a hint, the 0.5 threshold
+      # holds, GE pseudo-codes are skipped, and the lexemes match Postgres's to_tsvector('english').
+      - name: Exhibits Outcomes match builder
+        run: python3 tests/exhibit_slo_neighbors_build_test.py
       # The public adoption page's builder (Sheet 147 cards 1 and 3): settled credentials only, could
       # adopt from the prescriptive layer alone, no student figure in the public file.
       - name: Public adoption page builder

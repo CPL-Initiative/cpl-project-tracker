@@ -1767,10 +1767,58 @@
     ["bare", "No articulation"],
     ["changed", "Changed this visit"],
     ["suggested", "Suggested folds"],
+    ["outcomes", "Outcomes match"],
     ["waiting", "Folds waiting for the apply"],
     ["statewide", "Based on statewide"],
     ["local", "Local only"]
   ];
+  /* Outcomes match (Sam, 2026-11-01: "yes to SLO hints and the nightly harvest"): the credentials whose articulated
+     courses' SLOs match a row's at cosine 0.5 or more through distinct courses, from kb/exhibit_slo_neighbors.json
+     (kb/_build_exhibit_slo_neighbors.py, daily; a shared course is articulation evidence and never shows as a hint). A
+     second signal, never a decider (Rule 7's TOP precedent): the List names the match and its group under the title, a
+     reviewer acts on it with Move, and nothing moves by itself. Read once a visit, with the AI sort's order, on the List's
+     first draw: the group a hint names is the one the List draws. */
+  var SLO_NEIGHBORS_URL = "kb/exhibit_slo_neighbors.json";
+  var SLO_SHOW = 3;
+  function listSloLoad() {
+    var L = listState();
+    if (L.sloP) return L.sloP;
+    var order = listApi() ? LIST_ENGINE.aiLoad().catch(function () { return null; }) : null;
+    L.sloP = Promise.all([fetch(SLO_NEIGHBORS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; }), order])
+      .then(function (got) { L.slo = got[0] && got[0].neighbors ? got[0] : false; }, function () { L.slo = false; });
+    return L.sloP;
+  }
+  function listByUt() {
+    var cs = state.cs;
+    if (cs._byUtFor !== cs.rows) { cs._byUt = {}; (cs.rows || []).forEach(function (r) { cs._byUt[r.ut] = r; }); cs._byUtFor = cs.rows; }
+    return cs._byUt;
+  }
+  /* The group a title sits in now, "" when it stands alone: the List's own grouping (commons_list.js, kept groups over
+     the night's order), worked out once a draw; until the order is read, a kept group, then the file's record. */
+  function listGroupsNow() {
+    var L = listState();
+    if (L.sloGi === undefined) {
+      L.sloGi = listApi() && LIST_ENGINE.groupIndex ? LIST_ENGINE.groupIndex() : null;
+      Promise.resolve().then(function () { L.sloGi = undefined; });
+    }
+    return L.sloGi;
+  }
+  function listGroupNow(ut, fileGroup) {
+    var gi = listGroupsNow();
+    if (gi && gi.by[ut]) { var GR = gi.groups[gi.by[ut].key]; return GR && GR.isGroup ? GR.name : ""; }
+    var saved = String(((state.cs.overlay || {})[ut] || {}).group || "").trim();
+    if (saved) return saved === NO_GROUP ? "" : saved;
+    return fileGroup || "";
+  }
+  /* A row's hints: each distinct-course neighbor still in the reference that sits outside the row's group. */
+  function listOutcomeHints(r) {
+    var d = listState().slo, e = d && d.neighbors[r.ut];
+    if (!e || !e.n) return [];
+    var rows = listByUt(), mine = listGroupNow(r.ut, e.g).toLowerCase();
+    return e.n.map(function (x) { return { row: rows[x[0]], score: x[1], group: listGroupNow(x[0], x[2]) }; })
+      .filter(function (x) { return x.row && !(mine && x.group.toLowerCase() === mine); });
+  }
+  function listOutcomeLabel(x) { return listTitle(x.row) + " (" + (x.group || "not in a group") + ")"; }
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
       busy: false, collisions: null, sgDone: {}, sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {}, move: null, gEdit: null, gBusy: false });
@@ -2090,6 +2138,15 @@
         }));
         if ((cl.unresolved || []).length) line("Also names, not yet in the cert table: " + cl.unresolved.join("; ") + ".");
       }
+      var om = listOutcomeHints(r), se = (listState().slo || {}).neighbors, sh = ((se && se[r.ut]) || {}).s || [];
+      if (om.length) {
+        line("Outcomes match, by the SLOs of distinct articulated courses (a hint, never a decision):");
+        list(om.map(function (x) { return listOutcomeLabel(x) + ", similarity " + x.score.toFixed(2); }));
+      }
+      if (sh.length) {
+        line("Alike through a shared course or identical SLO text, which is articulation evidence and never a hint:");
+        list(sh.map(function (x) { return x[0] + ", similarity " + Number(x[1]).toFixed(2) + (x[3] === "text" ? ", identical text" : ", a shared course"); }));
+      }
       var openC = word("Open it in Credentials", function () { openCredential(r.ut); });
       box.appendChild(openC);
     } else if (name === "Status" || name === "Confidence") {
@@ -2177,6 +2234,7 @@
           fetch(COLLISIONS_URL, { cache: "no-store" }).then(function (r) { return r.ok ? r.json() : null; })
             .then(function (d) { L.collisions = (d && d.collisions) || []; if (state.view === "list") render(); }).catch(function () {});
         }
+        if (!L.sloP) listSloLoad().then(function () { if (state.view === "list") render(); });
         return true;
       },
       filters: LIST_FILTERS,
@@ -2189,13 +2247,17 @@
         if (L.f === "mine" && !listFlag(r)) return false;
         if (L.f === "selected" && !L.sel[r.ut]) return false;
         if (L.f === "suggested" && !listSuggest(r)) return false;
+        if (L.f === "outcomes" && !listOutcomeHints(r).length) return false;
         if (L.f === "waiting" && !listPendingFold(r)) return false;
         if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
         if (L.f === "local" && listBasis(r) !== "Local") return false;
         if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
         return true;
       },
-      onFilter: function (id, api) { return id === "suggested" && !listState().aiData ? api.aiLoad() : null; },
+      onFilter: function (id, api) {
+        if (id === "outcomes") return listSloLoad();
+        return id === "suggested" && !listState().aiData ? api.aiLoad() : null;
+      },
       hay: function (r) {
         var cur = credCurrent(r);
         return [r.ut, listTitle(r), cur.issuer, cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
@@ -2220,6 +2282,16 @@
       },
       beforeTable: function (wrap) {
         var L = listState();
+        if (L.f === "outcomes") {
+          var sd = L.slo, sc = (sd && sd.counts) || {};
+          wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-sloline", text: sd === false
+            ? "The outcomes matches could not be read; the daily run writes them."
+            : !sd ? "Reading the outcomes matches…"
+            : "Showing credentials whose articulated courses' SLOs match a credential in another group, at a similarity of "
+              + (sd._params && sd._params.threshold || 0.5) + " or more through distinct courses. SLOs are on file for "
+              + fmt(sc.colleges) + (sc.colleges === 1 ? " college" : " colleges") + " so far, reaching " + fmt(sc.credentials_reached)
+              + " credentials. A hint, never a decision: select a row and Move it if the match is right." }));
+        }
         if (L.cert) wrap.appendChild(el("p", { cls: "exh-note", id: "exh-l-certline" }, ["Showing every exhibit that holds or is aligned to "
           + listCertName(L.cert) + ". ", word("Clear", function () { L.cert = null; L.limit = LIST_LIMIT; render(); })]));
       },
@@ -2233,6 +2305,9 @@
         else if (o.title) out.push(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
         if (col) out.push(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
         if (L.changed.indexOf(r.ut) !== -1) out.push(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
+        var om = listOutcomeHints(r);
+        if (om.length) out.push(el("span", { cls: "exh-l-sub exh-l-om", text: "Outcomes match: "
+          + om.slice(0, SLO_SHOW).map(listOutcomeLabel).join("; ") + (om.length > SLO_SHOW ? "; " + (om.length - SLO_SHOW) + " more" : "") }));
         var sg = (aiOn || L.f === "suggested") && listSuggest(r);
         if (sg) out.push(el("span", { cls: "exh-l-sub exh-l-sg" }, [
           "Suggested: fold into " + sg.to + " (" + sg.why + ") ",
