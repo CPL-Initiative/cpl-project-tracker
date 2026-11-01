@@ -1,0 +1,1475 @@
+{
+ "college": "Chabot College",
+ "homepage": "https://www.chabotcollege.edu/",
+ "read_at": "2026-11-01T10:47:54+00:00",
+ "pages": [
+  {
+   "url": "https://www.chabotcollege.edu/",
+   "final_url": "https://www.chabotcollege.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/about/leadership",
+   "final_url": "https://www.chabotcollege.edu/about/leadership/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Overview",
+      "Governance",
+      "Administration Offices",
+      "President's Office",
+      "VP of Academic Services",
+      "VP of Administrative Services",
+      "VP of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "VP of Administrative Services",
+      "VP of Student Services",
+      "About Chabot College",
+      "College President",
+      "Jamal Cooks",
+      "Department:",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "College President",
+      "Jamal Cooks",
+      "Department:",
+      "Office of the President",
+      "jcooks@chabotcollege.edu jcooks@chabotcollege.edu",
+      "510.723.6641",
+      "Building 400, Room 408 - 1st floor"
+     ],
+     "emails": [
+      "jcooks@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Academic Services",
+     "position": null,
+     "window": [
+      "Building 400, Room 408 - 1st floor",
+      "My Website",
+      "Print my profile",
+      "Vice President, Academic Services",
+      "Tracey Coleman",
+      "Interim Vice President, Academic Services",
+      "Department:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Vice President, Academic Services",
+     "position": null,
+     "window": [
+      "Print my profile",
+      "Vice President, Academic Services",
+      "Tracey Coleman",
+      "Interim Vice President, Academic Services",
+      "Department:",
+      "Office of Vice President, Academic Services",
+      "tcoleman@chabotcollege.edu tcoleman@chabotcollege.edu"
+     ],
+     "emails": [
+      "tcoleman@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Office of Vice President, Academic Services",
+     "position": null,
+     "window": [
+      "Tracey Coleman",
+      "Interim Vice President, Academic Services",
+      "Department:",
+      "Office of Vice President, Academic Services",
+      "tcoleman@chabotcollege.edu tcoleman@chabotcollege.edu",
+      "510.723.6626",
+      "Building 200, Room 214 - 1st floor"
+     ],
+     "emails": [
+      "tcoleman@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Dr. Tracey Coleman is an accomplished leader that began her career as a manager in fortune 500 companies. She received her Bachelor’s Degree in Organizational Management, Masters in Leadership and Management, and her Doctorate in Management of Organizational Leadership. Dr. Coleman’s journey in education consist of management consultant, educational consultant, adjunct faculty, tenured faculty, and currently dean. She has enjoyed the educational journey providing needed support to students and continues to mentor many of those whom she instructed in the classroom. The work in her consulting business has allowed her to continue on the path of teaching and development of others. Dr. Coleman is an advocate for students, their education and success, as well as the ability for them to become effective members of society.",
+      "Dr. Coleman considers her work to reflect the leader within, a servant leader who utilizes her talents to effect change in others, by being the change.",
+      "Print my profile",
+      "Vice President, Administrative Services",
+      "Marie Amboy",
+      "Department:",
+      "Office of Vice President, Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Vice President, Administrative Services",
+      "Marie Amboy",
+      "Department:",
+      "Office of Vice President, Administrative Services",
+      "mamboy@chabotcollege.edu mamboy@chabotcollege.edu",
+      "510.723.6618",
+      "Building 200, Room 0 - 1st floor"
+     ],
+     "emails": [
+      "mamboy@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "510.723.6618",
+      "Building 200, Room 0 - 1st floor",
+      "Print my profile",
+      "Vice President, Student Services",
+      "Luis Escobar",
+      "Department:",
+      "Office of Vice President, Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Vice President, Student Services",
+      "Luis Escobar",
+      "Department:",
+      "Office of Vice President, Student Services",
+      "laescobar@chabotcollege.edu laescobar@chabotcollege.edu",
+      "510.723.6744",
+      "Building 200, Room 204 - 1st floor"
+     ],
+     "emails": [
+      "laescobar@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Dean of Academic Pathways and Student Success",
+     "position": null,
+     "window": [
+      "Dr. Luis Escobar has more than 18 years of experience in higher education in a wide range of positions including Classified Professional, Counseling faculty, Dean of Counseling and most recently as the Vice President of Student Services at Chabot College. His academic journey started as a community college first generation student. As a Latino male, raised in an immigrant family where he was the first to graduate from an institution of higher learning, his drive and commitment to advancing equitable student success outcomes stems from a deep personal connection to issues of educational equity.",
+      "Dr. Escobar earned his Associate Degree from Contra Costa College, Bachelor of Arts in Psychology, Masters of Science in Counseling, and Doctorate in Educational Leadership from San Francisco State University.",
+      "Print my profile",
+      "Dean of Academic Pathways and Student Success",
+      "Amal Amanda Issa",
+      "Department:",
+      "Academic Pathways and Student Success"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Applied Technology & Business",
+     "position": null,
+     "window": [
+      "510.723.6824",
+      "Building 600, Room 06-306G - 3rd floor",
+      "Print my profile",
+      "Dean of Applied Technology & Business",
+      "Heather Oshiro",
+      "Department:",
+      "Applied Technology & Business"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Arts, Media & Communication",
+     "position": null,
+     "window": [
+      "Hello! I have been a full time counselor since 2016 and prior to that, a high school counselor in San Leandro Unified for 10 years. I earned my BA in International Relations with a minor in Spanish from UC Davis and my MS in Counseling with concentrations in School and College Counseling from San Francisco State University.",
+      "As a first generation college student myself, I understand the experience of being the first in your family to attend college and I strive to provide the best support to all students.",
+      "Print my profile",
+      "Dean of Arts, Media & Communication",
+      "Karen Danielson",
+      "Department:",
+      "Arts, Media & Communications"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Counseling",
+     "position": null,
+     "window": [
+      "510.723.6828",
+      "Building 1100, Room 1129 - 1st floor",
+      "Print my profile",
+      "Dean of Counseling",
+      "Sadie Ashraf",
+      "Department:",
+      "Counseling"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Health, Kinesiology & Athletics",
+     "position": null,
+     "window": [
+      "My Bio",
+      "Dean of Counseling \\r\\nLMFT #44742 and LPCC #1702 \\r\\nI believe in the power of student advocacy, challenging mental health stigmas and weaving the equity framework in everything I do. I am a lifelong learner, believe in holistic well-being and enjoy collaborating to support student success! Prior to joining the student services administrator team, I was a full time counselor/instructor at Chabot for 17 years (Aug. 2005-June 2022). I hold an MA in Counseling Psychology with a dual emphasis in career counseling and marriage family therapy and presently pursuing my doctorate in Community Care and Counseling with a focus in Traumatology.",
+      "Print my profile",
+      "Dean of Health, Kinesiology & Athletics",
+      "Matthew Lee",
+      "Department:",
+      "Health, Kinesiology & Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Language Arts",
+     "position": null,
+     "window": [
+      "Matthew Lee serves as Dean of Health, Kinesiology, and Athletics at Chabot College, where he leads programs in health sciences, nursing, dental hygiene, emergency medical services, kinesiology, physical education, and intercollegiate athletics.",
+      "He is committed to advancing student success, equitable access, and career and transfer pathways through strong academic programs, student-centered support, and community partnerships. His leadership focuses on collaboration, innovation, and creating opportunities that help students achieve their educational and professional goals.",
+      "Print my profile",
+      "Dean of Language Arts",
+      "Paul Pinza",
+      "Department:",
+      "Language Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Science & Mathematics",
+     "position": null,
+     "window": [
+      "“I’ve seen first-hand how integrated tutoring operations and learning communities cultivate college-readiness among marginalized and underrepresented students. I’m thrilled to work at Chabot as we re-imagine what a truly accessible and just college looks and feels like.”",
+      "Paul lives in Fairview (between Hayward and Castro Valley) with his wife Rhee and their dog Domino. Their son Donovan is an aspiring geologist currently studying at Sonoma State. He has acted and directed community theatre productions and plays soccer and disc golf when he can.",
+      "Print my profile",
+      "Dean of Science & Mathematics",
+      "Sonya Lopez",
+      "Department:",
+      "Science and Math"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Social Sciences",
+     "position": null,
+     "window": [
+      "510.723.6897",
+      "Building 2100, Room 21-101 - 1st floor",
+      "Print my profile",
+      "Dean of Social Sciences",
+      "Robert Nakamoto",
+      "Department:",
+      "Social Sciences"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Special Programs and Services",
+     "position": null,
+     "window": [
+      "Building 400, Room 412 - 1st floor",
+      "My Website",
+      "Print my profile",
+      "Dean of Special Programs and Services",
+      "Patricia Molina",
+      "Department:",
+      "Special Programs & Services"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/admissions/index.php",
+   "final_url": "https://www.chabotcollege.edu/admissions/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "February 12-15 – President's Weekend Holiday",
+     "position": "college_ceo",
+     "window": [
+      "December 24 - January 1, 2027 – Winter Holiday",
+      "January 18 – Martin Luther King Jr. Holiday",
+      "January 28 & 29 – FLEX DAY",
+      "February 12-15 – President's Weekend Holiday",
+      "May 31 – Memorial Day Holiday",
+      "Apply to ChabotTranscripts",
+      "Register for ClassesForms"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/admissions/forms.php",
+   "final_url": "https://www.chabotcollege.edu/admissions/forms.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/president",
+   "final_url": "https://www.chabotcollege.edu/president/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office - Chabot College",
+     "position": "college_ceo",
+     "window": [
+      "President's Office - Chabot College",
+      "A-Z",
+      "Find People",
+      "Maps & Directions"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Give",
+      "Scan QR to go to the web version of this page",
+      "Home",
+      "President's Office",
+      "President's Office",
+      "Toggle navigationnavigation",
+      "President's Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Scan QR to go to the web version of this page",
+      "Home",
+      "President's Office",
+      "President's Office",
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "President's Office",
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart",
+      "Chabot College Administration Organizational Chart",
+      "College Presidents"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President Organizational Chart",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart",
+      "Chabot College Administration Organizational Chart",
+      "College Presidents",
+      "Contact Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Council",
+     "position": "college_ceo",
+     "window": [
+      "Communique",
+      "CLPCCD Annual Reports",
+      "Planning Priorities",
+      "President's Council",
+      "Town Halls",
+      "President's Task Force: Safety, Inclusion & Belonging",
+      "Weekly Newsletter (intranet)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Task Force: Safety, Inclusion & Belonging",
+     "position": "college_ceo",
+     "window": [
+      "Planning Priorities",
+      "President's Council",
+      "Town Halls",
+      "President's Task Force: Safety, Inclusion & Belonging",
+      "Weekly Newsletter (intranet)",
+      "Departments",
+      "Foundation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "Institutional Advancement (Grants) Office",
+      "Office of Research, Planning, and Institutional Effectiveness",
+      "Web Office",
+      "President's Welcome",
+      "Welcome to Chabot College! For over 60 years, Chabot has helped students meet their",
+      "academic, social, and employment dreams, goals and aspirations.",
+      "I am honored to start my presidency as Chabot’s 10th College President. I am humbled"
+     ],
+     "emails": []
+    },
+    {
+     "line": "I am honored to start my presidency as Chabot’s 10th College President. I am humbled",
+     "position": "college_ceo",
+     "window": [
+      "President's Welcome",
+      "Welcome to Chabot College! For over 60 years, Chabot has helped students meet their",
+      "academic, social, and employment dreams, goals and aspirations.",
+      "I am honored to start my presidency as Chabot’s 10th College President. I am humbled",
+      "to lead our prestigious institution and excited about the tremendous potential in",
+      "our programs and services as we aspire to be the best community college in the state.",
+      "Chabot College will start this academic year with a number of established and exciting"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "your educational journey. We look forward to our time together and opening up your",
+      "possibilities for a fantastic college experience!",
+      "Jamal A. Cooks, Ph.D.",
+      "President",
+      "Chabot College",
+      "Contact Us",
+      "Building 400, room 408, 1st fl"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Contact Us",
+      "Building 400, room 408, 1st fl",
+      "Jamal A. Cooks, Ph.D.",
+      "President",
+      "Christine Herrera",
+      "Senior Administrative Assistant",
+      "cherrera@chabotcollege.edu cherrera@chabotcollege.edu"
+     ],
+     "emails": [
+      "cherrera@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "President's College Planning Initiatives",
+     "position": "college_ceo",
+     "window": [
+      "Fax: 510-723-7126",
+      "Follow Us",
+      "Communique",
+      "President's College Planning Initiatives",
+      ".archive (++)",
+      "2025-2026 President Goals and College Planning Priorities",
+      "2024-2025 President Goals and College Planning Priorities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2025-2026 President Goals and College Planning Priorities",
+     "position": "college_ceo",
+     "window": [
+      "Communique",
+      "President's College Planning Initiatives",
+      ".archive (++)",
+      "2025-2026 President Goals and College Planning Priorities",
+      "2024-2025 President Goals and College Planning Priorities",
+      "2023-2024 President College Planning Initiatives",
+      "2021-2022 College Planning Initiatives"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2024-2025 President Goals and College Planning Priorities",
+     "position": "college_ceo",
+     "window": [
+      "President's College Planning Initiatives",
+      ".archive (++)",
+      "2025-2026 President Goals and College Planning Priorities",
+      "2024-2025 President Goals and College Planning Priorities",
+      "2023-2024 President College Planning Initiatives",
+      "2021-2022 College Planning Initiatives",
+      "2018-2019 College Planning Initiatives"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2023-2024 President College Planning Initiatives",
+     "position": "college_ceo",
+     "window": [
+      ".archive (++)",
+      "2025-2026 President Goals and College Planning Priorities",
+      "2024-2025 President Goals and College Planning Priorities",
+      "2023-2024 President College Planning Initiatives",
+      "2021-2022 College Planning Initiatives",
+      "2018-2019 College Planning Initiatives",
+      "2026-2027 President Goals and College Planning Priorities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2026-2027 President Goals and College Planning Priorities",
+     "position": "college_ceo",
+     "window": [
+      "2023-2024 President College Planning Initiatives",
+      "2021-2022 College Planning Initiatives",
+      "2018-2019 College Planning Initiatives",
+      "2026-2027 President Goals and College Planning Priorities",
+      "KTVU - Dr. Martin Luther King Celebration",
+      "For support in other languages, visit our",
+      "language assistance page."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/hours/index.php",
+   "final_url": "https://www.chabotcollege.edu/hours/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Student Life Office",
+      "Student Success and Support Program",
+      "Transfer Center",
+      "Veterans Resource Center",
+      "VP of Student Services Office",
+      "See All Campus Student Resources",
+      "For disability-related accommodations or information, contact Arnold Paguio at (510)"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/academics/applied-technology-business/admj/",
+   "final_url": "https://www.chabotcollege.edu/academics/applied-technology-business/admj/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Peace Officer Training Academy",
+     "position": null,
+     "window": [
+      "Programs",
+      "Courses",
+      "POST",
+      "Peace Officer Training Academy",
+      "Upcoming Events",
+      "Law & Justice Club",
+      "ADMJ Newsletter"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Police, community or corrections officer;",
+     "position": null,
+     "window": [
+      "We offer both Associate in Arts (AA) and Associate in Science (AS-T) degree programs, as well as",
+      "certificate programs that prepare students interested in a career in:",
+      "Law enforcement;",
+      "Police, community or corrections officer;",
+      "Pre-law;",
+      "Criminal justice.",
+      "Our program is taught using well-established academic theories in the social sciences"
+     ],
+     "emails": []
+    },
+    {
+     "line": "California Commission on Peace Officer Standards and Training (POST) minimum training",
+     "position": null,
+     "window": [
+      "Our two-year program combines instruction in the law, law enforcement, corrections",
+      "and security with general education courses. In addition, we offer a basic police",
+      "academy in partnership with the Alameda County Sheriff's Office which satisfies the",
+      "California Commission on Peace Officer Standards and Training (POST) minimum training",
+      "requirements for California entry-level peace officers. The course typically meets",
+      "Monday – Friday, 8:00 a.m. – 5:00 p.m, is approximately six months in duration and",
+      "is designed for employed or aspiring peace officer recruits who can dedicate their"
+     ],
+     "emails": []
+    },
+    {
+     "line": "is designed for employed or aspiring peace officer recruits who can dedicate their",
+     "position": null,
+     "window": [
+      "California Commission on Peace Officer Standards and Training (POST) minimum training",
+      "requirements for California entry-level peace officers. The course typically meets",
+      "Monday – Friday, 8:00 a.m. – 5:00 p.m, is approximately six months in duration and",
+      "is designed for employed or aspiring peace officer recruits who can dedicate their",
+      "full attention and efforts towards completing the program. Please click on the Peace",
+      "Officer Training Academy link on the left to learn more.",
+      "Contact Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Officer Training Academy link on the left to learn more.",
+     "position": null,
+     "window": [
+      "Monday – Friday, 8:00 a.m. – 5:00 p.m, is approximately six months in duration and",
+      "is designed for employed or aspiring peace officer recruits who can dedicate their",
+      "full attention and efforts towards completing the program. Please click on the Peace",
+      "Officer Training Academy link on the left to learn more.",
+      "Contact Us",
+      "Drennon Lindsey, Ed.D., M.A.",
+      "Lead Instructor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Police Services Officer",
+     "position": null,
+     "window": [
+      "These Administration of Justice opportunities are provided by Chabot College Handshake. Click on each one for more information. For more career assistance, visit the Career Center.",
+      "Paralegal - Digital Reporter",
+      "Veritext Legal Solutions",
+      "Police Services Officer",
+      "Contra Costa Community College District",
+      "CSS Staff Member",
+      "Santa Clara University"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/president/index.php",
+   "final_url": "https://www.chabotcollege.edu/president/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office - Chabot College",
+     "position": "college_ceo",
+     "window": [
+      "President's Office - Chabot College",
+      "A-Z",
+      "Find People",
+      "Maps & Directions"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Give",
+      "Scan QR to go to the web version of this page",
+      "Home",
+      "President's Office",
+      "President's Office",
+      "Toggle navigationnavigation",
+      "President's Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Scan QR to go to the web version of this page",
+      "Home",
+      "President's Office",
+      "President's Office",
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "President's Office",
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart",
+      "Chabot College Administration Organizational Chart",
+      "College Presidents"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President Organizational Chart",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart",
+      "Chabot College Administration Organizational Chart",
+      "College Presidents",
+      "Contact Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Council",
+     "position": "college_ceo",
+     "window": [
+      "Communique",
+      "CLPCCD Annual Reports",
+      "Planning Priorities",
+      "President's Council",
+      "Town Halls",
+      "President's Task Force: Safety, Inclusion & Belonging",
+      "Weekly Newsletter (intranet)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Task Force: Safety, Inclusion & Belonging",
+     "position": "college_ceo",
+     "window": [
+      "Planning Priorities",
+      "President's Council",
+      "Town Halls",
+      "President's Task Force: Safety, Inclusion & Belonging",
+      "Weekly Newsletter (intranet)",
+      "Departments",
+      "Foundation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Welcome",
+     "position": "college_ceo",
+     "window": [
+      "Institutional Advancement (Grants) Office",
+      "Office of Research, Planning, and Institutional Effectiveness",
+      "Web Office",
+      "President's Welcome",
+      "Welcome to Chabot College! For over 60 years, Chabot has helped students meet their",
+      "academic, social, and employment dreams, goals and aspirations.",
+      "I am honored to start my presidency as Chabot’s 10th College President. I am humbled"
+     ],
+     "emails": []
+    },
+    {
+     "line": "I am honored to start my presidency as Chabot’s 10th College President. I am humbled",
+     "position": "college_ceo",
+     "window": [
+      "President's Welcome",
+      "Welcome to Chabot College! For over 60 years, Chabot has helped students meet their",
+      "academic, social, and employment dreams, goals and aspirations.",
+      "I am honored to start my presidency as Chabot’s 10th College President. I am humbled",
+      "to lead our prestigious institution and excited about the tremendous potential in",
+      "our programs and services as we aspire to be the best community college in the state.",
+      "Chabot College will start this academic year with a number of established and exciting"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "your educational journey. We look forward to our time together and opening up your",
+      "possibilities for a fantastic college experience!",
+      "Jamal A. Cooks, Ph.D.",
+      "President",
+      "Chabot College",
+      "Contact Us",
+      "Building 400, room 408, 1st fl"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Contact Us",
+      "Building 400, room 408, 1st fl",
+      "Jamal A. Cooks, Ph.D.",
+      "President",
+      "Christine Herrera",
+      "Senior Administrative Assistant",
+      "cherrera@chabotcollege.edu cherrera@chabotcollege.edu"
+     ],
+     "emails": [
+      "cherrera@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "President's College Planning Initiatives",
+     "position": "college_ceo",
+     "window": [
+      "Fax: 510-723-7126",
+      "Follow Us",
+      "Communique",
+      "President's College Planning Initiatives",
+      ".archive (++)",
+      "2025-2026 President Goals and College Planning Priorities",
+      "2024-2025 President Goals and College Planning Priorities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2025-2026 President Goals and College Planning Priorities",
+     "position": "college_ceo",
+     "window": [
+      "Communique",
+      "President's College Planning Initiatives",
+      ".archive (++)",
+      "2025-2026 President Goals and College Planning Priorities",
+      "2024-2025 President Goals and College Planning Priorities",
+      "2023-2024 President College Planning Initiatives",
+      "2021-2022 College Planning Initiatives"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2024-2025 President Goals and College Planning Priorities",
+     "position": "college_ceo",
+     "window": [
+      "President's College Planning Initiatives",
+      ".archive (++)",
+      "2025-2026 President Goals and College Planning Priorities",
+      "2024-2025 President Goals and College Planning Priorities",
+      "2023-2024 President College Planning Initiatives",
+      "2021-2022 College Planning Initiatives",
+      "2018-2019 College Planning Initiatives"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2023-2024 President College Planning Initiatives",
+     "position": "college_ceo",
+     "window": [
+      ".archive (++)",
+      "2025-2026 President Goals and College Planning Priorities",
+      "2024-2025 President Goals and College Planning Priorities",
+      "2023-2024 President College Planning Initiatives",
+      "2021-2022 College Planning Initiatives",
+      "2018-2019 College Planning Initiatives",
+      "2026-2027 President Goals and College Planning Priorities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2026-2027 President Goals and College Planning Priorities",
+     "position": "college_ceo",
+     "window": [
+      "2023-2024 President College Planning Initiatives",
+      "2021-2022 College Planning Initiatives",
+      "2018-2019 College Planning Initiatives",
+      "2026-2027 President Goals and College Planning Priorities",
+      "KTVU - Dr. Martin Luther King Celebration",
+      "For support in other languages, visit our",
+      "language assistance page."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/admissions/contact-info.php",
+   "final_url": "https://www.chabotcollege.edu/admissions/contact-info.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Appointments with Director of Admissions & Records",
+     "position": "dean_ar",
+     "window": [
+      "(Apprenticeship)",
+      "(510) 723-6603",
+      "ertolentino@chabotcollege.edu ertolentino@chabotcollege.edu",
+      "Appointments with Director of Admissions & Records",
+      "Liz Oteyza",
+      "(510) 723-2934",
+      "moteyza@chabotcollege.edu moteyza@chabotcollege.edu"
+     ],
+     "emails": [
+      "ertolentino@chabotcollege.edu",
+      "moteyza@chabotcollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/admissions/veterans.php",
+   "final_url": "https://www.chabotcollege.edu/admissions/veterans.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Submit a copy of your DD-214 to the VRC (Veterans Resource Center) to establish priority registration",
+     "position": "vrc",
+     "window": [
+      "outlined below:",
+      "Apply for VA Education Benefits online",
+      "Complete the Chabot College online orientation",
+      "Submit a copy of your DD-214 to the VRC (Veterans Resource Center) to establish priority registration",
+      "Submit all official, sealed college and military transcripts to the Admissions & Records",
+      "If applicable, complete Assessment/Placement.",
+      "Complete your student educational plan with a counselor, and then provide a copy to"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the VRC (Veterans Resource Center).",
+     "position": "vrc",
+     "window": [
+      "Submit all official, sealed college and military transcripts to the Admissions & Records",
+      "If applicable, complete Assessment/Placement.",
+      "Complete your student educational plan with a counselor, and then provide a copy to",
+      "the VRC (Veterans Resource Center).",
+      "Register for classes online via MyPortal.",
+      "Complete the Enrollment Certification Request form at the VRC (Veterans Resource Center).",
+      "MILITARY PRIORITY REGISTRATION"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Complete the Enrollment Certification Request form at the VRC (Veterans Resource Center).",
+     "position": "vrc",
+     "window": [
+      "Complete your student educational plan with a counselor, and then provide a copy to",
+      "the VRC (Veterans Resource Center).",
+      "Register for classes online via MyPortal.",
+      "Complete the Enrollment Certification Request form at the VRC (Veterans Resource Center).",
+      "MILITARY PRIORITY REGISTRATION",
+      "Per California SB 272 and SB 361, priority registration is provided to any member",
+      "or former member of the Armed Forces of the United States who has received an honorable"
+     ],
+     "emails": []
+    },
+    {
+     "line": "education plan) and submit a copy of your DD-214 to the VRC (Veterans Resource Center) (Building 2300, room 2353) or email cc-veterans@chabotcollege.edu cc-veterans@chabotcollege.edu.",
+     "position": "vrc",
+     "window": [
+      "NOTE: Dependents of veterans do not qualify for military priority registration.",
+      "Priority registration is not an automatic process. You must complete each Student",
+      "Success and Support Prorgam (SSSP) core service (assessment, orientation, student",
+      "education plan) and submit a copy of your DD-214 to the VRC (Veterans Resource Center) (Building 2300, room 2353) or email cc-veterans@chabotcollege.edu cc-veterans@chabotcollege.edu.",
+      "For support in other languages, visit our",
+      "language assistance page.",
+      "For disability and accessibility support, contact DSPS."
+     ],
+     "emails": [
+      "cc-veterans@chabotcollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/president/org-chart.php",
+   "final_url": "https://www.chabotcollege.edu/president/org-chart.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office Org Chart - Chabot College",
+     "position": "college_ceo",
+     "window": [
+      "President's Office Org Chart - Chabot College",
+      "A-Z",
+      "Find People",
+      "Maps & Directions"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Give",
+      "Scan QR to go to the web version of this page",
+      "Home",
+      "President's Office",
+      "Org Chart",
+      "President's Office Org Chart",
+      "Toggle navigationnavigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office Org Chart",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "President's Office",
+      "Org Chart",
+      "President's Office Org Chart",
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Org Chart",
+      "President's Office Org Chart",
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bio",
+     "position": "college_ceo",
+     "window": [
+      "Toggle navigationnavigation",
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart",
+      "Chabot College Administration Organizational Chart",
+      "College Presidents"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President Organizational Chart",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Home",
+      "President's Bio",
+      "Office of the President Organizational Chart",
+      "Chabot College Administration Organizational Chart",
+      "College Presidents",
+      "Contact Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Council",
+     "position": "college_ceo",
+     "window": [
+      "Communique",
+      "CLPCCD Annual Reports",
+      "Planning Priorities",
+      "President's Council",
+      "Town Halls",
+      "President's Task Force: Safety, Inclusion & Belonging",
+      "Weekly Newsletter (intranet)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Task Force: Safety, Inclusion & Belonging",
+     "position": "college_ceo",
+     "window": [
+      "Planning Priorities",
+      "President's Council",
+      "Town Halls",
+      "President's Task Force: Safety, Inclusion & Belonging",
+      "Weekly Newsletter (intranet)",
+      "Departments",
+      "Foundation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "Web Office",
+      "EXECUTIVE ADMINISTRATION",
+      "Jamal Cooks",
+      "College President",
+      "Department:",
+      "Office of the President",
+      "jcooks@chabotcollege.edu jcooks@chabotcollege.edu"
+     ],
+     "emails": [
+      "jcooks@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Jamal Cooks",
+      "College President",
+      "Department:",
+      "Office of the President",
+      "jcooks@chabotcollege.edu jcooks@chabotcollege.edu",
+      "510.723.6641",
+      "Building 400, Room 408 - 1st floor"
+     ],
+     "emails": [
+      "jcooks@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Interim Vice President, Academic Services",
+     "position": null,
+     "window": [
+      "My Website",
+      "Print my profile",
+      "Tracey Coleman",
+      "Interim Vice President, Academic Services",
+      "Department:",
+      "Office of Vice President, Academic Services",
+      "tcoleman@chabotcollege.edu tcoleman@chabotcollege.edu"
+     ],
+     "emails": [
+      "tcoleman@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Office of Vice President, Academic Services",
+     "position": null,
+     "window": [
+      "Tracey Coleman",
+      "Interim Vice President, Academic Services",
+      "Department:",
+      "Office of Vice President, Academic Services",
+      "tcoleman@chabotcollege.edu tcoleman@chabotcollege.edu",
+      "510.723.6626",
+      "Building 200, Room 214 - 1st floor"
+     ],
+     "emails": [
+      "tcoleman@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Dr. Coleman considers her work to reflect the leader within, a servant leader who utilizes her talents to effect change in others, by being the change.",
+      "Print my profile",
+      "Marie Amboy",
+      "Vice President, Administrative Services",
+      "Department:",
+      "Office of Vice President, Administrative Services",
+      "mamboy@chabotcollege.edu mamboy@chabotcollege.edu"
+     ],
+     "emails": [
+      "mamboy@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Office of Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Marie Amboy",
+      "Vice President, Administrative Services",
+      "Department:",
+      "Office of Vice President, Administrative Services",
+      "mamboy@chabotcollege.edu mamboy@chabotcollege.edu",
+      "510.723.6618",
+      "Building 200, Room 0 - 1st floor"
+     ],
+     "emails": [
+      "mamboy@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Building 200, Room 0 - 1st floor",
+      "Print my profile",
+      "Luis Escobar",
+      "Vice President of Student Services",
+      "Department:",
+      "Office of Vice President, Student Services",
+      "laescobar@chabotcollege.edu laescobar@chabotcollege.edu"
+     ],
+     "emails": [
+      "laescobar@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Office of Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Luis Escobar",
+      "Vice President of Student Services",
+      "Department:",
+      "Office of Vice President, Student Services",
+      "laescobar@chabotcollege.edu laescobar@chabotcollege.edu",
+      "510.723.6744",
+      "Building 200, Room 204 - 1st floor"
+     ],
+     "emails": [
+      "laescobar@chabotcollege.edu"
+     ]
+    },
+    {
+     "line": "Office of the President Org Chart",
+     "position": "college_ceo",
+     "window": [
+      "Print my profile",
+      "More Leadership",
+      "Complete Org Chart",
+      "Office of the President Org Chart",
+      "For support in other languages, visit our",
+      "language assistance page.",
+      "For disability and accessibility support, contact DSPS."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.chabotcollege.edu/hours/student-service-qr-list.php",
+   "final_url": "https://www.chabotcollege.edu/hours/student-service-qr-list.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Title IX",
+      "Outreach",
+      "OFFICES",
+      "President's Office",
+      "Academic Services",
+      "Administrative Services",
+      "Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Student Life Office",
+      "Student Success and Support Program",
+      "Transfer Center",
+      "Veterans Resource Center",
+      "VP of Student Services Office",
+      "For disability-related accommodations or information, contact Arnold Paguio at (510)",
+      "723-6608, apaguio@chabotcollege.edu apaguio@chabotcollege.edu"
+     ],
+     "emails": [
+      "apaguio@chabotcollege.edu"
+     ]
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "http://www.chabotcollege.edu/admissions",
+  "http://www.chabotcollege.edu/veterans/index.php",
+  "https://www.chabotcollege.edu/academics/applied-technology-business/admj/jobs.php",
+  "http://www.chabotcollege.edu/academics/applied-technology-business/admj/",
+  "https://www.chabotcollege.edu/veterans/index.php",
+  "https://www.chabotcollege.edu/president/",
+  "https://www.chabotcollege.edu/about/leadership/index.php",
+  "http://www.chabotcollege.edu/redirect/hours.php?ref=qr&dc=admissions",
+  "http://www.chabotcollege.edu/redirect/hours.php?ref=qr&dc=vrc"
+ ],
+ "run": "41298454812"
+}
