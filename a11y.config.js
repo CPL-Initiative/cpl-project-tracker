@@ -766,6 +766,16 @@ async function seedExhibitsList(page, theme) {
     if (b) b.click();
   });
   await page.waitForTimeout(300);
+  // Find and replace open with a preview (S541), so the panel, its checkboxes and the preview table are measured.
+  await page.waitForFunction(() => document.getElementById("exh-fr-open"), null, { timeout: 10000 });
+  await page.evaluate(() => { document.getElementById("exh-fr-open").click(); });
+  await page.waitForFunction(() => document.getElementById("exh-fr-find"), null, { timeout: 10000 });
+  await page.evaluate(() => {
+    const f = document.getElementById("exh-fr-find");
+    f.value = "College"; f.dispatchEvent(new Event("input"));
+    document.getElementById("exh-fr-prev").click();
+  });
+  await page.waitForFunction(() => document.querySelector("#exh-fr .exh-fr-table tbody tr, #exh-fr-count"), null, { timeout: 10000 });
 }
 
 // Seeds the Records view with its first filter open (S391 UI pass): the dropdowns of #2121

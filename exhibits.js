@@ -1820,9 +1820,30 @@
       if (!q) return true;
       var cur = credCurrent(r);
       var hay = [r.ut, listTitle(r), cur.issuer, cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
-        r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ").toLowerCase();
-      return hay.indexOf(q) !== -1;
+        r.disc_modal, listSubj(r), r.top_modal, r.quality_flag].join(" ") + " | " + listWhere(r);
+      return listFold(hay).indexOf(listFold(q)) !== -1;
     });
+  }
+  /* Case and accents aside, so "canada" finds Cañada College. */
+  function listFold(s) {
+    s = String(s == null ? "" : s);
+    if (s.normalize) s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
+    return s.toLowerCase();
+  }
+  /* Where a credential is articulated, for the finder (Sam, 2026-11-01: find a credential by "college, district, SWP
+     region or ASCCC region"). The colleges come from the reference; college_lookup.js, which COBI loads, names each
+     college's district, SWP region and ASCCC area. Measured 2026-11-01: all 86 college names in the reference match
+     its keys exactly. */
+  function listWhere(r) {
+    if (r._where != null) return r._where;
+    var look = window.CCC_COLLEGE_LOOKUP, parts = [];
+    credColleges(r).forEach(function (c) {
+      var i = (look && look[c]) || {};
+      parts.push(c, i.district || "", i.swRegion || "", i.ascccArea ? "ASCCC Area " + i.ascccArea : "");
+    });
+    var out = parts.filter(Boolean).join(" | ");
+    if (look) r._where = out;
+    return out;
   }
   function listSave(r) {
     var L = listState(), d = L.draft, cur = credCurrent(r), cs = state.cs;
@@ -1845,15 +1866,7 @@
       return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); }));
     }).then(function (rs) {
       if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
-      var o = cs.overlay[r.ut] = cs.overlay[r.ut] || {};
-      var now = new Date().toISOString();
-      writes.forEach(function (w) {
-        if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
-        else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
-        else if (w[0] === FIELD_CRED_SITES) { o.sites = w[1]; o.sitesAt = now; }
-        else o.title = w[1];
-      });
-      if (L.changed.indexOf(r.ut) === -1) L.changed.push(r.ut);
+      listApply(r, writes);
       L.busy = false; L.edit = null; L.draft = null;
       L.note = "Saved “" + listTitle(r) + "”." + (writes.some(function (w) { return w[0] === FIELD_CRED_TITLE; })
         ? " The new title shows now; the daily run checks it for a collision, and a reviewed apply renames it in the reference." : "");
@@ -1865,6 +1878,222 @@
       render();
     });
   }
+  /* What a saved write means on the row, at once: the same fields the daily run reads back from kb_curation. */
+  function listApply(r, writes) {
+    var L = listState(), o = state.cs.overlay[r.ut] = state.cs.overlay[r.ut] || {};
+    var now = new Date().toISOString();
+    writes.forEach(function (w) {
+      if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
+      else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
+      else if (w[0] === FIELD_CRED_SITES) { o.sites = w[1]; o.sitesAt = now; }
+      else o.title = w[1];
+    });
+    if (L.changed.indexOf(r.ut) === -1) L.changed.push(r.ut);
+  }
+
+  /* Find and replace (Sam, 2026-11-01: "use find and replace to fix things on the fly"). The three columns a reviewer
+     can edit; a preview lists every change with its own check before anything saves, and the visit keeps the values
+     it replaced, so Undo this replace writes them back. */
+  var FR_COLS = [["title", "Title"], ["issuer", "Issuer"], ["sites", "Training sites"]];
+  var FR_BATCH = 6;
+  function frState() {
+    var L = listState();
+    return L.fr || (L.fr = { open: false, col: "issuer", find: "", rep: "", mcase: false, whole: false, within: "shown",
+      preview: null, busy: false, done: 0, last: null, note: "" });
+  }
+  function frEscape(s) { return String(s).replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+  /* One value through the rule: whole cell or every occurrence, with or without case. */
+  function frSwap(v, F) {
+    v = String(v == null ? "" : v);
+    if (!F.find) return v;
+    if (F.whole) return (F.mcase ? v === F.find : v.toLowerCase() === F.find.toLowerCase()) ? F.rep : v;
+    return v.replace(new RegExp(frEscape(F.find), F.mcase ? "g" : "gi"), function () { return F.rep; });
+  }
+  function frClean(s) { return String(s).replace(/\s+/g, " ").trim(); }
+  /* Each row the rule would change, with what it holds now and after. A title the rule would empty is left out. */
+  function frPreview() {
+    var F = frState(), L = listState();
+    var pool = F.within === "selected" ? state.cs.rows.filter(function (r) { return L.sel[r.ut]; }) : listRows();
+    var out = [], empty = 0;
+    pool.forEach(function (r) {
+      var cur = credCurrent(r), before, after, sites = null;
+      if (F.col === "title") { before = listTitle(r); after = frClean(frSwap(before, F)); }
+      else if (F.col === "issuer") { before = cur.issuer || ""; after = frClean(frSwap(before, F)); }
+      else {
+        before = cur.sites.map(function (x) { return x.site; }).join("; ");
+        sites = [];
+        cur.sites.forEach(function (x) {
+          var s = frClean(frSwap(x.site, F));
+          if (s) sites.push(x.college ? { site: s, college: x.college } : { site: s });
+        });
+        after = sites.map(function (x) { return x.site; }).join("; ");
+      }
+      if (after === before) return;
+      if (F.col === "title" && !after) { empty++; return; }
+      out.push({ ut: r.ut, before: before, after: after, sites: sites, prevSites: F.col === "sites" ? cur.sites : null, keep: true });
+    });
+    F.preview = out; F.emptied = empty; F.note = "";
+  }
+  /* The writes one row needs to hold a value: the same fields Edit saves. */
+  function frWrites(r, col, value, sites) {
+    if (col === "title") return [[FIELD_CRED_TITLE, value === r.ut ? "" : value]];
+    if (col === "issuer") return [[FIELD_CRED_ISSUER, value]];
+    return [[FIELD_CRED_SITES, JSON.stringify(sites)], [FIELD_CRED_TRAINER, joinSites(sites)]];
+  }
+  function frRow(ut) { return state.cs.rows.filter(function (r) { return r.ut === ut; })[0]; }
+  /* Save a list of { ut, value, sites } in small batches; resolves to the ones that saved and the ones that did not. */
+  function frRun(col, items) {
+    var F = frState(), saved = [], failed = [], i = 0;
+    F.busy = true; F.done = 0; render();
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      function next() {
+        var batch = items.slice(i, i + FR_BATCH);
+        i += FR_BATCH;
+        if (!batch.length) return Promise.resolve();
+        return Promise.all(batch.map(function (it) {
+          var r = frRow(it.ut);
+          if (!r) { failed.push(it); return null; }
+          var writes = frWrites(r, col, it.value, it.sites);
+          return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); })).then(function (rs) {
+            if (rs.every(function (x) { return x.ok; })) { listApply(r, writes); saved.push(it); } else failed.push(it);
+          }, function () { failed.push(it); });
+        })).then(function () { F.done = saved.length + failed.length; listFrProgress(); return next(); });
+      }
+      return next();
+    }).then(function () { F.busy = false; return { saved: saved, failed: failed }; },
+      function (e) { F.busy = false; throw e; });
+  }
+  function listFrProgress() {
+    var n = document.getElementById("exh-fr-progress"), F = frState();
+    if (n) n.textContent = "Saving " + fmt(F.done) + " of " + fmt(F.total || 0) + "…";
+  }
+  function frSave() {
+    var F = frState(), col = F.col, kept = (F.preview || []).filter(function (p) { return p.keep; });
+    if (!kept.length) { F.note = "No row is checked, so nothing saved."; render(); return Promise.resolve(); }
+    F.total = kept.length;
+    var label = FR_COLS.filter(function (c) { return c[0] === col; })[0][1];
+    return frRun(col, kept.map(function (p) { return { ut: p.ut, value: p.after, sites: p.sites }; })).then(function (res) {
+      var back = {};
+      kept.forEach(function (p) { back[p.ut] = p; });
+      F.last = { col: col, label: label, items: res.saved.map(function (it) {
+        var p = back[it.ut];
+        return { ut: it.ut, value: p.before, sites: p.prevSites ? p.prevSites.map(function (x) { return x.college ? { site: x.site, college: x.college } : { site: x.site }; }) : null };
+      }) };
+      F.preview = null;
+      F.note = "Replaced in " + fmt(res.saved.length) + " credential" + (res.saved.length === 1 ? "" : "s") + " (" + label + ")."
+        + (res.failed.length ? " " + fmt(res.failed.length) + " did not reach the reference and are unchanged: "
+          + res.failed.slice(0, 5).map(function (x) { return x.ut; }).join("; ") + (res.failed.length > 5 ? "…" : "") + "." : "")
+        + (col === "title" && res.saved.length ? " The daily run checks each new title for a collision; a reviewed apply renames it in the reference." : "");
+      render();
+    }).catch(function (e) {
+      F.note = e && e.message === "signin" ? "Sign in as a reviewer to save." : "The replace did not reach the reference (" + (e && e.message || "no answer") + "). Nothing changed.";
+      render();
+    });
+  }
+  function frUndo() {
+    var F = frState(), last = F.last;
+    if (!last || !last.items.length) return Promise.resolve();
+    F.total = last.items.length;
+    return frRun(last.col, last.items).then(function (res) {
+      F.last = res.failed.length ? { col: last.col, label: last.label, items: res.failed } : null;
+      F.note = "Put back " + fmt(res.saved.length) + " " + last.label.toLowerCase() + (res.saved.length === 1 ? " value" : " values") + "."
+        + (res.failed.length ? " " + fmt(res.failed.length) + " did not save; Undo again to retry them." : "");
+      render();
+    }).catch(function (e) {
+      F.note = e && e.message === "signin" ? "Sign in as a reviewer to undo." : "The undo did not reach the reference (" + (e && e.message || "no answer") + ").";
+      render();
+    });
+  }
+  function frPanel() {
+    var F = frState(), L = listState(), nSel = Object.keys(L.sel).length;
+    if (F.within === "selected" && !nSel) F.within = "shown";
+    function field(id, label, key) {
+      var i = el("input", { id: id, type: "text", cls: "exh-l-in", autocomplete: "off" });
+      i.value = F[key];
+      i.addEventListener("input", function () { F[key] = i.value; if (F.preview) { F.preview = null; redrawFr(id); } });
+      return el("label", { cls: "exh-l-f", "for": id }, [el("span", { text: label }), i]);
+    }
+    function tick(id, label, key) {
+      var i = el("input", { id: id, type: "checkbox" });
+      i.checked = !!F[key];
+      i.addEventListener("change", function () { F[key] = i.checked; F.preview = null; redrawFr(id); });
+      return el("label", { cls: "exh-fr-tick", "for": id }, [i, " " + label]);
+    }
+    var sel = el("select", { id: "exh-fr-col", cls: "exh-l-in" }, FR_COLS.map(function (c) {
+      var o = el("option", { value: c[0], text: c[1] }); if (c[0] === F.col) o.selected = true; return o; }));
+    sel.addEventListener("change", function () { F.col = sel.value; F.preview = null; redrawFr("exh-fr-col"); });
+    var within = el("select", { id: "exh-fr-within", cls: "exh-l-in" }, [
+      el("option", { value: "shown", text: "The " + fmt(listRows().length) + " rows the list shows" })].concat(nSel
+      ? [el("option", { value: "selected", text: "The " + fmt(nSel) + " selected rows" })] : []));
+    within.value = F.within;
+    within.addEventListener("change", function () { F.within = within.value; F.preview = null; redrawFr("exh-fr-within"); });
+    var form = el("div", { cls: "exh-fr-form" }, [
+      el("label", { cls: "exh-l-f", "for": "exh-fr-col" }, [el("span", { text: "Column" }), sel]),
+      field("exh-fr-find", "Find", "find"), field("exh-fr-rep", "Replace with", "rep"),
+      el("label", { cls: "exh-l-f", "for": "exh-fr-within" }, [el("span", { text: "Within" }), within]),
+      el("div", { cls: "exh-fr-ticks" }, [tick("exh-fr-case", "Match case", "mcase"), tick("exh-fr-whole", F.col === "sites" ? "Whole site name" : "Whole cell", "whole")]),
+      el("div", { cls: "exh-l-acts" }, [
+        word("Preview the changes", function () {
+          if (!F.find) { F.note = "Type what to find first."; redrawFr("exh-fr-find"); return; }
+          frPreview(); redrawFr("exh-fr-prev"); }, { id: "exh-fr-prev" }),
+        word("Close", function () { F.open = false; F.preview = null; render(); })])]);
+    var box = el("section", { cls: "exh-fr", id: "exh-fr", "aria-labelledby": "exh-fr-h" }, [
+      el("h3", { id: "exh-fr-h", cls: "exh-fr-h", text: "Find and replace" }),
+      el("p", { cls: "exh-muted exh-small", text: "Pick a column, type what to find and what to put instead, and preview. Every row it would change "
+        + "is listed with its own check; Save writes only the checked rows, the same fields Edit saves. Undo this replace puts the old values back for this visit." }),
+      form]);
+    if (F.busy) box.appendChild(el("p", { cls: "exh-note", role: "status", id: "exh-fr-progress", text: "Saving " + fmt(F.done) + " of " + fmt(F.total || 0) + "…" }));
+    if (F.note) box.appendChild(el("p", { cls: "exh-note", role: "status", text: F.note }));
+    if (F.last && F.last.items.length && !F.busy) box.appendChild(el("div", { cls: "exh-l-acts" }, [
+      word("Undo this replace (" + fmt(F.last.items.length) + ")", frUndo)]));
+    if (F.preview) box.appendChild(frPreviewTable());
+    return box;
+  }
+  function frPreviewTable() {
+    var F = frState(), P = F.preview, label = FR_COLS.filter(function (c) { return c[0] === F.col; })[0][1];
+    var kept = P.filter(function (p) { return p.keep; }).length;
+    var wrap = el("div", null, [el("p", { cls: "exh-muted exh-small", id: "exh-fr-count", text: P.length
+      ? fmt(P.length) + " row" + (P.length === 1 ? "" : "s") + " would change; " + fmt(kept) + " checked. Uncheck any to leave alone."
+        + (F.emptied ? " " + fmt(F.emptied) + " left out: the title would be empty." : "")
+      : "No row in " + (F.within === "selected" ? "the selection" : "the list as shown") + " matches." + (F.emptied ? " " + fmt(F.emptied) + " would leave an empty title and are left out." : "") })]);
+    if (!P.length) return wrap;
+    var all = el("input", { type: "checkbox", id: "exh-fr-all", "aria-label": "Keep every row" });
+    all.checked = kept === P.length;
+    all.addEventListener("change", function () { P.forEach(function (p) { p.keep = all.checked; }); redrawFr("exh-fr-all"); });
+    var body = el("tbody");
+    P.forEach(function (p, i) {
+      var b = el("input", { type: "checkbox", id: "exh-fr-k" + i, "aria-label": "Change " + p.ut });
+      b.checked = p.keep;
+      b.addEventListener("change", function () {
+        p.keep = b.checked;
+        var n = document.getElementById("exh-fr-count"), k = P.filter(function (x) { return x.keep; }).length;
+        if (n) n.textContent = fmt(P.length) + " row" + (P.length === 1 ? "" : "s") + " would change; " + fmt(k) + " checked. Uncheck any to leave alone.";
+        var s = document.getElementById("exh-fr-save"); if (s) s.textContent = "Save the " + fmt(k) + " checked";
+      });
+      body.appendChild(el("tr", null, [el("td", { cls: "exh-l-box" }, [b]), el("td", { text: p.ut }),
+        el("td", null, [el("del", { text: p.before || "(blank)" })]), el("td", null, [el("ins", { text: p.after || "(blank)" })])]));
+    });
+    var table = el("table", { cls: "exh-l-table exh-fr-table" }, [
+      el("colgroup", null, [el("col", { style: "width:32px" }), el("col", { style: "width:34%" }), el("col", { style: "width:31%" }), el("col", { style: "width:31%" })]),
+      el("thead", null, [el("tr", null, [el("th", { scope: "col", cls: "exh-l-box" }, [all]), el("th", { scope: "col", text: "Credential" }),
+        el("th", { scope: "col", text: label + " now" }), el("th", { scope: "col", text: label + " after" })])]), body]);
+    wrap.appendChild(el("div", { cls: "exh-l-wrap exh-fr-wrap", role: "region", "aria-label": "The changes find and replace would make", tabindex: "0" }, [table]));
+    wrap.appendChild(el("div", { cls: "exh-l-acts" }, [
+      word(F.busy ? "Saving…" : "Save the " + fmt(kept) + " checked", function () { if (!F.busy) frSave(); }, { id: "exh-fr-save" }),
+      word("Discard the preview", function () { F.preview = null; redrawFr("exh-fr-prev"); })]));
+    return wrap;
+  }
+  /* Repaint the panel alone and give focus back to the control that asked. */
+  function redrawFr(focusId) {
+    var host = document.getElementById("exh-fr-host");
+    if (!host) { render(); return; }
+    while (host.firstChild) host.removeChild(host.firstChild);
+    host.appendChild(frPanel());
+    var n = focusId && document.getElementById(focusId);
+    if (n) { n.focus(); if (n.type === "text") { try { n.setSelectionRange(n.value.length, n.value.length); } catch (e) {} } }
+  }
+
   /* One request row a press: the credentials changed this visit and the reader's note. The routine reads every
      change since its last re-analysis from kb_curation itself, so a list left empty still asks for a full pass. */
   function listReanalyze() {
@@ -1927,7 +2156,7 @@
     }
     var bar = el("div", { cls: "exh-l-bar" });
     var q = el("input", { cls: "exh-search exh-l-q", id: "exh-l-find", type: "search", autocomplete: "off",
-      placeholder: "Title, issuer, discipline, subject or CPL type", "aria-label": "Find in the list" });
+      placeholder: "Title, issuer, college, district, SWP region, ASCCC area, discipline, subject or CPL type", "aria-label": "Find in the list" });
     q.value = L.q;
     q.addEventListener("input", function () { L.q = q.value; L.limit = LIST_LIMIT; redrawList(); });
     bar.appendChild(q);
@@ -1954,6 +2183,7 @@
           ? fmt(L.changed.length) + " changed this visit go with it" : "With no change this visit, it looks over everything you changed since its last pass" })])]);
     wrap.appendChild(re);
     if (L.note) wrap.appendChild(el("p", { cls: "exh-note", role: "status", text: L.note }));
+    wrap.appendChild(el("div", { id: "exh-fr-host" }, frState().open ? [frPanel()] : []));
     wrap.appendChild(el("div", { id: "exh-l-host" }, [listTable()]));
     listSyncGrips();
   }
@@ -2051,7 +2281,9 @@
         var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
         + ". Shift and press a header to add a level." }),
       L.sort.length > 1 || L.sort[0].col !== 0 || L.sort[0].dir !== 1 ? word("Clear the sort", function () { L.sort = [{ col: 0, dir: 1 }]; redrawList(); }) : null,
-      word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn, dl]), region]);
+      word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn,
+      frState().open ? null : word("Find and replace", function () {
+        frState().open = true; render(); var n = document.getElementById("exh-fr-find"); if (n) n.focus(); }, { id: "exh-fr-open" }), dl]), region]);
     if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
       function () { L.limit += LIST_LIMIT; redrawList(); }));
     return out;
@@ -2291,6 +2523,16 @@
       ".exh-l-edit{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;padding:4px 0}",
       ".exh-l-f{display:flex;flex-direction:column;gap:2px;flex:1 1 200px;font-size:.6875rem;color:var(--text-muted)}",
       ".exh-l-acts{display:flex;gap:12px}",
+      ".exh-fr{border:1px solid var(--border);border-radius:6px;padding:8px 10px;margin:4px 0 8px;min-width:0;max-width:100%;box-sizing:border-box}",
+      "#exh-fr-host{min-width:0;max-width:100%}",
+      ".exh-l-table.exh-fr-table{min-width:0}",
+      ".exh-fr-h{font-size:14px;margin:0 0 2px}",
+      ".exh-fr-form{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;margin:6px 0}",
+      ".exh-fr-ticks{display:flex;gap:12px;align-items:center;min-height:24px}",
+      ".exh-fr-tick{display:inline-flex;gap:4px;align-items:center;font-size:12px;min-height:24px}",
+      ".exh-fr-wrap{max-height:50vh;margin:4px 0}",
+      ".exh-fr-table del{color:var(--text-muted);text-decoration:line-through}",
+      ".exh-fr-table ins{text-decoration:none;font-weight:600}",
       ".exh-l-count{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;margin:2px 0 4px}",
       ".exh-l-sort{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--text-strong);text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:24px}",
       ".exh-l-cf td{background:var(--surface-opaque);padding:5px 4px 4px;border-bottom:1px solid var(--border)}",

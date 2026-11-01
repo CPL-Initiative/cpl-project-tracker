@@ -6,7 +6,7 @@
   "edge_functions": 11,
   "file_datasets": 757,
   "external_services": 192,
-  "consumers": 501,
+  "consumers": 502,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 39
@@ -856,6 +856,13 @@
      "line": 44
     },
     {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 13
+    },
+    {
      "id": "workflow:cpl-chat-health.yml",
      "kind": "workflow",
      "direction": "read",
@@ -1598,7 +1605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1858
+     "line": 1868
     }
    ],
    "main_committers": []
@@ -1704,6 +1711,13 @@
      "direction": "read",
      "how": "url",
      "line": 657
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 75
     }
    ],
    "main_committers": []
@@ -2151,7 +2165,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 909
+     "line": 919
     }
    ],
    "main_committers": []
@@ -2170,7 +2184,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1254
+     "line": 1264
     },
     {
      "id": "module:college_briefing.js",
@@ -4112,7 +4126,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1532
+     "line": 1542
     }
    ],
    "main_committers": []
@@ -5147,7 +5161,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1423
+     "line": 1433
     },
     {
      "id": "module:admin.js",
@@ -5681,6 +5695,16 @@
   "file:college_lookup.js": {
    "consumers": [
     {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "global",
+     "line": 1839,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "module:statewide_interactive.js",
      "kind": "module",
      "direction": "read",
@@ -5724,6 +5748,13 @@
      "direction": "read",
      "how": "literal",
      "line": 78
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 115
     }
    ],
    "served": true,
@@ -6022,7 +6053,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1797
+     "line": 1807
     },
     {
      "id": "module:college_briefing.js",
@@ -6216,7 +6247,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 969
+     "line": 979
     },
     {
      "id": "module:cpl_funding.js",
@@ -6791,6 +6822,13 @@
      "direction": "read",
      "how": "literal",
      "line": 23
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 108
     }
    ],
    "producers": [
@@ -7420,6 +7458,13 @@
      "direction": "read",
      "how": "inline",
      "line": 0
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 118
     }
    ],
    "served": true,
@@ -8002,6 +8047,13 @@
      "direction": "read",
      "how": "literal",
      "line": 26
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 29
     },
     {
      "id": "script:scripts/library_page.py",
@@ -9550,6 +9602,13 @@
      "direction": "read",
      "how": "literal",
      "line": 81
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 23
     }
    ],
    "served": true,
@@ -9590,6 +9649,13 @@
      "direction": "read",
      "how": "literal",
      "line": 303
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 24
     }
    ],
    "producers": [
@@ -12139,6 +12205,13 @@
      "tabs": [
       "exhibits"
      ]
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 23
     }
    ],
    "producers": [
@@ -13501,6 +13574,13 @@
      "direction": "read",
      "how": "literal",
      "line": 64
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 22
     }
    ],
    "producers": [
@@ -13543,6 +13623,13 @@
      "direction": "read",
      "how": "literal",
      "line": 629
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 22
     }
    ],
    "producers": [
@@ -13578,6 +13665,13 @@
      "direction": "read",
      "how": "literal",
      "line": 63
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 22
     }
    ],
    "producers": [
@@ -13613,6 +13707,13 @@
      "direction": "read",
      "how": "literal",
      "line": 72
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 23
     }
    ],
    "producers": [
