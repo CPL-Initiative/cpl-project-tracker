@@ -842,6 +842,12 @@ reanalysis routine where I can add my observations or concerns or opportunities 
 - **Jev's scope** (Fable): two questions with a verifiable answer, the same credential under two names (the 0.85
   gate) and an issuer that is really a training site. Code checks the rest. Never units, TOP, discipline or title
   quality.
+- **The spreadsheet moves** (Sam, the same hour: *"sometimes I miss good ol' Excel, where I can quickly filter any
+  column, sort any way ... use find and replace to fix things on the fly"*; braindump
+  `braindump-2026-11-01-1545-excel-freedom-and-ceding-control`). Every header sorts (A to Z, then Z to A; blanks
+  last; numbers low to high), every column has its own filter, and *Download these N as a spreadsheet* writes the
+  filtered, sorted rows as a CSV Excel opens. One accessor per column serves cell, filter, sort and download.
+  Find and replace, with a preview of every change before it saves, is the next build.
 - **Next builds:** the routine's pass (scheduled_sessions step 9; the code checks first), the Jev runner job, and the
   findings panel in the List view with Accept and Dismiss. Until then findings reach Sam on the standing sheet.
 - **Lesson.** The a11y seed must wait for the control it clicks, not for the module's data: the view row draws a

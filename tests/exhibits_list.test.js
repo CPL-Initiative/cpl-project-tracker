@@ -114,6 +114,27 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     && v.comments === "Checked the 10-Key issuer; it looks like a local course, not an exam", JSON.stringify(req.map((r) => r.body)));
   check("(5) and says what the routine will look at", /Queued with your comments\./.test(txt(t.d.querySelector(".exh-note"))) && /Jev/.test(txt(t.d.querySelector(".exh-note"))));
 
+  // Sam, 2026-11-01: "sometimes I miss good ol' Excel, where I can quickly filter any column, sort any way".
+  const sortBtn = (h) => Array.from(t.d.querySelectorAll(".exh-l-sort")).find((b) => txt(b).indexOf(h) === 0);
+  sortBtn("MAP titles").click(); await settle();
+  check("(7) ⭐ a header sorts its column, low to high, and says so",
+    /^Apiary/.test(txt(rows(t.d)[0].children[0])) && /low to high/.test(txt(sortBtn("MAP titles")))
+    && sortBtn("MAP titles").parentNode.getAttribute("aria-sort") === "ascending");
+  sortBtn("MAP titles").click(); await settle();
+  check("(7) a second press reverses it", /^Welding/.test(txt(rows(t.d)[0].children[0])) && sortBtn("MAP titles").parentNode.getAttribute("aria-sort") === "descending");
+  sortBtn("Issuer").click(); await settle();
+  check("(7) a text column sorts A to Z with blanks last", /^Apiary/.test(txt(rows(t.d)[2].children[0])));
+  const cf = t.d.getElementById("exh-l-cf-3");
+  check("(8) every column has its own labelled filter", t.d.querySelectorAll(".exh-l-cfin").length === 10 && cf.getAttribute("aria-label") === "Filter Issuer");
+  cf.value = "aws"; cf.dispatchEvent(new t.w.Event("input")); await settle();
+  check("(8) ⭐ a column filter narrows to its matches and keeps focus", rows(t.d).length === 1 && /Welding/.test(txt(rows(t.d)[0]))
+    && t.d.activeElement && t.d.activeElement.id === "exh-l-cf-3");
+  const csv = t.M._listCsv(t.M._listRows());
+  check("(9) ⭐ the spreadsheet carries the filtered rows, every column, the credential key first",
+    /^\ufeffCredential key,Title,Status,CPL types,Issuer/.test(csv) && csv.trim().split("\r\n").length === 2 && /Welding Level 1/.test(csv), csv.slice(0, 200));
+  check("(9) a comma or quote in a value is quoted", t.M._listCsv([{ ut: 'A, "B"', cpl_types: [], articulations: [] }]).indexOf('"A, ""B"""') > -1);
+  check("(9) the Download word names the count", !!Array.from(t.d.querySelectorAll("button")).find((b) => /^Download these 1 as a spreadsheet$/.test(txt(b))));
+
   let failed = 0;
   for (const [name, ok, why] of results) { console.log((ok ? "PASS " : "FAIL ") + name + (ok || !why ? "" : "\n     " + why)); if (!ok) failed++; }
   console.log("\n" + (results.length - failed) + "/" + results.length + " checks passed");

@@ -1730,7 +1730,25 @@
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
-      busy: false, collisions: null });
+      busy: false, collisions: null, sort: { col: 0, dir: 1 }, cf: {} });
+  }
+  /* The columns, each with what it shows (Sam, 2026-11-01: "sometimes I miss good ol' Excel, where I can quickly
+     filter any column, sort any way ... use find and replace to fix things on the fly--that freedom is what you're
+     doing for me"). One accessor serves the cell, the column's filter, the sort and the download. */
+  function listCols() {
+    return [
+      { h: "Title", w: 23, v: function (r) { return listTitle(r); } },
+      { h: "Status", w: 9, v: function (r) { return listStatus(r) + (r.quality_flag ? "; " + String(r.quality_flag).replace(/_/g, " ") : "")
+        + (r.conf_title != null && r.conf_title < 0.6 ? "; title " + Math.round(r.conf_title * 100) + "%" : ""); } },
+      { h: "CPL types", w: 10, v: function (r) { return (r.cpl_types || []).join(", "); } },
+      { h: "Issuer", w: 12, v: function (r) { return credCurrent(r).issuer || ""; } },
+      { h: "Training sites", w: 10, v: function (r) { return credCurrent(r).sites.map(function (x) { return x.site; }).join("; "); } },
+      { h: "Discipline (M-IDs)", w: 11, v: function (r) { return r.disc_modal || ""; } },
+      { h: "Common SUBJ", w: 6, v: listSubj },
+      { h: "CIP family (from TOP)", w: 9, v: listCip },
+      { h: "Colleges", w: 5, n: true, v: function (r) { return credColleges(r).length; } },
+      { h: "MAP titles", w: 5, n: true, v: function (r) { return r.raw_count || 0; } }
+    ];
   }
   function listStatus(r) {
     var by = String(r.curated_by || "");
@@ -1762,13 +1780,28 @@
   }
   function listRows() {
     var L = listState(), cs = state.cs, q = L.q.trim().toLowerCase();
-    var rows = cs.rows.slice().sort(function (a, b) { return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase()); });
+    var sc = listCols()[L.sort.col] || listCols()[0], dir = L.sort.dir;
+    var rows = cs.rows.slice().sort(function (a, b) {
+      var x = sc.v(a), y = sc.v(b), c;
+      if (sc.n) c = (+x || 0) - (+y || 0);
+      else {
+        x = String(x || ""); y = String(y || "");
+        if ((!x || !y) && x !== y) return x ? -1 : 1;   // blanks last, either way
+        c = x.toLowerCase().localeCompare(y.toLowerCase());
+      }
+      return dir * c || listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
+    });
     return rows.filter(function (r) {
       if (L.f === "unreviewed" && listStatus(r) !== "Unreviewed") return false;
       if (L.f === "low" && !(r.conf_title != null && r.conf_title < 0.6)) return false;
       if (L.f === "flagged" && !r.quality_flag) return false;
       if (L.f === "bare" && (r.articulations || []).length) return false;
       if (L.f === "changed" && L.changed.indexOf(r.ut) === -1) return false;
+      var cols = listCols();
+      for (var k in L.cf) {
+        var want = String(L.cf[k] || "").trim().toLowerCase();
+        if (want && String(cols[+k].v(r)).toLowerCase().indexOf(want) === -1) return false;
+      }
       if (!q) return true;
       var cur = credCurrent(r);
       var hay = [r.ut, listTitle(r), cur.issuer, cur.sites.map(function (x) { return x.site; }).join(" "), (r.cpl_types || []).join(" "),
@@ -1913,17 +1946,32 @@
   }
   function listTable() {
     var L = listState(), rows = listRows(), shown = rows.slice(0, L.limit);
-    var heads = ["Title", "Status", "CPL types", "Issuer", "Training sites", "Discipline (M-IDs)", "Common SUBJ",
-      "CIP family (from TOP)", "Colleges", "MAP titles", ""];
-    var cols = el("colgroup", null, [25, 8, 11, 12, 10, 11, 6, 9, 4, 4, 6].map(function (w) {
-      return el("col", { style: "width:" + w + "%" }); }));
-    var thead = el("thead", null, [el("tr", null, heads.map(function (h) {
-      return el("th", { scope: "col", text: h }); }))]);
+    var C = listCols();
+    var cols = el("colgroup", null, C.map(function (c) { return el("col", { style: "width:" + c.w + "%" }); })
+      .concat([el("col", { style: "width:" + (100 - C.reduce(function (a, c) { return a + c.w; }, 0)) + "%" })]));
+    var headRow = el("tr", null, C.map(function (c, i) {
+      var on = L.sort.col === i, up = L.sort.dir > 0;
+      var b = el("button", { type: "button", cls: "exh-l-sort" }, [c.h + (!on ? "" : c.n ? (up ? ", low to high" : ", high to low") : (up ? ", A to Z" : ", Z to A"))]);
+      b.addEventListener("click", function () {
+        L.sort = { col: i, dir: on ? -L.sort.dir : 1 }; redrawList();
+        var nb = document.querySelectorAll(".exh-l-sort")[i]; if (nb) nb.focus();
+      });
+      return el("th", { scope: "col", "aria-sort": on ? (up ? "ascending" : "descending") : "none" }, [b]);
+    }).concat([el("th", { scope: "col" }, [el("span", { cls: "exh-vh", text: "Edit" })])]));
+    var filterRow = el("tr", { cls: "exh-l-cf" }, C.map(function (c, i) {
+      var inp = el("input", { type: "search", cls: "exh-l-in exh-l-cfin", id: "exh-l-cf-" + i, autocomplete: "off",
+        "aria-label": "Filter " + c.h, placeholder: "Filter" });
+      inp.value = L.cf[i] || "";
+      inp.addEventListener("input", function () {
+        L.cf[i] = inp.value; L.limit = LIST_LIMIT; redrawList();
+        var n = document.getElementById("exh-l-cf-" + i); if (n) { n.focus(); try { n.setSelectionRange(n.value.length, n.value.length); } catch (e) {} }
+      });
+      return el("td", null, [inp]);
+    }).concat([el("td")]));
+    var thead = el("thead", null, [headRow, filterRow]);
     var body = el("tbody");
     shown.forEach(function (r) {
       var cur = credCurrent(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
-      var status = listStatus(r) + (r.quality_flag ? "; " + String(r.quality_flag).replace(/_/g, " ") : "")
-        + (r.conf_title != null && r.conf_title < 0.6 ? "; title " + Math.round(r.conf_title * 100) + "%" : "");
       var titleTd = el("td", { cls: "exh-l-title" }, [listTitle(r)]);
       if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
       if (col) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
@@ -1934,19 +1982,39 @@
         L.note = ""; redrawList();
         var t = document.getElementById("exh-l-t"); if (t) t.focus();
       }, { "aria-label": "Edit " + listTitle(r) });
-      body.appendChild(el("tr", null, [titleTd, listCell(status), listCell((r.cpl_types || []).join(", ")), listCell(cur.issuer),
-        listCell(cur.sites.map(function (x) { return x.site; }).join("; ")), listCell(r.disc_modal), listCell(listSubj(r)),
-        listCell(listCip(r)), listCell(fmt(credColleges(r).length), "exh-l-n"), listCell(fmt(r.raw_count), "exh-l-n"),
-        el("td", null, [editBtn])]));
+      body.appendChild(el("tr", null, [titleTd].concat(C.slice(1).map(function (c) {
+        var v = c.v(r);
+        return listCell(c.n ? fmt(v) : v, c.n ? "exh-l-n" : null);
+      }), [el("td", null, [editBtn])])));
       if (L.edit === r.ut && L.draft) body.appendChild(listEditRow(r));
     });
     var region = el("div", { cls: "exh-l-wrap", role: "region", "aria-label": "Every credential, A to Z", tabindex: "0" }, [
       el("table", { cls: "exh-l-table" }, [cols, thead, body])]);
-    var out = el("div", null, [el("p", { cls: "exh-muted exh-small", text: fmt(rows.length) + " credentials" +
-      (rows.length > shown.length ? ", the first " + fmt(shown.length) + " shown" : "") }), region]);
+    var dl = word("Download these " + fmt(rows.length) + " as a spreadsheet", function () { listDownload(rows); });
+    var out = el("div", null, [el("div", { cls: "exh-l-count" }, [el("span", { cls: "exh-muted exh-small", text: fmt(rows.length) + " credentials" +
+      (rows.length > shown.length ? ", the first " + fmt(shown.length) + " shown" : "") }), dl]), region]);
     if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
       function () { L.limit += LIST_LIMIT; redrawList(); }));
     return out;
+  }
+  /* The rows as they are filtered and sorted, as a CSV Excel opens (a byte-order mark keeps é and – intact). */
+  function listCsv(rows) {
+    var C = listCols();
+    var q = function (v) { v = String(v == null ? "" : v); return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v; };
+    var lines = [["Credential key"].concat(C.map(function (c) { return c.h; })).map(q).join(",")];
+    rows.forEach(function (r) { lines.push([r.ut].concat(C.map(function (c) { return c.v(r); })).map(q).join(",")); });
+    return "\ufeff" + lines.join("\r\n") + "\r\n";
+  }
+  function listDownload(rows) {
+    var csv = listCsv(rows), L = listState();
+    try {
+      var url = URL.createObjectURL(new Blob([csv], { type: "text/csv;charset=utf-8" }));
+      var a = el("a", { href: url, download: "exhibits-list-" + new Date().toISOString().slice(0, 10) + ".csv" });
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function () { URL.revokeObjectURL(url); }, 5000);
+      L.note = "Downloaded " + fmt(rows.length) + " rows. Edits made in the spreadsheet do not come back here yet; make them in the list.";
+    } catch (e) { L.note = "This browser could not make the file (" + (e && e.message || "no answer") + ")."; }
+    render();
   }
   function ensureListCss() {
     if (document.getElementById("exh-l-css")) return;
@@ -1972,6 +2040,11 @@
       ".exh-l-edit{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;padding:4px 0}",
       ".exh-l-f{display:flex;flex-direction:column;gap:2px;flex:1 1 200px;font-size:.6875rem;color:var(--text-muted)}",
       ".exh-l-acts{display:flex;gap:12px}",
+      ".exh-l-count{display:flex;flex-wrap:wrap;gap:4px 16px;align-items:baseline;margin:2px 0 4px}",
+      ".exh-l-sort{background:none;border:0;padding:0;font:inherit;font-weight:600;color:var(--text-strong);text-align:left;cursor:pointer;text-decoration:underline;text-underline-offset:2px;min-height:24px}",
+      ".exh-l-cf td{background:var(--surface-opaque);padding:2px 4px;border-bottom:1px solid var(--border)}",
+      ".exh-l-cfin{width:100%;min-width:24px;box-sizing:border-box;font-size:.6875rem;min-height:24px}",
+      ".exh-vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}",
       "@media (max-width:560px){.exh-l-table{table-layout:auto;min-width:900px}}"
     ].join("\n") }));
   }
@@ -2404,6 +2477,6 @@
     _aseIssuer: aseIssuer, _issuerFor: issuerFor, _nameOptions: nameOptions, _nameMatches: nameMatches, _bulkItems: bulkItems,
     _sweepIssuer: sweepIssuer,
     loadRules: loadRules, _requestRows: requestRows, _requestState: requestState, _sendRequest: sendRequest,
-    _switchRequest: switchRequest, _dryRunLines: dryRunLines
+    _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows
   };
 })();
