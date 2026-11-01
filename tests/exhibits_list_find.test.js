@@ -23,7 +23,10 @@
 //  (10) Basis (Sam, 2026-11-01: "count all canonical exhibit titles that include a statewide as based on a statewide,
 //       whether local or not"): a credential with a statewide exhibit in fact-sheet/statewide_recs.js reads Statewide,
 //       the Based on statewide and Local only filters split the list, and its drawer names the statewide exhibits;
-//  (11) every drawer answers its own column by name (the Confidence column had shifted the drawers by one).
+//  (11) every drawer answers its own column by name (the Confidence column had shifted the drawers by one);
+//  (12) the cert link (Sam, 2026-11-01: "a separate canonical list of just our certs, apart from how they might be
+//       bundled"): a test's name finds the bundle holding it, the title drawer lists its certs by catalog id and the
+//       names not yet in the cert table, and Show every exhibit with it narrows the list until Clear.
 // Run from repo root: `npm test` (or `node tests/exhibits_list_find.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -54,6 +57,10 @@ const AISORT = { schema: 1, _reference_generated_at: "2026-11-01T05:19:00+00:00"
   counts: { suggested_folds: 1 },
   suggest: { "10-Key Data Entry": { to: "Apiary Basics", why: "the same words spelled another way" } } };
 let OVERLAY_ROWS = [];
+const CERTLINKS = { schema: 1, certs: { ITC1: { code: "T8", name: "Preventive Maintenance Inspection", family: "ASE" },
+  ITC2: { code: "A5", name: "Brakes", family: "ASE" } },
+  links: { "Welding Level 1": { relation: "holds", rule: "all", certs: ["ITC1", "ITC2"], unresolved: ["SP/2 HD"] },
+    "Apiary Basics": { relation: "aligned", rule: "all", certs: ["ITC2"] } } };
 const COLLISIONS = { collisions: [{ old_unified_title: "Apiary Basics", proposed_new_title: "Beekeeping" }] };
 
 function load() {
@@ -68,6 +75,7 @@ function load() {
     if (url === "kb/exhibits_adoption.json") return ok(ADOPTION);
     if (url === "kb/cred_rename_dryrun/collisions.json") return ok(COLLISIONS);
     if (url === "kb/exhibits_ai_sort.json") return ok(AISORT);
+    if (url === "kb/exhibit_cert_links.json") return ok(CERTLINKS);
     if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok(/unified_title_override/.test(url) ? OVERLAY_ROWS : []);
     if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
     return Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } });
@@ -275,6 +283,26 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   Array.from(x.d.querySelectorAll(".exh-l-drawer button")).find((b) => txt(b) === "Industry Certification").click(); await settle();
   check("(11) a CPL type picked in its drawer filters the CPL types column", rows(x.d).length === 1 && /^Welding/.test(txt(rows(x.d)[0].children[2]))
     && x.d.getElementById("exh-l-cf-" + (typIdx - 2)).value === "Industry Certification", rows(x.d).map((r) => txt(r.children[2])).join("|"));
+
+  // (12) on a fresh visit.
+  const z = load();
+  await z.M.boot(); await settle();
+  const zq = z.d.getElementById("exh-l-find");
+  zq.value = "preventive maintenance"; zq.dispatchEvent(new z.w.Event("input")); await settle();
+  check("(12) ⭐ a test's name finds the bundle holding it", rows(z.d).length === 1 && /^Welding/.test(txt(rows(z.d)[0].children[2])),
+    rows(z.d).map((r) => txt(r.children[2])).join("|"));
+  zq.value = ""; zq.dispatchEvent(new z.w.Event("input")); await settle();
+  const wz = rows(z.d).find((r) => /^Welding/.test(txt(r.children[2])));
+  wz.children[2].querySelector("button.exh-l-open").click(); await settle();
+  const dz = txt(z.d.querySelector(".exh-l-drawer"));
+  check("(12) the title drawer lists the certs by catalog id and the names not yet in the table",
+    /Holds all of these certifications/.test(dz) && /ASE T8 Preventive Maintenance Inspection \(ITC1\)/.test(dz) && /ASE A5 Brakes \(ITC2\)/.test(dz)
+    && /not yet in the cert table: SP\/2 HD/.test(dz), dz);
+  Array.from(z.d.querySelectorAll(".exh-l-drawer button")).find((b) => /Show every exhibit with ASE A5 Brakes/.test(b.getAttribute("aria-label") || "")).click(); await settle();
+  check("(12) Show every exhibit with it lists the holder and the aligned course", rows(z.d).length === 2
+    && /ASE A5 Brakes/.test(txt(z.d.getElementById("exh-l-certline"))), rows(z.d).map((r) => txt(r.children[2])).join("|"));
+  Array.from(z.d.getElementById("exh-l-certline").querySelectorAll("button")).find((b) => txt(b) === "Clear").click(); await settle();
+  check("(12) Clear restores the list", rows(z.d).length === 3 && !z.d.getElementById("exh-l-certline"));
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "  -- " + why)); if (!ok) fail++; });

@@ -4,9 +4,9 @@
   "supabase_tables": 104,
   "rpcs": 48,
   "edge_functions": 11,
-  "file_datasets": 759,
+  "file_datasets": 761,
   "external_services": 192,
-  "consumers": 503,
+  "consumers": 504,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 39
@@ -1337,7 +1337,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 117,
+     "line": 120,
      "tabs": [
       "exhibits"
      ]
@@ -1845,7 +1845,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 138,
+     "line": 141,
      "tabs": [
       "exhibits"
      ]
@@ -5699,7 +5699,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1887,
+     "line": 1906,
      "tabs": [
       "exhibits"
      ]
@@ -6745,6 +6745,13 @@
      "direction": "read",
      "how": "literal",
      "line": 64
+    },
+    {
+     "id": "script:kb/_build_exhibit_cert_links.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 36
     },
     {
      "id": "script:kb/_build_exhibits_ai_sort.py",
@@ -8517,6 +8524,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_build_exhibit_cert_links.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_build_exhibits_ai_sort.py": {
    "consumers": [
     {
@@ -9621,7 +9641,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 136,
+     "line": 139,
      "tabs": [
       "exhibits"
      ]
@@ -9668,7 +9688,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 137,
+     "line": 140,
      "tabs": [
       "exhibits"
      ]
@@ -13586,6 +13606,51 @@
     "workflow:daily-dashboard.yml"
    ]
   },
+  "file:kb/exhibit_cert_links.json": {
+   "consumers": [
+    {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 117,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
+     "id": "script:kb/_build_exhibit_cert_links.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 37
+    },
+    {
+     "id": "script:kb/_build_exhibit_cert_links.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 37
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 24
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
+  },
   "file:kb/exhibits_adoption.json": {
    "consumers": [
     {
@@ -13778,7 +13843,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 123,
+     "line": 126,
      "tabs": [
       "exhibits"
      ]
@@ -14087,6 +14152,13 @@
      "direction": "read",
      "how": "literal",
      "line": 166
+    },
+    {
+     "id": "script:kb/_build_exhibit_cert_links.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 35
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -23032,7 +23104,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 348,
+     "line": 351,
      "tabs": [
       "exhibits"
      ]
@@ -25008,7 +25080,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 399,
+     "line": 402,
      "tabs": [
       "exhibits"
      ]
@@ -25018,7 +25090,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 455,
+     "line": 458,
      "tabs": [
       "exhibits"
      ]
@@ -27485,6 +27557,7 @@
     "kb/_build_exhibits_review.py",
     "kb/_sweep_exhibit_titles.py",
     "kb/_build_exhibits_ai_sort.py",
+    "kb/_build_exhibit_cert_links.py",
     "kb/_build_adopt_page.py",
     "kb/_build_commons_status.py"
    ],
@@ -27543,6 +27616,7 @@
     "kb/exhibits_adoption.json",
     "kb/exhibits_sweep.json",
     "kb/exhibits_ai_sort.json",
+    "kb/exhibit_cert_links.json",
     "library/adopt/adopt_data.json",
     "kb/coci_title_corrections.json",
     "kb/coci_duplicate_control_numbers.json",
