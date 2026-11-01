@@ -41,6 +41,7 @@
 (function () {
   "use strict";
   var LIST_LIMIT = 400, LIST_MIN_W = 48, LIST_STEP = 24, FR_BATCH = 6;
+  var MIN_PX_PER_W = 12, EDIT_PCT = 4, EDIT_MIN_PX = 48;
 
   function create(S) {
     var P = S.prefix || "cl-", FP = S.frPrefix || "cl-fr-", OWN_BASE = !S.cls;
@@ -378,10 +379,17 @@
     function listTable() {
       var L = listState(), rows = listRows(), shown = rows.slice(0, L.limit);
       var C = listCols(), nb = NBOX, boxW = 32 * nb;
-      var editW = 100 - 3 * nb - C.reduce(function (a, c) { return a + c.w; }, 0);
+      // The full width with a sideways scroll when needed (Sam, 2026-11-01: "for exhibit and all other list views,
+      // adjust table and tab to full screen width and allow for a horizontal scroll bar when needed"). The columns share
+      // what the boxes and the Edit word leave, so Edit keeps its own 4% (it had the 1% the columns left and clipped);
+      // and the table never narrows below MIN_PX_PER_W pixels per unit of width, so a narrower window scrolls the table
+      // inside its own box and the columns stay readable.
+      var sumW = C.reduce(function (a, c) { return a + c.w; }, 0) || 1;
+      var editW = HAS_EDIT ? EDIT_PCT : 0, share = (100 - 3 * nb - editW) / sumW;
+      var minPx = Math.round(sumW * MIN_PX_PER_W) + boxW + (HAS_EDIT ? EDIT_MIN_PX : 0);
       var lead = [el("col", { style: "width:32px" })].concat(S.flag ? [el("col", { style: "width:32px" })] : []);
       var cols = el("colgroup", null, lead.concat(C.map(function (c, i) {
-        return el("col", { style: "width:" + (L.widths ? L.widths[i] + "px" : c.w + "%") }); }))
+        return el("col", { style: "width:" + (L.widths ? L.widths[i] + "px" : (Math.round(c.w * share * 100) / 100) + "%") }); }))
         .concat(HAS_EDIT ? [el("col", { style: "width:" + (L.widths ? L.widths[C.length] + "px" : editW + "%") })] : []));
       var allBox = el("input", { type: "checkbox", id: P + "selall", "aria-label": "Select every row shown" });
       allBox.checked = shown.length > 0 && shown.every(function (r) { return L.sel[K(r)]; });
@@ -472,7 +480,7 @@
       });
       var region = el("div", { cls: P + "wrap", role: "region", "aria-label": N.region, tabindex: "0" }, [
         el("table", { cls: P + "table" + (L.wrap ? "" : " " + P + "nowrap"),
-          style: L.widths ? "width:" + (L.widths.reduce(function (a, w) { return a + w; }, 0) + boxW) + "px" : null }, [cols, thead, body])]);
+          style: "--" + P + "minw:" + minPx + "px" + (L.widths ? ";width:" + (L.widths.reduce(function (a, w) { return a + w; }, 0) + boxW) + "px" : "") }, [cols, thead, body])]);
       var dl = word("Download these " + fmt(rows.length) + " as a spreadsheet", function () { listDownload(rows); });
       // Wrap text (Sam, 2026-11-01: "a toggle to wrap or unwrap all fields and set it to default unwrapped ... that tight
       // scrollable, scannable view I need"). Unwrapped, each cell keeps one line and shows the rest on hover.
@@ -800,8 +808,11 @@
         p + "ta{width:100%;box-sizing:border-box;resize:vertical;min-height:3.5em}",
         p + "in{font:inherit;font-size:.8125rem;padding:2px 6px;border:1px solid var(--border);border-radius:4px;background:var(--surface-opaque);color:var(--text-body)}",
         "#" + P + "host{min-width:0;max-width:100%}",
+        // While a List is on screen its tab spans the window: COBI's main column stops at 1400px for prose, and a
+        // List is a sheet to scan. Another view of the tab drops the host, and the cap comes back.
+        ".main-container:has(#" + P + "host){max-width:none;padding-left:16px;padding-right:16px}",
         p + "wrap{width:100%;max-width:100%;box-sizing:border-box;overflow-x:auto;max-height:75vh;overflow-y:auto;border:1px solid var(--border);border-radius:6px}",
-        p + "table{width:100%;min-width:1100px;table-layout:fixed;border-collapse:collapse;font-size:.75rem;line-height:1.3}",
+        p + "table{width:100%;min-width:var(--" + P + "minw,1100px);table-layout:fixed;border-collapse:collapse;font-size:.75rem;line-height:1.3}",
         p + "table th{position:sticky;top:0;background:var(--surface-opaque);color:var(--text-strong);text-align:left;font-weight:600;padding:3px 6px;border-bottom:1px solid var(--border)}",
         p + "table td{padding:2px 6px;border-bottom:1px solid var(--border);vertical-align:top;color:var(--text-body);overflow-wrap:anywhere}",
         p + "title{color:var(--text-strong)}",

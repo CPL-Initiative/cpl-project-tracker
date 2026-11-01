@@ -74,6 +74,20 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     && txt(key.children[9]) === "CNSR" && txt(key.children[10]) === "52 Business", txt(key));
   check("(6) a rename the dry-run found colliding says so", /collides with Beekeeping/.test(txt(rows(t.d)[1].children[2])));
   check("(1) no raw hex in the view's CSS", !/#[0-9a-fA-F]{3,6}\b/.test(txt(t.d.getElementById("exh-l-css"))));
+  // Full width (Sam, 2026-11-01: "for exhibit and all other list views, adjust table and tab to full screen width and
+  // allow for a horizontal scroll bar when needed"): the engine lifts COBI's 1400px cap while a List is on screen, the
+  // table never narrows below a minimum drawn from its columns (a narrower window scrolls the table in its box), and
+  // Edit keeps its own 4% (it had the 1% the columns left, and clipped).
+  const css = txt(t.d.getElementById("exh-l-css"));
+  check("(1) ⭐ while a List is on screen its tab drops the 1400px cap", /\.main-container:has\(#exh-l-host\)\{max-width:none/.test(css));
+  const tbl = t.d.querySelector(".exh-l-table");
+  const minw = /--exh-l-minw:(\d+)px/.exec(tbl.getAttribute("style") || "");
+  check("(1) the table's minimum width comes from its columns, and the CSS reads it", !!minw && +minw[1] >= 1000
+    && /min-width:var\(--exh-l-minw,1100px\)/.test(css), tbl.getAttribute("style"));
+  const colW = Array.from(tbl.querySelectorAll("col")).map((c) => c.getAttribute("style"));
+  const pct = colW.filter((w) => /%$/.test(w)).map((w) => parseFloat(w.replace("width:", "")));
+  check("(1) Edit keeps its own 4%, and the columns share the rest without passing 100%", /width:4%$/.test(colW[colW.length - 1])
+    && pct.reduce((a, b) => a + b, 0) <= 100 - 6 + 0.05, colW.join(" | "));
 
   words(t.d, "Unreviewed").click(); await settle();
   check("(3) Unreviewed shows only the unstamped credential", rows(t.d).length === 1 && /Apiary/.test(txt(rows(t.d)[0])));
