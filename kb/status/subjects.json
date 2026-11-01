@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 433,
-  "moniker": "SkyCoffeeberry",
-  "run": "the CPL Queue routine",
+  "session": 542,
+  "moniker": "SkyTriangulum",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_434_handoff.md",
+  "handoff": "docs/session_543_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -15,13 +15,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-20T07:57:26Z",
+  "written_at": "2026-11-01T22:53:46Z",
   "project": "subjects",
   "next_step": {
     "title": "Move the two forestry stragglers on Sam's word, or work the strays",
     "text": "Open Asks Sheet 105 still waits: on move-both the next session applies the committed dry run for Forest Surveying and Introduction to Forest Operations in one window. Otherwise it takes the 110 stray codes through the discipline-blank worklist toward one re-key window."
   },
   "changes": [
+    {
+      "at": "2026-11-01T21:59:00Z",
+      "text": "A List view on the shared engine: one row per MQ discipline, with Confirm this pick in the Status drawer (#2658)."
+    },
     {
       "at": "2026-10-20T07:39:00Z",
       "text": "The two ENVR forestry pairs joined the faculty merge-candidate queue, survivors proposed and nothing merged (#2278)."

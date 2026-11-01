@@ -49,8 +49,15 @@ together and places them in some order of priority and completion and known issu
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
-groups"*). The Exhibits List and the Common CR Reference List run on it; Courses (SkyView), Subjects and Program
-Requirements are next. A change to the engine reaches every List.
+groups"*). Exhibits (#2656), the Common CR Reference (#2657, with your flag #2659), Subjects (#2658) and Program
+Requirements (#2660) run on it; Courses waits on where its List lives (SkyView's workspace or a COBI view from the
+Course row). A change to the engine reaches every List: a List spans the window and its table scrolls in its own box
+only when the window is narrower than its columns (#2661, Sam: *"full screen width and allow for a horizontal scroll
+bar when needed"*).
+
+**The Catalog Commons tab (S542, #2662):** full width; each row's calls cell reads **Decision Sheet Library**, its count
+bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one line each that opens (Sam, 2026-11-01).
+**Next (Sam, 2026-11-01):** everything in the Commons' Exhibit row joins the Exhibits tab's tiles above the list, folded into the existing tiles where it fits and as new tiles where it does not (*"I like the tiles above the list ... capture everything from 1st into Exhibits view"*); one source for both pages, so they stay aligned.
 
 
 **LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can

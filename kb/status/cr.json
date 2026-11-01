@@ -1,20 +1,28 @@
 {
   "schema": 1,
-  "session": 437,
-  "moniker": "SkySagebrush",
-  "run": "a session Sam opened",
+  "session": 542,
+  "moniker": "SkyTriangulum",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_438_handoff.md",
+  "handoff": "docs/session_543_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-20T13:46:15Z",
+  "written_at": "2026-11-01T22:53:46Z",
   "project": "cr",
   "next_step": {
     "title": "Decide the head, then the course pairing",
     "text": "Six of the 50 wordings with the most articulations wait on a curator: the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine Performance I. Then the sitting Sam ruled on Sheet 3 card 9: pair groups by shared course identity behind the course-count guard, run Jev under the 0.85 gate, and a sheet of 40 to 60."
   },
   "changes": [
+    {
+      "at": "2026-11-01T21:16:00Z",
+      "text": "A List view on the shared engine: one row per wording, the reference renamed in place through the worklist's own save (#2657)."
+    },
+    {
+      "at": "2026-11-01T22:12:00Z",
+      "text": "Your flag on the List, a reviewer's sign-in only; no find and replace (#2659)."
+    },
     {
       "at": "2026-10-20T13:24:18Z",
       "text": "Sam kept the Progress view as built (Open Asks Sheet 108, card 5)."

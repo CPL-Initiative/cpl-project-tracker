@@ -16339,8 +16339,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 510,
+   "count": 511,
    "docs": [
+    {
+     "created": "2026-11-01",
+     "governs": [],
+     "n": 543,
+     "path": "docs/session_543_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "exhibits",
+      "exhibits-list",
+      "commons",
+      "commons-list",
+      "slo",
+      "course-outcomes"
+     ],
+     "title": "Session 543 handoff: kept groups, one List engine for the Catalog Commons, full width, the SLO test",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-01",
      "governs": [],
@@ -25060,5 +25079,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1334
+ "total": 1335
 }
