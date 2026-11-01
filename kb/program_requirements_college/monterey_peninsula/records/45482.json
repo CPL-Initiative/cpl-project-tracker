@@ -1,0 +1,20 @@
+{
+ "college": "Monterey Peninsula College",
+ "control_number": "45482",
+ "shape": "degree",
+ "title": "Modern Policing",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mpc.edu/programs-study/administration-justice/modern-policing-as/",
+ "record_shape": 6,
+ "model": null,
+ "stop_reason": null,
+ "usage": null,
+ "cost_usd": null,
+ "ms": null,
+ "seconds": 10.3,
+ "parts": null,
+ "error": "HTTP 503: {\"code\":\"BOOT_ERROR\",\"message\":\"Function failed to start (please check logs)\"}",
+ "score": null,
+ "record": null,
+ "extracted_run": "41276977991"
+}
