@@ -200,6 +200,10 @@ jobs:
       # append-only log, and the same machine checks in SQL and in the tab.
       - name: Program record verdicts (the tab's one write)
         run: python3 tests/program_record_verdicts_sql_test.py
+      # The contacts harvest's table (S536, CPL queue step 8): one service-role writer,
+      # revoked from every client role, the roster's read gate, and no delete.
+      - name: College contacts harvest (the table's one write path)
+        run: python3 tests/college_contacts_harvest_sql_test.py
       # The addenda reading agent's write (S388): service_role only, a person's
       # correction never touched, and each filing's changes say scope and kind.
       - name: Program source addenda read (the reading agent's write)
