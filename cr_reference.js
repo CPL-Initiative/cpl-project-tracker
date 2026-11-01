@@ -814,6 +814,63 @@
   // settles a group by itself; Confirm and Not a topic sit in the reference's drawer, as on the worklist.
   var listRowsCache = null, listNamedMemo = null, LIST_ENGINE = null, listLoading = false, listFailed = false;
   var DECISION_WORDS = { confirmed: "Confirmed", not_a_topic: "Not a topic", deferred: "Deferred", split: "Split", cleared: "" };
+  // Your flag on a wording (Sam, 2026-11-01: "give me the flag but no find and replace"): the Exhibits List's flag, one
+  // kb_curation row per wording (_CR_LIST::<wording>, field list_flag), the time it was set; clearing writes "" (an
+  // upsert, never a delete). kb_curation answers a reviewer's sign-in alone, so the team phrase reads flags, sets none.
+  var CR_FLAG_PREFIX = "_CR_LIST::", FIELD_LIST_FLAG = "list_flag", listFlags = null, listFlagsLoading = false, listFlagsFailed = false;
+  function loadListFlags() {
+    if (listFlags || listFlagsLoading) return;
+    listFlagsLoading = true;
+    var PAGE = 1000, out = {};
+    var url = REST + "/kb_curation?select=course_id,value&course_id=like." + encodeURIComponent(CR_FLAG_PREFIX) + "%25"
+      + "&field=eq." + FIELD_LIST_FLAG + "&order=course_id.asc";
+    function page(from) {
+      return fetch(url, { headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON, "Range-Unit": "items", "Range": from + "-" + (from + PAGE - 1) } })
+        .then(function (r) { if (!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+        .then(function (rows) {
+          (rows || []).forEach(function (x) { var w = String(x.course_id || "").slice(CR_FLAG_PREFIX.length); if (w && x.value) out[w] = x.value; });
+          return rows && rows.length === PAGE ? page(from + PAGE) : out;
+        });
+    }
+    page(0).then(function () { listFlags = out; }).catch(function () { listFlags = {}; listFlagsFailed = true; })
+      .then(function () { listFlagsLoading = false; if (state.view === "list") render(); });
+  }
+  function listFlagOf(r) { return (listFlags && listFlags[r.ut]) || ""; }
+  function reviewerSession() {
+    var S = window.CPL_SESSION;
+    if (!S || typeof S.ensureFresh !== "function") return Promise.resolve(null);
+    return Promise.resolve(S.ensureFresh()).then(function (x) { return x && x.access_token && x.email ? x : null; }).catch(function () { return null; });
+  }
+  function listSetFlag(r, on) {
+    var L = listState(), when = on ? new Date().toISOString() : "";
+    L.flagBusy = L.flagBusy || {};
+    L.flagBusy[r.ut] = true;
+    return reviewerSession().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return fetch(REST + "/kb_curation", {
+        method: "POST",
+        headers: { apikey: SUPABASE_ANON, Authorization: "Bearer " + sess.access_token, "Content-Type": "application/json",
+          "Prefer": "resolution=merge-duplicates,return=representation" },
+        body: JSON.stringify([{ course_id: CR_FLAG_PREFIX + r.ut, field: FIELD_LIST_FLAG, value: when, reviewer_email: sess.email }])
+      });
+    }).then(function (x) {
+      if (!x.ok) throw new Error("HTTP " + x.status);
+      return x.json();
+    }).then(function (rows) {
+      // An insert the policy refuses can come back empty; only a returned row counts as saved.
+      if (!Array.isArray(rows) || !rows.length) throw new Error("your sign-in does not allow it");
+      listFlags = listFlags || {};
+      if (when) listFlags[r.ut] = when; else delete listFlags[r.ut];
+      delete L.flagBusy[r.ut];
+      L.note = (on ? "Flagged “" : "Cleared the flag on “") + r.m.rec + "”.";
+      render();
+    }).catch(function (e) {
+      delete L.flagBusy[r.ut];
+      L.note = e && e.message === "signin" ? "Sign in with a reviewer link to flag a wording; the team phrase reads flags but cannot set one."
+        : "The flag did not save (" + (e && e.message || "no answer") + "). Nothing changed; try again.";
+      render();
+    });
+  }
   function listState() { return state.ls || (state.ls = {}); }
   function listFlat() {
     if (listRowsCache) return listRowsCache;
@@ -870,12 +927,16 @@
           + "decisions show and save once you unlock with the team phrase or sign in with a reviewer link." }));
         else if (state.decisionsStale) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "Could not read the decisions table, so the "
           + "Decision column and any renamed reference are not shown; this is a failed read, not an empty table. Reload before working." }));
+        if (listFlagsFailed) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "Your flags could not be read, so none show; "
+          + "this is a failed read, not an empty list. Reload to try again." }));
         return true;
       },
       filters: [["", "All"], ["todo", "Needs a decision"], ["auto", "Automatic proposals"], ["done", "Decided"],
-        ["open", "No rule or decision"], ["names", "Name to check"], ["solo", "Single wording"]],
+        ["open", "No rule or decision"], ["names", "Name to check"], ["solo", "Single wording"], ["flagged", "Your flags"]],
+      flag: { get: listFlagOf, set: listSetFlag },
       filterPass: function (r, L) {
         var g = r.g, d = decidedState(g);
+        if (L.f === "flagged") return !!listFlagOf(r);
         if (L.f === "todo") return needsDecision(g) && !d;
         if (L.f === "auto") return g.acts_automatically && needsDecision(g);
         if (L.f === "done") return !!d;
@@ -970,6 +1031,7 @@
   function mountList() {
     var node = document.getElementById("crr-list-mount");
     if (!node) return;
+    loadListFlags();
     if (listApi()) { LIST_ENGINE.render(node); return; }
     if (listFailed) { node.innerHTML = '<div class="crr-warn" role="alert">The List (commons_list.js) could not be loaded. The worklist reads as usual; reload the tab to try again.</div>'; return; }
     node.innerHTML = '<div class="crr-info">Loading the List&hellip;</div>';

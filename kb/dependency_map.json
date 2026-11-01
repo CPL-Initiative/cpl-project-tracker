@@ -1717,7 +1717,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 55
+     "line": 57
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -5865,7 +5865,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 979,
+     "line": 1041,
      "tabs": [
       "cr-reference"
      ]
@@ -5885,7 +5885,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 87
+     "line": 89
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -5915,7 +5915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1006,
+     "line": 1068,
      "tabs": [
       "cr-reference"
      ]
@@ -6633,7 +6633,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1007,
+     "line": 1069,
      "tabs": [
       "cr-reference"
      ]
@@ -6656,7 +6656,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 88
+     "line": 90
     }
    ],
    "served": true,
@@ -25114,6 +25114,26 @@
      "line": 114,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:cr_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 825,
+     "tabs": [
+      "cr-reference"
+     ]
+    },
+    {
+     "id": "module:cr_reference.js",
+     "kind": "module",
+     "direction": "write",
+     "how": "literal",
+     "line": 850,
+     "tabs": [
+      "cr-reference"
      ]
     },
     {

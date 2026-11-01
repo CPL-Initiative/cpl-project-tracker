@@ -392,7 +392,8 @@ window.COBI_ADMIN_SURFACE = {
       ],
       "reads": [],
       "writes": [
-        "cr_reference_decisions"
+        "cr_reference_decisions",
+        "kb_curation"
       ],
       "rpcs": [],
       "measured": true

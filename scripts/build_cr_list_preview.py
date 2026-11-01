@@ -31,7 +31,7 @@ SHIM = r"""
   window.fetch = function (url, init) {
     url = String(url); init = init || {};
     if (url.split("?")[0] === "kb/cr_reference_worklist.json") return ok(WORKLIST);
-    if (/\/rest\/v1\/cr_reference_decisions/.test(url)) {
+    if (/\/rest\/v1\/(cr_reference_decisions|kb_curation)/.test(url)) {
       if ((init.method || "GET") === "GET") return ok([]);
       var rows = [];
       try { rows = JSON.parse(init.body); } catch (e) {}
@@ -44,6 +44,8 @@ SHIM = r"""
   };
   // The tab reads a team phrase as a sign-in; the preview holds a stand-in so edits can be tried.
   try { localStorage.setItem("cpl_team_pass", "preview"); } catch (e) {}
+  // A stand-in reviewer for the flag, which only a reviewer's sign-in sets; its saves stay in the page too.
+  window.CPL_SESSION = { ensureFresh: function () { return Promise.resolve({ access_token: "preview.preview.preview", email: "preview@this-page" }); } };
   window.CPL_TABS = { loadScript: function (src, name, cb) { setTimeout(cb, 0); } };
   try { history.replaceState(null, "", "#cr-reference/list"); } catch (e) { location.hash = "cr-reference/list"; }
 })();
