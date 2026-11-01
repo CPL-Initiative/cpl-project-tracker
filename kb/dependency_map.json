@@ -4,9 +4,9 @@
   "supabase_tables": 104,
   "rpcs": 48,
   "edge_functions": 11,
-  "file_datasets": 762,
+  "file_datasets": 767,
   "external_services": 192,
-  "consumers": 505,
+  "consumers": 506,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 39
@@ -4822,6 +4822,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:census_*.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 99
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:chatbox/build_coci_offerings.py": {
    "consumers": [
     {
@@ -5992,6 +6005,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:course_outcomes_*.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 108
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:course_top_consensus.json": {
@@ -8211,6 +8237,19 @@
      "direction": "read",
      "how": "inline",
      "line": 173
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:index_*.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 140
     }
    ],
    "served": false,
@@ -13781,6 +13820,13 @@
      "direction": "read",
      "how": "literal",
      "line": 22
+    },
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "producers": [
@@ -19151,6 +19197,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:read*.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 120
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:read_*_p*of*.json": {
    "consumers": [
     {
@@ -21226,6 +21285,19 @@
    "main_committers": []
   },
   "file:tests/mq_title5_rename_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/next_slo_colleges_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -27950,7 +28022,8 @@
     "tests/course_outline_registry_fill_test.py",
     "tests/course_outline_index_test.py",
     "tests/course_outcomes_read_test.py",
-    "tests/course_outcomes_load_test.py"
+    "tests/course_outcomes_load_test.py",
+    "tests/next_slo_colleges_test.py"
    ],
    "adds": [],
    "push": null,

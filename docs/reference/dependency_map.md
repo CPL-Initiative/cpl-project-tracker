@@ -345,6 +345,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `card_actions.js` | pages: `CPL_Dashboard.html` | — |
 | `card_raci.js` | pages: `CPL_Dashboard.html` | — |
 | `card_updates.js` | pages: `CPL_Dashboard.html` | — |
+| `census_*.json` | scripts: `scripts/next_slo_colleges.py` | — |
 | `chatbox/build_coci_offerings.py` | workflows: `coci-offerings-sync.yml` | — |
 | `chatbox/build_program_courses.py` | workflows: `coci-offerings-sync.yml` | — |
 | `chatbox/college_geo.json` | scripts: `chatbox/_seed_college_geo.py`, `chatbox/build_coci_offerings.py` | scripts: `chatbox/_seed_college_geo.py` |
@@ -379,6 +380,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `commons_progress.js` | tabs: `canonical-subj4`, `cr-reference`, `credential-reference` · pages: `CPL_Dashboard.html` | — |
 | `comms.js` | pages: `CPL_Dashboard.html` | — |
 | `contracts.js` | pages: `CPL_Dashboard.html` | — |
+| `course_outcomes_*.json` | scripts: `scripts/next_slo_colleges.py` | — |
 | `course_top_consensus.json` | tabs: `cip-crosswalk` · scripts: `kb/_build_course_top_consensus.py` | scripts: `kb/_build_course_top_consensus.py` |
 | `cpl_chat.js` | pages: `CPL_Dashboard.html` | — |
 | `cpl_funding.js` | tabs: `college-briefing`, `cpl-pathways` · modules: `a11y.config.js` · pages: `CPL_Dashboard.html`, `funding-model/index.html`, `funding-model/memo/index.html` | — |
@@ -452,6 +454,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `gr_priorities.js` | pages: `CPL_Dashboard.html` | — |
 | `index.html` | scripts: `excel_to_dashboard.py`, `kb/_glyph_sweep.py`, `nudges/build_nudges.py`, `prototype/check_contrast.py`, `raci/_seed_team_members.py`, `scripts/build_exhibits_list_preview.py`, `scripts/ui_pass.py` | scripts: `scripts/library_page.py` · committed by: `daily-dashboard.yml` |
 | `index.json` | pages: `tools/first_light_gallery/gallery.html` | — |
+| `index_*.json` | scripts: `scripts/next_slo_colleges.py` | — |
 | `jev_ccr_title_rung_calibration_<date>_s282.json` | scripts: `kb/_jev_next_steps.py` | — |
 | `jsqr.min.js` | tabs: `library` | — |
 | `jszip.min.js` | tabs: `library` | — |
@@ -626,7 +629,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/exhibit_audit/*.md` | none found | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_audit/latest.json` | tabs: `credential-reference` · scripts: `kb/_ap_official_titles.py`, `kb/_build_commons_status.py`, `kb/_build_exhibits_review.py`, `kb/_clep_official_titles.py`, `kb/_ib_official_titles.py` | committed by: `daily-dashboard.yml` |
 | `kb/exhibit_cert_links.json` | tabs: `exhibits` · scripts: `kb/_build_exhibit_cert_links.py`, `scripts/build_exhibits_list_preview.py` | scripts: `kb/_build_exhibit_cert_links.py` · committed by: `daily-dashboard.yml` |
-| `kb/exhibits_adoption.json` | tabs: `exhibits` · scripts: `kb/_build_adopt_page.py`, `kb/_build_exhibits_review.py`, `scripts/build_exhibits_list_preview.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
+| `kb/exhibits_adoption.json` | tabs: `exhibits` · scripts: `kb/_build_adopt_page.py`, `kb/_build_exhibits_review.py`, `scripts/build_exhibits_list_preview.py`, `scripts/next_slo_colleges.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/exhibits_ai_sort.json` | scripts: `kb/_build_exhibits_ai_sort.py`, `scripts/build_exhibits_list_preview.py` | scripts: `kb/_build_exhibits_ai_sort.py` · committed by: `daily-dashboard.yml` |
 | `kb/exhibits_review.json` | tabs: `exhibits` · scripts: `kb/_build_exhibits_review.py`, `kb/_sweep_exhibit_titles.py`, `scripts/build_exhibits_list_preview.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
 | `kb/exhibits_review_courses.json` | tabs: `exhibits` · scripts: `kb/_build_exhibits_review.py`, `scripts/build_exhibits_list_preview.py` | committed by: `cer-procedures.yml`, `daily-dashboard.yml` |
@@ -862,6 +865,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `prototype/skyview.html` | scripts: `prototype/build_ccr_atlas.py`, `scripts/ui_pass.py` | scripts: `prototype/build_ccr_atlas.py` · committed by: `daily-dashboard.yml` |
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
+| `read*.json` | scripts: `scripts/next_slo_colleges.py` | — |
 | `read_*_p*of*.json` | scripts: `kb/_course_outcomes_load.py` | — |
 | `reflections/build_reflections_summary.py` | workflows: `weekly-reflections-summary.yml` | — |
 | `reflections/summary.json` | scripts: `reflections/build_reflections_summary.py` | committed by: `weekly-reflections-summary.yml` |
@@ -978,6 +982,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `tests/merge_chain_flatten_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mid_short_code_gate_test.py` | workflows: `js-tests.yml` | — |
 | `tests/mq_title5_rename_test.py` | workflows: `js-tests.yml` | — |
+| `tests/next_slo_colleges_test.py` | workflows: `js-tests.yml` | — |
 | `tests/occupation_matcher_stemming_test.py` | workflows: `js-tests.yml` | — |
 | `tests/orphan_parent_worklist_test.py` | workflows: `js-tests.yml` | — |
 | `tests/prefix_fold_apply_test.py` | workflows: `js-tests.yml` | — |
@@ -1262,5 +1267,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 104 Supabase tables · 48 RPCs · 11 edge functions · 762 file
-datasets · 192 external services · 505 consumers · 60 workflows · 39 tabs.
+Coverage: 104 Supabase tables · 48 RPCs · 11 edge functions · 767 file
+datasets · 192 external services · 506 consumers · 60 workflows · 39 tabs.
