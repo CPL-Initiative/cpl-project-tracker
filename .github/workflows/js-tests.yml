@@ -204,6 +204,10 @@ jobs:
       # revoked from every client role, the roster's read gate, and no delete.
       - name: College contacts harvest (the table's one write path)
         run: python3 tests/college_contacts_harvest_sql_test.py
+      # The contacts harvest's runner (S537, piece 3): Sam's title variants to positions, links on the
+      # college's own site, no sign-in page, the batch read longest ago. Over a saved page, no browser.
+      - name: College contacts harvest (the runner)
+        run: python3 tests/college_contacts_harvest_runner_test.py
       # The addenda reading agent's write (S388): service_role only, a person's
       # correction never touched, and each filing's changes say scope and kind.
       - name: Program source addenda read (the reading agent's write)

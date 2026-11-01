@@ -1,0 +1,88 @@
+name: College contacts harvest
+
+# Step 8, piece 3, of the CPL queue routine (docs/reference/scheduled_sessions.md; lane:
+# docs/reference/lanes/map-users-student-contact.md, *The weekly contacts harvest*). Sam, 2026-10-31:
+# "harvest the contacts when it sends runners out to collect our catalog data".
+#
+# A session cannot reach college sites; the runner reads each college's leadership pages on the
+# census's terms (a user agent naming the CPL Initiative, robots.txt first, 4 s between loads, at
+# most 12 pages a site, no page behind a sign-in) and commits the lines near a title to
+# kb/contacts_harvest/<run>/<college>.json on the ref it ran on. It writes nothing to Supabase: the
+# session reads the files (piece 4) and loads the people through college_contacts_harvest_apply()
+# with a committed receipt. Governance: kb/governance_surface_map.json,
+# workflow:college-contacts-harvest.yml.
+#
+# Dispatch only: the CPL queue routine dispatches it each night for the 15 colleges read longest ago.
+
+on:
+  workflow_dispatch:
+    inputs:
+      colleges:
+        description: "Colleges to read, names separated by ';' (blank = use batch)"
+        required: false
+        default: ""
+      batch:
+        description: "The N colleges read longest ago (used when colleges is blank)"
+        required: false
+        default: "15"
+  push:
+    branches: ['claude/**']
+    paths:
+      - '.github/workflows/college-contacts-harvest.yml'
+      - 'kb/_college_contacts_harvest.py'
+
+permissions:
+  contents: read
+
+concurrency:
+  group: college-contacts-harvest-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  harvest:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+
+      - name: Install Playwright + Chromium
+        run: |
+          pip install --quiet playwright
+          python -m playwright install --with-deps chromium
+
+      # A push to a claude/ branch proves the runner on two colleges and commits nothing.
+      - name: Harvest
+        env:
+          HARVEST_DELAY_MS: '4000'
+          COLLEGES: ${{ github.event.inputs.colleges }}
+          BATCH: ${{ github.event.inputs.batch }}
+        run: |
+          if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+            python3 kb/_college_contacts_harvest.py --batch 2 --out "$RUNNER_TEMP/contacts_harvest"
+            find "$RUNNER_TEMP/contacts_harvest" -name '*.json' -exec sh -c 'echo "== $1"; head -c 3000 "$1"; echo' _ {} \;
+          elif [ -n "$COLLEGES" ]; then
+            python3 kb/_college_contacts_harvest.py --colleges "$COLLEGES"
+          else
+            python3 kb/_college_contacts_harvest.py --batch "${BATCH:-15}"
+          fi
+
+      - name: Commit the read
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/contacts_harvest
+          if git diff --cached --quiet; then echo "nothing to file"; exit 0; fi
+          git commit -m "File the contacts harvest read (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+          done
+          exit 1

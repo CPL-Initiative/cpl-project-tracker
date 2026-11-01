@@ -4,10 +4,10 @@
   "supabase_tables": 103,
   "rpcs": 47,
   "edge_functions": 11,
-  "file_datasets": 754,
+  "file_datasets": 757,
   "external_services": 192,
-  "consumers": 499,
-  "workflows": 59,
+  "consumers": 501,
+  "workflows": 60,
   "data_js_files": 71,
   "tabs": 39
  },
@@ -1064,6 +1064,13 @@
      "direction": "read",
      "how": "url",
      "line": 413
+    },
+    {
+     "id": "script:kb/_college_contacts_harvest.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "url",
+     "line": 52
     },
     {
      "id": "script:kb/_program_source_census.py",
@@ -8566,6 +8573,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_college_contacts_harvest.py": {
+   "consumers": [
+    {
+     "id": "workflow:college-contacts-harvest.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_college_page_read.py": {
    "consumers": [
     {
@@ -11835,6 +11855,17 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:kb/contacts_harvest": {
+   "consumers": [],
+   "producers": [
+    {
+     "by": "workflow:college-contacts-harvest.yml",
+     "how": "commit"
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:kb/convergence_singletons_out/<date>/alias_map.json": {
@@ -20058,6 +20089,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/college_contacts_harvest_runner_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/college_contacts_harvest_sql_test.py": {
    "consumers": [
     {
@@ -26855,6 +26899,20 @@
    "chain": [],
    "urls": []
   },
+  "college-contacts-harvest.yml": {
+   "name": "College contacts harvest",
+   "crons": [],
+   "scripts": [
+    "kb/_college_contacts_harvest.py"
+   ],
+   "adds": [
+    "kb/contacts_harvest"
+   ],
+   "push": null,
+   "deploys": [],
+   "chain": [],
+   "urls": []
+  },
   "college-page-read.yml": {
    "name": "College page read",
    "crons": [],
@@ -27347,6 +27405,7 @@
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
     "tests/college_contacts_harvest_sql_test.py",
+    "tests/college_contacts_harvest_runner_test.py",
     "tests/program_source_addenda_read_test.py",
     "tests/jev_harvest_test.py",
     "tests/jev_agri_families_test.py",
