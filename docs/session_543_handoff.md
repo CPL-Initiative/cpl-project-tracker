@@ -62,10 +62,11 @@ no re-mint and no Rule 10 data write. Skipped: kb/README, README, the Pipeline t
   lanes (no sheet).
 If a branch has no PR, its agent did not finish: rebuild from its brief in this handoff.
 
-1. **Align every List to the norms** (`reference-catalog-commons-list-norms`), engine first: bands and kept groups for
-   CR and Subjects, tiles carrying each reference's Commons row, suggested folds where a reference can fold. Sam asked
-   for Fable as advisor on this move: S542 asked Fable for norms and the three best first steps; if its advice is not
-   in this handoff, ask again (read-only advisor, model fable) before building.
+1. **Align every List to the norms** (`reference-catalog-commons-list-norms`, revised with Fable's review, which Sam
+   asked for). Its *Next, one PR each*: (1) an engine `suggest` slot and the `changed` tracker, CR's rung proposals and
+   Subjects' open picks wired in; (2) the filter vocabulary with counts and the status-line words in the engine; (3)
+   bands from a spec `groupOf(r)` and filter before sort (do this before merging the COCI Lookup List if its keystroke
+   timing is slow). Kept groups stay Exhibits' alone; M-ID and Common SUBJ changes stay re-mints.
 2. **Carryover from 542:** step 10's first night (the credential harvest); the cert link's next families (AP, CLEP, IB,
    then the unresolved names); the reference's statewide flag (84 vs 152, code only); step 9's Jev runner; Monterey
    Peninsula's 14; Accept's email (Sheet 146 card 3); Sierra's first-text latency; the college short-name editor.
