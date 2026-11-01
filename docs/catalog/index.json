@@ -13743,7 +13743,7 @@
      "updated": ""
     },
     {
-     "created": "2026-10-31",
+     "created": "2026-11-01",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
@@ -13752,10 +13752,10 @@
       "cer",
       "exhibits",
       "exhibit-canonicalization",
-      "funding",
-      "tests"
+      "ib",
+      "clep"
      ],
-     "title": "CER redesign handoff: Nudge, the fold's panel rows, ASE's long form, balanced test shards (SkyHuckleberry)",
+     "title": "CER redesign handoff: IB on the AP pattern, Sheet 150, CLEP held (SkyInkberry)",
      "type": null,
      "updated": ""
     },
@@ -15489,7 +15489,7 @@
      ],
      "title": "CER procedures and the simpler CER tab \u2014 lane state",
      "type": null,
-     "updated": "2026-10-31"
+     "updated": "2026-11-01"
     },
     {
      "created": "2026-09-08",

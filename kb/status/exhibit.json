@@ -1,7 +1,7 @@
 {
  "schema": 1,
  "session": 536,
- "moniker": "SkyBilberry",
+ "moniker": "SkyInkberry",
  "run": "Sam's session",
  "decider": "Sam",
  "handoff": "docs/cer_redesign_handoff.md",
@@ -68,16 +68,32 @@
   },
   {
    "title": "ASE course titles: the test's name with a short tag",
-   "text": "Asked in chat: Engine Performance (ASE A8), the level kept where a college teaches a sequence. On ASE short, Another look's ASE rule proposes that form."
+   "text": "Answered in chat: drop the ASE override on the two local titles and take the long form, Automotive Technology (ASE A5 Brakes), for local exhibits alone; the sweep already proposes it (#2629).",
+   "link": "https://github.com/CPL-Initiative/cpl-project-tracker/pull/2629",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-10-31",
+    "words": "Drop the ASE override; go with the long form"
+   }
+  },
+  {
+   "title": "Keep the IB fold under IB's own subject names",
+   "text": "Proceeded on the recommendation (SkyInkberry, 2026-11-01): 49 IB credentials into 24, one issuer name, 8 live rows moved. No reply keeps it; a reply of reverse undoes it by revert and the receipt's rollback.",
+   "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL"
+  },
+  {
+   "title": "Which names CLEP exams take",
+   "text": "Held: one credential per exam with its levels folded, Arabic numerals and no period subtitle is proposed. No reply leaves CLEP as it is, 400 titles under 48 names.",
+   "link": "https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL"
   }
  ],
  "notes": {},
  "headline": [],
- "written_at": "2026-10-31T20:40:00Z",
+ "written_at": "2026-11-01T01:09:58Z",
  "project": "exhibit",
  "next_step": {
-  "title": "Sam's ASE naming reply, then his Another look saves",
-  "text": "On ASE short, change the sweep's ASE rule. Then read his unified_title_supersedes and title_sweep_kept rows and the next fold's revise receipt, and move the panel rows it lists. Watch the first rule sent to the routine."
+  "title": "Sam's Sheet 150 replies, then CLEP",
+  "text": "Read Sheet 150's replies. On card 2's answer, build CLEP's reader and fold on the IB pattern. After each of Sam's Another look passes, move the panel rows the next fold lists."
  },
  "changes": [
   {
@@ -119,6 +135,14 @@
   {
    "at": "2026-10-31T14:38:49Z",
    "text": "The Commons' CER row opens the Exhibits tab (#2612)."
+  },
+  {
+   "at": "2026-11-01T01:09:34Z",
+   "text": "IB titles take IB's own subject names in brand-family (the ib lane); the reference's IB twins folded, 49 credentials into 24, one issuer name, 8 live rows moved (#2632)."
+  },
+  {
+   "at": "2026-11-01T01:09:34Z",
+   "text": "Open Asks Sheet 150: the IB fold carried out on the recommendation, and CLEP's names held for Sam."
   }
  ]
 }

@@ -1,0 +1,109 @@
+{
+ "table": "kb_curation",
+ "kind": "guarded UPDATE",
+ "at": "2026-11-01",
+ "by": "SkyInkberry",
+ "basis": "The IB fold on the AP fold's pattern (Open Asks Sheet 149 card 1, fold), carried out on the recommendation; Open Asks Sheet 150 card 1 is the record, and a reply reverses it.",
+ "cohort": "cer-ib-fold-skyinkberry@bot",
+ "human_rows": "One row is Sam's: his issuer save of 2026-10-31 16:35Z on 'IB Language B - any language except English HL' names 'International Baccalaureate (IB)'. His two other IB issuer saves name 'International Baccalaureate Organization (IBO)', as 80 of the 83 bot rows do, so the fold takes IBO and moves his one row, said here and on the sheet card.",
+ "guard": "UPDATE ... SET value=<after>, reviewer_email=cohort, reviewed_at=now() WHERE course_id=<id> AND field=<field> AND value=<before>",
+ "rollback": "for each row: UPDATE kb_curation SET value=<before.value>, reviewer_email=<before.reviewer_email>, reviewed_at=<before.reviewed_at> WHERE course_id=<id> AND field=<field> AND reviewer_email='cer-ib-fold-skyinkberry@bot'",
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::IB English B HL (Minimum Passing Score of 4)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "IB Language B: English HL",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-31 14:01:01.108182+00"
+   },
+   "after": {
+    "value": "IB Language B HL"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB English Lit (A1) HL (Minimum Passing Score of 4)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "IB Language A1: English HL",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "IB Language A: Literature HL"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Global Politics",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "IB Global Politics",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-31 14:01:01.108182+00"
+   },
+   "after": {
+    "value": "IB Global Politics HL"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB World Religions HL",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "IB World Religions HL",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-31 14:01:01.108182+00"
+   },
+   "after": {
+    "value": "IB World Religions SL"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Language B - any language except English HL",
+   "field": "issuing_agency_assignment",
+   "before": {
+    "value": "International Baccalaureate (IB)",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-10-31 16:35:53.539537+00"
+   },
+   "after": {
+    "value": "International Baccalaureate Organization (IBO)"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Language B - any language HL - Score of 4 or higher - HISTORICAL Type 1",
+   "field": "issuing_agency_assignment",
+   "before": {
+    "value": "International Baccalaureate (IB)",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "International Baccalaureate Organization (IBO)"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Language B - any language HL - Score of 4 or higher - HISTORICAL Type 2",
+   "field": "issuing_agency_assignment",
+   "before": {
+    "value": "International Baccalaureate (IB)",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "International Baccalaureate Organization (IBO)"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IB Language B (any language) HL (Score of 4 or higher)",
+   "field": "issuing_agency_assignment",
+   "before": {
+    "value": "International Baccalaureate (IB)",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "International Baccalaureate Organization (IBO)"
+   }
+  }
+ ]
+}

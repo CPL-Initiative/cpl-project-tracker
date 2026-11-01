@@ -1,0 +1,196 @@
+{
+  "_generated_at": "2026-11-01T00:52:25Z",
+  "applied": [
+    {
+      "loser": "IB Global Politics",
+      "winner": "IB Global Politics HL",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: Arabic HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: English HL",
+      "winner": "IB Language A1 HL",
+      "raws_repointed": 2,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: French HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: Greek HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: Hindi HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: Italian HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: Japanese HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: Latin HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A1: Spanish HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A2: English HL",
+      "winner": "IB Language A2 HL",
+      "raws_repointed": 2,
+      "articulations_repointed": 1,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A2: French HL",
+      "winner": "IB Language A2 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A2: German HL",
+      "winner": "IB Language A2 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A2: Greek HL",
+      "winner": "IB Language A2 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A2: Hindi HL",
+      "winner": "IB Language A2 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A2: Italian HL",
+      "winner": "IB Language A2 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A2: Latin HL",
+      "winner": "IB Language A2 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A2: Spanish HL",
+      "winner": "IB Language A2 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A: German HL",
+      "winner": "IB Language A1 HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A: Language and Literature",
+      "winner": "IB Language A: Language and Literature HL",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A: Language and Literature (non-English)",
+      "winner": "IB Language A: Language and Literature HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A: Literature",
+      "winner": "IB Language A: Literature HL",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language A: Literature (non-English)",
+      "winner": "IB Language A: Literature HL (Non-English)",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language B: English HL",
+      "winner": "IB Language B HL",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language B: Korean HL",
+      "winner": "IB Language B HL",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB Language B: Spanish HL",
+      "winner": "IB Language B HL",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    },
+    {
+      "loser": "IB World Religions HL",
+      "winner": "IB World Religions SL",
+      "raws_repointed": 1,
+      "articulations_repointed": 0,
+      "loser_credential_dropped": true
+    }
+  ],
+  "unified_titles_count": 5492,
+  "credentials_count": 2686
+}

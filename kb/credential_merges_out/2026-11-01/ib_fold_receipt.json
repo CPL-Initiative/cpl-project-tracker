@@ -1,0 +1,307 @@
+{
+ "at": "2026-11-01",
+ "by": "SkyInkberry",
+ "cohort": "cer-ib-fold-skyinkberry@bot",
+ "basis": "the AP fold's pattern (Open Asks Sheet 149 card 1, fold), on the recommendation",
+ "merges": [
+  {
+   "loser": "IB Global Politics",
+   "winner": "IB Global Politics HL"
+  },
+  {
+   "loser": "IB Language A1: Arabic HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A1: English HL",
+   "winner": "IB Language A1 HL"
+  },
+  {
+   "loser": "IB Language A1: French HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A1: Greek HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A1: Hindi HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A1: Italian HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A1: Japanese HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A1: Latin HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A1: Spanish HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A2: English HL",
+   "winner": "IB Language A2 HL"
+  },
+  {
+   "loser": "IB Language A2: French HL",
+   "winner": "IB Language A2 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A2: German HL",
+   "winner": "IB Language A2 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A2: Greek HL",
+   "winner": "IB Language A2 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A2: Hindi HL",
+   "winner": "IB Language A2 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A2: Italian HL",
+   "winner": "IB Language A2 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A2: Latin HL",
+   "winner": "IB Language A2 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A2: Spanish HL",
+   "winner": "IB Language A2 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A: German HL",
+   "winner": "IB Language A1 HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A: Language and Literature",
+   "winner": "IB Language A: Language and Literature HL"
+  },
+  {
+   "loser": "IB Language A: Language and Literature (non-English)",
+   "winner": "IB Language A: Language and Literature HL (Non-English)"
+  },
+  {
+   "loser": "IB Language A: Literature",
+   "winner": "IB Language A: Literature HL"
+  },
+  {
+   "loser": "IB Language A: Literature (non-English)",
+   "winner": "IB Language A: Literature HL (Non-English)"
+  },
+  {
+   "loser": "IB Language B: English HL",
+   "winner": "IB Language B HL"
+  },
+  {
+   "loser": "IB Language B: Korean HL",
+   "winner": "IB Language B HL"
+  },
+  {
+   "loser": "IB Language B: Spanish HL",
+   "winner": "IB Language B HL"
+  },
+  {
+   "loser": "IB World Religions HL",
+   "winner": "IB World Religions SL"
+  }
+ ],
+ "split_moves": [
+  {
+   "raw": "IB English Lit (A1) HL (Minimum Passing Score of 4)",
+   "from": "IB Language A1: English HL",
+   "to": "IB Language A: Literature HL",
+   "before": {
+    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+    "reviewed_by": "cer-procedure-classifier@bot"
+   }
+  }
+ ],
+ "issuer": {
+  "to": "International Baccalaureate Organization (IBO)",
+  "from": [
+   "International Baccalaureate (IB)"
+  ],
+  "credential_records_before": {
+   "IB Language A: German HL": [
+    {
+     "issuing_agency": "International Baccalaureate (IB)",
+     "training_agency": null,
+     "confidence_issuer": 0.97,
+     "confidence_trainer": 0.9,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "German A1 is the older IB Language A1 (literature) classification; mapped to current Language A: German HL equivalent."
+    }
+   ],
+   "IB Language B HL": [
+    {
+     "issuing_agency": "International Baccalaureate (IB)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Articulation-area suffix stripped."
+    }
+   ],
+   "IB Mathematics HL": [
+    {
+     "issuing_agency": "International Baccalaureate (IB)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Version qualifier stripped per Rule 3."
+    },
+    {
+     "issuing_agency": "International Baccalaureate Organization (IBO)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Legacy IB Math HL (pre-2021 curriculum split)."
+    }
+   ],
+   "IB Mathematics: Analysis and Approaches HL": [
+    {
+     "issuing_agency": "International Baccalaureate Organization (IBO)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Score qualifier stripped."
+    },
+    {
+     "issuing_agency": "International Baccalaureate (IB)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Score qualifier stripped per Rule 1."
+    }
+   ],
+   "IB Mathematics: Applications and Interpretation HL": [
+    {
+     "issuing_agency": "International Baccalaureate Organization (IBO)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Score qualifier stripped."
+    },
+    {
+     "issuing_agency": "International Baccalaureate (IB)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Score qualifier stripped."
+    }
+   ],
+   "IB Physics HL": [
+    {
+     "issuing_agency": "International Baccalaureate Organization (IBO)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": null
+    },
+    {
+     "issuing_agency": "International Baccalaureate (IB)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Score qualifier stripped."
+    }
+   ],
+   "IB Psychology HL": [
+    {
+     "issuing_agency": "International Baccalaureate Organization (IBO)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Score qualifier stripped."
+    },
+    {
+     "issuing_agency": "International Baccalaureate (IB)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Score qualifier stripped."
+    }
+   ],
+   "IB Theatre HL": [
+    {
+     "issuing_agency": "International Baccalaureate Organization (IBO)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": null
+    },
+    {
+     "issuing_agency": "International Baccalaureate (IB)",
+     "training_agency": null,
+     "confidence_issuer": 0.98,
+     "confidence_trainer": 0.95,
+     "classified_at": "2026-05-20",
+     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+     "reviewed_at": null,
+     "reviewed_by": null,
+     "_notes": "Score qualifier stripped."
+    }
+   ]
+  },
+  "articulations_renamed": 1
+ },
+ "rollback": "git revert of the commit that carries this receipt; the live rows by ib_kb_curation_update_receipt.json"
+}

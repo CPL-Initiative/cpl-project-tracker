@@ -30325,17 +30325,18 @@
     "_notes": null
   },
   "IB Exam Arabic A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: Arabic HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEAA-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Legacy IB Language A1 (Arabic) exam."
+    "_notes": "Legacy IB Language A1 (Arabic) exam.",
+    "_merge_note": "merged from credential 'IB Language A1: Arabic HL' (curator)"
   },
   "IB Exam Biology HL": {
     "unified_title": "IB Biology HL",
@@ -30392,56 +30393,60 @@
     "_notes": null
   },
   "IB Exam English A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: English HL",
+    "unified_title": "IB Language A1 HL",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEEA-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Legacy A1 designation pre-2013."
+    "_notes": "Legacy A1 designation pre-2013.",
+    "_merge_note": "merged from credential 'IB Language A1: English HL' (curator)"
   },
   "IB Exam English A2 HL (Score 4-7)": {
-    "unified_title": "IB Language A2: English HL",
+    "unified_title": "IB Language A2 HL",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEEA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Legacy A2 designation pre-2013."
+    "_notes": "Legacy A2 designation pre-2013.",
+    "_merge_note": "merged from credential 'IB Language A2: English HL' (curator)"
   },
   "IB Exam French A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: French HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEFA-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A1: French HL' (curator)"
   },
   "IB Exam French A2 HL (Score 4-7)": {
-    "unified_title": "IB Language A2: French HL",
+    "unified_title": "IB Language A2 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEFA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A2: French HL' (curator)"
   },
   "IB Exam Geography HL": {
     "unified_title": "IB Geography HL",
@@ -30470,69 +30475,74 @@
     "_notes": "Score qualifier stripped."
   },
   "IB Exam German A2 HL (Score 4-7)": {
-    "unified_title": "IB Language A2: German HL",
+    "unified_title": "IB Language A2 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEGA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A2: German HL' (curator)"
   },
   "IB Exam Greek A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: Greek HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEGA2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A1: Greek HL' (curator)"
   },
   "IB Exam Greek A2 HL (Score 4-7)": {
-    "unified_title": "IB Language A2: Greek HL",
+    "unified_title": "IB Language A2 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEGA3-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A2: Greek HL' (curator)"
   },
   "IB Exam Hindi A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: Hindi HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEHA-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A1: Hindi HL' (curator)"
   },
   "IB Exam Hindi A2 HL (Score 4-7)": {
-    "unified_title": "IB Language A2: Hindi HL",
+    "unified_title": "IB Language A2 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEHA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A2: Hindi HL' (curator)"
   },
   "IB Exam History (Any Region) HL": {
     "unified_title": "IB History HL",
@@ -30561,56 +30571,60 @@
     "_notes": "Score and region qualifiers stripped."
   },
   "IB Exam Italian A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: Italian HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEIA-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A1: Italian HL' (curator)"
   },
   "IB Exam Italian A2 HL (Score 4-7)": {
-    "unified_title": "IB Language A2: Italian HL",
+    "unified_title": "IB Language A2 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEIA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A2: Italian HL' (curator)"
   },
   "IB Exam Japanese A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: Japanese HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEJA-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A1: Japanese HL' (curator)"
   },
   "IB Exam Korean B HL": {
-    "unified_title": "IB Language B: Korean HL",
+    "unified_title": "IB Language B HL",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEKB-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language B: Korean HL' (curator)"
   },
   "IB Exam Language A Literature (any language, except English) HL": {
     "unified_title": "IB Language A: Literature HL (Non-English)",
@@ -30626,17 +30640,18 @@
     "_notes": "Generic non-English Lit HL bucket."
   },
   "IB Exam Language A1 (English) HL": {
-    "unified_title": "IB Language A1: English HL",
+    "unified_title": "IB Language A1 HL",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IELA-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A1: English HL' (curator)"
   },
   "IB Exam Language A1 (any other language) HL": {
     "unified_title": "IB Language A1 HL (Non-English)",
@@ -30652,17 +30667,18 @@
     "_notes": "Legacy A1 generic non-English bucket."
   },
   "IB Exam Language A2 (English) HL": {
-    "unified_title": "IB Language A2: English HL",
+    "unified_title": "IB Language A2 HL",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IELA2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A2: English HL' (curator)"
   },
   "IB Exam Language A2 (any other language) HL": {
     "unified_title": "IB Language A2 HL (Non-English)",
@@ -30678,30 +30694,32 @@
     "_notes": "Legacy A2 generic non-English bucket."
   },
   "IB Exam Latin A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: Latin HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IELA5-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A1: Latin HL' (curator)"
   },
   "IB Exam Latin A2 HL (Score 4-7)": {
-    "unified_title": "IB Language A2: Latin HL",
+    "unified_title": "IB Language A2 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IELA6-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A2: Latin HL' (curator)"
   },
   "IB Exam Mathematics HL": {
     "unified_title": "IB Mathematics HL",
@@ -30783,43 +30801,46 @@
     "_notes": "Score qualifier stripped."
   },
   "IB Exam Spanish A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A1: Spanish HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IESA-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A1: Spanish HL' (curator)"
   },
   "IB Exam Spanish A2 HL (Score 4-7)": {
-    "unified_title": "IB Language A2: Spanish HL",
+    "unified_title": "IB Language A2 HL (Non-English)",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IESA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language A2: Spanish HL' (curator)"
   },
   "IB Exam Spanish B HL (Score 4-7)": {
-    "unified_title": "IB Language B: Spanish HL",
+    "unified_title": "IB Language B HL",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IESB-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'IB Language B: Spanish HL' (curator)"
   },
   "IB Exam Theater HL (Score 5-7)": {
     "unified_title": "IB Theatre HL",
@@ -31149,17 +31170,18 @@
     "_notes": "Any-language qualifier stripped."
   },
   "IB Language A: Language and Literature (any language) HL (score 5-7): Cal-GETC Area 3B": {
-    "unified_title": "IB Language A: Language and Literature",
+    "unified_title": "IB Language A: Language and Literature HL",
     "confidence_title": 0.85,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-ILAL7-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Skill Rule 4: distinct IB DP course from Language A: Literature; the 'any language' (no exclusion) form is the broader articulation pathway."
+    "_notes": "Skill Rule 4: distinct IB DP course from Language A: Literature; the 'any language' (no exclusion) form is the broader articulation pathway.",
+    "_merge_note": "merged from credential 'IB Language A: Language and Literature' (curator)"
   },
   "IB Language A: Language and Literature (any language, except English) HL": {
     "unified_title": "IB Language A: Language and Literature HL (Non-English)",
@@ -31176,17 +31198,18 @@
     "_notes": "Kept separate from English variant since articulation typically differs."
   },
   "IB Language A: Language and Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B": {
-    "unified_title": "IB Language A: Language and Literature (non-English)",
+    "unified_title": "IB Language A: Language and Literature HL (Non-English)",
     "confidence_title": 0.82,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-ILAL5-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Skill Rule 4: paired with the all-language variant below â€” non-English flag preserved because articulation pathway differs."
+    "_notes": "Skill Rule 4: paired with the all-language variant below â€” non-English flag preserved because articulation pathway differs.",
+    "_merge_note": "merged from credential 'IB Language A: Language and Literature (non-English)' (curator)"
   },
   "IB Language A: Literature (any language) HL": {
     "unified_title": "IB Language A: Literature HL",
@@ -31203,17 +31226,18 @@
     "_notes": "Any-language qualifier stripped."
   },
   "IB Language A: Literature (any language) HL (score 5-7): Cal-GETC Area 3B": {
-    "unified_title": "IB Language A: Literature",
+    "unified_title": "IB Language A: Literature HL",
     "confidence_title": 0.85,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-ILAL6-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Skill Rule 4: 'Language A: Literature' is a distinct IB DP course from 'Language A: Language and Literature'. Kept separate from the '(non-English)' variant because the '(non-English)' wording flags a different articulation pathway."
+    "_notes": "Skill Rule 4: 'Language A: Literature' is a distinct IB DP course from 'Language A: Language and Literature'. Kept separate from the '(non-English)' variant because the '(non-English)' wording flags a different articulation pathway.",
+    "_merge_note": "merged from credential 'IB Language A: Literature' (curator)"
   },
   "IB Language A: Literature (any language, except English) HL": {
     "unified_title": "IB Language A: Literature HL (Non-English)",
@@ -31230,17 +31254,18 @@
     "_notes": "Kept separate from English variant."
   },
   "IB Language A: Literature (any language, except English) HL (score 5-7): Cal-GETC Area 3B": {
-    "unified_title": "IB Language A: Literature (non-English)",
+    "unified_title": "IB Language A: Literature HL (Non-English)",
     "confidence_title": 0.82,
     "classified_at": "2026-05-19",
     "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-ILAL4-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Skill Rule 4: IB offers Language A: Literature in many languages. The 'except English' variant is materially different from the English variant for articulation, so kept as its own unified title. Renamed parenthetical to '(non-English)' for brevity."
+    "_notes": "Skill Rule 4: IB offers Language A: Literature in many languages. The 'except English' variant is materially different from the English variant for articulation, so kept as its own unified title. Renamed parenthetical to '(non-English)' for brevity.",
+    "_merge_note": "merged from credential 'IB Language A: Literature (non-English)' (curator)"
   },
   "IB Language B (any language) HL": {
     "unified_title": "IB Language B HL",
@@ -31523,17 +31548,18 @@
     "_notes": null
   },
   "IB exam German A1 HL (Score 4-7)": {
-    "unified_title": "IB Language A: German HL",
+    "unified_title": "IB Language A1 HL (Non-English)",
     "confidence_title": 0.78,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-IEGA-1-001"
     ],
     "quality_flag": null,
-    "_notes": "German A1 is the older IB Language A1 (literature) classification; mapped to current Language A: German HL equivalent."
+    "_notes": "German A1 is the older IB Language A1 (literature) classification; mapped to current Language A: German HL equivalent.",
+    "_merge_note": "merged from credential 'IB Language A: German HL' (curator)"
   },
   "ICC Fire Inspector 1 Certificate": {
     "unified_title": "Fire Inspector 1",
@@ -53741,12 +53767,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "IB English Lit (A1) HL (Minimum Passing Score of 4)": {
-    "unified_title": "IB Language A1: English HL",
+    "unified_title": "IB Language A: Literature HL",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+    "_merge_note": "IB fold: read as IB Language A: Literature HL, IB's own subject (kb/_ib_official_titles.py)."
   },
   "IB Geography (HL)": {
     "unified_title": "IB Geography HL",
@@ -59407,12 +59434,13 @@
     "reviewed_by": "cer-procedure-high-school-rop@bot"
   },
   "IB English B HL (Minimum Passing Score of 4)": {
-    "unified_title": "IB Language B: English HL",
+    "unified_title": "IB Language B HL",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+    "_merge_note": "merged from credential 'IB Language B: English HL' (curator)"
   },
   "IB English Lang&Lit (A2) HL (Minimum Passing Score of 4)": {
     "unified_title": "IB Language A: Language and Literature HL",
@@ -59423,12 +59451,13 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "IB Global Politics": {
-    "unified_title": "IB Global Politics",
+    "unified_title": "IB Global Politics HL",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+    "_merge_note": "merged from credential 'IB Global Politics' (curator)"
   },
   "IB Language A - any language except English HL": {
     "unified_title": "IB Language A1 HL (Non-English)",
@@ -59447,12 +59476,13 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "IB World Religions HL": {
-    "unified_title": "IB World Religions HL",
+    "unified_title": "IB World Religions SL",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+    "_merge_note": "merged from credential 'IB World Religions HL' (curator)"
   },
   "IET-400 Inland Empire Electrical Training Center (Workplace Safety)": {
     "unified_title": "Introduction to Workplace Safety",
