@@ -50,8 +50,9 @@ together and places them in some order of priority and completion and known issu
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
 groups"*). Exhibits (#2656), the Common CR Reference (#2657, with your flag #2659), Subjects (#2658) and Program
-Requirements (#2660) run on it; Courses waits on where its List lives (SkyView's workspace or a COBI view from the
-Course row). A change to the engine reaches every List: a List spans the window and its table scrolls in its own box
+Requirements (#2660) run on it. **The Courses List lives in the COCI Lookup tab** (`#coci-lookup`), on the engine,
+its rows the local courses grouped by M-ID (Sam, 2026-11-01 ~23:02Z, in chat: *"WE have the COCI lookup tab in
+COBI...maybe courses in that?"*; S542 proceeding on his suggestion, so SkyView stays the map alone). A change to the engine reaches every List: a List spans the window and its table scrolls in its own box
 only when the window is narrower than its columns (#2661, Sam: *"full screen width and allow for a horizontal scroll
 bar when needed"*).
 
