@@ -60,26 +60,24 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    35.0,
-    37.0
+    34.0,
+    36.0
    ],
    "stated": [
     34.0,
     36.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 35.0-37.0; the catalog states 34.0-36.0"
-   ],
+   "why": [],
    "degree": {
     "pass": true,
     "status": "equal",
     "computed": [
-     59.0,
-     71.0
+     58.0,
+     70.0
     ],
     "stated": [
      60.0,
@@ -94,7 +92,7 @@
     "minimum": true,
     "fill": [
      0.0,
-     1.0
+     2.0
     ]
    }
   },
@@ -120,7 +118,7 @@
   "degree": {
    "status": "read"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -184,7 +182,7 @@
      },
      {
       "code": "CSIS 50L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -317,14 +315,16 @@
    "Degree total of 60 printed as 'Total Units 60'; electives 'if needed' fill to 60 degree-applicable units, so electives_fill_degree is true."
   ]
  },
- "extracted_run": 41192567009,
+ "extracted_run": 41278868382,
  "reconciled": [
   {
-   "field": "degree_total_minimum",
+   "field": "joined_units",
    "was": null,
-   "now": true,
-   "words": "electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270 (Horticulture A.S.): Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units)"
+   "now": {
+    "CSIS 50L": "CSIS 50"
+   },
+   "words": "Medical Assisting 03635: 'CSIS 50 · & 50L MS Office Applications · and MS Office Applications Lab 3' ... 'TOTAL MAJOR UNITS 37-40', the rows summing to 37-40 with the pair counted once; Business - Accounting 22052: 'Path 1 · BUSC 140 · & BUSC 150 · & BUSC 160' (college page read 41276213077)"
   }
  ],
- "read_run": 38844053281
+ "read_run": 41192567009
 }

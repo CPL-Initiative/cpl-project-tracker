@@ -60,20 +60,18 @@
    "pass": true
   },
   "arithmetic": {
-   "pass": false,
-   "status": "unequal",
+   "pass": true,
+   "status": "equal",
    "computed": [
-    10.0,
-    10.0
+    9.0,
+    9.0
    ],
    "stated": [
     9.0,
     9.0
    ],
    "against": "program",
-   "why": [
-    "the blocks sum to 10.0-10.0; the catalog states 9.0-9.0"
-   ]
+   "why": []
   },
   "repeated": {
    "codes": [],
@@ -97,7 +95,7 @@
   "degree": {
    "status": "n/a"
   },
-  "pass": false
+  "pass": true
  },
  "record": {
   "program": {
@@ -173,7 +171,7 @@
      },
      {
       "code": "NUTF 10L",
-      "units": null,
+      "units": 0,
       "units_max": null,
       "alternatives": [],
       "catalog_addition": false
@@ -189,5 +187,16 @@
    "The page shows a Career Information tab, but its content is not in the text."
   ]
  },
- "extracted_run": "38675240344"
+ "extracted_run": 41278868382,
+ "reconciled": [
+  {
+   "field": "joined_units",
+   "was": null,
+   "now": {
+    "NUTF 10L": "NUTF 10"
+   },
+   "words": "Medical Assisting 03635: 'CSIS 50 · & 50L MS Office Applications · and MS Office Applications Lab 3' ... 'TOTAL MAJOR UNITS 37-40', the rows summing to 37-40 with the pair counted once; Business - Accounting 22052: 'Path 1 · BUSC 140 · & BUSC 150 · & BUSC 160' (college page read 41276213077)"
+  }
+ ],
+ "read_run": "38675240344"
 }

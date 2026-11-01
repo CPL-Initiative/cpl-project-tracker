@@ -1,0 +1,355 @@
+{
+ "college": "Monterey Peninsula College",
+ "control_number": "03653",
+ "shape": "degree",
+ "title": "Administration of Justice: Law Enforcement",
+ "award": "A.S. Degree",
+ "source_url": "https://catalog.mpc.edu/programs-study/administration-justice/law-enforcement-as/",
+ "record_shape": 6,
+ "model": "claude-opus-5-5",
+ "stop_reason": "end_turn",
+ "usage": {
+  "input_tokens": 7770,
+  "cache_creation_input_tokens": 0,
+  "cache_read_input_tokens": 0,
+  "cache_creation": {
+   "ephemeral_5m_input_tokens": 0,
+   "ephemeral_1h_input_tokens": 0
+  },
+  "iterations": [
+   {
+    "input_tokens": 7770,
+    "output_tokens": 2906,
+    "cache_read_input_tokens": 0,
+    "cache_creation_input_tokens": 0,
+    "cache_creation": {
+     "ephemeral_5m_input_tokens": 0,
+     "ephemeral_1h_input_tokens": 0
+    },
+    "type": "message",
+    "model": null
+   }
+  ],
+  "output_tokens": 2906,
+  "output_tokens_details": {
+   "thinking_tokens": 1107
+  },
+  "service_tier": "standard",
+  "inference_geo": "global",
+  "speed": "standard"
+ },
+ "cost_usd": 0.0892,
+ "ms": 27064,
+ "seconds": 28.0,
+ "parts": null,
+ "error": null,
+ "score": {
+  "measure": "units",
+  "coverage": {
+   "placed": 15,
+   "listed": 15,
+   "share": 1.0,
+   "missing": [],
+   "unexplained": [],
+   "none_placed": false,
+   "pass": true
+  },
+  "invented": {
+   "count": 0,
+   "codes": [],
+   "flagged": [],
+   "pass": true
+  },
+  "arithmetic": {
+   "pass": false,
+   "status": "unequal",
+   "computed": [
+    2.0,
+    25.5
+   ],
+   "stated": [
+    20.0,
+    25.5
+   ],
+   "against": "program",
+   "why": [
+    "the blocks sum to 2.0-25.5; the catalog states 20.0-25.5"
+   ],
+   "degree": {
+    "pass": true,
+    "status": "equal",
+    "computed": [
+     26.0,
+     59.5
+    ],
+    "stated": [
+     60.0,
+     60.0
+    ],
+    "against": "degree",
+    "ge": [
+     24.0,
+     34.0
+    ],
+    "why": [],
+    "minimum": true,
+    "fill": [
+     0.5,
+     34.0
+    ]
+   }
+  },
+  "repeated": {
+   "codes": [],
+   "pass": true
+  },
+  "outcomes": {
+   "program": 7,
+   "courses": 0,
+   "count": 7,
+   "not_verbatim": [],
+   "why": [],
+   "heading_printed": true,
+   "heading_without_outcomes": false,
+   "pass": true
+  },
+  "careers": {
+   "count": 6,
+   "not_verbatim": [],
+   "pass": true
+  },
+  "degree": {
+   "status": "read"
+  },
+  "pass": false
+ },
+ "record": {
+  "program": {
+   "section_heading": "ADMINISTRATION OF JUSTICE - LAW ENFORCEMENT, ASSOCIATE IN SCIENCE",
+   "measure": "units",
+   "total_units": {
+    "min": 20,
+    "max": 25.5
+   },
+   "open_elective_units": null,
+   "degree_elective_units": {
+    "min": null,
+    "max": null
+   },
+   "ge_pattern": "MPC General Education or Cal-GETC",
+   "degree_total": {
+    "min": 60,
+    "max": 60
+   },
+   "ge_units": {
+    "min": 24,
+    "max": 34
+   },
+   "electives_fill_degree": true,
+   "outcomes": [
+    "Differentiate and evaluate the requirements and limitations of justice professionals, including critical thinking, problem-solving skills in real time.",
+    "Articulate the justice system’s objectives, the crime picture, role expectations of criminal justice professionals, and the various functions of each subsystem within the system.",
+    "Describe the system’s responsibilities to victims, the community, theory and factors in crime causation, the social implications of crime, and communication barriers between system professionals and multicultural communities.",
+    "Identify and apply definitions and concepts related to constitutional law, legal codes, and case law at the federal and state levels.",
+    "Analyze and apply legal concepts and make rational decisions about case processing.",
+    "Apply basic investigative proficiency to produce field notes, compile and analyze data, write accurate reports, and prepare formal reports suitable for court presentations.",
+    "Demonstrate knowledge of the rules of evidence, including legal definitions and concepts of evidentiary law, and apply basic investigative proficiencies."
+   ],
+   "careers": [
+    "officers",
+    "deputies",
+    "law enforcement",
+    "corrections",
+    "public safety",
+    "administration of justice"
+   ],
+   "degree_total_minimum": true
+  },
+  "blocks": [
+   {
+    "name": "Option 1: General (20-25.5 Units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": null,
+     "max": null
+    },
+    "courses": [
+     {
+      "code": "ADMJ 2",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 3",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 4",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 6",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 51",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 66",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 1: Select 2-3 units of the following",
+    "rule": "choose_units",
+    "minimum": 2,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 2,
+     "max": 3
+    },
+    "courses": [
+     {
+      "code": "ADMJ 57",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "ADMJ 70",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LETP 180",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "WORK 99",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 2: Extended Basic Academy (25 Units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 25,
+     "max": 25
+    },
+    "courses": [
+     {
+      "code": "LETP 145A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LETP 145B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LETP 145C",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   },
+   {
+    "name": "Option 3: Intensive Basic Academy (24 Units)",
+    "rule": "all",
+    "minimum": null,
+    "option_group": "Required Core",
+    "stated": {
+     "min": 24,
+     "max": 24
+    },
+    "courses": [
+     {
+      "code": "LETP 144A",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     },
+     {
+      "code": "LETP 144B",
+      "units": null,
+      "units_max": null,
+      "alternatives": [],
+      "catalog_addition": false
+     }
+    ]
+   }
+  ],
+  "course_outcomes": [],
+  "missing_explained": [],
+  "notes": [
+   "Option 1 is made of two blocks (six required ADMJ courses plus 'Select 2-3 units of the following'); both carry option_group 'Required Core' alongside Options 2 and 3, but the two Option 1 blocks are completed together, not as alternatives to each other.",
+   "The catalog prints no units beside individual courses, so course units are null.",
+   "Option 1 is labeled 20-25.5 units, but six 3-unit ADMJ courses plus 2-3 elective units would be about 20-21 units; the printed range appears to reuse the overall core range. Reviewer should check.",
+   "'Additional Requirements 34.5-40' covers competency requirements, GE (MPC General Education or Cal-GETC) and electives together, so it was not recorded as ge_units.",
+   "Degree total of 60 is printed as 'Total Units 60' for this award; electives fill to 60 'if needed' with no units printed.",
+   "LETP 145C is printed as 'P.O.S.T. Basic Academy I' and LETP 180 as 'Citizens' Academy'; codes match the closed list."
+  ]
+ },
+ "extracted_run": "41276977991",
+ "reconciled": [
+  {
+   "field": "ge_units",
+   "was": {
+    "min": null,
+    "max": null
+   },
+   "now": {
+    "min": 24,
+    "max": 34
+   },
+   "words": "general education pattern (MPC General Education or Cal-GETC) (https://catalog.mpc.edu/academic-information-policies/program-requirements/general-education-requirements/: MPC GE: Area 1A ENGL C1000 3; Areas 1B, 2, 3, 4, 5, 6 and 7, each \"Select three units from the following.\" Cal-GETC: \"satisfies the 34 units of lower-division general education requirements\")"
+  },
+  {
+   "field": "degree_total_minimum",
+   "was": null,
+   "now": true,
+   "words": "electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270 (Horticulture A.S.): Complete Competency Requirements, general education pattern (MPC General Education or Cal-GETC), and electives, if needed, for a total of 60 degree-applicable units (college page read 38749721270); Title 5 section 55063 sets an associate degree at a minimum of 60 semester units)"
+  }
+ ]
+}

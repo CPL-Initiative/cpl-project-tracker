@@ -3,18 +3,18 @@
  "programs": 206,
  "with_closed_list": 205,
  "found": 205,
- "extracted": 199,
- "errors": 0,
- "passed_machine_checks": 175,
+ "extracted": 205,
+ "errors": 3,
+ "passed_machine_checks": 183,
  "failed": {
   "coverage": 5,
   "invented": 0,
-  "arithmetic": 20,
+  "arithmetic": 15,
   "repeated": 2,
   "outcomes": 1
  },
- "cost_usd": 13.26,
- "cost_per_program": 0.0667,
+ "cost_usd": 13.48,
+ "cost_per_program": 0.0658,
  "not_found": [],
- "run": "41192567009"
+ "run": "41278868382"
 }

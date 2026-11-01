@@ -14,8 +14,8 @@
    "name": "Veteran map",
    "page": "veteran-sprint-map/ca_cpl_map_selfcontained.html",
    "audience": "public",
-   "last": "2026-10-25",
-   "outcome": "S470: sweeps clean light, dark and embed (9 widths each). First Light: no raw hex outside the three :root blocks, none in script, type only through --display and --font. The theme #2428 gave it, read in Chromium: no stored theme, System, or Light open Light on any device setting; a stored Dark opens Dark; ?embed=1 sets no data-theme and follows COBI's System (dark on a dark device). Wiring: the view reads no shared dataset. Nothing to fix; the S435 remainder (the panel tabs keep their tab strip) stands."
+   "last": "2026-11-01",
+   "outcome": "S536: npm run a11y passes all three targets (light, dark, embedded) at nine widths; no datasets to wire; First Light holds (every hex sits in a token definition). Nothing to fix."
   },
   {
    "id": "skyview",
