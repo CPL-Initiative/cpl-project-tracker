@@ -500,3 +500,22 @@ first sentence read as missing data, and the control lives in the header's Sign 
   in `unsettled_campus` for a campus's own page.
 - **A title near a variant is still outside it.** *Dean of Enrollment Services* runs Admissions and Records at Cañada and
   Alameda and reads as `dean_ar`, but its words name neither admissions nor registrar. Listed, never filled.
+
+## S539 SkySilverberry (2026-11-01, 13:12Z firing): VPBS takes VP Administrative Services; the third read
+
+- **Sam answered Sheet 151 card 1 *vpbs* four minutes before the firing** (13:08Z). The runner's VPBS pattern took the
+  title, and the four held rows loaded (apply 41311609490, receipt `kb/receipts/college_contacts_harvest_sheet151-vpbs.json`: 4 new, 0 gone).
+- **A load that names a college is a claim that the college was read whole.** The apply function marks gone every row of
+  a named college the load does not repeat, so loading four held rows under their colleges would have marked the 12 other
+  people already filed at Antelope Valley, Barstow, Chabot and Coastline gone (the receipt's before-values). The first try failed safe: the function also refuses a
+  row whose college is not named, and returned 400. The fix is a `partial` flag in the function, not a workaround in the
+  records file.
+- **Third read: 37 people at 10 colleges, 0 gone** (run 41310748240). Two VPBS rows came in under the new reading the same
+  night (Cypress's *Vice President of Administrative Services*; Copper Mountain's *Chief Business Officer*).
+- **The runner's position is a hint; the record's position is a reading.** Copper Mountain's *Dean of Instruction, Career
+  Technical Education, and Career Services* matched `dean_instruction` first in the pattern order; the record files it as
+  `dean_cte`. Crafton Hills' *V.P. of Instruction* matched nothing (the pattern spells *Vice President*); filed as `vpaa`.
+- **Read the whole line before filing a title.** The compact view cut lines at 60 characters, and two titles finished
+  from memory came out wrong (*Career Education* for *Career Services*). Check every truncated title against the page's
+  line before it goes in the records file.
+
