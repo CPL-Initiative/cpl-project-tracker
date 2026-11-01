@@ -377,6 +377,9 @@ jobs:
       # The same pattern for IB: a college's IB title takes IB's own subject and level.
       - name: IB titles fold under IB's own subject names
         run: python3 tests/ib_official_titles_test.py
+      # And for CLEP: one credential per exam, its levels folded in (Open Asks Sheet 150 card 2).
+      - name: CLEP titles fold under College Board's exam names
+        run: python3 tests/clep_official_titles_test.py
       # The CER fold (Sheet 94 card 1): a held assignment holds only itself; the
       # clean ones beside it fold.
       - name: CER fold holds each conflict by itself

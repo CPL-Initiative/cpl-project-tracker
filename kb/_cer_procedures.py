@@ -194,6 +194,8 @@ def residue(title, issuer="", via=""):
         return []   # College Board's own exam name stands as written ("AP Computer Science A" ends in A)
     if pre.IB.is_official(t):
         return []   # IB's own subject name stands as written ("IB Language A1 HL (Non-English)")
+    if pre.CLEP.is_official(t):
+        return []   # College Board's CLEP exam name stands as written ("CLEP Western Civilization 1")
     if re.match(r"^%s\b" % _CONN, t, re.I) or re.search(r"\b%s$" % _CONN, t, re.I):
         why.append("a dangling word")
     if re.search(r"^[-–(,:;/&]|[-–(,:;/&]$", t.strip()):

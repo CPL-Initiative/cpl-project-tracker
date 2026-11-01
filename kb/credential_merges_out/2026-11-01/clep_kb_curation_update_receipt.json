@@ -1,0 +1,469 @@
+{
+ "table": "kb_curation",
+ "kind": "guarded UPDATE",
+ "at": "2026-11-01",
+ "by": "SkyTeaberry",
+ "cohort": "cer-clep-fold-skyteaberry@bot",
+ "basis": "Sam's ruling on Open Asks Sheet 150 card 2 (2026-11-01 01:50Z): fold. One credential per CLEP exam, levels folded in, Arabic numerals, no period subtitle.",
+ "human_rows": "9 of the rows are a person's: _UNCLASSIFIED::CLEP French Language (Levels 1 and 2) - Complete both (map@rccd.edu); _UNCLASSIFIED::CLEP German Language (Levels 1 and 2) - Complete both (map@rccd.edu); _UNCLASSIFIED::CLEP Spanish Language (Levels 1 and 2) - Complete both (map@rccd.edu); _UNCLASSIFIED::CLEP French Level III (map@rccd.edu); _UNCLASSIFIED::CLEP German Level III (map@rccd.edu); _UNCLASSIFIED::CLEP Spanish with Writing: Levels 1 and 2 (slee@cccco.edu); _CREDENTIAL_REVIEW::French Language (Levels 1 and 2) (map@rccd.edu); _CREDENTIAL_REVIEW::German Language (Levels 1 and 2) (map@rccd.edu); _CREDENTIAL_REVIEW::Spanish Language (Levels 1 and 2) (map@rccd.edu). The ruling folds the levels and the prefix-less '(Levels 1 and 2)' credentials into the exam, so each moves with the rest; Sam's own save already read Spanish with Writing as one exam with both levels.",
+ "guard": {
+  "assignments": "UPDATE ... SET value=<after>, reviewer_email=cohort, reviewed_at=now() WHERE course_id=<id> AND field=<field> AND value=<before>",
+  "panel": "UPDATE ... SET course_id=<after> WHERE course_id=<id> AND field=<field> AND value=<before> AND no row holds (<after>, <field>); reviewer_email and reviewed_at stay the person's"
+ },
+ "rollback": {
+  "assignments": "for each row: UPDATE kb_curation SET value=<before.value>, reviewer_email=<before.reviewer_email>, reviewed_at=<before.reviewed_at> WHERE course_id=<id> AND field=<field> AND reviewer_email='cer-clep-fold-skyteaberry@bot'",
+  "panel": "for each row: UPDATE kb_curation SET course_id=<course_id> WHERE course_id=<after.course_id> AND field=<field> AND reviewer_email=<before.reviewer_email>"
+ },
+ "assignments": [
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language (Levels 1 and 2) - Complete both",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "French Language (Levels 1 and 2)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-08 00:05:06.780863+00"
+   },
+   "after": {
+    "value": "CLEP French Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language (Levels 1 and 2) - Complete both",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "German Language (Levels 1 and 2)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-08 00:05:07.643378+00"
+   },
+   "after": {
+    "value": "CLEP German Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language (Levels 1 and 2) - Complete both",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "Spanish Language (Levels 1 and 2)",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-08 00:05:25.195115+00"
+   },
+   "after": {
+    "value": "CLEP Spanish Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language Level I (ACE Recommended Score of 50)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP French Language Level 1",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP French Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language Level II (ACE Recommended Score of 59)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP French Language Level 2",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP French Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language, Level I (Score of 50 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP French Language Level 1",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP French Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language, Level II (Score of 59 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP French Language Level 2",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP French Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Language: Level II",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP French Language Level 2",
+    "reviewer_email": "cer-procedure-brand-family@bot",
+    "reviewed_at": "2026-10-28 14:36:41.831286+00"
+   },
+   "after": {
+    "value": "CLEP French Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP French Level III",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP French Language Level III",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-08 00:04:27.601085+00"
+   },
+   "after": {
+    "value": "CLEP French Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language Level I (ACE Recommended Score of 50)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP German Language Level 1",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP German Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language Level II (ACE Recommended Score of 60)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP German Language Level 2",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP German Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language, Level I (Score of 50 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP German Language Level 1",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP German Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language, Level II (Score of 60 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP German Language Level 2",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP German Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Language: Level II",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP German Language Level 2",
+    "reviewer_email": "cer-procedure-brand-family@bot",
+    "reviewed_at": "2026-10-28 14:36:41.831286+00"
+   },
+   "after": {
+    "value": "CLEP German Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP German Level III",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP German Language Level III",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-08 00:04:27.646152+00"
+   },
+   "after": {
+    "value": "CLEP German Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Information Systems and Computer Apps (Score of 50 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Information Systems and Computer Applications",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP Information Systems"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Pre-Calculus (Score of 50)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Pre-Calculus",
+    "reviewer_email": "preseed-v1@bot",
+    "reviewed_at": "2026-07-07 18:27:01.567802+00"
+   },
+   "after": {
+    "value": "CLEP Precalculus"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Level II",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish Language Level 2",
+    "reviewer_email": "cer-procedure-brand-family@bot",
+    "reviewed_at": "2026-10-28 14:36:41.831286+00"
+   },
+   "after": {
+    "value": "CLEP Spanish Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Language: Levels 1 and 2",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "Spanish Language (Levels 1 and 2)",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-31 14:01:01.108182+00"
+   },
+   "after": {
+    "value": "CLEP Spanish Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Level I (Score of 50 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish Language Level 1",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP Spanish Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish Level II (Score of 63 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish Language Level 2",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP Spanish Language"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish With Writing II",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing Level II",
+    "reviewer_email": "cer-procedure-brand-family@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish and Writing II",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing 2",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish and Writing Level II",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing Level II",
+    "reviewer_email": "preseed-v1@bot",
+    "reviewed_at": "2026-07-07 18:30:06.693747+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing I (Score of 50 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing 1",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing Level 2",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing Level II",
+    "reviewer_email": "preseed-v1@bot",
+    "reviewed_at": "2026-07-07 18:30:06.693747+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing Level II",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing Level II",
+    "reviewer_email": "preseed-v1@bot",
+    "reviewed_at": "2026-07-07 18:27:01.567802+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing Level II (Score of 63 or higher)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing 2",
+    "reviewer_email": "cer-procedure-classifier@bot",
+    "reviewed_at": "2026-10-18 17:37:29.85451+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing Level II (Score of 63)",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing Level II",
+    "reviewer_email": "preseed-v1@bot",
+    "reviewed_at": "2026-07-07 18:27:01.567802+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing ll",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing Level II",
+    "reviewer_email": "preseed-v1@bot",
+    "reviewed_at": "2026-07-07 18:30:06.693747+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing: Level 2",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing Level II",
+    "reviewer_email": "preseed-v1@bot",
+    "reviewed_at": "2026-07-07 18:30:06.693747+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing: Level II",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing Level II",
+    "reviewer_email": "cer-procedure-brand-family@bot",
+    "reviewed_at": "2026-10-28 14:36:41.831286+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CLEP Spanish with Writing: Levels 1 and 2",
+   "field": "unified_title_assignment",
+   "before": {
+    "value": "CLEP Spanish with Writing (Levels 1 and 2)",
+    "reviewer_email": "slee@cccco.edu",
+    "reviewed_at": "2026-10-31 16:28:39.654254+00"
+   },
+   "after": {
+    "value": "CLEP Spanish with Writing"
+   }
+  }
+ ],
+ "panel_moves": [
+  {
+   "course_id": "_CREDENTIAL_REVIEW::French Language (Levels 1 and 2)",
+   "field": "reviewed_marker",
+   "before": {
+    "value": "1",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-10 14:07:19.013349+00"
+   },
+   "after": {
+    "course_id": "_CREDENTIAL_REVIEW::CLEP French Language"
+   }
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::German Language (Levels 1 and 2)",
+   "field": "reviewed_marker",
+   "before": {
+    "value": "1",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-10 14:07:19.06822+00"
+   },
+   "after": {
+    "course_id": "_CREDENTIAL_REVIEW::CLEP German Language"
+   }
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::Spanish Language (Levels 1 and 2)",
+   "field": "reviewed_marker",
+   "before": {
+    "value": "1",
+    "reviewer_email": "map@rccd.edu",
+    "reviewed_at": "2026-07-10 14:07:19.06995+00"
+   },
+   "after": {
+    "course_id": "_CREDENTIAL_REVIEW::CLEP Spanish Language"
+   }
+  }
+ ],
+ "panel_left_in_place": [
+  {
+   "course_id": "_CREDENTIAL_REVIEW::CLEP French Language Level III",
+   "field": "reviewed_marker",
+   "value": "1",
+   "reviewer_email": "map@rccd.edu",
+   "why": "the winner 'CLEP French Language' already holds a reviewed_marker row; a second cannot sit under the same key and nothing is deleted"
+  },
+  {
+   "course_id": "_CREDENTIAL_REVIEW::CLEP German Language Level III",
+   "field": "reviewed_marker",
+   "value": "1",
+   "reviewer_email": "map@rccd.edu",
+   "why": "the winner 'CLEP German Language' already holds a reviewed_marker row; a second cannot sit under the same key and nothing is deleted"
+  }
+ ]
+}

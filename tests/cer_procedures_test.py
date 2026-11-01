@@ -40,7 +40,7 @@ def check(name, cond, why=""):
 
 
 # ── the procedures file ──────────────────────────────────────────────────────
-KNOWN_LANES = {"family", "ap", "ib", "statewide", "nccer", "cslb", "journeyman", "carpenters", "ironworker",
+KNOWN_LANES = {"family", "ap", "ib", "clep", "statewide", "nccer", "cslb", "journeyman", "carpenters", "ironworker",
                "single", "identity", "school"}
 procs = cp.load_procedures()
 check("every procedure in force names who, when and their words",

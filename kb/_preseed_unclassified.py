@@ -48,6 +48,7 @@ from datetime import date, datetime, timezone
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _ap_official_titles as AP  # noqa: E402  (the official AP exam names)
 import _ib_official_titles as IB  # noqa: E402  (IB's Diploma Programme subjects)
+import _clep_official_titles as CLEP  # noqa: E402  (College Board's CLEP exams)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 AUDIT_PATH = os.path.join(HERE, "exhibit_audit", "latest.json")
@@ -595,17 +596,17 @@ JUDGMENT_SINGLES = {
         "note": "Statewide CCC-collaborative exhibit kept verbatim; ICC "
                 "administers California-code certification exams — verify."},
     "CLEP French Level III": {
-        "title": "CLEP French Language Level III", "issuer": "College Board",
+        "title": "CLEP French Language", "issuer": "College Board",
         "confidence": 0.5,
-        "note": "Extends the existing 'CLEP French Language Level I/II' ladder — "
-                "Santa Rosa awards a third credit tier for higher scores; verify "
-                "before folding."},
+        "note": "Santa Rosa's third credit tier for a higher score on the one "
+                "CLEP French Language exam; the levels fold into the exam (Open "
+                "Asks Sheet 150 card 2, 2026-11-01)."},
     "CLEP German Level III": {
-        "title": "CLEP German Language Level III", "issuer": "College Board",
+        "title": "CLEP German Language", "issuer": "College Board",
         "confidence": 0.5,
-        "note": "Extends the existing 'CLEP German Language Level I/II' ladder — "
-                "Santa Rosa awards a third credit tier for higher scores; verify "
-                "before folding."},
+        "note": "Santa Rosa's third credit tier for a higher score on the one "
+                "CLEP German Language exam; the levels fold into the exam (Open "
+                "Asks Sheet 150 card 2, 2026-11-01)."},
 }
 
 
@@ -1031,6 +1032,17 @@ def stage_ib(raw):
             "note": "IB's own Diploma Programme subject and level, read from the title."}
 
 
+def stage_clep(raw):
+    """A CLEP title takes College Board's exam name (kb/_clep_official_titles.py; Sam, Open Asks
+    Sheet 150 card 2, 2026-11-01: one credential per exam, its levels folded in, Arabic numerals, no
+    period subtitle). A title naming two exams is left to the classifier."""
+    r = CLEP.resolve(raw)
+    if not r or not r.get("title"):
+        return None
+    return {"title": r["title"], "issuer": CLEP.ISSUER, "confidence": 0.95, "via": "clep",
+            "note": "College Board's CLEP exam name, levels folded in, read from the title."}
+
+
 def stage_family(raw, sw_index, fam_index, issuer_of):
     """Match a residual raw against the statewide CCC catalog, then ALL existing
     house families, after stripping non-identity decoration ('Certification:'
@@ -1139,7 +1151,7 @@ def build_stage_plan(queue, families, assigned_raws, sw_index=None, fam_index=No
     for raw in queue:
         if raw in assigned_raws:
             continue
-        rec = stage_ap(raw) or stage_ib(raw)
+        rec = stage_ap(raw) or stage_ib(raw) or stage_clep(raw)
         for lane in (() if rec else (stage_journeyman, stage_carpenters_trade, stage_ironworker, stage_nccer)):
             rec = lane(raw)
             if rec:

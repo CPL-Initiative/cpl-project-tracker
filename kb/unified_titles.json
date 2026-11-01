@@ -13613,30 +13613,32 @@
     "_notes": "Local CBE; ECE curriculum course."
   },
   "CLEP  French Level I (SAC Associate Degree Units)": {
-    "unified_title": "CLEP French Language Level 1",
+    "unified_title": "CLEP French Language",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CFLI1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP French Language Level 1' (curator)"
   },
   "CLEP  German Level I (SAC Associate Degree Units)": {
-    "unified_title": "CLEP German Language Level 1",
+    "unified_title": "CLEP German Language",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CGLI1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP German Language Level 1' (curator)"
   },
   "CLEP : American Government": {
     "unified_title": "CLEP American Government",
@@ -13744,17 +13746,18 @@
     "_merge_note": "merged from credential 'CLEP College Algebra — Trigonometry' (curator)"
   },
   "CLEP : German Level II": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-C:GL-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP : History, United States I": {
     "unified_title": "CLEP History of the United States 1",
@@ -13835,17 +13838,18 @@
     "_notes": null
   },
   "CLEP : Pre-Calculus": {
-    "unified_title": "CLEP Pre-Calculus",
+    "unified_title": "CLEP Precalculus",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-C:P1-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Pre-Calculus' (curator)"
   },
   "CLEP : Principles of Macroeconomics": {
     "unified_title": "CLEP Principles of Macroeconomics",
@@ -13874,30 +13878,32 @@
     "_notes": null
   },
   "CLEP : Spanish Level II": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-C:SL-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP : Spanish with Writing Level II": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-C:SW-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP : Trigonometry": {
     "unified_title": "CLEP Trigonometry",
@@ -14342,56 +14348,60 @@
     "_notes": null
   },
   "CLEP Exam French Language, Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP French Language Level 1",
+    "unified_title": "CLEP French Language",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CEFL1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP French Language Level 1' (curator)"
   },
   "CLEP Exam French Language, Level II (Score of 59 or higher)": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CEFL-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP Exam German Language, Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP German Language Level 1",
+    "unified_title": "CLEP German Language",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CEGL-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP German Language Level 1' (curator)"
   },
   "CLEP Exam German Language, Level II (Score of 60 or higher)": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CEGL1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP Exam History, United States I (Score of 50 or higher)": {
     "unified_title": "CLEP History of the United States 1",
@@ -14446,17 +14456,18 @@
     "_notes": "Stripped score qualifier."
   },
   "CLEP Exam Information Systems and Computer Apps (Score of 50 or higher)": {
-    "unified_title": "CLEP Information Systems and Computer Applications",
+    "unified_title": "CLEP Information Systems",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CEIS3-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier; expanded 'Apps' to 'Applications'."
+    "_notes": "Stripped score qualifier; expanded 'Apps' to 'Applications'.",
+    "_merge_note": "merged from credential 'CLEP Information Systems and Computer Applications' (curator)"
   },
   "CLEP Exam Introduction to Educational Psychology (Score of 50 or higher)": {
     "unified_title": "CLEP Introduction to Educational Psychology",
@@ -14589,56 +14600,60 @@
     "_notes": null
   },
   "CLEP Exam Spanish Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP Spanish Language Level 1",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CESL1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 1' (curator)"
   },
   "CLEP Exam Spanish Level II (Score of 63 or higher)": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CESL2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Exam Spanish with Writing I (Score of 50 or higher)": {
-    "unified_title": "CLEP Spanish with Writing Level 1",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CESW-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level 1' (curator)"
   },
   "CLEP Exam Spanish with Writing II (Score of 63 or higher)": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CESW1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Exam Western Civilization I (Score of 50 or higher)": {
     "unified_title": "CLEP Western Civilization 1",
@@ -14840,17 +14855,18 @@
     "_notes": null
   },
   "CLEP Exam: Information Systems and Computer Applications": {
-    "unified_title": "CLEP Information Systems and Computer Applications",
+    "unified_title": "CLEP Information Systems",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CEIS-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Information Systems and Computer Applications' (curator)"
   },
   "CLEP Exam: Introductory Psychology": {
     "unified_title": "CLEP Introductory Psychology",
@@ -14970,17 +14986,18 @@
     "_notes": "Legacy CLEP exam."
   },
   "CLEP Exam: Spanish Language Level II": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.98,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CESL-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Exam: Western Civilization I: Ancient Near East to 1648": {
     "unified_title": "CLEP Western Civilization 1",
@@ -15049,39 +15066,41 @@
     "_notes": "Stripped college-specific articulation note."
   },
   "CLEP French Level I": {
-    "unified_title": "CLEP French Language Level 1",
+    "unified_title": "CLEP French Language",
     "confidence_title": 0.96,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CFLI4-1-001",
       "MAPSAS-CFLI6-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP French Language Level 1' (curator)"
   },
   "CLEP French Level I (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP French Language Level 1",
+    "unified_title": "CLEP French Language",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CFLI2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped CSU articulation note."
+    "_notes": "Stripped CSU articulation note.",
+    "_merge_note": "merged from credential 'CLEP French Language Level 1' (curator)"
   },
   "CLEP French Level II": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 0.96,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CFLI-1-001",
       "MAPSAS-CFLI5-1-001",
@@ -15089,55 +15108,59 @@
       "MAPSAS-CFLI8-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Level II (Required Score of 59)": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CFLI3-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped score qualifier."
+    "_notes": "Stripped score qualifier.",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP German Level I": {
-    "unified_title": "CLEP German Language Level 1",
+    "unified_title": "CLEP German Language",
     "confidence_title": 0.96,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CGLI4-1-001",
       "MAPSAS-CGLI6-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP German Language Level 1' (curator)"
   },
   "CLEP German Level I (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP German Language Level 1",
+    "unified_title": "CLEP German Language",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CGLI2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Stripped CSU articulation note."
+    "_notes": "Stripped CSU articulation note.",
+    "_merge_note": "merged from credential 'CLEP German Language Level 1' (curator)"
   },
   "CLEP German Level II": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 0.96,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CGLI-1-001",
       "MAPSAS-CGLI3-1-001",
@@ -15146,7 +15169,8 @@
       "MAPSAS-CGLI8-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP History, US I": {
     "unified_title": "CLEP History of the United States 1",
@@ -15238,56 +15262,60 @@
     "_notes": null
   },
   "CLEP Information Systems": {
-    "unified_title": "CLEP Information Systems and Computer Applications",
+    "unified_title": "CLEP Information Systems",
     "confidence_title": 0.85,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CIS2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Shortened title; same CLEP exam as Information Systems and Computer Applications."
+    "_notes": "Shortened title; same CLEP exam as Information Systems and Computer Applications.",
+    "_merge_note": "merged from credential 'CLEP Information Systems and Computer Applications' (curator)"
   },
   "CLEP Information Systems and Computer Applications": {
-    "unified_title": "CLEP Information Systems and Computer Applications",
+    "unified_title": "CLEP Information Systems",
     "confidence_title": 0.97,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CISA2-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Information Systems and Computer Applications' (curator)"
   },
   "CLEP Information Systems and Computer Applications (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP Information Systems and Computer Applications",
+    "unified_title": "CLEP Information Systems",
     "confidence_title": 0.93,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CISA1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "CSU articulation suffix stripped."
+    "_notes": "CSU articulation suffix stripped.",
+    "_merge_note": "merged from credential 'CLEP Information Systems and Computer Applications' (curator)"
   },
   "CLEP Information Systems and Computer Applications (SAC Associate Degree Units)": {
-    "unified_title": "CLEP Information Systems and Computer Applications",
+    "unified_title": "CLEP Information Systems",
     "confidence_title": 0.93,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CISA-1-001"
     ],
     "quality_flag": null,
-    "_notes": "SAC unit-type suffix stripped."
+    "_notes": "SAC unit-type suffix stripped.",
+    "_merge_note": "merged from credential 'CLEP Information Systems and Computer Applications' (curator)"
   },
   "CLEP Introduction Business Law": {
     "unified_title": "CLEP Introductory Business Law",
@@ -15666,123 +15694,132 @@
     "_notes": "Trailing whitespace."
   },
   "CLEP Spanish Level I": {
-    "unified_title": "CLEP Spanish Language Level 1",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSLI4-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 1' (curator)"
   },
   "CLEP Spanish Level I (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP Spanish Language Level 1",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSLI2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "CSU articulation suffix stripped."
+    "_notes": "CSU articulation suffix stripped.",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 1' (curator)"
   },
   "CLEP Spanish Level I (SAC Associate Degree Units)": {
-    "unified_title": "CLEP Spanish Language Level 1",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSLI1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "SAC unit-type suffix stripped."
+    "_notes": "SAC unit-type suffix stripped.",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 1' (curator)"
   },
   "CLEP Spanish Level II": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSLI-1-001",
       "MAPSAS-CSLI5-1-001",
       "MAPSAS-CSLI6-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish Level II (required Score of 63)": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 0.9,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSLI3-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Score qualifier stripped."
+    "_notes": "Score qualifier stripped.",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish With Writing I (CSU Semester Units Earned Toward CSU Admission)": {
-    "unified_title": "CLEP Spanish with Writing 1",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSWW2-1-001"
     ],
     "quality_flag": null,
-    "_notes": "CSU articulation suffix stripped."
+    "_notes": "CSU articulation suffix stripped.",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 1' (curator)"
   },
   "CLEP Spanish With Writing I (SAC Associate Degree Units)": {
-    "unified_title": "CLEP Spanish with Writing 1",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSWW1-1-001"
     ],
     "quality_flag": null,
-    "_notes": "SAC unit-type suffix stripped."
+    "_notes": "SAC unit-type suffix stripped.",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 1' (curator)"
   },
   "CLEP Spanish With Writing II (required Score of 63)": {
-    "unified_title": "CLEP Spanish with Writing 2",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 0.92,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSWW3-1-001"
     ],
     "quality_flag": null,
-    "_notes": "Score qualifier stripped."
+    "_notes": "Score qualifier stripped.",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 2' (curator)"
   },
   "CLEP Spanish with Writing II": {
-    "unified_title": "CLEP Spanish with Writing 2",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 0.95,
     "classified_at": "2026-05-20",
     "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
     "source_exhibit_ids": [
       "MAPSAS-CSWW-1-001"
     ],
     "quality_flag": null,
-    "_notes": null
+    "_notes": null,
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 2' (curator)"
   },
   "CLEP Trigonometry": {
     "unified_title": "CLEP Trigonometry",
@@ -45242,204 +45279,229 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP French (max of 10 units awarded) Level II": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Language, Level 2": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Language: 2": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Language: Level 1": {
-    "unified_title": "CLEP French Language Level 1",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 1' (curator)"
   },
   "CLEP French Language:  Level 1": {
-    "unified_title": "CLEP French Language Level 1",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 1' (curator)"
   },
   "CLEP French Language:  Level 2": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Level 2": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Level II (Score of \t59)": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Level II*": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:28:04.10796+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French [1] Level II": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French – Level 2*": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French** Level II": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French, Level II": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP German (max of 10 units awarded) Level II": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German II": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German Language, Level 2": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German Language: Level 1": {
-    "unified_title": "CLEP German Language Level 1",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 1' (curator)"
   },
   "CLEP German Language: Level 2": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German Level 2": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German Level II (Score of 60)": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German Level II*": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German – Level 2*": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German** Level II": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German, Level II": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German1 Level II": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP HIstory of the US I: Early Colonization": {
     "unified_title": "CLEP History of the United States 1",
@@ -45674,12 +45736,13 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Pre-Calculus (Score of 50)": {
-    "unified_title": "CLEP Pre-Calculus",
+    "unified_title": "CLEP Precalculus",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Pre-Calculus' (curator)"
   },
   "CLEP Precalculus": {
     "unified_title": "CLEP Precalculus",
@@ -45738,172 +45801,193 @@
     "reviewed_by": "preseed-v1@bot"
   },
   "CLEP Spanish (max of 10 units awarded) Level II": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish - Level 2*": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish Language, Level 2": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish Language: Level 1": {
-    "unified_title": "CLEP Spanish Language Level 1",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 1' (curator)"
   },
   "CLEP Spanish Language: Level 2": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish Level 2": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish Level II (Score of 63)": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish Level II (after FA15)": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish Level II (until FA15)": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish Level II*": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish [1] Level II": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish and Writing Level II": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Spanish with Writing I": {
-    "unified_title": "CLEP Spanish with Writing 1",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 1' (curator)"
   },
   "CLEP Spanish with Writing Level 2": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Spanish with Writing Level II": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Spanish with Writing Level II (Score of 63)": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Spanish with Writing ll": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Spanish with Writing: Level 2": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Spanish** Level II": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish** with Writing II": {
-    "unified_title": "CLEP Spanish with Writing 2",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 2' (curator)"
   },
   "CLEP Spanish, Level II": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-07-07",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-    "reviewed_by": "preseed-v1@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Trigonometry (only if taken before F06)": {
     "unified_title": "CLEP Trigonometry",
@@ -51259,100 +51343,112 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "CLEP French Language (Levels 1 and 2) - Complete both": {
-    "unified_title": "French Language (Levels 1 and 2)",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:05:06.780863+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'French Language (Levels 1 and 2)' (curator)"
   },
   "CLEP French Language Level I (ACE Recommended Score of 50)": {
-    "unified_title": "CLEP French Language Level 1",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 1' (curator)"
   },
   "CLEP French Language Level II (ACE Recommended Score of 59)": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Language, Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP French Language Level 1",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 1' (curator)"
   },
   "CLEP French Language, Level II (Score of 59 or higher)": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP French Level III": {
-    "unified_title": "CLEP French Language Level III",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:27.601452+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level III' (curator)"
   },
   "CLEP German Language (Levels 1 and 2) - Complete both": {
-    "unified_title": "German Language (Levels 1 and 2)",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:05:07.643378+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'German Language (Levels 1 and 2)' (curator)"
   },
   "CLEP German Language Level I (ACE Recommended Score of 50)": {
-    "unified_title": "CLEP German Language Level 1",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 1' (curator)"
   },
   "CLEP German Language Level II (ACE Recommended Score of 60)": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German Language, Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP German Language Level 1",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 1' (curator)"
   },
   "CLEP German Language, Level II (Score of 60 or higher)": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP German Level III": {
-    "unified_title": "CLEP German Language Level III",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:27.64725+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level III' (curator)"
   },
   "CLEP History of the US I: Early Colonization to 1877": {
     "unified_title": "CLEP History of the United States 1",
@@ -51443,12 +51539,13 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "CLEP Information Systems and Computer Apps (Score of 50 or higher)": {
-    "unified_title": "CLEP Information Systems and Computer Applications",
+    "unified_title": "CLEP Information Systems",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Information Systems and Computer Applications' (curator)"
   },
   "CLEP Introduction to Educational Psychology (Score of 50 or higher)": {
     "unified_title": "CLEP Introduction to Educational Psychology",
@@ -51603,60 +51700,67 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "CLEP Spanish Language (Levels 1 and 2) - Complete both": {
-    "unified_title": "Spanish Language (Levels 1 and 2)",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:05:25.195447+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'Spanish Language (Levels 1 and 2)' (curator)"
   },
   "CLEP Spanish Level I (Score of 50 or higher)": {
-    "unified_title": "CLEP Spanish Language Level 1",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 1' (curator)"
   },
   "CLEP Spanish Level II (Score of 63 or higher)": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish With Writing II": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-brand-family@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Spanish and Writing II": {
-    "unified_title": "CLEP Spanish with Writing 2",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 2' (curator)"
   },
   "CLEP Spanish with Writing I (Score of 50 or higher)": {
-    "unified_title": "CLEP Spanish with Writing 1",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 1' (curator)"
   },
   "CLEP Spanish with Writing Level II (Score of 63 or higher)": {
-    "unified_title": "CLEP Spanish with Writing 2",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-10-18",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing 2' (curator)"
   },
   "CLEP Western Civilization I (ACE Recommended Score of 50)": {
     "unified_title": "CLEP Western Civilization 1",
@@ -56968,20 +57072,22 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "CLEP French Language: Level II": {
-    "unified_title": "CLEP French Language Level 2",
+    "unified_title": "CLEP French Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-28",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-    "reviewed_by": "cer-procedure-brand-family@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP French Language Level 2' (curator)"
   },
   "CLEP German Language: Level II": {
-    "unified_title": "CLEP German Language Level 2",
+    "unified_title": "CLEP German Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-28",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-    "reviewed_by": "cer-procedure-brand-family@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP German Language Level 2' (curator)"
   },
   "CLEP History, United States I: Early Colonization to 1877": {
     "unified_title": "CLEP History of the United States 1",
@@ -57032,20 +57138,22 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "CLEP Spanish Language: Level II": {
-    "unified_title": "CLEP Spanish Language Level 2",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-28",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-    "reviewed_by": "cer-procedure-brand-family@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish Language Level 2' (curator)"
   },
   "CLEP Spanish with Writing: Level II": {
-    "unified_title": "CLEP Spanish with Writing Level II",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-10-28",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-    "reviewed_by": "cer-procedure-brand-family@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing Level II' (curator)"
   },
   "CLEP Western Civilization I - Area 3B": {
     "unified_title": "CLEP Western Civilization 1",
@@ -58199,20 +58307,22 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "CLEP Spanish Language: Levels 1 and 2": {
-    "unified_title": "Spanish Language (Levels 1 and 2)",
+    "unified_title": "CLEP Spanish Language",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'Spanish Language (Levels 1 and 2)' (curator)"
   },
   "CLEP Spanish with Writing: Levels 1 and 2": {
-    "unified_title": "CLEP Spanish with Writing (Levels 1 and 2)",
+    "unified_title": "CLEP Spanish with Writing",
     "confidence_title": 1.0,
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:28:39.654254+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01",
+    "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+    "_merge_note": "merged from credential 'CLEP Spanish with Writing (Levels 1 and 2)' (curator)"
   },
   "CSTI Certified FRA & FRO Instructor": {
     "unified_title": "CSTI Hazardous Materials First Responder Awareness and Operations (FRA/FRO) Instructor",

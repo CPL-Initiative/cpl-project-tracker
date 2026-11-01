@@ -4,9 +4,9 @@
   "supabase_tables": 103,
   "rpcs": 47,
   "edge_functions": 11,
-  "file_datasets": 751,
+  "file_datasets": 752,
   "external_services": 192,
-  "consumers": 497,
+  "consumers": 499,
   "workflows": 59,
   "data_js_files": 71,
   "tabs": 39
@@ -12132,6 +12132,13 @@
   "file:kb/credential_merges.json": {
    "consumers": [
     {
+     "id": "script:kb/_clep_fold_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 94
+    },
+    {
      "id": "script:kb/_ib_fold_apply.py",
      "kind": "script",
      "direction": "read",
@@ -12305,6 +12312,13 @@
      "line": 83
     },
     {
+     "id": "script:kb/_clep_fold_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 66
+    },
+    {
      "id": "script:kb/_cred_rename_apply.py",
      "kind": "script",
      "direction": "read",
@@ -12400,7 +12414,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 849
+     "line": 850
     },
     {
      "id": "script:kb/_seed_coci_articulations.py",
@@ -13373,6 +13387,13 @@
      "direction": "read",
      "how": "literal",
      "line": 315
+    },
+    {
+     "id": "script:kb/_clep_official_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 198
     },
     {
      "id": "script:kb/_ib_official_titles.py",
@@ -16865,7 +16886,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 55
+     "line": 56
     },
     {
      "id": "script:kb/_sweep_exhibit_titles.py",
@@ -16929,14 +16950,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 378
+     "line": 379
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 378
+     "line": 379
     }
    ],
    "producers": [
@@ -17076,6 +17097,20 @@
      "line": 91
     },
     {
+     "id": "script:kb/_clep_fold_apply.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 64
+    },
+    {
+     "id": "script:kb/_clep_official_titles.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 179
+    },
+    {
      "id": "script:kb/_cred_rename_apply.py",
      "kind": "script",
      "direction": "read",
@@ -17171,7 +17206,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 54
+     "line": 55
     },
     {
      "id": "script:kb/_seed_coci_articulations.py",
@@ -19459,7 +19494,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 805
+     "line": 806
     },
     {
      "id": "script:kb/_seed_college_short_names.py",
@@ -19926,6 +19961,19 @@
    "main_committers": []
   },
   "file:tests/cer_procedures_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/clep_official_titles_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -24770,7 +24818,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 619
+     "line": 621
     },
     {
      "id": "script:kb/_cred_rename_apply_supabase.py",
@@ -24833,14 +24881,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 1220
+     "line": 1232
     },
     {
      "id": "script:kb/_preseed_unclassified.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 1237
+     "line": 1249
     },
     {
      "id": "script:kb/_rekey_kb_curation_supabase.py",
@@ -27303,6 +27351,7 @@
     "tests/cer_procedures_test.py",
     "tests/ap_official_titles_test.py",
     "tests/ib_official_titles_test.py",
+    "tests/clep_official_titles_test.py",
     "tests/fold_unclassified_test.py",
     "tests/commons_status_build_test.py",
     "tests/exhibits_review_build_test.py",
