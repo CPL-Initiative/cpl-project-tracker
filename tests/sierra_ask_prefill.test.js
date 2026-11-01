@@ -44,7 +44,8 @@ const base = "https://cpl-initiative.github.io/cpl-project-tracker/sierra/";
   check("control characters become single spaces", c.input && c.input.value === "line one line two three", c.input && c.input.value);
 
   const d = loadDom(base + "?ask=" + encodeURIComponent("x".repeat(2000)));
-  check("a long question is capped at 500 characters", d.input && d.input.value.length === 500, d.input && d.input.value.length);
+  // 1,000 since 2026-11-01: the Sierra training tab sends its test question this way, and its box holds 1,000.
+  check("a long question is capped at 1,000 characters", d.input && d.input.value.length === 1000, d.input && d.input.value.length);
 
   const failed = results.filter((r) => !r[1]);
   for (const [name, ok, why] of results) console.log(`${ok ? "ok  " : "FAIL"} ${name}${ok || why === undefined ? "" : " — " + String(why).slice(0, 200)}`);
