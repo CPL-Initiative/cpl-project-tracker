@@ -374,6 +374,9 @@ jobs:
       # Board's exam name however the college wrote it; a title naming two exams is held.
       - name: AP titles fold under College Board's official exam names
         run: python3 tests/ap_official_titles_test.py
+      # The same pattern for IB: a college's IB title takes IB's own subject and level.
+      - name: IB titles fold under IB's own subject names
+        run: python3 tests/ib_official_titles_test.py
       # The CER fold (Sheet 94 card 1): a held assignment holds only itself; the
       # clean ones beside it fold.
       - name: CER fold holds each conflict by itself

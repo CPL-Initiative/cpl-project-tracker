@@ -47,6 +47,7 @@ from datetime import date, datetime, timezone
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import _ap_official_titles as AP  # noqa: E402  (the official AP exam names)
+import _ib_official_titles as IB  # noqa: E402  (IB's Diploma Programme subjects)
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 AUDIT_PATH = os.path.join(HERE, "exhibit_audit", "latest.json")
@@ -1020,6 +1021,16 @@ def stage_ap(raw):
             "note": "College Board's official AP exam name, read from the title."}
 
 
+def stage_ib(raw):
+    """An IB title takes IB's own subject name with its level (kb/_ib_official_titles.py), the AP
+    rule's pattern applied to IB. A title naming two exams is left to the classifier."""
+    r = IB.resolve(raw)
+    if not r or not r.get("title"):
+        return None
+    return {"title": r["title"], "issuer": IB.ISSUER, "confidence": 0.95, "via": "ib",
+            "note": "IB's own Diploma Programme subject and level, read from the title."}
+
+
 def stage_family(raw, sw_index, fam_index, issuer_of):
     """Match a residual raw against the statewide CCC catalog, then ALL existing
     house families, after stripping non-identity decoration ('Certification:'
@@ -1128,7 +1139,7 @@ def build_stage_plan(queue, families, assigned_raws, sw_index=None, fam_index=No
     for raw in queue:
         if raw in assigned_raws:
             continue
-        rec = stage_ap(raw)
+        rec = stage_ap(raw) or stage_ib(raw)
         for lane in (() if rec else (stage_journeyman, stage_carpenters_trade, stage_ironworker, stage_nccer)):
             rec = lane(raw)
             if rec:
