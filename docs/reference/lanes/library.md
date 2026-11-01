@@ -139,7 +139,7 @@ Tests: `library` (13, 14, 9, 19), `college_cpl_workbook` (the notes).
 
 - **The Microsoft 365 connector waits on RCCD's approval** (Sam, 2026-10-26). A card whose only file is on SharePoint
   says to drop in a downloaded copy (S540; lessons, *SharePoint is closed to a session*).
-- **Sam's Sheet 131 rulings:** a Library-only run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific. **NEEDS SAM (Open Asks Sheet 153):** never created; create it or leave the Library to the overnight queue (paste in [`scheduled_sessions`](../scheduled_sessions.md)); the college page lives at `library/cpl-opportunity/`. The full text moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
+- **Sam's Sheet 131 rulings:** a Library-only run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific. Not created: Sam, Sheet 153 card 1, *overnight*, left it to the overnight queue (paste in [`scheduled_sessions`](../scheduled_sessions.md)); the college page lives at `library/cpl-opportunity/`. The full text moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
 
 The Coordinator Guide (In development, Draft 1) and the ELL IET and DSP pages (Version 2, the public copies): [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S518)*.
 
