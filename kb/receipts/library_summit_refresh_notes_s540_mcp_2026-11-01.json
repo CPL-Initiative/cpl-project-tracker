@@ -1,0 +1,12 @@
+{
+  "what": "The guarded UPDATE in kb/migrations/2026-11-01_library_summit_refresh_notes.sql, applied by S540 through the Supabase MCP after supabase-migrate run 41315433226 got a 502 from the Management API (its receipt beside this one)",
+  "asked_by": "Sam, about 14:15Z 2026-11-01, through the side session beside S539: \"yes, clear them\"",
+  "applied_at": "2026-11-01, about 14:40Z",
+  "applied_by": "S540 SkyBunchberry (CPL Queue routine, 14:12Z firing)",
+  "statement": "update cpl_library set refresh_note = null, updated_by = 'library-s539side@bot' where slug in the two, retired_at is null, regen is null, and refresh_note equals its before-value",
+  "rows": [
+    {"slug": "noncredit-summit-cpl-slides", "refresh_note": null, "updated_by": "library-s539side@bot"},
+    {"slug": "noncredit-summit-in-motion", "refresh_note": null, "updated_by": "library-s539side@bot"}
+  ],
+  "rollback": "kb/migrations/2026-11-01_library_summit_refresh_notes_rollback.sql (before-values verbatim)"
+}
