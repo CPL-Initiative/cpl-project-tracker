@@ -44,6 +44,17 @@ A count opens the table with its filter; `#canonical-subj4/<filter>`, `/progress
 route from the address (the Commons' step 3). Guard `tests/csr_progress.test.js`; a11y
 `canonical-subj4-progress-dark`, `canonical-subj4-reference`.
 
+**LIVE: the List view (2026-11-01).** `#canonical-subj4/list`, the third word beside Progress and Reference, is the
+Catalog Commons' shared List (`commons_list.js`, lazy-loaded) with this reference's spec in `canonical_subj4.js` (Sam,
+2026-11-01: *"I want one now for each of our Catalog Commons groups"*): one row per MQ discipline (147), A to Z, with its
+Common SUBJ, status (confirmed by a person, by the nightly procedure `csr-confirm-authority@bot`, by a session cohort,
+or open), any collision, the Local SUBJs colleges use and how many, local courses, M-IDs, authority and note. Edit, Edit
+every row and the Status drawer's Confirm this pick write through the table's own path (`canonCheck`, `writeCanon`,
+`writeNote`, now shared by the table's boxes): the same `_CANON_SUBJ4::` kb_curation rows, no new write surface. No flag
+column (no flag field) and no find and replace (a replace on Common SUBJ hands one code to several MQ disciplines; a
+note where no code row exists stands in as the review, so a replace across notes would confirm picks). Guard
+`tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`.
+
 **The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
 SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows
 the authority rule, and that is in no collision with another MQ discipline. Measured 2026-10-19: **121 of 147**
