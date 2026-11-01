@@ -93,6 +93,7 @@ PAGE = """<meta charset="utf-8">
 <script type="application/json" id="kb-data">{kb}</script>
 <script>{lookup}</script>
 <script>{credref}</script>
+<script>{statewide}</script>
 <script>{shim}</script>
 <script>{exhibits}</script>
 <script>window.CPL_EXHIBITS && window.CPL_EXHIBITS.boot && window.CPL_EXHIBITS.boot();</script>
@@ -114,6 +115,7 @@ def main(out):
         kb=script_safe(json.dumps(kb, ensure_ascii=False, separators=(",", ":"))),
         lookup=script_safe((ROOT / "college_lookup.js").read_text(encoding="utf-8")),
         credref=script_safe(credref),
+        statewide=script_safe((ROOT / "fact-sheet" / "statewide_recs.js").read_text(encoding="utf-8")),
         shim=SHIM,
         exhibits=script_safe((ROOT / "exhibits.js").read_text(encoding="utf-8")),
     )

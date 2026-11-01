@@ -125,7 +125,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   sortBtn("Issuer").click(); await settle();
   check("(7) a text column sorts A to Z with blanks last", /^Apiary/.test(txt(rows(t.d)[2].children[2])));
   const cf = t.d.getElementById("exh-l-cf-4");
-  check("(8) every column has its own labelled filter", t.d.querySelectorAll(".exh-l-cfin").length === 11 && cf.getAttribute("aria-label") === "Filter Issuer");
+  check("(8) every column has its own labelled filter", t.d.querySelectorAll(".exh-l-cfin").length === 12 && cf.getAttribute("aria-label") === "Filter Issuer");
   cf.value = "aws"; cf.dispatchEvent(new t.w.Event("input")); await settle();
   check("(8) ⭐ a column filter narrows to its matches and keeps focus", rows(t.d).length === 1 && /Welding/.test(txt(rows(t.d)[0]))
     && t.d.activeElement && t.d.activeElement.id === "exh-l-cf-4");
@@ -143,7 +143,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   check("(10) Wrap text wraps every field and says it is on",
     !t.d.querySelector(".exh-l-table").classList.contains("exh-l-nowrap") && t.d.getElementById("exh-l-wrap").getAttribute("aria-pressed") === "true");
   const grip = t.d.getElementById("exh-l-grip-4");
-  check("(11) every header carries a labelled resize separator", t.d.querySelectorAll(".exh-l-grip[role=separator]").length === 11
+  check("(11) every header carries a labelled resize separator", t.d.querySelectorAll(".exh-l-grip[role=separator]").length === 12
     && grip.getAttribute("aria-label") === "Resize Issuer" && grip.getAttribute("tabindex") === "0");
   grip.dispatchEvent(new t.w.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
   const w1 = t.M._state.ls.widths;

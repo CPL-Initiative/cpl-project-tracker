@@ -1337,7 +1337,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 115,
+     "line": 117,
      "tabs": [
       "exhibits"
      ]
@@ -1845,7 +1845,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 136,
+     "line": 138,
      "tabs": [
       "exhibits"
      ]
@@ -5699,7 +5699,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1856,
+     "line": 1887,
      "tabs": [
       "exhibits"
      ]
@@ -5754,7 +5754,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 115
+     "line": 116
     }
    ],
    "served": true,
@@ -6835,7 +6835,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 108
+     "line": 109
     }
    ],
    "producers": [
@@ -7471,7 +7471,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 118
+     "line": 120
     }
    ],
    "served": true,
@@ -7711,6 +7711,16 @@
   "file:fact-sheet/statewide_recs.js": {
    "consumers": [
     {
+     "id": "module:exhibits.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 114,
+     "tabs": [
+      "exhibits"
+     ]
+    },
+    {
      "id": "module:fact-sheet/statewide_recs_render.js",
      "kind": "module",
      "direction": "read",
@@ -7754,6 +7764,13 @@
      "direction": "read",
      "how": "literal",
      "line": 210
+    },
+    {
+     "id": "script:scripts/build_exhibits_list_preview.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 118
     }
    ],
    "producers": [
@@ -9604,7 +9621,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 134,
+     "line": 136,
      "tabs": [
       "exhibits"
      ]
@@ -9651,7 +9668,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 135,
+     "line": 137,
      "tabs": [
       "exhibits"
      ]
@@ -13761,7 +13778,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 121,
+     "line": 123,
      "tabs": [
       "exhibits"
      ]
@@ -23015,7 +23032,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 346,
+     "line": 348,
      "tabs": [
       "exhibits"
      ]
@@ -24991,7 +25008,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 397,
+     "line": 399,
      "tabs": [
       "exhibits"
      ]
@@ -25001,7 +25018,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 453,
+     "line": 455,
      "tabs": [
       "exhibits"
      ]

@@ -19,7 +19,11 @@
 //   (9) an accepted fold stays improvable (Sam, 2026-11-01: "for the folds already accepted I would want to be sure
 //       that we can fold to better titles"): a fold whose target itself folds shows Re-point, which writes both rows
 //       to the chain's end; Folds waiting for the apply lists the accepted folds; a group's band counts its
-//       suggested folds; a suggestion points at the end of the chain.
+//       suggested folds; a suggestion points at the end of the chain;
+//  (10) Basis (Sam, 2026-11-01: "count all canonical exhibit titles that include a statewide as based on a statewide,
+//       whether local or not"): a credential with a statewide exhibit in fact-sheet/statewide_recs.js reads Statewide,
+//       the Based on statewide and Local only filters split the list, and its drawer names the statewide exhibits;
+//  (11) every drawer answers its own column by name (the Confidence column had shifted the drawers by one).
 // Run from repo root: `npm test` (or `node tests/exhibits_list_find.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -71,7 +75,10 @@ function load() {
   const sess = { access_token: "a.b.c", email: "sam@example.org" };
   w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(sess); },
     authHeaders: function () { return { apikey: "anon-key", Authorization: "Bearer anon-key" }; } };
-  w.CPL_TABS = { loadScript: function (s, name, cb) { if (s === "credential_reference_data.js") w[name] = JSON.parse(JSON.stringify(CREDREF)); setTimeout(cb, 0); } };
+  w.CPL_TABS = { loadScript: function (s, name, cb) {
+    if (s === "credential_reference_data.js") w[name] = JSON.parse(JSON.stringify(CREDREF));
+    if (s === "fact-sheet/statewide_recs.js") w[name] = { "Welding Level 1": [{ t: "Welding 101", u: "3", id: "MAPICI-WELD-1-001" }, { t: "Welding 102", u: "3", id: "MAPICI-WELD-1-001" }] };
+    setTimeout(cb, 0); } };
   w.CCC_COLLEGE_LOOKUP = LOOKUP;
   const s = w.document.createElement("script"); s.textContent = src; w.document.body.appendChild(s);
   return { w: w, d: w.document, M: w.CPL_EXHIBITS, calls: calls };
@@ -238,6 +245,36 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   check("(9) a suggestion points at the end of the chain",
     !!tenKey && /Suggested: fold into Welding Level 1 \(the same words spelled another way; Apiary Basics itself now folds into Welding Level 1\)/.test(txt(tenKey.children[2])),
     tenKey && txt(tenKey.children[2]));
+
+  // (10) and (11) on a fresh visit.
+  OVERLAY_ROWS = [];
+  const x = load();
+  await x.M.boot(); await settle();
+  const heads2 = Array.from(x.d.querySelectorAll(".exh-l-table thead th")).map(txt);
+  check("(10) a Basis column after MAP titles", heads2.some((h) => /^Basis/.test(h)), heads2.join(","));
+  const bi = Array.from(x.d.querySelectorAll(".exh-l-table thead tr:first-child th")).findIndex((h) => /^Basis/.test(txt(h)));
+  const basis = rows(x.d).map((r) => txt(r.children[2]).slice(0, 7) + "=" + txt(r.children[bi]));
+  check("(10) ⭐ a credential with a statewide exhibit reads Statewide, the rest Local",
+    basis.join("|") === "10-Key =Local|Apiary =Local|Welding=Statewide", basis.join("|"));
+  Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "Based on statewide").click(); await settle();
+  check("(10) Based on statewide shows only it", rows(x.d).length === 1 && /^Welding/.test(txt(rows(x.d)[0].children[2])));
+  Array.from(rows(x.d)[0].children[bi].querySelectorAll("button")).find((b) => /Basis/.test(b.getAttribute("aria-label"))).click(); await settle();
+  check("(10) its drawer names the statewide exhibit and its recommendations",
+    /Based on statewide/.test(txt(x.d.querySelector(".exh-l-drawer"))) && /MAPICI-WELD-1-001, 2 credit recommendations/.test(txt(x.d.querySelector(".exh-l-drawer"))),
+    txt(x.d.querySelector(".exh-l-drawer")));
+  Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "Local only").click(); await settle();
+  check("(10) Local only shows the rest", rows(x.d).length === 2);
+  Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "All").click(); await settle();
+  const issIdx = Array.from(x.d.querySelectorAll(".exh-l-table thead tr:first-child th")).findIndex((h) => /^Issuer/.test(txt(h)));
+  const wRow = rows(x.d).find((r) => /^Welding/.test(txt(r.children[2])));
+  wRow.children[issIdx].querySelector("button.exh-l-open").click(); await settle();
+  check("(11) ⭐ the Issuer drawer answers about the issuer", /credentials? names? AWS/.test(txt(x.d.querySelector(".exh-l-drawer"))),
+    txt(x.d.querySelector(".exh-l-drawer")));
+  const typIdx = Array.from(x.d.querySelectorAll(".exh-l-table thead tr:first-child th")).findIndex((h) => /^CPL types/.test(txt(h)));
+  rows(x.d).find((r) => /^Welding/.test(txt(r.children[2]))).children[typIdx].querySelector("button.exh-l-open").click(); await settle();
+  Array.from(x.d.querySelectorAll(".exh-l-drawer button")).find((b) => txt(b) === "Industry Certification").click(); await settle();
+  check("(11) a CPL type picked in its drawer filters the CPL types column", rows(x.d).length === 1 && /^Welding/.test(txt(rows(x.d)[0].children[2]))
+    && x.d.getElementById("exh-l-cf-" + (typIdx - 2)).value === "Industry Certification", rows(x.d).map((r) => txt(r.children[2])).join("|"));
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "  -- " + why)); if (!ok) fail++; });
