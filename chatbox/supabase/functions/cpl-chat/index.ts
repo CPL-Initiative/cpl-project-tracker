@@ -6687,7 +6687,7 @@ async function fetchGuidanceKind(
    * irrelevant — the only way a two-system change is safe to ship. */
   const base = () => sb
     .from("sierra_guidance")
-    .select("rule")
+    .select("id, rule")
     .eq("active", true)
     .eq("kind", kind)
     .order("created_at", { ascending: false })
@@ -6718,7 +6718,71 @@ function guidanceBlock(rows: any[], budget: number): string {
   return out;
 }
 
-async function fetchTeamGuidance(sb: any, surface: string | null = null): Promise<string> {
+/* ── Instructions matched to the question (Sam, Open Asks Sheet 153 card 3, "deploy", 2026-11-01) ──
+ * Sam: "worrying that we are removing part of her brain to stuff in different parts." Until now every
+ * active instruction went newest first until 9,000 characters, the question playing no part, so each new
+ * instruction retired the oldest for every question. Most instructions already name their trigger ("When
+ * someone asks something like ..."). The order is now:
+ *   1. standing rules (a rule that does not open with When or If): they govern every answer;
+ *   2. conditional rules whose trigger shares a distinctive word with the question, most shared first;
+ *   3. the rest, newest first, filling whatever room is left (today's behavior is the floor).
+ * The budget is unchanged. What went, what matched and what was dropped are logged per turn in
+ * chat_interactions.timings.guidance (ids cut to 8 characters). Fable advised it (docs/sierra_rules_lessons.md,
+ * "Matched instructions"); Jev as a second scorer waits on what that log shows. */
+const GUIDANCE_GENERIC = new Set([
+  "someone", "asks", "something", "question", "questions", "answer", "answers", "response", "first",
+  "table", "start", "open", "direct", "simplest", "lead", "link", "links", "need", "complete", "particular",
+  "require", "requires", "through", "receive", "received", "years", "today", "stand", "stands", "referring",
+  "note", "name", "names", "show", "list", "each", "every", "then", "after", "before", "instead", "per",
+  "such", "example", "say", "says", "sierra", "visitor", "reader", "user", "learner", "student",
+  "page", "pages", "data", "new", "old",
+]);
+function guidanceWords(text: string): Set<string> {
+  const out = new Set<string>();
+  for (const w of extractTopicKeywords(text)) {
+    if (GUIDANCE_GENERIC.has(w)) continue;
+    out.add(w.length > 4 && w.endsWith("s") && !w.endsWith("ss") ? w.slice(0, -1) : w);
+  }
+  return out;
+}
+function isStandingRule(rule: string): boolean {
+  return !/^\s*(when|if)\b/i.test(rule);
+}
+// The trigger is the rule's opening: the example question sits in its first ~240 characters.
+function guidanceTrigger(rule: string): string {
+  return rule.slice(0, 240);
+}
+function orderGuidanceForQuestion(rows: any[], question: string): any {
+  const q = guidanceWords(question || "");
+  const standing: any[] = [], hits: any[] = [], rest: any[] = [];
+  rows.forEach((r, i) => {
+    const rule = String((r && r.rule) || "");
+    if (isStandingRule(rule)) { standing.push(r); return; }
+    let n = 0;
+    if (q.size) for (const w of guidanceWords(guidanceTrigger(rule))) if (q.has(w)) n++;
+    if (n > 0) hits.push({ r, n, i }); else rest.push(r);
+  });
+  hits.sort((a, b) => b.n - a.n || a.i - b.i);
+  return { rows: [...standing, ...hits.map((h) => h.r), ...rest], matched: hits.map((h) => String(h.r.id || "")) };
+}
+// Which rows a block of `budget` characters carries, by the same rule guidanceBlock applies.
+function guidanceSentIds(rows: any[], budget: number): any {
+  let len = 0, stopped = false;
+  const sent: string[] = [], dropped: string[] = [];
+  for (const r of rows) {
+    const rule = String(r.rule || "").trim().slice(0, GUIDANCE_MAX_CHARS_PER_RULE);
+    if (!rule) continue;
+    if (stopped || len + rule.length > budget) { stopped = true; dropped.push(String(r.id || "")); continue; }
+    len += rule.length + 3;
+    sent.push(String(r.id || ""));
+  }
+  return { sent, dropped };
+}
+const shortId = (x: string) => String(x || "").slice(0, 8);
+
+async function fetchTeamGuidance(
+  sb: any, surface: string | null = null, question: string = "", log: any = null,
+): Promise<string> {
   try {
     const [directives, display] = await Promise.all([
       fetchGuidanceKind(sb, "directive", GUIDANCE_MAX_RULES, surface),
@@ -6741,7 +6805,7 @@ async function fetchTeamGuidance(sb: any, surface: string | null = null): Promis
     if (directiveRows === null) {
       const { data, error } = await sb
         .from("sierra_guidance")
-        .select("rule")
+        .select("id, rule")
         .eq("active", true)
         .order("created_at", { ascending: false })
         .limit(GUIDANCE_MAX_RULES);
@@ -6749,7 +6813,15 @@ async function fetchTeamGuidance(sb: any, surface: string | null = null): Promis
       directiveRows = data;
     }
 
+    const ordered = orderGuidanceForQuestion(directiveRows, question);
+    directiveRows = ordered.rows;
     const directiveText = guidanceBlock(directiveRows, GUIDANCE_MAX_CHARS);
+    if (log) {
+      const ids = guidanceSentIds(directiveRows, GUIDANCE_MAX_CHARS);
+      log.matched = ordered.matched.map(shortId);
+      log.sent = ids.sent.map(shortId);
+      log.dropped = ids.dropped.map(shortId);
+    }
     // Display rules are billed against the REMAINING budget, so the two blocks
     // together can never exceed GUIDANCE_MAX_CHARS. Directives are resolved
     // first because a display rule shapes a table the answer may not even build.
@@ -6795,6 +6867,8 @@ Deno.serve(async (req: Request) => {
   }
 
   const timings = newTimings(Date.now());
+  // Which team instructions this turn sent, matched and dropped (Open Asks Sheet 153 card 3).
+  const guidanceLog: any = {};
   try {
     const { query, session_id, history, audience, ctx, scope, surface, retrieval_query } = await req.json();
     if (!query || typeof query !== "string" || query.trim().length === 0) {
@@ -6940,7 +7014,7 @@ Deno.serve(async (req: Request) => {
       searchCollegeOfferings(routeText, sb, placeAnchor), // course catalog: who TEACHES this (place-anchored v68)
       searchCollegePrograms(routeText, sb, placeAnchor),  // program catalog: who AWARDS this (v67; place-anchored v68)
       drafting ? Promise.resolve([]) : fetchLibrary(sb), // the public CPL Library's listed pieces (S469)
-      fetchTeamGuidance(sb, hostSurface),     // sierra_guidance active rows (v25; surface-scoped v56)
+      fetchTeamGuidance(sb, hostSurface, routeText, guidanceLog),     // sierra_guidance active rows (v25; surface-scoped v56)
       fetchCreditData(sb),                    // published credit-disposition aggregates (v36)
       catalogAsk ? fetchStatewideCatalog() : Promise.resolve(null), // the Fact Sheet's statewide catalog (S398)
       deriveViewer(req.headers),              // who is asking, from the credential — never the body (v66)
@@ -7565,6 +7639,7 @@ Deno.serve(async (req: Request) => {
         // jsonb value on the turn's row for the analysis.
         const timingRow = timingsRow(timings, Date.now(), {
           prompt_chars: (systemPrompt.stable || "").length + (systemPrompt.volatile || "").length,
+          guidance: guidanceLog,
           context_chars: (systemPrompt.volatile || "").length,
           input_uncached: inputUncached,
           input_cache_read: cacheRead,

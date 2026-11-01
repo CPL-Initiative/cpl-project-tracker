@@ -442,7 +442,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 7346
+     "line": 7420
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -23026,7 +23026,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6932
+     "line": 7006
     }
    ],
    "main_committers": []
@@ -23504,7 +23504,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7615
+     "line": 7690
     },
     {
      "id": "module:sierra_training.js",
