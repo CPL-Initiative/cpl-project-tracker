@@ -1,0 +1,107 @@
+name: College contacts harvest
+
+# Step 8 of the CPL queue routine (docs/reference/scheduled_sessions.md, piece 3; Sam, 2026-10-31,
+# armed "go"). Lane: docs/reference/lanes/map-users-student-contact.md (The weekly contacts harvest).
+#
+# read   reads each college's leadership pages on the census's terms (a user agent naming the CPL
+#        Initiative, robots.txt, 4 s between loads, no page behind a sign-in, at most 12 pages a site)
+#        and commits the text near a title to kb/contacts_harvest/<run>/ on the branch that ran it.
+#        It writes no table.
+# apply  posts a session's records file to college_contacts_harvest_apply(jsonb) with the service key
+#        and commits the receipt (kb/receipts/college_contacts_harvest_<run>.json), which carries the
+#        before-values the load rolls back from (Rule 10 a2). Hand dispatch only.
+#
+# Governance: kb/governance_surface_map.json, workflow:college-contacts-harvest.yml. No schedule: the
+# queue routine dispatches it each night, so it adds no scheduled task.
+
+on:
+  workflow_dispatch:
+    inputs:
+      step:
+        description: "read (pages to the branch) or apply (a records file to the table)"
+        required: true
+        default: "read"
+        type: choice
+        options: [read, apply]
+      colleges:
+        description: "read: college names or parts, separated by ';' (blank = the batch)"
+        required: false
+        default: ""
+      batch:
+        description: "read: the next N colleges, never read first, then read longest ago"
+        required: false
+        default: "15"
+      records:
+        description: "apply: the records file's path on this branch"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+concurrency:
+  group: college-contacts-harvest-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  read:
+    if: github.actor != 'github-actions[bot]' && github.event.inputs.step == 'read'
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Read
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          HARVEST_DELAY_MS: '4000'
+          COLLEGES: ${{ github.event.inputs.colleges }}
+          BATCH: ${{ github.event.inputs.batch }}
+        run: python3 kb/_college_contacts_harvest.py read --run "${{ github.run_id }}" --colleges "$COLLEGES" --batch "${BATCH:-15}"
+      - name: Commit to the branch that ran it
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/contacts_harvest
+          if git diff --cached --quiet; then echo "nothing read"; exit 0; fi
+          git commit -m "Contacts harvest: pages read (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+          done
+          exit 1
+
+  apply:
+    if: github.actor != 'github-actions[bot]' && github.event.inputs.step == 'apply'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.12'
+      - name: Apply
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          RECORDS: ${{ github.event.inputs.records }}
+        run: python3 kb/_college_contacts_harvest.py apply --records "$RECORDS" --run "${{ github.run_id }}"
+      - name: Commit the receipt to the branch that ran it
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add kb/receipts
+          if git diff --cached --quiet; then echo "no receipt"; exit 0; fi
+          git commit -m "Receipt: contacts harvest apply (run ${{ github.run_id }})"
+          for i in 1 2 3 4; do
+            git push origin "HEAD:${{ github.ref_name }}" && exit 0
+            sleep $((i * 5)); git pull --rebase origin "${{ github.ref_name }}"
+          done
+          exit 1
