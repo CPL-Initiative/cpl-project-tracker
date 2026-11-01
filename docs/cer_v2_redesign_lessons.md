@@ -724,3 +724,27 @@ the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
   Electrical/Electronics 1* keeps its base. The ruling needed no code; it is recorded in the lane. It applies to local
   exhibits alone (the colleges as issuer: college courses, high school and Cx), which Sam confirmed: *"this is just for
   the local hs and Cx exhibits, right?"*
+
+
+## SkyInkberry (2026-11-01): IB on the AP pattern, and where CLEP stops
+
+- **The reader can prove a fold before it runs.** Run over the reference's 201 IB titles, the reader put 171 exactly
+  where they already sat, every person-reviewed one among them, and read none as two exams or as not IB. That agreement
+  is the evidence the names are right; the 30 it would move were then a short list to read by eye. Run a new brand's
+  reader in dry run over the reference before writing its fold.
+- **A merge tool moves whole credentials; a split needs its own move.** `kb/_merge_credentials.py` re-points every
+  title of a loser. *IB Language A1: English HL* held three titles, two reading as Language A1 and one, *English Lit
+  (A1)*, as Language A: Literature (words before letters, as Sam's own review read *Lang&Lit (A2)*). The largest group
+  went by the merge and the other by itself, in `kb/_ib_fold_apply.py`, with a receipt beside the merge's.
+- **Pick an issuer twin by counting the saves, the person's first.** IB carried two issuer names. Sam's own saves used
+  both (two IBO, one IB) and the bot rows ran 80 to 3, so IBO won with four live rows to move, one of them his; the
+  receipt and the sheet card say so. Choosing his latest save alone would have moved 82.
+- **CLEP stops at a ruling.** The AP pattern reads a score band as decoration, and CLEP's levels are score bands
+  (*Spanish Language (Levels 1 and 2)* is one exam), but the reference splits 92 titles by level, and College Board's
+  Roman numerals meet Another look's Arabic rule. The fold would re-file stamped titles, so it waits on Sheet 150 card
+  2, as the AP fold waited on Sheet 149 card 1.
+- **CI's shard spread is the runner, not the table** (the handoff's open item 2). Two balanced runs with the same
+  assignment (#2631's PR and main runs, 2026-10-31) took 4:52 / 7:51 / 8:35 / 4:55 / 8:07 / 8:20 and 4:25 / 8:01 /
+  4:35 / 6:30 / 8:05 / 4:40 across shards 1 to 6: shard 3 ran 8:35 once and 4:35 the next, shard 6 8:20 then 4:40.
+  A table re-measured on CI would inherit the same noise. The gain left is splitting the slowest files, since one file
+  bounds a shard.

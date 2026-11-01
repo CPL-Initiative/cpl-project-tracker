@@ -196,6 +196,10 @@ into the subject; a Language A exam in another language keeps *(Non-English)*. B
 Organization (IBO)* everywhere. Eight live rows moved under `cer-ib-fold-skyinkberry@bot`, one of them Sam's issuer save
 (`ib_kb_curation_update_receipt.json`). Guard: `tests/ib_official_titles_test.py`.
 
+**NEEDS SAM ([Open Asks Sheet 150](https://claude.ai/artifact/3MJJ8ftqz7BABwnQAsjfFL), 2026-11-01):** card 1, keep the IB fold (proceeded on the recommendation, reply to
+reverse); card 2, which names CLEP exams take (held: one credential per exam with its levels folded and Arabic numerals
+is proposed, which re-files stamped titles and reads the numerals rule into College Board's names).
+
 **NEXT:** (0) After each of Sam's runs through *Another look*, read the next fold's `credential_moves` and
 `credential_retires` and move the panel rows they list (SkyHuckleberry moved the first four, receipt
 `kb/receipts/credential_panel_move_2026-10-31_skyhuckleberry.json`). (1) CLEP's official names, on the AP
