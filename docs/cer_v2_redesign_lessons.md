@@ -773,6 +773,18 @@ the guarded UPDATE; receipt `kb_curation_update_receipt.json`).
   Systems is the current name of Information Systems and Computer Applications) and College Board's 34 current exams.
 
 
+## SkySnowberry (2026-11-01): the CLEP fold confirmed, the Catalog sync test fixed
+
+- **A quiet night writes no fold receipt.** With nothing to fold, `kb/_fold_unclassified.py --apply-if-safe` prints
+  *Nothing to fold — receipts left untouched* and writes no `kb/unclassified_fold/<date>/`, by design (the daily
+  run's no-diff, no-commit idempotency). To check rows a session moved, run the dry run locally, read the day's
+  `report.json`, and delete the folder. On 2026-11-01 all 33 CLEP assignments read *already classified to the same
+  target*; the 61 STALE CLEP preseed rows (Roman-numeral forms, `preseed-v1@bot`) matched the 2026-10-31 report.
+- **A test can outlive the doctrine it encoded.** `tests/credential_catalog_sync_test.py` still gated a statewide
+  credential on `ccc_rec` after the sierra-retrieval-corpus lane had ruled that gate wrong (`ccc_rec` comes from
+  adoptions). #2634 gates on `ccc_rec`, the Fact Sheet builder's published set, or its MAP fix list: 68 of the 78
+  answer through the set, and 10 sit on the fix list for MAP to give a CCC-tagged recommendation.
+
 ## Moved from the lane (SkyInkberry)
 
 The CER tab is retired (Open Asks Sheet 148); these two bullets described its views and moved here verbatim on 2026-11-01, when the lane passed its size budget.

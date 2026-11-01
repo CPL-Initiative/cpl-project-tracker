@@ -4,7 +4,7 @@
   "supabase_tables": 103,
   "rpcs": 47,
   "edge_functions": 11,
-  "file_datasets": 753,
+  "file_datasets": 754,
   "external_services": 192,
   "consumers": 499,
   "workflows": 59,
@@ -20058,6 +20058,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:tests/college_contacts_harvest_sql_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:tests/college_page_read_test.py": {
    "consumers": [
     {
@@ -27333,6 +27346,7 @@
     "tests/supabase_table_grants_test.py",
     "tests/supabase_migrate_test.py",
     "tests/program_record_verdicts_sql_test.py",
+    "tests/college_contacts_harvest_sql_test.py",
     "tests/program_source_addenda_read_test.py",
     "tests/jev_harvest_test.py",
     "tests/jev_agri_families_test.py",

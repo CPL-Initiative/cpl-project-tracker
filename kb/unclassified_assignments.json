@@ -1,7 +1,7 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-10-31T19:32:40Z",
+  "_synced_at": "2026-11-01T05:18:14Z",
   "count": 2256,
   "assignments": {
     "1st Receiver Ops & Decon": {
@@ -5020,21 +5020,21 @@
     },
     "CLEP French Language (Levels 1 and 2) - Complete both": {
       "issuing_agency": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:05:06.780863+00:00",
-      "unified_title": "French Language (Levels 1 and 2)"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP French Language"
     },
     "CLEP French Language Level I (ACE Recommended Score of 50)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP French Language Level 1"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP French Language"
     },
     "CLEP French Language Level II (ACE Recommended Score of 59)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP French Language Level 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP French Language"
     },
     "CLEP French Language, Level 2": {
       "issuing_agency": "College Board",
@@ -5044,15 +5044,15 @@
     },
     "CLEP French Language, Level I (Score of 50 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP French Language Level 1"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP French Language"
     },
     "CLEP French Language, Level II (Score of 59 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP French Language Level 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP French Language"
     },
     "CLEP French Language: 2": {
       "issuing_agency": "College Board",
@@ -5068,9 +5068,9 @@
     },
     "CLEP French Language: Level II": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-      "unified_title": "CLEP French Language Level 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP French Language"
     },
     "CLEP French Language:  Level 1": {
       "issuing_agency": "College Board",
@@ -5104,9 +5104,9 @@
     },
     "CLEP French Level III": {
       "issuing_agency": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:27.601452+00:00",
-      "unified_title": "CLEP French Language Level III"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP French Language"
     },
     "CLEP French [1] Level II": {
       "issuing_agency": "College Board",
@@ -5146,21 +5146,21 @@
     },
     "CLEP German Language (Levels 1 and 2) - Complete both": {
       "issuing_agency": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:05:07.643378+00:00",
-      "unified_title": "German Language (Levels 1 and 2)"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP German Language"
     },
     "CLEP German Language Level I (ACE Recommended Score of 50)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP German Language Level 1"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP German Language"
     },
     "CLEP German Language Level II (ACE Recommended Score of 60)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP German Language Level 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP German Language"
     },
     "CLEP German Language, Level 2": {
       "issuing_agency": "College Board",
@@ -5170,15 +5170,15 @@
     },
     "CLEP German Language, Level I (Score of 50 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP German Language Level 1"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP German Language"
     },
     "CLEP German Language, Level II (Score of 60 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP German Language Level 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP German Language"
     },
     "CLEP German Language: Level 1": {
       "issuing_agency": "College Board",
@@ -5194,9 +5194,9 @@
     },
     "CLEP German Language: Level II": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-      "unified_title": "CLEP German Language Level 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP German Language"
     },
     "CLEP German Level 2": {
       "issuing_agency": "College Board",
@@ -5218,9 +5218,9 @@
     },
     "CLEP German Level III": {
       "issuing_agency": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:04:27.64725+00:00",
-      "unified_title": "CLEP German Language Level III"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP German Language"
     },
     "CLEP German – Level 2*": {
       "issuing_agency": "College Board",
@@ -5452,9 +5452,9 @@
     },
     "CLEP Information Systems and Computer Apps (Score of 50 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP Information Systems and Computer Applications"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Information Systems"
     },
     "CLEP Intro Psychology": {
       "issuing_agency": "College Board",
@@ -5578,9 +5578,9 @@
     },
     "CLEP Pre-Calculus (Score of 50)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "preseed-v1@bot",
-      "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "unified_title": "CLEP Pre-Calculus"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Precalculus"
     },
     "CLEP Precalculus": {
       "issuing_agency": "College Board",
@@ -5731,9 +5731,9 @@
     },
     "CLEP Spanish Language (Levels 1 and 2) - Complete both": {
       "issuing_agency": "College Board",
-      "reviewed_by": "map@rccd.edu",
-      "reviewed_at": "2026-07-08T00:05:25.195447+00:00",
-      "unified_title": "Spanish Language (Levels 1 and 2)"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish Language"
     },
     "CLEP Spanish Language, Level 2": {
       "issuing_agency": "College Board",
@@ -5755,15 +5755,15 @@
     },
     "CLEP Spanish Language: Level II": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-      "unified_title": "CLEP Spanish Language Level 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish Language"
     },
     "CLEP Spanish Language: Levels 1 and 2": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-      "unified_title": "Spanish Language (Levels 1 and 2)"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish Language"
     },
     "CLEP Spanish Level 2": {
       "issuing_agency": "College Board",
@@ -5773,15 +5773,15 @@
     },
     "CLEP Spanish Level I (Score of 50 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP Spanish Language Level 1"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish Language"
     },
     "CLEP Spanish Level II (Score of 63 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP Spanish Language Level 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish Language"
     },
     "CLEP Spanish Level II (Score of 63)": {
       "issuing_agency": "College Board",
@@ -5809,9 +5809,9 @@
     },
     "CLEP Spanish With Writing II": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP Spanish with Writing Level II"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish [1] Level II": {
       "issuing_agency": "College Board",
@@ -5821,15 +5821,15 @@
     },
     "CLEP Spanish and Writing II": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP Spanish with Writing 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish and Writing Level II": {
       "issuing_agency": "College Board",
-      "reviewed_by": "preseed-v1@bot",
-      "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "unified_title": "CLEP Spanish with Writing Level II"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing I": {
       "issuing_agency": "College Board",
@@ -5839,57 +5839,57 @@
     },
     "CLEP Spanish with Writing I (Score of 50 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP Spanish with Writing 1"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing Level 2": {
       "issuing_agency": "College Board",
-      "reviewed_by": "preseed-v1@bot",
-      "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "unified_title": "CLEP Spanish with Writing Level II"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing Level II": {
       "issuing_agency": "College Board",
-      "reviewed_by": "preseed-v1@bot",
-      "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "unified_title": "CLEP Spanish with Writing Level II"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing Level II (Score of 63 or higher)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "CLEP Spanish with Writing 2"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing Level II (Score of 63)": {
       "issuing_agency": "College Board",
-      "reviewed_by": "preseed-v1@bot",
-      "reviewed_at": "2026-07-07T18:27:01.567802+00:00",
-      "unified_title": "CLEP Spanish with Writing Level II"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing ll": {
       "issuing_agency": "College Board",
-      "reviewed_by": "preseed-v1@bot",
-      "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "unified_title": "CLEP Spanish with Writing Level II"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing: Level 2": {
       "issuing_agency": "College Board",
-      "reviewed_by": "preseed-v1@bot",
-      "reviewed_at": "2026-07-07T18:30:06.693747+00:00",
-      "unified_title": "CLEP Spanish with Writing Level II"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing: Level II": {
       "issuing_agency": "College Board",
-      "reviewed_by": "cer-procedure-brand-family@bot",
-      "reviewed_at": "2026-10-28T14:36:41.831286+00:00",
-      "unified_title": "CLEP Spanish with Writing Level II"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish with Writing: Levels 1 and 2": {
       "issuing_agency": "College Board",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:28:39.654254+00:00",
-      "unified_title": "CLEP Spanish with Writing (Levels 1 and 2)"
+      "reviewed_by": "cer-clep-fold-skyteaberry@bot",
+      "reviewed_at": "2026-11-01T02:09:20.671905+00:00",
+      "unified_title": "CLEP Spanish with Writing"
     },
     "CLEP Spanish** Level II": {
       "issuing_agency": "College Board",
@@ -9278,9 +9278,9 @@
     },
     "IB English B HL (Minimum Passing Score of 4)": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-      "unified_title": "IB Language B: English HL"
+      "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+      "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
+      "unified_title": "IB Language B HL"
     },
     "IB English Lang&Lit (A2) HL (Minimum Passing Score of 4)": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
@@ -9290,9 +9290,9 @@
     },
     "IB English Lit (A1) HL (Minimum Passing Score of 4)": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-      "unified_title": "IB Language A1: English HL"
+      "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+      "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
+      "unified_title": "IB Language A: Literature HL"
     },
     "IB Geography (HL)": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
@@ -9308,9 +9308,9 @@
     },
     "IB Global Politics": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-      "unified_title": "IB Global Politics"
+      "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+      "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
+      "unified_title": "IB Global Politics HL"
     },
     "IB History (any region) (HL) (Area 3A)": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
@@ -9553,27 +9553,27 @@
       "unified_title": "IB Language A: Literature HL"
     },
     "IB Language B (any language) HL (Score of 4 or higher)": {
-      "issuing_agency": "International Baccalaureate (IB)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+      "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB Language B HL"
     },
     "IB Language B - any language HL - Score of 4 or higher - HISTORICAL Type 1": {
-      "issuing_agency": "International Baccalaureate (IB)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+      "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB Language B HL"
     },
     "IB Language B - any language HL - Score of 4 or higher - HISTORICAL Type 2": {
-      "issuing_agency": "International Baccalaureate (IB)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+      "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB Language B HL"
     },
     "IB Language B - any language except English HL": {
-      "issuing_agency": "International Baccalaureate (IB)",
-      "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:35:53.577926+00:00",
+      "issuing_agency": "International Baccalaureate Organization (IBO)",
+      "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+      "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
       "unified_title": "IB Language B HL"
     },
     "IB Math Analysis & Approaches HL (Minimum Passing Score of 4)": {
@@ -9716,9 +9716,9 @@
     },
     "IB World Religions HL": {
       "issuing_agency": "International Baccalaureate Organization (IBO)",
-      "reviewed_by": "cer-procedure-classifier@bot",
-      "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-      "unified_title": "IB World Religions HL"
+      "reviewed_by": "cer-ib-fold-skyinkberry@bot",
+      "reviewed_at": "2026-11-01T00:54:48.327335+00:00",
+      "unified_title": "IB World Religions SL"
     },
     "IBEW- Power Lineman Apprenticeship Year 1": {
       "issuing_agency": "International Brotherhood of Electrical Workers (IBEW)",

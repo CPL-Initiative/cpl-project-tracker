@@ -4,7 +4,7 @@
 // pull. Aggregate, small-cell-suppressed counts ONLY (see
 // docs/kb-notes/adr-funding-priority-metrics-privacy.md). Do not hand-edit.
 window.CPL_FUNDING_PERF = {
- "as_of": "2026-10-31",
+ "as_of": "2026-11-01",
  "basis": "MAP View_StudentAggregatedValues_APIDataset — distinct students per college; Test students and test colleges excluded; P2 = transcribed CPL units >= 6, P3 = any transcribed CPL, PE = any eligible CPL units identified, PA = any APPLIED CPL units (the middle funnel rung: eligible -> applied -> transcribed; unlike eligible it does not carry the ACE/JST skill-level duplication, and unlike eligible it is an action the college took), PP = portal-origin (Potential Student = Yes) with any transcribed CPL (the CPL Student Portal / Landing Page metric; small & mostly test until launch), PPA = APPLIED units among those same portal-origin students — the measure the Access metric asks for, and NOT a subset of PA: pe/pa/p2/p3 all EXCLUDE Potential Student = Yes, so PA and PPA describe disjoint cohorts (per MAP). PAC/PTC = APPLIED/TRANSCRIBED units for students whose Counselor step is checked (Counselor_Verified), both cohorts; present only when the pull carries that column. NC_PE/NC_PA/NC_PT = the same three rungs among students whose LocID2 resolves to a known noncredit origin (present only when the pull carries LocID2; see the `origination` block for the per-origin scoped cuts). *_u keys are UNIT sums over exactly the same students as their count (first row per college+student, matching the count dedupe); statewide unit sums are the plain sum of the per-college sums, NOT sid-deduped, because units are awarded per college",
  "suppress_below": 10,
  "statewide": {
@@ -4513,7 +4513,7 @@ window.CPL_FUNDING_PERF = {
   "Lake Tahoe": false,
   "LA Swest": false
  },
- "vet_star_as_of": "2026-10-31",
+ "vet_star_as_of": "2026-11-01",
  "vet_star_threshold": 0.75,
  "vet_star_n": 68,
  "vet_jst": {
@@ -4614,8 +4614,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Southwestern": {
    "vets": 584,
-   "jst": 723,
-   "pct": 1.238
+   "jst": 555,
+   "pct": 0.9503
   },
   "San Bernardino": {
    "vets": 207,
@@ -4669,8 +4669,8 @@ window.CPL_FUNDING_PERF = {
   },
   "San Joaquin Delta": {
    "vets": 248,
-   "jst": 494,
-   "pct": 1.9919
+   "jst": 493,
+   "pct": 1.9879
   },
   "Glendale": {
    "vets": 196,
@@ -4739,8 +4739,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Napa": {
    "vets": 38,
-   "jst": 53,
-   "pct": 1.3947
+   "jst": 50,
+   "pct": 1.3158
   },
   "Sequoias": {
    "vets": 260,
@@ -4774,8 +4774,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Oxnard": {
    "vets": 118,
-   "jst": 162,
-   "pct": 1.3729
+   "jst": 161,
+   "pct": 1.3644
   },
   "LA Harbor": {
    "vets": 109,
@@ -4814,8 +4814,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Reedley College": {
    "vets": 82,
-   "jst": 133,
-   "pct": 1.622
+   "jst": 132,
+   "pct": 1.6098
   },
   "Laney": {
    "vets": 96,
@@ -4884,8 +4884,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Hartnell": {
    "vets": 106,
-   "jst": 81,
-   "pct": 0.7642
+   "jst": 80,
+   "pct": 0.7547
   },
   "Redwoods": {
    "vets": 98,
@@ -4959,8 +4959,8 @@ window.CPL_FUNDING_PERF = {
   },
   "Moorpark": {
    "vets": 179,
-   "jst": 237,
-   "pct": 1.324
+   "jst": 236,
+   "pct": 1.3184
   },
   "Monterey": {
    "vets": 696,
