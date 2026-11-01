@@ -1327,7 +1327,7 @@
     var PAGE = 1000, key = anonKey();
     var url = SUPABASE_URL + "/rest/v1/kb_curation?select=course_id,field,value,reviewed_at"
       + "&course_id=like." + encodeURIComponent(CRED_PREFIX) + "%25"
-      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG].join(",") + ")"
+      + "&field=in.(" + [FIELD_CRED_ISSUER, FIELD_CRED_TRAINER, FIELD_CRED_SITES, FIELD_CRED_TITLE, FIELD_LIST_FLAG, FIELD_MERGE_CONFIRM].join(",") + ")"
       + "&order=course_id.asc,field.asc";
     var out = [];
     function page(from) {
@@ -1347,6 +1347,7 @@
         else if (row.field === FIELD_CRED_SITES) { o.sites = row.value || ""; o.sitesAt = row.reviewed_at || ""; }
         else if (row.field === FIELD_CRED_TITLE) o.title = row.value || "";
         else if (row.field === FIELD_LIST_FLAG) o.flag = row.value || "";
+        else if (row.field === FIELD_MERGE_CONFIRM) o.merge = row.value || "";
       });
       state.cs.overlay = m; state.cs.overlayOk = true;
     }).catch(function () { state.cs.overlayOk = false; });
@@ -1738,7 +1739,8 @@
     ["selected", "Selected"],
     ["bare", "No articulation"],
     ["changed", "Changed this visit"],
-    ["suggested", "Suggested folds"]
+    ["suggested", "Suggested folds"],
+    ["waiting", "Folds waiting for the apply"]
   ];
   function listState() {
     return state.ls || (state.ls = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "",
@@ -1826,6 +1828,7 @@
       if (L.f === "mine" && !listFlag(r)) return false;
       if (L.f === "selected" && !L.sel[r.ut]) return false;
       if (L.f === "suggested" && !listSuggest(r)) return false;
+      if (L.f === "waiting" && !listPendingFold(r)) return false;
       var cols = listCols();
       for (var k in L.cf) {
         var want = String(L.cf[k] || "").trim().toLowerCase();
@@ -1900,7 +1903,8 @@
       if (w[0] === FIELD_CRED_ISSUER) o.issuer = w[1];
       else if (w[0] === FIELD_CRED_TRAINER) { o.trainer = w[1]; o.trainerAt = now; }
       else if (w[0] === FIELD_CRED_SITES) { o.sites = w[1]; o.sitesAt = now; }
-      else o.title = w[1];
+      else if (w[0] === FIELD_MERGE_CONFIRM) o.merge = w[1];
+      else if (w[0] === FIELD_CRED_TITLE) o.title = w[1];
     });
     if (L.changed.indexOf(r.ut) === -1) L.changed.push(r.ut);
   }
@@ -2252,7 +2256,11 @@
     })).concat([el("td")]));
     var thead = el("thead", null, [headRow, filterRow]);
     var body = el("tbody");
-    var aiOn = L.ai && L.aiData, lastG = null;
+    var aiOn = L.ai && L.aiData, lastG = null, sgByGroup = {};
+    if (aiOn && L.aiData.suggest) state.cs.rows.forEach(function (x) {
+      var p = L.aiData.order[x.ut];
+      if (p && listSuggest(x)) sgByGroup[p[0]] = (sgByGroup[p[0]] || 0) + 1;
+    });
     shown.forEach(function (r) {
       if (aiOn) {
         var pos = L.aiData.order[r.ut], g = pos ? pos[0] : -1;
@@ -2260,13 +2268,19 @@
           var gr = g === -1 ? null : L.aiData.groups[g];
           body.appendChild(el("tr", { cls: "exh-l-band" }, [el("th", { scope: "rowgroup", colspan: String(C.length + 3) }, [
             el("span", { text: gr ? gr.name : "Added since the AI sort was built" }),
-            el("span", { cls: "exh-muted", text: gr ? " " + fmt(gr.n) + " in this group" : "" })])]));
+            el("span", { cls: "exh-muted", text: gr ? " " + fmt(gr.n) + " in this group" + (sgByGroup[g]
+              ? ", " + fmt(sgByGroup[g]) + " suggested fold" + (sgByGroup[g] === 1 ? "" : "s") : "") : "" })])]));
         }
         lastG = g;
       }
       var cur = credCurrent(r), o = state.cs.overlay[r.ut] || {}, col = listCollision(r);
       var titleTd = el("td", { cls: "exh-l-title", title: listTitle(r) }, [listTitle(r)]);
-      if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
+      var pf = listPendingFold(r);
+      if (pf) titleTd.appendChild(el("span", { cls: "exh-l-sub exh-l-sg" }, pf.end === pf.to
+        ? ["folds " + r.ut + " into this credential; waits for the reviewed apply"]
+        : [pf.to + " now folds into " + pf.end + ", so this fold would stall. ",
+          word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the fold of " + r.ut + " to " + pf.end })]));
+      else if (o.title) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
       if (col) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
       if (L.changed.indexOf(r.ut) !== -1) titleTd.appendChild(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
       var sg = (aiOn || L.f === "suggested") && listSuggest(r);
@@ -2355,7 +2369,45 @@
     var L = listState(), sg = L.aiData && L.aiData.suggest && L.aiData.suggest[r.ut];
     if (!sg || (L.sgDone || {})[r.ut]) return null;
     var o = state.cs.overlay[r.ut] || {};
-    return o.title ? null : sg;
+    if (o.title) return null;
+    var end = listChainEnd(sg.to);
+    if (end === r.ut) return null;
+    return end === sg.to ? sg : { to: end, why: sg.why + "; " + sg.to + " itself now folds into " + end };
+  }
+  /* Where a title lands once the pending renames run: follow each credential's saved rename until one has none
+     (Sam, 2026-11-01: "for the folds already accepted I would want to be sure that we can fold to better titles"). */
+  function listChainEnd(t) {
+    var seen = {}, ov = state.cs.overlay || {};
+    for (var k = 0; k < 12 && t && !seen[t]; k++) {
+      seen[t] = true;
+      var nx = (ov[t] || {}).title;
+      if (!nx || nx === t) break;
+      t = nx;
+    }
+    return t;
+  }
+  /* A fold accepted and waiting for the reviewed apply: a rename and a merge confirm naming the same target. */
+  function listPendingFold(r) {
+    var o = state.cs.overlay[r.ut] || {};
+    if (!o.title || !o.merge || o.merge !== o.title) return null;
+    return { to: o.title, end: listChainEnd(o.title) };
+  }
+  /* Re-point a waiting fold at the end of its chain, so the dry-run never holds it as stale. */
+  function listRepoint(r, pf) {
+    var L = listState(), writes = [[FIELD_CRED_TITLE, pf.end], [FIELD_MERGE_CONFIRM, pf.end]];
+    listCellNote("Re-pointing the fold of " + r.ut + " to " + pf.end + "…");
+    return session().then(function (sess) {
+      if (!sess) throw new Error("signin");
+      return Promise.all(writes.map(function (w) { return saveCredRow(sess, r.ut, w[0], w[1]); }));
+    }).then(function (rs) {
+      if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
+      listApply(r, writes);
+      L.cellNote = "Saved: " + r.ut + " now folds straight into " + pf.end + ".";
+      redrawList();
+    }).catch(function (e) {
+      listCellNote(e && e.message === "signin" ? "Sign in as a reviewer to re-point a fold." : "The re-point of " + r.ut
+        + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed.");
+    });
   }
   /* Accept writes the rename and the merge confirm naming the same target, the pair the rename dry-run needs to fold
      one credential's records into the other; a reviewed apply does the merge. */
@@ -2368,7 +2420,7 @@
       return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
     }).then(function (rs) {
       if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
-      listApply(r, writes.slice(0, 1));
+      listApply(r, writes);
       L.sgDone[from] = "accepted";
       L.cellNote = "Saved: " + from + " folds into " + sg.to + ". The daily dry-run pairs them, and a reviewed apply merges the records.";
       redrawList();

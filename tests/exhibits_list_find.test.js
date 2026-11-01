@@ -15,7 +15,11 @@
 //       sits inside its own header, takes the finger (touch-action:none) and captures the pointer;
 //   (8) a spelling twin carries a suggested fold (Sam, 2026-11-01: "offering suggested titles based on what you see"):
 //       the Suggested folds filter shows only twins; Accept writes unified_title_override and unified_title_merge_confirm
-//       naming the same target, the pair the rename dry-run folds on; Dismiss hides it for the visit.
+//       naming the same target, the pair the rename dry-run folds on; Dismiss hides it for the visit;
+//   (9) an accepted fold stays improvable (Sam, 2026-11-01: "for the folds already accepted I would want to be sure
+//       that we can fold to better titles"): a fold whose target itself folds shows Re-point, which writes both rows
+//       to the chain's end; Folds waiting for the apply lists the accepted folds; a group's band counts its
+//       suggested folds; a suggestion points at the end of the chain.
 // Run from repo root: `npm test` (or `node tests/exhibits_list_find.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -45,6 +49,7 @@ const AISORT = { schema: 1, _reference_generated_at: "2026-11-01T05:19:00+00:00"
   order: { "Apiary Basics": [0, 0], "Welding Level 1": [1, 1], "10-Key Data Entry": [1, 2] },
   counts: { suggested_folds: 1 },
   suggest: { "10-Key Data Entry": { to: "Apiary Basics", why: "the same words spelled another way" } } };
+let OVERLAY_ROWS = [];
 const COLLISIONS = { collisions: [{ old_unified_title: "Apiary Basics", proposed_new_title: "Beekeeping" }] };
 
 function load() {
@@ -59,7 +64,7 @@ function load() {
     if (url === "kb/exhibits_adoption.json") return ok(ADOPTION);
     if (url === "kb/cred_rename_dryrun/collisions.json") return ok(COLLISIONS);
     if (url === "kb/exhibits_ai_sort.json") return ok(AISORT);
-    if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok([]);
+    if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok(/unified_title_override/.test(url) ? OVERLAY_ROWS : []);
     if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
     return Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } });
   };
@@ -200,6 +205,39 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   words(t.d, "Suggested folds").click(); await settle();
   Array.from(rows(t.d)[0].querySelectorAll("button")).find((b) => txt(b) === "Dismiss").click(); await settle();
   check("(8) Dismiss hides the suggestion", rows(t.d).length === 0);
+
+  // (9) A second visit, with two waiting folds: 10-Key into Apiary, and Apiary into Welding Level 1.
+  OVERLAY_ROWS = [
+    { course_id: "_CREDENTIAL_REVIEW::10-Key Data Entry", field: "unified_title_override", value: "Apiary Basics" },
+    { course_id: "_CREDENTIAL_REVIEW::10-Key Data Entry", field: "unified_title_merge_confirm", value: "Apiary Basics" },
+    { course_id: "_CREDENTIAL_REVIEW::Apiary Basics", field: "unified_title_override", value: "Welding Level 1" },
+    { course_id: "_CREDENTIAL_REVIEW::Apiary Basics", field: "unified_title_merge_confirm", value: "Welding Level 1" }];
+  const u = load();
+  await u.M.boot(); await settle();
+  Array.from(u.d.querySelectorAll("button")).find((b) => txt(b) === "Folds waiting for the apply").click(); await settle();
+  const wr = rows(u.d).map((r) => txt(r.children[2]));
+  check("(9) Folds waiting for the apply lists both accepted folds", wr.length === 2, wr.join(" | "));
+  const stalled = rows(u.d).find((r) => /now folds into Welding Level 1/.test(txt(r.children[2])));
+  check("(9) ⭐ a fold whose target itself folds says it would stall and offers Re-point",
+    !!stalled && /Apiary Basics now folds into Welding Level 1, so this fold would stall/.test(txt(stalled.children[2])), wr.join(" | "));
+  const n5 = u.calls.filter((c) => c.method === "POST").length;
+  Array.from(stalled.querySelectorAll("button")).find((b) => txt(b) === "Re-point to Welding Level 1").click(); await settle(); await settle();
+  const rp = u.calls.filter((c) => c.method === "POST").slice(n5);
+  check("(9) ⭐ Re-point writes the rename and the merge confirm to the chain's end",
+    rp.length === 2 && rp.every((p) => p.body.course_id === "_CREDENTIAL_REVIEW::10-Key Data Entry" && p.body.value === "Welding Level 1")
+    && rp.map((p) => p.body.field).sort().join(",") === "unified_title_merge_confirm,unified_title_override", JSON.stringify(rp.map((p) => p.body)));
+  check("(9) after Re-point no waiting fold stalls", !rows(u.d).some((r) => /would stall/.test(txt(r))));
+  OVERLAY_ROWS = [{ course_id: "_CREDENTIAL_REVIEW::Apiary Basics", field: "unified_title_override", value: "Welding Level 1" },
+    { course_id: "_CREDENTIAL_REVIEW::Apiary Basics", field: "unified_title_merge_confirm", value: "Welding Level 1" }];
+  const v = load();
+  await v.M.boot(); await settle();
+  v.d.getElementById("exh-l-ai").click(); await settle();
+  const band = Array.from(v.d.querySelectorAll(".exh-l-band")).map(txt).join(" | ");
+  check("(9) a group's band counts its suggested folds", /2 in this group, 1 suggested fold/.test(band), band);
+  const tenKey = rows(v.d).find((r) => /^10-Key/.test(txt(r.children[2])));
+  check("(9) a suggestion points at the end of the chain",
+    !!tenKey && /Suggested: fold into Welding Level 1 \(the same words spelled another way; Apiary Basics itself now folds into Welding Level 1\)/.test(txt(tenKey.children[2])),
+    tenKey && txt(tenKey.children[2]));
 
   let fail = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "  -- " + why)); if (!ok) fail++; });
