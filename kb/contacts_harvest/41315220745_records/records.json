@@ -1,0 +1,423 @@
+{
+ "run": "41315220745",
+ "read_by": "S540 SkyBunchberry, 2026-11-01",
+ "colleges": [
+  "Diablo Valley College",
+  "El Camino College",
+  "Evergreen Valley College",
+  "Foothill College",
+  "Fullerton College",
+  "Gavilan College",
+  "Glendale Community College",
+  "Imperial Valley College"
+ ],
+ "note": "Only colleges with at least one record go to apply. Read with no record: East Los Angeles (403), Feather River (unreachable), Folsom Lake (homepage 404), Fresno City (403), Grossmont (one page, no leadership link), Golden West (veterans and admissions pages only, no names), Hartnell (admissions pages only). Glendale's cabinet prints the title above the name; Imperial Valley's directory prints Last, First then the title.",
+ "unmatched_titles": [
+  {
+   "college": "Evergreen Valley College",
+   "title": "Interim Dean, Enrollment Services",
+   "name": "Ebonnie Berry"
+  },
+  {
+   "college": "Fullerton College",
+   "title": "Dean, Enrollment Services",
+   "name": "Albert Abutin, Ed.D."
+  },
+  {
+   "college": "Imperial Valley College",
+   "title": "Dean of Student Affairs and Enrollment Services",
+   "name": "Andrew Sanchez"
+  }
+ ],
+ "not_filled": [
+  {
+   "college": "Fullerton College",
+   "why": "Tam Contreras is Director, Dual Enrollment and High School Articulation: high school articulation, never the articulation officer."
+  },
+  {
+   "college": "Glendale Community College",
+   "why": "Meg Chil-Gevorkyan is also printed as Associate Dean, Career Education and Workforce Development; the college's dean_cte is the Dean, Workforce Development (Federico Saucedo), so the associate post stays out."
+  },
+  {
+   "college": "Foothill College",
+   "why": "The district's chancellor and vice chancellor are filed under Foothill, whose read reached the district page; De Anza's read (S539) found one page only. Their emails print as [email protected], so none is filled."
+  }
+ ],
+ "rows": [
+  {
+   "college": "Diablo Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Monica Chahal",
+   "email": "mchahal@dvc.edu",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Senior Dean, Curriculum and Instruction",
+   "name": "Nikki Moultrie",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "Diablo Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Business and Administrative Services",
+   "name": "Sara Parker",
+   "email": "",
+   "source_url": "https://www.dvc.edu/directory"
+  },
+  {
+   "college": "El Camino College",
+   "position": "college_ceo",
+   "title_as_printed": "President/CEO",
+   "name": "Brenda Thames, Ph.D.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "El Camino College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Carlos Lopez, M.S.",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "El Camino College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Jessie Wang, CPA, CGMA, CITP, MBA",
+   "email": "",
+   "source_url": "https://www.elcamino.edu/leadership/"
+  },
+  {
+   "college": "Evergreen Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Vinicio J. López, Ed.D.",
+   "email": "",
+   "source_url": "https://www.evc.edu/about/president/administration-directory.html"
+  },
+  {
+   "college": "Evergreen Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Acting Vice President of Academic Affairs",
+   "name": "Maniphone Dickerson",
+   "email": "",
+   "source_url": "https://www.evc.edu/about/president/administration-directory.html"
+  },
+  {
+   "college": "Evergreen Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Interim Vice President, Administrative Services",
+   "name": "Yulian Ligioso",
+   "email": "yulian.ligioso@evc.edu",
+   "source_url": "https://www.evc.edu/faculty/index.html"
+  },
+  {
+   "college": "Evergreen Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Sam Morgan",
+   "email": "Sam.Morgan@evc.edu",
+   "source_url": "https://www.evc.edu/faculty/index.html"
+  },
+  {
+   "college": "Evergreen Valley College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer / Faculty",
+   "name": "Laura Garcia",
+   "email": "Laura.Garcia@evc.edu",
+   "source_url": "https://www.evc.edu/faculty/index.html"
+  },
+  {
+   "college": "Foothill College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Kristina Whalen, Ph.D.",
+   "email": "whalenkristina@fhda.edu",
+   "source_url": "https://foothill.edu/president/leadership.html"
+  },
+  {
+   "college": "Foothill College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Stacy Gleixner, Ph.D.",
+   "email": "gleixnerstacy@fhda.edu",
+   "source_url": "https://foothill.edu/president/leadership.html"
+  },
+  {
+   "college": "Foothill College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Laurie Scolari, Ed.D.",
+   "email": "scolarilaurie@fhda.edu",
+   "source_url": "https://foothill.edu/president/leadership.html"
+  },
+  {
+   "college": "Foothill College",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor",
+   "name": "Lee D. Lambert",
+   "email": "",
+   "source_url": "https://www.fhda.edu/_chancellor/"
+  },
+  {
+   "college": "Foothill College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor, Strategy, Institutional Effectiveness, and Engagement",
+   "name": "Gohar Momjian",
+   "email": "",
+   "source_url": "https://www.fhda.edu/_chancellor/a-chancellors-office-contact-info.html"
+  },
+  {
+   "college": "Fullerton College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Cynthia Olivo, Ph.D.",
+   "email": "colivo@fullcoll.edu",
+   "source_url": "https://www.fullcoll.edu/administrative-directory/"
+  },
+  {
+   "college": "Fullerton College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Sonia De La Torre, Ed.D.",
+   "email": "sdelatorre@fullcoll.edu",
+   "source_url": "https://www.fullcoll.edu/administrative-directory/"
+  },
+  {
+   "college": "Fullerton College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Henry Hua",
+   "email": "hhua@fullcoll.edu",
+   "source_url": "https://www.fullcoll.edu/administrative-directory/"
+  },
+  {
+   "college": "Fullerton College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Carlos Ayon, Ph.D.",
+   "email": "cayon@fullcoll.edu",
+   "source_url": "https://www.fullcoll.edu/administrative-directory/"
+  },
+  {
+   "college": "Fullerton College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions and Records",
+   "name": "Rena Martinez Stluka",
+   "email": "rmartinezstluka@fullcoll.edu",
+   "source_url": "https://www.fullcoll.edu/administrative-directory/"
+  },
+  {
+   "college": "Gavilan College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Pedro Avila",
+   "email": "pedroavila@gavilan.edu",
+   "source_url": "https://www.gavilan.edu/about/directory.php"
+  },
+  {
+   "college": "Gavilan College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Moaty Fayek",
+   "email": "mfayek@gavilan.edu",
+   "source_url": "https://www.gavilan.edu/about/directory.php"
+  },
+  {
+   "college": "Gavilan College",
+   "position": "vpss",
+   "title_as_printed": "Interim Vice President, Student Services",
+   "name": "Newin Paul Orante",
+   "email": "norante@gavilan.edu",
+   "source_url": "https://www.gavilan.edu/about/directory.php"
+  },
+  {
+   "college": "Gavilan College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Marilyn Morikang",
+   "email": "mmorikang@gavilan.edu",
+   "source_url": "https://www.gavilan.edu/administration/index.php"
+  },
+  {
+   "college": "Gavilan College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean, Career Education and Workforce Development",
+   "name": "Vins Chacko",
+   "email": "vchacko@gavilan.edu",
+   "source_url": "https://www.gavilan.edu/about/directory.php"
+  },
+  {
+   "college": "Gavilan College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions & Records",
+   "name": "Irene Haneta",
+   "email": "ihaneta@gavilan.edu",
+   "source_url": "https://www.gavilan.edu/about/directory.php"
+  },
+  {
+   "college": "Glendale Community College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Ryan Cornner",
+   "email": "",
+   "source_url": "https://www.glendale.edu/about-gcc/administration/index.html"
+  },
+  {
+   "college": "Glendale Community College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Sharlene Coleal",
+   "email": "",
+   "source_url": "https://www.glendale.edu/about-gcc/administration/index.html"
+  },
+  {
+   "college": "Glendale Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instructional Services",
+   "name": "Michael Ritterbrown",
+   "email": "",
+   "source_url": "https://www.glendale.edu/about-gcc/administration/index.html"
+  },
+  {
+   "college": "Glendale Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Alen Andriassian",
+   "email": "",
+   "source_url": "https://www.glendale.edu/about-gcc/administration/index.html"
+  },
+  {
+   "college": "Glendale Community College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Administrative Services",
+   "name": "Amy Williams",
+   "email": "",
+   "source_url": "https://www.glendale.edu/about-gcc/administration/index.html"
+  },
+  {
+   "college": "Glendale Community College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Technology and Innovation",
+   "name": "Michael Dioquino",
+   "email": "",
+   "source_url": "https://www.glendale.edu/about-gcc/administration/index.html"
+  },
+  {
+   "college": "Glendale Community College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean, Workforce Development",
+   "name": "Federico Saucedo",
+   "email": "",
+   "source_url": "https://www.glendale.edu/about-gcc/administration/index.html"
+  },
+  {
+   "college": "Glendale Community College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instructional Services (Interim)",
+   "name": "Meg Chil-Gevorkyan",
+   "email": "",
+   "source_url": "https://www.glendale.edu/about-gcc/administration/index.html"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Interim Supt/President",
+   "name": "James Limbaugh",
+   "email": "james.limbaugh@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean of Instruction- Economic and Workforce Development",
+   "name": "Efrain Silva",
+   "email": "efrain.silva@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction- Arts, Letters and Learning Services",
+   "name": "Hector Garza",
+   "email": "hector.garza@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction- Math and Sciences",
+   "name": "Krista Byrd",
+   "email": "krista.byrd@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "articulation_officer",
+   "title_as_printed": "Transfer Center Coordinator and Articulation Officer",
+   "name": "Kristen Gomez",
+   "email": "kristen.gomez@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  },
+  {
+   "college": "Imperial Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President for Administrative Services",
+   "name": "Cesar Vega",
+   "email": "cesar.vega@imperial.edu",
+   "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+  }
+ ],
+ "vpbs_reading": "Sara Parker (Business and Administrative Services) and Cesar Vega (for Administrative Services) file as VPBS under Sam's Open Asks Sheet 151 card 1 (vpbs): both titles name his two variants' words.",
+ "held_for_sam": {
+  "sheet": "Open Asks Sheet 153",
+  "question": "Does a VP title that joins Equity to the standard post (or reads Academic Services) count as that post?",
+  "rows": [
+   {
+    "college": "Diablo Valley College",
+    "position": "vpss",
+    "title_as_printed": "Vice President, Equity and Student Services/Title IX Coordinator",
+    "name": "Vicki Ferguson",
+    "email": "",
+    "source_url": "https://www.dvc.edu/directory"
+   },
+   {
+    "college": "Diablo Valley College",
+    "position": "vpaa",
+    "title_as_printed": "Vice President, Equity and Instruction",
+    "name": "Joseph Gorga",
+    "email": "",
+    "source_url": "https://www.dvc.edu/directory"
+   },
+   {
+    "college": "El Camino College",
+    "position": "vpss",
+    "title_as_printed": "Vice President of Equity and Student Services",
+    "name": "Jeff Stephenson, Ph.D.",
+    "email": "",
+    "source_url": "https://www.elcamino.edu/leadership/"
+   },
+   {
+    "college": "Imperial Valley College",
+    "position": "vpss",
+    "title_as_printed": "Vice President for Student Services and Equity",
+    "name": "Alexis Ayala",
+    "email": "alexis.ayala@imperial.edu",
+    "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+   },
+   {
+    "college": "Imperial Valley College",
+    "position": "vpaa",
+    "title_as_printed": "Vice President of Academic Services",
+    "name": "Julia Jules Johnson",
+    "email": "jules.johnson@imperial.edu",
+    "source_url": "https://www.imperial.edu/faculty-and-staff/directory/index.html"
+   }
+  ]
+ }
+}
