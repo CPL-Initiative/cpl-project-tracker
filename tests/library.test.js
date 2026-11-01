@@ -1336,3 +1336,27 @@ block("(12)", function () {
     check("(12) Add writes knowledge false and no note", !!a && a.body.knowledge === false && a.body.kb_note === null, a && JSON.stringify(a.body));
   });
 });
+
+// ── (20) SharePoint is closed to a session (Sam, 2026-11-01) ─────────────
+// On the IACA request: "build in a note to the user that sharepoint is not currently
+// accessible and offer instructions on what to do instead." The live case is a deck whose
+// only file is on SharePoint, with no source to rebuild from and no document to read.
+block("(20)", function () {
+  const M = loadModule({ phrase: "p", author: "Sam", fetch: function () { return response(200, []); } }).M;
+  const SP = "https://studentrcc.sharepoint.com/:p:/r/sites/MilitaryArticulationPlatform/Shared%20Documents/CCCCO/AI/CPLLibrary/IACA.pptx";
+  const iaca = { title: "IACA", url: SP, rebuild_from: null, sources: [],
+    regen: { publish: "show", requested_at: "2026-10-26T18:57:54.717Z", requested_by: "Crystal Nasio" } };
+  check("(20) a request whose only file is on SharePoint is one a run cannot start", M._sharePointOnly(iaca) === true);
+  check("(20) a source to rebuild from, a pasted text or a public link lets the run start",
+    !M._sharePointOnly(Object.assign({}, iaca, { rebuild_from: "build.py" })) &&
+    !M._sharePointOnly(Object.assign({}, iaca, { sources: [{ title: "x", url: null, text: "words" }] })) &&
+    !M._sharePointOnly(Object.assign({}, iaca, { sources: [{ title: "x", url: "https://example.org/a.pdf", text: null }] })) &&
+    !M._sharePointOnly(Object.assign({}, iaca, { url: "https://example.org/a.pdf" })));
+  const w = M._regenWords(iaca);
+  check("(20) ⭐ its card says SharePoint cannot be opened and what to do instead",
+    /Rebuild requested by Crystal Nasio/.test(w) && /cannot open yet/.test(w) && /Microsoft 365 connector/.test(w) &&
+    /Download a copy of the file from SharePoint/.test(w) && /Create, Revise or Remediate a Document/.test(w) &&
+    !/Copy the request starts it/.test(w), w);
+  check("(20) the advice never sends a file to SharePoint for a session to read",
+    !/Put it in SharePoint and paste/.test(SRC) && !/put it in SharePoint and paste/.test(SRC));
+});

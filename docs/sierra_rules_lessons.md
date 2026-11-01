@@ -201,3 +201,27 @@ question in 30 hours cite NURVN 414. The probes reach Acute Care Nursing Assista
 `pickHeldTitles` keeps it among the four held titles. Note that `fetchCredentialRecs` turns an RPC error into an empty map,
 which `buildPrecedentLines` renders as "none ... the request would be a first": a timeout there would produce the same
 sentence, so check the timings before reading either cause into it. Whether to tune the precedent line is Sam's call.
+
+## Matched instructions: Fable's advice on the 9,000-character budget (S540 SkyBunchberry, 2026-11-01)
+
+Sam, 2026-11-01, on the Sierra training tab: *"Thinking about our instructions and the size limitation and the need to
+retire instructions to add new ones and worrying that we are removing part of her brain to stuff in different parts and
+thinking that may not be sustainable or wise ... consider whether we might use JEV or other tools or approaches or
+combinations to unharness her more and make her more agile and free to grow."* He asked for Fable as advisor.
+
+- **Measured** (Fable, from `chatbox/supabase/functions/cpl-chat/index.ts`): `fetchGuidanceKind` (~6679) reads active
+  rows newest first, limit 20; `guidanceBlock` (~6704) stops at the first row past 9,000 characters. The question plays
+  no part. 18 active directives, 8,693 of 9,000 characters on My College (receipt
+  `sierra_guidance_wording_fixes_2026-10-26_s491.sql`). `chat_interactions` logs the built-in rules' `fired` keys,
+  never guidance ids. Most instructions already open "When someone asks something like X", a trigger the code ignores.
+- **Advice.** Three tiers: a cached core that always goes (about 2,500 characters); instructions matched to the question
+  by their trigger, matches first, then newest first to fill (today's behavior as the floor); display rules routed the
+  same way. Jev as a second scorer behind a flag for semantic triggers, never the only gate (below p 0.85 its ordering
+  was chance in the CCRR trial, `kb/_jev_battery.py`), with a timeout falling back to the keyword score.
+- **First step** (one PR, no schema change): score directives against `routeText` with `extractTopicKeywords` and
+  `trigramSimilarity`, matches first, log `{sent, matched, dropped}` ids in `timings`, and make
+  `sierra_wording_check.js`'s `sendSet` agree. Measure two weeks: matched-and-dropped turns (target 0), characters per
+  turn, `first_text_ms` unchanged, thumbs-down rate.
+- **Risk.** An instruction that silently fails to fire. The tab should show per instruction "fired on N of the last
+  100 questions" and a "Would this fire?" box running the same matcher.
+- **Held** on Open Asks Sheet 153: it changes the live function, a production deploy.

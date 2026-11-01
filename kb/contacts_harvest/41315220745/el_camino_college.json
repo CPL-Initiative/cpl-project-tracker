@@ -1,0 +1,764 @@
+{
+ "college": "El Camino College",
+ "homepage": "https://www.elcamino.edu/",
+ "read_at": "2026-11-01T14:17:35+00:00",
+ "pages": [
+  {
+   "url": "https://www.elcamino.edu/",
+   "final_url": "https://www.elcamino.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.elcamino.edu/admissions/",
+   "final_url": "https://www.elcamino.edu/admissions/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.elcamino.edu/directory/",
+   "final_url": "https://www.elcamino.edu/directory/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.elcamino.edu/events/?trumbaEmbed=view%3Devent%26eventid%3D197105641 ",
+   "final_url": "https://www.elcamino.edu/events/?trumbaEmbed=view%3Devent%26eventid%3D197105641",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.elcamino.edu/leadership/",
+   "final_url": "https://www.elcamino.edu/leadership/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Section MenuToggle Submenu",
+      "Board of Trustees",
+      "Citizens' Bond Oversight Committee",
+      "President's Office",
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Board of Trustees",
+      "Citizens' Bond Oversight Committee",
+      "President's Office",
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources",
+      "Vice President of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Citizens' Bond Oversight Committee",
+      "President's Office",
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources",
+      "Vice President of Student Services",
+      "Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Human Resources",
+     "position": null,
+     "window": [
+      "President's Office",
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources",
+      "Vice President of Student Services",
+      "Committees",
+      "Administration"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources",
+      "Vice President of Student Services",
+      "Committees",
+      "Administration",
+      "Office Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The administration team is led by the College’s president, who also serves as superintendent",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Administration",
+      "El Camino College Administration",
+      "The administration team is led by the College’s president, who also serves as superintendent",
+      "of the El Camino Community College District.",
+      "The president is assisted directly by four vice presidents. Their areas of responsibility",
+      "are Academic Affairs, Administrative Services, Human Resources, and Student Services."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "The president is assisted directly by four vice presidents. Their areas of responsibility",
+      "are Academic Affairs, Administrative Services, Human Resources, and Student Services.",
+      "Brenda Thames, Ph.D.",
+      "President/CEO",
+      "Carlos Lopez, M.S.",
+      "Vice President, Academic Affairs",
+      "Jessie Wang, CPA, CGMA, CITP, MBA"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Brenda Thames, Ph.D.",
+      "President/CEO",
+      "Carlos Lopez, M.S.",
+      "Vice President, Academic Affairs",
+      "Jessie Wang, CPA, CGMA, CITP, MBA",
+      "Vice President, Administrative Services",
+      "Jane Miyashiro, M.S."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Carlos Lopez, M.S.",
+      "Vice President, Academic Affairs",
+      "Jessie Wang, CPA, CGMA, CITP, MBA",
+      "Vice President, Administrative Services",
+      "Jane Miyashiro, M.S.",
+      "Vice President, Human Resources",
+      "Jeff Stephenson, Ph.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Human Resources",
+     "position": null,
+     "window": [
+      "Jessie Wang, CPA, CGMA, CITP, MBA",
+      "Vice President, Administrative Services",
+      "Jane Miyashiro, M.S.",
+      "Vice President, Human Resources",
+      "Jeff Stephenson, Ph.D.",
+      "Vice President of Equity and Student Services",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Equity and Student Services",
+     "position": null,
+     "window": [
+      "Jane Miyashiro, M.S.",
+      "Vice President, Human Resources",
+      "Jeff Stephenson, Ph.D.",
+      "Vice President of Equity and Student Services",
+      "Office of the President",
+      "More Information",
+      "VP of Academic Affairs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Vice President, Human Resources",
+      "Jeff Stephenson, Ph.D.",
+      "Vice President of Equity and Student Services",
+      "Office of the President",
+      "More Information",
+      "VP of Academic Affairs",
+      "More Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "More Information",
+      "VP of Academic Affairs",
+      "More Information",
+      "VP of Administrative Services",
+      "More Information",
+      "VP of Human Resources",
+      "More Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.elcamino.edu/departments/",
+   "final_url": "https://www.elcamino.edu/departments/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.elcamino.edu/cdn-cgi/l/email-protection",
+   "status": 404
+  },
+  {
+   "url": "https://www.elcamino.edu/directory/directory-requests.php",
+   "final_url": "https://www.elcamino.edu/directory/directory-requests.php",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.elcamino.edu/leadership/president/index.php",
+   "final_url": "https://www.elcamino.edu/leadership/president/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office | El Camino College | Torrance, CA",
+     "position": "college_ceo",
+     "window": [
+      "President's Office | El Camino College | Torrance, CA",
+      "Skip to Main Menu",
+      "Menu",
+      "Search El CaminoSearch Button"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Search El Camino College",
+      "Submit Search",
+      "Cancel Search",
+      "President's Office",
+      "Section MenuToggle Submenu",
+      "Message from the President",
+      "Organizational Chart"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Message from the President",
+     "position": "college_ceo",
+     "window": [
+      "Cancel Search",
+      "President's Office",
+      "Section MenuToggle Submenu",
+      "Message from the President",
+      "Organizational Chart",
+      "Planning & Budget Committee",
+      "Presentations & Speeches"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Advisory Committee on Race and Equity",
+     "position": "college_ceo",
+     "window": [
+      "Organizational Chart",
+      "Planning & Budget Committee",
+      "Presentations & Speeches",
+      "President’s Advisory Committee on Race and Equity",
+      "President's News",
+      "Awards",
+      "Staff Directory"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's News",
+     "position": "college_ceo",
+     "window": [
+      "Planning & Budget Committee",
+      "Presentations & Speeches",
+      "President’s Advisory Committee on Race and Equity",
+      "President's News",
+      "Awards",
+      "Staff Directory",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Staff Directory",
+      "Home",
+      "Administration",
+      "President's Office",
+      "President's Message",
+      "Brenda Thames, President/CEO",
+      "El Camino College has a long history of fostering success to ensure our students achieve"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Administration",
+      "President's Office",
+      "President's Message",
+      "Brenda Thames, President/CEO",
+      "El Camino College has a long history of fostering success to ensure our students achieve",
+      "their dreams. At every step along the way, our faculty and staff are at your side,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Brenda Thames, President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "President's Office",
+      "President's Message",
+      "Brenda Thames, President/CEO",
+      "El Camino College has a long history of fostering success to ensure our students achieve",
+      "their dreams. At every step along the way, our faculty and staff are at your side,",
+      "nurturing your talent and drive. It is these traits that have brought you to El Camino,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "on this incredible journey of higher education. We will be there with you along the",
+      "way to celebrate your achievements.",
+      "Brenda Thames",
+      "President/CEO",
+      "Welcome to El Camino College! We provide excellent comprehensive educational programs",
+      "and services that promote student learning and success.",
+      "YoutubeTwitterFacebookInstagram"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.elcamino.edu/leadership/index.php",
+   "final_url": "https://www.elcamino.edu/leadership/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Section MenuToggle Submenu",
+      "Board of Trustees",
+      "Citizens' Bond Oversight Committee",
+      "President's Office",
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Board of Trustees",
+      "Citizens' Bond Oversight Committee",
+      "President's Office",
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources",
+      "Vice President of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Citizens' Bond Oversight Committee",
+      "President's Office",
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources",
+      "Vice President of Student Services",
+      "Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Human Resources",
+     "position": null,
+     "window": [
+      "President's Office",
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources",
+      "Vice President of Student Services",
+      "Committees",
+      "Administration"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Vice President of Academic Affairs",
+      "Vice President of Administrative Services",
+      "Vice President of Human Resources",
+      "Vice President of Student Services",
+      "Committees",
+      "Administration",
+      "Office Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The administration team is led by the College’s president, who also serves as superintendent",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Administration",
+      "El Camino College Administration",
+      "The administration team is led by the College’s president, who also serves as superintendent",
+      "of the El Camino Community College District.",
+      "The president is assisted directly by four vice presidents. Their areas of responsibility",
+      "are Academic Affairs, Administrative Services, Human Resources, and Student Services."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "The president is assisted directly by four vice presidents. Their areas of responsibility",
+      "are Academic Affairs, Administrative Services, Human Resources, and Student Services.",
+      "Brenda Thames, Ph.D.",
+      "President/CEO",
+      "Carlos Lopez, M.S.",
+      "Vice President, Academic Affairs",
+      "Jessie Wang, CPA, CGMA, CITP, MBA"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Brenda Thames, Ph.D.",
+      "President/CEO",
+      "Carlos Lopez, M.S.",
+      "Vice President, Academic Affairs",
+      "Jessie Wang, CPA, CGMA, CITP, MBA",
+      "Vice President, Administrative Services",
+      "Jane Miyashiro, M.S."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Carlos Lopez, M.S.",
+      "Vice President, Academic Affairs",
+      "Jessie Wang, CPA, CGMA, CITP, MBA",
+      "Vice President, Administrative Services",
+      "Jane Miyashiro, M.S.",
+      "Vice President, Human Resources",
+      "Jeff Stephenson, Ph.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Human Resources",
+     "position": null,
+     "window": [
+      "Jessie Wang, CPA, CGMA, CITP, MBA",
+      "Vice President, Administrative Services",
+      "Jane Miyashiro, M.S.",
+      "Vice President, Human Resources",
+      "Jeff Stephenson, Ph.D.",
+      "Vice President of Equity and Student Services",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Equity and Student Services",
+     "position": null,
+     "window": [
+      "Jane Miyashiro, M.S.",
+      "Vice President, Human Resources",
+      "Jeff Stephenson, Ph.D.",
+      "Vice President of Equity and Student Services",
+      "Office of the President",
+      "More Information",
+      "VP of Academic Affairs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Vice President, Human Resources",
+      "Jeff Stephenson, Ph.D.",
+      "Vice President of Equity and Student Services",
+      "Office of the President",
+      "More Information",
+      "VP of Academic Affairs",
+      "More Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "More Information",
+      "VP of Academic Affairs",
+      "More Information",
+      "VP of Administrative Services",
+      "More Information",
+      "VP of Human Resources",
+      "More Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.elcamino.edu/leadership/president/staff-directory.php",
+   "final_url": "https://www.elcamino.edu/leadership/president/staff-directory.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Message from the President",
+     "position": "college_ceo",
+     "window": [
+      "Cancel Search",
+      "Staff Directory",
+      "Section MenuToggle Submenu",
+      "Message from the President",
+      "Organizational Chart",
+      "Planning & Budget Committee",
+      "Presentations & Speeches"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Advisory Committee on Race and Equity",
+     "position": "college_ceo",
+     "window": [
+      "Organizational Chart",
+      "Planning & Budget Committee",
+      "Presentations & Speeches",
+      "President’s Advisory Committee on Race and Equity",
+      "President's News",
+      "Awards",
+      "Staff Directory"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's News",
+     "position": "college_ceo",
+     "window": [
+      "Planning & Budget Committee",
+      "Presentations & Speeches",
+      "President’s Advisory Committee on Race and Equity",
+      "President's News",
+      "Awards",
+      "Staff Directory",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Staff Directory",
+      "Home",
+      "Administration",
+      "President's Office",
+      "Staff Directory",
+      "Contact",
+      "Brenda Thames, Ph.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "Staff Directory",
+      "Contact",
+      "Brenda Thames, Ph.D.",
+      "President/CEO",
+      "310-660-3111",
+      "[email protected]",
+      "Rose Sandro"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.elcamino.edu/leadership/president/",
+   "final_url": "https://www.elcamino.edu/leadership/president/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office | El Camino College | Torrance, CA",
+     "position": "college_ceo",
+     "window": [
+      "President's Office | El Camino College | Torrance, CA",
+      "Skip to Main Menu",
+      "Menu",
+      "Search El CaminoSearch Button"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Search El Camino College",
+      "Submit Search",
+      "Cancel Search",
+      "President's Office",
+      "Section MenuToggle Submenu",
+      "Message from the President",
+      "Organizational Chart"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Message from the President",
+     "position": "college_ceo",
+     "window": [
+      "Cancel Search",
+      "President's Office",
+      "Section MenuToggle Submenu",
+      "Message from the President",
+      "Organizational Chart",
+      "Planning & Budget Committee",
+      "Presentations & Speeches"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Advisory Committee on Race and Equity",
+     "position": "college_ceo",
+     "window": [
+      "Organizational Chart",
+      "Planning & Budget Committee",
+      "Presentations & Speeches",
+      "President’s Advisory Committee on Race and Equity",
+      "President's News",
+      "Awards",
+      "Staff Directory"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's News",
+     "position": "college_ceo",
+     "window": [
+      "Planning & Budget Committee",
+      "Presentations & Speeches",
+      "President’s Advisory Committee on Race and Equity",
+      "President's News",
+      "Awards",
+      "Staff Directory",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Staff Directory",
+      "Home",
+      "Administration",
+      "President's Office",
+      "President's Message",
+      "Brenda Thames, President/CEO",
+      "El Camino College has a long history of fostering success to ensure our students achieve"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Administration",
+      "President's Office",
+      "President's Message",
+      "Brenda Thames, President/CEO",
+      "El Camino College has a long history of fostering success to ensure our students achieve",
+      "their dreams. At every step along the way, our faculty and staff are at your side,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Brenda Thames, President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "President's Office",
+      "President's Message",
+      "Brenda Thames, President/CEO",
+      "El Camino College has a long history of fostering success to ensure our students achieve",
+      "their dreams. At every step along the way, our faculty and staff are at your side,",
+      "nurturing your talent and drive. It is these traits that have brought you to El Camino,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/CEO",
+     "position": "college_ceo",
+     "window": [
+      "on this incredible journey of higher education. We will be there with you along the",
+      "way to celebrate your achievements.",
+      "Brenda Thames",
+      "President/CEO",
+      "Welcome to El Camino College! We provide excellent comprehensive educational programs",
+      "and services that promote student learning and success.",
+      "YoutubeTwitterFacebookInstagram"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41315220745"
+}
