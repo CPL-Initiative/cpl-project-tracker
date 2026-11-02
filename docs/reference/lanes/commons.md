@@ -63,7 +63,7 @@ bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one 
 **Next (Sam, 2026-11-01):** everything in the Commons' Exhibit row joins the Exhibits tab's tiles above the list, folded into the existing tiles where it fits and as new tiles where it does not (*"I like the tiles above the list ... capture everything from 1st into Exhibits view"*); one source for both pages, so they stay aligned.
 
 
-**The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out.
+**The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out. Step 1 of its three landed in S544: the engine's `suggest` slot and the visit's changed set, with CR's rung proposals (*Suggested groups*, Confirm the group) and the Subjects open picks (*Suggested picks*, Confirm this pick) wired in; the next is the filter words with their counts in the engine.
 
 **LIVE: the Commons tab, `#commons` (S417, 2026-10-18).** Sam, 20:10Z: *"Build it as a tab now. I can
 live without the words on the cards—pretty self explanatory and I am the main user."* The tab is the

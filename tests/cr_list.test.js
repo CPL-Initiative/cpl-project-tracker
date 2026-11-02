@@ -13,7 +13,11 @@
 //   (8) no raw hex in the List's CSS;
 //   (9) your flag (Sam, 2026-11-01: "give me the flag but no find and replace"): saved flags load from kb_curation
 //       (_CR_LIST::<wording>, list_flag), Your flags narrows to them, a tick writes one row with the time and an untick
-//       writes "", the team phrase alone sets none and says so, a failed read says so, and there is no Find and replace.
+//       writes "", the team phrase alone sets none and says so, a failed read says so, and there is no Find and replace;
+//  (10) the rung proposals as the engine's suggestions (the List norms, 2026-11-01): Suggested groups keeps the undecided
+//       groups a rung 1 to 4 rule places, each wording saying so under its title (not under All); Dismiss sets the whole
+//       group aside for the visit with no write; Confirm the group writes the same decision row as the drawer, and the
+//       group's wordings then read changed this visit; a refused confirm says it did not save and the suggestion stays.
 // Run from repo root: `npm test` (or `node tests/cr_list.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -192,6 +196,55 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
   const h = tab({ flagReadFails: true });
   h.M.activate(); await settle();
   check("(9) a failed flag read says so", /Your flags could not be read/.test(txt(h.d.getElementById("cr-reference-root"))));
+
+  // ── (10) suggestions and the changed set ──
+  const sgLine = (r) => r.querySelector(".crl-sg");
+  const k = tab();
+  k.M.activate(); await settle();
+  check("(10) under All no suggestion line shows", !k.d.querySelector(".crl-sg"));
+  words(k.d, "Suggested groups").click(); await settle();
+  let sr = rows(k.d);
+  check("(10) ⭐ Suggested groups keeps the undecided rung proposal's wordings, each saying why",
+    sr.length === 2 && sr.every((r) => /Community Relations/.test(txt(r.children[2])) && sgLine(r)
+      && txt(sgLine(r)) === "Suggested: its group's 2 wordings as one reference, 3 hours in Community Relations (Published rule: Published statewide recommendation) Confirm the group Dismiss"),
+    sr.map((r) => txt(sgLine(r) || r)).join(" | "));
+  const confirmWord = sgLine(sr[1]).querySelector("button");
+  check("(10) the verb names the group to a screen reader", confirmWord.getAttribute("aria-label") === "Confirm the group of 3.0 hours in Community Relations as 3 hours in Community Relations");
+  const nk = posts(k).length;
+  Array.from(sgLine(sr[0]).querySelectorAll("button")).find((b) => txt(b) === "Dismiss").click(); await settle();
+  check("(10) Dismiss on one wording sets the whole group aside for the visit, with no write",
+    rows(k.d).length === 0 && posts(k).length === nk && /Dismissed for this visit/.test(txt(k.d.getElementById("crl-cellnote"))));
+
+  const c = tab();
+  c.M.activate(); await settle();
+  words(c.d, "Suggested groups").click(); await settle();
+  const nc = posts(c).length;
+  sgLine(rows(c.d)[0]).querySelector("button").click(); await settle();
+  p = posts(c).slice(nc);
+  check("(10) ⭐ Confirm the group writes the drawer's decision row: confirmed, the reference and the members kept",
+    p.length === 1 && p[0].body[0].group_key === "community relations" && p[0].body[0].decision === "confirmed"
+    && p[0].body[0].canonical === "3 hours in Community Relations" && p[0].body[0].members.join("|") === "3 hours in Community Relations|3.0 hours in Community Relations",
+    JSON.stringify(p.map((x) => x.body)));
+  check("(10) the status line says what saved, and the group leaves Suggested groups", rows(c.d).length === 0
+    && /Confirmed: the group's 2 wordings read 3 hours in Community Relations/.test(txt(c.d.getElementById("crl-cellnote"))), txt(c.d.getElementById("crl-cellnote")));
+  words(c.d, "Changed this visit").click(); await settle();
+  sr = rows(c.d);
+  check("(10) ⭐ Changed this visit lists every wording of the confirmed group, each saying so",
+    sr.length === 2 && sr.every((r) => /changed this visit/.test(txt(r.children[2]))), sr.map((r) => txt(r.children[2])).join(" | "));
+  words(c.d, "All").click(); await settle();
+  c.d.getElementById("crl-editall").click(); await settle();
+  const wb = Array.from(c.d.querySelectorAll(".crl-cellin")).find((b) => b.getAttribute("aria-label") === "Reference of 4 hours in Welding");
+  wb.value = "Welding (4 units)"; wb.dispatchEvent(new c.w.Event("change")); await settle();
+  c.d.getElementById("crl-editall").click(); await settle();
+  words(c.d, "Changed this visit").click(); await settle();
+  check("(10) a reference saved in place joins the changed set", rows(c.d).length === 3 && rows(c.d).some((r) => /4 hours in Welding/.test(txt(r.children[2]))));
+
+  const rf = tab({ refuse: true });
+  rf.M.activate(); await settle();
+  words(rf.d, "Suggested groups").click(); await settle();
+  sgLine(rows(rf.d)[0]).querySelector("button").click(); await settle();
+  check("(10) a refused confirm says it did not save, and the suggestion stays", rows(rf.d).length === 2 && !!sgLine(rows(rf.d)[0])
+    && /did not save/.test(txt(rf.d.getElementById("crl-cellnote"))), txt(rf.d.getElementById("crl-cellnote")));
 
   let pass = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });

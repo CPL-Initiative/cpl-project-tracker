@@ -55,6 +55,19 @@
 //                      whose rows change in place (an Edit, a save) leaves it out.
 //   findDelay          milliseconds the finder waits after the last keystroke before it filters (the Courses List: 160,
 //                      the delay COCI Lookup's own finder had); left out, every keystroke filters.
+//   suggest            { get(r) -> null | { text, why }, verb, accept(r, sg) -> Promise<{ ok, words, keys }>, key(r),
+//                      label(r, sg), always }: a machine's proposed fold (the List norms' "suggestion"). Under the row's
+//                      title the engine writes "Suggested: <text> (<why>)", the verb (default Accept) and Dismiss. accept
+//                      makes the write and resolves { ok, words }: words go to the status line either way, and ok sets the
+//                      suggestion aside as accepted and marks the row (and any keys it names) changed. A rejected accept
+//                      says it did not reach the reference. Dismiss sets it aside for the visit; key(r) is what both set
+//                      aside (default the row's key; CR passes its group, so one press settles every wording of it). The
+//                      line shows under the filter id "suggested" (which keeps only the rows with one) and with the AI
+//                      sort on, or under every filter when always is true. label(r, sg) names the verb to a screen reader.
+//   changed            true: the engine keeps the visit's changed set, L.changed. An accepted suggestion joins it, a tab
+//                      adds its own saves with api.markChanged(keys), each such row reads "changed this visit" under its
+//                      title, and the filter id "changed" keeps them. A new visit drops it with the state.
+//                      The Exhibits List keeps its own suggestions and changed set (S542) and sets neither.
 //
 // The sort: the rows are filtered first, then sorted on ranks (each level's distinct values sorted once with
 // localeCompare, so a comparison is two numbers), the same order comparing the values pairwise gave (S542: on the
@@ -108,7 +121,7 @@
 
     var DEFAULTS = { q: "", f: "", limit: LIST_LIMIT, edit: null, draft: null, changed: [], note: "", busy: false,
       sort: [{ col: 0, dir: 1 }], cf: {}, wrap: false, widths: null, sel: {}, open: null, flagBusy: {}, move: null,
-      gEdit: null, gBusy: false };
+      gEdit: null, gBusy: false, sgDone: {}, sgBusy: {} };
     function listState() {
       var L = S.state();
       for (var k in DEFAULTS) if (L[k] === undefined) L[k] = JSON.parse(JSON.stringify(DEFAULTS[k]));
@@ -237,6 +250,8 @@
         return h;
       }
       function keep(r) {
+        if (L.f === "suggested" && S.suggest && !listSuggestion(r)) return false;
+        if (L.f === "changed" && S.changed && L.changed.indexOf(K(r)) === -1) return false;
         if (S.filterPass && !S.filterPass(r, L)) return false;
         for (var i = 0; i < cfs.length; i++) if (String(cfs[i][0].v(r)).toLowerCase().indexOf(cfs[i][1]) === -1) return false;
         if (!q) return true;
@@ -259,7 +274,8 @@
         if (!sortMemo || sortMemo.all !== all || sortMemo.n !== all.length || sortMemo.sig !== sig) sortMemo = { all: all, n: all.length, sig: sig, rows: sortRows(all, levels, bi) };
         // Typing on: a finder that only grew keeps a subset of what it kept, so it filters that (every other filter
         // the same).
-        var base = sig + "|" + L.f + "|" + JSON.stringify(L.cf), pool = sortMemo.rows, N0 = narrowMemo;
+        var base = sig + "|" + L.f + "|" + JSON.stringify(L.cf) + "|" + Object.keys(L.sgDone).length + "|" + L.changed.length,
+          pool = sortMemo.rows, N0 = narrowMemo;
         if (N0 && N0.from === sortMemo.rows && N0.base === base && N0.q && q.indexOf(N0.q) === 0) pool = N0.rows;
         var kept = pool.filter(keep);
         narrowMemo = { from: sortMemo.rows, base: base, q: q, rows: kept };
@@ -580,8 +596,11 @@
           else if (!lastLone) body.appendChild(listPlainBand(S.bands.none || "Not in a group"));
           lastKey = bk; lastLone = !inBand;
         }
-        var titleTd = el("td", { cls: P + "title", title: listTitle(r) }, [listTitle(r)]);
+        var titleTd = el("td", { cls: P + "title", title: listTitle(r), "data-key": rk }, [listTitle(r)]);
         (S.titleSubs ? S.titleSubs(r, L, aiOn) : []).forEach(function (n) { if (n) titleTd.appendChild(n); });
+        if (S.changed && L.changed.indexOf(rk) !== -1) titleTd.appendChild(el("span", { cls: P + "sub", text: "changed this visit" }));
+        var sg = S.suggest && (S.suggest.always || aiOn || L.f === "suggested") ? listSuggestion(r) : null;
+        if (sg) titleTd.appendChild(listSuggestLine(r, sg));
         var editBtn = HAS_EDIT ? word("Edit", function () {
           L.edit = rk;
           L.draft = S.edit.draft(r);
@@ -829,6 +848,72 @@
       L.cellNote = text;
       if (n) { n.textContent = text; n.hidden = !text; }
     }
+    /* Suggestions (the List norms, 2026-11-01): a machine's proposed fold with its reason, taken with the spec's verb or
+       set aside with Dismiss for the visit. The write is the tab's; the engine draws the line, keeps what was set aside,
+       and answers in the status line. */
+    function sgKey(r) { return String(S.suggest.key ? S.suggest.key(r) : K(r)); }
+    function listSuggestion(r) {
+      if (!S.suggest || listState().sgDone[sgKey(r)]) return null;
+      return S.suggest.get(r) || null;
+    }
+    /* Focus back on the row's title after a repaint; a row the filter just let go hands focus to the one after it. */
+    function listTitleKeys() {
+      return Array.prototype.map.call(document.querySelectorAll("." + P + "title"), function (x) { return x.getAttribute("data-key"); });
+    }
+    function listFocusTitle(rk, before) {
+      var keys = listTitleKeys(), at = keys.indexOf(rk);
+      if (at === -1 && before) {
+        var was = before.indexOf(rk);
+        for (var i = was + 1; at === -1 && was > -1 && i < before.length; i++) at = keys.indexOf(before[i]);
+        if (at === -1 && keys.length) at = Math.min(Math.max(was, 0), keys.length - 1);
+      }
+      var td = at > -1 ? document.querySelectorAll("." + P + "title")[at] : null;
+      var b = td && td.querySelector("." + P + "open");
+      if (b) b.focus();
+    }
+    function listSuggestLine(r, sg) {
+      var L = listState(), dk = sgKey(r), rk = K(r), t = listTitle(r), busy = !!L.sgBusy[dk];
+      var verb = S.suggest.verb || "Accept";
+      return el("span", { cls: P + "sub " + P + "sg" }, [
+        "Suggested: " + sg.text + (sg.why ? " (" + sg.why + ")" : "") + " ",
+        word(busy ? "Saving…" : verb, function (ev) { if (!L.sgBusy[dk]) listSuggestAccept(r, sg, ev && ev.currentTarget); },
+          { "aria-label": S.suggest.label ? S.suggest.label(r, sg) : verb + ": " + t, "aria-disabled": busy ? "true" : null }),
+        " ",
+        word("Dismiss", function () {
+          L.sgDone[dk] = "dismissed";
+          L.cellNote = "Dismissed for this visit: the suggestion for " + t + ". It comes back on your next visit.";
+          var before = listTitleKeys();
+          redrawList(); listFocusTitle(rk, before);
+        }, { "aria-label": "Dismiss the suggestion for " + t })]);
+    }
+    function listSuggestAccept(r, sg, btn) {
+      var L = listState(), dk = sgKey(r), rk = K(r), before = listTitleKeys();
+      L.sgBusy[dk] = true;
+      // The pressed word says the write is out, in place, so focus stays on it.
+      if (btn) { btn.textContent = "Saving…"; btn.setAttribute("aria-disabled", "true"); }
+      listCellNote("Saving: " + sg.text + "…");
+      return Promise.resolve().then(function () { return S.suggest.accept(r, sg); }).then(function (res) {
+        res = res || {};
+        delete L.sgBusy[dk];
+        if (!res.ok) { L.cellNote = res.words || "It did not reach the reference; nothing changed."; redrawList(); listFocusTitle(rk, before); return; }
+        L.sgDone[dk] = "accepted";
+        listMarkChanged([rk].concat(res.keys || []));
+        L.cellNote = res.words || "Saved.";
+        redrawList(); listFocusTitle(rk, before);
+      }, function (e) {
+        delete L.sgBusy[dk];
+        L.cellNote = "It did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed.";
+        redrawList(); listFocusTitle(rk, before);
+      });
+    }
+    /* The visit's changed set: a tab hands it the keys a save touched. */
+    function listMarkChanged(keys) {
+      var L = listState();
+      [].concat(keys == null ? [] : keys).forEach(function (k) {
+        k = k && typeof k === "object" ? K(k) : String(k);
+        if (k && L.changed.indexOf(k) === -1) L.changed.push(k);
+      });
+    }
     function listSelWords() {
       var n = Object.keys(listState().sel).length;
       return n ? fmt(n) + " selected" : "";
@@ -1051,6 +1136,8 @@
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
       // Every row's group as the List draws it (kept groups over the night's order), or null before the order is read.
       groupIndex: function () { return G && listState().aiData ? listGroupIndex() : null; },
+      // The suggestion a row shows (null once accepted or dismissed this visit), and the visit's changed set.
+      suggestion: listSuggestion, markChanged: listMarkChanged,
       frSwap: frSwap, frClean: frClean, word: word, el: el, fmt: fmt, stamp: stamp, LIMIT: LIST_LIMIT, NO_GROUP: NO_GROUP
     };
     return api;

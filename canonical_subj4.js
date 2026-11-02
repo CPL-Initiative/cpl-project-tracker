@@ -2583,6 +2583,26 @@
     ];
   }
   function listNote(text) { if (LIST_ENGINE) LIST_ENGINE.cellNote(text); }
+  function listChanged(r) { if (LIST_ENGINE) LIST_ENGINE.markChanged(r.ut); }
+  /* An open pick as the List's suggestion (the List norms, 2026-11-01): the code the seed proposes, with its reason,
+     shown on every filter (the open picks are few). Confirm this pick writes the discipline's own code through the
+     table's path, the same write as the Status drawer's; Dismiss sets it aside for the visit. */
+  function listSuggestOf(r) {
+    var e = r.e;
+    // A code in a collision is a call for a person, never a suggestion: one code belongs to one MQ discipline.
+    if (r.how !== "open" || !hasCode(e) || r.coll.length) return null;
+    var share = e.data_modal === e.canonical_subj4 && e.data_modal_share ? Math.round(e.data_modal_share * 100) : null;
+    return { text: e.canonical_subj4 + " as the Common SUBJ",
+      why: e.source === "data_modal" ? "the code colleges use most for its courses" + (share != null ? ", " + share + "% of them" : "")
+        : e.canonical_source === "ccn" ? "the CCN code" : e.canonical_source === "c-id" ? "the C-ID code" : "the seed's pick, not yet confirmed by a person" };
+  }
+  function listSuggestAccept(r) {
+    var code = r.e.canonical_subj4;
+    return listSaveCode(r, code, { confirm: true }).then(function (res) {
+      if (res.ok) render();
+      return { ok: res.ok, words: res.words };
+    });
+  }
   /* After a save: the table repaints (it is one click away and reads the same overlay), then the List, with
      focus back on the box or word that had it, so Edit every row keeps its place. */
   function listAfterSave(text) {
@@ -2637,7 +2657,7 @@
       return listSaveNote(r, note).then(function (b) { said.push(b.words); return b; });
     }).then(function (last) {
       L.busy = false; L.note = said.join(" ");
-      if (last.ok) { L.edit = null; L.draft = null; }
+      if (last.ok) { L.edit = null; L.draft = null; listChanged(r); }
       render(); listRepaint();
     });
   }
@@ -2650,6 +2670,7 @@
       inp.removeAttribute("aria-busy");
       if (res.same) { inp.value = before; return; }
       if (!res.ok) { inp.value = before; listNote(res.words); return; }
+      listChanged(r);
       listAfterSave(res.words);
     });
   }
@@ -2677,7 +2698,7 @@
       if (r.how === "open" && hasCode(e)) h.box.appendChild(h.el("div", { cls: "csl-acts" }, [h.word("Confirm this pick", function () {
         listNote("Confirming " + e.canonical_subj4 + " for " + d + "…");
         listSaveCode(r, e.canonical_subj4, { confirm: true }).then(function (res) {
-          if (res.ok) { h.L.open = null; listAfterSave(res.words); } else listNote(res.words);
+          if (res.ok) { h.L.open = null; listChanged(r); listAfterSave(res.words); } else listNote(res.words);
         });
       })]));
     } else if (name === "Collision") {
@@ -2721,6 +2742,9 @@
         placeholder: "MQ discipline, Common SUBJ, local code or note", findLabel: "Find in the list" },
       state: listState, rows: listRowsAll, cols: listCols,
       key: function (r) { return r.ut; }, title: function (r) { return r.ut; }, render: listRepaint,
+      changed: true,
+      suggest: { get: listSuggestOf, verb: "Confirm this pick", accept: listSuggestAccept, always: true,
+        label: function (r) { return "Confirm " + r.e.canonical_subj4 + " for " + r.ut; } },
       head: function (wrap, api) {
         wrap.appendChild(api.el("p", { cls: "cs-quiet", text: "Every MQ discipline with courses, A to Z: its Common SUBJ, who confirmed it, "
           + "the Local SUBJs colleges use for its courses and how many, its local courses and M-IDs, and any collision. Press a cell for its details." }));
@@ -2728,7 +2752,8 @@
           api.word("Go to the Reference view", function () { applyView("reference"); })]));
         return true;
       },
-      filters: [["", "All"], ["open", "Open"], ["person", "Confirmed by a person"], ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"]],
+      filters: [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["person", "Confirmed by a person"],
+        ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"], ["changed", "Changed this visit"]],
       filterPass: function (r, L) {
         if (L.f === "open") return r.how === "open";
         if (L.f === "person") return r.how === "person";
