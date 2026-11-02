@@ -49,7 +49,10 @@ None. Open Asks Sheet 156 (https://claude.ai/artifact/BovfmV7wEUaXkKQGpwoDBA, cu
 5. **Monterey Peninsula's 14** (lane, program requirements; lessons *S536*), unchanged.
 6. **Small:** the vpaa pattern misses *Interim Vice President - Instruction* (a dash; Yuba, filed vpaa by hand). The cert
    link's next families (AWS, Google, NCCER, AWS welding). San Jose City's three VP emails on its directory page.
-7. **Carryover:** Accept's email (Sheet 146 card 3), Sierra's first-text latency, MiraCosta's short name.
+7. **`check_generated.sh` reads two files STALE on `main` itself** (the statewide catalog for the Fact Sheet and Sierra,
+   and the discipline blanks worklist; S550 measured it on a clean `main` worktree). Find whether a daily run refreshes
+   them or a generator input moved, before any session regenerates them by hand (artifact policy).
+8. **Carryover:** Accept's email (Sheet 146 card 3), Sierra's first-text latency, MiraCosta's short name.
 
 ## Lessons to honor
 
