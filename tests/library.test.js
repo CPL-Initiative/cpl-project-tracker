@@ -712,6 +712,11 @@ block("(14)", function () {
     check("(14) and says what happens next, beside the box, and lets the piece go", /Claude rebuilds Update to the Board of Governors from its source/.test(m.root.textContent) &&
       /checks its accessibility/.test(m.root.querySelector(".lib-msg").textContent) && !doc.getElementById("lc-pu-revise"));
     const card = function (id) { return m.root.querySelector("#lib-t-" + id).closest("article"); };
+    let scrolled = false;
+    m.w.HTMLElement.prototype.scrollIntoView = function () { scrolled = true; };
+    m.M._goToRequest("a4");
+    check("(14) after a request saves, the page goes to its piece, Copy the request focused (S554)",
+      doc.activeElement === card("a4").querySelector('[data-request="a4"]') && scrolled && /goToRequest\(id\)/.test(SRC));
     submit({ w: m.w, root: m.root }, '[data-regenokform="a3"]');
     return settle().then(function () {
       const w1 = writes[1] || { body: {}, init: {} };
