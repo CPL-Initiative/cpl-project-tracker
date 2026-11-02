@@ -34,7 +34,12 @@
         "text": "Open Program records"
       },
       "part": "reading",
-      "todo_id": "glendale-parked-2026-10-30"
+      "todo_id": "glendale-parked-2026-10-30",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-02",
+        "words": "Marked done on Program Requirements (22:55Z): \"Let's keep going with Glendale and handle the discrepancies after all data is harvested.\" The queue unparks the college and reads on; the discrepancies wait until the harvest is complete."
+      }
     },
     {
       "title": "Los Angeles Valley is parked: what would turn it back on",
@@ -45,7 +50,12 @@
         "text": "Open Program records"
       },
       "part": "reading",
-      "todo_id": "lavc-parked-2026-10-31"
+      "todo_id": "lavc-parked-2026-10-31",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-11-02",
+        "words": "Marked done on Program Requirements (22:55Z): \"Let's keep going with LA Valley and handle the discrepancies after all data is harvested.\" The queue unparks the college and reads on; the discrepancies wait until the harvest is complete."
+      }
     },
     {
       "title": "Should the thirteen credential pairs count toward NC-1?",

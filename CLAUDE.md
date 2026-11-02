@@ -416,6 +416,9 @@ first day.** Do the remembering for them.
   colleges, the program's name or identity, who does what on the team, a cost
   above a standing limit, reversing a dated ruling of his, a permission-check
   denial, and any call a lane marks as his. This is the one hold list.
+  **An unanswered card holds only itself (Sam, 2026-11-02):** *"Let's keep building even when there is a
+  decision sheet unanswered. Just build all that you can apart from the issue raised by the sheet. I don't
+  want to hold up the bus for outliers."* Never park a lane's other work behind an open card.
   ⚠️ **Read the replies BEFORE executing** — they are
   the artifact's own store, not chat. Mechanics (the reply-chip injector,
   `capabilities: {db: {}}`, the `replies` collection, where the file lives,
