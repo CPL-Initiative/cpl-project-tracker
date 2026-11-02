@@ -16414,8 +16414,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 514,
+   "count": 515,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 547,
+     "path": "docs/session_547_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "credential-registry",
+      "cert-link",
+      "contacts-harvest",
+      "ui-pass",
+      "course-outcomes"
+     ],
+     "title": "Session 547 handoff: AP, CLEP and IB in the cert catalog, the fifth contacts read, the Fact Sheet's UI pass",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25211,5 +25229,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1342
+ "total": 1343
 }

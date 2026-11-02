@@ -1,0 +1,1102 @@
+{
+ "college": "Los Medanos College",
+ "homepage": "https://www.losmedanos.edu/",
+ "read_at": "2026-11-02T06:25:34+00:00",
+ "pages": [
+  {
+   "url": "https://www.losmedanos.edu/",
+   "final_url": "https://www.losmedanos.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.losmedanos.edu/directory/index.aspx",
+   "final_url": "https://www.losmedanos.edu/directory/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "(925) 473-7572",
+      "L121",
+      "jadams@losmedanos.edu Adams, Jennifer",
+      "President's Office",
+      "(925)473-7302",
+      "SS4 402",
+      "Nadina@losmedanos.edu Adina, Nila"
+     ],
+     "emails": [
+      "Nadina@losmedanos.edu",
+      "jadams@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Dean of Instruction, Liberal Arts",
+     "position": "dean_instruction",
+     "window": [
+      "(925) 392-9071",
+      "Brtwd 216",
+      "ranicetti@losmedanos.edu Anicetti, Rachel",
+      "Dean of Instruction, Liberal Arts",
+      "(925) 473-7405",
+      "SS4 442",
+      "marcidiacono@losmedanos.edu Arcidiacono-Kaufman Marie"
+     ],
+     "emails": [
+      "marcidiacono@losmedanos.edu",
+      "ranicetti@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Dean of Student Success",
+     "position": null,
+     "window": [
+      "(925) 473-7778",
+      "SC 217",
+      "dbelman@losmedanos.edu Belman, David",
+      "Dean of Student Success",
+      "(925) 473-7423",
+      "SS4 408",
+      "jbenford@losmedanos.edu Benford, Jeffrey"
+     ],
+     "emails": [
+      "dbelman@losmedanos.edu",
+      "jbenford@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Dean of Counseling and Student Support",
+     "position": null,
+     "window": [
+      "(925) 473-7423",
+      "SS4 408",
+      "jbenford@losmedanos.edu Benford, Jeffrey",
+      "Dean of Counseling and Student Support",
+      "(925) 473-7425",
+      "SS4 415",
+      "sbenzler@losmedanos.edu Benzler, Sylvia"
+     ],
+     "emails": [
+      "jbenford@losmedanos.edu",
+      "sbenzler@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Director of Marketing & Media Design",
+     "position": null,
+     "window": [
+      "(925) 473-7585",
+      "L200 A5",
+      "jcasey@losmedanos.edu Casey, Juliet",
+      "Director of Marketing & Media Design",
+      "(925) 473-7322",
+      "CO4 419",
+      "ecervantes@losmedanos.edu Cervantes, Evelin"
+     ],
+     "emails": [
+      "ecervantes@losmedanos.edu",
+      "jcasey@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "MESA Director",
+     "position": null,
+     "window": [
+      "(925) 473-7653",
+      "Brtwd 119",
+      "acorbin@losmedanos.edu Corbin, Antoinette",
+      "MESA Director",
+      "(925) 473-7685",
+      "SC211",
+      "vcoronado@losmedanos.edu Coronado, Victor"
+     ],
+     "emails": [
+      "acorbin@losmedanos.edu",
+      "vcoronado@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Sr. Program Coordinator, Center for Academic Support",
+     "position": null,
+     "window": [
+      "(510) 833-9114",
+      "Brtwd S119",
+      "fteixeira@losmedanos.edu Francesca Teixeira",
+      "Sr. Program Coordinator, Center for Academic Support",
+      "(925) 473-7591",
+      "CO3",
+      "mfrancis@losmedanos.edu Francis, Michael"
+     ],
+     "emails": [
+      "fteixeira@losmedanos.edu",
+      "mfrancis@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean, Nursing and Allied Health",
+     "position": null,
+     "window": [
+      "(925) 473-7591",
+      "CO3",
+      "mfrancis@losmedanos.edu Francis, Michael",
+      "Associate Dean, Nursing and Allied Health",
+      "N/A",
+      "CC3-342",
+      "Dfranco@losmedanos.edu Franco, Dennis"
+     ],
+     "emails": [
+      "Dfranco@losmedanos.edu",
+      "mfrancis@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Buildings & Grounds (Director)",
+     "position": null,
+     "window": [
+      "(925) 473-7843",
+      "CC2 217",
+      "jholcombe@losmedanos.edu Holcombe, Jarrod",
+      "Buildings & Grounds (Director)",
+      "(925) 473-7375",
+      "CC1 133",
+      "jhubbard@losmedanos.edu Hubbard, Julie"
+     ],
+     "emails": [
+      "jholcombe@losmedanos.edu",
+      "jhubbard@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Brentwood Math Coordinator",
+     "position": null,
+     "window": [
+      "(925) 473-7346",
+      "CO4 404",
+      "iromarri@losmedanos.edu Isaac Romarri",
+      "Brentwood Math Coordinator",
+      "(925) 473-6925",
+      "Brentwood Math lab",
+      "J"
+     ],
+     "emails": [
+      "iromarri@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Veteran's Resource Center",
+     "position": "vrc",
+     "window": [
+      "(925) 473-7499",
+      "SS3 301",
+      "mjackson@losmedanos.edu Jackson, Melissa",
+      "Veteran's Resource Center",
+      "(925) 473-7512",
+      "SS3 VRC",
+      "sjohnson@losmedanos.edu Johnson, Scott"
+     ],
+     "emails": [
+      "mjackson@losmedanos.edu",
+      "sjohnson@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Brentwood Physical Science Laboratory Coordinator",
+     "position": null,
+     "window": [
+      "(925) 473-7805",
+      "MU3 712",
+      "tnanzad@losmedanos.edu Nanzad, Tuvshin",
+      "Brentwood Physical Science Laboratory Coordinator",
+      "(925) 473-6400",
+      "BRT-216",
+      "jnnoel@losmedanos.edu Noel, Jill"
+     ],
+     "emails": [
+      "jnnoel@losmedanos.edu",
+      "tnanzad@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "(925) 473-7614",
+      "SC1 121",
+      "pralston@losmedanos.edu Ralston, Pamela",
+      "President",
+      "(925) 473-7302",
+      "SS4 404",
+      "sramirez@losmedanos.edu Ramirez, Sophia"
+     ],
+     "emails": [
+      "pralston@losmedanos.edu",
+      "sramirez@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Los Medanos College Foundation Director",
+     "position": null,
+     "window": [
+      "(925) 473-7826",
+      "CC3 313",
+      "tsanders@losmedanos.edu Sanders, Tara",
+      "Los Medanos College Foundation Director",
+      "(925) 473-7315",
+      "SS3-302",
+      "zsandy@losmedanos.edu Sandy, Zine"
+     ],
+     "emails": [
+      "tsanders@losmedanos.edu",
+      "zsandy@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "(925) 473-7310",
+      "L2 202",
+      "ASmith@losmedanos.edu Smith, A'kilah",
+      "Vice President of Instruction",
+      "(925) 473-7401",
+      "SS4 403",
+      "jsnelling@losmedanos.edu Snelling, John Jr."
+     ],
+     "emails": [
+      "ASmith@losmedanos.edu",
+      "jsnelling@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Dean of Instruction, Career & Technical Education (Interim)",
+     "position": "dean_cte",
+     "window": [
+      "(925) 392-9223",
+      "BRT-106",
+      "etempleton@losmedanos.edu Templeton, Emerald",
+      "Dean of Instruction, Career & Technical Education (Interim)",
+      "(925) 473-6939",
+      "CC3-372",
+      "jtharchin@losmedanos.edu Tharchin, Jinpa"
+     ],
+     "emails": [
+      "etempleton@losmedanos.edu",
+      "jtharchin@losmedanos.edu"
+     ]
+    },
+    {
+     "line": "Pittsburg Math Coordinator Senior",
+     "position": null,
+     "window": [
+      "(925) 473-7393",
+      "B&G Bldg.",
+      "ntrow-shaw@losmedanos.edu Trow-Shaw, Nora",
+      "Pittsburg Math Coordinator Senior",
+      "(925) 473-6915",
+      "Pittsburg Math lab",
+      "jtrujillo@losmedanos.edu Trujillo, Max"
+     ],
+     "emails": [
+      "jtrujillo@losmedanos.edu",
+      "ntrow-shaw@losmedanos.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "http://www.4cd.edu",
+   "final_url": "https://www.4cd.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "About Us",
+      "Belonging at 4CD",
+      "Building Our Future",
+      "Chancellor's Office",
+      "Colleges",
+      "Community Relations",
+      "Consumer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "Check E-Mail",
+      "District Office Departments",
+      "Administrative Services",
+      "Chancellor's Office",
+      "Educational Services",
+      "Facilities Planning",
+      "Finance Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor Mehdizadeh to Retire Dec. 30",
+     "position": "district_ceo",
+     "window": [
+      "DISTRICT NEWS",
+      "October Enewsletter is Here",
+      "In this issue, read about: a new program for justice-impacted students, a salute to veterans, a new regional network to prepare teachers for work in early childhood education, awards of excellence for our colleges, and more! Subscribe at www.tinyurl.com/4CDNewsletter",
+      "Chancellor Mehdizadeh to Retire Dec. 30",
+      "Following a 39-year career with the Contra Costa Community College District (4CD), Chancellor Mojdeh Mehdizadeh has announced that she will retire on Dec. 30. Executive Vice Chancellor Dr. Micaela Ochoa has been appointed to serve as interim chancellor. A retirement celebration and fundraiser for the college foundations is planned for Dec. 8.",
+      "4CD Colleges Join East Bay Early Childhood Education, Teacher Preparation Regional Network",
+      "Contra Costa College, Diablo Valley College, and Los Medanos College will join seven other local community colleges to form the East Bay Early Childhood Education and Education (ECE/EDU) Regional Network, a two-year regional initiative dedicated to strengthening educator workforce pathways throughout Alameda and Contra Costa counties."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "About Us",
+      "Belonging at 4CD",
+      "Building Our Future",
+      "Chancellor's Office",
+      "Colleges",
+      "Community Relations",
+      "Consumer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "Check E-Mail",
+      "District Office Departments",
+      "Administrative Services",
+      "Chancellor's Office",
+      "Educational Services",
+      "Facilities Planning",
+      "Finance Services"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.losmedanos.edu/a-z/index.aspx",
+   "final_url": "https://www.losmedanos.edu/a-z/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "High School Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Guided Self-Placement",
+      "H",
+      "Health Information & Insurance for Students",
+      "High School Articulation",
+      "High School Students",
+      "History",
+      "Honors Status"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's office",
+     "position": "college_ceo",
+     "window": [
+      "Planning and Institutional Effectiveness",
+      "Police Services",
+      "Political Science",
+      "President's office",
+      "Printing on Campus (for students)",
+      "Probation Workshops",
+      "Probation and Dismissal"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Umoja Scholars Program",
+      "Unlawful Discrimination",
+      "V",
+      "Veterans Resource Center",
+      "Video Help Library",
+      "W",
+      "Wait List Procedures"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.4cd.edu/about/chancellors-office/index.html",
+   "final_url": "https://www.4cd.edu/about/chancellors-office/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "Chancellor's Office",
+      "Career Opportunities",
+      "Open Positions",
+      "Governing Board"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "About Us",
+      "Belonging at 4CD",
+      "Building Our Future",
+      "Chancellor's Office",
+      "Colleges",
+      "Community Relations",
+      "Consumer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "Check E-Mail",
+      "District Office Departments",
+      "Administrative Services",
+      "Chancellor's Office",
+      "Educational Services",
+      "Facilities Planning",
+      "Finance Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "InSite",
+      "Check E-Mail",
+      "BoardDocs",
+      "Chancellor's Office",
+      "Mojdeh Mehdizadeh",
+      "Mojdeh Mehdizadeh serves as the 10th Chancellor for the Contra Costa Community College District (4CD), where she is responsible for assessing, planning, organizing, and evaluating the resources, programs, and services of 4CD to meet the educational needs of the students and the community. In her former role as Executive Vice Chancellor, Education and Technology, she led efforts across the colleges (Contra Costa, Diablo Valley, and Los Medanos) in educational programs, student services, workforce and economic development, information technology, international education, distance education, research and planning, and grants. Mojdeh has also served as President of Contra Costa College. In her early tenure, she taught Speech Communications as an adjunct faculty member at Diablo Valley College.",
+      "Mojdeh completed her undergraduate general education requirements at Diablo Valley College, where she developed her understanding and appreciation of the importance of the community college system in developing students for meaningful roles in their careers and the community. Mojdeh is a passionate leader in assuring excellent and affordable post-secondary education for all students, regardless of their social and economic situation, and is laser focused on diversity, equity, inclusion and belonging for everyone community colleges serve. She has been and continues to be very active in state, federal, and other organizations aimed at enhancing equitable public educational systems throughout California. Her participation and advocacy in this area extends to serving locally on the Board of the Richmond Promise, and in shaping the statewide directions in support of student access and success with the California Community Colleges. She currently serves as one of the Chief Executive Officers of the California Community Colleges and was recently appointed to the Chief Executive Officers of the California Community Colleges Fraud Prevention Taskforce."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Cabinet Purpose, Vision, and Values",
+     "position": "district_ceo",
+     "window": [
+      "Home",
+      "Governing Board Members",
+      "District Leadership Organization Chart",
+      "Chancellor's Cabinet Purpose, Vision, and Values",
+      "District Office Organization Chart",
+      "District Leadership History",
+      "Technology Use Policies | EEO Information | Legal Disclaimer | 4CD Confidential Hotline"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "About Us",
+      "Belonging at 4CD",
+      "Building Our Future",
+      "Chancellor's Office",
+      "Colleges",
+      "Community Relations",
+      "Consumer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "Check E-Mail",
+      "District Office Departments",
+      "Administrative Services",
+      "Chancellor's Office",
+      "Educational Services",
+      "Facilities Planning",
+      "Finance Services"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.losmedanos.edu/aj/index.aspx",
+   "final_url": "https://www.losmedanos.edu/aj/index.aspx",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.losmedanos.edu/highschool/articulation/index.aspx",
+   "final_url": "https://www.losmedanos.edu/highschool/articulation/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "ECC Home",
+      "Concurrent Enrollment",
+      "Dual Enrollment",
+      "Articulation",
+      "FAQ",
+      "Contact Us",
+      "Early College Credit"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Contact Us",
+      "Early College Credit",
+      "Home",
+      "High School Articulation",
+      "Welcome to LMC High School & Adult Education Articulation!",
+      "Taking ”college level” high school or adult education classes connected with LMC for",
+      "college credit."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome to LMC High School & Adult Education Articulation!",
+     "position": "articulation_officer",
+     "window": [
+      "Early College Credit",
+      "Home",
+      "High School Articulation",
+      "Welcome to LMC High School & Adult Education Articulation!",
+      "Taking ”college level” high school or adult education classes connected with LMC for",
+      "college credit.",
+      "Find out if YOUR school offers LMC Articulated classes!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "CURRENT HIGH SCHOOL & ADULT EDUCATION ARTICULATION AGREEMENTS HERE",
+     "position": "articulation_officer",
+     "window": [
+      "Taking ”college level” high school or adult education classes connected with LMC for",
+      "college credit.",
+      "Find out if YOUR school offers LMC Articulated classes!",
+      "CURRENT HIGH SCHOOL & ADULT EDUCATION ARTICULATION AGREEMENTS HERE",
+      "Teachers, Counselors & Career Techs:",
+      "CATEMA REGISTRATION SUPPORT MATERIALS HERE",
+      "*Secondary Education Articulation Agreements may also be available to Adult Education,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "*Secondary Education Articulation Agreements may also be available to Adult Education,",
+     "position": "articulation_officer",
+     "window": [
+      "CURRENT HIGH SCHOOL & ADULT EDUCATION ARTICULATION AGREEMENTS HERE",
+      "Teachers, Counselors & Career Techs:",
+      "CATEMA REGISTRATION SUPPORT MATERIALS HERE",
+      "*Secondary Education Articulation Agreements may also be available to Adult Education,",
+      "Continuation & other types of learners.",
+      "ATTN! High School /Adult Education Teachers!",
+      "Do You Want to Request to Articulate Your Class WITH LMC?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "REQUEST ARTICULATION AGREEMENT HERE",
+     "position": "articulation_officer",
+     "window": [
+      "Continuation & other types of learners.",
+      "ATTN! High School /Adult Education Teachers!",
+      "Do You Want to Request to Articulate Your Class WITH LMC?",
+      "REQUEST ARTICULATION AGREEMENT HERE",
+      "Other Important Links",
+      "High School/Adult Education Teachers FAQs",
+      "Policies that Guide High School/Adult Education Articulation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Policies that Guide High School/Adult Education Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "REQUEST ARTICULATION AGREEMENT HERE",
+      "Other Important Links",
+      "High School/Adult Education Teachers FAQs",
+      "Policies that Guide High School/Adult Education Articulation",
+      "ACCREDITATION",
+      "DONATE TO LMC",
+      "Maps & Directions"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.losmedanos.edu/studentlife/prog.aspx",
+   "final_url": "https://www.losmedanos.edu/studentlife/prog.aspx",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.losmedanos.edu/president/index.aspx",
+   "final_url": "https://www.losmedanos.edu/president/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "LMC President",
+     "position": "college_ceo",
+     "window": [
+      "LMC President",
+      "Skip to content",
+      "MENU",
+      "Academics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "LMC President",
+     "position": "college_ceo",
+     "window": [
+      "Resources",
+      "News",
+      "About LMC",
+      "LMC President",
+      "Welcome",
+      "About the President",
+      "Management Team"
+     ],
+     "emails": []
+    },
+    {
+     "line": "About the President",
+     "position": "college_ceo",
+     "window": [
+      "About LMC",
+      "LMC President",
+      "Welcome",
+      "About the President",
+      "Management Team",
+      "Contact Us",
+      "Related Links"
+     ],
+     "emails": []
+    },
+    {
+     "line": "LMC President",
+     "position": "college_ceo",
+     "window": [
+      "LMC Mission, Vision & Values",
+      "Shared Governance",
+      "Accreditation",
+      "LMC President",
+      "Home",
+      "President",
+      "LMC President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation",
+      "LMC President",
+      "Home",
+      "President",
+      "LMC President",
+      "LMC President, Pamela Ralston, Ph.D.",
+      "The mission of the President’s Office is to support learning, cultivate student success,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "LMC President",
+     "position": "college_ceo",
+     "window": [
+      "LMC President",
+      "Home",
+      "President",
+      "LMC President",
+      "LMC President, Pamela Ralston, Ph.D.",
+      "The mission of the President’s Office is to support learning, cultivate student success,",
+      "and facilitate institutional achievement at Los Medanos College. To that end, the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "LMC President, Pamela Ralston, Ph.D.",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "President",
+      "LMC President",
+      "LMC President, Pamela Ralston, Ph.D.",
+      "The mission of the President’s Office is to support learning, cultivate student success,",
+      "and facilitate institutional achievement at Los Medanos College. To that end, the",
+      "President’s Office: demonstrates leadership that educates, engages, and empowers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office: demonstrates leadership that educates, engages, and empowers",
+     "position": "college_ceo",
+     "window": [
+      "LMC President, Pamela Ralston, Ph.D.",
+      "The mission of the President’s Office is to support learning, cultivate student success,",
+      "and facilitate institutional achievement at Los Medanos College. To that end, the",
+      "President’s Office: demonstrates leadership that educates, engages, and empowers",
+      "the diverse constituents of the campus community; promotes effective communication",
+      "that enhances awareness, fosters dialogue, and creates an open and inclusive environment;",
+      "models objective, fair, and data-driven decision-making aimed at providing exemplary"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Communications from the President",
+     "position": "college_ceo",
+     "window": [
+      "educational programs and services; provides stewardship on planning, policy, legislative,",
+      "and organizational issues; and reinforces a culture of equity, effectiveness , and",
+      "excellence to achieve the mission and goals of the College and District.",
+      "Communications from the President",
+      "ACCREDITATION",
+      "DONATE TO LMC",
+      "Maps & Directions"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.losmedanos.edu/veterans/index.aspx",
+   "final_url": "https://www.losmedanos.edu/veterans/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans Services",
+      "Skip to content",
+      "MENU",
+      "Academics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Resources",
+      "News",
+      "About LMC",
+      "Veterans Services",
+      "Veterans Home",
+      "Veterans and Service Members",
+      "Dependents of Veterans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Events",
+      "Supplies, Parking & Technology",
+      "Contacts, Counseling & Hours",
+      "Veterans Services",
+      "for Military-Affiliated Students",
+      "Home",
+      "Veterans"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "for Military-Affiliated Students",
+      "Home",
+      "Veterans",
+      "Veterans Services",
+      "Los Medanos College Veterans Services is committed to supporting the academic and",
+      "career success of U.S. military service members, veterans, and dependents of veterans.",
+      "We offer education and specialized services designed to meet the unique needs of military-affiliated"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Los Medanos College Veterans Services is committed to supporting the academic and",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Veterans",
+      "Veterans Services",
+      "Los Medanos College Veterans Services is committed to supporting the academic and",
+      "career success of U.S. military service members, veterans, and dependents of veterans.",
+      "We offer education and specialized services designed to meet the unique needs of military-affiliated",
+      "students, while honoring their distinct experiences and contributions. Los Medanos"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Department of Veterans Affairs (CalVet). In person services are provided in the Veterans Resource Center (VRC) on the Pittsburg campus.",
+     "position": "vrc",
+     "window": [
+      "students, while honoring their distinct experiences and contributions. Los Medanos",
+      "College is approved for education and training under applicable federal and state",
+      "laws administered by the U.S. Department of Veterans Affairs (VA) and the California",
+      "Department of Veterans Affairs (CalVet). In person services are provided in the Veterans Resource Center (VRC) on the Pittsburg campus.",
+      "Veterans & Service Members",
+      "Access information and guidance on transitioning to LMC, obtaining priority registration,",
+      "utilizing VA education benefits, and obtaining and submitting required documents."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact us with questions or to schedule an appointment with the program coordinator/school",
+     "position": null,
+     "window": [
+      "us to get what you need, enjoy a snack and beverage, and enter for a chance to win",
+      "a door prize!",
+      "Contacts & Counseling",
+      "Contact us with questions or to schedule an appointment with the program coordinator/school",
+      "certifying official or an academic counselor.",
+      "ACCREDITATION",
+      "DONATE TO LMC"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.4cd.edu/about/chancellors-office/purpose-vision-values.html",
+   "final_url": "https://www.4cd.edu/about/chancellors-office/purpose-vision-values.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Chancellor's Cabinet Purpose, Vision, and Values",
+     "position": "district_ceo",
+     "window": [
+      "Chancellor's Cabinet Purpose, Vision, and Values",
+      "Career Opportunities",
+      "Open Positions",
+      "Governing Board"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "About Us",
+      "Belonging at 4CD",
+      "Building Our Future",
+      "Chancellor's Office",
+      "Colleges",
+      "Community Relations",
+      "Consumer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "Check E-Mail",
+      "District Office Departments",
+      "Administrative Services",
+      "Chancellor's Office",
+      "Educational Services",
+      "Facilities Planning",
+      "Finance Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Cabinet Purpose, Vision, and Values",
+     "position": "district_ceo",
+     "window": [
+      "InSite",
+      "Check E-Mail",
+      "BoardDocs",
+      "Chancellor's Cabinet Purpose, Vision, and Values",
+      "Purpose",
+      "In alignment with the District’s Strategic Plan, Chancellor’s Cabinet ensures the sustainability of our District to educate all students effectively and equitably. Chancellor’s Cabinet members lead in empowering and meeting the needs of our diverse communities in partnership with classified professionals, faculty, and other managers as we achieve the mission of the 4CD.",
+      "Vision"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Cabinet Purpose, Vision, and Values",
+     "position": "district_ceo",
+     "window": [
+      "Home",
+      "Governing Board Members",
+      "District Leadership Organization Chart",
+      "Chancellor's Cabinet Purpose, Vision, and Values",
+      "District Office Organization Chart",
+      "District Leadership History",
+      "Technology Use Policies | EEO Information | Legal Disclaimer | 4CD Confidential Hotline"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "About Us",
+      "Belonging at 4CD",
+      "Building Our Future",
+      "Chancellor's Office",
+      "Colleges",
+      "Community Relations",
+      "Consumer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Chancellor's Office",
+     "position": "district_ceo",
+     "window": [
+      "Check E-Mail",
+      "District Office Departments",
+      "Administrative Services",
+      "Chancellor's Office",
+      "Educational Services",
+      "Facilities Planning",
+      "Finance Services"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.losmedanos.edu/highschool/articulation/",
+   "final_url": "https://www.losmedanos.edu/highschool/articulation/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "ECC Home",
+      "Concurrent Enrollment",
+      "Dual Enrollment",
+      "Articulation",
+      "FAQ",
+      "Contact Us",
+      "Early College Credit"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Contact Us",
+      "Early College Credit",
+      "Home",
+      "High School Articulation",
+      "Welcome to LMC High School & Adult Education Articulation!",
+      "Taking ”college level” high school or adult education classes connected with LMC for",
+      "college credit."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome to LMC High School & Adult Education Articulation!",
+     "position": "articulation_officer",
+     "window": [
+      "Early College Credit",
+      "Home",
+      "High School Articulation",
+      "Welcome to LMC High School & Adult Education Articulation!",
+      "Taking ”college level” high school or adult education classes connected with LMC for",
+      "college credit.",
+      "Find out if YOUR school offers LMC Articulated classes!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "CURRENT HIGH SCHOOL & ADULT EDUCATION ARTICULATION AGREEMENTS HERE",
+     "position": "articulation_officer",
+     "window": [
+      "Taking ”college level” high school or adult education classes connected with LMC for",
+      "college credit.",
+      "Find out if YOUR school offers LMC Articulated classes!",
+      "CURRENT HIGH SCHOOL & ADULT EDUCATION ARTICULATION AGREEMENTS HERE",
+      "Teachers, Counselors & Career Techs:",
+      "CATEMA REGISTRATION SUPPORT MATERIALS HERE",
+      "*Secondary Education Articulation Agreements may also be available to Adult Education,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "*Secondary Education Articulation Agreements may also be available to Adult Education,",
+     "position": "articulation_officer",
+     "window": [
+      "CURRENT HIGH SCHOOL & ADULT EDUCATION ARTICULATION AGREEMENTS HERE",
+      "Teachers, Counselors & Career Techs:",
+      "CATEMA REGISTRATION SUPPORT MATERIALS HERE",
+      "*Secondary Education Articulation Agreements may also be available to Adult Education,",
+      "Continuation & other types of learners.",
+      "ATTN! High School /Adult Education Teachers!",
+      "Do You Want to Request to Articulate Your Class WITH LMC?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "REQUEST ARTICULATION AGREEMENT HERE",
+     "position": "articulation_officer",
+     "window": [
+      "Continuation & other types of learners.",
+      "ATTN! High School /Adult Education Teachers!",
+      "Do You Want to Request to Articulate Your Class WITH LMC?",
+      "REQUEST ARTICULATION AGREEMENT HERE",
+      "Other Important Links",
+      "High School/Adult Education Teachers FAQs",
+      "Policies that Guide High School/Adult Education Articulation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Policies that Guide High School/Adult Education Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "REQUEST ARTICULATION AGREEMENT HERE",
+      "Other Important Links",
+      "High School/Adult Education Teachers FAQs",
+      "Policies that Guide High School/Adult Education Articulation",
+      "ACCREDITATION",
+      "DONATE TO LMC",
+      "Maps & Directions"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.losmedanos.edu/highschool/articulation/list.aspx",
+  "https://www.losmedanos.edu/highschool/articulation/newarticulate.aspx",
+  "https://www.losmedanos.edu/veterans/forms.aspx",
+  "https://www.losmedanos.edu/veterans/feewaiver.aspx",
+  "https://www.losmedanos.edu/veterans/",
+  "https://www.losmedanos.edu/veterans/contact.aspx",
+  "https://www.losmedanos.edu/veterans/links.aspx"
+ ],
+ "run": "41399086674"
+}

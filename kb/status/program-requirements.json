@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-02T04:51:43Z",
-  "session": 545,
-  "moniker": "SkyWhirlpool",
-  "run": "Sam's session",
+  "written_at": "2026-11-02T06:50:00Z",
+  "session": 546,
+  "moniker": "SkyPinwheel",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_546_handoff.md",
+  "handoff": "docs/session_547_handoff.md",
   "next_step": {
-    "title": "Check the daily run carried the fixes, then Monterey Peninsula's 14",
-    "text": "After the 06:17 UTC run, confirm City College of San Francisco and College of the Desert left the funding builder's unmatched list and the short-name fold wrote nothing; then the harvest lane's next college step, Monterey Peninsula's 14 records."
+    "title": "Read the two SLO runs, then the sixth contacts read",
+    "text": "Golden West's full read and Santa Ana's course index started tonight; the next session loads Golden West once both parts are filed and moves Santa Ana to its trial. Monterey Peninsula's 14 records wait behind them."
   },
   "calls": [
     {
@@ -350,8 +350,8 @@
   ],
   "next_run": {
     "name": "CPL Queue",
-    "every_hours": 24,
-    "at": "2026-11-02T06:12:00Z"
+    "every_hours": 1,
+    "at": "2026-11-02T07:12:00Z"
   },
   "harvest": {
     "day": "2026-11-02",

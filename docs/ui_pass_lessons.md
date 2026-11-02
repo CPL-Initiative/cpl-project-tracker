@@ -353,3 +353,12 @@ Sierra Training reads `team_access` only as a one-row reviewer probe, so there i
   Chancellor's Office*). Sam's title in the contact card stays as his profile gives it.
 - **Wiring agreed.** The eleven headline figures read the same on the Fact Sheet and COBI's Dashboard (57,664 students,
   $392M, as of October 25).
+
+## S546 SkyPinwheel (2026-11-02): the Fact Sheet, a target that outlived its launcher
+
+- **Light, dark, and Ask Sierra (light and dark) pass at every width;** `factsheet.css` holds no raw hex. Wiring: the
+  shared datasets (`live_metrics.json`, `cpl_stories.js`, `statewide_recs.js`) are read-only renders of one file each.
+- **A removed control leaves its a11y target behind.** Sam's one-header-row change (2026-10-30) took the Fact Sheet's own
+  *Ask Sierra* word out; `funding-model-sierra` moved to `seedSierraFromChip` then, and `fact-sheet-sierra` and its dark
+  twin did not, so their keyboard checks pressed a launcher the page no longer had. When a control leaves several
+  pages, grep `a11y.config.js` for its selector in the same PR. The two word helpers had no other caller and went.

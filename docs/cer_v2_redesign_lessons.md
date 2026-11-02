@@ -956,3 +956,16 @@ lists. Report: `CPLBrain/04-projects/cpl-initiative/20261101_SLO_Grouping_Test.m
 - **A PR stacked on a squash-merged PR carries the pre-squash commit.** #2664 conflicted in five files after #2663 squashed; cherry-picking its one commit onto `main` and pushing with `--force-with-lease` left a clean five-file diff.
 - **Generated files conflict in every PR that regenerates them.** #2668 and #2669 each regenerated the dependency map; each needed `main` merged in and the map rebuilt (`git checkout --theirs`, then the builder), so they merge one at a time. #2668 also met #2670's engine rewrite in `commons_list.js`: only the header comment collided (both documented new hooks), and every List suite passed on the merge.
 
+
+## SkyPinwheel (2026-11-02): the exam families in the catalog and the cert link
+
+- **The authority list was already in the repo.** Handoff 546 proposed adding the College Board and the IB as issuers the
+  nightly watch reads. The fold readers (`kb/_ap_official_titles.py`, `_clep_official_titles.py`, `_ib_official_titles.py`)
+  already carry the official exam lists Sam ruled on, so the catalog builder imports them (`official_exam_lists`), as the
+  link imports ASE's test names; the watch gains no issuer (its page keeps non-IT issuers for Sam to name). #2686.
+- **152 exam rows, 98 joined to MAP:** every CLEP and IB title, 43 of 46 AP titles. The three left name two exams or one
+  College Board never offered. The link holds 168 titles to 122 certs.
+- **A prefix is not a match.** `startswith("IB Mathematics")` marked *IB Mathematics: Analysis and Approaches* retired;
+  the retired set is now built from the reader's own (subject, level) pairs. A test pins it.
+- **The catalog's core-name key folds a parenthetical.** *IB Language A1 HL (Non-English)* and *IB Language A1 HL* are
+  one catalog row; the reference keeps the split, so the link points both titles at the one exam.

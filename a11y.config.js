@@ -173,32 +173,6 @@ async function publicLibrarySierraChecks(page) {
   await page.evaluate(() => { try { localStorage.removeItem("cpl_sierra_bar_w"); } catch (e) {} window.CPL_SIERRA_BAR.setWidth(420); });
   return out;
 }
-// A page that opens Sierra from its own word (the Fact Sheet, the funding page; Open Asks
-// Sheet 126 card 1): press it and wait for her question box.
-async function seedSierraFromWord(page, theme) {
-  if (theme === "dark") await page.evaluate(() => document.documentElement.setAttribute("data-theme", "dark"));
-  await page.evaluate(() => { const b = document.querySelector("[data-sierra-open]"); if (b) b.click(); });
-  await page.waitForFunction(() => {
-    const f = document.querySelector(".sbar-frame");
-    try { return !!(f && f.contentDocument && f.contentDocument.getElementById("s-input")); } catch (e) { return false; }
-  }, null, { timeout: 5000 }).catch(() => {});
-  await page.waitForTimeout(150);
-}
-async function sierraFromWordChecks(page) {
-  const st = () => page.evaluate(() => {
-    const bar = document.getElementById("sbar"), word = document.querySelector("[data-sierra-open]"), chip = document.getElementById("sbar-chip");
-    return { open: !!bar && !bar.hidden, chipShown: !!chip && !chip.hidden, onWord: document.activeElement === word,
-      expanded: word && word.getAttribute("aria-expanded"), sx: document.documentElement.scrollWidth, vw: innerWidth };
-  });
-  const out = [];
-  let s = await st();
-  out.push({ name: "her own word opened her; no chip shows", ok: s.open && !s.chipShown && s.expanded === "true", detail: JSON.stringify(s) });
-  await page.keyboard.press("Escape");
-  await page.waitForTimeout(150);
-  s = await st();
-  out.push({ name: "Escape shuts her and hands focus back to the page's Ask Sierra", ok: !s.open && s.onWord && s.expanded === "false", detail: JSON.stringify(s) });
-  return out;
-}
 async function seedSierraFirstAsk(page, theme) {
   await page.evaluate((th) => {
     if (th === "dark") document.documentElement.setAttribute("data-theme", "dark");
@@ -2399,21 +2373,22 @@ module.exports = {
     mayHideBelow: [".sw-head"],
   },
   /* Ask Sierra open beside the Fact Sheet (Sam, Open Asks Sheet 126 card 1: the side bar in
-     place of the drawer), from its own word in the action bar. */
+     place of the drawer), from her chip: the page's own word left the header on 2026-10-30
+     (Sam: one header row), so the target opens her as the funding page's does (S546). */
   "fact-sheet-sierra": {
     file: "fact-sheet/index.html",
-    title: "CPL Fact Sheet, Ask Sierra open",
+    title: "CPL Fact Sheet, Ask Sierra open from her chip",
     widths: [390, 1024, 1440],
     mayHideBelow: [".sw-head"],
-    seed: (page) => seedSierraFromWord(page, "light"),
-    keyboard: async (page) => sierraFromWordChecks(page),
+    seed: (page) => seedSierraFromChip(page, "light"),
+    keyboard: async (page) => publicLibrarySierraChecks(page),
   },
   "fact-sheet-sierra-dark": {
     file: "fact-sheet/index.html",
     title: "CPL Fact Sheet, Ask Sierra open, dark",
     widths: [390, 1440],
     mayHideBelow: [".sw-head"],
-    seed: (page) => seedSierraFromWord(page, "dark"),
+    seed: (page) => seedSierraFromChip(page, "dark"),
   },
   /* The same page dark (S352: First Light's port put it on the cpl_theme contract). */
   "fact-sheet-dark": {
