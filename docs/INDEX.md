@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 521 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1349** | |
+| Session handoffs | 522 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1350** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-02 S553 SkyPinwheel: the Library remediates every file it reads, every draft applied as the report opens, a PDF's title, language and title display written in the browser (55 team PDFs verified); handoff 554.
 - 2026-11-02 S551 SkyWhirlpool: Sheet 156 answered (try the catalog first); the runner reads seeds, and every catalog route refused or printed nothing; Sheet 157 asks for the upload; the apply fills a blank email on a name match; handoff 552.
 - 2026-11-02 S550 SkyMoonflower: the ninth contacts read (33 records, 16 new, 0 gone; 295 people at 75 colleges) closes the first full pass, so the harvest goes weekly on Sundays; the contacts lane compacted; handoff 551.
 - 2026-11-02 S549 SkySunflower: Santa Ana's SLO trial, 12 of 12 after a reader fix (#2691); two contacts title patterns (#2692); the eighth contacts read (31 people, 279 at 70 colleges); handoff 550.

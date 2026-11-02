@@ -863,7 +863,8 @@ block("(16)", function () {
     });
   }).then(function () {
     const rem = doc.querySelector(".lib-rem");
-    check("(16) Remediate reads the deck here and reports Fixed for you and Needs you", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Needs you \(\d+\)/.test(rem.textContent), rem && rem.textContent.slice(0, 300));
+    check("(16) Remediate reads the deck here and reports Fixed for you and, every draft already applied, Remediated for you (S553)", !!rem && /Fixed for you \(\d+\)/.test(rem.textContent) && /Remediated for you, to edit as needed \(2\)/.test(rem.textContent) &&
+      !/Needs you/.test(rem.textContent) && !rem.querySelector("[data-remkeep]") && !rem.querySelector("[data-remkeepall]"), rem && rem.textContent.slice(0, 300));
     const rec = writes.filter(function (w) { return w.method === "POST" && /cpl_library/.test(w.url); });
     check("(16) the file is in the Library as soon as it opens: one Draft record, no link yet, named for the file", rec.length === 1 && rec[0].body.status === "draft" && rec[0].body.home === "not_filed" &&
       rec[0].body.url === null && rec[0].body.file_name === "20261030_Webinar.pptx" && rec[0].body.title === "Webinar" && rec[0].body.kind === "deck" && rec[0].body.remediation === "in_remediation", JSON.stringify(rec));
@@ -883,27 +884,22 @@ block("(16)", function () {
     check("(16) Larger slide draws the slide across the item, and Smaller slide puts it back", !!doc.querySelector(".lib-rembig .lib-remslide") && doc.querySelector("[data-remzoom]").getAttribute("aria-expanded") === "true" && /Smaller slide/.test(doc.querySelector("[data-remzoom]").textContent));
     click(m.w, doc.querySelector("[data-remzoom]"));
     const prog = function () { return (doc.getElementById("lib-remprog") || {}).textContent || ""; };
-    check("(16) one bar at the top, a part per area, what the page fixed apart from what is left; a draft is left until a person keeps it",
-      /^1 slide\. 2 items are left for you before the Chancellor's Office review; the page fixed 2 and 4 checks pass with nothing to fix\. Solid is fixed or passing, striped is yours, gray is left\./.test(prog()) &&
-      /Remediation designed to meet WCAG 2\.2 AA, which includes 2\.1 AA, and California Government Code 7405, 11135 and 11546\.7/.test(doc.querySelector(".lib-rem .lib-kicker").textContent) && /Alt text \(WCAG 1\.1\.1\): 2 left/.test(prog()) &&
+    check("(16) one bar at the top, a part per area, what the page fixed apart from what is left; a draft counts as fixed from the start (S553)",
+      /^1 slide\. Ready for the Chancellor's Office review; the page fixed 4 and 4 checks pass with nothing to fix\. Solid is fixed or passing, striped is yours, gray is left\./.test(prog()) &&
+      /Remediation designed to meet WCAG 2\.2 AA, which includes 2\.1 AA, and California Government Code 7405, 11135 and 11546\.7/.test(doc.querySelector(".lib-rem .lib-kicker").textContent) && /Alt text \(WCAG 1\.1\.1\): 2 fixed, done/.test(prog()) &&
       /Document title \(WCAG 2\.4\.2\): 1 fixed, done/.test(prog()) && /Language \(WCAG 3\.1\.1\): 1 fixed, done/.test(prog()) && /Reading order \(WCAG 1\.3\.2\): passes/.test(prog()) && /Color contrast \(WCAG 1\.4\.3\): passes/.test(prog()) &&
       doc.querySelectorAll("#lib-remprog .bar").length === 7 && !doc.querySelector(".lib-rem .lib-remhead .lib-line"), prog());
     // Each check's words go to its first item left; a check the page fixed goes to its line in Fixed for you.
     click(m.w, doc.querySelector("#lib-remprog button[data-remgoto=alt]"));
-    check("(16) a check's words link to its first item left, its field focused", doc.activeElement === doc.querySelector("[data-remtext]") && doc.querySelectorAll("#lib-remprog button.n").length === 3 && /^Alt text \(WCAG 1\.1\.1\): 2 left$/.test(doc.querySelector("#lib-remprog button[data-remgoto=alt]").textContent));
+    check("(16) a check's words link to its first item, its field focused", doc.activeElement === doc.querySelector("[data-remtext]") && doc.querySelectorAll("#lib-remprog button.n").length === 3 && /^Alt text \(WCAG 1\.1\.1\): 2 fixed, done$/.test(doc.querySelector("#lib-remprog button[data-remgoto=alt]").textContent));
     click(m.w, doc.querySelector("#lib-remprog .bar[data-remgoto=lang]"));
     check("(16) the bar's part is a link too, and a fixed check goes to its line in Fixed for you", doc.activeElement && /^lib-remfix-/.test(doc.activeElement.id) && /Language set/.test(doc.activeElement.textContent) && !doc.querySelector("#lib-remprog [data-remgoto=order]"), doc.activeElement && doc.activeElement.id);
-    click(m.w, doc.querySelector("[data-remkeep]"));
-    check("(16) Keep counts an item, and says Kept", /Alt text \(WCAG 1\.1\.1\): 1 by you, 1 left/.test(prog()) && doc.querySelector("[data-remkeep]").getAttribute("aria-pressed") === "true" && doc.querySelector("[data-remkept]").textContent === "Kept", prog());
-    // Keep all keeps every alt text with words at once.
-    click(m.w, doc.querySelector("[data-remkeepall]"));
-    check("(16) Keep all keeps every draft with words, and says how many", /Alt text \(WCAG 1\.1\.1\): 2 by you, done/.test(prog()) && /Kept 1 draft\./.test(m.root.textContent) &&
-      doc.querySelectorAll("[data-remkept]")[1].textContent === "Kept", prog());
-    click(m.w, doc.querySelectorAll("[data-remkeep]")[1]);
+    // No Keep and no Keep all (Sam, 2026-11-02): every draft is in the file from the start,
+    // and an edit moves the item from the page's count to the person's.
     const qf = doc.querySelectorAll("[data-remtext]")[1];
     qf.value = "QR code to the MAP website, map.rccd.edu"; qf.dispatchEvent(new m.w.Event("input", { bubbles: true }));
-    check("(16) an edit counts as kept, and an area with nothing left says done", /^1 slide\. Ready for the Chancellor's Office review; the page fixed 2, you have done 2 and 4 checks pass with nothing to fix\./.test(prog()) && /Alt text \(WCAG 1\.1\.1\): 2 by you, done/.test(prog()) &&
-      doc.querySelector("#lib-remprog .bar[data-remgoto=alt] .you").style.width === "100%", prog());
+    check("(16) an edit counts as the person's, the rest as the page's, and the area says done", /^1 slide\. Ready for the Chancellor's Office review; the page fixed 3, you have done 1 and 4 checks pass with nothing to fix\./.test(prog()) && /Alt text \(WCAG 1\.1\.1\): 1 fixed, 1 by you, done/.test(prog()) &&
+      doc.querySelector("#lib-remprog .bar[data-remgoto=alt] .you").style.width === "50%" && doc.querySelector("#lib-remprog .bar[data-remgoto=alt] .auto").style.width === "50%", prog());
     // Draft from the picture still drafts one picture again, on a press.
     click(m.w, doc.querySelector("[data-remai]"));
     const drafted = function (n) { return (aiCalls.length > 1 && !/Reading the picture/.test(doc.querySelector("[data-remai]").textContent)) || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return drafted(n - 1); }); };
@@ -959,8 +955,8 @@ block("(16)", function () {
       check("(16) with drafting turned off, no picture goes to Claude, and the draft is the slide's title", aiCalls.length === before && doc.querySelector("[data-remtext]").value === "Where the funding goes", doc.querySelector("[data-remtext]").value);
       // Remediate another file, from the report itself; it asks first when answers would go.
       const next = doc.getElementById("lc-file-next");
-      check("(16) the report offers Remediate another file beside Close", !!next && /Remediate another file/.test(doc.querySelector('label[for="lc-file-next"]').textContent) && next.getAttribute("accept") === ".pptx,.docx,.xlsx,.pdf");
-      click(m.w, doc.querySelector("[data-remkeep]"));
+      check("(16) the report offers Remediate another file beside Close, every kind it reads", !!next && /Remediate another file/.test(doc.querySelector('label[for="lc-file-next"]').textContent) && next.getAttribute("accept") === ".pptx,.pptm,.ppsx,.docx,.docm,.xlsx,.xlsm,.pdf");
+      const f0 = doc.querySelector("[data-remtext]"); f0.value = "Where the funding goes, by college"; f0.dispatchEvent(new m.w.Event("input", { bubbles: true }));
       let asked = 0;
       m.w.confirm = function () { asked++; return false; };
       const choose = function (name) {
@@ -969,7 +965,7 @@ block("(16)", function () {
         el.dispatchEvent(new m.w.Event("change", { bubbles: true }));
       };
       choose("20261029_Other.pptx");
-      check("(16) with a kept answer not yet downloaded, it asks, and No keeps this report", asked === 1 && doc.getElementById("lib-rem-h").textContent === "20261030_Webinar.pptx");
+      check("(16) with an edited answer not yet downloaded, it asks, and No keeps this report", asked === 1 && doc.getElementById("lib-rem-h").textContent === "20261030_Webinar.pptx");
       m.w.confirm = function () { asked++; return true; };
       choose("20261029_Other.pptx");
       const opened = function (n) { return (doc.querySelector("[data-remgo]") && doc.getElementById("lib-rem-h").textContent === "20261029_Other.pptx") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return opened(n - 1); }); };
@@ -980,8 +976,12 @@ block("(16)", function () {
   }).then(function () {
     drop({ name: "20261029_College_Awards.xlsx" });
     check("(16) a dropped workbook offers Remediate, chosen (S514)", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked);
+    drop({ name: "Old_Deck.ppt" });
+    check("(16) an older .ppt names the step: save it as .pptx in PowerPoint (S553)", !doc.getElementById("lc-use-remediate") && /In PowerPoint choose File, Save As, PowerPoint Presentation \(\.pptx\)/.test((doc.getElementById("lc-whynot") || {}).textContent || ""), (doc.getElementById("lc-whynot") || {}).textContent);
+    drop({ name: "Macros.pptm" });
+    check("(16) a macro-enabled deck is offered Remediate, with the speaker-notes question", !!doc.getElementById("lc-use-remediate") && !!doc.getElementById("lc-notes"));
     drop({ name: "Photo.png" });
-    check("(16) a picture is not offered Remediate", !doc.getElementById("lc-use-remediate"));
+    check("(16) a picture is not offered Remediate, and the panel says why", !doc.getElementById("lc-use-remediate") && /This is a picture\. A picture is remediated where it is used/.test((doc.getElementById("lc-whynot") || {}).textContent || ""), (doc.getElementById("lc-whynot") || {}).textContent);
     doc.getElementById("lc-use-asis").checked = true;
     doc.getElementById("lc-use-asis").dispatchEvent(new m.w.Event("change", { bubbles: true }));
     click(m.w, doc.getElementById("lib-go"));
@@ -995,23 +995,34 @@ block("(16)", function () {
     const src = m.M._state.src.ls || [];
     check("(16) a text file used as background is read here into the brief's documents", src.length === 1 && src[0].text === "Eight projects funded." && src[0].title === "notes", JSON.stringify(src));
     check("(16) the instructions name the kind", doc.getElementById("ls-kind").value === "visual");
-    // (16) A PDF is fixed at its source (S513): Remediate reads it, names what made it,
-    // the record that may hold its source, and offers the source file, never a download.
+    // (16) A PDF (S513, S553): Remediate writes its language and title display here and
+    // hands the file back; its tags are its source's, named with the record that may hold it.
     const pdf = makePdf({ creator: "Microsoft PowerPoint", title: "Update to the Board of Governors" });
     drop({ name: "20260716_Update_to_the_Board_of_Governors.pdf", arrayBuffer: function () { return Promise.resolve(pdf); } });
     check("(16) a dropped PDF offers Remediate, chosen", !!doc.getElementById("lc-use-remediate") && doc.getElementById("lc-use-remediate").checked);
     click(m.w, doc.getElementById("lib-go"));
-    const shown = function (n) { return /What the PDF carries/.test((doc.querySelector(".lib-rem") || {}).textContent || "") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return shown(n - 1); }); };
+    const shown = function (n) { return doc.querySelector(".lib-rem [data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return shown(n - 1); }); };
     return shown(200);
   }).then(function () {
-    const rem = doc.querySelector(".lib-rem");
-    const t = rem ? rem.textContent : "";
-    check("(16) the PDF's report says what it carries in words, and where to fix it", /Needs its source: Not tagged/.test(t) && /It was made from a PowerPoint deck \(Microsoft PowerPoint\)/.test(t) && /Create PDF\/XPS/.test(t), t.slice(0, 400));
+    const rem = doc.querySelector(".lib-rem"), t = rem ? rem.textContent : "";
+    check("(16) the PDF's language and title display are fixed for you, and the title it carries is kept", /Fixed for you \(2\)/.test(t) && /Language set to English \(United States\)/.test(t) && /show its title in a reader's title bar/.test(t) && !/Document title set/.test(t), t.slice(0, 500));
+    check("(16) its tags need its source: the words, the export steps; the checks an untagged PDF cannot take are not shown passing", /Needs you \(1\)/.test(t) && /Not tagged/.test(t) && /It was made from a PowerPoint deck \(Microsoft PowerPoint\)/.test(t) && /Create PDF\/XPS/.test(t) &&
+      /Tags \(WCAG 1\.3\.1\): 1 left/.test(t) && !/Alt text \(WCAG/.test(t) && /Text, not pictures of it \(WCAG 1\.4\.5\): passes/.test(t) && /Done at its source, and the PDF exported again with tags/.test(t), t.slice(0, 900));
     const a = rem && rem.querySelector('a[href="https://github.com/CPL-Initiative/cpl-project-tracker/blob/main/presentations/b.pptx"]');
     check("(16) the Library record whose title matches is named as its likely source", !!a && a.textContent === "Update to the Board of Governors");
-    check("(16) it offers the source .pptx, and no Download the remediated file", !!rem.querySelector('label[for="lc-file"]') && /Choose the source \.pptx/.test(t) && !rem.querySelector("[data-remgo]"));
+    check("(16) it offers the source .pptx, and Download the remediated file", !!rem.querySelector('label[for="lc-file"]') && /Choose the source \.pptx/.test(t) && !!rem.querySelector("[data-remgo]") && /written into the PDF here/.test(t));
     const pdfRec = writes.filter(function (w) { return w.method === "POST" && w.body.file_name === "20260716_Update_to_the_Board_of_Governors.pdf"; });
     check("(16) a PDF opened for remediation is in the Library too, as a Draft with no link", pdfRec.length === 1 && pdfRec[0].body.status === "draft" && pdfRec[0].body.home === "not_filed");
+    let downloaded = null;
+    m.w.HTMLAnchorElement.prototype.click = function () { downloaded = this.download; };
+    click(m.w, rem.querySelector("[data-remgo]"));
+    const until = function (n) { return downloaded || n <= 0 ? Promise.resolve(downloaded) : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return until(n - 1); }); };
+    return until(200);
+  }).then(function (downloaded) {
+    check("(16) the remediated PDF comes back under the original's name, and the message says what was written", downloaded === "20260716_Update_to_the_Board_of_Governors_Remediated.pdf" &&
+      /Written into the PDF: its language, the title shown in place of the file name\./.test(m.root.textContent), String(downloaded) + " / " + ((m.root.querySelector(".lib-msg") || {}).textContent || ""));
+    const patch = writes.filter(function (w) { return w.method === "PATCH"; }).pop();
+    check("(16) the PDF's record notes the remediation", !!patch && patch.body.remediation === "remediated" && patch.body.file_name === "20260716_Update_to_the_Board_of_Governors_Remediated.pdf", JSON.stringify(patch && patch.body));
     m.w.close(); // ends the download's one-minute revoke timer with the window
   });
 });
@@ -1076,10 +1087,11 @@ block("(17)", function () {
     const s2 = t2.querySelector(".lib-remside .lib-remslide");
     check("(17) a blank title box shows its slide to its left, the empty box outlined", !!s2 && /^Slide 2 as laid out, its empty title box outlined$/.test(s2.getAttribute("aria-label")) &&
       s2.querySelectorAll(".lib-remhit").length === 1 && s2.parentNode.nextElementSibling.classList.contains("lib-field"), s2 && s2.getAttribute("aria-label"));
-    // The blank title is drafted from the slide's own words, kept off the slide, and left until kept.
+    // The blank title is drafted from the slide's own words, kept off the slide, and in the file from the start (S553).
     const tIn = t2.querySelector("[data-remtext]"), tOff = t2.querySelector("[data-remoff]");
-    check("(17) a blank title is drafted from the slide's words, its box kept off the slide, with Keep", !!tIn && tIn.value === "Metric:" && !!tOff && tOff.checked &&
-      !!t2.querySelector("[data-remkeep]") && /Drafted from the largest words in the slide's top half/.test(t2.textContent) && !m.M._state.rem.kept.t2, tIn && tIn.value);
+    check("(17) a blank title is drafted from the slide's words, its box kept off the slide, already applied, under Remediated for you", !!tIn && tIn.value === "Metric:" && !!tOff && tOff.checked &&
+      !t2.querySelector("[data-remkeep]") && /Drafted from the largest words in the slide's top half; it is in the file you download/.test(t2.textContent) &&
+      /^Remediated for you, to edit as needed \(\d+\)$/.test(t2.closest("ul").previousElementSibling.textContent) && /^Needs you \(1\)$/.test(ro.closest("ul").previousElementSibling.textContent), tIn && tIn.value);
     tOff.checked = false; tOff.dispatchEvent(new m.w.Event("change", { bubbles: true }));
     check("(17) the off-the-slide box is the person's to clear", m.M._state.rem.answers.t2.off === false);
     const sc = c2.querySelector(".lib-remside .lib-remslide");
