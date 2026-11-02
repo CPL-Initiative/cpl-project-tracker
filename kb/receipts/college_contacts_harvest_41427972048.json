@@ -1,0 +1,392 @@
+{
+ "run": "41427972048",
+ "applied_at": "2026-11-02T10:36:54+00:00",
+ "github_run": "41430044825",
+ "result": {
+  "new": 47,
+  "run": "41427972048",
+  "gone": 0,
+  "colleges": 10,
+  "seen_again": 0
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [],
+ "rows": [
+  {
+   "college": "Orange Coast College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Angelica Suarez",
+   "email": "asuarez@occ.cccd.edu",
+   "source_url": "https://orangecoastcollege.edu/about/president/index.html"
+  },
+  {
+   "college": "Orange Coast College",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor",
+   "name": "Whitney Yamamura, Ed.D.",
+   "email": "",
+   "source_url": "https://www.cccd.edu/departments/chancellor/index.html"
+  },
+  {
+   "college": "Orange Coast College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor of Finance & Administrative Services",
+   "name": "Marlene Drinkwine",
+   "email": "mdrinkwine@cccd.edu",
+   "source_url": "https://www.cccd.edu/departments/administrative-services/index.html"
+  },
+  {
+   "college": "Orange Coast College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor of Educational Services and Technology",
+   "name": "Andreea M. Serban, Ph.D.",
+   "email": "",
+   "source_url": "https://www.cccd.edu/departments/education-services/index.html"
+  },
+  {
+   "college": "Orange Coast College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Vice Chancellor of Human Resources",
+   "name": "Diane Fiero, Ed.D.",
+   "email": "dfiero@cccd.edu",
+   "source_url": "https://www.cccd.edu/departments/human-resources/index.html"
+  },
+  {
+   "college": "Oxnard College",
+   "position": "college_ceo",
+   "title_as_printed": "Interim President",
+   "name": "Dr. Steve Hall",
+   "email": "ocpresident@vcccd.edu",
+   "source_url": "https://www.oxnardcollege.edu/departments/administrative/office-of-the-president"
+  },
+  {
+   "college": "Palo Verde College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Castillo-Garrison, Estella",
+   "email": "estella.castillo-garrison@paloverde.edu",
+   "source_url": "https://www.paloverde.edu/faculty-staff/directory.html"
+  },
+  {
+   "college": "Palo Verde College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Assistant Superintendent/Vice President of Instruction & Student Services",
+   "name": "Robinson, Sandra \"Sam\"",
+   "email": "sam.robinson@paloverde.edu",
+   "source_url": "https://www.paloverde.edu/faculty-staff/directory.html"
+  },
+  {
+   "college": "Palo Verde College",
+   "position": "vpbs",
+   "title_as_printed": "Interim Assistant Superintendent/Vice President of Administrative Services and College Advancement",
+   "name": "Thomas, James",
+   "email": "jim.thomas@paloverde.edu",
+   "source_url": "https://www.paloverde.edu/faculty-staff/directory.html"
+  },
+  {
+   "college": "Palo Verde College",
+   "position": "dean_instruction",
+   "title_as_printed": "Acting Dean of Instruction",
+   "name": "Raman, Biju",
+   "email": "biju.raman@paloverde.edu",
+   "source_url": "https://www.paloverde.edu/faculty-staff/directory.html"
+  },
+  {
+   "college": "Palo Verde College",
+   "position": "dean_ar",
+   "title_as_printed": "Interim Executive Director of Admissions and Records",
+   "name": "Esquerra, Bylli",
+   "email": "bylli.esquerra@paloverde.edu",
+   "source_url": "https://www.paloverde.edu/faculty-staff/directory.html"
+  },
+  {
+   "college": "Palomar College",
+   "position": "vrc",
+   "title_as_printed": "Supervisor, Veterans Services",
+   "name": "Jessica Horn",
+   "email": "jhorn@palomar.edu",
+   "source_url": "https://www.palomar.edu/veterans/"
+  },
+  {
+   "college": "Pasadena City College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "José A. Gómez, Ph.D.",
+   "email": "",
+   "source_url": "https://pasadena.edu/about/president/index.php"
+  },
+  {
+   "college": "Pasadena City College",
+   "position": "vpaa",
+   "title_as_printed": "Assistant Superintendent/Vice President, Instruction",
+   "name": "Laura M. Ramirez, Ed.D.",
+   "email": "",
+   "source_url": "https://pasadena.edu/about/leadership.php"
+  },
+  {
+   "college": "Pasadena City College",
+   "position": "vpbs",
+   "title_as_printed": "Assistant Superintendent/Vice President, Business and Administrative Services",
+   "name": "Jennifer Clark, Ed.D, MBA",
+   "email": "",
+   "source_url": "https://pasadena.edu/about/leadership.php"
+  },
+  {
+   "college": "Pasadena City College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent/Vice President, Student Services",
+   "name": "Ivan Peña, Ed.D.",
+   "email": "",
+   "source_url": "https://pasadena.edu/about/leadership.php"
+  },
+  {
+   "college": "Pasadena City College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Chief Diversity, Equity, and Inclusion Officer, Title IX Coordinator",
+   "name": "Dr. Kari E. Bolen",
+   "email": "",
+   "source_url": "https://pasadena.edu/about/leadership.php"
+  },
+  {
+   "college": "Pasadena City College",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans Resource Center",
+   "name": "Foster, Lisa",
+   "email": "lfoster1@pasadena.edu",
+   "source_url": "https://pasadena.edu/directory/index.php"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Don Moya-Miller",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "vpaa",
+   "title_as_printed": "Assistant Superintendent/Vice President, Academic Affairs",
+   "name": "Dr. Caroline Durdella",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "vpss",
+   "title_as_printed": "Interim Assistant Superintendent/Vice President, Student Services",
+   "name": "Mark Yokoyama",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice-President, Academic Affairs, Institutional Effectiveness and Instructional Operations",
+   "name": "Dr. Caroline Durdella",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Strategic Partnerships (oversees RHC Foundation)",
+   "name": "Shaina Phillips",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean, Career and Workforce Education",
+   "name": "Bridgette Hernandez",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "vrc",
+   "title_as_printed": "Dean, Student Affairs (Oversees Veterans Resource Center)",
+   "name": "Alicia Kruizenga",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions and Records, Registrar",
+   "name": "Allison Estrada",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Eric Bishop",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Dr. Lynn Wright",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Business Services",
+   "name": "Elia Blount",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Dr. FeRita Carter",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction Fine & Performing Arts",
+   "name": "John Adkins",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction School of Nursing",
+   "name": "Dr. Tammy Vant Hul",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean, Instruction Career and Technical Education",
+   "name": "Dr. Shari Yates",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "dean_instruction",
+   "title_as_printed": "Interim Dean, Instruction Languages, Humanities and Social Sciences",
+   "name": "Micherri Wiggs",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "Riverside City College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction Kinesiology",
+   "name": "Jennifer Spalding",
+   "email": "",
+   "source_url": "https://www.rcc.edu/about/leadership.html"
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Gilbert J. Contreras, Ph.D.",
+   "email": "",
+   "source_url": "https://www.valleycollege.edu/"
+  },
+  {
+   "college": "San Bernardino Valley College",
+   "position": "vrc",
+   "title_as_printed": "Veteran Services Coordinator",
+   "name": "Jason Alvarez",
+   "email": "jaalvarez@sbccd.edu",
+   "source_url": "https://www.valleycollege.edu/admissions-records/veterans/vets-resource-ctr.php"
+  },
+  {
+   "college": "San Diego City College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Ricky Shabazz, Ed.D.",
+   "email": "",
+   "source_url": "https://www.sdcity.edu/about/leadership/index.aspx"
+  },
+  {
+   "college": "San Diego City College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Marciano Perez, Jr.",
+   "email": "",
+   "source_url": "https://www.sdcity.edu/about/leadership/index.aspx"
+  },
+  {
+   "college": "San Diego City College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Matilda Chavez",
+   "email": "",
+   "source_url": "https://www.sdcity.edu/about/leadership/index.aspx"
+  },
+  {
+   "college": "San Diego City College",
+   "position": "vpbs",
+   "title_as_printed": "Acting Vice President of Administrative Services",
+   "name": "Roxann Solis",
+   "email": "",
+   "source_url": "https://www.sdcity.edu/about/leadership/index.aspx"
+  },
+  {
+   "college": "San Diego City College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions, Records, VA & VSC",
+   "name": "Dora Meza",
+   "email": "",
+   "source_url": "https://www.sdcity.edu/about/directory/administration.aspx"
+  },
+  {
+   "college": "San Diego City College",
+   "position": "dean_cte",
+   "title_as_printed": "Associate Dean, Strong Workforce",
+   "name": "Sasha Knox, Ed.D.",
+   "email": "",
+   "source_url": "https://www.sdcity.edu/about/directory/administration.aspx"
+  },
+  {
+   "college": "San Diego College of Continuing Education",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Tina M. King, Ed.D.",
+   "email": "",
+   "source_url": "https://sdcce.edu/about-us/institution/leadership-team.html"
+  },
+  {
+   "college": "San Diego College of Continuing Education",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instructional Services",
+   "name": "Masahiro \"Masa\" Omae, Ph.D.",
+   "email": "",
+   "source_url": "https://sdcce.edu/about-us/institution/leadership-team.html"
+  },
+  {
+   "college": "San Diego College of Continuing Education",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Shakerra Carter, Ed.D.",
+   "email": "",
+   "source_url": "https://sdcce.edu/about-us/institution/leadership-team.html"
+  },
+  {
+   "college": "San Diego College of Continuing Education",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Jacqueline Sabanos",
+   "email": "",
+   "source_url": "https://sdcce.edu/about-us/institution/leadership-team.html"
+  }
+ ]
+}
