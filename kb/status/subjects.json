@@ -1,27 +1,36 @@
 {
   "schema": 1,
-  "session": 544,
-  "moniker": "SkySombrero",
+  "session": 555,
+  "moniker": "SkyTadpole",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_545_handoff.md",
+  "handoff": "docs/session_556_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
       "text": "Open Asks Sheet 105 card 1: AGRI M10SY Forest Surveying and AGRI M1104 Introduction to Forest Operations are merged into Forest Ecology, which moved to ENVR on Sheet 104. The dry run that moves both to ENVR is committed; the session's permission check held its apply.",
       "no_reply": "Both stay on AGRI, merged into an ENVR parent; nothing else waits on the card.",
-      "link": "https://claude.ai/artifact/7mPQz4PNmc7ezD2Dkkijxc"
+      "link": "https://claude.ai/artifact/7mPQz4PNmc7ezD2Dkkijxc",
+      "answer": {
+        "by": "Sam",
+        "at": "2026-10-20",
+        "words": "move-both, on Open Asks Sheet 107 card 1 (13:08Z, his own call): AGRI M10SY and M1104 moved to ENVR in S436 (kb/forestry_wine_remint_out/2026-10-20-stragglers/). Recorded S555."
+      }
     }
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-02T02:56:24Z",
+  "written_at": "2026-11-02T22:49:36Z",
   "project": "subjects",
   "next_step": {
-    "title": "Move the two forestry stragglers on Sam's word, or work the strays",
-    "text": "Open Asks Sheet 105 still waits: on move-both the next session applies the committed dry run for Forest Surveying and Introduction to Forest Operations in one window. Otherwise it takes the 110 stray codes through the discipline-blank worklist toward one re-key window."
+    "title": "Work the stray codes toward one re-key window",
+    "text": "The forestry stragglers moved on Sam's move-both (Open Asks Sheet 107 card 1, applied S436). The stray codes go through the discipline-blank worklist toward one re-key window."
   },
   "changes": [
+    {
+      "at": "2026-11-02T22:49:36Z",
+      "text": "The forestry call records Sam's move-both of Sheet 107, so the Commons no longer counts it open (S555)."
+    },
     {
       "at": "2026-11-02T02:24:00Z",
       "text": "The List's filter words carry their counts, and Selected joins them (#2675)."

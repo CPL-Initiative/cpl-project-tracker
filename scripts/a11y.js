@@ -6,6 +6,7 @@
        npm run a11y -- cobi:memory     # one route inside a target
        npm run a11y -- --verbose       # every width, not just the failures
        npm run a11y -- --shots DIR     # + screenshots
+       npm run a11y -- --dark          # the same sweep in the dark palette
        npm run a11y -- --config PATH   # a different project's config
 
    WHY IT IS ONE COMMAND. Sam, 2026-09-04: "I'm thinking about creating a skill
@@ -606,6 +607,10 @@ function MOTION(known) {
   const shotDir = flag("--shots");
   if (shotDir) fs.mkdirSync(shotDir, { recursive: true });
   const verbose = argv.includes("--verbose");
+  /* --dark: the OS asks for dark, so every page with no stored choice paints its
+     dark palette (cpl_theme.js follows prefers-color-scheme when data-theme is
+     unset). Light stays the default run; dark is the second look a UI pass owes. */
+  const dark = argv.includes("--dark");
 
   /* Selectors are `target` or `target:route`, so one tab can be re-measured in
      seconds while it is being fixed. Nothing named = everything. */
@@ -627,7 +632,8 @@ function MOTION(known) {
 
   /* Every request that leaves the origin is aborted — see the header. */
   const openPage = async (width, opts) => {
-    const page = await browser.newPage(Object.assign({ viewport: { width, height: 900 } }, opts || {}));
+    const page = await browser.newPage(Object.assign({ viewport: { width, height: 900 } },
+      dark ? { colorScheme: "dark" } : {}, opts || {}));
     await page.route("**", (route) => {
       const u = route.request().url();
       return (u.startsWith(base) || u.startsWith("data:") || u.startsWith("blob:"))
