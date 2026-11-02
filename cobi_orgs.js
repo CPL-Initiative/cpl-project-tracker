@@ -72,7 +72,7 @@
     // VIEW, so both stay exactly where they are in the CPL site too. Sam,
     // 2026-08-12: FIN should be a real Finance site on day one, not a one-tab site.
     { id: "fin", label: "FIN", tag: "FIN", full: "Finance",
-      tabs: ["contracts", "budget", "implementation-funding"], home: "contracts" },
+      tabs: ["contracts", "budget", "implementation-funding", "csm-workspace"], home: "contracts" },
   ];
 
   // Tabs that must NOT appear in the default "show everything" view — they

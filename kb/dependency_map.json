@@ -4,12 +4,12 @@
   "supabase_tables": 105,
   "rpcs": 49,
   "edge_functions": 11,
-  "file_datasets": 777,
+  "file_datasets": 778,
   "external_services": 192,
-  "consumers": 509,
+  "consumers": 510,
   "workflows": 60,
   "data_js_files": 71,
-  "tabs": 39
+  "tabs": 40
  },
  "datasets": {
   "edgefn:FN": {
@@ -664,10 +664,11 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4633,
+     "line": 4634,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -1002,10 +1003,11 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 6522,
+     "line": 6523,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -1315,10 +1317,11 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4124,
+     "line": 4125,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -1664,6 +1667,16 @@
      "line": 770,
      "tabs": [
       "commons"
+     ]
+    },
+    {
+     "id": "module:csm_workspace.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "url",
+     "line": 297,
+     "tabs": [
+      "csm-workspace"
      ]
     },
     {
@@ -2028,10 +2041,11 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4784,
+     "line": 4785,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -2219,10 +2233,11 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 4112,
+     "line": 4113,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -3377,10 +3392,11 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 6756,
+     "line": 6825,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -4422,10 +4438,11 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9323,
+     "line": 9392,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -6212,6 +6229,16 @@
      ]
     },
     {
+     "id": "module:csm_workspace.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 742,
+     "tabs": [
+      "csm-workspace"
+     ]
+    },
+    {
      "id": "page:CPL_Dashboard.html",
      "kind": "page",
      "direction": "read",
@@ -6254,10 +6281,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18615,
+     "line": 18684,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -6348,10 +6376,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18542,
+     "line": 18611,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -6399,10 +6428,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 18527,
+     "line": 18596,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -7015,6 +7045,19 @@
    "main_committers": [
     "workflow:daily-dashboard.yml"
    ]
+  },
+  "file:csm_workspace.js": {
+   "consumers": [
+    {
+     "id": "page:CPL_Dashboard.html",
+     "kind": "page",
+     "direction": "read",
+     "how": "inline",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
   },
   "file:csr_authority_codes_rulings_<date>.json": {
    "consumers": [
@@ -7710,10 +7753,11 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 9447,
+     "line": 9516,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -19718,10 +19762,11 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 5468,
+     "line": 5469,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -23346,10 +23391,11 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 6213,
+     "line": 6214,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -23383,6 +23429,7 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -23400,6 +23447,7 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -23417,6 +23465,7 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -23610,6 +23659,7 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24164,10 +24214,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5768,
+     "line": 5769,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24739,6 +24790,7 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24747,10 +24799,11 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5650,
+     "line": 5651,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24775,6 +24828,7 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24783,10 +24837,11 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 6406,
+     "line": 6407,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -24800,10 +24855,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5715,
+     "line": 5716,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24812,10 +24868,11 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5849,
+     "line": 5850,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24836,10 +24893,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7209,
+     "line": 7278,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24848,10 +24906,11 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7237,
+     "line": 7306,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -24869,6 +24928,7 @@
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24877,10 +24937,11 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 5832,
+     "line": 5833,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24901,10 +24962,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 7325,
+     "line": 7394,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -24913,10 +24975,11 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 7446,
+     "line": 7515,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -25815,10 +25878,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13627,
+     "line": 13696,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     }
@@ -25885,10 +25949,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5711,
+     "line": 5712,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -25938,10 +26003,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 5712,
+     "line": 5713,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -25980,10 +26046,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13603,
+     "line": 13672,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -26298,10 +26365,11 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 13582,
+     "line": 13651,
      "tabs": [
       "college-briefing",
       "cpl-pathways",
+      "csm-workspace",
       "implementation-funding"
      ]
     },
@@ -27504,6 +27572,7 @@
   "cpl_funding.js": [
    "college-briefing",
    "cpl-pathways",
+   "csm-workspace",
    "implementation-funding"
   ],
   "cpl_memory.js": [
@@ -27532,6 +27601,9 @@
   ],
   "credential_reference.js": [
    "credential-reference"
+  ],
+  "csm_workspace.js": [
+   "csm-workspace"
   ],
   "docx.min.js": [
    "letters"

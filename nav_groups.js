@@ -34,7 +34,7 @@
     { id: 'workplan', label: 'Workplan', tabs: ['activities-projects', 'workplan-goals', 'raci', 'annual-report'] },
     // 'contracts' is EXCLUSIVE in cobi_orgs.js, so it is hidden in the default CPL
     // view and appears only under the FIN site — where it leads this group.
-    { id: 'funding', label: 'Funding', tabs: ['contracts', 'budget', 'implementation-funding'] },
+    { id: 'funding', label: 'Funding', tabs: ['contracts', 'budget', 'implementation-funding', 'csm-workspace'] },
     { id: 'strategy', label: 'Strategy & Impact', tabs: ['vision-2030', 'military-partnerships', 'cpl-news'] },
     /* ⚠️ 'skyview' is an external launcher that belongs HERE, not in Share.
      * Sam, 2026-09-04: "open Skyview from CCR side menu link directly to the
