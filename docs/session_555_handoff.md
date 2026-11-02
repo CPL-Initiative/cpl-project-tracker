@@ -35,6 +35,32 @@ Library and when I go to try to complete the remediation, there doesn't seem to 
 - Tests: `library` 275 (block 21 drives the whole path), `library_remediate` 178, `docs_audit_test` 153;
   `npm run a11y -- cobi:library` passes.
 
+## Also in S554: Sam's funding session (same moniker, a second live session; light checkpoint)
+
+Sam ran a second S554 session on the funding tab while the Library session wrote this handoff. Its checkpoint was
+light: one lane moved (implementation-funding), no data write, no re-mint, no nav change. Refreshed: the lint, the
+funding lane, a new lessons doc (`docs/csm_workspace_lessons.md`, since `cpl_funding_lessons.md` sits at its budget),
+the index, this section, `cpl_memory`, the vault note. Skipped: the Pipeline tab, `kb/README.md`, `README.md`, a KB
+note, the status files (it never touched Program Requirements) and the standing sheet (nothing waits on Sam). The
+funding lane reads 1.04x its budget after this run; compact it on the next funding run.
+
+- **Merged:** #2701 (every Eligibility word editable in *Edit this page*; a **Show** filter by minimum conditions;
+  the landing link beside the Coordinator condition) and #2703 (**No NC** chip; **Email** reopens an acceptance;
+  the NC attestation under its item; the review lane carries conditions, contacts, the CO note and NC attestations).
+- **The CSM Workspace mock**, version 11: https://claude.ai/artifact/LLjcCzVzq7sqtPEjnebMYf (source and porting notes:
+  `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/README.md`, Sam's 17 asks listed). Sam loves it and wants it
+  extended to MAP onboarding and the activity cards (braindump 2026-11-02 2205; `cpl_memory`
+  `sam-csm-workspace-every-activity-2026-11-02`).
+- **Kristen's missing controls:** her magic link was requested on Windows and opened on a Mac, so her Windows browser
+  stayed signed out. She requests a new link on the Windows PC and opens it there.
+- **Sam added a Slack connector** (the CSM team's college-support channel) at the end of the session. Not read yet.
+
+**Open work from it, ahead of the list below when Sam opens on funding:** (1) read the CSM team's Slack channel
+(search channels for college support; read, never post without Sam's go) and say how it could feed the workspace;
+(2) plan the CSM Workspace tab: one communications log keyed by college and activity, mapped in
+`kb/governance_surface_map.json` before its first write (Rule 10 a3), the MAP Users one-time hand-off to a college,
+the review gate and mail merge ported from the mock; (3) compact the funding lane under 20,000 bytes.
+
 ## Sam's decisions this run
 
 - Build `/coord` (2026-11-02, *"yes, build the /coord skill"*), `cpl_memory` `sam-coord-command-2026-11-02`.

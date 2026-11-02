@@ -10,9 +10,9 @@
     "other": 150000
   },
   "summary": {
-    "files": 1364,
-    "bytes": 13886195,
-    "over_budget": 4,
+    "files": 1365,
+    "bytes": 13894546,
+    "over_budget": 5,
     "handoff_max": 555,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60070,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 137,
-        "bytes": 4222873,
+        "bytes": 4223147,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9935,
+        "bytes": 10378,
         "over": 0
       },
       "lessons": {
-        "files": 85,
-        "bytes": 2598417,
+        "files": 86,
+        "bytes": 2602927,
         "over": 1
       },
       "kb_note": {
@@ -46,24 +46,24 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 469976,
-        "over": 2
+        "bytes": 470753,
+        "over": 3
       },
       "handoff": {
         "files": 523,
-        "bytes": 3704911,
+        "bytes": 3707258,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 4,
+      "oversized_doc": 5,
       "kb_note_dialect": 1,
       "house_voice": 1,
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25506,
-      "bytes": 4170813400,
+      "files": 25509,
+      "bytes": 4170864956,
       "heavy_bytes": 2974552311,
       "heavy_share": 0.713,
       "ignore_filters": [
@@ -180,6 +180,19 @@
       },
       "message": "121,703 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
       "path": "docs/library_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20776,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 776,
+        "ratio": 1.04
+      },
+      "message": "20,776 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/implementation-funding.md"
     },
     {
       "rule": "oversized_doc",

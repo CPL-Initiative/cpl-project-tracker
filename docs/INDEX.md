@@ -67,11 +67,11 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 |---|---:|---|
 | Doctrine (behavior-shaping) | 6 | [`catalog/doctrine.md`](catalog/doctrine.md) |
 | KB notes | 573 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
-| Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
+| Lessons docs | 92 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
 | Session handoffs | 523 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1352** | |
+| **total** | **1353** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-02 S554 SkySombrero (funding): every Eligibility word editable on the public page, a minimum-conditions filter, No NC, Email reopens an acceptance (#2701, #2703); the CSM Workspace mock; new `docs/csm_workspace_lessons.md`; handoff 555 extended.
 - 2026-11-02 S554 SkySombrero: the Library's stuck remediations get Finish remediation on their cards, bound to the record; `/coord` tells live sessions this one is running; handoff 555.
 - 2026-11-02 S553 SkyPinwheel: the Library remediates every file it reads, every draft applied as the report opens, a PDF's title, language and title display written in the browser (55 team PDFs verified); handoff 554.
 - 2026-11-02 S551 SkyWhirlpool: Sheet 156 answered (try the catalog first); the runner reads seeds, and every catalog route refused or printed nothing; Sheet 157 asks for the upload; the apply fills a blank email on a name match; handoff 552.
