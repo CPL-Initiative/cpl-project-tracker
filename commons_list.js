@@ -70,7 +70,7 @@
 //   changed            true: the engine keeps the visit's changed set, L.changed. An accepted suggestion joins it, a tab
 //                      adds its own saves with api.markChanged(keys), each such row reads "changed this visit" under its
 //                      title, and the filter id "changed" keeps them. A new visit drops it with the state.
-//                      The Exhibits List keeps its own suggestions and changed set (S542) and sets neither.
+//                      Every List that folds sets both: Exhibits (its spelling twins, Accept), CR (Confirm the group), Subjects.
 //   counts             Each filter word carries its count (the List norms: "each with its count"): the rows its filter
 //                      keeps over every row, the finder and the column boxes aside. Left out, the engine counts every
 //                      filter by its own pass. counts() -> { id: n } hands the tab's own, from a build that already

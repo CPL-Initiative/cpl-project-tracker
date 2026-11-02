@@ -2326,23 +2326,21 @@
     });
   }
   /* Accept writes the rename and the merge confirm naming the same target, the pair the rename dry-run needs to fold
-     one credential's records into the other; a reviewed apply does the merge. */
+     one credential's records into the other; a reviewed apply does the merge. The engine's suggestion slot draws the
+     line and its two words, keeps what was accepted or dismissed for the visit, and marks the row changed; this hands it
+     the write and the words for the status line (the List norms' step 1, onto Exhibits in S545). */
   function listSuggestAccept(r, sg) {
-    var L = listState(), from = r.ut;
-    var writes = [[FIELD_CRED_TITLE, sg.to], [FIELD_MERGE_CONFIRM, sg.to]];
-    listCellNote("Saving the fold of " + from + " into " + sg.to + "…");
+    var from = r.ut, writes = [[FIELD_CRED_TITLE, sg.to], [FIELD_MERGE_CONFIRM, sg.to]];
     return session().then(function (sess) {
       if (!sess) throw new Error("signin");
       return Promise.all(writes.map(function (w) { return saveCredRow(sess, from, w[0], w[1]); }));
     }).then(function (rs) {
       if (!rs.every(function (x) { return x.ok; })) throw new Error("HTTP " + rs.map(function (x) { return x.status; }).join("/"));
       listApply(r, writes);
-      L.sgDone[from] = "accepted";
-      L.cellNote = "Saved: " + from + " folds into " + sg.to + ". The daily dry-run pairs them, and a reviewed apply merges the records.";
-      redrawList();
+      return { ok: true, words: "Saved: " + from + " folds into " + sg.to + ". The daily dry-run pairs them, and a reviewed apply merges the records." };
     }).catch(function (e) {
-      listCellNote(e && e.message === "signin" ? "Sign in as a reviewer to accept a fold." : "The fold of " + from
-        + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed.");
+      return { ok: false, words: e && e.message === "signin" ? "Sign in as a reviewer to accept a fold." : "The fold of " + from
+        + " did not reach the reference (" + (e && e.message || "no answer") + "); nothing changed." };
     });
   }
   function listCellSave(r, kind, inp, label) {
@@ -2521,10 +2519,7 @@
         if (L.f === "low" && !(r.conf_title != null && r.conf_title < 0.6)) return false;
         if (L.f === "flagged" && !r.quality_flag) return false;
         if (L.f === "bare" && (r.articulations || []).length) return false;
-        if (L.f === "changed" && L.changed.indexOf(r.ut) === -1) return false;
         if (L.f === "mine" && !listFlag(r)) return false;
-        if (L.f === "selected" && !L.sel[r.ut]) return false;
-        if (L.f === "suggested" && !listSuggest(r)) return false;
         if (L.f === "outcomes" && !listOutcomeHints(r).length) return false;
         if (L.f === "waiting" && !listPendingFold(r)) return false;
         if (L.f === "statewide" && listBasis(r) !== "Statewide") return false;
@@ -2591,18 +2586,17 @@
             word("Re-point to " + pf.end, function () { listRepoint(r, pf); }, { "aria-label": "Re-point the fold of " + r.ut + " to " + pf.end })]));
         else if (o.title) out.push(el("span", { cls: "exh-l-sub", text: "renamed from " + r.ut + "; pending the apply" }));
         if (col) out.push(el("span", { cls: "exh-l-sub", text: "collides with " + (col.proposed_new_title || "an existing title") }));
-        if (L.changed.indexOf(r.ut) !== -1) out.push(el("span", { cls: "exh-l-sub", text: "changed this visit" }));
         var om = listOutcomeHints(r);
         if (om.length) out.push(el("span", { cls: "exh-l-sub exh-l-om", text: "Outcomes match: "
           + om.slice(0, SLO_SHOW).map(listOutcomeLabel).join("; ") + (om.length > SLO_SHOW ? "; " + (om.length - SLO_SHOW) + " more" : "") }));
-        var sg = (aiOn || L.f === "suggested") && listSuggest(r);
-        if (sg) out.push(el("span", { cls: "exh-l-sub exh-l-sg" }, [
-          "Suggested: fold into " + sg.to + " (" + sg.why + ") ",
-          word("Accept", function () { listSuggestAccept(r, sg); }, { "aria-label": "Fold " + r.ut + " into " + sg.to }),
-          " ", word("Dismiss", function () { L.sgDone[r.ut] = "dismissed"; redrawList(); }, { "aria-label": "Dismiss the fold of " + r.ut })]));
         return out;
       },
       drawer: listDrawerFill,
+      // The engine draws a spelling twin's fold under its title (with the AI sort on, or under Suggested folds), owns the
+      // filter ids suggested, changed and selected, and keeps the visit's changed set that Re-analyze sends.
+      suggest: { get: function (r) { var sg = listSuggest(r); return sg ? { text: "fold into " + sg.to, why: sg.why, to: sg.to } : null; },
+        verb: "Accept", accept: listSuggestAccept, label: function (r, sg) { return "Fold " + r.ut + " into " + sg.to; } },
+      changed: true,
       flag: { get: listFlag, set: listSetFlag },
       edit: {
         fields: [{ id: "exh-l-t", label: "Title", key: "title" }, { id: "exh-l-i", label: "Issuer", key: "issuer" },
