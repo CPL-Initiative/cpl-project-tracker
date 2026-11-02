@@ -66,7 +66,8 @@ const CERTLINKS = { schema: 1, certs: { ITC1: { code: "T8", name: "Preventive Ma
     "Apiary Basics": { relation: "aligned", rule: "all", certs: ["ITC2"] } } };
 const COLLISIONS = { collisions: [{ old_unified_title: "Apiary Basics", proposed_new_title: "Beekeeping" }] };
 
-function load() {
+function load(opts) {
+  opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="exhibits-root">Loading</div></body></html>',
     { url: "https://example.org/#exhibits/list", runScripts: "dangerously" });
   const w = dom.window, calls = [];
@@ -77,7 +78,7 @@ function load() {
     if (url === "kb/exhibits_review.json") return ok({ schema: 1, written_at: "2026-11-01T05:22:00Z", sources: {}, tiles: {}, steps: {}, colleges: [], held: [] });
     if (url === "kb/exhibits_adoption.json") return ok(ADOPTION);
     if (url === "kb/cred_rename_dryrun/collisions.json") return ok(COLLISIONS);
-    if (url === "kb/exhibits_ai_sort.json") return ok(AISORT);
+    if (url === "kb/exhibits_ai_sort.json") return opts.noAiSort ? Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } }) : ok(AISORT);
     if (url === "kb/exhibit_cert_links.json") return ok(CERTLINKS);
     if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok(/unified_title_override/.test(url) ? OVERLAY_ROWS : []);
     if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
@@ -98,7 +99,8 @@ function load() {
 const tick = () => new Promise((r) => setTimeout(r, 0));
 async function settle() { for (let i = 0; i < 10; i++) await tick(); }
 function rows(d) { return Array.from(d.querySelectorAll(".exh-l-table tbody tr:not(.exh-l-editrow)")); }
-function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) => txt(b) === t); }
+/* A filter word carries its count, "Decided (2)"; a word is found by its label either way. */
+function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) => txt(b) === t || txt(b).replace(/ \([\d,]+\)$/, "") === t); }
 
 (async function () {
   const t = load();
@@ -211,6 +213,12 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   t.d.getElementById("exh-l-editall").click(); await settle();
   words(t.d, "Suggested folds").click(); await settle();
   const sgRows = rows(t.d);
+  check("(8) with the AI sort's file read, Suggested folds carries its count",
+    txt(t.d.querySelector('#exh-l-filters [aria-current="true"]')) === "Suggested folds (1)", txt(t.d.querySelector('#exh-l-filters [aria-current="true"]')));
+  const na = load({ noAiSort: true });
+  await na.M.boot(); await settle();
+  check("(8) ⭐ with the AI sort's file unread, Suggested folds shows no count, never a 0", txt(words(na.d, "Suggested folds")) === "Suggested folds"
+    && /^All \(\d+\)$/.test(txt(na.d.querySelector('#exh-l-filters [aria-current="true"]'))), txt(na.d.getElementById("exh-l-filters")));
   check("(8) Suggested folds shows only the twin, with its fold and why", sgRows.length === 1 && /^10-Key/.test(txt(sgRows[0].children[2]))
     && /Suggested: fold into Apiary Basics \(the same words spelled another way\)/.test(txt(sgRows[0].children[2])), sgRows.map(txt).join(" | "));
   const n4 = t.calls.filter((c) => c.method === "POST").length;
@@ -234,7 +242,7 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     { course_id: "_CREDENTIAL_REVIEW::Apiary Basics", field: "unified_title_merge_confirm", value: "Welding Level 1" }];
   const u = load();
   await u.M.boot(); await settle();
-  Array.from(u.d.querySelectorAll("button")).find((b) => txt(b) === "Folds waiting for the apply").click(); await settle();
+  words(u.d, "Folds waiting for the apply").click(); await settle();
   const wr = rows(u.d).map((r) => txt(r.children[2]));
   check("(9) Folds waiting for the apply lists both accepted folds", wr.length === 2, wr.join(" | "));
   const stalled = rows(u.d).find((r) => /now folds into Welding Level 1/.test(txt(r.children[2])));
@@ -269,15 +277,15 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
   const basis = rows(x.d).map((r) => txt(r.children[2]).slice(0, 7) + "=" + txt(r.children[bi]));
   check("(10) ⭐ a credential with a statewide exhibit reads Statewide, the rest Local",
     basis.join("|") === "10-Key =Local|Apiary =Local|Welding=Statewide", basis.join("|"));
-  Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "Based on statewide").click(); await settle();
+  words(x.d, "Based on statewide").click(); await settle();
   check("(10) Based on statewide shows only it", rows(x.d).length === 1 && /^Welding/.test(txt(rows(x.d)[0].children[2])));
   Array.from(rows(x.d)[0].children[bi].querySelectorAll("button")).find((b) => /Basis/.test(b.getAttribute("aria-label"))).click(); await settle();
   check("(10) its drawer names the statewide exhibit and its recommendations",
     /Based on statewide/.test(txt(x.d.querySelector(".exh-l-drawer"))) && /MAPICI-WELD-1-001, 2 credit recommendations/.test(txt(x.d.querySelector(".exh-l-drawer"))),
     txt(x.d.querySelector(".exh-l-drawer")));
-  Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "Local only").click(); await settle();
+  words(x.d, "Local only").click(); await settle();
   check("(10) Local only shows the rest", rows(x.d).length === 2);
-  Array.from(x.d.querySelectorAll("button")).find((b) => txt(b) === "All").click(); await settle();
+  words(x.d, "All").click(); await settle();
   const issIdx = Array.from(x.d.querySelectorAll(".exh-l-table thead tr:first-child th")).findIndex((h) => /^Issuer/.test(txt(h)));
   const wRow = rows(x.d).find((r) => /^Welding/.test(txt(r.children[2])));
   wRow.children[issIdx].querySelector("button.exh-l-open").click(); await settle();

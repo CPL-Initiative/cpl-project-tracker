@@ -54,7 +54,8 @@ function load() {
 const tick = () => new Promise((r) => setTimeout(r, 0));
 async function settle() { for (let i = 0; i < 10; i++) await tick(); }
 function rows(d) { return Array.from(d.querySelectorAll(".exh-l-table tbody tr:not(.exh-l-editrow)")); }
-function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) => txt(b) === t); }
+/* A filter word carries its count, "Decided (2)"; a word is found by its label either way. */
+function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) => txt(b) === t || txt(b).replace(/ \([\d,]+\)$/, "") === t); }
 
 (async function () {
   const t = load();

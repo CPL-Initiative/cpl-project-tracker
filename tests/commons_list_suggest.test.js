@@ -62,7 +62,8 @@ async function settle() { for (let i = 0; i < 8; i++) await tick(); }
 function rows(d) { return Array.from(d.querySelectorAll(".cl-table tbody tr:not(.cl-editrow):not(.cl-band)")); }
 function titleOf(r) { return txt(r.querySelector(".cl-title .cl-open")); }
 function titles(d) { return rows(d).map(titleOf).join("|"); }
-function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) => txt(b) === t); }
+/* A filter word carries its count, "Decided (2)"; a word is found by its label either way. */
+function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) => txt(b) === t || txt(b).replace(/ \([\d,]+\)$/, "") === t); }
 function sgOf(d, t) { const r = rows(d).find((x) => titleOf(x) === t); return r && r.querySelector(".cl-sg"); }
 function sgWord(d, t, w) { return Array.from(sgOf(d, t).querySelectorAll("button")).find((b) => txt(b) === w); }
 function note(d) { return txt(d.getElementById("cl-cellnote")); }

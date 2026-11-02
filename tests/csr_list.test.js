@@ -131,7 +131,8 @@ function cell(d, disc, name) { const r = rowOf(d, disc); return r ? txt(r.childr
 /* The engine draws an empty cell as a dash it can be pressed on. */
 function blank(s) { return s === "" || s === "\u2014"; }
 function inDrawer(d, t) { return Array.from(d.querySelectorAll("#cs-list .csl-drawer button")).find((b) => txt(b) === t); }
-function words(d, t) { return Array.from(d.querySelectorAll("#cs-list button")).find((b) => txt(b) === t); }
+/* A filter word carries its count, "Decided (2)"; a word is found by its label either way. */
+function words(d, t) { return Array.from(d.querySelectorAll("#cs-list button")).find((b) => txt(b) === t || txt(b).replace(/ \([\d,]+\)$/, "") === t); }
 function boxOf(d, disc, label) { return Array.from(d.querySelectorAll(".csl-cellin")).find((b) => b.getAttribute("aria-label") === label + " of " + disc); }
 function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("change")); }
 

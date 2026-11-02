@@ -2532,6 +2532,15 @@
         if (L.cert && listCerts(r).indexOf(L.cert) === -1) return false;
         return true;
       },
+      /* A filter whose data is still unread shows no count, never a 0 (S343): the suggested folds come with the AI
+         sort's file, the outcomes matches with theirs, your flags and the waiting folds with today's saves. */
+      uncounted: function (id) {
+        var L = listState();
+        if (id === "suggested") return !L.aiData;
+        if (id === "outcomes") return !(L.slo && L.slo.neighbors);
+        if (id === "mine" || id === "waiting") return state.cs.overlayOk !== true;
+        return false;
+      },
       onFilter: function (id, api) {
         if (id === "outcomes") return listSloLoad();
         return id === "suggested" && !listState().aiData ? api.aiLoad() : null;
