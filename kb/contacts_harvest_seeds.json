@@ -1,0 +1,17 @@
+{
+ "_readme": "Extra places the contacts harvest reads for a college whose own pages refuse the plain read (403). Sam, Open Asks Sheet 156 card 1, 13:25Z 2026-11-02: \"I can upload the data to you but check some alternate routes first, such as the pdf catalog, pdf schedule of classes, employee directory\". Each URL is read the same plain way as a homepage (the named user agent, robots.txt, 4 s apart); a refusal is recorded and never retried another way. Catalog URLs come from program_source_registry.catalog_url (and the catalog sweep's filed links where the registry names an HTML index); a catalog's front matter lists the president, vice presidents and deans. Added S551 SkyWhirlpool. Ohlone has no seed: the registry names only its curriculum chapter, and its front-matter chapter's address is not known.",
+ "colleges": {
+  "Los Angeles City College": [{"url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf", "kind": "catalog_pdf"}],
+  "East Los Angeles College": [{"url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf", "kind": "catalog_pdf"}],
+  "Los Angeles Harbor College": [{"url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf", "kind": "catalog_pdf"}],
+  "Los Angeles Mission College": [{"url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf", "kind": "catalog_pdf"}],
+  "Los Angeles Pierce College": [{"url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf", "kind": "catalog_pdf"}],
+  "Los Angeles Southwest College": [{"url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf", "kind": "catalog_pdf"}],
+  "Los Angeles Trade-Tech College": [{"url": "https://www.lattc.edu/sites/lattc.edu/files/2026-08/2026-2027%20LATTC%20Catalog.pdf", "kind": "catalog_pdf"}],
+  "Los Angeles Valley College": [{"url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf", "kind": "catalog_pdf"}],
+  "West Los Angeles College": [{"url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf", "kind": "catalog_pdf"}],
+  "Fresno City College": [{"url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover", "kind": "catalog_curriqunet"}, {"url": "https://www.scccd.edu/", "kind": "district_site"}],
+  "Madera Community College": [{"url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover", "kind": "catalog_curriqunet"}, {"url": "https://www.scccd.edu/", "kind": "district_site"}],
+  "Reedley College": [{"url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100", "kind": "catalog_curriqunet"}, {"url": "https://www.scccd.edu/", "kind": "district_site"}]
+ }
+}

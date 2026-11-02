@@ -131,6 +131,51 @@ def test_partial_load_names_no_college():
                             "rows": [dict(row, college="Nowhere College")]})
 
 
+def test_dash_between_vp_and_office():
+    # Yuba prints "Interim Vice President - Instruction" (S550 filed it by hand).
+    assert h.position_of("Interim Vice President - Instruction") == "vpaa"
+    assert h.position_of("Vice President \u2013 Student Services") == "vpss"
+
+
+def test_pdf_excerpts_keep_only_positions():
+    # A catalog's faculty pages name many coordinators; only Sam's positions are kept.
+    lines = ["Program Coordinator, Nursing"] * 80 + ["Dr. Jane Example", "President",
+                                                     "Ana Sample", "Vice President, Academic Affairs"]
+    ex = h.pdf_excerpts(lines)
+    assert [e["position"] for e in ex] == ["college_ceo", "vpaa"]
+
+
+def test_seeds_file_names_known_colleges():
+    from _program_source_census import load_colleges
+    names = {c["college"] for c in load_colleges()}
+    seeds = h.load_seeds()
+    assert seeds, "seeds file missing"
+    assert not [c for c in seeds if c not in names], "a seed names a college the census does not"
+
+
+class _FakeFetcher:
+    def __init__(self, pages):
+        self.pages, self.asked = pages, []
+
+    def page(self, url):
+        self.asked.append(url)
+        return self.pages.get(url, {"url": url, "status": 403})
+
+
+def test_seeds_read_after_a_refused_homepage():
+    seed = "https://acme.curriqunet.com/catalog/cover"
+    f = _FakeFetcher({seed: {"url": seed, "status": 200, "lines": ["Jo Lead", "Superintendent/President"],
+                             "links": [("/catalog/administration", "Administration"),
+                                       ("https://other.curriqunet.com/admin", "Administration"),
+                                       ("https://www.acme.edu/leadership", "Leadership")]}})
+    doc = h.read_college(f, "Acme College", "https://www.acme.edu/", [seed])
+    assert f.asked[:2] == ["https://www.acme.edu/", seed]
+    # A link on the seed's host stays on that exact host: another college's catalog is not followed.
+    assert "https://acme.curriqunet.com/catalog/administration" in f.asked
+    assert "https://other.curriqunet.com/admin" not in f.asked
+    assert doc["pages"][1]["excerpts"][0]["position"] == "college_ceo"
+
+
 if __name__ == "__main__":
     for k, f in list(globals().items()):
         if k.startswith("test_"):

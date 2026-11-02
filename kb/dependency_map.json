@@ -4,7 +4,7 @@
   "supabase_tables": 105,
   "rpcs": 48,
   "edge_functions": 11,
-  "file_datasets": 774,
+  "file_datasets": 775,
   "external_services": 192,
   "consumers": 508,
   "workflows": 60,
@@ -246,7 +246,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 244
+     "line": 290
     },
     {
      "id": "script:kb/_program_sequence_ppm.py",
@@ -1084,7 +1084,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 59
+     "line": 63
     },
     {
      "id": "script:kb/_program_source_census.py",
@@ -12201,6 +12201,19 @@
    "served": false,
    "main_committers": []
   },
+  "file:kb/contacts_harvest_seeds.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_college_contacts_harvest.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 57
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/convergence_singletons_out/<date>/alias_map.json": {
    "consumers": [
     {
@@ -23235,7 +23248,7 @@
      "kind": "script",
      "direction": "call",
      "how": "literal",
-     "line": 403
+     "line": 462
     }
    ],
    "main_committers": []
@@ -24404,7 +24417,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 307
+     "line": 365
     }
    ],
    "main_committers": []
