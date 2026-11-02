@@ -16424,8 +16424,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 522,
+   "count": 523,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 555,
+     "path": "docs/session_555_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "coordination"
+     ],
+     "title": "Session 555 handoff: the Library's stuck remediations get Finish remediation, and /coord",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25350,5 +25366,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1351
+ "total": 1352
 }

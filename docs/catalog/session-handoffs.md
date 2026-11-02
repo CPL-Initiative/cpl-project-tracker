@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-522 document(s).
+523 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 555 | [Session 555 handoff: the Library's stuck remediations get Finish remediation, and /coord](../session_555_handoff.md) | 2026-11-02 |
 | 554 | [Session 554 handoff: the Library remediates every file it reads, drafts applied from the start, a PDF written](../session_554_handoff.md) | 2026-11-02 |
 | 553 | [Session 553 handoff: the CPL Commons first view is live in Malone's look; Sheet 158 answered (map, malone, rename)](../session_553_handoff.md) | 2026-11-02 |
 | 552 | [Session 552 handoff: the contacts harvest's alternate routes refuse too; Sheet 157 asks for Sam's upload](../session_552_handoff.md) | 2026-11-02 |
