@@ -243,7 +243,9 @@ def row_exhibit(root):
 # ── Common Course Reference ───────────────────────────────────────────────────────────────
 def row_course(root):
     # SkyView alone (Sam, 2026-10-18 20:46Z: "SkyView alone, since CCR is included as part of it"): the row's
-    # home and every count open the map; the list tab (#unified-courses) left the menu the same minute.
+    # home and every count open the map; the list tab (#unified-courses) left the menu the same minute. The Courses
+    # List joined as a second word (Sam, 2026-11-01: "WE have the COCI lookup tab in COBI...maybe courses in that?"):
+    # COCI Lookup's Courses view, every local course banded by its M-ID. SkyView stays the home.
     tab = "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
     A = load_json(root, "kb/row_audit/latest.json")
     st, fr, tags = A["stats"], A["stats"]["faculty_readiness"], A["stats"]["tag_counts"]
@@ -262,7 +264,7 @@ def row_course(root):
     ]
     return {
         "key": "course", "title": "Common Course Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open SkyView"}],
+        "links": [{"href": tab, "text": "Open SkyView"}, {"href": "#coci-lookup", "text": "Open the Courses List"}],
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"

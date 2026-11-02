@@ -36,8 +36,31 @@
 //   session()          Resolves to the signed-in reviewer, or null.
 //   groups             { url, none, item, saved(r), save(keys, value) -> Promise, facts(members), extra: { test(r),
 //                        words(n) }, sortLine(L) }: the AI sort and kept groups.
+//   bands              { key(r), by, label, on, none, name(key, members), facts(key, members), acts(key, members, h) }:
+//                      bands by a value the row carries itself, read only (the Courses List bands its local courses by
+//                      M-ID, the Common Course Reference's common course). A key two or more rows share gets a band
+//                      over its run, with its name, its facts and the spec's words (h = { el, word, fmt }); a row whose
+//                      key no other row shares, or with none, sits under none (default "Not in a group"), as the AI
+//                      sort's loners do. Keys run A to Z, rows without one last; inside a band the rows keep the sort,
+//                      so a header press sorts within the bands. The word label (default "Bands") turns them off and
+//                      on; on: false starts them off. The AI sort, when on, wins. Members count every row, filtered or not.
+//   cols()[i].cell(r, el): the nodes a cell shows in place of its text (the Courses List's identity chips); v(r) still
+//                      sorts, filters and names the cell to a screen reader.
+//   findWords          true: the finder keeps a row holding every word typed, in any order ("american river engl"),
+//                      not only the phrase. hayFolded: true when hay(r) is already folded (listFold), so it is not again.
+//   fixedRows          true when rows() hands back the same rows all visit (a read-only List) and filterPass reads only
+//                      L.f: the engine sorts once per sort, keys each column once, bands once and folds each row's finder
+//                      words once, so a keystroke only filters, and a finder that only grew filters what it kept. A List
+//                      whose rows change in place (an Edit, a save) leaves it out.
+//   findDelay          milliseconds the finder waits after the last keystroke before it filters (the Courses List: 160,
+//                      the delay COCI Lookup's own finder had); left out, every keystroke filters.
 //
-// jsdom guard: tests/exhibits_list*.test.js (the Exhibits List on this engine) and tests/cr_list.test.js.
+// The sort: the rows are filtered first, then sorted on ranks (each level's distinct values sorted once with
+// localeCompare, so a comparison is two numbers), the same order comparing the values pairwise gave (S542: on the
+// 141,738-row Courses List a sort on a column already ranked measured 70 ms in Chromium).
+//
+// jsdom guard: tests/exhibits_list*.test.js (the Exhibits List on this engine), tests/cr_list.test.js, csr_list,
+// program_requirements_list and tests/coci_list.test.js (the bands, the cell hook, the finder's words, fixedRows).
 (function () {
   "use strict";
   var LIST_LIMIT = 400, LIST_MIN_W = 48, LIST_STEP = 24, FR_BATCH = 6;
@@ -101,42 +124,147 @@
       if (s.normalize) s = s.normalize("NFD").replace(/[\u0300-\u036f]/g, "");
       return s.toLowerCase();
     }
-    function listRows() {
-      var L = listState(), q = L.q.trim().toLowerCase();
-      // Custom sort (Sam, 2026-11-01: "first by title then by issuer or vice versa ... like Excel Custom sort"): the
-      // levels apply in order; a press on a header sorts by it alone, Shift and a press adds it as the next level.
-      var C0 = listCols(), levels = L.sort.length ? L.sort : [{ col: 0, dir: 1 }];
-      function cmp(a, b, lv) {
-        var sc = C0[lv.col] || C0[0], x = sc.v(a), y = sc.v(b);
-        if (sc.n) {
-          if ((x == null || y == null) && x !== y) return x == null ? 1 : -1;
-          return lv.dir * ((+x || 0) - (+y || 0));
-        }
-        x = String(x || ""); y = String(y || "");
-        if ((!x || !y) && x !== y) return x ? -1 : 1;   // blanks last, either way
-        return lv.dir * x.toLowerCase().localeCompare(y.toLowerCase());
+    /* localeCompare with no locale: the order every List had. V8 takes a fast path here that a bound Intl.Collator
+       compare does not (measured on 82,577 course titles: 54 ms against 151). */
+    function cmpText(a, b) { return a.localeCompare(b); }
+    var NONE = 0x7fffffff;
+    /* Each value's place among the values, sorted once: equal under the collation share a place. With blankLast, a
+       blank is -1, which the comparison sends last in either direction. Typed arrays: a plain new Array(n) past
+       100,000 slots is a slow dictionary in V8, and the Courses List sorts 141,738 rows. */
+    function textRanks(vals, blankLast) {
+      var n = vals.length, at = new Map(), uniq = [], i, out = new Int32Array(n);
+      for (i = 0; i < n; i++) if (!(blankLast && !vals[i]) && !at.has(vals[i])) { at.set(vals[i], 0); uniq.push(vals[i]); }
+      uniq.sort(cmpText);
+      for (var j = 0, rank = 0; j < uniq.length; j++) { if (j && cmpText(uniq[j - 1], uniq[j]) !== 0) rank++; at.set(uniq[j], rank); }
+      for (i = 0; i < n; i++) out[i] = blankLast && !vals[i] ? -1 : at.get(vals[i]);
+      return out;
+    }
+    /* A column's sort key for each row: ranks for text, a number and a null mark for a numeric column. A fixed List
+       keeps each column's keys for the visit, so a second sort on it (the other direction, a Shift level) skips this. */
+    var keyMemo = null;
+    function colKeys(rows, ci, isTitle) {
+      var memo = S.fixedRows ? (keyMemo && keyMemo.all === rows && keyMemo.n === rows.length ? keyMemo : (keyMemo = { all: rows, n: rows.length, k: {} })) : null;
+      var id = isTitle ? "title" : String(ci);
+      if (memo && memo.k[id]) return memo.k[id];
+      var n = rows.length, i, out, sc = isTitle ? null : (listCols()[ci] || listCols()[0]);
+      if (sc && sc.n) {
+        var nul = new Uint8Array(n), num = new Float64Array(n);
+        for (i = 0; i < n; i++) { var x = sc.v(rows[i]); if (x == null) nul[i] = 1; else num[i] = +x || 0; }
+        out = { n: true, nul: nul, num: num };
+      } else {
+        var vals = [];
+        for (i = 0; i < n; i++) vals.push(isTitle ? listTitle(rows[i]).toLowerCase() : String(sc.v(rows[i]) || "").toLowerCase());
+        out = { n: false, rank: textRanks(vals, !isTitle) };
       }
+      if (memo) memo.k[id] = out;
+      return out;
+    }
+    // Custom sort (Sam, 2026-11-01: "first by title then by issuer or vice versa ... like Excel Custom sort"): the
+    // levels apply in order; a press on a header sorts by it alone, Shift and a press adds it as the next level. Blanks
+    // and empty numbers run last either way; the title breaks a tie, then the order the spec gave.
+    function sortRows(rows, levels, bi) {
+      var n = rows.length, i;
+      var lv = levels.map(function (x) { var k = colKeys(rows, x.col, false); return { n: k.n, dir: x.dir, nul: k.nul, num: k.num, rank: k.rank }; });
+      var tr = colKeys(rows, 0, true).rank, gr = null, nl = lv.length;
+      if (bi) { gr = new Int32Array(n); for (i = 0; i < n; i++) { var g = bi.rank.get(bandKey(rows[i])); gr[i] = g == null ? NONE : g; } }
+      var idx = [];
+      for (i = 0; i < n; i++) idx.push(i);
+      idx.sort(function (a, b) {
+        if (gr && gr[a] !== gr[b]) return gr[a] < gr[b] ? -1 : 1;
+        for (var l = 0; l < nl; l++) {
+          var L1 = lv[l], c;
+          if (L1.n) {
+            if (L1.nul[a] !== L1.nul[b]) return L1.nul[a] ? 1 : -1;
+            c = L1.dir * (L1.num[a] - L1.num[b]);
+          } else {
+            var x = L1.rank[a], y = L1.rank[b];
+            if (x !== y && (x < 0 || y < 0)) return x < 0 ? 1 : -1;
+            c = L1.dir * (x - y);
+          }
+          if (c) return c;
+        }
+        return tr[a] - tr[b] || a - b;
+      });
+      var out = [];
+      for (i = 0; i < n; i++) out.push(rows[idx[i]]);
+      return out;
+    }
+    /* Bands by a value the row carries (spec.bands): every key's members across all rows, and the keys' order. */
+    function bandsOn() {
+      var L = listState();
+      if (!S.bands) return false;
+      if (L.bands === undefined) L.bands = S.bands.on !== false;
+      return !!L.bands;
+    }
+    function bandKey(r) { return String(S.bands.key(r) || ""); }
+    var bandMemo = null;
+    function bandIndex() {
+      var all = S.rows() || [];
+      if (S.fixedRows && bandMemo && bandMemo.all === all && bandMemo.n === all.length) return bandMemo;
+      var members = new Map(), keys = [];
+      all.forEach(function (r) {
+        var k = bandKey(r);
+        if (!k) return;
+        var m = members.get(k);
+        if (!m) { members.set(k, m = []); keys.push(k); }
+        m.push(r);
+      });
+      var lower = keys.map(function (k) { return k.toLowerCase(); }), ranks = textRanks(lower, false), rank = new Map();
+      keys.forEach(function (k, i) { rank.set(k, ranks[i]); });
+      bandMemo = { all: all, n: all.length, members: members, rank: rank };
+      return bandMemo;
+    }
+    var sortMemo = null, hayMemo = null, narrowMemo = null, findTimer = null;
+    function listRows() {
+      var L = listState(), q = listFold(L.q.trim());
+      var levels = L.sort.length ? L.sort : [{ col: 0, dir: 1 }];
       var gi = G && L.ai && L.aiData && L.aiData.order ? (L.gi = listGroupIndex()) : null;
-      var rows = (S.rows() || []).slice().sort(function (a, b) {
-        if (gi) {
+      var bi = !gi && bandsOn() ? bandIndex() : null;
+      var all = S.rows() || [], cols = listCols(), cfs = [];
+      for (var k in L.cf) {
+        var want = String(L.cf[k] || "").trim().toLowerCase();
+        if (want) cfs.push([cols[+k], want]);
+      }
+      var words = q && S.findWords ? q.split(/\s+/).filter(Boolean) : null;
+      if (S.fixedRows && (!hayMemo || hayMemo.all !== all || hayMemo.n !== all.length)) hayMemo = { all: all, n: all.length, m: new Map() };
+      function hayOf(r) {
+        if (S.hayFolded) return S.hay(r);
+        var h;
+        if (hayMemo && (h = hayMemo.m.get(r)) !== undefined) return h;
+        h = listFold(S.hay ? S.hay(r) : cols.map(function (c) { return c.v(r); }).join(" "));
+        if (hayMemo) hayMemo.m.set(r, h);
+        return h;
+      }
+      function keep(r) {
+        if (S.filterPass && !S.filterPass(r, L)) return false;
+        for (var i = 0; i < cfs.length; i++) if (String(cfs[i][0].v(r)).toLowerCase().indexOf(cfs[i][1]) === -1) return false;
+        if (!q) return true;
+        var h = hayOf(r);
+        if (!words) return h.indexOf(q) !== -1;
+        for (var w = 0; w < words.length; w++) if (h.indexOf(words[w]) === -1) return false;
+        return true;
+      }
+      if (gi) {
+        return all.filter(keep).sort(function (a, b) {
           var ga = gi.by[K(a)], gb = gi.by[K(b)];
           return ga.sort.localeCompare(gb.sort) || (ga.key < gb.key ? -1 : ga.key > gb.key ? 1 : 0) || ga.pos - gb.pos
             || listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
-        }
-        for (var i = 0; i < levels.length; i++) { var c = cmp(a, b, levels[i]); if (c) return c; }
-        return listTitle(a).toLowerCase().localeCompare(listTitle(b).toLowerCase());
-      });
-      return rows.filter(function (r) {
-        if (S.filterPass && !S.filterPass(r, L)) return false;
-        var cols = listCols();
-        for (var k in L.cf) {
-          var want = String(L.cf[k] || "").trim().toLowerCase();
-          if (want && String(cols[+k].v(r)).toLowerCase().indexOf(want) === -1) return false;
-        }
-        if (!q) return true;
-        var hay = S.hay ? S.hay(r) : cols.map(function (c) { return c.v(r); }).join(" ");
-        return listFold(hay).indexOf(listFold(q)) !== -1;
-      });
+        });
+      }
+      // A fixed List sorts every row once per sort and keeps the order, so a keystroke walks it and only filters;
+      // any other List filters first and sorts what is left. Both give the same order.
+      if (S.fixedRows) {
+        var sig = JSON.stringify(levels) + (bi ? "|bands" : "");
+        if (!sortMemo || sortMemo.all !== all || sortMemo.n !== all.length || sortMemo.sig !== sig) sortMemo = { all: all, n: all.length, sig: sig, rows: sortRows(all, levels, bi) };
+        // Typing on: a finder that only grew keeps a subset of what it kept, so it filters that (every other filter
+        // the same).
+        var base = sig + "|" + L.f + "|" + JSON.stringify(L.cf), pool = sortMemo.rows, N0 = narrowMemo;
+        if (N0 && N0.from === sortMemo.rows && N0.base === base && N0.q && q.indexOf(N0.q) === 0) pool = N0.rows;
+        var kept = pool.filter(keep);
+        narrowMemo = { from: sortMemo.rows, base: base, q: q, rows: kept };
+        return kept;
+      }
+      return sortRows(all.filter(keep), levels, bi);
     }
 
     /* Find and replace (Sam, 2026-11-01: "use find and replace to fix things on the fly"). The columns a reviewer can
@@ -346,7 +474,11 @@
       var q = el("input", { cls: CL.search + " " + P + "q", id: P + "find", type: "search", autocomplete: "off",
         placeholder: N.placeholder, "aria-label": N.findLabel });
       q.value = L.q;
-      q.addEventListener("input", function () { L.q = q.value; L.limit = LIST_LIMIT; redrawList(); });
+      q.addEventListener("input", function () {
+        L.q = q.value; L.limit = LIST_LIMIT;
+        if (!S.findDelay) { redrawList(); return; }
+        clearTimeout(findTimer); findTimer = setTimeout(redrawList, S.findDelay);
+      });
       bar.appendChild(q);
       if (S.filters && S.filters.length) {
         var fl = el("div", { cls: P + "filters", role: "group", "aria-label": "Show" });
@@ -426,6 +558,7 @@
       var thead = el("thead", null, [headRow, filterRow]);
       var body = el("tbody");
       var aiOn = !!(G && L.ai && L.aiData), gi = aiOn ? (L.gi || listGroupIndex()) : null, sgByGroup = {};
+      var bi = !gi && bandsOn() ? bandIndex() : null;
       var lastKey = null, lastLone = false, lastNew = false;
       if (gi && G.extra) S.rows().forEach(function (x) {
         if (G.extra.test(x)) { var k = gi.by[K(x)].key; sgByGroup[k] = (sgByGroup[k] || 0) + 1; }
@@ -440,6 +573,11 @@
           else if (isNew) { if (!lastNew) body.appendChild(listPlainBand("Added since the AI sort was built")); }
           else if (!lastLone) body.appendChild(listPlainBand("Not in a group"));
           lastKey = gb.key; lastLone = !GR.isGroup && !isNew; lastNew = isNew;
+        } else if (bi) {
+          var bk = bandKey(r), bm = bk ? bi.members.get(bk) : null, inBand = !!(bm && bm.length > 1);
+          if (inBand) { if (bk !== lastKey) body.appendChild(listColumnBand(bk, bm)); }
+          else if (!lastLone) body.appendChild(listPlainBand(S.bands.none || "Not in a group"));
+          lastKey = bk; lastLone = !inBand;
         }
         var titleTd = el("td", { cls: P + "title", title: listTitle(r) }, [listTitle(r)]);
         (S.titleSubs ? S.titleSubs(r, L, aiOn) : []).forEach(function (n) { if (n) titleTd.appendChild(n); });
@@ -492,10 +630,13 @@
         el("span", { cls: CL.note + " " + CL.small, id: P + "cellnote", role: "status", text: L.cellNote || "", hidden: L.cellNote ? null : "" }),
         el("span", { cls: CL.muted + " " + CL.small, id: P + "sortline", text: aiOn && G.sortLine
           ? G.sortLine(L)
-          : "Sorted by " + L.sort.map(function (x) {
+          : (bi ? "In bands by " + (S.bands.by || "group") + "; inside each, sorted by " : "Sorted by ") + L.sort.map(function (x) {
           var c = listCols()[x.col]; return c.h + (c.n ? (x.dir > 0 ? ", low to high" : ", high to low") : (x.dir > 0 ? ", A to Z" : ", Z to A")); }).join(", then ")
           + ". Shift and press a header to add a level." }),
         G ? word("AI sort", listAiToggle, { id: P + "ai", "aria-pressed": aiOn ? "true" : "false" }) : null,
+        S.bands ? word(S.bands.label || "Bands", function () {
+          L.bands = !bandsOn(); L.limit = LIST_LIMIT; redrawList(); var b = document.getElementById(P + "bands"); if (b) b.focus();
+        }, { id: P + "bands", "aria-pressed": bandsOn() ? "true" : "false" }) : null,
         aiOn || L.sort.length > 1 || L.sort[0].col !== 0 || L.sort[0].dir !== 1 ? word("Clear the sort", function () { L.ai = false; L.sort = [{ col: 0, dir: 1 }]; redrawList(); }) : null,
         hasCellEdit() ? word("Edit every row", function () { L.editAll = !L.editAll; redrawList(); var b = document.getElementById(P + "editall"); if (b) b.focus(); },
           { id: P + "editall", "aria-pressed": L.editAll ? "true" : "false" }) : null,
@@ -546,6 +687,16 @@
       });
       Object.keys(groups).forEach(function (k) { var GR = groups[k]; GR.isGroup = k.indexOf("g:") === 0 && (GR.n > 1 || GR.kept > 0); });
       return { by: by, groups: groups };
+    }
+    /* A band over a run of rows that share a key (spec.bands): its name, what its members hold, and the spec's words. */
+    function listColumnBand(key, members) {
+      var B = S.bands, h = { el: el, word: word, fmt: fmt };
+      var th = el("th", { scope: "rowgroup", colspan: String(span()), "data-bkey": key }, [
+        el("span", { text: B.name ? B.name(key, members) : key }),
+        el("span", { cls: CL.muted, text: B.facts ? B.facts(key, members) : fmt(members.length) + " in this group" })]);
+      var acts = B.acts ? (B.acts(key, members, h) || []).filter(Boolean) : [];
+      if (acts.length) th.appendChild(el("span", { cls: P + "gacts" }, acts));
+      return el("tr", { cls: P + "band" }, [th]);
     }
     function listPlainBand(name) {
       return el("tr", { cls: P + "band " + P + "band-plain" }, [el("th", { scope: "rowgroup", colspan: String(span()) }, [el("span", { text: name })])]);
@@ -687,7 +838,8 @@
     function listOpener(r, col, text, isOpen) {
       var L = listState();
       var b = el("button", { type: "button", cls: P + "open", "aria-expanded": isOpen ? "true" : "false",
-        "aria-label": listCols()[col].h + ": " + (text || "none") + ", details" }, [text || "—"]);
+        "aria-label": listCols()[col].h + ": " + (text || "none") + ", details" },
+        listCols()[col].cell ? (listCols()[col].cell(r, el) || [text || "—"]) : [text || "—"]);
       b.addEventListener("click", function () {
         L.open = isOpen ? null : { ut: K(r), col: col }; L.edit = null; redrawList();
         var again = document.querySelector("." + P + 'open[aria-expanded="true"]'); if (again) again.focus();
@@ -853,6 +1005,9 @@
         p + "band " + m + "{font-weight:400;margin-left:8px}",
         p + "table tr" + p + "band-plain th{color:var(--text-muted);font-weight:400}",
         p + "band " + p + "gacts{display:inline-flex;gap:12px;margin-left:12px;font-weight:400}",
+        // A link a spec puts in a band or a drawer (Open in SkyView) reads as the List's words do: underlined, 24px tall.
+        p + "gacts a," + p + "drawer a{color:var(--accent-link);text-decoration:underline;text-underline-offset:3px;min-height:24px;display:inline-flex;align-items:center}",
+        p + "gacts a:focus-visible," + p + "drawer a:focus-visible{outline:2px solid var(--focus-ring);outline-offset:2px}",
         p + "band " + p + "gedit{display:inline-flex;flex-wrap:wrap;gap:6px 12px;align-items:center;font-weight:400}",
         p + "move{position:sticky;bottom:0;z-index:3;display:flex;flex-wrap:wrap;gap:6px 12px;align-items:flex-end;margin:6px 0;padding:8px;border:1px solid var(--border);border-radius:6px;background:var(--surface-opaque)}",
         p + "nowrap " + p + "sg{display:block;white-space:normal}",

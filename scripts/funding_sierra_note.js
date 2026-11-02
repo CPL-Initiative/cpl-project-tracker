@@ -206,6 +206,49 @@ function standing(w, row) {
   return out;
 }
 
+// Every institution against the JST condition, in one section (Sam, 2026-11-01:
+// asked "which college have not yet met the 75% jst vet sprint goal for the new
+// funding?", Sierra said she had no per-college percentages, since each college's
+// counts sat only in its own section and the question named none). The verdict is
+// the page's own condition (met, not yet met, not yet known), the counts its
+// drill-in's; a masked count shows no figures. cpl-chat reads this section by its
+// heading for a JST question that names no college.
+const JST_ROLLUP_HEADING = "Veteran JSTs: which institutions have met the 75 percent condition";
+function jstRollup(w, rows) {
+  const T = w.CPL_FUNDING_TAB, pf = w.CPL_FUNDING_PERF || {}, vjAll = pf.vet_jst || {};
+  const below = [], met = [], unknown = [];
+  let nc = 0;
+  rows.forEach((r) => {
+    const name = r.Institution, c = T._conditions(name);
+    const it = c && c.items.find((x) => x.kind === "vetstar");
+    if (!it) { if (c && (c.items.some((x) => x.kind === "exhibits") || (c.ncItems || []).length)) nc++; return; }
+    const vj = vjAll[name], full = fullName(w, name);
+    let fig;
+    if (!vj) fig = ": the funding page shows no counts";
+    else if (vj.vets_suppressed) fig = ": fewer than 10 enrolled veterans";
+    else if (vj.jst_suppressed) fig = ": fewer than 10 JSTs for " + vj.vets + " enrolled veterans";
+    else fig = ": " + vj.jst + " JSTs for " + vj.vets + " enrolled veterans, " + Math.round(vj.jst / vj.vets * 100) + " percent";
+    (it.pending ? unknown : (it.met ? met : below)).push({ full, line: "- " + full + fig });
+  });
+  const byName = (a, b) => a.full.localeCompare(b.full);
+  [below, met, unknown].forEach((l) => l.sort(byName));
+  const out = ["", "## " + JST_ROLLUP_HEADING, ""];
+  out.push("The third minimum condition asks that MAP hold joint services transcripts (JSTs) for at least 75 percent " +
+    "of the veterans MIS reports enrolled at the institution. Of the " + (below.length + met.length + unknown.length) +
+    " institutions it applies to, " + met.length + " have met it and " + below.length + " have not yet met it" +
+    (unknown.length ? "; for " + unknown.length + " it is not yet known" : "") + ". Each line below gives the JSTs in MAP, " +
+    "the enrolled veterans and the percent, as the funding page shows them; a count under 10 is not shown. " +
+    "Each institution's own section carries its figures." +
+    (nc ? " Noncredit-only institutions post certificates in MAP in its place." : "") +
+    " The statewide JST count is the MAP dashboard's military students figure.");
+  // A list and its label share a paragraph, so the indexer's split keeps them together.
+  const names = (l) => l.map((x) => x.full).join("; ") + ".";
+  if (below.length) { out.push(""); out.push("Not yet met (" + below.length + "):"); below.forEach((x) => out.push(x.line)); }
+  if (met.length) { out.push(""); out.push("Met (" + met.length + "): " + names(met)); }
+  if (unknown.length) { out.push(""); out.push("Not yet known (" + unknown.length + "): " + names(unknown)); }
+  return out;
+}
+
 function buildNote(cfg, savedAt, pub) {
   const w = renderPage(cfg, pub);
   const T = w.CPL_FUNDING_TAB, doc = w.document;
@@ -238,6 +281,7 @@ function buildNote(cfg, savedAt, pub) {
   const all = csvRows(T._csv());
   const total = all.find((r) => /^statewide$/i.test(String(r.Institution || "").trim()));
   const rows = all.filter((r) => r !== total);
+  parts.push.apply(parts, jstRollup(w, rows));
   parts.push("");
   parts.push("## Each institution's max award, " + scen);
   parts.push("");
@@ -270,7 +314,7 @@ function buildNote(cfg, savedAt, pub) {
 // named college's section with it.
 const SECTION_SUFFIX = ": CPL funding standing";
 
-module.exports = { buildNote, csvRows, sectionText, loadConfig, fetchPublic, SECTION_SUFFIX };
+module.exports = { buildNote, csvRows, sectionText, loadConfig, fetchPublic, SECTION_SUFFIX, JST_ROLLUP_HEADING };
 
 if (require.main === module) {
   const argv = process.argv.slice(2);

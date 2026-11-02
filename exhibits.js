@@ -19,6 +19,9 @@
 //                                    Credentials view: what each college articulated, the courses each
 //                                    could-adopt college already teaches, the exhibits, the field, the peer median
 //   map_links.js                     MAP's verified exhibits and who built each, for Request Quick Adopt
+//   kb/status/commons.json           the Commons' row for this reference (key "exhibit"), and the run log it names,
+//   kb/status/exhibit.json           read for the Credentials view's tiles exactly as commons.js reads them, so the
+//                                    two pages show the same figures (Sam, 2026-11-01; see "The Commons' row" below)
 //   exhibit_title_students()         students per title: an allowed reviewer only, k=10 applied in the
 //                                    database (the student-detail ADR), so this page never holds a count
 //                                    under ten. Without a reviewer sign-in the queue keeps the builder's
@@ -172,7 +175,9 @@
     sw: { data: null, error: null, rule: "", cur: 0, done: {}, saved: {}, drafts: {}, issuers: {}, history: [], bulkAsk: false, bulkBusy: false },
     cs: { rows: null, error: null, loading: null, overlay: {}, overlayOk: null, q: "", sel: null, limit: CRED_PAGE,
           drafts: {}, note: "", showTitles: false, showArt: false, showCould: false, showRecords: false,
-          adopt: null, adoptErr: false, open: null, links: null }
+          adopt: null, adoptErr: false, open: null, links: null },
+    // The Commons' row and its run log, read fresh each visit (commonsFresh()).
+    cm: null
   };
 
   function el(tag, attrs, kids) {
@@ -1469,6 +1474,277 @@
     loadCredentials().then(function () { render(); var h = document.getElementById("exh-c-h"); if (h) h.focus(); });
   }
 
+  /* ── The Commons' row, carried on the Credentials view's tiles ──
+     Sam, 2026-11-01, comparing the Catalog Commons row for the Common Exhibit Reference with these tiles: "I like the
+     tiles above the list and thinking you could integrate what's needed into existing tiles and create any others needed
+     to capture everything from 1st into Exhibits view." So the row's headline pair, its tests and its known issues join
+     What is it called?, and How is it kept? carries its settled procedures, the Decision Sheet Library and the last run.
+     The tiles read what commons.js reads: kb/status/commons.json, its row keyed "exhibit", and the run log the row names
+     (kb/status/exhibit.json). Nothing is copied by hand, so the two pages agree. A figure that could not be read says so,
+     never a zero (the S343 rule). The List draws the same tiles above its table (the Catalog Commons List norms, norm 1:
+     docs/kb-notes/reference-catalog-commons-list-norms.md). A count opens the List filtered to it where the List holds a
+     filter for it (#exhibits/list/<filter>), else the Exhibits view holding its list (held titles open Review), else
+     where the Commons sends it. */
+  var COMMONS_URL = "kb/status/commons.json";
+  var COMMONS_KEY = "exhibit";
+  var RUNLOG_URL = "kb/status/exhibit.json";   /* read directly when the Commons file itself could not be */
+  var DECIDER = "Sam";
+  var MACHINE_SLACK = 1.5;                     /* commons.js: a machine stamp older than 1.5 cadences reads stale */
+  var SESSION_STALE_HOURS = 7 * 24;            /* commons.js: a run log a week old reads stale */
+  /* The Commons' procedures count opens the CER's list; here, the Rules view lists every procedure. */
+  var COMMONS_EQUIV = { "#credential-reference/procs": "#exhibits/rules" };
+  var ROUTE_WORDS = { held: "Review, every held title", conflict: "Review, Conflict with the reference", "another-look": "Review, Another look",
+    credentials: "the Credentials view", rules: "the Rules view", list: "the List view" };
+
+  function commonsFresh() {
+    return { row: null, at: null, error: null, Q: null, qErr: null, logFile: null, loading: null, done: false };
+  }
+  function errText(e) { return e && e.message ? e.message : String(e); }
+  /* The Commons' read: a status file must name written_at (commons_progress.js readStatus). */
+  function readStatusJson(url) {
+    return fetch(url, { cache: "no-store" }).then(function (r) {
+      if (!r.ok) throw new Error(url + " answered " + r.status);
+      return r.json();
+    }).then(function (j) {
+      if (!j || typeof j !== "object" || !j.written_at) throw new Error(url + " names no written_at");
+      return j;
+    });
+  }
+  function loadCommons() {
+    var cm = state.cm = state.cm || commonsFresh();
+    if (cm.done) return Promise.resolve();
+    if (cm.loading) return cm.loading;
+    cm.loading = readStatusJson(COMMONS_URL).then(function (d) {
+      if (!Array.isArray(d.rows)) throw new Error(COMMONS_URL + " is not the Commons' status file");
+      var row = d.rows.filter(function (r) { return r && r.key === COMMONS_KEY; })[0];
+      if (!row) throw new Error(COMMONS_URL + " has no " + COMMONS_KEY + " row");
+      cm.row = row; cm.at = d.written_at; cm.error = null;
+      return row.status_file || null;
+    }, function (e) {
+      cm.row = null; cm.error = errText(e);
+      return RUNLOG_URL;
+    }).then(function (file) {
+      cm.logFile = file;
+      if (!file) return null;
+      return readStatusJson(file).then(function (Q) { cm.Q = Q; }, function (e) { cm.qErr = errText(e); });
+    }).then(function () { cm.done = true; cm.loading = null; });
+    return cm.loading;
+  }
+
+  /* Ages and states, as commons.js reads them. */
+  function cmDate(v) {
+    if (!v) return null;
+    var d = /^\d{4}-\d{2}-\d{2}$/.test(String(v)) ? new Date(v + "T12:00:00Z") : new Date(v);
+    return isNaN(d.getTime()) ? null : d;
+  }
+  /* The Commons' stamp: "Oct 31, 12:32 PM PT" (commons_progress.js stampOf). */
+  function cmStamp(v) {
+    var d = cmDate(v);
+    if (!d) return "";
+    return d.toLocaleDateString("en-US", { timeZone: "America/Los_Angeles", month: "short", day: "numeric" }) + ", "
+      + d.toLocaleTimeString("en-US", { timeZone: "America/Los_Angeles", hour: "numeric", minute: "2-digit" }) + " PT";
+  }
+  function hoursSince(at, now) { var d = cmDate(at); return d ? (now.getTime() - d.getTime()) / 36e5 : null; }
+  function cadenceWords(h) {
+    if (h == null) return "on dispatch";
+    if (h === 24) return "daily";
+    if (h === 168) return "weekly";
+    return "every " + fmt(h) + " hours";
+  }
+  function machineState(m, now) {
+    if (!m || !m.at) return { key: "unread", word: "Could not be read" };
+    var age = hoursSince(m.at, now);
+    if (age == null) return { key: "unread", word: "Could not be read" };
+    if (m.every_hours == null) return { key: "neutral", word: "on dispatch" };
+    return age <= m.every_hours * MACHINE_SLACK ? { key: "ok", word: "current" } : { key: "stale", word: "stale" };
+  }
+  function sessionState(Q, err, now) {
+    if (err) return { key: "unread", word: "Could not be read" };
+    if (!Q) return { key: "neutral", word: "no run log" };
+    var age = hoursSince(Q.written_at, now);
+    if (age == null) return { key: "unread", word: "Could not be read" };
+    return age <= SESSION_STALE_HOURS ? { key: "ok", word: "current" } : { key: "stale", word: "stale" };
+  }
+  function stateWord(s) {
+    return el("span", { cls: s.key === "stale" || s.key === "unread" ? "exh-cm-warn" : null, text: s.word });
+  }
+
+  /* Where a Commons count opens: the List on one of its filters, an Exhibits view, or the address the Commons gives. */
+  function cmTarget(href) {
+    var h = COMMONS_EQUIV[href] || href || "";
+    var m = /^#exhibits\/([a-z-]+)(?:\/([a-z-]+))?$/.exec(h);
+    if (m && m[1] === "list" && m[2] && listFilterLabel(m[2])) return { route: "list", filter: m[2] };
+    if (m && !m[2] && ROUTES[m[1]]) return { route: m[1] };
+    return h ? { href: h } : null;
+  }
+  function listFilterLabel(id) {
+    var f = LIST_FILTERS.filter(function (x) { return x[0] === id; })[0];
+    return f ? f[1] : "";
+  }
+  /* The reference's own list: the Credentials view and the List both show it, so a count naming it is not a control there. */
+  function cmHere(t) {
+    var lists = state.view === "credentials" || state.view === "list";
+    if (t.filter) return state.view === "list" && listState().f === t.filter;
+    return ROUTES[t.route][0] === state.view || (lists && (t.route === "credentials" || t.route === "list"));
+  }
+  function cmGo(route, filter) {
+    var r = ROUTES[route];
+    state.view = r[0]; state.filter = r[1]; state.cur = 0; state.note = ""; state.openCollege = null; state.teach = false;
+    state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false;
+    if (route === "list") { var L = listState(); L.f = filter || ""; L.limit = LIST_LIMIT; }
+    render();
+    if (r[0] === "credentials" || r[0] === "list") loadCredentials().then(render);
+    var h = document.querySelector(".exh-h");
+    if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
+  }
+  function cmCount(n, href, words) {
+    if (n == null) return el("b", { text: "Could not be read" });
+    var t = cmTarget(href), about = fmt(n) + " " + (words || "");
+    if (t && t.route && !cmHere(t)) {
+      return word(fmt(n), function () { cmGo(t.route, t.filter); }, { cls: "exh-w exh-tcount", "aria-label": about + ". Opens "
+        + (t.filter ? "the List, filtered to " + listFilterLabel(t.filter) : ROUTE_WORDS[t.route]) });
+    }
+    if (t && t.href && !t.route) {
+      var a = el("a", { href: t.href, cls: "exh-tcount", text: fmt(n), "aria-label": about + ". Opens "
+        + (/^#credential-reference/.test(t.href) ? "the Common Exhibit Reference tab" : /^https:\/\//.test(t.href) ? "a new tab" : "its list") });
+      if (/^https:\/\//.test(t.href)) { a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
+      return a;
+    }
+    return el("b", { text: fmt(n) });
+  }
+  function cmBig(text) { return el("b", { text: text }); }
+  /* One tile in the tab's shape: label, number (a node), of, meter, words, asides, and anything more. */
+  function cmTile(o) {
+    var kids = [el("span", { cls: "exh-tl", text: o.label })];
+    if (o.big) {
+      var tn = el("span", { cls: "exh-tn" }, [o.big]);
+      if (o.of != null && o.n != null) tn.appendChild(document.createTextNode(" of " + fmt(o.of)));
+      kids.push(tn);
+    }
+    if (typeof o.n === "number" && typeof o.of === "number" && o.of > 0) {
+      var bar = el("span", { cls: "exh-bar", role: "img", "aria-label": pct(o.n, o.of) + " percent" });
+      var i = el("i"); i.style.width = Math.max(0, Math.min(100, pct(o.n, o.of))) + "%"; bar.appendChild(i); kids.push(bar);
+    }
+    if (o.words) kids.push(el("span", { cls: "exh-tt", text: o.words }));
+    (o.asides || []).forEach(function (a) { if (a) kids.push(el("span", { cls: "exh-ts", text: a })); });
+    (o.more || []).forEach(function (k) { if (k) kids.push(k); });
+    return el("div", { cls: "exh-tile" + (o.cls ? " " + o.cls : ""), role: "listitem" }, kids);
+  }
+  /* The tile while the Commons is read, or once its file could not be. */
+  function cmPending(label, cls) {
+    var cm = state.cm;
+    if (!cm || !cm.done) return cmTile({ label: label, big: cmBig("Reading"), cls: cls });
+    return cmTile({ label: label, big: cmBig("Could not be read"), asides: [cm.error], cls: cls });
+  }
+
+  /* What is it called?: the headline pair, its meter and its tests. */
+  function cmPairTiles() {
+    var cm = state.cm, row = cm && cm.row;
+    if (!row) return [cmPending("Review stamp", "exh-wide")];
+    var pairs = Array.isArray(row.pair) ? row.pair : [];
+    if (!pairs.length) return [cmTile({ label: "Review stamp", big: cmBig("Could not be read"), asides: [row.error], cls: "exh-wide" })];
+    return pairs.map(function (p, k) {
+      var tests = k === 0 && Array.isArray(row.tests) && row.tests.length
+        ? el("span", { cls: "exh-tests", role: "group", "aria-label": "The tests behind the count" },
+          row.tests.map(function (t) { return el("span", { cls: "exh-chip", text: t }); })) : null;
+      return cmTile({ label: "Review stamp", big: cmCount(p.n, p.open, p.words), n: p.n, of: p.of, words: p.words,
+        asides: [p.n == null ? row.error : null], more: [tests], cls: "exh-wide" });
+    });
+  }
+  /* What is it called?: each known issue, its count opening its list, and who owns it. */
+  function cmIssueTiles() {
+    var cm = state.cm, row = cm && cm.row;
+    if (!row) return [cmPending("Known issues")];
+    var items = Array.isArray(row.issues) ? row.issues : [];
+    if (!items.length) return [cmTile({ label: "Known issues", big: cmBig(row.error ? "Could not be read" : "None known"), asides: [row.error] })];
+    return items.map(function (i) {
+      return cmTile({ label: "Known issue", big: cmCount(i.n, i.open, i.words), words: i.words,
+        asides: [i.owner ? "Owner: " + i.owner : null, i.n == null ? i.error : null] });
+    });
+  }
+  /* How is it kept?: the settled procedures. A procedure with a count takes a tile; one without joins the first. */
+  function cmProcTiles() {
+    var cm = state.cm, row = cm && cm.row;
+    if (!row) return [cmPending("Settled procedures")];
+    var items = Array.isArray(row.procedures) ? row.procedures : [];
+    if (!items.length) return [cmTile({ label: "Settled procedures", big: cmBig(row.error ? "Could not be read" : "None yet"), asides: [row.error] })];
+    var counted = items.filter(function (i) { return "n" in i; });
+    var plain = items.filter(function (i) { return !("n" in i); }).map(function (i) { return i.words || ""; });
+    if (!counted.length) return [cmTile({ label: "Settled procedures", asides: plain })];
+    return counted.map(function (i, k) {
+      return cmTile({ label: "Settled procedures", big: cmCount(i.n, i.open, i.words), words: i.words,
+        asides: [i.n == null ? i.error : null].concat(k === 0 ? plain : []) });
+    });
+  }
+  function sheetLink(c, node) {
+    if (c.link && /^https:\/\//.test(c.link)) {
+      node.appendChild(document.createTextNode(" "));
+      node.appendChild(el("a", { href: c.link, target: "_blank", rel: "noopener", text: c.link_text || "Open the decision sheet" }));
+    } else if (c.view && c.view.href && c.view.text) {
+      node.appendChild(document.createTextNode(" "));
+      node.appendChild(el("a", { href: c.view.href, text: c.view.text }));
+    }
+    return node;
+  }
+  /* How is it kept?: the Decision Sheet Library, the calls the run log carries. The count waiting on Sam is bold and a
+     0 is green; answered calls sit under Completed Decision Sheets, one line each that opens (Sam, 2026-11-01). */
+  function cmLibraryTile() {
+    var cm = state.cm, label = "Decision Sheet Library", cls = "exh-dsl";
+    if (!cm || !cm.done) return cmTile({ label: label, big: cmBig("Reading"), cls: cls });
+    if (cm.qErr) return cmTile({ label: label, big: cmBig("Could not be read"), asides: [cm.qErr], cls: cls });
+    if (!cm.Q) return cmTile({ label: label, big: cmBig("No run log"), cls: cls });
+    var calls = Array.isArray(cm.Q.calls) ? cm.Q.calls : [];
+    function answered(c) { return !!(c.answer && c.answer.words); }
+    var open = calls.filter(function (c) { return !answered(c); }), done = calls.filter(answered);
+    var big = el("b", { cls: "exh-waiting" }, open.length ? [fmt(open.length) + " open"] : [el("span", { cls: "exh-zero", text: "0" }), " open"]);
+    var more = [];
+    if (open.length) more.push(el("ul", { cls: "exh-open" }, open.map(function (c) { return sheetLink(c, el("li", { text: c.title || "" })); })));
+    if (done.length) {
+      more.push(el("h4", { cls: "exh-dsl-h", text: "Completed Decision Sheets" }));
+      more.push(el("ul", { cls: "exh-done" }, done.map(function (c) {
+        var why = "Answered by " + (c.answer.by || DECIDER) + (c.answer.at ? ", " + c.answer.at : "") + ": " + c.answer.words;
+        return el("li", null, [el("details", null, [
+          el("summary", { title: (c.title || "") + ". " + why }, [el("span", { cls: "exh-done-line", text: (c.title || "") + " · " + why })]),
+          sheetLink(c, el("p", { cls: "exh-done-body", text: c.text || "" }))])]);
+      })));
+    }
+    return cmTile({ label: label, big: big, words: "waiting on " + DECIDER, more: more, cls: cls });
+  }
+  /* How is it kept?: the last run, the machine stamp against its cadence and the session that wrote the run log. */
+  function cmRunTile(now) {
+    var cm = state.cm, label = "Last run";
+    if (!cm || !cm.done) return cmTile({ label: label, big: cmBig("Reading"), cls: "exh-run" });
+    var row = cm.row, m = (row && row.machine) || {}, machine;
+    if (row) machine = el("p", null, ["Machine: " + (m.what ? m.what + (m.at ? ", " + cmStamp(m.at) : "") : (row.error || "no stamp")),
+      el("span", { cls: "exh-age" }, [" · " + cadenceWords(m.every_hours) + " · "]), stateWord(machineState(m, now))]);
+    else machine = el("p", null, ["Machine: ", stateWord({ key: "unread", word: "Could not be read" }), el("span", { cls: "exh-age", text: " " + cm.error })]);
+    var ss = sessionState(cm.Q, cm.qErr, now), session;
+    if (cm.Q) {
+      var who = (cm.Q.session ? "S" + cm.Q.session + " " : "") + (cm.Q.moniker || "a session");
+      session = el("p", null, ["Session: " + who + " wrote the run log, " + cmStamp(cm.Q.written_at),
+        el("span", { cls: "exh-age" }, [" · each checkpoint · "]), stateWord(ss)]);
+    } else {
+      session = el("p", null, ["Session: ", stateWord(ss), cm.qErr ? el("span", { cls: "exh-age", text: " " + cm.qErr }) : null]);
+    }
+    var more = [machine, session];
+    if (cm.Q && cm.Q.next_step && cm.Q.next_step.title) more.push(el("p", null, [el("span", { cls: "exh-age", text: "Next: " }), cm.Q.next_step.title]));
+    if (cm.at) more.push(el("p", { cls: "exh-age", text: "The Commons' figures, read " + cmStamp(cm.at) }));
+    return cmTile({ label: label, more: more, cls: "exh-run" });
+  }
+  /* The tiles above the list: the Credentials view and the List draw the same set (norm 1). */
+  function credDash(wrap) {
+    if (!state.cm) loadCommons().then(function () { if (state.view === "credentials" || state.view === "list") render(); });
+    wrap.appendChild(credTiles());
+    wrap.appendChild(credMoreTiles());
+    wrap.appendChild(cmKeptGroup());
+  }
+  function cmKeptGroup() {
+    var now = new Date();
+    return el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "How is it kept?" }),
+      el("div", { cls: "exh-dash exh-kept", role: "list", "aria-label": "How is it kept" },
+        cmProcTiles().concat([cmLibraryTile(), cmRunTile(now)]))]);
+  }
+
   function credTiles() {
     var cs = state.cs, rows = cs.rows || [];
     var nIss = 0, nSite = 0;
@@ -1478,11 +1754,13 @@
       if (cur.sites.length) nSite++;
     });
     var group = el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "What is it called?" })]);
-    group.appendChild(el("div", { cls: "exh-dash", role: "list", "aria-label": "What is it called" }, [
+    group.appendChild(el("div", { cls: "exh-dash", role: "list", "aria-label": "What is it called" }, cmPairTiles().concat([
       tile("Credentials", cs.rows ? rows.length : null, null, "canonical credentials in the reference", "", "Reading"),
       tile("Issuers", cs.rows ? nIss : null, cs.rows ? rows.length : null, "credentials naming an issuing agency", "", "Reading"),
       tile("Training sites", cs.rows ? nSite : null, cs.rows ? rows.length : null, "credentials naming where the training happens",
-        "Set them in a credential's panel", "Reading")]));
+        "Set them in a credential's panel", "Reading")])));
+    /* The known issues take the wider grid: an owner names its reasons, which a narrow tile stacks a word a line. */
+    group.appendChild(el("div", { cls: "exh-dash exh-kept", role: "list", "aria-label": "Known issues" }, cmIssueTiles()));
     return group;
   }
   /* What credit does it carry? and Who could adopt it? (mock-up version 26), counted over the reference's credentials. */
@@ -1720,8 +1998,7 @@
   }
   function renderCredentials(wrap) {
     var cs = state.cs;
-    wrap.appendChild(credTiles());
-    wrap.appendChild(credMoreTiles());
+    credDash(wrap);
     wrap.appendChild(viewsNav());
     if (cs.error) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The credentials could not be read (" + cs.error + ")." })); return; }
     if (!cs.rows) { wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the credentials…" })); return; }
@@ -2169,6 +2446,7 @@
       key: function (r) { return r.ut; }, title: listTitle, render: function () { render(); }, session: session,
       head: function (wrap) {
         var L = listState(), cs = state.cs;
+        credDash(wrap);
         wrap.appendChild(viewsNav());
         if (cs.error) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The credentials could not be read (" + cs.error + ")." })); return false; }
         if (!cs.rows) { wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the credentials…" })); return false; }
@@ -2703,6 +2981,27 @@
       + " .exh-dl { grid-template-columns:minmax(0, 1fr); }"
       + " .exh-table { min-width:560px; } }",
     ".exh-why { display:grid; gap:4px; min-width:0; }",
+    /* The Commons' row on the tiles (Sam, 2026-11-01). */
+    ".exh-tile.exh-wide { grid-column:1 / -1; }",
+    ".exh-kept { grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); align-items:start; }",
+    ".exh-tn .exh-tcount { font-size:1.35rem; font-weight:600; font-variant-numeric:tabular-nums; }",
+    "a.exh-tcount { text-decoration:underline; text-underline-offset:3px; }",
+    ".exh-tile .exh-zero { color:var(--hunter); }",
+    ".exh-tests { display:flex; flex-wrap:wrap; gap:6px; padding-top:2px; }",
+    ".exh-tile ul { margin:0; padding:0; list-style:none; font-size:.88rem; color:var(--text-body); min-width:0; }",
+    ".exh-tile li { margin:0 0 3px; min-width:0; overflow-wrap:anywhere; }",
+    ".exh-dsl-h { margin:6px 0 2px; font-size:.78rem; font-weight:700; color:var(--text-strong); }",
+    ".exh-done details { min-width:0; }",
+    ".exh-done summary { list-style:none; cursor:pointer; min-height:24px; display:flex; align-items:center; min-width:0; }",
+    ".exh-done summary::-webkit-details-marker { display:none; }",
+    ".exh-done-line { display:block; overflow:hidden; white-space:nowrap; text-overflow:ellipsis; min-width:0; flex:1 1 auto; }",
+    ".exh-done summary:hover .exh-done-line { text-decoration:underline; text-underline-offset:2px; }",
+    ".exh-done summary:focus-visible { outline:2px solid var(--seal-blue); outline-offset:2px; }",
+    ".exh-done details[open] .exh-done-line { white-space:normal; overflow-wrap:anywhere; }",
+    ".exh-done-body { margin:0 0 4px; color:var(--text-muted); }",
+    ".exh-run p { margin:0; font-size:.88rem; color:var(--text-body); overflow-wrap:anywhere; }",
+    ".exh-age { color:var(--text-muted); }",
+    ".exh-cm-warn { font-weight:600; color:var(--text-strong); }",
     ".exh-why ul { margin:0; padding-left:1.2em; display:grid; gap:4px; }",
     ".exh-locals li { overflow-wrap:anywhere; }",
     ".exh-strong { color:var(--text-strong); font-weight:600; }",
@@ -2722,13 +3021,14 @@
     state.sw.rule = ""; state.sw.cur = 0; state.sw.bulkAsk = false;
     state.ls = null;
     state.cs.q = ""; state.cs.sel = null; state.cs.limit = CRED_PAGE; state.cs.note = ""; state.cs.open = null;
+    if (!state.cm || state.cm.done) state.cm = null;   /* the Commons' figures are read again each visit, as the Commons reads them */
     routeFromHash();
     render();
   }
   /* #exhibits/<route> opens one place, read once per visit (the Commons row's counts link here, the way
      they linked into the retired CER tab): held = Review on all held, conflict = Review on Conflict with
-     the reference, credentials = the Credentials view, rules = the rules sent to the routine. The address is
-     not a remembered filter. */
+     the reference, credentials = the Credentials view, rules = the rules sent to the routine, list = the List, and
+     list/<filter> the List on that filter. The address is not a remembered filter. */
   var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["credentials", ""],
     rules: ["rules", ""], list: ["list", ""] };
   function routeFromHash() {
@@ -2736,6 +3036,8 @@
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
     if (!r) return false;
     state.view = r[0]; state.filter = r[1];
+    /* #exhibits/list/<filter> opens the List on one of its filters (a Commons count, norm 1). */
+    if (r[0] === "list" && parts[2] && listFilterLabel(parts[2])) listState().f = parts[2];
     if (r[0] === "credentials" || r[0] === "list") loadCredentials().then(render);
     return true;
   }
