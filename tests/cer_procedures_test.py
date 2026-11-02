@@ -296,17 +296,23 @@ check("the report tallies every procedure in force",
 # Hermetic: with no classified cache every waiting title needs asking, so the key check is
 # reached whatever the committed cache holds (CI's lints job failed this on 2026-11-01 when the
 # cache already answered every waiting title and run() never reached the check).
-_classified, _assigned = cp.CLASSIFIED, cp.pre.load_assigned
-cp.CLASSIFIED = os.path.join(tempfile.mkdtemp(), "none.json")
+# The queue is hermetic too: the committed one emptied on 2026-11-02 (Sam's saves settled every
+# waiting title), so run() had nothing to ask and never reached the check. One card no lane settles.
+_classified, _assigned, _audit = cp.CLASSIFIED, cp.pre.load_assigned, cp.pre.AUDIT_PATH
+_tmp = tempfile.mkdtemp()
+cp.CLASSIFIED = os.path.join(_tmp, "none.json")
 cp.pre.load_assigned = lambda: set()
+cp.pre.AUDIT_PATH = os.path.join(_tmp, "audit.json")
+with open(cp.pre.AUDIT_PATH, "w", encoding="utf-8") as fh:
+    json.dump({"title_cards": [{"raw_title": "Zqx Widget Practicum Quux", "tags": ["unclassified_in_map"]}]}, fh)
 try:
     with redirect_stdout(io.StringIO()):
         cp.run(classify_n=5, dry_run=True, key=None, catalog=False)
     check("asking the classifier without the service key stops the run", False)
-except SystemExit:
-    check("asking the classifier without the service key stops the run", True)
+except SystemExit as e:
+    check("asking the classifier without the service key stops the run", "SUPABASE_SERVICE_KEY" in str(e), str(e))
 finally:
-    cp.CLASSIFIED, cp.pre.load_assigned = _classified, _assigned
+    cp.CLASSIFIED, cp.pre.load_assigned, cp.pre.AUDIT_PATH = _classified, _assigned, _audit
 cp.open = real_open
 
 # ── saving under a procedure (Sheet 94 card 2) ───────────────────────────────
