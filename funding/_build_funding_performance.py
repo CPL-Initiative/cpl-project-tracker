@@ -404,9 +404,13 @@ def _name_resolver():
     # title case instead of the short one, and matching on `short` ALONE silently
     # skipped the whole entry — which is why "Los Angeles Southwest College"
     # resolved to nothing (workbook "LA Swest" vs short "LA Southwest").
+    # The aliases are tried last: a prior short kept as an alias ("San Francisco", "Desert") is how the funding
+    # roster still names the college after its short changed, and matching on short and canonical alone left both
+    # in `unmatched` from the 2026-10-31 run (S544; tests/funding_name_resolver_test.py).
     lookup = {}
     for entry in shorts:
-        target = _find_funding(entry.get("short"), entry.get("short_caps"), entry.get("canonical"))
+        target = _find_funding(entry.get("short"), entry.get("short_caps"), entry.get("canonical"),
+                               *(entry.get("aliases") or []))
         if not target:
             continue
         for alias in set([entry["canonical"], entry["short"], entry.get("short_caps")]

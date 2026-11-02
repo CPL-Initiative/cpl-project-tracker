@@ -191,6 +191,10 @@ EXTRA_ALIASES = {
     "Canada College": ["Cañada College", "CaÃ±ada College"],
     # The prior short ("San Francisco", until Sam's 2026-10-30 correction) keeps resolving.
     "City College Of San Francisco": ["San Francisco"],
+    # The same for "Desert" (S544): the funding roster still names the college by its prior short, and with the
+    # short now whole ("College of the Desert stays whole") nothing reached it, so its MAP outcomes and its JST
+    # condition fell to the funding builder's unmatched bucket from the 2026-10-31 run.
+    "College Of The Desert": ["Desert"],
 }
 
 
