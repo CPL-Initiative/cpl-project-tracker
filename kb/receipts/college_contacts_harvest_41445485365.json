@@ -1,0 +1,502 @@
+{
+ "run": "41445485365",
+ "applied_at": "2026-11-02T12:47:02+00:00",
+ "github_run": "41447362574",
+ "result": {
+  "new": 16,
+  "run": "41445485365",
+  "gone": 0,
+  "colleges": 10,
+  "seen_again": 17
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [
+  {
+   "id": 1,
+   "college": "Allan Hancock College",
+   "position": "college_ceo",
+   "title_as_printed": "AHC President",
+   "name": "Kevin G. Walthers, Ph.D.",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/index.php",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 2,
+   "college": "Allan Hancock College",
+   "position": "vpaa",
+   "title_as_printed": "Associate Superintendent/Vice President, Academic Affairs",
+   "name": "Dr. Bob Curry",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 3,
+   "college": "Allan Hancock College",
+   "position": "vpss",
+   "title_as_printed": "Associate Superintendent/Vice President, Student Services",
+   "name": "Dr. Genevieve Siwabessy",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 4,
+   "college": "Allan Hancock College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions & Records",
+   "name": "Dr. David Vasquez",
+   "email": "dvasquez@hancockcollege.edu",
+   "source_url": "https://www.hancockcollege.edu/admissions/staff.php",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 5,
+   "college": "Antelope Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Message from the President",
+   "name": "Dr. Jennifer Zellet",
+   "email": "",
+   "source_url": "https://www.avc.edu/about-avc/office-superintendentpresident",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 6,
+   "college": "Antelope Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President Student Services",
+   "name": "Idania Padron",
+   "email": "idania.padron@avc.edu",
+   "source_url": "https://www.avc.edu/directory",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 35,
+   "college": "Antelope Valley College",
+   "position": "vpbs",
+   "title_as_printed": "VP Administrative Services",
+   "name": "Shami Brar",
+   "email": "shami.brar@avc.edu",
+   "source_url": "https://www.avc.edu/directory",
+   "seen_run": "sheet151-vpbs",
+   "first_seen": "2026-11-01T13:31:49.556057+00:00",
+   "last_seen": "2026-11-01T13:31:49.556057+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 7,
+   "college": "Barstow Community College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent-President",
+   "name": "Eva Bagg, Ph.D.",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 8,
+   "college": "Barstow Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Michael Wangler",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 9,
+   "college": "Barstow Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Edward Alvarez",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 36,
+   "college": "Barstow Community College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "DeeDee Garcia",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet",
+   "seen_run": "sheet151-vpbs",
+   "first_seen": "2026-11-01T13:31:49.556057+00:00",
+   "last_seen": "2026-11-01T13:31:49.556057+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 10,
+   "college": "Berkeley City College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Berkeley City College",
+   "name": "Denise Richardson, Ed.D.",
+   "email": "",
+   "source_url": "https://www.berkeleycitycollege.edu/president",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 11,
+   "college": "Cabrillo College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Dr. Jenn Capps",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/president/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 12,
+   "college": "Cabrillo College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Assistant Superintendent, Vice President of Instruction",
+   "name": "Dr. Robin McFarland",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 13,
+   "college": "Cabrillo College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent, Vice President of Student Services",
+   "name": "Dr. Blanca Baltazar-Sabbah",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 14,
+   "college": "Cabrillo College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Strategic Enrollment",
+   "name": "Dave Reynolds",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 15,
+   "college": "Cabrillo College",
+   "position": "vrc",
+   "title_as_printed": "Veterans Program Coordinator",
+   "name": "JuanDiego (JD) Alvarez",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/directory/juandiego-jd-alvarez/",
+   "seen_run": "41298454812",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-01T10:55:41.463754+00:00",
+   "gone_since": null
+  }
+ ],
+ "rows": [
+  {
+   "college": "Allan Hancock College",
+   "position": "college_ceo",
+   "title_as_printed": "AHC President",
+   "name": "Kevin G. Walthers, Ph.D.",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/index.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "vpaa",
+   "title_as_printed": "Associate Superintendent/Vice President, Academic Affairs",
+   "name": "Dr. Bob Curry",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "vpss",
+   "title_as_printed": "Associate Superintendent/Vice President, Student Services",
+   "name": "Dr. Genevieve Siwabessy",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions & Records",
+   "name": "Dr. David Vasquez",
+   "email": "dvasquez@hancockcollege.edu",
+   "source_url": "https://www.hancockcollege.edu/admissions/staff.php"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Jennifer Zellet",
+   "email": "",
+   "source_url": "https://www.avc.edu/about-avc/office-superintendentpresident"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vpbs",
+   "title_as_printed": "VP Administrative Services",
+   "name": "Shami Brar",
+   "email": "shami.brar@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President Student Services",
+   "name": "Idania Padron",
+   "email": "idania.padron@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vpaa",
+   "title_as_printed": "VP Academic Affairs",
+   "name": "Kathryn Mitchell",
+   "email": "kathryn.mitchell@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans Resource Center",
+   "name": "Jimmy Guevara",
+   "email": "jimmy.guevara@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent-President",
+   "name": "Eva Bagg, Ph.D.",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Michael Wangler",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Edward Alvarez",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "DeeDee Garcia",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Berkeley City College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Berkeley City College",
+   "name": "Denise Richardson, Ed.D.",
+   "email": "",
+   "source_url": "https://www.berkeleycitycollege.edu/president"
+  },
+  {
+   "college": "Berkeley City College",
+   "position": "vrc",
+   "title_as_printed": "Coordinator, Student Services, Veteran's Resource Center",
+   "name": "Jeejun Bertuso",
+   "email": "",
+   "source_url": "https://www.berkeleycitycollege.edu/faculty-staff-directory"
+  },
+  {
+   "college": "Berkeley City College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer, Counseling",
+   "name": "Catherine Nichols",
+   "email": "",
+   "source_url": "https://www.berkeleycitycollege.edu/faculty-staff-directory"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Dr. Jenn Capps",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Assistant Superintendent, Vice President of Instruction",
+   "name": "Dr. Robin McFarland",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent, Vice President of Student Services",
+   "name": "Dr. Blanca Baltazar-Sabbah",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Strategic Enrollment",
+   "name": "Dave Reynolds",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vrc",
+   "title_as_printed": "Veterans Program Coordinator",
+   "name": "JuanDiego (JD) Alvarez",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/directory/juandiego-jd-alvarez/"
+  },
+  {
+   "college": "Victor Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Daniel Walden, Ph.D.",
+   "email": "",
+   "source_url": "https://www.vvc.edu/presidents-office-welcome-message"
+  },
+  {
+   "college": "Ventura College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Ventura College",
+   "name": "Dr. Luca Lewis",
+   "email": "",
+   "source_url": "https://www.venturacollege.edu/departments/administrative/president"
+  },
+  {
+   "college": "West Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Jennifer Taylor-Mendoza, Ph.D.",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/about/administration/"
+  },
+  {
+   "college": "West Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Provost/Vice President of Academic Affairs",
+   "name": "Safiyyah Forbes, Ph.D.",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/about/administration/"
+  },
+  {
+   "college": "West Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Anthony Djedi",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/about/administration/"
+  },
+  {
+   "college": "West Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Affairs",
+   "name": "Tanya Anderson Jones-Bey, Ed.D.",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/about/administration/"
+  },
+  {
+   "college": "West Valley College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Honors Counselor",
+   "name": "Michael West",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/faculty/"
+  },
+  {
+   "college": "Woodland Community College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Woodland Community College",
+   "name": "Lizette Navarette",
+   "email": "lnavarette@yccd.edu",
+   "source_url": "https://wcc.yccd.edu/about/staff-directory/"
+  },
+  {
+   "college": "Woodland Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Dr. Kathy Sorensen",
+   "email": "ksorensen@yccd.edu",
+   "source_url": "https://wcc.yccd.edu/about/college-administration/"
+  },
+  {
+   "college": "Woodland Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Ariana Velasco",
+   "email": "avelasco@yccd.edu",
+   "source_url": "https://wcc.yccd.edu/about/college-administration/"
+  },
+  {
+   "college": "Yuba College",
+   "position": "college_ceo",
+   "title_as_printed": "Interim President, Yuba College, Marysville Campus",
+   "name": "Karissa Marino Morehouse",
+   "email": "kmorehouse@yccd.edu",
+   "source_url": "https://yc.yccd.edu/about/staff-directory/"
+  },
+  {
+   "college": "Yuba College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Vice President - Instruction, Marysville Campus",
+   "name": "Dale Van Dam",
+   "email": "dvandam@yccd.edu",
+   "source_url": "https://yc.yccd.edu/about/staff-directory/"
+  }
+ ]
+}
