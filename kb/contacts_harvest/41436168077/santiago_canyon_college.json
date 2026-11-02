@@ -1,0 +1,1584 @@
+{
+ "college": "Santiago Canyon College",
+ "homepage": "https://www.sccollege.edu/",
+ "read_at": "2026-11-02T11:29:21+00:00",
+ "pages": [
+  {
+   "url": "https://www.sccollege.edu/",
+   "final_url": "https://www.sccollege.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/campus/administration/",
+   "final_url": "https://www.sccollege.edu/campus/administration/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration - Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Administration - Office of the President",
+      "Skip to main contentSkip to main navigationSkip to footer content",
+      "Continuing EducationLibraryAthletics",
+      "CanvasSelf-ServiceCurrent StudentsFaculty & Staff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Give to SCC",
+      "Partnerships",
+      "Use our Facilities",
+      "Office of the President",
+      "SCC Home",
+      "Campus",
+      "Administration"
+     ],
+     "emails": []
+    },
+    {
+     "line": "process starts at the top. The president and the administrative staff are driven by",
+     "position": "college_ceo",
+     "window": [
+      "About the Administration",
+      "The learning environment at Santiago Canyon College is a collaboration between our",
+      "faculty, staff and students. The community enrichment that results from this collaborative",
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and her direct reports: the the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The President’s ​Cabinet consists of the President and her direct reports: the the",
+     "position": "college_ceo",
+     "window": [
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and her direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education, and",
+      "the Executive Assistant to the President."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+     "position": "vpaa",
+     "window": [
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and her direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education, and",
+      "the Executive Assistant to the President.",
+      "<span></span><h2><strong>​About the Administration</strong></h2>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Vice President for Student Services, the Vice President of Continuing Education, and",
+     "position": "vpss",
+     "window": [
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and her direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education, and",
+      "the Executive Assistant to the President.",
+      "<span></span><h2><strong>​About the Administration</strong></h2>",
+      "<p>The learning environment at Santiago Canyon College is a collaboration between our"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Executive Assistant to the President.",
+     "position": "college_ceo",
+     "window": [
+      "The President’s ​Cabinet consists of the President and her direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education, and",
+      "the Executive Assistant to the President.",
+      "<span></span><h2><strong>​About the Administration</strong></h2>",
+      "<p>The learning environment at Santiago Canyon College is a collaboration between our",
+      "faculty, staff and students. The community enrichment that results from this collaborative"
+     ],
+     "emails": []
+    },
+    {
+     "line": "process starts at the top. The president and the administrative staff are driven by",
+     "position": "college_ceo",
+     "window": [
+      "<span></span><h2><strong>​About the Administration</strong></h2>",
+      "<p>The learning environment at Santiago Canyon College is a collaboration between our",
+      "faculty, staff and students. The community enrichment that results from this collaborative",
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.</p>",
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+     "position": "college_ceo",
+     "window": [
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.</p>",
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+      "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+      "the Executive Assistant to the President.</p>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+     "position": "vpaa",
+     "window": [
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.</p>",
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+      "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+      "the Executive Assistant to the President.</p>",
+      "<section>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+     "position": "vpss",
+     "window": [
+      "and personal growth.</p>",
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+      "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+      "the Executive Assistant to the President.</p>",
+      "<section>",
+      "<h2></h2><a href=\"/campus/administration/biography.php\" target=\"_self\">"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Executive Assistant to the President.</p>",
+     "position": "college_ceo",
+     "window": [
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+      "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+      "the Executive Assistant to the President.</p>",
+      "<section>",
+      "<h2></h2><a href=\"/campus/administration/biography.php\" target=\"_self\">",
+      "<h3>President's Biography </h3>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "<h3>President's Biography </h3>",
+     "position": "college_ceo",
+     "window": [
+      "the Executive Assistant to the President.</p>",
+      "<section>",
+      "<h2></h2><a href=\"/campus/administration/biography.php\" target=\"_self\">",
+      "<h3>President's Biography </h3>",
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"></a><img alt=\"President&amp;#39;s Cabinet\" src=\"/uploads/campus/images/2-cabinet.png\"><h3>President's Cabinet</h3>",
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"><img alt=\"President&amp;#39;s Advisory Board\" src=\"/uploads/campus/images/3-advisory.png?Width=765\" width=\"765\"><h3>President's Advisory Board </h3>",
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"><img alt=\"SCC Organization Chart\" src=\"/uploads/campus/images/4-orgChart.png\"><h3>SCC Organization Chart</h3>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administration - Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"><img alt=\"SCC Organization Chart\" src=\"/uploads/campus/images/4-orgChart.png\"><h3>SCC Organization Chart</h3>",
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"></section>",
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Biography of the President",
+     "position": "college_ceo",
+     "window": [
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"></section>",
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group",
+      "Community College Focus (OC Register insert)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Classified Hawks Advisory Group",
+     "position": "college_ceo",
+     "window": [
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group",
+      "Community College Focus (OC Register insert)",
+      "Convocation",
+      "Contact Card"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Convocation",
+      "Contact Card",
+      "Jeannie G. Kim, Ph.D.",
+      "President",
+      "Ann Kelly",
+      "Assistant to the President",
+      "kelly_ann@sccollege.edu kelly_ann@sccollege.edu"
+     ],
+     "emails": [
+      "kelly_ann@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "Jeannie G. Kim, Ph.D.",
+      "President",
+      "Ann Kelly",
+      "Assistant to the President",
+      "kelly_ann@sccollege.edu kelly_ann@sccollege.edu",
+      "714-628-4930",
+      "Facebook"
+     ],
+     "emails": [
+      "kelly_ann@sccollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/a-z.php",
+   "final_url": "https://www.sccollege.edu/a-z",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administration - Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Accreditation Documents",
+      "Active Adults",
+      "Additional Filtering of Pages",
+      "Administration - Office of the President",
+      "Administrative Services - Administrative Services",
+      "Admissions & Records Forms",
+      "Admissions and Aid - Admissions & Aid"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Office - Articulation Office",
+     "position": "articulation_officer",
+     "window": [
+      "Art - Art",
+      "Art Student Resources",
+      "Art, AA",
+      "Articulation Office - Articulation Office",
+      "Arts and Humanities",
+      "Arts, Humanities, and Social Sciences Division",
+      "Assessment Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Biography of the President",
+     "position": "college_ceo",
+     "window": [
+      "BCE Staff",
+      "Bachelor's Degree Will Train the Next Generation of Surveyors",
+      "Behavior Technician",
+      "Biography of the President",
+      "Biology - Biology",
+      "Biology Student Resources",
+      "Biology, AS"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Faculty - Code Enforcement Officer",
+     "position": null,
+     "window": [
+      "Faculty - Chemistry",
+      "Faculty - Child Development",
+      "Faculty - Cinema Studies",
+      "Faculty - Code Enforcement Officer",
+      "Faculty - Communication",
+      "Faculty - Cosmetology",
+      "Faculty - Criminal Justice"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Political Science Student Resources",
+      "Political Science, AA-T",
+      "Pre-Nursing and Allied Health Science, AS",
+      "President's Cabinet",
+      "President's Classified Hawks Advisory Group",
+      "President's Message",
+      "President's Message on Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Classified Hawks Advisory Group",
+     "position": "college_ceo",
+     "window": [
+      "Political Science, AA-T",
+      "Pre-Nursing and Allied Health Science, AS",
+      "President's Cabinet",
+      "President's Classified Hawks Advisory Group",
+      "President's Message",
+      "President's Message on Accreditation",
+      "Professional Development Committee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "Pre-Nursing and Allied Health Science, AS",
+      "President's Cabinet",
+      "President's Classified Hawks Advisory Group",
+      "President's Message",
+      "President's Message on Accreditation",
+      "Professional Development Committee",
+      "Program Finder"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message on Accreditation",
+     "position": "college_ceo",
+     "window": [
+      "President's Cabinet",
+      "President's Classified Hawks Advisory Group",
+      "President's Message",
+      "President's Message on Accreditation",
+      "Professional Development Committee",
+      "Program Finder",
+      "Program Review Subcommittee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Unarmed Public Safety and Security Officer Program",
+     "position": null,
+     "window": [
+      "UBMS Program Eligibility",
+      "UC Transfer Requirements",
+      "Umoja - Umoja",
+      "Unarmed Public Safety and Security Officer Program",
+      "Understanding Your Course Placement Recommendations",
+      "Understanding Your Guided Placement Recommendations",
+      "Undocumented Student Success Week"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center General Information",
+     "position": "vrc",
+     "window": [
+      "Vet Net Ally",
+      "Vet Textbooks & School Supplies",
+      "Veteran Educational Benefits",
+      "Veteran Resource Center General Information",
+      "Veterans Resource Center",
+      "Videos for First-Year Students",
+      "W"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Vet Textbooks & School Supplies",
+      "Veteran Educational Benefits",
+      "Veteran Resource Center General Information",
+      "Veterans Resource Center",
+      "Videos for First-Year Students",
+      "W",
+      "Wastewater / Environmental Sanitation, AS"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/students/studentservices/studentlife/index.php",
+   "final_url": "https://www.sccollege.edu/students/studentservices/studentlife/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/campus/administration/index.php",
+   "final_url": "https://www.sccollege.edu/campus/administration/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration - Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Administration - Office of the President",
+      "Skip to main contentSkip to main navigationSkip to footer content",
+      "Continuing EducationLibraryAthletics",
+      "CanvasSelf-ServiceCurrent StudentsFaculty & Staff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Give to SCC",
+      "Partnerships",
+      "Use our Facilities",
+      "Office of the President",
+      "SCC Home",
+      "Campus",
+      "Administration"
+     ],
+     "emails": []
+    },
+    {
+     "line": "process starts at the top. The president and the administrative staff are driven by",
+     "position": "college_ceo",
+     "window": [
+      "About the Administration",
+      "The learning environment at Santiago Canyon College is a collaboration between our",
+      "faculty, staff and students. The community enrichment that results from this collaborative",
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and her direct reports: the the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The President’s ​Cabinet consists of the President and her direct reports: the the",
+     "position": "college_ceo",
+     "window": [
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and her direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education, and",
+      "the Executive Assistant to the President."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+     "position": "vpaa",
+     "window": [
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and her direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education, and",
+      "the Executive Assistant to the President.",
+      "<span></span><h2><strong>​About the Administration</strong></h2>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Vice President for Student Services, the Vice President of Continuing Education, and",
+     "position": "vpss",
+     "window": [
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and her direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education, and",
+      "the Executive Assistant to the President.",
+      "<span></span><h2><strong>​About the Administration</strong></h2>",
+      "<p>The learning environment at Santiago Canyon College is a collaboration between our"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Executive Assistant to the President.",
+     "position": "college_ceo",
+     "window": [
+      "The President’s ​Cabinet consists of the President and her direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education, and",
+      "the Executive Assistant to the President.",
+      "<span></span><h2><strong>​About the Administration</strong></h2>",
+      "<p>The learning environment at Santiago Canyon College is a collaboration between our",
+      "faculty, staff and students. The community enrichment that results from this collaborative"
+     ],
+     "emails": []
+    },
+    {
+     "line": "process starts at the top. The president and the administrative staff are driven by",
+     "position": "college_ceo",
+     "window": [
+      "<span></span><h2><strong>​About the Administration</strong></h2>",
+      "<p>The learning environment at Santiago Canyon College is a collaboration between our",
+      "faculty, staff and students. The community enrichment that results from this collaborative",
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.</p>",
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+     "position": "college_ceo",
+     "window": [
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.</p>",
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+      "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+      "the Executive Assistant to the President.</p>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+     "position": "vpaa",
+     "window": [
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.</p>",
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+      "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+      "the Executive Assistant to the President.</p>",
+      "<section>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+     "position": "vpss",
+     "window": [
+      "and personal growth.</p>",
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+      "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+      "the Executive Assistant to the President.</p>",
+      "<section>",
+      "<h2></h2><a href=\"/campus/administration/biography.php\" target=\"_self\">"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Executive Assistant to the President.</p>",
+     "position": "college_ceo",
+     "window": [
+      "<p>The President’s ​Cabinet consists of the President and her&nbsp;direct reports: the the",
+      "Vice President for Academic Affairs​,&nbsp;Vice President for Administrative Services,",
+      "the Vice President for Student Services, the Vice President of Continuing Education,&nbsp;and",
+      "the Executive Assistant to the President.</p>",
+      "<section>",
+      "<h2></h2><a href=\"/campus/administration/biography.php\" target=\"_self\">",
+      "<h3>President's Biography </h3>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "<h3>President's Biography </h3>",
+     "position": "college_ceo",
+     "window": [
+      "the Executive Assistant to the President.</p>",
+      "<section>",
+      "<h2></h2><a href=\"/campus/administration/biography.php\" target=\"_self\">",
+      "<h3>President's Biography </h3>",
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"></a><img alt=\"President&amp;#39;s Cabinet\" src=\"/uploads/campus/images/2-cabinet.png\"><h3>President's Cabinet</h3>",
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"><img alt=\"President&amp;#39;s Advisory Board\" src=\"/uploads/campus/images/3-advisory.png?Width=765\" width=\"765\"><h3>President's Advisory Board </h3>",
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"><img alt=\"SCC Organization Chart\" src=\"/uploads/campus/images/4-orgChart.png\"><h3>SCC Organization Chart</h3>"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administration - Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"><img alt=\"SCC Organization Chart\" src=\"/uploads/campus/images/4-orgChart.png\"><h3>SCC Organization Chart</h3>",
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"></section>",
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Biography of the President",
+     "position": "college_ceo",
+     "window": [
+      "<p></p><img src=\"/uploads/_homepage/images/right_e5f059c2d5c79e62bb6413d545e63fea.png\" alt=\"\"></section>",
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group",
+      "Community College Focus (OC Register insert)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Classified Hawks Advisory Group",
+     "position": "college_ceo",
+     "window": [
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group",
+      "Community College Focus (OC Register insert)",
+      "Convocation",
+      "Contact Card"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Convocation",
+      "Contact Card",
+      "Jeannie G. Kim, Ph.D.",
+      "President",
+      "Ann Kelly",
+      "Assistant to the President",
+      "kelly_ann@sccollege.edu kelly_ann@sccollege.edu"
+     ],
+     "emails": [
+      "kelly_ann@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "Jeannie G. Kim, Ph.D.",
+      "President",
+      "Ann Kelly",
+      "Assistant to the President",
+      "kelly_ann@sccollege.edu kelly_ann@sccollege.edu",
+      "714-628-4930",
+      "Facebook"
+     ],
+     "emails": [
+      "kelly_ann@sccollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/campus/administration/presidents-cabinet.php",
+   "final_url": "https://www.sccollege.edu/campus/administration/presidents-cabinet",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "President's Cabinet",
+      "Skip to main contentSkip to main navigationSkip to footer content",
+      "Continuing EducationLibraryAthletics",
+      "CanvasSelf-ServiceCurrent StudentsFaculty & Staff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Give to SCC",
+      "Partnerships",
+      "Use our Facilities",
+      "President's Cabinet",
+      "SCC Home",
+      "Campus",
+      "Administration"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "SCC Home",
+      "Campus",
+      "Administration",
+      "President's Cabinet",
+      "About the Administration",
+      "The learning environment at Santiago Canyon College is a collaboration between our",
+      "faculty, staff and students. The community enrichment that results from this collaborative"
+     ],
+     "emails": []
+    },
+    {
+     "line": "process starts at the top. The president and the administrative staff are driven by",
+     "position": "college_ceo",
+     "window": [
+      "About the Administration",
+      "The learning environment at Santiago Canyon College is a collaboration between our",
+      "faculty, staff and students. The community enrichment that results from this collaborative",
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and his direct reports: the the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The President’s ​Cabinet consists of the President and his direct reports: the the",
+     "position": "college_ceo",
+     "window": [
+      "process starts at the top. The president and the administrative staff are driven by",
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and his direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, and the Executive Assistant to the President.",
+      "Arleen Satele, Ed.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+     "position": "vpaa",
+     "window": [
+      "the college’s mission to be an innovative learning community dedicated to intellectual",
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and his direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, and the Executive Assistant to the President.",
+      "Arleen Satele, Ed.D.",
+      "Vice President, Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Vice President for Student Services, and the Executive Assistant to the President.",
+     "position": "vpss",
+     "window": [
+      "and personal growth.",
+      "The President’s ​Cabinet consists of the President and his direct reports: the the",
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, and the Executive Assistant to the President.",
+      "Arleen Satele, Ed.D.",
+      "Vice President, Administrative Services",
+      "✉ satele_arleen@sccollege.edu satele_arleen@sccollege.edu"
+     ],
+     "emails": [
+      "satele_arleen@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Vice President for Academic Affairs​, Vice President for Administrative Services,",
+      "the Vice President for Student Services, and the Executive Assistant to the President.",
+      "Arleen Satele, Ed.D.",
+      "Vice President, Administrative Services",
+      "✉ satele_arleen@sccollege.edu satele_arleen@sccollege.edu",
+      "Larisa Sergeyeva",
+      "Vice President, Continuing Education"
+     ],
+     "emails": [
+      "satele_arleen@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Continuing Education",
+     "position": null,
+     "window": [
+      "Vice President, Administrative Services",
+      "✉ satele_arleen@sccollege.edu satele_arleen@sccollege.edu",
+      "Larisa Sergeyeva",
+      "Vice President, Continuing Education",
+      "✉ vargas_jose@sccollege.edu sergeyeva_larisa@sccollege.edu",
+      "Christopher Sweeten",
+      "Vice President, Student Services"
+     ],
+     "emails": [
+      "satele_arleen@sccollege.edu",
+      "sergeyeva_larisa@sccollege.edu",
+      "vargas_jose@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "Vice President, Continuing Education",
+      "✉ vargas_jose@sccollege.edu sergeyeva_larisa@sccollege.edu",
+      "Christopher Sweeten",
+      "Vice President, Student Services",
+      "✉ sweeten_christopher@sccollege.edu sweeten_christopher@sccollege.ed sweeten_christopher@sccollege.edu u",
+      "Administration",
+      "Administration - Office of the President"
+     ],
+     "emails": [
+      "sergeyeva_larisa@sccollege.edu",
+      "sweeten_christopher@sccollege.ed",
+      "sweeten_christopher@sccollege.edu",
+      "vargas_jose@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Administration - Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Vice President, Student Services",
+      "✉ sweeten_christopher@sccollege.edu sweeten_christopher@sccollege.ed sweeten_christopher@sccollege.edu u",
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team"
+     ],
+     "emails": [
+      "sweeten_christopher@sccollege.ed",
+      "sweeten_christopher@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Biography of the President",
+     "position": "college_ceo",
+     "window": [
+      "✉ sweeten_christopher@sccollege.edu sweeten_christopher@sccollege.ed sweeten_christopher@sccollege.edu u",
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group"
+     ],
+     "emails": [
+      "sweeten_christopher@sccollege.ed",
+      "sweeten_christopher@sccollege.edu"
+     ]
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "Administration - Office of the President",
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group",
+      "Community College Focus (OC Register insert)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Classified Hawks Advisory Group",
+     "position": "college_ceo",
+     "window": [
+      "Biography of the President",
+      "President's Cabinet",
+      "SCC Management Team",
+      "President's Classified Hawks Advisory Group",
+      "Community College Focus (OC Register insert)",
+      "Convocation",
+      "Contact Card"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Convocation",
+      "Contact Card",
+      "Jeannie G. Kim, Ph.D.",
+      "President",
+      "Ann Kelly",
+      "Assistant to the President",
+      "kelly_ann@sccollege.edu kelly_ann@sccollege.edu"
+     ],
+     "emails": [
+      "kelly_ann@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "Jeannie G. Kim, Ph.D.",
+      "President",
+      "Ann Kelly",
+      "Assistant to the President",
+      "kelly_ann@sccollege.edu kelly_ann@sccollege.edu",
+      "714-628-4930",
+      "Facebook"
+     ],
+     "emails": [
+      "kelly_ann@sccollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/students/studentservices/studentlife/about-student-life-leadership.php",
+   "final_url": "https://www.sccollege.edu/students/studentservices/studentlife/about-student-life-leadership",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/students/studentservices/admissions/forms.php",
+   "final_url": "https://www.sccollege.edu/students/studentservices/admissions/forms",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Office",
+     "position": "articulation_officer",
+     "window": [
+      "Student Services",
+      "Student ServicesAdmissions and Records",
+      "Admissions and Records",
+      "Articulation Office",
+      "Articulation Office",
+      "CARE TeamCashier's Office",
+      "Cashier's Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Office",
+     "position": "articulation_officer",
+     "window": [
+      "Student ServicesAdmissions and Records",
+      "Admissions and Records",
+      "Articulation Office",
+      "Articulation Office",
+      "CARE TeamCashier's Office",
+      "Cashier's Office",
+      "Counseling"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/students/studentservices/admissions/index.php",
+   "final_url": "https://www.sccollege.edu/students/studentservices/admissions/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/campus/collegeoffices/articulationoffice/index.php",
+   "final_url": "https://www.sccollege.edu/campus/collegeoffices/articulationoffice/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation Office - Articulation Office",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation Office - Articulation Office",
+      "Skip to main contentSkip to main navigationSkip to footer content",
+      "Continuing EducationLibraryAthletics",
+      "CanvasSelf-ServiceCurrent StudentsFaculty & Staff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Office",
+     "position": "articulation_officer",
+     "window": [
+      "Give to SCC",
+      "Partnerships",
+      "Use our Facilities",
+      "Articulation Office",
+      "SCC Home",
+      "Campus",
+      "Campus Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Office",
+     "position": "articulation_officer",
+     "window": [
+      "SCC Home",
+      "Campus",
+      "Campus Offices",
+      "Articulation Office",
+      "Welcome to the Articulation Office",
+      "Articulation Agreements are formal agreements between community colleges and four-year universities that",
+      "identify which courses transfer and how they apply toward degree requirements. These"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome to the Articulation Office",
+     "position": "articulation_officer",
+     "window": [
+      "Campus",
+      "Campus Offices",
+      "Articulation Office",
+      "Welcome to the Articulation Office",
+      "Articulation Agreements are formal agreements between community colleges and four-year universities that",
+      "identify which courses transfer and how they apply toward degree requirements. These",
+      "agreements help students complete major preparation, general education, or elective"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements are formal agreements between community colleges and four-year universities that",
+     "position": "articulation_officer",
+     "window": [
+      "Campus Offices",
+      "Articulation Office",
+      "Welcome to the Articulation Office",
+      "Articulation Agreements are formal agreements between community colleges and four-year universities that",
+      "identify which courses transfer and how they apply toward degree requirements. These",
+      "agreements help students complete major preparation, general education, or elective",
+      "requirements without repeating coursework after transfer. Santiago Canyon College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "has articulation agreements with UC, CSU, private, and out-of-state universities.",
+     "position": "articulation_officer",
+     "window": [
+      "identify which courses transfer and how they apply toward degree requirements. These",
+      "agreements help students complete major preparation, general education, or elective",
+      "requirements without repeating coursework after transfer. Santiago Canyon College",
+      "has articulation agreements with UC, CSU, private, and out-of-state universities.",
+      "Students can use these agreements, along with a Student Education Plan (SEP) and guidance",
+      "from counselors or the Transfer Center, to choose the right courses and prepare for",
+      "a smooth and timely transfer."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Students can use these agreements, along with a Student Education Plan (SEP) and guidance",
+      "from counselors or the Transfer Center, to choose the right courses and prepare for",
+      "a smooth and timely transfer.",
+      "Articulation",
+      "Articulation Officer: Leonor Aguilera",
+      "Aguilera_Leonor@sccollege.edu Aguilera_Leonor@sccollege.edu",
+      "(714) 628-4854"
+     ],
+     "emails": [
+      "Aguilera_Leonor@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Articulation Officer: Leonor Aguilera",
+     "position": "articulation_officer",
+     "window": [
+      "from counselors or the Transfer Center, to choose the right courses and prepare for",
+      "a smooth and timely transfer.",
+      "Articulation",
+      "Articulation Officer: Leonor Aguilera",
+      "Aguilera_Leonor@sccollege.edu Aguilera_Leonor@sccollege.edu",
+      "(714) 628-4854",
+      "Monday-Thursday: 10:00 AM - 5:30 PM"
+     ],
+     "emails": [
+      "Aguilera_Leonor@sccollege.edu"
+     ]
+    },
+    {
+     "line": "Assist is the official online student-transfer and articulation system for California",
+     "position": "articulation_officer",
+     "window": [
+      "📖 Library Resources",
+      "CSU, UC, and Private ArticulationPrivate and Out-of-State ArticulationTransfer Admission ProgramsGeneral Education (GE) PatternsExternal Exams: AP, IB, and CLEP Guides",
+      "What is ASSIST?",
+      "Assist is the official online student-transfer and articulation system for California",
+      "public colleges and universities. It displays how course credits earned at Santiago",
+      "Canyon College transfer to California State University (CSU), University of California",
+      "(UC), or participating private colleges/universities."
+     ],
+     "emails": []
+    },
+    {
+     "line": "In addition to CSU and UC articulation agreements, Santiago Canyon College maintains",
+     "position": "articulation_officer",
+     "window": [
+      "How to Use ASSIST",
+      "Access ASSIST Here",
+      "Private / Independent and Out-of-State Colleges / Universities",
+      "In addition to CSU and UC articulation agreements, Santiago Canyon College maintains",
+      "articulation agreements with many independent and private colleges and universities",
+      "in California and across the nation. Because each institution has its own admission,",
+      "transfer, and major requirements, students should review the institution’s requirements"
+     ],
+     "emails": []
+    },
+    {
+     "line": "articulation agreements with many independent and private colleges and universities",
+     "position": "articulation_officer",
+     "window": [
+      "Access ASSIST Here",
+      "Private / Independent and Out-of-State Colleges / Universities",
+      "In addition to CSU and UC articulation agreements, Santiago Canyon College maintains",
+      "articulation agreements with many independent and private colleges and universities",
+      "in California and across the nation. Because each institution has its own admission,",
+      "transfer, and major requirements, students should review the institution’s requirements",
+      "online and meet with an SCC counselor to develop a comprehensive Student Education"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements with Independent Institutions",
+     "position": "articulation_officer",
+     "window": [
+      "students can explore transfer opportunities, admission requirements, and major-specific",
+      "information. For more information and links to private and independent colleges and",
+      "universities, visit the California Colleges at http://www.californiacolleges.edu and the Association of Independent California Colleges and Universities at http://www.aiccu.edu/",
+      "Articulation Agreements with Independent Institutions",
+      "Institution",
+      "Transfer Admission Info",
+      "Transfer Articulation Guides"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Transfer Articulation Guides",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation Agreements with Independent Institutions",
+      "Institution",
+      "Transfer Admission Info",
+      "Transfer Articulation Guides",
+      "Academy of the Arts University",
+      "Transfer Information",
+      "Transfer Guide"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "ASSIST.org",
+      "Azusa Pacific University",
+      "Transfer Information",
+      "Articulation Agreements",
+      "ASSIST.org",
+      "Biola University",
+      "Transfer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Transfer Credit and Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Transfer Agreements",
+      "ASSIST.org",
+      "Chapman University",
+      "Transfer Credit and Articulation",
+      "Transfer Applicant Guide",
+      "C-TAG for Future Educators",
+      "Transfer Evaluation System (TES)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "Concordia University",
+      "Transfer Information",
+      "Degree Programs",
+      "Articulation Agreements",
+      "ASSIST.org",
+      "Grand Canyon University",
+      "Transfer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "Grand Canyon University",
+      "Transfer Information",
+      "Online Nursing Programs",
+      "Articulation Agreements",
+      "Transfer Course Search",
+      "Hope International University",
+      "Transfer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreement - Pending",
+     "position": "articulation_officer",
+     "window": [
+      "Transfer Guide",
+      "Keck Graduate Institute",
+      "Admission Team",
+      "Articulation Agreement - Pending",
+      "Loma Linda University",
+      "Transfer Information",
+      "Allied Health Professions"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "ASSIST.org",
+      "Pepperdine University-Seaver College",
+      "Transfer Information",
+      "Articulation Agreements",
+      "ASSIST.org",
+      "Pepperdine University-Graziadio Business School",
+      "Transfer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "CCC Transfer Pathways Partnership",
+      "University of LaVerne",
+      "Transfer Information",
+      "Articulation",
+      "Transfer Articulation Portal",
+      "University of Massachusetts Global (UMASS)",
+      "Transfer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Transfer Articulation Portal",
+     "position": "articulation_officer",
+     "window": [
+      "University of LaVerne",
+      "Transfer Information",
+      "Articulation",
+      "Transfer Articulation Portal",
+      "University of Massachusetts Global (UMASS)",
+      "Transfer Information",
+      "Transfer College Credit"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Course Articulation Database",
+     "position": "articulation_officer",
+     "window": [
+      "University of Massachusetts Global (UMASS)",
+      "Transfer Information",
+      "Transfer College Credit",
+      "Course Articulation Database",
+      "University of the Pacific",
+      "Transfer Information",
+      "ROAM Online Articulation Report (ROAR)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "ROAM Online Articulation Report (ROAR)",
+     "position": "articulation_officer",
+     "window": [
+      "Course Articulation Database",
+      "University of the Pacific",
+      "Transfer Information",
+      "ROAM Online Articulation Report (ROAR)",
+      "University of Redlands",
+      "Transfer Information",
+      "Transfer Evaluation System (TES)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreement",
+     "position": "articulation_officer",
+     "window": [
+      "Marshall School of Business",
+      "Viterbi School of Engineering",
+      "Mann PharmD Program",
+      "Articulation Agreement",
+      "Transfer Planning Guide",
+      "University of San Diego",
+      "Transfer Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "ASSIST.org",
+      "Western Governors University",
+      "Transfer Information",
+      "Articulation Agreements",
+      "Western University of Health Sciences",
+      "Academic Programs",
+      "Doctor of Physical Therapy"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/pathways/business/business-administration.php",
+   "final_url": "https://www.sccollege.edu/pathways/business/business-administration",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sccollege.edu/pathways/business/business-administration2.php",
+   "final_url": "https://www.sccollege.edu/pathways/business/business-administration2",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Administration (President's Office)",
+     "position": "college_ceo",
+     "window": [
+      "About SCC",
+      "Academic Senate",
+      "Accreditation",
+      "Administration (President's Office)",
+      "Administrative Services",
+      "A-Z Directory",
+      "Campus Offices"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.sccollege.edu/faculty-staff/faculty-public-admin-policy.php",
+  "https://www.sccollege.edu/students/studentservices/vrc/new-veteran-students.php",
+  "https://www.sccollege.edu/academics/areasofstudy/publicadministration/index.php",
+  "https://www.sccollege.edu/students/studentservices/vrc/scc-student-veterans-of-america.php",
+  "https://www.sccollege.edu/news/scc-vets.php",
+  "https://www.sccollege.edu/students/studentservices/studentlife/student-leadership-institute.php",
+  "https://www.sccollege.edu/students/studentservices/studentlife/student-life-leadership-fee.php",
+  "https://www.sccollege.edu/students/studentservices/vrc/support-scc-veterans.php",
+  "https://www.sccollege.edu/students/studentservices/vrc/veteran-educational-benefits.php",
+  "https://www.sccollege.edu/students/studentservices/vrc/general-information.php",
+  "https://www.sccollege.edu/students/studentservices/vrc/index.php"
+ ],
+ "run": "41436168077"
+}

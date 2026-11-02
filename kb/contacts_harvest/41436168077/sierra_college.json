@@ -1,0 +1,2617 @@
+{
+ "college": "Sierra College",
+ "homepage": "https://www.sierracollege.edu/",
+ "read_at": "2026-11-02T11:30:46+00:00",
+ "pages": [
+  {
+   "url": "https://www.sierracollege.edu/",
+   "final_url": "https://www.sierracollege.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Willy Duncan, President",
+     "position": "college_ceo",
+     "window": [
+      "We Have Your Back",
+      "We Have Your Back",
+      "I invite you to start your future at Sierra College. From your first class to your last, we will be here to support you every step of the way.",
+      "Willy Duncan, President",
+      "How do I get started at Sierra College?",
+      "Answered by",
+      "Alistair Turner, Enrollment/Outreach"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/administration/",
+   "final_url": "https://www.sierracollege.edu/administration/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "close section navigation",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "close section navigation",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet Our President",
+     "position": "college_ceo",
+     "window": [
+      "Our leaders continue to strengthen Sierra College’s position as one of the best community colleges in California.",
+      "Together, the Board of Trustees and Superintendent/President Willy Duncan oversee ongoing improvements to facilities, including those approved by Measure E, and academic opportunities as part of Sierra College’s overall vision Master Plan and Goals.",
+      "Meet Our Board of Trustees",
+      "Meet Our President",
+      "Administrative Offices and Services",
+      "Learn more or contact our administrative offices and services for additional information.",
+      "Facilities and Construction"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/about-sierra-college/sierra-college-foundation/impact-programs-to-support/veterans-success-center/",
+   "final_url": "https://www.sierracollege.edu/about-sierra-college/sierra-college-foundation/impact-programs-to-support/veterans-success-center/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Support Veterans Success Center | Sierra College",
+     "position": "vrc",
+     "window": [
+      "Support Veterans Success Center | Sierra College",
+      "Skip to content",
+      "Planned Software Upgrade",
+      "This weekend, mySierra and Banner applications will be unavailable to students, staff and faculty starting at 12:01am on Saturday, Oct. 31 until 2pm on Sunday, Nov. 1. During this maintenance period, you will still be able to access Canvas, DegreeWorks, Email (Outlook) and Sierra Connect."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Athletics",
+      "Events",
+      "Toggle Search Form",
+      "Support Veterans Success Center",
+      "close section navigation",
+      "About Us",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "New and Existing Scholarships",
+      "Student Assistance Fund Endowment",
+      "Student Emergency Fund",
+      "Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Support Veterans Success Center",
+      "HomeAbout Sierra CollegeSierra College FoundationImpact Programs to SupportSupport Veterans Success Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Support Veterans Success Center",
+      "HomeAbout Sierra CollegeSierra College FoundationImpact Programs to SupportSupport Veterans Success Center",
+      "Supporting Groundbreaking Approaches in Education, Workforce",
+      "Many veterans experience challenges as they return to civilian life and pursue an education. Join us in supporting Boots to Books and Peer-to-Peer Mentoring, which help our veterans complete this mission through the Veterans Success Center."
+     ],
+     "emails": []
+    },
+    {
+     "line": "HomeAbout Sierra CollegeSierra College FoundationImpact Programs to SupportSupport Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "President’s Circle",
+      "Student Success and Equity",
+      "Support Veterans Success Center",
+      "HomeAbout Sierra CollegeSierra College FoundationImpact Programs to SupportSupport Veterans Success Center",
+      "Supporting Groundbreaking Approaches in Education, Workforce",
+      "Many veterans experience challenges as they return to civilian life and pursue an education. Join us in supporting Boots to Books and Peer-to-Peer Mentoring, which help our veterans complete this mission through the Veterans Success Center.",
+      "Donate Now"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Supporting Groundbreaking Approaches in Education, Workforce",
+      "Many veterans experience challenges as they return to civilian life and pursue an education. Join us in supporting Boots to Books and Peer-to-Peer Mentoring, which help our veterans complete this mission through the Veterans Success Center.",
+      "Donate Now",
+      "Support Veterans Success Center",
+      "close section navigation",
+      "About Us",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "New and Existing Scholarships",
+      "Student Assistance Fund Endowment",
+      "Student Emergency Fund",
+      "Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Boots to Books",
+      "Boots to Books is a specialized course at Sierra College, which was created to prepare student military veterans for the transition to higher education. Boots to Books provides an overview of college terms, student success practices, the transfer process, and degree/certificate requirements."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center — Rocklin",
+     "position": "vrc",
+     "window": [
+      "Rocklin",
+      "Building U, Room 27",
+      "Tax ID Number: 23-7241877",
+      "Veterans Success Center — Rocklin",
+      "(916) 660-7470",
+      "veterans@sierracollege.edu veterans@sierracollege.edu",
+      "Rocklin"
+     ],
+     "emails": [
+      "veterans@sierracollege.edu"
+     ]
+    },
+    {
+     "line": "Veterans Success Center — Nevada County",
+     "position": "vrc",
+     "window": [
+      "veterans@sierracollege.edu veterans@sierracollege.edu",
+      "Rocklin",
+      "Building LR, Room 424",
+      "Veterans Success Center — Nevada County",
+      "(530) 274-5303",
+      "Nevada County",
+      "Building N1, Room 208"
+     ],
+     "emails": [
+      "veterans@sierracollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/student-services/support-programs/veterans-success-center/",
+   "final_url": "https://www.sierracollege.edu/student-services/support-programs/veterans-success-center/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Athletics",
+      "Events",
+      "Toggle Search Form",
+      "Veterans Success Center",
+      "close section navigation",
+      "Student Services",
+      "Academic Help / Supports"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Military / Veterans",
+      "Student-Parents",
+      "Undocumented Students",
+      "Veterans Success Center",
+      "HomeStudent ServicesSupport ProgramsVeterans Success Center",
+      "Helping Our Veteran Community Integrate into College Life",
+      "The Veterans’ Success Center is a centralized place at Sierra College for veterans, military members, and their dependents. We understand that the transition from military to college life can be challenging, so we are committed to providing the best assistance in appreciation for your sacrifice and service."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Find Civilian Careers Related to Your Military Occupation",
+      "Campus/Community Resources",
+      "Request to Borrow a Laptop",
+      "Veterans Success Center",
+      "close section navigation",
+      "Student Services",
+      "Academic Help / Supports"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "At the Veterans Success Center, we can help:",
+     "position": "vrc",
+     "window": [
+      "Student-Parents",
+      "Undocumented Students",
+      "Our Services",
+      "At the Veterans Success Center, we can help:",
+      "Provide information regarding VA education benefits, plus we have VA Certifying Officials who can initiate and process VA education benefits, including evaluating your military transcripts and Department of Defense Form 214 for college credit",
+      "Assist with the Sierra College application and class registration process",
+      "Provide a dedicated Veterans Success Center counselor and peer mentors who understand and are committed to our veterans’ needs and educational progress so you can meet your goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Provide a dedicated Veterans Success Center counselor and peer mentors who understand and are committed to our veterans’ needs and educational progress so you can meet your goals",
+     "position": "vrc",
+     "window": [
+      "At the Veterans Success Center, we can help:",
+      "Provide information regarding VA education benefits, plus we have VA Certifying Officials who can initiate and process VA education benefits, including evaluating your military transcripts and Department of Defense Form 214 for college credit",
+      "Assist with the Sierra College application and class registration process",
+      "Provide a dedicated Veterans Success Center counselor and peer mentors who understand and are committed to our veterans’ needs and educational progress so you can meet your goals",
+      "Offer information about the various resources and services offered on- and off-campus",
+      "Provide assistive technology and computer and printer access in a designated study area for veterans and dependents",
+      "Submit a Contact Form"
+     ],
+     "emails": []
+    },
+    {
+     "line": "If you are unable to determine which benefit plan to use, please contact Veterans Success Center.",
+     "position": "vrc",
+     "window": [
+      "Follow these steps to apply, enroll and register for classes if you are applying as a veteran.",
+      "1. Using Your Benefits",
+      "Identify Your GI Bill® Benefits",
+      "If you are unable to determine which benefit plan to use, please contact Veterans Success Center.",
+      "Apply for Certificate of Eligibility (COE)",
+      "If you are transferring from another college, you must re-apply for a new COE for Sierra College. As soon as you receive the certificate (first page), email it to veterans@sierracollege.edu veterans@sierracollege.edu. Note: If you are a reservist, you must also request a completed Notice of Basic Eligibility (NOBE) from your unit’s education officer and email it to veterans@sierracollege.edu veterans@sierracollege.edu.",
+      "Visit Veterans Affairs (VA) to learn more about VA Education Benefits, verify eligibility and apply. Note: The Veterans Success Center is not responsible for determining eligibility. The VA determines eligibility upon completion of benefits application. Once you submit your application, you will receive a COE in the mail that needs to be delivered to the Veterans Success Center or emailed to veterans@sierracollege.edu veterans@sierracollege.edu."
+     ],
+     "emails": [
+      "veterans@sierracollege.edu"
+     ]
+    },
+    {
+     "line": "Clicking on “Courses” (book icon in left navigation) and choosing “Veterans Support Services”",
+     "position": "vrc",
+     "window": [
+      "This is an important step. Once you have your VA Education Plan, certify your classes by:",
+      "Logging in to your mySierra account.",
+      "Clicking on “Canvas Classes and Gradebook”",
+      "Clicking on “Courses” (book icon in left navigation) and choosing “Veterans Support Services”",
+      "Clicking “Certification Form”",
+      "Note: For Chapter 30 and 33 students, you must also verify your attendance monthly by responding to texts from the Department of Veterans Affairs, or by calling 1-888-GI-BILL-1 (1-888-442-4551).",
+      "Veteran Dependent Applicant: Prospective Chapter 33"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Identify your GI Bill® benefits. If you are unable to determine which benefit plan to use, please contact Veterans Success Center.",
+     "position": "vrc",
+     "window": [
+      "1. Using Your Benefits",
+      "Veteran Dependents eligible for the Post 9/11 GI Bill® Transfer of Eligibility (Chapter 33 – TOE) will receive the same attributes of Post 9/11 GI Bill (Chapter 33). To learn more, visit U.S. Department of Veterans Affairs Post-9/11 GI Bill® (Chapter 33).",
+      "Apply for Chapter 33 – TOE",
+      "Identify your GI Bill® benefits. If you are unable to determine which benefit plan to use, please contact Veterans Success Center.",
+      "Apply for Certificate of Eligibility (COE)",
+      "If you are transferring from another college, you must re-apply for a new COE for Sierra College. As soon as you receive the COE (first page), email it to veterans@sierracollege.edu veterans@sierracollege.edu.",
+      "Visit Veterans Affairs (VA) to learn more about VA Education Benefits, verify eligibility and apply. Note: The Veterans Success Center is not responsible for determining eligibility. The VA determines eligibility upon completion of benefits application. Once you submit your application, you will receive a Certificate of Eligibility (COE) in the mail that needs to be delivered to the Veterans Success Center or emailed to veterans@sierracollege.edu veterans@sierracollege.edu."
+     ],
+     "emails": [
+      "veterans@sierracollege.edu"
+     ]
+    },
+    {
+     "line": "Clicking on “Courses” (book icon in left navigation) and choosing “Veterans Support Services”",
+     "position": "vrc",
+     "window": [
+      "This is an important step. Once you have your VA Education Plan, certify your classes by:",
+      "Logging in to your mySierra account.",
+      "Clicking on “Canvas Classes and Gradebook”",
+      "Clicking on “Courses” (book icon in left navigation) and choosing “Veterans Support Services”",
+      "Clicking “Certification Form”",
+      "Note: For Chapter 33-TOE students, you must also verify your attendance monthly by responding to texts from the Department of Veterans Affairs, or by calling 1-888-GI-BILL-1 (1-888-442-4551).",
+      "Veteran Dependent Applicant: Prospective Chapter 35"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Identify your GI Bill® benefits. If you are unable to determine which benefit plan to use, please contact Veterans Success Center.",
+     "position": "vrc",
+     "window": [
+      "1. Using Your Benefits",
+      "To learn more, visit U.S. Department of Veterans Affairs – VA Educational Benefits for Survivors and Dependents to learn more about Chapter 35.",
+      "Apply for Chapter 35",
+      "Identify your GI Bill® benefits. If you are unable to determine which benefit plan to use, please contact Veterans Success Center.",
+      "Apply for Certificate of Eligibility (COE)",
+      "If you are transferring from another college, you must re-apply for a new COE for Sierra College. As soon as you receive the COE (first page), email it to veterans@sierracollege.edu veterans@sierracollege.edu.",
+      "Visit Veterans Affairs (VA) to learn more about VA Education Benefits, verify eligibility and apply. Note: The Veterans Success Center is not responsible for determining eligibility. The VA determines eligibility upon completion of benefits application. Once you submit your application, you will receive a Certificate of Eligibility (COE) in the mail that needs to be delivered to the Veterans Success Center or emailed to veterans@sierracollege.edu veterans@sierracollege.edu."
+     ],
+     "emails": [
+      "veterans@sierracollege.edu"
+     ]
+    },
+    {
+     "line": "Clicking on “Courses” (book icon in left navigation) and choosing “Veterans Support Services”",
+     "position": "vrc",
+     "window": [
+      "This is an important step. Once you have your VA Education Plan, certify your classes by:",
+      "Logging in to your mySierra account.",
+      "Clicking on “Canvas Classes and Gradebook”",
+      "Clicking on “Courses” (book icon in left navigation) and choosing “Veterans Support Services”",
+      "Clicking “Certification Form”",
+      "Note: For Chapter 35 students, you must also verify your attendance monthly by responding to texts from the Department of Veterans Affairs, or by calling 1-888-GI-BILL-1 (1-888-442-4551).",
+      "Veteran Dependent Applicant: Prospective CalVet College Fee Waiver"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Complete and submit the CalVet Fee Waiver application to a local Veterans’ Services Office (VSO) and return the approval letter to Veterans Success Center.",
+     "position": "vrc",
+     "window": [
+      "Once you’ve submitted your application to a local County Veterans Service Office (VSO), the VSO will give you a signed document you will need to deliver to the Sierra College Financial Aid department.",
+      "1. Applying",
+      "Apply for the CalVet Fee Waiver for Veteran Dependents",
+      "Complete and submit the CalVet Fee Waiver application to a local Veterans’ Services Office (VSO) and return the approval letter to Veterans Success Center.",
+      "Apply to Sierra College",
+      "Complete the OpenCCC application. The California Community College online application (OpenCCC) is designed for many student types, so some questions may not apply to you. If this happens, just give the best answer you can. Use the step-by-step guide or watch a video on how to complete the Sierra College online application through OpenCCC. Note: if you are returning student, you must reapply if it has been at least one semester since you’ve taken classes at Sierra College.",
+      "ID Verification"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Send approved CalVet Fee Waiver approval letter to Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Apply for Financial Aid",
+      "Look into all financial aid options, including scholarships, grants and work study. Complete the Free Application for Federal Student Aid (FAFSA).",
+      "2. Onboarding Requirements",
+      "Send approved CalVet Fee Waiver approval letter to Veterans Success Center",
+      "Check Residency",
+      "In your Welcome email from Sierra College, there will be a section at the bottom of the email that states “According to your application information, you are: Residency Status for tuition purposes: California Resident. If the residency status for tuition purposes does not say “California Resident,” you must submit a Residency Reclassification Petition Form since the VA will not pay out of state tuition. If you need assistance with the petition form, contact Admissions and Records.",
+      "Submit Official Transcripts to Sierra College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Placer County Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Once you have your VA Education Plan, register for classes. You will receive an email from mySierra around your time to register that will include FAQs, articles and short how-to videos about registration, how to add/drop classes, join a waitlist and more. Find the class times and locations that work for you using our Class Schedule.",
+      "Campus and Community Resources",
+      "Claims for VA Disability",
+      "Placer County Veteran Services",
+      "Assists with service-connected disability compensation, re-evaluation increases, dependency indemnity compensation (DIC) for surviving spouse and children, pension for war-era veterans, death pension for surviving spouse and children, dependent allowances, housebound and aid and attendance (A&A) allowance, California Yountville Veterans Home admissions, and request and correction of military records.",
+      "Contact: Richard “Steve” Johnson, Veteran Service Officer (VSO)",
+      "Address: Placer County Veterans Services Office, 1000 Sunset Blvd Ste 115, Rocklin, CA 95765"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact: Richard “Steve” Johnson, Veteran Service Officer (VSO)",
+     "position": null,
+     "window": [
+      "Claims for VA Disability",
+      "Placer County Veteran Services",
+      "Assists with service-connected disability compensation, re-evaluation increases, dependency indemnity compensation (DIC) for surviving spouse and children, pension for war-era veterans, death pension for surviving spouse and children, dependent allowances, housebound and aid and attendance (A&A) allowance, California Yountville Veterans Home admissions, and request and correction of military records.",
+      "Contact: Richard “Steve” Johnson, Veteran Service Officer (VSO)",
+      "Address: Placer County Veterans Services Office, 1000 Sunset Blvd Ste 115, Rocklin, CA 95765",
+      "Phone: (916) 780-3290",
+      "Fax: (916) 780-3290"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Address: Placer County Veterans Services Office, 1000 Sunset Blvd Ste 115, Rocklin, CA 95765",
+     "position": "vrc",
+     "window": [
+      "Placer County Veteran Services",
+      "Assists with service-connected disability compensation, re-evaluation increases, dependency indemnity compensation (DIC) for surviving spouse and children, pension for war-era veterans, death pension for surviving spouse and children, dependent allowances, housebound and aid and attendance (A&A) allowance, California Yountville Veterans Home admissions, and request and correction of military records.",
+      "Contact: Richard “Steve” Johnson, Veteran Service Officer (VSO)",
+      "Address: Placer County Veterans Services Office, 1000 Sunset Blvd Ste 115, Rocklin, CA 95765",
+      "Phone: (916) 780-3290",
+      "Fax: (916) 780-3290",
+      "Email: doliveira@placer.ca.gov doliveira@placer.ca.gov"
+     ],
+     "emails": [
+      "doliveira@placer.ca.gov"
+     ]
+    },
+    {
+     "line": "Sacramento Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "This program works with veterans to help them get off the street and placed into their own stable and secure housing through their Rapid re-housing program or their preventive services. They offer soft case management, monthly budgeting skills training, and housing stabilization planning. General qualifications include: must have a photo ID, DD-214, proof of income, Honorable Discharge, be a Veteran, and be at-risk or at immediate risk of becoming homeless. Find out if you qualify.",
+      "Address: 10636 Schirra Ave, Mather, CA 95670",
+      "Phone: (916) 228-3153",
+      "Sacramento Veterans Resource Center",
+      "The center offers veteran employment assistance training programs and training, a two-year veterans’ transitional housing program for men and women, and advocates for veterans’ rent and veterans’ utility assistance.",
+      "The center also advocates for 90-day veterans drug rehab and alcohol treatment programs for men and women, and offers the Homeless Veterans Reintegration Program (HVRP) to help homeless veterans find work and gain training at the center.",
+      "Address: 7270 East Southgate Drive, Sacramento, CA 95823"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/Founder, Women Veterans Alliance and a 100% woman, service-disabled veteran-owned small business",
+     "position": "college_ceo",
+     "window": [
+      "Women Veterans Alliance",
+      "The Alliance focuses on the quality of life of women veterans by transforming the way the community networks to bring people and programs directly together through an energetic grass roots platform",
+      "Contact: Melissa Washington, Navy Veteran",
+      "President/Founder, Women Veterans Alliance and a 100% woman, service-disabled veteran-owned small business",
+      "Phone: (916) 253-7357",
+      "Email: melissawash@gmail.com melissawash@gmail.com",
+      "View Our 2025 Veterans Day Event Album"
+     ],
+     "emails": [
+      "melissawash@gmail.com"
+     ]
+    },
+    {
+     "line": "Veterans Success Center — Rocklin",
+     "position": "vrc",
+     "window": [
+      "Email: melissawash@gmail.com melissawash@gmail.com",
+      "View Our 2025 Veterans Day Event Album",
+      "Contact Us",
+      "Veterans Success Center — Rocklin",
+      "(916) 660-7470",
+      "veterans@sierracollege.edu veterans@sierracollege.edu",
+      "Rocklin"
+     ],
+     "emails": [
+      "melissawash@gmail.com",
+      "veterans@sierracollege.edu"
+     ]
+    },
+    {
+     "line": "Veterans Success Center — Nevada County",
+     "position": "vrc",
+     "window": [
+      "veterans@sierracollege.edu veterans@sierracollege.edu",
+      "Rocklin",
+      "Building LR, Room 424",
+      "Veterans Success Center — Nevada County",
+      "(530) 274-5303",
+      "Nevada County",
+      "Building N1, Room 208"
+     ],
+     "emails": [
+      "veterans@sierracollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/academics/interest-areas/public-service/administration-of-justice/",
+   "final_url": "https://www.sierracollege.edu/academics/interest-areas/public-service/administration-of-justice/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Law Enforcement curriculum prepares students for a career as a peace officer. Learn more.",
+     "position": null,
+     "window": [
+      "Administration of Justice",
+      "Law Enforcement - Associate of Arts Degree or Associate of Science Degree",
+      "Description",
+      "The Law Enforcement curriculum prepares students for a career as a peace officer. Learn more.",
+      "COURSE LIST",
+      "See the full list of all required and elective courses in this program.",
+      "View Sample AA Pathway/Map"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Blair H. Spaulding, ADMJ Department Coordinator",
+     "position": null,
+     "window": [
+      "Put Your Mind to It",
+      "Following graduation, Administration of Justice majors work in many fields, including law enforcement as police officers, deputy sheriffs, detectives, attorneys, judges, or work in corrections as probation or parole officers.",
+      "Our Administration of Justice Department instructors are dedicated to preparing Peace Officers and other criminal justice professionals with a service mindset and empathetic heart who will make a positive impact in the communities they serve!",
+      "Blair H. Spaulding, ADMJ Department Coordinator",
+      "Contact Us",
+      "Division of Business, Technology and Public Service",
+      "(916) 660-7800"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/admissions/forms/",
+   "final_url": "https://www.sierracollege.edu/admissions/forms/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/admissions/how-to-apply/attending-college-in-high-school/articulation-process/",
+   "final_url": "https://www.sierracollege.edu/admissions/how-to-apply/attending-college-in-high-school/articulation-process/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "High School Articulation Process | Sierra College",
+     "position": "articulation_officer",
+     "window": [
+      "High School Articulation Process | Sierra College",
+      "Skip to content",
+      "Planned Software Upgrade",
+      "This weekend, mySierra and Banner applications will be unavailable to students, staff and faculty starting at 12:01am on Saturday, Oct. 31 until 2pm on Sunday, Nov. 1. During this maintenance period, you will still be able to access Canvas, DegreeWorks, Email (Outlook) and Sierra Connect."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Athletics",
+      "Events",
+      "Toggle Search Form",
+      "High School Articulation Process",
+      "close section navigation",
+      "Admissions",
+      "Considering Sierra College?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Register for Classes",
+      "Sierra Promise",
+      "Transcripts",
+      "High School Articulation Process",
+      "HomeAdmissionsHow To ApplyApply to Attend College While in High SchoolHigh School Articulation Process",
+      "What is High School Articulation?",
+      "Articulation is a process where students can earn college credits for specific Sierra College courses they take in high school by matching the course requirements of their high school course with an equivalent college course. This means that if students earn a passing grade in the articulated class, they can earn both high school and college credit."
+     ],
+     "emails": []
+    },
+    {
+     "line": "HomeAdmissionsHow To ApplyApply to Attend College While in High SchoolHigh School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Sierra Promise",
+      "Transcripts",
+      "High School Articulation Process",
+      "HomeAdmissionsHow To ApplyApply to Attend College While in High SchoolHigh School Articulation Process",
+      "What is High School Articulation?",
+      "Articulation is a process where students can earn college credits for specific Sierra College courses they take in high school by matching the course requirements of their high school course with an equivalent college course. This means that if students earn a passing grade in the articulated class, they can earn both high school and college credit.",
+      "High School Articulation Process"
+     ],
+     "emails": []
+    },
+    {
+     "line": "What is High School Articulation?",
+     "position": "articulation_officer",
+     "window": [
+      "Transcripts",
+      "High School Articulation Process",
+      "HomeAdmissionsHow To ApplyApply to Attend College While in High SchoolHigh School Articulation Process",
+      "What is High School Articulation?",
+      "Articulation is a process where students can earn college credits for specific Sierra College courses they take in high school by matching the course requirements of their high school course with an equivalent college course. This means that if students earn a passing grade in the articulated class, they can earn both high school and college credit.",
+      "High School Articulation Process",
+      "close section navigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "HomeAdmissionsHow To ApplyApply to Attend College While in High SchoolHigh School Articulation Process",
+      "What is High School Articulation?",
+      "Articulation is a process where students can earn college credits for specific Sierra College courses they take in high school by matching the course requirements of their high school course with an equivalent college course. This means that if students earn a passing grade in the articulated class, they can earn both high school and college credit.",
+      "High School Articulation Process",
+      "close section navigation",
+      "Admissions",
+      "Considering Sierra College?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Request to review the Sierra College official course outline. Email Nigel Haikins-Appiah, Articulation Coordinator, at nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+     "position": "articulation_officer",
+     "window": [
+      "Steps for High School Instructors to Participate",
+      "Step 1: How to Articulate a Class",
+      "Decide which Sierra College course you would like articulated. Please note that an articulation agreement can only be signed with one college. This means students who earn units from one community college and decide to attend a different community college following high school would need to petition for course credit. Students should be informed there is no guarantee their petition will be accepted.",
+      "Request to review the Sierra College official course outline. Email Nigel Haikins-Appiah, Articulation Coordinator, at nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+      "Review the Sierra College course outline. Be sure your high school course closely aligns with Sierra College’s course content, materials and evaluation methods.",
+      "Complete the Sierra College High School Course Articulation Agreement Request Form or Renewal Form, including signatures from appropriate high school/ROP instructor(s) and administrator(s).",
+      "Submit your application materials. Email the High School/ROP Course Outline and the Sierra College High School Course Articulation agreement to nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu."
+     ],
+     "emails": [
+      "nhaikinsappiah@sierracollege.edu"
+     ]
+    },
+    {
+     "line": "Complete the Sierra College High School Course Articulation Agreement Request Form or Renewal Form, including signatures from appropriate high school/ROP instructor(s) and administrator(s).",
+     "position": "articulation_officer",
+     "window": [
+      "Decide which Sierra College course you would like articulated. Please note that an articulation agreement can only be signed with one college. This means students who earn units from one community college and decide to attend a different community college following high school would need to petition for course credit. Students should be informed there is no guarantee their petition will be accepted.",
+      "Request to review the Sierra College official course outline. Email Nigel Haikins-Appiah, Articulation Coordinator, at nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+      "Review the Sierra College course outline. Be sure your high school course closely aligns with Sierra College’s course content, materials and evaluation methods.",
+      "Complete the Sierra College High School Course Articulation Agreement Request Form or Renewal Form, including signatures from appropriate high school/ROP instructor(s) and administrator(s).",
+      "Submit your application materials. Email the High School/ROP Course Outline and the Sierra College High School Course Articulation agreement to nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+      "Once approved, articulations are valid for two years, unless an earlier review is requested by Sierra College. A member of the college’s High School Articulation team will contact you about renewal of your application prior to its expiration.",
+      "We encourage site visits to specific programs and/or meetings with faculty at Sierra College. Visits can be arranged by a member of the Outreach Department."
+     ],
+     "emails": [
+      "nhaikinsappiah@sierracollege.edu"
+     ]
+    },
+    {
+     "line": "Have Questions? Please contact Nigel Haikins-Appiah, Sierra College Articulation Coordinator, at nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+     "position": "articulation_officer",
+     "window": [
+      "Submit your application materials. Email the High School/ROP Course Outline and the Sierra College High School Course Articulation agreement to nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+      "Once approved, articulations are valid for two years, unless an earlier review is requested by Sierra College. A member of the college’s High School Articulation team will contact you about renewal of your application prior to its expiration.",
+      "We encourage site visits to specific programs and/or meetings with faculty at Sierra College. Visits can be arranged by a member of the Outreach Department.",
+      "Have Questions? Please contact Nigel Haikins-Appiah, Sierra College Articulation Coordinator, at nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+      "Step 2: What to Do Once Your Course Has Been Articulated",
+      "Congratulations on articulating your course! Make sure your students are aware that this is a college-level course, and they are eligible to earn college credit upon its completion if they earn a passing grade in the course and on the final exam.",
+      "To ensure your students receive college credit, please note:"
+     ],
+     "emails": [
+      "nhaikinsappiah@sierracollege.edu"
+     ]
+    },
+    {
+     "line": "To begin the unit awarding process, contact the Sierra College Articulation Coordinator, Nigel Haikins-Appiah, at nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+     "position": "articulation_officer",
+     "window": [
+      "obtain a signed permission form from a parent or guardian",
+      "earn a passing grade in the course",
+      "Step 3: How to Get Units Awarded",
+      "To begin the unit awarding process, contact the Sierra College Articulation Coordinator, Nigel Haikins-Appiah, at nhaikinsappiah@sierracollege.edu nhaikinsappiah@sierracollege.edu.",
+      "Students will be awarded credit that appears on an official transcript during Sierra College’s summer term following the end of your course. The is done since your school’s spring semester may end after Sierra College’s official spring term ends.",
+      "All California Community College transcripts identify high school articulated courses as “credit by exam – high school articulation,” as required by California Code of Regulations Title 5. California State Universities and University of California campuses (and other transfer institutions) may or may not give credit for high school articulated credit by exam (CE) courses.",
+      "Get In Touch"
+     ],
+     "emails": [
+      "nhaikinsappiah@sierracollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/",
+   "final_url": "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/veteran-success-center-rocklin/",
+   "final_url": "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/veteran-success-center-rocklin/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center — Rocklin – Sierra College",
+     "position": "vrc",
+     "window": [
+      "Veterans Success Center — Rocklin – Sierra College",
+      "Skip to content",
+      "Planned Software Upgrade",
+      "This weekend, mySierra and Banner applications will be unavailable to students, staff and faculty starting at 12:01am on Saturday, Oct. 31 until 2pm on Sunday, Nov. 1. During this maintenance period, you will still be able to access Canvas, DegreeWorks, Email (Outlook) and Sierra Connect."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center — Rocklin",
+     "position": "vrc",
+     "window": [
+      "Events",
+      "Toggle Search Form",
+      "HomeAbout Sierra CollegeEmployee and Office DirectoryVeterans Success Center — Rocklin",
+      "Veterans Success Center — Rocklin",
+      "Rocklin",
+      "Building LR, Room 424",
+      "5100 Sierra College Blvd."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/veterans-success-center/",
+   "final_url": "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/veterans-success-center/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center — Nevada County – Sierra College",
+     "position": "vrc",
+     "window": [
+      "Veterans Success Center — Nevada County – Sierra College",
+      "Skip to content",
+      "Planned Software Upgrade",
+      "This weekend, mySierra and Banner applications will be unavailable to students, staff and faculty starting at 12:01am on Saturday, Oct. 31 until 2pm on Sunday, Nov. 1. During this maintenance period, you will still be able to access Canvas, DegreeWorks, Email (Outlook) and Sierra Connect."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center — Nevada County",
+     "position": "vrc",
+     "window": [
+      "Events",
+      "Toggle Search Form",
+      "HomeAbout Sierra CollegeEmployee and Office DirectoryVeterans Success Center — Nevada County",
+      "Veterans Success Center — Nevada County",
+      "Nevada County",
+      "Building N1, Room 208",
+      "250 Sierra College Dr."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/admissions/",
+   "final_url": "https://www.sierracollege.edu/admissions/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/admissions-and-records-rocklin/",
+   "final_url": "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/admissions-and-records-rocklin/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Close Alert",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Administration",
+      "Leadership",
+      "President’s Office",
+      "Board of Trustees",
+      "Trustee Election (Nov. 2026)",
+      "Community Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Support Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Support New and Existing Scholarships",
+      "Support Student Assistance Fund Endowment (SAFE)",
+      "Support Student Emergency Fund",
+      "Support Veterans Success Center",
+      "Impact Stories",
+      "Giving",
+      "Annual Giving"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Circle",
+     "position": "college_ceo",
+     "window": [
+      "Impact Stories",
+      "Giving",
+      "Annual Giving",
+      "President’s Circle",
+      "Student Success and Equity",
+      "Information For",
+      "Community / Visitors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "High School Articulation Process",
+     "position": "articulation_officer",
+     "window": [
+      "Credit for Prior Learning",
+      "Course Placement",
+      "College in High School",
+      "High School Articulation Process",
+      "Financial Aid",
+      "Basic Needs and Support Services",
+      "Book Vouchers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Student Accessibility Services (SAS)",
+      "TRiO",
+      "Undocumented Student Center",
+      "Veterans Success Center",
+      "Student Tech Support",
+      "Athletics",
+      "Events"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/admissions-and-records-nevada-county/",
+  "https://www.sierracollege.edu/about-sierra-college/employee-office-directory/admissions-and-records-tahoe-truckee/"
+ ],
+ "run": "41436168077"
+}

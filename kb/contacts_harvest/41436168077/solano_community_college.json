@@ -1,0 +1,1740 @@
+{
+ "college": "Solano Community College",
+ "homepage": "https://www.solano.edu/",
+ "read_at": "2026-11-02T11:32:29+00:00",
+ "pages": [
+  {
+   "url": "https://www.solano.edu/",
+   "final_url": "https://www.solano.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Holiday Weekend - No Classes / Campus Closed",
+     "position": "college_ceo",
+     "window": [
+      "Optional Staff Professional Development Day - No Classes",
+      "Required Staff Professional Development Day - No Classes",
+      "Martin Luther King Jr. Day - No Classes / Campus Closed",
+      "President's Holiday Weekend - No Classes / Campus Closed",
+      "Explore Our College Campuses",
+      "Fairfield Campus",
+      "4000 Suisun Valley Road . Fairfield, CA 94534"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.solano.edu/administrative-offices/academic-affairs/index.php",
+   "final_url": "https://www.solano.edu/administrative-offices/academic-affairs/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "David Williams, Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Office Hours:",
+      "Mon. - Thurs. 8:30 am - 4:30 pm",
+      "Friday 8:30 am - 3:00 pm",
+      "David Williams, Vice President of Academic Affairs",
+      "Claire Gover, Executive Coordinator",
+      "claire.gover@solano.edu claire.gover@solano.edu",
+      "(707) 864 7102"
+     ],
+     "emails": [
+      "claire.gover@solano.edu"
+     ]
+    },
+    {
+     "line": "Claire Gover, Executive Coordinator",
+     "position": null,
+     "window": [
+      "Mon. - Thurs. 8:30 am - 4:30 pm",
+      "Friday 8:30 am - 3:00 pm",
+      "David Williams, Vice President of Academic Affairs",
+      "Claire Gover, Executive Coordinator",
+      "claire.gover@solano.edu claire.gover@solano.edu",
+      "(707) 864 7102",
+      "Academic Affairs"
+     ],
+     "emails": [
+      "claire.gover@solano.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.solano.edu/employee-directory/index.php",
+   "final_url": "https://www.solano.edu/employee-directory/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Dean, Research & Planning",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "james.dekloe@solano.edu james.dekloe@solano.edu",
+      "Rexford, Nathan",
+      "Dean, Research & Planning",
+      "Superintendent-Presidents Office",
+      "(707) 864-7174",
+      "nathan.rexford@solano.edu nathan.rexford@solano.edu"
+     ],
+     "emails": [
+      "james.dekloe@solano.edu",
+      "nathan.rexford@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Counseling",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "wanda.butters@solano.edu wanda.butters@solano.edu",
+      "Green, Murrell",
+      "Dean, Counseling",
+      "Superintendent-Presidents Office",
+      "(707) 864-7256",
+      "murrell.green@solano.edu murrell.green@solano.edu"
+     ],
+     "emails": [
+      "murrell.green@solano.edu",
+      "wanda.butters@solano.edu"
+     ]
+    },
+    {
+     "line": "Superintendent-President",
+     "position": "college_ceo",
+     "window": [
+      "(707) 864-7000",
+      "alison.bolton@solano.edu alison.bolton@solano.edu",
+      "Butler, Kellie",
+      "Superintendent-President",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "Disu, Carmine"
+     ],
+     "emails": [
+      "alison.bolton@solano.edu"
+     ]
+    },
+    {
+     "line": "Assistive Technology & Alternate Media Coordinator",
+     "position": null,
+     "window": [
+      "Mathematics and Science",
+      "jessica.mahinthakumar@solano.edu jessica.mahinthakumar@solano.edu",
+      "Ashby, Steven",
+      "Assistive Technology & Alternate Media Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "steven.ashby@solano.edu steven.ashby@solano.edu"
+     ],
+     "emails": [
+      "jessica.mahinthakumar@solano.edu",
+      "steven.ashby@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Technology Services & Support",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "chor.thao@solano.edu chor.thao@solano.edu",
+      "Howell, Justin",
+      "Director, Technology Services & Support",
+      "Superintendent-Presidents Office",
+      "(707) 864-7104",
+      "justin.howell@solano.edu justin.howell@solano.edu"
+     ],
+     "emails": [
+      "chor.thao@solano.edu",
+      "justin.howell@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Mathematics & Science",
+     "position": null,
+     "window": [
+      "Superintendent-Presidents Office",
+      "benjamin.zumwalt@solano.edu benjamin.zumwalt@solano.edu",
+      "Cromheecke, Jessica",
+      "Dean, Mathematics & Science",
+      "Superintendent-Presidents Office",
+      "(707) 864-7110",
+      "jessica.cromheecke@solano.edu jessica.cromheecke@solano.edu"
+     ],
+     "emails": [
+      "benjamin.zumwalt@solano.edu",
+      "jessica.cromheecke@solano.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "joseph.torres@solano.edu joseph.torres@solano.edu",
+      "Jude, Sandra",
+      "Executive Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 863-7800",
+      "alexandra.jude@solano.edu alexandra.jude@solano.edu"
+     ],
+     "emails": [
+      "alexandra.jude@solano.edu",
+      "joseph.torres@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Student Equity & Success",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "stephanie.williamson@solano.edu stephanie.williamson@solano.edu",
+      "Watson-Perez, Heather",
+      "Dean, Student Equity & Success",
+      "Superintendent-Presidents Office",
+      "(707) 864-7148",
+      "heather.watson-perez@solano.edu heather.watson-perez@solano.edu"
+     ],
+     "emails": [
+      "heather.watson-perez@solano.edu",
+      "stephanie.williamson@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, The Simulation Center & Allied Health Programs",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "jailene.yanez-romero@solano.edu jailene.yanez-romero@solano.edu",
+      "Lepera, Stephen",
+      "Director, The Simulation Center & Allied Health Programs",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "stephen.lepera@solano.edu stephen.lepera@solano.edu"
+     ],
+     "emails": [
+      "jailene.yanez-romero@solano.edu",
+      "stephen.lepera@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Human Resources",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "cynthia.jourgensen@solano.edu cynthia.jourgensen@solano.edu",
+      "Abbate, Salvatore",
+      "Director, Human Resources",
+      "Superintendent-Presidents Office",
+      "(707) 864-7281",
+      "salvatore.abbate@solano.edu salvatore.abbate@solano.edu"
+     ],
+     "emails": [
+      "cynthia.jourgensen@solano.edu",
+      "salvatore.abbate@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, MESA",
+     "position": null,
+     "window": [
+      "Mathematics and Science",
+      "federico.tondini@solano.edu federico.tondini@solano.edu",
+      "Martinez, Ariana",
+      "Director, MESA",
+      "Superintendent-Presidents Office",
+      "(707) 864-7295",
+      "ariana.martinez@solano.edu ariana.martinez@solano.edu"
+     ],
+     "emails": [
+      "ariana.martinez@solano.edu",
+      "federico.tondini@solano.edu"
+     ]
+    },
+    {
+     "line": "Athletics Program Coordinator, Tennis",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "michelle.arce@solano.edu michelle.arce@solano.edu",
+      "Rovira, Rafael",
+      "Athletics Program Coordinator, Tennis",
+      "Health Sciences",
+      "(707) 864-7000",
+      "rafael.rovira@solano.edu rafael.rovira@solano.edu"
+     ],
+     "emails": [
+      "michelle.arce@solano.edu",
+      "rafael.rovira@solano.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator, S-P & Governing Board",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "richard.stofle@solano.edu richard.stofle@solano.edu",
+      "Casimere, Tiffany",
+      "Executive Coordinator, S-P & Governing Board",
+      "Superintendent-Presidents Office",
+      "(707) 864-7299",
+      "tiffany.casimere@solano.edu tiffany.casimere@solano.edu"
+     ],
+     "emails": [
+      "richard.stofle@solano.edu",
+      "tiffany.casimere@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, School of Liberal Arts",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "marc.lancet@solano.edu marc.lancet@solano.edu",
+      "Glines, Neil",
+      "Dean, School of Liberal Arts",
+      "Superintendent-Presidents Office",
+      "(707) 864-7250",
+      "neil.glines@solano.edu neil.glines@solano.edu"
+     ],
+     "emails": [
+      "marc.lancet@solano.edu",
+      "neil.glines@solano.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "(707) 864-7135",
+      "tracy.drake@solano.edu tracy.drake@solano.edu",
+      "Williams, David",
+      "Vice President, Academic Affairs",
+      "Superintendent-Presidents Office",
+      "(707) 864-7117",
+      "david.williams@solano.edu david.williams@solano.edu"
+     ],
+     "emails": [
+      "david.williams@solano.edu",
+      "tracy.drake@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Business Services",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "danica.bravo@solano.edu danica.bravo@solano.edu",
+      "Sanchez, Edith",
+      "Director, Business Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "edith.sanchez@solano.edu edith.sanchez@solano.edu"
+     ],
+     "emails": [
+      "danica.bravo@solano.edu",
+      "edith.sanchez@solano.edu"
+     ]
+    },
+    {
+     "line": "Assistant Director, Facilities",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "narisa.orosco-woolworth@solano.edu narisa.orosco-woolworth@solano.edu",
+      "Ercole, Taylor",
+      "Assistant Director, Facilities",
+      "Superintendent-Presidents Office",
+      "(707) 864-7197",
+      "taylor.ercole@solano.edu taylor.ercole@solano.edu"
+     ],
+     "emails": [
+      "narisa.orosco-woolworth@solano.edu",
+      "taylor.ercole@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, SCC Ed Foundation",
+     "position": null,
+     "window": [
+      "Superintendent-Presidents Office",
+      "gjenaii.encisogivhan@solano.edu gjenaii.encisogivhan@solano.edu",
+      "Warne, Carolyn",
+      "Director, SCC Ed Foundation",
+      "Superintendent-Presidents Office",
+      "(707) 864-7141",
+      "carolyn.warne@solano.edu carolyn.warne@solano.edu"
+     ],
+     "emails": [
+      "carolyn.warne@solano.edu",
+      "gjenaii.encisogivhan@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Veterans",
+     "position": null,
+     "window": [
+      "(707) 864-7289",
+      "brad.paschal@solano.edu brad.paschal@solano.edu",
+      "Kennedy, Amy",
+      "Director, Veterans",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "amy.kennedy@solano.edu amy.kennedy@solano.edu"
+     ],
+     "emails": [
+      "amy.kennedy@solano.edu",
+      "brad.paschal@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Online Education",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "teri.yumae@solano.edu teri.yumae@solano.edu",
+      "Perez, John",
+      "Director, Online Education",
+      "Superintendent-Presidents Office",
+      "(707) 864-7133",
+      "john.perez@solano.edu john.perez@solano.edu"
+     ],
+     "emails": [
+      "john.perez@solano.edu",
+      "teri.yumae@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Social & Behavioral Sciences",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "adrienne.cary@solano.edu adrienne.cary@solano.edu",
+      "Reeve, Melissa",
+      "Dean, Social & Behavioral Sciences",
+      "Social and Behavioral Sciences",
+      "(707) 864-7142",
+      "melissa.reeve@solano.edu melissa.reeve@solano.edu"
+     ],
+     "emails": [
+      "adrienne.cary@solano.edu",
+      "melissa.reeve@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Health Sciences",
+      "rajan.bhatia@solano.edu rajan.bhatia@solano.edu",
+      "Bermudez, Mariano",
+      "Public Safety Officer",
+      "Superintendent-Presidents Office",
+      "mariano.bermudez@solano.edu mariano.bermudez@solano.edu",
+      "Jimenez, Ruth"
+     ],
+     "emails": [
+      "mariano.bermudez@solano.edu",
+      "rajan.bhatia@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Mathematics and Science",
+      "kimberley.katleba-billock@solano.edu kimberley.katleba-billock@solano.edu",
+      "Roberts, Derrick",
+      "Public Safety Officer",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "derrick.roberts@solano.edu derrick.roberts@solano.edu"
+     ],
+     "emails": [
+      "derrick.roberts@solano.edu",
+      "kimberley.katleba-billock@solano.edu"
+     ]
+    },
+    {
+     "line": "Athletic Director",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "maria.magsaysay@solano.edu maria.magsaysay@solano.edu",
+      "Aubert, Alison",
+      "Athletic Director",
+      "Superintendent-Presidents Office",
+      "(707) 864-7166",
+      "alison.aubert@solano.edu alison.aubert@solano.edu"
+     ],
+     "emails": [
+      "alison.aubert@solano.edu",
+      "maria.magsaysay@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "natisha.hutson@solano.edu natisha.hutson@solano.edu",
+      "Miraflor, Luis",
+      "Public Safety Officer",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "luis.miraflor@solano.edu luis.miraflor@solano.edu"
+     ],
+     "emails": [
+      "luis.miraflor@solano.edu",
+      "natisha.hutson@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer (PT)",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "catherine.cyr@solano.edu catherine.cyr@solano.edu",
+      "Tunkara, Andrea",
+      "Public Safety Officer (PT)",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "andrea.tunkara@solano.edu andrea.tunkara@solano.edu"
+     ],
+     "emails": [
+      "andrea.tunkara@solano.edu",
+      "catherine.cyr@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Marketing & Audience Services",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "andrea.tunkara@solano.edu andrea.tunkara@solano.edu",
+      "Kuta, Dagmar",
+      "Director, Marketing & Audience Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "dagmar.kuta@solano.edu dagmar.kuta@solano.edu"
+     ],
+     "emails": [
+      "andrea.tunkara@solano.edu",
+      "dagmar.kuta@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean of External Programs",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "christopher.mcbride@solano.edu christopher.mcbride@solano.edu",
+      "Zitko, Peter",
+      "Dean of External Programs",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "peter.zitko@solano.edu peter.zitko@solano.edu"
+     ],
+     "emails": [
+      "christopher.mcbride@solano.edu",
+      "peter.zitko@solano.edu"
+     ]
+    },
+    {
+     "line": "EOPS & CARE Coordinator",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "danielle.widemann@solano.edu danielle.widemann@solano.edu",
+      "Macaraeg, Darah",
+      "EOPS & CARE Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "darah.macaraeg@solano.edu darah.macaraeg@solano.edu"
+     ],
+     "emails": [
+      "danielle.widemann@solano.edu",
+      "darah.macaraeg@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Facilities",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "carli.seaver@solano.edu carli.seaver@solano.edu",
+      "Lowe, Trenton",
+      "Director, Facilities",
+      "Superintendent-Presidents Office",
+      "(707) 863-7855",
+      "trenton.lowe@solano.edu trenton.lowe@solano.edu"
+     ],
+     "emails": [
+      "carli.seaver@solano.edu",
+      "trenton.lowe@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, School of Applied Technology & Business",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "kevin.dulyea@solano.edu kevin.dulyea@solano.edu",
+      "Cortes, Jose",
+      "Dean, School of Applied Technology & Business",
+      "Superintendent-Presidents Office",
+      "(707) 864-7287",
+      "jose.cortes@solano.edu jose.cortes@solano.edu"
+     ],
+     "emails": [
+      "jose.cortes@solano.edu",
+      "kevin.dulyea@solano.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Finance & Administration",
+     "position": null,
+     "window": [
+      "Mathematics and Science",
+      "trevor.gonzalinajec@solano.edu trevor.gonzalinajec@solano.edu",
+      "Wheet, Susan",
+      "Vice President, Finance & Administration",
+      "Superintendent-Presidents Office",
+      "(707) 864-7209",
+      "susan.wheet@solano.edu susan.wheet@solano.edu"
+     ],
+     "emails": [
+      "susan.wheet@solano.edu",
+      "trevor.gonzalinajec@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Student Development & Engagement",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "luis.angelcampos@solano.edu luis.angelcampos@solano.edu",
+      "Ballesteros, Gabriela",
+      "Director, Student Development & Engagement",
+      "Superintendent-Presidents Office",
+      "(707) 864-7186",
+      "gabriela.ballesteros@solano.edu gabriela.ballesteros@solano.edu"
+     ],
+     "emails": [
+      "gabriela.ballesteros@solano.edu",
+      "luis.angelcampos@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Information Services",
+     "position": null,
+     "window": [
+      "Superintendent-Presidents Office",
+      "jose.molinaperez@solano.edu jose.molinaperez@solano.edu",
+      "Tenty, Claudia",
+      "Director, Information Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7140",
+      "claudia.tenty@solano.edu claudia.tenty@solano.edu"
+     ],
+     "emails": [
+      "claudia.tenty@solano.edu",
+      "jose.molinaperez@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Children's Programs",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "jarrod.infante@solano.edu jarrod.infante@solano.edu",
+      "Drake, Sabrina",
+      "Director, Children's Programs",
+      "Superintendent-Presidents Office",
+      "(707) 864-7183",
+      "sabrina.drake@solano.edu sabrina.drake@solano.edu"
+     ],
+     "emails": [
+      "jarrod.infante@solano.edu",
+      "sabrina.drake@solano.edu"
+     ]
+    },
+    {
+     "line": "Transfer Center Coordinator",
+     "position": null,
+     "window": [
+      "(707) 864-7296",
+      "galen.tom@solano.edu galen.tom@solano.edu",
+      "Sloan, Robin",
+      "Transfer Center Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "robin.sloan@solano.edu robin.sloan@solano.edu"
+     ],
+     "emails": [
+      "galen.tom@solano.edu",
+      "robin.sloan@solano.edu"
+     ]
+    },
+    {
+     "line": "Career & Job Placement Coordinator",
+     "position": null,
+     "window": [
+      "Superintendent-Presidents Office",
+      "emily.mathe@solano.edu emily.mathe@solano.edu",
+      "Young, Patricia",
+      "Career & Job Placement Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7124",
+      "patricia.young@solano.edu patricia.young@solano.edu"
+     ],
+     "emails": [
+      "emily.mathe@solano.edu",
+      "patricia.young@solano.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "(707) 864-7000",
+      "kelly.ryan@solano.edu kelly.ryan@solano.edu",
+      "Neeley, Lisa",
+      "Vice President, Student Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7159",
+      "lisa.neeley@solano.edu lisa.neeley@solano.edu"
+     ],
+     "emails": [
+      "kelly.ryan@solano.edu",
+      "lisa.neeley@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "amanda.morrison@solano.edu amanda.morrison@solano.edu",
+      "Dayrit, Leon",
+      "Public Safety Officer",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "leon.dayrit@solano.edu leon.dayrit@solano.edu"
+     ],
+     "emails": [
+      "amanda.morrison@solano.edu",
+      "leon.dayrit@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Marketing/Communications & Public Info. Officer",
+     "position": null,
+     "window": [
+      "(707) 864-7262",
+      "kevin.marks@solano.edu kevin.marks@solano.edu",
+      "Lee, Christina",
+      "Director, Marketing/Communications & Public Info. Officer",
+      "Superintendent-Presidents Office",
+      "(707) 864-7259",
+      "christina.lee@solano.edu christina.lee@solano.edu"
+     ],
+     "emails": [
+      "christina.lee@solano.edu",
+      "kevin.marks@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Financial Aid",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "jennifer.hesling@solano.edu jennifer.hesling@solano.edu",
+      "Scott, Patrick",
+      "Dean, Financial Aid",
+      "Superintendent-Presidents Office",
+      "(707) 863-7889",
+      "patrick.scott@solano.edu patrick.scott@solano.edu"
+     ],
+     "emails": [
+      "jennifer.hesling@solano.edu",
+      "patrick.scott@solano.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Technology",
+     "position": null,
+     "window": [
+      "Liberal Arts",
+      "briana.clark-forgie@solano.edu briana.clark-forgie@solano.edu",
+      "Cornelison, Jon",
+      "Vice President, Technology",
+      "Superintendent-Presidents Office",
+      "(707) 864-7275",
+      "jon.cornelison@solano.edu jon.cornelison@solano.edu"
+     ],
+     "emails": [
+      "briana.clark-forgie@solano.edu",
+      "jon.cornelison@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Enrollment Services",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "connor.marshall@solano.edu connor.marshall@solano.edu",
+      "Borelli, Alysa",
+      "Dean, Enrollment Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7200",
+      "alysa.borelli@solano.edu alysa.borelli@solano.edu"
+     ],
+     "emails": [
+      "alysa.borelli@solano.edu",
+      "connor.marshall@solano.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "george.reeves@solano.edu george.reeves@solano.edu",
+      "Gover, Claire",
+      "Executive Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7102",
+      "claire.gover@solano.edu claire.gover@solano.edu"
+     ],
+     "emails": [
+      "claire.gover@solano.edu",
+      "george.reeves@solano.edu"
+     ]
+    },
+    {
+     "line": "Safety Asset Coordinator (Lead)",
+     "position": null,
+     "window": [
+      "(707) 864-7102",
+      "claire.gover@solano.edu claire.gover@solano.edu",
+      "Lehfeldt, Jeffery",
+      "Safety Asset Coordinator (Lead)",
+      "Superintendent-Presidents Office",
+      "(707) 864-7172",
+      "jeffery.lehfeldt@solano.edu jeffery.lehfeldt@solano.edu"
+     ],
+     "emails": [
+      "claire.gover@solano.edu",
+      "jeffery.lehfeldt@solano.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.solano.edu/administrative-offices/index.php",
+   "final_url": "https://www.solano.edu/administrative-offices/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the Superintendent President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Administration",
+      "Administration",
+      "Office of the Superintendent President",
+      "Office of Student Services",
+      "Office of Academic Affairs",
+      "Office of Finance + Administration"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://solano.edu/calendar.php",
+   "final_url": "https://solano.edu/calendar.php",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://solano.edu/administrative-offices/business-services/index.php",
+   "final_url": "https://solano.edu/administrative-offices/business-services/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "The Vice President serves as as the Chief Financial Officer for the District and the",
+     "position": null,
+     "window": [
+      "instructional support in the areas of finance and budget, purchasing and procurement,",
+      "contract management, insurance and risk management, bookstore, warehouse, mail services,",
+      "college police services, and graphics and printing services.",
+      "The Vice President serves as as the Chief Financial Officer for the District and the",
+      "department is committed to providing high quality service to its internal & external",
+      "customers, maintaining fiscal stability, and assisting the institution to fulfill",
+      "its mission & vision."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://solano.edu/administrative-offices/academic-affairs/index.php",
+   "final_url": "https://solano.edu/administrative-offices/academic-affairs/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "David Williams, Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Office Hours:",
+      "Mon. - Thurs. 8:30 am - 4:30 pm",
+      "Friday 8:30 am - 3:00 pm",
+      "David Williams, Vice President of Academic Affairs",
+      "Claire Gover, Executive Coordinator",
+      "claire.gover@solano.edu claire.gover@solano.edu",
+      "(707) 864 7102"
+     ],
+     "emails": [
+      "claire.gover@solano.edu"
+     ]
+    },
+    {
+     "line": "Claire Gover, Executive Coordinator",
+     "position": null,
+     "window": [
+      "Mon. - Thurs. 8:30 am - 4:30 pm",
+      "Friday 8:30 am - 3:00 pm",
+      "David Williams, Vice President of Academic Affairs",
+      "Claire Gover, Executive Coordinator",
+      "claire.gover@solano.edu claire.gover@solano.edu",
+      "(707) 864 7102",
+      "Academic Affairs"
+     ],
+     "emails": [
+      "claire.gover@solano.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://solano.edu/employee-directory/index.php",
+   "final_url": "https://solano.edu/employee-directory/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Dean, Research & Planning",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "james.dekloe@solano.edu james.dekloe@solano.edu",
+      "Rexford, Nathan",
+      "Dean, Research & Planning",
+      "Superintendent-Presidents Office",
+      "(707) 864-7174",
+      "nathan.rexford@solano.edu nathan.rexford@solano.edu"
+     ],
+     "emails": [
+      "james.dekloe@solano.edu",
+      "nathan.rexford@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Counseling",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "wanda.butters@solano.edu wanda.butters@solano.edu",
+      "Green, Murrell",
+      "Dean, Counseling",
+      "Superintendent-Presidents Office",
+      "(707) 864-7256",
+      "murrell.green@solano.edu murrell.green@solano.edu"
+     ],
+     "emails": [
+      "murrell.green@solano.edu",
+      "wanda.butters@solano.edu"
+     ]
+    },
+    {
+     "line": "Superintendent-President",
+     "position": "college_ceo",
+     "window": [
+      "(707) 864-7000",
+      "alison.bolton@solano.edu alison.bolton@solano.edu",
+      "Butler, Kellie",
+      "Superintendent-President",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "Disu, Carmine"
+     ],
+     "emails": [
+      "alison.bolton@solano.edu"
+     ]
+    },
+    {
+     "line": "Assistive Technology & Alternate Media Coordinator",
+     "position": null,
+     "window": [
+      "Mathematics and Science",
+      "jessica.mahinthakumar@solano.edu jessica.mahinthakumar@solano.edu",
+      "Ashby, Steven",
+      "Assistive Technology & Alternate Media Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "steven.ashby@solano.edu steven.ashby@solano.edu"
+     ],
+     "emails": [
+      "jessica.mahinthakumar@solano.edu",
+      "steven.ashby@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Technology Services & Support",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "chor.thao@solano.edu chor.thao@solano.edu",
+      "Howell, Justin",
+      "Director, Technology Services & Support",
+      "Superintendent-Presidents Office",
+      "(707) 864-7104",
+      "justin.howell@solano.edu justin.howell@solano.edu"
+     ],
+     "emails": [
+      "chor.thao@solano.edu",
+      "justin.howell@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Mathematics & Science",
+     "position": null,
+     "window": [
+      "Superintendent-Presidents Office",
+      "benjamin.zumwalt@solano.edu benjamin.zumwalt@solano.edu",
+      "Cromheecke, Jessica",
+      "Dean, Mathematics & Science",
+      "Superintendent-Presidents Office",
+      "(707) 864-7110",
+      "jessica.cromheecke@solano.edu jessica.cromheecke@solano.edu"
+     ],
+     "emails": [
+      "benjamin.zumwalt@solano.edu",
+      "jessica.cromheecke@solano.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "joseph.torres@solano.edu joseph.torres@solano.edu",
+      "Jude, Sandra",
+      "Executive Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 863-7800",
+      "alexandra.jude@solano.edu alexandra.jude@solano.edu"
+     ],
+     "emails": [
+      "alexandra.jude@solano.edu",
+      "joseph.torres@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Student Equity & Success",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "stephanie.williamson@solano.edu stephanie.williamson@solano.edu",
+      "Watson-Perez, Heather",
+      "Dean, Student Equity & Success",
+      "Superintendent-Presidents Office",
+      "(707) 864-7148",
+      "heather.watson-perez@solano.edu heather.watson-perez@solano.edu"
+     ],
+     "emails": [
+      "heather.watson-perez@solano.edu",
+      "stephanie.williamson@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, The Simulation Center & Allied Health Programs",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "jailene.yanez-romero@solano.edu jailene.yanez-romero@solano.edu",
+      "Lepera, Stephen",
+      "Director, The Simulation Center & Allied Health Programs",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "stephen.lepera@solano.edu stephen.lepera@solano.edu"
+     ],
+     "emails": [
+      "jailene.yanez-romero@solano.edu",
+      "stephen.lepera@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Human Resources",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "cynthia.jourgensen@solano.edu cynthia.jourgensen@solano.edu",
+      "Abbate, Salvatore",
+      "Director, Human Resources",
+      "Superintendent-Presidents Office",
+      "(707) 864-7281",
+      "salvatore.abbate@solano.edu salvatore.abbate@solano.edu"
+     ],
+     "emails": [
+      "cynthia.jourgensen@solano.edu",
+      "salvatore.abbate@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, MESA",
+     "position": null,
+     "window": [
+      "Mathematics and Science",
+      "federico.tondini@solano.edu federico.tondini@solano.edu",
+      "Martinez, Ariana",
+      "Director, MESA",
+      "Superintendent-Presidents Office",
+      "(707) 864-7295",
+      "ariana.martinez@solano.edu ariana.martinez@solano.edu"
+     ],
+     "emails": [
+      "ariana.martinez@solano.edu",
+      "federico.tondini@solano.edu"
+     ]
+    },
+    {
+     "line": "Athletics Program Coordinator, Tennis",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "michelle.arce@solano.edu michelle.arce@solano.edu",
+      "Rovira, Rafael",
+      "Athletics Program Coordinator, Tennis",
+      "Health Sciences",
+      "(707) 864-7000",
+      "rafael.rovira@solano.edu rafael.rovira@solano.edu"
+     ],
+     "emails": [
+      "michelle.arce@solano.edu",
+      "rafael.rovira@solano.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator, S-P & Governing Board",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "richard.stofle@solano.edu richard.stofle@solano.edu",
+      "Casimere, Tiffany",
+      "Executive Coordinator, S-P & Governing Board",
+      "Superintendent-Presidents Office",
+      "(707) 864-7299",
+      "tiffany.casimere@solano.edu tiffany.casimere@solano.edu"
+     ],
+     "emails": [
+      "richard.stofle@solano.edu",
+      "tiffany.casimere@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, School of Liberal Arts",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "marc.lancet@solano.edu marc.lancet@solano.edu",
+      "Glines, Neil",
+      "Dean, School of Liberal Arts",
+      "Superintendent-Presidents Office",
+      "(707) 864-7250",
+      "neil.glines@solano.edu neil.glines@solano.edu"
+     ],
+     "emails": [
+      "marc.lancet@solano.edu",
+      "neil.glines@solano.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "(707) 864-7135",
+      "tracy.drake@solano.edu tracy.drake@solano.edu",
+      "Williams, David",
+      "Vice President, Academic Affairs",
+      "Superintendent-Presidents Office",
+      "(707) 864-7117",
+      "david.williams@solano.edu david.williams@solano.edu"
+     ],
+     "emails": [
+      "david.williams@solano.edu",
+      "tracy.drake@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Business Services",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "danica.bravo@solano.edu danica.bravo@solano.edu",
+      "Sanchez, Edith",
+      "Director, Business Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "edith.sanchez@solano.edu edith.sanchez@solano.edu"
+     ],
+     "emails": [
+      "danica.bravo@solano.edu",
+      "edith.sanchez@solano.edu"
+     ]
+    },
+    {
+     "line": "Assistant Director, Facilities",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "narisa.orosco-woolworth@solano.edu narisa.orosco-woolworth@solano.edu",
+      "Ercole, Taylor",
+      "Assistant Director, Facilities",
+      "Superintendent-Presidents Office",
+      "(707) 864-7197",
+      "taylor.ercole@solano.edu taylor.ercole@solano.edu"
+     ],
+     "emails": [
+      "narisa.orosco-woolworth@solano.edu",
+      "taylor.ercole@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, SCC Ed Foundation",
+     "position": null,
+     "window": [
+      "Superintendent-Presidents Office",
+      "gjenaii.encisogivhan@solano.edu gjenaii.encisogivhan@solano.edu",
+      "Warne, Carolyn",
+      "Director, SCC Ed Foundation",
+      "Superintendent-Presidents Office",
+      "(707) 864-7141",
+      "carolyn.warne@solano.edu carolyn.warne@solano.edu"
+     ],
+     "emails": [
+      "carolyn.warne@solano.edu",
+      "gjenaii.encisogivhan@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Veterans",
+     "position": null,
+     "window": [
+      "(707) 864-7289",
+      "brad.paschal@solano.edu brad.paschal@solano.edu",
+      "Kennedy, Amy",
+      "Director, Veterans",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "amy.kennedy@solano.edu amy.kennedy@solano.edu"
+     ],
+     "emails": [
+      "amy.kennedy@solano.edu",
+      "brad.paschal@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Online Education",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "teri.yumae@solano.edu teri.yumae@solano.edu",
+      "Perez, John",
+      "Director, Online Education",
+      "Superintendent-Presidents Office",
+      "(707) 864-7133",
+      "john.perez@solano.edu john.perez@solano.edu"
+     ],
+     "emails": [
+      "john.perez@solano.edu",
+      "teri.yumae@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Social & Behavioral Sciences",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "adrienne.cary@solano.edu adrienne.cary@solano.edu",
+      "Reeve, Melissa",
+      "Dean, Social & Behavioral Sciences",
+      "Social and Behavioral Sciences",
+      "(707) 864-7142",
+      "melissa.reeve@solano.edu melissa.reeve@solano.edu"
+     ],
+     "emails": [
+      "adrienne.cary@solano.edu",
+      "melissa.reeve@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Health Sciences",
+      "rajan.bhatia@solano.edu rajan.bhatia@solano.edu",
+      "Bermudez, Mariano",
+      "Public Safety Officer",
+      "Superintendent-Presidents Office",
+      "mariano.bermudez@solano.edu mariano.bermudez@solano.edu",
+      "Jimenez, Ruth"
+     ],
+     "emails": [
+      "mariano.bermudez@solano.edu",
+      "rajan.bhatia@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "Mathematics and Science",
+      "kimberley.katleba-billock@solano.edu kimberley.katleba-billock@solano.edu",
+      "Roberts, Derrick",
+      "Public Safety Officer",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "derrick.roberts@solano.edu derrick.roberts@solano.edu"
+     ],
+     "emails": [
+      "derrick.roberts@solano.edu",
+      "kimberley.katleba-billock@solano.edu"
+     ]
+    },
+    {
+     "line": "Athletic Director",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "maria.magsaysay@solano.edu maria.magsaysay@solano.edu",
+      "Aubert, Alison",
+      "Athletic Director",
+      "Superintendent-Presidents Office",
+      "(707) 864-7166",
+      "alison.aubert@solano.edu alison.aubert@solano.edu"
+     ],
+     "emails": [
+      "alison.aubert@solano.edu",
+      "maria.magsaysay@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "natisha.hutson@solano.edu natisha.hutson@solano.edu",
+      "Miraflor, Luis",
+      "Public Safety Officer",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "luis.miraflor@solano.edu luis.miraflor@solano.edu"
+     ],
+     "emails": [
+      "luis.miraflor@solano.edu",
+      "natisha.hutson@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer (PT)",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "catherine.cyr@solano.edu catherine.cyr@solano.edu",
+      "Tunkara, Andrea",
+      "Public Safety Officer (PT)",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "andrea.tunkara@solano.edu andrea.tunkara@solano.edu"
+     ],
+     "emails": [
+      "andrea.tunkara@solano.edu",
+      "catherine.cyr@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Marketing & Audience Services",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "andrea.tunkara@solano.edu andrea.tunkara@solano.edu",
+      "Kuta, Dagmar",
+      "Director, Marketing & Audience Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "dagmar.kuta@solano.edu dagmar.kuta@solano.edu"
+     ],
+     "emails": [
+      "andrea.tunkara@solano.edu",
+      "dagmar.kuta@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean of External Programs",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "christopher.mcbride@solano.edu christopher.mcbride@solano.edu",
+      "Zitko, Peter",
+      "Dean of External Programs",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "peter.zitko@solano.edu peter.zitko@solano.edu"
+     ],
+     "emails": [
+      "christopher.mcbride@solano.edu",
+      "peter.zitko@solano.edu"
+     ]
+    },
+    {
+     "line": "EOPS & CARE Coordinator",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "danielle.widemann@solano.edu danielle.widemann@solano.edu",
+      "Macaraeg, Darah",
+      "EOPS & CARE Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "darah.macaraeg@solano.edu darah.macaraeg@solano.edu"
+     ],
+     "emails": [
+      "danielle.widemann@solano.edu",
+      "darah.macaraeg@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Facilities",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "carli.seaver@solano.edu carli.seaver@solano.edu",
+      "Lowe, Trenton",
+      "Director, Facilities",
+      "Superintendent-Presidents Office",
+      "(707) 863-7855",
+      "trenton.lowe@solano.edu trenton.lowe@solano.edu"
+     ],
+     "emails": [
+      "carli.seaver@solano.edu",
+      "trenton.lowe@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, School of Applied Technology & Business",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "kevin.dulyea@solano.edu kevin.dulyea@solano.edu",
+      "Cortes, Jose",
+      "Dean, School of Applied Technology & Business",
+      "Superintendent-Presidents Office",
+      "(707) 864-7287",
+      "jose.cortes@solano.edu jose.cortes@solano.edu"
+     ],
+     "emails": [
+      "jose.cortes@solano.edu",
+      "kevin.dulyea@solano.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Finance & Administration",
+     "position": null,
+     "window": [
+      "Mathematics and Science",
+      "trevor.gonzalinajec@solano.edu trevor.gonzalinajec@solano.edu",
+      "Wheet, Susan",
+      "Vice President, Finance & Administration",
+      "Superintendent-Presidents Office",
+      "(707) 864-7209",
+      "susan.wheet@solano.edu susan.wheet@solano.edu"
+     ],
+     "emails": [
+      "susan.wheet@solano.edu",
+      "trevor.gonzalinajec@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Student Development & Engagement",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "luis.angelcampos@solano.edu luis.angelcampos@solano.edu",
+      "Ballesteros, Gabriela",
+      "Director, Student Development & Engagement",
+      "Superintendent-Presidents Office",
+      "(707) 864-7186",
+      "gabriela.ballesteros@solano.edu gabriela.ballesteros@solano.edu"
+     ],
+     "emails": [
+      "gabriela.ballesteros@solano.edu",
+      "luis.angelcampos@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Information Services",
+     "position": null,
+     "window": [
+      "Superintendent-Presidents Office",
+      "jose.molinaperez@solano.edu jose.molinaperez@solano.edu",
+      "Tenty, Claudia",
+      "Director, Information Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7140",
+      "claudia.tenty@solano.edu claudia.tenty@solano.edu"
+     ],
+     "emails": [
+      "claudia.tenty@solano.edu",
+      "jose.molinaperez@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Children's Programs",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "jarrod.infante@solano.edu jarrod.infante@solano.edu",
+      "Drake, Sabrina",
+      "Director, Children's Programs",
+      "Superintendent-Presidents Office",
+      "(707) 864-7183",
+      "sabrina.drake@solano.edu sabrina.drake@solano.edu"
+     ],
+     "emails": [
+      "jarrod.infante@solano.edu",
+      "sabrina.drake@solano.edu"
+     ]
+    },
+    {
+     "line": "Transfer Center Coordinator",
+     "position": null,
+     "window": [
+      "(707) 864-7296",
+      "galen.tom@solano.edu galen.tom@solano.edu",
+      "Sloan, Robin",
+      "Transfer Center Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "robin.sloan@solano.edu robin.sloan@solano.edu"
+     ],
+     "emails": [
+      "galen.tom@solano.edu",
+      "robin.sloan@solano.edu"
+     ]
+    },
+    {
+     "line": "Career & Job Placement Coordinator",
+     "position": null,
+     "window": [
+      "Superintendent-Presidents Office",
+      "emily.mathe@solano.edu emily.mathe@solano.edu",
+      "Young, Patricia",
+      "Career & Job Placement Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7124",
+      "patricia.young@solano.edu patricia.young@solano.edu"
+     ],
+     "emails": [
+      "emily.mathe@solano.edu",
+      "patricia.young@solano.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "(707) 864-7000",
+      "kelly.ryan@solano.edu kelly.ryan@solano.edu",
+      "Neeley, Lisa",
+      "Vice President, Student Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7159",
+      "lisa.neeley@solano.edu lisa.neeley@solano.edu"
+     ],
+     "emails": [
+      "kelly.ryan@solano.edu",
+      "lisa.neeley@solano.edu"
+     ]
+    },
+    {
+     "line": "Public Safety Officer",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "amanda.morrison@solano.edu amanda.morrison@solano.edu",
+      "Dayrit, Leon",
+      "Public Safety Officer",
+      "Superintendent-Presidents Office",
+      "(707) 864-7000",
+      "leon.dayrit@solano.edu leon.dayrit@solano.edu"
+     ],
+     "emails": [
+      "amanda.morrison@solano.edu",
+      "leon.dayrit@solano.edu"
+     ]
+    },
+    {
+     "line": "Director, Marketing/Communications & Public Info. Officer",
+     "position": null,
+     "window": [
+      "(707) 864-7262",
+      "kevin.marks@solano.edu kevin.marks@solano.edu",
+      "Lee, Christina",
+      "Director, Marketing/Communications & Public Info. Officer",
+      "Superintendent-Presidents Office",
+      "(707) 864-7259",
+      "christina.lee@solano.edu christina.lee@solano.edu"
+     ],
+     "emails": [
+      "christina.lee@solano.edu",
+      "kevin.marks@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Financial Aid",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "jennifer.hesling@solano.edu jennifer.hesling@solano.edu",
+      "Scott, Patrick",
+      "Dean, Financial Aid",
+      "Superintendent-Presidents Office",
+      "(707) 863-7889",
+      "patrick.scott@solano.edu patrick.scott@solano.edu"
+     ],
+     "emails": [
+      "jennifer.hesling@solano.edu",
+      "patrick.scott@solano.edu"
+     ]
+    },
+    {
+     "line": "Vice President, Technology",
+     "position": null,
+     "window": [
+      "Liberal Arts",
+      "briana.clark-forgie@solano.edu briana.clark-forgie@solano.edu",
+      "Cornelison, Jon",
+      "Vice President, Technology",
+      "Superintendent-Presidents Office",
+      "(707) 864-7275",
+      "jon.cornelison@solano.edu jon.cornelison@solano.edu"
+     ],
+     "emails": [
+      "briana.clark-forgie@solano.edu",
+      "jon.cornelison@solano.edu"
+     ]
+    },
+    {
+     "line": "Dean, Enrollment Services",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "connor.marshall@solano.edu connor.marshall@solano.edu",
+      "Borelli, Alysa",
+      "Dean, Enrollment Services",
+      "Superintendent-Presidents Office",
+      "(707) 864-7200",
+      "alysa.borelli@solano.edu alysa.borelli@solano.edu"
+     ],
+     "emails": [
+      "alysa.borelli@solano.edu",
+      "connor.marshall@solano.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator",
+     "position": null,
+     "window": [
+      "(707) 864-7000",
+      "george.reeves@solano.edu george.reeves@solano.edu",
+      "Gover, Claire",
+      "Executive Coordinator",
+      "Superintendent-Presidents Office",
+      "(707) 864-7102",
+      "claire.gover@solano.edu claire.gover@solano.edu"
+     ],
+     "emails": [
+      "claire.gover@solano.edu",
+      "george.reeves@solano.edu"
+     ]
+    },
+    {
+     "line": "Safety Asset Coordinator (Lead)",
+     "position": null,
+     "window": [
+      "(707) 864-7102",
+      "claire.gover@solano.edu claire.gover@solano.edu",
+      "Lehfeldt, Jeffery",
+      "Safety Asset Coordinator (Lead)",
+      "Superintendent-Presidents Office",
+      "(707) 864-7172",
+      "jeffery.lehfeldt@solano.edu jeffery.lehfeldt@solano.edu"
+     ],
+     "emails": [
+      "claire.gover@solano.edu",
+      "jeffery.lehfeldt@solano.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://solano.edu/administrative-offices/index.php",
+   "final_url": "https://solano.edu/administrative-offices/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the Superintendent President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Administration",
+      "Administration",
+      "Office of the Superintendent President",
+      "Office of Student Services",
+      "Office of Academic Affairs",
+      "Office of Finance + Administration"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://solano.edu/administrative-offices/business-services/",
+   "final_url": "https://solano.edu/administrative-offices/business-services/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "The Vice President serves as as the Chief Financial Officer for the District and the",
+     "position": null,
+     "window": [
+      "instructional support in the areas of finance and budget, purchasing and procurement,",
+      "contract management, insurance and risk management, bookstore, warehouse, mail services,",
+      "college police services, and graphics and printing services.",
+      "The Vice President serves as as the Chief Financial Officer for the District and the",
+      "department is committed to providing high quality service to its internal & external",
+      "customers, maintaining fiscal stability, and assisting the institution to fulfill",
+      "its mission & vision."
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41436168077"
+}

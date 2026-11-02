@@ -1,0 +1,923 @@
+{
+ "college": "San Joaquin Delta College",
+ "homepage": "https://deltacollege.edu/",
+ "read_at": "2026-11-02T11:25:21+00:00",
+ "pages": [
+  {
+   "url": "https://deltacollege.edu/",
+   "final_url": "https://www.deltacollege.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.deltacollege.edu/student-support/student-services",
+   "final_url": "https://www.deltacollege.edu/student-support/student-services",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "VRC (Veterans Resource Center)",
+     "position": "vrc",
+     "window": [
+      "Student ID / Mustang Pass Card",
+      "Student Parents (Student with Children)",
+      "Undocumented Student Services (Dreamers Success Center)",
+      "VRC (Veterans Resource Center)",
+      "Finances",
+      "Book Vouchers",
+      "Financial Aid"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.deltacollege.edu/about/campus-leadership",
+   "final_url": "https://www.deltacollege.edu/about/campus-leadership",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Campus Leadership",
+      "I'm looking for help with",
+      "Board of Trustees",
+      "President's Office",
+      "Executive Leadership Team",
+      "Go",
+      "Image"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "The seven-member Delta College Board of Trustees works to ensure students have access to high-quality, affordable education leading to opportunity and success.",
+      "Board of Trustees",
+      "Image",
+      "President's Office",
+      "The President’s Office at Delta College serves as the central hub for leadership, vision, and institutional direction. In 2022 Dr. Lisa Aguilera Lawrenson became the first Latina superintendent/president in the history of the College.",
+      "President's Office",
+      "Image"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Image",
+      "President's Office",
+      "The President’s Office at Delta College serves as the central hub for leadership, vision, and institutional direction. In 2022 Dr. Lisa Aguilera Lawrenson became the first Latina superintendent/president in the history of the College.",
+      "President's Office",
+      "Image",
+      "Executive Leadership Team",
+      "The Executive Leadership Team at Delta College is the senior leadership group responsible for implementing the college’s mission, vision and strategic direction."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.deltacollege.edu/about/faculty-staff-directory",
+   "final_url": "https://www.deltacollege.edu/about/faculty-staff-directory",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Enrollment Services Dean Office",
+     "position": null,
+     "window": [
+      "Disability Support Programs and Services Office",
+      "Dreamers Success Center",
+      "Empowerment Resource Center",
+      "Enrollment Services Dean Office",
+      "EOPS/CARE/NextUp Center",
+      "EPICenter",
+      "Facilities, Planning, and Management Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "MESA",
+      "Middle College High School",
+      "Mountain House Campus Main Office",
+      "Office of the President",
+      "Outreach and Relation with Schools Office",
+      "Payroll Office",
+      "Police Department"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/Superintendent",
+     "position": "college_ceo",
+     "window": [
+      "Payroll Office",
+      "Police Department",
+      "POST Academy Office",
+      "President/Superintendent",
+      "Pride Center",
+      "Procurement and Contracts",
+      "Professional Development Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "Student Services Division Main Office",
+      "The Market",
+      "Vault Services Office",
+      "Veteran Resource Center",
+      "Workforce Development Center",
+      "Workforce Training Institute Office",
+      "WorkNet Office"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.deltacollege.edu/about/offices",
+   "final_url": "https://www.deltacollege.edu/about/offices",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President/Superintendent",
+     "position": "college_ceo",
+     "window": [
+      "(209) 954-5865",
+      "mail",
+      "leticia.samson@deltacollege.edu leticia.samson@deltacollege.edu",
+      "President/Superintendent",
+      "Bond Program Office",
+      "location_on",
+      "Bond Program Office"
+     ],
+     "emails": [
+      "leticia.samson@deltacollege.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "(209) 954-5618",
+      "mail",
+      "joseph.feneck@deltacollege.edu joseph.feneck@deltacollege.edu",
+      "Office of the President",
+      "location_on",
+      "Presidents Office",
+      "call"
+     ],
+     "emails": [
+      "joseph.feneck@deltacollege.edu"
+     ]
+    },
+    {
+     "line": "Enrollment Services Dean Office",
+     "position": null,
+     "window": [
+      "(209) 954-5836",
+      "mail",
+      "empowerment@deltacollege.edu empowerment@deltacollege.edu",
+      "Enrollment Services Dean Office",
+      "location_on",
+      "DERIC 210",
+      "call"
+     ],
+     "emails": [
+      "empowerment@deltacollege.edu"
+     ]
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "(209) 954-5005",
+      "mail",
+      "studentservices@deltacollege.edu studentservices@deltacollege.edu",
+      "Veteran Resource Center",
+      "location_on",
+      "Veterans Resource Center",
+      "call"
+     ],
+     "emails": [
+      "studentservices@deltacollege.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "studentservices@deltacollege.edu studentservices@deltacollege.edu",
+      "Veteran Resource Center",
+      "location_on",
+      "Veterans Resource Center",
+      "call",
+      "(209) 954-5151",
+      "mail"
+     ],
+     "emails": [
+      "studentservices@deltacollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.deltacollege.edu/taxonomy/term/16701",
+   "final_url": "https://www.deltacollege.edu/about/offices/office-president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President/Superintendent Division Office - Delta College",
+     "position": "college_ceo",
+     "window": [
+      "President/Superintendent Division Office - Delta College",
+      "Skip to main content",
+      "search",
+      "Search"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office President",
+     "position": "college_ceo",
+     "window": [
+      "Breadcrumb",
+      "About Overview",
+      "Campus Offices & Hours",
+      "Office President",
+      "Office of the President",
+      "Image",
+      "Contact and Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About Overview",
+      "Campus Offices & Hours",
+      "Office President",
+      "Office of the President",
+      "Image",
+      "Contact and Hours",
+      "Contact"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "About the Office",
+      "The President’s Office at Delta College serves as the central hub for leadership, vision, and institutional direction. Guided by the College president, the office oversees the implementation of Delta’s mission to provide accessible, high-quality education and student support services. The President's Office receives guidance and oversight from the Delta College Board of Trustees.",
+      "Meet the Superintendent/President",
+      "Dr. Lisa Aguilera Lawrenson has 31 years of experience as a community college professor, administrator, and social justice educator/trainer in California and Washington. She has expertise in culturally relevant curriculum design, social justice strategic planning, and mentoring. Her dissertation focused on the experiences of Hispanic students in developmental English in community colleges.",
+      "In addition to serving as an English/Multicultural Humanities Professor, Dr. Aguilera Lawrenson has served as the Dean of Humanities at American River College (ARC), the Associate Vice President of Instruction at ARC, the Interim Vice President of Instruction at Cosumnes River College, the Interim Vice President of Student Services at ARC, the Vice President of Instruction at ARC, and most recently as the Assistant Superintendent/Vice President of Instruction at San Joaquin Delta College where she was hired in 2020. In 2022 she became the first Latina superintendent/president in the history of Delta College.",
+      "She has led initiatives in basic skills/curriculum, equity, international education, strategic planning, college redesign, and governance."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Lisa Aguilera Lawrenson",
+      "Title:",
+      "Superintendent / President",
+      "Office:",
+      "Office of the President",
+      "Meet the Team"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Title:",
+      "Superintendent / President",
+      "Office:",
+      "Office of the President",
+      "Meet the Team",
+      "Carol Ochoa",
+      "Administrative Assistant III"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Carol Ochoa",
+      "Administrative Assistant III",
+      "Lisa Aguilera Lawrenson",
+      "Superintendent / President",
+      "Robin Phares",
+      "Executive Administrative Assistant",
+      "Related Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/Superintendent",
+     "position": "college_ceo",
+     "window": [
+      "Robin Phares",
+      "Executive Administrative Assistant",
+      "Related Offices",
+      "President/Superintendent",
+      "Bond Program Office",
+      "location_on",
+      "Bond Program Office"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.deltacollege.edu/node/8211",
+   "final_url": "https://www.deltacollege.edu/about/offices/office-president/executive-leadership-team",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office President",
+     "position": "college_ceo",
+     "window": [
+      "Breadcrumb",
+      "About Overview",
+      "Campus Offices & Hours",
+      "Office President",
+      "Executive Leadership Team",
+      "Executive Leadership Team",
+      "Image"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Executive Leadership Team is led by the Superintendent/President and operates under the direction and guidance of the Board of Trustees.",
+     "position": "college_ceo",
+     "window": [
+      "Strategic planning and institutional priorities;",
+      "Operational leadership and resource management; and",
+      "Student-centered outcomes and community engagement.",
+      "The Executive Leadership Team is led by the Superintendent/President and operates under the direction and guidance of the Board of Trustees.",
+      "President's Office",
+      "Board of Trustees",
+      "Meet the Team"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Operational leadership and resource management; and",
+      "Student-centered outcomes and community engagement.",
+      "The Executive Leadership Team is led by the Superintendent/President and operates under the direction and guidance of the Board of Trustees.",
+      "President's Office",
+      "Board of Trustees",
+      "Meet the Team",
+      "Kale (Charles) Braden"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent / Vice President",
+     "position": null,
+     "window": [
+      "Meet the Team",
+      "Kale (Charles) Braden",
+      "Title:",
+      "Assistant Superintendent / Vice President",
+      "Office:",
+      "Instruction and Planning Division Office",
+      "Augustine Chavez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Instruction and Planning Division Office",
+      "Augustine Chavez",
+      "Title:",
+      "Vice President of Administrative Services",
+      "Office:",
+      "Administrative Services Division Office",
+      "James Dalske"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Assistant Superintendent/Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Administrative Services Division Office",
+      "James Dalske",
+      "Title:",
+      "Interim Assistant Superintendent/Vice President of Student Services",
+      "Office:",
+      "Student Services Division Main Office",
+      "Leann West"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Human Resources",
+     "position": null,
+     "window": [
+      "Student Services Division Main Office",
+      "Leann West",
+      "Title:",
+      "Vice President of Human Resources",
+      "Office:",
+      "Human Resources Division Office",
+      "Lisa Aguilera Lawrenson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources Division Office",
+      "Lisa Aguilera Lawrenson",
+      "Title:",
+      "Superintendent / President",
+      "Office:",
+      "Office of the President",
+      "Mission, Vision, and More"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Title:",
+      "Superintendent / President",
+      "Office:",
+      "Office of the President",
+      "Mission, Vision, and More",
+      "Learn more about Delta College's vision for the future as we look for ways to further serve and strengthen the community.",
+      "Strategic Plan"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.deltacollege.edu/about/offices/office-president",
+   "final_url": "https://www.deltacollege.edu/about/offices/office-president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President/Superintendent Division Office - Delta College",
+     "position": "college_ceo",
+     "window": [
+      "President/Superintendent Division Office - Delta College",
+      "Skip to main content",
+      "search",
+      "Search"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office President",
+     "position": "college_ceo",
+     "window": [
+      "Breadcrumb",
+      "About Overview",
+      "Campus Offices & Hours",
+      "Office President",
+      "Office of the President",
+      "Image",
+      "Contact and Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About Overview",
+      "Campus Offices & Hours",
+      "Office President",
+      "Office of the President",
+      "Image",
+      "Contact and Hours",
+      "Contact"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "About the Office",
+      "The President’s Office at Delta College serves as the central hub for leadership, vision, and institutional direction. Guided by the College president, the office oversees the implementation of Delta’s mission to provide accessible, high-quality education and student support services. The President's Office receives guidance and oversight from the Delta College Board of Trustees.",
+      "Meet the Superintendent/President",
+      "Dr. Lisa Aguilera Lawrenson has 31 years of experience as a community college professor, administrator, and social justice educator/trainer in California and Washington. She has expertise in culturally relevant curriculum design, social justice strategic planning, and mentoring. Her dissertation focused on the experiences of Hispanic students in developmental English in community colleges.",
+      "In addition to serving as an English/Multicultural Humanities Professor, Dr. Aguilera Lawrenson has served as the Dean of Humanities at American River College (ARC), the Associate Vice President of Instruction at ARC, the Interim Vice President of Instruction at Cosumnes River College, the Interim Vice President of Student Services at ARC, the Vice President of Instruction at ARC, and most recently as the Assistant Superintendent/Vice President of Instruction at San Joaquin Delta College where she was hired in 2020. In 2022 she became the first Latina superintendent/president in the history of Delta College.",
+      "She has led initiatives in basic skills/curriculum, equity, international education, strategic planning, college redesign, and governance."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Lisa Aguilera Lawrenson",
+      "Title:",
+      "Superintendent / President",
+      "Office:",
+      "Office of the President",
+      "Meet the Team"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Title:",
+      "Superintendent / President",
+      "Office:",
+      "Office of the President",
+      "Meet the Team",
+      "Carol Ochoa",
+      "Administrative Assistant III"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Carol Ochoa",
+      "Administrative Assistant III",
+      "Lisa Aguilera Lawrenson",
+      "Superintendent / President",
+      "Robin Phares",
+      "Executive Administrative Assistant",
+      "Related Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President/Superintendent",
+     "position": "college_ceo",
+     "window": [
+      "Robin Phares",
+      "Executive Administrative Assistant",
+      "Related Offices",
+      "President/Superintendent",
+      "Bond Program Office",
+      "location_on",
+      "Bond Program Office"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://maps.deltacollege.edu?id=2147&amp;mrkIid=1059170",
+   "final_url": "https://maps.deltacollege.edu?id=2147&amp;mrkIid=1059170",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.deltacollege.edu/about/offices/veteran-resource-center",
+   "final_url": "https://www.deltacollege.edu/about/offices/veteran-resource-center",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran Resource Center - Delta College",
+     "position": "vrc",
+     "window": [
+      "Veteran Resource Center - Delta College",
+      "Skip to main content",
+      "search",
+      "Search"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "Breadcrumb",
+      "About Overview",
+      "Campus Offices & Hours",
+      "Veteran Resource Center",
+      "Veterans Resource Center",
+      "Image",
+      "Contact and Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "About Overview",
+      "Campus Offices & Hours",
+      "Veteran Resource Center",
+      "Veterans Resource Center",
+      "Image",
+      "Contact and Hours",
+      "Contact"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "(209) 954-5151 ext. 6151",
+      "vrc@deltacollege.edu vrc@deltacollege.edu",
+      "San Joaquin Delta College",
+      "Veteran Resource Center",
+      "DeRicco Student Services Building, Room 141 (DERIC 141)",
+      "5151 Pacific Ave.",
+      "Stockton, CA 95207"
+     ],
+     "emails": [
+      "vrc@deltacollege.edu"
+     ]
+    },
+    {
+     "line": "The Veterans Resource Center is open to all student veterans, dependents, active duty, and reservists. Among the services we provide:",
+     "position": "vrc",
+     "window": [
+      "The Veterans Resource Center (VRC) is Delta College’s central hub for student veterans, active-duty service members, and military-connected dependents. It provides dedicated support, guidance, and community — including a welcoming space to study, relax, and connect with fellow military-affiliated students or get involved with the Student Veterans of America (SVA) Club. Support is available both in person at the VRC and online through LiveChat.",
+      "Transitioning from military to civilian and college life can be challenging, and social isolation remains one of the most common obstacles for veterans. With more than 200 veterans on campus, the VRC is here to help students find community, navigate resources, and succeed academically with staff who understand their unique experiences and needs.",
+      "Services We Provide",
+      "The Veterans Resource Center is open to all student veterans, dependents, active duty, and reservists. Among the services we provide:",
+      "Help utilizing VA benefits",
+      "In-house Veterans Education Counselor and School Certifying Official",
+      "VA work study opportunities (pending openings)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Partnerships with VA Stockton, San Joaquin County Veteran Services Office, veteran organizations and the community",
+     "position": "vrc",
+     "window": [
+      "Food pantry",
+      "Sensory room",
+      "Quiet study area and group area",
+      "Partnerships with VA Stockton, San Joaquin County Veteran Services Office, veteran organizations and the community",
+      "Related Services",
+      "Book Vouchers",
+      "It’s no secret that textbooks are expensive. Several Delta College programs offer book vouchers or other similar resources to reduce"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center offers dedicated support to military veterans, active duty, reservists, and dependents. We’re here to access your",
+     "position": "vrc",
+     "window": [
+      "It’s no secret that textbooks are expensive. Several Delta College programs offer book vouchers or other similar resources to reduce",
+      "Book Vouchers",
+      "Veterans Benefits",
+      "The Veterans Resource Center offers dedicated support to military veterans, active duty, reservists, and dependents. We’re here to access your",
+      "Leadership",
+      "Ricardo Marmolejo",
+      "Title:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Student Services",
+     "position": null,
+     "window": [
+      "Leadership",
+      "Ricardo Marmolejo",
+      "Title:",
+      "Dean of Student Services",
+      "Office:",
+      "Access and Equity Deans Office",
+      "KC (Kethric Cottrell)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Manager of Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Access and Equity Deans Office",
+      "KC (Kethric Cottrell)",
+      "Title:",
+      "Manager of Veterans Resource Center",
+      "Office:",
+      "Veteran Resource Center",
+      "Meet the Team"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Resource Center",
+     "position": "vrc",
+     "window": [
+      "Title:",
+      "Manager of Veterans Resource Center",
+      "Office:",
+      "Veteran Resource Center",
+      "Meet the Team",
+      "KC (Kethric Cottrell)",
+      "Manager of Veterans Resource Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Manager of Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veteran Resource Center",
+      "Meet the Team",
+      "KC (Kethric Cottrell)",
+      "Manager of Veterans Resource Center",
+      "Dianna Rodriguez",
+      "Student Programs Assistant",
+      "Harmeet Kaur"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Enrollment Services Dean Office",
+     "position": null,
+     "window": [
+      "(209) 954-5836",
+      "mail",
+      "empowerment@deltacollege.edu empowerment@deltacollege.edu",
+      "Enrollment Services Dean Office",
+      "location_on",
+      "DERIC 210",
+      "call"
+     ],
+     "emails": [
+      "empowerment@deltacollege.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://maps.deltacollege.edu?id=2147&amp;mrkIid=1059642",
+   "final_url": "https://maps.deltacollege.edu?id=2147&amp;mrkIid=1059642",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.deltacollege.edu/about/offices/office-president/executive-leadership-team",
+   "final_url": "https://www.deltacollege.edu/about/offices/office-president/executive-leadership-team",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office President",
+     "position": "college_ceo",
+     "window": [
+      "Breadcrumb",
+      "About Overview",
+      "Campus Offices & Hours",
+      "Office President",
+      "Executive Leadership Team",
+      "Executive Leadership Team",
+      "Image"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Executive Leadership Team is led by the Superintendent/President and operates under the direction and guidance of the Board of Trustees.",
+     "position": "college_ceo",
+     "window": [
+      "Strategic planning and institutional priorities;",
+      "Operational leadership and resource management; and",
+      "Student-centered outcomes and community engagement.",
+      "The Executive Leadership Team is led by the Superintendent/President and operates under the direction and guidance of the Board of Trustees.",
+      "President's Office",
+      "Board of Trustees",
+      "Meet the Team"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Operational leadership and resource management; and",
+      "Student-centered outcomes and community engagement.",
+      "The Executive Leadership Team is led by the Superintendent/President and operates under the direction and guidance of the Board of Trustees.",
+      "President's Office",
+      "Board of Trustees",
+      "Meet the Team",
+      "Kale (Charles) Braden"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent / Vice President",
+     "position": null,
+     "window": [
+      "Meet the Team",
+      "Kale (Charles) Braden",
+      "Title:",
+      "Assistant Superintendent / Vice President",
+      "Office:",
+      "Instruction and Planning Division Office",
+      "Augustine Chavez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Instruction and Planning Division Office",
+      "Augustine Chavez",
+      "Title:",
+      "Vice President of Administrative Services",
+      "Office:",
+      "Administrative Services Division Office",
+      "James Dalske"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Assistant Superintendent/Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Administrative Services Division Office",
+      "James Dalske",
+      "Title:",
+      "Interim Assistant Superintendent/Vice President of Student Services",
+      "Office:",
+      "Student Services Division Main Office",
+      "Leann West"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Human Resources",
+     "position": null,
+     "window": [
+      "Student Services Division Main Office",
+      "Leann West",
+      "Title:",
+      "Vice President of Human Resources",
+      "Office:",
+      "Human Resources Division Office",
+      "Lisa Aguilera Lawrenson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent / President",
+     "position": "college_ceo",
+     "window": [
+      "Human Resources Division Office",
+      "Lisa Aguilera Lawrenson",
+      "Title:",
+      "Superintendent / President",
+      "Office:",
+      "Office of the President",
+      "Mission, Vision, and More"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Title:",
+      "Superintendent / President",
+      "Office:",
+      "Office of the President",
+      "Mission, Vision, and More",
+      "Learn more about Delta College's vision for the future as we look for ways to further serve and strengthen the community.",
+      "Strategic Plan"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.deltacollege.edu/student-support/student-services/veterans-benefits"
+ ],
+ "run": "41436168077"
+}

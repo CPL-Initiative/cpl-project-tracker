@@ -1,0 +1,512 @@
+{
+ "college": "Skyline College",
+ "homepage": "https://skylinecollege.edu/",
+ "read_at": "2026-11-02T11:31:41+00:00",
+ "pages": [
+  {
+   "url": "https://skylinecollege.edu/",
+   "final_url": "https://skylinecollege.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://skylinecollege.edu/studentresources/supportprograms.php",
+   "final_url": "https://skylinecollege.edu/studentresources/supportprograms.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "TRIO Student Support Services",
+      "For students who are first-generation, low-income, have an intellectual/physical disability,",
+      "or have undocumented status",
+      "Veterans Resource & Opportunity Center",
+      "For Veterans, Active Duty service members, National Guard and Reserve members, and",
+      "their dependents",
+      "follow us on"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://skylinecollege.edu/veterans",
+   "final_url": "https://skylinecollege.edu/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource & Opportunity Center | Veterans Resource & Opportunity Center |",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource & Opportunity Center | Veterans Resource & Opportunity Center |",
+      "Skyline College",
+      "Skip to content",
+      "Skyline College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Search Skyline College",
+      "Search Website",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center",
+      "Overview",
+      "Apply",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Scholarships & Financial Aid",
+      "Career Resources",
+      "Resources for Faculty & Staff",
+      "Veterans Resource & Opportunity Center",
+      "How to Apply to",
+      "Skyline College",
+      "Use your VA"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Hours are subject to change. Call Veteran Resource & Opportunity Center to verify.",
+     "position": "vrc",
+     "window": [
+      "Find Answers and",
+      "Contact Us",
+      "Fall 2026 In-Person Office Hours",
+      "Hours are subject to change. Call Veteran Resource & Opportunity Center to verify.",
+      "Monday",
+      "9:00 AM - 4:00 PM",
+      "Tuesday"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://skylinecollege.edu/admissions/contactform.php",
+   "final_url": "https://skylinecollege.edu/admissions/contactform.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "International Students",
+      "Promise Scholars",
+      "Undocumented Students",
+      "Veterans Resource & Opportunity Center",
+      "Get Help from Skyline College Admissions",
+      "follow us on",
+      "Facebook"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.skylinecollege.edu/veterans/contact.php",
+   "final_url": "https://www.skylinecollege.edu/veterans/contact.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Contact Us | Veterans Resource & Opportunity Center |",
+     "position": "vrc",
+     "window": [
+      "Contact Us | Veterans Resource & Opportunity Center |",
+      "Skyline College",
+      "Skip to content",
+      "Skyline College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Search Skyline College",
+      "Search Website",
+      "Skyline College",
+      "Veterans Resource & Opportunity Center",
+      "Contact Us",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource & Opportunity Center",
+      "Contact Us",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center",
+      "Overview",
+      "Apply",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center Contact Information:",
+     "position": "vrc",
+     "window": [
+      "Career Resources",
+      "Resources for Faculty & Staff",
+      "Contact Us",
+      "Veterans Resource & Opportunity Center Contact Information:",
+      "Phone: (650) 738-7060 (Please leave a message or email us for the quickest response- we reply to inquiries",
+      "in the order they are received in as timely of a manner as possible).",
+      "Email: skyveterans@smccd.edu skyveterans@smccd.edu"
+     ],
+     "emails": [
+      "skyveterans@smccd.edu"
+     ]
+    },
+    {
+     "line": "Veterans Crisis Line: Dial 988 then Press 1 for specific Veterans services (Confidential Crisis Text Services:",
+     "position": "vrc",
+     "window": [
+      "For VA Resources Available 24/7:",
+      "Contact the SFVA’s Telephone Linked Care (TLC) Line (24/7) at 800-733-0502 and ask",
+      "to speak with an Advice Nurse (for medical advice).",
+      "Veterans Crisis Line: Dial 988 then Press 1 for specific Veterans services (Confidential Crisis Text Services:",
+      "838255)",
+      "follow us on",
+      "Facebook"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://skylinecollege.edu/veterans/prospectivestudents.php",
+   "final_url": "https://skylinecollege.edu/veterans/prospectivestudents.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Apply to Skyline College as a Veteran | Veterans Resource & Opportunity Center |",
+     "position": "vrc",
+     "window": [
+      "Apply to Skyline College as a Veteran | Veterans Resource & Opportunity Center |",
+      "Skyline College",
+      "Skip to content",
+      "Skyline College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Search Skyline College",
+      "Search Website",
+      "Skyline College",
+      "Veterans Resource & Opportunity Center",
+      "Apply to Skyline College as a Veteran",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource & Opportunity Center",
+      "Apply to Skyline College as a Veteran",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center",
+      "Overview",
+      "Apply",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact the Veterans Resource & Opportunity Center for help navigating the VA Educational Benefit application process.",
+     "position": "vrc",
+     "window": [
+      "program, this step is not necessary to enroll at Skyline College.",
+      "If you are applying for VA Educational Benefits (Chapter 30, 31, 33, 35 or 1606) or",
+      "updating your benefit to change your place of training to Skyline College, use the VA’s Education and Training Page.",
+      "Contact the Veterans Resource & Opportunity Center for help navigating the VA Educational Benefit application process.",
+      "The VROC can also provide information on benefits for Dependents and Active Duty Service members, referrals to the appropriate resources to help determine eligibility for VA Educational",
+      "Benefits, and more.",
+      "Learn How to Apply"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.skylinecollege.edu/veterans",
+   "final_url": "https://www.skylinecollege.edu/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource & Opportunity Center | Veterans Resource & Opportunity Center |",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource & Opportunity Center | Veterans Resource & Opportunity Center |",
+      "Skyline College",
+      "Skip to content",
+      "Skyline College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Search Skyline College",
+      "Search Website",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center",
+      "Overview",
+      "Apply",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Scholarships & Financial Aid",
+      "Career Resources",
+      "Resources for Faculty & Staff",
+      "Veterans Resource & Opportunity Center",
+      "How to Apply to",
+      "Skyline College",
+      "Use your VA"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Hours are subject to change. Call Veteran Resource & Opportunity Center to verify.",
+     "position": "vrc",
+     "window": [
+      "Find Answers and",
+      "Contact Us",
+      "Fall 2026 In-Person Office Hours",
+      "Hours are subject to change. Call Veteran Resource & Opportunity Center to verify.",
+      "Monday",
+      "9:00 AM - 4:00 PM",
+      "Tuesday"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.skylinecollege.edu/admissions/contactform.php",
+   "final_url": "https://www.skylinecollege.edu/admissions/contactform.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "International Students",
+      "Promise Scholars",
+      "Undocumented Students",
+      "Veterans Resource & Opportunity Center",
+      "Get Help from Skyline College Admissions",
+      "follow us on",
+      "Facebook"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://skylinecollege.edu/veterans/edubenefits.php",
+   "final_url": "https://skylinecollege.edu/veterans/edubenefits.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Using Educational Benefits | Veterans Resource & Opportunity Center |",
+     "position": "vrc",
+     "window": [
+      "Using Educational Benefits | Veterans Resource & Opportunity Center |",
+      "Skyline College",
+      "Skip to content",
+      "Skyline College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Search Skyline College",
+      "Search Website",
+      "Skyline College",
+      "Veterans Resource & Opportunity Center",
+      "Using Educational Benefits",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource & Opportunity Center",
+      "Using Educational Benefits",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center",
+      "Overview",
+      "Apply",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "A County Veteran Services Officer can help determine eligibility of the applicant",
+     "position": "vrc",
+     "window": [
+      "CalVet Fee Waiver",
+      "Tuition Fee Waiver for Dependents of Service-Connected Disabled or Deceased Veterans:",
+      "For more information about the application, go to the CalVet Website.",
+      "A County Veteran Services Officer can help determine eligibility of the applicant",
+      "and submit application. Once applicant has received eligibility documentation from",
+      "the County Veteran Service Officer this documentation goes to the Financial Aid Office.",
+      "For a list of CVSO’s please visit the Vet Services Page. See below for steps to use the CalVet Fee Waiver at Skyline College:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the County Veteran Service Officer this documentation goes to the Financial Aid Office.",
+     "position": null,
+     "window": [
+      "For more information about the application, go to the CalVet Website.",
+      "A County Veteran Services Officer can help determine eligibility of the applicant",
+      "and submit application. Once applicant has received eligibility documentation from",
+      "the County Veteran Service Officer this documentation goes to the Financial Aid Office.",
+      "For a list of CVSO’s please visit the Vet Services Page. See below for steps to use the CalVet Fee Waiver at Skyline College:",
+      "Steps to utilize CalVet Fee Waiver at Skyline College",
+      "View Application & Additional Information here: CalVet College Fee Waivers"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://skylinecollege.edu/counseling/index.php",
+   "final_url": "https://skylinecollege.edu/counseling/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Looking for Veterans Services",
+     "position": "vrc",
+     "window": [
+      "We're here to help! If you have any questions or concerns about your educational path,",
+      "please don't hesitate to reach out.",
+      "Undecided on a Major or Career",
+      "Looking for Veterans Services",
+      "Submitting a Prerequisite Request",
+      "Fixing Registration Errors",
+      "Contact Us"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.skylinecollege.edu/veterans/prospectivestudents.php",
+   "final_url": "https://www.skylinecollege.edu/veterans/prospectivestudents.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Apply to Skyline College as a Veteran | Veterans Resource & Opportunity Center |",
+     "position": "vrc",
+     "window": [
+      "Apply to Skyline College as a Veteran | Veterans Resource & Opportunity Center |",
+      "Skyline College",
+      "Skip to content",
+      "Skyline College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Search Skyline College",
+      "Search Website",
+      "Skyline College",
+      "Veterans Resource & Opportunity Center",
+      "Apply to Skyline College as a Veteran",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource & Opportunity Center",
+      "Apply to Skyline College as a Veteran",
+      "Section Menu",
+      "Veterans Resource & Opportunity Center",
+      "Overview",
+      "Apply",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact the Veterans Resource & Opportunity Center for help navigating the VA Educational Benefit application process.",
+     "position": "vrc",
+     "window": [
+      "program, this step is not necessary to enroll at Skyline College.",
+      "If you are applying for VA Educational Benefits (Chapter 30, 31, 33, 35 or 1606) or",
+      "updating your benefit to change your place of training to Skyline College, use the VA’s Education and Training Page.",
+      "Contact the Veterans Resource & Opportunity Center for help navigating the VA Educational Benefit application process.",
+      "The VROC can also provide information on benefits for Dependents and Active Duty Service members, referrals to the appropriate resources to help determine eligibility for VA Educational",
+      "Benefits, and more.",
+      "Learn How to Apply"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://skylinecollege.edu/admissions",
+   "final_url": "https://skylinecollege.edu/admissions/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource & Opportunity Center",
+     "position": "vrc",
+     "window": [
+      "International Students",
+      "Promise Scholars",
+      "Undocumented Students",
+      "Veterans Resource & Opportunity Center",
+      "Admissions & Records",
+      "Admissions & Records",
+      "Apply to Skyline"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.skylinecollege.edu/counseling/index.php"
+ ],
+ "run": "41436168077"
+}
