@@ -2139,8 +2139,8 @@
   /* Based on statewide (Sam, 2026-11-01: "count all canonical exhibit titles that include a statewide as based on a
      statewide, whether local or not. It goes with our adopted or adapted approach"). A credential is based on statewide
      when MAP's CCC Collaborative rows place a statewide exhibit under it: fact-sheet/statewide_recs.js, the Fact Sheet's
-     list, names 152 such credentials (2026-11-01). The reference's own statewide flag (84) reads only articulated
-     lines, so it stands in only when that list did not load. */
+     list, names 152 such credentials (2026-11-01). The reference's own statewide flag counts the same set since #2667
+     (152, S543), and it stands in only when that list did not load. */
   function listStatewideExhibits(r) {
     var S = window.CPL_STATEWIDE_RECS, recs = S && S[r.ut];
     if (!recs) return [];
