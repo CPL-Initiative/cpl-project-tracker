@@ -23,8 +23,12 @@ open PRs and `main` since this handoff (step 1).
   carry the official lists Sam ruled on, so the catalog builder imports them (`official_exam_lists`). The nightly watch
   gains no issuer. 152 exam rows, 21 retired, 98 joined to MAP (every CLEP and IB title, 43 of 46 AP). The link now holds
   168 titles to 122 certs (AP 43, CLEP 35, IB 20, ASE 24). **Merge it on a passing `test` if this session did not.**
-- **Main's lints were red** (`cer_procedures_test.py`, the service-key check): the committed unclassified queue emptied,
-  so `run()` never asked the classifier. The check now builds its own one-card queue (on #2686's branch).
+- **Main's lints were red twice over, fixed on #2686's branch.** `cer_procedures_test.py`: the committed unclassified
+  queue emptied, so `run()` never asked the classifier; the check now builds its own one-card queue.
+  `ccr_cpl_universe_test.py`, red since the 06:25Z daily run: it assumed all statewide exhibits are articulated (84),
+  but #2667 made it 152 (90 articulated). It now checks the rings against `counts.statewide_articulated`, and bounds
+  allow for rounding. **Curation gap it names:** *Child Development Associate (CDA) Credential* is statewide and
+  articulated, but its courses carry no discipline, so it sits in SkyView's no-discipline pile.
 - **The UI pass: the Fact Sheet** (on `claude/practical-meitner-7x9x8y`, the checkpoint PR). Every target passes.
   `fact-sheet-sierra` and its dark twin still pressed the page's own *Ask Sierra* word, removed 2026-10-30, so they now
   open her from her chip. Ledger recorded.
@@ -57,6 +61,9 @@ None. Scheduled run; no sheet is open and no lane carries NEEDS SAM.
    call, one edit in the College Identity tab). Offered to Sam with no answer yet: a smoke mode for the JST question.
 
 ## Lessons to honor
+
+- **`check_generated.sh` reads STALE when `openpyxl` is missing locally** (`python3 -m pip install openpyxl`; plain
+  `pip` installed it into another interpreter here). Two "stale on main" files were that.
 
 - **Check the repo for the list before harvesting it.** The AP, CLEP and IB names were already committed in the fold
   readers (`docs/cer_v2_redesign_lessons.md`, *SkyPinwheel*).
