@@ -41,18 +41,25 @@ Sheet 156 card 1, his note above (`cpl_memory` `sam-sheet-156-try-alternate-rout
 1. **Read Sheet 157's replies first.** *upload*: he attaches pages or PDFs to a session; write a partial records file
    (`"partial": true`, the source named) and load it through the apply. *ask* drafts the district notes (outward: a
    draft only). *map* drops the thirteen from the batch. Drop the lane's NEEDS SAM in the same PR.
-2. **The two waiting emails:** a partial load of the Allan Hancock and Antelope Valley presidents' printed emails (the
+2. **Course objectives beside the SLOs** (Sam, live in S551, 14:55Z): build them in the order the program requirements
+   lane gives (*Course objectives too*): the reader, a `kind` column, then a re-read of the ten loaded colleges. Step 11's
+   first item until it lands.
+3. **The Catalog Commons mock** (Sam, live in S551): https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, eight register
+   cards in Malone's look plus Exhibits opened. Sam liked it and added Skills; the name of the whole is his open
+   question (S551 offered options in chat; vault braindump `braindump-2026-11-02-1440-catalog-commons-first-view.md`).
+   Read the braindump for his latest word before porting it into the Commons tab.
+4. **The two waiting emails:** a partial load of the Allan Hancock and Antelope Valley presidents' printed emails (the
    S550 records note lists them); the apply now fills them in place.
-3. **Step 11 on 2026-11-03 (UTC) or later: Santa Ana's full read** (`python3 scripts/next_slo_colleges.py --college
+5. **Step 11 on 2026-11-03 (UTC) or later: Santa Ana's full read** (`python3 scripts/next_slo_colleges.py --college
    santa_ana`), plus the next preparation run (Las Positas' index, then Columbia's trial).
-4. **Step 8 next runs Sunday 2026-11-08**: the 15 read longest ago (Cañada onward). Seeds stay in the file; a seeded
+6. **Step 8 next runs Sunday 2026-11-08**: the 15 read longest ago (Cañada onward). Seeds stay in the file; a seeded
    college reads its seeds every time it is in a batch.
-5. **Monterey Peninsula's 14** (lane, program requirements; lessons *S536*), unchanged.
-6. **Small:** the cert link's next families (AWS, Google, NCCER, AWS welding). San Jose City's three VP emails. Madera's
+7. **Monterey Peninsula's 14** (lane, program requirements; lessons *S536*), unchanged.
+8. **Small:** the cert link's next families (AWS, Google, NCCER, AWS welding). San Jose City's three VP emails. Madera's
    census homepage reads `maderacenter.com`; check it against the college's own site.
-7. **`check_generated.sh` reads two files STALE on `main` itself** (the statewide catalog, the discipline blanks
+9. **`check_generated.sh` reads two files STALE on `main` itself** (the statewide catalog, the discipline blanks
    worklist). Find whether a daily run refreshes them before any session regenerates them by hand.
-8. **Carryover:** Accept's email (Sheet 146 card 3), Sierra's first-text latency, MiraCosta's short name.
+10. **Carryover:** Accept's email (Sheet 146 card 3), Sierra's first-text latency, MiraCosta's short name.
 
 ## Lessons to honor
 
