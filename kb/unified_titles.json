@@ -9783,19 +9783,18 @@
     "_notes": "Apprenticeship module/topic."
   },
   "Advanced AutoCAD": {
-    "unified_title": "Advanced AutoCAD",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "AutoCAD Advanced",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:08.708+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPICA-AA-1-001",
       "MAPPRA-AA1-1-001",
       "MAPPRA-AA2-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Could be vendor certification or local course; issuer assumed Autodesk if cert."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Advanced AutoCAD' (conf 0.7)."
   },
   "Advanced Automatic Finishing Tools": {
     "unified_title": "Advanced Automatic Finishing Tools",
@@ -12830,17 +12829,16 @@
     "_notes": "Industry training program in yacht craftsmanship."
   },
   "Boatworks 101 Yacht Electrical Systems": {
-    "unified_title": "Boatworks 101 — Yacht Electrical Systems",
-    "confidence_title": 0.65,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Boatworks 101 Yacht Electrical Systems",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:20.323+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPSAA-B1YE-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Industry training program."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Boatworks 101 — Yacht Electrical Systems' (conf 0.65)."
   },
   "Boatworks 101 Yacht Propulsion Systems": {
     "unified_title": "Boatworks 101 — Yacht Propulsion Systems",
@@ -13012,17 +13010,16 @@
     "_notes": "Bus operator certification; issuer varies by transit agency."
   },
   "Business Communications": {
-    "unified_title": "Business Communications",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Business Communication",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:21.483+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPMM-BC-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "CPL Type 'Military' implies JST credit recommendation via ACE."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Business Communications' (conf 0.7)."
   },
   "Business Financial Plan- Credit by Exam": {
     "unified_title": "Business Financial Plan",
@@ -13064,17 +13061,16 @@
     "_notes": "Stripped course code and CBE marker."
   },
   "C++ Programming II CS 089A Cx": {
-    "unified_title": "C++ Programming",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "C++ Programming 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:24.707+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCxS-CPIC-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Kept I/II split; different course levels."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'C++ Programming' (conf 0.8)."
   },
   "C-190, C-290, ICS 100 and ICS 700 Wildland Fire Certifications ": {
     "unified_title": "Wildland Fire Certifications (C-190, C-290, ICS-100, ICS-700)",
@@ -16569,30 +16565,28 @@
     "_notes": "Local college course exhibit."
   },
   "CSCI 295\tInternship in Computer Science Discussion": {
-    "unified_title": "Computer Science Internship",
-    "confidence_title": 0.55,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Internship in Computer Science Discussion",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:28.651+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPICI-C2IC-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Internship discussion section; CPL Type Industry Certification is unusual — needs review."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Computer Science Internship' (conf 0.55)."
   },
   "CSCI 296C\tInternship in Computer Science - Portfolio Review": {
-    "unified_title": "Computer Science Internship",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Internship in Computer Science",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:30.22+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPPRA-C2IC-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college internship credit via portfolio review."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Computer Science Internship' (conf 0.8)."
   },
   "CUL 003 Industry Certification": {
     "unified_title": "Sanitation and Safety",
@@ -16659,30 +16653,28 @@
     "_notes": "Local college course content via portfolio review."
   },
   "CULART 044 CBE": {
-    "unified_title": "Restaurant Service and Catering 2",
-    "confidence_title": 0.45,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Introduction to Baking Skills, Ingredients, and Technology",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:15:23.163+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBES-30-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course code only; college-specific CBE bucket."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Restaurant Service and Catering 2' (conf 0.45)."
   },
   "CULART 240 CBE": {
-    "unified_title": "Restaurant Service and Catering 2",
-    "confidence_title": 0.45,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Procurement, Purchasing and Selection",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:15:24.451+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBES-42-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course code only; college-specific CBE bucket."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Restaurant Service and Catering 2' (conf 0.45)."
   },
   "CULART 250 CBE ": {
     "unified_title": "Wine, Beverage, and Food Pairing Concepts",
@@ -17810,17 +17802,16 @@
     "_notes": null
   },
   "Carpenter’s Training Center CTCNC CARP 109": {
-    "unified_title": "Welding II",
-    "confidence_title": 0.75,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Welding 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:12:44.963+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPICA-CTCC10-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Welding II' (conf 0.75)."
   },
   "Carpenter’s Training Center CTCNC CARP 110": {
     "unified_title": "Welding 1",
@@ -18109,17 +18100,16 @@
     "_notes": "CTCNC apprenticeship module code preserved."
   },
   "Carpenter’s Training Center CTCNC CARP 284": {
-    "unified_title": "Welding II SMAW",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Welding 2 SMAW",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:12:46.077+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPICA-CTCC10-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "CTCNC apprenticeship module code preserved."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Welding II SMAW' (conf 0.7)."
   },
   "Carpenter’s Training Center CTCNC CARP 285": {
     "unified_title": "Advanced Pile Driving Land and Water",
@@ -20669,30 +20659,28 @@
     "_notes": "Local college course (CNST 050) via CBE."
   },
   "Construction Fundamentals Lab: Principles and Practices": {
-    "unified_title": "Construction Fundamentals",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Construction Fundamentals: Principles and Practices Lab",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:31.803+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBEN-CFLP-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college lab course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Construction Fundamentals' (conf 0.85)."
   },
   "Construction Fundamentals: Principles and Practice": {
-    "unified_title": "Construction Fundamentals",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Construction Fundamentals: Principles and Practices",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:32.683+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBEN-CFPA-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Construction Fundamentals' (conf 0.85)."
   },
   "Construction Trades 107-Credit by Exam": {
     "unified_title": "Construction Trades",
@@ -20917,43 +20905,40 @@
     "_notes": "Only course number given; specific topic unknown."
   },
   "Credit By Exam San Diego City College": {
-    "unified_title": "Credit by Exam",
-    "confidence_title": 0.55,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Basic Refrigeration & AC Lab",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:59.788+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBES-CBES-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Skill Rule 5: administrative bucket â€” San Diego City registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Credit by Exam' (conf 0.55)."
   },
   "Credit By Exam at Mesa": {
-    "unified_title": "Credit by Exam",
-    "confidence_title": 0.5,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Basic Computer Keyboarding",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:56.411+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBES-CBEA-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Skill Rule 5: administrative bucket. 'Mesa' interpreted as San Diego Mesa College (the only CCC named 'Mesa'). Confidence 0.50 because the abbreviation 'Mesa' is ambiguous on its face."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Credit by Exam' (conf 0.5)."
   },
   "Credit By Exam at Saddleback College": {
-    "unified_title": "Credit by Exam",
-    "confidence_title": 0.55,
-    "classified_at": "2026-05-19",
-    "classified_by": "hand-curated seed (Phase 2)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Plant Propagation",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:58.587+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBES-CBEA2-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Skill Rule 5: administrative bucket â€” Saddleback registers multiple CBE awards under one MAP ExhibitID. Not a single credential; flagged for review."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Credit by Exam' (conf 0.55)."
   },
   "Credit by  Exam-Criminal Justice Report Writing and Courtroom Procedures": {
     "unified_title": "Criminal Justice Report Writing and Courtroom Procedures",
@@ -21178,17 +21163,16 @@
     "_notes": "Local ESL course."
   },
   "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing": {
-    "unified_title": "ESL Grammar for Reading and Writing Intermediate",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "High-Intermediate Grammar for Reading and Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:40.859+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEE1-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ESL Grammar for Reading and Writing Intermediate' (conf 0.8)."
   },
   "Credit by Exam ESL 121A Intermediate Reading and Writing": {
     "unified_title": "ESL Reading and Writing Intermediate",
@@ -21204,17 +21188,16 @@
     "_notes": null
   },
   "Credit by Exam ESL 121B High-Intermediate Reading and Writing": {
-    "unified_title": "ESL Reading and Writing Intermediate",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "High-Intermediate Reading and Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:43.211+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEE3-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ESL Reading and Writing Intermediate' (conf 0.8)."
   },
   "Credit by Exam ESL 130A Beginning Grammar for Reading and Writing": {
     "unified_title": "ESL Grammar for Reading and Writing Beginning",
@@ -21230,17 +21213,16 @@
     "_notes": null
   },
   "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing": {
-    "unified_title": "ESL Grammar for Reading and Writing Beginning",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "High-Beginning Grammar for Reading and Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:39.731+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEE5-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ESL Grammar for Reading and Writing Beginning' (conf 0.8)."
   },
   "Credit by Exam ESL 131A Beginning Reading and Writing": {
     "unified_title": "ESL Reading and Writing Beginning",
@@ -21256,17 +21238,16 @@
     "_notes": null
   },
   "Credit by Exam ESL 131B High-Beginning Reading and Writing": {
-    "unified_title": "ESL Reading and Writing Beginning",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "High-Beginning Reading and Writing",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:42.3+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEE7-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'ESL Reading and Writing Beginning' (conf 0.8)."
   },
   "Credit by Exam JAMS 12 Introduction to Photojournalism": {
     "unified_title": "Introduction to Photojournalism",
@@ -21373,17 +21354,16 @@
     "_notes": "Same as JAMS 12 — unified."
   },
   "Credit by Exam SPAN 1B Elementary Spanish": {
-    "unified_title": "Elementary Spanish 1",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary Spanish 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:11.075+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBES3-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Elementary Spanish 1' (conf 0.85)."
   },
   "Credit by Exam- ACCT 1A: Financial Accounting I": {
     "unified_title": "Financial Accounting",
@@ -21737,17 +21717,16 @@
     "_notes": null
   },
   "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO": {
-    "unified_title": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing",
-    "confidence_title": 0.75,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing: 30-UO",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:15:18.267+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEP4-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "'30-UO' is a unit-option variant; same credential."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing' (conf 0.75)."
   },
   "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice": {
     "unified_title": "Patient-Centered Care 3 and Transition to Professional Practice",
@@ -21763,17 +21742,16 @@
     "_notes": null
   },
   "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO": {
-    "unified_title": "Patient-Centered Care 3 and Transition to Professional Practice",
-    "confidence_title": 0.75,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Patient-Centered Care 3 and Transition to Professional Practice: 30-UO",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:15:19.627+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEP6-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Unit-option variant unified with base."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Patient-Centered Care 3 and Transition to Professional Practice' (conf 0.75)."
   },
   "Credit by Exam- Survey of Art from Prehistory to the Medieval Era": {
     "unified_title": "Survey of Art from Prehistory to the Medieval Era",
@@ -21854,17 +21832,16 @@
     "_notes": null
   },
   "Credit by Exam-Elementary American Sign Language 1": {
-    "unified_title": "American Sign Language 1",
-    "confidence_title": 0.9,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary American Sign Language 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:12:49.643+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEA15-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'American Sign Language 1' (conf 0.9)."
   },
   "Credit by Exam-Mexican Folklorico I": {
     "unified_title": "Mexican Folklorico 1",
@@ -22010,17 +21987,16 @@
     "_notes": "Local CBE."
   },
   "Credit by Exam: Elementary American Sign Language II": {
-    "unified_title": "American Sign Language 2",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary American Sign Language 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:12:52.355+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBEE9-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'American Sign Language 2' (conf 0.85)."
   },
   "Credit by Exam: Fingerspelling/Numbers": {
     "unified_title": "ASL Fingerspelling and Numbers",
@@ -22127,17 +22103,16 @@
     "_notes": null
   },
   "Credit by Exam: Spanish 3 (SPA-3)": {
-    "unified_title": "Spanish Intermediate",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Intermediate Spanish 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:43.195+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CBES2-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Third-semester Spanish typically intermediate."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Spanish Intermediate' (conf 0.8)."
   },
   "Credit by Exam: Spreadsheets": {
     "unified_title": "Spreadsheets",
@@ -22448,17 +22423,16 @@
     "_notes": null
   },
   "Criminal Justice Written Communication": {
-    "unified_title": "Criminal Justice Written Communication",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Written Criminal Justice Communications",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:34.516+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPICI-CJWC-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Likely refers to POST or academy writing course; unclear issuer."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Criminal Justice Written Communication' (conf 0.7)."
   },
   "Criminal Law ADJ 3 Cx": {
     "unified_title": "Criminal Law",
@@ -22487,17 +22461,16 @@
     "_notes": null
   },
   "Critical Thinking and the Nursing Process II": {
-    "unified_title": "Critical Thinking and the Nursing Process",
-    "confidence_title": 0.82,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Critical Thinking and the Nursing Process 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:36.907+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-CTAT1-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Critical Thinking and the Nursing Process' (conf 0.82)."
   },
   "Cul Art 040-CBE": {
     "unified_title": "Introduction to Baking",
@@ -22877,17 +22850,16 @@
     "_notes": null
   },
   "DANCEST 302 - Choreography II": {
-    "unified_title": "Choreography",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Choreography 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:25.891+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-D3-C1-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Choreography' (conf 0.85)."
   },
   "DANCETQ 141 - Modern Dance Techniques I ": {
     "unified_title": "Modern Dance Techniques 1",
@@ -24892,82 +24864,76 @@
     "_notes": "Local college course."
   },
   "Elementary American Sign Language I ASL 001 Cx": {
-    "unified_title": "American Sign Language 1",
-    "confidence_title": 0.88,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary American Sign Language 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:12:49.643+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCxS-EASL1-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college course; course code and 'Cx' stripped."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'American Sign Language 1' (conf 0.88)."
   },
   "Elementary American Sign Language II ASL 002 Cx": {
-    "unified_title": "American Sign Language 2",
-    "confidence_title": 0.88,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary American Sign Language 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:12:52.355+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCxS-EASL-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'American Sign Language 2' (conf 0.88)."
   },
   "Elementary Hmong I": {
-    "unified_title": "Hmong 1",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary Hmong 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:18.332+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPICI-EHI-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Local college language course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Hmong 1' (conf 0.8)."
   },
   "Elementary Hmong II": {
-    "unified_title": "Hmong 2",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary Hmong 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:19.363+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPICI-EHI1-1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": "Local college language course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Hmong 2' (conf 0.8)."
   },
   "Elementary Japanese": {
-    "unified_title": "Japanese 1",
-    "confidence_title": 0.82,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary Japanese 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:21.235+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-EJ-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college language course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Japanese 1' (conf 0.82)."
   },
   "Elementary Japanese 01A": {
-    "unified_title": "Japanese 1",
-    "confidence_title": 0.78,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary Japanese 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:21.235+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-EJ0-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course-section variant; unified with general Elementary Japanese."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Japanese 1' (conf 0.78)."
   },
   "Elementary Spanish I": {
     "unified_title": "Elementary Spanish 1",
@@ -26197,17 +26163,16 @@
     "_notes": "Dual-enrollment/articulated CTE course from Fontana HS for fire science."
   },
   "FONTANA HIGH SCHOOL- Advanced Law Enforcement": {
-    "unified_title": "Advanced Law Enforcement",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Law Enforcement Advanced",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:09.987+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXH-FHSC1-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Articulated CTE course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Advanced Law Enforcement' (conf 0.7)."
   },
   "FONTANA HIGH SCHOOL- Emergency Medical Responder": {
     "unified_title": "Emergency Medical Responder",
@@ -26262,17 +26227,16 @@
     "_notes": "Articulated CTE course."
   },
   "FREN 101\tFrench 1 - Portfolio Review": {
-    "unified_title": "French 1",
-    "confidence_title": 0.9,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary French 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:12.806+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPPRA-F11--1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Generic French 1 course exhibit; no external issuer."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'French 1' (conf 0.9)."
   },
   "FTC 101 Fire Protection Organization (A)": {
     "unified_title": "Fire Protection Organization",
@@ -28258,17 +28222,16 @@
     "_notes": "HAZWOPER FRA/FRO levels under 29 CFR 1910.120(q)."
   },
   "First Semester Vietnamese- Credit by Exam": {
-    "unified_title": "Vietnamese — First Semester",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary Vietnamese 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:54.483+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-FSVC-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local language course CBE."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Vietnamese — First Semester' (conf 0.7)."
   },
   "First Tuesday Real Estate School": {
     "unified_title": "First Tuesday Real Estate Courses",
@@ -28531,17 +28494,16 @@
     "_notes": "Local college portfolio-review exhibit; specialized machining skill."
   },
   "French Level II": {
-    "unified_title": "French — Level 2",
-    "confidence_title": 0.6,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary French 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:15.275+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPSAS-FLI-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Standardized assessment for French language level II; specific assessment provider unknown."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'French — Level 2' (conf 0.6)."
   },
   "French Wines": {
     "unified_title": "French Wines",
@@ -29930,16 +29892,16 @@
     "_notes": null
   },
   "Human Resource Management": {
-    "unified_title": "Human Resource Management",
-    "confidence_title": 0.72,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Human Resources Management",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:48.299+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-HRM-1-001"
     ],
-    "_notes": "Local Chaffey course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Human Resource Management' (conf 0.72)."
   },
   "Human Sexuality PSY 012 Cx": {
     "unified_title": "Human Sexuality",
@@ -31849,28 +31811,30 @@
     "_notes": "Course code stripped; local Cypress College course."
   },
   "IW- Architectural II": {
-    "unified_title": "Ironworker Architectural II",
+    "unified_title": "Ironworker Architectural 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-11-01T22:12:10.259+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXA-IAI-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Ironworker Architectural 2' (conf 0.7)."
+    "_revised_from": "Ironworker Architectural II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Ironworker Architectural II' on 2026-11-01."
   },
   "IW- Architectural III": {
-    "unified_title": "Ironworker Architectural III",
+    "unified_title": "Ironworker Architectural 3",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-11-01T22:12:11.051+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXA-IAI1-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Ironworker Architectural 3' (conf 0.7)."
+    "_revised_from": "Ironworker Architectural III",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Ironworker Architectural III' on 2026-11-01."
   },
   "IW- Detailing ": {
     "unified_title": "Ironworker Apprenticeship — Detailing",
@@ -31963,16 +31927,17 @@
     "_notes": "Ironworker apprenticeship coursework."
   },
   "IW- Structural Steel II": {
-    "unified_title": "Ironworker Structural Steel II",
+    "unified_title": "Ironworker Structural Steel 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-11-01T22:12:12.643+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXA-ISSI-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Ironworker Structural Steel 2' (conf 0.7)."
+    "_revised_from": "Ironworker Structural Steel II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Ironworker Structural Steel II' on 2026-11-01."
   },
   "IW- Welding I": {
     "unified_title": "Ironworker Apprenticeship — Welding 1",
@@ -32001,16 +31966,17 @@
     "_notes": "Ironworker apprenticeship module."
   },
   "IW- Welding III": {
-    "unified_title": "Ironworker Welding III",
+    "unified_title": "Ironworker Welding 3",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-11-01T22:12:20.067+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXA-IWI1-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Ironworker Welding 3' (conf 0.7)."
+    "_revised_from": "Ironworker Welding III",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Ironworker Welding III' on 2026-11-01."
   },
   "IW-Cranes": {
     "unified_title": "Ironworker Apprenticeship — Cranes",
@@ -32182,30 +32148,28 @@
     "_notes": "Local college exhibit."
   },
   "Intermediate American Sign Language I ASL 003 Cx": {
-    "unified_title": "American Sign Language Intermediate",
-    "confidence_title": 0.78,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Intermediate American Sign Language 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:12:55.507+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCxS-IASL-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course code and CBE mechanism stripped."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'American Sign Language Intermediate' (conf 0.78)."
   },
   "Intermediate American Sign Language II ASL 004 Cx": {
-    "unified_title": "American Sign Language Intermediate",
-    "confidence_title": 0.78,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Intermediate American Sign Language 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:12:56.483+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCxS-IASL1-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course code stripped."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'American Sign Language Intermediate' (conf 0.78)."
   },
   "Intermediate Berry Production (2)": {
     "unified_title": "Berry Production Intermediate",
@@ -32472,30 +32436,28 @@
     "_notes": "HS site stripped."
   },
   "Intermediate Spanish": {
-    "unified_title": "Spanish Intermediate",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Intermediate Spanish 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:53.163+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-IS-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college Spanish course."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Spanish Intermediate' (conf 0.7)."
   },
   "Intermediate Spanish I SPAN 003 Cx": {
-    "unified_title": "Spanish Intermediate",
-    "confidence_title": 0.78,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Intermediate Spanish 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:43.195+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCxS-ISIS-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Course code stripped."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Spanish Intermediate' (conf 0.78)."
   },
   "Intermediate Web Design Development": {
     "unified_title": "Web Design and Development Intermediate",
@@ -33036,17 +32998,16 @@
     "_notes": "Local Chaffey course."
   },
   "Introduction to Computer Networks": {
-    "unified_title": "Introduction to Computer Networks",
-    "confidence_title": 0.9,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Introduction to Computer Networking",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:50.412+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-ITCN-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local college course CBE."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Introduction to Computer Networks' (conf 0.9)."
   },
   "Introduction to Computer Programming": {
     "unified_title": "Introduction to Computer Programming",
@@ -35431,16 +35392,17 @@
     "_notes": "Articulated against LVN licensure as the underlying credential."
   },
   "Math 095 CBE ": {
-    "unified_title": "Intermediate Algebra",
+    "unified_title": "Algebra Intermediate",
     "confidence_title": 1.0,
-    "classified_at": "2026-07-07",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
-    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-11-01T22:14:49.155+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBES-M0C-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Generic Credit by Exam — San Bernardino Valley College (MATH 095)' (conf 0.5)."
+    "_revised_from": "Intermediate Algebra",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Intermediate Algebra' on 2026-11-01."
   },
   "Math 102-CBE": {
     "unified_title": "College Algebra",
@@ -35456,17 +35418,16 @@
     "_notes": "Math 102 at SBVC is Intermediate Algebra; low confidence — course number alone is ambiguous across colleges."
   },
   "Math 103 - CBE": {
-    "unified_title": "College Algebra",
-    "confidence_title": 0.5,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Plane Trigonometry",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:27.163+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBES-M1-C-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Math 103 at SBVC is typically College Algebra; course-number-only title."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'College Algebra' (conf 0.5)."
   },
   "Mathematics for Elementary School Teachers MATH 016 Cx": {
     "unified_title": "Mathematics for Elementary School Teachers",
@@ -35703,16 +35664,17 @@
     "_notes": null
   },
   "Metal Building Erection I / Foreman Training": {
-    "unified_title": "Metal Building Erection I / Foreman Training",
+    "unified_title": "Metal Building Erection 1 / Foreman Training",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
-    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-11-01T22:12:23.147+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXA-MBEI-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Metal Building Erection 1 / Foreman Training' (conf 0.6)."
+    "_revised_from": "Metal Building Erection I / Foreman Training",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Metal Building Erection I / Foreman Training' on 2026-11-01."
   },
   "Metal Pan and Security Systems": {
     "unified_title": "Metal Pan and Security Systems",
@@ -38368,17 +38330,16 @@
     "_notes": null
   },
   "Portfolio": {
-    "unified_title": "Portfolio Review",
-    "confidence_title": 0.4,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Computer Basics",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:02.571+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPPRA-P2-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Bare 'Portfolio' title is an administrative bucket per Rule 5."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Portfolio Review' (conf 0.4)."
   },
   "Portfolio Management Professional (PfMP) - Project Management Institute (PMI)": {
     "unified_title": "Portfolio Management Professional (PfMP)",
@@ -40032,30 +39993,29 @@
     "_notes": null
   },
   "SPAN 103\tSpanish 3 - Industry  Certification": {
-    "unified_title": "Spanish 3",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Intermediate Spanish 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:30.635+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPICI-S13--1-001"
     ],
-    "quality_flag": "suspect_course_as_exhibit",
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Spanish 3' (conf 0.85)."
   },
   "SPAN 103 - CBE ": {
-    "unified_title": "Spanish 3",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Intermediate Spanish 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:30.635+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBES-S1-C-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_revised_from": "Spanish 3",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Spanish 3' on 2026-11-01."
   },
   "SPAN 109\tSpanish for Spanish Speakers 1 - Industry Certification": {
     "unified_title": "Spanish for Heritage Speakers 1",
@@ -40136,17 +40096,16 @@
     "_notes": null
   },
   "SPAN 3": {
-    "unified_title": "Spanish 3",
-    "confidence_title": 0.85,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Intermediate Spanish 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:30.635+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-S3-1-001"
     ],
-    "quality_flag": null,
-    "_notes": null
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Spanish 3' (conf 0.85)."
   },
   "STEM Field Teaching": {
     "unified_title": "STEM Field Teaching Experience",
@@ -40162,17 +40121,16 @@
     "_notes": "Local work-experience credit."
   },
   "SUMMIT HIGH SCHOOL- Automotive Maintenance Light Repair 3": {
-    "unified_title": "Automotive Maintenance and Light Repair",
-    "confidence_title": 0.75,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Automotive Maintenance & Light Repair",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:14:16.205+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXH-SHSA-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "High school CTE articulation; possibly aligned to NATEF/ASE MLR."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Automotive Maintenance and Light Repair' (conf 0.75)."
   },
   "SUMMIT HIGH SCHOOL- Business and Finance": {
     "unified_title": "Business and Finance",
@@ -40904,30 +40862,30 @@
     "_notes": "Score-range variant."
   },
   "Spanish I ": {
-    "unified_title": "Spanish 1",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary Spanish 1",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:27.379+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXO-S1SI-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local CBE for Spanish I."
+    "_revised_from": "Spanish 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Spanish 1' on 2026-11-01."
   },
   "Spanish II ": {
-    "unified_title": "Spanish 2",
-    "confidence_title": 0.8,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Elementary Spanish 2",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:13:28.164+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXO-SI-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local CBE for Spanish II."
+    "_revised_from": "Spanish 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Spanish 2' on 2026-11-01."
   },
   "Spanish Wines": {
     "unified_title": "Spanish Wines",
@@ -41151,28 +41109,30 @@
     "_notes": "CPL Type 'Military' implies JST credit recommendation."
   },
   "Structural Arch Orn I": {
-    "unified_title": "Ironworker Structural, Architectural and Ornamental I",
+    "unified_title": "Ironworker Structural, Architectural and Ornamental 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
-    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-11-01T22:12:18.411+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXA-SAOI-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Ironworker Structural, Architectural and Ornamental 1' (conf 0.6)."
+    "_revised_from": "Ironworker Structural, Architectural and Ornamental I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Ironworker Structural, Architectural and Ornamental I' on 2026-11-01."
   },
   "Structural Steel I": {
-    "unified_title": "Ironworker Structural Steel I",
+    "unified_title": "Ironworker Structural Steel 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
-    "reviewed_by": "map@rccd.edu",
+    "reviewed_at": "2026-11-01T22:12:11.915+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXA-SSI-1-001"
     ],
-    "_notes": "Curator triage superseded the unreviewed machine classification 'Ironworker Structural Steel 1' (conf 0.65)."
+    "_revised_from": "Ironworker Structural Steel I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Ironworker Structural Steel I' on 2026-11-01."
   },
   "Studio Portrait Photography": {
     "unified_title": "Studio Portrait Photography",
@@ -41242,30 +41202,28 @@
     "_notes": "Carpentry topic; local apprenticeship exhibit."
   },
   "Suspension and Steering": {
-    "unified_title": "Suspension and Steering",
-    "confidence_title": 0.75,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Suspension and Steering (ASE A4 Suspension and Steering)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCBEN-SAS-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Local automotive CBE."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Suspension and Steering' (conf 0.75)."
   },
   "Suspension and Steering Systems": {
-    "unified_title": "Suspension and Steering",
-    "confidence_title": 0.7,
-    "classified_at": "2026-05-20",
-    "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
-    "reviewed_at": null,
-    "reviewed_by": null,
+    "unified_title": "Suspension and Steering (ASE A4 Suspension and Steering)",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+    "reviewed_by": "slee@cccco.edu",
     "source_exhibit_ids": [
       "MAPCXS-SASS-1-001"
     ],
-    "quality_flag": null,
-    "_notes": "Unified with Suspension and Steering as same competency."
+    "_notes": "Curator triage superseded the unreviewed machine classification 'Suspension and Steering' (conf 0.7)."
   },
   "Suspension, Steering and Handling ASE A4": {
     "unified_title": "ASE A4 — Suspension and Steering",
@@ -43258,20 +43216,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Spanish I": {
-    "unified_title": "Spanish 1",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-06-02",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:25:47Z",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:27.379+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Spanish 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Spanish 1' on 2026-11-01."
   },
   "Spanish II": {
-    "unified_title": "Spanish 2",
+    "unified_title": "Elementary Spanish 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-06-02",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-02T18:25:47Z",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:28.164+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Spanish 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Spanish 2' on 2026-11-01."
   },
   "ADJU 232 - Juvenile Justice Procedures - Credit by Exam": {
     "unified_title": "Juvenile Law and Procedures",
@@ -44101,20 +44065,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Math 095 CBE": {
-    "unified_title": "Intermediate Algebra",
+    "unified_title": "Algebra Intermediate",
     "confidence_title": 1.0,
-    "classified_at": "2026-06-03",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:14:49.155+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Intermediate Algebra",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Intermediate Algebra' on 2026-11-01."
   },
   "SPAN 103 - CBE": {
-    "unified_title": "Spanish 3",
+    "unified_title": "Intermediate Spanish 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-06-03",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:30.635+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Spanish 3",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Spanish 3' on 2026-11-01."
   },
   "WELD 045 CBE": {
     "unified_title": "Shielded Metal Arc Welding Beginning",
@@ -46241,12 +46211,15 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Credit by Exam KINS 025 First Aid, CPR & AED": {
-    "unified_title": "First Aid, CPR & AED",
+    "unified_title": "First Aid, CPR and AED",
     "confidence_title": 1.0,
-    "classified_at": "2026-07-07",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-07T20:44:37.020055+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:14:46.82+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "First Aid, CPR & AED",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'First Aid, CPR & AED' on 2026-11-01."
   },
   "Credit by Exam MATH 021 Precalculus Algebra": {
     "unified_title": "Precalculus Algebra",
@@ -50256,20 +50229,26 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "ARMEN 1: Beginning Armenian": {
-    "unified_title": "Armenian 1",
+    "unified_title": "Elementary Armenian 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:50:53.721038+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:12:59.724+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Armenian 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Armenian 1' on 2026-11-01."
   },
   "ARMEN 2: High-Beginning Armenian": {
-    "unified_title": "Armenian 2",
+    "unified_title": "Elementary Armenian 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:51:05.686391+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:00.779+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Armenian 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Armenian 2' on 2026-11-01."
   },
   "ART 002: Two-Dimensional Design": {
     "unified_title": "Two-Dimensional Design",
@@ -50340,28 +50319,37 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "ASL 002: Intermediate American Sign Language: Level 2": {
-    "unified_title": "American Sign Language: Level 2 Intermediate",
+    "unified_title": "Intermediate American Sign Language 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:12:58.315+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "American Sign Language: Level 2 Intermediate",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'American Sign Language: Level 2 Intermediate' on 2026-11-01."
   },
   "ASL 1: Beginning American Sign Language": {
-    "unified_title": "American Sign Language 1",
+    "unified_title": "Elementary American Sign Language 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:51:26.456428+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:12:49.643+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "American Sign Language 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'American Sign Language 1' on 2026-11-01."
   },
   "ASL 2: High-Beginning American Sign Language": {
-    "unified_title": "American Sign Language 2",
+    "unified_title": "Elementary American Sign Language 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:51:42.092367+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:12:52.355+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "American Sign Language 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'American Sign Language 2' on 2026-11-01."
   },
   "AT 10: Technical Computer Applications": {
     "unified_title": "Technical Computer Applications",
@@ -50460,12 +50448,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "American Sign Language Intermediate Level - Credit by Exam": {
-    "unified_title": "American Sign Language Intermediate",
+    "unified_title": "Intermediate American Sign Language",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:54.291+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "American Sign Language Intermediate",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'American Sign Language Intermediate' on 2026-11-01."
   },
   "Applied Color Theory - Credit by Exam (FASH 35 )": {
     "unified_title": "Applied Color Theory",
@@ -50743,28 +50734,37 @@
     "reviewed_by": "map@rccd.edu"
   },
   "BT 1: Computer Document Processing I": {
-    "unified_title": "Computer Document Processing I",
+    "unified_title": "Computer Document Processing 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:52:02.94616+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:11:55.467+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Computer Document Processing I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Computer Document Processing I' on 2026-11-01."
   },
   "BT 28: Microsoft Word I": {
-    "unified_title": "Microsoft Word I",
+    "unified_title": "Microsoft Word 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:58:34.086951+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:12:24.219+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Microsoft Word I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Microsoft Word I' on 2026-11-01."
   },
   "BT 29: Microsoft Word II": {
-    "unified_title": "Microsoft Word II",
+    "unified_title": "Microsoft Word 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:58:45.073271+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:12:24.915+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Microsoft Word II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Microsoft Word II' on 2026-11-01."
   },
   "BUS 001A: Beginning Principles of Accounting": {
     "unified_title": "Financial Accounting",
@@ -51011,20 +51011,26 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "CHIN 1: Beginning Chinese": {
-    "unified_title": "Chinese 1",
+    "unified_title": "Elementary Chinese 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:59:23.212902+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:01.932+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Chinese 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Chinese 1' on 2026-11-01."
   },
   "CHIN 2: High-Beginning Chinese": {
-    "unified_title": "Chinese 2",
+    "unified_title": "Elementary Chinese 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:59:24.575284+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:02.7+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Chinese 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Chinese 2' on 2026-11-01."
   },
   "CIS 005A: Information & Communication Technology Essentials": {
     "unified_title": "Information & Communication Technology Essentials",
@@ -52207,12 +52213,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Combinded Processes I": {
-    "unified_title": "Combined Processes I",
+    "unified_title": "Combined Processes 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:27.79676+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:11:53.459+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Combined Processes I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Combined Processes I' on 2026-11-01."
   },
   "Commercial Mechanical Inspector": {
     "unified_title": "Commercial Mechanical Inspector",
@@ -53135,12 +53144,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Examination for SPAN 1A": {
-    "unified_title": "Spanish Beginning",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:13:37.419+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Spanish Beginning",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Spanish Beginning' on 2026-11-01."
   },
   "Examination for THEA 10": {
     "unified_title": "Introduction to Dramatic Arts",
@@ -53311,20 +53323,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "FRENCH 1: Beginning French": {
-    "unified_title": "French 1",
+    "unified_title": "Elementary French 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:59:27.399175+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:12.806+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "French 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'French 1' on 2026-11-01."
   },
   "FRENCH 2: High-Beginning French": {
-    "unified_title": "French 2",
+    "unified_title": "Elementary French 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:59:29.424775+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:14.243+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "French 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'French 2' on 2026-11-01."
   },
   "FSM 19: Work Experience": {
     "unified_title": "Work Experience",
@@ -53543,20 +53561,26 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "GERMAN 1: Beginning German": {
-    "unified_title": "German 1",
+    "unified_title": "Elementary German 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:59:30.016803+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:16.139+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "German 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'German 1' on 2026-11-01."
   },
   "GERMAN 2: High-Beginning German": {
-    "unified_title": "German 2",
+    "unified_title": "Elementary German 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:59:30.704872+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:16.875+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "German 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'German 2' on 2026-11-01."
   },
   "GISCI GISP Certification - GEOG 025": {
     "unified_title": "GIS Professional (GISP) Certification",
@@ -53591,12 +53615,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )": {
-    "unified_title": "Graphic Communications I — Orthographic Drawings",
+    "unified_title": "Graphic Communications 1 — Orthographic Drawings",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:07.819+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Graphic Communications I — Orthographic Drawings",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Graphic Communications I — Orthographic Drawings' on 2026-11-01."
   },
   "HE 035: Personal Health and Hygiene": {
     "unified_title": "Personal Health and Wellness",
@@ -53647,20 +53674,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "HMONG 1: Beginning Hmong": {
-    "unified_title": "Hmong 1",
+    "unified_title": "Elementary Hmong 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:57:05.396174+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:18.332+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Hmong 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Hmong 1' on 2026-11-01."
   },
   "HMONG 2: High-Beginning Hmong": {
-    "unified_title": "Hmong 2",
+    "unified_title": "Elementary Hmong 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:56:58.053706+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:19.363+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Hmong 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Hmong 2' on 2026-11-01."
   },
   "HRCM 001: Introduction to Hospitality Management": {
     "unified_title": "Introduction to Hospitality Management",
@@ -54419,12 +54452,15 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Electrical/Electronics I' on 2026-10-31."
   },
   "IC- Engine Performance II": {
-    "unified_title": "Engine Performance II",
+    "unified_title": "Engine Performance 2 (ASE A8 Engine Performance)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:28.838412+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:11:14.035+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Engine Performance II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Engine Performance II' on 2026-11-01."
   },
   "IC- Introduction to Automotive Technology": {
     "unified_title": "Introduction to Automotive Technology",
@@ -54489,12 +54525,15 @@
     "reviewed_by": "map@rccd.edu"
   },
   "IC-Engine Performance I": {
-    "unified_title": "Engine Performance I",
+    "unified_title": "Engine Performance 1 (ASE A8 Engine Performance)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:29.194398+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:11:09.387+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Engine Performance I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Engine Performance I' on 2026-11-01."
   },
   "IC-Welding Level I": {
     "unified_title": "NCCER Welding Level 1",
@@ -54689,20 +54728,26 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Intermediate Automotive Collision Repair I - Credit by Exam (ACRP 4C )": {
-    "unified_title": "Automotive Collision Repair 1 Intermediate",
+    "unified_title": "Intermediate Automotive Collision Repair 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:14:11.803+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Collision Repair 1 Intermediate",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Collision Repair 1 Intermediate' on 2026-11-01."
   },
   "Intermediate Automotive Collision Repair II - Credit by Exam (ACRP 4D )": {
-    "unified_title": "Automotive Collision Repair 2 Intermediate",
+    "unified_title": "Intermediate Automotive Collision Repair 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:14:12.971+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Automotive Collision Repair 2 Intermediate",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automotive Collision Repair 2 Intermediate' on 2026-11-01."
   },
   "Intermediate Automotive Refinishing I - Credit by Exam (ACRP 5C )": {
     "unified_title": "Automotive Refinishing 1 Intermediate",
@@ -54737,12 +54782,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Intermediate Medical - Surgical Nursing I - Credit by Exam (NURS 240 )": {
-    "unified_title": "Medical-Surgical Nursing 1 Intermediate",
+    "unified_title": "Intermediate Medical-Surgical Nursing 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:14:51.491+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Medical-Surgical Nursing 1 Intermediate",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Medical-Surgical Nursing 1 Intermediate' on 2026-11-01."
   },
   "Intermediate Medical - Surgical Nursing II - Credit by Exam (NURS 242 )": {
     "unified_title": "Medical-Surgical Nursing 2 Intermediate",
@@ -55001,20 +55049,26 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "JAPAN 1: Beginning Japanese": {
-    "unified_title": "Japanese 1",
+    "unified_title": "Elementary Japanese 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:56:37.11705+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:21.235+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Japanese 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Japanese 1' on 2026-11-01."
   },
   "JAPAN 2: High-Beginning Japanese": {
-    "unified_title": "Japanese 2",
+    "unified_title": "Elementary Japanese 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:56:48.23002+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:23.403+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Japanese 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Japanese 2' on 2026-11-01."
   },
   "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher, CA": {
     "unified_title": "Journeyman Certificate- Apprenticeship Carpentry, Drywall Finisher",
@@ -55049,12 +55103,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Keyboarding II - Credit by Exam (BUS 146 )": {
-    "unified_title": "Keyboarding II",
+    "unified_title": "Keyboarding 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:21.579+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Keyboarding II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Keyboarding II' on 2026-11-01."
   },
   "Landscape Design: Perspective Sketching": {
     "unified_title": "Landscape Design: Perspective Sketching",
@@ -55105,12 +55162,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "MC-1728-0012 Military Police Basic": {
-    "unified_title": "Military Police Basic",
+    "unified_title": "Basic Military Police",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:15:11.811+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Military Police Basic",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Military Police Basic' on 2026-11-01."
   },
   "MC-1728-0016 Military Police Officer Basic": {
     "unified_title": "Military Police Officer Basic",
@@ -55129,28 +55189,37 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "MUSA-21A VOICE I": {
-    "unified_title": "Voice I",
+    "unified_title": "Voice 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:12:40.619+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Voice I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Voice I' on 2026-11-01."
   },
   "MUSA-25A GUITAR I": {
-    "unified_title": "Guitar I",
+    "unified_title": "Guitar 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:12:08.987+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Guitar I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Guitar I' on 2026-11-01."
   },
   "MUSA-27A CLASS PIANO I": {
-    "unified_title": "Class Piano I",
+    "unified_title": "Class Piano 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:11:47.915+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Class Piano I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Class Piano I' on 2026-11-01."
   },
   "MUSG-10 MUSIC FUNDAMENTALS": {
     "unified_title": "Music Fundamentals",
@@ -55381,20 +55450,26 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Music Production I and MIDI": {
-    "unified_title": "Music Production I and MIDI",
+    "unified_title": "Music Production 1 and MIDI",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:26.203+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Music Production I and MIDI",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Music Production I and MIDI' on 2026-11-01."
   },
   "Music Production II and  Electronic Composition": {
-    "unified_title": "Music Production II and Electronic Composition",
+    "unified_title": "Music Production 2 and Electronic Composition",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:27.475+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Music Production II and Electronic Composition",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Music Production II and Electronic Composition' on 2026-11-01."
   },
   "Music Teachers' Association of California Certificate of Merit": {
     "unified_title": "Music Teachers' Association of California Certificate of Merit",
@@ -55629,12 +55704,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "PC Operating System": {
-    "unified_title": "PC Operating System",
+    "unified_title": "PC Operating Systems",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:30.178708+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:15:21.115+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "PC Operating System",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'PC Operating System' on 2026-11-01."
   },
   "PC Operating Systems (A+ Prep)-Portfolio": {
     "unified_title": "PC Operating Systems",
@@ -55769,20 +55847,26 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "PORT 1: Beginning Portuguese": {
-    "unified_title": "Portuguese 1",
+    "unified_title": "Elementary Portuguese 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:54:55.336402+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:25.091+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Portuguese 1",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Portuguese 1' on 2026-11-01."
   },
   "PORT 2: High-Beginning Portuguese": {
-    "unified_title": "Portuguese 2",
+    "unified_title": "Elementary Portuguese 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:55:06.437811+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:13:26.011+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Portuguese 2",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Portuguese 2' on 2026-11-01."
   },
   "PSYC C1000: Introduction to Psychology": {
     "unified_title": "PSYC C1000: Introduction to Psychology",
@@ -55881,12 +55965,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Portfolio for ARTS 12A": {
-    "unified_title": "Oil/Acrylic Painting: Beginning I",
+    "unified_title": "Oil/Acrylic Painting: Beginning 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:30.419+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Oil/Acrylic Painting: Beginning I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Oil/Acrylic Painting: Beginning I' on 2026-11-01."
   },
   "Portfolio for ARTS 2A": {
     "unified_title": "Introduction to Drawing",
@@ -55897,12 +55984,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Portfolio for ARTS 3A": {
-    "unified_title": "Figure and Composition I",
+    "unified_title": "Figure and Composition 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:01.635+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Figure and Composition I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Figure and Composition I' on 2026-11-01."
   },
   "Portfolio for ARTS 7A": {
     "unified_title": "Introduction to Watercolor Painting",
@@ -56081,12 +56171,15 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "RUSS 1-Elementary Russian- Credit by Exam": {
-    "unified_title": "Elementary Russian (First Quarter)",
+    "unified_title": "Elementary Russian 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:13:09.027+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Elementary Russian (First Quarter)",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Elementary Russian (First Quarter)' on 2026-11-01."
   },
   "Radiographic Positioning 1A - Credit by Exam (RTEC 123 )": {
     "unified_title": "Radiographic Positioning 1A",
@@ -56173,52 +56266,59 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "SPAN 001: Elementary Spanish I": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:11:58.355+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Elementary Spanish I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Elementary Spanish I' on 2026-11-01."
   },
   "SPAN 002: Elementary Spanish II": {
-    "unified_title": "Elementary Spanish II",
+    "unified_title": "Elementary Spanish 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:11:59.771+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Elementary Spanish II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Elementary Spanish II' on 2026-11-01."
   },
   "SPAN 003: Intermediate Spanish I": {
-    "unified_title": "Spanish I Intermediate",
+    "unified_title": "Intermediate Spanish 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:12:37.075+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Spanish I Intermediate",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Spanish I Intermediate' on 2026-11-01."
   },
   "SPAN 1: Beginning Spanish": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:53:32.095888+00:00",
-    "reviewed_by": "map@rccd.edu",
-    "title_anchor": {
-      "system": "C-ID",
-      "id": "SPAN 100"
-    }
+    "reviewed_at": "2026-11-01T22:11:58.355+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Elementary Spanish I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Elementary Spanish I' on 2026-11-01."
   },
   "SPAN 2: High-Beginning Spanish": {
-    "unified_title": "Elementary Spanish II",
+    "unified_title": "Elementary Spanish 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-12T19:59:33.132809+00:00",
-    "reviewed_by": "map@rccd.edu",
-    "title_anchor": {
-      "system": "C-ID",
-      "id": "SPAN 110"
-    }
+    "reviewed_at": "2026-11-01T22:11:59.771+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Elementary Spanish II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Elementary Spanish II' on 2026-11-01."
   },
   "SW 020: Introduction to Social Work and Human Services": {
     "unified_title": "Introduction to Social Work and Human Services",
@@ -56253,12 +56353,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Semiconductor Circuits II - Credit by Exam (ECHT 122 )": {
-    "unified_title": "Semiconductor Circuits II",
+    "unified_title": "Semiconductor Circuits 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:33.563+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Semiconductor Circuits II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Semiconductor Circuits II' on 2026-11-01."
   },
   "Server Systems": {
     "unified_title": "Server Systems",
@@ -56405,12 +56508,15 @@
     "reviewed_by": "map@rccd.edu"
   },
   "Video I": {
-    "unified_title": "Video I",
+    "unified_title": "Video 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-07-08T00:04:30.764822+00:00",
-    "reviewed_by": "map@rccd.edu"
+    "reviewed_at": "2026-11-01T22:12:39.387+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Video I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Video I' on 2026-11-01."
   },
   "Visual Merchandising - Credit by Exam (FASH 28 )": {
     "unified_title": "Visual Merchandising",
@@ -56437,12 +56543,15 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "Watercolor I": {
-    "unified_title": "Watercolor I",
+    "unified_title": "Watercolor 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-18",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:44.283+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Watercolor I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Watercolor I' on 2026-11-01."
   },
   "Welding Design and Fabrication-Credit by Exam": {
     "unified_title": "Welding Design and Fabrication",
@@ -56577,12 +56686,15 @@
     }
   },
   "ARC 201 - Architectural Design I": {
-    "unified_title": "Architectural Design I",
+    "unified_title": "Architectural Design 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-22",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:11:40.243+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Architectural Design I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Architectural Design I' on 2026-11-01."
   },
   "BIOSC 101 Theory and Practice of Microscopy": {
     "unified_title": "Theory and Practice of Microscopy",
@@ -56633,36 +56745,48 @@
     "reviewed_by": "cer-procedure-course-identity@bot"
   },
   "Class Piano I": {
-    "unified_title": "Class Piano I",
+    "unified_title": "Class Piano 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-22",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
-    "reviewed_by": "cer-procedure-brand-family@bot"
+    "reviewed_at": "2026-11-01T22:11:47.915+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Class Piano I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Class Piano I' on 2026-11-01."
   },
   "Class Piano II": {
-    "unified_title": "Class Piano II",
+    "unified_title": "Class Piano 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-22",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:11:49.699+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Class Piano II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Class Piano II' on 2026-11-01."
   },
   "ENV 102 - Foundations of Design II": {
-    "unified_title": "Foundations of Design II",
+    "unified_title": "Foundations of Design 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-22",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:12:04.907+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Foundations of Design II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Foundations of Design II' on 2026-11-01."
   },
   "ENV DES 101 - Foundations of Design I": {
-    "unified_title": "Foundations of Design I",
+    "unified_title": "Foundations of Design 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-22",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:12:03.195+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Foundations of Design I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Foundations of Design I' on 2026-11-01."
   },
   "MATH 203 Intermediate Algebra": {
     "unified_title": "Algebra Intermediate",
@@ -56781,12 +56905,15 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "ENV 101 - Foundations of Design I": {
-    "unified_title": "Foundations of Design I",
+    "unified_title": "Foundations of Design 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-23",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-23T12:57:52.618597+00:00",
-    "reviewed_by": "cer-procedure-course-identity@bot"
+    "reviewed_at": "2026-11-01T22:12:03.195+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Foundations of Design I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Foundations of Design I' on 2026-11-01."
   },
   "HLTH 101 - First Aid - Credit by Exam": {
     "unified_title": "First Aid",
@@ -57776,12 +57903,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "ASNT Level 1 Thermal (Infrared) Thermography Certification": {
-    "unified_title": "ASNT Level I — Infrared and Thermal Testing",
+    "unified_title": "ASNT Level 1 — Infrared and Thermal Testing",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:17.848749+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:11:43.395+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "ASNT Level I — Infrared and Thermal Testing",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'ASNT Level I — Infrared and Thermal Testing' on 2026-11-01."
   },
   "ASPRS Certification - GIS 025": {
     "unified_title": "ASPRS GIS Certification",
@@ -57840,12 +57970,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Advanced Medical - Surgical Nursing II Preceptorship - Credit by Exam (NURS 248 )": {
-    "unified_title": "Advanced Medical-Surgical Nursing II Preceptorship",
+    "unified_title": "Advanced Medical-Surgical Nursing 2 Preceptorship",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T15:39:02.305061+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:11:38.283+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Advanced Medical-Surgical Nursing II Preceptorship",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Advanced Medical-Surgical Nursing II Preceptorship' on 2026-11-01."
   },
   "Advanced Placement in Nursing - Credit by Exam (NURS 149 )": {
     "unified_title": "Advanced Placement in Nursing",
@@ -57992,12 +58125,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Architectural Design 1A and 1B (2 courses) HS-CNUD": {
-    "unified_title": "Revit I-Architectural Drafting",
+    "unified_title": "Revit 1-Architectural Drafting",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:26:12.137993+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:12:32.315+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Revit I-Architectural Drafting",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Revit I-Architectural Drafting' on 2026-11-01."
   },
   "Army Child and Youth Services--Child Development": {
     "unified_title": "Army Child and Youth Services — Child Development",
@@ -58437,20 +58573,26 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "California State Water Resources Control Board D3, D4, or D5 certification": {
-    "unified_title": "Water Distribution Operator II",
+    "unified_title": "Water Distribution Operator 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:27:12.882729+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:12:42.283+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Water Distribution Operator II",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Water Distribution Operator II' on 2026-11-01."
   },
   "California State Water Resources Control Board T2, T3, T4, or T5 certification": {
-    "unified_title": "Water Treatment I",
+    "unified_title": "Water Treatment 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:27:14.013355+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:12:43.483+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Water Treatment I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Water Treatment I' on 2026-11-01."
   },
   "California State Water Resources Control Board T2, T3, T4, or T5 certification, D2, D3, D4, or D5 certification, or wastewater grade II, III, IV, or V certification.": {
     "unified_title": "Water and Wastewater Mathematics 1",
@@ -59005,12 +59147,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Discipline Exam - BIOTECH 002": {
-    "unified_title": "Biotechnology I",
+    "unified_title": "Biotechnology 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:11:44.643+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Biotechnology I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Biotechnology I' on 2026-11-01."
   },
   "Discipline Exam - CIS 101": {
     "unified_title": "Introduction to Computers",
@@ -59037,20 +59182,26 @@
     "reviewed_by": "cer-procedure-classifier@bot"
   },
   "Discipline Exam - CLN ART 101": {
-    "unified_title": "Culinary Fundamentals I",
+    "unified_title": "Culinary Fundamentals 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "cer-procedure-classifier@bot"
+    "reviewed_at": "2026-11-01T22:11:56.779+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Culinary Fundamentals I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Culinary Fundamentals I' on 2026-11-01."
   },
   "Discipline Exam - DRAFT 016": {
-    "unified_title": "Blueprint Reading I",
+    "unified_title": "Blueprint Reading 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:32:41.371064+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:11:45.699+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Blueprint Reading I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Blueprint Reading I' on 2026-11-01."
   },
   "Discipline Exam - IND TEK 104": {
     "unified_title": "Industrial Technology",
@@ -59165,12 +59316,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Elem Spanish I High School Articulation": {
-    "unified_title": "Elementary Spanish I",
+    "unified_title": "Elementary Spanish 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T15:30:40.600905+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:11:58.355+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Elementary Spanish I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Elementary Spanish I' on 2026-11-01."
   },
   "Elementary American Sign Language 1": {
     "unified_title": "Elementary American Sign Language 1",
@@ -59264,20 +59418,26 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Examination for FREN 1A": {
-    "unified_title": "Elementary French",
+    "unified_title": "Elementary French 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:33:57.075872+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:13:05.363+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Elementary French",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Elementary French' on 2026-11-01."
   },
   "Examination for FREN 1B": {
-    "unified_title": "Elementary French",
+    "unified_title": "Elementary French 2",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:34:13.762436+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:13:07.012+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Elementary French",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Elementary French' on 2026-11-01."
   },
   "Examination for MUS 147": {
     "unified_title": "Piano Technology 3",
@@ -59488,12 +59648,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Haz Mat Technician 1A: Basic Chemistry": {
-    "unified_title": "Haz Mat Technician 1B: Applied Chemistry",
+    "unified_title": "Haz Mat Technician 1A: Basic Chemistry",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:14:06.659+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Haz Mat Technician 1B: Applied Chemistry",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Haz Mat Technician 1B: Applied Chemistry' on 2026-11-01."
   },
   "Haz Mat Technician 1B: Applied Chemistry": {
     "unified_title": "Haz Mat Technician 1B: Applied Chemistry",
@@ -60139,20 +60302,26 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "NUTR 071A  Rotations in Supervised Practice, Level A": {
-    "unified_title": "Rotations in Supervised Practice, Level C",
+    "unified_title": "Rotations in Supervised Practice, Level A",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T17:02:12.84583+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:14:05.363+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Rotations in Supervised Practice, Level C",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Rotations in Supervised Practice, Level C' on 2026-11-01."
   },
   "NVC Administered Calculus I Exam": {
-    "unified_title": "Single Variable Calculus I Early Transcendentals",
+    "unified_title": "Single Variable Calculus 1 Early Transcendentals",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T15:37:34.548392+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:12:35.419+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Single Variable Calculus I Early Transcendentals",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Single Variable Calculus I Early Transcendentals' on 2026-11-01."
   },
   "NVC Administered Calculus II Exam": {
     "unified_title": "Single Variable Calculus 2 Early Transcendentals",
@@ -60203,12 +60372,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Network Fundamentals": {
-    "unified_title": "Network Fundamentals",
+    "unified_title": "Networking Fundamentals",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:37:46.897822+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:15:15.907+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Network Fundamentals",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Network Fundamentals' on 2026-11-01."
   },
   "Noncredit for AUTO A1": {
     "unified_title": "Engine Repair",
@@ -60230,20 +60402,26 @@
     "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Automatic Transmission/Transaxle' on 2026-10-31."
   },
   "Noncredit for AUTO A3": {
-    "unified_title": "Manual Drive Train and Axles",
+    "unified_title": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:37:51.957822+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:11:27.603+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Manual Drive Train and Axles",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Manual Drive Train and Axles' on 2026-11-01."
   },
   "Noncredit for AUTO A4": {
-    "unified_title": "Suspension and Steering",
+    "unified_title": "Suspension and Steering (ASE A4 Suspension and Steering)",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:37:53.657739+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Suspension and Steering",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Suspension and Steering' on 2026-11-01."
   },
   "Noncredit for AUTO A5": {
     "unified_title": "Automotive Technology (ASE A5 Brakes)",
@@ -60706,12 +60884,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Professional Certifications": {
-    "unified_title": "Industry Certification",
+    "unified_title": "Introduction to Geographic Information Systems",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T17:04:24.233839+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:14:01.355+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Industry Certification",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Industry Certification' on 2026-11-01."
   },
   "Programming With Python High School Articulation": {
     "unified_title": "Introduction to Programming Concepts and Methodologies",
@@ -61026,12 +61207,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Sports Med Lab I High School Articulation": {
-    "unified_title": "Clinical Experience in Sports Medicine I",
+    "unified_title": "Clinical Experience in Sports Medicine 1",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:11:51.451+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Clinical Experience in Sports Medicine I",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Clinical Experience in Sports Medicine I' on 2026-11-01."
   },
   "State or County EMT Certification": {
     "unified_title": "Emergency Medical Technician",
@@ -61050,20 +61234,26 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "TECTHTR 342 - Technical Stage Production": {
-    "unified_title": "Technical Theatre in Production",
+    "unified_title": "Technical Stage Production",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T17:05:30.002409+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:15:26.403+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Technical Theatre in Production",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Technical Theatre in Production' on 2026-11-01."
   },
   "THEATER 342: Technical Theater Production": {
-    "unified_title": "Technical Theatre in Production",
+    "unified_title": "Technical Stage Production",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-02",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T17:05:31.325895+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-01T22:15:26.403+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Technical Theatre in Production",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Technical Theatre in Production' on 2026-11-01."
   },
   "Video Editing High School Articulation": {
     "unified_title": "Video Editing",
@@ -61159,6 +61349,14 @@
     "classified_at": "2026-10-31",
     "classified_by": "curator (CER unclassified-triage)",
     "reviewed_at": "2026-10-31T17:05:58.777378+00:00",
+    "reviewed_by": "slee@cccco.edu"
+  },
+  "Theater Arts Portfolio Review": {
+    "unified_title": "Theatre Arts",
+    "confidence_title": 1.0,
+    "classified_at": "2026-11-02",
+    "classified_by": "curator (CER unclassified-triage)",
+    "reviewed_at": "2026-11-01T22:09:51.887055+00:00",
     "reviewed_by": "slee@cccco.edu"
   }
 }
