@@ -310,7 +310,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 624
+     "line": 629
     },
     {
      "id": "module:scripts/check_memory_briefing_layout.js",
