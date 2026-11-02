@@ -1,0 +1,14 @@
+{
+ "college": "Lemoore College",
+ "homepage": "https://www.westhillscollege.com/lemoore/",
+ "read_at": "2026-11-02T06:22:46+00:00",
+ "pages": [
+  {
+   "url": "https://www.westhillscollege.com/lemoore/",
+   "status": "unreachable",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: certificate has expired (_ssl.c:1010)>"
+  }
+ ],
+ "unread_links": [],
+ "run": "41399086674"
+}
