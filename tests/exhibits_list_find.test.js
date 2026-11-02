@@ -16,7 +16,9 @@
 //       sits inside its own header, takes the finger (touch-action:none) and captures the pointer;
 //   (8) a spelling twin carries a suggested fold (Sam, 2026-11-01: "offering suggested titles based on what you see"):
 //       the Suggested folds filter shows only twins; Accept writes unified_title_override and unified_title_merge_confirm
-//       naming the same target, the pair the rename dry-run folds on; Dismiss hides it for the visit;
+//       naming the same target, the pair the rename dry-run folds on; Dismiss hides it for the visit; the line is the
+//       engine's suggestion slot (S545), so the accepted twin joins Changed this visit, the set Re-analyze sends, and a
+//       refused Accept says it did not reach the reference and the suggestion stays;
 //   (9) an accepted fold stays improvable (Sam, 2026-11-01: "for the folds already accepted I would want to be sure
 //       that we can fold to better titles"): a fold whose target itself folds shows Re-point, which writes both rows
 //       to the chain's end; Folds waiting for the apply lists the accepted folds; a group's band counts its
@@ -81,7 +83,7 @@ function load(opts) {
     if (url === "kb/exhibits_ai_sort.json") return opts.noAiSort ? Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } }) : ok(AISORT);
     if (url === "kb/exhibit_cert_links.json") return ok(CERTLINKS);
     if (/\/rest\/v1\/kb_curation/.test(url) && (init.method || "GET") === "GET") return ok(/unified_title_override/.test(url) ? OVERLAY_ROWS : []);
-    if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: true, status: 201, json: function () { return Promise.resolve(null); } });
+    if (/\/rest\/v1\/kb_curation/.test(url)) return Promise.resolve({ ok: !opts.refuse, status: opts.refuse ? 403 : 201, json: function () { return Promise.resolve(null); } });
     return Promise.resolve({ ok: false, status: 404, json: function () { return Promise.resolve({}); } });
   };
   const sess = { access_token: "a.b.c", email: "sam@example.org" };
@@ -229,10 +231,23 @@ function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) 
     && posts.map((p) => p.body.field).sort().join(",") === "unified_title_merge_confirm,unified_title_override", JSON.stringify(posts.map((p) => p.body)));
   check("(8) an accepted fold leaves the Suggested list", rows(t.d).length === 0 && /folds into Apiary Basics/.test(txt(t.d.getElementById("exh-l-cellnote"))),
     txt(t.d.getElementById("exh-l-cellnote")));
+  words(t.d, "Changed this visit").click(); await settle();
+  const chg = rows(t.d).find((r) => /folds 10-Key Data Entry into this credential/.test(txt(r.children[2])));
+  check("(8) ⭐ the accepted twin joins Changed this visit (the engine's set, the one Re-analyze sends), saying so under its title",
+    !!chg && /changed this visit/.test(txt(chg.children[2])) && t.M._state.ls.changed.indexOf("10-Key Data Entry") !== -1, rows(t.d).map((r) => txt(r.children[2])).join(" | "));
   t.M._state.ls.aiData.suggest["Apiary Basics"] = { to: "Welding Level 1", why: "test" }; t.M._state.ls.f = ""; t.M.render(); await settle();
   words(t.d, "Suggested folds").click(); await settle();
   Array.from(rows(t.d)[0].querySelectorAll("button")).find((b) => txt(b) === "Dismiss").click(); await settle();
   check("(8) Dismiss hides the suggestion", rows(t.d).length === 0);
+
+  const rf = load({ refuse: true });
+  await rf.M.boot(); await settle();
+  words(rf.d, "Suggested folds").click(); await settle();
+  Array.from(rows(rf.d)[0].querySelectorAll("button")).find((b) => txt(b) === "Accept").click(); await settle(); await settle();
+  check("(8) ⭐ a refused Accept says it did not reach the reference, and the suggestion stays",
+    rows(rf.d).length === 1 && /Suggested: fold into Apiary Basics/.test(txt(rows(rf.d)[0].children[2]))
+    && /The fold of 10-Key Data Entry did not reach the reference \(HTTP 403\/403\); nothing changed/.test(txt(rf.d.getElementById("exh-l-cellnote"))),
+    txt(rf.d.getElementById("exh-l-cellnote")));
 
   // (9) A second visit, with two waiting folds: 10-Key into Apiary, and Apiary into Welding Level 1.
   OVERLAY_ROWS = [
