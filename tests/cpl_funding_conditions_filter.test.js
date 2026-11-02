@@ -115,6 +115,14 @@ function choose(window, doc, v) {
     (yes.length + no.length) + " of " + rowIds(doc).length + ")",
     !!ncCond && yes.length + no.length === ncCond.of && ncCond.of < rowIds(doc).length);
 
+  // No NC (Sam, 2026-11-02): beside the Base chip on every institution with no noncredit share, and only there.
+  const noNcRows = Array.from(doc.querySelectorAll("#cplFundTable tr.cplfund-row[data-id]"))
+    .filter((tr) => !!tr.querySelector("td.cf-total .cf-nonc")).map((tr) => tr.getAttribute("data-id"));
+  check("B11: No NC marks exactly the institutions outside the noncredit lists (" + noNcRows.length + ")",
+    noNcRows.length === rowIds(doc).length - ncCond.of && noNcRows.every((id) => yes.indexOf(id) < 0 && no.indexOf(id) < 0) &&
+    noNcRows.every((id) => !!doc.querySelector('tr[data-id="' + id + '"] td.cf-total .cf-chipgrp .cf-nonc')) &&
+    !doc.querySelector("#cplFundTable tr:not(.cplfund-row) td.cf-total .cf-nonc"));
+
   // 1. the Lead's words resolve through the layers, and the public page's refs address each line
   const R = T._requirements();
   const ncIdx = R.refs.indexOf("nc_coord");
@@ -132,6 +140,46 @@ function choose(window, doc, v) {
   check("B10b: the confirmation's words save without its deadline, and the list still prints the date",
     T.reqText("part") === "Local confirmation on file by" &&
     T._requirements().items[T._requirements().refs.indexOf("part")] === "Local confirmation on file by 2099-11-01");
+}
+
+// ── 3. a confirmed request's acceptance email opens again (Sam, 2026-11-02: after closing it "there was no way
+//    to open it other than to Reject the request and then Accept again") ─────
+{
+  const { window } = freshDom();
+  window.CPL_SESSION = {
+    get: function () { return { access_token: "header.payload.sig", email: "co@cccco.edu" }; },
+    isFresh: function () { return true; },
+    authHeaders: function () { return { apikey: "anon", Authorization: "Bearer header.payload.sig" }; } };
+  const doc = boot(window);
+  const T = window.CPL_FUNDING_TAB;
+  T._setShared({ participationDeadline: "2099-11-01", extraReqs: [VET_REQ] });
+  T._setElig({ coordOk: true, coord: { [QUAL]: true },
+    optinRow: { [QUAL]: { college: QUAL, status: "confirmed", requested_at: "2026-10-01T00:00:00Z" } },
+    optinReview: [{ college: QUAL, name: "Sample Attester", title: "VPAA", email: "attester@example.edu",
+      status: "confirmed", requested_at: "2026-10-01T00:00:00Z" }], asOf: "2026-11-01" });
+  T.render();
+  openDrill(window, doc, "c:" + QUAL);
+  const mail = doc.querySelector('[data-optinmail="' + QUAL + '"]');
+  check("B12: a confirmed request offers Email beside Revoke", !!mail && !!doc.querySelector('[data-optinrevoke="' + QUAL + '"]'));
+  mail && mail.dispatchEvent(new window.Event("click", { bubbles: true }));
+  const dlg = doc.getElementById("cplfund-maildlg");
+  check("B13: Email opens the acceptance email to the requester and changes no record",
+    !!dlg && /attester@example\.edu/.test(flat(dlg)) && /accepted/.test(flat(dlg)) &&
+    T._gate(QUAL) && doc.querySelector('[data-optinrevoke="' + QUAL + '"]') !== null);
+  const d0 = doc.getElementById("cplfund-maildlg"); if (d0) d0.remove();
+
+  // The Eligibility section's review lane carries what the team has (Sam, 2026-11-02, "including any notes written").
+  T._setNotes({ [QUAL]: { college: QUAL, note: "Called the VPAA; landing page update coming.", updated_by: "co@cccco.edu",
+    updated_at: "2026-11-02T18:00:00Z" } });
+  T.render();
+  const lane = doc.querySelector(".cplfund-elig .cplfund-colane");
+  const row = lane && Array.from(lane.querySelectorAll(".cplfund-colane-row")).find((r) => /Laney/.test(flat(r)));
+  check("B14: the review lane's line shows the conditions, the contacts and the CO Monitor's note with its author",
+    !!row && /Conditions Met: Coordinator on file/.test(flat(row)) && /Confirmation on file/.test(flat(row)) &&
+    /CO Monitor's note Called the VPAA; landing page update coming\. \(co@cccco\.edu, 2026-11-02\)/.test(flat(row)));
+  const laneMail = row && row.querySelector('[data-optinmail="' + QUAL + '"]');
+  laneMail && laneMail.dispatchEvent(new window.Event("click", { bubbles: true }));
+  check("B15: the lane's Email reopens the acceptance email too", !!laneMail && !!doc.getElementById("cplfund-maildlg"));
 }
 
 finish();
