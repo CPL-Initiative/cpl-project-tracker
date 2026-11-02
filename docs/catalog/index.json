@@ -4,7 +4,7 @@
  "lanes": [
   {
    "blurb": "The files that shape how a session BEHAVES rather than record what it did. `CLAUDE.md` auto-loads into every session, so it is the likeliest source of a recurring mismatch between what the system does and what you expected.",
-   "count": 5,
+   "count": 6,
    "docs": [
     {
      "created": "",
@@ -23,6 +23,16 @@
      "status": null,
      "tags": [],
      "title": "checkpoint",
+     "type": "doctrine",
+     "updated": ""
+    },
+    {
+     "created": "",
+     "governs": [],
+     "path": ".claude/commands/coord.md",
+     "status": null,
+     "tags": [],
+     "title": "`/coord` \u2014 announce this session and agree one writer",
      "type": "doctrine",
      "updated": ""
     },
@@ -25340,5 +25350,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1350
+ "total": 1351
 }
