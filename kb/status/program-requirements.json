@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-02T02:56:24Z",
-  "session": 544,
-  "moniker": "SkySombrero",
+  "written_at": "2026-11-02T04:51:43Z",
+  "session": 545,
+  "moniker": "SkyWhirlpool",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_545_handoff.md",
+  "handoff": "docs/session_546_handoff.md",
   "next_step": {
-    "title": "The List norms' step 3: bands from the spec",
-    "text": "The engine draws bands from a spec's groupOf(r), read only where the spec has no save, so the Courses List stops hand-rolling its M-ID bands; then the Exhibits List moves onto the engine's suggestion slot."
+    "title": "Check the daily run carried the fixes, then Monterey Peninsula's 14",
+    "text": "After the 06:17 UTC run, confirm City College of San Francisco and College of the Desert left the funding builder's unmatched list and the short-name fold wrote nothing; then the harvest lane's next college step, Monterey Peninsula's 14 records."
   },
   "calls": [
     {
@@ -189,56 +189,7 @@
   "notes": {
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
-  "changes": [
-    {
-      "at": "2026-11-02T02:24:00Z",
-      "text": "The List's filter words take their counts from the shared engine, read from the same build as the rows (#2675)."
-    },
-    {
-      "at": "2026-11-02T01:15:00Z",
-      "text": "The course SLO read joins the CPL queue as step 11, nightly, the colleges that articulate the most exhibits first; pages only, no model call (#2669)."
-    },
-    {
-      "at": "2026-11-01T22:28:00Z",
-      "text": "A List view on the shared engine: one row per active COCI program, 20,282, read only (#2660)."
-    },
-    {
-      "at": "2026-11-01T10:55:00Z",
-      "text": "Monterey Peninsula 176 to 183 of 197 passing live. A lab the page prints on its lecture's row (CSIS 50 & 50L) no longer counts its units twice (reconcile 41278868382, reread 41280847881)."
-    },
-    {
-      "at": "2026-10-31T11:02:00Z",
-      "text": "Monterey Peninsula 110 to 176 of 197 passing live. Work experience courses printed as an or row beside a 2-unit course now carry its 2 units, the transfer degrees' 2026-27 wording gives Cal-GETC its 34, and the local degrees' electives if needed for a total of 60 reads the 60 as a floor (reconcile 41192567009, reread 41194846700)."
-    },
-    {
-      "at": "2026-10-31T09:35:00Z",
-      "text": "Los Angeles Valley 198 to 202 of 215 passing live. Economics, French and Geology close with a list that fills the major to its printed total (for a minimum of 18 units, to complete 36 total units), and Fire Technology's page prints its degree total with a split word; both now read (reconcile 41188677929, reread 41189100032). Under the stopping rule the college parks."
-    },
-    {
-      "at": "2026-10-31T08:20:00Z",
-      "text": "Los Angeles Valley 196 to 198 of 215 passing live. Music 02962 and Commercial Music 08545 print lists whose courses may be repeated, and the reading now counts the repeats (reconcile 41179958796, reread 41180348558)."
-    },
-    {
-      "at": "2026-10-31T05:35:00Z",
-      "text": "Los Angeles Valley 186 to 196 of 215 passing live. The catalog prints T & M 027 where the state's file keeps TM027, so a prefix alias lets the ten Engineering and Manufacturing records count their shop courses (reconcile 41172599271, reread 41172998050)."
-    },
-    {
-      "at": "2026-10-31T05:20:00Z",
-      "text": "Both display applies read back: all 17,546 rows carry build f8c94ef23142, Los Angeles Valley's 215 included."
-    },
-    {
-      "at": "2026-10-30T23:35:00Z",
-      "text": "The page finder change merged (#2596) and display build f8c94ef23142's apply was dispatched on main, queued behind 956fee0d62bc's."
-    },
-    {
-      "at": "2026-10-30T23:14:00Z",
-      "text": "Los Angeles Valley 167 of 204 to 186 of 215 passing live. Its headings print State Code and the control number; the page finder now reads it, so each certificate reads its own page. A reread replaced 62 rows and a load inserted 11, both with receipts."
-    },
-    {
-      "at": "2026-10-30T23:05:00Z",
-      "text": "An extraction of the 78 Los Angeles Valley programs whose page moved cost 5.37 dollars: 19 failing records pass, twelve of them Media Arts. Three passing records that came back worse kept their earlier files."
-    }
-  ],
+  "changes": [],
   "headline": [
     {
       "day": "2026-10-08",

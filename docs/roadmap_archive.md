@@ -837,3 +837,7 @@ Moved from docs/INDEX.md's update history (S507):
 ### From docs/INDEX.md update history (moved S543, 2026-11-02)
 
 - 2026-10-31 (Exhibits tab build, SkyElderberry): the Commons' CER row opens Exhibits (#2612); the Credential Catalog's *Worth a faculty review* (#2613); Sam's AP rule in `brand-family`, College Board's official names (#2614); the IT/AI catalog's MAP join needs the issuer (#2615); Open Asks Sheet 149; light checkpoint.
+
+### From docs/INDEX.md update history (moved S545, 2026-11-02)
+
+- 2026-11-01 (Exhibits tab build, SkyInkberry): IB on the AP pattern, brand-family's `ib` lane and the reference fold, 49 IB credentials into 24 with one issuer name (#2632); Open Asks Sheet 150 (the IB fold carried out, CLEP's names held); the CER lane trimmed under its budget.

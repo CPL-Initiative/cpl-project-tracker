@@ -1,7 +1,7 @@
 ---
 title: Reference — College short-name dataset + resolver
 created: 2026-06-02
-updated: 2026-06-02
+updated: 2026-11-02
 tags: [reference, colleges, chips, lookup, ui]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -10,6 +10,8 @@ related:
   - "[[docs/kb-notes/methodology-derive-from-dom]]"
 artifacts:
   - kb/college_short_names.json
+  - kb/_apply_college_short_names.py
+  - kb/migrations/2026-11-02_college_short_names.sql
   - kb/_seed_college_short_names.py
   - college_short_names.js
 ---
@@ -34,13 +36,18 @@ data sources, so a flat exact-key map would miss most of them.
 **Store the dataset committed (not in Supabase), keyed by canonical name, and
 resolve at render time through a normalize() fallback.**
 
-- **Source of truth:** `kb/college_short_names.json` — `_meta` + a `colleges[]`
-  of `{canonical, short, short_caps, aliases[]}`. Both casings stored: `short`
-  (Title Case, the chip default) and `short_caps` (ALL CAPS, as provided).
+- **Source of truth (since S545, 2026-11-02):** the Supabase table
+  `public.college_short_names`, edited by a signed-in reviewer in the College
+  Identity tab's Short name column (DR-30, Sam's). Its trigger keeps a changed
+  short as an alias, refuses a short another college answers to, and logs who
+  and when. `kb/college_short_names.json` is the committed copy: `_meta` + a
+  `colleges[]` of `{canonical, short, short_caps, aliases[]}`, both casings
+  stored (`short` Title Case, the chip default; `short_caps` ALL CAPS).
 - **On-page artifact:** `college_short_names.js` — `window.CPL_COLLEGE_SHORT`
-  (the records) + `window.cplCollegeShort(name[, style])`. Generated from the
-  JSON by the seed script; `<script>`-loaded after `college_lookup.js` in both
-  `CPL_Dashboard.html` and `index.html`.
+  (the records), `window.cplCollegeShort(name[, style])` and
+  `window.cplCollegeShortRecord(name)`. `kb/_apply_college_short_names.py`
+  writes it and the JSON in the daily run's curation sync; `<script>`-loaded
+  after `college_lookup.js` in both `CPL_Dashboard.html` and `index.html`.
 - **Resolution:** exact match on canonical/aliases → `normalize()` fallback →
   **else return the original name** (a chip never renders blank). `style` is
   `"short"` (default) | `"caps"` | `"full"`.
@@ -89,12 +96,13 @@ and a `Consumnes River College` typo in `college_lookup.js`.
 - **Deliberately full-name (not shortened):** CSV/Word **exports** (a document
   needs unambiguous names) and **filter match data** (filters key off full
   names; the chip `title` carries the full name for hover/search).
-- **To extend / re-key:** edit the table or the `EXTRA_ALIASES` / `SPECIAL_TITLE`
-  maps in `kb/_seed_college_short_names.py`, re-run it (idempotent), and commit
-  the regenerated `kb/college_short_names.json` + `college_short_names.js`. The
-  script asserts no two colleges collapse to the same normalized key and reports
-  any chip-name string that fails to resolve. **Not** part of the daily cron —
-  it's static, regenerated only when the dataset changes.
+- **To change a short:** edit it in the College Identity tab; the next daily
+  run puts it on every page and into every builder, the old short kept as an
+  alias. The fold carries forward any spelling the committed file reached a
+  college by, refuses a collision, a missing college or an empty short, and
+  writes nothing when nothing changed. `kb/_seed_college_short_names.py` is
+  provenance and the shared `normalize()` and template; it refuses to run
+  without `--force-reseed`, since re-running it would undo the table's edits.
 
 ## See also
 

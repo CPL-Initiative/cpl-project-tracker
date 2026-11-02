@@ -1,14 +1,14 @@
 {
   "schema": 1,
-  "session": 544,
-  "moniker": "SkySombrero",
+  "session": 545,
+  "moniker": "SkyWhirlpool",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_545_handoff.md",
+  "handoff": "docs/session_546_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-02T02:56:24Z",
+  "written_at": "2026-11-02T04:52:01Z",
   "project": "cr",
   "next_step": {
     "title": "Decide the head, then the course pairing",
@@ -16,32 +16,8 @@
   },
   "changes": [
     {
-      "at": "2026-11-02T02:24:00Z",
-      "text": "The List's filter words carry their counts, and Selected joins them (#2675)."
-    },
-    {
-      "at": "2026-11-02T02:01:00Z",
-      "text": "The rung proposals show as suggestions on the List: Suggested groups, Confirm the group writes the drawer's decision, one Dismiss sets a group aside for the visit, and Changed this visit lists what you saved (#2673)."
-    },
-    {
-      "at": "2026-11-01T21:16:00Z",
-      "text": "A List view on the shared engine: one row per wording, the reference renamed in place through the worklist's own save (#2657)."
-    },
-    {
-      "at": "2026-11-01T22:12:00Z",
-      "text": "Your flag on the List, a reviewer's sign-in only; no find and replace (#2659)."
-    },
-    {
-      "at": "2026-10-20T13:24:18Z",
-      "text": "Sam kept the Progress view as built (Open Asks Sheet 108, card 5)."
-    },
-    {
-      "at": "2026-10-20T13:20:00Z",
-      "text": "The Progress view: the Commons' shape on this reference, beside the worklist, with every count opening a filter; the Commons row now counts wordings."
-    },
-    {
-      "at": "2026-10-19T11:00:00Z",
-      "text": "The first run log for this reference (the Commons' step 2), so its row on the Commons tab reads a session stamp and a next step."
+      "at": "2026-11-02T03:36:00Z",
+      "text": "The List bands its wordings by group, each band named and ordered by the group's reference, a group of one under Single wording; Bands by group takes them off (#2679)."
     }
   ]
 }

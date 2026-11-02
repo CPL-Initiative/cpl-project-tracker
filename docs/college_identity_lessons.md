@@ -592,3 +592,33 @@ variant over loosening the match; where a join only labels or ranks, fold.
 Mechanics worth keeping: `apply_migration` ran this `UPDATE` at once, while `execute_sql`
 statements carrying an `UPDATE` waited out the Supabase tool's 60-second limit three times the
 same day (inserts through `execute_sql` ran at once).
+
+## S545 (SkyWhirlpool, 2026-11-02): the short-name editor, and the table becomes the source
+
+**What shipped (#2681).** The 118 college shorts moved from `kb/_seed_college_short_names.py`, which only a session could
+run, to `public.college_short_names`, edited by a signed-in reviewer in the College Identity tab's new Short name
+column. The seeded table matched the committed file by one md5 (`be01ce37…`). A BEFORE UPDATE trigger keeps the old
+short as an alias, refuses a short another college answers to, and logs who and when. The daily curation sync runs
+`kb/_apply_college_short_names.py` before every builder; it carries forward any spelling the committed file reached a
+college by, refuses a collision, a missing college or an empty short (the files stay), and writes nothing when
+nothing changed. Decision right DR-30, Sam's (Rule 10 a3). Receipt: `kb/college_identity/2026-11-02_short_names_seed.md`.
+
+**A name a join keys on is a key, enforced in two places.** S544 made the rule a habit (keep the old short in
+`EXTRA_ALIASES`); an editor would have broken it on the first rename, because a person editing a cell does not know the
+funding roster joins on it. The trigger makes it true for every writer, and the fold makes it true for every spelling
+the trigger cannot see: an old CAPS form that normalizes differently from the old short ("LA SWEST" against "LA
+Southwest") reaches the college because the fold carries it forward. The carry-forward test is mutation-checked.
+
+**Pick a test case the normalizer does not already cover.** The first carry-forward test dropped "Desert" from College of
+the Desert's aliases and expected it carried; it passed with the carry-forward disabled, because "Desert" and "College
+Of The Desert" normalize to the same key. "San Francisco" against "City College Of San Francisco" does not, and that
+test fails when the guard is removed.
+
+**A seed script that stays runnable must refuse once the table is the source.** Re-running the seed would have put back
+its shorts over every edit; it now exits 2 without `--force-reseed`.
+
+**Mechanics.** `apply_migration` timed out on a confirmation no one answered; the committed file went through
+`supabase-migrate.yml` (Rule 10 c), which ran in two minutes with no approval gate. The table-grant lint wanted the
+`service_role` grants stated in the file even though the project's default privileges already held them; they were
+added after the apply with a note, since the receipt's sha256 names the file as it ran. The trigger was probed live with
+UPDATEs inside statements made to fail (`cpl_memory` `probe-a-trigger-without-a-write-2026-11-02`).
