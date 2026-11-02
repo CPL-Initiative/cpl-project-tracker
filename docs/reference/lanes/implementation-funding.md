@@ -17,6 +17,8 @@ related:
 
 ## Status
 
+**CCSF and College of the Desert fell into `unmatched` on 2026-10-31 (S544)** after #2598's shorts. Sam, Open Asks Sheet 155 card 1, *restore* (02:42Z 2026-11-02, his own call): #2676 merged; the next daily run carries both.
+
 ✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 LIVE**; `map_coordinator_summary()` answers booleans, never a name. ✅ **THE REPORTING BOX** (one report a year, eight NOVA categories): `cpl_funding_reports`, INSERT-only, newest per year counts, Withdraw unreports (`markReports`); college half via `cpl_funding_my_reports()`. Guards `cpl_funding_reporting_box`, `cpl_funding_reports_college_half`.
 
 ✅ **Refresh everything, the published scenario on every visit, and My CPL Funding (Sam, 2026-09-30):** moved verbatim to [`cpl_funding_lessons.md`](../../cpl_funding_lessons.md), *Moved from the lane (S480)*. ⭐ **No "funding model" in college-facing text** (card 14); ⭐ **"through apportionment" is for the seed grant only.**
