@@ -1,0 +1,216 @@
+{
+ "run": "41399086674",
+ "applied_at": "2026-11-02T06:35:51+00:00",
+ "github_run": "41400268911",
+ "result": {
+  "new": 25,
+  "run": "41399086674",
+  "gone": 0,
+  "colleges": 6,
+  "seen_again": 0
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [],
+ "rows": [
+  {
+   "college": "Irvine Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "John C. Hernandez, Ph.D.",
+   "email": "",
+   "source_url": "https://www.ivc.edu/president"
+  },
+  {
+   "college": "Irvine Valley College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer",
+   "name": "Tiffany Tran",
+   "email": "",
+   "source_url": "https://www.ivc.edu/articulation"
+  },
+  {
+   "college": "Irvine Valley College",
+   "position": "vrc",
+   "title_as_printed": "Director of Veterans Services",
+   "name": "Dylan Bender, MA, LMFT",
+   "email": "",
+   "source_url": "https://www.ivc.edu/veterans-center"
+  },
+  {
+   "college": "Lake Tahoe Community College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Russi Egan",
+   "email": "president@ltcc.edu",
+   "source_url": "https://www.ltcc.edu/about/President/index.php"
+  },
+  {
+   "college": "Lake Tahoe Community College",
+   "position": "vpbs",
+   "title_as_printed": "Interim Vice President, Administrative Services",
+   "name": "Ami Chilton",
+   "email": "",
+   "source_url": "https://www.ltcc.edu/about/campusleadership.php"
+  },
+  {
+   "college": "Lake Tahoe Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Dr. Rachel Bates",
+   "email": "",
+   "source_url": "https://www.ltcc.edu/about/campusleadership.php"
+  },
+  {
+   "college": "Lake Tahoe Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Dr. Michelle Batista",
+   "email": "",
+   "source_url": "https://www.ltcc.edu/about/campusleadership.php"
+  },
+  {
+   "college": "Lake Tahoe Community College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean, Instruction",
+   "name": "Keely Carroll",
+   "email": "",
+   "source_url": "https://www.ltcc.edu/about/campusleadership.php"
+  },
+  {
+   "college": "Lake Tahoe Community College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean, Workforce Development & Instruction",
+   "name": "Brad Deeds",
+   "email": "",
+   "source_url": "https://www.ltcc.edu/about/campusleadership.php"
+  },
+  {
+   "college": "Laney College",
+   "position": "college_ceo",
+   "title_as_printed": "College President, President's Office",
+   "name": "Rebecca Opsata",
+   "email": "ropsata@peralta.edu",
+   "source_url": "https://laney.edu/about/administration/"
+  },
+  {
+   "college": "Laney College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Vice President of Instruction, Office of Instruction",
+   "name": "Inger Stark",
+   "email": "istark@peralta.edu",
+   "source_url": "https://laney.edu/about/administration/"
+  },
+  {
+   "college": "Laney College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer",
+   "name": "Ivy (Thao) Tran",
+   "email": "thaotran@peralta.edu",
+   "source_url": "https://laney.edu/staff-directory"
+  },
+  {
+   "college": "Las Positas College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Dyrell Foster",
+   "email": "dfoster@laspositascollege.edu",
+   "source_url": "https://www.laspositascollege.edu/gv/index.php"
+  },
+  {
+   "college": "Las Positas College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Academic Services",
+   "name": "Nan Ho, Ed.D.",
+   "email": "",
+   "source_url": "https://www.laspositascollege.edu/gv/index.php"
+  },
+  {
+   "college": "Las Positas College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Sean Brooks",
+   "email": "",
+   "source_url": "https://www.laspositascollege.edu/gv/index.php"
+  },
+  {
+   "college": "Las Positas College",
+   "position": "vpss",
+   "title_as_printed": "Interim Vice President of Student Services",
+   "name": "Joel Gagnon",
+   "email": "",
+   "source_url": "https://www.laspositascollege.edu/gv/index.php"
+  },
+  {
+   "college": "Las Positas College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer",
+   "name": "Craig Kutil",
+   "email": "ckutil@laspositascollege.edu",
+   "source_url": "https://www.laspositascollege.edu/lpcarticulation/index.php"
+  },
+  {
+   "college": "Long Beach City College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent-President",
+   "name": "Dr. Mike Muñoz",
+   "email": "",
+   "source_url": "https://www.lbcc.edu/office-president"
+  },
+  {
+   "college": "Long Beach City College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer",
+   "name": "Trevor Rodriguez",
+   "email": "trodriguez@lbcc.edu",
+   "source_url": "https://www.lbcc.edu/transferability-articulation"
+  },
+  {
+   "college": "Los Medanos College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Pamela Ralston, Ph.D.",
+   "email": "pralston@losmedanos.edu",
+   "source_url": "https://www.losmedanos.edu/directory/index.aspx"
+  },
+  {
+   "college": "Los Medanos College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "A'kilah Smith",
+   "email": "ASmith@losmedanos.edu",
+   "source_url": "https://www.losmedanos.edu/directory/index.aspx"
+  },
+  {
+   "college": "Los Medanos College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Liberal Arts",
+   "name": "Rachel Anicetti",
+   "email": "ranicetti@losmedanos.edu",
+   "source_url": "https://www.losmedanos.edu/directory/index.aspx"
+  },
+  {
+   "college": "Los Medanos College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean of Instruction, Career & Technical Education (Interim)",
+   "name": "Emerald Templeton",
+   "email": "etempleton@losmedanos.edu",
+   "source_url": "https://www.losmedanos.edu/directory/index.aspx"
+  },
+  {
+   "college": "Los Medanos College",
+   "position": "district_ceo",
+   "title_as_printed": "10th Chancellor for the Contra Costa Community College District (4CD)",
+   "name": "Mojdeh Mehdizadeh",
+   "email": "",
+   "source_url": "https://www.4cd.edu/about/chancellors-office/index.html"
+  },
+  {
+   "college": "Los Medanos College",
+   "position": "vice_chancellor",
+   "title_as_printed": "Executive Vice Chancellor",
+   "name": "Dr. Micaela Ochoa",
+   "email": "",
+   "source_url": "https://www.4cd.edu/"
+  }
+ ]
+}
