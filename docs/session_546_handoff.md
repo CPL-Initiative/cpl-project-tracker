@@ -23,8 +23,15 @@ receipt (the short-names seed) and a new KB generator (`kb/_apply_college_short_
   tab's Short name column. The trigger keeps the old short as an alias, refuses a short another college answers to, and
   logs who and when. The daily curation sync's `kb/_apply_college_short_names.py` writes `kb/college_short_names.json`
   and `college_short_names.js` before every builder; the seed script refuses without `--force-reseed`. DR-30, Sam's.
-- **Step 10's first harvest night:** started at 04:48Z by a background agent in its own worktree (`claude/credential-watch-2026-11-02`);
-  its PR and the night's counts follow on this checkpoint's branch.
+- **Step 10's first harvest night** (merged from `claude/credential-watch-2026-11-02`): Google, Microsoft, AWS, IBM,
+  Oracle, Cisco and NVIDIA read (none had an `_issuers_read` date); 52 added (27 emerging), 15 changed, 0 dropped, 10
+  rows newly verified on the issuers' own pages, 25 skills harvested (22 for credentials MAP articulates); the catalog
+  holds 7,384. Material: Microsoft dropped SC-730 after its beta, and launched a batch of agentic AI credentials
+  (AI-500, AZ-401 beta, the AB-6xx/4xx/2xx/3xx set, GitHub GH-600 and GH-700); AWS launched two agentic AI
+  microcredentials on 2026-09-29. For MAP: Security+ V8 (SY0-801) launches 2026-11-17 and V7 retires 2027-06-11 (17
+  colleges articulate it); MAP's exhibit "Microsoft Certified: Microsoft 365 Administrator Expert" does not join the
+  MS-102 row, which retires 2026-11-30 (exhibit-canonicalization lane). Three titles corrected in place now keep their
+  old names in `formerly`. Report: `kb/credential_watch_out/2026-11-02.md`.
 
 ## Sam's decisions this run
 
@@ -63,6 +70,6 @@ None. Sam wrote only the opening line. No sheet is open; no lane carries NEEDS S
 
 ## Let go
 
-S545 dropped its PR subscriptions (#2679, #2680, #2681) and deleted its check-ins
+S545 dropped its PR subscriptions (#2679, #2680, #2681, #2682, the harvest's PR, and CPLBrain#600) and deleted its check-ins
 (`trig_01D5L2NJtFrACQ9A3XNPBN4S`, `trig_01B36jFFzy3qQR4yRCE6uJuE`, `trig_01ScMD9hse76DEdPkJsquzgA`, and the 06:50Z
 daily-run wake `trig_0119FBpoEuhvXzU5fiSSQDSS`, whose check is item 0 above). The CPL queue fires next at 06:12Z.

@@ -14,181 +14,181 @@
  },
  "catalog_duplicates": {
   "S5": [
-   "ITC4045",
-   "ITC4047"
+   "ITC4093",
+   "ITC4095"
   ],
   "A4": [
-   "ITC4019",
-   "ITC4061"
+   "ITC4067",
+   "ITC4109"
   ],
   "H8": [
-   "ITC4055",
-   "ITC4064"
+   "ITC4103",
+   "ITC4112"
   ]
  },
  "certs": {
-  "ITC1378": {
+  "ITC1414": {
    "code": "A6",
    "name": "Electrical/Electronic Systems",
    "catalog_name": "Automobile & Light Truck Certification - A6 Electrical/Electronic Systems",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC1380": {
+  "ITC1416": {
    "code": "T6",
    "name": "Electrical/Electronic Systems",
    "catalog_name": "Medium-Heavy Truck Certification - T6 Electrical/Electronic Systems",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4012": {
+  "ITC4060": {
    "code": "L4",
    "name": "Advanced Driver Assistance Systems Specialist",
    "catalog_name": "Advanced Driver Assistance Systems (ADAS) Specialist Certification - L4",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4013": {
+  "ITC4061": {
    "code": "L1",
    "name": "Advanced Engine Performance Specialist",
    "catalog_name": "Advanced Engine Performance Specialist Certification - L1",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4014": {
+  "ITC4062": {
    "code": "F1",
    "name": "Alternate Fuels",
    "catalog_name": "Alternate Fuels Certification - F1 Compressed Natural Gas Vehicle",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4016": {
+  "ITC4064": {
    "code": "A1",
    "name": "Engine Repair",
    "catalog_name": "Automobile & Light Truck Certification - A1 Engine Repair",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4017": {
+  "ITC4065": {
    "code": "A2",
    "name": "Automatic Transmission/Transaxle",
    "catalog_name": "Automobile & Light Truck Certification - A2 Automatic Transmission/Transaxle",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4018": {
+  "ITC4066": {
    "code": "A3",
    "name": "Manual Drive Train and Axles",
    "catalog_name": "Automobile & Light Truck Certification - A3 Manual Drive Train & Axles",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4019": {
+  "ITC4067": {
    "code": "A4",
    "name": "Suspension and Steering",
    "catalog_name": "Automobile & Light Truck Certification - A4 Suspension & Steering",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4020": {
+  "ITC4068": {
    "code": "A5",
    "name": "Brakes",
    "catalog_name": "Automobile & Light Truck Certification - A5 Brakes",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4021": {
+  "ITC4069": {
    "code": "A7",
    "name": "Heating and Air Conditioning",
    "catalog_name": "Automobile & Light Truck Certification - A7 Heating & Air Conditioning",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4022": {
+  "ITC4070": {
    "code": "A8",
    "name": "Engine Performance",
    "catalog_name": "Automobile & Light Truck Certification - A8 Engine Performance",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4023": {
+  "ITC4071": {
    "code": "A9",
    "name": "Light Vehicle Diesel Engines",
    "catalog_name": "Automobile & Light Truck Certification - A9 Light Vehicle Diesel Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4024": {
+  "ITC4072": {
    "code": "C1",
    "name": "Automobile Service Consultant",
    "catalog_name": "Automobile Service Consultant Certification - C1",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4029": {
+  "ITC4077": {
    "code": "L2",
    "name": "Electronic Diesel Engine Diagnosis Specialist",
    "catalog_name": "Electronic Diesel Engine Diagnosis Specialist Certification - L2",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4030": {
+  "ITC4078": {
    "code": "L3",
    "name": "Light Duty Hybrid/Electric Vehicle Specialist",
    "catalog_name": "Light Duty Hybrid/Electric Vehicle Specialist Certification - L3",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4031": {
+  "ITC4079": {
    "code": "T1",
    "name": "Gasoline Engines",
    "catalog_name": "Medium-Heavy Truck Certification - T1 Gasoline Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4032": {
+  "ITC4080": {
    "code": "T2",
    "name": "Diesel Engines",
    "catalog_name": "Medium-Heavy Truck Certification - T2 Diesel Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4033": {
+  "ITC4081": {
    "code": "T3",
    "name": "Drive Train",
    "catalog_name": "Medium-Heavy Truck Certification - T3 Drive Train",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4034": {
+  "ITC4082": {
    "code": "T4",
    "name": "Brakes",
    "catalog_name": "Medium-Heavy Truck Certification - T4 Brakes",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4035": {
+  "ITC4083": {
    "code": "T5",
    "name": "Suspension and Steering",
    "catalog_name": "Medium-Heavy Truck Certification - T5 Suspension & Steering",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4036": {
+  "ITC4084": {
    "code": "T7",
    "name": "Heating, Ventilation and Air Conditioning",
    "catalog_name": "Medium-Heavy Truck Certification - T7 Heating, Ventilation & Air Conditioning (HVAC)",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4037": {
+  "ITC4085": {
    "code": "T8",
    "name": "Preventive Maintenance Inspection",
    "catalog_name": "Medium-Heavy Truck Certification - T8 Preventive Maintenance Inspection",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4039": {
+  "ITC4087": {
    "code": "P1",
    "name": "Medium/Heavy Truck Parts Specialist",
    "catalog_name": "Parts Specialist Certification - P1 Medium-Heavy Truck Parts Specialist",
@@ -201,158 +201,158 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4016"
+    "ITC4064"
    ]
   },
   "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4017",
-    "ITC4018",
-    "ITC1378"
+    "ITC4065",
+    "ITC4066",
+    "ITC1414"
    ]
   },
   "ASE A2 — Automatic Transmission/Transaxle": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4017"
+    "ITC4065"
    ]
   },
   "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4017",
-    "ITC4018"
+    "ITC4065",
+    "ITC4066"
    ]
   },
   "ASE A3 — Manual Drive Train and Axles": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4018"
+    "ITC4066"
    ]
   },
   "ASE A4 — Suspension and Steering": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4019"
+    "ITC4067"
    ]
   },
   "ASE A5 — Brakes": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4020"
+    "ITC4068"
    ]
   },
   "ASE A6 — Electrical/Electronic Systems": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1378"
+    "ITC1414"
    ]
   },
   "ASE A7 — Heating and Air Conditioning": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4021"
+    "ITC4069"
    ]
   },
   "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4022",
-    "ITC4013"
+    "ITC4070",
+    "ITC4061"
    ]
   },
   "ASE A8 — Engine Performance": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4022"
+    "ITC4070"
    ]
   },
   "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4023",
-    "ITC4029"
+    "ITC4071",
+    "ITC4077"
    ]
   },
   "ASE A9 — Light Vehicle Diesel Engines": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4023"
+    "ITC4071"
    ]
   },
   "ASE Bundle — A1, A6, A8, L1": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4016",
-    "ITC1378",
-    "ITC4022",
-    "ITC4013"
+    "ITC4064",
+    "ITC1414",
+    "ITC4070",
+    "ITC4061"
    ]
   },
   "ASE Bundle — A2, A3, A6": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4017",
-    "ITC4018",
-    "ITC1378"
+    "ITC4065",
+    "ITC4066",
+    "ITC1414"
    ]
   },
   "ASE Bundle — A4, A5": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4019",
-    "ITC4020"
+    "ITC4067",
+    "ITC4068"
    ]
   },
   "ASE Bundle — A4, A5, A6": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4019",
-    "ITC4020",
-    "ITC1378"
+    "ITC4067",
+    "ITC4068",
+    "ITC1414"
    ]
   },
   "ASE Bundle — A6 or T6 + L3": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC1378",
-    "ITC1380",
-    "ITC4030"
+    "ITC1414",
+    "ITC1416",
+    "ITC4078"
    ]
   },
   "ASE Bundle — A6, A8, L1": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1378",
-    "ITC4022",
-    "ITC4013"
+    "ITC1414",
+    "ITC4070",
+    "ITC4061"
    ]
   },
   "ASE Bundle — L2, T8, SP/2 HD": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4029",
-    "ITC4037"
+    "ITC4077",
+    "ITC4085"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -362,10 +362,10 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4032",
-    "ITC4035",
-    "ITC4036",
-    "ITC4037"
+    "ITC4080",
+    "ITC4083",
+    "ITC4084",
+    "ITC4085"
    ],
    "unresolved": [
     "MACS/609"
@@ -375,9 +375,9 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4032",
-    "ITC1380",
-    "ITC4037"
+    "ITC4080",
+    "ITC1416",
+    "ITC4085"
    ],
    "unresolved": [
     "Snap-on 604"
@@ -387,26 +387,26 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4032",
-    "ITC4037"
+    "ITC4080",
+    "ITC4085"
    ]
   },
   "ASE Bundle — T3, T4, T5, T8": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4033",
-    "ITC4034",
-    "ITC4035",
-    "ITC4037"
+    "ITC4081",
+    "ITC4082",
+    "ITC4083",
+    "ITC4085"
    ]
   },
   "ASE Bundle — T3, T8, SP/2 HD": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4033",
-    "ITC4037"
+    "ITC4081",
+    "ITC4085"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -416,8 +416,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4034",
-    "ITC4037"
+    "ITC4082",
+    "ITC4085"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -427,16 +427,16 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4035",
-    "ITC4037"
+    "ITC4083",
+    "ITC4085"
    ]
   },
   "ASE Bundle — T5, T8, SP/2 HD": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4035",
-    "ITC4037"
+    "ITC4083",
+    "ITC4085"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -446,8 +446,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1380",
-    "ITC4029"
+    "ITC1416",
+    "ITC4077"
    ],
    "unresolved": [
     "Cummins ISX",
@@ -458,8 +458,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1380",
-    "ITC4037"
+    "ITC1416",
+    "ITC4085"
    ],
    "unresolved": [
     "Snap-on 604"
@@ -469,8 +469,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4036",
-    "ITC4037"
+    "ITC4084",
+    "ITC4085"
    ],
    "unresolved": [
     "MACS/609"
@@ -480,7 +480,7 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC4024"
+    "ITC4072"
    ],
    "unresolved": [
     "G1 (an ASE test the catalog does not list)"
@@ -490,28 +490,28 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4024"
+    "ITC4072"
    ]
   },
   "ASE Certification (any A1–A8)": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC4016",
-    "ITC4017",
-    "ITC4018",
-    "ITC4019",
-    "ITC4020",
-    "ITC1378",
-    "ITC4021",
-    "ITC4022"
+    "ITC4064",
+    "ITC4065",
+    "ITC4066",
+    "ITC4067",
+    "ITC4068",
+    "ITC1414",
+    "ITC4069",
+    "ITC4070"
    ]
   },
   "ASE F1 — Alternate Fuels (CNG Light Vehicles)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4014"
+    "ITC4062"
    ]
   },
   "ASE G1 + ALI Lift It Right Bundle": {
@@ -535,29 +535,29 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4013",
-    "ITC4029"
+    "ITC4061",
+    "ITC4077"
    ]
   },
   "ASE L1 — Advanced Engine Performance Specialist": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4013"
+    "ITC4061"
    ]
   },
   "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4030"
+    "ITC4078"
    ]
   },
   "ASE L4 — Advanced Driver Assistance Systems (ADAS) Specialist": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4012"
+    "ITC4060"
    ]
   },
   "ASE Master Automobile Technician": {
@@ -572,15 +572,15 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4016",
-    "ITC4017",
-    "ITC4018",
-    "ITC4019",
-    "ITC4020",
-    "ITC1378",
-    "ITC4021",
-    "ITC4022",
-    "ITC4013"
+    "ITC4064",
+    "ITC4065",
+    "ITC4066",
+    "ITC4067",
+    "ITC4068",
+    "ITC1414",
+    "ITC4069",
+    "ITC4070",
+    "ITC4061"
    ],
    "unresolved": [
     "Master Automobile Technician"
@@ -590,15 +590,15 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC4016",
-    "ITC4017",
-    "ITC4018",
-    "ITC4019",
-    "ITC4020",
-    "ITC1378",
-    "ITC4021",
-    "ITC4022",
-    "ITC4030"
+    "ITC4064",
+    "ITC4065",
+    "ITC4066",
+    "ITC4067",
+    "ITC4068",
+    "ITC1414",
+    "ITC4069",
+    "ITC4070",
+    "ITC4078"
    ],
    "unresolved": [
     "Master Automobile Technician"
@@ -608,14 +608,14 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4031",
-    "ITC4032",
-    "ITC4033",
-    "ITC4034",
-    "ITC4035",
-    "ITC1380",
-    "ITC4036",
-    "ITC4037"
+    "ITC4079",
+    "ITC4080",
+    "ITC4081",
+    "ITC4082",
+    "ITC4083",
+    "ITC1416",
+    "ITC4084",
+    "ITC4085"
    ],
    "unresolved": [
     "Master Medium/Heavy Truck Technician"
@@ -625,7 +625,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4037"
+    "ITC4085"
    ]
   },
   "ASE xEV — Electrified Vehicle Safety": {
@@ -640,84 +640,84 @@
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC1378"
+    "ITC1414"
    ]
   },
   "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC1378"
+    "ITC1414"
    ]
   },
   "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4017"
+    "ITC4065"
    ]
   },
   "Automotive Technology (ASE A5 Brakes)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4020"
+    "ITC4068"
    ]
   },
   "Automotive Technology (ASE A6 Electrical/Electronic Systems)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC1378"
+    "ITC1414"
    ]
   },
   "Automotive Technology (ASE A7 Heating and Air Conditioning)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4021"
+    "ITC4069"
    ]
   },
   "Automotive Technology (ASE A8 Engine Performance)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4022"
+    "ITC4070"
    ]
   },
   "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4023"
+    "ITC4071"
    ]
   },
   "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4013"
+    "ITC4061"
    ]
   },
   "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4030"
+    "ITC4078"
    ]
   },
   "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4039"
+    "ITC4087"
    ]
   },
   "Engine Performance (ASE A8 Engine Performance)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4022"
+    "ITC4070"
    ]
   }
  }
