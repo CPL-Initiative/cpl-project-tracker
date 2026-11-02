@@ -231,6 +231,8 @@
   function flagText(f, r) {
     if (f === "refresh" && r.refresh_note) return "Changes to make: " + r.refresh_note;
     if (f === "regen" && r.refresh_note) return "Rebuild requested: " + r.refresh_note;
+    if (f === "in_remediation" && !r.url) return "In remediation" + (r.file_name ? " from " + r.file_name : "") + ". The Library keeps the record, not the file: press Finish remediation and choose the file again.";
+    if (f === "remediated" && !r.url) return "Remediated. Put the remediated file in the CPLLibrary folder, then press File it and paste its link.";
     return FLAGS[f].word;
   }
   function stamp(iso) {
@@ -346,6 +348,7 @@
       R + " .lib-seg button[aria-pressed=\"true\"]{background:var(--cobalt);color:var(--on-accent);font-weight:600;}",
       R + " .lib-btn{display:inline-flex;align-items:center;justify-content:center;min-height:36px;padding:6px 14px;border-radius:6px;border:1px solid var(--border-strong);background:var(--surface-opaque);color:var(--cobalt);font:inherit;font-weight:600;font-size:.92rem;text-decoration:none;cursor:pointer;white-space:nowrap;}",
       R + " .lib-btn:hover{background:var(--surface-subtle);}",
+      R + " .lib-resume:focus-within{outline:2px solid var(--cobalt);outline-offset:2px;}",
       R + " .lib-btn.primary{background:var(--cobalt);border-color:var(--cobalt);color:var(--on-accent);}",
       R + " .lib-btn.primary:hover{background:var(--btn-primary-hover);border-color:var(--btn-primary-hover);}",
       R + " .lib-btn[disabled]{opacity:.6;cursor:default;}",
@@ -790,7 +793,7 @@
     var acts = r.url
       ? '<a class="lib-btn" href="' + esc(r.url) + '" target="_blank" rel="noopener">Open</a>' +
         '<button type="button" class="lib-btn" data-copy="' + esc(r.id) + '">Copy link</button>'
-      : '<button type="button" class="lib-btn" data-file="' + esc(r.id) + '">File it</button>';
+      : '<button type="button" class="lib-btn' + (r.remediation === "remediated" ? " primary" : "") + '" data-file="' + esc(r.id) + '">File it</button>';
     // Edit and the public switch sit on the card itself (Sam, 2026-10-20: "move the
     // Edit button onto the top layer of the card"); each opens its form below.
     acts += '<button type="button" class="lib-btn" data-edittop="' + esc(r.id) + '">Edit</button>';
@@ -919,8 +922,28 @@
   // The card's Revise and remediate (Sam, 2026-10-29: "Maybe make Revise 'Revise and
   // Remediate'") opens the one box with this piece picked; its form lives there.
   function reviseBtn(r) {
+    if (r.remediation === "in_remediation" && !r.url) return resumeBtn(r);
     return '<button type="button" class="lib-btn' + (regenState(r) ? "" : " primary") + '" data-revise="' + esc(r.id) + '">' +
       (regenState(r) === "ready" ? "Ask for more changes" : "Revise and remediate") + '<span class="lib-vh"> ' + esc(r.title) + "</span></button>";
+  }
+  // Finish remediation (S554; Sam, 2026-11-02: the team's remediations sat at In remediation with
+  // "no intuitive way" to complete them). A remediation runs in this browser on the person's own
+  // copy and the Library keeps only the record, so a record left In remediation is finished by
+  // choosing that file again: this chooser opens the report bound to the record it sits on.
+  function resumeBtn(r) {
+    return '<label class="lib-btn primary lib-resume" for="lib-resume-' + esc(r.id) + '">Finish remediation<span class="lib-vh"> of ' + esc(r.title) + "</span></label>" +
+      '<input id="lib-resume-' + esc(r.id) + '" class="lib-vh" type="file" accept="' + REM_ACCEPT + '" data-resume="' + esc(r.id) + '">';
+  }
+  function resumeFile(id, f) {
+    var r = byId(id);
+    if (!r || !f) return;
+    var ext = extOf(f.name);
+    if (!REMEDIABLE[ext]) { say(whyNot(ext), true); render(); return; }
+    if (remUnsaved(state.rem) && !window.confirm("Open " + f.name + "? This report's answers are not in a downloaded file yet, and they will go.")) return;
+    setPick({ name: f.name, file: f, recordId: r.id, recordTitle: r.title });
+    startRemediate(state.pick);
+    if (r.file_name && f.name !== r.file_name) { say("This record started from " + r.file_name + ". The report reads " + f.name + ", and its download updates " + r.title + "."); render(); }
+    var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus();
   }
   function srcWords(x) {
     return x.url
@@ -1312,12 +1335,12 @@
   function startRemediate(pk) {
     if (!pk.file || !pk.file.arrayBuffer) { say("Choose the file again; this browser could not read it.", true); render(); return; }
     state.start = null; state.form = null; state.formFor = null;
-    state.rem = { name: pk.name, reading: true, answers: {}, media: {}, big: {}, ai: {}, kept: {}, edited: {} };
+    state.rem = { name: pk.name, recordId: pk.recordId || null, reading: true, answers: {}, media: {}, big: {}, ai: {}, kept: {}, edited: {} };
     say(""); render();
     var buf;
     pk.file.arrayBuffer().then(function (b) { buf = b; return loadRemediate(); }).then(function (R) {
       return R.inspect(buf, pk.name, remEnv()).then(function (session) {
-        state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, media: {}, big: {}, ai: {}, kept: {}, edited: {}, aiAll: false,
+        state.rem = { name: pk.name, recordId: pk.recordId || null, recordTitle: pk.recordTitle || null, buf: buf, report: session.report, session: session, answers: {}, media: {}, big: {}, ai: {}, kept: {}, edited: {}, aiAll: false,
           notesMode: DECK_EXT[pk.ext] && state.notesMode !== "keep" ? state.notesMode : null, scripts: {}, scriptAi: {},
           drafting: state.autoDraft && pk.ext !== "pdf" ? { done: 0, total: 0, failed: 0 } : null };
         // Every draft is an answer from the start (Sam, 2026-11-02): the download carries
@@ -2592,6 +2615,11 @@
         if (remUnsaved(state.rem) && !window.confirm("Open " + nf.name + "? This report's answers are not in a downloaded file yet, and they will go.")) { e.target.value = ""; return; }
         setPick({ name: nf.name, file: nf });
         startRemediate(state.pick);
+      }
+      else if (e.target.getAttribute && e.target.getAttribute("data-resume")) {
+        var rf = e.target.files && e.target.files[0], rid = e.target.getAttribute("data-resume");
+        e.target.value = "";
+        resumeFile(rid, rf);
       }
       else if (e.target.id === "lc-file") {
         var fl = e.target.files && e.target.files[0];

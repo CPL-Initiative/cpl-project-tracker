@@ -468,7 +468,7 @@ first day.** Do the remembering for them.
   PII, anything reaching colleges. Also ask whether another session is live
   (`list_sessions` when the session holds it; without it, the open PRs and
   `main`'s commits since the handoff, per `scheduled_sessions`) —
-  Sam frequently runs several, and a later write silently wins. **Compute the
+  Sam frequently runs several, and a later write silently wins. **[`/coord`](.claude/commands/coord.md)** tells them (Sam, 2026-11-02). **Compute the
   impacts, don't guess:**
   [`docs/reference/dependency_map.md`](docs/reference/dependency_map.md) maps
   every dataset (Supabase table, generated JS, JSON) to its consuming tabs,
