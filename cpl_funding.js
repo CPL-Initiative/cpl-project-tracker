@@ -1231,6 +1231,11 @@
     ".cplfund-colane-sub { font-weight: 600; color: var(--navy-secondary); font-size: .82rem; margin: 6px 0 4px; }",
     ".cplfund-colane-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 7px 0; border-top: 1px solid var(--border); }",
     ".cplfund-colane-who { font-size: .84rem; color: var(--text-body); line-height: 1.35; }",
+    ".cplfund-colane-who { min-width: 0; flex: 1 1 auto; }",
+    ".cplfund-colane-moreinfo { margin-top: 4px; font-size: .82rem; }",
+    ".cplfund-colane-more-line { margin: 2px 0; }",
+    ".cplfund-colane-k { font-weight: 600; color: var(--text-strong); margin-right: 4px; }",
+    ".cplfund-colane-who .cplfund-corow { margin-left: 0; }",
     ".cplfund-colane-act { flex: 0 0 auto; display: flex; gap: 6px; }",
     ".cplfund-colane-ok { border-color: var(--border-strong); color: var(--navy-primary); }",
     ".cplfund-colane-no { border-color: var(--border-strong); color: var(--red-alert); }",
@@ -7093,18 +7098,56 @@
   function coReviewLaneHtml() {
     if (!unlocked() || publicMode()) return "";
     var rows = ELIG.optinReview || [];
-    if (!rows.length) return "";
+    if (!rows.length && !(ELIG.ncAttestReview || []).length) return "";
     function fmtWhen(v) { return v ? esc(String(v).slice(0, 10)) : ""; }
+    // EVERYTHING THE TEAM HAS ON THE INSTITUTION (Sam, 2026-11-02: "Add more info to the internal tab
+    // eligibility section where we see the requests so that the team has as much as possible, including any
+    // notes written"): its minimum conditions as the row reads them, the coordinator, primary contact and
+    // landing page, the CO Monitor's note with who wrote it and when, and a declined mark.
+    function moreHtml(college) {
+      var conds = eligReqList(college).map(function (q) {
+        var w = eligReqWords(q, college);
+        return (q.met ? "Met: " : w.pending ? "" : "Not met: ") + esc(w.text);
+      });
+      var out = conds.length ? '<div class="cplfund-colane-more-line"><span class="cplfund-colane-k">Conditions</span> ' +
+        conds.join(" &middot; ") + "</div>" : "";
+      var who = coordWhoHtml(college);
+      if (who) out += '<div class="cplfund-colane-more-line"><span class="cplfund-colane-k">Contacts</span> ' + who + "</div>";
+      var n = NOTES[college];
+      if (n && String(n.note || "").trim()) {
+        out += '<div class="cplfund-colane-more-line cplfund-colane-note"><span class="cplfund-colane-k">CO Monitor&#39;s note</span> ' +
+          esc(n.note).replace(/\n/g, "<br>") +
+          (n.updated_by || n.updated_at ? ' <span class="dk">(' + esc(n.updated_by || "") +
+            (n.updated_by && n.updated_at ? ", " : "") + fmtWhen(n.updated_at) + ")</span>" : "") + "</div>";
+      }
+      var dcl = declinedOf(college);
+      if (dcl) out += '<div class="cplfund-colane-more-line"><span class="cplfund-colane-k">Declined participation</span> ' +
+        fmtWhen(dcl.at) + (dcl.by ? " by " + esc(dcl.by) : "") + "</div>";
+      return out ? '<div class="dk cplfund-colane-moreinfo">' + out + "</div>" : "";
+    }
     function line(r, actions) {
       return '<div class="cplfund-colane-row"><div class="cplfund-colane-who">' +
         "<strong>" + esc(dispName(r.college)) + "</strong> &middot; " + esc(r.name || "?") +
         ' <span class="dk">(' + titleWords(r.title, r.name, r.email) + ")" + ctxWords("part", r.college, null) + "</span><br>" +
         '<span class="dk">' + esc(r.email || "") + " &middot; submitted " + fmtWhen(r.requested_at) +
-        (r.status === "confirmed" && r.confirmed_at ? " &middot; confirmed " + fmtWhen(r.confirmed_at) : "") +
+        (r.status === "confirmed" && r.confirmed_at ? " &middot; confirmed " + fmtWhen(r.confirmed_at) +
+          (r.confirmed_by ? " by " + esc(r.confirmed_by) : "") : "") +
         (r.status === "revoked" && r.revoked_at ? " &middot; withdrawn " + fmtWhen(r.revoked_at) : "") +
-        "</span></div><div class=\"cplfund-colane-act\">" + actions + "</div></div>";
+        "</span>" + moreHtml(r.college) + "</div><div class=\"cplfund-colane-act\">" + actions + "</div></div>";
+    }
+    // The noncredit attestations beside the confirmations (they were only on each row's drill-in): the same
+    // details and words the row shows, with the institution's information under them.
+    function ncLine(key) {
+      return '<div class="cplfund-colane-row"><div class="cplfund-colane-who"><strong>' + esc(dispName(key)) +
+        "</strong> &middot; Noncredit CPL Lead attestation<br>" + ncAttestCtlHtml(key) + moreHtml(key) + "</div></div>";
     }
     var pending = rows.filter(function (r) { return r.status === "self_attested"; });
+    var ncKeys = {};
+    (ELIG.ncAttestReview || []).forEach(function (r) { if (r.key && ncAttestOf(r.key)) ncKeys[r.key] = true; });
+    var ncAll = Object.keys(ncKeys).sort(function (a, b) { return dispName(a).localeCompare(dispName(b)); });
+    var ncWaiting = ncAll.filter(function (k) { return ncAttestPending(ncAttestOf(k)); });
+    var ncStanding = ncAll.filter(function (k) { return ncAttestStanding(ncAttestOf(k)); });
+    var ncOther = ncAll.filter(function (k) { return ncWaiting.indexOf(k) < 0 && ncStanding.indexOf(k) < 0; });
     var confirmed = rows.filter(function (r) { return r.status === "confirmed"; });
     var revoked = rows.filter(function (r) { return r.status === "revoked"; });
     var body = "";
@@ -7121,7 +7164,9 @@
     if (confirmed.length) {
       body += '<details class="cplfund-colane-more"><summary>Confirmed (' + confirmed.length + ")</summary>" +
         confirmed.map(function (r) {
-          return line(r, '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(r.college) + '">Revoke</button>');
+          return line(r, (r.email ? '<button type="button" class="cplfund-optbtn" data-optinmail="' + esc(r.college) +
+            '" title="Open the acceptance email again, to copy it">Email</button>' : "") +
+            '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + esc(r.college) + '">Revoke</button>');
         }).join("") + "</details>";
     }
     if (revoked.length) {
@@ -7132,8 +7177,21 @@
             '<button type="button" class="cplfund-optbtn" data-optinremove="' + esc(r.college) + '">Remove</button>');
         }).join("") + "</details>";
     }
+    if (ncWaiting.length) {
+      body += '<div class="cplfund-colane-sub">Noncredit attestations awaiting review (' + ncWaiting.length + ")</div>" +
+        ncWaiting.map(ncLine).join("");
+    }
+    if (ncStanding.length) {
+      body += '<details class="cplfund-colane-more"><summary>Noncredit attestations confirmed (' + ncStanding.length + ")</summary>" +
+        ncStanding.map(ncLine).join("") + "</details>";
+    }
+    if (ncOther.length) {
+      body += '<details class="cplfund-colane-more"><summary>Noncredit attestations rejected (' + ncOther.length + ")</summary>" +
+        ncOther.map(ncLine).join("") + "</details>";
+    }
+    var waitN = pending.length + ncWaiting.length;
     return '<div class="cplfund-colane"><div class="cplfund-colane-head">CO opt-in review' +
-      (pending.length ? ' <span class="cplfund-colane-badge">' + pending.length + " awaiting review</span>" : "") +
+      (waitN ? ' <span class="cplfund-colane-badge">' + waitN + " awaiting review</span>" : "") +
       "</div>" +
       '<div class="dk cplfund-colane-intro">A college administrator sent each request below from an address on the college&#39;s or district&#39;s domain. Accept confirms the request and opens a confirmation email to the sender; the college meets the condition from then. Deny removes the request.</div>' +
       body + "</div>";
@@ -18031,6 +18089,16 @@
     });
     document.querySelectorAll("#cplFundingMount .cplfund-elig [data-optindeny]").forEach(function (b) {
       b.addEventListener("click", function () { savingState = ""; denyOptIn(b.getAttribute("data-optindeny")); });
+    });
+    // The lane's Email and Follow up words, and the noncredit attestations' (Sam, 2026-11-02).
+    [["data-optinmail", mailOptIn, false], ["data-optinfollow", followOptIn, false],
+     ["data-ncattestaccept", acceptNcAttest, true], ["data-ncattestdeny", denyNcAttest, true],
+     ["data-ncattestfollow", followNcAttest, false], ["data-ncattestmail", mailNcAttest, false],
+     ["data-ncattestreject", rejectNcAttest, true], ["data-ncattestconfirm", reconfirmNcAttest, true],
+     ["data-ncattestremove", removeNcAttest, true]].forEach(function (w) {
+      document.querySelectorAll("#cplFundingMount .cplfund-elig [" + w[0] + "]").forEach(function (b) {
+        b.addEventListener("click", function () { if (w[2]) savingState = ""; w[1](b.getAttribute(w[0])); });
+      });
     });
     // ── priority reorder: the drag handle and the position picker ──
     // Both land on movePriority(), which is pure over the order array — the DOM

@@ -166,6 +166,20 @@ function choose(window, doc, v) {
   check("B13: Email opens the acceptance email to the requester and changes no record",
     !!dlg && /attester@example\.edu/.test(flat(dlg)) && /accepted/.test(flat(dlg)) &&
     T._gate(QUAL) && doc.querySelector('[data-optinrevoke="' + QUAL + '"]') !== null);
+  const d0 = doc.getElementById("cplfund-maildlg"); if (d0) d0.remove();
+
+  // The Eligibility section's review lane carries what the team has (Sam, 2026-11-02, "including any notes written").
+  T._setNotes({ [QUAL]: { college: QUAL, note: "Called the VPAA; landing page update coming.", updated_by: "co@cccco.edu",
+    updated_at: "2026-11-02T18:00:00Z" } });
+  T.render();
+  const lane = doc.querySelector(".cplfund-elig .cplfund-colane");
+  const row = lane && Array.from(lane.querySelectorAll(".cplfund-colane-row")).find((r) => /Laney/.test(flat(r)));
+  check("B14: the review lane's line shows the conditions, the contacts and the CO Monitor's note with its author",
+    !!row && /Conditions Met: Coordinator on file/.test(flat(row)) && /Confirmation on file/.test(flat(row)) &&
+    /CO Monitor's note Called the VPAA; landing page update coming\. \(co@cccco\.edu, 2026-11-02\)/.test(flat(row)));
+  const laneMail = row && row.querySelector('[data-optinmail="' + QUAL + '"]');
+  laneMail && laneMail.dispatchEvent(new window.Event("click", { bubbles: true }));
+  check("B15: the lane's Email reopens the acceptance email too", !!laneMail && !!doc.getElementById("cplfund-maildlg"));
 }
 
 finish();
