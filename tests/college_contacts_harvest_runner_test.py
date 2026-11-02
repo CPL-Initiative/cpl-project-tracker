@@ -53,6 +53,10 @@ def test_positions():
     assert h.position_of("Vice President, Instruction and Student Services") == "vpaa"
     assert h.position_of("Associate Vice President, Workforce") == "assoc_vp"
     assert h.position_of("Dean, Career and Technical Education") == "dean_cte"
+    assert h.position_of("Dean, Career Technical Education") == "dean_cte"  # S549, from the S548 read
+    assert h.position_of("Assistant Superintendent/Vice President, Finance and Business") == "vpbs"
+    assert h.position_of("Vice President, Business and Finance") == "vpbs"
+    assert h.position_of("Vice President, Finance and Administration") is None  # outside Sam's variants
     assert h.position_of("Dean of Admissions and Records") == "dean_ar"
     assert h.position_of("Veterans Resource Center Coordinator") == "vrc"
     assert h.position_of("Articulation Officer") == "articulation_officer"
