@@ -1,12 +1,12 @@
 {
  "schema": 1,
- "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB.",
+ "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft.",
  "_reference_generated_at": "2026-11-02T06:22:48+00:00",
  "counts": {
-  "certs_linked": 122,
-  "titles_linked": 168,
-  "holds": 152,
-  "bundles": 28,
+  "certs_linked": 165,
+  "titles_linked": 208,
+  "holds": 192,
+  "bundles": 38,
   "aligned": 16,
   "codes_not_in_catalog": [
    "G1"
@@ -27,6 +27,139 @@
   ]
  },
  "certs": {
+  "ITC0029": {
+   "code": null,
+   "name": "Microsoft Certified: Azure AI Fundamentals",
+   "catalog_name": "Microsoft Certified: Azure AI Fundamentals",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0224": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Excel Associate (Microsoft 365 Apps)",
+   "catalog_name": "Microsoft Office Specialist: Excel Associate (Microsoft 365 Apps)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0225": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Word Associate (Office 2019)",
+   "catalog_name": "Microsoft Office Specialist: Word Associate (Office 2019)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0226": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Outlook Associate (Office 2019)",
+   "catalog_name": "Microsoft Office Specialist: Outlook Associate (Office 2019)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0227": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Excel Expert (Excel and Excel 2019)",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Excel Expert (Excel and Excel 2019)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0228": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Word Expert (Office 2019)",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Word Expert (Office 2019)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0229": {
+   "code": null,
+   "name": "Microsoft Office Specialist: PowerPoint Associate (Office 2019)",
+   "catalog_name": "Microsoft Office Specialist: PowerPoint Associate (Office 2019)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0230": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Access 2016",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Access 2016",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0234": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Access Expert (Access and Access 2019)",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Access Expert (Access and Access 2019)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0253": {
+   "code": null,
+   "name": "Microsoft Office Specialist (MOS): Microsoft Excel 2016",
+   "catalog_name": "Microsoft Office Specialist (MOS): Microsoft Excel 2016",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0263": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Excel 2016 Expert",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Excel 2016 Expert",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0264": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Excel Associate (Office 2019)",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Excel Associate (Office 2019)",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0266": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Outlook 2016",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Outlook 2016",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0267": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft PowerPoint 2016",
+   "catalog_name": "Microsoft Office Specialist: Microsoft PowerPoint 2016",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0268": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Word 2016",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Word 2016",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0269": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Microsoft Word 2016 Expert",
+   "catalog_name": "Microsoft Office Specialist: Microsoft Word 2016 Expert",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0270": {
+   "code": null,
+   "name": "Microsoft Office Specialist: PowerPoint Associate 2019",
+   "catalog_name": "Microsoft Office Specialist: PowerPoint Associate 2019",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0271": {
+   "code": null,
+   "name": "Microsoft Office Specialist: Word 2013 Expert",
+   "catalog_name": "Microsoft Office Specialist: Word 2013 Expert",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0325": {
+   "code": null,
+   "name": "CompTIA Project+",
+   "catalog_name": "CompTIA Project+",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
   "ITC0512": {
    "code": null,
    "name": "CLEP Principles of Marketing",
@@ -41,6 +174,125 @@
    "issuer": "College Board",
    "family": "CLEP"
   },
+  "ITC0822": {
+   "code": null,
+   "name": "CCNA Certification",
+   "catalog_name": "CCNA Certification",
+   "issuer": "Cisco",
+   "family": "Cisco"
+  },
+  "ITC0823": {
+   "code": null,
+   "name": "Cisco Certified Network Associate Wireless (CCNA Wireless)",
+   "catalog_name": "Cisco Certified Network Associate Wireless (CCNA Wireless)",
+   "issuer": "Cisco",
+   "family": "Cisco"
+  },
+  "ITC0824": {
+   "code": null,
+   "name": "Cisco IT Essentials",
+   "catalog_name": "Cisco IT Essentials",
+   "issuer": "Cisco",
+   "family": "Cisco"
+  },
+  "ITC0825": {
+   "code": null,
+   "name": "Cisco Networking Academy — Networking Essentials",
+   "catalog_name": "Cisco Networking Academy — Networking Essentials",
+   "issuer": "Cisco",
+   "family": "Cisco"
+  },
+  "ITC0908": {
+   "code": null,
+   "name": "Microsoft Certified: Azure Administrator Associate",
+   "catalog_name": "Microsoft Certified: Azure Administrator Associate",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0909": {
+   "code": null,
+   "name": "Microsoft 365 Certified: Endpoint Administrator Associate",
+   "catalog_name": "Microsoft 365 Certified: Endpoint Administrator Associate",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0910": {
+   "code": null,
+   "name": "Microsoft Certified Solutions Associate (MCSA) — Windows Server",
+   "catalog_name": "Microsoft Certified Solutions Associate (MCSA) — Windows Server",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0911": {
+   "code": null,
+   "name": "Microsoft Certified: Azure Fundamentals",
+   "catalog_name": "Microsoft Certified: Azure Fundamentals",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0925": {
+   "code": null,
+   "name": "Microsoft Certified: Microsoft 365 Administrator Expert",
+   "catalog_name": "Microsoft Certified: Microsoft 365 Administrator Expert",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC0989": {
+   "code": null,
+   "name": "CompTIA A+ Certification",
+   "catalog_name": "CompTIA A+ Certification",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC0990": {
+   "code": null,
+   "name": "CompTIA Network+",
+   "catalog_name": "CompTIA Network+",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC0991": {
+   "code": null,
+   "name": "CompTIA Linux+",
+   "catalog_name": "CompTIA Linux+",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC0992": {
+   "code": null,
+   "name": "CompTIA Server+",
+   "catalog_name": "CompTIA Server+",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC0993": {
+   "code": null,
+   "name": "CompTIA Tech+",
+   "catalog_name": "CompTIA Tech+",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC0994": {
+   "code": null,
+   "name": "CompTIA Cloud+",
+   "catalog_name": "CompTIA Cloud+",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC0995": {
+   "code": null,
+   "name": "CompTIA IT Fundamentals",
+   "catalog_name": "CompTIA IT Fundamentals",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC0996": {
+   "code": null,
+   "name": "CompTIA Cloud Essentials",
+   "catalog_name": "CompTIA Cloud Essentials",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
   "ITC1416": {
    "code": "A6",
    "name": "Electrical/Electronic Systems",
@@ -54,6 +306,55 @@
    "catalog_name": "Medium-Heavy Truck Certification - T6 Electrical/Electronic Systems",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
+  },
+  "ITC1536": {
+   "code": null,
+   "name": "CCNP Security Certification",
+   "catalog_name": "CCNP Security Certification",
+   "issuer": "Cisco",
+   "family": "Cisco"
+  },
+  "ITC1537": {
+   "code": null,
+   "name": "Cisco Certified Network Professional (CCNP) Security",
+   "catalog_name": "Cisco Certified Network Professional (CCNP) Security",
+   "issuer": "Cisco",
+   "family": "Cisco"
+  },
+  "ITC1596": {
+   "code": null,
+   "name": "CompTIA Security+",
+   "catalog_name": "CompTIA Security+",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC1597": {
+   "code": null,
+   "name": "CompTIA PenTest+",
+   "catalog_name": "CompTIA PenTest+",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC1598": {
+   "code": null,
+   "name": "CompTIA Cybersecurity Analyst",
+   "catalog_name": "CompTIA Cybersecurity Analyst",
+   "issuer": "CompTIA",
+   "family": "CompTIA"
+  },
+  "ITC1804": {
+   "code": null,
+   "name": "Microsoft Technology Associate (MTA) Database Fundamentals",
+   "catalog_name": "Microsoft Technology Associate (MTA) Database Fundamentals",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
+  },
+  "ITC1812": {
+   "code": null,
+   "name": "Microsoft Certified: Power BI Data Analyst Associate",
+   "catalog_name": "Microsoft Certified: Power BI Data Analyst Associate",
+   "issuer": "Microsoft",
+   "family": "Microsoft"
   },
   "ITC4062": {
    "code": "L4",
@@ -1969,6 +2270,134 @@
     "ITC5232"
    ]
   },
+  "Cisco Certified Network Associate (CCNA)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0822"
+   ]
+  },
+  "Cisco Certified Network Associate Wireless (CCNA Wireless)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0823"
+   ]
+  },
+  "Cisco Certified Network Professional (CCNP) Security": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC1537",
+    "ITC1536"
+   ]
+  },
+  "Cisco IT Essentials": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0824"
+   ]
+  },
+  "Cisco Networking Academy — Networking Essentials": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0825"
+   ]
+  },
+  "CompTIA A+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0989"
+   ]
+  },
+  "CompTIA Certification (unspecified)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [],
+   "unresolved": [
+    "CompTIA Certification (unspecified) (names no one certification)"
+   ]
+  },
+  "CompTIA Cloud Essentials+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0996"
+   ]
+  },
+  "CompTIA Cloud+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0994"
+   ]
+  },
+  "CompTIA CySA+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1598"
+   ]
+  },
+  "CompTIA IT Fundamentals (ITF+)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0995"
+   ]
+  },
+  "CompTIA Linux+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0991"
+   ]
+  },
+  "CompTIA Network+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0990"
+   ]
+  },
+  "CompTIA PenTest+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1597"
+   ]
+  },
+  "CompTIA Project+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0325"
+   ]
+  },
+  "CompTIA Security+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1596"
+   ]
+  },
+  "CompTIA Server+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0992"
+   ]
+  },
+  "CompTIA Tech+": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0993"
+   ]
+  },
   "Engine Performance (ASE A8 Engine Performance)": {
    "relation": "aligned",
    "rule": "all",
@@ -2163,6 +2592,180 @@
    "rule": "all",
    "certs": [
     "ITC4068"
+   ]
+  },
+  "Microsoft Certified Solutions Associate (MCSA) — Windows Server": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0910"
+   ]
+  },
+  "Microsoft Certified: Azure AI Fundamentals": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0029"
+   ]
+  },
+  "Microsoft Certified: Azure Administrator Associate": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0908"
+   ]
+  },
+  "Microsoft Certified: Azure Administrator Associate (AZ-104)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0908"
+   ]
+  },
+  "Microsoft Certified: Azure Fundamentals (AZ-900)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0911"
+   ]
+  },
+  "Microsoft Certified: Endpoint Administrator Associate (MD-102)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0909"
+   ]
+  },
+  "Microsoft Certified: Microsoft 365 Administrator Expert": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0925"
+   ]
+  },
+  "Microsoft Certified: Power BI Data Analyst Associate": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1812"
+   ]
+  },
+  "Microsoft Office Specialist": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [],
+   "unresolved": [
+    "Microsoft Office Specialist (names no one certification)"
+   ]
+  },
+  "Microsoft Office Specialist (generic)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [],
+   "unresolved": [
+    "Microsoft Office Specialist (generic) (names no one certification)"
+   ]
+  },
+  "Microsoft Office Specialist — Access": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0230"
+   ]
+  },
+  "Microsoft Office Specialist — Access Expert": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0234"
+   ]
+  },
+  "Microsoft Office Specialist — Excel": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC0224",
+    "ITC0264",
+    "ITC0253"
+   ]
+  },
+  "Microsoft Office Specialist — Excel Expert": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC0227",
+    "ITC0263"
+   ]
+  },
+  "Microsoft Office Specialist — Excel Expert and Access Expert (Office 2019)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0227",
+    "ITC0234"
+   ]
+  },
+  "Microsoft Office Specialist — Excel or Excel Expert": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC0224",
+    "ITC0264",
+    "ITC0253",
+    "ITC0227",
+    "ITC0263"
+   ]
+  },
+  "Microsoft Office Specialist — Outlook": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC0226",
+    "ITC0266"
+   ]
+  },
+  "Microsoft Office Specialist — PowerPoint": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC0229",
+    "ITC0267",
+    "ITC0270"
+   ]
+  },
+  "Microsoft Office Specialist — Word": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC0225",
+    "ITC0268"
+   ]
+  },
+  "Microsoft Office Specialist — Word Expert": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC0228",
+    "ITC0269",
+    "ITC0271"
+   ]
+  },
+  "Microsoft Office Specialist — Word or Word Expert": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC0225",
+    "ITC0268",
+    "ITC0228",
+    "ITC0269",
+    "ITC0271"
+   ]
+  },
+  "Microsoft Technology Associate (MTA) Database Fundamentals": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC1804"
    ]
   },
   "Suspension and Steering (ASE A4 Suspension and Steering)": {

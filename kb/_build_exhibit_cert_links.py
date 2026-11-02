@@ -25,6 +25,15 @@ rulings, 2026-10-31 and Open Asks Sheet 150). So a title that is an official exa
 joined by "or" ("AP English Literature and Composition or AP English Language and Composition") holds either, rule
 "any"; a title the readers hold back as naming no one exam ("AP Physics") is kept as unresolved.
 
+Third family: the IT vendors, CompTIA, Cisco and Microsoft (S548, 2026-11-02). Their reference titles share no code
+the way ASE's do, and the catalog spells the same cert several ways (one row a version: "Microsoft Office Specialist:
+Microsoft Word 2016", "...Word Associate (Office 2019)"), so VENDOR is a hand-checked table from each reference title to
+the catalog's names, looked up by name and issuer when the file builds (an id is never written here). A title that
+names no version holds any of the cert's versions, rule "any"; a title naming two certs joined by "and" holds both; one
+naming either by "or" holds any. A title naming no one cert ("CompTIA Certification (unspecified)", "Microsoft Office
+Specialist (generic)") is kept as unresolved, and so are the local courses ("Microsoft Excel 1", "Microsoft Word
+Beginning", "Using Microsoft Windows"), which the table leaves out: a college issues those, and no vendor does.
+
 ASE's test names come from kb/_sweep_exhibit_titles.py's ASE table (imported, never copied). Writes
 kb/exhibit_cert_links.json; the daily run rebuilds it after the credential reference; the Exhibits List's finder and
 title drawer read it. Standard library only.
@@ -90,6 +99,73 @@ def catalog_exams():
     return out
 
 
+# Reference title -> (rule, the catalog's names). Issuer is the vendor named first in the title. Hand-checked
+# against kb/it_ai_credential_catalog.json on 2026-11-02 (S548). A name missing from the catalog shows as unresolved.
+_MOS = "Microsoft Office Specialist: "
+MOS_EXCEL = [_MOS + "Excel Associate (Microsoft 365 Apps)", _MOS + "Microsoft Excel Associate (Office 2019)",
+             "Microsoft Office Specialist (MOS): Microsoft Excel 2016"]
+MOS_EXCEL_EXPERT = [_MOS + "Microsoft Excel Expert (Excel and Excel 2019)", _MOS + "Microsoft Excel 2016 Expert"]
+MOS_WORD = [_MOS + "Word Associate (Office 2019)", _MOS + "Microsoft Word 2016"]
+MOS_WORD_EXPERT = [_MOS + "Microsoft Word Expert (Office 2019)", _MOS + "Microsoft Word 2016 Expert",
+                   _MOS + "Word 2013 Expert"]
+MOS_ACCESS_EXPERT = [_MOS + "Microsoft Access Expert (Access and Access 2019)"]
+VENDOR = {
+    "CompTIA A+": ("all", ["CompTIA A+ Certification"]),
+    "CompTIA Cloud Essentials+": ("all", ["CompTIA Cloud Essentials"]),
+    "CompTIA Cloud+": ("all", ["CompTIA Cloud+"]),
+    "CompTIA CySA+": ("all", ["CompTIA Cybersecurity Analyst"]),
+    "CompTIA IT Fundamentals (ITF+)": ("all", ["CompTIA IT Fundamentals"]),
+    "CompTIA Linux+": ("all", ["CompTIA Linux+"]),
+    "CompTIA Network+": ("all", ["CompTIA Network+"]),
+    "CompTIA PenTest+": ("all", ["CompTIA PenTest+"]),
+    "CompTIA Project+": ("all", ["CompTIA Project+"]),
+    "CompTIA Security+": ("all", ["CompTIA Security+"]),
+    "CompTIA Server+": ("all", ["CompTIA Server+"]),
+    "CompTIA Tech+": ("all", ["CompTIA Tech+"]),
+    "CompTIA Certification (unspecified)": ("all", []),
+    "Cisco Certified Network Associate (CCNA)": ("all", ["CCNA Certification"]),
+    "Cisco Certified Network Associate Wireless (CCNA Wireless)": ("all", ["Cisco Certified Network Associate Wireless (CCNA Wireless)"]),
+    "Cisco Certified Network Professional (CCNP) Security": ("any", ["Cisco Certified Network Professional (CCNP) Security",
+                                                                     "CCNP Security Certification"]),
+    "Cisco IT Essentials": ("all", ["Cisco IT Essentials"]),
+    "Cisco Networking Academy — Networking Essentials": ("all", ["Cisco Networking Academy — Networking Essentials"]),
+    "Microsoft Certified Solutions Associate (MCSA) — Windows Server": ("all", ["Microsoft Certified Solutions Associate (MCSA) — Windows Server"]),
+    "Microsoft Certified: Azure Administrator Associate": ("all", ["Microsoft Certified: Azure Administrator Associate"]),
+    "Microsoft Certified: Azure Administrator Associate (AZ-104)": ("all", ["Microsoft Certified: Azure Administrator Associate"]),
+    "Microsoft Certified: Azure AI Fundamentals": ("all", ["Microsoft Certified: Azure AI Fundamentals"]),
+    "Microsoft Certified: Azure Fundamentals (AZ-900)": ("all", ["Microsoft Certified: Azure Fundamentals"]),
+    "Microsoft Certified: Endpoint Administrator Associate (MD-102)": ("all", ["Microsoft 365 Certified: Endpoint Administrator Associate"]),
+    "Microsoft Certified: Microsoft 365 Administrator Expert": ("all", ["Microsoft Certified: Microsoft 365 Administrator Expert"]),
+    "Microsoft Certified: Power BI Data Analyst Associate": ("all", ["Microsoft Certified: Power BI Data Analyst Associate"]),
+    "Microsoft Technology Associate (MTA) Database Fundamentals": ("all", ["Microsoft Technology Associate (MTA) Database Fundamentals"]),
+    "Microsoft Office Specialist": ("all", []),
+    "Microsoft Office Specialist (generic)": ("all", []),
+    "Microsoft Office Specialist — Access": ("any", [_MOS + "Microsoft Access 2016"]),
+    "Microsoft Office Specialist — Access Expert": ("any", MOS_ACCESS_EXPERT),
+    "Microsoft Office Specialist — Excel": ("any", MOS_EXCEL),
+    "Microsoft Office Specialist — Excel Expert": ("any", MOS_EXCEL_EXPERT),
+    "Microsoft Office Specialist — Excel or Excel Expert": ("any", MOS_EXCEL + MOS_EXCEL_EXPERT),
+    "Microsoft Office Specialist — Excel Expert and Access Expert (Office 2019)": ("all", MOS_EXCEL_EXPERT[:1] + MOS_ACCESS_EXPERT),
+    "Microsoft Office Specialist — Outlook": ("any", [_MOS + "Outlook Associate (Office 2019)", _MOS + "Microsoft Outlook 2016"]),
+    "Microsoft Office Specialist — PowerPoint": ("any", [_MOS + "PowerPoint Associate (Office 2019)",
+                                                        _MOS + "Microsoft PowerPoint 2016", _MOS + "PowerPoint Associate 2019"]),
+    "Microsoft Office Specialist — Word": ("any", MOS_WORD),
+    "Microsoft Office Specialist — Word Expert": ("any", MOS_WORD_EXPERT),
+    "Microsoft Office Specialist — Word or Word Expert": ("any", MOS_WORD + MOS_WORD_EXPERT),
+}
+VENDOR_ISSUERS = ("CompTIA", "Cisco", "Microsoft")
+
+
+def catalog_vendor():
+    """The catalog's CompTIA, Cisco and Microsoft rows, by (issuer, name); a name listed twice keeps its lowest id."""
+    rows = json.loads(CATALOG.read_text(encoding="utf-8"))["credentials"]
+    out = {}
+    for r in sorted(rows, key=lambda r: (len(r["id"]), r["id"])):
+        if r.get("issuer") in VENDOR_ISSUERS:
+            out.setdefault((r["issuer"], r["name"]), {"id": r["id"], "name": r["name"], "issuer": r["issuer"]})
+    return out
+
+
 CODE = re.compile(r"\b([A-Z]{1,3}\d{1,2})\b")
 FILLER = {"certification", "any", "bundle", "and"}
 RANGE = re.compile(r"\b([A-Z]{1,2})(\d{1,2})\s*[–-]\s*(?:[A-Z]{1,2})?(\d{1,2})\b")
@@ -99,6 +175,7 @@ def build():
     names = ase_names()
     by_code, dupes = catalog_ase()
     exams = catalog_exams()
+    vendor = catalog_vendor()
     rows, generated = load_reference()
     certs, links = {}, {}
     unmatched_codes = set()
@@ -114,6 +191,25 @@ def build():
 
     for r in rows:
         ut = r.get("ut") or ""
+        if ut in VENDOR:
+            rule, wanted = VENDOR[ut]
+            issuer = next(v for v in VENDOR_ISSUERS if ut.startswith(v))
+            ids, unresolved = [], []
+            for name in wanted:
+                c = vendor.get((issuer, name))
+                if c:
+                    certs[c["id"]] = {"code": None, "name": c["name"], "catalog_name": c["name"],
+                                      "issuer": issuer, "family": issuer}
+                    if c["id"] not in ids:
+                        ids.append(c["id"])
+                else:
+                    unresolved.append(name + " (not in the catalog)")
+            if not wanted:
+                unresolved.append(ut + " (names no one certification)")
+            links[ut] = {"relation": "holds", "rule": rule if len(ids) > 1 else "all", "certs": ids}
+            if unresolved:
+                links[ut]["unresolved"] = unresolved
+            continue
         fam = EXAM_PREFIX.match(ut)
         if fam:
             parts = [p.strip() for p in re.split(r"\s+or\s+(?=(?:AP|CLEP|IB) )", ut)]
@@ -173,7 +269,7 @@ def build():
     return {
         "schema": 1,
         "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential "
-                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB.",
+                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB, CompTIA, Cisco, Microsoft.",
         "_reference_generated_at": generated,
         "counts": {"certs_linked": len(certs), "titles_linked": len(links), "holds": len(holds), "bundles": len(bundles),
                    "aligned": len(links) - len(holds), "codes_not_in_catalog": sorted(unmatched_codes)},
