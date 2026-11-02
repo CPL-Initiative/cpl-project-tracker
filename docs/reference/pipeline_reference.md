@@ -928,6 +928,12 @@ JSON) and Saves/Resumes to Supabase `tmc_submissions`.
   Activity card, its RACI rows, or its Workplan Goals ladder. Schema:
   `kb/supabase_project_lifecycle.sql` (applied live via the Supabase
   MCP). Docs: `docs/project_lifecycle_lessons.md`.
+- **`college_short_names`** + **`college_short_names_log`** (S545, 2026-11-02; DR-30): the 118 college short
+  names, public read; UPDATE of `short` alone for an authenticated `is_allowed_reviewer()` (the College Identity tab's
+  Short name column), never the team phrase. A BEFORE UPDATE trigger keeps the old short as an alias, refuses a short
+  another college answers to, and logs who and when (the log reads for a reviewer). The daily curation sync's
+  `kb/_apply_college_short_names.py` writes `kb/college_short_names.json` and `college_short_names.js` from it.
+  Migration `kb/migrations/2026-11-02_college_short_names.sql`; receipt `kb/college_identity/2026-11-02_short_names_seed.md`.
 - **`map_college_users`** + **`map_college_contacts`** (added Session 87): the gated
   MAP-Users tab store (STAFF PII — names/emails/roles synced from MAP "College Users &
   Roles" + "College Contacts", **never committed to the repo**). `map_college_users`

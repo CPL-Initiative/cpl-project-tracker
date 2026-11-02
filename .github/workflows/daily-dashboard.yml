@@ -167,6 +167,11 @@ jobs:
             # listed in the report's `held`; the CER procedures run brings those to
             # the tab's Needs you. --apply-if-safe never fails the run.
             python kb/_fold_unclassified.py --apply-if-safe || echo "::warning title=Unclassified fold failed::kb/_fold_unclassified.py exited non-zero — curator triage assignments are stuck in the overlay until this passes. Check the step log."
+            # College short names (S545): the College Identity tab's edits in public.college_short_names fold into
+            # kb/college_short_names.json + college_short_names.js here, before every builder below joins through them.
+            # A changed short keeps the old one as an alias; a collision or a missing college is refused and the
+            # committed files stay (the script prints its own ::warning::), so the publish never dies on it.
+            python kb/_apply_college_short_names.py || echo "::warning title=College short names not folded::kb/_apply_college_short_names.py exited non-zero — the pages keep yesterday's short names. Check the step log."
           else
             echo "SUPABASE_SERVICE_KEY not set — skipping curation sync."
           fi
@@ -542,6 +547,8 @@ jobs:
           git add cpl_pathways_membership_data.js 2>/dev/null || true
           # Phase 1e canonical SUBJ4 seed + curator-edit overlay (added 5a)
           git add kb/discipline_canonical_subj4.json 2>/dev/null || true
+          # College short names, folded from the College Identity tab's edits in the curation sync (S545).
+          git add kb/college_short_names.json college_short_names.js 2>/dev/null || true
           # SkyView's decision payload + the served page that inlines it (Step
           # 4d2). ccr_universe.json is deliberately NOT here — the layout is
           # hand-rebuilt (Sam, 2026-09-06).

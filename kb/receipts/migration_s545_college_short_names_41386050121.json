@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-02_college_short_names.sql",
+ "name": "s545_college_short_names",
+ "version": "20261102040224",
+ "sha256": "bab0da34d1216178025cc3d91f48320da2d1092c4b2e58052be65287ee88ed42",
+ "run": "41386050121",
+ "status": 201,
+ "response": "[{\"rows\":118,\"seeded\":118}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}

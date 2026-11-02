@@ -1,7 +1,7 @@
 {
   "_meta": {
     "description": "College full-name -> short-name lookup for compact chips/badges across the CPL dashboard views (CCR / EACR / CER).",
-    "source": "Curator-provided mapping (MAP@rccd.edu).",
+    "source": "public.college_short_names (Supabase), edited in the College Identity tab's Short name column; seeded 2026-11-02 (S545) from the curator-provided mapping (MAP@rccd.edu).",
     "casing": "Both forms stored: 'short' (Title Case, the chip default) and 'short_caps' (ALL CAPS, as originally provided).",
     "matching": "Resolve via college_short_names.js cplCollegeShort(name). Exact match on canonical/aliases, then a normalize() fallback that folds funding suffixes (Credit/Non-Credit), Community/Junior, n-tilde + the data's CaÃ±ada mojibake, and punctuation.",
     "notes": [
@@ -11,7 +11,8 @@
     ],
     "count": 118,
     "generated": "2026-11-02",
-    "generator": "kb/_seed_college_short_names.py"
+    "generator": "kb/_apply_college_short_names.py (the daily run's curation sync)",
+    "rule": "A changed short keeps the old one as an alias (the table's trigger), and every spelling the committed file reached a college by is carried forward, so no join loses a college."
   },
   "colleges": [
     {

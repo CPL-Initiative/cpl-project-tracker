@@ -1903,12 +1903,18 @@ async function seedCollegeIdentity(page, theme) {
       row(5, "Testing College", "test", [], null, null, null, null, true),
     ];
     const CONTACTS = [{ college: "Chaffey College" }, { college: "San Diego City " }, { college: "Example Unlisted College" }];
+    // The short-name editor (S545): the live table, one short waiting for the daily run (Chaffey), and a reviewer
+    // session so each row's Edit paints; the seed then opens one editor so its box, Save and Cancel are measured.
+    const SHORTS = (window.CPL_COLLEGE_SHORT || []).map((r) => ({ canonical: r.canonical, short: r.canonical === "Chaffey College"
+      ? "Chaffey Rancho" : r.short, short_caps: r.short_caps, aliases: r.aliases }));
+    try { sessionStorage.setItem("cpl_sb", JSON.stringify({ access_token: "a11y.aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.seed" })); } catch (e) { /* storage blocked */ }
     const json = (b) => Promise.resolve(new Response(JSON.stringify(b), { status: 200, headers: { "Content-Type": "application/json" } }));
     const real = window.fetch;
     window.fetch = function (url) {
       const u = String(url);
       if (/\/map_colleges\?/.test(u)) return json(COLLEGES);
       if (/\/map_college_contacts\?/.test(u)) return json(CONTACTS);
+      if (/\/college_short_names\?select/.test(u)) return json(SHORTS);
       return real.apply(this, arguments);
     };
     const M = window.CPL_COLLEGE_IDENTITY_TAB;
@@ -1919,6 +1925,10 @@ async function seedCollegeIdentity(page, theme) {
     const st = window.CPL_COLLEGE_IDENTITY_TAB._state;
     return !st.loading && st.live && st.live.length && document.querySelector("#college-identity-root .cid-t");
   }, null, { timeout: 20000 });
+  await page.evaluate(() => {
+    const b = document.querySelector('#college-identity-root [data-short-edit="San Diego City College"]');
+    if (b) b.click();
+  });
   await page.waitForTimeout(300);
 }
 
