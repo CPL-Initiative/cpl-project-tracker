@@ -1,0 +1,2129 @@
+{
+ "college": "Oxnard College",
+ "homepage": "https://www.oxnardcollege.edu/",
+ "read_at": "2026-11-02T10:22:50+00:00",
+ "pages": [
+  {
+   "url": "https://www.oxnardcollege.edu/",
+   "final_url": "https://www.oxnardcollege.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.oxnardcollege.edu/departments/administrative",
+   "final_url": "https://www.oxnardcollege.edu/departments/administrative",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Departments",
+      "Administrative Departments",
+      "Office of the President",
+      "Vice President of Academic Affairs and Student Learning",
+      "Office of Business Services",
+      "Career & Technical Education Division"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "Departments",
+      "Administrative Departments",
+      "Office of the President",
+      "Vice President of Academic Affairs and Student Learning",
+      "Office of Business Services",
+      "Career & Technical Education Division",
+      "Institutional Effectiveness Division"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.oxnardcollege.edu/departments/administrative/office-of-the-president",
+   "final_url": "https://www.oxnardcollege.edu/departments/administrative/office-of-the-president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | Oxnard College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | Oxnard College",
+      "Skip to main content",
+      "Secondary Menu",
+      "Academic Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Microsoft 365 (Outlook, OneDrive, SharePoint)",
+      "VCCCD Human Resources",
+      "Start • Enroll",
+      "Office of the President",
+      "Breadcrumb",
+      "Home",
+      "Departments"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Departments",
+      "Administrative",
+      "Office of the President",
+      "Welcome to Oxnard College!",
+      "We have proudly served Ventura County for over a half century. With award-winning academic and career education pathways, along with personalized student services, Oxnard College provides the resources and support you need to achieve your educational and career goals. That's why, in 2025, we ranked among the top 150 community colleges in the nation by the prestigious Aspen Institute – an honor selected from more than 1,200 community colleges nationwide.",
+      "At Oxnard College, our commitment is simple: Students come first. We strive to provide a campus environment where every student feels valued and is treated with kindness, dignity, and respect. Whether you are a student taking your first college class, returning to college, or a community member invested in our students’ success, you are part of the Oxnard College family."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim President",
+     "position": "college_ceo",
+     "window": [
+      "At Oxnard College, our commitment is simple: Students come first. We strive to provide a campus environment where every student feels valued and is treated with kindness, dignity, and respect. Whether you are a student taking your first college class, returning to college, or a community member invested in our students’ success, you are part of the Oxnard College family.",
+      "Thank you for choosing Oxnard College. I wish you the best in achieving your educational goals.",
+      "Dr. Steve Hall",
+      "Interim President",
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Thank you for choosing Oxnard College. I wish you the best in achieving your educational goals.",
+      "Dr. Steve Hall",
+      "Interim President",
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall",
+      "Interim President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall",
+      "Interim President",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "ocpresident@vcccd.edu ocpresident@vcccd.edu"
+     ],
+     "emails": [
+      "ocpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "Oxnard, 93033 CA",
+      "ocpresident@vcccd.edu ocpresident@vcccd.edu",
+      "Celestina (Cece) Chavez",
+      "Executive Assistant to the President",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "(805) 678-5331"
+     ],
+     "emails": [
+      "ocpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Director of Outreach & Marketing",
+     "position": null,
+     "window": [
+      "(805) 678-5331",
+      "celestina_chavez1@vcccd.edu celestina_chavez1@vcccd.edu",
+      "James Schuelke",
+      "Director of Outreach & Marketing",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "(805) 678-5275"
+     ],
+     "emails": [
+      "celestina_chavez1@vcccd.edu"
+     ]
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.oxnardcollege.edu/departments/student_services/veterans_services",
+   "final_url": "https://www.oxnardcollege.edu/departments/student-services/veterans-services",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center | Oxnard College",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center | Oxnard College",
+      "Skip to main content",
+      "Secondary Menu",
+      "Academic Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Microsoft 365 (Outlook, OneDrive, SharePoint)",
+      "VCCCD Human Resources",
+      "Start • Enroll",
+      "Veterans Resource Center",
+      "Breadcrumb",
+      "Home",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Breadcrumb",
+      "Home",
+      "Students",
+      "Veterans Resource Center",
+      "Welcome our new Veteran Counselor, Edlin Garcia!",
+      "We are proud to have hired a new Veteran Counselor, Edlin Garcia. To make an appointment with Edlin, please use the link below or call 805-678-5845.",
+      "Schedule an appointment with Edlin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Oxnard College Veterans Resource Center is your compass from application to graduation.",
+     "position": "vrc",
+     "window": [
+      "We are proud to have hired a new Veteran Counselor, Edlin Garcia. To make an appointment with Edlin, please use the link below or call 805-678-5845.",
+      "Schedule an appointment with Edlin",
+      "If you have a service-connected rating, please contact America Barroso at the EAC office at 805-678-5830 to make an appointment.",
+      "The Oxnard College Veterans Resource Center is your compass from application to graduation.",
+      "Welcome to the Veteran Resource Center (VRC). We offer direct support services and serve as a link to external support services for student Veterans, active military personnel, and their families. The VRC Program provides various services, including new student guidance, Veterans counseling, assistance with scholarships and financial aid, access to grants, connection to military-affiliated community services, and more. Additionally, the VRC Program organizes college events focused on aiding reintegration into civilian and college life. It is a place to relax and network with your fellow veterans, active duty service members, and reservists.",
+      "We will support you on your educational journey, but please note that we do not handle VA Education Benefits. For this service, go to the Veterans Window, Admissions and Records, located on the first floor of the Student Services Building (SSB).",
+      "The Veterans Resource Center team will support you in the following ways:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center team will support you in the following ways:",
+     "position": "vrc",
+     "window": [
+      "The Oxnard College Veterans Resource Center is your compass from application to graduation.",
+      "Welcome to the Veteran Resource Center (VRC). We offer direct support services and serve as a link to external support services for student Veterans, active military personnel, and their families. The VRC Program provides various services, including new student guidance, Veterans counseling, assistance with scholarships and financial aid, access to grants, connection to military-affiliated community services, and more. Additionally, the VRC Program organizes college events focused on aiding reintegration into civilian and college life. It is a place to relax and network with your fellow veterans, active duty service members, and reservists.",
+      "We will support you on your educational journey, but please note that we do not handle VA Education Benefits. For this service, go to the Veterans Window, Admissions and Records, located on the first floor of the Student Services Building (SSB).",
+      "The Veterans Resource Center team will support you in the following ways:",
+      "Academic Counseling and VA education-related documents",
+      "Applying for VA educational benefits",
+      "Campus/Community Referrals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center has computers and free printing available for student veterans to use. Employment opportunities and information are readily available.",
+     "position": "vrc",
+     "window": [
+      "Mentorship & Networking Opportunities",
+      "Veterans Club",
+      "Much, much, more…",
+      "The Veterans Resource Center has computers and free printing available for student veterans to use. Employment opportunities and information are readily available.",
+      "Reasons to utilize and visit our Veterans Resource Center",
+      "Why should veterans come to the Veterans Resource Center?",
+      "The Veteran Resource Center is focused on the success of our veteran students. The VRC has a designated Veterans Counselor who understands your VA benefits and how to ensure that you utilize these benefits to accomplish your goals."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Reasons to utilize and visit our Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Club",
+      "Much, much, more…",
+      "The Veterans Resource Center has computers and free printing available for student veterans to use. Employment opportunities and information are readily available.",
+      "Reasons to utilize and visit our Veterans Resource Center",
+      "Why should veterans come to the Veterans Resource Center?",
+      "The Veteran Resource Center is focused on the success of our veteran students. The VRC has a designated Veterans Counselor who understands your VA benefits and how to ensure that you utilize these benefits to accomplish your goals.",
+      "The Veterans Resource Center serves students associated with the military and their families. Approximately 300-400 students seek services from the VRC on average per year."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Why should veterans come to the Veterans Resource Center?",
+     "position": "vrc",
+     "window": [
+      "Much, much, more…",
+      "The Veterans Resource Center has computers and free printing available for student veterans to use. Employment opportunities and information are readily available.",
+      "Reasons to utilize and visit our Veterans Resource Center",
+      "Why should veterans come to the Veterans Resource Center?",
+      "The Veteran Resource Center is focused on the success of our veteran students. The VRC has a designated Veterans Counselor who understands your VA benefits and how to ensure that you utilize these benefits to accomplish your goals.",
+      "The Veterans Resource Center serves students associated with the military and their families. Approximately 300-400 students seek services from the VRC on average per year.",
+      "What impact does the VRC have on students’ success?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center serves students associated with the military and their families. Approximately 300-400 students seek services from the VRC on average per year.",
+     "position": "vrc",
+     "window": [
+      "Reasons to utilize and visit our Veterans Resource Center",
+      "Why should veterans come to the Veterans Resource Center?",
+      "The Veteran Resource Center is focused on the success of our veteran students. The VRC has a designated Veterans Counselor who understands your VA benefits and how to ensure that you utilize these benefits to accomplish your goals.",
+      "The Veterans Resource Center serves students associated with the military and their families. Approximately 300-400 students seek services from the VRC on average per year.",
+      "What impact does the VRC have on students’ success?",
+      "The VRC is about building trust. The Veteran Counselor and student workers focus on helping students in the VRC by providing a shared perspective. The VRC tries to understand and help its veterans by examining the many factors that impact veterans’ transition from boots to books. Our goal is to assist veterans with services that can help them assimilate into civilian life. We have a vast network of services such as mental health, employment assistance, and social clubs.",
+      "How does attending a community college give veterans an advantage?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "After earning his Bachelor’s and Master’s degrees in Rehabilitation Counseling from CSU Los Angeles, he began teaching at his alma mater. Later on, after running our EAC program for many years, Leo was tasked with running our District’s first Veterans Resource Center right here at Oxnard College in order to serve our community’s servicemembers, veterans, and military families.",
+      "If you are service-connected:",
+      "If you are a service-connected veteran student, be sure to stop by the EAC and make an appointment to see America Barroso. Please remember that many injuries are invisible. For example, if you have hearing impairments, learning disabilities, or mental health challenges, the EAC is here to support you in your academic journey at Oxnard College. You can reach the EAC at 805-678-5830 or oceac@vcccd.edu oceac@vcccd.edu, and you can reach America directly at america_barroso1@vcccd.edu america_barroso1@vcccd.edu.",
+      "Veterans Resource Center",
+      "New Vets at Oxnard College",
+      "Continuing Vets at Oxnard College",
+      "Military Dependents and Spouses"
+     ],
+     "emails": [
+      "america_barroso1@vcccd.edu",
+      "oceac@vcccd.edu"
+     ]
+    },
+    {
+     "line": "California Veterans Resource Book",
+     "position": "vrc",
+     "window": [
+      "Resources & Tools for Vets",
+      "Support Groups",
+      "Schedule an Academic Counseling Appointment",
+      "California Veterans Resource Book",
+      "Oxnard College Veterans Resource Center",
+      "Edlin Garcia",
+      "Veteran Counselor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Oxnard College Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Support Groups",
+      "Schedule an Academic Counseling Appointment",
+      "California Veterans Resource Book",
+      "Oxnard College Veterans Resource Center",
+      "Edlin Garcia",
+      "Veteran Counselor",
+      "4000 South Rose Avenue,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator",
+     "position": null,
+     "window": [
+      "(805) 678-5845",
+      "egarcia3@vcccd.edu egarcia3@vcccd.edu",
+      "Leo Orange",
+      "Coordinator",
+      "4000 South Rose Avenue,",
+      "Student Services Building, Office 122",
+      "Oxnard, 93033 CA"
+     ],
+     "emails": [
+      "egarcia3@vcccd.edu"
+     ]
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.oxnardcollege.edu/index%2ephp/departments/administrative",
+   "final_url": "https://www.oxnardcollege.edu/index%2ephp/departments/administrative",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Departments",
+      "Administrative Departments",
+      "Office of the President",
+      "Vice President of Academic Affairs and Student Learning",
+      "Office of Business Services",
+      "Career & Technical Education Division"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "Departments",
+      "Administrative Departments",
+      "Office of the President",
+      "Vice President of Academic Affairs and Student Learning",
+      "Office of Business Services",
+      "Career & Technical Education Division",
+      "Institutional Effectiveness Division"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.oxnardcollege.edu/index%2ephp/departments/administrative/office-of-the-president",
+   "final_url": "https://www.oxnardcollege.edu/index%2ephp/departments/administrative/office-of-the-president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | Oxnard College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | Oxnard College",
+      "Skip to main content",
+      "Secondary Menu",
+      "Academic Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Microsoft 365 (Outlook, OneDrive, SharePoint)",
+      "VCCCD Human Resources",
+      "Start • Enroll",
+      "Office of the President",
+      "Breadcrumb",
+      "Home",
+      "Departments"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Departments",
+      "Administrative",
+      "Office of the President",
+      "Welcome to Oxnard College!",
+      "We have proudly served Ventura County for over a half century. With award-winning academic and career education pathways, along with personalized student services, Oxnard College provides the resources and support you need to achieve your educational and career goals. That's why, in 2025, we ranked among the top 150 community colleges in the nation by the prestigious Aspen Institute – an honor selected from more than 1,200 community colleges nationwide.",
+      "At Oxnard College, our commitment is simple: Students come first. We strive to provide a campus environment where every student feels valued and is treated with kindness, dignity, and respect. Whether you are a student taking your first college class, returning to college, or a community member invested in our students’ success, you are part of the Oxnard College family."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim President",
+     "position": "college_ceo",
+     "window": [
+      "At Oxnard College, our commitment is simple: Students come first. We strive to provide a campus environment where every student feels valued and is treated with kindness, dignity, and respect. Whether you are a student taking your first college class, returning to college, or a community member invested in our students’ success, you are part of the Oxnard College family.",
+      "Thank you for choosing Oxnard College. I wish you the best in achieving your educational goals.",
+      "Dr. Steve Hall",
+      "Interim President",
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Thank you for choosing Oxnard College. I wish you the best in achieving your educational goals.",
+      "Dr. Steve Hall",
+      "Interim President",
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall",
+      "Interim President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall",
+      "Interim President",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "ocpresident@vcccd.edu ocpresident@vcccd.edu"
+     ],
+     "emails": [
+      "ocpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "Oxnard, 93033 CA",
+      "ocpresident@vcccd.edu ocpresident@vcccd.edu",
+      "Celestina (Cece) Chavez",
+      "Executive Assistant to the President",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "(805) 678-5331"
+     ],
+     "emails": [
+      "ocpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Director of Outreach & Marketing",
+     "position": null,
+     "window": [
+      "(805) 678-5331",
+      "celestina_chavez1@vcccd.edu celestina_chavez1@vcccd.edu",
+      "James Schuelke",
+      "Director of Outreach & Marketing",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "(805) 678-5275"
+     ],
+     "emails": [
+      "celestina_chavez1@vcccd.edu"
+     ]
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.oxnardcollege.edu/departments/administrative/president",
+   "final_url": "https://www.oxnardcollege.edu/departments/administrative/office-of-the-president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | Oxnard College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | Oxnard College",
+      "Skip to main content",
+      "Secondary Menu",
+      "Academic Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Microsoft 365 (Outlook, OneDrive, SharePoint)",
+      "VCCCD Human Resources",
+      "Start • Enroll",
+      "Office of the President",
+      "Breadcrumb",
+      "Home",
+      "Departments"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Departments",
+      "Administrative",
+      "Office of the President",
+      "Welcome to Oxnard College!",
+      "We have proudly served Ventura County for over a half century. With award-winning academic and career education pathways, along with personalized student services, Oxnard College provides the resources and support you need to achieve your educational and career goals. That's why, in 2025, we ranked among the top 150 community colleges in the nation by the prestigious Aspen Institute – an honor selected from more than 1,200 community colleges nationwide.",
+      "At Oxnard College, our commitment is simple: Students come first. We strive to provide a campus environment where every student feels valued and is treated with kindness, dignity, and respect. Whether you are a student taking your first college class, returning to college, or a community member invested in our students’ success, you are part of the Oxnard College family."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim President",
+     "position": "college_ceo",
+     "window": [
+      "At Oxnard College, our commitment is simple: Students come first. We strive to provide a campus environment where every student feels valued and is treated with kindness, dignity, and respect. Whether you are a student taking your first college class, returning to college, or a community member invested in our students’ success, you are part of the Oxnard College family.",
+      "Thank you for choosing Oxnard College. I wish you the best in achieving your educational goals.",
+      "Dr. Steve Hall",
+      "Interim President",
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Thank you for choosing Oxnard College. I wish you the best in achieving your educational goals.",
+      "Dr. Steve Hall",
+      "Interim President",
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall",
+      "Interim President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Education Master Plan",
+      "Dr. Steve Hall",
+      "Interim President",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "ocpresident@vcccd.edu ocpresident@vcccd.edu"
+     ],
+     "emails": [
+      "ocpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "Oxnard, 93033 CA",
+      "ocpresident@vcccd.edu ocpresident@vcccd.edu",
+      "Celestina (Cece) Chavez",
+      "Executive Assistant to the President",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "(805) 678-5331"
+     ],
+     "emails": [
+      "ocpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Director of Outreach & Marketing",
+     "position": null,
+     "window": [
+      "(805) 678-5331",
+      "celestina_chavez1@vcccd.edu celestina_chavez1@vcccd.edu",
+      "James Schuelke",
+      "Director of Outreach & Marketing",
+      "4000 South Rose Avenue",
+      "Oxnard, 93033 CA",
+      "(805) 678-5275"
+     ],
+     "emails": [
+      "celestina_chavez1@vcccd.edu"
+     ]
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.oxnardcollege.edu/departments/student-services/veterans-services",
+   "final_url": "https://www.oxnardcollege.edu/departments/student-services/veterans-services",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center | Oxnard College",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center | Oxnard College",
+      "Skip to main content",
+      "Secondary Menu",
+      "Academic Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Microsoft 365 (Outlook, OneDrive, SharePoint)",
+      "VCCCD Human Resources",
+      "Start • Enroll",
+      "Veterans Resource Center",
+      "Breadcrumb",
+      "Home",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Breadcrumb",
+      "Home",
+      "Students",
+      "Veterans Resource Center",
+      "Welcome our new Veteran Counselor, Edlin Garcia!",
+      "We are proud to have hired a new Veteran Counselor, Edlin Garcia. To make an appointment with Edlin, please use the link below or call 805-678-5845.",
+      "Schedule an appointment with Edlin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Oxnard College Veterans Resource Center is your compass from application to graduation.",
+     "position": "vrc",
+     "window": [
+      "We are proud to have hired a new Veteran Counselor, Edlin Garcia. To make an appointment with Edlin, please use the link below or call 805-678-5845.",
+      "Schedule an appointment with Edlin",
+      "If you have a service-connected rating, please contact America Barroso at the EAC office at 805-678-5830 to make an appointment.",
+      "The Oxnard College Veterans Resource Center is your compass from application to graduation.",
+      "Welcome to the Veteran Resource Center (VRC). We offer direct support services and serve as a link to external support services for student Veterans, active military personnel, and their families. The VRC Program provides various services, including new student guidance, Veterans counseling, assistance with scholarships and financial aid, access to grants, connection to military-affiliated community services, and more. Additionally, the VRC Program organizes college events focused on aiding reintegration into civilian and college life. It is a place to relax and network with your fellow veterans, active duty service members, and reservists.",
+      "We will support you on your educational journey, but please note that we do not handle VA Education Benefits. For this service, go to the Veterans Window, Admissions and Records, located on the first floor of the Student Services Building (SSB).",
+      "The Veterans Resource Center team will support you in the following ways:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center team will support you in the following ways:",
+     "position": "vrc",
+     "window": [
+      "The Oxnard College Veterans Resource Center is your compass from application to graduation.",
+      "Welcome to the Veteran Resource Center (VRC). We offer direct support services and serve as a link to external support services for student Veterans, active military personnel, and their families. The VRC Program provides various services, including new student guidance, Veterans counseling, assistance with scholarships and financial aid, access to grants, connection to military-affiliated community services, and more. Additionally, the VRC Program organizes college events focused on aiding reintegration into civilian and college life. It is a place to relax and network with your fellow veterans, active duty service members, and reservists.",
+      "We will support you on your educational journey, but please note that we do not handle VA Education Benefits. For this service, go to the Veterans Window, Admissions and Records, located on the first floor of the Student Services Building (SSB).",
+      "The Veterans Resource Center team will support you in the following ways:",
+      "Academic Counseling and VA education-related documents",
+      "Applying for VA educational benefits",
+      "Campus/Community Referrals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center has computers and free printing available for student veterans to use. Employment opportunities and information are readily available.",
+     "position": "vrc",
+     "window": [
+      "Mentorship & Networking Opportunities",
+      "Veterans Club",
+      "Much, much, more…",
+      "The Veterans Resource Center has computers and free printing available for student veterans to use. Employment opportunities and information are readily available.",
+      "Reasons to utilize and visit our Veterans Resource Center",
+      "Why should veterans come to the Veterans Resource Center?",
+      "The Veteran Resource Center is focused on the success of our veteran students. The VRC has a designated Veterans Counselor who understands your VA benefits and how to ensure that you utilize these benefits to accomplish your goals."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Reasons to utilize and visit our Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Club",
+      "Much, much, more…",
+      "The Veterans Resource Center has computers and free printing available for student veterans to use. Employment opportunities and information are readily available.",
+      "Reasons to utilize and visit our Veterans Resource Center",
+      "Why should veterans come to the Veterans Resource Center?",
+      "The Veteran Resource Center is focused on the success of our veteran students. The VRC has a designated Veterans Counselor who understands your VA benefits and how to ensure that you utilize these benefits to accomplish your goals.",
+      "The Veterans Resource Center serves students associated with the military and their families. Approximately 300-400 students seek services from the VRC on average per year."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Why should veterans come to the Veterans Resource Center?",
+     "position": "vrc",
+     "window": [
+      "Much, much, more…",
+      "The Veterans Resource Center has computers and free printing available for student veterans to use. Employment opportunities and information are readily available.",
+      "Reasons to utilize and visit our Veterans Resource Center",
+      "Why should veterans come to the Veterans Resource Center?",
+      "The Veteran Resource Center is focused on the success of our veteran students. The VRC has a designated Veterans Counselor who understands your VA benefits and how to ensure that you utilize these benefits to accomplish your goals.",
+      "The Veterans Resource Center serves students associated with the military and their families. Approximately 300-400 students seek services from the VRC on average per year.",
+      "What impact does the VRC have on students’ success?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center serves students associated with the military and their families. Approximately 300-400 students seek services from the VRC on average per year.",
+     "position": "vrc",
+     "window": [
+      "Reasons to utilize and visit our Veterans Resource Center",
+      "Why should veterans come to the Veterans Resource Center?",
+      "The Veteran Resource Center is focused on the success of our veteran students. The VRC has a designated Veterans Counselor who understands your VA benefits and how to ensure that you utilize these benefits to accomplish your goals.",
+      "The Veterans Resource Center serves students associated with the military and their families. Approximately 300-400 students seek services from the VRC on average per year.",
+      "What impact does the VRC have on students’ success?",
+      "The VRC is about building trust. The Veteran Counselor and student workers focus on helping students in the VRC by providing a shared perspective. The VRC tries to understand and help its veterans by examining the many factors that impact veterans’ transition from boots to books. Our goal is to assist veterans with services that can help them assimilate into civilian life. We have a vast network of services such as mental health, employment assistance, and social clubs.",
+      "How does attending a community college give veterans an advantage?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "After earning his Bachelor’s and Master’s degrees in Rehabilitation Counseling from CSU Los Angeles, he began teaching at his alma mater. Later on, after running our EAC program for many years, Leo was tasked with running our District’s first Veterans Resource Center right here at Oxnard College in order to serve our community’s servicemembers, veterans, and military families.",
+      "If you are service-connected:",
+      "If you are a service-connected veteran student, be sure to stop by the EAC and make an appointment to see America Barroso. Please remember that many injuries are invisible. For example, if you have hearing impairments, learning disabilities, or mental health challenges, the EAC is here to support you in your academic journey at Oxnard College. You can reach the EAC at 805-678-5830 or oceac@vcccd.edu oceac@vcccd.edu, and you can reach America directly at america_barroso1@vcccd.edu america_barroso1@vcccd.edu.",
+      "Veterans Resource Center",
+      "New Vets at Oxnard College",
+      "Continuing Vets at Oxnard College",
+      "Military Dependents and Spouses"
+     ],
+     "emails": [
+      "america_barroso1@vcccd.edu",
+      "oceac@vcccd.edu"
+     ]
+    },
+    {
+     "line": "California Veterans Resource Book",
+     "position": "vrc",
+     "window": [
+      "Resources & Tools for Vets",
+      "Support Groups",
+      "Schedule an Academic Counseling Appointment",
+      "California Veterans Resource Book",
+      "Oxnard College Veterans Resource Center",
+      "Edlin Garcia",
+      "Veteran Counselor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Oxnard College Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Support Groups",
+      "Schedule an Academic Counseling Appointment",
+      "California Veterans Resource Book",
+      "Oxnard College Veterans Resource Center",
+      "Edlin Garcia",
+      "Veteran Counselor",
+      "4000 South Rose Avenue,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator",
+     "position": null,
+     "window": [
+      "(805) 678-5845",
+      "egarcia3@vcccd.edu egarcia3@vcccd.edu",
+      "Leo Orange",
+      "Coordinator",
+      "4000 South Rose Avenue,",
+      "Student Services Building, Office 122",
+      "Oxnard, 93033 CA"
+     ],
+     "emails": [
+      "egarcia3@vcccd.edu"
+     ]
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.oxnardcollege.edu/departments/student-services/veterans-services/veteran-scholarships",
+   "final_url": "https://www.oxnardcollege.edu/departments/student-services/veterans-services/veteran-scholarships",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Breadcrumb",
+      "Home",
+      "Departments",
+      "Veterans Resource Center",
+      "Veteran Scholarships",
+      "Veteran Scholarship Opportunities",
+      "Here is a list of scholarships exclusive to veterans, spouses, and dependents. Click on them to learn more!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Army Emergency Relief AER scholarship program",
+      "ThanksUSA Scholarship Program",
+      "Marine Corps Scholarship Foundation",
+      "Veterans Resource Center",
+      "New Vets at Oxnard College",
+      "Continuing Vets at Oxnard College",
+      "Military Dependents and Spouses"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Student Development",
+     "position": "vpss",
+     "window": [
+      "Institutional Effectiveness",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Development",
+      "Community and College Resources",
+      "College Events Calendar",
+      "College Maps and Parking"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student Health Center",
+      "Tutoring",
+      "University Transfer Center",
+      "Veterans Center",
+      "Student Life",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41427972048"
+}

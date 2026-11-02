@@ -1,0 +1,558 @@
+{
+ "college": "Saddleback College",
+ "homepage": "https://www.saddleback.edu/",
+ "read_at": "2026-11-02T10:28:11+00:00",
+ "pages": [
+  {
+   "url": "https://www.saddleback.edu/",
+   "final_url": "https://www.saddleback.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    },
+    {
+     "line": "ASG President",
+     "position": "college_ceo",
+     "window": [
+      "College Experience.",
+      "I joined student government to advocate for student voices and help create a more inclusive, supportive, and empowering campus environment. What I love about Saddleback is the strong sense of community and the endless opportunities to grow both academically and personally.",
+      "Noah Aguilar",
+      "ASG President",
+      "Connection and Community.",
+      "An active student government, champion athletic teams, an eclectic arts scene, and diverse cultural events.",
+      "Life at Saddleback"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/programs-degrees/school-business-and-industry-programs-and-degrees/business-administration-20",
+   "final_url": "https://www.saddleback.edu/programs-degrees/school-business-and-industry-programs-and-degrees/business-administration-20",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/programs-degrees/school-business-and-industry-programs-and-degrees/business-leadership",
+   "final_url": "https://www.saddleback.edu/programs-degrees/school-business-and-industry-programs-and-degrees/business-leadership",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/programs-degrees/school-business-and-industry-programs-and-degrees/nonprofit-business-administration",
+   "final_url": "https://www.saddleback.edu/programs-degrees/school-business-and-industry-programs-and-degrees/nonprofit-business-administration",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/programs-degrees/school-health-and-wellness-programs-and-degrees/administration-justice",
+   "final_url": "https://www.saddleback.edu/programs-degrees/school-health-and-wellness-programs-and-degrees/administration-justice",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/programs-degrees/school-health-and-wellness-programs-and-degrees/kinesiology-sports-administration",
+   "final_url": "https://www.saddleback.edu/programs-degrees/school-health-and-wellness-programs-and-degrees/kinesiology-sports-administration",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/apply-pay/how-apply/military-or-veteran-student",
+   "final_url": "https://www.saddleback.edu/apply-pay/how-apply/military-or-veteran-student",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    },
+    {
+     "line": "For information on all other VA Benefits come into the VETS Center (GW 181) or call 949-582-4252 to schedule an appointment with VA or County Service Officer.",
+     "position": null,
+     "window": [
+      "Review www.gibill.va.gov to learn about VA Educational Benefits.",
+      "Visit the Veterans Benefits page.",
+      "Visit the Saddleback College VA Educational Benefits/Veterans Office (GW 123) or call 949-582-4870. You will receive an orientation and complete VA-related paperwork. Allow 20-30 minutes for this process.",
+      "For information on all other VA Benefits come into the VETS Center (GW 181) or call 949-582-4252 to schedule an appointment with VA or County Service Officer.",
+      "Step 3: Get Your Financial Aid",
+      "Ensure your residency classification is accurate prior to starting the financial aid process.",
+      "Visit the Financial Aid page."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/apply-pay/admissions-records",
+   "final_url": "https://www.saddleback.edu/apply-pay/admissions-records",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Registrar Email: jfeigert@saddleback.edu jfeigert@saddleback.edu.",
+     "position": "dean_ar",
+     "window": [
+      "Back to Top",
+      "Family Education Rights and Privacy Act (FERPA)",
+      "The security of your information is extremely important to us. Please view our FERPA page to know your rights. If you are a parent or guardian of a student, we would like you to read this information about our privacy policies regarding student records.",
+      "Registrar Email: jfeigert@saddleback.edu jfeigert@saddleback.edu.",
+      "Back to Top",
+      "Contacts",
+      "Admissions and Records Office"
+     ],
+     "emails": [
+      "jfeigert@saddleback.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/apply-pay/admissions-records/forms-and-petitions/admissions-and-records-forms-non-active",
+   "final_url": "https://www.saddleback.edu/apply-pay/admissions-records/forms-and-petitions/admissions-and-records-forms-non-active",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/apply-pay/veterans-benefits",
+   "final_url": "https://www.saddleback.edu/apply-pay/veterans-benefits",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/apply-pay/contact-student-payment-or-veterans-office",
+   "final_url": "https://www.saddleback.edu/apply-pay/contact-student-payment-or-veterans-office",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.saddleback.edu/student-support/counseling-services/articulation",
+   "final_url": "https://www.saddleback.edu/student-support/counseling-services/articulation",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation | Saddleback College",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation | Saddleback College",
+      "Skip to main content",
+      "Menu",
+      "Apply"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Week of Workshops",
+      "Academic Notice Workshops",
+      "Pre-Registration Checklist",
+      "Articulation",
+      "Show Submenu",
+      "Back",
+      "Pre-Professional Advising"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Education and Transition Services (VETS)",
+     "position": "vrc",
+     "window": [
+      "Specialized Programs",
+      "Show Submenu",
+      "Back",
+      "Veterans Education and Transition Services (VETS)",
+      "Disabled Students Programs and Services (DSPS)",
+      "Show Submenu",
+      "Back"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Faculty & Staff",
+      "Title IX",
+      "Voter Registration",
+      "Articulation",
+      "Breadcrumbs",
+      "Home",
+      "Student Support"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Home",
+      "Student Support",
+      "Counseling Services",
+      "Articulation",
+      "Saddleback College continually ranks among the most successful of California's 116 Community Colleges in transferring students due to its commitment to developing and maintaining articulation agreements.",
+      "What are articulation agreements?",
+      "Articulation agreements define courses which are comparable to, or acceptable in lieu of, requirements at the transfer college or university. Formal articulation agreements assure students that specified coursework completed at Saddleback College will transfer and can satisfy general education and/or lower-division major preparation requirements or electives at the transfer institution."
+     ],
+     "emails": []
+    },
+    {
+     "line": "What are articulation agreements?",
+     "position": "articulation_officer",
+     "window": [
+      "Counseling Services",
+      "Articulation",
+      "Saddleback College continually ranks among the most successful of California's 116 Community Colleges in transferring students due to its commitment to developing and maintaining articulation agreements.",
+      "What are articulation agreements?",
+      "Articulation agreements define courses which are comparable to, or acceptable in lieu of, requirements at the transfer college or university. Formal articulation agreements assure students that specified coursework completed at Saddleback College will transfer and can satisfy general education and/or lower-division major preparation requirements or electives at the transfer institution.",
+      "Saddleback College's Articulation Office has developed extensive articulation agreements with CSU and UC campuses which are available at www.assist.org.",
+      "Articulation agreements have also been established with numerous Private and Out-of-State Colleges & Universities."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Saddleback College's Articulation Office has developed extensive articulation agreements with CSU and UC campuses which are available at www.assist.org.",
+     "position": "articulation_officer",
+     "window": [
+      "Saddleback College continually ranks among the most successful of California's 116 Community Colleges in transferring students due to its commitment to developing and maintaining articulation agreements.",
+      "What are articulation agreements?",
+      "Articulation agreements define courses which are comparable to, or acceptable in lieu of, requirements at the transfer college or university. Formal articulation agreements assure students that specified coursework completed at Saddleback College will transfer and can satisfy general education and/or lower-division major preparation requirements or electives at the transfer institution.",
+      "Saddleback College's Articulation Office has developed extensive articulation agreements with CSU and UC campuses which are available at www.assist.org.",
+      "Articulation agreements have also been established with numerous Private and Out-of-State Colleges & Universities.",
+      "For assistance in developing an academic plan and for comprehensive general education and major preparation advisement, please make an appointment to see a counselor in Counseling Services.",
+      "Associate Degree for Transfer"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation agreements have also been established with numerous Private and Out-of-State Colleges & Universities.",
+     "position": "articulation_officer",
+     "window": [
+      "What are articulation agreements?",
+      "Articulation agreements define courses which are comparable to, or acceptable in lieu of, requirements at the transfer college or university. Formal articulation agreements assure students that specified coursework completed at Saddleback College will transfer and can satisfy general education and/or lower-division major preparation requirements or electives at the transfer institution.",
+      "Saddleback College's Articulation Office has developed extensive articulation agreements with CSU and UC campuses which are available at www.assist.org.",
+      "Articulation agreements have also been established with numerous Private and Out-of-State Colleges & Universities.",
+      "For assistance in developing an academic plan and for comprehensive general education and major preparation advisement, please make an appointment to see a counselor in Counseling Services.",
+      "Associate Degree for Transfer",
+      "The Associate Degree for Transfer (AA-T or AS-T) is a special, new degree offered at California Community Colleges. To pursue this special degree rather than a traditional Associate degree, you should meet with a counselor to develop an education plan and review transfer requirements and deadlines."
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.saddleback.edu/student-support/specialized-programs/veterans-education-and-transition-services-vets",
+  "https://www.saddleback.edu/faculty-staff-directory",
+  "https://www.saddleback.edu/administration-governance"
+ ],
+ "run": "41427972048"
+}

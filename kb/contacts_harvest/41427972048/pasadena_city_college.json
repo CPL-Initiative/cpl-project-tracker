@@ -1,0 +1,1704 @@
+{
+ "college": "Pasadena City College",
+ "homepage": "https://pasadena.edu/",
+ "read_at": "2026-11-02T10:24:25+00:00",
+ "pages": [
+  {
+   "url": "https://pasadena.edu/",
+   "final_url": "https://pasadena.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://pasadena.edu/directory/index.php",
+   "final_url": "https://pasadena.edu/directory/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Athletic Director",
+     "position": null,
+     "window": [
+      "radams4@pasadena.edu radams4@pasadena.edu Copy Email",
+      "L104",
+      "Adams, Jamie",
+      "Athletic Director",
+      "Kinesiology Health & Athletics",
+      "626 5853203 Copy Phone",
+      "jadams67@pasadena.edu jadams67@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "jadams67@pasadena.edu",
+      "radams4@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean, Outreach & Transfer",
+     "position": null,
+     "window": [
+      "nalexanderbroast@pasadena.edu nalexanderbroast@pasadena.edu Copy Email",
+      "C247",
+      "Alexander, Tameka",
+      "Associate Dean, Outreach & Transfer",
+      "Outreach Degree & Trnsfr Cntr",
+      "626 5857878 Copy Phone",
+      "tmalexander@pasadena.edu tmalexander@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "nalexanderbroast@pasadena.edu",
+      "tmalexander@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, EOP&S/CARE & Foster Youth Programs",
+     "position": null,
+     "window": [
+      "English and Language Studies",
+      "jaltamirano9@pasadena.edu jaltamirano9@pasadena.edu Copy Email",
+      "Altamirano, Carlos",
+      "Director, EOP&S/CARE & Foster Youth Programs",
+      "Title V Program",
+      "626 5853046 Copy Phone",
+      "cxaltamirano@pasadena.edu cxaltamirano@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "cxaltamirano@pasadena.edu",
+      "jaltamirano9@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Enrollment Services",
+     "position": null,
+     "window": [
+      "jaltman1@pasadena.edu jaltman1@pasadena.edu Copy Email",
+      "C321",
+      "Altounji, Myriam",
+      "Dean, Enrollment Services",
+      "Enrollment Services",
+      "626 5857012 Copy Phone",
+      "mmaltounji@pasadena.edu mmaltounji@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "jaltman1@pasadena.edu",
+      "mmaltounji@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Outreach and Guided Entry Services",
+     "position": null,
+     "window": [
+      "talvarez7@pasadena.edu talvarez7@pasadena.edu Copy Email",
+      "C321",
+      "Alvarez, Angie",
+      "Director, Outreach and Guided Entry Services",
+      "Pathways",
+      "626 5857948 Copy Phone",
+      "axalvarez@pasadena.edu axalvarez@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "axalvarez@pasadena.edu",
+      "talvarez7@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Police Officer",
+     "position": null,
+     "window": [
+      "mardeshiri@pasadena.edu mardeshiri@pasadena.edu Copy Email",
+      "CEC",
+      "Arechiga, Jose",
+      "Police Officer",
+      "Police and College Safety",
+      "626 5857484 Copy Phone",
+      "jlarechiga@pasadena.edu jlarechiga@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "jlarechiga@pasadena.edu",
+      "mardeshiri@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Coordinator, Pathways First Year Experience (FYE)",
+     "position": null,
+     "window": [
+      "pbanda@pasadena.edu pbanda@pasadena.edu Copy Email",
+      "R322",
+      "Bangham, Emily",
+      "Coordinator, Pathways First Year Experience (FYE)",
+      "Pathways",
+      "626 5853048 Copy Phone",
+      "ebangham@pasadena.edu ebangham@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "ebangham@pasadena.edu",
+      "pbanda@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Business Division & Enrollment Management",
+     "position": null,
+     "window": [
+      "kbarber@pasadena.edu kbarber@pasadena.edu Copy Email",
+      "CA102",
+      "Barboza, Matthew",
+      "Dean, Business Division & Enrollment Management",
+      "Business",
+      "626 5857684 Copy Phone",
+      "mbarboza3@pasadena.edu mbarboza3@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "kbarber@pasadena.edu",
+      "mbarboza3@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Transportation Coordinator",
+     "position": null,
+     "window": [
+      "ebenson@pasadena.edu ebenson@pasadena.edu Copy Email",
+      "CA102",
+      "Benson, Peter",
+      "Transportation Coordinator",
+      "Police and College Safety",
+      "626 5857223 Copy Phone",
+      "pvbenson@pasadena.edu pvbenson@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "ebenson@pasadena.edu",
+      "pvbenson@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, K-14 Technical Assistance",
+     "position": null,
+     "window": [
+      "vbermudez@pasadena.edu vbermudez@pasadena.edu Copy Email",
+      "D201",
+      "Bermudez, Linda",
+      "Director, K-14 Technical Assistance",
+      "LA Regional Consortium (LARC)",
+      "626 5857445 Copy Phone",
+      "lbermudez7@pasadena.edu lbermudez7@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "lbermudez7@pasadena.edu",
+      "vbermudez@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Kinesiology, Health, and Athletics",
+     "position": null,
+     "window": [
+      "nbrown47@pasadena.edu nbrown47@pasadena.edu Copy Email",
+      "C203",
+      "Brown, Timi",
+      "Dean, Kinesiology, Health, and Athletics",
+      "Kinesiology Health & Athletics",
+      "626 5853165 Copy Phone",
+      "tbrown76@pasadena.edu tbrown76@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "nbrown47@pasadena.edu",
+      "tbrown76@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean of Student Wellness & Support Services",
+     "position": null,
+     "window": [
+      "eacairo@pasadena.edu eacairo@pasadena.edu Copy Email",
+      "C407",
+      "Calandra, Carol",
+      "Dean of Student Wellness & Support Services",
+      "Lancer Accessibility Rsc Srvs",
+      "626 5857584 Copy Phone",
+      "cmcalandra@pasadena.edu cmcalandra@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "cmcalandra@pasadena.edu",
+      "eacairo@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Executive Director, Foundation",
+     "position": null,
+     "window": [
+      "jxcarbajal-ramos@pasadena.edu jxcarbajal-ramos@pasadena.edu Copy Email",
+      "C229",
+      "Cardenas, Frank",
+      "Executive Director, Foundation",
+      "Foundation Office",
+      "626 5857054 Copy Phone",
+      "fcardenas13@pasadena.edu fcardenas13@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "fcardenas13@pasadena.edu",
+      "jxcarbajal-ramos@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Development & Operations",
+     "position": null,
+     "window": [
+      "Visual Arts & Media Studies",
+      "wcarnahan@pasadena.edu wcarnahan@pasadena.edu Copy Email",
+      "Carnes, Amy",
+      "Director, Development & Operations",
+      "Foundation Office",
+      "626 5857113 Copy Phone",
+      "acarnes3@pasadena.edu acarnes3@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "acarnes3@pasadena.edu",
+      "wcarnahan@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Upward Bound Math/Science Coordinator",
+     "position": null,
+     "window": [
+      "acasillas9@pasadena.edu acasillas9@pasadena.edu Copy Email",
+      "Facilities Services",
+      "Casillas, Crista",
+      "Upward Bound Math/Science Coordinator",
+      "Upward Bound Math/Sci Program",
+      "626 5857870 Copy Phone",
+      "ccasillas5@pasadena.edu ccasillas5@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "acasillas9@pasadena.edu",
+      "ccasillas5@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, College Life & Readiness",
+     "position": null,
+     "window": [
+      "ocastillo2@pasadena.edu ocastillo2@pasadena.edu Copy Email",
+      "CEC B6",
+      "Castillo, Ricardo",
+      "Dean, College Life & Readiness",
+      "Student Life",
+      "626 5857042 Copy Phone",
+      "racastillo@pasadena.edu racastillo@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "ocastillo2@pasadena.edu",
+      "racastillo@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Executive Director",
+     "position": null,
+     "window": [
+      "etchavez@pasadena.edu etchavez@pasadena.edu Copy Email",
+      "C121",
+      "Chawkins, Kenneth",
+      "Executive Director",
+      "President's Office",
+      "kchawkins@pasadena.edu kchawkins@pasadena.edu Copy Email",
+      "C235"
+     ],
+     "emails": [
+      "etchavez@pasadena.edu",
+      "kchawkins@pasadena.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "C121",
+      "Chawkins, Kenneth",
+      "Executive Director",
+      "President's Office",
+      "kchawkins@pasadena.edu kchawkins@pasadena.edu Copy Email",
+      "C235",
+      "Cheeseman, Bonnie"
+     ],
+     "emails": [
+      "kchawkins@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Student Rights & Responsibility Coordinator",
+     "position": null,
+     "window": [
+      "jclark91@pasadena.edu jclark91@pasadena.edu Copy Email",
+      "C237",
+      "Claustro, Karla",
+      "Student Rights & Responsibility Coordinator",
+      "Student Life",
+      "626 5857992 Copy Phone",
+      "kclaustro1@pasadena.edu kclaustro1@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "jclark91@pasadena.edu",
+      "kclaustro1@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Performing & Communication Arts",
+     "position": null,
+     "window": [
+      "jfcrosby@pasadena.edu jfcrosby@pasadena.edu Copy Email",
+      "CEC",
+      "Cross, Solomon",
+      "Dean, Performing & Communication Arts",
+      "Performing/Communication Arts",
+      "626 5857198 Copy Phone",
+      "scross5@pasadena.edu scross5@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "jfcrosby@pasadena.edu",
+      "scross5@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Human Resources",
+     "position": null,
+     "window": [
+      "rcuevas8@pasadena.edu rcuevas8@pasadena.edu Copy Email",
+      "L104",
+      "Cummins, Brian",
+      "Director, Human Resources",
+      "Human Resources",
+      "626 5857310 Copy Phone",
+      "bcummins@pasadena.edu bcummins@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "bcummins@pasadena.edu",
+      "rcuevas8@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Executive Director, Student Equity and Success",
+     "position": null,
+     "window": [
+      "ldang4@pasadena.edu ldang4@pasadena.edu Copy Email",
+      "C247",
+      "Dang, Que",
+      "Executive Director, Student Equity and Success",
+      "Instttnl Eqty Dvrsty & Justice",
+      "626 5857553 Copy Phone",
+      "qdang4@pasadena.edu qdang4@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "ldang4@pasadena.edu",
+      "qdang4@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Women’s Business Center",
+     "position": null,
+     "window": [
+      "Natural Sciences",
+      "mdarbinian1@pasadena.edu mdarbinian1@pasadena.edu Copy Email",
+      "Davidson, Lizzy Okoro",
+      "Director, Women’s Business Center",
+      "Women's Business Center",
+      "686 5853104 Copy Phone",
+      "edavidson4@pasadena.edu edavidson4@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "edavidson4@pasadena.edu",
+      "mdarbinian1@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Police Officer",
+     "position": null,
+     "window": [
+      "mxdeloera@pasadena.edu mxdeloera@pasadena.edu Copy Email",
+      "LL215",
+      "De Spain, Michael",
+      "Police Officer",
+      "Police and College Safety",
+      "626 5857484 Copy Phone",
+      "mxdespain@pasadena.edu mxdespain@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "mxdeloera@pasadena.edu",
+      "mxdespain@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Tyler",
+     "position": null,
+     "window": [
+      "626 5857529 Copy Phone",
+      "adeakins@pasadena.edu adeakins@pasadena.edu Copy Email",
+      "LL123",
+      "Dean, Tyler",
+      "Adjunct Faculty",
+      "English and Language Studies",
+      "626 5857371 Copy Phone"
+     ],
+     "emails": [
+      "adeakins@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Delgado-Dean, Eva Marie",
+     "position": null,
+     "window": [
+      "Delgado, Matthew",
+      "Kinesiology Health & Athletics",
+      "mdelgado51@pasadena.edu mdelgado51@pasadena.edu Copy Email",
+      "Delgado-Dean, Eva Marie",
+      "Accounting Technician",
+      "Fiscal Services",
+      "626 5857707 Copy Phone"
+     ],
+     "emails": [
+      "mdelgado51@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Career Technical Education",
+     "position": null,
+     "window": [
+      "rderbedrossian@pasadena.edu rderbedrossian@pasadena.edu Copy Email",
+      "CEC",
+      "Derdiarian, Armine",
+      "Dean, Career Technical Education",
+      "Career & Technical Education",
+      "626 5857110 Copy Phone",
+      "aderdiarian@pasadena.edu aderdiarian@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "aderdiarian@pasadena.edu",
+      "rderbedrossian@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Counseling and Student Services",
+     "position": null,
+     "window": [
+      "azduran@pasadena.edu azduran@pasadena.edu Copy Email",
+      "C245",
+      "Duran, Armando",
+      "Dean, Counseling and Student Services",
+      "Counseling",
+      "626 5857148 Copy Phone",
+      "axduran@pasadena.edu axduran@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "axduran@pasadena.edu",
+      "azduran@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Facilities and Construction Services",
+     "position": null,
+     "window": [
+      "aellis@pasadena.edu aellis@pasadena.edu Copy Email",
+      "L114",
+      "Emerick, Roberto",
+      "Director, Facilities and Construction Services",
+      "Facilities & Construction Srvs",
+      "626 5857074 Copy Phone",
+      "remerick@pasadena.edu remerick@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "aellis@pasadena.edu",
+      "remerick@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Instructional Services",
+     "position": null,
+     "window": [
+      "rpfleming@pasadena.edu rpfleming@pasadena.edu Copy Email",
+      "GM201",
+      "Fleming, Stephanie",
+      "Dean, Instructional Services",
+      "Academic Affairs",
+      "626 5853214 Copy Phone",
+      "slhood@pasadena.edu slhood@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "rpfleming@pasadena.edu",
+      "slhood@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Business",
+      "jfosgate@pasadena.edu jfosgate@pasadena.edu Copy Email",
+      "Foster, Lisa",
+      "Director, Veterans Resource Center",
+      "Veteran's Resource Center",
+      "626 5857561 Copy Phone",
+      "lfoster1@pasadena.edu lfoster1@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "jfosgate@pasadena.edu",
+      "lfoster1@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Veteran's Resource Center",
+     "position": "vrc",
+     "window": [
+      "jfosgate@pasadena.edu jfosgate@pasadena.edu Copy Email",
+      "Foster, Lisa",
+      "Director, Veterans Resource Center",
+      "Veteran's Resource Center",
+      "626 5857561 Copy Phone",
+      "lfoster1@pasadena.edu lfoster1@pasadena.edu Copy Email",
+      "W108-B"
+     ],
+     "emails": [
+      "jfosgate@pasadena.edu",
+      "lfoster1@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Nursing Programs",
+     "position": null,
+     "window": [
+      "bmfreund@pasadena.edu bmfreund@pasadena.edu Copy Email",
+      "CEC B6",
+      "Friedman, Carol",
+      "Director, Nursing Programs",
+      "Health Sciences",
+      "626 5857596 Copy Phone",
+      "cfriedman4@pasadena.edu cfriedman4@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "bmfreund@pasadena.edu",
+      "cfriedman4@pasadena.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "C225",
+      "Galukyan, Armine",
+      "Executive Assistant",
+      "President's Office",
+      "626 5857262 Copy Phone",
+      "agalukyan@pasadena.edu agalukyan@pasadena.edu Copy Email",
+      "C235"
+     ],
+     "emails": [
+      "agalukyan@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Police Officer",
+     "position": null,
+     "window": [
+      "dgarcia258@pasadena.edu dgarcia258@pasadena.edu Copy Email",
+      "GM201",
+      "Garcia, Jose",
+      "Police Officer",
+      "Police and College Safety",
+      "626 5857484 Copy Phone",
+      "jlgarcia@pasadena.edu jlgarcia@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "dgarcia258@pasadena.edu",
+      "jlgarcia@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "egomez25@pasadena.edu egomez25@pasadena.edu Copy Email",
+      "C247",
+      "Gomez, Jose",
+      "Superintendent/President",
+      "President's Office",
+      "626 5857201 Copy Phone",
+      "pccprez@pasadena.edu pccprez@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "egomez25@pasadena.edu",
+      "pccprez@pasadena.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "C247",
+      "Gomez, Jose",
+      "Superintendent/President",
+      "President's Office",
+      "626 5857201 Copy Phone",
+      "pccprez@pasadena.edu pccprez@pasadena.edu Copy Email",
+      "C235"
+     ],
+     "emails": [
+      "pccprez@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Assistant Director, Financial Aid",
+     "position": null,
+     "window": [
+      "Social Sciences",
+      "jgutierrez76@pasadena.edu jgutierrez76@pasadena.edu Copy Email",
+      "Gutierrez, Serina",
+      "Assistant Director, Financial Aid",
+      "Financial Aid",
+      "626 5857408 Copy Phone",
+      "sgutierrez99@pasadena.edu sgutierrez99@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "jgutierrez76@pasadena.edu",
+      "sgutierrez99@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Police Officer",
+     "position": null,
+     "window": [
+      "jhartnett@pasadena.edu jhartnett@pasadena.edu Copy Email",
+      "GM201",
+      "Hartounian, Ivan",
+      "Police Officer",
+      "Police and College Safety",
+      "ihartounian@pasadena.edu ihartounian@pasadena.edu Copy Email",
+      "Harutyunyan, Anahit"
+     ],
+     "emails": [
+      "ihartounian@pasadena.edu",
+      "jhartnett@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Grant Project Coordinator",
+     "position": null,
+     "window": [
+      "therrera6@pasadena.edu therrera6@pasadena.edu Copy Email",
+      "C156D",
+      "Herrera, Stephanie",
+      "Grant Project Coordinator",
+      "LA Regional Consortium (LARC)",
+      "626 5857638 Copy Phone",
+      "sherrera50@pasadena.edu sherrera50@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "sherrera50@pasadena.edu",
+      "therrera6@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Center Coordinator Athletic Zone",
+     "position": null,
+     "window": [
+      "khollimon@pasadena.edu khollimon@pasadena.edu Copy Email",
+      "SV6",
+      "Hollis, Christopher",
+      "Center Coordinator Athletic Zone",
+      "Outreach Degree & Trnsfr Cntr",
+      "626 5853115 Copy Phone",
+      "chollis2@pasadena.edu chollis2@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "chollis2@pasadena.edu",
+      "khollimon@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Assistant Director, Enterprise Applications",
+     "position": null,
+     "window": [
+      "mihossain@pasadena.edu mihossain@pasadena.edu Copy Email",
+      "C121",
+      "Houck, Eric",
+      "Assistant Director, Enterprise Applications",
+      "Information Technology Srvcs",
+      "626 5857178 Copy Phone",
+      "ehouck1@pasadena.edu ehouck1@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "ehouck1@pasadena.edu",
+      "mihossain@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Financial Aid",
+     "position": null,
+     "window": [
+      "Natural Sciences",
+      "rhui1@pasadena.edu rhui1@pasadena.edu Copy Email",
+      "Hull, David",
+      "Director, Financial Aid",
+      "Financial Aid",
+      "626 5857400 Copy Phone",
+      "dhull2@pasadena.edu dhull2@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "dhull2@pasadena.edu",
+      "rhui1@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Executive Director, Business and College Services",
+     "position": null,
+     "window": [
+      "waince@pasadena.edu waince@pasadena.edu Copy Email",
+      "CEC",
+      "Inda, Darlene",
+      "Executive Director, Business and College Services",
+      "Business Services",
+      "626 5857534 Copy Phone",
+      "dinda@pasadena.edu dinda@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "dinda@pasadena.edu",
+      "waince@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Chief Technology Officer",
+     "position": null,
+     "window": [
+      "sjalali@pasadena.edu sjalali@pasadena.edu Copy Email",
+      "C320",
+      "Jamal, Tendaji",
+      "Chief Technology Officer",
+      "Information Technology Srvcs",
+      "626 5857770 Copy Phone",
+      "tjamal@pasadena.edu tjamal@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "sjalali@pasadena.edu",
+      "tjamal@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Coordinator, Family Resources Center",
+     "position": null,
+     "window": [
+      "ljanssen@pasadena.edu ljanssen@pasadena.edu Copy Email",
+      "CA102",
+      "Jara-Garza, Marisol",
+      "Coordinator, Family Resources Center",
+      "Student Services",
+      "626 5857077 Copy Phone",
+      "mmjara@pasadena.edu mmjara@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "ljanssen@pasadena.edu",
+      "mmjara@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Natural Sciences",
+     "position": null,
+     "window": [
+      "ejaramillo4@pasadena.edu ejaramillo4@pasadena.edu Copy Email",
+      "C247",
+      "Jaramillo, Veronica",
+      "Dean, Natural Sciences",
+      "Natural Sciences",
+      "626 5857036 Copy Phone",
+      "vijaramillo@pasadena.edu vijaramillo@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "ejaramillo4@pasadena.edu",
+      "vijaramillo@pasadena.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "sjordan3@pasadena.edu sjordan3@pasadena.edu Copy Email",
+      "Joseph, Audrey",
+      "Executive Assistant",
+      "President's Office",
+      "626 5853176 Copy Phone",
+      "ajoseph2@pasadena.edu ajoseph2@pasadena.edu Copy Email",
+      "C235"
+     ],
+     "emails": [
+      "ajoseph2@pasadena.edu",
+      "sjordan3@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Technical Services",
+     "position": null,
+     "window": [
+      "lanayajurado@pasadena.edu lanayajurado@pasadena.edu Copy Email",
+      "L104",
+      "Jurado, Roberto",
+      "Director, Technical Services",
+      "Information Technology Srvcs",
+      "626 5853200 Copy Phone",
+      "rdjurado@pasadena.edu rdjurado@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "lanayajurado@pasadena.edu",
+      "rdjurado@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Executive Director, Facilities and Construction Services",
+     "position": null,
+     "window": [
+      "hakasfy@pasadena.edu hakasfy@pasadena.edu Copy Email",
+      "R322P",
+      "Kassabian, Hagop",
+      "Executive Director, Facilities and Construction Services",
+      "Facilities & Construction Srvs",
+      "626 5857405 Copy Phone",
+      "hkassabian@pasadena.edu hkassabian@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "hakasfy@pasadena.edu",
+      "hkassabian@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Information Security",
+     "position": null,
+     "window": [
+      "trkowalski@pasadena.edu trkowalski@pasadena.edu Copy Email",
+      "R322",
+      "Koyak, Tolga",
+      "Director, Information Security",
+      "Information Technology Srvcs",
+      "626 5857599 Copy Phone",
+      "tkoyak@pasadena.edu tkoyak@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "tkoyak@pasadena.edu",
+      "trkowalski@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Executive Director, Institutional Effectiveness",
+     "position": null,
+     "window": [
+      "salaw@pasadena.edu salaw@pasadena.edu Copy Email",
+      "CEC",
+      "Lawler, Hannah",
+      "Executive Director, Institutional Effectiveness",
+      "Institutional Effectiveness",
+      "626 5853290 Copy Phone",
+      "hlawler@pasadena.edu hlawler@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "hlawler@pasadena.edu",
+      "salaw@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Special Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "jlee517@pasadena.edu jlee517@pasadena.edu Copy Email",
+      "R-119",
+      "Lee, Caroline",
+      "Special Assistant to the President",
+      "President's Office",
+      "626 5857528 Copy Phone",
+      "clee326@pasadena.edu clee326@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "clee326@pasadena.edu",
+      "jlee517@pasadena.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "R-119",
+      "Lee, Caroline",
+      "Special Assistant to the President",
+      "President's Office",
+      "626 5857528 Copy Phone",
+      "clee326@pasadena.edu clee326@pasadena.edu Copy Email",
+      "C238"
+     ],
+     "emails": [
+      "clee326@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Student Basic Needs",
+     "position": null,
+     "window": [
+      "elevy1@pasadena.edu elevy1@pasadena.edu Copy Email",
+      "C321",
+      "Lewis, Sesley",
+      "Director, Student Basic Needs",
+      "Special Services Office",
+      "626 5857730 Copy Phone",
+      "slewis10@pasadena.edu slewis10@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "elevy1@pasadena.edu",
+      "slewis10@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, Small Business Development Center",
+     "position": null,
+     "window": [
+      "Noncredit",
+      "rlods@pasadena.edu rlods@pasadena.edu Copy Email",
+      "Loewel, Donald",
+      "Director, Small Business Development Center",
+      "Small Business Dvlpmnt Cntr",
+      "626 5853106 Copy Phone",
+      "dxloewel@pasadena.edu dxloewel@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "dxloewel@pasadena.edu",
+      "rlods@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director, International Students",
+     "position": null,
+     "window": [
+      "kclonsdale@pasadena.edu kclonsdale@pasadena.edu Copy Email",
+      "C245",
+      "Loo, Olivia",
+      "Director, International Students",
+      "International Students Center",
+      "626 5857334 Copy Phone",
+      "oloo@pasadena.edu oloo@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "kclonsdale@pasadena.edu",
+      "oloo@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Dean, Visual Arts and Media Studies",
+     "position": null,
+     "window": [
+      "Noncredit",
+      "clowe4@pasadena.edu clowe4@pasadena.edu Copy Email",
+      "Lowentrout, Mark",
+      "Dean, Visual Arts and Media Studies",
+      "Visual Arts & Media Studies",
+      "626 5857620 Copy Phone",
+      "mlowentrout@pasadena.edu mlowentrout@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "clowe4@pasadena.edu",
+      "mlowentrout@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Director of Programs and Alumni Engagement",
+     "position": null,
+     "window": [
+      "jmmcmahon@pasadena.edu jmmcmahon@pasadena.edu Copy Email",
+      "LBRY",
+      "Mc Peak, Kristin",
+      "Director of Programs and Alumni Engagement",
+      "Foundation Office",
+      "626 5857078 Copy Phone",
+      "kmmcpeak@pasadena.edu kmmcpeak@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "jmmcmahon@pasadena.edu",
+      "kmmcpeak@pasadena.edu"
+     ]
+    },
+    {
+     "line": "Chief Fiscal Services Officer",
+     "position": null,
+     "window": [
+      "gwmcnellys@pasadena.edu gwmcnellys@pasadena.edu Copy Email",
+      "FS",
+      "Meagher, Carole",
+      "Chief Fiscal Services Officer",
+      "Fiscal Services",
+      "626 5853094 Copy Phone",
+      "cmeagher@pasadena.edu cmeagher@pasadena.edu Copy Email"
+     ],
+     "emails": [
+      "cmeagher@pasadena.edu",
+      "gwmcnellys@pasadena.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://pasadena.edu/about/leadership.php",
+   "final_url": "https://pasadena.edu/about/leadership.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Leadership Overview",
+      "Board of Trustees",
+      "Office of the President",
+      "Accreditation",
+      "Visit Us",
+      "Directions to PCC"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Leadership Overview",
+      "Board of Trustees",
+      "Office of the President",
+      "Accreditation",
+      "Visit Us",
+      "Directions to PCC"
+     ],
+     "emails": []
+    },
+    {
+     "line": "term. The President of the District serves as Secretary to the Board.",
+     "position": "college_ceo",
+     "window": [
+      "The Board of Trustees governs the Pasadena Area Community College District. It consists",
+      "of seven elected members, each representing one of the seven trustee areas of the",
+      "district. Qualified voters in each of the areas elect the trustee for a four-year",
+      "term. The President of the District serves as Secretary to the Board.",
+      "Our Board Members",
+      "Sandra Chen Lau",
+      "Steve Gibson, President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Steve Gibson, President",
+     "position": "college_ceo",
+     "window": [
+      "term. The President of the District serves as Secretary to the Board.",
+      "Our Board Members",
+      "Sandra Chen Lau",
+      "Steve Gibson, President",
+      "Kristine Kwong",
+      "Tammy Silver",
+      "James Aragon, Clerk"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Ryan Liu, Vice President",
+     "position": null,
+     "window": [
+      "Kristine Kwong",
+      "Tammy Silver",
+      "James Aragon, Clerk",
+      "Ryan Liu, Vice President",
+      "Alton Wang",
+      "Student Trustee: Jesslie Vega",
+      "Board of Trustees Website Board Meetings"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Student Trustee: Jesslie Vega",
+      "Board of Trustees Website Board Meetings",
+      "José A. Gómez, Ph.D.",
+      "President",
+      "The President is the chief administrative officer of the District and oversees the",
+      "Pasadena City College administration.",
+      "Visit the Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The President is the chief administrative officer of the District and oversees the",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees Website Board Meetings",
+      "José A. Gómez, Ph.D.",
+      "President",
+      "The President is the chief administrative officer of the District and oversees the",
+      "Pasadena City College administration.",
+      "Visit the Office of the President",
+      "Laura M. Ramirez, Ed.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Visit the Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "President",
+      "The President is the chief administrative officer of the District and oversees the",
+      "Pasadena City College administration.",
+      "Visit the Office of the President",
+      "Laura M. Ramirez, Ed.D.",
+      "Assistant Superintendent/Vice President, Instruction",
+      "Provides leadership to carry out the academic mission of the college by cultivating"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent/Vice President, Instruction",
+     "position": "vpaa",
+     "window": [
+      "Pasadena City College administration.",
+      "Visit the Office of the President",
+      "Laura M. Ramirez, Ed.D.",
+      "Assistant Superintendent/Vice President, Instruction",
+      "Provides leadership to carry out the academic mission of the college by cultivating",
+      "and supporting faculty excellence and achievement.",
+      "Visit Office of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent/Vice President, Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "and supporting faculty excellence and achievement.",
+      "Visit Office of Instruction",
+      "Jennifer Clark, Ed.D, MBA",
+      "Assistant Superintendent/Vice President, Business and Administrative Services",
+      "Oversees services that are provided to support and enrich the campus experience for",
+      "students, faculty, staff and the community.",
+      "Visit Business & Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent/Vice President, Human Resources",
+     "position": null,
+     "window": [
+      "students, faculty, staff and the community.",
+      "Visit Business & Administrative Services",
+      "Robert S. Blizinski",
+      "Assistant Superintendent/Vice President, Human Resources",
+      "Leads the Human Resources team as well as oversees the policies and procedures related",
+      "to equitable hiring, agreements with collective bargaining units, and other areas",
+      "related to human resources strategy."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent/Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "related to human resources strategy.",
+      "Visit Human Resources",
+      "Ivan Peña, Ed.D.",
+      "Assistant Superintendent/Vice President, Student Services",
+      "Responsible for overall leadership in planning, organizing, and directing all student",
+      "services and support programs.",
+      "Visit Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Economic & Workforce Development",
+     "position": null,
+     "window": [
+      "services and support programs.",
+      "Visit Student Services",
+      "Dr. Salvatrice Cummo",
+      "Vice President, Economic & Workforce Development",
+      "Leads efforts to fuel economic and workforce growth by guiding the integration of",
+      "education and employment, and by fostering opportunities and support services for",
+      "students, employers, faculty, and the community."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Vice President, Chief Diversity, Equity, and Inclusion Officer, Title IX",
+     "position": "assoc_vp",
+     "window": [
+      "students, employers, faculty, and the community.",
+      "Visit Economic & Workforce Development",
+      "Dr. Kari E. Bolen",
+      "Associate Vice President, Chief Diversity, Equity, and Inclusion Officer, Title IX",
+      "Coordinator",
+      "Visit Diversity, Equity, and Inclusion Website",
+      "More Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator",
+     "position": null,
+     "window": [
+      "Visit Economic & Workforce Development",
+      "Dr. Kari E. Bolen",
+      "Associate Vice President, Chief Diversity, Equity, and Inclusion Officer, Title IX",
+      "Coordinator",
+      "Visit Diversity, Equity, and Inclusion Website",
+      "More Information",
+      "District Organizational Chart"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://pasadena.edu/admissions-and-aid/admissions-and-records/index.php",
+   "final_url": "https://pasadena.edu/admissions-and-aid/admissions-and-records/index.php",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://pasadena.edu/academics/support/veterans-services/",
+   "final_url": "https://pasadena.edu/academics/support/veterans-services/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services - Pasadena City College",
+     "position": "vrc",
+     "window": [
+      "Veterans Services - Pasadena City College",
+      "Skip to main content",
+      "PCC Alert: Power has been restored to the Colorado Campus. All evening classes beginning at 5 p.m. or later will proceed as scheduled. All student services are closed for the day but will resume normal business hours tomorrow morning.",
+      "Proud HSI, AANAPISI & BSI"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Search",
+      "Search",
+      "View Directory",
+      "Veterans Services",
+      "Home(current)",
+      "About",
+      "About Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Explore Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veteran Resources & Tools",
+      "More...",
+      "MenuSection Menu",
+      "Explore Veterans Services",
+      "Home(current)",
+      "About",
+      "About Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veteran Resources & Tools",
+      "More...",
+      "Serving those who served",
+      "Veterans Resource Center",
+      "Serving those who served",
+      "Veterans Resource Center",
+      "Veterans Services at PCC"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Serving those who served",
+      "Veterans Resource Center",
+      "Serving those who served",
+      "Veterans Resource Center",
+      "Veterans Services at PCC",
+      "The Veterans Resource Center (VRC) is a centralized hub at PCC for veterans, military",
+      "members and their dependents. From processing your educational benefits to helping"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services at PCC",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center",
+      "Serving those who served",
+      "Veterans Resource Center",
+      "Veterans Services at PCC",
+      "The Veterans Resource Center (VRC) is a centralized hub at PCC for veterans, military",
+      "members and their dependents. From processing your educational benefits to helping",
+      "you while at PCC to connecting you to community resources and services — we are here"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center (VRC) is a centralized hub at PCC for veterans, military",
+     "position": "vrc",
+     "window": [
+      "Serving those who served",
+      "Veterans Resource Center",
+      "Veterans Services at PCC",
+      "The Veterans Resource Center (VRC) is a centralized hub at PCC for veterans, military",
+      "members and their dependents. From processing your educational benefits to helping",
+      "you while at PCC to connecting you to community resources and services — we are here",
+      "to ensure you get the support you need to continue your academic career and succeed."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact the Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "you while at PCC to connecting you to community resources and services — we are here",
+      "to ensure you get the support you need to continue your academic career and succeed.",
+      "Visit Us: Science Village SV-32",
+      "Contact the Veterans Resource Center",
+      "Science Village SV-32",
+      "(626) 585-7226 ext. 4",
+      "Fall Term Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Recognized as one of the top colleges for providing Veterans Services, we are committed",
+     "position": "vrc",
+     "window": [
+      "But it doesn't stop there! Drop-in regularly for support and community.",
+      "Continuing Students Checklist Continuing Students Checklist",
+      "About The Center",
+      "Recognized as one of the top colleges for providing Veterans Services, we are committed",
+      "to helping our Veterans make a successful transition from military to academic life.",
+      "More About Us More About Us",
+      "What's Happening in the VRC"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://pasadena.edu/about/president/index.php",
+   "final_url": "https://pasadena.edu/about/president/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President - Pasadena City College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President - Pasadena City College",
+      "PCC Alert: Power has been restored to the Colorado Campus. All evening classes beginning at 5 p.m. or later will proceed as scheduled. All student services are closed for the day but will resume normal business hours tomorrow morning.",
+      "Proud HSI, AANAPISI & BSI",
+      "Future Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Search",
+      "Search",
+      "View Directory",
+      "Office of the President",
+      "Home(current)",
+      "Biography",
+      "Advisory Councils & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Latino Advisory Committee",
+     "position": "college_ceo",
+     "window": [
+      "Advisory Councils & Committees",
+      "African American Advisory Committee",
+      "Asian & Pacific Islander Advisory Committee",
+      "President's Latino Advisory Committee",
+      "Parent, Teacher, and Student Association",
+      "Retirees Association",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Explore Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of Internal Audit",
+      "More...",
+      "MenuSection Menu",
+      "Explore Office of the President",
+      "Home(current)",
+      "Biography",
+      "Advisory Councils & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Latino Advisory Committee",
+     "position": "college_ceo",
+     "window": [
+      "Advisory Councils & Committees",
+      "African American Advisory Committee",
+      "Asian & Pacific Islander Advisory Committee",
+      "President's Latino Advisory Committee",
+      "Parent, Teacher, and Student Association",
+      "Retirees Association",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "More...",
+      "Home",
+      "About PCC",
+      "Office of the President",
+      "Office of the President",
+      "The President is the chief administrative officer of the District and oversees the",
+      "Pasadena City College administration."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About PCC",
+      "Office of the President",
+      "Office of the President",
+      "The President is the chief administrative officer of the District and oversees the",
+      "Pasadena City College administration.",
+      "\"I am humbled and excited to serve as superintendent-president of Pasadena City College,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The President is the chief administrative officer of the District and oversees the",
+     "position": "college_ceo",
+     "window": [
+      "About PCC",
+      "Office of the President",
+      "Office of the President",
+      "The President is the chief administrative officer of the District and oversees the",
+      "Pasadena City College administration.",
+      "\"I am humbled and excited to serve as superintendent-president of Pasadena City College,",
+      "one of our state and nation’s premier community colleges. PCC is a vital resource"
+     ],
+     "emails": []
+    },
+    {
+     "line": "\"I am humbled and excited to serve as superintendent-president of Pasadena City College,",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "The President is the chief administrative officer of the District and oversees the",
+      "Pasadena City College administration.",
+      "\"I am humbled and excited to serve as superintendent-president of Pasadena City College,",
+      "one of our state and nation’s premier community colleges. PCC is a vital resource",
+      "for the students and communities in our region, and I look forward to helping the",
+      "college reach new heights of excellence.\""
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "for the students and communities in our region, and I look forward to helping the",
+      "college reach new heights of excellence.\"",
+      "José A. Gómez, Ph.D.",
+      "President",
+      "Meet José A. Gómez, Ph.D.",
+      "Dr. José A. Gómez is a higher education leader dedicated to expanding student opportunity.",
+      "Before joining Pasadena City College, he served as executive vice president, provost,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Before joining Pasadena City College, he served as executive vice president, provost,",
+     "position": "vpaa",
+     "window": [
+      "President",
+      "Meet José A. Gómez, Ph.D.",
+      "Dr. José A. Gómez is a higher education leader dedicated to expanding student opportunity.",
+      "Before joining Pasadena City College, he served as executive vice president, provost,",
+      "and chief operating officer at Cal State LA, where he advanced initiatives such as",
+      "the downtown campus, the Prison B.A. Graduation Initiative, and the Cal State LA BioSpace",
+      "incubator. Under his leadership, enrollment and graduation rates climbed, and the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "and chief operating officer at Cal State LA, where he advanced initiatives such as",
+     "position": null,
+     "window": [
+      "Meet José A. Gómez, Ph.D.",
+      "Dr. José A. Gómez is a higher education leader dedicated to expanding student opportunity.",
+      "Before joining Pasadena City College, he served as executive vice president, provost,",
+      "and chief operating officer at Cal State LA, where he advanced initiatives such as",
+      "the downtown campus, the Prison B.A. Graduation Initiative, and the Cal State LA BioSpace",
+      "incubator. Under his leadership, enrollment and graduation rates climbed, and the",
+      "university was recognized as a “Champion of Higher Education for Excellence in Transfer.”"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Read Full Biography",
+      "Contact",
+      "José A. Gómez, Ph.D.",
+      "President",
+      "C-235",
+      "1570 E. Colorado Blvd.",
+      "Pasadena, CA 91106"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://pasadena.edu/admissions-and-aid/admissions-and-records/admission-veterans.php",
+   "final_url": "https://pasadena.edu/admissions-and-aid/admissions-and-records/admission-veterans.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "in the Veterans Resource Center in W-108 to be certified for benefits:",
+     "position": "vrc",
+     "window": [
+      "If you are a Veteran applying to PCC for the first time, you will follow the same",
+      "application and enrollment steps as non-veteran students.",
+      "Additionally, you will need to submit the following documents to the Veterans Clerk",
+      "in the Veterans Resource Center in W-108 to be certified for benefits:",
+      "Required Documents",
+      "Report of Separation from Active Duty (DD214).",
+      "The Veterans Clerk may request other documents necessary to complete the application"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the Veterans Resource Center in W-108 before registering for classes.",
+     "position": "vrc",
+     "window": [
+      "Termination of program.",
+      "Certain restrictions apply to V.A. benefits. Each veteran is responsible for meeting",
+      "them. Veterans should obtain a copy of \"Veterans Statement of Responsibility'' from",
+      "the Veterans Resource Center in W-108 before registering for classes.",
+      "Conditions of Readmission of Servicemembers",
+      "When the student cannot continue to attend school due to military service, the college",
+      "must promptly readmit a service member into the next class or classes in the servicemember's"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact the Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Apply to PCC",
+      "Admission Eligibility Policies",
+      "Veterans Admission Information",
+      "Contact the Veterans Resource Center",
+      "Science Village SV-32",
+      "(626) 585-7226 ext. 4",
+      "Fall Term Hours"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://pasadena.edu/academics/support/veterans-services/resources.php",
+   "final_url": "https://pasadena.edu/academics/support/veterans-services/resources.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Resources and Tools - Veterans Services - Pasadena City College",
+     "position": "vrc",
+     "window": [
+      "Resources and Tools - Veterans Services - Pasadena City College",
+      "PCC Alert: Power has been restored to the Colorado Campus. All evening classes beginning at 5 p.m. or later will proceed as scheduled. All student services are closed for the day but will resume normal business hours tomorrow morning.",
+      "Proud HSI, AANAPISI & BSI",
+      "Future Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Search",
+      "Search",
+      "View Directory",
+      "Veterans Services",
+      "Home(current)",
+      "About",
+      "About Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Explore Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Credit for Prior Learning",
+      "Military Records and Transcripts",
+      "Veteran Resources",
+      "Explore Veterans Services",
+      "Home(current)",
+      "About",
+      "About Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Academics",
+      "Support",
+      "Veterans Services",
+      "Resources and Tools",
+      "Resources and Tools",
+      "Local Veteran Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact the Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Credit for Prior Learning",
+      "Military Records and Transcripts",
+      "Veteran Resources",
+      "Contact the Veterans Resource Center",
+      "Science Village SV-32",
+      "(626) 585-7226 ext. 4",
+      "Fall Term Hours"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://pasadena.edu/admissions-and-aid/admissions-and-records/",
+   "final_url": "https://pasadena.edu/admissions-and-aid/admissions-and-records/",
+   "status": 200,
+   "excerpts": []
+  }
+ ],
+ "unread_links": [],
+ "run": "41427972048"
+}
