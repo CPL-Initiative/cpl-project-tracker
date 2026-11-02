@@ -1,0 +1,232 @@
+{
+ "college": "Monterey Peninsula College",
+ "homepage": "https://www.mpc.edu/",
+ "read_at": "2026-11-02T08:22:28+00:00",
+ "pages": [
+  {
+   "url": "https://www.mpc.edu/",
+   "final_url": "https://www.mpc.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "New Dean of Instruction and Institutional Research at MPC",
+     "position": "dean_instruction",
+     "window": [
+      "Oct 07, 2026",
+      "Halloween Writing Contest",
+      "Oct 01, 2026",
+      "New Dean of Instruction and Institutional Research at MPC",
+      "Sep 28, 2026",
+      "MPC Announces 2027 Lobo Legends Honorees",
+      "Sep 24, 2026"
+     ],
+     "emails": []
+    },
+    {
+     "line": "MPC Names New Dean of Student Services/Student Affairs & Athletics",
+     "position": null,
+     "window": [
+      "Sep 23, 2026",
+      "MPC Releases 2025-2026 Annual Report",
+      "Sep 17, 2026",
+      "MPC Names New Dean of Student Services/Student Affairs & Athletics",
+      "Discover",
+      "New Horizons",
+      "Register"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mpc.edu/about/leadership/index.html",
+   "final_url": "https://www.mpc.edu/about/leadership/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Leadership",
+      "Leadership Home",
+      "Office of the Superintendent/President",
+      "Board of Trustees",
+      "Participatory Governance",
+      "MPC is a public institution governed by an elected Board of Trustees. Learn about"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "the college’s budget, and ensuring that the educational mission of the college is",
+      "fulfilled. Look up your local trustee, attend a board meeting, and access past meeting",
+      "minutes and documents.",
+      "Superintendent/President",
+      "The President/Superintendent is the chief executive, administrative, and education",
+      "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+      "Board policies. MPC's President is Marshall T. Fulbright III."
+     ],
+     "emails": []
+    },
+    {
+     "line": "The President/Superintendent is the chief executive, administrative, and education",
+     "position": "college_ceo",
+     "window": [
+      "fulfilled. Look up your local trustee, attend a board meeting, and access past meeting",
+      "minutes and documents.",
+      "Superintendent/President",
+      "The President/Superintendent is the chief executive, administrative, and education",
+      "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+      "Board policies. MPC's President is Marshall T. Fulbright III.",
+      "Participatory Governance"
+     ],
+     "emails": []
+    },
+    {
+     "line": "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+     "position": null,
+     "window": [
+      "minutes and documents.",
+      "Superintendent/President",
+      "The President/Superintendent is the chief executive, administrative, and education",
+      "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+      "Board policies. MPC's President is Marshall T. Fulbright III.",
+      "Participatory Governance",
+      "Through the Academic Senate, Curriculum Advisory Committees, and other groups, faculty,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Board policies. MPC's President is Marshall T. Fulbright III.",
+     "position": "college_ceo",
+     "window": [
+      "Superintendent/President",
+      "The President/Superintendent is the chief executive, administrative, and education",
+      "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+      "Board policies. MPC's President is Marshall T. Fulbright III.",
+      "Participatory Governance",
+      "Through the Academic Senate, Curriculum Advisory Committees, and other groups, faculty,",
+      "staff, and students bring diverse perspectives to bear on MPC's operations, academic"
+     ],
+     "emails": []
+    },
+    {
+     "line": "programs, and more. Their input informs institutional decisions made by the President",
+     "position": "college_ceo",
+     "window": [
+      "Participatory Governance",
+      "Through the Academic Senate, Curriculum Advisory Committees, and other groups, faculty,",
+      "staff, and students bring diverse perspectives to bear on MPC's operations, academic",
+      "programs, and more. Their input informs institutional decisions made by the President",
+      "and Board of Trustees.",
+      "facebook",
+      "YouTube"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mpc.edu/directory/",
+   "final_url": "https://www.mpc.edu/directory/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.mpc.edu/about/leadership/",
+   "final_url": "https://www.mpc.edu/about/leadership/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Leadership",
+      "Leadership Home",
+      "Office of the Superintendent/President",
+      "Board of Trustees",
+      "Participatory Governance",
+      "MPC is a public institution governed by an elected Board of Trustees. Learn about"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "the college’s budget, and ensuring that the educational mission of the college is",
+      "fulfilled. Look up your local trustee, attend a board meeting, and access past meeting",
+      "minutes and documents.",
+      "Superintendent/President",
+      "The President/Superintendent is the chief executive, administrative, and education",
+      "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+      "Board policies. MPC's President is Marshall T. Fulbright III."
+     ],
+     "emails": []
+    },
+    {
+     "line": "The President/Superintendent is the chief executive, administrative, and education",
+     "position": "college_ceo",
+     "window": [
+      "fulfilled. Look up your local trustee, attend a board meeting, and access past meeting",
+      "minutes and documents.",
+      "Superintendent/President",
+      "The President/Superintendent is the chief executive, administrative, and education",
+      "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+      "Board policies. MPC's President is Marshall T. Fulbright III.",
+      "Participatory Governance"
+     ],
+     "emails": []
+    },
+    {
+     "line": "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+     "position": null,
+     "window": [
+      "minutes and documents.",
+      "Superintendent/President",
+      "The President/Superintendent is the chief executive, administrative, and education",
+      "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+      "Board policies. MPC's President is Marshall T. Fulbright III.",
+      "Participatory Governance",
+      "Through the Academic Senate, Curriculum Advisory Committees, and other groups, faculty,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Board policies. MPC's President is Marshall T. Fulbright III.",
+     "position": "college_ceo",
+     "window": [
+      "Superintendent/President",
+      "The President/Superintendent is the chief executive, administrative, and education",
+      "officer of MPC, reporting to the Board of Trustees and responsible for implementing",
+      "Board policies. MPC's President is Marshall T. Fulbright III.",
+      "Participatory Governance",
+      "Through the Academic Senate, Curriculum Advisory Committees, and other groups, faculty,",
+      "staff, and students bring diverse perspectives to bear on MPC's operations, academic"
+     ],
+     "emails": []
+    },
+    {
+     "line": "programs, and more. Their input informs institutional decisions made by the President",
+     "position": "college_ceo",
+     "window": [
+      "Participatory Governance",
+      "Through the Academic Senate, Curriculum Advisory Committees, and other groups, faculty,",
+      "staff, and students bring diverse perspectives to bear on MPC's operations, academic",
+      "programs, and more. Their input informs institutional decisions made by the President",
+      "and Board of Trustees.",
+      "facebook",
+      "YouTube"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41412056021"
+}

@@ -10,33 +10,33 @@
     "other": 150000
   },
   "summary": {
-    "files": 1356,
-    "bytes": 13808639,
+    "files": 1357,
+    "bytes": 13817872,
     "over_budget": 0,
-    "handoff_max": 547,
+    "handoff_max": 548,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59988,
+    "always_loaded_bytes": 59982,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59988,
+        "bytes": 59982,
         "over": 0
       },
       "other": {
         "files": 137,
-        "bytes": 4216415,
+        "bytes": 4216571,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9854,
+        "bytes": 10029,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2567730,
+        "bytes": 2569905,
         "over": 0
       },
       "kb_note": {
@@ -46,12 +46,12 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 471170,
+        "bytes": 473109,
         "over": 0
       },
       "handoff": {
-        "files": 515,
-        "bytes": 3663469,
+        "files": 516,
+        "bytes": 3668263,
         "over": 0
       }
     },
@@ -61,10 +61,10 @@
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25380,
-      "bytes": 4165767366,
-      "heavy_bytes": 2972397538,
-      "heavy_share": 0.714,
+      "files": 25398,
+      "bytes": 4166898108,
+      "heavy_bytes": 2972412096,
+      "heavy_share": 0.713,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
         "cpl-project-tracker/kb/program_requirements_college",
@@ -171,10 +171,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853586667,
+        "bytes": 1853601225,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,586,667 B inside the vault"
+      "message": "directory totals 1,853,601,225 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

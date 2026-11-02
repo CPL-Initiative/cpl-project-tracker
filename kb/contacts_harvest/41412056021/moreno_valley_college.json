@@ -1,0 +1,1546 @@
+{
+ "college": "Moreno Valley College",
+ "homepage": "https://mvc.edu/",
+ "read_at": "2026-11-02T08:24:04+00:00",
+ "pages": [
+  {
+   "url": "https://mvc.edu/",
+   "final_url": "https://mvc.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://mvc.edu/about/leadership.php",
+   "final_url": "https://mvc.edu/about/leadership.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "administrators work together to deliver the courses and support that benefit our students",
+      "and service for the benefit of Moreno Valley and the Inland Empire.",
+      "Board of Trustees Organizational Charts",
+      "College President",
+      "Rudy Besikof, Ed.D.",
+      "As Moreno Valley College's fifth president, Dr. Rudy Besikof brings more than 30 years",
+      "of experience in education. His career has centered around promoting student achievement,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "As Moreno Valley College's fifth president, Dr. Rudy Besikof brings more than 30 years",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees Organizational Charts",
+      "College President",
+      "Rudy Besikof, Ed.D.",
+      "As Moreno Valley College's fifth president, Dr. Rudy Besikof brings more than 30 years",
+      "of experience in education. His career has centered around promoting student achievement,",
+      "community engagement, and institutional equity. Since the 1990s, he has been a teacher",
+      "and leader in community colleges. Dr. Besikof holds a doctorate in educational leadership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "earned at UCLA. His master's in English and bachelor's in English and French were",
+      "both earned from the University of Colorado system. He was appointed to lead MVC in",
+      "June 2025.",
+      "Office of the President",
+      "Executive Cabinet",
+      "The executive cabinet provides leadership for the four divisions at Moreno Valley",
+      "College and advises our College president."
+     ],
+     "emails": []
+    },
+    {
+     "line": "College and advises our College president.",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Executive Cabinet",
+      "The executive cabinet provides leadership for the four divisions at Moreno Valley",
+      "College and advises our College president.",
+      "Majd Askar",
+      "Vice President, Business Services",
+      "The division of Business Services supports the needs of students, faculty and staff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Business Services",
+     "position": "vpbs",
+     "window": [
+      "The executive cabinet provides leadership for the four divisions at Moreno Valley",
+      "College and advises our College president.",
+      "Majd Askar",
+      "Vice President, Business Services",
+      "The division of Business Services supports the needs of students, faculty and staff",
+      "while coordinating business and administrative services functions and responsibilities",
+      "for the College."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Planning and Development",
+     "position": null,
+     "window": [
+      "About Business Services",
+      "Division Administrators",
+      "Jake Kevari",
+      "Vice President, Planning and Development",
+      "The division of Planning and Development leads the College's strategic planning efforts",
+      "and institutional effectiveness and additional responsibility centered around student",
+      "success and support, workforce development, marketing, grants, and college advancement"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "About Planning and Development",
+      "Division Administrators",
+      "Joumana McGowan, Ed.D.",
+      "Vice President, Academic Affairs",
+      "The division of Academic Affairs oversees MVC's six schools, accreditation efforts,",
+      "curriculum, academic offerings, faculty and provides ongoing support to facilitate",
+      "the gifted educators and students that make up our College community."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "About Academic Affairs",
+      "Division Administrators",
+      "Roosevelt Charles, Ed.D.",
+      "Vice President, Student Services",
+      "The division of Student Services provides student-centered access to resources and",
+      "programs that foster career and college readiness; increase outreach, access, success",
+      "and completion; provide services that see to our student body's physical and mental"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Division Administrators",
+      "Division of Academic Affairs",
+      "Noemí Hernández Alexander, Ph.D.",
+      "Dean of Instruction",
+      "Communications and Liberal Arts Programs",
+      "Abiodun Osanyinpeju, Ph.D.",
+      "Dean of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Dean of Instruction",
+      "Communications and Liberal Arts Programs",
+      "Abiodun Osanyinpeju, Ph.D.",
+      "Dean of Instruction",
+      "STEM",
+      "Phillip Rawlings",
+      "Dean of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Dean of Instruction",
+      "STEM",
+      "Phillip Rawlings",
+      "Dean of Instruction",
+      "Public Safety Education and Training",
+      "Eric Anthony",
+      "Dean of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Dean of Instruction",
+      "Public Safety Education and Training",
+      "Eric Anthony",
+      "Dean of Instruction",
+      "Career & Technical Education",
+      "Tom Vitzelio",
+      "Dean, Student Success and Academic Support"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Success and Academic Support",
+     "position": null,
+     "window": [
+      "Dean of Instruction",
+      "Career & Technical Education",
+      "Tom Vitzelio",
+      "Dean, Student Success and Academic Support",
+      "Donnell Layne",
+      "Director, STEM Innovation",
+      "Rosalinda Rivas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, STEM Innovation",
+     "position": null,
+     "window": [
+      "Tom Vitzelio",
+      "Dean, Student Success and Academic Support",
+      "Donnell Layne",
+      "Director, STEM Innovation",
+      "Rosalinda Rivas",
+      "Director, Apprenticeship",
+      "Sandra Rivas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Apprenticeship",
+     "position": null,
+     "window": [
+      "Donnell Layne",
+      "Director, STEM Innovation",
+      "Rosalinda Rivas",
+      "Director, Apprenticeship",
+      "Sandra Rivas",
+      "Manager, Early Childhood Education Center",
+      "Division of Business Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Facilities",
+     "position": null,
+     "window": [
+      "Manager, Early Childhood Education Center",
+      "Division of Business Services",
+      "Ron Kirkpatrick",
+      "Director, Facilities",
+      "Bill Manges",
+      "Assistant Director, RCCD Technology Support Services",
+      "Nader Gabriel"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director, RCCD Technology Support Services",
+     "position": null,
+     "window": [
+      "Ron Kirkpatrick",
+      "Director, Facilities",
+      "Bill Manges",
+      "Assistant Director, RCCD Technology Support Services",
+      "Nader Gabriel",
+      "Director, College Business Services",
+      "Lorenzo Lopez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, College Business Services",
+     "position": null,
+     "window": [
+      "Bill Manges",
+      "Assistant Director, RCCD Technology Support Services",
+      "Nader Gabriel",
+      "Director, College Business Services",
+      "Lorenzo Lopez",
+      "Interim Custodial Manager",
+      "Edwin Valenzuela"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Institutional Effectiveness",
+     "position": null,
+     "window": [
+      "Sergeant, Safety & Police",
+      "Division of Planning & Development",
+      "Daniell Study",
+      "Dean, Institutional Effectiveness",
+      "Alice Musumba, DrPH",
+      "Director, Grants",
+      "Division of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Grants",
+     "position": null,
+     "window": [
+      "Daniell Study",
+      "Dean, Institutional Effectiveness",
+      "Alice Musumba, DrPH",
+      "Director, Grants",
+      "Division of Student Services",
+      "Vacant",
+      "Dean, Student Development and Wellness"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Development and Wellness",
+     "position": null,
+     "window": [
+      "Director, Grants",
+      "Division of Student Services",
+      "Vacant",
+      "Dean, Student Development and Wellness",
+      "Sharaf Williams, Ed.D.",
+      "Dean, Counseling and Specially Funded Programs",
+      "Sandra Martinez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Counseling and Specially Funded Programs",
+     "position": null,
+     "window": [
+      "Vacant",
+      "Dean, Student Development and Wellness",
+      "Sharaf Williams, Ed.D.",
+      "Dean, Counseling and Specially Funded Programs",
+      "Sandra Martinez",
+      "Dean, Enrollment Services and Engagement",
+      "Tracy Bennett"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Enrollment Services and Engagement",
+     "position": null,
+     "window": [
+      "Sharaf Williams, Ed.D.",
+      "Dean, Counseling and Specially Funded Programs",
+      "Sandra Martinez",
+      "Dean, Enrollment Services and Engagement",
+      "Tracy Bennett",
+      "Director, Health Services",
+      "Julio Gonzalez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Health Services",
+     "position": null,
+     "window": [
+      "Sandra Martinez",
+      "Dean, Enrollment Services and Engagement",
+      "Tracy Bennett",
+      "Director, Health Services",
+      "Julio Gonzalez",
+      "Director, Middle College High School",
+      "Juan Carlos Ponce"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Middle College High School",
+     "position": null,
+     "window": [
+      "Tracy Bennett",
+      "Director, Health Services",
+      "Julio Gonzalez",
+      "Director, Middle College High School",
+      "Juan Carlos Ponce",
+      "Director, Student Financial Services",
+      "Lisa Yates, Ph.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Student Financial Services",
+     "position": null,
+     "window": [
+      "Julio Gonzalez",
+      "Director, Middle College High School",
+      "Juan Carlos Ponce",
+      "Director, Student Financial Services",
+      "Lisa Yates, Ph.D.",
+      "Director, Disability Support Services",
+      "Micki R. Clowney Grayson, Ed.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Disability Support Services",
+     "position": null,
+     "window": [
+      "Juan Carlos Ponce",
+      "Director, Student Financial Services",
+      "Lisa Yates, Ph.D.",
+      "Director, Disability Support Services",
+      "Micki R. Clowney Grayson, Ed.D.",
+      "Director, TRiO Programs",
+      "Jamie Clifton"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, TRiO Programs",
+     "position": null,
+     "window": [
+      "Lisa Yates, Ph.D.",
+      "Director, Disability Support Services",
+      "Micki R. Clowney Grayson, Ed.D.",
+      "Director, TRiO Programs",
+      "Jamie Clifton",
+      "Director, Enrollment Services",
+      "Danielle Guise"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Enrollment Services",
+     "position": null,
+     "window": [
+      "Micki R. Clowney Grayson, Ed.D.",
+      "Director, TRiO Programs",
+      "Jamie Clifton",
+      "Director, Enrollment Services",
+      "Danielle Guise",
+      "Director, Academic Advising and Student Success",
+      "Frederick Jones"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Academic Advising and Student Success",
+     "position": null,
+     "window": [
+      "Jamie Clifton",
+      "Director, Enrollment Services",
+      "Danielle Guise",
+      "Director, Academic Advising and Student Success",
+      "Frederick Jones",
+      "Director, College Corps",
+      "Olayide Coston"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, College Corps",
+     "position": null,
+     "window": [
+      "Danielle Guise",
+      "Director, Academic Advising and Student Success",
+      "Frederick Jones",
+      "Director, College Corps",
+      "Olayide Coston",
+      "Assistant Director, Student Financial Services",
+      "Angel Orta-Perez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director, Student Financial Services",
+     "position": null,
+     "window": [
+      "Frederick Jones",
+      "Director, College Corps",
+      "Olayide Coston",
+      "Assistant Director, Student Financial Services",
+      "Angel Orta-Perez",
+      "Assistant Director, Upward Bound Programs",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director, Upward Bound Programs",
+     "position": null,
+     "window": [
+      "Olayide Coston",
+      "Assistant Director, Student Financial Services",
+      "Angel Orta-Perez",
+      "Assistant Director, Upward Bound Programs",
+      "Vacant",
+      "Supervisor, Basic Needs and Wellness",
+      "Lynette Sullivan, DSW"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://mvc.edu/employees/index.php",
+   "final_url": "https://mvc.edu/employees/index.php",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://mvc.edu/admissions-aid/apply/military-veteran-student.php",
+   "final_url": "https://mvc.edu/admissions-aid/apply/military-veteran-student.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center here to help you achieve your goals. Follow these application",
+     "position": "vrc",
+     "window": [
+      "with dignity, respect and honor.",
+      "Join the MVC family",
+      "Moreno Valley College is an affordable high education option with an award-winning",
+      "Veterans Resource Center here to help you achieve your goals. Follow these application",
+      "steps if you're a US armed forces Veteran or Veteran dependent looking to start or",
+      "continue your education at MVC.",
+      "If you're still trying to find yourself, take a moment to review the programs of study"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Learn about MVC Explore Academics Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "continue your education at MVC.",
+      "If you're still trying to find yourself, take a moment to review the programs of study",
+      "we offer.",
+      "Learn about MVC Explore Academics Veterans Resource Center",
+      "How to Apply",
+      "Veteran and active military students, as well as their dependents, have the option",
+      "to apply VA benefits to their educational costs."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet with the Veterans Services counselor",
+     "position": "vrc",
+     "window": [
+      "taken you will be in an overpayment and further funding may be terminated.",
+      "Learn how to submit transcripts",
+      "5",
+      "Meet with the Veterans Services counselor",
+      "You will be given a Veteran's Counseling Referral Slip once your Certificate of Eligibility",
+      "is received. Use this slip to set up an appointment with the Veterans Services counselor",
+      "to complete your VA Student Educational Plan."
+     ],
+     "emails": []
+    },
+    {
+     "line": "is received. Use this slip to set up an appointment with the Veterans Services counselor",
+     "position": "vrc",
+     "window": [
+      "5",
+      "Meet with the Veterans Services counselor",
+      "You will be given a Veteran's Counseling Referral Slip once your Certificate of Eligibility",
+      "is received. Use this slip to set up an appointment with the Veterans Services counselor",
+      "to complete your VA Student Educational Plan.",
+      "More Details",
+      "The VA will not pay for classes that are not included on the VA Student Educational"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Visit Veterans Services",
+     "position": "vrc",
+     "window": [
+      "More Details",
+      "The VA will not pay for classes that are not included on the VA Student Educational",
+      "Plan.",
+      "Visit Veterans Services",
+      "6",
+      "Register for classes",
+      "For the best selection of classes, review your options in the class schedule and register"
+     ],
+     "emails": []
+    },
+    {
+     "line": "If you have not received your GI Bill benefits please see Veterans Services for deferral",
+     "position": "vrc",
+     "window": [
+      "required to verify their enrollment by calling 1-888-GIBILL-1 (1-888-442-4551) to",
+      "continue receiving payments.",
+      "More Details",
+      "If you have not received your GI Bill benefits please see Veterans Services for deferral",
+      "of payment for VA students. The VA does not cover optional fees for Chapter 33/33TR",
+      "benefit users. To review outstanding fees, use WebAdvisor.",
+      "Access WebAdvisor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "MVC's Veterans Services is available to help you through the application process as",
+     "position": "vrc",
+     "window": [
+      "Spring 2027",
+      "July 1, 2026 - June 11, 2027",
+      "Contact Us",
+      "MVC's Veterans Services is available to help you through the application process as",
+      "a Veteran or Veteran Dependent.",
+      "Veterans Resource Center",
+      "Email"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Contact Us",
+      "MVC's Veterans Services is available to help you through the application process as",
+      "a Veteran or Veteran Dependent.",
+      "Veterans Resource Center",
+      "Email",
+      "veterans@mvc.edu veterans@mvc.edu",
+      "Phone"
+     ],
+     "emails": [
+      "veterans@mvc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://mvc.edu/admissions-aid/admissions-records/index.php",
+   "final_url": "https://mvc.edu/admissions-aid/admissions-records/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "MVC is closed from February 13 - 16 for the President's Day holiday weekend. Spring",
+     "position": "college_ceo",
+     "window": [
+      "Admissions and Aid",
+      "Admissions and Records",
+      "We",
+      "MVC is closed from February 13 - 16 for the President's Day holiday weekend. Spring",
+      "term begins on February 17 and enrollment stays open for the first two weeks of term.",
+      "After the first class meeting, you will need an add code from your professor to enroll.",
+      "Your first stop at MVC"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://mvc.edu/admin/index.php",
+   "final_url": "https://mvc.edu/admin/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "For assistance accessing classrooms or buildings as an employee, contact the Facilities office by phone at (951) 571-6256 or contact your dean of instruction.",
+     "position": "dean_instruction",
+     "window": [
+      "Student Services.",
+      "Back to Top",
+      "Get help with accessing buildings, rooms or lost keys/keycards",
+      "For assistance accessing classrooms or buildings as an employee, contact the Facilities office by phone at (951) 571-6256 or contact your dean of instruction.",
+      "Missing keys and keycards must be reported immediately to the Facilities office.",
+      "Back to Top",
+      "go to top"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://mvc.edu/admin/departments/president.php",
+   "final_url": "https://mvc.edu/admin/departments/president.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Skip to content",
+      "Menu",
+      "About Usopen submenu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Departments",
+      "close section navigationHome",
+      "Departments",
+      "Office of the President",
+      "Division of Academic Affairs",
+      "Division of Business Services",
+      "Division of Planning and Development"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Administration",
+      "Departments",
+      "Office of the President",
+      "Guided by Vision, Grounded in Service, Committed to Success",
+      "The Office of the President provides strategic leadership that advances Moreno Valley",
+      "College’s mission, vision, and commitment to student success. We promote collaboration,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Office of the President provides strategic leadership that advances Moreno Valley",
+     "position": "college_ceo",
+     "window": [
+      "Departments",
+      "Office of the President",
+      "Guided by Vision, Grounded in Service, Committed to Success",
+      "The Office of the President provides strategic leadership that advances Moreno Valley",
+      "College’s mission, vision, and commitment to student success. We promote collaboration,",
+      "transparency, and service. Join our efforts to strengthen our campus community and",
+      "expand Inland Empire opportunity."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Advisory Board",
+     "position": "college_ceo",
+     "window": [
+      "Latest MVC News",
+      "College Events",
+      "Community",
+      "President's Advisory Board",
+      "Chat with the Prez",
+      "Dr. Rudy's Podcast",
+      "Watch on YouTube"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome to fall 2026, Mountain Lions! In his fall welcome, MVC President Rudy Besikof, Ed.D., shares a message for students",
+     "position": "college_ceo",
+     "window": [
+      "Listen on iHeartRadio",
+      "A Fall Welcome from Dr. Rudy",
+      "Play Video",
+      "Welcome to fall 2026, Mountain Lions! In his fall welcome, MVC President Rudy Besikof, Ed.D., shares a message for students",
+      "as the new semester begins.",
+      "Meet Dr. Rudy",
+      "Rudy Besikof, Ed.D., serves as Moreno Valley College's fifth president. He began his"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Rudy Besikof, Ed.D., serves as Moreno Valley College's fifth president. He began his",
+     "position": "college_ceo",
+     "window": [
+      "Welcome to fall 2026, Mountain Lions! In his fall welcome, MVC President Rudy Besikof, Ed.D., shares a message for students",
+      "as the new semester begins.",
+      "Meet Dr. Rudy",
+      "Rudy Besikof, Ed.D., serves as Moreno Valley College's fifth president. He began his",
+      "tenure with MVC in July 2025.",
+      "Educational dreams and career aspirations are achieved at Moreno Valley College, right",
+      "in the heart of Mountain Lion nation!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Rudy Besikof, President, Moreno Valley College",
+     "position": "college_ceo",
+     "window": [
+      "in our classrooms and in your careers. We welcome you and wish you the best for the",
+      "upcoming semester.",
+      "Sincerely,",
+      "Dr. Rudy Besikof, President, Moreno Valley College",
+      "Back to Top",
+      "Contact Us",
+      "Get in touch with the Office of the President at MVC via phone."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Get in touch with the Office of the President at MVC via phone.",
+     "position": "college_ceo",
+     "window": [
+      "Dr. Rudy Besikof, President, Moreno Valley College",
+      "Back to Top",
+      "Contact Us",
+      "Get in touch with the Office of the President at MVC via phone.",
+      "irene.morales@mvc.edu Email Us",
+      "Irene Morales",
+      "Executive Assistant"
+     ],
+     "emails": [
+      "irene.morales@mvc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.mvc.edu/employees/",
+   "final_url": "https://www.mvc.edu/employees/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://mvc.edu/student-support/special-programs/veterans/index.php",
+   "final_url": "https://mvc.edu/student-support/special-programs/veterans/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center",
+      "Skip to content",
+      "Menu",
+      "About Usopen submenu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Translate",
+      "Searchstart search",
+      "open search",
+      "Veterans Resource Center",
+      "close section navigationHome",
+      "Veterans Resource Center",
+      "Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "open search",
+      "Veterans Resource Center",
+      "close section navigationHome",
+      "Veterans Resource Center",
+      "Resources",
+      "Events and Workshops",
+      "Frequently Asked Questions"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Shopping Sheet (Section 1018)",
+      "Meet with the VRC Counselor",
+      "Veterans Upward Bound",
+      "Veterans Resource Center",
+      "Home",
+      "Student Support",
+      "Special Programs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Student Support",
+      "Special Programs",
+      "Veterans Resource Center",
+      "We",
+      "MVC is closed from February 13 - 16 for the President's Day holiday weekend. Spring",
+      "term begins on February 17 and enrollment stays open for the first two weeks of term."
+     ],
+     "emails": []
+    },
+    {
+     "line": "MVC is closed from February 13 - 16 for the President's Day holiday weekend. Spring",
+     "position": "college_ceo",
+     "window": [
+      "Special Programs",
+      "Veterans Resource Center",
+      "We",
+      "MVC is closed from February 13 - 16 for the President's Day holiday weekend. Spring",
+      "term begins on February 17 and enrollment stays open for the first two weeks of term.",
+      "After the first class meeting, you will need an add code from your professor to enroll.",
+      "Named as one of Military Times' Best for Vets: Colleges in 2025"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services' mission at Moreno Valley College is to serve Veterans with dignity,",
+     "position": "vrc",
+     "window": [
+      "After the first class meeting, you will need an add code from your professor to enroll.",
+      "Named as one of Military Times' Best for Vets: Colleges in 2025",
+      "Welcome, Veterans",
+      "Veterans Services' mission at Moreno Valley College is to serve Veterans with dignity,",
+      "respect and honor. Veterans Services is committed to provide effective and timely",
+      "services in a safe, challenging and supportive learning environment that will prepare",
+      "MVC Veteran students to pursue their future academic and career endeavors. We offer"
+     ],
+     "emails": []
+    },
+    {
+     "line": "respect and honor. Veterans Services is committed to provide effective and timely",
+     "position": "vrc",
+     "window": [
+      "Named as one of Military Times' Best for Vets: Colleges in 2025",
+      "Welcome, Veterans",
+      "Veterans Services' mission at Moreno Valley College is to serve Veterans with dignity,",
+      "respect and honor. Veterans Services is committed to provide effective and timely",
+      "services in a safe, challenging and supportive learning environment that will prepare",
+      "MVC Veteran students to pursue their future academic and career endeavors. We offer",
+      "support to MVC Veteran students through the Veterans Resource Center."
+     ],
+     "emails": []
+    },
+    {
+     "line": "support to MVC Veteran students through the Veterans Resource Center.",
+     "position": "vrc",
+     "window": [
+      "respect and honor. Veterans Services is committed to provide effective and timely",
+      "services in a safe, challenging and supportive learning environment that will prepare",
+      "MVC Veteran students to pursue their future academic and career endeavors. We offer",
+      "support to MVC Veteran students through the Veterans Resource Center.",
+      "Our Services",
+      "The Veterans Resource Center can assist you based on your benefits status. Choose",
+      "whether you're a new, continuing or previous benefit user."
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center can assist you based on your benefits status. Choose",
+     "position": "vrc",
+     "window": [
+      "MVC Veteran students to pursue their future academic and career endeavors. We offer",
+      "support to MVC Veteran students through the Veterans Resource Center.",
+      "Our Services",
+      "The Veterans Resource Center can assist you based on your benefits status. Choose",
+      "whether you're a new, continuing or previous benefit user.",
+      "New",
+      "I've never previously used VA educational benefits and wish to apply"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet with Your Counselor veterans@mvc.edu Email Veterans Services",
+     "position": "vrc",
+     "window": [
+      "you will receive the online rate, which is half the national average.",
+      "If you have questions regarding the in-resident requirement for VA educational benefits,",
+      "please contact the VRC by phone at (951) 571-6247 or by email at veterans@mvc.edu veterans@mvc.edu.",
+      "Meet with Your Counselor veterans@mvc.edu Email Veterans Services",
+      "Student Support",
+      "Veterans Resources",
+      "From academic counseling to information about employment, housing and legal assistance,"
+     ],
+     "emails": [
+      "veterans@mvc.edu"
+     ]
+    },
+    {
+     "line": "questions and if you still need help, give Veterans Services a call.",
+     "position": "vrc",
+     "window": [
+      "learn about the resources available to you as a veteran or dependent.",
+      "Frequently Asked Questions",
+      "If you have questions, we have answers. Take a moment to review our frequently asked",
+      "questions and if you still need help, give Veterans Services a call.",
+      "All Student Support",
+      "Student Events",
+      "NOV"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Resource Center is here to help with questions about enrollment, Veterans",
+     "position": "vrc",
+     "window": [
+      "All Day",
+      "Event Calendar",
+      "Contact Us",
+      "The Veterans Resource Center is here to help with questions about enrollment, Veterans",
+      "benefits, counseling, and even study space.",
+      "Hours: Monday - Friday, 8 am - 4 pm",
+      "veterans@mvc.edu Email Us"
+     ],
+     "emails": [
+      "veterans@mvc.edu"
+     ]
+    },
+    {
+     "line": "contact your local County Veterans Certification Office or the Moreno Valley College Veterans Resource Center at (951) 571-6247 or veterans@mvc.edu veterans@mvc.edu.",
+     "position": "vrc",
+     "window": [
+      "benefits at any campus of the California State University system, University of California,",
+      "or a California Community College.",
+      "To obtain eligibility requirements and assistance in applying for these valuable benefits,",
+      "contact your local County Veterans Certification Office or the Moreno Valley College Veterans Resource Center at (951) 571-6247 or veterans@mvc.edu veterans@mvc.edu.",
+      "Who May Be Eligible",
+      "Find information about the Cal Vet fee waiver program, including eligibility information,",
+      "the application form, instructions on how to apply, and locations of certification"
+     ],
+     "emails": [
+      "veterans@mvc.edu"
+     ]
+    },
+    {
+     "line": "fee waiver information form to MVC's School Certifying Official the Veterans Resource",
+     "position": "vrc",
+     "window": [
+      "Complete MVC's Cal Vet Fee Waiver Form: Then, fill out the Cal Vet Fee Waiver information form. You will send this to the",
+      "VRC with your award code letter.",
+      "Send Both Documents to the VRC: Once you receive your award code letter, submit both the award code letter and the",
+      "fee waiver information form to MVC's School Certifying Official the Veterans Resource",
+      "Center. The VRC will submit all final documentation to Student Financial Services",
+      "for you.",
+      "Need a Refund? If you have already paid tuition by the time your fee waiver is processed and require"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans support and service organizations address Veteran needs and provide services",
+     "position": "vrc",
+     "window": [
+      "Helping Homeless Veterans",
+      "National VA Veteran Homelessness Programs",
+      "Veterans Organizations",
+      "Veterans support and service organizations address Veteran needs and provide services",
+      "like help with mental health, housing, employment and training, or offer places where",
+      "Veterans can meet and interact with like-minded people. Most reputable Veteran organizations",
+      "are federally chartered."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mvc.edu/admissions-aid/admissions-records/",
+   "final_url": "https://www.mvc.edu/admissions-aid/admissions-records/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "MVC is closed from February 13 - 16 for the President's Day holiday weekend. Spring",
+     "position": "college_ceo",
+     "window": [
+      "Admissions and Aid",
+      "Admissions and Records",
+      "We",
+      "MVC is closed from February 13 - 16 for the President's Day holiday weekend. Spring",
+      "term begins on February 17 and enrollment stays open for the first two weeks of term.",
+      "After the first class meeting, you will need an add code from your professor to enroll.",
+      "Your first stop at MVC"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mvc.edu/admin/",
+   "final_url": "https://www.mvc.edu/admin/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "For assistance accessing classrooms or buildings as an employee, contact the Facilities office by phone at (951) 571-6256 or contact your dean of instruction.",
+     "position": "dean_instruction",
+     "window": [
+      "Student Services.",
+      "Back to Top",
+      "Get help with accessing buildings, rooms or lost keys/keycards",
+      "For assistance accessing classrooms or buildings as an employee, contact the Facilities office by phone at (951) 571-6256 or contact your dean of instruction.",
+      "Missing keys and keycards must be reported immediately to the Facilities office.",
+      "Back to Top",
+      "go to top"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mvc.edu/about/leadership.php",
+   "final_url": "https://www.mvc.edu/about/leadership.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President",
+     "position": "college_ceo",
+     "window": [
+      "administrators work together to deliver the courses and support that benefit our students",
+      "and service for the benefit of Moreno Valley and the Inland Empire.",
+      "Board of Trustees Organizational Charts",
+      "College President",
+      "Rudy Besikof, Ed.D.",
+      "As Moreno Valley College's fifth president, Dr. Rudy Besikof brings more than 30 years",
+      "of experience in education. His career has centered around promoting student achievement,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "As Moreno Valley College's fifth president, Dr. Rudy Besikof brings more than 30 years",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees Organizational Charts",
+      "College President",
+      "Rudy Besikof, Ed.D.",
+      "As Moreno Valley College's fifth president, Dr. Rudy Besikof brings more than 30 years",
+      "of experience in education. His career has centered around promoting student achievement,",
+      "community engagement, and institutional equity. Since the 1990s, he has been a teacher",
+      "and leader in community colleges. Dr. Besikof holds a doctorate in educational leadership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "earned at UCLA. His master's in English and bachelor's in English and French were",
+      "both earned from the University of Colorado system. He was appointed to lead MVC in",
+      "June 2025.",
+      "Office of the President",
+      "Executive Cabinet",
+      "The executive cabinet provides leadership for the four divisions at Moreno Valley",
+      "College and advises our College president."
+     ],
+     "emails": []
+    },
+    {
+     "line": "College and advises our College president.",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Executive Cabinet",
+      "The executive cabinet provides leadership for the four divisions at Moreno Valley",
+      "College and advises our College president.",
+      "Majd Askar",
+      "Vice President, Business Services",
+      "The division of Business Services supports the needs of students, faculty and staff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Business Services",
+     "position": "vpbs",
+     "window": [
+      "The executive cabinet provides leadership for the four divisions at Moreno Valley",
+      "College and advises our College president.",
+      "Majd Askar",
+      "Vice President, Business Services",
+      "The division of Business Services supports the needs of students, faculty and staff",
+      "while coordinating business and administrative services functions and responsibilities",
+      "for the College."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Planning and Development",
+     "position": null,
+     "window": [
+      "About Business Services",
+      "Division Administrators",
+      "Jake Kevari",
+      "Vice President, Planning and Development",
+      "The division of Planning and Development leads the College's strategic planning efforts",
+      "and institutional effectiveness and additional responsibility centered around student",
+      "success and support, workforce development, marketing, grants, and college advancement"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "About Planning and Development",
+      "Division Administrators",
+      "Joumana McGowan, Ed.D.",
+      "Vice President, Academic Affairs",
+      "The division of Academic Affairs oversees MVC's six schools, accreditation efforts,",
+      "curriculum, academic offerings, faculty and provides ongoing support to facilitate",
+      "the gifted educators and students that make up our College community."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "About Academic Affairs",
+      "Division Administrators",
+      "Roosevelt Charles, Ed.D.",
+      "Vice President, Student Services",
+      "The division of Student Services provides student-centered access to resources and",
+      "programs that foster career and college readiness; increase outreach, access, success",
+      "and completion; provide services that see to our student body's physical and mental"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Division Administrators",
+      "Division of Academic Affairs",
+      "Noemí Hernández Alexander, Ph.D.",
+      "Dean of Instruction",
+      "Communications and Liberal Arts Programs",
+      "Abiodun Osanyinpeju, Ph.D.",
+      "Dean of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Dean of Instruction",
+      "Communications and Liberal Arts Programs",
+      "Abiodun Osanyinpeju, Ph.D.",
+      "Dean of Instruction",
+      "STEM",
+      "Phillip Rawlings",
+      "Dean of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Dean of Instruction",
+      "STEM",
+      "Phillip Rawlings",
+      "Dean of Instruction",
+      "Public Safety Education and Training",
+      "Eric Anthony",
+      "Dean of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Dean of Instruction",
+      "Public Safety Education and Training",
+      "Eric Anthony",
+      "Dean of Instruction",
+      "Career & Technical Education",
+      "Tom Vitzelio",
+      "Dean, Student Success and Academic Support"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Success and Academic Support",
+     "position": null,
+     "window": [
+      "Dean of Instruction",
+      "Career & Technical Education",
+      "Tom Vitzelio",
+      "Dean, Student Success and Academic Support",
+      "Donnell Layne",
+      "Director, STEM Innovation",
+      "Rosalinda Rivas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, STEM Innovation",
+     "position": null,
+     "window": [
+      "Tom Vitzelio",
+      "Dean, Student Success and Academic Support",
+      "Donnell Layne",
+      "Director, STEM Innovation",
+      "Rosalinda Rivas",
+      "Director, Apprenticeship",
+      "Sandra Rivas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Apprenticeship",
+     "position": null,
+     "window": [
+      "Donnell Layne",
+      "Director, STEM Innovation",
+      "Rosalinda Rivas",
+      "Director, Apprenticeship",
+      "Sandra Rivas",
+      "Manager, Early Childhood Education Center",
+      "Division of Business Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Facilities",
+     "position": null,
+     "window": [
+      "Manager, Early Childhood Education Center",
+      "Division of Business Services",
+      "Ron Kirkpatrick",
+      "Director, Facilities",
+      "Bill Manges",
+      "Assistant Director, RCCD Technology Support Services",
+      "Nader Gabriel"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director, RCCD Technology Support Services",
+     "position": null,
+     "window": [
+      "Ron Kirkpatrick",
+      "Director, Facilities",
+      "Bill Manges",
+      "Assistant Director, RCCD Technology Support Services",
+      "Nader Gabriel",
+      "Director, College Business Services",
+      "Lorenzo Lopez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, College Business Services",
+     "position": null,
+     "window": [
+      "Bill Manges",
+      "Assistant Director, RCCD Technology Support Services",
+      "Nader Gabriel",
+      "Director, College Business Services",
+      "Lorenzo Lopez",
+      "Interim Custodial Manager",
+      "Edwin Valenzuela"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Institutional Effectiveness",
+     "position": null,
+     "window": [
+      "Sergeant, Safety & Police",
+      "Division of Planning & Development",
+      "Daniell Study",
+      "Dean, Institutional Effectiveness",
+      "Alice Musumba, DrPH",
+      "Director, Grants",
+      "Division of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Grants",
+     "position": null,
+     "window": [
+      "Daniell Study",
+      "Dean, Institutional Effectiveness",
+      "Alice Musumba, DrPH",
+      "Director, Grants",
+      "Division of Student Services",
+      "Vacant",
+      "Dean, Student Development and Wellness"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Development and Wellness",
+     "position": null,
+     "window": [
+      "Director, Grants",
+      "Division of Student Services",
+      "Vacant",
+      "Dean, Student Development and Wellness",
+      "Sharaf Williams, Ed.D.",
+      "Dean, Counseling and Specially Funded Programs",
+      "Sandra Martinez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Counseling and Specially Funded Programs",
+     "position": null,
+     "window": [
+      "Vacant",
+      "Dean, Student Development and Wellness",
+      "Sharaf Williams, Ed.D.",
+      "Dean, Counseling and Specially Funded Programs",
+      "Sandra Martinez",
+      "Dean, Enrollment Services and Engagement",
+      "Tracy Bennett"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Enrollment Services and Engagement",
+     "position": null,
+     "window": [
+      "Sharaf Williams, Ed.D.",
+      "Dean, Counseling and Specially Funded Programs",
+      "Sandra Martinez",
+      "Dean, Enrollment Services and Engagement",
+      "Tracy Bennett",
+      "Director, Health Services",
+      "Julio Gonzalez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Health Services",
+     "position": null,
+     "window": [
+      "Sandra Martinez",
+      "Dean, Enrollment Services and Engagement",
+      "Tracy Bennett",
+      "Director, Health Services",
+      "Julio Gonzalez",
+      "Director, Middle College High School",
+      "Juan Carlos Ponce"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Middle College High School",
+     "position": null,
+     "window": [
+      "Tracy Bennett",
+      "Director, Health Services",
+      "Julio Gonzalez",
+      "Director, Middle College High School",
+      "Juan Carlos Ponce",
+      "Director, Student Financial Services",
+      "Lisa Yates, Ph.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Student Financial Services",
+     "position": null,
+     "window": [
+      "Julio Gonzalez",
+      "Director, Middle College High School",
+      "Juan Carlos Ponce",
+      "Director, Student Financial Services",
+      "Lisa Yates, Ph.D.",
+      "Director, Disability Support Services",
+      "Micki R. Clowney Grayson, Ed.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Disability Support Services",
+     "position": null,
+     "window": [
+      "Juan Carlos Ponce",
+      "Director, Student Financial Services",
+      "Lisa Yates, Ph.D.",
+      "Director, Disability Support Services",
+      "Micki R. Clowney Grayson, Ed.D.",
+      "Director, TRiO Programs",
+      "Jamie Clifton"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, TRiO Programs",
+     "position": null,
+     "window": [
+      "Lisa Yates, Ph.D.",
+      "Director, Disability Support Services",
+      "Micki R. Clowney Grayson, Ed.D.",
+      "Director, TRiO Programs",
+      "Jamie Clifton",
+      "Director, Enrollment Services",
+      "Danielle Guise"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Enrollment Services",
+     "position": null,
+     "window": [
+      "Micki R. Clowney Grayson, Ed.D.",
+      "Director, TRiO Programs",
+      "Jamie Clifton",
+      "Director, Enrollment Services",
+      "Danielle Guise",
+      "Director, Academic Advising and Student Success",
+      "Frederick Jones"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Academic Advising and Student Success",
+     "position": null,
+     "window": [
+      "Jamie Clifton",
+      "Director, Enrollment Services",
+      "Danielle Guise",
+      "Director, Academic Advising and Student Success",
+      "Frederick Jones",
+      "Director, College Corps",
+      "Olayide Coston"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, College Corps",
+     "position": null,
+     "window": [
+      "Danielle Guise",
+      "Director, Academic Advising and Student Success",
+      "Frederick Jones",
+      "Director, College Corps",
+      "Olayide Coston",
+      "Assistant Director, Student Financial Services",
+      "Angel Orta-Perez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director, Student Financial Services",
+     "position": null,
+     "window": [
+      "Frederick Jones",
+      "Director, College Corps",
+      "Olayide Coston",
+      "Assistant Director, Student Financial Services",
+      "Angel Orta-Perez",
+      "Assistant Director, Upward Bound Programs",
+      "Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Director, Upward Bound Programs",
+     "position": null,
+     "window": [
+      "Olayide Coston",
+      "Assistant Director, Student Financial Services",
+      "Angel Orta-Perez",
+      "Assistant Director, Upward Bound Programs",
+      "Vacant",
+      "Supervisor, Basic Needs and Wellness",
+      "Lynette Sullivan, DSW"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.mvc.edu/employees/index.php",
+  "https://www.mvc.edu/admissions-aid/apply/military-veteran-student.php",
+  "https://www.mvc.edu/admissions-aid/admissions-records/index.php",
+  "https://www.mvc.edu/admin/index.php",
+  "https://mvc.edu/student-support/special-programs/veterans/isakson-roe-requirements.php",
+  "https://mvc.edu/student-support/special-programs/veterans/veterans-upward-bound.php",
+  "https://www.mvc.edu/student-support/special-programs/veterans/",
+  "https://mvc.edu/student-support/special-programs/veterans/resources.php",
+  "https://www.mvc.edu/admin/departments/president.php"
+ ],
+ "run": "41412056021"
+}

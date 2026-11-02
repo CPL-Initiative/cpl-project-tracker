@@ -1,0 +1,440 @@
+{
+ "run": "41412056021",
+ "applied_at": "2026-11-02T08:31:49+00:00",
+ "github_run": "41413625798",
+ "result": {
+  "new": 53,
+  "run": "41412056021",
+  "gone": 0,
+  "colleges": 12,
+  "seen_again": 0
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [],
+ "rows": [
+  {
+   "college": "Mendocino College",
+   "position": "articulation_officer",
+   "title_as_printed": "Transfer Counselor/Articulation Officer",
+   "name": "Mark Edward Osea",
+   "email": "",
+   "source_url": "https://www.mendocino.edu/academics/resources/articulation"
+  },
+  {
+   "college": "Mendocino College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Timothy Karas, Ed.D",
+   "email": "",
+   "source_url": "https://www.mendocino.edu/about/leadership/presidents-office"
+  },
+  {
+   "college": "Merced College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Chris Vitelli, Ed.D.",
+   "email": "",
+   "source_url": "https://www.mccd.edu/about-merced-college/leadership/presidents-office/"
+  },
+  {
+   "college": "Merced College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions and Records",
+   "name": "Jeanette R Martin",
+   "email": "",
+   "source_url": "https://www.mccd.edu/enroll-at-merced-college/admissions-records/"
+  },
+  {
+   "college": "Merced College",
+   "position": "vpaa",
+   "title_as_printed": "Assistant Superintendent/Vice President of Instruction",
+   "name": "Dr. Dee Sigismond",
+   "email": "",
+   "source_url": "https://www.mccd.edu/about-merced-college/leadership/"
+  },
+  {
+   "college": "Merced College",
+   "position": "vpbs",
+   "title_as_printed": "Assistant Superintendent/Vice President of District Administrative Services",
+   "name": "Joe Allison",
+   "email": "",
+   "source_url": "https://www.mccd.edu/about-merced-college/leadership/"
+  },
+  {
+   "college": "Merced College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent/Vice President of Student Services",
+   "name": "Mike McCandless",
+   "email": "",
+   "source_url": "https://www.mccd.edu/about-merced-college/leadership/"
+  },
+  {
+   "college": "Merritt College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. David M. Johnson",
+   "email": "dmjohnson@peralta.edu",
+   "source_url": "https://merritt.edu/presidents-office"
+  },
+  {
+   "college": "Merritt College",
+   "position": "vrc",
+   "title_as_printed": "Veterans Affairs Coordinator / School Certifying Official",
+   "name": "Tina Y Humphrey",
+   "email": "thumphrey@peralta.edu",
+   "source_url": "https://merritt.edu/veterans-services"
+  },
+  {
+   "college": "Mission College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Seher Awan",
+   "email": "",
+   "source_url": "https://missioncollege.edu/about/president/administration.html"
+  },
+  {
+   "college": "Mission College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean, Workforce Innovation",
+   "name": "Jeffrey Pallin",
+   "email": "",
+   "source_url": "https://missioncollege.edu/about/president/administration.html"
+  },
+  {
+   "college": "Mission College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Lorrie Ranck",
+   "email": "",
+   "source_url": "https://missioncollege.edu/about/president/administration.html"
+  },
+  {
+   "college": "Mission College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Dr. Danny Nguyen",
+   "email": "",
+   "source_url": "https://missioncollege.edu/about/president/administration.html"
+  },
+  {
+   "college": "Mission College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Dr. Omar Murillo",
+   "email": "",
+   "source_url": "https://missioncollege.edu/about/president/administration.html"
+  },
+  {
+   "college": "Mission College",
+   "position": "vrc",
+   "title_as_printed": "Director, Disability Support Programs and Services and Veterans Resource Center",
+   "name": "Alyssa Larios",
+   "email": "",
+   "source_url": "https://missioncollege.edu/about/president/administration.html"
+  },
+  {
+   "college": "Modesto Junior College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Brian Sanders",
+   "email": "",
+   "source_url": "https://www.mjc.edu/administration/index.html"
+  },
+  {
+   "college": "Modesto Junior College",
+   "position": "dean_ar",
+   "title_as_printed": "Director (Interim), Admissions & Records",
+   "name": "Elida Miranda-Zaragoza",
+   "email": "",
+   "source_url": "https://www.mjc.edu/administration/index.html"
+  },
+  {
+   "college": "Modesto Junior College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean (Interim), Instruction & Student Learning",
+   "name": "Aishah Saleh",
+   "email": "",
+   "source_url": "https://www.mjc.edu/administration/index.html"
+  },
+  {
+   "college": "Modesto Junior College",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor (Yosemite Community College District)",
+   "name": "Dr. Lena Tran",
+   "email": "",
+   "source_url": "https://www.mjc.edu/news/chancellortran.html/"
+  },
+  {
+   "college": "Modesto Junior College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction (Interim)",
+   "name": "Dr. Laurie Weiss",
+   "email": "",
+   "source_url": "https://www.mjc.edu/administration/index.html"
+  },
+  {
+   "college": "Modesto Junior College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Dr. Andrea Wilson",
+   "email": "",
+   "source_url": "https://www.mjc.edu/administration/index.html"
+  },
+  {
+   "college": "Monterey Peninsula College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Marshall T. Fulbright III",
+   "email": "",
+   "source_url": "https://www.mpc.edu/about/leadership/index.html"
+  },
+  {
+   "college": "Moorpark College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Dr. Julius O. Sokenu",
+   "email": "",
+   "source_url": "https://www.moorparkcollege.edu/executive-team"
+  },
+  {
+   "college": "Moorpark College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President Academic Affairs",
+   "name": "Dr. John Forbes",
+   "email": "",
+   "source_url": "https://www.moorparkcollege.edu/executive-team"
+  },
+  {
+   "college": "Moorpark College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President Business Services",
+   "name": "Dr. Jennifer J. Clark",
+   "email": "",
+   "source_url": "https://www.moorparkcollege.edu/executive-team"
+  },
+  {
+   "college": "Moreno Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "College President",
+   "name": "Rudy Besikof, Ed.D.",
+   "email": "",
+   "source_url": "https://mvc.edu/about/leadership.php"
+  },
+  {
+   "college": "Moreno Valley College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean of Instruction, Career & Technical Education",
+   "name": "Eric Anthony",
+   "email": "",
+   "source_url": "https://mvc.edu/about/leadership.php"
+  },
+  {
+   "college": "Moreno Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Communications and Liberal Arts Programs",
+   "name": "Noemí Hernández Alexander, Ph.D.",
+   "email": "",
+   "source_url": "https://mvc.edu/about/leadership.php"
+  },
+  {
+   "college": "Moreno Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, STEM",
+   "name": "Abiodun Osanyinpeju, Ph.D.",
+   "email": "",
+   "source_url": "https://mvc.edu/about/leadership.php"
+  },
+  {
+   "college": "Moreno Valley College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Public Safety Education and Training",
+   "name": "Phillip Rawlings",
+   "email": "",
+   "source_url": "https://mvc.edu/about/leadership.php"
+  },
+  {
+   "college": "Moreno Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Joumana McGowan, Ed.D.",
+   "email": "",
+   "source_url": "https://mvc.edu/about/leadership.php"
+  },
+  {
+   "college": "Moreno Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Business Services",
+   "name": "Majd Askar",
+   "email": "",
+   "source_url": "https://mvc.edu/about/leadership.php"
+  },
+  {
+   "college": "Moreno Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Roosevelt Charles, Ed.D.",
+   "email": "",
+   "source_url": "https://mvc.edu/about/leadership.php"
+  },
+  {
+   "college": "Mt. San Jacinto College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Tawny Dotson",
+   "email": "",
+   "source_url": "https://www.msjc.edu/presidentsoffice/"
+  },
+  {
+   "college": "Napa Valley College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Human Resources",
+   "name": "Charo Albarran",
+   "email": "",
+   "source_url": "https://www.napavalley.edu/directory/index.html"
+  },
+  {
+   "college": "Napa Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Gayle Pitman",
+   "email": "gayle.pitman@napavalley.edu",
+   "source_url": "https://www.napavalley.edu/about/office-of-the-president/index.html"
+  },
+  {
+   "college": "Napa Valley College",
+   "position": "dean_cte",
+   "title_as_printed": "Sr. Dean, Career Education and Workforce Development",
+   "name": "Douglas Marriott",
+   "email": "douglas.marriott@napavalley.edu",
+   "source_url": "https://www.napavalley.edu/directory/index.html"
+  },
+  {
+   "college": "Napa Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Asst. Superintendent Vice President of Academic Affairs",
+   "name": "Sara Parker",
+   "email": "",
+   "source_url": "https://www.napavalley.edu/directory/index.html"
+  },
+  {
+   "college": "Napa Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Asst. Superintendent Vice President of Administrative Services",
+   "name": "James Reeves",
+   "email": "",
+   "source_url": "https://www.napavalley.edu/directory/index.html"
+  },
+  {
+   "college": "Napa Valley College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent/Vice President, Student Affairs",
+   "name": "Dr. Alejandro Guerrero",
+   "email": "",
+   "source_url": "https://www.napavalley.edu/directory/index.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer",
+   "name": "Nicholas Franco, M.S.",
+   "email": "nicholas.franco@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/employees/directory.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Norco College",
+   "name": "Monica Green, Ed.D.",
+   "email": "monica.green@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/employees/directory.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, School of Communication, Humanities & Languages, School of Social & Behavioral Sciences, School of Visual & Performing Arts",
+   "name": "Quinton Bemiller, Ed.D.",
+   "email": "quinton.bemiller@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/employees/directory.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, School of Math, Engineering, Computer Science & Game Development, School of Natural Sciences, Health & Kinesiology (NSHK)",
+   "name": "Courtney Doussett, Ed.D.",
+   "email": "courtney.doussett@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/employees/directory.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "dean_instruction",
+   "title_as_printed": "Dean of Instruction, Career Education, School of AT&A, School of B&M, and School of HaPS",
+   "name": "Ashley Etchison",
+   "email": "ashley.etchison@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/about/president/leadership/index.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Jason Parks, Ed.D.",
+   "email": "jason.parks@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/employees/directory.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Business Services",
+   "name": "Michael Collins, Ed.D.",
+   "email": "michael.collins@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/employees/directory.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Dr. Kaneesha Tarrant",
+   "email": "kaneesha.tarrant@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/about/president/leadership/index.html"
+  },
+  {
+   "college": "Norco College",
+   "position": "vrc",
+   "title_as_printed": "Veterans Services Coordinator",
+   "name": "Eric Betancourt",
+   "email": "eric.betancourt@norcocollege.edu",
+   "source_url": "https://www.norcocollege.edu/employees/directory.html"
+  },
+  {
+   "college": "North Orange Continuing Education",
+   "position": "college_ceo",
+   "title_as_printed": "NOCE President",
+   "name": "Valentina Purtell",
+   "email": "vpurtell@noce.edu",
+   "source_url": "https://noce.edu/about/administration/"
+  },
+  {
+   "college": "North Orange Continuing Education",
+   "position": "dean_ar",
+   "title_as_printed": "Director of Admissions and Records",
+   "name": "Beverly Heasley",
+   "email": "beverly.heasley@noce.edu",
+   "source_url": "https://noce.edu/directory/"
+  },
+  {
+   "college": "North Orange Continuing Education",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Instruction",
+   "name": "Dr. Karen Bautista",
+   "email": "kbautista@noce.edu",
+   "source_url": "https://noce.edu/about/administration/"
+  },
+  {
+   "college": "North Orange Continuing Education",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Martha Gutierrez",
+   "email": "mgutierrez@noce.edu",
+   "source_url": "https://noce.edu/about/administration/"
+  }
+ ]
+}

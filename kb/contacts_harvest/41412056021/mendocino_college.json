@@ -1,0 +1,1712 @@
+{
+ "college": "Mendocino College",
+ "homepage": "https://www.mendocino.edu/",
+ "read_at": "2026-11-02T08:20:08+00:00",
+ "pages": [
+  {
+   "url": "https://www.mendocino.edu/",
+   "final_url": "https://www.mendocino.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/about/administration/people",
+   "final_url": "https://www.mendocino.edu/about/administration/people",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Back",
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/about/leadership",
+   "final_url": "https://www.mendocino.edu/about/leadership",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Back",
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Superintendent/President who is appointed by the Board of Trustees, to carry out these policies;",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Mendocino College has a multi-tier leadership structure, which includes:",
+      "The Board of Trustees is the official elected body of the Mendocino-Lake Community College District. Its primary role is to set the overall operating policies of the College District;",
+      "The Superintendent/President who is appointed by the Board of Trustees, to carry out these policies;",
+      "The Academic Senate which acts the representative of the faculty and makes recommendations to the Board of Trustees of the Mendocino-Lake Community College District on all academic and professional matters;",
+      "The Classified Senate which is a dedicated body who supports the college's mission of promoting student success through its active role in the participatory governance process, including representing the needs, concerns, and viewpoints of classified staff, providing a venue for informed decision-making, coordinating with administration and faculty for classified representation, and providing opportunities to develop leadership skills; and",
+      "The Associated Students of Mendocino College which represents the student body, raising money for student activities and scholarships, and promoting individual students tot take responsibility for their performance, health, wellbeing, and education."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/about/leadership/presidents-office",
+   "final_url": "https://www.mendocino.edu/about/leadership/presidents-office",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office | Mendocino College",
+     "position": "college_ceo",
+     "window": [
+      "President's Office | Mendocino College",
+      "Skip to main content",
+      "Floating Search Menu",
+      "Apply"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About",
+      "Leadership",
+      "President's Office",
+      "President's Office",
+      "In This Section",
+      "About"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "President's Office",
+      "President's Office",
+      "In This Section",
+      "About",
+      "Back"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Back",
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "WELCOME TO THE OFFICE OF THE PRESIDENT",
+     "position": "college_ceo",
+     "window": [
+      "Getting to Mendocino College",
+      "Public Information Office",
+      "50th Anniversary",
+      "WELCOME TO THE OFFICE OF THE PRESIDENT",
+      "Mendocino College takes pride in being a community college with outstanding academics and exceptional support programs. We provide education opportunities at our Ukiah Campus, Lake County Center, North County Center, Coast Center, online, and in partnership with many local school districts. Our purpose is to provide you with a world-class education so that you can achieve your dreams.",
+      "I find myself reflecting with gratitude on the college’s half a century of service to the students, families and communities of our region. For more than 50 years, Mendocino College has helped people build careers, transfer to universities, explore new interests and strengthen our local communities. That commitment remains at the heart of everything we do.",
+      "Mendocino College serves a vast and diverse area. We are one of eleven California Community College Districts to be designated as rural-serving. The geographic, demographic, and economic realities of rural-serving institutions are unique from our suburban and urban peers."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "I wish you an affirming, positive and inspiring journey while here at Mendocino College. We are all here to ensure that you have one. Welcome!",
+      "Sincerely,",
+      "Timothy Karas, Ed.D",
+      "Superintendent/President",
+      "[email protected]",
+      "Office of the President",
+      "Kelly Keyes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Timothy Karas, Ed.D",
+      "Superintendent/President",
+      "[email protected]",
+      "Office of the President",
+      "Kelly Keyes",
+      "707-468-3071",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant II to President",
+     "position": "college_ceo",
+     "window": [
+      "Kelly Keyes",
+      "707-468-3071",
+      "[email protected]",
+      "Executive Assistant II to President",
+      "|",
+      "President's Office",
+      "About"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "[email protected]",
+      "Executive Assistant II to President",
+      "|",
+      "President's Office",
+      "About",
+      "About",
+      "Leadership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/about/administration/academic-departments",
+   "final_url": "https://www.mendocino.edu/about/administration/academic-departments",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Resources",
+      "Back",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Theatre Arts",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Theatre Arts",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/academics/resources/articulation",
+   "final_url": "https://www.mendocino.edu/academics/resources/articulation",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation | Mendocino College",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation | Mendocino College",
+      "Skip to main content",
+      "Floating Search Menu",
+      "Apply"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Home",
+      "Academics",
+      "Resources",
+      "Articulation",
+      "Articulation",
+      "In This Section",
+      "Student Support"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Academics",
+      "Resources",
+      "Articulation",
+      "Articulation",
+      "In This Section",
+      "Student Support",
+      "Back"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Pride Program",
+      "Transfer Info",
+      "Back",
+      "Articulation",
+      "Resources/Tools",
+      "Back",
+      "Bookstore"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Textbook Lending",
+      "Pride Program",
+      "Transfer Info",
+      "Articulation",
+      "Resources/Tools",
+      "Bookstore",
+      "Canvas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements",
+     "position": "articulation_officer",
+     "window": [
+      "Canvas Support",
+      "Tech Support",
+      "Overview",
+      "Articulation Agreements",
+      "General Education and ASSIST",
+      "General Education Checklists",
+      "In the college system, the word “articulation” refers to the process of matching up courses from one school with the courses at another school. The outcome of this process is an agreement that states that specific courses at one school are considered equivalent to specific courses at a second school. This process of matching up courses is very important to students who want to transfer from one school to another."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Agreements with Individual Colleges",
+     "position": "articulation_officer",
+     "window": [
+      "The most important articulation agreements for students at a California Community College are found at the ASSIST website (www.assist.org). Mendocino College students (and Mendocino College counselors) can use this website to determine which Mendocino courses are accepted to meet lower-division (freshman and sophomore) requirements at California State Universities (CSU) and the University of California (UC). While Mendocino College students are free to access and use this website, we recommend that you consult with an academic counselor for support with interpreting the information.",
+      "When preparing to transfer to a CSU or UC, you will need to cover both the general education (GE) courses required for transfer and the specific courses required to prepare for the major you plan to study at the CSU or UC school. Both the GE courses and the major prep courses can be found on the ASSIST website.",
+      "Mendocino College also publishes the CSU and UC GE requirements and the Mendocino College courses that are approved for those requirements each year. The list of approved courses does change slightly each year. A course has to be approved at the time that it is taken by the student for it to count for that specific GE requirement. For this reason, it is important to check this list each year for the courses you are taking at that time.",
+      "Articulation Agreements with Individual Colleges",
+      "Mendocino College also maintains a limited number of articulation agreements with nearby California Community Colleges, such as Santa Rosa Junior College, and some private and out of state universities.",
+      "Current 2+2 Pathways with SSU: Liberal Arts and Sciences with an Emphasis in Education AA to Liberal Studies BA",
+      "Mendocino College has partnered with Sonoma State’s Liberal Studies – Ukiah program to streamline the transfer process. The 2+2 pathway aims to guarantee students complete their Associate’s degree in 2 years at Mendocino College and a baccalaureate degree in the following 2 years at Sonoma State University."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Transfer Counselor/Articulation Officer",
+     "position": "articulation_officer",
+     "window": [
+      "Mark Edward Osea",
+      "707-468-3048",
+      "[email protected]",
+      "Transfer Counselor/Articulation Officer",
+      "|",
+      "Counseling",
+      "Apply Now"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Textbook Lending",
+      "Pride Program",
+      "Transfer Info",
+      "Articulation",
+      "Resources/Tools",
+      "Bookstore",
+      "Canvas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/enrollment-services/records/admissions-and-records/admissions-and-records/admissions-and-records",
+   "final_url": "https://www.mendocino.edu/enrollment-services/records/admissions-and-records/admissions-and-records/admissions-and-records",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean's List",
+     "position": null,
+     "window": [
+      "Academic Honors",
+      "Students earning 12 or more credit units in one semester shall receive recognition of their academic achievements with an honors designation. Courses taken Pass/No Pass will not be considered part of the 12 credit units. Semester honors designations are assigned at the conclusion of the spring and fall semesters. Honors designations are not assigned for the summer semester.",
+      "Designations will be assigned as follows:",
+      "Dean's List",
+      "Students earning 12 or more credit units in one semester with a grade point average between 3.50 and 3.74 shall be named to the Dean s List and receive a corresponding notation on their academic record;",
+      "President's List",
+      "Students earning 12 or more credit units in one semester with a grade point average between 3.75 and above shall be named to the President s List and receive a corresponding notation on their academic record;"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's List",
+     "position": "college_ceo",
+     "window": [
+      "Designations will be assigned as follows:",
+      "Dean's List",
+      "Students earning 12 or more credit units in one semester with a grade point average between 3.50 and 3.74 shall be named to the Dean s List and receive a corresponding notation on their academic record;",
+      "President's List",
+      "Students earning 12 or more credit units in one semester with a grade point average between 3.75 and above shall be named to the President s List and receive a corresponding notation on their academic record;",
+      "GRADUATION HONORS DESIGNATIONS",
+      "Students receiving associate degrees may graduate with honors as indicated below. Honors designations for graduation are based upon the cumulative grade point average and include all grades earned at all colleges attended. Students may not use the academic renewal process to set aside credit units or course work which has been used to satisfy graduation requirements, nor can academic renewal be used to raise the grade point average to qualify for graduation honors."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/directory",
+   "final_url": "https://www.mendocino.edu/about/administration/administrative-departments",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Back",
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/about/administration",
+   "final_url": "https://www.mendocino.edu/about/leadership",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Back",
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Back",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Superintendent/President who is appointed by the Board of Trustees, to carry out these policies;",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Mendocino College has a multi-tier leadership structure, which includes:",
+      "The Board of Trustees is the official elected body of the Mendocino-Lake Community College District. Its primary role is to set the overall operating policies of the College District;",
+      "The Superintendent/President who is appointed by the Board of Trustees, to carry out these policies;",
+      "The Academic Senate which acts the representative of the faculty and makes recommendations to the Board of Trustees of the Mendocino-Lake Community College District on all academic and professional matters;",
+      "The Classified Senate which is a dedicated body who supports the college's mission of promoting student success through its active role in the participatory governance process, including representing the needs, concerns, and viewpoints of classified staff, providing a venue for informed decision-making, coordinating with administration and faculty for classified representation, and providing opportunities to develop leadership skills; and",
+      "The Associated Students of Mendocino College which represents the student body, raising money for student activities and scholarships, and promoting individual students tot take responsibility for their performance, health, wellbeing, and education."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Bulletin Board",
+     "position": "college_ceo",
+     "window": [
+      "Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Monthly Report",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "President's Office",
+      "President's Bulletin Board",
+      "President's Monthly Report",
+      "Public Information Office",
+      "Academic Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/academic-departments/administration-justice",
+   "final_url": "https://www.mendocino.edu/academic-departments/administration-justice",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Public Safety Coordinator",
+     "position": null,
+     "window": [
+      "Christopher Dewey",
+      "(707) 468-3205",
+      "[email protected]",
+      "Public Safety Coordinator",
+      "|",
+      "Administration of Justice",
+      "Part-Time Faculty"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/enrollment-services/records/admissions-and-records",
+   "final_url": "https://www.mendocino.edu/enrollment-services/records/admissions-and-records/admissions-and-records/admissions-and-records",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Programs, Degrees, and Certificates",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean's List",
+     "position": null,
+     "window": [
+      "Academic Honors",
+      "Students earning 12 or more credit units in one semester shall receive recognition of their academic achievements with an honors designation. Courses taken Pass/No Pass will not be considered part of the 12 credit units. Semester honors designations are assigned at the conclusion of the spring and fall semesters. Honors designations are not assigned for the summer semester.",
+      "Designations will be assigned as follows:",
+      "Dean's List",
+      "Students earning 12 or more credit units in one semester with a grade point average between 3.50 and 3.74 shall be named to the Dean s List and receive a corresponding notation on their academic record;",
+      "President's List",
+      "Students earning 12 or more credit units in one semester with a grade point average between 3.75 and above shall be named to the President s List and receive a corresponding notation on their academic record;"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's List",
+     "position": "college_ceo",
+     "window": [
+      "Designations will be assigned as follows:",
+      "Dean's List",
+      "Students earning 12 or more credit units in one semester with a grade point average between 3.50 and 3.74 shall be named to the Dean s List and receive a corresponding notation on their academic record;",
+      "President's List",
+      "Students earning 12 or more credit units in one semester with a grade point average between 3.75 and above shall be named to the President s List and receive a corresponding notation on their academic record;",
+      "GRADUATION HONORS DESIGNATIONS",
+      "Students receiving associate degrees may graduate with honors as indicated below. Honors designations for graduation are based upon the cumulative grade point average and include all grades earned at all colleges attended. Students may not use the academic renewal process to set aside credit units or course work which has been used to satisfy graduation requirements, nor can academic renewal be used to raise the grade point average to qualify for graduation honors."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Board of Trustees",
+      "Office of the President",
+      "Academic Senate",
+      "Classified Senate",
+      "Mission, Vision, Values, Goals"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Degrees",
+      "Resources",
+      "Academic Calendar",
+      "Articulation",
+      "College Catalog",
+      "Coastal Field Station",
+      "Curriculum Information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mendocino.edu/cdn-cgi/l/email-protection",
+   "status": 404
+  }
+ ],
+ "unread_links": [
+  "https://www.mendocino.edu/academics/programs/programs-degrees-and-certificates/degrees/administration-justice",
+  "https://www.mendocino.edu/academics/programs/programs-degrees-and-certificates/degrees/administration-justice-t",
+  "https://www.mendocino.edu/academics/programs/programs-degrees-and-certificates/certificates/administration-justice"
+ ],
+ "run": "41412056021"
+}

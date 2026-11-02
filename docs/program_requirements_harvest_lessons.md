@@ -1152,3 +1152,11 @@ From the CPL Pathways port (each record the selector lists): each opens By requi
 From the Progress view's NEXT: Maps: 3 of 32 read, 24 mapper hosts refused (lessons S345).
 
 From Sheet 144 card 2's paragraph: S529 rescored the filed records (`kb/_program_requirements_floor_rescore.py`): 161 unequal and 28 incomplete to equal, 12 equal and 5 incomplete to unequal; 14 left failing on their degree check. ✅ **Applied live (Sheet 146 card 2, *pasted*, 20:30Z):** Sam ran the receipt's `apply_one` (12 equal to unequal, 27 and 160 to equal, 5 incomplete to unequal); Los Angeles Valley's reread had moved the other two; all 206 read back (S530).
+
+## S547 SkyCartwheel (2026-11-02): Golden West's SLO load
+
+- **A trigger file that matches main's runs nothing.** Golden West's `.load` (`host=cccd`) was the same line main held
+  from Coastline's load, so the gate would have skipped it. A second line (`run=2026-11-02 golden_west`) changed the file;
+  the loader reads only `host=`. Load 41412025040 inserted 568 rows, skipped 75, kept none.
+- **A runner's commit to a PR starts no checks.** After the load committed its receipt, #2684's head had no `test` run.
+  Restoring `.load` to main's text was the session's own commit with content, which started `test` and skipped the load.

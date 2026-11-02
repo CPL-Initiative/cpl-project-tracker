@@ -1,0 +1,862 @@
+{
+ "college": "MiraCosta College",
+ "homepage": "https://www.miracosta.edu/",
+ "read_at": "2026-11-02T08:21:22+00:00",
+ "pages": [
+  {
+   "url": "https://www.miracosta.edu/",
+   "final_url": "https://www.miracosta.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://hub.miracosta.edu/directory",
+   "final_url": "https://hub.miracosta.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Director - Human Resources",
+     "position": null,
+     "window": [
+      "3A",
+      "Email Employee",
+      "Acfalle, Jennifer",
+      "Director - Human Resources",
+      "6672",
+      "OCN",
+      "14"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Art Gallery Director",
+     "position": null,
+     "window": [
+      "3A",
+      "Email Employee",
+      "Adams, Diane",
+      "Art Gallery Director",
+      "6657",
+      "OC3400",
+      "5A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director, Noncredit and Adult Education Program - CLC",
+     "position": null,
+     "window": [
+      "Associate Faculty -Spanish",
+      "Email Employee",
+      "Aguilar, Beatriz",
+      "Executive Director, Noncredit and Adult Education Program - CLC",
+      "8717",
+      "CLC124",
+      "22"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim, Administrative Asst. to the Dean, Admissions & Student Support",
+     "position": "dean_ar",
+     "window": [
+      "8B",
+      "Email Employee",
+      "Allbert, Amanda",
+      "Interim, Administrative Asst. to the Dean, Admissions & Student Support",
+      "OCN",
+      "10A",
+      "Email Employee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant to the Dean-Arts, International Languages, & Ethnic Studies",
+     "position": null,
+     "window": [
+      "17A",
+      "Email Employee",
+      "Alonzo, Toni",
+      "Administrative Assistant to the Dean-Arts, International Languages, & Ethnic Studies",
+      "6844",
+      "OC2704",
+      "5C"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant to the Dean, Instructional Services",
+     "position": null,
+     "window": [
+      "17A",
+      "Email Employee",
+      "Aragon, Ana",
+      "Administrative Assistant to the Dean, Instructional Services",
+      "2186",
+      "OC12210",
+      "11"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Apprenticeship Program Development - Career & Technical Education & Workforce Development",
+     "position": null,
+     "window": [
+      "1",
+      "Email Employee",
+      "Ash, Molly",
+      "Director, Apprenticeship Program Development - Career & Technical Education & Workforce Development",
+      "2237",
+      "SAN 815",
+      "17A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator - Student Equity",
+     "position": null,
+     "window": [
+      "17A",
+      "Email Employee",
+      "Astorga, Brayan",
+      "Student Services Coordinator - Student Equity",
+      "6236",
+      "OC14227",
+      "12A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Faculty Coordinator, EOPS Counseling - EOPS",
+     "position": null,
+     "window": [
+      "8B",
+      "Email Employee",
+      "Balcazar, Yesenia",
+      "Faculty Coordinator, EOPS Counseling - EOPS",
+      "6681",
+      "OC14285",
+      "3B"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant to the Dean of Nursing, Health and Wellness",
+     "position": null,
+     "window": [
+      "8B",
+      "Email Employee",
+      "Barragan, Aimee",
+      "Administrative Assistant to the Dean of Nursing, Health and Wellness",
+      "6796",
+      "OC5100",
+      "27"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Career Education Grants Coordinator - Career Education",
+     "position": null,
+     "window": [
+      "5A",
+      "Email Employee",
+      "Bebout, Kristin",
+      "Career Education Grants Coordinator - Career Education",
+      "6577",
+      "OC14266",
+      "8A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Student Employment Coordinator",
+     "position": null,
+     "window": [
+      "OCN",
+      "Email Employee",
+      "Bezzant, Cole",
+      "Interim Student Employment Coordinator",
+      "2240",
+      "OCN",
+      "8A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Police Community Service Officer",
+     "position": null,
+     "window": [
+      "3B",
+      "Email Employee",
+      "Blunt, Travis",
+      "Police Community Service Officer",
+      "1379",
+      "OC1100",
+      "23"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to the Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "30",
+      "Email Employee",
+      "Boles, Angelena",
+      "Executive Assistant to the Vice President, Student Services",
+      "6895",
+      "OC14289",
+      "10A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, CARE",
+     "position": null,
+     "window": [
+      "CLC 300",
+      "Email Employee",
+      "Boone, Devon",
+      "Director, CARE",
+      "6480",
+      "OC14107",
+      "12A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, SBDC",
+     "position": null,
+     "window": [
+      "17A",
+      "Email Employee",
+      "Brown, Cheryl",
+      "Director, SBDC",
+      "8790",
+      "SAN802",
+      "17A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Technology Support Services Coordinator - ITS Technology Support Services",
+     "position": null,
+     "window": [
+      "8B",
+      "Email Employee",
+      "Browning, Heather",
+      "Technology Support Services Coordinator - ITS Technology Support Services",
+      "2158",
+      "OC12233",
+      "11A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant to the Dean - The Learning Centers",
+     "position": null,
+     "window": [
+      "13",
+      "Email Employee",
+      "Carlsson, Cecilia",
+      "Administrative Assistant to the Dean - The Learning Centers",
+      "6385",
+      "OC12000",
+      "9"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Police Officer",
+     "position": null,
+     "window": [
+      "22",
+      "Email Employee",
+      "Carrizosa, Carlos",
+      "Police Officer",
+      "1432",
+      "OC1100",
+      "23"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Student Services Coordinator - Financial Aide",
+     "position": null,
+     "window": [
+      "8B",
+      "Email Employee",
+      "Cervantes, Sugeily",
+      "Interim Student Services Coordinator - Financial Aide",
+      "6323",
+      "OC14151",
+      "3A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator -Student Equity",
+     "position": null,
+     "window": [
+      "TCI",
+      "Email Employee",
+      "Chavira, Chelsea-Verdin",
+      "Student Services Coordinator -Student Equity",
+      "2249",
+      "32",
+      "Email Employee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services Student Worker",
+     "position": "vrc",
+     "window": [
+      "No Mail Station",
+      "Email Employee",
+      "Chen, Jennifer",
+      "Veterans Services Student Worker",
+      "25",
+      "Email Employee",
+      "Chiaramonte, Giuseppe"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, SoCal VBOC",
+     "position": null,
+     "window": [
+      "8B",
+      "Email Employee",
+      "Cole, Traci",
+      "Director, SoCal VBOC",
+      "2103",
+      "SAN800",
+      "17A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Athletic Director",
+     "position": null,
+     "window": [
+      "10C",
+      "Email Employee",
+      "Conahan, Patrick",
+      "Athletic Director",
+      "6242",
+      "OC5207",
+      "15"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant to the Dean - Office of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "Corley, Jessica",
+      "Associate Faculty - Nursing & Allied Health",
+      "Corley, Susan",
+      "Administrative Assistant to the Dean - Office of Instruction",
+      "7876",
+      "OC3624",
+      "1"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator, Scholarships",
+     "position": null,
+     "window": [
+      "8C",
+      "Email Employee",
+      "Cotter, Alison",
+      "Student Services Coordinator, Scholarships",
+      "6591",
+      "OC14151",
+      "3A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean - Counseling & Student Development Counseling",
+     "position": null,
+     "window": [
+      "8B",
+      "Email Employee",
+      "Crakes, Ailene",
+      "Dean - Counseling & Student Development Counseling",
+      "6893",
+      "OC14251",
+      "10C"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Marketing & Communications Coordinator, Public Information Office",
+     "position": null,
+     "window": [
+      "10A",
+      "Email Employee",
+      "Cruz, France",
+      "Marketing & Communications Coordinator, Public Information Office",
+      "6857",
+      "OC1057",
+      "7"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant to the Dean - Humanities, Communication Studies & Mathematics",
+     "position": null,
+     "window": [
+      "1",
+      "Email Employee",
+      "Davis, Daria",
+      "Administrative Assistant to the Dean - Humanities, Communication Studies & Mathematics",
+      "6811",
+      "SAN 1100",
+      "MS-17A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Director-Community Learning Center",
+     "position": null,
+     "window": [
+      "T230",
+      "Email Employee",
+      "De Souza, Mitra",
+      "Student Services Director-Community Learning Center",
+      "8719",
+      "CLC 329",
+      "22"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Donald",
+     "position": null,
+     "window": [
+      "CLC 329",
+      "22",
+      "Email Employee",
+      "Dean, Donald",
+      "Associate Faculty - CSIT",
+      "8B",
+      "Email Employee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Sherri",
+     "position": null,
+     "window": [
+      "Associate Faculty - CSIT",
+      "8B",
+      "Email Employee",
+      "Dean, Sherri",
+      "Payroll Specialist",
+      "6782",
+      "OCT220-29"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Financial Aid & Scholarships",
+     "position": null,
+     "window": [
+      "14",
+      "Email Employee",
+      "Dear, Michael",
+      "Director of Financial Aid & Scholarships",
+      "6713",
+      "OC14152",
+      "3A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Director of Student Services, San Elijo",
+     "position": null,
+     "window": [
+      "Del Real, Diego",
+      "Campus Aide I",
+      "Delgado-Padilla, Sara",
+      "Interim Director of Student Services, San Elijo",
+      "SAN",
+      "17A",
+      "Spanish"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director - Information Technology Services, Enterprise Application Services",
+     "position": null,
+     "window": [
+      "8B",
+      "Email Employee",
+      "Dorris, Jim",
+      "Director - Information Technology Services, Enterprise Application Services",
+      "6728",
+      "OC1230",
+      "11A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Program Manager, Veterans Services",
+     "position": "vrc",
+     "window": [
+      "8B",
+      "Email Employee",
+      "Draper, Elizabeth",
+      "Program Manager, Veterans Services",
+      "6967",
+      "OC14172",
+      "25"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Academic Services Coordinator - Instructional & Library Services",
+     "position": null,
+     "window": [
+      "22-100",
+      "Email Employee",
+      "Elmer, Olivia",
+      "Academic Services Coordinator - Instructional & Library Services",
+      "2142",
+      "OC1024",
+      "7"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Instructional Support Coordinator - Noncredit Adult Education",
+     "position": null,
+     "window": [
+      "None",
+      "Email Employee",
+      "Escobedo, Nora",
+      "Instructional Support Coordinator - Noncredit Adult Education",
+      "9710",
+      "CLC",
+      "22"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Professional Development & Training–Human Resources",
+     "position": null,
+     "window": [
+      "No Mail Station",
+      "Email Employee",
+      "Evelyn, Janice",
+      "Director, Professional Development & Training–Human Resources",
+      "OC31114",
+      "14",
+      "Email Employee"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Facilities & Civic Center Events Coordinator - Facilities",
+     "position": null,
+     "window": [
+      "14",
+      "Email Employee",
+      "Everts, Carrie",
+      "Facilities & Civic Center Events Coordinator - Facilities",
+      "6875",
+      "OCT601E",
+      "0"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean - Natural & Social Sciences",
+     "position": null,
+     "window": [
+      "Associate Faculty-Computer Science",
+      "Email Employee",
+      "Fino, Michael",
+      "Dean - Natural & Social Sciences",
+      "6809",
+      "OC4819",
+      "21"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Director-Development/Foundation",
+     "position": null,
+     "window": [
+      "17A",
+      "Email Employee",
+      "Fishinger, Tori",
+      "Associate Director-Development/Foundation",
+      "6652",
+      "OC1046",
+      "7"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Arts, International Languages, & Ethnic Studies",
+     "position": null,
+     "window": [
+      "None",
+      "Email Employee",
+      "Fohrman, Jonathan",
+      "Dean, Arts, International Languages, & Ethnic Studies",
+      "6818",
+      "OC2708",
+      "5C"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Title IX & Inclusive Practices–Human Resources",
+     "position": null,
+     "window": [
+      "22",
+      "Email Employee",
+      "Frank, Caitlin",
+      "Director, Title IX & Inclusive Practices–Human Resources",
+      "6860",
+      "OCN",
+      "14"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Title IX Coordinator",
+     "position": null,
+     "window": [
+      "8B",
+      "Email Employee",
+      "Frost, Elizabeth",
+      "Title IX Coordinator",
+      "14",
+      "Email Employee",
+      "Fryszman, Olga"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Coordinator - EOPS",
+     "position": null,
+     "window": [
+      "5B",
+      "Email Employee",
+      "Gallardo, Maria",
+      "Student Services Coordinator - EOPS",
+      "6341",
+      "OC14274",
+      "3B"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean-Career Education",
+     "position": null,
+     "window": [
+      "27",
+      "Email Employee",
+      "Gamboa, Benjamin",
+      "Associate Dean-Career Education",
+      "2190",
+      "OC14263",
+      "8A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Employer Coordinator -Career Studies and Services",
+     "position": null,
+     "window": [
+      "No Mail Station",
+      "Email Employee",
+      "Gheorghin, Erica",
+      "Student Employer Coordinator -Career Studies and Services",
+      "6180",
+      "OC14271",
+      "8A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Director - Security & Infrastructure Systems",
+     "position": null,
+     "window": [
+      "11A",
+      "Email Employee",
+      "Ginger, Anthony",
+      "Interim Director - Security & Infrastructure Systems",
+      "6742",
+      "OC12258",
+      "11A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Superintendent/Vice President",
+     "position": null,
+     "window": [
+      "10C",
+      "Email Employee",
+      "Gomez, Elba",
+      "Assistant Superintendent/Vice President",
+      "6653",
+      "OC1038",
+      "20"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director of Public Information & Governmental Relations, Marketing & Communications",
+     "position": null,
+     "window": [
+      "7",
+      "Email Employee",
+      "Gonzales (Huyck), Kristen",
+      "Executive Director of Public Information & Governmental Relations, Marketing & Communications",
+      "6612",
+      "OC1055",
+      "7"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to Vice President-Instruction",
+     "position": null,
+     "window": [
+      "12B",
+      "Email Employee",
+      "Gonzales, Joanne",
+      "Executive Assistant to Vice President-Instruction",
+      "6814",
+      "OC1037",
+      "4"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Academic Services Coordinator - Academic & Career Pathways",
+     "position": null,
+     "window": [
+      "27",
+      "Email Employee",
+      "Gonzalez Riveria, Rodrigo",
+      "Academic Services Coordinator - Academic & Career Pathways",
+      "2243",
+      "OC1024",
+      "7"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Support Assistant III-Veterans Services",
+     "position": "vrc",
+     "window": [
+      "CLC",
+      "Email Employee",
+      "Gonzalez, Providencia",
+      "Administrative Support Assistant III-Veterans Services",
+      "6285",
+      "OCT100",
+      "25"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Clinical Coordinator -Nursing and Allied Health",
+     "position": null,
+     "window": [
+      "OC1200",
+      "Email Employee",
+      "Gonzalez, Sandra",
+      "Clinical Coordinator -Nursing and Allied Health",
+      "6408",
+      "OCN",
+      "27"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Internship Coordinator-Career Studies & Services",
+     "position": null,
+     "window": [
+      "8C",
+      "Email Employee",
+      "Green, Mike",
+      "Internship Coordinator-Career Studies & Services",
+      "6415",
+      "OC14270",
+      "8A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Humanities, Communication Studies, and Math",
+     "position": null,
+     "window": [
+      "1200",
+      "Email Employee",
+      "Halsted, Lauren",
+      "Dean, Humanities, Communication Studies, and Math",
+      "7854",
+      "SAN 1123",
+      "17A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Athletics Coordinator-Athletics",
+     "position": null,
+     "window": [
+      "22",
+      "Email Employee",
+      "Hardaway, Donjay",
+      "Athletics Coordinator-Athletics",
+      "6425",
+      "OC5207",
+      "15"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director-Purchasing & Material Management",
+     "position": null,
+     "window": [
+      "Spanish Instructor–International Languages",
+      "T-270-05",
+      "Hernandez, Mina",
+      "Director-Purchasing & Material Management",
+      "6797",
+      "T578",
+      "20"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Volunteer – Veterans Services",
+     "position": "vrc",
+     "window": [
+      "0",
+      "Email Employee",
+      "Hernandez, Vickie",
+      "Volunteer – Veterans Services",
+      "6332",
+      "Email Employee",
+      "Herrera, Edgar"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41412056021"
+}
