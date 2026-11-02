@@ -953,7 +953,7 @@
       },
       filters: [["", "All"], ["todo", "Needs a decision"], ["suggested", "Suggested groups"], ["done", "Decided"],
         ["open", "No rule or decision"], ["names", "Name to check"], ["solo", "Single wording"], ["flagged", "Your flags"],
-        ["changed", "Changed this visit"]],
+        ["selected", "Selected"], ["changed", "Changed this visit"]],
       flag: { get: listFlagOf, set: listSetFlag },
       filterPass: function (r, L) {
         var g = r.g, d = decidedState(g);

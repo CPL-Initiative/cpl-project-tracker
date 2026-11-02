@@ -72,7 +72,8 @@ function hint(d, title) { const r = row(d, title); return txt(r && r.querySelect
 function shown(d) {
   return TITLES.filter((t) => !!row(d, t));
 }
-function btn(root, t) { return Array.from(root.querySelectorAll("button")).find((b) => txt(b) === t); }
+/* A filter word carries its count, "Decided (2)"; a word is found by its label either way. */
+function btn(root, t) { return Array.from(root.querySelectorAll("button")).find((b) => txt(b) === t || txt(b).replace(/ \([\d,]+\)$/, "") === t); }
 function nFetch(t) { return t.calls.filter((c) => c.url === "kb/exhibit_slo_neighbors.json").length; }
 
 (async function () {

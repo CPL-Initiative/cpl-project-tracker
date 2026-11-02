@@ -2753,7 +2753,7 @@
         return true;
       },
       filters: [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["person", "Confirmed by a person"],
-        ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"], ["changed", "Changed this visit"]],
+        ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"], ["selected", "Selected"], ["changed", "Changed this visit"]],
       filterPass: function (r, L) {
         if (L.f === "open") return r.how === "open";
         if (L.f === "person") return r.how === "person";

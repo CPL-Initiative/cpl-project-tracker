@@ -446,13 +446,10 @@
       bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
         name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
         facts: function (id, members) { return bandFacts(members); },
-        acts: function (id) { return [skyLink(id)]; } }
+        acts: function (id) { return [skyLink(id)]; } },
+      /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
+      filters: LIST_FILTERS, counts: function () { return listBuild().counts; }
     };
-    /* Each filter word carries its count, read from the same build as the rows. */
-    Object.defineProperty(spec, "filters", { enumerable: true, get: function () {
-      var n = listBuild().counts;
-      return LIST_FILTERS.map(function (f) { return [f[0], f[1] + " (" + fmt(n[f[0]]) + ")"]; });
-    } });
     return spec;
   }
   function listApi() {

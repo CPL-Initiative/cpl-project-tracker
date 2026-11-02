@@ -77,10 +77,10 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
 
 | List | Row (fold unit) | Today | Next |
 |---|---|---|---|
-| Exhibits | credential | finder, filters, bands, kept groups, suggested folds, Re-point, waiting, flag, Re-analyze, tiles from the Commons row | its suggestions and changed set onto the engine's slot |
-| CR Reference | wording (group) | finder, filters, Edit, flag, rung proposals as suggestions (Confirm the group), Changed this visit | read-only bands |
-| Subjects | MQ discipline | finder, filters, Edit, open picks as suggestions (Confirm this pick), Changed this visit | filter counts |
-| Courses (COCI Lookup) | local course (M-ID band) | building | read-only M-ID bands, SkyView link |
+| Exhibits | credential | finder, filters with counts, bands, kept groups, suggested folds, Re-point, waiting, flag, Re-analyze, tiles from the Commons row | its suggestions and changed set onto the engine's slot |
+| CR Reference | wording (group) | finder, filters with counts, Edit, flag, rung proposals as suggestions (Confirm the group), Selected, Changed this visit | read-only bands |
+| Subjects | MQ discipline | finder, filters with counts, Edit, open picks as suggestions (Confirm this pick), Selected, Changed this visit | |
+| Courses (COCI Lookup) | local course (M-ID band) | finder, filters with counts, read-only M-ID bands, Open in SkyView | bands from the spec's `groupOf(r)` |
 | Program Requirements | program | finder, filters with counts | read only |
 
 ## Next, one PR each (Fable's ranking)
@@ -93,8 +93,12 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
    Subjects open picks read *Suggested picks*, shown under every filter since they are few. **A suggestion never
    proposes a collision:** an open pick whose code another MQ discipline holds is a call for a person. Exhibits keeps
    its own suggestions and changed set until it moves onto the slot.
-2. **The filter vocabulary with counts in the engine** (Program Requirements' count getter generalized) and the
-   status-line words.
+2. **Landed (S544): the filter words carry their counts, from the engine.** Each count is the rows that filter keeps
+   over every row, the finder and the column boxes aside; the engine counts by the filter's own pass unless the tab
+   hands `counts()` from a build that already counted (Program Requirements, Courses). A filter whose data is unread
+   shows no count, never a 0 (`uncounted(id)`; the Exhibits List's suggested folds, outcomes matches, flags and
+   waiting folds until their files arrive). The words refresh with the table, so a save or a tick moves them.
+   *Selected* is the engine's on every List. The status-line words stay each tab's, already in the norm's shape.
 3. **Bands from a spec `groupOf(r)`** with no AI order file, read-only where the spec has no `save`; and **filter
    before sort** in `listRows` (141,738 rows would sort on every keystroke). Courses then hand-rolls no banding.
 

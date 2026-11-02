@@ -77,7 +77,8 @@ function tab(opts) {
 const tick = () => new Promise((r) => setTimeout(r, 0));
 async function settle() { for (let i = 0; i < 12; i++) await tick(); }
 function rows(d) { return Array.from(d.querySelectorAll(".crl-table tbody tr:not(.crl-editrow):not(.crl-band)")); }
-function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) => txt(b) === t); }
+/* A filter word carries its count, "Decided (2)"; a word is found by its label either way. */
+function words(d, t) { return Array.from(d.querySelectorAll("button")).find((b) => txt(b) === t || txt(b).replace(/ \([\d,]+\)$/, "") === t); }
 function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
 
 (async function () {

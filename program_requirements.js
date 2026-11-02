@@ -3701,13 +3701,10 @@
         findLabel: "Find in the list" },
       state: listState, rows: function () { var m = listBuild(); return m ? m.rows : []; }, cols: listCols,
       key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: render,
-      head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, drawer: listDrawer
+      head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, drawer: listDrawer,
+      /* Each filter word carries its count, read from the same build as the rows; the engine writes them. */
+      filters: LIST_FILTERS, counts: function () { var m = listBuild(); return m ? m.counts : {}; }
     };
-    /* Each filter word carries its count, read from the same build as the rows. */
-    Object.defineProperty(spec, "filters", { enumerable: true, get: function () {
-      var m = listBuild(), n = m ? m.counts : {};
-      return LIST_FILTERS.map(function (f) { return [f[0], f[1] + (n[f[0]] != null ? " (" + fmt(n[f[0]]) + ")" : "")]; });
-    } });
     return spec;
   }
   function listApi() {

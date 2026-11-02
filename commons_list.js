@@ -68,6 +68,15 @@
 //                      adds its own saves with api.markChanged(keys), each such row reads "changed this visit" under its
 //                      title, and the filter id "changed" keeps them. A new visit drops it with the state.
 //                      The Exhibits List keeps its own suggestions and changed set (S542) and sets neither.
+//   counts             Each filter word carries its count (the List norms: "each with its count"): the rows its filter
+//                      keeps over every row, the finder and the column boxes aside. Left out, the engine counts every
+//                      filter by its own pass. counts() -> { id: n } hands the tab's own, from a build that already
+//                      counted them (Program Requirements, Courses); an id it leaves out or nulls shows no count, and the
+//                      engine still counts the ids it owns. counts: false shows none.
+//   uncounted(id)      true while a filter's data is unread (the Exhibits List's suggested folds before the AI sort's
+//                      file): its word shows no count, never a 0 a reader takes for empty (S343).
+// The engine owns three filter ids whatever the spec: "selected" (the rows ticked this visit), and "suggested" and
+// "changed" when the spec sets those hooks. The filter words refresh with the table, so a save moves their counts.
 //
 // The sort: the rows are filtered first, then sorted on ranks (each level's distinct values sorted once with
 // localeCompare, so a comparison is two numbers), the same order comparing the values pairwise gave (S542: on the
@@ -229,6 +238,45 @@
       return bandMemo;
     }
     var sortMemo = null, hayMemo = null, narrowMemo = null, findTimer = null;
+    /* The filter word's own test, the finder and the column boxes aside: the engine's ids, then the spec's pass. */
+    function filterOk(r, L) {
+      if (L.f === "selected" && !L.sel[K(r)]) return false;
+      if (L.f === "suggested" && S.suggest && !listSuggestion(r)) return false;
+      if (L.f === "changed" && S.changed && L.changed.indexOf(K(r)) === -1) return false;
+      return !S.filterPass || S.filterPass(r, L);
+    }
+    function engineOwns(id) { return id === "selected" || (id === "suggested" && !!S.suggest) || (id === "changed" && !!S.changed); }
+    /* Each filter's count over every row: the tab's where it hands them, the engine's own pass otherwise. */
+    function listFilterCounts() {
+      var out = {};
+      if (S.counts === false || !S.filters || !S.filters.length) return out;
+      var L = listState(), all = S.rows() || [], given = typeof S.counts === "function" ? (S.counts() || {}) : null, was = L.f;
+      try {
+        S.filters.forEach(function (f) {
+          var id = f[0];
+          if (S.uncounted && S.uncounted(id)) return;
+          if (given && !engineOwns(id)) { if (given[id] != null) out[id] = given[id]; return; }
+          L.f = id;
+          for (var i = 0, n = 0; i < all.length; i++) if (filterOk(all[i], L)) n++;
+          out[id] = n;
+        });
+      } finally { L.f = was; }
+      return out;
+    }
+    function listFilterBar() {
+      var L = listState(), n = listFilterCounts();
+      var fl = el("div", { cls: P + "filters", id: P + "filters", role: "group", "aria-label": "Show" });
+      S.filters.forEach(function (f) {
+        var label = f[1] + (n[f[0]] != null ? " (" + fmt(n[f[0]]) + ")" : "");
+        if (f[0] === L.f) fl.appendChild(el("span", { cls: CL.on, "aria-current": "true", text: label }));
+        else fl.appendChild(word(label, function () {
+          L.f = f[0]; L.limit = LIST_LIMIT;
+          var p = S.onFilter ? S.onFilter(f[0], api) : null;
+          if (p && p.then) p.then(render, render); else render();
+        }));
+      });
+      return fl;
+    }
     function listRows() {
       var L = listState(), q = listFold(L.q.trim());
       var levels = L.sort.length ? L.sort : [{ col: 0, dir: 1 }];
@@ -250,9 +298,7 @@
         return h;
       }
       function keep(r) {
-        if (L.f === "suggested" && S.suggest && !listSuggestion(r)) return false;
-        if (L.f === "changed" && S.changed && L.changed.indexOf(K(r)) === -1) return false;
-        if (S.filterPass && !S.filterPass(r, L)) return false;
+        if (!filterOk(r, L)) return false;
         for (var i = 0; i < cfs.length; i++) if (String(cfs[i][0].v(r)).toLowerCase().indexOf(cfs[i][1]) === -1) return false;
         if (!q) return true;
         var h = hayOf(r);
@@ -274,7 +320,8 @@
         if (!sortMemo || sortMemo.all !== all || sortMemo.n !== all.length || sortMemo.sig !== sig) sortMemo = { all: all, n: all.length, sig: sig, rows: sortRows(all, levels, bi) };
         // Typing on: a finder that only grew keeps a subset of what it kept, so it filters that (every other filter
         // the same).
-        var base = sig + "|" + L.f + "|" + JSON.stringify(L.cf) + "|" + Object.keys(L.sgDone).length + "|" + L.changed.length,
+        var base = sig + "|" + L.f + "|" + JSON.stringify(L.cf) + "|" + Object.keys(L.sgDone).length + "|" + L.changed.length
+          + "|" + (L.f === "selected" ? Object.keys(L.sel).join("\u0001") : ""),
           pool = sortMemo.rows, N0 = narrowMemo;
         if (N0 && N0.from === sortMemo.rows && N0.base === base && N0.q && q.indexOf(N0.q) === 0) pool = N0.rows;
         var kept = pool.filter(keep);
@@ -497,18 +544,7 @@
         clearTimeout(findTimer); findTimer = setTimeout(redrawList, S.findDelay);
       });
       bar.appendChild(q);
-      if (S.filters && S.filters.length) {
-        var fl = el("div", { cls: P + "filters", role: "group", "aria-label": "Show" });
-        S.filters.forEach(function (f) {
-          if (f[0] === L.f) fl.appendChild(el("span", { cls: CL.on, "aria-current": "true", text: f[1] }));
-          else fl.appendChild(word(f[1], function () {
-            L.f = f[0]; L.limit = LIST_LIMIT;
-            var p = S.onFilter ? S.onFilter(f[0], api) : null;
-            if (p && p.then) p.then(render, render); else render();
-          }));
-        });
-        bar.appendChild(fl);
-      }
+      if (S.filters && S.filters.length) bar.appendChild(listFilterBar());
       wrap.appendChild(bar);
       if (S.afterBar) S.afterBar(wrap, api);
       if (L.note) wrap.appendChild(el("p", { cls: CL.note, role: "status", text: L.note }));
@@ -522,6 +558,9 @@
       if (!host) { render(); return; }
       while (host.firstChild) host.removeChild(host.firstChild);
       host.appendChild(listTable());
+      // The filter words' counts follow the table (a save, a tick, a Dismiss moves them); focus is in the table here.
+      var fl = document.getElementById(P + "filters");
+      if (fl && S.filters && S.filters.length && !fl.contains(document.activeElement)) fl.parentNode.replaceChild(listFilterBar(), fl);
       listSyncGrips();
     }
     function hasCellEdit() { return listCols().some(function (c) { return !!c.edit; }); }
@@ -918,7 +957,11 @@
       var n = Object.keys(listState().sel).length;
       return n ? fmt(n) + " selected" : "";
     }
-    function listCountSel() { var n = document.getElementById(P + "selcount"); if (n) n.textContent = listSelWords(); }
+    function listCountSel() {
+      var n = document.getElementById(P + "selcount"), fl = document.getElementById(P + "filters");
+      if (n) n.textContent = listSelWords();
+      if (fl && !fl.contains(document.activeElement)) fl.parentNode.replaceChild(listFilterBar(), fl);
+    }
     /* A cell opens its drill-down in a drawer under the row (Sam, 2026-11-01: "how many of these fields can you make
        drill downs for on click?"; "build the open in detail as you propose"). A second press closes it. */
     function listOpener(r, col, text, isOpen) {

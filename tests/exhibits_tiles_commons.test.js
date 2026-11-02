@@ -271,7 +271,7 @@ function fmt(n) { return Number(n).toLocaleString("en-US"); }
   check("a count the List holds a filter for names it", lb && /Opens the List, filtered to Unreviewed/.test(lb.getAttribute("aria-label")));
   lb.click(); await settle(); await settle();
   check("and opens the List filtered to it", t.M._state.view === "list" && t.M._state.ls && t.M._state.ls.f === "unreviewed"
-    && txt(t.d.querySelector('[aria-current="true"]')) === "Unreviewed");
+    && /^Unreviewed( \([\d,]+\))?$/.test(txt(t.d.querySelector('[aria-current="true"]'))));
   t = await boot({ hash: "#exhibits/list/unreviewed" });
   check("#exhibits/list/<filter> opens the List on that filter", t.M._state.view === "list" && t.M._state.ls.f === "unreviewed");
   t = await boot({ hash: "#exhibits/list/nowhere" });
