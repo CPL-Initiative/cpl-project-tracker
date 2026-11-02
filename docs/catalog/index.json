@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 572,
+   "count": 573,
    "docs": [
     {
      "created": "2026-08-14",
@@ -7857,6 +7857,24 @@
      "updated": "2026-07-29"
     },
     {
+     "created": "2026-11-02",
+     "governs": [
+      "kb/migrations/2026-11-02_college_short_names.sql",
+      "kb/college_identity/2026-11-02_short_names_seed.md"
+     ],
+     "path": "docs/kb-notes/methodology-probe-a-live-trigger-inside-a-failing-statement.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "supabase",
+      "testing",
+      "college-identity"
+     ],
+     "title": "Probe a live trigger inside a statement made to fail, so the database shows what it would write and keeps nothing",
+     "type": "methodology",
+     "updated": "2026-11-02"
+    },
+    {
      "created": "2026-10-04",
      "governs": [
       "kb/_program_sequence_ppm.py"
@@ -10846,6 +10864,8 @@
      "created": "2026-06-02",
      "governs": [
       "kb/college_short_names.json",
+      "kb/_apply_college_short_names.py",
+      "kb/migrations/2026-11-02_college_short_names.sql",
       "kb/_seed_college_short_names.py",
       "college_short_names.js"
      ],
@@ -10860,7 +10880,7 @@
      ],
      "title": "Reference \u2014 College short-name dataset + resolver",
      "type": "reference",
-     "updated": "2026-06-02"
+     "updated": "2026-11-02"
     },
     {
      "created": "2026-08-10",
@@ -16394,8 +16414,26 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 513,
+   "count": 514,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 546,
+     "path": "docs/session_546_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "commons-list",
+      "college-identity",
+      "short-names",
+      "credential-registry"
+     ],
+     "title": "Session 546 handoff: the List norms complete, college short names edited in the College Identity tab",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25173,5 +25211,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1340
+ "total": 1342
 }

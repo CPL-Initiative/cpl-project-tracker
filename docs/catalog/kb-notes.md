@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-572 document(s).
+573 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -417,6 +417,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Paginate every PostgREST read that can outgrow 1,000 rows](../kb-notes/methodology-paginate-postgrest-reads.md) | methodology | published | 2026-07-08 | 2026-10-13 |
 | [Parse PDF column grids positionally (x/y anchors), never from linearized text — the MQ Index mis-bins](../kb-notes/methodology-positional-pdf-column-grids.md) | methodology | published | 2026-07-11 |  |
 | [Populate-on-file-drop seam for grounded reference data](../kb-notes/methodology-populate-on-file-drop-seam-for-grounded-reference-data.md) | methodology | published | 2026-07-29 | 2026-07-29 |
+| [Probe a live trigger inside a statement made to fail, so the database shows what it would write and keeps nothing](../kb-notes/methodology-probe-a-live-trigger-inside-a-failing-statement.md) | methodology | published | 2026-11-02 | 2026-11-02 |
 | [Probe the class before calling a refusal local](../kb-notes/methodology-probe-the-class-before-calling-a-refusal-local.md) | methodology | published | 2026-10-04 | 2026-10-04 |
 | [Probing the MAP Custom Report API for a view's real columns (value-signature method)](../kb-notes/methodology-map-api-value-signature-probe.md) | methodology | published | 2026-06-30 |  |
 | [Promoted-record ghosts in candidate worklists](../kb-notes/methodology-promoted-record-ghosts-in-worklists.md) | methodology | published | 2026-06-15 | 2026-06-15 |
@@ -565,7 +566,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [Recovering screen/computer-use reach on Claude Code (web) — what this environment can and can't do](../kb-notes/reference-claude-code-web-environment-reach.md) | reference | published | 2026-06-04 | 2026-06-04 |
 | [Reference — AP credit is a GE-Area mapping (the canonical anchor for AP/standardized-exam credentials)](../kb-notes/reference-ap-credit-ge-area-canonicalization.md) | reference | published | 2026-06-04 | 2026-06-04 |
 | [Reference — CCCCO HUMANS principles for responsible AI](../kb-notes/reference-humans-principles.md) | reference | published | 2026-06-25 | 2026-06-25 |
-| [Reference — College short-name dataset + resolver](../kb-notes/reference-college-short-names.md) | reference | published | 2026-06-02 | 2026-06-02 |
+| [Reference — College short-name dataset + resolver](../kb-notes/reference-college-short-names.md) | reference | published | 2026-06-02 | 2026-11-02 |
 | [Reference — CPL at the pre-apprenticeship stage (three mechanisms, and the CSU catch)](../kb-notes/reference-cpl-at-the-pre-apprenticeship-stage.md) | reference | published | 2026-08-10 | 2026-08-10 |
 | [Reference — Dashboard UI design system (tokens + canonical components)](../kb-notes/reference-ui-design-system.md) | reference | published | 2026-06-04 | 2026-10-09 |
 | [Reference — Funding priority metrics, measurability map (2026-07-03 metric set)](../kb-notes/reference-funding-metrics-measurability.md) | reference | published | 2026-07-03 | 2026-07-03 |

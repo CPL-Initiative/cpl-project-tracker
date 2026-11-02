@@ -66,12 +66,12 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lane | Docs | Catalog |
 |---|---:|---|
 | Doctrine (behavior-shaping) | 5 | [`catalog/doctrine.md`](catalog/doctrine.md) |
-| KB notes | 572 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
+| KB notes | 573 | [`catalog/kb-notes.md`](catalog/kb-notes.md) |
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 513 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1340** | |
+| Session handoffs | 514 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1342** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-02 (Sam's session, SkyWhirlpool S545): the List norms' step 3 (CR wordings in read-only bands by group, `bands.order`; #2679) and Exhibits on the engine's suggestion slot (#2680), so all three steps have landed; the college short-name editor (`public.college_short_names`, the College Identity tab's Short name column, the daily fold `kb/_apply_college_short_names.py`, DR-30; #2681); KB note `methodology-probe-a-live-trigger-inside-a-failing-statement`.
 - 2026-11-02 (Sam's session, SkySombrero S544): the List norms' steps 1 and 2 in the engine (suggestions with Confirm and Dismiss, Changed this visit, filter counts, Selected; #2673, #2675); the Commons status rebuilt nightly after the procedures (#2674); City College of San Francisco and College of the Desert back in the funding join on Sam's Sheet 155 *restore* (#2676); new KB note methodology-a-name-a-join-keys-on-is-a-key.
 - 2026-11-02 (Sam's session, SkyAndromeda S543): Sierra answers which colleges have not met the 75 percent JST condition from one aggregate funding-note section and names the statewide JST count (#2666, deployed on Sheet 154 *deploy*); the credential reference's statewide flag counts the Fact Sheet's 152 (#2667, *count*, ESS outcome 2 70 to 72 colleges); S542's five PRs merged; new KB note methodology-a-per-entity-index-cannot-answer-which-ones.
 - 2026-11-01 (Sam's session, SkyTriangulum S542): kept groups and moves in the Exhibits List (#2655); one List engine, `commons_list.js`, with Lists for the CR Reference (flag, #2659), Subjects and Program Requirements (#2656-#2660); Lists and the Catalog Commons span the window (#2661, #2662); a read-only SLO grouping test (lessons, the vault report).
@@ -129,4 +130,3 @@ Authoritative external sources we've cached:
 - 2026-11-01 (CPL Queue routine, SkySilverberry S539): Sam's Sheet 151 *vpbs* applied (VP Administrative Services is VPBS; four held rows loaded through a new partial load that marks nobody gone); the contacts harvest's third read, 37 people at 10 colleges (#2641).
 - 2026-11-01 (CPL Queue routine, SkyWolfberry S538): the contacts harvest's second read, 12 people for 6 colleges applied with a receipt, and the batch ordered by the last read so empty sites stop leading it (#2640).
 - 2026-11-01 (Exhibits tab build, SkyTeaberry): Sam answered Open Asks Sheet 150 (IB fold kept; CLEP fold); CLEP on the AP and IB pattern, brand-family's `clep` lane and the reference fold, 48 CLEP names into 35 with 36 live rows moved (#2633); the CER lane trimmed under its budget.
-- 2026-11-01 (Exhibits tab build, SkyInkberry): IB on the AP pattern, brand-family's `ib` lane and the reference fold, 49 IB credentials into 24 with one issuer name (#2632); Open Asks Sheet 150 (the IB fold carried out, CLEP's names held); the CER lane trimmed under its budget.

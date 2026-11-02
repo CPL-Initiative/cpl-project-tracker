@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-513 document(s).
+514 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 546 | [Session 546 handoff: the List norms complete, college short names edited in the College Identity tab](../session_546_handoff.md) | 2026-11-02 |
 | 545 | [Session 545 handoff: the List engine owns suggestions and filter counts, two colleges back in the funding join](../session_545_handoff.md) | 2026-11-02 |
 | 544 | [Session 544 handoff: Sierra answers which colleges miss 75 percent, the statewide flag counts 152, S542's queue merged](../session_544_handoff.md) | 2026-11-02 |
 | 543 | [Session 543 handoff: kept groups, one List engine for the Catalog Commons, full width, the SLO test](../session_543_handoff.md) | 2026-11-01 |

@@ -400,3 +400,27 @@ FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270
 **Run a long local test loop in its own worktree.** A loop over 33 suites ran in the checkout while the session switched branches under it, so its results could not be trusted and it was stopped. `git worktree add` in the scratchpad, with `node_modules` linked, keeps the loop on one commit.
 
 **Never put an unmeasured number in a PR body, even as an example.** #2675's first body showed *Needs a decision (156)* and *Decided (30)* as examples; neither was measured. It was corrected to *(n)* within minutes. An example figure in a PR reads as a finding.
+
+## S545 SkyWhirlpool (2026-11-02): the List norms' step 3, and Exhibits on the engine's slot
+
+**What shipped.** #2679: step 3 was half done (#2670 had built the engine's read-only `bands` hook for the Courses List
+and made `listRows` filter before it sorts), so the engine gained `bands.order(key, members)`, the text bands sort by
+when the key is an internal one, and the CR List bands its 2,344 wordings by group: 156 bands of two or more, each named
+and ordered by the group's reference, a group of one under *Single wording*, read only. #2680: the Exhibits List's
+spelling-twin folds and changed set moved onto the engine's suggestion slot, so all three steps have landed and every
+folding List takes suggestions, the changed set, filter counts and bands from the engine.
+
+**Order bands by what the reader sees, not by the key.** The CR group key is a normalized string ("engine performance");
+ordered by key, a band named *Engine Performance (3 to 5 units)* sorted before *4 hours in Welding*. The test pins the
+reference order with exactly that pair, and fails when `order` is removed.
+
+**Two keys that read alike need two places.** Ranking band keys with the shared text ranker gave keys equal under the
+collation one rank, so their rows would interleave and the band header would alternate. Each key now takes its own
+place, ties broken by the raw key.
+
+**Read a handoff's next step against the code before building it.** Handoff 545 described step 3 as "so the Courses List
+stops hand-rolling its M-ID bands"; the Courses List had used the engine's hook since #2670 (handoff 544 said "half
+done"). The remaining work was CR's bands and the norms note's bookkeeping.
+
+**Two PRs that edit adjacent lines of one table wait for each other.** The Exhibits code went on a sibling branch while
+#2679 ran CI; its docs waited for the merge, because both edit the norms note's *Where each List stands* rows.

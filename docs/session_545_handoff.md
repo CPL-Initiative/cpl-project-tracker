@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 544 (SkySombrero, Sam's session, live from about 01:32Z 2026-11-02)
 tags: [handoff, commons, commons-list, funding, college-identity, sierra, jst]
 status: current
+superseded: true
+superseded_by: session_546_handoff.md
 ---
 
 # You are Session 545
