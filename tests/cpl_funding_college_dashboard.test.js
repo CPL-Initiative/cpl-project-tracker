@@ -364,9 +364,11 @@ function D_names(T) { return H.D.colleges.map((c) => c.college); }
   const corow = qd.querySelector(".cf-conds .cplfund-corow");
   // An accepted request (the fixture's QUAL, confirmed since Sam's 2026-10-27 review
   // gate; tests/cpl_funding_optin.test.js covers Accept and Deny on a waiting one).
-  check("5a: an accepted request shows who sent it and Revoke alone",
+  // Email reopens the acceptance email beside Revoke (Sam, 2026-11-02); it writes nothing.
+  check("5a: an accepted request shows who sent it, Email and Revoke",
     !!corow && /Confirmed for Sample Attester \(VPAA\) · attester@example\.edu · 09-28-2026/.test(corow.textContent) &&
-    corow.querySelectorAll("button").length === 1 && corow.querySelector("button[data-optinrevoke]").textContent === "Revoke");
+    Array.from(corow.querySelectorAll("button")).map((b) => b.textContent).join(",") === "Email,Revoke" &&
+    corow.querySelector("button[data-optinrevoke]").textContent === "Revoke");
   check("5b: no CO Confirm and no Mark confirmed anywhere in the table",
     !doc.querySelector("#cplFundTable [data-optinconfirm]") && !doc.querySelector("#cplFundTable [data-optin]") &&
     !/Mark confirmed/.test(doc.getElementById("cplFundTable").textContent));
