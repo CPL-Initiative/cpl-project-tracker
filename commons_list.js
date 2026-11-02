@@ -35,7 +35,8 @@
 //                        save(sess, r, kind, value, sites) -> Promise<bool>, savedTail(kind, n) }: Find and replace.
 //   session()          Resolves to the signed-in reviewer, or null.
 //   groups             { url, none, item, saved(r), save(keys, value) -> Promise, facts(members), extra: { test(r),
-//                        words(n) }, sortLine(L) }: the AI sort and kept groups.
+//                        words(n) }, sortLine(L) }: the AI sort and kept groups. api.groupIndex() hands a tab every
+//                        row's group as the List draws it ({ by: key -> { key }, groups: key -> { name, isGroup } }).
 //   bands              { key(r), by, label, on, none, name(key, members), facts(key, members), acts(key, members, h) }:
 //                      bands by a value the row carries itself, read only (the Courses List bands its local courses by
 //                      M-ID, the Common Course Reference's common course). A key two or more rows share gets a band
@@ -1048,6 +1049,8 @@
     var api = {
       render: renderList, redraw: redrawList, state: listState, rows: listRows, csv: listCsv, fold: listFold, cellNote: listCellNote,
       aiLoad: function () { return G ? listAiLoad() : Promise.resolve(null); }, filterBy: listFilterBy, colIndex: listColIndex,
+      // Every row's group as the List draws it (kept groups over the night's order), or null before the order is read.
+      groupIndex: function () { return G && listState().aiData ? listGroupIndex() : null; },
       frSwap: frSwap, frClean: frClean, word: word, el: el, fmt: fmt, stamp: stamp, LIMIT: LIST_LIMIT, NO_GROUP: NO_GROUP
     };
     return api;
