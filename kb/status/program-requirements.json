@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-02T08:32:46Z",
-  "session": 547,
-  "moniker": "SkyCartwheel",
+  "written_at": "2026-11-02T10:36:25Z",
+  "session": 548,
+  "moniker": "SkyTadpole",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_548_handoff.md",
+  "handoff": "docs/session_549_handoff.md",
   "next_step": {
     "title": "Santa Ana's SLO trial, then the next college",
-    "text": "Golden West's course outcomes loaded tonight, 568 rows. The next preparation run is Santa Ana's 12-page trial on its new course index; then the helper names the next college by articulations."
+    "text": "Today's two SLO runs were spent before this session, so Santa Ana's 12-page trial on its new course index is the next UTC day's preparation run; the helper then names the next college by articulations. Monterey Peninsula's last 14 records wait for a session with room for their page reads."
   },
   "calls": [
     {
@@ -191,8 +191,8 @@
   },
   "changes": [
     {
-      "at": "2026-11-02T08:20:35Z",
-      "text": "Golden West College's course outcomes loaded: 568 rows inserted (load 41412025040), the course_outcomes table at 8,018 rows for ten colleges."
+      "at": "2026-11-02T10:50:00Z",
+      "text": "No SLO run tonight: the UTC day's preparation run and load had already gone (Santa Ana's index, Golden West's load). Monterey Peninsula's 14 remaining records were grouped and left for a session with room: three transfer degrees, ASL, two noncredit hour counts, three coverage and three incomplete, each its own shape."
     }
   ],
   "headline": [
@@ -356,7 +356,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-02T09:12:00Z"
+    "at": "2026-11-02T11:12:00Z"
   },
   "harvest": {
     "day": "2026-11-02",
