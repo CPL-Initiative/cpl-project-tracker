@@ -584,7 +584,9 @@
     ".cmn-card-needs { border-top:4px solid var(--cmn-gold); }",
     ".cmn-card-head { display:flex; justify-content:space-between; align-items:flex-start; gap:12px; }",
     ".cmn-card-name { margin:0; font-family:var(--cmn-serif); font-size:1.3rem; line-height:1.2; color:var(--cmn-heading); }",
-    ".cmn-card-name a { color:inherit; }",
+    ".cmn-card-name a { color:inherit; display:inline-block; min-height:24px; }",
+    // WCAG 2.2 target size: a link in a card's name or its words row is at least 24px tall (the a11y pass, S552).
+    ".cmn-card-links a, .cmn-acts a, .cmn-band-list a, .cmn-card-ask a { display:inline-block; min-height:24px; line-height:24px; }",
     ".cmn-pill { display:inline-block; white-space:nowrap; padding:3px 10px; border-radius:999px; background:var(--cmn-pill-bg); color:var(--cmn-pill-fg); font-size:.78rem; font-weight:700; }",
     ".cmn-pill-needs { background:var(--cmn-ask-bg); color:var(--cmn-ask-fg); }",
     ".cmn-card-what { margin:0; color:var(--cmn-muted); font-size:.92rem; line-height:1.45; }",
