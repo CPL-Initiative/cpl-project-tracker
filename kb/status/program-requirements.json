@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-02T14:12:57Z",
-  "session": 551,
-  "moniker": "SkyWhirlpool",
-  "run": "the CPL Queue routine",
+  "written_at": "2026-11-02T15:01:14Z",
+  "session": 552,
+  "moniker": "SkyCentaurus",
+  "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_552_handoff.md",
+  "handoff": "docs/session_553_handoff.md",
   "next_step": {
     "title": "Santa Ana's full SLO read",
     "text": "Santa Ana's trial parsed 12 of 12, so its four-part full read is the first step 11 run of 2026-11-03 (UTC); the helper then names the next trial or index. Monterey Peninsula's last 14 records still wait for a session with room for their page reads."
@@ -190,6 +190,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-02T15:10:00Z",
+      "text": "The Allan Hancock and Antelope Valley presidents' emails loaded through the contacts apply as a partial file; the Commons' first view is the CPL Commons, locked by Sam, with the look for its port on Sheet 158."
+    },
     {
       "at": "2026-11-02T14:10:00Z",
       "text": "The contacts harvest read each refused college's catalog, as Sam asked on Sheet 156; every route refused or printed nothing, so Sheet 157 asks for his upload. The apply now fills a blank email when the name matches."

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-520 document(s).
+521 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 553 | [Session 553 handoff: the Catalog Commons is the CPL Commons, the mock is locked, Sheet 158 asks for the look and the label](../session_553_handoff.md) | 2026-11-02 |
 | 552 | [Session 552 handoff: the contacts harvest's alternate routes refuse too; Sheet 157 asks for Sam's upload](../session_552_handoff.md) | 2026-11-02 |
 | 551 | [Session 551 handoff: the contacts harvest's first full pass is done](../session_551_handoff.md) | 2026-11-02 |
 | 550 | [Session 550 handoff: Santa Ana's SLO reader fix, the eighth contacts read](../session_550_handoff.md) | 2026-11-02 |

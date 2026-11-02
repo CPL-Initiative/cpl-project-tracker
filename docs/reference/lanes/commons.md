@@ -47,23 +47,23 @@ together and places them in some order of priority and completion and known issu
 
 ## Status
 
-**The CCC Commons, the working name (Sam, S552, 2026-11-02).** *"Let's call the Catalog Common the CCC Commons for now
-and you can play off of that for the card titles and focus elements."* The first-view mock
-(https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, a Design canvas, version 7; source in
-`CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/`) now reads **CCC Commons**, spelled out in its lede (*eight
-common references the California Community Colleges keep together*), and each of its eight cards is a **Common**
+**The CPL Commons, the working name (Sam, S552, 2026-11-02).** *"Let's call the Catalog Common the CCC Commons for now
+and you can play off of that for the card titles and focus elements."*, then, on seeing it: *"Let's go with these designs for now. I'm chickening out on the CCC Commons...let's go with CPL Commons for now as less of a wholesale take over of the system:)"* The first-view mock
+(https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, a Design canvas, version 8, locked by Sam; source in
+`CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/`) now reads **CPL Commons**, with its lede (*eight common references the
+California Community Colleges keep together for credit for prior learning*), and each of its eight cards is a **Common**
 reference, this tab's own row pattern with "Reference" dropped: Common Programs, Common Subjects, Common Exhibits,
 Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills. The decisions band,
 the sort note, the skip link and the footer carry the same words; the Programs card opens CPL Pathways. "Register"
 (S551's advice) is retired. The mock is in Malone's CPL/AI look at Sam's ask (S551), which is the public pages' look,
 so the port into this tab waits on his call on the look.
 
-**NEEDS SAM (Open Asks Sheet 158, S552, 2026-11-02): lock the CCC Commons first view for the port, and in which look;
-and the side-menu label.** (1) The mock at version 7 carries his naming; when he says it is locked, the port into this
-tab begins. First Light is the rule for every COBI tab and Malone's CPL/AI look the one departure (the public library
+**NEEDS SAM (Open Asks Sheet 158, S552, 2026-11-02): the CPL Commons first view's port, in which look; and the side-menu
+label.** (1) Sam locked the design at version 8 (*"Let's go with these designs for now"*), so the port into this tab
+is next. First Light is the rule for every COBI tab and Malone's CPL/AI look the one departure (the public library
 page, Sierra, the adoption page), so a Commons tab in Malone's look is a doctrine change only he makes; the layout
 (the decisions band, one card per common reference, the filters) ports into either. (2) The side menu still reads
-*Catalog Commons*: `cobi_nav` row `commons`, his own row (updated_by slee@cccco.edu, 2026-11-01). Renaming it to CCC
+*Catalog Commons*: `cobi_nav` row `commons`, his own row (updated_by slee@cccco.edu, 2026-11-01). Renaming it to CPL
 Commons is one Admin tab edit, or a guarded UPDATE with a receipt on his word.
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
@@ -122,16 +122,7 @@ stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
 - The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
   source `docs/visuals/2026-10-18-commons-mockup.html`).
 
-**Step 1 landed (S419, #2237, merged 19:28Z):** the Progress view the Program Requirements tab drew since S343 is
-drawn by `commons_progress.js`, the shared module: the renderer, `readStatus()`, the milestone arithmetic, the shared
-status words, the time words and the Progress CSS. A project brings a spec (its words, `MILESTONES`, `PARTS`, `WHOLE`,
-a declarative `HEADLINE`, its read names), a context from its own live reads and a host lending its `section()`,
-`goControl()` and call-card helpers; a host's classes are substituted into the CSS, one style per host; a spec with no
-whole measure draws no band; a failed module load leaves the other views drawing. Nothing changed on screen:
-`tests/program_requirements.test.js` passes its 417 checks with the module loaded first; `tests/commons_progress.test.js`
-(30 checks) guards what only a shared module can get wrong. The status file is `kb/status/program-requirements.json`,
-the first of one per common reference (`scripts/queue_status.py --project`); checkpoint step 12 names it. Lessons:
-`docs/commons_lessons.md`.
+**Steps 1 and 2 (S419 #2237, S423): the shared Progress module `commons_progress.js` and the five run logs under `kb/status/`.** The record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*).
 
 **What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
 list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live
@@ -154,8 +145,6 @@ Progress module (`commons_progress.js`, S419, #2237), is on main; the Commons ta
 20:10Z word. What remains of the order: a run log per project written at checkpoints, each reference's
 Progress view (Exhibit, Course, CR, Subjects) from the module, each with its definition of complete on a
 card for Sam.
-
-**Step 2, the run logs (S423):** `kb/status/exhibit.json`, `course.json`, `cr.json` and `subjects.json` carry a session stamp, the lane's NEXT as the next step and no calls (nothing on any of the four waits on Sam); checkpoint step 12 names them, stamped with `scripts/queue_status.py --project <id> --stamp`, and refreshes the ones a run touched. A run log older than a week reads stale on the tab, which is true of a reference no session worked.
 
 **Step 3's first Progress view, Subjects (S425, cpl-project-tracker#2260).** Sam, 2026-10-19: *"Can you develop a
 dash for CSR similar to the one you created for PR? Seems like each of our Commons consolidation projects should

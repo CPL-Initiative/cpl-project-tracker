@@ -424,3 +424,36 @@ done"). The remaining work was CR's bands and the norms note's bookkeeping.
 
 **Two PRs that edit adjacent lines of one table wait for each other.** The Exhibits code went on a sibling branch while
 #2679 ran CI; its docs waited for the merge, because both edit the norms note's *Where each List stands* rows.
+
+## S552 SkyCentaurus, 2026-11-02: the CPL Commons, named twice in a quarter hour
+
+- **A working name is a working name.** Sam opened with *CCC Commons* and, on seeing it on the mock, moved to *CPL
+  Commons* (*"less of a wholesale take over of the system"*). Everything that carried the first name (the mock, the
+  lane, the vault README, the memory row, the sheet) was renamed in the same hour; the cost was low because each
+  surface named its source. A name on a shared surface (the side menu) waited on his word, which is why it is a card.
+- **Play the whole's name through the cards.** The eight cards became *Common Programs, Common Subjects, Common
+  Exhibits, Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills*: the live
+  tab's row pattern (Common Exhibit Reference, Common Course Reference, Common CR Reference, Common Subjects Reference)
+  with "Reference" dropped because the Commons says it. "Register" was retired. The focus elements (the decisions band,
+  the sort note, the skip link, the footer) carry the same words, so the page reads as one vocabulary.
+- **A hand edit on the canvas shows up as a stray style.** The Exhibits artboard's root `main` had gained
+  `position: absolute; left: 13px; top: 16px` between publishes, the trace of a drag in the editor on a fill page; the
+  republish dropped it and said so. Read the canvas again before every publish; the view context's `edits` count says
+  when someone touched it.
+- **The sheet builder's test needs a fixture per predicate.** S551's Sheet 157 predicate shipped without one, so the
+  coverage test read 29 of 30 before this run touched it; both predicates now have fixtures and the test passes 30 of 30.
+
+## Moved from the lane, 2026-11-02 (S552; the lane passed its 20,000-byte budget)
+
+**Step 1 landed (S419, #2237, merged 19:28Z):** the Progress view the Program Requirements tab drew since S343 is
+drawn by `commons_progress.js`, the shared module: the renderer, `readStatus()`, the milestone arithmetic, the shared
+status words, the time words and the Progress CSS. A project brings a spec (its words, `MILESTONES`, `PARTS`, `WHOLE`,
+a declarative `HEADLINE`, its read names), a context from its own live reads and a host lending its `section()`,
+`goControl()` and call-card helpers; a host's classes are substituted into the CSS, one style per host; a spec with no
+whole measure draws no band; a failed module load leaves the other views drawing. Nothing changed on screen:
+`tests/program_requirements.test.js` passes its 417 checks with the module loaded first; `tests/commons_progress.test.js`
+(30 checks) guards what only a shared module can get wrong. The status file is `kb/status/program-requirements.json`,
+the first of one per common reference (`scripts/queue_status.py --project`); checkpoint step 12 names it. Lessons:
+`docs/commons_lessons.md`.
+
+**Step 2, the run logs (S423):** `kb/status/exhibit.json`, `course.json`, `cr.json` and `subjects.json` carry a session stamp, the lane's NEXT as the next step and no calls (nothing on any of the four waits on Sam); checkpoint step 12 names them, stamped with `scripts/queue_status.py --project <id> --stamp`, and refreshes the ones a run touched. A run log older than a week reads stale on the tab, which is true of a reference no session worked.
