@@ -294,7 +294,9 @@ is his standing preference there too.
    instruction's step 6: no commit, no PR. It never writes MAP, the CER's files or curation rows, or a schedule.
 
 11. **The course SLO read** (Sam, 2026-11-01: *"yes to SLO hints and the nightly harvest"*; `cpl_memory`
-   `sam-slo-hints-and-nightly-harvest-2026-11-01`). **Armed: yes.** Each course's student learning outcomes, as its
+   `sam-slo-hints-and-nightly-harvest-2026-11-01`). **Armed: yes.** **And course objectives** (Sam, 2026-11-02): until the
+   reader stores them, building that is this step's first item, in the order the program requirements lane gives (*Course
+   objectives too*). Each course's student learning outcomes, as its
    public outline or catalog page prints them, go into `course_outcomes` (nine colleges, loaded 2026-10-13 and 10-14),
    the colleges that articulate the most exhibits first. The step drives the existing push-started workflows
    (`course-outline-index.yml`, `course-outcomes-read.yml`, `course-outcomes-load.yml`); none gains a schedule.
