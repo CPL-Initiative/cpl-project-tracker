@@ -745,6 +745,11 @@
     ".cplfund-searchclear { min-height: 24px; line-height: 24px; padding: 0 4px; background: none; border: 0; color: var(--accent-link); " +
       "text-decoration: underline; font: inherit; font-size: .9rem; cursor: pointer; }",
     ".cplfund-searchclear[hidden] { display: none; }",
+    // The minimum-conditions filter beside the search (Sam, 2026-11-02).
+    ".cplfund-condfilter { display: inline-flex; align-items: center; gap: 6px; font-size: .9rem; color: var(--text-strong); max-width: 100%; }",
+    ".cplfund-condfilter select { font: inherit; font-size: .9rem; min-height: 32px; max-width: 100%; padding: 2px 6px; color: var(--text-strong); " +
+      "background: var(--surface-opaque); border: 1px solid var(--border-strong); border-radius: 4px; }",
+    ".cplfund-condfilter select:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }",
     ".cplfund-table > tbody > tr.cplfund-srcrow > td { white-space: normal; text-align: left; background: var(--surface-opaque); cursor: default; }",
     ".cplfund-srcpanel { padding: 6px 4px 10px 26px; font-size: .95em; }",
     ".cplfund-srchead { margin-bottom: 4px; color: var(--text-strong); }",
@@ -3587,6 +3592,47 @@
   // The two data-backed built-ins can be hidden (✕) like the extras — reversibly,
   // via the config layers. Hiding also drops the requirement from the Elig badge
   // so the table stays consistent with the box.
+  // The noncredit share's conditions, worded as the lists print them (Sam,
+  // 2026-11-02: "I need to be able to edit Eligibility Requirements text").
+  // They were typed into requirementsList(), the one line on the list no
+  // curator could change; they resolve through the same layers now.
+  var NC_COORD_SENTENCE = "For the noncredit share of an award: a Noncredit CPL Lead named and published " +
+    "(attested in COBI until the MAP platform carries the role)";
+  var NC_TEAM_SENTENCE = "For the noncredit share of an award: a strike-team attestation renewed each year";
+  function ncCoordReqText() {
+    var v = firstDefined(SCENARIO.ncCoordLabel, SHARED.ncCoordLabel, base().nc_coord_req_label);
+    return v == null || !String(v).trim() ? NC_COORD_SENTENCE : String(v);
+  }
+  function ncTeamReqText() {
+    var v = firstDefined(SCENARIO.ncTeamLabel, SHARED.ncTeamLabel, base().nc_team_req_label);
+    return v == null || !String(v).trim() ? NC_TEAM_SENTENCE : String(v);
+  }
+  // One minimum condition's words by its ref (coord, part, nc_coord, nc_team,
+  // extra:<i>), for the public page's editor; and the write behind each.
+  function reqTextOf(ref) {
+    ref = String(ref || "");
+    if (ref === "coord") return coordLabel();
+    if (ref === "part") return partLabel();
+    if (ref === "nc_coord") return ncCoordReqText();
+    if (ref === "nc_team") return ncTeamReqText();
+    var m = /^extra:(\d+)$/.exec(ref);
+    if (m) { var x = extraReqs(); return x[Number(m[1])] == null ? null : String(x[Number(m[1])]); }
+    return null;
+  }
+  function setReqText(ref, v) {
+    ref = String(ref || "");
+    var t = String(v == null ? "" : v).replace(/\s+/g, " ").trim();
+    if (ref === "coord") return setCoordLabel(t);
+    if (ref === "part") return setPartLabel(t);
+    if (ref === "nc_coord") return setNcCoordLabel(t);
+    if (ref === "nc_team") return setNcTeamLabel(t);
+    var m = /^extra:(\d+)$/.exec(ref);
+    if (m) {
+      var x = extraReqs(), i = Number(m[1]);
+      // An emptied extra keeps its slot: removing a condition is the tab's Remove.
+      if (i >= 0 && i < x.length && t) { x[i] = t; setExtraReqs(x); }
+    }
+  }
   function coordShown() { return !firstDefined(SCENARIO.coordHidden, SHARED.coordHidden, base().coord_req_hidden); }
   function partShown() { return !firstDefined(SCENARIO.partHidden, SHARED.partHidden, base().participation_req_hidden); }
   // "2027-28" → "2028-29" (the close-out year one past the window).
@@ -3679,6 +3725,8 @@
   function setFeederMetric(v) { activeOverride().feederMetric = v; persistActive(); }
   function setDisbursement(v) { activeOverride().disbursement = v === "frontload" ? "frontload" : "even"; persistActive(); }
   function setDeadline(v) { activeOverride().participationDeadline = String(v || "").trim(); persistActive(); }
+  function setNcCoordLabel(v) { activeOverride().ncCoordLabel = v; persistActive(); }
+  function setNcTeamLabel(v) { activeOverride().ncTeamLabel = v; persistActive(); }
   function setExtraReqs(list) { activeOverride().extraReqs = (list || []).slice(); persistActive(); }
   function setCoordLabel(v) { activeOverride().coordLabel = v; persistActive(); }
   function setPartLabel(v) { activeOverride().partLabel = v; persistActive(); }
@@ -3799,6 +3847,7 @@
     about:         { label: "the introduction", rows: 9, marks: true },
     reading:       { label: "Reading the funding", rows: 5, marks: true },
     elig_intro:    { label: "the eligibility introduction", rows: 3, marks: true },
+    req_after:     { label: "the sentence under the minimum conditions", rows: 3, marks: true },
     nc_rules:      { label: "the noncredit funding rules", rows: 7, marks: true },
     college_intro: { label: "the institution table introduction", rows: 4, marks: true },
     timing_note:   { label: "the timeline note", rows: 2, marks: true },
@@ -4298,6 +4347,8 @@
     if (key === "timing_note" || key === "x_timing_note") return TIMING_NOTE_DEFAULT_HTML;
     if (key === "faq" || key === "x_faq") return plainToHtml(FAQ_DEFAULT_PLAIN);
     if (key === "accept_email") return plainToHtml(ACCEPT_EMAIL_DEFAULT);
+    if (key === "req_after") return "<p>Once an institution meets the minimum conditions, it receives its full " +
+      "outcomes-based funding within the two-year window.</p>";
     if (key === "x_about") return textHtml("about");
     if (key === "elig_intro") {
       var v = base().elig_intro;
@@ -4560,6 +4611,19 @@
       "A few very large institutions raise the average: half of the {institutions} institutions are " +
         "allocated **{median award}** or less."
     ].join("\n\n") },
+    // The three passages still typed into the page's markup (Sam, 2026-11-02:
+    // "Make sure I can edit text areas on the Internal or Public sites"), made
+    // blocks like the rest: the outcomes' opening, the Dates line and the note
+    // under the minimum conditions.
+    { key: "x_outcomes_lead", sec: "outcomes", title: "Funding outcomes", where: "Above the priorities", rows: 5, plain: [
+      "The priorities below carry the funding, against the goals set out in " +
+        "[Ed. Code \u00a778093.2(d)(1)](https://california.public.law/codes/education_code_section_78093.2). " +
+        "Each holds a share of every institution\u2019s award and one measure of that institution\u2019s CPL " +
+        "outcomes. The Chancellor\u2019s Office sets the shares and measures below and recommends the strategies under each."
+    ].join("\n\n") },
+    { key: "x_dates_lead", sec: "timeline", title: "Timeline", where: "Under Dates", rows: 2, plain: [
+      "The Chancellor\u2019s Office has set the dates below. A milestone without a date is contingent."
+    ].join("\n\n") },
     { key: "x_alloc", sec: "allocation", title: "How an allocation is computed", where: "Above the two worked examples", rows: 12, plain: [
       "The Chancellor\u2019s Office measures an institution\u2019s size in **full-time equivalent students**, its " +
         "standard measure of instructional volume, counting credit and noncredit instruction together. " +
@@ -4574,6 +4638,11 @@
         "redirect}, to the institutions below the cap. An institution held at the cap is assessed against " +
         "a correspondingly smaller target, so it qualifies at the same rate as every institution above " +
         "the base award."
+    ].join("\n\n") },
+    { key: "x_req_note", sec: "qualify", title: "Eligibility requirements", where: "The note under the minimum conditions", rows: 4, plain: [
+      "**The Chancellor\u2019s Office allocates funding to each institution for the FTES that meet the priority " +
+        "outcomes, up to its max award.** Once an institution meets the minimum conditions, it receives its full " +
+        "outcomes-based funding within the two-year window."
     ].join("\n\n") },
     { key: "x_count", sec: "earning", title: "How outcomes count toward funding", where: "The opening", rows: 4, plain: [
       "The priorities and their shares are above. This is the arithmetic underneath them.",
@@ -4856,6 +4925,8 @@
       })
       .replace(/<(strong|b)\b[^>]*>([\s\S]*?)<\/\1>/gi, "**$2**")
       .replace(/<(em|i)\b[^>]*>([\s\S]*?)<\/\1>/gi, "*$2*")
+      // A link reads back as [words](address), the form a curator types.
+      .replace(/<a\b[^>]*?\shref="(https?:\/\/[^"\s]+)"[^>]*>\s*([\s\S]*?)\s*<\/a>/gi, "[$2]($1)")
       .replace(/<\/?(ul|ol)\b[^>]*>/gi, "</p>")
       .replace(/\s*<li\b[^>]*>\s*/gi, "<br>- ")
       .replace(/\s*<\/li>/gi, "");
@@ -6751,7 +6822,10 @@
       var w = eligReqWords(r, college);
       var tip = ' title="' + esc(stripTags(r.label)) + '"';
       if (w.pending) return '<span class="cf-cond cf-pending"' + tip + "><span>" + esc(w.text) + "</span></span>";
-      var who = r.kind === "coord" && r.met ? coordWhoHtml(college)
+      // The coordinator line and the landing page link sit beside the condition
+      // met or not (Sam, 2026-11-02: "Add a link to the college landing page next
+      // to the CPL Coordinator condition on the college rows").
+      var who = r.kind === "coord" && !w.pending ? coordWhoHtml(college)
         : r.kind === "nc_coord" && r.met ? ncCoordWhoHtml(college) : "";
       // The veteran counts sit NEXT TO the condition, in the small muted type
       // of the coordinator's name, on the same line (his words: "next to").
@@ -12142,6 +12216,9 @@
 
   var state = {
     q: "", view: "college", group: "none", viewSlot: "1",
+    // The minimum-conditions filter on the institution table (Sam, 2026-11-02),
+    // for the visit only, like the search (tabs never remember a filter).
+    condFilter: "",
     // The College Dashboard's view on a public rendering: "all" (the table) or
     // "one" (an institution's My CPL Funding block), and which institution.
     collegeView: "all", oneCollege: "",
@@ -12741,6 +12818,55 @@
 
 
   function grouped() { return state.group === "district"; }
+  // ── THE MINIMUM-CONDITIONS FILTER (Sam, 2026-11-02: "Add a filter to the
+  //    college table to show colleges that have or have not met the 3
+  //    conditions or attested to the NC lead") ─────────────────────────────
+  // The three conditions read baselineGate(), the gate the pie, the drill-in
+  // line and the released figure already share, so the filter cannot disagree
+  // with them. An institution whose status is still loading is in neither
+  // list. The Noncredit CPL Lead choices cover the institutions whose award
+  // carries a noncredit share (ncAttestShown); attested means on file for the
+  // fiscal year, awaiting confirmation or confirmed.
+  var COND_FILTERS = [
+    { val: "", label: "All institutions" },
+    { val: "met", label: "Met all three minimum conditions" },
+    { val: "unmet", label: "Not yet met all three" },
+    { val: "nc_yes", label: "Noncredit CPL Lead attested", nc: true },
+    { val: "nc_no", label: "Noncredit CPL Lead not yet attested", nc: true }
+  ];
+  function condFilterChoices() {
+    var nc = ncOutcomesMode() && ncCoordShown();
+    return COND_FILTERS.filter(function (f) { return !f.nc || nc; });
+  }
+  function condFilterOn() {
+    var v = state.condFilter;
+    return !!v && condFilterChoices().some(function (f) { return f.val === v; });
+  }
+  function ncLeadAttested(college) {
+    var att = ncAttestOf(college);
+    return ncAttestStanding(att) || ncAttestPending(att);
+  }
+  function condFilterKeeps(r, v) {
+    if (v === "met" || v === "unmet") {
+      var g = baselineGate(r.college);
+      if (g.pending) return false;
+      return v === "met" ? !g.blocked : g.blocked;
+    }
+    if (v === "nc_yes" || v === "nc_no") {
+      if (!ncAttestShown(r) || !ELIG.ncAttestOk) return false;
+      return ncLeadAttested(r.college) === (v === "nc_yes");
+    }
+    return true;
+  }
+  function condFilterHtml() {
+    var opts = condFilterChoices();
+    return '<label class="cplfund-condfilter" for="cplFundCondFilter"><span>Show</span>' +
+      '<select id="cplFundCondFilter" aria-label="Show institutions by minimum conditions">' +
+      opts.map(function (f) {
+        return '<option value="' + esc(f.val) + '"' + (f.val === (condFilterOn() ? state.condFilter : "") ? " selected" : "") +
+          ">" + esc(f.label) + "</option>";
+      }).join("") + "</select></label>";
+  }
   function activeCols() { return COLS_COLLEGE(); }
 
   function rowsFiltered() {
@@ -12770,6 +12896,7 @@
         return hay.toLowerCase().indexOf(q) !== -1;
       });
     }
+    if (condFilterOn()) rows = rows.filter(function (r) { return condFilterKeeps(r, state.condFilter); });
     function sortVal(r) {
       // Alphabetical sorts on the DISPLAYED name (Coalinga, Lemoore …), which
       // is the order a reader scans, not the internal key.
@@ -14138,6 +14265,26 @@
           label: "Participation requirement text", placeholder: "Describe the requirement…" }),
         partStatus, hideBtn("part", partLabel()))
       : "";
+    // The noncredit share's conditions (Scenario 4), on this list as on the
+    // public page's (Sam, 2026-11-02), each line editable like the others.
+    var ncHtml = "";
+    if (ncOutcomesMode()) {
+      var ncCols = oneRoster().filter(function (c) { return instSplit(c).nc > 0; });
+      var ncCount = function (kind, verb) {
+        if (!ELIG.ncAttestOk) return '<span class="dk">checking the attestations&hellip;</span>';
+        var n = 0;
+        ncCols.forEach(function (c) { ncCondList(c.college).forEach(function (r) { if (r.kind === kind && r.met) n++; }); });
+        return "<strong>" + n + " of " + ncCols.length + "</strong> institutions with a noncredit share " + verb + ".";
+      };
+      var ncItem = function (edit, text, label, status) {
+        return reqItem(pub ? esc(text) + stop(text) : edArea(edit, text, { rows: 1, label: label,
+          placeholder: "Describe the requirement…" }), status);
+      };
+      if (ncCoordShown()) ncHtml += ncItem("nc-coord-label", ncCoordReqText(), "Noncredit CPL Lead requirement text",
+        ncCount("nc_coord", "have one published"));
+      if (ncTeamShown()) ncHtml += ncItem("nc-team-label", ncTeamReqText(), "Strike-team requirement text",
+        ncCount("nc_team", "have attested"));
+    }
     var chips = [];
     if (!coordShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="coord">Restore: ' + esc(coordLabel()) + "</button>");
     if (!partShown()) chips.push('<button type="button" class="cplfund-optbtn" data-reqshow="part">Restore: ' + esc(partLabel()) + "</button>");
@@ -14147,9 +14294,10 @@
     return '<div class="cplfund-elig">' +
       '<div class="cplfund-elig-intro">' + proseBlockHtml("elig_intro") + "</div>" +
       coReviewLaneHtml() + responseEmailHtml() +
-      coordItem + partItem + extraHtml +
-      '<div class="dk cplfund-reqafter">Once an institution meets the minimum conditions, it receives ' +
-      "its full outcomes-based funding within the two-year window.</div>" +
+      coordItem + partItem + extraHtml + ncHtml +
+      // A passage like the introduction above it (Sam, 2026-11-02: "Make sure I
+      // can edit text areas"); it was typed here.
+      proseBlockHtml("req_after", "dk cplfund-reqafter") +
       // Sam, 2026-09-30, on the Public view: "Delete the 2 marked chips" (Copy
       // requirements, Generate brief). They stay in the curator's view, where
       // the memo and the field brief are made; the Public view keeps none of
@@ -14178,18 +14326,15 @@
   function requirementsList() {
     var list = [];
     if (coordShown()) {
-      list.push({ text: coordLabel(), kind: "coord",
+      list.push({ text: coordLabel(), kind: "coord", ref: "coord",
         note: ELIG.coordOk ? (ELIG.coordN + " of " + eligColleges().length + " colleges currently have one on file in MAP") : "" });
     }
-    if (partShown()) list.push({ text: partReqText(), kind: "part" });
-    extraReqs().forEach(function (t) { if (String(t).trim()) list.push({ text: String(t).trim() }); });
+    if (partShown()) list.push({ text: partReqText(), kind: "part", ref: "part" });
+    extraReqs().forEach(function (t, i) { if (String(t).trim()) list.push({ text: String(t).trim(), ref: "extra:" + i }); });
     // The noncredit share's own conditions (Scenario 4), after the institution's.
     if (ncOutcomesMode()) {
-      if (ncCoordShown()) {
-        list.push({ text: "For the noncredit share of an award: a Noncredit CPL Lead named and published " +
-          "(attested in COBI until the MAP platform carries the role)", kind: "nc_coord" });
-      }
-      if (ncTeamShown()) list.push({ text: "For the noncredit share of an award: a strike-team attestation renewed each year", kind: "nc_team" });
+      if (ncCoordShown()) list.push({ text: ncCoordReqText(), kind: "nc_coord", ref: "nc_coord" });
+      if (ncTeamShown()) list.push({ text: ncTeamReqText(), kind: "nc_team", ref: "nc_team" });
     }
     return list;
   }
@@ -15714,7 +15859,7 @@
     var dist = v.indexOf(ONE_DISTRICT) === 0;
     var members = dist ? districtMembers(v.slice(ONE_DISTRICT.length)) : [v];
     if (dist) state.group = "district";
-    state.q = "";
+    state.q = ""; state.condFilter = "";
     members.forEach(function (m) { state.open["c:" + m] = true; });
     saveSectionState("college", true);
     _deepLinkCollege = members[0] || null;
@@ -15808,7 +15953,7 @@
     var fold = host && host.closest ? host.closest("details") : null;
     if (fold && !fold.open) fold.open = true;   // the explainer's institutions fold
     if (c) {
-      state.q = "";
+      state.q = ""; state.condFilter = "";
       state.open["c:" + c.college] = true;
       OPTIN_UI[c.college] = { open: true };
       _optinFocusCollege = c.college;
@@ -16513,6 +16658,7 @@
       // used for college, no way to clear it"); shown only while the box holds a search.
       '<button type="button" class="cplfund-searchclear" id="cplFundSearchClear"' + (state.q ? "" : " hidden") +
         ' aria-label="Clear the search">Clear</button>' +
+      condFilterHtml() +
       '<span class="cplfund-count" id="cplFundCount"></span>' +
       colMenuHtml() +
       '<button type="button" class="cplfund-optbtn" id="cplFundCsv" title="Download the current table as a CSV that opens directly in Excel (the full data, including any hidden columns and the county context)">Download as Excel</button>' +
@@ -16643,7 +16789,7 @@
     var n = rowsFiltered().length;
     var denom = oneRoster().length;
     var groupN = grouped() ? groupRowsByDistrict(rowsFiltered()).length : 0;
-    el.textContent = (state.q.trim() ? n + " of " + denom : String(denom)) + " institutions" +
+    el.textContent = (state.q.trim() || condFilterOn() ? n + " of " + denom : String(denom)) + " institutions" +
       (grouped() ? " in " + groupN + (groupN === 1 ? " district" : " districts") : "") +
       " · average max award " + fmtMoney(denom ? netCollege() / denom : 0) + " over " + windowLabel();
   }
@@ -17211,6 +17357,8 @@
       return;
     }
     if (edit === "coord-label") { setCoordLabel(raw); return; }
+    if (edit === "nc-coord-label") { setNcCoordLabel(raw); return; }
+    if (edit === "nc-team-label") { setNcTeamLabel(raw); return; }
     if (edit === "part-label") { setPartLabel(raw); return; }
     if (edit === "prio-title") { setPrio(slot, Number(idx), "title", raw); return; }
     if (edit === "rtitle") { setReportedTitle(el.getAttribute("data-field"), raw); return; }
@@ -17359,6 +17507,13 @@
         input.value = ""; state.q = ""; clearBtn.hidden = true;
         refreshTable();
         try { input.focus(); } catch (e) {}
+      });
+    }
+    var condSel = document.getElementById("cplFundCondFilter");
+    if (condSel) {
+      condSel.addEventListener("change", function () {
+        state.condFilter = condSel.value || "";
+        refreshTable();
       });
     }
     function wireSeg(id, apply) {
@@ -18288,7 +18443,7 @@
     });
     if (!hit) return;
     state.open["c:" + hit.college] = true;   // rows key by NAME (one-pool port)
-    state.q = "";
+    state.q = ""; state.condFilter = "";
     _deepLinkCollege = hit.college;
     _deepLinkPending = true;
     // `view=one` (My College's Open My CPL Funding, Sam 2026-10-21: "move funding to
@@ -18369,6 +18524,9 @@
     // use, so the database's RLS decides what a save may do.
     canCurate: function () { return unlocked(); },
     setText: setText, textPlain: textPlain, textIsCustom: textIsCustom, textIsBlank: textIsBlank,
+    // The minimum conditions' words (Sam, 2026-11-02), by the refs _requirements() hands the page.
+    reqText: reqTextOf, setReqText: setReqText,
+    deadline: function () { return participationDeadline(); }, setDeadline: setDeadline,
     indentLines: function (text, a, b, dir, ta) { return indentLines(text, a, b, dir, ta); },
     setSecHidden: setSecHidden, secHidden: secHidden,
     movePublicSection: movePublicSection, resetPublicSectionOrder: resetPublicSectionOrder,
@@ -18662,7 +18820,13 @@
     // a curator's screen, and a public page that printed it would be quoting a
     // number nobody refreshed.
     _requirements: function () {
+      var reqs = requirementsList().filter(function (r) { return String(r.text || "").trim(); });
       return { intro: textPlain("elig_intro"),
+               // The intro with its bold, italic and links, inline (the page's
+               // <p> holds it), so a curator's marks read as marks there too.
+               introHtml: markInline(linkMarks(esc(plainNormalize(textPlain("elig_intro")).replace(/\n+/g, " ")))),
+               // Each item's ref, for the page's Edit this page (reqText/setReqText).
+               refs: reqs.map(function (r) { return r.ref || ""; }),
                // The raw date as well as the composed sentence: the explainer's
                // "what is a choice, and what is a given" table prints the
                // deadline in a cell of its own, and had it hand-typed as

@@ -42,6 +42,7 @@
   var linkRenaming = null; // the fixed Contents link whose words are being edited
   var subRenaming = null;  // the sub-heading (data-psub) being renamed
   var ncRenaming = null;   // the noncredit outcome (its index) being renamed
+  var reqEditing = null;   // the minimum condition (its ref) whose words are being edited
 
   // Only inside COBI's Public page view, which frames this page (Sam, 2026-10-26: "hide
   // or delete the Edit link from the public view"); the public address never shows it.
@@ -92,6 +93,8 @@
       ".pe-linked input{font:inherit; font-size:.92rem; min-height:32px; padding:2px 8px; width:min(100%,24rem); color:var(--text-strong);",
       "  background:var(--surface-opaque); border:1px solid var(--border-strong); border-radius:4px}",
       ".pe-linked input:focus-visible{outline:2px solid var(--focus-ring); outline-offset:2px}",
+      ".pe-reqed{margin:6px 0 10px} .pe-reqed input[type=text]{width:min(100%,40rem)}",
+      ".pe-reqed label{display:inline-flex; align-items:center; gap:6px; font-size:.92rem; color:var(--text-strong)}",
       ".pe-subw{display:block; margin:-.4em 0 .8em}",
       ".pe-localnote{flex-basis:100%; margin:0; padding:6px 10px; border-left:3px solid var(--crimson); background:var(--tint-crimson);",
       "  color:var(--text-strong); font-size:.9rem; max-width:none}",
@@ -301,6 +304,43 @@
     return box;
   }
 
+  // ── the minimum conditions' words (Sam, 2026-11-02: "I need to be able to
+  //    edit Eligibility Requirements text but don't see that I can") ────────
+  // Each item the page paints carries its ref (data-reqref); the words save
+  // through the same setters as the Internal view's fields, so the two views
+  // read one list. The confirmation's line is its words, then its deadline.
+  function reqItems() {
+    if (typeof T.setReqText !== "function") return [];
+    return Array.prototype.slice.call(doc.querySelectorAll("#req-list li[data-reqref]"));
+  }
+  function reqControls() {
+    reqItems().forEach(function (li) {
+      var ref = li.getAttribute("data-reqref");
+      if (reqEditing === ref) { li.appendChild(reqEditor(ref)); return; }
+      var w = word("Edit", { "data-pe-reqedit": ref, "aria-label": "Edit the words of this condition" });
+      w.className += " pe-x pe-linkw";
+      li.appendChild(w);
+    });
+  }
+  function reqEditor(ref) {
+    var box = make("div", "pe-x pe-linked pe-reqed");
+    var tid = "pe-rq-" + ref.replace(/[^\w-]/g, "_");
+    var cur = T.reqText(ref);
+    box.innerHTML = '<label class="pe-sr" for="' + tid + '">Words of this condition</label>' +
+      '<input id="' + tid + '" type="text" maxlength="400" value="' + esc(cur == null ? "" : cur) + '">' +
+      (ref === "part" && typeof T.deadline === "function"
+        ? '<label for="pe-rq-deadline">Deadline <input id="pe-rq-deadline" type="date" value="' + esc(T.deadline()) + '"></label>'
+        : "");
+    box.appendChild(word("Save", { "data-pe-reqsave": ref }));
+    box.appendChild(word("Cancel", { "data-pe-reqcancel": ref }));
+    var hint = make("p", "pe-hint");
+    hint.textContent = "Saves for everyone. The Internal view's minimum conditions read the same words." +
+      (ref === "part" ? " The deadline follows the words." : "");
+    box.appendChild(hint);
+    return box;
+  }
+  function reqInputId(ref) { return "pe-rq-" + String(ref).replace(/[^\w-]/g, "_"); }
+
   // ── passages ──────────────────────────────────────────────────────────────
   // [data-ftext] and [data-ptext] are the page's passages; the table's
   // introduction lives in the institution table, which redraws itself, so its
@@ -310,6 +350,9 @@
     Array.prototype.forEach.call(doc.querySelectorAll("main [data-ftext], main [data-ptext]"), function (box) {
       out.push({ key: box.getAttribute("data-ftext") || box.getAttribute("data-ptext"), after: box });
     });
+    // The eligibility introduction is the Internal view's own passage, painted here.
+    var ri = doc.getElementById("req-intro");
+    if (ri) out.push({ key: "elig_intro", after: ri, label: "Edit the introduction" });
     var mount = doc.getElementById("cplFundingMount");
     if (mount && mount.parentNode) out.push({ key: "x_table_intro", before: mount.parentNode, label: "Edit the table's introduction" });
     var faq = doc.getElementById("faq-body");
@@ -422,7 +465,7 @@
     var ae = doc.activeElement, keep = null;
     if (ae && ae.closest && ae.closest(".pe-x")) {
       keep = ["data-pe-rename", "data-pe-hide", "data-pe-pos", "data-pe-edit", "data-pe-orderreset", "data-pe-linkrename",
-        "data-pe-subrename", "data-pe-ncrename"].reduce(function (k, a) {
+        "data-pe-subrename", "data-pe-ncrename", "data-pe-reqedit"].reduce(function (k, a) {
         return k || (ae.getAttribute(a) != null ? "[" + a + '="' + ae.getAttribute(a) + '"]' : null);
       }, null) || (ae.id ? "#" + ae.id : null);
       if (ae.tagName === "TEXTAREA") drafts[ae.id.replace(/^pe-ta-/, "")] = ae.value;
@@ -448,6 +491,7 @@
     linkControls();
     subControls();
     ncControls();
+    reqControls();
     if (keep) {
       var back = doc.querySelector(keep);
       if (back) { try { back.focus({ preventScroll: true }); } catch (e) { back.focus(); } }
@@ -460,7 +504,7 @@
     doc.body.classList.toggle("page-editing", editing);
     btn.setAttribute("aria-pressed", editing ? "true" : "false");
     btn.textContent = editing ? "Done editing" : "Edit this page";
-    if (!editing) { openKey = null; renaming = null; linkRenaming = null; subRenaming = null; ncRenaming = null; clear(); }
+    if (!editing) { openKey = null; renaming = null; linkRenaming = null; subRenaming = null; ncRenaming = null; reqEditing = null; clear(); }
     ensureCss();
     repaint();      // a hidden block shows, or hides again
     sync();
@@ -477,7 +521,8 @@
       "[data-pe-titlesave], [data-pe-titlecancel], [data-pe-titlereset], [data-pe-done], [data-pe-orderreset], " +
       "[data-pe-linkrename], [data-pe-linksave], [data-pe-linkcancel], [data-pe-linkreset], " +
       "[data-pe-subrename], [data-pe-subsave], [data-pe-subcancel], [data-pe-subreset], " +
-      "[data-pe-ncrename], [data-pe-ncsave], [data-pe-nccancel]") : null;
+      "[data-pe-ncrename], [data-pe-ncsave], [data-pe-nccancel], " +
+      "[data-pe-reqedit], [data-pe-reqsave], [data-pe-reqcancel]") : null;
     if (!t || !editing || !t.closest(".pe-x")) return;
     var a = function (n) { return t.getAttribute(n); };
     if (a("data-pe-done") != null) { setEditing(false); btn.focus(); return; }
@@ -532,6 +577,21 @@
       ncRenaming = null;
       T.setNcOutcomeWords(ni, nl ? nl.value : "", nt ? nt.value : "");
       sync(); focusSoon('[data-pe-ncrename="' + ni + '"]');
+      return;
+    }
+    if (a("data-pe-reqedit") != null) {
+      reqEditing = a("data-pe-reqedit"); sync(); focusSoon("#" + reqInputId(reqEditing)); return;
+    }
+    if (a("data-pe-reqcancel") != null) {
+      var rc = reqEditing; reqEditing = null; sync(); focusSoon('[data-pe-reqedit="' + rc + '"]'); return;
+    }
+    if (a("data-pe-reqsave") != null) {
+      var rref = a("data-pe-reqsave");
+      var rin = doc.getElementById(reqInputId(rref)), rdl = doc.getElementById("pe-rq-deadline");
+      reqEditing = null;
+      if (rin && rin.value.trim() && rin.value !== T.reqText(rref)) T.setReqText(rref, rin.value);
+      if (rref === "part" && rdl && rdl.value && rdl.value !== T.deadline()) T.setDeadline(rdl.value);
+      sync(); focusSoon('[data-pe-reqedit="' + rref + '"]');
       return;
     }
     if (a("data-pe-hide") != null) {
@@ -591,6 +651,13 @@
       var lk = linkRenaming;
       if (e.key === "Enter") { e.preventDefault(); var sv = doc.querySelector('[data-pe-linksave="' + lk + '"]'); if (sv) sv.click(); }
       else if (e.key === "Escape") { linkRenaming = null; sync(); focusSoon('[data-pe-linkrename="' + lk + '"]'); }
+      return;
+    }
+    // Enter saves a condition's words; Escape leaves its editor.
+    if (e.target.closest(".pe-reqed")) {
+      var rq = reqEditing;
+      if (e.key === "Enter") { e.preventDefault(); var rs = doc.querySelector('[data-pe-reqsave="' + rq + '"]'); if (rs) rs.click(); }
+      else if (e.key === "Escape") { reqEditing = null; sync(); focusSoon('[data-pe-reqedit="' + rq + '"]'); }
       return;
     }
     // Enter saves a sub-heading or a noncredit outcome; Escape leaves it.
