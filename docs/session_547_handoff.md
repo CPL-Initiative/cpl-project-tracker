@@ -27,7 +27,8 @@ open PRs and `main` since this handoff (step 1).
   queue emptied, so `run()` never asked the classifier; the check now builds its own one-card queue.
   `ccr_cpl_universe_test.py`, red since the 06:25Z daily run: it assumed all statewide exhibits are articulated (84),
   but #2667 made it 152 (90 articulated). It now checks the rings against `counts.statewide_articulated`, and bounds
-  allow for rounding. **Curation gap it names:** *Child Development Associate (CDA) Credential* is statewide and
+  allow for rounding. `exhibit_progress.test.js` wanted all three Commons issue links; tonight's fold has no conflicts,
+  and an issue that reads zero is left out (S540), so it now checks the links present, in order. **Curation gap it names:** *Child Development Associate (CDA) Credential* is statewide and
   articulated, but its courses carry no discipline, so it sits in SkyView's no-discipline pile.
 - **The UI pass: the Fact Sheet** (on `claude/practical-meitner-7x9x8y`, the checkpoint PR). Every target passes.
   `fact-sheet-sierra` and its dark twin still pressed the page's own *Ask Sierra* word, removed 2026-10-30, so they now
