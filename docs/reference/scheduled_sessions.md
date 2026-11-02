@@ -209,7 +209,7 @@ is his standing preference there too.
 
 8. **The college contacts harvest** (Sam, 2026-10-31: *"harvest the contacts when it sends runners out to collect
    our catalog data ... it might be better in the daily for a while until we get a good dataset"*).
-   **Armed: yes** (Sam, 2026-10-31, on these instructions: *"go"*). Nightly until the first full pass, then weekly.
+   **Armed: yes** (Sam, 2026-10-31, on these instructions: *"go"*). Nightly until the first full pass (done 2026-11-02, S550), now weekly.
    Spec, positions and title variants: `docs/reference/lanes/map-users-student-contact.md` (*The weekly contacts
    harvest*). Sessions cannot reach college sites, so a GitHub runner reads them, as the catalog sweep's do.
 
@@ -240,11 +240,12 @@ is his standing preference there too.
       name, the email only when the page prints it, the source URL. The apply job posts them with the service key
       and commits its receipt (`kb/receipts/college_contacts_harvest_<run>.json`), which is how the load rolls back.
 
-   **Once built, each night:** dispatch the runner for the **15 colleges read longest ago** (about 120 sites, so a
-   full pass in eight nights), read, apply, and note in the handoff how many positions filled and how many people
-   changed (a new name where another stood, a `gone_since`). **After the first full pass, change the cadence to
-   weekly** (Sundays, the census's day) **with this line**, unless Sam keeps it daily; a college whose leader
-   changed in the last month stays in every night's batch until two reads agree.
+   **Weekly, on Sundays (the census's day), since the first full pass** (S550, 2026-11-02: all 118 sites read across
+   nine reads, so this line moved the cadence as written; Sam may keep it daily by saying so). The first firing of a
+   UTC Sunday that reaches this step dispatches the runner for the **15 colleges read longest ago**, reads, applies,
+   and notes in the handoff how many positions filled and how many people changed (a new name where another stood, a
+   `gone_since`). Other nights skip the read, except a college whose leader changed in the last month, which is read
+   each night until two reads agree.
 
    What it never does: write `map_college_contacts` or MAP (read-only for us), email anyone, or fill a role from a
    search result. Its consumers read the table beside MAP's contacts: Nudge's *Deans and directors* role, and the
