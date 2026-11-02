@@ -298,10 +298,12 @@ function shareSumAll(T) {
   check("U1: no curate/edit affordance survives in public mode (" + CURATE.length + " attrs swept)",
     leaked.length === 0);
   // Step 1's chooser (Sam, 2026-10-15) picks which institution to read; it
-  // edits nothing, so it is the one select a public rendering carries.
+  // edits nothing, so it is a select a public rendering carries; the table's
+  // minimum-conditions filter (Sam, 2026-11-02) is the other, a reader's view
+  // of the rows like the search box.
   check("U1: no editable inputs at all (the anonymous what-if path is closed too)",
     doc.querySelectorAll("#cplFundingMount input:not([type=search]):not([type=checkbox]), " +
-      "#cplFundingMount textarea, #cplFundingMount select:not(#cplFundOnePick)").length === 0);
+      "#cplFundingMount textarea, #cplFundingMount select:not(#cplFundOnePick):not(#cplFundCondFilter)").length === 0);
 
   // The three chrome surfaces a college should not see.
   check("U2: no project/scenario control strip", !doc.querySelector("#cplFundProjSel, #cplFundScenSel"));

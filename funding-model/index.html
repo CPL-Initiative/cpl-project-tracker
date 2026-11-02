@@ -773,11 +773,13 @@ section[hidden], #contents[hidden]{display:none}
       <span class="fold-word" aria-hidden="true"></span>
     </summary>
     <div class="fold-body">
+    <div data-ftext="x_outcomes_lead">
     <p>The priorities below carry the funding, against the goals set out in
       <a href="https://california.public.law/codes/education_code_section_78093.2" target="_blank"
          rel="noopener">Ed. Code &sect;78093.2(d)(1)</a>. Each holds a share of every institution&rsquo;s
       award and one measure of that institution&rsquo;s CPL outcomes. The Chancellor&rsquo;s Office sets the
       shares and measures below and recommends the strategies under each.</p>
+    </div>
     <div id="prios"></div>
     <div id="nc-outcomes"></div>
     <div id="reported"></div>
@@ -803,7 +805,7 @@ section[hidden], #contents[hidden]{display:none}
          the strategies open that list fell below twenty lines, so it moved here,
          and this section opens by default and follows the outcomes. -->
     <h3 class="mile-h dates-h" data-psub="sub_dates">Dates</h3>
-    <p>The Chancellor&rsquo;s Office has set the dates below. A milestone without a date is contingent.</p>
+    <div data-ftext="x_dates_lead"><p>The Chancellor&rsquo;s Office has set the dates below. A milestone without a date is contingent.</p></div>
     <ul class="timing" id="timing-list"></ul>
     <h3 class="mile-h" data-psub="sub_arrives">How the funding arrives</h3>
     <div data-ftext="x_timing">
@@ -891,7 +893,7 @@ section[hidden], #contents[hidden]{display:none}
          that must come from the one place a curator edits it. -->
     <p id="req-intro">Each requirement is verifiable from MAP:</p>
     <ol id="req-list"></ol>
-    <div class="note">
+    <div class="note" data-ftext="x_req_note">
       <!-- Sam, 2026-09-29 (open-asks sheet 3, card 6): "The explainer is wrong. Colleges will be
            funded for FTES that meet the priority outcomes. The full outcomes-based funding is
            available within the two-year window once minimum conditions are met." -->
@@ -1306,7 +1308,10 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     var list = document.getElementById("req-list");
     if (!list) return;
     var R = D.requirements || { intro: "", items: [] };
-    if (R.intro) setText("req-intro", R.intro);
+    // The intro with its marks (introHtml, escaped and marked by the module);
+    // the plain words for a module that predates it.
+    if (R.introHtml) document.getElementById("req-intro").innerHTML = R.introHtml;
+    else if (R.intro) setText("req-intro", R.intro);
     // The count under each condition (sheet 14 card 6), as the Public view
     // prints it, once MAP's figures have loaded; the page repaints when they do.
     var C = (D.progress && D.progress.conditions) || [];
@@ -1330,6 +1335,8 @@ window.CPL_PAINT_EXPLAINER = function (D) {
     (R.items || []).forEach(function (t, i) {
       var li = document.createElement("li");
       li.textContent = t;
+      // Which condition this is, for Edit this page (edit_page.js).
+      if ((R.refs || [])[i]) li.setAttribute("data-reqref", R.refs[i]);
       var cl = countLine(C[i]);
       if (cl && !/[.!?]$/.test(String(t).trim())) li.textContent = t + ".";
       var kind = (R.kinds || [])[i] || "";

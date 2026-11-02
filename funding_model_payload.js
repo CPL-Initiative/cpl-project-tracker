@@ -128,7 +128,10 @@
     const r = T._requirements() || {};
     return { intro: String(r.intro || ""), deadline: String(r.deadline || ""),
              items: (r.items || []).map(function (t) { return String(t); }),
-             kinds: (r.kinds || []).map(function (k) { return String(k || ""); }) };
+             kinds: (r.kinds || []).map(function (k) { return String(k || ""); }),
+             // The intro with its marks, and each item's ref for Edit this page (2026-11-02).
+             introHtml: String(r.introHtml || ""),
+             refs: (r.refs || []).map(function (k) { return String(k || ""); }) };
   })();
 
   // The effective rate an UNBOUND college earns at, measured off the model rather

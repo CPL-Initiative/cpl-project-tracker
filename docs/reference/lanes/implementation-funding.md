@@ -1,7 +1,7 @@
 ---
 title: "Implementation Funding tab / the $35M model — lane state"
 created: 2026-08-28
-updated: 2026-11-01
+updated: 2026-11-02
 tags: [reference, roadmap-lane]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -16,6 +16,8 @@ related:
 **What this lane is:** The four priorities, their shares and factors, what each counts toward, and the college-by-college allocation.
 
 ## Status
+
+✅ **Sam's four funding asks of 2026-11-02 (S554, SkySombrero):** (1) every word of the public page's *Eligibility requirements* edits in *Edit this page* (the introduction `elig_intro`, each condition by its ref through `reqText`/`setReqText`, the confirmation's deadline beside its words, the note `x_req_note`); the Noncredit CPL Lead and strike-team lines resolve through the layers (`ncCoordLabel`, `ncTeamLabel`) where they were typed. (2) A **Show** filter on the institution table: met all three / not yet met (both read `baselineGate()`, a still-loading status in neither) and, under the outcomes lane, Noncredit CPL Lead attested / not yet attested (on file for the year, awaiting confirmation counts); a visit-only filter, cleared by a deep link. (3) The coordinator line and the **landing page link** sit beside the CPL Coordinator condition met or not. (4) The text still typed on either view became passages: the Internal view's sentence under the conditions (`req_after`), and on the page the outcomes' opening (`x_outcomes_lead`, its link kept as `[words](url)`) and the Dates line (`x_dates_lead`). Not editable by design: the computed counts, and the Contents' PDF note. Guards `cpl_funding_conditions_filter`, `funding_page_requirements_edit`.
 
 **CCSF and College of the Desert fell into `unmatched` on 2026-10-31 (S544)** after #2598's shorts. Sam, Open Asks Sheet 155 card 1, *restore* (02:42Z 2026-11-02, his own call): #2676 merged; the next daily run carries both.
 
