@@ -1,5 +1,5 @@
 {
-  "generated": "2026-11-01",
+  "generated": "2026-11-02",
   "thresholds": {
     "always_loaded": 60000,
     "kb_note": 40000,
@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1348,
-    "bytes": 13731180,
+    "files": 1351,
+    "bytes": 13761233,
     "over_budget": 0,
-    "handoff_max": 543,
+    "handoff_max": 544,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59988,
     "superseded_files": 0,
@@ -26,32 +26,32 @@
       },
       "other": {
         "files": 137,
-        "bytes": 4206462,
+        "bytes": 4212969,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 9487,
+        "bytes": 9616,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2546733,
+        "bytes": 2554215,
         "over": 0
       },
       "kb_note": {
-        "files": 571,
-        "bytes": 2801000,
+        "files": 573,
+        "bytes": 2809779,
         "over": 0
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 467158,
+        "bytes": 467446,
         "over": 0
       },
       "handoff": {
-        "files": 511,
-        "bytes": 3640352,
+        "files": 512,
+        "bytes": 3647220,
         "over": 0
       }
     },
@@ -61,9 +61,9 @@
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25330,
-      "bytes": 4156554350,
-      "heavy_bytes": 2971087730,
+      "files": 25339,
+      "bytes": 4156726547,
+      "heavy_bytes": 2971089613,
       "heavy_share": 0.715,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -261,10 +261,10 @@
       "fixable": false,
       "path": "kb/course_outcomes",
       "detail": {
-        "bytes": 10849872,
+        "bytes": 10851755,
         "kind": "dir"
       },
-      "message": "directory totals 10,849,872 B inside the vault"
+      "message": "directory totals 10,851,755 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

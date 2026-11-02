@@ -4,6 +4,8 @@ date: 2026-11-01
 session: 542 (SkyTriangulum, Sam's session, live from about 19:28Z)
 tags: [handoff, exhibits, exhibits-list, commons, commons-list, slo, course-outcomes]
 status: current
+superseded: true
+superseded_by: session_544_handoff.md
 ---
 
 # You are Session 543

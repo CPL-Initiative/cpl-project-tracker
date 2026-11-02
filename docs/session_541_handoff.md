@@ -4,6 +4,8 @@ date: 2026-11-01
 session: 540 (SkyBunchberry, the CPL Queue routine's 14:12Z firing, with Sam live from about 14:30Z)
 tags: [handoff, sierra, exhibits, contacts-harvest, library]
 status: current
+superseded: true
+superseded_by: session_544_handoff.md
 ---
 
 # You are Session 541

@@ -4,6 +4,8 @@ date: 2026-11-01
 session: 541 (SkyBlatusoff, Sam's session, live from about 16:00Z)
 tags: [handoff, exhibits, exhibits-list, cert-link, credential-registry, scheduled-sessions]
 status: current
+superseded: true
+superseded_by: session_544_handoff.md
 ---
 
 # You are Session 542

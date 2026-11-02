@@ -81,14 +81,7 @@ one place. **One Sierra in COBI (S398, #2163; Sam, 2026-10-16: *"consolidate Sie
 
 **The funding FAQ (S518, #2559):** Sierra reads the page's FAQ. Mechanics: [`docs/cpl_assistant_lessons.md`](../../cpl_assistant_lessons.md), *Moved from the lane (S518)*.
 
-**A named college's funding section (S529).** The vault's funding note gives each of the 118 institutions a section
-headed `<full name>: CPL funding standing` (`scripts/funding_sierra_note.js`). A funding question that names one
-college reads that section by heading, ahead of the similarity search (`fetchCollegeFundingSection`; every profile in
-`chatbox_college_profiles` reaches its heading, the 7 non-CCC names excepted). **Built, first live at the next
-deploy** (held for Sam: a production deploy). The miss S528 saw (Cabrillo asked, three other colleges answered) was
-the index, not the ranking: the vault's two indexers raced and left 47 of 118 sections; CPLBrain#556 serializes them,
-skips unchanged files before embedding and writes a checksum after its sections. Index rebuilt 16:03Z 2026-10-30
-(187 of 187 chunks).
+**A named college's funding section (S529, live).** The funding note gives each of the 118 institutions a section headed `<full name>: CPL funding standing` (`scripts/funding_sierra_note.js`); a funding question that names one college reads that section by heading, ahead of the similarity search (`fetchCollegeFundingSection`). Deployed with handoff 530's held changes on Sam's Sheet 153 *deploy all*. The index race behind S528's miss: `cpl_assistant_lessons.md`, S543.
 
 **The public CPL Library (S469, live since 03:13Z 2026-10-25; smoke 7x green).** Sierra reads `cpl_library_public()` and a piece's page when the tracker hosts it: [lane](library.md#sierra-reads-the-library-sam-2320z-2026-10-24-built-s469), smoke 7x.
 
@@ -113,5 +106,5 @@ Sam asked Sierra for the military and non-military split of Chaffey's applied un
 
 **Instructions matched to the question (S540, 2026-11-01; Sam: *"worrying that we are removing part of her brain"*).** Before #2647 every active instruction went newest first to 9,000 characters (19, about 9,360), the question playing no part. First step: match each to the question, matches first, log sent/matched/dropped ids; Jev later, behind a flag. Sam, Sheet 153 card 3, *deploy*, then *"deploy all"* with handoff 530's three held changes: built #2647, preview A/B, one deploy of main. Fable's advice: `docs/sierra_rules_lessons.md`, *Matched instructions*.
 
-**Every institution's JST standing (S543, 2026-11-01).** Sam asked *"which college have not yet met the 75% jst vet sprint goal for the new funding?"*; Sierra said she had no per-college percentages and quoted 25,934 JSTs (the vault's July 19 sprint plan). A question naming no college read no college's section, and her live metrics labeled 30,653 only as students. #2666: the funding note gains one section, *Veteran JSTs: which institutions have met the 75 percent condition* (41 not yet met, 65 met on the 11-01 figures), live at the vault's next funding-note run; cpl-chat reads it by heading for a JST question naming no single college and names `MilitaryStudents` the statewide JST count. Sam, Open Asks Sheet 154 card 1, *deploy* (00:08Z 2026-11-02): deployed from main b022d042 (cpl-chat-deploy run 41367780729, post-deploy smoke green). The preview A/B failed a different wording check on each of two runs (7v; then 17 and 2), none reachable by the change, each passing on the other run.
+**Every institution's JST standing (S543, live).** A JST question that names no single college reads the funding note's section *Veteran JSTs: which institutions have met the 75 percent condition* by heading (every institution not yet met with its counts, then the met), and her live metrics name `MilitaryStudents` the statewide JST count. Deployed on Sam's Sheet 154 *deploy* (#2666). Story: `cpl_assistant_lessons.md`, S543.
 
