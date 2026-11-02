@@ -10,23 +10,23 @@
     "other": 150000
   },
   "summary": {
-    "files": 1363,
-    "bytes": 13878356,
-    "over_budget": 1,
-    "handoff_max": 554,
+    "files": 1364,
+    "bytes": 13886195,
+    "over_budget": 4,
+    "handoff_max": 555,
     "always_loaded_files": 1,
-    "always_loaded_bytes": 59998,
+    "always_loaded_bytes": 60070,
     "superseded_files": 0,
     "superseded_bytes": 0,
     "lanes": {
       "always_loaded": {
         "files": 1,
-        "bytes": 59998,
-        "over": 0
+        "bytes": 60070,
+        "over": 1
       },
       "other": {
         "files": 137,
-        "bytes": 4222742,
+        "bytes": 4222873,
         "over": 0
       },
       "index": {
@@ -36,8 +36,8 @@
       },
       "lessons": {
         "files": 85,
-        "bytes": 2596562,
-        "over": 0
+        "bytes": 2598417,
+        "over": 1
       },
       "kb_note": {
         "files": 575,
@@ -46,24 +46,24 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 469160,
-        "over": 1
+        "bytes": 469976,
+        "over": 2
       },
       "handoff": {
-        "files": 522,
-        "bytes": 3699946,
+        "files": 523,
+        "bytes": 3704911,
         "over": 0
       }
     },
     "by_rule": {
+      "oversized_doc": 4,
       "kb_note_dialect": 1,
-      "oversized_doc": 1,
       "house_voice": 1,
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25504,
-      "bytes": 4170795850,
+      "files": 25506,
+      "bytes": 4170813400,
       "heavy_bytes": 2974552311,
       "heavy_share": 0.713,
       "ignore_filters": [
@@ -145,6 +145,19 @@
   },
   "findings": [
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 60070,
+        "limit": 60000,
+        "lane": "always_loaded",
+        "over_by": 70,
+        "ratio": 1.0
+      },
+      "message": "60,070 B is 1.0× the always_loaded budget (60,000 B) — candidate for compaction",
+      "path": "CLAUDE.md"
+    },
+    {
       "rule": "kb_note_dialect",
       "fixable": false,
       "detail": {
@@ -154,6 +167,32 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 121703,
+        "limit": 120000,
+        "lane": "lessons",
+        "over_by": 1703,
+        "ratio": 1.01
+      },
+      "message": "121,703 B is 1.0× the lessons budget (120,000 B) — candidate for compaction",
+      "path": "docs/library_lessons.md"
+    },
+    {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20218,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 218,
+        "ratio": 1.01
+      },
+      "message": "20,218 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/library.md"
     },
     {
       "rule": "oversized_doc",

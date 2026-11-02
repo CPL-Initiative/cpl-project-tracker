@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-02T17:08:34Z",
-  "session": 553,
-  "moniker": "SkyPinwheel",
+  "written_at": "2026-11-02T18:49:29Z",
+  "session": 554,
+  "moniker": "SkySombrero",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_554_handoff.md",
+  "handoff": "docs/session_555_handoff.md",
   "next_step": {
     "title": "Santa Ana's full SLO read",
     "text": "Santa Ana's trial parsed 12 of 12, so its four-part full read is the first step 11 run of 2026-11-03 (UTC); the helper then names the next trial or index. Monterey Peninsula's last 14 records still wait for a session with room for their page reads."
@@ -190,6 +190,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-02T18:49:05Z",
+      "text": "No harvest work this run: S554 (Sam's session) added Finish remediation to the Library's cards for a record left In remediation, and the /coord command; the queue's next step stands."
+    },
     {
       "at": "2026-11-02T17:08:34Z",
       "text": "No harvest work this run: S553 (Sam's session) reworked the Library's remediation, every draft applied as the report opens and a PDF written; the queue's next step stands."
