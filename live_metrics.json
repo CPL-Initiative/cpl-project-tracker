@@ -1,10 +1,10 @@
 {
-  "scraped_at": "2026-11-01T05:18:05.884Z",
+  "scraped_at": "2026-11-02T06:21:12.080Z",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "college_count": 116,
   "active_college_count": 105,
-  "star_college_count": 70,
+  "star_college_count": 66,
   "tiers": {
     "criteria": [
       "Students >= 500",
@@ -93,17 +93,17 @@
         },
         {
           "college": "Riverside City College",
-          "students": 899,
-          "units": 4352,
-          "avgUnits": 4.8409343715239155,
-          "transcriptionRate": 100,
-          "avgTranscribed": 4.8409343715239155,
+          "students": 931,
+          "units": 4514,
+          "avgUnits": 4.848549946294307,
+          "transcriptionRate": 96.4,
+          "avgTranscribed": 4.674543501611171,
           "criteriaMetCount": 4,
-          "militaryStudents": 881,
+          "militaryStudents": 913,
           "nonMilitaryStudents": 20,
           "apprenticeStudents": 0,
-          "savings": 7878735,
-          "yearImpact": 27739557,
+          "savings": 8158995,
+          "yearImpact": 28722411,
           "transcribedUnits": 4352
         },
         {
@@ -1772,11 +1772,11 @@
   "metrics": [
     {
       "title": "STUDENTS SERVED",
-      "value": "59,130",
+      "value": "59,162",
       "breakdowns": [
         {
           "label": "Military",
-          "value": "30,653"
+          "value": "30,685"
         },
         {
           "label": "Workforce/Other",
@@ -1850,7 +1850,7 @@
       "breakdowns": [
         {
           "label": "Military",
-          "value": "$818M"
+          "value": "$819M"
         },
         {
           "label": "Workforce/Other",
@@ -1892,15 +1892,15 @@
     }
   ],
   "raw": {
-    "Students": 59130,
-    "Units": 282905.9,
+    "Students": 59162,
+    "Units": 283067.9,
     "TranscribedUnits": 84684.65,
-    "Savings": 402168255.25,
-    "YearImpact": 1629119816.8999999,
-    "MilitaryStudents": 30653,
+    "Savings": 402448515.25,
+    "YearImpact": 1630102670.8999999,
+    "MilitaryStudents": 30685,
     "NonMilitaryStudents": 28575,
     "AprenticeStudents": 958,
-    "AverageUnits": 4.784473194655844,
-    "TranscribedAverage": 1.4321774057162184
+    "AverageUnits": 4.7846235759440185,
+    "TranscribedAverage": 1.4314027585274331
   }
 }

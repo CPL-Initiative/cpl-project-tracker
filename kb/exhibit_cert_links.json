@@ -1,13 +1,13 @@
 {
  "schema": 1,
  "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE.",
- "_reference_generated_at": "2026-11-01T05:19:29+00:00",
+ "_reference_generated_at": "2026-11-02T06:22:48+00:00",
  "counts": {
   "certs_linked": 24,
-  "titles_linked": 59,
+  "titles_linked": 63,
   "holds": 47,
   "bundles": 27,
-  "aligned": 12,
+  "aligned": 16,
   "codes_not_in_catalog": [
    "G1"
   ]
@@ -718,6 +718,34 @@
    "rule": "all",
    "certs": [
     "ITC4070"
+   ]
+  },
+  "Engine Performance 1 (ASE A8 Engine Performance)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4070"
+   ]
+  },
+  "Engine Performance 2 (ASE A8 Engine Performance)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4070"
+   ]
+  },
+  "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4066"
+   ]
+  },
+  "Suspension and Steering (ASE A4 Suspension and Steering)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4067"
    ]
   }
  }

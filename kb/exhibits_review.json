@@ -1,35 +1,33 @@
 {
  "schema": 1,
  "_about": "The Exhibits tab's Review queue (kb/_build_exhibits_review.py): one record per title the CER procedures held, with its proposed canonical title and where that came from, its exhibits, where it is articulated and who could adopt it. Students per title are a reviewer-only read (exhibit_title_students).",
- "written_at": "2026-11-01T14:34:43Z",
+ "written_at": "2026-11-02T06:25:38Z",
  "sources": {
   "procedures_run": "2026-11-01T14:34:41Z",
   "suggestions": "2026-10-31T17:27:31Z",
-  "statewide": "2026-11-01T05:17:15",
-  "audit": "2026-11-01T05:20:37+00:00"
+  "statewide": "2026-11-02T06:20:21",
+  "audit": "2026-11-02T06:23:57+00:00"
  },
  "tiles": {
   "names": {
-   "n": 5492,
+   "n": 5493,
    "of": 5493,
-   "waiting": 1
+   "waiting": 0
   },
   "aligned": {
    "n": 0,
-   "of": 1
+   "of": 0
   },
   "saved_not_folded": 0,
-  "settled_since_run": 0
+  "settled_since_run": 1
  },
  "steps": {
-  "Proposed": 1,
+  "Proposed": 0,
   "Wording check": 0,
   "Two issuers": 0,
   "Conflict with the reference": 0
  },
- "colleges": [
-  "College of the Desert"
- ],
+ "colleges": [],
  "issuers": [
   "A.B. Miller High School",
   "Adobe",
@@ -66,6 +64,7 @@
   "Association for Supply Chain Management (ASCM)",
   "Association of Nutrition & Foodservice Professionals (ANFP) / Certifying Board for Dietary Managers (CBDM)",
   "Autodesk",
+  "Automotive Apprenticeship Group (AAG)",
   "Baldwin Park Adult and Community Education",
   "Baldy View Regional Occupational Program",
   "Biocom California Institute",
@@ -91,6 +90,7 @@
   "California Commission on Peace Officer Standards and Training (POST)",
   "California Community Colleges",
   "California Conservation Corps",
+  "California Consortium of Addiction Programs and Professionals (CCAPP)",
   "California Consortium of Addiction Programs and Professionals (CCAPP) / California Association of DUI Treatment Programs (CADTP)",
   "California Department of Corrections and Rehabilitation (CDCR) / Commission on Correctional Peace Officer Standards and Training (CPOST)",
   "California Department of Corrections and Rehabilitation / Commission on Correctional Peace Officer Standards and Training (CDCR/CPOST)",
@@ -153,6 +153,7 @@
   "Emergency Care and Safety Institute (ECSI)",
   "Emergency Medical Technician-Paramedic-Didactic",
   "Emergency Nurses Association (ENA)",
+  "Employer Issued",
   "Epic Games",
   "ESCO Institute",
   "Esri (Environmental Systems Research Institute)",
@@ -172,11 +173,13 @@
   "Global Information Assurance Certification (GIAC)",
   "Godinez High School",
   "Google",
+  "Graduate Level Institution of Higher Education",
   "Green Business Certification Inc. (GBCI)",
   "H&R Block",
   "Haas Automation",
   "Hanford Joint Union High School District (HJUHSD)",
   "Hanford West High School",
+  "Honeywell",
   "Inland Counties Emergency Medical Agency (ICEMA)",
   "Inland Empire Electrical Training Center",
   "Inter-Industry Conference on Auto Collision Repair (I-CAR)",
@@ -199,6 +202,7 @@
   "Irvine High School",
   "ISC2",
   "JobTrain",
+  "Johnson Controls Training Institute",
   "Jurupa Hills High School",
   "Jurupa Unified School District",
   "Kaiser High School",
@@ -268,10 +272,14 @@
   "San Bernardino City Unified School District",
   "Santa Ana High School",
   "Santiago High School",
+  "Schneider Electric's EcoXpert program",
   "Segerstrom High School",
+  "Siemens",
   "Sonoma-Marin Saving Water Partnership (QWEL)",
   "Southwest Carpenter And Affiliated Trade J.A.T.C.",
+  "Spaulding Marine Center",
   "State Bar of California",
+  "State Fire Training (SFT)",
   "State Water Resources Control Board (SWRCB)",
   "Summit High School",
   "The Walt Disney Company",
@@ -375,6 +383,6 @@
   "Villa Park High School"
  ],
  "held": [
-  {"raw": "Theater Arts Portfolio Review", "step": "Proposed", "why": "the classifier is unsure (0.75)", "colleges": [0], "title": "Theatre Arts", "issuer": "California Community Colleges", "from": "the classifier", "ids": ["MAPPRA-TAPR-1-001"], "art": [0], "could": [], "basis": "", "same": false, "confidence": 0.75, "under": ["Creative Careers Theatre Art"], "under_count": 1, "exists": true}
+
  ]
 }

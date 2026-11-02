@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-01T05:22:26Z",
+ "written_at": "2026-11-02T06:25:50Z",
  "rows": [
   {
    "key": "requirements",
@@ -15,7 +15,7 @@
    "status_file": "kb/status/program-requirements.json",
    "pair": [
     {
-     "n": 13545,
+     "n": 13553,
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
@@ -26,13 +26,13 @@
    ],
    "issues": [
     {
-     "n": 3382,
+     "n": 3380,
      "words": "active programs whose record fails a check",
      "owner": "the college's reading procedure",
      "open": "#program-requirements"
     },
     {
-     "n": 3355,
+     "n": 3349,
      "words": "active programs with no record yet",
      "owner": "the harvest",
      "open": "#program-requirements"
@@ -50,15 +50,15 @@
    ],
    "machine": {
     "what": "the last college read",
-    "at": "2026-10-31T10:26:15Z",
+    "at": "2026-11-01T05:59:43Z",
     "every_hours": null
    },
    "facts": {
     "active": 20282,
-    "complete": 13545,
-    "failing": 3382,
-    "unread": 3355,
-    "records": 18550,
+    "complete": 13553,
+    "failing": 3380,
+    "unread": 3349,
+    "records": 18556,
     "colleges": 114,
     "outside_active": 1623
    },
@@ -82,9 +82,9 @@
    "status_file": "kb/status/exhibit.json",
    "pair": [
     {
-     "n": 2402,
-     "of": 5492,
-     "words": "titles carry a review stamp (1,088 a person's, 1,314 a cohort's); 2,673 credentials, 2,188 of 2,961 records stamped",
+     "n": 2457,
+     "of": 5493,
+     "words": "titles carry a review stamp (1,173 a person's, 1,284 a cohort's); 2,667 credentials, 2,203 of 2,972 records stamped",
      "open": "#exhibits/credentials"
     }
    ],
@@ -94,17 +94,10 @@
    ],
    "issues": [
     {
-     "n": 351,
+     "n": 1,
      "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 274, a merge would join two issuers 42, the classifier's title has a course code left in 23, the classifier's title has a dangling word 11, the classifier's title has a method word left in 1)",
+     "owner": "a curator (the classifier is unsure 1)",
      "open": "#exhibits/held",
-     "error": null
-    },
-    {
-     "n": 18,
-     "words": "saved assignments the fold holds",
-     "owner": "a curator (a human-reviewed classification stands)",
-     "open": "#exhibits/conflict",
      "error": null
     },
     {
@@ -128,24 +121,24 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-10-31T19:32:41Z",
+    "at": "2026-11-02T06:21:29Z",
     "every_hours": 24
    },
    "facts": {
-    "titles": 5492,
-    "stamped": 2402,
-    "person": 1088,
-    "cohort": 1314,
-    "credentials": 2673,
-    "records": 2961,
-    "records_stamped": 2188,
+    "titles": 5493,
+    "stamped": 2457,
+    "person": 1173,
+    "cohort": 1284,
+    "credentials": 2667,
+    "records": 2972,
+    "records_stamped": 2203,
     "saved_at": "2026-10-31T14:01:00Z",
-    "fold_at": "2026-10-31T19:32:41Z",
+    "fold_at": "2026-11-02T06:21:29Z",
     "map_titles": 4872,
-    "unclassified": 1,
+    "unclassified": 0,
     "left_map": 621,
-    "below_80": 1151,
-    "below_60": 245
+    "below_80": 1123,
+    "below_60": 237
    },
    "sources": [
     "kb/unified_titles.json",
@@ -165,6 +158,10 @@
     {
      "href": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
      "text": "Open SkyView"
+    },
+    {
+     "href": "#coci-lookup",
+     "text": "Open the Courses List"
     }
    ],
    "status_file": "kb/status/course.json",
@@ -221,7 +218,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-01T05:20:28+00:00",
+    "at": "2026-11-02T06:23:48+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -253,7 +250,7 @@
     {
      "n": 459,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (408 by a rung 1 to 4 rule, 51 more by a curator); 5,750 of 9,416 articulations",
+     "words": "wordings resolve to a settled reference (408 by a rung 1 to 4 rule, 51 more by a curator); 5,763 of 9,432 articulations",
      "open": "#cr-reference/progress"
     }
    ],
@@ -287,29 +284,29 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-10-31T17:29:10Z",
+    "at": "2026-11-01T05:22:29Z",
     "every_hours": null
    },
    "facts": {
     "groups": 2159,
     "by_rule": 156,
     "rung_5": 1936,
-    "rows": 9416,
+    "rows": 9432,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
     "settled": 459,
-    "settled_rows": 5750,
+    "settled_rows": 5763,
     "rule_wordings": 408,
-    "rule_rows": 4566,
+    "rule_rows": 4577,
     "rule_groups": 223,
     "curator_wordings": 97,
     "curator_only": 51,
-    "curator_only_rows": 1184,
+    "curator_only_rows": 1186,
     "unsettled": 1885,
-    "unsettled_rows": 3666,
+    "unsettled_rows": 3669,
     "head": {
      "50": {
       "settled": 44,
@@ -319,12 +316,12 @@
      "100": {
       "settled": 76,
       "of": 100,
-      "rows": 5544
+      "rows": 5545
      },
      "250": {
-      "settled": 150,
+      "settled": 151,
       "of": 250,
-      "rows": 6553
+      "rows": 6559
      }
     },
     "awaiting_look": 138,
@@ -402,7 +399,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-01T05:18:13Z",
+    "at": "2026-11-02T06:21:26Z",
     "every_hours": 24
    },
    "facts": {
@@ -414,7 +411,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-01",
+    "scanned_at": "2026-11-02",
     "procedures_on": 6
    },
    "sources": [
