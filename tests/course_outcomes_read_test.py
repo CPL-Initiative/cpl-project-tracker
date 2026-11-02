@@ -278,6 +278,23 @@ def _():
     assert not re.search(r"supabase|/rest/v1|\.rpc\(|PATCH|execute_sql|SUPABASE_", src, re.I), "database address"
 
 
+SAC = os.path.join(ROOT, "kb", "course_outcomes", "trial_41436124244")   # Santa Ana: report 267, plain fields
+
+
+@check("Santa Ana's outline prints its SLO heading alone in a section, and the text reader reads the list after it (S549)")
+def _():
+    got = reader.parse_page(*filed(SAC, "ASL_110"), "curriqunet")
+    assert got["lead"] == "At the conclusion of this course, the student should be able to:", got
+    assert got["outcomes"] == [
+        "Students will utilize American Sign Language to express and receive information about a variety of topics "
+        "at a beginner level.",
+        "Students will demonstrate accuracy and proficiency in the use of learned structures and vocabulary.",
+        "Students will differentiate the unique cultural aspects of American Deaf culture from the unique cultural "
+        "aspects of other cultures."], got
+    pharm = reader.parse_page(*filed(SAC, "PHAR_048"), "curriqunet")
+    assert len(pharm["outcomes"]) == 8 and not any("Course Objectives" in x for x in pharm["outcomes"]), pharm
+
+
 def main():
     failed = 0
     for i, (name, fn) in enumerate(checks, 1):

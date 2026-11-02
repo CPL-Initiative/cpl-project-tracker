@@ -79,7 +79,7 @@ SLO_TITLE = re.compile(r"^[ \t]*(student|course) learning outcomes?\b", re.I | r
 # A list marker the outline prints before an outcome: 1. 1) a. a) • - – *
 MARKER = re.compile(r"^[ \t]*(?:\(?\d{1,2}[.)]|\(?[a-zA-Z][.)]|[\u2022\u25cf\u25aa\u00b7\-\u2013*])[ \t]+")
 # The lead-in a college prints between the heading and the list.
-LEAD = re.compile(r"(upon (successful )?completion|students? (will|should) be able|by the end of)[^\n]*",
+LEAD = re.compile(r"(upon (successful )?completion|at the conclusion of|students? (will|should) be able|by the end of)[^\n]*",
                   re.I)
 # The colleges an RCCD integrated outline names as offering the course.
 OFFERED = re.compile(r"^College:[ \t]*\n((?:[ \t]*[A-Z]{3}[ \t]*\n)+)", re.M)
@@ -230,6 +230,10 @@ def groups_from_html(page_html: str) -> list[dict] | None:
         if section is None:
             continue
         top = next(iter(section.find(lambda n: _has_class(n, "iq-data-list"))), None)
+        if top is None and not any(True for _ in tree.root.find(lambda n: _has_class(n, "iq-data-list"))):
+            # Not a grouped report: the heading's section holds the heading alone and the outcomes follow
+            # in plain fields (Santa Ana's report 267, trial 41436124244). The text reader takes over.
+            return None
         groups = []
         for entry in kids(top, "iq-list-entry") if top is not None else []:
             own = kids(entry, "iq-panel")
