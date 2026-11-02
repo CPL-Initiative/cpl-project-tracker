@@ -1,0 +1,25 @@
+{
+ "run": "s549-patterns",
+ "read_by": "S549 SkySunflower, 2026-11-02",
+ "partial": true,
+ "colleges": [],
+ "note": "Two titles the S548 read listed as unmatched, which the widened TITLE_PATTERNS now take (#2692): Dean, Career Technical Education (no 'and') as dean_cte, and Vice President, Finance and Business as vpbs. Each name, title and email checked against run 41427972048's committed window; the name is printed as the page prints it. Partial: names no college, so marks nobody gone.",
+ "rows": [
+  {
+   "college": "Pasadena City College",
+   "position": "dean_cte",
+   "title_as_printed": "Dean, Career Technical Education",
+   "name": "Derdiarian, Armine",
+   "email": "aderdiarian@pasadena.edu",
+   "source_url": "https://pasadena.edu/directory/index.php"
+  },
+  {
+   "college": "Rio Hondo College",
+   "position": "vpbs",
+   "title_as_printed": "Assistant Superintendent/Vice President, Finance and Business",
+   "name": "Dr. Stephen Kibui",
+   "email": "",
+   "source_url": "https://www.riohondo.edu/administration/president/governance/college-officials/"
+  }
+ ]
+}
