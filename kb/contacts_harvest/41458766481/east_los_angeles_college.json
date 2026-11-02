@@ -1,0 +1,17 @@
+{
+ "college": "East Los Angeles College",
+ "homepage": "https://www.elac.edu/",
+ "read_at": "2026-11-02T14:07:29+00:00",
+ "pages": [
+  {
+   "url": "https://www.elac.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://www.elac.edu/sites/elac.edu/files/2026-08/ELAC%20General%20Catalog%202026%202027.pdf",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

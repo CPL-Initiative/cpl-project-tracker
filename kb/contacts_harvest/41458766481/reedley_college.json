@@ -1,0 +1,23 @@
+{
+ "college": "Reedley College",
+ "homepage": "https://www.reedleycollege.edu/",
+ "read_at": "2026-11-02T14:10:09+00:00",
+ "pages": [
+  {
+   "url": "https://www.reedleycollege.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+   "final_url": "https://reedley.curriqunet.com/catalog/alias/2026-2027-catalog/iq/3100",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.scccd.edu/",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

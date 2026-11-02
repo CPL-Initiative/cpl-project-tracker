@@ -1,0 +1,17 @@
+{
+ "college": "West Los Angeles College",
+ "homepage": "https://www.wlac.edu/",
+ "read_at": "2026-11-02T14:10:21+00:00",
+ "pages": [
+  {
+   "url": "https://www.wlac.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://www.wlac.edu/sites/wlac.edu/files/2026-08/2026_2027%20catalog.pdf",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

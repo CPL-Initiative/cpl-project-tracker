@@ -1,0 +1,17 @@
+{
+ "college": "Los Angeles Valley College",
+ "homepage": "https://www.lavc.edu/",
+ "read_at": "2026-11-02T14:09:29+00:00",
+ "pages": [
+  {
+   "url": "https://www.lavc.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://www.lavc.edu/sites/lavc.edu/files/2026-08/LAVC%20Catalog%202026-2027.pdf",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}
