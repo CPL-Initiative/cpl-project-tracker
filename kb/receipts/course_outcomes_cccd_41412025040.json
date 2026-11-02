@@ -1,0 +1,3234 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "cccd",
+ "load_run": "41412025040",
+ "reads": [
+  "kb/course_outcomes/cccd/read_41399075269_p1of2.json",
+  "kb/course_outcomes/cccd/read_41399075269_p2of2.json"
+ ],
+ "posted": 568,
+ "inserted": 568,
+ "kept": 0,
+ "skipped": 75,
+ "skipped_rows": [
+  {
+   "course_code": "ART G106",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH C1100",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ATHL G236",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "BUS G110",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CJ G054N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CJ G089N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CJ G090N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CJ G152",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "COLL G100",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "COSM G023N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COSM G071N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COUN G100",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "CS G135",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "DANC G136",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON C2002",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1002",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL G205",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL G280",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGLG 127",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ESLG 087",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS G135",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS G137",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS G255",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST C1002",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "KIN G110",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH G064N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MATH G115S",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "MGMT G140",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE G108",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE G176",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PEAC G110",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PEAC G230",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "POLS C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSCI G105",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSCI G120",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSCI G205",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYC G167",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC G101",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "STAT C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ACCT G210",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART G105",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ARTH C1200",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ATHL G235",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CJ G146",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "CJ G151",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "COMM C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "COSM G024N",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "COUN G103",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "DANC G135",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "DART G105",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "DART G222",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ECON C2001",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1000E",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL C1003",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL G204",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL G206",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ENGL G281",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS G101",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS G111",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS G121",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS G136",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "ETHS G150",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "HIST C1001",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "MGMT G152",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE G101",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE G114",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE G127",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE G158",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PE G195",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PEAC G100",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PEAC G150",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSYC C1000",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "SOC G135",
+   "status": 404,
+   "shape": "none"
+  },
+  {
+   "course_code": "STAT C1000E",
+   "status": 404,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 7451,
+   "college": "Golden West College",
+   "course_code": "ACCT G100"
+  },
+  {
+   "id": 7452,
+   "college": "Golden West College",
+   "course_code": "ACCT G102"
+  },
+  {
+   "id": 7453,
+   "college": "Golden West College",
+   "course_code": "ACCT G110"
+  },
+  {
+   "id": 7454,
+   "college": "Golden West College",
+   "course_code": "ACCT G113"
+  },
+  {
+   "id": 7455,
+   "college": "Golden West College",
+   "course_code": "ACCT G120"
+  },
+  {
+   "id": 7456,
+   "college": "Golden West College",
+   "course_code": "ACCT G163"
+  },
+  {
+   "id": 7457,
+   "college": "Golden West College",
+   "course_code": "ACCT G211"
+  },
+  {
+   "id": 7458,
+   "college": "Golden West College",
+   "course_code": "ACCT G215"
+  },
+  {
+   "id": 7459,
+   "college": "Golden West College",
+   "course_code": "ACCT G250"
+  },
+  {
+   "id": 7460,
+   "college": "Golden West College",
+   "course_code": "ANTH G100"
+  },
+  {
+   "id": 7461,
+   "college": "Golden West College",
+   "course_code": "ANTH G140"
+  },
+  {
+   "id": 7462,
+   "college": "Golden West College",
+   "course_code": "ANTH G185"
+  },
+  {
+   "id": 7463,
+   "college": "Golden West College",
+   "course_code": "ANTH G190"
+  },
+  {
+   "id": 7464,
+   "college": "Golden West College",
+   "course_code": "ART G100"
+  },
+  {
+   "id": 7465,
+   "college": "Golden West College",
+   "course_code": "ART G104"
+  },
+  {
+   "id": 7466,
+   "college": "Golden West College",
+   "course_code": "ART G108"
+  },
+  {
+   "id": 7467,
+   "college": "Golden West College",
+   "course_code": "ART G115"
+  },
+  {
+   "id": 7468,
+   "college": "Golden West College",
+   "course_code": "ART G117"
+  },
+  {
+   "id": 7469,
+   "college": "Golden West College",
+   "course_code": "ART G119"
+  },
+  {
+   "id": 7470,
+   "college": "Golden West College",
+   "course_code": "ART G122"
+  },
+  {
+   "id": 7471,
+   "college": "Golden West College",
+   "course_code": "ART G127"
+  },
+  {
+   "id": 7472,
+   "college": "Golden West College",
+   "course_code": "ART G129"
+  },
+  {
+   "id": 7473,
+   "college": "Golden West College",
+   "course_code": "ART G131"
+  },
+  {
+   "id": 7474,
+   "college": "Golden West College",
+   "course_code": "ART G139"
+  },
+  {
+   "id": 7475,
+   "college": "Golden West College",
+   "course_code": "ART G143"
+  },
+  {
+   "id": 7476,
+   "college": "Golden West College",
+   "course_code": "ART G150"
+  },
+  {
+   "id": 7477,
+   "college": "Golden West College",
+   "course_code": "ART G159"
+  },
+  {
+   "id": 7478,
+   "college": "Golden West College",
+   "course_code": "ART G161"
+  },
+  {
+   "id": 7479,
+   "college": "Golden West College",
+   "course_code": "ART G221"
+  },
+  {
+   "id": 7480,
+   "college": "Golden West College",
+   "course_code": "ART G250"
+  },
+  {
+   "id": 7481,
+   "college": "Golden West College",
+   "course_code": "ASAM G100"
+  },
+  {
+   "id": 7482,
+   "college": "Golden West College",
+   "course_code": "ASTR G100L"
+  },
+  {
+   "id": 7483,
+   "college": "Golden West College",
+   "course_code": "ATHL G240"
+  },
+  {
+   "id": 7484,
+   "college": "Golden West College",
+   "course_code": "ATHL G244"
+  },
+  {
+   "id": 7485,
+   "college": "Golden West College",
+   "course_code": "ATHL G249"
+  },
+  {
+   "id": 7486,
+   "college": "Golden West College",
+   "course_code": "ATHL G253"
+  },
+  {
+   "id": 7487,
+   "college": "Golden West College",
+   "course_code": "ATHL G255"
+  },
+  {
+   "id": 7488,
+   "college": "Golden West College",
+   "course_code": "ATHL G259"
+  },
+  {
+   "id": 7489,
+   "college": "Golden West College",
+   "course_code": "ATHL G263"
+  },
+  {
+   "id": 7490,
+   "college": "Golden West College",
+   "course_code": "ATHL G279"
+  },
+  {
+   "id": 7491,
+   "college": "Golden West College",
+   "course_code": "AUTO G003N"
+  },
+  {
+   "id": 7492,
+   "college": "Golden West College",
+   "course_code": "AUTO G045N"
+  },
+  {
+   "id": 7493,
+   "college": "Golden West College",
+   "course_code": "AUTO G101"
+  },
+  {
+   "id": 7494,
+   "college": "Golden West College",
+   "course_code": "AUTO G120"
+  },
+  {
+   "id": 7495,
+   "college": "Golden West College",
+   "course_code": "AUTO G130"
+  },
+  {
+   "id": 7496,
+   "college": "Golden West College",
+   "course_code": "AUTO G140"
+  },
+  {
+   "id": 7497,
+   "college": "Golden West College",
+   "course_code": "AUTO G145"
+  },
+  {
+   "id": 7498,
+   "college": "Golden West College",
+   "course_code": "AUTO G151"
+  },
+  {
+   "id": 7499,
+   "college": "Golden West College",
+   "course_code": "AUTO G170"
+  },
+  {
+   "id": 7500,
+   "college": "Golden West College",
+   "course_code": "BIOL G100"
+  },
+  {
+   "id": 7501,
+   "college": "Golden West College",
+   "course_code": "BIOL G104"
+  },
+  {
+   "id": 7502,
+   "college": "Golden West College",
+   "course_code": "BIOL G110"
+  },
+  {
+   "id": 7503,
+   "college": "Golden West College",
+   "course_code": "BIOL G160"
+  },
+  {
+   "id": 7504,
+   "college": "Golden West College",
+   "course_code": "BIOL G182"
+  },
+  {
+   "id": 7505,
+   "college": "Golden West College",
+   "course_code": "BIOL G186"
+  },
+  {
+   "id": 7506,
+   "college": "Golden West College",
+   "course_code": "BIOL G210"
+  },
+  {
+   "id": 7507,
+   "college": "Golden West College",
+   "course_code": "BIOL G220"
+  },
+  {
+   "id": 7508,
+   "college": "Golden West College",
+   "course_code": "BIOL G225"
+  },
+  {
+   "id": 7509,
+   "college": "Golden West College",
+   "course_code": "BUS G012N"
+  },
+  {
+   "id": 7510,
+   "college": "Golden West College",
+   "course_code": "BUS G101"
+  },
+  {
+   "id": 7511,
+   "college": "Golden West College",
+   "course_code": "BUS G130"
+  },
+  {
+   "id": 7512,
+   "college": "Golden West College",
+   "course_code": "BUS G140"
+  },
+  {
+   "id": 7513,
+   "college": "Golden West College",
+   "course_code": "BUS G153"
+  },
+  {
+   "id": 7514,
+   "college": "Golden West College",
+   "course_code": "BUS G159"
+  },
+  {
+   "id": 7515,
+   "college": "Golden West College",
+   "course_code": "BUS G210"
+  },
+  {
+   "id": 7516,
+   "college": "Golden West College",
+   "course_code": "CBA G011N"
+  },
+  {
+   "id": 7517,
+   "college": "Golden West College",
+   "course_code": "CBA G013N"
+  },
+  {
+   "id": 7518,
+   "college": "Golden West College",
+   "course_code": "CBA G015N"
+  },
+  {
+   "id": 7519,
+   "college": "Golden West College",
+   "course_code": "CHEM G110"
+  },
+  {
+   "id": 7520,
+   "college": "Golden West College",
+   "course_code": "CHEM G180"
+  },
+  {
+   "id": 7521,
+   "college": "Golden West College",
+   "course_code": "CHEM G220"
+  },
+  {
+   "id": 7522,
+   "college": "Golden West College",
+   "course_code": "CJ G010N"
+  },
+  {
+   "id": 7523,
+   "college": "Golden West College",
+   "course_code": "CJ G064N"
+  },
+  {
+   "id": 7524,
+   "college": "Golden West College",
+   "course_code": "CJ G123"
+  },
+  {
+   "id": 7525,
+   "college": "Golden West College",
+   "course_code": "CJ G137"
+  },
+  {
+   "id": 7526,
+   "college": "Golden West College",
+   "course_code": "CJ G141"
+  },
+  {
+   "id": 7527,
+   "college": "Golden West College",
+   "course_code": "CJ G150"
+  },
+  {
+   "id": 7528,
+   "college": "Golden West College",
+   "course_code": "CMST G100"
+  },
+  {
+   "id": 7529,
+   "college": "Golden West College",
+   "course_code": "CMST G180"
+  },
+  {
+   "id": 7530,
+   "college": "Golden West College",
+   "course_code": "CMST G225"
+  },
+  {
+   "id": 7531,
+   "college": "Golden West College",
+   "course_code": "CMST G260"
+  },
+  {
+   "id": 7532,
+   "college": "Golden West College",
+   "course_code": "COSM G021N"
+  },
+  {
+   "id": 7533,
+   "college": "Golden West College",
+   "course_code": "COUN G104"
+  },
+  {
+   "id": 7534,
+   "college": "Golden West College",
+   "course_code": "COUN G115"
+  },
+  {
+   "id": 7535,
+   "college": "Golden West College",
+   "course_code": "COUN G151"
+  },
+  {
+   "id": 7536,
+   "college": "Golden West College",
+   "course_code": "COUN G153"
+  },
+  {
+   "id": 7537,
+   "college": "Golden West College",
+   "course_code": "COUN G155"
+  },
+  {
+   "id": 7538,
+   "college": "Golden West College",
+   "course_code": "COUN G205"
+  },
+  {
+   "id": 7539,
+   "college": "Golden West College",
+   "course_code": "CS G130"
+  },
+  {
+   "id": 7540,
+   "college": "Golden West College",
+   "course_code": "CS G154"
+  },
+  {
+   "id": 7541,
+   "college": "Golden West College",
+   "course_code": "CS G178"
+  },
+  {
+   "id": 7542,
+   "college": "Golden West College",
+   "course_code": "CS G189"
+  },
+  {
+   "id": 7543,
+   "college": "Golden West College",
+   "course_code": "CS G231"
+  },
+  {
+   "id": 7544,
+   "college": "Golden West College",
+   "course_code": "CS G262"
+  },
+  {
+   "id": 7545,
+   "college": "Golden West College",
+   "course_code": "DANC G101"
+  },
+  {
+   "id": 7546,
+   "college": "Golden West College",
+   "course_code": "DANC G106"
+  },
+  {
+   "id": 7547,
+   "college": "Golden West College",
+   "course_code": "DANC G112"
+  },
+  {
+   "id": 7548,
+   "college": "Golden West College",
+   "course_code": "DANC G115"
+  },
+  {
+   "id": 7549,
+   "college": "Golden West College",
+   "course_code": "DANC G120"
+  },
+  {
+   "id": 7550,
+   "college": "Golden West College",
+   "course_code": "DANC G130"
+  },
+  {
+   "id": 7551,
+   "college": "Golden West College",
+   "course_code": "DANC G150"
+  },
+  {
+   "id": 7552,
+   "college": "Golden West College",
+   "course_code": "DANC G160"
+  },
+  {
+   "id": 7553,
+   "college": "Golden West College",
+   "course_code": "DANC G201"
+  },
+  {
+   "id": 7554,
+   "college": "Golden West College",
+   "course_code": "DANC G213"
+  },
+  {
+   "id": 7555,
+   "college": "Golden West College",
+   "course_code": "DANC G219"
+  },
+  {
+   "id": 7556,
+   "college": "Golden West College",
+   "course_code": "DANC G225"
+  },
+  {
+   "id": 7557,
+   "college": "Golden West College",
+   "course_code": "DANC G231"
+  },
+  {
+   "id": 7558,
+   "college": "Golden West College",
+   "course_code": "DANC G235"
+  },
+  {
+   "id": 7559,
+   "college": "Golden West College",
+   "course_code": "DANC G245"
+  },
+  {
+   "id": 7560,
+   "college": "Golden West College",
+   "course_code": "DANC G251"
+  },
+  {
+   "id": 7561,
+   "college": "Golden West College",
+   "course_code": "DANC G260"
+  },
+  {
+   "id": 7562,
+   "college": "Golden West College",
+   "course_code": "DART G100"
+  },
+  {
+   "id": 7563,
+   "college": "Golden West College",
+   "course_code": "DART G135"
+  },
+  {
+   "id": 7564,
+   "college": "Golden West College",
+   "course_code": "DART G152"
+  },
+  {
+   "id": 7565,
+   "college": "Golden West College",
+   "course_code": "DART G170"
+  },
+  {
+   "id": 7566,
+   "college": "Golden West College",
+   "course_code": "DART G177"
+  },
+  {
+   "id": 7567,
+   "college": "Golden West College",
+   "course_code": "DART G179"
+  },
+  {
+   "id": 7568,
+   "college": "Golden West College",
+   "course_code": "DART G200"
+  },
+  {
+   "id": 7569,
+   "college": "Golden West College",
+   "course_code": "DART G240"
+  },
+  {
+   "id": 7570,
+   "college": "Golden West College",
+   "course_code": "DRAF G105"
+  },
+  {
+   "id": 7571,
+   "college": "Golden West College",
+   "course_code": "DRAF G170"
+  },
+  {
+   "id": 7572,
+   "college": "Golden West College",
+   "course_code": "ECON G105"
+  },
+  {
+   "id": 7573,
+   "college": "Golden West College",
+   "course_code": "ECON G115"
+  },
+  {
+   "id": 7574,
+   "college": "Golden West College",
+   "course_code": "ECON G130"
+  },
+  {
+   "id": 7575,
+   "college": "Golden West College",
+   "course_code": "ECON G160"
+  },
+  {
+   "id": 7576,
+   "college": "Golden West College",
+   "course_code": "ECON G175"
+  },
+  {
+   "id": 7577,
+   "college": "Golden West College",
+   "course_code": "EDUC G103"
+  },
+  {
+   "id": 7578,
+   "college": "Golden West College",
+   "course_code": "EDUC G200"
+  },
+  {
+   "id": 7579,
+   "college": "Golden West College",
+   "course_code": "EDUC G220"
+  },
+  {
+   "id": 7580,
+   "college": "Golden West College",
+   "course_code": "ELL G015N"
+  },
+  {
+   "id": 7581,
+   "college": "Golden West College",
+   "course_code": "ELL G020N"
+  },
+  {
+   "id": 7582,
+   "college": "Golden West College",
+   "course_code": "ELL G026N"
+  },
+  {
+   "id": 7583,
+   "college": "Golden West College",
+   "course_code": "ELL G028N"
+  },
+  {
+   "id": 7584,
+   "college": "Golden West College",
+   "course_code": "ELL G035N"
+  },
+  {
+   "id": 7585,
+   "college": "Golden West College",
+   "course_code": "ELL G040N"
+  },
+  {
+   "id": 7586,
+   "college": "Golden West College",
+   "course_code": "ELL G050N"
+  },
+  {
+   "id": 7587,
+   "college": "Golden West College",
+   "course_code": "ENGL G110"
+  },
+  {
+   "id": 7588,
+   "college": "Golden West College",
+   "course_code": "ENGL G114"
+  },
+  {
+   "id": 7589,
+   "college": "Golden West College",
+   "course_code": "ENGL G143"
+  },
+  {
+   "id": 7590,
+   "college": "Golden West College",
+   "course_code": "ENGL G150"
+  },
+  {
+   "id": 7591,
+   "college": "Golden West College",
+   "course_code": "ENGL G160"
+  },
+  {
+   "id": 7592,
+   "college": "Golden West College",
+   "course_code": "ENGL G181"
+  },
+  {
+   "id": 7593,
+   "college": "Golden West College",
+   "course_code": "ENGL G270"
+  },
+  {
+   "id": 7594,
+   "college": "Golden West College",
+   "course_code": "ENGR G220"
+  },
+  {
+   "id": 7595,
+   "college": "Golden West College",
+   "course_code": "ENGR G285"
+  },
+  {
+   "id": 7596,
+   "college": "Golden West College",
+   "course_code": "ETHS G103"
+  },
+  {
+   "id": 7597,
+   "college": "Golden West College",
+   "course_code": "ETHS G120"
+  },
+  {
+   "id": 7598,
+   "college": "Golden West College",
+   "course_code": "ETHS G133"
+  },
+  {
+   "id": 7599,
+   "college": "Golden West College",
+   "course_code": "ETHS G167"
+  },
+  {
+   "id": 7600,
+   "college": "Golden West College",
+   "course_code": "GED G060N"
+  },
+  {
+   "id": 7601,
+   "college": "Golden West College",
+   "course_code": "GED G080N"
+  },
+  {
+   "id": 7602,
+   "college": "Golden West College",
+   "course_code": "GEOG G120"
+  },
+  {
+   "id": 7603,
+   "college": "Golden West College",
+   "course_code": "GEOG G180"
+  },
+  {
+   "id": 7604,
+   "college": "Golden West College",
+   "course_code": "GEOG G185"
+  },
+  {
+   "id": 7605,
+   "college": "Golden West College",
+   "course_code": "GEOL G105"
+  },
+  {
+   "id": 7606,
+   "college": "Golden West College",
+   "course_code": "GEOL G110"
+  },
+  {
+   "id": 7607,
+   "college": "Golden West College",
+   "course_code": "GLST G100"
+  },
+  {
+   "id": 7608,
+   "college": "Golden West College",
+   "course_code": "GLST G102"
+  },
+  {
+   "id": 7609,
+   "college": "Golden West College",
+   "course_code": "GLST G130"
+  },
+  {
+   "id": 7610,
+   "college": "Golden West College",
+   "course_code": "GLST G230"
+  },
+  {
+   "id": 7611,
+   "college": "Golden West College",
+   "course_code": "HIST G120"
+  },
+  {
+   "id": 7612,
+   "college": "Golden West College",
+   "course_code": "HIST G140"
+  },
+  {
+   "id": 7613,
+   "college": "Golden West College",
+   "course_code": "HIST G150"
+  },
+  {
+   "id": 7614,
+   "college": "Golden West College",
+   "course_code": "HIST G161"
+  },
+  {
+   "id": 7615,
+   "college": "Golden West College",
+   "course_code": "HIST G170"
+  },
+  {
+   "id": 7616,
+   "college": "Golden West College",
+   "course_code": "HIST G180"
+  },
+  {
+   "id": 7617,
+   "college": "Golden West College",
+   "course_code": "HLED G100"
+  },
+  {
+   "id": 7618,
+   "college": "Golden West College",
+   "course_code": "HLED G135"
+  },
+  {
+   "id": 7619,
+   "college": "Golden West College",
+   "course_code": "INTR G100"
+  },
+  {
+   "id": 7620,
+   "college": "Golden West College",
+   "course_code": "INTR G135"
+  },
+  {
+   "id": 7621,
+   "college": "Golden West College",
+   "course_code": "INTR G160"
+  },
+  {
+   "id": 7622,
+   "college": "Golden West College",
+   "course_code": "KIN G100"
+  },
+  {
+   "id": 7623,
+   "college": "Golden West College",
+   "course_code": "LIBR G110"
+  },
+  {
+   "id": 7624,
+   "college": "Golden West College",
+   "course_code": "LIFE G050N"
+  },
+  {
+   "id": 7625,
+   "college": "Golden West College",
+   "course_code": "MATH G050N"
+  },
+  {
+   "id": 7626,
+   "college": "Golden West College",
+   "course_code": "MATH G052N"
+  },
+  {
+   "id": 7627,
+   "college": "Golden West College",
+   "course_code": "MATH G054N"
+  },
+  {
+   "id": 7628,
+   "college": "Golden West College",
+   "course_code": "MATH G056N"
+  },
+  {
+   "id": 7629,
+   "college": "Golden West College",
+   "course_code": "MATH G058N"
+  },
+  {
+   "id": 7630,
+   "college": "Golden West College",
+   "course_code": "MATH G060N"
+  },
+  {
+   "id": 7631,
+   "college": "Golden West College",
+   "course_code": "MATH G062N"
+  },
+  {
+   "id": 7632,
+   "college": "Golden West College",
+   "course_code": "MATH G066N"
+  },
+  {
+   "id": 7633,
+   "college": "Golden West College",
+   "course_code": "MATH G098N"
+  },
+  {
+   "id": 7634,
+   "college": "Golden West College",
+   "course_code": "MATH G100"
+  },
+  {
+   "id": 7635,
+   "college": "Golden West College",
+   "course_code": "MATH G104"
+  },
+  {
+   "id": 7636,
+   "college": "Golden West College",
+   "course_code": "MATH G140"
+  },
+  {
+   "id": 7637,
+   "college": "Golden West College",
+   "course_code": "MATH G170"
+  },
+  {
+   "id": 7638,
+   "college": "Golden West College",
+   "course_code": "MATH G185"
+  },
+  {
+   "id": 7639,
+   "college": "Golden West College",
+   "course_code": "MATH G285"
+  },
+  {
+   "id": 7640,
+   "college": "Golden West College",
+   "course_code": "MGMT G110"
+  },
+  {
+   "id": 7641,
+   "college": "Golden West College",
+   "course_code": "MGMT G115"
+  },
+  {
+   "id": 7642,
+   "college": "Golden West College",
+   "course_code": "MGMT G155"
+  },
+  {
+   "id": 7643,
+   "college": "Golden West College",
+   "course_code": "MGMT G163"
+  },
+  {
+   "id": 7644,
+   "college": "Golden West College",
+   "course_code": "MKTG G135"
+  },
+  {
+   "id": 7645,
+   "college": "Golden West College",
+   "course_code": "MKTG G157"
+  },
+  {
+   "id": 7646,
+   "college": "Golden West College",
+   "course_code": "MUS G101"
+  },
+  {
+   "id": 7647,
+   "college": "Golden West College",
+   "course_code": "MUS G105"
+  },
+  {
+   "id": 7648,
+   "college": "Golden West College",
+   "course_code": "MUS G108"
+  },
+  {
+   "id": 7649,
+   "college": "Golden West College",
+   "course_code": "MUS G113"
+  },
+  {
+   "id": 7650,
+   "college": "Golden West College",
+   "course_code": "MUS G116"
+  },
+  {
+   "id": 7651,
+   "college": "Golden West College",
+   "course_code": "MUS G121"
+  },
+  {
+   "id": 7652,
+   "college": "Golden West College",
+   "course_code": "MUS G127"
+  },
+  {
+   "id": 7653,
+   "college": "Golden West College",
+   "course_code": "MUS G139"
+  },
+  {
+   "id": 7654,
+   "college": "Golden West College",
+   "course_code": "MUS G142"
+  },
+  {
+   "id": 7655,
+   "college": "Golden West College",
+   "course_code": "MUS G145"
+  },
+  {
+   "id": 7656,
+   "college": "Golden West College",
+   "course_code": "MUS G147"
+  },
+  {
+   "id": 7657,
+   "college": "Golden West College",
+   "course_code": "MUS G216"
+  },
+  {
+   "id": 7658,
+   "college": "Golden West College",
+   "course_code": "MUS G241"
+  },
+  {
+   "id": 7659,
+   "college": "Golden West College",
+   "course_code": "MUS G260"
+  },
+  {
+   "id": 7660,
+   "college": "Golden West College",
+   "course_code": "MUS G290"
+  },
+  {
+   "id": 7661,
+   "college": "Golden West College",
+   "course_code": "NURS G051N"
+  },
+  {
+   "id": 7662,
+   "college": "Golden West College",
+   "course_code": "NURS G060N"
+  },
+  {
+   "id": 7663,
+   "college": "Golden West College",
+   "course_code": "NURS G101"
+  },
+  {
+   "id": 7664,
+   "college": "Golden West College",
+   "course_code": "NURS G131"
+  },
+  {
+   "id": 7665,
+   "college": "Golden West College",
+   "course_code": "NURS G160C"
+  },
+  {
+   "id": 7666,
+   "college": "Golden West College",
+   "course_code": "NURS G170C"
+  },
+  {
+   "id": 7667,
+   "college": "Golden West College",
+   "course_code": "NURS G175C"
+  },
+  {
+   "id": 7668,
+   "college": "Golden West College",
+   "course_code": "NURS G271"
+  },
+  {
+   "id": 7669,
+   "college": "Golden West College",
+   "course_code": "NURS G285C"
+  },
+  {
+   "id": 7670,
+   "college": "Golden West College",
+   "course_code": "NURS G290C"
+  },
+  {
+   "id": 7671,
+   "college": "Golden West College",
+   "course_code": "NURS G295C"
+  },
+  {
+   "id": 7672,
+   "college": "Golden West College",
+   "course_code": "PE G103"
+  },
+  {
+   "id": 7673,
+   "college": "Golden West College",
+   "course_code": "PE G111"
+  },
+  {
+   "id": 7674,
+   "college": "Golden West College",
+   "course_code": "PE G126"
+  },
+  {
+   "id": 7675,
+   "college": "Golden West College",
+   "course_code": "PE G130"
+  },
+  {
+   "id": 7676,
+   "college": "Golden West College",
+   "course_code": "PE G150"
+  },
+  {
+   "id": 7677,
+   "college": "Golden West College",
+   "course_code": "PE G166"
+  },
+  {
+   "id": 7678,
+   "college": "Golden West College",
+   "course_code": "PE G181"
+  },
+  {
+   "id": 7679,
+   "college": "Golden West College",
+   "course_code": "PE G192"
+  },
+  {
+   "id": 7680,
+   "college": "Golden West College",
+   "course_code": "PE G196"
+  },
+  {
+   "id": 7681,
+   "college": "Golden West College",
+   "course_code": "PHIL G102"
+  },
+  {
+   "id": 7682,
+   "college": "Golden West College",
+   "course_code": "PHIL G111"
+  },
+  {
+   "id": 7683,
+   "college": "Golden West College",
+   "course_code": "PHIL G120"
+  },
+  {
+   "id": 7684,
+   "college": "Golden West College",
+   "course_code": "PHIL G125"
+  },
+  {
+   "id": 7685,
+   "college": "Golden West College",
+   "course_code": "PHIL G150"
+  },
+  {
+   "id": 7686,
+   "college": "Golden West College",
+   "course_code": "PHOT G190"
+  },
+  {
+   "id": 7687,
+   "college": "Golden West College",
+   "course_code": "PHSC G100"
+  },
+  {
+   "id": 7688,
+   "college": "Golden West College",
+   "course_code": "PHYS G111"
+  },
+  {
+   "id": 7689,
+   "college": "Golden West College",
+   "course_code": "PHYS G125"
+  },
+  {
+   "id": 7690,
+   "college": "Golden West College",
+   "course_code": "PHYS G280"
+  },
+  {
+   "id": 7691,
+   "college": "Golden West College",
+   "course_code": "PSCI G101"
+  },
+  {
+   "id": 7692,
+   "college": "Golden West College",
+   "course_code": "PSCI G135"
+  },
+  {
+   "id": 7693,
+   "college": "Golden West College",
+   "course_code": "PSCI G181"
+  },
+  {
+   "id": 7694,
+   "college": "Golden West College",
+   "course_code": "PSYC G110"
+  },
+  {
+   "id": 7695,
+   "college": "Golden West College",
+   "course_code": "PSYC G118"
+  },
+  {
+   "id": 7696,
+   "college": "Golden West College",
+   "course_code": "PSYC G140"
+  },
+  {
+   "id": 7697,
+   "college": "Golden West College",
+   "course_code": "PSYC G255"
+  },
+  {
+   "id": 7698,
+   "college": "Golden West College",
+   "course_code": "PSYC G280"
+  },
+  {
+   "id": 7699,
+   "college": "Golden West College",
+   "course_code": "SIGN G180"
+  },
+  {
+   "id": 7700,
+   "college": "Golden West College",
+   "course_code": "SIGN G200"
+  },
+  {
+   "id": 7701,
+   "college": "Golden West College",
+   "course_code": "SIGN G285"
+  },
+  {
+   "id": 7702,
+   "college": "Golden West College",
+   "course_code": "SOC G111"
+  },
+  {
+   "id": 7703,
+   "college": "Golden West College",
+   "course_code": "SOC G125"
+  },
+  {
+   "id": 7704,
+   "college": "Golden West College",
+   "course_code": "SOC G134"
+  },
+  {
+   "id": 7705,
+   "college": "Golden West College",
+   "course_code": "SOC G140"
+  },
+  {
+   "id": 7706,
+   "college": "Golden West College",
+   "course_code": "SOC G185"
+  },
+  {
+   "id": 7707,
+   "college": "Golden West College",
+   "course_code": "SPAN G160"
+  },
+  {
+   "id": 7708,
+   "college": "Golden West College",
+   "course_code": "SPAN G165"
+  },
+  {
+   "id": 7709,
+   "college": "Golden West College",
+   "course_code": "SPAN G185"
+  },
+  {
+   "id": 7710,
+   "college": "Golden West College",
+   "course_code": "SPAN G280"
+  },
+  {
+   "id": 7711,
+   "college": "Golden West College",
+   "course_code": "STAT G010N"
+  },
+  {
+   "id": 7712,
+   "college": "Golden West College",
+   "course_code": "STAT G012N"
+  },
+  {
+   "id": 7713,
+   "college": "Golden West College",
+   "course_code": "SWHS G120"
+  },
+  {
+   "id": 7714,
+   "college": "Golden West College",
+   "course_code": "THEA G100"
+  },
+  {
+   "id": 7715,
+   "college": "Golden West College",
+   "course_code": "THEA G106"
+  },
+  {
+   "id": 7716,
+   "college": "Golden West College",
+   "course_code": "THEA G108"
+  },
+  {
+   "id": 7717,
+   "college": "Golden West College",
+   "course_code": "THEA G111"
+  },
+  {
+   "id": 7718,
+   "college": "Golden West College",
+   "course_code": "THEA G115"
+  },
+  {
+   "id": 7719,
+   "college": "Golden West College",
+   "course_code": "THEA G120"
+  },
+  {
+   "id": 7720,
+   "college": "Golden West College",
+   "course_code": "THEA G126"
+  },
+  {
+   "id": 7721,
+   "college": "Golden West College",
+   "course_code": "THEA G146"
+  },
+  {
+   "id": 7722,
+   "college": "Golden West College",
+   "course_code": "THEA G161"
+  },
+  {
+   "id": 7723,
+   "college": "Golden West College",
+   "course_code": "THEA G170"
+  },
+  {
+   "id": 7724,
+   "college": "Golden West College",
+   "course_code": "THEA G175"
+  },
+  {
+   "id": 7725,
+   "college": "Golden West College",
+   "course_code": "THEA G177"
+  },
+  {
+   "id": 7726,
+   "college": "Golden West College",
+   "course_code": "THEA G180"
+  },
+  {
+   "id": 7727,
+   "college": "Golden West College",
+   "course_code": "THEA G185"
+  },
+  {
+   "id": 7728,
+   "college": "Golden West College",
+   "course_code": "THEA G206"
+  },
+  {
+   "id": 7729,
+   "college": "Golden West College",
+   "course_code": "THEA G210"
+  },
+  {
+   "id": 7730,
+   "college": "Golden West College",
+   "course_code": "VIET G180"
+  },
+  {
+   "id": 7731,
+   "college": "Golden West College",
+   "course_code": "VIET G280"
+  },
+  {
+   "id": 7732,
+   "college": "Golden West College",
+   "course_code": "WORK G100"
+  },
+  {
+   "id": 7733,
+   "college": "Golden West College",
+   "course_code": "ACCT G101"
+  },
+  {
+   "id": 7734,
+   "college": "Golden West College",
+   "course_code": "ACCT G105"
+  },
+  {
+   "id": 7735,
+   "college": "Golden West College",
+   "course_code": "ACCT G111"
+  },
+  {
+   "id": 7736,
+   "college": "Golden West College",
+   "course_code": "ACCT G115"
+  },
+  {
+   "id": 7737,
+   "college": "Golden West College",
+   "course_code": "ACCT G121"
+  },
+  {
+   "id": 7738,
+   "college": "Golden West College",
+   "course_code": "ACCT G212"
+  },
+  {
+   "id": 7739,
+   "college": "Golden West College",
+   "course_code": "ACCT G220"
+  },
+  {
+   "id": 7740,
+   "college": "Golden West College",
+   "course_code": "AFS G100"
+  },
+  {
+   "id": 7741,
+   "college": "Golden West College",
+   "course_code": "ANTH G130"
+  },
+  {
+   "id": 7742,
+   "college": "Golden West College",
+   "course_code": "ANTH G150"
+  },
+  {
+   "id": 7743,
+   "college": "Golden West College",
+   "course_code": "ANTH G185L"
+  },
+  {
+   "id": 7744,
+   "college": "Golden West College",
+   "course_code": "ANTH G200"
+  },
+  {
+   "id": 7745,
+   "college": "Golden West College",
+   "course_code": "ART G103"
+  },
+  {
+   "id": 7746,
+   "college": "Golden West College",
+   "course_code": "ART G107"
+  },
+  {
+   "id": 7747,
+   "college": "Golden West College",
+   "course_code": "ART G109"
+  },
+  {
+   "id": 7748,
+   "college": "Golden West College",
+   "course_code": "ART G116"
+  },
+  {
+   "id": 7749,
+   "college": "Golden West College",
+   "course_code": "ART G118"
+  },
+  {
+   "id": 7750,
+   "college": "Golden West College",
+   "course_code": "ART G121"
+  },
+  {
+   "id": 7751,
+   "college": "Golden West College",
+   "course_code": "ART G123"
+  },
+  {
+   "id": 7752,
+   "college": "Golden West College",
+   "course_code": "ART G128"
+  },
+  {
+   "id": 7753,
+   "college": "Golden West College",
+   "course_code": "ART G130"
+  },
+  {
+   "id": 7754,
+   "college": "Golden West College",
+   "course_code": "ART G138"
+  },
+  {
+   "id": 7755,
+   "college": "Golden West College",
+   "course_code": "ART G142"
+  },
+  {
+   "id": 7756,
+   "college": "Golden West College",
+   "course_code": "ART G145"
+  },
+  {
+   "id": 7757,
+   "college": "Golden West College",
+   "course_code": "ART G151"
+  },
+  {
+   "id": 7758,
+   "college": "Golden West College",
+   "course_code": "ART G160"
+  },
+  {
+   "id": 7759,
+   "college": "Golden West College",
+   "course_code": "ART G167"
+  },
+  {
+   "id": 7760,
+   "college": "Golden West College",
+   "course_code": "ART G223"
+  },
+  {
+   "id": 7761,
+   "college": "Golden West College",
+   "course_code": "ART G251"
+  },
+  {
+   "id": 7762,
+   "college": "Golden West College",
+   "course_code": "ASTR G100"
+  },
+  {
+   "id": 7763,
+   "college": "Golden West College",
+   "course_code": "ATHL G239"
+  },
+  {
+   "id": 7764,
+   "college": "Golden West College",
+   "course_code": "ATHL G243"
+  },
+  {
+   "id": 7765,
+   "college": "Golden West College",
+   "course_code": "ATHL G246"
+  },
+  {
+   "id": 7766,
+   "college": "Golden West College",
+   "course_code": "ATHL G250"
+  },
+  {
+   "id": 7767,
+   "college": "Golden West College",
+   "course_code": "ATHL G254"
+  },
+  {
+   "id": 7768,
+   "college": "Golden West College",
+   "course_code": "ATHL G256"
+  },
+  {
+   "id": 7769,
+   "college": "Golden West College",
+   "course_code": "ATHL G260"
+  },
+  {
+   "id": 7770,
+   "college": "Golden West College",
+   "course_code": "ATHL G264"
+  },
+  {
+   "id": 7771,
+   "college": "Golden West College",
+   "course_code": "AUTO G002N"
+  },
+  {
+   "id": 7772,
+   "college": "Golden West College",
+   "course_code": "AUTO G004N"
+  },
+  {
+   "id": 7773,
+   "college": "Golden West College",
+   "course_code": "AUTO G046N"
+  },
+  {
+   "id": 7774,
+   "college": "Golden West College",
+   "course_code": "AUTO G110"
+  },
+  {
+   "id": 7775,
+   "college": "Golden West College",
+   "course_code": "AUTO G121"
+  },
+  {
+   "id": 7776,
+   "college": "Golden West College",
+   "course_code": "AUTO G131"
+  },
+  {
+   "id": 7777,
+   "college": "Golden West College",
+   "course_code": "AUTO G141"
+  },
+  {
+   "id": 7778,
+   "college": "Golden West College",
+   "course_code": "AUTO G150"
+  },
+  {
+   "id": 7779,
+   "college": "Golden West College",
+   "course_code": "AUTO G160"
+  },
+  {
+   "id": 7780,
+   "college": "Golden West College",
+   "course_code": "AUTO G181"
+  },
+  {
+   "id": 7781,
+   "college": "Golden West College",
+   "course_code": "BIOL G101"
+  },
+  {
+   "id": 7782,
+   "college": "Golden West College",
+   "course_code": "BIOL G104L"
+  },
+  {
+   "id": 7783,
+   "college": "Golden West College",
+   "course_code": "BIOL G120"
+  },
+  {
+   "id": 7784,
+   "college": "Golden West College",
+   "course_code": "BIOL G180"
+  },
+  {
+   "id": 7785,
+   "college": "Golden West College",
+   "course_code": "BIOL G183"
+  },
+  {
+   "id": 7786,
+   "college": "Golden West College",
+   "course_code": "BIOL G200"
+  },
+  {
+   "id": 7787,
+   "college": "Golden West College",
+   "course_code": "BIOL G219"
+  },
+  {
+   "id": 7788,
+   "college": "Golden West College",
+   "course_code": "BIOL G221"
+  },
+  {
+   "id": 7789,
+   "college": "Golden West College",
+   "course_code": "BUS G011N"
+  },
+  {
+   "id": 7790,
+   "college": "Golden West College",
+   "course_code": "BUS G100"
+  },
+  {
+   "id": 7791,
+   "college": "Golden West College",
+   "course_code": "BUS G108"
+  },
+  {
+   "id": 7792,
+   "college": "Golden West College",
+   "course_code": "BUS G121"
+  },
+  {
+   "id": 7793,
+   "college": "Golden West College",
+   "course_code": "BUS G139"
+  },
+  {
+   "id": 7794,
+   "college": "Golden West College",
+   "course_code": "BUS G152"
+  },
+  {
+   "id": 7795,
+   "college": "Golden West College",
+   "course_code": "BUS G158"
+  },
+  {
+   "id": 7796,
+   "college": "Golden West College",
+   "course_code": "BUS G160"
+  },
+  {
+   "id": 7797,
+   "college": "Golden West College",
+   "course_code": "CBA G010N"
+  },
+  {
+   "id": 7798,
+   "college": "Golden West College",
+   "course_code": "CBA G012N"
+  },
+  {
+   "id": 7799,
+   "college": "Golden West College",
+   "course_code": "CBA G014N"
+  },
+  {
+   "id": 7800,
+   "college": "Golden West College",
+   "course_code": "CBA G016N"
+  },
+  {
+   "id": 7801,
+   "college": "Golden West College",
+   "course_code": "CHEM G130"
+  },
+  {
+   "id": 7802,
+   "college": "Golden West College",
+   "course_code": "CHEM G185"
+  },
+  {
+   "id": 7803,
+   "college": "Golden West College",
+   "course_code": "CHEM G225"
+  },
+  {
+   "id": 7804,
+   "college": "Golden West College",
+   "course_code": "CJ G011N"
+  },
+  {
+   "id": 7805,
+   "college": "Golden West College",
+   "course_code": "CJ G064"
+  },
+  {
+   "id": 7806,
+   "college": "Golden West College",
+   "course_code": "CJ G072N"
+  },
+  {
+   "id": 7807,
+   "college": "Golden West College",
+   "course_code": "CJ G090"
+  },
+  {
+   "id": 7808,
+   "college": "Golden West College",
+   "course_code": "CJ G110"
+  },
+  {
+   "id": 7809,
+   "college": "Golden West College",
+   "course_code": "CJ G128"
+  },
+  {
+   "id": 7810,
+   "college": "Golden West College",
+   "course_code": "CJ G140"
+  },
+  {
+   "id": 7811,
+   "college": "Golden West College",
+   "course_code": "CJ G220"
+  },
+  {
+   "id": 7812,
+   "college": "Golden West College",
+   "course_code": "CMST G112"
+  },
+  {
+   "id": 7813,
+   "college": "Golden West College",
+   "course_code": "CMST G220"
+  },
+  {
+   "id": 7814,
+   "college": "Golden West College",
+   "course_code": "CMST G255"
+  },
+  {
+   "id": 7815,
+   "college": "Golden West College",
+   "course_code": "CMST G265"
+  },
+  {
+   "id": 7816,
+   "college": "Golden West College",
+   "course_code": "COSM G022N"
+  },
+  {
+   "id": 7817,
+   "college": "Golden West College",
+   "course_code": "COSM G072N"
+  },
+  {
+   "id": 7818,
+   "college": "Golden West College",
+   "course_code": "COUN G105"
+  },
+  {
+   "id": 7819,
+   "college": "Golden West College",
+   "course_code": "COUN G150"
+  },
+  {
+   "id": 7820,
+   "college": "Golden West College",
+   "course_code": "COUN G152"
+  },
+  {
+   "id": 7821,
+   "college": "Golden West College",
+   "course_code": "COUN G154"
+  },
+  {
+   "id": 7822,
+   "college": "Golden West College",
+   "course_code": "COUN G156"
+  },
+  {
+   "id": 7823,
+   "college": "Golden West College",
+   "course_code": "CS G102"
+  },
+  {
+   "id": 7824,
+   "college": "Golden West College",
+   "course_code": "CS G131"
+  },
+  {
+   "id": 7825,
+   "college": "Golden West College",
+   "course_code": "CS G153"
+  },
+  {
+   "id": 7826,
+   "college": "Golden West College",
+   "course_code": "CS G175"
+  },
+  {
+   "id": 7827,
+   "college": "Golden West College",
+   "course_code": "CS G179"
+  },
+  {
+   "id": 7828,
+   "college": "Golden West College",
+   "course_code": "CS G196"
+  },
+  {
+   "id": 7829,
+   "college": "Golden West College",
+   "course_code": "CS G242"
+  },
+  {
+   "id": 7830,
+   "college": "Golden West College",
+   "course_code": "DANC G100"
+  },
+  {
+   "id": 7831,
+   "college": "Golden West College",
+   "course_code": "DANC G105"
+  },
+  {
+   "id": 7832,
+   "college": "Golden West College",
+   "course_code": "DANC G108"
+  },
+  {
+   "id": 7833,
+   "college": "Golden West College",
+   "course_code": "DANC G113"
+  },
+  {
+   "id": 7834,
+   "college": "Golden West College",
+   "course_code": "DANC G119"
+  },
+  {
+   "id": 7835,
+   "college": "Golden West College",
+   "course_code": "DANC G125"
+  },
+  {
+   "id": 7836,
+   "college": "Golden West College",
+   "course_code": "DANC G145"
+  },
+  {
+   "id": 7837,
+   "college": "Golden West College",
+   "course_code": "DANC G155"
+  },
+  {
+   "id": 7838,
+   "college": "Golden West College",
+   "course_code": "DANC G200"
+  },
+  {
+   "id": 7839,
+   "college": "Golden West College",
+   "course_code": "DANC G212"
+  },
+  {
+   "id": 7840,
+   "college": "Golden West College",
+   "course_code": "DANC G215"
+  },
+  {
+   "id": 7841,
+   "college": "Golden West College",
+   "course_code": "DANC G220"
+  },
+  {
+   "id": 7842,
+   "college": "Golden West College",
+   "course_code": "DANC G230"
+  },
+  {
+   "id": 7843,
+   "college": "Golden West College",
+   "course_code": "DANC G232"
+  },
+  {
+   "id": 7844,
+   "college": "Golden West College",
+   "course_code": "DANC G240"
+  },
+  {
+   "id": 7845,
+   "college": "Golden West College",
+   "course_code": "DANC G250"
+  },
+  {
+   "id": 7846,
+   "college": "Golden West College",
+   "course_code": "DANC G255"
+  },
+  {
+   "id": 7847,
+   "college": "Golden West College",
+   "course_code": "DANC G261"
+  },
+  {
+   "id": 7848,
+   "college": "Golden West College",
+   "course_code": "DART G150"
+  },
+  {
+   "id": 7849,
+   "college": "Golden West College",
+   "course_code": "DART G160"
+  },
+  {
+   "id": 7850,
+   "college": "Golden West College",
+   "course_code": "DART G174"
+  },
+  {
+   "id": 7851,
+   "college": "Golden West College",
+   "course_code": "DART G178"
+  },
+  {
+   "id": 7852,
+   "college": "Golden West College",
+   "course_code": "DART G180"
+  },
+  {
+   "id": 7853,
+   "college": "Golden West College",
+   "course_code": "DRAF G101"
+  },
+  {
+   "id": 7854,
+   "college": "Golden West College",
+   "course_code": "DRAF G110"
+  },
+  {
+   "id": 7855,
+   "college": "Golden West College",
+   "course_code": "ECON G100"
+  },
+  {
+   "id": 7856,
+   "college": "Golden West College",
+   "course_code": "ECON G110"
+  },
+  {
+   "id": 7857,
+   "college": "Golden West College",
+   "course_code": "ECON G120"
+  },
+  {
+   "id": 7858,
+   "college": "Golden West College",
+   "course_code": "ECON G135"
+  },
+  {
+   "id": 7859,
+   "college": "Golden West College",
+   "course_code": "ECON G170"
+  },
+  {
+   "id": 7860,
+   "college": "Golden West College",
+   "course_code": "EDUC G102"
+  },
+  {
+   "id": 7861,
+   "college": "Golden West College",
+   "course_code": "EDUC G180"
+  },
+  {
+   "id": 7862,
+   "college": "Golden West College",
+   "course_code": "EDUC G210"
+  },
+  {
+   "id": 7863,
+   "college": "Golden West College",
+   "course_code": "ELL G010N"
+  },
+  {
+   "id": 7864,
+   "college": "Golden West College",
+   "course_code": "ELL G016N"
+  },
+  {
+   "id": 7865,
+   "college": "Golden West College",
+   "course_code": "ELL G025N"
+  },
+  {
+   "id": 7866,
+   "college": "Golden West College",
+   "course_code": "ELL G027N"
+  },
+  {
+   "id": 7867,
+   "college": "Golden West College",
+   "course_code": "ELL G030N"
+  },
+  {
+   "id": 7868,
+   "college": "Golden West College",
+   "course_code": "ELL G036N"
+  },
+  {
+   "id": 7869,
+   "college": "Golden West College",
+   "course_code": "ELL G041N"
+  },
+  {
+   "id": 7870,
+   "college": "Golden West College",
+   "course_code": "ELL G051N"
+  },
+  {
+   "id": 7871,
+   "college": "Golden West College",
+   "course_code": "ENGL G112"
+  },
+  {
+   "id": 7872,
+   "college": "Golden West College",
+   "course_code": "ENGL G127"
+  },
+  {
+   "id": 7873,
+   "college": "Golden West College",
+   "course_code": "ENGL G147"
+  },
+  {
+   "id": 7874,
+   "college": "Golden West College",
+   "course_code": "ENGL G155"
+  },
+  {
+   "id": 7875,
+   "college": "Golden West College",
+   "course_code": "ENGL G161"
+  },
+  {
+   "id": 7876,
+   "college": "Golden West College",
+   "course_code": "ENGL G275"
+  },
+  {
+   "id": 7877,
+   "college": "Golden West College",
+   "course_code": "ENGR G101"
+  },
+  {
+   "id": 7878,
+   "college": "Golden West College",
+   "course_code": "ENGR G280"
+  },
+  {
+   "id": 7879,
+   "college": "Golden West College",
+   "course_code": "ESL G086"
+  },
+  {
+   "id": 7880,
+   "college": "Golden West College",
+   "course_code": "ETHS G134"
+  },
+  {
+   "id": 7881,
+   "college": "Golden West College",
+   "course_code": "ETHS G181"
+  },
+  {
+   "id": 7882,
+   "college": "Golden West College",
+   "course_code": "GED G050N"
+  },
+  {
+   "id": 7883,
+   "college": "Golden West College",
+   "course_code": "GED G070N"
+  },
+  {
+   "id": 7884,
+   "college": "Golden West College",
+   "course_code": "GEOG G100"
+  },
+  {
+   "id": 7885,
+   "college": "Golden West College",
+   "course_code": "GEOG G130"
+  },
+  {
+   "id": 7886,
+   "college": "Golden West College",
+   "course_code": "GEOG G180L"
+  },
+  {
+   "id": 7887,
+   "college": "Golden West College",
+   "course_code": "GEOG G190"
+  },
+  {
+   "id": 7888,
+   "college": "Golden West College",
+   "course_code": "GEOL G106"
+  },
+  {
+   "id": 7889,
+   "college": "Golden West College",
+   "course_code": "GEOL G120"
+  },
+  {
+   "id": 7890,
+   "college": "Golden West College",
+   "course_code": "GLST G101"
+  },
+  {
+   "id": 7891,
+   "college": "Golden West College",
+   "course_code": "GLST G110"
+  },
+  {
+   "id": 7892,
+   "college": "Golden West College",
+   "course_code": "GLST G150"
+  },
+  {
+   "id": 7893,
+   "college": "Golden West College",
+   "course_code": "HIST G110"
+  },
+  {
+   "id": 7894,
+   "college": "Golden West College",
+   "course_code": "HIST G121"
+  },
+  {
+   "id": 7895,
+   "college": "Golden West College",
+   "course_code": "HIST G145"
+  },
+  {
+   "id": 7896,
+   "college": "Golden West College",
+   "course_code": "HIST G155"
+  },
+  {
+   "id": 7897,
+   "college": "Golden West College",
+   "course_code": "HIST G162"
+  },
+  {
+   "id": 7898,
+   "college": "Golden West College",
+   "course_code": "HIST G175"
+  },
+  {
+   "id": 7899,
+   "college": "Golden West College",
+   "course_code": "HIST G185"
+  },
+  {
+   "id": 7900,
+   "college": "Golden West College",
+   "course_code": "HLED G107"
+  },
+  {
+   "id": 7901,
+   "college": "Golden West College",
+   "course_code": "HLED G220"
+  },
+  {
+   "id": 7902,
+   "college": "Golden West College",
+   "course_code": "INTR G130"
+  },
+  {
+   "id": 7903,
+   "college": "Golden West College",
+   "course_code": "INTR G155"
+  },
+  {
+   "id": 7904,
+   "college": "Golden West College",
+   "course_code": "INTR G190"
+  },
+  {
+   "id": 7905,
+   "college": "Golden West College",
+   "course_code": "KIN G101"
+  },
+  {
+   "id": 7906,
+   "college": "Golden West College",
+   "course_code": "KIN G281"
+  },
+  {
+   "id": 7907,
+   "college": "Golden West College",
+   "course_code": "LIBR G120"
+  },
+  {
+   "id": 7908,
+   "college": "Golden West College",
+   "course_code": "LIFE G051N"
+  },
+  {
+   "id": 7909,
+   "college": "Golden West College",
+   "course_code": "MATH G051N"
+  },
+  {
+   "id": 7910,
+   "college": "Golden West College",
+   "course_code": "MATH G053N"
+  },
+  {
+   "id": 7911,
+   "college": "Golden West College",
+   "course_code": "MATH G055N"
+  },
+  {
+   "id": 7912,
+   "college": "Golden West College",
+   "course_code": "MATH G057N"
+  },
+  {
+   "id": 7913,
+   "college": "Golden West College",
+   "course_code": "MATH G059N"
+  },
+  {
+   "id": 7914,
+   "college": "Golden West College",
+   "course_code": "MATH G061N"
+  },
+  {
+   "id": 7915,
+   "college": "Golden West College",
+   "course_code": "MATH G063N"
+  },
+  {
+   "id": 7916,
+   "college": "Golden West College",
+   "course_code": "MATH G065N"
+  },
+  {
+   "id": 7917,
+   "college": "Golden West College",
+   "course_code": "MATH G067N"
+  },
+  {
+   "id": 7918,
+   "college": "Golden West College",
+   "course_code": "MATH G099N"
+  },
+  {
+   "id": 7919,
+   "college": "Golden West College",
+   "course_code": "MATH G103"
+  },
+  {
+   "id": 7920,
+   "college": "Golden West College",
+   "course_code": "MATH G115"
+  },
+  {
+   "id": 7921,
+   "college": "Golden West College",
+   "course_code": "MATH G120"
+  },
+  {
+   "id": 7922,
+   "college": "Golden West College",
+   "course_code": "MATH G140S"
+  },
+  {
+   "id": 7923,
+   "college": "Golden West College",
+   "course_code": "MATH G180"
+  },
+  {
+   "id": 7924,
+   "college": "Golden West College",
+   "course_code": "MATH G280"
+  },
+  {
+   "id": 7925,
+   "college": "Golden West College",
+   "course_code": "MATH G287"
+  },
+  {
+   "id": 7926,
+   "college": "Golden West College",
+   "course_code": "MGMT G111"
+  },
+  {
+   "id": 7927,
+   "college": "Golden West College",
+   "course_code": "MGMT G130"
+  },
+  {
+   "id": 7928,
+   "college": "Golden West College",
+   "course_code": "MGMT G162"
+  },
+  {
+   "id": 7929,
+   "college": "Golden West College",
+   "course_code": "MKTG G100"
+  },
+  {
+   "id": 7930,
+   "college": "Golden West College",
+   "course_code": "MKTG G140"
+  },
+  {
+   "id": 7931,
+   "college": "Golden West College",
+   "course_code": "MKTG G167"
+  },
+  {
+   "id": 7932,
+   "college": "Golden West College",
+   "course_code": "MUS G103"
+  },
+  {
+   "id": 7933,
+   "college": "Golden West College",
+   "course_code": "MUS G106"
+  },
+  {
+   "id": 7934,
+   "college": "Golden West College",
+   "course_code": "MUS G111"
+  },
+  {
+   "id": 7935,
+   "college": "Golden West College",
+   "course_code": "MUS G115"
+  },
+  {
+   "id": 7936,
+   "college": "Golden West College",
+   "course_code": "MUS G117"
+  },
+  {
+   "id": 7937,
+   "college": "Golden West College",
+   "course_code": "MUS G122"
+  },
+  {
+   "id": 7938,
+   "college": "Golden West College",
+   "course_code": "MUS G128"
+  },
+  {
+   "id": 7939,
+   "college": "Golden West College",
+   "course_code": "MUS G141"
+  },
+  {
+   "id": 7940,
+   "college": "Golden West College",
+   "course_code": "MUS G143"
+  },
+  {
+   "id": 7941,
+   "college": "Golden West College",
+   "course_code": "MUS G146"
+  },
+  {
+   "id": 7942,
+   "college": "Golden West College",
+   "course_code": "MUS G150"
+  },
+  {
+   "id": 7943,
+   "college": "Golden West College",
+   "course_code": "MUS G217"
+  },
+  {
+   "id": 7944,
+   "college": "Golden West College",
+   "course_code": "MUS G242"
+  },
+  {
+   "id": 7945,
+   "college": "Golden West College",
+   "course_code": "MUS G261"
+  },
+  {
+   "id": 7946,
+   "college": "Golden West College",
+   "course_code": "NURS G050N"
+  },
+  {
+   "id": 7947,
+   "college": "Golden West College",
+   "course_code": "NURS G052N"
+  },
+  {
+   "id": 7948,
+   "college": "Golden West College",
+   "course_code": "NURS G061N"
+  },
+  {
+   "id": 7949,
+   "college": "Golden West College",
+   "course_code": "NURS G103"
+  },
+  {
+   "id": 7950,
+   "college": "Golden West College",
+   "course_code": "NURS G160"
+  },
+  {
+   "id": 7951,
+   "college": "Golden West College",
+   "course_code": "NURS G170"
+  },
+  {
+   "id": 7952,
+   "college": "Golden West College",
+   "course_code": "NURS G175"
+  },
+  {
+   "id": 7953,
+   "college": "Golden West College",
+   "course_code": "NURS G190"
+  },
+  {
+   "id": 7954,
+   "college": "Golden West College",
+   "course_code": "NURS G285"
+  },
+  {
+   "id": 7955,
+   "college": "Golden West College",
+   "course_code": "NURS G290"
+  },
+  {
+   "id": 7956,
+   "college": "Golden West College",
+   "course_code": "NURS G295"
+  },
+  {
+   "id": 7957,
+   "college": "Golden West College",
+   "course_code": "PE G105"
+  },
+  {
+   "id": 7958,
+   "college": "Golden West College",
+   "course_code": "PE G110"
+  },
+  {
+   "id": 7959,
+   "college": "Golden West College",
+   "course_code": "PE G132"
+  },
+  {
+   "id": 7960,
+   "college": "Golden West College",
+   "course_code": "PE G173"
+  },
+  {
+   "id": 7961,
+   "college": "Golden West College",
+   "course_code": "PE G178"
+  },
+  {
+   "id": 7962,
+   "college": "Golden West College",
+   "course_code": "PE G186"
+  },
+  {
+   "id": 7963,
+   "college": "Golden West College",
+   "course_code": "PHIL G100"
+  },
+  {
+   "id": 7964,
+   "college": "Golden West College",
+   "course_code": "PHIL G110"
+  },
+  {
+   "id": 7965,
+   "college": "Golden West College",
+   "course_code": "PHIL G115"
+  },
+  {
+   "id": 7966,
+   "college": "Golden West College",
+   "course_code": "PHIL G121"
+  },
+  {
+   "id": 7967,
+   "college": "Golden West College",
+   "course_code": "PHIL G140"
+  },
+  {
+   "id": 7968,
+   "college": "Golden West College",
+   "course_code": "PHOT G120"
+  },
+  {
+   "id": 7969,
+   "college": "Golden West College",
+   "course_code": "PHOT G191"
+  },
+  {
+   "id": 7970,
+   "college": "Golden West College",
+   "course_code": "PHYS G110"
+  },
+  {
+   "id": 7971,
+   "college": "Golden West College",
+   "course_code": "PHYS G120"
+  },
+  {
+   "id": 7972,
+   "college": "Golden West College",
+   "course_code": "PHYS G185"
+  },
+  {
+   "id": 7973,
+   "college": "Golden West College",
+   "course_code": "PHYS G285"
+  },
+  {
+   "id": 7974,
+   "college": "Golden West College",
+   "course_code": "PSCI G100"
+  },
+  {
+   "id": 7975,
+   "college": "Golden West College",
+   "course_code": "PSCI G103"
+  },
+  {
+   "id": 7976,
+   "college": "Golden West College",
+   "course_code": "PSCI G110"
+  },
+  {
+   "id": 7977,
+   "college": "Golden West College",
+   "course_code": "PSCI G130"
+  },
+  {
+   "id": 7978,
+   "college": "Golden West College",
+   "course_code": "PSCI G150"
+  },
+  {
+   "id": 7979,
+   "college": "Golden West College",
+   "course_code": "PSCI G185"
+  },
+  {
+   "id": 7980,
+   "college": "Golden West College",
+   "course_code": "PSYC G116"
+  },
+  {
+   "id": 7981,
+   "college": "Golden West College",
+   "course_code": "PSYC G130"
+  },
+  {
+   "id": 7982,
+   "college": "Golden West College",
+   "course_code": "PSYC G165"
+  },
+  {
+   "id": 7983,
+   "college": "Golden West College",
+   "course_code": "PSYC G250"
+  },
+  {
+   "id": 7984,
+   "college": "Golden West College",
+   "course_code": "PSYC G260"
+  },
+  {
+   "id": 7985,
+   "college": "Golden West College",
+   "course_code": "SIGN G010"
+  },
+  {
+   "id": 7986,
+   "college": "Golden West College",
+   "course_code": "SIGN G185"
+  },
+  {
+   "id": 7987,
+   "college": "Golden West College",
+   "course_code": "SIGN G280"
+  },
+  {
+   "id": 7988,
+   "college": "Golden West College",
+   "course_code": "SOC G100"
+  },
+  {
+   "id": 7989,
+   "college": "Golden West College",
+   "course_code": "SOC G110"
+  },
+  {
+   "id": 7990,
+   "college": "Golden West College",
+   "course_code": "SOC G115"
+  },
+  {
+   "id": 7991,
+   "college": "Golden West College",
+   "course_code": "SOC G133"
+  },
+  {
+   "id": 7992,
+   "college": "Golden West College",
+   "course_code": "SOC G160"
+  },
+  {
+   "id": 7993,
+   "college": "Golden West College",
+   "course_code": "SOC G200"
+  },
+  {
+   "id": 7994,
+   "college": "Golden West College",
+   "course_code": "SPAN G161"
+  },
+  {
+   "id": 7995,
+   "college": "Golden West College",
+   "course_code": "SPAN G180"
+  },
+  {
+   "id": 7996,
+   "college": "Golden West College",
+   "course_code": "SPAN G200"
+  },
+  {
+   "id": 7997,
+   "college": "Golden West College",
+   "course_code": "SPAN G285"
+  },
+  {
+   "id": 7998,
+   "college": "Golden West College",
+   "course_code": "STAT G011N"
+  },
+  {
+   "id": 7999,
+   "college": "Golden West College",
+   "course_code": "SWHS G110"
+  },
+  {
+   "id": 8000,
+   "college": "Golden West College",
+   "course_code": "SWHS G121"
+  },
+  {
+   "id": 8001,
+   "college": "Golden West College",
+   "course_code": "THEA G102"
+  },
+  {
+   "id": 8002,
+   "college": "Golden West College",
+   "course_code": "THEA G107"
+  },
+  {
+   "id": 8003,
+   "college": "Golden West College",
+   "course_code": "THEA G110"
+  },
+  {
+   "id": 8004,
+   "college": "Golden West College",
+   "course_code": "THEA G112"
+  },
+  {
+   "id": 8005,
+   "college": "Golden West College",
+   "course_code": "THEA G119"
+  },
+  {
+   "id": 8006,
+   "college": "Golden West College",
+   "course_code": "THEA G125"
+  },
+  {
+   "id": 8007,
+   "college": "Golden West College",
+   "course_code": "THEA G135"
+  },
+  {
+   "id": 8008,
+   "college": "Golden West College",
+   "course_code": "THEA G160"
+  },
+  {
+   "id": 8009,
+   "college": "Golden West College",
+   "course_code": "THEA G166"
+  },
+  {
+   "id": 8010,
+   "college": "Golden West College",
+   "course_code": "THEA G174"
+  },
+  {
+   "id": 8011,
+   "college": "Golden West College",
+   "course_code": "THEA G176"
+  },
+  {
+   "id": 8012,
+   "college": "Golden West College",
+   "course_code": "THEA G178"
+  },
+  {
+   "id": 8013,
+   "college": "Golden West College",
+   "course_code": "THEA G182"
+  },
+  {
+   "id": 8014,
+   "college": "Golden West College",
+   "course_code": "THEA G188"
+  },
+  {
+   "id": 8015,
+   "college": "Golden West College",
+   "course_code": "THEA G207"
+  },
+  {
+   "id": 8016,
+   "college": "Golden West College",
+   "course_code": "THEA G211"
+  },
+  {
+   "id": 8017,
+   "college": "Golden West College",
+   "course_code": "VIET G185"
+  },
+  {
+   "id": 8018,
+   "college": "Golden West College",
+   "course_code": "VIET G285"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (7451, 7452, 7453, 7454, 7455, 7456, 7457, 7458, 7459, 7460, 7461, 7462, 7463, 7464, 7465, 7466, 7467, 7468, 7469, 7470, 7471, 7472, 7473, 7474, 7475, 7476, 7477, 7478, 7479, 7480, 7481, 7482, 7483, 7484, 7485, 7486, 7487, 7488, 7489, 7490, 7491, 7492, 7493, 7494, 7495, 7496, 7497, 7498, 7499, 7500, 7501, 7502, 7503, 7504, 7505, 7506, 7507, 7508, 7509, 7510, 7511, 7512, 7513, 7514, 7515, 7516, 7517, 7518, 7519, 7520, 7521, 7522, 7523, 7524, 7525, 7526, 7527, 7528, 7529, 7530, 7531, 7532, 7533, 7534, 7535, 7536, 7537, 7538, 7539, 7540, 7541, 7542, 7543, 7544, 7545, 7546, 7547, 7548, 7549, 7550, 7551, 7552, 7553, 7554, 7555, 7556, 7557, 7558, 7559, 7560, 7561, 7562, 7563, 7564, 7565, 7566, 7567, 7568, 7569, 7570, 7571, 7572, 7573, 7574, 7575, 7576, 7577, 7578, 7579, 7580, 7581, 7582, 7583, 7584, 7585, 7586, 7587, 7588, 7589, 7590, 7591, 7592, 7593, 7594, 7595, 7596, 7597, 7598, 7599, 7600, 7601, 7602, 7603, 7604, 7605, 7606, 7607, 7608, 7609, 7610, 7611, 7612, 7613, 7614, 7615, 7616, 7617, 7618, 7619, 7620, 7621, 7622, 7623, 7624, 7625, 7626, 7627, 7628, 7629, 7630, 7631, 7632, 7633, 7634, 7635, 7636, 7637, 7638, 7639, 7640, 7641, 7642, 7643, 7644, 7645, 7646, 7647, 7648, 7649, 7650, 7651, 7652, 7653, 7654, 7655, 7656, 7657, 7658, 7659, 7660, 7661, 7662, 7663, 7664, 7665, 7666, 7667, 7668, 7669, 7670, 7671, 7672, 7673, 7674, 7675, 7676, 7677, 7678, 7679, 7680, 7681, 7682, 7683, 7684, 7685, 7686, 7687, 7688, 7689, 7690, 7691, 7692, 7693, 7694, 7695, 7696, 7697, 7698, 7699, 7700, 7701, 7702, 7703, 7704, 7705, 7706, 7707, 7708, 7709, 7710, 7711, 7712, 7713, 7714, 7715, 7716, 7717, 7718, 7719, 7720, 7721, 7722, 7723, 7724, 7725, 7726, 7727, 7728, 7729, 7730, 7731, 7732, 7733, 7734, 7735, 7736, 7737, 7738, 7739, 7740, 7741, 7742, 7743, 7744, 7745, 7746, 7747, 7748, 7749, 7750, 7751, 7752, 7753, 7754, 7755, 7756, 7757, 7758, 7759, 7760, 7761, 7762, 7763, 7764, 7765, 7766, 7767, 7768, 7769, 7770, 7771, 7772, 7773, 7774, 7775, 7776, 7777, 7778, 7779, 7780, 7781, 7782, 7783, 7784, 7785, 7786, 7787, 7788, 7789, 7790, 7791, 7792, 7793, 7794, 7795, 7796, 7797, 7798, 7799, 7800, 7801, 7802, 7803, 7804, 7805, 7806, 7807, 7808, 7809, 7810, 7811, 7812, 7813, 7814, 7815, 7816, 7817, 7818, 7819, 7820, 7821, 7822, 7823, 7824, 7825, 7826, 7827, 7828, 7829, 7830, 7831, 7832, 7833, 7834, 7835, 7836, 7837, 7838, 7839, 7840, 7841, 7842, 7843, 7844, 7845, 7846, 7847, 7848, 7849, 7850, 7851, 7852, 7853, 7854, 7855, 7856, 7857, 7858, 7859, 7860, 7861, 7862, 7863, 7864, 7865, 7866, 7867, 7868, 7869, 7870, 7871, 7872, 7873, 7874, 7875, 7876, 7877, 7878, 7879, 7880, 7881, 7882, 7883, 7884, 7885, 7886, 7887, 7888, 7889, 7890, 7891, 7892, 7893, 7894, 7895, 7896, 7897, 7898, 7899, 7900, 7901, 7902, 7903, 7904, 7905, 7906, 7907, 7908, 7909, 7910, 7911, 7912, 7913, 7914, 7915, 7916, 7917, 7918, 7919, 7920, 7921, 7922, 7923, 7924, 7925, 7926, 7927, 7928, 7929, 7930, 7931, 7932, 7933, 7934, 7935, 7936, 7937, 7938, 7939, 7940, 7941, 7942, 7943, 7944, 7945, 7946, 7947, 7948, 7949, 7950, 7951, 7952, 7953, 7954, 7955, 7956, 7957, 7958, 7959, 7960, 7961, 7962, 7963, 7964, 7965, 7966, 7967, 7968, 7969, 7970, 7971, 7972, 7973, 7974, 7975, 7976, 7977, 7978, 7979, 7980, 7981, 7982, 7983, 7984, 7985, 7986, 7987, 7988, 7989, 7990, 7991, 7992, 7993, 7994, 7995, 7996, 7997, 7998, 7999, 8000, 8001, 8002, 8003, 8004, 8005, 8006, 8007, 8008, 8009, 8010, 8011, 8012, 8013, 8014, 8015, 8016, 8017, 8018);"
+}
