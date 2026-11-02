@@ -77,7 +77,7 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
 
 | List | Row (fold unit) | Today | Next |
 |---|---|---|---|
-| Exhibits | credential | finder, filters with counts, bands, kept groups, suggested folds, Re-point, waiting, flag, Re-analyze, tiles from the Commons row | its suggestions and changed set onto the engine's slot |
+| Exhibits | credential | finder, filters with counts, bands, kept groups, suggested folds on the engine's slot (Accept), Changed this visit, Re-point, waiting, flag, Re-analyze, tiles from the Commons row | |
 | CR Reference | wording (group) | finder, filters with counts, Edit, flag, rung proposals as suggestions (Confirm the group), Selected, Changed this visit, read-only bands by group ordered by the reference | |
 | Subjects | MQ discipline | finder, filters with counts, Edit, open picks as suggestions (Confirm this pick), Selected, Changed this visit | |
 | Courses (COCI Lookup) | local course (M-ID band) | finder, filters with counts, read-only M-ID bands from the engine's `bands` hook, Open in SkyView | |
@@ -91,8 +91,9 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
    `suggested` and `changed` (contract at the top of `commons_list.js`). CR's rung proposals (a group a rung 1 to 4 rule
    places, more than one wording, undecided) read *Suggested groups*, one Dismiss setting aside the whole group; the
    Subjects open picks read *Suggested picks*, shown under every filter since they are few. **A suggestion never
-   proposes a collision:** an open pick whose code another MQ discipline holds is a call for a person. Exhibits keeps
-   its own suggestions and changed set until it moves onto the slot.
+   proposes a collision:** an open pick whose code another MQ discipline holds is a call for a person. Exhibits moved
+   onto the slot in S545: its spelling-twin folds are the slot's suggestions (*Suggested: fold into X (why)*, Accept,
+   Dismiss), and its changed set is the engine's, the same list Re-analyze sends.
 2. **Landed (S544): the filter words carry their counts, from the engine.** Each count is the rows that filter keeps
    over every row, the finder and the column boxes aside; the engine counts by the filter's own pass unless the tab
    hands `counts()` from a build that already counted (Program Requirements, Courses). A filter whose data is unread
@@ -104,8 +105,10 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
    only; the writable kind, kept groups a reviewer moves titles between, is the `groups` hook, Exhibits' alone. #2670
    (S543) built the hook for the Courses List's M-ID bands and made `listRows` filter before it sorts (a fixed List
    sorts once per sort and only filters per keystroke). S545 added `order` and banded the CR List's wordings by group,
-   ordered by the group's reference; two keys that read alike take two places, so bands never interleave. The Exhibits
-   List's suggestions and changed set onto the engine's slot is what remains of aligning the Lists.
+   ordered by the group's reference; two keys that read alike take two places, so bands never interleave.
+
+**All three steps have landed (S545).** Every List that folds takes its suggestions, changed set, filter counts and bands
+from the engine; what stays each tab's is what the norms list under *What stays different*.
 
 ## How to apply it
 
