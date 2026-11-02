@@ -14,10 +14,11 @@
  "summary": {
   "read": 12,
   "shapes": {
-   "none": 12
+   "list": 11,
+   "paragraph": 1
   },
   "status_not_200": 0,
-  "outcomes": 0
+  "outcomes": 36
  },
  "rows": [
   {
@@ -34,14 +35,16 @@
    "title_printed": "Course Outline",
    "chars": 5051,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Complete a personal budget.",
+    "Utilize sources of information pertaining to personal savings and investment."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "584e5a71960211100c38e07c775efb01"
   },
   {
    "code": "ASL 110",
@@ -57,14 +60,17 @@
    "title_printed": "Course Outline",
    "chars": 8633,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Students will utilize American Sign Language to express and receive information about a variety of topics at a beginner level.",
+    "Students will demonstrate accuracy and proficiency in the use of learned structures and vocabulary.",
+    "Students will differentiate the unique cultural aspects of American Deaf culture from the unique cultural aspects of other cultures."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "d188052392e9c7f1fc694e1d3c23d5fa"
   },
   {
    "code": "CDEV 108",
@@ -80,14 +86,17 @@
    "title_printed": "Course Outline",
    "chars": 8101,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Complete systematic observations and assessments of children’s development and learning using a variety of data collection methods to inform classroom teaching, environment design, interactions, and curriculum.",
+    "Evaluate the characteristics, strengths, limitations, and applications of contemporary observation and assessment tools.",
+    "Describe the ethical and professional responsibilities for educators in observing and assessing young children’s development and learning."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "15257958d49a0dab5ca34ffe7f83a471"
   },
   {
    "code": "CNSL 100",
@@ -103,14 +112,18 @@
    "title_printed": "Course Outline",
    "chars": 7665,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Analyze their personal values, skills, and interests to increase self-awareness.",
+    "Understand the different educational options available.",
+    "Understand factors that influence health and well-being.",
+    "Use effective communication skills to interact with diverse populations."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "0580951ea46ea1fb6367793a5f1b2c76"
   },
   {
    "code": "EMLS 112",
@@ -126,14 +139,18 @@
    "title_printed": "Course Outline",
    "chars": 8814,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "develop effective thesis statements and demonstrate competency in the use of specific rhetorical patterns and logical patterns of development in well-organized paragraphs and essays",
+    "analyze methods of support in academic essays and use similar methods in writing",
+    "paraphrase and summarize effectively",
+    "use primary and secondary sources effectively in a documented paper"
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "2eda76f323a811dceadc8da1279b9421"
   },
   {
    "code": "FAC 008",
@@ -149,14 +166,15 @@
    "title_printed": "Course Outline",
    "chars": 6205,
    "offered_at": null,
-   "shape": "none",
+   "shape": "paragraph",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Demonstrate successful completion of all Physical Ability Test events without assistance with a passing score of 9 minutes and 34 seconds or less."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "fd1a9a04a316bd51d2aa9cf0287bb268"
   },
   {
    "code": "HSENG 083",
@@ -172,14 +190,16 @@
    "title_printed": "Course Outline",
    "chars": 5586,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Identify the four steps in the writing process",
+    "Demonstrate in writing 6 types of paragraphs including exemplification, compare/contrast, descriptive, cause and effect, process, and argument"
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "c6bc8d5299a1070616e2cc790c0d5ab1"
   },
   {
    "code": "JAMS 102",
@@ -195,14 +215,17 @@
    "title_printed": "Course Outline",
    "chars": 11105,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Report and construct news stories using a variety of media.",
+    "Identify and apply the legal and ethical responsibilities of the reporter.",
+    "Apply digital storytelling strategies across contemporary media platforms."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "eaf663087e1691e8e1a74b97496b5074"
   },
   {
    "code": "KNIA 125",
@@ -218,14 +241,16 @@
    "title_printed": "Course Outline",
    "chars": 3756,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Student will be able to differentiate between sport and position specific resistence training techniques that enable and or hinder football performance improvements.",
+    "Students will be competent at performing linear and non-linear football and position specific movements."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "71926df3af87b418e39da06024e2c7dc"
   },
   {
    "code": "MKTG 111",
@@ -241,14 +266,16 @@
    "title_printed": "Course Outline",
    "chars": 4656,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "develop the communication, information and reasoning skills necessary in the retail work environment to increase productivity and enhance career opportunities.",
+    "create hypotheses, compare and contrast possible problem solutions, analyze possible outcomes and recommend action plans in the ratail management business environment."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "76995153fc679ae648f7a63c57df6a19"
   },
   {
    "code": "PHAR 048",
@@ -264,14 +291,22 @@
    "title_printed": "Course Outline",
    "chars": 7107,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Describe the duties and roles of the pharmacy technician in various practice settings.",
+    "Identify the skills needed to successfully complete the Pharmacy Technology program at SAC.",
+    "Summarize the license and certification process for pharmacy technicians.",
+    "Differentiate drugs classified as OTC, Rx, (federal legend) C1, C2, C3, C4, C5.",
+    "Identify the steps involved in new drug development.",
+    "Discuss the characteristics of common drug dosage forms.",
+    "Memorize the 100 common trade-generic equivalents and indications.",
+    "Interpret prescriptions, memorize prescription sig codes, and prepare prescription labels."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "18c1d428a01cabc7e657b9c8d07bf2d6"
   },
   {
    "code": "SLPA 160",
@@ -287,14 +322,18 @@
    "title_printed": "Course Outline",
    "chars": 14836,
    "offered_at": null,
-   "shape": "none",
+   "shape": "list",
    "heading": "Student Learning Outcomes",
-   "lead": null,
-   "outcomes": [],
+   "lead": "At the conclusion of this course, the student should be able to:",
+   "outcomes": [
+    "Demonstrate knowledge of the basic terminology related to the field of communicative disorders.",
+    "Demonstrate knowledge of the basic principles of evaluating and treating individuals with communication disorders."
+   ],
    "maps_to": null,
-   "groups": [],
-   "parsed_from": "html",
-   "fingerprint": null
+   "parsed_from": "text",
+   "fingerprint": "f364f379135a130a7c0545f489c01452"
   }
- ]
+ ],
+ "reparsed_at": "2026-11-02T11:30:41Z",
+ "reparsed_note": "The filed pages parsed again by parse_page, the read's own parser at the time of the reparse (S374: RCCD's objectives read as SLOs; S376: SDCCD's groups by college)."
 }
