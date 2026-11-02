@@ -17,7 +17,7 @@ related:
 
 ## Status
 
-**CCSF and College of the Desert, in `unmatched` since the 2026-10-31 run (S544):** #2598's shorts left the join. **NEEDS SAM (Open Asks Sheet 155):** merge #2676, which moves their published figures.
+**CCSF and College of the Desert fell into `unmatched` on 2026-10-31 (S544)** after #2598's shorts. Sam, Open Asks Sheet 155 card 1, *restore* (02:42Z 2026-11-02, his own call): #2676 merged; the next daily run carries both.
 
 ✅ **COLLEGE DASHBOARD ROUNDS 8 AND 9 LIVE**; `map_coordinator_summary()` answers booleans, never a name. ✅ **THE REPORTING BOX** (one report a year, eight NOVA categories): `cpl_funding_reports`, INSERT-only, newest per year counts, Withdraw unreports (`markReports`); college half via `cpl_funding_my_reports()`. Guards `cpl_funding_reporting_box`, `cpl_funding_reports_college_half`.
 
