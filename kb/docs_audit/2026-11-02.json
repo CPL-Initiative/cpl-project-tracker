@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1356,
-    "bytes": 13807388,
+    "bytes": 13808639,
     "over_budget": 0,
     "handoff_max": 547,
     "always_loaded_files": 1,
@@ -51,7 +51,7 @@
       },
       "handoff": {
         "files": 515,
-        "bytes": 3662218,
+        "bytes": 3663469,
         "over": 0
       }
     },
@@ -62,8 +62,8 @@
     },
     "vault": {
       "files": 25380,
-      "bytes": 4165621948,
-      "heavy_bytes": 2972291013,
+      "bytes": 4165767366,
+      "heavy_bytes": 2972397538,
       "heavy_share": 0.714,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -115,8 +115,8 @@
         "cpl-project-tracker/exports/unified_courses.xlsx",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/plan.json",
         "cpl-project-tracker/kb/coci_curation.json",
-        "cpl-project-tracker/coci_lookup_desc_M.js",
         "cpl-project-tracker/kb/it_ai_credential_catalog.json",
+        "cpl-project-tracker/coci_lookup_desc_M.js",
         "cpl-project-tracker/coci_lookup_desc_P.js",
         "cpl-project-tracker/kb/automerge_out/2026-06-13-titlelane/supabase_ops.sql",
         "cpl-project-tracker/tools/first_light_candidates.json",
@@ -659,22 +659,22 @@
     {
       "rule": "vault_heavy_path",
       "fixable": false,
+      "path": "kb/it_ai_credential_catalog.json",
+      "detail": {
+        "bytes": 5035168,
+        "kind": "file"
+      },
+      "message": "5,035,168 B single file inside the vault"
+    },
+    {
+      "rule": "vault_heavy_path",
+      "fixable": false,
       "path": "coci_lookup_desc_M.js",
       "detail": {
         "bytes": 4951655,
         "kind": "file"
       },
       "message": "4,951,655 B single file inside the vault"
-    },
-    {
-      "rule": "vault_heavy_path",
-      "fixable": false,
-      "path": "kb/it_ai_credential_catalog.json",
-      "detail": {
-        "bytes": 4928643,
-        "kind": "file"
-      },
-      "message": "4,928,643 B single file inside the vault"
     },
     {
       "rule": "vault_heavy_path",
