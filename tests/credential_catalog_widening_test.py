@@ -31,6 +31,7 @@ import unittest
 REPO = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..")
 sys.path.insert(0, os.path.join(REPO, "kb"))
 import _build_it_ai_credential_catalog as b  # noqa: E402
+import _build_exhibit_cert_links as lk  # noqa: E402
 
 
 class FieldCip(unittest.TestCase):
@@ -162,6 +163,39 @@ class Exams(unittest.TestCase):
         self.assertEqual(self.links["AP Physics"]["certs"], [])
         self.assertTrue(self.links["AP Physics"]["unresolved"])
         self.assertTrue(self.links["IB Language A1 HL (Non-English)"]["certs"])
+
+
+class VendorCerts(unittest.TestCase):
+    """CompTIA, Cisco and Microsoft (S548): every reference title in the table resolves, a version-less title holds
+    any version, a two-cert bundle holds both, and a local course or a cert-less title is never linked to a cert."""
+
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(REPO, "kb", "exhibit_cert_links.json"), encoding="utf-8") as fh:
+            d = json.load(fh)
+        cls.links, cls.certs = d["links"], d["certs"]
+
+    def test_every_named_cert_is_in_the_catalog(self):
+        for title, (rule, names) in lk.VENDOR.items():
+            if title not in self.links:
+                continue  # a title the reference no longer carries
+            missing = [u for u in self.links[title].get("unresolved", []) if u.endswith("(not in the catalog)")]
+            self.assertEqual(missing, [], title)
+            self.assertEqual(len(self.links[title]["certs"]), len(set(self.links[title]["certs"])), title)
+
+    def test_the_families(self):
+        self.assertEqual(self.certs[self.links["CompTIA Network+"]["certs"][0]]["issuer"], "CompTIA")
+        self.assertEqual(self.links["Microsoft Office Specialist — Excel"]["rule"], "any")
+        self.assertGreater(len(self.links["Microsoft Office Specialist — Excel"]["certs"]), 1)
+        both = self.links["Microsoft Office Specialist — Excel Expert and Access Expert (Office 2019)"]
+        self.assertEqual((both["rule"], len(both["certs"])), ("all", 2))
+
+    def test_no_cert_named_and_courses_stay_out(self):
+        self.assertEqual(self.links["CompTIA Certification (unspecified)"]["certs"], [])
+        self.assertTrue(self.links["CompTIA Certification (unspecified)"]["unresolved"])
+        for course in ("Microsoft Excel 1", "Microsoft Word Beginning", "Using Microsoft Windows"):
+            self.assertNotIn(course, self.links)
+            self.assertNotIn(course, lk.VENDOR)
 
 
 if __name__ == "__main__":

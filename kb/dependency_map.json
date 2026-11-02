@@ -6893,7 +6893,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 43
+     "line": 52
     },
     {
      "id": "script:kb/_build_exhibits_ai_sort.py",
@@ -13833,14 +13833,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 44
+     "line": 53
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 44
+     "line": 53
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -14417,7 +14417,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 42
+     "line": 51
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
