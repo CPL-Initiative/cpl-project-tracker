@@ -5,31 +5,53 @@
 //
 // Purpose (Sam, S110 — the CARP/CTCNC title dig): a raw-COCI lookup surface —
 // "a COCI tab I could go to for lookups like this, with any MID, CID, CCN in
-// chips for each COCI entry". Key fields only (College · Control # · Subject ·
-// Number · Title · Units · Credit · TOP) + the identity chips + the catalog
-// description on row expand. Columns are SORTABLE (click a header), the whole
-// set is FILTERABLE (search / College / Subject / identity / credit), and
-// column widths are FLEXIBLE (drag the header edge; persisted per-browser).
+// chips for each COCI entry". Two views: Courses and Programs.
+//
+// Courses is the Catalog Commons' Courses List (S542). Sam, 2026-11-01: "This new
+// list view is so helpful that I want one now for each of our Catalog Commons
+// groups", and, on where the Courses List should live: "WE have the COCI lookup
+// tab in COBI...maybe courses in that?" So the view is drawn by the shared List
+// engine, commons_list.js (loaded the first time the view opens), from the spec
+// under "the Courses List" below: one row per local course with the columns,
+// chips and filters the tab had (Title · College · Subject · Number · Units ·
+// Credit · Transfer · TOP · the M-ID / C-ID / CCN chips · Control number), every
+// column sortable and filterable, resizable, the catalog description and the
+// learning outcomes in the Title drawer, and the Common Course Reference's grain:
+// the local courses banded by their M-ID, the common course, each band with Open
+// in SkyView (prototype/skyview.html#outline/<id>, SkyView's own route to an
+// identity). Read only. Moving a course to another M-ID is a re-mint (CLAUDE.md
+// Rule 7, the playbook), and SkyView already moves a course; this List links there.
+//
+// ⚠ The M-ID is TODAY'S, from unified_courses_members.js (the daily build), joined
+// on college and control number. coci_lookup_data.js's own identity column was
+// built 2026-07-09 and predates the re-mints since (cpl_memory
+// coci-lookup-identity-column-predates-remints-2026-10-20; measured again
+// 2026-11-01: 53,382 of the 119,977 courses carrying one name another than today's), so
+// the List never shows or bands by it; a drawer names it only where it moved.
 //
 // Data: coci_lookup_data.js (window.CPL_COCI_LOOKUP — 141,738 rows, ~17 MB,
 // loaded on first tab open) + 25 lazy description shards
 // (coci_lookup_desc_<A-Z>.js, keyed by the subject's first letter — fetched
-// only when a row is expanded). All built one-shot by kb/_build_coci_lookup.py
-// from kb/reference/coci_course_list.xlsx ⊕ the minted M-ID join
-// (control_number → M-ID via memberships + singletons). Rebuild on a fresh
-// COCI extract; NOT daily-cron artifacts.
+// only when a Title drawer opens). All built one-shot by kb/_build_coci_lookup.py
+// from kb/reference/coci_course_list.xlsx. Rebuild on a fresh COCI extract; NOT
+// daily-cron artifacts. Programs: coci_programs_data.js (kb/_build_coci_programs.py).
 //
 // Self-contained (the cpl_news.js / map_users.js pattern). Scoped CSS injected
 // from JS so both HTMLs are covered without a Rule-4 mirror. All DOM via
 // createElement/textContent — no innerHTML with data (XSS safety; CodeQL).
+//
+// jsdom guards: tests/coci_lookup.test.js (the tab, both views) and
+// tests/coci_list.test.js (the Courses List on the engine: columns by name, the
+// M-ID bands, Open in SkyView, the drawers, the filters).
 (function () {
   "use strict";
 
   var ROW = { COLLEGE: 0, CTRL: 1, SUBJ: 2, NUM: 3, TITLE: 4, UNITS: 5,
               CREDIT: 6, TOP: 7, CID: 8, CCN: 9, MID: 10 };
-  var CREDIT_LABEL = { C: "Credit", E: "Noncredit Enhanced", N: "Noncredit", "": "—" };
-  var PAGE = 400;                       // rows rendered per "Show more" step
-  var WIDTHS_KEY = "cplCociColWidths.v1";
+  var CREDIT_LABEL = { C: "Credit", E: "Noncredit enhanced", N: "Noncredit", "": "" };
+  var PAGE = 400;                       // rows rendered per "Show more" step (Programs)
+  var TAB = "coci-lookup";
+  var SKYVIEW = "prototype/skyview.html";
 
   var CSS_ID = "cpl-coci-lookup-css";
   var CSS = [
@@ -38,6 +60,7 @@
     ".cplcoci-head .h { font-weight:700; color: var(--navy-primary); font-size:1.05rem; }",
     ".cplcoci-head .sub { color: var(--text-muted); font-size:.8rem; }",
     ".cplcoci-toolbar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 10px; }",
+    ".cplcoci-toolbar:empty { display:none; }",
     ".cplcoci-toolbar input, .cplcoci-toolbar select { padding:7px 10px; border:1px solid var(--border-strong); border-radius:6px; font-size:.84rem; background: var(--surface-opaque); color: var(--text-body); }",
     ".cplcoci-toolbar input:focus, .cplcoci-toolbar select:focus { border-color: var(--cobalt); }",
     ".cplcoci-toolbar input:focus-visible, .cplcoci-toolbar select:focus-visible { outline:2px solid var(--cobalt); outline-offset:1px; }",
@@ -51,17 +74,16 @@
     ".cplcoci-table { width:100%; border-collapse:collapse; font-size:.82rem; }",
     ".cplcoci-table th { position:relative; background: var(--seal-blue); color:#fff; text-align:left; padding:7px 9px; font-size:.76rem; cursor:pointer; user-select:none; white-space:nowrap; }",
     ".cplcoci-table th .dir { margin-left:4px; font-size:.7rem; }",
-    ".cplcoci-resize { position:absolute; right:0; top:0; bottom:0; width:7px; cursor:col-resize; }",
     ".cplcoci-table td { padding:5px 9px; border-top:1px solid var(--border); vertical-align:top; overflow:hidden; text-overflow:ellipsis; }",
     ".cplcoci-table tr.cplcoci-row:hover td { background: var(--surface-subtle); }",
-    ".cplcoci-caret { cursor:pointer; color: var(--text-muted); width:18px; }",
-    ".cplcoci-chip { display:inline-block; padding:1px 7px; margin:1px 3px 1px 0; border-radius:8px; font-size:.7rem; font-weight:600; border:1px solid var(--border-strong); background: transparent; white-space:nowrap; }",
+    ".cplcoci-chip { display:inline-block; padding:1px 7px; margin:1px 3px 1px 0; border-radius:8px; font-size:.7rem; font-weight:600; border:1px solid var(--border-strong); background: transparent; white-space:nowrap; line-height:1.3; }",
     ".cplcoci-chip.mid { color:var(--seal-blue-text,#002F6D); }",
     ".cplcoci-chip.cid { color: var(--hunter, #1d4d33); border-color: var(--hunter, #1d4d33); }",
     ".cplcoci-chip.ccn { color: var(--violet, #5b3d8f); border-color: var(--violet, #5b3d8f); }",
-    ".cplcoci-desc td { background: var(--surface-subtle); font-size:.8rem; color: var(--text-body); padding:9px 12px 11px; }",
-    ".cplcoci-desc .lbl { font-weight:600; color: var(--navy-primary); margin-right:6px; }",
-    ".cplcoci-desc .muted { color: var(--text-muted); font-style:italic; }",
+    // The Courses List's Title drawer: the catalog description, then the learning outcomes.
+    ".cplcoci-dd { font-size:.8rem; color: var(--text-body); }",
+    ".cplcoci-dd .lbl, .cplcoci-outs .lbl { font-weight:600; color: var(--text-strong); margin-right:6px; }",
+    ".cplcoci-dd .muted, .cplcoci-outs .muted { color: var(--text-muted); font-style:italic; }",
     ".cplcoci-outs { margin-top:8px; }",
     ".cplcoci-outs ol { margin:4px 0 4px; padding-left:1.4em; }",
     ".cplcoci-outs p { margin:4px 0; }",
@@ -69,6 +91,8 @@
     ".cplcoci-outs a { color: var(--cobalt); }",
     ".cplcoci-more { text-align:center; padding:10px; }",
     ".cplcoci-empty { padding:26px; text-align:center; color: var(--text-muted); }",
+    ".cplcoci-lede { margin:0 0 4px; font-size:.88rem; color: var(--text-body); max-width:var(--cpl-measure,none); }",
+    ".cplcoci-meta { margin:0 0 6px; font-size:.8rem; color: var(--text-muted); max-width:var(--cpl-measure,none); }",
     ".cplcoci-viewseg { display:inline-flex; border:1px solid var(--border-strong); border-radius:8px; overflow:hidden; margin:0 0 10px; }",
     ".cplcoci-viewbtn { font-size:.82rem; font-weight:700; padding:6px 16px; background: var(--surface-opaque); color: var(--text-muted); border:0; cursor:pointer; }",
     ".cplcoci-viewbtn + .cplcoci-viewbtn { border-left:1px solid var(--border); }",
@@ -83,17 +107,8 @@
   var state = {
     view: "courses",     // courses | programs
     data: null,          // window.CPL_COCI_LOOKUP
-    q: "",
-    college: "all",
-    subject: "all",
-    identity: "all",     // all | cid | ccn | mid | any | none
-    credit: "all",       // all | C | E | N
-    transfer: "all",     // all | xfer | noxfer  (courses: C-ID transfer-model)
-    sort: { key: "default", dir: "asc" },
-    limit: PAGE,
-    expanded: {},        // row index (in data.rows) -> true
-    colWidths: null,
-    _filtered: null,     // cached filtered row-index list
+    ls: null,            // the Courses List's state (commons_list.js); a new visit drops it
+    q: "",               // the Programs finder
     // ── Programs view ──
     programs: null,      // window.CPL_COCI_PROGRAMS (lazy-loaded on first open)
     pcollege: "all",
@@ -117,6 +132,7 @@
     return n;
   }
   function clearNode(n) { while (n.firstChild) n.removeChild(n.firstChild); }
+  function fmt(n) { return n == null ? "" : Number(n).toLocaleString("en-US"); }
 
   function ensureCss() {
     if (document.getElementById(CSS_ID)) return;
@@ -124,74 +140,6 @@
     st.id = CSS_ID;
     st.textContent = CSS;
     document.head.appendChild(st);
-  }
-
-  function loadWidths() {
-    try { return JSON.parse(localStorage.getItem(WIDTHS_KEY) || "{}"); }
-    catch (e) { return {}; }
-  }
-  function saveWidths(w) {
-    try { localStorage.setItem(WIDTHS_KEY, JSON.stringify(w)); } catch (e) {}
-  }
-
-  // ── filtering / sorting ──────────────────────────────────────────────────
-  function rowMatches(r, colleges) {
-    if (state.college !== "all" && colleges[r[ROW.COLLEGE]] !== state.college) return false;
-    if (state.subject !== "all" && r[ROW.SUBJ].toUpperCase() !== state.subject) return false;
-    if (state.credit !== "all" && r[ROW.CREDIT] !== state.credit) return false;
-    if (state.identity !== "all") {
-      var has = { cid: !!r[ROW.CID], ccn: !!r[ROW.CCN], mid: !!r[ROW.MID] };
-      if (state.identity === "any" && !(has.cid || has.ccn || has.mid)) return false;
-      if (state.identity === "none" && (has.cid || has.ccn || has.mid)) return false;
-      if ((state.identity === "cid" || state.identity === "ccn" || state.identity === "mid")
-          && !has[state.identity]) return false;
-    }
-    if (state.transfer !== "all") {
-      var xf = !!r[ROW.CID];   // transfer-model = carries a C-ID (a floor, not full transferability)
-      if (state.transfer === "xfer" && !xf) return false;
-      if (state.transfer === "noxfer" && xf) return false;
-    }
-    if (state.q) {
-      var hay = (colleges[r[ROW.COLLEGE]] + " " + r[ROW.CTRL] + " " + r[ROW.SUBJ] + " "
-        + r[ROW.SUBJ] + " " + r[ROW.NUM] + " " + r[ROW.TITLE] + " " + r[ROW.CID] + " "
-        + r[ROW.CCN] + " " + r[ROW.MID] + " " + r[ROW.TOP]).toLowerCase();
-      var toks = state.q.split(/\s+/);
-      for (var i = 0; i < toks.length; i++) {
-        if (toks[i] && hay.indexOf(toks[i]) < 0) return false;
-      }
-    }
-    return true;
-  }
-
-  function filteredIdx() {
-    if (state._filtered) return state._filtered;
-    var rows = state.data.rows, colleges = state.data.colleges, out = [];
-    for (var i = 0; i < rows.length; i++) {
-      if (rowMatches(rows[i], colleges)) out.push(i);
-    }
-    var k = state.sort.key, dir = state.sort.dir === "asc" ? 1 : -1;
-    if (k !== "default") {
-      var col = { college: ROW.COLLEGE, ctrl: ROW.CTRL, subj: ROW.SUBJ, num: ROW.NUM,
-                  title: ROW.TITLE, units: ROW.UNITS, credit: ROW.CREDIT, top: ROW.TOP,
-                  xfer: ROW.CID, ids: ROW.MID }[k];
-      var colleges2 = colleges;
-      out.sort(function (a, b) {
-        var ra = rows[a], rb = rows[b], va, vb;
-        if (k === "college") { va = colleges2[ra[col]]; vb = colleges2[rb[col]]; }
-        else if (k === "units") { va = (ra[col] == null ? -1 : +ra[col]); vb = (rb[col] == null ? -1 : +rb[col]); }
-        else if (k === "xfer") { va = ra[ROW.CID] ? 0 : 1; vb = rb[ROW.CID] ? 0 : 1; }
-        else if (k === "ids") {
-          va = (ra[ROW.CCN] || ra[ROW.CID] || ra[ROW.MID] || "~");
-          vb = (rb[ROW.CCN] || rb[ROW.CID] || rb[ROW.MID] || "~");
-        }
-        else { va = String(ra[col] == null ? "" : ra[col]).toLowerCase(); vb = String(rb[col] == null ? "" : rb[col]).toLowerCase(); }
-        if (va < vb) return -1 * dir;
-        if (va > vb) return 1 * dir;
-        return a - b;
-      });
-    }
-    state._filtered = out;
-    return out;
   }
 
   // ── description shards ───────────────────────────────────────────────────
@@ -214,146 +162,7 @@
     } else { run(); }
   }
 
-  // ── render ───────────────────────────────────────────────────────────────
   function root() { return document.getElementById("coci-lookup-root"); }
-
-  function chip(kind, text, title) {
-    return el("span", { class: "cplcoci-chip " + kind, title: title }, [text]);
-  }
-
-  function idChips(r) {
-    var td = el("td", {}, []);
-    if (r[ROW.MID]) td.appendChild(chip("mid", r[ROW.MID],
-      "M-ID — the CCR minted common-course identity this COCI course belongs to"));
-    if (r[ROW.CID]) td.appendChild(chip("cid", "C-ID " + r[ROW.CID],
-      "C-ID — official Course Identification Number carried by this course in COCI"));
-    if (r[ROW.CCN]) td.appendChild(chip("ccn", r[ROW.CCN],
-      "CCN — AB 1111 Common Course Number carried by this course in COCI"));
-    if (!r[ROW.MID] && !r[ROW.CID] && !r[ROW.CCN]) td.appendChild(document.createTextNode("—"));
-    return td;
-  }
-
-  var COLS = [
-    { key: null,      label: "" },
-    { key: "college", label: "College" },
-    { key: "subj",    label: "Subject" },
-    { key: "num",     label: "#" },
-    { key: "title",   label: "Title" },
-    { key: "units",   label: "Units" },
-    { key: "credit",  label: "Credit" },
-    { key: "xfer",    label: "Transfer" },
-    { key: "top",     label: "TOP" },
-    { key: "ids",     label: "Identities (M-ID · C-ID · CCN)" },
-    { key: "ctrl",    label: "Control #" },
-  ];
-
-  function renderTable() {
-    var wrap = document.getElementById("cplcoci-table-wrap");
-    if (!wrap) return;
-    clearNode(wrap);
-    var colleges = state.data.colleges, rows = state.data.rows;
-    var idxs = filteredIdx();
-
-    var countEl = document.getElementById("cplcoci-count");
-    if (countEl) {
-      countEl.textContent = idxs.length.toLocaleString() + " of "
-        + rows.length.toLocaleString() + " COCI course records";
-    }
-
-    if (!idxs.length) {
-      wrap.appendChild(el("div", { class: "cplcoci-empty" },
-        ["No COCI courses match — loosen the search or filters."]));
-      return;
-    }
-
-    var table = el("table", { class: "cplcoci-table" });
-    var widths = state.colWidths || (state.colWidths = loadWidths());
-    if (Object.keys(widths).length) table.style.tableLayout = "fixed";
-    var thead = el("thead"), htr = el("tr");
-    COLS.forEach(function (c) {
-      var th = el("th", {}, [c.label]);
-      if (c.key) {
-        if (widths[c.key]) th.style.width = widths[c.key] + "px";
-        if (state.sort.key === c.key) {
-          th.appendChild(el("span", { class: "dir" },
-            [state.sort.dir === "asc" ? "▲" : "▼"]));
-        }
-        th.onclick = function () {
-          state.sort = { key: c.key,
-            dir: (state.sort.key === c.key && state.sort.dir === "asc") ? "desc" : "asc" };
-          state._filtered = null;
-          renderTable();
-        };
-        var h = el("div", { class: "cplcoci-resize", title: "Drag to resize" });
-        h.onmousedown = function (e) {
-          e.preventDefault(); e.stopPropagation();
-          var startX = e.clientX, startW = th.offsetWidth;
-          function mv(e2) {
-            var w = Math.max(40, startW + (e2.clientX - startX));
-            widths[c.key] = w;
-            th.style.width = w + "px";
-            table.style.tableLayout = "fixed";
-          }
-          function up() {
-            document.removeEventListener("mousemove", mv);
-            document.removeEventListener("mouseup", up);
-            saveWidths(widths);
-          }
-          document.addEventListener("mousemove", mv);
-          document.addEventListener("mouseup", up);
-        };
-        h.onclick = function (e) { e.stopPropagation(); };
-        th.appendChild(h);
-      }
-      htr.appendChild(th);
-    });
-    thead.appendChild(htr);
-    table.appendChild(thead);
-
-    var tbody = el("tbody");
-    var n = Math.min(idxs.length, state.limit);
-    for (var i = 0; i < n; i++) {
-      tbody.appendChild(buildRow(idxs[i], rows[idxs[i]], colleges));
-      if (state.expanded[idxs[i]]) tbody.appendChild(buildDescRow(idxs[i], rows[idxs[i]]));
-    }
-    table.appendChild(tbody);
-    wrap.appendChild(table);
-
-    if (idxs.length > state.limit) {
-      var more = el("button", { class: "cplcoci-btn" },
-        ["Show " + Math.min(PAGE, idxs.length - state.limit).toLocaleString()
-         + " more (" + (idxs.length - state.limit).toLocaleString() + " remaining)"]);
-      more.onclick = function () { state.limit += PAGE; renderTable(); };
-      wrap.appendChild(el("div", { class: "cplcoci-more" }, [more]));
-    }
-  }
-
-  function buildRow(idx, r, colleges) {
-    var tr = el("tr", { class: "cplcoci-row", "data-idx": String(idx) });
-    var caret = el("td", { class: "cplcoci-caret", title: "Show the catalog description" },
-      [state.expanded[idx] ? "▾" : "▸"]);
-    caret.onclick = function () {
-      state.expanded[idx] = !state.expanded[idx];
-      renderTable();
-    };
-    tr.appendChild(caret);
-    tr.appendChild(el("td", { title: colleges[r[ROW.COLLEGE]] }, [colleges[r[ROW.COLLEGE]]]));
-    tr.appendChild(el("td", {}, [r[ROW.SUBJ]]));
-    tr.appendChild(el("td", {}, [r[ROW.NUM]]));
-    tr.appendChild(el("td", { title: r[ROW.TITLE] }, [r[ROW.TITLE]]));
-    tr.appendChild(el("td", {}, [r[ROW.UNITS] == null ? "—" : String(r[ROW.UNITS])]));
-    tr.appendChild(el("td", { title: CREDIT_LABEL[r[ROW.CREDIT]] || "" },
-      [r[ROW.CREDIT] || "—"]));
-    var xfCell = el("td", { class: "cplcoci-xfer",
-      title: r[ROW.CID]
-        ? ("Transfer-model — carries C-ID " + r[ROW.CID] + " (a floor, not full CSU/UC transferability)")
-        : "No C-ID on record" }, [r[ROW.CID] ? "🎓" : "—"]);
-    tr.appendChild(xfCell);
-    tr.appendChild(el("td", {}, [r[ROW.TOP] || "—"]));
-    tr.appendChild(idChips(r));
-    tr.appendChild(el("td", { title: "COCI CourseControlNumber" }, [r[ROW.CTRL]]));
-    return tr;
-  }
 
   /* ── a course's learning outcomes (Sam, 2026-10-14) ──
    * "Where can I view the SLOs we've pulled so far? Seems like there should be a link to them on
@@ -419,61 +228,267 @@
     return box;
   }
 
-  function buildDescRow(idx, r) {
-    var tr = el("tr", { class: "cplcoci-desc", "data-desc-idx": String(idx) });
-    var td = el("td", { colspan: String(COLS.length) },
-      [el("span", { class: "lbl" }, ["Catalog description"]),
-       el("span", { class: "muted" }, ["loading…"])]);
-    tr.appendChild(td);
-    var outs = el("div", { class: "cplcoci-outs" }, [el("span", { class: "lbl" }, ["Learning outcomes"]),
-      el("span", { class: "muted" }, ["loading…"])]);
-    withDesc(r[ROW.SUBJ], r[ROW.CTRL], function (desc) {
-      clearNode(td);
-      td.appendChild(el("span", { class: "lbl" }, ["Catalog description"]));
-      if (desc) td.appendChild(document.createTextNode(desc));
-      else td.appendChild(el("span", { class: "muted" },
-        ["No catalog description in the COCI extract for this course."]));
-      td.appendChild(outs);
+
+  /* ── the Courses List: every local course on one sheet, banded by M-ID (S542, 2026-11-01) ──
+   * The Catalog Commons' shared engine draws it (commons_list.js); this spec makes it COCI's. One
+   * row per course in COCI's extract (141,738), with its M-ID as today's Common Course Reference
+   * holds it (unified_courses_members.js, joined on college and control number). The bands are the
+   * CCR's grain: an M-ID two or more local courses share is a band over its run, A to Z by code; a
+   * course alone in its M-ID, or in none, sits under "Not in a group", as the Exhibits AI sort's
+   * loners do. The TOP code is a column the finder reads; it decides nothing here (Rule 7).
+   * Read only: no Edit, no flag, no find and replace. A course moves between M-IDs in SkyView. */
+  var LIST = { engine: null, loading: false, failed: null, memo: null, cols: null };
+  var LIST_FILTERS = [["", "All"], ["mid", "Has an M-ID"], ["nomid", "No M-ID"], ["cid", "Has a C-ID"], ["ccn", "Has a CCN"],
+    ["any", "Has any identity"], ["none", "No identity"], ["C", "Credit"], ["N", "Noncredit"], ["E", "Noncredit enhanced"]];
+  function listState() {
+    if (state.ls) return state.ls;
+    var L = state.ls = {};
+    // Cross-tab deep-link prefill (sessionStorage, the RACI focus pattern): read once, then cleared.
+    try {
+      var pre = sessionStorage.getItem("cpl_coci_focus");
+      if (pre) { sessionStorage.removeItem("cpl_coci_focus"); L.q = String(pre).trim(); }
+    } catch (e) {}
+    return L;
+  }
+  function listFold(s) {
+    s = String(s == null ? "" : s);
+    if (s.normalize) s = s.normalize("NFD").replace(/[̀-ͯ]/g, "");
+    return s.toLowerCase();
+  }
+  /* An identity minted as an M-ID (ENGL M1001) reads as one; a few hundred carry their C-ID's name (ACCT 110). */
+  function idWords(id) { return /\sM[0-9A-Z]{2,}$/.test(id) ? "M-ID " + id : "Common course " + id + " (named for its C-ID)"; }
+  function skyHref(id) { return SKYVIEW + "#outline/" + encodeURIComponent(id); }
+  function skyLink(id, text) {
+    return el("a", { href: skyHref(id), target: "_blank", rel: "noopener", "aria-label": (text || "Open in SkyView") + ": " + id + " (opens a new tab)" },
+      [text || "Open in SkyView"]);
+  }
+  /* Today's identity of each course: college and control number to its identities, A to Z. A course
+     whose college the identity file spells another way joins on its control number alone. */
+  function identityIndex(M) {
+    var byKey = new Map(), byCn = new Map(), size = new Map();
+    if (!M || !M.members) return null;
+    var names = (M.colleges || []).map(function (c) { return String(c || "").trim(); });
+    Object.keys(M.members).forEach(function (id) {
+      var list = M.members[id] || [];
+      size.set(id, list.length);
+      list.forEach(function (m) {
+        if (!m || !m.cn) return;
+        var k = names[m.c] + "|" + m.cn, a = byKey.get(k), b = byCn.get(m.cn);
+        if (!a) byKey.set(k, a = []);
+        if (a.indexOf(id) < 0) a.push(id);
+        if (!b) byCn.set(m.cn, b = []);
+        if (b.indexOf(id) < 0) b.push(id);
+      });
     });
-    withOutcomes(state.data.colleges[r[ROW.COLLEGE]], r[ROW.SUBJ], r[ROW.NUM], function (err, rows) {
+    return { byKey: byKey, byCn: byCn, size: size, at: M.generated_at || "" };
+  }
+  /* Every course, built once per extract and identity file (the engine asks for the rows on every
+     keystroke), with the filters' counts. */
+  function listBuild() {
+    var D = state.data, M = window.CPL_UC_MEMBERS || null, memo = LIST.memo;
+    if (memo && memo.D === D && memo.M === M) return memo;
+    var X = identityIndex(M), colleges = (D.colleges || []).map(function (c) { return String(c || "").trim(); });
+    var n = { "": 0, mid: 0, nomid: 0, cid: 0, ccn: 0, any: 0, none: 0, C: 0, N: 0, E: 0 }, moved = 0, mids = {};
+    var rows = D.rows.map(function (r, i) {
+      var college = colleges[r[ROW.COLLEGE]] || "", ctrl = String(r[ROW.CTRL] || ""), subj = String(r[ROW.SUBJ] || ""), num = String(r[ROW.NUM] || "");
+      // A course in two M-IDs bands under the larger (the most local courses), then the first A to Z.
+      var ids = X ? (X.byKey.get(college + "|" + ctrl) || X.byCn.get(ctrl) || []).slice().sort(function (a, b) {
+        return (X.size.get(b) || 0) - (X.size.get(a) || 0) || (a < b ? -1 : a > b ? 1 : 0); }) : [];
+      var cid = String(r[ROW.CID] || ""), ccn = String(r[ROW.CCN] || ""), was = String(r[ROW.MID] || ""), code = r[ROW.CREDIT] || "";
+      var row = { ut: String(i), college: college, ctrl: ctrl, subj: subj, num: num, title: String(r[ROW.TITLE] || ""),
+        units: r[ROW.UNITS] == null ? null : r[ROW.UNITS], code: code, credit: CREDIT_LABEL[code] || code, top: String(r[ROW.TOP] || ""),
+        cid: cid, ccn: ccn, mid: ids[0] || "", mids: ids, was: X && was && ids.indexOf(was) < 0 ? was : "" };
+      row.ids = ids.concat(cid ? ["C-ID " + cid] : [], ccn ? [ccn] : []).join(", ");
+      row.hay = listFold([row.title, college, ctrl, subj, num, subj + " " + num, subj + num, row.top, cid, ccn, ids.join(" "), row.credit].join(" "));
+      n[""]++;
+      if (row.mid) n.mid++; else n.nomid++;
+      ids.forEach(function (id) { mids[id] = 1; });
+      if (cid) n.cid++;
+      if (ccn) n.ccn++;
+      if (row.mid || cid || ccn) n.any++; else n.none++;
+      if (n[code] != null) n[code]++;
+      if (row.was) moved++;
+      return row;
+    });
+    LIST.memo = { D: D, M: M, X: X, rows: rows, counts: n, mids: Object.keys(mids).length, moved: moved,
+      colleges: colleges.filter(function (c, i) { return colleges.indexOf(c) === i; }).length };
+    return LIST.memo;
+  }
+  /* The columns, found by name (the engine's rule, S541); built once, since the engine asks per row. */
+  function idChips(r, mk) {
+    var out = [];
+    r.mids.forEach(function (id) { out.push(mk("span", { cls: "cplcoci-chip mid", title: "M-ID: the common course in the Common Course Reference" }, [id])); });
+    if (r.cid) out.push(mk("span", { cls: "cplcoci-chip cid", title: "C-ID: the Course Identification Number this course carries in COCI" }, ["C-ID " + r.cid]));
+    if (r.ccn) out.push(mk("span", { cls: "cplcoci-chip ccn", title: "CCN: the AB 1111 Common Course Number this course carries in COCI" }, [r.ccn]));
+    return out.length ? out : null;
+  }
+  function listCols() {
+    return LIST.cols || (LIST.cols = [
+      { h: "Title", w: 17, v: function (r) { return r.title; } },
+      { h: "College", w: 11, v: function (r) { return r.college; } },
+      { h: "Subject", w: 5, v: function (r) { return r.subj; } },
+      { h: "Number", w: 5, v: function (r) { return r.num; } },
+      { h: "Units", w: 4, n: true, v: function (r) { return r.units; } },
+      { h: "Credit", w: 6, v: function (r) { return r.credit; } },
+      { h: "Transfer", w: 5, v: function (r) { return r.cid ? "Yes" : "No"; } },
+      { h: "TOP", w: 9, v: function (r) { return r.top; } },
+      { h: "Identities (M-ID, C-ID, CCN)", w: 14, v: function (r) { return r.ids; }, cell: idChips },
+      { h: "Control number", w: 7, v: function (r) { return r.ctrl; } }
+    ]);
+  }
+  function listFilterPass(r, L) {
+    var f = L.f;
+    if (!f) return true;
+    if (f === "mid") return !!r.mid;
+    if (f === "nomid") return !r.mid;
+    if (f === "cid") return !!r.cid;
+    if (f === "ccn") return !!r.ccn;
+    if (f === "any") return !!(r.mid || r.cid || r.ccn);
+    if (f === "none") return !(r.mid || r.cid || r.ccn);
+    return r.code === f;
+  }
+  function listHead(wrap) {
+    var m = listBuild(), c = m.counts, D = state.data;
+    wrap.appendChild(el("p", { "class": "cplcoci-lede" }, ["Every local course in COCI, one row each: " + fmt(c[""]) + " at " + m.colleges +
+      " colleges, from COCI's " + (D._built_at || "") + " extract. " + (m.X
+        ? fmt(c.mid) + " sit in " + fmt(m.mids) + " common courses of the Common Course Reference, each named by its M-ID, and each common course holding two or more of them is a band. "
+        : "") + "The List is read only; a course moves to another M-ID in SkyView, under the re-mint playbook."]));
+    var notes = [];
+    if (!m.X) notes.push("Today's identity file (unified_courses_members.js) did not arrive, so no course shows its M-ID and the List has no bands. Reload the tab to try again.");
+    else {
+      notes.push("Each M-ID is today's, from the identity file built " + m.X.at + ".");
+      if (m.moved) notes.push("COCI's extract names an older M-ID for " + fmt(m.moved) + " courses; a course's Identities drawer names it.");
+    }
+    wrap.appendChild(el("p", { "class": "cplcoci-meta" }, [notes.join(" ")]));
+    return true;
+  }
+  /* The most common title among a band's courses, as most of them spell it. */
+  function bandTitle(members) {
+    var by = {}, best = "", bestN = 0;
+    members.forEach(function (r) {
+      var k = r.title.toLowerCase(), e = by[k] || (by[k] = { n: 0, t: r.title });
+      if (++e.n > bestN) { bestN = e.n; best = e.t; }
+    });
+    return best;
+  }
+  function bandFacts(members) {
+    var col = {};
+    members.forEach(function (r) { col[r.college] = 1; });
+    var nc = Object.keys(col).length;
+    return fmt(members.length) + " local courses at " + fmt(nc) + (nc === 1 ? " college" : " colleges");
+  }
+  /* Learning outcomes and the catalog description, filled as each arrives (the Title drawer). */
+  function titleDrawer(r, h) {
+    var dd = el("div", { "class": "cplcoci-dd" }, [el("span", { "class": "lbl" }, ["Catalog description"]), el("span", { "class": "muted" }, ["loading…"])]);
+    var outs = el("div", { "class": "cplcoci-outs" }, [el("span", { "class": "lbl" }, ["Learning outcomes"]), el("span", { "class": "muted" }, ["loading…"])]);
+    h.box.appendChild(dd);
+    h.box.appendChild(outs);
+    withDesc(r.subj, r.ctrl, function (desc) {
+      clearNode(dd);
+      dd.appendChild(el("span", { "class": "lbl" }, ["Catalog description"]));
+      dd.appendChild(desc ? document.createTextNode(desc) : el("span", { "class": "muted" }, ["No catalog description in the COCI extract for this course."]));
+    });
+    withOutcomes(r.college, r.subj, r.num, function (err, rows) {
       var next = outcomesNode(err, rows);
       if (outs.parentNode) outs.parentNode.replaceChild(next, outs);
       outs = next;
     });
-    return tr;
   }
-
-  function exportCsv() {
-    var colleges = state.data.colleges, rows = state.data.rows;
-    var idxs = filteredIdx();
-    var esc = function (v) {
-      v = v == null ? "" : String(v);
-      return /[",\n]/.test(v) ? '"' + v.replace(/"/g, '""') + '"' : v;
+  /* Each drawer answers its column by name. */
+  function listDrawer(r, name, h) {
+    var m = listBuild();
+    if (name === "Title") {
+      h.line(r.subj + " " + r.num + ", " + r.title + ", at " + r.college + ": " + (r.units == null ? "no units listed" : fmt(r.units) + (r.units === 1 ? " unit" : " units")) +
+        (r.credit ? ", " + r.credit.toLowerCase() : "") + ". COCI control number " + r.ctrl + ".");
+      titleDrawer(r, h);
+      if (r.mid) h.box.appendChild(skyLink(r.mid, "Open " + r.mid + " in SkyView"));
+    } else if (name === "College") {
+      h.line(r.college + ".");
+      h.box.appendChild(h.word("Show every course at " + r.college, function () { h.filterBy(h.colIndex("College"), r.college); }));
+    } else if (name === "Subject" || name === "Number") {
+      h.line(r.subj + " " + r.num + " at " + r.college + ".");
+      h.box.appendChild(h.word("Show every " + r.subj + " course", function () { h.filterBy(h.colIndex("Subject"), r.subj); }));
+    } else if (name === "Identities (M-ID, C-ID, CCN)") {
+      if (!m.X) h.line("Today's identity file did not arrive, so the List cannot say which M-ID holds this course.");
+      else if (!r.mids.length) h.line("No M-ID: the Common Course Reference holds this course in no common course today.");
+      r.mids.forEach(function (id) {
+        var nAll = m.X.size.get(id) || 0;
+        h.line(idWords(id) + ": a common course in the Common Course Reference, holding " + fmt(nAll) + (nAll === 1 ? " local course." : " local courses."));
+        h.box.appendChild(el("p", { "class": "ccl-dl" }, [skyLink(id), " ", h.word("Show every course in " + id, function () { h.filterBy(h.colIndex("Identities (M-ID, C-ID, CCN)"), id); })]));
+      });
+      if (r.mids.length > 1) h.line("The course sits in " + r.mids.length + " M-IDs; the List bands it under the one with the most local courses, " + r.mid + ".");
+      if (r.was) h.line("COCI's " + (state.data._built_at || "") + " extract named " + r.was + "; the course has moved since.");
+      if (r.cid) h.line("C-ID " + r.cid + ", as COCI records it.");
+      if (r.ccn) h.line("CCN " + r.ccn + ", the AB 1111 Common Course Number COCI records.");
+      h.line("Moving a course to another M-ID is a re-mint: it happens in SkyView, under the playbook.");
+    } else if (name === "Transfer") {
+      h.line(r.cid ? "A transfer-model course: it carries C-ID " + r.cid + " (a floor, not full CSU or UC transferability)." : "No C-ID on record in COCI.");
+    } else if (name === "TOP") {
+      h.line(r.top ? "TOP code " + r.top + ", as the college entered it in COCI. The finder reads it; it decides nothing on this list (a TOP code is a last-in-line signal)." : "COCI holds no TOP code for this course.");
+      if (r.top) h.box.appendChild(h.word("Show every course with this TOP code", function () { h.filterBy(h.colIndex("TOP"), r.top); }));
+    } else if (name === "Credit") {
+      h.line(r.credit ? r.credit + ", COCI's credit status for this course." : "COCI records no credit status.");
+    } else {
+      var col = listCols()[h.colIndex(name)], v = col ? col.v(r) : "";
+      h.line(name + ": " + (v == null || v === "" ? "none" : v) + ".");
+    }
+  }
+  function listSpec() {
+    var spec = {
+      prefix: "ccl-", frPrefix: "ccl-fr-",
+      noun: { many: "local courses", region: "Every local course in COCI, banded by M-ID", keyHeader: "COCI row",
+        file: "coci-courses-list", placeholder: "Find by title, college, code or M-ID",
+        findLabel: "Find in the list" },
+      state: listState, rows: function () { return listBuild().rows; }, cols: listCols,
+      key: function (r) { return r.ut; }, title: function (r) { return r.title; }, render: mountList,
+      head: listHead, filterPass: listFilterPass, hay: function (r) { return r.hay; }, hayFolded: true, findWords: true,
+      fixedRows: true, findDelay: 160, drawer: listDrawer,
+      bands: { key: function (r) { return r.mid; }, by: "M-ID", label: "Bands by M-ID", none: "Not in a group",
+        name: function (id, members) { var t = bandTitle(members); return id + (t ? ", " + t : ""); },
+        facts: function (id, members) { return bandFacts(members); },
+        acts: function (id) { return [skyLink(id)]; } }
     };
-    var out = ["College,ControlNumber,Subject,Number,Title,Units,Credit,Transfer-model (C-ID),TOP,CID,CCN,MID"];
-    idxs.forEach(function (i) {
-      var r = rows[i];
-      out.push([colleges[r[ROW.COLLEGE]], r[ROW.CTRL], r[ROW.SUBJ], r[ROW.NUM],
-        r[ROW.TITLE], r[ROW.UNITS], CREDIT_LABEL[r[ROW.CREDIT]] || "", r[ROW.CID] ? "Yes" : "No", r[ROW.TOP],
-        r[ROW.CID], r[ROW.CCN], r[ROW.MID]].map(esc).join(","));
-    });
-    var blob = new Blob([out.join("\n")], { type: "text/csv" });
-    var a = document.createElement("a");
-    a.href = URL.createObjectURL(blob);
-    a.download = "coci_lookup_" + new Date().toISOString().slice(0, 10) + ".csv";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
+    /* Each filter word carries its count, read from the same build as the rows. */
+    Object.defineProperty(spec, "filters", { enumerable: true, get: function () {
+      var n = listBuild().counts;
+      return LIST_FILTERS.map(function (f) { return [f[0], f[1] + " (" + fmt(n[f[0]]) + ")"]; });
+    } });
+    return spec;
+  }
+  function listApi() {
+    if (!LIST.engine && window.CPL_COMMONS_LIST && LIST.ready) LIST.engine = window.CPL_COMMONS_LIST.create(listSpec());
+    return LIST.engine;
+  }
+  /* The engine and today's identity file load together the first time the view opens; one that
+     fails says so. */
+  function mountList() {
+    var node = document.getElementById("cplcoci-list-mount");
+    if (!node) return;
+    clearNode(node);
+    if (window.CPL_COMMONS_LIST && window.CPL_UC_MEMBERS) LIST.ready = true;
+    if (listApi()) { LIST.engine.render(node); return; }
+    var T = window.CPL_TABS;
+    if (LIST.failed || !T || typeof T.loadScript !== "function") {
+      node.appendChild(el("div", { "class": "cplcoci-empty", role: "alert" }, ["The List could not be loaded (" + (LIST.failed || "no script loader") +
+        "). The Programs view reads as usual; reload the tab to try again."]));
+      return;
+    }
+    node.appendChild(el("div", { "class": "cplcoci-empty", role: "status" }, ["Loading the List and today's M-IDs…"]));
+    if (LIST.loading) return;
+    LIST.loading = true;
+    var left = 2;
+    function done() {
+      if (--left) return;
+      LIST.loading = false;
+      LIST.failed = window.CPL_COMMONS_LIST ? null : "commons_list.js did not arrive";
+      LIST.ready = true;
+      if (state.view === "courses") mountList();
+    }
+    T.loadScript("commons_list.js", "CPL_COMMONS_LIST", done);
+    T.loadScript("unified_courses_members.js", "CPL_UC_MEMBERS", done);
   }
 
-  function invalidate() {
-    state._filtered = null;
-    state.limit = PAGE;
-    state.expanded = {};
-    renderTable();
-  }
-
+  // ── shell ─────────────────────────────────────────────────────────────────
   var _debounce = null;
 
   function renderShell() {
@@ -483,26 +498,29 @@
     r.className = "cplcoci";
     r.removeAttribute("style");
 
-    r.appendChild(el("div", { class: "cplcoci-head" }, [
-      el("span", { class: "h" }, ["COCI Lookup"]),
-      el("span", { class: "sub", id: "cplcoci-sub" }, [""]),
+    r.appendChild(el("div", { "class": "cplcoci-head" }, [
+      el("span", { "class": "h" }, ["COCI Lookup"]),
+      el("span", { "class": "sub", id: "cplcoci-sub" }, [""]),
     ]));
 
     // Courses | Programs view toggle
-    var seg = el("div", { class: "cplcoci-viewseg" });
+    var seg = el("div", { "class": "cplcoci-viewseg" });
     [["courses", "Courses"], ["programs", "Programs"]].forEach(function (v) {
-      var b = el("button", { class: "cplcoci-viewbtn" + (state.view === v[0] ? " on" : ""),
-        type: "button" }, [v[1]]);
+      var b = el("button", { "class": "cplcoci-viewbtn" + (state.view === v[0] ? " on" : ""),
+        type: "button", "aria-pressed": state.view === v[0] ? "true" : "false" }, [v[1]]);
       b.onclick = function () { if (state.view !== v[0]) { state.view = v[0]; renderShell(); } };
       seg.appendChild(b);
     });
     r.appendChild(seg);
 
-    r.appendChild(el("div", { class: "cplcoci-toolbar", id: "cplcoci-toolbar" }, []));
-    r.appendChild(el("div", { id: "cplcoci-table-wrap", class: "cplcoci-wrap" }, []));
-
-    if (state.view === "programs") renderProgramsView();
-    else renderCoursesView();
+    if (state.view === "programs") {
+      r.appendChild(el("div", { "class": "cplcoci-toolbar", id: "cplcoci-toolbar" }, []));
+      r.appendChild(el("div", { id: "cplcoci-table-wrap", "class": "cplcoci-wrap" }, []));
+      renderProgramsView();
+    } else {
+      r.appendChild(el("div", { id: "cplcoci-list-mount" }, []));
+      renderCoursesView();
+    }
   }
 
   function setSub(text) {
@@ -510,69 +528,10 @@
     if (s) { clearNode(s); s.appendChild(document.createTextNode(text)); }
   }
 
-  // ── Courses view ──────────────────────────────────────────────────────────
+  // ── Courses view: the Courses List ────────────────────────────────────────
   function renderCoursesView() {
-    setSub("the raw COCI course catalog · " + state.data.rows.length.toLocaleString()
-      + " records · " + state.data.colleges.length + " colleges · extract "
-      + (state.data._built_at || "—"));
-    var tb = document.getElementById("cplcoci-toolbar");
-    clearNode(tb);
-
-    var q = el("input", { class: "cplcoci-q", id: "cplcoci-q", type: "search",
-      placeholder: "Search college, subject, number, title, control #, C-ID, CCN, M-ID, TOP…",
-      autocomplete: "off" });
-    q.value = state.q;
-    q.oninput = function () {
-      var v = this.value.toLowerCase().trim();
-      clearTimeout(_debounce);
-      _debounce = setTimeout(function () { state.q = v; invalidate(); }, 160);
-    };
-    tb.appendChild(q);
-
-    var colDl = el("datalist", { id: "cplcoci-college-list" });
-    state.data.colleges.slice().sort().forEach(function (c) { colDl.appendChild(el("option", { value: c })); });
-    tb.appendChild(colDl);
-    var colIn = el("input", { id: "cplcoci-college", type: "search",
-      placeholder: "College…", list: "cplcoci-college-list", autocomplete: "off" });
-    if (state.college !== "all") colIn.value = state.college;
-    var collegeSet = {};
-    state.data.colleges.forEach(function (c) { collegeSet[c] = true; });
-    colIn.oninput = function () { state.college = collegeSet[this.value.trim()] ? this.value.trim() : "all"; invalidate(); };
-    tb.appendChild(colIn);
-
-    var subjSet = {};
-    state.data.rows.forEach(function (row) { subjSet[row[ROW.SUBJ].toUpperCase()] = true; });
-    var subjDl = el("datalist", { id: "cplcoci-subject-list" });
-    Object.keys(subjSet).sort().forEach(function (s) { subjDl.appendChild(el("option", { value: s })); });
-    tb.appendChild(subjDl);
-    var subjIn = el("input", { id: "cplcoci-subject", type: "search",
-      placeholder: "Subject…", list: "cplcoci-subject-list", autocomplete: "off", style: "max-width:9em" });
-    if (state.subject !== "all") subjIn.value = state.subject;
-    subjIn.oninput = function () { state.subject = subjSet[this.value.trim().toUpperCase()] ? this.value.trim().toUpperCase() : "all"; invalidate(); };
-    tb.appendChild(subjIn);
-
-    tb.appendChild(mkSelect("cplcoci-transfer", "Transfer filter (C-ID transfer-model)",
-      [["all", "Transfer: any"], ["xfer", "🎓 Transfer-model (C-ID)"], ["noxfer", "No C-ID"]],
-      state.transfer, function (v) { state.transfer = v; invalidate(); }));
-    tb.appendChild(mkSelect("cplcoci-identity", "Identity filter",
-      [["all", "Identity: any"], ["mid", "has M-ID"], ["cid", "has C-ID"], ["ccn", "has CCN"], ["any", "has any identity"], ["none", "no identity"]],
-      state.identity, function (v) { state.identity = v; invalidate(); }));
-    tb.appendChild(mkSelect("cplcoci-credit", "Credit status (CreditType rule)",
-      [["all", "Credit: any"], ["C", "Credit"], ["E", "Noncredit Enhanced"], ["N", "Noncredit"]],
-      state.credit, function (v) { state.credit = v; invalidate(); }));
-
-    var csv = el("button", { class: "cplcoci-btn", id: "cplcoci-csv", title: "Download the current filtered set as CSV" }, ["Download CSV"]);
-    csv.onclick = exportCsv;
-    tb.appendChild(csv);
-    tb.appendChild(el("span", { class: "cplcoci-count", id: "cplcoci-count" }, [""]));
-
-    // Cross-tab deep-link prefill (sessionStorage, the RACI focus pattern).
-    try {
-      var pre = sessionStorage.getItem("cpl_coci_focus");
-      if (pre) { sessionStorage.removeItem("cpl_coci_focus"); q.value = pre; state.q = pre.toLowerCase().trim(); }
-    } catch (e) {}
-
-    renderTable();
+    setSub("the Catalog Commons' Courses List: COCI's " + fmt(state.data.rows.length) + " local courses, banded by M-ID");
+    mountList();
   }
 
   function mkSelect(id, title, opts, val, onchange) {
@@ -772,13 +731,14 @@
     setTimeout(function () { URL.revokeObjectURL(a.href); }, 500);
   }
 
+
   function init() {
     ensureCss();
     if (!window.CPL_COCI_LOOKUP || !Array.isArray(window.CPL_COCI_LOOKUP.rows)) {
       var r = root();
       if (r) {
         clearNode(r);
-        r.appendChild(el("div", { class: "cplcoci-empty" },
+        r.appendChild(el("div", { "class": "cplcoci-empty", role: "alert" },
           ["COCI data unavailable — coci_lookup_data.js failed to load. "
            + "Rebuild with: python3 kb/_build_coci_lookup.py"]));
       }
@@ -787,6 +747,17 @@
     state.data = window.CPL_COCI_LOOKUP;
     renderShell();
   }
+
+  // A new visit drops the List's filters, sort, selection and open drawer (tabs never remember a
+  // filter, Sam, 2026-10-21); the engine keeps its sorted order, so the repaint is a filter pass.
+  var awayFromTab = false;
+  window.addEventListener("cpl-tab-activated", function (e) {
+    var t = e && e.detail && e.detail.tab;
+    if (t !== TAB) { awayFromTab = true; return; }
+    if (!awayFromTab || !_booted) return;
+    awayFromTab = false; state.ls = null;
+    if (state.data && state.view === "courses") mountList();
+  });
 
   var _booted = false;
   window.CPL_COCI_LOOKUP_TAB = {
@@ -798,7 +769,9 @@
     // test hooks
     _state: state,
     _init: init,
-    _filteredIdx: filteredIdx,
     _shardKey: shardKey,
+    _skyHref: skyHref,
+    _listBuild: function () { return listBuild(); },
+    _list: function () { return LIST.engine; },
   };
 })();

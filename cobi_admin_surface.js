@@ -401,7 +401,8 @@ window.COBI_ADMIN_SURFACE = {
     "coci-lookup": {
       "modules": [
         "coci_lookup.js",
-        "coci_lookup_data.js"
+        "coci_lookup_data.js",
+        "commons_list.js"
       ],
       "reads": [
         "course_outcomes"

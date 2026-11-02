@@ -74,8 +74,9 @@ check("Program Requirements: the issues are the failing and the unread counts",
 ex = rows[1].get("facts") or {}
 check("Exhibit: a person's and a cohort's stamps sum to the stamped titles", ex.get("person") + ex.get("cohort") == ex.get("stamped") == rows[1]["pair"][0]["n"])
 co = rows[2]
-check("Course: SkyView alone is the row's home, and every count opens it (Sam, 20:46Z)",
-      co["links"] == [{"href": co["tab"], "text": "Open SkyView"}] and co["tab"].endswith("/prototype/skyview.html")
+check("Course: SkyView is the row's home and every count opens it (Sam, 20:46Z); the Courses List is the second word (2026-11-01)",
+      co["links"] == [{"href": co["tab"], "text": "Open SkyView"}, {"href": "#coci-lookup", "text": "Open the Courses List"}]
+      and co["tab"].endswith("/prototype/skyview.html")
       and all(i.get("open") == co["tab"] for i in co["issues"]) and co["pair"][0]["open"] == co["tab"])
 cr = rows[3]
 crf = cr.get("facts") or {}
