@@ -697,6 +697,10 @@ jobs:
       # cannot drop a college's outcomes and JST condition into `unmatched` (CCSF and Desert, 2026-10-31 to 11-02).
       - name: Funding college join (funding/_build_funding_performance.py)
         run: python3 tests/funding_name_resolver_test.py
+      # The short-name editor's daily fold (S545): a changed short keeps the old one, a collision or a missing college
+      # is refused and the committed files stay, and nothing changed writes nothing.
+      - name: College short names fold (kb/_apply_college_short_names.py)
+        run: python3 tests/college_short_names_apply_test.py
       # Who CPL serves (Sam, sheets 33-34, 2026-10-04): the Active Colleges
       # card counts community colleges only and names Cal State LA beside them,
       # from kb/non_ccc_institutions.json. Imports the generator, so it installs

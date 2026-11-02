@@ -58,6 +58,12 @@ revoke all on public.college_short_names_log from anon, authenticated;
 grant select on public.college_short_names to anon, authenticated;
 grant update (short) on public.college_short_names to authenticated;
 grant select on public.college_short_names_log to authenticated;
+-- The nightly applier reads with the service key, and a new college arrives through the seed under it. Added after
+-- the 04:02Z apply (run 41386050121, whose receipt's sha256 names this file without these two lines): the live tables
+-- already held these grants through the project's default privileges (measured 2026-11-02), and from 2026-10-30
+-- Supabase stops granting a new table to the API roles, so the file says them (tests/supabase_table_grants_test.py).
+grant select, insert, update on public.college_short_names to service_role;
+grant select, insert on public.college_short_names_log to service_role;
 
 create or replace function public.college_short_names_guard()
 returns trigger

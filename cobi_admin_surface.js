@@ -343,7 +343,9 @@ window.COBI_ADMIN_SURFACE = {
         "map_college_contacts",
         "map_colleges"
       ],
-      "writes": [],
+      "writes": [
+        "college_short_names"
+      ],
       "rpcs": [],
       "measured": true
     },

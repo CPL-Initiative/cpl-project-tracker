@@ -52,7 +52,9 @@
   "use strict";
 
   var REST = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/rest/v1";
-  var state = { live: null, contacts: null, error: null, loading: false, expanded: {}, q: "" };
+  var state = { live: null, contacts: null, error: null, loading: false, expanded: {}, q: "",
+    // The short-name editor (S545): the live table public.college_short_names, keyed by its canonical name.
+    shorts: null, shortsError: null, shortEdit: null, shortDraft: "", shortBusy: false, shortNote: "" };
 
   function snap() { return window.CPL_COLLEGE_IDENTITY || null; }
   function esc(s) {
@@ -206,6 +208,13 @@
       ".cid-t tbody tr:nth-child(even) { background:var(--surface-subtle, #f2f6fb); }",
       ".cid-t td.n { font-variant-numeric:tabular-nums; }",
       ".cid-var { font-size:.76rem; color:var(--text-muted, #5a6478); }",
+      /* The short-name editor (S545): controls are underlined words (Sam, 2026-10-09), tokens only. */
+      ".cid-w { background:none; border:0; padding:0 2px; font:inherit; font-size:.8rem; color:var(--accent-link); text-decoration:underline; text-underline-offset:2px; min-height:24px; cursor:pointer; }",
+      ".cid-w:focus-visible, .cid-sin:focus-visible { outline:2px solid var(--accent-link); outline-offset:2px; }",
+      ".cid-w[aria-disabled=true] { cursor:default; color:var(--text-muted); }",
+      ".cid-sin { width:100%; box-sizing:border-box; padding:3px 6px; font:inherit; font-size:.82rem; border:1px solid var(--border-strong); border-radius:6px; background:var(--surface-opaque); color:var(--text-body); }",
+      ".cid-short, .cid-wait { display:block; }",
+      ".cid-status { font-size:.82rem; color:var(--text-body); margin:6px 0; min-height:1.2em; max-width:var(--cpl-measure,none); }",
       ".cid-search { width:100%; max-width:340px; padding:6px 10px; font-size:.85rem; border:1px solid var(--border-strong, #cdd6e3); border-radius:8px; margin:0 0 10px; }",
       /* A path in a note is one unbroken word; at 320px it ran 49px past the
        * viewport and the page scrolled sideways (S371 UI pass). */
@@ -414,9 +423,10 @@
         + (suppCount ? " · " + suppCount + " suppressed" : "") + ")</h3>"
         + '<label class="cid-note" for="cid-q">Filter by name, district or variant</label><br>'
         + '<input id="cid-q" class="cid-search" type="search" value="' + esc(state.q) + '" placeholder="e.g. Mt. San Antonio, or 740">'
+        + shortIntro()
         + '<div class="cid-wrap" tabindex="0" role="region" aria-label="College and district identity table">'
-        + '<table class="cid-t"><colgroup><col style="width:26%"><col style="width:6%"><col style="width:13%"><col style="width:26%"><col style="width:9%"><col style="width:20%"></colgroup>'
-        + "<thead><tr><th scope=\"col\">Name</th><th scope=\"col\">ID</th><th scope=\"col\">Kind</th>"
+        + '<table class="cid-t"><colgroup><col style="width:21%"><col style="width:16%"><col style="width:5%"><col style="width:11%"><col style="width:21%"><col style="width:8%"><col style="width:18%"></colgroup>'
+        + "<thead><tr><th scope=\"col\">Name</th><th scope=\"col\">Short name</th><th scope=\"col\">ID</th><th scope=\"col\">Kind</th>"
         + "<th scope=\"col\">District</th><th scope=\"col\">MIS</th><th scope=\"col\">Variants</th></tr></thead><tbody>";
       rows.forEach(function (c) {
         var vs = c.variants || [];
@@ -451,13 +461,14 @@
               ? ' <span class="cid-tag suppressed">suppressed</span>'
               : "")
           + "</span></td>"
+          + shortCell(c)
           + '<td class="n" data-label="ID">' + esc(c.college_id) + "</td>"
           + '<td data-label="Kind">' + esc(String(c.entity_kind || "college").replace(/_/g, " ")) + "</td>"
           + '<td data-label="District">' + esc(c.district || "—") + "</td>"
           + '<td class="n" data-label="MIS">' + esc(mis) + "</td>"
           + '<td class="cid-var" data-label="Variants">' + (vs.length ? esc(vs.join(" · ")) : "none") + "</td></tr>";
         if (suppressed) {
-          h += '<tr><td colspan="6" class="cid-why">'
+          h += '<tr><td colspan="7" class="cid-why">'
             + "Suppressed everywhere — a MAP sandbox organization, not a real institution. "
             + "It is excluded from Custom Reports, college briefings and Sierra, so no figure "
             + "on any other tab counts it."
@@ -473,7 +484,7 @@
          * beside the code. Say which the code is. */
         if (c.mis_absent_why) {
           var placeholder = !!(c.mis_district_code || c.mis_college_code);
-          h += '<tr><td colspan="6" class="cid-why">'
+          h += '<tr><td colspan="7" class="cid-why">'
             + (placeholder ? "Placeholder code, not an MIS code — " : "No MIS code — ")
             + esc(c.mis_absent_why) + "</td></tr>";
         }
@@ -517,6 +528,8 @@
       slot.textContent = "The lock button in the header does the same thing, from any tab.";
     }
 
+    wireShorts(root);
+
     var qEl = root.querySelector("#cid-q");
     if (qEl) {
       qEl.addEventListener("input", function () {
@@ -527,6 +540,122 @@
         if (again) { again.focus(); try { again.setSelectionRange(at, at); } catch (e) { /* search input */ } }
       });
     }
+  }
+
+  /* ── The short-name editor (S545; college-district-identity lane) ──────────
+   * Sam: "I think that's what's held me up previously" and "I can make those corrections in the table so the
+   * exceptions don't need to be coded". The column reads public.college_short_names live; a signed-in reviewer edits
+   * one row with one Save. The table's trigger keeps the old short as an alias (a name a join keys on is a key, S544),
+   * refuses a short another college answers to, and logs who and when; the daily run's kb/_apply_college_short_names.py
+   * puts the new short on every page and into every builder. The team phrase alone cannot write (DR-30). */
+  function shortRecord(c) {
+    var f = window.cplCollegeShortRecord;
+    return typeof f === "function" ? f(c.college_name) : null;
+  }
+  function shortIntro() {
+    var h = "";
+    if (state.shorts == null) {
+      h += '<p class="cid-flag"><b>The short names could not be read' + (state.shortsError ? " (" + esc(state.shortsError) + ")" : "")
+        + ".</b> The Short name column shows the names the pages use today, and none can be edited until the table reads. "
+        + "This is a failed read, not an empty table.</p>";
+    } else if (!getSession()) {
+      h += '<p class="cid-note">Short name is what every page and chip shows for a college. Sign in with a reviewer link to edit one; '
+        + "the team phrase reads it but cannot change it.</p>";
+    } else {
+      h += '<p class="cid-note">Short name is what every page and chip shows for a college. Edit one and Save: the pages show it after '
+        + "the daily run (06:17 UTC), and the old short stays as an alias, so every join still reaches the college.</p>";
+    }
+    h += '<p id="cid-status" class="cid-status" role="status" aria-live="polite">' + esc(state.shortNote || "") + "</p>";
+    return h;
+  }
+  function shortCell(c) {
+    var rec = shortRecord(c);
+    if (!rec) return '<td class="cid-var" data-label="Short name">none</td>';
+    var live = state.shorts && state.shorts[rec.canonical];
+    var shown = live ? live.short : rec.short, key = rec.canonical;
+    if (state.shortEdit === key) {
+      var busy = state.shortBusy;
+      return '<td data-label="Short name"><input id="cid-sin" class="cid-sin" type="text" value="' + esc(state.shortDraft) + '"'
+        + ' aria-label="Short name of ' + esc(c.college_name) + '"' + (busy ? " disabled" : "") + ">"
+        + '<button type="button" class="cid-w" data-short-save="' + esc(key) + '"' + (busy ? ' aria-disabled="true"' : "") + ">"
+        + (busy ? "Saving…" : "Save") + "</button>"
+        + '<button type="button" class="cid-w" data-short-cancel="' + esc(key) + '">Cancel</button></td>';
+    }
+    var waiting = live && live.short !== rec.short;
+    return '<td data-label="Short name"><span class="cid-short">' + esc(shown) + "</span>"
+      + (waiting ? '<span class="cid-var cid-wait">on the pages after the daily run; they show ' + esc(rec.short) + " until then</span>" : "")
+      + (state.shorts && live && getSession()
+          ? '<button type="button" class="cid-w" data-short-edit="' + esc(key) + '" aria-label="Edit the short name of ' + esc(c.college_name) + '">Edit</button>'
+          : "")
+      + "</td>";
+  }
+  function shortSave(root, key) {
+    var live = state.shorts && state.shorts[key];
+    var value = String(state.shortDraft || "").replace(/\s+/g, " ").trim();
+    if (!live) return;
+    if (!value) { state.shortNote = "A short name cannot be empty; " + live.short + " stays."; render(root); focusShortInput(root); return; }
+    if (value === live.short) { state.shortEdit = null; state.shortNote = "Nothing changed: " + key + " reads " + live.short + "."; render(root); focusShortEdit(root, key); return; }
+    state.shortBusy = true; state.shortNote = "Saving the short name of " + key + "…"; render(root);
+    var headers = authHeaders();
+    headers["Content-Type"] = "application/json";
+    headers.Prefer = "return=representation";
+    return fetch(REST + "/college_short_names?canonical=eq." + encodeURIComponent(key), {
+      method: "PATCH", headers: headers, body: JSON.stringify({ short: value })
+    }).then(function (r) {
+      return r.text().then(function (t) {
+        var body = null;
+        try { body = t ? JSON.parse(t) : null; } catch (e) { body = null; }
+        if (!r.ok) throw new Error((body && body.message) || ("HTTP " + r.status));
+        if (!body || !body.length) throw new Error("signin");
+        return body[0];
+      });
+    }).then(function (row) {
+      var before = live.short;
+      state.shorts[key] = row;
+      state.shortBusy = false; state.shortEdit = null;
+      state.shortNote = "Saved: " + key + " reads " + row.short + ". The pages show it after the daily run (06:17 UTC); \u201c"
+        + before + "\u201d stays an alias, so every join still reaches the college.";
+      render(root); focusShortEdit(root, key);
+    }).catch(function (e) {
+      state.shortBusy = false;
+      var m = String(e && e.message || e);
+      state.shortNote = m === "signin"
+        ? "It did not save: sign in with a reviewer link to edit a short name. Nothing changed."
+        : "It did not save (" + m + "). Nothing changed.";
+      render(root); focusShortInput(root);
+    });
+  }
+  function focusShortInput(root) {
+    var i = root.querySelector("#cid-sin");
+    if (i) { i.focus(); try { i.setSelectionRange(i.value.length, i.value.length); } catch (e) { /* jsdom */ } }
+  }
+  function focusShortEdit(root, key) {
+    var b = Array.prototype.filter.call(root.querySelectorAll("[data-short-edit]"), function (x) { return x.getAttribute("data-short-edit") === key; })[0];
+    if (b) b.focus();
+  }
+  function wireShorts(root) {
+    Array.prototype.forEach.call(root.querySelectorAll("[data-short-edit]"), function (b) {
+      b.addEventListener("click", function () {
+        var key = b.getAttribute("data-short-edit"), live = state.shorts && state.shorts[key];
+        if (!live) return;
+        state.shortEdit = key; state.shortDraft = live.short; state.shortNote = "";
+        render(root); focusShortInput(root);
+      });
+    });
+    var inp = root.querySelector("#cid-sin");
+    if (inp) {
+      inp.addEventListener("input", function () { state.shortDraft = inp.value; });
+      inp.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") { e.preventDefault(); state.shortDraft = inp.value; shortSave(root, state.shortEdit); }
+        else if (e.key === "Escape") { var k = state.shortEdit; state.shortEdit = null; state.shortNote = ""; render(root); focusShortEdit(root, k); }
+      });
+    }
+    Array.prototype.forEach.call(root.querySelectorAll("[data-short-save]"), function (b) {
+      b.addEventListener("click", function () { if (state.shortBusy) return; var i = root.querySelector("#cid-sin"); if (i) state.shortDraft = i.value; shortSave(root, b.getAttribute("data-short-save")); });
+    });
+    Array.prototype.forEach.call(root.querySelectorAll("[data-short-cancel]"), function (b) {
+      b.addEventListener("click", function () { var k = b.getAttribute("data-short-cancel"); state.shortEdit = null; state.shortNote = ""; render(root); focusShortEdit(root, k); });
+    });
   }
 
   function load(root) {
@@ -540,7 +669,11 @@
     var b = jget(REST + "/map_college_contacts?select=college")
       .then(function (d) { state.contacts = (d || []).map(function (r) { return r.college; }); })
       .catch(function () { state.contacts = null; });   // gated read — not an error
-    return Promise.all([a, b]).then(function () {
+    // The short names (S545): public read, so it reads for anyone; a failure costs the column's live values only.
+    var c = jget(REST + "/college_short_names?select=canonical,short,short_caps,aliases,updated_by,updated_at&order=canonical")
+      .then(function (d) { state.shorts = {}; (d || []).forEach(function (r) { state.shorts[r.canonical] = r; }); state.shortsError = null; })
+      .catch(function (e) { state.shorts = null; state.shortsError = String(e && e.message || e); });
+    return Promise.all([a, b, c]).then(function () {
       state.loading = false; render(root);
     });
   }

@@ -170,7 +170,7 @@ block("(5)", function () {
   M._state.live = COLLEGES; M._state.contacts = []; M._state.error = null; M._state.loading = false;
   M._render(root);
   const ths = root.querySelectorAll(".cid-t thead th");
-  check("(5) every header cell carries scope", ths.length === 6 &&
+  check("(5) every header cell carries scope", ths.length === 7 &&
     Array.prototype.every.call(ths, function (th) { return th.getAttribute("scope") === "col"; }));
   const wrap = root.querySelector(".cid-wrap");
   check("(5) the scrolling table sits in a focusable, named region",
@@ -353,7 +353,7 @@ block("(6)", function () {
   M._render(root);
   const cells = Array.from(root.querySelectorAll(".cid-t tbody td:not(.cid-why)"));
   check("(6) ⚠ every roster cell names its column (data-label) for the stacked phone layout",
-    cells.length === ROWS.length * 6 && cells.every(function (td) { return !!td.getAttribute("data-label"); }),
+    cells.length === ROWS.length * 7 && cells.every(function (td) { return !!td.getAttribute("data-label"); }),
     "below 560px each cell prints its label; a cell without one prints a bare value");
   const css = (w.document.getElementById("cid-css") || {}).textContent || "";
   check("(6) …and below 560px the table stacks, its header row kept for a screen reader",

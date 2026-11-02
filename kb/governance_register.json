@@ -293,6 +293,15 @@
       "owner": "Sam",
       "when_empty": "COBI publishes nothing. Credential Engine may still publish a college's own catalog under that college's organization, which is the college's and Credential Engine's to decide and outside this right.",
       "load_bearing": true
+    },
+    {
+      "id": "DR-30",
+      "element": "A college's short name (college_short_names)",
+      "drives": "The short form every page, chip and Sierra answer shows for a college, and a key the builders join on: the funding roster reaches a college by its short or a prior one (kb/college_short_names.json, college_short_names.js).",
+      "decides": "Sam (\"I can make those corrections in the table so the exceptions don't need to be coded\", 2026-10-30). Acceptance: a signed-in reviewer edits it in the College Identity tab; the table's trigger keeps the old short as an alias, refuses a short another college answers to, and logs who and when; the daily fold refuses a collision or a missing college and keeps the last good files.",
+      "maintained_in": "public.college_short_names via the College Identity tab's Short name column; the daily run's kb/_apply_college_short_names.py writes the two files",
+      "owner": null,
+      "when_empty": "Before S545 the shorts lived in a seed script only a session could run, and a short changed there dropped City College of San Francisco and College of the Desert from the funding join for two days (#2598, #2676)."
     }
   ],
   "acceptance_standards": [
