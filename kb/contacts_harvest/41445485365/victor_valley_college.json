@@ -1,0 +1,414 @@
+{
+ "college": "Victor Valley College",
+ "homepage": "https://www.vvc.edu/",
+ "read_at": "2026-11-02T12:34:15+00:00",
+ "pages": [
+  {
+   "url": "https://www.vvc.edu/",
+   "final_url": "https://www.vvc.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.vvc.edu/presidents-office-welcome-message",
+   "final_url": "https://www.vvc.edu/presidents-office-welcome-message",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office - Welcome Message | Victor Valley College",
+     "position": "college_ceo",
+     "window": [
+      "President's Office - Welcome Message | Victor Valley College",
+      "Skip to main content",
+      "Search",
+      "facebook"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office - Welcome Message",
+     "position": "college_ceo",
+     "window": [
+      "Search",
+      "My VVC",
+      "Campus Police",
+      "President's Office - Welcome Message",
+      "Breadcrumb",
+      "Home",
+      "President's Office - Welcome Message"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office - Welcome Message",
+     "position": "college_ceo",
+     "window": [
+      "President's Office - Welcome Message",
+      "Breadcrumb",
+      "Home",
+      "President's Office - Welcome Message",
+      "Section Menu",
+      "President's Office - Welcome Message",
+      "About Our College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office - Welcome Message",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "President's Office - Welcome Message",
+      "Section Menu",
+      "President's Office - Welcome Message",
+      "About Our College",
+      "President Chat",
+      "President Chat 2025"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat",
+     "position": "college_ceo",
+     "window": [
+      "Section Menu",
+      "President's Office - Welcome Message",
+      "About Our College",
+      "President Chat",
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2025",
+     "position": "college_ceo",
+     "window": [
+      "President's Office - Welcome Message",
+      "About Our College",
+      "President Chat",
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2023",
+     "position": "college_ceo",
+     "window": [
+      "About Our College",
+      "President Chat",
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2022",
+     "position": "college_ceo",
+     "window": [
+      "President Chat",
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020",
+      "Ask the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2021",
+     "position": "college_ceo",
+     "window": [
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020",
+      "Ask the President",
+      "Budget Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2020",
+     "position": "college_ceo",
+     "window": [
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020",
+      "Ask the President",
+      "Budget Office",
+      "2026/2027 Budget Forum Zoom meeting"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Ask the President",
+     "position": "college_ceo",
+     "window": [
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020",
+      "Ask the President",
+      "Budget Office",
+      "2026/2027 Budget Forum Zoom meeting",
+      "Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "We are excited for you to join the Victor Valley College community as we implement these strategies. Please contact us for further information following the links on this website.",
+      "Yours for a bright future,",
+      "Daniel Walden, Ph.D.",
+      "Superintendent/President",
+      "President's Office - Welcome Message",
+      "About Our College",
+      "President Chat"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office - Welcome Message",
+     "position": "college_ceo",
+     "window": [
+      "Yours for a bright future,",
+      "Daniel Walden, Ph.D.",
+      "Superintendent/President",
+      "President's Office - Welcome Message",
+      "About Our College",
+      "President Chat",
+      "President Chat 2025"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat",
+     "position": "college_ceo",
+     "window": [
+      "Superintendent/President",
+      "President's Office - Welcome Message",
+      "About Our College",
+      "President Chat",
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2025",
+     "position": "college_ceo",
+     "window": [
+      "President's Office - Welcome Message",
+      "About Our College",
+      "President Chat",
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2023",
+     "position": "college_ceo",
+     "window": [
+      "About Our College",
+      "President Chat",
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2022",
+     "position": "college_ceo",
+     "window": [
+      "President Chat",
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020",
+      "Ask the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2021",
+     "position": "college_ceo",
+     "window": [
+      "President Chat 2025",
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020",
+      "Ask the President",
+      "Budget Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Chat 2020",
+     "position": "college_ceo",
+     "window": [
+      "President Chat 2023",
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020",
+      "Ask the President",
+      "Budget Office",
+      "2026/2027 Budget Forum Zoom meeting"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Ask the President",
+     "position": "college_ceo",
+     "window": [
+      "President Chat 2022",
+      "President Chat 2021",
+      "President Chat 2020",
+      "Ask the President",
+      "Budget Office",
+      "2026/2027 Budget Forum Zoom meeting",
+      "Committees"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.vvc.edu/admissions-records",
+   "final_url": "https://www.vvc.edu/admissions-records",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.vvc.edu/veterans-resource-center-0",
+   "final_url": "https://www.vvc.edu/veterans-resource-center-0",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center | Victor Valley College",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center | Victor Valley College",
+      "Skip to main content",
+      "Search",
+      "facebook"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Search",
+      "My VVC",
+      "Campus Police",
+      "Veterans Resource Center",
+      "Breadcrumb",
+      "Home",
+      "Veterans Resource Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center",
+      "Breadcrumb",
+      "Home",
+      "Veterans Resource Center",
+      "Section Menu",
+      "Veterans",
+      "Contact Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Donate to the Veterans Resource Center using QR Code",
+     "position": "vrc",
+     "window": [
+      "2. Provide a written request to be certified.",
+      "3. Provide additional information needed to properly certify the enrollment as described in other institutional policies.",
+      "Image",
+      "Donate to the Veterans Resource Center using QR Code",
+      "Spring 2026 Hours:",
+      "Monday-Friday 8:00 am-4:30 pm",
+      "Contact and Location Information:"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.vvc.edu/veterans-club",
+   "final_url": "https://www.vvc.edu/veterans-club",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Officer/ Member Application",
+     "position": null,
+     "window": [
+      "Veterans Club",
+      "Web Resources",
+      "CLICK HERE FOR A CAMPUS MAP",
+      "Officer/ Member Application",
+      "Officers:",
+      "President - VACANT",
+      "Vice-President - VACANT"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President - VACANT",
+     "position": "college_ceo",
+     "window": [
+      "CLICK HERE FOR A CAMPUS MAP",
+      "Officer/ Member Application",
+      "Officers:",
+      "President - VACANT",
+      "Vice-President - VACANT",
+      "Secretary - VACANT",
+      "Treasurer - VACANT"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice-President - VACANT",
+     "position": null,
+     "window": [
+      "Officer/ Member Application",
+      "Officers:",
+      "President - VACANT",
+      "Vice-President - VACANT",
+      "Secretary - VACANT",
+      "Treasurer - VACANT",
+      "Activities Planner - VACANT"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41445485365"
+}
