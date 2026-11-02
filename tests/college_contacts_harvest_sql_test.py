@@ -22,6 +22,14 @@ checks = [
     ("the rollback drops the function and the table", "drop function if exists public.college_contacts_harvest_apply" in rb
      and "drop table if exists public.college_contacts_harvest" in rb),
 ]
+fe = open(os.path.join(HERE, "..", "kb", "migrations", "2026-11-02_college_contacts_harvest_fill_email.sql")).read()
+fe_body = "\n".join(l for l in fe.splitlines() if not l.lstrip().startswith("--"))
+checks += [
+    ("S551: a blank email fills on a name match, only when the page prints one",
+     re.search(r"coalesce\(r ->> 'email', ''\) <> ''", fe_body) and re.search(r"email = ''\s+and lower\(name\) = lower\(r ->> 'name'\)", fe_body)),
+    ("S551: still closed to every client role", re.search(r"revoke all on function public\.college_contacts_harvest_apply\(jsonb\) from public, anon, authenticated", fe_body)),
+    ("S551: still deletes nothing", not re.search(r"\bdelete\s+from\b", fe_body, re.I)),
+]
 bad = [n for n, ok in checks if not ok]
 for n in bad:
     print("FAIL:", n)

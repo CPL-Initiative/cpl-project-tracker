@@ -55,6 +55,8 @@ jobs:
       - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
+      - name: Install pypdf (catalog PDFs named in kb/contacts_harvest_seeds.json)
+        run: pip install --quiet pypdf
       - name: Read
         env:
           SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}

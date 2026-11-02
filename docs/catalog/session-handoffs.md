@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-519 document(s).
+520 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 552 | [Session 552 handoff: the contacts harvest's alternate routes refuse too; Sheet 157 asks for Sam's upload](../session_552_handoff.md) | 2026-11-02 |
 | 551 | [Session 551 handoff: the contacts harvest's first full pass is done](../session_551_handoff.md) | 2026-11-02 |
 | 550 | [Session 550 handoff: Santa Ana's SLO reader fix, the eighth contacts read](../session_550_handoff.md) | 2026-11-02 |
 | 549 | [Session 549 handoff: the IT vendor cert link, the seventh contacts read](../session_549_handoff.md) | 2026-11-02 |

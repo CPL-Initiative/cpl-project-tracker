@@ -1,2 +1,2 @@
-file=kb/migrations/2026-11-02_college_short_names.sql
-name=s545_college_short_names
+file=kb/migrations/2026-11-02_college_contacts_harvest_fill_email.sql
+name=s551_college_contacts_harvest_fill_email

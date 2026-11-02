@@ -1,0 +1,17 @@
+{
+ "college": "Los Angeles Southwest College",
+ "homepage": "https://www.lasc.edu/",
+ "read_at": "2026-11-02T14:09:05+00:00",
+ "pages": [
+  {
+   "url": "https://www.lasc.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://www.lasc.edu/sites/lasc.edu/files/2026-08/2026-27%20Catalog%20Draft%2008.27.2026.pdf",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

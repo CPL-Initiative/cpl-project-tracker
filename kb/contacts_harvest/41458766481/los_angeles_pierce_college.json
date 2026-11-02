@@ -1,0 +1,17 @@
+{
+ "college": "Los Angeles Pierce College",
+ "homepage": "https://www.piercecollege.edu/",
+ "read_at": "2026-11-02T14:08:53+00:00",
+ "pages": [
+  {
+   "url": "https://www.piercecollege.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://www.lapc.edu/sites/lapc.edu/files/2026-08/Los%20Angeles%20Pierce%20College%20General%20Catalog%202026-2027.pdf",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

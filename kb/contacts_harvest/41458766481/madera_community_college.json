@@ -1,0 +1,23 @@
+{
+ "college": "Madera Community College",
+ "homepage": "https://www.maderacenter.com/",
+ "read_at": "2026-11-02T14:09:49+00:00",
+ "pages": [
+  {
+   "url": "https://www.maderacenter.com/",
+   "status": 403
+  },
+  {
+   "url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
+   "final_url": "https://madera.curriqunet.com/catalog/iq/2025-2026-MCC-Catalog-Cover",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.scccd.edu/",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

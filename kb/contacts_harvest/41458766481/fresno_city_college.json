@@ -1,0 +1,23 @@
+{
+ "college": "Fresno City College",
+ "homepage": "https://www.fresnocitycollege.edu/",
+ "read_at": "2026-11-02T14:07:53+00:00",
+ "pages": [
+  {
+   "url": "https://www.fresnocitycollege.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+   "final_url": "https://fresno.curriqunet.com/catalog/alias/fcc-catalog/iq/2026-27-catalog-cover",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.scccd.edu/",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

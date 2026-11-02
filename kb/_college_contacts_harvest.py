@@ -51,6 +51,10 @@ sys.path.insert(0, HERE)
 from _program_source_census import load_colleges, registrable  # noqa: E402
 
 OUT_ROOT = os.path.join(HERE, "contacts_harvest")
+# Extra places to read for a college whose own pages refuse the plain read (Sam, Open Asks Sheet 156
+# card 1, 2026-11-02: "check some alternate routes first, such as the pdf catalog, pdf schedule of
+# classes, employee directory"). Each is read the same plain way; a refusal stays a refusal.
+SEEDS = os.path.join(HERE, "contacts_harvest_seeds.json")
 RECEIPTS = os.path.join(HERE, "receipts")
 SUPABASE_URL = os.environ.get("SUPABASE_URL", "https://hvuwhnbuahrtptokpqfh.supabase.co")
 
@@ -61,6 +65,7 @@ MAX_PAGES = 12
 TIMEOUT_S = 30
 CONTEXT_LINES = 3
 MAX_EXCERPTS_A_PAGE = 60
+MAX_PDF_BYTES = 60_000_000
 
 # The words on a link that lead to a leadership page (Sam's spec, step 8 piece 3).
 LINK_WORDS = re.compile(
@@ -80,16 +85,16 @@ TITLE_PATTERNS: list[tuple[str, re.Pattern]] = [
     ("assoc_vp", re.compile(r"\bassociate vice[- ]president\b", re.I)),
     # Equity joined to the post counts as the post, and so does Academic Services (Sam, Open Asks Sheet 153 card 2,
     # "count", 2026-11-01): Equity and Instruction, Equity and Student Services, Student Services and Equity.
-    ("vpaa", re.compile(r"\b(provost|chief instructional officer|(vice[- ]president|VP),? (of |for )?(equity and )?"
+    ("vpaa", re.compile(r"\b(provost|chief instructional officer|(vice[- ]president|VP)\s*[,–—-]?\s*(of |for )?(equity and )?"
                         r"(academic (affairs|services)|instruction(al services)?( and student services)?))\b|\bCIO\b",
                         re.I)),
-    ("vpss", re.compile(r"\b(chief student services officer|(vice[- ]president|VP),? (of |for )?(equity and )?student "
+    ("vpss", re.compile(r"\b(chief student services officer|(vice[- ]president|VP)\s*[,–—-]?\s*(of |for )?(equity and )?student "
                         r"(services|affairs|success|development))\b|\bCSSO\b", re.I)),
     # Sam's VPBS variants: CBO, VP Business Services (and Facilities), and VP Administrative Services (Open Asks
     # Sheet 151 card 1, "vpbs", 2026-11-01). A title outside the variants is listed for him, never filled.
     # "Finance and Business" (either order) names the same office (S549, from the S548 read's list).
-    ("vpbs", re.compile(r"\b(chief business officer|(vice[- ]president|VP),? (of |for )?(business and )?(business|administrative) services"
-                        r"( and facilities)?|(vice[- ]president|VP),? (of |for )?(finance and business|business and finance))\b"
+    ("vpbs", re.compile(r"\b(chief business officer|(vice[- ]president|VP)\s*[,–—-]?\s*(of |for )?(business and )?(business|administrative) services"
+                        r"( and facilities)?|(vice[- ]president|VP)\s*[,–—-]?\s*(of |for )?(finance and business|business and finance))\b"
                         r"|\bCBO\b", re.I)),
     ("college_ceo", re.compile(r"\b(superintendent[/ -]+president|president)\b", re.I)),
     ("dean_cte", re.compile(r"\bdean\b[^.\n]{0,60}\b(career (and |& )?technical|CTE|workforce|economic development)\b",
@@ -168,7 +173,7 @@ def page_text(html: str) -> tuple[list[str], list[tuple[str, str]]]:
     return [ln for ln in lines if ln], p.links
 
 
-def leadership_links(links: list[tuple[str, str]], base: str, home_host: str) -> list[str]:
+def leadership_links(links: list[tuple[str, str]], base: str, home_host: str, exact: bool = False) -> list[str]:
     """Absolute URLs of the links whose words name leadership, in page order, no repeats."""
     out, seen = [], set()
     for href, words in links:
@@ -182,7 +187,9 @@ def leadership_links(links: list[tuple[str, str]], base: str, home_host: str) ->
             continue
         if re.search(r"\.(pdf|docx?|xlsx?|jpg|png|zip)$", parts.path, re.I):
             continue
-        same = registrable(parts.netloc) == registrable(home_host)
+        same = parts.netloc == home_host if exact else registrable(parts.netloc) == registrable(home_host)
+        if exact and not same:
+            continue
         if not same and not (OFF_DOMAIN_WORDS.search(words) and parts.netloc.endswith(".edu")):
             continue
         if url not in seen:
@@ -192,6 +199,10 @@ def leadership_links(links: list[tuple[str, str]], base: str, home_host: str) ->
 
 
 def title_excerpts(lines: list[str]) -> list[dict]:
+    return title_excerpts_all(lines)[:MAX_EXCERPTS_A_PAGE]
+
+
+def title_excerpts_all(lines: list[str]) -> list[dict]:
     """Each line naming a title, with CONTEXT_LINES lines either side: the position it names (or
     None, kept for Sam's list), the line, the window, and any address printed in the window."""
     out = []
@@ -205,13 +216,46 @@ def title_excerpts(lines: list[str]) -> list[dict]:
         window = lines[max(0, i - CONTEXT_LINES): i + CONTEXT_LINES + 1]
         out.append({"line": ln, "position": pos, "window": window,
                     "emails": sorted(set(EMAIL.findall(" ".join(window))))})
-        if len(out) >= MAX_EXCERPTS_A_PAGE:
-            break
     return out
 
 
 def slug(name: str) -> str:
     return re.sub(r"[^a-z0-9]+", "_", name.lower()).strip("_")
+
+
+def is_pdf_url(url: str) -> bool:
+    return bool(re.search(r"\.pdf$", urllib.parse.urlparse(url).path, re.I))
+
+
+def pdf_lines(data: bytes) -> tuple[list[str], int]:
+    """A PDF's non-empty lines, page after page, whitespace folded (pypdf, installed on the runner)."""
+    import io
+    from pypdf import PdfReader
+    reader = PdfReader(io.BytesIO(data))
+    out = []
+    for pg in reader.pages:
+        try:
+            text = pg.extract_text() or ""
+        except Exception:  # noqa: BLE001 — one unreadable page is skipped, not the file
+            continue
+        out.extend(ln for ln in (re.sub(r"\s+", " ", x).strip() for x in text.split("\n")) if ln)
+    return out, len(reader.pages)
+
+
+def pdf_excerpts(lines: list[str]) -> list[dict]:
+    """A catalog's excerpts: only lines naming one of Sam's positions. A catalog's faculty pages
+    name hundreds of coordinators and directors, which would fill the cap before the cabinet."""
+    return [e for e in title_excerpts_all(lines) if e["position"]][:MAX_EXCERPTS_A_PAGE]
+
+
+def load_seeds(path: str = SEEDS) -> dict[str, list[str]]:
+    """{college: [url, ...]} from the seeds file; a missing file is no seeds."""
+    try:
+        with open(path, encoding="utf-8") as fh:
+            d = json.load(fh)
+    except (OSError, ValueError):
+        return {}
+    return {c: [x["url"] if isinstance(x, dict) else x for x in v] for c, v in (d.get("colleges") or {}).items()}
 
 
 # ── Fetching (runner only) ───────────────────────────────────────────────────
@@ -227,10 +271,12 @@ class Fetcher:
         if wait > 0:
             time.sleep(wait)
         self.last = time.time()
-        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html"})
+        req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "text/html,application/pdf"})
         try:
-            with urllib.request.urlopen(req, timeout=TIMEOUT_S) as r:
+            with urllib.request.urlopen(req, timeout=TIMEOUT_S * 4) as r:
                 ctype = r.headers.get("Content-Type", "")
+                if "pdf" in ctype or is_pdf_url(r.geturl()):
+                    return r.status, r.geturl(), r.read(MAX_PDF_BYTES)
                 body = r.read(3_000_000).decode(r.headers.get_content_charset() or "utf-8", "replace")
                 return r.status, r.geturl(), body if "html" in ctype or not ctype else ""
         except urllib.error.HTTPError as e:
@@ -258,13 +304,18 @@ class Fetcher:
             return {"url": url, "status": status or "unreachable", "error": body[:200] if status == 0 else None}
         if SIGN_IN.search(urllib.parse.urlparse(final).netloc + urllib.parse.urlparse(final).path):
             return {"url": url, "final_url": final, "status": "sign_in"}
+        if isinstance(body, bytes):
+            lines, n = pdf_lines(body)
+            return {"url": url, "final_url": final, "status": 200, "lines": lines, "links": [],
+                    "pdf_pages": n, "pdf": True}
         lines, links = page_text(body)
         return {"url": url, "final_url": final, "status": 200, "lines": lines, "links": links}
 
 
-def read_college(f: Fetcher, college: str, homepage: str) -> dict:
+def read_college(f: Fetcher, college: str, homepage: str, seeds: list[str] | None = None) -> dict:
     home_host = urllib.parse.urlparse(homepage).netloc
-    pages, queue, done = [], [homepage], set()
+    seed_hosts = {urllib.parse.urlparse(u).netloc for u in seeds or []}
+    pages, queue, done = [], [homepage] + list(seeds or []), set()
     while queue and len(done) < MAX_PAGES:
         url = queue.pop(0)
         if url in done:
@@ -272,9 +323,16 @@ def read_college(f: Fetcher, college: str, homepage: str) -> dict:
         done.add(url)
         got = f.page(url)
         rec = {k: got.get(k) for k in ("url", "final_url", "status", "error") if got.get(k) is not None}
-        if got.get("status") == 200:
+        if got.get("status") == 200 and got.get("pdf"):
+            rec["pdf_pages"] = got["pdf_pages"]
+            rec["excerpts"] = pdf_excerpts(got["lines"])
+        elif got.get("status") == 200:
             rec["excerpts"] = title_excerpts(got["lines"])
-            for nxt in leadership_links(got["links"], got.get("final_url") or url, home_host):
+            here = urllib.parse.urlparse(got.get("final_url") or url).netloc
+            # A link on a seed's host (a vendor catalog) stays on that host; any other on the college's.
+            host = here if here in seed_hosts else home_host
+            for nxt in leadership_links(got["links"], got.get("final_url") or url, host,
+                                        exact=here in seed_hosts):
                 if nxt not in done and nxt not in queue:
                     queue.append(nxt)
         pages.append(rec)
@@ -350,8 +408,9 @@ def cmd_read(a) -> int:
     out_dir = os.path.join(a.out, a.run)
     os.makedirs(out_dir, exist_ok=True)
     f = Fetcher(int(os.environ.get("HARVEST_DELAY_MS", "4000")))
+    seeds = load_seeds()
     for c in chosen:
-        doc = read_college(f, c["college"], c["homepage_url"])
+        doc = read_college(f, c["college"], c["homepage_url"], seeds.get(c["college"]))
         doc["run"] = a.run
         with open(os.path.join(out_dir, slug(c["college"]) + ".json"), "w", encoding="utf-8") as fh:
             json.dump(doc, fh, indent=1, ensure_ascii=False)

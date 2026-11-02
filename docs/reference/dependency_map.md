@@ -578,6 +578,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/college_short_names.json` | scripts: `chatbox/build_coci_offerings.py`, `funding/_build_funding_ess.py`, `funding/_build_funding_performance.py`, `kb/_apply_college_short_names.py`, `kb/_build_adopt_page.py`, `kb/_build_college_identity_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_build_regional_cpl_opportunity.py`, `kb/_seed_college_short_names.py`, `tmc/_build_college_adts.py` | scripts: `kb/_seed_college_short_names.py` · committed by: `daily-dashboard.yml` |
 | `kb/common_courses.json` | scripts: `excel_to_dashboard.py`, `kb/_add_descriptions.py`, `kb/_csr_trail.py`, `kb/_curation_01.py`, `kb/_row_audit.py`, `kb/_seed_coci_minted_mids.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_add_descriptions.py`, `kb/_seed_cx_common_courses.py` |
 | `kb/contacts_harvest` | none found | committed by: `college-contacts-harvest.yml` |
+| `kb/contacts_harvest_seeds.json` | scripts: `kb/_college_contacts_harvest.py` | — |
 | `kb/convergence_singletons_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
 | `kb/cos_match_out` | none found | committed by: `cos-authority-sync.yml` |
 | `kb/cos_matches.json` | tabs: `credential-reference` · scripts: `kb/_match_cos_authority.py` | committed by: `cos-authority-sync.yml` |
@@ -1275,5 +1276,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 105 Supabase tables · 48 RPCs · 11 edge functions · 774 file
+Coverage: 105 Supabase tables · 48 RPCs · 11 edge functions · 775 file
 datasets · 192 external services · 508 consumers · 60 workflows · 39 tabs.

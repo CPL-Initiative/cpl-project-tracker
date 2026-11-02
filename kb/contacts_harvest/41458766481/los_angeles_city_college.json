@@ -1,0 +1,17 @@
+{
+ "college": "Los Angeles City College",
+ "homepage": "https://www.lacitycollege.edu/",
+ "read_at": "2026-11-02T14:08:09+00:00",
+ "pages": [
+  {
+   "url": "https://www.lacitycollege.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://www.lacc.edu/sites/lacc.edu/files/2026-10/LACC%20Catalog%202026-27%20v1%20FULL%20CATALOG%20reduced.pdf",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

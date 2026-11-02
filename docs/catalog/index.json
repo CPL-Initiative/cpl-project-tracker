@@ -16414,8 +16414,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 519,
+   "count": 520,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 552,
+     "path": "docs/session_552_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "contacts-harvest",
+      "decision-sheet"
+     ],
+     "title": "Session 552 handoff: the contacts harvest's alternate routes refuse too; Sheet 157 asks for Sam's upload",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25291,5 +25306,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1347
+ "total": 1348
 }

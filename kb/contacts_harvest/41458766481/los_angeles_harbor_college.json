@@ -1,0 +1,17 @@
+{
+ "college": "Los Angeles Harbor College",
+ "homepage": "https://www.lahc.edu/",
+ "read_at": "2026-11-02T14:08:21+00:00",
+ "pages": [
+  {
+   "url": "https://www.lahc.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://www.lahc.edu/sites/lahc.edu/files/2026-04/LAHC%20Master%20Catalog%20File%202026%20Final%20Draft.pdf",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}

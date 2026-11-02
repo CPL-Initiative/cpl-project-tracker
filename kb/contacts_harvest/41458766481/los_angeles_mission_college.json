@@ -1,0 +1,17 @@
+{
+ "college": "Los Angeles Mission College",
+ "homepage": "https://www.lamission.edu/",
+ "read_at": "2026-11-02T14:08:37+00:00",
+ "pages": [
+  {
+   "url": "https://www.lamission.edu/",
+   "status": 403
+  },
+  {
+   "url": "https://www.lamc.edu/sites/lamc.edu/files/2026-08/LAMC-Catalog-2026-2027.pdf",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41458766481"
+}
