@@ -23,6 +23,8 @@ open PRs and `main` since this handoff (step 1).
   carry the official lists Sam ruled on, so the catalog builder imports them (`official_exam_lists`). The nightly watch
   gains no issuer. 152 exam rows, 21 retired, 98 joined to MAP (every CLEP and IB title, 43 of 46 AP). The link now holds
   168 titles to 122 certs (AP 43, CLEP 35, IB 20, ASE 24). **Merge it on a passing `test` if this session did not.**
+- **Main's lints were red** (`cer_procedures_test.py`, the service-key check): the committed unclassified queue emptied,
+  so `run()` never asked the classifier. The check now builds its own one-card queue (on #2686's branch).
 - **The UI pass: the Fact Sheet** (on `claude/practical-meitner-7x9x8y`, the checkpoint PR). Every target passes.
   `fact-sheet-sierra` and its dark twin still pressed the page's own *Ask Sierra* word, removed 2026-10-30, so they now
   open her from her chip. Ledger recorded.
