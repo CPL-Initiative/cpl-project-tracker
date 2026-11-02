@@ -30,8 +30,8 @@
    "name": "Fact Sheet",
    "page": "fact-sheet/index.html",
    "audience": "public",
-   "last": "2026-10-26",
-   "outcome": "Swept clean before and after at 9 widths, light and dark; the wiring agreed (11 headline figures match COBI's Dashboard). Six links carried rel=\"noopener aria-label=\"…\" (one unclosed quote drops the label), now plain links with their context in a clipped .sr-only span; the 16 ↗ marks became the same 'opens in a new tab' cue Sierra's did; the program reads CPL Initiative in the heading, footer and first resource. Guard: tests/factsheet_a11y.test.js (h)."
+   "last": "2026-11-02",
+   "outcome": "S546: light, dark and Ask Sierra (light, dark) pass at every width; no raw hex in factsheet.css. Wiring: 8 datasets, the shared ones (live_metrics, cpl_stories, statewide_recs) are read-only renders of the same files. Fixed: fact-sheet-sierra and its dark twin still pressed the page's own Ask Sierra word, which left the header on 2026-10-30 (one header row); both now open her from her chip as funding-model-sierra does, and the two unused word helpers went."
   },
   {
    "id": "privacy",
