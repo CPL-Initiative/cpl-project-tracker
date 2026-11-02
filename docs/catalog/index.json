@@ -15803,7 +15803,7 @@
      ],
      "title": "Library / where decks, films and documents live \u2014 lane state",
      "type": null,
-     "updated": "2026-10-29"
+     "updated": "2026-11-02"
     },
     {
      "created": "2026-08-28",
@@ -16414,8 +16414,25 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 521,
+   "count": 522,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 554,
+     "path": "docs/session_554_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "library",
+      "remediation",
+      "accessibility",
+      "pdf"
+     ],
+     "title": "Session 554 handoff: the Library remediates every file it reads, drafts applied from the start, a PDF written",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25323,5 +25340,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1349
+ "total": 1350
 }

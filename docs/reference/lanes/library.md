@@ -1,7 +1,7 @@
 ---
 title: "Library / where decks, films and documents live — lane state"
 created: 2026-10-05
-updated: 2026-10-29
+updated: 2026-11-02
 tags: [reference, roadmap-lane, library, drive, deliverables]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -126,22 +126,7 @@ photos, the IT and AI deck unlisted) are carried out; their text moved verbatim 
 
 ## Regenerate, and the documents a piece is built from (Sam, 2026-10-26; built S490)
 
-Sam: *"I want to make sure I can Regenerate a visual when I either add a document or note to it ... Also, when I want
-to generate a new visual based on a document I upload. Seems like perhaps we should consolidate the Library and CPL
-Opportunity Analysis procedures and sites."* One procedure now serves both: **Revise and remediate** on every record opens the one box with that piece picked (⑪
-below), saving `refresh_note`, `sources` and `regen`; a public piece's draft waits for **Replace the public copy**. **Start a piece** (and Make a visual for anyone but a college) takes
-documents too, so a new visual can start from a document. A session does the rebuild: the scheduled runs read the
-requests (step 6 of [`scheduled_sessions`](../scheduled_sessions.md), which says how each kind of piece is rebuilt), and
-*Copy the request* hands the same paste to a session. A college's CPL Opportunity page gained a notes layer: what a note or
-document asks for goes to `library/cpl-opportunity/notes/<slug>.json`, shown under At a glance, with a draft at
-`<slug>.draft.json` read at `?college=<name>&draft=1`. Schema: `kb/supabase_cpl_library.sql` (sources, regen, two checks).
-Tests: `library` (13, 14, 9, 19), `college_cpl_workbook` (the notes).
-
-- **The Microsoft 365 connector waits on RCCD's approval** (Sam, 2026-10-26). A card whose only file is on SharePoint
-  says to drop in a downloaded copy (S540; lessons, *SharePoint is closed to a session*).
-- **Sam's Sheet 131 rulings:** a Library-only run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific. Not created: Sam, Sheet 153 card 1, *overnight*, left it to the overnight queue (paste in [`scheduled_sessions`](../scheduled_sessions.md)); the college page lives at `library/cpl-opportunity/`. The full text moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
-
-The Coordinator Guide (In development, Draft 1) and the ELL IET and DSP pages (Version 2, the public copies): [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S518)*.
+Built S490 (`refresh_note`, `sources`, `regen`, the one box, the college page's notes layer); the Microsoft 365 connector waits on RCCD; the Coordinator Guide, ELL IET and DSP records. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S553)*.
 
 ## Sierra beside the library and reading it (Sam, 2026-10-24; built S469)
 
@@ -194,7 +179,7 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 ✅ **④ A deck's contrast (S510) and ⑤ a Word document's (S511) are checked:** each text run's color against the fill it sits on, one *Needs you* item per color pair with the nearest passing color of the same hue as the fix. The full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S512)*.
 
 
-✅ **⑥ Headers, footers and text boxes in a Word document's contrast (S512), ⑦ a PDF fixed at its source (S513), ⑧ a workbook remediated (S514), ⑨ its contrast (S515) and ⑩ its conditional formatting (S516).** Each full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane* (S513 to S517).
+✅ **⑥ Headers, footers and text boxes in a Word document's contrast (S512), ⑦ a PDF read at its source (S513; written since S553, ⑮ below), ⑧ a workbook remediated (S514), ⑨ its contrast (S515) and ⑩ its conditional formatting (S516).** Each full record moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane* (S513 to S517).
 
 ✅ **⑪ A chart's contrast is measured (S517)** in a deck, a document or a workbook: series against the plot area, Office's own colors as drawn, its words against what they sit on. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A chart's contrast (S517)*. Tests: `library_remediate` (135).
 
@@ -204,7 +189,9 @@ The mockup as Sam left it (Version 20) is described verbatim in [`docs/library_l
 
 ✅ **⑭ A title box for every slide, a script in the notes, the deck's own slide order (S518, #2557; `slide-script-draft` v1).** Detail: [`docs/library_lessons.md`](../../library_lessons.md), *A title box for every slide (S518, later)*.
 
-**NEXT:** the other inputs the bar shows people doing most, in that order (Sam's framing); a chart's per-label colors (`c:dLbl`) when he asks. The Chancellor's Office review still certifies.
+✅ **⑮ Every draft applied as the report opens, and a PDF written (S553, 2026-11-02; Sam: *"a full remediation without waiting for confirmation on each element but then present the elements remediated as it does now for any edits needed"*).** Every alt text, slide title, sheet name and contrast fix is in the file from the start under *Remediated for you, to edit as needed*; *Needs you* holds only what has no words or needs a person in the program; Keep and Keep all are gone. A PDF gets *Download the remediated file*: its title, language and title display written as an incremental update that keeps every byte (55 team PDFs verified); tags, pictures' alt text and a scan's text stay at the source, each an item with the steps and *Choose the source*. `.pptm`, `.ppsx`, `.docm`, `.xlsm` read as their kin; other kinds say what to do. Detail: [`docs/library_lessons.md`](../../library_lessons.md), *Every draft applied, and a PDF written (S553)*. Tests: `library_remediate` (178), `library` (270).
+
+**NEXT:** the other inputs the bar shows people doing most, in that order (Sam's framing); a chart's per-label colors (`c:dLbl`) when he asks; a tagged PDF's pictures drafted and written (`/Alt` on each Figure, which needs the picture's bytes out of the page's content) when a dropped PDF shows the need. The Chancellor's Office review still certifies.
 
 ✅ **⑪ Revise and remediate from the one box (Sam, 2026-10-29; built by S520's side session).** The box finds a piece
 already here (by a label naming its kind, its link, a file named for it, or the card's Revise and remediate or Edit) and asks

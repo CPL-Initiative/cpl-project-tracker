@@ -24,9 +24,11 @@
 //     Excel's own order with their tints, the old indexed palette, a styled table and a
 //     run colored inside a cell named for a person, and a fix that adds a font and a
 //     format so the other cells sharing the old one keep it;
-//   - a PDF is read, never written: its own Info and catalog (in Office's compressed
-//     object streams, never a bookmark's title or a span's language), the program that
-//     made it, and the steps that fix it at that source;
+//   - a PDF (11): its own Info and catalog (in Office's compressed object streams, never a
+//     bookmark's title or a span's language), the program that made it and the steps that
+//     fix its tags at that source; its title, language and title display written as an
+//     incremental update through a cross-reference table or stream, read back the same way;
+//     a scan, a tagged PDF's pictures without alt text, an encrypted one left as it is;
 //   - a chart's contrast (15): each series against the plot area, Office's own colors as
 //     drawn, its words against what they sit on, slices against each other, and the fix
 //     written into the series or a data point of its own;
@@ -414,34 +416,94 @@ const run = deck().then(function (buf) {
   }).then(function () { return R.inspect(Buffer.from("not a pdf"), "Notes.pdf", ENV); }).then(function () { check("(11) a .pdf that is not a PDF is refused", false); }, function (e) {
     check("(11) a .pdf that is not a PDF is refused in words", /does not read as a PDF/.test(e.message), e.message);
   }).then(function () {
-    // (11) A PDF is fixed at its source (S513): read, named, and left as it is.
+    // (11) A PDF (S513, S553): its title, language and title display are written here as an
+    // incremental update; its tags are its source's. A Word PDF with everything in place is
+    // read from Office's compressed object stream and left as it is.
     const word = makePdf({ objstm: true, creator: "Microsoft\xAE Word for Microsoft 365", producer: "Microsoft\xAE Word for Microsoft 365",
-      title: "TMC Template for Music", titleHex: true, lang: "en-US", spanLang: "fr", tagged: true, showTitle: true });
-    return R.inspect(word, "2023_Nov_Music_TMC_r.pdf", ENV);
-  }).then(function (s) {
-    const p = s.report.pdf;
-    check("(11) a Word PDF reads its catalog from Office's compressed object stream: tagged, its language, title shown",
-      p.tagged && p.lang === "en-US" && p.titleShown && s.report.ext === "pdf", JSON.stringify(p));
-    check("(11) the title is the Info dictionary's (UTF-16), never a bookmark's /Title", p.title === "TMC Template for Music", p.title);
-    check("(11) a span's /Lang is not the document's", p.lang === "en-US", p.lang);
-    check("(11) its source is a Word document, and the steps say how to export it tagged",
-      p.source.kind === "document" && p.source.ext === "docx" && /Document structure tags for accessibility/.test(p.steps) && /Word/.test(p.steps), JSON.stringify(p.source));
-    check("(11) every check passes, and nothing is offered to write into the PDF", p.checks.every(function (c) { return c.ok; }) && s.doc === null && s.report.needs.length === 0);
-    check("(11) the extent names the pages and the program", s.report.extent === "1 page, made with Microsoft\xAE Word for Microsoft 365", s.report.extent);
-    return R.inspect(makePdf({ creator: "Microsoft PowerPoint", title: "PowerPoint Presentation", lang: "fr" }), "Webinar.pdf", ENV);
-  }).then(function (s) {
-    const p = s.report.pdf, gaps = p.checks.filter(function (c) { return !c.ok; }).map(function (c) { return c.text; });
-    check("(11) an untagged deck's PDF names PowerPoint and its export steps", p.source.kind === "deck" && p.source.ext === "pptx" && /PowerPoint choose File, Export/.test(p.steps));
-    check("(11) the gaps are said in words: not tagged, a language other than English, a stock title as none",
-      gaps.length === 3 && /^Not tagged/.test(gaps[0]) && /set to fr, not English/.test(gaps[1]) && /no title/.test(gaps[2]), JSON.stringify(gaps));
-    return R.inspect(makePdf({ producer: "Canon iR-ADV C5535 PDF", fonts: false }), "Scan.pdf", ENV);
-  }).then(function (s) {
-    const p = s.report.pdf;
-    check("(11) a PDF with no fonts reads as a scan, and the steps send it to its original or to OCR",
-      p.source.kind === "scan" && !p.hasText && /Scan and OCR/.test(p.steps) && p.checks.some(function (c) { return !c.ok && /no text/.test(c.text); }));
-    check("(11) Google Docs and a printed web page are named as such",
-      R._pdfSource("Google Docs Renderer", "", true).google && R._pdfSource("Google Docs Renderer", "", true).ext === "docx" &&
-      R._pdfSource("Chromium", "Skia/PDF m141", true).kind === "web" && R._pdfSource("Adobe InDesign 20.1", "Adobe PDF Library 17.0", true).kind === "layout");
+      title: "TMC Template for Music", titleHex: true, lang: "en-US", spanLang: "fr", tagged: true, showTitle: true, figures: ["A chart"], headings: true, xmp: true });
+    let written = null;
+    return R.inspect(word, "2023_Nov_Music_TMC_r.pdf", ENV).then(function (s) {
+      const p = s.report.pdf;
+      check("(11) a Word PDF reads its catalog from Office's compressed object stream: tagged, its language, title shown",
+        p.tagged && p.lang === "en-US" && p.titleShown && s.report.ext === "pdf", JSON.stringify(p));
+      check("(11) the title is the Info dictionary's (UTF-16), never a bookmark's /Title", p.title === "TMC Template for Music", p.title);
+      check("(11) a span's /Lang is not the document's", p.lang === "en-US", p.lang);
+      check("(11) its source is a Word document, and the steps say how to export it tagged",
+        p.source.kind === "document" && p.source.ext === "docx" && /Document structure tags for accessibility/.test(p.steps) && /Word/.test(p.steps), JSON.stringify(p.source));
+      check("(11) every check passes, its picture carries alt text, its tags hold a heading, and nothing is listed",
+        p.checks.every(function (c) { return c.ok; }) && p.figures === 1 && p.figuresWithAlt === 1 && p.headings && p.writable && s.report.needs.length === 0 && s.report.fixed.length === 0, JSON.stringify(s.report));
+      check("(11) the extent names the pages and the program", s.report.extent === "1 page, made with Microsoft\xAE Word for Microsoft 365", s.report.extent);
+      return R.finish(s, {}, "nodebuffer").then(function (out) {
+        check("(11) with nothing to write, the file comes back as it was", Buffer.compare(out.file, word) === 0 && !out.done.title && !out.done.lang && !out.done.display);
+        return R.finish(s, { pt: { text: "TMC for Music & Dance" } }, "nodebuffer");
+      }).then(function (out) {
+        written = out;
+        check("(11) a typed title is written into the Info dictionary and the XMP, the original bytes kept and the update appended",
+          out.done.title === 1 && out.done.xmp === 1 && Buffer.compare(out.file.subarray(0, word.length), word) === 0 && out.file.length > word.length);
+        return R.inspect(out.file, "2023_Nov_Music_TMC_r.pdf", ENV);
+      }).then(function (s2) {
+        const p2 = s2.report.pdf;
+        check("(11) the written PDF reads back through a cross-reference stream: the new title, still tagged, its language, title shown and page kept",
+          p2.title === "TMC for Music & Dance" && p2.tagged && p2.lang === "en-US" && p2.titleShown && p2.pages === 1 && p2.writable, JSON.stringify(p2));
+        check("(11) the XMP title says the same, escaped", /<dc:title><rdf:Alt><rdf:li xml:lang="x-default">TMC for Music &amp; Dance<\/rdf:li>/.test(s2.doc.parts.objs[7].body), (s2.doc.parts.objs[7] || {}).body);
+      });
+    }).then(function () {
+      // An untagged PowerPoint PDF with a stock title and French set: the title from its
+      // name, English and the title display are fixed here; the tags are its source's.
+      const deckPdf = makePdf({ creator: "Microsoft PowerPoint", title: "PowerPoint Presentation", lang: "fr" });
+      return R.inspect(deckPdf, "20261030_Webinar.pdf", ENV).then(function (s) {
+        const p = s.report.pdf, ids = s.report.needs.map(function (n) { return n.id; });
+        check("(11) an untagged deck's PDF names PowerPoint and its export steps", p.source.kind === "deck" && p.source.ext === "pptx" && /PowerPoint choose File, Export/.test(p.steps));
+        check("(11) fixed for you: the title from the file's name (the stock one named) and the title display",
+          s.report.fixed.length === 2 && s.report.fixed[0] === "Document title set: Webinar (it read PowerPoint Presentation)" && /show its title/.test(s.report.fixed[1]) && s.report.auto.title === 2, JSON.stringify(s.report.fixed));
+        check("(11) listed: the title to edit, the language to set to English unless the words are French, and the tags for its source",
+          ids.join(",") === "pt,pl,tags" && s.report.needs[0].type === "doctitle" && s.report.needs[0].draft === "Webinar" && s.report.needs[1].type === "langfix" && s.report.needs[1].fix === true && /set to fr/.test(s.report.needs[1].text) &&
+          s.report.needs[2].type === "source" && s.report.needs[2].ext === "pptx" && /Not tagged/.test(s.report.needs[2].text) && /Create PDF\/XPS/.test(s.report.needs[2].steps), ids.join(","));
+        check("(11) the checks for a PDF, each with its WCAG 2.2 criterion; an untagged one is not shown passing alt text or headings",
+          R.checksFor("pdf").map(function (c) { return c.key + " " + c.sc; }).join(", ") === "title 2.4.2, lang 3.1.1, text 1.4.5, tags 1.3.1, alt 1.1.1, headings 2.4.6" &&
+          R.checksFor("pdf", s.report).map(function (c) { return c.key; }).join(",") === "title,lang,text,tags" && R.checkOf(s.report.needs[2]) === "tags" && R.checkOf(s.report.needs[0]) === "title" && R.checkOf(s.report.needs[1]) === "lang");
+        return R.finish(s, { pt: { text: "Webinar on CPL" }, pl: { fix: true } }, "nodebuffer").then(function (out) {
+          check("(11) the title, the language and the title display are written", out.done.title === 1 && out.done.lang === 1 && out.done.display === 1 && out.done.xmp === 0, JSON.stringify(out.done));
+          return R.inspect(out.file, "20261030_Webinar.pdf", ENV);
+        }).then(function (s2) {
+          const p2 = s2.report.pdf;
+          check("(11) read back through a classic cross-reference table: the typed title, English, the title shown; still untagged, so the tags item stays",
+            p2.title === "Webinar on CPL" && p2.lang === "en-US" && p2.titleShown && !p2.tagged && p2.pages === 1 && s2.report.fixed.length === 0 && s2.report.needs.map(function (n) { return n.id; }).join(",") === "tags", JSON.stringify(p2));
+          return R.finish(s, { pl: { fix: false } }, "nodebuffer");
+        }).then(function (out) { return R.inspect(out.file, "20261030_Webinar.pdf", ENV); }).then(function (s3) {
+          check("(11) with the language box cleared, French stays and the rest is written", s3.report.pdf.lang === "fr" && s3.report.pdf.title === "Webinar" && s3.report.pdf.titleShown, JSON.stringify(s3.report.pdf));
+        });
+      });
+    }).then(function () {
+      return R.inspect(makePdf({ producer: "Canon iR-ADV C5535 PDF", fonts: false }), "Scan.pdf", ENV);
+    }).then(function (s) {
+      const p = s.report.pdf, ocr = s.report.needs.filter(function (n) { return n.id === "ocr"; })[0];
+      check("(11) a PDF with no fonts reads as a scan, and the steps send it to its original or to OCR",
+        p.source.kind === "scan" && !p.hasText && !!ocr && /Scan and OCR/.test(ocr.steps) && R.checkOf(ocr) === "text" && p.checks.some(function (c) { return !c.ok && /no text/.test(c.text); }));
+      check("(11) a scan is not shown passing tags, alt text or headings", R.checksFor("pdf", s.report).map(function (c) { return c.key; }).join(",") === "title,lang,text");
+      check("(11) Google Docs and a printed web page are named as such",
+        R._pdfSource("Google Docs Renderer", "", true).google && R._pdfSource("Google Docs Renderer", "", true).ext === "docx" &&
+        R._pdfSource("Chromium", "Skia/PDF m141", true).kind === "web" && R._pdfSource("Adobe InDesign 20.1", "Adobe PDF Library 17.0", true).kind === "layout");
+      // A tagged PDF whose pictures lack alt text, and whose tags hold no heading over two pages.
+      return R.inspect(makePdf({ objstm: true, creator: "Microsoft Word", title: "Guide", lang: "en-US", tagged: true, showTitle: true, figures: ["Logo", false, false], pages: 2 }), "Guide.pdf", ENV);
+    }).then(function (s) {
+      const ids = s.report.needs.map(function (n) { return n.id; }), figs = s.report.needs[0];
+      check("(11) a tagged PDF lists the pictures with no alt text and the missing headings, each for its source or Acrobat",
+        ids.join(",") === "figs,h" && /2 of its 3 pictures carry no alt text/.test(figs.text) && /Set Alternate Text/.test(figs.steps) && figs.ext === "docx" && R.checkOf(figs) === "alt" && R.checkOf(s.report.needs[1]) === "headings" && s.report.pdf.pages === 2, JSON.stringify(s.report.needs));
+      // An encrypted PDF is read, and not written.
+      return R.inspect(makePdf({ creator: "Microsoft Word", title: "Locked", encrypt: true }), "Locked.pdf", ENV);
+    }).then(function (s) {
+      const enc = makePdf({ creator: "Microsoft Word", title: "Locked", encrypt: true });
+      check("(11) a password-protected PDF says so, lists no fix, and comes back as it was",
+        !s.report.pdf.writable && s.report.fixed.length === 0 && s.report.needs[0].id === "pw" && /password-protected or encrypted/.test(s.report.needs[0].text), JSON.stringify(s.report.needs));
+      return R.finish(s, {}, "nodebuffer").then(function (out) { check("(11) unwritable, so unchanged", Buffer.compare(out.file, enc) === 0 && !out.done.title); });
+    }).then(function () {
+      // A macro-enabled deck reads as a deck; an older .ppt is refused in words (S553).
+      return deck().then(function (buf) { return R.inspect(buf, "Macros.pptm", ENV); });
+    }).then(function (s) {
+      check("(11) a .pptm reads as a .pptx deck, its own extension kept for the file that comes back", s.report.ext === "pptx" && s.report.fileExt === "pptm" && R.outName("Macros.pptm") === "Macros_Remediated.pptm" && s.report.fixed.length > 0, s.report.ext);
+      return R.inspect(Buffer.from("x"), "Old.ppt", ENV).then(function () { check("(11) a .ppt is refused", false); }, function (e) { check("(11) a .ppt is refused in words that name the step", /Save the file in one of those \(in PowerPoint, Word or Excel: File, Save As\)/.test(e.message), e.message); });
+    });
   });
 }).then(function () {
   // The page draws the slide beside a chart's items (S518), so each names its slide and
@@ -863,9 +925,12 @@ const run4 = run3.then(function () {
 
 // Every item each fixture lists belongs to a check of its file's kind, so none falls off the bar.
 const run5 = run4.then(function () {
-  return Promise.all([[deck, "a.pptx"], [contrastDeck, "c.pptx"], [slidesDeck, "s.pptx"], [function () { return wordDoc(false); }, "w.docx"]].map(function (f) {
+  return Promise.all([[deck, "a.pptx"], [contrastDeck, "c.pptx"], [slidesDeck, "s.pptx"], [function () { return wordDoc(false); }, "w.docx"],
+    [function () { return Promise.resolve(makePdf({ creator: "Microsoft PowerPoint", title: "PowerPoint Presentation", lang: "fr" })); }, "p.pdf"],
+    [function () { return Promise.resolve(makePdf({ objstm: true, creator: "Microsoft Word", title: "Guide", tagged: true, figures: [false], pages: 2, encrypt: true })); }, "q.pdf"],
+    [function () { return Promise.resolve(makePdf({ producer: "Canon iR-ADV C5535 PDF", fonts: false })); }, "s.pdf"]].map(function (f) {
     return f[0]().then(function (buf) { return R.inspect(buf, f[1], ENV); }).then(function (s) {
-      var keys = R.checksFor(s.report.ext).map(function (c) { return c.key; });
+      var keys = R.checksFor(s.report.ext, s.report).map(function (c) { return c.key; });
       return s.report.needs.filter(function (n) { return keys.indexOf(R.checkOf(n)) < 0; }).map(function (n) { return f[1] + ":" + n.id; });
     });
   })).then(function (lost) {

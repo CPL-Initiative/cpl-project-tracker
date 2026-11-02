@@ -1,5 +1,5 @@
 // library_remediate.js — accessibility remediation of a deck (.pptx), a Word
-// document (.docx) or an Excel workbook (.xlsx), in the browser, for the Library's Create or Remediate a Document.
+// document (.docx), an Excel workbook (.xlsx) or a PDF, in the browser, for the Library's Create or Remediate a Document.
 //
 // Sam, 2026-10-28: "PPT accessibility remediation is top of mind as we spend a bunch of
 // money paying a service to remediate our decks before we can publish them to the field
@@ -38,8 +38,11 @@
 // area, automatic colors measured as Office draws them, and its titles, legend, axis and
 // data labels against what they sit on, with the nearest passing color as the fix.
 //
-// A PDF is read, never written: its tags, title and language come from the program that
-// exported it, so the report names that program and the steps that fix it at its source.
+// A PDF (S553): its title, language and title display are written here, as an incremental
+// update that leaves the original bytes as they are; its tags, the structure a screen
+// reader follows, come from the program that exported it, so the report names that
+// program and the steps that fix it at its source. A macro-enabled .pptm, .docm or .xlsm
+// and a .ppsx slideshow read as their plain kin.
 //
 // Works in Node too (tests/library_remediate.test.js): pass JSZip, DOMParser and
 // XMLSerializer in `env`; in the browser they default to the window's.
@@ -748,14 +751,26 @@
     lang: ["Language", "3.1.1", "Language of Page"],
     tables: ["Table headers", "1.3.1", "Info and Relationships"],
     order: ["Reading order", "1.3.2", "Meaningful Sequence"],
-    contrast: ["Color contrast", "1.4.3", "Contrast (Minimum)"]
+    contrast: ["Color contrast", "1.4.3", "Contrast (Minimum)"],
+    tags: ["Tags", "1.3.1", "Info and Relationships"],
+    text: ["Text, not pictures of it", "1.4.5", "Images of Text"]
   };
-  var CHECKS_BY_EXT = { pptx: ["alt", "title", "slides", "lang", "tables", "order", "contrast"], docx: ["alt", "title", "headings", "lang", "tables", "contrast"], xlsx: ["alt", "title", "sheets", "tables", "contrast"] };
-  function checksFor(ext) {
-    return (CHECKS_BY_EXT[ext] || []).map(function (k) { return { key: k, name: CHECKS[k][0], sc: CHECKS[k][1], scName: CHECKS[k][2] }; });
+  var CHECKS_BY_EXT = { pptx: ["alt", "title", "slides", "lang", "tables", "order", "contrast"], docx: ["alt", "title", "headings", "lang", "tables", "contrast"], xlsx: ["alt", "title", "sheets", "tables", "contrast"],
+    pdf: ["title", "lang", "text", "tags", "alt", "headings"] };
+  // A PDF's pictures and headings are read from its tags, so an untagged one, or a scan, is
+  // not shown passing checks it cannot take; the report says so instead.
+  function checksFor(ext, report) {
+    var keys = CHECKS_BY_EXT[ext] || [], p = report && report.pdf;
+    if (p && !p.hasText) keys = keys.filter(function (k) { return k !== "tags" && k !== "alt" && k !== "headings"; });
+    else if (p && !p.tagged) keys = keys.filter(function (k) { return k !== "alt" && k !== "headings"; });
+    return keys.map(function (k) { return { key: k, name: CHECKS[k][0], sc: CHECKS[k][1], scName: CHECKS[k][2] }; });
   }
   function checkOf(n) {
-    if (n.type === "alt") return "alt";
+    if (n.type === "alt" || n.id === "figs") return "alt";
+    if (n.type === "doctitle" || n.id === "pw") return "title";
+    if (n.type === "langfix") return "lang";
+    if (n.id === "tags") return "tags";
+    if (n.id === "ocr") return "text";
     if (n.type === "title" || n.id === "tp") return "slides";
     if (n.type === "sheet") return "sheets";
     if (n.type === "order") return "order";
@@ -1931,18 +1946,26 @@
     return 1;
   }
 
-  // Reads the file, fixes what needs no judgment, and returns the report with a session
-  // that finish() writes the answers into.
-  // ── A PDF is fixed at its source (lane NEXT, S513) ──────────────────────────────
-  // A PDF's tags, title and language are written when its program exports it, so the
-  // lasting fix is in the deck or document it came from: remediate that, then export
-  // again. This reads the PDF's own record of who made it and what it carries, names
-  // the source and the steps, and changes nothing. Office and most exporters keep the
-  // catalog and metadata in compressed object streams, so those are inflated first.
+  // ── A PDF: its title, language and title display written here; its tags from its
+  //    source (S513; S553, Sam: "make sure we can remediate any type of file uploaded") ──
+  // A PDF's tags, the structure a screen reader follows, are written when its program
+  // exports it, so that fix lasts only in the deck or document it came from: the report
+  // names the program, the export steps, and offers the source file. Its title, its
+  // language and whether a reader shows the title are entries in its catalog and Info
+  // dictionary, which this writes as an incremental update, the way Acrobat saves: the
+  // original bytes stay as they are, the changed objects follow them with a new
+  // cross-reference section, so nothing in its pages or its tags is disturbed. Office and
+  // most exporters keep the catalog, the Info and the metadata in compressed object
+  // streams, so those are inflated to read them; page content is left shut.
   function latin1(u8) {
     var out = "", CH = 0x8000;
     for (var i = 0; i < u8.length; i += CH) out += String.fromCharCode.apply(null, u8.subarray(i, i + CH));
     return out;
+  }
+  function bytesOf(str) {
+    var b = new Uint8Array(str.length);
+    for (var i = 0; i < str.length; i++) b[i] = str.charCodeAt(i) & 255;
+    return b;
   }
   function inflateWith(env) {
     if (env.inflate) return env.inflate;
@@ -1963,21 +1986,136 @@
       });
     };
   }
-  // The streams worth opening: object streams (the catalog and Info live there in Office's
-  // PDFs) and the XMP metadata. Page content is left shut.
-  function pdfText(u8, env) {
-    var s = latin1(u8), inflate = inflateWith(env), jobs = [], re = /stream\r?\n/g, m;
+  // The file's text with its object streams and metadata inflated, and the newest
+  // definition of each object: a top-level `n g obj`, or one held in an object stream.
+  // An incremental update appends, so the definition furthest into the file is current.
+  function pdfParts(u8, env) {
+    // \b keeps `endstream` from reading as a stream's start in a file that ends lines with LF.
+    var s = latin1(u8), inflate = inflateWith(env), jobs = [], re = /\bstream\r?\n/g, m, objs = {};
+    var ro = /(\d+)\s+(\d+)\s+obj\b/g, mo;
+    while ((mo = ro.exec(s))) {
+      if (mo.index > 0 && /[0-9]/.test(s[mo.index - 1])) continue; // `12 0 obj` inside `112 0 obj`
+      objs[mo[1]] = { gen: +mo[2], pos: mo.index, at: mo.index + mo[0].length, top: true };
+    }
     while ((m = re.exec(s))) {
       var head = s.lastIndexOf("obj", m.index), dict = head < 0 ? "" : s.slice(head, m.index);
-      if (!/\/Type\s*\/ObjStm|\/Subtype\s*\/XML/.test(dict) || !/\/FlateDecode/.test(dict)) continue;
+      var isStm = /\/Type\s*\/ObjStm/.test(dict), isXml = /\/Subtype\s*\/XML/.test(dict);
+      if (!isStm && !isXml) continue;
       var end = s.indexOf("endstream", m.index + m[0].length);
-      if (end < 0 || !inflate) continue;
-      jobs.push(inflate(u8.subarray(m.index + m[0].length, end)).then(latin1, function () { return ""; }));
+      if (end < 0) continue;
+      var raw = u8.subarray(m.index + m[0].length, end), flate = /\/FlateDecode/.test(dict);
+      if (flate && !inflate) continue;
+      var num = (/(\d+)\s+(\d+)\s+obj$/.exec(s.slice(Math.max(0, head - 40), head + 3)) || [])[1];
+      jobs.push((flate ? inflate(raw) : Promise.resolve(raw)).then((function (meta) {
+        return function (b) { meta.text = latin1(b); return meta; };
+      })({ stm: isStm, xml: isXml, num: num, pos: m.index, dict: dict }), function () { return null; }));
       re.lastIndex = end;
     }
-    return Promise.all(jobs).then(function (more) { return [s].concat(more).join("\n"); });
+    return Promise.all(jobs).then(function (got) {
+      var more = [];
+      got.filter(Boolean).sort(function (a, b) { return a.pos - b.pos; }).forEach(function (g) {
+        more.push(g.text);
+        if (g.xml) { if (g.num && objs[g.num]) objs[g.num].body = g.text; return; }
+        var N = +((/\/N\s+(\d+)/.exec(g.dict) || [])[1] || 0), First = +((/\/First\s+(\d+)/.exec(g.dict) || [])[1] || 0);
+        var nums = g.text.slice(0, First).trim().split(/\s+/).map(Number);
+        for (var i = 0; i < N && 2 * i + 1 < nums.length; i++) {
+          var n = nums[2 * i], off = nums[2 * i + 1], nxt = 2 * i + 3 < nums.length && i + 1 < N ? nums[2 * i + 3] : g.text.length - First;
+          if (!objs[n] || objs[n].pos < g.pos) objs[n] = { gen: 0, pos: g.pos, top: false, text: g.text.slice(First + off, First + nxt) };
+        }
+      });
+      return { s: s, t: [s].concat(more).join("\n"), objs: objs };
+    });
   }
+  // An object's dictionary text, from wherever its newest definition sits.
+  function objDict(parts, num) {
+    var o = parts.objs[num];
+    if (!o) return "";
+    var text = o.top ? parts.s : o.text, from = o.top ? o.at : 0;
+    var d = text.indexOf("<<", from), e = o.top ? text.indexOf("endobj", from) : -1;
+    if (d < 0 || (e >= 0 && d > e)) return "";
+    return dictAround(text, d + 2);
+  }
+  // The trailer a reader starts from: the last startxref, the cross-reference table or
+  // stream it names (an update must take the same form), and that trailer's entries.
+  function pdfTrailer(s) {
+    var i = s.lastIndexOf("startxref"), m = i >= 0 ? /startxref\s+(\d+)/.exec(s.slice(i, i + 40)) : null;
+    var off = m ? +m[1] : -1, at = off >= 0 && off < s.length ? s.slice(off, off + 40) : "";
+    var kind = /^xref/.test(at) ? "table" : /^\d+\s+\d+\s+obj/.test(at) ? "stream" : "", dict = "";
+    if (kind === "table") { var tr = s.indexOf("trailer", off); dict = tr >= 0 ? dictAround(s, s.indexOf("<<", tr) + 2) : ""; }
+    else if (kind === "stream") dict = dictAround(s, s.indexOf("<<", off) + 2);
+    if (!dict) kind = "";
+    var ref = function (k) { var r = new RegExp("/" + k + "\\s+(\\d+)\\s+(\\d+)\\s+R").exec(dict); return r ? { num: +r[1], gen: +r[2] } : null; };
+    return { kind: kind, off: off, dict: dict, root: ref("Root"), info: ref("Info"), size: +((/\/Size\s+(\d+)/.exec(dict) || [])[1] || 0),
+      id: (/\/ID\s*\[([\s\S]*?)\]/.exec(dict) || [])[1] || "", encrypted: /\/Encrypt\b/.test(dict) };
+  }
+  // A dictionary's top-level entries, `/Key value`, read by the PDF's own grammar: a
+  // string `(…)` or `<…>`, a dictionary `<<…>>`, an array, a name, a number or `n g R`.
+  function valueEnd(t, i) {
+    while (i < t.length && /\s/.test(t[i])) i++;
+    var c = t[i], depth;
+    if (c === "<" && t[i + 1] === "<") {
+      for (depth = 0; i < t.length - 1; i++) {
+        if (t[i] === "<" && t[i + 1] === "<") { depth++; i++; }
+        else if (t[i] === ">" && t[i + 1] === ">") { if (--depth === 0) return i + 2; i++; }
+        else if (t[i] === "(") i = valueEnd(t, i) - 1;
+      }
+      return t.length;
+    }
+    if (c === "<") { var g = t.indexOf(">", i); return g < 0 ? t.length : g + 1; }
+    if (c === "(") {
+      for (depth = 1, i++; i < t.length; i++) {
+        if (t[i] === "\\") i++;
+        else if (t[i] === "(") depth++;
+        else if (t[i] === ")" && --depth === 0) return i + 1;
+      }
+      return t.length;
+    }
+    if (c === "[") {
+      for (i++; ;) {
+        while (i < t.length && /\s/.test(t[i])) i++;
+        if (i >= t.length) return i;
+        if (t[i] === "]") return i + 1;
+        i = valueEnd(t, i);
+      }
+    }
+    if (c === "/") { for (i++; i < t.length && !/[\s\/\[\]<>(){}%]/.test(t[i]); i++) { /* name */ } return i; }
+    if (/[+\-.\d]/.test(c || "")) {
+      for (var j = i; j < t.length && /[+\-.\d]/.test(t[j]); j++) { /* number */ }
+      var r = /^\s+\d+\s+R(?![A-Za-z])/.exec(t.slice(j, j + 24));
+      return r ? j + r[0].length : j;
+    }
+    if (/[A-Za-z]/.test(c || "")) { for (; i < t.length && /[A-Za-z]/.test(t[i]); i++) { /* keyword */ } return i; }
+    return i + 1;
+  }
+  function dictEntries(d) {
+    var out = [], i = 2, n = d.length - 2;
+    while (i < n) {
+      while (i < n && /\s/.test(d[i])) i++;
+      if (i >= n) break;
+      if (d[i] !== "/") { i = valueEnd(d, i); continue; }
+      var ks = i, ke = valueEnd(d, i), ve = valueEnd(d, ke);
+      out.push({ key: d.slice(ks + 1, ke), start: ks, value: d.slice(ke, ve).trim(), end: ve });
+      i = ve;
+    }
+    return out;
+  }
+  function getEntry(d, key) { var e = dictEntries(d).filter(function (x) { return x.key === key; }).pop(); return e ? e.value : null; }
+  function setEntry(d, key, value) {
+    d = d && /^<<[\s\S]*>>$/.test(d.trim()) ? d.trim() : "<<>>";
+    var es = dictEntries(d).filter(function (x) { return x.key === key; }), out = d;
+    for (var i = es.length - 1; i >= 0; i--) out = out.slice(0, es[i].start) + out.slice(es[i].end);
+    return out.slice(0, -2).replace(/\s+$/, "") + "/" + key + (/^[(<\[\/]/.test(value) ? "" : " ") + value + ">>";
+  }
+  function hexUtf16(str) {
+    var h = "FEFF";
+    for (var i = 0; i < str.length; i++) h += ("000" + str.charCodeAt(i).toString(16).toUpperCase()).slice(-4);
+    return "<" + h + ">";
+  }
+  function xmlEsc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
   function utf16be(b) { var o = ""; for (var i = 0; i + 1 < b.length; i += 2) o += String.fromCharCode((b.charCodeAt(i) << 8) | b.charCodeAt(i + 1)); return o; }
+  // PDFDocEncoding's own upper half (an en dash is 0x85 there), for a literal string.
+  var PDFDOC = "\u2022\u2020\u2021\u2026\u2014\u2013\u0192\u2044\u2039\u203A\u2212\u2030\u201E\u201C\u201D\u2018\u2019\u201A\u2122\uFB01\uFB02\u0141\u0152\u0160\u0178\u017D\u0131\u0142\u0153\u0161\u017E\u009F\u20AC";
+  function pdfDoc(b) { return b.replace(/[\x80-\xA0]/g, function (c) { return PDFDOC[c.charCodeAt(0) - 0x80] || c; }); }
   function utf8(b) { try { return decodeURIComponent(escape(b)); } catch (e) { return b; } }
   // A PDF string, literal `(…)` or hex `<…>`, read the way the PDF stores it.
   function pdfString(t, key) {
@@ -2000,7 +2138,7 @@
         else raw += c;
       }
     }
-    if (raw.charCodeAt(0) === 0xFE && raw.charCodeAt(1) === 0xFF) raw = utf16be(raw.slice(2));
+    raw = raw.charCodeAt(0) === 0xFE && raw.charCodeAt(1) === 0xFF ? utf16be(raw.slice(2)) : pdfDoc(raw);
     return raw.replace(/\u0000/g, "").trim();
   }
   // The dictionary `<< … >>` that encloses position i, balanced, or "" when there is none.
@@ -2017,8 +2155,9 @@
     }
     return t.slice(a);
   }
-  // The document's own Info and Catalog: a bookmark has a /Title and a span a /Lang, so the
-  // first match in the file is often the wrong one (a TMC read as French that way).
+  // When the trailer cannot be read, the document's own Info and Catalog by their shape:
+  // a bookmark has a /Title and a span a /Lang, so the first match in the file is often
+  // the wrong one (a TMC read as French that way).
   function infoDict(t) {
     var ref = /\/Info\s+(\d+)\s+(\d+)\s+R/.exec(t), m;
     if (ref && (m = new RegExp("(^|\\s)" + ref[1] + "\\s+" + ref[2] + "\\s+obj\\b").exec(t))) {
@@ -2068,51 +2207,192 @@
     scan: "It holds pictures of the words and no text, so a screen reader finds nothing. Find the file it was printed from and fix that; failing that, it needs text recognition (Scan and OCR in Acrobat) and a person to check the result.",
     "": "Find the file it was made from, fix that, and export a tagged PDF again."
   };
+  var PDF_KIND_WORD = { deck: "a PowerPoint deck", document: "a Word document", spreadsheet: "an Excel workbook", layout: "a layout program", web: "a web page", scan: "a scan" };
   function inspectPdf(buf, name, env) {
     var u8 = buf instanceof Uint8Array ? buf : new Uint8Array(buf);
     if (latin1(u8.subarray(0, 1024)).indexOf("%PDF-") < 0) return Promise.reject(new Error("This file does not read as a PDF. Save it again as a PDF and drop it again."));
-    return pdfText(u8, env).then(function (t) {
-      var info = infoDict(t), cat = catalogDict(t);
+    return pdfParts(u8, env).then(function (parts) {
+      var t = parts.t, tr = pdfTrailer(parts.s);
+      var maxNum = Object.keys(parts.objs).reduce(function (mx, k) { return Math.max(mx, +k); }, 0);
+      tr.size = Math.max(tr.size, maxNum + 1);
+      var cat = (tr.root && objDict(parts, tr.root.num)) || catalogDict(t), info = (tr.info && objDict(parts, tr.info.num)) || infoDict(t);
+      var writable = !!(tr.kind && tr.root && objDict(parts, tr.root.num) && !tr.encrypted);
+      var why = tr.encrypted ? "It is password-protected or encrypted, so this page cannot write into it. Remove the security in Acrobat (File, Properties, Security) or export it again from its source, then drop that copy."
+        : writable ? "" : "Its cross-reference index does not read, so this page cannot write into it. Open it in Acrobat and save it again (File, Save As), then drop that copy.";
       var creator = pdfString(info, "Creator") || xmpField(t, "xmp:CreatorTool");
       var producer = pdfString(info, "Producer") || xmpField(t, "pdf:Producer");
-      var title = pdfString(info, "Title") || xmpField(t, "dc:title");
-      if (title && STOCK_TITLE.test(title)) title = "";
-      var lang = pdfString(cat, "Lang");
+      var title = pdfString(info, "Title") || xmpField(t, "dc:title"), stock = "";
+      if (title && STOCK_TITLE.test(title)) { stock = title; title = ""; }
+      var lang = pdfString(cat, "Lang"), en = /^en\b/i.test(lang || "");
       var tagged = /\/StructTreeRoot\s+\d+\s+\d+\s+R/.test(cat) && /\/Marked\s*true/.test(t);
       var shown = /\/DisplayDocTitle\s*true/.test(t);
       var hasText = /\/Font\b/.test(t) && /\/(Type0|TrueType|Type1|Type3)\b/.test(t);
-      var pages = (t.match(/\/Type\s*\/Page(?![a-zA-Z])/g) || []).length;
+      // The Pages root's /Count: the file itself holds every earlier version of a page
+      // object an incremental update re-saved, so counting /Type/Page over-reads.
+      var pr = /^(\d+)\s+(\d+)\s+R$/.exec(getEntry(cat, "Pages") || ""), pagesDict = pr ? objDict(parts, +pr[1]) : "";
+      var pages = +((/\/Count\s+(\d+)/.exec(pagesDict) || [])[1] || 0);
+      if (!pages) pages = Object.keys(parts.objs).filter(function (k) { return /\/Type\s*\/Page(?![a-zA-Z])/.test(objDict(parts, k)); }).length;
+      // Tagged only: each picture's structure element, and whether it carries alt text.
+      var figs = 0, figsAlt = 0, fr = /\/S\s*\/Figure(?![A-Za-z])/g, fm;
+      while (tagged && (fm = fr.exec(t))) { figs++; var fd = dictAround(t, fm.index); if (/\/Alt\s*[(<]/.test(fd) && !/\/Alt\s*(\(\s*\)|<\s*>)/.test(fd)) figsAlt++; }
+      var headings = tagged && /\/S\s*\/H[1-6]?(?![A-Za-z0-9])/.test(t);
       var src = pdfSource(creator, producer, hasText);
+      var titleDraft = title || titleFromName(name) || String(name || "").replace(/\.[a-z0-9]{1,5}$/i, "") || "Untitled";
       var checks = [
         { ok: tagged, text: tagged ? "Tagged: a screen reader can follow its headings, lists and tables." : "Not tagged: a screen reader reads it as one run of words, with no headings, lists or tables." },
-        { ok: /^en\b/i.test(lang), text: !lang ? "No language is set, so a screen reader guesses the voice."
-          : /^en\b/i.test(lang) ? "Its language is set (" + lang + ")." : "Its language is set to " + lang + ", not English: check it matches the words, or a screen reader reads them in the wrong voice." },
+        { ok: en, text: !lang ? "No language is set, so a screen reader guesses the voice."
+          : en ? "Its language is set (" + lang + ")." : "Its language is set to " + lang + ", not English: check it matches the words, or a screen reader reads them in the wrong voice." },
         { ok: !!title, text: title ? "Its title is " + title + (shown ? "." : ", though a reader shows the file's name in its place.") : "It has no title, so a reader shows the file's name." },
         { ok: hasText, text: hasText ? "It holds text." : "It holds no text: each page is a picture." }
       ];
+      if (tagged && figs) checks.push({ ok: figsAlt === figs, text: figsAlt === figs ? "Each of its " + figs + (figs === 1 ? " picture carries" : " pictures carries") + " alt text." : (figs - figsAlt) + " of its " + figs + " pictures " + (figs - figsAlt === 1 ? "carries" : "carry") + " no alt text." });
+      var steps = PDF_STEPS[src.kind] || PDF_STEPS[""];
+      if (src.google) steps = "It came from Google " + (src.kind === "deck" ? "Slides" : "Docs") + ". Choose File, Download, Microsoft " + (src.kind === "deck" ? "PowerPoint (.pptx)" : "Word (.docx)") + ", drop that file here and remediate it, then save the PDF from " + (src.kind === "deck" ? "PowerPoint" : "Word") + " with Document structure tags for accessibility ticked under Options.";
       var report = {
-        name: name, ext: "pdf", fixed: [], needs: [],
+        name: name, ext: "pdf", fileExt: "pdf", fixed: [], needs: [], auto: {}, fixedAt: {},
         extent: (pages ? pages + (pages === 1 ? " page" : " pages") : "A PDF") + (src.app ? ", made with " + src.app : ""),
-        pdf: { creator: creator || "", producer: producer || "", title: title || "", lang: lang || "", tagged: tagged, titleShown: shown,
-          hasText: hasText, pages: pages, source: src, checks: checks, steps: PDF_STEPS[src.kind] || PDF_STEPS[""] }
+        pdf: { creator: creator || "", producer: producer || "", title: title || "", titleDraft: titleDraft, lang: lang || "", tagged: tagged, titleShown: shown,
+          hasText: hasText, pages: pages, figures: figs, figuresWithAlt: figsAlt, headings: !!headings, source: src, checks: checks, steps: steps, writable: writable, why: why }
       };
-      if (src.google) report.pdf.steps = "It came from Google " + (src.kind === "deck" ? "Slides" : "Docs") + ". Choose File, Download, Microsoft " + (src.kind === "deck" ? "PowerPoint (.pptx)" : "Word (.docx)") + ", drop that file here and remediate it, then save the PDF from " + (src.kind === "deck" ? "PowerPoint" : "Word") + " with Document structure tags for accessibility ticked under Options.";
-      return { report: report, doc: null };
+      var made = PDF_KIND_WORD[src.kind] ? "It was made from " + PDF_KIND_WORD[src.kind] + (src.app ? " (" + src.app + ")" : "") + "." : src.app ? "It was made with " + src.app + "." : "It does not say what made it.";
+      if (writable) {
+        if (!title) {
+          report.fixed.push("Document title set: " + titleDraft + (stock ? " (it read " + stock + ")" : ""));
+          report.auto.title = 1; report.fixedAt.title = report.fixed.length - 1;
+          report.needs.push({ type: "doctitle", id: "pt", label: "Document title", draft: titleDraft, text: "Its title, set from the file's name; make it what the first page says, since a reader shows it in place of the file name" });
+        }
+        if (!lang) { report.fixed.push("Language set to English (United States)"); report.auto.lang = 1; report.fixedAt.lang = report.fixed.length - 1; }
+        else if (!en) report.needs.push({ type: "langfix", id: "pl", lang: lang, fix: true, text: "Its language is set to " + lang + ", so a screen reader voices its words in that language." });
+        if (!shown) {
+          report.fixed.push("Set to show its title in a reader's title bar, in place of the file's name");
+          report.auto.title = (report.auto.title || 0) + 1;
+          if (report.fixedAt.title == null) report.fixedAt.title = report.fixed.length - 1;
+        }
+      } else report.needs.push({ type: "source", id: "pw", text: why, steps: "" });
+      if (!hasText) report.needs.push({ type: "source", id: "ocr", text: "It holds no text: each page is a picture, so a screen reader finds nothing.", steps: PDF_STEPS.scan, ext: "" });
+      else if (!tagged) report.needs.push({ type: "source", id: "tags", text: "Not tagged: a screen reader reads it as one run of words, with no headings, lists or tables. " + made + " Tags are written when that file is exported, so the fix that lasts is there.", steps: steps, ext: src.ext });
+      else {
+        if (figs > figsAlt) report.needs.push({ type: "source", id: "figs", text: (figs - figsAlt) + " of its " + figs + " pictures " + (figs - figsAlt === 1 ? "carries" : "carry") + " no alt text, so a screen reader passes " + (figs - figsAlt === 1 ? "it" : "them") + " in silence.",
+          steps: "Add the alt text in the file it came from and export the PDF again" + (src.ext ? " (drop the ." + src.ext + " here and remediate it first)" : "") + ", or in Acrobat choose Accessibility, Set Alternate Text.", ext: src.ext });
+        if (!headings && pages > 1) report.needs.push({ type: "info", id: "h", text: "Its tags hold no headings, so a screen reader cannot move by section. Apply Heading 1 and Heading 2 in the file it came from and export again, or tag them in Acrobat's Reading Order tool." });
+      }
+      return { report: report, doc: { u8: u8, parts: parts, trailer: tr, catalog: cat } };
     });
   }
+  // Writes the title, the language and the title display into the PDF as an incremental
+  // update: the original bytes, then each changed object, then a cross-reference section
+  // of the same form as the file's own (a table, or a stream) pointing back at it.
+  function pdfAppend(u8, tr, news, next) {
+    var chunks = [u8], pos = u8.length, offsets = {}, gens = {};
+    var push = function (x) { var b = typeof x === "string" ? bytesOf(x) : x; chunks.push(b); pos += b.length; };
+    var pad = function (n, w) { var s = String(n); while (s.length < w) s = "0" + s; return s; };
+    var runsOf = function (nums) { var runs = []; nums.forEach(function (n) { var r = runs[runs.length - 1]; if (r && n === r[r.length - 1] + 1) r.push(n); else runs.push([n]); }); return runs; };
+    push("\n");
+    news.forEach(function (o) {
+      offsets[o.num] = pos; gens[o.num] = o.gen;
+      push(o.num + " " + o.gen + " obj\n" + o.head + "\n");
+      if (o.stream) { push("stream\n"); push(o.stream); push("\nendstream\n"); }
+      push("endobj\n");
+    });
+    var bits = "/Root " + tr.root.num + " " + tr.root.gen + " R" + (tr.info ? "/Info " + tr.info.num + " " + tr.info.gen + " R" : "") + "/Prev " + tr.off + (tr.id ? "/ID[" + tr.id + "]" : "");
+    var xoff = pos, nums;
+    if (tr.kind === "table") {
+      nums = Object.keys(offsets).map(Number).sort(function (a, b) { return a - b; });
+      // Object 0 heads the free list; a section that starts past it makes some readers
+      // suspect the off-by-one of a broken writer and renumber what follows.
+      var out = "xref\n0 1\n0000000000 65535 f \n";
+      runsOf(nums).forEach(function (run) {
+        out += run[0] + " " + run.length + "\n";
+        run.forEach(function (n) { out += pad(offsets[n], 10) + " " + pad(gens[n], 5) + " n \n"; });
+      });
+      push(out + "trailer\n<</Size " + next + bits + ">>\nstartxref\n" + xoff + "\n%%EOF\n");
+    } else {
+      var xnum = next++;
+      offsets[xnum] = xoff; gens[xnum] = 0;
+      nums = Object.keys(offsets).map(Number).sort(function (a, b) { return a - b; });
+      var data = new Uint8Array(nums.length * 7), k = 0, index = [];
+      runsOf(nums).forEach(function (run) { index.push(run[0], run.length); });
+      nums.forEach(function (n) {
+        var o = offsets[n], g = gens[n];
+        data[k++] = 1; data[k++] = (o >>> 24) & 255; data[k++] = (o >>> 16) & 255; data[k++] = (o >>> 8) & 255; data[k++] = o & 255; data[k++] = (g >> 8) & 255; data[k++] = g & 255;
+      });
+      push(xnum + " 0 obj\n<</Type/XRef/Size " + next + "/W[1 4 2]/Index[" + index.join(" ") + "]" + bits + "/Length " + data.length + ">>\nstream\n");
+      push(data);
+      push("\nendstream\nendobj\nstartxref\n" + xoff + "\n%%EOF\n");
+    }
+    var all = new Uint8Array(pos), at = 0;
+    chunks.forEach(function (c) { all.set(c, at); at += c.length; });
+    return all;
+  }
+  function finishPdf(session, answers, type) {
+    var st = session.doc || {}, rep = session.report, p = rep.pdf, done = { title: 0, lang: 0, display: 0, xmp: 0 };
+    var wrap = function (u8) { return type === "nodebuffer" && typeof Buffer !== "undefined" ? Buffer.from(u8) : new Blob([u8], { type: "application/pdf" }); };
+    if (!st.parts || !p.writable) return Promise.resolve({ file: wrap(st.u8 || new Uint8Array(0)), done: done });
+    answers = answers || {};
+    var tr = st.trailer, parts = st.parts, next = tr.size, news = [], cat = objDict(parts, tr.root.num);
+    var asked = ((answers.pt || {}).text || "").trim(), title = asked || p.titleDraft || "";
+    var writeTitle = !!title && (!p.title || (!!asked && asked !== p.title));
+    var askedLang = rep.needs.some(function (n) { return n.id === "pl"; }) && !!(answers.pl && answers.pl.fix);
+    var writeLang = !p.lang || askedLang;
+    var writeShow = !p.titleShown;
+    if (!writeTitle && !writeLang && !writeShow) return Promise.resolve({ file: wrap(st.u8), done: done });
+    if (writeLang || writeShow) {
+      var c = cat;
+      if (writeLang) { c = setEntry(c, "Lang", "(" + LANG + ")"); done.lang = 1; }
+      if (writeShow) {
+        var vp = getEntry(c, "ViewerPreferences"), vr = vp && /^(\d+)\s+(\d+)\s+R$/.exec(vp);
+        if (vr) news.push({ num: +vr[1], gen: +vr[2], head: setEntry(objDict(parts, +vr[1]), "DisplayDocTitle", "true") });
+        else c = setEntry(c, "ViewerPreferences", setEntry(vp && /^<</.test(vp) ? vp : "<<>>", "DisplayDocTitle", "true"));
+        done.display = 1;
+      }
+      news.push({ num: tr.root.num, gen: tr.root.gen, head: c });
+    }
+    if (writeTitle) {
+      var inum = tr.info ? tr.info.num : next++, igen = tr.info ? tr.info.gen : 0;
+      news.push({ num: inum, gen: igen, head: setEntry(tr.info ? objDict(parts, inum) : "<<>>", "Title", hexUtf16(title)) });
+      tr = { kind: tr.kind, off: tr.off, root: tr.root, id: tr.id, info: { num: inum, gen: igen } };
+      done.title = 1;
+      // The XMP metadata's title too, which Acrobat reads first when both are there.
+      var mr = /^(\d+)\s+(\d+)\s+R$/.exec(getEntry(cat, "Metadata") || ""), mo = mr && parts.objs[+mr[1]];
+      if (mo && mo.body && /<dc:title>[\s\S]*?<\/dc:title>/.test(mo.body)) {
+        var xml = utf8(mo.body).replace(/<dc:title>([\s\S]*?)<\/dc:title>/, function (_, inner) {
+          var li = '<rdf:li xml:lang="x-default">' + xmlEsc(title) + "</rdf:li>";
+          if (/<rdf:li[^>]*\/>/.test(inner)) inner = inner.replace(/<rdf:li[^>]*\/>/, li);
+          else if (/<rdf:li[^>]*>[\s\S]*?<\/rdf:li>/.test(inner)) inner = inner.replace(/<rdf:li[^>]*>[\s\S]*?<\/rdf:li>/, li);
+          else inner = "<rdf:Alt>" + li + "</rdf:Alt>";
+          return "<dc:title>" + inner + "</dc:title>";
+        });
+        var bytes = new (root.TextEncoder || TextEncoder)().encode(xml);
+        news.push({ num: +mr[1], gen: +mr[2], head: "<</Type/Metadata/Subtype/XML/Length " + bytes.length + ">>", stream: bytes });
+        done.xmp = 1;
+      }
+    }
+    return Promise.resolve({ file: wrap(pdfAppend(st.u8, tr, news, next)), done: done });
+  }
 
+  // The kinds this reads: a macro-enabled or slideshow package is its plain kin inside.
+  var OOXML_KIN = { pptx: "pptx", pptm: "pptx", ppsx: "pptx", docx: "docx", docm: "docx", xlsx: "xlsx", xlsm: "xlsx" };
+  var MIME = {
+    pptx: "application/vnd.openxmlformats-officedocument.presentationml.presentation", pptm: "application/vnd.ms-powerpoint.presentation.macroEnabled.12",
+    ppsx: "application/vnd.openxmlformats-officedocument.presentationml.slideshow",
+    docx: "application/vnd.openxmlformats-officedocument.wordprocessingml.document", docm: "application/vnd.ms-word.document.macroEnabled.12",
+    xlsx: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", xlsm: "application/vnd.ms-excel.sheet.macroEnabled.12"
+  };
+  // Reads the file, fixes what needs no judgment, and returns the report with a session
+  // that finish() writes the answers into.
   function inspect(buf, name, env) {
     env = envOf(env);
-    var ext = (/\.([a-z0-9]+)$/i.exec(name || "") || [])[1];
-    ext = ext ? ext.toLowerCase() : "";
-    if (ext === "pdf") return inspectPdf(buf, name, env);
-    if (ext !== "pptx" && ext !== "docx" && ext !== "xlsx") return Promise.reject(new Error("Remediation reads a .pptx deck, a .docx document, an .xlsx workbook or a PDF. Save the file in one of those and drop it again."));
+    var fileExt = (/\.([a-z0-9]+)$/i.exec(name || "") || [])[1];
+    fileExt = fileExt ? fileExt.toLowerCase() : "";
+    if (fileExt === "pdf") return inspectPdf(buf, name, env);
+    var ext = OOXML_KIN[fileExt];
+    if (!ext) return Promise.reject(new Error("Remediation reads a .pptx deck, a .docx document, an .xlsx workbook or a PDF. Save the file in one of those (in PowerPoint, Word or Excel: File, Save As) and drop it again."));
     if (!env.JSZip) return Promise.reject(new Error("The zip reader did not load. Reload the page and try again."));
     return env.JSZip.loadAsync(buf).then(function (zip) {
       var doc = new Doc(env, zip);
       // auto: what the page fixed with no judgment, counted by check, for the progress bar;
       // fixedAt: which line of fixed says so, for the bar's link to it.
-      var report = { name: name, ext: ext, fixed: [], needs: [], extent: "", auto: {}, fixedAt: {} };
+      var report = { name: name, ext: ext, fileExt: fileExt, fixed: [], needs: [], extent: "", auto: {}, fixedAt: {} };
       return ({ pptx: inspectPptx, docx: inspectDocx, xlsx: inspectXlsx })[ext](doc, name, report).then(function () {
         return { report: report, doc: doc };
       });
@@ -2122,6 +2402,7 @@
   // answers: { [needId]: { text, decorative } }. Writes them, then returns the file.
   // type: "blob" in the browser, "nodebuffer" in Node.
   function finish(session, answers, type) {
+    if (session.report.ext === "pdf") return finishPdf(session, answers, type);
     var doc = session.doc, report = session.report, done = { alt: 0, decorative: 0, titles: 0, colors: 0, sheets: 0 };
     var renames = {};
     answers = answers || {};
@@ -2202,10 +2483,7 @@
       return Object.keys(renames).length ? renameSheets(doc, renames) : null;
     }).then(function () {
       doc.flush();
-      return doc.zip.generateAsync({ type: type || "blob", compression: "DEFLATE",
-        mimeType: report.ext === "pptx" ? "application/vnd.openxmlformats-officedocument.presentationml.presentation"
-          : report.ext === "xlsx" ? "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
-          : "application/vnd.openxmlformats-officedocument.wordprocessingml.document" });
+      return doc.zip.generateAsync({ type: type || "blob", compression: "DEFLATE", mimeType: MIME[report.fileExt] || MIME[report.ext] });
     }).then(function (file) { return { file: file, done: done }; });
   }
 

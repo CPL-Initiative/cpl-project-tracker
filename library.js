@@ -1024,10 +1024,38 @@
   // Drop or choose a file, or paste a link; say what it is for; write the instructions;
   // Start runs the path the choice names. A record holds a link, never the bytes, so a
   // dropped file is read here in the browser and nothing leaves it until it is filed.
-  var EXT_KIND = { pptx: "deck", ppt: "deck", key: "deck", docx: "document", doc: "document", pdf: "document", txt: "document", md: "document", rtf: "document",
-    xlsx: "spreadsheet", xls: "spreadsheet", csv: "spreadsheet", mp4: "film", mov: "film", m4v: "film", webm: "film",
+  var EXT_KIND = { pptx: "deck", pptm: "deck", ppsx: "deck", ppt: "deck", key: "deck", odp: "deck", docx: "document", docm: "document", doc: "document", odt: "document", pages: "document", pdf: "document", txt: "document", md: "document", rtf: "document",
+    xlsx: "spreadsheet", xlsm: "spreadsheet", xls: "spreadsheet", ods: "spreadsheet", numbers: "spreadsheet", csv: "spreadsheet", mp4: "film", mov: "film", m4v: "film", webm: "film",
     png: "visual", jpg: "visual", jpeg: "visual", gif: "visual", svg: "visual", webp: "visual", html: "visual", htm: "visual" };
-  var REMEDIABLE = { pptx: true, docx: true, xlsx: true, pdf: true };
+  // What remediation reads (S553, Sam: "make sure we can remediate any type of file
+  // uploaded"): the OOXML packages, macro-enabled and slideshow ones included, and a PDF.
+  // Any other kind says what to do, since a file that is not offered Remediate with no word
+  // why reads as the page failing.
+  var REMEDIABLE = { pptx: true, pptm: true, ppsx: true, docx: true, docm: true, xlsx: true, xlsm: true, pdf: true };
+  var DECK_EXT = { pptx: true, pptm: true, ppsx: true };
+  var REM_ACCEPT = ".pptx,.pptm,.ppsx,.docx,.docm,.xlsx,.xlsm,.pdf";
+  var WHY_NOT = {
+    ppt: "an older PowerPoint file. In PowerPoint choose File, Save As, PowerPoint Presentation (.pptx), then drop that copy.",
+    doc: "an older Word file. In Word choose File, Save As, Word Document (.docx), then drop that copy.",
+    xls: "an older Excel file. In Excel choose File, Save As, Excel Workbook (.xlsx), then drop that copy.",
+    key: "a Keynote file. In Keynote choose File, Export To, PowerPoint, then drop the .pptx.",
+    pages: "a Pages file. In Pages choose File, Export To, Word, then drop the .docx.",
+    numbers: "a Numbers file. In Numbers choose File, Export To, Excel, then drop the .xlsx.",
+    odp: "a LibreOffice deck. Save it as a .pptx (File, Save As) and drop that copy.",
+    odt: "a LibreOffice document. Save it as a .docx (File, Save As) and drop that copy.",
+    ods: "a LibreOffice workbook. Save it as an .xlsx (File, Save As) and drop that copy.",
+    rtf: "rich text. Open it in Word, save it as a .docx, and drop that copy.",
+    txt: "plain text, which has no pictures, headings or colors to remediate.", md: "plain text, which has no pictures, headings or colors to remediate.",
+    csv: "a plain table. Open it in Excel, save it as an .xlsx, and drop that copy.",
+    html: "a web page, which npm run a11y checks in the repo; its remediation is in its own code.", htm: "a web page, which npm run a11y checks in the repo; its remediation is in its own code.",
+    png: "a picture. A picture is remediated where it is used: its alt text lives in the deck, document or page that shows it, so drop that file.",
+    mp4: "a video. A video needs captions and an audio description, which this page cannot add; file it as is and ask for captions in Instructions."
+  };
+  WHY_NOT.jpg = WHY_NOT.jpeg = WHY_NOT.gif = WHY_NOT.svg = WHY_NOT.webp = WHY_NOT.png;
+  WHY_NOT.mov = WHY_NOT.m4v = WHY_NOT.webm = WHY_NOT.mp4;
+  function whyNot(ext) {
+    return "Remediation reads a .pptx deck, a .docx document, an .xlsx workbook or a PDF" + (WHY_NOT[ext] ? ". This is " + WHY_NOT[ext] : ext ? ". Save the file as one of those and drop it again." : ".");
+  }
   var TEXT_EXT = { txt: true, md: true, csv: true, html: true, htm: true };
   function extOf(name) { var m = /\.([a-z0-9]{1,5})$/i.exec(String(name || "").split(/[?#]/)[0]); return m ? m[1].toLowerCase() : ""; }
   function titleFromName(name) {
@@ -1072,7 +1100,7 @@
     replace: "The Chancellor's Office template, with a speaker script in each slide's notes in place of the source deck's notes"
   };
   function notesAskHtml(pk) {
-    if (!pk || pk.ext !== "pptx") return "";
+    if (!pk || !DECK_EXT[pk.ext]) return "";
     return '<fieldset class="lib-uses" id="lc-notes"><legend>Speaker notes: does the deck have notes you want to keep?</legend>' +
       NOTES_CHOICES.map(function (c) {
         return '<label class="lib-check"><input type="radio" name="lc-notes" id="lc-notes-' + c[0] + '" value="' + c[0] + '"' + ((state.notesMode || "keep") === c[0] ? " checked" : "") + "> " + esc(c[1]) + "</label>";
@@ -1226,6 +1254,7 @@
         '<fieldset class="lib-uses"><legend>' + esc(pk.name) + ": what is it for?</legend>" +
         (pk.file && REMEDIABLE[pk.ext] ? useRow("remediate", "Remediate this file") : "") +
         useRow("background", "Use it as background for something new") + useRow("asis", "File it as is") + "</fieldset>" +
+        (pk.file && !REMEDIABLE[pk.ext] ? '<p class="lib-hint" id="lc-whynot">' + esc(whyNot(pk.ext)) + "</p>" : "") +
         // Claude drafts every picture as the file is read (Sam, 2026-10-29: "Can you have it
         // draft from the picture as a default in the remediate process before this even opens
         // up?"), so each picture leaving the browser is said, and can be turned off, here.
@@ -1261,9 +1290,10 @@
       (pr ? pieceHtml(pr) : "") + inputs + chooser + picked + asks +
       "</div>" + remHtml() + (state.start ? startForm() : "") + (state.form ? addForm() : "") + "</section>";
   }
-  // ── Remediation (lane NEXT ③): the deck or document, read and fixed in this browser ──
-  // library_remediate.js does the work over the file's XML; this draws its report (the
-  // mockup's Fixed for you and Needs you) and hands the remediated file back.
+  // ── Remediation (lane NEXT ③): the deck, document, workbook or PDF, read and fixed in this browser ──
+  // library_remediate.js does the work over the file's XML (or a PDF's catalog); this draws
+  // its report (Fixed for you, Needs you, and since S553 Remediated for you, every draft
+  // already applied) and hands the remediated file back.
   function loadScript(src) {
     return new Promise(function (ok, no) {
       var s = document.createElement("script"); s.src = src; s.onload = ok;
@@ -1282,18 +1312,21 @@
   function startRemediate(pk) {
     if (!pk.file || !pk.file.arrayBuffer) { say("Choose the file again; this browser could not read it.", true); render(); return; }
     state.start = null; state.form = null; state.formFor = null;
-    state.rem = { name: pk.name, reading: true, answers: {}, media: {}, big: {}, ai: {}, kept: {} };
+    state.rem = { name: pk.name, reading: true, answers: {}, media: {}, big: {}, ai: {}, kept: {}, edited: {} };
     say(""); render();
     var buf;
     pk.file.arrayBuffer().then(function (b) { buf = b; return loadRemediate(); }).then(function (R) {
       return R.inspect(buf, pk.name, remEnv()).then(function (session) {
-        state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, media: {}, big: {}, ai: {}, kept: {}, aiAll: false,
-          notesMode: pk.ext === "pptx" && state.notesMode !== "keep" ? state.notesMode : null, scripts: {}, scriptAi: {},
+        state.rem = { name: pk.name, buf: buf, report: session.report, session: session, answers: {}, media: {}, big: {}, ai: {}, kept: {}, edited: {}, aiAll: false,
+          notesMode: DECK_EXT[pk.ext] && state.notesMode !== "keep" ? state.notesMode : null, scripts: {}, scriptAi: {},
           drafting: state.autoDraft && pk.ext !== "pdf" ? { done: 0, total: 0, failed: 0 } : null };
+        // Every draft is an answer from the start (Sam, 2026-11-02): the download carries
+        // it unless the person edits it, and the report shows it among what was remediated.
         session.report.needs.forEach(function (n) {
-          if (n.type === "alt" || n.type === "title" || n.type === "sheet") state.rem.answers[n.id] = { text: n.draft || "", decorative: false, off: !!n.offSlide };
+          if (n.type === "alt" || n.type === "title" || n.type === "sheet" || n.type === "doctitle") state.rem.answers[n.id] = { text: n.draft || "", decorative: false, off: !!n.offSlide };
           // An advisory chart item (its values show as labels) waits for a person to tick it.
           if (n.type === "contrast") state.rem.answers[n.id] = { fix: !n.advisory };
+          if (n.type === "langfix") state.rem.answers[n.id] = { fix: !!n.fix };
         });
         if (state.rem.drafting && !picNeeds().length) state.rem.drafting = null;
         remRecord(state.rem);
@@ -1326,7 +1359,7 @@
   // another file to remediate without leaving the page"): the chooser beside Close.
   function remNextHtml() {
     return '<div class="lib-actions-row"><label class="lib-pick" for="lc-file-next">Remediate another file</label>' +
-      '<input id="lc-file-next" class="lib-vh" type="file" accept=".pptx,.docx,.xlsx,.pdf">' +
+      '<input id="lc-file-next" class="lib-vh" type="file" accept="' + REM_ACCEPT + '">' +
       '<button type="button" class="lib-btn" data-remclose="1">Close</button></div>';
   }
   // Answers a person gave that are not yet in a downloaded file.
@@ -1337,15 +1370,14 @@
     var rm = state.rem;
     if (!rm) return "";
     if (rm.reading) return '<section class="lib-rem" aria-labelledby="lib-rem-h">' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line" role="status">Reading the file in this browser&hellip;</p></section>';
-    if (rm.report.ext === "pdf") return pdfRemHtml(rm);
     if (rm.drafting) {
       var dr = rm.drafting;
       return '<section class="lib-rem" aria-labelledby="lib-rem-h">' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + "</h3>" +
         '<p class="lib-line" role="status">' + esc(dr.total ? "Claude is drafting alt text from each picture and its slide: " + dr.done + " of " + dr.total + " back." : "Reading the pictures and their QR codes in this browser…") + "</p>" +
-        '<p class="lib-hint">The report opens with every draft in place, for you to read before you keep it.</p>' +
+        '<p class="lib-hint">The report opens with every draft already in the file you download, for you to read and edit.</p>' +
         '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remshow="1">Show the report now</button></div></section>';
     }
-    var rep = rm.report, needs = rep.needs;
+    var rep = rm.report, needs = rep.needs, pdf = rep.pdf || null;
     var item = function (n) {
       var a = rm.answers[n.id] || {};
       if (n.type === "alt") {
@@ -1360,27 +1392,27 @@
           (n.qr ? '<p class="lib-hint">The QR code reads ' + esc(n.qr.length > 160 ? n.qr.slice(0, 159) + "…" : n.qr) + ".</p>" : "") +
           '<textarea id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" rows="4" maxlength="400"' + (a.decorative ? " disabled" : "") + ' placeholder="Describe what it shows, or mark it decorative">' + esc(a.text || "") + "</textarea>" +
           '<label class="lib-check"><input type="checkbox" data-remdec="' + esc(n.id) + '"' + (a.decorative ? " checked" : "") + "> Decorative (a screen reader skips it)</label>" +
-          '<div class="lib-actions-row">' + keepHtml(rm, n) +
           (n.media && THUMB_EXT[extOf(n.media)]
-            ? '<button type="button" class="lib-btn" data-remai="' + esc(n.id) + '"' + (rm.ai[n.id] === "busy" ? " disabled" : "") + ">" +
-              (rm.ai[n.id] === "busy" ? "Reading the picture&hellip;" : (rm.ai[n.id] === "done" ? "Redraft from the " : "Draft from the ") + remPlace(rm)) + "</button>"
-            : "") + "</div>" +
-          (n.fromData ? '<p class="lib-hint">Drafted from the chart\'s own numbers.</p>' : rm.ai[n.id] === "done" ? '<p class="lib-hint">Drafted by Claude from the picture and its slide. Read it before you keep it.</p>' :
+            ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remai="' + esc(n.id) + '"' + (rm.ai[n.id] === "busy" ? " disabled" : "") + ">" +
+              (rm.ai[n.id] === "busy" ? "Reading the picture&hellip;" : (rm.ai[n.id] === "done" ? "Redraft from the " : "Draft from the ") + remPlace(rm)) + "</button></div>"
+            : "") +
+          (n.fromData ? '<p class="lib-hint">Drafted from the chart\'s own numbers.</p>' : rm.ai[n.id] === "done" ? '<p class="lib-hint">Drafted by Claude from the picture and its slide; it is in the file you download, so edit it if it misses.</p>' :
             a.fromQr ? '<p class="lib-hint">Drafted from the address the QR code reads and the words beside it.</p>' : "") +
           "</div>" + sv.big + "</li>";
       }
       // Any other item on one slide draws that slide to its left; one on several, under its words.
       var one = rep.ext === "pptx" && !n.slides && n.slide ? planAt(rep, n.slide) : null, sd = one ? slideSide(rm, n, one) : { side: "", big: "" };
       var strip = rep.ext === "pptx" && n.slides ? slideStrip(rm, n) : "";
-      // A slide's empty title, or a sheet left at its default name (a workbook, S514).
-      // A blank title box beside the slide's own words (Sam, 2026-10-29) gets a draft from
-      // them to keep, and goes off the slide so the words do not show twice.
-      if (n.type === "title" || n.type === "sheet") {
-        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + sd.side + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' + esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce") + "</label>" +
+      // A slide's empty title, a sheet left at its default name (a workbook, S514), or a
+      // PDF's title (S553). A blank title box beside the slide's own words (Sam, 2026-10-29)
+      // gets a draft from them, and goes off the slide so the words do not show twice.
+      if (n.type === "title" || n.type === "sheet" || n.type === "doctitle") {
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + sd.side + '<div class="lib-field"><label for="rm-' + esc(n.id) + '">' +
+          (n.type === "doctitle" ? esc(n.label) + ": " + esc(n.text) : esc(n.text) + "; " + esc(n.ask || "type one a screen reader can announce")) + "</label>" +
           '<input id="rm-' + esc(n.id) + '" data-remtext="' + esc(n.id) + '" type="text" maxlength="' + (n.type === "sheet" ? 31 : 200) + '" value="' + esc(a.text || "") + '">' +
           (n.type === "title" ? '<label class="lib-check"><input type="checkbox" data-remoff="' + esc(n.id) + '"' + (a.off ? " checked" : "") + "> Keep the " + (n.missing ? "new " : "") + "title box just off the slide, where a screen reader still reads it" +
             (n.draft ? " (the slide\'s own words show its title)" : "") + "</label>" : "") +
-          (n.type === "title" && n.draft ? '<div class="lib-actions-row">' + keepHtml(rm, n) + '</div><p class="lib-hint">Drafted from the largest words in the slide\'s top half. Read it before you keep it.</p>' : "") +
+          (n.type === "title" && n.draft ? '<p class="lib-hint">Drafted from the largest words in the slide\'s top half; it is in the file you download, so edit it if it misses.</p>' : "") +
           "</div>" + sd.big + "</li>";
       }
       // A contrast item shows its words both ways, on the fill they sit on (the file's own
@@ -1394,34 +1426,62 @@
           '<label class="lib-check"><input type="checkbox" data-remfix="' + esc(n.id) + '"' + (a.fix ? " checked" : "") + "> Use #" + esc(n.fix) +
           " instead, the nearest color of the same hue that reads " + esc(n.fixRatio) + ":1</label></div>" + sd.big + "</li>";
       }
+      // A PDF whose language is set to another tongue (S513's French TMC): English is written
+      // unless the person says the words are in that language.
+      if (n.type === "langfix") {
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
+          '<label class="lib-check"><input type="checkbox" data-remfix="' + esc(n.id) + '"' + (a.fix ? " checked" : "") + "> Set it to English (United States); clear this if its words are in " + esc(n.lang) + "</label></div></li>";
+      }
+      // What only the file it came from can fix (a PDF's tags, its pictures' alt text, a scan's
+      // text): the steps, the Library record that may hold the source, and the source file.
+      if (n.type === "source") {
+        var recs = n.id === "tags" && pdf ? pdfSources(rep) : [];
+        var doneWords = { tags: "Done at its source, and the PDF exported again with tags", figs: "Done: the alt text is in the PDF", ocr: "Done: the text is recognized and checked" }[n.id];
+        return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1"><div class="lib-field"><p>' + esc(n.text) + "</p>" +
+          (n.steps ? '<p class="lib-line">' + esc(n.steps) + "</p>" : "") +
+          (recs.length ? '<p class="lib-line">In the Library, the record that may hold its source:</p><ul>' + recs.map(function (r) {
+            return "<li>" + (r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title || r.slug) + "</a>" : esc(r.title || r.slug)) +
+              (r.rebuild_from ? " (rebuilt from " + esc(r.rebuild_from) + ")" : "") + "</li>";
+          }).join("") + "</ul>" : "") +
+          (n.ext && REMEDIABLE[n.ext] && document.getElementById("lc-file") ? '<div class="lib-actions-row"><label class="lib-pick" for="lc-file">Choose the source .' + esc(n.ext) + "</label></div>" : "") +
+          (doneWords ? '<label class="lib-check"><input type="checkbox" data-remcheck="' + esc(n.id) + '"' + (rm.kept[n.id] ? " checked" : "") + "> " + doneWords + "</label>" : "") +
+          "</div></li>";
+      }
       // What this page leaves to a person in the program: a box to say it was checked there.
       // A slide's reading order is read here from its numbers (S518), so it can be checked here.
       return '<li class="lib-remneed" id="lib-remneed-' + esc(n.id) + '" tabindex="-1">' + sd.side + '<div class="lib-field"><p>' + esc(n.text) + "</p>" + strip +
         '<label class="lib-check"><input type="checkbox" data-remcheck="' + esc(n.id) + '"' + (rm.kept[n.id] ? " checked" : "") + "> Checked " + (n.type === "order" && strip ? "here or " : "") + "in " + esc(REM_APP[rep.ext] || "its program") + "</label></div>" + sd.big + "</li>";
     };
+    // Every draft is already applied (Sam, 2026-11-02: "a full remediation without waiting
+    // for confirmation on each element but then present the elements remediated ... for any
+    // edits needed"): what still needs a person comes first, then what was remediated, each
+    // with its field to edit. A left item's field moves it over at the next repaint.
+    var left = needs.filter(function (n) { return remBy(rm, n) === "left"; }), done = needs.filter(function (n) { return remBy(rm, n) !== "left"; });
+    var canGo = !(pdf && !pdf.writable);
+    var list = function (arr) { return '<ul class="lib-remneeds">' + arr.map(item).join("") + "</ul>"; };
     return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
       '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + "</h3></div>" +
       remNextHtml() + "</div>" +
       '<div class="lib-remprog" id="lib-remprog">' + progressInner(rm) + "</div>" +
       '<div class="lib-remcols stack"><div><h4 class="lib-remh">Fixed for you (' + rep.fixed.length + ")</h4>" +
       (rep.fixed.length ? "<ul>" + rep.fixed.map(function (f, i) { return '<li id="lib-remfix-' + i + '" tabindex="-1">' + esc(f) + "</li>"; }).join("") + "</ul>" : '<p class="lib-line">Nothing needed fixing.</p>') + "</div>" +
-      '<div><h4 class="lib-remh">Needs you (' + needs.length + ")</h4>" +
-      // Keep all (Sam, 2026-10-29: "giving the user the opportunity to edit, redraft, or keep.
-      // Add a Keep All button"): every alt text with words, or marked decorative, kept at once.
-      (needs.some(function (n) { return n.type === "alt" || (n.type === "title" && n.draft); }) ? '<div class="lib-actions-row"><button type="button" class="lib-remzoom" data-remkeepall="1">Keep all</button></div>' : "") +
-      (needs.length ? '<ul class="lib-remneeds">' + needs.map(item).join("") + "</ul>" : '<p class="lib-line">Nothing. The checks this page runs all pass.</p>') +
-      (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words. Read each one before you keep it.</p>' : "") +
+      "<div>" +
+      (!needs.length ? '<h4 class="lib-remh">Needs you (0)</h4><p class="lib-line">Nothing. The checks this page runs all pass.</p>'
+        : (left.length ? '<h4 class="lib-remh">Needs you (' + left.length + ")</h4>" + list(left) : "") +
+          (done.length ? '<h4 class="lib-remh">Remediated for you, to edit as needed (' + done.length + ")</h4>" + list(done) : "")) +
+      (needs.some(function (n) { return (n.type === "alt" || n.type === "sheet") && n.draft; }) ? '<p class="lib-hint">A draft comes from the ' + (rep.ext === "xlsx" ? "sheet\'s" : "slide\'s or section\'s") + ' own words and is already in the file you download; edit any that misses.</p>' : "") +
       (picNeeds().length > 1 ? '<div class="lib-actions-row"><button type="button" class="lib-btn" data-remaiall="1"' + (rm.aiAll ? " disabled" : "") + ">" + (rm.aiAll ? "Reading the pictures&hellip;" : "Redraft every picture") + "</button></div>" : "") +
       (picNeeds().length ? '<p class="lib-hint">Each draft sends one picture and its ' + remPlace(rm) + "\'s words to Claude; nothing else in the file leaves this browser. Never use it on a picture of a student\'s record.</p>" : "") +
       "</div></div>" + notesHtml(rm) +
-      '<div class="lib-actions-row"><button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Download the remediated file</button>" +
+      '<div class="lib-actions-row">' + (canGo ? '<button type="button" class="lib-btn primary" data-remgo="1"' + (state.busy ? " disabled" : "") + ">Download the remediated file</button>" : "") +
       '<button type="button" class="lib-btn" data-remfile="1">File it in the Library</button></div>' +
-      '<p class="lib-hint">' + 'Save the PDF from PowerPoint, Word or Excel with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.</p>' +
+      '<p class="lib-hint">' + (pdf
+        ? "The title, the language and the title display are written into the PDF here; its tags, which a screen reader follows, come only from the deck or document it was exported from. The Chancellor\'s Office review still decides what is certified."
+        : "Save the PDF from PowerPoint, Word or Excel with document structure tags turned on, so the fixes carry into it. The Chancellor\'s Office review still decides what is certified.") + "</p>" +
       "</section>";
   }
-  // A PDF is fixed at its source (lane NEXT, S513): its tags, title and language are
-  // written when PowerPoint or Word exports it, so the report names what it carries, the
-  // program that made it, the Library record that may hold its source, and the steps.
+  // A PDF's source may be in the Library (S513): the record whose title or file name
+  // matches, named on the tags item beside the export steps.
   function stemOf(s) {
     return String(s || "").split(/[?#]/)[0].split("/").pop().replace(/\.[a-z0-9]{1,5}$/i, "")
       .replace(/^\d{8}[_-]?/, "").replace(/_Remediated$/i, "").toLowerCase().replace(/[^a-z0-9]+/g, "");
@@ -1435,29 +1495,6 @@
       return have.some(function (h) { return want.indexOf(h) >= 0; });
     }).slice(0, 3);
   }
-  function pdfRemHtml(rm) {
-    var rep = rm.report, pdf = rep.pdf, src = pdf.source, recs = pdfSources(rep);
-    var gaps = pdf.checks.filter(function (c) { return !c.ok; }).length;
-    var line = rep.extent + ". " + (gaps ? gaps + (gaps === 1 ? " gap" : " gaps") + " to close at its source." : "Its tags, title and language are in place.");
-    var kindWord = { deck: "a PowerPoint deck", document: "a Word document", spreadsheet: "an Excel workbook", layout: "a layout program", web: "a web page", scan: "a scan" }[src.kind];
-    return '<section class="lib-rem" aria-labelledby="lib-rem-h">' +
-      '<div class="lib-remhead"><div>' + REM_KICKER + '<h3 class="lib-title" id="lib-rem-h" tabindex="-1">' + esc(rm.name) + '</h3><p class="lib-line">' + esc(line) + "</p></div>" +
-      remNextHtml() + "</div>" +
-      '<div class="lib-remcols"><div><h4 class="lib-remh">What the PDF carries</h4><ul class="lib-remchecks">' +
-      pdf.checks.map(function (c) { return "<li><b>" + (c.ok ? "In place" : "Needs its source") + ":</b> " + esc(c.text) + "</li>"; }).join("") + "</ul></div>" +
-      '<div><h4 class="lib-remh">Fix it at its source</h4>' +
-      '<p class="lib-line">' + esc(kindWord ? "It was made from " + kindWord + (src.app ? " (" + src.app + ")" : "") + "." : src.app ? "It was made with " + src.app + "." : "It does not say what made it.") +
-      " A PDF keeps what its source gave it at export, so the fix that lasts is in that file.</p>" +
-      '<p class="lib-line">' + esc(pdf.steps) + "</p>" +
-      (recs.length ? '<p class="lib-line">In the Library, the record that may hold its source:</p><ul>' + recs.map(function (r) {
-        return "<li>" + (r.url ? '<a href="' + esc(r.url) + '" target="_blank" rel="noopener">' + esc(r.title || r.slug) + "</a>" : esc(r.title || r.slug)) +
-          (r.rebuild_from ? " (rebuilt from " + esc(r.rebuild_from) + ")" : "") + "</li>";
-      }).join("") + "</ul>" : "") +
-      (REMEDIABLE[src.ext] && src.ext !== "pdf" ? '<div class="lib-actions-row"><label class="lib-pick" for="lc-file">Choose the source .' + src.ext + "</label></div>" : "") +
-      "</div></div>" +
-      '<p class="lib-hint">This page reads the PDF and changes nothing in it. The Chancellor\'s Office review still decides what is certified.</p>' +
-      "</section>";
-  }
   // Progress toward a file a screen reader can follow (Sam, 2026-10-29: "a single bar
   // divided into remediation task progress ... indicate how much you've remediated and how
   // much is left for the user in each of the areas that they have to touch. And then we'll
@@ -1465,7 +1502,7 @@
   // area; each part shows what the page fixed itself, what the person has done, and what
   // is left for them. A draft counts as left until a person keeps it (Keep, an edit, or
   // Decorative); a contrast fix the page applies counts as fixed while its box stays on.
-  var REM_APP = { pptx: "PowerPoint", docx: "Word", xlsx: "Excel" };
+  var REM_APP = { pptx: "PowerPoint", docx: "Word", xlsx: "Excel", pdf: "Acrobat" };
   // What a draft reads beside the picture (Sam, 2026-10-29: "If we say from the slide, it
   // implies that it's with the context of the slide"): its slide, section or sheet.
   function remPlace(rm) { return { pptx: "slide", docx: "section", xlsx: "sheet" }[rm && rm.report && rm.report.ext] || "slide"; }
@@ -1475,25 +1512,27 @@
   // these Government Code sections; its accessibility page names WCAG 2.1 AA, which 2.2 AA
   // includes.
   var REM_KICKER = '<p class="lib-kicker">Remediation <span class="lib-remstd">designed to meet WCAG 2.2 AA, which includes 2.1 AA, and California Government Code 7405, 11135 and 11546.7</span></p>';
-  function remDone(rm, n) {
-    var a = rm.answers[n.id] || {};
-    if (n.type === "alt") return !!rm.kept[n.id] && (!!a.decorative || !!(a.text || "").trim());
-    if (n.type === "title" && n.draft) return !!rm.kept[n.id] && !!(a.text || "").trim();
-    if (n.type === "title" || n.type === "sheet") return !!(a.text || "").trim();
-    return !!rm.kept[n.id];
+  // Who an item stands with (S553): auto, the page applied its draft or fix; you, the
+  // person edited it, or ticked that they checked it; left, it still has no words.
+  function remBy(rm, n) {
+    var a = rm.answers[n.id] || {}, words = !!(a.text || "").trim();
+    if (n.type === "alt") return a.decorative || words ? (rm.edited[n.id] ? "you" : "auto") : "left";
+    if (n.type === "title" || n.type === "sheet" || n.type === "doctitle") return words ? (rm.edited[n.id] ? "you" : "auto") : "left";
+    if (n.type === "contrast") return a.fix ? "auto" : "left";
+    if (n.type === "langfix") return a.fix ? "auto" : "you";
+    return rm.kept[n.id] ? "you" : "left";
   }
   // Every check library_remediate.js runs on this kind of file, with its WCAG 2.2
   // criterion (Sam, 2026-10-29: "indicate on the bar other things that you've checked for in
   // remediation to comply with the most current standards"); one with nothing to fix passes.
   function remAreas(rm) {
     var R = window.CPL_REMEDIATE, rep = rm.report, auto = rep.auto || {};
-    var list = (R && R.checksFor ? R.checksFor(rep.ext) : []).concat([{ key: "other", name: "Other checks", sc: "", scName: "" }]);
+    var list = (R && R.checksFor ? R.checksFor(rep.ext, rep) : []).concat([{ key: "other", name: "Other checks", sc: "", scName: "" }]);
     return list.map(function (c) {
       var a = { key: c.key, name: c.name, sc: c.sc, scName: c.scName, auto: auto[c.key] || 0, you: 0, left: 0 };
       rep.needs.forEach(function (n) {
         if ((R && R.checkOf ? R.checkOf(n) : "other") !== c.key) return;
-        if (n.type === "contrast") { if ((rm.answers[n.id] || {}).fix) a.auto++; else a.left++; }
-        else if (remDone(rm, n)) a.you++; else a.left++;
+        a[remBy(rm, n)]++;
       });
       a.total = a.auto + a.you + a.left;
       a.passes = !a.total;
@@ -1537,27 +1576,18 @@
     var rm = state.rem, R = window.CPL_REMEDIATE;
     if (!rm || !rm.report || !R) return;
     var mine = rm.report.needs.filter(function (n) { return R.checkOf(n) === key; });
-    var n = mine.filter(function (x) { return x.type === "contrast" ? !(rm.answers[x.id] || {}).fix : !remDone(rm, x); })[0] || mine[0];
+    var n = mine.filter(function (x) { return remBy(rm, x) === "left"; })[0] || mine[0];
     var at = n ? document.getElementById("lib-remneed-" + n.id) : rm.report.fixedAt && rm.report.fixedAt[key] != null ? document.getElementById("lib-remfix-" + rm.report.fixedAt[key]) : null;
     if (!at) return;
     if (at.scrollIntoView) at.scrollIntoView({ block: "center" });
     var field = n && (at.querySelector("textarea") || at.querySelector("input") || at.querySelector("button"));
     (field || at).focus();
   }
-  function keepHtml(rm, n) {
-    return '<button type="button" class="lib-remzoom" data-remkeep="' + esc(n.id) + '" aria-pressed="' + !!rm.kept[n.id] + '">Keep</button>' +
-      '<span class="lib-hint" data-remkept="' + esc(n.id) + '">' + (rm.kept[n.id] ? "Kept" : "") + "</span>";
-  }
-  // Repaints the progress and the Keep words without a render, so typing keeps its place.
+  // Repaints the progress without a render, so typing keeps its place.
   function paintProgress() {
     var rm = state.rem, el = document.getElementById("lib-remprog");
     if (!rm || !rm.report) return;
     if (el) el.innerHTML = progressInner(rm);
-    Array.prototype.forEach.call(document.querySelectorAll("[data-remkeep]"), function (b) {
-      var id = b.getAttribute("data-remkeep"), w = document.querySelector('[data-remkept="' + id + '"]');
-      b.setAttribute("aria-pressed", String(!!rm.kept[id]));
-      if (w) w.textContent = rm.kept[id] ? "Kept" : "";
-    });
   }
   // The slide a picture sits on, drawn from the plan library_remediate.js reads (S517;
   // Sam, 2026-10-29: "It would be helpful to have a thumbnail of the ppt slide the image
@@ -1745,7 +1775,7 @@
       var opened = !rm.drafting;
       rm.drafting = null;
       var got = dr.total - dr.failed;
-      say(dr.total ? (got ? "Claude drafted " + got + (got === 1 ? " picture" : " pictures") + " from the picture and its slide. Read each one before you keep it." : "") +
+      say(dr.total ? (got ? "Claude drafted " + got + (got === 1 ? " picture" : " pictures") + " from the picture and its slide; each is in the file you download, so edit any that misses." : "") +
         (dr.failed ? " " + dr.failed + (dr.failed === 1 ? " draft" : " drafts") + " did not come back" + (rm.lastError ? " (" + rm.lastError + ")" : "") + "; those keep a draft from the " + remPlace(rm) + "'s words, and Draft from the " + remPlace(rm) + " tries again." : "") : "", !got && dr.failed > 0);
       remRefresh();
       if (!opened) { var h = document.getElementById("lib-rem-h"); if (h && h.focus) h.focus(); }
@@ -1765,7 +1795,7 @@
     if (!rm || rm.aiAll) return;
     rm.aiAll = true; render();
     picNeeds().reduce(function (p, n) { return p.then(function () { return draftFromPicture(n.id); }); }, Promise.resolve())
-      .then(function () { if (state.rem === rm) { rm.aiAll = false; say("Drafted. Read each one before you keep it."); render(); } });
+      .then(function () { if (state.rem === rm) { rm.aiAll = false; say("Drafted. Each is in the file you download, so edit any that misses."); render(); } });
   }
 
   // ── Speaker notes: Claude's script for each slide (S518) ───────────────────────
@@ -1853,7 +1883,9 @@
         setTimeout(function () { URL.revokeObjectURL(url); }, 60000);
         var d = out.done;
         rm.downloaded = true;
-        var summary = rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " +
+        var wrote = [d.title ? "its title" : "", d.lang ? "its language" : "", d.display ? "the title shown in place of the file name" : ""].filter(Boolean);
+        var summary = rm.report.ext === "pdf" ? (wrote.length ? "Written into the PDF: " + wrote.join(", ") + "." : "Nothing needed writing into the PDF.")
+          : rm.report.fixed.length + " fixes made, " + d.alt + " alt " + (d.alt === 1 ? "text" : "texts") + ", " + d.decorative + " marked decorative, " +
           (rm.report.ext === "xlsx" ? (d.sheets || 0) + (d.sheets === 1 ? " sheet" : " sheets") + " renamed." :
             d.titles + (d.titles === 1 ? " slide title" : " slide titles") + " written, " + d.colors + (d.colors === 1 ? " text color" : " text colors") + " changed" +
             (d.notes ? ", " + d.notes + (d.notes === 1 ? " slide's notes" : " slides' notes") + " given a script" : "") + ".");
@@ -1936,7 +1968,7 @@
     var openBrief = function (src) {
       var kind = instr ? kindFromWords(instr) : (pk ? pk.kind : "visual");
       state.src.ls = src ? [src] : [];
-      state.start = { kind: kind, say: instr, shape: pk && pk.ext === "pptx" && kind === "deck" ? NOTES_BRIEF[state.notesMode || "keep"] : defaultShape(kind) };
+      state.start = { kind: kind, say: instr, shape: pk && DECK_EXT[pk.ext] && kind === "deck" ? NOTES_BRIEF[state.notesMode || "keep"] : defaultShape(kind) };
       state.form = null; state.formFor = null;
       say(src ? "The brief carries " + src.title + " as a document to work from. Name the piece and save it." + (isSharePoint(src.url) ? " " + SP_INSTEAD : "") : "");
       render();
@@ -2545,7 +2577,7 @@
       else if (e.target.getAttribute && e.target.getAttribute("data-remtext") && state.rem) {
         var k0 = e.target.getAttribute("data-remtext");
         state.rem.answers[k0] = state.rem.answers[k0] || {}; state.rem.answers[k0].text = e.target.value; state.rem.answers[k0].fromQr = false; state.rem.touched = true;
-        if (/^(a|t\d)/.test(k0) && state.rem.kept) state.rem.kept[k0] = true;
+        state.rem.edited[k0] = true;
         paintProgress();
       }
     });
@@ -2556,7 +2588,7 @@
       else if (e.target.id === "lc-file-next") {
         var nf = e.target.files && e.target.files[0];
         if (!nf) return;
-        if (!REMEDIABLE[extOf(nf.name)]) { say("Remediation reads a .pptx deck, a .docx document, an .xlsx workbook or a PDF.", true); render(); return; }
+        if (!REMEDIABLE[extOf(nf.name)]) { say(whyNot(extOf(nf.name)), true); render(); return; }
         if (remUnsaved(state.rem) && !window.confirm("Open " + nf.name + "? This report's answers are not in a downloaded file yet, and they will go.")) { e.target.value = ""; return; }
         setPick({ name: nf.name, file: nf });
         startRemediate(state.pick);
@@ -2579,7 +2611,7 @@
       else if (e.target.getAttribute && e.target.getAttribute("data-remcheck") && state.rem) { state.rem.kept[e.target.getAttribute("data-remcheck")] = e.target.checked; paintProgress(); }
       else if (e.target.getAttribute && e.target.getAttribute("data-remdec") && state.rem) {
         var k1 = e.target.getAttribute("data-remdec");
-        state.rem.answers[k1] = state.rem.answers[k1] || {}; state.rem.answers[k1].decorative = e.target.checked; state.rem.kept[k1] = true;
+        state.rem.answers[k1] = state.rem.answers[k1] || {}; state.rem.answers[k1].decorative = e.target.checked; state.rem.edited[k1] = true; state.rem.touched = true;
         render(); var cb = root.querySelector('[data-remdec="' + k1 + '"]'); if (cb) cb.focus();
       }
       else if (e.target.getAttribute && e.target.getAttribute("data-remfix") && state.rem) {
@@ -2630,18 +2662,6 @@
       else if ((v = b.getAttribute("data-remscriptai")) && state.rem) draftScript(+v, false);
       else if ((v = b.getAttribute("data-remai"))) draftFromPicture(v);
       else if (b.getAttribute("data-remaiall")) draftEveryPicture();
-      else if (b.getAttribute("data-remkeepall") && state.rem && state.rem.report) {
-        var kn = 0, ke = 0;
-        state.rem.report.needs.forEach(function (n) {
-          if (n.type !== "alt" && !(n.type === "title" && n.draft)) return;
-          var a = state.rem.answers[n.id] || {};
-          if (a.decorative || (a.text || "").trim()) { if (!state.rem.kept[n.id]) kn++; state.rem.kept[n.id] = true; } else ke++;
-        });
-        say("Kept " + kn + (kn === 1 ? " draft" : " drafts") + "." + (ke ? " " + ke + (ke === 1 ? " picture has" : " pictures have") + " no words yet, so " + (ke === 1 ? "it is" : "they are") + " still left." : ""));
-        remRefresh();
-        var kb = root.querySelector("[data-remkeepall]"); if (kb) kb.focus();
-      }
-      else if ((v = b.getAttribute("data-remkeep")) && state.rem) { state.rem.kept[v] = !state.rem.kept[v]; paintProgress(); }
       else if (b.getAttribute("data-remshow") && state.rem) { state.rem.drafting = null; remRefresh(); var h1 = document.getElementById("lib-rem-h"); if (h1) h1.focus(); }
       else if ((v = b.getAttribute("data-remzoom")) && state.rem) {
         var at0 = +b.getAttribute("data-remat") || 0;

@@ -1144,3 +1144,71 @@ publish question and its separate document fields are gone. Mockup: https://clau
 - **The two summit refresh notes** (`noncredit-summit-in-motion`, `noncredit-summit-cpl-slides`) were cleared on Sam's
   *"yes, clear them"* by migration `2026-11-01_library_summit_refresh_notes.sql` (the side session's #2644, before-values
   in its rollback). The summit met on October 8.
+
+## Every draft applied, and a PDF written (S553 SkyPinwheel, 2026-11-02)
+
+- **The ask.** Sam, opening the session: *"Can you have a look at the COBI Library and make sure we can remediate any
+  type of file uploaded. A team member tried a pdf on Friday and it didn't seem to work. I think it should do a full
+  remediation without waiting for confirmation on each element but then present the elements remediated as it does
+  now for any edits needed."* The Friday PDF got S513's read-only report: what it carries, the program that made it,
+  the export steps and *Choose the source .pptx*, with no download. Correct, and it read as nothing happening.
+- **A report that applies nothing is a report of work to do.** Keep and Keep all asked the person to confirm each draft
+  before the file took it, so a deck with twenty pictures was twenty clicks from done. Now every answer with words is in
+  the file from the start: the alt texts, the slide titles, the sheet names, the contrast fixes, a PDF's title. The
+  report shows them under *Remediated for you, to edit as needed*, each with its field, and *Needs you* keeps only what
+  has no words yet or needs a person in the program. The bar counts a draft as fixed by the page until an edit makes it
+  the person's (`edited`, not `kept`); `remBy` is the one place that says which. Sam's purpose for the bar stands: what
+  is left is what to automate next.
+- **What a browser can write into a PDF.** Its title, its language and whether a reader shows the title are entries in
+  the Info dictionary and the catalog. They are written the way Acrobat saves, as an incremental update: the original
+  bytes untouched, the changed objects appended, then a cross-reference section pointing back at the last `startxref`.
+  The section must take the file's own form, a table or a stream: 51 of the team's 55 PDFs use streams (Office, linearized,
+  with /Prev chains up to 27 deep), 4 tables (Quartz, Chromium, two from Acrobat). A table update starts at object 0
+  with the free entry, or pypdf suspects the off-by-one of a broken writer. The XMP's `dc:title` is rewritten too,
+  uncompressed, since Acrobat reads it first when both are there.
+- **Read the newest definition of each object, never the first.** An incremental update keeps every earlier version
+  in the file, so the first `/Type/Catalog` or `/Type/Page` is often stale: the object index maps each number to the
+  definition furthest into the file, top-level or inside an object stream (parsed by its `/N` and `/First` header),
+  and the page count reads the Pages root's `/Count`. Counting `/Type/Page` over the file read 50 pages on a 13-page
+  handbook.
+- **`endstream` reads as a stream's start in a file that ends lines with LF.** `/stream\r?\n/` matched inside
+  `endstream\n` and took the next bytes as a second XML stream, so the metadata's body read *endobj*; `\bstream` fixes
+  it. Office's `\r\nendstream\r` never showed it.
+- **PDFDocEncoding's upper half.** A literal `/Title` with an en dash holds 0x85, which is not Latin-1; without the
+  map the report printed a control character. Hex strings carry their own BOM.
+- **What stays at the source, said in words.** Tags (the structure a screen reader follows), a tagged PDF's pictures
+  with no `/Alt`, and a scan's text cannot be made here; each is a *Needs you* item with the steps, the Library record
+  that may hold the source, *Choose the source*, and a box to tick when done. An untagged PDF is not shown passing the
+  alt-text and headings checks it cannot take (`checksFor(ext, report)` drops them); a scan drops tags too. An encrypted
+  PDF is read and never written, and says so. A language other than English is written as English unless the person
+  clears the box, since the one such file in the corpus (the Law TMC, `/Lang(fr)`) is English.
+- **Every kind of file says what happens to it.** A file not offered Remediate used to show two other choices and no
+  word why. The panel now says what it is and the step: save a `.ppt` as `.pptx` in PowerPoint, export Keynote to
+  PowerPoint, a picture is remediated where it is used, a video needs captions. Macro-enabled and slideshow packages
+  (`.pptm`, `.docm`, `.xlsm`, `.ppsx`) read as their plain kin and come back under their own extension and MIME type.
+- **Verified on the real corpus.** Every PDF on disk through `inspect` and `finish` as the page would run them, then
+  pypdf in strict mode and poppler on the result: 7 changed (a Quartz letter and a Chromium sheet took a title, English
+  and the title display; the ELL IET notice and the color palette their title display; the Law TMC English), 48 came
+  back byte-identical, 0 problems, text and tags unchanged on all 55. Node runs the writer with the same
+  `DecompressionStream` the browser uses, so the sweep is the browser's path.
+
+## Moved from the lane (S553 SkyPinwheel, 2026-11-02)
+
+### Regenerate, and the documents a piece is built from (Sam, 2026-10-26; built S490)
+
+Sam: *"I want to make sure I can Regenerate a visual when I either add a document or note to it ... Also, when I want
+to generate a new visual based on a document I upload. Seems like perhaps we should consolidate the Library and CPL
+Opportunity Analysis procedures and sites."* One procedure now serves both: **Revise and remediate** on every record opens the one box with that piece picked (⑪
+below), saving `refresh_note`, `sources` and `regen`; a public piece's draft waits for **Replace the public copy**. **Start a piece** (and Make a visual for anyone but a college) takes
+documents too, so a new visual can start from a document. A session does the rebuild: the scheduled runs read the
+requests (step 6 of [`scheduled_sessions`](../scheduled_sessions.md), which says how each kind of piece is rebuilt), and
+*Copy the request* hands the same paste to a session. A college's CPL Opportunity page gained a notes layer: what a note or
+document asks for goes to `library/cpl-opportunity/notes/<slug>.json`, shown under At a glance, with a draft at
+`<slug>.draft.json` read at `?college=<name>&draft=1`. Schema: `kb/supabase_cpl_library.sql` (sources, regen, two checks).
+Tests: `library` (13, 14, 9, 19), `college_cpl_workbook` (the notes).
+
+- **The Microsoft 365 connector waits on RCCD's approval** (Sam, 2026-10-26). A card whose only file is on SharePoint
+  says to drop in a downloaded copy (S540; lessons, *SharePoint is closed to a session*).
+- **Sam's Sheet 131 rulings:** a Library-only run every two hours on weekdays, 7 a.m. to 5 p.m. Pacific. Not created: Sam, Sheet 153 card 1, *overnight*, left it to the overnight queue (paste in [`scheduled_sessions`](../scheduled_sessions.md)); the college page lives at `library/cpl-opportunity/`. The full text moved verbatim to [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S509)*.
+
+The Coordinator Guide (In development, Draft 1) and the ELL IET and DSP pages (Version 2, the public copies): [`docs/library_lessons.md`](../../library_lessons.md), *Moved from the lane (S518)*.
