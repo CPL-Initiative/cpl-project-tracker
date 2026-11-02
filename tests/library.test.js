@@ -1372,3 +1372,60 @@ block("(20)", function () {
   check("(20) the advice never sends a file to SharePoint for a session to read",
     !/Put it in SharePoint and paste/.test(SRC) && !/put it in SharePoint and paste/.test(SRC));
 });
+
+// ── (21) Finish remediation from the card (S554; Sam, 2026-11-02) ─────────
+// Three of the team's remediations sat at Not filed and In remediation with "no intuitive
+// way" to complete them: the Library keeps the record, never the file, and the card offered
+// only Revise and remediate, which asks a session to rebuild. A record left In remediation
+// now offers Finish remediation, a chooser that opens the report bound to that record, and
+// its download marks that record Remediated (never a second record).
+block("(21)", function () {
+  const writes = [];
+  const STUCK = { id: "stuck1", slug: "sample-resume", title: "Sample Resume", kind: "document", made_on: "2026-10-30", status: "draft",
+    seen_by: "team", home: "not_filed", url: null, file_name: "Sample Resume.pdf", remediation: "in_remediation", versions: [] };
+  const DONE = Object.assign({}, STUCK, { id: "done1", slug: "done-deck", title: "Done deck", file_name: "Done_Remediated.pptx", remediation: "remediated" });
+  const m = loadModule({ phrase: "p", author: "Sam", fetch: function (url, init) {
+    if (init && init.method && init.method !== "GET") {
+      writes.push({ url: url, method: init.method, body: JSON.parse(init.body || "{}") });
+      return response(201, [{}]);
+    }
+    return response(200, [STUCK, DONE]);
+  } });
+  const doc = m.w.document;
+  return Promise.resolve(m.M.activate()).then(settle).then(function () {
+    const card = doc.getElementById("lib-t-stuck1").closest("article");
+    const lab = card.querySelector("label.lib-resume"), input = card.querySelector("input[data-resume=stuck1]");
+    check("(21) ⭐ a record left In remediation offers Finish remediation as its first action, a file chooser for the kinds remediation reads",
+      !!lab && lab.classList.contains("primary") && /^Finish remediation/.test(lab.textContent) && lab.getAttribute("for") === input.id &&
+      input.type === "file" && /\.pdf/.test(input.accept) && /\.pptx/.test(input.accept) && !card.querySelector("[data-revise]"), card.querySelector(".lib-acts").innerHTML.slice(0, 400));
+    check("(21) its card says the Library keeps the record, not the file, and names the file to choose",
+      /In remediation from Sample Resume\.pdf\. The Library keeps the record, not the file: press Finish remediation and choose the file again\./.test(card.textContent), card.textContent.slice(0, 400));
+    const done = doc.getElementById("lib-t-done1").closest("article");
+    check("(21) a remediated record not yet filed makes File it its first action, and says what to do",
+      done.querySelector("[data-file=done1]").classList.contains("primary") && /Put the remediated file in the CPLLibrary folder, then press File it/.test(done.textContent) && !!done.querySelector("[data-revise]"));
+    m.w.JSZip = require("../jszip.min.js");
+    m.w.CPL_REMEDIATE = require("../library_remediate.js");
+    const pdf = makePdf({ creator: "Microsoft Word", title: "" });
+    Object.defineProperty(input, "files", { value: [{ name: "Sample Resume.pdf", arrayBuffer: function () { return Promise.resolve(pdf); } }] });
+    input.dispatchEvent(new m.w.Event("change", { bubbles: true }));
+    const shown = function (n) { return doc.querySelector(".lib-rem [data-remgo]") || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return shown(n - 1); }); };
+    return shown(200);
+  }).then(function () {
+    const rem = doc.querySelector(".lib-rem");
+    check("(21) the chosen file opens the report, bound to its record, and writes no new record",
+      !!rem && /Sample Resume\.pdf/.test(rem.textContent) && m.M._state.rem.recordId === "stuck1" && !writes.some(function (w) { return w.method === "POST"; }), JSON.stringify(writes));
+    let downloaded = null;
+    m.w.URL.createObjectURL = function () { return "blob:x"; };
+    m.w.URL.revokeObjectURL = function () {};
+    m.w.HTMLAnchorElement.prototype.click = function () { downloaded = this.download; };
+    click(m.w, rem.querySelector("[data-remgo]"));
+    const until = function (n) { return (downloaded && writes.some(function (w) { return w.method === "PATCH"; })) || n <= 0 ? Promise.resolve() : new Promise(function (r) { setTimeout(r, 10); }).then(function () { return until(n - 1); }); };
+    return until(200).then(function () { return downloaded; });
+  }).then(function (downloaded) {
+    const patch = writes.filter(function (w) { return w.method === "PATCH"; }).pop();
+    check("(21) ⭐ its download marks that same record Remediated and opens its form for the link",
+      downloaded === "Sample Resume_Remediated.pdf" && !!patch && /id=eq\.stuck1/.test(patch.url) && patch.body.remediation === "remediated" &&
+      m.M._state.formFor === "stuck1" && !!doc.getElementById("lib-addform"), String(downloaded) + " " + JSON.stringify(patch));
+    m.w.close();
+  });
+});

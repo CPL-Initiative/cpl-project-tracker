@@ -1192,6 +1192,27 @@ publish question and its separate document fields are gone. Mockup: https://clau
   back byte-identical, 0 problems, text and tags unchanged on all 55. Node runs the writer with the same
   `DecompressionStream` the browser uses, so the sweep is the browser's path.
 
+## Finish remediation from the card (S554, 2026-11-02)
+
+Sam, opening the session: *"last week, team members tried to use the library to remediate some docs and I guess the
+Library wasn't configured well enough to handle pdfs, etc. They are sitting in the Library and when I go to try to
+complete the remediation, there doesn't seem to be an intuitive way to do that."*
+
+- **Measured (live read, `cpl_library`, 2026-11-02):** three records with `remediation = 'in_remediation'`, all
+  `home = 'not_filed'`, no link: *CPL Focus Group Activities* (`.pptx`, 10-30), *Sample Resume* (`.pdf`, 10-30) and
+  *0900 0945 Welcome and Introduction* (`.pptx`, 10-29). None reached a download. The PDF failure itself was fixed by
+  S553 (#2699); the stuck records were not.
+- **The cause:** remediation runs in the browser on the person's own copy, and a record holds a link, never bytes (the
+  tab's standing rule). A record left mid-way therefore has nothing to resume from, and the card's only path was
+  *Revise and remediate*, which opens the one box to request a session rebuild.
+- **The fix:** on a record In remediation with no link, *Revise and remediate* gives way to **Finish remediation**, a
+  `<label>` for a file input that accepts what remediation reads. The chosen file opens the report with the record's id
+  already bound (`pk.recordId`), so `remRecord` writes nothing new, and the download's PATCH lands on that record. The
+  card's flag says *the Library keeps the record, not the file* and names the file to choose. A remediated record with
+  no link makes *File it* primary and says to put the file in the CPLLibrary folder first.
+- **Lesson:** a record that names a state must name the next step from that state. *In remediation* with no action
+  that resumes it reads as broken, the same lesson S553 learned from a report that applied nothing.
+
 ## Moved from the lane (S553 SkyPinwheel, 2026-11-02)
 
 ### Regenerate, and the documents a piece is built from (Sam, 2026-10-26; built S490)
