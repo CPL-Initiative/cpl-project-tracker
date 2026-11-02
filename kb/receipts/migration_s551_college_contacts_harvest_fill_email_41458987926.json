@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-02_college_contacts_harvest_fill_email.sql",
+ "name": "s551_college_contacts_harvest_fill_email",
+ "version": "20261102140944",
+ "sha256": "e8a14a2f4d4473caa877e0dd3380de80f3ddd2594c1134a985651d4c81cf7697",
+ "run": "41458987926",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
