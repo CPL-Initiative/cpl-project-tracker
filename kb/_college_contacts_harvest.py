@@ -248,6 +248,17 @@ def pdf_excerpts(lines: list[str]) -> list[dict]:
     return [e for e in title_excerpts_all(lines) if e["position"]][:MAX_EXCERPTS_A_PAGE]
 
 
+def load_hold(path: str = SEEDS) -> set[str]:
+    """The colleges held out of every batch (the seeds file's `hold`; Sam, Open Asks Sheet 158 card 1,
+    2026-11-02, "map": the thirteen whose every route refused stay with MAP's contacts)."""
+    try:
+        with open(path, encoding="utf-8") as fh:
+            d = json.load(fh)
+    except (OSError, ValueError):
+        return set()
+    return {c for c in ((d.get("hold") or {}).get("colleges") or []) if isinstance(c, str)}
+
+
 def load_seeds(path: str = SEEDS) -> dict[str, list[str]]:
     """{college: [url, ...]} from the seeds file; a missing file is no seeds."""
     try:
@@ -354,9 +365,11 @@ def _rest(path: str, body: dict | None = None):
         return json.loads(r.read().decode() or "null")
 
 
-def batch_order(colleges: list[dict], last_seen: dict[str, str]) -> list[dict]:
-    """Colleges never read first (by name), then the ones read longest ago."""
-    return sorted(colleges, key=lambda c: (c["college"] in last_seen, last_seen.get(c["college"], ""), c["college"]))
+def batch_order(colleges: list[dict], last_seen: dict[str, str], hold: set[str] | None = None) -> list[dict]:
+    """Colleges never read first (by name), then the ones read longest ago; a held college (load_hold) is left out."""
+    hold = hold or set()
+    return sorted((c for c in colleges if c["college"] not in hold),
+                  key=lambda c: (c["college"] in last_seen, last_seen.get(c["college"], ""), c["college"]))
 
 
 def read_last_seen() -> dict[str, str]:
@@ -404,7 +417,7 @@ def cmd_read(a) -> int:
         want = [w.strip().lower() for w in a.colleges.split(";") if w.strip()]
         chosen = [c for c in allc if any(w in c["college"].lower() for w in want)]
     else:
-        chosen = batch_order(allc, last_read(read_last_seen(), read_history(a.out)))[: a.batch]
+        chosen = batch_order(allc, last_read(read_last_seen(), read_history(a.out)), load_hold())[: a.batch]
     out_dir = os.path.join(a.out, a.run)
     os.makedirs(out_dir, exist_ok=True)
     f = Fetcher(int(os.environ.get("HARVEST_DELAY_MS", "4000")))

@@ -478,6 +478,87 @@ def unread_row(key, title, tab, err):
             "error": err, "sources": []}
 
 
+
+
+# ── the building references (S552, 2026-11-02): the CPL Commons' three cards that are not yet a reference with a
+# definition of complete. Each carries a count with no universe (the tab draws no meter), the machine stamp of the file
+# it read, and its sources; a file that cannot be read is null beside its error, never a zero (the S343 rule).
+
+def building_credentials(root):
+    """Industry credentials: the credential watch's catalog (kb/it_ai_credential_catalog.json)."""
+    rel = "kb/it_ai_credential_catalog.json"
+    d = load_json(root, rel)
+    st = d.get("_stats") or {}
+    inp = d.get("_inputs") or {}
+    n, issuers = st.get("credentials"), st.get("issuers")
+    at = inp.get("watch_verified_on") or inp.get("cos_synced_at")
+    if at and len(str(at)) == 10:
+        at = str(at) + "T00:00:00Z"
+    return {"key": "credentials", "title": "Industry credentials", "tab": "#exhibits",
+            "links": [{"href": "#exhibits", "text": "Open Exhibits"}],
+            "pair": [{"n": n, "of": None, "words": "credentials from %s issuers" % fmt_int(issuers), "open": "#exhibits"}],
+            "tests": ["issuer-published"],
+            "facts": {"credentials": n, "issuers": issuers, "in_map": st.get("in_map"), "articulated": st.get("articulated"),
+                      "with_issuer_skills": st.get("with_issuer_skills"), "tech_giant": st.get("tech_giant_credentials")},
+            "machine": {"what": "the credential watch's catalog", "at": at, "every_hours": None}, "sources": [rel]}
+
+
+def building_outcomes(root):
+    """Course outcomes: every committed outline read under kb/course_outcomes/<college>/read_*.json."""
+    files = sorted(glob.glob(os.path.join(root, "kb", "course_outcomes", "*", "read_*.json")))
+    if not files:
+        raise FileNotFoundError("kb/course_outcomes/*/read_*.json")
+    outcomes, courses, colleges, latest = 0, 0, set(), ""
+    for f in files:
+        with open(f, encoding="utf-8") as fh:
+            d = json.load(fh)
+        sm = d.get("summary") or {}
+        o = sm.get("outcomes")
+        if isinstance(o, int):
+            outcomes += o
+        for r in d.get("rows") or []:
+            if isinstance(r, dict) and r.get("outcomes"):
+                courses += 1
+                for c in r.get("named_by") or []:
+                    colleges.add(c)
+        at = str(d.get("at") or "")
+        if at > latest:
+            latest = at
+    return {"key": "outcomes", "title": "Course outcomes", "tab": "#coci-lookup",
+            "links": [{"href": "#coci-lookup", "text": "Open the Courses List"}],
+            "pair": [{"n": outcomes, "of": None, "words": "outcomes read from %s courses at %d colleges" % (fmt_int(courses), len(colleges)), "open": "#coci-lookup"}],
+            "tests": ["read from the public outline"],
+            "facts": {"outcomes": outcomes, "courses": courses, "colleges": sorted(colleges), "reads": len(files)},
+            "machine": {"what": "the last outline read", "at": latest or None, "every_hours": None},
+            "sources": ["kb/course_outcomes/*/read_*.json"]}
+
+
+def building_skills(root):
+    """Skills: the credentials whose issuer publishes a skills list, in the same catalog."""
+    rel = "kb/it_ai_credential_catalog.json"
+    d = load_json(root, rel)
+    st = d.get("_stats") or {}
+    inp = d.get("_inputs") or {}
+    at = inp.get("watch_verified_on") or inp.get("cos_synced_at")
+    if at and len(str(at)) == 10:
+        at = str(at) + "T00:00:00Z"
+    return {"key": "skills", "title": "Skills", "tab": None, "links": [],
+            "pair": [{"n": st.get("with_issuer_skills"), "of": None, "words": "credentials list their issuer's skills so far", "open": None}],
+            "tests": ["issuer-published"],
+            "facts": {"with_issuer_skills": st.get("with_issuer_skills")},
+            "machine": {"what": "the credential watch's catalog", "at": at, "every_hours": None}, "sources": [rel]}
+
+
+def fmt_int(n):
+    return "{:,}".format(n) if isinstance(n, int) else "an unknown number of"
+
+
+BUILDING = [
+    ("credentials", "Industry credentials", "#exhibits", building_credentials),
+    ("outcomes", "Course outcomes", "#coci-lookup", building_outcomes),
+    ("skills", "Skills", None, building_skills),
+]
+
 def build(root):
     rows = []
     for key, title, tab, fn in ROWS:
@@ -486,7 +567,14 @@ def build(root):
         except Exception as e:  # noqa: BLE001
             row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
         rows.append(row)
-    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows}
+    building = []
+    for key, title, tab, fn in BUILDING:
+        try:
+            row = fn(root)
+        except Exception as e:  # noqa: BLE001
+            row = unread_row(key, title, tab, "%s: %s" % (type(e).__name__, e))
+        building.append(row)
+    return {"schema": SCHEMA, "written_at": iso_now(), "rows": rows, "building": building}
 
 
 def main(argv=None):

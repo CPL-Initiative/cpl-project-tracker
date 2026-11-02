@@ -92,6 +92,15 @@ def test_batch_order():
     assert got == ["B", "D", "C", "A"], got
 
 
+def test_batch_order_leaves_a_held_college_out():
+    """Sam, Sheet 158 card 1 (2026-11-02, "map"): a college in the seeds file's hold never enters a batch."""
+    cs = [{"college": "A"}, {"college": "B"}, {"college": "C"}]
+    got = [c["college"] for c in h.batch_order(cs, {}, {"B"})]
+    assert got == ["A", "C"], got
+    assert "Los Angeles City College" in h.load_hold(), "the committed hold names the thirteen refused colleges"
+    assert len(h.load_hold()) == 13, h.load_hold()
+
+
 def test_batch_order_counts_a_read_that_found_no_one(tmp=None):
     import tempfile, json as _j
     root = tempfile.mkdtemp()

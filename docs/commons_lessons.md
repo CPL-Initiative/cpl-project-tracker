@@ -440,6 +440,15 @@ done"). The remaining work was CR's bands and the norms note's bookkeeping.
   `position: absolute; left: 13px; top: 16px` between publishes, the trace of a drag in the editor on a fill page; the
   republish dropped it and said so. Read the canvas again before every publish; the view context's `edits` count says
   when someone touched it.
+- **A look is a token layer, even when it is someone else's.** The CPL Commons tab is the one COBI tab in Malone's
+  look (Sam, Sheet 158). The palette went in once, as `--cmn` tokens scoped to `#tab-commons`, every rule below it
+  reading a token; the dark theme maps each role onto a First Light dark token instead of a second palette. The
+  "no raw hex in the injected CSS" test kept its teeth by reading the rule block alone and a new check reads the token
+  block, so a hex can live in exactly one place.
+- **A card needs a session side and a machine side.** The status file gives a card its pair and stamp; the run log
+  gives it *Your decision*, *Recently* and *Next*. A reference with no run log still draws, with its machine stamp as
+  Recently and no Next, which is the truth of it. The three building references got `building` rows rather than a
+  place in `rows`, because the builder's test holds `rows` to a definition of complete they do not have yet.
 - **The sheet builder's test needs a fixture per predicate.** S551's Sheet 157 predicate shipped without one, so the
   coverage test read 29 of 30 before this run touched it; both predicates now have fixtures and the test passes 30 of 30.
 
@@ -457,3 +466,52 @@ the first of one per common reference (`scripts/queue_status.py --project`); che
 `docs/commons_lessons.md`.
 
 **Step 2, the run logs (S423):** `kb/status/exhibit.json`, `course.json`, `cr.json` and `subjects.json` carry a session stamp, the lane's NEXT as the next step and no calls (nothing on any of the four waits on Sam); checkpoint step 12 names them, stamped with `scripts/queue_status.py --project <id> --stamp`, and refreshes the ones a run touched. A run log older than a week reads stale on the tab, which is true of a reference no session worked.
+
+### Step 3's three Progress views (moved from the lane, 2026-11-02, S552)
+
+**Step 3's first Progress view, Subjects (S425, cpl-project-tracker#2260).** Sam, 2026-10-19: *"Can you develop a
+dash for CSR similar to the one you created for PR? Seems like each of our Commons consolidation projects should
+follow the same process"*; his ask moved Subjects ahead of Exhibit, Course and CR in the ruled order. The tab opens on
+Progress, drawn by the shared module from its own definitions (a card per step, the procedures under the cards, the
+findings), and a count opens the table with its filter through `#canonical-subj4/<filter>`, the deep link behind a
+count; the Commons row's counts link the same way. The second host proved the contract: a 60-line host object, its
+own section classes, no change to the module but an optional second word per part. Lane:
+[common-subjects-reference](common-subjects-reference.md).
+
+**Step 3's second Progress view, Exhibit (S436, 2026-10-20).** The Common Exhibit Reference tab gains a fourth view,
+*Progress*, first in its row; the tab still opens on Needs you (S413), so nothing a curator lands on moved. The
+definitions live in `exhibit_progress.js`, loaded with `commons_progress.js` the first time the view opens. **One
+definition, two readers:** the headline pair and the auditor's tallies come from the Exhibit row of
+`kb/status/commons.json` (the builder now writes `map_titles`, `unclassified`, `left_map`, `below_80`, `below_60`), so
+the Commons row and the view cannot disagree; the rest is the tab's live state lent through an `api` (last night's
+procedures report, the Unclassified, No issuer and Merge confirms queues, the lane switch). Definition of complete,
+carried from the Commons row: a title carries a review stamp, a person's or a procedure's cohort's (1,729 of 4,915).
+Five milestones (every MAP title classified, the held titles decided, an issuer for every credential, the reference
+matches MAP, every title stamped) and eight cards. A count opens the lane that lists it, and
+`#credential-reference/<lane>` (progress, held, unc, noiss, merge, procs, all, industry; `needs` and `ref` name a view)
+routes from the address; the Commons row's counts now link there. Guard `tests/exhibit_progress.test.js` (30 checks);
+`npm run a11y -- cer-progress cer-progress-dark` passes. The third host needed no change to the module.
+
+**RULED (Sam, Open Asks Sheet 107 card 4, 13:09Z 2026-10-20, and again on Sheet 108 card 4, 13:24Z, his own call:
+keep).** The Exhibit Progress view stays as S436 built it: complete = a title with a review stamp (the Commons row's
+pair), and the tab opens on Needs you.
+
+**Step 3's third Progress view, CR (S437, 2026-10-20).** The Common CR Reference tab gains a view row, *Progress* and
+*Worklist*; the tab still opens on the worklist's Needs a decision. The definitions live in `cr_progress.js`, loaded with
+`commons_progress.js` the first time the view opens. **Complete changed unit:** a *wording* colleges wrote resolves to a
+settled reference when a rung 1 to 4 rule places it or a curator's decision names it (confirmed or not a topic; deferred
+and cleared settle nothing), so the Commons row's pair moved from two group counts (156 by rule, 30 decided) to one:
+**459 of 2,344 wordings, 5,750 of 9,413 articulations** (408 by a rule, 51 more by Sam's 2026-09-20 sitting). The
+builder (`row_cr()`) and the tab (`SETTLES`) apply one rule; the builder reads the committed receipts, and the view's
+Curator decisions card says when the live table and the receipts differ. Milestones walk the head-heavy corpus: the
+rules applied, the top 50, 100 and 250 wordings settled, every wording settled; You are here is the head (44 of 50; the
+six left are the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine
+Performance I). Two new worklist filters back the counts, *No rule or decision* (1,885) and *Name to check* (37), and
+`#cr-reference/<view or filter>` routes from the address. The tab had drawn inside its loading placeholder's inline
+style (a dashed box, muted centered text) since it shipped; the module now clears it on first paint. Guards
+`tests/cr_progress.test.js` (42) and `tests/commons_status_build_test.py` (77, a fixture for the settling rule);
+`npm run a11y -- cr-progress cr-progress-dark` passes. The fourth host needed no change to the module.
+
+**RULED (Sam, Open Asks Sheet 108 card 5, 13:24Z 2026-10-20, his own call: keep; `cpl_memory`
+`sam-sheet-108-rulings-2026-10-20`).** The CR Progress view stays as built: complete = a wording a rule places or a
+curator decides, and the tab opens on its worklist.
