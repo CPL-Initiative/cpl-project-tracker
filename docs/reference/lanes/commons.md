@@ -81,7 +81,8 @@ loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/comm
 
 **NEXT:** carry the opened page's pattern (the progress line, *Needs attention* with an action each, the three question
 groups over one denominator; the mock's Exhibits artboard) to each reference's Progress view, Exhibits first; then the
-Course Progress view (below). The tab's a11y pass (`npm run a11y -- cobi:commons`) re-runs on the new view.
+Course Progress view (below). The a11y pass (`npm run a11y -- cobi:commons`) passes on the new view at both widths (S552,
+after the card links took a 24px target).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons

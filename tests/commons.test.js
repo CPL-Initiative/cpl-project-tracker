@@ -58,6 +58,7 @@ check("dark mode maps every role onto a First Light dark token and invents no co
   /:root\[data-theme=\\?"dark\\?"\] #tab-commons \{[^}]*--cmn-surface:var\(--surface\)[^}]*--cmn-heading:var\(--text-strong\)/.test(tokensBlock)
   && !/data-theme=\\?"dark\\?"\] #tab-commons \{[^}]*#[0-9a-fA-F]{3,8}\b/.test(tokensBlock) && /prefers-color-scheme: dark/.test(tokensBlock));
 check("the word controls are 24px tall, underlined, with no fill", /button\.cmn-word \{ all:unset;[^}]*min-height:24px;[^}]*text-decoration:underline/.test(cssBlock));
+check("a link in a card's name or words row is at least 24px tall (WCAG 2.2 target size)", /\.cmn-card-name a \{[^}]*min-height:24px/.test(cssBlock) && /\.cmn-card-links a, \.cmn-acts a[^{]*\{[^}]*min-height:24px; line-height:24px/.test(cssBlock));
 check("a focus ring is drawn", /:focus-visible \{ outline:2px solid var\(--cmn-accent\)/.test(cssBlock));
 check("single column below 560px", /@media \(max-width: 560px\) \{ \.cmn-cells \{ grid-template-columns:minmax\(0, 1fr\)/.test(cssBlock));
 check("American spelling in the source", !/\b(colour|behaviour|organisation|analyse|centre|cancelled|catalogue|whilst|amongst)\b/i.test(src));
