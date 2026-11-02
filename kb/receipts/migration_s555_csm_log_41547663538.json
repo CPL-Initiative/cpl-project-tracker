@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-02_csm_log.sql",
+ "name": "s555_csm_log",
+ "version": "20261102234650",
+ "sha256": "5cbe9b50e48a3bbc90282b30e5d40b01e0651ab4c4526254b9c6d69faa155263",
+ "run": "41547663538",
+ "status": 201,
+ "response": "[]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
