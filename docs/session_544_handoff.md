@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 543 (SkyAndromeda, Sam's session, live from about 23:12Z 2026-11-01)
 tags: [handoff, sierra, funding, jst, statewide, ess-25-82, commons-list, slo]
 status: current
+superseded: true
+superseded_by: session_545_handoff.md
 ---
 
 # You are Session 544

@@ -473,6 +473,7 @@ Older bullets from the `## Update history` section of `docs/INDEX.md`, moved ver
 
 
 ## INDEX update history, moved 2026-09-29 (S303)
+- 2026-10-31 (side session, SkyCloudberry): the funding requester line (MAP role, landing page, *find title*) and one editable response email signed by the CPL Initiative team (#2619); the Exhibits review card's Back and Accept all (#2620); the landing pages' contacts in the MAP Users tab (#2621); two lane files back under budget, history moved verbatim to their lessons docs.
 
 - **2026-09-26 — S294 (SkyCadence):** narration v3 and `narrate.py` ([#1701](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1701)); the ESL merging procedure sheet, nine items, and four stale open-asks cards retired ([#1702](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1702)); the narrated draft of the funding introduction ([#1703](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1703)); Sam's ESL verdicts, all nine as proposed: the reader fixes, the ladder script's tests, and the data paste with its rollback ([#1704](https://github.com/CPL-Initiative/cpl-project-tracker/pull/1704), `kb/esl_sheet_out/2026-09-26/`); KB note `methodology-hear-a-synthetic-voice-through-a-recognizer`; handoff 295.
 - 2026-09-25 (S291 SkyReel): the funding guide video, a KB note on rendering HTML animation to MP4, handoff 291.

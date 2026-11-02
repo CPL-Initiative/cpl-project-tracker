@@ -1,20 +1,28 @@
 {
   "schema": 1,
-  "session": 542,
-  "moniker": "SkyTriangulum",
+  "session": 544,
+  "moniker": "SkySombrero",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_543_handoff.md",
+  "handoff": "docs/session_545_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-01T22:53:46Z",
+  "written_at": "2026-11-02T02:56:24Z",
   "project": "cr",
   "next_step": {
     "title": "Decide the head, then the course pairing",
     "text": "Six of the 50 wordings with the most articulations wait on a curator: the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine Performance I. Then the sitting Sam ruled on Sheet 3 card 9: pair groups by shared course identity behind the course-count guard, run Jev under the 0.85 gate, and a sheet of 40 to 60."
   },
   "changes": [
+    {
+      "at": "2026-11-02T02:24:00Z",
+      "text": "The List's filter words carry their counts, and Selected joins them (#2675)."
+    },
+    {
+      "at": "2026-11-02T02:01:00Z",
+      "text": "The rung proposals show as suggestions on the List: Suggested groups, Confirm the group writes the drawer's decision, one Dismiss sets a group aside for the visit, and Changed this visit lists what you saved (#2673)."
+    },
     {
       "at": "2026-11-01T21:16:00Z",
       "text": "A List view on the shared engine: one row per wording, the reference renamed in place through the worklist's own save (#2657)."

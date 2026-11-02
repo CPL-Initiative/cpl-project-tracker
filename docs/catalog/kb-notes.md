@@ -15,7 +15,7 @@ related:
 
 Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).
 
-571 document(s).
+572 document(s).
 
 | Title | Type | Status | Created | Updated |
 |---|---|---|---|---|
@@ -156,6 +156,7 @@ Distilled, durable, reusable knowledge — the Obsidian-target lane. Contract: [
 | [A mirror is the non-destructive form of a copy](../kb-notes/methodology-a-mirror-is-the-non-destructive-form-of-a-copy.md) | methodology | published | 2026-08-20 | 2026-08-20 |
 | [A model switch carries its defaults with it, not just its price](../kb-notes/methodology-a-model-switch-carries-its-defaults-not-just-its-price.md) | methodology | published | 2026-09-11 | 2026-09-11 |
 | [A monitor that is not a browser cannot see a browser's failure](../kb-notes/methodology-a-monitor-that-is-not-a-browser-cannot-see-a-browser-failure.md) | methodology | published | 2026-09-17 | 2026-09-17 |
+| [A name a join keys on is a key, whatever the table calls it](../kb-notes/methodology-a-name-a-join-keys-on-is-a-key.md) | methodology | published | 2026-11-02 | 2026-11-02 |
 | [A negative result needs a positive control in the same run](../kb-notes/methodology-a-negative-result-needs-a-positive-control.md) | methodology | published | 2026-08-19 | 2026-08-19 |
 | [A new assertion must fail in the shape the grid counts — or the grid reads "0 failing" over a failed run](../kb-notes/methodology-a-new-assertion-must-fail-in-the-shape-the-grid-counts.md) | methodology | published | 2026-09-18 | 2026-09-18 |
 | [A normalization and the screens that judge it must see the same text](../kb-notes/methodology-a-normalisation-and-its-screens-must-see-the-same-text.md) | methodology | published | 2026-08-13 |  |

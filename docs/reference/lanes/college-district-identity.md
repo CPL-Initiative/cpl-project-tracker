@@ -25,7 +25,10 @@ related:
 `college_short_names.js` (the pages' `cplCollegeShort`) by `kb/_seed_college_short_names.py`; no COBI tab edits it.
 Sam's corrections, 2026-10-30 (PR #2598): *"College of the Desert stays whole"*, *"Cañada keeps its ñ"*, *"City College
 San Francisco"*, *"Sequoias"* unchanged, the old "San Francisco" kept as an alias, and "Berkeley City" and "Riverside"
-fine as they are. The literal rule (clip a trailing College; keep a name that starts with College) differs from the table
+fine as they are. **A changed short keeps the old one as an alias (S544):** the funding roster still names the colleges
+by their prior shorts, so after #2598 City College of San Francisco and College of the Desert fell out of the funding
+join from 2026-10-31 until #2676 (Sam, Sheet 155, *restore*). The join reads aliases now, *Desert* joined *San
+Francisco* in `EXTRA_ALIASES`, and `tests/funding_name_resolver_test.py` fails any roster row left unreached. The literal rule (clip a trailing College; keep a name that starts with College) differs from the table
 on 46 of 118 colleges; Sam keeps the table as the one source (*"I can make those corrections in the table so the
 exceptions don't need to be coded"*). **NEXT: the short-name editor** (Sam: *"I think that's what's held me up
 previously"*): a Short name column on the College Identity tab a signed-in reviewer edits with one Save, a table in

@@ -901,3 +901,7 @@ deploy** (held for Sam: a production deploy). The miss S528 saw (Cabrillo asked,
 the index, not the ranking: the vault's two indexers raced and left 47 of 118 sections; CPLBrain#556 serializes them,
 skips unchanged files before embedding and writes a checksum after its sections. Index rebuilt 16:03Z 2026-10-30
 (187 of 187 chunks).
+
+## S544 (2026-11-02): Sam asked once; she named the 41 and said 30,653
+
+Sam asked the S543 question himself after #2666's deploy. Sierra named the 41 institutions with their counts, said 65 of 106 have met the condition, and gave 30,653 as the statewide JST count: the rollup section did its job. Two rows read *no counts shown*, City College of San Francisco and College of the Desert, which was true to the note and false to MAP. Upstream, the funding join had dropped both colleges after #2598's short names (`cpl_funding_lessons.md`, S544; fixed by #2676). **A rollup row that says "no counts" for a college MAP holds data on is a join failure upstream.** Read such a row as a signal before reading it as an absence. Smaller, for the identity lane: she wrote *Miracosta College*, the identity table's canonical; the college styles itself *MiraCosta College*.

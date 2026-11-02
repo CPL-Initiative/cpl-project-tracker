@@ -386,3 +386,17 @@ FCSH, HLTH, ITIS, OSHA) are discipline drift outside this run, recorded in #2270
   an earlier re-mint vacated, so the first Sheet 107 apply drew six ids twice and the lints job failed. The allocator
   in the three Sheet 107 scripts now treats `er.ever_minted_ids()` and `er.skyview_ids()` as taken, and the window
   was re-applied from the pre-apply files: no reused slot, no duplicate.
+
+## S544 SkySombrero (2026-11-02): the List norms' steps 1 and 2 in the engine
+
+**What shipped.** #2673, the engine's `suggest` slot and the visit's changed set. CR's rung proposals read *Suggested groups*, with Confirm the group; Subjects' open picks read *Suggested picks*, with Confirm this pick. #2675, every filter word carries its count, `counts()` for a tab that already counted (Program Requirements, Courses), `uncounted(id)`, and *Selected* on every List. #2674 rebuilds `kb/status/commons.json` in the nightly procedures run, so the Exhibits tile agrees with Review the same night (it had read 351 held against Review's 1). The norms note records both steps; step 3, bands from a spec's `groupOf(r)`, is next.
+
+**A suggestion never proposes a call a person must make.** The Subjects fixture offered Agricultural Business the code AUTB, which another MQ discipline owns. Confirming it would have written a collision through the same path as every other confirm. The open pick in a collision now gets no suggestion. The general rule: before a machine proposes a fold, run the refusal the write itself would apply (one code, one MQ discipline), and leave anything that fails it to the person.
+
+**A count is honest only when its data has arrived.** S343's rule (a failed read is never an empty list) reaches filter counts: *Suggested folds (0)* before the AI sort's file arrives reads as "no suggestions". `uncounted(id)` leaves the word bare until the data is read, and a test boots the Exhibits List with that file unread to pin it.
+
+**A test that finds a control by its exact label breaks when the label gains a number.** Seven suites found filter words with `txt(b) === t`. They now match the label with or without a trailing count. Match the label's stable part, not its whole text.
+
+**Run a long local test loop in its own worktree.** A loop over 33 suites ran in the checkout while the session switched branches under it, so its results could not be trusted and it was stopped. `git worktree add` in the scratchpad, with `node_modules` linked, keeps the loop on one commit.
+
+**Never put an unmeasured number in a PR body, even as an example.** #2675's first body showed *Needs a decision (156)* and *Decided (30)* as examples; neither was measured. It was corrected to *(n)* within minutes. An example figure in a PR reads as a finding.
