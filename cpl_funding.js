@@ -237,6 +237,12 @@
     // "$75,000 Base", and hangs out of the flow, so a row with a chip centers
     // its amount exactly where a row without one does.
     "td.cf-total .cf-amt { position: relative; display: inline-block; }",
+    "td.cf-total .cf-chipgrp { position: absolute; right: 100%; top: 50%; transform: translateY(-50%); margin-right: 8px;" +
+      " display: inline-flex; gap: 4px; white-space: nowrap; }",
+    "td.cf-total .cf-chipgrp .cf-boundchip { position: static; transform: none; margin: 0; }",
+    // No NC wears the Base / Cap chip's look (Sam, 2026-11-02).
+    "td.cf-total .cf-nonc { padding: 0 7px; font-size: .68rem; font-weight: 400; white-space: nowrap; line-height: 1.55;" +
+      " color: var(--seal-blue-text, #002F6D); border: 1px solid var(--cobalt-on-dark, #7DA1D4); border-radius: 9px; cursor: help; }",
     "td.cf-total .cf-boundchip { position: absolute; right: 100%; top: 50%; transform: translateY(-50%); margin-right: 8px;" +
       " padding: 0 7px; font-size: .68rem; font-weight: 400; white-space: nowrap;" +
       " line-height: 1.55; color: var(--seal-blue-text, #002F6D); border: 1px solid var(--cobalt-on-dark, #7DA1D4);" +
@@ -410,6 +416,8 @@
     ".cplfund-ncreported { margin: 10px 0 0; font-size: .85rem; }",
     ".cplfund-ncoutrow .cf-subname { color: var(--text-muted); }",
     ".cf-conds-nc { display: contents; }",
+    ".cf-conds-ncctl { grid-column: 2 / -1; min-width: 0; }",
+    ".cf-conds-ncctl .cplfund-corow { margin-left: 0; }",
     "@media (max-width: 560px) { .cplfund-prio { grid-template-columns: minmax(0, 1fr); } }",
     // ── the statutory goal spine (§78093.2(d)(1)) ─────────────────────────
     // First Light: warm monochrome base, tokens only, no raw hex. Colour is
@@ -5434,7 +5442,8 @@
     // 2026-10-25: the CO's controls on the noncredit attestation.
     "data-ncattestreject", "data-ncattestconfirm", "data-ncattestremove",
     // 2026-10-27: a MAP team reviewer's Accept and Deny on a waiting request.
-    "data-optinaccept", "data-optindeny", "data-ncattestaccept", "data-ncattestdeny"];
+    "data-optinaccept", "data-optindeny", "data-ncattestaccept", "data-ncattestdeny",
+    "data-optinmail", "data-ncattestmail"];
   var CURATE_IDS = ["cplFundReqAdd", "cplFundTimingAdd", "cplFundReset",
     "cplFundPromote", "cplFundProjSel", "cplFundProjAdd", "cplFundProjArea",
     "cplFundProjCancel", "cplFundProjCreate", "cplFundProjName",
@@ -6448,6 +6457,18 @@
     return ncAttestWrite(college, "PATCH", { status: "confirmed", confirmed_at: nowIso(), confirmed_by: curatorEmail() || "(CO reviewer)", revoked_at: null });
   }
   // Accept and Deny, as the participation request's (acceptOptIn).
+  // The acceptance email again, for a request already confirmed: the same window Accept opens, no write.
+  function mailOptIn(college) {
+    var rev = optinReviewOf(college);
+    if (rev && rev.email && ELIG.optin[college]) openConfirmMail(college, rev, "part");
+  }
+  function mailNcAttest(college) {
+    var rev = ncAttestReviewOf(college), att = ncAttestOf(college);
+    if (rev && rev.attestor_email && ncAttestStanding(att)) {
+      openConfirmMail(college, { email: rev.attestor_email, name: rev.attestor_name, requested_at: rev.requested_at,
+        fiscal_year: att && att.fiscal_year }, "nc");
+    }
+  }
   function acceptNcAttest(college) {
     var rev = ncAttestReviewOf(college), att = ncAttestOf(college);
     var done = function () {
@@ -6844,14 +6865,18 @@
     // institution's: a credit college with a noncredit share meets these for
     // that share alone; a standalone's list above already is this list.
     var ncItems = (!c.nco && ncOutcomesMode() && (c.nc_award || 0) > 0.5) ? ncCondList(college).map(one) : [], ncRow = "";
-    var ncAct = ncAttestShown(c) ? ncAttestOpenHtml(c) + ncAttestCtlHtml(college) : "";
+    var ncOpen = ncAttestShown(c) ? ncAttestOpenHtml(c) : "";
+    var ncCtl = ncAttestShown(c) ? ncAttestCtlHtml(college) : "";
     if (ncItems.length) {
       // Its own row of the grid, so its label and boxes line up under the institution's (Sam, 2026-10-26), and
-      // the Attest word follows the Lead's words, under the second box (Sam, 2026-10-28).
+      // the Attest word follows the Lead's words, under the second box (Sam, 2026-10-28). The attestation's
+      // details and the CO's words sit on a row of their own under the Lead (Sam, 2026-11-02: "Move the NC
+      // Attestation text under the NC item"), spanning the line so the long text never widens the boxes' column.
       ncRow = '<span class="cf-conds-nc"><strong class="cf-conds-h">Noncredit share:</strong>' +
         '<span class="cf-conds-first">' + ncItems[0] + '</span><span class="cf-conds-items">' +
-        ncItems.slice(1).join("") + ncAct + "</span></span>";
-    } else items += ncAct;
+        ncItems.slice(1).join("") + ncOpen + "</span>" +
+        (ncCtl ? '<span class="cf-conds-ncctl">' + ncCtl + "</span>" : "") + "</span>";
+    } else items += ncOpen + ncCtl;
     // The CO's controls ride the same line, for a signed-in reviewer only and
     // never in the public preview (the preview is what a college reads). A
     // self-attestation stands until the CO rejects it (attest-first), so the
@@ -6868,7 +6893,9 @@
           esc(rev.email || "") + (rev.requested_at ? " &middot; " + esc(isoMdy(rev.requested_at)) : "") +
           "</span> " : "") +
         (row.status === "confirmed"
-          ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + k + '">Revoke</button>'
+          ? (rev && rev.email ? '<button type="button" class="cplfund-optbtn" data-optinmail="' + k +
+              '" title="Open the acceptance email again, to copy it">Email</button>' : "") +
+            '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optinrevoke="' + k + '">Revoke</button>'
           : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-optinaccept="' + k + '">Accept</button>' +
             '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-optindeny="' + k + '">Deny</button>') +
         (rev && rev.email && row.status !== "confirmed" ? followWord("data-optinfollow", college, personName(rev.name) || rev.email) : "") +
@@ -7050,7 +7077,9 @@
       ? '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-ncattestaccept="' + k + '">Accept</button>' +
         '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-ncattestdeny="' + k + '">Deny</button>'
       : ncAttestStanding(att)
-      ? '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-ncattestreject="' + k + '">Reject</button>'
+      ? (rev && rev.attestor_email ? '<button type="button" class="cplfund-optbtn" data-ncattestmail="' + k +
+          '" title="Open the acceptance email again, to copy it">Email</button>' : "") +
+        '<button type="button" class="cplfund-optbtn cplfund-colane-no" data-ncattestreject="' + k + '">Reject</button>'
       : '<button type="button" class="cplfund-optbtn cplfund-colane-ok" data-ncattestconfirm="' + k + '">Re-confirm</button>' +
         '<button type="button" class="cplfund-optbtn" data-ncattestremove="' + k + '">Remove</button>';
     // Follow up rides a waiting request, beside Accept and Deny; a standing attestation still offers Reject alone.
@@ -13095,7 +13124,24 @@
   function totalFundsCellHtml(row) {
     var cap = (row.total || 0) / awardDivisor();
     return '<td class="cf-award cf-max cf-total c" title="' + esc("Max award" + awardSpanWords() + ": " + fmtMoney(cap)) + '">' +
-      '<span class="cf-amt">' + fmtMoney(cap) + boundWordHtml(row) + "</span></td>";
+      '<span class="cf-amt">' + fmtMoney(cap) + chipGroupHtml(row) + "</span></td>";
+  }
+  // NO NC (Sam, 2026-11-02: "Add a 'No NC' chip next to our base funding chips
+  // for colleges with no NC funding so we don't need to worry about their NC
+  // attestations"). An institution row whose max award carries no noncredit
+  // share (ncAttestShown's own test, so the chip and the Attest word never
+  // disagree); never on a district subtotal or the Statewide row.
+  // The chips beside the amount ride one group that hangs to its left, so two
+  // never sit on top of each other and the amounts still line up.
+  function chipGroupHtml(row) {
+    var chips = noNcWordHtml(row) + boundWordHtml(row);
+    return chips ? ' <span class="cf-chipgrp">' + chips + "</span>" : "";
+  }
+  function noNcWordHtml(row) {
+    if (!row || !row.college || row.nco || (row.nc_award || 0) > 0.5) return "";
+    return '<span class="cplfund-chip cf-nonc" title="' +
+      esc("No NC: this institution's max award carries no noncredit share, so it has no noncredit conditions " +
+        "and needs no Noncredit CPL Lead attestation.") + '">No NC</span>';
   }
   // The six funding cells, in COLS_COLLEGE's order — ONE definition for the
   // institution rows, the district subtotals and the Statewide row.
@@ -17180,6 +17226,14 @@
     });
     holder.querySelectorAll("[data-ncattestfollow]").forEach(function (b) {
       b.addEventListener("click", function (e) { e.stopPropagation(); followNcAttest(b.getAttribute("data-ncattestfollow")); });
+    });
+    // Email reopens the acceptance email for a confirmed request (Sam, 2026-11-02: after closing the window
+    // "there was no way to open it other than to Reject the request and then Accept again"). It changes no record.
+    holder.querySelectorAll("[data-optinmail]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); mailOptIn(b.getAttribute("data-optinmail")); });
+    });
+    holder.querySelectorAll("[data-ncattestmail]").forEach(function (b) {
+      b.addEventListener("click", function (e) { e.stopPropagation(); mailNcAttest(b.getAttribute("data-ncattestmail")); });
     });
     holder.querySelectorAll("[data-optinfollow]").forEach(function (b) {
       b.addEventListener("click", function (e) { e.stopPropagation(); followOptIn(b.getAttribute("data-optinfollow")); });

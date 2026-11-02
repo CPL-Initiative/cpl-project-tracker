@@ -371,12 +371,13 @@ const REVIEW = [{ key: COLLEGE, college: COLLEGE, fiscal_year: FY, status: "conf
   let det = drill(window, doc, COLLEGE);
   const rows = det ? Array.from(det.querySelectorAll(".cf-conds .cplfund-corow")) : [];
   const nc = rows.find((r) => r.querySelector("[data-ncattestreject]"));
-  check("D1: a signed-in reviewer reads who attested and what the college reported, with Reject alone",
+  // Email reopens the acceptance email beside Reject (Sam, 2026-11-02); it writes nothing.
+  check("D1: a signed-in reviewer reads who attested and what the college reported, with Email and Reject",
     !!nc && /Noncredit attestation 2026-27 by Ben Ko \(NCDEAN\) · ben@mtsac\.edu/.test(flat(nc)) &&
     /4 former noncredit students awarded CPL/.test(flat(nc)) && /portfolio course CCC000123/.test(flat(nc)) &&
     /Lead: Staff, Administrator/.test(flat(nc)) && /assignment: 20% release fall and spring/.test(flat(nc)) &&
     /meets credit CPL colleagues every two weeks/.test(flat(nc)) &&
-    nc.querySelectorAll("button").length === 1 && nc.querySelector("button").textContent === "Reject" &&
+    Array.from(nc.querySelectorAll("button")).map((b) => b.textContent).join(",") === "Email,Reject" &&
     !det.querySelector("[data-ncattestopen]"));
   click(window, nc.querySelector("[data-ncattestreject]"));
   det = drill(window, doc, COLLEGE);
