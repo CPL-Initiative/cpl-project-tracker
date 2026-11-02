@@ -1,0 +1,4233 @@
+{
+  "folded": [
+    {
+      "raw": "Theater Arts Portfolio Review",
+      "assigned": "Theatre Arts",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:09:51.887055+00:00"
+    }
+  ],
+  "superseded": [
+    {
+      "raw": "Advanced AutoCAD",
+      "assigned": "AutoCAD Advanced",
+      "issuer": "Autodesk",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:08.708+00:00",
+      "spellings": [
+        "Advanced AutoCAD"
+      ],
+      "disagreeing": [
+        "Advanced AutoCAD"
+      ],
+      "displaced": [
+        "Advanced AutoCAD"
+      ]
+    },
+    {
+      "raw": "Boatworks 101 Yacht Electrical Systems",
+      "assigned": "Boatworks 101 Yacht Electrical Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:20.323+00:00",
+      "spellings": [
+        "Boatworks 101 Yacht Electrical Systems"
+      ],
+      "disagreeing": [
+        "Boatworks 101 Yacht Electrical Systems"
+      ],
+      "displaced": [
+        "Boatworks 101 — Yacht Electrical Systems"
+      ]
+    },
+    {
+      "raw": "Business Communications",
+      "assigned": "Business Communication",
+      "issuer": "American Council on Education (ACE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:21.483+00:00",
+      "spellings": [
+        "Business Communications"
+      ],
+      "disagreeing": [
+        "Business Communications"
+      ],
+      "displaced": [
+        "Business Communications"
+      ]
+    },
+    {
+      "raw": "C++ Programming II CS 089A Cx",
+      "assigned": "C++ Programming 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:24.707+00:00",
+      "spellings": [
+        "C++ Programming II CS 089A Cx"
+      ],
+      "disagreeing": [
+        "C++ Programming II CS 089A Cx"
+      ],
+      "displaced": [
+        "C++ Programming"
+      ]
+    },
+    {
+      "raw": "CSCI 295\tInternship in Computer Science Discussion",
+      "assigned": "Internship in Computer Science Discussion",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:28.651+00:00",
+      "spellings": [
+        "CSCI 295\tInternship in Computer Science Discussion"
+      ],
+      "disagreeing": [
+        "CSCI 295\tInternship in Computer Science Discussion"
+      ],
+      "displaced": [
+        "Computer Science Internship"
+      ]
+    },
+    {
+      "raw": "CSCI 296C\tInternship in Computer Science - Portfolio Review",
+      "assigned": "Internship in Computer Science",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:30.22+00:00",
+      "spellings": [
+        "CSCI 296C\tInternship in Computer Science - Portfolio Review"
+      ],
+      "disagreeing": [
+        "CSCI 296C\tInternship in Computer Science - Portfolio Review"
+      ],
+      "displaced": [
+        "Computer Science Internship"
+      ]
+    },
+    {
+      "raw": "CULART 044 CBE",
+      "assigned": "Introduction to Baking Skills, Ingredients, and Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:23.163+00:00",
+      "spellings": [
+        "CULART 044 CBE"
+      ],
+      "disagreeing": [
+        "CULART 044 CBE"
+      ],
+      "displaced": [
+        "Restaurant Service and Catering 2"
+      ]
+    },
+    {
+      "raw": "CULART 240 CBE",
+      "assigned": "Procurement, Purchasing and Selection",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:24.451+00:00",
+      "spellings": [
+        "CULART 240 CBE"
+      ],
+      "disagreeing": [
+        "CULART 240 CBE"
+      ],
+      "displaced": [
+        "Restaurant Service and Catering 2"
+      ]
+    },
+    {
+      "raw": "Carpenter’s Training Center CTCNC CARP 109",
+      "assigned": "Welding 2",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:44.963+00:00",
+      "spellings": [
+        "Carpenter’s Training Center CTCNC CARP 109"
+      ],
+      "disagreeing": [
+        "Carpenter’s Training Center CTCNC CARP 109"
+      ],
+      "displaced": [
+        "Welding II"
+      ]
+    },
+    {
+      "raw": "Carpenter’s Training Center CTCNC CARP 284",
+      "assigned": "Welding 2 SMAW",
+      "issuer": "Carpenters Training Committee for Northern California (CTCNC)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:46.077+00:00",
+      "spellings": [
+        "Carpenter’s Training Center CTCNC CARP 284"
+      ],
+      "disagreeing": [
+        "Carpenter’s Training Center CTCNC CARP 284"
+      ],
+      "displaced": [
+        "Welding II SMAW"
+      ]
+    },
+    {
+      "raw": "Construction Fundamentals Lab: Principles and Practices",
+      "assigned": "Construction Fundamentals: Principles and Practices Lab",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:31.803+00:00",
+      "spellings": [
+        "Construction Fundamentals Lab: Principles and Practices"
+      ],
+      "disagreeing": [
+        "Construction Fundamentals Lab: Principles and Practices"
+      ],
+      "displaced": [
+        "Construction Fundamentals"
+      ]
+    },
+    {
+      "raw": "Construction Fundamentals: Principles and Practice",
+      "assigned": "Construction Fundamentals: Principles and Practices",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:32.683+00:00",
+      "spellings": [
+        "Construction Fundamentals: Principles and Practice"
+      ],
+      "disagreeing": [
+        "Construction Fundamentals: Principles and Practice"
+      ],
+      "displaced": [
+        "Construction Fundamentals"
+      ]
+    },
+    {
+      "raw": "Credit By Exam San Diego City College",
+      "assigned": "Basic Refrigeration & AC Lab",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:59.788+00:00",
+      "spellings": [
+        "Credit By Exam San Diego City College"
+      ],
+      "disagreeing": [
+        "Credit By Exam San Diego City College"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ]
+    },
+    {
+      "raw": "Credit By Exam at Mesa",
+      "assigned": "Basic Computer Keyboarding",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:56.411+00:00",
+      "spellings": [
+        "Credit By Exam at Mesa"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Mesa"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ]
+    },
+    {
+      "raw": "Credit By Exam at Saddleback College",
+      "assigned": "Plant Propagation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:58.587+00:00",
+      "spellings": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ]
+    },
+    {
+      "raw": "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing",
+      "assigned": "High-Intermediate Grammar for Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:40.859+00:00",
+      "spellings": [
+        "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing"
+      ],
+      "disagreeing": [
+        "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing"
+      ],
+      "displaced": [
+        "ESL Grammar for Reading and Writing Intermediate"
+      ]
+    },
+    {
+      "raw": "Credit by Exam ESL 121B High-Intermediate Reading and Writing",
+      "assigned": "High-Intermediate Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:43.211+00:00",
+      "spellings": [
+        "Credit by Exam ESL 121B High-Intermediate Reading and Writing"
+      ],
+      "disagreeing": [
+        "Credit by Exam ESL 121B High-Intermediate Reading and Writing"
+      ],
+      "displaced": [
+        "ESL Reading and Writing Intermediate"
+      ]
+    },
+    {
+      "raw": "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing",
+      "assigned": "High-Beginning Grammar for Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:39.731+00:00",
+      "spellings": [
+        "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing"
+      ],
+      "disagreeing": [
+        "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing"
+      ],
+      "displaced": [
+        "ESL Grammar for Reading and Writing Beginning"
+      ]
+    },
+    {
+      "raw": "Credit by Exam ESL 131B High-Beginning Reading and Writing",
+      "assigned": "High-Beginning Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:42.3+00:00",
+      "spellings": [
+        "Credit by Exam ESL 131B High-Beginning Reading and Writing"
+      ],
+      "disagreeing": [
+        "Credit by Exam ESL 131B High-Beginning Reading and Writing"
+      ],
+      "displaced": [
+        "ESL Reading and Writing Beginning"
+      ]
+    },
+    {
+      "raw": "Credit by Exam SPAN 1B Elementary Spanish",
+      "assigned": "Elementary Spanish 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:11.075+00:00",
+      "spellings": [
+        "Credit by Exam SPAN 1B Elementary Spanish"
+      ],
+      "disagreeing": [
+        "Credit by Exam SPAN 1B Elementary Spanish"
+      ],
+      "displaced": [
+        "Elementary Spanish 1"
+      ]
+    },
+    {
+      "raw": "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO",
+      "assigned": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing: 30-UO",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:18.267+00:00",
+      "spellings": [
+        "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO"
+      ],
+      "disagreeing": [
+        "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO"
+      ],
+      "displaced": [
+        "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing"
+      ]
+    },
+    {
+      "raw": "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO",
+      "assigned": "Patient-Centered Care 3 and Transition to Professional Practice: 30-UO",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:19.627+00:00",
+      "spellings": [
+        "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO"
+      ],
+      "disagreeing": [
+        "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO"
+      ],
+      "displaced": [
+        "Patient-Centered Care 3 and Transition to Professional Practice"
+      ]
+    },
+    {
+      "raw": "Credit by Exam-Elementary American Sign Language 1",
+      "assigned": "Elementary American Sign Language 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:49.643+00:00",
+      "spellings": [
+        "Credit by Exam-Elementary American Sign Language 1"
+      ],
+      "disagreeing": [
+        "Credit by Exam-Elementary American Sign Language 1"
+      ],
+      "displaced": [
+        "American Sign Language 1"
+      ]
+    },
+    {
+      "raw": "Credit by Exam: Elementary American Sign Language II",
+      "assigned": "Elementary American Sign Language 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:52.355+00:00",
+      "spellings": [
+        "Credit by Exam: Elementary American Sign Language II"
+      ],
+      "disagreeing": [
+        "Credit by Exam: Elementary American Sign Language II"
+      ],
+      "displaced": [
+        "American Sign Language 2"
+      ]
+    },
+    {
+      "raw": "Credit by Exam: Spanish 3 (SPA-3)",
+      "assigned": "Intermediate Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:43.195+00:00",
+      "spellings": [
+        "Credit by Exam: Spanish 3 (SPA-3)"
+      ],
+      "disagreeing": [
+        "Credit by Exam: Spanish 3 (SPA-3)"
+      ],
+      "displaced": [
+        "Spanish Intermediate"
+      ]
+    },
+    {
+      "raw": "Criminal Justice Written Communication",
+      "assigned": "Written Criminal Justice Communications",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:34.516+00:00",
+      "spellings": [
+        "Criminal Justice Written Communication"
+      ],
+      "disagreeing": [
+        "Criminal Justice Written Communication"
+      ],
+      "displaced": [
+        "Criminal Justice Written Communication"
+      ]
+    },
+    {
+      "raw": "Critical Thinking and the Nursing Process II",
+      "assigned": "Critical Thinking and the Nursing Process 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:36.907+00:00",
+      "spellings": [
+        "Critical Thinking and the Nursing Process II"
+      ],
+      "disagreeing": [
+        "Critical Thinking and the Nursing Process II"
+      ],
+      "displaced": [
+        "Critical Thinking and the Nursing Process"
+      ]
+    },
+    {
+      "raw": "DANCEST 302 - Choreography II",
+      "assigned": "Choreography 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:25.891+00:00",
+      "spellings": [
+        "DANCEST 302 - Choreography II"
+      ],
+      "disagreeing": [
+        "DANCEST 302 - Choreography II"
+      ],
+      "displaced": [
+        "Choreography"
+      ]
+    },
+    {
+      "raw": "Elementary American Sign Language I ASL 001 Cx",
+      "assigned": "Elementary American Sign Language 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:49.643+00:00",
+      "spellings": [
+        "Elementary American Sign Language I ASL 001 Cx"
+      ],
+      "disagreeing": [
+        "Elementary American Sign Language I ASL 001 Cx"
+      ],
+      "displaced": [
+        "American Sign Language 1"
+      ]
+    },
+    {
+      "raw": "Elementary American Sign Language II ASL 002 Cx",
+      "assigned": "Elementary American Sign Language 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:52.355+00:00",
+      "spellings": [
+        "Elementary American Sign Language II ASL 002 Cx"
+      ],
+      "disagreeing": [
+        "Elementary American Sign Language II ASL 002 Cx"
+      ],
+      "displaced": [
+        "American Sign Language 2"
+      ]
+    },
+    {
+      "raw": "Elementary Hmong I",
+      "assigned": "Elementary Hmong 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:18.332+00:00",
+      "spellings": [
+        "Elementary Hmong I"
+      ],
+      "disagreeing": [
+        "Elementary Hmong I"
+      ],
+      "displaced": [
+        "Hmong 1"
+      ]
+    },
+    {
+      "raw": "Elementary Hmong II",
+      "assigned": "Elementary Hmong 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:19.363+00:00",
+      "spellings": [
+        "Elementary Hmong II"
+      ],
+      "disagreeing": [
+        "Elementary Hmong II"
+      ],
+      "displaced": [
+        "Hmong 2"
+      ]
+    },
+    {
+      "raw": "Elementary Japanese",
+      "assigned": "Elementary Japanese 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:21.235+00:00",
+      "spellings": [
+        "Elementary Japanese"
+      ],
+      "disagreeing": [
+        "Elementary Japanese"
+      ],
+      "displaced": [
+        "Japanese 1"
+      ]
+    },
+    {
+      "raw": "Elementary Japanese 01A",
+      "assigned": "Elementary Japanese 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:21.235+00:00",
+      "spellings": [
+        "Elementary Japanese 01A"
+      ],
+      "disagreeing": [
+        "Elementary Japanese 01A"
+      ],
+      "displaced": [
+        "Japanese 1"
+      ]
+    },
+    {
+      "raw": "FONTANA HIGH SCHOOL- Advanced Law Enforcement",
+      "assigned": "Law Enforcement Advanced",
+      "issuer": "Fontana High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:09.987+00:00",
+      "spellings": [
+        "FONTANA HIGH SCHOOL- Advanced Law Enforcement"
+      ],
+      "disagreeing": [
+        "FONTANA HIGH SCHOOL- Advanced Law Enforcement"
+      ],
+      "displaced": [
+        "Advanced Law Enforcement"
+      ]
+    },
+    {
+      "raw": "FREN 101\tFrench 1 - Portfolio Review",
+      "assigned": "Elementary French 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:12.806+00:00",
+      "spellings": [
+        "FREN 101\tFrench 1 - Portfolio Review"
+      ],
+      "disagreeing": [
+        "FREN 101\tFrench 1 - Portfolio Review"
+      ],
+      "displaced": [
+        "French 1"
+      ]
+    },
+    {
+      "raw": "First Semester Vietnamese- Credit by Exam",
+      "assigned": "Elementary Vietnamese 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:54.483+00:00",
+      "spellings": [
+        "First Semester Vietnamese- Credit by Exam"
+      ],
+      "disagreeing": [
+        "First Semester Vietnamese- Credit by Exam"
+      ],
+      "displaced": [
+        "Vietnamese — First Semester"
+      ]
+    },
+    {
+      "raw": "French Level II",
+      "assigned": "Elementary French 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:15.275+00:00",
+      "spellings": [
+        "French Level II"
+      ],
+      "disagreeing": [
+        "French Level II"
+      ],
+      "displaced": [
+        "French — Level 2"
+      ]
+    },
+    {
+      "raw": "Human Resource Management",
+      "assigned": "Human Resources Management",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:48.299+00:00",
+      "spellings": [
+        "Human Resource Management"
+      ],
+      "disagreeing": [
+        "Human Resource Management"
+      ],
+      "displaced": [
+        "Human Resource Management"
+      ]
+    },
+    {
+      "raw": "Intermediate American Sign Language I ASL 003 Cx",
+      "assigned": "Intermediate American Sign Language 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:55.507+00:00",
+      "spellings": [
+        "Intermediate American Sign Language I ASL 003 Cx"
+      ],
+      "disagreeing": [
+        "Intermediate American Sign Language I ASL 003 Cx"
+      ],
+      "displaced": [
+        "American Sign Language Intermediate"
+      ]
+    },
+    {
+      "raw": "Intermediate American Sign Language II ASL 004 Cx",
+      "assigned": "Intermediate American Sign Language 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:56.483+00:00",
+      "spellings": [
+        "Intermediate American Sign Language II ASL 004 Cx"
+      ],
+      "disagreeing": [
+        "Intermediate American Sign Language II ASL 004 Cx"
+      ],
+      "displaced": [
+        "American Sign Language Intermediate"
+      ]
+    },
+    {
+      "raw": "Intermediate Spanish",
+      "assigned": "Intermediate Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:53.163+00:00",
+      "spellings": [
+        "Intermediate Spanish"
+      ],
+      "disagreeing": [
+        "Intermediate Spanish"
+      ],
+      "displaced": [
+        "Spanish Intermediate"
+      ]
+    },
+    {
+      "raw": "Intermediate Spanish I SPAN 003 Cx",
+      "assigned": "Intermediate Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:43.195+00:00",
+      "spellings": [
+        "Intermediate Spanish I SPAN 003 Cx"
+      ],
+      "disagreeing": [
+        "Intermediate Spanish I SPAN 003 Cx"
+      ],
+      "displaced": [
+        "Spanish Intermediate"
+      ]
+    },
+    {
+      "raw": "Introduction to Computer Networks",
+      "assigned": "Introduction to Computer Networking",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:50.412+00:00",
+      "spellings": [
+        "Introduction to Computer Networks"
+      ],
+      "disagreeing": [
+        "Introduction to Computer Networks"
+      ],
+      "displaced": [
+        "Introduction to Computer Networks"
+      ]
+    },
+    {
+      "raw": "Math 103 - CBE",
+      "assigned": "Plane Trigonometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:27.163+00:00",
+      "spellings": [
+        "Math 103 - CBE"
+      ],
+      "disagreeing": [
+        "Math 103 - CBE"
+      ],
+      "displaced": [
+        "College Algebra"
+      ]
+    },
+    {
+      "raw": "Portfolio",
+      "assigned": "Computer Basics",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:02.571+00:00",
+      "spellings": [
+        "Portfolio"
+      ],
+      "disagreeing": [
+        "Portfolio"
+      ],
+      "displaced": [
+        "Portfolio Review"
+      ]
+    },
+    {
+      "raw": "SPAN 103\tSpanish 3 - Industry  Certification",
+      "assigned": "Intermediate Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:30.635+00:00",
+      "spellings": [
+        "SPAN 103\tSpanish 3 - Industry  Certification"
+      ],
+      "disagreeing": [
+        "SPAN 103\tSpanish 3 - Industry  Certification"
+      ],
+      "displaced": [
+        "Spanish 3"
+      ]
+    },
+    {
+      "raw": "SPAN 3",
+      "assigned": "Intermediate Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:30.635+00:00",
+      "spellings": [
+        "SPAN 3"
+      ],
+      "disagreeing": [
+        "SPAN 3"
+      ],
+      "displaced": [
+        "Spanish 3"
+      ]
+    },
+    {
+      "raw": "SUMMIT HIGH SCHOOL- Automotive Maintenance Light Repair 3",
+      "assigned": "Automotive Maintenance & Light Repair",
+      "issuer": "Summit High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:16.205+00:00",
+      "spellings": [
+        "SUMMIT HIGH SCHOOL- Automotive Maintenance Light Repair 3"
+      ],
+      "disagreeing": [
+        "SUMMIT HIGH SCHOOL- Automotive Maintenance Light Repair 3"
+      ],
+      "displaced": [
+        "Automotive Maintenance and Light Repair"
+      ]
+    },
+    {
+      "raw": "Suspension and Steering",
+      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+      "spellings": [
+        "Suspension and Steering"
+      ],
+      "disagreeing": [
+        "Suspension and Steering"
+      ],
+      "displaced": [
+        "Suspension and Steering"
+      ]
+    },
+    {
+      "raw": "Suspension and Steering Systems",
+      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+      "spellings": [
+        "Suspension and Steering Systems"
+      ],
+      "disagreeing": [
+        "Suspension and Steering Systems"
+      ],
+      "displaced": [
+        "Suspension and Steering"
+      ]
+    }
+  ],
+  "revised": [
+    {
+      "raw": "ARC 201 - Architectural Design I",
+      "assigned": "Architectural Design 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:40.243+00:00",
+      "spellings": [
+        "ARC 201 - Architectural Design I"
+      ],
+      "disagreeing": [
+        "ARC 201 - Architectural Design I"
+      ],
+      "displaced": [
+        "Architectural Design I"
+      ],
+      "supersedes": "Architectural Design I"
+    },
+    {
+      "raw": "ARMEN 1: Beginning Armenian",
+      "assigned": "Elementary Armenian 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:59.724+00:00",
+      "spellings": [
+        "ARMEN 1: Beginning Armenian"
+      ],
+      "disagreeing": [
+        "ARMEN 1: Beginning Armenian"
+      ],
+      "displaced": [
+        "Armenian 1"
+      ],
+      "supersedes": "Armenian 1"
+    },
+    {
+      "raw": "ARMEN 2: High-Beginning Armenian",
+      "assigned": "Elementary Armenian 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:00.779+00:00",
+      "spellings": [
+        "ARMEN 2: High-Beginning Armenian"
+      ],
+      "disagreeing": [
+        "ARMEN 2: High-Beginning Armenian"
+      ],
+      "displaced": [
+        "Armenian 2"
+      ],
+      "supersedes": "Armenian 2"
+    },
+    {
+      "raw": "ASL 002: Intermediate American Sign Language: Level 2",
+      "assigned": "Intermediate American Sign Language 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:58.315+00:00",
+      "spellings": [
+        "ASL 002: Intermediate American Sign Language: Level 2"
+      ],
+      "disagreeing": [
+        "ASL 002: Intermediate American Sign Language: Level 2"
+      ],
+      "displaced": [
+        "American Sign Language: Level 2 Intermediate"
+      ],
+      "supersedes": "American Sign Language: Level 2 Intermediate"
+    },
+    {
+      "raw": "ASL 1: Beginning American Sign Language",
+      "assigned": "Elementary American Sign Language 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:49.643+00:00",
+      "spellings": [
+        "ASL 1: Beginning American Sign Language"
+      ],
+      "disagreeing": [
+        "ASL 1: Beginning American Sign Language"
+      ],
+      "displaced": [
+        "American Sign Language 1"
+      ],
+      "supersedes": "American Sign Language 1"
+    },
+    {
+      "raw": "ASL 2: High-Beginning American Sign Language",
+      "assigned": "Elementary American Sign Language 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:52.355+00:00",
+      "spellings": [
+        "ASL 2: High-Beginning American Sign Language"
+      ],
+      "disagreeing": [
+        "ASL 2: High-Beginning American Sign Language"
+      ],
+      "displaced": [
+        "American Sign Language 2"
+      ],
+      "supersedes": "American Sign Language 2"
+    },
+    {
+      "raw": "ASNT Level 1 Thermal (Infrared) Thermography Certification",
+      "assigned": "ASNT Level 1 — Infrared and Thermal Testing",
+      "issuer": "American Society for Nondestructive Testing (ASNT)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:43.395+00:00",
+      "spellings": [
+        "ASNT Level 1 Thermal (Infrared) Thermography Certification"
+      ],
+      "disagreeing": [
+        "ASNT Level 1 Thermal (Infrared) Thermography Certification"
+      ],
+      "displaced": [
+        "ASNT Level I — Infrared and Thermal Testing"
+      ],
+      "supersedes": "ASNT Level I — Infrared and Thermal Testing"
+    },
+    {
+      "raw": "Advanced Medical - Surgical Nursing II Preceptorship - Credit by Exam (NURS 248 )",
+      "assigned": "Advanced Medical-Surgical Nursing 2 Preceptorship",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:38.283+00:00",
+      "spellings": [
+        "Advanced Medical - Surgical Nursing II Preceptorship - Credit by Exam (NURS 248 )"
+      ],
+      "disagreeing": [
+        "Advanced Medical - Surgical Nursing II Preceptorship - Credit by Exam (NURS 248 )"
+      ],
+      "displaced": [
+        "Advanced Medical-Surgical Nursing II Preceptorship"
+      ],
+      "supersedes": "Advanced Medical-Surgical Nursing II Preceptorship"
+    },
+    {
+      "raw": "American Sign Language Intermediate Level - Credit by Exam",
+      "assigned": "Intermediate American Sign Language",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:54.291+00:00",
+      "spellings": [
+        "American Sign Language Intermediate Level - Credit by Exam"
+      ],
+      "disagreeing": [
+        "American Sign Language Intermediate Level - Credit by Exam"
+      ],
+      "displaced": [
+        "American Sign Language Intermediate"
+      ],
+      "supersedes": "American Sign Language Intermediate"
+    },
+    {
+      "raw": "Architectural Design 1A and 1B (2 courses) HS-CNUD",
+      "assigned": "Revit 1-Architectural Drafting",
+      "issuer": "Corona-Norco Unified School District",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:32.315+00:00",
+      "spellings": [
+        "Architectural Design 1A and 1B (2 courses) HS-CNUD"
+      ],
+      "disagreeing": [
+        "Architectural Design 1A and 1B (2 courses) HS-CNUD"
+      ],
+      "displaced": [
+        "Revit I-Architectural Drafting"
+      ],
+      "supersedes": "Revit I-Architectural Drafting"
+    },
+    {
+      "raw": "BT 1: Computer Document Processing I",
+      "assigned": "Computer Document Processing 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:55.467+00:00",
+      "spellings": [
+        "BT 1: Computer Document Processing I"
+      ],
+      "disagreeing": [
+        "BT 1: Computer Document Processing I"
+      ],
+      "displaced": [
+        "Computer Document Processing I"
+      ],
+      "supersedes": "Computer Document Processing I"
+    },
+    {
+      "raw": "BT 28: Microsoft Word I",
+      "assigned": "Microsoft Word 1",
+      "issuer": "Microsoft",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:24.219+00:00",
+      "spellings": [
+        "BT 28: Microsoft Word I"
+      ],
+      "disagreeing": [
+        "BT 28: Microsoft Word I"
+      ],
+      "displaced": [
+        "Microsoft Word I"
+      ],
+      "supersedes": "Microsoft Word I"
+    },
+    {
+      "raw": "BT 29: Microsoft Word II",
+      "assigned": "Microsoft Word 2",
+      "issuer": "Microsoft",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:24.915+00:00",
+      "spellings": [
+        "BT 29: Microsoft Word II"
+      ],
+      "disagreeing": [
+        "BT 29: Microsoft Word II"
+      ],
+      "displaced": [
+        "Microsoft Word II"
+      ],
+      "supersedes": "Microsoft Word II"
+    },
+    {
+      "raw": "CHIN 1: Beginning Chinese",
+      "assigned": "Elementary Chinese 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:01.932+00:00",
+      "spellings": [
+        "CHIN 1: Beginning Chinese"
+      ],
+      "disagreeing": [
+        "CHIN 1: Beginning Chinese"
+      ],
+      "displaced": [
+        "Chinese 1"
+      ],
+      "supersedes": "Chinese 1"
+    },
+    {
+      "raw": "CHIN 2: High-Beginning Chinese",
+      "assigned": "Elementary Chinese 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:02.7+00:00",
+      "spellings": [
+        "CHIN 2: High-Beginning Chinese"
+      ],
+      "disagreeing": [
+        "CHIN 2: High-Beginning Chinese"
+      ],
+      "displaced": [
+        "Chinese 2"
+      ],
+      "supersedes": "Chinese 2"
+    },
+    {
+      "raw": "California State Water Resources Control Board D3, D4, or D5 certification",
+      "assigned": "Water Distribution Operator 2",
+      "issuer": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:42.283+00:00",
+      "spellings": [
+        "California State Water Resources Control Board D3, D4, or D5 certification"
+      ],
+      "disagreeing": [
+        "California State Water Resources Control Board D3, D4, or D5 certification"
+      ],
+      "displaced": [
+        "Water Distribution Operator II"
+      ],
+      "supersedes": "Water Distribution Operator II"
+    },
+    {
+      "raw": "California State Water Resources Control Board T2, T3, T4, or T5 certification",
+      "assigned": "Water Treatment 1",
+      "issuer": "California State Water Resources Control Board (SWRCB)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:43.483+00:00",
+      "spellings": [
+        "California State Water Resources Control Board T2, T3, T4, or T5 certification"
+      ],
+      "disagreeing": [
+        "California State Water Resources Control Board T2, T3, T4, or T5 certification"
+      ],
+      "displaced": [
+        "Water Treatment I"
+      ],
+      "supersedes": "Water Treatment I"
+    },
+    {
+      "raw": "Class Piano I",
+      "assigned": "Class Piano 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:47.915+00:00",
+      "spellings": [
+        "Class Piano I"
+      ],
+      "disagreeing": [
+        "Class Piano I"
+      ],
+      "displaced": [
+        "Class Piano I"
+      ],
+      "supersedes": "Class Piano I"
+    },
+    {
+      "raw": "Class Piano II",
+      "assigned": "Class Piano 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:49.699+00:00",
+      "spellings": [
+        "Class Piano II"
+      ],
+      "disagreeing": [
+        "Class Piano II"
+      ],
+      "displaced": [
+        "Class Piano II"
+      ],
+      "supersedes": "Class Piano II"
+    },
+    {
+      "raw": "Combinded Processes I",
+      "assigned": "Combined Processes 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:53.459+00:00",
+      "spellings": [
+        "Combinded Processes I"
+      ],
+      "disagreeing": [
+        "Combinded Processes I"
+      ],
+      "displaced": [
+        "Combined Processes I"
+      ],
+      "supersedes": "Combined Processes I"
+    },
+    {
+      "raw": "Credit by Exam KINS 025 First Aid, CPR & AED",
+      "assigned": "First Aid, CPR and AED",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:46.82+00:00",
+      "spellings": [
+        "Credit by Exam KINS 025 First Aid, CPR & AED"
+      ],
+      "disagreeing": [
+        "Credit by Exam KINS 025 First Aid, CPR & AED"
+      ],
+      "displaced": [
+        "First Aid, CPR & AED"
+      ],
+      "supersedes": "First Aid, CPR & AED"
+    },
+    {
+      "raw": "Discipline Exam - BIOTECH 002",
+      "assigned": "Biotechnology 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:44.643+00:00",
+      "spellings": [
+        "Discipline Exam - BIOTECH 002"
+      ],
+      "disagreeing": [
+        "Discipline Exam - BIOTECH 002"
+      ],
+      "displaced": [
+        "Biotechnology I"
+      ],
+      "supersedes": "Biotechnology I"
+    },
+    {
+      "raw": "Discipline Exam - CLN ART 101",
+      "assigned": "Culinary Fundamentals 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:56.779+00:00",
+      "spellings": [
+        "Discipline Exam - CLN ART 101"
+      ],
+      "disagreeing": [
+        "Discipline Exam - CLN ART 101"
+      ],
+      "displaced": [
+        "Culinary Fundamentals I"
+      ],
+      "supersedes": "Culinary Fundamentals I"
+    },
+    {
+      "raw": "Discipline Exam - DRAFT 016",
+      "assigned": "Blueprint Reading 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:45.699+00:00",
+      "spellings": [
+        "Discipline Exam - DRAFT 016"
+      ],
+      "disagreeing": [
+        "Discipline Exam - DRAFT 016"
+      ],
+      "displaced": [
+        "Blueprint Reading I"
+      ],
+      "supersedes": "Blueprint Reading I"
+    },
+    {
+      "raw": "ENV 101 - Foundations of Design I",
+      "assigned": "Foundations of Design 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:03.195+00:00",
+      "spellings": [
+        "ENV 101 - Foundations of Design I"
+      ],
+      "disagreeing": [
+        "ENV 101 - Foundations of Design I"
+      ],
+      "displaced": [
+        "Foundations of Design I"
+      ],
+      "supersedes": "Foundations of Design I"
+    },
+    {
+      "raw": "ENV 102 - Foundations of Design II",
+      "assigned": "Foundations of Design 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:04.907+00:00",
+      "spellings": [
+        "ENV 102 - Foundations of Design II"
+      ],
+      "disagreeing": [
+        "ENV 102 - Foundations of Design II"
+      ],
+      "displaced": [
+        "Foundations of Design II"
+      ],
+      "supersedes": "Foundations of Design II"
+    },
+    {
+      "raw": "ENV DES 101 - Foundations of Design I",
+      "assigned": "Foundations of Design 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:03.195+00:00",
+      "spellings": [
+        "ENV DES 101 - Foundations of Design I"
+      ],
+      "disagreeing": [
+        "ENV DES 101 - Foundations of Design I"
+      ],
+      "displaced": [
+        "Foundations of Design I"
+      ],
+      "supersedes": "Foundations of Design I"
+    },
+    {
+      "raw": "Elem Spanish I High School Articulation",
+      "assigned": "Elementary Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:58.355+00:00",
+      "spellings": [
+        "Elem Spanish I High School Articulation"
+      ],
+      "disagreeing": [
+        "Elem Spanish I High School Articulation"
+      ],
+      "displaced": [
+        "Elementary Spanish I"
+      ],
+      "supersedes": "Elementary Spanish I"
+    },
+    {
+      "raw": "Examination for FREN 1A",
+      "assigned": "Elementary French 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:05.363+00:00",
+      "spellings": [
+        "Examination for FREN 1A"
+      ],
+      "disagreeing": [
+        "Examination for FREN 1A"
+      ],
+      "displaced": [
+        "Elementary French"
+      ],
+      "supersedes": "Elementary French"
+    },
+    {
+      "raw": "Examination for FREN 1B",
+      "assigned": "Elementary French 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:07.012+00:00",
+      "spellings": [
+        "Examination for FREN 1B"
+      ],
+      "disagreeing": [
+        "Examination for FREN 1B"
+      ],
+      "displaced": [
+        "Elementary French"
+      ],
+      "supersedes": "Elementary French"
+    },
+    {
+      "raw": "Examination for SPAN 1A",
+      "assigned": "Elementary Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:37.419+00:00",
+      "spellings": [
+        "Examination for SPAN 1A"
+      ],
+      "disagreeing": [
+        "Examination for SPAN 1A"
+      ],
+      "displaced": [
+        "Spanish Beginning"
+      ],
+      "supersedes": "Spanish Beginning"
+    },
+    {
+      "raw": "FRENCH 1: Beginning French",
+      "assigned": "Elementary French 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:12.806+00:00",
+      "spellings": [
+        "FRENCH 1: Beginning French"
+      ],
+      "disagreeing": [
+        "FRENCH 1: Beginning French"
+      ],
+      "displaced": [
+        "French 1"
+      ],
+      "supersedes": "French 1"
+    },
+    {
+      "raw": "FRENCH 2: High-Beginning French",
+      "assigned": "Elementary French 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:14.243+00:00",
+      "spellings": [
+        "FRENCH 2: High-Beginning French"
+      ],
+      "disagreeing": [
+        "FRENCH 2: High-Beginning French"
+      ],
+      "displaced": [
+        "French 2"
+      ],
+      "supersedes": "French 2"
+    },
+    {
+      "raw": "GERMAN 1: Beginning German",
+      "assigned": "Elementary German 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:16.139+00:00",
+      "spellings": [
+        "GERMAN 1: Beginning German"
+      ],
+      "disagreeing": [
+        "GERMAN 1: Beginning German"
+      ],
+      "displaced": [
+        "German 1"
+      ],
+      "supersedes": "German 1"
+    },
+    {
+      "raw": "GERMAN 2: High-Beginning German",
+      "assigned": "Elementary German 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:16.875+00:00",
+      "spellings": [
+        "GERMAN 2: High-Beginning German"
+      ],
+      "disagreeing": [
+        "GERMAN 2: High-Beginning German"
+      ],
+      "displaced": [
+        "German 2"
+      ],
+      "supersedes": "German 2"
+    },
+    {
+      "raw": "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )",
+      "assigned": "Graphic Communications 1 — Orthographic Drawings",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:07.819+00:00",
+      "spellings": [
+        "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )"
+      ],
+      "disagreeing": [
+        "Graphic Communications I -  Orthographic Drawings  - Credit by Exam (ARCH 170 )"
+      ],
+      "displaced": [
+        "Graphic Communications I — Orthographic Drawings"
+      ],
+      "supersedes": "Graphic Communications I — Orthographic Drawings"
+    },
+    {
+      "raw": "HMONG 1: Beginning Hmong",
+      "assigned": "Elementary Hmong 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:18.332+00:00",
+      "spellings": [
+        "HMONG 1: Beginning Hmong"
+      ],
+      "disagreeing": [
+        "HMONG 1: Beginning Hmong"
+      ],
+      "displaced": [
+        "Hmong 1"
+      ],
+      "supersedes": "Hmong 1"
+    },
+    {
+      "raw": "HMONG 2: High-Beginning Hmong",
+      "assigned": "Elementary Hmong 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:19.363+00:00",
+      "spellings": [
+        "HMONG 2: High-Beginning Hmong"
+      ],
+      "disagreeing": [
+        "HMONG 2: High-Beginning Hmong"
+      ],
+      "displaced": [
+        "Hmong 2"
+      ],
+      "supersedes": "Hmong 2"
+    },
+    {
+      "raw": "Haz Mat Technician 1A: Basic Chemistry",
+      "assigned": "Haz Mat Technician 1A: Basic Chemistry",
+      "issuer": "California Specialized Training Institute (CSTI)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:06.659+00:00",
+      "spellings": [
+        "Haz Mat Technician 1A: Basic Chemistry"
+      ],
+      "disagreeing": [
+        "Haz Mat Technician 1A: Basic Chemistry"
+      ],
+      "displaced": [
+        "Haz Mat Technician 1B: Applied Chemistry"
+      ],
+      "supersedes": "Haz Mat Technician 1B: Applied Chemistry"
+    },
+    {
+      "raw": "IC- Engine Performance II",
+      "assigned": "Engine Performance 2 (ASE A8 Engine Performance)",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:14.035+00:00",
+      "spellings": [
+        "IC- Engine Performance II"
+      ],
+      "disagreeing": [
+        "IC- Engine Performance II"
+      ],
+      "displaced": [
+        "Engine Performance II"
+      ],
+      "supersedes": "Engine Performance II"
+    },
+    {
+      "raw": "IC-Engine Performance I",
+      "assigned": "Engine Performance 1 (ASE A8 Engine Performance)",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:09.387+00:00",
+      "spellings": [
+        "IC-Engine Performance I"
+      ],
+      "disagreeing": [
+        "IC-Engine Performance I"
+      ],
+      "displaced": [
+        "Engine Performance I"
+      ],
+      "supersedes": "Engine Performance I"
+    },
+    {
+      "raw": "IW- Architectural II",
+      "assigned": "Ironworker Architectural 2",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:10.259+00:00",
+      "spellings": [
+        "IW- Architectural II"
+      ],
+      "disagreeing": [
+        "IW- Architectural II"
+      ],
+      "displaced": [
+        "Ironworker Architectural II"
+      ],
+      "supersedes": "Ironworker Architectural II"
+    },
+    {
+      "raw": "IW- Architectural III",
+      "assigned": "Ironworker Architectural 3",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:11.051+00:00",
+      "spellings": [
+        "IW- Architectural III"
+      ],
+      "disagreeing": [
+        "IW- Architectural III"
+      ],
+      "displaced": [
+        "Ironworker Architectural III"
+      ],
+      "supersedes": "Ironworker Architectural III"
+    },
+    {
+      "raw": "IW- Structural Steel II",
+      "assigned": "Ironworker Structural Steel 2",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:12.643+00:00",
+      "spellings": [
+        "IW- Structural Steel II"
+      ],
+      "disagreeing": [
+        "IW- Structural Steel II"
+      ],
+      "displaced": [
+        "Ironworker Structural Steel II"
+      ],
+      "supersedes": "Ironworker Structural Steel II"
+    },
+    {
+      "raw": "IW- Welding III",
+      "assigned": "Ironworker Welding 3",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:20.067+00:00",
+      "spellings": [
+        "IW- Welding III"
+      ],
+      "disagreeing": [
+        "IW- Welding III"
+      ],
+      "displaced": [
+        "Ironworker Welding III"
+      ],
+      "supersedes": "Ironworker Welding III"
+    },
+    {
+      "raw": "Intermediate Automotive Collision Repair I - Credit by Exam (ACRP 4C )",
+      "assigned": "Intermediate Automotive Collision Repair 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:11.803+00:00",
+      "spellings": [
+        "Intermediate Automotive Collision Repair I - Credit by Exam (ACRP 4C )"
+      ],
+      "disagreeing": [
+        "Intermediate Automotive Collision Repair I - Credit by Exam (ACRP 4C )"
+      ],
+      "displaced": [
+        "Automotive Collision Repair 1 Intermediate"
+      ],
+      "supersedes": "Automotive Collision Repair 1 Intermediate"
+    },
+    {
+      "raw": "Intermediate Automotive Collision Repair II - Credit by Exam (ACRP 4D )",
+      "assigned": "Intermediate Automotive Collision Repair 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:12.971+00:00",
+      "spellings": [
+        "Intermediate Automotive Collision Repair II - Credit by Exam (ACRP 4D )"
+      ],
+      "disagreeing": [
+        "Intermediate Automotive Collision Repair II - Credit by Exam (ACRP 4D )"
+      ],
+      "displaced": [
+        "Automotive Collision Repair 2 Intermediate"
+      ],
+      "supersedes": "Automotive Collision Repair 2 Intermediate"
+    },
+    {
+      "raw": "Intermediate Medical - Surgical Nursing I - Credit by Exam (NURS 240 )",
+      "assigned": "Intermediate Medical-Surgical Nursing 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:51.491+00:00",
+      "spellings": [
+        "Intermediate Medical - Surgical Nursing I - Credit by Exam (NURS 240 )"
+      ],
+      "disagreeing": [
+        "Intermediate Medical - Surgical Nursing I - Credit by Exam (NURS 240 )"
+      ],
+      "displaced": [
+        "Medical-Surgical Nursing 1 Intermediate"
+      ],
+      "supersedes": "Medical-Surgical Nursing 1 Intermediate"
+    },
+    {
+      "raw": "JAPAN 1: Beginning Japanese",
+      "assigned": "Elementary Japanese 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:21.235+00:00",
+      "spellings": [
+        "JAPAN 1: Beginning Japanese"
+      ],
+      "disagreeing": [
+        "JAPAN 1: Beginning Japanese"
+      ],
+      "displaced": [
+        "Japanese 1"
+      ],
+      "supersedes": "Japanese 1"
+    },
+    {
+      "raw": "JAPAN 2: High-Beginning Japanese",
+      "assigned": "Elementary Japanese 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:23.403+00:00",
+      "spellings": [
+        "JAPAN 2: High-Beginning Japanese"
+      ],
+      "disagreeing": [
+        "JAPAN 2: High-Beginning Japanese"
+      ],
+      "displaced": [
+        "Japanese 2"
+      ],
+      "supersedes": "Japanese 2"
+    },
+    {
+      "raw": "Keyboarding II - Credit by Exam (BUS 146 )",
+      "assigned": "Keyboarding 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:21.579+00:00",
+      "spellings": [
+        "Keyboarding II - Credit by Exam (BUS 146 )"
+      ],
+      "disagreeing": [
+        "Keyboarding II - Credit by Exam (BUS 146 )"
+      ],
+      "displaced": [
+        "Keyboarding II"
+      ],
+      "supersedes": "Keyboarding II"
+    },
+    {
+      "raw": "MC-1728-0012 Military Police Basic",
+      "assigned": "Basic Military Police",
+      "issuer": "American Council on Education (ACE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:11.811+00:00",
+      "spellings": [
+        "MC-1728-0012 Military Police Basic"
+      ],
+      "disagreeing": [
+        "MC-1728-0012 Military Police Basic"
+      ],
+      "displaced": [
+        "Military Police Basic"
+      ],
+      "supersedes": "Military Police Basic"
+    },
+    {
+      "raw": "MUSA-21A VOICE I",
+      "assigned": "Voice 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:40.619+00:00",
+      "spellings": [
+        "MUSA-21A VOICE I"
+      ],
+      "disagreeing": [
+        "MUSA-21A VOICE I"
+      ],
+      "displaced": [
+        "Voice I"
+      ],
+      "supersedes": "Voice I"
+    },
+    {
+      "raw": "MUSA-25A GUITAR I",
+      "assigned": "Guitar 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:08.987+00:00",
+      "spellings": [
+        "MUSA-25A GUITAR I"
+      ],
+      "disagreeing": [
+        "MUSA-25A GUITAR I"
+      ],
+      "displaced": [
+        "Guitar I"
+      ],
+      "supersedes": "Guitar I"
+    },
+    {
+      "raw": "MUSA-27A CLASS PIANO I",
+      "assigned": "Class Piano 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:47.915+00:00",
+      "spellings": [
+        "MUSA-27A CLASS PIANO I"
+      ],
+      "disagreeing": [
+        "MUSA-27A CLASS PIANO I"
+      ],
+      "displaced": [
+        "Class Piano I"
+      ],
+      "supersedes": "Class Piano I"
+    },
+    {
+      "raw": "Math 095 CBE",
+      "assigned": "Algebra Intermediate",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:49.155+00:00",
+      "spellings": [
+        "Math 095 CBE ",
+        "Math 095 CBE"
+      ],
+      "disagreeing": [
+        "Math 095 CBE ",
+        "Math 095 CBE"
+      ],
+      "displaced": [
+        "Intermediate Algebra"
+      ],
+      "supersedes": "Intermediate Algebra"
+    },
+    {
+      "raw": "Metal Building Erection I / Foreman Training",
+      "assigned": "Metal Building Erection 1 / Foreman Training",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:23.147+00:00",
+      "spellings": [
+        "Metal Building Erection I / Foreman Training"
+      ],
+      "disagreeing": [
+        "Metal Building Erection I / Foreman Training"
+      ],
+      "displaced": [
+        "Metal Building Erection I / Foreman Training"
+      ],
+      "supersedes": "Metal Building Erection I / Foreman Training"
+    },
+    {
+      "raw": "Music Production I and MIDI",
+      "assigned": "Music Production 1 and MIDI",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:26.203+00:00",
+      "spellings": [
+        "Music Production I and MIDI"
+      ],
+      "disagreeing": [
+        "Music Production I and MIDI"
+      ],
+      "displaced": [
+        "Music Production I and MIDI"
+      ],
+      "supersedes": "Music Production I and MIDI"
+    },
+    {
+      "raw": "Music Production II and  Electronic Composition",
+      "assigned": "Music Production 2 and Electronic Composition",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:27.475+00:00",
+      "spellings": [
+        "Music Production II and  Electronic Composition"
+      ],
+      "disagreeing": [
+        "Music Production II and  Electronic Composition"
+      ],
+      "displaced": [
+        "Music Production II and Electronic Composition"
+      ],
+      "supersedes": "Music Production II and Electronic Composition"
+    },
+    {
+      "raw": "NUTR 071A  Rotations in Supervised Practice, Level A",
+      "assigned": "Rotations in Supervised Practice, Level A",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:05.363+00:00",
+      "spellings": [
+        "NUTR 071A  Rotations in Supervised Practice, Level A"
+      ],
+      "disagreeing": [
+        "NUTR 071A  Rotations in Supervised Practice, Level A"
+      ],
+      "displaced": [
+        "Rotations in Supervised Practice, Level C"
+      ],
+      "supersedes": "Rotations in Supervised Practice, Level C"
+    },
+    {
+      "raw": "NVC Administered Calculus I Exam",
+      "assigned": "Single Variable Calculus 1 Early Transcendentals",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:35.419+00:00",
+      "spellings": [
+        "NVC Administered Calculus I Exam"
+      ],
+      "disagreeing": [
+        "NVC Administered Calculus I Exam"
+      ],
+      "displaced": [
+        "Single Variable Calculus I Early Transcendentals"
+      ],
+      "supersedes": "Single Variable Calculus I Early Transcendentals"
+    },
+    {
+      "raw": "Network Fundamentals",
+      "assigned": "Networking Fundamentals",
+      "issuer": "American Council on Education (ACE)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:15.907+00:00",
+      "spellings": [
+        "Network Fundamentals"
+      ],
+      "disagreeing": [
+        "Network Fundamentals"
+      ],
+      "displaced": [
+        "Network Fundamentals"
+      ],
+      "supersedes": "Network Fundamentals"
+    },
+    {
+      "raw": "Noncredit for AUTO A3",
+      "assigned": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:27.603+00:00",
+      "spellings": [
+        "Noncredit for AUTO A3"
+      ],
+      "disagreeing": [
+        "Noncredit for AUTO A3"
+      ],
+      "displaced": [
+        "Manual Drive Train and Axles"
+      ],
+      "supersedes": "Manual Drive Train and Axles"
+    },
+    {
+      "raw": "Noncredit for AUTO A4",
+      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+      "spellings": [
+        "Noncredit for AUTO A4"
+      ],
+      "disagreeing": [
+        "Noncredit for AUTO A4"
+      ],
+      "displaced": [
+        "Suspension and Steering"
+      ],
+      "supersedes": "Suspension and Steering"
+    },
+    {
+      "raw": "PC Operating System",
+      "assigned": "PC Operating Systems",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:21.115+00:00",
+      "spellings": [
+        "PC Operating System"
+      ],
+      "disagreeing": [
+        "PC Operating System"
+      ],
+      "displaced": [
+        "PC Operating System"
+      ],
+      "supersedes": "PC Operating System"
+    },
+    {
+      "raw": "PORT 1: Beginning Portuguese",
+      "assigned": "Elementary Portuguese 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:25.091+00:00",
+      "spellings": [
+        "PORT 1: Beginning Portuguese"
+      ],
+      "disagreeing": [
+        "PORT 1: Beginning Portuguese"
+      ],
+      "displaced": [
+        "Portuguese 1"
+      ],
+      "supersedes": "Portuguese 1"
+    },
+    {
+      "raw": "PORT 2: High-Beginning Portuguese",
+      "assigned": "Elementary Portuguese 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:26.011+00:00",
+      "spellings": [
+        "PORT 2: High-Beginning Portuguese"
+      ],
+      "disagreeing": [
+        "PORT 2: High-Beginning Portuguese"
+      ],
+      "displaced": [
+        "Portuguese 2"
+      ],
+      "supersedes": "Portuguese 2"
+    },
+    {
+      "raw": "Portfolio for ARTS 12A",
+      "assigned": "Oil/Acrylic Painting: Beginning 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:30.419+00:00",
+      "spellings": [
+        "Portfolio for ARTS 12A"
+      ],
+      "disagreeing": [
+        "Portfolio for ARTS 12A"
+      ],
+      "displaced": [
+        "Oil/Acrylic Painting: Beginning I"
+      ],
+      "supersedes": "Oil/Acrylic Painting: Beginning I"
+    },
+    {
+      "raw": "Portfolio for ARTS 3A",
+      "assigned": "Figure and Composition 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:01.635+00:00",
+      "spellings": [
+        "Portfolio for ARTS 3A"
+      ],
+      "disagreeing": [
+        "Portfolio for ARTS 3A"
+      ],
+      "displaced": [
+        "Figure and Composition I"
+      ],
+      "supersedes": "Figure and Composition I"
+    },
+    {
+      "raw": "Professional Certifications",
+      "assigned": "Introduction to Geographic Information Systems",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:01.355+00:00",
+      "spellings": [
+        "Professional Certifications"
+      ],
+      "disagreeing": [
+        "Professional Certifications"
+      ],
+      "displaced": [
+        "Industry Certification"
+      ],
+      "supersedes": "Industry Certification"
+    },
+    {
+      "raw": "RUSS 1-Elementary Russian- Credit by Exam",
+      "assigned": "Elementary Russian 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:09.027+00:00",
+      "spellings": [
+        "RUSS 1-Elementary Russian- Credit by Exam"
+      ],
+      "disagreeing": [
+        "RUSS 1-Elementary Russian- Credit by Exam"
+      ],
+      "displaced": [
+        "Elementary Russian (First Quarter)"
+      ],
+      "supersedes": "Elementary Russian (First Quarter)"
+    },
+    {
+      "raw": "SPAN 001: Elementary Spanish I",
+      "assigned": "Elementary Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:58.355+00:00",
+      "spellings": [
+        "SPAN 001: Elementary Spanish I"
+      ],
+      "disagreeing": [
+        "SPAN 001: Elementary Spanish I"
+      ],
+      "displaced": [
+        "Elementary Spanish I"
+      ],
+      "supersedes": "Elementary Spanish I"
+    },
+    {
+      "raw": "SPAN 002: Elementary Spanish II",
+      "assigned": "Elementary Spanish 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:59.771+00:00",
+      "spellings": [
+        "SPAN 002: Elementary Spanish II"
+      ],
+      "disagreeing": [
+        "SPAN 002: Elementary Spanish II"
+      ],
+      "displaced": [
+        "Elementary Spanish II"
+      ],
+      "supersedes": "Elementary Spanish II"
+    },
+    {
+      "raw": "SPAN 003: Intermediate Spanish I",
+      "assigned": "Intermediate Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:37.075+00:00",
+      "spellings": [
+        "SPAN 003: Intermediate Spanish I"
+      ],
+      "disagreeing": [
+        "SPAN 003: Intermediate Spanish I"
+      ],
+      "displaced": [
+        "Spanish I Intermediate"
+      ],
+      "supersedes": "Spanish I Intermediate"
+    },
+    {
+      "raw": "SPAN 103 - CBE",
+      "assigned": "Intermediate Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:30.635+00:00",
+      "spellings": [
+        "SPAN 103 - CBE ",
+        "SPAN 103 - CBE"
+      ],
+      "disagreeing": [
+        "SPAN 103 - CBE ",
+        "SPAN 103 - CBE"
+      ],
+      "displaced": [
+        "Spanish 3"
+      ],
+      "supersedes": "Spanish 3"
+    },
+    {
+      "raw": "SPAN 1: Beginning Spanish",
+      "assigned": "Elementary Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:58.355+00:00",
+      "spellings": [
+        "SPAN 1: Beginning Spanish"
+      ],
+      "disagreeing": [
+        "SPAN 1: Beginning Spanish"
+      ],
+      "displaced": [
+        "Elementary Spanish I"
+      ],
+      "supersedes": "Elementary Spanish I"
+    },
+    {
+      "raw": "SPAN 2: High-Beginning Spanish",
+      "assigned": "Elementary Spanish 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:59.771+00:00",
+      "spellings": [
+        "SPAN 2: High-Beginning Spanish"
+      ],
+      "disagreeing": [
+        "SPAN 2: High-Beginning Spanish"
+      ],
+      "displaced": [
+        "Elementary Spanish II"
+      ],
+      "supersedes": "Elementary Spanish II"
+    },
+    {
+      "raw": "Semiconductor Circuits II - Credit by Exam (ECHT 122 )",
+      "assigned": "Semiconductor Circuits 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:33.563+00:00",
+      "spellings": [
+        "Semiconductor Circuits II - Credit by Exam (ECHT 122 )"
+      ],
+      "disagreeing": [
+        "Semiconductor Circuits II - Credit by Exam (ECHT 122 )"
+      ],
+      "displaced": [
+        "Semiconductor Circuits II"
+      ],
+      "supersedes": "Semiconductor Circuits II"
+    },
+    {
+      "raw": "Spanish I",
+      "assigned": "Elementary Spanish 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:27.379+00:00",
+      "spellings": [
+        "Spanish I ",
+        "Spanish I"
+      ],
+      "disagreeing": [
+        "Spanish I ",
+        "Spanish I"
+      ],
+      "displaced": [
+        "Spanish 1"
+      ],
+      "supersedes": "Spanish 1"
+    },
+    {
+      "raw": "Spanish II",
+      "assigned": "Elementary Spanish 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:28.164+00:00",
+      "spellings": [
+        "Spanish II ",
+        "Spanish II"
+      ],
+      "disagreeing": [
+        "Spanish II ",
+        "Spanish II"
+      ],
+      "displaced": [
+        "Spanish 2"
+      ],
+      "supersedes": "Spanish 2"
+    },
+    {
+      "raw": "Sports Med Lab I High School Articulation",
+      "assigned": "Clinical Experience in Sports Medicine 1",
+      "issuer": "Local High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:51.451+00:00",
+      "spellings": [
+        "Sports Med Lab I High School Articulation"
+      ],
+      "disagreeing": [
+        "Sports Med Lab I High School Articulation"
+      ],
+      "displaced": [
+        "Clinical Experience in Sports Medicine I"
+      ],
+      "supersedes": "Clinical Experience in Sports Medicine I"
+    },
+    {
+      "raw": "Structural Arch Orn I",
+      "assigned": "Ironworker Structural, Architectural and Ornamental 1",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:18.411+00:00",
+      "spellings": [
+        "Structural Arch Orn I"
+      ],
+      "disagreeing": [
+        "Structural Arch Orn I"
+      ],
+      "displaced": [
+        "Ironworker Structural, Architectural and Ornamental I"
+      ],
+      "supersedes": "Ironworker Structural, Architectural and Ornamental I"
+    },
+    {
+      "raw": "Structural Steel I",
+      "assigned": "Ironworker Structural Steel 1",
+      "issuer": "",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:11.915+00:00",
+      "spellings": [
+        "Structural Steel I"
+      ],
+      "disagreeing": [
+        "Structural Steel I"
+      ],
+      "displaced": [
+        "Ironworker Structural Steel I"
+      ],
+      "supersedes": "Ironworker Structural Steel I"
+    },
+    {
+      "raw": "TECTHTR 342 - Technical Stage Production",
+      "assigned": "Technical Stage Production",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:26.403+00:00",
+      "spellings": [
+        "TECTHTR 342 - Technical Stage Production"
+      ],
+      "disagreeing": [
+        "TECTHTR 342 - Technical Stage Production"
+      ],
+      "displaced": [
+        "Technical Theatre in Production"
+      ],
+      "supersedes": "Technical Theatre in Production"
+    },
+    {
+      "raw": "THEATER 342: Technical Theater Production",
+      "assigned": "Technical Stage Production",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:26.403+00:00",
+      "spellings": [
+        "THEATER 342: Technical Theater Production"
+      ],
+      "disagreeing": [
+        "THEATER 342: Technical Theater Production"
+      ],
+      "displaced": [
+        "Technical Theatre in Production"
+      ],
+      "supersedes": "Technical Theatre in Production"
+    },
+    {
+      "raw": "Video I",
+      "assigned": "Video 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:39.387+00:00",
+      "spellings": [
+        "Video I"
+      ],
+      "disagreeing": [
+        "Video I"
+      ],
+      "displaced": [
+        "Video I"
+      ],
+      "supersedes": "Video I"
+    },
+    {
+      "raw": "Watercolor I",
+      "assigned": "Watercolor 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:44.283+00:00",
+      "spellings": [
+        "Watercolor I"
+      ],
+      "disagreeing": [
+        "Watercolor I"
+      ],
+      "displaced": [
+        "Watercolor I"
+      ],
+      "supersedes": "Watercolor I"
+    }
+  ],
+  "credential_moved": [
+    {
+      "title": "ASNT Level I — Infrared and Thermal Testing",
+      "records": [
+        {
+          "issuing_agency": "American Society for Nondestructive Testing (ASNT)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:26:17.848749+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "ASNT Level 1 — Infrared and Thermal Testing"
+    },
+    {
+      "title": "Advanced Medical-Surgical Nursing II Preceptorship",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T15:39:02.305061+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Advanced Medical-Surgical Nursing 2 Preceptorship"
+    },
+    {
+      "title": "American Sign Language: Level 2 Intermediate",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Intermediate American Sign Language 2"
+    },
+    {
+      "title": "Armenian 1",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:50:53.721038+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Elementary Armenian 1"
+    },
+    {
+      "title": "Armenian 2",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:51:05.686391+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Elementary Armenian 2"
+    },
+    {
+      "title": "Automotive Collision Repair 1 Intermediate",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Intermediate Automotive Collision Repair 1"
+    },
+    {
+      "title": "Automotive Collision Repair 2 Intermediate",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Intermediate Automotive Collision Repair 2"
+    },
+    {
+      "title": "Biotechnology I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Biotechnology 1"
+    },
+    {
+      "title": "Chinese 1",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:59:23.212902+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Elementary Chinese 1"
+    },
+    {
+      "title": "Chinese 2",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:59:24.575284+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Elementary Chinese 2"
+    },
+    {
+      "title": "Class Piano I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Class Piano 1"
+    },
+    {
+      "title": "Class Piano II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-22",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Class Piano 2"
+    },
+    {
+      "title": "Clinical Experience in Sports Medicine I",
+      "records": [
+        {
+          "issuing_agency": "Local High School",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Clinical Experience in Sports Medicine 1"
+    },
+    {
+      "title": "Combined Processes I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:27.79676+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [
+        "reviewed_at",
+        "reviewed_by",
+        "reviewed_marker"
+      ],
+      "to": "Combined Processes 1"
+    },
+    {
+      "title": "Computer Document Processing I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:52:02.94616+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Computer Document Processing 1"
+    },
+    {
+      "title": "Culinary Fundamentals I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T14:01:01.108182+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Culinary Fundamentals 1"
+    },
+    {
+      "title": "Elementary Russian (First Quarter)",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Elementary Russian 1"
+    },
+    {
+      "title": "Engine Performance I",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:29.194398+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:28:25.425078+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by",
+        "reviewed_marker"
+      ],
+      "to": "Engine Performance 1 (ASE A8 Engine Performance)"
+    },
+    {
+      "title": "Engine Performance II",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:28.838412+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "National Institute for Automotive Service Excellence (ASE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:28:24.195719+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by",
+        "reviewed_marker"
+      ],
+      "to": "Engine Performance 2 (ASE A8 Engine Performance)"
+    },
+    {
+      "title": "Figure and Composition I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Figure and Composition 1"
+    },
+    {
+      "title": "Foundations of Design I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-22",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Foundations of Design 1"
+    },
+    {
+      "title": "Foundations of Design II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-22",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Foundations of Design 2"
+    },
+    {
+      "title": "Graphic Communications I — Orthographic Drawings",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Graphic Communications 1 — Orthographic Drawings"
+    },
+    {
+      "title": "Industry Certification",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T17:04:24.233839+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": "Introduction to Geographic Information Systems"
+    },
+    {
+      "title": "Keyboarding II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Keyboarding 2"
+    },
+    {
+      "title": "Manual Drive Train and Axles",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:51.957822+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)"
+    },
+    {
+      "title": "Medical-Surgical Nursing 1 Intermediate",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Intermediate Medical-Surgical Nursing 1"
+    },
+    {
+      "title": "Microsoft Word I",
+      "records": [
+        {
+          "issuing_agency": "Microsoft",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:58:34.086951+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Microsoft Word 1"
+    },
+    {
+      "title": "Microsoft Word II",
+      "records": [
+        {
+          "issuing_agency": "Microsoft",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:58:45.073271+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Microsoft Word 2"
+    },
+    {
+      "title": "Music Production I and MIDI",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Music Production 1 and MIDI"
+    },
+    {
+      "title": "Music Production II and Electronic Composition",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Music Production 2 and Electronic Composition"
+    },
+    {
+      "title": "Oil/Acrylic Painting: Beginning I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Oil/Acrylic Painting: Beginning 1"
+    },
+    {
+      "title": "Portuguese 1",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:54:55.336402+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Elementary Portuguese 1"
+    },
+    {
+      "title": "Portuguese 2",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:55:06.437811+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Elementary Portuguese 2"
+    },
+    {
+      "title": "Revit I-Architectural Drafting",
+      "records": [
+        {
+          "issuing_agency": "Corona-Norco Unified School District",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:26:12.137993+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Revit 1-Architectural Drafting"
+    },
+    {
+      "title": "Rotations in Supervised Practice, Level C",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T17:02:12.84583+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Rotations in Supervised Practice, Level A"
+    },
+    {
+      "title": "Semiconductor Circuits II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Semiconductor Circuits 2"
+    },
+    {
+      "title": "Video I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:30.764822+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [
+        "reviewed_at",
+        "reviewed_by",
+        "reviewed_marker"
+      ],
+      "to": "Video 1"
+    },
+    {
+      "title": "Voice I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Voice 1"
+    },
+    {
+      "title": "Water Distribution Operator II",
+      "records": [
+        {
+          "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:27:12.882729+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Water Distribution Operator 2"
+    },
+    {
+      "title": "Water Treatment I",
+      "records": [
+        {
+          "issuing_agency": "California State Water Resources Control Board (SWRCB)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:27:14.013355+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Water Treatment 1"
+    },
+    {
+      "title": "Watercolor I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": "Watercolor 1"
+    }
+  ],
+  "credential_retired": [
+    {
+      "title": "Architectural Design I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-22",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-22T13:16:58.077091+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Architectural Design 1"
+      ]
+    },
+    {
+      "title": "Blueprint Reading I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:32:41.371064+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Blueprint Reading 1"
+      ]
+    },
+    {
+      "title": "Elementary French",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:33:57.075872+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary French 1",
+        "Elementary French 2"
+      ]
+    },
+    {
+      "title": "Elementary Spanish I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        },
+        {
+          "issuing_agency": "Defense Language Institute (DLI)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-19",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:53:32.095888+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from the CER triage assignment on 'SPAN 1: Beginning Spanish' — same credential, multiple certifying bodies (Rule 4)."
+        },
+        {
+          "issuing_agency": "Local High School",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T15:30:40.600905+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from the CER triage assignment on 'Elem Spanish I High School Articulation' — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary Spanish 1"
+      ]
+    },
+    {
+      "title": "Elementary Spanish II",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        },
+        {
+          "issuing_agency": "Defense Language Institute (DLI)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-19",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:59:33.132809+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from the CER triage assignment on 'SPAN 2: High-Beginning Spanish' — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary Spanish 2"
+      ]
+    },
+    {
+      "title": "First Aid, CPR & AED",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-07",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-07T20:44:37.020055+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "First Aid, CPR and AED"
+      ]
+    },
+    {
+      "title": "French 2",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:59:29.424775+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary French 2"
+      ]
+    },
+    {
+      "title": "German 1",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:59:30.016803+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary German 1"
+      ]
+    },
+    {
+      "title": "German 2",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:59:30.704872+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary German 2"
+      ]
+    },
+    {
+      "title": "Guitar I",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Guitar 1"
+      ]
+    },
+    {
+      "title": "Intermediate Algebra",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-06-03",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-06-03T17:55:58.840521+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-07-09",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-07-09T00:10:52.028971+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by",
+        "unified_title_merge_confirm"
+      ],
+      "to": [
+        "Algebra Intermediate"
+      ]
+    },
+    {
+      "title": "Ironworker Architectural II",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:34:53.175752+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Ironworker Architectural 2"
+      ]
+    },
+    {
+      "title": "Ironworker Architectural III",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:34:53.642658+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Ironworker Architectural 3"
+      ]
+    },
+    {
+      "title": "Ironworker Structural Steel I",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-06-02T18:32:36.011415+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:34:54.628618+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Ironworker Structural Steel 1"
+      ]
+    },
+    {
+      "title": "Ironworker Structural Steel II",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:34:55.524037+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Ironworker Structural Steel 2"
+      ]
+    },
+    {
+      "title": "Ironworker Structural, Architectural and Ornamental I",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:34:57.140293+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Ironworker Structural, Architectural and Ornamental 1"
+      ]
+    },
+    {
+      "title": "Ironworker Welding III",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-06-03T17:12:43.443936+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:34:57.838658+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Ironworker Welding 3"
+      ]
+    },
+    {
+      "title": "Japanese 2",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-12T19:56:48.23002+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary Japanese 2"
+      ]
+    },
+    {
+      "title": "Metal Building Erection I / Foreman Training",
+      "records": [
+        {
+          "issuing_agency": null,
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-06-02T18:25:47.237638+00:00",
+          "reviewed_by": "map@rccd.edu"
+        },
+        {
+          "issuing_agency": "International Association of Bridge, Structural, Ornamental and Reinforcing Iron Workers",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-27",
+          "classified_by": "curator (CER issuing-agency override)",
+          "reviewed_at": "2026-10-27T12:34:58.789464+00:00",
+          "reviewed_by": "slee@cccco.edu",
+          "_notes": "Additional issuing agency from a Curate-panel override — same credential, multiple certifying bodies (Rule 4)."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": [
+        "Metal Building Erection 1 / Foreman Training"
+      ]
+    },
+    {
+      "title": "Military Police Basic",
+      "records": [
+        {
+          "issuing_agency": "American Council on Education (ACE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Basic Military Police"
+      ]
+    },
+    {
+      "title": "Network Fundamentals",
+      "records": [
+        {
+          "issuing_agency": "American Council on Education (ACE)",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T16:37:46.897822+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Networking Fundamentals"
+      ]
+    },
+    {
+      "title": "PC Operating System",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-07-08T00:04:30.178708+00:00",
+          "reviewed_by": "map@rccd.edu"
+        }
+      ],
+      "panel_rows_left": [
+        "reviewed_at",
+        "reviewed_by",
+        "reviewed_marker"
+      ],
+      "to": [
+        "PC Operating Systems"
+      ]
+    },
+    {
+      "title": "Single Variable Calculus I Early Transcendentals",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-31",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-31T15:37:34.548392+00:00",
+          "reviewed_by": "slee@cccco.edu"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Single Variable Calculus 1 Early Transcendentals"
+      ]
+    },
+    {
+      "title": "Spanish 1",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:13:56.007304+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Local CBE for Spanish I."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by",
+        "unified_title_merge_confirm",
+        "unified_title_override"
+      ],
+      "to": [
+        "Elementary Spanish 1"
+      ]
+    },
+    {
+      "title": "Spanish 2",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-05-20",
+          "classified_by": "claude-opus-4-7 (Phase 3 batch classify)",
+          "reviewed_at": "2026-07-09T00:13:56.007304+00:00",
+          "reviewed_by": "ccc-bulk-s108@bot",
+          "_notes": "Local CBE for Spanish II."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by",
+        "unified_title_merge_confirm",
+        "unified_title_override"
+      ],
+      "to": [
+        "Elementary Spanish 2"
+      ]
+    },
+    {
+      "title": "Spanish Beginning",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-classifier@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Elementary Spanish 1"
+      ]
+    },
+    {
+      "title": "Spanish I Intermediate",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.9,
+          "classified_at": "2026-10-18",
+          "classified_by": "curator (CER unclassified-triage)",
+          "reviewed_at": "2026-10-18T17:37:29.85451+00:00",
+          "reviewed_by": "cer-procedure-course-identity@bot"
+        }
+      ],
+      "panel_rows_left": [],
+      "to": [
+        "Intermediate Spanish 1"
+      ]
+    }
+  ],
+  "held": [],
+  "credential_added": [
+    {
+      "raw": "Advanced AutoCAD",
+      "assigned": "AutoCAD Advanced",
+      "issuer": "Autodesk",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:08.708+00:00",
+      "spellings": [
+        "Advanced AutoCAD"
+      ],
+      "disagreeing": [
+        "Advanced AutoCAD"
+      ],
+      "displaced": [
+        "Advanced AutoCAD"
+      ]
+    },
+    {
+      "raw": "C++ Programming II CS 089A Cx",
+      "assigned": "C++ Programming 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:24.707+00:00",
+      "spellings": [
+        "C++ Programming II CS 089A Cx"
+      ],
+      "disagreeing": [
+        "C++ Programming II CS 089A Cx"
+      ],
+      "displaced": [
+        "C++ Programming"
+      ]
+    },
+    {
+      "raw": "CSCI 295\tInternship in Computer Science Discussion",
+      "assigned": "Internship in Computer Science Discussion",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:28.651+00:00",
+      "spellings": [
+        "CSCI 295\tInternship in Computer Science Discussion"
+      ],
+      "disagreeing": [
+        "CSCI 295\tInternship in Computer Science Discussion"
+      ],
+      "displaced": [
+        "Computer Science Internship"
+      ]
+    },
+    {
+      "raw": "CSCI 296C\tInternship in Computer Science - Portfolio Review",
+      "assigned": "Internship in Computer Science",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:30.22+00:00",
+      "spellings": [
+        "CSCI 296C\tInternship in Computer Science - Portfolio Review"
+      ],
+      "disagreeing": [
+        "CSCI 296C\tInternship in Computer Science - Portfolio Review"
+      ],
+      "displaced": [
+        "Computer Science Internship"
+      ]
+    },
+    {
+      "raw": "CULART 044 CBE",
+      "assigned": "Introduction to Baking Skills, Ingredients, and Technology",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:23.163+00:00",
+      "spellings": [
+        "CULART 044 CBE"
+      ],
+      "disagreeing": [
+        "CULART 044 CBE"
+      ],
+      "displaced": [
+        "Restaurant Service and Catering 2"
+      ]
+    },
+    {
+      "raw": "CULART 240 CBE",
+      "assigned": "Procurement, Purchasing and Selection",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:24.451+00:00",
+      "spellings": [
+        "CULART 240 CBE"
+      ],
+      "disagreeing": [
+        "CULART 240 CBE"
+      ],
+      "displaced": [
+        "Restaurant Service and Catering 2"
+      ]
+    },
+    {
+      "raw": "Credit By Exam San Diego City College",
+      "assigned": "Basic Refrigeration & AC Lab",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:59.788+00:00",
+      "spellings": [
+        "Credit By Exam San Diego City College"
+      ],
+      "disagreeing": [
+        "Credit By Exam San Diego City College"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ]
+    },
+    {
+      "raw": "Credit By Exam at Saddleback College",
+      "assigned": "Plant Propagation",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:58.587+00:00",
+      "spellings": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "disagreeing": [
+        "Credit By Exam at Saddleback College"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ]
+    },
+    {
+      "raw": "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing",
+      "assigned": "High-Intermediate Grammar for Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:40.859+00:00",
+      "spellings": [
+        "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing"
+      ],
+      "disagreeing": [
+        "Credit by Exam ESL 120B High-Intermediate Grammar for Reading and Writing"
+      ],
+      "displaced": [
+        "ESL Grammar for Reading and Writing Intermediate"
+      ]
+    },
+    {
+      "raw": "Credit by Exam ESL 121B High-Intermediate Reading and Writing",
+      "assigned": "High-Intermediate Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:43.211+00:00",
+      "spellings": [
+        "Credit by Exam ESL 121B High-Intermediate Reading and Writing"
+      ],
+      "disagreeing": [
+        "Credit by Exam ESL 121B High-Intermediate Reading and Writing"
+      ],
+      "displaced": [
+        "ESL Reading and Writing Intermediate"
+      ]
+    },
+    {
+      "raw": "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing",
+      "assigned": "High-Beginning Grammar for Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:39.731+00:00",
+      "spellings": [
+        "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing"
+      ],
+      "disagreeing": [
+        "Credit by Exam ESL 130B High-Beginning Grammar for Reading and Writing"
+      ],
+      "displaced": [
+        "ESL Grammar for Reading and Writing Beginning"
+      ]
+    },
+    {
+      "raw": "Credit by Exam ESL 131B High-Beginning Reading and Writing",
+      "assigned": "High-Beginning Reading and Writing",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:42.3+00:00",
+      "spellings": [
+        "Credit by Exam ESL 131B High-Beginning Reading and Writing"
+      ],
+      "disagreeing": [
+        "Credit by Exam ESL 131B High-Beginning Reading and Writing"
+      ],
+      "displaced": [
+        "ESL Reading and Writing Beginning"
+      ]
+    },
+    {
+      "raw": "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO",
+      "assigned": "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing: 30-UO",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:18.267+00:00",
+      "spellings": [
+        "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO"
+      ],
+      "disagreeing": [
+        "Credit by Exam- Patient-Centered Care II and Maternal Newborn and Mental Health Nursing: 30-UO"
+      ],
+      "displaced": [
+        "Patient-Centered Care 2 and Maternal Newborn and Mental Health Nursing"
+      ]
+    },
+    {
+      "raw": "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO",
+      "assigned": "Patient-Centered Care 3 and Transition to Professional Practice: 30-UO",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:19.627+00:00",
+      "spellings": [
+        "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO"
+      ],
+      "disagreeing": [
+        "Credit by Exam- Patient-Centered Care III and Transition to Professional Practice: 30-UO"
+      ],
+      "displaced": [
+        "Patient-Centered Care 3 and Transition to Professional Practice"
+      ]
+    },
+    {
+      "raw": "Critical Thinking and the Nursing Process II",
+      "assigned": "Critical Thinking and the Nursing Process 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:36.907+00:00",
+      "spellings": [
+        "Critical Thinking and the Nursing Process II"
+      ],
+      "disagreeing": [
+        "Critical Thinking and the Nursing Process II"
+      ],
+      "displaced": [
+        "Critical Thinking and the Nursing Process"
+      ]
+    },
+    {
+      "raw": "DANCEST 302 - Choreography II",
+      "assigned": "Choreography 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:25.891+00:00",
+      "spellings": [
+        "DANCEST 302 - Choreography II"
+      ],
+      "disagreeing": [
+        "DANCEST 302 - Choreography II"
+      ],
+      "displaced": [
+        "Choreography"
+      ]
+    },
+    {
+      "raw": "Elementary Hmong I",
+      "assigned": "Elementary Hmong 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:18.332+00:00",
+      "spellings": [
+        "Elementary Hmong I"
+      ],
+      "disagreeing": [
+        "Elementary Hmong I"
+      ],
+      "displaced": [
+        "Hmong 1"
+      ]
+    },
+    {
+      "raw": "Elementary Hmong II",
+      "assigned": "Elementary Hmong 2",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:19.363+00:00",
+      "spellings": [
+        "Elementary Hmong II"
+      ],
+      "disagreeing": [
+        "Elementary Hmong II"
+      ],
+      "displaced": [
+        "Hmong 2"
+      ]
+    },
+    {
+      "raw": "FONTANA HIGH SCHOOL- Advanced Law Enforcement",
+      "assigned": "Law Enforcement Advanced",
+      "issuer": "Fontana High School",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:09.987+00:00",
+      "spellings": [
+        "FONTANA HIGH SCHOOL- Advanced Law Enforcement"
+      ],
+      "disagreeing": [
+        "FONTANA HIGH SCHOOL- Advanced Law Enforcement"
+      ],
+      "displaced": [
+        "Advanced Law Enforcement"
+      ]
+    },
+    {
+      "raw": "First Semester Vietnamese- Credit by Exam",
+      "assigned": "Elementary Vietnamese 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:13:54.483+00:00",
+      "spellings": [
+        "First Semester Vietnamese- Credit by Exam"
+      ],
+      "disagreeing": [
+        "First Semester Vietnamese- Credit by Exam"
+      ],
+      "displaced": [
+        "Vietnamese — First Semester"
+      ]
+    },
+    {
+      "raw": "Intermediate American Sign Language I ASL 003 Cx",
+      "assigned": "Intermediate American Sign Language 1",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:55.507+00:00",
+      "spellings": [
+        "Intermediate American Sign Language I ASL 003 Cx"
+      ],
+      "disagreeing": [
+        "Intermediate American Sign Language I ASL 003 Cx"
+      ],
+      "displaced": [
+        "American Sign Language Intermediate"
+      ]
+    },
+    {
+      "raw": "Math 103 - CBE",
+      "assigned": "Plane Trigonometry",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:27.163+00:00",
+      "spellings": [
+        "Math 103 - CBE"
+      ],
+      "disagreeing": [
+        "Math 103 - CBE"
+      ],
+      "displaced": [
+        "College Algebra"
+      ]
+    },
+    {
+      "raw": "Suspension and Steering",
+      "assigned": "Suspension and Steering (ASE A4 Suspension and Steering)",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:35.571+00:00",
+      "spellings": [
+        "Suspension and Steering"
+      ],
+      "disagreeing": [
+        "Suspension and Steering"
+      ],
+      "displaced": [
+        "Suspension and Steering"
+      ]
+    },
+    {
+      "raw": "American Sign Language Intermediate Level - Credit by Exam",
+      "assigned": "Intermediate American Sign Language",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:12:54.291+00:00",
+      "spellings": [
+        "American Sign Language Intermediate Level - Credit by Exam"
+      ],
+      "disagreeing": [
+        "American Sign Language Intermediate Level - Credit by Exam"
+      ],
+      "displaced": [
+        "American Sign Language Intermediate"
+      ],
+      "supersedes": "American Sign Language Intermediate"
+    },
+    {
+      "raw": "Haz Mat Technician 1A: Basic Chemistry",
+      "assigned": "Haz Mat Technician 1A: Basic Chemistry",
+      "issuer": "California Specialized Training Institute (CSTI)",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:06.659+00:00",
+      "spellings": [
+        "Haz Mat Technician 1A: Basic Chemistry"
+      ],
+      "disagreeing": [
+        "Haz Mat Technician 1A: Basic Chemistry"
+      ],
+      "displaced": [
+        "Haz Mat Technician 1B: Applied Chemistry"
+      ],
+      "supersedes": "Haz Mat Technician 1B: Applied Chemistry"
+    }
+  ],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [
+    {
+      "title": "Boatworks 101 Yacht Electrical Systems",
+      "issuer": "California Community Colleges",
+      "raw": "Boatworks 101 Yacht Electrical Systems",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:20.323+00:00"
+    },
+    {
+      "title": "Business Communication",
+      "issuer": "American Council on Education (ACE)",
+      "raw": "Business Communications",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:21.483+00:00"
+    },
+    {
+      "title": "Construction Fundamentals: Principles and Practices Lab",
+      "issuer": "California Community Colleges",
+      "raw": "Construction Fundamentals Lab: Principles and Practices",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:31.803+00:00"
+    },
+    {
+      "title": "Automotive Maintenance & Light Repair",
+      "issuer": "Summit High School",
+      "raw": "SUMMIT HIGH SCHOOL- Automotive Maintenance Light Repair 3",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:14:16.205+00:00"
+    },
+    {
+      "title": "Blueprint Reading 1",
+      "issuer": "California Community Colleges",
+      "raw": "Discipline Exam - DRAFT 016",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:11:45.699+00:00"
+    },
+    {
+      "title": "Networking Fundamentals",
+      "issuer": "American Council on Education (ACE)",
+      "raw": "Network Fundamentals",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:15.907+00:00"
+    },
+    {
+      "title": "Technical Stage Production",
+      "issuer": "California Community Colleges",
+      "raw": "TECTHTR 342 - Technical Stage Production",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-01T22:15:26.403+00:00"
+    }
+  ],
+  "credential_pruned": [
+    "Advanced AutoCAD",
+    "Business Communications",
+    "Welding II",
+    "Welding II SMAW"
+  ],
+  "articulations_repointed": 194,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 1,
+  "unified_titles_count": 5493
+}

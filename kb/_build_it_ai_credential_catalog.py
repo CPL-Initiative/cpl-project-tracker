@@ -610,6 +610,24 @@ def _add(rows, index, issuer, name, fields, source):
     return hit
 
 
+def official_exam_lists():
+    """AP, CLEP and IB exam names from the readers that fold MAP's titles under them."""
+    sys.path.insert(0, HERE)
+    import _ap_official_titles as ap
+    import _clep_official_titles as clep
+    import _ib_official_titles as ib
+    ib_retired = {"IB %s %sL%s" % (subj, lv, tail) for subj, levels in ib.RETIRED for lv in levels
+                  for tail in ("", ib.NON_ENGLISH)} & ib.OFFICIAL
+    return [
+        {"issuer": ap.ISSUER, "source": "College Board (official AP exams)",
+         "exams": [(n, False) for n in ap.CURRENT] + [(n, True) for n in ap.RETIRED]},
+        {"issuer": clep.ISSUER, "source": "College Board (official CLEP exams)",
+         "exams": [(n, False) for n in clep.CURRENT] + [(n, True) for n in clep.RETIRED]},
+        {"issuer": ib.ISSUER, "source": "International Baccalaureate (Diploma Programme subjects)",
+         "exams": sorted((n, n in ib_retired) for n in ib.OFFICIAL)},
+    ]
+
+
 def build(root=ROOT):
     cos = load_json(os.path.join(root, "kb", "reference", "cos_certifications.json"))
     ce = load_json(os.path.join(root, "kb", "reference",
@@ -710,6 +728,17 @@ def build(root=ROOT):
     for lic in licenses.get("licenses", []):
         add_wide(lic.get("issuer") or "California licensing agency", lic["name"],
                  {"kind": "license"}, "Credential Engine (California licenses)")
+    # The exams colleges award credit for by examination: College Board's AP and CLEP
+    # and the IB's Diploma Programme subjects, from the official lists Sam's fold
+    # rulings wrote (AP 2026-10-31; IB and CLEP, Open Asks Sheet 150, 2026-11-01).
+    # Without them the exhibit-to-cert link has no AP, CLEP or IB row to point at
+    # (S545 measured none; the reference holds 47 AP, 35 CLEP and 24 IB titles).
+    # A retired exam keeps its row, since colleges still hold credit for it.
+    for exam_list in official_exam_lists():
+        for name, retired in exam_list["exams"]:
+            add_wide(exam_list["issuer"], name,
+                     {"kind": "exam", "status": "retired" if retired else "active"},
+                     exam_list["source"])
     for c in cos["certifications"]:
         if not c.get("name") or not c.get("org"):
             continue

@@ -1,358 +1,1369 @@
 {
  "schema": 1,
- "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE.",
- "_reference_generated_at": "2026-11-01T05:19:29+00:00",
+ "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB.",
+ "_reference_generated_at": "2026-11-02T06:22:48+00:00",
  "counts": {
-  "certs_linked": 24,
-  "titles_linked": 59,
-  "holds": 47,
-  "bundles": 27,
-  "aligned": 12,
+  "certs_linked": 122,
+  "titles_linked": 168,
+  "holds": 152,
+  "bundles": 28,
+  "aligned": 16,
   "codes_not_in_catalog": [
    "G1"
   ]
  },
  "catalog_duplicates": {
   "S5": [
-   "ITC4093",
-   "ITC4095"
+   "ITC4095",
+   "ITC4097"
   ],
   "A4": [
-   "ITC4067",
-   "ITC4109"
+   "ITC4069",
+   "ITC4111"
   ],
   "H8": [
-   "ITC4103",
-   "ITC4112"
+   "ITC4105",
+   "ITC4114"
   ]
  },
  "certs": {
-  "ITC1414": {
+  "ITC0512": {
+   "code": null,
+   "name": "CLEP Principles of Marketing",
+   "catalog_name": "CLEP Principles of Marketing",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC0513": {
+   "code": null,
+   "name": "CLEP Financial Accounting",
+   "catalog_name": "CLEP Financial Accounting",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC1416": {
    "code": "A6",
    "name": "Electrical/Electronic Systems",
    "catalog_name": "Automobile & Light Truck Certification - A6 Electrical/Electronic Systems",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC1416": {
+  "ITC1418": {
    "code": "T6",
    "name": "Electrical/Electronic Systems",
    "catalog_name": "Medium-Heavy Truck Certification - T6 Electrical/Electronic Systems",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4060": {
+  "ITC4062": {
    "code": "L4",
    "name": "Advanced Driver Assistance Systems Specialist",
    "catalog_name": "Advanced Driver Assistance Systems (ADAS) Specialist Certification - L4",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4061": {
+  "ITC4063": {
    "code": "L1",
    "name": "Advanced Engine Performance Specialist",
    "catalog_name": "Advanced Engine Performance Specialist Certification - L1",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4062": {
+  "ITC4064": {
    "code": "F1",
    "name": "Alternate Fuels",
    "catalog_name": "Alternate Fuels Certification - F1 Compressed Natural Gas Vehicle",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4064": {
+  "ITC4066": {
    "code": "A1",
    "name": "Engine Repair",
    "catalog_name": "Automobile & Light Truck Certification - A1 Engine Repair",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4065": {
+  "ITC4067": {
    "code": "A2",
    "name": "Automatic Transmission/Transaxle",
    "catalog_name": "Automobile & Light Truck Certification - A2 Automatic Transmission/Transaxle",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4066": {
+  "ITC4068": {
    "code": "A3",
    "name": "Manual Drive Train and Axles",
    "catalog_name": "Automobile & Light Truck Certification - A3 Manual Drive Train & Axles",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4067": {
+  "ITC4069": {
    "code": "A4",
    "name": "Suspension and Steering",
    "catalog_name": "Automobile & Light Truck Certification - A4 Suspension & Steering",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4068": {
+  "ITC4070": {
    "code": "A5",
    "name": "Brakes",
    "catalog_name": "Automobile & Light Truck Certification - A5 Brakes",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4069": {
+  "ITC4071": {
    "code": "A7",
    "name": "Heating and Air Conditioning",
    "catalog_name": "Automobile & Light Truck Certification - A7 Heating & Air Conditioning",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4070": {
+  "ITC4072": {
    "code": "A8",
    "name": "Engine Performance",
    "catalog_name": "Automobile & Light Truck Certification - A8 Engine Performance",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4071": {
+  "ITC4073": {
    "code": "A9",
    "name": "Light Vehicle Diesel Engines",
    "catalog_name": "Automobile & Light Truck Certification - A9 Light Vehicle Diesel Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4072": {
+  "ITC4074": {
    "code": "C1",
    "name": "Automobile Service Consultant",
    "catalog_name": "Automobile Service Consultant Certification - C1",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4077": {
+  "ITC4079": {
    "code": "L2",
    "name": "Electronic Diesel Engine Diagnosis Specialist",
    "catalog_name": "Electronic Diesel Engine Diagnosis Specialist Certification - L2",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4078": {
+  "ITC4080": {
    "code": "L3",
    "name": "Light Duty Hybrid/Electric Vehicle Specialist",
    "catalog_name": "Light Duty Hybrid/Electric Vehicle Specialist Certification - L3",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4079": {
+  "ITC4081": {
    "code": "T1",
    "name": "Gasoline Engines",
    "catalog_name": "Medium-Heavy Truck Certification - T1 Gasoline Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4080": {
+  "ITC4082": {
    "code": "T2",
    "name": "Diesel Engines",
    "catalog_name": "Medium-Heavy Truck Certification - T2 Diesel Engines",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4081": {
+  "ITC4083": {
    "code": "T3",
    "name": "Drive Train",
    "catalog_name": "Medium-Heavy Truck Certification - T3 Drive Train",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4082": {
+  "ITC4084": {
    "code": "T4",
    "name": "Brakes",
    "catalog_name": "Medium-Heavy Truck Certification - T4 Brakes",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4083": {
+  "ITC4085": {
    "code": "T5",
    "name": "Suspension and Steering",
    "catalog_name": "Medium-Heavy Truck Certification - T5 Suspension & Steering",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4084": {
+  "ITC4086": {
    "code": "T7",
    "name": "Heating, Ventilation and Air Conditioning",
    "catalog_name": "Medium-Heavy Truck Certification - T7 Heating, Ventilation & Air Conditioning (HVAC)",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4085": {
+  "ITC4087": {
    "code": "T8",
    "name": "Preventive Maintenance Inspection",
    "catalog_name": "Medium-Heavy Truck Certification - T8 Preventive Maintenance Inspection",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
   },
-  "ITC4087": {
+  "ITC4089": {
    "code": "P1",
    "name": "Medium/Heavy Truck Parts Specialist",
    "catalog_name": "Parts Specialist Certification - P1 Medium-Heavy Truck Parts Specialist",
    "issuer": "National Institute for Automotive Service Excellence",
    "family": "ASE"
+  },
+  "ITC5175": {
+   "code": null,
+   "name": "AP Calculus BC",
+   "catalog_name": "AP Calculus BC",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5176": {
+   "code": null,
+   "name": "AP Biology",
+   "catalog_name": "AP Biology",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5177": {
+   "code": null,
+   "name": "AP Art History",
+   "catalog_name": "AP Art History",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5178": {
+   "code": null,
+   "name": "AP Calculus AB",
+   "catalog_name": "AP Calculus AB",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5179": {
+   "code": null,
+   "name": "AP Spanish Language and Culture",
+   "catalog_name": "AP Spanish Language and Culture",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5180": {
+   "code": null,
+   "name": "AP Chemistry",
+   "catalog_name": "AP Chemistry",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5181": {
+   "code": null,
+   "name": "AP Macroeconomics",
+   "catalog_name": "AP Macroeconomics",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5182": {
+   "code": null,
+   "name": "AP Microeconomics",
+   "catalog_name": "AP Microeconomics",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5183": {
+   "code": null,
+   "name": "AP United States History",
+   "catalog_name": "AP United States History",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5184": {
+   "code": null,
+   "name": "AP World History: Modern",
+   "catalog_name": "AP World History: Modern",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5185": {
+   "code": null,
+   "name": "AP English Language and Composition",
+   "catalog_name": "AP English Language and Composition",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5186": {
+   "code": null,
+   "name": "AP 2-D Art and Design",
+   "catalog_name": "AP 2-D Art and Design",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5187": {
+   "code": null,
+   "name": "AP Drawing",
+   "catalog_name": "AP Drawing",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5188": {
+   "code": null,
+   "name": "AP European History",
+   "catalog_name": "AP European History",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5189": {
+   "code": null,
+   "name": "AP Physics C: Mechanics",
+   "catalog_name": "AP Physics C: Mechanics",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5190": {
+   "code": null,
+   "name": "AP English Literature and Composition",
+   "catalog_name": "AP English Literature and Composition",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5191": {
+   "code": null,
+   "name": "AP Human Geography",
+   "catalog_name": "AP Human Geography",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5192": {
+   "code": null,
+   "name": "AP Music Theory",
+   "catalog_name": "AP Music Theory",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5193": {
+   "code": null,
+   "name": "AP Physics 1: Algebra-Based",
+   "catalog_name": "AP Physics 1: Algebra-Based",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5194": {
+   "code": null,
+   "name": "AP Physics 2: Algebra-Based",
+   "catalog_name": "AP Physics 2: Algebra-Based",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5195": {
+   "code": null,
+   "name": "AP Psychology",
+   "catalog_name": "AP Psychology",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5196": {
+   "code": null,
+   "name": "AP 3-D Art and Design",
+   "catalog_name": "AP 3-D Art and Design",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5197": {
+   "code": null,
+   "name": "AP Environmental Science",
+   "catalog_name": "AP Environmental Science",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5198": {
+   "code": null,
+   "name": "AP Statistics",
+   "catalog_name": "AP Statistics",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5199": {
+   "code": null,
+   "name": "AP Computer Science A",
+   "catalog_name": "AP Computer Science A",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5200": {
+   "code": null,
+   "name": "AP Physics C: Electricity and Magnetism",
+   "catalog_name": "AP Physics C: Electricity and Magnetism",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5201": {
+   "code": null,
+   "name": "AP Spanish Literature and Culture",
+   "catalog_name": "AP Spanish Literature and Culture",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5202": {
+   "code": null,
+   "name": "AP United States Government and Politics",
+   "catalog_name": "AP United States Government and Politics",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5203": {
+   "code": null,
+   "name": "AP Comparative Government and Politics",
+   "catalog_name": "AP Comparative Government and Politics",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5204": {
+   "code": null,
+   "name": "AP French Language and Culture",
+   "catalog_name": "AP French Language and Culture",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5205": {
+   "code": null,
+   "name": "AP Precalculus",
+   "catalog_name": "AP Precalculus",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5206": {
+   "code": null,
+   "name": "CLEP Calculus",
+   "catalog_name": "CLEP Calculus",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5207": {
+   "code": null,
+   "name": "CLEP College Algebra",
+   "catalog_name": "CLEP College Algebra",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5208": {
+   "code": null,
+   "name": "CLEP College Mathematics",
+   "catalog_name": "CLEP College Mathematics",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5209": {
+   "code": null,
+   "name": "CLEP Information Systems",
+   "catalog_name": "CLEP Information Systems",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5210": {
+   "code": null,
+   "name": "CLEP Introductory Sociology",
+   "catalog_name": "CLEP Introductory Sociology",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5211": {
+   "code": null,
+   "name": "CLEP Principles of Macroeconomics",
+   "catalog_name": "CLEP Principles of Macroeconomics",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5212": {
+   "code": null,
+   "name": "CLEP Principles of Management",
+   "catalog_name": "CLEP Principles of Management",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5213": {
+   "code": null,
+   "name": "AP Chinese Language and Culture",
+   "catalog_name": "AP Chinese Language and Culture",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5214": {
+   "code": null,
+   "name": "AP Japanese Language and Culture",
+   "catalog_name": "AP Japanese Language and Culture",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5215": {
+   "code": null,
+   "name": "CLEP History of the United States 1",
+   "catalog_name": "CLEP History of the United States 1",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5216": {
+   "code": null,
+   "name": "CLEP History of the United States 2",
+   "catalog_name": "CLEP History of the United States 2",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5217": {
+   "code": null,
+   "name": "CLEP Principles of Microeconomics",
+   "catalog_name": "CLEP Principles of Microeconomics",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5218": {
+   "code": null,
+   "name": "CLEP Spanish Language",
+   "catalog_name": "CLEP Spanish Language",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5219": {
+   "code": null,
+   "name": "AP Italian Language and Culture",
+   "catalog_name": "AP Italian Language and Culture",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5220": {
+   "code": null,
+   "name": "AP Physics B",
+   "catalog_name": "AP Physics B",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5221": {
+   "code": null,
+   "name": "AP Computer Science AB",
+   "catalog_name": "AP Computer Science AB",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5222": {
+   "code": null,
+   "name": "CLEP Analyzing and Interpreting Literature",
+   "catalog_name": "CLEP Analyzing and Interpreting Literature",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5223": {
+   "code": null,
+   "name": "CLEP Biology",
+   "catalog_name": "CLEP Biology",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5224": {
+   "code": null,
+   "name": "CLEP Chemistry",
+   "catalog_name": "CLEP Chemistry",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5225": {
+   "code": null,
+   "name": "CLEP College Composition",
+   "catalog_name": "CLEP College Composition",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5226": {
+   "code": null,
+   "name": "CLEP Human Growth and Development",
+   "catalog_name": "CLEP Human Growth and Development",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5227": {
+   "code": null,
+   "name": "CLEP Humanities",
+   "catalog_name": "CLEP Humanities",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5228": {
+   "code": null,
+   "name": "CLEP Introductory Psychology",
+   "catalog_name": "CLEP Introductory Psychology",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5229": {
+   "code": null,
+   "name": "CLEP Precalculus",
+   "catalog_name": "CLEP Precalculus",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5230": {
+   "code": null,
+   "name": "CLEP Trigonometry",
+   "catalog_name": "CLEP Trigonometry",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5231": {
+   "code": null,
+   "name": "CLEP Western Civilization 1",
+   "catalog_name": "CLEP Western Civilization 1",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5232": {
+   "code": null,
+   "name": "CLEP Western Civilization 2",
+   "catalog_name": "CLEP Western Civilization 2",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5233": {
+   "code": null,
+   "name": "AP African American Studies",
+   "catalog_name": "AP African American Studies",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5234": {
+   "code": null,
+   "name": "AP Computer Science Principles",
+   "catalog_name": "AP Computer Science Principles",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5235": {
+   "code": null,
+   "name": "AP German Language and Culture",
+   "catalog_name": "AP German Language and Culture",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5236": {
+   "code": null,
+   "name": "AP Latin",
+   "catalog_name": "AP Latin",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5237": {
+   "code": null,
+   "name": "AP Seminar",
+   "catalog_name": "AP Seminar",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5238": {
+   "code": null,
+   "name": "CLEP American Government",
+   "catalog_name": "CLEP American Government",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5239": {
+   "code": null,
+   "name": "CLEP American Literature",
+   "catalog_name": "CLEP American Literature",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5240": {
+   "code": null,
+   "name": "CLEP College Algebra-Trigonometry",
+   "catalog_name": "CLEP College Algebra-Trigonometry",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5241": {
+   "code": null,
+   "name": "CLEP English Literature",
+   "catalog_name": "CLEP English Literature",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5242": {
+   "code": null,
+   "name": "CLEP French Language",
+   "catalog_name": "CLEP French Language",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5243": {
+   "code": null,
+   "name": "CLEP German Language",
+   "catalog_name": "CLEP German Language",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5244": {
+   "code": null,
+   "name": "CLEP Introduction to Educational Psychology",
+   "catalog_name": "CLEP Introduction to Educational Psychology",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5245": {
+   "code": null,
+   "name": "CLEP Introductory Business Law",
+   "catalog_name": "CLEP Introductory Business Law",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5246": {
+   "code": null,
+   "name": "CLEP Natural Sciences",
+   "catalog_name": "CLEP Natural Sciences",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5247": {
+   "code": null,
+   "name": "CLEP Spanish with Writing",
+   "catalog_name": "CLEP Spanish with Writing",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5248": {
+   "code": null,
+   "name": "AP French Literature",
+   "catalog_name": "AP French Literature",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5249": {
+   "code": null,
+   "name": "AP Latin Literature",
+   "catalog_name": "AP Latin Literature",
+   "issuer": "College Board",
+   "family": "AP"
+  },
+  "ITC5253": {
+   "code": null,
+   "name": "CLEP Social Sciences and History",
+   "catalog_name": "CLEP Social Sciences and History",
+   "issuer": "College Board",
+   "family": "CLEP"
+  },
+  "ITC5705": {
+   "code": null,
+   "name": "IB Biology HL",
+   "catalog_name": "IB Biology HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5706": {
+   "code": null,
+   "name": "IB Chemistry HL",
+   "catalog_name": "IB Chemistry HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5707": {
+   "code": null,
+   "name": "IB Economics HL",
+   "catalog_name": "IB Economics HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5708": {
+   "code": null,
+   "name": "IB History HL",
+   "catalog_name": "IB History HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5709": {
+   "code": null,
+   "name": "IB Physics HL",
+   "catalog_name": "IB Physics HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5710": {
+   "code": null,
+   "name": "IB Psychology HL",
+   "catalog_name": "IB Psychology HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5711": {
+   "code": null,
+   "name": "IB Theatre HL",
+   "catalog_name": "IB Theatre HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5712": {
+   "code": null,
+   "name": "IB Geography HL",
+   "catalog_name": "IB Geography HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5713": {
+   "code": null,
+   "name": "IB Language A1 HL",
+   "catalog_name": "IB Language A1 HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5714": {
+   "code": null,
+   "name": "IB Language A2 HL",
+   "catalog_name": "IB Language A2 HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5715": {
+   "code": null,
+   "name": "IB Language A: Literature HL",
+   "catalog_name": "IB Language A: Literature HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5716": {
+   "code": null,
+   "name": "IB Mathematics HL",
+   "catalog_name": "IB Mathematics HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5740": {
+   "code": null,
+   "name": "IB Global Politics HL",
+   "catalog_name": "IB Global Politics HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5747": {
+   "code": null,
+   "name": "IB Language A: Language and Literature HL",
+   "catalog_name": "IB Language A: Language and Literature HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5750": {
+   "code": null,
+   "name": "IB Language B HL",
+   "catalog_name": "IB Language B HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5758": {
+   "code": null,
+   "name": "IB Mathematics: Analysis and Approaches HL",
+   "catalog_name": "IB Mathematics: Analysis and Approaches HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5760": {
+   "code": null,
+   "name": "IB Mathematics: Applications and Interpretation HL",
+   "catalog_name": "IB Mathematics: Applications and Interpretation HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5764": {
+   "code": null,
+   "name": "IB Philosophy HL",
+   "catalog_name": "IB Philosophy HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5768": {
+   "code": null,
+   "name": "IB Social and Cultural Anthropology HL",
+   "catalog_name": "IB Social and Cultural Anthropology HL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
+  },
+  "ITC5773": {
+   "code": null,
+   "name": "IB World Religions SL",
+   "catalog_name": "IB World Religions SL",
+   "issuer": "International Baccalaureate Organization (IBO)",
+   "family": "IB"
   }
  },
  "links": {
+  "AP 2-D Art and Design": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5186"
+   ]
+  },
+  "AP 3-D Art and Design": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5196"
+   ]
+  },
+  "AP African American Studies": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5233"
+   ]
+  },
+  "AP Art History": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5177"
+   ]
+  },
+  "AP Biology": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5176"
+   ]
+  },
+  "AP Calculus AB": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5178"
+   ]
+  },
+  "AP Calculus BC": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5175"
+   ]
+  },
+  "AP Chemistry": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5180"
+   ]
+  },
+  "AP Chinese Language and Culture": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5213"
+   ]
+  },
+  "AP Comparative Government and Politics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5203"
+   ]
+  },
+  "AP Computer Science A": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5199"
+   ]
+  },
+  "AP Computer Science AB": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5221"
+   ]
+  },
+  "AP Computer Science Principles": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5234"
+   ]
+  },
+  "AP Drawing": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5187"
+   ]
+  },
+  "AP English Language and Composition": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5185"
+   ]
+  },
+  "AP English Literature and Composition": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5190"
+   ]
+  },
+  "AP English Literature and Composition or AP English Language and Composition": {
+   "relation": "holds",
+   "rule": "any",
+   "certs": [
+    "ITC5190",
+    "ITC5185"
+   ]
+  },
+  "AP Environmental Science": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5197"
+   ]
+  },
+  "AP European History": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5188"
+   ]
+  },
+  "AP French Language and Culture": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5204"
+   ]
+  },
+  "AP French Literature": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5248"
+   ]
+  },
+  "AP German Language and Culture": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5235"
+   ]
+  },
+  "AP Human Geography": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5191"
+   ]
+  },
+  "AP Italian Language and Culture": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5219"
+   ]
+  },
+  "AP Japanese Language and Culture": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5214"
+   ]
+  },
+  "AP Latin": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5236"
+   ]
+  },
+  "AP Latin Literature": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5249"
+   ]
+  },
+  "AP Macroeconomics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5181"
+   ]
+  },
+  "AP Microeconomics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5182"
+   ]
+  },
+  "AP Music Theory": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5192"
+   ]
+  },
+  "AP Physics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [],
+   "unresolved": [
+    "AP Physics (names no one official exam)"
+   ]
+  },
+  "AP Physics 1: Algebra-Based": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5193"
+   ]
+  },
+  "AP Physics 2: Algebra-Based": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5194"
+   ]
+  },
+  "AP Physics B": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5220"
+   ]
+  },
+  "AP Physics C: Electricity and Magnetism": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5200"
+   ]
+  },
+  "AP Physics C: Mechanics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5189"
+   ]
+  },
+  "AP Precalculus": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5205"
+   ]
+  },
+  "AP Psychology": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5195"
+   ]
+  },
+  "AP Russian Language and Culture": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [],
+   "unresolved": [
+    "AP Russian Language and Culture (names no one official exam)"
+   ]
+  },
+  "AP Seminar": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5237"
+   ]
+  },
+  "AP Spanish Language and Culture": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5179"
+   ]
+  },
+  "AP Spanish Literature and Culture": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5201"
+   ]
+  },
+  "AP Statistics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5198"
+   ]
+  },
+  "AP United States Government and Politics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5202"
+   ]
+  },
+  "AP United States History": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5183"
+   ]
+  },
+  "AP World History: Modern": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5184"
+   ]
+  },
   "ASE A1 — Engine Repair": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4064"
+    "ITC4066"
    ]
   },
   "ASE A2 + A3 + A6 — Transmission, Drive Train, and Electrical": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4065",
-    "ITC4066",
-    "ITC1414"
+    "ITC4067",
+    "ITC4068",
+    "ITC1416"
    ]
   },
   "ASE A2 — Automatic Transmission/Transaxle": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4065"
+    "ITC4067"
    ]
   },
   "ASE A2+A3 — Automatic Transmission and Manual Drive Train (combined)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4065",
-    "ITC4066"
+    "ITC4067",
+    "ITC4068"
    ]
   },
   "ASE A3 — Manual Drive Train and Axles": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4066"
+    "ITC4068"
    ]
   },
   "ASE A4 — Suspension and Steering": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4067"
+    "ITC4069"
    ]
   },
   "ASE A5 — Brakes": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4068"
+    "ITC4070"
    ]
   },
   "ASE A6 — Electrical/Electronic Systems": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1414"
+    "ITC1416"
    ]
   },
   "ASE A7 — Heating and Air Conditioning": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4069"
+    "ITC4071"
    ]
   },
   "ASE A8 + L1 — Engine Performance and Advanced Engine Performance": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4070",
-    "ITC4061"
+    "ITC4072",
+    "ITC4063"
    ]
   },
   "ASE A8 — Engine Performance": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4070"
+    "ITC4072"
    ]
   },
   "ASE A9 + L2 — Light Vehicle Diesel and Medium/Heavy Diesel Advanced": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4071",
-    "ITC4077"
+    "ITC4073",
+    "ITC4079"
    ]
   },
   "ASE A9 — Light Vehicle Diesel Engines": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4071"
+    "ITC4073"
    ]
   },
   "ASE Bundle — A1, A6, A8, L1": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4064",
-    "ITC1414",
-    "ITC4070",
-    "ITC4061"
+    "ITC4066",
+    "ITC1416",
+    "ITC4072",
+    "ITC4063"
    ]
   },
   "ASE Bundle — A2, A3, A6": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4065",
-    "ITC4066",
-    "ITC1414"
+    "ITC4067",
+    "ITC4068",
+    "ITC1416"
    ]
   },
   "ASE Bundle — A4, A5": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4067",
-    "ITC4068"
+    "ITC4069",
+    "ITC4070"
    ]
   },
   "ASE Bundle — A4, A5, A6": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4067",
-    "ITC4068",
-    "ITC1414"
+    "ITC4069",
+    "ITC4070",
+    "ITC1416"
    ]
   },
   "ASE Bundle — A6 or T6 + L3": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC1414",
     "ITC1416",
-    "ITC4078"
+    "ITC1418",
+    "ITC4080"
    ]
   },
   "ASE Bundle — A6, A8, L1": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1414",
-    "ITC4070",
-    "ITC4061"
+    "ITC1416",
+    "ITC4072",
+    "ITC4063"
    ]
   },
   "ASE Bundle — L2, T8, SP/2 HD": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4077",
-    "ITC4085"
+    "ITC4079",
+    "ITC4087"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -362,10 +1373,10 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4080",
-    "ITC4083",
-    "ITC4084",
-    "ITC4085"
+    "ITC4082",
+    "ITC4085",
+    "ITC4086",
+    "ITC4087"
    ],
    "unresolved": [
     "MACS/609"
@@ -375,9 +1386,9 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4080",
-    "ITC1416",
-    "ITC4085"
+    "ITC4082",
+    "ITC1418",
+    "ITC4087"
    ],
    "unresolved": [
     "Snap-on 604"
@@ -387,26 +1398,26 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4080",
-    "ITC4085"
+    "ITC4082",
+    "ITC4087"
    ]
   },
   "ASE Bundle — T3, T4, T5, T8": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4081",
-    "ITC4082",
     "ITC4083",
-    "ITC4085"
+    "ITC4084",
+    "ITC4085",
+    "ITC4087"
    ]
   },
   "ASE Bundle — T3, T8, SP/2 HD": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4081",
-    "ITC4085"
+    "ITC4083",
+    "ITC4087"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -416,8 +1427,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4082",
-    "ITC4085"
+    "ITC4084",
+    "ITC4087"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -427,16 +1438,16 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4083",
-    "ITC4085"
+    "ITC4085",
+    "ITC4087"
    ]
   },
   "ASE Bundle — T5, T8, SP/2 HD": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4083",
-    "ITC4085"
+    "ITC4085",
+    "ITC4087"
    ],
    "unresolved": [
     "SP/2 HD"
@@ -446,8 +1457,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1416",
-    "ITC4077"
+    "ITC1418",
+    "ITC4079"
    ],
    "unresolved": [
     "Cummins ISX",
@@ -458,8 +1469,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC1416",
-    "ITC4085"
+    "ITC1418",
+    "ITC4087"
    ],
    "unresolved": [
     "Snap-on 604"
@@ -469,8 +1480,8 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4084",
-    "ITC4085"
+    "ITC4086",
+    "ITC4087"
    ],
    "unresolved": [
     "MACS/609"
@@ -480,7 +1491,7 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC4072"
+    "ITC4074"
    ],
    "unresolved": [
     "G1 (an ASE test the catalog does not list)"
@@ -490,28 +1501,28 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4072"
+    "ITC4074"
    ]
   },
   "ASE Certification (any A1–A8)": {
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC4064",
-    "ITC4065",
     "ITC4066",
     "ITC4067",
     "ITC4068",
-    "ITC1414",
     "ITC4069",
-    "ITC4070"
+    "ITC4070",
+    "ITC1416",
+    "ITC4071",
+    "ITC4072"
    ]
   },
   "ASE F1 — Alternate Fuels (CNG Light Vehicles)": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4062"
+    "ITC4064"
    ]
   },
   "ASE G1 + ALI Lift It Right Bundle": {
@@ -535,29 +1546,29 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4061",
-    "ITC4077"
+    "ITC4063",
+    "ITC4079"
    ]
   },
   "ASE L1 — Advanced Engine Performance Specialist": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4061"
+    "ITC4063"
    ]
   },
   "ASE L3 — Light Duty Hybrid/Electric Vehicle Specialist": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4078"
+    "ITC4080"
    ]
   },
   "ASE L4 — Advanced Driver Assistance Systems (ADAS) Specialist": {
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4060"
+    "ITC4062"
    ]
   },
   "ASE Master Automobile Technician": {
@@ -572,15 +1583,15 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4064",
-    "ITC4065",
     "ITC4066",
     "ITC4067",
     "ITC4068",
-    "ITC1414",
     "ITC4069",
     "ITC4070",
-    "ITC4061"
+    "ITC1416",
+    "ITC4071",
+    "ITC4072",
+    "ITC4063"
    ],
    "unresolved": [
     "Master Automobile Technician"
@@ -590,15 +1601,15 @@
    "relation": "holds",
    "rule": "any",
    "certs": [
-    "ITC4064",
-    "ITC4065",
     "ITC4066",
     "ITC4067",
     "ITC4068",
-    "ITC1414",
     "ITC4069",
     "ITC4070",
-    "ITC4078"
+    "ITC1416",
+    "ITC4071",
+    "ITC4072",
+    "ITC4080"
    ],
    "unresolved": [
     "Master Automobile Technician"
@@ -608,14 +1619,14 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4079",
-    "ITC4080",
     "ITC4081",
     "ITC4082",
     "ITC4083",
-    "ITC1416",
     "ITC4084",
-    "ITC4085"
+    "ITC4085",
+    "ITC1418",
+    "ITC4086",
+    "ITC4087"
    ],
    "unresolved": [
     "Master Medium/Heavy Truck Technician"
@@ -625,7 +1636,7 @@
    "relation": "holds",
    "rule": "all",
    "certs": [
-    "ITC4085"
+    "ITC4087"
    ]
   },
   "ASE xEV — Electrified Vehicle Safety": {
@@ -640,84 +1651,525 @@
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC1414"
+    "ITC1416"
    ]
   },
   "Automotive Electrical/Electronics 2 (ASE A6 Electrical/Electronic Systems)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC1414"
+    "ITC1416"
    ]
   },
   "Automotive Technology (ASE A2 Automatic Transmission/Transaxle)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4065"
+    "ITC4067"
    ]
   },
   "Automotive Technology (ASE A5 Brakes)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4068"
+    "ITC4070"
    ]
   },
   "Automotive Technology (ASE A6 Electrical/Electronic Systems)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC1414"
+    "ITC1416"
    ]
   },
   "Automotive Technology (ASE A7 Heating and Air Conditioning)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4069"
+    "ITC4071"
    ]
   },
   "Automotive Technology (ASE A8 Engine Performance)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4070"
+    "ITC4072"
    ]
   },
   "Automotive Technology (ASE A9 Light Vehicle Diesel Engines)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4071"
+    "ITC4073"
    ]
   },
   "Automotive Technology (ASE L1 Advanced Engine Performance Specialist)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4061"
+    "ITC4063"
    ]
   },
   "Automotive Technology (ASE L3 Light Duty Hybrid/Electric Vehicle Specialist)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4078"
+    "ITC4080"
    ]
   },
   "Automotive Technology (ASE P1 Medium-Heavy Truck Parts Specialist certification)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4087"
+    "ITC4089"
+   ]
+  },
+  "CLEP American Government": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5238"
+   ]
+  },
+  "CLEP American Literature": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5239"
+   ]
+  },
+  "CLEP Analyzing and Interpreting Literature": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5222"
+   ]
+  },
+  "CLEP Biology": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5223"
+   ]
+  },
+  "CLEP Calculus": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5206"
+   ]
+  },
+  "CLEP Chemistry": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5224"
+   ]
+  },
+  "CLEP College Algebra": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5207"
+   ]
+  },
+  "CLEP College Algebra-Trigonometry": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5240"
+   ]
+  },
+  "CLEP College Composition": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5225"
+   ]
+  },
+  "CLEP College Mathematics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5208"
+   ]
+  },
+  "CLEP English Literature": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5241"
+   ]
+  },
+  "CLEP Financial Accounting": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0513"
+   ]
+  },
+  "CLEP French Language": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5242"
+   ]
+  },
+  "CLEP German Language": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5243"
+   ]
+  },
+  "CLEP History of the United States 1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5215"
+   ]
+  },
+  "CLEP History of the United States 2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5216"
+   ]
+  },
+  "CLEP Human Growth and Development": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5226"
+   ]
+  },
+  "CLEP Humanities": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5227"
+   ]
+  },
+  "CLEP Information Systems": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5209"
+   ]
+  },
+  "CLEP Introduction to Educational Psychology": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5244"
+   ]
+  },
+  "CLEP Introductory Business Law": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5245"
+   ]
+  },
+  "CLEP Introductory Psychology": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5228"
+   ]
+  },
+  "CLEP Introductory Sociology": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5210"
+   ]
+  },
+  "CLEP Natural Sciences": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5246"
+   ]
+  },
+  "CLEP Precalculus": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5229"
+   ]
+  },
+  "CLEP Principles of Macroeconomics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5211"
+   ]
+  },
+  "CLEP Principles of Management": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5212"
+   ]
+  },
+  "CLEP Principles of Marketing": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC0512"
+   ]
+  },
+  "CLEP Principles of Microeconomics": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5217"
+   ]
+  },
+  "CLEP Social Sciences and History": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5253"
+   ]
+  },
+  "CLEP Spanish Language": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5218"
+   ]
+  },
+  "CLEP Spanish with Writing": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5247"
+   ]
+  },
+  "CLEP Trigonometry": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5230"
+   ]
+  },
+  "CLEP Western Civilization 1": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5231"
+   ]
+  },
+  "CLEP Western Civilization 2": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5232"
    ]
   },
   "Engine Performance (ASE A8 Engine Performance)": {
    "relation": "aligned",
    "rule": "all",
    "certs": [
-    "ITC4070"
+    "ITC4072"
+   ]
+  },
+  "Engine Performance 1 (ASE A8 Engine Performance)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4072"
+   ]
+  },
+  "Engine Performance 2 (ASE A8 Engine Performance)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4072"
+   ]
+  },
+  "IB Biology HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5705"
+   ]
+  },
+  "IB Chemistry HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5706"
+   ]
+  },
+  "IB Economics HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5707"
+   ]
+  },
+  "IB Geography HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5712"
+   ]
+  },
+  "IB Global Politics HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5740"
+   ]
+  },
+  "IB History HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5708"
+   ]
+  },
+  "IB Language A1 HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5713"
+   ]
+  },
+  "IB Language A1 HL (Non-English)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5713"
+   ]
+  },
+  "IB Language A2 HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5714"
+   ]
+  },
+  "IB Language A2 HL (Non-English)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5714"
+   ]
+  },
+  "IB Language A: Language and Literature HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5747"
+   ]
+  },
+  "IB Language A: Language and Literature HL (Non-English)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5747"
+   ]
+  },
+  "IB Language A: Literature HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5715"
+   ]
+  },
+  "IB Language A: Literature HL (Non-English)": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5715"
+   ]
+  },
+  "IB Language B HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5750"
+   ]
+  },
+  "IB Mathematics HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5716"
+   ]
+  },
+  "IB Mathematics: Analysis and Approaches HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5758"
+   ]
+  },
+  "IB Mathematics: Applications and Interpretation HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5760"
+   ]
+  },
+  "IB Philosophy HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5764"
+   ]
+  },
+  "IB Physics HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5709"
+   ]
+  },
+  "IB Psychology HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5710"
+   ]
+  },
+  "IB Social and Cultural Anthropology HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5768"
+   ]
+  },
+  "IB Theatre HL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5711"
+   ]
+  },
+  "IB World Religions SL": {
+   "relation": "holds",
+   "rule": "all",
+   "certs": [
+    "ITC5773"
+   ]
+  },
+  "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4068"
+   ]
+  },
+  "Suspension and Steering (ASE A4 Suspension and Steering)": {
+   "relation": "aligned",
+   "rule": "all",
+   "certs": [
+    "ITC4069"
    ]
   }
  }
