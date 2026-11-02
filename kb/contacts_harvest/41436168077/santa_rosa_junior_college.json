@@ -1,0 +1,21 @@
+{
+ "college": "Santa Rosa Junior College",
+ "homepage": "https://www.santarosa.edu/",
+ "read_at": "2026-11-02T11:28:29+00:00",
+ "pages": [
+  {
+   "url": "https://www.santarosa.edu/",
+   "final_url": "https://www.santarosa.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://admissions.santarosa.edu/academic-calendar",
+   "final_url": "https://admissions.santarosa.edu/academic-calendar",
+   "status": 200,
+   "excerpts": []
+  }
+ ],
+ "unread_links": [],
+ "run": "41436168077"
+}

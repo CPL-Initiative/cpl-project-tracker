@@ -1,0 +1,640 @@
+{
+ "college": "Taft College",
+ "homepage": "https://www.taftcollege.edu/",
+ "read_at": "2026-11-02T11:34:01+00:00",
+ "pages": [
+  {
+   "url": "https://www.taftcollege.edu/",
+   "final_url": "https://www.taftcollege.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Faculty Association",
+      "Foundation",
+      "Human Resources",
+      "President",
+      "Show submenu for President",
+      "Media Resources",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for President",
+     "position": "college_ceo",
+     "window": [
+      "Foundation",
+      "Human Resources",
+      "President",
+      "Show submenu for President",
+      "Media Resources",
+      "Office of the President",
+      "Vice President of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "President",
+      "Show submenu for President",
+      "Media Resources",
+      "Office of the President",
+      "Vice President of Student Services",
+      "Vice President of Instruction",
+      "More Show submenu for"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Show submenu for President",
+      "Media Resources",
+      "Office of the President",
+      "Vice President of Student Services",
+      "Vice President of Instruction",
+      "More Show submenu for",
+      "Skip Gallery"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Media Resources",
+      "Office of the President",
+      "Vice President of Student Services",
+      "Vice President of Instruction",
+      "More Show submenu for",
+      "Skip Gallery",
+      "Priority Registration for Spring 2027 Opened October 26"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.taftcollege.edu/o/admissionsandrecords/page/veterans",
+   "final_url": "https://www.taftcollege.edu/o/admissionsandrecords/page/veterans",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Registrar",
+     "position": "dean_ar",
+     "window": [
+      "DegreeWorks",
+      "Show submenu for DegreeWorks",
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for Registrar",
+     "position": "dean_ar",
+     "window": [
+      "Show submenu for DegreeWorks",
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts",
+      "Show submenu for Academic Records and Transcripts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Registrar",
+     "position": "dean_ar",
+     "window": [
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts",
+      "Show submenu for Academic Records and Transcripts",
+      "Reissue of Dipoloma or Certificate"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.taftcollege.edu/staff",
+   "final_url": "https://www.taftcollege.edu/staff",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Faculty Association",
+      "Foundation",
+      "Human Resources",
+      "President",
+      "Show submenu for President",
+      "Media Resources",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for President",
+     "position": "college_ceo",
+     "window": [
+      "Foundation",
+      "Human Resources",
+      "President",
+      "Show submenu for President",
+      "Media Resources",
+      "Office of the President",
+      "Vice President of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "President",
+      "Show submenu for President",
+      "Media Resources",
+      "Office of the President",
+      "Vice President of Student Services",
+      "Vice President of Instruction",
+      "More Show submenu for"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Show submenu for President",
+      "Media Resources",
+      "Office of the President",
+      "Vice President of Student Services",
+      "Vice President of Instruction",
+      "More Show submenu for",
+      "Taft College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Media Resources",
+      "Office of the President",
+      "Vice President of Student Services",
+      "Vice President of Instruction",
+      "More Show submenu for",
+      "Taft College",
+      "Staff"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.taftcollege.edu/o/campusleadership/page/office-of-the-president",
+   "final_url": "https://www.taftcollege.edu/o/campusleadership/page/office-of-the-president",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | Campus Leadership",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | Campus Leadership",
+      "Skip to content",
+      "MyTCCanvasStudent EmailStaff EmailAccessibility",
+      "Search site"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Area Maps",
+      "Trustee Election Transition",
+      "Documents & Forms",
+      "Office of the President",
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Election Transition",
+      "Documents & Forms",
+      "Office of the President",
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services",
+      "Show submenu for Fiscal Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services",
+      "Show submenu for Fiscal Services",
+      "Chart of Accounts"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.taftcollege.edu/o/admissionsandrecords",
+   "final_url": "https://www.taftcollege.edu/o/admissionsandrecords",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Registrar",
+     "position": "dean_ar",
+     "window": [
+      "DegreeWorks",
+      "Show submenu for DegreeWorks",
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for Registrar",
+     "position": "dean_ar",
+     "window": [
+      "Show submenu for DegreeWorks",
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts",
+      "Show submenu for Academic Records and Transcripts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Registrar",
+     "position": "dean_ar",
+     "window": [
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts",
+      "Show submenu for Academic Records and Transcripts",
+      "Reissue of Dipoloma or Certificate"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.taftcollege.edu/o/admissionsandrecords/page/admissions",
+   "final_url": "https://www.taftcollege.edu/o/admissionsandrecords/page/admissions",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Registrar",
+     "position": "dean_ar",
+     "window": [
+      "DegreeWorks",
+      "Show submenu for DegreeWorks",
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for Registrar",
+     "position": "dean_ar",
+     "window": [
+      "Show submenu for DegreeWorks",
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts",
+      "Show submenu for Academic Records and Transcripts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Registrar",
+     "position": "dean_ar",
+     "window": [
+      "DegreeWorks FAQ",
+      "Registrar",
+      "Show submenu for Registrar",
+      "Registrar",
+      "Academic Records and Transcripts",
+      "Show submenu for Academic Records and Transcripts",
+      "Reissue of Dipoloma or Certificate"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.taftcollege.edu/o/campusleadership",
+   "final_url": "https://www.taftcollege.edu/o/campusleadership",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Area Maps",
+      "Trustee Election Transition",
+      "Documents & Forms",
+      "Office of the President",
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Election Transition",
+      "Documents & Forms",
+      "Office of the President",
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services",
+      "Show submenu for Fiscal Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services",
+      "Show submenu for Fiscal Services",
+      "Chart of Accounts"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.taftcollege.edu/o/campusleadership/page/campus-leadership",
+   "final_url": "https://www.taftcollege.edu/o/campusleadership/page/campus-leadership",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Area Maps",
+      "Trustee Election Transition",
+      "Documents & Forms",
+      "Office of the President",
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Election Transition",
+      "Documents & Forms",
+      "Office of the President",
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services",
+      "Show submenu for Fiscal Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services",
+      "Show submenu for Fiscal Services",
+      "Chart of Accounts"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.taftcollege.edu/o/campusleadership/page/presidents-cabinet",
+   "final_url": "https://www.taftcollege.edu/o/campusleadership/page/presidents-cabinet",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Cabinet | Campus Leadership",
+     "position": "college_ceo",
+     "window": [
+      "President's Cabinet | Campus Leadership",
+      "Skip to content",
+      "MyTCCanvasStudent EmailStaff EmailAccessibility",
+      "Search site"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Area Maps",
+      "Trustee Election Transition",
+      "Documents & Forms",
+      "Office of the President",
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Show submenu for Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Election Transition",
+      "Documents & Forms",
+      "Office of the President",
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Cabinet",
+     "position": "college_ceo",
+     "window": [
+      "Show submenu for Office of the President",
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Superintendent's Campus Newsletter",
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services",
+      "Show submenu for Fiscal Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Organizational Charts",
+      "President's Cabinet",
+      "Vice President of Student Services",
+      "Vice President of Administrative Services",
+      "Fiscal Services",
+      "Show submenu for Fiscal Services",
+      "Chart of Accounts"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41436168077"
+}

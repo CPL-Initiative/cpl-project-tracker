@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-517 document(s).
+518 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 550 | [Session 550 handoff: Santa Ana's SLO reader fix, the eighth contacts read](../session_550_handoff.md) | 2026-11-02 |
 | 549 | [Session 549 handoff: the IT vendor cert link, the seventh contacts read](../session_549_handoff.md) | 2026-11-02 |
 | 548 | [Session 548 handoff: Golden West's SLO load, the sixth contacts read, Sheet 156 on the refused colleges](../session_548_handoff.md) | 2026-11-02 |
 | 547 | [Session 547 handoff: AP, CLEP and IB in the cert catalog, the fifth contacts read, the Fact Sheet's UI pass](../session_547_handoff.md) | 2026-11-02 |

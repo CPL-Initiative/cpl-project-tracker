@@ -1,0 +1,760 @@
+{
+ "college": "Santa Monica College",
+ "homepage": "https://www.smc.edu/",
+ "read_at": "2026-11-02T11:28:15+00:00",
+ "pages": [
+  {
+   "url": "https://www.smc.edu/",
+   "final_url": "https://www.smc.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.smc.edu/directory/index.php",
+   "final_url": "https://www.smc.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.smc.edu/admission-aid/index.php",
+   "final_url": "https://www.smc.edu/admission-aid/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.smc.edu/student-support/veterans-success-center/index.php",
+   "final_url": "https://www.smc.edu/student-support/veterans-success-center/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center - Santa Monica College",
+     "position": "vrc",
+     "window": [
+      "Veterans Success Center - Santa Monica College",
+      "Skip to content",
+      "Menu",
+      "AboutToggle submenu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Search",
+      "We’ll help you get the information you needButton search",
+      "Student Support",
+      "Veterans Success Center",
+      "scroll to content",
+      "IN THIS SECTION",
+      "Veterans Success Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Success Center",
+      "scroll to content",
+      "IN THIS SECTION",
+      "Veterans Success Center",
+      "New Student Checklist",
+      "Continuing Student Checklist",
+      "VRC Services and Technology"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Peer Mentors",
+      "Santa Monica College",
+      "Student Support",
+      "Veterans Success Center",
+      "Summer and Fall 2026 Hours",
+      "Office Hours - Limited In-Person/Phone/Remote",
+      "Monday - Thursday: 9 a.m. to 4 p.m.​ ​- Limited In-Person Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome to the Veterans Success Center at Santa Monica College, serving veterans entering",
+     "position": "vrc",
+     "window": [
+      "Academic Counseling​ - Limited In-Person Walk-ins/Virtual-Zoom Appointments",
+      "Monday - Thursday: 9 a.m. to 4 p.m.​ - In-person drop-ins",
+      "Monday - Thursday: 9 a.m. to 4 p.m.​ - Express/Drop-ins via Zoom",
+      "Welcome to the Veterans Success Center at Santa Monica College, serving veterans entering",
+      "college for the first time or returning to college to further their education, active",
+      "duty and dependents (spouse and/or children).",
+      "The center acts as a liaison with the Veterans Administration to verify enrollment"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Success Center is closed in observance of legal, college holidays and",
+     "position": "vrc",
+     "window": [
+      "Phone: 310-434-8205",
+      "Email: VetsOutreach@smc.edu VetsOutreach@smc.edu",
+      "Location: Main Campus, Cayton Building, Invictus Lower Level",
+      "The Veterans Success Center is closed in observance of legal, college holidays and",
+      "professional development days:",
+      "September 7, 2026 - Labor Day",
+      "November 11, 20226 - Veterans Day"
+     ],
+     "emails": [
+      "VetsOutreach@smc.edu"
+     ]
+    },
+    {
+     "line": "Remote Veterans Services",
+     "position": "vrc",
+     "window": [
+      "November 26-27, 2026 - Thanksgiving Holiday",
+      "December 24, 2026 - December 31, 2026 - Christmas and College Holidays",
+      "January 1, 2027 - New Year's Day",
+      "Remote Veterans Services",
+      "New Students",
+      "Checklist for NEW Students",
+      "GI Bill®, Admissions-DD214, Financial Aid, Mandatory Counseling Appointment, Corsair"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Wednesday/Thursday: 9 a.m. to 4:30 p.m. SMC Veteran Success Center",
+     "position": "vrc",
+     "window": [
+      "SMC/UCLA",
+      "Stephen.Lam@va.gov Stephen.Lam@va.gov",
+      "In-Person Office Hours:",
+      "Wednesday/Thursday: 9 a.m. to 4:30 p.m. SMC Veteran Success Center",
+      "310-882-3411",
+      "US Vets Wellness Counselor (Mental Health)",
+      "Skleinnman@usvets.org Sasha Kleinman"
+     ],
+     "emails": [
+      "Skleinnman@usvets.org",
+      "Stephen.Lam@va.gov"
+     ]
+    },
+    {
+     "line": "Veterans' Resource Center at Santa Monica College",
+     "position": "vrc",
+     "window": [
+      "ABI/TBI Specialist - Center for Students with Disabilities",
+      "Erika Deuel, ABI/TBI Specialist, Center for Students with Disabilities, deuel_erika@smc.edu,",
+      "310-434-4442",
+      "Veterans' Resource Center at Santa Monica College",
+      "Outside The Wire: Veterans at SMC",
+      "Santa Monica College",
+      "1900 Pico Boulevard"
+     ],
+     "emails": [
+      "deuel_erika@smc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://admin.smc.edu/administration/index.php",
+   "final_url": "https://admin.smc.edu/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.smc.edu/directory/",
+   "final_url": "https://www.smc.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://admin.smc.edu/administration/governance/index.php",
+   "final_url": "https://admin.smc.edu/administration/governance/index.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome from SMC Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "We’ll help you get the information you needButton search",
+      "College Governance",
+      "scroll to content",
+      "Welcome from SMC Superintendent/President",
+      "We at Santa Monica College are proud of our academic excellence and our reputation",
+      "as California’s No. 1 transfer institution to the University of California, USC, Loyola",
+      "Marymount University; and to the UC and California State University systems combined."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Kathryn E. Jeffery, Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "We look forward to witnessing your journey of transformation here at Santa Monica",
+      "College and getting you to your destination!",
+      "Cordially,",
+      "Dr. Kathryn E. Jeffery, Superintendent/President",
+      "District Planning",
+      "Academic Senate Joint Committees",
+      "Accreditation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Trustee Meeting Information",
+      "Citizens Bond Oversight Committee",
+      "Administration",
+      "Superintendent/President",
+      "Senior Administrators",
+      "Management Organization Charts",
+      "College Governance Groups"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.smc.edu/directory/department-directory.php",
+   "final_url": "https://www.smc.edu/directory/department-directory.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assessment Test Coordinator",
+     "position": null,
+     "window": [
+      "Art Gallery",
+      "310-434-3434",
+      "art@smc.edu art@smc.edu",
+      "Assessment Test Coordinator",
+      "310-434-8040",
+      "310-434-8019",
+      "SuccessAndEngagement@smc.edu SuccessAndEngagement@smc.edu"
+     ],
+     "emails": [
+      "SuccessAndEngagement@smc.edu",
+      "art@smc.edu"
+     ]
+    },
+    {
+     "line": "president@smc.edu president@smc.edu",
+     "position": "college_ceo",
+     "window": [
+      "Black_Collegians@smc.edu Black_Collegians@smc.edu",
+      "Board of Trustees",
+      "310-434-4241",
+      "president@smc.edu president@smc.edu",
+      "Bookstore",
+      "310-434-4258",
+      "310-434-3647"
+     ],
+     "emails": [
+      "Black_Collegians@smc.edu",
+      "president@smc.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Police",
+      "310-434-4300",
+      "smcpd@smc.edu smcpd@smc.edu",
+      "President's Office",
+      "310-434-4200",
+      "president@smc.edu president@smc.edu",
+      "Psychology"
+     ],
+     "emails": [
+      "president@smc.edu",
+      "smcpd@smc.edu"
+     ]
+    },
+    {
+     "line": "president@smc.edu president@smc.edu",
+     "position": "college_ceo",
+     "window": [
+      "smcpd@smc.edu smcpd@smc.edu",
+      "President's Office",
+      "310-434-4200",
+      "president@smc.edu president@smc.edu",
+      "Psychology",
+      "310-434-4276",
+      "310-434-4839"
+     ],
+     "emails": [
+      "president@smc.edu",
+      "smcpd@smc.edu"
+     ]
+    },
+    {
+     "line": "as.president@smc.edu as.president@smc.edu",
+     "position": "college_ceo",
+     "window": [
+      "310-434-4958",
+      "Student Body President",
+      "310-434-4251",
+      "as.president@smc.edu as.president@smc.edu",
+      "Student Health",
+      "310-434-4262",
+      "fila_susan@smc.edu fila_susan@smc.edu"
+     ],
+     "emails": [
+      "as.president@smc.edu",
+      "fila_susan@smc.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President's Office",
+     "position": "college_ceo",
+     "window": [
+      "310-434-8040",
+      "310-434-8019",
+      "SuccessAndEngagement@smc.edu%E2%80%8B SuccessAndEngagement@smc.edu",
+      "Superintendent/President's Office",
+      "310-434-4200",
+      "president@smc.edu president@smc.edu",
+      "Swimming and Diving"
+     ],
+     "emails": [
+      "SuccessAndEngagement@smc.edu",
+      "president@smc.edu"
+     ]
+    },
+    {
+     "line": "president@smc.edu president@smc.edu",
+     "position": "college_ceo",
+     "window": [
+      "SuccessAndEngagement@smc.edu%E2%80%8B SuccessAndEngagement@smc.edu",
+      "Superintendent/President's Office",
+      "310-434-4200",
+      "president@smc.edu president@smc.edu",
+      "Swimming and Diving",
+      "310-434-3526",
+      "eskridge_brian@smc.edu eskridge_brian@smc.edu"
+     ],
+     "emails": [
+      "SuccessAndEngagement@smc.edu",
+      "eskridge_brian@smc.edu",
+      "president@smc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.smc.edu/student-support/veterans-success-center/",
+   "final_url": "https://www.smc.edu/student-support/veterans-success-center/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center - Santa Monica College",
+     "position": "vrc",
+     "window": [
+      "Veterans Success Center - Santa Monica College",
+      "Skip to content",
+      "Menu",
+      "AboutToggle submenu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Search",
+      "We’ll help you get the information you needButton search",
+      "Student Support",
+      "Veterans Success Center",
+      "scroll to content",
+      "IN THIS SECTION",
+      "Veterans Success Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Success Center",
+      "scroll to content",
+      "IN THIS SECTION",
+      "Veterans Success Center",
+      "New Student Checklist",
+      "Continuing Student Checklist",
+      "VRC Services and Technology"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Peer Mentors",
+      "Santa Monica College",
+      "Student Support",
+      "Veterans Success Center",
+      "Summer and Fall 2026 Hours",
+      "Office Hours - Limited In-Person/Phone/Remote",
+      "Monday - Thursday: 9 a.m. to 4 p.m.​ ​- Limited In-Person Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome to the Veterans Success Center at Santa Monica College, serving veterans entering",
+     "position": "vrc",
+     "window": [
+      "Academic Counseling​ - Limited In-Person Walk-ins/Virtual-Zoom Appointments",
+      "Monday - Thursday: 9 a.m. to 4 p.m.​ - In-person drop-ins",
+      "Monday - Thursday: 9 a.m. to 4 p.m.​ - Express/Drop-ins via Zoom",
+      "Welcome to the Veterans Success Center at Santa Monica College, serving veterans entering",
+      "college for the first time or returning to college to further their education, active",
+      "duty and dependents (spouse and/or children).",
+      "The center acts as a liaison with the Veterans Administration to verify enrollment"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Success Center is closed in observance of legal, college holidays and",
+     "position": "vrc",
+     "window": [
+      "Phone: 310-434-8205",
+      "Email: VetsOutreach@smc.edu VetsOutreach@smc.edu",
+      "Location: Main Campus, Cayton Building, Invictus Lower Level",
+      "The Veterans Success Center is closed in observance of legal, college holidays and",
+      "professional development days:",
+      "September 7, 2026 - Labor Day",
+      "November 11, 20226 - Veterans Day"
+     ],
+     "emails": [
+      "VetsOutreach@smc.edu"
+     ]
+    },
+    {
+     "line": "Remote Veterans Services",
+     "position": "vrc",
+     "window": [
+      "November 26-27, 2026 - Thanksgiving Holiday",
+      "December 24, 2026 - December 31, 2026 - Christmas and College Holidays",
+      "January 1, 2027 - New Year's Day",
+      "Remote Veterans Services",
+      "New Students",
+      "Checklist for NEW Students",
+      "GI Bill®, Admissions-DD214, Financial Aid, Mandatory Counseling Appointment, Corsair"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Wednesday/Thursday: 9 a.m. to 4:30 p.m. SMC Veteran Success Center",
+     "position": "vrc",
+     "window": [
+      "SMC/UCLA",
+      "Stephen.Lam@va.gov Stephen.Lam@va.gov",
+      "In-Person Office Hours:",
+      "Wednesday/Thursday: 9 a.m. to 4:30 p.m. SMC Veteran Success Center",
+      "310-882-3411",
+      "US Vets Wellness Counselor (Mental Health)",
+      "Skleinnman@usvets.org Sasha Kleinman"
+     ],
+     "emails": [
+      "Skleinnman@usvets.org",
+      "Stephen.Lam@va.gov"
+     ]
+    },
+    {
+     "line": "Veterans' Resource Center at Santa Monica College",
+     "position": "vrc",
+     "window": [
+      "ABI/TBI Specialist - Center for Students with Disabilities",
+      "Erika Deuel, ABI/TBI Specialist, Center for Students with Disabilities, deuel_erika@smc.edu,",
+      "310-434-4442",
+      "Veterans' Resource Center at Santa Monica College",
+      "Outside The Wire: Veterans at SMC",
+      "Santa Monica College",
+      "1900 Pico Boulevard"
+     ],
+     "emails": [
+      "deuel_erika@smc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://foundation.smc.edu/generalfundgiving",
+   "final_url": "https://foundation.smc.edu/areas-to-support/give-today.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Get InvolvedToggle submenu",
+      "Alumni",
+      "SMC Associates",
+      "President's Circle",
+      "Scholarships",
+      "AboutToggle submenu",
+      "Leadership & Staff"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.smc.edu/student-support/veterans-success-center/new-student-checklist.php",
+   "final_url": "https://www.smc.edu/student-support/veterans-success-center/new-student-checklist.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Request Info",
+      "Search",
+      "We’ll help you get the information you needButton search",
+      "Veterans Success Center",
+      "New Student Checklist",
+      "scroll to content",
+      "IN THIS SECTION"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "New Student Checklist",
+      "scroll to content",
+      "IN THIS SECTION",
+      "Veterans Success Center",
+      "New Student Checklist",
+      "Continuing Student Checklist",
+      "VRC Services and Technology"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Peer Mentors",
+      "Santa Monica College",
+      "Student Support",
+      "Veterans Success Center",
+      "New Student Checklist",
+      "New Student Checklist",
+      "The process of applying for school, obtaining benefits, determining a major, creating"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Wednesday/Thursday: 9:00 a.m. - 4:00 p.m. SMC Veteran Success Center",
+     "position": "vrc",
+     "window": [
+      "Certification Agreement Form",
+      "Meet with VSOC Counselor, Stephen.Lam@va.gov Stephen.Lam@va.gov",
+      "In-Person Office Hours:",
+      "Wednesday/Thursday: 9:00 a.m. - 4:00 p.m. SMC Veteran Success Center",
+      "310-882-3411",
+      "Meet with US Vets Counselor, Blake Lamar , to go over any mental health counseling needs outside of college via",
+      "email, BLamar@usvets.org."
+     ],
+     "emails": [
+      "BLamar@usvets.org",
+      "Stephen.Lam@va.gov"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.smc.edu/admission-aid/student-records/residency.php",
+   "final_url": "https://www.smc.edu/admission-aid/student-records/residency.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Success Center",
+     "position": "vrc",
+     "window": [
+      "Special Programs",
+      "DREAM Program",
+      "Student Equity Center",
+      "Veterans Success Center",
+      "More Resources",
+      "CommunityToggle submenu",
+      "News"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Completion of a questionnaire form prescribed by the Chancellor of the California",
+     "position": "district_ceo",
+     "window": [
+      "Colleges;",
+      "Registration or enrollment in a course offered by any college in the District for",
+      "any term commencing on or after January 1, 2002,",
+      "Completion of a questionnaire form prescribed by the Chancellor of the California",
+      "Community Colleges and furnished by the District of enrollment, verifying eligibility",
+      "for this nonresident tuition exemption; and",
+      "In the case of a student without lawful immigration status, the filing of an affidavit"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://foundation.smc.edu/ongoingmoment.php",
+  "https://admin.smc.edu/administration/governance/senior-administrators/index.php",
+  "https://foundation.smc.edu/about/leadership-staff.php"
+ ],
+ "run": "41436168077"
+}

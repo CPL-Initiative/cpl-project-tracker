@@ -1,0 +1,55 @@
+{
+ "college": "Santa Barbara City College",
+ "homepage": "https://www.sbcc.edu/",
+ "read_at": "2026-11-02T11:27:13+00:00",
+ "pages": [
+  {
+   "url": "https://www.sbcc.edu/",
+   "final_url": "https://www.sbcc.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/84cff16a-07e9-42bd-b9bc-bb03a0c3bc91/programs/734e3001-9adc-b5d6-0ab7-d4ce55e6e739",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/84cff16a-07e9-42bd-b9bc-bb03a0c3bc91/programs/5784f6c0-ceed-53f9-9517-48423bc58dcd",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/84cff16a-07e9-42bd-b9bc-bb03a0c3bc91/programs/e6e2cb3b-b700-b89c-93e0-384be54b580b",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/84cff16a-07e9-42bd-b9bc-bb03a0c3bc91/programs/9fe8b959-ad81-1e56-96a4-b2134da197b0",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/445ea8b6-46ff-40c8-a034-e762b17eff6a/programs/da2578b8-eb53-0160-64ef-29591662ceb1",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/e9e68595-886a-4bf8-beb3-0626eea2c4fb/programs/3cdccdfd-8a94-6d05-161d-a9a9df80b6d9",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/e9e68595-886a-4bf8-beb3-0626eea2c4fb/programs/74dabc50-7b23-a844-eb0b-51c719ad5d71",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/e9e68595-886a-4bf8-beb3-0626eea2c4fb/programs/cb6df475-9bdb-e4ca-259c-50a36bf63e06",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/e9e68595-886a-4bf8-beb3-0626eea2c4fb/programs/88258479-4842-8d0e-c6cc-6458bd28618f",
+   "status": 403
+  },
+  {
+   "url": "https://degree-map.sbcc.edu/academics/interest-clusters/e9e68595-886a-4bf8-beb3-0626eea2c4fb/programs/e686a3c5-41b6-1bc4-8669-8bdd9b1ba274",
+   "status": 403
+  }
+ ],
+ "unread_links": [],
+ "run": "41436168077"
+}

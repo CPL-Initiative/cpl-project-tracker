@@ -1,0 +1,103 @@
+{
+ "college": "San Diego Miramar College",
+ "homepage": "https://sdmiramar.edu/",
+ "read_at": "2026-11-02T11:24:21+00:00",
+ "pages": [
+  {
+   "url": "https://sdmiramar.edu/",
+   "final_url": "https://sdmiramar.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://sdmiramar.edu/services/veterans",
+   "final_url": "https://sdmiramar.edu/services/veterans",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://sdmiramar.edu/directory/service",
+   "final_url": "https://sdmiramar.edu/directory/service",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Academic Success Center (Donnie Tran - Coordinator)",
+     "position": null,
+     "window": [
+      "Z",
+      "A",
+      "Academic Success Center",
+      "Academic Success Center (Donnie Tran - Coordinator)",
+      "L-101",
+      "(619) 388-7852",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "On-site General Counseling.",
+      "Administrative Services",
+      "Battisti, Maria",
+      "Vice President, Administrative Services",
+      "Administrative Services",
+      "[email protected]",
+      "(619) 388-7815"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Administrative Services",
+     "position": null,
+     "window": [
+      "8:00am - 12:00pm",
+      "Budget, Purchasing & Travel Support",
+      "Roesler, Nicole",
+      "Director of Administrative Services",
+      "N-101",
+      "[email protected]",
+      "(619) 388-5163"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://sdmiramar.edu/services/veterans/disabled-info",
+   "final_url": "https://sdmiramar.edu/services/veterans/disabled-info",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://sdmiramar.edu/services/veterans/other-info",
+   "final_url": "https://sdmiramar.edu/services/veterans/other-info",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://sdmiramar.edu/services/admissions",
+   "final_url": "https://sdmiramar.edu/services/admissions",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Tuition and Fees",
+      "Tutorials: Helpful SDCCD Registration Videos",
+      "Tutoring Services",
+      "Veterans Services",
+      "keyboard_arrow_down",
+      "keyboard_arrow_up",
+      "Student Email Resources"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41436168077"
+}

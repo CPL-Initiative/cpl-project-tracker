@@ -1,0 +1,495 @@
+{
+ "run": "41436168077",
+ "read_by": "S549 SkySunflower, 2026-11-02",
+ "colleges": [
+  "San Diego Mesa College",
+  "San Diego Miramar College",
+  "San Joaquin Delta College",
+  "San Jose City College",
+  "Santa Ana College",
+  "Santa Monica College",
+  "Santiago Canyon College",
+  "Shasta College",
+  "Sierra College",
+  "Solano Community College",
+  "Southwestern College"
+ ],
+ "rows": [
+  {
+   "college": "San Diego Mesa College",
+   "position": "college_ceo",
+   "title_as_printed": "President, San Diego Mesa College",
+   "name": "Ashanti T. Hands",
+   "email": "",
+   "source_url": "https://www.sdmesa.edu/about-mesa/office-of-the-president/"
+  },
+  {
+   "college": "San Diego Miramar College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Battisti, Maria",
+   "email": "",
+   "source_url": "https://sdmiramar.edu/directory/service"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Lisa Aguilera Lawrenson",
+   "email": "",
+   "source_url": "https://www.deltacollege.edu/about/offices/office-president/executive-leadership-team"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Augustine Chavez",
+   "email": "",
+   "source_url": "https://www.deltacollege.edu/about/offices/office-president/executive-leadership-team"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "position": "vpss",
+   "title_as_printed": "Interim Assistant Superintendent/Vice President of Student Services",
+   "name": "James Dalske",
+   "email": "",
+   "source_url": "https://www.deltacollege.edu/about/offices/office-president/executive-leadership-team"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "position": "vrc",
+   "title_as_printed": "Manager of Veterans Resource Center",
+   "name": "KC (Kethric Cottrell)",
+   "email": "",
+   "source_url": "https://www.deltacollege.edu/about/offices/veteran-resource-center"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "college_ceo",
+   "title_as_printed": "President, San José City College",
+   "name": "Dr. Marilyn Flores",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/about/presidents-office.aspx"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "district_ceo",
+   "title_as_printed": "Chancellor",
+   "name": "Dr. Beatriz Chaidez",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Vice President, Academic Affairs",
+   "name": "James Carranza",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Victoria Menzies",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Dr. René Alvarez",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "dean_cte",
+   "title_as_printed": "Division Dean, Business & Workforce Development",
+   "name": "Mia Nguyen-Rusali",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions & Records",
+   "name": "Teresa Paiz",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer",
+   "name": "Gabriel Santiago",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/faculty-staff/directory.aspx"
+  },
+  {
+   "college": "San Jose City College",
+   "position": "vrc",
+   "title_as_printed": "Veterans Coordinator/Counselor",
+   "name": "Alex Lopez",
+   "email": "",
+   "source_url": "https://www.sjcc.edu/students/support-programs/veterans.aspx"
+  },
+  {
+   "college": "Santa Ana College",
+   "position": "college_ceo",
+   "title_as_printed": "President of Santa Ana College (SAC)",
+   "name": "Dr. Annebelle Nery",
+   "email": "",
+   "source_url": "https://sac.edu/presidentoffice/"
+  },
+  {
+   "college": "Santa Monica College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Kathryn E. Jeffery",
+   "email": "",
+   "source_url": "https://admin.smc.edu/administration/governance/index.php"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Jeannie G. Kim, Ph.D.",
+   "email": "",
+   "source_url": "https://www.sccollege.edu/campus/administration/"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "Arleen Satele, Ed.D.",
+   "email": "satele_arleen@sccollege.edu",
+   "source_url": "https://www.sccollege.edu/campus/administration/presidents-cabinet"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Christopher Sweeten",
+   "email": "sweeten_christopher@sccollege.edu",
+   "source_url": "https://www.sccollege.edu/campus/administration/presidents-cabinet"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer",
+   "name": "Leonor Aguilera",
+   "email": "Aguilera_Leonor@sccollege.edu",
+   "source_url": "https://www.sccollege.edu/campus/collegeoffices/articulationoffice/"
+  },
+  {
+   "college": "Shasta College",
+   "position": "college_ceo",
+   "title_as_printed": "District Superintendent/President",
+   "name": "Dr. Frank Nigro",
+   "email": "",
+   "source_url": "https://www.shastacollege.edu/directory/office/office-of-the-president/"
+  },
+  {
+   "college": "Sierra College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Willy Duncan",
+   "email": "",
+   "source_url": "https://www.sierracollege.edu/administration/"
+  },
+  {
+   "college": "Solano Community College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent-President",
+   "name": "Butler, Kellie",
+   "email": "",
+   "source_url": "https://www.solano.edu/employee-directory/index.php"
+  },
+  {
+   "college": "Solano Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Williams, David",
+   "email": "david.williams@solano.edu",
+   "source_url": "https://www.solano.edu/employee-directory/index.php"
+  },
+  {
+   "college": "Solano Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Neeley, Lisa",
+   "email": "lisa.neeley@solano.edu",
+   "source_url": "https://www.solano.edu/employee-directory/index.php"
+  },
+  {
+   "college": "Solano Community College",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans",
+   "name": "Kennedy, Amy",
+   "email": "amy.kennedy@solano.edu",
+   "source_url": "https://www.solano.edu/employee-directory/index.php"
+  },
+  {
+   "college": "Southwestern College",
+   "position": "vpaa",
+   "title_as_printed": "Assistant Superintendent/Vice President (Academic Affairs)",
+   "name": "Cornejo, Silvia",
+   "email": "",
+   "source_url": "https://www.swccd.edu/_showcase/directory/"
+  },
+  {
+   "college": "Southwestern College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent/Vice President (Student Affairs)",
+   "name": "Fischer, Rachel",
+   "email": "",
+   "source_url": "https://www.swccd.edu/_showcase/directory/"
+  },
+  {
+   "college": "Southwestern College",
+   "position": "vpbs",
+   "title_as_printed": "Assistant Superintendent/Vice President (Business & Financial Affairs)",
+   "name": "Gutierrez, Omar",
+   "email": "",
+   "source_url": "https://www.swccd.edu/_showcase/directory/"
+  },
+  {
+   "college": "Southwestern College",
+   "position": "vrc",
+   "title_as_printed": "VRC Coordinator",
+   "name": "John \"JD\" White",
+   "email": "jwhite2@swccd.edu",
+   "source_url": "https://www.swccd.edu/student-support/veterans-services/veterans-resource-center/index.aspx"
+  }
+ ],
+ "note": "Only colleges with at least one record go to apply. Read with no record: Santa Barbara City (403 on 10 of 11 pages), Santa Rosa Junior (two pages, no leadership lines), Skyline (veterans pages give a shared inbox only), Taft (menu links only). Three readers wrote the records from the committed windows; the session checked every name and email against its page. Kept on judgment: Gabriel Santiago (San Jose City) joins two directory cells; Alex Lopez is the only coordinator in San Jose City's veterans contacts (Veterans Coordinator/Counselor); KC (Kethric Cottrell) manages Delta's VRC; Mia Nguyen-Rusali's Business & Workforce Development division reads as dean_cte by the pattern. Southwestern's directory prints one title, Assistant Superintendent/Vice President, for its three VPs; title_as_printed adds the department column in parentheses. Held out: Delta's Kale (Charles) Braden (title names no post), Solano's VP Finance & Administration (outside Sam's vpbs variants). San Jose City's directory prints three VPs' emails; the rows cite the administration page, so the emails stay blank. Southwestern's directory excerpts stop at surnames in H.",
+ "unmatched_titles": [
+  {
+   "college": "San Diego Miramar College",
+   "title_as_printed": "Director of Administrative Services",
+   "source_url": "https://sdmiramar.edu/directory/service",
+   "name": "Roesler, Nicole"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "title_as_printed": "Assistant Superintendent / Vice President",
+   "source_url": "https://www.deltacollege.edu/about/offices/office-president/executive-leadership-team",
+   "name": "Kale (Charles) Braden",
+   "note": "Office printed beneath: Instruction and Planning Division Office; likely the CIO, but the title names no post"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "title_as_printed": "Vice President of Human Resources",
+   "source_url": "https://www.deltacollege.edu/about/offices/office-president/executive-leadership-team",
+   "name": "Leann West"
+  },
+  {
+   "college": "San Joaquin Delta College",
+   "title_as_printed": "Dean of Student Services",
+   "source_url": "https://www.deltacollege.edu/about/offices/veteran-resource-center",
+   "name": "Ricardo Marmolejo",
+   "note": "listed as VRC leadership; Access and Equity Deans Office"
+  },
+  {
+   "college": "San Jose City College",
+   "title_as_printed": "Interim Division Dean, Language Arts & Library",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx",
+   "name": "Azam Awan"
+  },
+  {
+   "college": "San Jose City College",
+   "title_as_printed": "Dean, Health & Wellness",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx",
+   "name": "Jaclyn Johnson"
+  },
+  {
+   "college": "San Jose City College",
+   "title_as_printed": "Division Dean, Mathematics and Science",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx",
+   "name": "Dr. Misty Stroud"
+  },
+  {
+   "college": "San Jose City College",
+   "title_as_printed": "Division Dean, Humanities, Social Sciences & Arts",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx",
+   "name": "Maristella Tapia"
+  },
+  {
+   "college": "San Jose City College",
+   "title_as_printed": "Director, Adult and Noncredit Education",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx",
+   "name": "Claudia Amador"
+  },
+  {
+   "college": "San Jose City College",
+   "title_as_printed": "Dean, Student Services",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx",
+   "name": "Dr. Michael Paul A. Wong"
+  },
+  {
+   "college": "San Jose City College",
+   "title_as_printed": "Interim Dean, Student Services",
+   "source_url": "https://www.sjcc.edu/about/administration-and-leadership.aspx",
+   "name": "Brandon Yanari"
+  },
+  {
+   "college": "Santiago Canyon College",
+   "title_as_printed": "Vice President, Continuing Education",
+   "source_url": "https://www.sccollege.edu/campus/administration/presidents-cabinet",
+   "name": "Larisa Sergeyeva",
+   "note": "email ambiguous on page: link text sergeyeva_larisa@sccollege.edu but href vargas_jose@sccollege.edu"
+  },
+  {
+   "college": "Shasta College",
+   "title_as_printed": "Dean of Extended Education (Also North State Together)",
+   "source_url": "https://www.shastacollege.edu/directory/office/community-leadership-center/",
+   "name": "Jim Harrell"
+  },
+  {
+   "college": "Shasta College",
+   "title_as_printed": "Student Success Facilitator - Veterans Center",
+   "source_url": "https://www.shastacollege.edu/directory/office/veterans-services/",
+   "name": "Richard James",
+   "note": "staff in the Veterans Center; page names no director or coordinator, so not recorded as vrc"
+  },
+  {
+   "college": "Sierra College",
+   "title_as_printed": "Articulation Coordinator",
+   "source_url": "https://www.sierracollege.edu/admissions/how-to-apply/attending-college-in-high-school/articulation-process/",
+   "name": "Nigel Haikins-Appiah",
+   "note": "High school articulation coordinator (nhaikinsappiah@sierracollege.edu); not shown to be the college's Articulation Officer"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, Research & Planning",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Rexford, Nathan"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, Counseling",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Green, Murrell"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, Mathematics & Science",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Cromheecke, Jessica"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, Student Equity & Success",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Watson-Perez, Heather"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, School of Liberal Arts",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Glines, Neil"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, Social & Behavioral Sciences",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Reeve, Melissa"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean of External Programs",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Zitko, Peter"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, School of Applied Technology & Business",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Cortes, Jose"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, Financial Aid",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Scott, Patrick"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Vice President, Technology",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Cornelison, Jon"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Dean, Enrollment Services",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Borelli, Alysa"
+  },
+  {
+   "college": "Southwestern College",
+   "title_as_printed": "Dean (Institutional Research & Planning)",
+   "source_url": "https://www.swccd.edu/_showcase/directory/",
+   "name": "Abasolo, Bill"
+  },
+  {
+   "college": "Southwestern College",
+   "title_as_printed": "Dean (School of Languages & Literature)",
+   "source_url": "https://www.swccd.edu/_showcase/directory/",
+   "name": "Alarcon, Antonio"
+  },
+  {
+   "college": "Southwestern College",
+   "title_as_printed": "Dean (Student Services)",
+   "source_url": "https://www.swccd.edu/_showcase/directory/",
+   "name": "Aragoza, Dean"
+  },
+  {
+   "college": "Southwestern College",
+   "title_as_printed": "Dean (School of Counseling & Student Support Programs)",
+   "source_url": "https://www.swccd.edu/_showcase/directory/",
+   "name": "Baissa, Steven (Estifanos)"
+  },
+  {
+   "college": "Southwestern College",
+   "title_as_printed": "Dean (School of Arts, Communication, Design & Media)",
+   "source_url": "https://www.swccd.edu/_showcase/directory/",
+   "name": "Carlson, Don"
+  },
+  {
+   "college": "Southwestern College",
+   "title_as_printed": "Dean (School of Wellness, Exercise Science & Athletics)",
+   "source_url": "https://www.swccd.edu/_showcase/directory/",
+   "name": "Gang, Thomas"
+  },
+  {
+   "college": "Southwestern College",
+   "title_as_printed": "Director (Enrollment Services)",
+   "source_url": "https://www.swccd.edu/_showcase/directory/",
+   "name": "Branker, Wayne"
+  },
+  {
+   "college": "Solano Community College",
+   "title_as_printed": "Vice President, Finance & Administration",
+   "source_url": "https://www.solano.edu/employee-directory/index.php",
+   "name": "Wheet, Susan",
+   "note": "Finance & Administration is outside Sam vpbs variants (#2692 pins it out)"
+  }
+ ],
+ "per_college": {
+  "San Diego Mesa College": "President Ashanti T. Hands on the Office of the President page; the leadership page names no chancellor and the email is obfuscated; the VRC page names no staff.",
+  "San Diego Miramar College": "Only the service directory names anyone: VP Administrative Services Maria Battisti (name above title; email obfuscated). Homepage and veterans pages yielded no names.",
+  "San Joaquin Delta College": "Executive Leadership Team page (Name / Title: / Office:) gives the superintendent/president, VP Administrative Services and interim VP Student Services; VRC page names its manager. VP of instruction printed only as 'Assistant Superintendent / Vice President' (unmatched).",
+  "San Jose City College": "Administration page lists president, three VPs, deans and the chancellor (name then title inline); articulation officer from the directory (first and last name in separate cells); VRC coordinator from the VRC page. Directory emails exist for Carranza, Menzies and Alvarez but on a different page than the rows' source.",
+  "Santa Ana College": "Only the president is named (President's Office page bio); no chancellor name, no VPs, no VRC staff in the excerpts.",
+  "Santa Monica College": "Superintendent/President from the governance welcome letter (signature line); president@smc.edu is an office address, so no personal email; Veterans Success Center pages name only outside VA/US Vets staff and a CSD specialist, no center lead; no VPs, deans, A&R or articulation officer on the pages saved.",
+  "Santiago Canyon College": "President (contact card, name above title), VP Administrative Services and VP Student Services (cabinet page, name above title, email below), and the articulation officer (inline 'Articulation Officer: Name'); the cabinet page names no VP Academic Affairs; VP Continuing Education goes to unmatched; no VRC lead or A&R dean on the pages saved.",
+  "Shasta College": "District Superintendent/President from the president's office People list (name above title, consistent with the executive assistant and the Extended Education dean); Veterans Services lists a counselor, a facilitator and a certifying official but no lead; 'Angela Nava, Chapter #381 President' is a chapter (association) president, not the college CEO, left out.",
+  "Skyline College": "Pages saved are VROC overview, contact, apply and benefits pages; none prints a person's name, only skyveterans@smccd.edu as a shared inbox, so no records.",
+  "Sierra College": "Superintendent/President Willy Duncan only; VSC pages name no lead (shared veterans@ inbox); the only articulation name is a high-school Articulation Coordinator, listed unmatched; no A&R, VP or dean names captured.",
+  "Solano Community College": "Employee directory (Last, First above title, own email after): Superintendent-President, VPAA, VPSS, VP Finance & Administration (page calls the post CFO) and Director, Veterans; the S-P has no email printed (the email above her is the prior entry's).",
+  "Southwestern College": "Directory (Last, First above title, department after; emails hidden behind 'Send Email' links) gives the three Asst Supt/VPs by department; VRC Coordinator JD White from the VRC page; no Superintendent/President name (the directory's S/P-office line is the Chief of Staff); directory excerpts stop at H.",
+  "Taft College": "Pages captured only menu links (President, VPSS, VPI, VP Administrative Services, Registrar) with no names; no record."
+ }
+}

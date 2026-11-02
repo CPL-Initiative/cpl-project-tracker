@@ -582,3 +582,12 @@ first sentence read as missing data, and the control lives in the header's Sign 
   `TITLE_PATTERNS` for the first two is a small, testable change for a later session; the third needs the page's
   heading, which the excerpt does not carry.
 - **Obfuscated addresses stay blank.** San Diego City and SDCCE print `[email protected]` in place of every address.
+
+## S549 SkySunflower (2026-11-02, the 11:12Z firing): two title patterns, and the eighth read
+
+- **A widened pattern releases the people a read already listed.** The S548 records file kept *Dean, Career Technical
+  Education* (Pasadena) and *Assistant Superintendent/Vice President, Finance and Business* (Rio Hondo) under
+  `unmatched_titles` with their names. Once #2692 widened `dean_cte` and `vpbs`, the two went in as a partial file,
+  each checked against its committed window (Rio Hondo prints the name above the title).
+- **Keep a variant list narrow.** *Finance and Business* names the business office in either order; *Finance and
+  Administration* is not on Sam's list, and the test pins it out.

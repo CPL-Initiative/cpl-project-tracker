@@ -1,0 +1,234 @@
+{
+ "college": "Santa Ana College",
+ "homepage": "https://sac.edu/",
+ "read_at": "2026-11-02T11:26:21+00:00",
+ "pages": [
+  {
+   "url": "https://sac.edu/",
+   "final_url": "https://sac.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Self-ServiceCurrent StudentsFaculty & StaffGiveContinuing Education (SCE)",
+      "About Us",
+      "School Facts",
+      "President's Office",
+      "College Governance",
+      "Public Information Office",
+      "Community Education"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://sac.edu/presidentoffice/index.php",
+   "final_url": "https://sac.edu/presidentoffice/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "President's Office",
+      "Skip to main content",
+      "Skip to main navigation",
+      "Skip to footer content"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Self-ServiceCurrent StudentsFaculty & StaffGiveContinuing Education (SCE)",
+      "About Us",
+      "School Facts",
+      "President's Office",
+      "College Governance",
+      "Public Information Office",
+      "Community Education"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Disabled Students Program & Services",
+      "Dons Bookstore",
+      "Campus Security & Parking",
+      "President's Office",
+      "President's Office",
+      "In This Section",
+      "Comprehensive Educational Plan 24-28"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Dons Bookstore",
+      "Campus Security & Parking",
+      "President's Office",
+      "President's Office",
+      "In This Section",
+      "Comprehensive Educational Plan 24-28",
+      "Statement of Solidarity"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President Nery's Monthly Memos",
+     "position": "college_ceo",
+     "window": [
+      "In This Section",
+      "Comprehensive Educational Plan 24-28",
+      "Statement of Solidarity",
+      "President Nery's Monthly Memos",
+      "2026 Fall Convocation Slides",
+      "Convocation Slides Archive",
+      "Leisa Schumacher"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "2026 Fall Convocation Slides",
+      "Convocation Slides Archive",
+      "Leisa Schumacher",
+      "Assistant to the President",
+      "schumacher_leisa@sac.edu schumacher_leisa@sac.edu",
+      "(714) 564-6975",
+      "​​​​​​​​​Welcome to the President's Office"
+     ],
+     "emails": [
+      "schumacher_leisa@sac.edu"
+     ]
+    },
+    {
+     "line": "​​​​​​​​​Welcome to the President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Assistant to the President",
+      "schumacher_leisa@sac.edu schumacher_leisa@sac.edu",
+      "(714) 564-6975",
+      "​​​​​​​​​Welcome to the President's Office",
+      "Presidential Appearance Request Form",
+      "SAC Sponsorship Request Form",
+      "About Dr. Annebelle Nery"
+     ],
+     "emails": [
+      "schumacher_leisa@sac.edu"
+     ]
+    },
+    {
+     "line": "Annebelle Nery, Ph.D. was appointed President of Santa Ana College (SAC) in January",
+     "position": "college_ceo",
+     "window": [
+      "Presidential Appearance Request Form",
+      "SAC Sponsorship Request Form",
+      "About Dr. Annebelle Nery",
+      "Annebelle Nery, Ph.D. was appointed President of Santa Ana College (SAC) in January",
+      "2022. Reporting to the Rancho Santiago Community College District Chancellor, her",
+      "responsibilities include planning, organizing and implementing educational policy",
+      "and procedures to develop curriculum and student support services; budget management;"
+     ],
+     "emails": []
+    },
+    {
+     "line": "2022. Reporting to the Rancho Santiago Community College District Chancellor, her",
+     "position": "district_ceo",
+     "window": [
+      "SAC Sponsorship Request Form",
+      "About Dr. Annebelle Nery",
+      "Annebelle Nery, Ph.D. was appointed President of Santa Ana College (SAC) in January",
+      "2022. Reporting to the Rancho Santiago Community College District Chancellor, her",
+      "responsibilities include planning, organizing and implementing educational policy",
+      "and procedures to develop curriculum and student support services; budget management;",
+      "enhancing partnerships with businesses, governmental and community organizations,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "capacities most recently as Vice President of Instruction and prior to that Vice President",
+     "position": "vpaa",
+     "window": [
+      "a living wage. She has also been instrumental to secure additional funding and to ​develop valuable",
+      "community partnerships to advance college efforts.",
+      "In her 25 years of experience in education, Dr. Nery has served in a number of administrative",
+      "capacities most recently as Vice President of Instruction and prior to that Vice President",
+      "of Student Services at College of the Desert. In these roles she worked successfully",
+      "with colleagues, faculty, staff, students, leadership and community members in multiple",
+      "capacities in student services, instruction, instructional technology, and institutional"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Services Officer of the Year in 2019.",
+     "position": null,
+     "window": [
+      "many innovative and effective programs were founded. In 2021, Dr. Nery was named the",
+      "Administrator of the Year by the California Association of Postsecondary Education",
+      "and Disability, and the California Community Colleges named Dr. Nery Chief Student",
+      "Services Officer of the Year in 2019.",
+      "Dr. Nery earned a Doctor of Philosophy in Sociology/Organization and Statistics from",
+      "the University of California, Riverside, a bachelor of arts degree and master's degree",
+      "in Sociology from California State University, Los Angeles, and an associate degree"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://sac.edu/admissions/index.php",
+   "final_url": "https://sac.edu/admissions/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Self-ServiceCurrent StudentsFaculty & StaffGiveContinuing Education (SCE)",
+      "About Us",
+      "School Facts",
+      "President's Office",
+      "College Governance",
+      "Public Information Office",
+      "Community Education"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://sac.edu/admissions/academy.php",
+   "final_url": "https://sac.edu/admissions/academy",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Self-ServiceCurrent StudentsFaculty & StaffGiveContinuing Education (SCE)",
+      "About Us",
+      "School Facts",
+      "President's Office",
+      "College Governance",
+      "Public Information Office",
+      "Community Education"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41436168077"
+}

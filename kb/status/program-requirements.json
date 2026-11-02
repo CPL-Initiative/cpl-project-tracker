@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-02T10:40:44Z",
-  "session": 548,
-  "moniker": "SkyTadpole",
+  "written_at": "2026-11-02T11:45:58Z",
+  "session": 549,
+  "moniker": "SkySunflower",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_549_handoff.md",
+  "handoff": "docs/session_550_handoff.md",
   "next_step": {
-    "title": "Santa Ana's SLO trial, then the next college",
-    "text": "Today's two SLO runs were spent before this session, so Santa Ana's 12-page trial on its new course index is the next UTC day's preparation run; the helper then names the next college by articulations. Monterey Peninsula's last 14 records wait for a session with room for their page reads."
+    "title": "Santa Ana's full SLO read",
+    "text": "Santa Ana's trial parsed 12 of 12 after a reader fix, so its four-part full read is the next UTC day's read; the helper then names the next trial or index. Monterey Peninsula's last 14 records still wait for a session with room for their page reads."
   },
   "calls": [
     {
@@ -191,8 +191,8 @@
   },
   "changes": [
     {
-      "at": "2026-11-02T10:50:00Z",
-      "text": "No SLO run tonight: the UTC day's preparation run and load had already gone (Santa Ana's index, Golden West's load). Monterey Peninsula's 14 remaining records were grouped and left for a session with room: three transfer degrees, ASL, two noncredit hour counts, three coverage and three incomplete, each its own shape."
+      "at": "2026-11-02T11:40:00Z",
+      "text": "Santa Ana's 12-page SLO trial parsed none at first: its outline puts the outcomes heading alone in a section, and the grouped-report reader answered empty instead of handing the page on. The reader now hands it on; the trial reads 12 of 12 pages and 36 outcomes, and the pages earlier trials filed read the same as before."
     }
   ],
   "headline": [
@@ -356,7 +356,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-02T11:12:00Z"
+    "at": "2026-11-02T12:12:00Z"
   },
   "harvest": {
     "day": "2026-11-02",

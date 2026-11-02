@@ -1,0 +1,532 @@
+{
+ "college": "Shasta College",
+ "homepage": "https://www.shastacollege.edu/",
+ "read_at": "2026-11-02T11:29:53+00:00",
+ "pages": [
+  {
+   "url": "https://www.shastacollege.edu/",
+   "final_url": "https://www.shastacollege.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.shastacollege.edu/directory/",
+   "final_url": "https://www.shastacollege.edu/directory/office/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Angela Nava, Chapter #381 President",
+     "position": "college_ceo",
+     "window": [
+      "Phone",
+      "(530) 242-7534",
+      "Name:",
+      "Angela Nava, Chapter #381 President",
+      "Text",
+      "(530) 710-8112",
+      "Open Details for Culinary Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Open Details for Dormitory - Director",
+     "position": null,
+     "window": [
+      "Diesel Technology Equipment Shop",
+      "Phone",
+      "(530) 242-2213",
+      "Open Details for Dormitory - Director",
+      "Dormitory - Director",
+      "Phone",
+      "(530) 242-7740"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dormitory - Director",
+     "position": null,
+     "window": [
+      "Phone",
+      "(530) 242-2213",
+      "Open Details for Dormitory - Director",
+      "Dormitory - Director",
+      "Phone",
+      "(530) 242-7740",
+      "Open Details for Dreamer Central"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Open Details for Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of Instruction",
+      "Phone",
+      "(530) 242-7520",
+      "Open Details for Office of the President",
+      "Office of the President",
+      "Email",
+      "presidentsoffice@shastacollege.edu presidentsoffice@shastacollege.edu"
+     ],
+     "emails": [
+      "presidentsoffice@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Phone",
+      "(530) 242-7520",
+      "Open Details for Office of the President",
+      "Office of the President",
+      "Email",
+      "presidentsoffice@shastacollege.edu presidentsoffice@shastacollege.edu",
+      "Phone"
+     ],
+     "emails": [
+      "presidentsoffice@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "President’s Office | C/O Shasta College | P.O. Box 496006 | Redding, CA 96049-6006",
+     "position": "college_ceo",
+     "window": [
+      "Location",
+      "Main Campus | 11555 Old Oregon Trail | Redding, CA 96003 | 700 Building | Office 765",
+      "Mailing",
+      "President’s Office | C/O Shasta College | P.O. Box 496006 | Redding, CA 96049-6006",
+      "P",
+      "Open Details for Parking Enforcement",
+      "Parking Enforcement"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Open Details for Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Mailing",
+      "Main Redding Campus | 2066",
+      "V",
+      "Open Details for Veterans Services",
+      "Veterans Services",
+      "Email",
+      "veterans@shastacollege.edu veterans@shastacollege.edu"
+     ],
+     "emails": [
+      "veterans@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Main Redding Campus | 2066",
+      "V",
+      "Open Details for Veterans Services",
+      "Veterans Services",
+      "Email",
+      "veterans@shastacollege.edu veterans@shastacollege.edu",
+      "Phone"
+     ],
+     "emails": [
+      "veterans@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services will open one hour later, at 9:00 am, on the 3rd Friday of each month.",
+     "position": "vrc",
+     "window": [
+      "Monday - Thursday | 8:00 am - 4:30 pm",
+      "Friday | 8:00 am - 12:00 pm",
+      "Important Note",
+      "Veterans Services will open one hour later, at 9:00 am, on the 3rd Friday of each month.",
+      "Certifying Official",
+      "(530) 242-7701",
+      "Open Details for Vice President of Student Services Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Open Details for Vice President of Student Services Office",
+     "position": "vpss",
+     "window": [
+      "Veterans Services will open one hour later, at 9:00 am, on the 3rd Friday of each month.",
+      "Certifying Official",
+      "(530) 242-7701",
+      "Open Details for Vice President of Student Services Office",
+      "Vice President of Student Services Office",
+      "Phone",
+      "(530) 242-7656"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services Office",
+     "position": "vpss",
+     "window": [
+      "Certifying Official",
+      "(530) 242-7701",
+      "Open Details for Vice President of Student Services Office",
+      "Vice President of Student Services Office",
+      "Phone",
+      "(530) 242-7656",
+      "Open Details for Volunteers for Literacy Program (Formerly Adult Literacy Program)"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.shastacollege.edu/directory/office/administration-of-justice/",
+   "final_url": "https://www.shastacollege.edu/directory/office/administration-of-justice/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.shastacollege.edu/directory/office/community-leadership-center/",
+   "final_url": "https://www.shastacollege.edu/directory/office/community-leadership-center/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Dean of Extended Education (Also North State Together)",
+     "position": null,
+     "window": [
+      "Directions",
+      "People",
+      "Jim Harrell",
+      "Dean of Extended Education (Also North State Together)",
+      "Shasta College",
+      "11555 Old Oregon Trail",
+      "P.O. Box 496006"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.shastacollege.edu/directory/office/office-of-the-president/",
+   "final_url": "https://www.shastacollege.edu/directory/office/office-of-the-president/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | Shasta College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | Shasta College",
+      "Skip to Main Content",
+      "Shasta College",
+      "Shasta Portal"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Submit",
+      "Close",
+      "Back to Directory",
+      "Office of the President",
+      "Contact Info",
+      "Email",
+      "presidentsoffice@shastacollege.edu presidentsoffice@shastacollege.edu"
+     ],
+     "emails": [
+      "presidentsoffice@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "President’s Office | C/O Shasta College | P.O. Box 496006 | Redding, CA 96049-6006",
+     "position": "college_ceo",
+     "window": [
+      "Location",
+      "Main Campus | 11555 Old Oregon Trail | Redding, CA 96003 | 700 Building | Office 765",
+      "Mailing",
+      "President’s Office | C/O Shasta College | P.O. Box 496006 | Redding, CA 96049-6006",
+      "People",
+      "Candace Irwin",
+      "Interim Executive Assistant to the Superintendent/President / Public Information Officer"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Executive Assistant to the Superintendent/President / Public Information Officer",
+     "position": "college_ceo",
+     "window": [
+      "President’s Office | C/O Shasta College | P.O. Box 496006 | Redding, CA 96049-6006",
+      "People",
+      "Candace Irwin",
+      "Interim Executive Assistant to the Superintendent/President / Public Information Officer",
+      "Dr. Frank Nigro",
+      "District Superintendent/President",
+      "Shasta College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "District Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Candace Irwin",
+      "Interim Executive Assistant to the Superintendent/President / Public Information Officer",
+      "Dr. Frank Nigro",
+      "District Superintendent/President",
+      "Shasta College",
+      "11555 Old Oregon Trail",
+      "P.O. Box 496006"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.shastacollege.edu/directory/office/veterans-services/",
+   "final_url": "https://www.shastacollege.edu/directory/office/veterans-services/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Services | Shasta College",
+     "position": "vrc",
+     "window": [
+      "Veterans Services | Shasta College",
+      "Skip to Main Content",
+      "Shasta College",
+      "Shasta Portal"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Submit",
+      "Close",
+      "Back to Directory",
+      "Veterans Services",
+      "Contact Info",
+      "Email",
+      "veterans@shastacollege.edu veterans@shastacollege.edu"
+     ],
+     "emails": [
+      "veterans@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services will open one hour later, at 9:00 am, on the 3rd Friday of each month.",
+     "position": "vrc",
+     "window": [
+      "Monday - Thursday | 8:00 am - 4:30 pm",
+      "Friday | 8:00 am - 12:00 pm",
+      "Important Note",
+      "Veterans Services will open one hour later, at 9:00 am, on the 3rd Friday of each month.",
+      "Certifying Official",
+      "(530) 242-7701",
+      "People"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Success Facilitator - Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Robert McCandless",
+      "Educational Counselor (Veterans)",
+      "Richard James",
+      "Student Success Facilitator - Veterans Center",
+      "Julie Fisher",
+      "Student Services Specialist/ VA Certifying Official (Veteran Services)",
+      "Shasta College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Student Services Specialist/ VA Certifying Official (Veteran Services)",
+     "position": "vrc",
+     "window": [
+      "Richard James",
+      "Student Success Facilitator - Veterans Center",
+      "Julie Fisher",
+      "Student Services Specialist/ VA Certifying Official (Veteran Services)",
+      "Shasta College",
+      "11555 Old Oregon Trail",
+      "P.O. Box 496006"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.shastacollege.edu/directory/office/",
+   "final_url": "https://www.shastacollege.edu/directory/office/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Angela Nava, Chapter #381 President",
+     "position": "college_ceo",
+     "window": [
+      "Phone",
+      "(530) 242-7534",
+      "Name:",
+      "Angela Nava, Chapter #381 President",
+      "Text",
+      "(530) 710-8112",
+      "Open Details for Culinary Arts"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Open Details for Dormitory - Director",
+     "position": null,
+     "window": [
+      "Diesel Technology Equipment Shop",
+      "Phone",
+      "(530) 242-2213",
+      "Open Details for Dormitory - Director",
+      "Dormitory - Director",
+      "Phone",
+      "(530) 242-7740"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dormitory - Director",
+     "position": null,
+     "window": [
+      "Phone",
+      "(530) 242-2213",
+      "Open Details for Dormitory - Director",
+      "Dormitory - Director",
+      "Phone",
+      "(530) 242-7740",
+      "Open Details for Dreamer Central"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Open Details for Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of Instruction",
+      "Phone",
+      "(530) 242-7520",
+      "Open Details for Office of the President",
+      "Office of the President",
+      "Email",
+      "presidentsoffice@shastacollege.edu presidentsoffice@shastacollege.edu"
+     ],
+     "emails": [
+      "presidentsoffice@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Phone",
+      "(530) 242-7520",
+      "Open Details for Office of the President",
+      "Office of the President",
+      "Email",
+      "presidentsoffice@shastacollege.edu presidentsoffice@shastacollege.edu",
+      "Phone"
+     ],
+     "emails": [
+      "presidentsoffice@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "President’s Office | C/O Shasta College | P.O. Box 496006 | Redding, CA 96049-6006",
+     "position": "college_ceo",
+     "window": [
+      "Location",
+      "Main Campus | 11555 Old Oregon Trail | Redding, CA 96003 | 700 Building | Office 765",
+      "Mailing",
+      "President’s Office | C/O Shasta College | P.O. Box 496006 | Redding, CA 96049-6006",
+      "P",
+      "Open Details for Parking Enforcement",
+      "Parking Enforcement"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Open Details for Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Mailing",
+      "Main Redding Campus | 2066",
+      "V",
+      "Open Details for Veterans Services",
+      "Veterans Services",
+      "Email",
+      "veterans@shastacollege.edu veterans@shastacollege.edu"
+     ],
+     "emails": [
+      "veterans@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Main Redding Campus | 2066",
+      "V",
+      "Open Details for Veterans Services",
+      "Veterans Services",
+      "Email",
+      "veterans@shastacollege.edu veterans@shastacollege.edu",
+      "Phone"
+     ],
+     "emails": [
+      "veterans@shastacollege.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services will open one hour later, at 9:00 am, on the 3rd Friday of each month.",
+     "position": "vrc",
+     "window": [
+      "Monday - Thursday | 8:00 am - 4:30 pm",
+      "Friday | 8:00 am - 12:00 pm",
+      "Important Note",
+      "Veterans Services will open one hour later, at 9:00 am, on the 3rd Friday of each month.",
+      "Certifying Official",
+      "(530) 242-7701",
+      "Open Details for Vice President of Student Services Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Open Details for Vice President of Student Services Office",
+     "position": "vpss",
+     "window": [
+      "Veterans Services will open one hour later, at 9:00 am, on the 3rd Friday of each month.",
+      "Certifying Official",
+      "(530) 242-7701",
+      "Open Details for Vice President of Student Services Office",
+      "Vice President of Student Services Office",
+      "Phone",
+      "(530) 242-7656"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services Office",
+     "position": "vpss",
+     "window": [
+      "Certifying Official",
+      "(530) 242-7701",
+      "Open Details for Vice President of Student Services Office",
+      "Vice President of Student Services Office",
+      "Phone",
+      "(530) 242-7656",
+      "Open Details for Volunteers for Literacy Program (Formerly Adult Literacy Program)"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41436168077"
+}
