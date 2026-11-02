@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-01T22:54:11Z",
-  "session": 542,
-  "moniker": "SkyTriangulum",
+  "written_at": "2026-11-02T01:20:11Z",
+  "session": 543,
+  "moniker": "SkyAndromeda",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_543_handoff.md",
+  "handoff": "docs/session_544_handoff.md",
   "next_step": {
-    "title": "Monterey Peninsula's last 14",
-    "text": "Monterey Peninsula stands at 183 of 197 passing (S536); S537 to S541 worked the contacts harvest, the Library, Sierra and the Exhibits List. Read coverage 42989, 43858 and 44876 first."
+    "title": "Merge #2668, then the List norms",
+    "text": "Merge the SLO hints PR on a passing test, ask Sierra Sam's JST question once after the queue run, then the engine's suggest slot and changed tracker. Monterey Peninsula's last 14 stay queued: read coverage 42989, 43858 and 44876 first."
   },
   "calls": [
     {
@@ -190,6 +190,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-02T01:15:00Z",
+      "text": "The course SLO read joins the CPL queue as step 11, nightly, the colleges that articulate the most exhibits first; pages only, no model call (#2669)."
+    },
     {
       "at": "2026-11-01T22:28:00Z",
       "text": "A List view on the shared engine: one row per active COCI program, 20,282, read only (#2660)."
@@ -381,6 +385,12 @@
       "active": 20282,
       "complete": 13542,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-02",
+      "active": 20282,
+      "complete": 13542,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -389,7 +399,7 @@
     "at": "2026-11-02T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-01",
+    "day": "2026-11-02",
     "gaps": 3025,
     "parts": {
       "links": {

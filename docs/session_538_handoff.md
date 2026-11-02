@@ -4,6 +4,8 @@ date: 2026-11-01
 session: 537 (SkyMayberry, the CPL Queue routine's 10:12Z firing)
 tags: [handoff, contacts-harvest, program-requirements, monterey-peninsula]
 status: current
+superseded: true
+superseded_by: session_544_handoff.md
 ---
 
 # You are Session 538

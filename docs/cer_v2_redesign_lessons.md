@@ -948,3 +948,11 @@ lists. Report: `CPLBrain/04-projects/cpl-initiative/20261101_SLO_Grouping_Test.m
 
 **A slip worth naming.** The first commit of #2655 carried `kb/docs_audit/` files from a local lint run swept in by
 `git add -A`; the merge conflict on main exposed it. Stage files by name.
+
+## The reference's statewide flag, and S542's queue merged (S543 SkyAndromeda, 2026-11-01 to 02)
+
+- **The statewide flag reads the Fact Sheet's set** (#2667, Sam's Sheet 154 *count*). `export_credential_reference()` seeds `statewide` from `fact-sheet/_build_statewide_recs.py`'s own `build()`: 152 credentials, up from 84 read from articulation lines; the 84 sit inside the 152 and no other field moved. Guard: `tests/credential_reference_statewide_basis_test.py`.
+- **Check a handoff's "no consumer" against the code before acting on it.** Handoff 542 said no funding or ESS code read the flag. `funding/_build_funding_ess.py` builds ESS outcome 2 from it: 84 to 152 credentials, 70 to 72 colleges meeting the outcome. The finding turned a code-only fix into a card for Sam. The same session's own lesson (check a memory row against the code) applied to its handoff.
+- **A PR stacked on a squash-merged PR carries the pre-squash commit.** #2664 conflicted in five files after #2663 squashed; cherry-picking its one commit onto `main` and pushing with `--force-with-lease` left a clean five-file diff.
+- **Generated files conflict in every PR that regenerates them.** #2668 and #2669 each regenerated the dependency map; each needed `main` merged in and the map rebuilt (`git checkout --theirs`, then the builder), so they merge one at a time. #2668 also met #2670's engine rewrite in `commons_list.js`: only the header comment collided (both documented new hooks), and every List suite passed on the merge.
+

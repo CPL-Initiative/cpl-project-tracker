@@ -878,3 +878,26 @@ From *Where applied and transcribed credit comes from (2026-09-30)*, the three P
 - **#1777** `map_college_credit_summary` suppresses **each figure on its own students**. It had tested only the college's headcount, so 8 colleges published a transcribed total from under 10 students (3 from one), the public `_pub` copy too, and at 13 colleges `applied_credits − articulated_waiting` recovered a thin in-plan figure. It gains `applied_in_plan` and `transcribed_student_view` (student view), a `withheld` list, and **`map_college_credit_statewide`** (real totals). My College renders a withheld figure as "<10 students" (`numN()`; `num(null)` had been a false zero).
 - **#1779** **`map_college_credit_bucket`** (military / non-military, per college and statewide) and **`map_college_exhibit_credit`** (per college and exhibit: title, MAP's CPL type, units applied and transcribed, recommendations, "<10 each" roll-ups), rebuilt nightly inside the promotion, each raising on its own property check. MAP's `CPLTypeCode` now rides into the title tables (the id rule mistyped 546 of 677 Credit by Exam exhibits).
 - **#1780** Sierra leads with applied on the CPL plan, labels MAP's *Applied Credits* column as the one that CONTAINS the waiting credit (she had counted Chaffey's 1,206 units in both), splits the buckets non-military first, says "<10 students" for a withheld figure, and answers "where does this college's credit come from" by units from the exhibit table.
+
+## S543 (2026-11-01 to 02): a question about every college read no college's section
+
+Sam asked Sierra *"which college have not yet met the 75% jst vet sprint goal for the new funding?"* She said she had no per-college JST percentages, quoted 25,934 JSTs, and sent him to the funding page. Sam: *"she should be able to access the data (per instruction added yesterday) and she has the wrong number of JST, which is now over 30k"*, then *"we previously worked on getting her wired into the funding dash view and it seemed to be working at the time--which is a convenient place to get these data."*
+
+Both were true. The S529 wiring gives each of the 118 institutions its own funding-note section and reads one by heading when the question names that college; it worked. A question about all colleges names none, so it read nothing, and the similarity search pulled the vault's July 19 Veteran Sprint Plan, which says 25,934 JSTs. Her live metrics carried 30,653 (`MilitaryStudents`), labeled only as students, so nothing told her it was the JST count. The instruction Sam added at 14:04Z (d1c7f9ea) told her to answer from figures she did not have: an instruction cannot supply data.
+
+The fix (#2666): one aggregate section in the note, every institution against the condition (41 not yet met with JSTs, veterans and percent, then the 65 met by name; a masked count gives no figure; a list keeps its label in its paragraph so the indexer's 2,000-character split keeps them together), read by heading for a JST question that names no single college, its indexed chunks joined by `chunk_index`; and the metric line names `MilitaryStudents` the statewide JST count. The note half went live at the dispatched funding-note run (3 chunks, 4,813 characters) before any deploy. Guards: `tests/funding_sierra_note.test.js` (22), `tests/sierra_college_funding_section.test.js` (41).
+
+**The preview A/B, read by check, not by verdict.** Run 1 failed 7v (the NOCE follow-up); the re-run passed 7v and failed 17 (Norco's Quick Adopt) and 2 (Riverside). No check failed twice on identical code, none of the three questions can reach the change (no JST words; each names a college, so the named-college path, unchanged), and the only cpl-chat difference from production (4118cc0c) was #2666's 43 lines. Sam had ruled *deploy*; the deploy run 41367780729 and its post-deploy smoke passed. The method: compare the failing sets across runs, then ask whether the failing questions can reach the diff at all.
+
+**Lesson.** A per-entity index answers *about this one* and is silent on *which ones*: give the aggregate its own section and its own route, and name a live figure by what people call it (JSTs), since a label is what retrieval and the model match on.
+
+### Moved from the lane (S543): the S529 paragraph as it stood
+
+**A named college's funding section (S529).** The vault's funding note gives each of the 118 institutions a section
+headed `<full name>: CPL funding standing` (`scripts/funding_sierra_note.js`). A funding question that names one
+college reads that section by heading, ahead of the similarity search (`fetchCollegeFundingSection`; every profile in
+`chatbox_college_profiles` reaches its heading, the 7 non-CCC names excepted). **Built, first live at the next
+deploy** (held for Sam: a production deploy). The miss S528 saw (Cabrillo asked, three other colleges answered) was
+the index, not the ranking: the vault's two indexers raced and left 47 of 118 sections; CPLBrain#556 serializes them,
+skips unchanged files before embedding and writes a checksum after its sections. Index rebuilt 16:03Z 2026-10-30
+(187 of 187 chunks).

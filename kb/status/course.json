@@ -1,20 +1,24 @@
 {
   "schema": 1,
-  "session": 428,
-  "moniker": "SkyPinyon",
+  "session": 543,
+  "moniker": "SkyAndromeda",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_430_handoff.md",
+  "handoff": "docs/session_544_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-10-20T00:38:24Z",
+  "written_at": "2026-11-02T01:20:14Z",
   "project": "course",
   "next_step": {
-    "title": "Finish the Common Course Reference list's UI pass",
-    "text": "The CCR list's dialogs still paint about 90 inline hex colors in unified_courses.js and its 15 column headers clip. Measure with npm run a11y ccr-list ccr-list-dark, since the cobi sweep sees only the SkyView map. The exhibit universe for SkyView's CPL mode stays lane-sized work."
+    "title": "The List norms on the Courses List",
+    "text": "The Courses List runs on the shared engine; the engine's suggest slot and changed tracker come next, and the tiles once they move into the engine."
   },
   "changes": [
+    {
+      "at": "2026-11-02T00:55:00Z",
+      "text": "COCI Lookup's Courses view is the Courses List: 141,738 local courses banded by today's M-ID, read only, Open in SkyView on each band (#2670)."
+    },
     {
       "at": "2026-10-20T00:31:27Z",
       "text": "No change to the CCR this run; two calls from the CTDL partner exchange lane wait on Sam (Sheet 102 cards 4 and 5)."
