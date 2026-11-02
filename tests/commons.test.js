@@ -22,7 +22,7 @@ function txt(el) { return (el && el.textContent || "").trim(); }
 const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
-check("nav has The Commons button", /class="cpl-tab[^"]*" data-tab="commons"[^>]*>The Commons</.test(cpl));
+check("nav has the CPL Commons button (Sam, Sheet 158 card 3, 2026-11-02)", /class="cpl-tab[^"]*" data-tab="commons"[^>]*>CPL Commons</.test(cpl));
 check("pane #tab-commons exists", /id="tab-commons" data-tab="commons"/.test(cpl));
 check("mount #commons-root exists", /id="commons-root"/.test(cpl));
 check("boot wiring: onActivate('commons')", /onActivate\('commons'/.test(cpl));
@@ -51,9 +51,14 @@ check("commons.js carries no service key", src.indexOf("service_role") === -1);
 check("commons.js reads kb/status/commons.json", /kb\/status\/commons\.json/.test(src));
 const cssBlock = src.slice(src.indexOf("var CSS = ["), src.indexOf("].join("));
 check("the injected CSS names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(cssBlock));
-check("the injected CSS uses tokens", /var\(--cobalt\)/.test(cssBlock) && /var\(--border\)/.test(cssBlock));
+check("the injected CSS uses the tab's tokens", /var\(--cmn-link\)/.test(cssBlock) && /var\(--cmn-line\)/.test(cssBlock) && !/var\(--cobalt\)/.test(cssBlock));
+const tokensBlock = src.slice(src.indexOf("var TOKENS = ["), src.indexOf("].join(", src.indexOf("var TOKENS = [")));
+check("Malone's palette lives only in the tab's token block, scoped to #tab-commons", /#tab-commons \{ --cmn-page:#F5FAFF;/.test(tokensBlock) && /--cmn-sans:Inter/.test(tokensBlock));
+check("dark mode maps every role onto a First Light dark token and invents no color",
+  /:root\[data-theme=\\?"dark\\?"\] #tab-commons \{[^}]*--cmn-surface:var\(--surface\)[^}]*--cmn-heading:var\(--text-strong\)/.test(tokensBlock)
+  && !/data-theme=\\?"dark\\?"\] #tab-commons \{[^}]*#[0-9a-fA-F]{3,8}\b/.test(tokensBlock) && /prefers-color-scheme: dark/.test(tokensBlock));
 check("the word controls are 24px tall, underlined, with no fill", /button\.cmn-word \{ all:unset;[^}]*min-height:24px;[^}]*text-decoration:underline/.test(cssBlock));
-check("a focus ring is drawn", /:focus-visible \{ outline:2px solid var\(--seal-blue\)/.test(cssBlock));
+check("a focus ring is drawn", /:focus-visible \{ outline:2px solid var\(--cmn-accent\)/.test(cssBlock));
 check("single column below 560px", /@media \(max-width: 560px\) \{ \.cmn-cells \{ grid-template-columns:minmax\(0, 1fr\)/.test(cssBlock));
 check("American spelling in the source", !/\b(colour|behaviour|organisation|analyse|centre|cancelled|catalogue|whilst|amongst)\b/i.test(src));
 
@@ -92,10 +97,22 @@ const STATUS = {
     { key: "subjects", title: "Common Subjects Reference", tab: "#canonical-subj4", links: [{ href: "#canonical-subj4", text: "Open the tab" }], status_file: null,
       pair: [{ n: null, of: null, words: "", open: "#canonical-subj4" }], tests: [], issues: [], procedures: [],
       machine: { what: null, at: null, every_hours: null }, error: "FileNotFoundError: kb/discipline_canonical_subj4.json", sources: [] }
+  ],
+  building: [
+    { key: "credentials", title: "Industry credentials", tab: "#exhibits", links: [{ href: "#exhibits", text: "Open Exhibits" }],
+      pair: [{ n: 7536, of: null, words: "credentials from 1,525 issuers", open: "#exhibits" }], tests: ["issuer-published"],
+      machine: { what: "the credential watch's catalog", at: "2026-10-18T00:00:00Z", every_hours: null }, sources: ["kb/it_ai_credential_catalog.json"] },
+    { key: "outcomes", title: "Course outcomes", tab: "#coci-lookup", links: [{ href: "#coci-lookup", text: "Open the Courses List" }],
+      pair: [{ n: 19821, of: null, words: "outcomes read from 4,729 courses at 7 colleges", open: "#coci-lookup" }], tests: ["read from the public outline"],
+      machine: { what: "the last outline read", at: "2026-10-18T07:02:26Z", every_hours: null }, sources: ["kb/course_outcomes/*/read_*.json"] },
+    { key: "skills", title: "Skills", tab: null, links: [],
+      pair: [{ n: 26, of: null, words: "credentials list their issuer's skills so far", open: null }], tests: ["issuer-published"],
+      machine: { what: "the credential watch's catalog", at: "2026-10-18T00:00:00Z", every_hours: null }, sources: ["kb/it_ai_credential_catalog.json"] }
   ]
 };
 const PR_LOG = { schema: 1, project: "program-requirements", written_at: "2026-10-18T18:15:53Z", session: 418, moniker: "SkyMadrone",
   next_step: { title: "Hand Sam the Commons mock-up, then the shared Progress module" },
+  changes: [{ at: "2026-10-18T18:00:00Z", text: "Glendale's 220 records loaded. The reader now follows the catalog's own links." }],
   calls: [{ title: "The Commons mock-up, version 3, waits on Sam's look", link: "https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi" },
     { title: "The second reader waits on a new xAI subscription", link: "https://claude.ai/artifact/RmbXT7Ay2955zcpg1hfHzu",
       answer: { by: "Sam", at: "2026-10-21", words: "Later: keep this on ice." } }] };
@@ -139,10 +156,66 @@ function cellText(li, title) {
   const r = await t.M.boot();
   check("boot() resolves with the data and the run logs", r && r.data && r.S && r.S.requirements && r.S.requirements.Q && r.S.requirements.Q.session === 418);
   check("the mount's placeholder style is dropped", !t.root.getAttribute("style"));
-  check("the heading is The Commons", txt(t.d.querySelector(".cmn-title")) === "The Commons");
+  check("the heading is CPL Commons (Sam, 2026-11-02)", txt(t.d.querySelector(".cmn-title")) === "CPL Commons");
   check("five rows draw in the file's order", rows(t.d).map(function (li) { return li.getAttribute("data-key"); }).join(",") === "requirements,exhibit,course,cr,subjects");
   check("the rows are numbered 1 to 5", rows(t.d).map(function (li) { return txt(li.querySelector(".cmn-pos")); }).join("") === "12345");
   check("the bar says when the figures were read", /Figures read/.test(txt(t.d.querySelector(".cmn-note"))));
+
+  // ── the first view (the mock Sam locked, S552, 2026-11-02): a card per common reference ──
+  const cards = () => Array.from(t.d.querySelectorAll(".cmn-card"));
+  const cardKeys = () => cards().map((c) => c.getAttribute("data-card"));
+  check("⭐ eight cards draw: the five references and the three being built", cards().length === 8);
+  check("⭐ the cards are the Common references, your decisions first, then by how far along, then the builds",
+    cardKeys().join(",") === "requirements,exhibit,course,cr,subjects,credentials,outcomes,skills"
+    && cards().map((c) => txt(c.querySelector(".cmn-card-name"))).join("|") === "Common Programs|Common Exhibits|Common Courses|Common Credit Recommendations|Common Subjects|Common Credentials|Common Outcomes|Common Skills");
+  const reqCard = t.d.querySelector('.cmn-card[data-card="requirements"]');
+  check("a card with an open call reads Needs you under a gold rule and carries Your decision with the call's sheet link",
+    txt(reqCard.querySelector(".cmn-pill")) === "Needs you" && reqCard.classList.contains("cmn-card-needs")
+    && /Your decision\s+The Commons mock-up, version 3/.test(txt(reqCard.querySelector(".cmn-card-ask")).replace(/\s+/g, " "))
+    && reqCard.querySelector('.cmn-card-ask a[href="https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi"]'));
+  check("the card's headline is the pair in one line with its meter",
+    /11,625 of 20,282 complete at 113 colleges/.test(txt(reqCard.querySelector(".cmn-card-n")).replace(/\s+/g, " "))
+    && reqCard.querySelector(".cmn-card-meter") && /57\.3%/.test(reqCard.querySelector(".cmn-card-meter i").style.width));
+  check("Recently is the run log's latest change, cut to its first sentence; Next is its next step",
+    /Recently\s+Glendale's 220 records loaded\.$/.test(txt(reqCard.querySelector(".cmn-card-lines p:nth-child(2)")).replace(/\s+/g, " "))
+    && /Next\s+Hand Sam the Commons mock-up/.test(txt(reqCard.querySelector(".cmn-card-lines p:nth-child(3)")).replace(/\s+/g, " ")));
+  check("the Programs card opens as CPL Pathways (Sam, 2026-10-21) and carries Decision record",
+    txt(reqCard.querySelector('.cmn-card-links a[href="#program-requirements"]')) === "CPL Pathways" && txt(reqCard.querySelector(".cmn-record")) === "Decision record");
+  const exCard = t.d.querySelector('.cmn-card[data-card="exhibit"]');
+  check("a card with no run log reads In progress and Recently from its machine stamp", txt(exCard.querySelector(".cmn-pill")) === "In progress"
+    && /Recently\s+The saving run and the fold, /.test(txt(exCard.querySelector(".cmn-card-lines")).replace(/\s+/g, " ")));
+  const skCard = t.d.querySelector('.cmn-card[data-card="skills"]');
+  check("a building card reads its status word with a count and no meter", txt(skCard.querySelector(".cmn-pill")) === "Starting"
+    && /^26 credentials list their issuer's skills so far$/.test(txt(skCard.querySelector(".cmn-card-n")).replace(/\s+/g, " ")) && !skCard.querySelector(".cmn-card-meter")
+    && txt(t.d.querySelector('.cmn-card[data-card="credentials"] .cmn-pill')) === "Building");
+  const suCard = t.d.querySelector('.cmn-card[data-card="subjects"]');
+  check("an unread card says Could not be read with the error, never a zero", txt(suCard.querySelector(".cmn-pill")) === "Could not be read"
+    && /Could not be read/.test(txt(suCard.querySelector(".cmn-card-n"))) && /FileNotFoundError/.test(txt(suCard.querySelector(".cmn-card-n"))) && !/\b0\b/.test(txt(suCard.querySelector(".cmn-card-n"))));
+  check("the decisions waiting on Sam lead the page, each naming its card", txt(t.d.querySelector(".cmn-band-h")) === "One decision waits on you"
+    && /Common Programs: The Commons mock-up, version 3/.test(txt(t.d.querySelector(".cmn-band-list")).replace(/\s+/g, " ")));
+  check("the lede counts the references and the sub line says when the figures were read",
+    /^Eight common references the California Community Colleges keep together/.test(txt(t.d.querySelector(".cmn-lede"))) && /Figures read/.test(txt(t.d.querySelector(".cmn-sub"))));
+  // the filter words last the visit and are never kept
+  const filterOf = (k) => t.d.querySelector('.cmn-filter[data-show="' + k + '"]');
+  check("the filter words are All eight, Needs you, Building, All pressed", txt(filterOf("all")) === "All eight" && filterOf("all").getAttribute("aria-pressed") === "true" && txt(filterOf("needs")) === "Needs you" && txt(filterOf("build")) === "Building");
+  filterOf("needs").click();
+  check("Needs you shows the one card with an open call and presses its word", cardKeys().join(",") === "requirements" && filterOf("needs").getAttribute("aria-pressed") === "true" && filterOf("all").getAttribute("aria-pressed") === "false");
+  filterOf("build").click();
+  check("Building shows the three being built", cardKeys().join(",") === "credentials,outcomes,skills");
+  filterOf("all").click();
+  check("the filter is not kept in storage (tabs never remember a filter, Sam 2026-10-21)", cards().length === 8 && !Object.keys(t.w.localStorage).some((k) => /filter|show/i.test(k)));
+  // the details: the rows, one word away
+  const detailsWord = t.d.getElementById("cmn-details-word"), details = t.d.getElementById("cmn-details");
+  check("the rows sit under Details, hidden until asked, with aria-expanded on the word", details.hidden && detailsWord.getAttribute("aria-expanded") === "false" && detailsWord.getAttribute("aria-controls") === "cmn-details" && rows(t.d).length === 5);
+  detailsWord.click();
+  check("Details opens the rows and the word reads Hide details", !details.hidden && detailsWord.getAttribute("aria-expanded") === "true" && txt(detailsWord) === "Hide details");
+  detailsWord.click();
+  check("Hide details closes them", details.hidden && txt(detailsWord) === "Details");
+  t.d.querySelector('.cmn-card[data-card="cr"] .cmn-record').click();
+  check("a card's Decision record opens Details and moves focus to that row", !details.hidden && t.d.activeElement === byKey(t.d, "cr").querySelector("h3"));
+  detailsWord.click();
+  check("the foot says every reference is staging and Read the decision record is a word", /staging until faculty publish it/.test(txt(t.d.querySelector(".cmn-foot"))) && txt(t.d.getElementById("cmn-record-word")) === "Read the decision record");
+  check("the tab's tokens and font are added once", t.d.querySelectorAll("#cmn-tokens").length === 1 && t.d.querySelectorAll("#cmn-font").length === 1 && /fonts\.googleapis\.com\/css2\?family=Inter/.test(t.d.getElementById("cmn-font").getAttribute("href")));
 
   const req = byKey(t.d, "requirements");
   check("the pair reads 11,625 of 20,282 with its words", /11,625\s*of\s*20,282\s*complete at 113 colleges/.test(txt(req.querySelector(".cmn-n")).replace(/\s+/g, " ")));

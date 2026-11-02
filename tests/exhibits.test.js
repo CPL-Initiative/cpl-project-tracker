@@ -31,7 +31,7 @@ function txt(el) { return (el && el.textContent || "").trim(); }
 const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
 check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
-check("nav has the Exhibits button beside The Commons", /data-tab="commons">The Commons<\/button>\s*<button class="cpl-tab" data-tab="exhibits">Exhibits</.test(cpl));
+check("nav has the Exhibits button beside CPL Commons (the button renamed 2026-11-02)", /data-tab="commons">CPL Commons<\/button>\s*<button class="cpl-tab" data-tab="exhibits">Exhibits</.test(cpl));
 check("pane #tab-exhibits and mount #exhibits-root exist", /id="tab-exhibits" data-tab="exhibits"/.test(cpl) && /id="exhibits-root"/.test(cpl));
 check("boot wiring: onActivate('exhibits') loads exhibits.js", /onActivate\('exhibits'[\s\S]{0,300}loadScript\('exhibits\.js', 'CPL_EXHIBITS'/.test(cpl));
 const groupsSrc = fs.readFileSync("nav_groups.js", "utf8");

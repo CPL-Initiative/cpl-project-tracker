@@ -1,0 +1,11 @@
+{
+  "run": "s552-presidents-emails",
+  "read_by": "S552 SkyCentaurus, 2026-11-02",
+  "partial": true,
+  "colleges": [],
+  "note": "The two emails S550's ninth read held blank (its records note, run 41445485365) because the apply then matched on name and email together: Allan Hancock College's and Antelope Valley College's presidents, each printed on the page S550 read and checked. S551's apply fills a blank email on a name match (migration 2026-11-02_college_contacts_harvest_fill_email.sql), so this partial load adds them in place. Partial: names no college, so marks nobody gone.",
+  "rows": [
+    {"college": "Allan Hancock College", "position": "college_ceo", "title_as_printed": "AHC President", "name": "Kevin G. Walthers, Ph.D.", "email": "kevin.walthers@hancockcollege.edu", "source_url": "https://www.hancockcollege.edu/president/index.php"},
+    {"college": "Antelope Valley College", "position": "college_ceo", "title_as_printed": "Superintendent/President", "name": "Dr. Jennifer Zellet", "email": "jennifer.zellet@avc.edu", "source_url": "https://www.avc.edu/about-avc/office-superintendentpresident"}
+  ]
+}

@@ -584,6 +584,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/cos_matches.json` | tabs: `credential-reference` · scripts: `kb/_match_cos_authority.py` | committed by: `cos-authority-sync.yml` |
 | `kb/course_crosswalk.json` | scripts: `kb/_curation_01.py`, `kb/_esl_package_dryrun.py`, `kb/_zband_retire_dryrun.py` | scripts: `kb/_seed_cx_common_courses.py` |
 | `kb/course_outcomes` | none found | committed by: `course-outcomes-read.yml` |
+| `kb/course_outcomes/*/read_*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `kb/course_outline_census` | none found | committed by: `course-outline-census.yml` |
 | `kb/course_outline_index` | none found | committed by: `course-outline-index.yml` |
 | `kb/course_outline_index/index_<run>.json` | scripts: `kb/_course_outcomes_read.py` | — |
@@ -653,7 +654,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `kb/identities_rekey_out/2026-09-05/dead_worklist.md` | none found | scripts: `kb/_identities_rekey_dryrun.py` |
 | `kb/insert.sql` | none found | modules: `kb/_carp_apprentice_plan_s109.js` |
 | `kb/issuer_preseed.json` | tabs: `credential-reference` · scripts: `kb/_preseed_null_issuers.py`, `kb/_verify_issuer_preseed.py` | scripts: `kb/_preseed_null_issuers.py` |
-| `kb/it_ai_credential_catalog.json` | tabs: `credential-reference` · scripts: `kb/_build_adopt_page.py`, `kb/_build_exhibit_cert_links.py`, `kb/_build_it_ai_credential_catalog.py` | scripts: `kb/_build_it_ai_credential_catalog.py` |
+| `kb/it_ai_credential_catalog.json` | tabs: `credential-reference` · scripts: `kb/_build_adopt_page.py`, `kb/_build_commons_status.py`, `kb/_build_exhibit_cert_links.py`, `kb/_build_it_ai_credential_catalog.py` | scripts: `kb/_build_it_ai_credential_catalog.py` |
 | `kb/kb/reference/coci_program_course_file.csv.gz` | modules: `kb/_college_apprenticeship_cpl_roster.js` | — |
 | `kb/kb/reference/map_college_names.json` | modules: `kb/_build_funding_college_map.js` | — |
 | `kb/kin_pe_out/<date>/alias_map.json` | scripts: `kb/alias_chain.py` | — |
@@ -871,6 +872,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `quickstart.js` | pages: `CPL_Dashboard.html` | — |
 | `raci.js` | pages: `CPL_Dashboard.html` | — |
 | `read*.json` | scripts: `scripts/next_slo_colleges.py` | — |
+| `read_*.json` | scripts: `kb/_build_commons_status.py` | — |
 | `read_*_p*of*.json` | scripts: `kb/_course_outcomes_load.py` | — |
 | `reflections/build_reflections_summary.py` | workflows: `weekly-reflections-summary.yml` | — |
 | `reflections/summary.json` | scripts: `reflections/build_reflections_summary.py` | committed by: `weekly-reflections-summary.yml` |
@@ -1107,7 +1109,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `example.org` | modules: `a11y.config.js` |
 | `fhweb.foothill.edu` | tabs: `map-queue`, `map-users` |
 | `flc.losrios.edu` | tabs: `map-queue`, `map-users` |
-| `fonts.googleapis.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py`, `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` |
+| `fonts.googleapis.com` | tabs: `commons` · scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_build_domain_cpl_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `kb/memory_audit/2026-09-05-sheet_builder.py`, `prototype/globe/build_globe.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py`, `scripts/build_cr_list_preview.py`, `scripts/build_exhibits_list_preview.py` |
 | `fonts.gstatic.com` | scripts: `kb/_build_college_offering_crosswalk.py`, `kb/_write_openclassrooms_html.py`, `prototype/mockup_harness/assemble.py`, `prototype/mockup_harness/assemble_model_words.py`, `prototype/mockup_harness/assemble_mycpl.py` |
 | `foothill.edu` | tabs: `map-queue`, `map-users` |
 | `futurohealth.org` | tabs: `map-queue`, `map-users` |
@@ -1267,7 +1269,6 @@ Files with network/read markers where nothing could be attributed —
 check these BY HAND before trusting an absence:
 
 - `chatbox/sync_program_courses.py`
-- `commons.js`
 - `commons_list.js`
 - `cpl_session.js`
 - `cr_progress.js`
@@ -1276,5 +1277,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 105 Supabase tables · 48 RPCs · 11 edge functions · 775 file
-datasets · 192 external services · 508 consumers · 60 workflows · 39 tabs.
+Coverage: 105 Supabase tables · 48 RPCs · 11 edge functions · 777 file
+datasets · 192 external services · 509 consumers · 60 workflows · 39 tabs.

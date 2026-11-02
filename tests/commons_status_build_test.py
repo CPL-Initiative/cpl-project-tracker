@@ -65,6 +65,19 @@ for r in rows:
 
 req = rows[0]
 f = req.get("facts") or {}
+building = data.get("building", [])
+check("the three building references follow the rows (S552): credentials, outcomes, skills",
+      [b.get("key") for b in building] == ["credentials", "outcomes", "skills"])
+for b in building:
+    bp = (b.get("pair") or [{}])[0]
+    check(b.get("key", "?") + ": a count with no universe, its words, and a machine stamp, read without an error",
+          isinstance(bp.get("n"), int) and bp.get("n") > 0 and bp.get("of") is None and bp.get("words")
+          and (b.get("machine") or {}).get("at") and not b.get("error"), b.get("error") or bp)
+check("credentials: the catalog's own counts", (building[0].get("facts") or {}).get("issuers") and "issuers" in building[0]["pair"][0]["words"])
+check("outcomes: counted from the committed reads, colleges by the courses' named_by",
+      isinstance((building[1].get("facts") or {}).get("colleges"), list) and len(building[1]["facts"]["colleges"]) >= 1
+      and building[1]["facts"].get("reads", 0) >= 1)
+
 check("Program Requirements: complete + failing + unread = the active universe",
       f.get("complete") + f.get("failing") + f.get("unread") == f.get("active") == req["pair"][0]["of"], f)
 check("Program Requirements: its run log is named (kb/status/program-requirements.json)",

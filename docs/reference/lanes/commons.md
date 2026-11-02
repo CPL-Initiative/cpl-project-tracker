@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-10-20
+updated: 2026-11-02
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -46,6 +46,42 @@ together and places them in some order of priority and completion and known issu
 | Common Subjects Reference (Sam's addition, Sheet 95) | `#canonical-subj4` | [common-subjects-reference](common-subjects-reference.md) | carries all five parts since S425: the Progress view, a procedure per card, the daily scan, the run log |
 
 ## Status
+
+**The CPL Commons, the working name (Sam, S552, 2026-11-02).** *"Let's call the Catalog Common the CCC Commons for now
+and you can play off of that for the card titles and focus elements."*, then, on seeing it: *"Let's go with these designs for now. I'm chickening out on the CCC Commons...let's go with CPL Commons for now as less of a wholesale take over of the system:)"* The first-view mock
+(https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, a Design canvas, version 8, locked by Sam; source in
+`CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/`) now reads **CPL Commons**, with its lede (*eight common references the
+California Community Colleges keep together for credit for prior learning*), and each of its eight cards is a **Common**
+reference, this tab's own row pattern with "Reference" dropped: Common Programs, Common Subjects, Common Exhibits,
+Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills. The decisions band,
+the sort note, the skip link and the footer carry the same words; the Programs card opens CPL Pathways. "Register"
+(S551's advice) is retired. The mock is in Malone's CPL/AI look at Sam's ask (S551), which is the public pages' look,
+so the port into this tab waits on his call on the look.
+
+**RULED (Sam, Open Asks Sheet 158 cards 2 and 3, 15:01Z 2026-11-02, his own call: "malone", "rename").** The CPL
+Commons first view ports into this tab in **Malone's CPL/AI look**, the first COBI tab to carry it (First Light stays the
+rule for the other tabs; this is the one departure inside COBI, beside the public pages' departure of 2026-10-24). The
+side menu reads **CPL Commons** (`cobi_nav` row `commons`, one guarded UPDATE, receipt
+`kb/receipts/cobi_nav_commons_label_cpl_commons_2026-11-02_s552.sql`, the rollback in its header).
+
+**LIVE: the CPL Commons first view (S552, 2026-11-02, #2697).** `commons.js` draws the locked mock as the tab's first
+view: the decisions waiting on Sam lead (every open call from the run logs, each naming its card), then one card per
+common reference, your decisions first, then by how far along, then the builds; a card carries its Common name, one
+line of what, the headline pair with its meter, *Your decision* (the first open call, linked to its sheet), *Recently*
+(the run log's latest change, first sentence; a row with no run log shows its machine stamp), *Next* (the run log's
+next step), its opening words and *Decision record*. Three filter words (*All eight*, *Needs you*, *Building*) last the
+visit. The rows of 2026-10-18 (known issues, settled procedures, the Decision Sheet Library, the last run, Sam's order
+and fold) stay under **Details**, one word away; a card's *Decision record* opens them at its row. **The three building
+references** (Common Credentials, Common Outcomes, Common Skills) are `building` rows in `kb/status/commons.json`, written
+by `kb/_build_commons_status.py` from `kb/it_ai_credential_catalog.json` (`_stats`) and the committed
+`kb/course_outcomes/*/read_*.json`: a count with no universe, no meter, the file's stamp. **Malone's look** (Sheet 158
+card 2): the palette lives once as `--cmn` tokens on `#tab-commons`; the dark theme maps every role onto a First Light
+dark token (`:root[data-theme="dark"] #tab-commons` and the OS-dark media query), so no color is invented there. Inter
+loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/commons_status_build_test.py` (83).
+
+**NEXT:** carry the opened page's pattern (the progress line, *Needs attention* with an action each, the three question
+groups over one denominator; the mock's Exhibits artboard) to each reference's Progress view, Exhibits first; then the
+Course Progress view (below). The tab's a11y pass (`npm run a11y -- cobi:commons`) re-runs on the new view.
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
@@ -103,16 +139,7 @@ stay in the browser. Sam's three rulings of the day carry the `cpl_memory` row
 - The mock-up stays the design record: https://claude.ai/artifact/JmaUvTxUqqrL4aPaq2rizi (version 4;
   source `docs/visuals/2026-10-18-commons-mockup.html`).
 
-**Step 1 landed (S419, #2237, merged 19:28Z):** the Progress view the Program Requirements tab drew since S343 is
-drawn by `commons_progress.js`, the shared module: the renderer, `readStatus()`, the milestone arithmetic, the shared
-status words, the time words and the Progress CSS. A project brings a spec (its words, `MILESTONES`, `PARTS`, `WHOLE`,
-a declarative `HEADLINE`, its read names), a context from its own live reads and a host lending its `section()`,
-`goControl()` and call-card helpers; a host's classes are substituted into the CSS, one style per host; a spec with no
-whole measure draws no band; a failed module load leaves the other views drawing. Nothing changed on screen:
-`tests/program_requirements.test.js` passes its 417 checks with the module loaded first; `tests/commons_progress.test.js`
-(30 checks) guards what only a shared module can get wrong. The status file is `kb/status/program-requirements.json`,
-the first of one per common reference (`scripts/queue_status.py --project`); checkpoint step 12 names it. Lessons:
-`docs/commons_lessons.md`.
+**Steps 1 and 2 (S419 #2237, S423): the shared Progress module `commons_progress.js` and the five run logs under `kb/status/`.** The record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*).
 
 **What the tab leaves for the build.** A count opens its reference's tab at the top, since no tab reads a
 list from its address (the deep link is a build item). The gaps across the harvest's five parts are a live
@@ -136,54 +163,7 @@ Progress module (`commons_progress.js`, S419, #2237), is on main; the Commons ta
 Progress view (Exhibit, Course, CR, Subjects) from the module, each with its definition of complete on a
 card for Sam.
 
-**Step 2, the run logs (S423):** `kb/status/exhibit.json`, `course.json`, `cr.json` and `subjects.json` carry a session stamp, the lane's NEXT as the next step and no calls (nothing on any of the four waits on Sam); checkpoint step 12 names them, stamped with `scripts/queue_status.py --project <id> --stamp`, and refreshes the ones a run touched. A run log older than a week reads stale on the tab, which is true of a reference no session worked.
-
-**Step 3's first Progress view, Subjects (S425, cpl-project-tracker#2260).** Sam, 2026-10-19: *"Can you develop a
-dash for CSR similar to the one you created for PR? Seems like each of our Commons consolidation projects should
-follow the same process"*; his ask moved Subjects ahead of Exhibit, Course and CR in the ruled order. The tab opens on
-Progress, drawn by the shared module from its own definitions (a card per step, the procedures under the cards, the
-findings), and a count opens the table with its filter through `#canonical-subj4/<filter>`, the deep link behind a
-count; the Commons row's counts link the same way. The second host proved the contract: a 60-line host object, its
-own section classes, no change to the module but an optional second word per part. Lane:
-[common-subjects-reference](common-subjects-reference.md).
-
-**Step 3's second Progress view, Exhibit (S436, 2026-10-20).** The Common Exhibit Reference tab gains a fourth view,
-*Progress*, first in its row; the tab still opens on Needs you (S413), so nothing a curator lands on moved. The
-definitions live in `exhibit_progress.js`, loaded with `commons_progress.js` the first time the view opens. **One
-definition, two readers:** the headline pair and the auditor's tallies come from the Exhibit row of
-`kb/status/commons.json` (the builder now writes `map_titles`, `unclassified`, `left_map`, `below_80`, `below_60`), so
-the Commons row and the view cannot disagree; the rest is the tab's live state lent through an `api` (last night's
-procedures report, the Unclassified, No issuer and Merge confirms queues, the lane switch). Definition of complete,
-carried from the Commons row: a title carries a review stamp, a person's or a procedure's cohort's (1,729 of 4,915).
-Five milestones (every MAP title classified, the held titles decided, an issuer for every credential, the reference
-matches MAP, every title stamped) and eight cards. A count opens the lane that lists it, and
-`#credential-reference/<lane>` (progress, held, unc, noiss, merge, procs, all, industry; `needs` and `ref` name a view)
-routes from the address; the Commons row's counts now link there. Guard `tests/exhibit_progress.test.js` (30 checks);
-`npm run a11y -- cer-progress cer-progress-dark` passes. The third host needed no change to the module.
-
-**RULED (Sam, Open Asks Sheet 107 card 4, 13:09Z 2026-10-20, and again on Sheet 108 card 4, 13:24Z, his own call:
-keep).** The Exhibit Progress view stays as S436 built it: complete = a title with a review stamp (the Commons row's
-pair), and the tab opens on Needs you.
-
-**Step 3's third Progress view, CR (S437, 2026-10-20).** The Common CR Reference tab gains a view row, *Progress* and
-*Worklist*; the tab still opens on the worklist's Needs a decision. The definitions live in `cr_progress.js`, loaded with
-`commons_progress.js` the first time the view opens. **Complete changed unit:** a *wording* colleges wrote resolves to a
-settled reference when a rung 1 to 4 rule places it or a curator's decision names it (confirmed or not a topic; deferred
-and cleared settle nothing), so the Commons row's pair moved from two group counts (156 by rule, 30 decided) to one:
-**459 of 2,344 wordings, 5,750 of 9,413 articulations** (408 by a rule, 51 more by Sam's 2026-09-20 sitting). The
-builder (`row_cr()`) and the tab (`SETTLES`) apply one rule; the builder reads the committed receipts, and the view's
-Curator decisions card says when the live table and the receipts differ. Milestones walk the head-heavy corpus: the
-rules applied, the top 50, 100 and 250 wordings settled, every wording settled; You are here is the head (44 of 50; the
-six left are the POST community-relations wordings, Criminal Court Process, Elective Course Credits and Engine
-Performance I). Two new worklist filters back the counts, *No rule or decision* (1,885) and *Name to check* (37), and
-`#cr-reference/<view or filter>` routes from the address. The tab had drawn inside its loading placeholder's inline
-style (a dashed box, muted centered text) since it shipped; the module now clears it on first paint. Guards
-`tests/cr_progress.test.js` (42) and `tests/commons_status_build_test.py` (77, a fixture for the settling rule);
-`npm run a11y -- cr-progress cr-progress-dark` passes. The fourth host needed no change to the module.
-
-**RULED (Sam, Open Asks Sheet 108 card 5, 13:24Z 2026-10-20, his own call: keep; `cpl_memory`
-`sam-sheet-108-rulings-2026-10-20`).** The CR Progress view stays as built: complete = a wording a rule places or a
-curator decides, and the tab opens on its worklist.
+**Step 3's Progress views, Subjects (S425, #2260), Exhibit (S436) and CR (S437), with Sam's keep rulings (Sheets 107 and 108):** the record moved verbatim to `docs/commons_lessons.md` (*Moved from the lane, 2026-11-02*). Each host brought a 60-line spec to the shared module and needed no change to it.
 
 **NEXT:** the Course Progress view from the shared module, with its definition of complete on a card for Sam and the
 deep link behind each count. Course is SkyView alone (Sam, 2026-10-18), so its view lives where SkyView's counts can

@@ -1,0 +1,150 @@
+{
+ "run": "s552-presidents-emails",
+ "applied_at": "2026-11-02T14:55:13+00:00",
+ "github_run": "41466320217",
+ "result": {
+  "new": 0,
+  "run": "s552-presidents-emails",
+  "gone": 0,
+  "colleges": 2,
+  "seen_again": 2
+ },
+ "rollback": "delete the rows whose first_seen is this load's and whose id is not in before; restore every before row's title_as_printed, source_url, seen_run, last_seen, gone_since",
+ "before": [
+  {
+   "id": 1,
+   "college": "Allan Hancock College",
+   "position": "college_ceo",
+   "title_as_printed": "AHC President",
+   "name": "Kevin G. Walthers, Ph.D.",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/index.php",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 2,
+   "college": "Allan Hancock College",
+   "position": "vpaa",
+   "title_as_printed": "Associate Superintendent/Vice President, Academic Affairs",
+   "name": "Dr. Bob Curry",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 3,
+   "college": "Allan Hancock College",
+   "position": "vpss",
+   "title_as_printed": "Associate Superintendent/Vice President, Student Services",
+   "name": "Dr. Genevieve Siwabessy",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 4,
+   "college": "Allan Hancock College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions & Records",
+   "name": "Dr. David Vasquez",
+   "email": "dvasquez@hancockcollege.edu",
+   "source_url": "https://www.hancockcollege.edu/admissions/staff.php",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 5,
+   "college": "Antelope Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Jennifer Zellet",
+   "email": "",
+   "source_url": "https://www.avc.edu/about-avc/office-superintendentpresident",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 35,
+   "college": "Antelope Valley College",
+   "position": "vpbs",
+   "title_as_printed": "VP Administrative Services",
+   "name": "Shami Brar",
+   "email": "shami.brar@avc.edu",
+   "source_url": "https://www.avc.edu/directory",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-01T13:31:49.556057+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 6,
+   "college": "Antelope Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President Student Services",
+   "name": "Idania Padron",
+   "email": "idania.padron@avc.edu",
+   "source_url": "https://www.avc.edu/directory",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-01T10:55:41.463754+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 280,
+   "college": "Antelope Valley College",
+   "position": "vpaa",
+   "title_as_printed": "VP Academic Affairs",
+   "name": "Kathryn Mitchell",
+   "email": "kathryn.mitchell@avc.edu",
+   "source_url": "https://www.avc.edu/directory",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-02T12:47:02.759664+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  },
+  {
+   "id": 281,
+   "college": "Antelope Valley College",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans Resource Center",
+   "name": "Jimmy Guevara",
+   "email": "jimmy.guevara@avc.edu",
+   "source_url": "https://www.avc.edu/directory",
+   "seen_run": "41445485365",
+   "first_seen": "2026-11-02T12:47:02.759664+00:00",
+   "last_seen": "2026-11-02T12:47:02.759664+00:00",
+   "gone_since": null
+  }
+ ],
+ "rows": [
+  {
+   "college": "Allan Hancock College",
+   "position": "college_ceo",
+   "title_as_printed": "AHC President",
+   "name": "Kevin G. Walthers, Ph.D.",
+   "email": "kevin.walthers@hancockcollege.edu",
+   "source_url": "https://www.hancockcollege.edu/president/index.php"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Jennifer Zellet",
+   "email": "jennifer.zellet@avc.edu",
+   "source_url": "https://www.avc.edu/about-avc/office-superintendentpresident"
+  }
+ ]
+}

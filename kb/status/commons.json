@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-02T06:25:50Z",
+ "written_at": "2026-11-02T15:14:30Z",
  "rows": [
   {
    "key": "requirements",
@@ -284,7 +284,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-01T05:22:29Z",
+    "at": "2026-11-02T06:25:55+00:00",
     "every_hours": null
    },
    "facts": {
@@ -418,6 +418,118 @@
     "kb/discipline_canonical_subj4.json",
     "kb/csr_out/latest.json",
     "kb/csr_procedures.json"
+   ]
+  }
+ ],
+ "building": [
+  {
+   "key": "credentials",
+   "title": "Industry credentials",
+   "tab": "#exhibits",
+   "links": [
+    {
+     "href": "#exhibits",
+     "text": "Open Exhibits"
+    }
+   ],
+   "pair": [
+    {
+     "n": 7536,
+     "of": null,
+     "words": "credentials from 1,525 issuers",
+     "open": "#exhibits"
+    }
+   ],
+   "tests": [
+    "issuer-published"
+   ],
+   "facts": {
+    "credentials": 7536,
+    "issuers": 1525,
+    "in_map": 205,
+    "articulated": 161,
+    "with_issuer_skills": 26,
+    "tech_giant": 466
+   },
+   "machine": {
+    "what": "the credential watch's catalog",
+    "at": "2026-11-02T00:00:00Z",
+    "every_hours": null
+   },
+   "sources": [
+    "kb/it_ai_credential_catalog.json"
+   ]
+  },
+  {
+   "key": "outcomes",
+   "title": "Course outcomes",
+   "tab": "#coci-lookup",
+   "links": [
+    {
+     "href": "#coci-lookup",
+     "text": "Open the Courses List"
+    }
+   ],
+   "pair": [
+    {
+     "n": 19821,
+     "of": null,
+     "words": "outcomes read from 4,729 courses at 7 colleges",
+     "open": "#coci-lookup"
+    }
+   ],
+   "tests": [
+    "read from the public outline"
+   ],
+   "facts": {
+    "outcomes": 19821,
+    "courses": 4729,
+    "colleges": [
+     "cabrillo",
+     "coastline_community",
+     "golden_west",
+     "modesto_junior",
+     "moreno_valley",
+     "norco",
+     "riverside_city"
+    ],
+    "reads": 18
+   },
+   "machine": {
+    "what": "the last outline read",
+    "at": "2026-11-02T07:02:26Z",
+    "every_hours": null
+   },
+   "sources": [
+    "kb/course_outcomes/*/read_*.json"
+   ]
+  },
+  {
+   "key": "skills",
+   "title": "Skills",
+   "tab": null,
+   "links": [],
+   "pair": [
+    {
+     "n": 26,
+     "of": null,
+     "words": "credentials list their issuer's skills so far",
+     "open": null
+    }
+   ],
+   "tests": [
+    "issuer-published"
+   ],
+   "facts": {
+    "with_issuer_skills": 26
+   },
+   "machine": {
+    "what": "the credential watch's catalog",
+    "at": "2026-11-02T00:00:00Z",
+    "every_hours": null
+   },
+   "sources": [
+    "kb/it_ai_credential_catalog.json"
    ]
   }
  ]
