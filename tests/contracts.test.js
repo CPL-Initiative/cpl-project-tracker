@@ -39,7 +39,7 @@ check("Rule 4: CPL_Dashboard.html === index.html", cpl === idx);
   check("lazy boot in " + p[0], /loadScript\('contracts\.js', 'CPL_CONTRACTS'/.test(p[1]));
 });
 check("nav: contracts leads the Funding group",
-  /tabs: \['contracts', 'budget', 'implementation-funding'\]/.test(navg));
+  /tabs: \['contracts', 'budget', 'implementation-funding'(, 'csm-workspace')?\]/.test(navg));
 
 // (b) THE gating property. Failing this puts vendor payment terms in the public
 // default nav, and it looks perfectly fine from inside the FIN site.
@@ -55,8 +55,9 @@ check("FIN site is registered in the org switcher",
   check("FIN declares a tab list", !!finMatch);
   if (!finMatch) return;
   const tabs = finMatch[1].split(",").map((s) => s.trim().replace(/^"|"$/g, "")).filter(Boolean);
-  check("FIN carries Contracts + Budget + Implementation Funding",
-    tabs.length === 3 && tabs.indexOf("contracts") >= 0 &&
+  // The CSM Workspace (S555) joined the Funding group: the team's queue over Implementation Funding.
+  check("FIN carries Contracts + Budget + Implementation Funding (+ the CSM Workspace)",
+    (tabs.length === 3 || (tabs.length === 4 && tabs.indexOf("csm-workspace") >= 0)) && tabs.indexOf("contracts") >= 0 &&
     tabs.indexOf("budget") >= 0 && tabs.indexOf("implementation-funding") >= 0);
   tabs.forEach(function (t) {
     check("FIN tab '" + t + "' resolves to a real pane",

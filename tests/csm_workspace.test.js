@@ -76,8 +76,9 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
     JSON.stringify(pc.gate) === JSON.stringify(T._gate(OTHER)) && pc.conds.length > 0 && pc.conds.every((c) => typeof c.words === "string" && c.words));
   check("1d: the workspace's stage follows: waiting on the team, then held or qualifying",
     W._stageOf(mt) === "waiting" && ["held", "qual"].indexOf(W._stageOf(pc)) >= 0);
-  check("1e: the source reads the funding tab's snapshot and acts through it, with no table of its own",
-    /CPL_FUNDING_TAB\.csm/.test(SRC) && !/rest\/v1|fetch\(/.test(SRC));
+  check("1e: the source reads the funding tab's snapshot and acts through it; its one table is its own log",
+    /CPL_FUNDING_TAB\.csm/.test(SRC) && !/rest\/v1/.test(SRC) &&
+    (SRC.match(/fetch\(R\.url \+ "([a-z_]+)/g) || []).every((m) => /"csm_log$/.test(m)) && (SRC.match(/fetch\(/g) || []).length === 2);
   check("1f: the queue opens on All open items and picks the first, the college waiting on the team",
     flat(root.querySelector(".showing")).indexOf("all open items") >= 0 &&
     !!root.querySelector('.row[data-sel="' + COLLEGE + '"][aria-current="true"]'));
@@ -163,6 +164,57 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
   check("6d: new CSS keys every color to a --cw token, and the dark theme maps each onto a First Light token",
     !/#[0-9A-Fa-f]{3,6}\b/.test(SRC.replace(/var LIGHT = [\s\S]*?;\n/, "")) &&
     /:root\[data-theme="dark"\] #tab-csm-workspace/.test(SRC) && /prefers-color-scheme: dark/.test(SRC));
+}
+
+// ── 7. the communications log (csm_log) ──────────────────────────────────────
+{
+  const MIG = fs.readFileSync(path.join(ROOT, "kb", "migrations", "2026-11-02_csm_log.sql"), "utf8");
+  const GOV = JSON.parse(fs.readFileSync(path.join(ROOT, "kb", "governance_surface_map.json"), "utf8"));
+  check("7a: the table reads and writes for a signed-in reviewer alone, and the trigger stamps who wrote and who closed",
+    (MIG.match(/using \(public\.is_allowed_reviewer\(\)\)|with check \(public\.is_allowed_reviewer\(\)\)/g) || []).length === 5 &&
+    /new\.by_email := who;/.test(MIG) && /new\.done_by := who;/.test(MIG) && /new\.by_email := old\.by_email;/.test(MIG) &&
+    /revoke all on function public\.csm_log_stamp\(\) from public, anon, authenticated;/.test(MIG));
+  check("7b: rows belong to an activity, never the funding module, and a rollback sits beside it",
+    /activity\s+text not null default 'funding'/.test(MIG) && fs.existsSync(path.join(ROOT, "kb", "migrations", "2026-11-02_csm_log_rollback.sql")));
+  check("7c: the new write surface is mapped before it ships (Rule 10 a3)", GOV.mapped["table:csm_log"] === "DR-09");
+
+  const { window, doc, W, root } = setup({ signedIn: true });
+  const pick = (k) => clickEl(window, root.querySelector('.row[data-sel="' + k + '"], .chip[data-sel="' + k + '"]'));
+  pick(OTHER);
+  const form = () => root.querySelector("form[data-logform]");
+  const fld = (n) => form().elements.namedItem(n);
+  check("7d: a reviewer's record carries History with the Log form, its words saying no student detail",
+    !!form() && /no student detail/.test(fld("body").getAttribute("placeholder")) && /Nothing logged/.test(flat(root)));
+  fld("kind").value = "call";
+  fld("body").value = "Called the VPAA's office about the coordinator record";
+  fld("body").dispatchEvent(new window.Event("input", { bubbles: true }));
+  fld("due").value = "2026-11-01";
+  form().dispatchEvent(new window.Event("submit", { bubbles: true, cancelable: true }));
+  const log = W._log();
+  check("7e: Save writes one row for the college and activity, stamped by the reviewer", log.length === 1 &&
+    log[0].college === OTHER && log[0].kind === "call" && log[0].activity === "funding" && log[0].by_email === "co@cccco.edu");
+  check("7f: the entry shows in History, with its follow-up and a word to close it",
+    /Called the VPAA's office/.test(flat(root)) && !!root.querySelector("[data-logdone]") && /Follow up Nov 1/.test(flat(root)));
+  const snapRow = W._snapshot().rows.find((r) => r.key === OTHER);
+  check("7g: a follow-up due puts the college in the open queue, its age reading Follow-up due, its next step the note",
+    !!root.querySelector('.queue .row[data-sel="' + OTHER + '"]') && /Follow-up due Nov 1/.test(flat(root.querySelector('.queue .row[data-sel="' + OTHER + '"]'))) &&
+    /^Follow up: Called the VPAA's office/.test(W._nextStep(snapRow)));
+  clickEl(window, root.querySelector("[data-logdone]"));
+  check("7h: Mark the follow-up done closes it, stamped, and the college leaves Follow-ups open",
+    !!W._log()[0].done_at && W._log()[0].done_by === "co@cccco.edu" && !W._dueOf(snapRow));
+  window.confirm = () => true;
+  clickEl(window, root.querySelector("[data-logdel]"));
+  check("7i: Delete removes the entry", W._log().length === 0);
+
+  // a decision writes its own entry
+  W._state.sel = COLLEGE; W._state.seen[COLLEGE + "|part"] = true; W.paint();
+  Array.from(root.querySelectorAll(".review input[data-check]")).forEach((b) => { b.checked = true; b.dispatchEvent(new window.Event("change", { bubbles: true })); });
+  clickEl(window, root.querySelector('[data-verdict="part"] [data-act="accept"]'));
+  check("7j: Accept logs itself: the email opened to copy, never sent", W._log().some((x) => x.college === COLLEGE && x.kind === "email" &&
+    /Accepted the participation confirmation; the acceptance email opened to copy\./.test(x.body)));
+
+  const anon = setup({ signedIn: false });
+  check("7k: a reader who is not signed in sees no History and no form", !anon.root.querySelector("form[data-logform]") && !/History/.test(flat(anon.root)));
 }
 
 finish();

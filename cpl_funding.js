@@ -18964,6 +18964,11 @@
     configHeld: function () { return configHold; },
     // The CSM Workspace (csm_workspace.js, S555): one record per institution, the review lane's actions, Nudge.
     csm: { snapshot: csmSnapshot, act: csmAct, focus: csmFocus, nudge: function () { openNudge(); },
+      // The workspace's log (csm_log) reads and writes with the reviewer's own credential, as the notes do.
+      rest: function () {
+        return { remote: remoteEnabled(), url: SUPABASE_URL + "/rest/v1/", who: curatorEmail() || "",
+          headers: applyWriteAuth({ apikey: SUPABASE_ANON, Authorization: "Bearer " + SUPABASE_ANON }) };
+      },
       setDeclined: function (key, on) { if (unlocked() && !publicMode()) setDeclined(key, !!on); } },
     onModelChange: function (fn, describe) {
       if (typeof fn !== "function") return function () {};

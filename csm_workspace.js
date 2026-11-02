@@ -13,8 +13,9 @@
  * decision here is the same write and the same email. Names and emails reach the page for a signed-in reviewer on the
  * internal view alone, as the review lane shows them.
  *
- * What PR 1 leaves for the communications log (its own table, mapped in kb/governance_surface_map.json first, Rule
- * 10 a3): the history of each college, notes and follow-up dates by activity, the Cc picker and the contacts popups.
+ * THE LOG (csm_log, kb/migrations/2026-11-02_csm_log.sql; mapped DR-09 in kb/governance_surface_map.json, Rule 10
+ * a3): notes, calls, emails and meetings per college and activity, each with an optional follow-up date the queue
+ * counts down to. A decision made here logs itself. Still to come: the Cc picker and the contacts popups.
  *
  * The look is the CPL Commons' (Malone's CPL/AI palette) as the mock shows it; the dark theme maps every role onto a
  * First Light dark token. The top (Today and the priority cards) folds behind one word for the visit (Sam's ask 18).
@@ -302,7 +303,64 @@
 
   // ── the read ─────────────────────────────────────────────────────────────
   var S = null;                 // the funding tab's snapshot, refreshed on every model change
-  var state = { view: "open", q: "", sel: null, folded: false, checks: {}, seen: {}, msg: "" };
+  var state = { view: "open", q: "", sel: null, folded: false, checks: {}, seen: {}, msg: "", draft: {} };
+  // ── the communications log (csm_log, kb/migrations/2026-11-02_csm_log.sql) ──────────────────────────────────────
+  // Notes, calls, emails and meetings per college and activity, each with an optional follow-up date. A signed-in
+  // reviewer reads and writes it with their own credential; the trigger stamps who. Read whole (paged by Range, the kb_curation rule),
+  // re-read after every write, because a write RLS filters out returns 2xx having changed nothing.
+  var ACTIVITY = "funding";
+  var LOG = { rows: [], loaded: false, error: "", seq: 0, asked: false };
+  var KINDS = [["note", "Note"], ["call", "Call"], ["email", "Email"], ["meeting", "Meeting"], ["follow_up", "Follow-up"]];
+  function kindWord(k) { for (var i = 0; i < KINDS.length; i++) if (KINDS[i][0] === k) return KINDS[i][1]; return k; }
+  function rest() { var f = F(); return f && typeof f.rest === "function" ? f.rest() : null; }
+  function loadLog() {
+    var R = rest();
+    if (!R || !S || !S.reviewer) return;
+    LOG.asked = true;
+    if (!R.remote) { LOG.loaded = true; return; }
+    var all = [], size = 1000;
+    var page = function (from) {
+      return fetch(R.url + "csm_log?select=*&activity=eq." + ACTIVITY + "&order=created_at.desc,id.desc",
+        { headers: Object.assign({ Range: from + "-" + (from + size - 1), "Range-Unit": "items" }, R.headers) })
+        .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return r.json(); })
+        .then(function (rows) { all = all.concat(rows || []); return rows && rows.length === size ? page(from + size) : all; });
+    };
+    page(0).then(function (rows) { LOG.rows = rows; LOG.loaded = true; LOG.error = ""; paint(); })
+      .catch(function (e) { LOG.loaded = true; LOG.error = "The log could not be read (" + e.message + "). Reload to try again."; paint(); });
+  }
+  function fv(fm, n) { var x = fm && fm.elements ? fm.elements.namedItem(n) : null; return x || { value: "", focus: function () {} }; }
+  function today() { var d = new Date(); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+  function plusDays(n) { var d = new Date(); d.setDate(d.getDate() + n); return d.getFullYear() + "-" + ("0" + (d.getMonth() + 1)).slice(-2) + "-" + ("0" + d.getDate()).slice(-2); }
+  // One write: POST a row, PATCH one by id, or DELETE one. Without a remote (tests, NO_REMOTE) the store changes here.
+  function logWrite(method, id, body) {
+    var R = rest();
+    if (!R) return Promise.resolve(false);
+    if (!R.remote) {
+      if (method === "POST") LOG.rows.unshift(Object.assign({ id: ++LOG.seq, activity: ACTIVITY, by_email: R.who, created_at: new Date().toISOString(),
+        done_at: null, done_by: null }, body));
+      else LOG.rows = LOG.rows.map(function (x) {
+        if (x.id !== id) return x;
+        if (method === "DELETE") return null;
+        var y = Object.assign({}, x, body);
+        if (body.done_at && !x.done_at) y.done_by = R.who; else if (body.done_at === null) y.done_by = null;
+        return y;
+      }).filter(Boolean);
+      paint();
+      return Promise.resolve(true);
+    }
+    var q = method === "POST" ? "" : "?id=eq." + encodeURIComponent(id);
+    return fetch(R.url + "csm_log" + q, { method: method,
+      headers: Object.assign({ "Content-Type": "application/json", Prefer: "return=minimal" }, R.headers),
+      body: method === "DELETE" ? undefined : JSON.stringify(method === "POST" ? Object.assign({ activity: ACTIVITY }, body) : body) })
+      .then(function (r) { if (!r.ok) throw new Error(String(r.status)); return true; })
+      .catch(function (e) { say("The log did not save (" + e.message + "). Your words are still in the box."); return false; })
+      .then(function (ok) { loadLog(); return ok; });
+  }
+  function logFor(key) { return LOG.rows.filter(function (x) { return x.college === key; }); }
+  function openFollowUps(key) { return logFor(key).filter(function (x) { return x.follow_up_on && !x.done_at; })
+    .sort(function (a, b) { return a.follow_up_on < b.follow_up_on ? -1 : 1; }); }
+  function dueOf(r) { var o = openFollowUps(r.key); return o.length ? o[0] : null; }
+
   function rowOf(key) { if (!S) return null; for (var i = 0; i < S.rows.length; i++) if (S.rows[i].key === key) return S.rows[i]; return null; }
 
   var MONTHS = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
@@ -344,6 +402,8 @@
     if (w.length === 2) return "Review the participation confirmation and the noncredit attestation.";
     if (w[0] === "part") return "Review the participation confirmation.";
     if (w[0] === "nc") return "Review the noncredit attestation." + (r.part.confirmed ? "" : " The participation confirmation has not arrived.");
+    var du = dueOf(r);
+    if (du) return "Follow up" + (du.body ? ": " + du.body : "") + (/[.!?]$/.test(du.body || "") ? "" : ".");
     if (r.declined) return "Declined participation on " + shortDate(r.declined) + ".";
     var st = stageOf(r);
     if (st === "held") { var m = missingWords(r); return "Confirmed. Follow up on: " + (m.length ? m.join("; ") : "a condition still pending") + "."; }
@@ -354,6 +414,8 @@
     var p = [];
     if (r.part.waiting) p.push(["ask", "Confirmation waiting"]);
     if (r.nc && r.nc.waiting) p.push(["ask", "NC attestation waiting"]);
+    var du = dueOf(r);
+    if (du && du.follow_up_on <= today()) p.push(["ask", "Follow-up due"]);
     if (r.declined) p.push(["ask", "Declined"]);
     var st = stageOf(r);
     p.push(["", st === "qual" ? "Qualifies" : st === "held" ? "Held by a condition" : r.part.confirmed ? "Confirmed" : "Not confirmed"]);
@@ -365,11 +427,14 @@
       var at = w[0] === "part" ? r.part.at : r.nc.at, d = daysSince(at);
       return { t: at ? "Waiting since " + shortDate(at) : "Waiting", over: d != null && d >= 2 };
     }
+    var du = dueOf(r);
+    if (du) return { t: "Follow-up due " + shortDate(du.follow_up_on), over: du.follow_up_on <= today() };
     return { t: "", over: false };
   }
 
   var VIEWS = {
-    open: { label: "All open items", keep: function (r) { var s = stageOf(r); return s === "waiting" || s === "held"; } },
+    open: { label: "All open items", keep: function (r) { var s = stageOf(r); return s === "waiting" || s === "held" || !!dueOf(r); } },
+    due: { label: "Follow-ups open", keep: function (r) { return !!dueOf(r); } },
     review: { label: "Waiting on the team", keep: function (r) { return stageOf(r) === "waiting"; } },
     held: { label: "Confirmed, still held", keep: function (r) { return stageOf(r) === "held"; } },
     notyet: { label: "Not yet confirmed", bulk: true, keep: function (r) { return stageOf(r) === "notyet"; } },
@@ -380,8 +445,10 @@
     qual: { label: "Qualifies", keep: function (r) { return stageOf(r) === "qual"; } },
     all: { label: "All institutions", keep: function () { return true; } } };
   function sortRank(r) {
-    var s = stageOf(r);
-    return s === "waiting" ? 0 : s === "held" ? 1 : s === "notyet" ? 2 : 3;
+    var s = stageOf(r), du = dueOf(r);
+    if (s === "waiting") return 0;
+    if (du && du.follow_up_on <= today()) return 1;
+    return s === "held" ? 2 : du ? 3 : s === "notyet" ? 4 : 5;
   }
   function shownRows() {
     if (!S) return [];
@@ -568,8 +635,33 @@
       '<div class="decide" role="group" aria-label="Actions">' + act.join("") + "</div>" +
       '<p class="status" role="status" aria-live="polite">' + esc(state.msg) + "</p>" +
       '<div><p class="k">Minimum conditions</p>' + conds + nc + "</div>" + who +
-      w.map(function (k) { return reviewHtml(r, k); }).join("") + note +
+      w.map(function (k) { return reviewHtml(r, k); }).join("") + note + historyHtml(r) +
       "</div></div>";
+  }
+  function historyHtml(r) {
+    if (!S.reviewer) return "";
+    var d = state.draft[r.key] || {};
+    var list = logFor(r.key);
+    var opts = KINDS.map(function (k) { return '<option value="' + k[0] + '"' + ((d.kind || "note") === k[0] ? " selected" : "") + ">" + k[1] + "</option>"; }).join("");
+    var form = '<form class="compose" data-logform="1" aria-labelledby="cw-log-h">' +
+      '<div class="compose-row"><label for="cw-logkind">Kind <select id="cw-logkind" name="kind">' + opts + "</select></label>" +
+      '<label for="cw-logdue">Follow up on <input id="cw-logdue" name="due" type="date" value="' + esc(d.due || "") + '"></label></div>' +
+      '<label class="sr" for="cw-logbody">What was said or done</label>' +
+      '<textarea id="cw-logbody" name="body" maxlength="4000" placeholder="What was said or done, and what comes next. The team\'s working notes: no student detail.">' +
+        esc(d.body || "") + "</textarea>" +
+      '<div class="compose-row"><button type="submit" class="word">Save to the log</button></div></form>';
+    var items = LOG.error ? '<p class="gate">' + esc(LOG.error) + "</p>" : !LOG.loaded ? '<p class="gate">Reading the log&hellip;</p>' :
+      list.length ? '<ul class="log">' + list.map(function (x) {
+        var fu = x.follow_up_on ? (x.done_at ? "Followed up " + shortDate(x.done_at) + (x.done_by ? " by " + x.done_by : "")
+          : "Follow up " + shortDate(x.follow_up_on)) : "";
+        return '<li class="ev' + (x.kind === "follow_up" ? "" : "") + '"><span class="ev-when">' + esc(shortDate(x.created_at)) + "</span>" +
+          '<span class="ev-what"><b>' + esc(kindWord(x.kind)) + "</b>" + (x.body ? "<p>" + esc(x.body) + "</p>" : "") +
+          '<span class="ev-by">' + esc([x.by_email ? "by " + x.by_email : "", fu].filter(Boolean).join(" · ")) + "</span> " +
+          (x.follow_up_on ? '<button type="button" class="word" data-logdone="' + x.id + '" data-on="' + (x.done_at ? "0" : "1") + '">' +
+            (x.done_at ? "Reopen the follow-up" : "Mark the follow-up done") + "</button> " : "") +
+          '<button type="button" class="word danger" data-logdel="' + x.id + '">Delete</button></span></li>';
+      }).join("") + "</ul>" : '<p class="gate">Nothing logged with this college yet.</p>';
+    return '<div><p class="k" id="cw-log-h">History</p>' + form + items + "</div>";
   }
   function boardHtml() {
     return '<div class="board">' + STAGES.map(function (st) {
@@ -593,6 +685,7 @@
     var f = F();
     if (!f) { el.innerHTML = '<p class="empty">Loading the CSM Workspace&hellip;</p>'; return; }
     S = f.snapshot();
+    if (S.reviewer && !LOG.asked) loadLog();
     var ae = document.activeElement, focusId = ae && el.contains(ae) ? ae.id : null;
     var focusSel = ae && el.contains(ae) ? ae.getAttribute("data-sel") : null;
     el.innerHTML = '<div class="cw"><div class="page"><div class="wrap">' +
@@ -670,14 +763,22 @@
       return;
     }
     if (!f || !S.reviewer) return;
+    var why = null;
     if (name === "deny") {
-      var g = reviewState(r, kind), why = g ? g.R.items.filter(function (it) { return it.s === "fails"; }).map(function (it) { return it.n || it.t; }) : [];
+      var g = reviewState(r, kind);
+      why = g ? g.R.items.filter(function (it) { return it.s === "fails"; }).map(function (it) { return it.n || it.t; }) : [];
       var ok = true;
       try { ok = window.confirm("Deny the " + (kind === "nc" ? "noncredit attestation" : "participation confirmation") + " from " + r.name + "?" +
         (why.length ? "\n\nNot met: " + why.join("; ") + "." : "") + "\n\nDeny removes the request, so the college can send another."); } catch (e) { ok = true; }
       if (!ok) return;
     }
     if (f.act(name, kind, r.key)) {
+      var what = kind === "nc" ? "noncredit attestation" : "participation confirmation";
+      var entry = name === "accept" ? { kind: "email", body: "Accepted the " + what + "; the acceptance email opened to copy." }
+        : name === "deny" ? { kind: "note", body: "Denied the " + what + "." + (why && why.length ? " Not met: " + why.join("; ") + "." : "") }
+        : name === "follow" ? { kind: "email", body: "Follow-up email on the " + what + " opened to copy.", follow_up_on: plusDays(7) }
+        : { kind: "email", body: "The acceptance email for the " + what + " opened again to copy." };
+      logWrite("POST", null, Object.assign({ college: r.key }, entry));
       say(name === "accept" ? "Accepted. The acceptance email opens for you to copy." : name === "deny" ? "Denied: the request is removed." :
         name === "follow" ? "The follow-up email opens for you to edit and copy." : "The acceptance email opens again for you to copy.");
     }
@@ -689,7 +790,33 @@
       if (h && t.classList.contains("chip")) h.focus(); return; }
     if (t.hasAttribute("data-view")) { state.view = t.getAttribute("data-view"); state.sel = null; paint(); return; }
     if (t.hasAttribute("data-stage")) { var s = t.getAttribute("data-stage"); state.view = s === "waiting" ? "review" : s; state.sel = null; paint(); return; }
+    if (t.hasAttribute("data-logdone")) {
+      var on = t.getAttribute("data-on") === "1";
+      logWrite("PATCH", Number(t.getAttribute("data-logdone")), { done_at: on ? new Date().toISOString() : null })
+        .then(function (ok) { if (ok) say(on ? "Follow-up marked done." : "Follow-up reopened."); });
+      return;
+    }
+    if (t.hasAttribute("data-logdel")) {
+      var sure = true;
+      try { sure = window.confirm("Delete this entry from the log? It cannot be brought back."); } catch (x) { sure = true; }
+      if (sure) logWrite("DELETE", Number(t.getAttribute("data-logdel"))).then(function (ok) { if (ok) say("The entry is deleted."); });
+      return;
+    }
     if (t.hasAttribute("data-act")) act(t.getAttribute("data-act"), t.getAttribute("data-kind"));
+  }
+  function onSubmit(e) {
+    var fm = e.target;
+    if (!fm.hasAttribute || !fm.hasAttribute("data-logform")) return;
+    e.preventDefault();
+    var r = rowOf(state.sel); if (!r) return;
+    var body = String(fv(fm, "body").value || "").trim(), due = fv(fm, "due").value || null;
+    if (!body && !due) { say("Write what was said or done, or give a follow-up date."); fv(fm, "body").focus(); return; }
+    logWrite("POST", null, { college: r.key, kind: fv(fm, "kind").value, body: body || null, follow_up_on: due }).then(function (ok) {
+      if (!ok) return;
+      delete state.draft[r.key];
+      say("Saved to " + r.name + "'s log.");
+      paintRecord();
+    });
   }
   function onChange(e) {
     var t = e.target;
@@ -699,9 +826,18 @@
       refreshVerdicts();
       return;
     }
+    if (t.form && t.form.hasAttribute("data-logform") && state.sel) {
+      state.draft[state.sel] = { kind: fv(t.form, "kind").value, due: fv(t.form, "due").value, body: fv(t.form, "body").value };
+      return;
+    }
     if (t.id === "cw-view") { state.view = t.value; state.sel = null; paint(); }
   }
   function onInput(e) {
+    var fm = e.target.form;
+    if (fm && fm.hasAttribute("data-logform") && state.sel) {
+      state.draft[state.sel] = { kind: fv(fm, "kind").value, due: fv(fm, "due").value, body: fv(fm, "body").value };
+      return;
+    }
     if (e.target.id !== "cw-q") return;
     state.q = e.target.value; state.sel = null;
     var pos = e.target.selectionStart;
@@ -711,7 +847,7 @@
 
   // ── boot ─────────────────────────────────────────────────────────────────
   var wired = false, unsub = null;
-  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; }
+  function fresh() { state.view = "open"; state.q = ""; state.sel = null; state.msg = ""; LOG.asked = false; }
   function boot() {
     ensureCss();
     var el = root(); if (!el) return;
@@ -724,6 +860,7 @@
       el.addEventListener("click", onClick);
       el.addEventListener("change", onChange);
       el.addEventListener("input", onInput);
+      el.addEventListener("submit", onSubmit);
       window.addEventListener("cpl-tab-activated", function (e) {
         if (e && e.detail && e.detail.tab === TAB) { fresh(); paint(); }
       });
@@ -744,5 +881,6 @@
   }
 
   window.CPL_CSM_WORKSPACE = { boot: boot, paint: paint,
-    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _snapshot: function () { return S; } };
+    _state: state, _stageOf: stageOf, _reviewItems: reviewItems, _nextStep: nextStep, _snapshot: function () { return S; },
+    _log: function () { return LOG.rows; }, _dueOf: dueOf };
 })();

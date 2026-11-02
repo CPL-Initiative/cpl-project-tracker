@@ -44,16 +44,22 @@ Commons palette as the mock shows it, the dark theme mapped onto First Light tok
 recommendation (S555): the second COBI tab in Malone's look, after the CPL Commons; reply to reverse.** Guards
 `tests/csm_workspace.test.js`; `npm run a11y -- cobi:csm-workspace` passes at both widths, light and `--dark`.
 
+✅ **The communications log, `csm_log` (S555).** One row per note, call, email or meeting with a college, keyed by
+**activity** (`funding` today, never the funding module) with an optional follow-up date. History sits in each record
+with a Log form (*no student detail*, its placeholder says); a follow-up due puts the college in the open queue,
+its age reading *Follow-up due*, its next step the note; *Mark the follow-up done* closes it. Every decision made in
+the workspace logs itself (Accept, Deny with what failed, Follow up with a date a week out, Email again). RLS: a
+signed-in reviewer reads and writes (`is_allowed_reviewer()`), as `cpl_funding_notes`; the trigger stamps who wrote
+and who closed from the JWT. Mapped DR-09 in `kb/governance_surface_map.json` before its first write (Rule 10 a3).
+Migration `kb/migrations/2026-11-02_csm_log.sql` (rollback beside it), applied through `supabase-migrate.yml`.
+
 ## NEXT
 
-1. **The communications log (PR 2):** notes, calls and follow-up dates per college and activity, the record's
-   history, the follow-up due ages in the queue. A first writer to a shared table: map it in
-   `kb/governance_surface_map.json` and check the student-detail disclosure ADR before it ships (Rule 10 a3). Weigh
-   `cpl_comms` (the communications lane's register) before a new table; keyed by activity, never by the funding
-   module, so MAP onboarding and the activity cards join later.
-2. **The mock's contacts surfaces:** the Cc picker (ask 8, 11), the contacts popup and the names table (asks 4, 7),
+1. **The mock's contacts surfaces:** the Cc picker (asks 8, 11), the contacts popup and the names table (asks 4, 7),
    every landing-page role (ask 6), the editable To and Subject (asks 12, 13), the hover cards (ask 10). The data
    exists: `map_college_contacts`, `map_landing_contacts`, `map_college_users` (reviewer-gated), as Nudge reads them.
-3. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.
-4. **Read the CSM team's Slack channel** (Sam added the connector at the end of S554; read, never post without his go)
+2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.
+3. **Nudge logs itself:** a mail merge writes one entry per college it reached, with a follow-up date.
+4. **Other activities** (Sam: MAP onboarding, the activity cards): a second `activity` value and its own queue.
+5. **Read the CSM team's Slack channel** (Sam added the connector at the end of S554; read, never post without his go)
    and say how it could feed the log.
