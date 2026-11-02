@@ -37,7 +37,10 @@ const ex = COMMONS.rows.filter((r) => r.key === "exhibit")[0];
 check("the Commons row carries the auditor's tallies the view reads",
   ex && ["map_titles", "unclassified", "left_map", "below_80", "below_60"].every((k) => typeof ex.facts[k] === "number"));
 check("the Commons row's counts open Exhibits, and left-MAP and procedures the CER (Sheet 148, link-retire)",
-  ex && ex.pair[0].open === "#exhibits/credentials" && ex.issues.map((i) => i.open).join() === "#exhibits/held,#exhibits/conflict,#credential-reference/all"
+  // An issue that reads zero is left out (S540), so the row carries some of the three, in this order.
+  ex && ex.pair[0].open === "#exhibits/credentials" && ex.issues.length > 0
+  && (function () { var order = ["#exhibits/held", "#exhibits/conflict", "#credential-reference/all"], at = -1;
+      return ex.issues.every(function (i) { var k = order.indexOf(i.open); var ok = k > at; at = k; return ok; }); })()
   && ex.procedures[0].open === "#credential-reference/procs");
 check("the builder writes those links", /"open": tab \+ "\/held"/.test(BUILDER) && /"open": tab \+ "\/conflict"/.test(BUILDER) && /"open": cer \+ "\/procs"/.test(BUILDER));
 const css = SRC.slice(SRC.indexOf("function ensureCss()"), SRC.indexOf("function mount("));
