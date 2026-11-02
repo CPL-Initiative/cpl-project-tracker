@@ -1,0 +1,86 @@
+{
+ "college": "Mt. San Antonio College",
+ "homepage": "https://www.mtsac.edu/",
+ "read_at": "2026-11-02T08:24:51+00:00",
+ "pages": [
+  {
+   "url": "https://www.mtsac.edu/",
+   "final_url": "https://www.mtsac.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.mtsac.edu/directory/",
+   "final_url": "https://www.mtsac.edu/directory/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://campusmap.mtsac.edu?id=811",
+   "final_url": "https://campusmap.mtsac.edu?id=811",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.mtsac.edu/marketing/social-media-directory.html",
+   "final_url": "https://www.mtsac.edu/marketing/social-media-directory.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Tech Ed Resource Center",
+      "Theatre Department",
+      "Transfer Center",
+      "Veterans Resource Center",
+      "Vice President of Student Services",
+      "Wildlife Sanctuary",
+      "World Languages Department"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Theatre Department",
+      "Transfer Center",
+      "Veterans Resource Center",
+      "Vice President of Student Services",
+      "Wildlife Sanctuary",
+      "World Languages Department",
+      "World Languages Department - Korean"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mtsac.edu/directory",
+   "final_url": "https://www.mtsac.edu/directory/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.mtsac.edu/faculty/",
+   "final_url": "https://www.mtsac.edu/faculty/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.mtsac.edu/marketing/form-social-directory.html",
+   "final_url": "https://www.mtsac.edu/marketing/form-social-directory.html",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.mtsac.edu/faculty",
+   "final_url": "https://www.mtsac.edu/faculty/",
+   "status": 200,
+   "excerpts": []
+  }
+ ],
+ "unread_links": [],
+ "run": "41412056021"
+}

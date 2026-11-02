@@ -1,0 +1,1782 @@
+{
+ "college": "Moorpark College",
+ "homepage": "https://www.moorparkcollege.edu/",
+ "read_at": "2026-11-02T08:23:09+00:00",
+ "pages": [
+  {
+   "url": "https://www.moorparkcollege.edu/",
+   "final_url": "https://www.moorparkcollege.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "A Message from President Sokenu",
+     "position": "college_ceo",
+     "window": [
+      "View Schedule",
+      "View Schedule",
+      "Welcome to Moorpark College",
+      "A Message from President Sokenu",
+      "About Moorpark College",
+      "2026-2027 Media Gallery",
+      "2025/2026 Media Gallery"
+     ],
+     "emails": []
+    },
+    {
+     "line": "A Message from President Sokenu",
+     "position": "college_ceo",
+     "window": [
+      "2025/2026 Media Gallery",
+      "2023-25 Media Gallery",
+      "Welcome to Moorpark College",
+      "A Message from President Sokenu",
+      "About Moorpark College",
+      "2026-2027 Media Gallery",
+      "2025/2026 Media Gallery"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "DEIA: Diversity, Equity, Inclusion, & Accessibility",
+      "Heritage events web page links, resources, and support services relating to MC's commitment to diversity, equity, inclusion and Accessibility.",
+      "Discover More",
+      "Veterans Resource Center",
+      "The Tutoring and Learning Center",
+      "Student Life",
+      "Career Transfer Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.moorparkcollege.edu/departments/administrative",
+   "final_url": "https://www.moorparkcollege.edu/departments/administrative",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Departments",
+      "Administrative Departments",
+      "President's Office",
+      "Office of Academic Affairs",
+      "Office of Business Services",
+      "Office of Student Support"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.moorparkcollege.edu/departments/administrative/presidents-office",
+   "final_url": "https://www.moorparkcollege.edu/departments/administrative/presidents-office",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office | Moorpark College",
+     "position": "college_ceo",
+     "window": [
+      "President's Office | Moorpark College",
+      "Skip to main content",
+      "Secondary Menu",
+      "Academic Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The President is Dr. Julius Sokenu, the Chief Executive Officer of Moorpark College.",
+     "position": "college_ceo",
+     "window": [
+      "VCCCD Human Resources",
+      "Employee BIT Incident Reporting Forms",
+      "Start • Enroll",
+      "The President is Dr. Julius Sokenu, the Chief Executive Officer of Moorpark College.",
+      "President's Office",
+      "Breadcrumb",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Employee BIT Incident Reporting Forms",
+      "Start • Enroll",
+      "The President is Dr. Julius Sokenu, the Chief Executive Officer of Moorpark College.",
+      "President's Office",
+      "Breadcrumb",
+      "Home",
+      "Departments"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Departments",
+      "Administration",
+      "President's Office",
+      "PROUD TO BE MC",
+      "Congratulations on your wise decision to join our community of learners.",
+      "We are very proud to announce that Moorpark College has officially been named a FINALIST for the 2025 Aspen Prize for Community College Excellence! Moorpark College is the only California community college on the final 10 colleges list."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "I personally welcome and wish you every success in achieving your educational goals at Moorpark College.",
+      "Sincerely,",
+      "Julius O. Sokenu, Ed.D.",
+      "President",
+      "The President is the chief executive officer of the College. Officers reporting directly to the President include the Vice President of Academic Affairs, the Vice President of Business Services, and the Vice President of Student Support. The President also shares responsibility for overseeing the Moorpark College Foundation with the Foundation's Board.",
+      "Executive Assistant to the President is Linda Resendiz.",
+      "The President's Office is located in the Administration Building, FLR 3"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to the President is Linda Resendiz.",
+     "position": "college_ceo",
+     "window": [
+      "Julius O. Sokenu, Ed.D.",
+      "President",
+      "The President is the chief executive officer of the College. Officers reporting directly to the President include the Vice President of Academic Affairs, the Vice President of Business Services, and the Vice President of Student Support. The President also shares responsibility for overseeing the Moorpark College Foundation with the Foundation's Board.",
+      "Executive Assistant to the President is Linda Resendiz.",
+      "The President's Office is located in the Administration Building, FLR 3",
+      "The phone number is 805-378-1407.",
+      "The office email is mcpresident@vcccd.edu mcpresident@vcccd.edu."
+     ],
+     "emails": [
+      "mcpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "The President's Office is located in the Administration Building, FLR 3",
+     "position": "college_ceo",
+     "window": [
+      "President",
+      "The President is the chief executive officer of the College. Officers reporting directly to the President include the Vice President of Academic Affairs, the Vice President of Business Services, and the Vice President of Student Support. The President also shares responsibility for overseeing the Moorpark College Foundation with the Foundation's Board.",
+      "Executive Assistant to the President is Linda Resendiz.",
+      "The President's Office is located in the Administration Building, FLR 3",
+      "The phone number is 805-378-1407.",
+      "The office email is mcpresident@vcccd.edu mcpresident@vcccd.edu.",
+      "President's Office"
+     ],
+     "emails": [
+      "mcpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "The President's Office is located in the Administration Building, FLR 3",
+      "The phone number is 805-378-1407.",
+      "The office email is mcpresident@vcccd.edu mcpresident@vcccd.edu.",
+      "President's Office",
+      "Moorpark College Campus Updates",
+      "President's Student Leadership Forum",
+      "Executive Team"
+     ],
+     "emails": [
+      "mcpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Events",
+      "Moorpark College",
+      "Julius Sokenu, Ed.D.",
+      "President",
+      "7075 Campus Road",
+      "Moorpark, 93021 CA",
+      "(805) 378-1407"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "(805) 378-1407",
+      "mcpresident@vcccd.edu mcpresident@vcccd.edu",
+      "Linda Resendiz",
+      "Executive Assistant to the President",
+      "7075 Campus Road",
+      "Moorpark, 93021 CA",
+      "(805) 378-1407"
+     ],
+     "emails": [
+      "mcpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.moorparkcollege.edu/departments/student-services/veterans-resource-center",
+   "final_url": "https://www.moorparkcollege.edu/departments/student-services/veterans-resource-center",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center | Moorpark College",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center | Moorpark College",
+      "Skip to main content",
+      "Secondary Menu",
+      "Academic Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "VCCCD Human Resources",
+      "Employee BIT Incident Reporting Forms",
+      "Start • Enroll",
+      "Veterans Resource Center",
+      "Breadcrumb",
+      "Home",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Breadcrumb",
+      "Home",
+      "Students",
+      "Veterans Resource Center",
+      "Veterans Resource Center",
+      "You Served Us, Now Let Us Serve You!",
+      "Welcome to the Moorpark College Veterans Resource Center (VRC). Thank you for your service and commitment. We are proud to support our veterans, active-duty service members, and military-connected students as they pursue their educational and career goals."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Students",
+      "Veterans Resource Center",
+      "Veterans Resource Center",
+      "You Served Us, Now Let Us Serve You!",
+      "Welcome to the Moorpark College Veterans Resource Center (VRC). Thank you for your service and commitment. We are proud to support our veterans, active-duty service members, and military-connected students as they pursue their educational and career goals.",
+      "Our Mission"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Follow the steps below to get started with the Veterans Resource Center and prepare to use your educational benefits.",
+     "position": "vrc",
+     "window": [
+      "Start Here",
+      "New Veteran and Dependent Students",
+      "Are you new to Moorpark College or planning to use your VA educational benefits?",
+      "Follow the steps below to get started with the Veterans Resource Center and prepare to use your educational benefits.",
+      "STEP 1",
+      "Apply to Moorpark College.",
+      "Complete the Moorpark College application for admission. Once your application has been processed, you will receive an acceptance email with instructions for activating your MyVCCCD student portal."
+     ],
+     "emails": []
+    },
+    {
+     "line": "To schedule a counseling appointment, contact the Veterans Resource Center at 805-553-4106.",
+     "position": "vrc",
+     "window": [
+      "Use the Registration Planner in your MyVCCCD portal to register for classes and make changes to your schedule each semester.",
+      "Step-by-Step Registration Guide",
+      "This shows you how to access the Registration Planner, search for classes, register for courses, and make schedule adjustments, including adding or dropping classes.",
+      "To schedule a counseling appointment, contact the Veterans Resource Center at 805-553-4106.",
+      "STEP 6 · FINAL STEP",
+      "Submit the MC GI Authorization Form.",
+      "Once you have completed your intake form, developed a comprehensive educational plan with a VRC Counselor, and registered for all your classes, you are ready to submit the MC GI Authorization Form. This form confirms your enrollment and authorizes the Veterans Resource Center to move forward with certifying your enrollment to the U.S. Department of Veterans Affairs (VA)."
+     ],
+     "emails": []
+    },
+    {
+     "line": "For questions about educational planning, VA benefit certification, or changes to your class schedule, please contact the Veterans Resource Center.",
+     "position": "vrc",
+     "window": [
+      "Understanding Course Formats – Online, Hybrid, HyFlex, and In-Person Classes",
+      "Moorpark College Library – Textbook Lending Program",
+      "Questions? We're Here to Help!",
+      "For questions about educational planning, VA benefit certification, or changes to your class schedule, please contact the Veterans Resource Center.",
+      "Moorpark College Veterans Resource Center",
+      "Phone: 805-553-4106",
+      "Email: mcvetdesk01@vcccd.edu"
+     ],
+     "emails": [
+      "mcvetdesk01@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Moorpark College Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Moorpark College Library – Textbook Lending Program",
+      "Questions? We're Here to Help!",
+      "For questions about educational planning, VA benefit certification, or changes to your class schedule, please contact the Veterans Resource Center.",
+      "Moorpark College Veterans Resource Center",
+      "Phone: 805-553-4106",
+      "Email: mcvetdesk01@vcccd.edu",
+      "Veterans Resource Center"
+     ],
+     "emails": [
+      "mcvetdesk01@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Moorpark College Veterans Resource Center",
+      "Phone: 805-553-4106",
+      "Email: mcvetdesk01@vcccd.edu",
+      "Veterans Resource Center",
+      "Welcome!",
+      "Getting Started - Registration Planner",
+      "Benefits Programs"
+     ],
+     "emails": [
+      "mcvetdesk01@vcccd.edu"
+     ]
+    },
+    {
+     "line": "California Veterans Resource Book",
+     "position": "vrc",
+     "window": [
+      "FAQ",
+      "Resources and Important Links",
+      "Active Duty Military",
+      "California Veterans Resource Book",
+      "Moorpark College Veterans Resource Center Graduation Regalia",
+      "Veterans Resource Center at Moorpark College",
+      "General Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Moorpark College Veterans Resource Center Graduation Regalia",
+     "position": "vrc",
+     "window": [
+      "Resources and Important Links",
+      "Active Duty Military",
+      "California Veterans Resource Book",
+      "Moorpark College Veterans Resource Center Graduation Regalia",
+      "Veterans Resource Center at Moorpark College",
+      "General Information",
+      "7075 Campus Road,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center at Moorpark College",
+     "position": "vrc",
+     "window": [
+      "Active Duty Military",
+      "California Veterans Resource Book",
+      "Moorpark College Veterans Resource Center Graduation Regalia",
+      "Veterans Resource Center at Moorpark College",
+      "General Information",
+      "7075 Campus Road,",
+      "Student Services Annex-108"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Specialist",
+     "position": "vrc",
+     "window": [
+      "(833) 451-3403 (Text Only)",
+      "mcvetdesk01@vcccd.edu mcvetdesk01@vcccd.edu",
+      "VETERANS ASSISTANCE TEAM",
+      "Veterans Resource Specialist",
+      "benjamin_scotti1@vcccd.edu Benjamin Scotti",
+      "805-553-4106",
+      "Certifying Official (Admissions & Records)"
+     ],
+     "emails": [
+      "benjamin_scotti1@vcccd.edu",
+      "mcvetdesk01@vcccd.edu"
+     ]
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.moorparkcollege.edu/college-information/directions-maps-and-transportation",
+   "status": 403
+  },
+  {
+   "url": "https://www.moorparkcollege.edu/departments/administrative/presidents-office/student-leadership-forum",
+   "final_url": "https://www.moorparkcollege.edu/departments/administrative/presidents-office/student-leadership-forum",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "Departments",
+      "Administrative Departments",
+      "President's Office",
+      "Presidents Student Leadership Forum",
+      "DEADLINE FRIDAY, AUGUST 21 AT 11:59 P.M.",
+      "The PSLF meets one Friday per month during the 2026-27 academic year from 11:00 a.m. to 1:00 p.m."
+     ],
+     "emails": []
+    },
+    {
+     "line": "The forum is facilitated by Moorpark College President Julius Sokenu.",
+     "position": "college_ceo",
+     "window": [
+      "Presidents Student Leadership Forum",
+      "DEADLINE FRIDAY, AUGUST 21 AT 11:59 P.M.",
+      "The PSLF meets one Friday per month during the 2026-27 academic year from 11:00 a.m. to 1:00 p.m.",
+      "The forum is facilitated by Moorpark College President Julius Sokenu.",
+      "Each session is devoted to the study of extraordinary leaders across the various sectors of leadership: civic, business, politics, sports, etc.",
+      "At the conclusion of the year, students are eligible for a certificate of participation, recognition medal, and a letter of recommendation from President Sokenu.",
+      "If you are interested in the study of leadership and wish to participate in this year’s PSLF, you must:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "At the conclusion of the year, students are eligible for a certificate of participation, recognition medal, and a letter of recommendation from President Sokenu.",
+     "position": "college_ceo",
+     "window": [
+      "The PSLF meets one Friday per month during the 2026-27 academic year from 11:00 a.m. to 1:00 p.m.",
+      "The forum is facilitated by Moorpark College President Julius Sokenu.",
+      "Each session is devoted to the study of extraordinary leaders across the various sectors of leadership: civic, business, politics, sports, etc.",
+      "At the conclusion of the year, students are eligible for a certificate of participation, recognition medal, and a letter of recommendation from President Sokenu.",
+      "If you are interested in the study of leadership and wish to participate in this year’s PSLF, you must:",
+      "1. Submit a letter of interest by email to mcpresident@vcccd.edu by Friday, August 21, 2026 at 11:59 p.m. along with a letter of reference from a high school or college instructor or counselor",
+      "2. Commit to attending at least eight of the nine class meetings"
+     ],
+     "emails": [
+      "mcpresident@vcccd.edu"
+     ]
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "*Schedule/time is subject to change.",
+      "** Location is subject to change.",
+      "2026-2027 President's Student Leadership Forum Brochure",
+      "President's Office",
+      "Moorpark College Campus Updates",
+      "President's Student Leadership Forum",
+      "Share"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.moorparkcollege.edu/executive-team",
+   "final_url": "https://www.moorparkcollege.edu/executive-team",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "PRESIDENT: Dr. Julius Sokenu",
+     "position": "college_ceo",
+     "window": [
+      "ASPEN FINALIST TOP 10",
+      "We are all honored to share the wonderful news that Moorpark College has been named a Top 10 Finalist for the 2025 Aspen Prize! This is a significant recognition as it acknowledges the hard work and commitment to excellence that each of you embody and bring to our campus on a daily basis. In advancing to this next level, Moorpark College proves once again that promoting a “Students First“ ethos as we continue to celebrate diversity, equity and inclusion on our campus and community is a robust model that works.",
+      "The Moorpark College Executive Team would like to thank our staff for their talents, efforts and heartfelt commitment to our students. We eagerly await the representatives from the Aspen Institute visiting our campus so that they may experience first-hand the wonderful environment and culture that we have cultivated together at our college. Congratulations to all!",
+      "PRESIDENT: Dr. Julius Sokenu",
+      "DR. JULIUS O. SOKENU (He/Him/His)",
+      "President, Moorpark College",
+      "is the President of Moorpark College; he has served the students and Moorpark College family for over 17 years. Prior to his current assignment, he was Vice President of Academic Affairs and Executive Vice President and before that Dean of Student Learning. He is committed to student access and success; his professional work has focused on developing career programs to prepare students for high skill, high wage, high demand employment. He was the president of the California Community College Association of Occupational Education. He holds a doctorate in education with an emphasis in Curriculum and Teaching from Boston University, a Masters of Fine Arts in Creative Writing from Arizona State University and Bachelor degrees in Business and English from the University of Southern California. Dr. Sokenu is a published poet and writer. His poems have appeared in Hayden’s Ferry Review, Nimrod: The International Journal of Prose and Poetry, Savannah Literary Review, and his essays on teaching and learning in The Community College Journal. He has also written editorial as a guest writer in many of the local papers and other publications."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President, Moorpark College",
+     "position": "college_ceo",
+     "window": [
+      "The Moorpark College Executive Team would like to thank our staff for their talents, efforts and heartfelt commitment to our students. We eagerly await the representatives from the Aspen Institute visiting our campus so that they may experience first-hand the wonderful environment and culture that we have cultivated together at our college. Congratulations to all!",
+      "PRESIDENT: Dr. Julius Sokenu",
+      "DR. JULIUS O. SOKENU (He/Him/His)",
+      "President, Moorpark College",
+      "is the President of Moorpark College; he has served the students and Moorpark College family for over 17 years. Prior to his current assignment, he was Vice President of Academic Affairs and Executive Vice President and before that Dean of Student Learning. He is committed to student access and success; his professional work has focused on developing career programs to prepare students for high skill, high wage, high demand employment. He was the president of the California Community College Association of Occupational Education. He holds a doctorate in education with an emphasis in Curriculum and Teaching from Boston University, a Masters of Fine Arts in Creative Writing from Arizona State University and Bachelor degrees in Business and English from the University of Southern California. Dr. Sokenu is a published poet and writer. His poems have appeared in Hayden’s Ferry Review, Nimrod: The International Journal of Prose and Poetry, Savannah Literary Review, and his essays on teaching and learning in The Community College Journal. He has also written editorial as a guest writer in many of the local papers and other publications.",
+      "VICE PRESIDENT ACADEMIC AFFAIRS: Dr. John Forbes",
+      "Dr. John Forbes joined the Moorpark Community College team in June 2022. Prior to Moorpark, John served Clovis Community College in Fresno, CA as Dean of Instruction, STEM and Distance Education. His 22-year career in education is filled with roles supporting teams of educators focused on innovative ways to improve student outcomes – including extensive work in some of our country’s most diverse neighborhoods."
+     ],
+     "emails": []
+    },
+    {
+     "line": "VICE PRESIDENT ACADEMIC AFFAIRS: Dr. John Forbes",
+     "position": "vpaa",
+     "window": [
+      "DR. JULIUS O. SOKENU (He/Him/His)",
+      "President, Moorpark College",
+      "is the President of Moorpark College; he has served the students and Moorpark College family for over 17 years. Prior to his current assignment, he was Vice President of Academic Affairs and Executive Vice President and before that Dean of Student Learning. He is committed to student access and success; his professional work has focused on developing career programs to prepare students for high skill, high wage, high demand employment. He was the president of the California Community College Association of Occupational Education. He holds a doctorate in education with an emphasis in Curriculum and Teaching from Boston University, a Masters of Fine Arts in Creative Writing from Arizona State University and Bachelor degrees in Business and English from the University of Southern California. Dr. Sokenu is a published poet and writer. His poems have appeared in Hayden’s Ferry Review, Nimrod: The International Journal of Prose and Poetry, Savannah Literary Review, and his essays on teaching and learning in The Community College Journal. He has also written editorial as a guest writer in many of the local papers and other publications.",
+      "VICE PRESIDENT ACADEMIC AFFAIRS: Dr. John Forbes",
+      "Dr. John Forbes joined the Moorpark Community College team in June 2022. Prior to Moorpark, John served Clovis Community College in Fresno, CA as Dean of Instruction, STEM and Distance Education. His 22-year career in education is filled with roles supporting teams of educators focused on innovative ways to improve student outcomes – including extensive work in some of our country’s most diverse neighborhoods.",
+      "John began his career in education in Indiana as a physics, mathematics, and computer science instructor. He moved to Fresno in 1998, serving in Fresno Unified School District as a teacher, technology coordinator, research administrator, vice-principal, dean, and high school principal (Fresno High School).",
+      "In 2016, John joined the team at Clovis Community College where he served as Dean of Instruction for STEM, Technology Services, and Distance Education. He spent part of the 2020-21 academic year as the interim Chief Technology Officer for State Center Community College District, before returning to Clovis and his passion for directly supporting instruction."
+     ],
+     "emails": []
+    },
+    {
+     "line": "VICE PRESIDENT BUSINESS SERVICES: Dr. Jennifer Clark",
+     "position": "vpbs",
+     "window": [
+      "John began his career in education in Indiana as a physics, mathematics, and computer science instructor. He moved to Fresno in 1998, serving in Fresno Unified School District as a teacher, technology coordinator, research administrator, vice-principal, dean, and high school principal (Fresno High School).",
+      "In 2016, John joined the team at Clovis Community College where he served as Dean of Instruction for STEM, Technology Services, and Distance Education. He spent part of the 2020-21 academic year as the interim Chief Technology Officer for State Center Community College District, before returning to Clovis and his passion for directly supporting instruction.",
+      "John holds a bachelor’s degree in physics and math, a master’s degree in Administration from California State University, Fresno, and a doctorate in Educational Leadership from the UC-Davis/CSU-Fresno Joint Doctoral Program. He lives with his wife, Brenda, of 23 years and two college-age sons, Benjamin (20) and Jeffrey (18).",
+      "VICE PRESIDENT BUSINESS SERVICES: Dr. Jennifer Clark",
+      "Dr. Jennifer J. Clark has been Vice President of Business Services at Moorpark College since February 2020. Prior to Moorpark, she was the Budget Director for the Ventura County Community College District, responsible for preparing the budget documents and conducting the analysis for the VCCCD budget. She also served at Oxnard College as the College Fiscal Services Supervisor for nearly five years.",
+      "Dr. Clark has experience in K-12 leadership. She was the Director of Budget and Education Technology at the Pleasant Valley School District for more than a decade. She started her career in education as a fourth grade teacher of English Language Learner clusters in the Burbank Unified School District and has experience and a passion for teaching in English-Spanish dual emersion programs. She also served as a Technology Coordinator in Burbank and in the San Marino Unified School Districts.",
+      "Jennifer holds a doctorate in Education Technology from Pepperdine University, an MBA from California State University, Channel Islands, a Master’s degree in Education from the University of California, Los Angeles, and a bachelor’s degree in English and American Literature from the University of California, San Diego. She lives with her husband, Jim, of 28 years and two college-age sons, Jason (18) and William (18) who are both currently proud Moorpark College students."
+     ],
+     "emails": []
+    },
+    {
+     "line": "VICE PRESIDENT STUDENT SUPPORT: Mostafa Ghous",
+     "position": null,
+     "window": [
+      "Dr. Jennifer J. Clark has been Vice President of Business Services at Moorpark College since February 2020. Prior to Moorpark, she was the Budget Director for the Ventura County Community College District, responsible for preparing the budget documents and conducting the analysis for the VCCCD budget. She also served at Oxnard College as the College Fiscal Services Supervisor for nearly five years.",
+      "Dr. Clark has experience in K-12 leadership. She was the Director of Budget and Education Technology at the Pleasant Valley School District for more than a decade. She started her career in education as a fourth grade teacher of English Language Learner clusters in the Burbank Unified School District and has experience and a passion for teaching in English-Spanish dual emersion programs. She also served as a Technology Coordinator in Burbank and in the San Marino Unified School Districts.",
+      "Jennifer holds a doctorate in Education Technology from Pepperdine University, an MBA from California State University, Channel Islands, a Master’s degree in Education from the University of California, Los Angeles, and a bachelor’s degree in English and American Literature from the University of California, San Diego. She lives with her husband, Jim, of 28 years and two college-age sons, Jason (18) and William (18) who are both currently proud Moorpark College students.",
+      "VICE PRESIDENT STUDENT SUPPORT: Mostafa Ghous",
+      "Mostafa Ghous",
+      "Vice President of Student Support",
+      "With over 31 years of enriching experience in higher education, Mostafa emerges as a beacon of transformative leadership. As the Dean of Academic Affairs at Hartnell College, his visionary guidance shaped the educational landscape. He provided leadership for all student services and instruction for the newly expanded King City Education Center, the new Soledad Education Center, the Teacher Pathway Program, Continuing Education, ESL, Salinas Valley Adult Education Consortium, Rising Scholars, online learning, and non-credit and credit transferable classes. At the heart of his tenure lies a commitment to diversity, equity, and inclusion igniting a fervent campaign for social and restorative justice. He has experience working with many student services areas such as MESA, EOP&S, CalWORKs, CARE, international students, Veterans, outreach and recruitment, behavioral intervention, student conduct, accessibility, counseling, admissions and records."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Support",
+     "position": null,
+     "window": [
+      "Jennifer holds a doctorate in Education Technology from Pepperdine University, an MBA from California State University, Channel Islands, a Master’s degree in Education from the University of California, Los Angeles, and a bachelor’s degree in English and American Literature from the University of California, San Diego. She lives with her husband, Jim, of 28 years and two college-age sons, Jason (18) and William (18) who are both currently proud Moorpark College students.",
+      "VICE PRESIDENT STUDENT SUPPORT: Mostafa Ghous",
+      "Mostafa Ghous",
+      "Vice President of Student Support",
+      "With over 31 years of enriching experience in higher education, Mostafa emerges as a beacon of transformative leadership. As the Dean of Academic Affairs at Hartnell College, his visionary guidance shaped the educational landscape. He provided leadership for all student services and instruction for the newly expanded King City Education Center, the new Soledad Education Center, the Teacher Pathway Program, Continuing Education, ESL, Salinas Valley Adult Education Consortium, Rising Scholars, online learning, and non-credit and credit transferable classes. At the heart of his tenure lies a commitment to diversity, equity, and inclusion igniting a fervent campaign for social and restorative justice. He has experience working with many student services areas such as MESA, EOP&S, CalWORKs, CARE, international students, Veterans, outreach and recruitment, behavioral intervention, student conduct, accessibility, counseling, admissions and records.",
+      "His illustrious career spans from leading student equity and achievement planning at Berkeley City College as the director of campus life, to pioneering initiatives for marginalized communities at Solano College as the director of MESA, student development and health center. Mostafa's impact resonated in Everett Community College, where his diversity, equity, and inclusion initiative reverberated through the corridors of academia, fostering collaboration and empowerment. He led an anti-racist community response plan and social justice taskforce with a collaborative team of faculty, staff, and community leaders. He led Strategic Enrollment Management plans to increase underrepresented student enrollment.",
+      "Mostafa's philanthropic endeavors has raised over $15 million in alternative funding to support students. His journey from refugee and immigrant roots to academic eminence serves as an inspiring narrative, fueling his passion to pave avenues of success for generations to come. Mostafa is a first-generation college graduate and earned his AA and AS from Modesto Junior College, BS from UC Santa Cruz, MA in Educational Leadership with an emphasis in Student Affairs from University of the Pacific in Stockton, and he will earn his Ed.D. in Educational Leadership from CSU Fresno."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Public Information Officer",
+     "position": null,
+     "window": [
+      "MC Mission & Values",
+      "About us",
+      "Public Inquiries",
+      "Public Information Officer",
+      "Jamie Whittington-Studer",
+      "7075 Campus Road",
+      "Moorpark, 93021 CA"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.moorparkcollege.edu/index%2Ephp/departments/student-services/veterans-resource-center",
+   "final_url": "https://www.moorparkcollege.edu/index%2Ephp/departments/student-services/veterans-resource-center",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center | Moorpark College",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center | Moorpark College",
+      "Skip to main content",
+      "Secondary Menu",
+      "Academic Calendar"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "VCCCD Human Resources",
+      "Employee BIT Incident Reporting Forms",
+      "Start • Enroll",
+      "Veterans Resource Center",
+      "Breadcrumb",
+      "Home",
+      "Students"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Breadcrumb",
+      "Home",
+      "Students",
+      "Veterans Resource Center",
+      "Veterans Resource Center",
+      "You Served Us, Now Let Us Serve You!",
+      "Welcome to the Moorpark College Veterans Resource Center (VRC). Thank you for your service and commitment. We are proud to support our veterans, active-duty service members, and military-connected students as they pursue their educational and career goals."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Students",
+      "Veterans Resource Center",
+      "Veterans Resource Center",
+      "You Served Us, Now Let Us Serve You!",
+      "Welcome to the Moorpark College Veterans Resource Center (VRC). Thank you for your service and commitment. We are proud to support our veterans, active-duty service members, and military-connected students as they pursue their educational and career goals.",
+      "Our Mission"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Follow the steps below to get started with the Veterans Resource Center and prepare to use your educational benefits.",
+     "position": "vrc",
+     "window": [
+      "Start Here",
+      "New Veteran and Dependent Students",
+      "Are you new to Moorpark College or planning to use your VA educational benefits?",
+      "Follow the steps below to get started with the Veterans Resource Center and prepare to use your educational benefits.",
+      "STEP 1",
+      "Apply to Moorpark College.",
+      "Complete the Moorpark College application for admission. Once your application has been processed, you will receive an acceptance email with instructions for activating your MyVCCCD student portal."
+     ],
+     "emails": []
+    },
+    {
+     "line": "To schedule a counseling appointment, contact the Veterans Resource Center at 805-553-4106.",
+     "position": "vrc",
+     "window": [
+      "Use the Registration Planner in your MyVCCCD portal to register for classes and make changes to your schedule each semester.",
+      "Step-by-Step Registration Guide",
+      "This shows you how to access the Registration Planner, search for classes, register for courses, and make schedule adjustments, including adding or dropping classes.",
+      "To schedule a counseling appointment, contact the Veterans Resource Center at 805-553-4106.",
+      "STEP 6 · FINAL STEP",
+      "Submit the MC GI Authorization Form.",
+      "Once you have completed your intake form, developed a comprehensive educational plan with a VRC Counselor, and registered for all your classes, you are ready to submit the MC GI Authorization Form. This form confirms your enrollment and authorizes the Veterans Resource Center to move forward with certifying your enrollment to the U.S. Department of Veterans Affairs (VA)."
+     ],
+     "emails": []
+    },
+    {
+     "line": "For questions about educational planning, VA benefit certification, or changes to your class schedule, please contact the Veterans Resource Center.",
+     "position": "vrc",
+     "window": [
+      "Understanding Course Formats – Online, Hybrid, HyFlex, and In-Person Classes",
+      "Moorpark College Library – Textbook Lending Program",
+      "Questions? We're Here to Help!",
+      "For questions about educational planning, VA benefit certification, or changes to your class schedule, please contact the Veterans Resource Center.",
+      "Moorpark College Veterans Resource Center",
+      "Phone: 805-553-4106",
+      "Email: mcvetdesk01@vcccd.edu"
+     ],
+     "emails": [
+      "mcvetdesk01@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Moorpark College Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Moorpark College Library – Textbook Lending Program",
+      "Questions? We're Here to Help!",
+      "For questions about educational planning, VA benefit certification, or changes to your class schedule, please contact the Veterans Resource Center.",
+      "Moorpark College Veterans Resource Center",
+      "Phone: 805-553-4106",
+      "Email: mcvetdesk01@vcccd.edu",
+      "Veterans Resource Center"
+     ],
+     "emails": [
+      "mcvetdesk01@vcccd.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Moorpark College Veterans Resource Center",
+      "Phone: 805-553-4106",
+      "Email: mcvetdesk01@vcccd.edu",
+      "Veterans Resource Center",
+      "Welcome!",
+      "Getting Started - Registration Planner",
+      "Benefits Programs"
+     ],
+     "emails": [
+      "mcvetdesk01@vcccd.edu"
+     ]
+    },
+    {
+     "line": "California Veterans Resource Book",
+     "position": "vrc",
+     "window": [
+      "FAQ",
+      "Resources and Important Links",
+      "Active Duty Military",
+      "California Veterans Resource Book",
+      "Moorpark College Veterans Resource Center Graduation Regalia",
+      "Veterans Resource Center at Moorpark College",
+      "General Information"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Moorpark College Veterans Resource Center Graduation Regalia",
+     "position": "vrc",
+     "window": [
+      "Resources and Important Links",
+      "Active Duty Military",
+      "California Veterans Resource Book",
+      "Moorpark College Veterans Resource Center Graduation Regalia",
+      "Veterans Resource Center at Moorpark College",
+      "General Information",
+      "7075 Campus Road,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center at Moorpark College",
+     "position": "vrc",
+     "window": [
+      "Active Duty Military",
+      "California Veterans Resource Book",
+      "Moorpark College Veterans Resource Center Graduation Regalia",
+      "Veterans Resource Center at Moorpark College",
+      "General Information",
+      "7075 Campus Road,",
+      "Student Services Annex-108"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Specialist",
+     "position": "vrc",
+     "window": [
+      "(833) 451-3403 (Text Only)",
+      "mcvetdesk01@vcccd.edu mcvetdesk01@vcccd.edu",
+      "VETERANS ASSISTANCE TEAM",
+      "Veterans Resource Specialist",
+      "benjamin_scotti1@vcccd.edu Benjamin Scotti",
+      "805-553-4106",
+      "Certifying Official (Admissions & Records)"
+     ],
+     "emails": [
+      "benjamin_scotti1@vcccd.edu",
+      "mcvetdesk01@vcccd.edu"
+     ]
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.moorparkcollege.edu/index%2Ephp/departments/student-services/veterans-resource-center/counseling",
+   "final_url": "https://www.moorparkcollege.edu/index%2Ephp/departments/student-services/veterans-resource-center/counseling",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Home",
+      "Departments",
+      "Student Services",
+      "Veterans Resource Center",
+      "Veterans Education Counseling",
+      "Veterans Education Counseling",
+      "Counseling Appointments"
+     ],
+     "emails": []
+    },
+    {
+     "line": "To schedule an appointment or receive assistance, please contact the Veterans Resource Center.",
+     "position": "vrc",
+     "window": [
+      "Your educational plan helps ensure that the courses you register for meet your academic goals and applicable VA benefit certification requirements.",
+      "If you make changes to your class schedule, please contact your VRC Counselor to review and update your educational plan as needed.",
+      "Schedule a Counseling Appointment",
+      "To schedule an appointment or receive assistance, please contact the Veterans Resource Center.",
+      "Moorpark College Veterans Resource Center",
+      "Student Services Annex, Room 108",
+      "805-553-4106"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Moorpark College Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "If you make changes to your class schedule, please contact your VRC Counselor to review and update your educational plan as needed.",
+      "Schedule a Counseling Appointment",
+      "To schedule an appointment or receive assistance, please contact the Veterans Resource Center.",
+      "Moorpark College Veterans Resource Center",
+      "Student Services Annex, Room 108",
+      "805-553-4106",
+      "GI Bill® is a registered trademark of the U.S. Department of Veterans Affairs (VA)."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Student Services Annex, Room 108",
+      "805-553-4106",
+      "GI Bill® is a registered trademark of the U.S. Department of Veterans Affairs (VA).",
+      "Veterans Resource Center",
+      "Welcome!",
+      "Getting Started - Registration Planner",
+      "Benefits Programs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "FAQ",
+      "Resources and Important Links",
+      "Active Duty Military",
+      "Veterans Resource Center",
+      "Moorpark College",
+      "Veterans Resource Center",
+      "7075 Campus Road,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Active Duty Military",
+      "Veterans Resource Center",
+      "Moorpark College",
+      "Veterans Resource Center",
+      "7075 Campus Road,",
+      "Student Services Annex-108",
+      "Moorpark, 93021 CA"
+     ],
+     "emails": []
+    },
+    {
+     "line": "College President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Our Mission, Values and Vision",
+      "Administration",
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Academic Affairs and Student Learning",
+     "position": "vpaa",
+     "window": [
+      "College Committees",
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VP of Business and Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "College President's Office",
+      "Institutional Effectiveness, Grants and Planning",
+      "VP of Academic Affairs and Student Learning",
+      "VP of Business and Administrative Services",
+      "VP of Student Support",
+      "Community and College Resources",
+      "Student Achievement Data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Raider Central (Basic Needs)",
+      "Success Center: FYE/SYE",
+      "University Transfer Center",
+      "Veterans Resource Center",
+      "Tutoring and Learning Center",
+      "Associated Students",
+      "Athletics"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41412056021"
+}

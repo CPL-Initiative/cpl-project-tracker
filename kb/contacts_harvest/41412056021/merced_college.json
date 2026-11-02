@@ -1,0 +1,829 @@
+{
+ "college": "Merced College",
+ "homepage": "https://www.mccd.edu/",
+ "read_at": "2026-11-02T08:20:37+00:00",
+ "pages": [
+  {
+   "url": "https://www.mccd.edu/",
+   "final_url": "https://www.mccd.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Registered Nursing Program Assistant Director",
+     "position": null,
+     "window": [
+      "UC Merced Water Polo Coach",
+      "I can think back to any skill I learned and remember things former instructors told me. I have never forgotten.",
+      "Lindsay Roe '07",
+      "Registered Nursing Program Assistant Director",
+      "I really do love Merced College ... I have a support system here that is trying to get me further along in my career.",
+      "John Espinosa, '14",
+      "Science Lab Technician"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mccd.edu/directory/",
+   "final_url": "https://www.mccd.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Philosophy",
+      "Physics",
+      "Political Science",
+      "President’s Office",
+      "Psychology",
+      "Purchasing",
+      "Purchasing & Risk Managment"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Student Success",
+      "Theatre Arts",
+      "Transportation",
+      "Veterans Services",
+      "Welding Technology",
+      "Submit",
+      "Name"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant to Vice President",
+     "position": null,
+     "window": [
+      "Allied Health Center",
+      "Room 104",
+      "Deanna M Abbruzzetti",
+      "Administrative Assistant to Vice President",
+      "Human Resources",
+      "209-384-6277",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director Farm Operations",
+     "position": null,
+     "window": [
+      "Merced Campus",
+      "Mailstop 25",
+      "Collin S Abraham",
+      "Director Farm Operations",
+      "Landscape Farm Management",
+      "[email protected]",
+      "Merced Campus"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mccd.edu/about-merced-college/leadership/",
+   "final_url": "https://www.mccd.edu/about-merced-college/leadership/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Close",
+      "Explore This Section for Leadership",
+      "Board of Trustees",
+      "President's Office",
+      "Leadership",
+      "Board of Trustees",
+      "The Governing Board of the District consists of a seven member board elected by residents in each trustee area. Elections are held in even years; terms of office are for four years."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Board of Trustees",
+      "The Governing Board of the District consists of a seven member board elected by residents in each trustee area. Elections are held in even years; terms of office are for four years.",
+      "Learn more about our Board Members",
+      "Office of Superintendent/President",
+      "We are a proud institution which puts learning and service to our community first in everything we do and that focus is the main goal of our Merced College President as well.",
+      "Learn more about the Presidents Office",
+      "Offices"
+     ],
+     "emails": []
+    },
+    {
+     "line": "We are a proud institution which puts learning and service to our community first in everything we do and that focus is the main goal of our Merced College President as well.",
+     "position": "college_ceo",
+     "window": [
+      "The Governing Board of the District consists of a seven member board elected by residents in each trustee area. Elections are held in even years; terms of office are for four years.",
+      "Learn more about our Board Members",
+      "Office of Superintendent/President",
+      "We are a proud institution which puts learning and service to our community first in everything we do and that focus is the main goal of our Merced College President as well.",
+      "Learn more about the Presidents Office",
+      "Offices",
+      "Office of Instruction"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Dee Sigismond, Assistant Superintendent/Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Learn more about the Presidents Office",
+      "Offices",
+      "Office of Instruction",
+      "Dr. Dee Sigismond, Assistant Superintendent/Vice President of Instruction",
+      "Explore Office of Instruction",
+      "Office of Student Services",
+      "Mike McCandless, Assistant Superintendent/Vice President of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Mike McCandless, Assistant Superintendent/Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Dr. Dee Sigismond, Assistant Superintendent/Vice President of Instruction",
+      "Explore Office of Instruction",
+      "Office of Student Services",
+      "Mike McCandless, Assistant Superintendent/Vice President of Student Services",
+      "Explore Office of Student Services",
+      "Administrative Services",
+      "Joe Allison, Assistant Superintendent/Vice President of District Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Joe Allison, Assistant Superintendent/Vice President of District Administrative Services",
+     "position": null,
+     "window": [
+      "Mike McCandless, Assistant Superintendent/Vice President of Student Services",
+      "Explore Office of Student Services",
+      "Administrative Services",
+      "Joe Allison, Assistant Superintendent/Vice President of District Administrative Services",
+      "Explore Administrative Services",
+      "Human Resources",
+      "Kelly Avila, Vice President of Human Resources"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Kelly Avila, Vice President of Human Resources",
+     "position": null,
+     "window": [
+      "Joe Allison, Assistant Superintendent/Vice President of District Administrative Services",
+      "Explore Administrative Services",
+      "Human Resources",
+      "Kelly Avila, Vice President of Human Resources",
+      "Explore Human Resources",
+      "External Relations / Foundation",
+      "Jill Cunningham, Vice President of External Relations/Executive Director of Merced College Foundation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jill Cunningham, Vice President of External Relations/Executive Director of Merced College Foundation",
+     "position": null,
+     "window": [
+      "Kelly Avila, Vice President of Human Resources",
+      "Explore Human Resources",
+      "External Relations / Foundation",
+      "Jill Cunningham, Vice President of External Relations/Executive Director of Merced College Foundation",
+      "Explore External Relations/Foundation",
+      "Enterprise & Academic Partnerships",
+      "Nathan Devine, Vice President Enterprise & Academic Partnerships"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Nathan Devine, Vice President Enterprise & Academic Partnerships",
+     "position": null,
+     "window": [
+      "Jill Cunningham, Vice President of External Relations/Executive Director of Merced College Foundation",
+      "Explore External Relations/Foundation",
+      "Enterprise & Academic Partnerships",
+      "Nathan Devine, Vice President Enterprise & Academic Partnerships",
+      "Explore Enterprise & Academic Partnerships",
+      "Deans",
+      "John Albano, Dean of Business, Economics, Education, and Noncredit"
+     ],
+     "emails": []
+    },
+    {
+     "line": "John Albano, Dean of Business, Economics, Education, and Noncredit",
+     "position": null,
+     "window": [
+      "Nathan Devine, Vice President Enterprise & Academic Partnerships",
+      "Explore Enterprise & Academic Partnerships",
+      "Deans",
+      "John Albano, Dean of Business, Economics, Education, and Noncredit",
+      "Carolyn Cusick, Dean of Fine & Performing Arts and Social Sciences",
+      "Claire-Marie Alvarez, Associate Dean of Nursing",
+      "Dr. Brooke Boeding, Dean of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Carolyn Cusick, Dean of Fine & Performing Arts and Social Sciences",
+     "position": null,
+     "window": [
+      "Explore Enterprise & Academic Partnerships",
+      "Deans",
+      "John Albano, Dean of Business, Economics, Education, and Noncredit",
+      "Carolyn Cusick, Dean of Fine & Performing Arts and Social Sciences",
+      "Claire-Marie Alvarez, Associate Dean of Nursing",
+      "Dr. Brooke Boeding, Dean of Student Services",
+      "Dr. Marie Bruley, Dean of Science, Technology, Engineering, and Math (STEM)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Claire-Marie Alvarez, Associate Dean of Nursing",
+     "position": null,
+     "window": [
+      "Deans",
+      "John Albano, Dean of Business, Economics, Education, and Noncredit",
+      "Carolyn Cusick, Dean of Fine & Performing Arts and Social Sciences",
+      "Claire-Marie Alvarez, Associate Dean of Nursing",
+      "Dr. Brooke Boeding, Dean of Student Services",
+      "Dr. Marie Bruley, Dean of Science, Technology, Engineering, and Math (STEM)",
+      "Bob Casey, Associate Dean / Athletic Director"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Brooke Boeding, Dean of Student Services",
+     "position": null,
+     "window": [
+      "John Albano, Dean of Business, Economics, Education, and Noncredit",
+      "Carolyn Cusick, Dean of Fine & Performing Arts and Social Sciences",
+      "Claire-Marie Alvarez, Associate Dean of Nursing",
+      "Dr. Brooke Boeding, Dean of Student Services",
+      "Dr. Marie Bruley, Dean of Science, Technology, Engineering, and Math (STEM)",
+      "Bob Casey, Associate Dean / Athletic Director",
+      "Nate Devine, Dean of Enterprise and Academic Partnerships"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Marie Bruley, Dean of Science, Technology, Engineering, and Math (STEM)",
+     "position": null,
+     "window": [
+      "Carolyn Cusick, Dean of Fine & Performing Arts and Social Sciences",
+      "Claire-Marie Alvarez, Associate Dean of Nursing",
+      "Dr. Brooke Boeding, Dean of Student Services",
+      "Dr. Marie Bruley, Dean of Science, Technology, Engineering, and Math (STEM)",
+      "Bob Casey, Associate Dean / Athletic Director",
+      "Nate Devine, Dean of Enterprise and Academic Partnerships",
+      "Travis Hicks, Dean of English & Humanities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Bob Casey, Associate Dean / Athletic Director",
+     "position": null,
+     "window": [
+      "Claire-Marie Alvarez, Associate Dean of Nursing",
+      "Dr. Brooke Boeding, Dean of Student Services",
+      "Dr. Marie Bruley, Dean of Science, Technology, Engineering, and Math (STEM)",
+      "Bob Casey, Associate Dean / Athletic Director",
+      "Nate Devine, Dean of Enterprise and Academic Partnerships",
+      "Travis Hicks, Dean of English & Humanities",
+      "Cody Jacobsen, Dean of Agriculture and Industrial Technology"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Nate Devine, Dean of Enterprise and Academic Partnerships",
+     "position": null,
+     "window": [
+      "Dr. Brooke Boeding, Dean of Student Services",
+      "Dr. Marie Bruley, Dean of Science, Technology, Engineering, and Math (STEM)",
+      "Bob Casey, Associate Dean / Athletic Director",
+      "Nate Devine, Dean of Enterprise and Academic Partnerships",
+      "Travis Hicks, Dean of English & Humanities",
+      "Cody Jacobsen, Dean of Agriculture and Industrial Technology",
+      "Jessica Moran, Dean of Los Banos Campus"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Travis Hicks, Dean of English & Humanities",
+     "position": null,
+     "window": [
+      "Dr. Marie Bruley, Dean of Science, Technology, Engineering, and Math (STEM)",
+      "Bob Casey, Associate Dean / Athletic Director",
+      "Nate Devine, Dean of Enterprise and Academic Partnerships",
+      "Travis Hicks, Dean of English & Humanities",
+      "Cody Jacobsen, Dean of Agriculture and Industrial Technology",
+      "Jessica Moran, Dean of Los Banos Campus",
+      "Estelina Munoz, Acting Dean of Student Equity and Success"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Cody Jacobsen, Dean of Agriculture and Industrial Technology",
+     "position": null,
+     "window": [
+      "Bob Casey, Associate Dean / Athletic Director",
+      "Nate Devine, Dean of Enterprise and Academic Partnerships",
+      "Travis Hicks, Dean of English & Humanities",
+      "Cody Jacobsen, Dean of Agriculture and Industrial Technology",
+      "Jessica Moran, Dean of Los Banos Campus",
+      "Estelina Munoz, Acting Dean of Student Equity and Success",
+      "Joe Serena, Dean of Allied Health and Public Safety"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Jessica Moran, Dean of Los Banos Campus",
+     "position": null,
+     "window": [
+      "Nate Devine, Dean of Enterprise and Academic Partnerships",
+      "Travis Hicks, Dean of English & Humanities",
+      "Cody Jacobsen, Dean of Agriculture and Industrial Technology",
+      "Jessica Moran, Dean of Los Banos Campus",
+      "Estelina Munoz, Acting Dean of Student Equity and Success",
+      "Joe Serena, Dean of Allied Health and Public Safety",
+      "Greg Soto, Dean of Dual Enrollment, Outreach, Guided Pathways, A&R"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Estelina Munoz, Acting Dean of Student Equity and Success",
+     "position": null,
+     "window": [
+      "Travis Hicks, Dean of English & Humanities",
+      "Cody Jacobsen, Dean of Agriculture and Industrial Technology",
+      "Jessica Moran, Dean of Los Banos Campus",
+      "Estelina Munoz, Acting Dean of Student Equity and Success",
+      "Joe Serena, Dean of Allied Health and Public Safety",
+      "Greg Soto, Dean of Dual Enrollment, Outreach, Guided Pathways, A&R",
+      "Kody Stimpson, Dean of Innovation and Institutional Effectiveness"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Joe Serena, Dean of Allied Health and Public Safety",
+     "position": null,
+     "window": [
+      "Cody Jacobsen, Dean of Agriculture and Industrial Technology",
+      "Jessica Moran, Dean of Los Banos Campus",
+      "Estelina Munoz, Acting Dean of Student Equity and Success",
+      "Joe Serena, Dean of Allied Health and Public Safety",
+      "Greg Soto, Dean of Dual Enrollment, Outreach, Guided Pathways, A&R",
+      "Kody Stimpson, Dean of Innovation and Institutional Effectiveness",
+      "Other Organizations & Committees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Greg Soto, Dean of Dual Enrollment, Outreach, Guided Pathways, A&R",
+     "position": null,
+     "window": [
+      "Jessica Moran, Dean of Los Banos Campus",
+      "Estelina Munoz, Acting Dean of Student Equity and Success",
+      "Joe Serena, Dean of Allied Health and Public Safety",
+      "Greg Soto, Dean of Dual Enrollment, Outreach, Guided Pathways, A&R",
+      "Kody Stimpson, Dean of Innovation and Institutional Effectiveness",
+      "Other Organizations & Committees",
+      "Academic Senate"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Kody Stimpson, Dean of Innovation and Institutional Effectiveness",
+     "position": null,
+     "window": [
+      "Estelina Munoz, Acting Dean of Student Equity and Success",
+      "Joe Serena, Dean of Allied Health and Public Safety",
+      "Greg Soto, Dean of Dual Enrollment, Outreach, Guided Pathways, A&R",
+      "Kody Stimpson, Dean of Innovation and Institutional Effectiveness",
+      "Other Organizations & Committees",
+      "Academic Senate",
+      "Classified Senate"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mccd.edu/enroll-at-merced-college/admissions-records/",
+   "final_url": "https://www.mccd.edu/enroll-at-merced-college/admissions-records/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Admissions and Records strives to educate and support students with efficient and equitable access to admissions, registration, and academic records.",
+      "Staff",
+      "Jeanette R Martin",
+      "Director",
+      "Admissions and Records",
+      "209-384-6188",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Admissions/Records Coordinator",
+     "position": null,
+     "window": [
+      "Merced Campus",
+      "Mailstop 13",
+      "Diana J Romero",
+      "Admissions/Records Coordinator",
+      "Admissions and Records",
+      "209-384-6196",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Admissions & Records Coordinator",
+     "position": null,
+     "window": [
+      "Merced Campus",
+      "Mailstop 13",
+      "Elena M Orozco",
+      "Admissions & Records Coordinator",
+      "Student Services",
+      "209-381-6417",
+      "[email protected]"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mccd.edu/about-merced-college/leadership/presidents-office/",
+   "final_url": "https://www.mccd.edu/about-merced-college/leadership/presidents-office/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office - Merced College",
+     "position": "college_ceo",
+     "window": [
+      "President's Office - Merced College",
+      "Skip Main Navigation",
+      "Merced College",
+      "Enroll"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Search",
+      "Submit",
+      "Menu",
+      "President’s Office",
+      "You are here:",
+      "Home",
+      "About Merced College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About Merced College",
+      "Leadership",
+      "President’s Office",
+      "Explore This Section",
+      "Close",
+      "Explore This Section for President’s Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Explore This Section for President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "President’s Office",
+      "Explore This Section",
+      "Close",
+      "Explore This Section for President’s Office",
+      "Presidential Profile",
+      "Annual Report",
+      "Campus Forums"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Presidential Profile",
+      "Annual Report",
+      "Campus Forums",
+      "President's Circle",
+      "President's Leadership Academy",
+      "President's Advisory Council",
+      "Welcome to Merced College!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Leadership Academy",
+     "position": "college_ceo",
+     "window": [
+      "Annual Report",
+      "Campus Forums",
+      "President's Circle",
+      "President's Leadership Academy",
+      "President's Advisory Council",
+      "Welcome to Merced College!",
+      "Welcome to Merced College where students are our focus! The Merced College Team is committed to helping you achieve your educational and career goals. Our committed faculty, classified professionals, and leadership work hard to ensure access and success for all students."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Advisory Council",
+     "position": "college_ceo",
+     "window": [
+      "Campus Forums",
+      "President's Circle",
+      "President's Leadership Academy",
+      "President's Advisory Council",
+      "Welcome to Merced College!",
+      "Welcome to Merced College where students are our focus! The Merced College Team is committed to helping you achieve your educational and career goals. Our committed faculty, classified professionals, and leadership work hard to ensure access and success for all students.",
+      "Since first opening our doors in 1962, thousands of students have pursued and achieved their academic and professional goals. With more than 15,000 students enrolled, we provide leading edge and innovative programs to prepared society ready graduates with both regional and global perspectives."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "We are glad that you have discovered Merced College as a place where you can continue on your individual path to a better future through education. Every member of the college community is here to support you in reaching your academic goals.",
+      "It is my sincere hope that you find a home at Merced College. Please let our staff know how we can best meet your needs. I look forward to seeing you when you are on campus.",
+      "Chris Vitelli, Ed.D.",
+      "Superintendent/President",
+      "President's Office Staff",
+      "Chris Vitelli, Ed.D.",
+      "Superintendent/President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office Staff",
+     "position": "college_ceo",
+     "window": [
+      "It is my sincere hope that you find a home at Merced College. Please let our staff know how we can best meet your needs. I look forward to seeing you when you are on campus.",
+      "Chris Vitelli, Ed.D.",
+      "Superintendent/President",
+      "President's Office Staff",
+      "Chris Vitelli, Ed.D.",
+      "Superintendent/President",
+      "President's Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Superintendent/President",
+      "President's Office Staff",
+      "Chris Vitelli, Ed.D.",
+      "Superintendent/President",
+      "President's Office",
+      "209-384-6100",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "President's Office Staff",
+      "Chris Vitelli, Ed.D.",
+      "Superintendent/President",
+      "President's Office",
+      "209-384-6100",
+      "[email protected]",
+      "Merced Campus"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Merced Campus",
+      "Mailstop 1",
+      "Krystal L Pollinger",
+      "Executive Assistant to Superintendent/President",
+      "President's Office",
+      "209-384-6100",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Mailstop 1",
+      "Krystal L Pollinger",
+      "Executive Assistant to Superintendent/President",
+      "President's Office",
+      "209-384-6100",
+      "[email protected]",
+      "Merced Campus"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Assistant to Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Merced Campus",
+      "Mailstop 1",
+      "Samantha M Maraspini",
+      "Administrative Assistant to Superintendent/President",
+      "President's Office",
+      "209-384-6009",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Mailstop 1",
+      "Samantha M Maraspini",
+      "Administrative Assistant to Superintendent/President",
+      "President's Office",
+      "209-384-6009",
+      "[email protected]",
+      "Merced Campus"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Departments Reporting Directly to the President",
+     "position": "college_ceo",
+     "window": [
+      "[email protected]",
+      "Merced Campus",
+      "Mailstop 1",
+      "Departments Reporting Directly to the President",
+      "Office of Instruction",
+      "Office of Student Services",
+      "Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Superintendent/President (pdf)",
+     "position": "college_ceo",
+     "window": [
+      "Office of External Relations and Merced College Foundation",
+      "Enterprise & Academic Partnerships",
+      "Organizational Chart",
+      "Office of the Superintendent/President (pdf)",
+      "Social",
+      "Instagram",
+      "Facebook"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mccd.edu/about-merced-college/leadership/presidents-office/presidents-leadership-academy/",
+   "final_url": "https://www.mccd.edu/about-merced-college/leadership/presidents-office/presidents-leadership-academy/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Leadership Academy - Merced College",
+     "position": "college_ceo",
+     "window": [
+      "President's Leadership Academy - Merced College",
+      "Skip Main Navigation",
+      "Merced College",
+      "Enroll"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Leadership Academy",
+     "position": "college_ceo",
+     "window": [
+      "Search",
+      "Submit",
+      "Menu",
+      "President's Leadership Academy",
+      "You are here:",
+      "Home",
+      "About Merced College"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About Merced College",
+      "Leadership",
+      "President’s Office",
+      "President's Leadership Academy",
+      "Explore This Section",
+      "Close"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Leadership Academy",
+     "position": "college_ceo",
+     "window": [
+      "About Merced College",
+      "Leadership",
+      "President’s Office",
+      "President's Leadership Academy",
+      "Explore This Section",
+      "Close",
+      "Explore This Section for President's Leadership Academy"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Explore This Section for President's Leadership Academy",
+     "position": "college_ceo",
+     "window": [
+      "President's Leadership Academy",
+      "Explore This Section",
+      "Close",
+      "Explore This Section for President's Leadership Academy",
+      "Presidential Profile",
+      "Annual Report",
+      "Campus Forums"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Circle",
+     "position": "college_ceo",
+     "window": [
+      "Presidential Profile",
+      "Annual Report",
+      "Campus Forums",
+      "President's Circle",
+      "President's Leadership Academy",
+      "President's Advisory Council",
+      "The President’s Leadership Academy (PLA) is led by President Vitelli. PLA is intended to serve high potential and emerging leaders interested in personal and professional growth as well as leadership, administration, and management opportunities. The goal is to select a class of individuals who provide diversity of thought and lived experiences as well as differing professional backgrounds/experiences."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Leadership Academy",
+     "position": "college_ceo",
+     "window": [
+      "Annual Report",
+      "Campus Forums",
+      "President's Circle",
+      "President's Leadership Academy",
+      "President's Advisory Council",
+      "The President’s Leadership Academy (PLA) is led by President Vitelli. PLA is intended to serve high potential and emerging leaders interested in personal and professional growth as well as leadership, administration, and management opportunities. The goal is to select a class of individuals who provide diversity of thought and lived experiences as well as differing professional backgrounds/experiences.",
+      "2021-2022 Cohort 1"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Advisory Council",
+     "position": "college_ceo",
+     "window": [
+      "Campus Forums",
+      "President's Circle",
+      "President's Leadership Academy",
+      "President's Advisory Council",
+      "The President’s Leadership Academy (PLA) is led by President Vitelli. PLA is intended to serve high potential and emerging leaders interested in personal and professional growth as well as leadership, administration, and management opportunities. The goal is to select a class of individuals who provide diversity of thought and lived experiences as well as differing professional backgrounds/experiences.",
+      "2021-2022 Cohort 1",
+      "Valerie Albano"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41412056021"
+}

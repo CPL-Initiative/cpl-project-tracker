@@ -1,0 +1,1076 @@
+{
+ "college": "North Orange Continuing Education",
+ "homepage": "https://noce.edu/",
+ "read_at": "2026-11-02T08:27:52+00:00",
+ "pages": [
+  {
+   "url": "https://noce.edu/",
+   "final_url": "https://noce.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://noce.edu/directory/",
+   "final_url": "https://noce.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Associate Dean I",
+     "position": null,
+     "window": [
+      "Location",
+      "Adam",
+      "Gottdank",
+      "Associate Dean I",
+      "Disability Support Services",
+      "agottdank@noce.edu agottdank@noce.edu",
+      "Cypress"
+     ],
+     "emails": [
+      "agottdank@noce.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Alicia",
+      "Luna",
+      "Student Services Coordinator",
+      "Disability Support Services",
+      "aluna@noce.edu aluna@noce.edu",
+      "Cypress"
+     ],
+     "emails": [
+      "aluna@noce.edu"
+     ]
+    },
+    {
+     "line": "ESL Community Engagement, Student Services Coordinator",
+     "position": null,
+     "window": [
+      "Wilshire",
+      "Ana",
+      "Lopez",
+      "ESL Community Engagement, Student Services Coordinator",
+      "English as a Second Language Program",
+      "ana.lopez@noce.edu ana.lopez@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "ana.lopez@noce.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator",
+     "position": null,
+     "window": [
+      "Cypress",
+      "Antionese",
+      "Cotton",
+      "Student Services Coordinator",
+      "Career Technical Education",
+      "acotton@noce.edu acotton@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "acotton@noce.edu"
+     ]
+    },
+    {
+     "line": "Director of Admissions and Records",
+     "position": "dean_ar",
+     "window": [
+      "Anaheim",
+      "Beverly",
+      "Heasley",
+      "Director of Admissions and Records",
+      "Admissions & Records",
+      "beverly.heasley@noce.edu beverly.heasley@noce.edu",
+      "Wilshire"
+     ],
+     "emails": [
+      "beverly.heasley@noce.edu"
+     ]
+    },
+    {
+     "line": "Campus Safety Officer II",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Dale",
+      "Matteson",
+      "Campus Safety Officer II",
+      "Campus Safety",
+      "dmatteson@noce.edu dmatteson@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "dmatteson@noce.edu"
+     ]
+    },
+    {
+     "line": "Director, Student Equity and Success",
+     "position": null,
+     "window": [
+      "Wilshire",
+      "Deborah",
+      "Perkins",
+      "Director, Student Equity and Success",
+      "Counseling and Student Services",
+      "dperkins@noce.edu dperkins@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "dperkins@noce.edu"
+     ]
+    },
+    {
+     "line": "Career Center Coordinator II",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Denise",
+      "Mora",
+      "Career Center Coordinator II",
+      "Career Technical Education",
+      "dmora@noce.edu dmora@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "dmora@noce.edu"
+     ]
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Cypress",
+      "Dulce",
+      "Delgadillo",
+      "Director",
+      "Institutional Research and Planning",
+      "ddelgadillo@noce.edu ddelgadillo@noce.edu",
+      "Wilshire"
+     ],
+     "emails": [
+      "ddelgadillo@noce.edu"
+     ]
+    },
+    {
+     "line": "Special Projects Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Emely",
+      "Barrera",
+      "Special Projects Coordinator",
+      "Disability Support Services",
+      "ebarrera@noce.edu ebarrera@noce.edu",
+      "Cypress"
+     ],
+     "emails": [
+      "ebarrera@noce.edu"
+     ]
+    },
+    {
+     "line": "IT Coordinator II",
+     "position": null,
+     "window": [
+      "Cypress",
+      "Enrique",
+      "Sandoval",
+      "IT Coordinator II",
+      "Instructional Technology Services",
+      "esandoval@noce.edu esandoval@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "esandoval@noce.edu"
+     ]
+    },
+    {
+     "line": "Campus Safety Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Garett",
+      "Bush",
+      "Campus Safety Coordinator",
+      "Campus Safety",
+      "gbush@noce.edu gbush@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "gbush@noce.edu"
+     ]
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Wilshire",
+      "Janeth",
+      "Manjarrez",
+      "Director",
+      "California Adult Education Program",
+      "jmanjarrez@noce.edu jmanjarrez@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "jmanjarrez@noce.edu"
+     ]
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Jennifer",
+      "Perez",
+      "Director",
+      "Campus Communications",
+      "jperez@noce.edu jperez@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "jperez@noce.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator",
+     "position": null,
+     "window": [
+      "Wilshire",
+      "Juanita",
+      "Vasquez",
+      "Student Services Coordinator",
+      "Counseling and Student Services",
+      "juanita.vasquez@noce.edu juanita.vasquez@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "juanita.vasquez@noce.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator, Events and Operations",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Julie",
+      "Schoepf",
+      "Executive Coordinator, Events and Operations",
+      "President’s Office",
+      "jschoepf@noce.edu jschoepf@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "jschoepf@noce.edu"
+     ]
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Julie",
+      "Schoepf",
+      "Executive Coordinator, Events and Operations",
+      "President’s Office",
+      "jschoepf@noce.edu jschoepf@noce.edu",
+      "Anaheim",
+      "Julie"
+     ],
+     "emails": [
+      "jschoepf@noce.edu"
+     ]
+    },
+    {
+     "line": "Vice President",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Karen",
+      "Bautista",
+      "Vice President",
+      "Instruction",
+      "kbautista@noce.edu kbautista@noce.edu",
+      "Cypress"
+     ],
+     "emails": [
+      "kbautista@noce.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean I",
+     "position": null,
+     "window": [
+      "Cypress",
+      "Karla",
+      "Frizler",
+      "Associate Dean I",
+      "English as a Second Language Program",
+      "kfrizler@noce.edu kfrizler@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "kfrizler@noce.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean I",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Kim",
+      "Tang",
+      "Associate Dean I",
+      "Career Technical Education",
+      "ktang@noce.edu ktang@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "ktang@noce.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator",
+     "position": null,
+     "window": [
+      "Wilshire",
+      "Linda",
+      "Langgle",
+      "Student Services Coordinator",
+      "Career Technical Education",
+      "llanggle@noce.edu llanggle@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "llanggle@noce.edu"
+     ]
+    },
+    {
+     "line": "CC TAP Special Project Director",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Lisa",
+      "Mednick Takami",
+      "CC TAP Special Project Director",
+      "Institutional Research and Planning",
+      "lisa.mednicktakami@noce.edu lisa.mednicktakami@noce.edu",
+      "Wilshire"
+     ],
+     "emails": [
+      "lisa.mednicktakami@noce.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Lorri",
+      "Guy",
+      "Program Coordinator",
+      "Disability Support Services",
+      "lguy@noce.edu lguy@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "lguy@noce.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean I",
+     "position": null,
+     "window": [
+      "Wilshire",
+      "Margie",
+      "Abab",
+      "Associate Dean I",
+      "Basic Skills, High School Diploma, and GED/HiSET Prep Program",
+      "mabab@noce.edu mabab@noce.edu",
+      "Cypress"
+     ],
+     "emails": [
+      "mabab@noce.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Maria",
+      "Hernandez",
+      "Student Services Coordinator",
+      "Counseling and Student Services",
+      "maria.hernandez@noce.edu maria.hernandez@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "maria.hernandez@noce.edu"
+     ]
+    },
+    {
+     "line": "Vice President",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Martha",
+      "Gutierrez",
+      "Vice President",
+      "Student Services",
+      "mgutierrez@noce.edu mgutierrez@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "mgutierrez@noce.edu"
+     ]
+    },
+    {
+     "line": "Associate Dean I",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Martha",
+      "Turner",
+      "Associate Dean I",
+      "Lifeskills Education Advancement Program",
+      "mturner@noce.edu mturner@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "mturner@noce.edu"
+     ]
+    },
+    {
+     "line": "Program Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Medina",
+      "Hatooglu",
+      "Program Coordinator",
+      "California Adult Education Program",
+      "medina.hatooglu@noce.edu medina.hatooglu@noce.edu",
+      "NOCRC"
+     ],
+     "emails": [
+      "medina.hatooglu@noce.edu"
+     ]
+    },
+    {
+     "line": "Director, Distance Education",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Mirwais",
+      "Azizi",
+      "Director, Distance Education",
+      "Instruction",
+      "mirwais.azizi@noce.edu mirwais.azizi@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "mirwais.azizi@noce.edu"
+     ]
+    },
+    {
+     "line": "Community Engagement Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Montserrat",
+      "Thompson",
+      "Community Engagement Coordinator",
+      "Campus Communications",
+      "montserrat.thompson@noce.edu montserrat.thompson@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "montserrat.thompson@noce.edu"
+     ]
+    },
+    {
+     "line": "Special Projects Coordinator",
+     "position": null,
+     "window": [
+      "Wilshire",
+      "Neshia",
+      "Jenkins",
+      "Special Projects Coordinator",
+      "Student Services",
+      "njenkins@noce.edu njenkins@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "njenkins@noce.edu"
+     ]
+    },
+    {
+     "line": "Campus Safety Coordinator",
+     "position": null,
+     "window": [
+      "roksolana.onopriichuk@noce.edu roksolana.onopriichuk@noce.edu",
+      "Roland",
+      "Esquivel",
+      "Campus Safety Coordinator",
+      "Campus Safety",
+      "resquivel@noce.edu resquivel@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "resquivel@noce.edu",
+      "roksolana.onopriichuk@noce.edu"
+     ]
+    },
+    {
+     "line": "Campus Safety Officer II",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Sammie",
+      "Brito",
+      "Campus Safety Officer II",
+      "Campus Safety",
+      "sbrito@noce.edu sbrito@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "sbrito@noce.edu"
+     ]
+    },
+    {
+     "line": "Campus Safety Officer II",
+     "position": null,
+     "window": [
+      "Cypress",
+      "Shawn",
+      "Lee",
+      "Campus Safety Officer II",
+      "Campus Safety",
+      "shawn.lee@noce.edu shawn.lee@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "shawn.lee@noce.edu"
+     ]
+    },
+    {
+     "line": "Catalog and Schedule Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Shelia",
+      "Moore-Farmer",
+      "Catalog and Schedule Coordinator",
+      "Administrative Services",
+      "smoorefarmer@noce.edu smoorefarmer@noce.edu",
+      "Cypress"
+     ],
+     "emails": [
+      "smoorefarmer@noce.edu"
+     ]
+    },
+    {
+     "line": "Student Records Coordinator",
+     "position": null,
+     "window": [
+      "Cypress",
+      "Shontel",
+      "Corona",
+      "Student Records Coordinator",
+      "Admissions & Records",
+      "scorona@noce.edu scorona@noce.edu",
+      "Wilshire"
+     ],
+     "emails": [
+      "scorona@noce.edu"
+     ]
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Terry",
+      "Cox",
+      "Director",
+      "Administrative Services",
+      "tcox@noce.edu tcox@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "tcox@noce.edu"
+     ]
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Anaheim",
+      "Valentina",
+      "Purtell",
+      "President",
+      "President’s Office",
+      "vpurtell@noce.edu vpurtell@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Valentina",
+      "Purtell",
+      "President",
+      "President’s Office",
+      "vpurtell@noce.edu vpurtell@noce.edu",
+      "Anaheim",
+      "Valentyna"
+     ],
+     "emails": [
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "IT Coordinator I",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "Vivian",
+      "Giang",
+      "IT Coordinator I",
+      "Instructional Technology Services",
+      "vgiang@noce.edu vgiang@noce.edu",
+      "Anaheim"
+     ],
+     "emails": [
+      "vgiang@noce.edu"
+     ]
+    },
+    {
+     "line": "CC TAP Special Project Coordinator",
+     "position": null,
+     "window": [
+      "Anaheim",
+      "William",
+      "Moore",
+      "CC TAP Special Project Coordinator",
+      "Institutional Research and Planning",
+      "william.moore@noce.edu william.moore@noce.edu",
+      "Wilshire"
+     ],
+     "emails": [
+      "william.moore@noce.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://noce.edu/admission-records/",
+   "final_url": "https://noce.edu/admission-records/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://noce.edu/student-services/leadership/",
+   "final_url": "https://noce.edu/student-services/leadership/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Director, Student Equity and Success",
+     "position": null,
+     "window": [
+      "Student Leadership Program",
+      "dperkins@noce.edu dperkins@noce.edu",
+      "Deb Perkins",
+      "Director, Student Equity and Success",
+      "Counseling and Student Services",
+      "maria.hernandez@noce.edu maria.hernandez@noce.edu",
+      "Maria Hernandez"
+     ],
+     "emails": [
+      "dperkins@noce.edu",
+      "maria.hernandez@noce.edu"
+     ]
+    },
+    {
+     "line": "Student Services Coordinator,",
+     "position": null,
+     "window": [
+      "Counseling and Student Services",
+      "maria.hernandez@noce.edu maria.hernandez@noce.edu",
+      "Maria Hernandez",
+      "Student Services Coordinator,",
+      "Counseling and Student Services",
+      "Student Leader Application – CLOSED",
+      "→"
+     ],
+     "emails": [
+      "maria.hernandez@noce.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://noce.edu/about/administration/",
+   "final_url": "https://noce.edu/about/administration/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Campus Communications",
+      "Instructional Technology",
+      "Office of Institutional Research and Planning (OIRP)",
+      "President's Office",
+      "Home » About NOCE » Administration",
+      "Meet the Team: President’s Staff",
+      "North Orange Continuing Education’s (NOCE) administration is comprised of the President’s executive staff. The group is charged with developing effective ways of managing NOCE’s operations, finances, technology, and communications. Discussion topics include enrollment management, budget, staffing, operational policies, and procedures."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet the Team: President’s Staff",
+     "position": "college_ceo",
+     "window": [
+      "Office of Institutional Research and Planning (OIRP)",
+      "President's Office",
+      "Home » About NOCE » Administration",
+      "Meet the Team: President’s Staff",
+      "North Orange Continuing Education’s (NOCE) administration is comprised of the President’s executive staff. The group is charged with developing effective ways of managing NOCE’s operations, finances, technology, and communications. Discussion topics include enrollment management, budget, staffing, operational policies, and procedures.",
+      "NOCE President’s Staff Executive Team",
+      "NOCE President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "NOCE President’s Staff Executive Team",
+     "position": "college_ceo",
+     "window": [
+      "Home » About NOCE » Administration",
+      "Meet the Team: President’s Staff",
+      "North Orange Continuing Education’s (NOCE) administration is comprised of the President’s executive staff. The group is charged with developing effective ways of managing NOCE’s operations, finances, technology, and communications. Discussion topics include enrollment management, budget, staffing, operational policies, and procedures.",
+      "NOCE President’s Staff Executive Team",
+      "NOCE President",
+      "Valentina Purtell",
+      "Phone: (714) 808-4670"
+     ],
+     "emails": []
+    },
+    {
+     "line": "NOCE President",
+     "position": "college_ceo",
+     "window": [
+      "Meet the Team: President’s Staff",
+      "North Orange Continuing Education’s (NOCE) administration is comprised of the President’s executive staff. The group is charged with developing effective ways of managing NOCE’s operations, finances, technology, and communications. Discussion topics include enrollment management, budget, staffing, operational policies, and procedures.",
+      "NOCE President’s Staff Executive Team",
+      "NOCE President",
+      "Valentina Purtell",
+      "Phone: (714) 808-4670",
+      "E-mail: vpurtell@noce.edu vpurtell@noce.edu"
+     ],
+     "emails": [
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Phone: (714) 808-4670",
+      "E-mail: vpurtell@noce.edu vpurtell@noce.edu",
+      "Anaheim Campus",
+      "President’s Office",
+      "Vice President,",
+      "Instruction",
+      "Dr. Karen Bautista"
+     ],
+     "emails": [
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "Vice President,",
+     "position": null,
+     "window": [
+      "E-mail: vpurtell@noce.edu vpurtell@noce.edu",
+      "Anaheim Campus",
+      "President’s Office",
+      "Vice President,",
+      "Instruction",
+      "Dr. Karen Bautista",
+      "Phone: (714) 808-4570"
+     ],
+     "emails": [
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "Vice President,",
+     "position": null,
+     "window": [
+      "E-mail: kbautista@noce.edu kbautista@noce.edu",
+      "Anaheim Campus",
+      "Instructional Programs",
+      "Vice President,",
+      "Student Services",
+      "Martha Gutierrez",
+      "Phone: (714) 808-4660"
+     ],
+     "emails": [
+      "kbautista@noce.edu"
+     ]
+    },
+    {
+     "line": "Director, Administrative Services",
+     "position": null,
+     "window": [
+      "E-mail: mgutierrez@noce.edu mgutierrez@noce.edu",
+      "Anaheim Campus",
+      "Student Services",
+      "Director, Administrative Services",
+      "Terry Cox",
+      "Phone: (714) 808-4672",
+      "E-mail: tcox@noce.edu tcox@noce.edu"
+     ],
+     "emails": [
+      "mgutierrez@noce.edu",
+      "tcox@noce.edu"
+     ]
+    },
+    {
+     "line": "Director, Campus Communications",
+     "position": null,
+     "window": [
+      "E-mail: tcox@noce.edu tcox@noce.edu",
+      "Anaheim Campus",
+      "Administrative Services",
+      "Director, Campus Communications",
+      "Jennifer Perez",
+      "Phone: (714) 808-4671",
+      "E-mail: jperez@noce.edu jperez@noce.edu"
+     ],
+     "emails": [
+      "jperez@noce.edu",
+      "tcox@noce.edu"
+     ]
+    },
+    {
+     "line": "Director, Institutional Research and Planning",
+     "position": null,
+     "window": [
+      "E-mail: jperez@noce.edu jperez@noce.edu",
+      "Anaheim Campus",
+      "Campus Communications",
+      "Director, Institutional Research and Planning",
+      "Dulce Delgadillo",
+      "Phone: (714) 992-9512",
+      "E-mail: ddelgadillo@noce.edu ddelgadillo@noce.edu"
+     ],
+     "emails": [
+      "ddelgadillo@noce.edu",
+      "jperez@noce.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator of Events and Operations, President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "E-mail: ddelgadillo@noce.edu ddelgadillo@noce.edu",
+      "Wilshire Center",
+      "Office of Institutional Research and Planning (OIRP)",
+      "Executive Coordinator of Events and Operations, President’s Office",
+      "Julie Schoepf",
+      "Phone: (714) 808-4674",
+      "E-mail: jschoepf@noce.edu jschoepf@noce.edu"
+     ],
+     "emails": [
+      "ddelgadillo@noce.edu",
+      "jschoepf@noce.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://noce.edu/about/administration/presidents-office/",
+   "final_url": "https://noce.edu/about/administration/presidents-office/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office - North Orange Continuing Education",
+     "position": "college_ceo",
+     "window": [
+      "President's Office - North Orange Continuing Education",
+      "close",
+      "Admission & Records",
+      "Programs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Menu",
+      "close",
+      "Search for:",
+      "President’s Office",
+      "Home » About NOCE » Administration » President’s Office",
+      "Welcome from the President",
+      "Welcome to North Orange Continuing Education"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Home » About NOCE » Administration » President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "close",
+      "Search for:",
+      "President’s Office",
+      "Home » About NOCE » Administration » President’s Office",
+      "Welcome from the President",
+      "Welcome to North Orange Continuing Education",
+      "Earning a career certificate, helping your children succeed in school, or obtaining citizenship can transform your life. At North Orange Continuing Education (NOCE), we believe that every student deserves access to affordable and high-quality education in a format that is most convenient for busy adults. It’s education your way!"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Welcome from the President",
+     "position": "college_ceo",
+     "window": [
+      "Search for:",
+      "President’s Office",
+      "Home » About NOCE » Administration » President’s Office",
+      "Welcome from the President",
+      "Welcome to North Orange Continuing Education",
+      "Earning a career certificate, helping your children succeed in school, or obtaining citizenship can transform your life. At North Orange Continuing Education (NOCE), we believe that every student deserves access to affordable and high-quality education in a format that is most convenient for busy adults. It’s education your way!",
+      "It is my pleasure to welcome you to NOCE and invite you to view our class schedule to find the program that is right for you! Our outstanding faculty members are here to help you achieve your academic, career, and personal goals. NOCE’s instructional offerings are consistently updated to meet the evolving demands of the modern community and workplace. Our dedicated staff is committed to supporting you in every step on your path to success."
+     ],
+     "emails": []
+    },
+    {
+     "line": "NOCE President",
+     "position": "college_ceo",
+     "window": [
+      "Besides providing courses and programs to suit students of all ages and walks of life, NOCE offers a vibrant learning environment that includes a variety of support services. Counseling, tutoring, and career exploration are among the many services available to students who wish to engage in educational experiences.",
+      "NOCE is honored that you have chosen us to further advance your very bright and exciting future. Whether you wish to pursue high school diploma studies and transition to one of our sister colleges, explore a different career, or learn a new craft, NOCE is the right place to embark on your journey to success.",
+      "Valentina Purtell",
+      "NOCE President",
+      "Meet President Purtell",
+      "Valentina Purtell was named the fifth president (formerly provost) of North Orange Continuing Education (NOCE). She was officially approved by the North Orange County Community College District (NOCCCD) Board of Trustees—which governs Cypress College, Fullerton College, and North Orange Continuing Education—at their December 13, 2015 meeting. Purtell served as the Interim Provost since July 1, 2015 and began her permanent post as the NOCE President on December 14, 2015.",
+      "Purtell began her career with NOCE in 2002 as an English as a Second Language (ESL) Program Assistant, and then ESL Program Manager. Prior to serving as Interim Provost, she was Dean of Instruction and Student Services at NOCE’s Cypress Center. Purtell has also served as an instructor at several institutions, including Hope International University, Chapman University, and Rivne State Humanitarian University."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Meet President Purtell",
+     "position": "college_ceo",
+     "window": [
+      "NOCE is honored that you have chosen us to further advance your very bright and exciting future. Whether you wish to pursue high school diploma studies and transition to one of our sister colleges, explore a different career, or learn a new craft, NOCE is the right place to embark on your journey to success.",
+      "Valentina Purtell",
+      "NOCE President",
+      "Meet President Purtell",
+      "Valentina Purtell was named the fifth president (formerly provost) of North Orange Continuing Education (NOCE). She was officially approved by the North Orange County Community College District (NOCCCD) Board of Trustees—which governs Cypress College, Fullerton College, and North Orange Continuing Education—at their December 13, 2015 meeting. Purtell served as the Interim Provost since July 1, 2015 and began her permanent post as the NOCE President on December 14, 2015.",
+      "Purtell began her career with NOCE in 2002 as an English as a Second Language (ESL) Program Assistant, and then ESL Program Manager. Prior to serving as Interim Provost, she was Dean of Instruction and Student Services at NOCE’s Cypress Center. Purtell has also served as an instructor at several institutions, including Hope International University, Chapman University, and Rivne State Humanitarian University.",
+      "“I am honored to have been selected as NOCE’s President,” said Purtell. “I have seen the transformational power that NOCE has on the lives of our students. I am passionate about our mission to serve the whole community and to empower individuals to reach their fullest potential.”"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "“I am honored to have been selected as NOCE’s President,” said Purtell. “I have seen the transformational power that NOCE has on the lives of our students. I am passionate about our mission to serve the whole community and to empower individuals to reach their fullest potential.”",
+      "Purtell earned her bachelor’s and master’s degrees in Applied Linguistics from the Rivne State Humanitarian University in the Ukraine. She is a member of North Orange Consortium Regional Consortium for Adult Education’s Executive Committee and has served on the board of the Association of Community and Continuing Education (ACCE) since 2011. She has been active on several regional and statewide committees, including the Orange County Workforce Investment Board and the Academic Senate for California Community Colleges (ASCCC) Noncredit Taskforce.",
+      "Meet the Team",
+      "President",
+      "Valentina Purtell",
+      "Phone: (714) 808-4670 | E-mail: vpurtell@noce.edu vpurtell@noce.edu",
+      "Office is located at the NOCE Anaheim Campus"
+     ],
+     "emails": [
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator of Events and Operations, President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Valentina Purtell",
+      "Phone: (714) 808-4670 | E-mail: vpurtell@noce.edu vpurtell@noce.edu",
+      "Office is located at the NOCE Anaheim Campus",
+      "Executive Coordinator of Events and Operations, President’s Office",
+      "Julie Schoepf",
+      "Phone: (714) 808-4674 | E-mail: jschoepf@noce.edu jschoepf@noce.edu",
+      "Office is located at the NOCE Anaheim Campus"
+     ],
+     "emails": [
+      "jschoepf@noce.edu",
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "President’s Office",
+     "position": "college_ceo",
+     "window": [
+      "Phone: (714) 808-4674 | E-mail: jschoepf@noce.edu jschoepf@noce.edu",
+      "Office is located at the NOCE Anaheim Campus",
+      "Contact",
+      "President’s Office",
+      "Valentina Purtell",
+      "NOCE President",
+      "vpurtell@noce.edu vpurtell@noce.edu"
+     ],
+     "emails": [
+      "jschoepf@noce.edu",
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "NOCE President",
+     "position": "college_ceo",
+     "window": [
+      "Contact",
+      "President’s Office",
+      "Valentina Purtell",
+      "NOCE President",
+      "vpurtell@noce.edu vpurtell@noce.edu",
+      "(714) 808-4674",
+      "1830 W. Romneya Drive Anaheim, CA 92801"
+     ],
+     "emails": [
+      "vpurtell@noce.edu"
+     ]
+    },
+    {
+     "line": "Executive Coordinator of Events and Operations, President's Office",
+     "position": "college_ceo",
+     "window": [
+      "(714) 808-4674",
+      "1830 W. Romneya Drive Anaheim, CA 92801",
+      "Julie Schoepf",
+      "Executive Coordinator of Events and Operations, President's Office",
+      "jschoepf@noce.edu jschoepf@noce.edu",
+      "Questions? Call us at (714) 808-4679",
+      "North Orange Continuing Education"
+     ],
+     "emails": [
+      "jschoepf@noce.edu"
+     ]
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41412056021"
+}

@@ -1,0 +1,921 @@
+{
+ "college": "Modesto Junior College",
+ "homepage": "https://www.mjc.edu/",
+ "read_at": "2026-11-02T08:22:08+00:00",
+ "pages": [
+  {
+   "url": "https://www.mjc.edu/",
+   "final_url": "https://www.mjc.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Dr. Lena Tran Selected as YCCD Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "Indigenous Arts & Crafts Fair 2026",
+      "Read More",
+      "10/15/2026",
+      "Dr. Lena Tran Selected as YCCD Chancellor",
+      "Read More",
+      "07/20/2026",
+      "West Fest Music Festival and College Night, Aug. 26th"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mjc.edu/administration/index.html",
+   "final_url": "https://www.mjc.edu/administration/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Administration",
+      "In This Section",
+      "Administration",
+      "President",
+      "Vice President of College & Administrative Services",
+      "Vice President of Instruction",
+      "Vice President of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of College & Administrative Services",
+     "position": null,
+     "window": [
+      "In This Section",
+      "Administration",
+      "President",
+      "Vice President of College & Administrative Services",
+      "Vice President of Instruction",
+      "Vice President of Student Services",
+      "College Research & Planning"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Administration",
+      "President",
+      "Vice President of College & Administrative Services",
+      "Vice President of Instruction",
+      "Vice President of Student Services",
+      "College Research & Planning",
+      "Public Relations"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "President",
+      "Vice President of College & Administrative Services",
+      "Vice President of Instruction",
+      "Vice President of Student Services",
+      "College Research & Planning",
+      "Public Relations",
+      "President - Dr. Brian Sanders"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President - Dr. Brian Sanders",
+     "position": "college_ceo",
+     "window": [
+      "Vice President of Student Services",
+      "College Research & Planning",
+      "Public Relations",
+      "President - Dr. Brian Sanders",
+      "Executive Assistant - Judy Wagner",
+      "Executive Director, MJC Foundation - Vacant",
+      "Director, Research & Planning - Caterina Grossi"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director, MJC Foundation - Vacant",
+     "position": null,
+     "window": [
+      "Public Relations",
+      "President - Dr. Brian Sanders",
+      "Executive Assistant - Judy Wagner",
+      "Executive Director, MJC Foundation - Vacant",
+      "Director, Research & Planning - Caterina Grossi",
+      "Vice President, College & Administrative Services - Dr. Sarah Schrader",
+      "Executive Secretary - Jackie Hernandez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Research & Planning - Caterina Grossi",
+     "position": null,
+     "window": [
+      "President - Dr. Brian Sanders",
+      "Executive Assistant - Judy Wagner",
+      "Executive Director, MJC Foundation - Vacant",
+      "Director, Research & Planning - Caterina Grossi",
+      "Vice President, College & Administrative Services - Dr. Sarah Schrader",
+      "Executive Secretary - Jackie Hernandez",
+      "Grant Writer - Timea Ewing"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, College & Administrative Services - Dr. Sarah Schrader",
+     "position": null,
+     "window": [
+      "Executive Assistant - Judy Wagner",
+      "Executive Director, MJC Foundation - Vacant",
+      "Director, Research & Planning - Caterina Grossi",
+      "Vice President, College & Administrative Services - Dr. Sarah Schrader",
+      "Executive Secretary - Jackie Hernandez",
+      "Grant Writer - Timea Ewing",
+      "Manager, Auxiliary Services - Hank Olson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Instruction (Interim) - Dr. Laurie Weiss",
+     "position": "vpaa",
+     "window": [
+      "Manager, Business & Accounts - Amy Lovett",
+      "Manager, Events, Facilities & Duplicating - Samantha McCarty",
+      "Manager, Pirates Bookstore - Janelle Maiwald",
+      "Vice President, Instruction (Interim) - Dr. Laurie Weiss",
+      "Executive Secretary - Manny Walsh",
+      "Director, Career Program Planning - Liliana Pulido",
+      "Director, Community LifeLong Learning & Workforce Development - Richard Carnes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Career Program Planning - Liliana Pulido",
+     "position": null,
+     "window": [
+      "Manager, Pirates Bookstore - Janelle Maiwald",
+      "Vice President, Instruction (Interim) - Dr. Laurie Weiss",
+      "Executive Secretary - Manny Walsh",
+      "Director, Career Program Planning - Liliana Pulido",
+      "Director, Community LifeLong Learning & Workforce Development - Richard Carnes",
+      "Contracts Manager - Guadalupe Sanchez",
+      "Dean (Interim), Instruction & Student Learning - Aishah Saleh"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Community LifeLong Learning & Workforce Development - Richard Carnes",
+     "position": null,
+     "window": [
+      "Vice President, Instruction (Interim) - Dr. Laurie Weiss",
+      "Executive Secretary - Manny Walsh",
+      "Director, Career Program Planning - Liliana Pulido",
+      "Director, Community LifeLong Learning & Workforce Development - Richard Carnes",
+      "Contracts Manager - Guadalupe Sanchez",
+      "Dean (Interim), Instruction & Student Learning - Aishah Saleh",
+      "Director, Library & Learning Center - Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean (Interim), Instruction & Student Learning - Aishah Saleh",
+     "position": "dean_instruction",
+     "window": [
+      "Director, Career Program Planning - Liliana Pulido",
+      "Director, Community LifeLong Learning & Workforce Development - Richard Carnes",
+      "Contracts Manager - Guadalupe Sanchez",
+      "Dean (Interim), Instruction & Student Learning - Aishah Saleh",
+      "Director, Library & Learning Center - Vacant",
+      "Director, Online Education - Kevin Reyes",
+      "Dean, School of Agriculture - Troy Gravatt"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Library & Learning Center - Vacant",
+     "position": null,
+     "window": [
+      "Director, Community LifeLong Learning & Workforce Development - Richard Carnes",
+      "Contracts Manager - Guadalupe Sanchez",
+      "Dean (Interim), Instruction & Student Learning - Aishah Saleh",
+      "Director, Library & Learning Center - Vacant",
+      "Director, Online Education - Kevin Reyes",
+      "Dean, School of Agriculture - Troy Gravatt",
+      "Manager, Ag Operations - Andy Alderson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Online Education - Kevin Reyes",
+     "position": null,
+     "window": [
+      "Contracts Manager - Guadalupe Sanchez",
+      "Dean (Interim), Instruction & Student Learning - Aishah Saleh",
+      "Director, Library & Learning Center - Vacant",
+      "Director, Online Education - Kevin Reyes",
+      "Dean, School of Agriculture - Troy Gravatt",
+      "Manager, Ag Operations - Andy Alderson",
+      "Manager, Ag Operations - John Macedo"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Agriculture - Troy Gravatt",
+     "position": null,
+     "window": [
+      "Dean (Interim), Instruction & Student Learning - Aishah Saleh",
+      "Director, Library & Learning Center - Vacant",
+      "Director, Online Education - Kevin Reyes",
+      "Dean, School of Agriculture - Troy Gravatt",
+      "Manager, Ag Operations - Andy Alderson",
+      "Manager, Ag Operations - John Macedo",
+      "Dean, School of Arts, Performance & the Humanities - Dr. Robert Stevenson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Arts, Performance & the Humanities - Dr. Robert Stevenson",
+     "position": null,
+     "window": [
+      "Dean, School of Agriculture - Troy Gravatt",
+      "Manager, Ag Operations - Andy Alderson",
+      "Manager, Ag Operations - John Macedo",
+      "Dean, School of Arts, Performance & the Humanities - Dr. Robert Stevenson",
+      "Dean, School of Behavioral & Social Sciences - Curtis Martin",
+      "Dean, School of Business & Computing - Letitia Senechal",
+      "Dean, School of Health Professions - Carol DeLilly"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Behavioral & Social Sciences - Curtis Martin",
+     "position": null,
+     "window": [
+      "Manager, Ag Operations - Andy Alderson",
+      "Manager, Ag Operations - John Macedo",
+      "Dean, School of Arts, Performance & the Humanities - Dr. Robert Stevenson",
+      "Dean, School of Behavioral & Social Sciences - Curtis Martin",
+      "Dean, School of Business & Computing - Letitia Senechal",
+      "Dean, School of Health Professions - Carol DeLilly",
+      "Director, Clinical Placement - Theresa Townes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Business & Computing - Letitia Senechal",
+     "position": null,
+     "window": [
+      "Manager, Ag Operations - John Macedo",
+      "Dean, School of Arts, Performance & the Humanities - Dr. Robert Stevenson",
+      "Dean, School of Behavioral & Social Sciences - Curtis Martin",
+      "Dean, School of Business & Computing - Letitia Senechal",
+      "Dean, School of Health Professions - Carol DeLilly",
+      "Director, Clinical Placement - Theresa Townes",
+      "Dean, School of Industry & Trades - Troy Gravatt"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Health Professions - Carol DeLilly",
+     "position": null,
+     "window": [
+      "Dean, School of Arts, Performance & the Humanities - Dr. Robert Stevenson",
+      "Dean, School of Behavioral & Social Sciences - Curtis Martin",
+      "Dean, School of Business & Computing - Letitia Senechal",
+      "Dean, School of Health Professions - Carol DeLilly",
+      "Director, Clinical Placement - Theresa Townes",
+      "Dean, School of Industry & Trades - Troy Gravatt",
+      "Dean, School of Kinesiology, Public Health & Athletics - David Voortman"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Clinical Placement - Theresa Townes",
+     "position": null,
+     "window": [
+      "Dean, School of Behavioral & Social Sciences - Curtis Martin",
+      "Dean, School of Business & Computing - Letitia Senechal",
+      "Dean, School of Health Professions - Carol DeLilly",
+      "Director, Clinical Placement - Theresa Townes",
+      "Dean, School of Industry & Trades - Troy Gravatt",
+      "Dean, School of Kinesiology, Public Health & Athletics - David Voortman",
+      "Assistant Athletic Director, Physical, Recreation & Health Education - Ronald Gross"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Industry & Trades - Troy Gravatt",
+     "position": null,
+     "window": [
+      "Dean, School of Business & Computing - Letitia Senechal",
+      "Dean, School of Health Professions - Carol DeLilly",
+      "Director, Clinical Placement - Theresa Townes",
+      "Dean, School of Industry & Trades - Troy Gravatt",
+      "Dean, School of Kinesiology, Public Health & Athletics - David Voortman",
+      "Assistant Athletic Director, Physical, Recreation & Health Education - Ronald Gross",
+      "Dean, School of Language Arts and Education - Shirley Miranda-Brenes"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Kinesiology, Public Health & Athletics - David Voortman",
+     "position": null,
+     "window": [
+      "Dean, School of Health Professions - Carol DeLilly",
+      "Director, Clinical Placement - Theresa Townes",
+      "Dean, School of Industry & Trades - Troy Gravatt",
+      "Dean, School of Kinesiology, Public Health & Athletics - David Voortman",
+      "Assistant Athletic Director, Physical, Recreation & Health Education - Ronald Gross",
+      "Dean, School of Language Arts and Education - Shirley Miranda-Brenes",
+      "Child Development Center Site Supervisor - Sarah Ford"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Assistant Athletic Director, Physical, Recreation & Health Education - Ronald Gross",
+     "position": null,
+     "window": [
+      "Director, Clinical Placement - Theresa Townes",
+      "Dean, School of Industry & Trades - Troy Gravatt",
+      "Dean, School of Kinesiology, Public Health & Athletics - David Voortman",
+      "Assistant Athletic Director, Physical, Recreation & Health Education - Ronald Gross",
+      "Dean, School of Language Arts and Education - Shirley Miranda-Brenes",
+      "Child Development Center Site Supervisor - Sarah Ford",
+      "Dean, School of Public Safety - Curtis Martin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Language Arts and Education - Shirley Miranda-Brenes",
+     "position": null,
+     "window": [
+      "Dean, School of Industry & Trades - Troy Gravatt",
+      "Dean, School of Kinesiology, Public Health & Athletics - David Voortman",
+      "Assistant Athletic Director, Physical, Recreation & Health Education - Ronald Gross",
+      "Dean, School of Language Arts and Education - Shirley Miranda-Brenes",
+      "Child Development Center Site Supervisor - Sarah Ford",
+      "Dean, School of Public Safety - Curtis Martin",
+      "Director, Regional Fire Training Center - Vacant"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Public Safety - Curtis Martin",
+     "position": null,
+     "window": [
+      "Assistant Athletic Director, Physical, Recreation & Health Education - Ronald Gross",
+      "Dean, School of Language Arts and Education - Shirley Miranda-Brenes",
+      "Child Development Center Site Supervisor - Sarah Ford",
+      "Dean, School of Public Safety - Curtis Martin",
+      "Director, Regional Fire Training Center - Vacant",
+      "Dean (Interim), School of Science, Engineering & Mathematics - Dr. Miles White",
+      "Director, Great Valley Museum - Arnold Chavez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Regional Fire Training Center - Vacant",
+     "position": null,
+     "window": [
+      "Dean, School of Language Arts and Education - Shirley Miranda-Brenes",
+      "Child Development Center Site Supervisor - Sarah Ford",
+      "Dean, School of Public Safety - Curtis Martin",
+      "Director, Regional Fire Training Center - Vacant",
+      "Dean (Interim), School of Science, Engineering & Mathematics - Dr. Miles White",
+      "Director, Great Valley Museum - Arnold Chavez",
+      "Director, MESA - Elana Peach-Fine"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean (Interim), School of Science, Engineering & Mathematics - Dr. Miles White",
+     "position": null,
+     "window": [
+      "Child Development Center Site Supervisor - Sarah Ford",
+      "Dean, School of Public Safety - Curtis Martin",
+      "Director, Regional Fire Training Center - Vacant",
+      "Dean (Interim), School of Science, Engineering & Mathematics - Dr. Miles White",
+      "Director, Great Valley Museum - Arnold Chavez",
+      "Director, MESA - Elana Peach-Fine",
+      "Vice President, Student Services - Dr. Andrea Wilson"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Great Valley Museum - Arnold Chavez",
+     "position": null,
+     "window": [
+      "Dean, School of Public Safety - Curtis Martin",
+      "Director, Regional Fire Training Center - Vacant",
+      "Dean (Interim), School of Science, Engineering & Mathematics - Dr. Miles White",
+      "Director, Great Valley Museum - Arnold Chavez",
+      "Director, MESA - Elana Peach-Fine",
+      "Vice President, Student Services - Dr. Andrea Wilson",
+      "Executive Secretary - Jonathan Sarhadi"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, MESA - Elana Peach-Fine",
+     "position": null,
+     "window": [
+      "Director, Regional Fire Training Center - Vacant",
+      "Dean (Interim), School of Science, Engineering & Mathematics - Dr. Miles White",
+      "Director, Great Valley Museum - Arnold Chavez",
+      "Director, MESA - Elana Peach-Fine",
+      "Vice President, Student Services - Dr. Andrea Wilson",
+      "Executive Secretary - Jonathan Sarhadi",
+      "Dean, Counseling - Dr. Matthew Lopez Phillips"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Student Services - Dr. Andrea Wilson",
+     "position": "vpss",
+     "window": [
+      "Dean (Interim), School of Science, Engineering & Mathematics - Dr. Miles White",
+      "Director, Great Valley Museum - Arnold Chavez",
+      "Director, MESA - Elana Peach-Fine",
+      "Vice President, Student Services - Dr. Andrea Wilson",
+      "Executive Secretary - Jonathan Sarhadi",
+      "Dean, Counseling - Dr. Matthew Lopez Phillips",
+      "Associate Dean, Student Services, Transfer, Career & International Students - Dejeune Shelton"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Counseling - Dr. Matthew Lopez Phillips",
+     "position": null,
+     "window": [
+      "Director, MESA - Elana Peach-Fine",
+      "Vice President, Student Services - Dr. Andrea Wilson",
+      "Executive Secretary - Jonathan Sarhadi",
+      "Dean, Counseling - Dr. Matthew Lopez Phillips",
+      "Associate Dean, Student Services, Transfer, Career & International Students - Dejeune Shelton",
+      "Director, Campus Life & Student Learning - Daphne Wells",
+      "Director, Student Success & Support Program - Horacio Corona Lira"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Student Services, Transfer, Career & International Students - Dejeune Shelton",
+     "position": null,
+     "window": [
+      "Vice President, Student Services - Dr. Andrea Wilson",
+      "Executive Secretary - Jonathan Sarhadi",
+      "Dean, Counseling - Dr. Matthew Lopez Phillips",
+      "Associate Dean, Student Services, Transfer, Career & International Students - Dejeune Shelton",
+      "Director, Campus Life & Student Learning - Daphne Wells",
+      "Director, Student Success & Support Program - Horacio Corona Lira",
+      "Dean, Enrollment Services - Angelica Rodriguez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Campus Life & Student Learning - Daphne Wells",
+     "position": null,
+     "window": [
+      "Executive Secretary - Jonathan Sarhadi",
+      "Dean, Counseling - Dr. Matthew Lopez Phillips",
+      "Associate Dean, Student Services, Transfer, Career & International Students - Dejeune Shelton",
+      "Director, Campus Life & Student Learning - Daphne Wells",
+      "Director, Student Success & Support Program - Horacio Corona Lira",
+      "Dean, Enrollment Services - Angelica Rodriguez",
+      "Director (Interim), Admissions & Records - Elida Miranda-Zaragoza"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Student Success & Support Program - Horacio Corona Lira",
+     "position": null,
+     "window": [
+      "Dean, Counseling - Dr. Matthew Lopez Phillips",
+      "Associate Dean, Student Services, Transfer, Career & International Students - Dejeune Shelton",
+      "Director, Campus Life & Student Learning - Daphne Wells",
+      "Director, Student Success & Support Program - Horacio Corona Lira",
+      "Dean, Enrollment Services - Angelica Rodriguez",
+      "Director (Interim), Admissions & Records - Elida Miranda-Zaragoza",
+      "Director, Outreach & Community Partnerships - Kristina Bethel"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Enrollment Services - Angelica Rodriguez",
+     "position": null,
+     "window": [
+      "Associate Dean, Student Services, Transfer, Career & International Students - Dejeune Shelton",
+      "Director, Campus Life & Student Learning - Daphne Wells",
+      "Director, Student Success & Support Program - Horacio Corona Lira",
+      "Dean, Enrollment Services - Angelica Rodriguez",
+      "Director (Interim), Admissions & Records - Elida Miranda-Zaragoza",
+      "Director, Outreach & Community Partnerships - Kristina Bethel",
+      "Director, Student Financial Services - Aurelia Gonzalez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director (Interim), Admissions & Records - Elida Miranda-Zaragoza",
+     "position": "dean_ar",
+     "window": [
+      "Director, Campus Life & Student Learning - Daphne Wells",
+      "Director, Student Success & Support Program - Horacio Corona Lira",
+      "Dean, Enrollment Services - Angelica Rodriguez",
+      "Director (Interim), Admissions & Records - Elida Miranda-Zaragoza",
+      "Director, Outreach & Community Partnerships - Kristina Bethel",
+      "Director, Student Financial Services - Aurelia Gonzalez",
+      "Dean, Special Programs - Jose Rocha"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Outreach & Community Partnerships - Kristina Bethel",
+     "position": null,
+     "window": [
+      "Director, Student Success & Support Program - Horacio Corona Lira",
+      "Dean, Enrollment Services - Angelica Rodriguez",
+      "Director (Interim), Admissions & Records - Elida Miranda-Zaragoza",
+      "Director, Outreach & Community Partnerships - Kristina Bethel",
+      "Director, Student Financial Services - Aurelia Gonzalez",
+      "Dean, Special Programs - Jose Rocha",
+      "Director, Rise Up Center - Jason Juarez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Student Financial Services - Aurelia Gonzalez",
+     "position": null,
+     "window": [
+      "Dean, Enrollment Services - Angelica Rodriguez",
+      "Director (Interim), Admissions & Records - Elida Miranda-Zaragoza",
+      "Director, Outreach & Community Partnerships - Kristina Bethel",
+      "Director, Student Financial Services - Aurelia Gonzalez",
+      "Dean, Special Programs - Jose Rocha",
+      "Director, Rise Up Center - Jason Juarez",
+      "Director, Special Programs - Alejandra Espinoza"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Special Programs - Jose Rocha",
+     "position": null,
+     "window": [
+      "Director (Interim), Admissions & Records - Elida Miranda-Zaragoza",
+      "Director, Outreach & Community Partnerships - Kristina Bethel",
+      "Director, Student Financial Services - Aurelia Gonzalez",
+      "Dean, Special Programs - Jose Rocha",
+      "Director, Rise Up Center - Jason Juarez",
+      "Director, Special Programs - Alejandra Espinoza",
+      "Director (Interim), TRIO Scholars - Benjamin Cimoli"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Rise Up Center - Jason Juarez",
+     "position": null,
+     "window": [
+      "Director, Outreach & Community Partnerships - Kristina Bethel",
+      "Director, Student Financial Services - Aurelia Gonzalez",
+      "Dean, Special Programs - Jose Rocha",
+      "Director, Rise Up Center - Jason Juarez",
+      "Director, Special Programs - Alejandra Espinoza",
+      "Director (Interim), TRIO Scholars - Benjamin Cimoli",
+      "Dean, Student Wellness Programs - Dr. Jacquelyn Forte"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Special Programs - Alejandra Espinoza",
+     "position": null,
+     "window": [
+      "Director, Student Financial Services - Aurelia Gonzalez",
+      "Dean, Special Programs - Jose Rocha",
+      "Director, Rise Up Center - Jason Juarez",
+      "Director, Special Programs - Alejandra Espinoza",
+      "Director (Interim), TRIO Scholars - Benjamin Cimoli",
+      "Dean, Student Wellness Programs - Dr. Jacquelyn Forte",
+      "Director, Basic Needs Initiatives - Jonathan Arias"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director (Interim), TRIO Scholars - Benjamin Cimoli",
+     "position": null,
+     "window": [
+      "Dean, Special Programs - Jose Rocha",
+      "Director, Rise Up Center - Jason Juarez",
+      "Director, Special Programs - Alejandra Espinoza",
+      "Director (Interim), TRIO Scholars - Benjamin Cimoli",
+      "Dean, Student Wellness Programs - Dr. Jacquelyn Forte",
+      "Director, Basic Needs Initiatives - Jonathan Arias",
+      "Director, Health Services - Amy Yribarren"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Wellness Programs - Dr. Jacquelyn Forte",
+     "position": null,
+     "window": [
+      "Director, Rise Up Center - Jason Juarez",
+      "Director, Special Programs - Alejandra Espinoza",
+      "Director (Interim), TRIO Scholars - Benjamin Cimoli",
+      "Dean, Student Wellness Programs - Dr. Jacquelyn Forte",
+      "Director, Basic Needs Initiatives - Jonathan Arias",
+      "Director, Health Services - Amy Yribarren",
+      "Mental Health & Wellness Services Coordinator - Katharina Beeler"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Basic Needs Initiatives - Jonathan Arias",
+     "position": null,
+     "window": [
+      "Director, Special Programs - Alejandra Espinoza",
+      "Director (Interim), TRIO Scholars - Benjamin Cimoli",
+      "Dean, Student Wellness Programs - Dr. Jacquelyn Forte",
+      "Director, Basic Needs Initiatives - Jonathan Arias",
+      "Director, Health Services - Amy Yribarren",
+      "Mental Health & Wellness Services Coordinator - Katharina Beeler",
+      "In This Section"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Health Services - Amy Yribarren",
+     "position": null,
+     "window": [
+      "Director (Interim), TRIO Scholars - Benjamin Cimoli",
+      "Dean, Student Wellness Programs - Dr. Jacquelyn Forte",
+      "Director, Basic Needs Initiatives - Jonathan Arias",
+      "Director, Health Services - Amy Yribarren",
+      "Mental Health & Wellness Services Coordinator - Katharina Beeler",
+      "In This Section",
+      "Administration"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Mental Health & Wellness Services Coordinator - Katharina Beeler",
+     "position": null,
+     "window": [
+      "Dean, Student Wellness Programs - Dr. Jacquelyn Forte",
+      "Director, Basic Needs Initiatives - Jonathan Arias",
+      "Director, Health Services - Amy Yribarren",
+      "Mental Health & Wellness Services Coordinator - Katharina Beeler",
+      "In This Section",
+      "Administration",
+      "President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Mental Health & Wellness Services Coordinator - Katharina Beeler",
+      "In This Section",
+      "Administration",
+      "President",
+      "Vice President of College & Administrative Services",
+      "Vice President of Instruction",
+      "Vice President of Student Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of College & Administrative Services",
+     "position": null,
+     "window": [
+      "In This Section",
+      "Administration",
+      "President",
+      "Vice President of College & Administrative Services",
+      "Vice President of Instruction",
+      "Vice President of Student Services",
+      "College Research & Planning"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Administration",
+      "President",
+      "Vice President of College & Administrative Services",
+      "Vice President of Instruction",
+      "Vice President of Student Services",
+      "College Research & Planning",
+      "Public Relations"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "President",
+      "Vice President of College & Administrative Services",
+      "Vice President of Instruction",
+      "Vice President of Student Services",
+      "College Research & Planning",
+      "Public Relations",
+      "Quick Links"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mjc.edu/directory/index.html",
+   "final_url": "https://www.mjc.edu/directory/index.html",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.mjc.edu/news/chancellortran.html/",
+   "final_url": "https://www.mjc.edu/news/chancellortran.html/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Dr. Lena Tran Selected as YCCD Chancellor - MJC",
+     "position": "district_ceo",
+     "window": [
+      "Dr. Lena Tran Selected as YCCD Chancellor - MJC",
+      "Skip to page content",
+      "Current Students",
+      "Faculty & Staff"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Lena Tran Selected as YCCD Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "myMJC",
+      "Starfish",
+      "Apply",
+      "Dr. Lena Tran Selected as YCCD Chancellor",
+      "October 15, 2026",
+      "by",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Yosemite Community College District Board of Trustees Selects Dr. Lena Tran as Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "by",
+      "Home",
+      "News",
+      "Yosemite Community College District Board of Trustees Selects Dr. Lena Tran as Chancellor",
+      "Following Her Successful Tenure As Interim Chancellor, Dr. Tran Will Lead YCCD Into",
+      "A New Chapter of Student Success, Innovation and Regional Opportunity.",
+      "The Yosemite Community College District (YCCD) Board of Trustees has selected Dr."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Following Her Successful Tenure As Interim Chancellor, Dr. Tran Will Lead YCCD Into",
+     "position": "district_ceo",
+     "window": [
+      "Home",
+      "News",
+      "Yosemite Community College District Board of Trustees Selects Dr. Lena Tran as Chancellor",
+      "Following Her Successful Tenure As Interim Chancellor, Dr. Tran Will Lead YCCD Into",
+      "A New Chapter of Student Success, Innovation and Regional Opportunity.",
+      "The Yosemite Community College District (YCCD) Board of Trustees has selected Dr.",
+      "Lena Tran as Chancellor, effective November 1, 2026. Approved at the Board’s October"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Lena Tran as Chancellor, effective November 1, 2026. Approved at the Board’s October",
+     "position": "district_ceo",
+     "window": [
+      "Following Her Successful Tenure As Interim Chancellor, Dr. Tran Will Lead YCCD Into",
+      "A New Chapter of Student Success, Innovation and Regional Opportunity.",
+      "The Yosemite Community College District (YCCD) Board of Trustees has selected Dr.",
+      "Lena Tran as Chancellor, effective November 1, 2026. Approved at the Board’s October",
+      "14, 2026 meeting, her appointment follows a comprehensive search process with participation",
+      "from faculty, staff, administrators, community members and trustees representing Columbia",
+      "College, Modesto Junior College and the District."
+     ],
+     "emails": []
+    },
+    {
+     "line": "our colleges and students.\" shared Dr. Milton Richards, President of the YCCD Board",
+     "position": "college_ceo",
+     "window": [
+      "community members and friends of the District generously shared their time, perspectives",
+      "and commitment to YCCD's future. Their thoughtful input played an important role in",
+      "this process and reflects the deep investment our community has in the success of",
+      "our colleges and students.\" shared Dr. Milton Richards, President of the YCCD Board",
+      "of Trustees.",
+      "Dr. Tran has served as Interim Chancellor since May 2025, bringing collaborative leadership,",
+      "a clear commitment to students and a strong vision for the District's future. During"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Tran has served as Interim Chancellor since May 2025, bringing collaborative leadership,",
+     "position": "district_ceo",
+     "window": [
+      "this process and reflects the deep investment our community has in the success of",
+      "our colleges and students.\" shared Dr. Milton Richards, President of the YCCD Board",
+      "of Trustees.",
+      "Dr. Tran has served as Interim Chancellor since May 2025, bringing collaborative leadership,",
+      "a clear commitment to students and a strong vision for the District's future. During",
+      "her tenure as Interim Chancellor, Dr. Tran has advanced initiatives that expand student",
+      "access and achievement, strengthen regional workforce pathways and extend educational"
+     ],
+     "emails": []
+    },
+    {
+     "line": "her tenure as Interim Chancellor, Dr. Tran has advanced initiatives that expand student",
+     "position": "district_ceo",
+     "window": [
+      "of Trustees.",
+      "Dr. Tran has served as Interim Chancellor since May 2025, bringing collaborative leadership,",
+      "a clear commitment to students and a strong vision for the District's future. During",
+      "her tenure as Interim Chancellor, Dr. Tran has advanced initiatives that expand student",
+      "access and achievement, strengthen regional workforce pathways and extend educational",
+      "opportunities to rural and underserved communities. Her leadership centers on the",
+      "role of YCCD's colleges as engines of opportunity, preparing students for meaningful"
+     ],
+     "emails": []
+    },
+    {
+     "line": "\"Dr. Tran has demonstrated exceptional leadership as Interim Chancellor, as President",
+     "position": "district_ceo",
+     "window": [
+      "opportunities to rural and underserved communities. Her leadership centers on the",
+      "role of YCCD's colleges as engines of opportunity, preparing students for meaningful",
+      "careers while supporting the region's economic vitality.",
+      "\"Dr. Tran has demonstrated exceptional leadership as Interim Chancellor, as President",
+      "of Columbia College and throughout her career in higher education,\" said Dr. Milton",
+      "Richards, President of the YCCD Board of Trustees. \"Through our collaborative search",
+      "process, she emerged as the leader to move YCCD forward with purpose and vision. Her"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Richards, President of the YCCD Board of Trustees. \"Through our collaborative search",
+     "position": "college_ceo",
+     "window": [
+      "careers while supporting the region's economic vitality.",
+      "\"Dr. Tran has demonstrated exceptional leadership as Interim Chancellor, as President",
+      "of Columbia College and throughout her career in higher education,\" said Dr. Milton",
+      "Richards, President of the YCCD Board of Trustees. \"Through our collaborative search",
+      "process, she emerged as the leader to move YCCD forward with purpose and vision. Her",
+      "ability to bring people together, expand educational opportunity and build meaningful",
+      "workforce and community partnerships will strengthen our colleges and the communities"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Previously, as President of Columbia College, Dr. Tran expanded workforce training",
+     "position": "college_ceo",
+     "window": [
+      "ability to bring people together, expand educational opportunity and build meaningful",
+      "workforce and community partnerships will strengthen our colleges and the communities",
+      "we serve.”",
+      "Previously, as President of Columbia College, Dr. Tran expanded workforce training",
+      "opportunities, strengthened industry and community partnerships, and advanced student",
+      "support programs. Before joining Columbia College in 2022, she held executive leadership",
+      "positions at San Jose City College and Evergreen Valley College. Throughout her career,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "As Chancellor, Dr. Tran will lead Modesto Junior College in Modesto and Columbia College",
+     "position": "district_ceo",
+     "window": [
+      "to meaningful careers and ensure that opportunity reaches every community we serve.",
+      "I am excited to lead this next chapter, one grounded in collaboration, driven by innovation",
+      "and focused on helping our students and our region thrive.\"",
+      "As Chancellor, Dr. Tran will lead Modesto Junior College in Modesto and Columbia College",
+      "in Sonora. Her priorities include expanding educational access throughout the District's",
+      "vast service area; strengthening workforce and industry partnerships; preparing students",
+      "for emerging industries and the evolving needs of a modern workforce; and securing"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.mjc.edu/enrollment/",
+   "final_url": "https://www.mjc.edu/enrollment/",
+   "status": 200,
+   "excerpts": []
+  }
+ ],
+ "unread_links": [],
+ "run": "41412056021"
+}
