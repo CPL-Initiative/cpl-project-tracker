@@ -34,6 +34,13 @@ const wf = fs.readFileSync(".github/workflows/daily-dashboard.yml", "utf8");
 check("daily workflow builds the Commons status", /python3 kb\/_build_commons_status\.py/.test(wf));
 check("daily workflow commits kb/status/commons.json", /git add kb\/status\/commons\.json/.test(wf));
 check("the build step runs before the copy to index.html", wf.indexOf("_build_commons_status.py") < wf.indexOf("cp CPL_Dashboard.html index.html"));
+// The nightly procedures run rewrites the held titles the Exhibit row counts, so it rebuilds the status after its
+// own builds and commits it (#2665's note: the tile read 351 held while Review read 1 until the next daily run).
+const proc = fs.readFileSync(".github/workflows/cer-procedures.yml", "utf8");
+check("the nightly procedures run rebuilds the Commons status after the files it reads", /python3 kb\/_build_commons_status\.py/.test(proc)
+  && proc.indexOf("_cer_procedures.py --classify") < proc.indexOf("_build_commons_status.py")
+  && proc.indexOf("_sweep_exhibit_titles.py") < proc.indexOf("_build_commons_status.py"));
+check("the nightly procedures run commits kb/status/commons.json", /git add kb\/status\/commons\.json/.test(proc));
 const ci = fs.readFileSync(".github/workflows/js-tests.yml", "utf8");
 check("CI runs the builder's test", /python3 tests\/commons_status_build_test\.py/.test(ci));
 check("the first status file is committed", fs.existsSync("kb/status/commons.json"));

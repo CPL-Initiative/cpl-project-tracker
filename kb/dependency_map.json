@@ -8556,6 +8556,13 @@
   "file:kb/_build_commons_status.py": {
    "consumers": [
     {
+     "id": "workflow:cer-procedures.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    },
+    {
      "id": "workflow:daily-dashboard.yml",
      "kind": "workflow",
      "direction": "run",
@@ -16861,6 +16868,10 @@
     }
    ],
    "producers": [
+    {
+     "by": "workflow:cer-procedures.yml",
+     "how": "commit"
+    },
     {
      "by": "workflow:daily-dashboard.yml",
      "how": "commit-to-main"
@@ -27457,7 +27468,8 @@
    "scripts": [
     "kb/_cer_procedures.py",
     "kb/_build_exhibits_review.py",
-    "kb/_sweep_exhibit_titles.py"
+    "kb/_sweep_exhibit_titles.py",
+    "kb/_build_commons_status.py"
    ],
    "adds": [
     "kb/unclassified_preseed.json",
@@ -27467,7 +27479,8 @@
     "kb/exhibits_review.json",
     "kb/exhibits_review_courses.json",
     "kb/exhibits_adoption.json",
-    "kb/exhibits_sweep.json"
+    "kb/exhibits_sweep.json",
+    "kb/status/commons.json"
    ],
    "push": null,
    "deploys": [],
