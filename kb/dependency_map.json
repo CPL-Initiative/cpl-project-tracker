@@ -1070,7 +1070,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 247
+     "line": 249
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -1605,7 +1605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1965
+     "line": 1989
     }
    ],
    "main_committers": []
@@ -2172,7 +2172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1016
+     "line": 1040
     }
    ],
    "main_committers": []
@@ -2191,7 +2191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1361
+     "line": 1385
     },
     {
      "id": "module:college_briefing.js",
@@ -4133,7 +4133,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1639
+     "line": 1663
     }
    ],
    "main_committers": []
@@ -5168,7 +5168,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1530
+     "line": 1554
     },
     {
      "id": "module:admin.js",
@@ -5256,7 +5256,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 14,
+     "line": 32,
      "tabs": [
       "coci-lookup"
      ]
@@ -5347,7 +5347,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 204,
+     "line": 152,
      "tabs": [
       "coci-lookup"
      ]
@@ -5441,7 +5441,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 610,
+     "line": 569,
      "tabs": [
       "coci-lookup"
      ]
@@ -5878,6 +5878,16 @@
      ]
     },
     {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 487,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -6137,7 +6147,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1904
+     "line": 1928
     },
     {
      "id": "module:college_briefing.js",
@@ -6331,7 +6341,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1076
+     "line": 1100
     },
     {
      "id": "module:cpl_funding.js",
@@ -12266,7 +12276,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 311
+     "line": 313
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -12826,7 +12836,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 401
+     "line": 403
     }
    ],
    "producers": [
@@ -12883,7 +12893,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 402
+     "line": 404
     }
    ],
    "served": true,
@@ -13114,7 +13124,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 380
+     "line": 382
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -15206,7 +15216,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 314
+     "line": 316
     }
    ],
    "served": false,
@@ -16654,7 +16664,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 248
+     "line": 250
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -16757,7 +16767,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 266
+     "line": 268
     }
    ],
    "served": true,
@@ -16770,7 +16780,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 342
+     "line": 344
     }
    ],
    "served": true,
@@ -16836,7 +16846,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 445
+     "line": 447
     }
    ],
    "served": true,
@@ -18675,7 +18685,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 251
+     "line": 253
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -22391,6 +22401,16 @@
   "file:unified_courses_members.js": {
    "consumers": [
     {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 488,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
+    {
      "id": "module:college_cpl_workbook.js",
      "kind": "module",
      "direction": "read",
@@ -22542,7 +22562,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 252
+     "line": 254
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -24165,7 +24185,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 372,
+     "line": 181,
      "tabs": [
       "coci-lookup"
      ]
@@ -27094,6 +27114,7 @@
   ],
   "commons_list.js": [
    "canonical-subj4",
+   "coci-lookup",
    "cr-reference",
    "exhibits",
    "program-requirements"

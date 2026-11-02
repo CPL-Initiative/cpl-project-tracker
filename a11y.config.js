@@ -961,6 +961,30 @@ async function seedCrList(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Courses List (S542, the Catalog Commons' shared List in COCI Lookup): every local course from the real
+// coci_lookup_data.js and unified_courses_members.js the origin serves (141,738 rows), banded by M-ID, with the first
+// band's Identities drawer open, so the table, the bands, the chips, the filter words, the lede and a drawer are measured.
+async function seedCociList(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "coci-lookup") location.hash = "coci-lookup"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#coci-lookup-root .ccl-table tbody tr.ccl-band", { timeout: 180000 });
+  await page.waitForTimeout(700);
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.evaluate(() => {
+    const band = Array.from(document.querySelectorAll("#coci-lookup-root .ccl-table tbody tr")).find((tr) => tr.classList.contains("ccl-band") && tr.querySelector("a"));
+    let row = band && band.nextElementSibling;
+    while (row && row.classList.contains("ccl-band")) row = row.nextElementSibling;
+    const b = row && Array.from(row.querySelectorAll("button.ccl-open")).find((x) => /^Identities/.test(x.getAttribute("aria-label") || ""));
+    if (b) b.click();
+  });
+  await page.waitForSelector("#coci-lookup-root .ccl-drawer", { timeout: 10000 });
+  await page.waitForTimeout(300);
+}
+
 // Procedures: each procedure, one opened to what it did.
 async function seedCerProcedures(page, theme) {
   await openCerView(page, theme, "procs");
@@ -3144,6 +3168,24 @@ module.exports = {
     routes: [{ hash: "cr-reference", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCrList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── COCI Lookup: the Courses List (S542, the Catalog Commons' shared List) ──
+     Every local course in COCI banded by M-ID, an Identities drawer open; one per theme. */
+  "coci-lookup-list": {
+    file: "index.html",
+    title: "COCI Lookup: the Courses List, banded by M-ID, an Identities drawer open",
+    routes: [{ hash: "coci-lookup", name: "list" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedCociList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "coci-lookup-list-dark": {
+    file: "index.html",
+    title: "COCI Lookup: the Courses List, dark",
+    routes: [{ hash: "coci-lookup", name: "list-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCociList(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cr-list-dark": {
