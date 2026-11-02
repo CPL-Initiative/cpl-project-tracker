@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 545,
-  "moniker": "SkyWhirlpool",
-  "run": "Sam's session",
+  "session": 548,
+  "moniker": "SkyTadpole",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_546_handoff.md",
+  "handoff": "docs/session_549_handoff.md",
   "calls": [
     {
       "title": "Merge EACR into the CER as one Exhibits tab",
@@ -99,7 +99,7 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-02T04:52:01Z",
+  "written_at": "2026-11-02T10:40:50Z",
   "project": "exhibit",
   "next_step": {
     "title": "Move the panel rows each fold names",
@@ -107,8 +107,8 @@
   },
   "changes": [
     {
-      "at": "2026-11-02T03:53:00Z",
-      "text": "The List's suggested folds, Accept and Dismiss and the changed set now come from the shared engine, the same slot the CR and Subjects Lists use (#2680)."
+      "at": "2026-11-02T10:40:00Z",
+      "text": "The exhibit-to-cert link gains the IT vendor family: 38 CompTIA, Cisco and Microsoft titles hold 46 catalog certs, so the link covers 208 titles and 165 certs (#2689)."
     }
   ]
 }

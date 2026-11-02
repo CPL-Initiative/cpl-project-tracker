@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 91 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 63 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 516 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1344** | |
+| Session handoffs | 517 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1345** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-02 S548 SkyTadpole: the cert link's IT vendor family (CompTIA, Cisco, Microsoft; 208 titles to 165 certs, #2689), the seventh contacts read (47 people, 246 at 59 colleges); handoff 549.
 - 2026-11-02 S547 SkyCartwheel: Golden West's SLO load (568 rows), the sixth contacts read (53 people), Open Asks Sheet 156 on the colleges that refuse the read; handoff 548.
 - 2026-11-02 (Sam's session, SkyWhirlpool S545): the List norms' step 3 (CR wordings in read-only bands by group, `bands.order`; #2679) and Exhibits on the engine's suggestion slot (#2680), so all three steps have landed; the college short-name editor (`public.college_short_names`, the College Identity tab's Short name column, the daily fold `kb/_apply_college_short_names.py`, DR-30; #2681); KB note `methodology-probe-a-live-trigger-inside-a-failing-statement`.
 - 2026-11-02 (Sam's session, SkySombrero S544): the List norms' steps 1 and 2 in the engine (suggestions with Confirm and Dismiss, Changed this visit, filter counts, Selected; #2673, #2675); the Commons status rebuilt nightly after the procedures (#2674); City College of San Francisco and College of the Desert back in the funding join on Sam's Sheet 155 *restore* (#2676); new KB note methodology-a-name-a-join-keys-on-is-a-key.

@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-516 document(s).
+517 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 549 | [Session 549 handoff: the IT vendor cert link, the seventh contacts read](../session_549_handoff.md) | 2026-11-02 |
 | 548 | [Session 548 handoff: Golden West's SLO load, the sixth contacts read, Sheet 156 on the refused colleges](../session_548_handoff.md) | 2026-11-02 |
 | 547 | [Session 547 handoff: AP, CLEP and IB in the cert catalog, the fifth contacts read, the Fact Sheet's UI pass](../session_547_handoff.md) | 2026-11-02 |
 | 546 | [Session 546 handoff: the List norms complete, college short names edited in the College Identity tab](../session_546_handoff.md) | 2026-11-02 |
