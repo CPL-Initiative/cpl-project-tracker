@@ -62,7 +62,7 @@
   },
   {
    "blurb": "Distilled, durable, reusable knowledge \u2014 the Obsidian-target lane. Contract: [`kb-notes/README.md`](../kb-notes/README.md).",
-   "count": 571,
+   "count": 572,
    "docs": [
     {
      "created": "2026-08-14",
@@ -2737,6 +2737,25 @@
      "title": "A monitor that is not a browser cannot see a browser's failure",
      "type": "methodology",
      "updated": "2026-09-17"
+    },
+    {
+     "created": "2026-11-02",
+     "governs": [
+      "kb/_seed_college_short_names.py",
+      "funding/_build_funding_performance.py",
+      "tests/funding_name_resolver_test.py"
+     ],
+     "path": "docs/kb-notes/methodology-a-name-a-join-keys-on-is-a-key.md",
+     "status": "published",
+     "tags": [
+      "methodology",
+      "college-identity",
+      "funding",
+      "joins"
+     ],
+     "title": "A name a join keys on is a key, whatever the table calls it",
+     "type": "methodology",
+     "updated": "2026-11-02"
     },
     {
      "created": "2026-08-19",
@@ -16375,8 +16394,27 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 512,
+   "count": 513,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 545,
+     "path": "docs/session_545_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "commons-list",
+      "funding",
+      "college-identity",
+      "sierra",
+      "jst"
+     ],
+     "title": "Session 545 handoff: the List engine owns suggestions and filter counts, two colleges back in the funding join",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25135,5 +25173,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1338
+ "total": 1340
 }

@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 543,
-  "moniker": "SkyAndromeda",
+  "session": 544,
+  "moniker": "SkySombrero",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_544_handoff.md",
+  "handoff": "docs/session_545_handoff.md",
   "calls": [
     {
       "title": "Merge EACR into the CER as one Exhibits tab",
@@ -99,13 +99,21 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-02T01:20:14Z",
+  "written_at": "2026-11-02T02:56:24Z",
   "project": "exhibit",
   "next_step": {
-    "title": "Merge the SLO hints",
-    "text": "Merge #2668 on a passing test; the daily run then builds the Outcomes match hints. Then the List norms' suggest slot."
+    "title": "The Exhibits List onto the engine's suggestion slot",
+    "text": "Move the suggested folds, Accept and Dismiss and the changed set onto the shared engine, as the CR and Subjects Lists now use it; the List norms' step 3 (bands from the spec) runs beside it."
   },
   "changes": [
+    {
+      "at": "2026-11-02T02:24:00Z",
+      "text": "Every filter word on the Exhibits List carries its count; Suggested folds, Outcomes match, Your flags and Folds waiting show none until their data is read (#2675)."
+    },
+    {
+      "at": "2026-11-02T02:07:00Z",
+      "text": "The nightly procedures run rebuilds the Commons status, so the held-titles tile agrees with Review the same night (#2674)."
+    },
     {
       "at": "2026-11-02T00:09:00Z",
       "text": "The reference's statewide flag counts the Fact Sheet's 152 credentials, up from 84 (#2667, Sam's Sheet 154 count); ESS outcome 2 reads it."

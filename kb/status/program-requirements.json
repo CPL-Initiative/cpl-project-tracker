@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-02T01:20:11Z",
-  "session": 543,
-  "moniker": "SkyAndromeda",
+  "written_at": "2026-11-02T02:56:24Z",
+  "session": 544,
+  "moniker": "SkySombrero",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_544_handoff.md",
+  "handoff": "docs/session_545_handoff.md",
   "next_step": {
-    "title": "Merge #2668, then the List norms",
-    "text": "Merge the SLO hints PR on a passing test, ask Sierra Sam's JST question once after the queue run, then the engine's suggest slot and changed tracker. Monterey Peninsula's last 14 stay queued: read coverage 42989, 43858 and 44876 first."
+    "title": "The List norms' step 3: bands from the spec",
+    "text": "The engine draws bands from a spec's groupOf(r), read only where the spec has no save, so the Courses List stops hand-rolling its M-ID bands; then the Exhibits List moves onto the engine's suggestion slot."
   },
   "calls": [
     {
@@ -190,6 +190,10 @@
     "addenda": "The eight addenda amending loaded colleges' catalogs were read on Oct 14 and filed on Oct 14 as read, each with the programs and courses it changes. The other 71 listed addenda wait for the reader to reach their colleges."
   },
   "changes": [
+    {
+      "at": "2026-11-02T02:24:00Z",
+      "text": "The List's filter words take their counts from the shared engine, read from the same build as the rows (#2675)."
+    },
     {
       "at": "2026-11-02T01:15:00Z",
       "text": "The course SLO read joins the CPL queue as step 11, nightly, the colleges that articulate the most exhibits first; pages only, no model call (#2669)."
