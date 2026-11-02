@@ -534,3 +534,16 @@ first sentence read as missing data, and the control lives in the header's Sign 
   variants (*Business and Administrative Services*) or swap the preposition (*for Administrative Services*) filed under
   Sheet 151's reading.
 - **Not the articulation officer:** Fullerton's *Director, Dual Enrollment and High School Articulation*.
+
+## S546 SkyPinwheel (2026-11-02): the fifth contacts read
+
+- **The Los Angeles district refuses the plain read.** All seven LACCD colleges in the batch (City, Harbor, Mission,
+  Pierce, Southwest, Trade-Tech, Valley) returned 403, as East Los Angeles did on the fourth read. The district's nine
+  colleges need a browser read or another source; the batch will keep reaching them and finding no one.
+- **Prefer a college's leadership page over its directory.** Lake Tahoe's directory still lists a former
+  Superintendent/President; its leadership and President pages name Russi Egan (interim) and Ami Chilton (interim VP,
+  Administrative Services). The records follow the leadership page.
+- **A title that names only an office is no title.** Los Medanos' directory prints *Veteran's Resource Center* under a
+  name, so no `vrc` row. A *Veterans Liaison* stays unmatched.
+- **A dated change is worth a note in the record.** The 4CD Chancellor retires 2026-12-30 with an interim named; both
+  district rows want a refresh after that date.
