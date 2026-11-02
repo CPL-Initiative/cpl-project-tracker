@@ -1,7 +1,7 @@
 ---
 title: The Catalog Commons List norms, what every common reference's List shares and what stays different
 created: 2026-11-01
-updated: 2026-11-01
+updated: 2026-11-02
 tags: [reference, commons, commons-list, ui]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -77,16 +77,22 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
 
 | List | Row (fold unit) | Today | Next |
 |---|---|---|---|
-| Exhibits | credential | finder, filters, bands, kept groups, suggested folds, Re-point, waiting, flag, Re-analyze | tiles from the Commons row (open PR) |
-| CR Reference | wording (group) | finder, filters, Edit, flag | suggestions for rung proposals; read-only bands |
-| Subjects | MQ discipline | finder, filters, Edit, Confirm this pick | suggestions for open picks |
+| Exhibits | credential | finder, filters, bands, kept groups, suggested folds, Re-point, waiting, flag, Re-analyze, tiles from the Commons row | its suggestions and changed set onto the engine's slot |
+| CR Reference | wording (group) | finder, filters, Edit, flag, rung proposals as suggestions (Confirm the group), Changed this visit | read-only bands |
+| Subjects | MQ discipline | finder, filters, Edit, open picks as suggestions (Confirm this pick), Changed this visit | filter counts |
 | Courses (COCI Lookup) | local course (M-ID band) | building | read-only M-ID bands, SkyView link |
 | Program Requirements | program | finder, filters with counts | read only |
 
 ## Next, one PR each (Fable's ranking)
 
-1. **An engine `suggest` slot** (get, verb, accept, dismiss for the visit) and the `changed` tracker; Exhibits
-   unchanged; CR's rung proposals (Confirm the group) and Subjects' open picks (Confirm this pick) wire in.
+1. **Landed (S544): the engine's `suggest` slot and the `changed` tracker.** A spec hands `suggest` { get, verb,
+   accept, key, label, always } and `changed: true`; the engine draws *Suggested: what (why)*, the verb and Dismiss under
+   the title, keeps what was accepted or dismissed for the visit, answers in the status line, and owns the filter ids
+   `suggested` and `changed` (contract at the top of `commons_list.js`). CR's rung proposals (a group a rung 1 to 4 rule
+   places, more than one wording, undecided) read *Suggested groups*, one Dismiss setting aside the whole group; the
+   Subjects open picks read *Suggested picks*, shown under every filter since they are few. **A suggestion never
+   proposes a collision:** an open pick whose code another MQ discipline holds is a call for a person. Exhibits keeps
+   its own suggestions and changed set until it moves onto the slot.
 2. **The filter vocabulary with counts in the engine** (Program Requirements' count getter generalized) and the
    status-line words.
 3. **Bands from a spec `groupOf(r)`** with no AI order file, read-only where the spec has no `save`; and **filter

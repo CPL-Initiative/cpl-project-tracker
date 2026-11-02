@@ -19,7 +19,12 @@
 //   (7) signed out, the List says so and a save asks for a sign-in without writing;
 //   (8) the Status drawer's Confirm this pick writes the open pick's own code for its discipline;
 //   (9) Edit (one row) saves a note through the note path, and the pick's reviewer stays the code row's;
-//  (10) tokens only, no glyph, American spelling in the List's source.
+//  (10) tokens only, no glyph, American spelling in the List's source;
+//  (11) the open picks as the engine's suggestions (the List norms, 2026-11-01): an open pick with a code shows its
+//       suggestion under every filter, with its reason; a pick in a collision never does (one code, one MQ discipline);
+//       Suggested picks keeps those rows; Confirm this pick writes the table's code row, the row reads Confirmed by a
+//       person and joins Changed this visit; Dismiss writes nothing, sets it aside for the visit and puts focus on the
+//       row's title.
 // Run from repo root: `npm test` (or `node tests/csr_list.test.js`).
 const fs = require("fs");
 const vm = require("vm");
@@ -119,10 +124,13 @@ function col(d, name) {
   const H = heads(d).map((h) => h.replace(/ \(\d+\)/, "").replace(/, (A to Z|Z to A|low to high|high to low)$/, ""));
   return H.indexOf(name);
 }
-function rowOf(d, disc) { return rows(d).find((r) => txt(r.children[1]) === disc); }
+/* The title cell carries its lines under the title (a suggestion, changed this visit), so a row is found by its title word. */
+function titleOf(r) { return txt(r.children[1].querySelector(".csl-open") || r.children[1]); }
+function rowOf(d, disc) { return rows(d).find((r) => titleOf(r) === disc); }
 function cell(d, disc, name) { const r = rowOf(d, disc); return r ? txt(r.children[col(d, name)]) : null; }
 /* The engine draws an empty cell as a dash it can be pressed on. */
 function blank(s) { return s === "" || s === "\u2014"; }
+function inDrawer(d, t) { return Array.from(d.querySelectorAll("#cs-list .csl-drawer button")).find((b) => txt(b) === t); }
 function words(d, t) { return Array.from(d.querySelectorAll("#cs-list button")).find((b) => txt(b) === t); }
 function boxOf(d, disc, label) { return Array.from(d.querySelectorAll(".csl-cellin")).find((b) => b.getAttribute("aria-label") === label + " of " + disc); }
 function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("change")); }
@@ -139,7 +147,7 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   check("(1) the List shows; the table, its toolbar and Progress hide", M._state.view === "list" && !d.getElementById("cs-list").hidden
     && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-toolbar").hidden && d.getElementById("cs-progress").hidden);
   check("(1) the engine loads through CPL_TABS.loadScript", t.loads.indexOf("commons_list.js") >= 0 && !!t.w.CPL_COMMONS_LIST);
-  const names = rows(d).map((r) => txt(r.children[1]));
+  const names = rows(d).map(titleOf);
   check("(1) ⭐ every MQ discipline is one row, A to Z", names.length === 11 && names[0] === "Agricultural Business and Related Services"
     && names[10] === "Welding" && names.join("|") === names.slice().sort((a, b) => a.toLowerCase().localeCompare(b.toLowerCase())).join("|"), names.join(" | "));
   const H = heads(d);
@@ -172,10 +180,10 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
 
   // ── (3) filters and the finder ──
   words(d, "Open").click(); await settle();
-  check("(3) Open shows the picks no one confirmed", rows(d).map((r) => txt(r.children[1])).join("|") === "Agricultural Business and Related Services|Psychology",
-    rows(d).map((r) => txt(r.children[1])).join("|"));
+  check("(3) Open shows the picks no one confirmed", rows(d).map(titleOf).join("|") === "Agricultural Business and Related Services|Psychology",
+    rows(d).map(titleOf).join("|"));
   words(d, "Confirmed by a procedure").click(); await settle();
-  check("(3) Confirmed by a procedure shows the nightly and the cohort picks", rows(d).map((r) => txt(r.children[1])).join("|") === "Mathematics|Welding");
+  check("(3) Confirmed by a procedure shows the nightly and the cohort picks", rows(d).map(titleOf).join("|") === "Mathematics|Welding");
   words(d, "In a collision").click(); await settle();
   check("(3) In a collision shows the two AUTB rows", rows(d).length === 2 && rows(d).every((r) => /AUTB/.test(txt(r))));
   words(d, "Confirmed by a person").click(); await settle();
@@ -185,9 +193,9 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   q.value = "ADMJ"; q.dispatchEvent(new t.w.Event("input")); await settle();
   check("(3) a code no row carries finds nothing", rows(d).length === 0);
   q = d.getElementById("csl-find"); q.value = "PSY"; q.dispatchEvent(new t.w.Event("input")); await settle();
-  check("(3) the finder finds an MQ discipline by a local code", rows(d).length === 1 && txt(rows(d)[0].children[1]) === "Psychology");
+  check("(3) the finder finds an MQ discipline by a local code", rows(d).length === 1 && titleOf(rows(d)[0]) === "Psychology");
   q = d.getElementById("csl-find"); q.value = "physical education"; q.dispatchEvent(new t.w.Event("input")); await settle();
-  check("(3) the finder finds an MQ discipline by its alternate name", rows(d).length === 1 && txt(rows(d)[0].children[1]) === "Kinesiology");
+  check("(3) the finder finds an MQ discipline by its alternate name", rows(d).length === 1 && titleOf(rows(d)[0]) === "Kinesiology");
   q = d.getElementById("csl-find"); q.value = ""; q.dispatchEvent(new t.w.Event("input")); await settle();
 
   // ── (4) Edit every row writes the right row ──
@@ -251,14 +259,14 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   await settle();
   rowOf(x.d, "Psychology").children[col(x.d, "Status")].querySelector("button").click(); await settle();
   const drawer = x.d.querySelector("#cs-list .csl-drawer");
-  check("(8) the Status drawer says the pick waits and offers Confirm this pick", !!drawer && /waits for a person to confirm it/.test(txt(drawer)) && !!words(x.d, "Confirm this pick"), txt(drawer));
-  words(x.d, "Confirm this pick").click(); await settle();
+  check("(8) the Status drawer says the pick waits and offers Confirm this pick", !!drawer && /waits for a person to confirm it/.test(txt(drawer)) && !!inDrawer(x.d, "Confirm this pick"), txt(drawer));
+  inDrawer(x.d, "Confirm this pick").click(); await settle();
   check("(8) ⭐ Confirm this pick writes the open pick's own code for its discipline",
     x.posts.length === 1 && x.posts[0].course_id === "_CANON_SUBJ4::Psychology" && x.posts[0].field === "canonical_subj4" && x.posts[0].value === "PSYC");
   check("(8) the row then reads Confirmed by a person", cell(x.d, "Psychology", "Status") === "Confirmed by a person" && /Confirmed PSYC for Psychology/.test(txt(x.d.getElementById("csl-cellnote"))));
   rowOf(x.d, "Mathematics").children[col(x.d, "Status")].querySelector("button").click(); await settle();
   check("(8) a confirmed pick's drawer names who confirmed it and offers no Confirm", /Confirmed by the nightly procedure, csr-confirm-authority@bot/.test(txt(x.d.querySelector("#cs-list .csl-drawer")))
-    && !words(x.d, "Confirm this pick"));
+    && !inDrawer(x.d, "Confirm this pick"));
 
   // ── (9) Edit (one row) saves a note through the note path ──
   const y = boot();
@@ -280,6 +288,35 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
   check("(10) no glyph in the List's words", !/[←-⇿☀-➿⬀-⯿\u{1f300}-\u{1faff}✓✗⚠]/u.test(block));
   check("(10) American spelling", !/\b(colour|behaviour|organisation|analyse|centre|catalogue|whilst|amongst|licence)\b/i.test(block));
   check("(10) the List writes only through the table's path", !/saveField\(/.test(block) && /writeCanon\(/.test(block) && /writeNote\(/.test(block) && /canonCheck\(/.test(block));
+
+  // ── (11) suggestions and the changed set ──
+  const sgOf = (d, disc) => { const r = rowOf(d, disc); return r && r.querySelector(".csl-sg"); };
+  const sy = boot();
+  await settle();
+  check("(11) ⭐ an open pick shows its suggestion under All, with its reason",
+    txt(sgOf(sy.d, "Psychology")) === "Suggested: PSYC as the Common SUBJ (the code colleges use most for its courses, 80% of them) Confirm this pick Dismiss",
+    txt(sgOf(sy.d, "Psychology")));
+  check("(11) ⭐ a pick in a collision is never suggested", !sgOf(sy.d, "Agricultural Business and Related Services") && !sgOf(sy.d, "Welding"));
+  words(sy.d, "Suggested picks").click(); await settle();
+  check("(11) Suggested picks keeps the open picks a person can confirm", rows(sy.d).map(titleOf).join("|") === "Psychology", rows(sy.d).map(titleOf).join("|"));
+  sgOf(sy.d, "Psychology").querySelector("button").click(); await settle();
+  check("(11) ⭐ Confirm this pick writes the discipline's own code row", sy.posts.length === 1 && sy.posts[0].course_id === "_CANON_SUBJ4::Psychology"
+    && sy.posts[0].field === "canonical_subj4" && sy.posts[0].value === "PSYC", JSON.stringify(sy.posts));
+  check("(11) the status line says what saved, and the row leaves Suggested picks", rows(sy.d).length === 0
+    && /Confirmed PSYC for Psychology/.test(txt(sy.d.getElementById("csl-cellnote"))), txt(sy.d.getElementById("csl-cellnote")));
+  words(sy.d, "Changed this visit").click(); await settle();
+  check("(11) ⭐ Changed this visit lists it, saying so under the title, and it reads Confirmed by a person",
+    rows(sy.d).map(titleOf).join("|") === "Psychology" && /changed this visit/.test(txt(rows(sy.d)[0].children[1]))
+    && cell(sy.d, "Psychology", "Status") === "Confirmed by a person", rows(sy.d).map((r) => txt(r.children[1])).join("|"));
+  const sz = boot();
+  await settle();
+  Array.from(sgOf(sz.d, "Psychology").querySelectorAll("button")).find((b) => txt(b) === "Dismiss").click(); await settle();
+  const focused = sz.d.activeElement;
+  check("(11) Dismiss writes nothing, sets the suggestion aside, and says so", sz.posts.length === 0 && !sgOf(sz.d, "Psychology")
+    && /Dismissed for this visit: the suggestion for Psychology/.test(txt(sz.d.getElementById("csl-cellnote"))));
+  check("(11) after Dismiss, focus sits on the row's title", !!focused && focused.classList.contains("csl-open") && txt(focused) === "Psychology", focused && focused.outerHTML);
+  words(sz.d, "Suggested picks").click(); await settle();
+  check("(11) a dismissed pick leaves Suggested picks for the visit", rows(sz.d).length === 0);
 
   let pass = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });

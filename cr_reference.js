@@ -911,6 +911,23 @@
     var prev = state.decisions[g.key] || {}, gm = groupMembers(g, prev);
     return saveDecision(g.key, decision, prev.canonical || g.canonical, gm.members, gm.excluded, prev.note || "");
   }
+  // Every wording a decision on the group reaches, for the visit's changed set.
+  function groupKeys(g) { return g.members.map(function (m) { return m.rec; }).concat(addedTo(g.key)); }
+  function markChanged(g) { if (LIST_ENGINE) LIST_ENGINE.markChanged(groupKeys(g)); }
+  // The rung proposals as the List's suggestions (the List norms, 2026-11-01): a group a rung 1 to 4 rule places, of
+  // more than one wording, with no decision yet. Confirm the group records it under the curator's name, the same write
+  // as the drawer's; Dismiss sets the group aside for the visit, every wording of it at once.
+  function listSuggestOf(r) {
+    var g = r.g, rung = RUNGS[g.rung] || RUNGS[5];
+    if (!g.acts_automatically || !needsDecision(g) || decidedState(g)) return null;
+    return { text: "its group's " + fmt(g.wordings) + " wordings as one reference, " + refOf(g), why: rung.label + " rule: " + (g.rung_why || rung.why) };
+  }
+  function listSuggestAccept(r) {
+    var g = r.g;
+    return listDecide(g, "confirmed").then(function () {
+      return { ok: true, keys: groupKeys(g), words: "Confirmed: the group's " + fmt(g.wordings) + " wordings read " + refOf(g) + ", recorded under your name." };
+    }, function (e) { return { ok: false, words: "The confirm of " + refOf(g) + " did not save (" + saveWords(e) + "). Nothing changed." }; });
+  }
   function saveWords(e) {
     return e && e.message === "signin" ? "Sign in as a reviewer, or unlock with the team phrase, to record it."
       : (e && e.message) || "no answer";
@@ -922,6 +939,9 @@
         placeholder: "Wording, reference, credential, course or C-ID", findLabel: "Find in the list" },
       state: listState, rows: function () { listNamedMemo = null; return listFlat(); }, cols: listCols,
       key: function (r) { return r.ut; }, title: function (r) { return r.m.rec; }, render: render,
+      changed: true,
+      suggest: { get: listSuggestOf, verb: "Confirm the group", key: function (r) { return r.g.key; }, accept: listSuggestAccept,
+        label: function (r) { return "Confirm the group of " + r.m.rec + " as " + refOf(r.g); } },
       head: function (wrap, api) {
         if (!signedIn()) wrap.appendChild(api.el("p", { cls: "crr-warn", text: "You are not signed in. The list is readable; "
           + "decisions show and save once you unlock with the team phrase or sign in with a reviewer link." }));
@@ -931,14 +951,14 @@
           + "this is a failed read, not an empty list. Reload to try again." }));
         return true;
       },
-      filters: [["", "All"], ["todo", "Needs a decision"], ["auto", "Automatic proposals"], ["done", "Decided"],
-        ["open", "No rule or decision"], ["names", "Name to check"], ["solo", "Single wording"], ["flagged", "Your flags"]],
+      filters: [["", "All"], ["todo", "Needs a decision"], ["suggested", "Suggested groups"], ["done", "Decided"],
+        ["open", "No rule or decision"], ["names", "Name to check"], ["solo", "Single wording"], ["flagged", "Your flags"],
+        ["changed", "Changed this visit"]],
       flag: { get: listFlagOf, set: listSetFlag },
       filterPass: function (r, L) {
         var g = r.g, d = decidedState(g);
         if (L.f === "flagged") return !!listFlagOf(r);
         if (L.f === "todo") return needsDecision(g) && !d;
-        if (L.f === "auto") return g.acts_automatically && needsDecision(g);
         if (L.f === "done") return !!d;
         if (L.f === "solo") return !needsDecision(g);
         if (L.f === "open") return isOpen(g, listNamedMemo || (listNamedMemo = curatorNamed()));
@@ -960,7 +980,7 @@
           if (name === refOf(r.g)) { L.edit = null; L.draft = null; L.note = "Nothing changed."; render(); return Promise.resolve(); }
           L.busy = true; render();
           return listSetReference(r.g, name).then(function () {
-            L.busy = false; L.edit = null; L.draft = null;
+            L.busy = false; L.edit = null; L.draft = null; markChanged(r.g);
             L.note = "Saved: the group's " + fmt(r.g.wordings) + (r.g.wordings === 1 ? " wording reads " : " wordings read ") + name + ".";
             render();
           }).catch(function (e) { L.busy = false; L.note = "The reference did not save (" + saveWords(e) + "). Nothing changed."; render(); });
@@ -973,7 +993,7 @@
         inp.setAttribute("aria-busy", "true");
         LIST_ENGINE.cellNote("Saving the reference of " + r.m.rec + "…");
         return listSetReference(r.g, value).then(function () {
-          inp.value = value; inp.setAttribute("data-was", value); inp.removeAttribute("aria-busy");
+          inp.value = value; inp.setAttribute("data-was", value); inp.removeAttribute("aria-busy"); markChanged(r.g);
           LIST_ENGINE.cellNote("Saved the reference of " + r.m.rec + (r.g.wordings > 1 ? "; its group's other wordings read it too." : "."));
           // A group of several wordings repaints, so every row of it shows the new reference.
           if (r.g.wordings > 1) LIST_ENGINE.redraw();
@@ -1005,7 +1025,7 @@
         return function () {
           LIST_ENGINE.cellNote("Recording " + words.toLowerCase() + " for " + refOf(g) + "…");
           listDecide(g, decision).then(function () {
-            h.L.open = null; LIST_ENGINE.cellNote("Recorded: " + words.toLowerCase() + ", " + refOf(g) + "."); LIST_ENGINE.redraw();
+            h.L.open = null; markChanged(g); LIST_ENGINE.cellNote("Recorded: " + words.toLowerCase() + ", " + refOf(g) + "."); LIST_ENGINE.redraw();
           }).catch(function (e) { LIST_ENGINE.cellNote("It did not save (" + saveWords(e) + "). Nothing changed."); });
         };
       };
