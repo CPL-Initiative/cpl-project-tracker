@@ -18,6 +18,13 @@ the college issues that course, and ASE issues only the test (Sam, 2026-10-31). 
 ("SP/2 HD", "Snap-on 604", "MACS/609", "Cummins ISX") is kept as unresolved, for the next family to claim, and so is an
 ASE credential the catalog does not list (Master Automobile Technician, xEV, the G1 test).
 
+Second family: the exams colleges award credit for by examination, College Board's AP and CLEP and the IB's Diploma
+Programme subjects (S546, 2026-11-02). The catalog lists each official exam (kb/_build_it_ai_credential_catalog.py reads
+the fold readers' lists), and the reference names its AP, CLEP and IB titles by those same official names (Sam's fold
+rulings, 2026-10-31 and Open Asks Sheet 150). So a title that is an official exam HOLDS that exam; a title naming two
+joined by "or" ("AP English Literature and Composition or AP English Language and Composition") holds either, rule
+"any"; a title the readers hold back as naming no one exam ("AP Physics") is kept as unresolved.
+
 ASE's test names come from kb/_sweep_exhibit_titles.py's ASE table (imported, never copied). Writes
 kb/exhibit_cert_links.json; the daily run rebuilds it after the credential reference; the Exhibits List's finder and
 title drawer read it. Standard library only.
@@ -69,6 +76,20 @@ def catalog_ase():
     return by_code, dupes
 
 
+EXAM_PREFIX = re.compile(r"^(AP|CLEP|IB) ")
+
+
+def catalog_exams():
+    """The catalog's AP, CLEP and IB exams, by name (the kind the catalog builder gives them)."""
+    rows = json.loads(CATALOG.read_text(encoding="utf-8"))["credentials"]
+    out = {}
+    for r in sorted(rows, key=lambda r: (len(r["id"]), r["id"])):
+        if r.get("kind") == "exam" and EXAM_PREFIX.match(r.get("name", "")):
+            out.setdefault(r["name"], {"id": r["id"], "name": r["name"], "issuer": r["issuer"],
+                                       "status": r.get("status")})
+    return out
+
+
 CODE = re.compile(r"\b([A-Z]{1,3}\d{1,2})\b")
 FILLER = {"certification", "any", "bundle", "and"}
 RANGE = re.compile(r"\b([A-Z]{1,2})(\d{1,2})\s*[–-]\s*(?:[A-Z]{1,2})?(\d{1,2})\b")
@@ -77,6 +98,7 @@ RANGE = re.compile(r"\b([A-Z]{1,2})(\d{1,2})\s*[–-]\s*(?:[A-Z]{1,2})?(\d{1,2})
 def build():
     names = ase_names()
     by_code, dupes = catalog_ase()
+    exams = catalog_exams()
     rows, generated = load_reference()
     certs, links = {}, {}
     unmatched_codes = set()
@@ -92,6 +114,25 @@ def build():
 
     for r in rows:
         ut = r.get("ut") or ""
+        fam = EXAM_PREFIX.match(ut)
+        if fam:
+            parts = [p.strip() for p in re.split(r"\s+or\s+(?=(?:AP|CLEP|IB) )", ut)]
+            ids, unresolved = [], []
+            for part in parts:
+                # The catalog keys a row by its core name, so an IB Language A exam written in another
+                # language is the same row as the exam itself; the reference keeps the split, the link
+                # points both at the one exam.
+                e = exams.get(part) or exams.get(part.replace(" (Non-English)", ""))
+                if e:
+                    certs[e["id"]] = {"code": None, "name": e["name"], "catalog_name": e["name"],
+                                      "issuer": e["issuer"], "family": fam.group(1)}
+                    ids.append(e["id"])
+                else:
+                    unresolved.append(part + " (names no one official exam)" if len(parts) == 1 else part)
+            links[ut] = {"relation": "holds", "rule": "any" if len(parts) > 1 else "all", "certs": ids}
+            if unresolved:
+                links[ut]["unresolved"] = unresolved
+            continue
         if re.match(r"^ASE\b", ut):
             body = re.sub(r"^ASE\s*(Bundle)?\s*[—–-]?\s*", "", ut)
             # The tests named: ranges first (A1–A8 is A1 to A8), then single codes, anywhere in the title.
@@ -132,7 +173,7 @@ def build():
     return {
         "schema": 1,
         "_what": "Which certifications each canonical exhibit title holds (or is aligned to), by the industry credential "
-                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE.",
+                 "catalog's ids. Built by kb/_build_exhibit_cert_links.py; its docstring states the rules. Families: ASE, AP, CLEP, IB.",
         "_reference_generated_at": generated,
         "counts": {"certs_linked": len(certs), "titles_linked": len(links), "holds": len(holds), "bundles": len(bundles),
                    "aligned": len(links) - len(holds), "codes_not_in_catalog": sorted(unmatched_codes)},

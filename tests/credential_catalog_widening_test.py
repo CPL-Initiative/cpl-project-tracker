@@ -15,6 +15,11 @@ The failure modes worth a test, none of them "does it parse":
      The hand check of Credential Engine's top 50 wins: its 11 in_map credentials
      come out in MAP, and its related and not_in_map ones stay out (ASE Entry-Level
      is not ASE G1; PCEP is not PCAP). Acronym twins need the issuer too (CDA, CPT).
+  6. THE EXAMS (S546, 2026-11-02). Every official AP, CLEP and IB exam the fold readers
+     list is a catalog row of kind "exam" under its issuer, a retired exam marked retired
+     (never IB Mathematics: Analysis and Approaches, which merely shares a prefix with the
+     retired IB Mathematics), and every reference title that is an official exam joins its
+     row; the link holds each one, and a title naming no one exam stays unresolved.
 
 Run: python3 tests/credential_catalog_widening_test.py
 """
@@ -122,6 +127,41 @@ class Built(unittest.TestCase):
         self.assertEqual(titles("Bookkeeping Certification"), [])
         self.assertEqual(titles("First Aid Certification"), [])
         self.assertNotIn("Child Development Associate (CDA) Credential", titles("Certified Dental Assistant (CDA)"))
+
+
+class Exams(unittest.TestCase):
+    @classmethod
+    def setUpClass(cls):
+        with open(os.path.join(REPO, "kb", "it_ai_credential_catalog.json"), encoding="utf-8") as fh:
+            cls.rows = {r["name"]: r for r in json.load(fh)["credentials"] if r.get("kind") == "exam"}
+        with open(os.path.join(REPO, "kb", "exhibit_cert_links.json"), encoding="utf-8") as fh:
+            cls.links = json.load(fh)["links"]
+
+    def test_every_official_exam_is_a_row_with_its_status(self):
+        for fam in b.official_exam_lists():
+            for name, retired in fam["exams"]:
+                r = self.rows.get(name) or self.rows.get(name.replace(" (Non-English)", ""))
+                self.assertIsNotNone(r, name)
+                self.assertEqual(r["issuer"], fam["issuer"], name)
+                if name in self.rows:
+                    self.assertEqual(r["status"], "retired" if retired else "active", name)
+
+    def test_a_shared_prefix_is_not_retirement(self):
+        self.assertEqual(self.rows["IB Mathematics: Analysis and Approaches HL"]["status"], "active")
+        self.assertEqual(self.rows["IB Mathematics HL"]["status"], "retired")
+        self.assertEqual(self.rows["AP Physics B"]["status"], "retired")
+
+    def test_official_titles_join_and_link(self):
+        for name in ("AP Biology", "CLEP Principles of Marketing", "IB Biology HL"):
+            self.assertIn(name, (self.rows[name].get("map") or {}).get("titles", []), name)
+            self.assertEqual(self.links[name]["certs"], [self.rows[name]["id"]], name)
+
+    def test_two_exams_any_and_no_exam_unresolved(self):
+        two = self.links["AP English Literature and Composition or AP English Language and Composition"]
+        self.assertEqual((two["rule"], len(two["certs"])), ("any", 2))
+        self.assertEqual(self.links["AP Physics"]["certs"], [])
+        self.assertTrue(self.links["AP Physics"]["unresolved"])
+        self.assertTrue(self.links["IB Language A1 HL (Non-English)"]["certs"])
 
 
 if __name__ == "__main__":

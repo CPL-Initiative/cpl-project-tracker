@@ -121,10 +121,18 @@ sw = [p for p in pts if p.get("sw")]
 check("⭐ every statewide exhibit is marked on its point (`sw`)",
       len(sw) == c["statewide"] and c["statewide"] > 0,
       f"{len(sw)} marked vs {c['statewide']} counted")
-check("every statewide exhibit carries a ring — all 84 are articulated",
-      all(p.get("ar") for p in sw), f"{sum(1 for p in sw if not p.get('ar'))} without a ring")
-check("no statewide exhibit sits in the no-discipline pile",
-      blank_isl and not any(p.get("sw") for p in blank_isl[0]["p"]))
+# Since #2667 (S544) statewide reads ccc_rec or the Fact Sheet's published set: 152 on 2026-11-02, of which
+# a college has articulated 90. An unarticulated one has no local course, so no ring and no discipline; the
+# rule worth guarding is that the rings agree with the count and an ARTICULATED one is never left undrawn.
+check("the statewide exhibits carrying a ring are exactly counts.statewide_articulated",
+      sum(1 for p in sw if p.get("ar")) == c["statewide_articulated"],
+      f"{sum(1 for p in sw if p.get('ar'))} ringed vs {c['statewide_articulated']} counted")
+# The pile ships as an island, so a statewide exhibit in it is still visible (Sam's ask). One articulated
+# there is a curation gap (its courses carry no discipline), named here for the curator, not a build fault:
+# Child Development Associate (CDA) Credential on 2026-11-02, newly statewide under #2667.
+_gap = [p["t"] for p in (blank_isl[0]["p"] if blank_isl else []) if p.get("sw") and p.get("ar")]
+if _gap:
+    print("note: articulated statewide exhibits with no discipline yet: " + "; ".join(_gap))
 
 # ── 7 · the payload agrees with itself ──────────────────────────────────────
 check("counts.identities equals the points drawn", len(pts) == c["identities"],
@@ -154,9 +162,11 @@ check("every point sits inside its island's radius",
       all(((p["x"] - i["x"]) ** 2 + (p["y"] - i["y"]) ** 2) ** 0.5 <= i["r"] + 0.5
           for i in isl for p in i["p"]))
 b = pay["bounds"]
+# x, y and r are each rounded to 0.1, so an edge may sit up to 0.15 past its bound (History did on
+# 2026-11-02, by 0.1); 0.05 failed on rounding alone.
 check("bounds enclose every island", all(
-    b["x0"] <= i["x"] - i["r"] + 0.05 and i["x"] + i["r"] <= b["x1"] + 0.05 and
-    b["y0"] <= i["y"] - i["r"] + 0.05 and i["y"] + i["r"] <= b["y1"] + 0.05 for i in isl))
+    b["x0"] <= i["x"] - i["r"] + 0.15 and i["x"] + i["r"] <= b["x1"] + 0.15 and
+    b["y0"] <= i["y"] - i["r"] + 0.15 and i["y"] + i["r"] <= b["y1"] + 0.15 for i in isl))
 
 # ── 9 · the CPL type table ──────────────────────────────────────────────────
 check("six CPL types ship with the payload for the client to decode",

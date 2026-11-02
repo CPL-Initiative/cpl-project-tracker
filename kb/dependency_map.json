@@ -6893,7 +6893,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 36
+     "line": 43
     },
     {
      "id": "script:kb/_build_exhibits_ai_sort.py",
@@ -12704,7 +12704,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 772
+     "line": 801
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -13833,14 +13833,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 37
+     "line": 44
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 37
+     "line": 44
     },
     {
      "id": "script:scripts/build_exhibits_list_preview.py",
@@ -14417,7 +14417,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 35
+     "line": 42
     },
     {
      "id": "script:kb/_build_it_ai_credential_catalog.py",
@@ -15476,7 +15476,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 623
+     "line": 641
     }
    ],
    "served": true,
@@ -16138,7 +16138,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 621
+     "line": 639
     },
     {
      "id": "script:kb/_fetch_ce_top50.py",
@@ -16185,7 +16185,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 881
+     "line": 910
     }
    ],
    "served": true,
