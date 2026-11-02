@@ -1,0 +1,796 @@
+{
+ "college": "Palomar College",
+ "homepage": "https://www.palomar.edu/",
+ "read_at": "2026-11-02T10:23:45+00:00",
+ "pages": [
+  {
+   "url": "https://www.palomar.edu/",
+   "final_url": "https://www.palomar.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Palomar College Superintendent/President Finalists Selected",
+     "position": "college_ceo",
+     "window": [
+      "View All News",
+      "Palomar Students Shine at Design Week",
+      "Fire Academy Alumnus Now Escondido Chief",
+      "Palomar College Superintendent/President Finalists Selected",
+      "Thom Kaumeyer – Back Home at Palomar College",
+      "College Event Calendar",
+      "View All Events"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.palomar.edu/enrollmentservices/event/veterans-day-4/",
+   "final_url": "https://www.palomar.edu/enrollmentservices/event/veterans-day-4/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veteran’s Day – Enrollment Services",
+     "position": "vrc",
+     "window": [
+      "Veteran’s Day – Enrollment Services",
+      "Skip to main content",
+      "A-Z",
+      "Canvas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veteran Services",
+     "position": "vrc",
+     "window": [
+      "Counseling",
+      "Financial Aid",
+      "Tuition and Fees",
+      "Veteran Services",
+      "Contact Us",
+      "You are here:",
+      "Palomar Home"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.palomar.edu/calendar/event/veterans-day-4/",
+   "final_url": "https://www.palomar.edu/calendar/event/veterans-day-4/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.palomar.edu/directory/",
+   "final_url": "https://www.palomar.edu/directory/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.palomar.edu/veterans/",
+   "final_url": "https://www.palomar.edu/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "- Veterans Services",
+     "position": "vrc",
+     "window": [
+      "- Veterans Services",
+      "Skip to main content",
+      "A-Z",
+      "Canvas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "German",
+      "Arabic",
+      "Russian",
+      "Veterans Services",
+      "Site Menu",
+      "Site Search",
+      "Veterans Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans Services",
+      "Site Menu",
+      "Site Search",
+      "Veterans Services",
+      "Veterans Home",
+      "VA Certifications",
+      "Forms"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center Counselors",
+     "position": "vrc",
+     "window": [
+      "Forms",
+      "P.A.V.E (Peer Advisors for Veteran Education)",
+      "Resources",
+      "Veterans Resource Center Counselors",
+      "Camp Pendleton Campus",
+      "Federal VA Work-Study Program",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "You are here:",
+      "Palomar Home",
+      "›",
+      "Veterans Services",
+      "Serving Those Who Served",
+      "The Veterans Resource Center supports all Veterans, Active Duty, and Dependents currently enrolled at Palomar College. We strive to provide the most up-to-date information pertaining to Veteran Affairs Educational benefits and policies to our students.",
+      "Veterans Day 2025 Recap"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Vets Crisis Line",
+      "Free Office 365",
+      "Contact Information",
+      "Veterans Services",
+      "Palomar College, San Marcos Campus",
+      "Location: ST-52",
+      "1140 W. Mission Road,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services Specialist",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 3795",
+      "Anthony Beteta",
+      "Veterans Services Specialist",
+      "Email: abeteta@palomar.edu abeteta@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2175"
+     ],
+     "emails": [
+      "abeteta@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2175",
+      "Adam Pipitone",
+      "Veterans Services Specialist",
+      "Email: apipitone@palomar.edu apipitone@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2227"
+     ],
+     "emails": [
+      "apipitone@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist (Sub)",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2227",
+      "Demontay Ellison",
+      "Veterans Services Specialist (Sub)",
+      "Email: dellison@palomar.edu dellison@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2829"
+     ],
+     "emails": [
+      "dellison@palomar.edu"
+     ]
+    },
+    {
+     "line": "Supervisor, Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2829",
+      "Jessica Horn",
+      "Supervisor, Veterans Services",
+      "Email: jhorn@palomar.edu jhorn@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2176"
+     ],
+     "emails": [
+      "jhorn@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2176",
+      "Hours of Operation",
+      "Veterans Resource Center",
+      "Monday - Thursday : 8:00 a.m. - 5:00 p.m.",
+      "Friday: 8:00 a.m. - 2:00 p.m.",
+      "Library"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.palomar.edu/veterans",
+   "final_url": "https://www.palomar.edu/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "- Veterans Services",
+     "position": "vrc",
+     "window": [
+      "- Veterans Services",
+      "Skip to main content",
+      "A-Z",
+      "Canvas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "German",
+      "Arabic",
+      "Russian",
+      "Veterans Services",
+      "Site Menu",
+      "Site Search",
+      "Veterans Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans Services",
+      "Site Menu",
+      "Site Search",
+      "Veterans Services",
+      "Veterans Home",
+      "VA Certifications",
+      "Forms"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center Counselors",
+     "position": "vrc",
+     "window": [
+      "Forms",
+      "P.A.V.E (Peer Advisors for Veteran Education)",
+      "Resources",
+      "Veterans Resource Center Counselors",
+      "Camp Pendleton Campus",
+      "Federal VA Work-Study Program",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "You are here:",
+      "Palomar Home",
+      "›",
+      "Veterans Services",
+      "Serving Those Who Served",
+      "The Veterans Resource Center supports all Veterans, Active Duty, and Dependents currently enrolled at Palomar College. We strive to provide the most up-to-date information pertaining to Veteran Affairs Educational benefits and policies to our students.",
+      "Veterans Day 2025 Recap"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Vets Crisis Line",
+      "Free Office 365",
+      "Contact Information",
+      "Veterans Services",
+      "Palomar College, San Marcos Campus",
+      "Location: ST-52",
+      "1140 W. Mission Road,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services Specialist",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 3795",
+      "Anthony Beteta",
+      "Veterans Services Specialist",
+      "Email: abeteta@palomar.edu abeteta@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2175"
+     ],
+     "emails": [
+      "abeteta@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2175",
+      "Adam Pipitone",
+      "Veterans Services Specialist",
+      "Email: apipitone@palomar.edu apipitone@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2227"
+     ],
+     "emails": [
+      "apipitone@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist (Sub)",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2227",
+      "Demontay Ellison",
+      "Veterans Services Specialist (Sub)",
+      "Email: dellison@palomar.edu dellison@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2829"
+     ],
+     "emails": [
+      "dellison@palomar.edu"
+     ]
+    },
+    {
+     "line": "Supervisor, Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2829",
+      "Jessica Horn",
+      "Supervisor, Veterans Services",
+      "Email: jhorn@palomar.edu jhorn@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2176"
+     ],
+     "emails": [
+      "jhorn@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2176",
+      "Hours of Operation",
+      "Veterans Resource Center",
+      "Monday - Thursday : 8:00 a.m. - 5:00 p.m.",
+      "Friday: 8:00 a.m. - 2:00 p.m.",
+      "Library"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.palomar.edu/veterans/pavepalomar/",
+   "final_url": "https://www.palomar.edu/veterans/pavepalomar/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "P.A.V.E (Peer Advisors for Veteran Education) - Veterans Services",
+     "position": "vrc",
+     "window": [
+      "P.A.V.E (Peer Advisors for Veteran Education) - Veterans Services",
+      "Skip to main content",
+      "A-Z",
+      "Canvas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "German",
+      "Arabic",
+      "Russian",
+      "Veterans Services",
+      "Site Menu",
+      "Site Search",
+      "Veterans Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans Services",
+      "Site Menu",
+      "Site Search",
+      "Veterans Services",
+      "Veterans Home",
+      "VA Certifications",
+      "Forms"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center Counselors",
+     "position": "vrc",
+     "window": [
+      "Forms",
+      "P.A.V.E (Peer Advisors for Veteran Education)",
+      "Resources",
+      "Veterans Resource Center Counselors",
+      "Camp Pendleton Campus",
+      "Federal VA Work-Study Program",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "You are here:",
+      "Palomar Home",
+      "›",
+      "Veterans Services",
+      "›",
+      "P.A.V.E (Peer Advisors for Veteran Education)",
+      "P.A.V.E (Peer Advisors for Veteran Education)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Become a Peer Advisor",
+      "Last modified on July 2, 2026",
+      "Contact Information",
+      "Veterans Services",
+      "Palomar College, San Marcos Campus",
+      "Location: ST-52",
+      "1140 W. Mission Road,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services Specialist",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 3795",
+      "Anthony Beteta",
+      "Veterans Services Specialist",
+      "Email: abeteta@palomar.edu abeteta@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2175"
+     ],
+     "emails": [
+      "abeteta@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2175",
+      "Adam Pipitone",
+      "Veterans Services Specialist",
+      "Email: apipitone@palomar.edu apipitone@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2227"
+     ],
+     "emails": [
+      "apipitone@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist (Sub)",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2227",
+      "Demontay Ellison",
+      "Veterans Services Specialist (Sub)",
+      "Email: dellison@palomar.edu dellison@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2829"
+     ],
+     "emails": [
+      "dellison@palomar.edu"
+     ]
+    },
+    {
+     "line": "Supervisor, Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2829",
+      "Jessica Horn",
+      "Supervisor, Veterans Services",
+      "Email: jhorn@palomar.edu jhorn@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2176"
+     ],
+     "emails": [
+      "jhorn@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2176",
+      "Hours of Operation",
+      "Veterans Resource Center",
+      "Monday - Thursday : 8:00 a.m. - 5:00 p.m.",
+      "Friday: 8:00 a.m. - 2:00 p.m.",
+      "Library"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.palomar.edu/veterans/veteran-counselors/",
+   "final_url": "https://www.palomar.edu/veterans/veteran-counselors/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Resource Center Counselors - Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center Counselors - Veterans Services",
+      "Skip to main content",
+      "A-Z",
+      "Canvas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "German",
+      "Arabic",
+      "Russian",
+      "Veterans Services",
+      "Site Menu",
+      "Site Search",
+      "Veterans Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans Services",
+      "Site Menu",
+      "Site Search",
+      "Veterans Services",
+      "Veterans Home",
+      "VA Certifications",
+      "Forms"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center Counselors",
+     "position": "vrc",
+     "window": [
+      "Forms",
+      "P.A.V.E (Peer Advisors for Veteran Education)",
+      "Resources",
+      "Veterans Resource Center Counselors",
+      "Camp Pendleton Campus",
+      "Federal VA Work-Study Program",
+      "FAQ"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "You are here:",
+      "Palomar Home",
+      "›",
+      "Veterans Services",
+      "›",
+      "Veterans Resource Center Counselors",
+      "Veterans Resource Center Counselors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center Counselors",
+     "position": "vrc",
+     "window": [
+      "›",
+      "Veterans Services",
+      "›",
+      "Veterans Resource Center Counselors",
+      "Veterans Resource Center Counselors",
+      "Contact the Veterans Resource Center to Schedule Your Counseling Appointment:",
+      "Veterans Resource Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center Counselors",
+     "position": "vrc",
+     "window": [
+      "Veterans Services",
+      "›",
+      "Veterans Resource Center Counselors",
+      "Veterans Resource Center Counselors",
+      "Contact the Veterans Resource Center to Schedule Your Counseling Appointment:",
+      "Veterans Resource Center",
+      "Office Hours"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact the Veterans Resource Center to Schedule Your Counseling Appointment:",
+     "position": "vrc",
+     "window": [
+      "›",
+      "Veterans Resource Center Counselors",
+      "Veterans Resource Center Counselors",
+      "Contact the Veterans Resource Center to Schedule Your Counseling Appointment:",
+      "Veterans Resource Center",
+      "Office Hours",
+      "Mon - Thur 8:00am - 5:00pm"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Resource Center Counselors",
+      "Veterans Resource Center Counselors",
+      "Contact the Veterans Resource Center to Schedule Your Counseling Appointment:",
+      "Veterans Resource Center",
+      "Office Hours",
+      "Mon - Thur 8:00am - 5:00pm",
+      "Friday 8:00am - 2:00pm"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services",
+     "position": "vrc",
+     "window": [
+      "jdodderidge@palomar.edu",
+      "Note: Federal privacy laws restrict the type of information we provide on the phone. We can only provide general information to students regarding their file. Parents and Spouses are reminded that we cannot provide information about the student without a written release signed by the student authorizing staff to discuss the record.",
+      "Contact Information",
+      "Veterans Services",
+      "Palomar College, San Marcos Campus",
+      "Location: ST-52",
+      "1140 W. Mission Road,"
+     ],
+     "emails": [
+      "jdodderidge@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 3795",
+      "Anthony Beteta",
+      "Veterans Services Specialist",
+      "Email: abeteta@palomar.edu abeteta@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2175"
+     ],
+     "emails": [
+      "abeteta@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2175",
+      "Adam Pipitone",
+      "Veterans Services Specialist",
+      "Email: apipitone@palomar.edu apipitone@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2227"
+     ],
+     "emails": [
+      "apipitone@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Services Specialist (Sub)",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2227",
+      "Demontay Ellison",
+      "Veterans Services Specialist (Sub)",
+      "Email: dellison@palomar.edu dellison@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2829"
+     ],
+     "emails": [
+      "dellison@palomar.edu"
+     ]
+    },
+    {
+     "line": "Supervisor, Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2829",
+      "Jessica Horn",
+      "Supervisor, Veterans Services",
+      "Email: jhorn@palomar.edu jhorn@palomar.edu",
+      "Phone:",
+      "(760) 744-1150, ext. 2176"
+     ],
+     "emails": [
+      "jhorn@palomar.edu"
+     ]
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Phone:",
+      "(760) 744-1150, ext. 2176",
+      "Hours of Operation",
+      "Veterans Resource Center",
+      "Monday - Thursday : 8:00 a.m. - 5:00 p.m.",
+      "Friday: 8:00 a.m. - 2:00 p.m.",
+      "Library"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41427972048"
+}

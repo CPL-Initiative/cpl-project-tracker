@@ -1,0 +1,1798 @@
+{
+ "college": "Riverside City College",
+ "homepage": "https://www.rcc.edu/",
+ "read_at": "2026-11-02T10:27:09+00:00",
+ "pages": [
+  {
+   "url": "https://www.rcc.edu/",
+   "final_url": "https://www.rcc.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "benefit services.",
+      "Admissions for veteran",
+      "Student life at RCC",
+      "Veterans Resource Center",
+      "I’m a high school or adult school student",
+      "Start your college career in high school or adult school by earning college credit",
+      "at the same time. Dual Enrollment students earn college credit before graduating."
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.rcc.edu/about/leadership.html",
+   "final_url": "https://www.rcc.edu/about/leadership.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Emergency Hub",
+      "Careers at RCC",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Directory",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "the College mission.",
+      "RCC Administrative Leadership Team",
+      "Dr. Eric Bishop",
+      "President",
+      "Dr. Lynn Wright",
+      "Vice President,",
+      "Academic Affairs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President,",
+     "position": null,
+     "window": [
+      "Dr. Eric Bishop",
+      "President",
+      "Dr. Lynn Wright",
+      "Vice President,",
+      "Academic Affairs",
+      "Elia Blount",
+      "Vice President,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President,",
+     "position": null,
+     "window": [
+      "Vice President,",
+      "Academic Affairs",
+      "Elia Blount",
+      "Vice President,",
+      "Business Services",
+      "Dr. Kristi Woods",
+      "Vice President,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President,",
+     "position": null,
+     "window": [
+      "Vice President,",
+      "Business Services",
+      "Dr. Kristi Woods",
+      "Vice President,",
+      "Planning and Development",
+      "Dr. FeRita Carter",
+      "Vice President,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President,",
+     "position": null,
+     "window": [
+      "Vice President,",
+      "Planning and Development",
+      "Dr. FeRita Carter",
+      "Vice President,",
+      "Student Services",
+      "Administrators",
+      "John Adkins"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Student Services",
+      "Administrators",
+      "John Adkins",
+      "Dean,",
+      "Instruction Fine & Performing Arts",
+      "Herbert English",
+      "Dean,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Instruction Fine & Performing Arts",
+      "Herbert English",
+      "Dean,",
+      "Counseling and Special Programs",
+      "Dr. Thomas Cruz-Soto",
+      "Dean,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Counseling and Special Programs",
+      "Dr. Thomas Cruz-Soto",
+      "Dean,",
+      "Student Services",
+      "Vacant",
+      "Dean,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Student Services",
+      "Vacant",
+      "Dean,",
+      "Instruction STEM",
+      "Wendy McEwen",
+      "Dean,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Instruction STEM",
+      "Wendy McEwen",
+      "Dean,",
+      "Institutional Effectiveness",
+      "lorena.newson@rcc.edu Dr. Lorena Newson",
+      "Dean,"
+     ],
+     "emails": [
+      "lorena.newson@rcc.edu"
+     ]
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Institutional Effectiveness",
+      "lorena.newson@rcc.edu Dr. Lorena Newson",
+      "Dean,",
+      "Equity, Inclusion, and Engagement",
+      "kyla.teufel@rcc.edu Kyla Teufel",
+      "Dean,"
+     ],
+     "emails": [
+      "kyla.teufel@rcc.edu",
+      "lorena.newson@rcc.edu"
+     ]
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Equity, Inclusion, and Engagement",
+      "kyla.teufel@rcc.edu Kyla Teufel",
+      "Dean,",
+      "Enrollment Services",
+      "Dr. Tammy Vant Hul",
+      "Dean,"
+     ],
+     "emails": [
+      "kyla.teufel@rcc.edu"
+     ]
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Enrollment Services",
+      "Dr. Tammy Vant Hul",
+      "Dean,",
+      "Instruction School of Nursing",
+      "Dr. Shari Yates",
+      "Dean,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Instruction School of Nursing",
+      "Dr. Shari Yates",
+      "Dean,",
+      "Instruction Career and Technical Education​",
+      "rachel.weiss@rcc.edu Dr. Rachel Weiss",
+      "Dean,"
+     ],
+     "emails": [
+      "rachel.weiss@rcc.edu"
+     ]
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Instruction Career and Technical Education​",
+      "rachel.weiss@rcc.edu Dr. Rachel Weiss",
+      "Dean,",
+      "Grant Development & Administration",
+      "Micherri Wiggs",
+      "Interim Dean,"
+     ],
+     "emails": [
+      "rachel.weiss@rcc.edu"
+     ]
+    },
+    {
+     "line": "Interim Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Grant Development & Administration",
+      "Micherri Wiggs",
+      "Interim Dean,",
+      "Instruction Languages, Humanities and Social Sciences",
+      "Jennifer Spalding",
+      "Dean,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Interim Dean,",
+      "Instruction Languages, Humanities and Social Sciences",
+      "Jennifer Spalding",
+      "Dean,",
+      "Instruction Kinesiology",
+      "Dr. Naomi Q. Abesamis",
+      "Dean,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean,",
+     "position": null,
+     "window": [
+      "Dean,",
+      "Instruction Kinesiology",
+      "Dr. Naomi Q. Abesamis",
+      "Dean,",
+      "Student Development and Wellness",
+      "Riverside City College",
+      "4800 Magnolia Avenue"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.rcc.edu/about/presidents-office.html",
+   "final_url": "https://www.rcc.edu/about/presidents-office.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Skip to content",
+      "Menu",
+      "AboutToggle Submenu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Staff Directory",
+      "toggle search",
+      "Search RCCClose",
+      "Office of the President",
+      "In this Section",
+      "About Us",
+      "Why RCC"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Emergency Hub",
+      "Careers at RCC",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Directory",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President, Eric Bishop",
+     "position": "college_ceo",
+     "window": [
+      "Home",
+      "About Us",
+      "Welcome to Riverside City College",
+      "President, Eric Bishop",
+      "Eric Bishop, Ed.D., serves as president of Riverside City College. After leading the",
+      "college for one year as interim president, he was appointed to the permanent position",
+      "and is now entering his second year as president. With more than 20 years of leadership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Eric Bishop, Ed.D., serves as president of Riverside City College. After leading the",
+     "position": "college_ceo",
+     "window": [
+      "About Us",
+      "Welcome to Riverside City College",
+      "President, Eric Bishop",
+      "Eric Bishop, Ed.D., serves as president of Riverside City College. After leading the",
+      "college for one year as interim president, he was appointed to the permanent position",
+      "and is now entering his second year as president. With more than 20 years of leadership",
+      "experience in higher education, Dr. Bishop is a dedicated advocate for student success,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "college for one year as interim president, he was appointed to the permanent position",
+     "position": "college_ceo",
+     "window": [
+      "Welcome to Riverside City College",
+      "President, Eric Bishop",
+      "Eric Bishop, Ed.D., serves as president of Riverside City College. After leading the",
+      "college for one year as interim president, he was appointed to the permanent position",
+      "and is now entering his second year as president. With more than 20 years of leadership",
+      "experience in higher education, Dr. Bishop is a dedicated advocate for student success,",
+      "educational access, and equity."
+     ],
+     "emails": []
+    },
+    {
+     "line": "and is now entering his second year as president. With more than 20 years of leadership",
+     "position": "college_ceo",
+     "window": [
+      "President, Eric Bishop",
+      "Eric Bishop, Ed.D., serves as president of Riverside City College. After leading the",
+      "college for one year as interim president, he was appointed to the permanent position",
+      "and is now entering his second year as president. With more than 20 years of leadership",
+      "experience in higher education, Dr. Bishop is a dedicated advocate for student success,",
+      "educational access, and equity.",
+      "Throughout his career, Dr. Bishop has held senior leadership roles across California’s"
+     ],
+     "emails": []
+    },
+    {
+     "line": "higher education system, including vice chancellor of the Riverside Community College",
+     "position": "vice_chancellor",
+     "window": [
+      "experience in higher education, Dr. Bishop is a dedicated advocate for student success,",
+      "educational access, and equity.",
+      "Throughout his career, Dr. Bishop has held senior leadership roles across California’s",
+      "higher education system, including vice chancellor of the Riverside Community College",
+      "District, superintendent/president of Ohlone College, and associate superintendent",
+      "at Chaffey College. His leadership has focused on advancing institutional effectiveness,",
+      "innovation, and student achievement."
+     ],
+     "emails": []
+    },
+    {
+     "line": "District, superintendent/president of Ohlone College, and associate superintendent",
+     "position": "college_ceo",
+     "window": [
+      "educational access, and equity.",
+      "Throughout his career, Dr. Bishop has held senior leadership roles across California’s",
+      "higher education system, including vice chancellor of the Riverside Community College",
+      "District, superintendent/president of Ohlone College, and associate superintendent",
+      "at Chaffey College. His leadership has focused on advancing institutional effectiveness,",
+      "innovation, and student achievement.",
+      "In addition to his administrative experience, Dr. Bishop has taught in doctoral and"
+     ],
+     "emails": []
+    },
+    {
+     "line": "the University of La Verne. As president, Dr. Bishop leads Riverside City College’s",
+     "position": "college_ceo",
+     "window": [
+      "graduate programs at the University of La Verne, San Diego State University, Cal Poly",
+      "Pomona, and Cal State San Bernardino. He earned his Doctor of Education in Organizational",
+      "Leadership, Master of Arts in Communications, and Bachelor of Arts in Journalism from",
+      "the University of La Verne. As president, Dr. Bishop leads Riverside City College’s",
+      "efforts to expand opportunities for nearly 30,000 students while advancing the college’s",
+      "commitment to academic excellence, equity, innovation, and community engagement.",
+      "Office of the President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "the University of La Verne. As president, Dr. Bishop leads Riverside City College’s",
+      "efforts to expand opportunities for nearly 30,000 students while advancing the college’s",
+      "commitment to academic excellence, equity, innovation, and community engagement.",
+      "Office of the President",
+      "Expand AllCollapse All",
+      "External Newsletter",
+      "Stay connected with the Office of the President through messages that share important"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Stay connected with the Office of the President through messages that share important",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Expand AllCollapse All",
+      "External Newsletter",
+      "Stay connected with the Office of the President through messages that share important",
+      "college updates, celebrate the achievements of our students and employees, and provide",
+      "perspective on the priorities and opportunities shaping our college community.",
+      "If the communication you are looking for is not available here, please contact Jessica"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vierra, Public Affairs Officer, at jessica.vierra@rccd.edu jessica.vierra@rccd.edu for assistance.",
+     "position": null,
+     "window": [
+      "college updates, celebrate the achievements of our students and employees, and provide",
+      "perspective on the priorities and opportunities shaping our college community.",
+      "If the communication you are looking for is not available here, please contact Jessica",
+      "Vierra, Public Affairs Officer, at jessica.vierra@rccd.edu jessica.vierra@rccd.edu for assistance.",
+      "Back to top",
+      "Internal Communication",
+      "Stay connected with the Office of the President through messages that share important"
+     ],
+     "emails": [
+      "jessica.vierra@rccd.edu"
+     ]
+    },
+    {
+     "line": "Stay connected with the Office of the President through messages that share important",
+     "position": "college_ceo",
+     "window": [
+      "Vierra, Public Affairs Officer, at jessica.vierra@rccd.edu jessica.vierra@rccd.edu for assistance.",
+      "Back to top",
+      "Internal Communication",
+      "Stay connected with the Office of the President through messages that share important",
+      "college updates, celebrate the achievements of our students and employees, and provide",
+      "perspective on the priorities and opportunities shaping our college community.",
+      "Below, you will find links to internal communications from the Office of the President,"
+     ],
+     "emails": [
+      "jessica.vierra@rccd.edu"
+     ]
+    },
+    {
+     "line": "Below, you will find links to internal communications from the Office of the President,",
+     "position": "college_ceo",
+     "window": [
+      "Stay connected with the Office of the President through messages that share important",
+      "college updates, celebrate the achievements of our students and employees, and provide",
+      "perspective on the priorities and opportunities shaping our college community.",
+      "Below, you will find links to internal communications from the Office of the President,",
+      "including campuswide announcements, college updates, important institutional information",
+      "and messages highlighting RCC’s accomplishments, initiatives and priorities. These",
+      "communications are intended to keep faculty, classified professionals and administrators"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vierra, Public Affairs Officer, at jessica.vierra@rccd.edu jessica.vierra@rccd.edu for assistance.",
+     "position": null,
+     "window": [
+      "communications are intended to keep faculty, classified professionals and administrators",
+      "informed, engaged and connected to the ongoing work of Riverside City College.",
+      "If the communication you are looking for is not available here, please contact Jessica",
+      "Vierra, Public Affairs Officer, at jessica.vierra@rccd.edu jessica.vierra@rccd.edu for assistance.",
+      "Back to top",
+      "Fall 2026 State of the College",
+      "Contact Us"
+     ],
+     "emails": [
+      "jessica.vierra@rccd.edu"
+     ]
+    },
+    {
+     "line": "president@rcc.edu president@rcc.edu",
+     "position": "college_ceo",
+     "window": [
+      "Fall 2026 State of the College",
+      "Contact Us",
+      "(951) 222-8804",
+      "president@rcc.edu president@rcc.edu",
+      "president@rcc.edu Get in Touch",
+      "Dr. Charles A. Kane Building (CAK), 230",
+      "Riverside City College"
+     ],
+     "emails": [
+      "president@rcc.edu"
+     ]
+    },
+    {
+     "line": "president@rcc.edu Get in Touch",
+     "position": "college_ceo",
+     "window": [
+      "Contact Us",
+      "(951) 222-8804",
+      "president@rcc.edu president@rcc.edu",
+      "president@rcc.edu Get in Touch",
+      "Dr. Charles A. Kane Building (CAK), 230",
+      "Riverside City College",
+      "4800 Magnolia Avenue"
+     ],
+     "emails": [
+      "president@rcc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://rccd.edu/admin/chancellor/index.html",
+   "status": "unreachable",
+   "error": "URLError: <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+  },
+  {
+   "url": "https://www.rcc.edu/academics/articulation.html",
+   "final_url": "https://www.rcc.edu/academics/articulation.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation",
+      "Skip to content",
+      "Menu",
+      "AboutToggle Submenu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Staff Directory",
+      "toggle search",
+      "Search RCCClose",
+      "Articulation",
+      "In this Section",
+      "Academics",
+      "Browse All Programs"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Academic Calendar",
+      "Academic Policies & Procedures",
+      "Apprenticeship Programs",
+      "Articulation",
+      "Class Schedule",
+      "College Catalog",
+      "Course Descriptions"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation is the process of developing a formal, written agreement that identifies",
+     "position": "articulation_officer",
+     "window": [
+      "Enrollment Verification",
+      "Home",
+      "Academics",
+      "Articulation is the process of developing a formal, written agreement that identifies",
+      "courses (or sequences of courses) on a “sending” campus that are comparable to, or",
+      "acceptable in lieu of, specific course requirements at a “receiving” campus. Successful",
+      "completion of an articulated course assures the student and the faculty that the student"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Riverside City College has articulation agreements with the California State University",
+     "position": "articulation_officer",
+     "window": [
+      "completion of an articulated course assures the student and the faculty that the student",
+      "has taken the appropriate course, received the necessary instruction and preparation,",
+      "and that similar outcomes can be assured.",
+      "Riverside City College has articulation agreements with the California State University",
+      "(CSU), University of California (UC), and many private universities. Completing an",
+      "articulated course for a specific major or for general education enables students",
+      "to fulfill a university requirement for admission and/or graduation while at Riverside"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation agreements between Riverside City College and the CSU and UC campuses",
+     "position": "articulation_officer",
+     "window": [
+      "articulated course for a specific major or for general education enables students",
+      "to fulfill a university requirement for admission and/or graduation while at Riverside",
+      "City College​​ prior to transfer. ​",
+      "Articulation agreements between Riverside City College and the CSU and UC campuses",
+      "can be found at www.assist.org​",
+      "What is ASSIST?",
+      "ASSIST (Articulation System Stimulating Interinstitutional Student Transfer) is the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "ASSIST (Articulation System Stimulating Interinstitutional Student Transfer) is the",
+     "position": "articulation_officer",
+     "window": [
+      "Articulation agreements between Riverside City College and the CSU and UC campuses",
+      "can be found at www.assist.org​",
+      "What is ASSIST?",
+      "ASSIST (Articulation System Stimulating Interinstitutional Student Transfer) is the",
+      "official repository of articulation for California's public colleges and universities",
+      "that displays reports of how course credits earned at a community college can be applied",
+      "when transferred to a California State University or University of California campus."
+     ],
+     "emails": []
+    },
+    {
+     "line": "official repository of articulation for California's public colleges and universities",
+     "position": "articulation_officer",
+     "window": [
+      "can be found at www.assist.org​",
+      "What is ASSIST?",
+      "ASSIST (Articulation System Stimulating Interinstitutional Student Transfer) is the",
+      "official repository of articulation for California's public colleges and universities",
+      "that displays reports of how course credits earned at a community college can be applied",
+      "when transferred to a California State University or University of California campus.",
+      "Transfer Planning​"
+     ],
+     "emails": []
+    },
+    {
+     "line": "List of Articulation Agreements for Private and Out-Of-State Universities",
+     "position": "articulation_officer",
+     "window": [
+      "California's fully accredited independent colleges and universities provide a host",
+      "of options at undergraduate, graduate and professional levels for students planning",
+      "to continue their education beyond community colleges.",
+      "List of Articulation Agreements for Private and Out-Of-State Universities",
+      "Arizona State University",
+      "Academy of Art University",
+      "Association of Independent California Colleges and Universities (AICCU)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Council on Education (ACE) for Military Articulation to Riverside City College (RCC).",
+     "position": "articulation_officer",
+     "window": [
+      "Back to top",
+      "Transfer evaluation System (TES)",
+      "The Transfer Evaluation System site includes information for public view on transfer articulations including American",
+      "Council on Education (ACE) for Military Articulation to Riverside City College (RCC).",
+      "Although Riverside City College has made this available for public use, the database",
+      "does not take the place of a counselor and proper student advising. Once you become",
+      "a student at RCC, please make an appointment with a counselor to develop your Student Education Plan"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.rcc.edu/become-a-student/military-and-veteran.html",
+   "final_url": "https://www.rcc.edu/become-a-student/military-and-veteran.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    },
+    {
+     "line": "You served our country and earned your place on our campus — our Veterans Center and",
+     "position": "vrc",
+     "window": [
+      "Become a Student",
+      "Welcome Military Affiliated Students",
+      "RCC Veteran Resources",
+      "You served our country and earned your place on our campus — our Veterans Center and",
+      "programs are designed to help you with the support and guidance you need to help you",
+      "succeed. Veterans are eligible for four years of priority registration to be used",
+      "within fifteen years of being discharged from active duty."
+     ],
+     "emails": []
+    },
+    {
+     "line": "have served in our armed forces. Our Veterans resource center and programs are designed",
+     "position": "vrc",
+     "window": [
+      "within fifteen years of being discharged from active duty.",
+      "2023-24 Military Friendly® School",
+      "Riverside City College is an institution that is dedicated to serving those that",
+      "have served in our armed forces. Our Veterans resource center and programs are designed",
+      "to support and guide you in your educational journey. Within the Veterans center,",
+      "students are given the opportunity to meet with our staff or a counselor, complete",
+      "a Student Educational Plan, certification for VA benefits, study, access computers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "to support and guide you in your educational journey. Within the Veterans center,",
+     "position": "vrc",
+     "window": [
+      "2023-24 Military Friendly® School",
+      "Riverside City College is an institution that is dedicated to serving those that",
+      "have served in our armed forces. Our Veterans resource center and programs are designed",
+      "to support and guide you in your educational journey. Within the Veterans center,",
+      "students are given the opportunity to meet with our staff or a counselor, complete",
+      "a Student Educational Plan, certification for VA benefits, study, access computers",
+      "and other educational supplies, and engage in on-campus events/activities and build"
+     ],
+     "emails": []
+    },
+    {
+     "line": "RCC Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Location: Music Building-Room 105",
+      "Phone: (951) 222-8607",
+      "Hours: Monday-Friday 8 am-5 pm (6 pm on Tuesday)",
+      "RCC Veterans Center",
+      "Steps to Receiving Benefits",
+      "The following steps help and guide you, as a new Veteran student, in transition to",
+      "Riverside City College and reaching your educational/career goals. To avoid being"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Obtain the 22-5490 from RCC Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "Apply online, or",
+      "Chapter 35 - Apply with the VA - Form 22-5490",
+      "Apply online , or",
+      "Obtain the 22-5490 from RCC Veterans Services.",
+      "Note : Within 2-4 weeks, the VA will send you two copies of your Certificate of Eligibility",
+      "(COE). Bring one of the two copies to RCC Veterans Services.",
+      "Back to top"
+     ],
+     "emails": []
+    },
+    {
+     "line": "(COE). Bring one of the two copies to RCC Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "Apply online , or",
+      "Obtain the 22-5490 from RCC Veterans Services.",
+      "Note : Within 2-4 weeks, the VA will send you two copies of your Certificate of Eligibility",
+      "(COE). Bring one of the two copies to RCC Veterans Services.",
+      "Back to top",
+      "Step 1b - Previously Used Educational Benefits",
+      "Chapter 30, 33, 1606 or 1607"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Transfer your benefits to be used by turning in Form 22-1995 to RCC Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "Back to top",
+      "Step 1b - Previously Used Educational Benefits",
+      "Chapter 30, 33, 1606 or 1607",
+      "Transfer your benefits to be used by turning in Form 22-1995 to RCC Veterans Services.",
+      "Forms can be found at https://www.va.gov/vaforms.",
+      "Chapter 35",
+      "Transfer your benefits to be used by turning in Form 22-5495 to RCC Veterans Services."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Transfer your benefits to be used by turning in Form 22-5495 to RCC Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "Transfer your benefits to be used by turning in Form 22-1995 to RCC Veterans Services.",
+      "Forms can be found at https://www.va.gov/vaforms.",
+      "Chapter 35",
+      "Transfer your benefits to be used by turning in Form 22-5495 to RCC Veterans Services.",
+      "Forms can be found at https://www.va.gov/vaforms.",
+      "Back to top",
+      "Step 1 - Admission Application Process"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Council on Education (ACE) for Military Articulation to Riverside City College (RCC).",
+     "position": "articulation_officer",
+     "window": [
+      "or the fax number on the form.",
+      "TRANSFER EVALUATION SYSTEM (TES)",
+      "The Transfer Evaluation System site includes information for public view on transfer articulations including American",
+      "Council on Education (ACE) for Military Articulation to Riverside City College (RCC).",
+      "Although Riverside City College has made this available for public use, the database",
+      "does not take the place of a counselor and proper student advising. Once you become",
+      "a student at RCC, please make an appointment with a counselor to develop you Student Education Plan"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Contact RCC Veterans Services as soon as all transcripts are received via phone (951)",
+     "position": "vrc",
+     "window": [
+      "(SEP). Schedule Appointment to meet with a RCC Counselor.",
+      "Back to top",
+      "Step 3 - Request Transcript Evaluation (out of state transcripts)",
+      "Contact RCC Veterans Services as soon as all transcripts are received via phone (951)",
+      "222-8607 or email veterans@rcc.edu veterans@rcc.edu.",
+      "Request a transcript evaluation. Once you have received confirmation that the evaluation",
+      "is complete a Student Education Plan (SEP) can be created."
+     ],
+     "emails": [
+      "veterans@rcc.edu"
+     ]
+    },
+    {
+     "line": "RCCD Student Email will provide you important notices from the Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "Apply at www.fafsa.ed.gov. Riverside City College Financial Aid school code 001270.",
+      "Back to top",
+      "Step 5 - Set Up RCCD Email Account",
+      "RCCD Student Email will provide you important notices from the Veterans Resource Center",
+      "including certification confirmation, registration date, upcoming events, faculty",
+      "correspondence, and much more. For information about activating your student email",
+      "go to www.rcc.edu and log in to MyPortal."
+     ],
+     "emails": []
+    },
+    {
+     "line": "College articulation agreements can be found at www.assist.org or",
+     "position": "articulation_officer",
+     "window": [
+      "For assistance choosing a program of study, you can meet with the RCC Veterans’ Academic",
+      "Counselor.",
+      "Be prepared to share your VA approved intended 'Program of Study'.",
+      "College articulation agreements can be found at www.assist.org or",
+      "A list of VA approved programs is available to view at www.gibill.va.gov",
+      "When registering for classes refer to your copy of the VA SEP. Only required classes",
+      "listed are payable by the VA."
+     ],
+     "emails": []
+    },
+    {
+     "line": "This form is also available at RCC Veterans Services and must be completed by the",
+     "position": "vrc",
+     "window": [
+      "Students register for classes via MyPortal or EduNav on or after their assigned registration date and time (View registration",
+      "dates on MyPortal)",
+      "Once enrolled in classes, fill out a Statement of Responsibility Form",
+      "This form is also available at RCC Veterans Services and must be completed by the",
+      "student each semester to request benefits",
+      "Turning in this form immediately upon registering for classes will prevent Veterans",
+      "from being dropped for non-payment"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services will submit the enrollment certification to the VA for required",
+     "position": "vrc",
+     "window": [
+      "from being dropped for non-payment",
+      "The SOR informs the RCC VA Certifying Officials of your intent to use benefits for",
+      "the semester to process you through the VA for accurate usage of benefits.",
+      "Veterans Services will submit the enrollment certification to the VA for required",
+      "courses only, please be mindful of your units as it will affect your benefits.",
+      "At the end of every month, Chapter 30, 1606, and 1607 students must call (877) 823-2378",
+      "or go to http://gibill.va.gov/resources/verify_attendance/ to verify enrollment and receive payment."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Turn the 22-1995 or 22-5495 in to RCC Veterans Services. You will also need an updated",
+     "position": "vrc",
+     "window": [
+      "To Change Your Program of Study",
+      "To change your program of study, you must fill out Form 22-1995 (Chapter 30, 33, 1606, and 1607) or Form 22-5495 (Chapter 35).",
+      "Forms can be found - Form 22-1995 and Form 22-5495",
+      "Turn the 22-1995 or 22-5495 in to RCC Veterans Services. You will also need an updated",
+      "VA SEP. To schedule a VA Counseling appointment, contact the VRC at 951-222-8607 or email",
+      "at veterans@rcc.edu veterans@rcc.edu",
+      "Call 888-GIBILL1 (442-4551) for questions regarding pay, the Certificate of Eligibility,"
+     ],
+     "emails": [
+      "veterans@rcc.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.rcc.edu/student-support/cultural-engagement-resources/veterans.html",
+   "final_url": "https://www.rcc.edu/student-support/cultural-engagement-resources/veterans.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Veterans Center",
+      "Skip to content",
+      "Menu",
+      "AboutToggle Submenu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Staff Directory",
+      "toggle search",
+      "Search RCCClose",
+      "Veterans Center",
+      "In this Section",
+      "Student Support",
+      "Cultural Engagement and Resources Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Center",
+     "position": "vrc",
+     "window": [
+      "Student-Athlete Engagement Center",
+      "Student-Parent Resources",
+      "Umoja Project Engagement Center",
+      "Veterans Center",
+      "Home",
+      "Student Support",
+      "Cultural Engagement and Resources Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "You served our country and we honor your place on our campus — our Veterans center",
+     "position": "vrc",
+     "window": [
+      "Student Support",
+      "Cultural Engagement and Resources Center",
+      "Welcome Military Affiliated Students",
+      "You served our country and we honor your place on our campus — our Veterans center",
+      "and programs are designed to support and guide you to success. Veterans are eligible",
+      "for four years of priority registration, this is to be used within fifteen years of",
+      "your discharged date from active duty."
+     ],
+     "emails": []
+    },
+    {
+     "line": "have served in our armed forces. Our Veterans resource center and programs are designed",
+     "position": "vrc",
+     "window": [
+      "your discharged date from active duty.",
+      "2023-24 Military Friendly® School",
+      "Riverside City College is an institution that is dedicated to serving those that",
+      "have served in our armed forces. Our Veterans resource center and programs are designed",
+      "to support and guide you in your educational journey. Within the Veterans center,",
+      "students are given the opportunity to meet with our staff or a counselor, complete",
+      "a Student Educational Plan, certification for VA benefits, study, access computers"
+     ],
+     "emails": []
+    },
+    {
+     "line": "to support and guide you in your educational journey. Within the Veterans center,",
+     "position": "vrc",
+     "window": [
+      "2023-24 Military Friendly® School",
+      "Riverside City College is an institution that is dedicated to serving those that",
+      "have served in our armed forces. Our Veterans resource center and programs are designed",
+      "to support and guide you in your educational journey. Within the Veterans center,",
+      "students are given the opportunity to meet with our staff or a counselor, complete",
+      "a Student Educational Plan, certification for VA benefits, study, access computers",
+      "and other educational supplies, and engage in on-campus events/activities and build"
+     ],
+     "emails": []
+    },
+    {
+     "line": "4 form to the Veterans Resource Center (VRC) to determine eligibility. Contact the",
+     "position": "vrc",
+     "window": [
+      "VRC students who have been approved for Priority Registration must contact the VRC",
+      "to be cleared.",
+      "Priority Registration is available to veteran students, submit your DD-214 Member",
+      "4 form to the Veterans Resource Center (VRC) to determine eligibility. Contact the",
+      "VRC for priority registration time frames for each semester.",
+      "Be Advised: Unit Caps Apply During Priority Registration",
+      "RCC Admission Application Deadlines"
+     ],
+     "emails": []
+    },
+    {
+     "line": "may affect your benefits. Please contact the Veteran’s Resource Center if changes",
+     "position": "vrc",
+     "window": [
+      "Drop for Non-Payment",
+      "To avoid being dropped for non-payment, you must submit your Statement of Responsibility (SOR) each semester immediately after registering for courses,",
+      "with no further changes to your class schedule. Drops and changes to your class schedule,",
+      "may affect your benefits. Please contact the Veteran’s Resource Center if changes",
+      "to your schedule occurs after submitting your SOR.",
+      "Call 888-GIBILL1 (442-4551) for questions regarding pay, the Certificate of Eligibility",
+      "or Veterans’ Affairs (VA) Benefits."
+     ],
+     "emails": []
+    },
+    {
+     "line": "(COE). Bring one of the two copies to RCC Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "Form 22-1990",
+      "Apply online",
+      "Note : Within 2-4 weeks, the VA will send you two copies of your Certificate of Eligibility",
+      "(COE). Bring one of the two copies to RCC Veterans Services.",
+      "Back to top",
+      "Previously Used Educational Benefits",
+      "Chapter 30, 31, 33, 1606"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Transfer your benefits to be used by turning in Form 22-1995 to RCC Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "Back to top",
+      "Previously Used Educational Benefits",
+      "Chapter 30, 31, 33, 1606",
+      "Transfer your benefits to be used by turning in Form 22-1995 to RCC Veterans Services.",
+      "Forms can be found at https://www.va.gov/vaforms.",
+      "Chapter 35",
+      "Transfer your benefits to be used by turning in Form 22-5495 to RCC Veterans Services."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Transfer your benefits to be used by turning in Form 22-5495 to RCC Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "Transfer your benefits to be used by turning in Form 22-1995 to RCC Veterans Services.",
+      "Forms can be found at https://www.va.gov/vaforms.",
+      "Chapter 35",
+      "Transfer your benefits to be used by turning in Form 22-5495 to RCC Veterans Services.",
+      "Forms can be found at https://www.va.gov/vaforms.",
+      "Back to top",
+      "Admission Application Process"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Member 4, to RCC Veterans Services; in person or via email to veterans@rcc.edu veterans@rcc.edu.",
+     "position": "vrc",
+     "window": [
+      "Activate your RCCD email account",
+      "Veterans are eligible for priority registration for four years after being discharged",
+      "from active duty. To obtain a priority registration date, Veterans must take a copy of their DD214",
+      "Member 4, to RCC Veterans Services; in person or via email to veterans@rcc.edu veterans@rcc.edu.",
+      "If you do not have a copy of your DD214, you can request yours here",
+      "Back to top",
+      "Request Official Current Transcripts"
+     ],
+     "emails": [
+      "veterans@rcc.edu"
+     ]
+    },
+    {
+     "line": "Council on Education (ACE) for Military Articulation to Riverside City College (RCC).",
+     "position": "articulation_officer",
+     "window": [
+      "or the fax number on the form.",
+      "TRANSFER EVALUATION SYSTEM (TES)",
+      "The Transfer Evaluation System site includes information for public view on transfer articulations including American",
+      "Council on Education (ACE) for Military Articulation to Riverside City College (RCC).",
+      "Although Riverside City College has made this available for public use, the database",
+      "does not take the place of a counselor and proper student advising.",
+      "Back to top"
+     ],
+     "emails": []
+    },
+    {
+     "line": "RCCD Student Email will provide you important notices from the Veterans Resource Center.",
+     "position": "vrc",
+     "window": [
+      "Apply at www.fafsa.ed.gov. Riverside City College Financial Aid school code 001270.",
+      "Back to top",
+      "Set Up RCCD Email Account",
+      "RCCD Student Email will provide you important notices from the Veterans Resource Center.",
+      "Back to top",
+      "Meet with a counselor to develop a Student Educational Plan",
+      "Be prepared to share your VA approved intended 'Program of Study'."
+     ],
+     "emails": []
+    },
+    {
+     "line": "College articulation agreements can be found at www.assist.org or",
+     "position": "articulation_officer",
+     "window": [
+      "Back to top",
+      "Meet with a counselor to develop a Student Educational Plan",
+      "Be prepared to share your VA approved intended 'Program of Study'.",
+      "College articulation agreements can be found at www.assist.org or",
+      "A list of VA approved programs is available to view at www.gibill.va.gov ™",
+      "Some military specialties are approved to received RCC credit for courses/trainings",
+      "that occurred while in the service, make sure to speak with your VRC Counselor about"
+     ],
+     "emails": []
+    },
+    {
+     "line": "This form is also available at RCC Veterans Services and must be completed by the",
+     "position": "vrc",
+     "window": [
+      "Students register for classes via MyPortal or EduNav on or after their assigned registration date and time (View registration",
+      "dates on MyPortal)",
+      "Once enrolled in classes, fill out a Statement of Responsibility Form",
+      "This form is also available at RCC Veterans Services and must be completed by the",
+      "student each semester to request benefits",
+      "Turning in this form immediately upon registering for classes will prevent Veterans",
+      "from being dropped for non-payment"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services will submit the enrollment certification to the VA for required",
+     "position": "vrc",
+     "window": [
+      "from being dropped for non-payment",
+      "The SOR informs the RCC VA Certifying Officials of your intent to use benefits for",
+      "the semester to process you through the VA for accurate usage of benefits.",
+      "Veterans Services will submit the enrollment certification to the VA for required",
+      "courses only, please be mindful of your units as it will affect your benefits.",
+      "At the end of every month, Chapter 30, 1606, and 1607 students must call (877) 823-2378",
+      "or go to http://gibill.va.gov/resources/verify_attendance/ to verify enrollment and receive payment."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Turn the 22-1995 or 22-5495 in to RCC Veterans Services. Contact the Veterans Resource Center at 951 222-8607 or email at veterans@rcc.edu veterans@rcc.edu to schedule an appointment.",
+     "position": "vrc",
+     "window": [
+      "To Change Your Program of Study",
+      "To change your program of study, you must fill out Form 22-1995 (Chapter 30, 33, 1606, and 1607) or Form 22-5495 (Chapter 35).",
+      "Forms can be found - Form 22-1995 and Form 22-5495",
+      "Turn the 22-1995 or 22-5495 in to RCC Veterans Services. Contact the Veterans Resource Center at 951 222-8607 or email at veterans@rcc.edu veterans@rcc.edu to schedule an appointment.",
+      "Call 888-GIBILL1 (442-4551) for questions regarding pay, the Certificate of Eligibility,",
+      "or VA Benefits.",
+      "Check your RCCD email!"
+     ],
+     "emails": [
+      "veterans@rcc.edu"
+     ]
+    },
+    {
+     "line": "12:50-1:50pm in the Veterans Resource Center or online currently in Zoom.",
+     "position": "vrc",
+     "window": [
+      "our country and provides a supportive inclusive environment.",
+      "Our Veterans Association is an active chapter of The Student Veterans of America (SVA), a national organization supporting student Veterans.",
+      "Meetings are held during Spring and Fall semesters, first Thursdays of each month,",
+      "12:50-1:50pm in the Veterans Resource Center or online currently in Zoom.",
+      "FAQ's for Veterans Using VA Educational Benefits",
+      "Expand AllCollapse All",
+      "Once I submit a Veteran’s Statement of Responsibility (SOR), how long will it take"
+     ],
+     "emails": []
+    },
+    {
+     "line": "You are responsible to immediately notify Veterans Services of any changes to your",
+     "position": "vrc",
+     "window": [
+      "Officials to process you through the VA for accurate usage of benefits.",
+      "Back to top",
+      "What do I do if I drop or add classes after I turn in my Statement of Responsibility?",
+      "You are responsible to immediately notify Veterans Services of any changes to your",
+      "schedule. Failure to do so may affect your monthly payments.Back to top",
+      "How will I know my courses have been certified?",
+      "You can check on your certification status via the WAVE website Back to top"
+     ],
+     "emails": []
+    },
+    {
+     "line": "To change your major you will need to submit Form 22-1995/5495 to Veterans Services.",
+     "position": "vrc",
+     "window": [
+      "on the VA SEP. In other words, students will only be eligible for payment if registered",
+      "for courses from the list.Back to top",
+      "What do I do if I want to change my major?",
+      "To change your major you will need to submit Form 22-1995/5495 to Veterans Services.",
+      "You will need a new VA Student Educational Plan (SEP) and be prepared for your new",
+      "program of study.Back to top",
+      "Does RCC have a VA Work Study Program?"
+     ],
+     "emails": []
+    },
+    {
+     "line": "VA work study. Please contact RCC Veterans Services at (951) 222-8607 for more information.Back to top",
+     "position": "vrc",
+     "window": [
+      "program of study.Back to top",
+      "Does RCC have a VA Work Study Program?",
+      "Yes, RCC has a VA Work Study Program, on occasions there are positions available for",
+      "VA work study. Please contact RCC Veterans Services at (951) 222-8607 for more information.Back to top",
+      "Can I apply for any other type of Financial Assistance in addition to GIBILL®?",
+      "You can also apply for financial aid via https://www.fafsa.ed.gov/. For more information, please refer to Student Financial Services website or contact",
+      "(951) 222-8710."
+     ],
+     "emails": []
+    },
+    {
+     "line": "as your primary school, Veterans Services can create the PSL. You will need to provide",
+     "position": "vrc",
+     "window": [
+      "college. What would I need to do to get those courses certified? (Parent School Letter)",
+      "A Parent School Letter (PSL) is required in order to collect benefits for courses",
+      "taken while concurrently enrolled at another college. If you plan to maintain RCC",
+      "as your primary school, Veterans Services can create the PSL. You will need to provide",
+      "the course descriptions and amount of units. Once this information has been received",
+      "and the course(s) will be reviewed by our RCC Veterans Counselor and approved as required,",
+      "a PSL can be provided to the other college so you can be certified for your course(s)."
+     ],
+     "emails": []
+    },
+    {
+     "line": "If you are using your GIBILL ™ benefits, you must also let Veterans Services staff",
+     "position": "vrc",
+     "window": [
+      "counted as punitive towards probation or dismissal. Documentation is required – You",
+      "will need to submit your signed, active duty or reserve duty orders with an ECP to",
+      "Admissions to start this process.",
+      "If you are using your GIBILL ™ benefits, you must also let Veterans Services staff",
+      "know. Back to top",
+      "If I change my address will I need to notify the VA in addition to RCC?",
+      "You will need to contact both RCC and the VA. You can file a change of address with"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Riverside County Department of Veterans Services",
+     "position": "vrc",
+     "window": [
+      "Veterans can verify enrollment by using W.A.V.E- (877) 823-2378 or https://www.gibill.va.gov/wave/wave_faq.jsp",
+      "CALVET for state specific Veteran support",
+      "California Transition Assistance Program (CalTAP)",
+      "Riverside County Department of Veterans Services",
+      "4360 Orange Street, Riverside, CA 92501",
+      "Phone: (951) 955-3060 Fax: (951) 955-3063",
+      "Employment Services For assistance with unemployment benefits, training services, and to get information"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.rcc.edu/about/directory/",
+   "final_url": "https://www.rcc.edu/about/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.rcc.edu/about/news/2026-viewpoints-jacc-awards.html",
+   "final_url": "https://www.rcc.edu/about/news/2026-viewpoints-jacc-awards.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.rcc.edu/life-at-rcc/calendar.html",
+   "final_url": "https://www.rcc.edu/life-at-rcc/calendar.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Nondiscrimination policies and procedures can be inquired about through the District Compliance Officer, 3801 Market Street,",
+     "position": null,
+     "window": [
+      "with disabilities may be requested by contacting the program/event organizer by phone",
+      "or email no less than 3 days before the event. Some events may require earlier notice",
+      "deadlines. Requests received after the deadline will be honored whenever possible.",
+      "Nondiscrimination policies and procedures can be inquired about through the District Compliance Officer, 3801 Market Street,",
+      "Riverside, CA 92501, or (951) 222-8039.",
+      "Riverside City College",
+      "4800 Magnolia Avenue"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.rcc.edu/about/directory/index.html",
+   "final_url": "https://www.rcc.edu/about/directory/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Safety & Police",
+      "Emergency Hub",
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Chancellor",
+     "position": "district_ceo",
+     "window": [
+      "College Leadership",
+      "Office of the President",
+      "Academic Senate",
+      "Office of the Chancellor",
+      "Board of Trustees",
+      "Equity",
+      "Inland Empire Technical Trade Center"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation",
+     "position": "articulation_officer",
+     "window": [
+      "Honors Program",
+      "RCCD Study Abroad",
+      "Records and Transcripts",
+      "Articulation",
+      "Transcript Requests",
+      "Enrollment Verification",
+      "Academic Policies & Procedures"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41427972048"
+}

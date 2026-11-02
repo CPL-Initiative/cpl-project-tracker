@@ -1,0 +1,1100 @@
+{
+ "college": "San Diego City College",
+ "homepage": "https://www.sdcity.edu/",
+ "read_at": "2026-11-02T10:29:41+00:00",
+ "pages": [
+  {
+   "url": "https://www.sdcity.edu/",
+   "final_url": "https://www.sdcity.edu/",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.sdcity.edu/about/directory/index.aspx",
+   "final_url": "https://www.sdcity.edu/about/directory/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "seeking details about academic programs, need to connect with a specific school dean",
+     "position": null,
+     "window": [
+      "Campus Directory",
+      "Reach out to the Administration directory for contact information on key campus leaders,",
+      "including vice presidents, deans, directors, and the college president. Whether you're",
+      "seeking details about academic programs, need to connect with a specific school dean",
+      "for class-related inquiries, or have questions about campus procedures and policies,",
+      "this section will guide you to the right contacts.",
+      "Administration"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/about/leadership/index.aspx",
+   "final_url": "https://www.sdcity.edu/about/leadership/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "at City College it means that each and every student is provided a pathway to reach",
+      "their academic, career, and life goals.",
+      "Ricky Shabazz, Ed.D.",
+      "President",
+      "Dr. Ricky Shabazz is an enthusiastic, student-centered leader with over 20 years of",
+      "executive experience advancing academic achievement, educational equity, diversity,",
+      "and improving access to higher education."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "and improving access to higher education.",
+      "Read more.",
+      "Marciano Perez, Jr.",
+      "Vice President of Student Services",
+      "Marciano Perez, Jr. is a higher education professional with over 25 years of leadership",
+      "experience in community colleges, universities and K-12 education. He has served",
+      "as an administrator for the past five and a half years at the community college."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "as an administrator for the past five and a half years at the community college.",
+      "Read more.",
+      "Matilda Chavez",
+      "Vice President of Instruction",
+      "Dr. Matilda “Tillie” Chavez serves as Vice President of Instruction at San Diego City",
+      "College, where she provides strategic leadership for academic programs, enrollment",
+      "management, faculty development, and instructional innovation. With more than 20 years"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Matilda “Tillie” Chavez serves as Vice President of Instruction at San Diego City",
+     "position": "vpaa",
+     "window": [
+      "Read more.",
+      "Matilda Chavez",
+      "Vice President of Instruction",
+      "Dr. Matilda “Tillie” Chavez serves as Vice President of Instruction at San Diego City",
+      "College, where she provides strategic leadership for academic programs, enrollment",
+      "management, faculty development, and instructional innovation. With more than 20 years",
+      "of experience in higher education, she has served as Acting President, Chief Academic"
+     ],
+     "emails": []
+    },
+    {
+     "line": "of experience in higher education, she has served as Acting President, Chief Academic",
+     "position": "college_ceo",
+     "window": [
+      "Dr. Matilda “Tillie” Chavez serves as Vice President of Instruction at San Diego City",
+      "College, where she provides strategic leadership for academic programs, enrollment",
+      "management, faculty development, and instructional innovation. With more than 20 years",
+      "of experience in higher education, she has served as Acting President, Chief Academic",
+      "Officer, Dean, Department Chair, and Faculty Leader.",
+      "A first-generation college graduate, Dr. Chavez is committed to expanding educational",
+      "opportunity, strengthening workforce pathways, and advancing student success. She"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Officer, Dean, Department Chair, and Faculty Leader.",
+     "position": null,
+     "window": [
+      "College, where she provides strategic leadership for academic programs, enrollment",
+      "management, faculty development, and instructional innovation. With more than 20 years",
+      "of experience in higher education, she has served as Acting President, Chief Academic",
+      "Officer, Dean, Department Chair, and Faculty Leader.",
+      "A first-generation college graduate, Dr. Chavez is committed to expanding educational",
+      "opportunity, strengthening workforce pathways, and advancing student success. She",
+      "is recognized for her collaborative leadership style, dedication to shared governance,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Acting Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "students and communities.",
+      "Read more.",
+      "Roxann Solis",
+      "Acting Vice President of Administrative Services",
+      "With more than 20 years of dedicated service to the district, Roxann brings deep institutional",
+      "knowledge and extensive experience in administrative operations. She is known as a",
+      "proactive, results-driven leader who moves important initiatives forward while helping"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Administrative Services",
+      "Business Services",
+      "Navigate this section:",
+      "Office of the President",
+      "Office of the Vice President of Student Services",
+      "Office of the Vice President of Instruction",
+      "Office of the Vice President of Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Business Services",
+      "Navigate this section:",
+      "Office of the President",
+      "Office of the Vice President of Student Services",
+      "Office of the Vice President of Instruction",
+      "Office of the Vice President of Administrative Services",
+      "Office of Institutional Effectiveness"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Navigate this section:",
+      "Office of the President",
+      "Office of the Vice President of Student Services",
+      "Office of the Vice President of Instruction",
+      "Office of the Vice President of Administrative Services",
+      "Office of Institutional Effectiveness",
+      "Office of Communications"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Office of the President",
+      "Office of the Vice President of Student Services",
+      "Office of the Vice President of Instruction",
+      "Office of the Vice President of Administrative Services",
+      "Office of Institutional Effectiveness",
+      "Office of Communications",
+      "College Council"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/students/military/index.aspx",
+   "final_url": "https://www.sdcity.edu/students/military/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Nov. 23rd to Wednesday, Nov. 25th). The Veterans Service Center (M-101) will be closed.",
+     "position": "vrc",
+     "window": [
+      "Monday - Thursday 8:00 AM - 6:00 PM",
+      "Friday 8:00 AM - 1:00 PM",
+      "The Veterans Office (A-241) will be open from 8 AM to 4:30 PM Thanksgiving Week (Monday,",
+      "Nov. 23rd to Wednesday, Nov. 25th). The Veterans Service Center (M-101) will be closed.",
+      "The Veterans Office (A-241) and Veterans Service Center (M-101) will be closed during",
+      "Christmas Break (Monday, Dec. 21st to Friday, Jan. 1st).",
+      "Contact Us:"
+     ],
+     "emails": []
+    },
+    {
+     "line": "The Veterans Office (A-241) and Veterans Service Center (M-101) will be closed during",
+     "position": "vrc",
+     "window": [
+      "Friday 8:00 AM - 1:00 PM",
+      "The Veterans Office (A-241) will be open from 8 AM to 4:30 PM Thanksgiving Week (Monday,",
+      "Nov. 23rd to Wednesday, Nov. 25th). The Veterans Service Center (M-101) will be closed.",
+      "The Veterans Office (A-241) and Veterans Service Center (M-101) will be closed during",
+      "Christmas Break (Monday, Dec. 21st to Friday, Jan. 1st).",
+      "Contact Us:",
+      "We are working hard to assist you with your education benefits."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dora Meza, Director Admissions & Records, Veterans/VSC",
+     "position": "dean_ar",
+     "window": [
+      "[email protected]",
+      "Carolina Guardado, SCO, Supervisor I, Veterans/VSC",
+      "[email protected]",
+      "Dora Meza, Director Admissions & Records, Veterans/VSC",
+      "[email protected]",
+      "Holidays - Veterans Office Closed",
+      "Martin Luther King Day- Jan. 19, 2026"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services is committed to helping student veterans make the best choices possible",
+     "position": "vrc",
+     "window": [
+      "To meet with a counselor you'll need to have an active SDCCD application, pursue a",
+      "City College major, and have copies of all transcripts of prior colleges attended.",
+      "Mission",
+      "Veterans Services is committed to helping student veterans make the best choices possible",
+      "while attending by providing the maximum assistance, guidance, and support using the",
+      "new educational benefits. The Veterans Services office & Veterans Service Center work",
+      "collectively with on-campus and off-campus resources to provide quality service to"
+     ],
+     "emails": []
+    },
+    {
+     "line": "new educational benefits. The Veterans Services office & Veterans Service Center work",
+     "position": "vrc",
+     "window": [
+      "Mission",
+      "Veterans Services is committed to helping student veterans make the best choices possible",
+      "while attending by providing the maximum assistance, guidance, and support using the",
+      "new educational benefits. The Veterans Services office & Veterans Service Center work",
+      "collectively with on-campus and off-campus resources to provide quality service to",
+      "all military-affiliated students by connecting them to campus resources, empowering",
+      "them to successfully transition to college and equip them to be productive in the"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Service Center",
+     "position": "vrc",
+     "window": [
+      "Tuition Assistance",
+      "Using Your Benefits",
+      "VA Work Study",
+      "Veterans Service Center",
+      "Contact Us",
+      "San Diego City College",
+      "1313 Park Boulevard"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/directory/",
+   "final_url": "https://www.sdcity.edu/directory/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "seeking details about academic programs, need to connect with a specific school dean",
+     "position": null,
+     "window": [
+      "Campus Directory",
+      "Reach out to the Administration directory for contact information on key campus leaders,",
+      "including vice presidents, deans, directors, and the college president. Whether you're",
+      "seeking details about academic programs, need to connect with a specific school dean",
+      "for class-related inquiries, or have questions about campus procedures and policies,",
+      "this section will guide you to the right contacts.",
+      "Administration"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/about/directory/administration.aspx",
+   "final_url": "https://www.sdcity.edu/about/directory/administration.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "EMAIL",
+      "TELEPHONE",
+      "LOCATION",
+      "President",
+      "Ricky Shabazz, Ed.D.",
+      "[email protected]",
+      "(619) 388-3453"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "[email protected]",
+      "(619) 388-3453",
+      "A-322",
+      "Vice President, Administrative Services",
+      "Vacant",
+      "(619) 388-3428",
+      "A-222"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Instruction",
+     "position": "vpaa",
+     "window": [
+      "Vacant",
+      "(619) 388-3428",
+      "A-222",
+      "Vice President, Instruction",
+      "Matilda Chavez",
+      "[email protected]",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President, Student Services",
+     "position": "vpss",
+     "window": [
+      "[email protected]",
+      "(619) 388-3523",
+      "A-222",
+      "Vice President, Student Services",
+      "Marciano Perez",
+      "[email protected]",
+      "(619) 388-3464"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Information and Learning Technology",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3464",
+      "A-222",
+      "Dean, Information and Learning Technology",
+      "Robbi Ewell",
+      "[email protected]",
+      "(619) 388-3870"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Institutional Effectiveness",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3870",
+      "T-231",
+      "Dean, Institutional Effectiveness",
+      "Susan Allen Murray, Ph.D",
+      "[email protected]",
+      "(619) 388-4010"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Arts, Humanities, Communications & Telecommunications",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-4010",
+      "BT-311",
+      "Dean, School of Arts, Humanities, Communications & Telecommunications",
+      "Andy MacNeill, Ed.D.",
+      "[email protected]",
+      "(619) 388-3400"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Behavioral & Social Sciences, and Consumer & Family Studies",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3400",
+      "AH-519",
+      "Dean, School of Behavioral & Social Sciences, and Consumer & Family Studies",
+      "Manuel Velez",
+      "[email protected]",
+      "(619) 388-3207"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Business, Information Technology, Cosmetology and Engineering",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3207",
+      "MS-551",
+      "Dean, School of Business, Information Technology, Cosmetology and Engineering",
+      "Jesse Lopez",
+      "[email protected]",
+      "(619) 388-3488"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Mathematics, Sciences, and Nursing Education",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3488",
+      "BT-215",
+      "Dean, School of Mathematics, Sciences, and Nursing Education",
+      "Claudia Diaz Carrasco, Ph.D",
+      "[email protected]",
+      "(619) 388-3520"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, School of Health, Exercise Science, Nutrition and Athletics",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3520",
+      "S-111",
+      "Dean, School of Health, Exercise Science, Nutrition and Athletics",
+      "Aaron Detty",
+      "[email protected]",
+      "(619) 388-3706"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Development and Matriculation",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3706",
+      "P-201",
+      "Dean, Student Development and Matriculation",
+      "Bernice Lorenzo, Ed.D.",
+      "[email protected]",
+      "(619) 388-3709"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Student Affairs",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3709",
+      "A-366",
+      "Dean, Student Affairs",
+      "Adan Sanchez, Ed.D.",
+      "[email protected]",
+      "(619) 388-3498"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Nursing Education",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3498",
+      "M-200",
+      "Associate Dean, Nursing Education",
+      "Dometrives Armstrong, DNP",
+      "[email protected]",
+      "(619) 388-3441"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Enrollment Services, Financial Aid, Outreach and Community Relations",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3441",
+      "V-312V",
+      "Dean, Enrollment Services, Financial Aid, Outreach and Community Relations",
+      "Genevieve Esguerra",
+      "[email protected]",
+      "(619) 388-3924"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Associate Dean, Strong Workforce",
+     "position": "dean_cte",
+     "window": [
+      "[email protected]",
+      "(619) 388-3924",
+      "A-222H",
+      "Associate Dean, Strong Workforce",
+      "Sasha Knox, Ed.D.",
+      "[email protected]",
+      "(619) 388-4341"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean, Inclusion, Diversity, Equity, Anti-Racism, Accessibility, and Sustainability",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-4341",
+      "BT-215",
+      "Dean, Inclusion, Diversity, Equity, Anti-Racism, Accessibility, and Sustainability",
+      "R-202D",
+      "Coordinator, Disability Support Programs and Services (DSPS)",
+      "Darren Walters"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Coordinator, Disability Support Programs and Services (DSPS)",
+     "position": null,
+     "window": [
+      "BT-215",
+      "Dean, Inclusion, Diversity, Equity, Anti-Racism, Accessibility, and Sustainability",
+      "R-202D",
+      "Coordinator, Disability Support Programs and Services (DSPS)",
+      "Darren Walters",
+      "[email protected]",
+      "(619) 388-3515"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, EOPS",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3055",
+      "A-180",
+      "Director, EOPS",
+      "Dr. Mireya Gutierrez-Aguero",
+      "[email protected]",
+      "(619) 388-3209"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, MESA Program",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3209",
+      "A-354",
+      "Director, MESA Program",
+      "Claudia Martinez",
+      "[email protected]",
+      "(619) 388-3202"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Outreach and Promise",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3202",
+      "T-393",
+      "Director, Outreach and Promise",
+      "Clarissa Padilla",
+      "[email protected]",
+      "A-250"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Public Information Officer",
+     "position": null,
+     "window": [
+      "Clarissa Padilla",
+      "[email protected]",
+      "A-250",
+      "Public Information Officer",
+      "Cesar Gumapas",
+      "[email protected]",
+      "(619) 388-3911"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Financial Aid & Scholarship",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619) 388-3911",
+      "A-324",
+      "Director, Financial Aid & Scholarship",
+      "Wendy Wang",
+      "[email protected]",
+      "(619) 388-3150"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Admissions, Records, VA & VSC",
+     "position": "dean_ar",
+     "window": [
+      "[email protected]",
+      "(619) 388-3150",
+      "A-270",
+      "Director, Admissions, Records, VA & VSC",
+      "Dora Meza",
+      "[email protected]",
+      "(619)388-3470"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Campus Operations and Events",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "(619)388-3470",
+      "A-241",
+      "Director, Campus Operations and Events",
+      "Jay Purnell",
+      "[email protected]",
+      "(619) 388-3428"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/about/directory/offices.aspx",
+   "final_url": "https://www.sdcity.edu/about/directory/offices.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "please contact the Office of the Dean of Business, IT, and Cosmetology at (619) 388-3488.",
+     "position": null,
+     "window": [
+      "and office supplies, and a variety of snacks and drinks. Cash only. Stop in for",
+      "a quick print, scantron, cold drink, snack, and more.",
+      "*Due to the COVID-19 pandemic, the BRC is closed until further notice. For more information,",
+      "please contact the Office of the Dean of Business, IT, and Cosmetology at (619) 388-3488.",
+      "Fantastique - BT 311H*",
+      "(619) 388-3892; Monday - Thursday, 10:00 AM - 4:00 PM",
+      "(Days and times subject to change.)"
+     ],
+     "emails": []
+    },
+    {
+     "line": "information, please contact the Office of the Dean of Business, IT, and Cosmetology",
+     "position": null,
+     "window": [
+      "If you wish to donate by check, please address to: San Diego City College Foundation",
+      "- Fantastique. Thank you.",
+      "*Due to the COVID-19 pandemic, Fantastique is closed until further notice. For more",
+      "information, please contact the Office of the Dean of Business, IT, and Cosmetology",
+      "at (619) 388-3488.",
+      "City College Emergency Food Pantry*",
+      "*Due to the COVID-19 pandemic, the San Diego City College Emergency Food Pantry is"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/about/directory/faculty.aspx",
+   "final_url": "https://www.sdcity.edu/about/directory/faculty.aspx",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.sdcity.edu/about/directory/classified_staff.aspx",
+   "final_url": "https://www.sdcity.edu/about/directory/classified_staff.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Service Center & VA",
+     "position": "vrc",
+     "window": [
+      "Guardado",
+      "Carolina",
+      "Student Services Supervisor, I",
+      "Veterans Service Center & VA",
+      "A-241/",
+      "M101",
+      "3473"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Public Information Officer",
+     "position": null,
+     "window": [
+      "3473",
+      "Gumapas",
+      "Cesar",
+      "Public Information Officer",
+      "Communications",
+      "A324",
+      "3911"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "3537",
+      "Maua",
+      "Angelle",
+      "Executive Assistant to the President",
+      "President's Office",
+      "A-322",
+      "3453"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Maua",
+      "Angelle",
+      "Executive Assistant to the President",
+      "President's Office",
+      "A-322",
+      "3453",
+      "McClain"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director Enrollment Services",
+     "position": null,
+     "window": [
+      "3501",
+      "Meza",
+      "Dora",
+      "Director Enrollment Services",
+      "Admissions, Records & Veterans/Military",
+      "Support Services",
+      "A241"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "3593",
+      "Soukhaseum",
+      "Anourack (Lance)",
+      "Director",
+      "Tutorial Center",
+      "L205H",
+      "3685"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "3464",
+      "Vargas",
+      "Elizabeth",
+      "Director",
+      "Upward Bound",
+      "A213",
+      "3394"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/directory/index.aspx",
+   "final_url": "https://www.sdcity.edu/directory/index.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "seeking details about academic programs, need to connect with a specific school dean",
+     "position": null,
+     "window": [
+      "Campus Directory",
+      "Reach out to the Administration directory for contact information on key campus leaders,",
+      "including vice presidents, deans, directors, and the college president. Whether you're",
+      "seeking details about academic programs, need to connect with a specific school dean",
+      "for class-related inquiries, or have questions about campus procedures and policies,",
+      "this section will guide you to the right contacts.",
+      "Administration"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/about/leadership/president.aspx",
+   "final_url": "https://www.sdcity.edu/about/leadership/president.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Skip to main contentSkip to footer content",
+      "Menu",
+      "Search the Site"
+     ],
+     "emails": []
+    },
+    {
+     "line": "From President Shabazz",
+     "position": "college_ceo",
+     "window": [
+      "About",
+      "Leadership",
+      "Welcome",
+      "From President Shabazz",
+      "Welcome to City College",
+      "On behalf of the administration, faculty, and classified professionals at San Diego",
+      "City College, I congratulate you for your pursuit in higher education andwelcome you to the Knights family."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Visit our website to learn more.",
+      "Again, congratulations on furthering your education, and I look forward to seeing you on campus.",
+      "Ricky Shabazz, Ed.D.",
+      "President",
+      "Downloadables",
+      "Portrait of Dr. Shabazz Bio of Dr. Shabazz",
+      "About President Shabazz"
+     ],
+     "emails": []
+    },
+    {
+     "line": "About President Shabazz",
+     "position": "college_ceo",
+     "window": [
+      "President",
+      "Downloadables",
+      "Portrait of Dr. Shabazz Bio of Dr. Shabazz",
+      "About President Shabazz",
+      "Dr. Ricky Shabazz is a dynamic, student-centered leader with more than 25 years of executive experience",
+      "advancing academic achievement, promoting social justice, and expanding access to",
+      "higher education. Known for his collaborative leadership style, Dr. Shabazz is an"
+     ],
+     "emails": []
+    },
+    {
+     "line": "As President and CEO of San Diego City College, Dr. Shabazz provides visionary leadership",
+     "position": "college_ceo",
+     "window": [
+      "that engage diverse stakeholders. A passionate lifelong learner, he is steadfastly",
+      "dedicated to the mission of community colleges and their role in educating diverse",
+      "populations.",
+      "As President and CEO of San Diego City College, Dr. Shabazz provides visionary leadership",
+      "at one of the nation’s most innovative and socially engaged community colleges. His",
+      "presidency emphasizes student completion, success, and social justice. Previously,",
+      "he served as Vice President of Student Services at San Bernardino Valley College,"
+     ],
+     "emails": []
+    },
+    {
+     "line": "he served as Vice President of Student Services at San Bernardino Valley College,",
+     "position": "vpss",
+     "window": [
+      "As President and CEO of San Diego City College, Dr. Shabazz provides visionary leadership",
+      "at one of the nation’s most innovative and socially engaged community colleges. His",
+      "presidency emphasizes student completion, success, and social justice. Previously,",
+      "he served as Vice President of Student Services at San Bernardino Valley College,",
+      "Dean of Student Services at El Camino College Compton Center, and Assistant Director",
+      "of Undergraduate Admissions at the University of California, Davis (UCD).",
+      "Dr. Shabazz holds an Ed.D. in Educational Leadership and a Master’s in Educational"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Student Services at El Camino College Compton Center, and Assistant Director",
+     "position": null,
+     "window": [
+      "at one of the nation’s most innovative and socially engaged community colleges. His",
+      "presidency emphasizes student completion, success, and social justice. Previously,",
+      "he served as Vice President of Student Services at San Bernardino Valley College,",
+      "Dean of Student Services at El Camino College Compton Center, and Assistant Director",
+      "of Undergraduate Admissions at the University of California, Davis (UCD).",
+      "Dr. Shabazz holds an Ed.D. in Educational Leadership and a Master’s in Educational",
+      "Administration from California State University, San Bernardino, as well as a Bachelor’s"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dr. Shabazz serves on several boards, including A²MEND, The President’s Round Table,",
+     "position": "college_ceo",
+     "window": [
+      "mother was a teenage parent, and his father is a veteran. He remains dedicated to",
+      "helping students from diverse backgrounds achieve academic and personal excellence",
+      "while building highly effective, equity-driven teams.",
+      "Dr. Shabazz serves on several boards, including A²MEND, The President’s Round Table,",
+      "The Museum of Us, The American Association of Community Colleges (AACC), and other",
+      "community-based organizations.",
+      "San Diego City College is an Aspen Institute Top 20 Community College, accredited"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Vision",
+     "position": "college_ceo",
+     "window": [
+      "programs. The college employs nearly 1,000 faculty and staff and operates with an",
+      "annual budget of approximately $120 million as a Hispanic-Serving Institution deeply",
+      "committed to equity, inclusion, and student success.",
+      "President's Vision",
+      "Download President's Vision & Executive Priorities",
+      "You Belong Here: The City College Experience",
+      "1. San Diego City College is the leader in creating a learning culture that improves"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Download President's Vision & Executive Priorities",
+     "position": "college_ceo",
+     "window": [
+      "annual budget of approximately $120 million as a Hispanic-Serving Institution deeply",
+      "committed to equity, inclusion, and student success.",
+      "President's Vision",
+      "Download President's Vision & Executive Priorities",
+      "You Belong Here: The City College Experience",
+      "1. San Diego City College is the leader in creating a learning culture that improves",
+      "student success through social justice, educational equity, and academic excellence"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Goals 2026/27",
+     "position": "college_ceo",
+     "window": [
+      "iii. Event Plans and Evaluations",
+      "iv. Expanding Trainings and Workshops",
+      "v. Life After HEERF",
+      "President's Goals 2026/27",
+      "Download President's Goals",
+      "1. A Decade of Transforming Lives: Sustaining the Work",
+      "Full COVID recovery, backed by ten years of data"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Download President's Goals",
+     "position": "college_ceo",
+     "window": [
+      "iv. Expanding Trainings and Workshops",
+      "v. Life After HEERF",
+      "President's Goals 2026/27",
+      "Download President's Goals",
+      "1. A Decade of Transforming Lives: Sustaining the Work",
+      "Full COVID recovery, backed by ten years of data",
+      "Three statewide SEM projects improving scheduling, productivity, and completion"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Student Housing hired to develop Resident Advisor Program",
+     "position": null,
+     "window": [
+      "Expanded Mental Health and Counseling support via Block Grant",
+      "FamilyU launched for student parents ($250,000 IEPI grant submitted)",
+      "Student Mentor Program pilot continues",
+      "Director of Student Housing hired to develop Resident Advisor Program",
+      "Commuter Center opened in the Library",
+      "Basic needs expanded: Food Pantry, Threads & Things, Fresh Cutz Barbershop,",
+      "Welcome Home City"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Additional water stations installed campus-wide",
+      "Campus safety updates and SDCCDsafe App",
+      "Navigate this section:",
+      "Office of the President",
+      "Office of the Vice President of Student Services",
+      "Office of the Vice President of Instruction",
+      "Office of the Vice President of Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Student Services",
+     "position": "vpss",
+     "window": [
+      "Campus safety updates and SDCCDsafe App",
+      "Navigate this section:",
+      "Office of the President",
+      "Office of the Vice President of Student Services",
+      "Office of the Vice President of Instruction",
+      "Office of the Vice President of Administrative Services",
+      "Office of Institutional Effectiveness"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Instruction",
+     "position": "vpaa",
+     "window": [
+      "Navigate this section:",
+      "Office of the President",
+      "Office of the Vice President of Student Services",
+      "Office of the Vice President of Instruction",
+      "Office of the Vice President of Administrative Services",
+      "Office of Institutional Effectiveness",
+      "Office of Communications"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "Office of the President",
+      "Office of the Vice President of Student Services",
+      "Office of the Vice President of Instruction",
+      "Office of the Vice President of Administrative Services",
+      "Office of Institutional Effectiveness",
+      "Office of Communications",
+      "College Council"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.sdcity.edu/students/military/new-veteran.aspx",
+   "final_url": "https://www.sdcity.edu/students/military/new-veteran.aspx",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Service Center",
+     "position": "vrc",
+     "window": [
+      "Tuition Assistance",
+      "Using Your Benefits",
+      "VA Work Study",
+      "Veterans Service Center",
+      "Contact Us",
+      "San Diego City College",
+      "1313 Park Boulevard"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.sdcity.edu/students/military/vsc.aspx",
+  "https://www.sdcity.edu/about/directory/",
+  "https://www.sdcity.edu/about/leadership/"
+ ],
+ "run": "41427972048"
+}

@@ -969,3 +969,16 @@ lists. Report: `CPLBrain/04-projects/cpl-initiative/20261101_SLO_Grouping_Test.m
   the retired set is now built from the reader's own (subject, level) pairs. A test pins it.
 - **The catalog's core-name key folds a parenthetical.** *IB Language A1 HL (Non-English)* and *IB Language A1 HL* are
   one catalog row; the reference keeps the split, so the link points both titles at the one exam.
+
+## SkyTadpole (2026-11-02): the IT vendor family in the cert link
+
+- **A hand table where no code is shared.** ASE titles carry a test code and AP, CLEP and IB titles carry the official
+  name, so both families match by rule. CompTIA, Cisco and Microsoft titles carry neither reliably (*CompTIA CySA+* is
+  the catalog's *CompTIA Cybersecurity Analyst*; *CCNA* is *CCNA Certification*), so `VENDOR` maps each of the 41
+  reference titles to the catalog's names, resolved by (issuer, name) at build time. A renamed catalog row shows as
+  *not in the catalog* and the test fails, never a silent drop. #2689.
+- **The catalog stores one row a version; the reference names none.** A Microsoft Office Specialist title holds any of
+  that exam's versions (Excel: the Microsoft 365 Apps, Office 2019 and 2016 rows). Rows from another issuer (Certiport,
+  OpenText) stay out: they deliver the exam, Microsoft issues it.
+- **38 titles to 46 certs; the link holds 208 titles to 165 certs.** Three titles name no one cert and stay unresolved.
+  Nine local courses (*Microsoft Excel 1*, *Using Microsoft Windows*) stay out: a college issues them.

@@ -564,3 +564,21 @@ first sentence read as missing data, and the control lives in the header's Sign 
 - **Directory department labels are not titles.** Merritt's directory prints *Student Services-VP* beside staff names;
   no record came from it. Napa's directory prints each address above the next person's name, so emails stay blank
   where the pairing is unclear.
+
+## S548 SkyTadpole (2026-11-02, the 10:12Z firing): the seventh contacts read
+
+- **Run 41427972048, Ohlone to San Diego Continuing Education; apply 41430044825:** 47 people at 10 colleges, 47 new,
+  0 gone; the table holds 246 people at 59 colleges.
+- **A refusal outside the two districts.** Ohlone answered 403 like LACCD and State Center (Reedley is State Center's
+  third). Twelve colleges now refuse the plain read; Sheet 156's question covers them all, so the card stands as asked.
+- **One person per office, the one who leads it.** `position_of` takes *Veterans Services Specialist* and a counselor
+  *at* the Veteran's Resource Center as `vrc`. The records keep the supervisor, coordinator, director, or the dean the
+  page says oversees the center, and drop the staff beneath them (Palomar's three specialists, San Bernardino Valley's
+  counselor). The classifier is right about the office and silent about rank; the reader supplies rank.
+- **A page may list one person twice, and that is the page.** Rio Hondo's officials page prints Dr. Caroline Durdella
+  as VP Academic Affairs and again as an Associate VP; the raw window confirmed it before both rows stood.
+- **Pattern gaps the readers surfaced** (listed, not filled): *Dean, Career Technical Education* without "and";
+  *Assistant Superintendent/Vice President, Finance and Business*; a bare *Coordinator* on a veterans page. Widening
+  `TITLE_PATTERNS` for the first two is a small, testable change for a later session; the third needs the page's
+  heading, which the excerpt does not carry.
+- **Obfuscated addresses stay blank.** San Diego City and SDCCE print `[email protected]` in place of every address.

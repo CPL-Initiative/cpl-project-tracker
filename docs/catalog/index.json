@@ -16414,8 +16414,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 516,
+   "count": 517,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 549,
+     "path": "docs/session_549_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "contacts-harvest",
+      "credential-registry",
+      "cert-link"
+     ],
+     "title": "Session 549 handoff: the IT vendor cert link, the seventh contacts read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25245,5 +25261,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1344
+ "total": 1345
 }

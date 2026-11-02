@@ -1,0 +1,666 @@
+{
+ "college": "Palo Verde College",
+ "homepage": "https://www.paloverde.edu/",
+ "read_at": "2026-11-02T10:23:09+00:00",
+ "pages": [
+  {
+   "url": "https://www.paloverde.edu/",
+   "final_url": "https://www.paloverde.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "PVC History",
+      "Vision, Mission & Values",
+      "Board of Trustees",
+      "Office of the Superintendent/President",
+      "PVC Foundation",
+      "Accreditation",
+      "Research, Planning & Institutional Effectiveness"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Announcement of Palo Verde College's Next Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "View All News",
+      "Statement Regarding Early Morning Incident - October 20, 2026",
+      "FOR IMMEDIATE RELEASE Friday, October 30, 2026 BLYTHE, CA – Palo Verde College is informing students, employees, and the community of an early morning incident on Friday, October 30, 2026, which included the College's main campus. Based on information currently available, the incident was not rel...",
+      "Announcement of Palo Verde College's Next Superintendent/President",
+      "Following a nationwide search, the Board of Trustees has asked Estella Castillo-Garrison, Ed.D., to assume the position of Superintendent/President of Palo Verde College. She is expected to assume the office on September 09, 2026, pending final board approval. We welcome Dr. Castillo-Garrison’s l...",
+      "Important Dates & Events",
+      "View All Events"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.paloverde.edu/faculty-staff/directory.html",
+   "final_url": "https://www.paloverde.edu/faculty-staff/directory.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "PVC History",
+      "Vision, Mission & Values",
+      "Board of Trustees",
+      "Office of the Superintendent/President",
+      "PVC Foundation",
+      "Accreditation",
+      "Research, Planning & Institutional Effectiveness"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Research, Planning and Institutional Effectiveness",
+     "position": null,
+     "window": [
+      "A B C D E F G H I J K L M N O P Q R S T U V W X Y Z",
+      "A",
+      "Adam, Baba",
+      "Dean of Research, Planning and Institutional Effectiveness",
+      "Phone: 760-921-5474",
+      "baba.adam@paloverde.edu baba.adam@paloverde.edu",
+      "Aguayo, Claudia"
+     ],
+     "emails": [
+      "baba.adam@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Student Access & Special Programs Coordinator",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5474",
+      "baba.adam@paloverde.edu baba.adam@paloverde.edu",
+      "Aguayo, Claudia",
+      "Student Access & Special Programs Coordinator",
+      "Phone: 760-921-5419",
+      "claudia.aguayo@paloverde.edu claudia.aguayo@paloverde.edu",
+      "Aguilar, Aderiana"
+     ],
+     "emails": [
+      "baba.adam@paloverde.edu",
+      "claudia.aguayo@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant to the Superintendent/President & Board of Trustees",
+     "position": "college_ceo",
+     "window": [
+      "Phone: 760-921-5521",
+      "aderiana.aguilar@paloverde.edu aderiana.aguilar@paloverde.edu",
+      "Alaniz, Naomi",
+      "Executive Assistant to the Superintendent/President & Board of Trustees",
+      "Phone: 760-921-5440",
+      "naomi.alaniz@paloverde.edu naomi.alaniz@paloverde.edu",
+      "Arechiga, Araceli"
+     ],
+     "emails": [
+      "aderiana.aguilar@paloverde.edu",
+      "naomi.alaniz@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Office: CL208",
+      "richard.castillo@paloverde.edu richard.castillo@paloverde.edu",
+      "Castillo-Garrison, Estella",
+      "Superintendent/President",
+      "Phone:760-921-5499",
+      "Office: CS206",
+      "estella.castillo-garrison@paloverde.edu estella.castillo-garrison@paloverde.edu"
+     ],
+     "emails": [
+      "estella.castillo-garrison@paloverde.edu",
+      "richard.castillo@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Reentry Support Coordinator",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5502",
+      "ashley.chaney@paloverde.edu ashley.chaney@paloverde.edu",
+      "Chavez, Brandi",
+      "Reentry Support Coordinator",
+      "Phone: 760-921-5425",
+      "brandi.chavez@paloverde.edu brandi.chavez@paloverde.edu",
+      "Clark, Alejandro"
+     ],
+     "emails": [
+      "ashley.chaney@paloverde.edu",
+      "brandi.chavez@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Director of CAEP",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5425",
+      "brandi.chavez@paloverde.edu brandi.chavez@paloverde.edu",
+      "Clark, Alejandro",
+      "Director of CAEP",
+      "Phone: 760-921-5426",
+      "alejandro.clark@paloverde.edu alejandro.clark@paloverde.edu",
+      "Copple, Ryan"
+     ],
+     "emails": [
+      "alejandro.clark@paloverde.edu",
+      "brandi.chavez@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Director of Athletics",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5426",
+      "alejandro.clark@paloverde.edu alejandro.clark@paloverde.edu",
+      "Copple, Ryan",
+      "Director of Athletics",
+      "Phone: 760-921-5548",
+      "ryan.copple@paloverde.edu ryan.copple@paloverde.edu",
+      "Estrada Cruz, Brenda"
+     ],
+     "emails": [
+      "alejandro.clark@paloverde.edu",
+      "ryan.copple@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Dean, Alice",
+     "position": null,
+     "window": [
+      "PT CDC Instructional Aide",
+      "Phone: 760-922-8714",
+      "nakia.davis@paloverde.edu nakia.davis@paloverde.edu",
+      "Dean, Alice",
+      "CalWORKs Student Services Technician I",
+      "Phone: 760-921-5514",
+      "alice.dean@paloverde.edu alice.dean@paloverde.edu"
+     ],
+     "emails": [
+      "alice.dean@paloverde.edu",
+      "nakia.davis@paloverde.edu"
+     ]
+    },
+    {
+     "line": "alice.dean@paloverde.edu alice.dean@paloverde.edu",
+     "position": null,
+     "window": [
+      "Dean, Alice",
+      "CalWORKs Student Services Technician I",
+      "Phone: 760-921-5514",
+      "alice.dean@paloverde.edu alice.dean@paloverde.edu",
+      "Dewbre, Linda",
+      "CDC Instructional Aide",
+      "Phone: 760-922-8714"
+     ],
+     "emails": [
+      "alice.dean@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Director of Financial Aid",
+     "position": null,
+     "window": [
+      "Phone: 760-922-8714",
+      "linda.dewbre@paloverde.edu linda.dewbre@paloverde.edu",
+      "Dollinger, Christina",
+      "Director of Financial Aid",
+      "Phone: 760-921-5536",
+      "christina.dollinger@paloverde.edu christina.dollinger@paloverde.edu",
+      "Dorame, Daisy"
+     ],
+     "emails": [
+      "christina.dollinger@paloverde.edu",
+      "linda.dewbre@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Child Development Center Director",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5471",
+      "kaylene.elliott@paloverde.edu kaylene.elliott@paloverde.edu",
+      "Elms, Tayler",
+      "Child Development Center Director",
+      "Phone: 760-922-8714",
+      "tayler.elms@paloverde.edu tayler.elms@paloverde.edu",
+      "Esquerra, Bylli"
+     ],
+     "emails": [
+      "kaylene.elliott@paloverde.edu",
+      "tayler.elms@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Interim Executive Director of Admissions and Records",
+     "position": "dean_ar",
+     "window": [
+      "Phone: 760-922-8714",
+      "tayler.elms@paloverde.edu tayler.elms@paloverde.edu",
+      "Esquerra, Bylli",
+      "Interim Executive Director of Admissions and Records",
+      "Phone: 760-921-5530",
+      "bylli.esquerra@paloverde.edu bylli.esquerra@paloverde.edu",
+      "Estrada, Llubia"
+     ],
+     "emails": [
+      "bylli.esquerra@paloverde.edu",
+      "tayler.elms@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Director of Facilities & Operations",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5539",
+      "linda.hackney@paloverde.edu linda.hackney@paloverde.edu",
+      "Hale, Mario",
+      "Director of Facilities & Operations",
+      "Phone: 760-921-5409",
+      "mario.hale@paloverde.edu mario.hale@paloverde.edu",
+      "Hale, Nancy"
+     ],
+     "emails": [
+      "linda.hackney@paloverde.edu",
+      "mario.hale@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant to the VP of Administrative Services & College Advancement",
+     "position": "vpbs",
+     "window": [
+      "Phone: 760-921-5409",
+      "mario.hale@paloverde.edu mario.hale@paloverde.edu",
+      "Hale, Nancy",
+      "Executive Assistant to the VP of Administrative Services & College Advancement",
+      "Phone: 760-921-5446",
+      "nancy.hale@paloverde.edu nancy.hale@paloverde.edu",
+      "Haynes, Eric"
+     ],
+     "emails": [
+      "mario.hale@paloverde.edu",
+      "nancy.hale@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Special Assistant to President (Accreditation)",
+     "position": "college_ceo",
+     "window": [
+      "Phone: 760-921-5427",
+      "chaminda.hettige@paloverde.edu chaminda.hettige@paloverde.edu",
+      "Holmes, Erica",
+      "Special Assistant to President (Accreditation)",
+      "Phone: 760-921-5521",
+      "erica.holmes@paloverde.edu erica.holmes@paloverde.edu",
+      "I"
+     ],
+     "emails": [
+      "chaminda.hettige@paloverde.edu",
+      "erica.holmes@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Chief Technology Officer",
+     "position": null,
+     "window": [
+      "Phone: 760-922-8714",
+      "sonhia.johnson@paloverde.edu sonhia.johnson@paloverde.edu",
+      "Jones, Nicole",
+      "Chief Technology Officer",
+      "Phone: 760-921-5520",
+      "nicole.jones@paloverde.edu nicole.jones@paloverde.edu",
+      "Jones, Thomas"
+     ],
+     "emails": [
+      "nicole.jones@paloverde.edu",
+      "sonhia.johnson@paloverde.edu"
+     ]
+    },
+    {
+     "line": "EOPS/CARE Coordinator",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5541",
+      "kandus.lechausse@paloverde.edu kandus.lechausse@paloverde.edu",
+      "Leon, Fabiola",
+      "EOPS/CARE Coordinator",
+      "Phone: 760-921-5405",
+      "fabiola.leon@paloverde.edu fabiola.leon@paloverde.edu",
+      "Lizarraga, Jose"
+     ],
+     "emails": [
+      "fabiola.leon@paloverde.edu",
+      "kandus.lechausse@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Interim Director of Outreach & Student Equity",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5405",
+      "fabiola.leon@paloverde.edu fabiola.leon@paloverde.edu",
+      "Lizarraga, Jose",
+      "Interim Director of Outreach & Student Equity",
+      "Phone: 760-921-5592",
+      "jose.lizarraga@paloverde.edu jose.lizarraga@paloverde.edu",
+      "Lonnie, Hayden"
+     ],
+     "emails": [
+      "fabiola.leon@paloverde.edu",
+      "jose.lizarraga@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Job Placement Specialist/Nursing Placement & Clinical Site Coordinator",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5563",
+      "cesar.lozoya@paloverde.edu cesar.lozoya@paloverde.edu",
+      "Lujano, Artemiza",
+      "Job Placement Specialist/Nursing Placement & Clinical Site Coordinator",
+      "Phone: 760-921-5448",
+      "artemiza.lujano@paloverde.edu artemiza.lujano@paloverde.edu",
+      "Lujano, Lorenzo"
+     ],
+     "emails": [
+      "artemiza.lujano@paloverde.edu",
+      "cesar.lozoya@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Interim Associate Dean of Counseling",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5411",
+      "desiree.montenegro@paloverde.edu desiree.montenegro@paloverde.edu",
+      "Moreno, Margaret",
+      "Interim Associate Dean of Counseling",
+      "Phone: 760-921-5473",
+      "margaret.moreno@paloverde.edu margaret.moreno@paloverde.edu",
+      "N"
+     ],
+     "emails": [
+      "desiree.montenegro@paloverde.edu",
+      "margaret.moreno@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant to the VP of Instruction & Student Services",
+     "position": "vpaa",
+     "window": [
+      "margaret.moreno@paloverde.edu margaret.moreno@paloverde.edu",
+      "N",
+      "Navarro, Diana",
+      "Executive Assistant to the VP of Instruction & Student Services",
+      "Phone: 760-921-5506",
+      "diana.navarro@paloverde.edu diana.navarro@paloverde.edu",
+      "Neal, Melanie"
+     ],
+     "emails": [
+      "diana.navarro@paloverde.edu",
+      "margaret.moreno@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Director of EOPS/CARE/NextUp",
+     "position": null,
+     "window": [
+      "Office: CL208",
+      "nidhi.patel@paloverde.edu nidhi.patel@paloverde.edu",
+      "Pena, Omar",
+      "Director of EOPS/CARE/NextUp",
+      "Phone: 760-921-5470",
+      "omar.pena@paloverde.edu omar.pena@paloverde.edu",
+      "Peterson, Scott"
+     ],
+     "emails": [
+      "nidhi.patel@paloverde.edu",
+      "omar.pena@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Academic Scheduling and Support Coordinator",
+     "position": null,
+     "window": [
+      "Office: FA143",
+      "scott.peterson@paloverde.edu scott.peterson@paloverde.edu",
+      "Pope, Elizabeth",
+      "Academic Scheduling and Support Coordinator",
+      "Phone: 760-921-5404",
+      "elizabeth.pope@paloverde.edu elizabeth.pope@paloverde.edu",
+      "Powell, Chris"
+     ],
+     "emails": [
+      "elizabeth.pope@paloverde.edu",
+      "scott.peterson@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Acting Dean of Instruction",
+     "position": "dean_instruction",
+     "window": [
+      "monica.maciel@paloverde.edu monica.maciel@paloverde.edu",
+      "R",
+      "Raman, Biju",
+      "Acting Dean of Instruction",
+      "Phone: 760-921-5533",
+      "biju.raman@paloverde.edu biju.raman@paloverde.edu",
+      "Ramirez, Eddie"
+     ],
+     "emails": [
+      "biju.raman@paloverde.edu",
+      "monica.maciel@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Dean of Needles Center",
+     "position": null,
+     "window": [
+      "Phone: 760-922-8714",
+      "reyna.ramirez@paloverde.edu reyna.ramirez@paloverde.edu",
+      "Randall, Jaclyn",
+      "Dean of Needles Center",
+      "Phone: 760-326-5044",
+      "jrandall@paloverde.edu jrandall@paloverde.edu",
+      "Karen Rangel"
+     ],
+     "emails": [
+      "jrandall@paloverde.edu",
+      "reyna.ramirez@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Interim Assistant Superintendent/Vice President of Instruction & Student Services",
+     "position": "vpaa",
+     "window": [
+      "NextUp Instructional Services Technician I PT",
+      "catalina.robertson@paloverde.edu catalina.robertson@paloverde.edu",
+      "Robinson, Sandra \"Sam\"",
+      "Interim Assistant Superintendent/Vice President of Instruction & Student Services",
+      "Phone: 760-921-5476",
+      "sam.robinson@paloverde.edu sam.robinson@paloverde.edu",
+      "Rodriguez, Bianca"
+     ],
+     "emails": [
+      "catalina.robertson@paloverde.edu",
+      "sam.robinson@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Director of Marketing & Advancement Services",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5476",
+      "sam.robinson@paloverde.edu sam.robinson@paloverde.edu",
+      "Rodriguez, Bianca",
+      "Director of Marketing & Advancement Services",
+      "Phone: 760-921-5421",
+      "bianca.rodriguez@paloverde.edu bianca.rodriguez@paloverde.edu",
+      "Rodriguez, Elena"
+     ],
+     "emails": [
+      "bianca.rodriguez@paloverde.edu",
+      "sam.robinson@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Acting Vice President of Human Resources",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5421",
+      "bianca.rodriguez@paloverde.edu bianca.rodriguez@paloverde.edu",
+      "Rodriguez, Elena",
+      "Acting Vice President of Human Resources",
+      "Phone: 760-921-5447",
+      "elena.rodriguez@paloverde.edu elena.rodriguez@paloverde.edu",
+      "Rodriguez, Miriam"
+     ],
+     "emails": [
+      "bianca.rodriguez@paloverde.edu",
+      "elena.rodriguez@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Director of Payroll Services & Benefits",
+     "position": null,
+     "window": [
+      "grecia.ruvalcaba@paloverde.edu grecia.ruvalcaba@paloverde.edu",
+      "S",
+      "Salcido, Daisy",
+      "Director of Payroll Services & Benefits",
+      "Phone: 760-921-5507",
+      "daisy.salcido@paloverde.edu daisy.salcido@paloverde.edu",
+      "Saldana, Fernando"
+     ],
+     "emails": [
+      "daisy.salcido@paloverde.edu",
+      "grecia.ruvalcaba@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Executive Assistant to the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "Phone: 760-921-5516",
+      "julien.sperling@paloverde.edu julien.sperling@paloverde.edu",
+      "Sutterfield, Ashley",
+      "Executive Assistant to the Superintendent/President",
+      "Phone: 760-921-5510",
+      "ashley.sutterfield@paloverde.edu ashley.sutterfield@paloverde.edu",
+      "T"
+     ],
+     "emails": [
+      "ashley.sutterfield@paloverde.edu",
+      "julien.sperling@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Director of Budgeting and Procurement",
+     "position": null,
+     "window": [
+      "ashley.sutterfield@paloverde.edu ashley.sutterfield@paloverde.edu",
+      "T",
+      "Tautala, Crystal",
+      "Director of Budgeting and Procurement",
+      "Phone: 760-921-5566 / 760-921-5538",
+      "crystal.tautala@paloverde.edu crystal.tautala@paloverde.edu",
+      "Tautala, Eric"
+     ],
+     "emails": [
+      "ashley.sutterfield@paloverde.edu",
+      "crystal.tautala@paloverde.edu"
+     ]
+    },
+    {
+     "line": "PT Basic Needs Coordinator",
+     "position": null,
+     "window": [
+      "Phone: 760-921-5566 / 760-921-5538",
+      "crystal.tautala@paloverde.edu crystal.tautala@paloverde.edu",
+      "Tautala, Eric",
+      "PT Basic Needs Coordinator",
+      "Phone: 760-921-5503",
+      "eric.tautala@paloverde.edu eric.tautala@paloverde.edu",
+      "Thelen, Anna"
+     ],
+     "emails": [
+      "crystal.tautala@paloverde.edu",
+      "eric.tautala@paloverde.edu"
+     ]
+    },
+    {
+     "line": "Interim Assistant Superintendent/Vice President of Administrative Services and College",
+     "position": "vpbs",
+     "window": [
+      "Phone: 760-921-5410",
+      "anna.thelen@paloverde.edu anna.thelen@paloverde.edu",
+      "Thomas, James",
+      "Interim Assistant Superintendent/Vice President of Administrative Services and College",
+      "Advancement",
+      "Phone: 760-921-5525",
+      "jim.thomas@paloverde.edu jim.thomas@paloverde.edu"
+     ],
+     "emails": [
+      "anna.thelen@paloverde.edu",
+      "jim.thomas@paloverde.edu"
+     ]
+    }
+   ]
+  },
+  {
+   "url": "https://www.paloverde.edu/ar/index.html",
+   "final_url": "https://www.paloverde.edu/ar/index.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "PVC History",
+      "Vision, Mission & Values",
+      "Board of Trustees",
+      "Office of the Superintendent/President",
+      "PVC Foundation",
+      "Accreditation",
+      "Research, Planning & Institutional Effectiveness"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.paloverde.edu/calendar.html",
+   "final_url": "https://www.paloverde.edu/calendar.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the Superintendent/President",
+     "position": "college_ceo",
+     "window": [
+      "PVC History",
+      "Vision, Mission & Values",
+      "Board of Trustees",
+      "Office of the Superintendent/President",
+      "PVC Foundation",
+      "Accreditation",
+      "Research, Planning & Institutional Effectiveness"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [],
+ "run": "41427972048"
+}
