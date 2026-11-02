@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-10-20
+updated: 2026-11-02
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -46,6 +46,25 @@ together and places them in some order of priority and completion and known issu
 | Common Subjects Reference (Sam's addition, Sheet 95) | `#canonical-subj4` | [common-subjects-reference](common-subjects-reference.md) | carries all five parts since S425: the Progress view, a procedure per card, the daily scan, the run log |
 
 ## Status
+
+**The CCC Commons, the working name (Sam, S552, 2026-11-02).** *"Let's call the Catalog Common the CCC Commons for now
+and you can play off of that for the card titles and focus elements."* The first-view mock
+(https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, a Design canvas, version 7; source in
+`CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/`) now reads **CCC Commons**, spelled out in its lede (*eight
+common references the California Community Colleges keep together*), and each of its eight cards is a **Common**
+reference, this tab's own row pattern with "Reference" dropped: Common Programs, Common Subjects, Common Exhibits,
+Common Credit Recommendations, Common Courses, Common Credentials, Common Outcomes, Common Skills. The decisions band,
+the sort note, the skip link and the footer carry the same words; the Programs card opens CPL Pathways. "Register"
+(S551's advice) is retired. The mock is in Malone's CPL/AI look at Sam's ask (S551), which is the public pages' look,
+so the port into this tab waits on his call on the look.
+
+**NEEDS SAM (Open Asks Sheet 158, S552, 2026-11-02): lock the CCC Commons first view for the port, and in which look;
+and the side-menu label.** (1) The mock at version 7 carries his naming; when he says it is locked, the port into this
+tab begins. First Light is the rule for every COBI tab and Malone's CPL/AI look the one departure (the public library
+page, Sierra, the adoption page), so a Commons tab in Malone's look is a doctrine change only he makes; the layout
+(the decisions band, one card per common reference, the filters) ports into either. (2) The side menu still reads
+*Catalog Commons*: `cobi_nav` row `commons`, his own row (updated_by slee@cccco.edu, 2026-11-01). Renaming it to CCC
+Commons is one Admin tab edit, or a guarded UPDATE with a receipt on his word.
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
