@@ -16414,8 +16414,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 517,
+   "count": 518,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 550,
+     "path": "docs/session_550_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "course-outcomes",
+      "contacts-harvest"
+     ],
+     "title": "Session 550 handoff: Santa Ana's SLO reader fix, the eighth contacts read",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25261,5 +25276,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1345
+ "total": 1346
 }

@@ -92,38 +92,10 @@ Crafton Hills's walk and the pending-run rule, Taft's slashed subject, Merced's 
 
 **Outcomes (Sam, 2026-10-04 18:03Z):** grab published course and program outcomes, and compare harvested credential skills with course outcomes. 🔨 **Course outlines (Sam, 2026-10-12, `sam-capture-cor-system-link-2026-10-12`):** capture each college's course outline of record system link so the harvest reads course SLOs, for the skills match and for faculty assessment of CPL. Record shape 3, Sheet 70's rulings, the registry's `cor_*` fields, the census, the index and how each host prints its SLOs: lessons, *Moved from the lane (S376 compaction)* and *(S380 compaction)*. ✅ **`course_outcomes` is live** (Sam pasted `chatbox/supabase_course_outcomes.sql`, Open Asks Sheet 72 card 1; public read, insert-only `course_outcomes_load()` on the service role, a receipt per load). **Loaded, nine colleges, 7,450 courses, 20,891 SLOs** (live read, S388; by college: lessons, S398 compaction). `catalog=<slug>` in `kb/course_outcomes/.run` picks either form; each load is insert-only with a receipt naming its rollback. COBI shows the SLOs on Program records' course rows and in COCI Lookup (#2116, Sam 2026-10-14). The skills comparison waits for `kb/reference/industry_credential_skills.json` (not started).
 
-## S419 SkyCottonwood (2026-10-18): Cañada's eleven, read from the catalog's own words
+## S419: moved to the archive (S549 compaction)
 
-- **The eleven were extracted, not unfound.** `summary.json`: found 73, extracted 73, failed.coverage 11; the load kept 62.
-  Each empty record's model note says the text held a sibling's section ("The provided text (catalog pp. 148-151)
-  contains the AS Business Assistant degree but not the Certificate of Achievement"). The lane had read the 11 as
-  unfound for two sessions; the records said otherwise. Read the records before naming a cause.
-- **Read the pages before touching the picker.** A page-read plan (`kb/college_reads/canada_shared_pdf_sections.json`)
-  printed the pages naming the sections' headings from the hand-filed copy (the census Reader fetches the GitHub
-  attachment; the college's `/current/` is robots-refused). The first read's patterns allowed one space after the
-  award's letters and the text carries two ("AS  Business Assistant"), so it printed two pages (run 39159401511);
-  the second printed eleven (39159883287). Then the picker itself ran over the printed pages, before and after the
-  change, for each program with its COCI list (`coci_program_courses`): four certificates moved to their own headings
-  on the printed pages alone, and the tests were written from the catalog's text verbatim.
-- **Three shapes, three readings** (`pdf_heading`, `_pdf_pick`). The award's letters before the title: p147's own
-  legend reads "AS  Associate in Science Degree Program", "AS-T  Associate in Science Degree for Transfer", "CA  Certificate
-  of Achievement", "CS  Certificate of Specialization: Not Transcript"; `AWARD_WORDS` read "AA-T" and "AS-T" and no bare
-  "CA", "AS" or "AA", so a certificate's page and the A.S. page naming the same courses scored alike and the earlier
-  page won (`PDF_AWARD_PREFIX`, at a line's start before a capitalized word; "As the student" names none). A title
-  wrapped onto a short next line ("CA  Human Relations in the" / "Workplace", p155; "CA  Technical (Apparel Industry" /
-  "Oriented)", p188): a next line of at most `PDF_WRAP_CHARS` (40) counts toward the title. A heading page whose list
-  opens the next page ("AS-T  Mathematics 2.0" p215/216, "AA  Ethnic Studies" p183/184): the heading page named no
-  listed code, so the course availability table that did (p127, p95) was read; a clean heading page now leads the run
-  when the next page names listed codes, and the coverage test reads both.
-- **Three stay out for COCI's reasons.** 05700 Business Administration A.S. lists one course, CIS 118; 05711 Theater
-  Arts A.A. lists DRAM 300.1; 20440 Technical (Apparel Industry Orientation) lists FASH 195. Each is a one-course closed
-  list the printed section never names, so the picker took the page that did (the course availability table, the
-  Computer Science certificates). A COCI comparison finding, not the reader's. 20440's catalog title also says
-  "Oriented" where COCI says "Orientation"; a stem would match where a word does not, and was left alone.
-- **Political Science A.A.-T (32833)** names 4 of its 9 listed codes on its own page (p229) and 5 on the description
-  pages the picker took (337-338); the list may continue on p230, which no read printed. The capture-only run tells.
-- **The capture-only run is the verification** (`program-requirements-college.yml`, `extract=0`, on the branch; run
-  39160718966): its `would_extract` names the programs whose page moved, before a model call is spent.
+Cañada's eleven, read from the catalog's own words: verbatim in
+`docs/program_requirements_harvest_lessons_archive_3.md`.
 
 ## S420 SkyTanoak (2026-10-19): Cañada's re-read landed, a Jev sitting over the failing records, the second reader ruled
 

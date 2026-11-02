@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1358,
-    "bytes": 13825664,
-    "over_budget": 0,
-    "handoff_max": 549,
+    "files": 1359,
+    "bytes": 13834123,
+    "over_budget": 1,
+    "handoff_max": 550,
     "always_loaded_files": 1,
     "always_loaded_bytes": 59982,
     "superseded_files": 0,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 137,
-        "bytes": 4216695,
+        "bytes": 4221069,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 10225,
+        "bytes": 9658,
         "over": 0
       },
       "lessons": {
         "files": 85,
-        "bytes": 2572718,
+        "bytes": 2571433,
         "over": 0
       },
       "kb_note": {
@@ -46,24 +46,25 @@
       },
       "roadmap_lane": {
         "files": 42,
-        "bytes": 473275,
-        "over": 0
+        "bytes": 474647,
+        "over": 1
       },
       "handoff": {
-        "files": 517,
-        "bytes": 3672756,
+        "files": 518,
+        "bytes": 3677321,
         "over": 0
       }
     },
     "by_rule": {
       "kb_note_dialect": 1,
+      "oversized_doc": 1,
       "house_voice": 1,
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25419,
-      "bytes": 4168102149,
-      "heavy_bytes": 2973110029,
+      "files": 25439,
+      "bytes": 4168611376,
+      "heavy_bytes": 2973126137,
       "heavy_share": 0.713,
       "ignore_filters": [
         "cpl-project-tracker/kb/receipts",
@@ -155,6 +156,19 @@
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
     },
     {
+      "rule": "oversized_doc",
+      "fixable": false,
+      "detail": {
+        "bytes": 20261,
+        "limit": 20000,
+        "lane": "roadmap_lane",
+        "over_by": 261,
+        "ratio": 1.01
+      },
+      "message": "20,261 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
+      "path": "docs/reference/lanes/map-users-student-contact.md"
+    },
+    {
       "rule": "house_voice",
       "fixable": false,
       "detail": {
@@ -171,10 +185,10 @@
       "fixable": false,
       "path": "kb/receipts",
       "detail": {
-        "bytes": 1853675714,
+        "bytes": 1853691822,
         "kind": "dir"
       },
-      "message": "directory totals 1,853,675,714 B inside the vault"
+      "message": "directory totals 1,853,691,822 B inside the vault"
     },
     {
       "rule": "vault_heavy_path",

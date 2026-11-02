@@ -939,3 +939,36 @@ From the Records view paragraph, verbatim:
   As in S484, every record whose verdict stood was restored before `step=reread`, which then posted three.
 - **The display build needs openpyxl** (`python3 -m pip install openpyxl`; the bare `pip` here installs to another
   interpreter). Build 8052e240575a changed only the build stamp in `cpl_pathways_roep_data.js`.
+
+## S419 SkyCottonwood (2026-10-18): Cañada's eleven, read from the catalog's own words
+
+- **The eleven were extracted, not unfound.** `summary.json`: found 73, extracted 73, failed.coverage 11; the load kept 62.
+  Each empty record's model note says the text held a sibling's section ("The provided text (catalog pp. 148-151)
+  contains the AS Business Assistant degree but not the Certificate of Achievement"). The lane had read the 11 as
+  unfound for two sessions; the records said otherwise. Read the records before naming a cause.
+- **Read the pages before touching the picker.** A page-read plan (`kb/college_reads/canada_shared_pdf_sections.json`)
+  printed the pages naming the sections' headings from the hand-filed copy (the census Reader fetches the GitHub
+  attachment; the college's `/current/` is robots-refused). The first read's patterns allowed one space after the
+  award's letters and the text carries two ("AS  Business Assistant"), so it printed two pages (run 39159401511);
+  the second printed eleven (39159883287). Then the picker itself ran over the printed pages, before and after the
+  change, for each program with its COCI list (`coci_program_courses`): four certificates moved to their own headings
+  on the printed pages alone, and the tests were written from the catalog's text verbatim.
+- **Three shapes, three readings** (`pdf_heading`, `_pdf_pick`). The award's letters before the title: p147's own
+  legend reads "AS  Associate in Science Degree Program", "AS-T  Associate in Science Degree for Transfer", "CA  Certificate
+  of Achievement", "CS  Certificate of Specialization: Not Transcript"; `AWARD_WORDS` read "AA-T" and "AS-T" and no bare
+  "CA", "AS" or "AA", so a certificate's page and the A.S. page naming the same courses scored alike and the earlier
+  page won (`PDF_AWARD_PREFIX`, at a line's start before a capitalized word; "As the student" names none). A title
+  wrapped onto a short next line ("CA  Human Relations in the" / "Workplace", p155; "CA  Technical (Apparel Industry" /
+  "Oriented)", p188): a next line of at most `PDF_WRAP_CHARS` (40) counts toward the title. A heading page whose list
+  opens the next page ("AS-T  Mathematics 2.0" p215/216, "AA  Ethnic Studies" p183/184): the heading page named no
+  listed code, so the course availability table that did (p127, p95) was read; a clean heading page now leads the run
+  when the next page names listed codes, and the coverage test reads both.
+- **Three stay out for COCI's reasons.** 05700 Business Administration A.S. lists one course, CIS 118; 05711 Theater
+  Arts A.A. lists DRAM 300.1; 20440 Technical (Apparel Industry Orientation) lists FASH 195. Each is a one-course closed
+  list the printed section never names, so the picker took the page that did (the course availability table, the
+  Computer Science certificates). A COCI comparison finding, not the reader's. 20440's catalog title also says
+  "Oriented" where COCI says "Orientation"; a stem would match where a word does not, and was left alone.
+- **Political Science A.A.-T (32833)** names 4 of its 9 listed codes on its own page (p229) and 5 on the description
+  pages the picker took (337-338); the list may continue on p230, which no read printed. The capture-only run tells.
+- **The capture-only run is the verification** (`program-requirements-college.yml`, `extract=0`, on the branch; run
+  39160718966): its `would_extract` names the programs whose page moved, before a model call is spent.
