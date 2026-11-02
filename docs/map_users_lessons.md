@@ -547,3 +547,20 @@ first sentence read as missing data, and the control lives in the header's Sign 
   name, so no `vrc` row. A *Veterans Liaison* stays unmatched.
 - **A dated change is worth a note in the record.** The 4CD Chancellor retires 2026-12-30 with an interim named; both
   district rows want a refresh after that date.
+
+## S547 SkyCartwheel (2026-11-02): the sixth contacts read
+
+- **The refusals are two districts, and the browser fallback is held.** Madera answered 403 as Fresno City did, so State
+  Center refuses the plain read too: ten colleges in all, with LACCD's eight. A fallback that retries a refused page in
+  Chromium under the same named agent, as the course outline census reads, was refused by the session's permission
+  check as a way around a bot check. A denial is a hold: nothing was written, and Open Asks Sheet 156 asks Sam how to
+  reach them (asking the districts is proposed).
+- **Three readers, then one check against the pages.** The night's 596 KB of excerpts went to three agents, five
+  colleges each, with the positions and Sam's variants in the brief. Every name and email they returned was then found
+  in its college's committed file before the apply. Two of their calls were reversed against the runner's patterns:
+  *Vice President, College & Administrative Services* (Modesto) stays unmatched, since Sam's VPBS reading names
+  Administrative Services alone; *Veterans Affairs Coordinator* (Merritt) is `vrc`, since the pattern takes it.
+- **A records file's `colleges` is a list,** the colleges the load may mark gone. A count there fails `check_records`.
+- **Directory department labels are not titles.** Merritt's directory prints *Student Services-VP* beside staff names;
+  no record came from it. Napa's directory prints each address above the next person's name, so emails stay blank
+  where the pairing is unclear.

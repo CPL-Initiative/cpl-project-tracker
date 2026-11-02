@@ -16414,8 +16414,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 515,
+   "count": 516,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 548,
+     "path": "docs/session_548_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "course-outcomes",
+      "contacts-harvest",
+      "decision-sheet"
+     ],
+     "title": "Session 548 handoff: Golden West's SLO load, the sixth contacts read, Sheet 156 on the refused colleges",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25229,5 +25245,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1343
+ "total": 1344
 }
