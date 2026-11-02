@@ -1,0 +1,1860 @@
+{
+ "college": "West Valley College",
+ "homepage": "https://www.westvalley.edu/",
+ "read_at": "2026-11-02T12:35:15+00:00",
+ "pages": [
+  {
+   "url": "https://www.westvalley.edu/",
+   "final_url": "https://www.westvalley.edu/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Sponsored by the Office of the Chancellor, WVC Office of Strategy & Equity, and WVC Ethnic Studies program in partnership with:",
+     "position": "district_ceo",
+     "window": [
+      "17",
+      "Unthanksgiving Day (also known as Indigenous Peoples Sunrise Ceremony) showcases the advocacy and social justice movement for Native Americans that gained most visibility in the 1960s, including the occupation of the island of Alcatraz.",
+      "The program will include a land acknowledgement, blessing, traditional ceremony, and tribal leader presentations on Native history and the meaning of Unthanksgiving. We are honored to have leaders and community from the Muwékma Ohlone Tribe of the San Francisco Bay Area joining us again this year. We will also have tabling by MOSAIC America and the New Museum Los Gatos (NUMU).",
+      "Sponsored by the Office of the Chancellor, WVC Office of Strategy & Equity, and WVC Ethnic Studies program in partnership with:",
+      "WVC Democracy Institute",
+      "WVC School of Language Arts and Social Sciences",
+      "Mosaic America Muwekma Ohlone Tribe of the San Francisco Bay Area"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/faculty/",
+   "final_url": "https://www.westvalley.edu/faculty/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Physical Science",
+      "Physics",
+      "Political Science",
+      "President's Office",
+      "Printing Services",
+      "Psychology",
+      "Reading"
+     ],
+     "emails": []
+    },
+    {
+     "line": "DESP Director and ADA Compliance Coordinator",
+     "position": null,
+     "window": [
+      "(408) 741-2574",
+      "terry.ngFREEWEST_VALLEY",
+      "Delevett, Amy",
+      "DESP Director and ADA Compliance Coordinator",
+      "Student Services",
+      "(408) 741-2620",
+      "amy.delevettFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Computer Science & Engineering",
+      "andres.calleFREEWEST_VALLEY",
+      "Bowers, Kailani",
+      "Director",
+      "Outreach & Recruitment",
+      "(408) 741-2722",
+      "kailani.bowersFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "(408) 741-2722",
+      "kailani.bowersFREEWEST_VALLEY",
+      "Vargas, Erika",
+      "Dean",
+      "Health and Human Development",
+      "(408) 741-2523",
+      "erika.vargasFREEwvm.edu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Director",
+     "position": null,
+     "window": [
+      "Park Management",
+      "john.carnesFREEwvm.edu",
+      "Kawasaki, Yuko",
+      "Executive Director",
+      "Student Health Services",
+      "(408) 741-2150",
+      "yuko.kawasakiFREEwvm.edu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "(408) 741-2150",
+      "yuko.kawasakiFREEwvm.edu",
+      "Manrose, Mark",
+      "Director",
+      "School of Continuing Education",
+      "(408) 741-2469",
+      "mark.manroseFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "(408) 741-2469",
+      "mark.manroseFREEWEST_VALLEY",
+      "Djedi, Anthony",
+      "Vice President of Administrative Services",
+      "Administrative Services",
+      "(408) 741-2056",
+      "anthony.djediFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Physical Sciences Instructor and STEM-RC Head Coordinator",
+     "position": null,
+     "window": [
+      "Computer Science & Engineering",
+      "daniel.hwangFREEwvm.edu",
+      "Flohic, Helene",
+      "Physical Sciences Instructor and STEM-RC Head Coordinator",
+      "Physical Sciences",
+      "helene.flohicFREEWEST_VALLEY",
+      "Tran, Trisha"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean",
+     "position": null,
+     "window": [
+      "Continuing Education",
+      "elena.bothenFREEwvm.edu",
+      "Truong, Linda",
+      "Interim Dean",
+      "Professional Studies",
+      "(408) 741-2180",
+      "Linda.TruongFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean",
+     "position": null,
+     "window": [
+      "Counseling",
+      "laura.sheldonFREEwvm.edu",
+      "Haslam, Ian",
+      "Interim Dean",
+      "Language Arts and Social Science",
+      "ian.haslamFREEWEST_VALLEY",
+      "Horibe, Ph.D., Shusaku"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Institutional Effectiveness & Research",
+     "position": null,
+     "window": [
+      "Language Arts and Social Science",
+      "ian.haslamFREEWEST_VALLEY",
+      "Horibe, Ph.D., Shusaku",
+      "Dean of Institutional Effectiveness & Research",
+      "Institutional Research",
+      "(408) 741-4006",
+      "shusaku.horibeFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Acting Vice Provost/Dean of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Interior Design",
+      "anna.harrisonFREEwvm.edu",
+      "Denning, Joann",
+      "Acting Vice Provost/Dean of Academic Affairs",
+      "Academic Affairs",
+      "(408) 741-2412",
+      "Joann.DenningFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Music",
+      "benett.rothnewellFREEwvm.edu",
+      "Ulloa, Ed.D., John",
+      "Dean",
+      "Language Arts and Social Science",
+      "(408) 741-2113",
+      "john.ulloaFREEwvm.edu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Instructor and Director",
+     "position": null,
+     "window": [
+      "Continuing Education",
+      "ana.costaFREEwvm.edu",
+      "Aronson, Ph.D., Robin",
+      "Instructor and Director",
+      "Theater and Film",
+      "robin.aronsonFREEwvm.edu",
+      "Black, Benjamin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Articulation Officer and Honors Counselor",
+     "position": "articulation_officer",
+     "window": [
+      "(408) 741-2075",
+      "sharon.stormFREEWEST_VALLEY",
+      "West, Michael",
+      "Articulation Officer and Honors Counselor",
+      "Academic Affairs",
+      "(408) 741-4037",
+      "michael.westFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Music Theory Coordinator | Director of Creating Music for Film, TV and Gaming | Music Composition",
+     "position": null,
+     "window": [
+      "(408) 741-2434",
+      "cammy.houangFREEWEST_VALLEY",
+      "Sinclair, Robert",
+      "Music Theory Coordinator | Director of Creating Music for Film, TV and Gaming | Music Composition",
+      "Music",
+      "(408) 741-2464",
+      "robert.sinclairFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Student Needs",
+     "position": null,
+     "window": [
+      "Economics",
+      "madhura.mukherjeeFREEwvm.edu",
+      "Hernandez, Samantha",
+      "Director of Student Needs",
+      "Student Services",
+      "(408) 741-4081",
+      "samantha.hernandezFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Performing Arts Technical Director",
+     "position": null,
+     "window": [
+      "(408) 378-0842",
+      "jenee.crayneFREEwvm.edu",
+      "Lidwell, Andrew",
+      "Performing Arts Technical Director",
+      "Theater and Film",
+      "andrew.lidwellFREEWEST_VALLEY",
+      "Barragan, Yasmin"
+     ],
+     "emails": []
+    },
+    {
+     "line": "English Faculty and Distance Education Coordinator",
+     "position": null,
+     "window": [
+      "(408) 741-4026",
+      "danny.yoshikawaFREEwvm.edu",
+      "Stevenson, Christina",
+      "English Faculty and Distance Education Coordinator",
+      "English",
+      "(408) 741-2514",
+      "christina.stevensonFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Management Assistant to the Vice President of Student Services, Diversity and Inclusion",
+     "position": "vpss",
+     "window": [
+      "Biology",
+      "adrienne.frisbeeFREEwvm.edu",
+      "Bernardo, Anthony",
+      "Management Assistant to the Vice President of Student Services, Diversity and Inclusion",
+      "Student Services",
+      "(408) 741-2119",
+      "anthony.bernardoFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "Continuing Education",
+      "karla.reyesnogueraFREEwvm.edu",
+      "Tablan, Elizabeth",
+      "Executive Assistant to the President",
+      "President's Office",
+      "(408) 741-2668",
+      "elizabeth.tablanFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "karla.reyesnogueraFREEwvm.edu",
+      "Tablan, Elizabeth",
+      "Executive Assistant to the President",
+      "President's Office",
+      "(408) 741-2668",
+      "elizabeth.tablanFREEWEST_VALLEY",
+      "Kolling, Claire"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Physics Instructor and STEM-RC Co-Coordinator",
+     "position": null,
+     "window": [
+      "World Languages",
+      "anna.demarchiFREEwvm.edu",
+      "Ebert, Kimberly",
+      "Physics Instructor and STEM-RC Co-Coordinator",
+      "Physics",
+      "kimberly.ebertFREEwvm.edu",
+      "Thompson, Raiida"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Physics",
+      "kimberly.ebertFREEwvm.edu",
+      "Thompson, Raiida",
+      "Director",
+      "MESA",
+      "(408)-741-2053",
+      "raiida.thompsonFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Physical Sciences",
+      "fernanda.mazzilloFREEwvm.edu",
+      "Mirabelli-Lopez, Shannon",
+      "Dean",
+      "Art and Design",
+      "(408) 741-2074",
+      "shannon.lopezFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Paralegal Program Coordinator & Paralegal Instructor",
+     "position": null,
+     "window": [
+      "Chemistry",
+      "gary.fisherFREEwvm.edu",
+      "Johnson, Mark",
+      "Paralegal Program Coordinator & Paralegal Instructor",
+      "Paralegal",
+      "(408) 741-2445",
+      "mark.johnsonFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office Coordinator",
+     "position": null,
+     "window": [
+      "Child Studies",
+      "thena.geeFREEwvm.edu",
+      "Valencia Hernandez, Ana Lee",
+      "Office Coordinator",
+      "EOPS/CARE, CalWORKs and NextUp",
+      "(408) 741-7949",
+      "Ana.ValenciaHernandezFREEwvm.edu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Affairs",
+     "position": "vpss",
+     "window": [
+      "(408) 741-7949",
+      "Ana.ValenciaHernandezFREEwvm.edu",
+      "Anderson Jones-Bey, Ed.D., Tanya",
+      "Vice President of Student Affairs",
+      "Student Services",
+      "(408) 741-4616",
+      "Tanya.AndersonFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to the Associate Vice Chancellor",
+     "position": "assoc_vice_chancellor",
+     "window": [
+      "Continuing Education",
+      "sorena.faravashiFREEwvm.edu",
+      "Garcia, Monica",
+      "Executive Assistant to the Associate Vice Chancellor",
+      "Human Resources",
+      "monica.garciaFREEwvm.edu",
+      "McPeek, Emily"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Administrative Specialist/Assistant to Vice Provost",
+     "position": "vpaa",
+     "window": [
+      "Continuing Education",
+      "lorena.carrascoFREEwvm.edu",
+      "Okamoto, Karen",
+      "Administrative Specialist/Assistant to Vice Provost",
+      "Academic Affairs",
+      "(408) 741-3951",
+      "karen.okamotoFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "English Instructor, Puente co-coordinator",
+     "position": null,
+     "window": [
+      "(408) 741-2602",
+      "vida.sabouriFREEWEST_VALLEY",
+      "Saito-Liu, Leslie",
+      "English Instructor, Puente co-coordinator",
+      "English",
+      "(408) 741-4010",
+      "leslie.saitoFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director and Counselor",
+     "position": null,
+     "window": [
+      "(408) 741-4010",
+      "leslie.saitoFREEWEST_VALLEY",
+      "Salcido, Melissa",
+      "Director and Counselor",
+      "Transfer Center",
+      "(408) 741-2102",
+      "melissa.salcidoFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "FYE Coordinator | English Instructor",
+     "position": null,
+     "window": [
+      "Visual Art",
+      "gary.tolomeiFREEwvm.edu",
+      "Kalivitis, Vicky",
+      "FYE Coordinator | English Instructor",
+      "Strategy & Equity | English",
+      "(408) 309-3594",
+      "vicky.kalivitisFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Provost/Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "(408) 741-2120",
+      "jason.kingFREEWEST_VALLEY",
+      "Forbes, Ph.D., Safiyyah",
+      "Provost/Vice President of Academic Affairs",
+      "Academic Affairs",
+      "Safiyyah.ForbesFREEWEST_VALLEY",
+      "Kirk, Gail"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office Coordinator",
+     "position": null,
+     "window": [
+      "Computer Science & Engineering",
+      "an.lamFREEwvm.edu",
+      "Hobbs-Helmus, Michelle",
+      "Office Coordinator",
+      "MESA",
+      "(408) 741-3929",
+      "michelle.hobbs-helmusFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Economics Instructor and Honors Program Coordinator",
+     "position": null,
+     "window": [
+      "(408) 741-2570",
+      "darrell.linthacumFREEWEST_VALLEY",
+      "Liu, Sam",
+      "Economics Instructor and Honors Program Coordinator",
+      "Economics",
+      "(408) 741-2147",
+      "sam.liuFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director, Instructor",
+     "position": null,
+     "window": [
+      "(408) 741-4604",
+      "patricia.louderbackFREEWEST_VALLEY",
+      "Lowry, Laura",
+      "Director, Instructor",
+      "Theater and Film",
+      "(408) 741-4016",
+      "laura.lowryFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Engineering",
+      "irene.chenFREEwvm.edu",
+      "Messer, Joanna",
+      "Director",
+      "Library & Learning Support Services",
+      "(408) 741-2482",
+      "joanna.messerFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Enrollment Services; Foster Youth Liaison",
+     "position": null,
+     "window": [
+      "(408) 855-5919",
+      "drew.mccormickFREEwvm.edu",
+      "McDevitt, Joe",
+      "Dean of Enrollment Services; Foster Youth Liaison",
+      "Student Services",
+      "(408) 741-4643",
+      "joe.mcdevittFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Management Assistant to the Provost and Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Sociology",
+      "megan.mcnamaraFREEwvm.edu",
+      "McVey, Sonia",
+      "Management Assistant to the Provost and Vice President of Academic Affairs",
+      "Academic Affairs",
+      "(408) 741-2183",
+      "sonia.mcveyFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Astronomy Instructor / Planetarium Director",
+     "position": null,
+     "window": [
+      "(408) 741-2183",
+      "sonia.mcveyFREEWEST_VALLEY",
+      "Mendelsohn, Benjamin",
+      "Astronomy Instructor / Planetarium Director",
+      "Astronomy",
+      "(408) 741-4018",
+      "benjamin.mendelsohnFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "(408) 741-4018",
+      "benjamin.mendelsohnFREEWEST_VALLEY",
+      "Taylor-Mendoza, Ph.D., Jennifer",
+      "President",
+      "President's Office",
+      "(408) 741-2668",
+      "j.taylormendozaFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "benjamin.mendelsohnFREEWEST_VALLEY",
+      "Taylor-Mendoza, Ph.D., Jennifer",
+      "President",
+      "President's Office",
+      "(408) 741-2668",
+      "j.taylormendozaFREEWEST_VALLEY",
+      "Meng, Hongyan"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Music",
+      "bruce.moyerFREEwvm.edu",
+      "Woods, Katie",
+      "Director",
+      "Marketing & Communications",
+      "(408) 741-2031",
+      "katie.woodsFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Strategy & Equity",
+     "position": null,
+     "window": [
+      "(541) 745-8078",
+      "samuel.fleischerFREEwvm.edu",
+      "Vizenor, Andrea",
+      "Vice President of Strategy & Equity",
+      "Strategy & Equity",
+      "(408) 741-2030",
+      "andrea.vizenorFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Theater Arts Designer and Director",
+     "position": null,
+     "window": [
+      "Child Studies",
+      "janet.vanidesFREEwvm.edu",
+      "Fischer, Carol",
+      "Theater Arts Designer and Director",
+      "Theater and Film",
+      "(408) 741-2045 x3598",
+      "carol.fischerFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Commercial Music",
+     "position": null,
+     "window": [
+      "Accounting",
+      "Jim.hendersonFREEWEST_VALLEY",
+      "Forehan, Jeff",
+      "Director of Commercial Music",
+      "Music",
+      "(408) 741-2520",
+      "jeff.forehanFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Communication Studies Instructor and Faculty Accreditation Liaison Officer (ALO)",
+     "position": null,
+     "window": [
+      "Business",
+      "laurie.hammondFREEWEST_VALLEY",
+      "Hannigan, Ph.D, John",
+      "Communication Studies Instructor and Faculty Accreditation Liaison Officer (ALO)",
+      "Communication Studies",
+      "(408) 741-2629",
+      "john.hanniganFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Continuing Education",
+      "edward.hegstromFREEwvm.edu",
+      "Espinoza , Diego",
+      "Dean",
+      "Counseling and Student Success",
+      "(408) 741-2483",
+      "Diego.EspinozaFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Program Director",
+     "position": null,
+     "window": [
+      "(408) 741-2507",
+      "julie.hoopesFREEWEST_VALLEY",
+      "Horgan, Anne",
+      "Program Director",
+      "Child Development Center",
+      "(408) 741-2152",
+      "anne.horganFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Computer Applications Instructor and Work Experience Coordinator",
+     "position": null,
+     "window": [
+      "Digital Media",
+      "stacey.houghtonFREEWEST_VALLEY",
+      "Hughes, Heide",
+      "Computer Applications Instructor and Work Experience Coordinator",
+      "Computer Applications",
+      "(408) 741-2114",
+      "heide.hughesFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Kinesiology Instructor and PTA Coordinator",
+     "position": null,
+     "window": [
+      "(408) 741-2114",
+      "heide.hughesFREEWEST_VALLEY",
+      "McRobbie, Alex",
+      "Kinesiology Instructor and PTA Coordinator",
+      "Kinesiology",
+      "Alex.McRobbieFREEWEST_VALLEY",
+      "Riazati, Sherveen"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Athletic Operations Coordinator",
+     "position": null,
+     "window": [
+      "World Languages",
+      "annamaria.bernardiFREEwvm.edu",
+      "Bertolucci, Nick",
+      "Athletic Operations Coordinator",
+      "Athletics/Physical Education",
+      "(408) 741-2132",
+      "nick.bertolucciFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Resource Center",
+     "position": "vrc",
+     "window": [
+      "angela.castilloFREEWEST_VALLEY",
+      "Ceresa, Melissa",
+      "Program Specialist & VA School Certifying Official",
+      "Veterans Resource Center",
+      "(408) 741-4694",
+      "melissa.ceresaFREEWEST_VALLEY",
+      "Challas, Jason"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Instrumental Music & Jazz Studies",
+     "position": null,
+     "window": [
+      "(408) 741-2683",
+      "bill.davisFREEWEST_VALLEY",
+      "Davis, Troy",
+      "Director of Instrumental Music & Jazz Studies",
+      "Music",
+      "(408) 741-2682",
+      "troy.davisFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director of Choral & Vocal Studies; Performing Arts Department Chairperson",
+     "position": null,
+     "window": [
+      "Community Education Office",
+      "laura.deisterFREEWEST_VALLEY",
+      "De La Rosa, Lou",
+      "Director of Choral & Vocal Studies; Performing Arts Department Chairperson",
+      "Music",
+      "(408) 741-4663",
+      "lou.delarosaFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "Continuing Education",
+      "eric.vandornFREEwvm.edu",
+      "Vaughn, Mel",
+      "Dean",
+      "Science and Math",
+      "(408) 741-2115",
+      "melvin.vaughnFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dance Coordinator",
+     "position": null,
+     "window": [
+      "Mathematics",
+      "victor.wuFREEwvm.edu",
+      "Wundram, Brenna",
+      "Dance Coordinator",
+      "Kinesiology",
+      "(408) 855-5394",
+      "brenna.wundramFREEmissioncollege.edu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Designer, Director, and Instructor",
+     "position": null,
+     "window": [
+      "(408) 855-5356",
+      "christopher.zilgFREEmissioncollege.edu",
+      "Zsadanyi-Yale, Amy",
+      "Designer, Director, and Instructor",
+      "Theater and Film",
+      "(408) 741-2045 x3746",
+      "amy.yaleFREEWEST_VALLEY"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/services/veterans/",
+   "final_url": "https://www.westvalley.edu/services/veterans/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Support Services | West Valley College",
+     "position": "vrc",
+     "window": [
+      "Veterans Support Services | West Valley College",
+      "Skip to Main Content",
+      "Skip to Utility Navigation",
+      "Skip to Main Navigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Support Services",
+     "position": "vrc",
+     "window": [
+      "About Us",
+      "Athletics",
+      "HomeStudent ServicesVeterans Support ServicesCurrent Page",
+      "Veterans Support Services",
+      "Veterans Support Services",
+      "Open subnavigation",
+      "Section navigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Support Services",
+     "position": "vrc",
+     "window": [
+      "Athletics",
+      "HomeStudent ServicesVeterans Support ServicesCurrent Page",
+      "Veterans Support Services",
+      "Veterans Support Services",
+      "Open subnavigation",
+      "Section navigation",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Veterans Services at WVC",
+     "position": "vrc",
+     "window": [
+      "Phone: (408) 741-2158Email: [email protected]Go to Veteran Educational Benefits Request for Certification formProgram Specialist & VA School Certifying Official: Melissa Ceresa",
+      "Connect with Us",
+      "Facebook: westvalleyvetsInstagram: @westvalleyvets",
+      "Veterans Services at WVC",
+      "Schools",
+      "Art and Design",
+      "Continuing Education"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/about/administration/",
+   "final_url": "https://www.westvalley.edu/about/administration/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Construction",
+      "Contact",
+      "Mission",
+      "Office of the President",
+      "President",
+      "Jennifer Taylor-Mendoza, Ph.D.",
+      "President's Office"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "Contact",
+      "Mission",
+      "Office of the President",
+      "President",
+      "Jennifer Taylor-Mendoza, Ph.D.",
+      "President's Office",
+      "President"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "President",
+      "Jennifer Taylor-Mendoza, Ph.D.",
+      "President's Office",
+      "President",
+      "(408) 741-2668",
+      "[email protected]"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "President",
+      "Jennifer Taylor-Mendoza, Ph.D.",
+      "President's Office",
+      "President",
+      "(408) 741-2668",
+      "[email protected]",
+      "Vice Presidents"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Provost/Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Vice Presidents",
+      "Safiyyah Forbes, Ph.D.",
+      "Academic Affairs",
+      "Provost/Vice President of Academic Affairs",
+      "[email protected]",
+      "Anthony Djedi",
+      "Administrative Services"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Administrative Services",
+     "position": "vpbs",
+     "window": [
+      "[email protected]",
+      "Anthony Djedi",
+      "Administrative Services",
+      "Vice President of Administrative Services",
+      "(408) 741-2056",
+      "[email protected]",
+      "Cilker 102"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Affairs",
+     "position": "vpss",
+     "window": [
+      "Cilker 102",
+      "Tanya Anderson Jones-Bey, Ed.D.",
+      "Student Services",
+      "Vice President of Student Affairs",
+      "(408) 741-4616",
+      "[email protected]",
+      "Andrea Vizenor"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Strategy & Equity",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "Andrea Vizenor",
+      "Strategy & Equity",
+      "Vice President of Strategy & Equity",
+      "(408) 741-2030",
+      "[email protected]",
+      "Learning Resource Commons (LRC) 133"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Acting Vice Provost/Dean of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "Deans",
+      "Joann Denning",
+      "Academic Affairs",
+      "Acting Vice Provost/Dean of Academic Affairs",
+      "(408) 741-2412",
+      "[email protected]",
+      "Diego Espinoza"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "Diego Espinoza",
+      "Counseling and Student Success",
+      "Dean",
+      "(408) 741-2483",
+      "[email protected]",
+      "Shusaku Horibe, Ph.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Institutional Effectiveness & Research",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "Shusaku Horibe, Ph.D.",
+      "Institutional Research",
+      "Dean of Institutional Effectiveness & Research",
+      "(408) 741-4006",
+      "[email protected]",
+      "SSC 214A"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Enrollment Services; Foster Youth Liaison",
+     "position": null,
+     "window": [
+      "SSC 214A",
+      "Joe McDevitt",
+      "Student Services",
+      "Dean of Enrollment Services; Foster Youth Liaison",
+      "(408) 741-4643",
+      "[email protected]",
+      "Shannon Mirabelli-Lopez"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "Shannon Mirabelli-Lopez",
+      "Art and Design",
+      "Dean",
+      "(408) 741-2074",
+      "[email protected]",
+      "Linda Truong"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "Linda Truong",
+      "Professional Studies",
+      "Interim Dean",
+      "(408) 741-2180",
+      "[email protected]",
+      "John Ulloa, Ed.D."
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "John Ulloa, Ed.D.",
+      "Language Arts and Social Science",
+      "Dean",
+      "(408) 741-2113",
+      "[email protected]",
+      "Erika Vargas"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "Erika Vargas",
+      "Health and Human Development",
+      "Dean",
+      "(408) 741-2523",
+      "[email protected]",
+      "Mel Vaughn"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "Mel Vaughn",
+      "Science and Math",
+      "Dean",
+      "(408) 741-2115",
+      "[email protected]",
+      "Directors"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Directors",
+      "Mark Manrose",
+      "School of Continuing Education",
+      "Director",
+      "(408) 741-2469",
+      "[email protected]",
+      "Joanna Messer"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "[email protected]",
+      "Joanna Messer",
+      "Library & Learning Support Services",
+      "Director",
+      "(408) 741-2482",
+      "[email protected]",
+      "Learning Resource Commons (LRC) 108"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Learning Resource Commons (LRC) 108",
+      "Katie Woods",
+      "Marketing & Communications",
+      "Director",
+      "(408) 741-2031",
+      "[email protected]",
+      "Schools"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/calendar/event-details/037f1b12-0afd-4851-8c3a-33dcf8347fba",
+   "final_url": "https://www.westvalley.edu/calendar/event-details/037f1b12-0afd-4851-8c3a-33dcf8347fba",
+   "status": 200,
+   "excerpts": []
+  },
+  {
+   "url": "https://www.westvalley.edu/faculty/_by_category_administrators.php",
+   "final_url": "https://www.westvalley.edu/faculty/_by_category_administrators.php",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Physical Science",
+      "Physics",
+      "Political Science",
+      "President's Office",
+      "Printing Services",
+      "Psychology",
+      "Reading"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Phone",
+      "Email",
+      "Bowers, Kailani",
+      "Director",
+      "Outreach & Recruitment",
+      "(408) 741-2722",
+      "kailani.bowersFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "(408) 741-2722",
+      "kailani.bowersFREEWEST_VALLEY",
+      "Vargas, Erika",
+      "Dean",
+      "Health and Human Development",
+      "(408) 741-2523",
+      "erika.vargasFREEwvm.edu"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Interim Dean",
+     "position": null,
+     "window": [
+      "(408) 741-2523",
+      "erika.vargasFREEwvm.edu",
+      "Truong, Linda",
+      "Interim Dean",
+      "Professional Studies",
+      "(408) 741-2180",
+      "Linda.TruongFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Institutional Effectiveness & Research",
+     "position": null,
+     "window": [
+      "(408) 741-2180",
+      "Linda.TruongFREEWEST_VALLEY",
+      "Horibe, Ph.D., Shusaku",
+      "Dean of Institutional Effectiveness & Research",
+      "Institutional Research",
+      "(408) 741-4006",
+      "shusaku.horibeFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Acting Vice Provost/Dean of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "(408) 741-4006",
+      "shusaku.horibeFREEWEST_VALLEY",
+      "Denning, Joann",
+      "Acting Vice Provost/Dean of Academic Affairs",
+      "Academic Affairs",
+      "(408) 741-2412",
+      "Joann.DenningFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "(408) 741-2412",
+      "Joann.DenningFREEWEST_VALLEY",
+      "Mirabelli-Lopez, Shannon",
+      "Dean",
+      "Art and Design",
+      "(408) 741-2074",
+      "shannon.lopezFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Student Affairs",
+     "position": "vpss",
+     "window": [
+      "(408) 741-2074",
+      "shannon.lopezFREEWEST_VALLEY",
+      "Anderson Jones-Bey, Ed.D., Tanya",
+      "Vice President of Student Affairs",
+      "Student Services",
+      "(408) 741-4616",
+      "Tanya.AndersonFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Provost/Vice President of Academic Affairs",
+     "position": "vpaa",
+     "window": [
+      "(408) 741-4616",
+      "Tanya.AndersonFREEWEST_VALLEY",
+      "Forbes, Ph.D., Safiyyah",
+      "Provost/Vice President of Academic Affairs",
+      "Academic Affairs",
+      "Safiyyah.ForbesFREEWEST_VALLEY",
+      "Messer, Joanna"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "Academic Affairs",
+      "Safiyyah.ForbesFREEWEST_VALLEY",
+      "Messer, Joanna",
+      "Director",
+      "Library & Learning Support Services",
+      "(408) 741-2482",
+      "joanna.messerFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean of Enrollment Services; Foster Youth Liaison",
+     "position": null,
+     "window": [
+      "(408) 741-2482",
+      "joanna.messerFREEWEST_VALLEY",
+      "McDevitt, Joe",
+      "Dean of Enrollment Services; Foster Youth Liaison",
+      "Student Services",
+      "(408) 741-4643",
+      "joe.mcdevittFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "(408) 741-4643",
+      "joe.mcdevittFREEWEST_VALLEY",
+      "Taylor-Mendoza, Ph.D., Jennifer",
+      "President",
+      "President's Office",
+      "(408) 741-2668",
+      "j.taylormendozaFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "joe.mcdevittFREEWEST_VALLEY",
+      "Taylor-Mendoza, Ph.D., Jennifer",
+      "President",
+      "President's Office",
+      "(408) 741-2668",
+      "j.taylormendozaFREEWEST_VALLEY",
+      "Woods, Katie"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Director",
+     "position": null,
+     "window": [
+      "(408) 741-2668",
+      "j.taylormendozaFREEWEST_VALLEY",
+      "Woods, Katie",
+      "Director",
+      "Marketing & Communications",
+      "(408) 741-2031",
+      "katie.woodsFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Vice President of Strategy & Equity",
+     "position": null,
+     "window": [
+      "(408) 741-2031",
+      "katie.woodsFREEWEST_VALLEY",
+      "Vizenor, Andrea",
+      "Vice President of Strategy & Equity",
+      "Strategy & Equity",
+      "(408) 741-2030",
+      "andrea.vizenorFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "(408) 741-2030",
+      "andrea.vizenorFREEWEST_VALLEY",
+      "Espinoza , Diego",
+      "Dean",
+      "Counseling and Student Success",
+      "(408) 741-2483",
+      "Diego.EspinozaFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Dean",
+     "position": null,
+     "window": [
+      "(408) 741-2483",
+      "Diego.EspinozaFREEWEST_VALLEY",
+      "Vaughn, Mel",
+      "Dean",
+      "Science and Math",
+      "(408) 741-2115",
+      "melvin.vaughnFREEWEST_VALLEY"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/faculty/_department/administration_of_justice.html",
+   "final_url": "https://www.westvalley.edu/faculty/_department/administration_of_justice.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Physical Science",
+      "Physics",
+      "Political Science",
+      "President's Office",
+      "Printing Services",
+      "Psychology",
+      "Reading"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/faculty/_department/admissions_records.html",
+   "final_url": "https://www.westvalley.edu/faculty/_department/admissions_records.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Physical Science",
+      "Physics",
+      "Political Science",
+      "President's Office",
+      "Printing Services",
+      "Psychology",
+      "Reading"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/faculty/_department/presidents_office.html",
+   "final_url": "https://www.westvalley.edu/faculty/_department/presidents_office.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "President's Office | West Valley College",
+     "position": "college_ceo",
+     "window": [
+      "President's Office | West Valley College",
+      "Skip to Main Content",
+      "Skip to Utility Navigation",
+      "Skip to Main Navigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "About Us",
+      "Athletics",
+      "HomeFaculty and StaffFaculty DepartmentsPresident's OfficeCurrent Page",
+      "President's Office",
+      "Faculty Departments",
+      "Open subnavigation",
+      "Section navigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Physical Science",
+      "Physics",
+      "Political Science",
+      "President's Office",
+      "Printing Services",
+      "Psychology",
+      "Reading"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Executive Assistant to the President",
+     "position": "college_ceo",
+     "window": [
+      "Phone",
+      "Email",
+      "Tablan, Elizabeth",
+      "Executive Assistant to the President",
+      "President's Office",
+      "(408) 741-2668",
+      "elizabeth.tablanFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "Email",
+      "Tablan, Elizabeth",
+      "Executive Assistant to the President",
+      "President's Office",
+      "(408) 741-2668",
+      "elizabeth.tablanFREEWEST_VALLEY",
+      "Taylor-Mendoza, Ph.D., Jennifer"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President",
+     "position": "college_ceo",
+     "window": [
+      "(408) 741-2668",
+      "elizabeth.tablanFREEWEST_VALLEY",
+      "Taylor-Mendoza, Ph.D., Jennifer",
+      "President",
+      "President's Office",
+      "(408) 741-2668",
+      "j.taylormendozaFREEWEST_VALLEY"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Office",
+     "position": "college_ceo",
+     "window": [
+      "elizabeth.tablanFREEWEST_VALLEY",
+      "Taylor-Mendoza, Ph.D., Jennifer",
+      "President",
+      "President's Office",
+      "(408) 741-2668",
+      "j.taylormendozaFREEWEST_VALLEY",
+      "West Valley-Mission Community College District"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/cdn-cgi/l/email-protection",
+   "status": 404
+  },
+  {
+   "url": "https://www.westvalley.edu/services/veterans/benefits-request.html",
+   "final_url": "https://www.westvalley.edu/services/veterans/benefits-request.html",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Veterans Support Services",
+     "position": "vrc",
+     "window": [
+      "Athletics",
+      "HomeStudent ServicesVeterans Support ServicesVeteran Educational Benefits Request for CertificationCurrent Page",
+      "Veteran Educational Benefits Request for Certification",
+      "Veterans Support Services",
+      "Open subnavigation",
+      "Section navigation",
+      "Home"
+     ],
+     "emails": []
+    }
+   ]
+  },
+  {
+   "url": "https://www.westvalley.edu/president/",
+   "final_url": "https://www.westvalley.edu/president/",
+   "status": 200,
+   "excerpts": [
+    {
+     "line": "Office of the President | West Valley College",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President | West Valley College",
+      "Skip to Main Content",
+      "Skip to Utility Navigation",
+      "Skip to Main Navigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "About Us",
+      "Athletics",
+      "HomeOffice of the PresidentCurrent Page",
+      "President's Message",
+      "Office of the President",
+      "Open subnavigation",
+      "Section navigation"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Athletics",
+      "HomeOffice of the PresidentCurrent Page",
+      "President's Message",
+      "Office of the President",
+      "Open subnavigation",
+      "Section navigation",
+      "President's Message"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Message",
+     "position": "college_ceo",
+     "window": [
+      "Office of the President",
+      "Open subnavigation",
+      "Section navigation",
+      "President's Message",
+      "College Leadership",
+      "College Leadership",
+      "About Us"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Office of the President",
+     "position": "college_ceo",
+     "window": [
+      "Construction",
+      "Contact",
+      "Mission",
+      "Office of the President",
+      "Institutional Planning",
+      "Institutional Planning",
+      "Home"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Communications",
+     "position": "college_ceo",
+     "window": [
+      "Plan Alignment",
+      "Past Plans",
+      "WVC Organizational Chart",
+      "President's Communications",
+      "President's Communications",
+      "Home",
+      "Viewpoint"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Communications",
+     "position": "college_ceo",
+     "window": [
+      "Past Plans",
+      "WVC Organizational Chart",
+      "President's Communications",
+      "President's Communications",
+      "Home",
+      "Viewpoint",
+      "Community Connect"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Innovation and Impact Council",
+     "position": "college_ceo",
+     "window": [
+      "Institutional Planning",
+      "Institution-Set Standards",
+      "Meet the Team",
+      "President's Innovation and Impact Council",
+      "President's Innovation and Impact Council",
+      "Home",
+      "Membership"
+     ],
+     "emails": []
+    },
+    {
+     "line": "President's Innovation and Impact Council",
+     "position": "college_ceo",
+     "window": [
+      "Institution-Set Standards",
+      "Meet the Team",
+      "President's Innovation and Impact Council",
+      "President's Innovation and Impact Council",
+      "Home",
+      "Membership",
+      "PIIC Fundraising Dinner"
+     ],
+     "emails": []
+    },
+    {
+     "line": "A Message from the West Valley President",
+     "position": "college_ceo",
+     "window": [
+      "Calendar",
+      "Donate",
+      "Contact Us",
+      "A Message from the West Valley President",
+      "As the proud 12th President of West Valley College, I have the privilege of leading a college that is redefining what a community college can achieve.",
+      "West Valley is recognized as California’s No. 1 community college for student transfer success and by Forbes as one of the nation’s top colleges for online associate degrees. These distinctions reflect what drives our work every day: expanding opportunity, removing barriers, and creating exceptional pathways for students to transfer, launch careers, and achieve their goals.",
+      "Our momentum extends beyond the classroom. Through strong community partnerships, philanthropic support, and investments in innovative programs and student resources, we are building a college that responds to the needs of our students and the future of our region."
+     ],
+     "emails": []
+    },
+    {
+     "line": "As the proud 12th President of West Valley College, I have the privilege of leading a college that is redefining what a community college can achieve.",
+     "position": "college_ceo",
+     "window": [
+      "Donate",
+      "Contact Us",
+      "A Message from the West Valley President",
+      "As the proud 12th President of West Valley College, I have the privilege of leading a college that is redefining what a community college can achieve.",
+      "West Valley is recognized as California’s No. 1 community college for student transfer success and by Forbes as one of the nation’s top colleges for online associate degrees. These distinctions reflect what drives our work every day: expanding opportunity, removing barriers, and creating exceptional pathways for students to transfer, launch careers, and achieve their goals.",
+      "Our momentum extends beyond the classroom. Through strong community partnerships, philanthropic support, and investments in innovative programs and student resources, we are building a college that responds to the needs of our students and the future of our region.",
+      "I am proud to champion this work alongside our extraordinary faculty, staff, students, alumni, donors, and community partners. Together, we are expanding what is possible and Igniting the Next for West Valley College and the communities we serve."
+     ],
+     "emails": []
+    },
+    {
+     "line": "President, West Valley College",
+     "position": "college_ceo",
+     "window": [
+      "I am proud to champion this work alongside our extraordinary faculty, staff, students, alumni, donors, and community partners. Together, we are expanding what is possible and Igniting the Next for West Valley College and the communities we serve.",
+      "With gratitude,",
+      "Jennifer Taylor-Mendoza, Ph.D.",
+      "President, West Valley College",
+      "Highlights of West Valley College",
+      "2027 Top 200 Aspen Prize for Community College Excellence",
+      "2025 College Opportunity Pathway Champion of Placement"
+     ],
+     "emails": []
+    },
+    {
+     "line": "View More President's Communications",
+     "position": "college_ceo",
+     "window": [
+      "LinkedIn: Jennifer Taylor-Mendoza, Ph.D.",
+      "Instagram/Facebook: @westvalleycollege",
+      "X (formally Twitter): @westvalleycc",
+      "View More President's Communications",
+      "View the Latest Community Report →",
+      "Explore this snapshot of a year in the dynamic life of West Valley College, the center stone of higher education excellence for Saratoga, Los Gatos, Campbell, and our neighboring communities. learn what’s new about the Viking community!",
+      "Schedule%20a%20Walk-and-Talk%20with%20Me%20%E2%86%92"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Connect with President Taylor-Mendoza",
+     "position": "college_ceo",
+     "window": [
+      "Explore this snapshot of a year in the dynamic life of West Valley College, the center stone of higher education excellence for Saratoga, Los Gatos, Campbell, and our neighboring communities. learn what’s new about the Viking community!",
+      "Schedule%20a%20Walk-and-Talk%20with%20Me%20%E2%86%92",
+      "Let’s step out of the conference room and take our conversations on the move. Walking Office Hours: Thursdays from. 2:30-4:30 p.m. & Fridays from 10 a.m.-noon. To schedule a 30-minute slot, please contact Elizabeth%20Tablan.",
+      "Connect with President Taylor-Mendoza",
+      "Date",
+      "Event",
+      "Location"
+     ],
+     "emails": []
+    },
+    {
+     "line": "About President Jennifer Taylor-Mendoza, Ph.D.",
+     "position": "college_ceo",
+     "window": [
+      "December 18, 2026",
+      "Rotary Club of Saratoga",
+      "Saratoga, CA",
+      "About President Jennifer Taylor-Mendoza, Ph.D.",
+      "Dr. Jennifer Taylor-Mendoza proudly serves as the 12th president of West Valley College, breaking barriers as the first African American educator to lead the College. A visionary and trailblazer in Bay Area education, she brings over twelve years of transformative leadership within the San Mateo County Community College District. As a nationally recognized voice on educational equity, she is also the co-author of Minding the Obligation Gap in Community Colleges and Beyond: Theory and Practice in Achieving Educational Equity.",
+      "Her distinguished career includes her recent role as the President of the College of San Mateo, Vice President of Instruction at Skyline College in San Bruno, founding Dean of Academic Support and Learning Technologies at College of San Mateo (CSM), and as the Director of the Learning Center at CSM. Her unwavering commitment to academic excellence and equity continues to inspire and shape the future of higher education.",
+      "Learn more about President Taylor-Mendoza | College Leadership →"
+     ],
+     "emails": []
+    },
+    {
+     "line": "Learn more about President Taylor-Mendoza | College Leadership →",
+     "position": "college_ceo",
+     "window": [
+      "About President Jennifer Taylor-Mendoza, Ph.D.",
+      "Dr. Jennifer Taylor-Mendoza proudly serves as the 12th president of West Valley College, breaking barriers as the first African American educator to lead the College. A visionary and trailblazer in Bay Area education, she brings over twelve years of transformative leadership within the San Mateo County Community College District. As a nationally recognized voice on educational equity, she is also the co-author of Minding the Obligation Gap in Community Colleges and Beyond: Theory and Practice in Achieving Educational Equity.",
+      "Her distinguished career includes her recent role as the President of the College of San Mateo, Vice President of Instruction at Skyline College in San Bruno, founding Dean of Academic Support and Learning Technologies at College of San Mateo (CSM), and as the Director of the Learning Center at CSM. Her unwavering commitment to academic excellence and equity continues to inspire and shape the future of higher education.",
+      "Learn more about President Taylor-Mendoza | College Leadership →",
+      "West Valley-Mission Community College District",
+      "Mission College",
+      "Accessibility"
+     ],
+     "emails": []
+    }
+   ]
+  }
+ ],
+ "unread_links": [
+  "https://www.westvalley.edu/about/administration/index.html"
+ ],
+ "run": "41445485365"
+}

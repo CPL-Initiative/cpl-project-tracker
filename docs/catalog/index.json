@@ -16414,8 +16414,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 518,
+   "count": 519,
    "docs": [
+    {
+     "created": "2026-11-02",
+     "governs": [],
+     "n": 551,
+     "path": "docs/session_551_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "contacts-harvest",
+      "course-outcomes"
+     ],
+     "title": "Session 551 handoff: the contacts harvest's first full pass is done",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-02",
      "governs": [],
@@ -25276,5 +25291,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1346
+ "total": 1347
 }

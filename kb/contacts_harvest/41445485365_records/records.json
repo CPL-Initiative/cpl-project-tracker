@@ -1,0 +1,509 @@
+{
+ "run": "41445485365",
+ "read_by": "S550 SkyMoonflower, 2026-11-02",
+ "colleges": [
+  "Allan Hancock College",
+  "Antelope Valley College",
+  "Barstow Community College",
+  "Berkeley City College",
+  "Cabrillo College",
+  "Ventura College",
+  "Victor Valley College",
+  "West Valley College",
+  "Woodland Community College",
+  "Yuba College"
+ ],
+ "rows": [
+  {
+   "college": "Allan Hancock College",
+   "position": "college_ceo",
+   "title_as_printed": "AHC President",
+   "name": "Kevin G. Walthers, Ph.D.",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/index.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "vpaa",
+   "title_as_printed": "Associate Superintendent/Vice President, Academic Affairs",
+   "name": "Dr. Bob Curry",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "vpss",
+   "title_as_printed": "Associate Superintendent/Vice President, Student Services",
+   "name": "Dr. Genevieve Siwabessy",
+   "email": "",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php"
+  },
+  {
+   "college": "Allan Hancock College",
+   "position": "dean_ar",
+   "title_as_printed": "Director, Admissions & Records",
+   "name": "Dr. David Vasquez",
+   "email": "dvasquez@hancockcollege.edu",
+   "source_url": "https://www.hancockcollege.edu/admissions/staff.php"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Dr. Jennifer Zellet",
+   "email": "",
+   "source_url": "https://www.avc.edu/about-avc/office-superintendentpresident"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vpbs",
+   "title_as_printed": "VP Administrative Services",
+   "name": "Shami Brar",
+   "email": "shami.brar@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President Student Services",
+   "name": "Idania Padron",
+   "email": "idania.padron@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vpaa",
+   "title_as_printed": "VP Academic Affairs",
+   "name": "Kathryn Mitchell",
+   "email": "kathryn.mitchell@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "position": "vrc",
+   "title_as_printed": "Director, Veterans Resource Center",
+   "name": "Jimmy Guevara",
+   "email": "jimmy.guevara@avc.edu",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent-President",
+   "name": "Eva Bagg, Ph.D.",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President, Academic Affairs",
+   "name": "Michael Wangler",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President, Student Services",
+   "name": "Edward Alvarez",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Barstow Community College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President, Administrative Services",
+   "name": "DeeDee Garcia",
+   "email": "",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Berkeley City College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Berkeley City College",
+   "name": "Denise Richardson, Ed.D.",
+   "email": "",
+   "source_url": "https://www.berkeleycitycollege.edu/president"
+  },
+  {
+   "college": "Berkeley City College",
+   "position": "vrc",
+   "title_as_printed": "Coordinator, Student Services, Veteran's Resource Center",
+   "name": "Jeejun Bertuso",
+   "email": "",
+   "source_url": "https://www.berkeleycitycollege.edu/faculty-staff-directory"
+  },
+  {
+   "college": "Berkeley City College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer, Counseling",
+   "name": "Catherine Nichols",
+   "email": "",
+   "source_url": "https://www.berkeleycitycollege.edu/faculty-staff-directory"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent / President",
+   "name": "Dr. Jenn Capps",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Assistant Superintendent, Vice President of Instruction",
+   "name": "Dr. Robin McFarland",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vpss",
+   "title_as_printed": "Assistant Superintendent, Vice President of Student Services",
+   "name": "Dr. Blanca Baltazar-Sabbah",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "assoc_vp",
+   "title_as_printed": "Associate Vice President, Strategic Enrollment",
+   "name": "Dave Reynolds",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "Cabrillo College",
+   "position": "vrc",
+   "title_as_printed": "Veterans Program Coordinator",
+   "name": "JuanDiego (JD) Alvarez",
+   "email": "",
+   "source_url": "https://www.cabrillo.edu/directory/juandiego-jd-alvarez/"
+  },
+  {
+   "college": "Victor Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "Superintendent/President",
+   "name": "Daniel Walden, Ph.D.",
+   "email": "",
+   "source_url": "https://www.vvc.edu/presidents-office-welcome-message"
+  },
+  {
+   "college": "Ventura College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Ventura College",
+   "name": "Dr. Luca Lewis",
+   "email": "",
+   "source_url": "https://www.venturacollege.edu/departments/administrative/president"
+  },
+  {
+   "college": "West Valley College",
+   "position": "college_ceo",
+   "title_as_printed": "President",
+   "name": "Jennifer Taylor-Mendoza, Ph.D.",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/about/administration/"
+  },
+  {
+   "college": "West Valley College",
+   "position": "vpaa",
+   "title_as_printed": "Provost/Vice President of Academic Affairs",
+   "name": "Safiyyah Forbes, Ph.D.",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/about/administration/"
+  },
+  {
+   "college": "West Valley College",
+   "position": "vpbs",
+   "title_as_printed": "Vice President of Administrative Services",
+   "name": "Anthony Djedi",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/about/administration/"
+  },
+  {
+   "college": "West Valley College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Affairs",
+   "name": "Tanya Anderson Jones-Bey, Ed.D.",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/about/administration/"
+  },
+  {
+   "college": "West Valley College",
+   "position": "articulation_officer",
+   "title_as_printed": "Articulation Officer and Honors Counselor",
+   "name": "Michael West",
+   "email": "",
+   "source_url": "https://www.westvalley.edu/faculty/"
+  },
+  {
+   "college": "Woodland Community College",
+   "position": "college_ceo",
+   "title_as_printed": "President, Woodland Community College",
+   "name": "Lizette Navarette",
+   "email": "lnavarette@yccd.edu",
+   "source_url": "https://wcc.yccd.edu/about/staff-directory/"
+  },
+  {
+   "college": "Woodland Community College",
+   "position": "vpaa",
+   "title_as_printed": "Vice President of Instruction",
+   "name": "Dr. Kathy Sorensen",
+   "email": "ksorensen@yccd.edu",
+   "source_url": "https://wcc.yccd.edu/about/college-administration/"
+  },
+  {
+   "college": "Woodland Community College",
+   "position": "vpss",
+   "title_as_printed": "Vice President of Student Services",
+   "name": "Ariana Velasco",
+   "email": "avelasco@yccd.edu",
+   "source_url": "https://wcc.yccd.edu/about/college-administration/"
+  },
+  {
+   "college": "Yuba College",
+   "position": "college_ceo",
+   "title_as_printed": "Interim President, Yuba College, Marysville Campus",
+   "name": "Karissa Marino Morehouse",
+   "email": "kmorehouse@yccd.edu",
+   "source_url": "https://yc.yccd.edu/about/staff-directory/"
+  },
+  {
+   "college": "Yuba College",
+   "position": "vpaa",
+   "title_as_printed": "Interim Vice President - Instruction, Marysville Campus",
+   "name": "Dale Van Dam",
+   "email": "dvandam@yccd.edu",
+   "source_url": "https://yc.yccd.edu/about/staff-directory/"
+  }
+ ],
+ "note": "Only colleges with at least one record go to apply. Read with no record: American River (homepage 404), Bakersfield (veterans and homepage pages only; the president by surname), Butte (offices with no names), Calbright (one page), West Los Angeles (403, LACCD). Three readers wrote the records from the committed windows; the session checked each surname, email and source against its page. Every person the table already held at the five re-read colleges (Allan Hancock, Antelope Valley, Barstow, Berkeley City, Cabrillo) was found again. Kept blank so the seen-again match holds: the apply matches a person on name and email, so a newly printed email for a known person would read as one gone and one new; held emails: Allan Hancock College: Kevin G. Walthers, Ph.D. kevin.walthers@hancockcollege.edu; Antelope Valley College: Dr. Jennifer Zellet jennifer.zellet@avc.edu. Directory names printed Last, First are written First Last as earlier files did.",
+ "unmatched_titles": [
+  {
+   "college": "Allan Hancock College",
+   "title_as_printed": "Interim Associate Superintendent/Vice President, Finance and Administration",
+   "name": "LAURA becker",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php",
+   "note": "Finance and Administration is not a vpbs variant; printed in this case on the page (bio says Ms. Becker)"
+  },
+  {
+   "college": "Allan Hancock College",
+   "title_as_printed": "Executive Director, Human Resources and Labor Relations",
+   "name": "Ruben Ramirez",
+   "source_url": "https://www.hancockcollege.edu/president/cabinet.php"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Vice President, Equity and Student Achievement",
+   "name": "Farley, Rebecca",
+   "source_url": "https://www.avc.edu/directory",
+   "note": "Equity & Student Achievement is not a VPAA/VPSS variant"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Acting Vice President, Equity & Student Achievement",
+   "name": "Brown-Elize, Rashitta",
+   "source_url": "https://www.avc.edu/directory",
+   "note": "directory lists both an acting and a permanent VP in this office"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Interim Dean, AI & AT",
+   "name": "Clinton-Houck, Maria",
+   "source_url": "https://www.avc.edu/directory",
+   "note": "Aerospace, Industrial & Applied Technology dean; department column reads Career Technical Ed, but the title names no CTE/workforce"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Director, Enrollment Services",
+   "name": "Martinez Escobar, Bryan",
+   "source_url": "https://www.avc.edu/directory",
+   "note": "likely the A&R lead, but the title does not name admissions or registrar"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Dean, Student Support Services",
+   "name": "Ayala, Leonardo",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Dean Arts & Humanities",
+   "name": "Dillon, Nate",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Dean, Allied Health, Kinesiology, & Public Safety",
+   "name": "Gunterman, Joel",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Dean Language & Communication Arts",
+   "name": "Hawkins, Ashley",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Dean Math, Science & Engrg",
+   "name": "Lobos, Jedidiah",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Interim Dean, IERP & Library",
+   "name": "Deplazes, Svetlana",
+   "source_url": "https://www.avc.edu/directory"
+  },
+  {
+   "college": "Barstow Community College",
+   "title_as_printed": "Vice President, Human Resources",
+   "name": "Rocio Chavez",
+   "source_url": "https://www.barstow.edu/about-bcc/office-president/presidents-cabinet"
+  },
+  {
+   "college": "Berkeley City College",
+   "title_as_printed": "Executive Vice President of Student Learning and Success",
+   "name": "Dr. Lisa Cooper Wilkins, Ed.D",
+   "source_url": "https://www.berkeleycitycollege.edu/administration",
+   "note": "Runs instruction and student services together; not one of Sam's VP variants (directory prints 'Executive Vice President of Student Learning & Success', Wilkins, Lisa)."
+  },
+  {
+   "college": "Berkeley City College",
+   "title_as_printed": "Dean of Math, Science, and Career Education",
+   "name": "Kyla Oh",
+   "source_url": "https://www.berkeleycitycollege.edu/administration",
+   "note": "'Career Education' is outside dean_cte's pattern (career technical/CTE/workforce/economic development)."
+  },
+  {
+   "college": "Berkeley City College",
+   "title_as_printed": "Acting Dean of Enrollment Services",
+   "name": "Lissette Flores",
+   "source_url": "https://www.berkeleycitycollege.edu/administration",
+   "note": "Dean of Enrollment Services stays listed, not dean_ar (S538 precedent)."
+  },
+  {
+   "college": "Berkeley City College",
+   "title_as_printed": "Director of Workforce Development",
+   "name": "Ilona McGriff",
+   "source_url": "https://www.berkeleycitycollege.edu/administration",
+   "note": "A director, not a dean; dean_cte requires dean."
+  },
+  {
+   "college": "Cabrillo College",
+   "title_as_printed": "Vice President of Human Resources and Labor Relations",
+   "name": "Angela Hoyt, JD",
+   "source_url": "https://www.cabrillo.edu/leadership/"
+  },
+  {
+   "college": "West Valley College",
+   "title_as_printed": "Vice President of Strategy & Equity",
+   "name": "Andrea Vizenor",
+   "source_url": "https://www.westvalley.edu/about/administration/",
+   "note": "VP title outside the positions"
+  },
+  {
+   "college": "West Valley College",
+   "title_as_printed": "Dean of Enrollment Services; Foster Youth Liaison",
+   "name": "Joe McDevitt",
+   "source_url": "https://www.westvalley.edu/about/administration/",
+   "note": "Dean of Enrollment Services is listed, never filled (S538 precedent)"
+  },
+  {
+   "college": "West Valley College",
+   "title_as_printed": "Acting Vice Provost/Dean of Academic Affairs",
+   "name": "Joann Denning",
+   "source_url": "https://www.westvalley.edu/about/administration/",
+   "note": "runner reads vpaa via \"Provost\"; the vpaa lead is the Provost/VP (Forbes); a vice provost/dean names no position"
+  },
+  {
+   "college": "West Valley College",
+   "title_as_printed": "Program Specialist & VA School Certifying Official",
+   "name": "Melissa Ceresa",
+   "source_url": "https://www.westvalley.edu/faculty/",
+   "note": "Veterans Resource Center staff, not its lead; no VRC lead named"
+  },
+  {
+   "college": "Woodland Community College",
+   "title_as_printed": "Director of Enrollment Services",
+   "name": "Jennifer Maller",
+   "source_url": "https://wcc.yccd.edu/support/admissions/",
+   "note": "Enrollment Services is not admissions/registrar (S538 precedent)"
+  },
+  {
+   "college": "Woodland Community College",
+   "title_as_printed": "Director of Special Programs, CTE, WCC, Woodland Community College",
+   "name": "Angel Orejel",
+   "source_url": "https://wcc.yccd.edu/about/staff-directory/",
+   "note": "a director, not a dean; outside dean_cte"
+  },
+  {
+   "college": "Woodland Community College",
+   "title_as_printed": "Transfer/Career/Veterans Resource Technician - WCC, Woodland Community College",
+   "name": "Diego Salazar Lopez",
+   "source_url": "https://wcc.yccd.edu/about/staff-directory/",
+   "note": "VRC staff, not its lead"
+  },
+  {
+   "college": "Woodland Community College",
+   "title_as_printed": "Chancellor",
+   "name": "Pan",
+   "source_url": "https://www.yccd.edu/chancellors-newsletter-september-2026/",
+   "note": "YCCD chancellor printed by surname only (Chancellor Pan); held as Contra Costa was"
+  },
+  {
+   "college": "Yuba College",
+   "title_as_printed": "Director of Enrollment Services, Marysville Campus",
+   "name": "Angelica Munoz",
+   "source_url": "https://yc.yccd.edu/about/staff-directory/",
+   "note": "Enrollment Services is not admissions/registrar (S538 precedent)"
+  },
+  {
+   "college": "Yuba College",
+   "title_as_printed": "Dean of Student Development, Marysville Campus",
+   "name": "King Xiong",
+   "source_url": "https://yc.yccd.edu/about/staff-directory/"
+  },
+  {
+   "college": "Yuba College",
+   "title_as_printed": "Transfer/Career/Veteran's Resource Technician, Marysville Campus",
+   "name": "Michael Mireles-Danko",
+   "source_url": "https://yc.yccd.edu/about/staff-directory/",
+   "note": "VRC staff, not its lead"
+  },
+  {
+   "college": "Yuba College",
+   "title_as_printed": "Chancellor",
+   "name": "Pan",
+   "source_url": "https://www.yccd.edu/chancellors-newsletter-september-2026/",
+   "note": "YCCD chancellor printed by surname only (Chancellor Pan); held as Contra Costa was"
+  },
+  {
+   "college": "Antelope Valley College",
+   "title_as_printed": "Dean WKFC DVLPMT & CE",
+   "name": "Van Rider",
+   "source_url": "https://www.avc.edu/directory",
+   "note": "abbreviated title (Dean WKFC DVLPMT & CE) matches no dean_cte variant; department Workforce Dev. & Community Engmt"
+  }
+ ],
+ "per_college": {
+  "Allan Hancock College": "President, cabinet and A&R staff pages reconfirmed all four existing people (Walthers with email; cabinet page prints DR. GENEVIEVE SIWABESSY in capitals, kept in the existing row's form); the veterans pages name only a specialist/SCO (Andrea Cabanas) and a county Veteran Service Officer, so no vrc lead.",
+  "Antelope Valley College": "Directory and president's page reconfirmed Zellet, Brar and Padron (directory prints Last, First: 'Brar, Shami', 'Padron, Idania', written in natural order) and added VPAA Kathryn Mitchell, VRC Director Jimmy Guevara and workforce dean Van Rider (title abbreviated 'Dean WKFC DVLPMT & CE'); the articulation page names no person.",
+  "Barstow Community College": "President's Cabinet page reconfirmed all four existing people (no emails printed); A&R and military-residency pages give only shared inboxes.",
+  "American River College": "Homepage https://arc.losrios.edu/ returned 404; no pages read, no records.",
+  "Calbright College": "Homepage read (200) with zero title excerpts and no further links; no records.",
+  "Bakersfield College": "Ten pages, all veterans-office or homepage: only office names, a shared veterans inbox, an unattributed staff email (eric.hansen@) and 'President Christian's Remarks' with no full name; the directory page gave no excerpts. No records.",
+  "Berkeley City College": "The president, administration and directory pages confirmed Denise Richardson as President and added the VRC coordinator and the articulation officer (directory prints Last, First); the executive VP and deans are titles outside Sam's variants.",
+  "Butte College": "Leadership pages name the offices (Superintendent/President, VP Instruction, VP Student Services, VP Administrative Services) but print no names beside them, only president@butte.edu and veterans@butte.edu office inboxes. No records.",
+  "Cabrillo College": "The leadership page reconfirms all four executives and the profile page the veterans coordinator, so all five existing people stand; the VP Finance and Administrative Services post prints VACANT.",
+  "Victor Valley College": "The president's welcome message signs Daniel Walden, Ph.D., Superintendent/President; the veterans pages give no names and the veterans club's 'President - VACANT' is a student club officer.",
+  "West Los Angeles College": "The homepage returned 403 (the LACCD refusal of the plain read); no pages, no records.",
+  "Ventura College": "The President pages name Dr. Luca Lewis (the only address printed is the shared vcpresoffice inbox, left blank); the VP pages are menu links with no names and the VRC pages print only inboxes and two unnamed staff addresses.",
+  "West Valley College": "The administration page names the President and three VPs (emails obfuscated), the faculty directory names the articulation officer (addresses obfuscated as FREE); the VRC lists only a program specialist.",
+  "Woodland Community College": "The college-administration page names the President, VP of Instruction and VP of Student Services with emails (the President's from the staff directory); no VRC lead, dean of CTE or district chancellor by full name.",
+  "Yuba College": "The staff directory names the Interim President and the Interim VP of Instruction with emails; no current VPSS (the Interim President was it), no VRC lead, and the YCCD chancellor appears by surname only."
+ }
+}
