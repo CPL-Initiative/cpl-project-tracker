@@ -2062,7 +2062,7 @@
         : "Requested. Claude rebuilds " + name + " from its source, your instructions and the documents, checks its accessibility, and puts the draft on its card. Copy the request on the card starts it in a session now.");
       clearPiece();
       ["lc-instr", "lc-link"].forEach(function (x) { var n = document.getElementById(x); if (n) n.value = ""; });
-      return load();
+      return load().then(function () { goToRequest(id); });
     }).catch(function (e) { state.busy = false; say(e.message, true); render(); });
   }
 
@@ -2093,6 +2093,15 @@
 
   // Copy the request, beside Edit on any record with changes to make; once
   // pressed, the paste shows under the card for a reader to select by hand.
+  // After a request saves, the page takes the person to the piece they asked about (S554; Sam,
+  // 2026-11-02: "had to scroll down the list to find what I was working on"), its Copy the
+  // request focused, so the next step is the one under the cursor.
+  function goToRequest(id) {
+    var btn = document.querySelector('[data-request="' + id + '"]');
+    if (!btn) return;
+    if (btn.scrollIntoView) btn.scrollIntoView({ block: "center" });
+    btn.focus();
+  }
   function requestBtn(r) {
     return '<button type="button" class="lib-btn primary" data-request="' + esc(r.id) + '">' +
       (state.requestShown[r.id] ? "Copy again" : "Copy the request") + "</button>";
@@ -2825,7 +2834,7 @@
     _collegePair: collegePair,
     _viewFromHash: viewFromHash,
     _knowledgeValue: knowledgeValue,
-    _regenState: regenState,
+    _regenState: regenState, _goToRequest: goToRequest,
     _sharePointOnly: sharePointOnly,
     _regenWords: regenWords,
     _requestText: requestText,
