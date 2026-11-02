@@ -37,12 +37,15 @@
 //   groups             { url, none, item, saved(r), save(keys, value) -> Promise, facts(members), extra: { test(r),
 //                        words(n) }, sortLine(L) }: the AI sort and kept groups. api.groupIndex() hands a tab every
 //                        row's group as the List draws it ({ by: key -> { key }, groups: key -> { name, isGroup } }).
-//   bands              { key(r), by, label, on, none, name(key, members), facts(key, members), acts(key, members, h) }:
-//                      bands by a value the row carries itself, read only (the Courses List bands its local courses by
-//                      M-ID, the Common Course Reference's common course). A key two or more rows share gets a band
+//   bands              { key(r), by, label, on, none, order(key, members), name(key, members), facts(key, members),
+//                      acts(key, members, h) }: the List norms' groupOf(r), bands by a value the row carries itself, read
+//                      only (the Courses List bands its local courses by M-ID, the Common Course Reference's common
+//                      course; the CR List its wordings by group, ordered by the group's reference). Bands that a
+//                      reviewer keeps and moves titles between are the groups hook, Exhibits' alone. A key two or more rows share gets a band
 //                      over its run, with its name, its facts and the spec's words (h = { el, word, fmt }); a row whose
 //                      key no other row shares, or with none, sits under none (default "Not in a group"), as the AI
-//                      sort's loners do. Keys run A to Z, rows without one last; inside a band the rows keep the sort,
+//                      sort's loners do. Keys run A to Z (on order(key, members) where the spec hands one: the text
+//                      the band sorts by, when the key is an internal one), rows without one last; inside a band the rows keep the sort,
 //                      so a header press sorts within the bands. The word label (default "Bands") turns them off and
 //                      on; on: false starts them off. The AI sort, when on, wins. Members count every row, filtered or not.
 //   cols()[i].cell(r, el): the nodes a cell shows in place of its text (the Courses List's identity chips); v(r) still
@@ -232,8 +235,14 @@
         if (!m) { members.set(k, m = []); keys.push(k); }
         m.push(r);
       });
-      var lower = keys.map(function (k) { return k.toLowerCase(); }), ranks = textRanks(lower, false), rank = new Map();
-      keys.forEach(function (k, i) { rank.set(k, ranks[i]); });
+      // Bands run A to Z on spec.bands.order (the CR List's reference), else on the key; two keys that read alike
+      // still take two places, so their rows never interleave into alternating bands.
+      var B = S.bands, ord = keys.map(function (k) { return String((B.order && B.order(k, members.get(k))) || k).toLowerCase(); });
+      var idx = keys.map(function (k, i) { return i; }).sort(function (a, b) {
+        return cmpText(ord[a], ord[b]) || (keys[a] < keys[b] ? -1 : keys[a] > keys[b] ? 1 : 0);
+      });
+      var rank = new Map();
+      idx.forEach(function (i, at) { rank.set(keys[i], at); });
       bandMemo = { all: all, n: all.length, members: members, rank: rank };
       return bandMemo;
     }

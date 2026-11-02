@@ -37,12 +37,16 @@ not this reference's.
 
 The tab's third view, `#cr-reference/list`, is the Catalog Commons' shared List (`commons_list.js`) with this
 reference's spec in `cr_reference.js` (Sam, 2026-11-01: *"I want one now for each of our Catalog Commons groups"*): one
-row per wording (2,344), A to Z, with its reference, rung, decision, articulations, colleges, units, credentials,
-courses and group size. Edit and Edit every row rename a group's reference through the worklist's own write
-(`saveDecision`, the group's `cr_reference_decisions` row, its decision kept or deferred), so a rename never settles a
-group; Confirm the group and Not a topic sit in the reference's drawer. No flag column and no find and replace yet: the
-reference has no flag field, and a replace across wordings would write one group once per wording. Guard:
-`tests/cr_list.test.js`; a11y targets `cr-list` and `cr-list-dark`.
+row per wording (2,344), with its reference, rung, decision, articulations, colleges, units, credentials, courses and
+group size. The wordings sit in **read-only bands by group** (the List norms' step 3, S545): each of the 156 groups of two
+or more wordings is a band named and ordered by its reference, with its facts; a group of one sits under *Single
+wording*; *Bands by group* takes them off. A wording leaves its group through the worklist's split, never a move between
+bands, because in CR the group is the fold unit. Edit and Edit every row rename a group's reference through the
+worklist's own write (`saveDecision`, the group's `cr_reference_decisions` row, its decision kept or deferred), so a
+rename never settles a group; Confirm the group and Not a topic sit in the reference's drawer and, for an undecided rung
+1 to 4 group, on its *Suggested groups* line. Your flag saves to `kb_curation` (`_CR_LIST::<wording>`, `list_flag`). No
+find and replace: a replace across wordings would write one group once per wording. Guard: `tests/cr_list.test.js`;
+a11y targets `cr-list` and `cr-list-dark`.
 
 ## Jev on this lane — the blocking, the gate, the verdicts (S279/S280, 2026-09-20)
 

@@ -458,7 +458,7 @@
       '<button type="button" class="crr-view" data-view="worklist" aria-pressed="' + (!progress && !listing) + '"',
       ' title="The groups, ranked by collapse value, with a filter for each list.">Worklist</button>',
       '<button type="button" class="crr-view" data-view="list" aria-pressed="' + listing + '"',
-      ' title="Every wording on one sheet, A to Z, its reference edited in place.">List</button></div>');
+      ' title="Every wording on one sheet, banded by group, its reference edited in place.">List</button></div>');
     if (listing) {
       h.push('<div id="crr-list-mount"></div>');
       root.innerHTML = h.join("");
@@ -805,7 +805,7 @@
   }
 
 
-  // ── List: every wording on one sheet, A to Z (S542) ─────────────────────
+  // ── List: every wording on one sheet, banded by group (S542; bands S545) ──
   // Sam, 2026-11-01, after the Exhibits List: "This new list view is so helpful that I want one now for each of our
   // Catalog Commons groups." The Catalog Commons' shared engine draws it (commons_list.js); this spec makes it the CR
   // Reference's: one row per wording colleges wrote (2,344), the reference its group resolves to, the rung that placed
@@ -935,11 +935,22 @@
   function listSpec() {
     return {
       prefix: "crl-", frPrefix: "crl-fr-",
-      noun: { many: "wordings", region: "Every credit recommendation wording, A to Z", keyHeader: "Wording", file: "cr-reference-list",
+      noun: { many: "wordings", region: "Every credit recommendation wording, banded by group", keyHeader: "Wording", file: "cr-reference-list",
         placeholder: "Wording, reference, credential, course or C-ID", findLabel: "Find in the list" },
       state: listState, rows: function () { listNamedMemo = null; return listFlat(); }, cols: listCols,
       key: function (r) { return r.ut; }, title: function (r) { return r.m.rec; }, render: render,
       changed: true,
+      // The List norms' step 3: the wordings of one group sit under one band, named and ordered by the group's reference.
+      // Read only: in CR the group is the fold unit, so a wording leaves its group through the worklist's split, never a
+      // move between bands. A group of one wording sits under "Single wording", the filter's own word.
+      bands: { key: function (r) { return r.g.key; }, by: "group", label: "Bands by group", none: "Single wording",
+        order: function (k, members) { return refOf(members[0].g); },
+        name: function (k, members) { return refOf(members[0].g); },
+        facts: function (k, members) {
+          var g = members[0].g, d = decisionOf(g);
+          return fmt(members.length) + " wordings, " + fmt(g.rows) + (g.rows === 1 ? " articulation, " : " articulations, ")
+            + fmt(g.colleges) + (g.colleges === 1 ? " college" : " colleges") + (d ? ", " + d : ", no decision yet");
+        } },
       suggest: { get: listSuggestOf, verb: "Confirm the group", key: function (r) { return r.g.key; }, accept: listSuggestAccept,
         label: function (r) { return "Confirm the group of " + r.m.rec + " as " + refOf(r.g); } },
       head: function (wrap, api) {

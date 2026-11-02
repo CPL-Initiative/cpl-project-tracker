@@ -73,14 +73,14 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
   disciplines); **no flag** without a field; **Program Requirements** read only.
 - **Second signals never decide:** SLO matches and TOP are hints a person accepts.
 
-## Where each List stands (2026-11-01)
+## Where each List stands (2026-11-02)
 
 | List | Row (fold unit) | Today | Next |
 |---|---|---|---|
 | Exhibits | credential | finder, filters with counts, bands, kept groups, suggested folds, Re-point, waiting, flag, Re-analyze, tiles from the Commons row | its suggestions and changed set onto the engine's slot |
-| CR Reference | wording (group) | finder, filters with counts, Edit, flag, rung proposals as suggestions (Confirm the group), Selected, Changed this visit | read-only bands |
+| CR Reference | wording (group) | finder, filters with counts, Edit, flag, rung proposals as suggestions (Confirm the group), Selected, Changed this visit, read-only bands by group ordered by the reference | |
 | Subjects | MQ discipline | finder, filters with counts, Edit, open picks as suggestions (Confirm this pick), Selected, Changed this visit | |
-| Courses (COCI Lookup) | local course (M-ID band) | finder, filters with counts, read-only M-ID bands, Open in SkyView | bands from the spec's `groupOf(r)` |
+| Courses (COCI Lookup) | local course (M-ID band) | finder, filters with counts, read-only M-ID bands from the engine's `bands` hook, Open in SkyView | |
 | Program Requirements | program | finder, filters with counts | read only |
 
 ## Next, one PR each (Fable's ranking)
@@ -99,8 +99,13 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
    shows no count, never a 0 (`uncounted(id)`; the Exhibits List's suggested folds, outcomes matches, flags and
    waiting folds until their files arrive). The words refresh with the table, so a save or a tick moves them.
    *Selected* is the engine's on every List. The status-line words stay each tab's, already in the norm's shape.
-3. **Bands from a spec `groupOf(r)`** with no AI order file, read-only where the spec has no `save`; and **filter
-   before sort** in `listRows` (141,738 rows would sort on every keystroke). Courses then hand-rolls no banding.
+3. **Landed (S543 and S545): bands from the spec.** The norms' `groupOf(r)` is the engine's `bands` hook: `key(r)`
+   names a row's band, and `order(key, members)` the text bands sort by when the key is an internal one. Bands are read
+   only; the writable kind, kept groups a reviewer moves titles between, is the `groups` hook, Exhibits' alone. #2670
+   (S543) built the hook for the Courses List's M-ID bands and made `listRows` filter before it sorts (a fixed List
+   sorts once per sort and only filters per keystroke). S545 added `order` and banded the CR List's wordings by group,
+   ordered by the group's reference; two keys that read alike take two places, so bands never interleave. The Exhibits
+   List's suggestions and changed set onto the engine's slot is what remains of aligning the Lists.
 
 ## How to apply it
 
