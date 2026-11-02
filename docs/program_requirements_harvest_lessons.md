@@ -1160,3 +1160,17 @@ From Sheet 144 card 2's paragraph: S529 rescored the filed records (`kb/_program
   the loader reads only `host=`. Load 41412025040 inserted 568 rows, skipped 75, kept none.
 - **A runner's commit to a PR starts no checks.** After the load committed its receipt, #2684's head had no `test` run.
   Restoring `.load` to main's text was the session's own commit with content, which started `test` and skipped the load.
+
+## S549 SkySunflower (2026-11-02, the 11:12Z firing): Santa Ana's trial, a reader that returned empty
+
+- **A reader that finds the heading and nothing under it should hand off, not answer.** Santa Ana's report 267 prints
+  *Student Learning Outcomes* as an h3 in a section of its own; the outcomes sit in plain fields in the next section.
+  `groups_from_html` (written for SDCCD's grouped report) found the h3, found no group list, and returned `[]`, which
+  `parse_page` reads as an answer: 12 of 12 pages came back `none` while every page printed its list. It now returns
+  None when the page holds no `iq-data-list` at all, and the text reader reads the list. Checked first against the 72
+  pages earlier trials filed: none changed. Then `--reparse` on the trial: 12 of 12, 36 outcomes.
+- **A trial that parses none is a reader question before it is a verdict.** The filed `.txt` showed the list in four
+  lines; a `none` verdict there would have parked a 216-articulation college for good.
+- **Read "once a UTC day" against the day the last run was made, not the session's.** Handoff 549 said *Step 11 on the
+  new UTC day*; this session fired at 11:12Z on the same day as the index (#2685, 06:18Z) and ran the trial anyway.
+  Cost: one 5-minute run on a host already idle. The full read waits for 2026-11-03.
