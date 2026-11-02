@@ -43,7 +43,9 @@ None. Scheduled run; no sheet is open and no lane carries NEEDS SAM.
 ## Open work, in order
 
 1. **#2684 and #2685 (step 11).** Pull each branch, run `python3 scripts/next_slo_colleges.py --all`, and act on the
-   state: Golden West to `load` once both slices are filed; Santa Ana to its trial once the index names it.
+   state: Golden West to `load` once both slices are filed. Santa Ana's index ran (41399078640, committed to #2685):
+   merge #2685 on a passing `test`, then its trial (`index=kb/course_outline_index/index_41399078640.json`,
+   `slugs=santa_ana`, `trial=12`) is the next day's preparation run.
 2. **Step 8, the sixth read:** the 15 read longest ago. LACCD's nine colleges will keep returning 403 to the plain read
    (`cpl_memory` `laccd-refuses-plain-http-contacts-read-2026-11-02`). A browser read or another source for the district
    is a lane item worth building before the first full pass ends.
