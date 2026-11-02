@@ -153,7 +153,9 @@ def to_row(rec: dict, generated_at: str | None) -> dict:
         # WITH their statewide credit recs. Sierra syncs from this file, so she
         # has been contradicting the Fact Sheet on 54 credentials. The KB already
         # said which file wins — cpl_memory `statewide-is-138-not-84`: "Use the
-        # adoption file" — and this sync predated that note.
+        # adoption file" — and this sync predated that note. Since S543 the
+        # reference itself carries the Fact Sheet's set (152 on 2026-11-01); the
+        # union still adds the CCC exhibits that publish no recommendation (10).
         "statewide": bool(rec.get("statewide")) or (rec.get("ut") in statewide_titles()),
         "ccc_rec": rec.get("ccc_rec") or None,
         "gen_rec": rec.get("gen_rec") or None,

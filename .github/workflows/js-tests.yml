@@ -701,6 +701,15 @@ jobs:
         run: |
           pip install --quiet openpyxl
           python3 tests/active_colleges_ccc_test.py
+
+      # The credential reference's statewide flag counts the Fact Sheet's set
+      # (Sam, 2026-11-01: a title that includes a statewide exhibit is based on
+      # statewide); it read articulation lines alone and marked 84 of 152.
+      # Imports the generator, so it installs openpyxl. Same non-required check.
+      - name: Credential reference statewide flag (the Fact Sheet's set)
+        run: |
+          pip install --quiet openpyxl
+          python3 tests/credential_reference_statewide_basis_test.py
       # Doctrine lookup (Session 179) — kb/doctrine.py answers "what has this
       # repo already decided about the files I am about to touch?", replacing
       # recall across 299 KB notes. It shipped with two silent-omission bugs
@@ -995,6 +1004,11 @@ jobs:
       # as the only write. Pure-stdlib python.
       - name: Course outcomes load (rows, fingerprint, receipt, insert-only)
         run: python3 tests/course_outcomes_load_test.py
+      # The nightly SLO read's queue (step 11 of scheduled_sessions; Sam, 2026-11-01):
+      # most articulations first, loaded colleges and verdicts skipped, a trial before
+      # an unproven host's full read. Pure-stdlib python.
+      - name: Next SLO colleges (the order, the trial gate, the verdicts)
+        run: python3 tests/next_slo_colleges_test.py
 
   test:
     # The one check the merge doctrine polls (CLAUDE.md branch policy). It

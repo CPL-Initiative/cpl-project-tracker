@@ -1,13 +1,18 @@
 // COCI Lookup tab (S110 — Sam's ask: a raw-COCI lookup surface with M-ID /
 // C-ID / CCN chips per entry; sortable, filterable, flexible column widths).
-// Guards:
-//   1. shell renders from the stub payload (head, toolbar, count)
+// Since S542 the Courses view is the Catalog Commons' Courses List, drawn by the
+// shared engine (commons_list.js); tests/coci_list.test.js guards the List's own
+// behavior (bands, SkyView, the finder's words, today's M-ID). This file keeps the
+// tab's original guards, read through the engine's table:
+//   1. shell renders from the stub payload (head, view toggle, count)
 //   2. search / college / subject / identity / credit filters
 //   3. identity chips carry the right kind classes
-//   4. sortable headers (click toggles asc/desc)
-//   5. drag-resizable columns persisted in cplCociColWidths.v1
-//   6. row expand fetches the right per-letter description shard
-//   7. CSV export builds a blob from the FILTERED set
+//   4. sortable headers (a press toggles A to Z and Z to A)
+//   5. resizable columns (the engine's separator: the arrow keys widen a column)
+//   6. the Title drawer fetches the right per-letter description shard + outcomes
+//   7. Download builds a spreadsheet from the FILTERED set
+//   8. the Programs view (unchanged)
+//   9. the S389 UI pass (words for controls, no chip fill, focus rings)
 //
 // Run from repo root: `npm test` (or `node tests/coci_lookup.test.js`).
 const fs = require("fs");
@@ -46,17 +51,30 @@ const progPayload = {
   ],
 };
 
+// Today's identity file (unified_courses_members.js): the M-ID the List shows and bands by.
+const members = {
+  generated_at: "2026-11-01 05:18",
+  colleges: ["American River College", "Rio Hondo College"],
+  members: {
+    "CNST M1009": [{ c: 0, cn: "CCC000646669" }],
+    "ENGL M1001": [{ c: 0, cn: "CCC000222222" }],
+  },
+};
+const LIST_SRC = fs.readFileSync("commons_list.js", "utf8");
+
 function makeDom() {
   const dom = new JSDOM(`<!DOCTYPE html><html><body>
-    <div id="tab-coci-lookup"><div id="coci-lookup-root">Loading…</div></div>
+    <div id="tab-coci-lookup"><div class="main-container"><div id="coci-lookup-root">Loading…</div></div></div>
   </body></html>`, { runScripts: "dangerously", url: "https://example.org/" });
   const { window } = dom;
   const log = { lazyLoads: [], blobs: [] };
   window.CPL_COCI_LOOKUP = payload;
-  // Stub the tab harness: desc-shard + programs loads register + resolve synchronously.
+  // Stub the tab harness: the engine, the identity file, desc shards + programs register and resolve.
   window.CPL_TABS = {
     loadScript: function (srcPath, globalName, cb) {
       log.lazyLoads.push(srcPath);
+      if (srcPath === "commons_list.js") window.eval(LIST_SRC);
+      if (srcPath === "unified_courses_members.js") window.CPL_UC_MEMBERS = members;
       if (/coci_lookup_desc_C\.js$/.test(srcPath)) {
         window.CPL_COCI_DESC = window.CPL_COCI_DESC || {};
         window.CPL_COCI_DESC["C"] = {
@@ -86,13 +104,25 @@ function makeDom() {
   };
   window.URL.createObjectURL = function (blob) { log.blobs.push(blob); return "blob:stub"; };
   window.URL.revokeObjectURL = function () {};
+  window.HTMLAnchorElement.prototype.click = function () {};   // a download, not a navigation
   window.eval(src);
   window.CPL_COCI_LOOKUP_TAB.activate();
   return { window, log };
 }
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
-const visibleRows = (doc) => Array.from(doc.querySelectorAll("tr.cplcoci-row"));
-const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
+const P = "ccl-";
+// The engine's table: columns by name, never position (S541); the select box is the first cell.
+const heads = (doc) => Array.from(doc.querySelectorAll("." + P + "table thead ." + P + "sort")).map((b) => txt(b));
+const colOf = (doc, name) => heads(doc).findIndex((h) => h.indexOf(name) === 0);
+const cellOf = (doc, tr, name) => tr.children[colOf(doc, name) + 1];
+// Courses: the engine's rows; Programs: the tab's own table rows.
+const visibleRows = (doc) => doc.querySelector("." + P + "table")
+  ? Array.from(doc.querySelectorAll("." + P + "table tbody tr")).filter((tr) => !tr.classList.contains(P + "band") && !tr.classList.contains(P + "editrow"))
+  : Array.from(doc.querySelectorAll("tr.cplcoci-row"));
+const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(cellOf(doc, tr, "Title")));
+const wordBtn = (doc, re) => Array.from(doc.querySelectorAll("button")).find((b) => re.test(txt(b)));
+const typeIn = (window, node, v) => { node.value = v; node.dispatchEvent(new window.Event("input")); };
+const rowByTitle = (doc, t) => visibleRows(doc).find((tr) => txt(cellOf(doc, tr, "Title")) === t);
 
 (async () => {
   const { window, log } = makeDom();
@@ -100,118 +130,100 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
 
   // ── 1. shell ──
   check("shell: header renders", txt(doc.querySelector(".cplcoci-head .h")) === "COCI Lookup");
+  check("shell: the Courses view is the Courses List on the shared engine",
+    log.lazyLoads.indexOf("commons_list.js") >= 0 && !!doc.querySelector("#cplcoci-list-mount ." + P + "table"));
   check("shell: count reflects the full set",
-    txt(doc.getElementById("cplcoci-count")).indexOf("4 of 4") === 0);
+    txt(doc.querySelector("." + P + "count span")).indexOf("4 local courses") === 0);
   check("shell: all rows render", visibleRows(doc).length === 4);
 
   // ── 3. chips ──
-  const firstRow = visibleRows(doc)[0];
+  const carpt = rowByTitle(doc, "Tool and Equipment Applications");
   check("chips: M-ID chip renders with the mid class",
-    !!firstRow.querySelector(".cplcoci-chip.mid")
-    && txt(firstRow.querySelector(".cplcoci-chip.mid")) === "CNST M1009");
-  const englRow = visibleRows(doc).find((tr) => txt(tr.children[4]) === "College Composition");
+    !!carpt.querySelector(".cplcoci-chip.mid")
+    && txt(carpt.querySelector(".cplcoci-chip.mid")) === "CNST M1009");
+  const englRow = rowByTitle(doc, "College Composition");
   check("chips: C-ID + CCN + M-ID all chip on a fully-identified row",
     !!englRow.querySelector(".cplcoci-chip.cid")
     && !!englRow.querySelector(".cplcoci-chip.ccn")
     && !!englRow.querySelector(".cplcoci-chip.mid"));
-  const eslRow = visibleRows(doc).find((tr) => txt(tr.children[4]) === "English Fundamentals");
-  // columns: 0 caret,1 college,2 subj,3 num,4 title,5 units,6 credit,7 TRANSFER,8 top,9 ids,10 ctrl
-  check("chips: identity-less row shows a dash", txt(eslRow.children[9]) === "—");
+  const eslRow = rowByTitle(doc, "English Fundamentals");
+  check("chips: identity-less row shows a dash", txt(cellOf(doc, eslRow, "Identities")) === "—");
 
   // ── transfer column + filter (C-ID = transfer-model) ──
-  check("transfer col: C-ID course shows 🎓", txt(englRow.children[7]) === "🎓");
-  check("transfer col: non-C-ID course shows —", txt(eslRow.children[7]) === "—");
-  const xfSel = doc.getElementById("cplcoci-transfer");
-  xfSel.value = "xfer";
-  xfSel.dispatchEvent(new window.Event("change"));
-  check("transfer filter: 🎓 Transfer-model isolates the C-ID (ENGL) row",
+  check("transfer col: C-ID course reads Yes", txt(cellOf(doc, englRow, "Transfer")) === "Yes");
+  check("transfer col: non-C-ID course reads No", txt(cellOf(doc, eslRow, "Transfer")) === "No");
+  wordBtn(doc, /^Has a C-ID \(1\)$/).click();
+  check("transfer filter: Has a C-ID (transfer-model) isolates the ENGL row",
     rowTitles(doc).length === 1 && rowTitles(doc)[0] === "College Composition");
-  xfSel.value = "all";
-  xfSel.dispatchEvent(new window.Event("change"));
+  wordBtn(doc, /^All \(4\)$/).click();
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Transfer")), "no");
+  check("transfer filter: the column's box finds the three with no C-ID", visibleRows(doc).length === 3);
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Transfer")), "");
 
   // ── 2. filters ──
-  const q = doc.getElementById("cplcoci-q");
-  q.value = "rigging";
-  q.dispatchEvent(new window.Event("input"));
+  typeIn(window, doc.getElementById(P + "find"), "rigging");
   await sleep(220);  // debounce
   check("search: 'rigging' narrows to the Rio Hondo row",
     rowTitles(doc).length === 1 && rowTitles(doc)[0] === "Rigging");
-  q.value = "";
-  q.dispatchEvent(new window.Event("input"));
+  typeIn(window, doc.getElementById(P + "find"), "");
   await sleep(220);
 
-  const colIn = doc.getElementById("cplcoci-college");
-  colIn.value = "American River College";
-  colIn.dispatchEvent(new window.Event("input"));
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "College")), "American River College");
   check("college: filters to ARC's two rows", visibleRows(doc).length === 2);
-  colIn.value = "";
-  colIn.dispatchEvent(new window.Event("input"));
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "College")), "");
 
-  const subjIn = doc.getElementById("cplcoci-subject");
-  subjIn.value = "carpt";
-  subjIn.dispatchEvent(new window.Event("input"));
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Subject")), "carpt");
   check("subject: CARPT (case-insensitive) isolates the CARPT row",
     rowTitles(doc).length === 1 && rowTitles(doc)[0] === "Tool and Equipment Applications");
-  subjIn.value = "";
-  subjIn.dispatchEvent(new window.Event("input"));
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Subject")), "");
 
-  const idSel = doc.getElementById("cplcoci-identity");
-  idSel.value = "ccn";
-  idSel.dispatchEvent(new window.Event("change"));
+  wordBtn(doc, /^Has a CCN \(1\)$/).click();
   check("identity: has-CCN isolates the ENGL row",
     rowTitles(doc).length === 1 && rowTitles(doc)[0] === "College Composition");
-  idSel.value = "none";
-  idSel.dispatchEvent(new window.Event("change"));
+  wordBtn(doc, /^No identity \(2\)$/).click();
   check("identity: no-identity isolates the ESL + Rio Hondo rows",
     visibleRows(doc).length === 2);
-  idSel.value = "all";
-  idSel.dispatchEvent(new window.Event("change"));
+  wordBtn(doc, /^Has an M-ID \(2\)$/).click();
+  check("identity: has-M-ID reads today's identity file", visibleRows(doc).length === 2);
 
-  const crSel = doc.getElementById("cplcoci-credit");
-  crSel.value = "N";
-  crSel.dispatchEvent(new window.Event("change"));
+  wordBtn(doc, /^Noncredit \(1\)$/).click();
   check("credit: Noncredit isolates the ESL row",
     rowTitles(doc).length === 1 && rowTitles(doc)[0] === "English Fundamentals");
-  crSel.value = "all";
-  crSel.dispatchEvent(new window.Event("change"));
+  wordBtn(doc, /^All \(4\)$/).click();
 
-  // ── 4. sortable headers ──
-  const titleTh = Array.from(doc.querySelectorAll(".cplcoci-table th"))
-    .find((th) => txt(th).indexOf("Title") === 0);
-  titleTh.click();
+  // ── 4. sortable headers (the bands off, so one sort runs over every row) ──
+  doc.getElementById(P + "bands").click();
+  const sortBtn = (name) => doc.querySelectorAll("." + P + "sort")[colOf(doc, name)];
+  sortBtn("Title").click();
   let titles = rowTitles(doc);
-  check("sort: Title asc", titles[0] === "College Composition"
-    && titles[titles.length - 1] === "Tool and Equipment Applications");
-  const titleTh2 = Array.from(doc.querySelectorAll(".cplcoci-table th"))
-    .find((th) => txt(th).indexOf("Title") === 0);
-  titleTh2.click();
+  check("sort: the first press on the sorted Title flips it to Z to A", titles[0] === "Tool and Equipment Applications"
+    && sortBtn("Title").closest("th").getAttribute("aria-sort") === "descending");
+  sortBtn("Title").click();
   titles = rowTitles(doc);
-  check("sort: second click flips to desc",
-    titles[0] === "Tool and Equipment Applications");
+  check("sort: a second press puts it back to A to Z", titles[0] === "College Composition"
+    && titles[titles.length - 1] === "Tool and Equipment Applications");
+  sortBtn("Units").click();
+  check("sort: a numeric column sorts low to high", rowTitles(doc)[0] === "English Fundamentals");
+  doc.getElementById(P + "bands").click();
 
-  // ── 5. drag-resize + persistence ──
-  const collegeTh = Array.from(doc.querySelectorAll(".cplcoci-table th"))
-    .find((th) => txt(th).indexOf("College") === 0);
-  const handle = collegeTh.querySelector(".cplcoci-resize");
-  check("resize: header carries a drag handle", !!handle);
-  handle.onmousedown({ preventDefault() {}, stopPropagation() {}, clientX: 100 });
-  doc.dispatchEvent(new window.MouseEvent("mousemove", { clientX: 260 }));
-  doc.dispatchEvent(new window.MouseEvent("mouseup", { clientX: 260 }));
-  const widths = JSON.parse(window.localStorage.getItem("cplCociColWidths.v1") || "{}");
-  check("resize: width persisted to cplCociColWidths.v1", widths.college === 160);
+  // ── 5. resizable columns ──
+  const grip = doc.getElementById(P + "grip-" + colOf(doc, "College"));
+  check("resize: header carries a separator to drag", !!grip && grip.getAttribute("role") === "separator");
+  grip.dispatchEvent(new window.KeyboardEvent("keydown", { key: "ArrowRight", bubbles: true }));
+  const W = window.CPL_COCI_LOOKUP_TAB._state.ls.widths;
+  check("resize: the arrow key widens the column by 24px", !!W && W[colOf(doc, "College")] === 120 + 24);
 
-  // ── 6. row expand → the C shard ──
-  const carptRow = visibleRows(doc).find((tr) => txt(tr.children[4]) === "Tool and Equipment Applications");
-  carptRow.querySelector(".cplcoci-caret").onclick();
+  // ── 6. the Title drawer → the C shard ──
+  cellOf(doc, rowByTitle(doc, "Tool and Equipment Applications"), "Title").querySelector("button").click();
   await sleep(20);
-  check("desc: expand lazy-loads the subject-letter shard",
+  check("desc: the drawer lazy-loads the subject-letter shard",
     log.lazyLoads.some((s) => s === "coci_lookup_desc_C.js"));
-  const descRow = doc.querySelector("tr.cplcoci-desc");
+  const descRow = doc.querySelector("." + P + "drawer");
   check("desc: the shard's description renders",
     !!descRow && txt(descRow).indexOf("Safety and health training") >= 0);
   // Learning outcomes (Sam, 2026-10-14: "there should be a link to them on each course listing").
   const outs = descRow.querySelector(".cplcoci-outs");
-  check("outcomes: the expanded row shows the newest read's outcomes, numbered, with what each maps to",
+  check("outcomes: the drawer shows the newest read's outcomes, numbered, with what each maps to",
     !!outs && /Student Learning Outcomes \(2\)/.test(txt(outs)) && outs.querySelectorAll("ol li").length === 2
     && /Maps to: Critical Thinking/.test(txt(outs)) && !/older read/.test(txt(outs)));
   const srcA = outs && outs.querySelector('a[href="https://example.org/outline/carpt111"]');
@@ -219,23 +231,21 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
     && /read 2026-10-13\./.test(txt(outs)));
   check("outcomes: asked under the code's spellings, for that college",
     /college=eq\.American%20River%20College/.test(log.fetches[0] || "") && /%22CARPT%20111%22,%22CARPT111%22,%22CARPT-111%22/.test(log.fetches[0] || ""));
-  carptRow.querySelector(".cplcoci-caret").onclick();
-  carptRow.querySelector(".cplcoci-caret").onclick();
+  const reopen = () => cellOf(doc, rowByTitle(doc, "Tool and Equipment Applications"), "Title").querySelector("button").click();
+  reopen(); reopen();
   await sleep(20);
-  check("outcomes: re-expanding reads them from memory", log.fetches.length === 1);
+  check("outcomes: re-opening reads them from memory", log.fetches.length === 1);
+  reopen();
 
-  // ── 7. CSV of the filtered set ──
-  const subjIn2 = doc.getElementById("cplcoci-subject");
-  subjIn2.value = "ENGL";
-  subjIn2.dispatchEvent(new window.Event("input"));
-  doc.getElementById("cplcoci-csv").click();
-  check("csv: export builds a blob", log.blobs.length === 1);
-  const csvText = await log.blobs[0].text();
+  // ── 7. a spreadsheet of the filtered set ──
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Subject")), "ENGL");
+  wordBtn(doc, /^Download these 1 as a spreadsheet$/).click();
+  check("csv: Download builds a blob", log.blobs.length === 1);
+  const csvText = (await log.blobs[0].text()).replace(/^﻿/, "");
   check("csv: carries ONLY the filtered row (+ header)",
-    csvText.split("\n").length === 2 && csvText.indexOf("College Composition") > 0
-    && csvText.indexOf("Rigging") < 0);
-  subjIn2.value = "";  // clear the CSV-test filter before the view-toggle checks
-  subjIn2.dispatchEvent(new window.Event("input"));
+    csvText.trim().split(/\r\n/).length === 2 && csvText.indexOf("College Composition") > 0
+    && csvText.indexOf("Rigging") < 0 && csvText.indexOf("ENGL M1001") > 0);
+  typeIn(window, doc.getElementById(P + "cf-" + colOf(doc, "Subject")), "");
 
   // ── 8. Programs view (toggle → lazy-load → table + transfer/award filters) ──
   const progBtn = Array.from(doc.querySelectorAll(".cplcoci-viewbtn")).find((b) => txt(b) === "Programs");
@@ -248,7 +258,7 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
     txt(doc.getElementById("cplcoci-pcount")).indexOf("3 of 3") === 0);
   // transfer (ADT) column + filter
   const adtRow = visibleRows(doc).find((tr) => txt(tr.children[2]).indexOf("Business Administration") === 0);
-  check("programs: ADT row shows the 🎓 ADT transfer marker", txt(adtRow.children[6]).indexOf("🎓") === 0);
+  check("programs: ADT row shows the ADT transfer marker", /ADT/.test(txt(adtRow.children[6])));
   const pxfSel = doc.getElementById("cplcoci-ptransfer");
   pxfSel.value = "xfer";
   pxfSel.dispatchEvent(new window.Event("change"));
@@ -268,8 +278,8 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
   // back to Courses
   const courseBtn = Array.from(doc.querySelectorAll(".cplcoci-viewbtn")).find((b) => txt(b) === "Courses");
   courseBtn.click();
-  check("programs: toggling back to Courses restores the course table",
-    !!doc.getElementById("cplcoci-identity") && visibleRows(doc).length === 4);
+  check("programs: toggling back to Courses restores the Courses List",
+    !!doc.getElementById(P + "find") && visibleRows(doc).length === 4);
 
   // ── 9. The S389 UI pass: controls are underlined words; dark mode keeps every pair AA ──
   // npm run a11y cobi-dark measured the CSV control at 1.29:1 (a dark fill under dark text),
@@ -277,8 +287,8 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
   // ring. The failures this guards: a fill coming back, a glyph standing in for the word, and
   // outline:none with nothing in its place.
   const css = (doc.getElementById("cpl-coci-lookup-css") || {}).textContent || "";
-  check("ui pass: the CSV control reads Download CSV, no glyph",
-    txt(doc.getElementById("cplcoci-csv")) === "Download CSV");
+  check("ui pass: the Courses download reads in words, no glyph",
+    !!wordBtn(doc, /^Download these 4 as a spreadsheet$/));
   check("ui pass: a control is an underlined cobalt word with no border or fill, 24px tall",
     /\.cplcoci-btn \{ border:0; background:none; color: var\(--cobalt\);[^}]*min-height:24px; text-decoration:underline;/.test(css)
     && !/cplcoci-btn ghost/.test(src));
@@ -286,16 +296,16 @@ const rowTitles = (doc) => visibleRows(doc).map((tr) => txt(tr.children[4]));
     && !/rgba\(255,255,255,\.5\)/.test(css));
   check("ui pass: the filters show a focus ring", /\.cplcoci-toolbar input:focus-visible, \.cplcoci-toolbar select:focus-visible \{ outline:2px solid var\(--cobalt\)/.test(css)
     && !/outline:none/.test(css));
+  check("ui pass: the Transfer column is a word, no glyph", !/🎓/.test(txt(doc.querySelector("." + P + "table"))));
 
   // A failed outcomes read says so; it never reads as none.
   {
     const fresh = makeDom();
     await sleep(20);
     const fdoc = fresh.window.document;
-    const esl = visibleRows(fdoc).find((tr) => txt(tr.children[4]) === "English Fundamentals");
-    esl.querySelector(".cplcoci-caret").onclick();
+    cellOf(fdoc, rowByTitle(fdoc, "English Fundamentals"), "Title").querySelector("button").click();
     await sleep(20);
-    const fouts = fdoc.querySelector("tr.cplcoci-desc .cplcoci-outs");
+    const fouts = fdoc.querySelector("." + P + "drawer .cplcoci-outs");
     check("outcomes: a failed read says so, naming the table", !!fouts && /could not be read \(course_outcomes answered 503\)/.test(txt(fouts)));
   }
 

@@ -5741,7 +5741,9 @@ function buildSystemPrompt(
 
       metricsContext = `\n\n--- LIVE CPL Dashboard Metrics (scraped ${m.scraped_at || "recently"} — THESE NUMBERS OVERRIDE any older figures in the vault sources above) ---\n`;
       metricsContext += `Total students served: ${raw.Students?.toLocaleString() || "N/A"}\n`;
-      metricsContext += `  - Military/veteran students: ${raw.MilitaryStudents?.toLocaleString() || "N/A"}\n`;
+      // Each military student in MAP carries a JST, so this is the statewide JST count (S543:
+      // labeled "students" alone, Sierra quoted July's 25,934 JSTs from the vault instead).
+      metricsContext += `  - Military/veteran students (JSTs uploaded to MAP, the statewide JST count): ${raw.MilitaryStudents?.toLocaleString() || "N/A"}\n`;
       metricsContext += `  - Workforce/other students: ${raw.NonMilitaryStudents?.toLocaleString() || "N/A"}\n`;
       metricsContext += `  - Apprentice students: ${raw.AprenticeStudents?.toLocaleString() || "N/A"}\n`;
       metricsContext += `Eligible CPL units: ${raw.Units ? Math.round(raw.Units).toLocaleString() : "N/A"}\n`;
@@ -6581,6 +6583,37 @@ async function fetchCollegeFundingSection(sb: any, college: string): Promise<any
     return null;
   }
 }
+// Every institution against the JST condition, in one section (S543; Sam, 2026-11-01,
+// asked "which college have not yet met the 75% jst vet sprint goal for the new
+// funding?" and Sierra said she had no per-college percentages: a question naming no
+// college read no college's section). The note heads it FUNDING_JST_HEADING; a JST
+// question that names no single college reads it by heading, its chunks in order.
+const FUNDING_JST_HEADING = "Veteran JSTs: which institutions have met the 75 percent condition";
+const JST_ASK_RE = /\b(JSTs?|joint services transcripts?|veteran star|vet(eran)? sprint)\b|\bveterans?\b[^.?!]*\b75\b|\b75\b[^.?!]*\bveterans?\b/i;
+
+function jstRollupAsk(q: string): boolean {
+  return JST_ASK_RE.test(String(q || ""));
+}
+// The indexer splits a long section at paragraphs under one heading; the chunks of one
+// document, by chunk_index, are the section. A failed read returns null.
+function joinJstRollup(rows: any[]): any {
+  const all = (rows || []).filter((r: any) => r && r.heading === FUNDING_JST_HEADING);
+  if (!all.length) return null;
+  const doc = all[0].document_id;
+  const mine = all.filter((r: any) => r.document_id === doc)
+    .sort((a: any, b: any) => Number((a.metadata || {}).chunk_index || 0) - Number((b.metadata || {}).chunk_index || 0));
+  return { ...mine[0], content: mine.map((r: any) => r.content).join("\n\n"), similarity: 1 };
+}
+async function fetchJstRollupSection(sb: any): Promise<any> {
+  try {
+    const { data, error } = await sb.from("cpl_document_sections")
+      .select("id, document_id, heading, content, metadata").eq("heading", FUNDING_JST_HEADING);
+    if (error || !data) return null;
+    return joinJstRollup(data);
+  } catch (_e) {
+    return null;
+  }
+}
 // The section leads the knowledge sources, once.
 function withFundingSection(sections: any[], section: any): any[] {
   const rest = (sections || []).filter((s: any) => !section || s.id !== section.id);
@@ -7403,9 +7436,11 @@ Deno.serve(async (req: Request) => {
     // for the FAQ. It rides beside the library's section.
     const faqMatched = matchFaq(searchText, faqGroups || []);
     const faqContext = buildFaqContext(faqMatched, faqGroups || [], faqAsk(trimmedQuery));
-    // The named college's own funding section (S529), first among the sources.
-    const fundingSection = singleProfile?.college && fundingAsk(routeText)
-      ? await fetchCollegeFundingSection(sb, singleProfile.college) : null;
+    // The named college's own funding section (S529), first among the sources; a JST
+    // question naming no single college reads every institution's standing (S543).
+    const fundingSection = singleProfile?.college
+      ? (fundingAsk(routeText) ? await fetchCollegeFundingSection(sb, singleProfile.college) : null)
+      : (jstRollupAsk(routeText) ? await fetchJstRollupSection(sb) : null);
     const promptSections = withFundingSection(sections || [], fundingSection);
 
     // The curator overlay for the built-in rules. Rides the same turn; null

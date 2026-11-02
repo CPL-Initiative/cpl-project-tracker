@@ -1,0 +1,17 @@
+{
+ "_about": "Verdicts for the nightly course SLO read (step 11 of docs/reference/scheduled_sessions.md; Sam, 2026-11-01: \"yes to SLO hints and the nightly harvest\"). scripts/next_slo_colleges.py skips a college listed here. state: none (its public pages print no course SLOs), held (waits on what why names), parser (its pages print SLOs the reader does not parse yet: a build item). Keyed by harvest slug; by names the session, on the date, source the run or PR that shows it. A session adds a row when a trial or a read shows it, and removes one when what it waited on changes (a new catalog year, a parser fix).",
+ "colleges": {
+  "bakersfield": {"state": "none", "on": "2026-10-13", "by": "S380", "source": "reads 38392014238, 38413232841, 38413852584",
+                  "why": "its eLumen course pages print no SLOs"},
+  "cerritos": {"state": "none", "on": "2026-10-14", "by": "S387", "source": "#2101",
+               "why": "its CourseLeaf course entries print no SLOs"},
+  "chaffey": {"state": "none", "on": "2026-10-13", "by": "S380", "source": "#2073, discovery 38392162605, read 38394075773",
+              "why": "both public dashboard reports (225 and 1225) print objectives only; its outcomes FAQ keeps course outcomes on section syllabi"},
+  "long_beach_city": {"state": "none", "on": "2026-10-14", "by": "S387", "source": "#2101",
+                      "why": "its CourseLeaf course entries print no SLOs"},
+  "mt_san_antonio": {"state": "none", "on": "2026-10-14", "by": "S387", "source": "#2101",
+                     "why": "its CourseLeaf course entries print no SLOs"},
+  "palo_verde": {"state": "held", "on": "2026-10-23", "by": "S451", "source": "cpl_memory palo-verde-acalog-catalog-2026-2027-2026-10-22",
+                 "why": "its 2026-27 catalog moved to Acalog, where the read has no course page parser; its 2025-26 eLumen pages printed SLOs"}
+ }
+}

@@ -4,9 +4,9 @@
   "supabase_tables": 104,
   "rpcs": 48,
   "edge_functions": 11,
-  "file_datasets": 765,
+  "file_datasets": 771,
   "external_services": 192,
-  "consumers": 506,
+  "consumers": 507,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 39
@@ -442,7 +442,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 7432
+     "line": 7467
     },
     {
      "id": "edgefn:cpl-news-harvest",
@@ -1070,7 +1070,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 247
+     "line": 249
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -1278,7 +1278,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 13515
+     "line": 13557
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -1337,7 +1337,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 126,
+     "line": 129,
      "tabs": [
       "exhibits"
      ]
@@ -1605,7 +1605,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1965
+     "line": 1989
     }
    ],
    "main_committers": []
@@ -1852,7 +1852,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 147,
+     "line": 150,
      "tabs": [
       "exhibits"
      ]
@@ -2172,7 +2172,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1016
+     "line": 1040
     }
    ],
    "main_committers": []
@@ -2191,7 +2191,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1361
+     "line": 1385
     },
     {
      "id": "module:college_briefing.js",
@@ -2568,7 +2568,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "url",
-     "line": 5897
+     "line": 5899
     }
    ],
    "main_committers": []
@@ -4133,7 +4133,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1639
+     "line": 1663
     }
    ],
    "main_committers": []
@@ -4822,6 +4822,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:census_*.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 99
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
   "file:chatbox/build_coci_offerings.py": {
    "consumers": [
     {
@@ -5168,7 +5181,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1530
+     "line": 1554
     },
     {
      "id": "module:admin.js",
@@ -5256,7 +5269,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 14,
+     "line": 32,
      "tabs": [
       "coci-lookup"
      ]
@@ -5347,7 +5360,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 204,
+     "line": 152,
      "tabs": [
       "coci-lookup"
      ]
@@ -5441,7 +5454,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 610,
+     "line": 569,
      "tabs": [
       "coci-lookup"
      ]
@@ -5723,7 +5736,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1912,
+     "line": 2189,
      "tabs": [
       "exhibits"
      ]
@@ -5798,7 +5811,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13079
+     "line": 13121
     }
    ],
    "served": true,
@@ -5878,6 +5891,16 @@
      ]
     },
     {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 487,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -5892,7 +5915,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2396,
+     "line": 2674,
      "tabs": [
       "exhibits"
      ]
@@ -5992,6 +6015,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:course_outcomes_*.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 108
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:course_top_consensus.json": {
@@ -6137,7 +6173,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1904
+     "line": 1928
     },
     {
      "id": "module:college_briefing.js",
@@ -6243,7 +6279,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13413
+     "line": 13455
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -6331,7 +6367,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1076
+     "line": 1100
     },
     {
      "id": "module:cpl_funding.js",
@@ -6756,7 +6792,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 93,
+     "line": 96,
      "tabs": [
       "exhibits"
      ]
@@ -6800,7 +6836,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7273
+     "line": 7311
     },
     {
      "id": "script:funding/_build_funding_ess.py",
@@ -6989,7 +7025,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13020
+     "line": 13062
     }
    ],
    "served": true,
@@ -7520,7 +7556,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13076
+     "line": 13118
     }
    ],
    "served": true,
@@ -7602,7 +7638,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10087
+     "line": 10129
     }
    ],
    "producers": [
@@ -7813,7 +7849,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 120,
+     "line": 123,
      "tabs": [
       "exhibits"
      ]
@@ -8094,7 +8130,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13653
+     "line": 13695
     },
     {
      "id": "workflow:daily-dashboard.yml",
@@ -8140,7 +8176,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13673
+     "line": 13715
     },
     {
      "id": "script:kb/_glyph_sweep.py",
@@ -8211,6 +8247,19 @@
      "direction": "read",
      "how": "inline",
      "line": 173
+    }
+   ],
+   "served": false,
+   "main_committers": []
+  },
+  "file:index_*.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 140
     }
    ],
    "served": false,
@@ -9745,7 +9794,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 145,
+     "line": 148,
      "tabs": [
       "exhibits"
      ]
@@ -9792,7 +9841,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 146,
+     "line": 149,
      "tabs": [
       "exhibits"
      ]
@@ -9859,7 +9908,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8756
+     "line": 8798
     },
     {
      "id": "script:kb/_desc_consolidation_dryrun.py",
@@ -10244,7 +10293,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8308
+     "line": 8350
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -10569,7 +10618,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8871
+     "line": 8913
     }
    ],
    "producers": [
@@ -11809,14 +11858,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8836
+     "line": 8878
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 8836
+     "line": 8878
     }
    ],
    "producers": [
@@ -11837,7 +11886,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7558
+     "line": 7596
     },
     {
      "id": "script:kb/_infer_disciplines.py",
@@ -12029,7 +12078,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8498
+     "line": 8540
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -12279,7 +12328,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 311
+     "line": 313
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -12369,7 +12418,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 115,
+     "line": 118,
      "tabs": [
       "exhibits"
      ]
@@ -12492,7 +12541,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7296
+     "line": 7334
     },
     {
      "id": "script:kb/_apply_credential_review.py",
@@ -12778,7 +12827,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8388
+     "line": 8430
     },
     {
      "id": "script:kb/_detect_crnc_mirrors.py",
@@ -12839,7 +12888,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 401
+     "line": 403
     }
    ],
    "producers": [
@@ -12896,7 +12945,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 402
+     "line": 404
     }
    ],
    "served": true,
@@ -12968,7 +13017,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10017
+     "line": 10059
     },
     {
      "id": "script:kb/_alias_canon.py",
@@ -13085,7 +13134,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7973
+     "line": 8015
     },
     {
      "id": "script:kb/_apply_canonical_subj4.py",
@@ -13127,7 +13176,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 380
+     "line": 382
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -13724,7 +13773,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 123,
+     "line": 126,
      "tabs": [
       "exhibits"
      ]
@@ -13769,7 +13818,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1781,
+     "line": 2058,
      "tabs": [
       "exhibits"
      ]
@@ -13807,7 +13856,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 88,
+     "line": 91,
      "tabs": [
       "exhibits"
      ]
@@ -13839,6 +13888,13 @@
      "direction": "read",
      "how": "literal",
      "line": 22
+    },
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 77
     }
    ],
    "producers": [
@@ -13905,7 +13961,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 86,
+     "line": 89,
      "tabs": [
       "exhibits"
      ]
@@ -13954,7 +14010,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 87,
+     "line": 90,
      "tabs": [
       "exhibits"
      ]
@@ -13996,7 +14052,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 132,
+     "line": 135,
      "tabs": [
       "exhibits"
      ]
@@ -15158,7 +15214,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8887
+     "line": 8929
     },
     {
      "id": "script:kb/_analyze_official_fold_evidence.py",
@@ -15271,7 +15327,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 314
+     "line": 316
     }
    ],
    "served": false,
@@ -15450,7 +15506,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 7346
+     "line": 7384
     }
    ],
    "served": true,
@@ -15473,7 +15529,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8535
+     "line": 8577
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -15613,7 +15669,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8567
+     "line": 8609
     },
     {
      "id": "script:kb/_add_descriptions.py",
@@ -15750,7 +15806,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8719
+     "line": 8761
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -16295,7 +16351,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10071
+     "line": 10113
     },
     {
      "id": "script:kb/_apply_kin_pe_convergence.py",
@@ -16719,7 +16775,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 248
+     "line": 250
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -16822,7 +16878,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 266
+     "line": 268
     }
    ],
    "served": true,
@@ -16835,7 +16891,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 342
+     "line": 344
     }
    ],
    "served": true,
@@ -16901,7 +16957,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 445
+     "line": 447
     }
    ],
    "served": true,
@@ -17057,7 +17113,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9578
+     "line": 9620
     },
     {
      "id": "script:kb/_morphological_variant_dryrun.py",
@@ -18740,7 +18796,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 251
+     "line": 253
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -19214,6 +19270,19 @@
     }
    ],
    "served": true,
+   "main_committers": []
+  },
+  "file:read*.json": {
+   "consumers": [
+    {
+     "id": "script:scripts/next_slo_colleges.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 120
+    }
+   ],
+   "served": false,
    "main_committers": []
   },
   "file:read_*_p*of*.json": {
@@ -19887,14 +19956,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12848
+     "line": 7266
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12848
+     "line": 12890
     },
     {
      "id": "script:fact-sheet/_build_statewide_catalog.py",
@@ -20052,7 +20121,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13078
+     "line": 13120
     }
    ],
    "served": true,
@@ -20075,14 +20144,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 12878
+     "line": 12920
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 12878
+     "line": 12920
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -20686,6 +20755,19 @@
    "main_committers": []
   },
   "file:tests/credential_catalog_widening_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/credential_reference_statewide_basis_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -21304,6 +21386,19 @@
    "main_committers": []
   },
   "file:tests/mq_title5_rename_test.py": {
+   "consumers": [
+    {
+     "id": "workflow:js-tests.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
+  "file:tests/next_slo_colleges_test.py": {
    "consumers": [
     {
      "id": "workflow:js-tests.yml",
@@ -22113,7 +22208,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 13080
+     "line": 13122
     }
    ],
    "served": true,
@@ -22189,7 +22284,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 8269
+     "line": 8311
     },
     {
      "id": "script:kb/_analyze_witness_kinship.py",
@@ -22312,14 +22407,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10139
+     "line": 10181
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10139
+     "line": 10181
     },
     {
      "id": "script:kb/_infer_disciplines_from_desc.py",
@@ -22357,14 +22452,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 9490
+     "line": 9532
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 9490
+     "line": 9532
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -22427,14 +22522,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10223
+     "line": 10265
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10223
+     "line": 10265
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -22469,6 +22564,16 @@
   "file:unified_courses_members.js": {
    "consumers": [
     {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 488,
+     "tabs": [
+      "coci-lookup"
+     ]
+    },
+    {
      "id": "module:college_cpl_workbook.js",
      "kind": "module",
      "direction": "read",
@@ -22494,14 +22599,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10211
+     "line": 10253
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10211
+     "line": 10253
     },
     {
      "id": "script:kb/_build_ccr_atlas_extract.py",
@@ -22599,14 +22704,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10175
+     "line": 10217
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10175
+     "line": 10217
     },
     {
      "id": "script:kb/_build_ccr_universe.py",
@@ -22620,7 +22725,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 252
+     "line": 254
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -22694,14 +22799,14 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 10019
+     "line": 10061
     },
     {
      "id": "script:excel_to_dashboard.py",
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 10019
+     "line": 10061
     },
     {
      "id": "script:kb/_auto_merge_worklist.py",
@@ -23189,7 +23294,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 6384
+     "line": 6386
     },
     {
      "id": "module:admin.js",
@@ -23270,7 +23375,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 357,
+     "line": 362,
      "tabs": [
       "exhibits"
      ]
@@ -23468,7 +23573,7 @@
      "kind": "edgefn",
      "direction": "call",
      "how": "literal",
-     "line": 7018
+     "line": 7051
     }
    ],
    "main_committers": []
@@ -23946,7 +24051,7 @@
      "kind": "edgefn",
      "direction": "write",
      "how": "literal",
-     "line": 7702
+     "line": 7737
     },
     {
      "id": "module:sierra_training.js",
@@ -24043,7 +24148,7 @@
      "kind": "script",
      "direction": "write",
      "how": "literal",
-     "line": 197
+     "line": 199
     }
    ],
    "main_committers": []
@@ -24243,7 +24348,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 372,
+     "line": 181,
      "tabs": [
       "coci-lookup"
      ]
@@ -24405,7 +24510,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6571
+     "line": 6573
     }
    ],
    "main_committers": []
@@ -24429,7 +24534,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6604
+     "line": 6637
     },
     {
      "id": "module:college_briefing.js",
@@ -25273,7 +25378,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 408,
+     "line": 413,
      "tabs": [
       "exhibits"
      ]
@@ -25283,7 +25388,7 @@
      "kind": "module",
      "direction": "write",
      "how": "literal",
-     "line": 464,
+     "line": 469,
      "tabs": [
       "exhibits"
      ]
@@ -26743,7 +26848,7 @@
      "kind": "edgefn",
      "direction": "read",
      "how": "literal",
-     "line": 6689
+     "line": 6722
     },
     {
      "id": "module:sierra_training.js",
@@ -27179,6 +27284,7 @@
   ],
   "commons_list.js": [
    "canonical-subj4",
+   "coci-lookup",
    "cr-reference",
    "exhibits",
    "program-requirements"
@@ -27999,6 +28105,7 @@
     "tests/funding_career_import_test.py",
     "tests/funding_nc_counts_test.py",
     "tests/active_colleges_ccc_test.py",
+    "tests/credential_reference_statewide_basis_test.py",
     "tests/doctrine_lookup_test.py",
     "tests/context_budget_test.py",
     "tests/merge_chain_flatten_test.py",
@@ -28038,7 +28145,8 @@
     "tests/course_outline_registry_fill_test.py",
     "tests/course_outline_index_test.py",
     "tests/course_outcomes_read_test.py",
-    "tests/course_outcomes_load_test.py"
+    "tests/course_outcomes_load_test.py",
+    "tests/next_slo_colleges_test.py"
    ],
    "adds": [],
    "push": null,

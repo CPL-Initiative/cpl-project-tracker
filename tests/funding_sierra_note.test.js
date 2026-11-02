@@ -53,6 +53,25 @@ check("nothing in the note says draft", !/\bdraft\b/i.test(note));
 check("the statewide total reads as its own sentence", /Statewide, the 118 max awards total \$[0-9,]+/.test(note));
 check("no figure is left unpainted", !/\{[a-z ]+\}/.test(note));
 
+// Every institution against the JST condition in one section (Sam, 2026-11-01: asked
+// which colleges had not met the 75 percent JST condition, Sierra said she had no
+// per-college figures; each college's counts sat only in its own section).
+const { JST_ROLLUP_HEADING } = require("../scripts/funding_sierra_note.js");
+const roll = (note.split(/\n(?=## )/).find((b) => b.startsWith("## " + JST_ROLLUP_HEADING)) || "");
+check("one section lists every institution against the 75 percent JST condition", !!roll);
+const notMet = roll.split("\n").filter((l) => /^- /.test(l)).map((l) => l.slice(2).split(":")[0]);
+const ownSays = (full) => ((note.split(/\n(?=### )/).find((b) => b.startsWith("### " + full + ": CPL funding standing")) || "")
+  .match(/Joint services transcripts[^\n]*: (met|not yet met|not yet known)/) || [])[1];
+check("each institution listed as not yet met reads not yet met in its own section",
+  notMet.length > 0 && notMet.every((n) => ownSays(n) === "not yet met"));
+const counted = /(\d+) have met it and (\d+) have not yet met it/.exec(roll) || [];
+check("the section's counts match its lists", Number(counted[2]) === notMet.length &&
+  new RegExp("Met \\(" + counted[1] + "\\): ").test(roll));
+check("the not-yet-met list keeps its label in the same paragraph, so the indexer keeps them together",
+  /\n\nNot yet met \(\d+\):\n- /.test(roll));
+check("a masked count (1 to 9) gives no figure", !/: [1-9] JSTs? for/.test(roll) && !/for [1-9] enrolled veteran/.test(roll) &&
+  /: fewer than 10 JSTs for \d+ enrolled veterans/.test(roll));
+
 let pass = 0;
 for (const [n, ok] of results) { console.log((ok ? "PASS" : "FAIL") + "  " + n); if (ok) pass++; }
 console.log(`\n${pass}/${results.length} assertions passed`);
