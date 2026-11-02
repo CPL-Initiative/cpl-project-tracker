@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-02T15:14:30Z",
+ "written_at": "2026-11-02T17:29:42Z",
  "rows": [
   {
    "key": "requirements",
@@ -93,13 +93,6 @@
     "procedure-settled"
    ],
    "issues": [
-    {
-     "n": 1,
-     "words": "titles held for a person",
-     "owner": "a curator (the classifier is unsure 1)",
-     "open": "#exhibits/held",
-     "error": null
-    },
     {
      "n": 621,
      "words": "titles in the reference that have left MAP",
@@ -284,7 +277,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-02T06:25:55+00:00",
+    "at": "2026-11-02T06:25:55Z",
     "every_hours": null
    },
    "facts": {

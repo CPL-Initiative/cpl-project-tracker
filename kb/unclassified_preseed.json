@@ -1,29 +1,12 @@
 {
  "_about": "Pre-fills for the CER's unclassified titles, written each night by kb/_cer_procedures.py from the procedures in kb/cer_procedures.json and the classifier. credential_reference.js pre-fills each row. A pre-fill no reason holds is also saved to kb_curation under its procedure's cohort (Open Asks Sheet 94 card 2, 2026-10-18); a held one waits for the curator's Save. Rows with a saved assignment are never here.",
- "_generated_at": "2026-11-01T14:34:41Z",
- "_queue_count": 1,
+ "_generated_at": "2026-11-02T17:29:36Z",
+ "_queue_count": 0,
  "_counts": {
-  "staged": 1,
-  "needs_you": 1,
+  "staged": 0,
+  "needs_you": 0,
   "not_yet_asked": 0
  },
  "_residual": [],
- "staged": {
-  "Theater Arts Portfolio Review": {
-   "title": "Theatre Arts",
-   "issuer": "California Community Colleges",
-   "via": "classifier",
-   "confidence": 0.75,
-   "note": "The 'Portfolio Review' mechanism phrase was stripped, and the row joins the existing house family 'Theatre Arts' (CCC); the hint's 'Theater' spelling differs only in spelling. The exhibit names no specific course, so the College of the Desert target course should be checked against COCI for a CCN or C-ID title, or for a batch umbrella.",
-   "procedure": "classifier",
-   "rests_on": [
-    "course-identity",
-    "mechanism-collapses",
-    "join-when-likely-one",
-    "Rule 5c",
-    "Rule 1",
-    "Rule 2"
-   ]
-  }
- }
+ "staged": {}
 }

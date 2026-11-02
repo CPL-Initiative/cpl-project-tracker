@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-01T14:34:41Z",
+ "_generated_at": "2026-11-02T17:29:36Z",
  "procedures_hash": "d20f2caab9db",
- "queue": 1,
+ "queue": 0,
  "saved_not_folded": 0,
- "waiting": 1,
- "proposed": 1,
- "needs_you_count": 1,
+ "waiting": 0,
+ "proposed": 0,
+ "needs_you_count": 0,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -112,7 +112,7 @@
     "skill": "Rule 5c"
    },
    "settled": 0,
-   "held": 1,
+   "held": 0,
    "sample": []
   },
   {
@@ -233,7 +233,7 @@
     "skill": "Rule 8c"
    },
    "settled": 0,
-   "held": 1,
+   "held": 0,
    "sample": []
   },
   {
@@ -248,7 +248,7 @@
     "skill": null
    },
    "settled": 0,
-   "held": 1,
+   "held": 0,
    "sample": []
   },
   {
@@ -262,29 +262,10 @@
     "words": "have you classify and complete common exhibit titles"
    },
    "settled": 0,
-   "held": 1,
+   "held": 0,
    "sample": []
   }
  ],
- "classifier_run": {
-  "calls": 1,
-  "answered": 1,
-  "errors": [],
-  "cost_usd": 0.48
- },
- "needs_you": [
-  {
-   "raw_title": "Theater Arts Portfolio Review",
-   "why": "the classifier is unsure (0.75)",
-   "proposal": {
-    "title": "Theatre Arts",
-    "issuer": "California Community Colleges",
-    "confidence": 0.75,
-    "note": "The 'Portfolio Review' mechanism phrase was stripped, and the row joins the existing house family 'Theatre Arts' (CCC); the hint's 'Theater' spelling differs only in spelling. The exhibit names no specific course, so the College of the Desert target course should be checked against COCI for a CCN or C-ID title, or for a batch umbrella."
-   },
-   "colleges": [
-    "College of the Desert"
-   ]
-  }
- ]
+ "classifier_run": null,
+ "needs_you": []
 }
