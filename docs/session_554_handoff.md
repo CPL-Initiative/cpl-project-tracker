@@ -14,7 +14,7 @@ one lane's state changed (Library, ⑮), no data write and no re-mint. Refreshed
 `kb/status/program-requirements.json`. Skipped: the Pipeline tab, `kb/README.md`, a KB note (the lessons are in the
 lessons doc), the four other run logs (no reference's NEXT moved), and the standing sheet (nothing waits on Sam).
 
-## What shipped (one PR on `claude/youthful-allen-e208sr`)
+## What shipped (#2699 on `claude/youthful-allen-e208sr`; CPLBrain#612 on the same branch name)
 
 Sam's ask, opening the session: *"Can you have a look at the COBI Library and make sure we can remediate any type of file
 uploaded. A team member tried a pdf on Friday and it didn't seem to work. I think it should do a full remediation without
@@ -44,7 +44,7 @@ nothing waits on him.
 
 ## Open work, in order
 
-1. **Watch the PR to merge** (the `test` check on its head, then squash), then look at the live Library tab with a real
+1. **Watch #2699 to merge** (the `test` check on its head, then squash; then CPLBrain#612), then look at the live Library tab with a real
    deck and a real PDF: drop one, see *Remediated for you* and *Download the remediated file*. The tab loads
    `library.js` once per page, so an open COBI tab needs a reload after the deploy (lessons, S517).
 2. **Look at the live CPL Commons tab with Sam's eyes** (`#commons`, #2697 merged): the a11y pass on the new view
@@ -76,5 +76,5 @@ nothing waits on him.
 
 ## Let go
 
-S553 subscribes to its tracker PR and drops it at sign-off; it holds no artifact watch and no check-in. The CPL queue
+S553 subscribed to #2699 (tracker) and CPLBrain#612; it drops both at sign-off, and holds no artifact watch and no check-in. The CPL queue
 fires next at 06:12Z 2026-11-03 (10:12 PM Pacific).
