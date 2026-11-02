@@ -3164,7 +3164,7 @@ module.exports = {
   },
   "cr-list": {
     file: "index.html",
-    title: "Common CR Reference: List, every wording A to Z, a drawer and the boxes open",
+    title: "Common CR Reference: List, every wording banded by group, a drawer and the boxes open",
     routes: [{ hash: "cr-reference", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCrList(page, "light"),

@@ -17,7 +17,11 @@
 //  (10) the rung proposals as the engine's suggestions (the List norms, 2026-11-01): Suggested groups keeps the undecided
 //       groups a rung 1 to 4 rule places, each wording saying so under its title (not under All); Dismiss sets the whole
 //       group aside for the visit with no write; Confirm the group writes the same decision row as the drawer, and the
-//       group's wordings then read changed this visit; a refused confirm says it did not save and the suggestion stays.
+//       group's wordings then read changed this visit; a refused confirm says it did not save and the suggestion stays;
+//  (11) the bands (the List norms' step 3): a group of two or more wordings is a read-only band over its run, named by
+//       the group's reference and ordered by it (not by the group's internal key), with its facts; a group of one sits
+//       under "Single wording"; the sort line says the bands come first; Bands by group takes them off; a renamed
+//       reference renames its band and moves it to its new place.
 // Run from repo root: `npm test` (or `node tests/cr_list.test.js`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -90,8 +94,8 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
     && views[2].getAttribute("aria-pressed") === "true");
   check("(1) the engine loads through CPL_TABS.loadScript", t.calls.some((c) => c.url === "loadScript:commons_list.js") && !!t.w.CPL_COMMONS_LIST);
   let got = rows(t.d).map((r) => txt(r.children[2]));
-  check("(1) ⭐ every wording is one row, A to Z", got.length === 5 && got[0] === "3 hours in Community Relations" && got[4] === "5 hours in Engine Performance",
-    got.join(" | "));
+  check("(1) ⭐ every wording is one row, in bands by group", got.join(" | ") === "3 hours in Community Relations | 3.0 hours in Community Relations"
+    + " | 4 hours in Welding | 3 or 4 hours in Engine Performance | 5 hours in Engine Performance", got.join(" | "));
   const heads = Array.from(t.d.querySelectorAll(".crl-table thead tr:first-child th")).map(txt);
   check("(1) th scope=col headers in a labelled region, with a Flag column",
     t.d.querySelectorAll(".crl-table thead tr:first-child th[scope='col']").length === heads.length && !!t.d.querySelector(".crl-wrap[role='region'][aria-label]")
@@ -246,6 +250,34 @@ function posts(t) { return t.calls.filter((c) => c.method === "POST"); }
   sgLine(rows(rf.d)[0]).querySelector("button").click(); await settle();
   check("(10) a refused confirm says it did not save, and the suggestion stays", rows(rf.d).length === 2 && !!sgLine(rows(rf.d)[0])
     && /did not save/.test(txt(rf.d.getElementById("crl-cellnote"))), txt(rf.d.getElementById("crl-cellnote")));
+
+  // ── (11) bands ──
+  const bands = (d) => Array.from(d.querySelectorAll(".crl-table tbody tr.crl-band"));
+  const bandName = (b) => txt(b.querySelector("th > span"));
+  const bd = tab({ decisions: [{ group_key: "engine performance", decision: "deferred", canonical: "Engine Performance (3 to 5 units)",
+    members: ["3 or 4 hours in Engine Performance", "5 hours in Engine Performance"], excluded: [], note: "spread" }] });
+  bd.M.activate(); await settle();
+  let bs = bands(bd.d);
+  check("(11) ⭐ a band per group, ordered by its reference (Welding's single wording before Engine, which its key would put after)",
+    bs.map(bandName).join(" | ") === "3 hours in Community Relations | Single wording | Engine Performance (3 to 5 units)", bs.map(bandName).join(" | "));
+  check("(11) each band says what its group holds", /2 wordings, 415 articulations, 28 colleges, no decision yet/.test(txt(bs[0]))
+    && /2 wordings, 66 articulations, 15 colleges, Deferred/.test(txt(bs[2])), bs.map(txt).join(" | "));
+  check("(11) the bands are read only: a rowgroup header and no words in it", bs.every((b) => !!b.querySelector("th[scope='rowgroup']") && !b.querySelector("button")));
+  check("(11) the sort line says the bands come first", /^In bands by group; inside each, sorted by Wording, A to Z/.test(txt(bd.d.getElementById("crl-sortline"))),
+    txt(bd.d.getElementById("crl-sortline")));
+  const bw = bd.d.getElementById("crl-bands");
+  check("(11) the Bands by group word is pressed while they show", !!bw && txt(bw) === "Bands by group" && bw.getAttribute("aria-pressed") === "true");
+  bw.click(); await settle();
+  got = rows(bd.d).map((r) => txt(r.children[2]));
+  check("(11) the word takes them off: one sort, every wording A to Z", bands(bd.d).length === 0 && got.join(" | ") === "3 hours in Community Relations"
+    + " | 3 or 4 hours in Engine Performance | 3.0 hours in Community Relations | 4 hours in Welding | 5 hours in Engine Performance", got.join(" | "));
+  bd.d.getElementById("crl-bands").click(); await settle();
+  bd.d.getElementById("crl-editall").click(); await settle();
+  const cb = Array.from(bd.d.querySelectorAll(".crl-cellin")).find((b) => b.getAttribute("aria-label") === "Reference of 3 hours in Community Relations");
+  cb.value = "Community Relations (3 units)"; cb.dispatchEvent(new bd.w.Event("change")); await settle();
+  bs = bands(bd.d);
+  check("(11) a renamed reference renames its band and moves it to its new place",
+    bs.map(bandName).join(" | ") === "Single wording | Community Relations (3 units) | Engine Performance (3 to 5 units)", bs.map(bandName).join(" | "));
 
   let pass = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });
