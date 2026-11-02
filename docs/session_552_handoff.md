@@ -47,7 +47,10 @@ Sheet 156 card 1, his note above (`cpl_memory` `sam-sheet-156-try-alternate-rout
 3. **The Catalog Commons mock** (Sam, live in S551): https://claude.ai/artifact/TG8LPUBATV8WFfrmvPwKEG, eight register
    cards in Malone's look plus Exhibits opened. Sam liked it and added Skills; the name of the whole is his open
    question (S551 offered options in chat; vault braindump `braindump-2026-11-02-1440-catalog-commons-first-view.md`).
-   Read the braindump for his latest word before porting it into the Commons tab.
+   **Sam asked that the mock and these ideas be kept intact:** the source, what the mock settles and the naming
+   options (each effort a register; the whole recommended CPL Commons) are in
+   `CPLBrain/04-projects/cpl-initiative/catalog-commons-mock/README.md` (`cpl_memory`
+   `sam-catalog-commons-mock-and-naming-2026-11-02`). Wait for his title before porting it into the Commons tab.
 4. **The two waiting emails:** a partial load of the Allan Hancock and Antelope Valley presidents' printed emails (the
    S550 records note lists them); the apply now fills them in place.
 5. **Step 11 on 2026-11-03 (UTC) or later: Santa Ana's full read** (`python3 scripts/next_slo_colleges.py --college
