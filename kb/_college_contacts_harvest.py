@@ -87,10 +87,12 @@ TITLE_PATTERNS: list[tuple[str, re.Pattern]] = [
                         r"(services|affairs|success|development))\b|\bCSSO\b", re.I)),
     # Sam's VPBS variants: CBO, VP Business Services (and Facilities), and VP Administrative Services (Open Asks
     # Sheet 151 card 1, "vpbs", 2026-11-01). A title outside the variants is listed for him, never filled.
+    # "Finance and Business" (either order) names the same office (S549, from the S548 read's list).
     ("vpbs", re.compile(r"\b(chief business officer|(vice[- ]president|VP),? (of |for )?(business and )?(business|administrative) services"
-                        r"( and facilities)?)\b|\bCBO\b", re.I)),
+                        r"( and facilities)?|(vice[- ]president|VP),? (of |for )?(finance and business|business and finance))\b"
+                        r"|\bCBO\b", re.I)),
     ("college_ceo", re.compile(r"\b(superintendent[/ -]+president|president)\b", re.I)),
-    ("dean_cte", re.compile(r"\bdean\b[^.\n]{0,60}\b(career (and|&) technical|CTE|workforce|economic development)\b",
+    ("dean_cte", re.compile(r"\bdean\b[^.\n]{0,60}\b(career (and |& )?technical|CTE|workforce|economic development)\b",
                             re.I)),
     ("dean_ar", re.compile(r"\b(dean|director)\b[^.\n]{0,40}\badmissions\b|\bregistrar\b", re.I)),
     ("dean_instruction", re.compile(r"\bdean\b[^.\n]{0,20}\binstruction\b", re.I)),
