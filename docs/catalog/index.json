@@ -11446,7 +11446,7 @@
   },
   {
    "blurb": "Workstream scratchpads. A dated section is appended at every checkpoint.",
-   "count": 91,
+   "count": 92,
    "docs": [
     {
      "created": "2026-08-14",
@@ -12255,6 +12255,28 @@
       "unified-courses"
      ],
      "title": "Cross-discipline Over-merge Re-mint \u2014 Lessons & State",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-02",
+     "governs": [
+      "cpl_funding.js",
+      "funding-model/edit_page.js",
+      "tests/cpl_funding_conditions_filter.test.js",
+      "tests/funding_page_requirements_edit.test.js",
+      "CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/"
+     ],
+     "path": "docs/csm_workspace_lessons.md",
+     "status": null,
+     "tags": [
+      "lessons",
+      "csm-workspace",
+      "implementation-funding",
+      "crm",
+      "confirmations"
+     ],
+     "title": "CSM Workspace and the funding confirmations: lessons",
      "type": null,
      "updated": ""
     },
@@ -25366,5 +25388,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1352
+ "total": 1353
 }
