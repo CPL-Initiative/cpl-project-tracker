@@ -34,6 +34,13 @@ views retire once the List does what they do. The panel shows the folded members
 aside: MAP's exhibits carry no description). CIP sector over SOC. A Students column. Held exhibit titles keep
 Review; Courses keeps SkyView first.
 
+## Emergency note (SkyTrue, 20:46Z, context at its last checkpoint of runway)
+
+#2737 (Local subjects) and #2739 (this checkpoint) merged. #2738 (the side panel) carries a fix for CI shard 5: the
+panel had declared a second `listFocusTitle`, which replaced the engine's own and broke
+`tests/commons_list_suggest.test.js` (3); the duplicate is gone (19/19). Merge #2738 once `test` passes. Not
+refreshed after the light checkpoint: the INDEX history, the vault note, the run logs (they predate this fix).
+
 ## Open work, in order
 
 1. **Merge #2737 and #2738** once `test` passes on each head (both subscribed).

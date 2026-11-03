@@ -76,6 +76,11 @@
 //                      filter by its own pass. counts() -> { id: n } hands the tab's own, from a build that already
 //                      counted them (Program Requirements, Courses); an id it leaves out or nulls shows no count, and the
 //                      engine still counts the ids it owns. counts: false shows none.
+//   panel              { label(r) -> the bar's words, body(r, h) -> nodes }: a side panel for one row (Sam, 2026-11-03:
+//                      "build the side panel into the Exhibits List", after SkyView's course outline). Pressing a row's
+//                      title opens it beside the table, in place of the title's drawer; another title swaps it, and Close
+//                      or Escape shuts it and returns focus to the row. h = { el, word, fmt, stamp, close }. L.panel holds
+//                      the open row's key for the visit.
 //   uncounted(id)      true while a filter's data is unread (the Exhibits List's suggested folds before the AI sort's
 //                      file): its word shows no count, never a 0 a reader takes for empty (S343).
 // The engine owns three filter ids whatever the spec: "selected" (the rows ticked this visit), and "suggested" and
@@ -710,7 +715,8 @@
           { id: P + "editall", "aria-pressed": L.editAll ? "true" : "false" }) : null,
         word("Clear the selection", function () { L.sel = {}; redrawList(); }), wrapBtn,
         !S.fr || frState().open ? null : word("Find and replace", function () {
-          frState().open = true; render(); var n = document.getElementById(FP + "find"); if (n) n.focus(); }, { id: FP + "open" }), dl]), region]);
+          frState().open = true; render(); var n = document.getElementById(FP + "find"); if (n) n.focus(); }, { id: FP + "open" }), dl]),
+        (function () { var pn = listPanel(); return pn ? el("div", { cls: P + "split" }, [region, pn]) : region; })()]);
       var selKeys = Object.keys(L.sel);
       if (gi && selKeys.length) out.appendChild(listMovePanel(selKeys));
       if (rows.length > shown.length) out.appendChild(word("Show " + fmt(Math.min(LIST_LIMIT, rows.length - shown.length)) + " more",
@@ -971,6 +977,31 @@
       if (n) n.textContent = listSelWords();
       if (fl && !fl.contains(document.activeElement)) fl.parentNode.replaceChild(listFilterBar(), fl);
     }
+    /* The side panel for the row L.panel names, or null when none is open or its row has left the List. */
+    function listPanel() {
+      var L = listState();
+      if (!S.panel || L.panel == null) return null;
+      var r = (S.rows() || []).filter(function (x) { return K(x) === L.panel; })[0];
+      if (!r) { L.panel = null; return null; }
+      var key = L.panel;
+      function close() { L.panel = null; redrawList(); listFocusTitle(key); }
+      var body = el("div", { cls: P + "pbody" }, S.panel.body(r, { el: el, word: word, fmt: fmt, stamp: stamp, close: close }) || []);
+      // The title's drawer moves into the panel, so nothing the List showed under its title is lost.
+      if (S.drawer) {
+        var dbox = el("div", { cls: P + "pdrawer" });
+        var line = function (text, cls) { dbox.appendChild(el("p", { cls: P + "dl" + (cls ? " " + P + cls : ""), text: text })); };
+        var list = function (items) { dbox.appendChild(el("ul", { cls: P + "dul" }, items.map(function (x) { return el("li", null, typeof x === "string" ? [x] : x); }))); };
+        S.drawer(r, listCols()[0].h, { line: line, list: list, box: dbox, word: word, el: el, filterBy: listFilterBy,
+          colIndex: listColIndex, L: L, LIMIT: LIST_LIMIT, fmt: fmt, stamp: stamp });
+        if (dbox.firstChild) body.insertBefore(dbox, body.querySelector("details") || null);
+      }
+      var aside = el("aside", { id: P + "panel", cls: P + "panel", "aria-labelledby": P + "panel-t" }, [
+        el("div", { cls: P + "pbar" }, [el("span", { id: P + "panel-t", cls: P + "pt", tabindex: "-1", text: S.panel.label ? S.panel.label(r) : listTitle(r) }),
+          word("Close", close, { "aria-label": "Close the panel for " + listTitle(r) })]),
+        body]);
+      aside.addEventListener("keydown", function (e) { if (e.key === "Escape") { e.stopPropagation(); close(); } });
+      return aside;
+    }
     /* A cell opens its drill-down in a drawer under the row (Sam, 2026-11-01: "how many of these fields can you make
        drill downs for on click?"; "build the open in detail as you propose"). A second press closes it. */
     function listOpener(r, col, text, isOpen) {
@@ -978,6 +1009,18 @@
       var b = el("button", { type: "button", cls: P + "open", "aria-expanded": isOpen ? "true" : "false",
         "aria-label": listCols()[col].h + ": " + (text || "none") + ", details" },
         listCols()[col].cell ? (listCols()[col].cell(r, el) || [text || "—"]) : [text || "—"]);
+      if (col === 0 && S.panel) {
+        var on = L.panel === K(r);
+        b.setAttribute("aria-expanded", on ? "true" : "false");
+        b.setAttribute("aria-controls", P + "panel");
+        b.setAttribute("aria-label", (text || "none") + ", " + (on ? "close its panel" : "open its panel"));
+        b.addEventListener("click", function () {
+          L.panel = on ? null : K(r); L.open = null; L.edit = null; redrawList();
+          var t = document.getElementById(on ? "" : P + "panel-t");
+          if (t) t.focus(); else listFocusTitle(K(r));
+        });
+        return b;
+      }
       b.addEventListener("click", function () {
         L.open = isOpen ? null : { ut: K(r), col: col }; L.edit = null; redrawList();
         var again = document.querySelector("." + P + 'open[aria-expanded="true"]'); if (again) again.focus();
@@ -1168,6 +1211,17 @@
         // column to its longest title, past the screen's edge, and ignored the grip (Sam on his phone, 2026-11-01).
         "@media (max-width:560px){" + p + "table{min-width:900px}}"
       ];
+      // The side panel (S.panel): the table and the panel share the row, and on a narrow window the panel wraps below.
+      rules = rules.concat([
+        "." + P + "split{display:flex;flex-wrap:wrap;gap:14px;align-items:flex-start}",
+        "." + P + "split > ." + P + "wrap{flex:999 1 480px;min-width:0}",
+        "." + P + "panel{flex:1 1 420px;max-width:760px;min-width:0;box-sizing:border-box;background:var(--surface-opaque);border:1px solid var(--border-strong);border-radius:10px;overflow:hidden}",
+        "." + P + "pbar{display:flex;justify-content:space-between;align-items:center;gap:8px;padding:6px 12px;border-bottom:1px solid var(--border);background:var(--surface-subtle)}",
+        "." + P + "pt{font-weight:600;font-size:.85rem;color:var(--text-strong);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}",
+        "." + P + "pt:focus-visible{outline:2px solid var(--cobalt);outline-offset:2px}",
+        "." + P + "pbody{padding:12px 16px 16px}",
+        "." + P + "pdrawer{margin:12px 0 0;padding:10px 0 0;border-top:1px solid var(--border)}"
+      ]);
       // A tab with no base classes of its own gets the Exhibits tab's: underlined words, muted and small text, the
       // finder's box, the current filter underlined.
       if (OWN_BASE) rules = rules.concat([

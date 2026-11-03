@@ -41,8 +41,10 @@ Each reference's List becomes its one workspace, in this shape, top to bottom:
    CSM Workspace's *Today* line (#2727). The line carries the Commons row (the headline, confirmed by a person, each
    known issue); the List's own filter row keeps the per-filter counts, so a count shows once.
 2. **The action and metric cards,** folded behind one word for the visit (*Hide the summary*, *Show the summary*).
-3. **The List,** full width. A row opens **a side panel with all its details** (SkyView's course panel is the model;
-   Exhibits' credential panel is the first content), owned by the engine so every List gets it.
+3. **The List,** full width. A row's title opens **a side panel** beside the table: the engine's `panel` hook
+   (`commons_list.js`; the title's drawer moves into it, so nothing is lost), SkyView's course outline the model.
+   Exhibits' panel shows the credential, its folded **members** (the MAP exhibits under it, sortable, each linked to
+   MAP), and the rest folded below (Sam's mock, https://claude.ai/artifact/PJKHZ8QwfyfbRW7U6qwBV4, 2026-11-03).
 
 Every Commons card action opens the List (#2735). A reference's original views retire once its List does everything
 they do, one PR each. Built: Exhibits' line and fold (2026-11-03, over the tiles the Credentials view and the List
