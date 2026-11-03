@@ -124,8 +124,7 @@ run-by-run figures are in the lessons doc's S416 to S418 sections.
   receipts them; rows the daily fold already carried into `kb/unified_titles.json` (their `reviewed_by` is the cohort)
   are counted, and the fold commit that carried them is reverted. A rule procedure's settlement saves at the rule's
   word, the course-identity rule's 0.8 included (the college's own course title, 96 of its 125; the 29 anchored to a
-  CCN or C-ID read 0.85). The first night's preview: 926 titles under 7 procedures (classifier 737, course-identity
-  125, brand-family 53, nccer-verbatim 5, statewide-catalog 3, cslb-classification 2, apprenticeship-trades 1).
+  CCN or C-ID read 0.85).
   `save=preview` on the workflow lists them and writes no row. Governance: `workflow:cer-procedures.yml` → DR-07.
 - **The store:** `kb/cer_procedures.json`, each procedure a rule in plain words with who set it, when, and
   their words. Seven **rule** procedures settle a title by code, in order: brand families (an AP title takes College Board's official
@@ -151,10 +150,7 @@ exam name, `kb/_ap_official_titles.py`, its `ap` lane first; Sam, 2026-10-31, #2
 
 Sheet 94's three rulings (apply, save, retire; `sam-sheet-94-rulings-2026-10-18`) and Sheet 96 card 1 are in the lessons doc.
 
-Sheet 148's rulings (the Credential Catalog's name and links, the CER and EACR tabs retired) are in the lessons doc.
-
-**Sam's rulings, Open Asks Sheet 149** (https://claude.ai/artifact/G65n79qyqt6zioFPvKA75A, 14:41Z 2026-10-31, his own
-calls; `cpl_memory` `sam-sheet-149-rulings-2026-10-31`): 1 *fold*, 2 *routine*.
+Sheet 148's rulings (the Credential Catalog's name and links, the CER and EACR tabs retired) and Sheet 149's (fold, routine) are in the lessons doc.
 
 **Rules (SkyBilberry, 2026-10-31; Sam: "a link to a view of all the rules used to suggest or fold exhibit titles", and
 Sheet 149 card 2).** The tab's **Rules** view (`#exhibits/rules`, also from Another look's rule filter) lists every
@@ -184,7 +180,9 @@ assignments and 3 panel markers moved under `cer-clep-fold-skyteaberry@bot` (`cl
 the two Level III markers stay under their old keys. Guard: `tests/clep_official_titles_test.py`.
 
 **NEXT:** (0) After each of Sam's runs through *Another look*, read the next fold's `credential_moves` and
-`credential_retires` and move the panel rows they list (SkyHuckleberry moved the first four, receipt
-`kb/receipts/credential_panel_move_2026-10-31_skyhuckleberry.json`). (1) The Catalog's *Courses that may align*,
+`credential_retires` and move the panel rows they list (receipts `kb/receipts/credential_panel_move_*.json`; a row
+that cannot fan in, or whose rename the fold carried out, stays under its old key, named in the receipt).
+**Sam, Open Asks Sheet 161 (15:14Z 2026-11-03):** *drop* his Engine Performance 1 and 2 ASE issuer rows;
+Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied by the receipt's `then_planned`. (1) The Catalog's *Courses that may align*,
 once a source names courses. (2) Training sites for a held title new to the reference, and the *Held titles by group*
 table, only if Sam asks.

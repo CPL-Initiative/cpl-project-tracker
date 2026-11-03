@@ -13864,7 +13864,7 @@
      "updated": ""
     },
     {
-     "created": "2026-11-01",
+     "created": "2026-11-03",
      "governs": [],
      "path": "docs/cer_redesign_handoff.md",
      "status": null,
@@ -13873,10 +13873,10 @@
       "cer",
       "exhibits",
       "exhibit-canonicalization",
-      "clep",
-      "credential-catalog"
+      "kb-curation",
+      "decision-sheet"
      ],
-     "title": "CER redesign handoff: the CLEP fold confirmed, the Catalog sync test fixed (SkySnowberry)",
+     "title": "CER redesign handoff: the 11-02 and 11-03 panel rows moved, two calls on Sheet 161 (SkyCheckerberry)",
      "type": null,
      "updated": ""
     },
