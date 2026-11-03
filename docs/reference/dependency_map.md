@@ -399,6 +399,7 @@ collapse to one `<date>` family so writer and reader edges join.
 | `credential_reference.js` | pages: `CPL_Dashboard.html` | — |
 | `csm_workspace.js` | pages: `CPL_Dashboard.html` | — |
 | `csr_authority_codes_rulings_<date>.json` | scripts: `kb/_authority_recode_dryrun.py`, `kb/_seed_authority_codes.py` | — |
+| `csr_local_subjects.js` | tabs: `canonical-subj4` | — |
 | `dashboard_filters.js` | pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py` | — |
 | `docs/*.md` | scripts: `kb/_build_docs_index.py` | — |
 | `docs/*_lessons.md` | scripts: `kb/_build_docs_index.py` | — |
@@ -1282,5 +1283,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 105 Supabase tables · 49 RPCs · 11 edge functions · 781 file
+Coverage: 105 Supabase tables · 49 RPCs · 11 edge functions · 782 file
 datasets · 192 external services · 511 consumers · 60 workflows · 40 tabs.
