@@ -1,0 +1,166 @@
+{
+ "_about": "CPL Pathways records a person has confirmed (program_requirement_records.checked), synced daily by kb/_sync_program_checked.py for the Commons card. No addresses.",
+ "_synced_at": "2026-11-03T14:20:00Z",
+ "checked": [
+  [
+   "Cabrillo College",
+   "06326",
+   "2026-10-14"
+  ],
+  [
+   "Cerritos College",
+   "02201",
+   "2026-10-10"
+  ],
+  [
+   "Cerritos College",
+   "02202",
+   "2026-10-12"
+  ],
+  [
+   "Cerritos College",
+   "02203",
+   "2026-10-12"
+  ],
+  [
+   "Cerritos College",
+   "02213",
+   "2026-10-10"
+  ],
+  [
+   "Cerritos College",
+   "02226",
+   "2026-10-10"
+  ],
+  [
+   "Cerritos College",
+   "20520",
+   "2026-10-10"
+  ],
+  [
+   "Cerritos College",
+   "24026",
+   "2026-10-10"
+  ],
+  [
+   "Cerritos College",
+   "31608",
+   "2026-10-10"
+  ],
+  [
+   "Cerritos College",
+   "36675",
+   "2026-10-04"
+  ],
+  [
+   "Cerritos College",
+   "41982",
+   "2026-10-04"
+  ],
+  [
+   "Cerritos College",
+   "42158",
+   "2026-10-04"
+  ],
+  [
+   "Cerritos College",
+   "45549",
+   "2026-10-04"
+  ],
+  [
+   "Irvine Valley College",
+   "10265",
+   "2026-10-10"
+  ],
+  [
+   "Mt. San Antonio College",
+   "03086",
+   "2026-10-04"
+  ],
+  [
+   "Mt. San Antonio College",
+   "08086",
+   "2026-10-04"
+  ],
+  [
+   "Mt. San Antonio College",
+   "31650",
+   "2026-10-10"
+  ],
+  [
+   "Mt. San Antonio College",
+   "33876",
+   "2026-10-04"
+  ],
+  [
+   "Mt. San Antonio College",
+   "42916",
+   "2026-10-04"
+  ],
+  [
+   "Mt. San Antonio College",
+   "43670",
+   "2026-10-10"
+  ],
+  [
+   "Riverside City College",
+   "22804",
+   "2026-10-04"
+  ],
+  [
+   "Riverside City College",
+   "31456",
+   "2026-10-04"
+  ],
+  [
+   "Riverside City College",
+   "39033",
+   "2026-10-04"
+  ],
+  [
+   "Riverside City College",
+   "40061",
+   "2026-10-04"
+  ],
+  [
+   "San Diego Miramar College",
+   "05100",
+   "2026-10-04"
+  ],
+  [
+   "San Diego Miramar College",
+   "18207",
+   "2026-10-04"
+  ],
+  [
+   "San Diego Miramar College",
+   "35030",
+   "2026-10-04"
+  ],
+  [
+   "San Diego Miramar College",
+   "41496",
+   "2026-10-04"
+  ],
+  [
+   "West Los Angeles College",
+   "17111",
+   "2026-10-04"
+  ],
+  [
+   "West Los Angeles College",
+   "37050",
+   "2026-10-04"
+  ],
+  [
+   "West Los Angeles College",
+   "37839",
+   "2026-10-04"
+  ],
+  [
+   "West Los Angeles College",
+   "39618",
+   "2026-10-04"
+  ]
+ ]
+}

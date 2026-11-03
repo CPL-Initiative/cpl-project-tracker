@@ -301,6 +301,8 @@
       links: [proc ? { words: "How it is kept: " + fmtN(proc.n) + " groups a rule folds", go: go("auto") } : null,
         sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
       progress: { n: x.settled, of: x.wordings, short: "settled", words: "wordings resolve to a settled reference",
+        // Confirmed by a person, beside settled (Sheet 160; Sam, S565): wordings a curator's decision names.
+        confirmed: { n: x.facts ? x.facts.confirmed : null, done: x.facts ? x.facts.confirmed_settled : null, doneWords: "settled" },
         recently: [recently, split].filter(Boolean).join(" "),
         calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmtN(open.length) + " decisions wait on ") + decider + "."
           : "No decisions wait on " + decider + ".") : "",

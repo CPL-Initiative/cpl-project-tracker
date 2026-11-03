@@ -3004,7 +3004,7 @@
     var liveA = A ? A.filter(function (a) { return LIVE_ADDENDA.indexOf(a.status) >= 0; }) : null;
     /* Every record in the index, counted once: read, passing or failing (and on which check),
        and, where COCI's active list was read, complete (an active program, passing). */
-    var colleges = {}, doneCols = {}, n = { pass: 0, fail: 0, units: 0, courses: 0, added: 0, onActive: 0, complete: 0, activeFail: 0 };
+    var colleges = {}, doneCols = {}, n = { pass: 0, fail: 0, units: 0, courses: 0, added: 0, onActive: 0, complete: 0, activeFail: 0, checkedComplete: 0 };
     P.forEach(function (p) {
       colleges[p.college] = 1;
       var f = machineFails(p), act = !!(K && K[keyOf(p)]);
@@ -3014,7 +3014,7 @@
         if (f.indexOf("courses") >= 0) n.courses++;
         if (f.indexOf("off-list") >= 0) n.added++;
       } else n.pass++;
-      if (act) { n.onActive++; if (!f.length) { n.complete++; doneCols[p.college] = 1; } else n.activeFail++; }
+      if (act) { n.onActive++; if (!f.length) { n.complete++; doneCols[p.college] = 1; if (p.checked) n.checkedComplete++; } else n.activeFail++; }
     });
     var procList = procs.map(function (r) { return short(r.college) + (r.procedure.v != null ? " v" + r.procedure.v : ""); });
     var x = {
@@ -3024,7 +3024,7 @@
       currentYear: R.filter(function (r) { return r.catalog_year === CURRENT_YEAR; }).length,
       censusDay: dayOf(latest(R.map(function (r) { return r.census_checked_at; }))),
       nextCensus: ptDay(nextWeekly(now, 0, 10, 29)),
-      checked: P1.length,
+      checked: P1.length, checkedComplete: K ? n.checkedComplete : null,
       checkedDay: dayOf(latest(P1.map(function (p) { return p.checked_at; }))),
       read: P.length, readColleges: Object.keys(colleges).length,
       passing: n.pass, failing: n.fail, failingActive: K ? n.activeFail : null, failUnits: n.units, failCourses: n.courses, failAdded: n.added,
@@ -3204,6 +3204,8 @@
         { words: "Open CPL Pathways", href: TO.pathways.href },
         sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
       progress: { n: x.complete, of: x.active, short: "complete", words: "active programs harvested complete",
+        // Confirmed by a person, beside complete (Sheet 160; Sam, S565): a person's Confirm, read live.
+        confirmed: { n: x.checked, done: x.checkedComplete, doneWords: "complete" },
         recently: [recently, within].filter(Boolean).join(" "),
         calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmt(open.length) + " decisions wait on ") + x.decider + "."
           : "No decisions wait on " + x.decider + ".") : "",

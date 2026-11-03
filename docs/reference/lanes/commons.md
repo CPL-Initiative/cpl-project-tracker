@@ -92,10 +92,11 @@ cards). Guards `tests/exhibits_progress_page.test.js`, `cr_progress`, `csr_progr
 `coci_progress`; a11y targets `<view>-progress` and `-dark`. Per-view detail: `docs/commons_lessons.md` (*Moved from the
 lane, 2026-11-03*). **Complete is the auditor's *ready*** (Sam, Open Asks Sheet 160, *keep*, 12:44Z 2026-11-03): a common course counts
 before a person confirms it; a confirmation is an attribute the reference gains, counted beside it. His words are in
-`docs/commons_lessons.md` (*Sheet 160 answered*). **Confirmed by a person** (S564, #2726): `facts.confirmed`, cards whose save in
-`kb/coci_curation.json` names a person (812 of 27,581), a row after *Ready*; detail in the lessons (*The confirmed count*).
+`docs/commons_lessons.md` (*Sheet 160 answered*). **Confirmed by a person, on all five** (Sam, S565: *"yes to both, build them for all four"*): each row's second `pair`,
+a line on the card and under each Progress bar. 2026-11-03: Programs 32 (synced daily, `kb/_sync_program_checked.py`),
+Exhibits 1,173, Courses 957 (a save on the card or placing a course into it), CR 97, Subjects 122. Detail in the lessons (*The confirmed count*).
 
-**NEXT:** propose the lane's next build (a confirmed count for the other four references). The to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
+**NEXT:** propose the lane's next build at a session Sam opens, or on the sheet. The to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
 that once answered 500 (check it first when a Progress card reads *Could not be read*).
 The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 

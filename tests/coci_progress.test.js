@@ -103,6 +103,8 @@ const btn = (doc, re) => Array.from(doc.querySelectorAll("button")).find((b) => 
   check("units agree", /23,402 of 27,581$/.test(rowText("Units agree")));
   check("ready closes the third question", /3,205 of 27,581$/.test(rowText("Ready:")));
   check("a person's confirmation is counted beside ready (Sheet 160)", /812 of 27,581$/.test(rowText("Confirmed by a person in SkyView")));
+  check("the confirmed line sits under the bar, beside ready (S565: all five references)",
+    /812 confirmed by a person, 126 of them ready\./.test(txt(page.querySelector(".cplcoci-pg-confirmed"))));
   check("the headline stays the auditor's ready", /3,205 of 27,581 common-course cards/.test(t) && !/812 of 27,581 common-course/.test(t));
   check("the foot names the denominator", /Each count is of the 27,581 common-course cards the auditor scores\./.test(t));
   check("the List is one word away", !!btn(doc, /^Open the Courses List$/));
@@ -129,7 +131,7 @@ const btn = (doc, re) => Array.from(doc.querySelectorAll("button")).find((b) => 
   w = makeDom({ hash: "#coci-lookup/progress", commons: noConf });
   await sleep(20);
   check("a row without the confirmed count says Could not be read there",
-    /Confirmed by a person in SkyViewCould not be read/.test(txt(w.document.querySelector("#cplcoci-progress"))));
+    /Confirmed by a person in SkyView or COBICould not be read/.test(txt(w.document.querySelector("#cplcoci-progress"))));
   w = makeDom({ hash: "#coci-lookup/progress", noPage: true });
   await sleep(20);
   check("without the renderer the view says so", /commons_page\.js\) did not load/.test(txt(w.document.querySelector("#cplcoci-progress"))));

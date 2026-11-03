@@ -588,6 +588,18 @@ so the count reads person-made saves instead (a title, a discipline, a cross-lis
 `kb/coci_curation.json` keeps one reviewer a card, the latest, so a cohort save after a person's hides the person: the
 count is a floor until the overlay keeps a reviewer a field.
 
+**On all five (S565, 2026-11-03).** Sam: *"yes to both, build them for all four"*, answering whether a course placed into
+a card confirms that card too, and whether the other references should count the same attribute. Each row now carries
+`confirmed_pair()` as its second pair, over the first pair's denominator, with the share also complete: Programs 32 checked
+by a person (28 complete); Exhibits 1,173 titles a person stamped (complete is the stamp, so no share); Courses 957 cards
+(a person's save keyed on the card, 812, or placing a course into it, 145 more; 152 ready); CR 97 wordings a curator's
+decision names (all settled); Subjects 122 MQ disciplines a person confirmed (all settled). CPL Pathways' Confirm writes
+only to `program_requirement_records`, so the committed records undercount (20 against 32 live); `kb/_sync_program_checked.py`
+commits the checked list daily, college, number and day, never the address. Each Progress page draws it as one line under
+its bar (`progress.confirmed`), the Commons card as one line under its figure. The lesson: S564 and S565 built the first
+version at the same hour because a scheduled firing is not in `list_sessions`; read `main`'s commits before starting a
+queue item, not only at session start.
+
 ## The List norms, steps 1 to 3 (moved from the lane, S564, 2026-11-03)
 
 Step 1 of its three landed in S544: the engine's `suggest` slot and the visit's changed set, with CR's rung proposals (*Suggested groups*, Confirm the group) and the Subjects open picks (*Suggested picks*, Confirm this pick) wired in; step 2 put every filter word's count in the engine (S544), and *Selected* on every List; step 3, bands from the spec (the engine's `bands` hook, with `order` for a band named by something other than its key), landed in S543 for Courses and S545 for CR's groups. The Exhibits List moved onto the engine's suggestion slot and changed set in S545, so all three steps have landed.

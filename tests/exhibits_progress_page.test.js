@@ -90,7 +90,7 @@ function exhibitRow(over) {
       { n: 621, words: "titles in the reference that have left MAP", owner: "a curator (retire or keep)", open: "#credential-reference/all", error: null }],
     procedures: [{ n: 16, words: "in force", open: "#credential-reference/procs", error: null }],
     machine: { what: "the saving run and the fold", at: ago(3), every_hours: 24 },
-    facts: { titles: 5492, stamped: 2402, person: 1088, cohort: 1314 }
+    facts: { titles: 5492, stamped: 2402, person: 1088, cohort: 1314, confirmed: 1088 }
   }, over || {});
 }
 function status(row) { return { schema: 1, written_at: ago(2), rows: [row] }; }
@@ -148,6 +148,8 @@ function views(d) { return Array.from(d.querySelectorAll(".exh-views > *")).map(
   let t = await boot();
   const d = t.d, page = d.querySelector(".exh-pg-page");
   check("host: #exhibits/progress opens the Progress view", t.M._state.view === "progress" && !!page);
+  check("host: a person's stamps sit under the bar as Confirmed by a person (S565)",
+    txt(d.querySelector(".exh-pg-confirmed")) === "1,088 confirmed by a person.");
   check("host: Progress is the first view", views(d)[0] === "Progress" && /Review/.test(views(d)[1]));
   check("host: the headline is the Commons row's pair, a title with a review stamp",
     /2,402 of 5,492 college-entered titles carry a review stamp/.test(txt(d.querySelector(".exh-pg-page [aria-label=Progress]"))));

@@ -511,6 +511,16 @@ jobs:
       - name: Build the public adoption page's data
         run: python3 kb/_build_adopt_page.py --quiet || echo "::warning title=Adoption page not rebuilt::kb/_build_adopt_page.py failed; library/adopt/ reads the previous file until the next run. Check the step log."
 
+      # CPL Pathways' person confirmations for the Commons card (Sheet 160; Sam, S565, 2026-11-03): a
+      # person's Confirm sets checked on program_requirement_records live; this commits which records,
+      # without the person's address. Read-only. kb/status/program-requirements-checked.json.
+      - name: Sync CPL Pathways' confirmed records
+        env:
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: |
+          if [ -z "${SUPABASE_SERVICE_KEY:-}" ]; then echo "SUPABASE_SERVICE_KEY not set; the Commons card keeps the previous confirmed list."; exit 0; fi
+          python3 kb/_sync_program_checked.py || echo "::warning title=Pathways confirmations not synced::kb/_sync_program_checked.py failed; the Commons card reads the previous list until the next run. Check the step log."
+
       # The Commons tab's figures (Sam, 2026-10-18: "Build it as a tab now"): every common
       # reference's complete pair, known issues, settled procedures and machine stamp, read
       # from the committed files the steps above rebuilt. kb/status/commons.json; commons.js.
@@ -627,6 +637,7 @@ jobs:
           git add kb/projects_snapshot.json 2>/dev/null || true
           # The Commons tab's figures (the step before the copy): rebuilt every run.
           git add kb/status/commons.json 2>/dev/null || true
+          git add kb/status/program-requirements-checked.json 2>/dev/null || true
           # The Common Subjects Reference's daily scan (the step before the Commons build).
           git add kb/csr_out/latest.json 2>/dev/null || true
           # Project lifecycle (Session 84): committed ledger of Tabled/Archived

@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-03T13:22:59Z",
+ "written_at": "2026-11-03T14:42:30Z",
  "rows": [
   {
    "key": "requirements",
@@ -19,10 +19,18 @@
      "of": 20282,
      "words": "complete at 114 colleges",
      "open": "#program-requirements"
+    },
+    {
+     "n": 32,
+     "of": 20282,
+     "words": "confirmed by a person, 28 of them complete",
+     "open": "#program-requirements",
+     "error": null
     }
    ],
    "tests": [
-    "machine-checked"
+    "machine-checked",
+    "confirmed by a person"
    ],
    "issues": [
     {
@@ -63,13 +71,16 @@
     "unread": 3349,
     "records": 18556,
     "colleges": 114,
-    "outside_active": 1623
+    "outside_active": 1623,
+    "confirmed": 32,
+    "confirmed_complete": 28
    },
    "sources": [
     "coci_programs_data.js",
     "kb/program_requirements_college/*/records/*.json",
     "kb/program_requirements_pilot/records/*.json",
-    "kb/program_requirements_college/*/capture.json"
+    "kb/program_requirements_college/*/capture.json",
+    "kb/status/program-requirements-checked.json"
    ]
   },
   {
@@ -89,11 +100,19 @@
      "of": 5493,
      "words": "titles carry a review stamp (1,173 a person's, 1,284 a cohort's); 2,667 credentials, 2,203 of 2,972 records stamped",
      "open": "#exhibits/credentials"
+    },
+    {
+     "n": 1173,
+     "of": 5493,
+     "words": "confirmed by a person",
+     "open": "#exhibits/credentials",
+     "error": null
     }
    ],
    "tests": [
     "curator-stamped",
-    "procedure-settled"
+    "procedure-settled",
+    "confirmed by a person"
    ],
    "issues": [
     {
@@ -129,6 +148,7 @@
     "person": 1173,
     "cohort": 1284,
     "credentials": 2667,
+    "confirmed": 1173,
     "records": 2972,
     "records_stamped": 2203,
     "saved_at": "2026-10-31T14:01:00Z",
@@ -172,12 +192,20 @@
     {
      "n": 3205,
      "of": 27581,
-     "words": "cards the auditor scores 0.85 or better; 17,036 at needs review, 7,335 at needs repair, 5 not ready; 812 confirmed by a person in SkyView",
+     "words": "cards the auditor scores 0.85 or better; 17,036 at needs review, 7,335 at needs repair, 5 not ready",
      "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html"
+    },
+    {
+     "n": 957,
+     "of": 27581,
+     "words": "confirmed by a person, 152 of them ready",
+     "open": "https://cpl-initiative.github.io/cpl-project-tracker/prototype/skyview.html",
+     "error": null
     }
    ],
    "tests": [
-    "scored by the auditor"
+    "scored by the auditor",
+    "confirmed by a person"
    ],
    "issues": [
     {
@@ -231,8 +259,8 @@
     "needs_repair": 7335,
     "not_ready": 5,
     "cap": 0.79,
-    "confirmed": 812,
-    "confirmed_ready": 126,
+    "confirmed": 957,
+    "confirmed_ready": 152,
     "tags": {
      "blank_description": 5750,
      "discipline_title_mismatch": 1116,
@@ -266,11 +294,19 @@
      "of": 2344,
      "words": "wordings resolve to a settled reference (410 by a rung 1 to 4 rule, 50 more by a curator); 5,900 of 9,432 articulations",
      "open": "#cr-reference/progress"
+    },
+    {
+     "n": 97,
+     "of": 2344,
+     "words": "confirmed by a person, 97 of them settled",
+     "open": "#cr-reference/progress",
+     "error": null
     }
    ],
    "tests": [
     "rule-settled",
-    "curator-decided"
+    "curator-decided",
+    "confirmed by a person"
    ],
    "issues": [
     {
@@ -318,6 +354,8 @@
     "rule_groups": 225,
     "curator_wordings": 97,
     "curator_only": 50,
+    "confirmed": 97,
+    "confirmed_settled": 97,
     "curator_only_rows": 1045,
     "unsettled": 1884,
     "unsettled_rows": 3532,
@@ -368,12 +406,20 @@
      "of": 147,
      "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (122 by a person, 14 by the nightly procedure or a session cohort)",
      "open": "#canonical-subj4/progress"
+    },
+    {
+     "n": 122,
+     "of": 147,
+     "words": "confirmed by a person, 122 of them settled",
+     "open": "#canonical-subj4/progress",
+     "error": null
     }
    ],
    "tests": [
     "confirmed",
     "authority rule",
-    "collision-free"
+    "collision-free",
+    "confirmed by a person"
    ],
    "issues": [
     {
@@ -424,6 +470,7 @@
     "confirmed": 136,
     "person": 122,
     "cohort": 14,
+    "person_settled": 122,
     "settled": 136,
     "modal": 11,
     "shared": [],
