@@ -1,0 +1,6886 @@
+{
+ "what": "course_outcomes_load: course SLOs as printed, by college and course (Sheet 70 card 3)",
+ "host": "sac",
+ "load_run": "41602658602",
+ "reads": [
+  "kb/course_outcomes/sac/read_41589637097_p1of4.json",
+  "kb/course_outcomes/sac/read_41589637097_p2of4.json",
+  "kb/course_outcomes/sac/read_41589637097_p3of4.json",
+  "kb/course_outcomes/sac/read_41589637097_p4of4.json"
+ ],
+ "posted": 1366,
+ "inserted": 1366,
+ "kept": 0,
+ "skipped": 7,
+ "skipped_rows": [
+  {
+   "course_code": "HSS 090",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSRDG 093",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "HSS 092",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 150",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSC 117",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "ART 154",
+   "status": 200,
+   "shape": "none"
+  },
+  {
+   "course_code": "PSC 118",
+   "status": 200,
+   "shape": "none"
+  }
+ ],
+ "error": null,
+ "inserted_keys": [
+  {
+   "id": 8019,
+   "college": "Santa Ana College",
+   "course_code": "ABE 010"
+  },
+  {
+   "id": 8020,
+   "college": "Santa Ana College",
+   "course_code": "ABE 025"
+  },
+  {
+   "id": 8021,
+   "college": "Santa Ana College",
+   "course_code": "ABE 111"
+  },
+  {
+   "id": 8022,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 010"
+  },
+  {
+   "id": 8023,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 104"
+  },
+  {
+   "id": 8024,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 120"
+  },
+  {
+   "id": 8025,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 205"
+  },
+  {
+   "id": 8026,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 212"
+  },
+  {
+   "id": 8027,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 101L"
+  },
+  {
+   "id": 8028,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 105"
+  },
+  {
+   "id": 8029,
+   "college": "Santa Ana College",
+   "course_code": "APCD 108"
+  },
+  {
+   "id": 8030,
+   "college": "Santa Ana College",
+   "course_code": "APCD 116A"
+  },
+  {
+   "id": 8031,
+   "college": "Santa Ana College",
+   "course_code": "APED 114"
+  },
+  {
+   "id": 8032,
+   "college": "Santa Ana College",
+   "course_code": "ART 009"
+  },
+  {
+   "id": 8033,
+   "college": "Santa Ana College",
+   "course_code": "ART 104"
+  },
+  {
+   "id": 8034,
+   "college": "Santa Ana College",
+   "course_code": "ART 110"
+  },
+  {
+   "id": 8035,
+   "college": "Santa Ana College",
+   "course_code": "ART 130"
+  },
+  {
+   "id": 8036,
+   "college": "Santa Ana College",
+   "course_code": "ART 133"
+  },
+  {
+   "id": 8037,
+   "college": "Santa Ana College",
+   "course_code": "ART 158"
+  },
+  {
+   "id": 8038,
+   "college": "Santa Ana College",
+   "course_code": "ART 192A"
+  },
+  {
+   "id": 8039,
+   "college": "Santa Ana College",
+   "course_code": "ART 232"
+  },
+  {
+   "id": 8040,
+   "college": "Santa Ana College",
+   "course_code": "ART 291"
+  },
+  {
+   "id": 8041,
+   "college": "Santa Ana College",
+   "course_code": "ASL 110"
+  },
+  {
+   "id": 8042,
+   "college": "Santa Ana College",
+   "course_code": "ASL 112"
+  },
+  {
+   "id": 8043,
+   "college": "Santa Ana College",
+   "course_code": "ASL 210H"
+  },
+  {
+   "id": 8044,
+   "college": "Santa Ana College",
+   "course_code": "ASTR 110"
+  },
+  {
+   "id": 8045,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 111"
+  },
+  {
+   "id": 8046,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 114A"
+  },
+  {
+   "id": 8047,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 116A"
+  },
+  {
+   "id": 8048,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 119"
+  },
+  {
+   "id": 8049,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 221"
+  },
+  {
+   "id": 8050,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 225"
+  },
+  {
+   "id": 8051,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 229"
+  },
+  {
+   "id": 8052,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 300"
+  },
+  {
+   "id": 8053,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 340"
+  },
+  {
+   "id": 8054,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 400"
+  },
+  {
+   "id": 8055,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 440"
+  },
+  {
+   "id": 8056,
+   "college": "Santa Ana College",
+   "course_code": "BA 101"
+  },
+  {
+   "id": 8057,
+   "college": "Santa Ana College",
+   "course_code": "BA 106"
+  },
+  {
+   "id": 8058,
+   "college": "Santa Ana College",
+   "course_code": "BA 110"
+  },
+  {
+   "id": 8059,
+   "college": "Santa Ana College",
+   "course_code": "BA 127"
+  },
+  {
+   "id": 8060,
+   "college": "Santa Ana College",
+   "course_code": "BA 133"
+  },
+  {
+   "id": 8061,
+   "college": "Santa Ana College",
+   "course_code": "BA 143"
+  },
+  {
+   "id": 8062,
+   "college": "Santa Ana College",
+   "course_code": "BA 153"
+  },
+  {
+   "id": 8063,
+   "college": "Santa Ana College",
+   "course_code": "BA 158"
+  },
+  {
+   "id": 8064,
+   "college": "Santa Ana College",
+   "course_code": "BA 162"
+  },
+  {
+   "id": 8065,
+   "college": "Santa Ana College",
+   "course_code": "BA 166"
+  },
+  {
+   "id": 8066,
+   "college": "Santa Ana College",
+   "course_code": "BA 171"
+  },
+  {
+   "id": 8067,
+   "college": "Santa Ana College",
+   "course_code": "BA 181"
+  },
+  {
+   "id": 8068,
+   "college": "Santa Ana College",
+   "course_code": "BA 190"
+  },
+  {
+   "id": 8069,
+   "college": "Santa Ana College",
+   "course_code": "BANK 103"
+  },
+  {
+   "id": 8070,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 109"
+  },
+  {
+   "id": 8071,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 115"
+  },
+  {
+   "id": 8072,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 131"
+  },
+  {
+   "id": 8073,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 169"
+  },
+  {
+   "id": 8074,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 191"
+  },
+  {
+   "id": 8075,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 195"
+  },
+  {
+   "id": 8076,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 211"
+  },
+  {
+   "id": 8077,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 229"
+  },
+  {
+   "id": 8078,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 275"
+  },
+  {
+   "id": 8079,
+   "college": "Santa Ana College",
+   "course_code": "BUS 101"
+  },
+  {
+   "id": 8080,
+   "college": "Santa Ana College",
+   "course_code": "BUS 115"
+  },
+  {
+   "id": 8081,
+   "college": "Santa Ana College",
+   "course_code": "BUS 119"
+  },
+  {
+   "id": 8082,
+   "college": "Santa Ana College",
+   "course_code": "BUS 127"
+  },
+  {
+   "id": 8083,
+   "college": "Santa Ana College",
+   "course_code": "BUS 160"
+  },
+  {
+   "id": 8084,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 110"
+  },
+  {
+   "id": 8085,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 114"
+  },
+  {
+   "id": 8086,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 120B"
+  },
+  {
+   "id": 8087,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 207"
+  },
+  {
+   "id": 8088,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 216"
+  },
+  {
+   "id": 8089,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 230"
+  },
+  {
+   "id": 8090,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 296"
+  },
+  {
+   "id": 8091,
+   "college": "Santa Ana College",
+   "course_code": "CHEM 115"
+  },
+  {
+   "id": 8092,
+   "college": "Santa Ana College",
+   "course_code": "CHEM 219H"
+  },
+  {
+   "id": 8093,
+   "college": "Santa Ana College",
+   "course_code": "CJ 101"
+  },
+  {
+   "id": 8094,
+   "college": "Santa Ana College",
+   "course_code": "CJ 103H"
+  },
+  {
+   "id": 8095,
+   "college": "Santa Ana College",
+   "course_code": "CJ 108"
+  },
+  {
+   "id": 8096,
+   "college": "Santa Ana College",
+   "course_code": "CJ 120"
+  },
+  {
+   "id": 8097,
+   "college": "Santa Ana College",
+   "course_code": "CJ 210"
+  },
+  {
+   "id": 8098,
+   "college": "Santa Ana College",
+   "course_code": "CJA 099"
+  },
+  {
+   "id": 8099,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 105"
+  },
+  {
+   "id": 8100,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 115"
+  },
+  {
+   "id": 8101,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 121"
+  },
+  {
+   "id": 8102,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 131"
+  },
+  {
+   "id": 8103,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 139"
+  },
+  {
+   "id": 8104,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 158"
+  },
+  {
+   "id": 8105,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 168"
+  },
+  {
+   "id": 8106,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 205"
+  },
+  {
+   "id": 8107,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 248"
+  },
+  {
+   "id": 8108,
+   "college": "Santa Ana College",
+   "course_code": "CMST 103H"
+  },
+  {
+   "id": 8109,
+   "college": "Santa Ana College",
+   "course_code": "CMST 150"
+  },
+  {
+   "id": 8110,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 100"
+  },
+  {
+   "id": 8111,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 124"
+  },
+  {
+   "id": 8112,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 155"
+  },
+  {
+   "id": 8113,
+   "college": "Santa Ana College",
+   "course_code": "COMM C1000"
+  },
+  {
+   "id": 8114,
+   "college": "Santa Ana College",
+   "course_code": "CULN 100"
+  },
+  {
+   "id": 8115,
+   "college": "Santa Ana College",
+   "course_code": "CULN 120"
+  },
+  {
+   "id": 8116,
+   "college": "Santa Ana College",
+   "course_code": "CULN 160"
+  },
+  {
+   "id": 8117,
+   "college": "Santa Ana College",
+   "course_code": "CULN 205"
+  },
+  {
+   "id": 8118,
+   "college": "Santa Ana College",
+   "course_code": "CULN 299"
+  },
+  {
+   "id": 8119,
+   "college": "Santa Ana College",
+   "course_code": "DETT 131"
+  },
+  {
+   "id": 8120,
+   "college": "Santa Ana College",
+   "course_code": "DETT 165"
+  },
+  {
+   "id": 8121,
+   "college": "Santa Ana College",
+   "course_code": "DM 100"
+  },
+  {
+   "id": 8122,
+   "college": "Santa Ana College",
+   "course_code": "DM 105"
+  },
+  {
+   "id": 8123,
+   "college": "Santa Ana College",
+   "course_code": "DM 113"
+  },
+  {
+   "id": 8124,
+   "college": "Santa Ana College",
+   "course_code": "DM 121A"
+  },
+  {
+   "id": 8125,
+   "college": "Santa Ana College",
+   "course_code": "DM 130"
+  },
+  {
+   "id": 8126,
+   "college": "Santa Ana College",
+   "course_code": "DM 162"
+  },
+  {
+   "id": 8127,
+   "college": "Santa Ana College",
+   "course_code": "DM 169"
+  },
+  {
+   "id": 8128,
+   "college": "Santa Ana College",
+   "course_code": "DM 191A"
+  },
+  {
+   "id": 8129,
+   "college": "Santa Ana College",
+   "course_code": "DM 196A"
+  },
+  {
+   "id": 8130,
+   "college": "Santa Ana College",
+   "course_code": "DM 230A"
+  },
+  {
+   "id": 8131,
+   "college": "Santa Ana College",
+   "course_code": "DM 260"
+  },
+  {
+   "id": 8132,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 009D"
+  },
+  {
+   "id": 8133,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 102"
+  },
+  {
+   "id": 8134,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 106B"
+  },
+  {
+   "id": 8135,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 107D"
+  },
+  {
+   "id": 8136,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 109B"
+  },
+  {
+   "id": 8137,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 112A"
+  },
+  {
+   "id": 8138,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 118"
+  },
+  {
+   "id": 8139,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 122A"
+  },
+  {
+   "id": 8140,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 125A"
+  },
+  {
+   "id": 8141,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 140A"
+  },
+  {
+   "id": 8142,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 201C"
+  },
+  {
+   "id": 8143,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 204A"
+  },
+  {
+   "id": 8144,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 205A"
+  },
+  {
+   "id": 8145,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 206A"
+  },
+  {
+   "id": 8146,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 219A"
+  },
+  {
+   "id": 8147,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 240A"
+  },
+  {
+   "id": 8148,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 250A"
+  },
+  {
+   "id": 8149,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 261"
+  },
+  {
+   "id": 8150,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 290"
+  },
+  {
+   "id": 8151,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 298"
+  },
+  {
+   "id": 8152,
+   "college": "Santa Ana College",
+   "course_code": "EDUC 114"
+  },
+  {
+   "id": 8153,
+   "college": "Santa Ana College",
+   "course_code": "EDUC 203"
+  },
+  {
+   "id": 8154,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 104"
+  },
+  {
+   "id": 8155,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 231"
+  },
+  {
+   "id": 8156,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 233C"
+  },
+  {
+   "id": 8157,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 245"
+  },
+  {
+   "id": 8158,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 272"
+  },
+  {
+   "id": 8159,
+   "college": "Santa Ana College",
+   "course_code": "ENGL C1000E"
+  },
+  {
+   "id": 8160,
+   "college": "Santa Ana College",
+   "course_code": "ENGL C1003"
+  },
+  {
+   "id": 8161,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 100B"
+  },
+  {
+   "id": 8162,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 111"
+  },
+  {
+   "id": 8163,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 122"
+  },
+  {
+   "id": 8164,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 134"
+  },
+  {
+   "id": 8165,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 184"
+  },
+  {
+   "id": 8166,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 250"
+  },
+  {
+   "id": 8167,
+   "college": "Santa Ana College",
+   "course_code": "ENTR 105"
+  },
+  {
+   "id": 8168,
+   "college": "Santa Ana College",
+   "course_code": "ENVR 140"
+  },
+  {
+   "id": 8169,
+   "college": "Santa Ana College",
+   "course_code": "ENVR 370"
+  },
+  {
+   "id": 8170,
+   "college": "Santa Ana College",
+   "course_code": "ERTH 125"
+  },
+  {
+   "id": 8171,
+   "college": "Santa Ana College",
+   "course_code": "ESL 300"
+  },
+  {
+   "id": 8172,
+   "college": "Santa Ana College",
+   "course_code": "ESL 304"
+  },
+  {
+   "id": 8173,
+   "college": "Santa Ana College",
+   "course_code": "ESL 398"
+  },
+  {
+   "id": 8174,
+   "college": "Santa Ana College",
+   "course_code": "ESL 491"
+  },
+  {
+   "id": 8175,
+   "college": "Santa Ana College",
+   "course_code": "ESL 570"
+  },
+  {
+   "id": 8176,
+   "college": "Santa Ana College",
+   "course_code": "ESL 612"
+  },
+  {
+   "id": 8177,
+   "college": "Santa Ana College",
+   "course_code": "ETHN 102H"
+  },
+  {
+   "id": 8178,
+   "college": "Santa Ana College",
+   "course_code": "FAC 060A"
+  },
+  {
+   "id": 8179,
+   "college": "Santa Ana College",
+   "course_code": "FAC 079B"
+  },
+  {
+   "id": 8180,
+   "college": "Santa Ana College",
+   "course_code": "FDM 058"
+  },
+  {
+   "id": 8181,
+   "college": "Santa Ana College",
+   "course_code": "FDM 101"
+  },
+  {
+   "id": 8182,
+   "college": "Santa Ana College",
+   "course_code": "FDM 105A"
+  },
+  {
+   "id": 8183,
+   "college": "Santa Ana College",
+   "course_code": "FDM 107"
+  },
+  {
+   "id": 8184,
+   "college": "Santa Ana College",
+   "course_code": "FDM 111A"
+  },
+  {
+   "id": 8185,
+   "college": "Santa Ana College",
+   "course_code": "FDM 114C"
+  },
+  {
+   "id": 8186,
+   "college": "Santa Ana College",
+   "course_code": "FDM 136"
+  },
+  {
+   "id": 8187,
+   "college": "Santa Ana College",
+   "course_code": "FDM 215"
+  },
+  {
+   "id": 8188,
+   "college": "Santa Ana College",
+   "course_code": "FOT 033"
+  },
+  {
+   "id": 8189,
+   "college": "Santa Ana College",
+   "course_code": "FOT 079"
+  },
+  {
+   "id": 8190,
+   "college": "Santa Ana College",
+   "course_code": "FOT 137"
+  },
+  {
+   "id": 8191,
+   "college": "Santa Ana College",
+   "course_code": "FOT 150B"
+  },
+  {
+   "id": 8192,
+   "college": "Santa Ana College",
+   "course_code": "FOT 205"
+  },
+  {
+   "id": 8193,
+   "college": "Santa Ana College",
+   "course_code": "FOT 273B"
+  },
+  {
+   "id": 8194,
+   "college": "Santa Ana College",
+   "course_code": "FREN 102"
+  },
+  {
+   "id": 8195,
+   "college": "Santa Ana College",
+   "course_code": "FREN 202H"
+  },
+  {
+   "id": 8196,
+   "college": "Santa Ana College",
+   "course_code": "FTC 102"
+  },
+  {
+   "id": 8197,
+   "college": "Santa Ana College",
+   "course_code": "FTC 106"
+  },
+  {
+   "id": 8198,
+   "college": "Santa Ana College",
+   "course_code": "GEOG 100H"
+  },
+  {
+   "id": 8199,
+   "college": "Santa Ana College",
+   "course_code": "GEOG 140"
+  },
+  {
+   "id": 8200,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 112"
+  },
+  {
+   "id": 8201,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 150H"
+  },
+  {
+   "id": 8202,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 169"
+  },
+  {
+   "id": 8203,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 173"
+  },
+  {
+   "id": 8204,
+   "college": "Santa Ana College",
+   "course_code": "HIST 101H"
+  },
+  {
+   "id": 8205,
+   "college": "Santa Ana College",
+   "course_code": "HIST 124"
+  },
+  {
+   "id": 8206,
+   "college": "Santa Ana College",
+   "course_code": "HIST 133"
+  },
+  {
+   "id": 8207,
+   "college": "Santa Ana College",
+   "course_code": "HIST 181"
+  },
+  {
+   "id": 8208,
+   "college": "Santa Ana College",
+   "course_code": "HIST C1002H"
+  },
+  {
+   "id": 8209,
+   "college": "Santa Ana College",
+   "course_code": "HSMTH 151"
+  },
+  {
+   "id": 8210,
+   "college": "Santa Ana College",
+   "course_code": "HSRDG 089"
+  },
+  {
+   "id": 8211,
+   "college": "Santa Ana College",
+   "course_code": "HSS 036"
+  },
+  {
+   "id": 8212,
+   "college": "Santa Ana College",
+   "course_code": "IDS 200"
+  },
+  {
+   "id": 8213,
+   "college": "Santa Ana College",
+   "course_code": "ITAL 121"
+  },
+  {
+   "id": 8214,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 110"
+  },
+  {
+   "id": 8215,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 123B"
+  },
+  {
+   "id": 8216,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 210"
+  },
+  {
+   "id": 8217,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 107A"
+  },
+  {
+   "id": 8218,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 160A"
+  },
+  {
+   "id": 8219,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 200B"
+  },
+  {
+   "id": 8220,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 220A"
+  },
+  {
+   "id": 8221,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 230A"
+  },
+  {
+   "id": 8222,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 265A"
+  },
+  {
+   "id": 8223,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 290A"
+  },
+  {
+   "id": 8224,
+   "college": "Santa Ana College",
+   "course_code": "KNAD 202B"
+  },
+  {
+   "id": 8225,
+   "college": "Santa Ana College",
+   "course_code": "KNAD 211A"
+  },
+  {
+   "id": 8226,
+   "college": "Santa Ana College",
+   "course_code": "KNAF 146B"
+  },
+  {
+   "id": 8227,
+   "college": "Santa Ana College",
+   "course_code": "KNAQ 201A"
+  },
+  {
+   "id": 8228,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 114A"
+  },
+  {
+   "id": 8229,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 115C"
+  },
+  {
+   "id": 8230,
+   "college": "Santa Ana College",
+   "course_code": "KNHE 101H"
+  },
+  {
+   "id": 8231,
+   "college": "Santa Ana College",
+   "course_code": "KNHE 106"
+  },
+  {
+   "id": 8232,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 128"
+  },
+  {
+   "id": 8233,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 202"
+  },
+  {
+   "id": 8234,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 210"
+  },
+  {
+   "id": 8235,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 216"
+  },
+  {
+   "id": 8236,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 220"
+  },
+  {
+   "id": 8237,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 230"
+  },
+  {
+   "id": 8238,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 240"
+  },
+  {
+   "id": 8239,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 271"
+  },
+  {
+   "id": 8240,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 101"
+  },
+  {
+   "id": 8241,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 155"
+  },
+  {
+   "id": 8242,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 175"
+  },
+  {
+   "id": 8243,
+   "college": "Santa Ana College",
+   "course_code": "KNSM 101"
+  },
+  {
+   "id": 8244,
+   "college": "Santa Ana College",
+   "course_code": "LAW 121"
+  },
+  {
+   "id": 8245,
+   "college": "Santa Ana College",
+   "course_code": "LAW 299"
+  },
+  {
+   "id": 8246,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 104"
+  },
+  {
+   "id": 8247,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 120"
+  },
+  {
+   "id": 8248,
+   "college": "Santa Ana College",
+   "course_code": "MA 020"
+  },
+  {
+   "id": 8249,
+   "college": "Santa Ana College",
+   "course_code": "MA 053"
+  },
+  {
+   "id": 8250,
+   "college": "Santa Ana College",
+   "course_code": "MATH 105"
+  },
+  {
+   "id": 8251,
+   "college": "Santa Ana College",
+   "course_code": "MATH 162"
+  },
+  {
+   "id": 8252,
+   "college": "Santa Ana College",
+   "course_code": "MATH 204"
+  },
+  {
+   "id": 8253,
+   "college": "Santa Ana College",
+   "course_code": "MATH C2210"
+  },
+  {
+   "id": 8254,
+   "college": "Santa Ana College",
+   "course_code": "MGMT 121"
+  },
+  {
+   "id": 8255,
+   "college": "Santa Ana College",
+   "course_code": "MGMT 135"
+  },
+  {
+   "id": 8256,
+   "college": "Santa Ana College",
+   "course_code": "MKTG 116"
+  },
+  {
+   "id": 8257,
+   "college": "Santa Ana College",
+   "course_code": "MKTG 129"
+  },
+  {
+   "id": 8258,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 104"
+  },
+  {
+   "id": 8259,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 114"
+  },
+  {
+   "id": 8260,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 118"
+  },
+  {
+   "id": 8261,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 128"
+  },
+  {
+   "id": 8262,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 158"
+  },
+  {
+   "id": 8263,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 171"
+  },
+  {
+   "id": 8264,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 176"
+  },
+  {
+   "id": 8265,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 186"
+  },
+  {
+   "id": 8266,
+   "college": "Santa Ana College",
+   "course_code": "MUS 101H"
+  },
+  {
+   "id": 8267,
+   "college": "Santa Ana College",
+   "course_code": "MUS 104"
+  },
+  {
+   "id": 8268,
+   "college": "Santa Ana College",
+   "course_code": "MUS 111"
+  },
+  {
+   "id": 8269,
+   "college": "Santa Ana College",
+   "course_code": "MUS 114B"
+  },
+  {
+   "id": 8270,
+   "college": "Santa Ana College",
+   "course_code": "MUS 115D"
+  },
+  {
+   "id": 8271,
+   "college": "Santa Ana College",
+   "course_code": "MUS 124"
+  },
+  {
+   "id": 8272,
+   "college": "Santa Ana College",
+   "course_code": "MUS 140"
+  },
+  {
+   "id": 8273,
+   "college": "Santa Ana College",
+   "course_code": "MUS 144"
+  },
+  {
+   "id": 8274,
+   "college": "Santa Ana College",
+   "course_code": "MUS 152"
+  },
+  {
+   "id": 8275,
+   "college": "Santa Ana College",
+   "course_code": "MUS 163"
+  },
+  {
+   "id": 8276,
+   "college": "Santa Ana College",
+   "course_code": "MUS 169"
+  },
+  {
+   "id": 8277,
+   "college": "Santa Ana College",
+   "course_code": "MUS 176"
+  },
+  {
+   "id": 8278,
+   "college": "Santa Ana College",
+   "course_code": "MUS 181"
+  },
+  {
+   "id": 8279,
+   "college": "Santa Ana College",
+   "course_code": "MUS 188"
+  },
+  {
+   "id": 8280,
+   "college": "Santa Ana College",
+   "course_code": "MUS 214"
+  },
+  {
+   "id": 8281,
+   "college": "Santa Ana College",
+   "course_code": "MUS 241"
+  },
+  {
+   "id": 8282,
+   "college": "Santa Ana College",
+   "course_code": "NRN 170"
+  },
+  {
+   "id": 8283,
+   "college": "Santa Ana College",
+   "course_code": "NRN 172L"
+  },
+  {
+   "id": 8284,
+   "college": "Santa Ana College",
+   "course_code": "NRN 272"
+  },
+  {
+   "id": 8285,
+   "college": "Santa Ana College",
+   "course_code": "NUTR 112"
+  },
+  {
+   "id": 8286,
+   "college": "Santa Ana College",
+   "course_code": "NUTR 120"
+  },
+  {
+   "id": 8287,
+   "college": "Santa Ana College",
+   "course_code": "OS 305"
+  },
+  {
+   "id": 8288,
+   "college": "Santa Ana College",
+   "course_code": "OS 402"
+  },
+  {
+   "id": 8289,
+   "college": "Santa Ana College",
+   "course_code": "OTA 100"
+  },
+  {
+   "id": 8290,
+   "college": "Santa Ana College",
+   "course_code": "PARA 100"
+  },
+  {
+   "id": 8291,
+   "college": "Santa Ana College",
+   "course_code": "PARA 117"
+  },
+  {
+   "id": 8292,
+   "college": "Santa Ana College",
+   "course_code": "PARA 131"
+  },
+  {
+   "id": 8293,
+   "college": "Santa Ana College",
+   "course_code": "PARA 135"
+  },
+  {
+   "id": 8294,
+   "college": "Santa Ana College",
+   "course_code": "PARA 140"
+  },
+  {
+   "id": 8295,
+   "college": "Santa Ana College",
+   "course_code": "PARA 150"
+  },
+  {
+   "id": 8296,
+   "college": "Santa Ana College",
+   "course_code": "PARA 297"
+  },
+  {
+   "id": 8297,
+   "college": "Santa Ana College",
+   "course_code": "PARA 321"
+  },
+  {
+   "id": 8298,
+   "college": "Santa Ana College",
+   "course_code": "PARA 350"
+  },
+  {
+   "id": 8299,
+   "college": "Santa Ana College",
+   "course_code": "PARA 407"
+  },
+  {
+   "id": 8300,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 052"
+  },
+  {
+   "id": 8301,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 057L"
+  },
+  {
+   "id": 8302,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 072B"
+  },
+  {
+   "id": 8303,
+   "college": "Santa Ana College",
+   "course_code": "PHIL 106H"
+  },
+  {
+   "id": 8304,
+   "college": "Santa Ana College",
+   "course_code": "PHIL 111"
+  },
+  {
+   "id": 8305,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 150"
+  },
+  {
+   "id": 8306,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 185B"
+  },
+  {
+   "id": 8307,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 291"
+  },
+  {
+   "id": 8308,
+   "college": "Santa Ana College",
+   "course_code": "PHYS 210"
+  },
+  {
+   "id": 8309,
+   "college": "Santa Ana College",
+   "course_code": "PHYS 237"
+  },
+  {
+   "id": 8310,
+   "college": "Santa Ana College",
+   "course_code": "POLS C1000H"
+  },
+  {
+   "id": 8311,
+   "college": "Santa Ana College",
+   "course_code": "POLT 235"
+  },
+  {
+   "id": 8312,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 140"
+  },
+  {
+   "id": 8313,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 190"
+  },
+  {
+   "id": 8314,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 230"
+  },
+  {
+   "id": 8315,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 270"
+  },
+  {
+   "id": 8316,
+   "college": "Santa Ana College",
+   "course_code": "SLPA 160"
+  },
+  {
+   "id": 8317,
+   "college": "Santa Ana College",
+   "course_code": "SOC 112"
+  },
+  {
+   "id": 8318,
+   "college": "Santa Ana College",
+   "course_code": "SOC 240"
+  },
+  {
+   "id": 8319,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 101H"
+  },
+  {
+   "id": 8320,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 195B"
+  },
+  {
+   "id": 8321,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 202H"
+  },
+  {
+   "id": 8322,
+   "college": "Santa Ana College",
+   "course_code": "STAT C1000E"
+  },
+  {
+   "id": 8323,
+   "college": "Santa Ana College",
+   "course_code": "THEA 109"
+  },
+  {
+   "id": 8324,
+   "college": "Santa Ana College",
+   "course_code": "THEA 114"
+  },
+  {
+   "id": 8325,
+   "college": "Santa Ana College",
+   "course_code": "THEA 123"
+  },
+  {
+   "id": 8326,
+   "college": "Santa Ana College",
+   "course_code": "THEA 132"
+  },
+  {
+   "id": 8327,
+   "college": "Santa Ana College",
+   "course_code": "THEA 137"
+  },
+  {
+   "id": 8328,
+   "college": "Santa Ana College",
+   "course_code": "THEA 150B"
+  },
+  {
+   "id": 8329,
+   "college": "Santa Ana College",
+   "course_code": "THEA 154"
+  },
+  {
+   "id": 8330,
+   "college": "Santa Ana College",
+   "course_code": "THEA 169"
+  },
+  {
+   "id": 8331,
+   "college": "Santa Ana College",
+   "course_code": "THEA 180"
+  },
+  {
+   "id": 8332,
+   "college": "Santa Ana College",
+   "course_code": "THEA 255"
+  },
+  {
+   "id": 8333,
+   "college": "Santa Ana College",
+   "course_code": "VAUTO 672"
+  },
+  {
+   "id": 8334,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 035"
+  },
+  {
+   "id": 8335,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 125"
+  },
+  {
+   "id": 8336,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 245"
+  },
+  {
+   "id": 8337,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 262"
+  },
+  {
+   "id": 8338,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 290"
+  },
+  {
+   "id": 8339,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 310"
+  },
+  {
+   "id": 8340,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 340"
+  },
+  {
+   "id": 8341,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 500"
+  },
+  {
+   "id": 8342,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 570"
+  },
+  {
+   "id": 8343,
+   "college": "Santa Ana College",
+   "course_code": "VCNST 101"
+  },
+  {
+   "id": 8344,
+   "college": "Santa Ana College",
+   "course_code": "VDMA 310"
+  },
+  {
+   "id": 8345,
+   "college": "Santa Ana College",
+   "course_code": "VFOOD 005"
+  },
+  {
+   "id": 8346,
+   "college": "Santa Ana College",
+   "course_code": "VFOOD 214"
+  },
+  {
+   "id": 8347,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 122A"
+  },
+  {
+   "id": 8348,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 150A"
+  },
+  {
+   "id": 8349,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 201A"
+  },
+  {
+   "id": 8350,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 206B"
+  },
+  {
+   "id": 8351,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 240B"
+  },
+  {
+   "id": 8352,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 101"
+  },
+  {
+   "id": 8353,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 105"
+  },
+  {
+   "id": 8354,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 109"
+  },
+  {
+   "id": 8355,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 415"
+  },
+  {
+   "id": 8356,
+   "college": "Santa Ana College",
+   "course_code": "VHOSP 201"
+  },
+  {
+   "id": 8357,
+   "college": "Santa Ana College",
+   "course_code": "WELD 101"
+  },
+  {
+   "id": 8358,
+   "college": "Santa Ana College",
+   "course_code": "WELD 177"
+  },
+  {
+   "id": 8359,
+   "college": "Santa Ana College",
+   "course_code": "WELD 232"
+  },
+  {
+   "id": 8360,
+   "college": "Santa Ana College",
+   "course_code": "WELD 256"
+  },
+  {
+   "id": 8361,
+   "college": "Santa Ana College",
+   "course_code": "WMNS 286"
+  },
+  {
+   "id": 8362,
+   "college": "Santa Ana College",
+   "course_code": "ABE 018"
+  },
+  {
+   "id": 8363,
+   "college": "Santa Ana College",
+   "course_code": "ABE 036"
+  },
+  {
+   "id": 8364,
+   "college": "Santa Ana College",
+   "course_code": "ABE 112"
+  },
+  {
+   "id": 8365,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 032"
+  },
+  {
+   "id": 8366,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 108"
+  },
+  {
+   "id": 8367,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 124"
+  },
+  {
+   "id": 8368,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 206"
+  },
+  {
+   "id": 8369,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 100"
+  },
+  {
+   "id": 8370,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 103"
+  },
+  {
+   "id": 8371,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 108"
+  },
+  {
+   "id": 8372,
+   "college": "Santa Ana College",
+   "course_code": "APCD 110"
+  },
+  {
+   "id": 8373,
+   "college": "Santa Ana College",
+   "course_code": "APCD 205"
+  },
+  {
+   "id": 8374,
+   "college": "Santa Ana College",
+   "course_code": "APED 120B"
+  },
+  {
+   "id": 8375,
+   "college": "Santa Ana College",
+   "course_code": "ART 100"
+  },
+  {
+   "id": 8376,
+   "college": "Santa Ana College",
+   "course_code": "ART 105"
+  },
+  {
+   "id": 8377,
+   "college": "Santa Ana College",
+   "course_code": "ART 111"
+  },
+  {
+   "id": 8378,
+   "college": "Santa Ana College",
+   "course_code": "ART 131"
+  },
+  {
+   "id": 8379,
+   "college": "Santa Ana College",
+   "course_code": "ART 148"
+  },
+  {
+   "id": 8380,
+   "college": "Santa Ana College",
+   "course_code": "ART 162"
+  },
+  {
+   "id": 8381,
+   "college": "Santa Ana College",
+   "course_code": "ART 195"
+  },
+  {
+   "id": 8382,
+   "college": "Santa Ana College",
+   "course_code": "ART 233"
+  },
+  {
+   "id": 8383,
+   "college": "Santa Ana College",
+   "course_code": "ARTH C1100"
+  },
+  {
+   "id": 8384,
+   "college": "Santa Ana College",
+   "course_code": "ASL 110H"
+  },
+  {
+   "id": 8385,
+   "college": "Santa Ana College",
+   "course_code": "ASL 113"
+  },
+  {
+   "id": 8386,
+   "college": "Santa Ana College",
+   "course_code": "ASL 211"
+  },
+  {
+   "id": 8387,
+   "college": "Santa Ana College",
+   "course_code": "ASTR 140"
+  },
+  {
+   "id": 8388,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 112"
+  },
+  {
+   "id": 8389,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 115"
+  },
+  {
+   "id": 8390,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 117"
+  },
+  {
+   "id": 8391,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 211"
+  },
+  {
+   "id": 8392,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 222"
+  },
+  {
+   "id": 8393,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 226"
+  },
+  {
+   "id": 8394,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 260"
+  },
+  {
+   "id": 8395,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 318"
+  },
+  {
+   "id": 8396,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 350"
+  },
+  {
+   "id": 8397,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 410"
+  },
+  {
+   "id": 8398,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 495"
+  },
+  {
+   "id": 8399,
+   "college": "Santa Ana College",
+   "course_code": "BA 102"
+  },
+  {
+   "id": 8400,
+   "college": "Santa Ana College",
+   "course_code": "BA 107"
+  },
+  {
+   "id": 8401,
+   "college": "Santa Ana College",
+   "course_code": "BA 115"
+  },
+  {
+   "id": 8402,
+   "college": "Santa Ana College",
+   "course_code": "BA 130"
+  },
+  {
+   "id": 8403,
+   "college": "Santa Ana College",
+   "course_code": "BA 140"
+  },
+  {
+   "id": 8404,
+   "college": "Santa Ana College",
+   "course_code": "BA 146"
+  },
+  {
+   "id": 8405,
+   "college": "Santa Ana College",
+   "course_code": "BA 154"
+  },
+  {
+   "id": 8406,
+   "college": "Santa Ana College",
+   "course_code": "BA 159"
+  },
+  {
+   "id": 8407,
+   "college": "Santa Ana College",
+   "course_code": "BA 163"
+  },
+  {
+   "id": 8408,
+   "college": "Santa Ana College",
+   "course_code": "BA 168"
+  },
+  {
+   "id": 8409,
+   "college": "Santa Ana College",
+   "course_code": "BA 172"
+  },
+  {
+   "id": 8410,
+   "college": "Santa Ana College",
+   "course_code": "BA 182"
+  },
+  {
+   "id": 8411,
+   "college": "Santa Ana College",
+   "course_code": "BANK 100"
+  },
+  {
+   "id": 8412,
+   "college": "Santa Ana College",
+   "course_code": "BANK 104"
+  },
+  {
+   "id": 8413,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 109H"
+  },
+  {
+   "id": 8414,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 127"
+  },
+  {
+   "id": 8415,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 132"
+  },
+  {
+   "id": 8416,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 177"
+  },
+  {
+   "id": 8417,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 192"
+  },
+  {
+   "id": 8418,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 197"
+  },
+  {
+   "id": 8419,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 212"
+  },
+  {
+   "id": 8420,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 239"
+  },
+  {
+   "id": 8421,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 290"
+  },
+  {
+   "id": 8422,
+   "college": "Santa Ana College",
+   "course_code": "BUS 103"
+  },
+  {
+   "id": 8423,
+   "college": "Santa Ana College",
+   "course_code": "BUS 116"
+  },
+  {
+   "id": 8424,
+   "college": "Santa Ana College",
+   "course_code": "BUS 120"
+  },
+  {
+   "id": 8425,
+   "college": "Santa Ana College",
+   "course_code": "BUS 130"
+  },
+  {
+   "id": 8426,
+   "college": "Santa Ana College",
+   "course_code": "BUS 170"
+  },
+  {
+   "id": 8427,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 111A"
+  },
+  {
+   "id": 8428,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 116A"
+  },
+  {
+   "id": 8429,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 200"
+  },
+  {
+   "id": 8430,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 210"
+  },
+  {
+   "id": 8431,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 220"
+  },
+  {
+   "id": 8432,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 231"
+  },
+  {
+   "id": 8433,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 297"
+  },
+  {
+   "id": 8434,
+   "college": "Santa Ana College",
+   "course_code": "CHEM 209"
+  },
+  {
+   "id": 8435,
+   "college": "Santa Ana College",
+   "course_code": "CHNS 101"
+  },
+  {
+   "id": 8436,
+   "college": "Santa Ana College",
+   "course_code": "CJ 101H"
+  },
+  {
+   "id": 8437,
+   "college": "Santa Ana College",
+   "course_code": "CJ 105"
+  },
+  {
+   "id": 8438,
+   "college": "Santa Ana College",
+   "course_code": "CJ 109"
+  },
+  {
+   "id": 8439,
+   "college": "Santa Ana College",
+   "course_code": "CJ 148"
+  },
+  {
+   "id": 8440,
+   "college": "Santa Ana College",
+   "course_code": "CJ 220"
+  },
+  {
+   "id": 8441,
+   "college": "Santa Ana College",
+   "course_code": "CJA 099A"
+  },
+  {
+   "id": 8442,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 112"
+  },
+  {
+   "id": 8443,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 117"
+  },
+  {
+   "id": 8444,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 125"
+  },
+  {
+   "id": 8445,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 134"
+  },
+  {
+   "id": 8446,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 152"
+  },
+  {
+   "id": 8447,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 159"
+  },
+  {
+   "id": 8448,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 169"
+  },
+  {
+   "id": 8449,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 213"
+  },
+  {
+   "id": 8450,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 380"
+  },
+  {
+   "id": 8451,
+   "college": "Santa Ana College",
+   "course_code": "CMST 113"
+  },
+  {
+   "id": 8452,
+   "college": "Santa Ana College",
+   "course_code": "CMST 151"
+  },
+  {
+   "id": 8453,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 107"
+  },
+  {
+   "id": 8454,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 128"
+  },
+  {
+   "id": 8455,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 170"
+  },
+  {
+   "id": 8456,
+   "college": "Santa Ana College",
+   "course_code": "COMM C1000H"
+  },
+  {
+   "id": 8457,
+   "college": "Santa Ana College",
+   "course_code": "CULN 101"
+  },
+  {
+   "id": 8458,
+   "college": "Santa Ana College",
+   "course_code": "CULN 130"
+  },
+  {
+   "id": 8459,
+   "college": "Santa Ana College",
+   "course_code": "CULN 201"
+  },
+  {
+   "id": 8460,
+   "college": "Santa Ana College",
+   "course_code": "CULN 230"
+  },
+  {
+   "id": 8461,
+   "college": "Santa Ana College",
+   "course_code": "DETT 101"
+  },
+  {
+   "id": 8462,
+   "college": "Santa Ana College",
+   "course_code": "DETT 132"
+  },
+  {
+   "id": 8463,
+   "college": "Santa Ana College",
+   "course_code": "DETT 168"
+  },
+  {
+   "id": 8464,
+   "college": "Santa Ana College",
+   "course_code": "DM 102"
+  },
+  {
+   "id": 8465,
+   "college": "Santa Ana College",
+   "course_code": "DM 107"
+  },
+  {
+   "id": 8466,
+   "college": "Santa Ana College",
+   "course_code": "DM 115A"
+  },
+  {
+   "id": 8467,
+   "college": "Santa Ana College",
+   "course_code": "DM 121B"
+  },
+  {
+   "id": 8468,
+   "college": "Santa Ana College",
+   "course_code": "DM 140"
+  },
+  {
+   "id": 8469,
+   "college": "Santa Ana College",
+   "course_code": "DM 164"
+  },
+  {
+   "id": 8470,
+   "college": "Santa Ana College",
+   "course_code": "DM 170"
+  },
+  {
+   "id": 8471,
+   "college": "Santa Ana College",
+   "course_code": "DM 192A"
+  },
+  {
+   "id": 8472,
+   "college": "Santa Ana College",
+   "course_code": "DM 196B"
+  },
+  {
+   "id": 8473,
+   "college": "Santa Ana College",
+   "course_code": "DM 230B"
+  },
+  {
+   "id": 8474,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 009A"
+  },
+  {
+   "id": 8475,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 100"
+  },
+  {
+   "id": 8476,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 104"
+  },
+  {
+   "id": 8477,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 107A"
+  },
+  {
+   "id": 8478,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 108A"
+  },
+  {
+   "id": 8479,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 109C"
+  },
+  {
+   "id": 8480,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 113A"
+  },
+  {
+   "id": 8481,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 119A"
+  },
+  {
+   "id": 8482,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 122B"
+  },
+  {
+   "id": 8483,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 125B"
+  },
+  {
+   "id": 8484,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 180"
+  },
+  {
+   "id": 8485,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 201D"
+  },
+  {
+   "id": 8486,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 204B"
+  },
+  {
+   "id": 8487,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 205B"
+  },
+  {
+   "id": 8488,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 206B"
+  },
+  {
+   "id": 8489,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 219B"
+  },
+  {
+   "id": 8490,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 240B"
+  },
+  {
+   "id": 8491,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 250B"
+  },
+  {
+   "id": 8492,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 262"
+  },
+  {
+   "id": 8493,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 291"
+  },
+  {
+   "id": 8494,
+   "college": "Santa Ana College",
+   "course_code": "ECON C2001"
+  },
+  {
+   "id": 8495,
+   "college": "Santa Ana College",
+   "course_code": "EDUC 120A"
+  },
+  {
+   "id": 8496,
+   "college": "Santa Ana College",
+   "course_code": "EDUC 204"
+  },
+  {
+   "id": 8497,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 104H"
+  },
+  {
+   "id": 8498,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 232"
+  },
+  {
+   "id": 8499,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 241"
+  },
+  {
+   "id": 8500,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 246"
+  },
+  {
+   "id": 8501,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 278"
+  },
+  {
+   "id": 8502,
+   "college": "Santa Ana College",
+   "course_code": "ENGL C1000H"
+  },
+  {
+   "id": 8503,
+   "college": "Santa Ana College",
+   "course_code": "ENGL C1003H"
+  },
+  {
+   "id": 8504,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 103"
+  },
+  {
+   "id": 8505,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 114"
+  },
+  {
+   "id": 8506,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 125"
+  },
+  {
+   "id": 8507,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 154"
+  },
+  {
+   "id": 8508,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 185"
+  },
+  {
+   "id": 8509,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 250L"
+  },
+  {
+   "id": 8510,
+   "college": "Santa Ana College",
+   "course_code": "ENTR 111"
+  },
+  {
+   "id": 8511,
+   "college": "Santa Ana College",
+   "course_code": "ENVR 140L"
+  },
+  {
+   "id": 8512,
+   "college": "Santa Ana College",
+   "course_code": "ERTH 110"
+  },
+  {
+   "id": 8513,
+   "college": "Santa Ana College",
+   "course_code": "ERTH 150"
+  },
+  {
+   "id": 8514,
+   "college": "Santa Ana College",
+   "course_code": "ESL 301"
+  },
+  {
+   "id": 8515,
+   "college": "Santa Ana College",
+   "course_code": "ESL 305"
+  },
+  {
+   "id": 8516,
+   "college": "Santa Ana College",
+   "course_code": "ESL 488"
+  },
+  {
+   "id": 8517,
+   "college": "Santa Ana College",
+   "course_code": "ESL 510"
+  },
+  {
+   "id": 8518,
+   "college": "Santa Ana College",
+   "course_code": "ESL 580"
+  },
+  {
+   "id": 8519,
+   "college": "Santa Ana College",
+   "course_code": "ESL 613"
+  },
+  {
+   "id": 8520,
+   "college": "Santa Ana College",
+   "course_code": "ETHN 150"
+  },
+  {
+   "id": 8521,
+   "college": "Santa Ana College",
+   "course_code": "FAC 060B"
+  },
+  {
+   "id": 8522,
+   "college": "Santa Ana College",
+   "course_code": "FAC 079D"
+  },
+  {
+   "id": 8523,
+   "college": "Santa Ana College",
+   "course_code": "FDM 080"
+  },
+  {
+   "id": 8524,
+   "college": "Santa Ana College",
+   "course_code": "FDM 102"
+  },
+  {
+   "id": 8525,
+   "college": "Santa Ana College",
+   "course_code": "FDM 105AL"
+  },
+  {
+   "id": 8526,
+   "college": "Santa Ana College",
+   "course_code": "FDM 108"
+  },
+  {
+   "id": 8527,
+   "college": "Santa Ana College",
+   "course_code": "FDM 112"
+  },
+  {
+   "id": 8528,
+   "college": "Santa Ana College",
+   "course_code": "FDM 114D"
+  },
+  {
+   "id": 8529,
+   "college": "Santa Ana College",
+   "course_code": "FDM 140"
+  },
+  {
+   "id": 8530,
+   "college": "Santa Ana College",
+   "course_code": "FDM 216"
+  },
+  {
+   "id": 8531,
+   "college": "Santa Ana College",
+   "course_code": "FOT 044"
+  },
+  {
+   "id": 8532,
+   "college": "Santa Ana College",
+   "course_code": "FOT 130B"
+  },
+  {
+   "id": 8533,
+   "college": "Santa Ana College",
+   "course_code": "FOT 138"
+  },
+  {
+   "id": 8534,
+   "college": "Santa Ana College",
+   "course_code": "FOT 150C"
+  },
+  {
+   "id": 8535,
+   "college": "Santa Ana College",
+   "course_code": "FOT 206"
+  },
+  {
+   "id": 8536,
+   "college": "Santa Ana College",
+   "course_code": "FOT 273C"
+  },
+  {
+   "id": 8537,
+   "college": "Santa Ana College",
+   "course_code": "FREN 201"
+  },
+  {
+   "id": 8538,
+   "college": "Santa Ana College",
+   "course_code": "FREN 211"
+  },
+  {
+   "id": 8539,
+   "college": "Santa Ana College",
+   "course_code": "FTC 103"
+  },
+  {
+   "id": 8540,
+   "college": "Santa Ana College",
+   "course_code": "FTC 121"
+  },
+  {
+   "id": 8541,
+   "college": "Santa Ana College",
+   "course_code": "GEOG 101"
+  },
+  {
+   "id": 8542,
+   "college": "Santa Ana College",
+   "course_code": "GEOG 155"
+  },
+  {
+   "id": 8543,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 140"
+  },
+  {
+   "id": 8544,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 162"
+  },
+  {
+   "id": 8545,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 170"
+  },
+  {
+   "id": 8546,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 174"
+  },
+  {
+   "id": 8547,
+   "college": "Santa Ana College",
+   "course_code": "HIST 102"
+  },
+  {
+   "id": 8548,
+   "college": "Santa Ana College",
+   "course_code": "HIST 125"
+  },
+  {
+   "id": 8549,
+   "college": "Santa Ana College",
+   "course_code": "HIST 146"
+  },
+  {
+   "id": 8550,
+   "college": "Santa Ana College",
+   "course_code": "HIST C1001"
+  },
+  {
+   "id": 8551,
+   "college": "Santa Ana College",
+   "course_code": "HSENG 083"
+  },
+  {
+   "id": 8552,
+   "college": "Santa Ana College",
+   "course_code": "HSMTH 152"
+  },
+  {
+   "id": 8553,
+   "college": "Santa Ana College",
+   "course_code": "HSS 037"
+  },
+  {
+   "id": 8554,
+   "college": "Santa Ana College",
+   "course_code": "INFO 103"
+  },
+  {
+   "id": 8555,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 102"
+  },
+  {
+   "id": 8556,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 111"
+  },
+  {
+   "id": 8557,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 150"
+  },
+  {
+   "id": 8558,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 222"
+  },
+  {
+   "id": 8559,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 107B"
+  },
+  {
+   "id": 8560,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 169A"
+  },
+  {
+   "id": 8561,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 200C"
+  },
+  {
+   "id": 8562,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 220B"
+  },
+  {
+   "id": 8563,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 260A"
+  },
+  {
+   "id": 8564,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 265B"
+  },
+  {
+   "id": 8565,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 290B"
+  },
+  {
+   "id": 8566,
+   "college": "Santa Ana College",
+   "course_code": "KNAD 205A"
+  },
+  {
+   "id": 8567,
+   "college": "Santa Ana College",
+   "course_code": "KNAD 211B"
+  },
+  {
+   "id": 8568,
+   "college": "Santa Ana College",
+   "course_code": "KNAF 156A"
+  },
+  {
+   "id": 8569,
+   "college": "Santa Ana College",
+   "course_code": "KNAQ 201B"
+  },
+  {
+   "id": 8570,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 114B"
+  },
+  {
+   "id": 8571,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 147A"
+  },
+  {
+   "id": 8572,
+   "college": "Santa Ana College",
+   "course_code": "KNHE 102"
+  },
+  {
+   "id": 8573,
+   "college": "Santa Ana College",
+   "course_code": "KNHE 111"
+  },
+  {
+   "id": 8574,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 133"
+  },
+  {
+   "id": 8575,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 204"
+  },
+  {
+   "id": 8576,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 211"
+  },
+  {
+   "id": 8577,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 217"
+  },
+  {
+   "id": 8578,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 221"
+  },
+  {
+   "id": 8579,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 231"
+  },
+  {
+   "id": 8580,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 261"
+  },
+  {
+   "id": 8581,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 281"
+  },
+  {
+   "id": 8582,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 110"
+  },
+  {
+   "id": 8583,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 160"
+  },
+  {
+   "id": 8584,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 195"
+  },
+  {
+   "id": 8585,
+   "college": "Santa Ana College",
+   "course_code": "LAW 100"
+  },
+  {
+   "id": 8586,
+   "college": "Santa Ana College",
+   "course_code": "LAW 133"
+  },
+  {
+   "id": 8587,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 054"
+  },
+  {
+   "id": 8588,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 108"
+  },
+  {
+   "id": 8589,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 122"
+  },
+  {
+   "id": 8590,
+   "college": "Santa Ana College",
+   "course_code": "MA 030"
+  },
+  {
+   "id": 8591,
+   "college": "Santa Ana College",
+   "course_code": "MA 054"
+  },
+  {
+   "id": 8592,
+   "college": "Santa Ana College",
+   "course_code": "MATH 140"
+  },
+  {
+   "id": 8593,
+   "college": "Santa Ana College",
+   "course_code": "MATH 170"
+  },
+  {
+   "id": 8594,
+   "college": "Santa Ana College",
+   "course_code": "MATH 280"
+  },
+  {
+   "id": 8595,
+   "college": "Santa Ana College",
+   "course_code": "MATH C2220"
+  },
+  {
+   "id": 8596,
+   "college": "Santa Ana College",
+   "course_code": "MGMT 122"
+  },
+  {
+   "id": 8597,
+   "college": "Santa Ana College",
+   "course_code": "MGMT 203"
+  },
+  {
+   "id": 8598,
+   "college": "Santa Ana College",
+   "course_code": "MKTG 123"
+  },
+  {
+   "id": 8599,
+   "college": "Santa Ana College",
+   "course_code": "MKTG 130"
+  },
+  {
+   "id": 8600,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 105"
+  },
+  {
+   "id": 8601,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 115"
+  },
+  {
+   "id": 8602,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 119"
+  },
+  {
+   "id": 8603,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 130A"
+  },
+  {
+   "id": 8604,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 159"
+  },
+  {
+   "id": 8605,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 173"
+  },
+  {
+   "id": 8606,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 177"
+  },
+  {
+   "id": 8607,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 194"
+  },
+  {
+   "id": 8608,
+   "college": "Santa Ana College",
+   "course_code": "MUS 102"
+  },
+  {
+   "id": 8609,
+   "college": "Santa Ana College",
+   "course_code": "MUS 105"
+  },
+  {
+   "id": 8610,
+   "college": "Santa Ana College",
+   "course_code": "MUS 112"
+  },
+  {
+   "id": 8611,
+   "college": "Santa Ana College",
+   "course_code": "MUS 115A"
+  },
+  {
+   "id": 8612,
+   "college": "Santa Ana College",
+   "course_code": "MUS 121"
+  },
+  {
+   "id": 8613,
+   "college": "Santa Ana College",
+   "course_code": "MUS 135"
+  },
+  {
+   "id": 8614,
+   "college": "Santa Ana College",
+   "course_code": "MUS 141"
+  },
+  {
+   "id": 8615,
+   "college": "Santa Ana College",
+   "course_code": "MUS 147"
+  },
+  {
+   "id": 8616,
+   "college": "Santa Ana College",
+   "course_code": "MUS 153"
+  },
+  {
+   "id": 8617,
+   "college": "Santa Ana College",
+   "course_code": "MUS 164A"
+  },
+  {
+   "id": 8618,
+   "college": "Santa Ana College",
+   "course_code": "MUS 171"
+  },
+  {
+   "id": 8619,
+   "college": "Santa Ana College",
+   "course_code": "MUS 178"
+  },
+  {
+   "id": 8620,
+   "college": "Santa Ana College",
+   "course_code": "MUS 185"
+  },
+  {
+   "id": 8621,
+   "college": "Santa Ana College",
+   "course_code": "MUS 189"
+  },
+  {
+   "id": 8622,
+   "college": "Santa Ana College",
+   "course_code": "MUS 215A"
+  },
+  {
+   "id": 8623,
+   "college": "Santa Ana College",
+   "course_code": "MUS 268"
+  },
+  {
+   "id": 8624,
+   "college": "Santa Ana College",
+   "course_code": "NRN 171"
+  },
+  {
+   "id": 8625,
+   "college": "Santa Ana College",
+   "course_code": "NRN 200"
+  },
+  {
+   "id": 8626,
+   "college": "Santa Ana College",
+   "course_code": "NRN 272L"
+  },
+  {
+   "id": 8627,
+   "college": "Santa Ana College",
+   "course_code": "NUTR 115"
+  },
+  {
+   "id": 8628,
+   "college": "Santa Ana College",
+   "course_code": "NUTR 121"
+  },
+  {
+   "id": 8629,
+   "college": "Santa Ana College",
+   "course_code": "OS 310"
+  },
+  {
+   "id": 8630,
+   "college": "Santa Ana College",
+   "course_code": "OS 403"
+  },
+  {
+   "id": 8631,
+   "college": "Santa Ana College",
+   "course_code": "OTA 103L"
+  },
+  {
+   "id": 8632,
+   "college": "Santa Ana College",
+   "course_code": "PARA 101"
+  },
+  {
+   "id": 8633,
+   "college": "Santa Ana College",
+   "course_code": "PARA 120"
+  },
+  {
+   "id": 8634,
+   "college": "Santa Ana College",
+   "course_code": "PARA 132"
+  },
+  {
+   "id": 8635,
+   "college": "Santa Ana College",
+   "course_code": "PARA 136"
+  },
+  {
+   "id": 8636,
+   "college": "Santa Ana College",
+   "course_code": "PARA 144"
+  },
+  {
+   "id": 8637,
+   "college": "Santa Ana College",
+   "course_code": "PARA 205"
+  },
+  {
+   "id": 8638,
+   "college": "Santa Ana College",
+   "course_code": "PARA 299"
+  },
+  {
+   "id": 8639,
+   "college": "Santa Ana College",
+   "course_code": "PARA 330"
+  },
+  {
+   "id": 8640,
+   "college": "Santa Ana College",
+   "course_code": "PARA 370"
+  },
+  {
+   "id": 8641,
+   "college": "Santa Ana College",
+   "course_code": "PARA 497"
+  },
+  {
+   "id": 8642,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 056"
+  },
+  {
+   "id": 8643,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 060"
+  },
+  {
+   "id": 8644,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 072C"
+  },
+  {
+   "id": 8645,
+   "college": "Santa Ana College",
+   "course_code": "PHIL 108"
+  },
+  {
+   "id": 8646,
+   "college": "Santa Ana College",
+   "course_code": "PHIL 112"
+  },
+  {
+   "id": 8647,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 160"
+  },
+  {
+   "id": 8648,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 191"
+  },
+  {
+   "id": 8649,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 292"
+  },
+  {
+   "id": 8650,
+   "college": "Santa Ana College",
+   "course_code": "PHYS 211"
+  },
+  {
+   "id": 8651,
+   "college": "Santa Ana College",
+   "course_code": "PHYS 279"
+  },
+  {
+   "id": 8652,
+   "college": "Santa Ana College",
+   "course_code": "POLT 200H"
+  },
+  {
+   "id": 8653,
+   "college": "Santa Ana College",
+   "course_code": "PSC 115"
+  },
+  {
+   "id": 8654,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 157"
+  },
+  {
+   "id": 8655,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 201"
+  },
+  {
+   "id": 8656,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 240"
+  },
+  {
+   "id": 8657,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 350"
+  },
+  {
+   "id": 8658,
+   "college": "Santa Ana College",
+   "course_code": "SLPA 170"
+  },
+  {
+   "id": 8659,
+   "college": "Santa Ana College",
+   "course_code": "SOC 140"
+  },
+  {
+   "id": 8660,
+   "college": "Santa Ana College",
+   "course_code": "SOC 286"
+  },
+  {
+   "id": 8661,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 102"
+  },
+  {
+   "id": 8662,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 201"
+  },
+  {
+   "id": 8663,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 212"
+  },
+  {
+   "id": 8664,
+   "college": "Santa Ana College",
+   "course_code": "STAT C1000H"
+  },
+  {
+   "id": 8665,
+   "college": "Santa Ana College",
+   "course_code": "THEA 110"
+  },
+  {
+   "id": 8666,
+   "college": "Santa Ana College",
+   "course_code": "THEA 117"
+  },
+  {
+   "id": 8667,
+   "college": "Santa Ana College",
+   "course_code": "THEA 128"
+  },
+  {
+   "id": 8668,
+   "college": "Santa Ana College",
+   "course_code": "THEA 133"
+  },
+  {
+   "id": 8669,
+   "college": "Santa Ana College",
+   "course_code": "THEA 138"
+  },
+  {
+   "id": 8670,
+   "college": "Santa Ana College",
+   "course_code": "THEA 151"
+  },
+  {
+   "id": 8671,
+   "college": "Santa Ana College",
+   "course_code": "THEA 155"
+  },
+  {
+   "id": 8672,
+   "college": "Santa Ana College",
+   "course_code": "THEA 177"
+  },
+  {
+   "id": 8673,
+   "college": "Santa Ana College",
+   "course_code": "THEA 181"
+  },
+  {
+   "id": 8674,
+   "college": "Santa Ana College",
+   "course_code": "VAUTO 668"
+  },
+  {
+   "id": 8675,
+   "college": "Santa Ana College",
+   "course_code": "VAUTO 676"
+  },
+  {
+   "id": 8676,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 118"
+  },
+  {
+   "id": 8677,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 240"
+  },
+  {
+   "id": 8678,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 258"
+  },
+  {
+   "id": 8679,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 270"
+  },
+  {
+   "id": 8680,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 292"
+  },
+  {
+   "id": 8681,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 311"
+  },
+  {
+   "id": 8682,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 400"
+  },
+  {
+   "id": 8683,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 501"
+  },
+  {
+   "id": 8684,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 572"
+  },
+  {
+   "id": 8685,
+   "college": "Santa Ana College",
+   "course_code": "VCNST 610"
+  },
+  {
+   "id": 8686,
+   "college": "Santa Ana College",
+   "course_code": "VDMA 320"
+  },
+  {
+   "id": 8687,
+   "college": "Santa Ana College",
+   "course_code": "VFOOD 200"
+  },
+  {
+   "id": 8688,
+   "college": "Santa Ana College",
+   "course_code": "VFOOD 216"
+  },
+  {
+   "id": 8689,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 122B"
+  },
+  {
+   "id": 8690,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 150B"
+  },
+  {
+   "id": 8691,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 201B"
+  },
+  {
+   "id": 8692,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 219A"
+  },
+  {
+   "id": 8693,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 250A"
+  },
+  {
+   "id": 8694,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 102"
+  },
+  {
+   "id": 8695,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 106"
+  },
+  {
+   "id": 8696,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 110"
+  },
+  {
+   "id": 8697,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 704"
+  },
+  {
+   "id": 8698,
+   "college": "Santa Ana College",
+   "course_code": "VIET 101"
+  },
+  {
+   "id": 8699,
+   "college": "Santa Ana College",
+   "course_code": "WELD 125"
+  },
+  {
+   "id": 8700,
+   "college": "Santa Ana College",
+   "course_code": "WELD 181"
+  },
+  {
+   "id": 8701,
+   "college": "Santa Ana College",
+   "course_code": "WELD 240"
+  },
+  {
+   "id": 8702,
+   "college": "Santa Ana College",
+   "course_code": "WELD 282"
+  },
+  {
+   "id": 8703,
+   "college": "Santa Ana College",
+   "course_code": "ABE 023"
+  },
+  {
+   "id": 8704,
+   "college": "Santa Ana College",
+   "course_code": "ABE 044"
+  },
+  {
+   "id": 8705,
+   "college": "Santa Ana College",
+   "course_code": "ABE 113"
+  },
+  {
+   "id": 8706,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 101"
+  },
+  {
+   "id": 8707,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 113"
+  },
+  {
+   "id": 8708,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 125"
+  },
+  {
+   "id": 8709,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 210"
+  },
+  {
+   "id": 8710,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 100H"
+  },
+  {
+   "id": 8711,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 104"
+  },
+  {
+   "id": 8712,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 125"
+  },
+  {
+   "id": 8713,
+   "college": "Santa Ana College",
+   "course_code": "APCD 111B"
+  },
+  {
+   "id": 8714,
+   "college": "Santa Ana College",
+   "course_code": "APCD 221"
+  },
+  {
+   "id": 8715,
+   "college": "Santa Ana College",
+   "course_code": "APED 201"
+  },
+  {
+   "id": 8716,
+   "college": "Santa Ana College",
+   "course_code": "ART 100H"
+  },
+  {
+   "id": 8717,
+   "college": "Santa Ana College",
+   "course_code": "ART 106"
+  },
+  {
+   "id": 8718,
+   "college": "Santa Ana College",
+   "course_code": "ART 122"
+  },
+  {
+   "id": 8719,
+   "college": "Santa Ana College",
+   "course_code": "ART 132A"
+  },
+  {
+   "id": 8720,
+   "college": "Santa Ana College",
+   "course_code": "ART 168"
+  },
+  {
+   "id": 8721,
+   "college": "Santa Ana College",
+   "course_code": "ART 230"
+  },
+  {
+   "id": 8722,
+   "college": "Santa Ana College",
+   "course_code": "ART 235"
+  },
+  {
+   "id": 8723,
+   "college": "Santa Ana College",
+   "course_code": "ARTH C1200"
+  },
+  {
+   "id": 8724,
+   "college": "Santa Ana College",
+   "course_code": "ASL 111"
+  },
+  {
+   "id": 8725,
+   "college": "Santa Ana College",
+   "course_code": "ASL 114"
+  },
+  {
+   "id": 8726,
+   "college": "Santa Ana College",
+   "course_code": "ASL 223"
+  },
+  {
+   "id": 8727,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 102"
+  },
+  {
+   "id": 8728,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 113"
+  },
+  {
+   "id": 8729,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 115A"
+  },
+  {
+   "id": 8730,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 118"
+  },
+  {
+   "id": 8731,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 216"
+  },
+  {
+   "id": 8732,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 223"
+  },
+  {
+   "id": 8733,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 227"
+  },
+  {
+   "id": 8734,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 284"
+  },
+  {
+   "id": 8735,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 320"
+  },
+  {
+   "id": 8736,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 360"
+  },
+  {
+   "id": 8737,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 420"
+  },
+  {
+   "id": 8738,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 499"
+  },
+  {
+   "id": 8739,
+   "college": "Santa Ana College",
+   "course_code": "BA 103"
+  },
+  {
+   "id": 8740,
+   "college": "Santa Ana College",
+   "course_code": "BA 108"
+  },
+  {
+   "id": 8741,
+   "college": "Santa Ana College",
+   "course_code": "BA 125"
+  },
+  {
+   "id": 8742,
+   "college": "Santa Ana College",
+   "course_code": "BA 131"
+  },
+  {
+   "id": 8743,
+   "college": "Santa Ana College",
+   "course_code": "BA 141"
+  },
+  {
+   "id": 8744,
+   "college": "Santa Ana College",
+   "course_code": "BA 147"
+  },
+  {
+   "id": 8745,
+   "college": "Santa Ana College",
+   "course_code": "BA 155"
+  },
+  {
+   "id": 8746,
+   "college": "Santa Ana College",
+   "course_code": "BA 160"
+  },
+  {
+   "id": 8747,
+   "college": "Santa Ana College",
+   "course_code": "BA 164"
+  },
+  {
+   "id": 8748,
+   "college": "Santa Ana College",
+   "course_code": "BA 169"
+  },
+  {
+   "id": 8749,
+   "college": "Santa Ana College",
+   "course_code": "BA 173"
+  },
+  {
+   "id": 8750,
+   "college": "Santa Ana College",
+   "course_code": "BA 188"
+  },
+  {
+   "id": 8751,
+   "college": "Santa Ana College",
+   "course_code": "BANK 101"
+  },
+  {
+   "id": 8752,
+   "college": "Santa Ana College",
+   "course_code": "BANK 105"
+  },
+  {
+   "id": 8753,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 109L"
+  },
+  {
+   "id": 8754,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 128"
+  },
+  {
+   "id": 8755,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 133"
+  },
+  {
+   "id": 8756,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 190"
+  },
+  {
+   "id": 8757,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 193"
+  },
+  {
+   "id": 8758,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 200"
+  },
+  {
+   "id": 8759,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 214"
+  },
+  {
+   "id": 8760,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 249"
+  },
+  {
+   "id": 8761,
+   "college": "Santa Ana College",
+   "course_code": "BLST 150"
+  },
+  {
+   "id": 8762,
+   "college": "Santa Ana College",
+   "course_code": "BUS 105"
+  },
+  {
+   "id": 8763,
+   "college": "Santa Ana College",
+   "course_code": "BUS 117"
+  },
+  {
+   "id": 8764,
+   "college": "Santa Ana College",
+   "course_code": "BUS 121"
+  },
+  {
+   "id": 8765,
+   "college": "Santa Ana College",
+   "course_code": "BUS 140"
+  },
+  {
+   "id": 8766,
+   "college": "Santa Ana College",
+   "course_code": "BUS 222"
+  },
+  {
+   "id": 8767,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 111B"
+  },
+  {
+   "id": 8768,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 116B"
+  },
+  {
+   "id": 8769,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 205"
+  },
+  {
+   "id": 8770,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 214"
+  },
+  {
+   "id": 8771,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 221"
+  },
+  {
+   "id": 8772,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 232"
+  },
+  {
+   "id": 8773,
+   "college": "Santa Ana College",
+   "course_code": "CDEV C1000"
+  },
+  {
+   "id": 8774,
+   "college": "Santa Ana College",
+   "course_code": "CHEM 210"
+  },
+  {
+   "id": 8775,
+   "college": "Santa Ana College",
+   "course_code": "CHNS 102"
+  },
+  {
+   "id": 8776,
+   "college": "Santa Ana College",
+   "course_code": "CJ 102"
+  },
+  {
+   "id": 8777,
+   "college": "Santa Ana College",
+   "course_code": "CJ 106"
+  },
+  {
+   "id": 8778,
+   "college": "Santa Ana College",
+   "course_code": "CJ 109H"
+  },
+  {
+   "id": 8779,
+   "college": "Santa Ana College",
+   "course_code": "CJ 205"
+  },
+  {
+   "id": 8780,
+   "college": "Santa Ana College",
+   "course_code": "CJA 010"
+  },
+  {
+   "id": 8781,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 100"
+  },
+  {
+   "id": 8782,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 113"
+  },
+  {
+   "id": 8783,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 118"
+  },
+  {
+   "id": 8784,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 126"
+  },
+  {
+   "id": 8785,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 136"
+  },
+  {
+   "id": 8786,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 153"
+  },
+  {
+   "id": 8787,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 160"
+  },
+  {
+   "id": 8788,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 170"
+  },
+  {
+   "id": 8789,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 215"
+  },
+  {
+   "id": 8790,
+   "college": "Santa Ana College",
+   "course_code": "CMST 100"
+  },
+  {
+   "id": 8791,
+   "college": "Santa Ana College",
+   "course_code": "CMST 140"
+  },
+  {
+   "id": 8792,
+   "college": "Santa Ana College",
+   "course_code": "CMST 307"
+  },
+  {
+   "id": 8793,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 114"
+  },
+  {
+   "id": 8794,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 144"
+  },
+  {
+   "id": 8795,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 175"
+  },
+  {
+   "id": 8796,
+   "college": "Santa Ana College",
+   "course_code": "COMM C1004"
+  },
+  {
+   "id": 8797,
+   "college": "Santa Ana College",
+   "course_code": "CULN 110"
+  },
+  {
+   "id": 8798,
+   "college": "Santa Ana College",
+   "course_code": "CULN 140"
+  },
+  {
+   "id": 8799,
+   "college": "Santa Ana College",
+   "course_code": "CULN 202"
+  },
+  {
+   "id": 8800,
+   "college": "Santa Ana College",
+   "course_code": "CULN 240"
+  },
+  {
+   "id": 8801,
+   "college": "Santa Ana College",
+   "course_code": "DETT 115"
+  },
+  {
+   "id": 8802,
+   "college": "Santa Ana College",
+   "course_code": "DETT 141"
+  },
+  {
+   "id": 8803,
+   "college": "Santa Ana College",
+   "course_code": "DETT 171"
+  },
+  {
+   "id": 8804,
+   "college": "Santa Ana College",
+   "course_code": "DM 103"
+  },
+  {
+   "id": 8805,
+   "college": "Santa Ana College",
+   "course_code": "DM 110"
+  },
+  {
+   "id": 8806,
+   "college": "Santa Ana College",
+   "course_code": "DM 120"
+  },
+  {
+   "id": 8807,
+   "college": "Santa Ana College",
+   "course_code": "DM 122"
+  },
+  {
+   "id": 8808,
+   "college": "Santa Ana College",
+   "course_code": "DM 150"
+  },
+  {
+   "id": 8809,
+   "college": "Santa Ana College",
+   "course_code": "DM 165"
+  },
+  {
+   "id": 8810,
+   "college": "Santa Ana College",
+   "course_code": "DM 171"
+  },
+  {
+   "id": 8811,
+   "college": "Santa Ana College",
+   "course_code": "DM 193"
+  },
+  {
+   "id": 8812,
+   "college": "Santa Ana College",
+   "course_code": "DM 197A"
+  },
+  {
+   "id": 8813,
+   "college": "Santa Ana College",
+   "course_code": "DM 240"
+  },
+  {
+   "id": 8814,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 009B"
+  },
+  {
+   "id": 8815,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 100H"
+  },
+  {
+   "id": 8816,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 105"
+  },
+  {
+   "id": 8817,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 107B"
+  },
+  {
+   "id": 8818,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 108B"
+  },
+  {
+   "id": 8819,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 110"
+  },
+  {
+   "id": 8820,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 113B"
+  },
+  {
+   "id": 8821,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 119B"
+  },
+  {
+   "id": 8822,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 123"
+  },
+  {
+   "id": 8823,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 133A"
+  },
+  {
+   "id": 8824,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 201A"
+  },
+  {
+   "id": 8825,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 202A"
+  },
+  {
+   "id": 8826,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 204C"
+  },
+  {
+   "id": 8827,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 205C"
+  },
+  {
+   "id": 8828,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 209"
+  },
+  {
+   "id": 8829,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 220"
+  },
+  {
+   "id": 8830,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 240C"
+  },
+  {
+   "id": 8831,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 251"
+  },
+  {
+   "id": 8832,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 263"
+  },
+  {
+   "id": 8833,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 296"
+  },
+  {
+   "id": 8834,
+   "college": "Santa Ana College",
+   "course_code": "ECON C2002"
+  },
+  {
+   "id": 8835,
+   "college": "Santa Ana College",
+   "course_code": "EDUC 120B"
+  },
+  {
+   "id": 8836,
+   "college": "Santa Ana College",
+   "course_code": "EDUC 210"
+  },
+  {
+   "id": 8837,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 213"
+  },
+  {
+   "id": 8838,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 233A"
+  },
+  {
+   "id": 8839,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 242"
+  },
+  {
+   "id": 8840,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 270"
+  },
+  {
+   "id": 8841,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 301"
+  },
+  {
+   "id": 8842,
+   "college": "Santa Ana College",
+   "course_code": "ENGL C1001"
+  },
+  {
+   "id": 8843,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 012"
+  },
+  {
+   "id": 8844,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 104"
+  },
+  {
+   "id": 8845,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 118"
+  },
+  {
+   "id": 8846,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 132"
+  },
+  {
+   "id": 8847,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 158"
+  },
+  {
+   "id": 8848,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 235"
+  },
+  {
+   "id": 8849,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 280"
+  },
+  {
+   "id": 8850,
+   "college": "Santa Ana College",
+   "course_code": "ENTR 130"
+  },
+  {
+   "id": 8851,
+   "college": "Santa Ana College",
+   "course_code": "ENVR 200"
+  },
+  {
+   "id": 8852,
+   "college": "Santa Ana College",
+   "course_code": "ERTH 110H"
+  },
+  {
+   "id": 8853,
+   "college": "Santa Ana College",
+   "course_code": "ESL 120"
+  },
+  {
+   "id": 8854,
+   "college": "Santa Ana College",
+   "course_code": "ESL 302"
+  },
+  {
+   "id": 8855,
+   "college": "Santa Ana College",
+   "course_code": "ESL 306"
+  },
+  {
+   "id": 8856,
+   "college": "Santa Ana College",
+   "course_code": "ESL 489"
+  },
+  {
+   "id": 8857,
+   "college": "Santa Ana College",
+   "course_code": "ESL 520"
+  },
+  {
+   "id": 8858,
+   "college": "Santa Ana College",
+   "course_code": "ESL 610"
+  },
+  {
+   "id": 8859,
+   "college": "Santa Ana College",
+   "course_code": "ESL 720"
+  },
+  {
+   "id": 8860,
+   "college": "Santa Ana College",
+   "course_code": "ETHN 150H"
+  },
+  {
+   "id": 8861,
+   "college": "Santa Ana College",
+   "course_code": "FAC 060C"
+  },
+  {
+   "id": 8862,
+   "college": "Santa Ana College",
+   "course_code": "FAC 084A"
+  },
+  {
+   "id": 8863,
+   "college": "Santa Ana College",
+   "course_code": "FDM 081"
+  },
+  {
+   "id": 8864,
+   "college": "Santa Ana College",
+   "course_code": "FDM 103"
+  },
+  {
+   "id": 8865,
+   "college": "Santa Ana College",
+   "course_code": "FDM 105B"
+  },
+  {
+   "id": 8866,
+   "college": "Santa Ana College",
+   "course_code": "FDM 109"
+  },
+  {
+   "id": 8867,
+   "college": "Santa Ana College",
+   "course_code": "FDM 113"
+  },
+  {
+   "id": 8868,
+   "college": "Santa Ana College",
+   "course_code": "FDM 115"
+  },
+  {
+   "id": 8869,
+   "college": "Santa Ana College",
+   "course_code": "FDM 212"
+  },
+  {
+   "id": 8870,
+   "college": "Santa Ana College",
+   "course_code": "FDM 299"
+  },
+  {
+   "id": 8871,
+   "college": "Santa Ana College",
+   "course_code": "FOT 045"
+  },
+  {
+   "id": 8872,
+   "college": "Santa Ana College",
+   "course_code": "FOT 130D"
+  },
+  {
+   "id": 8873,
+   "college": "Santa Ana College",
+   "course_code": "FOT 139"
+  },
+  {
+   "id": 8874,
+   "college": "Santa Ana College",
+   "course_code": "FOT 150D"
+  },
+  {
+   "id": 8875,
+   "college": "Santa Ana College",
+   "course_code": "FOT 210"
+  },
+  {
+   "id": 8876,
+   "college": "Santa Ana College",
+   "course_code": "FOT 273D"
+  },
+  {
+   "id": 8877,
+   "college": "Santa Ana College",
+   "course_code": "FREN 201H"
+  },
+  {
+   "id": 8878,
+   "college": "Santa Ana College",
+   "course_code": "FREN 214"
+  },
+  {
+   "id": 8879,
+   "college": "Santa Ana College",
+   "course_code": "FTC 104"
+  },
+  {
+   "id": 8880,
+   "college": "Santa Ana College",
+   "course_code": "FTC 121L"
+  },
+  {
+   "id": 8881,
+   "college": "Santa Ana College",
+   "course_code": "GEOG 102"
+  },
+  {
+   "id": 8882,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 101"
+  },
+  {
+   "id": 8883,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 140L"
+  },
+  {
+   "id": 8884,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 164"
+  },
+  {
+   "id": 8885,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 171"
+  },
+  {
+   "id": 8886,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 201"
+  },
+  {
+   "id": 8887,
+   "college": "Santa Ana College",
+   "course_code": "HIST 118"
+  },
+  {
+   "id": 8888,
+   "college": "Santa Ana College",
+   "course_code": "HIST 127"
+  },
+  {
+   "id": 8889,
+   "college": "Santa Ana College",
+   "course_code": "HIST 150"
+  },
+  {
+   "id": 8890,
+   "college": "Santa Ana College",
+   "course_code": "HIST C1001H"
+  },
+  {
+   "id": 8891,
+   "college": "Santa Ana College",
+   "course_code": "HSENG 084"
+  },
+  {
+   "id": 8892,
+   "college": "Santa Ana College",
+   "course_code": "HSMTH 158"
+  },
+  {
+   "id": 8893,
+   "college": "Santa Ana College",
+   "course_code": "HSS 031"
+  },
+  {
+   "id": 8894,
+   "college": "Santa Ana College",
+   "course_code": "HSS 038"
+  },
+  {
+   "id": 8895,
+   "college": "Santa Ana College",
+   "course_code": "IDS 121"
+  },
+  {
+   "id": 8896,
+   "college": "Santa Ana College",
+   "course_code": "INFO 105"
+  },
+  {
+   "id": 8897,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 103"
+  },
+  {
+   "id": 8898,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 121"
+  },
+  {
+   "id": 8899,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 160"
+  },
+  {
+   "id": 8900,
+   "college": "Santa Ana College",
+   "course_code": "JAPN 101"
+  },
+  {
+   "id": 8901,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 107C"
+  },
+  {
+   "id": 8902,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 169B"
+  },
+  {
+   "id": 8903,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 211A"
+  },
+  {
+   "id": 8904,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 220C"
+  },
+  {
+   "id": 8905,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 260B"
+  },
+  {
+   "id": 8906,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 265C"
+  },
+  {
+   "id": 8907,
+   "college": "Santa Ana College",
+   "course_code": "KNAD 201A"
+  },
+  {
+   "id": 8908,
+   "college": "Santa Ana College",
+   "course_code": "KNAD 208A"
+  },
+  {
+   "id": 8909,
+   "college": "Santa Ana College",
+   "course_code": "KNAF 144A"
+  },
+  {
+   "id": 8910,
+   "college": "Santa Ana College",
+   "course_code": "KNAF 156B"
+  },
+  {
+   "id": 8911,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 112B"
+  },
+  {
+   "id": 8912,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 115A"
+  },
+  {
+   "id": 8913,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 147B"
+  },
+  {
+   "id": 8914,
+   "college": "Santa Ana College",
+   "course_code": "KNHE 103"
+  },
+  {
+   "id": 8915,
+   "college": "Santa Ana College",
+   "course_code": "KNHE 112"
+  },
+  {
+   "id": 8916,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 171"
+  },
+  {
+   "id": 8917,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 206"
+  },
+  {
+   "id": 8918,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 212"
+  },
+  {
+   "id": 8919,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 218"
+  },
+  {
+   "id": 8920,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 223"
+  },
+  {
+   "id": 8921,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 232"
+  },
+  {
+   "id": 8922,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 262"
+  },
+  {
+   "id": 8923,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 291"
+  },
+  {
+   "id": 8924,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 125"
+  },
+  {
+   "id": 8925,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 165"
+  },
+  {
+   "id": 8926,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 202"
+  },
+  {
+   "id": 8927,
+   "college": "Santa Ana College",
+   "course_code": "LAW 105"
+  },
+  {
+   "id": 8928,
+   "college": "Santa Ana College",
+   "course_code": "LAW 143"
+  },
+  {
+   "id": 8929,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 101"
+  },
+  {
+   "id": 8930,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 110"
+  },
+  {
+   "id": 8931,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 124"
+  },
+  {
+   "id": 8932,
+   "college": "Santa Ana College",
+   "course_code": "MA 051A"
+  },
+  {
+   "id": 8933,
+   "college": "Santa Ana College",
+   "course_code": "MA 055"
+  },
+  {
+   "id": 8934,
+   "college": "Santa Ana College",
+   "course_code": "MATH 140S"
+  },
+  {
+   "id": 8935,
+   "college": "Santa Ana College",
+   "course_code": "MATH 172"
+  },
+  {
+   "id": 8936,
+   "college": "Santa Ana College",
+   "course_code": "MATH 287"
+  },
+  {
+   "id": 8937,
+   "college": "Santa Ana College",
+   "course_code": "MGMT 111"
+  },
+  {
+   "id": 8938,
+   "college": "Santa Ana College",
+   "course_code": "MGMT 125"
+  },
+  {
+   "id": 8939,
+   "college": "Santa Ana College",
+   "course_code": "MKTG 111"
+  },
+  {
+   "id": 8940,
+   "college": "Santa Ana College",
+   "course_code": "MKTG 127"
+  },
+  {
+   "id": 8941,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 096"
+  },
+  {
+   "id": 8942,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 106"
+  },
+  {
+   "id": 8943,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 116"
+  },
+  {
+   "id": 8944,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 120"
+  },
+  {
+   "id": 8945,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 130B"
+  },
+  {
+   "id": 8946,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 168"
+  },
+  {
+   "id": 8947,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 174"
+  },
+  {
+   "id": 8948,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 178"
+  },
+  {
+   "id": 8949,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 195"
+  },
+  {
+   "id": 8950,
+   "college": "Santa Ana College",
+   "course_code": "MUS 102H"
+  },
+  {
+   "id": 8951,
+   "college": "Santa Ana College",
+   "course_code": "MUS 109"
+  },
+  {
+   "id": 8952,
+   "college": "Santa Ana College",
+   "course_code": "MUS 113A"
+  },
+  {
+   "id": 8953,
+   "college": "Santa Ana College",
+   "course_code": "MUS 115B"
+  },
+  {
+   "id": 8954,
+   "college": "Santa Ana College",
+   "course_code": "MUS 122"
+  },
+  {
+   "id": 8955,
+   "college": "Santa Ana College",
+   "course_code": "MUS 136"
+  },
+  {
+   "id": 8956,
+   "college": "Santa Ana College",
+   "course_code": "MUS 142"
+  },
+  {
+   "id": 8957,
+   "college": "Santa Ana College",
+   "course_code": "MUS 148"
+  },
+  {
+   "id": 8958,
+   "college": "Santa Ana College",
+   "course_code": "MUS 161"
+  },
+  {
+   "id": 8959,
+   "college": "Santa Ana College",
+   "course_code": "MUS 164B"
+  },
+  {
+   "id": 8960,
+   "college": "Santa Ana College",
+   "course_code": "MUS 173"
+  },
+  {
+   "id": 8961,
+   "college": "Santa Ana College",
+   "course_code": "MUS 180A"
+  },
+  {
+   "id": 8962,
+   "college": "Santa Ana College",
+   "course_code": "MUS 186"
+  },
+  {
+   "id": 8963,
+   "college": "Santa Ana College",
+   "course_code": "MUS 190"
+  },
+  {
+   "id": 8964,
+   "college": "Santa Ana College",
+   "course_code": "MUS 216"
+  },
+  {
+   "id": 8965,
+   "college": "Santa Ana College",
+   "course_code": "MUS 269"
+  },
+  {
+   "id": 8966,
+   "college": "Santa Ana College",
+   "course_code": "NRN 171L"
+  },
+  {
+   "id": 8967,
+   "college": "Santa Ana College",
+   "course_code": "NRN 271"
+  },
+  {
+   "id": 8968,
+   "college": "Santa Ana College",
+   "course_code": "NUTR 101"
+  },
+  {
+   "id": 8969,
+   "college": "Santa Ana College",
+   "course_code": "NUTR 115H"
+  },
+  {
+   "id": 8970,
+   "college": "Santa Ana College",
+   "course_code": "OS 301"
+  },
+  {
+   "id": 8971,
+   "college": "Santa Ana College",
+   "course_code": "OS 312"
+  },
+  {
+   "id": 8972,
+   "college": "Santa Ana College",
+   "course_code": "OS 410"
+  },
+  {
+   "id": 8973,
+   "college": "Santa Ana College",
+   "course_code": "OTA 202"
+  },
+  {
+   "id": 8974,
+   "college": "Santa Ana College",
+   "course_code": "PARA 105"
+  },
+  {
+   "id": 8975,
+   "college": "Santa Ana College",
+   "course_code": "PARA 121"
+  },
+  {
+   "id": 8976,
+   "college": "Santa Ana College",
+   "course_code": "PARA 133"
+  },
+  {
+   "id": 8977,
+   "college": "Santa Ana College",
+   "course_code": "PARA 138"
+  },
+  {
+   "id": 8978,
+   "college": "Santa Ana College",
+   "course_code": "PARA 145"
+  },
+  {
+   "id": 8979,
+   "college": "Santa Ana College",
+   "course_code": "PARA 246"
+  },
+  {
+   "id": 8980,
+   "college": "Santa Ana College",
+   "course_code": "PARA 310"
+  },
+  {
+   "id": 8981,
+   "college": "Santa Ana College",
+   "course_code": "PARA 345"
+  },
+  {
+   "id": 8982,
+   "college": "Santa Ana College",
+   "course_code": "PARA 399"
+  },
+  {
+   "id": 8983,
+   "college": "Santa Ana College",
+   "course_code": "PARA 499"
+  },
+  {
+   "id": 8984,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 056L"
+  },
+  {
+   "id": 8985,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 060L"
+  },
+  {
+   "id": 8986,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 072L"
+  },
+  {
+   "id": 8987,
+   "college": "Santa Ana College",
+   "course_code": "PHIL 110"
+  },
+  {
+   "id": 8988,
+   "college": "Santa Ana College",
+   "course_code": "PHIL 118"
+  },
+  {
+   "id": 8989,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 180"
+  },
+  {
+   "id": 8990,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 194"
+  },
+  {
+   "id": 8991,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 294"
+  },
+  {
+   "id": 8992,
+   "college": "Santa Ana College",
+   "course_code": "PHYS 217"
+  },
+  {
+   "id": 8993,
+   "college": "Santa Ana College",
+   "course_code": "PHYS 289"
+  },
+  {
+   "id": 8994,
+   "college": "Santa Ana College",
+   "course_code": "POLT 205"
+  },
+  {
+   "id": 8995,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 160"
+  },
+  {
+   "id": 8996,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 210"
+  },
+  {
+   "id": 8997,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 250"
+  },
+  {
+   "id": 8998,
+   "college": "Santa Ana College",
+   "course_code": "PSYC C1000"
+  },
+  {
+   "id": 8999,
+   "college": "Santa Ana College",
+   "course_code": "SOC 100"
+  },
+  {
+   "id": 9000,
+   "college": "Santa Ana College",
+   "course_code": "SOC 140H"
+  },
+  {
+   "id": 9001,
+   "college": "Santa Ana College",
+   "course_code": "SOC 401"
+  },
+  {
+   "id": 9002,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 102H"
+  },
+  {
+   "id": 9003,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 201H"
+  },
+  {
+   "id": 9004,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 213"
+  },
+  {
+   "id": 9005,
+   "college": "Santa Ana College",
+   "course_code": "THEA 100"
+  },
+  {
+   "id": 9006,
+   "college": "Santa Ana College",
+   "course_code": "THEA 111"
+  },
+  {
+   "id": 9007,
+   "college": "Santa Ana College",
+   "course_code": "THEA 118"
+  },
+  {
+   "id": 9008,
+   "college": "Santa Ana College",
+   "course_code": "THEA 130"
+  },
+  {
+   "id": 9009,
+   "college": "Santa Ana College",
+   "course_code": "THEA 135"
+  },
+  {
+   "id": 9010,
+   "college": "Santa Ana College",
+   "course_code": "THEA 140A"
+  },
+  {
+   "id": 9011,
+   "college": "Santa Ana College",
+   "course_code": "THEA 152"
+  },
+  {
+   "id": 9012,
+   "college": "Santa Ana College",
+   "course_code": "THEA 165"
+  },
+  {
+   "id": 9013,
+   "college": "Santa Ana College",
+   "course_code": "THEA 178"
+  },
+  {
+   "id": 9014,
+   "college": "Santa Ana College",
+   "course_code": "THEA 186"
+  },
+  {
+   "id": 9015,
+   "college": "Santa Ana College",
+   "course_code": "VAUTO 669"
+  },
+  {
+   "id": 9016,
+   "college": "Santa Ana College",
+   "course_code": "VAUTO 678"
+  },
+  {
+   "id": 9017,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 123"
+  },
+  {
+   "id": 9018,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 243"
+  },
+  {
+   "id": 9019,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 259"
+  },
+  {
+   "id": 9020,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 280"
+  },
+  {
+   "id": 9021,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 303"
+  },
+  {
+   "id": 9022,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 312"
+  },
+  {
+   "id": 9023,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 402"
+  },
+  {
+   "id": 9024,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 502"
+  },
+  {
+   "id": 9025,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 576"
+  },
+  {
+   "id": 9026,
+   "college": "Santa Ana College",
+   "course_code": "VCNST 620"
+  },
+  {
+   "id": 9027,
+   "college": "Santa Ana College",
+   "course_code": "VFDM 100"
+  },
+  {
+   "id": 9028,
+   "college": "Santa Ana College",
+   "course_code": "VFOOD 210"
+  },
+  {
+   "id": 9029,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 009A"
+  },
+  {
+   "id": 9030,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 133A"
+  },
+  {
+   "id": 9031,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 151A"
+  },
+  {
+   "id": 9032,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 204A"
+  },
+  {
+   "id": 9033,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 219B"
+  },
+  {
+   "id": 9034,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 250B"
+  },
+  {
+   "id": 9035,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 103"
+  },
+  {
+   "id": 9036,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 107"
+  },
+  {
+   "id": 9037,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 122"
+  },
+  {
+   "id": 9038,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 705"
+  },
+  {
+   "id": 9039,
+   "college": "Santa Ana College",
+   "course_code": "VIET 102"
+  },
+  {
+   "id": 9040,
+   "college": "Santa Ana College",
+   "course_code": "WELD 132"
+  },
+  {
+   "id": 9041,
+   "college": "Santa Ana College",
+   "course_code": "WELD 182"
+  },
+  {
+   "id": 9042,
+   "college": "Santa Ana College",
+   "course_code": "WELD 242"
+  },
+  {
+   "id": 9043,
+   "college": "Santa Ana College",
+   "course_code": "WMNS 101"
+  },
+  {
+   "id": 9044,
+   "college": "Santa Ana College",
+   "course_code": "ABE 024"
+  },
+  {
+   "id": 9045,
+   "college": "Santa Ana College",
+   "course_code": "ABE 046"
+  },
+  {
+   "id": 9046,
+   "college": "Santa Ana College",
+   "course_code": "ABE 114"
+  },
+  {
+   "id": 9047,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 102"
+  },
+  {
+   "id": 9048,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 114"
+  },
+  {
+   "id": 9049,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 204"
+  },
+  {
+   "id": 9050,
+   "college": "Santa Ana College",
+   "course_code": "ACCT 211"
+  },
+  {
+   "id": 9051,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 101"
+  },
+  {
+   "id": 9052,
+   "college": "Santa Ana College",
+   "course_code": "ANTH 104H"
+  },
+  {
+   "id": 9053,
+   "college": "Santa Ana College",
+   "course_code": "APCD 107"
+  },
+  {
+   "id": 9054,
+   "college": "Santa Ana College",
+   "course_code": "APCD 112"
+  },
+  {
+   "id": 9055,
+   "college": "Santa Ana College",
+   "course_code": "APCD 296"
+  },
+  {
+   "id": 9056,
+   "college": "Santa Ana College",
+   "course_code": "APED 204"
+  },
+  {
+   "id": 9057,
+   "college": "Santa Ana College",
+   "course_code": "ART 103"
+  },
+  {
+   "id": 9058,
+   "college": "Santa Ana College",
+   "course_code": "ART 108"
+  },
+  {
+   "id": 9059,
+   "college": "Santa Ana College",
+   "course_code": "ART 127"
+  },
+  {
+   "id": 9060,
+   "college": "Santa Ana College",
+   "course_code": "ART 132B"
+  },
+  {
+   "id": 9061,
+   "college": "Santa Ana College",
+   "course_code": "ART 190"
+  },
+  {
+   "id": 9062,
+   "college": "Santa Ana College",
+   "course_code": "ART 231"
+  },
+  {
+   "id": 9063,
+   "college": "Santa Ana College",
+   "course_code": "ART 248"
+  },
+  {
+   "id": 9064,
+   "college": "Santa Ana College",
+   "course_code": "ASIA 150"
+  },
+  {
+   "id": 9065,
+   "college": "Santa Ana College",
+   "course_code": "ASL 111H"
+  },
+  {
+   "id": 9066,
+   "college": "Santa Ana College",
+   "course_code": "ASL 210"
+  },
+  {
+   "id": 9067,
+   "college": "Santa Ana College",
+   "course_code": "ASTR 109"
+  },
+  {
+   "id": 9068,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 105"
+  },
+  {
+   "id": 9069,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 114"
+  },
+  {
+   "id": 9070,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 116"
+  },
+  {
+   "id": 9071,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 118A"
+  },
+  {
+   "id": 9072,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 220"
+  },
+  {
+   "id": 9073,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 224"
+  },
+  {
+   "id": 9074,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 228"
+  },
+  {
+   "id": 9075,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 299"
+  },
+  {
+   "id": 9076,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 330"
+  },
+  {
+   "id": 9077,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 399"
+  },
+  {
+   "id": 9078,
+   "college": "Santa Ana College",
+   "course_code": "AUTO 430"
+  },
+  {
+   "id": 9079,
+   "college": "Santa Ana College",
+   "course_code": "BA 100"
+  },
+  {
+   "id": 9080,
+   "college": "Santa Ana College",
+   "course_code": "BA 105"
+  },
+  {
+   "id": 9081,
+   "college": "Santa Ana College",
+   "course_code": "BA 109"
+  },
+  {
+   "id": 9082,
+   "college": "Santa Ana College",
+   "course_code": "BA 126"
+  },
+  {
+   "id": 9083,
+   "college": "Santa Ana College",
+   "course_code": "BA 132"
+  },
+  {
+   "id": 9084,
+   "college": "Santa Ana College",
+   "course_code": "BA 142"
+  },
+  {
+   "id": 9085,
+   "college": "Santa Ana College",
+   "course_code": "BA 149"
+  },
+  {
+   "id": 9086,
+   "college": "Santa Ana College",
+   "course_code": "BA 156"
+  },
+  {
+   "id": 9087,
+   "college": "Santa Ana College",
+   "course_code": "BA 161"
+  },
+  {
+   "id": 9088,
+   "college": "Santa Ana College",
+   "course_code": "BA 165"
+  },
+  {
+   "id": 9089,
+   "college": "Santa Ana College",
+   "course_code": "BA 170"
+  },
+  {
+   "id": 9090,
+   "college": "Santa Ana College",
+   "course_code": "BA 179"
+  },
+  {
+   "id": 9091,
+   "college": "Santa Ana College",
+   "course_code": "BA 189"
+  },
+  {
+   "id": 9092,
+   "college": "Santa Ana College",
+   "course_code": "BANK 102"
+  },
+  {
+   "id": 9093,
+   "college": "Santa Ana College",
+   "course_code": "BANK 110"
+  },
+  {
+   "id": 9094,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 111"
+  },
+  {
+   "id": 9095,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 129"
+  },
+  {
+   "id": 9096,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 149"
+  },
+  {
+   "id": 9097,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 190L"
+  },
+  {
+   "id": 9098,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 194"
+  },
+  {
+   "id": 9099,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 202"
+  },
+  {
+   "id": 9100,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 217"
+  },
+  {
+   "id": 9101,
+   "college": "Santa Ana College",
+   "course_code": "BIOL 259"
+  },
+  {
+   "id": 9102,
+   "college": "Santa Ana College",
+   "course_code": "BUS 100"
+  },
+  {
+   "id": 9103,
+   "college": "Santa Ana College",
+   "course_code": "BUS 106"
+  },
+  {
+   "id": 9104,
+   "college": "Santa Ana College",
+   "course_code": "BUS 118"
+  },
+  {
+   "id": 9105,
+   "college": "Santa Ana College",
+   "course_code": "BUS 125"
+  },
+  {
+   "id": 9106,
+   "college": "Santa Ana College",
+   "course_code": "BUS 150"
+  },
+  {
+   "id": 9107,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 108"
+  },
+  {
+   "id": 9108,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 112"
+  },
+  {
+   "id": 9109,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 120A"
+  },
+  {
+   "id": 9110,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 206"
+  },
+  {
+   "id": 9111,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 215"
+  },
+  {
+   "id": 9112,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 229"
+  },
+  {
+   "id": 9113,
+   "college": "Santa Ana College",
+   "course_code": "CDEV 250"
+  },
+  {
+   "id": 9114,
+   "college": "Santa Ana College",
+   "course_code": "CHEM 109"
+  },
+  {
+   "id": 9115,
+   "college": "Santa Ana College",
+   "course_code": "CHEM 219"
+  },
+  {
+   "id": 9116,
+   "college": "Santa Ana College",
+   "course_code": "CHST 150"
+  },
+  {
+   "id": 9117,
+   "college": "Santa Ana College",
+   "course_code": "CJ 103"
+  },
+  {
+   "id": 9118,
+   "college": "Santa Ana College",
+   "course_code": "CJ 107"
+  },
+  {
+   "id": 9119,
+   "college": "Santa Ana College",
+   "course_code": "CJ 110"
+  },
+  {
+   "id": 9120,
+   "college": "Santa Ana College",
+   "course_code": "CJ 209"
+  },
+  {
+   "id": 9121,
+   "college": "Santa Ana College",
+   "course_code": "CJA 050"
+  },
+  {
+   "id": 9122,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 104"
+  },
+  {
+   "id": 9123,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 114"
+  },
+  {
+   "id": 9124,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 120"
+  },
+  {
+   "id": 9125,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 129"
+  },
+  {
+   "id": 9126,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 138"
+  },
+  {
+   "id": 9127,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 155"
+  },
+  {
+   "id": 9128,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 167"
+  },
+  {
+   "id": 9129,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 175"
+  },
+  {
+   "id": 9130,
+   "college": "Santa Ana College",
+   "course_code": "CMPR 247"
+  },
+  {
+   "id": 9131,
+   "college": "Santa Ana College",
+   "course_code": "CMST 103"
+  },
+  {
+   "id": 9132,
+   "college": "Santa Ana College",
+   "course_code": "CMST 145"
+  },
+  {
+   "id": 9133,
+   "college": "Santa Ana College",
+   "course_code": "CMST 310"
+  },
+  {
+   "id": 9134,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 116"
+  },
+  {
+   "id": 9135,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 150"
+  },
+  {
+   "id": 9136,
+   "college": "Santa Ana College",
+   "course_code": "CNSL 220"
+  },
+  {
+   "id": 9137,
+   "college": "Santa Ana College",
+   "course_code": "COMM C1004H"
+  },
+  {
+   "id": 9138,
+   "college": "Santa Ana College",
+   "course_code": "CULN 116"
+  },
+  {
+   "id": 9139,
+   "college": "Santa Ana College",
+   "course_code": "CULN 150"
+  },
+  {
+   "id": 9140,
+   "college": "Santa Ana College",
+   "course_code": "CULN 203"
+  },
+  {
+   "id": 9141,
+   "college": "Santa Ana College",
+   "course_code": "CULN 250"
+  },
+  {
+   "id": 9142,
+   "college": "Santa Ana College",
+   "course_code": "DETT 121"
+  },
+  {
+   "id": 9143,
+   "college": "Santa Ana College",
+   "course_code": "DETT 161"
+  },
+  {
+   "id": 9144,
+   "college": "Santa Ana College",
+   "course_code": "DETT 181"
+  },
+  {
+   "id": 9145,
+   "college": "Santa Ana College",
+   "course_code": "DM 104"
+  },
+  {
+   "id": 9146,
+   "college": "Santa Ana College",
+   "course_code": "DM 112"
+  },
+  {
+   "id": 9147,
+   "college": "Santa Ana College",
+   "course_code": "DM 121"
+  },
+  {
+   "id": 9148,
+   "college": "Santa Ana College",
+   "course_code": "DM 125"
+  },
+  {
+   "id": 9149,
+   "college": "Santa Ana College",
+   "course_code": "DM 152"
+  },
+  {
+   "id": 9150,
+   "college": "Santa Ana College",
+   "course_code": "DM 168"
+  },
+  {
+   "id": 9151,
+   "college": "Santa Ana College",
+   "course_code": "DM 175"
+  },
+  {
+   "id": 9152,
+   "college": "Santa Ana College",
+   "course_code": "DM 195"
+  },
+  {
+   "id": 9153,
+   "college": "Santa Ana College",
+   "course_code": "DM 215"
+  },
+  {
+   "id": 9154,
+   "college": "Santa Ana College",
+   "course_code": "DM 255"
+  },
+  {
+   "id": 9155,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 009C"
+  },
+  {
+   "id": 9156,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 101"
+  },
+  {
+   "id": 9157,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 106A"
+  },
+  {
+   "id": 9158,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 107C"
+  },
+  {
+   "id": 9159,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 109A"
+  },
+  {
+   "id": 9160,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 111"
+  },
+  {
+   "id": 9161,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 114"
+  },
+  {
+   "id": 9162,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 120B"
+  },
+  {
+   "id": 9163,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 124A"
+  },
+  {
+   "id": 9164,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 133B"
+  },
+  {
+   "id": 9165,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 201B"
+  },
+  {
+   "id": 9166,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 202B"
+  },
+  {
+   "id": 9167,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 204D"
+  },
+  {
+   "id": 9168,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 205D"
+  },
+  {
+   "id": 9169,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 210"
+  },
+  {
+   "id": 9170,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 221"
+  },
+  {
+   "id": 9171,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 240D"
+  },
+  {
+   "id": 9172,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 260"
+  },
+  {
+   "id": 9173,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 270"
+  },
+  {
+   "id": 9174,
+   "college": "Santa Ana College",
+   "course_code": "DNCE 297"
+  },
+  {
+   "id": 9175,
+   "college": "Santa Ana College",
+   "course_code": "EDUC 105"
+  },
+  {
+   "id": 9176,
+   "college": "Santa Ana College",
+   "course_code": "EDUC 201"
+  },
+  {
+   "id": 9177,
+   "college": "Santa Ana College",
+   "course_code": "EMLS 112"
+  },
+  {
+   "id": 9178,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 220"
+  },
+  {
+   "id": 9179,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 233B"
+  },
+  {
+   "id": 9180,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 243"
+  },
+  {
+   "id": 9181,
+   "college": "Santa Ana College",
+   "course_code": "ENGL 271"
+  },
+  {
+   "id": 9182,
+   "college": "Santa Ana College",
+   "course_code": "ENGL C1000"
+  },
+  {
+   "id": 9183,
+   "college": "Santa Ana College",
+   "course_code": "ENGL C1001H"
+  },
+  {
+   "id": 9184,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 100A"
+  },
+  {
+   "id": 9185,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 105"
+  },
+  {
+   "id": 9186,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 119"
+  },
+  {
+   "id": 9187,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 133"
+  },
+  {
+   "id": 9188,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 183"
+  },
+  {
+   "id": 9189,
+   "college": "Santa Ana College",
+   "course_code": "ENGR 240"
+  },
+  {
+   "id": 9190,
+   "college": "Santa Ana College",
+   "course_code": "ENTR 100"
+  },
+  {
+   "id": 9191,
+   "college": "Santa Ana College",
+   "course_code": "ENTR 140"
+  },
+  {
+   "id": 9192,
+   "college": "Santa Ana College",
+   "course_code": "ENVR 259"
+  },
+  {
+   "id": 9193,
+   "college": "Santa Ana College",
+   "course_code": "ERTH 115"
+  },
+  {
+   "id": 9194,
+   "college": "Santa Ana College",
+   "course_code": "ESL 130"
+  },
+  {
+   "id": 9195,
+   "college": "Santa Ana College",
+   "course_code": "ESL 303"
+  },
+  {
+   "id": 9196,
+   "college": "Santa Ana College",
+   "course_code": "ESL 392"
+  },
+  {
+   "id": 9197,
+   "college": "Santa Ana College",
+   "course_code": "ESL 490"
+  },
+  {
+   "id": 9198,
+   "college": "Santa Ana College",
+   "course_code": "ESL 530"
+  },
+  {
+   "id": 9199,
+   "college": "Santa Ana College",
+   "course_code": "ESL 611"
+  },
+  {
+   "id": 9200,
+   "college": "Santa Ana College",
+   "course_code": "ETHN 102"
+  },
+  {
+   "id": 9201,
+   "college": "Santa Ana College",
+   "course_code": "FAC 008"
+  },
+  {
+   "id": 9202,
+   "college": "Santa Ana College",
+   "course_code": "FAC 062"
+  },
+  {
+   "id": 9203,
+   "college": "Santa Ana College",
+   "course_code": "FDM 052"
+  },
+  {
+   "id": 9204,
+   "college": "Santa Ana College",
+   "course_code": "FDM 100"
+  },
+  {
+   "id": 9205,
+   "college": "Santa Ana College",
+   "course_code": "FDM 104"
+  },
+  {
+   "id": 9206,
+   "college": "Santa Ana College",
+   "course_code": "FDM 106"
+  },
+  {
+   "id": 9207,
+   "college": "Santa Ana College",
+   "course_code": "FDM 110"
+  },
+  {
+   "id": 9208,
+   "college": "Santa Ana College",
+   "course_code": "FDM 114"
+  },
+  {
+   "id": 9209,
+   "college": "Santa Ana College",
+   "course_code": "FDM 125"
+  },
+  {
+   "id": 9210,
+   "college": "Santa Ana College",
+   "course_code": "FDM 213"
+  },
+  {
+   "id": 9211,
+   "college": "Santa Ana College",
+   "course_code": "FOT 008A"
+  },
+  {
+   "id": 9212,
+   "college": "Santa Ana College",
+   "course_code": "FOT 078"
+  },
+  {
+   "id": 9213,
+   "college": "Santa Ana College",
+   "course_code": "FOT 136"
+  },
+  {
+   "id": 9214,
+   "college": "Santa Ana College",
+   "course_code": "FOT 150A"
+  },
+  {
+   "id": 9215,
+   "college": "Santa Ana College",
+   "course_code": "FOT 150E"
+  },
+  {
+   "id": 9216,
+   "college": "Santa Ana College",
+   "course_code": "FOT 273A"
+  },
+  {
+   "id": 9217,
+   "college": "Santa Ana College",
+   "course_code": "FREN 101"
+  },
+  {
+   "id": 9218,
+   "college": "Santa Ana College",
+   "course_code": "FREN 202"
+  },
+  {
+   "id": 9219,
+   "college": "Santa Ana College",
+   "course_code": "FTC 101"
+  },
+  {
+   "id": 9220,
+   "college": "Santa Ana College",
+   "course_code": "FTC 105"
+  },
+  {
+   "id": 9221,
+   "college": "Santa Ana College",
+   "course_code": "GEOG 100"
+  },
+  {
+   "id": 9222,
+   "college": "Santa Ana College",
+   "course_code": "GEOG 130"
+  },
+  {
+   "id": 9223,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 101L"
+  },
+  {
+   "id": 9224,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 150"
+  },
+  {
+   "id": 9225,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 168"
+  },
+  {
+   "id": 9226,
+   "college": "Santa Ana College",
+   "course_code": "GEOL 172"
+  },
+  {
+   "id": 9227,
+   "college": "Santa Ana College",
+   "course_code": "HIST 101"
+  },
+  {
+   "id": 9228,
+   "college": "Santa Ana College",
+   "course_code": "HIST 123"
+  },
+  {
+   "id": 9229,
+   "college": "Santa Ana College",
+   "course_code": "HIST 129"
+  },
+  {
+   "id": 9230,
+   "college": "Santa Ana College",
+   "course_code": "HIST 153"
+  },
+  {
+   "id": 9231,
+   "college": "Santa Ana College",
+   "course_code": "HIST C1002"
+  },
+  {
+   "id": 9232,
+   "college": "Santa Ana College",
+   "course_code": "HSGED 031"
+  },
+  {
+   "id": 9233,
+   "college": "Santa Ana College",
+   "course_code": "HSMTH 190"
+  },
+  {
+   "id": 9234,
+   "college": "Santa Ana College",
+   "course_code": "HSS 035"
+  },
+  {
+   "id": 9235,
+   "college": "Santa Ana College",
+   "course_code": "HSS 039"
+  },
+  {
+   "id": 9236,
+   "college": "Santa Ana College",
+   "course_code": "IDS 155"
+  },
+  {
+   "id": 9237,
+   "college": "Santa Ana College",
+   "course_code": "ITAL 120"
+  },
+  {
+   "id": 9238,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 105"
+  },
+  {
+   "id": 9239,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 123A"
+  },
+  {
+   "id": 9240,
+   "college": "Santa Ana College",
+   "course_code": "JAMS 201"
+  },
+  {
+   "id": 9241,
+   "college": "Santa Ana College",
+   "course_code": "JAPN 102"
+  },
+  {
+   "id": 9242,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 140A"
+  },
+  {
+   "id": 9243,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 200A"
+  },
+  {
+   "id": 9244,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 211B"
+  },
+  {
+   "id": 9245,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 226A"
+  },
+  {
+   "id": 9246,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 260C"
+  },
+  {
+   "id": 9247,
+   "college": "Santa Ana College",
+   "course_code": "KNAC 270A"
+  },
+  {
+   "id": 9248,
+   "college": "Santa Ana College",
+   "course_code": "KNAD 202A"
+  },
+  {
+   "id": 9249,
+   "college": "Santa Ana College",
+   "course_code": "KNAD 208B"
+  },
+  {
+   "id": 9250,
+   "college": "Santa Ana College",
+   "course_code": "KNAF 146A"
+  },
+  {
+   "id": 9251,
+   "college": "Santa Ana College",
+   "course_code": "KNAF 157A"
+  },
+  {
+   "id": 9252,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 112C"
+  },
+  {
+   "id": 9253,
+   "college": "Santa Ana College",
+   "course_code": "KNFI 115B"
+  },
+  {
+   "id": 9254,
+   "college": "Santa Ana College",
+   "course_code": "KNHE 101"
+  },
+  {
+   "id": 9255,
+   "college": "Santa Ana College",
+   "course_code": "KNHE 104"
+  },
+  {
+   "id": 9256,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 125"
+  },
+  {
+   "id": 9257,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 201"
+  },
+  {
+   "id": 9258,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 209"
+  },
+  {
+   "id": 9259,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 213"
+  },
+  {
+   "id": 9260,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 219"
+  },
+  {
+   "id": 9261,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 227"
+  },
+  {
+   "id": 9262,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 235"
+  },
+  {
+   "id": 9263,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 270"
+  },
+  {
+   "id": 9264,
+   "college": "Santa Ana College",
+   "course_code": "KNIA 293"
+  },
+  {
+   "id": 9265,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 150"
+  },
+  {
+   "id": 9266,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 170"
+  },
+  {
+   "id": 9267,
+   "college": "Santa Ana College",
+   "course_code": "KNPR 205"
+  },
+  {
+   "id": 9268,
+   "college": "Santa Ana College",
+   "course_code": "LAW 110"
+  },
+  {
+   "id": 9269,
+   "college": "Santa Ana College",
+   "course_code": "LAW 170"
+  },
+  {
+   "id": 9270,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 102"
+  },
+  {
+   "id": 9271,
+   "college": "Santa Ana College",
+   "course_code": "LIBR 112"
+  },
+  {
+   "id": 9272,
+   "college": "Santa Ana College",
+   "course_code": "MA 001"
+  },
+  {
+   "id": 9273,
+   "college": "Santa Ana College",
+   "course_code": "MA 051B"
+  },
+  {
+   "id": 9274,
+   "college": "Santa Ana College",
+   "course_code": "MA 056"
+  },
+  {
+   "id": 9275,
+   "college": "Santa Ana College",
+   "course_code": "MATH 150"
+  },
+  {
+   "id": 9276,
+   "college": "Santa Ana College",
+   "course_code": "MATH 180E"
+  },
+  {
+   "id": 9277,
+   "college": "Santa Ana College",
+   "course_code": "MATH 319"
+  },
+  {
+   "id": 9278,
+   "college": "Santa Ana College",
+   "course_code": "MGMT 120"
+  },
+  {
+   "id": 9279,
+   "college": "Santa Ana College",
+   "course_code": "MGMT 130"
+  },
+  {
+   "id": 9280,
+   "college": "Santa Ana College",
+   "course_code": "MKTG 113"
+  },
+  {
+   "id": 9281,
+   "college": "Santa Ana College",
+   "course_code": "MKTG 128"
+  },
+  {
+   "id": 9282,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 103"
+  },
+  {
+   "id": 9283,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 111"
+  },
+  {
+   "id": 9284,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 117"
+  },
+  {
+   "id": 9285,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 121"
+  },
+  {
+   "id": 9286,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 153"
+  },
+  {
+   "id": 9287,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 169"
+  },
+  {
+   "id": 9288,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 175"
+  },
+  {
+   "id": 9289,
+   "college": "Santa Ana College",
+   "course_code": "MNFG 184"
+  },
+  {
+   "id": 9290,
+   "college": "Santa Ana College",
+   "course_code": "MUS 101"
+  },
+  {
+   "id": 9291,
+   "college": "Santa Ana College",
+   "course_code": "MUS 103"
+  },
+  {
+   "id": 9292,
+   "college": "Santa Ana College",
+   "course_code": "MUS 110"
+  },
+  {
+   "id": 9293,
+   "college": "Santa Ana College",
+   "course_code": "MUS 114A"
+  },
+  {
+   "id": 9294,
+   "college": "Santa Ana College",
+   "course_code": "MUS 115C"
+  },
+  {
+   "id": 9295,
+   "college": "Santa Ana College",
+   "course_code": "MUS 123"
+  },
+  {
+   "id": 9296,
+   "college": "Santa Ana College",
+   "course_code": "MUS 137"
+  },
+  {
+   "id": 9297,
+   "college": "Santa Ana College",
+   "course_code": "MUS 143"
+  },
+  {
+   "id": 9298,
+   "college": "Santa Ana College",
+   "course_code": "MUS 149"
+  },
+  {
+   "id": 9299,
+   "college": "Santa Ana College",
+   "course_code": "MUS 162"
+  },
+  {
+   "id": 9300,
+   "college": "Santa Ana College",
+   "course_code": "MUS 168"
+  },
+  {
+   "id": 9301,
+   "college": "Santa Ana College",
+   "course_code": "MUS 175"
+  },
+  {
+   "id": 9302,
+   "college": "Santa Ana College",
+   "course_code": "MUS 180B"
+  },
+  {
+   "id": 9303,
+   "college": "Santa Ana College",
+   "course_code": "MUS 187"
+  },
+  {
+   "id": 9304,
+   "college": "Santa Ana College",
+   "course_code": "MUS 213"
+  },
+  {
+   "id": 9305,
+   "college": "Santa Ana College",
+   "course_code": "MUS 217"
+  },
+  {
+   "id": 9306,
+   "college": "Santa Ana College",
+   "course_code": "MUS 271"
+  },
+  {
+   "id": 9307,
+   "college": "Santa Ana College",
+   "course_code": "NRN 172"
+  },
+  {
+   "id": 9308,
+   "college": "Santa Ana College",
+   "course_code": "NRN 271L"
+  },
+  {
+   "id": 9309,
+   "college": "Santa Ana College",
+   "course_code": "NUTR 110"
+  },
+  {
+   "id": 9310,
+   "college": "Santa Ana College",
+   "course_code": "NUTR 116"
+  },
+  {
+   "id": 9311,
+   "college": "Santa Ana College",
+   "course_code": "OS 304"
+  },
+  {
+   "id": 9312,
+   "college": "Santa Ana College",
+   "course_code": "OS 325"
+  },
+  {
+   "id": 9313,
+   "college": "Santa Ana College",
+   "course_code": "OS 412"
+  },
+  {
+   "id": 9314,
+   "college": "Santa Ana College",
+   "course_code": "OTA 203"
+  },
+  {
+   "id": 9315,
+   "college": "Santa Ana College",
+   "course_code": "PARA 107"
+  },
+  {
+   "id": 9316,
+   "college": "Santa Ana College",
+   "course_code": "PARA 122"
+  },
+  {
+   "id": 9317,
+   "college": "Santa Ana College",
+   "course_code": "PARA 134"
+  },
+  {
+   "id": 9318,
+   "college": "Santa Ana College",
+   "course_code": "PARA 139"
+  },
+  {
+   "id": 9319,
+   "college": "Santa Ana College",
+   "course_code": "PARA 146"
+  },
+  {
+   "id": 9320,
+   "college": "Santa Ana College",
+   "course_code": "PARA 248"
+  },
+  {
+   "id": 9321,
+   "college": "Santa Ana College",
+   "course_code": "PARA 320"
+  },
+  {
+   "id": 9322,
+   "college": "Santa Ana College",
+   "course_code": "PARA 348"
+  },
+  {
+   "id": 9323,
+   "college": "Santa Ana College",
+   "course_code": "PARA 401"
+  },
+  {
+   "id": 9324,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 048"
+  },
+  {
+   "id": 9325,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 057"
+  },
+  {
+   "id": 9326,
+   "college": "Santa Ana College",
+   "course_code": "PHAR 072A"
+  },
+  {
+   "id": 9327,
+   "college": "Santa Ana College",
+   "course_code": "PHIL 106"
+  },
+  {
+   "id": 9328,
+   "college": "Santa Ana College",
+   "course_code": "PHIL 110H"
+  },
+  {
+   "id": 9329,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 009"
+  },
+  {
+   "id": 9330,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 185A"
+  },
+  {
+   "id": 9331,
+   "college": "Santa Ana College",
+   "course_code": "PHOT 196"
+  },
+  {
+   "id": 9332,
+   "college": "Santa Ana College",
+   "course_code": "PHYS 109"
+  },
+  {
+   "id": 9333,
+   "college": "Santa Ana College",
+   "course_code": "PHYS 227"
+  },
+  {
+   "id": 9334,
+   "college": "Santa Ana College",
+   "course_code": "POLS C1000"
+  },
+  {
+   "id": 9335,
+   "college": "Santa Ana College",
+   "course_code": "POLT 206"
+  },
+  {
+   "id": 9336,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 170"
+  },
+  {
+   "id": 9337,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 219"
+  },
+  {
+   "id": 9338,
+   "college": "Santa Ana College",
+   "course_code": "PSYC 260"
+  },
+  {
+   "id": 9339,
+   "college": "Santa Ana College",
+   "course_code": "PSYC C1000H"
+  },
+  {
+   "id": 9340,
+   "college": "Santa Ana College",
+   "course_code": "SOC 100H"
+  },
+  {
+   "id": 9341,
+   "college": "Santa Ana College",
+   "course_code": "SOC 150"
+  },
+  {
+   "id": 9342,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 101"
+  },
+  {
+   "id": 9343,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 195A"
+  },
+  {
+   "id": 9344,
+   "college": "Santa Ana College",
+   "course_code": "SPAN 202"
+  },
+  {
+   "id": 9345,
+   "college": "Santa Ana College",
+   "course_code": "STAT C1000"
+  },
+  {
+   "id": 9346,
+   "college": "Santa Ana College",
+   "course_code": "THEA 105"
+  },
+  {
+   "id": 9347,
+   "college": "Santa Ana College",
+   "course_code": "THEA 113"
+  },
+  {
+   "id": 9348,
+   "college": "Santa Ana College",
+   "course_code": "THEA 120"
+  },
+  {
+   "id": 9349,
+   "college": "Santa Ana College",
+   "course_code": "THEA 131"
+  },
+  {
+   "id": 9350,
+   "college": "Santa Ana College",
+   "course_code": "THEA 136"
+  },
+  {
+   "id": 9351,
+   "college": "Santa Ana College",
+   "course_code": "THEA 150A"
+  },
+  {
+   "id": 9352,
+   "college": "Santa Ana College",
+   "course_code": "THEA 153"
+  },
+  {
+   "id": 9353,
+   "college": "Santa Ana College",
+   "course_code": "THEA 166"
+  },
+  {
+   "id": 9354,
+   "college": "Santa Ana College",
+   "course_code": "THEA 179"
+  },
+  {
+   "id": 9355,
+   "college": "Santa Ana College",
+   "course_code": "THEA 190"
+  },
+  {
+   "id": 9356,
+   "college": "Santa Ana College",
+   "course_code": "VAUTO 670"
+  },
+  {
+   "id": 9357,
+   "college": "Santa Ana College",
+   "course_code": "VAUTO 680"
+  },
+  {
+   "id": 9358,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 124"
+  },
+  {
+   "id": 9359,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 244"
+  },
+  {
+   "id": 9360,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 260"
+  },
+  {
+   "id": 9361,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 281"
+  },
+  {
+   "id": 9362,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 304"
+  },
+  {
+   "id": 9363,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 313"
+  },
+  {
+   "id": 9364,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 450"
+  },
+  {
+   "id": 9365,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 503"
+  },
+  {
+   "id": 9366,
+   "college": "Santa Ana College",
+   "course_code": "VBUS 590"
+  },
+  {
+   "id": 9367,
+   "college": "Santa Ana College",
+   "course_code": "VDMA 302"
+  },
+  {
+   "id": 9368,
+   "college": "Santa Ana College",
+   "course_code": "VFDM 105"
+  },
+  {
+   "id": 9369,
+   "college": "Santa Ana College",
+   "course_code": "VFOOD 212"
+  },
+  {
+   "id": 9370,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 009B"
+  },
+  {
+   "id": 9371,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 135"
+  },
+  {
+   "id": 9372,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 152"
+  },
+  {
+   "id": 9373,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 206A"
+  },
+  {
+   "id": 9374,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 240A"
+  },
+  {
+   "id": 9375,
+   "college": "Santa Ana College",
+   "course_code": "VFPA 255"
+  },
+  {
+   "id": 9376,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 104"
+  },
+  {
+   "id": 9377,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 108"
+  },
+  {
+   "id": 9378,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 414"
+  },
+  {
+   "id": 9379,
+   "college": "Santa Ana College",
+   "course_code": "VHLTH 799"
+  },
+  {
+   "id": 9380,
+   "college": "Santa Ana College",
+   "course_code": "VMFG 680"
+  },
+  {
+   "id": 9381,
+   "college": "Santa Ana College",
+   "course_code": "WELD 153"
+  },
+  {
+   "id": 9382,
+   "college": "Santa Ana College",
+   "course_code": "WELD 225"
+  },
+  {
+   "id": 9383,
+   "college": "Santa Ana College",
+   "course_code": "WELD 244"
+  },
+  {
+   "id": 9384,
+   "college": "Santa Ana College",
+   "course_code": "WMNS 102"
+  }
+ ],
+ "rollback": "delete from public.course_outcomes where id in (8019, 8020, 8021, 8022, 8023, 8024, 8025, 8026, 8027, 8028, 8029, 8030, 8031, 8032, 8033, 8034, 8035, 8036, 8037, 8038, 8039, 8040, 8041, 8042, 8043, 8044, 8045, 8046, 8047, 8048, 8049, 8050, 8051, 8052, 8053, 8054, 8055, 8056, 8057, 8058, 8059, 8060, 8061, 8062, 8063, 8064, 8065, 8066, 8067, 8068, 8069, 8070, 8071, 8072, 8073, 8074, 8075, 8076, 8077, 8078, 8079, 8080, 8081, 8082, 8083, 8084, 8085, 8086, 8087, 8088, 8089, 8090, 8091, 8092, 8093, 8094, 8095, 8096, 8097, 8098, 8099, 8100, 8101, 8102, 8103, 8104, 8105, 8106, 8107, 8108, 8109, 8110, 8111, 8112, 8113, 8114, 8115, 8116, 8117, 8118, 8119, 8120, 8121, 8122, 8123, 8124, 8125, 8126, 8127, 8128, 8129, 8130, 8131, 8132, 8133, 8134, 8135, 8136, 8137, 8138, 8139, 8140, 8141, 8142, 8143, 8144, 8145, 8146, 8147, 8148, 8149, 8150, 8151, 8152, 8153, 8154, 8155, 8156, 8157, 8158, 8159, 8160, 8161, 8162, 8163, 8164, 8165, 8166, 8167, 8168, 8169, 8170, 8171, 8172, 8173, 8174, 8175, 8176, 8177, 8178, 8179, 8180, 8181, 8182, 8183, 8184, 8185, 8186, 8187, 8188, 8189, 8190, 8191, 8192, 8193, 8194, 8195, 8196, 8197, 8198, 8199, 8200, 8201, 8202, 8203, 8204, 8205, 8206, 8207, 8208, 8209, 8210, 8211, 8212, 8213, 8214, 8215, 8216, 8217, 8218, 8219, 8220, 8221, 8222, 8223, 8224, 8225, 8226, 8227, 8228, 8229, 8230, 8231, 8232, 8233, 8234, 8235, 8236, 8237, 8238, 8239, 8240, 8241, 8242, 8243, 8244, 8245, 8246, 8247, 8248, 8249, 8250, 8251, 8252, 8253, 8254, 8255, 8256, 8257, 8258, 8259, 8260, 8261, 8262, 8263, 8264, 8265, 8266, 8267, 8268, 8269, 8270, 8271, 8272, 8273, 8274, 8275, 8276, 8277, 8278, 8279, 8280, 8281, 8282, 8283, 8284, 8285, 8286, 8287, 8288, 8289, 8290, 8291, 8292, 8293, 8294, 8295, 8296, 8297, 8298, 8299, 8300, 8301, 8302, 8303, 8304, 8305, 8306, 8307, 8308, 8309, 8310, 8311, 8312, 8313, 8314, 8315, 8316, 8317, 8318, 8319, 8320, 8321, 8322, 8323, 8324, 8325, 8326, 8327, 8328, 8329, 8330, 8331, 8332, 8333, 8334, 8335, 8336, 8337, 8338, 8339, 8340, 8341, 8342, 8343, 8344, 8345, 8346, 8347, 8348, 8349, 8350, 8351, 8352, 8353, 8354, 8355, 8356, 8357, 8358, 8359, 8360, 8361, 8362, 8363, 8364, 8365, 8366, 8367, 8368, 8369, 8370, 8371, 8372, 8373, 8374, 8375, 8376, 8377, 8378, 8379, 8380, 8381, 8382, 8383, 8384, 8385, 8386, 8387, 8388, 8389, 8390, 8391, 8392, 8393, 8394, 8395, 8396, 8397, 8398, 8399, 8400, 8401, 8402, 8403, 8404, 8405, 8406, 8407, 8408, 8409, 8410, 8411, 8412, 8413, 8414, 8415, 8416, 8417, 8418, 8419, 8420, 8421, 8422, 8423, 8424, 8425, 8426, 8427, 8428, 8429, 8430, 8431, 8432, 8433, 8434, 8435, 8436, 8437, 8438, 8439, 8440, 8441, 8442, 8443, 8444, 8445, 8446, 8447, 8448, 8449, 8450, 8451, 8452, 8453, 8454, 8455, 8456, 8457, 8458, 8459, 8460, 8461, 8462, 8463, 8464, 8465, 8466, 8467, 8468, 8469, 8470, 8471, 8472, 8473, 8474, 8475, 8476, 8477, 8478, 8479, 8480, 8481, 8482, 8483, 8484, 8485, 8486, 8487, 8488, 8489, 8490, 8491, 8492, 8493, 8494, 8495, 8496, 8497, 8498, 8499, 8500, 8501, 8502, 8503, 8504, 8505, 8506, 8507, 8508, 8509, 8510, 8511, 8512, 8513, 8514, 8515, 8516, 8517, 8518, 8519, 8520, 8521, 8522, 8523, 8524, 8525, 8526, 8527, 8528, 8529, 8530, 8531, 8532, 8533, 8534, 8535, 8536, 8537, 8538, 8539, 8540, 8541, 8542, 8543, 8544, 8545, 8546, 8547, 8548, 8549, 8550, 8551, 8552, 8553, 8554, 8555, 8556, 8557, 8558, 8559, 8560, 8561, 8562, 8563, 8564, 8565, 8566, 8567, 8568, 8569, 8570, 8571, 8572, 8573, 8574, 8575, 8576, 8577, 8578, 8579, 8580, 8581, 8582, 8583, 8584, 8585, 8586, 8587, 8588, 8589, 8590, 8591, 8592, 8593, 8594, 8595, 8596, 8597, 8598, 8599, 8600, 8601, 8602, 8603, 8604, 8605, 8606, 8607, 8608, 8609, 8610, 8611, 8612, 8613, 8614, 8615, 8616, 8617, 8618, 8619, 8620, 8621, 8622, 8623, 8624, 8625, 8626, 8627, 8628, 8629, 8630, 8631, 8632, 8633, 8634, 8635, 8636, 8637, 8638, 8639, 8640, 8641, 8642, 8643, 8644, 8645, 8646, 8647, 8648, 8649, 8650, 8651, 8652, 8653, 8654, 8655, 8656, 8657, 8658, 8659, 8660, 8661, 8662, 8663, 8664, 8665, 8666, 8667, 8668, 8669, 8670, 8671, 8672, 8673, 8674, 8675, 8676, 8677, 8678, 8679, 8680, 8681, 8682, 8683, 8684, 8685, 8686, 8687, 8688, 8689, 8690, 8691, 8692, 8693, 8694, 8695, 8696, 8697, 8698, 8699, 8700, 8701, 8702, 8703, 8704, 8705, 8706, 8707, 8708, 8709, 8710, 8711, 8712, 8713, 8714, 8715, 8716, 8717, 8718, 8719, 8720, 8721, 8722, 8723, 8724, 8725, 8726, 8727, 8728, 8729, 8730, 8731, 8732, 8733, 8734, 8735, 8736, 8737, 8738, 8739, 8740, 8741, 8742, 8743, 8744, 8745, 8746, 8747, 8748, 8749, 8750, 8751, 8752, 8753, 8754, 8755, 8756, 8757, 8758, 8759, 8760, 8761, 8762, 8763, 8764, 8765, 8766, 8767, 8768, 8769, 8770, 8771, 8772, 8773, 8774, 8775, 8776, 8777, 8778, 8779, 8780, 8781, 8782, 8783, 8784, 8785, 8786, 8787, 8788, 8789, 8790, 8791, 8792, 8793, 8794, 8795, 8796, 8797, 8798, 8799, 8800, 8801, 8802, 8803, 8804, 8805, 8806, 8807, 8808, 8809, 8810, 8811, 8812, 8813, 8814, 8815, 8816, 8817, 8818, 8819, 8820, 8821, 8822, 8823, 8824, 8825, 8826, 8827, 8828, 8829, 8830, 8831, 8832, 8833, 8834, 8835, 8836, 8837, 8838, 8839, 8840, 8841, 8842, 8843, 8844, 8845, 8846, 8847, 8848, 8849, 8850, 8851, 8852, 8853, 8854, 8855, 8856, 8857, 8858, 8859, 8860, 8861, 8862, 8863, 8864, 8865, 8866, 8867, 8868, 8869, 8870, 8871, 8872, 8873, 8874, 8875, 8876, 8877, 8878, 8879, 8880, 8881, 8882, 8883, 8884, 8885, 8886, 8887, 8888, 8889, 8890, 8891, 8892, 8893, 8894, 8895, 8896, 8897, 8898, 8899, 8900, 8901, 8902, 8903, 8904, 8905, 8906, 8907, 8908, 8909, 8910, 8911, 8912, 8913, 8914, 8915, 8916, 8917, 8918, 8919, 8920, 8921, 8922, 8923, 8924, 8925, 8926, 8927, 8928, 8929, 8930, 8931, 8932, 8933, 8934, 8935, 8936, 8937, 8938, 8939, 8940, 8941, 8942, 8943, 8944, 8945, 8946, 8947, 8948, 8949, 8950, 8951, 8952, 8953, 8954, 8955, 8956, 8957, 8958, 8959, 8960, 8961, 8962, 8963, 8964, 8965, 8966, 8967, 8968, 8969, 8970, 8971, 8972, 8973, 8974, 8975, 8976, 8977, 8978, 8979, 8980, 8981, 8982, 8983, 8984, 8985, 8986, 8987, 8988, 8989, 8990, 8991, 8992, 8993, 8994, 8995, 8996, 8997, 8998, 8999, 9000, 9001, 9002, 9003, 9004, 9005, 9006, 9007, 9008, 9009, 9010, 9011, 9012, 9013, 9014, 9015, 9016, 9017, 9018, 9019, 9020, 9021, 9022, 9023, 9024, 9025, 9026, 9027, 9028, 9029, 9030, 9031, 9032, 9033, 9034, 9035, 9036, 9037, 9038, 9039, 9040, 9041, 9042, 9043, 9044, 9045, 9046, 9047, 9048, 9049, 9050, 9051, 9052, 9053, 9054, 9055, 9056, 9057, 9058, 9059, 9060, 9061, 9062, 9063, 9064, 9065, 9066, 9067, 9068, 9069, 9070, 9071, 9072, 9073, 9074, 9075, 9076, 9077, 9078, 9079, 9080, 9081, 9082, 9083, 9084, 9085, 9086, 9087, 9088, 9089, 9090, 9091, 9092, 9093, 9094, 9095, 9096, 9097, 9098, 9099, 9100, 9101, 9102, 9103, 9104, 9105, 9106, 9107, 9108, 9109, 9110, 9111, 9112, 9113, 9114, 9115, 9116, 9117, 9118, 9119, 9120, 9121, 9122, 9123, 9124, 9125, 9126, 9127, 9128, 9129, 9130, 9131, 9132, 9133, 9134, 9135, 9136, 9137, 9138, 9139, 9140, 9141, 9142, 9143, 9144, 9145, 9146, 9147, 9148, 9149, 9150, 9151, 9152, 9153, 9154, 9155, 9156, 9157, 9158, 9159, 9160, 9161, 9162, 9163, 9164, 9165, 9166, 9167, 9168, 9169, 9170, 9171, 9172, 9173, 9174, 9175, 9176, 9177, 9178, 9179, 9180, 9181, 9182, 9183, 9184, 9185, 9186, 9187, 9188, 9189, 9190, 9191, 9192, 9193, 9194, 9195, 9196, 9197, 9198, 9199, 9200, 9201, 9202, 9203, 9204, 9205, 9206, 9207, 9208, 9209, 9210, 9211, 9212, 9213, 9214, 9215, 9216, 9217, 9218, 9219, 9220, 9221, 9222, 9223, 9224, 9225, 9226, 9227, 9228, 9229, 9230, 9231, 9232, 9233, 9234, 9235, 9236, 9237, 9238, 9239, 9240, 9241, 9242, 9243, 9244, 9245, 9246, 9247, 9248, 9249, 9250, 9251, 9252, 9253, 9254, 9255, 9256, 9257, 9258, 9259, 9260, 9261, 9262, 9263, 9264, 9265, 9266, 9267, 9268, 9269, 9270, 9271, 9272, 9273, 9274, 9275, 9276, 9277, 9278, 9279, 9280, 9281, 9282, 9283, 9284, 9285, 9286, 9287, 9288, 9289, 9290, 9291, 9292, 9293, 9294, 9295, 9296, 9297, 9298, 9299, 9300, 9301, 9302, 9303, 9304, 9305, 9306, 9307, 9308, 9309, 9310, 9311, 9312, 9313, 9314, 9315, 9316, 9317, 9318, 9319, 9320, 9321, 9322, 9323, 9324, 9325, 9326, 9327, 9328, 9329, 9330, 9331, 9332, 9333, 9334, 9335, 9336, 9337, 9338, 9339, 9340, 9341, 9342, 9343, 9344, 9345, 9346, 9347, 9348, 9349, 9350, 9351, 9352, 9353, 9354, 9355, 9356, 9357, 9358, 9359, 9360, 9361, 9362, 9363, 9364, 9365, 9366, 9367, 9368, 9369, 9370, 9371, 9372, 9373, 9374, 9375, 9376, 9377, 9378, 9379, 9380, 9381, 9382, 9383, 9384);"
+}
