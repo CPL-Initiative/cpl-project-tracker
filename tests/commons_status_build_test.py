@@ -139,8 +139,8 @@ check("Subjects: every count opens the tab's own list (the Commons' step 3)",
 # A collision issue is listed only while a collision exists (the AGAB re-key of 2026-10-19 closed the one, S427):
 # a known issue with nothing in it is not an issue, and facts.shared keeps the measure.
 collision_issues = [i for i in rows[4]["issues"] if "two MQ disciplines" in i.get("words", "")]
-check("Subjects: the unconfirmed issue opens the pre-seeded filter and a collision issue, when one is listed, the SUBJ check",
-      rows[4]["issues"][0]["open"] == "#canonical-subj4/pre_seeded" and all(i["open"] == "#canonical-subj4/check" for i in collision_issues)
+check("Subjects: the unconfirmed issue opens the List's Open filter, where a pick is confirmed, and a collision issue, when one is listed, the SUBJ check",
+      rows[4]["issues"][0]["open"] == "#canonical-subj4/open" and all(i["open"] == "#canonical-subj4/check" for i in collision_issues)
       and bool(sub.get("shared")) == bool(collision_issues))
 if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
     check("Subjects: with the daily scan's file, the scan findings and the stray codes are known issues with an owner",

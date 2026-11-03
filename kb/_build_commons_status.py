@@ -479,7 +479,7 @@ def row_subjects(root):
     procs = load_json(root, "kb/csr_procedures.json") if exists(root, "kb/csr_procedures.json") else None
     who = "%s by a person" % fmt(len(confirmed) - cohort) + (", %s by the nightly procedure or a session cohort" % fmt(cohort) if cohort else "")
     issues = [
-        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab + "/pre_seeded"},
+        {"n": len(modal), "words": "MQ disciplines on the data's modal code, unconfirmed", "owner": "a curator", "open": tab + "/open"},
         {"n": len(shared), "words": "codes on two MQ disciplines" + (" (" + ", ".join(sorted(shared)) + ")" if shared else ""),
          "owner": "a curator", "open": tab + "/check"},
     ]

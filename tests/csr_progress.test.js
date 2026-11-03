@@ -11,7 +11,7 @@
 //   - the context from the fixture: the headline pair (settled = confirmed less the
 //     collisions), the five milestones with You are here on the confirmations, eight cards
 //     in the ruled order, the procedures from the real store under the cards, the findings;
-//   - a count opens the Reference view with exactly its filter (the Commons' step 3), the
+//   - a count opens the Reference view with exactly its filter, a waiting pick the List's Open filter (the Commons' step 3), the
 //     address routes a filter and a view, the SUBJ check opens from its card;
 //   - the pick's reviewer is the code row's, not a later note's (the eleven-cohort misread);
 //   - a failed read says so on the card, never a zero; without the module the view says so
@@ -226,7 +226,15 @@ setTimeout(function () {
     const openWaiting = Array.prototype.filter.call(cards[6].querySelectorAll(".prh-pg-open"), function (b) { return /Open the 2 waiting/.test(txt(b)); })[0];
     check("the confirmation card's count is a word", !!openWaiting);
     openWaiting.click();
-    check("it opens the Reference view with the pre-seeded filter and the select in step", M._state.view === "reference" && M._state.filter === "pre_seeded" && d.getElementById("cs-filter").value === "pre_seeded" && !d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-progress").hidden);
+    // A pick waiting for a person opens where it can be confirmed (Sam, 2026-11-03): the List's Open filter, whose
+    // rows carry Confirm this pick. The Reference box saves only a changed code, so it had nothing to press.
+    const lsEl = d.getElementById("cs-list");
+    check("it opens the List on its Open filter", M._state.view === "list" && M._state.ls && M._state.ls.f === "open" && !lsEl.hidden && d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-progress").hidden);
+    // The List's rows and their Confirm this pick are tests/csr_list.test.js (12): this suite loads no List engine.
+    // The pre-seeded filter stays an address of its own for the Reference table.
+    w.location.hash = "#canonical-subj4/pre_seeded";
+    w.dispatchEvent(new w.Event("hashchange"));
+    check("#canonical-subj4/pre_seeded opens the Reference view with the pre-seeded filter and the select in step", M._state.view === "reference" && M._state.filter === "pre_seeded" && d.getElementById("cs-filter").value === "pre_seeded" && !d.getElementById("cs-table-wrap").hidden && d.getElementById("cs-progress").hidden);
     const shown = Array.prototype.map.call(d.querySelectorAll("td.cs-disc"), function (td) { return txt(td).split(" also:")[0].replace(/\s+[^\sA-Za-z].*$/, ""); });
     check("the table lists exactly the two unconfirmed picks", shown.length === 2 && /Agricultural Business/.test(shown[0] + shown[1]) && /Mathematics/.test(shown[0] + shown[1]));
     check("the column header says MQ Discipline", /^MQ Discipline/.test(txt(d.querySelector(".cs-table th"))));
@@ -236,6 +244,9 @@ setTimeout(function () {
     w.location.hash = "#canonical-subj4/chip";
     w.dispatchEvent(new w.Event("hashchange"));
     check("#canonical-subj4/chip opens the table filtered to the one with a chip", M._state.view === "reference" && M._state.filter === "chip" && d.querySelectorAll("td.cs-disc").length === 1 && /Automotive Technology/.test(txt(d.querySelector("td.cs-disc"))));
+    w.location.hash = "#canonical-subj4/open";
+    w.dispatchEvent(new w.Event("hashchange"));
+    check("#canonical-subj4/open opens the List on its Open filter (the Commons card's address)", M._state.view === "list" && M._state.ls.f === "open" && !d.getElementById("cs-list").hidden);
     w.location.hash = "#canonical-subj4/progress";
     w.dispatchEvent(new w.Event("hashchange"));
     check("#canonical-subj4/progress opens the Progress view", M._state.view === "progress" && !d.getElementById("cs-progress").hidden);
@@ -294,7 +305,7 @@ setTimeout(function () {
     check("page: the milestones and steps stay one word away, closed", more && !more.open && !!more.querySelector(".prh-pg-part"));
     check("page: the procedures and findings sections stay below", !!pg4.querySelector('details[data-sec="progress:procedures"]') && !!pg4.querySelector('details[data-sec="progress:findings"]'));
     Array.prototype.filter.call(att4.querySelectorAll("button"), function (b) { return txt(b) === "Confirm them"; })[0].click();
-    check("page: Confirm them opens the Reference view on the pre-seeded filter", M4._state.view === "reference" && M4._state.filter === "pre_seeded");
+    check("page: Confirm them opens the List on its Open filter", M4._state.view === "list" && M4._state.ls && M4._state.ls.f === "open");
   } catch (e) {
     check("no exception while checking: " + (e && e.stack || e), false);
   }

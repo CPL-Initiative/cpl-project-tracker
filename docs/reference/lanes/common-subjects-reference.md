@@ -53,7 +53,10 @@ every row and the Status drawer's Confirm this pick write through the table's ow
 `writeNote`, now shared by the table's boxes): the same `_CANON_SUBJ4::` kb_curation rows, no new write surface. No flag
 column (no flag field) and no find and replace (a replace on Common SUBJ hands one code to several MQ disciplines; a
 note where no code row exists stands in as the review, so a replace across notes would confirm picks). Guard
-`tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`.
+`tests/csr_list.test.js`; a11y `canonical-subj4-list`, `canonical-subj4-list-dark`. **A pick waiting for a person
+opens the List on Open** (`#canonical-subj4/open`, `TO.confirm`): the Commons card's unconfirmed issue and the Progress
+view's *Confirm them* led to the Reference table's pre-seeded filter, whose box saves only a changed code, so Sam
+found nothing to press (2026-11-03). The pre-seeded filter keeps its own address.
 
 **The definition of complete (ruled, Sheet 99 card 1, 2026-10-19):** an MQ discipline with courses whose Common
 SUBJ is confirmed (by a person, or by the nightly procedure where the code is the authority's own), that follows

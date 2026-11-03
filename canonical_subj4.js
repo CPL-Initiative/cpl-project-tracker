@@ -2073,12 +2073,16 @@
   }
 
   /* ── where a count leads (the Commons' step 3) ──
-     A target names the Reference view with one filter set, the tab's own SUBJ check, a
-     section of this view, a procedure's card, or another page. */
+     A target names the Reference view with one filter set, the List with one filter set, the
+     tab's own SUBJ check, a section of this view, a procedure's card, or another page. A pick
+     waiting for a person leads to the List's Open filter (TO.confirm): Confirm this pick lives
+     there, and the Reference box saves only a changed code, so an unchanged pick had nothing to
+     press (Sam, 2026-11-03, from the Commons). */
   var TO = {
     all: { view: "reference", filter: "all" },
     needsReview: { view: "reference", filter: "needs_review" },
     preSeeded: { view: "reference", filter: "pre_seeded" },
+    confirm: { view: "list", filter: "open" },
     reviewed: { view: "reference", filter: "reviewed" },
     ccn: { view: "reference", filter: "ccn" },
     cid: { view: "reference", filter: "cid" },
@@ -2107,7 +2111,7 @@
       left: function (x) { return [[x.missed, "missed alignment", "missed alignments", TO.chip]]; } },
     { id: "confirmed", title: "Every pick confirmed",
       fact: function (x) { return fmtN(x.confirmed) + " of " + fmtN(x.total) + " by a person"; },
-      left: function (x) { return [[x.unconfirmed, "pick to confirm", "picks to confirm", TO.preSeeded]]; } },
+      left: function (x) { return [[x.unconfirmed, "pick to confirm", "picks to confirm", TO.confirm]]; } },
     { id: "checks", title: "The checks pass", needs: ["scan"],
       fact: function (x) { return plural(x.askable, "finding needs", "findings need") + " a judgment"; },
       left: function (x) {
@@ -2223,7 +2227,7 @@
             fmtN(x.cohort) + " picks carry a procedure's or a session cohort's stamp."
           : "The cohort confirm of authority-coded picks is proposed, a card for " + x.decider + ".";
       },
-      open: function (x) { return ["Open the " + fmtN(x.unconfirmed) + " waiting", TO.preSeeded]; },
+      open: function (x) { return ["Open the " + fmtN(x.unconfirmed) + " waiting", TO.confirm]; },
       more: function () { return ["Procedure", procTarget("confirmation")]; } },
     { id: "checks", title: "The daily scan and Jev's sitting", needs: ["scan"],
       status: function (x) { return x.askable ? "going" : "done"; },
@@ -2405,6 +2409,13 @@
       bringUp(document.getElementById("cs-table-wrap"));
       return;
     }
+    if (to.view === "list") {
+      var L = listState();
+      L.f = to.filter || ""; L.q = "";
+      applyView("list");
+      bringUp(document.getElementById("cs-list"));
+      return;
+    }
     if (to.check) { applyView("reference"); openCheckModal(); return; }
     if (to.sec) {
       secSet(to.sec, true);
@@ -2512,7 +2523,7 @@
     var split = fmtN(x.person) + " confirmed by a person, " + fmtN(x.cohort) + " by the nightly procedure or a session cohort.";
     var items = [
       { n: x.unconfirmed, words: x.unconfirmed === 1 ? "MQ discipline on the data's modal code, unconfirmed." : "MQ disciplines on the data's modal code, unconfirmed.",
-        action: { words: "Confirm them", go: go(TO.preSeeded) } },
+        action: { words: "Confirm them", go: go(TO.confirm) } },
       { n: x.collisions, words: x.collisions === 1 ? "Common SUBJ shared by two MQ disciplines." : "Common SUBJs shared by two or more MQ disciplines.",
         action: { words: "Check them", go: go(TO.check) } },
       { n: x.scan ? x.toNote : null, words: (x.toNote === 1 ? "scan finding to confirm or note" : "scan findings to confirm or note") + (x.toNoteWords ? " (" + x.toNoteWords + ")." : "."),
@@ -2949,6 +2960,7 @@
     if (VIEW_MOUNT[r]) { applyView(r); return true; }
     if (FILTER_ROUTES[r]) { goTo({ view: "reference", filter: r }); return true; }
     if (r === "check") { goTo(TO.check); return true; }
+    if (r === "open") { goTo(TO.confirm); return true; }
     return false;
   }
   function onHashChange() { routeFromHash(); }
