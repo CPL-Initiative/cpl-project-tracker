@@ -1,0 +1,6343 @@
+{
+ "_source": "Supabase map_college_cr_unit + map_ace_exhibit_titles + map_colleges, read 2026-11-03 (read-only)",
+ "recs": [
+  {
+   "exhibit_id": "NER-HN-005",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "3 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Allan Hancock College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "American River College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "MEDS-B37 Medical Terminology(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Berkeley City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "MA-70 Medical Terminology(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Cerritos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Citrus College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Clovis Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of Alameda",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Sequoias",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Columbia College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Compton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "HS-061 Medical Terminology(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Crafton Hills College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuesta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Foothill College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "MOA-182 Medical Terminology for Body Systems(3.0)",
+     "status": "In Process"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Hartnell College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Irvine Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lemoore College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "EMS-013 Medical Terminology for Health Care Professions(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Madera College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Merritt College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Oxnard College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Rio Hondo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Sacramento City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Saddleback College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "CIT-144 Medical Terminology(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "MA-051A Beginning Medical Terminology(3.0)",
+     "status": "In Process"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Solano Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Taft College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "ALD HTH-033 MEDICAL TERMINOLOGY(3.0)",
+     "status": "In Process"
+    },
+    {
+     "college": "West Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-005",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "3 hours in Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "Allan Hancock College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "American River College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "In Process"
+    },
+    {
+     "college": "Berkeley City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Cerritos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Citrus College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Clovis Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of Alameda",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Sequoias",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Columbia College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Compton College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Crafton Hills College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuesta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Foothill College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "NS-208 PHARMACOLOGY FOR NURSING(2.5)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Hartnell College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Irvine Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lemoore College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Madera College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Merritt College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Oxnard College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Rio Hondo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Sacramento City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Saddleback College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "PHT-062 Pharmacology I(3.0)",
+     "status": "In Process"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Solano Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Taft College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "West Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HM-006",
+   "exhibit_title": "Hospital Corpsman",
+   "credit_rec": "3 hours in Medical Coding",
+   "colleges": [
+    {
+     "college": "Allan Hancock College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "American River College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Berkeley City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerritos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chabot College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Citrus College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Clovis Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of Alameda",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Sequoias",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Columbia College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Crafton Hills College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuesta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Foothill College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "MOA-193 Principles of Current Procedural Terminology (CPT) Coding(3.0)",
+     "status": "In Process"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Hartnell College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Irvine Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lemoore College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Merritt College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "North Orange Continuing Education",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Oxnard College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Sacramento City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Saddleback College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Solano Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Taft College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0065",
+   "exhibit_title": "Health Care Specialist",
+   "credit_rec": "2 hours in Basic Pharmacology",
+   "colleges": [
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chabot College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Citrus College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Clovis Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Sequoias",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Columbia College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Crafton Hills College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Foothill College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Gavilan College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Hartnell College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Irvine Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Laney College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Las Positas College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Merritt College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Rio Hondo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Sacramento City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HM-004",
+   "exhibit_title": "Hospital Corpsman",
+   "credit_rec": "3 hours in Health Information Management",
+   "colleges": [
+    {
+     "college": "Allan Hancock College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "American River College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Berkeley City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerritos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chabot College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Compton College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Laney College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Orange Coast College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Solano Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-003",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "American River College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Merritt College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Orange Coast College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Saddleback College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Solano Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-003",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "2 hours in Phlebotomy Procedures",
+   "colleges": [
+    {
+     "college": "American River College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Merritt College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Orange Coast College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Saddleback College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Solano Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NV-0703-0008",
+   "exhibit_title": "Hospital Corpsman Basic (USN)",
+   "credit_rec": "7 hours in Basic Patient Care Procedures",
+   "colleges": [
+    {
+     "college": "American River College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Berkeley City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chabot College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Laney College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Orange Coast College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Saddleback College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Shasta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HM-004",
+   "exhibit_title": "Hospital Corpsman",
+   "credit_rec": "3 hours in Medical Office Administration",
+   "colleges": [
+    {
+     "college": "American River College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Orange Coast College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sierra College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-004",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "3 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Bakersfield College",
+     "course": "MEDS-B37 Medical Terminology(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Butte College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "MA-70 Medical Terminology(3.0)",
+     "status": "In Process"
+    },
+    {
+     "college": "Cerritos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chabot College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "BIOL-C104 Medical Terminology for Health Professionals(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "HS-061 Medical Terminology(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "MOA-182 Medical Terminology for Body Systems(3.0)",
+     "status": "In Process"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Laney College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "EMS-013 Medical Terminology for Health Care Professions(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "North Orange Continuing Education",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0703-0037",
+   "exhibit_title": "Licensed Practical Nurse",
+   "credit_rec": "2 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Allan Hancock College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Citrus College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Clovis Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Sequoias",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Foothill College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Glendale Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "In Process"
+    },
+    {
+     "college": "Los Angeles City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Porterville College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Rio Hondo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-002",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "1 hour in Infection Control Procedures",
+   "colleges": [
+    {
+     "college": "Berkeley City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chabot College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Laney College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-002",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Berkeley City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chabot College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Laney College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Not Applicable"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-002",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "2 hours in Phlebotomy Procedures",
+   "colleges": [
+    {
+     "college": "Berkeley City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cabrillo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Chabot College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Copper Mountain College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Laney College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Barbara City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0065",
+   "exhibit_title": "Health Care Specialist",
+   "credit_rec": "6 hours in Patient Care Procedures",
+   "colleges": [
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cerro Coso Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Desert",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Foothill College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santiago Canyon College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NV-0703-0005",
+   "exhibit_title": "Basic Hospital Corps School, Class A",
+   "credit_rec": "6 hours in Patient Care Procedures",
+   "colleges": [
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of Alameda",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0032",
+   "exhibit_title": "Medical Specialist",
+   "credit_rec": "2 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of San Mateo",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cuesta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Victor Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0070",
+   "exhibit_title": "Health Care Specialist (MOS-T)",
+   "credit_rec": "3 hours in Patient Care Procedures",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Clovis Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Rio Hondo College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0067",
+   "exhibit_title": "Health Care Specialist (MOS-T)",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Clovis Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Evergreen Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Napa Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NV-0709-0019",
+   "exhibit_title": "Surface Force Independent Duty Corpsman (HM-8425) Class 'C'",
+   "credit_rec": "4 hours in Clinical Laboratory Procedures",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Miramar College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0703-0037",
+   "exhibit_title": "Licensed Practical Nurse",
+   "credit_rec": "1 hour in Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of Alameda",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Redwoods",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-1403-0010",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "3 hours in Electronic Medical Records Management",
+   "colleges": [
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fullerton College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mission College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Antonio College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-001",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of Alameda",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Lassen College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Ohlone College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0070",
+   "exhibit_title": "Health Care Specialist (MOS-T)",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Allan Hancock College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Angeles Pierce College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moorpark College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Skyline College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "CG-0709-0009",
+   "exhibit_title": "Health Services Technician 'A' School",
+   "credit_rec": "3 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "CG-0709-0009",
+   "exhibit_title": "Health Services Technician 'A' School",
+   "credit_rec": "3 hours in Phlebotomy",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "East Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Pasadena City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0065",
+   "exhibit_title": "Health Care Specialist",
+   "credit_rec": "3 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "EMS-013 Medical Terminology for Health Care Professions(3.0)",
+     "status": "Applied to CPL Plan"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "ALD HTH-033 MEDICAL TERMINOLOGY(3.0)",
+     "status": "Applied to CPL Plan"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0065",
+   "exhibit_title": "Health Care Specialist",
+   "credit_rec": "4 hours in Patient Care Procedures",
+   "colleges": [
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Los Medanos College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "West Los Angeles College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-DN-002",
+   "exhibit_title": "Dentalman",
+   "credit_rec": "1 hour in Infection Control Procedures",
+   "colleges": [
+    {
+     "college": "Coastline Community College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "El Camino College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Diego City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NV-0703-0011",
+   "exhibit_title": "Flight Medic Course",
+   "credit_rec": "3 hours in Electrocardiography",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NV-0703-0011",
+   "exhibit_title": "Flight Medic Course",
+   "credit_rec": "3 hours in Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "De Anza College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Golden West College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0799-0046",
+   "exhibit_title": "AMEDD Aviation Crewmember",
+   "credit_rec": "2 hours in Medical Records",
+   "colleges": [
+    {
+     "college": "Bakersfield College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Irvine Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0705-0001",
+   "exhibit_title": "Radiology Specialist",
+   "credit_rec": "2 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Rosa Junior College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-68P-002",
+   "exhibit_title": "Radiology Specialist (12/21-Pres)",
+   "credit_rec": "3 hours in Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "Chaffey College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Fresno City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Not Applicable"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NV-0709-0019",
+   "exhibit_title": "Surface Force Independent Duty Corpsman (HM-8425) Class 'C'",
+   "credit_rec": "4 hours in Introduction To Clinical Laboratory Procedures",
+   "colleges": [
+    {
+     "college": "Los Angeles Harbor College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Diego Mesa College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Southwestern College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Ventura College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0705-0014",
+   "exhibit_title": "Radiology Specialist",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Modesto Junior College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Santa Ana College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-1403-0010",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "2 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-1403-0010",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "3 hours in Health Care Administration",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "CG-0709-0009",
+   "exhibit_title": "Health Services Technician 'A' School",
+   "credit_rec": "2 hours in Health Care Administration",
+   "colleges": [
+    {
+     "college": "City College of San Francisco",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Solano Community College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-68G-006",
+   "exhibit_title": "Patient Administration Specialist (10/19-Pres)",
+   "credit_rec": "2 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-68G-006",
+   "exhibit_title": "Patient Administration Specialist (10/19-Pres)",
+   "credit_rec": "3 hours in Medical Coding",
+   "colleges": [
+    {
+     "college": "Diablo Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Merced College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "San Jose City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0326-0062",
+   "exhibit_title": "Army Medical Department (AMEDD) Officer Advanced",
+   "credit_rec": "3 hours in Health Care Administration",
+   "colleges": [
+    {
+     "college": "Irvine Valley College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "CG-0709-0009",
+   "exhibit_title": "Health Services Technician 'A' School",
+   "credit_rec": "3 hours in Medical Assisting Clinical I",
+   "colleges": [
+    {
+     "college": "Moreno Valley College",
+     "course": "",
+     "status": "Not Applicable"
+    },
+    {
+     "college": "Norco College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-91G-004",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "4 hours in Directed Practice In Medical Record Technology",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-91G-004",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "4 hours in Introduction To Medical Record Technology",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "San Bernardino Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HM-004",
+   "exhibit_title": "Hospital Corpsman",
+   "credit_rec": "3 hours in Medical Office Administration Military Science",
+   "colleges": [
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-003",
+   "exhibit_title": "",
+   "credit_rec": "2 hours in Phlebotomy Procedures",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    },
+    {
+     "college": "Sacramento City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0326-0062",
+   "exhibit_title": "Army Medical Department (AMEDD) Officer Advanced",
+   "credit_rec": "1 hour in Health Care Administration (Medical Corps and Medical Services Corps Tracks)",
+   "colleges": [
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0703-0037",
+   "exhibit_title": "Licensed Practical Nurse",
+   "credit_rec": "1 hour in Clinical Practicum In Practical Nursing Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "Antelope Valley College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0707-0019",
+   "exhibit_title": "Army Medical Department (AMEDD) Officer Basic, Phase 1 and Phase 2",
+   "credit_rec": "3 hours in Health Care Administration",
+   "colleges": [
+    {
+     "college": "Long Beach City College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0065",
+   "exhibit_title": "Health Care Specialist",
+   "credit_rec": "2 hours in \"Basic Pharmacology",
+   "colleges": [
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-0709-0071",
+   "exhibit_title": "Health Care Specialist Reclassification",
+   "credit_rec": "2 hours in Patient Care Procedures",
+   "colleges": [
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-1403-0001",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-1403-0010",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "8 hours in Medical Records Technology",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "AR-1403-0029",
+   "exhibit_title": "Medical Information Management - Distance Learning",
+   "credit_rec": "3 hours in Health Information Systems Administration",
+   "colleges": [
+    {
+     "college": "Columbia College",
+     "course": "",
+     "status": "Not Applicable"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "CG-0709-0005",
+   "exhibit_title": "Health Services Technician Second Class (HS2) Performance Qualification Guide (PQG)",
+   "credit_rec": "1 hour in Medical Office Management",
+   "colleges": [
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-35U-003",
+   "exhibit_title": "Biomedical Equipment Specialist, Advanced",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Los Angeles Trade Technical College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-68G-005",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "3 hours in Medical Record Terminology",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-68G-005",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "3 hours in Medical Records Coding",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-68G-005",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "3 hours in Medical Records Management",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-71G-002",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "2 hours in Medical Record Keeping",
+   "colleges": [
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-71G-002",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "2 hours in Medical Records Administration",
+   "colleges": [
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-71G-002",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "2 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Mt. San Jacinto College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-71G-003",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "4 hours in Directed Practice In Medical Record Technology",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-71G-003",
+   "exhibit_title": "Patient Administration Specialist",
+   "credit_rec": "4 hours in Introduction To Medical Record Technology",
+   "colleges": [
+    {
+     "college": "College of the Canyons",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-76J-002",
+   "exhibit_title": "Medical Supplyman",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "MOS-92B-003",
+   "exhibit_title": "Medical Laboratory Specialist",
+   "credit_rec": "5 hours in Clinical Laboratory Procedures",
+   "colleges": [
+    {
+     "college": "Monterey Peninsula College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-11M-004",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Health Information Management",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-11M-004",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Office Administration",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-11M-006",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Coding",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IM-006",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Coding",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IN-002",
+   "exhibit_title": "",
+   "credit_rec": "1 hour in Infection Control Procedures",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IN-002",
+   "exhibit_title": "",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IN-002",
+   "exhibit_title": "",
+   "credit_rec": "2 hours in Phlebotomy Procedures",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IN-003",
+   "exhibit_title": "",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IN-003",
+   "exhibit_title": "",
+   "credit_rec": "2 hours in Phlebotomy Procedures",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IN-004",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IN-005",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-1IN-005",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HM-004",
+   "exhibit_title": "Hospital Corpsman",
+   "credit_rec": "3 hours in Health Information Management Introduction To Supervision or Introduction To Healthcare Management",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HM-004",
+   "exhibit_title": "Hospital Corpsman",
+   "credit_rec": "3 hours in Introduction To Supervision or Introduction To Healthcare Management Medical Office Administration",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HM-004",
+   "exhibit_title": "Hospital Corpsman",
+   "credit_rec": "3 hours in Medical Office Administration Military Science Nursing Fundamentals",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HM-004",
+   "exhibit_title": "Hospital Corpsman",
+   "credit_rec": "3 hours in Introduction To Supervision or latroduction To Healthcare Management Medical Office Administration",
+   "colleges": [
+    {
+     "college": "Cuyamaca College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-005",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "3 hours in Introduction To Communication Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-005",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "3 hours in Introduction To Pharmacology Introduction To Supervision",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-005",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "3 hours in Introduction To Pharmacology Introduction To Supervision Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-005",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "3 hours in Introduction To Supervision Medical Terminology",
+   "colleges": [
+    {
+     "college": "Cypress College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-HN-005",
+   "exhibit_title": "Hospitalman",
+   "credit_rec": "3 hours in medical terminology",
+   "colleges": [
+    {
+     "college": "West Los Angeles College",
+     "course": "ALD HTH-033 MEDICAL TERMINOLOGY(3.0)",
+     "status": "Not Applicable"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIM-004",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Health Information Management",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIM-004",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Office Administration",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIM-004",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Office Administration Military Science Nursing Fundamentals Pharmacology Physical Assessment",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIM-006",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Coding",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-002",
+   "exhibit_title": "",
+   "credit_rec": "1 hour in Infection Control Procedures",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-002",
+   "exhibit_title": "",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-002",
+   "exhibit_title": "",
+   "credit_rec": "2 hours in Phlebotomy Procedures",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-003",
+   "exhibit_title": "",
+   "credit_rec": "1 hour in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-004",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-005",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Introduction To Communication Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-005",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Introduction To Pharmacology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-005",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Introduction To Pharmacology Introduction To Supervision",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NER-IIN-005",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Terminology",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NICR-IIM-006",
+   "exhibit_title": "",
+   "credit_rec": "3 hours in Medical Coding",
+   "colleges": [
+    {
+     "college": "Grossmont College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NV-0702-0013",
+   "exhibit_title": "Deep Sea Diving Independent Duty Corpsman, Class C",
+   "credit_rec": "4 hours in Introduction To Clinical Laboratory Procedures",
+   "colleges": [
+    {
+     "college": "Riverside City College",
+     "course": "",
+     "status": "Not Applicable"
+    }
+   ]
+  },
+  {
+   "exhibit_id": "NV-0709-0019",
+   "exhibit_title": "Surface Force Independent Duty Corpsman (HM-8425) Class 'C'",
+   "credit_rec": "3 hours in Medical Records",
+   "colleges": [
+    {
+     "college": "San Joaquin Delta College",
+     "course": "",
+     "status": "Needs Action"
+    }
+   ]
+  }
+ ]
+}
