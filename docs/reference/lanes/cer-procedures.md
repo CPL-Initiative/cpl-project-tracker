@@ -182,7 +182,7 @@ the two Level III markers stay under their old keys. Guard: `tests/clep_official
 **NEXT:** (0) After each of Sam's runs through *Another look*, read the next fold's `credential_moves` and
 `credential_retires` and move the panel rows they list (receipts `kb/receipts/credential_panel_move_*.json`; a row
 that cannot fan in, or whose rename the fold carried out, stays under its old key, named in the receipt).
-**NEEDS SAM (Open Asks Sheet 161, 2026-11-03):** drop his Engine Performance 1 and 2 ASE issuer rows; Metal Building
-Erection 1's issuer, his Iron Workers row or a bulk run's colleges row. Each deletes a row. (1) The Catalog's *Courses that may align*,
+**Sam, Open Asks Sheet 161 (15:14Z 2026-11-03):** *drop* his Engine Performance 1 and 2 ASE issuer rows;
+Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied by the receipt's `then_planned`. (1) The Catalog's *Courses that may align*,
 once a source names courses. (2) Training sites for a held title new to the reference, and the *Held titles by group*
 table, only if Sam asks.

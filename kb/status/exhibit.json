@@ -99,17 +99,27 @@
   {
    "title": "Drop the Engine Performance 1 and 2 ASE issuer rows",
    "text": "Open Asks Sheet 161 card 1: Sam's two ASE issuer saves moved to the new names unchanged; dropping them as for Electrical/Electronics is proposed, held since it deletes his rows.",
-   "link": "https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv"
+   "link": "https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-03",
+    "words": "drop"
+   }
   },
   {
    "title": "Metal Building Erection 1's issuer: Iron Workers or the colleges",
    "text": "Open Asks Sheet 161 card 2: Sam's Iron Workers row could not move onto the bulk run's California Community Colleges row; his is proposed, held since it deletes a row.",
-   "link": "https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv"
+   "link": "https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv",
+   "answer": {
+    "by": "Sam",
+    "at": "2026-11-03",
+    "words": "ironworkers"
+   }
   }
  ],
  "notes": {},
  "headline": [],
- "written_at": "2026-11-03T15:40:00Z",
+ "written_at": "2026-11-03T15:25:00Z",
  "project": "exhibit",
  "next_step": {
   "title": "Move the panel rows each fold names",
@@ -117,7 +127,7 @@
  },
  "changes": [
   {
-   "at": "2026-11-03T15:30:00Z",
+   "at": "2026-11-03T15:10:00Z",
    "text": "Ten Curate-panel rows left under credentials Sam's Another look renamed or retired on 11-02 and 11-03 moved to the new names (receipt kb/receipts/credential_panel_move_2026-11-03_skycheckerberry.json); two calls went to Open Asks Sheet 161."
   },
   {

@@ -8,7 +8,7 @@ status: current
 
 # You are SkyBlackberry, the Exhibits tab's next build
 
-SkyCheckerberry ran on 2026-11-03 from 15:06Z to about 15:45Z, started from Sam's phone with SkyInkberry's older
+SkyCheckerberry ran on 2026-11-03 from 15:06Z to about 15:30Z, started from Sam's phone with SkyInkberry's older
 greeting line (it named SkyTeaberry). The handoff on main named SkyCheckerberry, so this session took that name. No
 other session was live on these files: the CSM Workspace session (#2729) had finished, and the funding session sat
 idle. This is a **light checkpoint**. The cer-procedures lane gained one NEEDS SAM marker, and the run wrote one data
@@ -30,13 +30,13 @@ names a `docs/session_<N>_handoff.md`, so it names the routine's latest (565) an
   issuer row under the new name. Five rename and confirm rows were already carried out: moved, Sam's *Spanish 1* →
   *Elementary Spanish I* would rename *Elementary Spanish 1* back to Roman.
 - **Open Asks Sheet 161** (https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv, current, `SHEET_ID`
-  `2026-11-03-open-asks-161`, db and comments, store empty at publish). Two cards, both held because each deletes a row:
+  `2026-11-03-open-asks-161`, db and comments, store empty at publish). Two cards, held because each deletes a row; Sam answered both at 15:14Z (*drop*, *ironworkers*):
   1. **Engine Performance 1 and 2:** drop Sam's two ASE issuer rows, as he did for Electrical/Electronics on 10-31.
   2. **Metal Building Erection 1:** whose issuer stands, Sam's Iron Workers row or a bulk run's California Community
      Colleges row.
 
   The builder and coverage test are in CPLBrain, with a premise and fixture for each card. The test passes 32 of 32.
-- **Nothing sent to the routine.** `kb_curation` held no `cer_procedure_*` row at 15:45Z.
+- **Nothing sent to the routine.** `kb_curation` held no `cer_procedure_*` row at 15:12Z.
 
 ## Read first
 
@@ -45,12 +45,10 @@ names a `docs/session_<N>_handoff.md`, so it names the routine's latest (565) an
 
 ## Open work, in order
 
-1. **Read Sheet 161's `replies` before acting.** On *drop*, delete the two Engine Performance
-   `issuing_agency_override` rows (values in the receipt), drop ASE from their records in `kb/credentials.json` as
-   SkyHuckleberry did for A6, and write `flag_for_sam` as *Answered (Sam, <date>): ...*. On *ironworkers*, delete the
-   bulk run's row under *Metal Building Erection 1 / Foreman Training*, move Sam's onto the new name, and record
-   `answer` in `left_in_place.conflict_for_sam`. Either answer drops the lane's marker. The card premises read those
-   two receipt fields.
+1. **Sheet 161 is answered** (15:14Z, his own call): *drop* and *ironworkers*. If the receipt's `then_planned`
+   still reads NOT APPLIED, the delete waited on Sam's confirmation of the statement. Read the four rows fresh, run its
+   `sql`, rename `then_planned` to `then_applied` with the time, and drop ASE from the Engine Performance 1 and 2
+   records in `kb/credentials.json`, as SkyHuckleberry did for A6.
 2. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
    and move the panel rows they list. Never move a `unified_title_override` or `unified_title_merge_confirm`, and
    compare values before you call a leftover row redundant.
