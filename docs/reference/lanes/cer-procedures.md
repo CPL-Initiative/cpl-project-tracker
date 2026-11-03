@@ -43,8 +43,8 @@ Sam's mock-up rulings, item by item, moved verbatim to `docs/cer_v2_redesign_les
 **The Exhibits tab** (`#exhibits`, `exhibits.js`; built 2026-10-31 in #2602, #2603 and #2604, history in the lessons
 doc's 2026-10-31 sections). *Review* draws mock-up v26's card per held title, the step tiles as filters and *Go to an
 exhibit*; `#exhibits/held`, `/conflict` and `/credentials` open one place, read once per visit, and the Commons' CER row
-links them (#2612). *Credentials* lists every credential, most students first, with a panel whose issuer and training
-sites (each with its college) save as `_CREDENTIAL_REVIEW::` rows; `resolve_sites` and `resolveSites` decide which
+links them (#2612). A List row's side panel (the Credentials view retired into it, 2026-11-03) sets the issuer and training
+sites (each with its college), saved as `_CREDENTIAL_REVIEW::` rows; `resolve_sites` and `resolveSites` decide which
 stands (`tests/credential_review_sites_test.py`); `field:kb_curation.training_sites_override` maps to DR-07. The panel
 reads `kb/exhibits_adoption.json`: each college's lines and units, the course a could-adopt college already teaches,
 the peer median. **Could adopt never reads the TOP and C-ID overlap** (Sam, 2026-09-24; Rule 7; KB note
