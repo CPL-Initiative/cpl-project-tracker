@@ -566,3 +566,14 @@ it sits, whether its courses agree) count the cards free of one auditor tag; the
 into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
 recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
 Every reference now carries the opened page.
+
+## Sheet 160 answered (S563 SkyBode, 2026-11-03)
+
+Sam answered card 1 *keep* at 12:44Z with a note, the whole sheet reviewed: *"We should count a common course reference even
+when a person has not confirmed it. The personal confirmation is an attribute we can give the reference when it occurs and we
+can then count confirmed CCRs, until which time we can use the CCRs to crosswalk local titles as best they can--even knowing
+they may need more work, folding with other courses or CCRs, or reminting. We will use them for what we can, and in the
+process of using them, reveal opportunities and gaps and misalignments to correct and then confirm when confidence is high
+enough. Hopefully, in the process of using imperfect CCRs, we can add lessons, rules, principles that will sharpen and
+strengthen our AI routines designed to create and manage the CCRs and all our common references."* The Course page keeps
+the auditor's *ready* as complete; the lane's NEXT is a confirmed count beside it.
