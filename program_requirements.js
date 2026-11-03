@@ -3133,7 +3133,114 @@
       foot: "The five parts count equally. The confirm step is left out: it becomes an optional college confirm once the reading procedures prove stable." }
   };
   var HOST = { section: section, goControl: goControl, callAnswered: callAnswered, callRecords: callRecords, callLinks: callLinks, callDone: callDone, goToCall: goToCall };
-  function viewProgress() { return CP.render(PROGRESS, progressContext(new Date()), state.progress || {}, HOST); }
+  /* ── the opened page (S558): the CPL Commons mock's shape, drawn by commons_page.js ──
+     Sam locked the mock on 2026-11-02 (S552); its opened page is the pattern for every reference: the progress line
+     over one denominator, Needs attention with an action each, three questions with every count over that same
+     denominator. Here the denominator is COCI's active program, the headline's own unit (complete: an active program
+     whose record passes the three machine checks, Sheet 95 card 2). A program carries requirements, not a name or a
+     credit, so the questions fit a program: where it is read from, what it requires, whether it matches the state's
+     record. Every figure is counted over the active programs from the reads the dash already holds (progressContext
+     and COCI's active keys), so the two cannot disagree; the dash stays one word away, under Details. */
+  function activeCounts(x) {
+    var K = state.progress && state.progress.activeKeys;
+    if (!K) return null;
+    var R = x.R || [], withUrl = {}, withProc = {}, c = { url: 0, proc: 0, read: 0, units: 0, added: 0, listed: 0 };
+    R.forEach(function (r) { if (r.catalog_url) withUrl[r.college] = 1; if (r.procedure) withProc[r.college] = 1; });
+    Object.keys(K).forEach(function (k) {
+      var col = k.split("|")[0];
+      if (withUrl[col]) c.url++;
+      if (withProc[col]) c.proc++;
+    });
+    rows().forEach(function (p) {
+      if (!K[keyOf(p)]) return;
+      var f = machineFails(p);
+      c.read++;
+      if (f.indexOf("units") < 0) c.units++;
+      if (f.indexOf("off-list") < 0) c.added++;
+      if (f.indexOf("courses") < 0) c.listed++;
+    });
+    return c;
+  }
+  function pageSpec(x) {
+    var Q = x.Q, a = activeCounts(x), go = function (to) { return function () { goTo(to); }; };
+    var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    var open = calls.filter(function (c) { return !callAnswered(c); });
+    var first = function (t) { var m = String(t || "").trim().match(/^[^.]*\.(?=\s|$)/); return m ? m[0] : String(t || "").trim(); };
+    var recently = Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text ? "Recently: " + first(Q.changes[0].text) : "";
+    var within = x.read > 0 ? fmt(x.read) + " records read at " + x.readColleges + (x.readColleges === 1 ? " college" : " colleges") +
+      (x.notActive ? ", " + fmt(x.notActive) + " of them on programs COCI does not list as active." : ".") : "";
+    var plural = function (n, one, many) { return n === 1 ? one : many; };
+    var R = x.R || [];
+    var items = [
+      { n: x.failing, words: plural(x.failing, "record fails a machine check; the fix goes to its college's reading procedure.",
+        "records fail a machine check; the fix goes to each college's reading procedure."), action: { words: "Open them", go: go(TO.fail) } },
+      { n: x.activeUnread, words: plural(x.activeUnread, "active program no read has reached yet.", "active programs no read has reached yet.") },
+      { n: R.length - x.withUrl, words: plural(R.length - x.withUrl, "college needs a catalog address.", "colleges need a catalog address."),
+        action: { words: "Open them", go: go(TO.noAddress) } },
+      { n: R.length - x.procedures, words: plural(R.length - x.procedures, "college has no reading procedure yet.", "colleges have no reading procedure yet."),
+        action: { words: "Open them", go: go(TO.noProcedure) } },
+      { n: x.addendaUnread, words: plural(x.addendaUnread, "catalog addendum to read.", "catalog addenda to read."), action: { words: "Open them", go: go(TO.addenda) } },
+      { n: x.mapsPublished - x.mapsSettled, words: plural(x.mapsPublished - x.mapsSettled, "published program map to read or settle.", "published program maps to read or settle."),
+        action: { words: "Open them", go: go(TO.maps) } }
+    ].filter(function (i) { return i.n == null || i.n > 0; });
+    open.forEach(function (c) {
+      var i = calls.indexOf(c);
+      items.push({ n: 1, words: "decision for " + x.decider + ": " + (c.title || "an open call") + ".",
+        action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link }
+          : { words: "Answer it", go: function () { goToCall(i); } } });
+    });
+    var sheet = calls.filter(function (c) { return c.link && /^https:\/\//.test(c.link); }).slice(-1)[0];
+    var r = function (label, k, to) { return { label: label, n: a ? a[k] : null, go: go(to || TO.records) }; };
+    return {
+      label: "Common Programs", prefix: "pr-pg-", reading: false,
+      status: open.length ? "Needs you" : "In progress",
+      lede: "CPL Pathways: each active program's requirements, read from its college's own catalog, so a learner can see which courses CPL clears.",
+      read: state.progress && state.progress.readAt ? "Figures read " + dayOf(state.progress.readAt) + "." : "",
+      links: [x.procedures ? { words: "How it is kept: " + fmt(x.procedures) + " reading procedures", go: go(TO.procedures) } : null,
+        { words: "Open CPL Pathways", href: TO.pathways.href },
+        sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
+      progress: { n: x.complete, of: x.active, short: "complete", words: "active programs harvested complete",
+        recently: [recently, within].filter(Boolean).join(" "),
+        calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmt(open.length) + " decisions wait on ") + x.decider + "."
+          : "No decisions wait on " + x.decider + ".") : "",
+        error: (x.errors && x.errors.active) || null },
+      attention: { items: items, empty: "Nothing in the harvest waits on a person.",
+        next: Q && Q.next_step && Q.next_step.title ? Q.next_step.title + (Q.next_step.text ? ". " + Q.next_step.text : "") : "" },
+      groups: [
+        { q: "Where is it read from?", rows: [r("At a college with a catalog address", "url", TO.colleges),
+          r("At a college with a reading procedure", "proc", TO.procedures)] },
+        { q: "What does it require?", rows: [r("Read from its catalog", "read"), r("The units add up", "units"),
+          r("Nothing added the catalog does not print", "added")] },
+        { q: "Does it match the state's record?", rows: [r("Every course COCI lists placed", "listed"),
+          { label: "Complete: passes all three checks, so Sierra quotes it", n: x.complete, go: go(TO.complete) }] }
+      ],
+      of: a ? x.active : null, ofWords: "active programs in COCI",
+      foot: "The records are staging: read by machine, checked by the reading procedures."
+    };
+  }
+  /* commons_page.js loads the first time Progress opens; until it arrives (or should it fail) the dash draws alone. */
+  var PAGE = { loading: false, failed: false };
+  function withPage() {
+    if (window.CPL_COMMONS_PAGE || PAGE.loading || PAGE.failed) return;
+    var T = window.CPL_TABS;
+    if (!T || typeof T.loadScript !== "function") { PAGE.failed = true; return; }
+    PAGE.loading = true;
+    T.loadScript("commons_page.js", "CPL_COMMONS_PAGE", function () {
+      PAGE.loading = false;
+      if (!window.CPL_COMMONS_PAGE) { PAGE.failed = true; return; }
+      if (state.view === "progress" && document.getElementById(ROOT_ID)) render();
+    });
+  }
+  function viewProgress() {
+    var x = progressContext(new Date());
+    var dash = CP.render(PROGRESS, x, state.progress || {}, HOST);
+    var PG = window.CPL_COMMONS_PAGE;
+    if (!PG) { withPage(); return dash; }
+    /* The opened page first; the milestones and parts one word away (the Commons first view's Details). */
+    return el("div", { cls: "prh-opened" }, [PG.render(pageSpec(x)),
+      section("progress:details", "Details: the milestones, the parts and the calls", "", [dash],
+        { cls: "prh-more", shut: secs()["progress:details"] == null && secs()["*"] == null })]);
+  }
 
   /* ── Sam's to-dos ──
    * Sam, 2026-10-09: "Put a button to my todo items on the front of Program Requirements so I
@@ -3191,6 +3298,7 @@
   }
   /* One call's card on the Progress view, open, scrolled to and focused. */
   function goToCall(i) {
+    secSet("progress:details", true);   /* the calls sit in the dash, under the opened page's Details (S558) */
     secSet("progress:call:" + i, true);
     choose("progress", false);
     var card = document.querySelector("#" + ROOT_ID + ' details[data-sec="progress:call:' + i + '"]');
@@ -3861,7 +3969,7 @@
   }
 
   window.CPL_PROGRAM_REQUIREMENTS = {
-    activate: activate,
+    activate: activate, pageSpec: pageSpec, activeCounts: activeCounts,
     _state: state, _load: load, _render: render, _idle: idle,
     INDEX_SELECT: INDEX_SELECT, CHECKED_SELECT: CHECKED_SELECT, DRAFT_SELECT: DRAFT_SELECT, PICK_KEY: PICK_KEY, FILTERS_KEY: FILTERS_KEY, CIP_FAMS: CIP_FAMS, sectorOf: sectorOf,
     catalogStatus: catalogStatus, catalogAccess: catalogAccess, filterProcedures: filterProcedures, filterRegistry: filterRegistry, filterRecords: filterRecords, recordChecks: recordChecks,

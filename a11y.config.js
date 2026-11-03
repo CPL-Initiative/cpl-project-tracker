@@ -649,6 +649,13 @@ async function seedProgress(page, theme) {
     S.view = "progress";
     M._render();
   });
+  /* The opened page (S558): commons_page.js arrives on the first render, then the tab draws again; open Details so
+     the dash under it is measured too. */
+  await page.waitForSelector("#program-requirements-root nav[aria-label^='Common Programs']", { timeout: 30000 });
+  await page.evaluate(() => {
+    const d = document.querySelector('#program-requirements-root details[data-sec="progress:details"]');
+    if (d) d.open = true;
+  });
   await page.waitForTimeout(300);
 }
 

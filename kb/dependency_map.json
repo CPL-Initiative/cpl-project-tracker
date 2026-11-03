@@ -1618,7 +1618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2000
+     "line": 2007
     }
    ],
    "main_committers": []
@@ -2219,7 +2219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1041
+     "line": 1048
     }
    ],
    "main_committers": []
@@ -2238,7 +2238,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1386
+     "line": 1393
     },
     {
      "id": "module:college_briefing.js",
@@ -4182,7 +4182,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1664
+     "line": 1671
     }
    ],
    "main_committers": []
@@ -5231,7 +5231,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1555
+     "line": 1562
     },
     {
      "id": "module:admin.js",
@@ -5487,7 +5487,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 673
+     "line": 680
     },
     {
      "id": "module:cip_crosswalk.js",
@@ -5532,7 +5532,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3740,
+     "line": 3848,
      "tabs": [
       "program-requirements"
      ]
@@ -5990,7 +5990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3739,
+     "line": 3847,
      "tabs": [
       "program-requirements"
      ]
@@ -6043,6 +6043,16 @@
      "line": 2823,
      "tabs": [
       "exhibits"
+     ]
+    },
+    {
+     "id": "module:program_requirements.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 3228,
+     "tabs": [
+      "program-requirements"
      ]
     }
    ],
@@ -6274,7 +6284,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1939
+     "line": 1946
     },
     {
      "id": "module:college_briefing.js",
@@ -6480,7 +6490,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1101
+     "line": 1108
     },
     {
      "id": "module:cpl_funding.js",
@@ -27622,7 +27632,8 @@
   "commons_page.js": [
    "canonical-subj4",
    "cr-reference",
-   "exhibits"
+   "exhibits",
+   "program-requirements"
   ],
   "commons_progress.js": [
    "canonical-subj4",

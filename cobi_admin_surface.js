@@ -459,6 +459,7 @@ window.COBI_ADMIN_SURFACE = {
     "program-requirements": {
       "modules": [
         "commons_list.js",
+        "commons_page.js",
         "commons_progress.js",
         "program_requirements.js"
       ],

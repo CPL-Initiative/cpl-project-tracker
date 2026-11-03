@@ -97,9 +97,17 @@ too (S556):** the page over the 147 MQ disciplines with courses, with questions 
 code it is, how it reaches the courses); the milestones and steps under *Details*, the procedures and findings below.
 Guard `tests/csr_progress.test.js` (78), a11y `canonical-subj4-progress` (320 to 1440) and `-dark`.
 
-**NEXT:** the same page on CPL Pathways' Progress view (each hands
-`commons_page.js` a spec: its pair, its queues as *Needs attention*, its three questions), then the Course Progress view
-(below). The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
+**CPL Pathways too (S558, 2026-11-03):** the Program Requirements tab's Progress view draws the page first and the
+dash (milestones, parts, the whole harvest, the calls) under *Details*, closed; opening a call opens Details. The
+denominator is COCI's active program, the headline's own unit, and the three questions fit a program: where it is read
+from (a college with a catalog address, with a reading procedure), what it requires (read, units add up, nothing
+added), whether it matches the state's record (every course COCI lists placed, complete). A record on a program COCI
+does not list never counts; a failed active read says *Could not be read*. `commons_page.js` loads on the first
+Progress render. Guard `tests/program_requirements_page.test.js` (16); a11y `program-requirements-progress` and
+`-dark` wait for the page and open Details.
+
+**NEXT:** the Course Progress view (below), the last reference without the page. The a11y pass (`npm run a11y --
+cobi:commons`) passes on the first view at both widths (S552). The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
