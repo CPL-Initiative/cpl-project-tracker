@@ -48,8 +48,10 @@ rename never settles a group; Confirm the group and Not a topic sit in the refer
 find and replace: a replace across wordings would write one group once per wording. **A wording's title opens a side
 panel** (2026-11-03, the List norms' *The List is the workspace*): the wording, one line of what it is, its group's
 wordings (sortable; another's name opens its panel), Confirm the group and Not a topic with their own status line, and
-the rung, credentials and courses folded. Guards: `tests/cr_list.test.js`, `cr_list_panel`; a11y targets `cr-list`
-and `cr-list-dark` (the panel open).
+the rung, credentials and courses folded. **Above it, one line of the CR row** of `kb/status/commons.json` (its two
+issues set the List's *No rule or decision* and *Name to check*) and the worklist's measured stance folded behind
+*Hide the summary* (2026-11-03). Guards: `tests/cr_list.test.js`, `cr_list_panel`, `cr_list_line`; a11y targets
+`cr-list` and `cr-list-dark` (the panel open).
 
 ## Jev on this lane — the blocking, the gate, the verdicts (S279/S280, 2026-09-20)
 

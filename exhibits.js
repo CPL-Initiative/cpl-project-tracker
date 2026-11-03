@@ -1731,39 +1731,25 @@
   }
   /* One item of the line: the whole phrase is the control, as on the CSM Workspace; the list it names, when it shows
      here already, reads as plain words. A count that could not be read says so, never a zero (the S343 rule). */
-  function cmLineItem(n, href, words) {
-    if (n == null) return el("span", { text: "Could not be read: " + words });
-    var t = cmTarget(href), text = fmt(n) + " " + words;
+  /* A count on the line opens where its tile's count opens: a route in this tab (not the one the reader is on), or a link. */
+  function cmLineControl(href, text) {
+    var t = cmTarget(href);
     if (t && t.route && !cmHere(t)) return word(text, function () { cmGo(t.route, t.filter); }, { cls: "exh-w exh-li" });
     if (t && t.href && !t.route) {
       var a = el("a", { href: t.href, cls: "exh-li", text: text });
       if (/^https:\/\//.test(t.href)) { a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
       return a;
     }
-    return el("span", { text: text });
+    return null;
   }
+  /* The line itself is the List engine's (commons_list.js api.line, one renderer for every List's line), drawn with this
+     tab's class names so it looks as it did when Exhibits drew the first (#2736). */
   function cmLine(folded) {
-    var cm = state.cm, row = cm && cm.row, items = [];
-    if (row) {
-      var pairs = Array.isArray(row.pair) ? row.pair : [], p = pairs[0], c = pairs[1];
-      if (p) items.push(cmLineItem(p.n, p.open, p.of != null ? "of " + fmt(p.of) + " titles carry a review stamp" : "titles carry a review stamp"));
-      if (c) items.push(cmLineItem(c.n, c.open, "confirmed by a person"));
-      (Array.isArray(row.issues) ? row.issues : []).forEach(function (i) { items.push(cmLineItem(i.n, i.open, i.words)); });
-    } else {
-      items.push(el("span", { text: cm && cm.done ? "The Commons' figures could not be read" + (cm.error ? " (" + cm.error + ")" : "") : "Reading the Commons' figures" }));
-    }
-    var line = el("p", { cls: "exh-line" });
-    items.forEach(function (n, k) {
-      if (k) line.appendChild(el("span", { cls: "exh-sep", "aria-hidden": "true", text: "\u00b7" }));
-      line.appendChild(n);
-    });
-    var tog = word(folded ? "Show the summary" : "Hide the summary", function () {
-      state.dashFolded = !state.dashFolded;
-      render();
-      var b = document.getElementById("exh-fold-w");
-      if (b) b.focus();
-    }, { cls: "exh-w exh-fold-w", id: "exh-fold-w", "aria-expanded": folded ? "false" : "true", "aria-controls": "exh-fold" });
-    return el("div", { cls: "exh-linebar", role: "group", "aria-label": "The reference at a glance" }, [line, tog]);
+    var cm = state.cm;
+    return LIST_ENGINE.line({ row: cm && cm.row, error: cm && cm.done ? (cm.error || "") : null, folded: folded, foldId: "exh-fold",
+      onToggle: function () { state.dashFolded = !state.dashFolded; render(); },
+      control: cmLineControl,
+      cls: { bar: "exh-linebar", line: "exh-line", sep: "exh-sep", li: "exh-li", w: "exh-w" } });
   }
   function cmKeptGroup() {
     var now = new Date();

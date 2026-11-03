@@ -6,7 +6,7 @@
   "edge_functions": 11,
   "file_datasets": 782,
   "external_services": 192,
-  "consumers": 511,
+  "consumers": 512,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 40
@@ -812,7 +812,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2564,
+     "line": 2550,
      "tabs": [
       "exhibits"
      ]
@@ -5796,7 +5796,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 2053,
+     "line": 2039,
      "tabs": [
       "exhibits"
      ]
@@ -5980,7 +5980,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1133,
+     "line": 1172,
      "tabs": [
       "cr-reference"
      ]
@@ -5990,7 +5990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2556,
+     "line": 2542,
      "tabs": [
       "exhibits"
      ]
@@ -6050,7 +6050,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1162,
+     "line": 1201,
      "tabs": [
       "cr-reference"
      ]
@@ -6060,7 +6060,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2799,
+     "line": 2785,
      "tabs": [
       "exhibits"
      ]
@@ -6096,7 +6096,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1160,
+     "line": 1199,
      "tabs": [
       "cr-reference"
      ]
@@ -6840,7 +6840,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1163,
+     "line": 1202,
      "tabs": [
       "cr-reference"
      ]
@@ -14073,7 +14073,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1918,
+     "line": 1904,
      "tabs": [
       "exhibits"
      ]
@@ -17114,6 +17114,20 @@
   },
   "file:kb/status/commons.json": {
    "consumers": [
+    {
+     "id": "module:commons_list.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1360,
+     "tabs": [
+      "canonical-subj4",
+      "coci-lookup",
+      "cr-reference",
+      "exhibits",
+      "program-requirements"
+     ]
+    },
     {
      "id": "script:kb/_build_commons_status.py",
      "kind": "script",
@@ -29342,7 +29356,6 @@
  ],
  "unresolved": [
   "chatbox/sync_program_courses.py",
-  "commons_list.js",
   "cpl_session.js",
   "cr_progress.js",
   "exhibit_progress.js",
