@@ -188,7 +188,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `map_contacts_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_coordinator_summary` | tabs: `college-briefing`, `cpl-pathways`, `csm-workspace`, `implementation-funding`, `map-queue`, `map-users` · modules: `scripts/funding_sierra_note.js` | — |
 | `map_landing_contacts_replace` | scripts: `map/sync_landing_contacts.py` | — |
-| `map_landing_contacts_roster` | tabs: `map-queue`, `map-users` | — |
+| `map_landing_contacts_roster` | tabs: `csm-workspace`, `map-queue`, `map-users` | — |
 | `map_promote_custom_reports` | scripts: `kb/_sync_map_custom_reports.py` | — |
 | `map_users_replace` | scripts: `map/sync_map_users.py` | — |
 | `map_users_summary` | tabs: `map-queue`, `map-users` | — |

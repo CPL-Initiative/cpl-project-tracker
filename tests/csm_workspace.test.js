@@ -56,6 +56,8 @@ function setup(opts) {
   pane.id = "tab-csm-workspace";
   pane.innerHTML = '<div id="csm-workspace-root"></div>';
   doc.body.appendChild(pane);
+  // The page loads the college short names globally (both HTMLs); the contacts match a MAP name through them.
+  window.eval(fs.readFileSync(path.join(ROOT, "college_short_names.js"), "utf8"));
   window.eval(SRC);
   window.CPL_CSM_WORKSPACE.boot();
   return { window, doc, T, W: window.CPL_CSM_WORKSPACE, root: doc.getElementById("csm-workspace-root") };
@@ -76,9 +78,11 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
     JSON.stringify(pc.gate) === JSON.stringify(T._gate(OTHER)) && pc.conds.length > 0 && pc.conds.every((c) => typeof c.words === "string" && c.words));
   check("1d: the workspace's stage follows: waiting on the team, then held or qualifying",
     W._stageOf(mt) === "waiting" && ["held", "qual"].indexOf(W._stageOf(pc)) >= 0);
-  check("1e: the source reads the funding tab's snapshot and acts through it; its one table is its own log",
+  const reads = (SRC.match(/fetch\(R\.url \+ "([a-z_/]+)/g) || []).map((m) => m.replace(/^fetch\(R\.url \+ "/, "")).sort();
+  check("1e: the source acts through the funding tab's snapshot; it writes only its own log and reads the three contact sources",
     /CPL_FUNDING_TAB\.csm/.test(SRC) && !/rest\/v1/.test(SRC) &&
-    (SRC.match(/fetch\(R\.url \+ "([a-z_]+)/g) || []).every((m) => /"csm_log$/.test(m)) && (SRC.match(/fetch\(/g) || []).length === 2);
+    JSON.stringify(reads) === JSON.stringify(["csm_log", "csm_log", "map_college_contacts", "map_college_users", "rpc/map_landing_contacts_roster"]) &&
+    (SRC.match(/method: "POST"/g) || []).length === 1 && /rpc\/map_landing_contacts_roster", \{ method: "POST"/.test(SRC));
   check("1f: the queue opens on All open items and picks the first, the college waiting on the team",
     flat(root.querySelector(".showing")).indexOf("all open items") >= 0 &&
     !!root.querySelector('.row[data-sel="' + COLLEGE + '"][aria-current="true"]'));
@@ -215,6 +219,71 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
 
   const anon = setup({ signedIn: false });
   check("7k: a reader who is not signed in sees no History and no form", !anon.root.querySelector("form[data-logform]") && !/History/.test(flat(anon.root)));
+}
+
+// ── 8. the contacts on file, the popups, the email (asks 4, 7, 8, 11, 12, 13) ─────────────────────────────────
+{
+  const { window, doc, W, root } = setup({ signedIn: true });
+  W._setContacts({
+    dir: [{ college: "Pasadena City College", cpl_coordinator: "Rivera, Ana", cpl_coordinator_email: "ana@pasadena.edu",
+      primary_contact: "Bo Chen", primary_contact_email: "bo@pasadena.edu", vpaa: "Val Price", vpaa_email: "val@pasadena.edu",
+      ceo: "", ceo_email: "", landing_page_url: "https://cpldashboardcccco.azurewebsites.net/PCC" },
+      { college: "Some Other College", cpl_coordinator: "X", cpl_coordinator_email: "x@other.edu" }],
+    landing: [{ college: "Pasadena City College", contact_title: "CPL Counselor", contact_name: "Dee Lu", contact_email: "dee@pasadena.edu",
+      map_users: [{ role: "Ambassador" }] }],
+    users: [{ college: "Pasadena City College", first_name: "Dee", last_name: "Lu", email: "dee@pasadena.edu", role_name: "Ambassador" },
+      { college: "Pasadena City College", first_name: "Ivy", last_name: "Init", email: "ivy@pasadena.edu", role_name: "Initiator" }] });
+  const c = W._contactsOf(OTHER);
+  check("8a: a college's three sources match by name (Pasadena to Pasadena City College), another college's rows stay out",
+    c.dir.length === 1 && c.land.length === 1 && c.users.length === 2 && !c.people.some((p) => /other\.edu/.test(p.email)));
+  const mm = W._mismatches(OTHER);
+  check("8b: the mismatches say what disagrees: the coordinator missing from the landing page, the primary contact not a MAP user",
+    mm.some((x) => /CPL Coordinator in MAP's directory \(Rivera, Ana\) is not on the landing page/.test(x)) &&
+    mm.some((x) => /primary CPL contact \(Bo Chen\) is not an active MAP user/.test(x)));
+  W._state.sel = OTHER; W.paint();
+  clickEl(window, root.querySelector('[data-pop="contacts"]'));
+  const dlg = () => doc.querySelector("#cw-dlg-host dialog");
+  check("8c: Contacts on file opens a popup with the directory's fields, the landing page's people and MAP users by role",
+    !!dlg() && /Pasadena contacts/.test(flat(dlg().querySelector("h3"))) && /CPL Coordinator\s*Rivera, Ana, ana@pasadena\.edu/.test(flat(dlg())) &&
+    /CEO\s*Not on file/.test(flat(dlg())) && /CPL Counselor: Dee Lu/.test(flat(dlg())) && /Initiator 1/.test(flat(dlg())));
+  clickEl(window, dlg().querySelector('[data-pop="people"]'));
+  check("8d: Names, titles and emails lists every row with its source, in a table with header cells",
+    /names, titles and emails/.test(flat(dlg().querySelector("h3"))) && dlg().querySelectorAll("tbody tr").length === 6 &&
+    dlg().querySelectorAll('th[scope="col"]').length === 4);
+  const src = dlg().querySelector("[data-psrc]"); src.value = "MAP users"; src.dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("8e: the source filter narrows the table", dlg().querySelectorAll("tbody tr").length === 2);
+  clickEl(window, dlg().querySelector("[data-close]"));
+  check("8f: Close removes the popup", !doc.getElementById("cw-dlg-host"));
+
+  const conf = W._mail(OTHER);
+  check("8g0: a confirmed college's email opens on the follow-up, To its CPL Coordinator", conf.tpl === "follow" && conf.to === "ana@pasadena.edu");
+  W._state.mail = {};
+  W._snapshot().rows.find((r) => r.key === OTHER).part.confirmed = false;
+  const m = W._mail(OTHER);
+  check("8g: a college not yet confirmed gets the nudge: To the CPL Coordinator (Sam's order), Cc the VPAA",
+    m.tpl === "nudge" && m.to === "ana@pasadena.edu" && m.cc === "val@pasadena.edu" && /Dear Ana Rivera,/.test(m.body) && /participation confirmation for Pasadena/.test(m.subject));
+  W.paint();
+  const pick = root.querySelector('input[data-ccpick="ivy@pasadena.edu"]');
+  check("8h: Add people to Cc lists the people on file with an address, grouped by source", !!pick &&
+    root.querySelectorAll(".ccpick fieldset").length === 3);
+  pick.checked = true; pick.dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("8i: a tick adds the person to More Cc, and the line says how many", W._mail(OTHER).more.join() === "ivy@pasadena.edu" &&
+    root.querySelector("#cw-more").value === "ivy@pasadena.edu" && /1 added/.test(flat(root.querySelector(".ccpick summary"))));
+  const subj = root.querySelector("#cw-subj"); subj.value = "A new subject"; subj.dispatchEvent(new window.Event("input", { bubbles: true }));
+  const to = root.querySelector("#cw-to"); to.value = "bo@pasadena.edu"; to.dispatchEvent(new window.Event("input", { bubbles: true }));
+  check("8j: To and Subject take what the reviewer types", W._mail(OTHER).subject === "A new subject" && W._mail(OTHER).to === "bo@pasadena.edu");
+  const find = root.querySelector("#cw-ccfind"); find.value = "initiator"; find.dispatchEvent(new window.Event("input", { bubbles: true }));
+  check("8k: the picker's finder narrows the list", Array.from(root.querySelectorAll(".ccopt")).filter((o) => !o.hidden).length === 1);
+  let href = null; window.CPL_FUNDING_OPEN_MAIL = (h) => { href = h; };
+  clickEl(window, root.querySelector('[data-mailact="draft"]'));
+  check("8l: Open a draft opens To, Cc (seeded and added) and Subject, and the log notes it with a follow-up a week out",
+    /^mailto:bo%40pasadena\.edu\?subject=A%20new%20subject&cc=val%40pasadena\.edu%2Civy%40pasadena\.edu/.test(href || "") &&
+    W._log().some((x) => x.college === OTHER && /^Draft opened: A new subject, to bo@pasadena\.edu with 2 on Cc\.$/.test(x.body) && !!x.follow_up_on));
+  const tpl = root.querySelector("#cw-tpl"); tpl.value = "blank"; tpl.dispatchEvent(new window.Event("change", { bubbles: true }));
+  check("8m: a new template reseeds the words and keeps the people added to Cc", W._mail(OTHER).tpl === "blank" && W._mail(OTHER).more.join() === "ivy@pasadena.edu");
+
+  const anon = setup({ signedIn: false });
+  check("8n: signed out, no contacts word, no email box, and no contact read", !anon.root.querySelector('[data-pop]') && !anon.root.querySelector("#cw-to"));
 }
 
 finish();

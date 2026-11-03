@@ -53,11 +53,23 @@ signed-in reviewer reads and writes (`is_allowed_reviewer()`), as `cpl_funding_n
 and who closed from the JWT. Mapped DR-09 in `kb/governance_surface_map.json` before its first write (Rule 10 a3).
 Migration `kb/migrations/2026-11-02_csm_log.sql` (rollback beside it), applied through `supabase-migrate.yml` (run 41547663538, receipt `kb/receipts/migration_s555_csm_log_41547663538.json`); read back live 23:53Z: RLS on, four policies, the stamp trigger, 0 rows. **Lesson:** a force-push (here the rebase onto #2708) re-runs `supabase-migrate.yml` when the branch's `.apply` differs from main, and its receipt commit (run 41551549036) is a bot push that starts no CI; the migration is idempotent, so the second apply changed nothing, and the next commit of your own runs the checks.
 
+✅ **The contacts and the email (S555).** For a signed-in reviewer the workspace reads MAP's directory
+(`map_college_contacts`), the landing pages (`rpc/map_landing_contacts_roster`) and MAP's active users (paged), each
+reviewer-gated in the database, matched to an institution as Nudge matches it (through `college_short_names.js`).
+**Contacts on file** (ask 4) opens a popup: the directory's twelve fields (*Not on file* where blank), the landing
+page's people with their MAP roles, MAP users by role, the mismatches in a sentence each (the coordinator missing from
+the landing page, the primary contact not an active MAP user), Copy every address. **Names, titles and emails** (ask 7):
+one table of every row, filtered by source. **Write an email** in each record: a template (a college not yet confirmed
+gets the nudge, To the first of Sam's cascade with the VPAA on Cc; any other a follow-up, To the requester or the CPL
+Coordinator), To, Cc, More Cc and Subject editable (asks 12, 13), **Add people to Cc** (asks 8, 11: a checklist grouped
+by source with a finder, each tick adding to More Cc), **Copy the email** (formatted, the logo on its signature line)
+and **Open a draft**; the log notes either, with a follow-up a week out unless unticked. A directory name keeps its
+comma (*Rivera, Ana*): names split on a new line or a semicolon alone.
+
 ## NEXT
 
-1. **The mock's contacts surfaces:** the Cc picker (asks 8, 11), the contacts popup and the names table (asks 4, 7),
-   every landing-page role (ask 6), the editable To and Subject (asks 12, 13), the hover cards (ask 10). The data
-   exists: `map_college_contacts`, `map_landing_contacts`, `map_college_users` (reviewer-gated), as Nudge reads them.
+1. **Build next from the mock:** the hover cards (ask 10) and every landing-page role across colleges (ask 6, the
+   CPL Coordinator card's link).
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.
 3. **Nudge logs itself:** a mail merge writes one entry per college it reached, with a follow-up date.
 4. **Other activities** (Sam: MAP onboarding, the activity cards): a second `activity` value and its own queue.

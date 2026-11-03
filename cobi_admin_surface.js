@@ -146,7 +146,8 @@ window.COBI_ADMIN_SURFACE = {
         "cpl_funding_nc_attestation_review",
         "cpl_funding_optin_review",
         "cpl_funding_requester_context",
-        "map_coordinator_summary"
+        "map_coordinator_summary",
+        "map_landing_contacts_roster"
       ],
       "measured": true
     },
