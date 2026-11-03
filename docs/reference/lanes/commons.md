@@ -81,10 +81,18 @@ loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/comm
 
 **A to-do closes here (S555, 2026-11-02).** Sam: *"There is one decision in the queue that doesn't give me a way to close it, just links to review."* A run-log call with a `todo_id` is a to-do; the Commons now reads the marks (`queue_todo_done`, for a signed-in reviewer), a standing mark answers its call, and an open to-do offers **Mark done** with a note in the band, through `rpc/queue_todo_done_add`. Guard `tests/commons.test.js` (todo 1-5).
 
-**NEXT:** carry the opened page's pattern (the progress line, *Needs attention* with an action each, the three question
-groups over one denominator; the mock's Exhibits artboard) to each reference's Progress view, Exhibits first; then the
-Course Progress view (below). The a11y pass (`npm run a11y -- cobi:commons`) passes on the new view at both widths (S552,
-after the card links took a 24px target).
+**The opened page, one renderer (S556, 2026-11-03).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
+the mock's opened page for any reference: the progress line over its one denominator, *Needs attention* with an action
+each and the team's next step, and the three question groups with every count over one denominator; an unread count says
+*Could not be read*. First Light tokens (the Commons tab alone wears Malone's look). **Exhibits carries it** as its
+**Progress** view, first in the views row, at `#exhibits/progress`, and the Common Exhibits card opens there; the tab
+still opens on Review (Sheet 147). The headline is the Commons row's pair (Sam's keep, Sheets 107 and 108); the groups
+read `credCounts()`, the Credentials tiles' own counts. The CER tab's S436 Progress view stands as kept. Guards
+`tests/exhibits_progress_page.test.js` (41), a11y `exhibits-progress` and `exhibits-progress-dark`.
+
+**NEXT:** the same page on the CR Reference's, Subjects' and CPL Pathways' Progress views (each hands
+`commons_page.js` a spec: its pair, its queues as *Needs attention*, its three questions), then the Course Progress view
+(below). The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
 hands it (Sam, 2026-11-01: *"This new list view is so helpful that I want one now for each of our Catalog Commons
