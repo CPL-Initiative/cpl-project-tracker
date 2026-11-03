@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 547 (SkyCartwheel, scheduled, the 08:12Z firing of 2026-11-02)
 tags: [handoff, course-outcomes, contacts-harvest, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 548

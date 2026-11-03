@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 548 (SkyTadpole, scheduled, the 10:12Z firing of 2026-11-02)
 tags: [handoff, contacts-harvest, credential-registry, cert-link]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 549

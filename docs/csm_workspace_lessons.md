@@ -57,7 +57,26 @@ role; 13 role kinds in all). Of the 10 confirmed colleges, 4 meet all three cond
 coordinator record in MAP, 3 also the veteran JSTs. MAP's directory and the landing page disagree on the coordinator at
 Marin and Butte (the page lists one, the directory none).
 
-**Next:** read the CSM team's Slack channel (Sam added the Slack connector at the end of S554) to see how the team
-talks about colleges, then plan the tab: one communications log keyed by college and activity (a Rule 10 a3 governance
-step before its first write), the MAP Users hand-off, and Slack as a read source and, with Sam's go, a place the
-workspace posts.
+**Next (S554):** read the Slack channel, then plan the tab. Both done in S555, below.
+
+## S555 SkyTadpole (2026-11-02/03): the workspace ships, with its log and its contacts
+
+- **One read, never a second copy.** The tab paints from `CPL_FUNDING_TAB.csm.snapshot()`, one record per institution
+  built from the funding tab's own `eligReqList`, `baselineGate`, rows and review RPCs, and decides through
+  `csm.act`, which calls the review lane's own Accept, Deny, Follow up and Email. The two tabs cannot disagree, and a
+  decision here is the same write and the same email (#2707).
+- **A condition still loading reads as qualifying, never held.** The funding gate fails open; the first stageOf put a
+  pending condition in *held*, which would have told the team to chase colleges that had met everything.
+- **`csm_log` is keyed by activity, never by module** (`activity` 'funding' today), so MAP onboarding and the activity
+  cards join without a table. A trigger stamps who wrote and who closed from the JWT, so no writer can name another.
+- **A force-push re-runs `supabase-migrate.yml`** when the branch's `.apply` differs from main, and its receipt commit
+  is a bot push that starts no CI: the PR shows no checks until your next commit. The migration is idempotent, so the
+  second apply changed nothing.
+- **A directory name keeps its comma.** Splitting MAP's `cpl_coordinator` on commas made *Rivera, Ana* two people;
+  names split on a new line or a semicolon, addresses on commas too (#2709).
+- **Dark `--surface` is translucent glass**; a popup over the page takes `--surface-opaque`, at a specificity the
+  ported rules cannot override.
+- **The default email follows the stage:** a confirmed college got the confirmation nudge in the first screenshot.
+  Look at a seeded record in a real browser before shipping; the jsdom suite passed with the wrong default.
+- **The Slack channel is `#mapanditpiteam`** (the ITPI CSMs and the MAP team); it carries college requests the log
+  should hold. Proposed: a reviewer's *Log from Slack* entry with the thread link, never an automatic import.

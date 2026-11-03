@@ -123,7 +123,9 @@ The whole ecosystem, end-to-end:
    Hygiene & Respiratory Care BS views; violet ⊕ adoption-option chips show
    where OTHER colleges already articulate a credential, each with a ⚡
    Quick Adopt request form; status stages (Discussion Draft / Active /
-   Tabled) + a print-ready ⬇ PDF extract), an **Implementation Funding** tab (the DRAFT
+   Tabled) + a print-ready ⬇ PDF extract), a **CSM Workspace** tab (the team's queue for each college over the
+   funding tab's own state: priority cards, an action center with the review before Accept, a communications
+   log with follow-up dates, the contacts on file and an email composer that copies for Outlook; S555), an **Implementation Funding** tab (the DRAFT
    CPL funding model as a scenario tool: a selectable 2-year window,
    **year-specific funding priorities, each card carrying its own Ed. Code
    §78093.2(d)(1) outcome** — its letter, name, citation and the statute's own

@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 553 (SkyPinwheel, Sam's session, started about 16:30Z 2026-11-02)
 tags: [handoff, library, remediation, accessibility, pdf]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 554

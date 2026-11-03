@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 545 (SkyWhirlpool, Sam's session, live from about 03:14Z 2026-11-02)
 tags: [handoff, commons, commons-list, college-identity, short-names, credential-registry]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 546

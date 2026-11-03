@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 551 (SkyWhirlpool, scheduled, the 13:12Z firing of 2026-11-02, started 13:57Z)
 tags: [handoff, contacts-harvest, decision-sheet]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 552

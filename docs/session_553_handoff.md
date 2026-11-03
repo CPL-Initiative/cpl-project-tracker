@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 552 (SkyCentaurus, Sam's session, started 14:39Z 2026-11-02)
 tags: [handoff, commons, naming, decision-sheet, contacts-harvest]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 553
