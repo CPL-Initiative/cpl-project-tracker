@@ -257,6 +257,12 @@ def row_course(root):
     today = figure(lambda: js_object(root, "unified_courses_standalone.js"))
     cv = canvas["n"] or {}
     counts = cv.get("counts") or {}
+    # Confirmed by a person (Sam, Sheet 160, 2026-11-03: "The personal confirmation is an attribute we can give the
+    # reference when it occurs and we can then count confirmed CCRs"): a scored card whose SkyView save in the curation
+    # overlay (kb/coci_curation.json, synced from kb_curation) names a person, never a cohort. Complete stays the
+    # auditor's ready; this count sits beside it. The overlay keeps the latest reviewer a card, so a cohort save made
+    # after a person's reads as the cohort's: the count is a floor.
+    conf = figure(lambda: confirmed_cards(root, A))
     procedures = [
         {"n": counts.get("identities"), "words": "identities and %s stand-alone courses on the canvas (the %s layout)%s"
          % (fmt(counts.get("stand_alone")), str(cv.get("_generated_from", ""))[:10],
@@ -272,7 +278,9 @@ def row_course(root):
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"
-                           % (fmt(fr["needs_review"]), fmt(fr["needs_repair"]), fmt(fr["not_ready"])), "open": tab}],
+                           % (fmt(fr["needs_review"]), fmt(fr["needs_repair"]), fmt(fr["not_ready"]))
+                           + ("; %s confirmed by a person in SkyView" % fmt(conf["n"]["confirmed"]) if conf["n"] else ""),
+                  "open": tab}],
         "tests": ["scored by the auditor"],
         "issues": [
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
@@ -286,12 +294,23 @@ def row_course(root):
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
         "facts": {"total": st["total_cards"], "ready": fr["ready"], "needs_review": fr["needs_review"],
                   "needs_repair": fr["needs_repair"], "not_ready": fr["not_ready"], "cap": cap["n"],
+                  "confirmed": conf["n"]["confirmed"] if conf["n"] else None,
+                  "confirmed_ready": conf["n"]["ready"] if conf["n"] else None,
                   # One count a tag, each a card carrying it (the auditor counts a card once): COCI Lookup's Progress
                   # view reads these for its three questions, so the page and this card share one read (S559).
                   "tags": {k: tags.get(k) for k in ("blank_description", "discipline_title_mismatch", "blank_discipline",
                            "seed_untouched_discipline", "top_discipline_disagreement", "unit_anomaly")}},
-        "sources": ["kb/row_audit/latest.json", "prototype/ccr_universe.json", "unified_courses_standalone.js"],
+        "sources": ["kb/row_audit/latest.json", "kb/coci_curation.json", "prototype/ccr_universe.json",
+                    "unified_courses_standalone.js"],
     }
+
+
+def confirmed_cards(root, A):
+    """The auditor's cards a person has saved in SkyView: {confirmed, ready} (ready = confirmed and scoring ready)."""
+    cur = load_json(root, "kb/coci_curation.json").get("curations") or {}
+    people = {k for k, v in cur.items() if isinstance(v, dict) and v.get("reviewed_by") and not is_cohort(v.get("reviewed_by"))}
+    rows = [r for r in A.get("rows") or [] if r.get("id") in people]
+    return {"confirmed": len(rows), "ready": sum(1 for r in rows if r.get("fr") == "ready")}
 
 
 # ── Common CR Reference ───────────────────────────────────────────────────────────────────
