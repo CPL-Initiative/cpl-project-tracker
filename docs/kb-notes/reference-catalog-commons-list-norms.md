@@ -53,6 +53,11 @@ credit lines, each college's own exhibit and MAP's Request Quick Adopt line in t
 into the List (2026-11-03; `#exhibits/credentials` opens the List). Next: the cards, the line and the panel over the
 CR, Subjects, Courses and Programs Lists, drawn by one renderer.
 
+**The panel's shared parts are the engine's** (`h.title`, `h.meta`, `h.heading`, `h.table`, `h.fold`, `h.open` in
+`commons_list.js`), so every List's panel reads alike: one line of what the row is, its members in a sortable table, and
+folds that keep their place for the visit. CR's wording panel is the first drawn by them (2026-11-03); Exhibits' moves
+onto them when next touched.
+
 ## What every List shares
 
 **The row is the thing that folds:** a credential, a wording, an MQ discipline, an M-ID, a program. In COCI Lookup the
