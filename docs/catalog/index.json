@@ -16476,8 +16476,24 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 525,
+   "count": 526,
    "docs": [
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 559,
+     "path": "docs/session_559_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "program-requirements",
+      "ui"
+     ],
+     "title": "Session 559 handoff: CPL Pathways' Progress view on the Commons page, Las Positas's SLO trial",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25452,5 +25468,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1357
+ "total": 1358
 }

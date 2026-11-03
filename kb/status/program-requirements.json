@@ -1,15 +1,15 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-03T06:29:39Z",
-  "session": 557,
-  "moniker": "SkySculptor",
+  "written_at": "2026-11-03T07:37:13Z",
+  "session": 558,
+  "moniker": "SkyFornax",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_558_handoff.md",
+  "handoff": "docs/session_559_handoff.md",
   "next_step": {
-    "title": "Santa Ana's load, then Las Positas's trial",
-    "text": "Santa Ana's four-part SLO read started 06:24Z on 2026-11-03 (PR 2716); once every slice is filed complete, the next firing writes its load. Las Positas's course index ran the same night (PR 2717); its trial follows. Monterey Peninsula's last 14 records still wait for a session with room for their page reads."
+    "title": "Santa Ana's load, then Las Positas's trial result",
+    "text": "Santa Ana's four-part SLO read (PR 2716) was still queued at 07:20Z on 2026-11-03; once every slice is filed complete, the next firing writes its load. Las Positas's 12-page trial went out on PR 2717 at 07:25Z; Columbia's trial follows tomorrow."
   },
   "calls": [
     {
@@ -208,6 +208,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-03T07:35:00Z",
+      "text": "This Progress view now opens on the CPL Commons page: the headline, what needs attention and three questions over COCI's active programs, with the milestones and parts under Details. Las Positas College's SLO trial started."
+    },
+    {
       "at": "2026-11-03T06:24:00Z",
       "text": "Santa Ana College's full SLO read (four parts) and Las Positas College's course index started on two hosts. Glendale and Los Angeles Valley read on, as Sam's marks asked; their discrepancies wait until the harvest is complete."
     },
@@ -399,7 +403,7 @@
   "next_run": {
     "name": "CPL Queue",
     "every_hours": 1,
-    "at": "2026-11-03T07:12:00Z"
+    "at": "2026-11-03T08:12:00Z"
   },
   "harvest": {
     "day": "2026-11-03",
