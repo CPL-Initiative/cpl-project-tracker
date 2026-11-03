@@ -1,12 +1,70 @@
 ---
-title: "CER redesign handoff: the List becomes the workspace, the Exhibits side panel (SkyTrue)"
+title: "CER redesign handoff: the Credentials view retires into the List, the CR List's panel and line (SkyMulberry)"
 date: 2026-11-03
-session: CER redesign build, side session (SkyTrue)
-tags: [handoff, cer, exhibits, exhibit-canonicalization, kb-curation, map-links]
+session: CER redesign build, side session (SkyMulberry)
+tags: [handoff, cer, exhibits, commons-list, cr-reference, map-links]
 status: current
 ---
 
-# You are SkyMulberry, the Exhibits tab's next build
+# You are SkyMedlar, the Lists' next build
+
+SkyMulberry ran on 2026-11-03 from about 21:06Z to 23:00Z. **Light checkpoint:** no §11 row moved, no re-mint, no data
+receipt. It wrote two `cpl_memory` rows: `exhibits-credentials-view-retired-into-list-2026-11-03` (verified by its
+merged PRs) and `pitfall-read-on-render-loops-on-failure-2026-11-03` (proposed). Skipped: `README.md`, `kb/README.md`,
+the pipeline view, a new KB note (the List norms note took the plan), the lessons doc (no retired text needed a home),
+and the decision sheet (nothing waits on Sam from this run). The CPL queue's `docs/session_<N>_handoff.md` stays the
+routine's (565). The lint flags two items that belong to the routine: `CLAUDE.md` at 60,641 of 60,000 bytes, and 15
+commits since `session_565` (its checkpoint trigger).
+
+## What shipped (SkyMulberry)
+
+- **#2738** (merged): SkyTrue's side panel, once `test` passed on its head.
+- **#2740** (merged): the side panel edits the issuer and training sites, each site for a college or any college,
+  with the Credentials view's own editor; a save shows in the row and joins *Changed this visit*. The List's row Edit
+  now keeps a kept site's college; it used to drop it.
+- **#2741** (merged): **the Credentials view retired into the List.** The panel gained the credit lines, each college's
+  own MAP exhibit, MAP's Request Quick Adopt line and the over-merged count. The finder searches local titles and
+  other issuers. The Review card's link reads *Set them in the List* and opens the panel; `#exhibits/credentials`
+  opens the List. Part C of `tests/exhibits.test.js` drives the List (186).
+- **#2742** (open, CI): **the CR List's side panel.** The engine gains the panel's shared parts (`h.title`, `h.meta`,
+  `h.heading`, `h.table`, `h.fold`, `h.open`). A wording's panel shows its group's wordings, Confirm the group and Not a
+  topic with their own status line, and the rest folded. `tests/cr_list_panel.test.js`.
+- **#2743** (open, CI, stacked on #2742; GitHub retargets it to `main` when #2742 merges): **the line over the CR List
+  and its folded cards.** The engine draws the line (`api.line`, `CPL_COMMONS_LIST.readCommons`, `lineItems`), and
+  Exhibits' line moved onto it with its own class names. `tests/cr_list_line.test.js`.
+
+## Open work, in order
+
+1. **Merge #2742, then #2743**, each once `test` passes on its current head. If #2743 conflicts after #2742's merge,
+   merge `main` into it and regenerate the dependency map (never pick sides on a generated file).
+2. **The other Lists take the line, the folded cards and the panel** (Subjects, then Programs, then Courses), one PR
+   each, with the engine's `api.line` and panel parts. Subjects' List is `canonical_subj4.js` (row key `subjects`);
+   Programs `program_requirements.js` (`requirements`); Courses `coci_lookup.js` (`course`; Courses keeps SkyView first).
+3. **Exhibits' panel onto the engine's parts** (`h.table` for its members, `h.fold` for its folds), and Exhibits' and
+   `cr_progress.js`'s reads of `kb/status/commons.json` onto `CPL_COMMONS_LIST.readCommons` where the engine is loaded
+   (the norm: never a second reader).
+4. **CR's worklist retires once the List does what it does.** Check what only the worklist still has (Add a wording
+   inside a group, a split, the per-group detail) and carry it into the panel first.
+5. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
+6. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names; the first rule sent
+   to the routine; the Catalog's *Courses that may align*, once a source names courses.
+
+## Lessons to honor
+
+- A read started from a render must be marked done for the visit, success or failure, or a failed read re-renders and
+  reads again forever. The CR line's jsdom test found it (a 404); `cpl_memory` has the pitfall.
+- `pkill -f <pattern>` kills your own shell when the pattern is in the command you typed. Kill by pid.
+- A merge refused with *Head branch was modified* can be your own short SHA; pass the full head SHA from the PR.
+- Before a view retires, port its tests onto the place that replaces it rather than deleting them: Part C kept every
+  guard on issuer and site resolution, the three-row save and the adoption semantics.
+
+## Let go
+
+At sign-off: drop the PR watches on #2742 and #2743 once merged. This session holds no check-in and no artifact watch.
+
+---
+
+# SkyTrue's record (earlier the same day)
 
 SkyTrue ran on 2026-11-03 from about 17:43Z to 20:25Z (Sam named it SkyTrue). **Light checkpoint** at the context
 warning (about 100,000 tokens left): no §11 row moved, no re-mint, no data receipt (one `cpl_memory` decision row).
@@ -59,48 +117,3 @@ refreshed after the light checkpoint: the INDEX history, the vault note, the run
 ## Let go
 
 At sign-off: drop the PR watches on #2737 and #2738 once merged, and the artifact watch on the mock.
-
----
-
-# SkyElderberry's record (earlier the same day)
-
-SkyElderberry ran on 2026-11-03 from about 16:45Z to 17:10Z. **Light checkpoint:** no lane changed state and the run
-wrote no data. Skipped: `README.md`, `kb/README.md`, the pipeline view, a KB note, `kb/status/*.json`, the decision
-sheet (nothing waits on Sam from this lane). The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (565).
-
-## What shipped (SkyElderberry)
-
-- **The Exhibits tab's MAP links go through `map_links.js`.** Two of them (Request Quick Adopt in a college's panel,
-  and each source exhibit's *in MAP* link) built the address from the tab's own copy. `mapUrl` in `exhibits.js` now
-  calls `CPL_MAP_LINKS.url` and keeps its copy only for a page without `map_links.js`; `linkUrl` folded into it.
-  `tests/exhibits.test.js` pins both links to the `map_links.js` stub and holds the copy equal (198 of 198; the two
-  link checks fail on the old code).
-- **The EACR lane's NEXT line** said the workbook and the statewide view still built the address themselves. Both
-  already call `CPL_MAP_LINKS.url`; the line now says so.
-- **Checked, nothing to do:** no fold after 11-03. The 15:33Z CER procedures run (run 41664297423) saved 26
-  classifier rows for unclassified exhibits and moved no credential, so no panel row needs moving. No Curate rows from
-  Sam since 12:00Z, and no `cer_procedure_*` row.
-- **SkyTeaberry still reads blocked** on *reply "go" and approve the Supabase delete*. That delete is SkyBlackberry's
-  16:08Z Sheet 161 apply; it is done. Do not reply "go" there.
-
-## Open work, in order
-
-1. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
-   and move the panel rows they list. Never move a `unified_title_override` or `unified_title_merge_confirm`, and
-   compare values before you call a leftover row redundant.
-2. **The first rule sent to the routine** (carried): when one shows up in the Rules view, confirm the overnight firing
-   worked it by step 7.
-3. **Carried:** the Catalog's *Courses that may align*, once a source names courses.
-4. **Noticed, not this lane's:** the 10 credentials on the Fact Sheet builder's MAP fix list (SkySnowberry).
-
-## Lessons to honor
-
-- Before acting on a lane's NEXT line, grep the code it names: the EACR line was one fix behind.
-- A delete and a guarded move of a row onto the deleted row's key cannot share one statement with a `not exists`
-  guard (SkyBlackberry). The repo's Supabase guard refuses a read that contains `replace`.
-- The cer-procedures lane sits at its 20,000-byte budget (19,900 now). Move a ruled paragraph to the lessons doc before
-  you add one.
-
-## Let go
-
-At sign-off this session holds no check-in and no artifact watch; its PR watch drops when the PR merges.

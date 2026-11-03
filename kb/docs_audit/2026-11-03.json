@@ -11,7 +11,7 @@
   },
   "summary": {
     "files": 1377,
-    "bytes": 13974170,
+    "bytes": 13977198,
     "over_budget": 1,
     "handoff_max": 565,
     "always_loaded_files": 1,
@@ -26,12 +26,12 @@
       },
       "other": {
         "files": 139,
-        "bytes": 4248297,
+        "bytes": 4249579,
         "over": 0
       },
       "index": {
         "files": 1,
-        "bytes": 8770,
+        "bytes": 8943,
         "over": 0
       },
       "lessons": {
@@ -41,12 +41,12 @@
       },
       "kb_note": {
         "files": 575,
-        "bytes": 2821932,
+        "bytes": 2822593,
         "over": 0
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 478621,
+        "bytes": 479533,
         "over": 0
       },
       "handoff": {
@@ -62,8 +62,8 @@
       "checkpoint_overdue": 1
     },
     "vault": {
-      "files": 25549,
-      "bytes": 4181090248,
+      "files": 25553,
+      "bytes": 4181177905,
       "heavy_bytes": 2977135510,
       "heavy_share": 0.712,
       "ignore_filters": [
@@ -903,11 +903,11 @@
       "fixable": false,
       "path": "docs/session_565_handoff.md",
       "detail": {
-        "commits_since": 10,
+        "commits_since": 15,
         "budget": 6,
         "handoff": "session_565_handoff.md"
       },
-      "message": "10 commit(s) have landed since `docs/session_565_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
+      "message": "15 commit(s) have landed since `docs/session_565_handoff.md` was last written (budget 6), which is Rule 9's trigger. Run `/checkpoint`: improvising one from memory is how nine of its thirteen artifacts go missing."
     }
   ]
 }
