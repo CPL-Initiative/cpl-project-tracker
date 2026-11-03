@@ -187,7 +187,7 @@ function cellText(li, title) {
     /Recently\s+Glendale's 220 records loaded\.$/.test(txt(reqCard.querySelector(".cmn-card-lines p:nth-child(2)")).replace(/\s+/g, " "))
     && /Next\s+Hand Sam the Commons mock-up/.test(txt(reqCard.querySelector(".cmn-card-lines p:nth-child(3)")).replace(/\s+/g, " ")));
   check("the Programs card opens as CPL Pathways (Sam, 2026-10-21) and carries Decision record",
-    txt(reqCard.querySelector('.cmn-card-links a[href="#program-requirements"]')) === "CPL Pathways" && txt(reqCard.querySelector(".cmn-record")) === "Decision record");
+    txt(reqCard.querySelector('.cmn-card-links a[href="#program-requirements/list"]')) === "CPL Pathways" && txt(reqCard.querySelector(".cmn-record")) === "Decision record");
   const exCard = t.d.querySelector('.cmn-card[data-card="exhibit"]');
   check("a card with no run log reads In progress and Recently from its machine stamp", txt(exCard.querySelector(".cmn-pill")) === "In progress"
     && /Recently\s+The saving run and the fold, /.test(txt(exCard.querySelector(".cmn-card-lines")).replace(/\s+/g, " ")));

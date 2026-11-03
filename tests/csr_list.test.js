@@ -329,6 +329,11 @@ function change(t, inp, v) { inp.value = v; inp.dispatchEvent(new t.w.Event("cha
     && rows(so.d).map(titleOf).join("|") === "Agricultural Business and Related Services|Psychology", rows(so.d).map(titleOf).join("|"));
   check("(12) the open pick carries Confirm this pick on its row, and the one in a collision waits for a person instead",
     !!sgOf(so.d, "Psychology") && /Confirm this pick/.test(txt(sgOf(so.d, "Psychology"))) && !sgOf(so.d, "Agricultural Business and Related Services"));
+  // #canonical-subj4/list/<filter> opens the List on any of its filters (the Commons card's counts, Sam 2026-11-03).
+  const sp = boot({ hash: "#canonical-subj4/list/collision" });
+  await settle();
+  check("(12) #canonical-subj4/list/collision opens the List on In a collision", sp.M()._state.view === "list" && sp.M()._state.ls.f === "collision"
+    && rows(sp.d).length === 2 && rows(sp.d).every((r) => /AUTB/.test(txt(r))), rows(sp.d).map(titleOf).join("|"));
 
   let pass = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });

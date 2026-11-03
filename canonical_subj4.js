@@ -2623,6 +2623,10 @@
     cohort: "Confirmed by a session cohort", open: "Open" };
   var SOURCE_WORDS = { ccn: "CCN", "c-id": "C-ID", csr: "Minted here" };
   function listState() { return state.ls || (state.ls = {}); }
+  /* The List's filters; #canonical-subj4/list/<id> opens the List on one (a Commons count, Sam 2026-11-03). */
+  var LIST_FILTERS = [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["person", "Confirmed by a person"],
+    ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"], ["selected", "Selected"], ["changed", "Changed this visit"]];
+  function listFilterId(id) { return LIST_FILTERS.some(function (f) { return f[0] === id; }) ? id : null; }
   function confirmedHow(e) {
     if (!isConfirmed(e)) return "open";
     if (!isCohort(e.reviewed_by)) return "person";
@@ -2847,8 +2851,7 @@
           api.word("Go to the Reference view", function () { applyView("reference"); })]));
         return true;
       },
-      filters: [["", "All"], ["open", "Open"], ["suggested", "Suggested picks"], ["person", "Confirmed by a person"],
-        ["procedure", "Confirmed by a procedure"], ["collision", "In a collision"], ["selected", "Selected"], ["changed", "Changed this visit"]],
+      filters: LIST_FILTERS,
       filterPass: function (r, L) {
         if (L.f === "open") return r.how === "open";
         if (L.f === "person") return r.how === "person";
@@ -2957,6 +2960,7 @@
     var parts = h.split("/");
     if (parts[0] !== QS_TAB) return false;
     var r = parts[1] || "";
+    if (r === "list" && parts[2] && listFilterId(parts[2])) { goTo({ view: "list", filter: parts[2] }); return true; }
     if (VIEW_MOUNT[r]) { applyView(r); return true; }
     if (FILTER_ROUTES[r]) { goTo({ view: "reference", filter: r }); return true; }
     if (r === "check") { goTo(TO.check); return true; }

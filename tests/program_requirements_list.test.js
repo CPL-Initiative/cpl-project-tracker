@@ -59,7 +59,7 @@ const RECORDS = [
 function tab(opts) {
   opts = opts || {};
   const dom = new JSDOM('<!doctype html><html><head></head><body><div id="program-requirements-root"></div></body></html>',
-    { url: "https://example.org/#program-requirements/list", runScripts: "dangerously" });
+    { url: "https://example.org/" + (opts.hash || "#program-requirements/list"), runScripts: "dangerously" });
   const w = dom.window, calls = [];
   w.fetch = function () { return new Promise(function () {}); };
   [COMMONS, SRC].forEach(function (s) { const e = w.document.createElement("script"); e.textContent = s; w.document.body.appendChild(e); });
@@ -227,6 +227,18 @@ function words(d, re) { return Array.from(d.querySelectorAll("button")).find((b)
   check("(10) sorting and filtering 20,282 rows stays quick", Math.max.apply(null, ms) < 2000, ms.join(", ") + " ms");
 
   check("(11) no raw hex in the List's CSS", !/#[0-9a-fA-F]{3,6}\b/.test(txt(t.d.getElementById("prl-css"))));
+
+  // ── (12) a Commons count opens the List on its filter (Sam, 2026-11-03: the List is the default for the Commons' actions) ──
+  const tf = tab({ hash: "#program-requirements/list/fail" });
+  await settle();
+  check("(12) #program-requirements/list/fail opens the List on Fail a machine check",
+    rows(tf.d).map((r) => txt(cell(tf.d, r, "Program"))).join("|") === "Accounting|Nursing",
+    rows(tf.d).map((r) => txt(cell(tf.d, r, "Program"))).join("|"));
+  const tu = tab({ hash: "#program-requirements/list/unread" });
+  await settle();
+  check("(12) #program-requirements/list/unread opens the List on Not read yet",
+    rows(tu.d).map((r) => txt(cell(tu.d, r, "Program"))).join("|") === "Art History|English as a Second Language",
+    rows(tu.d).map((r) => txt(cell(tu.d, r, "Program"))).join("|"));
 
   let pass = 0;
   results.forEach(([n, ok, why]) => { console.log((ok ? "PASS " : "FAIL ") + n + (ok || !why ? "" : "\n     " + why)); if (ok) pass++; });

@@ -48,7 +48,7 @@
      the calls, Recently and Next come from the files; only the name, the one-line what and the opening words live here. */
   var CARDS = {
     requirements: { name: "Common Programs", what: "What each college program requires, read from its catalog.",
-      links: [{ href: "#program-requirements", text: "CPL Pathways" }] },
+      links: [{ href: "#program-requirements/list", text: "CPL Pathways" }] },
     subjects: { name: "Common Subjects", what: "One shared subject code for each discipline, the key every common course sits under." },
     exhibit: { name: "Common Exhibits", what: "Every credential colleges grant credit for, under one name and issuer." },
     cr: { name: "Common Credit Recommendations", what: "One wording for each credit recommendation, so the same credit reads the same everywhere." },

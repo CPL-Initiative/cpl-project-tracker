@@ -84,7 +84,7 @@ loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/comm
 **The opened page, one renderer (S556 to S559).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
 the mock's opened page for any reference: the progress line over one denominator, *Needs attention* with an action each,
 and three question groups over that denominator; an unread count says *Could not be read*. First Light tokens. **Every
-reference carries it** as a **Progress** view, first in its views row, while each tab still opens where it did:
+reference carries it** as a **Progress** view, one word from the List the card opens (Sam, 2026-11-03: *"open the List view as the default for all the commons actions"*; held exhibit titles keep Review, Courses keeps SkyView):
 Exhibits `#exhibits/progress` (questions read `credCounts()`, the tiles' own counts), CR Reference
 `#cr-reference/progress`, Subjects (`canonical-subj4`), CPL Pathways (`#program-requirements`, denominator COCI's active
 program) and the Common Course Reference in COCI Lookup (`#coci-lookup/progress`, the row's pair: ready of the auditor's
