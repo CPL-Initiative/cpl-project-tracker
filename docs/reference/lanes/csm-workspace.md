@@ -61,5 +61,8 @@ Migration `kb/migrations/2026-11-02_csm_log.sql` (rollback beside it), applied t
 2. **The denial email** the mock fills with what failed (ask 15); the funding tab's Deny sends none today.
 3. **Nudge logs itself:** a mail merge writes one entry per college it reached, with a follow-up date.
 4. **Other activities** (Sam: MAP onboarding, the activity cards): a second `activity` value and its own queue.
-5. **Read the CSM team's Slack channel** (Sam added the connector at the end of S554; read, never post without his go)
-   and say how it could feed the log.
+5. **The CSM team's Slack channel is `#mapanditpiteam`** (read S555, 2026-11-03, read-only): the ITPI CSMs and
+   the MAP team coordinate there, and it carries college requests the log should hold (a college's new CPL
+   Coordinator asking to join the listserv, 2026-11-02; who answers which college). Proposed: a **Log from Slack**
+   entry kind carrying the thread's link, written by a reviewer from the workspace; never an automatic import, and
+   never a post to Slack without Sam's go. `#map-internal-team` and `#map-intiative` read empty to this connector.
