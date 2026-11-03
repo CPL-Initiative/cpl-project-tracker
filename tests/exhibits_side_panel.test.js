@@ -7,7 +7,10 @@
 //       each with its MAP link;
 //   (3) the rest folded below: what each college awards, the issuer and training sites, who could adopt it;
 //   (4) another title swaps the panel; Close and Escape shut it and return focus to the row's title;
-//   (5) the Students column reads the reference's count, a suppressed one Too few.
+//   (5) the Students column reads the reference's count, a suppressed one Too few;
+//   (6) the issuer and training sites are edited in the panel, with the Credentials view's own editor (a site for a
+//       college or any college), so that view can retire: the fold keeps its place through a redraw, Save writes the
+//       three _CREDENTIAL_REVIEW:: rows, the List's row shows it at once and joins Changed this visit.
 // Run from repo root: `node tests/exhibits_side_panel.test.js` (or `npm test`).
 const fs = require("fs");
 const { JSDOM } = require("jsdom");
@@ -96,14 +99,15 @@ function load(opts) {
   }, opts.files || {});
   w.fetch = function (url, init) {
     url = String(url); init = init || {};
-    calls.push({ url: url, method: init.method || "GET" });
+    calls.push({ url: url, method: init.method || "GET", body: init.body ? JSON.parse(init.body) : null });
     function ok(obj) { return Promise.resolve({ ok: true, status: 200, json: function () { return Promise.resolve(JSON.parse(JSON.stringify(obj))); } }); }
     function bad(st) { return Promise.resolve({ ok: false, status: st, json: function () { return Promise.resolve({}); } }); }
     if (Object.prototype.hasOwnProperty.call(files, url)) return files[url] === 404 ? bad(404) : ok(files[url]);
     if (/\/rest\/v1\/kb_curation/.test(url)) return ok([]);
     return bad(404);
   };
-  w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(null); }, authHeaders: function () { return {}; } };
+  w.CPL_SESSION = { ensureFresh: function () { return Promise.resolve(opts.signedIn ? { access_token: "t", email: "reviewer@example.org" } : null); },
+    authHeaders: function () { return { apikey: "anon" }; } };
   w.CPL_TABS = { loadScript: function (s, name, cb) {
     if (s === "credential_reference_data.js") w[name] = JSON.parse(JSON.stringify(CREDREF));
     if (s === "commons_list.js") { const e = w.document.createElement("script"); e.textContent = fs.readFileSync("commons_list.js", "utf8"); w.document.body.appendChild(e); }
@@ -150,8 +154,33 @@ function panel(d) { return d.getElementById("exh-l-panel"); }
   check("(3) what each college awards, most units first, with the median", /The median articulating college awards 6 units\./.test(txt(more))
     && /Bakersfield College , 9 units: EMTC B50, 9 hours in Emergency Medical Technician/.test(txt(more))
     && txt(more).indexOf("Bakersfield") < txt(more).indexOf("Los Angeles Mission"), txt(more));
-  check("(3) the issuer, the training sites and who could adopt it", /Issuer: National Registry of Emergency Medical Technicians/.test(txt(more))
-    && /Training sites: Fontana High School, for any college/.test(txt(more)) && /College of San Mateo already teaches FIRE 717 \(3 units\)/.test(txt(more)), txt(more));
+  check("(3) and who could adopt it", /College of San Mateo already teaches FIRE 717 \(3 units\)/.test(txt(more)), txt(more));
+  check("(6) the panel, its title's drawer included, no longer sends a reader to the Credentials view", !/Credentials/.test(txt(panel(t.d))), txt(panel(t.d)));
+  const ed = () => panel(t.d).querySelector("details.exh-pn-edit");
+  check("(6) the issuer and training sites fold above the rest, the summary naming both", !!ed() && !ed().open
+    && txt(ed().querySelector("summary")) === "Who issues it, and where it is trained: National Registry of Emergency Medical Technicians; 1 training site"
+    && ed().compareDocumentPosition(more) === 4, ed() && txt(ed().querySelector("summary")));
+  ed().open = true; await settle();
+  const $ = (id) => t.d.getElementById(id);
+  check("(6) the editor holds the issuer and the site, for any college", $("exh-pn-issuer").value === "National Registry of Emergency Medical Technicians"
+    && $("exh-pn-site-0").value === "Fontana High School" && $("exh-pn-col-0").value === "");
+  check("(6) a site's college is one of the colleges articulating it", Array.from($("exh-pn-col-0").options).map((o) => o.value).join("|")
+    === "|Bakersfield College|Los Angeles Mission College", Array.from($("exh-pn-col-0").options).map((o) => o.value).join("|"));
+  $("exh-pn-issuer").value = "Comp"; $("exh-pn-issuer").dispatchEvent(new t.w.Event("input"));
+  const opts = $("exh-pn-issuer-opts");
+  check("(6) the issuer box offers the names already in the reference", !!opts && !opts.hidden && /CompTIA/.test(txt(opts)), opts && txt(opts));
+  Array.from(opts.querySelectorAll("button")).find((b) => txt(b) === "CompTIA").click();
+  $("exh-pn-issuer").value = "NREMT"; $("exh-pn-issuer").dispatchEvent(new t.w.Event("input"));
+  Array.from(panel(t.d).querySelectorAll(".exh-pn-table th button")).find((b) => /^Exhibit/.test(txt(b))).click(); await settle();
+  check("(6) a redraw keeps both folds where the reader left them, and the draft", ed().open && !panel(t.d).querySelector("details.exh-pn-more").open
+    && $("exh-pn-issuer").value === "NREMT");
+  Array.from(ed().querySelectorAll("button")).find((b) => txt(b) === "Add a training site").click(); await settle();
+  check("(6) Add a training site adds a row and focuses its box", !!$("exh-pn-site-1") && t.d.activeElement === $("exh-pn-site-1") && ed().open);
+  t.d.querySelector('#exh-l-panel [aria-label="Remove training site 2"]').click(); await settle();
+  check("(6) Remove takes it away and returns focus to Add", !$("exh-pn-site-1") && t.d.activeElement === $("exh-pn-add"));
+  $("exh-pn-save").click(); await settle();
+  check("(6) signed out, Save asks for a sign-in and writes nothing", /Sign in as a reviewer to save/.test(txt(ed().querySelector(".exh-status")))
+    && !t.calls.some((c) => /kb_curation$/.test(c.url) && c.method === "POST") && panel(t.d) && ed().open);
   // (4) another title swaps it; Close and Escape return focus to the row
   titleBtn(t.d, "CompTIA Security+").click(); await settle();
   check("(4) another title swaps the panel", txt(panel(t.d).querySelector(".exh-pn-h")) === "CompTIA Security+"
@@ -167,6 +196,48 @@ function panel(d) { return d.getElementById("exh-l-panel"); }
   const rowOf = (ut) => Array.from(t.d.querySelectorAll(".exh-l-table tbody tr")).find((r) => r.querySelector("td[data-key]") && r.querySelector("td[data-key]").getAttribute("data-key") === ut);
   check("(5) the Students column reads the count, a suppressed one Too few", si > -1 && txt(rowOf("CompTIA Security+").children[si]) === "57"
     && txt(rowOf("Emergency Medical Technician").children[si]) === "Too few", heads.join(" | "));
+
+  // (6) signed in: the save
+  t = await boot({ hash: "#exhibits/list", signedIn: true });
+  titleBtn(t.d, "Emergency Medical Technician").click(); await settle();
+  const ed2 = () => panel(t.d).querySelector("details.exh-pn-edit");
+  ed2().open = true; await settle();
+  const $2 = (id) => t.d.getElementById(id);
+  $2("exh-pn-save").click(); await settle();
+  check("(6) Save with nothing changed writes nothing and says so", /Nothing changed/.test(txt(ed2().querySelector(".exh-status")))
+    && !t.calls.some((c) => /kb_curation$/.test(c.url) && c.method === "POST"));
+  $2("exh-pn-issuer").value = "  NREMT "; $2("exh-pn-issuer").dispatchEvent(new t.w.Event("input"));
+  $2("exh-pn-col-0").value = "Bakersfield College"; $2("exh-pn-col-0").dispatchEvent(new t.w.Event("change"));
+  Array.from(ed2().querySelectorAll("button")).find((b) => txt(b) === "Add a training site").click(); await settle();
+  $2("exh-pn-col-1").value = "Los Angeles Mission College"; $2("exh-pn-col-1").dispatchEvent(new t.w.Event("change"));
+  $2("exh-pn-site-1").value = "LA Mission   EMT Academy"; $2("exh-pn-site-1").dispatchEvent(new t.w.Event("input"));
+  $2("exh-pn-save").click(); await settle();
+  const posts = t.calls.filter((c) => /kb_curation$/.test(c.url) && c.method === "POST");
+  const byField = {}; posts.forEach((c) => { byField[c.body.field] = c.body; });
+  check("(6) Save writes three rows under the credential's key, as the reviewer", posts.length === 3
+    && posts.every((c) => c.body.course_id === "_CREDENTIAL_REVIEW::Emergency Medical Technician" && c.body.reviewer_email === "reviewer@example.org"),
+    JSON.stringify(posts.map((c) => c.body)));
+  check("(6) the issuer, the sites each with its college, and the sites joined", byField.issuing_agency_override && byField.issuing_agency_override.value === "NREMT"
+    && byField.training_sites_override && byField.training_sites_override.value === JSON.stringify([{ site: "Fontana High School", college: "Bakersfield College" },
+      { site: "LA Mission EMT Academy", college: "Los Angeles Mission College" }])
+    && byField.training_agency_override && byField.training_agency_override.value === "Fontana High School; LA Mission EMT Academy");
+  const heads2 = Array.from(t.d.querySelectorAll(".exh-l-table thead tr:first-child th")).map(txt);
+  const ii = heads2.findIndex((h) => /^Issuer/.test(h));
+  const emtRow = Array.from(t.d.querySelectorAll(".exh-l-table tbody tr")).find((r) => r.querySelector('td[data-key="Emergency Medical Technician"]'));
+  check("(6) the save says so, the panel and its fold stay, the row shows the issuer at once", /Saved\. The tabs show it now/.test(txt(ed2().querySelector(".exh-status")))
+    && ed2().open && t.d.activeElement === $2("exh-pn-save") && ii > -1 && txt(emtRow.children[ii]) === "NREMT",
+    txt(ed2().querySelector(".exh-status")) + " / " + (emtRow && ii > -1 ? txt(emtRow.children[ii]) : "no row"));
+  check("(6) the row joins Changed this visit", (t.M._state.ls.changed || []).indexOf("Emergency Medical Technician") > -1);
+  check("(6) the summary follows the save", /: NREMT; 2 training sites$/.test(txt(ed2().querySelector("summary"))), txt(ed2().querySelector("summary")));
+  check("(6) the Credentials view reads the same save", t.M._credCurrent(t.M._state.cs.rows.find((r) => r.ut === "Emergency Medical Technician")).sites.length === 2);
+  // The row's Edit holds site names alone; a site it keeps keeps its college.
+  Array.from(t.d.querySelectorAll("button")).find((b) => b.getAttribute("aria-label") === "Edit Emergency Medical Technician").click(); await settle();
+  $2("exh-l-s").value = "Fontana High School; LA Mission EMT Academy; Riverside EMS Academy"; $2("exh-l-s").dispatchEvent(new t.w.Event("input"));
+  Array.from(t.d.querySelectorAll("button")).find((b) => txt(b) === "Save" && b.id !== "exh-pn-save").click(); await settle();
+  const rowSites = t.calls.filter((c) => /kb_curation$/.test(c.url) && c.method === "POST" && c.body.field === "training_sites_override").slice(1);
+  check("(6) the row's Edit keeps each kept site's college, a new site for any college", rowSites.length === 1 && rowSites[0].body.value === JSON.stringify([
+    { site: "Fontana High School", college: "Bakersfield College" }, { site: "LA Mission EMT Academy", college: "Los Angeles Mission College" },
+    { site: "Riverside EMS Academy" }]), JSON.stringify(rowSites.map((c) => c.body.value)));
 
   const failed = results.filter(function (r) { return !r[1]; });
   results.forEach(function (r) { console.log((r[1] ? "PASS " : "FAIL ") + r[0] + (r[1] || !r[2] ? "" : "\n     " + r[2])); });
