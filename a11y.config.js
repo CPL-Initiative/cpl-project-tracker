@@ -799,35 +799,6 @@ async function seedExhibits(page, theme) {
   await page.waitForTimeout(300);
 }
 
-// Seeds the Exhibits tab's Credentials view (the credential panel, Sheet 147 step 2): the table, a
-// credential's panel open beside it, and one more training site row, so the select, the site box and
-// Remove are measured. The live rows are out of reach here, which paints the fallback note too. Since
-// step 3 a college chip is opened too (a could-adopt one where the credential has it), so the box of
-// what a college articulated or teaches, Exhibit Adoption's cell panel folded in, is measured.
-async function seedExhibitsCredentials(page, theme) {
-  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits") location.hash = "exhibits"; });
-  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
-  await page.waitForFunction(() => window.CPL_EXHIBITS && window.CPL_EXHIBITS._state.data, null, { timeout: 60000 });
-  await page.evaluate(() => {
-    const b = Array.prototype.filter.call(document.querySelectorAll("#exhibits-root .exh-views button"),
-      (x) => x.textContent.indexOf("Credentials") === 0)[0];
-    if (b) b.click();
-  });
-  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-table tbody tr"), null, { timeout: 60000 });
-  await page.evaluate(() => {
-    const b = document.querySelector("#exhibits-root .exh-table button.exh-cred");
-    if (b) b.click();
-  });
-  await page.waitForFunction(() => document.getElementById("exh-c-add"), null, { timeout: 30000 });
-  await page.evaluate(() => document.getElementById("exh-c-add").click());
-  await page.waitForTimeout(300);
-  await page.evaluate(() => {
-    const chips = document.querySelectorAll("#exh-cpanel button.exh-cchip");
-    if (chips.length) chips[chips.length - 1].click();
-  });
-  await page.waitForTimeout(300);
-}
-
 // Seeds the Exhibits tab's Progress view (S556): the reference opened in the CPL Commons mock's shape, drawn by
 // commons_page.js once the Commons row, the run log and the credentials are in. Opened by its word, as a reader does.
 async function seedExhibitsProgress(page, theme) {
@@ -852,8 +823,8 @@ async function seedExhibitsProgress(page, theme) {
 // Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
 // editor open, so the table, its sticky header and the editor's boxes are measured.
 /* The Exhibits List with a row's side panel open (2026-11-03): the first title pressed, its members table and the
-   folded rest opened (the issuer and training-site editor among it), so the panel's bar, its sort words, its MAP links,
-   the editor's boxes and the title drawer it carries are measured. */
+   folded rest opened (the issuer and training-site editor among it, one site row added), so the panel's bar, its sort
+   words, its MAP links, the editor's boxes and the title drawer it carries are measured. */
 async function seedExhibitsPanel(page, theme) {
   await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits/list") location.hash = "exhibits/list"; });
   if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
@@ -861,6 +832,9 @@ async function seedExhibitsPanel(page, theme) {
   await page.evaluate(() => { document.querySelector("#exhibits-root .exh-l-table tbody tr td.exh-l-title button.exh-l-open").click(); });
   await page.waitForFunction(() => document.getElementById("exh-l-panel"), null, { timeout: 10000 });
   await page.evaluate(() => { document.querySelectorAll("#exh-l-panel details.exh-pn-fold").forEach((d) => { d.open = true; }); });
+  // One training site row added, so its college select, site box and Remove are measured (the retired Credentials
+  // view's target measured them there).
+  await page.evaluate(() => { const a = document.getElementById("exh-pn-add"); if (a) a.click(); });
   await page.waitForTimeout(400);
   await page.evaluate(() => {
     try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
@@ -3510,16 +3484,6 @@ module.exports = {
     seed: (page) => seedFilterOpen(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
-  /* ── Exhibits: Credentials, the credential panel (Sheet 147 step 2) ─────
-     The table with a credential's panel open and a training site row added. */
-  "exhibits-credentials": {
-    file: "index.html",
-    title: "Exhibits: Credentials, a credential's panel open",
-    routes: [{ hash: "exhibits", name: "credentials" }],
-    widths: [390, 768, 1024, 1440],
-    seed: (page) => seedExhibitsCredentials(page, "light"),
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
-  },
   /* ── Exhibits: Progress, the reference opened (S556, the CPL Commons mock's Exhibits page) ── */
   "exhibits-progress": {
     file: "index.html",
@@ -3567,14 +3531,6 @@ module.exports = {
     routes: [{ hash: "exhibits/list", name: "panel-dark" }],
     widths: [390, 1440],
     seed: (page) => seedExhibitsPanel(page, "dark"),
-    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
-  },
-  "exhibits-credentials-dark": {
-    file: "index.html",
-    title: "Exhibits: Credentials, a credential's panel open, dark",
-    routes: [{ hash: "exhibits", name: "credentials-dark" }],
-    widths: [390, 768, 1024, 1440],
-    seed: (page) => seedExhibitsCredentials(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   /* ── Program Requirements: the exhibits view (S355) ─────────────────────
