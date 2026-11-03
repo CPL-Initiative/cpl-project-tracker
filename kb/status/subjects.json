@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 555,
-  "moniker": "SkyTadpole",
-  "run": "Sam's session",
+  "session": 561,
+  "moniker": "SkyCigar",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_556_handoff.md",
+  "handoff": "docs/session_562_handoff.md",
   "calls": [
     {
       "title": "Two forestry courses still sit on AGRI under a parent on ENVR",
@@ -20,13 +20,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-03T01:17:49Z",
+  "written_at": "2026-11-03T10:23:00Z",
   "project": "subjects",
   "next_step": {
     "title": "Work the stray codes toward one re-key window",
     "text": "The forestry stragglers moved on Sam's move-both (Open Asks Sheet 107 card 1, applied S436). The stray codes go through the discipline-blank worklist toward one re-key window."
   },
   "changes": [
+    {
+      "at": "2026-11-03T10:20:00Z",
+      "text": "The opened page and the Commons card count the same scan findings, 17 (the card had left out the dead-format anchor), and each names its timing (S561, #2722)."
+    },
     {
       "at": "2026-11-02T22:49:36Z",
       "text": "The forestry call records Sam's move-both of Sheet 107, so the Commons no longer counts it open (S555)."

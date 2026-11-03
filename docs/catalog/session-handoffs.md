@@ -15,10 +15,11 @@ related:
 
 One per session, newest first. **Only the highest-numbered handoff is authoritative** — the rest are history.
 
-528 document(s).
+529 document(s).
 
 | N | Handoff | Created |
 |---|---|---|
+| 562 | [Session 562 handoff: every Commons pair checked; Subjects and Exhibits now agree with their cards](../session_562_handoff.md) | 2026-11-03 |
 | 561 | [Session 561 handoff: the Program Requirements pair agrees with the Commons card](../session_561_handoff.md) | 2026-11-03 |
 | 560 | [Session 560 handoff: the Common Course Reference takes the Commons page; Santa Ana's SLOs loaded](../session_560_handoff.md) | 2026-11-03 |
 | 559 | [Session 559 handoff: CPL Pathways' Progress view on the Commons page, Las Positas's SLO trial](../session_559_handoff.md) | 2026-11-03 |

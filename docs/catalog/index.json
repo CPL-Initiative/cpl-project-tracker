@@ -16476,8 +16476,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 528,
+   "count": 529,
    "docs": [
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 562,
+     "path": "docs/session_562_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons"
+     ],
+     "title": "Session 562 handoff: every Commons pair checked; Subjects and Exhibits now agree with their cards",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25499,5 +25513,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1360
+ "total": 1361
 }
