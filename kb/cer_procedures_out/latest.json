@@ -1,12 +1,12 @@
 {
  "_about": "The CER procedures run (kb/_cer_procedures.py): what each procedure settled and held, and the titles that need a person. A pre-fill no reason holds saves under its procedure (Open Asks Sheet 94 card 2); a held one pre-fills the tab and waits for a person.",
- "_generated_at": "2026-11-02T17:29:36Z",
+ "_generated_at": "2026-11-03T15:33:08Z",
  "procedures_hash": "d20f2caab9db",
- "queue": 0,
+ "queue": 15,
  "saved_not_folded": 0,
- "waiting": 0,
- "proposed": 0,
- "needs_you_count": 0,
+ "waiting": 15,
+ "proposed": 15,
+ "needs_you_count": 2,
  "not_yet_asked": 0,
  "fold_held": 0,
  "procedures": [
@@ -21,8 +21,8 @@
     "words": "it would be helpful to have a procedure that pre-seeds the common exhibit titles and issuing agencies -- all the APs should be an easy win, right?",
     "skill": "Rule 5d"
    },
-   "settled": 0,
-   "held": 0,
+   "settled": 7,
+   "held": 1,
    "sample": []
   },
   {
@@ -111,9 +111,18 @@
     "words": "Sam's Cx procedure: CCN title, then C-ID, then the course's own title",
     "skill": "Rule 5c"
    },
-   "settled": 0,
+   "settled": 6,
    "held": 0,
-   "sample": []
+   "sample": [
+    [
+     "ASL 052 American Sign Language III",
+     "American Sign Language III"
+    ],
+    [
+     "CARP 207 Math for Construction Trades",
+     "Math for Construction Trades"
+    ]
+   ]
   },
   {
    "id": "high-school-rop",
@@ -142,7 +151,7 @@
     "skill": null,
     "also": "Open Asks Sheet 39 card 2 (2026-10-05): the OSHA issuer's name across the CER"
    },
-   "settled": 0,
+   "settled": 1,
    "held": 0,
    "sample": []
   },
@@ -172,7 +181,7 @@
     "words": "level words move to the end of the title",
     "skill": "Rule 5g"
    },
-   "settled": 0,
+   "settled": 2,
    "held": 0,
    "sample": []
   },
@@ -232,7 +241,7 @@
     "words": "the credential-merge doctrine: what folds and what stays distinct",
     "skill": "Rule 8c"
    },
-   "settled": 0,
+   "settled": 1,
    "held": 0,
    "sample": []
   },
@@ -261,11 +270,64 @@
     "date": "2026-10-18",
     "words": "have you classify and complete common exhibit titles"
    },
-   "settled": 0,
-   "held": 0,
-   "sample": []
+   "settled": 11,
+   "held": 2,
+   "sample": [
+    [
+     "CARP 223 OSHA 30 Hr. Construction Safety Training",
+     "OSHA 30 — Construction Industry Outreach (30-hour)"
+    ],
+    [
+     "IBEW- Inside Wireman, Apprenticeship Year 1",
+     "IBEW Electrician Apprenticeship — Year 1"
+    ],
+    [
+     "IBEW- Inside Wireman, Apprenticeship Year 2",
+     "IBEW Electrician Apprenticeship — Year 2"
+    ],
+    [
+     "IBEW- Inside Wireman, Apprenticeship Year 3",
+     "IBEW Electrician Apprenticeship — Year 3"
+    ],
+    [
+     "IBEW- Inside Wireman, Apprenticeship Year 4",
+     "IBEW Electrician Apprenticeship — Year 4"
+    ]
+   ]
   }
  ],
- "classifier_run": null,
- "needs_you": []
+ "classifier_run": {
+  "calls": 1,
+  "answered": 1,
+  "errors": [],
+  "cost_usd": 0.55
+ },
+ "needs_you": [
+  {
+   "raw_title": "IBEW-Intelligent Transportation Systems, Apprenticeship Year 1",
+   "why": "the classifier is unsure (0.80)",
+   "proposal": {
+    "title": "IBEW Intelligent Transportation Systems Apprenticeship — Year 1",
+    "issuer": "International Brotherhood of Electrical Workers (IBEW)",
+    "confidence": 0.8,
+    "note": "ITS is a distinct IBEW apprenticeship classification with no house family, so the row gets a new title in the house IBEW shape. The training JATC is unconfirmed, so the trainer is left null."
+   },
+   "colleges": [
+    "Santiago Canyon College"
+   ]
+  },
+  {
+   "raw_title": "Peace Officer Standards and Training",
+   "why": "the classifier is unsure (0.75)",
+   "proposal": {
+    "title": "POST Basic Academy",
+    "issuer": "California Commission on Peace Officer Standards and Training (POST)",
+    "confidence": 0.75,
+    "note": "The title names only the commission, not a specific certificate; the Basic Academy is assumed as the most common POST exhibit. Needs review."
+   },
+   "colleges": [
+    "Mission College"
+   ]
+  }
+ ]
 }

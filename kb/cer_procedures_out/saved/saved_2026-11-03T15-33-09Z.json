@@ -1,0 +1,383 @@
+{
+ "table": "kb_curation",
+ "mode": "save",
+ "at": "2026-11-03T15-33-09Z",
+ "run_id": "41664297423",
+ "ruling": "Open Asks Sheet 94 card 2 (Sam, 2026-10-18, 'save'): a result the classifier is sure of saves under its procedure, reversible by procedure",
+ "procedures_hash": "d20f2caab9db",
+ "cohorts": [
+  "cer-procedure-classifier@bot",
+  "cer-procedure-course-identity@bot"
+ ],
+ "held_live": [],
+ "rows": [
+  {
+   "course_id": "_UNCLASSIFIED::ASL 052 American Sign Language III",
+   "field": "unified_title_assignment",
+   "value": "American Sign Language III",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ASL 052 American Sign Language III",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CARP 207 Math for Construction Trades",
+   "field": "unified_title_assignment",
+   "value": "Math for Construction Trades",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CARP 207 Math for Construction Trades",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CARP 223 OSHA 30 Hr. Construction Safety Training",
+   "field": "unified_title_assignment",
+   "value": "OSHA 30 — Construction Industry Outreach (30-hour)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CARP 223 OSHA 30 Hr. Construction Safety Training",
+   "field": "issuing_agency_assignment",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 1",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 1",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 2",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 2",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 3",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 3",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 3",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 4",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 4",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 4",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 5",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 5",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 5",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship- Journeyperson",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Journeyperson",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship- Journeyperson",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Basic Food Preparation",
+   "field": "unified_title_assignment",
+   "value": "Basic Food Preparation",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Basic Food Preparation",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Cost Control for Food Service Organizations",
+   "field": "unified_title_assignment",
+   "value": "Cost Control for Food Service Organizations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Cost Control for Food Service Organizations",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Intermediate Food Preparation",
+   "field": "unified_title_assignment",
+   "value": "Food Preparation Intermediate",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Intermediate Food Preparation",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Introduction to the Hospitality Industry",
+   "field": "unified_title_assignment",
+   "value": "Introduction to the Hospitality Industry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Introduction to the Hospitality Industry",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "result": "written",
+ "inserted": [
+  {
+   "course_id": "_UNCLASSIFIED::ASL 052 American Sign Language III",
+   "field": "unified_title_assignment",
+   "value": "American Sign Language III",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::ASL 052 American Sign Language III",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CARP 207 Math for Construction Trades",
+   "field": "unified_title_assignment",
+   "value": "Math for Construction Trades",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CARP 207 Math for Construction Trades",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-course-identity@bot",
+   "procedure": "course-identity"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CARP 223 OSHA 30 Hr. Construction Safety Training",
+   "field": "unified_title_assignment",
+   "value": "OSHA 30 — Construction Industry Outreach (30-hour)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::CARP 223 OSHA 30 Hr. Construction Safety Training",
+   "field": "issuing_agency_assignment",
+   "value": "U.S. Occupational Safety and Health Administration (OSHA)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 1",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 1",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 1",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 2",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 2",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 2",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 3",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 3",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 3",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 4",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 4",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 4",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 5",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Year 5",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship Year 5",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship- Journeyperson",
+   "field": "unified_title_assignment",
+   "value": "IBEW Electrician Apprenticeship — Journeyperson",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::IBEW- Inside Wireman, Apprenticeship- Journeyperson",
+   "field": "issuing_agency_assignment",
+   "value": "International Brotherhood of Electrical Workers (IBEW)",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Basic Food Preparation",
+   "field": "unified_title_assignment",
+   "value": "Basic Food Preparation",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Basic Food Preparation",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Cost Control for Food Service Organizations",
+   "field": "unified_title_assignment",
+   "value": "Cost Control for Food Service Organizations",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Cost Control for Food Service Organizations",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Intermediate Food Preparation",
+   "field": "unified_title_assignment",
+   "value": "Food Preparation Intermediate",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Intermediate Food Preparation",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Introduction to the Hospitality Industry",
+   "field": "unified_title_assignment",
+   "value": "Introduction to the Hospitality Industry",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  },
+  {
+   "course_id": "_UNCLASSIFIED::Portfolio - Introduction to the Hospitality Industry",
+   "field": "issuing_agency_assignment",
+   "value": "California Community Colleges",
+   "reviewer_email": "cer-procedure-classifier@bot",
+   "procedure": "classifier"
+  }
+ ],
+ "skipped_as_duplicate": []
+}
