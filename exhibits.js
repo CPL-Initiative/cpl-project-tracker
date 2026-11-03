@@ -217,7 +217,12 @@
     if (names.length === 3) return names[0] + ", " + names[1] + " and " + names[2];
     return names[0] + ", " + names[1] + " and " + (names.length - 2) + " more";
   }
-  function mapUrl(id) { return MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW; }
+  /* The one MAP address is map_links.js's (CPL_MAP_LINKS.url), which COBI loads first; MAP_PAGE and MAP_VIEW are its
+     copy for a page without it, held equal by tests/exhibits.test.js. */
+  function mapUrl(id) {
+    var L = typeof window !== "undefined" && window.CPL_MAP_LINKS;
+    return L && typeof L.url === "function" ? L.url(id) : MAP_PAGE + "?Exhibit=" + encodeURIComponent(id) + MAP_VIEW;
+  }
   function whoBuilt(h) { return h.colleges && h.colleges.length ? h.colleges : h.art; }
   /* The issuer a title brings with it: an ASE certification's title names ASE, ahead of the proposal's issuer;
      what a person typed in the box wins over both. */
@@ -1390,10 +1395,6 @@
     if (!L || typeof L.load !== "function") return Promise.resolve();
     return Promise.resolve(L.load()).then(function (ix) { state.cs.links = ix || null; }).catch(function () { state.cs.links = null; });
   }
-  function linkUrl(id) {
-    var L = window.CPL_MAP_LINKS;
-    return L && typeof L.url === "function" ? L.url(id) : mapUrl(id);
-  }
   /* The verified exhibits of a credential a college built, for its own Request Quick Adopt link. */
   function builtBy(r, name) {
     var ix = state.cs.links;
@@ -1993,7 +1994,7 @@
       var own = builtBy(r, o.n);
       if (own.length) {
         box.appendChild(el("p", null, ["Its exhibit in MAP, for others to Request Quick Adopt from: "].concat(own.slice(0, 3).map(function (id, k) {
-          return el("span", null, [k ? ", " : "", el("a", { href: linkUrl(id), target: "_blank", rel: "noopener", text: id })]);
+          return el("span", null, [k ? ", " : "", el("a", { href: mapUrl(id), target: "_blank", rel: "noopener", text: id })]);
         }))));
       }
       return box;
@@ -2483,14 +2484,14 @@
     } else if (name === "MAP titles") {
       var xs = ad.x || [];
       if (!xs.length) line("No MAP exhibit is read for it.");
-      list(xs.map(function (x) { return [el("a", { href: linkUrl(x[0]), target: "_blank", rel: "noopener", text: x[0] }), " " + x[1] + (x[2] != null ? ", " + fmt(x[2]) + " units" : "")]; }));
+      list(xs.map(function (x) { return [el("a", { href: mapUrl(x[0]), target: "_blank", rel: "noopener", text: x[0] }), " " + x[1] + (x[2] != null ? ", " + fmt(x[2]) + " units" : "")]; }));
     } else if (name === "Basis") {
       var sw = listStatewideExhibits(r);
       if (!sw.length) line("No statewide exhibit is part of it, so it counts as local.");
       else {
         line("Based on statewide: it includes " + (sw.length === 1 ? "this statewide exhibit" : "these statewide exhibits")
           + ", which colleges adopt or adapt (CCC Collaborative rows in MAP).");
-        list(sw.map(function (x) { return [el("a", { href: linkUrl(x.id), target: "_blank", rel: "noopener", text: x.id }), ", " + fmt(x.n)
+        list(sw.map(function (x) { return [el("a", { href: mapUrl(x.id), target: "_blank", rel: "noopener", text: x.id }), ", " + fmt(x.n)
           + (x.n === 1 ? " credit recommendation" : " credit recommendations")]; }));
       }
     }
