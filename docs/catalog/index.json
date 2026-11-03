@@ -16476,8 +16476,23 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 527,
+   "count": 528,
    "docs": [
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 561,
+     "path": "docs/session_561_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons",
+      "program-requirements"
+     ],
+     "title": "Session 561 handoff: the Program Requirements pair agrees with the Commons card",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25484,5 +25499,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1359
+ "total": 1360
 }

@@ -116,7 +116,8 @@ into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03)
 recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
 Every reference now carries the opened page.
 
-**NEXT:** the to-do below: make every tab's figures and the Commons summary agree, or name the difference on both.
+**NEXT:** the to-do below, past its first pair: the Exhibits, CR, Subjects and Course pairs, each checked the way the
+Program Requirements pair was (S560).
 The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
@@ -209,5 +210,9 @@ the Commons' Program Requirements card read **13,194 of 20,282 complete at 114 c
 with no record; figures read 6:16 AM PT), while the Program Requirements tab's Progress read **17,529 records read at 114
 colleges** and **3,274 fail a machine check** (7:38 AM PT). The two count different things (complete active programs
 against records read) and from different reads, but neither page says so. Make every tab's figures and the Commons
-summary agree, or name the difference on both. The same screenshot shows both Progress cards reading *Could not be read*
+summary agree, or name the difference on both. **The Program Requirements pair is done (S560, #2721):** both pages
+headline complete active programs of COCI's active (S558); *Needs attention* now counts active programs whose record
+fails, the card's unit, where it had counted every failing record; and each page names the one difference left, timing
+(the card counts the records committed at the last checkpoint, the tab reads live: 13,553 committed against 13,542
+live on 2026-11-03). The same screenshot shows both Progress cards reading *Could not be read*
 (`coci_college_programs` answered 500): check that read first, since an empty denominator can move every figure.
