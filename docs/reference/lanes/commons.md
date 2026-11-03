@@ -1,7 +1,7 @@
 ---
 title: "The Commons — one tracking system for the common references, and a Commons dash — lane state"
 created: 2026-10-18
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [reference, roadmap-lane, commons, program-requirements, cer, ccr, cr-reference, csr]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -81,40 +81,17 @@ loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/comm
 
 **A to-do closes here (S555, 2026-11-02).** Sam: *"There is one decision in the queue that doesn't give me a way to close it, just links to review."* A run-log call with a `todo_id` is a to-do; the Commons now reads the marks (`queue_todo_done`, for a signed-in reviewer), a standing mark answers its call, and an open to-do offers **Mark done** with a note in the band, through `rpc/queue_todo_done_add`. Guard `tests/commons.test.js` (todo 1-5).
 
-**The opened page, one renderer (S556, 2026-11-03).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
-the mock's opened page for any reference: the progress line over its one denominator, *Needs attention* with an action
-each and the team's next step, and the three question groups with every count over one denominator; an unread count says
-*Could not be read*. First Light tokens (the Commons tab alone wears Malone's look). **Exhibits carries it** as its
-**Progress** view, first in the views row, at `#exhibits/progress`, and the Common Exhibits card opens there; the tab
-still opens on Review (Sheet 147). The headline is the Commons row's pair (Sam's keep, Sheets 107 and 108); the groups
-read `credCounts()`, the Credentials tiles' own counts. The CER tab's S436 Progress view stands as kept. Guards
-`tests/exhibits_progress_page.test.js` (41), a11y `exhibits-progress` and `exhibits-progress-dark`. **The CR Reference
-carries it too (S556):** its Progress view draws the page first and the S437 milestones and parts under *Details*,
-closed; the three questions are counted per wording from the worklist the tab holds (grouped, official number, statewide
-line; units stated, units agree; two or more colleges, two or more credentials), and the card opens
-`#cr-reference/progress` while the tab still opens on the worklist. Guard `tests/cr_progress.test.js` (54). **Subjects
-too (S556):** the page over the 147 MQ disciplines with courses, with questions that fit a code (what it is called, whose
-code it is, how it reaches the courses); the milestones and steps under *Details*, the procedures and findings below.
-Guard `tests/csr_progress.test.js` (78), a11y `canonical-subj4-progress` (320 to 1440) and `-dark`.
-
-**CPL Pathways too (S558, 2026-11-03):** the Program Requirements tab's Progress view draws the page first and the
-dash (milestones, parts, the whole harvest, the calls) under *Details*, closed; opening a call opens Details. The
-denominator is COCI's active program, the headline's own unit, and the three questions fit a program: where it is read
-from (a college with a catalog address, with a reading procedure), what it requires (read, units add up, nothing
-added), whether it matches the state's record (every course COCI lists placed, complete). A record on a program COCI
-does not list never counts; a failed active read says *Could not be read*. `commons_page.js` loads on the first
-Progress render. Guard `tests/program_requirements_page.test.js` (16); a11y `program-requirements-progress` and
-`-dark` wait for the page and open Details.
-
-**The Common Course Reference too (S559, 2026-11-03, #2720):** COCI Lookup's **Progress** view, first in its views row
-(the tab still opens on the Courses List), at `#coci-lookup/progress`; the Commons card's third word, *Open Progress*.
-It reads the Commons' own row (`kb/status/commons.json`, key `course`) and the run log it names, so its headline is the
-card's pair: ready (the auditor's 0.85 or better) of the auditor's cards, 3,205 of 27,581. Needs attention: needs
-repair, then the row's issues with who fixes each, Open SkyView on each. The three questions (what it is called, where
-it sits, whether its courses agree) count the cards free of one auditor tag; the builder writes those six tag counts
-into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
-recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
-Every reference now carries the opened page.
+**The opened page, one renderer (S556 to S559).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
+the mock's opened page for any reference: the progress line over one denominator, *Needs attention* with an action each,
+and three question groups over that denominator; an unread count says *Could not be read*. First Light tokens. **Every
+reference carries it** as a **Progress** view, first in its views row, while each tab still opens where it did:
+Exhibits `#exhibits/progress` (questions read `credCounts()`, the tiles' own counts), CR Reference
+`#cr-reference/progress`, Subjects (`canonical-subj4`), CPL Pathways (`#program-requirements`, denominator COCI's active
+program) and the Common Course Reference in COCI Lookup (`#coci-lookup/progress`, the row's pair: ready of the auditor's
+cards). Guards `tests/exhibits_progress_page.test.js`, `cr_progress`, `csr_progress`, `program_requirements_page`,
+`coci_progress`; a11y targets `<view>-progress` and `-dark`. Per-view detail: `docs/commons_lessons.md` (*Moved from the
+lane, 2026-11-03*). **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
+recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9
 
 **NEXT:** the to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
 that once answered 500 (check it first when a Progress card reads *Could not be read*).
@@ -133,7 +110,7 @@ bar when needed"*).
 
 **The Catalog Commons tab (S542, #2662):** full width; each row's calls cell reads **Decision Sheet Library**, its count
 bold, a 0 in green; answered calls sit under **Completed Decision Sheets**, one line each that opens (Sam, 2026-11-01).
-**Next (Sam, 2026-11-01):** everything in the Commons' Exhibit row joins the Exhibits tab's tiles above the list, folded into the existing tiles where it fits and as new tiles where it does not (*"I like the tiles above the list ... capture everything from 1st into Exhibits view"*); one source for both pages, so they stay aligned.
+**The Exhibits tiles carry the Commons' Exhibit row** (Sam, 2026-11-01: *"capture everything from 1st into Exhibits view"*): its pair, tests, known issues, procedures, the Decision Sheet Library and the last run, read from `kb/status/commons.json` and its run log, never copied (`exhibits.js`, *The Commons' row, carried on the Credentials view's tiles*); the row's `facts` feed the Progress view. Done; S562 found it built.
 
 
 **The List norms (Sam, 2026-11-01: *"consistent views for all the folding and consolidation work"*):** every reference's List follows [`reference-catalog-commons-list-norms`](../../kb-notes/reference-catalog-commons-list-norms.md); a PR names which of the ten norms it carries and why it leaves any out. Step 1 of its three landed in S544: the engine's `suggest` slot and the visit's changed set, with CR's rung proposals (*Suggested groups*, Confirm the group) and the Subjects open picks (*Suggested picks*, Confirm this pick) wired in; step 2 put every filter word's count in the engine (S544), and *Selected* on every List; step 3, bands from the spec (the engine's `bands` hook, with `order` for a band named by something other than its key), landed in S543 for Courses and S545 for CR's groups. The Exhibits List moved onto the engine's suggestion slot and changed set in S545, so all three steps have landed.
