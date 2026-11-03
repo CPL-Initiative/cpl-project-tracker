@@ -31,7 +31,11 @@ stayed off its files. Read `main`'s log from #2711 for what it did; its next ste
   `ell-iet-irc-dec9-call-2026-11-02`.
 - **Step 11, SLO read:** Santa Ana's four-part full read (PR #2716, run 41589637097, started 06:24Z) and Las Positas's
   course index (PR #2717, done: `index_41589640082.json`; `--college las_positas` now says *trial*).
-- **Step 10, credential watch:** CREDENTIAL_LINE
+- **Step 10, credential watch:** PR #2718: Salesforce, Meta, Databricks, Snowflake, CompTIA, ISC2 and ISACA read; 22 rows added, 4 changed, 7
+  unverified re-checked (4 confirmed), 13 skills. Snowflake GES-C01 reads *dropped* in the diff because its code moved to
+  GES-C02 (no row deleted). Material event: Salesforce's Agentforce renames (16) and 2027-02-01 retirements (24), lists
+  unread (its hosts were blocked); `cpl_memory` `salesforce-agentforce-renames-and-retirements-2026-11-03`. If #2718 is
+  still open, merge it on a passing `test`.
 - **UI pass:** CSM Workspace, clean light and dark; ledger recorded, no fix.
 - **Small:** the T5 §55050 draft's clause (4) reads *Use* (house voice).
 - **Library lessons** compacted under budget (`docs/library_lessons_archive.md`); the library lane too.
