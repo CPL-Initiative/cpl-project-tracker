@@ -12,3 +12,8 @@ set regen = regen || jsonb_build_object('ready_at', '2026-11-03T07:05:00Z',
 where slug = 'ell-iet-cpl-starting-points' and retired_at is null
   and regen->>'requested_at' = '2026-11-02T21:20:29.029Z' and regen->>'ready_at' is null;
 select slug, regen, jsonb_array_length(versions) n_versions, updated_by from public.cpl_library where slug = 'ell-iet-cpl-starting-points';
+-- Applied by supabase-migrate run 41589394786 (receipt in kb/receipts/). The stamp above was written ahead of the
+-- clock; S557 corrected it in place to the apply time, guarded on the row's cohort and the old value:
+--   update cpl_library set regen = jsonb_set(regen, '{ready_at}', '"2026-11-03T06:21:50Z"')
+--   where slug = 'ell-iet-cpl-starting-points' and updated_by = 'library-s557@bot' and regen->>'ready_at' = '2026-11-03T07:05:00Z';
+-- The rollback file restores regen whole, so it covers the correction too.
