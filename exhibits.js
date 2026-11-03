@@ -1733,11 +1733,55 @@
     return cmTile({ label: label, more: more, cls: "exh-run" });
   }
   /* The tiles above the list: the Credentials view and the List draw the same set (norm 1). */
+  /* The tiles fold behind one word for the visit, and one line of their counts stays above the list (Sam, 2026-11-03:
+     "incorporating the list view below the action/metric cards and make that top level collapsible while keeping the
+     one-line action/metric links like we do elsewhere", the CSM Workspace's Today line, #2727). The line reads the same
+     Commons row the tiles read, and each count opens where its tile's count opens. */
   function credDash(wrap) {
     if (!state.cm) loadCommons().then(function () { if (state.view === "credentials" || state.view === "list") render(); });
-    wrap.appendChild(credTiles());
-    wrap.appendChild(credMoreTiles());
-    wrap.appendChild(cmKeptGroup());
+    var folded = !!state.dashFolded;
+    wrap.appendChild(cmLine(folded));
+    var fold = el("div", { cls: "exh-fold", id: "exh-fold", hidden: folded ? "" : null });
+    fold.appendChild(credTiles());
+    fold.appendChild(credMoreTiles());
+    fold.appendChild(cmKeptGroup());
+    wrap.appendChild(fold);
+  }
+  /* One item of the line: the whole phrase is the control, as on the CSM Workspace; the list it names, when it shows
+     here already, reads as plain words. A count that could not be read says so, never a zero (the S343 rule). */
+  function cmLineItem(n, href, words) {
+    if (n == null) return el("span", { text: "Could not be read: " + words });
+    var t = cmTarget(href), text = fmt(n) + " " + words;
+    if (t && t.route && !cmHere(t)) return word(text, function () { cmGo(t.route, t.filter); }, { cls: "exh-w exh-li" });
+    if (t && t.href && !t.route) {
+      var a = el("a", { href: t.href, cls: "exh-li", text: text });
+      if (/^https:\/\//.test(t.href)) { a.setAttribute("target", "_blank"); a.setAttribute("rel", "noopener"); }
+      return a;
+    }
+    return el("span", { text: text });
+  }
+  function cmLine(folded) {
+    var cm = state.cm, row = cm && cm.row, items = [];
+    if (row) {
+      var pairs = Array.isArray(row.pair) ? row.pair : [], p = pairs[0], c = pairs[1];
+      if (p) items.push(cmLineItem(p.n, p.open, p.of != null ? "of " + fmt(p.of) + " titles carry a review stamp" : "titles carry a review stamp"));
+      if (c) items.push(cmLineItem(c.n, c.open, "confirmed by a person"));
+      (Array.isArray(row.issues) ? row.issues : []).forEach(function (i) { items.push(cmLineItem(i.n, i.open, i.words)); });
+    } else {
+      items.push(el("span", { text: cm && cm.done ? "The Commons' figures could not be read" + (cm.error ? " (" + cm.error + ")" : "") : "Reading the Commons' figures" }));
+    }
+    var line = el("p", { cls: "exh-line" });
+    items.forEach(function (n, k) {
+      if (k) line.appendChild(el("span", { cls: "exh-sep", "aria-hidden": "true", text: "\u00b7" }));
+      line.appendChild(n);
+    });
+    var tog = word(folded ? "Show the summary" : "Hide the summary", function () {
+      state.dashFolded = !state.dashFolded;
+      render();
+      var b = document.getElementById("exh-fold-w");
+      if (b) b.focus();
+    }, { cls: "exh-w exh-fold-w", id: "exh-fold-w", "aria-expanded": folded ? "false" : "true", "aria-controls": "exh-fold" });
+    return el("div", { cls: "exh-linebar", role: "group", "aria-label": "The reference at a glance" }, [line, tog]);
   }
   function cmKeptGroup() {
     var now = new Date();
@@ -3093,6 +3137,10 @@
     ".exh-chip[data-tip] { cursor:help; }",
     ".exh-chip[data-tip]:hover::after, .exh-chip[data-tip]:focus-visible::after, .exh-step[data-tip]:hover::after, .exh-step[data-tip]:focus-visible::after { content:attr(data-tip); position:absolute; left:0; top:calc(100% + 6px); z-index:3; width:max-content; max-width:min(300px, 80vw); white-space:normal; font-size:.82rem; font-weight:400; line-height:1.4; color:var(--text-body); background:var(--surface); border:1px solid var(--border-strong); border-radius:6px; padding:8px 10px; }",
     ".exh-views { display:flex; flex-wrap:wrap; gap:6px 22px; align-items:baseline; border-bottom:1px solid var(--border); padding-bottom:8px; font-size:.95rem; }",
+    ".exh-linebar { display:flex; flex-wrap:wrap; gap:6px 22px; align-items:baseline; justify-content:space-between; margin:12px 0 10px; }",
+    ".exh-line { margin:0; display:flex; flex-wrap:wrap; gap:4px 0; align-items:baseline; color:var(--text-strong); }",
+    ".exh-sep { color:var(--text-muted); margin:0 .55em; }",
+    ".exh-fold[hidden] { display:none; }",
     ".exh-view-on { color:var(--text-strong); font-weight:600; text-decoration:underline; text-decoration-thickness:3px; text-decoration-color:var(--seal-blue-text); text-underline-offset:3px; }",
     ".exh-n { color:var(--text-muted); font-weight:400; }",
     ".exh-wrap a { color:var(--cobalt); text-underline-offset:3px; }",
@@ -3195,6 +3243,8 @@
     ".exh-tile.exh-wide { grid-column:1 / -1; }",
     ".exh-kept { grid-template-columns:repeat(auto-fit, minmax(min(100%, 260px), 1fr)); align-items:start; }",
     ".exh-tn .exh-tcount { font-size:1.35rem; font-weight:600; font-variant-numeric:tabular-nums; }",
+    /* A one-digit count is a target too: WCAG 2.2's 24px floor (the a11y sweep, 2026-11-03). */
+    "button.exh-w.exh-tcount, a.exh-tcount { display:inline-block; min-width:24px; min-height:24px; text-align:start; }",
     "a.exh-tcount { text-decoration:underline; text-underline-offset:3px; }",
     ".exh-tile .exh-zero { color:var(--hunter); }",
     ".exh-tests { display:flex; flex-wrap:wrap; gap:6px; padding-top:2px; }",

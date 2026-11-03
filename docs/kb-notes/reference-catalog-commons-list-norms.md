@@ -1,7 +1,7 @@
 ---
 title: The Catalog Commons List norms, what every common reference's List shares and what stays different
 created: 2026-11-01
-updated: 2026-11-02
+updated: 2026-11-03
 tags: [reference, commons, commons-list, ui]
 kb-status: published
 obsidian-folder: cpl-project-tracker/kb-notes
@@ -25,6 +25,29 @@ artifacts:
 
 `commons_list.js` draws every reference's List from a spec (S542). The Exhibits List grew from Sam's live use (S540 to
 S542; `docs/cer_v2_redesign_lessons.md`). The engine makes the table consistent; these norms make the work consistent.
+
+## The List is the workspace (Sam, 2026-11-03)
+
+Sam, in session: *"I believe we could consolidate the main views for each by incorporating the list view below the
+action/metric cards and make that top level collapsible while keeping the one-line action/metric links like we do
+elsewhere."* Then: *"The idea would be to retire the original common work spaces once we can do everything we need to
+do from list view, which will have the action cards on it--all consolidated and consistent with other commons
+datasets"*, and *"Let's plan to have a side bar open for list items to show all the details (like an exhibits or the
+nice side bar that opens for courses on SkyView."* (cpl_memory `sam-the-list-is-the-commons-workspace-2026-11-03`.)
+
+Each reference's List becomes its one workspace, in this shape, top to bottom:
+
+1. **One line of the reference's counts,** each a word that opens where its card's count opens, outside the fold: the
+   CSM Workspace's *Today* line (#2727). The line carries the Commons row (the headline, confirmed by a person, each
+   known issue); the List's own filter row keeps the per-filter counts, so a count shows once.
+2. **The action and metric cards,** folded behind one word for the visit (*Hide the summary*, *Show the summary*).
+3. **The List,** full width. A row opens **a side panel with all its details** (SkyView's course panel is the model;
+   Exhibits' credential panel is the first content), owned by the engine so every List gets it.
+
+Every Commons card action opens the List (#2735). A reference's original views retire once its List does everything
+they do, one PR each. Built: Exhibits' line and fold (2026-11-03, over the tiles the Credentials view and the List
+share). Next: the side panel in `commons_list.js`, Exhibits first, which lets the Credentials view retire; then the
+cards and the line over the CR, Subjects, Courses and Programs Lists, drawn by one renderer.
 
 ## What every List shares
 

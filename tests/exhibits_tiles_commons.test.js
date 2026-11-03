@@ -9,6 +9,8 @@
 //   - the figures come from the status files commons.js reads (kb/status/commons.json, row "exhibit", and the run log
 //     it names): change a fixture number and the tile changes; the committed files render item for item;
 //   - a failed read of either file says "Could not be read", never a blank or a zero;
+//   - the tiles fold behind one word (Hide the summary) and one line of their counts stays above the list, each count
+//     opening where its tile's count opens (Sam, 2026-11-03, the CSM Workspace's Today line);
 //   - the List draws the same tiles above its table (the Catalog Commons List norms, norm 1); a count opens the List
 //     filtered to it where the List holds that filter (#exhibits/list/<filter>), else the matching Exhibits view (held
 //     titles open Review, the fold's holds open Conflict, the procedures open Rules), else the Commons' own link.
@@ -262,6 +264,29 @@ function fmt(n) { return Number(n).toLocaleString("en-US"); }
     && !!tile(t.d, "Review stamp") && !!tile(t.d, "Decision Sheet Library") && !!t.d.querySelector("table")
     && (t.d.querySelector(".exh-tile").compareDocumentPosition(t.d.querySelector("table")) & 4) === 4);
   check("on the List the pair names the list on screen, so it is not a control", !tile(t.d, "Review stamp").querySelector("button, a"));
+
+  // ── the tiles fold behind one word, one line of their counts stays (Sam, 2026-11-03; the CSM Workspace's Today line) ──
+  const lineBar = t.d.querySelector(".exh-linebar"), fold = t.d.getElementById("exh-fold"), tog = t.d.getElementById("exh-fold-w");
+  check("the line sits above the tiles and the table, the tiles inside the fold", !!lineBar && !!fold && fold.contains(tile(t.d, "Review stamp"))
+    && (lineBar.compareDocumentPosition(fold) & 4) === 4 && !fold.contains(t.d.querySelector("table")));
+  check("the line reads the Commons row: the pair, then each known issue", /^2,402 of 5,492 titles carry a review stamp/.test(txt(lineBar.querySelector(".exh-line")))
+    && /351 titles held for a person/.test(txt(lineBar)), txt(lineBar));
+  check("on the List the pair's own list is on screen, so the pair is words; a held count is a control",
+    !Array.from(lineBar.querySelectorAll("button")).some((b) => /review stamp/.test(txt(b)))
+    && Array.from(lineBar.querySelectorAll("button")).some((b) => txt(b) === "351 titles held for a person"));
+  check("the separators are hidden from a screen reader", Array.from(lineBar.querySelectorAll(".exh-sep")).every((x) => x.getAttribute("aria-hidden") === "true"));
+  check("the fold word reads Hide the summary, expanded, naming the fold", !!tog && txt(tog) === "Hide the summary"
+    && tog.getAttribute("aria-expanded") === "true" && tog.getAttribute("aria-controls") === "exh-fold" && !fold.hidden);
+  tog.click(); await settle();
+  const fold2 = t.d.getElementById("exh-fold"), tog2 = t.d.getElementById("exh-fold-w");
+  check("Hide the summary folds the tiles; the line and the table stay; focus stays on the word",
+    fold2.hidden && txt(tog2) === "Show the summary" && tog2.getAttribute("aria-expanded") === "false"
+    && !!t.d.querySelector(".exh-linebar .exh-line") && !!t.d.querySelector("table") && t.d.activeElement === tog2);
+  tog2.click(); await settle();
+  check("Show the summary opens it again", !t.d.getElementById("exh-fold").hidden && txt(t.d.getElementById("exh-fold-w")) === "Hide the summary");
+  Array.from(t.d.querySelectorAll(".exh-linebar button")).find((b) => txt(b) === "351 titles held for a person").click(); await settle();
+  check("a held count on the line opens Review, as its tile's count does", t.M._state.view === "review");
+  t = await boot({ hash: "#exhibits/list" });
   tiles(t.d, "Known issue")[0].querySelector("button.exh-tcount").click(); await settle();
   check("from the List, the held count opens Review", t.M._state.view === "review" && t.M._state.filter === "");
   const toList = exhibitRow();
