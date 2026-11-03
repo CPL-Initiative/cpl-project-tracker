@@ -1,0 +1,57 @@
+{
+  "folded": [],
+  "superseded": [],
+  "revised": [
+    {
+      "raw": "Credit by Exam",
+      "assigned": "Water Supply",
+      "issuer": "California Community Colleges",
+      "reviewed_by": "slee@cccco.edu",
+      "reviewed_at": "2026-11-02T17:14:26.738+00:00",
+      "spellings": [
+        "Credit by Exam"
+      ],
+      "disagreeing": [
+        "Credit by Exam"
+      ],
+      "displaced": [
+        "Credit by Exam"
+      ],
+      "supersedes": "Credit by Exam"
+    }
+  ],
+  "credential_moved": [
+    {
+      "title": "Credit by Exam",
+      "records": [
+        {
+          "issuing_agency": "California Community Colleges",
+          "training_agency": null,
+          "confidence_issuer": 1.0,
+          "confidence_trainer": 0.55,
+          "classified_at": "2026-05-19",
+          "classified_by": "hand-curated seed (Phase 2)",
+          "reviewed_at": "2026-07-08T23:23:46.495931+00:00",
+          "reviewed_by": "map@rccd.edu",
+          "_notes": "Administrative bucket used by Saddleback to register multiple Credit-by-Exam awards under one MAP ExhibitID. Not a single credential; flagged for human review under Skill Rule 5."
+        }
+      ],
+      "panel_rows_left": [
+        "issuing_agency_override",
+        "reviewed_at",
+        "reviewed_by"
+      ],
+      "to": "Water Supply"
+    }
+  ],
+  "credential_retired": [],
+  "held": [],
+  "credential_added": [],
+  "credential_issuer_fills": [],
+  "credential_issuer_adds": [],
+  "credential_pruned": [],
+  "articulations_repointed": 0,
+  "title_anchors_stamped": 0,
+  "audit_pruned": 0,
+  "unified_titles_count": 5493
+}

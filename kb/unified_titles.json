@@ -58891,12 +58891,15 @@
     "reviewed_by": "slee@cccco.edu"
   },
   "Credit by Exam": {
-    "unified_title": "Credit by Exam",
+    "unified_title": "Water Supply",
     "confidence_title": 1.0,
-    "classified_at": "2026-10-31",
+    "classified_at": "2026-11-03",
     "classified_by": "curator (CER unclassified-triage)",
-    "reviewed_at": "2026-10-31T16:31:06.445846+00:00",
-    "reviewed_by": "slee@cccco.edu"
+    "reviewed_at": "2026-11-02T17:14:26.738+00:00",
+    "reviewed_by": "slee@cccco.edu",
+    "source_exhibit_ids": null,
+    "_revised_from": "Credit by Exam",
+    "_notes": "Another look (Exhibits tab): slee@cccco.edu replaced 'Credit by Exam' on 2026-11-02."
   },
   "Credit by Exam - CalAPS - Fire Protection Organization": {
     "unified_title": "Fire Protection Organization",

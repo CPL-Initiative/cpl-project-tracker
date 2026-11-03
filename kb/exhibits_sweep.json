@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generated_at": "2026-11-02T06:25:40Z",
+ "generated_at": "2026-11-03T06:22:21Z",
  "generated_by": "kb/_sweep_exhibit_titles.py",
  "rules": [
   {
@@ -41,138 +41,13 @@
   }
  ],
  "counts": {
-  "ase": 2,
+  "ase": 0,
   "numerals": 0,
-  "language": 1,
-  "course-code": 1,
+  "language": 0,
+  "course-code": 0,
   "level": 0,
   "fold": 0
  },
- "local_titles": 6,
- "cards": [
-  {
-   "current": "Manual Drive Train and Axles (ASE A3 Manual Drive Train and Axles)",
-   "proposed": "Automotive Technology (ASE A3 Manual Drive Train and Axles)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A3's official name is Manual Drive Train and Axles"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A3",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "AUTO A3",
-     "credit": "4 units in AUTO A3 Manual Drive Train and Axles"
-    }
-   ],
-   "id": "ca61e449b506",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  },
-  {
-   "current": "Suspension and Steering (ASE A4 Suspension and Steering)",
-   "proposed": "Automotive Technology (ASE A4 Suspension and Steering)",
-   "rules": [
-    "ase"
-   ],
-   "why": [
-    "ASE A4's official name is Suspension and Steering"
-   ],
-   "locals": [
-    {
-     "raw": "Noncredit for AUTO A4",
-     "colleges": [
-      "Las Positas College"
-     ],
-     "course": "AUTO A4",
-     "credit": "4 units in AUTO A4 Suspension and Steering"
-    },
-    {
-     "raw": "Suspension and Steering",
-     "colleges": [
-      "San Diego Miramar College"
-     ],
-     "course": "AUTO 178G",
-     "credit": "4 hours in Suspension, Steering and Handling"
-    },
-    {
-     "raw": "Suspension and Steering Systems",
-     "colleges": [
-      "Chaffey College"
-     ],
-     "course": "AUTOTEC 418",
-     "credit": "4 hours in Suspension and Steering Systems"
-    }
-   ],
-   "id": "0d14d8e6ffda",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 3,
-   "moves_all": true
-  },
-  {
-   "current": "Intermediate Spanish 1",
-   "proposed": "Intermediate Spanish",
-   "rules": [
-    "language"
-   ],
-   "why": [
-    "“Intermediate Spanish” reads as intermediate"
-   ],
-   "locals": [
-    {
-     "raw": "Intermediate Spanish",
-     "colleges": [
-      "San Jose City College"
-     ],
-     "course": "SPANISH (SPAN) 2A",
-     "credit": "5 hours in Intermediate Spanish 1"
-    }
-   ],
-   "id": "5aef6a4eee9c",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 8,
-   "moves_all": false
-  },
-  {
-   "current": "Credit by Exam",
-   "proposed": "Water Supply",
-   "rules": [
-    "course-code"
-   ],
-   "why": [
-    "drops a method word and takes the course's own title"
-   ],
-   "locals": [
-    {
-     "raw": "Credit by Exam",
-     "colleges": [
-      "College of the Canyons"
-     ],
-     "course": "WATER 132",
-     "credit": "3 hours in Water Supply"
-    }
-   ],
-   "id": "84ac8df76508",
-   "issuer": "California Community Colleges",
-   "proposed_exists": false,
-   "proposed_locals": 0,
-   "proposed_issuer": "",
-   "current_locals": 1,
-   "moves_all": true
-  }
- ]
+ "local_titles": 0,
+ "cards": []
 }

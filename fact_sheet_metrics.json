@@ -1,30 +1,30 @@
 {
  "_about": "Snapshot-tier metrics for the public CPL Fact Sheet (fact-sheet/). Sourced from the same MAP Custom Reporting Module exhibit data as COBI's headline KPI cards, so the two never diverge. Refreshed by the daily dashboard cron.",
- "_as_of": "2026-11-02T06:21:12.080Z",
+ "_as_of": "2026-11-03T06:18:29.577Z",
  "credit_recommendations": {
-  "total": "14,859",
-  "ccc": "1,475",
-  "local": "13,384",
+  "total": "15,005",
+  "ccc": "1,487",
+  "local": "13,518",
   "by_type": [
-   "Standardized Assessment: 7,737",
-   "Industry Certification: 4,159",
-   "Credit By Exam: 2,279",
-   "Portfolio Review: 436",
+   "Standardized Assessment: 7,789",
+   "Industry Certification: 4,234",
+   "Credit By Exam: 2,292",
+   "Portfolio Review: 442",
    "Military: 153"
   ]
  },
  "map_exhibits": {
-  "total": "2,403",
-  "ccc": "162",
-  "local": "2,241",
+  "total": "2,418",
+  "ccc": "163",
+  "local": "2,255",
   "originating_colleges": "89"
  },
  "statewide_exhibits": {
-  "total": "162",
+  "total": "163",
   "program_areas": "12",
-  "distinct_credit_recs": "1,271",
-  "adoptions": "1,462",
-  "adopting_colleges": "66",
+  "distinct_credit_recs": "1,283",
+  "adoptions": "1,474",
+  "adopting_colleges": "67",
   "by_sector": [
    {
     "sector": "Construction Technology",
@@ -43,8 +43,8 @@
    {
     "sector": "Fire Technology",
     "exhibits": 18,
-    "credit_recs": 301,
-    "adoptions": 354,
+    "credit_recs": 307,
+    "adoptions": 360,
     "could_adopt": 45
    },
    {
@@ -71,9 +71,16 @@
    {
     "sector": "Emergency Medical Services",
     "exhibits": 5,
-    "credit_recs": 65,
-    "adoptions": 66,
+    "credit_recs": 67,
+    "adoptions": 68,
     "could_adopt": 59
+   },
+   {
+    "sector": "Administration of Justice",
+    "exhibits": 2,
+    "credit_recs": 109,
+    "adoptions": 112,
+    "could_adopt": 55
    },
    {
     "sector": "Corrections",
@@ -95,13 +102,6 @@
     "credit_recs": 19,
     "adoptions": 50,
     "could_adopt": 34
-   },
-   {
-    "sector": "Administration of Justice",
-    "exhibits": 1,
-    "credit_recs": 105,
-    "adoptions": 108,
-    "could_adopt": 55
    },
    {
     "sector": "Kinesiology/Health",
@@ -126,7 +126,7 @@
  "articulating_colleges": {
   "total": "103",
   "originating": "89",
-  "adopting_ccc": "66"
+  "adopting_ccc": "67"
  },
  "veteran_sprint": {
   "star_colleges": "66",

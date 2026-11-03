@@ -1,7 +1,7 @@
 {
   "_about": "CER unclassified-triage assignments synced from Supabase kb_curation (_UNCLASSIFIED::<raw_title> namespace). Each entry assigns a raw MAP exhibit title a unified credential title (+ optional issuer). RECORDED here for durability/review; the fold into kb/unified_titles.json + kb/credentials.json is PR-3 (dry-run-first, since it mutates the curated credential KB).",
   "_synced_from": "Supabase project hvuwhnbuahrtptokpqfh, table public.kb_curation",
-  "_synced_at": "2026-11-02T06:21:28Z",
+  "_synced_at": "2026-11-03T06:18:40Z",
   "count": 2307,
   "assignments": {
     "1st Receiver Ops & Decon": {
@@ -7054,8 +7054,9 @@
     "Credit by Exam": {
       "issuing_agency": "California Community Colleges",
       "reviewed_by": "slee@cccco.edu",
-      "reviewed_at": "2026-10-31T16:31:06.445846+00:00",
-      "unified_title": "Credit by Exam"
+      "reviewed_at": "2026-11-02T17:14:26.738+00:00",
+      "unified_title": "Water Supply",
+      "supersedes": "Credit by Exam"
     },
     "Credit by Exam - CalAPS - Fire Protection Organization": {
       "issuing_agency": "CalAPS",
@@ -13850,8 +13851,23 @@
     "Engine Performance - Credit by Exam (ATEC 23 )": [
       "Automotive Technology (ASE A8 Engine Performance)"
     ],
+    "Intermediate Spanish": [
+      "Intermediate Spanish"
+    ],
+    "Noncredit for AUTO A3": [
+      "Automotive Technology (ASE A3 Manual Drive Train and Axles)"
+    ],
+    "Noncredit for AUTO A4": [
+      "Automotive Technology (ASE A4 Suspension and Steering)"
+    ],
     "Noncredit for AUTO P1": [
       "Powertrains: Modifications for Performance"
+    ],
+    "Suspension and Steering": [
+      "Automotive Technology (ASE A4 Suspension and Steering)"
+    ],
+    "Suspension and Steering Systems": [
+      "Automotive Technology (ASE A4 Suspension and Steering)"
     ]
   }
 }

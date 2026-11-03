@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-02T17:29:42Z",
+ "written_at": "2026-11-03T06:22:29Z",
  "rows": [
   {
    "key": "requirements",
@@ -75,7 +75,7 @@
    "tab": "#exhibits",
    "links": [
     {
-     "href": "#exhibits",
+     "href": "#exhibits/progress",
      "text": "Open Exhibits"
     }
    ],
@@ -114,7 +114,7 @@
    ],
    "machine": {
     "what": "the saving run and the fold",
-    "at": "2026-11-02T06:21:29Z",
+    "at": "2026-11-03T06:18:41Z",
     "every_hours": 24
    },
    "facts": {
@@ -126,9 +126,9 @@
     "records": 2972,
     "records_stamped": 2203,
     "saved_at": "2026-10-31T14:01:00Z",
-    "fold_at": "2026-11-02T06:21:29Z",
-    "map_titles": 4872,
-    "unclassified": 0,
+    "fold_at": "2026-11-03T06:18:41Z",
+    "map_titles": 4887,
+    "unclassified": 15,
     "left_map": 621,
     "below_80": 1123,
     "below_60": 237
@@ -211,7 +211,7 @@
    ],
    "machine": {
     "what": "the auditor",
-    "at": "2026-11-02T06:23:48+00:00",
+    "at": "2026-11-03T06:20:32+00:00",
     "every_hours": 24
    },
    "facts": {
@@ -234,16 +234,16 @@
    "tab": "#cr-reference",
    "links": [
     {
-     "href": "#cr-reference",
+     "href": "#cr-reference/progress",
      "text": "Open the tab"
     }
    ],
    "status_file": "kb/status/cr.json",
    "pair": [
     {
-     "n": 459,
+     "n": 460,
      "of": 2344,
-     "words": "wordings resolve to a settled reference (408 by a rung 1 to 4 rule, 51 more by a curator); 5,763 of 9,432 articulations",
+     "words": "wordings resolve to a settled reference (410 by a rung 1 to 4 rule, 50 more by a curator); 5,900 of 9,432 articulations",
      "open": "#cr-reference/progress"
     }
    ],
@@ -253,7 +253,7 @@
    ],
    "issues": [
     {
-     "n": 1885,
+     "n": 1884,
      "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
      "owner": "a curator",
      "open": "#cr-reference/open"
@@ -283,36 +283,36 @@
    "facts": {
     "groups": 2159,
     "by_rule": 156,
-    "rung_5": 1936,
+    "rung_5": 1934,
     "rows": 9432,
     "decided": 30,
     "verdicts": 51,
     "reached": 1184,
     "receipts": 1,
     "wordings": 2344,
-    "settled": 459,
-    "settled_rows": 5763,
-    "rule_wordings": 408,
-    "rule_rows": 4577,
-    "rule_groups": 223,
+    "settled": 460,
+    "settled_rows": 5900,
+    "rule_wordings": 410,
+    "rule_rows": 4855,
+    "rule_groups": 225,
     "curator_wordings": 97,
-    "curator_only": 51,
-    "curator_only_rows": 1186,
-    "unsettled": 1885,
-    "unsettled_rows": 3669,
+    "curator_only": 50,
+    "curator_only_rows": 1045,
+    "unsettled": 1884,
+    "unsettled_rows": 3532,
     "head": {
      "50": {
-      "settled": 44,
+      "settled": 45,
       "of": 50,
       "rows": 4648
      },
      "100": {
-      "settled": 76,
+      "settled": 77,
       "of": 100,
       "rows": 5545
      },
      "250": {
-      "settled": 151,
+      "settled": 152,
       "of": 250,
       "rows": 6559
      }
@@ -392,7 +392,7 @@
    ],
    "machine": {
     "what": "the daily sync of the picks and the daily scan",
-    "at": "2026-11-02T06:21:26Z",
+    "at": "2026-11-03T06:18:39Z",
     "every_hours": 24
    },
    "facts": {
@@ -404,7 +404,7 @@
     "modal": 11,
     "shared": [],
     "missed_alignment": 0,
-    "scanned_at": "2026-11-02",
+    "scanned_at": "2026-11-03",
     "procedures_on": 6
    },
    "sources": [

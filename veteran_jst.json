@@ -1,18 +1,18 @@
 {
-  "scraped_at": "2026-11-02T06:21:12.544123+00:00",
+  "scraped_at": "2026-11-03T06:18:29.883885+00:00",
   "source_url": "https://cpldashboardcccco.azurewebsites.net/insights/dashboard",
   "api_url": "https://cpldashboardcccco.azurewebsites.net/api/potential-savings?cpltype=0&indExcludeSA=0",
   "star_threshold": 0.75,
   "statewide": {
     "vets": 34565,
-    "jst": 30685,
+    "jst": 30926,
     "star_colleges": 66
   },
   "computed_star_colleges": 66,
   "colleges": {
     "Los Angeles Pierce College": {
       "vets": 286,
-      "jst": 155,
+      "jst": 156,
       "star": false
     },
     "Santiago Canyon College": {
@@ -22,7 +22,7 @@
     },
     "Chaffey College": {
       "vets": 207,
-      "jst": 393,
+      "jst": 407,
       "star": true
     },
     "City College of San Francisco": {
@@ -32,17 +32,17 @@
     },
     "San Diego Mesa College": {
       "vets": 1151,
-      "jst": 1659,
+      "jst": 1660,
       "star": true
     },
     "San Diego City College": {
       "vets": 810,
-      "jst": 1557,
+      "jst": 1560,
       "star": true
     },
     "San Diego Miramar College": {
       "vets": 1172,
-      "jst": 1704,
+      "jst": 1707,
       "star": true
     },
     "Moreno Valley College": {
@@ -52,7 +52,7 @@
     },
     "Bakersfield College": {
       "vets": 431,
-      "jst": 595,
+      "jst": 597,
       "star": true
     },
     "Norco College": {
@@ -112,7 +112,7 @@
     },
     "Southwestern College": {
       "vets": 675,
-      "jst": 555,
+      "jst": 723,
       "star": true
     },
     "San Bernardino Valley College": {
@@ -137,7 +137,7 @@
     },
     "Modesto Junior College": {
       "vets": 223,
-      "jst": 153,
+      "jst": 152,
       "star": false
     },
     "Cypress College": {
@@ -172,7 +172,7 @@
     },
     "San Joaquin Delta College": {
       "vets": 258,
-      "jst": 493,
+      "jst": 494,
       "star": true
     },
     "Glendale Community College": {
@@ -217,12 +217,12 @@
     },
     "Victor Valley College": {
       "vets": 74,
-      "jst": 346,
+      "jst": 347,
       "star": true
     },
     "Ventura College": {
       "vets": 238,
-      "jst": 196,
+      "jst": 199,
       "star": true
     },
     "Evergreen Valley College": {
@@ -242,7 +242,7 @@
     },
     "Napa Valley College": {
       "vets": 60,
-      "jst": 50,
+      "jst": 53,
       "star": true
     },
     "College of the Sequoias": {
@@ -277,7 +277,7 @@
     },
     "Oxnard College": {
       "vets": 149,
-      "jst": 161,
+      "jst": 163,
       "star": true
     },
     "Los Angeles Harbor College": {
@@ -317,7 +317,7 @@
     },
     "Reedley College": {
       "vets": 100,
-      "jst": 132,
+      "jst": 133,
       "star": true
     },
     "Laney College": {
@@ -342,7 +342,7 @@
     },
     "Saddleback College": {
       "vets": 807,
-      "jst": 59,
+      "jst": 63,
       "star": false
     },
     "West Valley College": {
@@ -382,12 +382,12 @@
     },
     "Coalinga College": {
       "vets": 26,
-      "jst": 9,
+      "jst": 10,
       "star": false
     },
     "Hartnell College": {
       "vets": 122,
-      "jst": 80,
+      "jst": 81,
       "star": false
     },
     "College of the Redwoods": {
@@ -462,7 +462,7 @@
     },
     "Moorpark College": {
       "vets": 204,
-      "jst": 236,
+      "jst": 237,
       "star": true
     },
     "Monterey Peninsula College": {
@@ -477,7 +477,7 @@
     },
     "Grossmont College": {
       "vets": 428,
-      "jst": 645,
+      "jst": 677,
       "star": true
     },
     "Los Angeles City College": {
