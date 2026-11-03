@@ -148,7 +148,7 @@ LENSES = [
     ("Healthcare Communication & Patient Relations", r"(medical|health ?care|patient) communication|communication (in|for) (the )?health|patient relations|health literacy|cultural (competen|humility).*health", "cap", "P2, P4"),
     ("Medical Office Management & Operations", r"(medical|health ?care) office management|medical practice management|health ?care (management|supervision)", "cap", "P8"),
     ("Infection Control & Basic Patient Care", r"infection control|asepsis|basic patient care|patient care skills", "cap", "P3, P5"),
-    ("Medical Terminology", r"(medical|health).*terminolog|terminolog.*(medical|health)|^\s*terminology", "low", "P1-P8 (assumed throughout; no stand-alone module)"),
+    ("Medical Terminology", r"(medical|health).*(terminolog|language)|terminolog.*(medical|health)|^\s*terminology", "low", "P1-P8 (assumed throughout; no stand-alone module)"),
     ("Anatomy, Physiology & Disease", r"anatomy|physiology|disease|patholog", "low", "none (OpenClassrooms has no anatomy module)"),
     ("Medical Assisting (comprehensive)", r"medical assist|\bmed(ical)? asst|\bccma\b|\bcma\b review", "core", "P1-P8, WPJ"),
 ]
@@ -434,7 +434,8 @@ def main():
         ci, ctrl, subj, num, title, units, credit, top = r[:8]
         title = fix(title or "")
         top4 = (top or "")[:4].replace(".", "")
-        if NOISE.search(title) or not top_ok(top4, title):
+        is_term = bool(re.search(r"medical (terminology|language)", title, re.I))
+        if NOISE.search(title) or not (top_ok(top4, title) or is_term):   # terminology: any TOP
             continue
         desc = D.get(ctrl, "") or ""
         lens = kind = projs = None
