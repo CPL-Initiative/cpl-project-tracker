@@ -1618,7 +1618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2007
+     "line": 2021
     }
    ],
    "main_committers": []
@@ -2219,7 +2219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1048
+     "line": 1062
     }
    ],
    "main_committers": []
@@ -2238,7 +2238,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1393
+     "line": 1407
     },
     {
      "id": "module:college_briefing.js",
@@ -4182,7 +4182,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1671
+     "line": 1685
     }
    ],
    "main_committers": []
@@ -5231,7 +5231,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1562
+     "line": 1576
     },
     {
      "id": "module:admin.js",
@@ -5410,7 +5410,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 152,
+     "line": 155,
      "tabs": [
       "coci-lookup"
      ]
@@ -5504,7 +5504,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 566,
+     "line": 681,
      "tabs": [
       "coci-lookup"
      ]
@@ -5960,7 +5960,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 484,
+     "line": 487,
      "tabs": [
       "coci-lookup"
      ]
@@ -6023,6 +6023,16 @@
      "line": 2551,
      "tabs": [
       "canonical-subj4"
+     ]
+    },
+    {
+     "id": "module:coci_lookup.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 568,
+     "tabs": [
+      "coci-lookup"
      ]
     },
     {
@@ -6284,7 +6294,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1946
+     "line": 1960
     },
     {
      "id": "module:college_briefing.js",
@@ -6490,7 +6500,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1108
+     "line": 1122
     },
     {
      "id": "module:cpl_funding.js",
@@ -12446,7 +12456,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 512
+     "line": 517
     }
    ],
    "served": false,
@@ -12527,7 +12537,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 314
+     "line": 319
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -13087,7 +13097,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 405
+     "line": 410
     }
    ],
    "producers": [
@@ -13144,7 +13154,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 406
+     "line": 411
     }
    ],
    "served": true,
@@ -13375,7 +13385,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 384
+     "line": 389
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -14566,7 +14576,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 491
+     "line": 496
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -15533,7 +15543,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 317
+     "line": 322
     }
    ],
    "served": false,
@@ -17088,7 +17098,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 269
+     "line": 270
     }
    ],
    "served": true,
@@ -17101,7 +17111,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 346
+     "line": 351
     }
    ],
    "served": true,
@@ -17167,7 +17177,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 449
+     "line": 454
     }
    ],
    "served": true,
@@ -19502,7 +19512,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 510
+     "line": 515
     }
    ],
    "served": false,
@@ -22818,7 +22828,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 485,
+     "line": 488,
      "tabs": [
       "coci-lookup"
      ]
@@ -24661,7 +24671,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 181,
+     "line": 184,
      "tabs": [
       "coci-lookup"
      ]
@@ -27631,6 +27641,7 @@
   ],
   "commons_page.js": [
    "canonical-subj4",
+   "coci-lookup",
    "cr-reference",
    "exhibits",
    "program-requirements"

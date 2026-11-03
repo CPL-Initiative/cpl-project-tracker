@@ -265,7 +265,8 @@ def row_course(root):
     ]
     return {
         "key": "course", "title": "Common Course Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open SkyView"}, {"href": "#coci-lookup", "text": "Open the Courses List"}],
+        "links": [{"href": tab, "text": "Open SkyView"}, {"href": "#coci-lookup", "text": "Open the Courses List"},
+                  {"href": "#coci-lookup/progress", "text": "Open Progress"}],
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"
@@ -282,7 +283,11 @@ def row_course(root):
         "procedures": procedures,
         "machine": {"what": "the auditor", "at": A.get("_generated_at"), "every_hours": 24},
         "facts": {"total": st["total_cards"], "ready": fr["ready"], "needs_review": fr["needs_review"],
-                  "needs_repair": fr["needs_repair"], "not_ready": fr["not_ready"], "cap": cap["n"]},
+                  "needs_repair": fr["needs_repair"], "not_ready": fr["not_ready"], "cap": cap["n"],
+                  # One count a tag, each a card carrying it (the auditor counts a card once): COCI Lookup's Progress
+                  # view reads these for its three questions, so the page and this card share one read (S559).
+                  "tags": {k: tags.get(k) for k in ("blank_description", "discipline_title_mismatch", "blank_discipline",
+                           "seed_untouched_discipline", "top_discipline_disagreement", "unit_anomaly")}},
         "sources": ["kb/row_audit/latest.json", "prototype/ccr_universe.json", "unified_courses_standalone.js"],
     }
 
