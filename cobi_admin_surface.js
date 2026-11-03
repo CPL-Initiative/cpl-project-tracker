@@ -448,9 +448,13 @@ window.COBI_ADMIN_SURFACE = {
         "commons.js",
         "commons_progress.js"
       ],
-      "reads": [],
+      "reads": [
+        "queue_todo_done"
+      ],
       "writes": [],
-      "rpcs": [],
+      "rpcs": [
+        "queue_todo_done_add"
+      ],
       "measured": true
     },
     "exhibits": {

@@ -337,6 +337,51 @@ function cellText(li, title) {
   await t6.M.boot();
   check("without commons_progress.js the tab says so instead of drawing", /commons_progress\.js\) could not be loaded/.test(txt(t6.root)) && rows(t6.d).length === 0);
 
+  // ── a to-do closes from the Commons (Sam, 2026-11-02: "There is one decision in the queue that doesn't give me a way
+  //    to close it, just links to review.") ──
+  {
+    const TODO = { title: "Glendale is parked: what would turn it back on", text: "Send a structured export.",
+      view: { href: "#program-requirements", text: "Open Program records" }, todo_id: "glendale-parked-2026-10-30" };
+    const LOG2 = Object.assign({}, PR_LOG, { calls: [TODO] });
+    const SESSION = { get: () => ({ email: "slee@cccco.edu", access_token: "h.p.s" }), isFresh: () => true,
+      authHeaders: (x) => Object.assign({ apikey: "anon", Authorization: "Bearer h.p.s" }, x || {}) };
+    const posts = [];
+    const base = responder({ "kb/status/commons.json": STATUS, "kb/status/program-requirements.json": LOG2 });
+    const withMarks = (marks) => function (url, init) {
+      url = String(url);
+      if (/\/rest\/v1\/queue_todo_done\?/.test(url)) return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve(marks) });
+      if (/\/rpc\/queue_todo_done_add$/.test(url)) { posts.push(JSON.parse(init.body));
+        return Promise.resolve({ ok: true, status: 200, json: () => Promise.resolve({ by_email: "slee@cccco.edu" }) }); }
+      return base(url);
+    };
+    // marked done on Program Requirements: the Commons reads the mark, and the call leaves the band
+    const a = load({ fetch: withMarks([{ project: "program-requirements", todo_id: TODO.todo_id, note: "Let's keep going with Glendale.",
+      reopen: false, by_email: "slee@cccco.edu", at: "2026-11-02T22:55:11Z" }]) });
+    a.w.CPL_SESSION = SESSION;
+    await a.M.boot();
+    check("todo 1: a to-do marked done on Program Requirements no longer waits in the Commons band",
+      !a.d.querySelector(".cmn-band") && /Marked done: Let's keep going with Glendale\./.test(txt(a.root)));
+    // still open, signed in: Mark done sits beside it in the band and writes through the one RPC
+    const b = load({ fetch: withMarks([]) });
+    b.w.CPL_SESSION = SESSION;
+    await b.M.boot();
+    const band = b.d.querySelector(".cmn-band");
+    const det = band && band.querySelector(".cmn-todo-det");
+    check("todo 2: an open to-do in the band offers Mark done, with a note box", !!det && txt(det.querySelector("summary")) === "Mark done" && !!det.querySelector("textarea"));
+    det.querySelector("textarea").value = "Glendale's curriculum office will send the export.";
+    det.querySelector("button").dispatchEvent(new b.w.MouseEvent("click", { bubbles: true }));
+    await new Promise((r) => setTimeout(r, 20));
+    check("todo 3: Mark done writes the project, the to-do and the note through rpc/queue_todo_done_add",
+      posts.length === 1 && posts[0].p_project === "program-requirements" && posts[0].p_todo_id === TODO.todo_id &&
+      posts[0].p_note === "Glendale's curriculum office will send the export." && posts[0].p_reopen === false);
+    check("todo 4: once saved, the call leaves the band and the count", !b.d.querySelector(".cmn-band"));
+    // signed out: the band says where to sign in, and reads no marks
+    const c = load({ fetch: withMarks([]) });
+    await c.M.boot();
+    check("todo 5: signed out, the to-do says to sign in and offers no Mark done",
+      /sign in as a reviewer to mark it done/.test(txt(c.d.querySelector(".cmn-band"))) && !c.d.querySelector(".cmn-todo-det"));
+  }
+
   // the states, on their own
   const M = t.M;
   check("machineState: no stamp is Could not be read", M.machineState({}, NOW).key === "unread" && M.machineState(null, NOW).word === "Could not be read");

@@ -79,6 +79,8 @@ card 2): the palette lives once as `--cmn` tokens on `#tab-commons`; the dark th
 dark token (`:root[data-theme="dark"] #tab-commons` and the OS-dark media query), so no color is invented there. Inter
 loads once from Google Fonts. Guards: `tests/commons.test.js` (108), `tests/commons_status_build_test.py` (83).
 
+**A to-do closes here (S555, 2026-11-02).** Sam: *"There is one decision in the queue that doesn't give me a way to close it, just links to review."* A run-log call with a `todo_id` is a to-do; the Commons now reads the marks (`queue_todo_done`, for a signed-in reviewer), a standing mark answers its call, and an open to-do offers **Mark done** with a note in the band, through `rpc/queue_todo_done_add`. Guard `tests/commons.test.js` (todo 1-5).
+
 **NEXT:** carry the opened page's pattern (the progress line, *Needs attention* with an action each, the three question
 groups over one denominator; the mock's Exhibits artboard) to each reference's Progress view, Exhibits first; then the
 Course Progress view (below). The a11y pass (`npm run a11y -- cobi:commons`) passes on the new view at both widths (S552,

@@ -146,7 +146,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `program_source_registry` | tabs: `college-briefing`, `cpl-pathways`, `program-requirements` · scripts: `kb/_course_outline_census.py`, `kb/_program_requirements_pilot.py`, `kb/_program_source_census.py`, `scripts/catalog_framing.py` | — |
 | `project_lifecycle` | tabs: `raci`, `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py` | pages: `CPL_Dashboard.html` |
 | `projects` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `excel_to_dashboard.py`, `kb/_load_projects.py`, `kb/_seed_projects.py`, `kb/_seed_projects_apply.py`, `kb/_validate_projects.py` | tabs: `workplan-goals` · pages: `CPL_Dashboard.html` · scripts: `kb/_seed_projects_apply.py` |
-| `queue_todo_done` | tabs: `program-requirements` | — |
+| `queue_todo_done` | tabs: `commons`, `program-requirements` | — |
 | `sierra_feedback` | tabs: `governance`, `map-queue`, `sierra-training` · scripts: `chatbox/smoke_test.sh` | — |
 | `sierra_guidance` | tabs: `sierra-training` · `edgefn:cpl-chat` | tabs: `sierra-training` |
 | `sierra_rules` | tabs: `sierra-training` · `edgefn:cpl-chat` | tabs: `sierra-training` |
@@ -200,6 +200,7 @@ columns. Sam curates these LIVE — check who else reads before any bulk write.
 | `program_source_addenda_apply` | scripts: `kb/_program_source_census.py` | — |
 | `program_source_census_apply` | scripts: `kb/_program_source_census.py` | — |
 | `program_typical_courses` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
+| `queue_todo_done_add` | tabs: `commons` | — |
 | `search_college_credentials` | `edgefn:cpl-chat` | — |
 | `search_college_offerings` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
 | `search_college_programs` | scripts: `chatbox/smoke_test.sh` · `edgefn:cpl-chat` | — |
@@ -1277,5 +1278,5 @@ check these BY HAND before trusting an absence:
 - `reviewer_signin.js`
 - `scripts/supabase_migrate.py`
 
-Coverage: 105 Supabase tables · 48 RPCs · 11 edge functions · 777 file
+Coverage: 105 Supabase tables · 49 RPCs · 11 edge functions · 777 file
 datasets · 192 external services · 509 consumers · 60 workflows · 39 tabs.

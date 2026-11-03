@@ -413,6 +413,42 @@
     return n < w.length ? w[n] : String(n);
   }
 
+  /* Mark done, on a to-do in the band: a note and the word, for a signed-in reviewer; signed out, where to sign in. */
+  function todoControl(card, call, after) {
+    var box = el("div", { cls: "cmn-todo" });
+    if (!session()) {
+      box.appendChild(el("p", { cls: "cmn-todo-note", text: "A to-do: sign in as a reviewer to mark it done here." }));
+      return box;
+    }
+    var id = "cmn-todo-" + String(call.todo_id).replace(/[^a-z0-9-]/gi, "");
+    var det = el("details", { cls: "cmn-todo-det" });
+    det.appendChild(el("summary", { text: "Mark done" }));
+    var note = el("textarea", { id: id + "-note", rows: "2", maxlength: "2000", cls: "cmn-todo-text" });
+    var go = el("button", { cls: "cmn-word", type: "button", text: "Save, it is done" });
+    var status = el("p", { cls: "cmn-todo-note", role: "status" });
+    det.appendChild(el("label", { "for": id + "-note", cls: "cmn-todo-note" }, ["What you did, or what the queue should do next (optional). The next scheduled session reads it first."]));
+    det.appendChild(note);
+    det.appendChild(el("p", { cls: "cmn-todo-row" }, [go]));
+    det.appendChild(status);
+    go.addEventListener("click", function () {
+      go.disabled = true;
+      status.textContent = "Saving…";
+      var Q = card.Q;
+      postTodoDone(projectOf(card.key, Q), call, note.value).then(function (row) {
+        var s = session();
+        call.answer = { by: (row && row.by_email) || (s && s.email) || "", at: new Date().toISOString().slice(0, 10),
+          words: "Marked done" + (note.value.trim() ? ": " + note.value.trim() : "."), todo: true };
+        after();
+      }, function (e) {
+        go.disabled = false;
+        status.textContent = e && (e.status === 401 || e.status === 403)
+          ? "Not saved. Your account is not on the reviewer list, or the session expired; sign in again."
+          : "Not saved: " + (e && e.message ? e.message : "the save failed") + ".";
+      });
+    });
+    box.appendChild(det);
+    return box;
+  }
   function render(root, data, S, now) {
     now = now || new Date();
     root.removeAttribute("style");
@@ -441,7 +477,11 @@
     if (waiting.length) {
       wrap.appendChild(el("section", { cls: "cmn-band", "aria-labelledby": "cmn-band-h" }, [
         el("h3", { id: "cmn-band-h", cls: "cmn-band-h", text: waiting.length === 1 ? "One decision waits on you" : capFirst(countWords(waiting.length)) + " decisions wait on you" }),
-        el("ul", { cls: "cmn-band-list" }, waiting.map(function (w) { return el("li", null, [w.card.name + ": ", callNode(w.call)]); }))
+        el("ul", { cls: "cmn-band-list" }, waiting.map(function (w) {
+          var li = el("li", null, [w.card.name + ": ", callNode(w.call)]);
+          if (w.call.todo_id) li.appendChild(todoControl(w.card, w.call, function () { render(root, data, S, now); }));
+          return li;
+        }))
       ]));
     }
 
@@ -525,6 +565,56 @@
       return j;
     });
   }
+  /* ── a to-do closes here too (Sam, 2026-11-02: "There is one decision in the queue that doesn't give me a way to
+        close it, just links to review."). A run-log call carrying `todo_id` is a to-do Sam marks done
+        (program_requirements.js callDone, S527). The Commons read only the run logs, so a to-do he had marked done
+        on Program Requirements still read as waiting here, and the band offered a link and nothing else. For a
+        signed-in reviewer it now reads the marks (queue_todo_done, authenticated read) and a standing mark answers its
+        call with his words; an open to-do offers Mark done in the band, through the same one RPC
+        (rpc/queue_todo_done_add, chatbox/supabase_queue_todo_done.sql), which the scheduled session reads first. ── */
+  var REST = (window.CPL_SUPABASE_URL || "https://hvuwhnbuahrtptokpqfh.supabase.co") + "/rest/v1";
+  function session() {
+    var Sx = window.CPL_SESSION;
+    if (!Sx || typeof Sx.get !== "function") return null;
+    var s = Sx.get();
+    return s && s.email && (typeof Sx.isFresh !== "function" || Sx.isFresh(s)) ? s : null;
+  }
+  function sessionHeaders(extra) {
+    var Sx = window.CPL_SESSION;
+    return Sx && typeof Sx.authHeaders === "function" ? Sx.authHeaders(extra) : (extra || {});
+  }
+  function projectOf(key, Q) { return (Q && Q.project) || key; }
+  function readTodoMarks() {
+    if (!session()) return Promise.resolve(null);
+    return fetch(REST + "/queue_todo_done?select=project,todo_id,note,reopen,by_email,at&order=id.desc", { headers: sessionHeaders() })
+      .then(function (r) { return r.ok ? r.json() : null; }, function () { return null; });
+  }
+  /* The newest mark on each to-do wins; a done one answers its call (by, at, words), a reopen leaves it open. */
+  function applyTodoMarks(S, marks) {
+    if (!Array.isArray(marks)) return;
+    var latest = {};
+    marks.forEach(function (m) { var k = m.project + "|" + m.todo_id; if (!(k in latest)) latest[k] = m; });
+    Object.keys(S).forEach(function (key) {
+      var Q = S[key] && S[key].Q;
+      (Q && Array.isArray(Q.calls) ? Q.calls : []).forEach(function (c) {
+        if (!c.todo_id || answered(c)) return;
+        var m = latest[projectOf(key, Q) + "|" + c.todo_id];
+        if (m && !m.reopen) c.answer = { by: m.by_email || "", at: String(m.at || "").slice(0, 10),
+          words: "Marked done" + (m.note ? ": " + String(m.note).trim() : "."), todo: true };
+      });
+    });
+  }
+  function postTodoDone(project, c, note) {
+    var Sx = window.CPL_SESSION;
+    var ready = Sx && typeof Sx.ensureFresh === "function" ? Promise.resolve(Sx.ensureFresh()) : Promise.resolve(null);
+    return ready.then(function () {
+      return fetch(REST + "/rpc/queue_todo_done_add", { method: "POST", headers: sessionHeaders({ "Content-Type": "application/json" }),
+        body: JSON.stringify({ p_project: project, p_todo_id: c.todo_id, p_note: note || null, p_reopen: false }) });
+    }).then(function (r) {
+      if (r.ok) return r.json().catch(function () { return {}; });
+      var e = new Error("the save answered " + r.status); e.status = r.status; throw e;
+    });
+  }
   function load() {
     return readJson(STATUS_URL).then(function (data) {
       if (!data || !Array.isArray(data.rows) || !data.written_at) throw new Error(STATUS_URL + " is not the Commons' status file");
@@ -536,7 +626,7 @@
       })).then(function (st) {
         var S = {};
         rows.forEach(function (r, i) { S[r.key] = st[i]; });
-        return { data: data, S: S };
+        return readTodoMarks().then(function (marks) { applyTodoMarks(S, marks); return { data: data, S: S }; });
       });
     });
   }
@@ -575,6 +665,13 @@
     ".cmn-band { background:var(--cmn-surface); border:1px solid var(--cmn-line); border-top:4px solid var(--cmn-gold); border-radius:12px; padding:18px 22px; display:grid; gap:10px; }",
     ".cmn-band-h { margin:0; font-family:var(--cmn-serif); font-size:1.2rem; color:var(--cmn-heading); }",
     ".cmn-band-list { margin:0; padding-left:20px; display:grid; gap:6px; }",
+    ".cmn-todo { margin:4px 0 2px; }",
+    ".cmn-todo-det > summary { list-style:none; cursor:pointer; display:inline-flex; align-items:center; min-height:24px; color:var(--cmn-link); text-decoration:underline; text-underline-offset:3px; font-weight:600; font-size:.92rem; }",
+    ".cmn-todo-det > summary:focus-visible { outline:2px solid var(--cmn-accent); outline-offset:2px; border-radius:3px; }",
+    ".cmn-todo-det > summary::-webkit-details-marker { display:none; }",
+    ".cmn-todo-note { margin:4px 0; color:var(--cmn-muted); font-size:.88rem; }",
+    ".cmn-todo-text { display:block; width:100%; max-width:40rem; box-sizing:border-box; font:inherit; font-size:.92rem; padding:6px 8px; border:1px solid var(--cmn-line); border-radius:6px; background:var(--cmn-surface); color:var(--cmn-ink); }",
+    ".cmn-todo-row { margin:6px 0 0; }",
     ".cmn-filter-row { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:10px 20px; }",
     ".cmn-filters { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 18px; }",
     ".cmn-filter-label, .cmn-sort-note { color:var(--cmn-muted); font-size:.9rem; margin:0; }",
