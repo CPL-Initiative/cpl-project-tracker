@@ -16491,8 +16491,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 531,
+   "count": 532,
    "docs": [
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 565,
+     "path": "docs/session_565_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "commons"
+     ],
+     "title": "Session 565 handoff: a Confirmed by a person count beside ready on the Course page and card",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25558,5 +25572,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1364
+ "total": 1365
 }
