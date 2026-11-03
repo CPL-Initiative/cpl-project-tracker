@@ -1,20 +1,24 @@
 {
   "schema": 1,
-  "session": 543,
+  "session": 559,
   "moniker": "SkyAndromeda",
-  "run": "Sam's session",
+  "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_544_handoff.md",
+  "handoff": "docs/session_560_handoff.md",
   "calls": [],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-02T01:20:14Z",
+  "written_at": "2026-11-03T08:36:12Z",
   "project": "course",
   "next_step": {
-    "title": "The List norms on the Courses List",
-    "text": "The Courses List runs on the shared engine; the engine's suggest slot and changed tracker come next, and the tiles once they move into the engine."
+    "title": "Make the Commons figures agree on every tab",
+    "text": "Every reference now draws the opened page; the lane's to-do is each tab's figures agreeing with the Commons summary, or the difference named on both."
   },
   "changes": [
+    {
+      "at": "2026-11-03T08:45:00Z",
+      "text": "COCI Lookup's Progress view draws the Common Course Reference's opened page from the Commons' own row: 3,205 of 27,581 cards ready (#2720)."
+    },
     {
       "at": "2026-11-02T00:55:00Z",
       "text": "COCI Lookup's Courses view is the Courses List: 141,738 local courses banded by today's M-ID, read only, Open in SkyView on each band (#2670)."

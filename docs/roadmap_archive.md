@@ -15,6 +15,17 @@ Parts 2 to 6 ([2](roadmap_archive_2.md) · [3](roadmap_archive_3.md) · [4](road
 (S474) for the 150 KB archive budget: the completed roadmap rows, the session narratives through
 S196, and the INDEX history rotated out before 2026-09-17. New rotations keep landing here.
 
+## INDEX update-history entries rotated out (2026-11-03)
+
+- 2026-11-02 S550 SkyMoonflower: the ninth contacts read (33 records, 16 new, 0 gone; 295 people at 75 colleges) closes the first full pass, so the harvest goes weekly on Sundays; the contacts lane compacted; handoff 551.
+- 2026-11-02 S549 SkySunflower: Santa Ana's SLO trial, 12 of 12 after a reader fix (#2691); two contacts title patterns (#2692); the eighth contacts read (31 people, 279 at 70 colleges); handoff 550.
+- 2026-11-02 S548 SkyTadpole: the cert link's IT vendor family (CompTIA, Cisco, Microsoft; 208 titles to 165 certs, #2689), the seventh contacts read (47 people, 246 at 59 colleges); handoff 549.
+- 2026-11-02 S547 SkyCartwheel: Golden West's SLO load (568 rows), the sixth contacts read (53 people), Open Asks Sheet 156 on the colleges that refuse the read; handoff 548.
+- 2026-11-02 (Sam's session, SkyWhirlpool S545): the List norms' step 3 (CR wordings in read-only bands by group, `bands.order`; #2679) and Exhibits on the engine's suggestion slot (#2680), so all three steps have landed; the college short-name editor (`public.college_short_names`, the College Identity tab's Short name column, the daily fold `kb/_apply_college_short_names.py`, DR-30; #2681); KB note `methodology-probe-a-live-trigger-inside-a-failing-statement`.
+- 2026-11-02 (Sam's session, SkySombrero S544): the List norms' steps 1 and 2 in the engine (suggestions with Confirm and Dismiss, Changed this visit, filter counts, Selected; #2673, #2675); the Commons status rebuilt nightly after the procedures (#2674); City College of San Francisco and College of the Desert back in the funding join on Sam's Sheet 155 *restore* (#2676); new KB note methodology-a-name-a-join-keys-on-is-a-key.
+- 2026-11-02 (Sam's session, SkyAndromeda S543): Sierra answers which colleges have not met the 75 percent JST condition from one aggregate funding-note section and names the statewide JST count (#2666, deployed on Sheet 154 *deploy*); the credential reference's statewide flag counts the Fact Sheet's 152 (#2667, *count*, ESS outcome 2 70 to 72 colleges); S542's five PRs merged; new KB note methodology-a-per-entity-index-cannot-answer-which-ones.
+- 2026-11-01 (Sam's session, SkyTriangulum S542): kept groups and moves in the Exhibits List (#2655); one List engine, `commons_list.js`, with Lists for the CR Reference (flag, #2659), Subjects and Program Requirements (#2656-#2660); Lists and the Catalog Commons span the window (#2661, #2662); a read-only SLO grouping test (lessons, the vault report).
+
 ## INDEX update-history entries rotated out (2026-10-31)
 
 - 2026-10-30 (S527 SkyLoganberry): Glendale's eleven C-numbered courses priced from the catalog through a read that parses itself on the runner (`parse_units`); 115 of 226 pass (#2578); handoff 528.

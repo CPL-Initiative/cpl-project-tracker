@@ -515,3 +515,15 @@ style (a dashed box, muted centered text) since it shipped; the module now clear
 **RULED (Sam, Open Asks Sheet 108 card 5, 13:24Z 2026-10-20, his own call: keep; `cpl_memory`
 `sam-sheet-108-rulings-2026-10-20`).** The CR Progress view stays as built: complete = a wording a rule places or a
 curator decides, and the tab opens on its worklist.
+
+## S559 SkyAndromeda, 2026-11-03: the Common Course Reference takes the opened page, the last of them
+
+- **Read the Commons' row, never recount.** The Course page reads `kb/status/commons.json`'s `course` row and its run
+  log, as Exhibits' tiles do, so the S490 to-do (every tab agreeing with the Commons summary) holds by construction
+  here. The three questions needed counts the row lacked, so the builder writes the auditor's six tag counts into
+  `facts.tags` rather than the page fetching the 10 MB `kb/row_audit/latest.json`.
+- **The auditor counts a tag once a card** (checked: the per-card set counter equals `stats.tag_counts`), so *cards free
+  of a tag* = total less the tag's count is a sound row over the one denominator.
+- **commons_page.js's links fall under 24px** in a row (`a` gets no min-height, its buttons do): a host whose rows link out
+  (here SkyView, an external page) adds `a { display:inline-block; min-height:24px }` under its prefix. A host with no
+  h2 above the page skips h1 to h3; COCI Lookup's header is a span, so the view adds its own h2.

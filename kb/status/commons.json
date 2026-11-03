@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-03T06:22:29Z",
+ "written_at": "2026-11-03T08:36:33Z",
  "rows": [
   {
    "key": "requirements",
@@ -155,6 +155,10 @@
     {
      "href": "#coci-lookup",
      "text": "Open the Courses List"
+    },
+    {
+     "href": "#coci-lookup/progress",
+     "text": "Open Progress"
     }
    ],
    "status_file": "kb/status/course.json",
@@ -220,7 +224,15 @@
     "needs_review": 17036,
     "needs_repair": 7335,
     "not_ready": 5,
-    "cap": 0.79
+    "cap": 0.79,
+    "tags": {
+     "blank_description": 5750,
+     "discipline_title_mismatch": 1116,
+     "blank_discipline": 89,
+     "seed_untouched_discipline": 14523,
+     "top_discipline_disagreement": 1159,
+     "unit_anomaly": 4179
+    }
    },
    "sources": [
     "kb/row_audit/latest.json",
@@ -277,7 +289,7 @@
    ],
    "machine": {
     "what": "the worklist build, last changed",
-    "at": "2026-11-02T06:25:55Z",
+    "at": "2026-11-03T06:22:32+00:00",
     "every_hours": null
    },
    "facts": {
@@ -427,7 +439,7 @@
    ],
    "pair": [
     {
-     "n": 7536,
+     "n": 7559,
      "of": null,
      "words": "credentials from 1,525 issuers",
      "open": "#exhibits"
@@ -437,16 +449,16 @@
     "issuer-published"
    ],
    "facts": {
-    "credentials": 7536,
+    "credentials": 7559,
     "issuers": 1525,
     "in_map": 205,
     "articulated": 161,
-    "with_issuer_skills": 26,
-    "tech_giant": 466
+    "with_issuer_skills": 39,
+    "tech_giant": 477
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-02T00:00:00Z",
+    "at": "2026-11-03T00:00:00Z",
     "every_hours": null
    },
    "sources": [
@@ -504,7 +516,7 @@
    "links": [],
    "pair": [
     {
-     "n": 26,
+     "n": 39,
      "of": null,
      "words": "credentials list their issuer's skills so far",
      "open": null
@@ -514,11 +526,11 @@
     "issuer-published"
    ],
    "facts": {
-    "with_issuer_skills": 26
+    "with_issuer_skills": 39
    },
    "machine": {
     "what": "the credential watch's catalog",
-    "at": "2026-11-02T00:00:00Z",
+    "at": "2026-11-03T00:00:00Z",
     "every_hours": null
    },
    "sources": [

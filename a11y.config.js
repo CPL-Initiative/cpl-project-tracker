@@ -993,6 +993,20 @@ async function seedCociList(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// The Common Course Reference's Progress page (S559): COCI Lookup's Progress view, the Commons' opened page read
+// from the real kb/status/commons.json the origin serves.
+async function seedCociProgress(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "coci-lookup/progress") location.hash = "coci-lookup/progress"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#cplcoci-progress .cplcoci-pg-groups", { timeout: 120000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Procedures: each procedure, one opened to what it did.
 async function seedCerProcedures(page, theme) {
   await openCerView(page, theme, "procs");
@@ -3205,6 +3219,23 @@ module.exports = {
     routes: [{ hash: "coci-lookup", name: "list-dark" }],
     widths: [390, 1440],
     seed: (page) => seedCociList(page, "dark"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── COCI Lookup: the Common Course Reference's Progress page (S559) ── */
+  "coci-lookup-progress": {
+    file: "index.html",
+    title: "COCI Lookup: Progress, the Common Course Reference's opened page",
+    routes: [{ hash: "coci-lookup/progress", name: "progress" }],
+    widths: [320, 390, 768, 1440],
+    seed: (page) => seedCociProgress(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "coci-lookup-progress-dark": {
+    file: "index.html",
+    title: "COCI Lookup: Progress, dark",
+    routes: [{ hash: "coci-lookup/progress", name: "progress-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCociProgress(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "cr-list-dark": {
