@@ -135,6 +135,7 @@ def row_requirements(root):
         "procedures": [
             {"n": len(colleges), "words": "reading procedures, one per college read, versioned", "open": tab},
             {"words": "A misread is fixed in the procedure, and the records it touched are reread together"},
+            {"words": "Counted from the records committed at the last checkpoint; the tab reads the harvest live, so between checkpoints its figures run ahead of these"},
         ],
         "machine": {"what": "the last college read", "at": max(starts) if starts else None, "every_hours": None},
         "facts": {"active": len(active), "complete": len(complete), "failing": failing, "unread": unread,

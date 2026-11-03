@@ -46,7 +46,7 @@ function ready(opts) {
     rec("Cerritos College", "1"), rec("Cerritos College", "2", { coverage: false, invented: true, arithmetic: "equal" }),
     rec("Irvine Valley College", "3", { coverage: true, invented: true, arithmetic: "unequal" }),
     rec("Irvine Valley College", "4", { coverage: true, invented: false, arithmetic: "equal" }),
-    rec("Irvine Valley College", "9")      /* not on COCI's active list: never counted */
+    rec("Irvine Valley College", "9", { coverage: false, invented: true, arithmetic: "equal" })      /* not on COCI's active list, failing: never counted (S560) */
   ];
   const keys = { "Cerritos College|1": 1, "Cerritos College|2": 1, "Cerritos College|5": 1,
     "Irvine Valley College|3": 1, "Irvine Valley College|4": 1, "Canyons College|6": 1 };
@@ -86,7 +86,10 @@ function rowN(root, label) {
   check("(2) the groups count over COCI's active programs", text.indexOf("active programs in COCI") >= 0);
   check("(3) Needs attention names the failing records and the open call, not the answered one",
     /3\s*records fail a machine check/.test(text) && text.indexOf("Keep Glendale parked?") >= 0 && text.indexOf("Answered one") < 0 ||
-    (text.indexOf("records fail a machine check") >= 0 && text.indexOf("decision for Sam: Keep Glendale parked?") >= 0 && text.indexOf("decision for Sam: Answered one") < 0));
+    (/(records fail|whose record fails) a machine check/.test(text) && text.indexOf("decision for Sam: Keep Glendale parked?") >= 0 && text.indexOf("decision for Sam: Answered one") < 0));
+  check("(3a) the failing item counts active programs, as the Commons card does (3, not the 4 records)",
+    /3\s*active programs whose record fails a machine check/.test(text) && !/4\s*records fail a machine check/.test(text), text.slice(text.indexOf("Needs attention"), text.indexOf("Needs attention")+400));
+  check("(3a) the page names why it can differ from the Commons card", text.indexOf("the CPL Commons card counts the records committed at the last checkpoint") >= 0);
   check("(3) the next step is the status file's", text.indexOf("Read Columbia") >= 0);
   check("(3) a zero item is left out (no addenda to read)", text.indexOf("catalog addenda to read") < 0 && text.indexOf("catalog addendum to read") < 0);
   const det = m.root.querySelector('details[data-sec="progress:details"]');

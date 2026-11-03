@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "written_at": "2026-11-03T08:36:33Z",
+ "written_at": "2026-11-03T09:15:59Z",
  "rows": [
   {
    "key": "requirements",
@@ -46,6 +46,9 @@
     },
     {
      "words": "A misread is fixed in the procedure, and the records it touched are reread together"
+    },
+    {
+     "words": "Counted from the records committed at the last checkpoint; the tab reads the harvest live, so between checkpoints its figures run ahead of these"
     }
    ],
    "machine": {
@@ -477,9 +480,9 @@
    ],
    "pair": [
     {
-     "n": 19821,
+     "n": 24120,
      "of": null,
-     "words": "outcomes read from 4,729 courses at 7 colleges",
+     "words": "outcomes read from 6,095 courses at 8 colleges",
      "open": "#coci-lookup"
     }
    ],
@@ -487,8 +490,8 @@
     "read from the public outline"
    ],
    "facts": {
-    "outcomes": 19821,
-    "courses": 4729,
+    "outcomes": 24120,
+    "courses": 6095,
     "colleges": [
      "cabrillo",
      "coastline_community",
@@ -496,13 +499,14 @@
      "modesto_junior",
      "moreno_valley",
      "norco",
-     "riverside_city"
+     "riverside_city",
+     "santa_ana"
     ],
-    "reads": 18
+    "reads": 22
    },
    "machine": {
     "what": "the last outline read",
-    "at": "2026-11-02T07:02:26Z",
+    "at": "2026-11-03T08:08:41Z",
     "every_hours": null
    },
    "sources": [
