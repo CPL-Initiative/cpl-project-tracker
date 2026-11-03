@@ -45,6 +45,15 @@ check("the nightly procedures run rebuilds and commits them", /python3 kb\/_buil
   && /git add kb\/exhibits_review\.json kb\/exhibits_review_courses\.json kb\/exhibits_adoption\.json/.test(proc)
   && proc.indexOf("_cer_procedures.py --classify") < proc.indexOf("_build_exhibits_review.py"));
 check("CI runs the builder's test", /python3 tests\/exhibits_review_build_test\.py/.test(fs.readFileSync(".github/workflows/js-tests.yml", "utf8")));
+{
+  // One MAP address (Sam, 2026-10-26): every link goes through map_links.js, and the tab's copy for a page without it
+  // must equal map_links.js's, or the two drift apart unseen.
+  const ex = fs.readFileSync("exhibits.js", "utf8"), ml = fs.readFileSync("map_links.js", "utf8");
+  const pick = function (src, name) { const m = src.match(new RegExp("var " + name + ' = "([^"]+)"')); return m && m[1]; };
+  check("the tab's MAP page and view equal map_links.js's", pick(ex, "MAP_PAGE") && pick(ex, "MAP_PAGE") === pick(ml, "MAP_PAGE")
+    && pick(ex, "MAP_VIEW") && pick(ex, "MAP_VIEW") === pick(ml, "MAP_VIEW"));
+  check("the tab builds a MAP address in one function only", (ex.match(/MAP_PAGE \+ "\?Exhibit="/g) || []).length === 1);
+}
 check("the Commons row links Open Exhibits, at its Progress view", /"href": tab \+ "\/progress", "text": "Open Exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 check("the Commons row's tab is Exhibits (Sheet 148, link-retire)", /tab = "#exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8"))
   && /\("exhibit", "Common Exhibit Reference", "#exhibits", row_exhibit\)/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
@@ -252,8 +261,8 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
   check("the conflict shows the title saved earlier", /Saved earlier as “Juvenile Justice Procedures”/.test(txt(t.d.querySelector(".exh-card"))));
   check("the training site reads from the reference and is not an input", /Training site:Regional Academy/.test(txt(t.d.querySelector(".exh-read"))) && !t.d.querySelector(".exh-read input"));
   check("signed out, the students line asks for a sign-in", /Sign in as a reviewer to see students/.test(txt(t.d.querySelector(".exh-why"))));
-  check("the source links each exhibit in MAP on its Non-Military card",
-    Array.from(t.d.querySelectorAll(".exh-card a")).filter(function (a) { return /View=Non-Military$/.test(a.href) && /Exhibit=MAPCXS-A2-J-1-001/.test(a.href); }).length === 1);
+  check("the source links each exhibit in MAP through map_links.js, on its Non-Military card",
+    Array.from(t.d.querySelectorAll(".exh-card a")).filter(function (a) { return a.href === "https://map.example/opp?Exhibit=MAPCXS-A2-J-1-001&View=Non-Military"; }).length === 1);
 
   // saving signed out
   byText(t.d, ".exh-acts button", "Skip").click(); await settle();
@@ -285,7 +294,7 @@ function current(d) { const li = d.querySelector(".exh-now"); return li ? txt(li
     && /ART 20 Digital Art I, 3 units/.test(txt(panel)) && /ART 20N Digital Art I, noncredit/.test(txt(panel)));
   check("the courses file loads on the first click only", t.calls.filter(function (c) { return c.url === "kb/exhibits_review_courses.json"; }).length === 1);
   check("the panel links Request Quick Adopt to the held exhibit", /Request Quick Adopt in MAP/.test(txt(panel))
-    && panel.querySelector("a").href.indexOf("Exhibit=MAPCXH-ITDM-1-001&View=Non-Military") !== -1);
+    && panel.querySelector("a").href === "https://map.example/opp?Exhibit=MAPCXH-ITDM-1-001&View=Non-Military");
   check("the chip reads expanded", Array.from(t.d.querySelectorAll("button.exh-cchip")).find(function (b) { return txt(b) === "Cypress"; }).getAttribute("aria-expanded") === "true");
   check("the edit survived opening the chip too", title(t.d).value === "Introduction to Digital Art and Media");
 

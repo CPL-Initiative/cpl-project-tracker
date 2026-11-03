@@ -1,12 +1,58 @@
 ---
-title: "CER redesign handoff: Sheet 161 applied (SkyBlackberry)"
+title: "CER redesign handoff: one MAP address on the Exhibits tab (SkyElderberry)"
 date: 2026-11-03
-session: CER redesign build, side session (SkyBlackberry)
-tags: [handoff, cer, exhibits, exhibit-canonicalization, kb-curation, decision-sheet]
+session: CER redesign build, side session (SkyElderberry)
+tags: [handoff, cer, exhibits, exhibit-canonicalization, kb-curation, map-links]
 status: current
 ---
 
-# You are SkyElderberry, the Exhibits tab's next build
+# You are SkyHuckleberry, the Exhibits tab's next build
+
+SkyElderberry ran on 2026-11-03 from about 16:45Z to 17:10Z. **Light checkpoint:** no lane changed state and the run
+wrote no data. Skipped: `README.md`, `kb/README.md`, the pipeline view, a KB note, `kb/status/*.json`, the decision
+sheet (nothing waits on Sam from this lane). The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (565).
+
+## What shipped (SkyElderberry)
+
+- **The Exhibits tab's MAP links go through `map_links.js`.** Two of them (Request Quick Adopt in a college's panel,
+  and each source exhibit's *in MAP* link) built the address from the tab's own copy. `mapUrl` in `exhibits.js` now
+  calls `CPL_MAP_LINKS.url` and keeps its copy only for a page without `map_links.js`; `linkUrl` folded into it.
+  `tests/exhibits.test.js` pins both links to the `map_links.js` stub and holds the copy equal (198 of 198; the two
+  link checks fail on the old code).
+- **The EACR lane's NEXT line** said the workbook and the statewide view still built the address themselves. Both
+  already call `CPL_MAP_LINKS.url`; the line now says so.
+- **Checked, nothing to do:** no fold after 11-03. The 15:33Z CER procedures run (run 41664297423) saved 26
+  classifier rows for unclassified exhibits and moved no credential, so no panel row needs moving. No Curate rows from
+  Sam since 12:00Z, and no `cer_procedure_*` row.
+- **SkyTeaberry still reads blocked** on *reply "go" and approve the Supabase delete*. That delete is SkyBlackberry's
+  16:08Z Sheet 161 apply; it is done. Do not reply "go" there.
+
+## Open work, in order
+
+1. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
+   and move the panel rows they list. Never move a `unified_title_override` or `unified_title_merge_confirm`, and
+   compare values before you call a leftover row redundant.
+2. **The first rule sent to the routine** (carried): when one shows up in the Rules view, confirm the overnight firing
+   worked it by step 7.
+3. **Carried:** the Catalog's *Courses that may align*, once a source names courses.
+4. **Noticed, not this lane's:** the 10 credentials on the Fact Sheet builder's MAP fix list (SkySnowberry).
+
+## Lessons to honor
+
+- Before acting on a lane's NEXT line, grep the code it names: the EACR line was one fix behind.
+- A delete and a guarded move of a row onto the deleted row's key cannot share one statement with a `not exists`
+  guard (SkyBlackberry). The repo's Supabase guard refuses a read that contains `replace`.
+- The cer-procedures lane sits at its 20,000-byte budget (19,900 now). Move a ruled paragraph to the lessons doc before
+  you add one.
+
+## Let go
+
+At sign-off this session holds no check-in and no artifact watch; its PR watch drops when the PR merges.
+
+---
+
+# SkyBlackberry's record (earlier the same day)
+
 
 SkyBlackberry ran on 2026-11-03 from about 16:00Z to 16:15Z and applied Sam's two Sheet 161 answers. This is a
 **light checkpoint**: no lane changed state beyond one NEXT line, and the run's one data write is recorded in the
@@ -26,7 +72,7 @@ stays the routine's (latest 565).
 - **Checked, nothing to do:** no fold after 11-03 (`kb/unclassified_fold/`), and `kb_curation` holds no
   `cer_procedure_*` row.
 
-## Open work, in order
+## Open work then, in order
 
 1. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
    and move the panel rows they list. Never move a `unified_title_override` or `unified_title_merge_confirm`, and
@@ -48,26 +94,4 @@ stays the routine's (latest 565).
 ## Let go
 
 At sign-off this session holds no check-in and no artifact watch; its PR watch drops when the PR merges.
-
----
-
-# SkyCheckerberry's record (earlier the same day)
-
-## What shipped
-
-- **The panel rows of Sam's 11-01 and 11-02 runs through Another look (open work 1).** The 11-02 fold moved 42
-  credentials and retired 27. The 11-03 fold moved one: Sam filed Saddleback's *Credit by Exam* under *Water Supply*.
-  Together they left 25 Curate-panel rows under 17 old names. Ten moved to the new names by a guarded UPDATE of
-  `course_id` (receipt `kb/receipts/credential_panel_move_2026-11-03_skycheckerberry.json`, before-values and rollback
-  SQL; the guard refused none). Fifteen stayed under the old keys, each named in the receipt. Eight met an identical
-  issuer row under the new name. Five rename and confirm rows were already carried out: moved, Sam's *Spanish 1* →
-  *Elementary Spanish I* would rename *Elementary Spanish 1* back to Roman.
-- **Open Asks Sheet 161** (https://claude.ai/artifact/PhjuiVSgi9aDh48u96TtPv, current, `SHEET_ID`
-  `2026-11-03-open-asks-161`, db and comments, store empty at publish). Two cards, held because each deletes a row; Sam answered both at 15:14Z (*drop*, *ironworkers*):
-  1. **Engine Performance 1 and 2:** drop Sam's two ASE issuer rows, as he did for Electrical/Electronics on 10-31.
-  2. **Metal Building Erection 1:** whose issuer stands, Sam's Iron Workers row or a bulk run's California Community
-     Colleges row.
-
-  The builder and coverage test are in CPLBrain, with a premise and fixture for each card. The test passes 32 of 32.
-- **Nothing sent to the routine.** `kb_curation` held no `cer_procedure_*` row at 15:12Z.
 
