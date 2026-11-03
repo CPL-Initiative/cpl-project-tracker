@@ -1,5 +1,5 @@
 ---
-title: "CER redesign handoff: a quiet queue, one lane line caught up (SkyTrue)"
+title: "CER redesign handoff: the List becomes the workspace, the Exhibits side panel (SkyTrue)"
 date: 2026-11-03
 session: CER redesign build, side session (SkyTrue)
 tags: [handoff, cer, exhibits, exhibit-canonicalization, kb-curation, map-links]
@@ -8,43 +8,50 @@ status: current
 
 # You are SkyMulberry, the Exhibits tab's next build
 
-SkyTrue ran on 2026-11-03 from about 17:43Z to 18:05Z (Sam named it SkyTrue; the handoff had proposed SkyHuckleberry,
-a name 10-31 already used). **Light checkpoint:** no lane changed state and the run wrote no data. Skipped:
-`README.md`, `kb/README.md`, the pipeline view, a KB note, `kb/status/*.json`, the decision sheet (nothing waits on Sam
-from this lane). The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (565).
+SkyTrue ran on 2026-11-03 from about 17:43Z to 20:25Z (Sam named it SkyTrue). **Light checkpoint** at the context
+warning (about 100,000 tokens left): no §11 row moved, no re-mint, no data receipt (one `cpl_memory` decision row).
+Skipped: `README.md`, `kb/README.md`, the pipeline view, a new KB note (the List norms note took the plan), the
+decision sheet (nothing waits on Sam). The CPL queue's `docs/session_<N>_handoff.md` stays the routine's (565).
 
 ## What shipped (SkyTrue)
 
-- **The cer-procedures lane caught up with the code.** It said *SLO hints, to build*; #2684 shipped them on 11-02
-  (`kb/_build_exhibit_slo_neighbors.py`, daily, 326 neighbors over 10 colleges on 11-03). The line now says built.
-  Sheet 161's applied ruling moved verbatim from NEXT to the lessons doc (lane 19,833 bytes).
-- **Checked, nothing to do:** the 11-03 fold's one move (Credit by Exam to Water Supply) is in SkyCheckerberry's
-  receipt. No fold after 11-03, no Curate row from Sam since 12:00Z (only the 15:33Z classifier's 26), and no
-  `_CER_PROCEDURE_REQUEST::` row, so no rule waits on the routine.
-- **Santa Ana's 1,366 SLOs** (S559) postdate the 06:22Z neighbors build; the next daily run takes them in.
+- **#2733** (merged): the cer-procedures lane says SLO hints are built; Sheet 161 moved to the lessons doc.
+- **#2735** (merged): every Commons card action opens the reference's List; a Subjects pick waiting for a person opens
+  List, Open (Confirm this pick lives there; the Reference box saves only a changed code). New addresses
+  `#canonical-subj4/list/<filter>`, `#program-requirements/list/<filter>`; Exhibits' procedures open its Rules view.
+- **#2736** (merged): Exhibits' tiles fold behind *Hide the summary*; one line of their counts stays above the list.
+- **#2737** (open, CI): the Local subjects List, a fourth Subjects view: one row per local code (320 mapped, 18 left
+  out, 1,376 only in courses); Confirm writes `_SUBJ_DISC::<CODE>` under DR-25. The map file is never edited from it.
+- **#2738** (open, CI): the side panel. `commons_list.js` gains a `panel` hook (a title opens it; the title's drawer
+  moves inside); Exhibits shows the credential, its folded members (sortable, MAP links) and the rest folded; a
+  Students column. a11y targets `exhibits-panel` and `-dark`.
+- Mock: https://claude.ai/artifact/PJKHZ8QwfyfbRW7U6qwBV4 (version 11, Sam: *"Mock looks great"*).
+
+## Sam's decisions this run (cpl_memory `sam-the-list-is-the-commons-workspace-2026-11-03`)
+
+The List is each reference's one workspace: a line of counts, the cards folded, a side panel per row; the original
+views retire once the List does what they do. The panel shows the folded members (he set the description layer
+aside: MAP's exhibits carry no description). CIP sector over SOC. A Students column. Held exhibit titles keep
+Review; Courses keeps SkyView first.
 
 ## Open work, in order
 
-1. **After each of Sam's runs through Another look,** read the next fold's `credential_moves` and `credential_retires`
-   and move the panel rows they list. Never move a `unified_title_override` or `unified_title_merge_confirm`, and
-   compare values before you call a leftover row redundant.
-2. **The first rule sent to the routine** (carried): when a `cer_procedure_request` row shows up, confirm the overnight
-   firing worked it by step 7.
-3. **Carried:** the Catalog's *Courses that may align*, once a source names courses (the chip is in the CTDL seed
-   mock-up; no source names courses yet).
-4. **Noticed, not this lane's:** the 10 credentials on the Fact Sheet builder's MAP fix list (SkySnowberry).
+1. **Merge #2737 and #2738** once `test` passes on each head (both subscribed).
+2. **Carry the edits into the panel** (issuer, training sites), so the Credentials view can retire.
+3. **The other Lists take the line, the folded cards and the panel** (CR, Subjects, Courses, Programs), one PR each,
+   by the one renderer (norms note, *The List is the workspace*).
+4. **The Subjects card's second count** (local codes confirmed by a person) once the confirms sync to a file.
+5. **Carried:** after each of Sam's runs through Another look, move the panel rows the fold names.
 
 ## Lessons to honor
 
-- Before acting on a lane's NEXT or *to build* line, grep the code it names: twice now a line was one merge behind.
-- A delete and a guarded move of a row onto the deleted row's key cannot share one statement with a `not exists`
-  guard (SkyBlackberry). The repo's Supabase guard refuses a read that contains `replace`.
-- The cer-procedures lane sits near its 20,000-byte budget (19,833). Move a ruled paragraph to the lessons doc before
-  you add one.
+- Read the repo before advising: Sam's *"thought we had already gamed this out"* was right; the norms note held it.
+- A panel that takes a title's press must carry the title's drawer, or its content is lost (S542's Outcomes lines).
+- The seed's `variants_observed` fallback is M-ID SUBJ4s, never local codes.
 
 ## Let go
 
-At sign-off this session holds no check-in and no artifact watch; its PR watch drops when the PR merges.
+At sign-off: drop the PR watches on #2737 and #2738 once merged, and the artifact watch on the mock.
 
 ---
 
