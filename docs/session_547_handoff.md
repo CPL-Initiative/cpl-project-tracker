@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 546 (SkyPinwheel, scheduled, the 06:12Z firing of 2026-11-02)
 tags: [handoff, credential-registry, cert-link, contacts-harvest, ui-pass, course-outcomes]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 547

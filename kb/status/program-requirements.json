@@ -1,12 +1,12 @@
 {
   "schema": 1,
   "project": "program-requirements",
-  "written_at": "2026-11-02T18:49:29Z",
-  "session": 554,
-  "moniker": "SkySombrero",
+  "written_at": "2026-11-03T01:17:49Z",
+  "session": 555,
+  "moniker": "SkyTadpole",
   "run": "Sam's session",
   "decider": "Sam",
-  "handoff": "docs/session_555_handoff.md",
+  "handoff": "docs/session_556_handoff.md",
   "next_step": {
     "title": "Santa Ana's full SLO read",
     "text": "Santa Ana's trial parsed 12 of 12, so its four-part full read is the first step 11 run of 2026-11-03 (UTC); the helper then names the next trial or index. Monterey Peninsula's last 14 records still wait for a session with room for their page reads."
@@ -208,6 +208,10 @@
   },
   "changes": [
     {
+      "at": "2026-11-03T01:30:00Z",
+      "text": "Glendale and LA Valley unpark on Sam's marks of 22:55Z (keep going, handle the discrepancies after all data is harvested); the Commons now closes a to-do from its band (#2708)."
+    },
+    {
       "at": "2026-11-02T18:49:05Z",
       "text": "No harvest work this run: S554 (Sam's session) added Finish remediation to the Library's cards for a record left In remediation, and the /coord command; the queue's next step stands."
     },
@@ -380,6 +384,12 @@
       "active": 20282,
       "complete": 13542,
       "colleges": 114
+    },
+    {
+      "day": "2026-11-03",
+      "active": 20282,
+      "complete": 13542,
+      "colleges": 114
     }
   ],
   "next_run": {
@@ -388,7 +398,7 @@
     "at": "2026-11-03T06:12:00Z"
   },
   "harvest": {
-    "day": "2026-11-02",
+    "day": "2026-11-03",
     "gaps": 3025,
     "parts": {
       "links": {

@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 554 (SkySombrero, Sam's session, started about 17:50Z 2026-11-02)
 tags: [handoff, library, remediation, coordination]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 555

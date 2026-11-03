@@ -4,6 +4,8 @@ date: 2026-11-02
 session: 550 (SkyMoonflower, scheduled, the 12:12Z firing of 2026-11-02, started 12:30Z)
 tags: [handoff, contacts-harvest, course-outcomes]
 status: current
+superseded: true
+superseded_by: session_556_handoff.md
 ---
 
 # You are Session 551
