@@ -2325,7 +2325,7 @@
       total: rows.length, confirmed: confirmed.length, person: person, cohort: confirmed.length - person,
       validated: rows.filter(function (e) { return e.validated_at; }).length,
       unconfirmed: unconfirmed.length, unconfirmedAuthority: unconfirmed.filter(onAuthorityCode).length,
-      settled: settled.length, missingCode: rows.filter(function (e) { return !hasCode(e); }).length, collidedDisc: collidedDisc,
+      settled: settled.length, personSettled: settled.filter(function (e) { return !isCohort(e.reviewed_by); }).length, missingCode: rows.filter(function (e) { return !hasCode(e); }).length, collidedDisc: collidedDisc,
       fanInDisc: fanIns.length,
       collisions: check.collisions.length, collisionCodes: check.collisions.map(function (c) { return c.code; }),
       aliasShared: check.aliasShared.length, drift: check.drift.length, driftRows: check.nRowsOff, invalid: check.invalid.length,
@@ -2539,6 +2539,8 @@
       links: [x.procs ? { words: "How it is kept: " + fmtN(on) + " procedures in force", go: go(TO.procedures) } : null,
         sheet ? { words: "Decision record", href: sheet.link } : null].filter(Boolean),
       progress: { n: x.settled, of: total, short: "settled", words: "MQ disciplines with courses carry a settled Common SUBJ",
+        // Confirmed by a person, beside settled (Sheet 160; Sam, S565, 2026-11-03: all five references).
+        confirmed: { n: x.person, done: x.personSettled, doneWords: "settled" },
         recently: [recently, split].filter(Boolean).join(" "),
         calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmtN(open.length) + " decisions wait on ") + x.decider + "."
           : "No decisions wait on " + x.decider + ".") : "" },

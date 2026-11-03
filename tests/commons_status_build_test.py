@@ -98,9 +98,9 @@ cr = rows[3]
 crf = cr.get("facts") or {}
 # S437 (the CR Progress view; Open Asks Sheet 108 card 5): one pair, the wordings that resolve to a
 # settled reference of every wording, a rule's placements and a curator's beyond them summing to it.
-check("CR: one pair, settled wordings of every wording, opening the Progress view",
-      len(cr["pair"]) == 1 and cr["pair"][0]["n"] == crf.get("settled") and cr["pair"][0]["of"] == crf.get("wordings")
-      and cr["pair"][0]["open"] == "#cr-reference/progress" and cr["tests"] == ["rule-settled", "curator-decided"])
+check("CR: settled wordings of every wording first, opening the Progress view",
+      cr["pair"][0]["n"] == crf.get("settled") and cr["pair"][0]["of"] == crf.get("wordings")
+      and cr["pair"][0]["open"] == "#cr-reference/progress" and cr["tests"] == ["rule-settled", "curator-decided", "confirmed by a person"])
 check("CR: a rule's wordings and a curator's beyond them sum to the settled count, the rest unsettled",
       crf.get("rule_wordings") + crf.get("curator_only") == crf.get("settled")
       and crf.get("settled") + crf.get("unsettled") == crf.get("wordings")
@@ -133,7 +133,7 @@ check("Subjects: a person's and a cohort's confirmations sum to the confirmed co
 check("Subjects: settled is the confirmed count less the collisions, and the pair carries it",
       sub.get("settled") == rows[4]["pair"][0]["n"] and sub.get("settled") <= sub.get("confirmed") and rows[4]["pair"][0]["of"] == sub.get("disciplines"))
 check("Subjects: the pair's words say MQ disciplines and name the three tests", "MQ disciplines" in rows[4]["pair"][0]["words"]
-      and rows[4]["tests"] == ["confirmed", "authority rule", "collision-free"])
+      and rows[4]["tests"] == ["confirmed", "authority rule", "collision-free", "confirmed by a person"])
 check("Subjects: every count opens the tab's own list (the Commons' step 3)",
       rows[4]["pair"][0]["open"] == "#canonical-subj4/progress" and all((i.get("open") or "").startswith("#canonical-subj4/") for i in rows[4]["issues"]))
 # A collision issue is listed only while a collision exists (the AGAB re-key of 2026-10-19 closed the one, S427):
@@ -167,6 +167,42 @@ if os.path.exists(os.path.join(ROOT, "kb", "csr_procedures.json")):
           and all(any(p["name"] == w["words"] for p in on) for w in rows[4]["procedures"][1:]
                   if not w["words"].startswith("Counted from"))  # the timing line (S561) names no procedure
           and rows[4]["procedures"][-1]["words"].startswith("Counted from the picks"))
+
+# ── Confirmed by a person on all five (Sheet 160; Sam, S565, 2026-11-03: "yes to both, build them for all four") ──
+check("confirmed: every row carries a second pair, a person's confirmations over the first pair's denominator",
+      all(len(r["pair"]) == 2 and r["pair"][1]["words"].startswith("confirmed by a person") and r["pair"][1]["of"] == r["pair"][0]["of"]
+          and "confirmed by a person" in r["tests"] for r in rows), [(r["key"], r["pair"]) for r in rows])
+check("confirmed: never more than its denominator, and its complete share never more than it",
+      all(r["pair"][1]["n"] is None or r["pair"][1]["n"] <= r["pair"][1]["of"] for r in rows))
+check("confirmed: CR counts the wordings a curator's decision names, all of them settled",
+      cr["pair"][1]["n"] == crf.get("curator_wordings") == crf.get("confirmed") and crf.get("confirmed_settled") == crf.get("confirmed"))
+check("confirmed: Subjects counts a person's confirmations, a cohort's left out",
+      rows[4]["pair"][1]["n"] == rows[4]["facts"]["person"] and rows[4]["facts"]["person_settled"] <= rows[4]["facts"]["person"])
+check("confirmed: Exhibit counts a person's title stamps", rows[1]["pair"][1]["n"] == rows[1]["facts"]["person"])
+with tempfile.TemporaryDirectory() as tmp:
+    os.makedirs(os.path.join(tmp, "kb"))
+    with open(os.path.join(tmp, "kb", "coci_curation.json"), "w") as f:
+        json.dump({"curations": {
+            "ART M1001": {"unified_title": "Drawing", "reviewed_by": "map@rccd.edu"},
+            "ART M10AA": {"merge_into": "ART M1002", "reviewed_by": "MAP@rccd.edu"},
+            "ART M1003": {"unified_title": "Painting", "reviewed_by": "automerge-v1@bot"},
+            "ART M9999": {"discipline": "Art", "reviewed_by": "map@rccd.edu"}}}, f)
+    cf = B.confirmed_cards(tmp, {"rows": [{"id": "ART M1001", "k": "X", "fr": "ready"}, {"id": "ART M1001", "k": "C", "fr": "needs_review"},
+                                          {"id": "ART M1002", "k": "C", "fr": "needs_review"}, {"id": "ART M10AA", "k": "C", "fr": "ready"},
+                                          {"id": "ART M1003", "k": "C", "fr": "ready"}]})
+    check("confirmed: Course counts the card a save is keyed on and the card it places a course into, in cards (C and X twice); a cohort never",
+          cf == {"confirmed": 4, "ready": 2}, cf)
+import importlib.util as _iu
+_sp = _iu.spec_from_file_location("sync_checked", os.path.join(ROOT, "kb", "_sync_program_checked.py"))
+SC = _iu.module_from_spec(_sp); _sp.loader.exec_module(SC)
+check("Pathways sync: a person's checks only, no address, college and number and day in a stable order",
+      SC.shape([{"college": "B", "control_number": 2, "checked_by": "slee@cccco.edu", "checked_at": "2026-10-04T01:02:03Z"},
+                {"college": "A", "control_number": "01", "checked_by": "Sam", "checked_at": "2026-10-10T00:00:00Z"},
+                {"college": "C", "control_number": "9", "checked_by": "trial@bot", "checked_at": None}])
+      == [["A", "01", "2026-10-10"], ["B", "2", "2026-10-04"]])
+req = rows[0]
+check("Pathways: the confirmed pair reads the synced checks, and its complete share is a subset",
+      req["pair"][1]["n"] == req["facts"]["confirmed"] and req["facts"]["confirmed_complete"] <= req["facts"]["confirmed"])
 
 # ── the S343 rule: a source that cannot be read is null with its error, never a zero ──
 with tempfile.TemporaryDirectory() as empty:

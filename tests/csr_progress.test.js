@@ -18,6 +18,7 @@
 //     and the table still draws; tokens only, no glyph, American spelling.
 //
 // Run from repo root: `npm test` (or `node tests/csr_progress.test.js`).
+const x4c = (M) => { const x = M.progressContext(new Date()); return x.person + " confirmed by a person, " + x.personSettled + " of them settled."; };
 const fs = require("fs");
 const vm = require("vm");
 const { JSDOM } = require("jsdom");
@@ -268,6 +269,8 @@ setTimeout(function () {
     const d4 = t4.d, M4 = t4.w.CPL_CANONICAL_SUBJ4, pg4 = d4.getElementById("cs-progress");
     const page = pg4.querySelector(".cs-pg-page");
     check("page: drawn first when commons_page.js is in", !!page && pg4.firstElementChild === page);
+    check("page: a person's confirmations sit under the bar, with the settled share (S565)",
+      spaced(page.querySelector(".cs-pg-confirmed")) === x4c(M4) && M4.progressContext(new Date()).personSettled <= M4.progressContext(new Date()).person);
     check("page: the headline is the settled MQ disciplines over every one with courses (8 of 11)",
       /8 of 11 MQ disciplines with courses carry a settled Common SUBJ/.test(spaced(page.querySelector("[aria-label=Progress]"))));
     const x4 = M4.progressContext(new Date());

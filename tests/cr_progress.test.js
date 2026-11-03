@@ -150,6 +150,8 @@ const card = (doc, title) => Array.from(doc.querySelectorAll(".prh-pg-part")).fi
   const pg = await setup({ page: true, api: { groups: G, view: (v) => pg.views.push(v) } });
   pg.views = [];
   const page = pg.doc.querySelector(".cq-pg-page");
+  check("page: a person's confirmations sit under the bar, beside settled (S565: all five references)",
+    txt(page.querySelector(".cq-pg-confirmed")) === n(f.confirmed) + " confirmed by a person, " + n(f.confirmed_settled) + " of them settled.");
   check("page: drawn first when commons_page.js is in", !!page && pg.doc.querySelector(".cq-progress").firstElementChild === page);
   check("page: the headline is the Commons row's pair, wordings settled",
     txt(page.querySelector("[aria-label=Progress]")).indexOf(n(f.settled) + " of " + n(f.wordings) + " wordings resolve to a settled reference") >= 0);

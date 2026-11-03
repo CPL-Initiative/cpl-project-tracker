@@ -2805,6 +2805,8 @@
       lede: "The Common Exhibit Reference: every credential colleges grant credit for, under one name and issuer.",
       read: ptRead, links: links,
       progress: { n: pair ? pair.n : null, of: pair ? pair.of : null, short: "stamped",
+        // Confirmed by a person, beside the stamp (Sheet 160; Sam, S565): a person's stamp is complete here, so no clause.
+        confirmed: { n: row && row.facts ? row.facts.confirmed : null },
         words: "college-entered titles carry a review stamp",
         recently: [recently, split].filter(Boolean).join(" "), calls: callWords,
         error: cm.done ? (cm.error || (pair ? null : "the Commons row names no pair")) : null },

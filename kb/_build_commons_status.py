@@ -121,13 +121,21 @@ def row_requirements(root):
         if s:
             starts.append(s)
     tab = "#program-requirements"
+    # A person's Confirm in CPL Pathways sets the record's checked flag live (program_requirement_records); the
+    # daily sync (kb/_sync_program_checked.py) commits which ones, without the person's address.
+    chk = figure(lambda: set((names.get(r[0]) or coci_name(r[0], cols), str(r[1])) for r in
+                             load_json(root, "kb/status/program-requirements-checked.json")["checked"]))
+    checked = chk["n"]
     return {
         "key": "requirements", "title": "Program Requirements", "tab": tab,
         "links": [{"href": tab, "text": "Open the tab"}],
         "status_file": "kb/status/program-requirements.json" if exists(root, "kb/status/program-requirements.json") else None,
         "pair": [{"n": len(complete), "of": len(active),
-                  "words": "complete at %d colleges" % len(set(c for c, _ in complete)), "open": tab}],
-        "tests": ["machine-checked"],
+                  "words": "complete at %d colleges" % len(set(c for c, _ in complete)), "open": tab},
+                 confirmed_pair(len(checked) if checked is not None else None, len(active),
+                                sum(1 for k in complete if k in checked) if checked is not None else None,
+                                "complete", tab, chk["error"])],
+        "tests": ["machine-checked", "confirmed by a person"],
         "issues": [
             {"n": failing, "words": "active programs whose record fails a check", "owner": "the college's reading procedure", "open": tab},
             {"n": unread, "words": "active programs with no record yet", "owner": "the harvest", "open": tab},
@@ -140,10 +148,23 @@ def row_requirements(root):
         "machine": {"what": "the last college read", "at": max(starts) if starts else None, "every_hours": None},
         "facts": {"active": len(active), "complete": len(complete), "failing": failing, "unread": unread,
                   "records": len(recs), "colleges": len(colleges),
-                  "outside_active": sum(1 for k in by_key if k not in active)},
+                  "outside_active": sum(1 for k in by_key if k not in active),
+                  "confirmed": len(checked) if checked is not None else None,
+                  "confirmed_complete": sum(1 for k in complete if k in checked) if checked is not None else None},
         "sources": ["coci_programs_data.js", "kb/program_requirements_college/*/records/*.json",
-                    "kb/program_requirements_pilot/records/*.json", "kb/program_requirements_college/*/capture.json"],
+                    "kb/program_requirements_pilot/records/*.json", "kb/program_requirements_college/*/capture.json",
+                    "kb/status/program-requirements-checked.json"],
     }
+
+
+# ── Confirmed by a person (Sam, Open Asks Sheet 160, 2026-11-03) ─────────────────────────
+# "The personal confirmation is an attribute we can give the reference when it occurs and we can then count
+# confirmed CCRs." Complete stays each reference's own test; every row carries a second pair beside it, never in
+# its place: how many of its units a person has confirmed, and how many of those are also complete. Sam asked for
+# it on all five references on 2026-11-03 (S565: "yes to both, build them for all four").
+def confirmed_pair(n, of, done, unit_done, open_, error=None):
+    words = "confirmed by a person" + (", %s of them %s" % (fmt(done), unit_done) if done is not None and n else "")
+    return {"n": n, "of": of, "words": words, "open": open_, "error": error}
 
 
 # ── Common Exhibit Reference ──────────────────────────────────────────────────────────────
@@ -212,8 +233,10 @@ def row_exhibit(root):
         "status_file": "kb/status/exhibit.json" if exists(root, "kb/status/exhibit.json") else None,
         "pair": [{"n": len(stamped), "of": len(ut),
                   "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"
-                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/credentials"}],
-        "tests": ["curator-stamped", "procedure-settled"],
+                           % (fmt(person), fmt(cohort), fmt(len(creds)), fmt(rec_stamped), fmt(len(records))), "open": tab + "/credentials"},
+                 # A person's stamp is complete by definition here (complete is a review stamp), so no "of them" clause.
+                 confirmed_pair(person, len(ut), None, "", tab + "/credentials")],
+        "tests": ["curator-stamped", "procedure-settled", "confirmed by a person"],
         # An issue that reads zero has nothing in it and is left out; an unread one (null, its error) stays.
         # The fold's conflicts read 0 after the CER procedures run of 2026-11-01 14:34Z (dd95a03f).
         "issues": [i for i in [
@@ -233,6 +256,7 @@ def row_exhibit(root):
         ],
         "machine": {"what": "the saving run and the fold", "at": max(stamps) if stamps else None, "every_hours": 24},
         "facts": {"titles": len(ut), "stamped": len(stamped), "person": person, "cohort": cohort, "credentials": len(creds),
+                  "confirmed": person,
                   "records": len(records), "records_stamped": rec_stamped, "saved_at": saved_at, "fold_at": fold_at,
                   "map_titles": (stats["n"] or {}).get("map_titles_in_current_dataset"),
                   "unclassified": (stats["n"] or {}).get("unclassified_in_map"),
@@ -278,10 +302,11 @@ def row_course(root):
         "status_file": "kb/status/course.json" if exists(root, "kb/status/course.json") else None,
         "pair": [{"n": fr["ready"], "of": st["total_cards"],
                   "words": "cards the auditor scores 0.85 or better; %s at needs review, %s at needs repair, %s not ready"
-                           % (fmt(fr["needs_review"]), fmt(fr["needs_repair"]), fmt(fr["not_ready"]))
-                           + ("; %s confirmed by a person in SkyView" % fmt(conf["n"]["confirmed"]) if conf["n"] else ""),
-                  "open": tab}],
-        "tests": ["scored by the auditor"],
+                           % (fmt(fr["needs_review"]), fmt(fr["needs_repair"]), fmt(fr["not_ready"])),
+                  "open": tab},
+                 confirmed_pair(conf["n"]["confirmed"] if conf["n"] else None, st["total_cards"],
+                                conf["n"]["ready"] if conf["n"] else None, "ready", tab, conf["error"])],
+        "tests": ["scored by the auditor", "confirmed by a person"],
         "issues": [
             {"n": tags.get("seed_untouched_discipline"), "words": "cards carry a discipline no seed has touched, capped at %s" % (cap["n"] if cap["n"] is not None else "0.79"),
              "owner": "the Common Subjects reference", "open": tab},
@@ -306,10 +331,18 @@ def row_course(root):
 
 
 def confirmed_cards(root, A):
-    """The auditor's cards a person has saved in SkyView: {confirmed, ready} (ready = confirmed and scoring ready)."""
+    """The auditor's cards a person has saved in SkyView or COBI: {confirmed, ready} (ready = confirmed and scoring
+    ready). A card counts when a person's save is keyed on it (its title, discipline, its own placement) or places a
+    course into it (the save's merge_into target, Sam 2026-11-03: "yes"). A save naming no card the audit carries
+    counts nowhere."""
     cur = load_json(root, "kb/coci_curation.json").get("curations") or {}
-    people = {k for k, v in cur.items() if isinstance(v, dict) and v.get("reviewed_by") and not is_cohort(v.get("reviewed_by"))}
-    rows = [r for r in A.get("rows") or [] if r.get("id") in people]
+    hit = set()
+    for k, v in cur.items():
+        if not isinstance(v, dict) or not v.get("reviewed_by") or is_cohort(v.get("reviewed_by")):
+            continue
+        hit |= {t for t in (k, v.get("merge_into")) if t}
+    # Counted in cards, the page's one denominator: an M-ID that is also a merge target is two cards (C and X).
+    rows = [r for r in A.get("rows") or [] if r.get("id") in hit]
     return {"confirmed": len(rows), "ready": sum(1 for r in rows if r.get("fr") == "ready")}
 
 
@@ -370,8 +403,10 @@ def row_cr(root):
         # The card opens the reference's page in the CPL Commons mock's shape (S556); the tab still opens on the worklist.
         "links": [{"href": tab + "/progress", "text": "Open the tab"}],
         "status_file": "kb/status/cr.json" if exists(root, "kb/status/cr.json") else None,
-        "pair": [{"n": len(settled), "of": len(rows_of), "words": words, "open": tab + "/progress"}],
-        "tests": ["rule-settled", "curator-decided"],
+        "pair": [{"n": len(settled), "of": len(rows_of), "words": words, "open": tab + "/progress"},
+                 # The CR's curator decisions are a person's verdicts read from a decision sheet (the receipts' _doc).
+                 confirmed_pair(len(by_curator), len(rows_of), len(by_curator & settled), "settled", tab + "/progress")],
+        "tests": ["rule-settled", "curator-decided", "confirmed by a person"],
         "issues": [
             {"n": len(unsettled), "words": "wordings no rule places and no curator has decided, where a curator judges across groups",
              "owner": "a curator", "open": tab + "/open"},
@@ -390,6 +425,7 @@ def row_cr(root):
                   "rule_wordings": len(by_rule), "rule_rows": sum(rows_of[w] for w in by_rule),
                   "rule_groups": sum(1 for g in G if g.get("acts_automatically")),
                   "curator_wordings": len(by_curator), "curator_only": len(by_curator - by_rule),
+                  "confirmed": len(by_curator), "confirmed_settled": len(by_curator & settled),
                   "curator_only_rows": sum(rows_of[w] for w in by_curator - by_rule),
                   "unsettled": len(unsettled), "unsettled_rows": sum(rows_of[w] for w in unsettled),
                   "head": head, "awaiting_look": len(look), "names_to_check": len(names),
@@ -495,12 +531,15 @@ def row_subjects(root):
         "status_file": "kb/status/subjects.json" if exists(root, "kb/status/subjects.json") else None,
         "pair": [{"n": len(settled), "of": len(D),
                   "words": "MQ disciplines with courses carry a settled Common SUBJ: confirmed (by a person, or by the nightly procedure where the code is the authority's own), on the authority rule, in no collision (%s)" % who,
-                  "open": tab + "/progress"}],
-        "tests": ["confirmed", "authority rule", "collision-free"],
+                  "open": tab + "/progress"},
+                 confirmed_pair(len(confirmed) - cohort, len(D),
+                                sum(1 for k in settled if not is_cohort(confirmed[k].get("reviewed_by"))), "settled", tab + "/progress")],
+        "tests": ["confirmed", "authority rule", "collision-free", "confirmed by a person"],
         "issues": issues,
         "procedures": procedures,
         "machine": machine,
         "facts": {"disciplines": len(D), "confirmed": len(confirmed), "person": len(confirmed) - cohort, "cohort": cohort,
+                  "person_settled": sum(1 for k in settled if not is_cohort(confirmed[k].get("reviewed_by"))),
                   "settled": len(settled), "modal": len(modal), "shared": sorted(shared), "missed_alignment": missed,
                   "scanned_at": scan.get("_scanned_at") if scan else None,
                   "procedures_on": sum(1 for p in (procs or {}).get("procedures", []) if p.get("on")) if procs else None},

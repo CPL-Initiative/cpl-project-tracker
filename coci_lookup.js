@@ -612,6 +612,7 @@
         procs && procs.n != null ? { words: "How it is kept: the alias chain, the re-mint playbook, TOP last in line", href: sky } : null].filter(Boolean),
       progress: { n: typeof F.ready === "number" ? F.ready : null, of: total, short: "ready",
         words: "common-course cards the auditor scores 0.85 or better",
+        confirmed: { n: typeof F.confirmed === "number" ? F.confirmed : null, done: F.confirmed_ready, doneWords: "ready" },
         recently: [recently, procs && procs.n != null ? fmt(procs.n) + " " + procs.words + "." : ""].filter(Boolean).join(" "),
         calls: Q ? (open.length ? (open.length === 1 ? "One decision waits on " : fmt(open.length) + " decisions wait on ") + DECIDER + "."
           : "No decisions wait on " + DECIDER + ".") : "",
@@ -626,9 +627,9 @@
           r("TOP agrees with its discipline", free("top_discipline_disagreement"))] },
         { q: "Do its courses agree?", rows: [r("Units agree, or the range is stated", free("unit_anomaly")),
           { label: "Ready: scores 0.85 or better, so faculty can review it", n: typeof F.ready === "number" ? F.ready : null, href: sky },
-          // Confirmed by a person (Sam, Sheet 160, 2026-11-03): an attribute a card gains when a person saves it in
-          // SkyView, counted beside ready and never in place of it. The builder reads the curation overlay.
-          { label: "Confirmed by a person in SkyView", n: typeof F.confirmed === "number" ? F.confirmed : null, href: sky }] }
+          // Confirmed by a person (Sam, Sheet 160, 2026-11-03): an attribute a card gains when a person's save in
+          // SkyView or COBI names it, or places a course into it (S565), counted beside ready and never in its place.
+          { label: "Confirmed by a person in SkyView or COBI", n: typeof F.confirmed === "number" ? F.confirmed : null, href: sky }] }
       ],
       of: total, ofWords: "common-course cards the auditor scores",
       foot: "The reference is staging: AI-assisted, not yet faculty-published."

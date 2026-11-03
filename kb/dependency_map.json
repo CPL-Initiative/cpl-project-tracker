@@ -4,9 +4,9 @@
   "supabase_tables": 105,
   "rpcs": 49,
   "edge_functions": 11,
-  "file_datasets": 779,
+  "file_datasets": 781,
   "external_services": 192,
-  "consumers": 510,
+  "consumers": 511,
   "workflows": 60,
   "data_js_files": 71,
   "tabs": 40
@@ -1082,7 +1082,7 @@
      "kind": "script",
      "direction": "read",
      "how": "url",
-     "line": 252
+     "line": 276
     },
     {
      "id": "script:kb/_build_partner_crosswalk.py",
@@ -1674,7 +1674,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 770,
+     "line": 775,
      "tabs": [
       "commons"
      ]
@@ -5504,7 +5504,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 685,
+     "line": 686,
      "tabs": [
       "coci-lookup"
      ]
@@ -5532,7 +5532,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3852,
+     "line": 3854,
      "tabs": [
       "program-requirements"
      ]
@@ -5950,7 +5950,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2878,
+     "line": 2880,
      "tabs": [
       "canonical-subj4"
      ]
@@ -5990,7 +5990,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3851,
+     "line": 3853,
      "tabs": [
       "program-requirements"
      ]
@@ -6020,7 +6020,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2564,
+     "line": 2566,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6050,7 +6050,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2826,
+     "line": 2828,
      "tabs": [
       "exhibits"
      ]
@@ -6060,7 +6060,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 3232,
+     "line": 3234,
      "tabs": [
       "program-requirements"
      ]
@@ -6076,7 +6076,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2562,
+     "line": 2564,
      "tabs": [
       "canonical-subj4"
      ]
@@ -9722,6 +9722,19 @@
    "served": true,
    "main_committers": []
   },
+  "file:kb/_sync_program_checked.py": {
+   "consumers": [
+    {
+     "id": "workflow:daily-dashboard.yml",
+     "kind": "workflow",
+     "direction": "run",
+     "how": "yaml",
+     "line": 0
+    }
+   ],
+   "served": true,
+   "main_committers": []
+  },
   "file:kb/_typesafe_cr_trial.py": {
    "consumers": [
     {
@@ -9972,7 +9985,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 193
+     "line": 214
     },
     {
      "id": "script:kb/_cer_procedures.py",
@@ -10019,7 +10032,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 182
+     "line": 203
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -10063,7 +10076,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 197
+     "line": 218
     }
    ],
    "served": false,
@@ -10566,7 +10579,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 303
+     "line": 328
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -12463,7 +12476,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 558
+     "line": 597
     }
    ],
    "served": false,
@@ -12544,7 +12557,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 340
+     "line": 373
     },
     {
      "id": "script:kb/_build_cr_reference.py",
@@ -12856,7 +12869,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 171
+     "line": 192
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -13104,7 +13117,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 442
+     "line": 478
     }
    ],
    "producers": [
@@ -13161,7 +13174,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 443
+     "line": 479
     }
    ],
    "served": true,
@@ -13392,7 +13405,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 421
+     "line": 457
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -13947,7 +13960,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 174
+     "line": 195
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -14583,7 +14596,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 537
+     "line": 576
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -15550,7 +15563,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 343
+     "line": 376
     }
    ],
    "served": false,
@@ -16998,7 +17011,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 253
+     "line": 277
     },
     {
      "id": "workflow:overmerge-apply.yml",
@@ -17105,7 +17118,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 278
+     "line": 302
     }
    ],
    "served": true,
@@ -17118,7 +17131,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 372
+     "line": 405
     }
    ],
    "served": true,
@@ -17131,11 +17144,46 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 212
+     "line": 233
     }
    ],
    "served": true,
    "main_committers": []
+  },
+  "file:kb/status/program-requirements-checked.json": {
+   "consumers": [
+    {
+     "id": "script:kb/_build_commons_status.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 127
+    },
+    {
+     "id": "script:kb/_sync_program_checked.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 27
+    },
+    {
+     "id": "script:kb/_sync_program_checked.py",
+     "kind": "script",
+     "direction": "write",
+     "how": "literal",
+     "line": 27
+    }
+   ],
+   "producers": [
+    {
+     "by": "workflow:daily-dashboard.yml",
+     "how": "commit-to-main"
+    }
+   ],
+   "served": true,
+   "main_committers": [
+    "workflow:daily-dashboard.yml"
+   ]
   },
   "file:kb/status/program-requirements.json": {
    "consumers": [
@@ -17154,7 +17202,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 127
+     "line": 132
     },
     {
      "id": "script:scripts/queue_status.py",
@@ -17184,7 +17232,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 495
+     "line": 531
     }
    ],
    "served": true,
@@ -17684,7 +17732,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 202
+     "line": 223
     }
    ],
    "served": false,
@@ -17830,7 +17878,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 167
+     "line": 188
     },
     {
      "id": "script:kb/_build_exhibits_review.py",
@@ -19023,7 +19071,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 256
+     "line": 280
     },
     {
      "id": "script:kb/_eths_remint.py",
@@ -19519,7 +19567,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 556
+     "line": 595
     }
    ],
    "served": false,
@@ -22992,7 +23040,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 257
+     "line": 281
     },
     {
      "id": "script:kb/_build_esl_fold_preview.py",
@@ -23964,7 +24012,7 @@
      "kind": "module",
      "direction": "call",
      "how": "literal",
-     "line": 611,
+     "line": 615,
      "tabs": [
       "commons"
      ]
@@ -26876,6 +26924,13 @@
      "line": 941
     },
     {
+     "id": "script:kb/_sync_program_checked.py",
+     "kind": "script",
+     "direction": "read",
+     "how": "literal",
+     "line": 34
+    },
+    {
      "id": "script:scripts/catalog_framing.py",
      "kind": "script",
      "direction": "read",
@@ -27138,7 +27193,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 589,
+     "line": 593,
      "tabs": [
       "commons"
      ]
@@ -28236,6 +28291,7 @@
     "kb/_build_exhibit_cert_links.py",
     "kb/_build_exhibit_slo_neighbors.py",
     "kb/_build_adopt_page.py",
+    "kb/_sync_program_checked.py",
     "kb/_build_commons_status.py"
    ],
    "adds": [
@@ -28309,6 +28365,7 @@
     "kb/workplan_goals_snapshot.json",
     "kb/projects_snapshot.json",
     "kb/status/commons.json",
+    "kb/status/program-requirements-checked.json",
     "kb/csr_out/latest.json",
     "kb/project_lifecycle.json",
     "kb/budget_snapshot.json",
