@@ -799,6 +799,27 @@ async function seedExhibitsCredentials(page, theme) {
   await page.waitForTimeout(300);
 }
 
+// Seeds the Exhibits tab's Progress view (S556): the reference opened in the CPL Commons mock's shape, drawn by
+// commons_page.js once the Commons row, the run log and the credentials are in. Opened by its word, as a reader does.
+async function seedExhibitsProgress(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "exhibits") location.hash = "exhibits"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForFunction(() => Array.prototype.some.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+    (x) => x.textContent.indexOf("Progress") === 0), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    const b = Array.prototype.filter.call(document.querySelectorAll("#exhibits-root .exh-views button"),
+      (x) => x.textContent.indexOf("Progress") === 0)[0];
+    if (b) b.click();
+  });
+  await page.waitForFunction(() => document.querySelector("#exhibits-root .exh-pg-groups section .exh-pg-bar"), null, { timeout: 60000 });
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(300);
+}
+
 // Seeds the Exhibits tab's List view (Sam, 2026-11-01): every credential A to Z in small type, one row's
 // editor open, so the table, its sticky header and the editor's boxes are measured.
 async function seedExhibitsList(page, theme) {
@@ -3386,6 +3407,23 @@ module.exports = {
     routes: [{ hash: "exhibits", name: "credentials" }],
     widths: [390, 768, 1024, 1440],
     seed: (page) => seedExhibitsCredentials(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  /* ── Exhibits: Progress, the reference opened (S556, the CPL Commons mock's Exhibits page) ── */
+  "exhibits-progress": {
+    file: "index.html",
+    title: "Exhibits: Progress, the reference opened",
+    routes: [{ hash: "exhibits", name: "progress" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedExhibitsProgress(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "exhibits-progress-dark": {
+    file: "index.html",
+    title: "Exhibits: Progress, dark",
+    routes: [{ hash: "exhibits", name: "progress-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedExhibitsProgress(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "exhibits-list": {

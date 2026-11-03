@@ -44,9 +44,11 @@ check("five rows in the mock-up's order", [r.get("key") for r in rows] == ["requ
 for r in rows:
     key = r.get("key")
     pair = r.get("pair") or []
+    # A link to the home or to one of its routes (Exhibits' card opens #exhibits/progress, S556).
     check(key + ": a title, a home (a tab hash or SkyView's page) and a link to it", r.get("title")
           and (str(r.get("tab", "")).startswith("#") or str(r.get("tab", "")).endswith("/prototype/skyview.html"))
-          and any(l.get("href") == r.get("tab") for l in r.get("links", [])))
+          and any(l.get("href") == r.get("tab") or str(l.get("href", "")).startswith(str(r.get("tab")) + "/")
+                  for l in r.get("links", [])))
     check(key + ": the row read without an error", not r.get("error"), r.get("error"))
     check(key + ": the complete pair is two whole numbers with the count inside the universe",
           pair and isinstance(pair[0].get("n"), int) and isinstance(pair[0].get("of"), int) and 0 <= pair[0]["n"] <= pair[0]["of"],
