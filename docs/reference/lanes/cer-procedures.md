@@ -1,7 +1,7 @@
 ---
 title: "CER procedures and the simpler CER tab — lane state"
 created: 2026-10-18
-updated: 2026-11-01
+updated: 2026-11-03
 tags: [reference, roadmap-lane, cer, exhibit-canonicalization]
 kb-status: internal
 obsidian-folder: cpl-project-tracker/reference/lanes
@@ -28,7 +28,7 @@ Design record: mock-up https://claude.ai/artifact/6fTBpjkrGseEb7h3gaPnSM (versio
 rule and the CPL-AI dialog (#2601); the Exhibits tab's Review queue (SkyRowanberry, 2026-10-31, below). What Sam ruled in the
 mock-up, each his words in the lessons doc (`docs/cer_v2_redesign_lessons.md`, 2026-10-30):
 
-**The List view** (S540, S541): every credential A to Z, edited in place, *Re-analyze* (step 9); find by college, district or region; find and replace; **AI sort** with suggested folds and Re-point; Edit every row; **Basis**, based on statewide or local (`fact-sheet/statewide_recs.js`: 152; the reference flag reads 84); the **exhibit-to-cert link** (`kb/exhibit_cert_links.json`: ASE, exams, IT vendors); **kept groups** (S542, #2655): a band over every run (titles alone under *Not in a group*), tick rows to Move, Out of every group or Back to the AI sort, Keep this group, Rename (a shared name joins two), Release; `exhibit_group` on `_CREDENTIAL_REVIEW::<title>` laid over the nightly sort (the builder does not read it yet; a rename apply drops a title's group row, as it does the flag). Since S542 the List is drawn by the shared engine `commons_list.js` (#2656) and spans the window (#2661). Preview at https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A (`scripts/build_exhibits_list_preview.py`). **SLO hints, to build (Sam, 2026-11-01, in chat: *"yes to SLO hints and the nightly harvest"*):** a title whose articulated courses match another's at SLO similarity 0.5 or more shows *Outcomes match:* with that title and its group; Sam acts with Move. The S542 test (36 of 113 such pairs share a group; 746 of 2,663 credentials reach SLOs): lessons.
+**The List view** (S540, S541): every credential A to Z, edited in place, *Re-analyze* (step 9); find by college, district or region; find and replace; **AI sort** with suggested folds and Re-point; Edit every row; **Basis**, based on statewide or local (`fact-sheet/statewide_recs.js`: 152; the reference flag reads 84); the **exhibit-to-cert link** (`kb/exhibit_cert_links.json`: ASE, exams, IT vendors); **kept groups** (S542, #2655): a band over every run (titles alone under *Not in a group*), tick rows to Move, Out of every group or Back to the AI sort, Keep this group, Rename (a shared name joins two), Release; `exhibit_group` on `_CREDENTIAL_REVIEW::<title>` laid over the nightly sort (the builder does not read it yet; a rename apply drops a title's group row, as it does the flag). Since S542 the List is drawn by the shared engine `commons_list.js` (#2656) and spans the window (#2661). Preview at https://claude.ai/artifact/Qqcfxd9xkzdg91rkw6275A (`scripts/build_exhibits_list_preview.py`). **SLO hints, built (#2684, 2026-11-02; Sam, 2026-11-01, in chat: *"yes to SLO hints and the nightly harvest"*):** a title whose articulated courses match another's at SLO similarity 0.5 or more, through distinct courses, shows *Outcomes match:* with that title and its group; Sam acts with Move. `kb/_build_exhibit_slo_neighbors.py` writes `kb/exhibit_slo_neighbors.json` daily (guard `tests/exhibit_slo_neighbors_build_test.py`). The S542 test: lessons.
 
 Sam's mock-up rulings, item by item, moved verbatim to `docs/cer_v2_redesign_lessons.md`, *Moved from the lane (SkyCloudberry)*.
 
@@ -182,7 +182,6 @@ the two Level III markers stay under their old keys. Guard: `tests/clep_official
 **NEXT:** (0) After each of Sam's runs through *Another look*, read the next fold's `credential_moves` and
 `credential_retires` and move the panel rows they list (receipts `kb/receipts/credential_panel_move_*.json`; a row
 that cannot fan in, or whose rename the fold carried out, stays under its old key, named in the receipt).
-**Sam, Open Asks Sheet 161 (15:14Z 2026-11-03):** *drop* his Engine Performance 1 and 2 ASE issuer rows;
-Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16:08Z (receipt's `then_applied`). (1) The Catalog's *Courses that may align*,
+Sheet 161, applied 16:08Z 2026-11-03: lessons. (1) The Catalog's *Courses that may align*,
 once a source names courses. (2) Training sites for a held title new to the reference, and the *Held titles by group*
 table, only if Sam asks.
