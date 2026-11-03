@@ -1,0 +1,12 @@
+{
+ "what": "supabase-migrate: one committed SQL file applied through the Management API",
+ "file": "kb/migrations/2026-11-03_library_ell_iet_v3_draft.sql",
+ "name": "s557_library_ell_iet_v3_draft",
+ "version": "20261103062347",
+ "sha256": "7738c3e8616f2e61c500824f806cabc1428920fbef95895d3b4e6d661033e450",
+ "run": "41589394786",
+ "status": 201,
+ "response": "[{\"slug\":\"ell-iet-cpl-starting-points\",\"regen\":{\"publish\":\"show\",\"ready_at\":\"2026-11-03T07:05:00Z\",\"draft_url\":\"https://claude.ai/artifact/5JMF3L4sEFZHrAPZrHSmH3\",\"requested_at\":\"2026-11-02T21:20:29.029Z\",\"requested_by\":\"Sam\"},\"n_versions\":3,\"updated_by\":\"library-s557@bot\"}]",
+ "ledger_status": 201,
+ "ledger_response": "[]"
+}
