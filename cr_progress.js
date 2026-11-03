@@ -383,7 +383,8 @@
       P + " .cq-word { font:inherit; font-weight:600; color:var(--cobalt); background:none; border:0; padding:2px 0; min-height:24px; cursor:pointer; text-decoration:underline; text-decoration-thickness:1px; text-underline-offset:3px; }",
       P + " .cq-word:hover { text-decoration-thickness:2px; }",
       P + " .cq-word:focus-visible { outline:2px solid var(--cobalt); outline-offset:2px; border-radius:2px; }",
-      P + " .cq-more { margin-top:18px; }",
+      P + " .cq-more { margin-top:18px; border:0; background:none; }",
+      P + " .cq-more > .cq-sec-b { padding:0; }",
       "@media (max-width: 760px) { " + P + " .cq-progress .prh-pg-steps { grid-template-columns:minmax(0, 1fr); } }"
     ].join("\n") }));
   }

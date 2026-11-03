@@ -734,7 +734,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 619
+     "line": 622
     }
    ],
    "main_committers": []
@@ -1618,7 +1618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1997
+     "line": 2000
     }
    ],
    "main_committers": []
@@ -2219,7 +2219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1038
+     "line": 1041
     }
    ],
    "main_committers": []
@@ -2238,7 +2238,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1383
+     "line": 1386
     },
     {
      "id": "module:college_briefing.js",
@@ -4182,7 +4182,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1661
+     "line": 1664
     }
    ],
    "main_committers": []
@@ -5231,7 +5231,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1552
+     "line": 1555
     },
     {
      "id": "module:admin.js",
@@ -5487,7 +5487,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 670
+     "line": 673
     },
     {
      "id": "module:cip_crosswalk.js",
@@ -5950,7 +5950,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2796,
+     "line": 2865,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6016,6 +6016,16 @@
   "file:commons_page.js": {
    "consumers": [
     {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2551,
+     "tabs": [
+      "canonical-subj4"
+     ]
+    },
+    {
      "id": "module:cr_reference.js",
      "kind": "module",
      "direction": "read",
@@ -6046,7 +6056,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2491,
+     "line": 2549,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6264,7 +6274,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1936
+     "line": 1939
     },
     {
      "id": "module:college_briefing.js",
@@ -6470,7 +6480,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1098
+     "line": 1101
     },
     {
      "id": "module:cpl_funding.js",
@@ -27610,6 +27620,7 @@
    "program-requirements"
   ],
   "commons_page.js": [
+   "canonical-subj4",
    "cr-reference",
    "exhibits"
   ],

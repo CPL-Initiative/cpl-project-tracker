@@ -28,6 +28,7 @@ function txt(n) { return (n && n.textContent || "").trim(); }
 
 const SRC = fs.readFileSync("canonical_subj4.js", "utf8");
 const MODULE = fs.readFileSync("commons_progress.js", "utf8");
+const PAGE = fs.readFileSync("commons_page.js", "utf8");
 const PROCS = JSON.parse(fs.readFileSync("kb/csr_procedures.json", "utf8"));
 const cpl = fs.readFileSync("CPL_Dashboard.html", "utf8");
 const idx = fs.readFileSync("index.html", "utf8");
@@ -148,6 +149,7 @@ function boot(opts) {
   w.HTMLElement.prototype.scrollIntoView = function () {};
   const ctx = dom.getInternalVMContext ? dom.getInternalVMContext() : vm.createContext(w);
   if (!opts.noModule) vm.runInContext(MODULE, ctx, { filename: "commons_progress.js" });
+  if (opts.page) vm.runInContext(PAGE, ctx, { filename: "commons_page.js" });
   vm.runInContext(SRC, ctx, { filename: "canonical_subj4.js" });
   return { w: w, d: w.document };
 }
@@ -155,6 +157,14 @@ function boot(opts) {
 const t = boot();
 const t2 = boot({ noModule: true, hash: "#canonical-subj4/reference" });
 const t3 = boot({ fetch: failingFetch, hash: "#canonical-subj4/progress" });
+const t4 = boot({ page: true });
+/* The text a reader sees, a space between an element's parts (the opened page's rows). */
+function spaced(n) {
+  if (!n) return "";
+  const parts = [], walk = n.ownerDocument.createTreeWalker(n, 4);
+  while (walk.nextNode()) parts.push(walk.currentNode.nodeValue);
+  return parts.join(" ").replace(/\s+/g, " ").replace(/ ([.,:])/g, "$1").trim();
+}
 
 setTimeout(function () {
   try {
@@ -253,6 +263,32 @@ setTimeout(function () {
     check("the headline still draws from the seed", Array.prototype.map.call(pg3.querySelectorAll(".prh-pg-pair .prh-pg-n b"), txt).join(",") === "11,8");
     check("the findings section says the scan could not be read", /could not be read/.test(txt(pg3.querySelector('details[data-sec="progress:findings"]'))));
     check("no glyph in the rendered Progress text", !/[\u2600-\u27bf\u2b00-\u2bff\u{1f300}-\u{1faff}]/u.test(txt(pg)));
+
+    // ── the opened page (S556): the CPL Commons mock's shape over the dash (t4) ──
+    const d4 = t4.d, M4 = t4.w.CPL_CANONICAL_SUBJ4, pg4 = d4.getElementById("cs-progress");
+    const page = pg4.querySelector(".cs-pg-page");
+    check("page: drawn first when commons_page.js is in", !!page && pg4.firstElementChild === page);
+    check("page: the headline is the settled MQ disciplines over every one with courses (8 of 11)",
+      /8 of 11 MQ disciplines with courses carry a settled Common SUBJ/.test(spaced(page.querySelector("[aria-label=Progress]"))));
+    const x4 = M4.progressContext(new Date());
+    check("page: the stamp split reads the context's person and cohort counts",
+      spaced(page).indexOf(x4.person + " confirmed by a person, " + x4.cohort + " by the nightly procedure or a session cohort.") >= 0 && x4.person + x4.cohort === 9);
+    const qs = Array.prototype.slice.call(page.querySelectorAll(".cs-pg-groups > section"));
+    check("page: three questions that fit a code", qs.map(function (q) { return txt(q.querySelector("h3")); }).join(" | ") ===
+      "What is it called? | Whose code is it? | How does it reach the courses?");
+    check("page: every count over the 11 MQ disciplines with courses",
+      /A Common SUBJ code 11 of 11/.test(spaced(qs[0])) && /Confirmed 9 of 11/.test(spaced(qs[0])) && /In no collision 9 of 11/.test(spaced(qs[0]))
+      && /The CCN's 2 of 11/.test(spaced(qs[1])) && /C-ID's 1 of 11/.test(spaced(qs[1])) && /Minted here 8 of 11/.test(spaced(qs[1]))
+      && /Each count is of the 11 MQ disciplines with courses\./.test(spaced(page)));
+    const att4 = d4.getElementById("cs-pg-attention");
+    check("page: Needs attention carries the 2 unconfirmed, the 1 collision and the 2 findings, each with its action",
+      /2 MQ disciplines on the data's modal code, unconfirmed\./.test(spaced(att4)) && /1 Common SUBJ shared by two MQ disciplines\./.test(spaced(att4))
+      && /2 scan findings to confirm or note/.test(spaced(att4)) && /Confirm them/.test(txt(att4)) && /Check them/.test(txt(att4)));
+    const more = pg4.querySelector("details.cs-more");
+    check("page: the milestones and steps stay one word away, closed", more && !more.open && !!more.querySelector(".prh-pg-part"));
+    check("page: the procedures and findings sections stay below", !!pg4.querySelector('details[data-sec="progress:procedures"]') && !!pg4.querySelector('details[data-sec="progress:findings"]'));
+    Array.prototype.filter.call(att4.querySelectorAll("button"), function (b) { return txt(b) === "Confirm them"; })[0].click();
+    check("page: Confirm them opens the Reference view on the pre-seeded filter", M4._state.view === "reference" && M4._state.filter === "pre_seeded");
   } catch (e) {
     check("no exception while checking: " + (e && e.stack || e), false);
   }

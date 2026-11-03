@@ -407,6 +407,7 @@ window.COBI_ADMIN_SURFACE = {
       "modules": [
         "canonical_subj4.js",
         "commons_list.js",
+        "commons_page.js",
         "commons_progress.js"
       ],
       "reads": [],

@@ -387,6 +387,9 @@ async function seedCsrProgress(page, theme) {
     const M = window.CPL_CANONICAL_SUBJ4;
     return M && M._state.seed && document.querySelector("#cs-progress .prh-pg");
   }, null, { timeout: 60000 });
+  // The opened page (S556) draws over the dash; the dash sits under Details, opened here so both are measured.
+  await page.waitForFunction(() => document.querySelector("#cs-progress .cs-pg-groups .cs-pg-bar"), null, { timeout: 60000 });
+  await page.evaluate(() => { const d = document.querySelector("#cs-progress details.cs-more"); if (d) d.open = true; });
   await page.waitForTimeout(300);
 }
 
@@ -3317,6 +3320,14 @@ module.exports = {
   /* ── Common Subjects Reference: the Progress view (S425) and the table ──
      The cobi sweep opens the tab on its default view, Progress, in light; these two add the
      dark Progress view and the Reference view (the table) by its route. */
+  "canonical-subj4-progress": {
+    file: "index.html",
+    title: "Common Subjects Reference: Progress, the opened page and its Details",
+    routes: [{ hash: "canonical-subj4/progress", name: "progress" }],
+    widths: [320, 390, 1024, 1440],
+    seed: (page) => seedCsrProgress(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
   "canonical-subj4-progress-dark": {
     file: "index.html",
     title: "Common Subjects Reference: Progress, dark",
