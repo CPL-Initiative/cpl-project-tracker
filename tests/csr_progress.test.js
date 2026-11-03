@@ -281,9 +281,12 @@ setTimeout(function () {
       && /The CCN's 2 of 11/.test(spaced(qs[1])) && /C-ID's 1 of 11/.test(spaced(qs[1])) && /Minted here 8 of 11/.test(spaced(qs[1]))
       && /Each count is of the 11 MQ disciplines with courses\./.test(spaced(page)));
     const att4 = d4.getElementById("cs-pg-attention");
-    check("page: Needs attention carries the 2 unconfirmed, the 1 collision and the 2 findings, each with its action",
+    // The cs2_dup finding is the collision the item above counts, so the findings item leaves it out (S561), as the
+    // Commons card does (CSR_ASK_SKIP in kb/_build_commons_status.py): 1 finding, the weak mnemonic.
+    check("page: Needs attention carries the 2 unconfirmed, the 1 collision and the 1 finding no other item counts, each with its action",
       /2 MQ disciplines on the data's modal code, unconfirmed\./.test(spaced(att4)) && /1 Common SUBJ shared by two MQ disciplines\./.test(spaced(att4))
-      && /2 scan findings to confirm or note/.test(spaced(att4)) && /Confirm them/.test(txt(att4)) && /Check them/.test(txt(att4)));
+      && /1 scan finding to confirm or note \(1 a weak mnemonic\)/.test(spaced(att4)) && /Confirm them/.test(txt(att4)) && /Check them/.test(txt(att4)));
+    check("page: the foot names why the Commons card can run behind (S561)", /the CPL Commons card counts them as the daily sync committed them/.test(spaced(page)));
     const more = pg4.querySelector("details.cs-more");
     check("page: the milestones and steps stay one word away, closed", more && !more.open && !!more.querySelector(".prh-pg-part"));
     check("page: the procedures and findings sections stay below", !!pg4.querySelector('details[data-sec="progress:procedures"]') && !!pg4.querySelector('details[data-sec="progress:findings"]'));

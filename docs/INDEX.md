@@ -70,8 +70,8 @@ Every document in `docs/`, by lane. Rebuild with `python3 kb/_build_docs_index.p
 | Lessons docs | 93 | [`catalog/lessons.md`](catalog/lessons.md) |
 | Workstream docs | 96 | [`catalog/workstream-docs.md`](catalog/workstream-docs.md) |
 | Reference (pull-side) | 64 | [`catalog/reference.md`](catalog/reference.md) |
-| Session handoffs | 528 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
-| **total** | **1360** | |
+| Session handoffs | 529 | [`catalog/session-handoffs.md`](catalog/session-handoffs.md) |
+| **total** | **1361** | |
 <!-- /generated:corpus -->
 
 Not covered by a lane catalog:
@@ -122,6 +122,7 @@ Authoritative external sources we've cached:
 - [`reference/`](reference/) — ASCCC / COCI / CCN-CID source documents
 
 ## Update history
+- 2026-11-03 S561 SkyCigar (CPL Queue routine): merged S560's #2721; the Commons to-do's last four pairs, Subjects' findings count and Exhibits' held list now agree with their cards (#2722); light checkpoint; handoff 562.
 - 2026-11-03 S559 SkyAndromeda (CPL Queue routine): the Common Course Reference takes the Commons page in COCI Lookup (#2720), the last reference; Santa Ana's 1,366 SLO rows loaded (#2716); Las Positas's trial 12 of 12; handoff 560.
 - 2026-11-03 S558 SkyFornax (CPL Queue routine): CPL Pathways' Progress view draws the CPL Commons page (#2719); Las Positas's SLO trial; light checkpoint; handoff 559.
 - 2026-11-03 S557 SkySculptor (CPL Queue routine): the ELL IET Version 3 draft from Sam's Revise request; Santa Ana's SLO read and Las Positas's index; the CSM Workspace UI pass; library lessons archived (`docs/library_lessons_archive.md`); handoff 558.

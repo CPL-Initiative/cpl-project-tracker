@@ -147,13 +147,26 @@ if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
           len(rows[4]["issues"]) >= 3 and all(i.get("owner") for i in rows[4]["issues"]) and sub.get("scanned_at")
           and any("scan findings" in i.get("words", "") for i in rows[4]["issues"])
           and any("identity codes" in i.get("words", "") for i in rows[4]["issues"]))
+if os.path.exists(os.path.join(ROOT, "kb", "csr_out", "latest.json")):
+    # The card's findings count is the Subjects page's (S561): judgment findings less the ones another item counts.
+    with open(os.path.join(ROOT, "kb", "csr_out", "latest.json"), encoding="utf-8") as fh:
+        _scan = json.load(fh)
+    _want = sum(1 for f in _scan.get("findings") or [] if f.get("needs_judgment")
+                and f.get("rule") not in ("cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"))
+    _got = [i["n"] for i in rows[4]["issues"] if "to confirm or note" in i.get("words", "")]
+    check("Subjects: the scan-findings issue counts what the tab's opened page counts (S561)", _got == [_want])
+    _js = open(os.path.join(ROOT, "canonical_subj4.js"), encoding="utf-8").read()
+    check("Subjects: the skip list matches canonical_subj4.js's ASK_SKIP",
+          'var ASK_SKIP = ["cs7_unreviewed", "cs4_aligned", "cs4_missed_alignment", "cs2_dup"];' in _js)
 if os.path.exists(os.path.join(ROOT, "kb", "csr_procedures.json")):
     with open(os.path.join(ROOT, "kb", "csr_procedures.json"), encoding="utf-8") as f:
         store = json.load(f)
     on = [p for p in store["procedures"] if p.get("on")]
     check("Subjects: the procedures cell counts the store's procedures in force and names the rules",
           rows[4]["procedures"][0]["n"] == len(on) and sub.get("procedures_on") == len(on)
-          and all(any(p["name"] == w["words"] for p in on) for w in rows[4]["procedures"][1:]))
+          and all(any(p["name"] == w["words"] for p in on) for w in rows[4]["procedures"][1:]
+                  if not w["words"].startswith("Counted from"))  # the timing line (S561) names no procedure
+          and rows[4]["procedures"][-1]["words"].startswith("Counted from the picks"))
 
 # ── the S343 rule: a source that cannot be read is null with its error, never a zero ──
 with tempfile.TemporaryDirectory() as empty:

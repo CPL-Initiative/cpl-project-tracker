@@ -116,8 +116,8 @@ into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03)
 recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
 Every reference now carries the opened page.
 
-**NEXT:** the to-do below, past its first pair: the Exhibits, CR, Subjects and Course pairs, each checked the way the
-Program Requirements pair was (S560).
+**NEXT:** the to-do below is done for all five pairs (S560, S561); what remains of it is the `coci_college_programs` read
+that once answered 500 (check it first when a Progress card reads *Could not be read*).
 The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 
 **The List, one engine (S542, 2026-11-01).** `commons_list.js` draws every reference's List view from a spec the tab
@@ -214,5 +214,14 @@ summary agree, or name the difference on both. **The Program Requirements pair i
 headline complete active programs of COCI's active (S558); *Needs attention* now counts active programs whose record
 fails, the card's unit, where it had counted every failing record; and each page names the one difference left, timing
 (the card counts the records committed at the last checkpoint, the tab reads live: 13,553 committed against 13,542
-live on 2026-11-03). The same screenshot shows both Progress cards reading *Could not be read*
+live on 2026-11-03). **The other four pairs, checked (S561):** Course reads the Commons row itself and CR reads the
+same committed worklist build, so both agree by construction. **Subjects disagreed:** the page counted 17 scan findings
+to confirm or note and the card 16, since the card counted two rules and left out the dead-format anchor; both now
+count one set, the findings needing judgment less the ones another item counts (`ASK_SKIP` in `canonical_subj4.js`,
+`CSR_ASK_SKIP` in the builder; the page also lists a missed alignment, as the card does), and each names its timing
+(the card counts the daily sync, the page reads the picks live). **Exhibits would have counted held titles twice** on
+a night the procedures run held any (live from the review file, and again from the Commons row); the page now drops
+the row's held and conflict copies once the review file is read, and both pages say why the card's list is shorter
+(the page adds the tab's own queues). Guards: `tests/csr_progress.test.js` (79), `tests/exhibits_progress_page.test.js`
+(43), `tests/commons_status_build_test.py` (85). The same screenshot shows both Progress cards reading *Could not be read*
 (`coci_college_programs` answered 500): check that read first, since an empty denominator can move every figure.

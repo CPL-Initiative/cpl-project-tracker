@@ -1,10 +1,10 @@
 {
   "schema": 1,
-  "session": 548,
-  "moniker": "SkyTadpole",
+  "session": 561,
+  "moniker": "SkyCigar",
   "run": "the CPL Queue routine",
   "decider": "Sam",
-  "handoff": "docs/session_549_handoff.md",
+  "handoff": "docs/session_562_handoff.md",
   "calls": [
     {
       "title": "Merge EACR into the CER as one Exhibits tab",
@@ -99,13 +99,17 @@
   ],
   "notes": {},
   "headline": [],
-  "written_at": "2026-11-02T10:40:50Z",
+  "written_at": "2026-11-03T10:23:00Z",
   "project": "exhibit",
   "next_step": {
     "title": "Move the panel rows each fold names",
     "text": "After each of Sam's runs through Another look, read the next fold's credential moves and retires and move the panel rows they list; then the Catalog's Courses that may align, once a source names courses."
   },
   "changes": [
+    {
+      "at": "2026-11-03T10:20:00Z",
+      "text": "The opened page no longer lists the nightly run's held titles twice, and the page and the Commons card say why the card's list is shorter (S561, #2722)."
+    },
     {
       "at": "2026-11-02T10:40:00Z",
       "text": "The exhibit-to-cert link gains the IT vendor family: 38 CompTIA, Cisco and Microsoft titles hold 46 catalog certs, so the link covers 208 titles and 165 certs (#2689)."
