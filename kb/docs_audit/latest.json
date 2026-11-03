@@ -11,8 +11,8 @@
   },
   "summary": {
     "files": 1373,
-    "bytes": 13945087,
-    "over_budget": 5,
+    "bytes": 13950710,
+    "over_budget": 2,
     "handoff_max": 562,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60641,
@@ -26,17 +26,17 @@
       },
       "other": {
         "files": 138,
-        "bytes": 4234735,
+        "bytes": 4245505,
         "over": 1
       },
       "index": {
         "files": 1,
-        "bytes": 8718,
+        "bytes": 8940,
         "over": 0
       },
       "lessons": {
         "files": 86,
-        "bytes": 2603314,
+        "bytes": 2604256,
         "over": 0
       },
       "kb_note": {
@@ -46,8 +46,8 @@
       },
       "roadmap_lane": {
         "files": 43,
-        "bytes": 484118,
-        "over": 3
+        "bytes": 477807,
+        "over": 0
       },
       "handoff": {
         "files": 529,
@@ -56,13 +56,13 @@
       }
     },
     "by_rule": {
-      "oversized_doc": 5,
+      "oversized_doc": 2,
       "kb_note_dialect": 1,
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25541,
-      "bytes": 4180953871,
+      "files": 25540,
+      "bytes": 4180938481,
       "heavy_bytes": 2977118856,
       "heavy_share": 0.712,
       "ignore_filters": [
@@ -166,45 +166,6 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 22152,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 2152,
-        "ratio": 1.11
-      },
-      "message": "22,152 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/commons.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 21638,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 1638,
-        "ratio": 1.08
-      },
-      "message": "21,638 B is 1.1× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/implementation-funding.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 20904,
-        "limit": 20000,
-        "lane": "roadmap_lane",
-        "over_by": 904,
-        "ratio": 1.05
-      },
-      "message": "20,904 B is 1.0× the roadmap_lane budget (20,000 B) — candidate for compaction",
-      "path": "docs/reference/lanes/program-requirements-harvest.md"
     },
     {
       "rule": "oversized_doc",

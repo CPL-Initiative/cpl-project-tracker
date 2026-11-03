@@ -527,3 +527,42 @@ curator decides, and the tab opens on its worklist.
 - **commons_page.js's links fall under 24px** in a row (`a` gets no min-height, its buttons do): a host whose rows link out
   (here SkyView, an external page) adds `a { display:inline-block; min-height:24px }` under its prefix. A host with no
   h2 above the page skips h1 to h3; COCI Lookup's header is a span, so the view adds its own h2.
+
+## Moved from the lane, 2026-11-03 (S562; the lane passed its 20,000-byte budget again)
+
+The per-reference opened-page paragraphs, verbatim as the lane carried them on 2026-11-03:
+
+**The opened page, one renderer (S556, 2026-11-03).** `commons_page.js` (`window.CPL_COMMONS_PAGE.render(spec)`) draws
+the mock's opened page for any reference: the progress line over its one denominator, *Needs attention* with an action
+each and the team's next step, and the three question groups with every count over one denominator; an unread count says
+*Could not be read*. First Light tokens (the Commons tab alone wears Malone's look). **Exhibits carries it** as its
+**Progress** view, first in the views row, at `#exhibits/progress`, and the Common Exhibits card opens there; the tab
+still opens on Review (Sheet 147). The headline is the Commons row's pair (Sam's keep, Sheets 107 and 108); the groups
+read `credCounts()`, the Credentials tiles' own counts. The CER tab's S436 Progress view stands as kept. Guards
+`tests/exhibits_progress_page.test.js` (41), a11y `exhibits-progress` and `exhibits-progress-dark`. **The CR Reference
+carries it too (S556):** its Progress view draws the page first and the S437 milestones and parts under *Details*,
+closed; the three questions are counted per wording from the worklist the tab holds (grouped, official number, statewide
+line; units stated, units agree; two or more colleges, two or more credentials), and the card opens
+`#cr-reference/progress` while the tab still opens on the worklist. Guard `tests/cr_progress.test.js` (54). **Subjects
+too (S556):** the page over the 147 MQ disciplines with courses, with questions that fit a code (what it is called, whose
+code it is, how it reaches the courses); the milestones and steps under *Details*, the procedures and findings below.
+Guard `tests/csr_progress.test.js` (78), a11y `canonical-subj4-progress` (320 to 1440) and `-dark`.
+
+**CPL Pathways too (S558, 2026-11-03):** the Program Requirements tab's Progress view draws the page first and the
+dash (milestones, parts, the whole harvest, the calls) under *Details*, closed; opening a call opens Details. The
+denominator is COCI's active program, the headline's own unit, and the three questions fit a program: where it is read
+from (a college with a catalog address, with a reading procedure), what it requires (read, units add up, nothing
+added), whether it matches the state's record (every course COCI lists placed, complete). A record on a program COCI
+does not list never counts; a failed active read says *Could not be read*. `commons_page.js` loads on the first
+Progress render. Guard `tests/program_requirements_page.test.js` (16); a11y `program-requirements-progress` and
+`-dark` wait for the page and open Details.
+
+**The Common Course Reference too (S559, 2026-11-03, #2720):** COCI Lookup's **Progress** view, first in its views row
+(the tab still opens on the Courses List), at `#coci-lookup/progress`; the Commons card's third word, *Open Progress*.
+It reads the Commons' own row (`kb/status/commons.json`, key `course`) and the run log it names, so its headline is the
+card's pair: ready (the auditor's 0.85 or better) of the auditor's cards, 3,205 of 27,581. Needs attention: needs
+repair, then the row's issues with who fixes each, Open SkyView on each. The three questions (what it is called, where
+it sits, whether its courses agree) count the cards free of one auditor tag; the builder writes those six tag counts
+into the row's `facts.tags`. **NEEDS SAM (Open Asks Sheet 160, S559, 2026-11-03): complete is the auditor's *ready*,** proceeded on the
+recommendation; reply to reverse (*curator* would count only a person's confirmation in SkyView). Sheet: https://claude.ai/artifact/KWSqdMPag3RXkwpvqGZqE9 Guard `tests/coci_progress.test.js` (29); a11y `coci-lookup-progress` (320 to 1440) and `-dark`.
+Every reference now carries the opened page.
