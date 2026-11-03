@@ -88,9 +88,13 @@ each and the team's next step, and the three question groups with every count ov
 **Progress** view, first in the views row, at `#exhibits/progress`, and the Common Exhibits card opens there; the tab
 still opens on Review (Sheet 147). The headline is the Commons row's pair (Sam's keep, Sheets 107 and 108); the groups
 read `credCounts()`, the Credentials tiles' own counts. The CER tab's S436 Progress view stands as kept. Guards
-`tests/exhibits_progress_page.test.js` (41), a11y `exhibits-progress` and `exhibits-progress-dark`.
+`tests/exhibits_progress_page.test.js` (41), a11y `exhibits-progress` and `exhibits-progress-dark`. **The CR Reference
+carries it too (S556):** its Progress view draws the page first and the S437 milestones and parts under *Details*,
+closed; the three questions are counted per wording from the worklist the tab holds (grouped, official number, statewide
+line; units stated, units agree; two or more colleges, two or more credentials), and the card opens
+`#cr-reference/progress` while the tab still opens on the worklist. Guard `tests/cr_progress.test.js` (54).
 
-**NEXT:** the same page on the CR Reference's, Subjects' and CPL Pathways' Progress views (each hands
+**NEXT:** the same page on Subjects' and CPL Pathways' Progress views (each hands
 `commons_page.js` a spec: its pair, its queues as *Needs attention*, its three questions), then the Course Progress view
 (below). The a11y pass (`npm run a11y -- cobi:commons`) passes on the first view at both widths (S552).
 
