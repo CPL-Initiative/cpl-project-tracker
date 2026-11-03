@@ -34,8 +34,8 @@ const cssBlock = pageSrc.slice(pageSrc.indexOf("function css(p)"), pageSrc.index
 check("the shared renderer names no raw hex color", !/#[0-9a-fA-F]{3,8}\b/.test(cssBlock));
 check("controls are underlined words, 24px tall", /button\." \+ p \+ "w \{ all:unset; cursor:pointer; min-height:24px;[^}]*text-decoration:underline/.test(cssBlock));
 check("the three groups fold to one column on a narrow window", /@media \(max-width: 980px\) \{ " \+ s \+ "groups \{ grid-template-columns:minmax\(0, 1fr\); \} \}/.test(cssBlock));
-check("the Commons card for the reference opens the Progress view",
-  /"links": \[\{"href": tab \+ "\/progress", "text": "Open Exhibits"\}\]/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
+check("the Commons card for the reference opens the List, Progress a word away (Sam, 2026-11-03)",
+  /"links": \[\{"href": tab \+ "\/list", "text": "Open Exhibits"\}\]/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 check("no figure is copied into the host", !/\b(2,?457|5,?493|2,?644|2,?639|1,?605)\b/.test(src.slice(src.indexOf("function progressSpec"), src.indexOf("function renderProgress"))));
 
 // ───────────────────────────── the shared renderer alone ─────────────────────────────

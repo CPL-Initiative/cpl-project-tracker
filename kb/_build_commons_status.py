@@ -183,8 +183,8 @@ def receipt_time(v):
 
 def row_exhibit(root):
     # The Exhibits tab carries the reference's queue now (Sam, Open Asks Sheet 148, 2026-10-31: link-retire);
-    # the counts open its routes. Titles that left MAP and the procedures stay at the CER's address, which
-    # still opens, until Exhibits carries them.
+    # the counts open its routes. Titles that left MAP stay at the CER's address, which still opens, until Exhibits
+    # carries them; the procedures moved to Exhibits' Rules view, which lists every one (2026-11-03).
     tab = "#exhibits"
     cer = "#credential-reference"
     ut = load_json(root, "kb/unified_titles.json")
