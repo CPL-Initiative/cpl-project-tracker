@@ -419,6 +419,7 @@ window.COBI_ADMIN_SURFACE = {
     "cr-reference": {
       "modules": [
         "commons_list.js",
+        "commons_page.js",
         "commons_progress.js",
         "cr_progress.js",
         "cr_reference.js"

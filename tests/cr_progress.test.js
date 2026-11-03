@@ -21,10 +21,18 @@ const { JSDOM } = require("jsdom");
 const results = [];
 function check(name, cond) { results.push([name, !!cond]); }
 function txt(n) { return (n && n.textContent || "").replace(/\s+/g, " ").trim(); }
+/* The text a reader sees, a space between an element's parts (the opened page's rows). */
+function spaced(n) {
+  if (!n) return "";
+  const parts = [], walk = n.ownerDocument.createTreeWalker(n, 4);
+  while (walk.nextNode()) parts.push(walk.currentNode.nodeValue);
+  return parts.join(" ").replace(/\s+/g, " ").replace(/ ([.,:])/g, "$1").trim();
+}
 
 const SRC = fs.readFileSync("cr_progress.js", "utf8");
 const TAB = fs.readFileSync("cr_reference.js", "utf8");
 const MODULE = fs.readFileSync("commons_progress.js", "utf8");
+const PAGE = fs.readFileSync("commons_page.js", "utf8");
 const COMMONS = JSON.parse(fs.readFileSync("kb/status/commons.json", "utf8"));
 const BUILDER = fs.readFileSync("kb/_build_commons_status.py", "utf8");
 const cr = COMMONS.rows.filter((r) => r.key === "cr")[0];
@@ -35,8 +43,11 @@ const n = (v) => Number(v).toLocaleString("en-US");
 check("the tab draws a view row, Progress first, then Worklist",
   /data-view="progress"[^]*?>Progress<\/button>[^]*?data-view="worklist"/.test(TAB));
 check("the tab still opens on the worklist", /view: "worklist",/.test(TAB) && /filter: "todo"/.test(TAB));
-check("the tab loads the module, then the definitions",
-  /loadScript\("commons_progress\.js", "CPL_COMMONS_PROGRESS", function \(\) \{\s*T\.loadScript\("cr_progress\.js", "CPL_CR_PROGRESS", cb\)/.test(TAB));
+check("the tab loads the module, the opened page, then the definitions (S556)",
+  /loadScript\("commons_progress\.js", "CPL_COMMONS_PROGRESS", function \(\) \{[\s\S]*?T\.loadScript\("commons_page\.js", "CPL_COMMONS_PAGE", function \(\) \{\s*T\.loadScript\("cr_progress\.js", "CPL_CR_PROGRESS", cb\)/.test(TAB));
+check("the Commons card for the reference opens the Progress view (S556)",
+  /"links": \[\{"href": tab \+ "\/progress", "text": "Open the tab"\}\]/.test(BUILDER.slice(BUILDER.indexOf('"key": "cr"'))));
+check("the tab lends the worklist and its view switch for the page's questions", /groups: state\.groups \|\| null, view: function \(v\) \{ setView\(v\); \}/.test(TAB));
 check("the tab routes #cr-reference/<view or filter>", /function routeFromHash\(\)/.test(TAB) && /parts\[0\] !== "cr-reference"/.test(TAB));
 check("the view reads the run log and the Commons figures", /kb\/status\/cr\.json/.test(SRC) && /kb\/status\/commons\.json/.test(SRC));
 check("the Commons row carries the wording figures the view reads",
@@ -75,6 +86,7 @@ async function setup(opts) {
     return Promise.resolve({ ok: !!body, status: body ? 200 : 404, json: () => Promise.resolve(body) });
   };
   if (!opts.noModule) w.eval(MODULE);
+  if (opts.page) w.eval(PAGE);
   w.eval(SRC);
   const went = [];
   const api = Object.assign({ go: (l) => went.push(l), liveDecided: null }, opts.api || {});
@@ -128,6 +140,39 @@ const card = (doc, title) => Array.from(doc.querySelectorAll(".prh-pg-part")).fi
   const r1b = await setup({ api: { liveDecided: f.decided + 7 } });
   check("live table ahead of the receipts: the card says a sitting has not landed its receipt",
     /has not landed its receipt/.test(txt(card(r1b.doc, "Curator decisions"))));
+
+  // The opened page (S556): the CPL Commons mock's shape over the dash, the dash one word away.
+  const G = [
+    { key: "a", wordings: 2, rung: 1, official_applied: true, units_differ: false,
+      members: [{ rec: "3 hours in A", units_lo: 3, colleges_n: 5, credentials_n: 2 }, { rec: "3 hours A", units_lo: 3, colleges_n: 1, credentials_n: 1 }] },
+    { key: "b", wordings: 1, rung: 5, official_applied: false, units_differ: true,
+      members: [{ rec: "B", units_lo: null, colleges_n: 2, credentials_n: 1 }] }];
+  const pg = await setup({ page: true, api: { groups: G, view: (v) => pg.views.push(v) } });
+  pg.views = [];
+  const page = pg.doc.querySelector(".cq-pg-page");
+  check("page: drawn first when commons_page.js is in", !!page && pg.doc.querySelector(".cq-progress").firstElementChild === page);
+  check("page: the headline is the Commons row's pair, wordings settled",
+    txt(page.querySelector("[aria-label=Progress]")).indexOf(n(f.settled) + " of " + n(f.wordings) + " wordings resolve to a settled reference") >= 0);
+  const qs = Array.from(page.querySelectorAll(".cq-pg-groups > section"));
+  check("page: the three questions in the mock's order",
+    qs.map((q) => txt(q.querySelector("h3"))).join(" | ") === "What is it called? | What credit does it carry? | Who could adopt it?");
+  check("page: each count is per wording, over every wording in the worklist",
+    /Grouped with its other wordings 2 of 3/.test(spaced(qs[0])) && /Named by an official number \(C-ID or CCN\) 2 of 3/.test(spaced(qs[0]))
+    && /Units stated 2 of 3/.test(spaced(qs[1])) && /Units agree across its group 2 of 3/.test(spaced(qs[1]))
+    && /Articulated by two or more colleges 2 of 3/.test(spaced(qs[2])) && /Each count is of the 3 wordings colleges wrote\./.test(spaced(page)));
+  const att = pg.doc.getElementById("cq-pg-attention");
+  check("page: the row's known issues, each with its action",
+    txt(att).indexOf(n(cr.issues[0].n) + " " + cr.issues[0].words) >= 0 && /Decide them/.test(txt(att)));
+  Array.from(att.querySelectorAll("button")).filter((b) => txt(b) === "Decide them")[0].click();
+  check("page: an action opens the filter that lists it", pg.went[pg.went.length - 1] === "open");
+  Array.from(qs[2].querySelectorAll("button"))[0].click();
+  check("page: a question's row opens the List", pg.views.join(",") === "list");
+  check("page: the run log's next step closes Needs attention", /Next for the team: Decide the head\. Six wordings in the top 50\./.test(txt(att)));
+  const more = pg.doc.querySelector("details.cq-more");
+  check("page: the milestones and parts stay one word away, closed", more && !more.open && !!more.querySelector(".prh-pg-part"));
+  const none = await setup({ page: true });
+  check("page: with no worklist lent, the questions say Could not be read, never a zero",
+    /Grouped with its other wordings Could not be read/.test(spaced(none.doc.querySelector(".cq-pg-groups"))));
 
   // The Commons figures failing: the headline says so.
   const r3 = await setup({ fail: "kb/status/commons.json" });

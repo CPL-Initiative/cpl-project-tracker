@@ -1618,7 +1618,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1994
+     "line": 1997
     }
    ],
    "main_committers": []
@@ -2219,7 +2219,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1035
+     "line": 1038
     }
    ],
    "main_committers": []
@@ -2238,7 +2238,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1380
+     "line": 1383
     },
     {
      "id": "module:college_briefing.js",
@@ -4182,7 +4182,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1658
+     "line": 1661
     }
    ],
    "main_committers": []
@@ -5231,7 +5231,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1549
+     "line": 1552
     },
     {
      "id": "module:admin.js",
@@ -6016,6 +6016,16 @@
   "file:commons_page.js": {
    "consumers": [
     {
+     "id": "module:cr_reference.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 1101,
+     "tabs": [
+      "cr-reference"
+     ]
+    },
+    {
      "id": "module:exhibits.js",
      "kind": "module",
      "direction": "read",
@@ -6254,7 +6264,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1933
+     "line": 1936
     },
     {
      "id": "module:college_briefing.js",
@@ -6460,7 +6470,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1095
+     "line": 1098
     },
     {
      "id": "module:cpl_funding.js",
@@ -6790,7 +6800,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1100,
+     "line": 1102,
      "tabs": [
       "cr-reference"
      ]
@@ -12416,7 +12426,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 511
+     "line": 512
     }
    ],
    "served": false,
@@ -13057,7 +13067,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 404
+     "line": 405
     }
    ],
    "producers": [
@@ -13114,7 +13124,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 405
+     "line": 406
     }
    ],
    "served": true,
@@ -13345,7 +13355,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 383
+     "line": 384
     },
     {
      "id": "script:kb/_csr_confirm_authority.py",
@@ -14536,7 +14546,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 490
+     "line": 491
     },
     {
      "id": "script:kb/_build_exhibit_cert_links.py",
@@ -17071,7 +17081,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 345
+     "line": 346
     }
    ],
    "served": true,
@@ -17137,7 +17147,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 448
+     "line": 449
     }
    ],
    "served": true,
@@ -19472,7 +19482,7 @@
      "kind": "script",
      "direction": "read",
      "how": "literal",
-     "line": 509
+     "line": 510
     }
    ],
    "served": false,
@@ -27600,6 +27610,7 @@
    "program-requirements"
   ],
   "commons_page.js": [
+   "cr-reference",
    "exhibits"
   ],
   "commons_progress.js": [

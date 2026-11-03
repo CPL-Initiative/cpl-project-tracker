@@ -341,7 +341,8 @@ def row_cr(root):
              % (fmt(len(by_rule)), fmt(len(by_curator - by_rule)), fmt(sum(rows_of[w] for w in settled)), fmt(st["total_rows"])))
     return {
         "key": "cr", "title": "Common CR Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open the tab"}],
+        # The card opens the reference's page in the CPL Commons mock's shape (S556); the tab still opens on the worklist.
+        "links": [{"href": tab + "/progress", "text": "Open the tab"}],
         "status_file": "kb/status/cr.json" if exists(root, "kb/status/cr.json") else None,
         "pair": [{"n": len(settled), "of": len(rows_of), "words": words, "open": tab + "/progress"}],
         "tests": ["rule-settled", "curator-decided"],
