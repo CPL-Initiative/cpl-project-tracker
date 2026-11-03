@@ -1494,7 +1494,7 @@
   /* The Commons' procedures count opens the CER's list; here, the Rules view lists every procedure. */
   var COMMONS_EQUIV = { "#credential-reference/procs": "#exhibits/rules" };
   var ROUTE_WORDS = { held: "Review, every held title", conflict: "Review, Conflict with the reference", "another-look": "Review, Another look",
-    credentials: "the Credentials view", rules: "the Rules view", list: "the List view" };
+    credentials: "the Credentials view", rules: "the Rules view", list: "the List view", progress: "the Progress view" };
 
   function commonsFresh() {
     return { row: null, at: null, error: null, Q: null, qErr: null, logFile: null, loading: null, done: false };
@@ -1593,7 +1593,7 @@
     state.sw.cur = 0; state.sw.rule = ""; state.sw.bulkAsk = false;
     if (route === "list") { var L = listState(); L.f = filter || ""; L.limit = LIST_LIMIT; }
     render();
-    if (r[0] === "credentials" || r[0] === "list") loadCredentials().then(render);
+    if (r[0] === "credentials" || r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     var h = document.querySelector(".exh-h");
     if (h) { h.setAttribute("tabindex", "-1"); h.focus(); }
   }
@@ -1745,14 +1745,32 @@
         cmProcTiles().concat([cmLibraryTile(), cmRunTile(now)]))]);
   }
 
-  function credTiles() {
+  /* The reference's counts over its credentials, one pass: the tiles and the Progress view's three questions read
+     the same figures. A count whose read has not landed is null (adopt: kb/exhibits_adoption.json; links: map_links.js). */
+  function credCounts() {
     var cs = state.cs, rows = cs.rows || [];
-    var nIss = 0, nSite = 0;
+    var c = { n: cs.rows ? rows.length : null, iss: 0, site: 0, recs: 0, statewide: 0, field: 0, adoptable: 0, shared: 0, could: 0 };
     rows.forEach(function (r) {
       var cur = credCurrent(r);
-      if (cur.issuer) nIss++;
-      if (cur.sites.length) nSite++;
+      if (cur.issuer) c.iss++;
+      if (cur.sites.length) c.site++;
+      if (r.ccc_rec || r.gen_rec) c.recs++;
+      if (r.ccc_rec) c.statewide++;
+      var a = credAdopt(r);
+      if (a && a.s) c.field++;
+      if (credArt(r).length >= 2) c.shared++;
+      if (credCould(r).length) c.could++;
+      var ix = cs.links;
+      if (ix && ix.by_title && (ix.by_title[r.ut] || []).some(function (id) { return ix.found[String(id).toUpperCase()]; })) c.adoptable++;
     });
+    if (c.n == null) { c.iss = c.site = c.recs = c.statewide = c.shared = null; }
+    if (c.n == null || !cs.adopt) { c.field = c.could = null; }
+    if (c.n == null || !cs.links) c.adoptable = null;
+    return c;
+  }
+  function credTiles() {
+    var cs = state.cs, rows = cs.rows || [];
+    var cc = credCounts(), nIss = cc.iss || 0, nSite = cc.site || 0;
     var group = el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "What is it called?" })]);
     group.appendChild(el("div", { cls: "exh-dash", role: "list", "aria-label": "What is it called" }, cmPairTiles().concat([
       tile("Credentials", cs.rows ? rows.length : null, null, "canonical credentials in the reference", "", "Reading"),
@@ -1765,18 +1783,8 @@
   }
   /* What credit does it carry? and Who could adopt it? (mock-up version 26), counted over the reference's credentials. */
   function credMoreTiles() {
-    var cs = state.cs, rows = cs.rows || [], n = cs.rows ? rows.length : null;
-    var recs = 0, statewide = 0, field = 0, adoptable = 0, shared = 0, could = 0;
-    rows.forEach(function (r) {
-      if (r.ccc_rec || r.gen_rec) recs++;
-      if (r.ccc_rec) statewide++;
-      var a = credAdopt(r);
-      if (a && a.s) field++;
-      if (credArt(r).length >= 2) shared++;
-      if (credCould(r).length) could++;
-      var ix = cs.links;
-      if (ix && ix.by_title && (ix.by_title[r.ut] || []).some(function (id) { return ix.found[String(id).toUpperCase()]; })) adoptable++;
-    });
+    var cs = state.cs, cc = credCounts(), n = cc.n;
+    var recs = cc.recs, statewide = cc.statewide, field = cc.field, adoptable = cc.adoptable, shared = cc.shared, could = cc.could;
     var adoptWord = cs.adopt ? null : (cs.adoptErr ? "Could not be read" : "Reading");
     var credit = el("div", { cls: "exh-group" }, [el("h3", { cls: "exh-q", text: "What credit does it carry?" }),
       el("div", { cls: "exh-dash", role: "list", "aria-label": "What credit does it carry" }, [
@@ -2696,16 +2704,130 @@
       b.addEventListener("click", function () {
         state.view = id; state.note = ""; state.cs.note = "";
         render();
-        if (id === "credentials" || id === "list") loadCredentials().then(render);
+        if (id === "credentials" || id === "list" || id === "progress") loadCredentials().then(render);
       });
       return b;
     }
     return el("nav", { cls: "exh-views", "aria-label": "Views" }, [
+      v("progress", "Progress", null),
       v("review", "Review", state.data ? stepCount("") : null),
       v("credentials", "Credentials", state.cs.rows ? state.cs.rows.length : null),
       v("list", "List", state.cs.rows ? state.cs.rows.length : null),
       v("rules", "Rules", state.rq.rows ? requestsWaitingOnYou() : null),
       el("a", { href: "#exhibit-adoption", text: "The college matrix, in Exhibit Adoption" })]);
+  }
+
+  /* ── Progress: the reference opened, in the CPL Commons mock's shape ──
+     Sam locked the CPL Commons mock on 2026-11-02 (S552), the Exhibits artboard with it: a progress line, Needs attention
+     with an action each, and the three questions with every count over one denominator. The page is drawn by the
+     Commons' shared renderer, commons_page.js, so the CR Reference, Subjects and CPL Pathways take the same page next.
+     It reads what the tiles read: the Commons' row and run log (loadCommons) and the reference's credentials
+     (credCounts), plus the tab's own queues, so the Commons card, the tiles and this page cannot disagree. The headline
+     is the Commons row's pair, a title with a review stamp (Sam's keep, Sheets 107 and 108). The tab still opens on
+     Review; the Common Exhibits card opens #exhibits/progress. */
+  function progressSpec() {
+    var cm = state.cm || {}, row = cm.row || null, Q = cm.Q || null, f = row && row.facts || {};
+    var pair = row && Array.isArray(row.pair) ? row.pair[0] : null;
+    var reading = !cm.done;
+    var to = function (href) {
+      var t = cmTarget(href);
+      if (t && t.route) return function () { cmGo(t.route, t.filter); };
+      return null;
+    };
+    var hrefOf = function (href) { var t = cmTarget(href); return t && !t.route ? t.href : null; };
+    var calls = Q && Array.isArray(Q.calls) ? Q.calls : [];
+    var open = calls.filter(function (c) { return !(c.answer && c.answer.words); });
+    var recently = Q && Array.isArray(Q.changes) && Q.changes[0] && Q.changes[0].text
+      ? "Recently: " + String(Q.changes[0].text).trim().replace(/^([^.]*\.)(?=\s|$)[\s\S]*$/, "$1") : "";
+    var split = f.person != null && f.cohort != null
+      ? fmt(f.person) + " by a person, " + fmt(f.cohort) + " by a procedure in force or a session cohort." : "";
+    var callWords = !Q ? "" : open.length
+      ? (open.length === 1 ? "One decision waits on " : fmt(open.length) + " decisions wait on ") + DECIDER + "."
+      : "No decisions wait on " + DECIDER + ".";
+
+    var items = [];
+    if (state.data) {
+      var held = stepCount("") - stepCount(CONFLICT) - stepCount(SWEEP);
+      items.push({ n: held, words: held === 1 ? "title the nightly run held for a curator." : "titles the nightly run held for a curator.",
+        action: { words: "Review them", go: function () { cmGo("held"); } } });
+      var conf = stepCount(CONFLICT);
+      items.push({ n: conf, words: conf === 1 ? "saved title disagrees with one a person approved." : "saved titles disagree with one a person approved.",
+        action: { words: "Decide them", go: function () { cmGo("conflict"); } } });
+    } else if (state.error) items.push({ n: null, words: "held titles: the review file could not be read" });
+    if (state.sw.data) {
+      var sw = sweepShown("").length;
+      items.push({ n: sw, words: sw === 1 ? "title in the reference to take another look at, to fold or correct."
+        : "titles in the reference to take another look at, to fold or correct.",
+        action: { words: "Take another look", go: function () { cmGo("another-look"); } } });
+    }
+    (row && row.issues || []).forEach(function (i) {
+      if (i.n == null) return;
+      var go = to(i.open), href = hrefOf(i.open);
+      /* The owner reads as who settles it: "a curator (retire or keep)" says "for a curator to retire or keep". */
+      var own = /^(.+?) \((.+)\)$/.exec(i.owner || "");
+      items.push({ n: i.n, words: i.words + (own ? ", for " + own[1] + " to " + own[2] + "." : i.owner ? ", for " + i.owner + "." : "."),
+        action: { words: "Review the " + fmt(i.n), go: go, href: go ? null : href } });
+    });
+    if (state.rq.rows) {
+      var rq = requestsWaitingOnYou();
+      items.push({ n: rq, words: rq === 1 ? "rule built and switched off, waiting for you to turn it on." : "rules built and switched off, waiting for you to turn them on.",
+        action: { words: "Open the rules", go: function () { cmGo("rules"); } } });
+    }
+    open.forEach(function (c) {
+      items.push({ n: 1, words: "decision for " + DECIDER + ": " + (c.title || "an open call") + ".",
+        action: c.link && /^https:\/\//.test(c.link) ? { words: "Open the decision sheet", href: c.link } : null });
+    });
+
+    var procs = row && (row.procedures || []).filter(function (p) { return p.n != null; })[0];
+    var sheet = calls.filter(function (c) { return c.link && /^https:\/\//.test(c.link); }).slice(-1)[0];
+    /* The views row above already names Review, Credentials, List and Rules; these are the two it does not. */
+    var links = [
+      { words: "How it is kept" + (procs ? ": " + fmt(procs.n) + " procedures" : ""), go: function () { cmGo("credentials"); } },
+      sheet ? { words: "Decision record", href: sheet.link } : null
+    ].filter(Boolean);
+
+    var cc = credCounts();
+    var cred = function (label) { return { label: label, n: null, go: function () { cmGo("credentials"); } }; };
+    var row3 = function (label, n) { var r = cred(label); r.n = n; return r; };
+    var groups = [
+      { q: "What is it called?", rows: [row3("Issuer named", cc.iss), row3("Training site named", cc.site), row3("Field of study (CIP) assigned", cc.field)] },
+      { q: "What credit does it carry?", rows: [row3("Credit recommendation in MAP", cc.recs), row3("Statewide recommendation", cc.statewide)] },
+      { q: "Who could adopt it?", rows: [row3("An exhibit to adopt from", cc.adoptable), row3("Articulated by two or more colleges", cc.shared),
+        row3("A college could adopt it now", cc.could)] }
+    ];
+    var ptRead = cm.at ? "Figures read " + cmStamp(cm.at) + "." : "";
+    return {
+      label: "Common Exhibit Reference", prefix: "exh-pg-", reading: reading || !!state.cs.loading,
+      status: open.length ? "Needs you" : "In progress",
+      lede: "The Common Exhibit Reference: every credential colleges grant credit for, under one name and issuer.",
+      read: ptRead, links: links,
+      progress: { n: pair ? pair.n : null, of: pair ? pair.of : null, short: "stamped",
+        words: "college-entered titles carry a review stamp",
+        recently: [recently, split].filter(Boolean).join(" "), calls: callWords,
+        error: cm.done ? (cm.error || (pair ? null : "the Commons row names no pair")) : null },
+      attention: { items: items, next: Q && Q.next_step && Q.next_step.title
+        ? Q.next_step.title + (Q.next_step.text ? ". " + Q.next_step.text : "") : "",
+        empty: "Nothing in the reference waits on a person." },
+      groups: groups, of: cc.n, ofWords: "credentials in the reference",
+      foot: "The reference is staging: not yet faculty-published."
+    };
+  }
+  function renderProgress(wrap) {
+    wrap.appendChild(viewsNav());
+    if (!state.cm || !state.cm.done) loadCommons().then(function () { if (state.view === "progress") render(); });
+    if (!window.CPL_COMMONS_PAGE) {
+      if (state.pageFailed) { wrap.appendChild(el("p", { cls: "exh-empty", text: "The Progress view could not be loaded; reload the tab to try again." })); return; }
+      wrap.appendChild(el("p", { cls: "exh-empty", text: "Reading the figures…" }));
+      if (state.pageLoading || !window.CPL_TABS || !window.CPL_TABS.loadScript) return;
+      state.pageLoading = true;
+      window.CPL_TABS.loadScript("commons_page.js", "CPL_COMMONS_PAGE", function () {
+        state.pageLoading = false;
+        if (!window.CPL_COMMONS_PAGE) state.pageFailed = true;
+        if (state.view === "progress") render();
+      });
+      return;
+    }
+    wrap.appendChild(window.CPL_COMMONS_PAGE.render(progressSpec()));
   }
 
   /* ── Rules: what each rule sent to the routine would do, and the word that turns it on ── */
@@ -2877,6 +2999,10 @@
     }
     if (state.view === "rules") {
       renderRules(wrap);
+      return;
+    }
+    if (state.view === "progress") {
+      renderProgress(wrap);
       return;
     }
     if (state.view === "list") {
@@ -3108,7 +3234,7 @@
      the reference, credentials = the Credentials view, rules = the rules sent to the routine, list = the List, and
      list/<filter> the List on that filter. The address is not a remembered filter. */
   var ROUTES = { held: ["review", ""], conflict: ["review", CONFLICT], "another-look": ["review", SWEEP], credentials: ["credentials", ""],
-    rules: ["rules", ""], list: ["list", ""] };
+    rules: ["rules", ""], list: ["list", ""], progress: ["progress", ""] };
   function routeFromHash() {
     var parts = String(location.hash || "").replace(/^#/, "").split("/");
     var r = parts[0] === "exhibits" && ROUTES[parts[1]];
@@ -3116,7 +3242,7 @@
     state.view = r[0]; state.filter = r[1];
     /* #exhibits/list/<filter> opens the List on one of its filters (a Commons count, norm 1). */
     if (r[0] === "list" && parts[2] && listFilterLabel(parts[2])) listState().f = parts[2];
-    if (r[0] === "credentials" || r[0] === "list") loadCredentials().then(render);
+    if (r[0] === "credentials" || r[0] === "list" || r[0] === "progress") loadCredentials().then(render);
     return true;
   }
   function boot() {
@@ -3140,6 +3266,7 @@
     _aseIssuer: aseIssuer, _issuerFor: issuerFor, _nameOptions: nameOptions, _nameMatches: nameMatches, _bulkItems: bulkItems,
     _sweepIssuer: sweepIssuer,
     loadRules: loadRules, _requestRows: requestRows, _requestState: requestState, _sendRequest: sendRequest,
-    _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows
+    _switchRequest: switchRequest, _dryRunLines: dryRunLines, _listCsv: listCsv, _listRows: listRows,
+    _progressSpec: progressSpec, _credCounts: credCounts, loadCommons: loadCommons
   };
 })();

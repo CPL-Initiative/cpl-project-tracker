@@ -206,7 +206,8 @@ def row_exhibit(root):
     stamps = [t for t in (saved_at, fold_at) if t]
     return {
         "key": "exhibit", "title": "Common Exhibit Reference", "tab": tab,
-        "links": [{"href": tab, "text": "Open Exhibits"}],
+        # The card opens the reference's page in the CPL Commons mock's shape (S556): Exhibits' Progress view.
+        "links": [{"href": tab + "/progress", "text": "Open Exhibits"}],
         "status_file": "kb/status/exhibit.json" if exists(root, "kb/status/exhibit.json") else None,
         "pair": [{"n": len(stamped), "of": len(ut),
                   "words": "titles carry a review stamp (%s a person's, %s a cohort's); %s credentials, %s of %s records stamped"

@@ -45,7 +45,7 @@ check("the nightly procedures run rebuilds and commits them", /python3 kb\/_buil
   && /git add kb\/exhibits_review\.json kb\/exhibits_review_courses\.json kb\/exhibits_adoption\.json/.test(proc)
   && proc.indexOf("_cer_procedures.py --classify") < proc.indexOf("_build_exhibits_review.py"));
 check("CI runs the builder's test", /python3 tests\/exhibits_review_build_test\.py/.test(fs.readFileSync(".github/workflows/js-tests.yml", "utf8")));
-check("the Commons row links Open Exhibits", /"href": tab, "text": "Open Exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
+check("the Commons row links Open Exhibits, at its Progress view", /"href": tab \+ "\/progress", "text": "Open Exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 check("the Commons row's tab is Exhibits (Sheet 148, link-retire)", /tab = "#exhibits"/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8"))
   && /\("exhibit", "Common Exhibit Reference", "#exhibits", row_exhibit\)/.test(fs.readFileSync("kb/_build_commons_status.py", "utf8")));
 check("the students function is migrated, reviewer-gated and closed to anon",
