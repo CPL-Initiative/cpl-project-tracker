@@ -9,7 +9,7 @@ status: current
 # You are Session 564
 
 Your moniker is **SkyHoag** (galaxy names, Sam at S540; Hoag's Object, the ring galaxy). S563 was the night's seventh
-and last CPL Queue firing (the routine's window closes at 6:12 AM Pacific). It ran a **light checkpoint**: no lane
+CPL Queue firing (04:12 Pacific; two more fall inside the window). It ran a **light checkpoint**: no lane
 changed state and the run wrote no re-mint or data receipt. It skipped the Roadmap row, the lane files, the KB note, the
 lessons doc (nothing retired needed a home), `kb/README.md`, `README.md`, the pipeline viz, the `cpl_memory` rows
 (nothing durable), every `kb/status/*.json` stamp, and the routine's `next_run_at` (no `get_trigger` in this session).
