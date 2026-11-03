@@ -415,6 +415,25 @@ async function seedCsrList(page, theme) {
   await page.waitForTimeout(200);
 }
 
+/* The Common Subjects Reference's Local subjects List (2026-11-03): every local code A to Z, the Status drawer
+   open on the first row and that row's Edit box, so the drawer, the suggestion line and the note box are measured. */
+async function seedCsrLocal(page, theme) {
+  await page.evaluate(() => { if (location.hash.replace(/^#/, "") !== "canonical-subj4/local") location.hash = "canonical-subj4/local"; });
+  if (theme === "dark") await page.evaluate(() => window.CPL_THEME && window.CPL_THEME.set("dark"));
+  await page.waitForSelector("#tab-canonical-subj4 #cs-tab-local", { timeout: 60000 });
+  await page.evaluate(() => { const b = document.getElementById("cs-tab-local"); if (b && b.getAttribute("aria-selected") !== "true") b.click(); });
+  await page.waitForSelector("#tab-canonical-subj4 .csls-table tbody tr", { timeout: 60000 });
+  await page.evaluate(() => { const b = document.querySelector("#tab-canonical-subj4 .csls-table tbody tr td:nth-child(7) button.csls-open"); if (b) b.click(); });
+  await page.waitForSelector("#tab-canonical-subj4 .csls-drawer", { timeout: 10000 });
+  await page.waitForTimeout(500);
+  await page.evaluate(() => {
+    try { localStorage.setItem("cplFirstLight.seen.v1", new Date().toDateString()); } catch (e) { /* storage blocked */ }
+    const x = document.querySelector(".cplfl-overlay.open #cplfl-close");
+    if (x) x.click();
+  });
+  await page.waitForTimeout(200);
+}
+
 /* The docked Sierra, full screen with a conversation (S349). Seeded through
    the real path: the reader's role is confirmed on the chip, only the chat
    function's stream is stubbed, and six questions are asked, so the first one
@@ -3405,6 +3424,22 @@ module.exports = {
     routes: [{ hash: "canonical-subj4/list", name: "list" }],
     widths: [390, 768, 1440],
     seed: (page) => seedCsrList(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-local": {
+    file: "index.html",
+    title: "Common Subjects Reference: Local subjects, every local code A to Z, a drawer open",
+    routes: [{ hash: "canonical-subj4/local", name: "local" }],
+    widths: [390, 768, 1440],
+    seed: (page) => seedCsrLocal(page, "light"),
+    mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
+  },
+  "canonical-subj4-local-dark": {
+    file: "index.html",
+    title: "Common Subjects Reference: Local subjects, dark",
+    routes: [{ hash: "canonical-subj4/local", name: "local-dark" }],
+    widths: [390, 1440],
+    seed: (page) => seedCsrLocal(page, "dark"),
     mayHideBelow: [".cpl-sidebar", ".cpl-sidebar *", ".cpl-tab-pane", ".cpl-tab-pane *"],
   },
   "canonical-subj4-list-dark": {

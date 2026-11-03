@@ -105,6 +105,7 @@ refusals (four letters, no empty title), its drawers' facts, and which features 
 | Exhibits | credential | finder, filters with counts, bands, kept groups, suggested folds on the engine's slot (Accept), Changed this visit, Re-point, waiting, flag, Re-analyze, tiles from the Commons row | |
 | CR Reference | wording (group) | finder, filters with counts, Edit, flag, rung proposals as suggestions (Confirm the group), Selected, Changed this visit, read-only bands by group ordered by the reference | |
 | Subjects | MQ discipline | finder, filters with counts, Edit, open picks as suggestions (Confirm this pick), Selected, Changed this visit | |
+| Subjects: Local subjects | local subject code | finder, filters with counts, filings as suggestions (Confirm), a note per code (Edit), Selected, Changed this visit (2026-11-03) | the card's confirmed count |
 | Courses (COCI Lookup) | local course (M-ID band) | finder, filters with counts, read-only M-ID bands from the engine's `bands` hook, Open in SkyView | |
 | Program Requirements | program | finder, filters with counts | read only |
 

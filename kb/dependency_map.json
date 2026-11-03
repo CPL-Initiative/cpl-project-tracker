@@ -4,7 +4,7 @@
   "supabase_tables": 105,
   "rpcs": 49,
   "edge_functions": 11,
-  "file_datasets": 781,
+  "file_datasets": 782,
   "external_services": 192,
   "consumers": 511,
   "workflows": 60,
@@ -734,7 +734,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 622
+     "line": 641
     }
    ],
    "main_committers": []
@@ -802,7 +802,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2096,
+     "line": 2097,
      "tabs": [
       "canonical-subj4"
      ]
@@ -1628,7 +1628,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 2039
+     "line": 2058
     }
    ],
    "main_committers": []
@@ -2229,7 +2229,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1080
+     "line": 1099
     }
    ],
    "main_committers": []
@@ -2248,7 +2248,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1425
+     "line": 1444
     },
     {
      "id": "module:college_briefing.js",
@@ -4192,7 +4192,7 @@
      "kind": "module",
      "direction": "read",
      "how": "url",
-     "line": 1703
+     "line": 1722
     }
    ],
    "main_committers": []
@@ -5241,7 +5241,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1594
+     "line": 1613
     },
     {
      "id": "module:admin.js",
@@ -5497,7 +5497,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 680
+     "line": 699
     },
     {
      "id": "module:cip_crosswalk.js",
@@ -5960,7 +5960,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2894,
+     "line": 2939,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6030,7 +6030,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2577,
+     "line": 2578,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6086,7 +6086,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 2575,
+     "line": 2576,
      "tabs": [
       "canonical-subj4"
      ]
@@ -6304,7 +6304,7 @@
      "kind": "module",
      "direction": "read",
      "how": "literal",
-     "line": 1978
+     "line": 1997
     },
     {
      "id": "module:college_briefing.js",
@@ -6510,7 +6510,7 @@
      "kind": "module",
      "direction": "read",
      "how": "global",
-     "line": 1140
+     "line": 1159
     },
     {
      "id": "module:cpl_funding.js",
@@ -7166,6 +7166,22 @@
     }
    ],
    "served": false,
+   "main_committers": []
+  },
+  "file:csr_local_subjects.js": {
+   "consumers": [
+    {
+     "id": "module:canonical_subj4.js",
+     "kind": "module",
+     "direction": "read",
+     "how": "literal",
+     "line": 2938,
+     "tabs": [
+      "canonical-subj4"
+     ]
+    }
+   ],
+   "served": true,
    "main_committers": []
   },
   "file:dashboard_filters.js": {
@@ -27772,6 +27788,9 @@
   ],
   "csm_workspace.js": [
    "csm-workspace"
+  ],
+  "csr_local_subjects.js": [
+   "canonical-subj4"
   ],
   "docx.min.js": [
    "letters"
