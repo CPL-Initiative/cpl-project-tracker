@@ -1003,3 +1003,14 @@ lists. Report: `CPLBrain/04-projects/cpl-initiative/20261101_SLO_Grouping_Test.m
   OpenText) stay out: they deliver the exam, Microsoft issues it.
 - **38 titles to 46 certs; the link holds 208 titles to 165 certs.** Three titles name no one cert and stay unresolved.
   Nine local courses (*Microsoft Excel 1*, *Using Microsoft Windows*) stay out: a college issues them.
+
+## Moved from the lane (SkyTrue, 2026-11-03)
+
+Sheet 161's ruling moved here verbatim from the lane's NEXT line once it was applied, with the lane at its size budget.
+
+**Sam, Open Asks Sheet 161 (15:14Z 2026-11-03):** *drop* his Engine Performance 1 and 2 ASE issuer rows;
+Metal Building Erection 1 takes his Iron Workers row (*ironworkers*). Applied 16:08Z (receipt's `then_applied`).
+
+- **A lane line can trail the code by a merge.** The lane said *SLO hints, to build* a day after #2684 shipped them
+  (`kb/_build_exhibit_slo_neighbors.py`, the List's *Outcomes match:*). Grep the code a NEXT or *to build* line names
+  before you build it.
