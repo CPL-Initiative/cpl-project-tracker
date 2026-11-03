@@ -10,10 +10,10 @@
     "other": 150000
   },
   "summary": {
-    "files": 1374,
-    "bytes": 13955106,
-    "over_budget": 2,
-    "handoff_max": 563,
+    "files": 1376,
+    "bytes": 13959810,
+    "over_budget": 1,
+    "handoff_max": 564,
     "always_loaded_files": 1,
     "always_loaded_bytes": 60641,
     "superseded_files": 0,
@@ -25,9 +25,9 @@
         "over": 1
       },
       "other": {
-        "files": 138,
-        "bytes": 4245659,
-        "over": 1
+        "files": 139,
+        "bytes": 4246695,
+        "over": 0
       },
       "index": {
         "files": 1,
@@ -50,19 +50,19 @@
         "over": 0
       },
       "handoff": {
-        "files": 530,
-        "bytes": 3737960,
+        "files": 531,
+        "bytes": 3741628,
         "over": 0
       }
     },
     "by_rule": {
-      "oversized_doc": 2,
+      "oversized_doc": 1,
       "kb_note_dialect": 1,
       "vault_heavy_path": 73
     },
     "vault": {
-      "files": 25541,
-      "bytes": 4180943303,
+      "files": 25543,
+      "bytes": 4180948695,
       "heavy_bytes": 2977118856,
       "heavy_share": 0.712,
       "ignore_filters": [
@@ -166,19 +166,6 @@
       },
       "message": "type via `type:` (canonical: a type tag in `tags:`)",
       "path": "docs/kb-notes/methodology-a-trigger-file-must-differ-from-main.md"
-    },
-    {
-      "rule": "oversized_doc",
-      "fixable": false,
-      "detail": {
-        "bytes": 150352,
-        "limit": 150000,
-        "lane": "other",
-        "over_by": 352,
-        "ratio": 1.0
-      },
-      "message": "150,352 B is 1.0× the other budget (150,000 B) — candidate for compaction",
-      "path": "docs/roadmap_archive.md"
     },
     {
       "rule": "vault_heavy_path",

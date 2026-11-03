@@ -13677,7 +13677,7 @@
   },
   {
    "blurb": "Scopes, plans, specs, briefs and workstream handoffs \u2014 everything in `docs/` that is not a lessons doc or a session handoff.",
-   "count": 96,
+   "count": 97,
    "docs": [
     {
      "created": "2026-05-30",
@@ -14291,6 +14291,21 @@
       "session-history"
      ],
      "title": "CPL Project Tracker \u2014 Roadmap Archive, part 6",
+     "type": null,
+     "updated": ""
+    },
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "path": "docs/roadmap_archive_7.md",
+     "status": null,
+     "tags": [
+      "archive",
+      "roadmap",
+      "project-memory",
+      "session-history"
+     ],
+     "title": "CPL Project Tracker \u2014 Roadmap Archive, part 7",
      "type": null,
      "updated": ""
     },
@@ -16476,8 +16491,22 @@
   },
   {
    "blurb": "One per session, newest first. **Only the highest-numbered handoff is authoritative** \u2014 the rest are history.",
-   "count": 530,
+   "count": 531,
    "docs": [
+    {
+     "created": "2026-11-03",
+     "governs": [],
+     "n": 564,
+     "path": "docs/session_564_handoff.md",
+     "status": null,
+     "tags": [
+      "handoff",
+      "docs-lint"
+     ],
+     "title": "Session 564 handoff: the roadmap archive split into a part 7; nothing new from Sam or the team",
+     "type": null,
+     "updated": ""
+    },
     {
      "created": "2026-11-03",
      "governs": [],
@@ -25529,5 +25558,5 @@
   }
  ],
  "repo": "CPL-Initiative/cpl-project-tracker",
- "total": 1362
+ "total": 1364
 }
