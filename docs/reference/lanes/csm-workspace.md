@@ -34,7 +34,7 @@ and his 18 asks in `CPLBrain/04-projects/cpl-initiative/csm-workspace-mock/`).
 `CPL_FUNDING_TAB.csm.act` (the review lane's `acceptOptIn` / `denyOptIn` / `followOptIn` / `mailOptIn` and the
 noncredit twins), `focus` (the funding tab opened on the college) and `nudge` (the funding tab's Nudge, the mail
 merge). No second computation and no table of its own. Names and emails ride `req` for a signed-in reviewer on the
-internal view alone. Carried from the mock: the header with **Hide the summary** (ask 18, the visit only), Today, the
+internal view alone. Carried from the mock: the header with **Hide the priorities** (ask 18, the visit only), Today, the
 five priority cards, the action center (eight views, search, the queue with each next step), the record (minimum
 conditions in the funding tab's words, who sent it, the CO Monitor's note, Mark Declined participation), **Review
 before you decide** (ask 15: Checked by the form / Meets / Check this with I checked this / Does not meet; Accept opens
@@ -43,6 +43,11 @@ the stage board, and the landing-page links (ask 16). The funding tab's toolbar 
 Commons palette as the mock shows it, the dark theme mapped onto First Light tokens. **Proceeded on the
 recommendation (S555): the second COBI tab in Malone's look, after the CPL Commons; reply to reverse.** Guards
 `tests/csm_workspace.test.js`; `npm run a11y -- cobi:csm-workspace` passes at both widths, light and `--dark`.
+
+✅ **The top, tightened for the action center (Sam, 2026-11-03, S564).** The tab runs the full window width; the intro
+under the title is gone; Today sits in the header, outside the fold, and each of its four counts is a word that opens
+the same view as its card (`review`, `held`, `qual`, `notyet`); the fold holds only the priority cards; card padding and
+gaps are tighter, and the noncredit card carries no line under its count. Guards 5b2 to 5b5.
 
 ✅ **The communications log, `csm_log` (S555).** One row per note, call, email or meeting with a college, keyed by
 **activity** (`funding` today, never the funding module) with an optional follow-up date. History sits in each record

@@ -144,10 +144,18 @@ const clickEl = (window, el) => el && el.dispatchEvent(new window.MouseEvent("cl
 {
   const { window, W, root } = setup({ signedIn: true });
   const fold = () => root.querySelector('[data-act="fold"]');
-  check("5a: the top shows at first, its word Hide the summary", fold().getAttribute("aria-expanded") === "true" && !root.querySelector("#cw-fold").hidden);
+  check("5a: the top shows at first, its word Hide the priorities", fold().getAttribute("aria-expanded") === "true" && !root.querySelector("#cw-fold").hidden);
   clickEl(window, fold());
-  check("5b: one word folds Today and the priority cards, and the word turns", root.querySelector("#cw-fold").hidden &&
-    fold().getAttribute("aria-expanded") === "false" && fold().textContent === "Show the summary");
+  check("5b: one word folds the priority cards, and the word turns", root.querySelector("#cw-fold").hidden &&
+    fold().getAttribute("aria-expanded") === "false" && fold().textContent === "Show the priorities");
+  // Sam, 2026-11-03: folded, Today stays in the header and each count filters the action center as its card does.
+  const today = root.querySelector("header .today");
+  check("5b2: folded, Today stays in the header outside the fold", !!today && !root.querySelector("#cw-fold .today"));
+  check("5b3: Today's counts are words for the cards' views", ["review", "held", "qual", "notyet"].every((v) => !!today.querySelector('button[data-view="' + v + '"]')));
+  clickEl(window, today.querySelector('[data-view="held"]'));
+  check("5b4: a Today count filters the action center and shows pressed", W._state.view === "held" &&
+    root.querySelector('header .today [data-view="held"]').getAttribute("aria-pressed") === "true" && root.querySelector("#cw-fold").hidden);
+  check("5b5: the intro under the title is gone", !root.querySelector(".lede"));
   clickEl(window, root.querySelector('[data-stage="notyet"]'));
   check("5c: a board column's word opens its view, Nudge offered on Not yet confirmed",
     W._state.view === "notyet" && !!root.querySelector('[data-act="nudge"]'));
